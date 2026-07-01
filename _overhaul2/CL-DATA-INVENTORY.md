@@ -74,6 +74,6 @@ corrupted objects exist. **"Not found" = recent / outside-coverage / wrong-cite 
 fabrication.** Cross-check by name+court+date and by web search before flagging.
 
 ## Rate envelope
-No MCP tool reveals the account tier. REST is ~**5,000 req/hr**; `analyze_citations` throttled tighter
+Authenticated REST is **~1,000 req/hr with our token** (verified 2026-07-01; token stored out-of-repo at `~/.config/cssi/cl-token`, mode 600 — never committed). `analyze_citations` throttled tighter
 (~**60/min**, 250 unique cites/job → `job_id` + `resume_citation_analysis`). Be economical: `search`
 with `fields=` + `sibling_ids` gets a whole cluster in one call; `read_document` caches 24h.

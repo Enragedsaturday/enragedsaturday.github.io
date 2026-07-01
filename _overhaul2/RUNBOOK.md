@@ -2,9 +2,10 @@
 
 *The master plan for the second CSSI overhaul, framed as a professional legal-reference **production
 line** (Spine → Surfaces → Content → Assurance). This is the artifact a fresh context thread is
-pointed at: "run S3" → the thread reads §0–§2 + `PRACTICES.md` + its spec entry in §4, does the
-spec's own research, conducts the interview (open-ended + choices, **show-don't-tell** with browser
-mockups / written examples), does follow-up research, and writes the spec to
+pointed at: "run S3" → the thread reads §0–§2 + `PRACTICES.md` + its spec entry in §4, researches
+**continuously** (up front *and* live mid-interview), conducts the interview **show-don't-tell**
+(open-ended + choices, browser mockups / written examples it **revises and pivots on** as answers
+land), runs a **self-interview** over the self-owned design decisions, and only then writes the spec to
 `_overhaul2/specs/SN-<slug>.spec.md`.*
 
 Status: **planning/research phase** — no specs written, nothing in `content/` changed.
@@ -27,21 +28,36 @@ spec inherits) · **`CL-DATA-INVENTORY.md`** (exactly what CourtListener gives u
   production, not wiki maintenance.
 
 ## 1. Per-spec thread lifecycle
-1. **Research first (web + CourtListener).** Internal (codebase/corpus + Overhaul-1 findings) **and**
-   external. **Use CourtListener AND web search together** — CL has coverage gaps, and web search
-   surfaces terminology / legal theories / adjacent keywords that reframe and properly expand the
-   search (`PRACTICES.md` §4). Assume nothing; web discovers, primary source confirms.
-2. **Show, don't tell.** Visual change → browser mockup on a branch (dev server `npx quartz build
-   --serve` :8080), modifying only what's discussed; perfect it there, spec follows to the letter.
-   Content change → a **written example** first (one overview, one rewritten brief). **Any officer-
-   bottom-line / BLUF summarization is human-in-the-loop and grounded verbatim in the case's standard
-   — never auto-generated** (paraphrase drift on the controlling standard is the trap that pulled us
-   back from this in Overhaul 1).
+*Research and mockups are **continuous and interactive**, not one-shot phases. The loop is iterative:
+keep researching and re-showing as the interview surfaces questions, and **be willing to pivot what
+you're building** mid-stream. Nothing is locked until sign-off.*
+1. **Research — up front AND throughout (web + CourtListener).** Internal (codebase/corpus + Overhaul-1
+   findings) **and** external. **Use CourtListener AND web search together** — CL has coverage gaps, and
+   web search surfaces terminology / legal theories / adjacent keywords that reframe and properly expand
+   the search (`PRACTICES.md` §4). Assume nothing; web discovers, primary source confirms. **Don't stop
+   at the up-front pass:** research **live mid-interview** the moment an answer opens a question, **verify
+   feasibility/tooling for real** (prove it works — don't assume), and feed findings straight back in.
+2. **Show, don't tell — and keep iterating it live.** Visual change → browser mockup on a branch (dev
+   server `npx quartz build --serve` :8080), modifying only what's discussed; perfect it there, spec
+   follows to the letter. Content change → a **written example** first (one overview, one rewritten
+   brief). **When an interview answer changes the direction, change the mockup/example on the spot and
+   re-show it** — pivot freely while defining what we're building. **Any officer-bottom-line / BLUF
+   summarization is human-in-the-loop and grounded verbatim in the case's standard — never auto-
+   generated** (paraphrase drift on the controlling standard is the trap that pulled us back in O1).
 3. **Interview.** Options + context + open-ended opener; ask only user-owned decisions (recommendation-
    first, `AskUserQuestion`); self-resolve the rest and log it. **Always close open-ended** and
-   interview on the answer. Don't over-produce; long material → briefs.
-4. **Follow-up research** to resolve surfaced questions (with authority).
-5. **Write the spec** (Overhaul-1 template: Objective · Scope · Requirements w/ `*Check:*` · Lessons ·
+   interview on the answer. Research + mockup changes happen *inside* this loop, interactively. Don't
+   over-produce; long material → briefs.
+4. **Follow-up research** to close every surfaced question with authority (the tail of the continuous
+   research above — not the only research after step 1).
+5. **Self-interview — REQUIRED, visible, before writing.** After the user's decisions, run an explicit
+   self-interview over the **self-owned** design decisions you'd otherwise bake in silently (schema,
+   paths, edge cases, spec boundaries, mechanics): pose each as a question, argue the alternatives, pick
+   with rationale, and state the failure mode it guards against. Go **adversarially deep on the 1–2
+   decisions that shape everything downstream** — work the problems, edge cases, and solutions out loud.
+   This is the Overhaul-1 practice; **do not jump from decisions straight to prose.** It becomes the
+   spec's Decision Log.
+6. **Write the spec** (Overhaul-1 template: Objective · Scope · Requirements w/ `*Check:*` · Lessons ·
    Method · Deliverables · Acceptance · Verification · Open items · Decision log). Update §7 status.
 
 **Disciplines (from `PRACTICES.md`):** taxonomy-as-spine + single-source-of-truth · rule-vs-support
@@ -75,9 +91,11 @@ find→adjudicate→fix + loop-cap-3; coherence pass as a gate; deterministic FR
   not binding"; tests/prongs not up front; SCOTUS in "Recent developments" → S1 rules + S7.
 
 **Feasibility (2026-07-01):** headless `codex exec` works (stdin `/dev/null` + timeout wrapper).
-**Codex's CL MCP OAuth is still expired** (3 tries; fix = `codex mcp logout courtlistener && codex
-mcp login courtlistener` from the CLI) — but **not blocking**: reviewers read the data-lake, not live
-CL, and the lake is best built via the direct CL REST API (token) or the authenticated Claude CL MCP.
+**S2 build path (decided 2026-07-01): Codex builds the data-lake** via a direct CL **REST API v4**
+ingest script (token read from `~/.config/cssi/cl-token`, ~1,000 req/hr → paced + disk-cached +
+resumable). This sidesteps the expired Codex CL-MCP OAuth (no MCP needed) and conserves Claude usage.
+**Codex = builder + reviewer; Claude orchestrates/designs + takes 1 of the 3 review lanes.** The
+Claude CL MCP stays only for interactive spot-checks.
 Live sites 200; popovers on; FlexSearch in place; MIT needs only `LICENSE.txt` retained.
 
 ## 3. The bundle & execution plan
@@ -111,7 +129,7 @@ Each: **Direction · Research first · Interview-extract (choices + what to show
   three-field treatment vocabulary, the AI guardrails G1–G10, the reader-facing signaling scheme, the
   term register + SSOT transclusion rule, the 6-tier authority lexicon ("persuasive outside circuit"),
   slip-op-current-term-only, numbered apply-it lists, no meta-labels, SCOTUS-never-in-Recent-Dev,
-  mnemonic policy (3 Golden Rules, C.R.E.W. "RE", strive-for-five, CRON), and the **Humanizer** subset
+  mnemonic policy (3 Golden Rules, C.R.E.W. "RE", strive-for-five, N.E.R.D.S., + other verified Bandiero sayings; "CRON" was a dictation error, dropped), and the **Humanizer** subset
   fit for a legal register. Each rule → Trigger/Check/Enforcement (testable by S9 + lints).
 - **Research first.** Re-read `docs/STANDARDS.md`, `docs/FINAL-QA-SPEC.md`; fetch + evaluate the
   Humanizer skill; verify mnemonics verbatim (incl. CRON's Bandiero expansion).
@@ -134,7 +152,14 @@ Each: **Direction · Research first · Interview-extract (choices + what to show
 - **Interview-extract.** The record schema; storage paths; build path (REST vs MCP); refresh cadence;
   off-CL vetting rule; the "not found ≠ fabricated" + name-vs-canonical fabrication check. *Show:* one
   fully populated example record (JSON) for a representative case incl. its progeny map.
-- **Deliverable.** `S2-authority-database.spec.md`.
+- **Deliverable.** `S2-authority-database.spec.md`. ✅ **Written 2026-07-01.** Decided: **three coordinated
+  stores** — flat per-case JSON = committed source of truth (`_overhaul2/lake/`), **derived SQLite**
+  query layer (citation graph/coverage/verification) + raw cache out-of-repo (`/Volumes/AIStore2`),
+  frontmatter = **generated projection** (lake is SSOT, two-directional drift lint). Scope = 457 now +
+  frontier identity stubs (authoring→S6, linking→S8). Treatment = 3-field + dual dates + **composite
+  (principal-holding) + `varies_by_point` + point-overrides**, derived over **three lanes** (negative-
+  keyword + top-cited + **recency**). Builder = Codex, Python stdlib, direct REST v4, paced+cached+
+  resumable. Live-confirmed the build path + the name-rank identity trap (Adams/Williams, Miranda).
 
 ### S3 — Taxonomy & Points-of-Law
 - **Direction.** Our own category tree (3-level nesting; umbrella w/ authored **overview page** →
@@ -275,8 +300,8 @@ exact CourtListener fields/calls per data element (the S2 schema).
 ## 7. Status
 | Spec | Interview | Spec written |
 |---|---|---|
-| S1 Standards & Style Manual | ☐ | ☐ |
-| S2 Verified Authority Database | ☐ | ☐ |
+| S1 Standards & Style Manual | ✅ | ✅ |
+| S2 Verified Authority Database | ✅ | ✅ |
 | S3 Taxonomy & Points-of-Law | ☐ | ☐ |
 | S4 Platform, Nav & Reader-Signaling | ☐ | ☐ |
 | S5 Entry Models | ☐ | ☐ |
