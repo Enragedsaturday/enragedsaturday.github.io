@@ -18,14 +18,14 @@ related:
 
 # Probable Cause and Reasonable Suspicion
 
+*Which level of suspicion do I actually have — reasonable suspicion or probable cause — and is it enough for what I want to do (stop, frisk, arrest, search, or get a warrant)?*
+
 > [!rule] Black-letter rule
 > **Probable cause** exists when, under the totality of the circumstances, there is a "fair probability that contraband or evidence of a crime will be found in a particular place" — a practical, non-technical probability on which reasonable and prudent people act, not a technical certainty and never a fixed percentage. *[[Illinois v. Gates|Gates]]*, 462 U.S. 213, 238 (1983); *[[Brinegar v. United States|Brinegar]]*, 338 U.S. 160, 175 (1949).
 >
 > **Reasonable suspicion** requires "specific reasonable inferences" drawn from **articulable facts** in light of the officer's experience — a particularized and objective basis, judged on the whole picture; an "inchoate and unparticularized suspicion or 'hunch'" is not enough. *[[Terry v. Ohio|Terry]]*, 392 U.S. 1, 27 (1968); *[[United States v. Cortez|Cortez]]*, 449 U.S. 411, 417–18 (1981).
 
 ## The Brief
-
-**Field-decisive question:** *Which level of suspicion do I actually have — reasonable suspicion or probable cause — and is it enough for what I want to do (stop, frisk, arrest, search, or get a warrant)?* Naming the rung is the whole game: the same facts that lawfully support a brief *[[Terry v. Ohio|Terry]]* stop will not support an arrest, and an officer who reaches for the wrong rung loses the evidence.
 
 **The suspicion ladder — state it up front.** Fourth Amendment proof runs on a ladder of escalating certainty, and each rung unlocks a different power:
 
@@ -68,9 +68,15 @@ The quantum **climbs with the intrusion** — the greater the government's intru
 - **Divide-and-conquer.** Do not pick the facts apart and explain each away — the test is the **whole picture**. *[[District of Columbia v. Wesby|Wesby]]*; *[[United States v. Arvizu|Arvizu]]*.
 - **Locking onto the charge you named.** Probable cause is **objective**; it survives even if the eventual charge differs from the one you had in mind. *[[Devenpeck v. Alford|Devenpeck]]*.
 
+## Lower-court developments
+
+Role-tagged, **circuit/state only** (no SCOTUS — a SCOTUS holding is never a “development”; it goes in the brief and the Key cases). An emerging **circuit split** may also earn a one-line mention in the brief itself, by judgment. The core probable-cause and reasonable-suspicion standards are stable; the circuits continue to police the **reasonable-suspicion floor** against vague, uncorroborated tips. A circuit decision is **binding in its own circuit** and **persuasive (outside circuit)** elsewhere.
+
+- **United States v. Daniels (10th Cir. 2024)** — *role: narrows / tightens the RS floor.* On de novo totality review, a **near-anonymous 911 tip** (three men in dark hoodies near an idling SUV, reporting no actual illegality) plus the suspect's mere presence did **not** amount to reasonable suspicion; overly generic tips reporting lawful-sounding conduct give police excessive discretion and fall **below** the RS floor. Tightens the *[[Florida v. J.L.|J.L.]]* / *[[Navarette v. California|Navarette]]* line. **Binding in-circuit — 10th Cir.** [opinion](https://www.courtlistener.com/opinion/9500360/united-states-v-daniels/)
+
 ## Key cases
 
-| Case | Holding | CL |
+| Case | Holding | Opinion |
 |---|---|---|
 | *[[Brinegar v. United States]]*, 338 U.S. 160 (1949) | Classic probable-cause statement: practical, non-technical **probabilities** on which reasonable people act — not technical certainty. | [opinion](https://www.courtlistener.com/opinion/104716/brinegar-v-united-states/) |
 | *[[Terry v. Ohio]]*, 392 U.S. 1 (1968) | A brief investigative stop and protective frisk require **reasonable, articulable suspicion** — specific inferences, not an inchoate hunch. | [opinion](https://www.courtlistener.com/opinion/107729/terry-v-ohio/) |
@@ -96,7 +102,7 @@ The quantum **climbs with the intrusion** — the greater the government's intru
 
 These cases are treated in full on other doctrine pages but bear directly on the probable-cause / reasonable-suspicion **quantum-of-proof** inquiry, framed here for it.
 
-| Case | Relevance here | Primary home | CL |
+| Case | Relevance here | Primary home | Opinion |
 |---|---|---|---|
 | *[[Adams v. Williams]]*, 407 U.S. 143 (1972) | ***Anchors.*** A **known**, face-to-face informant's tip carries enough reliability to furnish reasonable suspicion for a stop and frisk — RS need not rest on the officer's own observation. The foil for the anonymous-tip line. | [[Terry Stops and Reasonable Suspicion]] | [opinion](https://www.courtlistener.com/opinion/108571/adams-v-williams/) |
 | *[[Kansas v. Glover]]*, 589 U.S. 376 (2020) | ***Extends.*** Reasonable suspicion permits **commonsense inferences**: a revoked-license registered owner is presumptively the driver — a "narrow" holding defeated by facts negating the inference. | [[Traffic Stops]] | [opinion](https://www.courtlistener.com/opinion/9231313/kansas-v-glover/) |
@@ -110,12 +116,6 @@ These cases are treated in full on other doctrine pages but bear directly on the
 | *[[United States v. Brignoni-Ponce]]*, 422 U.S. 873 (1975) | ***Content.*** A roving border-area stop requires reasonable suspicion on **specific articulable facts**; apparent ancestry alone cannot supply it — an early gloss on the **content** of RS. | [[Border Searches]] | [opinion](https://www.courtlistener.com/opinion/109311/united-states-v-brignoni-ponce/) |
 | *[[Maryland v. Buie]]*, 494 U.S. 325 (1990) | ***Extends.*** A protective sweep beyond the spaces immediately adjoining an arrest requires **reasonable, articulable suspicion** the area harbors a dangerous person — the *[[Terry v. Ohio|Terry]]* RS quantum imported into the in-home arrest. | [[Securing the Scene]] | [opinion](https://www.courtlistener.com/opinion/112384/maryland-v-buie/) |
 | *[[Case v. Montana]]*, 607 U.S. ___ (2026) | ***Boundary.*** **Probable cause is the criminal-investigative quantum and is not transplanted** to non-investigative contexts: a warrantless **emergency-aid** home entry needs only *[[Brigham City v. Stuart|Brigham City]]*'s "objectively reasonable basis," not PC. Marks the boundary of where this page's standards apply. | [[Emergency Aid]] | [opinion](https://www.courtlistener.com/opinion/10774335/case-v-montana/) |
-
-## Circuit & state frontier
-
-Role-tagged, **circuit/state only (no SCOTUS — a SCOTUS holding is never a “development”; it goes in the brief and the Key cases)**. The core probable-cause and reasonable-suspicion standards are stable; the circuits continue to police the **reasonable-suspicion floor** against vague, uncorroborated tips. A circuit decision is **binding in its own circuit** and **persuasive (outside circuit)** elsewhere.
-
-- **United States v. Daniels (10th Cir. 2024)** — *role: narrows / tightens the RS floor.* On de novo totality review, a **near-anonymous 911 tip** (three men in dark hoodies near an idling SUV, reporting no actual illegality) plus the suspect's mere presence did **not** amount to reasonable suspicion; overly generic tips reporting lawful-sounding conduct give police excessive discretion and fall **below** the RS floor. Tightens the *[[Florida v. J.L.|J.L.]]* / *[[Navarette v. California|Navarette]]* line. **Binding in-circuit — 10th Cir.** [opinion](https://www.courtlistener.com/opinion/9500360/united-states-v-daniels/)
 
 ## Visual
 
