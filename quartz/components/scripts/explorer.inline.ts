@@ -112,16 +112,15 @@ function createFolderNode(
   const folderPath = node.slug
   folderContainer.dataset.folderpath = folderPath
 
-  // S4 TOC-tree nav model (unified — audit CODE-03): EVERY folder header is a link
-  // to that node's overview (its folder index), at every depth, so authored category
-  // overviews stay reachable. Only top-level categories keep a chevron, which is the
-  // sole expand/collapse toggle; nested folders render as always-open BRANCHES.
+  // S4 TOC-tree nav model (audit CODE-03 — user decision, S4 interview round 1):
+  // top-level category headers toggle as a WHOLE ROW (title + chevron), and the
+  // category's overview is reachable via an "Overview" first-child row inside the
+  // opened branch. Nested folders stay always-open BRANCHES whose header links
+  // straight to that node's overview (S3 model, signed off).
   const isSubtree = depth > 0
   if (isSubtree) {
     li.classList.add("subtree")
-  }
-
-  {
+    // nested branch: header IS the overview link
     const button = titleContainer.querySelector(".folder-button") as HTMLElement
     const a = document.createElement("a")
     a.href = resolveRelative(currentSlug, folderPath)
@@ -129,6 +128,21 @@ function createFolderNode(
     a.className = "folder-title"
     a.textContent = node.displayName
     button.replaceWith(a)
+  } else {
+    // top-level category: whole header toggles; add the Overview first-child row
+    const span = titleContainer.querySelector(".folder-title") as HTMLElement
+    span.textContent = node.displayName
+    const ovLi = document.createElement("li")
+    ovLi.classList.add("overview-row")
+    const ovA = document.createElement("a")
+    ovA.href = resolveRelative(currentSlug, folderPath)
+    ovA.dataset.for = folderPath
+    ovA.textContent = "Overview"
+    if (currentSlug === `${folderPath}/index` || simplifySlug(currentSlug) === simplifySlug(folderPath)) {
+      ovA.classList.add("active")
+    }
+    ovLi.appendChild(ovA)
+    ul.appendChild(ovLi)
   }
 
   // if the saved state is collapsed or the default state is collapsed
@@ -247,10 +261,17 @@ async function setupExplorer(currentSlug: FullSlug) {
       window.addCleanup(() => button.removeEventListener("click", toggleExplorer))
     }
 
-    // Folder click handlers. Under the unified model every header is a LINK
-    // (createFolderNode replaces all .folder-button elements), so the stock
-    // button-toggle wiring is gone (audit CODE-04 — the dead subtree guard with it).
-    // The chevron icon is the only toggle; subtree icons are display:none + inert.
+    // Folder click handlers (user decision, S4 interview round 1): the whole
+    // top-level header row toggles — buttons exist only at depth 0 now, so no
+    // subtree guard is needed on them (audit CODE-04's dead guard stays deleted).
+    const folderButtons = explorer.getElementsByClassName(
+      "folder-button",
+    ) as HTMLCollectionOf<HTMLElement>
+    for (const button of folderButtons) {
+      button.addEventListener("click", toggleFolder)
+      window.addCleanup(() => button.removeEventListener("click", toggleFolder))
+    }
+
     const folderIcons = explorer.getElementsByClassName(
       "folder-icon",
     ) as HTMLCollectionOf<HTMLElement>

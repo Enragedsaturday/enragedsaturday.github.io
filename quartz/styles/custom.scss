@@ -121,13 +121,19 @@
   padding: 0.22rem 0; // vertical rhythm moved here from line-height so wraps stay tight
 }
 
-// Top-level category headers: the chevron is the toggle, the title is a link to
-// the category overview (audit CODE-03 — unified model). Give the small chevron a
-// real hit target.
-.explorer-content > ul > li > .folder-container > .folder-icon {
-  padding: 0.3rem;
-  margin: -0.3rem 0.05rem -0.3rem -0.3rem;
-  box-sizing: content-box;
+// Top-level category headers toggle as a whole row (audit CODE-03 — user decision,
+// S4 interview round 1); the category overview is the italic "Overview" first-child
+// row inside the opened branch.
+.explorer-content > ul > li > .folder-container {
+  cursor: pointer;
+}
+.explorer-content li.overview-row > a {
+  font-style: italic;
+  opacity: 0.7;
+
+  &.active {
+    opacity: 1;
+  }
 }
 
 // Sidebar breathing room: the left column's 2rem right-padding squeezed the tree.
