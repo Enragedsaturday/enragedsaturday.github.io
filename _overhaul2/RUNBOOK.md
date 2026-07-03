@@ -41,7 +41,9 @@ spec inherits) · **`CL-DATA-INVENTORY.md`** (exactly what CourtListener gives u
   4. **content hotfixes during planning**;
   5. officer-summary approvals — **moot**: S1 banned the artifact project-wide (S1 §2.2/R6);
   6. the **release gate** (S9).
-  *Entries:* **2026-07-02** content hotfix (Chatrie + Third-Party) — user-approved.
+  *Entries:* **2026-07-02** content hotfix (Chatrie + Third-Party) — user-approved. **2026-07-03**
+  deploy decision: hotfix commit `be02044` ships with the full-bundle deploy after EXECUTE — no
+  interim push to main (user-decided; the pre-deploy live site knowingly retains the pre-fix pages).
 - **Wrapper template notes (audit COH-25).** Future wrappers (S4+) copy `wrappers/S3.wrapper.md` and
   MUST carry two lifecycle steps: **(a)** the **REQUIRED visible self-interview** before writing (§1
   step 5); **(b)** an audit-intake step: "Read `_overhaul2/AUDIT-2026-07-02.md`, filter to your spec's
@@ -366,7 +368,9 @@ Each: **Direction · Research first · Interview-extract (choices + what to show
   a hub page) · **GAP-03b** scope the emerging-tech cluster into the Third-Party/Digital rewrite
   (reverse-keyword H · StingRay H · real-time CSLI M · IGG M · BWC M) · **GAP-03c** brief §702 /
   parallel-construction mention · **GAP-06** hotfixed (geofence pitfall) — verify no residue in the
-  rewrite · **NUM-08** negative scope: "persuasive, not binding" is already clean — budget no work.
+  rewrite · **LAW-05** strip the stale "CL object 10813527 CORRUPTED" Zorn legend (§1983 page :188;
+  same misdiagnosis class as LAW-02 — correct per S2 A1's root cause) · **NUM-08** negative scope:
+  "persuasive, not binding" is already clean — budget no work.
 
 ### S8 — Legal-Term & Case Linking + Glossary
 - **Direction.** Link **every named case** anywhere (even short names) → its page; deep-link/highlight
