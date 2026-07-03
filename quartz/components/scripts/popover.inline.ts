@@ -120,14 +120,30 @@ function clearActivePopover() {
   allPopoverElements.forEach((popoverElement) => popoverElement.classList.remove("active-popover"))
 }
 
+// S4 · R5 — popover attachment via EVENT DELEGATION: one document-level handler
+// resolving `target.closest("a.internal")`, so server-rendered pills, casetable-
+// injected badges, did-you-mean chips, and any future injected anchor get popovers
+// without registration-order coupling.
 document.addEventListener("nav", () => {
-  const links = [...document.querySelectorAll("a.internal")] as HTMLAnchorElement[]
-  for (const link of links) {
-    link.addEventListener("mouseenter", mouseEnterHandler)
-    link.addEventListener("mouseleave", clearActivePopover)
-    window.addCleanup(() => {
-      link.removeEventListener("mouseenter", mouseEnterHandler)
-      link.removeEventListener("mouseleave", clearActivePopover)
-    })
+  const onMouseOver = (e: MouseEvent) => {
+    const target = e.target as HTMLElement | null
+    const link = target?.closest?.("a.internal") as HTMLAnchorElement | null
+    if (!link) return
+    if (link === activeAnchor) return // re-fire guard: moving across the link's children
+    mouseEnterHandler.call(link, { clientX: e.clientX, clientY: e.clientY })
   }
+  const onMouseOut = (e: MouseEvent) => {
+    const target = e.target as HTMLElement | null
+    const link = target?.closest?.("a.internal")
+    if (!link) return
+    const to = e.relatedTarget as HTMLElement | null
+    if (to?.closest?.("a.internal") === link) return // still inside the same anchor
+    clearActivePopover()
+  }
+  document.addEventListener("mouseover", onMouseOver)
+  document.addEventListener("mouseout", onMouseOut)
+  window.addCleanup(() => {
+    document.removeEventListener("mouseover", onMouseOver)
+    document.removeEventListener("mouseout", onMouseOut)
+  })
 })

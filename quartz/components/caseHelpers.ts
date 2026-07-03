@@ -6,6 +6,10 @@
 import { QuartzPluginData } from "../plugins/vfile"
 import { FilePath, FullSlug, resolveRelative, simplifySlug, slugifyFilePath } from "../util/path"
 
+// S4 · R5 — the pill/anchor target: ONE exported constant (audit COH-18; S3's
+// restructure re-homes the page, at which point this is the one edit).
+export const GOOD_LAW_SLUG = "2-legal-system-research/Verifying-Good-Law" as FullSlug
+
 // Canonical good-law treatment axis (S1 §3.D / N13). Kept STRICTLY separate from the
 // orthogonal authority-weight axis — the two are never merged.
 export const TREATMENT_STATUSES = [
@@ -24,6 +28,134 @@ export const TREATMENT_LABELS: Record<string, string> = {
   limited: "Limited",
   abrogated: "Abrogated",
   overruled: "Overruled",
+}
+
+// ---------------------------------------------------------------------------
+// S5 — Field-I composite validity (PRACTICES §2 / S1 R2), rendered everywhere a
+// treatment signal appears. Pages that still carry the LEGACY single-status
+// frontmatter render THROUGH the S1 Amendment A4 migration mapping (audit COH-11 —
+// the only sanctioned old→new translation), so the reader sees one vocabulary
+// before and after S2's projector lands.
+
+export const FIELD_I_KEYS = [
+  "good_law",
+  "history",
+  "caution",
+  "questioned",
+  "superseded",
+  "unverified",
+] as const
+export type FieldIKey = (typeof FIELD_I_KEYS)[number]
+
+export const FIELD_I_LABELS: Record<string, string> = {
+  good_law: "Good law",
+  history: "History",
+  caution: "Caution",
+  questioned: "Questioned",
+  superseded: "Superseded",
+  unverified: "Unverified",
+}
+
+// css-safe key for status classes (treatment-good-law, treatment-caution, …)
+export function fieldICssKey(fieldI: string): string {
+  return fieldI.replace(/_/g, "-")
+}
+
+// S1 A4 — legacy `treatment.status` → Field-I composite.
+export const LEGACY_TO_FIELD_I: Record<string, FieldIKey> = {
+  good: "good_law",
+  limited: "caution",
+  criticized: "caution",
+  overruled: "superseded",
+  abrogated: "superseded",
+}
+
+// Normalize a projected Field-I value: strips glyphs, tolerates the long
+// PRACTICES-§2 spellings ("superseded/not_current", "questioned/overruling_risk").
+export function normFieldI(v: unknown): FieldIKey | undefined {
+  if (typeof v !== "string") return undefined
+  const s = v.toLowerCase().trim().split("/")[0].replace(/[^a-z_]/g, "")
+  return (FIELD_I_KEYS as readonly string[]).includes(s) ? (s as FieldIKey) : undefined
+}
+
+export interface PointOverride {
+  point?: string
+  point_label?: string
+  field_i_validity?: string
+  field_ii?: string
+  by?: string
+  by_cite?: string
+  as_of_treatment?: string
+  scope_note?: string
+}
+
+export interface ResolvedTreatment {
+  fieldI: FieldIKey
+  label: string
+  varies: boolean
+  legacy?: string // set when the page predates the S2 projection (rendered via A4)
+  asOfContent?: string
+  asOfTreatment?: string
+  note?: string
+  overrides: PointOverride[]
+}
+
+// Read a case page's treatment from frontmatter, whichever generation it carries:
+// (a) the S2-projected 3-field shape (`field_i_validity` + dual dates + overrides),
+// (b) the legacy single-status shape, mapped via S1 A4. Returns null when the page
+// carries no treatment block at all.
+export function resolveTreatment(fm: Record<string, any> | undefined): ResolvedTreatment | null {
+  const t = fm?.treatment as Record<string, any> | undefined
+  if (!t) return null
+
+  const projected = normFieldI(t.field_i_validity)
+  if (projected) {
+    const overrides = Array.isArray(t.point_overrides) ? (t.point_overrides as PointOverride[]) : []
+    return {
+      fieldI: projected,
+      label: FIELD_I_LABELS[projected],
+      varies: t.varies_by_point === true || overrides.length > 0,
+      asOfContent: t.as_of_content ? String(t.as_of_content) : undefined,
+      asOfTreatment: t.as_of_treatment ? String(t.as_of_treatment) : undefined,
+      note: t.scope_note ? String(t.scope_note) : t.note ? String(t.note) : undefined,
+      overrides,
+    }
+  }
+
+  const legacy = normStatus(t.status)
+  if (!legacy) return null
+  const mapped = LEGACY_TO_FIELD_I[legacy] ?? "unverified"
+  return {
+    fieldI: mapped,
+    label: FIELD_I_LABELS[mapped],
+    // A4: every `limited` case carries ≥1 point override post-projection; pre-projection
+    // the varies warning rides on the mapped composite so the reader is never unwarned.
+    varies: legacy === "limited",
+    asOfTreatment: t.as_of ? String(t.as_of) : undefined,
+    note: t.note ? String(t.note) : undefined,
+    legacy,
+    overrides: [],
+  }
+}
+
+// S4 · R6 — the provenance tooltip template (title attr), shared by the page-header
+// pill and every table-injected pill: status · dual dates (degrading to single
+// as-of) · one-line note · methodology pointer.
+export function treatmentHoverTitle(rt: ResolvedTreatment): string {
+  const dates =
+    rt.asOfContent && rt.asOfTreatment
+      ? `content verified ${rt.asOfContent} · treatment checked ${rt.asOfTreatment}`
+      : rt.asOfTreatment
+        ? `checked as of ${rt.asOfTreatment}`
+        : undefined
+  return [
+    `Treatment: ${rt.label}${rt.varies ? " (varies by point)" : ""}`,
+    dates,
+    rt.note,
+    "Click: how we verify good law",
+  ]
+    .filter(Boolean)
+    .join(" · ")
 }
 
 // The orthogonal six-tier authority-weight lexicon (S1 §4). Used only to derive a

@@ -1,8 +1,16 @@
-// S3 · R4 #2 — CaseTable client enhancement.
+// S3 · R4 #2 — CaseTable client enhancement (S5 placement rework).
 // Upgrades a plain GFM markdown table (one with a "Case"/"Name" column) into a
 // sortable + filterable table, enriching cells by slug-matching to the case-page
 // frontmatter index (data island `[data-casetable-index]`). Fully degraded form = the
 // untouched static markdown table (this script simply doesn't run with JS disabled).
+//
+// S5 · entry-model placement (audit COH-18 — mechanism is S4's, placement is S5's):
+// the case cell gains a META LINE under the case name — the neutral authority-weight
+// text + the Field-I treatment PILL as a real `a.internal` anchor to the good-law
+// methodology page (popovers fire via S4 R5's event delegation; provenance rides the
+// title attr per S4 R6). Treatment/weight COLUMNS are retired from the authored
+// schema (NUM-07: 51 header schemas → the controlled set); dates never render in the
+// table (S1 R3 — hover only).
 
 interface CaseRec {
   title: string
@@ -12,20 +20,25 @@ interface CaseRec {
   year: number | string
   weight: string
   weightTier: string
-  treatment: string
+  treatment: string // Field-I key (projected or legacy-mapped via S1 A4)
+  treatmentLabel: string
+  varies: boolean
+  hover: string
   roles: string[]
 }
 interface CaseIndex {
   cases: Record<string, CaseRec>
   names: Record<string, string>
+  goodLawHref?: string
 }
 
-const TREATMENT_LABELS: Record<string, string> = {
-  good: "Good law",
-  criticized: "Criticized",
-  limited: "Limited",
-  abrogated: "Abrogated",
-  overruled: "Overruled",
+const FIELD_I_LABELS: Record<string, string> = {
+  good_law: "Good law",
+  history: "History",
+  caution: "Caution",
+  questioned: "Questioned",
+  superseded: "Superseded",
+  unverified: "Unverified",
 }
 const WEIGHT_RANK: Record<string, number> = {
   "binding-scotus": 0,
@@ -38,12 +51,13 @@ const WEIGHT_RANK: Record<string, number> = {
   unknown: 7,
 }
 const TREAT_RANK: Record<string, number> = {
-  good: 0,
-  criticized: 1,
-  limited: 2,
-  abrogated: 3,
-  overruled: 4,
-  "": 5,
+  good_law: 0,
+  history: 1,
+  caution: 2,
+  questioned: 3,
+  superseded: 4,
+  unverified: 5,
+  "": 6,
 }
 
 function loadIndex(): CaseIndex {
@@ -97,18 +111,79 @@ function lookup(cell: HTMLTableCellElement, index: CaseIndex): CaseRec | null {
   return null
 }
 
-type ColKind = "case" | "court" | "year" | "weight" | "treatment" | "role" | "jurisdiction" | "other"
+type ColKind =
+  | "case"
+  | "court"
+  | "year"
+  | "weight"
+  | "treatment"
+  | "role"
+  | "jurisdiction"
+  | "relevance"
+  | "home"
+  | "cl"
+  | "other"
 
 function classifyHeader(text: string): ColKind {
   const t = text.toLowerCase()
   if (/\b(case|name)\b/.test(t)) return "case"
+  if (/courtlistener|\bcl\b/.test(t)) return "cl"
   if (/court/.test(t)) return "court"
   if (/year|date|decided/.test(t)) return "year"
   if (/weight|authority/.test(t)) return "weight"
   if (/treatment|status|good.?law/.test(t)) return "treatment"
   if (/role/.test(t)) return "role"
   if (/jurisdiction|circuit/.test(t)) return "jurisdiction"
+  if (/relevance|why it matters/.test(t)) return "relevance"
+  if (/home/.test(t)) return "home"
   return "other"
+}
+
+// S5 — the case-cell meta line: weight (neutral text) + treatment pill (anchor).
+function injectCaseMeta(
+  caseCell: HTMLTableCellElement,
+  rec: CaseRec,
+  index: CaseIndex,
+  hasWeightCol: boolean,
+  hasTreatmentCol: boolean,
+) {
+  if (caseCell.querySelector(".casetable-case-meta")) return
+  const meta = document.createElement("span")
+  meta.className = "casetable-case-meta"
+
+  if (rec.weight && !hasWeightCol) {
+    const w = document.createElement("span")
+    w.className = "casetable-weight"
+    w.title = "Authority weight"
+    w.textContent = rec.weight
+    meta.appendChild(w)
+  }
+
+  if (rec.treatment && !hasTreatmentCol) {
+    const pill = document.createElement("a")
+    pill.className = `internal casetable-pill treatment-${rec.treatment.replace(/_/g, "-")}`
+    pill.href = index.goodLawHref ?? "#"
+    pill.title = rec.hover || `Treatment: ${rec.treatmentLabel}`
+    pill.dataset.treatment = rec.treatment
+    const dot = document.createElement("span")
+    dot.className = "treatment-dot"
+    dot.setAttribute("aria-hidden", "true")
+    pill.appendChild(dot)
+    pill.appendChild(
+      document.createTextNode(rec.treatmentLabel || FIELD_I_LABELS[rec.treatment] || rec.treatment),
+    )
+    meta.appendChild(pill)
+
+    if (rec.varies) {
+      const v = document.createElement("span")
+      v.className = "casetable-varies"
+      v.title = "Treatment varies by point of law — see the case page's Treatment section"
+      v.textContent = "varies by point"
+      meta.appendChild(v)
+    }
+  }
+
+  if (meta.childNodes.length > 0) caseCell.appendChild(meta)
 }
 
 function enhanceTable(table: HTMLTableElement, index: CaseIndex) {
@@ -123,11 +198,24 @@ function enhanceTable(table: HTMLTableElement, index: CaseIndex) {
   table.dataset.casetableEnhanced = "true"
   table.classList.add("casetable")
 
+  // S5 — controlled widths: tag every column with its kind; CSS pins the narrow
+  // columns and lets holding/relevance flex, so the table fits without side-scroll.
+  const tagRowCells = (row: HTMLTableRowElement) => {
+    Array.from(row.cells).forEach((c, i) => {
+      if (kinds[i]) c.setAttribute("data-col", kinds[i])
+    })
+  }
+  tagRowCells(headRow)
+
   const bodyRows: HTMLTableRowElement[] = table.tBodies[0]
     ? Array.from(table.tBodies[0].rows)
     : Array.from(table.rows).slice(1)
+  bodyRows.forEach(tagRowCells)
+  table.classList.add("casetable-fixed")
 
   const colIndex = (k: ColKind) => kinds.indexOf(k)
+  const hasWeightCol = colIndex("weight") >= 0
+  const hasTreatmentCol = colIndex("treatment") >= 0
 
   // populate row datasets (from columns where present, else frontmatter enrichment)
   for (const row of bodyRows) {
@@ -153,17 +241,7 @@ function enhanceTable(table: HTMLTableElement, index: CaseIndex) {
     row.dataset.role = role
     row.dataset.weightTier = weightTier
 
-    // inject a treatment badge into the case cell when treatment isn't its own column
-    if (rec && rec.treatment && colIndex("treatment") < 0) {
-      if (!caseCell.querySelector(".casetable-badge")) {
-        const badge = document.createElement("span")
-        badge.className = `casetable-badge treatment-${rec.treatment}`
-        badge.textContent = TREATMENT_LABELS[rec.treatment] ?? rec.treatment
-        badge.title = `Treatment: ${rec.treatment}`
-        caseCell.appendChild(document.createTextNode(" "))
-        caseCell.appendChild(badge)
-      }
-    }
+    if (rec) injectCaseMeta(caseCell, rec, index, hasWeightCol, hasTreatmentCol)
   }
 
   // ---- sorting ----
@@ -178,6 +256,14 @@ function enhanceTable(table: HTMLTableElement, index: CaseIndex) {
         return WEIGHT_RANK[row.dataset.weightTier ?? "unknown"] ?? 99
       case "treatment":
         return TREAT_RANK[(row.dataset.treatment ?? "") as string] ?? 99
+      case "case":
+        // sort by the case NAME only — the injected meta line must not pollute order
+        return (
+          row.cells[col]?.querySelector("a, em, i")?.textContent ??
+          txt
+        )
+          .toLowerCase()
+          .trim()
       default:
         return txt.toLowerCase()
     }
@@ -258,7 +344,7 @@ function enhanceTable(table: HTMLTableElement, index: CaseIndex) {
       .forEach((v) => {
         const o = document.createElement("option")
         o.value = v.toLowerCase()
-        o.textContent = def.key === "treatment" ? TREATMENT_LABELS[v] ?? v : v
+        o.textContent = def.key === "treatment" ? FIELD_I_LABELS[v] ?? v : v
         sel.appendChild(o)
       })
     selects.push({ key: def.key, el: sel })

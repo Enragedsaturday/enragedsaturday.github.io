@@ -6,7 +6,9 @@ import { visit } from "unist-util-visit"
 import { Root } from "hast"
 import {
   COURT_LEVEL_LABELS,
-  normStatus,
+  GOOD_LAW_SLUG,
+  resolveTreatment,
+  treatmentHoverTitle,
   weightTierKey,
 } from "./caseHelpers"
 import { simplifySlug } from "../util/path"
@@ -52,6 +54,9 @@ export default (() => {
       const jurisdiction = fm.circuit
         ? `${fm.circuit} Cir.`
         : COURT_LEVEL_LABELS[fm.court_level as string] ?? (fm.court ? String(fm.court) : "")
+      // S5 — resolve treatment once, server-side (projected or legacy-via-A4), so the
+      // client injects one vocabulary and one hover template everywhere.
+      const rt = resolveTreatment(fm)
       cases[key] = {
         title: fm.title ?? "",
         court: fm.court ?? "",
@@ -60,7 +65,10 @@ export default (() => {
         year: fm.year ?? "",
         weight: fm.authority_weight ?? "",
         weightTier: weightTierKey(fm.authority_weight),
-        treatment: normStatus(fm.treatment?.status) ?? "",
+        treatment: rt?.fieldI ?? "",
+        treatmentLabel: rt?.label ?? "",
+        varies: rt?.varies ?? false,
+        hover: rt ? treatmentHoverTitle(rt) : "",
         roles,
       }
       const title = (fm.title ?? "").toString().toLowerCase()
@@ -69,7 +77,11 @@ export default (() => {
       for (const a of aliases) names[String(a).toLowerCase()] = key
     }
 
-    const payload = JSON.stringify({ cases, names }).replace(/</g, "\\u003c")
+    // the pill anchor target (S4's one exported constant), absolute from site root
+    const payload = JSON.stringify({ cases, names, goodLawHref: "/" + GOOD_LAW_SLUG }).replace(
+      /</g,
+      "\\u003c",
+    )
 
     return (
       <span class="casetable-data" hidden aria-hidden="true">

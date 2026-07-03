@@ -3,6 +3,11 @@
 // S3 · R4 #2 / R8 — sortable + filterable case table. The static markdown table is
 // untouched until JS runs, and the existing `.table-container { overflow-x: auto }`
 // keeps the fallback horizontally scrollable on mobile.
+//
+// S5 — the ONE table schema (NUM-07): narrow columns are pinned, holding/relevance
+// flexes, the table fits its container with no side-scroll. The case cell carries a
+// META LINE (authority weight + Field-I treatment pill-as-anchor) injected under the
+// case name; dates never render in cells (S1 R3 — hover only).
 
 .casetable-data {
   display: none;
@@ -44,7 +49,6 @@ table.casetable {
     cursor: pointer;
     user-select: none;
     position: relative;
-    white-space: nowrap;
 
     &:hover {
       color: var(--secondary);
@@ -60,51 +64,133 @@ table.casetable {
     }
   }
 
-  .casetable-badge {
-    display: inline-block;
-    margin-left: 0.35rem;
-    padding: 0.02rem 0.4rem;
+  // S5 — controlled widths: fixed layout, narrow columns pinned, prose columns flex.
+  // Desktop/tablet only — at phone widths a fixed 100% layout crushes the prose
+  // column, so the stock auto layout + `.table-container` overflow-x stays in charge.
+  @media all and not ($mobile) {
+    &.casetable-fixed {
+      table-layout: fixed;
+      width: 100%;
+
+      th[data-col="case"] {
+        width: 30%;
+      }
+      th[data-col="cl"] {
+        width: 4.6rem;
+      }
+      th[data-col="home"] {
+        width: 17%;
+      }
+      th[data-col="year"] {
+        width: 4.2rem;
+      }
+
+      td,
+      th {
+        overflow-wrap: break-word;
+      }
+    }
+  }
+
+  // S5 — the case-cell meta line: weight (neutral) + Field-I pill (anchor) under the
+  // case name. Block-level so the name stays the first line.
+  .casetable-case-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.35rem;
+    margin-top: 0.3rem;
+
+    .casetable-weight {
+      font-size: 0.72rem;
+      color: var(--darkgray);
+      border: 1px solid var(--lightgray);
+      border-radius: 0.3rem;
+      padding: 0 0.35rem;
+      white-space: nowrap;
+    }
+
+    .casetable-varies {
+      font-size: 0.7rem;
+      font-style: italic;
+      color: var(--darkgray);
+      border: 1px dashed var(--gray);
+      border-radius: 0.8rem;
+      padding: 0 0.4rem;
+      white-space: nowrap;
+    }
+  }
+
+  a.casetable-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    padding: 0.02rem 0.45rem;
     border-radius: 0.8rem;
     font-size: 0.72rem;
     font-weight: $semiBoldWeight;
-    vertical-align: middle;
     border: 1px solid transparent;
+    white-space: nowrap;
 
-    &.treatment-good {
+    .treatment-dot {
+      width: 0.45rem;
+      height: 0.45rem;
+      border-radius: 50%;
+      background: currentColor;
+      flex-shrink: 0;
+    }
+
+    &:hover {
+      filter: brightness(1.08);
+      cursor: pointer;
+    }
+
+    // Field-I composite colors — same six classes as the page-header pill
+    &.treatment-good-law {
       color: #1a7f37;
       background: rgba(26, 127, 55, 0.12);
     }
-    &.treatment-criticized {
+    &.treatment-history {
+      color: #0969da;
+      background: rgba(9, 105, 218, 0.1);
+    }
+    &.treatment-caution {
       color: #9a6700;
       background: rgba(154, 103, 0, 0.12);
     }
-    &.treatment-limited,
-    &.treatment-abrogated {
+    &.treatment-questioned {
       color: #bc4c00;
       background: rgba(188, 76, 0, 0.12);
     }
-    &.treatment-overruled {
+    &.treatment-superseded {
       color: #cf222e;
       background: rgba(207, 34, 46, 0.12);
+    }
+    &.treatment-unverified {
+      color: var(--gray);
+      background: var(--lightgray);
     }
   }
 }
 
-:root[saved-theme="dark"] table.casetable .casetable-badge {
-  &.treatment-good {
+:root[saved-theme="dark"] table.casetable a.casetable-pill {
+  &.treatment-good-law {
     color: #4ac26b;
     background: rgba(74, 194, 107, 0.13);
   }
-  &.treatment-criticized {
+  &.treatment-history {
+    color: #539bf5;
+    background: rgba(83, 155, 245, 0.13);
+  }
+  &.treatment-caution {
     color: #d4a72c;
     background: rgba(212, 167, 44, 0.13);
   }
-  &.treatment-limited,
-  &.treatment-abrogated {
+  &.treatment-questioned {
     color: #e09b3b;
     background: rgba(224, 155, 59, 0.13);
   }
-  &.treatment-overruled {
+  &.treatment-superseded {
     color: #f85149;
     background: rgba(248, 81, 73, 0.13);
   }

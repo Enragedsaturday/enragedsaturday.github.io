@@ -12,10 +12,25 @@ date_decided: ""
 docket: ""
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: limited
-  as_of: 2026-06-30
-  note: "Cabined as applied to vehicle searches incident to arrest by Arizona v. Gant (2009); Belton's container rule survives within Gant's narrowed framework."
-  by: ["[[Arizona v. Gant]]"]
+  field_i_validity: caution
+  varies_by_point: true
+  as_of_content: 2026-06-30
+  as_of_treatment: 2026-06-30
+  scope_note: "Composite reflects the principal holding; the vehicle-search point is superseded by Arizona v. Gant (2009) — Belton's container rule survives within Gant's narrowed framework."
+  composite_basis_ref: "search.vehicle.sia-recent-occupant"
+  point_overrides:
+    - point: "search.vehicle.sia-recent-occupant"
+      point_label: "Vehicle search incident to a recent occupant's arrest"
+      field_i_validity: superseded
+      field_ii: superseded
+      by: "[[Arizona v. Gant]]"
+      by_cite: "556 U.S. 332 (2009)"
+      as_of_treatment: 2026-06-30
+      scope_note: "The automatic passenger-compartment rule is replaced by Gant's two-justification test."
+lake:
+  record_id: "New York v. Belton"
+  status: verified
+  projected_at: 2026-07-03
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/110559/new-york-v-belton/"
   opinion_id: 110559
@@ -33,7 +48,7 @@ holding: "Defines the SCOPE of a vehicle search incident to arrest: on a lawful 
 
 # New York v. Belton
 
-*453 U.S. 454 (1981)* · U.S. Supreme Court · **Binding — SCOTUS** · Treatment: **limited** *(as of 2026-06-30)*
+*453 U.S. 454 (1981)* · U.S. Supreme Court · **Binding — SCOTUS** · Treatment: **Caution — varies by point**
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
@@ -52,8 +67,15 @@ Because the officer had made lawful custodial arrests of the car's occupants, he
 The search of the jacket was a lawful search incident to arrest; the New York Court of Appeals' suppression order was reversed.
 
 ## Treatment & subsequent history
-- **Status:** limited *(as of 2026-06-30)* — **Binding — SCOTUS**.
-- **Limited / cabined by [[Arizona v. Gant]] (2009)**: *Gant* rejected the broad reading of *Belton* that authorized an automatic passenger-compartment search whenever an occupant was arrested. After *Gant*, a vehicle search incident to arrest is permissible only if the arrestee is within reaching distance of the passenger compartment at the time of the search, or it is reasonable to believe the vehicle contains evidence of the offense of arrest. *Belton*'s container rule survives within that narrowed framework, and officers' reasonable pre-*Gant* reliance on *Belton* was addressed in [[Davis v. United States]].
+
+**Composite: Caution — treatment varies by point.** *Belton* is not simply "good" or "bad" law; its validity depends on which point you rely on.
+
+| Point of law | Status | Controlling authority |
+|---|---|---|
+| Vehicle search incident to a recent occupant's arrest | **Superseded** | *[[Arizona v. Gant]]*, 556 U.S. 332 (2009) — the automatic passenger-compartment rule is replaced by *Gant*'s two-justification test |
+| Containers within the passenger compartment (within a lawful search) | **Good law** | *Belton*'s container rule survives inside *Gant*'s narrowed framework |
+
+*Gant* rejected the broad reading of *Belton* that authorized an automatic passenger-compartment search whenever an occupant was arrested. After *Gant*, a vehicle search incident to arrest is permissible only if the arrestee is within reaching distance of the passenger compartment at the time of the search, or it is reasonable to believe the vehicle contains evidence of the offense of arrest. Officers' reasonable pre-*Gant* reliance on *Belton* was addressed in [[Davis v. United States]].
 
 ## Appears on
 - [[Search Incident to Arrest]] — *Key — Progeny / Refinement*

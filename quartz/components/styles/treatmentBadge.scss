@@ -2,6 +2,11 @@
 
 // S3 · R4 #1 — treatment badge (colored, good-law axis) + authority-weight label
 // (neutral outline, separate axis). The two axes are kept visually distinct.
+//
+// S5 — the pill renders the Field-I COMPOSITE (PRACTICES §2): good-law · history ·
+// caution · questioned · superseded · unverified. Colors track the controlled glyph
+// set 🟢🔵🟡🟠🔴⚪. Legacy statuses are mapped server-side (S1 A4) so these six
+// classes are the only status classes anywhere.
 
 .treatment-badges {
   display: flex;
@@ -29,44 +34,58 @@
       background: currentColor;
       flex-shrink: 0;
     }
+  }
 
-    .treatment-asof {
-      font-weight: $normalWeight;
-      opacity: 0.8;
-      font-size: 0.78rem;
+  // varies-by-point chip (S2 R5 — the marker rides with the composite everywhere)
+  .treatment-varies {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.12rem 0.55rem;
+    border-radius: 1rem;
+    font-size: 0.78rem;
+    font-weight: $semiBoldWeight;
+    font-style: italic;
+    color: var(--darkgray);
+    background: var(--highlight);
+    border: 1px dashed var(--gray);
+    white-space: nowrap;
+
+    &:hover {
+      border-color: var(--tertiary);
+      color: var(--tertiary);
     }
   }
 
-  // good-law axis colors (independent of the weight axis)
-  .treatment-good {
+  // Field-I composite colors (good-law axis, independent of the weight axis)
+  .treatment-good-law {
     color: #1a7f37;
     background: rgba(26, 127, 55, 0.12);
     border-color: rgba(26, 127, 55, 0.35);
   }
-  .treatment-criticized {
+  .treatment-history {
+    color: #0969da;
+    background: rgba(9, 105, 218, 0.1);
+    border-color: rgba(9, 105, 218, 0.32);
+  }
+  .treatment-caution {
     color: #9a6700;
     background: rgba(154, 103, 0, 0.12);
     border-color: rgba(154, 103, 0, 0.35);
   }
-  .treatment-limited {
+  .treatment-questioned {
     color: #bc4c00;
     background: rgba(188, 76, 0, 0.12);
     border-color: rgba(188, 76, 0, 0.35);
   }
-  .treatment-abrogated {
-    color: #b35900;
-    background: rgba(179, 89, 0, 0.14);
-    border-color: rgba(179, 89, 0, 0.4);
-  }
-  .treatment-overruled {
+  .treatment-superseded {
     color: #cf222e;
     background: rgba(207, 34, 46, 0.12);
     border-color: rgba(207, 34, 46, 0.38);
   }
-  .treatment-unknown {
+  .treatment-unverified {
     color: var(--gray);
     background: var(--lightgray);
-    border-color: var(--lightgray);
+    border-color: var(--gray);
   }
 
   // orthogonal authority-weight: deliberately NEUTRAL (outline only) so it never
@@ -85,23 +104,27 @@
 }
 
 :root[saved-theme="dark"] .treatment-badges {
-  .treatment-good {
+  .treatment-good-law {
     color: #4ac26b;
     background: rgba(74, 194, 107, 0.13);
     border-color: rgba(74, 194, 107, 0.3);
   }
-  .treatment-criticized {
+  .treatment-history {
+    color: #539bf5;
+    background: rgba(83, 155, 245, 0.13);
+    border-color: rgba(83, 155, 245, 0.3);
+  }
+  .treatment-caution {
     color: #d4a72c;
     background: rgba(212, 167, 44, 0.13);
     border-color: rgba(212, 167, 44, 0.3);
   }
-  .treatment-limited,
-  .treatment-abrogated {
+  .treatment-questioned {
     color: #e09b3b;
     background: rgba(224, 155, 59, 0.13);
     border-color: rgba(224, 155, 59, 0.3);
   }
-  .treatment-overruled {
+  .treatment-superseded {
     color: #f85149;
     background: rgba(248, 81, 73, 0.13);
     border-color: rgba(248, 81, 73, 0.3);
