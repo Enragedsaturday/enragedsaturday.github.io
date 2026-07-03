@@ -338,7 +338,18 @@ Each: **Direction · Research first · Interview-extract (choices + what to show
   research protocol; a why-missed taxonomy.
 - **Interview-extract.** Relevance gate threshold; frontier reach; borderline sign-off. *Show:* the
   missed-case list + why-missed→generalized-search on a sample.
-- **Deliverable.** `S6-coverage-ingest.spec.md`.
+- **Deliverable.** `S6-coverage-ingest.spec.md`. ✅ **Written 2026-07-03** (specimen page
+  `content/cases/United States v. Smith (2024).md` authored live — two-key verified, roster
+  self-closed 89→88; all injected:S6 audit rows dispositioned in the Decision Log). Decided
+  highlights: **the O1 "persuasive-only → no page" default is FLIPPED** (user D1 — every
+  two-key-real, gate-passing named case earns a page); history cluster authored as history pages
+  (D2); **full O1-style frontier inside S6** (D3) with a **stricter frontier floor**
+  (controlling-or-split-marker; D5); two batched human-pause packets (D4); *Egbert/Martin/Culley*
+  authored — R2 prong (c) widened to the SCOTUS civil-liability boundary (D6); OT2019→present term
+  sweep signed (D7; *Noem* watch, *Villarreal* reject). Mechanics: candidate queue through S2's CL
+  lane (no S6 credential), one reusable authoring pipeline (S7 invokes it), the COH-15
+  reconciliation shipped as `_run/s6-coverage-ledger.json`, the seed scanner promoted to a CI lint
+  (proposed LINT-17). The spec text wins over this entry (§0 precedence).
 - **Audit inputs (2026-07-02)** — from `AUDIT-2026-07-02.md`; address each (adopt / adapt /
   reject-with-rationale) in the spec's Decision Log:
   **GAP-01b** author retaliatory-arrest coverage (*Nieves* 2019, *Gonzalez* 2024 — 0 hits today) ·
@@ -495,7 +506,7 @@ exact CourtListener fields/calls per data element (the S2 schema).
 | S3 Taxonomy & Points-of-Law | ✅ | ✅ |
 | S4 Platform, Nav & Reader-Signaling | ✅ | ✅ |
 | S5 Entry Models | ✅ | ✅ |
-| S6 Coverage & Ingest | ☐ | ☐ |
+| S6 Coverage & Ingest | ✅ | ✅ |
 | S7 Doctrine Production | ☐ | ☐ |
 | S8 Legal-Term & Case Linking | ☐ | ☐ |
 | S9 Verification Pipeline & Release Gate | ☐ | ☐ |
