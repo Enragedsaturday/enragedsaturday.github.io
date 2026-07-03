@@ -5,17 +5,32 @@
 Database). Object model: **Docket → Cluster (the "case") → Opinions (N sub-opinions)**; the cluster
 is the primary case record, opinions hold text + the citation graph.*
 
+*Amended 2026-07-02 (audit integration — register rows S2F-09a–e + the S2F-06 caveat correction +
+the S2F-01b root-cause gotcha; spec side: S2 spec § Amendments). Additions and corrections are
+marked "(audit 2026-07-02, live-verified)".*
+
 ## Critical gotchas (read first)
 1. **`cluster_id` ≠ `opinion_id`** (but can coincide as a legacy artifact — Terry cluster `107729`
    equals its `combined-opinion` id `107729`, yet the real **lead opinion is `9423752`**). Always
    resolve the lead via `cluster.sub_opinions[]` + `opinion.type`; never assume equality.
-2. **The `citation` search filter is FUZZY**, not exact (`citation="392 U.S. 1"` returned other
-   cases). Hit an exact case by `case_name` + `court`, or verify via `analyze_citations`.
+2. **The `citation` search filter is FUZZY**, not exact — it is tokenized: `citation="392 U.S. 1"`
+   returned **36 results with no Terry in the top 5** (392 U.S. App. D.C. 1, 553 U.S. 1, 392 F.3d
+   1, …) — **always pair with court + date filters** (audit 2026-07-02, live-verified). Hit an exact
+   case by `case_name` + `court`, or verify via `analyze_citations`.
 3. **Citation edges attach per-opinion and split across sub-opinions.** Terry cluster
    `citation_count = 37,943`, but `cites:(107729)` = 19,711 and `cites:(9423752)` = 2,967. A complete
    progeny pull ORs **all** `sibling_ids`.
 4. **One logical case can have multiple clusters** (e.g., the cert/motions order). Disambiguate by
    citation + date + court.
+5. **Cluster ids and opinion ids are separate NAMESPACES that collide numerically — NEVER fetch
+   `/opinions/<cluster_id>`.** Opinion ids come **only** from `cluster.sub_opinions[]`, search
+   `sibling_ids[]`, or search `opinions[].id` — each trace labeled with its source array (audit
+   2026-07-02, rev. per Codex re-verify; matches S2 A1's three-source rule). Root cause of the O1 "corrupted objects" legend: cluster `10881683` (*Chatrie v.
+   United States*, SCOTUS 2026-06-29, lead opinion `11349205`) and cluster `10813527` (*Zorn v.
+   Linton*, SCOTUS 2026-03-23) were fetched against `/opinions/`, returning the unrelated-but-valid
+   **opinion** objects `10881683` (*Harmon v. ABC 2 News*) and `10813527` (*Strike 3 Holdings*).
+   Nothing is corrupt; both clusters are must-ingest cases. See S2 spec Amendment A1. (audit
+   2026-07-02, live-verified)
 
 ## Identity verification (exact sequence)
 1. `search(type="o", case_name="…", court="scotus")` → `cluster_id` + `sibling_ids[]`.
@@ -34,6 +49,7 @@ is the primary case record, opinions hold text + the citation graph.*
 | Cluster id (case key) | search `cluster_id`; `clusters.id` | primary key |
 | Lead opinion id | `clusters.sub_opinions[]` → `type ∈ {020lead,015unamimous,010combined}` | **≠ cluster_id** |
 | All opinion ids | search `sibling_ids[]` | lead + concurrences + dissents |
+| Lead ordering / version dedupe | `opinions.ordering_key` (lead=1) · `opinions.main_version` (non-null ⇒ superseded version — skip) | (audit 2026-07-02, live-verified) |
 | absolute_url | `clusters.absolute_url` (prefix `courtlistener.com`) | |
 | **CITATIONS / PINPOINTS** | | |
 | Official reporter cite | `clusters.citations[]` where `type=1` (`reporter="U.S."`/`F.3d`/`F.4th`) | volume+reporter+page |
@@ -42,16 +58,18 @@ is the primary case record, opinions hold text + the citation graph.*
 | Verbatim quote verify | `search_document(opinion_id, query)` → `position` + snippet | the fabrication test |
 | **COURT / DATE / DISPOSITION** | | |
 | Court | search `court_id` / `court_citation_string`; join `courts.citation_string` (Blue Book) | |
-| Date decided/argued | `clusters.date_filed`; `other_dates`; `dockets.date_argued` | |
+| Date decided/argued | `clusters.date_filed`; `other_dates`; `dockets.date_argued` | **`dockets.date_argued` often null on older SCOTUS** (Terry docket 1208992: null) — the argued date lives in `clusters.other_dates` ("Argued December 12, 1967.") (audit 2026-07-02, live-verified) |
+| Headmatter / syllabus block | `clusters.headmatter` (**populated** parsed XML: parties, attorneys, argued date, vote lineups) + `syllabus` / `summary` / `headnotes` / `arguments` / `cross_reference` / `correction` | verified populated on Terry (audit 2026-07-02, live-verified) |
 | Docket number | `dockets.docket_number` | |
 | Disposition / posture / history | `clusters.disposition` / `posture` / `history` | **often empty** |
 | Judges / author / per curiam | `clusters.judges`; `opinions.author_str`; `per_curiam` | author is per-opinion |
 | Precedential status | `clusters.precedential_status`; search `status` | |
 | SCOTUS vote data | `clusters.scdb_decision_direction`, `scdb_votes_majority/_minority` | |
 | **PROGENY / CITING-REFS** | | |
-| Later cases citing this | `search(type="o", q="cites:(<all sibling_ids OR'd>)")` → full metadata list | **recommended**; paginate |
-| Raw edges + depth | `opinions-cited` → `citing_opinion`, `cited_opinion`, `depth` | depth = intensity, NOT polarity; counts unreliable |
-| Outbound authorities | `opinions.opinions_cited[]` | what it relied on |
+| Later cases citing this | `search(type="o", q="cites:(<all sibling_ids OR'd>)")` → full metadata list | **recommended**; paginate; counts only **indexed** opinions, split by sibling |
+| Raw edges + depth | `opinions-cited` → `citing_opinion`, `cited_opinion`, `depth` | depth = intensity, NOT polarity. **CORRECTED — the edge table is the MORE complete citing-edge source for the lead** (Terry: 37,624 edge rows ≈ cluster count 37,950; OR'd search = 22,182). Old "counts unreliable" caveat pointed the wrong way. (audit 2026-07-02, live-verified) |
+| Outbound authorities | `opinions.opinions_cited[]`; search results carry `opinions[].cites[]` — outbound edges **free in search responses**, no extra call (audit 2026-07-02, live-verified) | what it relied on |
+| Bounding scan queries | search filters `cited_gt` / `cited_lt` + `stat_*` (e.g. `stat_Published`) | bound R6 lane-1/2 scans (S2 Amendment A4) (audit 2026-07-02, live-verified) |
 | Influence magnitude | `clusters.citation_count` | no polarity |
 | **TREATMENT / GOOD-LAW** | | |
 | Overruled/abrogated/negative | **NOT IN CL** → read progeny text for "overrul/abrogat" (`read_document`/`search_document`) **+ web search** | no Shepard's/KeyCite equivalent |

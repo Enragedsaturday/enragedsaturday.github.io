@@ -1,8 +1,10 @@
 # SPEC S3 — Taxonomy & Points-of-Law (the spine's classification)
 
 status: APPROVED
-depends-on: [S1]   gates: [S4, S5, S6, S7, S8, S9]
+depends-on: [S1, S2]   gates: [S4, S5, S6, S7, S8, S9]
 last-updated: 2026-07-02
+
+*Amended — see Amendments A3 (depends-on), A1/A2 (new R13/R14).*
 
 > Our own controlled classification, built from scratch on **NJLEH's practical/object-led methodology**,
 > breadth-checked against **LaFave** and **Bandiero**, mapped onto the actual corpus so nothing is orphaned.
@@ -54,7 +56,7 @@ effects) with a programmatic/special-needs sibling group; **Home Entry & Search*
 pages, S5/S7). Storage: a top-level category's overview is a first-child `Overview` entry (its header
 toggles the tree); a sub-umbrella's overview is its `index.md` (its header *is* the overview link — R11).
 *Check:* every category + sub-umbrella has a non-empty overview; no overview contains a case table.
-`AUTO:LINT-S3-overview` · `CHECKLIST:D5`.
+`AUTO:LINT-S3-overview` · `CHECKLIST:D5`. *Amended — see Amendments A7(3).*
 
 **R3 — Re-homing + multi-homing contract.** S3 owns the **re-homing table** (Appendix B) and the
 multi-homing model: a page/case may be **Key on several pages** (framing is per-page), encoded on the case
@@ -63,7 +65,8 @@ home and its Key-on set. Confirmed moves: **Brendlin** → Traffic Stops (out of
 Definitions/REP (out of Standing); **Graham** → Use of Force (out of §1983); **Plain View** → the Searches
 threshold (out of exceptions); **Brady & Giglio** → Fair-Trial & Reliability (out of Use-of-Force). *Check:*
 every move in Appendix B is reflected in the target tree; every case has a resolvable primary `homes[0]`;
-no case is orphaned. `PROCESS` · `CHECKLIST:D5`.
+no case is orphaned. `PROCESS` · `CHECKLIST:D5`. *Amended — see Amendments A1 (R13 URL stability)
+and A2 (R14 flashcard-deck stems).*
 
 **R4 — The point-of-law registry.** A committed controlled list — `_overhaul2/points/registry.yaml` — of
 **points of law**: atomic legal propositions finer than a page that treatment/assertions/terms bind to.
@@ -108,14 +111,14 @@ the list. `PROCESS`.
 **R8 — `cases/` unlisted; the Case Index routes.** The `content/cases/` folder is dropped from the explorer
 (a `filterFn`), because the generated **Case Index** is the "which page is *X* on?" router. *Check:* no
 `cases/` node renders in the nav; the Case Index resolves every case to its `homes[0]`. `AUTO` ·
-`CHECKLIST:D5`.
+`CHECKLIST:D5`. *Amended — see Amendments A1(b)/(d).*
 
 **R9 — De-rip naming (anti-plagiarism; the book author reviews).** Category and node labels are **our own**
 and must not reproduce Bandiero's verbatim part titles (he is an S9 reviewer). Enforced renames: "Levels of
 Suspicion" → **Standards of Proof**; "Search Warrant Exceptions" → **Warrant Exceptions**; "The Sixth
 Amendment Right to Counsel" → **The Right to Counsel**; "What is a Search/Seizure?" → **Searches /
 Seizures**. *Check:* no category label string-matches a Bandiero TOC part title; the copied 7a/7b PC-needed
-split is gone. `AUTO:LINT-S3-derip` · `PROCESS`.
+split is gone. `AUTO:LINT-S3-derip` · `PROCESS`. *Amended — see Amendments A7(5).*
 
 **R10 — Ordering + depth cap.** Intra-category order is **authored, not alphabetical** (e.g. *The Proof
 Ladder* precedes *Reasonable Suspicion* / *Probable Cause*), encoded via **numeric filename/slug prefixes +
@@ -132,13 +135,16 @@ their overview; `├─/└─` connectors; ordering `sortFn`) **and** the **sid
 smooth→auto) — prototyped in the S3 mockup (generator + patched `quartz/styles/custom.scss`,
 `quartz/components/scripts/explorer.inline.ts`, `quartz.layout.ts`). **Page rendering is S5's.** *Check:*
 S4 adopts the prototype as its working-standard; no S3 deliverable depends on nav/page rendering.
-`PROCESS`.
+`PROCESS`. *Amended — see Amendments A7(6).*
 
 **R12 — Every proposition hangs off one classification (single-source).** Per PRACTICES §1: a rule/term is
 stated **once** on its point-of-law node and **transcluded** elsewhere, never re-paraphrased across pages.
 S3 fixes the canonical home; S8 mechanizes the embed; S1's term register governs wording. *Check:* no
 point-of-law `statement` text is duplicated verbatim on a second page except via transclusion. `AUTO`
 (cross-checked in S8) · `CHECKLIST:D5`.
+
+*Amendments add **R13** (URL & slug stability) and **R14** (flashcard-deck stem preservation) — see
+Amendments A1/A2.*
 
 ## 4. Lessons enforced
 Directly answers Overhaul-2 findings and the O2 disciplines: **taxonomy-as-spine + single-source-of-truth**
@@ -185,6 +191,8 @@ B (re-homing table), C (seed point-of-law nodes).
 - [ ] S4 adopts the nav prototype; S5 owns page rendering; no cross-dependency (R11).
 - [ ] No duplicated point `statement` except via transclusion (R12, cross-checked S8).
 
+*Amended — additional acceptance criteria in Amendments A1, A2, A4–A7.*
+
 ## 8. Verification plan
 S3's own gates = the six lints (R1/R2/R4/R5/R9/R10) + the re-homing/orphan check (R3) + the Case-Index
 resolution (R8). **S9** then reads the registry + binding map: confirms every S2 negative-treatment event
@@ -209,15 +217,15 @@ run in CI fail-closed on every change.
 
 1. **Foundations & the Fourth Amendment** — Common Law Origins · The Fourth Amendment Framework · The Analysis Checklist · Fourth Amendment Recalibration
 2. **Standards of Proof** — The Proof Ladder `[new]` · Reasonable Suspicion · Probable Cause
-3. **Searches** — Two Definitions of Search → (Trespass · Reasonable Expectation of Privacy) · Curtilage · Open Fields · Aerial & Enhanced Surveillance `[new]` · The Third-Party Doctrine & Digital Surveillance · Private & Foreign Searches `[new]` · Abandonment · Tents & Temporary Dwellings · Plain View & Plain Feel
+3. **Searches** — Two Definitions of Search → (Trespass · Reasonable Expectation of Privacy) · Curtilage · Open Fields · Aerial & Enhanced Surveillance `[new]` · The Third-Party Doctrine & Digital Surveillance · Private & Foreign Searches `[new]` · Abandonment · Tents & Temporary Dwellings · Plain View & Plain Feel *(amended — see A6: digital sub-umbrella + Title III)*
 4. **Seizures** — When a Seizure Occurs · Seizure of Property `[new]` · Terry Stops & Reasonable Suspicion · Stop-and-Identify `[new]` · Traffic Stops · Arrests → (Arrest & Arrest Warrants · Arrest in the Home · Prompt Probable-Cause Determination `[new]`) · Collective Knowledge & the Fellow-Officer Rule
 5. **The Warrant** — Getting a Warrant → (Probable Cause in the Affidavit · The Neutral & Detached Magistrate · Particularity · Franks Challenges `[new]`) · Executing a Warrant → (Knock-and-Announce · Detention & Search of Persons at the Scene `[new]` · Scope, Manner & Related Issues)
 6. **Warrant Exceptions** — Searching a Person → (SIA — Persons · SIA — Cell Phones · SIA — Alcohol Tests) · Searching a Vehicle → (The Automobile Exception · SIA — Vehicles · Inventory Searches · Checkpoints & Roadblocks) · Home Entry & Search → (Entry to Arrest · Exigent Circumstances — Emergency Aid · — Hot Pursuit · — Destruction of Evidence · Protective Sweeps & Securing the Scene · Community Caretaking · Fire-Scene Entries `[new]`) · Searching Effects & Containers · Consent · Programmatic & Special-Needs Searches → (Special Needs & Administrative · Border Searches) · Knock and Talk
-7. **The Exclusionary Rule, Remedies & Standing** — The Exclusionary Rule · Standing to Challenge a Search
+7. **The Exclusionary Rule, Remedies & Standing** — The Exclusionary Rule · Standing to Challenge a Search *(amended — see A4: ER sub-umbrella)*
 8. **Confessions, Interrogation & the Fifth Amendment** — Due-Process Voluntariness · Miranda & Custodial Interrogation · Miranda Waiver & Invocation · Public-Employee Compelled Statements (Garrity)
 9. **The Right to Counsel** — Sixth Amendment Right to Counsel · Lineups & the Right to Counsel `[new]`
 10. **Fair-Trial & Reliability Doctrines** — Eyewitness Identification · Brady & Giglio · Entrapment
-11. **Use of Force & Liability** — Use of Force · Section 1983 & Municipal Liability · Qualified Immunity `[new-split]`
+11. **Use of Force & Liability** — Use of Force · Section 1983 & Municipal Liability · Qualified Immunity `[new-split]` *(amended — see A5: civil-remedies placed nodes)*
 12. **Legal System, Research & Reference** — The Federal Court System · Reading & Citing Cases · State Citations & Conventions `[new]` · Legal Research Tools · Verifying Good Law · Common Legal Terms · Case Index
 13. **Instructor Craft & Study** — The Three Golden Rules · C.R.E.W. — The Three Justifications · Instructor Development
 
@@ -233,6 +241,8 @@ run in CI fail-closed on every change.
 | Community Caretaking | (home-entry adjacency) | Warrant Exceptions → Home Entry | vehicles+persons; NOT home entry post-*Caniglia* |
 | 4A Framework · Analysis Checklist · Recalibration | What Is a Search? | Foundations | master analysis + framing |
 | Standards of Proof | position #5 | position #2 | the precursor vocabulary for stops/arrests/warrants |
+
+*Amended — Border & Inventory rows corrected; see Amendments A7(1–2).*
 
 ## Appendix C — Seed point-of-law nodes (illustrative; full set at build)
 | `id` | `home_page` | binds from S2 |
@@ -278,3 +288,172 @@ run in CI fail-closed on every change.
 - **SD6** new nodes *placed* empty; authoring → S6/S7.
 - **SD7** S3/S4/S5 boundary — tree+registry = S3; nav rendering (TOC-tree + scroll fix + connectors) = S4
   (prototype handed over); page rendering = S5; depth ≤3 lint-enforced.
+
+---
+
+## Amendments — 2026-07-02 (audit integration)
+
+*Gap-analysis diff of the signed spec against `_overhaul2/AUDIT-2026-07-02.md` (rows routed
+`amend:S3 (gap-analysis-first)`). Rows the spec already handles are dispositioned `covered-by-spec`
+in the register — no text here. Amendments are additive: new requirements are numbered R13+ so the
+signed body is not renumbered. The one conflict with a signed decision (TAX-09) is NOT amended —
+see the note at the end.*
+
+### A1 — R13: URL & slug stability (old-path aliases · `cases/` frozen · link sweep · `/cases/` fate)
+**Register:** TAX-03a · TAX-03c · TAX-10.
+**Context:** R3/R8 move pages and regenerate the Case Index, but the spec is silent on the *old
+URLs*. Slugs embed the numbered folder path; the target tree renumbers every category, so every
+doctrine URL on the live site changes. Existing `aliases:` are bare titles, not old paths.
+**New requirement — R13 (fail-closed).**
+(a) **Old-path aliases:** every page whose site path changes (Appendix B moves + every renumbered
+slug) gets an `aliases:` entry for **each previous full site path** (not a bare title), so Quartz's
+alias-redirect emitter serves every pre-O2 URL.
+(b) **`cases/` frozen:** `content/cases/` files are neither moved nor renamed — their URLs are
+preserved verbatim (the corpus's one stability win). R8's unlisting is explorer-only (`filterFn`),
+never a file move.
+(c) **Link sweep:** every `homes:`/`related:` frontmatter value and every path-based wikilink is
+rewritten to the new paths; zero old-path references remain in source.
+(d) **`/cases/` landing:** because the files stay, Quartz still emits an auto folder-listing at
+`/cases/` — replace it with a minimal authored `cases/index.md` that routes readers to the Case
+Index (URL stays live; the 457-row auto listing dies).
+*Check:* a crawl of the complete pre-move URL inventory returns a page (directly or via alias
+redirect) for 100% of URLs; zero dangling old-path wikilinks. `AUTO:LINT-S3-urls` (new, CI).
+**Lint mechanics (rev. per Codex review 2026-07-02):**
+- **Inventory artifact:** `_overhaul2/url-inventory.json` — the complete list of site-relative
+  page paths emitted by the **current (pre-move) build**, generated from the build's emitted slugs
+  (the built `contentIndex.json` / emitted-HTML set). It MUST be generated and committed **before
+  the first move**; the lint FAILS if the artifact is absent or empty.
+- **Normalization (both sides):** path-only comparison (no origin/query/fragment); percent-decode;
+  lowercase; strip one trailing slash; `/x/index` ≡ `/x`.
+- **Inputs checked:** every normalized inventory path must resolve on the **rebuilt** site to
+  either (i) an emitted page at that path or (ii) an alias-redirect stub emitted at that path
+  (from an R13(a) `aliases:` entry).
+- **Fail conditions (fail-closed):** any inventory path with neither page nor alias stub → FAIL;
+  any surviving old-path `homes:`/`related:`/wikilink reference (the R13(c) sweep) → FAIL.
+**Acceptance:** pre-move URL inventory fully resolves; `cases/` paths unchanged; `/cases/` routes.
+**Rationale:** the site is live in production; renumbering otherwise 404s every bookmark, inbound
+link, and the frozen flashcard deck (A2).
+
+### A2 — R14: flashcard-deck stem/alias preservation
+**Register:** COH-05b.
+**Context:** the O1 flashcard deck is frozen and references pages by stem/alias under a
+non-breakage guarantee; R3 re-homings, R9 renames, and the renumbering can silently break it — the
+spec never mentions the deck.
+**New requirement — R14 (rev. per Codex review 2026-07-02 — self-contained: R13(a)'s aliases
+cover full site *paths*, while the deck references path-less *stems*).**
+- **Deck location:** the frozen deck's source of truth is **`flashcard-src/decks/*.json`**
+  (merged published artifact `public/static/flashcards/flashcards.json`; Anki export
+  `public/static/flashcards/cssi-search-and-seizure.apkg`).
+- **Reference grammar:** each card references its page via the **path-less slug stem** in its
+  `"page"` field (e.g. `"arrest-in-the-home"`); card `id`s are prefixed with that same stem and
+  each deck filename equals it (`flashcard-src/DECK-GEN-BRIEF.md` card schema). The extraction
+  set = the union of `page` values across all deck files, cross-checked against deck filename
+  stems. Cards carry no wiki URLs (their only links are CourtListener `source` URLs), so stems
+  are the sole join key.
+- **Resolution rule:** post-move, every extracted stem must — after normalization (lowercase
+  kebab; stem-only, so folder re-parenting/renumbering alone breaks nothing; only a filename-stem
+  rename does) — match either (i) the final slug segment of an emitted page or (ii) a **bare-stem
+  `aliases:` entry** on some page. Consequence: any page whose filename stem changes (R9 renames;
+  A4/A6 splits) MUST carry its old stem as a bare-stem alias — a **deck-stem alias required by
+  R14 itself**, in addition to R13(a)'s full-path aliases.
+- **Accepted-breakage table:** any stem knowingly left unresolved (none expected) is recorded in
+  a table appended to **Appendix B**, schema:
+  `| deck_stem | card_count | successor_page (new path) | reason | user_ack (date) |`.
+  The deferred flashcard rebuild (named run #2, audit decision D3) consumes it.
+*Check:* a script resolves 100% of extracted stems against the built site per the rule above; the
+accepted-breakage table is empty or every row carries `user_ack`. `AUTO:LINT-S3-deck` (new, CI,
+fail-closed on any unresolved, unacknowledged stem).
+**Rationale:** honors O1's guarantee without blocking the tree; the rebuild run — not S3 — is what
+retires it.
+
+### A3 — Frontmatter: `depends-on: [S1, S2]`
+**Register:** COH-04b.
+**Context (was):** `depends-on: [S1]`. **Change (applied in the header):** `depends-on: [S1, S2]`.
+**Rationale:** factual, not a decision — R5 consumes S2's `treatment.point_overrides[].point`
+slugs and the spec itself "closes S2 §9"; the binding map cannot be authored without S2's override
+schema. This is an *authoring/design* dependency, consistent with COH-04a's runbook-side fix (S2
+`gates:` vs execution concurrency is the runbook's problem, not this header's).
+
+### A4 — Exclusionary Rule sub-umbrella (Appendix A, cat 7)
+**Register:** TAX-02a.
+**Context (was):** "**The Exclusionary Rule, Remedies & Standing** — The Exclusionary Rule ·
+Standing to Challenge a Search".
+**New text (cat 7):** **The Exclusionary Rule, Remedies & Standing** — The Exclusionary Rule →
+(Fruits & Attenuation `[new-split]` · The Good-Faith Exception `[new-split]` · Inevitable Discovery
+& Independent Source `[new-split]`) · Standing to Challenge a Search.
+**Acceptance:** the ER page's 44 homed cases re-point across the split per R3; no orphan.
+**Rationale:** the ER page is the wiki's true mega-page (44 homed cases — heavier than the
+31-case Special Needs page the spec's §4 "mega-page cure" already splits); leaving it whole is
+inconsistent with the spec's own R1/R2 cure. Splits follow the doctrine's joints; `[new-split]`
+nodes inherit R7 (placed; S6/S7 author). Standing's cat-7 placement is signed and unchanged
+(register TAX-11 = covered).
+
+### A5 — Civil-remedies placed nodes (Appendix A, cat 11)
+**Register:** GAP-01a · GAP-02a · GAP-07 · TAX-02b (partial).
+**Context (was):** "**Use of Force & Liability** — Use of Force · Section 1983 & Municipal
+Liability · Qualified Immunity `[new-split]`".
+**New text (appends to cat 11):** · Retaliatory Arrest `[new]` (*Nieves/Gonzalez*) · Malicious
+Prosecution under the Fourth Amendment `[new]` (*Thompson/Chiaverini*) · Civil Asset Forfeiture
+`[new]` (*Culley*). All three join R7's greenlit placed-empty list (S6 verifies + authors the
+cases; S7 the prose). **Partial closure of TAX-02b (rev. per Codex review 2026-07-02):** this
+amendment fully closes GAP-01a/GAP-02a/GAP-07 but only **partially** closes TAX-02b. The
+residual is the **Bivens/§242 substructure** inside *Section 1983 & Municipal Liability*, which
+this amendment deliberately does NOT add. The residual resolves **at execution** via an R6
+granularity decision (split into placed nodes vs keep as in-page sections), and that decision
+MUST be logged in this spec's Decision Log; the register pointer for TAX-02b cites this paragraph
+plus that future log entry.
+**Rationale:** the audit found these doctrines absent corpus-wide (0 hits) with no reservable
+home — cat 11 (only adjacent-doctrine cluster) is their natural seat; reserving nodes now prevents
+re-cutting the signed tree after S6 ingest.
+
+### A6 — Digital-surveillance sub-umbrella + Title III home (Appendix A, cat 3)
+**Register:** TAX-05a · TAX-05c · GAP-03a.
+**Context (was):** "The Third-Party Doctrine & Digital Surveillance" as a single page; the
+technology family (Carpenter/Riley/Jones/Kyllo/Chatrie/Cotterman-Touset/Mansor) is scattered
+across ≥5 pages in 4 categories — the hardest family to find — and post-*Chatrie* topics + Title
+III have no node anywhere in the signed tree.
+**New text (cat 3 entry):** The Third-Party Doctrine & Digital Surveillance → (Third-Party
+Doctrine & CSLI · Cell-Site Simulators `[new]` · Reverse-Keyword & Geofence Warrants `[new]` ·
+Real-Time Tracking `[new]` · Investigative Genetic Genealogy `[new]`) · Electronic Surveillance &
+Title III `[new]` (*Olmstead/Berger* progeny, the statutory regime).
+Reserved-child grain settles at execution under R6 (a child may fold into a sibling if S2/S6 yield
+too little); **any such fold is itself an R6 decision that MUST be recorded in this spec's Decision
+Log — reserved nodes never fold silently** (rev. per Codex re-verify 2026-07-02). Riley (SIA — Cell Phones), Kyllo, Jones, and the border-device pages **keep their
+signed primaries** and become **Key-on** the umbrella via `homes[]` (R3) — findability without
+re-homing. **BWC disposition (rev. per Codex review 2026-07-02):** body-worn cameras — the one
+GAP-03a topic NOT reserved above — get **no taxonomy node**: BWC-as-evidence is a
+recording/retention/disclosure policy topic, not search-and-seizure doctrine, so it routes to S7
+prose within the Use-of-Force/§1983 pages per GAP-03b (an explicit recorded decision, not an
+omission).
+**Rationale:** same reserve-don't-recut logic as A5; the digital family is the audit's named
+worst find-it failure, and GAP-03a's post-*Chatrie* topics otherwise force a tree re-cut at S6/S7.
+
+### A7 — Calibrations (Appendix B corrections · overview template · master index · naming grammar · mockup authority)
+**Register:** TAX-04a · TAX-04b · TAX-07 · TAX-08b · TAX-08c · TAX-08d · CODE-01b.
+1. **Appendix B, Border row (TAX-04a):** Border Searches is *already standalone* today — the row
+   is a **re-parent** under Programmatic & Special-Needs (keep-standalone), not an extraction from
+   the mega-page.
+2. **Appendix B, Inventory row (TAX-04b):** the Inventory extraction pulls from **two** sources —
+   its homes on Special Needs **and** the teaching text inside the SITA page.
+3. **R2 overview template (TAX-07):** the donor template for authored overviews is
+   `content/index.md`'s annotated-MoC style — all 15 current category indexes are identical
+   8-line stubs; none is a usable donor.
+4. **Master index (TAX-08b/c):** regenerate the root `content/index.md` from the final tree so
+   every page has an index line — cures the missing Garrity line and Emergency Aid's alias-only
+   reachability.
+5. **R9 naming grammar (TAX-08d):** the de-rip pass also enforces **one grammar per level** —
+   plain nouns (no question titles), consistent article use, one CREW spelling ("C.R.E.W." per
+   Appendix A).
+6. **R11 mockup authority (CODE-01b):** commit `8655398` is the nav-model *prototype only*.
+   **Appendix A is authoritative** wherever the mockup diverges; the `displayNames`/`filterFn`/
+   `sortFn` tables are regenerated from Appendix A at execution (the mapped folders don't exist
+   until Method step 1 — today's build showing fallback names is by design, and the mockup carries
+   no `cases` mapping because R8 filters it).
+
+### Conflict noted, NOT amended — TAX-09 (numbering mechanics)
+R10 and Decision-Log SD2 explicitly choose **numeric filename/slug prefixes + explorer `sortFn`**;
+the audit recommends frontmatter-weight sorting or frozen gap numbering (10/20/30) because
+prefix-numbered folders *and* files renumber on any insertion — URL churn on every future insert.
+This is a signed, reasoned decision and is not overridden here; it is escalated in the register as
+`conflict:user-decision-needed`. Note the interaction: R13(a) old-path aliases absorb the churn
+from *this run's* renumbering, but not from future insertions.
