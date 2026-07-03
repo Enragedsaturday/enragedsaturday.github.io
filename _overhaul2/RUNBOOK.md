@@ -8,8 +8,9 @@ pointed at: "run S3" → the thread reads §0–§2 + `PRACTICES.md` + its spec 
 land), runs a **self-interview** over the self-owned design decisions, and only then writes the spec to
 `_overhaul2/specs/SN-<slug>.spec.md`.*
 
-Status: **planning/research phase** — no specs written, nothing in `content/` changed.
-Last updated: 2026-07-01.
+Status: **see §7 — the single status authority** (this header no longer carries status; it went stale
+once — audit COH-03). Content is untouched except user-approved hotfixes logged in the §0 human-pause
+register. Last updated: 2026-07-02.
 
 Companion docs (read alongside this): **`PRACTICES.md`** (the editorial/verification playbook every
 spec inherits) · **`CL-DATA-INVENTORY.md`** (exactly what CourtListener gives us — the S2 schema seed).
@@ -26,6 +27,25 @@ spec inherits) · **`CL-DATA-INVENTORY.md`** (exactly what CourtListener gives u
 - **The north star:** the definitive, 100%-verified edition — every case verified, every proposition
   traceable, framed properly, treatment-annotated, expansively searched. This is treatise/Restatement
   production, not wiki maintenance.
+- **PRECEDENCE STACK (audit COH-08):** **approved specs > RUNBOOK > PRACTICES > wrappers.** On any
+  conflict the higher-precedence text wins; the conflict MUST be resolved by adding a **forward
+  supersession note** in the lower-precedence doc pointing at the winning text — never by silently
+  rewriting or by letting both versions stand. Completed wrappers are superseded by their signed spec
+  the day it lands (banner on each wrapper).
+- **HUMAN-PAUSE REGISTER (audit COH-06 — scopes guardrail G8).** G8's "human sign-off for anything
+  reader-facing" is scoped to these **enumerated pauses** inside the one autonomous run; nothing else
+  stops the line:
+  1. the **publish go-ahead** (final);
+  2. **fabrication removals** (S6);
+  3. **borderline-relevance sign-off** (S6);
+  4. **content hotfixes during planning**;
+  5. officer-summary approvals — **moot**: S1 banned the artifact project-wide (S1 §2.2/R6);
+  6. the **release gate** (S9).
+  *Entries:* **2026-07-02** content hotfix (Chatrie + Third-Party) — user-approved.
+- **Wrapper template notes (audit COH-25).** Future wrappers (S4+) copy `wrappers/S3.wrapper.md` and
+  MUST carry two lifecycle steps: **(a)** the **REQUIRED visible self-interview** before writing (§1
+  step 5); **(b)** an audit-intake step: "Read `_overhaul2/AUDIT-2026-07-02.md`, filter to your spec's
+  rows, and address each — adopt / adapt / reject-with-rationale — in the spec's Decision Log."
 
 ## 1. Per-spec thread lifecycle
 *Research and mockups are **continuous and interactive**, not one-shot phases. The loop is iterative:
@@ -41,9 +61,10 @@ you're building** mid-stream. Nothing is locked until sign-off.*
    server `npx quartz build --serve` :8080), modifying only what's discussed; perfect it there, spec
    follows to the letter. Content change → a **written example** first (one overview, one rewritten
    brief). **When an interview answer changes the direction, change the mockup/example on the spot and
-   re-show it** — pivot freely while defining what we're building. **Any officer-bottom-line / BLUF
-   summarization is human-in-the-loop and grounded verbatim in the case's standard — never auto-
-   generated** (paraphrase drift on the controlling standard is the trap that pulled us back in O1).
+   re-show it** — pivot freely while defining what we're building. **The officer-bottom-line / BLUF /
+   field-application summary is BANNED project-wide (S1 §2.2 + R6 Variant A — audit COH-01): do not
+   design, mock, or generate it.** Its paraphrase-drift scar (the O1 trap) survives as S1 R7 — never
+   auto-generate a controlling standard; the reader gets the verified rule + brief and applies it.
 3. **Interview.** Options + context + open-ended opener; ask only user-owned decisions (recommendation-
    first, `AskUserQuestion`); self-resolve the rest and log it. **Always close open-ended** and
    interview on the answer. Research + mockup changes happen *inside* this loop, interactively. Don't
@@ -84,7 +105,9 @@ find→adjudicate→fix + loop-cap-3; coherence pass as a gate; deterministic FR
 - **Explorer UI** jank (scroll target, padding, wrap), cramped lists, pills-as-spans-lack-popovers →
   S4/S5. **Publish drift** (live site rebuilt from the stale vault, not canonical `content/`) → S4.
 - **Officer-summary paraphrase drift** on the controlling standard (emergency aid = *objectively
-  reasonable belief*, not "imminent danger") → S5/S7, human-in-the-loop.
+  reasonable belief*, not "imminent danger") → **resolved by S1's project-wide BAN on the officer-
+  BLUF/field-application layer (S1 §2.2 + R6 — audit COH-01); no spec builds one.** The scar rule
+  (never auto-generate a standard) survives as S1 R7.
 - **`^pin-N` carat leak** — Obsidian block-ref anchors rendering as visible text; "everything must
   look perfect" → S9 + a CI lint.
 - **Content structure**: apply-it prose not numbered lists; leaked "(woven in)" meta; "persuasive,
@@ -95,24 +118,35 @@ find→adjudicate→fix + loop-cap-3; coherence pass as a gate; deterministic FR
 ingest script (token read from `~/.config/cssi/cl-token`, ~1,000 req/hr → paced + disk-cached +
 resumable). This sidesteps the expired Codex CL-MCP OAuth (no MCP needed) and conserves Claude usage.
 **Codex = builder + reviewer; Claude orchestrates/designs + takes 1 of the 3 review lanes.** The
-Claude CL MCP stays only for interactive spot-checks.
+Claude CL MCP stays only for interactive spot-checks. **L4 is rescoped by S1 amendment (audit
+COH-07): one serial CL lane *per credential* — the Codex REST builder owns the token; the Claude MCP
+lane is interactive spot-checks only. The two consumers may run concurrently.**
 Live sites 200; popovers on; FlexSearch in place; MIT needs only `LICENSE.txt` retained.
 
 ## 3. The bundle & execution plan
-**Nine specs**, production-line waves. Maintenance loop **deferred** → GitHub issue #2. Nesting max 3
-levels (index-1 umbrella w/ overview → index-2 doctrine/sub-umbrella → index-3 doctrine).
+**Nine specs**, production-line waves. Maintenance loop **deferred** →
+<https://github.com/Enragedsaturday/cssi/issues/2> (the FORK's issue #2 — a bare `gh` default resolves
+to upstream quartz; audit COH-23). Nesting max 3 levels (index-1 umbrella w/ overview → index-2
+doctrine/sub-umbrella → index-3 doctrine).
 
 | # | Spec | Build order | Depends on | Exec wave |
 |---|------|-------------|-----------|-----------|
 | **S1** | Standards & Style Manual | 1 | — | 0 (rulebook) |
 | **S2** | Verified Authority Database (CourtListener source-of-truth) | 2 | S1 | 1 (built first) |
-| **S3** | Taxonomy & Points-of-Law (categories, nesting, nav structure) | 3 | S1 | 2 (restructure) |
+| **S3** | Taxonomy & Points-of-Law (categories, nesting, nav structure) | 3 | S1,S2 | 2 (restructure) |
 | **S4** | Platform, Nav & Reader-Signaling UI | 4 | S1 | 1 (nav working-standard, before restructure) |
-| **S5** | Entry Models (case + doctrine pages) | 5 | S1,S2,S3 | 2 |
+| **S5** | Entry Models (case + doctrine pages) | 5 | S1,S2,S3,S4 | 2 |
 | **S6** | Coverage & Ingest (verify + author missing cases) | 6 | S2,S3,S5 | 3 |
 | **S7** | Doctrine Production (brief-first rewrite) | 7 | S1,S2,S3,S5,S6 | 3 |
-| **S8** | Legal-Term & Case Linking + Glossary | 8 | S4,S7 | 3 |
+| **S8** | Legal-Term & Case Linking + Glossary | 8 | S2,S4,S6,S7 | 3 |
 | **S9** | Verification Pipeline & Release Gate (1 Claude + 2 Codex) | 9 | all | 4 |
+
+*"Depends on" = **AUTHORING dependencies** — what must be signed before that spec is written; "Exec
+wave" orders **execution** (audit COH-04). The two deliberately differ, and a spec header's `gates:`
+list expresses authoring order only — it does NOT serialize execution: the S2 lake build and the S4
+nav standard run concurrently in wave 1. Corrections baked in: S3 depends on S2 (the `point → node`
+binding map consumes S2's point-override slugs); S5 depends on S4 (pill/hover mechanism — COH-18);
+S8 depends on S2 (canonical names + frontier-stub linking), S6 (the pages it links), S7 (final text).*
 
 **Execution order (one autonomous run):** S1 rulebook → **S2 database built (source of truth) + S4
 nav working-standard + publish→content-canonical** → **S3 category restructure poured into the working
@@ -137,6 +171,11 @@ Each: **Direction · Research first · Interview-extract (choices + what to show
   wording; **the graded-authority depth** — *mock up ALI-full vs. lighter "rule + notes" and choose.*
   *Show:* before/after voice paragraph; the two graded-authority variants.
 - **Deliverable.** `S1-standards.spec.md` (+ `docs/STANDARDS.md` + `STYLE.md` at execution).
+  ✅ **Written 2026-07-01** (audit COH-24). Decided highlights: graded authority = **Variant A**
+  (rule/explanation/authorities); the **field-application / officer-BLUF summary is banned
+  project-wide** (§2.2 + R6); 3-field treatment vocabulary; em-dash prose policy w/ citation-range
+  carve-out; verified mnemonic register (CREW "RE", CRON dropped). The spec text wins over this entry
+  (§0 precedence).
 
 ### S2 — Verified Authority Database (the spine)
 - **Direction.** The West-Key-Number-style source of truth: one record per case built from
@@ -160,6 +199,9 @@ Each: **Direction · Research first · Interview-extract (choices + what to show
   (principal-holding) + `varies_by_point` + point-overrides**, derived over **three lanes** (negative-
   keyword + top-cited + **recency**). Builder = Codex, Python stdlib, direct REST v4, paced+cached+
   resumable. Live-confirmed the build path + the name-rank identity trap (Adams/Williams, Miranda).
+  **Wall-clock (audit COH-19):** the lake build is **~15–25k CL calls at ≤~14 req/min ≈ 20–30+ h
+  minimum — a multi-day paced run**, not an afternoon step; the R10 journal records lane completion
+  so a resume never re-burns treatment-query quota. Schedule it as the wave-1 background lane.
 
 ### S3 — Taxonomy & Points-of-Law
 - **Direction.** Our own category tree (3-level nesting; umbrella w/ authored **overview page** →
@@ -168,7 +210,10 @@ Each: **Direction · Research first · Interview-extract (choices + what to show
   Checkpoints/Inventory/Border out of the Special-Needs mega-page; rename "Levels of Suspicion" →
   "Standards of Proof" (full burden pyramid, **PC < preponderance**); re-homing rules (Brendlin, Katz,
   Graham); unlist `cases/`; the possible "Home Entry & Search" topic. Do NOT plagiarize the book.
-  The taxonomy is also the **controlled classification** every proposition hangs off (spine).
+  The taxonomy is also the **controlled classification** every proposition hangs off (spine) — S3
+  therefore also owns the **point-of-law node scheme + the `point → S3 node` binding map** that
+  resolves S2's provisional treatment-override slugs; a runbook-only thread must not under-scope this
+  (audit COH-13b; delivered — see below).
 - **Research first.** Current tree + Bandiero TOC + LaFave TOC (`.orca/drops/SSTOC.pdf`) + NJ Handbook
   (`.orca/drops/New Jersey Law Enforcement Handbook…pdf`) + Wex/casebook order + the draft tree
   (`~/briefs/2026-07-01-cssi-o2-taxonomy-proposal.html`, an input only).
@@ -195,70 +240,152 @@ Each: **Direction · Research first · Interview-extract (choices + what to show
   **dates in the data model + behind a hover + on the About page (NOT inline everywhere)**, treatment
   flags, overruled-as-history rendering, pills-as-anchors (so popovers work). Includes the honest
   keep-Quartz-vs-fork evaluation. This is a *working standard*, executed **before** the S3 restructure.
+  **Pipeline ownership (audit COH-16): S4 owns reconciling the `/cssi-ingest` vault-inbox skill to
+  `content/`-canonical** (the live skill still writes to the vault — retire or re-point it with the
+  vault sync); its post-launch future belongs to the maintenance loop (deferred run #1, §4 footer).
+  **S4/S5 boundary (audit COH-18): S4 owns the pill/anchor/hover MECHANISM** (components, popover
+  wiring, `a.internal` anchors); **S5 owns pill PLACEMENT/format** inside the entry models.
 - **Research first.** The technical audit (files located); FlexSearch `suggest`/tuning; OSS nested-nav
   options; the launchd/`redeploy.sh` publish path.
 - **Interview-extract.** Fix stock explorer vs. OSS nested-nav (mock both); fuzzy aggressiveness;
   About-page content + attribution; how much provenance shows on hover. *Show:* side-by-side explorer
   mockups + a search-suggestions demo + a treatment-badge/hover mock on the dev server.
 - **Deliverable.** `S4-platform-ui.spec.md`.
+- **Audit inputs (2026-07-02)** — from `AUDIT-2026-07-02.md`; address each (adopt / adapt /
+  reject-with-rationale) in the spec's Decision Log:
+  **CODE-02a** mobile drawer needs `overflow-y:auto` (below-fold tree unreachable on phones) ·
+  **CODE-02b** media-scope the wheel-trap `overscroll-behavior` override to desktop ·
+  **CODE-03** top-level overviews unreachable in collapse-mode nav — chevron-toggle/title-link or a
+  depth-0 overview row (S3 seam) · **CODE-04** delete/annotate the dead `button.closest("li.subtree")`
+  guard · **CODE-05** update the stale `quartz.layout.ts` header comment (old 12-category scheme) ·
+  **CODE-06** align the connector-tick `::after` with row centers · **CODE-07** stock quirks to note
+  (saved `"0"` scrollTop suppresses scroll-to-active; `folderIsPrefixOfCurrentSlug` prefix
+  false-positives; `!mobileExplorer` return-vs-continue) · **CODE-08** carry this entry's named items
+  the diff omits (sidebar padding, two-line wrap, list/paragraph spacing) · **COH-05c** preserve
+  flashcard-deck-referenced stems/aliases in nav/platform work (w/ S3) · **COH-16b** the
+  publish/ingest pipeline ownership lands in this spec · **COH-18** pill/anchor/hover mechanism is
+  S4's (placement = S5).
 
 ### S5 — Entry Models (case + doctrine pages)
-- **Direction.** The **graded-authority doctrine page** (black-letter rule / explanation / authorities
-  — `PRACTICES.md` §5) and the **BIRAC case page** (keep the liked BIRAC; the officer-bottom-line /
-  "In the field" box is a **human-in-the-loop, standard-grounded** option to design carefully, not
-  auto-generate). Standardized case-table schema (short shared headers, controlled widths, no
+- **Direction.** The **graded-authority doctrine page** — **Variant A: black-letter rule / explanation
+  / authorities (adjudicated by S1 R6; `PRACTICES.md` §5 superseded on this point)** — and the **BIRAC
+  case page** (keep the liked BIRAC). **The officer-bottom-line / "In the field" box is BANNED
+  project-wide (S1 §2.2 + R6 — audit COH-01): do not design, mock, or spec it.** Standardized
+  case-table schema (short shared headers, controlled widths, no
   side-scroll); treatment **pill under the case name**, **weight in the case column**, treatment column
   + "treated in full" removed, relevance tags under relevance; the pill is an **anchor** to the
   "Verifying Good Law / as-of" page with hover preview; "limited by/expanded by" folds into the holding.
-  Draft-state machinery (`draft → under_review → verified`); provenance rendering.
+  Draft-state machinery (`draft → under_review → verified`); provenance rendering. **Boundary (audit
+  COH-18): S5 owns pill PLACEMENT/format in the entry models; the pill/anchor/hover MECHANISM is S4's.**
 - **Research first.** `CaseTable.tsx`/`casetable.inline.ts`/`TreatmentBadge.tsx` (spans → `a.internal`);
-  the book case-example PDF (`.orca/drops/Book Jun 26, 2026 (1).pdf`); S2 schema.
-- **Interview-extract.** BIRAC section order + officer voice; **ALI-vs-lighter graded-authority** (mock
-  both — shared with S1); final table columns; as-of page + hover; where deep-link/pinpoint highlights
-  apply. *Show:* browser mockup of the new table + pill + hover; one written BIRAC page; the two
-  doctrine-page authority variants.
+  the book case-example PDF (`.orca/drops/Book Jun 26, 2026 (1).pdf` — **missing: only `Book Jun 26,
+  2026.pdf` exists locally; regenerate or drop at the S5 interview — audit COH-14**); S2 schema.
+- **Interview-extract.** BIRAC section order + voice; ~~ALI-vs-lighter graded-authority~~ — **already
+  adjudicated: S1 chose Variant A (S1 R6 + Appendix C — audit COH-12; do not re-mock or re-interview)**;
+  final table columns; as-of page + hover; where deep-link/pinpoint highlights
+  apply. *Show:* browser mockup of the new table + pill + hover; one written BIRAC page.
 - **Deliverable.** `S5-entry-models.spec.md`.
+- **Audit inputs (2026-07-02)** — from `AUDIT-2026-07-02.md`; address each (adopt / adapt /
+  reject-with-rationale) in the spec's Decision Log:
+  **TEACH-13** related-cases table integrity: self-reference ban + controlled header set + one CL
+  anchor text · **TEACH-14** one Sources-section format (bracketed-link vs em-dash list) ·
+  **TEACH-15** unify the treatment-cell format (527 bare / 342 / 51 / 25 variants; decide whether
+  table cells count as "inline" under S1 R3) · **TEACH-08** heading standard for "Recent developments"
+  (role-based rename or lookback window; S7 applies) · **TEACH-09** pitfalls format standard (bulleted
+  bold-error+cite, per PC/RS) · **TEACH-10** decide grouped Key-cases sub-tables (adopt for >15-case
+  pages or drop) · **NUM-07** table-header standardization: **51 distinct "Case" header schemas → 1** ·
+  **COH-11** consume the S1/S2 old→new treatment-enum migration mapping before the projector
+  overwrites · **COH-18** pill placement/format (mechanism = S4).
 
 ### S6 — Coverage & Ingest
 - **Direction.** Verify + author the **named-but-no-page** cases (2026-07-01 audit: ~70–80 genuine,
-  mostly circuit). **Verify existence first (two-key; "not found ≠ fabricated"; compare input name vs
+  re-derived **~80–84** by NUM-05, mostly circuit). **Verify existence first (two-key; "not found ≠
+  fabricated"; compare input name vs
   CL canonical)** — author a BIRAC page + external link for real ones, **remove** fabrications
   (*Mayville/Small/Lyle/Moore-Bush* were flagged). Diff the corpus against book roster ∪ named-in-prose
   ∪ prior-research ∪ bounded frontier; officer-field-relevance gate. Fix ~6 alias/variant mismatches;
-  ignore ~5 citation-format placeholders. (Full seed: this file's earlier §S6 seed / `audit_cases.py`.)
+  ignore ~5 citation-format placeholders. (Full seed: **`_overhaul2/S6-SEED.md`** + its generator
+  script — regenerated 2026-07-02 per audit COH-02a; the old "§S6 seed / `audit_cases.py`" reference
+  was dangling.) **388-bare-mention split (audit COH-15):** of the 388 distinct cases with ≥1 bare
+  mention (NUM-04), **S6 owns existence-verification + authoring of only the ~80–84 no-page subset**
+  (the S6-SEED roster); **S8 owns linking ALL 388** once pages exist — the two specs reconcile the
+  numbers jointly (NUM-04/NUM-05 are the measured inputs).
 - **Research first.** The audit list; Overhaul-1 coverage (`_overhaul/coverage/`); the comprehensive-
   research protocol; a why-missed taxonomy.
 - **Interview-extract.** Relevance gate threshold; frontier reach; borderline sign-off. *Show:* the
   missed-case list + why-missed→generalized-search on a sample.
 - **Deliverable.** `S6-coverage-ingest.spec.md`.
+- **Audit inputs (2026-07-02)** — from `AUDIT-2026-07-02.md`; address each (adopt / adapt /
+  reject-with-rationale) in the spec's Decision Log:
+  **GAP-01b** author retaliatory-arrest coverage (*Nieves* 2019, *Gonzalez* 2024 — 0 hits today) ·
+  **GAP-02b** author 4A malicious-prosecution coverage (*Thompson* 2022, *Chiaverini* 2024) ·
+  **GAP-04a** *Cooley* (tribal officers/non-Indians) · **GAP-04b** *Lombardo* (prone restraint) ·
+  **GAP-04c** *Culley* (forfeiture retention hearings) · **GAP-04d** reconsider page-less *Egbert* ·
+  **GAP-04e** *Noem v. Vasquez Perdomo* (2025 shadow docket — watch item) · **GAP-04f** assess
+  *Villarreal* (trial-side; likely reject-with-rationale) · **GAP-04g** reconsider *Martin* (FTCA
+  wrong-house raid) alongside Egbert · **GAP-05** add an **OT2019→present term-by-term SCOTUS sweep**
+  as a named seed source (never-named doctrine is invisible to the named-in-prose leg; recurring
+  version → the maintenance loop) · **COH-15** the 388/~84 split (see Direction) · consume
+  **`_overhaul2/S6-SEED.md`** (COH-02a + NUM-05) as the committed roster.
 
 ### S7 — Doctrine Production (brief-first)
 - **Direction.** Produce/rewrite each doctrine/narrative page *through* the draft→review→verified
   pipeline: brief-first (rule + tests up front + limits + nuance + pitfalls integrated, no "(woven in)"
   label); numbered apply-it lists; nothing after the tables except the diagram; fix slip-op pinpoints,
-  pipe-escaping, `^pin-N` leaks; per-page fixes from `Prompt.md` (Matlock is a Consent table-entry;
+  pipe-escaping, `^pin-N` leaks; per-page fixes originally captured from `Prompt.md` (**file missing —
+  not in the repo anywhere; the parenthetical list here is the surviving record — regenerate or drop
+  the reference at the S7 interview; audit COH-14**) (Matlock is a Consent table-entry;
   CREW "R"→"RE"; Herring→Key on Collective Knowledge; Riley→Related on Common Law; community caretaking
   reaches persons; Dunn factors in the Rule; Knock-and-Talk = lawful-presence/implied-license; Bandiero
   hot/fresh-pursuit line; Santana "limited by"; consent 3 prongs + scope pitfall; split Legal Research +
   add State Citations w/ opencase.com). Weave mnemonics where they earn it; Humanizer voice. Black-letter
-  rules ≥2-reviewer approved; officer summaries human-in-the-loop.
+  rules ≥2-reviewer approved; **officer summaries do not exist — the layer is banned project-wide by
+  S1 (S1 §2.2 + R6 — audit COH-01); existing "field framing" prose migrates per TEACH-04e below.**
 - **Research first.** Per page: current text; resolve flagged doctrinal questions with authority
   (horizontal-pooling vs *Pringle*; knock-and-talk split; caretaking-of-persons); live limits on
   over-cited cases (Santana). Web + CL.
 - **Interview-extract.** The brief template + section order sign-off; which topics get exhaustive
   treatment; voice heaviness. *Show:* one fully rewritten doctrine brief as the pattern.
 - **Deliverable.** `S7-doctrine-production.spec.md` + per-page change-list.
+- **Audit inputs (2026-07-02)** — from `AUDIT-2026-07-02.md`; address each (adopt / adapt /
+  reject-with-rationale) in the spec's Decision Log:
+  **TEACH-01** relocate SCOTUS holdings out of every "Recent developments" section (5+ pages; FA
+  Framework worst) · **TEACH-02c** strip reader-facing pipeline-vocabulary leaks per the broadened R14
+  (rule IDs, "Re-homed from…", "CL-confirm pending", "No standalone case page" ×12, …) · **TEACH-03**
+  corpus-wide slip-op→reporter pinpoint conversion (absorbs LAW-04) · **NUM-01** sizing for TEACH-03:
+  43/47 case pages **plus ~22 doctrine pages** · **TEACH-04a** fix the inverted Golden-Rule maxim
+  header (PC/RS :61) · **TEACH-04b** qualify "a shot that misses…is not a *force* seizure" ·
+  **TEACH-04c** register or cut the "two C's" mnemonic (Miranda :23) · **TEACH-04d** fix the 21
+  "SCOTUS — binding" label-order inversions · **TEACH-04e** define + apply the field-framing
+  delete-vs-convert-to-N3-list migration rule (ties COH-01) · **TEACH-04f** fix the
+  `[[CREW|Three Golden Rules]]` mislink · **TEACH-04g** "persuasive history" → tier "Historical" ·
+  **TEACH-04h** fix the Warrant Requirement Sources :149 editing residue · **TEACH-05** em-dash
+  rewrite pass (~1,100 hits in sample; policy = S1/TEACH-06) · **TEACH-08** apply the S5 heading
+  standard for "Recent developments" · **TEACH-12a** add the missing `# Title` H1 (~14 doctrine
+  pages) · **TEACH-12b** migrate the 6 legacy `## Rule`-skeleton pages to The Brief (FA Framework is
+  a hub page) · **GAP-03b** scope the emerging-tech cluster into the Third-Party/Digital rewrite
+  (reverse-keyword H · StingRay H · real-time CSLI M · IGG M · BWC M) · **GAP-03c** brief §702 /
+  parallel-construction mention · **GAP-06** hotfixed (geofence pitfall) — verify no residue in the
+  rewrite · **NUM-08** negative scope: "persuasive, not binding" is already clean — budget no work.
 
 ### S8 — Legal-Term & Case Linking + Glossary
 - **Direction.** Link **every named case** anywhere (even short names) → its page; deep-link/highlight
   to a pinpoint when discussing a passage. **Liberal** legal-term backlinks — every occurrence of a
   term-of-art links to `Common Legal Terms` with a hover preview. Single-source transclusion of
   canonical rule/term nodes. Audit/expand the glossary from finalized S7 text (non-vernacular only).
-  Seed: **388 distinct cases have ≥1 bare (unlinked) mention** (2026-07-01 audit).
+  Seed: **388 distinct cases have ≥1 bare (unlinked) mention** (2026-07-01 audit; confirmed by
+  NUM-04). **Split (audit COH-15): S8 links ALL 388 once pages exist; S6 verifies + authors only the
+  ~80–84 no-page subset** (`_overhaul2/S6-SEED.md`) — see §4-S6.
 - **Research first.** `LINT-5`/`LINT-7`, the popover mechanism, `_overhaul/ledger/S7-term-map.md`.
 - **Interview-extract.** Term-of-art inclusion test; every-occurrence vs first-occurrence (user leans
   every); highlight/pinpoint policy. *Show:* a page at the proposed link density + hover previews.
 - **Deliverable.** `S8-linking-glossary.spec.md`.
+- **Audit inputs (2026-07-02)** — from `AUDIT-2026-07-02.md`; address each (adopt / adapt /
+  reject-with-rationale) in the spec's Decision Log:
+  **COH-15** link ALL 388 bare-mention cases once pages exist (S6 authors the no-page subset;
+  reconcile the 388 / ~84 / LINT-5 numbers jointly with S6) · **NUM-04** the 388 seed is confirmed
+  (40/40 sample hit-rate; conservative floor ≥365) · **NUM-02** pipe-escaping work list: **18 files /
+  69 affected table lines** (per-file list in the audit report).
 
 ### S9 — Verification Pipeline & Release Gate
 - **Direction.** The continuous, fail-closed pipeline (not just a final pass) + the release gate:
@@ -278,9 +405,29 @@ Each: **Direction · Research first · Interview-extract (choices + what to show
   (gpt-5.5) + how the two Codex lanes stay independent; definition-of-done. *Show:* the
   finding/adjudication JSON schema + one worked finding through find→adjudicate→fix→re-review.
 - **Deliverable.** `S9-verification.spec.md`.
+- **Audit inputs (2026-07-02)** — from `AUDIT-2026-07-02.md`; address each (adopt / adapt /
+  reject-with-rationale) in the spec's Decision Log:
+  **COH-17** writer ≠ checker weakened (Codex builds the lake AND staffs 2 of 3 review lanes) — route
+  the **≥1-in-10 identity spot-check to the Claude lane** · **COH-21** standardize lint naming
+  (numeric LINT-9/10 vs `LINT-S2-*`) before codifying the roster (w/ the S1 amendment) · **COH-27**
+  checklist line: re-poll "pending" markers (*Carter v. United States* cert-watch, No. 25-885) ·
+  **COH-28** fold the open LINT-3 Chatrie recent-dev false-positive fix into the CI-lint roster ·
+  **TEACH-02b** enforcement lint for the broadened R14 (ALL pipeline vocabulary, not just two
+  phrases) · **TEACH-11** mnemonic-register lint needs **wikilink-target checks** (the CREW mislink
+  and the inverted maxim both pass a naive text lint) · **NUM-03** size LINT-9 for **~230-file
+  remediation** (299 visible mid-line `^pin-N` anchors across 233 files; 672 end-of-line masked by
+  Quartz parsing) · **S2F-07b** (routed via amend:S2) — S9 rechecks S7 prose authored against
+  provisional point slugs after the S3 binding map resolves them.
 
-> **Deferred (GitHub issue #2):** the **Maintenance Loop** — post-publish entry ownership + citator-
+> **Deferred run #1 (audit COH-23 — full URL: <https://github.com/Enragedsaturday/cssi/issues/2>, the
+> FORK's issue #2):** the **Maintenance Loop** — post-publish entry ownership + citator-
 > watch re-verification (CL alerts) + a "New Topic" staging area + dual-date decay. A separate run.
+>
+> **Deferred run #2 (audit COH-05; user decision D3): the FLASHCARD REBUILD.** Post-S9, rebuild the
+> frozen deck from finalized content — the deck deliberately carries stale content until then
+> (COH-05d). Constraint assigned NOW: **S3 (renames/re-homings/unlisting — COH-05b) and S4
+> (platform/nav — COH-05c) must preserve deck-referenced stems/aliases** or knowingly accept + log
+> the breakage for the rebuild.
 
 ## 5. Adopted mechanisms
 See **`PRACTICES.md`** for the full text of: the three-field treatment vocabulary (§2), the 10-gate
@@ -296,14 +443,23 @@ exact CourtListener fields/calls per data element (the S2 schema).
 - **Overhaul-1 kit:** `_overhaul/` · `docs/STANDARDS.md`, `docs/FINAL-QA-SPEC.md`, `docs/RUNBOOK.md`
   · `_run/FINAL-S9-REPORT.md` · `scripts/lint/`.
 - **Book + taxonomy refs:** `.orca/drops/Book Jun 26, 2026.pdf` (TOC), `…(1).pdf` (case-example →
-  S5), `SSTOC.pdf` (LaFave), `New Jersey Law Enforcement Handbook…pdf`, `Prompt.md` (user intent).
+  S5 — **missing: not on disk; regenerate or drop at the S5 interview — audit COH-14**), `SSTOC.pdf`
+  (LaFave), `New Jersey Law Enforcement Handbook…pdf`, `Prompt.md` (user intent — **missing: not in
+  the repo anywhere; §4-S7 carries the surviving fix-list; regenerate or drop at the S7 interview —
+  audit COH-14**). **`.orca/drops/` is LOCAL-ONLY** — untracked, and the copyrighted PDFs must never
+  be committed (audit COH-14).
 - **Content:** `content/` (canonical) — categories + `content/cases/` (~457) + Case Index.
 - **Platform:** `quartz.config.ts`, `quartz.layout.ts`, `quartz/components/` (Explorer, Search, Footer,
   CaseTable, TreatmentBadge, popover). Dev: `npx quartz build --serve` → :8080.
 - **Codex reviewers:** headless `codex exec -s workspace-write -c approval_policy=never
-  --skip-git-repo-check --json -C <dir> -o <last.txt> "<prompt>" < /dev/null` (wrap in a timeout);
-  model gpt-5.5. Codex CL MCP optional/broken — reviewers read the data-lake.
-- **Maintenance:** GitHub issue #2. **Publish:** push `origin main` → Vercel (reconcile in S4).
+  --skip-git-repo-check --json -C <dir> -o <last.txt> "<prompt>" < /dev/null` (wrap in a timeout —
+  macOS has no GNU `timeout` and `gtimeout` is absent on this host: use the caller's own timeout
+  mechanism, e.g. the harness/tool-level timeout — audit COH-31);
+  model gpt-5.5. Codex CL MCP optional/broken — reviewers read the data-lake. **CL credentials (audit
+  COH-07): L4 rescoped by S1 amendment — one serial lane per credential; the Codex REST builder owns
+  the token, the Claude MCP lane does interactive spot-checks only.**
+- **Maintenance:** <https://github.com/Enragedsaturday/cssi/issues/2> (the fork's issue #2 — audit
+  COH-23). **Publish:** push `origin main` → Vercel (reconcile in S4).
 
 ## 7. Status
 | Spec | Interview | Spec written |
@@ -319,3 +475,11 @@ exact CourtListener fields/calls per data element (the S2 schema).
 | S9 Verification Pipeline & Release Gate | ☐ | ☐ |
 
 *Coherence pass over all nine → one autonomous EXECUTE run (data-lake first).*
+
+**AUDIT-CLOSURE gate (blocking — part of the coherence pass).** The coherence pass **FAILS** if
+either check fails:
+1. any row in `_overhaul2/AUDIT-2026-07-02.md` lacks a **terminal disposition + a real pointer**
+   (diff, spec-amendment section, RUNBOOK block, commit, or Decision-Log entry);
+2. any `injected:S4..S9` ID lacks an explicit disposition (adopt / adapt / reject-with-rationale) in
+   its spec's Decision Log.
+Phase 5's adversarial agent (not a writer) walks the register and stamps closure.

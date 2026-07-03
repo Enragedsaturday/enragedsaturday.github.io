@@ -102,6 +102,11 @@ Split each doctrine entry into layers gated differently:
   "officer bottom line"/BLUF summarization — these drift on the controlling *standard* (emergency aid
   is an **objectively reasonable belief**, NOT "sees someone in imminent danger"). Never auto-generate
   the standard; ground it verbatim in the opinion.
+  > **SUPERSEDED (2026-07-02, audit COH-01) — spec wins (RUNBOOK §0 precedence):** S1 **banned the
+  > field-application / officer-BLUF summary project-wide** (S1 §2.2 Out-of-scope + **R6 Variant A**
+  > + Appendix C). This layer is now **Explanation only** — no officer-bottom-line is designed,
+  > mocked, or generated anywhere. The paraphrase-drift scar above survives as **S1 R7** (never
+  > auto-generate a controlling standard).
 - **Authorities & notes** — attributed, lighter-weight; the supporting cases + our evaluation.
 
 Only primary-source opinion text is authority; our summaries orient but every load-bearing statement
@@ -110,6 +115,8 @@ pins to a primary source. Where courts split, state the split; if we pick a rule
 
 > **S1/S5 interview deliverable:** mock up **two variants** — full ALI black-letter/explanation/notes
 > vs. a lighter "verified rule + supporting notes" — and choose on the mockup.
+> **SUPERSEDED (2026-07-02, audit COH-12):** adjudicated by S1 — **Variant A** chosen (S1 R6 +
+> Appendix C). Do not re-mock or re-interview this in S5.
 
 ---
 
@@ -125,7 +132,8 @@ We are the AI courts sanction people for trusting, so these are enforced, not ad
 5. **Holding-support check** — the cited page supports the proposition (2nd pass).
 6. **Treatment/currency check before publish** — overruled/abrogated cannot be presented as current.
 7. **Separation of drafting from verification** — generator ≠ verifier; no self-certification.
-8. **Human sign-off** for anything reader-facing/legally operative; recorded.
+8. **Human sign-off** for anything reader-facing/legally operative; recorded. *(Scoped to the
+   enumerated pauses in the RUNBOOK §0 human-pause register — audit COH-06.)*
 9. **Immutable provenance/audit trail** per assertion (prompt, model+version, retrieved sources,
    timestamp, verification results, verifier identity, approval/override).
 10. **Dual as-of dating + re-verification cadence** — re-run G3/G4/G6 on a schedule (→ maintenance loop).
