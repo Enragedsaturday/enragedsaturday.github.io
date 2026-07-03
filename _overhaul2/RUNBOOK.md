@@ -176,7 +176,15 @@ Each: **Direction · Research first · Interview-extract (choices + what to show
   "Home Entry & Search" y/n; "Standards of Proof" rename; nav size; Knock-and-Talk placement; which
   nodes are index-2 umbrellas vs index-3 leaves; per-case re-homings. *Show:* a **live nav mockup** on
   a branch + a written overview page — lock the layout on the mockup before writing.
-- **Deliverable.** `S3-taxonomy.spec.md` — target tree + overview list + re-homing table.
+- **Deliverable.** `S3-taxonomy.spec.md`. ✅ **Written 2026-07-02.** Built our own tree from scratch on
+  **NJLEH's object-led methodology**, breadth-checked vs LaFave + Bandiero, perfected on a live Tailscale
+  mockup. **13 categories** (Appendix A): parallel **Searches/Seizures**, **Standards of Proof** moved to
+  #2, **Warrant Exceptions** by object, **Home Entry & Search** premises bucket, new **Fair-Trial &
+  Reliability** umbrella (Eyewitness ID + Brady/Giglio + Entrapment), **§1983 / Qualified Immunity** split,
+  Plain View at the threshold, names de-ripped from Bandiero. Two layers: the tree + the **point-of-law
+  registry** (`_overhaul2/points/registry.yaml`) with the fail-closed **`point → node` binding map** that
+  closes S2 §9 (Belton→Gant = `search.vehicle.sia-recent-occupant`). The **"TOC-tree" nav model + sidebar
+  scroll fix + connectors** were prototyped here but are **handed to S4**. Six new lints.
 
 ### S4 — Platform, Nav & Reader-Signaling UI
 - **Direction.** Make the explorer *work* (retarget scroll save/restore to `.explorer-content`; drop
@@ -302,7 +310,7 @@ exact CourtListener fields/calls per data element (the S2 schema).
 |---|---|---|
 | S1 Standards & Style Manual | ✅ | ✅ |
 | S2 Verified Authority Database | ✅ | ✅ |
-| S3 Taxonomy & Points-of-Law | ☐ | ☐ |
+| S3 Taxonomy & Points-of-Law | ✅ | ✅ |
 | S4 Platform, Nav & Reader-Signaling | ☐ | ☐ |
 | S5 Entry Models | ☐ | ☐ |
 | S6 Coverage & Ingest | ☐ | ☐ |
