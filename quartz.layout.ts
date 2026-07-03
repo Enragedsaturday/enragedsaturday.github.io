@@ -1,19 +1,24 @@
 import { PageLayout, SharedLayout } from "./quartz/cfg"
 import * as Component from "./quartz/components"
 
-// Category-grouped left nav (S3 · R2/R3). Renders S2's 12 book-spine categories
-// from the numbered content/ folders, with the warrant-exceptions cluster (#7) as
-// the single 3-level branch (7a/7b) and a segregated, collapsed `Cases` node
-// (S4 · R5/§9). The default numeric `sortFn` already collates 1,2,…,9,10,11,12 and
-// sorts the lettered `cases` node after the numbered categories, so it is kept as-is.
+// "TOC-tree" left nav (O2: S3 owns the 13-category tree, S4 owns this nav model —
+// audit CODE-05 comment refresh). Top-level categories are the only accordion;
+// nested folders render as always-open branches whose header links to their
+// overview. The displayNames table targets the O2 Appendix-A tree; until S3's
+// restructure lands at execution, unmatched folders fall back to their own names.
+// ORDERING (S3 A8 — user decision 2026-07-03): final ordering reads frontmatter
+// `weight:` (pages) + folder-index `weight:` (categories); the numeric-prefix
+// `sortFn` below is the mockup interim and is superseded on this point.
 //
-// `mapFn` MUST be closure-free: Quartz serializes it with `.toString()` and
-// re-evaluates it client-side, so it cannot reference any outer-scope variable —
-// the slug→display-name table is declared INSIDE the function body.
+// `mapFn`/`sortFn` MUST be closure-free: Quartz serializes them with `.toString()`
+// and re-evaluates them client-side, so they cannot reference any outer-scope
+// variable — the slug→display-name table is declared INSIDE the function body.
 const categoryExplorer = Component.Explorer({
   folderDefaultState: "collapsed",
   folderClickBehavior: "collapse",
   useSavedState: true,
+  // About is footer-owned (S4); keep it (and tags) out of the tree
+  filterFn: (node) => node.slugSegment !== "tags" && node.slugSegment !== "about",
   // Order by the numeric filename/slug prefix at every level, so authored page
   // order (e.g. Proof Ladder first) holds instead of alphabetical. Closure-free.
   sortFn: (a, b) =>
@@ -73,10 +78,10 @@ export const sharedPageComponents: SharedLayout = {
     Component.DoctrineFlowchart(),
     Component.CaseBrowser(),
   ],
+  // S4 · stock Quartz GitHub/Discord links dropped; attribution lives on About.
   footer: Component.Footer({
     links: {
-      GitHub: "https://github.com/jackyzha0/quartz",
-      "Discord Community": "https://discord.gg/cRFFHYye7t",
+      "About this site": "/about",
     },
   }),
 }

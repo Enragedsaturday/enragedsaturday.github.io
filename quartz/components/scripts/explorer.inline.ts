@@ -112,17 +112,16 @@ function createFolderNode(
   const folderPath = node.slug
   folderContainer.dataset.folderpath = folderPath
 
-  // S4 TOC-tree nav model: only top-level categories collapse; every nested folder
-  // renders as an always-open BRANCH whose header links straight to that node's
-  // overview (its folder index). So opening a category reveals the whole structure at
-  // once, and each subcategory header IS its overview link (no separate Overview row).
+  // S4 TOC-tree nav model (unified — audit CODE-03): EVERY folder header is a link
+  // to that node's overview (its folder index), at every depth, so authored category
+  // overviews stay reachable. Only top-level categories keep a chevron, which is the
+  // sole expand/collapse toggle; nested folders render as always-open BRANCHES.
   const isSubtree = depth > 0
   if (isSubtree) {
     li.classList.add("subtree")
   }
 
-  if (opts.folderClickBehavior === "link" || isSubtree) {
-    // Render the header as a link to the folder's overview (its index page)
+  {
     const button = titleContainer.querySelector(".folder-button") as HTMLElement
     const a = document.createElement("a")
     a.href = resolveRelative(currentSlug, folderPath)
@@ -130,9 +129,6 @@ function createFolderNode(
     a.className = "folder-title"
     a.textContent = node.displayName
     button.replaceWith(a)
-  } else {
-    const span = titleContainer.querySelector(".folder-title") as HTMLElement
-    span.textContent = node.displayName
   }
 
   // if the saved state is collapsed or the default state is collapsed
@@ -227,11 +223,13 @@ async function setupExplorer(currentSlug: FullSlug) {
     explorerUl.insertBefore(fragment, explorerUl.firstChild)
 
     // restore explorer scrollTop position if it exists
-    // S4 fix: the real scroll container is `.explorer-content`, not the inner `.explorer-ul`
+    // S4 fix: the real scroll container is `.explorer-content`, not the inner `.explorer-ul`.
+    // A saved "0" counts as no saved position (audit CODE-07: the stock truthy-string
+    // check let "0" suppress scroll-to-active).
     const explorerContent = explorer.querySelector(".explorer-content") as HTMLElement | null
-    const scrollTop = sessionStorage.getItem("explorerScrollTop")
-    if (scrollTop && explorerContent) {
-      explorerContent.scrollTop = parseInt(scrollTop)
+    const savedScrollTop = parseInt(sessionStorage.getItem("explorerScrollTop") ?? "", 10)
+    if (savedScrollTop > 0 && explorerContent) {
+      explorerContent.scrollTop = savedScrollTop
     } else {
       // try to scroll to the active element if it exists (instant, not smooth — S4)
       const activeElement = explorerUl.querySelector(".active")
@@ -249,19 +247,10 @@ async function setupExplorer(currentSlug: FullSlug) {
       window.addCleanup(() => button.removeEventListener("click", toggleExplorer))
     }
 
-    // Set up folder click handlers
-    if (opts.folderClickBehavior === "collapse") {
-      const folderButtons = explorer.getElementsByClassName(
-        "folder-button",
-      ) as HTMLCollectionOf<HTMLElement>
-      for (const button of folderButtons) {
-        // only top-level categories toggle; nested branches stay open + inert
-        if (button.closest("li.subtree")) continue
-        button.addEventListener("click", toggleFolder)
-        window.addCleanup(() => button.removeEventListener("click", toggleFolder))
-      }
-    }
-
+    // Folder click handlers. Under the unified model every header is a LINK
+    // (createFolderNode replaces all .folder-button elements), so the stock
+    // button-toggle wiring is gone (audit CODE-04 — the dead subtree guard with it).
+    // The chevron icon is the only toggle; subtree icons are display:none + inert.
     const folderIcons = explorer.getElementsByClassName(
       "folder-icon",
     ) as HTMLCollectionOf<HTMLElement>

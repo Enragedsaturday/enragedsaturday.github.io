@@ -14,21 +14,48 @@
     flex: 1 1 auto;
     min-height: 0;
   }
-  .explorer-content {
+  .explorer .explorer-content {
     flex: 1 1 auto;
     min-height: 0;
     // contain belongs HERE (the scroll container) so the explorer doesn't scroll the page
     overscroll-behavior: contain;
+    // and this must actually BE the scroll container: stock `div:has(> .overflow)`
+    // (base.scss) forces it hidden while the inner ul.overflow scrolls — which is what
+    // silently broke scroll save/restore (found live, S4 mockup round; see the
+    // ul.overflow neutralization below). Specificity 0-2-0 beats the has() rule's 0-1-1.
+    overflow-y: auto;
   }
+}
+
+// ONE scroll container at every breakpoint (S4): stock gives `.explorer-ul`
+// (ul.overflow) `max-height:100%; overflow-y:auto`, so IT scrolled while
+// `.explorer-content` — where the S3 prototype saves/restores scroll position —
+// sat at scrollTop 0 forever. Neutralize the inner scroller; the content div scrolls.
+.explorer .explorer-content > ul.overflow {
+  max-height: none;
+  overflow-y: visible;
 }
 
 // Wheel-scroll trap fix: the stock rule puts `overscroll-behavior: contain` on the
 // inner folder ULs, which are `overflow:hidden` (scroll containers) — so a wheel
 // over an expanded folder's child links gets captured and contained instead of
 // chaining up to `.explorer-content`. Undo it on the nested lists; contain stays
-// only on the real scroll container above.
-.explorer-content ul {
-  overscroll-behavior: auto;
+// only on the real scroll container above. Desktop-scoped (audit CODE-02b): on
+// mobile the drawer needs its own containment so touch-scroll can't chain to the page.
+@media all and not ($mobile) {
+  .explorer-content ul {
+    overscroll-behavior: auto;
+  }
+}
+
+// S4 mobile drawer scroll (audit CODE-02a): the stock drawer is `overflow:hidden`,
+// and the always-open-subtree model makes the tree far taller than one screen —
+// everything below the fold was unreachable on phones.
+@media all and ($mobile) {
+  .explorer .explorer-content {
+    overflow-y: auto;
+    overscroll-behavior: contain;
+  }
 }
 
 // S4 TOC-tree nav model: nested folders are always-open branches. The header is a
@@ -60,19 +87,98 @@
       bottom: 0;
       border-left: 1px solid var(--lightgray);
     }
-    // horizontal tick into the row
+    // horizontal tick into the row — 0.95rem aligns with row centers
+    // (file rows ≈0.975rem, folder rows ≈0.95rem — audit CODE-06; was 0.85rem)
     &::after {
       content: "";
       position: absolute;
       left: 0.2rem;
-      top: 0.85rem;
+      top: 0.95rem;
       width: 0.55rem;
       border-top: 1px solid var(--lightgray);
     }
     // last item: run stops at the tick → └ elbow
     &:last-child::before {
       bottom: auto;
-      height: 0.85rem;
+      height: 0.95rem;
     }
   }
+}
+
+// ---------------------------------------------------------------------------
+// S4 mockup additions below (interview round). Audit CODE-08 + runbook §4-S4.
+// ---------------------------------------------------------------------------
+
+// Two-line wrap polish: long case/doctrine titles wrap cleanly instead of
+// overflowing or breaking mid-word; wrapped lines keep the hanging indent the
+// connector geometry already provides.
+.explorer-content ul li > a,
+.explorer-content .folder-title {
+  overflow-wrap: anywhere;
+  line-height: 1.45;
+}
+.explorer-content ul li > a {
+  padding: 0.22rem 0; // vertical rhythm moved here from line-height so wraps stay tight
+}
+
+// Top-level category headers: the chevron is the toggle, the title is a link to
+// the category overview (audit CODE-03 — unified model). Give the small chevron a
+// real hit target.
+.explorer-content > ul > li > .folder-container > .folder-icon {
+  padding: 0.3rem;
+  margin: -0.3rem 0.05rem -0.3rem -0.3rem;
+  box-sizing: content-box;
+}
+
+// Sidebar breathing room: the left column's 2rem right-padding squeezed the tree.
+@media all and not ($mobile) {
+  .sidebar.left {
+    padding-right: 1.2rem;
+  }
+}
+
+// Content list/paragraph spacing (O1 finding: "cramped lists").
+article li + li {
+  margin-top: 0.3rem;
+}
+article li > ul,
+article li > ol {
+  margin-top: 0.3rem;
+}
+
+// Search "did you mean" strip (S4 · case-name suggestions on weak/zero results).
+.search-didyoumean {
+  padding: 0.45rem 1rem 0.1rem 1rem;
+  font-size: 0.85rem;
+  color: var(--darkgray);
+  display: none;
+
+  &.visible {
+    display: block;
+  }
+
+  & a.didyoumean-chip {
+    display: inline-block;
+    margin: 0.1rem 0.25rem;
+    padding: 0.05rem 0.55rem;
+    border: 1px solid var(--lightgray);
+    border-radius: 1rem;
+    background-color: var(--highlight);
+    color: var(--secondary);
+    font-style: italic;
+
+    &:hover {
+      border-color: var(--tertiary);
+      color: var(--tertiary);
+    }
+  }
+}
+
+// Treatment pill as ANCHOR (S4 owns the mechanism — audit COH-18): the pill's own
+// status classes (.treatment-badges .treatment-good etc., specificity 0-2-0) already
+// beat `a.internal`'s defaults (0-1-1), so the pill keeps its look when it becomes a
+// link; we only add a hover affordance so it reads as clickable.
+.treatment-badges a.internal.treatment-badge:hover {
+  filter: brightness(1.08);
+  cursor: pointer;
 }

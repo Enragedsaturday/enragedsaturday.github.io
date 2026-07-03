@@ -45,6 +45,11 @@ let index = new FlexSearch.Document<Item>({
   },
 })
 
+// S4 · case-name "did you mean": a second, typo-tolerant index over TITLES only.
+// `tokenize: "tolerant"` (FlexSearch ≥0.8) matches terms with swapped/missing
+// letters ("tery v ohio" → "Terry v. Ohio") without loosening the main index.
+let titleIndex = new FlexSearch.Index({ tokenize: "tolerant" })
+
 const p = new DOMParser()
 const fetchContentCache: Map<FullSlug, Element[]> = new Map()
 const contextWindowWords = 30
@@ -172,6 +177,13 @@ async function setupSearch(searchElement: Element, currentSlug: FullSlug, data: 
   const enablePreview = searchLayout.dataset.preview === "true"
   let preview: HTMLDivElement | undefined = undefined
   let previewInner: HTMLDivElement | undefined = undefined
+
+  // S4 · "did you mean" strip — shown above results when the main query comes back
+  // weak/empty but the tolerant title index finds close case names.
+  const didYouMean = document.createElement("div")
+  didYouMean.className = "search-didyoumean"
+  appendLayout(didYouMean)
+
   const results = document.createElement("div")
   results.className = "results-container"
   appendLayout(results)
@@ -186,6 +198,8 @@ async function setupSearch(searchElement: Element, currentSlug: FullSlug, data: 
     container.classList.remove("active")
     searchBar.value = "" // clear the input when we dismiss the search
     if (sidebar) sidebar.style.zIndex = ""
+    removeAllChildren(didYouMean)
+    didYouMean.classList.remove("visible")
     removeAllChildren(results)
     if (preview) {
       removeAllChildren(preview)
@@ -298,6 +312,38 @@ async function setupSearch(searchElement: Element, currentSlug: FullSlug, data: 
 
   function resolveUrl(slug: FullSlug): URL {
     return new URL(resolveRelative(currentSlug, slug), location.toString())
+  }
+
+  // S4 · "did you mean" — query the tolerant title index when the main search comes
+  // back weak; render up to 3 close case-name matches as chips that link straight
+  // to the page.
+  function renderDidYouMean(term: string, excludeIds: Set<number>) {
+    removeAllChildren(didYouMean)
+    didYouMean.classList.remove("visible")
+    // fire only on weak/zero results (< 3 hits) — "moderate" aggressiveness default
+    if (searchType !== "basic" || term.trim().length < 3 || excludeIds.size >= 3) return
+    let suggestionIds: number[] = []
+    try {
+      suggestionIds = titleIndex.search(term, { limit: 8, suggest: true }) as number[]
+    } catch {
+      return // never let the suggestion layer break real search
+    }
+    const picks = suggestionIds.filter((id) => !excludeIds.has(id)).slice(0, 3)
+    if (picks.length === 0) return
+    const label = document.createElement("span")
+    label.textContent = "Did you mean: "
+    didYouMean.appendChild(label)
+    for (const id of picks) {
+      const slug = idDataMap[id]
+      const a = document.createElement("a")
+      a.className = "didyoumean-chip"
+      a.href = resolveUrl(slug).toString()
+      a.textContent = data[slug].title
+      a.addEventListener("click", hideSearch)
+      window.addCleanup(() => a.removeEventListener("click", hideSearch))
+      didYouMean.appendChild(a)
+    }
+    didYouMean.classList.add("visible")
   }
 
   const resultToHTML = ({ slug, title, content, tags }: Item) => {
@@ -451,6 +497,8 @@ async function setupSearch(searchElement: Element, currentSlug: FullSlug, data: 
       ...getByField("content"),
       ...getByField("tags"),
     ])
+    // S4 · weak/zero results → offer close case-name matches from the tolerant index
+    renderDidYouMean(currentSearchTerm, allIds)
     const finalResults = [...allIds].map((id) => formatForDisplay(currentSearchTerm, id))
     await displayResults(finalResults)
   }
@@ -477,14 +525,17 @@ async function fillDocument(data: ContentIndex) {
   let id = 0
   const promises: Array<Promise<unknown>> = []
   for (const [slug, fileData] of Object.entries<ContentDetails>(data)) {
+    const docId = id++
     promises.push(
-      index.addAsync(id++, {
-        id,
+      index.addAsync(docId, {
+        id: docId,
         slug: slug as FullSlug,
         title: fileData.title,
         content: fileData.content,
         tags: fileData.tags,
       }),
+      // S4 · feed the tolerant "did you mean" title index in the same pass
+      titleIndex.addAsync(docId, fileData.title ?? ""),
     )
   }
 

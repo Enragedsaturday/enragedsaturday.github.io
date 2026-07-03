@@ -1,6 +1,7 @@
 import { QuartzComponent, QuartzComponentConstructor, QuartzComponentProps } from "./types"
 import style from "./styles/treatmentBadge.scss"
 import { classNames } from "../util/lang"
+import { FullSlug, resolveRelative } from "../util/path"
 import {
   TREATMENT_LABELS,
   isCasePage,
@@ -8,6 +9,12 @@ import {
   normStatus,
   weightTierKey,
 } from "./caseHelpers"
+
+// S4 · pill-as-anchor (mechanism — audit COH-18): the treatment pill links to the
+// "how we verify" page, so hovering it fires the standard `a.internal` popover and
+// clicking it lands on the methodology. Single path constant; S3's restructure
+// re-homes this page, at which point this constant is the one edit.
+const GOOD_LAW_SLUG = "2-legal-system-research/Verifying-Good-Law" as FullSlug
 
 // S3 · R4 #1 — TreatmentBadge.
 // Renders a case's good-law `treatment.status` (good|criticized|limited|abrogated|
@@ -36,18 +43,29 @@ export default (() => {
     const asOf = treatment?.as_of ? String(treatment.as_of) : undefined
     const note = treatment?.note ? String(treatment.note) : undefined
 
+    // hover provenance (tooltip layer; the popover previews the methodology page)
+    const hoverTitle = [
+      `Treatment: ${TREATMENT_LABELS[status ?? ""] ?? status ?? "unknown"}`,
+      asOf ? `checked as of ${asOf}` : undefined,
+      note,
+      "Click: how we verify good law",
+    ]
+      .filter(Boolean)
+      .join(" · ")
+
     return (
       <div class={classNames(displayClass, "treatment-badges")}>
         {status && (
-          <span
-            class={`treatment-badge treatment-${known ? status : "unknown"}`}
+          <a
+            href={resolveRelative(fileData.slug!, GOOD_LAW_SLUG)}
+            class={`internal treatment-badge treatment-${known ? status : "unknown"}`}
             data-treatment={status}
-            title={note}
+            title={hoverTitle}
           >
             <span class="treatment-dot" aria-hidden="true"></span>
             <span class="treatment-label">{TREATMENT_LABELS[status] ?? status}</span>
             {asOf && <span class="treatment-asof">as of {asOf}</span>}
-          </span>
+          </a>
         )}
         {weight && (
           <span class="authority-weight" data-weight-tier={weightTierKey(weight)} title="Authority weight">
