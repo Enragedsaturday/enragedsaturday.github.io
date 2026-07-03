@@ -1,0 +1,1186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CSSI Overhaul 2 — Full Project Audit</title>
+<style>
+:root{--ink:#1a1a1a;--muted:#666;--accent:#1d4ed8;--line:#e5e7eb;--bg:#fff;--card:#f8fafc;}
+*{box-sizing:border-box;}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;}
+.wrap{max-width:820px;margin:0 auto;padding:56px 24px 96px;}
+header.doc{border-bottom:3px solid var(--accent);padding-bottom:16px;margin-bottom:32px;}
+header.doc h1{font-size:2rem;line-height:1.2;margin:0 0 6px;}
+header.doc .sub{color:var(--muted);font-size:1.05rem;margin:0;}
+header.doc .date{color:var(--muted);font-size:.85rem;margin-top:8px;text-transform:uppercase;letter-spacing:.05em;}
+h2{font-size:1.45rem;margin:2.2em 0 .6em;padding-top:.4em;border-top:1px solid var(--line);}
+h3{font-size:1.12rem;margin:1.6em 0 .4em;}
+h4{font-size:1rem;margin:1.3em 0 .3em;}
+a{color:var(--accent);}
+blockquote{margin:1.2em 0;padding:.8em 1.1em;background:var(--card);border-left:4px solid var(--accent);border-radius:0 6px 6px 0;}
+.tablewrap{overflow-x:auto;}
+table{border-collapse:collapse;width:100%;margin:1.2em 0;font-size:.92rem;}
+th,td{border:1px solid var(--line);padding:8px 11px;text-align:left;vertical-align:top;}
+th{background:var(--card);}
+code{font:.88em ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;background:var(--card);padding:.12em .4em;border-radius:4px;word-break:break-word;}
+pre{background:#0f172a;color:#e2e8f0;padding:16px;border-radius:8px;overflow:auto;font-size:.82rem;line-height:1.5;}
+pre code{background:none;color:inherit;padding:0;}
+details{margin:1em 0;border:1px solid var(--line);border-radius:8px;padding:.4em 1em;background:var(--card);}
+summary{cursor:pointer;font-weight:600;}
+details pre{max-height:70vh;}
+.toc{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:14px 22px;font-size:.95rem;}
+.toc ol{margin:.4em 0;padding-left:1.3em;}
+.toc li{margin:.22em 0;}
+.sev{display:inline-block;font:700 .68rem/1 ui-monospace,Menlo,monospace;padding:3px 7px;border-radius:5px;letter-spacing:.04em;white-space:nowrap;}
+.crit{background:#dc2626;color:#fff;}
+.high{background:#ea580c;color:#fff;}
+.med{background:#d97706;color:#fff;}
+.low{background:#6b7280;color:#fff;}
+.ok{background:#16a34a;color:#fff;}
+.info{background:#2563eb;color:#fff;}
+.verdict{font-size:1rem;color:var(--muted);font-style:italic;margin:.2em 0 1em;}
+.statgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:1.4em 0;}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:14px 16px;text-align:center;}
+.stat .n{font-size:1.7rem;font-weight:700;line-height:1.15;}
+.stat .l{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;margin-top:4px;}
+.crit-card{border:1px solid #dc2626;border-radius:10px;padding:16px 20px;margin:1.2em 0;background:var(--card);}
+.crit-card h3{margin:.1em 0 .4em;}
+.owner{display:inline-block;font:600 .72rem/1 ui-monospace,Menlo,monospace;background:var(--card);border:1px solid var(--line);padding:3px 7px;border-radius:5px;white-space:nowrap;}
+.small{font-size:.88rem;color:var(--muted);}
+li{margin:.3em 0;}
+#unhost{position:fixed;top:14px;right:14px;z-index:99;background:#fff;border:1px solid var(--line);border-radius:8px;padding:7px 12px;font:13px sans-serif;color:#b91c1c;cursor:pointer;box-shadow:0 1px 4px rgba(0,0,0,.08);}
+@media (prefers-color-scheme:dark){
+:root{--ink:#e8e8e8;--muted:#9aa0a6;--line:#2a2f3a;--bg:#15171c;--card:#1e2230;}
+#unhost{background:#1e2230;}
+.crit-card{border-color:#b91c1c;}
+}
+@media print{:root{--ink:#000;--bg:#fff;--card:#f3f4f6;}body{font-size:11pt;}.wrap{max-width:none;padding:0;}
+h1,h2,h3{break-after:avoid;}table,blockquote,pre,.crit-card,.stat{break-inside:avoid;}
+.screen-only,#unhost{display:none!important;}*{-webkit-print-color-adjust:exact;print-color-adjust:exact;}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="doc">
+<h1>CSSI Overhaul 2 — Full Project Audit</h1>
+<p class="sub">Eight-agent fan-out over the O2 planning kit, the branch code, and the live corpus — issues, bugs, and improvements, verified against the live CourtListener API.</p>
+<p class="date">July 2, 2026 · branch <code>overhaul2/planning</code> · 8 sub-agents · ~255 tool calls</p>
+</header>
+
+<nav class="toc">
+<strong>Contents</strong>
+<ol>
+<li><a href="#verdict">Executive verdict</a></li>
+<li><a href="#method">How the audit ran (the self-interview)</a></li>
+<li><a href="#criticals">The three critical findings</a></li>
+<li><a href="#areas">Findings by area</a>
+  <ol type="a">
+  <li><a href="#a1">Planning-doc coherence</a></li>
+  <li><a href="#a2">S2 feasibility vs the live CourtListener API</a></li>
+  <li><a href="#a3">Uncommitted code on the branch</a></li>
+  <li><a href="#a4">Taxonomy &amp; content structure</a></li>
+  <li><a href="#a5">Case-law accuracy</a></li>
+  <li><a href="#a6">Teaching quality &amp; verbiage</a></li>
+  <li><a href="#a7">The runbook's numbers, measured</a></li>
+  <li><a href="#a8">Currency &amp; research gaps</a></li>
+  </ol></li>
+<li><a href="#clean">What checked out clean</a></li>
+<li><a href="#themes">Cross-cutting themes</a></li>
+<li><a href="#actions">Recommended action plan</a></li>
+<li><a href="#appendix">Appendix: full agent reports</a></li>
+</ol>
+</nav>
+
+<h2 id="verdict">1 · Executive verdict</h2>
+
+<p><strong>The Overhaul-2 plan is fundamentally sound, and the corpus it will rebuild is in far better legal shape than the plan assumes.</strong> Every quantitative claim in the runbook that could be measured matched — several to the exact digit (43/47 slip-op files, 18 pipe-escape files, 457 case pages). Legal accuracy sampling found <strong>one substantive error in 14 verified pages</strong>, zero wrong holdings, and treatment honesty (Caniglia-limits-Cady, Lange-limits-Santana) handled, in the auditor's words, "unusually well." Doctrinal currency is exceptional: <em>Chatrie v. United States</em>, decided <strong>three days before this audit</strong>, already has a full case page and eight updated doctrine homes.</p>
+
+<p>But the audit surfaced <strong>three critical defects</strong> that will corrupt downstream work if the next spec thread runs before they're fixed — one of which (the S2 denylist) would silently exclude <em>Chatrie</em>, a landmark geofence decision and core CSSI subject matter, from the Verified Authority Database. Two independent agents converged on its root cause from opposite directions.</p>
+
+<div class="statgrid">
+<div class="stat"><div class="n">≈70</div><div class="l">Total findings</div></div>
+<div class="stat"><div class="n" style="color:#dc2626">3</div><div class="l">Critical</div></div>
+<div class="stat"><div class="n" style="color:#ea580c">18</div><div class="l">High</div></div>
+<div class="stat"><div class="n" style="color:#d97706">25</div><div class="l">Medium</div></div>
+<div class="stat"><div class="n" style="color:#6b7280">~24</div><div class="l">Low / info</div></div>
+</div>
+
+<blockquote><strong>One-paragraph TLDR.</strong> Fix the S2 denylist misdiagnosis, propagate S1's decisions into the runbook, and commit the missing S6 audit artifact — then the plan is safe to keep executing. The rest of the findings are plan hygiene (stale entries, wrong dependency edges, uncommitted inputs), systematic content polish (pipeline vocabulary leaking onto published pages, slip-op pinpoints, mid-line anchors in 233 files), taxonomy refinements the S3 interview should absorb, and a genuine research-gap class (never-named doctrines like retaliatory arrest) that the S6 discovery model structurally cannot find without a new seed source.</blockquote>
+
+<h2 id="method">2 · How the audit ran</h2>
+
+<p>Per your instruction, the main thread stayed a thin orchestrator. It first ran a <strong>self-interview</strong> — "what areas <em>can</em> be audited here, and what does each need?" — which produced the audit dimensions, then delegated each to a parallel sub-agent. Each agent wrote a full report to disk (embedded in the <a href="#appendix">Appendix</a>) and returned condensed findings.</p>
+
+<div class="tablewrap"><table>
+<tr><th>Self-interview question</th><th>Resulting audit dimension</th><th>Method</th></tr>
+<tr><td>What is the actual work product of this branch?</td><td><a href="#a1">A. Planning-doc coherence</a></td><td>Cross-read RUNBOOK / PRACTICES / specs / wrappers / O1 kit</td></tr>
+<tr><td>What does everything downstream depend on?</td><td><a href="#a2">B. S2 feasibility</a></td><td>Live CourtListener API verification of every load-bearing claim</td></tr>
+<tr><td>Does the code on this branch work?</td><td><a href="#a3">C. Code diff review</a></td><td>Diff + Quartz lifecycle analysis + <code>tsc --noEmit</code></td></tr>
+<tr><td>Is the organization right?</td><td><a href="#a4">D. Taxonomy &amp; structure</a></td><td>Full tree map, mega-page census, S3-direction reality check</td></tr>
+<tr><td>Is the legal content itself right?</td><td><a href="#a5">E. Case-law accuracy</a></td><td>14 pages verified against opinion text via CourtListener</td></tr>
+<tr><td>Does it teach well and read consistently?</td><td><a href="#a6">F. Teaching quality &amp; verbiage</a></td><td>11-page scorecard vs the S1 constitution</td></tr>
+<tr><td>Is the substrate as the specs describe it?</td><td><a href="#a7">G. Claims quantification</a></td><td>Scripted measurement of every runbook number</td></tr>
+<tr><td>What's missing entirely?</td><td><a href="#a8">H. Currency &amp; gaps</a></td><td>Web sweep OT2020–OT2025 + emerging-doctrine + curriculum checklists</td></tr>
+</table></div>
+
+<h2 id="criticals">3 · The three critical findings</h2>
+
+<div class="crit-card">
+<h3><span class="sev crit">CRITICAL 1</span> &nbsp;The S2 denylist is built on a misdiagnosis and would exclude <em>Chatrie</em> from the authority database</h3>
+<p><strong>Where:</strong> <code>S2-authority-database.spec.md</code> R7 · <code>CL-DATA-INVENTORY.md</code> · <code>content/cases/Chatrie v. United States.md:23,38,60,72</code></p>
+<p>Overhaul 1 recorded CourtListener objects 10881683 (Chatrie) and 10813527 (Zorn) as "corrupted" — the fetched text came back as unrelated cases. The live-API audit <strong>refuted this</strong>: those are <em>cluster</em> IDs, and O1 fetched them against the <em>opinions</em> endpoint, where the same numbers happen to identify different, valid documents. Cluster 10881683 <em>is</em> the genuine <em>Chatrie v. United States</em> (SCOTUS, 2026-06-29, No. 25-112; the geofence-search holding was verified in its sub-opinion 11349205), and cluster 10813527 is the genuine <em>Zorn v. Linton</em> (SCOTUS, 2026-03-23). The S2 spec's "builder refuses these ids" rule would therefore block ingesting a landmark Fourth Amendment decision that is core CSSI subject matter — and the Chatrie case page itself carries a stale "DO NOT ingest 10881683" warning that would propagate the error into future pipeline runs. The case-law agent independently reproduced the same root cause from the content side.</p>
+<p><strong>Fix:</strong> drop or rework the denylist — namespace any entries by object type, document the real rule (<em>never fetch <code>/opinions/&lt;cluster_id&gt;</code></em>), rely on R2's two-key identity check (which already catches this failure class), and backfill the Chatrie page with <code>opinion_id: 11349205</code> and a corrected note.</p>
+</div>
+
+<div class="crit-card">
+<h3><span class="sev crit">CRITICAL 2</span> &nbsp;The runbook still orders S5/S7 to build the officer-BLUF box that the approved S1 spec bans</h3>
+<p><strong>Where:</strong> <code>RUNBOOK.md:44-46, 86-87, 199-201, 236-237</code> · <code>PRACTICES.md:101-104</code> vs. <code>S1-standards.spec.md</code> R6 + Appendix C</p>
+<p>The signed-off S1 spec bans the field-application / officer-bottom-line summary "for the whole project." Four separate runbook passages and PRACTICES §5 still direct the S5 and S7 threads to design exactly that artifact as a human-in-the-loop deliverable. A fresh spec thread — which by design reads the runbook first — would faithfully build a banned feature. This is compounded by a structural gap: O2 has four normative layers (runbook, practices, specs, wrappers) with live conflicts and <strong>no supremacy rule</strong> (Overhaul 1 had SR-3 for precisely this).</p>
+<p><strong>Fix:</strong> propagate S1's decision into all four runbook locations, add a supersession note to PRACTICES §5, and add a one-line precedence stack (specs &gt; runbook &gt; practices &gt; wrappers, or as decided) to RUNBOOK §0.</p>
+</div>
+
+<div class="crit-card">
+<h3><span class="sev crit">CRITICAL 3</span> &nbsp;S6's scope and S2's manifest rest on an audit artifact that doesn't exist in the repo</h3>
+<p><strong>Where:</strong> <code>RUNBOOK.md:220</code> · <code>S2-authority-database.spec.md:206-207</code></p>
+<p>S6's entire scope is defined by "this file's earlier §S6 seed / <code>audit_cases.py</code>" — neither is anywhere in the repo. The approved S2 spec's Method step 1 seeds <code>_manifest.json</code> from this same nonexistent "S6 audit list." The ~70–80 named-but-no-page roster, the ~6 alias mismatches, and the ~5 citation placeholders from the 2026-07-01 audit exist only in a past session's memory. (The claims agent independently re-derived ~80–84 candidates, confirming the number is right — but the canonical list still needs committing.)</p>
+<p><strong>Fix:</strong> commit the 2026-07-01 audit output (roster + script) under <code>_overhaul2/</code> before any thread needs it.</p>
+</div>
+
+<h2 id="areas">4 · Findings by area</h2>
+
+<h3 id="a1">4a · Planning-doc coherence <span class="small">(28 findings: 2C · 6H · 11M · 9L)</span></h3>
+<p class="verdict">The kit's numbers are internally consistent and the wrappers are faithful — but S1's decisions haven't been propagated, the dependency table is wrong three ways, and several load-bearing inputs are missing from the repo.</p>
+<div class="tablewrap"><table>
+<tr><th></th><th>Where</th><th>Finding → recommendation</th></tr>
+<tr><td><span class="sev crit">CRIT</span></td><td><code>RUNBOOK</code>/<code>PRACTICES</code> vs S1</td><td>BLUF-box contradiction — see <a href="#criticals">Critical 2</a>.</td></tr>
+<tr><td><span class="sev crit">CRIT</span></td><td><code>RUNBOOK.md:220</code>, S2 spec</td><td>Missing S6 seed artifact — see <a href="#criticals">Critical 3</a>.</td></tr>
+<tr><td><span class="sev high">HIGH</span></td><td><code>RUNBOOK.md:11</code></td><td>Header still says "no specs written" while §7 records S1/S2 as approved. Make §7 the single status authority; update it in wrapper closeout boilerplate.</td></tr>
+<tr><td><span class="sev high">HIGH</span></td><td><code>RUNBOOK.md:105-115</code></td><td>Dependency table wrong three ways: S3 needs S2 (the wrapper and S2's frontmatter both say so); S8's "S4,S7" omits S6 (whose pages it links) and S2; S2-gates-S4 contradicts their wave-1 concurrency. Correct it, or define "depends on" as authoring-vs-execution deps.</td></tr>
+<tr><td><span class="sev high">HIGH</span></td><td>O1 <code>FINAL-S9-REPORT.md:155</code></td><td>O1's #1 follow-on — the owed <strong>flashcard rebuild</strong> — appears nowhere in O2, and S3's renames/re-homings threaten even the frozen deck's stem/alias non-breakage guarantee. Add a deferred-run line + an alias-preservation requirement to S3/S4.</td></tr>
+<tr><td><span class="sev high">HIGH</span></td><td><code>PRACTICES.md:128</code> vs RUNBOOK</td><td>Guardrail G8 ("human sign-off for anything reader-facing") is irreconcilable with "one autonomous EXECUTE run," and O2 has no enumerated human-pause register (O1 fixed this exact gap as M4). Scope G8; commit a pause register (publish go-ahead, fabrication removals, borderline S6 calls).</td></tr>
+<tr><td><span class="sev high">HIGH</span></td><td>S1 R1 / L4 vs S2</td><td>S1 carries L4 ("ALL CL calls through one serial lane") unchanged, but S2's Codex REST builder + the retained Claude MCP spot-check lane are two concurrent CL consumers by design. Have S1 explicitly rescope L4 (e.g., one lane per credential; builder owns the token).</td></tr>
+<tr><td><span class="sev high">HIGH</span></td><td>whole kit</td><td>Four normative layers, live conflicts, no supremacy rule (O1 had SR-3). Add a precedence stack to RUNBOOK §0 + forward-pointer supersession notes.</td></tr>
+<tr><td><span class="sev med">MED</span></td><td>S1 spec:8-9</td><td>S1 promises every rule carries Trigger·Check·Enforcement, but no requirement has a Trigger, and R5/R8/R11's checks are untestable as written. Concretize.</td></tr>
+<tr><td><span class="sev med">MED</span></td><td>S2 spec:64-69</td><td>R3's pinpoint check ("nearest preceding star marker") is unsatisfiable for slip-op/recent opinions with no star pagination. Define a fallback status.</td></tr>
+<tr><td><span class="sev med">MED</span></td><td>STANDARDS vs PRACTICES</td><td>No old→new treatment-enum migration mapping (where do 11 "limited" / 5 "overruled" cases land in Field-I?) before S2's projector overwrites frontmatter. Publish the mapping.</td></tr>
+<tr><td><span class="sev med">MED</span></td><td><code>RUNBOOK.md:208-209</code></td><td>S5's entry still schedules the "mock both" graded-authority interview that S1 already adjudicated (Variant A). Delete/annotate.</td></tr>
+<tr><td><span class="sev med">MED</span></td><td>S3 entry vs wrapper</td><td>"Point of law" is used normatively but defined nowhere; the S3 runbook entry omits the point-of-law node scheme + S2 binding map its own wrapper requires. Update the entry; make the definition an S3 deliverable.</td></tr>
+<tr><td><span class="sev med">MED</span></td><td><code>RUNBOOK.md:207,231,290-291</code></td><td>Referenced inputs missing: <code>Prompt.md</code> (S7 fixes source) and the book case-example PDF don't exist at their stated paths. Restore or re-point.</td></tr>
+<tr><td><span class="sev med">MED</span></td><td>S6/S8 seams</td><td>The 388 bare-mentions vs ~70–80 no-page numbers are never reconciled; S4/S5 both own the treatment-pill mechanics with no boundary; the <code>/cssi-ingest</code> vault-inbox pipeline is unowned; Codex self-review weakens writer≠checker (route the identity spot-check to the Claude lane); the three-lane derivation is a multi-day paced run inside "one autonomous run" with no wall-clock statement.</td></tr>
+<tr><td><span class="sev low">LOW</span></td><td>various</td><td>Glyph fork (⭘ vs ⚪) in a controlled vocabulary; LINT-9/10 vs LINT-S2-* naming fork; "GitHub issue #2" resolves to upstream Quartz's unrelated issue by default (write the full fork URL); S2 wrapper omits the now-required self-interview step (fix the template); stale Carter cert-watch item in content unowned by any spec.</td></tr>
+</table></div>
+
+<h3 id="a2">4b · S2 feasibility vs the live CourtListener API <span class="small">(8 findings: 1C · 2H · 3M · 2L)</span></h3>
+<p class="verdict">S2 is feasible — every mechanical API claim reproduced, several to the exact number (22,182 OR'd progeny hits on Terry; the Adams/Williams name-rank trap; "no treatment signal" confirmed). Two must-fix defects before build.</p>
+<div class="tablewrap"><table>
+<tr><th></th><th>Where</th><th>Finding → recommendation</th></tr>
+<tr><td><span class="sev crit">CRIT</span></td><td>S2 R7 denylist</td><td>"Corrupted objects" refuted; would exclude <em>Chatrie</em> — see <a href="#criticals">Critical 1</a>.</td></tr>
+<tr><td><span class="sev high">HIGH</span></td><td>S2 R3</td><td><code>type=1</code> is not a unique official-cite selector — Terry carries <em>three</em> type-1 citations (392 U.S. 1, 88 S. Ct. 1868, 20 L. Ed. 2d 889). Add a reporter-precedence rule (U.S. &gt; S. Ct. &gt; L. Ed. 2d; F.4th chain for CoA) or the builder can stamp "88 S. Ct. 1868" as official.</td></tr>
+<tr><td><span class="sev high">HIGH</span></td><td>S2 R6 lane 1</td><td>The negative-keyword treatment scan is unbounded for mega-cases — 6,917 live hits on Terry. Bound it (court filters, <code>stat_Published</code>, order_by, caps) or lane 1 dwarfs lane 2's N=25 and saturation never triggers.</td></tr>
+<tr><td><span class="sev med">MED</span></td><td>S2 R9/R13</td><td>Drift lint covers lake↔frontmatter but nothing detects a <strong>stale SQLite</strong>, which S6/S8 read from. Add a lake content-hash stamp in the DB + freshness assert in consumers.</td></tr>
+<tr><td><span class="sev med">MED</span></td><td>S2 R11/R1</td><td>Frontier-stub <code>record_id</code>/slug generation is undefined (stubs have no page) and must be collision-safe with S6's future filenames.</td></tr>
+<tr><td><span class="sev med">MED</span></td><td>S2 R4</td><td>Citing-count provenance is three-valued on Terry (37,950 cluster count ≠ 37,624 edge rows ≠ 22,182 search hits) and the inventory points the wrong way — the edge table is the <em>more complete</em> source. Label <code>total_citing_cases</code> "indexed citing opinions (search)."</td></tr>
+<tr><td><span class="sev low">LOW</span></td><td>S2 R5 / R10</td><td>Composite "principal holding" has no recorded referent (store the point slug so <code>composite_basis</code> is auditable). Plan a multi-day run: ~15–25k calls at ≤14 req/min ≈ 20–30+ h; lane 3 can be fully server-side (<code>cites:(…) + filed_after</code> verified working).</td></tr>
+</table></div>
+<p class="small">Bonus inventory finds: unlisted useful fields (<code>ordering_key</code>, <code>main_version</code>, search-result <code>opinions[].cites[]</code>, populated <code>headmatter</code>); <code>date_argued</code> null on dockets for older cases (lives in <code>clusters.other_dates</code>); the fuzzy <code>citation</code> filter gotcha confirmed ("392 U.S. 1" → 36 non-Terry hits).</p>
+
+<h3 id="a3">4c · Uncommitted code on the branch <span class="small">(6 findings: 1H · 2M · 3L)</span></h3>
+<p class="verdict">Two workstreams blended in one uncommitted diff: genuine S4 explorer fixes (verified correct — the old scroll save/restore was a no-op) and an S3 nav mockup encoding a 13-category target tree that exists nowhere else. <code>tsc --noEmit</code> passes.</p>
+<div class="tablewrap"><table>
+<tr><th></th><th>Where</th><th>Finding → recommendation</th></tr>
+<tr><td><span class="sev high">HIGH</span></td><td><code>quartz.layout.ts:26-46</code></td><td>The mockup's 13 displayNames keys target folders that don't exist in <code>content/</code>; the whole nav model (always-open subtree, ├─/└─ connectors, collapse behavior) is documented only in this uncommitted diff. Commit as a labeled mockup commit now; fold the decisions into S3/S4 specs.</td></tr>
+<tr><td><span class="sev med">MED</span></td><td><code>custom.scss:11,30</code></td><td>Mobile regression risk: the scroll-container fix is desktop-only, but the always-open model makes the tree far taller and mobile's 100dvh <code>overflow:hidden</code> overlay leaves lower categories unreachable; the <code>overscroll-behavior</code> override is unscoped. Scope to desktop; give mobile <code>.explorer-content</code> <code>overflow-y:auto</code>.</td></tr>
+<tr><td><span class="sev med">MED</span></td><td><code>explorer.inline.ts:124-136</code></td><td>With <code>folderClickBehavior:"collapse"</code>, top-level category headers are toggle-only — but S3 mandates an authored overview per umbrella, and those overview pages are unreachable from the nav. Needs a spec decision (chevron-toggle + title-link, or a depth-0 overview row).</td></tr>
+<tr><td><span class="sev low">LOW</span></td><td>misc</td><td>Dead guard at <code>explorer.inline.ts:259</code>; stale 12-category header comment at <code>quartz.layout.ts:4-8</code>; tree-connector ticks sit ~0.1rem high.</td></tr>
+</table></div>
+<p class="small">Verified correct: <code>prenav</code>/micromorph ordering (no race); retargeting to <code>.explorer-content</code> is a genuine fix; specificity and Explorer.tsx contract intact; dark mode fine; no impact on Search/TOC/popovers. Diverges from the runbook's S4 list by omitting sidebar padding/two-line wrap/spacing items.</p>
+
+<h3 id="a4">4d · Taxonomy &amp; content structure <span class="small">(~10 findings: 3H · 4M · 2L)</span></h3>
+<p class="verdict">A healthy two-level wiki that has outgrown its skeleton. S3's direction is right on ~80% of items — but the runbook misses the three biggest mega-pages, a digital-searches umbrella, and the URL-stability risk of renumbering everything on a live site.</p>
+<div class="tablewrap"><table>
+<tr><th></th><th>Where</th><th>Finding → recommendation</th></tr>
+<tr><td><span class="sev high">HIGH</span></td><td><code>cases/Katz v. United States.md</code></td><td>Worst mis-homing in the wiki: Katz — the search-definition anchor — is homed at <em>Standing</em> ("Key — Anchor"), routing readers to category 8. Re-home to Two Definitions of Search. (Brendlin → Traffic Stops and Graham → Use of Force confirmed as the runbook says.)</td></tr>
+<tr><td><span class="sev high">HIGH</span></td><td>category 8, 10, 6</td><td>The <em>real</em> mega-pages are unflagged: The Exclusionary Rule (44 homed cases — most in the wiki), §1983/QI (37), The Warrant Requirement (34, five doctrines, the <em>only</em> page in category 6). S3 should give all three umbrella treatment; the runbook names only Special Needs.</td></tr>
+<tr><td><span class="sev high">HIGH</span></td><td>restructure-wide</td><td>URL/slug stability unaddressed: Quartz slugs embed the numbered folder path, and the mockup renumbers categories 2–13 — changing every doctrine URL on a live production site. Mandate old-path aliases/permalinks, Case Index regeneration (468 "home" cells), and preserve <code>cases/</code> URLs (the one stability win).</td></tr>
+<tr><td><span class="sev med">MED</span></td><td>runbook S3 entry</td><td>Partially stale: Border is <em>already</em> standalone (drop that item); Inventory extraction must pull from TWO pages (homes at Special Needs, teaching text inside SITA); a "seizure cluster" for Plain View needs a property side (Soldal/Place/Karo exist in cases/) — category 4 is 100% seizure-of-persons today.</td></tr>
+<tr><td><span class="sev med">MED</span></td><td>missing umbrellas</td><td>Technology/digital searches (Carpenter, Riley, Jones, Kyllo, Chatrie, Cotterman… scattered across ≥5 pages in 4 categories — the hardest doctrine family to find); an Arrests page (Watson/Atwater/Devenpeck/Gerstein have no home; the mockup's <code>06-arrests</code> node confirms the gap); an electronic-surveillance/Title III home.</td></tr>
+<tr><td><span class="sev med">MED</span></td><td>sequencing</td><td>Standards taught after their consumers: Terry/RS sits in category 4 before the RS/PC standards page in 5. The mockup's move of Standards of Proof to position 2 fixes this — endorse it. The full burden pyramid exists nowhere as a page, so the rename+expansion is justified.</td></tr>
+<tr><td><span class="sev med">MED</span></td><td>all 15 <code>index.md</code></td><td>Every category index is an identical 8-line stub — zero authored overviews exist. <code>content/index.md</code> is an excellent annotated map-of-content; use its one-line-doctrine-summary style as the S3 overview template.</td></tr>
+<tr><td><span class="sev low">LOW</span></td><td>hygiene</td><td>Garrity page absent from the master index; Emergency Aid reachable only via an alias; category 11 holds only Entrapment (fold into 10 or a "Beyond Suppression" node — the mockup has no home for it); naming conventions fork (question-titles vs nouns, "The X" vs bare X); the mockup's <code>01-</code> file prefixes recreate renumber-on-insert at file level — prefer frontmatter-weight or gap numbering (10/20/30).</td></tr>
+</table></div>
+
+<h3 id="a5">4e · Case-law accuracy <span class="small">(4 findings: 1H · 1M · 2L — 1 of 14 pages with a substantive error)</span></h3>
+<p class="verdict">Zero wrong holdings, citations, courts, or good-law misrepresentations in the sample. Twelve of thirteen spot-checked quotes verbatim. Treatment-sensitive pairs (Cady/Caniglia, Santana/Lange, Torres, Lange) handled "unusually well."</p>
+<div class="tablewrap"><table>
+<tr><th></th><th>Where</th><th>Finding → recommendation</th></tr>
+<tr><td><span class="sev high">HIGH</span></td><td><code>cases/Chatrie….md:47</code></td><td>Fabricated-verbatim quote: the Rule section quotes language that appears nowhere in the opinion. The doctrine on the page is correct; the quotation marks are not. Replace with the actual holding sentence ("An individual has a reasonable expectation of privacy in records about his cell phone's location…") or de-quote as paraphrase. On teaching material, quotation marks must be literal.</td></tr>
+<tr><td><span class="sev med">MED</span></td><td><code>cases/Chatrie….md:23,38,60,72</code></td><td>The "DO NOT ingest 10881683" warning is the same cluster/opinion misdiagnosis as Critical 1, now stale on a published page. Backfill <code>opinion_id: 11349205</code>, set <code>identity_checked: true</code>, rewrite the warning.</td></tr>
+<tr><td><span class="sev low">LOW</span></td><td><code>cases/Chatrie….md:55</code></td><td>Vote lineup now resolvable and "6–3, Kagan, J." is imprecise: Kagan wrote for five (Roberts, Sotomayor, Kavanaugh, Jackson); Gorsuch concurred in the judgment only (making it 6–3); Alito dissented (Thomas, Barrett in parts); Barrett separate dissent. The 7–7 en banc claim on the page is exactly right.</td></tr>
+<tr><td><span class="sev low">LOW</span></td><td>6 of 14 sampled pages</td><td>Slip-op pinpoints on published cases (Torres → 592 U.S. 306; Caniglia → 593 U.S. 194; Lange → 594 U.S. 295; Barnes → 605 U.S. 73; Morley → 99 F.4th 1328; Braxton → 61 F.4th 830). Captions already carry the right cites; convert pins to reporter pagination. Slip-op pins remain proper only for Chatrie (current term).</td></tr>
+</table></div>
+<p class="small">Clean: Katz, Terry, Payton, Cady, Santana, Greenwood, Gates — captions, citations, holdings, and every quote verbatim (Santana's page-42 pin independently corroborated by the dissent). Circuit pages (Morley, Braxton) fully confirmed. Inevitable-discovery and attenuation doctrine statements accurate.</p>
+
+<h3 id="a6">4f · Teaching quality &amp; verbiage <span class="small">(2H · 2M clusters + systemic patterns)</span></h3>
+<p class="verdict">The pedagogy is strong where pages follow the modern skeleton; the failures are systematic, not random — the editorial pipeline's own vocabulary is leaking onto published pages.</p>
+<div class="tablewrap"><table>
+<tr><th></th><th>Where</th><th>Finding → recommendation</th></tr>
+<tr><td><span class="sev high">HIGH</span></td><td><code>Fourth Amendment Framework.md</code>, <code>The Warrant Requirement.md:114</code>, +3</td><td>SCOTUS holdings taught inside "Recent developments" — the exact thing S1's N5 forbids — including <em>Chatrie</em> as the first RD bullet on the hub page, labeled "Binding — SCOTUS." Move SCOTUS teaching to the Brief/Key; RD keeps only circuit posture.</td></tr>
+<tr><td><span class="sev high">HIGH</span></td><td><code>Emergency Aid.md:46,61</code>, 12+ files</td><td>Pipeline meta-labels are reader-facing: "(Re-homed from Recent developments … N5.)", "per the no-SCOTUS-in-recent-developments rule," "CL-confirm pending," "deferred to EXECUTE (serial CL, L4)," plus the two surviving "(woven in)" labels. S1's R14 as written only catches "(woven in)" — broaden the ban to all rule-IDs/provenance/pipeline vocab and move it to comments/frontmatter.</td></tr>
+<tr><td><span class="sev med">MED</span></td><td>~15+ instances</td><td>Slip-op pinpoints on non-current-term cases in <em>doctrine</em> pages too (Caniglia, Cotterman (2013!), Kentucky v. King, Barnes, even F.3d-published Wright). Convert to reporter pincites.</td></tr>
+<tr><td><span class="sev med">MED</span></td><td>verbiage precision</td><td><code>Probable Cause….md:61</code> states the Golden-Rule maxim <strong>backwards</strong> ("Possibilities, not probabilities.") and mislinks <code>[[CREW|Three Golden Rules]]</code>; <code>Seizure of the Person.md:48</code> "a shot that misses … is not a seizure" is unqualified (a miss can still be a show-of-authority seizure on submission); Miranda's "two C's" mnemonic isn't in the closed S1 register; 21 corpus-wide "SCOTUS — binding" label inversions vs 1,761 correct; "Field framing" sections on 4+ pages conflict with S1's drop decision with no migration rule.</td></tr>
+</table></div>
+<p><strong>Top 3 systemic patterns:</strong> (1) <strong>em-dash saturation</strong> — 26–43 per 1,000 words; the planned lint would fire ~1,100× on an 11-page sample, so this needs a rewrite pass, not just a lint; (2) <strong>template drift</strong> — 12+ Key-cases header variants, 4 treatment-cell formats (527 bare "good" vs 342 dated), ~14 pages missing an H1, 6 on the legacy skeleton; (3) <strong>pipeline vocabulary leaking to readers</strong> (above). <strong>Best pages</strong> (the S7 pattern): <em>Probable Cause and Reasonable Suspicion</em>, <em>Seizure of the Person</em>, <em>Warrant Requirement</em>/<em>Emergency Aid</em>. <strong>Worst</strong> (the rewrite lift): <em>Fourth Amendment Framework</em>, <em>Common Law Origins</em>, <em>Miranda</em>.</p>
+
+<h3 id="a7">4g · The runbook's numbers, measured <span class="small">(all claims verified; 2 sizing notes)</span></h3>
+<p class="verdict">No materially wrong numbers anywhere — the planning figures are trustworthy to build on.</p>
+<div class="tablewrap"><table>
+<tr><th>Claim</th><th>Claimed</th><th>Measured</th><th>Verdict</th></tr>
+<tr><td>Slip-op labels wrong (cases/)</td><td>~43 of 47</td><td>43/47 exact (4 legit current-term)</td><td><span class="sev ok">MATCH</span></td></tr>
+<tr><td>Unescaped <code>|</code> in table wikilinks</td><td>18 files</td><td>18 files, 69 lines</td><td><span class="sev ok">EXACT</span></td></tr>
+<tr><td><code>^pin-N</code> carat leak</td><td>qualitative</td><td><strong>299 mid-line anchors in 233 files render visibly</strong> (672 end-of-line ones are hidden; 396 links fine)</td><td><span class="sev info">BIGGER</span></td></tr>
+<tr><td>Bare-mention cases</td><td>388</td><td>40/40 sample hit-rate → within band</td><td><span class="sev ok">MATCH</span></td></tr>
+<tr><td>Named-but-no-page</td><td>~70–80</td><td>~80–84 cleaned (O1's 185-list now down to 12 page-less)</td><td><span class="sev ok">MATCH</span></td></tr>
+<tr><td>Case pages</td><td>457</td><td>457, no index</td><td><span class="sev ok">EXACT</span></td></tr>
+<tr><td>Table headers non-standardized</td><td>qualitative</td><td>51 distinct "Case" header schemas; top one used only 12×</td><td><span class="sev info">STRONG</span></td></tr>
+<tr><td>"(woven in)" / "persuasive, not binding" / CRON</td><td>—</td><td>2 / 0 real (only the ban sentence) / 0</td><td><span class="sev ok">CLEAN</span></td></tr>
+<tr><td>Frontmatter drift</td><td>implied</td><td>457/457 share exactly ONE 19-key schema</td><td><span class="sev ok">BETTER</span></td></tr>
+</table></div>
+<p class="small">Sizing notes: (1) the <code>^pin-N</code> remediation is half the corpus — size S9/LINT-9 accordingly; slip-op labels also infect <strong>22 doctrine pages</strong> outside the cases-only framing. (2) Don't budget S7 work for "persuasive, not binding" — it's already clean.</p>
+
+<h3 id="a8">4h · Currency &amp; research gaps <span class="small">(7 findings: 3H · 2M · 2L)</span></h3>
+<p class="verdict">Currency is exceptional — Chatrie (decided 3 days ago) fully integrated; circuit splits handled exemplary-well; the standard academy curriculum is essentially complete. The remaining gaps are whole doctrines never <em>named</em> anywhere — precisely what S6's named-in-prose diff cannot surface.</p>
+<div class="tablewrap"><table>
+<tr><th></th><th>Gap</th><th>Why it matters → where it goes</th></tr>
+<tr><td><span class="sev high">HIGH</span></td><td>Retaliatory arrest — <em>Nieves v. Bartlett</em> (2019) + <em>Gonzalez v. Trevino</em> (2024). Zero corpus hits.</td><td>The governing law every time an officer arrests someone filming police, mouthing off, or protesting (PC defeats the claim + the narrow similarly-situated exception). Belongs beside §1983/QI. → S6 pages + S7 home.</td></tr>
+<tr><td><span class="sev high">HIGH</span></td><td>4A malicious prosecution — <em>Thompson v. Clark</em> (2022) + <em>Chiaverini v. City of Napoleon</em> (2024). Zero hits.</td><td>Charging-stage §1983 exposure officers aren't warned about (favorable termination = no conviction; one valid charge doesn't immunize a baseless added one). → S6 + S7 §1983 integration.</td></tr>
+<tr><td><span class="sev high">HIGH</span></td><td>Emerging-tech blind spots: StingRay/cell-site simulators, reverse keyword warrants, real-time CSLI, genetic genealogy (IGG), BWC-as-evidence — all 0 hits.</td><td>Post-<em>Chatrie</em>, these are the next questions the geofence holding radiates into; the Third-Party/Digital page already handles pole cams/ALPR/drones well, so these read as scope choices that no longer hold. → scope explicitly into S7's rewrite of that page.</td></tr>
+<tr><td><span class="sev med">MED</span></td><td><em>Cooley</em> (tribal officers), <em>Lombardo</em> (prone restraint), <em>Culley</em> (forfeiture), <em>Vasquez Perdomo</em> (2025, watch item)</td><td>Officer-relevant SCOTUS absences → run through S6's relevance gate.</td></tr>
+<tr><td><span class="sev med">MED</span></td><td><strong>Structural:</strong> S6's discovery model (book roster ∪ named-in-prose ∪ prior research ∪ frontier) cannot find any of the above — they're named nowhere.</td><td>Add a term-by-term SCOTUS sweep (OT2019→present) as a named S6 seed source; this audit's Table 1 is a ready-made starting list.</td></tr>
+<tr><td><span class="sev low">LOW</span></td><td><code>Third-Party Doctrine….md:25</code> vs :59</td><td>Line 25 still says "do not state … geofence … as settled"; line 59 says geofence RESOLVED — same page, three days stale. → S7 per-page fix / S9 consistency check.</td></tr>
+<tr><td><span class="sev low">LOW</span></td><td><em>Egbert v. Boule</em> deliberately page-less</td><td>Bivens contraction is core doctrine for a <em>federal</em>-officer audience — revisit at S6's gate.</td></tr>
+</table></div>
+
+<h2 id="clean">5 · What checked out clean</h2>
+<ul>
+<li><strong>Legal substance:</strong> zero wrong holdings/citations/courts in a 14-page adversarial sample; 12 of 13 quotes verbatim; treatment honesty on the hard pairs exemplary; inevitable discovery and attenuation statements accurate.</li>
+<li><strong>Currency:</strong> a SCOTUS decision from three days ago fully integrated with eight doctrine homes updated; no page calls a resolved question open (except one stale line); circuit splits named per-side with "never state as settled nationwide" discipline.</li>
+<li><strong>Curriculum:</strong> every standard academy search-and-seizure topic checked (Summers/Bailey, Buie, Florence, Knights/Samson, T.L.O., dog sniffs, Jacobsen, Jones/Karo/Knotts, inventory, checkpoints, knock-and-announce) has a home.</li>
+<li><strong>The kit's numbers:</strong> every measurable claim matched; three were exact to the digit; frontmatter is perfectly uniform (one 19-key schema × 457 files).</li>
+<li><strong>The code:</strong> the explorer scroll retargeting is a genuine fix (the stock behavior was a silent no-op); no SPA race; component contracts intact; TypeScript compiles.</li>
+<li><strong>The API plan:</strong> every mechanical CourtListener claim reproduced live — progeny queries, cursor pagination, cluster→lead resolution, the name-rank trap, the fuzzy-citation gotcha, "no treatment signal."</li>
+<li><strong>Style hygiene already won:</strong> "CRON" is gone (0 hits), "persuasive, not binding" survives only inside the rule banning it, AI-vocab essentially absent from doctrine prose.</li>
+</ul>
+
+<h2 id="themes">6 · Cross-cutting themes</h2>
+<ol>
+<li><strong>The constitution isn't propagating.</strong> S1 decided things (BLUF ban, graded-authority Variant A) that the runbook, PRACTICES, and S5/S7 entries still contradict — and there's no supremacy rule to break ties. Every future spec thread reads the runbook first, so contradictions there are load-bearing. <em>One fix class: propagate + precedence stack + supersession notes.</em></li>
+<li><strong>Load-bearing inputs live outside the repo.</strong> The S6 roster/script, <code>Prompt.md</code>, the book case-example PDF, the S3 nav-model decisions (uncommitted diff), and the flashcard-rebuild obligation all exist only in past sessions' memory or the working tree. The kit's own discipline is "small on-disk handoffs" — apply it to the plan's inputs.</li>
+<li><strong>The cluster-vs-opinion ID trap.</strong> One namespace confusion in O1 became a "corruption" legend, then a denylist, then a stale warning on a published page — and would have become a silent hole in the authority database exactly where the newest landmark case sits. The two-key identity check already catches this class; trust it and document the root cause.</li>
+<li><strong>The pipeline leaks into the product.</strong> Meta-labels, rule-ID citations, "CL-confirm pending," slip-op pins, mid-line <code>^pin-N</code> anchors (233 files), 51 table-header schemas: the machinery is visible on published pages. S1's rules cover pieces of this; the broadened R14 + LINT sizing should treat "reader never sees the factory" as one requirement.</li>
+<li><strong>S6 can't find what's never named.</strong> The discovery model diffs against text that exists; retaliatory arrest, malicious prosecution, and the post-Chatrie tech cluster are invisible to it. A doctrinal currency sweep is a different <em>kind</em> of input and needs to be named as one.</li>
+<li><strong>The corpus is better than the plan's mental model of it.</strong> Frontmatter is uniform, treatment honesty is real, currency is elite. That changes calibration: S2's projector is defensive (not cleanup), S7's lift is polish + structure (not rescue), and the audit's job downstream is protecting an already-high baseline.</li>
+</ol>
+
+<h2 id="actions">7 · Recommended action plan</h2>
+
+<h3>Tier A — before the next spec thread runs <span class="small">(hours, mostly edits to the kit)</span></h3>
+<ol>
+<li><span class="owner">S2 spec</span> Rework the denylist per Critical 1; add the official-cite precedence rule (R3) and bound lane 1 (R6) while the file is open.</li>
+<li><span class="owner">RUNBOOK + PRACTICES</span> Propagate S1's BLUF ban (4 locations) and graded-authority decision; fix the status header (line 11) and dependency table; add the precedence stack to §0.</li>
+<li><span class="owner">_overhaul2/</span> Commit the S6 audit artifact (roster + script); restore or re-point <code>Prompt.md</code> and the book case-example PDF.</li>
+<li><span class="owner">git</span> Commit the nav mockup as a labeled mockup commit (it's the de-facto S3 draft tree and currently exists only as an uncommitted diff).</li>
+<li><span class="owner">content (2 files)</span> Fix the Chatrie page: real quote, corrected CL metadata (<code>opinion_id: 11349205</code>), vote lineup, remove the stale "DO NOT ingest" warning. Fix <code>Third-Party….md:25</code> geofence-still-unsettled line.</li>
+</ol>
+
+<h3>Tier B — fold into the upcoming spec interviews <span class="small">(S3 / S4 / S5, the next threads)</span></h3>
+<ol>
+<li><span class="owner">S3</span> URL/alias stability requirement (old-path aliases, Case Index regen, preserve <code>cases/</code> URLs); umbrella treatment for Exclusionary Rule / §1983 / Warrant Requirement; digital-searches umbrella; an Arrests node (the mockup already has it — needs case re-homings); drop the stale Border item; Inventory extraction pulls from two pages; property-seizure side for the Plain View cluster; a home for Entrapment; gap-numbering or frontmatter-weight ordering instead of <code>01-</code> file prefixes; define "point of law" as a deliverable; overview-page template = <code>content/index.md</code>'s annotated style.</li>
+<li><span class="owner">S4</span> Overview-reachability decision for collapse-mode categories; mobile scroll fix + scoped overscroll; the omitted padding/wrap/spacing items; flashcard stem/alias preservation (with S3).</li>
+<li><span class="owner">S5</span> Remove the already-adjudicated graded-authority interview; draw the S4/S5 treatment-pill boundary; treatment-enum migration mapping before the projector runs.</li>
+<li><span class="owner">RUNBOOK</span> Commit the human-pause register (G8 scoping, publish go-ahead, fabrication removals); rescope L4 to one-lane-per-credential; state the S2 multi-day wall-clock; assign the <code>/cssi-ingest</code> pipeline to S4 or GH#2 (with the full fork URL).</li>
+</ol>
+
+<h3>Tier C — queue for the content/verification specs <span class="small">(S6 / S7 / S9)</span></h3>
+<ol>
+<li><span class="owner">S6</span> Add the OT2019→present SCOTUS sweep as a named seed source; candidates: Nieves, Gonzalez, Thompson, Chiaverini, Cooley, Lombardo, Culley (+ Egbert reconsideration; Vasquez Perdomo as watch item); reconcile the 388-bare-mentions vs ~80-no-page split with S8.</li>
+<li><span class="owner">S7</span> Relocate SCOTUS out of all "Recent developments" sections; scope the post-Chatrie tech cluster (StingRay, reverse-keyword, real-time CSLI, IGG, BWC) into the Third-Party/Digital rewrite; convert slip-op pins (incl. 22 doctrine pages); fix the backwards Golden-Rule maxim, the unqualified missed-shot line, the label inversions; migrate/kill "Field framing" sections per S1; plan the em-dash rewrite pass (a lint alone fires ~1,100×).</li>
+<li><span class="owner">S9</span> Broaden R14 to all pipeline vocabulary; size LINT-9 for 233 files; route the identity spot-check to the Claude lane (writer≠checker); standardize lint naming; add the wrapper-template self-interview step; carry the Carter cert-watch and LINT-3 precision items.</li>
+</ol>
+
+<blockquote><strong>Suggested next step:</strong> run Tier A as one short "audit-fixes" session on this branch (it's all kit edits + two content files + one commit), then let the S3 interview thread start clean. This audit itself could be committed under <code>_overhaul2/</code> as a coherence-pass input if you want it in the kit's paper trail.</blockquote>
+
+<h2 id="appendix">8 · Appendix — full agent reports</h2>
+<p class="small">Verbatim reports from the eight auditors, as written to disk. Each is self-contained with file:line references, methods, and evidence tables.</p>
+
+<details><summary>A · Planning-doc coherence (28 findings)</summary><pre style="white-space:pre-wrap"><code># Audit 01 — Coherence Audit of CSSI Overhaul-2 Planning Documents
+
+**Date:** 2026-07-02 · **Branch:** `overhaul2/planning` (HEAD 87ba4d4) · **Auditor:** read-only pass
+**Scope:** `_overhaul2/RUNBOOK.md`, `_overhaul2/PRACTICES.md`, `_overhaul2/CL-DATA-INVENTORY.md`,
+`_overhaul2/specs/S1-standards.spec.md`, `_overhaul2/specs/S2-authority-database.spec.md`,
+`_overhaul2/wrappers/S2.wrapper.md`, `_overhaul2/wrappers/S3.wrapper.md` — cross-checked against
+`docs/STANDARDS.md`, `_run/FINAL-S9-REPORT.md`, `_overhaul/COHERENCE-REPORT.md`, `_review-needed/*`,
+and the live repo state (`content/cases/` count, `scripts/lint/`, `.orca/drops/`, `~/briefs/`, GitHub issues).
+
+**Totals: 2 CRITICAL · 6 HIGH · 11 MEDIUM · 9 LOW (28 findings)**
+
+Verified-correct items (no finding): the 457 count is exact (`ls content/cases/*.md | wc -l` = 457,
+matching FINAL-S9&#x27;s &quot;457 case pages&quot;); the ~43-of-47 slip-op figure matches 47 pages mentioning &quot;slip
+op&quot;; the Chatrie `10881683` / Zorn `10813527` denylist ids in S2 R7 match the O1 tickets exactly
+(`_review-needed/chatrie-scotus-2026-correction.md:3`, `FINAL-S9-REPORT.md:156`); the treatment
+Field-II tag list is 12 values in PRACTICES §2 and &quot;~12&quot;/&quot;≤12&quot; in S1 R2/S2 R5 (consistent); reviewer
+counts (1 Claude + 2 Codex; ≥2-of-3 refute; ≥2 reviewers on black-letter) are consistent across
+PRACTICES §5, RUNBOOK §2/§4-S9, S1 R12, S7 entry; CL rate figures (~1,000/hr ceiling, ≤14/min ≈
+840/hr pacing) are consistent between CL-DATA-INVENTORY §Rate and S2 R10; build-order vs exec-wave
+numbering in the §3 table is internally consistent with the §3 execution-order paragraph; both
+wrappers&#x27; &quot;read first&quot; lists match RUNBOOK §0&#x27;s instructions; `.orca/drops/SSTOC.pdf`, the NJ
+Handbook PDF, and all five `~/briefs/2026-07-01-*` inputs exist; fork issue #2 (maintenance loop)
+exists and is OPEN.
+
+---
+
+## 1. CRITICAL
+
+### C1 — Officer-summary/BLUF: RUNBOOK &amp; PRACTICES still mandate a HITL artifact that S1 has banned project-wide
+- S1 spec (APPROVED, the constitution every spec &quot;conforms to&quot;): **&quot;The field-application / &#x27;officer
+  bottom line&#x27; summary is OUT for the whole project&quot;** (`specs/S1-standards.spec.md:26-29`), restated
+  in R6 (&quot;No field-application summary&quot;, :60-64) and the Decision Log (&quot;drop the field-application
+  summary entirely&quot;, :180-181).
+- But the documents a fresh S5/S7 thread is told to read first still direct the opposite:
+  - `RUNBOOK.md:44-46` (§1 lifecycle, step 2): &quot;Any officer-bottom-line / BLUF summarization is
+    human-in-the-loop and grounded verbatim… never auto-generated.&quot;
+  - `RUNBOOK.md:86-87` (§2 findings): &quot;Officer-summary paraphrase drift… → S5/S7, human-in-the-loop.&quot;
+  - `RUNBOOK.md:199-201` (§4 S5): &quot;the officer-bottom-line / &#x27;In the field&#x27; box is a human-in-the-loop,
+    standard-grounded **option to design carefully**, not auto-generate.&quot;
+  - `RUNBOOK.md:236-237` (§4 S7): &quot;officer summaries human-in-the-loop.&quot;
+  - `PRACTICES.md:101-104` (§5): the Explanation layer explicitly includes &quot;Human-in-the-loop for any
+    &#x27;officer bottom line&#x27;/BLUF summarization.&quot;
+- Per RUNBOOK §0, an S5 or S7 thread reads §0–§2 + PRACTICES + its §4 entry — i.e., three directives
+  to design the HITL officer box — while the spec it must conform to bans it. There is **no
+  precedence rule in O2** to resolve the conflict (see H6). Also relevant to the task&#x27;s process-risk
+  question: with S1&#x27;s decision, the &quot;HITL officer summaries inside an autonomous run&quot; tension is
+  *resolved by deletion* — but only in S1; the runbook never propagated it.
+- **Recommendation:** propagate S1&#x27;s decision — rewrite RUNBOOK §1 step 2, §2, §4-S5, §4-S7 and add a
+  supersession note to PRACTICES §5 (&quot;field-application layer dropped per S1 R6 / Decision Log&quot;).
+
+### C2 — S6&#x27;s seed roster is a dangling reference: neither the &quot;§S6 seed&quot; nor `audit_cases.py` exists
+- `RUNBOOK.md:220`: &quot;(Full seed: **this file&#x27;s earlier §S6 seed** / `audit_cases.py`.)&quot; — the current
+  RUNBOOK contains no §S6 seed section (it was evidently trimmed in an edit), and `audit_cases.py`
+  exists nowhere in the repo (`find . -name audit_cases.py` → nothing; `ls` confirms only
+  `scripts/{build_case_index,enrich_case_holdings}.py` + `scripts/lint/`).
+- The dependency is load-bearing twice: S6&#x27;s whole scope is the &quot;~70–80 genuine&quot; named-but-no-page
+  list plus &quot;~6 alias/variant mismatches&quot; and &quot;~5 citation-format placeholders&quot; (`RUNBOOK.md:215-220`),
+  and **S2&#x27;s Method step 1 seeds `_manifest.json` from &quot;the 457 roster + the S6 audit list&quot;**
+  (`specs/S2-authority-database.spec.md:206-207`) with R11 requiring identity stubs for &quot;the
+  named-but-no-page roster (the S6 audit list)&quot; (:147-149). S2 is APPROVED and executable, but its
+  input artifact does not exist in any committed form.
+- **Recommendation:** commit the 2026-07-01 audit output (case list + alias mismatches + placeholders
+  + `audit_cases.py`) under `_overhaul2/` (e.g. `_overhaul2/seeds/s6-audit.md`), or fix the RUNBOOK
+  to state the audit must be re-run and by whom.
+
+## 2. HIGH
+
+### H1 — RUNBOOK header status is stale and self-contradictory
+- `RUNBOOK.md:11`: &quot;Status: **planning/research phase — no specs written**, nothing in `content/`
+  changed.&quot; But §7 (:300-311) marks S1 and S2 interview ✅ / spec ✅, §4-S2 says &quot;✅ **Written
+  2026-07-01**&quot; (:155), and both spec files exist with `status: APPROVED`. A fresh thread pointed at
+  the runbook per §0 is told in its first screen that nothing is decided — the exact staleness the
+  task predicted. (Secondary: &quot;nothing in `content/` changed&quot; is still true, but working-tree
+  platform files `quartz.layout.ts`, `explorer.inline.ts`, `custom.scss` are modified on this branch —
+  presumably S3/S4 mockups — uncommitted and unmentioned.)
+- **Recommendation:** make §7 the single status authority and change line 11 to point at it; update
+  on every spec closeout (add this to the wrapper deliverable boilerplate, which currently says only
+  &quot;Update RUNBOOK §7&quot;).
+
+### H2 — Dependency-table errors: S3 does depend on S2; S8&#x27;s deps omit S6 (and S2); S2&#x27;s `gates:` list contradicts the table
+- `RUNBOOK.md:105-115` table: S3 depends on **S1 only**; S4 on **S1 only**; S8 on **S4, S7** only.
+- But `specs/S2-authority-database.spec.md:4` declares `gates: [S3, S4, S5, S6, S7, S8, S9]` — i.e.
+  S2 blocks S3 and S4, directly contradicting the table. The S3 wrapper confirms the real S3←S2
+  dependency: &quot;Confirm the constitution + the spine you conform to: S1 **and S2** (both written)&quot;
+  (`wrappers/S3.wrapper.md:9-10`) and the whole &quot;S2 → S3 handoff&quot; section (:33-41) — S3 must define
+  point-of-law node IDs and the `point → S3 node` binding map for S2&#x27;s `point_overrides` (S2 §9 Open
+  item 1). &quot;Points of law hang off the taxonomy&quot; makes this a genuine design dependency, not just
+  sequencing.
+- S8 links &quot;**every named case** anywhere… → its page&quot; (`RUNBOOK.md:245-249`) — but ~70–80 of those
+  pages are authored by **S6**, and canonical names/slugs come from **S2** (R11: &quot;linking is S8&#x27;s&quot;;
+  S2 hands S8 the coverage table via SQLite R13). S8&#x27;s exec wave (3, after S6 in the §3 order) is
+  fine, but the *design* dependency row is wrong.
+- S4&#x27;s wave-1 concurrency with S2 (&quot;S2 database built + S4 nav working-standard&quot;, :117-118) is
+  contradicted by S2 gating S4; S4&#x27;s reader-signaling (badges/hovers reading treatment data,
+  :186-190) does consume the S2 data contract.
+- **Recommendation:** correct the table (S3 ← S1, S2; S5 ← S1,S2,S3,S4?; S8 ← S2, S4, S6, S7) or
+  redefine `gates:`/&quot;Depends on&quot; as *authoring-order* vs *execution-order* deps (O1&#x27;s coherence
+  report drew exactly this distinction — `_overhaul/COHERENCE-REPORT.md:115`) and say which the
+  table means.
+
+### H3 — The still-owed flashcard rebuild (O1&#x27;s #1 follow-on flag) appears nowhere in O2 planning
+- `_run/FINAL-S9-REPORT.md:155`: &quot;⚑ The page-derived flashcard rebuild is a **STILL-OWED SEPARATE
+  follow-on run**… authored with its own wrapper when the user is ready. Until then the published
+  deck carries stale content by design.&quot; Echoed at `_overhaul/COHERENCE-REPORT.md:130-133`.
+- No O2 document mentions flashcards/decks at all (grep of `_overhaul2/` for &quot;flashcard|deck&quot; — zero
+  hits). Worse, O1&#x27;s *non-breakage* guarantee rests on &quot;stable stems + the S3 caretaking alias&quot;
+  (`FINAL-S9-REPORT.md:105`) — and O2&#x27;s S3 will **re-home, rename, and unlist** pages
+  (`RUNBOOK.md:164-179`) while S7 rewrites the very pages the frozen deck derives from, so the
+  frozen `flashcards.json` may not even keep loading, let alone stay accurate.
+- **Recommendation:** add the deck question to the runbook — minimally a &quot;Deferred&quot; line beside the
+  maintenance loop (own GH issue), plus an explicit S3/S4 requirement to preserve deck-referenced
+  stems/aliases or accept breakage knowingly.
+
+### H4 — Guardrail G8 (&quot;human sign-off for anything reader-facing&quot;) is incompatible with the &quot;one autonomous EXECUTE run&quot; and O2 has no enumerated human-pause list
+- `PRACTICES.md:128` (G8): &quot;**Human sign-off** for anything reader-facing/legally operative;
+  recorded.&quot; Taken literally this covers every page the run produces — irreconcilable with &quot;one
+  autonomous run at the end&quot; (`RUNBOOK.md:66`, :117-121, :313) unless scoped.
+- O1 hit exactly this and fixed it by enumerating the mandatory human pauses in the EXECUTE wrapper
+  (`_overhaul/COHERENCE-REPORT.md:72-77`, finding M4). O2&#x27;s only identified human gate so far is
+  S6&#x27;s &quot;borderline sign-off&quot; (`RUNBOOK.md:223`) — and after S1 removed officer summaries, nothing
+  else is enumerated: not the publish go-ahead (O1 gate box 21), not S2&#x27;s negative-treatment
+  adjudications (R6 says they &quot;only land under S9&#x27;s two-reviewer rule&quot; — model reviewers, but reader-
+  facing treatment flips arguably trip G8), not S6 fabrication *removals* (&quot;remove fabrications&quot;,
+  `RUNBOOK.md:217-218` — destructive, currently zero-human).
+- Other unaddressed single-run failure modes: no O2 statement yet of checkpoint/ledger/resume
+  discipline for the run (O1&#x27;s &quot;thin orchestrator + on-disk handoffs + loop-cap-3&quot; is listed under
+  &quot;Keep&quot; at `RUNBOOK.md:69-71` but never bound to the O2 run); no spec-staleness re-check between
+  spec approval (July 1) and execution (weeks later) other than the single coherence pass (:313).
+- **Recommendation:** scope G8 explicitly (e.g. &quot;human sign-off = the enumerated pauses + release
+  gate&quot;) and commit an O2 EXECUTE-pause register now, per the O1 M4 lesson.
+
+### H5 — L4 (one serial CL lane, ALWAYS) is carried verbatim by S1 R1 but S2&#x27;s architecture creates two concurrent CL consumers with no explicit supersession
+- S1 R1 (`specs/S1-standards.spec.md:32-35`): every O1 rule &quot;present and unchanged **unless**
+  explicitly superseded by R2–R14.&quot; L4 (`docs/STANDARDS.md:87-93`): &quot;**ALL** CourtListener calls go
+  through a single serial lane (concurrency-1), **always**.&quot; No R2–R14 supersedes it.
+- But O2&#x27;s design has the Codex REST builder hitting CL at ≤14/min (`specs/S2:137-145`) **while**
+  &quot;The Claude CL MCP stays only for interactive spot-checks&quot; (`RUNBOOK.md:98`) — two lanes by
+  design; S9 adds fan-out research &quot;web + CL&quot; (`RUNBOOK.md:265`). O1 logged an actual L4 breach
+  escalation (`_review-needed/coverage/_ESCALATION-batch4-duplicate-CL-lane.md`) so this rule is
+  scar tissue, not pedantry.
+- **Recommendation:** S1 should explicitly supersede/rescope L4 for O2 (e.g. &quot;one serial lane per
+  credential; the REST builder is the sole token consumer; MCP spot-checks ride a separate auth&quot;).
+
+### H6 — No supremacy/precedence rule among the O2 documents
+- O1 had SR-3: STANDARDS.md wins every conflict (`docs/STANDARDS.md:10-27`). O2 has four normative
+  layers (RUNBOOK, PRACTICES, specs, wrappers) and already-live conflicts (C1, H2) with no stated
+  tiebreaker. S1 says it &quot;references the mechanism text&quot; in PRACTICES (`specs/S1:7-9`) — making
+  PRACTICES quasi-normative — yet S1 §2.2/R6 silently amends PRACTICES §5 without marking it.
+- **Recommendation:** add one line to RUNBOOK §0: &quot;On conflict: approved spec &gt; PRACTICES &gt; RUNBOOK
+  §4 entry &gt; wrapper; newest APPROVED spec wins,&quot; and require supersession notes in the older doc
+  (the O1 M2 pattern of forward-pointers).
+
+## 3. MEDIUM
+
+### M1 — S1&#x27;s requirements do not carry the Trigger field its own header promises; several *Check:*s are untestable as written
+- `specs/S1-standards.spec.md:8-9`: &quot;Every rule carries **Trigger · Check · Enforcement**… the O1
+  format.&quot; R1–R14 each carry *Check:* + enforcement tags but **no Trigger** (compare O1
+  `docs/STANDARDS.md` where every rule has an explicit Trigger line). If the sentence means &quot;rules in
+  the delivered STANDARDS.md will carry them,&quot; the spec should say so; as written the spec fails its
+  own format claim.
+- Weak/untestable checks: R5 (:58) &quot;each maps to a pipeline gate or a review dimension&quot; (no mapping
+  artifact named); R8 (:75-77) carve-outs (&quot;never inside a quotation, on a black-letter rule…&quot;) have
+  no stated detection mechanism — a lint cannot see &quot;black-letter&quot; regions without markup that S5
+  hasn&#x27;t defined yet; R11 (:93-94) &quot;no duplicate rule prose across pages&quot; names no duplicate-
+  detection method (exact string? fuzzy?); R14&#x27;s &quot;slip-op pinpoints only for the current term&quot; lint
+  needs a current-term date source, unstated.
+- S2&#x27;s requirements have the same no-Trigger shape but their checks are mostly concrete/machine-
+  checkable; the gap is principally S1&#x27;s.
+
+### M2 — S2 R3&#x27;s pinpoint check is structurally unsatisfiable for opinions without star pagination
+- `specs/S2:64-69`: page verification = &quot;the nearest preceding `*N` star marker,&quot; *Check:* &quot;every
+  stored pinpoint&#x27;s… page equals the nearest preceding star marker.&quot; Recent cases &quot;often have no
+  official cite yet&quot; (`CL-DATA-INVENTORY.md:71-72`) and slip-op-sourced pages (47 case pages mention
+  &quot;slip op&quot;; Chatrie is `CL-confirm: pending` with **no CL text at all**) have no star markers. No
+  fallback state (e.g. `pinpoint_unverifiable: slip-op`) is defined, so a fail-closed reading blocks
+  every current-term case.
+
+### M3 — No migration mapping from the O1 treatment enum to the new Field-I vocabulary
+- O1 frontmatter site-wide uses `treatment-status ∈ {good | criticized | limited | abrogated |
+  overruled}` (`docs/STANDARDS.md:360-375`; census at `FINAL-S9-REPORT.md:15`: 439 good · 11 limited
+  · 5 overruled · 2 abrogated). The new Field-I is `{good_law, history/neutral, caution,
+  questioned, superseded, unverified}` (`PRACTICES.md:37-39`). Nothing in S1 R2, S2 R5/R12, or
+  PRACTICES defines the old→new mapping (&quot;limited&quot; → caution? varies_by_point? Is &quot;overruled&quot; →
+  superseded or history?). S2&#x27;s projector will overwrite the old values; the mapping is a legal-
+  judgment call being left to the builder implicitly.
+
+### M4 — RUNBOOK §4-S5 still schedules the graded-authority mock-both interview that S1 already decided
+- `RUNBOOK.md:208-209`: &quot;**ALI-vs-lighter graded-authority** (mock both — shared with S1)&quot;. S1
+  decided it: &quot;Graded authority = **Variant A**… *Adjudicated on the 2026-07-01 mockup*&quot;
+  (`specs/S1:180-181`, R6 :60-64). Same class as C1 but lower stakes (wasted interview, not a banned
+  artifact). PRACTICES:111-113 (&quot;S1/S5 interview deliverable: mock up two variants&quot;) is equally stale.
+
+### M5 — RUNBOOK §4-S3 entry omits the point-of-law node scheme + S2 binding map that the S3 wrapper (correctly) requires; &quot;point of law&quot; is never defined
+- RUNBOOK §4-S3&#x27;s interview-extract and deliverable (`RUNBOOK.md:175-179`) list only tree/overview/
+  re-homing; the wrapper adds &quot;the point-of-law node granularity + the S2 binding map&quot; and expands
+  the deliverable (`wrappers/S3.wrapper.md:42-51`). The wrapper is right (it implements S2 §9 Open
+  item 1) — but a thread reading only the RUNBOOK per §0 would under-scope S3. And no document
+  defines what a &quot;point of law&quot; *is* (granularity unit, ID format) — it is used normatively in
+  PRACTICES §2 (:37, :48-50) and S2 R5 before any definition exists. Fine to defer the *scheme* to
+  S3, but the runbook entry should name that obligation.
+
+### M6 — Referenced input files missing: `Prompt.md` and the book case-example PDF &quot;(1).pdf&quot;
+- `RUNBOOK.md:231` (&quot;per-page fixes from `Prompt.md`&quot;) and :291 (&quot;`Prompt.md` (user intent)&quot;) — no
+  such file exists in the repo or `~` (mitigated: the S7 parenthetical enumerates the fixes inline).
+- `RUNBOOK.md:207`/:290: S5&#x27;s case-example PDF `.orca/drops/Book Jun 26, 2026 (1).pdf` does not
+  exist; `.orca/drops/` holds only `Book Jun 26, 2026.pdf`, the NJ Handbook, and SSTOC.pdf. S5&#x27;s
+  interview input is dangling.
+
+### M7 — The 388 / ~70–80 / LINT-5-HIGH=0 numbers are never reconciled
+- S8 seed: &quot;**388 distinct cases** have ≥1 bare (unlinked) mention (2026-07-01 audit)&quot;
+  (`RUNBOOK.md:249`). S6: &quot;~70–80 genuine&quot; no-page cases (:215). O1 closed with LINT-5 HIGH = 0
+  (&quot;every named case resolves to a wikilink&quot;) and 2,399 *medium* page-less annotations
+  (`FINAL-S9-REPORT.md:94`). The three claims can coexist only if the 388 mostly counts short-name
+  mentions of *paged* cases that LINT-5&#x27;s heuristic missed — but no doc says so, and the S6/S8 split
+  of the 388 (which need pages vs which need links) is undefined. Like C2, the underlying 2026-07-01
+  audit artifact is uncommitted.
+
+### M8 — The cssi-ingest half of O1&#x27;s follow-on flag #3 is unowned
+- `FINAL-S9-REPORT.md:157`: both the Tailscale `redeploy.sh` server **and the `/cssi-ingest`
+  pipeline** (reads `vault/_inbox/`) are out of step with content-canonical. S4 picks up only the
+  publish half (&quot;Reconcile the publish pipeline to `content/`-canonical (retire the vault sync)&quot;,
+  `RUNBOOK.md:188-190`; research: &quot;the launchd/`redeploy.sh` publish path&quot; :192). The ingest skill
+  is live (listed in the environment) and would still write to the vault today. Assign it to S4 or
+  to GH#2 explicitly.
+
+### M9 — Writer ≠ checker is structurally weakened: the same model (Codex/gpt-5.5) builds the lake and staffs 2 of 3 review lanes
+- `RUNBOOK.md:97` &quot;Codex = builder + reviewer&quot;; S2 R15: builder Codex, &quot;**2nd Codex lane**
+  spot-checks ≥1-in-10&quot; — same model family auditing its own build class violates the spirit of
+  PRACTICES §1.3/G7 (&quot;the agent that wrote a claim cannot approve it&quot; — instance-level separation
+  yes, model-level correlation unaddressed). The runbook itself flags &quot;how the two Codex lanes stay
+  independent&quot; only as an S9 interview question (:269-270). At minimum route the ≥1-in-10 identity
+  spot-check to the Claude lane (S2 R15 currently gives Claude only the treatment audit).
+
+### M10 — S4/S5 double-ownership of the treatment pill/badge/hover mechanics; S5 does not depend on S4
+- S4 owns &quot;treatment flags, overruled-as-history rendering, **pills-as-anchors** (so popovers work)&quot;
+  (`RUNBOOK.md:186-189`); S5 owns &quot;treatment **pill under the case name**… the pill is an **anchor**
+  to the &#x27;Verifying Good Law / as-of&#x27; page with hover preview&quot; (:203-206) and researches the same
+  components (`TreatmentBadge.tsx`, :206-207). Two specs will both write requirements for
+  TreatmentBadge/popover; the dep table (:105-115) has S5 ← S1,S2,S3 with no S4 edge, so neither
+  spec is bound to the other&#x27;s decisions. Draw the line (S4 = mechanism: anchors/popovers/badge
+  component; S5 = placement/content/schema) in both §4 entries.
+
+### M11 — S2&#x27;s CL budget/runtime is unquantified inside the &quot;one autonomous run&quot;
+- R6 requires all three lanes on **every** verified case: top-25 progeny reads × 457 ≈ 11,400
+  document reads *plus* negative-keyword and recency-lane reads and identity/progeny queries, at
+  ~840 req/hr (R10) ⇒ multiple days of continuous paced ingest, before S9&#x27;s &quot;forced primary reads.&quot;
+  Nothing in S2 §5/§7 or the runbook states an expected wall-clock or a budget checkpoint, and the
+  wrapper&#x27;s framing (&quot;one autonomous run&quot;) absorbs it silently. State the estimate and a mid-run
+  budget review point.
+
+## 4. LOW
+
+- **L1** — Glyph inconsistency: `⭘ unverified` (`specs/S1:131`) vs `⚪` everywhere else (S1:39,41;
+  PRACTICES:39; S2:82,91). Cosmetic, but these glyphs are proposed *controlled vocabulary* rendered
+  to readers — pick one.
+- **L2** — Lint naming scheme forks: S1 extends the numeric roster (LINT-9, LINT-10; `specs/S1:101-105`)
+  while S2 introduces `LINT-S2-schema/-drift/-pagerecord` (`specs/S2:44,172`). Harmless now;
+  standardize before S9 codifies the roster.
+- **L3** — LINT-10&#x27;s &quot;prose em-dash with **citation-range exemption**&quot; (`specs/S1:76-77,104`) is
+  muddled: ranges use *en*-dashes (kept), which an em-dash lint would never flag; the exemption as
+  named guards nothing. Presumably it means &quot;don&#x27;t flag dashes inside citation strings&quot; — say that.
+- **L4** — &quot;GitHub issue #2&quot; (`RUNBOOK.md:102,274,298`) is repo-ambiguous: the fork&#x27;s issue #2 (O2
+  maintenance loop, OPEN) is correct, but `gh`&#x27;s default repo here resolves to upstream
+  `jackyzha0/quartz` (whose #2 is an unrelated closed 2021 bug). Write the full URL.
+- **L5** — §4-S1 entry lacks the &quot;✅ Written&quot; annotation that §4-S2 carries (`RUNBOOK.md:139` vs
+  :155) even though both are APPROVED — inconsistent status signaling inside §4.
+- **L6** — S2 wrapper&#x27;s lifecycle line (&quot;Research first → interview → follow-up → write&quot;,
+  `wrappers/S2.wrapper.md:12-14`) omits the now-**REQUIRED** self-interview step (RUNBOOK §1 step 5,
+  added in the same commit that wrote the S2 spec) and the show-don&#x27;t-tell step number. Moot for S2
+  (its spec did run SD1–SD14) but the wrapper is the template future wrappers copy.
+- **L7** — Wrapper drift, minor: S2 wrapper says &quot;off-CL **Justia/Scholar** links&quot;
+  (`wrappers/S2.wrapper.md:25`) vs the spec&#x27;s four-source whitelist adding Cornell LII + official
+  court sites (S2 R14). Expected (wrapper predates the interview) — fine, but confirms wrappers go
+  stale the moment a spec lands; consider a &quot;superseded by the spec&quot; banner on completed wrappers.
+- **L8** — The *Carter v. United States* stale-pending watch item from the Chatrie ticket
+  (`_review-needed/chatrie-scotus-2026-correction.md:119`) is still live in content
+  (`content/4-what-is-a-seizure/Seizure of the Person.md:101`: cert petition No. 25-885, &quot;no Supreme
+  Court holding yet&quot;) and no O2 spec owns re-polling &quot;pending&quot; markers (S2&#x27;s recency lane only
+  covers cases with lake records; S7&#x27;s per-page list doesn&#x27;t include it). One line in S7 or S9&#x27;s
+  checklist closes it.
+- **L9** — The open LINT-3 Chatrie false-positive ticket
+  (`_review-needed/lint3-chatrie-recent-dev-false-positive.md:22-24`, a one-line lint-precision fix)
+  is not picked up by S1 R13&#x27;s roster-extension list or S9&#x27;s CI-lint paragraph. Cheap to add to R13.
+- *(Also noted, sub-LOW: S2 R13&#x27;s `&lt;pool&gt;/db/authority.sqlite` uses an undefined `&lt;pool&gt;` token —
+  inferable from §6 Deliverables as `/Volumes/AIStore2/cssi-lake/`; and R6&#x27;s recency lane counts
+  &quot;last 3 completed terms,&quot; a SCOTUS-specific unit left ambiguous for circuit progeny.)*
+
+## 5. Wrapper-fidelity verdict (task item 5)
+- **S2 wrapper vs RUNBOOK §4-S2:** faithful on substance (build path, record contents, not-found
+  rule, corrupted objects, storage) — defects are only the lifecycle omission (L6) and whitelist
+  drift (L7).
+- **S3 wrapper vs RUNBOOK §4-S3:** faithful on everything the runbook contains, and *better* than
+  the runbook — it adds the S2→S3 binding-map handoff and point-of-law deliverable the runbook entry
+  lacks (M5) and correctly treats S2 as a prerequisite the dep table denies (H2). The fix belongs in
+  the RUNBOOK, not the wrapper.
+
+## 6. _review-needed/ leftovers disposition (task item 2)
+| Item | O2 coverage |
+|---|---|
+| `chatrie-scotus-2026-correction.md` (CLOSED) — corrupted CL object + backfill ticket | **Covered**: S2 R7 denylist (10881683/10813527) + normal R2 identity re-resolution will find a clean cluster if one now exists |
+| Carter cert-watch (§7 of same file) | **Uncovered** → L8 |
+| `lint3-chatrie-recent-dev-false-positive.md` (OPEN) | **Uncovered** → L9 |
+| `coverage/_ESCALATION-batch4-duplicate-CL-lane.md` (RESOLVED) | Lesson (L4 discipline) **weakened, not carried** → H5 |
+| `cases/` (empty) | Nothing to carry |
+| FINAL-S9 ⚑1 flashcard rebuild | **Uncovered** → H3 |
+| FINAL-S9 ⚑3 cssi-ingest/redeploy | **Half-covered** (publish only) → M8 |
+| COHERENCE residuals: Quartz 4→5 (covered by S4 keep-vs-fork eval); glossary cadence (covered by GH#2) | OK |
+</code></pre></details>
+<details><summary>B · S2 feasibility vs live CourtListener (claims table)</summary><pre style="white-space:pre-wrap"><code># Audit 02 — S2 &quot;Verified Authority Database&quot; Feasibility
+
+Date: 2026-07-02. Method: read `_overhaul2/CL-DATA-INVENTORY.md`, `_overhaul2/specs/S2-authority-database.spec.md`, `_overhaul2/PRACTICES.md` §2/§4; live-tested load-bearing claims against CourtListener v4 via MCP (schemas, searches, item fetches, document reads). Repo untouched.
+
+## Claims table
+
+| # | Claim | Verdict | Evidence |
+|---|---|---|---|
+| 1a | Cluster fields as inventoried (case_name/_short/_full, sub_opinions, citations, absolute_url, date_filed, other_dates, judges, disposition/posture/history, precedential_status, scdb_*, source, citation_count, date_created/modified) | VERIFIED | `get_endpoint_schema(clusters)` — all present. Terry 107729 live fetch confirms values; disposition/posture/syllabus empty as warned |
+| 1b | Opinion fields (type enum incl. 020lead/015unamimous/010combined, author_str, per_curiam, sha1, extracted_by_ocr, download_url, opinions_cited, html_with_citations) | VERIFIED | Schema confirms; enum has 13 values incl. 025plurality, 100trialcourt. NEW fields not in inventory: `ordering_key`, `main_version` |
+| 1c | Docket fields (docket_number, date_argued) | PARTIAL | Both exist, but Terry&#x27;s docket 1208992 has `date_argued: null`; the argued date lives only in `clusters.other_dates` (&quot;Argued December 12, 1967.&quot;). Inventory lists both sources, so usable — but `dockets.date_argued` is unreliable for older SCOTUS |
+| 1d | opinions-cited fields (citing_opinion, cited_opinion, depth) | VERIFIED | Schema = exactly {id, citing_opinion, cited_opinion, depth}. Live rows returned (depth 4, 2) filtered by `cited_opinion=9423752` |
+| 2 | CL has NO treatment/citator signal | VERIFIED | No polarity/treatment field on opinions-cited, clusters, opinions, or search schema. `depth` is an integer intensity only. Three-lane derivation (R6) is genuinely necessary |
+| 3 | `cites:(&lt;ids&gt;)` progeny search + counts | VERIFIED (exact) | cites:(107729)=**19,711** (inventory: 19,711); cites:(9423752)=2,968 (was 2,967); OR&#x27;d all 5 siblings=**22,182** (exact match). Cursor pagination works (`has_more`/query_id). Sibling-split gotcha real |
+| 4 | Cluster→lead-opinion resolution path | VERIFIED | Cluster 107729 → 5 `sub_opinions` URLs; search `opinions[]` carries types (`lead-opinion` 9423752, `combined-opinion` 107729, 2 concurrences, dissent) + `ordering_key` (lead=1). cluster_id==combined-opinion id legacy artifact confirmed. precedential_status &quot;Published&quot; |
+| 5 | Name-rank identity trap | VERIFIED (exact) | `case_name=&quot;Adams v. Williams&quot;` + court=scotus → top 3 all *Williams v. Adams*, 565 U.S. 1037 (2011 cert denial); the real 407 U.S. 143 (1972) absent from top hits. Unfiltered search worse (GA Ct. App. habeas first) |
+| 6 | Chatrie 10881683 / Zorn 10813527 are &quot;corrupted CL objects&quot; | **REFUTED (misdiagnosed)** | These are **cluster/opinion id-space collisions, not corruption**. Cluster 10881683 = *Chatrie v. United States*, SCOTUS, **decided 2026-06-29** (real geofence-warrant decision; text verified via its sub_opinion 11349205: &quot;Held: Police officers conducted a Fourth Amendment search…&quot;). Cluster 10813527 = *Zorn v. Linton*, SCOTUS 2026-03-23 (sub_opinion 11280281). The Harmon/Strike 3 texts belong to **opinion** ids 10881683/10813527 — different, perfectly valid objects (opinion 10881683 → cluster 10415095 Harmon; opinion 10813527 → cluster 10346939 Strike 3). O1 fetched cluster ids against the opinions endpoint |
+| 7 | ~1,000 req/hr rate envelope | PARTIAL/UNVERIFIABLE | Project token untestable from here (MCP uses its own: observed hard **20/min** throttle, 429 with &quot;Expected available in Ns&quot; detail — backoff design validated). analyze_citations 60/min matches CL docs. The 840/hr pacing is safe-side either way |
+| 8a | Inventory misses useful fields | CONFIRMED gaps | `opinions.ordering_key` (lead ordering), `opinions.main_version` (version dedupe), search `opinions[].cites[]` (outbound edges free in search responses), clusters `headmatter` (parsed parties/attorneys/argued-date XML — verified populated on Terry), `syllabus`/`summary`/`headnotes`/`arguments`/`cross_reference`/`correction`, `filepath_json_harvard`/`filepath_pdf_harvard`, search `semantic` flag, `cited_gt/cited_lt` + `stat_*` filters (useful for lane 2/1 bounding) |
+| 8b | citation.type map (1 Fed…8 Neutral) | PARTIAL | Enum values consistent (observed 1/2/6 on Terry) **but type=1 is NOT unique**: Terry has THREE type=1 cites (392 U.S. 1, 88 S. Ct. 1868, 20 L. Ed. 2d 889). &quot;Official = type 1&quot; underspecified in R3 — needs reporter-precedence rule (U.S. &gt; S. Ct. &gt; L. Ed.; F.2d/3d/4th for CoA) |
+| — | Fuzzy `citation` filter gotcha | VERIFIED | `citation=&quot;392 U.S. 1&quot;` → 36 results, none Terry in top 5 (392 U.S. App. D.C. 1, 553 U.S. 1, 392 F.3d 1…). Tokenized, not exact |
+| — | 457 existing case pages | VERIFIED | `ls content/cases/*.md | wc -l` = 457. /Volumes/AIStore2 mounted |
+
+## Additional live findings
+
+- **Progeny count provenance is three-valued**: cluster.citation_count 37,950 ≠ opinions-cited edge rows on the lead (get_counts: **37,624**) ≠ OR&#x27;d search 22,182. The edge table attributes nearly the full graph to the lead opinion (37,624 ≈ 37,950), while the search index splits by sibling and only counts indexed opinions. R4&#x27;s `total_citing_cases` (OR&#x27;d search) is fine but the record should label it &quot;indexed citing opinions (search)&quot; — it is ~15k lower than the raw edge count. The inventory&#x27;s &quot;counts unreliable&quot; note points the wrong way: opinions-cited is the *more complete* citing-edge source for the lead.
+- **Lane 3 (recency) is server-side filterable**: `cites:(…) AND filed_after=2026-01-01` worked → 89 hits incl. two 2026 SCOTUS decisions. Efficient; spec should state it.
+- **Lane 1 scale risk**: the negative-keyword OR&#x27;d query on Terry returns **6,917** hits. &quot;Scan&quot; is not bounded in R6 for mega-cases; needs court/status filters (`stat_Published`, binding-jurisdiction courts, order_by dateFiled desc) or it dwarfs lane 2&#x27;s N=25.
+- **Chatrie is a must-have page, not a denylist entry**: a 2026 SCOTUS geofence/location-privacy holding is core CSSI subject matter. R7&#x27;s denylist as written (&quot;the builder refuses these ids&quot;) would block ingesting cluster 10881683 and cluster 10813527 — i.e., exclude two real 2026 SCOTUS cases from a search-and-seizure wiki. Fix: (a) namespace denylist entries by object type + document the root cause (never fetch `/opinions/&lt;cluster_id&gt;`); (b) re-verify both entries — the correct systemic guard is R2&#x27;s two-key identity check, which already catches this class.
+
+## Spec design audit
+
+- **Schema (R1)**: sound; per-case JSON + JSON Schema + canonical serializer is right. Gap: **frontier stubs have no page, so `slug = content filename stem` is undefined for them** — R11 needs a stub record_id generation rule (collision-safe with future S6 filenames).
+- **Three-store consistency (R9/R12/R13)**: lake↔frontmatter drift lint is genuinely two-directional (value-level, actionable) — good. But **lake↔SQLite freshness is unguarded**: SQLite is &quot;droppable/rebuildable&quot; yet S6/S8 read `coverage`/`intra_edges` from it; a stale DB silently serves an old roster. Add a lake content-hash stamp in the DB + a freshness assert in consumers (cheap, closes the third direction).
+- **Resumability (R10)**: journal per-case-per-step + sha1(url) cache + backoff is solid; observed 429 semantics match design. Ensure the journal records *lane completion* (treatment scans are deliberately uncached) so a resume doesn&#x27;t re-burn treatment-query quota.
+- **Composite/varies_by_point (R5)**: forced marker is a good failure-mode guard. Two residual risks: (1) &quot;principal holding&quot; is a judgment with no recorded referent — store the principal-holding statement/slug in the record, else composite_basis is unauditable; (2) overrides only on `verified` + provisional S3 slugs means S7 prose may be authored against slugs that S3 later splits 1:N — the binding map handles data, but prose references need an S9 recheck (spec&#x27;s coherence gate covers it only if slugs are stable strings; say so).
+- **Scope/handoffs (R11)**: 457 verified; S6/S8 specs don&#x27;t exist yet (only S1/S2 in `_overhaul2/specs/`) but RUNBOOK §S6/§S8 seeds + `coverage` table make the handoff coherent. Chatrie proves the frontier-stub + recency-lane rationale: its cluster has `citations: []` (no official cite yet) — exercising R2 edge case (b) exactly.
+- **Throughput**: at ≤14 req/min, 457 cases × (identity ~3 + cites ~1 + progeny ~2 + three-lane reads ~10–40 cached calls) ≈ 15–25k calls → **~20–30 hours minimum**, multi-day with treatment reads. Feasible but plan the run in resumable sessions; per-case journal makes this fine.
+
+## Verdict
+
+**Feasible.** The API contract the spec is built on is real and behaves as inventoried — every mechanical claim reproduced, several exactly (19,711 / 22,182 / name-rank inversion). Two spec defects need fixing before build: the misdiagnosed denylist (would silently exclude the 2026 SCOTUS *Chatrie* geofence decision) and the non-unique type=1 official-cite selector. The rest are hardening items.
+</code></pre></details>
+<details><summary>C · Uncommitted code diff review</summary><pre style="white-space:pre-wrap"><code># Audit 03 — Uncommitted diff review, branch `overhaul2/planning`
+
+Scope: uncommitted changes to `quartz.layout.ts`, `quartz/components/scripts/explorer.inline.ts`,
+`quartz/styles/custom.scss`; untracked `.orca/`. Read against `_overhaul2/RUNBOOK.md` §S3/§S4,
+stock Quartz explorer (`quartz/components/Explorer.tsx`, `styles/explorer.scss`), SPA lifecycle
+(`quartz/components/scripts/spa.inline.ts`), and style-emit order
+(`quartz/plugins/emitters/componentResources.ts`).
+
+## What the diff actually is
+
+Two workstreams blended in one working tree:
+
+1. **S4 explorer mechanics** (runbook §4 S4 &quot;Make the explorer work&quot;):
+   - Scroll save retargeted `.explorer-ul` → `.explorer-content` (`explorer.inline.ts:276-281`),
+     restore likewise (`explorer.inline.ts:229-241`).
+   - Smooth scroll-to-active dropped for `{behavior: &quot;auto&quot;, block: &quot;nearest&quot;}` (`explorer.inline.ts:239`).
+   - `custom.scss:11-23`: desktop-only flex chain (`.explorer {flex:1 1 auto; min-height:0}` +
+     `.explorer-content {flex:1 1 auto; min-height:0; overscroll-behavior:contain}`) that makes
+     `.explorer-content` an actually-bounded scroll container.
+   - `custom.scss:30-32`: undoes stock `overscroll-behavior: contain` on nested ULs (wheel-trap fix).
+
+2. **S3 live nav mockup** (runbook §4 S3 &quot;*Show:* a live nav mockup on a branch&quot;):
+   - `quartz.layout.ts`: `folderClickBehavior` &quot;link&quot;→&quot;collapse&quot;; custom numeric-prefix `sortFn`
+     (closure-free, serialization-safe); displayNames table replaced with the NEW 13-category
+     taxonomy (&quot;Standards of Proof&quot;, &quot;Home Entry &amp; Search&quot;, etc.).
+   - `explorer.inline.ts:115-155`: new `depth` param; `depth &gt; 0` ⇒ `li.subtree`: always-open
+     branch whose header is a link to the folder index (TOC-tree model); subtree icons/buttons
+     excluded from toggle handlers (`:258-259`, `:269`).
+   - `custom.scss:34-78`: hides subtree chevrons; ├─/└─ tree connectors via `::before`/`::after`.
+
+`.orca/` contains only `drops/` with 3 reference PDFs (the book PDF, NJ LEH Handbook, SSTOC) —
+runbook research inputs, not code.
+
+## Verified-correct items
+
+- **SPA lifecycle order is right.** `prenav` fires before `micromorph` (spa.inline.ts:81-82 vs :104),
+  so scrollTop is read from the live DOM; restore runs inside `setupExplorer` (invoked from `nav`,
+  spa.inline.ts:129/191) synchronously after the rebuilt tree is inserted (`explorer.inline.ts:227-234`)
+  — no race. `window.scrollTo({top:0})` at spa.inline.ts:114 touches page scroll only.
+- **Retargeting is a genuine fix, not churn.** `.explorer-ul` has NO overflow rule anywhere
+  (grep across `quartz/styles` + `component/styles` is empty); stock save/restore was a no-op.
+  `.explorer-content` is the only `overflow-y:auto` element (explorer.scss:111-114), and the new
+  custom.scss flex/min-height chain is what finally bounds its height (sidebar is
+  `display:flex; height:100vh; sticky`, base.scss:213-221).
+- **Specificity/order checked.** custom.scss is joined LAST in the stylesheet
+  (componentResources.ts:316-321, `...componentResources.css, styles`), so its equal-specificity
+  overrides (`overscroll-behavior`, `border-left:none`) win. `.explorer.collapsed` (0,2,0) still
+  beats the new `.explorer` rule (0,1,0) — desktop collapse keeps working.
+- **Explorer.tsx contract intact.** `data-folderpath`, `data-behavior/collapsed/savestate`,
+  localStorage `fileTree`, sessionStorage `explorerScrollTop` keys unchanged; `folderClickBehavior`
+  &quot;collapse&quot; is a supported option; mapFn/sortFn stay closure-free for `.toString()` serialization
+  (Explorer.tsx:72-77). Subtree folders still get `currentExplorerState` entries but rendering
+  ignores them (`isSubtree || ...`, explorer.inline.ts:149) — consistent, only harmless stale
+  localStorage entries.
+- **`npx tsc --noEmit` passes (exit 0).** `slugSegment` getter returns `string`
+  (fileTrie.ts:50-52); the `?? &quot;&quot;` is belt-and-braces.
+- Dark mode fine (connectors use `var(--lightgray)`). No impact on Search/Backlinks/TOC/footer/
+  popovers — all custom rules are scoped under `.explorer`/`.explorer-content`; the flex change
+  affects only the left sidebar where the explorer is last.
+
+## Findings
+
+### F1 [HIGH · process] Uncommitted, spec-less, and the layout table targets folders that don&#x27;t exist
+`content/` still holds the OLD 12-category tree (`1-foundations-history` … `cases`); every key in
+the new displayNames table (quartz.layout.ts:26-46) misses, so a build today shows fallback names
+(folder-index titles, no &quot;N ·&quot; prefixes) and the &quot;cases&quot; mapping is silently dropped. `_overhaul2/specs/`
+contains only S1 + S2 — no S3/S4 spec records this nav model; it lives solely in code comments in an
+uncommitted working tree. Per the runbook flow this *is* the sanctioned &quot;mockup on a branch,&quot; but it
+is at real risk of loss (no commit, no stash). **Fix:** commit as a clearly-labeled mockup commit on
+this branch (or `overhaul2/nav-mockup`) now; fold the decisions into `S3-taxonomy.spec.md` /
+`S4-platform-ui.spec.md`.
+
+### F2 [MEDIUM · mobile] Scroll fix is desktop-only while the model makes the tree much taller
+The bounded-scroll-container fix is inside `@media all and not ($mobile)` (custom.scss:11), but on
+mobile `.explorer-content` is a 100dvh overlay with `overflow: hidden` (explorer.scss:268) — it
+cannot scroll at all. The always-open-subtree model greatly lengthens the tree, so on phones
+everything below the fold of the drawer becomes unreachable. Additionally the wheel-trap override
+`.explorer-content ul { overscroll-behavior: auto }` (custom.scss:30-32) is NOT media-scoped: on
+mobile it removes the stock containment on the (overflow:hidden ⇒ scroll-container) nested ULs, so
+touch-scroll over the open drawer can chain past it (`html.mobile-no-scroll` only sets
+`overscroll-behavior:none`, it doesn&#x27;t stop html itself scrolling). **Fix:** scope the ul override
+to desktop; give mobile `.explorer-content` `overflow-y:auto`.
+
+### F3 [MEDIUM · UX/design] Top-level category overviews are now unreachable from the nav
+With `folderClickBehavior: &quot;collapse&quot;`, top-level headers are toggle buttons only; index files
+don&#x27;t render as child rows (fileTrie folds them into folder displayName). S3 mandates an authored
+overview page per umbrella — there is no nav path to it. Subtree headers link to their overview;
+category headers don&#x27;t. **Fix:** decide in the S4 spec — e.g. chevron toggles / title links, or an
+overview row for depth-0.
+
+### F4 [LOW · cruft] Dead guard + stale comments
+- `if (button.closest(&quot;li.subtree&quot;)) continue` (explorer.inline.ts:259) can never fire: subtree
+  `.folder-button`s were already `replaceWith(a)`-ed at :132. The icon guard (:269) is the live one
+  (icons exist but are `display:none`). Harmless; keep one, note the other or delete.
+- quartz.layout.ts:4-8 header comment still describes the old 12-category/7a/7b/`cases` scheme and
+  claims &quot;the default numeric `sortFn` … is kept as-is&quot; — both now false. Update.
+
+### F5 [LOW · cosmetic] Connector tick alignment
+`::after` tick at `top: 0.85rem` (custom.scss:70) vs row centers ≈0.95–0.975rem (folder rows
+1.7rem line-height + 0.1rem padding; file rows 1.65 + 0.15) — ticks sit slightly high. Mockup polish.
+
+### F6 [INFO] Pre-existing (not introduced) quirks, unchanged by this diff
+- `if (scrollTop &amp;&amp; …)` treats saved `&quot;0&quot;` as set, permanently suppressing scroll-to-active — stock
+  logic, arguably intended.
+- `folderIsPrefixOfCurrentSlug` raw string-prefix match can false-positive on sibling slugs sharing
+  a prefix — stock; numbered categories make collision unlikely.
+- `nav` handler&#x27;s `if (!mobileExplorer) return` inside a for-loop (should be `continue`) — stock.
+
+## Runbook conformance
+
+Matches §S4: scroll retarget to `.explorer-content` ✓; drop smooth-scroll ✓ (roomier rows already
+landed earlier in commit b713b2b as &quot;S3 · R3&quot; in explorer.scss). **Diverges:** no sidebar-padding /
+two-line-wrap change and no list/paragraph-spacing rules in this diff (named in §S4); and it adds
+substantial §S3-scope work (13-category table, TOC-tree subtree model, connectors, sortFn,
+collapse behavior) that belongs to the S3 &quot;live nav mockup&quot; deliverable — expected per the plan,
+but currently documented nowhere but the diff itself.
+</code></pre></details>
+<details><summary>D · Taxonomy &amp; structure (full tree map)</summary><pre style="white-space:pre-wrap"><code># CSSI Taxonomy Audit (audit-04) — content organization vs. S3 direction
+
+Date: 2026-07-02 · Branch: overhaul2/planning · Scope: `content/` (canonical), `_overhaul2/RUNBOOK.md` §4 S3, `quartz.layout.ts` (uncommitted nav mockup)
+
+## 1. Current tree (37 doctrine/reference pages + 15 index stubs + 457 cases)
+
+All 15 folder `index.md` files are identical 8-line stubs: frontmatter + H1 + &quot;Category overview — see the pages in this section.&quot; **No authored overviews exist anywhere except `content/index.md`** (87 lines), which IS a real annotated Map of Content (one-line doctrinal summary + key cases per page, updated 2026-06-30).
+
+```
+content/
+├── index.md (87 — real annotated MoC)
+├── flashcards.md (12 — app shell; 1,176-card deck, 26 subdecks)
+├── 1-foundations-history/            [1 page — ANEMIC]
+│   └── Common Law Origins (59)
+├── 2-legal-system-research/          [6 pages — reference, not doctrine]
+│   ├── Case Index (484 — GENERATED, 468 rows: cite·holding·flag·CL-link·home)
+│   ├── Reading and Citing Cases (217) · Common Legal Terms (170)
+│   ├── The Federal Court System (104) · Verifying Good Law (78) · Legal Research Tools (73)
+├── 3-what-is-a-search/               [9 pages — mixes framework/meta with doctrine]
+│   ├── Two Definitions of Search (130) · Curtilage (127) · Abandonment (99)
+│   ├── Fourth Amendment Framework (95) · Third-Party Doctrine &amp; Digital Surveillance (90)
+│   ├── Tents (85) · Fourth Amendment Recalibration (76) · CREW (44) · 4A Analysis Checklist (42)
+├── 4-what-is-a-seizure/              [5 pages — really &quot;seizure of persons + street encounters&quot;]
+│   ├── Traffic Stops (147) · Seizure of the Person (147) · Terry Stops &amp; RS (145)
+│   ├── Arrest in the Home (130) · Collective Knowledge / Fellow-Officer (94)
+├── 5-levels-of-suspicion/            [1 page — ANEMIC]
+│   └── Probable Cause and Reasonable Suspicion (165; 22 homed cases)
+├── 6-warrant-requirement/            [1 page — ANEMIC folder / overloaded page]
+│   └── The Warrant Requirement (178; 34 homed cases: PC+magistrate, particularity, Franks, knock-and-announce, anticipatory)
+├── 7-exceptions-warrant/             [11 pages; ONLY 3-level branch: 7a/7b]
+│   ├── 7a-pc-needed/  Plain View (138) · Automobile (137) · Exigent+Hot Pursuit (116)
+│   │                  · Community Caretaking (100) · Emergency Aid (84)
+│   └── 7b-pc-not-needed/  Special Needs &amp; Admin (171; 31 homed cases) · SITA (143; 29)
+│                  · Consent (124) · Border (120) · Securing the Scene (113) · Knock and Talk (110)
+├── 8-exclusionary-rule-remedies/     [2 pages]
+│   ├── The Exclusionary Rule (199; 44 homed cases — HEAVIEST page in the wiki)
+│   └── Standing to Challenge a Search (119; 14 — but holds Katz + Brendlin, see §3)
+├── 9-confessions-interrogation/      [6 pages — coherent 5A/6A block]
+│   ├── Miranda Waiver &amp; Invocation (157) · Miranda &amp; Custodial Interrogation (149)
+│   ├── 6A Right to Counsel (128) · Voluntariness (112) · Eyewitness ID (110) · Garrity (90 — NOT in master index)
+├── 10-use-of-force-liability/        [3 pages]
+│   ├── §1983 &amp; Qualified Immunity (188; 37 homed cases) · Brady and Giglio (118) · Use of Force (109)
+├── 11-adjacent-doctrines/            [1 page — junk drawer]
+│   └── Entrapment (91)
+├── 12-instructor-craft-study/        [2 pages]
+│   ├── Three Golden Rules (70) · Instructor Development (31)
+└── cases/ (457 flat pages, no index.md; frontmatter `homes:` = page + role; explorer shows as collapsed node)
+```
+
+Mega-pages by case-load (frontmatter `homes:` counts): Exclusionary Rule 44 · §1983/QI 37 · Warrant Requirement 34 · Special Needs 31 · SITA 29 · Miranda-Custodial 29 · Miranda-Waiver 22 · PC/RS 22 · Automobile 22 · Two Definitions 21. Stubs: Instructor Development (31 ln), Analysis Checklist (42), CREW (44).
+
+Orphans: `9-confessions-interrogation/Public-Employee Compelled Statements (Garrity).md` — the only doctrine page with no line in `content/index.md`. `Emergency Aid.md` has no dedicated index line either; it is reached only through the `[[Community Caretaking and Emergency Aid]]` link resolving via an alias on `Community Caretaking.md`.
+
+Duplication/overlap: Fourth Amendment Framework ↔ Two Definitions ↔ Seizure of the Person (framework restates both); CREW cross-listed in §3 and §12; inventory doctrine split between SITA (booking/inventory, *Lafayette/Opperman* text) and Special Needs (Opperman/Bertine/Wells homed there); Terry/RS (cat 4) ↔ PC-and-RS (cat 5).
+
+## 2. Pedagogical evaluation
+
+**Walk order is fundamentally sound** (foundations → research → search → seizure → suspicion → warrant → exceptions → exclusion → confessions → force/liability) and tracks casebook order. Defects:
+
+- **Suspicion standards come too late.** Terry stops (RS) and Traffic Stops are taught in cat 4, before the standards page in cat 5. Standards of proof should precede the doctrines that consume them. (The uncommitted nav mockup already moves it to position 2.)
+- **Cat 4 conflates the threshold question with application doctrines.** &quot;What Is a Seizure?&quot; holds Terry, Traffic Stops, Collective Knowledge, and Arrest in the Home — the last is half warrant-requirement material (*Payton/Steagald*).
+- **Anemic categories:** 1, 5, 6, 11 are one-page folders; 12 has two. Cat 6&#x27;s single page carries five distinct warrant doctrines (34 cases). Overloaded: 7 (11 pages) and 3 (9 pages, mixing meta-pages with doctrine).
+- **Cat 11 &quot;Adjacent Doctrines&quot;** = Entrapment alone. A category that exists to hold one page fails &quot;self-explanatory node.&quot; Fold into 10 (or a &quot;Beyond Suppression&quot; umbrella).
+- **Cat 12 makes sense** for an instructor wiki; keep, but stop cross-listing CREW there.
+- **Cat 2 at position 2 blocks the doctrine walk** with reference material (glossary, citation how-to, Case Index). Mockup moves it to 12 — defensible either way; decide in interview.
+- **Know-where-to-find-it failures:** Inventory (no page; split SITA/Special-Needs), Checkpoints (buried in Special Needs), vehicle law scattered over ≥4 pages in 3 categories (Traffic Stops, Automobile, Gant-SITA, inventory, Cady), digital/tech scattered (Third-Party §3, Recalibration §3, Riley inside SITA, device-forensic split inside Border, Kyllo), standing/REP split (§8 Standing, §3 Abandonment, §3 Two Definitions).
+
+## 3. S3 direction vs. reality
+
+| Runbook claim | Verdict |
+|---|---|
+| Special-Needs mega-page | **Confirmed** — 171 ln / 31 homed cases spanning ≥6 doctrines (checkpoints *Sitz/Edmond/Lidster/Martinez-Fuerte*, schools, probation/parole, drug testing, admin inspections, DNA/booking). |
+| Promote Checkpoints/**Inventory**/Border out of it | **Half right.** Checkpoints: yes, inside Special Needs. Inventory: yes, but it&#x27;s split between Special Needs (homes) and SITA (teaching text) — extraction must pull from BOTH. **Border is already a standalone page** (`7b/Border Searches.md`, 120 ln, 9 homed cases) — stale item; drop or restate as &quot;keep Border standalone.&quot; |
+| Plain View → seizure cluster | Currently `7a-pc-needed/Plain View Doctrine.md`. Defensible move (it is a seizure-of-property doctrine), **but** cat 4 today is 100% seizure-of-persons; a seizure cluster needs a property side (*Soldal*, *Place*, *Karo* exist in cases/). Spec must design that, not just relocate one page. |
+| Brendlin re-home | **Confirmed wrong today**: homed at `[[Standing to Challenge a Search]]` (role &quot;Progeny/Refinement&quot;); the Case Index router therefore sends readers to §8 for a passenger-seizure case. Traffic Stops already teaches it in prose — re-home there (or Seizure of the Person). |
+| Katz re-home | **Confirmed, and worse than the runbook implies**: Katz — the search-definition anchor — is homed at Standing (role &quot;Key — Anchor&quot;). The wiki&#x27;s single most looked-up case misroutes. Home = Two Definitions of Search. |
+| Graham re-home | **Confirmed**: homed at §1983/QI; Use of Force (which teaches Graham&#x27;s test) is the natural home. |
+| Exigency → flavors | Reasonable: current page bundles hot pursuit + destruction-of-evidence + police-created-exigency gate; Emergency Aid is already separate. Yields 3–4 clean leaves. |
+| &quot;Levels of Suspicion&quot; → &quot;Standards of Proof&quot; | Justified; current cat 5 covers only RS/PC — no preponderance/clear-and-convincing/BRD pyramid anywhere except a mention in Three Golden Rules. |
+| Unlist cases/ | Sensible (457 flat files as one collapsed node). **Gap:** `cases/` has no `index.md`; Quartz will still emit an auto folder-listing page at `/cases/` — spec must decide that page&#x27;s fate, plus explorer filtering. |
+| Home Entry &amp; Search topic | Supported: home-entry law is scattered across 4 categories (Arrest in the Home §4, Curtilage §3, Knock-and-Talk + Securing the Scene §7b, Exigent §7a). Mockup already has `03-home-entry-and-search`. |
+
+**Note:** `quartz.layout.ts` (uncommitted) already encodes a candidate 13-category target tree (`1-foundations … 13-instructor-craft`, with `6-warrant-exceptions/01-searching-a-person, 02-searching-a-vehicle, 03-home-entry-and-search, 06-programmatic-special-needs`, and `01-`-prefixed page slugs). The audit of the runbook should treat this mockup as the de-facto draft and reconcile: it has no home for Entrapment (&quot;adjacent doctrines&quot; gone), and introduces per-file numeric prefixes — a new renumber-on-insert surface at the FILE level.
+
+## 4. Improvements S3 should capture (not in runbook)
+
+1. **Technology &amp; digital searches umbrella.** Carpenter/Riley/Jones/Kyllo/Chatrie(geofence)/Tuggle(pole cams)/Cotterman-Touset(border devices)/Mansor are spread over ≥5 pages in 4 categories. For a modern academy curriculum this is a first-class topic; today it&#x27;s the hardest doctrine family to find.
+2. **Exclusionary Rule is the real mega-page** (44 homed cases, fruits + 4 exceptions + impeachment + collateral-use on 199 lines) — runbook flags Special Needs but not this. Make §8 an umbrella: fruits/attenuation, good-faith, inevitable-discovery/independent-source, standing.
+3. **§1983/QI page (37 cases)** similarly earns sub-structure (QI · municipal liability Monell/Canton · Bivens · §242).
+4. **Arrests need a home**: no page covers public arrest (*Watson*, *Atwater*, *Devenpeck*, *Gerstein/McLaughlin* prompt review). Mockup&#x27;s `06-arrests` node confirms the gap; runbook text doesn&#x27;t mention it.
+5. **Standing/REP placement decision** is forced by the Katz/Brendlin re-homings — decide whether Standing lives with the exclusionary rule (current) or with the search-definition cluster; runbook is silent.
+6. **Use-of-force-as-seizure**: Graham/Garner/Torres are 4A seizure doctrine; decide whether Use of Force teaches in the seizure umbrella with liability (§1983, Brady) as a separate back-of-book category.
+7. **Electronic surveillance / Title III** (*Olmstead, Berger, Katz* progeny) — cases exist, no doctrinal home.
+8. **Naming conventions are inconsistent**: question-titles (&quot;What Is a Search?&quot;) vs nouns; &quot;The X&quot; vs bare X; &quot;CREW&quot; file vs &quot;C.R.E.W.&quot; title; unique parenthetical &quot;(Garrity)&quot;; letter-suffix `7a/7b` pattern unique to cat 7. Pick one grammar per level.
+9. **Slug/URL stability**: Quartz slugs embed the full numbered folder path, so the restructure changes EVERY doctrine URL on a live production site (mockup renumbers 2–13, shifting even unchanged categories). Existing page aliases are bare titles (root-level redirects) — they do NOT cover old paths. Spec must mandate: per-page alias/permalink for every old path, regeneration of the Case Index &quot;home&quot; column (468 rows), and a sweep of `homes:`/`related:` wikilinks (title-based links survive renames; path links don&#x27;t). cases/ URLs staying put is the one stability win — preserve it.
+10. **Index hygiene**: add Garrity to the master index; give Emergency Aid its own line; the 15 stub indexes become the S3 authored overviews (the master index&#x27;s annotated style is the proven template).
+11. **Renumber-on-insert**: numbered folders AND (in the mockup) numbered files mean any insertion renumbers siblings → URL churn. Consider ordering via frontmatter/explorer `sortFn` weight instead of slug prefixes, or accept prefixes but freeze numbering with gaps (10/20/30).
+</code></pre></details>
+<details><summary>E · Case-law accuracy (per-case verification table)</summary><pre style="white-space:pre-wrap"><code># Audit 05 — Legal Accuracy of Case Pages (CSSI)
+
+Date: 2026-07-02 · Auditor: Claude (read-only) · Method: 14 case pages sampled from `content/cases/` (457 total), verified against opinion text via CourtListener MCP (`search_document` grep of the actual opinions; cluster metadata for citations/dates).
+
+## Verification table
+
+Checks: (1) caption (2) citation vol/reporter/page (3) court+year (4) holding fidelity (5) quote spot-checks (6) treatment honesty (7) pinpoint format.
+
+| Page | 1 | 2 | 3 | 4 | 5 | 6 | 7 | Evidence |
+|---|---|---|---|---|---|---|---|---|
+| Katz v. United States.md | ✓ | ✓ 389 U.S. 347 | ✓ SCOTUS 1967-12-18 | ✓ | ✓✓ &quot;protects people, not places&quot; + Harlan &quot;twofold requirement&quot; both verbatim in op. 107564 | ✓ notes Jones/Carpenter revive trespass as *additional* basis | ✓ U.S. pins 351/361 | clean |
+| Terry v. Ohio.md | ✓ | ✓ 392 U.S. 1 | ✓ 1968-06-10 | ✓ (RS = specific articulable facts + rational inferences; frisk = reasonably prudent man) | ✓✓ both quotes verbatim in op. 107729 | ✓ | ✓ pins 21/27/30 | clean |
+| Payton v. New York.md | ✓ | ✓ 445 U.S. 573 | ✓ 1980-04-15 | ✓ (presumptively unreasonable; arrest-warrant/reason-to-believe carve-out in Treatment; Steagald for 3rd-party homes) | ✓✓ &quot;warrantless and nonconsensual entry…routine felony arrest&quot; + &quot;firm line at the entrance to the house&quot; verbatim in op. 110235 | ✓ | ✓ pins 576/590 | clean |
+| Cady v. Dombrowski.md | ✓ | ✓ 413 U.S. 433 | ✓ 1973-06-21 | ✓ | ✓✓ &quot;community caretaking functions, totally divorced…&quot; + &quot;vulnerable to intrusion by vandals&quot; verbatim in op. 108850 | ✓ EXEMPLARY — expressly notes Caniglia (2021) declined to extend caretaking to the home; vehicle holding intact | ✓ pins 441/448 | clean |
+| United States v. Santana.md | ✓ | ✓ 427 U.S. 38 | ✓ 1976-06-24 | ✓ doorway=public place; hot pursuit entry | ✓✓ both quotes verbatim in op. 109504; dissent&#x27;s &quot;ante, at 42&quot; independently confirms the pin | ✓ EXEMPLARY — Lange (2021) limit for misdemeanants flagged in frontmatter note + Treatment | ✓ pins 42/43 | clean |
+| California v. Greenwood.md | ✓ | ✓ 486 U.S. 35 | ✓ 1988-05-16 | ✓ | ✓✓ &quot;exposed their garbage to the public sufficiently to defeat&quot; verbatim at *40; &quot;animals, children, scavengers, snoops&quot; is majority text at 40 (footnote superscripts omitted; dissent quotes &quot;ante, at 40&quot;) | ✓ | ✓ pin 40 | clean |
+| Illinois v. Gates.md | ✓ | ✓ 462 U.S. 213 | ✓ 1983-06-08 | ✓ totality-of-circumstances; &quot;fair probability&quot;; magistrate practical common-sense decision; substantial-basis review | ✓✓ &quot;wiser to abandon the &#x27;two-pronged test&#x27;&quot; + full magistrate-task sentence verbatim in op. 110959 | ✓ (Aguilar/Spinelli abandonment stated) | ✓ pin 238 | clean |
+| Torres v. Madrid.md | ✓ | ✓ 592 U.S. 306; 141 S. Ct. 989 (CL cluster 4867542 confirms) | ✓ 2021-03-25 | ✓ EXACT standard: physical force w/ intent to restrain = seizure even w/o submission/subdual; page correctly adds &quot;only unreasonable seizures violate&quot; | ✓ holding sentence verbatim twice in op. 4671321 | ✓ | ✗ &quot;slip op., at 1&quot; pins on a case published at 592 U.S. 306 | slip-op defect only |
+| Caniglia v. Strom.md | ✓ | ✓ 593 U.S. 194; 141 S. Ct. 1596 (cluster 4883694) | ✓ 2021-05-17 | ✓ no freestanding community-caretaking exception for the home | ✓✓ &quot;goes beyond anything this Court has recognized&quot; + &quot;Neither the holding nor logic of Cady justified that approach…&#x27;a constitutional difference&#x27;&quot; verbatim in op. 4687473 | ✓ (cabins Cady; emergency-aid/exigency intact) | ✗ slip-op pins | slip-op defect only |
+| Lange v. California.md | ✓ | ✓ 594 U.S. 295 (cluster 4894407) | ✓ 2021-06-23 | ✓ EXACT standard: misdemeanor pursuit not categorically exigent; case-by-case | ✓✓ &quot;categorically—qualifies as an exigent circumstance. We hold it does not.&quot; + &quot;A great many misdemeanor pursuits involve exigencies&quot; verbatim in op. 4698186 | ✓ | ✗ slip-op pins | slip-op defect only |
+| Barnes v. Felix.md | ✓ | ✓ 605 U.S. 73; 145 S. Ct. 1353 (cluster 10584846 confirms both) | ✓ 2025-05-15 | ✓ totality w/ no time limit; moment-of-threat rejected; officer-created-danger left open | ✓✓ &quot;chronological blinders&quot; + &quot;facts and events leading up to the climactic moment&quot; verbatim in op. 11051434 | ✓ (unanimous; Kavanaugh concurrence noted) | ~ slip-op pins keyed to 605 U.S. 73 start page | near-clean |
+| Chatrie v. United States.md | ✓ (SCOTUS caption = Chatrie v. U.S. per CL) | ✓ 609 U.S. ___ (2026), No. 25-112 | ✓ SCOTUS 2026-06-29 (CL cluster 10881683 confirms) | ✓ holding accurate: acquiring Google Location History IS a search; voluntary-choice arg rejected (&quot;meritless&quot; per syllabus); PC/particularity expressly left for remand; &quot;136 F. 4th 100, vacated and remanded&quot; | ✗ ONE MISQUOTE: page quotes &quot;maintains a reasonable expectation of privacy in the record of his phone&#x27;s location&quot; — actual opinion text (op. 11349205 @20049): &quot;An individual has a reasonable expectation of privacy in records about his cell phone&#x27;s location&quot;; syllabus: &quot;in his cell-phone location data.&quot; Phrase as quoted appears nowhere in the opinion. | ✓ (7–7 en banc split confirmed verbatim: &quot;the court divided evenly (7 to 7)&quot;; panel 107 F.4th 319, 325 confirmed; en banc 136 F.4th 100 confirmed) | ✓ slip-op appropriate (current term) | see findings 1–2 |
+| United States v. Morley.md | ✓ (CL: &quot;United States v. Derrick Alfondso Morley&quot;) | ✓ 99 F.4th 1328 (CL cluster 9498175 confirms) | ✓ 11th Cir. 2024-04-30, docket 22-12988 | ✓ two-element automobile exception; operability suffices | ✓✓ both quotes verbatim in op. 9964788 (initial zero-hits were line-break artifacts; full sentence found at pos. 29543/30152, at slip p.15 as pinned) | ✓ | ✗ slip-op pins for a case published at 99 F.4th 1328 | slip-op defect only |
+| United States v. Braxton.md | ✓ | ✓ 61 F.4th 830 (CL cluster 9381854 confirms) | ✓ 10th Cir. 2023-03-07 | ✓ SITA conceded invalid under Knapp; inevitable discovery = government burden, failed as speculative; reversed | ✓✓ concession quote + &quot;inevitable-discovery exception…does not apply, and the gun…must be suppressed&quot; verbatim in op. 9377330 (p.17 marker visible) | ✓ | ✗ slip-op pins for a published F.4th case | slip-op defect only |
+
+(Zorn: no such page exists in content/cases/ — nothing to audit.)
+
+## Chatrie CL-metadata finding (root-cause)
+
+- Page frontmatter says CL&#x27;s only entry, &quot;opinion 10881683,&quot; is CORRUPTED (resolves to *Harmon v. ABC 2 News Station*) and says &quot;DO NOT ingest 10881683.&quot;
+- Reality: **10881683 is the CLUSTER id** of the genuine SCOTUS *Chatrie* (case_name &quot;Chatrie v. United States,&quot; scotus, 2026-06-29, docket 25-112, Published, judge &quot;Elana Kagan&quot; [CL&#x27;s own typo]). Its sub-opinion is **opinion 11349205**, whose text I verified as genuine *Chatrie* (Location History, Carpenter analysis, &quot;136 F. 4th 100, vacated and remanded&quot;). Opinion **id** 10881683 is an unrelated trial-court opinion in cluster 10415095 — the kit fetched an opinion by cluster id and misdiagnosed corruption.
+- Vote lineup now confirmable: KAGAN, J., for the Court, joined by ROBERTS, C.J., SOTOMAYOR, KAVANAUGH, JACKSON; JACKSON concurrence (SOTOMAYOR joining); GORSUCH concurring in judgment; ALITO dissent (THOMAS joins Part I; BARRETT joins Parts II-B, II-C-1, II-C-2); BARRETT separate dissent. So &quot;6–3&quot; is right as to the judgment, but the opinion of the Court had five members — the page&#x27;s parenthetical hedge can now be resolved.
+
+## Corpus doctrine spot-checks
+
+- &quot;persuasive, not binding&quot;: only hit is `2-legal-system-research/Verifying Good Law.md:47`, which *bans* the phrase in favor of the six-tier lexicon. No misuse found.
+- Inevitable discovery (`8-exclusionary-rule-remedies/The Exclusionary Rule.md:38`): Nix preponderance formulation quoted accurately (467 U.S. at 444), government&#x27;s burden correctly assigned (line 51); Neugin counter-example correctly framed.
+- Attenuation (same page, line 39): Brown factors (temporal proximity / intervening circumstances / purpose-and-flagrancy most important, 422 U.S. at 603–04), Strieff warrant-as-intervening-circumstance, Ceccolini live-witness rule — all accurate.
+
+## Topline
+
+- Substantive legal error rate: **1 of 14 pages** (Chatrie misquote + stale/misdiagnosed CL note). **Zero** wrong holdings, wrong courts/years/citations, or treatment-honesty failures. Treatment handling on the Cady/Caniglia and Santana/Lange pairs is exemplary.
+- Known slip-op pinpoint defect confirmed on **6 of 14** pages (Torres, Caniglia, Lange, Barnes, Morley, Braxton): correct official citations in the caption line, but pinpoints labeled &quot;slip op., at N&quot; though reporter pagination exists.
+</code></pre></details>
+<details><summary>F · Teaching quality &amp; verbiage (per-page scorecards)</summary><pre style="white-space:pre-wrap"><code># Audit 06 — Teaching Quality, Verbiage &amp; Style (doctrine pages)
+
+Date: 2026-07-02 · Auditor: Claude (read-only) · Baseline: `_overhaul2/specs/S1-standards.spec.md`, `_overhaul2/PRACTICES.md` §5/§7
+Sample (11 pages): Two Definitions of Search · Probable Cause and Reasonable Suspicion · Seizure of the Person · The Warrant Requirement · Emergency Aid · Consent Searches · The Exclusionary Rule · Miranda and Custodial Interrogation · Use of Force · Common Law Origins · Entrapment. (Plus structural inspection of Fourth Amendment Framework&#x27;s Recent-developments section and corpus-wide greps.)
+
+Scoring: A–F per dimension — Rule-up-front (RUF) · Numbered tests (NT) · Pitfalls integrated (PI) · Officer &quot;so what&quot; (SW) · Examples/hypos (EX) · Tone consistency (TC) · AI-tells (AI; A = clean) · Verbiage precision (VP) · S1 consistency (S1).
+
+---
+
+## Per-page scorecards
+
+### 1. Two Definitions of Search (`content/3-what-is-a-search/Two Definitions of Search.md`) — A−
+RUF A · NT A · PI A · SW B+ · EX A · TC A · AI B+ · VP A · S1 B−
+- Model rule-first structure: both tests stated as elements at :22–:23, parallel-not-sequence relationship pinned to *Jones* at :25. Pitfalls (:35) are genuinely integrated (&quot;Do not assume &#x27;no trespass means no search&#x27; — that was *Olmstead*&quot;).
+- **Teaching weakness — paragraph walls.** :29 and :31 are ~200-word single paragraphs each stacking 8–12 cases. Doctrinally superb, cognitively heavy; no rule currently caps case-density per paragraph.
+- **S1 R14 gray-zone:** :75 &quot;Recent developments&quot; opens by narrating the SCOTUS *Chatrie* holding (&quot;the Supreme Court held that acquiring Google Location History **is** a Fourth Amendment search (**Binding — SCOTUS**...)&quot;). Case is homed to Key (compliant) but the RD prose still teaches a SCOTUS holding inside RD.
+- **Internal-note leak:** :48 Key-cases row carries &quot;*(2026; CL-confirm pending — slip-op sourced.)*&quot; — pipeline vocabulary reader-facing.
+- **Self-referential Related row:** :71 *Hudson v. Palmer* row&#x27;s &quot;Primary home&quot; = `[[Two Definitions of Search]]` — the page itself, inside a table introduced as &quot;cases treated in full on OTHER doctrine pages&quot; (:56). Either promote to Key cases or fix the frame.
+- Treatment format `good · 2026-06-30` (dot variant); em-dash density 130/3,589 words (36/1k).
+
+### 2. Probable Cause and Reasonable Suspicion (`content/5-levels-of-suspicion/…`) — A (best in sample)
+RUF A · NT A · PI A · SW A · EX A · TC A · AI A · VP A− · S1 A−
+- The 4-rung suspicion ladder (:27–:30) is exactly the S1 N3 &quot;tests up front&quot; pattern; each rung names what it authorizes. Pitfalls (:59–:64) are field-framed and each cites its case. RD (:111) is compliant (&quot;circuit/state only (no SCOTUS)&quot;), role-labeled, one item.
+- **[MED] Mnemonic inversion + mislink** :61: pitfall header bolds **&quot;Possibilities, not probabilities.&quot;** — the Golden-Rule maxim stated *backwards* (S1 App. B: &quot;4A deals in **probabilities, not possibilities**&quot;). As a bolded label it reads as the maxim itself. Same line links `[[CREW|Three Golden Rules]]` — display text &quot;Three Golden Rules&quot; pointing at the CREW page; Three Golden Rules is its own page (`12-instructor-craft-study/Three Golden Rules.md`).
+- Em-dash 114/3,892 (29/1k).
+
+### 3. Seizure of the Person (`content/4-what-is-a-seizure/…`) — A−
+RUF A · NT A · PI A · SW A · EX A · TC A · AI A · VP B+ · S1 B
+- Two-roads black-letter rule at :20; the four named tests (*Mendenhall*/*Hodari D.*/*Torres*/*Brower*) each get one labeled bullet (:24–:27) — the cleanest &quot;named tests up front&quot; execution in the sample.
+- **[MED] Precision nit** :48: &quot;a shot that *misses* applies no force to the body and is not a seizure.&quot; True on the force branch, but a miss can still figure in a show-of-authority seizure if the suspect submits; as an unqualified pitfall it can misteach. Suggest &quot;…is not a *force* seizure (analyze show-of-authority + submission).&quot;
+- **[MED] S1 conflict:** :54 &quot;**Field framing (the &#x27;apply it&#x27; angle).**&quot; — a prose field-application summary. S1 §2.2 drops the field-application/officer-bottom-line layer project-wide, and R14 wants apply-it content as *numbered lists*. Same section exists on Terry Stops, § 1983, Abandonment. S7 needs an explicit migration rule (delete vs convert).
+- Em-dash 108/4,181 (26/1k).
+
+### 4. The Warrant Requirement (`content/6-warrant-requirement/…`) — A−
+RUF A · NT A · PI A · SW A · EX A · TC A · AI A · VP A · S1 B−
+- Four pillars numbered at :25–:30; issuance-defect vs execution-defect remedy matching (:50) is excellent instructor teaching; &quot;the single most over-stated rule in this doctrine&quot; (:56) is exactly the right voice.
+- **[HIGH] SCOTUS in Recent developments** :114: bullet &quot;*United States v. Chatrie* (4th Cir. panel + en banc …) → superseded by SCOTUS&quot; ends &quot;**Binding — SCOTUS.**&quot; and teaches the 2026 SCOTUS holding inside RD (N5/R14).
+- Execution paragraph :46 is a ~250-word wall covering 8 cases. Table header &quot;Authority weight&quot; variant. Sources :149 has a stray label glued to an entry: &quot;- *Johnson*/neutral magistrate · *Lo-Ji Sales…*&quot; — editing residue.
+- Em-dash 152/5,118 (30/1k).
+
+### 5. Emergency Aid (`content/7-exceptions-warrant/7a-pc-needed/Emergency Aid.md`) — A− (content) / C (leak hygiene)
+RUF A · NT A · PI A · SW A · EX A · TC A · AI A · VP A+ · S1 C
+- **The L8 scar exemplar, done right:** :21 &quot;Read the standard exactly — &#x27;basis to believe,&#x27; not &#x27;see it&#x27;&quot; — precisely the guardrail S1 R7 canonizes. *Case v. Montana* quantum treatment (:33) is the best &quot;neither RS nor PC&quot; teaching in the wiki.
+- **[HIGH] Meta-labels in reader-facing content:** :46 Key-cases row: &quot;*(Re-homed from Recent developments to Key — a SCOTUS holding homes to Key regardless of date, N5.)*&quot; — an internal rule citation and edit-history note in a published table. :61 RD prose: &quot;per the no-SCOTUS-in-recent-developments rule&quot;. Same class as &quot;(woven in)&quot;; R14&#x27;s ban should cover rule-ID citations (N5, L4, R13, S9) and edit provenance, not just &quot;(woven in)&quot;.
+- **[MED] Slip-op pinpoints for a 2021 case** (:29, :82): *Caniglia* cited &quot;(slip op., at 3)&quot;/&quot;(slip op., at 4)&quot; despite 593 U.S. 194 reporter cite — R14 says slip-op pinpoints only for the current term.
+- Pitfalls are inline-numbered in one paragraph (:37) while sibling pages use bullets — format drift.
+
+### 6. Consent Searches (`content/7-exceptions-warrant/7b-pc-not-needed/Consent Searches.md`) — A−
+RUF A · NT A · PI A · SW A · EX A · TC A · AI A · VP A · S1 B
+- Three prongs stated up front (:18–:20) with burden and standard of proof in the same breath — strong. The *Osage* &quot;knife-through-the-seat&quot; field lesson (:40) is the best realistic hypothetical in the sample. The withdrawal corollary (:44) is exactly right on authority-tier honesty: &quot;**circuit-developed and Persuasive-tier — it is not a SCOTUS holding**&quot;.
+- **[MED] Missing H1** — page opens at `## The Brief` (:12); most siblings carry `# Title`. (Corpus-wide: ~14 doctrine pages lack H1 — Consent, Curtilage, Arrest in the Home, Terry Stops, Traffic Stops variants exist both ways.)
+- 10-item pitfall block (:48) inline in a single paragraph — long; bullets would scan better. Table header &quot;Authority weight&quot; and `[link]` anchor-text variants.
+
+### 7. The Exclusionary Rule (`content/8-exclusionary-rule-remedies/…`) — B+
+RUF A · NT A · PI A− · SW A · EX A · TC A · AI B · VP A · S1 B−
+- &quot;standing gate → fruits → four escape hatches → cost-benefit boundaries&quot; sequence (:27) is a model analytical spine; the four hatches are numbered with burdens (:35–:40). Grouped Key-cases tables with sub-headers (:57, :68, :92) are a *good* innovation — but unique to this page (consistency call for S7: adopt or drop).
+- **Heaviest em-dash page: 211/4,882 words (43/1k)** — LINT-10 ground zero.
+- **[MED] SCOTUS teaching inside RD** :129: the geofence bullet narrates the 2026 *Chatrie* SCOTUS holding at length (`4th Cir. → superseded by SCOTUS` framing keeps it borderline). Meta-leak :130 &quot;*(No standalone case page — annotate-only; circuit named.)*&quot;.
+- Pitfalls paragraph (:53) is run-on prose rather than the bulleted format used by its own siblings.
+
+### 8. Miranda and Custodial Interrogation (`content/9-confessions-interrogation/…`) — B
+RUF A · NT A− · PI B+ · SW B+ · EX A− · TC B+ · AI A · VP A− · S1 C+
+- Two-trigger gate is clean; the applying-it bullets under each trigger teach well.
+- **[MED] Unregistered mnemonic** :23: &quot;the instructor&#x27;s &#x27;two C&#x27;s&#x27;: **Custody** *and* **Interrogation**&quot; — not in the S1 Appendix-B register (which is closed and verified). Register it or cut it.
+- **[MED] Stale &quot;Recent developments&quot;** :100: sole item is *Liddell* (8th Cir. **2008**) — an 18-year-old case under a &quot;Recent&quot; header misleads; the section is really &quot;circuit frontier.&quot;
+- **Format drift:** Key-cases treatment column is bare `good` with no date (527 bare `good |` cells corpus-wide vs 342 `good *(2026-06-30)*` and 51 `good · 2026-06-30`); Sources are bracketed links (`- [Miranda v. Arizona, 384 U.S. 436 (1966)](url)`) unlike every other sampled page&#x27;s em-dash format; Related-cases table has 6 columns (unique).
+- Elements/burden block (:44–:48) is good but arrives *after* the doctrine — siblings put burden up front.
+
+### 9. Use of Force (`content/10-use-of-force-liability/Use of Force.md`) — B+
+RUF A · NT A · PI A · SW A · EX A · TC A · AI A · VP A · S1 B−
+- *Graham* factors with the &quot;non-exclusive — the word is &#x27;including&#x27;&quot; caveat (:22) is exactly the anti-misteaching move; the four-track &quot;which amendment applies&quot; pitfall (:46) is excellent.
+- Pitfall header variant: &quot;**Recurring field and analytical errors:**&quot; (:38) vs &quot;Pitfalls&quot; elsewhere. Treatment `Good (2026-06-30)` capitalized variant (25 cells corpus-wide).
+- **[MED] Slip-op pinpoints for reporter-published cases** (:99, :105, :107, :109): *Barnes* (605 U.S. 73, prior term), *White v. Pauly* (2017), *Rivas-Villegas* (2021), *Wright* (962 F.3d 852!) all pinpointed &quot;slip op., at …&quot; — R14 violation class.
+
+### 10. Common Law Origins (`content/1-foundations-history/…`) — C+ (worst structural fit)
+RUF B · NT n/a · PI A− · SW B− · EX A · TC B+ · AI A · VP B · S1 D
+- Content is good history teaching (writ-of-assistance vs general-warrant distinction :40 is genuinely useful; &quot;cite the SCOTUS case that relies on them&quot; :38 is the right instructor guidance).
+- **Legacy skeleton:** `## Rule / ## Nuances &amp; limits / ## Common pitfalls` — pre-overhaul format, no &quot;The Brief,&quot; no field-decisive question, no Treatment column, no Related/RD sections. Five other non-case pages share it (CREW, FA Framework, FA Analysis Checklist, FA Recalibration, Three Golden Rules).
+- **[MED] Lexicon drift** :19–:20: weight column says &quot;SCOTUS — binding&quot; — inverted from the R10 controlled label &quot;Binding — SCOTUS&quot; (21 occurrences corpus-wide vs 1,761 correct).
+- &quot;They are persuasive *history*&quot; (:38) — loose use of the controlled word &quot;persuasive&quot; outside the 6-tier lexicon; the tier here is &quot;Historical.&quot;
+
+### 11. Entrapment (`content/11-adjacent-doctrines/Entrapment.md`) — A−
+RUF A · NT A · PI A · SW A− · EX A · TC A · AI A · VP A · S1 A−
+- Two-element test up front with the controlling emphasis (&quot;predisposition — not the fact of inducement — is the controlling fact&quot; :24); burden of production vs persuasion split (:36) is the clearest procedural teaching in the sample; the *Hampton* no-majority nuance (:34) is handled honestly.
+- Minor: role labels (&quot;**Anchor —**&quot;, &quot;**Progeny / refinement —**&quot;) embedded in the Holding column (variant); meta-leak &quot;*(No standalone case page — named in prose with circuit.)*&quot; (:64–:65).
+
+### Observed out-of-sample: Fourth Amendment Framework (`content/3-what-is-a-search/Fourth Amendment Framework.md`) — flagged
+- **[HIGH] Clearest N5/R14 violation in the corpus:** its `## Recent developments &amp; subsequent treatment` (heading variant) section&#x27;s FIRST bullet is *Chatrie v. United States* — &quot;*decided by the Supreme Court, June 29, 2026*… **Binding — SCOTUS.**&quot; A SCOTUS case as an RD entry, on a hub page. Also legacy skeleton (Rule/Nuances/Common pitfalls) on one of the most-trafficked pages.
+
+---
+
+## Corpus-wide grep results (consistency)
+
+| Check | Result |
+|---|---|
+| &quot;CRON&quot; (banned, R9) | **0 hits** — clean |
+| &quot;(woven in)&quot; meta-label (R14) | **2 hits**: `3-what-is-a-search/The Third-Party Doctrine and Digital Surveillance.md:25`, `3-what-is-a-search/Tents.md:29` |
+| &quot;persuasive, not binding&quot; (banned, R10) | 1 hit, and it&#x27;s the ban being taught (`2-legal-system-research/Verifying Good Law.md:47`) — OK |
+| PC as percentage / &quot;more likely than not&quot; | No misteachings; all hits correctly deny the quantification (PC/RS :62; Brady :35) |
+| Weight-label order | 1,761 × &quot;Binding — SCOTUS&quot; vs **21 × &quot;SCOTUS — binding&quot;** (Common Law Origins etc.) |
+| Key-cases table headers | **12+ variants** (&quot;Holding in one line&quot; / &quot;Holding (one line)&quot; / &quot;Weight&quot; / &quot;Authority weight&quot; / extra &quot;Case page&quot; col / &quot;Role&quot; col); Related-cases headers differ on ~every page (&quot;Primary home&quot; / &quot;Primary treatment&quot; / &quot;Primary home (doctrine)&quot; / &quot;Weight · Treatment&quot; / &quot;Treated in full · CourtListener&quot; / &quot;CL&quot;) |
+| Treatment cell format | 527 bare `good` · 342 `good *(2026-06-30)*` · 51 `good · 2026-06-30` · 25 `Good (2026-06-30)` — 4 formats. NB: inline dates also sit in tension with R3&#x27;s &quot;no inline date litter&quot; (dates belong in data-model/hover/About) — S4/S5 must decide if table cells count as &quot;inline&quot; |
+| SCOTUS inside &quot;Recent developments&quot; | 4 pages: FA Framework (worst), Warrant Requirement, Two Definitions, Standing to Challenge, plus Exclusionary Rule&#x27;s narrated bullet |
+| Slip-op pinpoints for non-current-term cases (R14) | ~15+ instances: Caniglia, Kentucky v. King (2011), Collins (2018), Carloss (2016), Cotterman (**2013**), Cano (2019), Graham v. Barnette, French, Bailey, White v. Pauly, Rivas-Villegas, Barnes (OT2024), Wright (F.3d-published) |
+| Em-dash density (LINT-10 preview) | Sampled pages 26–43 em-dashes per 1,000 words; ~1,100 hits in the 11-page sample alone |
+| H1 heading | ~14 doctrine pages missing `# Title` (Consent Searches, Curtilage, Arrest in the Home, Terry Stops, Knock and Talk, Exigent Circumstances, Automobile Exception, FA Framework, …) while siblings have it |
+| Entry skeleton | 35 pages on &quot;The Brief&quot; model; **6 doctrine/craft pages still on legacy `## Rule` skeleton** (Common Law Origins, CREW, FA Framework, FA Analysis Checklist, FA Recalibration, Three Golden Rules) |
+| Internal pipeline vocab reader-facing | &quot;Re-homed…N5&quot;, &quot;per the no-SCOTUS-in-recent-developments rule&quot;, &quot;annotate-only&quot;, &quot;CL-confirm pending&quot;, &quot;deferred to EXECUTE (serial CL, L4…)&quot;, &quot;deferred to the standing find→adjudicate→fix gate (R13) and S9&quot; (Sixth Amendment RtC :89, Eyewitness ID :75, Garrity :63), &quot;No standalone case page&quot; (12 files) |
+| AI-tells | Essentially clean in doctrine prose (no &quot;delve/landscape/it&#x27;s important to note&quot;); &quot;underscored/crucial/leverages&quot; hits are in case-page paraphrases or quotes |
+| CREW mnemonic (R9) | `CREW.md` compliant: 3 justifications, RE = Recognized Exception, exigency inside RE ✓ |
+
+---
+
+## Best 3 / Worst 3
+
+**Best (S7 pattern donors):**
+1. **Probable Cause and Reasonable Suspicion** — the ladder, per-rung authorization, pitfalls-with-citations, compliant RD. The page S7 should template.
+2. **Seizure of the Person** — named-tests-as-labeled-bullets is the cleanest way to teach multi-test doctrines; continuum + burden + remedy ordering.
+3. **The Warrant Requirement / Emergency Aid (tie)** — Warrant Req for numbered pillars + defect-to-remedy matching; Emergency Aid for the R7/L8 &quot;read the standard exactly&quot; pattern (once meta-labels are stripped).
+
+**Worst (rewrite lift):**
+1. **Fourth Amendment Framework** — legacy skeleton on a hub page + the corpus&#x27;s clearest SCOTUS-in-RD violation. Full migration.
+2. **Common Law Origins** — legacy skeleton, inverted weight labels, no Brief/treatment columns. Full migration, ~moderate effort (content itself is sound).
+3. **Miranda and Custodial Interrogation** — bare undated treatments, unique Sources/table formats, unregistered &quot;two C&#x27;s&quot; mnemonic, 2008 case as &quot;Recent.&quot; Format-layer rewrite, content mostly keepable.
+
+---
+
+## Gaps S1/S7 have NOT captured (recommend adding)
+
+1. **Paragraph-density budget for The Brief.** Nothing caps 200–250-word case-stacking walls (Two Definitions :29/:31, Warrant Req :46). Propose: one doctrinal move per paragraph, soft cap ~5 sentences, or require labeled bullets when &gt;3 cases per paragraph.
+2. **Broaden the R14 meta-label ban.** &quot;(woven in)&quot; is banned, but the live leak class is bigger: internal rule IDs (N5/L4/R13/S9), edit provenance (&quot;Re-homed from…&quot;), pipeline status (&quot;CL-confirm pending&quot;, &quot;annotate-only&quot;, &quot;deferred to EXECUTE&quot;). Ban all pipeline vocabulary in reader-facing prose/tables; move to HTML comments or frontmatter.
+3. **&quot;Recent developments&quot; staleness/naming.** No rule prevents a 2008 case living under &quot;Recent.&quot; Rename to &quot;Circuit &amp; state frontier&quot; (role-based, no recency claim) or set a lookback window + heading standardization (kill &quot;&amp; subsequent treatment&quot; variant).
+4. **Migration rule for existing &quot;Field framing (the &#x27;apply it&#x27; angle)&quot; sections** (4+ pages) given the S1 decision to drop field-application summaries: delete, or convert to the N3 numbered apply-it list. Currently undefined.
+5. **Pitfalls format standard.** Bulleted list vs inline-numbered paragraph vs &quot;Recurring field and analytical errors&quot; — pick one (bullets, with bolded error + case cite, per PC/RS).
+6. **Related-cases table integrity rule:** no self-referential &quot;Primary home&quot; (Hudson v. Palmer in Two Definitions); one controlled header set; one CL anchor text (`opinion`).
+7. **Sources-section format** (em-dash list with trailing pinpoints) — Miranda&#x27;s bracketed-link style shows nothing enforces it.
+8. **Grouped Key-cases sub-tables** (Exclusionary Rule) — decide adopt-or-drop; if adopted for &gt;15-case pages it is genuinely better teaching.
+9. **Mnemonic register enforcement should include wikilink-target checks** — `[[CREW|Three Golden Rules]]` mislink and the inverted &quot;Possibilities, not probabilities&quot; bolding would both pass a naive text lint.
+</code></pre></details>
+<details><summary>G · Quantitative claims measurement</summary><pre style="white-space:pre-wrap"><code># CSSI O2 Claims Audit — claimed vs measured (2026-07-02)
+
+Repo: `/Users/johngalt/Projects/cssi-quartz` @ `overhaul2/planning` (87ba4d4). Sources of claims: `_overhaul2/RUNBOOK.md` §2 (lines 74–91, 215, 249), `_overhaul2/specs/S2-authority-database.spec.md`. All measurements read-only; scripts in this scratchpad (`measure.py`, `measure5.py`).
+
+## Summary table
+
+| # | Claim (RUNBOOK wording) | Claimed | Measured | Verdict |
+|---|---|---|---|---|
+| 1 | Slip-op labels wrong on ~43 of 47 files (only current-term legit) | 43/47 | **43/47 exact** (&quot;slip op&quot; space-form; 4 current-term: Case v. Montana, Chatrie, Herlth, Volle). Broader `slip[ -]?op` regex: 46/50 (adds Montejo, Mullenix, Howard Davis — all pre-term). +22 doctrine pages also use slip-op labels (not in the claim&#x27;s scope) | **MATCH** |
+| 2 | 18 files w/ unescaped `\|` in `[[Case\|alias]]` table cells | 18 | **18 files**, 69 affected table lines | **MATCH (exact)** |
+| 3 | `^pin-N` carat leak (anchors rendering as visible text) | qualitative | 1,347 bare anchors in all 457 case pages + some doctrine pages; **299 mid-line occurrences across 233 files render visibly** (Quartz `blockReferenceRegex` is end-of-block-anchored, `quartz/plugins/transformers/ofm.ts:143`, so the 672 end-of-line anchors are hidden; 396 `#^pin-` wikilink refs are fine) | **CONFIRMED — bigger than implied** |
+| 4 | 388 distinct cases have ≥1 bare (unlinked) mention | 388 (85% of 457) | Random sample of 40 case short-names: **40/40 pages-with-bare-mention hit-rate** (a handful are ambiguous surnames — Harris/Wilson/Johnson — so conservative floor ≈ 32/40 = 80% → ≥365). 388 sits inside the confidence band | **MATCH (plausible, method-consistent)** |
+| 5 | ~70–80 named-but-no-page cases (mostly circuit) | 70–80 | Prose scan for non-wikilinked &quot;X v. Y&quot; with no page in `content/cases/`: 127 raw → **~80–84 after removing truncation/possessive/hypothetical artifacts**; 61/84 are US-v./State-v./Commonwealth-v. captions (mostly circuit/state). Cross-check: O1 `_overhaul/coverage/missed-cases.md` (185 confirmed misses) now has only 12 rows still page-less — the O2 number is a fresh, different audit and is consistent | **MATCH** |
+| 6 | 457 case pages | 457 | **457** `content/cases/*.md`, no index file among them | **MATCH (exact)** |
+| 7 | Table headers non-standardized | qualitative | **51 distinct &quot;Case&quot; header schemas** across doctrine pages; most common only 12x (`Case \| Holding in one line \| Weight \| Treatment \| CourtListener`); 43 schemas appear exactly once | **CONFIRMED — strongly** |
+| 8a | &quot;(woven in)&quot; meta leak | qualitative | **2 occurrences, 2 files**: `3-what-is-a-search/The Third-Party Doctrine and Digital Surveillance.md:25`, `3-what-is-a-search/Tents.md:29` | CONFIRMED (small) |
+| 8b | &quot;persuasive, not binding&quot; | qualitative | **1 occurrence** — and it&#x27;s the *prohibition itself* in `2-legal-system-research/Verifying Good Law.md:47` (&quot;never the vague &#x27;persuasive, not binding&#x27;&quot;), i.e. zero real leaks in content | ALREADY CLEAN |
+| 8c | &quot;CRON&quot; mnemonic | &quot;dictation error, dropped&quot; | **0 occurrences** in content/ | MATCH (already dropped) |
+| 9 | Frontmatter consistency (S2 motivates a generated projection) | implied drift risk | **Perfectly uniform**: 457/457 have frontmatter; **exactly 1 distinct top-level key-set** (19 keys incl. `treatment`, `date_decided`, `year`, `courtlistener.identity_checked`); treatment/verification/date fields 100%/100%/100% | **BETTER THAN IMPLIED** |
+
+## Method notes
+- **C1**: grep -il &quot;slip op&quot; over `content/cases/` = 47 files; current-term = `date_decided &gt;= 2025-10-01` from frontmatter (OT2025). Year histogram of the 50 (broad regex): 2009–2024: 42, 2025: 5 (3 pre-Oct), 2026: 3.
+- **C2**: lines starting `|` containing `[[…|…]]` where the inner pipe is not `\|`. Files: Brady and Giglio (1), Curtilage (4), Fourth Amendment Recalibration (2), Traffic Stops (1), Probable Cause and RS (12), Warrant Requirement (9), Community Caretaking (5), Emergency Aid (4), Exigent/Hot Pursuit (1), Plain View (3), Border Searches (1), SITA (1), Securing the Scene (10), Special Needs (8), Standing (3), Exclusionary Rule (1), Miranda (1), Garrity (2).
+- **C3**: split `^pin-` hits into wikilink refs (`#^pin-`, 396), bare end-of-line (672, hidden by Quartz block-ref parsing) and bare mid-line (299, visible). Examples of visible leaks: `cases/Kyllo v. United States.md`, `cases/Kaupp v. Texas.md`, `cases/Texas v. Brown.md`, `cases/Messerschmidt v. Millender.md`.
+- **C4**: seeded random sample (seed 42) of 40 titles; distinctive-surname regex over doctrine pages with wikilinks/code/frontmatter/URLs stripped.
+- **C5**: capitalized-caption regex over doctrine prose (wikilinks stripped), names normalized, filtered against page titles + `title:` + `aliases:`; truncation artifacts (multi-word first parties like &quot;City of Los Angeles&quot;) removed by suffix/substring matching; 2 hypotheticals dropped. Residual noise ±4.
+- **C7**: header row = `|…|` line followed by a `|---|` separator, cells containing &quot;Case&quot;, collected outside `content/cases/`, deduped as tuples.
+- **C9**: YAML top-level keys per case file, key-sets deduped.
+
+## Findings for the plan
+1. **[INFO] Every quantitative claim checks out.** Two are exact (18 pipe-files; 457 pages; and 43/47 slip-op reconciles exactly under the space-form grep). None is materially wrong — the plan is built on sound numbers.
+2. **[LOW] C3 scope is larger than the RUNBOOK&#x27;s one-liner suggests**: 299 visible mid-line `^pin-N` leaks across 233 files (about half of all case pages), plus doctrine pages use slip-op labels in 22 files that the &quot;47 files&quot; framing (cases/ only) doesn&#x27;t cover. S9/LINT-9 sizing should assume ~230-file remediation, not a handful.
+3. **[LOW] C8b is already clean**: the only &quot;persuasive, not binding&quot; hit is the style-manual sentence banning it. S1/S7 shouldn&#x27;t budget work for it.
+4. **[INFO] C9 cuts the other way (favorably)**: frontmatter is already perfectly uniform (1 schema, 100% treatment/CL/date coverage), so S2&#x27;s &quot;frontmatter = generated projection&quot; is a defensive redesign, not a cleanup of existing drift.
+5. **[INFO] C4&#x27;s 388 (85%) is consistent with a 100%-hit 40-sample** (conservative floor ~80%); the S8 seed number is credible.
+</code></pre></details>
+<details><summary>H · Currency &amp; research gaps (three tables)</summary><pre style="white-space:pre-wrap"><code># CSSI Audit 08 — Currency &amp; Research/Coverage Gaps
+Audited 2026-07-02 · repo `/Users/johngalt/Projects/cssi-quartz` · content/ (12 sections + 457 case pages) · read-only
+
+**Headline:** The wiki is exceptionally current — *Chatrie v. United States* (SCOTUS, decided **2026-06-29, three days before this audit**) already has a full case page AND every doctrine home (Two Definitions of Search, Third-Party Doctrine, Warrant Requirement, Plain View, Standing, Exclusionary Rule, Fourth Amendment Framework, Carpenter page) is updated to say the search question is RESOLVED. Treatment stamps are `as_of: 2026-06-30` (S9 gate). No stale &quot;open question&quot; claims were found for issues resolved by Lange / Torres / Caniglia / Chatrie. The real gaps are **whole doctrines never named anywhere** — which the O2 S6 &quot;named-but-no-page&quot; diff will NOT catch, because these cases are named nowhere in the corpus.
+
+## Table 1 — SCOTUS currency (OT2019–OT2025, decided through June 2026)
+
+| Case | Status | File ref | Priority |
+|---|---|---|---|
+| Torres v. Madrid (2021) — physical-force seizure | PAGE + homes | `content/cases/Torres v. Madrid.md`; `content/4-what-is-a-seizure/Seizure of the Person.md` | OK |
+| Caniglia v. Strom (2021) — no home caretaking exception | PAGE + homes | `content/cases/Caniglia v. Strom.md`; `content/7-exceptions-warrant/7a-pc-needed/Community Caretaking.md` | OK |
+| Lange v. California (2021) — misdemeanor hot pursuit | PAGE + homes | `content/cases/Lange v. California.md`; `.../Exigent Circumstances and Hot Pursuit.md` | OK |
+| United States v. Cooley (2021) — tribal officers, non-Indians | **ABSENT** (0 hits; &quot;tribal&quot; 0 hits corpus-wide) | ABSENT | MEDIUM |
+| Rivas-Villegas v. Cortesluna (2021) / City of Tahlequah v. Bond (2021) — QI per curiams | PAGES | `content/cases/Rivas-Villegas v. Cortesluna.md`; `content/cases/City of Tahlequah v. Bond.md` | OK |
+| Lombardo v. City of St. Louis (2021) — prone restraint | **ABSENT** | ABSENT | MEDIUM |
+| Thompson v. Clark (2022) — 4A malicious prosecution, favorable termination | **ABSENT** (0 hits) | ABSENT | HIGH |
+| Egbert v. Boule (2022) — Bivens all but closed | Mentioned + holding in prose, deliberately page-less | `content/10-use-of-force-liability/Section 1983 Liability and Qualified Immunity.md:27,48,164` | LOW |
+| Vega v. Tekoh (2022) — no §1983 for Miranda | PAGE + homes | `content/cases/Vega v. Tekoh.md` | OK |
+| Chiaverini v. City of Napoleon (2024) — one valid charge doesn&#x27;t defeat malicious-prosecution claim | **ABSENT** (0 hits) | ABSENT | HIGH |
+| Gonzalez v. Trevino (2024) + Nieves v. Bartlett (2019) — retaliatory arrest | **ABSENT** (0 hits; &quot;retaliatory arrest&quot; 0 hits corpus-wide) | ABSENT | HIGH |
+| Culley v. Marshall (2024) — forfeiture retention hearings | **ABSENT** (0 hits) | ABSENT | MEDIUM |
+| Barnes v. Felix (2025) — moment-of-threat rejected | PAGE + homes | `content/cases/Barnes v. Felix.md`; `content/10-use-of-force-liability/Use of Force.md` | OK |
+| Martin v. United States (2025) — FTCA wrong-house raid | Holding in prose, flagged page-less | `.../Section 1983 Liability and Qualified Immunity.md:41,187` | LOW |
+| Case v. Montana (2026-01-14) — emergency-aid standard | PAGE + homes | `content/cases/Case v. Montana.md`; `.../Emergency Aid.md` | OK |
+| Zorn v. Linton (2026-03-23) — QI per curiam reversal | In prose w/ corrupted-CL warning | `.../Section 1983 Liability and Qualified Immunity.md:188` | OK |
+| Chatrie v. United States (2026-06-29) — geofence IS a search | PAGE + ALL homes updated post-decision | `content/cases/Chatrie v. United States.md` + 8 doctrine pages | OK (CL-confirm pending, self-flagged) |
+| Noem v. Vasquez Perdomo (2025, shadow docket) — roving-stop RS factors | **ABSENT** | ABSENT | MEDIUM (watch item) |
+| Villarreal v. Texas (2026, 6A recess consultation) | ABSENT — trial-side, marginal for S&amp;S | ABSENT | LOW |
+
+## Table 2 — Emerging doctrines
+
+| Area | Status | File ref | Priority |
+|---|---|---|---|
+| Geofence warrants (Chatrie; 4th/5th Cir. split) | COVERED, current through 6/29/26; live PC/particularity question flagged | `content/3-what-is-a-search/The Third-Party Doctrine and Digital Surveillance.md:59`; `.../Two Definitions of Search.md:75` | OK |
+| Reverse keyword warrants | **ABSENT** (0 hits) | ABSENT | HIGH |
+| Pole cameras | COVERED (Tuggle page; Moore-Bush en banc; Hay; split flagged open) | `content/cases/United States v. Tuggle.md`; `content/3-what-is-a-search/Curtilage.md:82` | OK |
+| Cell-site simulators / StingRay | **ABSENT** (0 hits) | ABSENT | HIGH |
+| Real-time CSLI post-Carpenter | **ABSENT** as a distinct question (0 hits &quot;real-time CSLI&quot;) | ABSENT | MEDIUM |
+| Drone surveillance | PARTIAL — frontier note, no-SCOTUS caveat, &quot;don&#x27;t treat Ciraolo/Riley as drone law&quot; | `.../The Third-Party Doctrine and Digital Surveillance.md:25,59` | OK-partial |
+| ALPR | COVERED incl. 2026 cases (5th Cir. Porter 3/17/26; Va. Robinson 4/7/26) | same page:55–56 | OK |
+| Border device searches (circuit split) | COVERED — exemplary: circuits + rules named (9th/4th RS vs 11th none vs 1st scope) | `content/7-exceptions-warrant/7b-pc-not-needed/Border Searches.md:36,68–79` | OK |
+| DNA / genetic genealogy (IGG) | Maryland v. King covered; **genetic genealogy ABSENT** (0 hits) | `content/cases/Maryland v. King.md` / IGG ABSENT | MEDIUM |
+| Body-worn cameras as evidence/policy | **ABSENT** (0 hits &quot;body-worn camera&quot;/&quot;bodycam&quot;) | ABSENT | MEDIUM |
+| §702 / parallel construction | **ABSENT** (0 hits) | ABSENT | LOW (brief mention suffices) |
+| QI recent trend | COVERED (Zorn 2026, Jimerson, Wright; high-specificity rule current) | `.../Section 1983 Liability and Qualified Immunity.md` | OK |
+| Bivens contraction | COVERED in prose (Abbasi/Egbert, &quot;nearly a dead letter&quot;) | same page:27 | OK |
+| Internal inconsistency: pitfall line still lists geofence among &quot;split or unsettled&quot; though same page says RESOLVED | STALE LINE | `.../The Third-Party Doctrine and Digital Surveillance.md:25` vs `:59` | LOW (one-line fix) |
+
+## Table 3 — Curriculum checklist (academy S&amp;S block)
+
+| Topic | Status | File ref | Priority |
+|---|---|---|---|
+| Knock-and-announce (Wilson/Richards/Banks/Hudson) | COVERED (15 files) | `content/8-exclusionary-rule-remedies/The Exclusionary Rule.md`; `content/cases/Hudson v. Michigan.md` | OK |
+| Detention during search (Summers/Bailey/Muehler) | COVERED | `content/7-exceptions-warrant/7b-pc-not-needed/Securing the Scene.md`; `content/cases/Bailey v. United States.md` | OK |
+| Protective sweeps (Buie; + 5th Cir. August 2025 extension) | COVERED | `.../Securing the Scene.md:71` | OK |
+| Strip / body-cavity; jail searches (Florence) | COVERED | `.../Search Incident to Arrest.md`; `.../Special Needs and Administrative Searches.md` | OK |
+| Probationer/parolee (Knights/Samson) | COVERED | `.../Special Needs and Administrative Searches.md` | OK |
+| School searches (T.L.O./Safford) | COVERED (31 T.L.O. hits) | same page; `content/cases/Safford Unified School District v. Redding.md` | OK |
+| Drug dogs (Caballes/Rodriguez/Jardines) | COVERED | `content/cases/Illinois v. Caballes.md`, `Rodriguez v. United States.md` | OK |
+| Abandonment (Abel etc.) | COVERED (41 hits) | `content/cases/Abel v. United States.md` | OK |
+| Private-search doctrine (Jacobsen/Walter; hash-matching frontier) | COVERED | `content/cases/United States v. Jacobsen.md`; `.../Fourth Amendment Framework.md:77` | OK |
+| Tracking devices (Jones/Karo/Knotts) | COVERED | `content/cases/United States v. Karo.md` etc. | OK |
+| Inventory (Opperman/Bertine/Lafayette); checkpoints (Sitz/Edmond); special needs (Ferguson) | COVERED | `.../Special Needs and Administrative Searches.md` | OK |
+| DNA on arrest (King); wiretap/Title III baseline; SCA §2703 | COVERED/brief | `content/cases/Maryland v. King.md`; `content/cases/Berger v. New York.md`; `.../The Exclusionary Rule.md` | OK |
+| Retaliatory arrest / 4A malicious prosecution / forfeiture home | **NO HOME** — §11 adjacent-doctrines has only Entrapment | `content/11-adjacent-doctrines/` (Entrapment.md only) | HIGH (ties to Table 1) |
+
+## O2-plan gap
+`_overhaul2/RUNBOOK.md:214–225` — S6 diffs corpus vs book roster ∪ **named-in-prose** ∪ prior research ∪ bounded frontier. Nieves, Thompson, Chiaverini, Gonzalez, Culley, Cooley, Lombardo are named **nowhere in the corpus**, so the named-in-prose leg can&#x27;t surface them; they enter only if the book roster/frontier does. Recommend an explicit **doctrinal-currency sweep** (SCOTUS OT2019→present, term-by-term vs corpus) as an S6 input, and scoping the emerging-tech additions (StingRay, reverse-keyword, real-time CSLI, IGG, BWC) into S7&#x27;s Third-Party/Digital page work.
+</code></pre></details>
+
+<p class="small" style="margin-top:3em">Generated 2026-07-02 by an 8-agent audit fan-out (orchestrator + sub-agents), with live verification against the CourtListener API and web sources. Print with ⌘P for a clean PDF.</p>
+
+</div>
+<button id="unhost" class="screen-only" title="Stop serving this brief">⊘ Unhost</button>
+<script>
+document.getElementById('unhost').onclick=async()=>{
+  if(!confirm('Unhost this brief? The link will stop working (the file is kept on disk).'))return;
+  const f=location.pathname.replace(/^\//,'');
+  const r=await fetch('/__unhost?f='+encodeURIComponent(f),{method:'POST'});
+  document.body.innerHTML=r.ok
+    ?'<p style="font:16px sans-serif;text-align:center;margin-top:20vh;color:#444">Unhosted. This link is now dead.</p>'
+    :'<p style="font:16px sans-serif;text-align:center;margin-top:20vh;color:#b91c1c">Unhost failed.</p>';
+};
+</script>
+</body>
+</html>
