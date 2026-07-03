@@ -1,3 +1,78 @@
 @use "./base.scss";
+@use "./variables.scss" as *;
 
 // put your custom CSS here!
+
+// S4 · explorer scroll fix. The stock flex chain never gives `.explorer-content`
+// a bounded height, so a tall expanded tree gets clipped by `.explorer`'s
+// `overflow:hidden` with no working scrollbar (intermittent by content height).
+// Make the explorer fill the sidebar's remaining height and let its content be
+// the single, properly-bounded scroll container (the `min-height:0` is the flex
+// escape hatch that lets a flex child shrink below content size and scroll).
+@media all and not ($mobile) {
+  .explorer {
+    flex: 1 1 auto;
+    min-height: 0;
+  }
+  .explorer-content {
+    flex: 1 1 auto;
+    min-height: 0;
+    // contain belongs HERE (the scroll container) so the explorer doesn't scroll the page
+    overscroll-behavior: contain;
+  }
+}
+
+// Wheel-scroll trap fix: the stock rule puts `overscroll-behavior: contain` on the
+// inner folder ULs, which are `overflow:hidden` (scroll containers) — so a wheel
+// over an expanded folder's child links gets captured and contained instead of
+// chaining up to `.explorer-content`. Undo it on the nested lists; contain stays
+// only on the real scroll container above.
+.explorer-content ul {
+  overscroll-behavior: auto;
+}
+
+// S4 TOC-tree nav model: nested folders are always-open branches. The header is a
+// LINK straight to that node's overview (no toggle, no chevron, no separate Overview
+// row). Opening a top-level category reveals the whole tree at once.
+.explorer-content li.subtree > .folder-container {
+  & .folder-icon {
+    display: none; // no toggle chevron — the header is an overview link
+  }
+}
+
+// Tree connectors (├─ └─) so you can see what branches off what. The vertical run
+// is drawn per-item; the last child stops its run at the tick, giving the └ elbow.
+.explorer-content .folder-outer > ul {
+  border-left: none; // replace the plain rule with real connectors
+  margin-left: 0.55rem;
+  padding-left: 0;
+
+  & > li {
+    position: relative;
+    padding-left: 1.05rem;
+
+    // vertical run of the branch
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0.2rem;
+      top: 0;
+      bottom: 0;
+      border-left: 1px solid var(--lightgray);
+    }
+    // horizontal tick into the row
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0.2rem;
+      top: 0.85rem;
+      width: 0.55rem;
+      border-top: 1px solid var(--lightgray);
+    }
+    // last item: run stops at the tick → └ elbow
+    &:last-child::before {
+      bottom: auto;
+      height: 0.85rem;
+    }
+  }
+}

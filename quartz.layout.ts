@@ -12,25 +12,38 @@ import * as Component from "./quartz/components"
 // the slug→display-name table is declared INSIDE the function body.
 const categoryExplorer = Component.Explorer({
   folderDefaultState: "collapsed",
-  folderClickBehavior: "link",
+  folderClickBehavior: "collapse",
   useSavedState: true,
+  // Order by the numeric filename/slug prefix at every level, so authored page
+  // order (e.g. Proof Ladder first) holds instead of alphabetical. Closure-free.
+  sortFn: (a, b) =>
+    (a.slugSegment ?? "").localeCompare(b.slugSegment ?? "", undefined, {
+      numeric: true,
+      sensitivity: "base",
+    }),
   mapFn: (node) => {
     const displayNames: Record<string, string> = {
-      "1-foundations-history": "1 · Foundations & History",
-      "2-legal-system-research": "2 · Legal System, Research & Reference",
-      "3-what-is-a-search": "3 · What Is a Search?",
-      "4-what-is-a-seizure": "4 · What Is a Seizure?",
-      "5-levels-of-suspicion": "5 · Levels of Suspicion",
-      "6-warrant-requirement": "6 · The Warrant Requirement",
-      "7-exceptions-warrant": "7 · Exceptions to the Warrant Requirement",
-      "7a-pc-needed": "7a · Probable-Cause Exceptions",
-      "7b-pc-not-needed": "7b · Suspicion-Based / Per-Se Exceptions",
-      "8-exclusionary-rule-remedies": "8 · The Exclusionary Rule, Standing & Remedies",
-      "9-confessions-interrogation": "9 · Confessions, Interrogation & Identifications",
-      "10-use-of-force-liability": "10 · Use of Force, Liability & Disclosure",
-      "11-adjacent-doctrines": "11 · Adjacent Doctrines",
-      "12-instructor-craft-study": "12 · Instructor Craft & Study",
-      cases: "Cases",
+      "1-foundations": "1 · Foundations & the Fourth Amendment",
+      "2-standards-of-proof": "2 · Standards of Proof",
+      "3-searches": "3 · Searches",
+      "01-two-definitions-of-search": "Two Definitions of Search",
+      "4-seizures": "4 · Seizures",
+      "06-arrests": "Arrests",
+      "5-the-warrant": "5 · The Warrant",
+      "01-getting-a-warrant": "Getting a Warrant",
+      "02-executing-a-warrant": "Executing a Warrant",
+      "6-warrant-exceptions": "6 · Warrant Exceptions",
+      "01-searching-a-person": "Searching a Person",
+      "02-searching-a-vehicle": "Searching a Vehicle",
+      "03-home-entry-and-search": "Home Entry & Search",
+      "06-programmatic-special-needs": "Programmatic & Special-Needs Searches",
+      "7-exclusionary-rule": "7 · The Exclusionary Rule, Remedies & Standing",
+      "8-confessions-fifth-amendment": "8 · Confessions, Interrogation & the Fifth Amendment",
+      "9-right-to-counsel": "9 · The Right to Counsel",
+      "10-fair-trial-reliability": "10 · Fair-Trial & Reliability Doctrines",
+      "11-force-liability": "11 · Use of Force & Liability",
+      "12-research-reference": "12 · Legal System, Research & Reference",
+      "13-instructor-craft": "13 · Instructor Craft & Study",
     }
     if (node.isFolder) {
       const mapped = displayNames[node.slugSegment]

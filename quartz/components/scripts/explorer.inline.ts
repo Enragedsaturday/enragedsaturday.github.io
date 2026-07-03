@@ -99,6 +99,7 @@ function createFolderNode(
   currentSlug: FullSlug,
   node: FileTrieNode,
   opts: ParsedOptions,
+  depth: number = 0,
 ): HTMLLIElement {
   const template = document.getElementById("template-folder") as HTMLTemplateElement
   const clone = template.content.cloneNode(true) as DocumentFragment
@@ -111,8 +112,17 @@ function createFolderNode(
   const folderPath = node.slug
   folderContainer.dataset.folderpath = folderPath
 
-  if (opts.folderClickBehavior === "link") {
-    // Replace button with link for link behavior
+  // S4 TOC-tree nav model: only top-level categories collapse; every nested folder
+  // renders as an always-open BRANCH whose header links straight to that node's
+  // overview (its folder index). So opening a category reveals the whole structure at
+  // once, and each subcategory header IS its overview link (no separate Overview row).
+  const isSubtree = depth > 0
+  if (isSubtree) {
+    li.classList.add("subtree")
+  }
+
+  if (opts.folderClickBehavior === "link" || isSubtree) {
+    // Render the header as a link to the folder's overview (its index page)
     const button = titleContainer.querySelector(".folder-button") as HTMLElement
     const a = document.createElement("a")
     a.href = resolveRelative(currentSlug, folderPath)
@@ -136,13 +146,13 @@ function createFolderNode(
   const folderIsPrefixOfCurrentSlug =
     simpleFolderPath === currentSlug.slice(0, simpleFolderPath.length)
 
-  if (!isCollapsed || folderIsPrefixOfCurrentSlug) {
+  if (isSubtree || !isCollapsed || folderIsPrefixOfCurrentSlug) {
     folderOuter.classList.add("open")
   }
 
   for (const child of node.children) {
     const childNode = child.isFolder
-      ? createFolderNode(currentSlug, child, opts)
+      ? createFolderNode(currentSlug, child, opts, depth + 1)
       : createFileNode(currentSlug, child)
     ul.appendChild(childNode)
   }
@@ -209,7 +219,7 @@ async function setupExplorer(currentSlug: FullSlug) {
     const fragment = document.createDocumentFragment()
     for (const child of trie.children) {
       const node = child.isFolder
-        ? createFolderNode(currentSlug, child, opts)
+        ? createFolderNode(currentSlug, child, opts, 0)
         : createFileNode(currentSlug, child)
 
       fragment.appendChild(node)
@@ -217,14 +227,16 @@ async function setupExplorer(currentSlug: FullSlug) {
     explorerUl.insertBefore(fragment, explorerUl.firstChild)
 
     // restore explorer scrollTop position if it exists
+    // S4 fix: the real scroll container is `.explorer-content`, not the inner `.explorer-ul`
+    const explorerContent = explorer.querySelector(".explorer-content") as HTMLElement | null
     const scrollTop = sessionStorage.getItem("explorerScrollTop")
-    if (scrollTop) {
-      explorerUl.scrollTop = parseInt(scrollTop)
+    if (scrollTop && explorerContent) {
+      explorerContent.scrollTop = parseInt(scrollTop)
     } else {
-      // try to scroll to the active element if it exists
+      // try to scroll to the active element if it exists (instant, not smooth — S4)
       const activeElement = explorerUl.querySelector(".active")
       if (activeElement) {
-        activeElement.scrollIntoView({ behavior: "smooth" })
+        activeElement.scrollIntoView({ behavior: "auto", block: "nearest" })
       }
     }
 
@@ -243,6 +255,8 @@ async function setupExplorer(currentSlug: FullSlug) {
         "folder-button",
       ) as HTMLCollectionOf<HTMLElement>
       for (const button of folderButtons) {
+        // only top-level categories toggle; nested branches stay open + inert
+        if (button.closest("li.subtree")) continue
         button.addEventListener("click", toggleFolder)
         window.addCleanup(() => button.removeEventListener("click", toggleFolder))
       }
@@ -252,6 +266,7 @@ async function setupExplorer(currentSlug: FullSlug) {
       "folder-icon",
     ) as HTMLCollectionOf<HTMLElement>
     for (const icon of folderIcons) {
+      if (icon.closest("li.subtree")) continue
       icon.addEventListener("click", toggleFolder)
       window.addCleanup(() => icon.removeEventListener("click", toggleFolder))
     }
@@ -259,8 +274,8 @@ async function setupExplorer(currentSlug: FullSlug) {
 }
 
 document.addEventListener("prenav", async () => {
-  // save explorer scrollTop position
-  const explorer = document.querySelector(".explorer-ul")
+  // save explorer scrollTop position — S4 fix: read from `.explorer-content`, the scroll container
+  const explorer = document.querySelector(".explorer-content")
   if (!explorer) return
   sessionStorage.setItem("explorerScrollTop", explorer.scrollTop.toString())
 })
