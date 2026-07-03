@@ -518,3 +518,16 @@ This is a signed, reasoned decision and is not overridden here; it is escalated 
 from *this run's* renumbering, but not from future insertions.
 *Resolution (A8 — user decision 2026-07-03): the user adopted frontmatter-weight ordering with
 unnumbered slugs — see A8 above.*
+
+### A9 — R11 scroll-fix mechanism SUPERSEDED by S4 R2 (forward note, 2026-07-03)
+**Superseded text (quoted):** R11 — "the **sidebar scroll fix** (… scroll save/restore retargeted
+to `.explorer-content` …)". **Winning text:** `S4-platform-ui.spec.md` **R2**. Empirical finding
+(S4 thread, live test 2026-07-03): stock Quartz's real scroll container is the inner `ul.overflow`
+(`max-height:100%; overflow-y:auto`, with `div:has(> .overflow)` forcing `.explorer-content`
+hidden) — so the prototype's save/restore against `.explorer-content` always read `scrollTop 0`,
+masked by scroll-to-active. S4 R2 makes `.explorer-content` the single true scroll container (inner
+scroller neutralized) and the retarget then works as R11 intended. The *intent* of R11 (working
+scroll persistence; one bounded container; handoff to S4) is unchanged; only the mechanism
+description is corrected. Also per S4 D1 (interview 2026-07-03): the top-level "Overview
+first-child" storage sketched in §9 open item 1 is now the decided rendering (S4 R1) — the R2
+overview-storage note flexes exactly as §9 anticipated.

@@ -252,7 +252,16 @@ Each: **Direction · Research first · Interview-extract (choices + what to show
 - **Interview-extract.** Fix stock explorer vs. OSS nested-nav (mock both); fuzzy aggressiveness;
   About-page content + attribution; how much provenance shows on hover. *Show:* side-by-side explorer
   mockups + a search-suggestions demo + a treatment-badge/hover mock on the dev server.
-- **Deliverable.** `S4-platform-ui.spec.md`.
+- **Deliverable.** `S4-platform-ui.spec.md`. ✅ **Written 2026-07-03** (mockup commits `37d6f4f` +
+  `bd50770`; all injected:S4 audit rows dispositioned in the Decision Log). Decided highlights:
+  nav = whole-header category toggle + **Overview first-child row** (CODE-03, user D1); did-you-mean
+  = moderate (tolerant title index, chips on <3 hits); About = full "About this reference"; hover =
+  status + dates + note; **publish = content/-canonical, Vercel-ONLY — :8787/launchd/serve-public.py
+  + redeploy.sh retired at EXECUTE, `/cssi-ingest` re-pointed (vault = capture-only inbox)** (D5);
+  fork posture = **freeze-and-own Quartz 4.5.2** (upstream is on v5; no routine merges) (D6).
+  Live finding: the S3 prototype's scroll save/restore read a non-scrolling node (stock scroller is
+  `ul.overflow`) — corrected as S4 R2 + S3 Amendments A9 forward note. The spec text wins over this
+  entry (§0 precedence).
 - **Audit inputs (2026-07-02)** — from `AUDIT-2026-07-02.md`; address each (adopt / adapt /
   reject-with-rationale) in the spec's Decision Log:
   **CODE-02a** mobile drawer needs `overflow-y:auto` (below-fold tree unreachable on phones) ·
@@ -473,7 +482,7 @@ exact CourtListener fields/calls per data element (the S2 schema).
 | S1 Standards & Style Manual | ✅ | ✅ |
 | S2 Verified Authority Database | ✅ | ✅ |
 | S3 Taxonomy & Points-of-Law | ✅ | ✅ |
-| S4 Platform, Nav & Reader-Signaling | ☐ | ☐ |
+| S4 Platform, Nav & Reader-Signaling | ✅ | ✅ |
 | S5 Entry Models | ☐ | ☐ |
 | S6 Coverage & Ingest | ☐ | ☐ |
 | S7 Doctrine Production | ☐ | ☐ |
