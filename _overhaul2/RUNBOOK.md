@@ -291,13 +291,24 @@ Each: **Direction · Research first · Interview-extract (choices + what to show
   Draft-state machinery (`draft → under_review → verified`); provenance rendering. **Boundary (audit
   COH-18): S5 owns pill PLACEMENT/format in the entry models; the pill/anchor/hover MECHANISM is S4's.**
 - **Research first.** `CaseTable.tsx`/`casetable.inline.ts`/`TreatmentBadge.tsx` (spans → `a.internal`);
-  the book case-example PDF (`.orca/drops/Book Jun 26, 2026 (1).pdf` — **missing: only `Book Jun 26,
-  2026.pdf` exists locally; regenerate or drop at the S5 interview — audit COH-14**); S2 schema.
+  the book case-example PDF (~~missing — regenerate or drop~~ **RESOLVED 2026-07-03: reference
+  dropped at the S5 interview, user D12 — audit COH-14**); S2 schema.
 - **Interview-extract.** BIRAC section order + voice; ~~ALI-vs-lighter graded-authority~~ — **already
   adjudicated: S1 chose Variant A (S1 R6 + Appendix C — audit COH-12; do not re-mock or re-interview)**;
   final table columns; as-of page + hover; where deep-link/pinpoint highlights
   apply. *Show:* browser mockup of the new table + pill + hover; one written BIRAC page.
-- **Deliverable.** `S5-entry-models.spec.md`.
+- **Deliverable.** `S5-entry-models.spec.md`. ✅ **Written 2026-07-03** (mockup commits `240be19` +
+  `8ef8c3d`; all injected:S5 audit rows dispositioned in the Decision Log). Decided highlights:
+  table schemas = **3 sanctioned** (Key cases `Case|Holding|Opinion` · Related
+  `Case|Relevance here|Primary home|Opinion` · Case Index) with weight + Field-I pill **injected
+  under the case name** (content-vs-data authoring boundary — cells never author
+  weight/treatment/dates); dates **hover-only everywhere** (TEACH-15: cells count as inline);
+  doctrine skeleton = field-decisive question → **`[!rule]` black-letter callout (canonical
+  statement site, registry mirrors)** → Brief (closing `**Common pitfalls.**` bullets) →
+  **"Lower-court developments" ABOVE the tables** (TEACH-08 rename + move) → Key cases → Related →
+  Visual → Sources (**bracketed**); BIRAC kept verbatim; point-status table on split-treatment
+  cases; legacy statuses render through the S1 A4 mapping (COH-11); **COH-14 book-PDF reference
+  dropped (user D12)**. The spec text wins over this entry (§0 precedence).
 - **Audit inputs (2026-07-02)** — from `AUDIT-2026-07-02.md`; address each (adopt / adapt /
   reject-with-rationale) in the spec's Decision Log:
   **TEACH-13** related-cases table integrity: self-reference ban + controlled header set + one CL
@@ -458,7 +469,7 @@ exact CourtListener fields/calls per data element (the S2 schema).
 - **Overhaul-1 kit:** `_overhaul/` · `docs/STANDARDS.md`, `docs/FINAL-QA-SPEC.md`, `docs/RUNBOOK.md`
   · `_run/FINAL-S9-REPORT.md` · `scripts/lint/`.
 - **Book + taxonomy refs:** `.orca/drops/Book Jun 26, 2026.pdf` (TOC), `…(1).pdf` (case-example →
-  S5 — **missing: not on disk; regenerate or drop at the S5 interview — audit COH-14**), `SSTOC.pdf`
+  S5 — **RESOLVED 2026-07-03: reference dropped at the S5 interview (user D12) — audit COH-14**), `SSTOC.pdf`
   (LaFave), `New Jersey Law Enforcement Handbook…pdf`, `Prompt.md` (user intent — **missing: not in
   the repo anywhere; §4-S7 carries the surviving fix-list; regenerate or drop at the S7 interview —
   audit COH-14**). **`.orca/drops/` is LOCAL-ONLY** — untracked, and the copyrighted PDFs must never
@@ -483,7 +494,7 @@ exact CourtListener fields/calls per data element (the S2 schema).
 | S2 Verified Authority Database | ✅ | ✅ |
 | S3 Taxonomy & Points-of-Law | ✅ | ✅ |
 | S4 Platform, Nav & Reader-Signaling | ✅ | ✅ |
-| S5 Entry Models | ☐ | ☐ |
+| S5 Entry Models | ✅ | ✅ |
 | S6 Coverage & Ingest | ☐ | ☐ |
 | S7 Doctrine Production | ☐ | ☐ |
 | S8 Legal-Term & Case Linking | ☐ | ☐ |
