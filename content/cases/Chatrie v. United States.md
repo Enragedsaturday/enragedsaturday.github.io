@@ -14,13 +14,12 @@ authority_weight: "Binding — SCOTUS"
 treatment:
   status: good
   as_of: 2026-06-30
-  note: "New Binding — SCOTUS anchor (decided 2026-06-29, post-capture). Geofence/Google Location History acquisition IS a Fourth Amendment search; the probable-cause/particularity of geofence warrants was left open on remand. Slip-op sourced; CL-confirm pending."
+  note: "New Binding — SCOTUS anchor (decided 2026-06-29, post-capture). Geofence/Google Location History acquisition IS a Fourth Amendment search; the probable-cause/particularity of geofence warrants was left open on remand. Slip-op sourced; CL-verified 2026-07-02 (cluster 10881683 → lead opinion 11349205)."
   by: []
 courtlistener:
-  opinion_url: ""
-  opinion_id: null
-  identity_checked: false
-  note: "CL-confirm PENDING. CourtListener has no clean SCOTUS Chatrie object: its only index entry, opinion 10881683 ('Chatrie v. United States / scotus / 2026-06-29 / 25-112'), is CORRUPTED — the underlying opinion text resolves to *Harmon v. ABC 2 News Station* (E.D. Wis. 24-cv-600). DO NOT ingest 10881683. Re-poll CL; verify case_name contains 'Chatrie', court = scotus, docket = 25-112 before trusting. Holding independently confirmed via primary/secondary web sources (supremecourt.gov slip op. 25-112; SCOTUSblog; Cornell LII; Justia; EPIC) at the S9 serial-CL gate, 2026-06-30. The 4th Cir. opinions (10265776 panel; 10443725 en banc, 136 F.4th 100) and 5th Cir. *Smith* (10036119, 110 F.4th 817) remain valid for those lower-court entries."
+  opinion_url: "https://www.courtlistener.com/opinion/10881683/chatrie-v-united-states/"
+  opinion_id: 11349205
+  identity_checked: true
 homes:
   - page: "[[Two Definitions of Search]]"
     role: "Key — Anchor"
@@ -35,7 +34,7 @@ holding: "Acquiring a cell-phone user's Google Location History (geofence) data 
 # Chatrie v. United States
 
 *609 U.S. ___ (2026)* (No. 25-112) · U.S. Supreme Court · **Binding — SCOTUS** · Treatment: **good** *(as of 2026-06-30)*
-<!-- header line; TreatmentBadge + weight render here, degrading to the text above. CL-confirm PENDING: slip-op sourced; the only CL object (10881683) is corrupted — see frontmatter/Sources. -->
+<!-- header line; TreatmentBadge + weight render here, degrading to the text above. CL-verified 2026-07-02: cluster 10881683 → lead opinion 11349205 — see frontmatter/Sources. -->
 
 ## Background
 Investigating a 2019 armed robbery of a Midlothian, Virginia credit union, police obtained a **geofence warrant** directing Google to disclose **Location History** for every device within a 150-meter radius of the bank during a roughly one-hour window around the robbery. That "reverse-location" process ultimately identified Okello Chatrie. He moved to suppress, arguing that compelling Google to produce his Location History was a warrantless Fourth Amendment search. The Fourth Circuit — on rehearing **en banc**, splitting 7–7 on whether a search occurred — affirmed the denial of suppression (136 F.4th 100), teeing up the threshold question for the Supreme Court.
@@ -44,7 +43,7 @@ Investigating a 2019 armed robbery of a Midlothian, Virginia credit union, polic
 Whether the government conducts a Fourth Amendment "search" when it acquires a person's Google Location History (geofence) data — records of a cell phone's location — held by a third-party provider.
 
 ## Rule
-Yes. Acquiring a cell-phone user's **Google Location History is a Fourth Amendment search**: a person "maintains a reasonable expectation of privacy in the record of his phone's location," and the government intrudes on it when it compels production of that data — **even for a short period** and **even though the records are held by a third party**. The Court rejected the argument that Location History (off by default / opt-in) is "voluntarily shared" and thus stripped of protection by the third-party doctrine, **applying and extending *[[Carpenter v. United States|Carpenter]]*** to bulk reverse-location data. *Chatrie v. United States*, 609 U.S. ___ (2026) (No. 25-112) (slip op.). ^pin-op
+Yes. Acquiring a cell-phone user's **Google Location History is a Fourth Amendment search**. In the Court's words: "An individual has a reasonable expectation of privacy in records about his cell phone's location, and police intrude on that constitutionally protected interest when they demand the information—even though for only a limited time, and from a third-party tech company." The protection holds **even for a limited time** and **even though a third party holds the records**. The Court rejected the argument that Location History (off by default / opt-in) is "voluntarily shared" and thus stripped of protection by the third-party doctrine, **applying and extending *[[Carpenter v. United States|Carpenter]]*** to bulk reverse-location data. *Chatrie v. United States*, 609 U.S. ___ (2026) (No. 25-112) (slip op.). ^pin-op
 
 Critically, the Court **did not** hold geofence warrants categorically unconstitutional. It **expressly declined** to decide whether *this* geofence warrant satisfied the Fourth Amendment's **probable-cause and particularity** requirements, leaving that question for remand.
 
@@ -52,12 +51,12 @@ Critically, the Court **did not** hold geofence warrants categorically unconstit
 Police compelled Google to produce Location History for all devices in a geographic area and time window — an "all-encompassing" record of individuals' movements generated automatically and held by a third party. Under *Carpenter*'s logic, that acquisition invaded a reasonable expectation of privacy and was therefore a search; the third-party/opt-in rationale the Fourth Circuit panel had relied on did not defeat that protection.
 
 ## Conclusion
-Acquiring geofence Location History is a Fourth Amendment search. The judgment was **vacated and remanded** for the lower courts to decide the **probable-cause and particularity** of the geofence warrant — the question the Court left open. Reported **6–3, Kagan, J.**, for the Court *(vote lineup and separate writings per contemporaneous reports — confirm against the slip op.)*.
+Acquiring geofence Location History is a Fourth Amendment search. The judgment was **vacated and remanded** for the lower courts to decide the **probable-cause and particularity** of the geofence warrant — the question the Court left open. **Kagan, J.**, delivered the opinion of the Court, joined by Roberts, C.J., and Sotomayor, Kavanaugh, and Jackson, JJ.; Jackson, J., filed a concurring opinion, joined by Sotomayor, J.; Gorsuch, J., concurred in the judgment (making the judgment **6–3**); Alito, J., dissented, joined by Thomas, J., as to Part I and by Barrett, J., as to Parts II–B, II–C–1, and II–C–2; Barrett, J., filed a separate dissenting opinion.
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS** anchor on the geofence search-threshold question.
 - **Doctrinal effect:** **RESOLVES** the former circuit split on whether acquiring geofence Location History is a *search* (5th Cir. *[[The Warrant Requirement|Smith]]* = yes; 4th Cir. en banc *Chatrie* = fractured) — **it is a search**. *Smith*'s further holding that geofence warrants are "modern-day general warrants" and **categorically unconstitutional** was **not** adopted; it is now the persuasive minority position feeding the **remanded** probable-cause/particularity question — the new live frontier.
-- **CL-confirm: PENDING (slip-op sourced).** CourtListener has no clean SCOTUS object; its only entry (opinion 10881683) is corrupted (resolves to *Harmon v. ABC 2 News Station*). Do **not** ingest 10881683. Re-poll CL and backfill a verified permalink once a clean `scotus / 25-112 / Chatrie` cluster appears. See Sources.
+- **CL-confirm: VERIFIED (2026-07-02).** CourtListener **cluster** `10881683` **is** the genuine SCOTUS *Chatrie* (`scotus / 25-112 / 2026-06-29`); its lead opinion is `11349205`, against which the Rule quote above was matched verbatim. The earlier "corrupted object" warning was a cluster-vs-opinion ID mix-up: `10881683` is a *cluster* id, and fetching it from the `/opinions/` endpoint returns an unrelated case — use `/clusters/10881683/` or opinion `11349205` instead. See Sources.
 
 ## Appears on
 - [[Two Definitions of Search]] — *Key — Anchor*
@@ -69,4 +68,4 @@ Acquiring geofence Location History is a Fourth Amendment search. The judgment w
 - Justia, *Chatrie v. United States*, 609 U.S. ___ (2026) — https://supreme.justia.com/cases/federal/us/609/25-112/
 - Cornell LII (Supreme Court text, No. 25-112) — https://www.law.cornell.edu/supremecourt/text/25-112
 - Decision below: *United States v. Chatrie*, 136 F.4th 100 (4th Cir. 2025) (en banc) — https://www.courtlistener.com/opinion/10443725/united-states-v-okello-chatrie/
-- **CL-confirm note:** CourtListener opinion `10881683` is **corrupted** (indexed as SCOTUS *Chatrie* but its text is *Harmon v. ABC 2 News Station*, E.D. Wis.) — **do not ingest**; permalink to be backfilled at a later serial-CL gate once CL carries a clean `scotus / 25-112 / Chatrie` cluster.
+- CourtListener: *Chatrie v. United States* — https://www.courtlistener.com/opinion/10881683/chatrie-v-united-states/ — **verified 2026-07-02** (cluster 10881683 → lead opinion 11349205; case name, docket 25-112, and decision date 2026-06-29 confirmed against the cluster record and opinion text). The earlier "corrupted object" warning was a cluster-vs-opinion ID confusion: `10881683` is the **cluster** id and must not be fetched from the `/opinions/` endpoint (that resolves to an unrelated case); the lead **opinion** id is `11349205`.
