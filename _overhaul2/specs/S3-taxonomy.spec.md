@@ -124,7 +124,9 @@ split is gone. `AUTO:LINT-S3-derip` · `PROCESS`. *Amended — see Amendments A7
 Ladder* precedes *Reasonable Suspicion* / *Probable Cause*), encoded via **numeric filename/slug prefixes +
 an explorer `sortFn` on `slugSegment`** (numeric-aware). Nesting is **≤3 levels**, lint-enforced. *Check:*
 the rendered order equals the authored order at every level; the depth lint fails on any 4th level.
-`AUTO:LINT-S3-depth` · `AUTO:LINT-S3-order`.
+`AUTO:LINT-S3-depth` · `AUTO:LINT-S3-order`. *Amended — the ordering mechanism (numeric
+filename/slug prefixes) is superseded by frontmatter `weight:`; the authored-order principle, the
+check, and the depth cap stand. See Amendments A8 (A8 — user decision 2026-07-03).*
 
 **R11 — Hand-off boundaries (S3 → S4 / S5).** S3 delivers the **tree + registry + re-homing + overviews**.
 The **nav model is S4's**: S3 hands over the *signed-off prototype* — the **"TOC-tree"** explorer
@@ -135,7 +137,8 @@ their overview; `├─/└─` connectors; ordering `sortFn`) **and** the **sid
 smooth→auto) — prototyped in the S3 mockup (generator + patched `quartz/styles/custom.scss`,
 `quartz/components/scripts/explorer.inline.ts`, `quartz.layout.ts`). **Page rendering is S5's.** *Check:*
 S4 adopts the prototype as its working-standard; no S3 deliverable depends on nav/page rendering.
-`PROCESS`. *Amended — see Amendments A7(6).*
+`PROCESS`. *Amended — see Amendments A7(6) and A8(e): the handed-over `sortFn` reads frontmatter
+`weight:`, not numeric prefixes (A8 — user decision 2026-07-03).*
 
 **R12 — Every proposition hangs off one classification (single-source).** Per PRACTICES §1: a rule/term is
 stated **once** on its point-of-law node and **transcluded** elsewhere, never re-paraphrased across pages.
@@ -159,7 +162,8 @@ Special-Needs/Inventory/Checkpoints/Border promoted to findable nodes; exigency 
 ## 5. Method (execution — one autonomous run)
 1. **Materialize the tree** — create the 13 numbered category folders + sub-umbrella subfolders per
    Appendix A; author each node's overview (R2); place the greenlit new nodes empty (R7); prefix
-   filenames for order (R10).
+   filenames for order (R10). *(Superseded in part: folders/files are UNNUMBERED; order comes from
+   frontmatter `weight:` — see Amendments A8 (A8 — user decision 2026-07-03).)*
 2. **Move + re-home** existing pages per Appendix B; set `homes[]` primary + Key-on; regenerate the Case
    Index; unlist `cases/` (R3/R8).
 3. **Author the point-of-law registry** `_overhaul2/points/registry.yaml` (R4) + seed nodes (Appendix C),
@@ -214,6 +218,9 @@ run in CI fail-closed on every change.
 
 ## Appendix A — The target tree (13 categories)
 *category → sub-umbrella → page. Overviews implicit per node (R2). `[new]` = placed-empty (R7).*
+*The `1.`–`13.` numbers (and any `01-…` prefixes shown here or in the mockup) denote
+**display/build order only** — they are NOT literal folder or file names; slugs are unnumbered and
+order comes from frontmatter `weight:` (A8 — user decision 2026-07-03).*
 
 1. **Foundations & the Fourth Amendment** — Common Law Origins · The Fourth Amendment Framework · The Analysis Checklist · Fourth Amendment Recalibration
 2. **Standards of Proof** — The Proof Ladder `[new]` · Reasonable Suspicion · Probable Cause
@@ -282,6 +289,8 @@ run in CI fail-closed on every change.
   edge cases N:1 / 1:N / multi-home-transclusion / controlling-case drift → GH#2; failure guarded =
   misscoped treatment.
 - **SD2** tree = numbered folders/subfolders/files; multi-homing via `homes[]`; S3 owns the re-homing table.
+  *(Superseded on the numbered-names point by explicit user decision — see Amendments A8; the
+  `homes[]` model and re-homing-table ownership stand. (A8 — user decision 2026-07-03))*
 - **SD3** overview pattern = broad, no key-case tables, on-ramp.
 - **SD4** `cases/` unlisted via `filterFn`; Case Index routes.
 - **SD5** de-rip every label (Bandiero reviews).
@@ -296,18 +305,22 @@ run in CI fail-closed on every change.
 *Gap-analysis diff of the signed spec against `_overhaul2/AUDIT-2026-07-02.md` (rows routed
 `amend:S3 (gap-analysis-first)`). Rows the spec already handles are dispositioned `covered-by-spec`
 in the register — no text here. Amendments are additive: new requirements are numbered R13+ so the
-signed body is not renumbered. The one conflict with a signed decision (TAX-09) is NOT amended —
-see the note at the end.*
+signed body is not renumbered. The one conflict with a signed decision (TAX-09) was escalated and
+is now RESOLVED by explicit user decision → A8; the original both-positions writeup is preserved
+at the end (A8 — user decision 2026-07-03).*
 
 ### A1 — R13: URL & slug stability (old-path aliases · `cases/` frozen · link sweep · `/cases/` fate)
 **Register:** TAX-03a · TAX-03c · TAX-10.
-**Context:** R3/R8 move pages and regenerate the Case Index, but the spec is silent on the *old
-URLs*. Slugs embed the numbered folder path; the target tree renumbers every category, so every
-doctrine URL on the live site changes. Existing `aliases:` are bare titles, not old paths.
+**Context (rev. per A8 review 2026-07-03):** R3/R8 move pages and regenerate the Case Index, but
+the spec is silent on the *old URLs*. Slugs on the live site embed the numbered folder path; the
+migration **de-numbers** every slug (A8) and moves/renames pages, so every doctrine URL on the
+live site changes. Existing `aliases:` are bare titles, not old paths.
 **New requirement — R13 (fail-closed).**
-(a) **Old-path aliases:** every page whose site path changes (Appendix B moves + every renumbered
-slug) gets an `aliases:` entry for **each previous full site path** (not a bare title), so Quartz's
-alias-redirect emitter serves every pre-O2 URL.
+(a) **Old-path aliases (rev. per A8 review 2026-07-03):** every page whose **full site path
+changes, from any cause** — Appendix B moves/re-parenting, R9 renames, the A8 de-numbering of
+folder and file slugs (see A8(e)), or any other restructure step — gets an `aliases:` entry for
+**each previous full site path** (not a bare title), so Quartz's alias-redirect emitter serves
+every pre-O2 URL.
 (b) **`cases/` frozen:** `content/cases/` files are neither moved nor renamed — their URLs are
 preserved verbatim (the corpus's one stability win). R8's unlisting is explorer-only (`filterFn`),
 never a file move.
@@ -331,8 +344,9 @@ redirect) for 100% of URLs; zero dangling old-path wikilinks. `AUTO:LINT-S3-urls
 - **Fail conditions (fail-closed):** any inventory path with neither page nor alias stub → FAIL;
   any surviving old-path `homes:`/`related:`/wikilink reference (the R13(c) sweep) → FAIL.
 **Acceptance:** pre-move URL inventory fully resolves; `cases/` paths unchanged; `/cases/` routes.
-**Rationale:** the site is live in production; renumbering otherwise 404s every bookmark, inbound
-link, and the frozen flashcard deck (A2).
+**Rationale:** the site is live in production; the restructure (de-numbering + moves, per A8)
+otherwise 404s every bookmark, inbound link, and the frozen flashcard deck (A2). *(rev. per A8
+review 2026-07-03)*
 
 ### A2 — R14: flashcard-deck stem/alias preservation
 **Register:** COH-05b.
@@ -445,15 +459,62 @@ worst find-it failure, and GAP-03a's post-*Chatrie* topics otherwise force a tre
    plain nouns (no question titles), consistent article use, one CREW spelling ("C.R.E.W." per
    Appendix A).
 6. **R11 mockup authority (CODE-01b):** commit `8655398` is the nav-model *prototype only*.
-   **Appendix A is authoritative** wherever the mockup diverges; the `displayNames`/`filterFn`/
-   `sortFn` tables are regenerated from Appendix A at execution (the mapped folders don't exist
-   until Method step 1 — today's build showing fallback names is by design, and the mockup carries
-   no `cases` mapping because R8 filters it).
+   **Appendix A is authoritative** wherever the mockup diverges; the `displayNames`/`filterFn`
+   tables are regenerated from Appendix A at execution (the mapped folders don't exist until
+   Method step 1 — today's build showing fallback names is by design, and the mockup carries no
+   `cases` mapping because R8 filters it). **Ordering (rev. per A8 review 2026-07-03):** there are
+   **no regenerated `sortFn` tables** — Appendix A drives the **assigned `weight:` values** at
+   execution, and the S4 comparator simply reads `weight:` per A8(d) (the mockup's numeric-prefix
+   `sortFn` is superseded on this point).
 
-### Conflict noted, NOT amended — TAX-09 (numbering mechanics)
+### A8 — Frontmatter-weight ordering; unnumbered slugs (supersedes SD2 + R10's mechanism) (A8 — user decision 2026-07-03)
+**Register:** TAX-09 (was `conflict:user-decision-needed`; RESOLVED by user decision 2026-07-03).
+**Superseded text (quoted):** R10 — order "encoded via **numeric filename/slug prefixes + an
+explorer `sortFn` on `slugSegment`** (numeric-aware)"; Decision-Log SD2 — "tree = numbered
+folders/subfolders/files". Superseded **by explicit user decision**, not an audit override: the
+user chose after the tradeoff was explained — prefixes embed ordering in URLs, so every future
+insert renumbers siblings and churns URLs; weight gives clean, permanently stable URLs, and this
+restructure is the one-time moment to pay the alias cost.
+**New mechanism:**
+(a) **Pages:** intra-category/sub-umbrella order comes from a frontmatter **`weight:`** field on
+each page. Filenames/slugs carry **no ordering numbers**.
+(b) **Category folders too:** folder slugs are unnumbered (`/standards-of-proof/…`, not
+`/02-standards-of-proof/…`); a folder's position comes from the **`weight:`** in its `index.md`
+(for sub-umbrellas that file is already the R2 overview; for top-level categories it is
+metadata-only — R2's Overview-first-child storage is unchanged). Appendix A's `1.`–`13.`/`01-…`
+numbering is to be read as **display/build order only**, never literal names (clarifying line
+added at Appendix A).
+(c) **Weight convention + lint (rev. per A8 review 2026-07-03):** weights are **gap-valued
+(10/20/30…) as an ADVISORY convention, not a fail condition** — a normative gap rule would fail
+legitimate mid-gap inserts (e.g. `15`), defeating the purpose. Ties break **alphabetically by
+slug** (duplicate weights are therefore legal and deterministic); a missing `weight:` sorts
+**last** and is lint-flagged. Enforced by extending the existing **`LINT-S3-order`**, fully
+mechanical:
+- **Scope (must carry `weight:`):** every explorer-listed content page under `content/`, and
+  every category and sub-umbrella `index.md` in the Appendix A tree.
+- **Exclusions (no `weight:` required):** `content/cases/**` (unlisted per R8) · `cases/index.md`
+  (the R13(d) router landing) · the site root `content/index.md` (not an explorer node) · any
+  file excluded by the explorer `filterFn` (the lint reads the same exclusion list as the
+  `filterFn`, single-sourced).
+- **Fail conditions:** any in-scope file with a **missing or non-positive-integer** `weight:` →
+  FAIL. Gap spacing and tie values never FAIL (advisory only).
+(d) **S4 handoff:** the explorer `sortFn` reads page `weight:` and folder-index `weight:`; the
+committed mockup's numeric-prefix `sortFn` (commit `8655398`) is **superseded on this point** —
+S4 implements the weight-reading sort. The rest of the R11 prototype handoff stands.
+(e) **R13/A1 unweakened:** unnumbered slugs change nothing about the alias mandate — the current
+live site's numbered-path URLs still require R13(a) aliases, and the `_overhaul2/url-inventory.json`
+mechanism is unchanged.
+**Rationale (decision-log-grade):** decouple ordering from addressing — an order edit becomes a
+frontmatter edit, never a URL migration; the alias cost is paid exactly once, now, during the
+restructure that already requires it.
+
+### TAX-09 — RESOLVED 2026-07-03 (user decision → A8)
+*Original conflict writeup, preserved for the record (both positions as escalated):*
 R10 and Decision-Log SD2 explicitly choose **numeric filename/slug prefixes + explorer `sortFn`**;
 the audit recommends frontmatter-weight sorting or frozen gap numbering (10/20/30) because
 prefix-numbered folders *and* files renumber on any insertion — URL churn on every future insert.
 This is a signed, reasoned decision and is not overridden here; it is escalated in the register as
 `conflict:user-decision-needed`. Note the interaction: R13(a) old-path aliases absorb the churn
 from *this run's* renumbering, but not from future insertions.
+*Resolution (A8 — user decision 2026-07-03): the user adopted frontmatter-weight ordering with
+unnumbered slugs — see A8 above.*

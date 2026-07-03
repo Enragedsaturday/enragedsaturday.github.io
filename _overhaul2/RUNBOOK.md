@@ -266,7 +266,9 @@ Each: **Direction · Research first · Interview-extract (choices + what to show
   the diff omits (sidebar padding, two-line wrap, list/paragraph spacing) · **COH-05c** preserve
   flashcard-deck-referenced stems/aliases in nav/platform work (w/ S3) · **COH-16b** the
   publish/ingest pipeline ownership lands in this spec · **COH-18** pill/anchor/hover mechanism is
-  S4's (placement = S5).
+  S4's (placement = S5) · **TAX-09/A8 (2026-07-03)** the explorer `sortFn` reads frontmatter
+  `weight:` (pages) + folder-index `weight:` (categories) — the mockup's numeric-prefix sort
+  (commit 8655398) is superseded on this point (S3 § Amendments A8).
 
 ### S5 — Entry Models (case + doctrine pages)
 - **Direction.** The **graded-authority doctrine page** — **Variant A: black-letter rule / explanation
