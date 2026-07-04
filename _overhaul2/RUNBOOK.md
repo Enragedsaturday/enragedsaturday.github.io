@@ -455,6 +455,20 @@ Each: **Direction · Research first · Interview-extract (choices + what to show
   remediation** (299 visible mid-line `^pin-N` anchors across 233 files; 672 end-of-line masked by
   Quartz parsing) · **S2F-07b** (routed via amend:S2) — S9 rechecks S7 prose authored against
   provisional point slugs after the S3 binding map resolves them.
+- **S7-interview inputs (2026-07-03)** — from the S7 thread (`S7-doctrine-production.spec.md`
+  Lessons/Verification); address each in the S9 spec like audit rows:
+  **(a)** Claude-lane CL spot-checks must resolve `opinions[].id` from search results before
+  `read_document`/`search_document` — CL page URLs `/opinion/<id>/` carry **cluster** ids and the
+  read tools silently fetch wrong/partial objects (the LAW-02 misdiagnosis class; reproduced live
+  2026-07-03) · **(b)** G2 support checks run **per enumeration item** — one citation does not
+  vouch for a conjoined list's other items (scar exhibit: the O1 "dog or flashlight" knock-and-talk
+  pitfall, corrected commit `4b48a4a`) · **(c)** the coherence pass adds a **cross-page
+  contradiction sweep** on shared points (exhibit: Knock-and-Talk vs Plain View on flashlight
+  illumination — contradiction, not duplication, so the shingle detector never fires) ·
+  **(d)** TEACH-03 re-verification samples **by conversion tier** (S7 R5's four-tier method;
+  tier-3 paraphrase-downgrades re-verify G2 support — there is no quote for G4; every conversion
+  records its source) · **(e)** LINT-10's counting unit = **block** (paragraph or list item);
+  Sources trailing info is parenthesized per S5 R12, never em-dashed.
 
 > **Deferred run #1 (audit COH-23 — full URL: <https://github.com/Enragedsaturday/cssi/issues/2>, the
 > FORK's issue #2):** the **Maintenance Loop** — post-publish entry ownership + citator-

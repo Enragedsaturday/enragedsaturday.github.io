@@ -101,23 +101,23 @@ flowchart TD
 
 ## Sources
 
-- [*Florida v. Jardines*, 569 U.S. 1 (2013)](https://www.courtlistener.com/opinion/856347/florida-v-jardines/) — pinpoints: 6, 8, 9–10; majority n.3 and the dissent's night-visit passage.
-- [*Kentucky v. King*, 563 U.S. 452 (2011)](https://www.courtlistener.com/opinion/216733/kentucky-v-king/) — pinpoints: 462, 469–70.
-- [*United States v. Lundin*, 817 F.3d 1151 (9th Cir. 2016)](https://www.courtlistener.com/opinion/3187682/united-states-v-eric-lundin/) — pinpoints: 1158–60.
-- [*United States v. Walker*, 799 F.3d 1361 (11th Cir. 2015)](https://www.courtlistener.com/opinion/2844024/united-states-v-wayne-walker/) — pinpoints: 1363–64.
-- [*United States v. Carloss*, 818 F.3d 988 (10th Cir. 2016)](https://www.courtlistener.com/opinion/3184928/united-states-v-carloss/) — pinpoint: 995 (Gorsuch, J., dissenting from 1004).
-- [*French v. Merrill*, 15 F.4th 116 (1st Cir. 2021)](https://www.courtlistener.com/opinion/5273192/french-v-merrill/) — reh'g en banc denied, 24 F.4th 93 (2022); cert. denied sub nom. *Morse v. French* (2022).
-- [*Carroll v. Carman*, 574 U.S. 13 (2014) (per curiam)](https://www.courtlistener.com/opinion/2750102/carroll-v-carman/) — reversing *Carman v. Carroll*, 749 F.3d 192 (3d Cir. 2014), on qualified-immunity grounds and reserving the front-door question.
+- [*Florida v. Jardines*, 569 U.S. 1 (2013)](https://www.courtlistener.com/opinion/856347/florida-v-jardines/) (pinpoints: 6, 8, 9–10; majority n.3 and the dissent's night-visit passage)
+- [*Kentucky v. King*, 563 U.S. 452 (2011)](https://www.courtlistener.com/opinion/216733/kentucky-v-king/) (pinpoints: 462, 469–70)
+- [*United States v. Lundin*, 817 F.3d 1151 (9th Cir. 2016)](https://www.courtlistener.com/opinion/3187682/united-states-v-eric-lundin/) (pinpoints: 1158–60)
+- [*United States v. Walker*, 799 F.3d 1361 (11th Cir. 2015)](https://www.courtlistener.com/opinion/2844024/united-states-v-wayne-walker/) (pinpoints: 1363–64)
+- [*United States v. Carloss*, 818 F.3d 988 (10th Cir. 2016)](https://www.courtlistener.com/opinion/3184928/united-states-v-carloss/) (pinpoint: 995 (Gorsuch, J., dissenting from 1004))
+- [*French v. Merrill*, 15 F.4th 116 (1st Cir. 2021)](https://www.courtlistener.com/opinion/5273192/french-v-merrill/) (reh'g en banc denied, 24 F.4th 93 (2022); cert. denied sub nom. *Morse v. French* (2022))
+- [*Carroll v. Carman*, 574 U.S. 13 (2014) (per curiam)](https://www.courtlistener.com/opinion/2750102/carroll-v-carman/) (reversing *Carman v. Carroll*, 749 F.3d 192 (3d Cir. 2014), on qualified-immunity grounds and reserving the front-door question)
 - [*Morgan v. Fairfield County*, 903 F.3d 553 (6th Cir. 2018)](https://www.courtlistener.com/opinion/4532978/neil-morgan-v-fairfield-cty-ohio/)
 - [*People v. Frederick*, 895 N.W.2d 541 (Mich. 2017)](https://www.courtlistener.com/opinion/4396951/people-of-michigan-v-michael-christopher-frederick/)
 - [*State v. Christensen*, 517 S.W.3d 60 (Tenn. 2017)](https://www.courtlistener.com/opinion/4381703/state-of-tennessee-v-james-robert-christensen-jr/)
-- [*Florida v. Bostick*, 501 U.S. 429 (1991)](https://www.courtlistener.com/opinion/112631/florida-v-bostick/) — pinpoint: 436.
-- [*United States v. Drayton*, 536 U.S. 194 (2002)](https://www.courtlistener.com/opinion/121153/united-states-v-drayton/) — pinpoint: 206.
+- [*Florida v. Bostick*, 501 U.S. 429 (1991)](https://www.courtlistener.com/opinion/112631/florida-v-bostick/) (pinpoint: 436)
+- [*United States v. Drayton*, 536 U.S. 194 (2002)](https://www.courtlistener.com/opinion/121153/united-states-v-drayton/) (pinpoint: 206)
 - [*Collins v. Virginia*, 584 U.S. 586 (2018)](https://www.courtlistener.com/opinion/4501697/collins-v-virginia/)
 - [*Payton v. New York*, 445 U.S. 573 (1980)](https://www.courtlistener.com/opinion/110235/payton-v-new-york/)
 - [*Caniglia v. Strom*, 593 U.S. 194 (2021)](https://www.courtlistener.com/opinion/4883694/caniglia-v-strom/)
-- [*Bumper v. North Carolina*, 391 U.S. 543 (1968)](https://www.courtlistener.com/opinion/107716/bumper-v-north-carolina/) — pinpoint: 548–49.
+- [*Bumper v. North Carolina*, 391 U.S. 543 (1968)](https://www.courtlistener.com/opinion/107716/bumper-v-north-carolina/) (pinpoint: 548–49)
 - [*Schneckloth v. Bustamonte*, 412 U.S. 218 (1973)](https://www.courtlistener.com/opinion/108800/schneckloth-v-bustamonte/)
 - [*United States v. Conner*, 127 F.3d 663 (8th Cir. 1997)](https://www.courtlistener.com/opinion/747208/united-states-v-larry-duane-conner-united-states-of-america-v-john/)
 - [*United States v. Banks*, 540 U.S. 31 (2003)](https://www.courtlistener.com/opinion/131146/united-states-v-banks/)
-- [*United States v. Meyer* (8th Cir. 2021)](https://www.courtlistener.com/opinion/5302394/united-states-v-william-meyer/) — the manufactured-exigency application, developed on [[Exigent Circumstances and Hot Pursuit]].
+- [*United States v. Meyer* (8th Cir. 2021)](https://www.courtlistener.com/opinion/5302394/united-states-v-william-meyer/) (the manufactured-exigency application, developed on [[Exigent Circumstances and Hot Pursuit]])

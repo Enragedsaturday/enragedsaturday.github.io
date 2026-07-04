@@ -302,3 +302,41 @@ COH-15 artifact — guards numbers-by-assertion. SD8 lint conversions — guards
   (seed-not-gospel; re-generated at EXECUTE; live count 88 after the specimen closed row 77;
   the committed file stays the 2026-07-02 snapshot — regenerate, don't hand-edit).
 - **NUM-04** (routed via S8) — acknowledged as the 388 measured input to R11; no S6-side change.
+
+---
+
+## Amendments — 2026-07-03 (S7-interview intake)
+
+### A1 — Planning-time candidate sub-leg (extends R5; no text superseded)
+The S7 interview's verified research (2026-07-03; research annex in `S7-doctrine-production.spec.md`)
+surfaced gate-relevant captions before EXECUTE. They join the R5 union as named sub-leg
+**(ii-b) planning-time discoveries**, consumed like any leg (R1 two-key → R2 gate → R10 ordering →
+R8 authoring); nothing below pre-adjudicates a verdict, and the D5 frontier floor still decides
+page vs Lower-court-developments bullet:
+- **Knock-and-talk** (already named in prose on the branch — mockup commits `e0935ce`/`4b48a4a`,
+  so the R12/LINT-17 class is live for these four): *Morgan v. Fairfield County*, 903 F.3d 553
+  (6th Cir. 2018) · *People v. Frederick*, 895 N.W.2d 541 (Mich. 2017) · *State v. Christensen*,
+  517 S.W.3d 60 (Tenn. 2017) · *Carroll v. Carman*, 574 U.S. 13 (2014) (per curiam).
+- **SACO / constructive entry** (S7 user D7): *United States v. Nora*, 765 F.3d 1049 (9th Cir.
+  2014) · *Fisher v. City of San Jose*, 558 F.3d 1069 (9th Cir. 2009) (en banc) · *United States
+  v. Al-Azzawy*, 784 F.2d 890 (9th Cir. 1986) · *United States v. Maez*, 872 F.2d 1444 (10th Cir.
+  1989) · *United States v. Allen*, 813 F.3d 76 (2d Cir. 2016) · *United States v. Vaneaton*,
+  49 F.3d 1423 (9th Cir. 1995).
+- **Caretaking-of-persons** (S7 user D5): *Graham v. Barnette*, 5 F.4th 872 (8th Cir. 2021) ·
+  *United States v. Morgan*, 71 F.4th 540 (6th Cir. 2023) · *United States v. Treisman*, 71 F.4th
+  225 (4th Cir. 2023) · *Bakutis v. Dean*, 129 F.4th 299 (5th Cir. 2025).
+- **Collective knowledge (horizontal split)**: *United States v. Massenburg*, 654 F.3d 480 (4th
+  Cir. 2011) · *United States v. Chavez*, 534 F.3d 1338 (10th Cir. 2008) · *United States v.
+  Cook*, 277 F.3d 82 (1st Cir. 2002) · *United States v. Balser*, 70 F.4th 613 (1st Cir. 2023).
+
+**R9 adjudication flags booked now** (blind-merge prevention): *Fisher v. City of San Jose* ≠ the
+existing *Michigan v. Fisher* page; **three distinct Morgans** (*Morgan v. Fairfield County* (6th
+Cir. 2018) · *United States v. Morgan*, 743 F.2d 1158 (6th Cir. 1984) · *United States v. Morgan*,
+71 F.4th 540 (6th Cir. 2023)) — distinct-case rows, never folded. **Supersession note:** 9th-Cir.
+*United States v. Anderson* is cited as the **en banc** 101 F.4th 586 (2024); the 2022 panel
+(56 F.4th 748) is superseded and must not be page-minted.
+
+*Rationale (decision-log-grade):* R8 would catch each of these as a rewrite-time discovery, but
+only as a mid-wave trickle; pre-seeding books them into the batched verification lanes and books
+the alias traps before any page-mint. No requirement text changes; the R5 union was built to be
+extended by named legs.
