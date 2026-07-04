@@ -461,7 +461,7 @@ def build_corpus_index(root=None):
         body_lines = body.split("\n")
         for _, _, txt in iter_headings(body_lines):
             anchors.add(slugify(txt))
-        for m in re.finditer(r"\s(\^[A-Za-z0-9\-]+)\s*$",
+        for m in re.finditer(r"(?:^|\s)(\^[A-Za-z0-9][A-Za-z0-9-]*)\s*$",
                              body, flags=re.MULTILINE):
             anchors.add(m.group(1).lower())
         idx.anchors[stem] = anchors

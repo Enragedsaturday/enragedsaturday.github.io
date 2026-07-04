@@ -551,6 +551,13 @@ field_i_validity ∈ { good_law 🟢 | history 🔵 | caution 🟡 | questioned 
                      superseded 🔴 | unverified ⚪ }
 ```
 
+*Naming (two layers, one vocabulary):* the tokens above are the **machine enum** — exactly what
+the lake records and projected frontmatter store, per the S2 record schema (S2 R5), and what
+LINT-6 validates. The **full composite names** from PRACTICES §2 — `history/neutral`,
+`questioned/overruling_risk`, `superseded/not_current` — are the same values' display/
+documentation composites (the slash reads "aka"); they may appear in prose and reader-facing
+explanations but never as stored values.
+
 - `good_law` 🟢 — no material negative treatment on the taught points.
 - `history` 🔵 — neutral/historical significance (e.g. superseded framework kept as history).
 - `caution` 🟡 — materially limited/criticized on some point; read the overrides.
@@ -584,16 +591,21 @@ Field-I everywhere it appears (D5).
 
 ### 3.2 Old→new migration mapping *(S1 A4 — the ONLY sanctioned translation)*
 
-Old single-axis lexicon: `good | criticized | limited | abrogated | overruled` (457 live
-case pages at 2026-07-02: 439 / 0 / 11 / 5 / 2).
+Old single-axis lexicon: `docs/STANDARDS.md` (O1) §3.1: `good | criticized | limited |
+abrogated | overruled`. Live frontmatter (457 case pages, counted 2026-07-02): 439 `good` ·
+11 `limited` · 5 `overruled` · 2 `abrogated` · 0 `criticized`.
 
-| Old `treatment.status` | New Field-I composite | Edge / override handling |
-|---|---|---|
-| `good` | `good_law` 🟢 | No edge required; old `as_of` seeds `as_of_treatment`; the S2 derivation re-derives and may downgrade |
-| `limited` | `caution` 🟡 | **Mandatory ≥1 `point_overrides[]`** on the limited point; override Field-II = `limited` (or `superseded` where replaced outright — *Belton*→*Gant*); `varies_by_point: true` |
-| `overruled` | `superseded` 🔴 | Field-II `overruled` edge to the overruling case; authority-weight moves to tier 6 (Historical) |
-| `abrogated` | `superseded` 🔴 | Field-II `abrogated` edge (*Aguilar*/*Spinelli* → *Illinois v. Gates*) |
-| `criticized` | `caution` 🟡 (default) | Escalate to `questioned` 🟠 only when the negative treatment hits the **relied-on point** in a **binding jurisdiction** |
+| Old `treatment.status` | Count | New Field-I composite (machine token) | Edge / override handling |
+|---|---|---|---|
+| `good` | 439 | `good_law` 🟢 | No edge required; old `as_of` seeds `as_of_treatment`; the S2 derivation re-derives and may downgrade |
+| `limited` | 11 | `caution` 🟡 | **Mandatory ≥1 `point_overrides[]`** on the limited point; override Field-II = `limited` (or `superseded` where replaced outright — *Belton*→*Gant*); `varies_by_point: true` |
+| `overruled` | 5 | `superseded` 🔴 (composite name: `superseded/not_current`) | Field-II `overruled` edge to the overruling case; authority-weight moves to tier 6 (Historical) |
+| `abrogated` | 2 | `superseded` 🔴 (composite name: `superseded/not_current`) | Field-II `abrogated` edge (*Aguilar*/*Spinelli* → *Illinois v. Gates*) |
+| `criticized` | 0 | `caution` 🟡 (default) | Escalate to `questioned` 🟠 (`questioned/overruling_risk`) only when the negative treatment hits the **relied-on point** in a **binding jurisdiction** |
+
+The 11 `limited`: *Boyd, Coolidge, Escobedo, Mathis (1968), Monroe v. Pape, Belton, Elstad,
+Saucier, Thornton, Agurs, Chadwick*. The 5 `overruled`: *Gouled, Jones (1960), Michigan v.
+Jackson, Olmstead, Wolf*. The 2 `abrogated`: *Aguilar, Spinelli*.
 
 **Point-level override rule:** a case bad on **fewer than all** taught points gets a
 composite reflecting its **principal holding** plus `point_overrides[]` for the divergent

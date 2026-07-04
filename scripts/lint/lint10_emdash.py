@@ -17,6 +17,15 @@ Exemptions (masked BEFORE counting):
   (b) CONTROLLED LABELS — the exact authority-weight label strings (A8),
       including the prefix forms that cover the mandatory circuit suffix;
   (c) frontmatter, fenced code, inline code, HTML comments.
+  (d) BLACK-LETTER RULE CALLOUTS — any Obsidian callout of type [!rule] (a line
+      beginning '> [!rule]' plus that callout's '> ' continuation lines) is
+      EXEMPT from the em-dash budget: black-letter rule text is a NEVER-APPLY
+      carve-out (S1 Appendix A / STYLE §3). Generic blockquotes are already
+      exempt via (a)'s blockquote boundary in _iter_blocks, so '> [!rule]'
+      callouts were ALREADY effectively exempt — this carve-out is made
+      EXPLICIT (see RULE_CALLOUT_RE + the rule-callout tracking in _iter_blocks)
+      so a future refactor of the blockquote handling cannot silently
+      un-exempt black-letter rules.
 
 Scope: rendered prose in content/**/*.md.
 
@@ -56,6 +65,10 @@ STRAIGHT_DQUOTE_RE = re.compile(r'"[^"]*"')
 CURLY_DQUOTE_RE = re.compile("“[^”]*”")   # “ ... ”
 LIST_MARKER_RE = re.compile(r"^\s*(?:[-*+]|\d+[.)])\s+")
 BLOCKQUOTE_RE = re.compile(r"^\s*>")
+# Obsidian [!rule] callout HEADER line (e.g. '> [!rule] Terry rule'). Its '> '
+# continuation lines carry black-letter rule text — a NEVER-APPLY carve-out
+# (S1 Appendix A / STYLE §3), EXEMPT from the em-dash budget. See _iter_blocks.
+RULE_CALLOUT_RE = re.compile(r"^\s*>\s*\[!rule\]", re.IGNORECASE)
 SENTENCE_END_RE = re.compile(r"[.!?]+(?=\s|$)")
 EXPECT_RE = re.compile(r"<!--\s*expect:\s*([A-Za-z-]+)\s*-->")
 
@@ -87,11 +100,29 @@ def _iter_blocks(body_lines, fenced):
 
     A block is a paragraph (contiguous non-blank prose lines) OR a single list
     item. Blank lines, fenced-code lines, and blockquote ('>') lines are
-    boundaries and are themselves excluded (blockquotes = direct quotation)."""
+    boundaries and are themselves excluded (blockquotes = direct quotation).
+
+    [!rule] callouts (black-letter rule text) are EXEMPT per S1 Appendix A /
+    STYLE §3. Generic blockquote lines are already boundaries above, so a
+    '> [!rule]' callout and its '> ' continuation lines are already effectively
+    exempt; the `rule_exempt` clause below makes that carve-out EXPLICIT and
+    self-standing — it marks rule-callout lines as boundaries on their own, so a
+    future refactor that drops the general blockquote boundary cannot silently
+    un-exempt black-letter rules."""
     block = []
+    in_rule_callout = False
     for i, line in enumerate(body_lines):
+        is_blockquote = bool(BLOCKQUOTE_RE.match(line))
+        # Track whether we are inside an Obsidian [!rule] callout: it opens on a
+        # '> [!rule]' header and continues through consecutive '> ' lines; any
+        # non-blockquote line (incl. a blank line) closes it.
+        if RULE_CALLOUT_RE.match(line):
+            in_rule_callout = True
+        elif not is_blockquote:
+            in_rule_callout = False
+        rule_exempt = in_rule_callout and is_blockquote
         boundary = (i in fenced) or (line.strip() == "") \
-            or bool(BLOCKQUOTE_RE.match(line))
+            or is_blockquote or rule_exempt
         if boundary:
             if block:
                 yield block

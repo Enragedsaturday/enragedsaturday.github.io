@@ -71,6 +71,14 @@ _BINDING_INCIRCUIT_RE = re.compile(r"^Binding in-circuit — %s$" % _CIRCUIT)
 _PERSUASIVE_OUTSIDE_RE = re.compile(
     r"^Persuasive \(outside circuit\) — %s$" % _CIRCUIT)
 
+# Prefix (start-anchored, no trailing `$`) forms of the two circuit-suffixed
+# labels — used by the prose candidate scanner (lane D) to decide whether a
+# bounded candidate BEGINS with a canonical label (canonical label + trailing
+# prose is valid — the "modulo the trailing-context trim" of A8's exact check).
+_BINDING_INCIRCUIT_PREFIX_RE = re.compile(r"Binding in-circuit — %s" % _CIRCUIT)
+_PERSUASIVE_OUTSIDE_PREFIX_RE = re.compile(
+    r"Persuasive \(outside circuit\) — %s" % _CIRCUIT)
+
 TIER_WORD_RE = re.compile(r"(?i)\b(?:binding|persuasive|historical)\b")
 
 # The inverted-label pattern (TEACH-04d) is an authority label written
@@ -237,12 +245,132 @@ def _weight_col(header):
     return None
 
 
+# --- lane D: conservative PROSE weight-label candidate scanner (A8 "every
+#     weight label site-wide") ---------------------------------------------
+#
+# Anchors on a capitalized tier word {Binding, Persuasive} IMMEDIATELY followed
+# (optionally through a recognized mid-qualifier: in-circuit / only / (outside
+# circuit)) by a dash separator — em (—), en (–), or spaced hyphen ( - ). That
+# tight anchor is what keeps ordinary prose ("Binding precedent — the court…",
+# "Persuasive authority — as always") from ever matching: a non-qualifier word
+# between the tier word and the dash breaks the anchor. Only Binding/Persuasive
+# are prose anchors; standalone "Historical" prose is NEVER a candidate (it is a
+# candidate ONLY inside a weight cell, which lane B already validates).
+_PROSE_ANCHOR_RE = re.compile(
+    r"\b(?:Binding|Persuasive)"
+    r"(?:\s+in-circuit|\s+only|\s+\(outside circuit\))?"
+    r"(?:\s*[—–]|\s+-\s+)")
+
+_STRAIGHT_DQUOTE_RE = re.compile(r'"[^"]*"')
+_CURLY_DQUOTE_RE = re.compile("“[^”]*”")   # “ ... ”
+
+
+def _blank_span(m):
+    return " " * (m.end() - m.start())
+
+
+def _mask_prose(line):
+    """Exempt (length-preserving) code spans, [[wikilink]] targets, and direct
+    quotations, then strip markdown emphasis, so the prose weight-label scanner
+    never fires inside code, a wikilink target, or quoted opinion text."""
+    line = c.INLINE_CODE_RE.sub(_blank_span, line)
+    line = c.WIKILINK_RE.sub(_blank_span, line)
+    line = _STRAIGHT_DQUOTE_RE.sub(_blank_span, line)
+    line = _CURLY_DQUOTE_RE.sub(_blank_span, line)
+    return _strip_emphasis(line)
+
+
+def _val_window(masked, anchor):
+    """Generous validation window from the tier word to the next table-cell `|`,
+    closing `]`, +80 chars, or EOL. Deliberately does NOT stop at a period, so a
+    canonical circuit suffix ('9th Cir.', 'D.C. Cir.') is never truncated."""
+    end = min(anchor + 80, len(masked))
+    for j in range(anchor, end):
+        if masked[j] in "|]":
+            end = j
+            break
+    return masked[anchor:end]
+
+
+def _begins_with_canonical(window):
+    """True iff `window` BEGINS with an exact A8 allowlist label at a clean
+    right boundary (next char non-alphanumeric, or end-of-window). This is A8's
+    exact validation 'modulo the trailing-context trim': a canonical label
+    followed by ordinary prose validates and is NOT flagged."""
+    def clean(i):
+        return i >= len(window) or not window[i].isalnum()
+    for lbl in _EXACT_LABELS:
+        if window.startswith(lbl) and clean(len(lbl)):
+            return True
+    for rx in (_BINDING_INCIRCUIT_PREFIX_RE, _PERSUASIVE_OUTSIDE_PREFIX_RE):
+        m = rx.match(window)
+        if m and clean(m.end()):
+            return True
+    return False
+
+
+def _candidate_str(window):
+    """A bounded, readable candidate substring for the violation message: stop
+    at a sentence-ending period (period + space/EOL), a `|`/`]`, or 60 chars."""
+    cut = min(len(window), 60)
+    for j, ch in enumerate(window[:cut]):
+        if ch in "|]":
+            cut = j
+            break
+        if ch == "." and (j + 1 >= len(window) or window[j + 1] == " "):
+            cut = j
+            break
+    return window[:cut].strip()
+
+
+def _scan_prose_candidates(path, body_lines, fenced, start, skip_lines, out):
+    for i, line in enumerate(body_lines):
+        if i in fenced:
+            continue
+        lineno = start + i
+        if lineno in skip_lines:                 # lane B already validated
+            continue
+        masked = _mask_prose(line)
+        seen = set()
+        for m in _PROSE_ANCHOR_RE.finditer(masked):
+            window = _val_window(masked, m.start())
+            if _begins_with_canonical(window):
+                continue                         # canonical label — OK
+            cand = _candidate_str(window)
+            if not cand or cand in seen:
+                continue
+            seen.add(cand)
+            out.append(c.make_violation(
+                LINT, path, lineno, c.HIGH,
+                "authority-weight label '%s' (prose) fails the S1 A8 allowlist: "
+                "%s [R10/A8]" % (cand, _defect_class(cand))))
+
+
+def _is_exact_label(s):
+    """True iff s is exactly one of the six A8 allowlist strings."""
+    return (s in _EXACT_LABELS
+            or bool(_BINDING_INCIRCUIT_RE.match(s))
+            or bool(_PERSUASIVE_OUTSIDE_RE.match(s)))
+
+
 def check_file(path):
     out = []
     text = c.read_text(path)
     fm, body, start = c.split_frontmatter(text)
     body_lines = body.split("\n")
     fenced = c.fenced_line_numbers(body_lines)
+
+    # (e) frontmatter authority_weight — exact allowlist (F-S1-05 round-2).
+    # S2's projector derives this field from court_level (valid by
+    # construction) and LINT-12 catches drift on promoted pages, but `draft`
+    # pages are drift-exempt — a hand-authored bogus weight on a draft page
+    # would otherwise pass every gate until promotion. Fail it here.
+    aw = fm.get("authority_weight")
+    if isinstance(aw, str) and aw.strip() and not _is_exact_label(aw.strip()):
+        out.append(c.make_violation(
+            LINT, path, 1, c.HIGH,
+            "frontmatter authority_weight '%s' fails the S1 A8 allowlist: "
+            "%s [R10/A8]" % (aw.strip(), _defect_class(aw.strip()))))
 
     # (a) banned phrase anywhere (skip code fences) — unchanged
     for i, line in enumerate(body_lines):
@@ -295,6 +423,13 @@ def check_file(path):
                     "[TEACH-04d]"))
                 break
             pos = scan.find(EM, pos + 1)
+
+    # (d) conservative PROSE candidate scanner (A8 "every weight label
+    #     site-wide"): tier-word-led candidates in prose validated exactly
+    #     against the allowlist (modulo trailing-context trim). Skips lines
+    #     already flagged as weight cells by lane (b).
+    _scan_prose_candidates(path, body_lines, fenced, start,
+                           weight_cell_lines, out)
     return out
 
 

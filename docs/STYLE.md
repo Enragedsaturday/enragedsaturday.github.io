@@ -127,7 +127,10 @@ drift).
   (*probable cause ↛ reasonable suspicion*; *seizure ↛ stop ↛ detention*). Not machine-
   enforced — reviewer judgment (CHECKLIST:D5).
 - Every non-vernacular term links to `Common Legal Terms` (STANDARDS N11); the register's
-  `glossary:` field names the target anchor.
+  `glossary:` field names the target anchor. **Definitions live once, in the glossary** —
+  the `glossary:` binding is how a register entry meets R11's "canonical
+  spelling/definition" pair without duplicating definition text (definition coverage +
+  anchor resolution are enforced from the S8 glossary audit onward).
 - **Single-source transclusion (STANDARDS SR-14):** each rule/term is stated once as a
   canonical block-ref-anchored node and transcluded (`![[…]]`) everywhere else — never
   re-paraphrased. The shingle detector (≥25 overlapping tokens) fails CI on raw

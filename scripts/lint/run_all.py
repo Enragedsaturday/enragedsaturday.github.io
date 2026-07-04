@@ -52,6 +52,26 @@ def main():
 
     rows = []
     total_high = 0
+
+    # Fail-closed self-test gate (S1 A3 / F-S1-08): LINT-10's self-test must
+    # pass BEFORE we trust the corpus scan. A broken em-dash lint must never
+    # green-light a publish, so a self-test failure becomes a synthetic HIGH
+    # violation and forces a nonzero exit. self_test() prints its own
+    # [self-test] diagnostics to stderr (visible even under --quiet) and returns
+    # 0 on pass, 1 on failure — it never raises.
+    selftest_viols = []
+    if l10.self_test() != 0:
+        selftest_viols.append(c.make_violation(
+            "LINT-10", l10.FIXTURE, 1, c.HIGH,
+            "LINT-10 self-test FAILED — the em-dash lint is broken; refusing to "
+            "certify the corpus scan (fail-closed) [S1 A3/F-S1-08]"))
+    if not quiet:
+        c.emit(selftest_viols)
+    st_high = sum(1 for v in selftest_viols if v["severity"] == c.HIGH)
+    total_high += st_high
+    rows.append(("SELFTEST", "LINT-10 self-test gate (S1 A3, fail-closed)",
+                 len(selftest_viols), st_high, 0, 0))
+
     for name, desc, run_fn in LINTS:
         violations = run_fn(paths)
         if not quiet:

@@ -46,6 +46,12 @@ LINT = "LINT-6"
 TREATMENT_HEADER_RE = re.compile(
     r"\b(treatment|good\s*law|good-law|status)\b", re.IGNORECASE)
 
+# FIELD_I_ENUM — the machine enum for treatment.field_i_validity. These tokens
+# follow the S2 record schema (S2 spec R5); they are the ONLY values valid as
+# STORED frontmatter. PRACTICES §2's slash-composites (history/neutral,
+# questioned/overruling_risk, superseded/not_current) are DISPLAY NAMES of these
+# same underlying values — they are for rendering only and are INVALID as stored
+# values. A stored 'history/neutral' etc. is out-of-enum here and fails (a).
 FIELD_I_ENUM = {"good_law", "history", "caution",
                 "questioned", "superseded", "unverified"}
 LEGACY_ENUM = {"good", "criticized", "limited", "abrogated", "overruled"}

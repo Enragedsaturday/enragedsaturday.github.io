@@ -42,3 +42,12 @@ Under the authority-weight lexicon the tier reads Binding — SCOTUS as a contro
 
 <!-- expect: fail -->
 - A single list item that spends two em-dashes — one — and then two, which exceeds the per-item budget.
+
+<!-- expect: pass -->
+> [!rule] Terry stop standard
+> An officer may stop and briefly detain a person — a seizure — on reasonable, articulable suspicion; these two em-dashes sit in a black-letter [!rule] callout and are exempt (S1 Appendix A / STYLE §3).
+
+<!-- expect: pass -->
+> [!rule] Search defined
+> A Fourth Amendment search occurs — under Katz —
+> when government intrudes on a reasonable expectation of privacy, and the two em-dashes on the continuation line stay exempt across the whole rule callout.
