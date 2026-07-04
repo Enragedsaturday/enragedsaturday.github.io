@@ -7,8 +7,9 @@ import { QuartzPluginData } from "../plugins/vfile"
 import { FilePath, FullSlug, resolveRelative, simplifySlug, slugifyFilePath } from "../util/path"
 
 // S4 · R5 — the pill/anchor target: ONE exported constant (audit COH-18; S3's
-// restructure re-homes the page, at which point this is the one edit).
-export const GOOD_LAW_SLUG = "2-legal-system-research/Verifying-Good-Law" as FullSlug
+// restructure re-homed the page 2026-07-04 — this was the one edit, and
+// LINT-26 caught the stale path live, exactly as designed).
+export const GOOD_LAW_SLUG = "legal-system-research-and-reference/Verifying-Good-Law" as FullSlug
 
 // Canonical good-law treatment axis (S1 §3.D / N13). Kept STRICTLY separate from the
 // orthogonal authority-weight axis — the two are never merged.
