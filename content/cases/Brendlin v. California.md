@@ -21,7 +21,7 @@ courtlistener:
   opinion_id: 145712
   identity_checked: true
 homes:
-  - page: "[[Standing to Challenge a Search]]"
+  - page: "[[Traffic Stops]]"
     role: "Key — Progeny / Refinement"
 related: ["[[Rakas v. Illinois]]", "[[Delaware v. Prouse]]", "[[California v. Hodari D.]]"]
 aliases: []

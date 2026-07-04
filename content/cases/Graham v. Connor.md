@@ -21,7 +21,7 @@ courtlistener:
   opinion_id: 112257
   identity_checked: true
 homes:
-  - page: "[[Section 1983 Liability and Qualified Immunity]]"
+  - page: "[[Use of Force]]"
     role: "Key — Anchor"
 related: ["[[Tennessee v. Garner]]", "[[Scott v. Harris]]", "[[Saucier v. Katz]]"]
 aliases: []

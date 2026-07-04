@@ -21,7 +21,7 @@ courtlistener:
   opinion_id: 107564
   identity_checked: true
 homes:
-  - page: "[[Standing to Challenge a Search]]"
+  - page: "[[Reasonable Expectation of Privacy]]"
     role: "Key — Anchor"
 related: ["[[United States v. Jones]]", "[[Carpenter v. United States]]", "[[Rakas v. Illinois]]", "[[Smith v. Maryland]]"]
 aliases: []

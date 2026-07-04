@@ -24,8 +24,13 @@ const categoryExplorer = Component.Explorer({
   folderDefaultState: "collapsed",
   folderClickBehavior: "collapse",
   useSavedState: true,
-  // About is footer-owned (S4); keep it (and tags) out of the tree
-  filterFn: (node) => node.slugSegment !== "tags" && node.slugSegment !== "about",
+  // About is footer-owned (S4); keep it (and tags) out of the tree.
+  // S3 R8: cases/ is unlisted from the explorer (the Case Index routes);
+  // files stay frozen at their URLs (R13(b)) — display-only filtering.
+  filterFn: (node) =>
+    node.slugSegment !== "tags" &&
+    node.slugSegment !== "about" &&
+    node.slugSegment !== "cases",
   // S4 · R3 — weight-reading sort (closure-free; serialized to the client).
   sortFn: (a, b) => {
     const wa = a.data?.weight ?? Infinity
