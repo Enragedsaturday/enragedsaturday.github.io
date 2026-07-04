@@ -156,8 +156,10 @@ function createFolderNode(
   // never a bare character-slice — otherwise folder `searches` spuriously "contains"
   // `searches-incident/...` and auto-opens. Load-bearing under A8's unnumbered slugs.
   const simpleFolderPath = simplifySlug(folderPath)
+  const simpleCurrentSlug = simplifySlug(currentSlug)
   const folderIsPrefixOfCurrentSlug =
-    simpleFolderPath === currentSlug || currentSlug.startsWith(simpleFolderPath + "/")
+    simpleCurrentSlug === simpleFolderPath ||
+    simpleCurrentSlug.startsWith(simpleFolderPath + "/")
 
   if (isSubtree || !isCollapsed || folderIsPrefixOfCurrentSlug) {
     folderOuter.classList.add("open")
