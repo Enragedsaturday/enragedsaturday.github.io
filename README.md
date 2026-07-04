@@ -43,4 +43,4 @@ This note exists so a future contributor doesn't "helpfully" merge v5 and undo t
 
 ---
 
-Built on [jackyzha0/quartz](https://github.com/jackyzha0/quartz) (MIT) — see the fork posture above before pulling framework updates.
+Built on [jackyzha0/quartz](https://github.com/jackyzha0/quartz) (MIT) — see the fork posture above before considering a cherry-picked upstream fix (routine framework updates are never pulled).

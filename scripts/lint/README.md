@@ -28,7 +28,10 @@ Every lint:
 | `lint6_treatment_status.py` | **LINT-6** | **N13, D3** | Every `type: case` page carries a non-blank `treatment.status` + `as_of`; every Case-Index row has a non-blank treatment cell. |
 | `lint7_glossary.py` | **LINT-7-AUTO** | **N11, D13** | The automatable half of S7·R10 (a–d): `[[Common Legal Terms#x]]` / `[[Reading and Citing Cases#x]]` anchors resolve; no term linked >1×/page. *(Novel-term discovery + definition accuracy are CHECKLIST-only — S1 §9.)* |
 | `lint8_guardrails.py` | **LINT-8** | **D6** | No apocryphal Holiday/McCall(/Smith) trio (the real `United States v. Smith` geofence case is legit); mnemonics carry no citation; no inline `## Flashcards` heading. |
-| `run_all.py` | runner | — | Runs the **non-CL** lints (2–8) over `content/` and prints a per-lint violation summary. |
+| `lint9_carat_leak.py` | **LINT-9** | **L1, D7, D13** | Carat-leak: `^pin-N` block-ref anchors must never render as visible text — zero MID-LINE block anchors (end-of-line anchors are masked by Quartz and legal). Content remediation of the existing ~300 leaks is S8 R6's; this is the steady-state guard (S9 R8 #9). |
+| `lint10_emdash.py` | **LINT-10** | **SR-13, D9** | Prose em-dash budget (S1 A7/A8): unit = block (paragraph/list item); >1 per block or 2+ per sentence fails; direct quotations, controlled labels, and `[!rule]` callouts exempt. Ships `fixtures/lint-10.md` + `--self-test` (run fail-closed by the runner). |
+| `lint26_goodlaw_target.py` | **LINT-26** | **S4 R5** | The exported `GOOD_LAW_SLUG` constant (treatment-pill target) is the EXACT Quartz FullSlug of a real content page — a stale path fails the build instead of shipping dead pill links. (Alias `LINT-S4-goodlaw-target`; S9 R8 row 26.) |
+| `run_all.py` | runner | — | Runs the **non-CL** lints (2–10, 26) over `content/`, LINT-10 self-test first (fail-closed), and prints a per-lint violation summary. |
 | `_common.py` | shared lib | — | Frontmatter parsing (stdlib YAML subset), corpus page/anchor index, shared regexes, JSON-line emission. |
 
 ## LINT-1 is serial-CL-gate-only (L4)

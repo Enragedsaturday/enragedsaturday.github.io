@@ -1,10 +1,13 @@
 #!/usr/bin/env python3
 """
-Runner for the NON-CL CSSI lints (LINT-2,3,4,5,6,7,8) over content/.
+Runner for the NON-CL CSSI lints (LINT-2,3,4,5,6,7,8,9,10 + LINT-26) over
+content/. LINT-10's fixture self-test runs first, fail-closed (S1 A3). The
+full numeric roster LINT-1…30 is codified at S9 (S9 R8); rows land here as
+their owning specs execute.
 
 LINT-1 (CourtListener identity) is DELIBERATELY EXCLUDED here: it touches the
-network and must run only through the single serial CL lane at the publish gate
-(S1 L4). This runner never makes a CL call.
+network and must run only through its assigned serial credential lane at the
+publish gate (S1 L4'). This runner never makes a CL call.
 
 Prints each lint's JSON-line violations (unless --quiet) and a per-lint summary
 table. Exits non-zero if any lint reports a high-severity violation.

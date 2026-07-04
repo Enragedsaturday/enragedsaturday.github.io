@@ -17,7 +17,15 @@ real content page — so a stale constant (page renamed/moved without updating
 Checks (either ⇒ HIGH, exit 1):
   (1) the `GOOD_LAW_SLUG` constant cannot be parsed from caseHelpers.ts
       (renamed / deleted / reshaped — the mechanism is unwired), OR
-  (2) its slug value does not resolve to any page via the shared CorpusIndex.
+  (2) its slug value is not the EXACT Quartz FullSlug of any content page.
+      Exact-route matching (F-S4-01): the constant is emitted as a raw href
+      ("/" + GOOD_LAW_SLUG) and via resolveRelative — Quartz does NOT resolve
+      it by basename like a wikilink, so a stale FOLDER PATH 404s in the build
+      even though the page exists. We mirror quartz/util/path.ts sluggify()
+      exactly (per segment: \\s→"-", &→"-and-", %→"-percent", strip ? and #;
+      case preserved; .md dropped) and require set membership. A
+      basename-resolvable-but-wrong-path constant reports the correct path in
+      the violation message.
 
 Not a content scan: the `paths` scoping arg is accepted and ignored (the target
 is a fixed source constant + the whole corpus).
@@ -75,17 +83,50 @@ def run(paths=None):  # noqa: ARG001 (roster signature; scoping arg ignored)
             "exported constant GOOD_LAW_SLUG not found in %s — the good-law pill "
             "target is unresolvable (fail-closed) [S4 R5]" % CASEHELPERS_REL)]
 
-    idx = c.build_corpus_index()
-    stem = idx.resolve(slug)
-    if stem is None:
-        return [c.make_violation(
-            LINT, src_path, const_line, c.HIGH,
-            "GOOD_LAW_SLUG = \"%s\" does not resolve to any content page — the "
-            "treatment pills point at a dead link; re-home the page or update the "
-            "one constant (fail-closed) [S4 R5]" % slug)]
+    # exact-route validation (F-S4-01): build the set of real Quartz FullSlugs
+    exact_slugs = {}
+    for page in c.iter_markdown_files(None):
+        rel = os.path.relpath(page, c.CONTENT_ROOT)
+        full_slug = _quartz_full_slug(rel)
+        exact_slugs[full_slug] = rel
 
-    # resolved — no violation
-    return []
+    if slug in exact_slugs:
+        return []  # exact route exists — no violation
+
+    # not an exact route: diagnose whether the page exists elsewhere
+    idx = c.build_corpus_index()
+    stem = idx.resolve(slug.split("/")[-1].replace("-", " "))
+    hint = ""
+    if stem is not None:
+        for fs, rel in exact_slugs.items():
+            if os.path.splitext(os.path.basename(rel))[0] == stem:
+                hint = (" — the page exists at \"%s\"; update the one constant "
+                        "to that exact path" % fs)
+                break
+    return [c.make_violation(
+        LINT, src_path, const_line, c.HIGH,
+        "GOOD_LAW_SLUG = \"%s\" is not the exact FullSlug of any content page "
+        "(emitted as a raw href, so this 404s in the build)%s (fail-closed) "
+        "[S4 R5]" % (slug, hint))]
+
+
+def _quartz_full_slug(rel_md_path):
+    """Mirror quartz/util/path.ts slugifyFilePath()+sluggify() for .md files:
+    strip the extension, then per path segment: whitespace→'-', '&'→'-and-',
+    '%'→'-percent', strip '?' and '#'; case preserved; '/' separators."""
+    p = rel_md_path.replace(os.sep, "/")
+    if p.endswith(".md"):
+        p = p[:-3]
+    segs = []
+    for seg in p.split("/"):
+        seg = re.sub(r"\s", "-", seg)
+        seg = seg.replace("&", "-and-").replace("%", "-percent")
+        seg = seg.replace("?", "").replace("#", "")
+        segs.append(seg)
+    slug = "/".join(segs).rstrip("/")
+    if slug.endswith("_index"):
+        slug = slug[: -len("_index")] + "index"
+    return slug
 
 
 if __name__ == "__main__":

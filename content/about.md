@@ -1,8 +1,6 @@
 ---
 title: "About This Site"
 type: reference
-aliases:
-  - About this reference
 ---
 
 This is a **teaching reference on federal search-and-seizure law**: the case law of the
