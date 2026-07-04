@@ -1,0 +1,28 @@
+{
+  "schema": "o2.wave-review.v1",
+  "wave": 1,
+  "spec": "S2",
+  "reviewed": ["scripts/s2/ingest.py", "_overhaul2/lake/_schema.json", "_overhaul2/lake/_advisory.json", "_overhaul2/lake/_reporter-precedence.json", "_overhaul2/lake/_treatment-migration.json", "_overhaul2/lake/_manifest.json", "_overhaul2/lake/README.md"],
+  "writer_lane": {"lane": "codex-builder", "model": "gpt-5.5", "effort": "xhigh", "sandbox": "workspace-write (offline authoring)"},
+  "review_lane": {"lane": "codex-review-2nd", "model": "gpt-5.5", "effort": "xhigh", "sandbox": "read-only", "round1": "scratchpad/s2-review-codex.md", "round2": "scratchpad/s2-rereview-codex.md"},
+  "adjudicator": {"lane": "orchestrator", "model": "claude-fable-5"},
+  "findings": [
+    {"id": "F-S2-01", "severity": "high", "verdict": "UPHELD", "summary": "resume was run-id-scoped — every relaunch re-burns treatment quota", "fix": "stable manifest build_id + default resume from manifest lane_status + journal", "status": "fixed", "verified": "round-2 FIXED"},
+    {"id": "F-S2-02", "severity": "high", "verdict": "UPHELD", "summary": "skipped identity step fell through to not_found", "fix": "load existing record / replay journaled selection; missing replay blocks", "status": "fixed", "verified": "round-2 FIXED"},
+    {"id": "F-S2-03", "severity": "high", "verdict": "UPHELD", "summary": "no partial cursors mid-treatment-lane; kill re-burns scanned pages", "fix": "journal partial(cursor) per page before next call; session expiry inside loop", "status": "fixed", "verified": "round-2 FIXED"},
+    {"id": "F-S2-04", "severity": "high", "verdict": "UPHELD", "summary": "generic extract_id let cluster_id reach /opinions/ (the A1 scar)", "fix": "opinion-id-only extractors; cluster_id-only dicts rejected", "status": "fixed", "verified": "round-2 FIXED"},
+    {"id": "F-S2-05", "severity": "high", "verdict": "UPHELD", "summary": "builder wrote verified alongside unverified treatment (schema-invalid; A13 unapplied)", "fix": "builder never self-verifies; migration table actually seeds Field-I; under_review until R15 gates", "status": "fixed", "verified": "round-2 FIXED"},
+    {"id": "F-S2-06", "severity": "high", "verdict": "UPHELD", "summary": "40 manifest rows carried circuit/state-high/state-app outside the schema court enum — lane filters dead", "fix": "single court-class normalizer at manifest load + search + precedence + binding filters; manifest migrated in place", "status": "fixed", "verified": "round-2 FIXED (bad_levels [])"},
+    {"id": "F-S2-07", "severity": "high", "verdict": "UPHELD", "summary": "token bucket allowed 27-call first minute (literal ≤14/min violated)", "fix": "capacity-1 paced limiter at 60/rate+epsilon; same shape for analyze_citations", "status": "fixed", "verified": "round-2 FIXED (burst math re-done)"},
+    {"id": "F-S2-08", "severity": "med", "verdict": "UPHELD", "summary": "citation-step downgrade masked fabrication_suspected/not_found/blocked", "fix": "fail-closed status preservation in set_record_status", "status": "fixed", "verified": "round-2 FIXED"},
+    {"id": "F-S2-09", "severity": "med", "verdict": "UPHELD", "summary": "lane cap hits journaled but absent from record derivation trail", "fix": "cap_hit + final_cursor + audit_needed stored in treatment.derivation[lane]", "status": "fixed", "verified": "round-2 FIXED"},
+    {"id": "F-S2-10", "severity": "high", "verdict": "UPHELD", "summary": "loop-2 regression: new-schema pre-seeded treatment (Belton/Smith planning projections) fell to blocked/unverified — seeder keyed only legacy status", "fix": "legacy-status-first, then valid field_i_validity accepted with overrides/dates carried (under_review); neither-key/unverified -> blocked per A13(a); self-test on real frontmatter", "status": "fixed", "verified": "round-3 FIXED; CLEAR-TO-SMOKE: yes", "loops": 3}
+  ],
+  "roster_delta_attribution": {
+    "pages": "457→458: United States v. Smith (2024) authored at the S6 interview (roster row self-closed)",
+    "scan_rows": "89→94: Carroll v. Carman, Morgan v. Fairfield County, People v. Frederick, State v. Christensen (all S6 A1 planning-time discoveries, named in Knock-and-Talk mockup content) + Carman v. Carroll (lower-court caption, S6 dedupe adjudication) + Morse v. French (cert-denial caption of French v. Merrill, S6 relevance gate)",
+    "unexplained": "none"
+  },
+  "loops_run": 3,
+  "outcome": "CLEAR-TO-SMOKE: yes (2026-07-04); smoke = Terry + Chatrie, ≤40 calls each, builder lane"
+}
