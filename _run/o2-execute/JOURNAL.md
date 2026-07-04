@@ -227,6 +227,31 @@ evidence. **Cadence resumed: 150-min sessions, relaunched per the recipe above a
 end-of-session checkpoint review; anomalies surface by exception.** At ~500 calls/hr the lake
 lands in ~2–3 days of sessions. Wave 3 (S6 → S7 → S8) opens on lake completion + R15 build-QA.
 
+### S2 session-3 gate: pipeline PASS, 5 fail-closed flags → F-S2-16/17/18 fix loop (2026-07-04)
+
+Session 3 (150 min, 1,265 calls, 3,431 cumulative vs ~23k, 0×429, min 4s/median 6s, clean
+boundary exit at California v. Greenwood): 34 new completions committed (b479fb8), roster now at
+50 under_review / 496 pending. **But 5 rows landed fail-closed and all five are code-defect
+false flags, adjudicated from record + journal + cached-response evidence + live CL-MCP
+spot-checks:** (a) **F-S2-16** — the caption gate is exact slug equality vs CL canonical and
+outranks the PASSED two-key: Bivens/Earls/Brower had citation+party-in-text confirmed on the
+correct clusters and were still branded fabrication_suspected (CL canonicals are the long-form
+captions). (b) **F-S2-17** — normalize_cite strips only bare "(YYYY)": every COA/state expected
+citation shaped "283 F.3d 1040 (9th Cir. 2002)" silently fails the citation key (Benn; its
+party key is genuinely false — "Lambert", the habeas warden, appears 0× in the opinion body —
+so post-fix Benn correctly lands under_review/name+docket). (c) **F-S2-18** — one
+case_name-filtered search then not_found: Birchfield's CL canonical is the mangled consolidated
+caption "Birchfield v. N. Dakota. William Robert Bernard" (cluster 3216497); a q= or citation=
+fallback finds it (verified live). Fix semantics + a --readjudicate mechanism for the 5 rows
+specced in `_run/o2-execute/S2-FIX-16-18-WORKORDER.md`; Codex builder fix lane dispatched;
+ledger rows appended. Session 4 relaunches after fix + read-only re-review, with the 5-row
+re-adjudication as its pre-step.
+
+*Harness note:* this session's permission mode denied `-c approval_policy=never` on codex
+launches; lanes now run with codex exec's default fail-closed approvals (escalations auto-deny)
+inside the same sandbox configs — functionally identical for our recipes, which never request
+escalations.
+
 ### ⚠️ DEVIATION — pool storage root (user-visible, reversible)
 
 The signed pool root `/Volumes/AIStore2` (S2 A10) does not exist; the AIStore2 APFS volume is
