@@ -124,7 +124,10 @@ def _quartz_full_slug(rel_md_path):
         seg = seg.replace("?", "").replace("#", "")
         segs.append(seg)
     slug = "/".join(segs).rstrip("/")
-    if slug.endswith("_index"):
+    # Quartz endsWith(s, "_index") is SEGMENT-aware (s === "_index" or
+    # s.endsWith("/_index")) — "foo_index" is NOT rewritten, only a final
+    # segment that is exactly "_index".
+    if slug == "_index" or slug.endswith("/_index"):
         slug = slug[: -len("_index")] + "index"
     return slug
 
