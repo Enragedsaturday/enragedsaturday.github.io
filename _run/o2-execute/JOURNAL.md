@@ -156,6 +156,32 @@ from the emitted HTML set, commit 5519c69) — S3 A1/R13 satisfied. Sequencing: 
 materialization first (content/ structure), S5 table conversion after the tree settles (both
 touch content/); S5 component work was already landed by the mockups + S4.
 
+### Wave-2 progress (2026-07-04, continued)
+
+**S3-P1 TREE MIGRATION LANDED (commit aa9b6a6):** 13 unnumbered categories (weights 10–130 =
+Appendix A order, independently verified from contentIndex), 48 moves with full old-path aliases,
+41 placed-empty nodes, de-rip relabels, cases/ frozen (0 renames) + router index + explorer
+unlisting (filterFn, added by orchestrator — the lane correctly flagged it out of its scope),
+master index regenerated. Verification: crawl **1336/1336 independently re-confirmed by the
+orchestrator**, deck stems 44/44, lint5 HIGH unchanged, clean build 571 files. Two-Definitions
+split deferred-as-index (no clean severance; children placed empty; S7 extracts). Known
+transients for S7: index pages holding full content while split children are empty;
+[[Qualified Immunity]] resolves to §1983's alias until QI is authored. A planning-session
+leftover `quartz build --serve` watcher was killed (it raced our builds); legacy :8787 server
+left running (its retirement is the Wave-4 R8 step).
+
+**S5 tooling review:** 11 findings (10 blocking) — all UPHELD. **F-S5-11 was the live proof of
+the fail-closed design: the migration moved Verifying Good Law and LINT-26 caught the stale
+GOOD_LAW_SLUG, naming the correct new path in its message; one-constant edit, green (7f4db81).**
+F-S5-01..10 (converter damage classes, LINT-15/16 FP/FN classes, host whitelist, typed-page
+fail-closed) dispatched to a fresh fix lane with adjudicated semantics (required doctrine
+sections = callout + Brief + Key cases + Sources; placed-empty draft stubs exempt until authored).
+
+**In flight:** S2 paced session 1 (gate-checked before session 2) · S5 fix lane · S3-P2
+overview prose · S3-P3 point registry + binding map (granularity mints come back to the
+orchestrator for adjudication). S3-P4 (the six S3 lints → LINT-18..25) waits for the S5 fix
+lane to settle _common.py.
+
 ### ⚠️ DEVIATION — pool storage root (user-visible, reversible)
 
 The signed pool root `/Volumes/AIStore2` (S2 A10) does not exist; the AIStore2 APFS volume is
