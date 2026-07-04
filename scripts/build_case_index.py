@@ -39,7 +39,7 @@ REPO = os.path.normpath(os.path.join(HERE, ".."))
 sys.path.insert(0, os.path.join(HERE, "lint"))
 import _common as c  # noqa: E402
 
-INDEX = os.path.join(REPO, "content", "2-legal-system-research", "Case Index.md")
+INDEX = os.path.join(REPO, "content", "legal-system-research-and-reference", "Case Index.md")  # re-pointed at the S3 migration (2026-07-04)
 CASES_GLOB = os.path.join(REPO, "content", "cases", "*.md")
 BRIEF_QUEUE = os.path.join(REPO, "_overhaul", "coverage", "brief-mention-queue.md")
 EXPORT_MARK = "CASE-INDEX-EXPORT"
