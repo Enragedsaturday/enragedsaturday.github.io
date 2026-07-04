@@ -14,10 +14,13 @@ SCOTUS, or (iii) carries a U.S./S. Ct. reporter cite as the entry's own cite. A 
 `SCOTUS` token on a circuit-subject line (subsequent-history status label) does NOT fire.
 
 **Expected under the rewritten check: TP-1..TP-4 fire HIGH; FP-1/FP-2 do not.**
-**Baseline (current token-window lint, 2026-07-04): fires HIGH on all six shapes** — the two
-descriptor-only shapes are its known over-detection (and its 45-char window is separately known
-to under-detect; both die with the rewrite). Do NOT patch the window heuristic — the panel killed
-that fix (breaks true positives two ways; see f-001.adjudication.json).
+**Baseline (current token-window lint):** on the pre-rename fixture (`## Recent developments`,
+2026-07-04) it fired HIGH on all six shapes — the two descriptor-only shapes are its known
+over-detection, and its 45-char window separately under-detects; both die with the rewrite.
+After the coherence-pass heading rename below (TEACH-08), the current lint scopes NOTHING here
+(its `recent-dev*` hints don't know the successor heading) — a third defect the rewrite fixes.
+Do NOT patch the window heuristic — the panel killed that fix (breaks true positives two ways;
+see f-001.adjudication.json).
 
 ## The Brief
 
@@ -28,7 +31,11 @@ Filler brief section so the section-order check stays quiet.
 | Case | Holding | Opinion |
 | --- | --- | --- |
 
-## Recent developments
+## Lower-court developments
+
+<!-- Heading per TEACH-08/S5 R11 (the frontier section's post-S7 name). The rewritten LINT-3
+must scope this check to BOTH `Lower-court developments` (current) and the legacy
+`Recent developments` (whose survival post-S7 is itself a LINT-15 rename violation). -->
 
 - **TP-1 (FIRES — own U.S. reporter cite): *Riley v. California*, 573 U.S. 373 (2014)** — a SCOTUS holding narrated inside the frontier section.
 - **TP-2 (FIRES — explicit court tag): *Torres v. Madrid* (SCOTUS 2021)** — explicit designation, no preceding circuit reference.

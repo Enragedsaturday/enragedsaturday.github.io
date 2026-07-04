@@ -445,6 +445,24 @@ relitigation, no deck work, no content redesign).
 
 ---
 
+## Amendments — 2026-07-04 (coherence pass)
+
+### A1 — Three clarifications (no text superseded; found by the cross-spec sweep)
+1. **R8 rows 18–25, explicit mapping:** LINT-18 depth · LINT-19 overview · LINT-20 points ·
+   LINT-21 binding · LINT-22 derip · LINT-23 order/weight · LINT-24 urls · LINT-25 deck (the
+   S3 set, in the order listed; EXECUTE registers exactly these ids).
+2. **R9(c) under the S2-A14 contingency** (S8 §9: builder schema freeze predating A14): the
+   fragment string may live in the S8 link ledger until the next lake build; R9(c)'s trace then
+   runs ledger row → lake `pinpoints[].quote` (the G3-passed quote is in the lake either way),
+   and the "lake field present" check defers to the next lake build. Zero-fragments-on-tier-3
+   is unconditional.
+3. **LINT-1's credential (L4′):** the full-roster LINT-1 identity batch at the serial gate
+   executes **under the builder credential** (serial, paced, journaled — the S6 R7 queue
+   pattern); the **Claude MCP lane** carries the ≥1-in-10 judgment slice (COH-17). Two lanes,
+   two credentials, never crossed.
+
+---
+
 ## Cross-spec notes filed with this spec
 
 **S2 § (roster rename record).** `LINT-S2-schema` ≡ **LINT-13**, `LINT-S2-drift` ≡ **LINT-12**,

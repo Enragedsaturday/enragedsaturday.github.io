@@ -40,7 +40,12 @@ spec inherits) · **`CL-DATA-INVENTORY.md`** (exactly what CourtListener gives u
   3. **borderline-relevance sign-off** (S6);
   4. **content hotfixes during planning**;
   5. officer-summary approvals — **moot**: S1 banned the artifact project-wide (S1 §2.2/R6);
-  6. the **release gate** (S9).
+  6. the **release gate** (S9);
+  7. the **volume/scope-guard pauses the specs define** (added at the coherence pass 2026-07-04 —
+     they existed in signed spec text but were missing from this enumeration): S6 §9 (frontier
+     yield >150 pages) · S7 §9 (>10 tier promotions) · S9 R7 (>10 new pages from completeness
+     instruments) · S9 R7.5 (the sampled-frontier **tripwire** firing the full 13-category
+     re-run — pause + surface evidence and revised wall-clock before proceeding).
   *Entries:* **2026-07-02** content hotfix (Chatrie + Third-Party) — user-approved. **2026-07-03**
   deploy decision: hotfix commit `be02044` ships with the full-bundle deploy after EXECUTE — no
   interim push to main (user-decided; the pre-deploy live site knowingly retains the pre-fix pages).
@@ -569,7 +574,11 @@ exact CourtListener fields/calls per data element (the S2 schema).
 | S8 Legal-Term & Case Linking | ✅ | ✅ |
 | S9 Verification Pipeline & Release Gate | ✅ | ✅ |
 
-*Coherence pass over all nine → one autonomous EXECUTE run (data-lake first).*
+*Coherence pass over all nine: ✅ **PASSED 2026-07-04** — `_overhaul2/COHERENCE-REPORT.md`
+(18 findings: 4 fixed-now · 3 amended:S9 · 2 covered · 9 no-defect; zero user-decision
+conflicts) + the **AUDIT-CLOSURE gate STAMPED PASS** by the adversarial non-writer lane
+(162/162 rows · 58/58 injected IDs, 61/61 legs). Next: the one autonomous EXECUTE run
+(data-lake first) — launcher: `_overhaul2/wrappers/EXECUTE.wrapper.md`.*
 
 **AUDIT-CLOSURE gate (blocking — part of the coherence pass).** The coherence pass **FAILS** if
 either check fails:
