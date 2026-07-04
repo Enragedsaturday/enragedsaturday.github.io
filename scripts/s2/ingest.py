@@ -31,6 +31,40 @@ SCHEMA_VERSION = "s2.v1"
 URL_TIMEOUT_SECONDS = 60
 FETCH_RETRY_DELAYS = (5.0, 15.0, 45.0)
 RETRYABLE_HTTP_CODES = {429, 500, 502, 503, 504}
+TRAILING_YEAR_PAREN_RE = r"\s*\([^()]*(?:17|18|19|20)\d{2}\)\s*$"
+READJUDICATION_FINDINGS = ["F-S2-16", "F-S2-17", "F-S2-18"]
+READJUDICATION_ADJUDICATOR = "orchestrator claude-fable-5"
+IDENTITY_PRIMARY_CLUSTER_LIMIT = 10
+IDENTITY_FALLBACK_CLUSTER_LIMIT = 3
+READJUDICATION_RESET_FIELDS = ("identity", "citations", "pinpoints", "progeny", "treatment", "off_cl_links")
+READJUDICATION_ROSTER_KEYS = (
+    "record_id",
+    "record_id_status",
+    "source",
+    "sources",
+    "source_row_index",
+    "roster_key",
+    "roster_key_sha1",
+    "stub",
+    "page_path",
+    "slug",
+    "title",
+    "caption",
+    "expected_citation",
+    "parallel_cite",
+    "neutral_cite",
+    "court",
+    "court_era",
+    "court_level",
+    "circuit",
+    "state",
+    "year",
+    "date_decided",
+    "docket",
+    "flags",
+    "mentions",
+    "variant_notes",
+)
 
 STRICT_COURT_CLASSES = {"scotus", "coa", "district", "state", "other"}
 COURT_CLASS_ALIASES = {
@@ -316,7 +350,7 @@ def citation_to_string(citation):
 
 def normalize_cite(cite):
     cite = citation_to_string(cite)
-    cite = re.sub(r"\s*\((?:17|18|19|20)\d{2}\)\s*$", "", cite)
+    cite = re.sub(TRAILING_YEAR_PAREN_RE, "", cite)
     cite = cite.replace("\u00a0", " ")
     cite = re.sub(r"\s+", " ", cite).strip()
     return cite
@@ -504,8 +538,12 @@ def extract_opinion_id(value, source_label):
     return numeric_tail(value)
 
 
+def strip_trailing_year_parenthetical(value):
+    return re.sub(TRAILING_YEAR_PAREN_RE, "", value or "").strip()
+
+
 def first_party_terms(case_name):
-    text = re.sub(r"\s+\((?:17|18|19|20)\d{2}\)\s*$", "", case_name or "")
+    text = strip_trailing_year_parenthetical(case_name)
     parts = re.split(r"\s+v\.?\s+", text, maxsplit=1, flags=re.I)
     if len(parts) != 2:
         return [text.strip()] if text.strip() else []
@@ -517,8 +555,63 @@ def first_party_terms(case_name):
     return terms
 
 
+def caption_token_set(value):
+    if not str(value or "").strip():
+        return set()
+    return {token for token in slugify(value).split("-") if token}
+
+
+def caption_sides(value):
+    text = strip_trailing_year_parenthetical(value)
+    parts = re.split(r"\s+v\.?\s+", text, maxsplit=1, flags=re.I)
+    if len(parts) != 2:
+        return None
+    return [caption_token_set(parts[0]), caption_token_set(parts[1])]
+
+
+def token_containment_match(left, right):
+    return bool(left and right) and (left <= right or right <= left)
+
+
 def canonical_caption_match(input_name, canonical_name):
-    return slugify(input_name) == slugify(canonical_name)
+    input_sides = caption_sides(input_name)
+    canonical_sides = caption_sides(canonical_name)
+    if input_sides and canonical_sides:
+        return all(
+            token_containment_match(input_side, canonical_side)
+            for input_side, canonical_side in zip(input_sides, canonical_sides)
+        )
+    if input_sides or canonical_sides:
+        return False
+    return token_containment_match(caption_token_set(input_name), caption_token_set(canonical_name))
+
+
+def canonical_caption_match_cluster(input_name, cluster, fallback_name=None):
+    names = [
+        cluster.get("case_name") if cluster else None,
+        cluster.get("case_name_full") if cluster else None,
+        cluster.get("case_name_short") if cluster else None,
+        fallback_name,
+    ]
+    seen = set()
+    for name in names:
+        if not name:
+            continue
+        key = str(name)
+        if key in seen:
+            continue
+        seen.add(key)
+        if canonical_caption_match(input_name, key):
+            return True
+    return False
+
+
+def missing_party_terms(case_name, text):
+    terms = first_party_terms(case_name)
+    if not terms:
+        return []
+    lowered = (text or "").lower()
+    return [term for term in terms if term not in lowered]
 
 
 def recency_window_start(build_date=None, years=3):
@@ -1167,6 +1260,139 @@ def identity_search_params(record):
     return params
 
 
+def identity_result_count(search):
+    count = search_count(search)
+    if count is not None:
+        return count
+    return len(search_results(search))
+
+
+def identity_fallback_params(record, expected_cite):
+    base = identity_search_params(record)
+    caption = base.get("case_name")
+    if caption:
+        by_query = dict(base)
+        by_query.pop("case_name", None)
+        by_query["q"] = caption
+        yield "q", by_query
+
+    normalized_cite = normalize_cite(expected_cite)
+    if normalized_cite:
+        by_citation = {
+            "type": "o",
+            "citation": normalized_cite,
+            "order_by": "score desc",
+            "page_size": 10,
+        }
+        if base.get("court"):
+            by_citation["court"] = base["court"]
+        yield "citation", by_citation
+
+    docket = record.get("docket")
+    if docket:
+        by_docket = {
+            "type": "o",
+            "docket_number": docket,
+            "order_by": "score desc",
+            "page_size": 10,
+        }
+        if base.get("court"):
+            by_docket["court"] = base["court"]
+        yield "docket_number", by_docket
+
+
+def identity_year_matches(record, result, cluster):
+    if not record.get("year"):
+        return False
+    expected_year = str(record["year"])
+    for value in (
+        cluster.get("date_filed") if isinstance(cluster, dict) else None,
+        cluster.get("dateFiled") if isinstance(cluster, dict) else None,
+        result.get("dateFiled") if isinstance(result, dict) else None,
+        result.get("date_filed") if isinstance(result, dict) else None,
+    ):
+        if str(value or "").startswith(expected_year):
+            return True
+    return False
+
+
+def court_value_tokens(value):
+    if value is None:
+        return set()
+    if isinstance(value, dict):
+        tokens = set()
+        for key in ("id", "slug", "short_name", "full_name", "citation_string"):
+            tokens.update(court_value_tokens(value.get(key)))
+        return tokens
+    if isinstance(value, (list, tuple)):
+        tokens = set()
+        for item in value:
+            tokens.update(court_value_tokens(item))
+        return tokens
+    text = str(value).strip().lower()
+    return {text} if text else set()
+
+
+def identity_court_matches(record, result, cluster):
+    expected = court_search_id(record)
+    if not expected:
+        return False
+    actual = set()
+    if isinstance(cluster, dict):
+        actual.update(court_value_tokens(cluster.get("court")))
+        actual.update(court_value_tokens(cluster.get("court_id")))
+    if isinstance(result, dict):
+        actual.update(court_value_tokens(result.get("court")))
+        actual.update(court_value_tokens(result.get("court_id")))
+        actual.update(court_value_tokens(result.get("court_citation_string")))
+    return expected.lower() in actual
+
+
+def identity_candidate_evidence(record, result, cluster, expected_cite):
+    citation_match = citation_matches_expected(cluster, expected_cite)
+    year_match = identity_year_matches(record, result, cluster)
+    court_match = identity_court_matches(record, result, cluster)
+    return {
+        "expected_citation_match": citation_match,
+        "year_match": year_match,
+        "court_match": court_match,
+        "viable": citation_match or (year_match and court_match),
+    }
+
+
+def identity_candidate_score(record, result, cluster, expected_cite):
+    evidence = identity_candidate_evidence(record, result, cluster, expected_cite)
+    score = 0
+    if evidence["expected_citation_match"]:
+        score += 100
+    if evidence["year_match"]:
+        score += 10
+    if evidence["court_match"]:
+        score += 10
+    return score
+
+
+def identity_viable_candidates(record, candidates, expected_cite):
+    return [
+        candidate
+        for candidate in candidates
+        if identity_candidate_evidence(record, candidate[1], candidate[2], expected_cite)["viable"]
+    ]
+
+
+def identity_candidates(record, client, results, expected_cite, record_id, max_clusters=IDENTITY_PRIMARY_CLUSTER_LIMIT):
+    candidates = []
+    for result in results[:max_clusters]:
+        cluster_id = result.get("cluster_id") or result.get("cluster")
+        if not cluster_id:
+            continue
+        cluster = client.get_cluster(cluster_id, record_id=record_id, step="identity.cluster")
+        score = identity_candidate_score(record, result, cluster, expected_cite)
+        candidates.append((score, result, cluster))
+    candidates.sort(key=lambda item: item[0], reverse=True)
+    return candidates
+
+
 def citation_matches_expected(cluster, expected):
     expected = normalize_cite(expected)
     if not expected:
@@ -1180,9 +1406,8 @@ def citation_matches_expected(cluster, expected):
 def text_names_parties(case_name, text):
     if not text:
         return False
-    lowered = text.lower()
     terms = first_party_terms(case_name)
-    return bool(terms) and all(term in lowered for term in terms)
+    return bool(terms) and not missing_party_terms(case_name, text)
 
 
 def base_field_provenance(src, verifier=CONSUMER_IDENTITY):
@@ -1476,19 +1701,44 @@ def resolve_identity(record, client, journal, resume, build_run):
     search = client.search(params, cache=True, record_id=record_id, step="identity.search")
     results = search_results(search)
     expected_cite = record.get("expected_citation") or record.get("citation") or ""
-    candidates = []
-    for result in results[:10]:
-        cluster_id = result.get("cluster_id") or result.get("cluster")
-        if not cluster_id:
-            continue
-        cluster = client.get_cluster(cluster_id, record_id=record_id, step="identity.cluster")
-        score = 0
-        if citation_matches_expected(cluster, expected_cite):
-            score += 100
-        if record.get("year") and str(cluster.get("date_filed") or "").startswith(str(record["year"])):
-            score += 10
-        candidates.append((score, result, cluster))
-    candidates.sort(key=lambda item: item[0], reverse=True)
+    candidates = identity_candidates(record, client, results, expected_cite, record_id)
+    selected_rung = "case_name"
+    viable_candidates = identity_viable_candidates(record, candidates, expected_cite)
+    if not viable_candidates:
+        best_candidates = candidates
+        best_rung = "case_name" if best_candidates else None
+        selected_candidates = []
+        for rung, fallback in identity_fallback_params(record, expected_cite):
+            fallback_search = client.search(fallback, cache=True, record_id=record_id, step="identity.search.fallback")
+            fallback_results = search_results(fallback_search)
+            rung_candidates = identity_candidates(
+                record,
+                client,
+                fallback_results,
+                expected_cite,
+                record_id,
+                max_clusters=IDENTITY_FALLBACK_CLUSTER_LIMIT,
+            )
+            rung_viable = bool(identity_viable_candidates(record, rung_candidates, expected_cite))
+            journal.append(
+                record_id=record_id,
+                step="identity.search.fallback",
+                status="complete",
+                rung=rung,
+                result_count=identity_result_count(fallback_search),
+                clusters_fetched=len(rung_candidates),
+                viable=rung_viable,
+            )
+            if rung_candidates and (not best_candidates or rung_candidates[0][0] > best_candidates[0][0]):
+                best_candidates = rung_candidates
+                best_rung = rung
+            if rung_viable:
+                results = fallback_results
+                selected_candidates = rung_candidates
+                selected_rung = rung
+                break
+        candidates = selected_candidates or best_candidates or []
+        selected_rung = selected_rung if selected_candidates else best_rung
     selected = candidates[0] if candidates else None
     journal.append(
         record_id=record_id,
@@ -1496,6 +1746,7 @@ def resolve_identity(record, client, journal, resume, build_run):
         status="partial" if selected else "complete",
         candidate_count=len(candidates),
         selected_cluster_id=selected[2].get("id") if selected else None,
+        search_rung=selected_rung if selected else None,
     )
     if not selected:
         return None, None, None
@@ -1512,9 +1763,18 @@ def apply_identity(record_json, source_record, search_result, cluster, alternate
         lead_id = int(lead_ref["opinion_id"])
         lead_text = client.text_for_opinion(lead_ref, record_id=record_id, step="identity.lead_text")
     expected_found = citation_matches_expected(cluster, expected_cite) if expected_cite else False
-    party_found = text_names_parties(source_record.get("title") or source_record.get("caption") or record_id, lead_text)
+    input_caption = source_record.get("title") or source_record.get("caption") or record_id
+    missing_terms = missing_party_terms(input_caption, lead_text)
+    party_found = bool(first_party_terms(input_caption)) and not missing_terms
+    if missing_terms:
+        journal.append(
+            record_id=record_id,
+            step="identity.party-text",
+            status="miss",
+            missing_terms=missing_terms,
+        )
     canonical = cluster.get("case_name") or search_result.get("caseName") or search_result.get("case_name")
-    canonical_match = canonical_caption_match(source_record.get("title") or source_record.get("caption") or record_id, canonical or "")
+    canonical_match = canonical_caption_match_cluster(input_caption, cluster, canonical)
     sibling_ids = []
     for ref in opinion_refs_from_search_result(client, search_result):
         sibling_ids.append(int(ref["opinion_id"]))
@@ -1551,15 +1811,20 @@ def apply_identity(record_json, source_record, search_result, cluster, alternate
         ],
     })
     warnings = record_json["provenance"]["warnings"]
-    if not canonical_match:
+    if canonical_match and expected_found and party_found:
+        set_record_status(record_json, "under_review", "R15 structural gates have not cleared")
+        identity["identity_method"] = "citation+party-text"
+        identity["reason_code"] = "awaiting_r15_structural_gates"
+    elif not canonical_match and expected_found and party_found:
+        set_record_status(record_json, "under_review")
+        identity["identity_method"] = "citation+party-text"
+        identity["reason_code"] = "caption_mismatch_canonical"
+        warnings.append("input caption does not match CL canonical caption")
+    elif not canonical_match:
         set_record_status(record_json, "fabrication_suspected")
         identity["identity_method"] = "fabrication-check"
         identity["reason_code"] = "canonical_name_mismatch"
         warnings.append("input caption does not match CL canonical caption")
-    elif expected_found and party_found:
-        set_record_status(record_json, "under_review", "R15 structural gates have not cleared")
-        identity["identity_method"] = "citation+party-text"
-        identity["reason_code"] = "awaiting_r15_structural_gates"
     elif source_record.get("docket"):
         set_record_status(record_json, "under_review")
         identity["identity_method"] = "name+docket"
@@ -2286,6 +2551,7 @@ class ManifestStore:
             if row.get("court_level") != before:
                 self.normalized = True
             row.setdefault("lane_status", default_lane_status())
+            row.setdefault("counts", {})
         self.by_record_id = {row["record_id"]: row for row in self.data.get("records", [])}
 
     def ensure_build_id(self, override=None):
@@ -2322,6 +2588,33 @@ class ManifestStore:
             if smoke_slug in keys:
                 return [row]
         raise SystemExit("smoke slug not found in manifest: %s" % smoke_slug)
+
+    def resolve_record_id(self, identifier):
+        for row in self.data.get("records", []):
+            keys = {
+                row.get("record_id"),
+                row.get("title"),
+                row.get("caption"),
+                row.get("slug"),
+                slugify(row.get("record_id") or ""),
+                slugify(row.get("title") or row.get("caption") or ""),
+            }
+            if identifier in keys:
+                return row.get("record_id")
+        return None
+
+    def reset_for_readjudication(self, record_id):
+        row = self.by_record_id.get(record_id)
+        if not row:
+            return None
+        row["status"] = "pending"
+        row["lane_status"] = default_lane_status()
+        row["counts"] = {}
+        row.pop("cluster_id", None)
+        row.pop("lead_opinion_id", None)
+        row.pop("official_cite", None)
+        row["last_record_write"] = iso_now()
+        return row
 
     def update_lane_status(self, row, record_id, resume_state):
         lane_status = row.setdefault("lane_status", default_lane_status())
@@ -2376,6 +2669,118 @@ class ManifestStore:
     def save(self):
         self.data["generated_at"] = self.data.get("generated_at")
         write_json(self.path, self.data)
+
+
+def unique_preserve_order(values):
+    out = []
+    seen = set()
+    for value in values:
+        value = str(value or "").strip()
+        if value and value not in seen:
+            seen.add(value)
+            out.append(value)
+    return out
+
+
+def read_readjudicate_file(path):
+    with open(path, encoding="utf-8") as f:
+        text = f.read()
+    stripped = text.strip()
+    if not stripped:
+        return []
+    if stripped.startswith("["):
+        data = json.loads(stripped)
+        if not isinstance(data, list):
+            raise ValueError("readjudicate file JSON must be a list")
+        return [str(item).strip() for item in data if str(item).strip()]
+    values = []
+    for line in text.splitlines():
+        line = line.strip()
+        if not line or line.startswith("#"):
+            continue
+        values.append(line)
+    return values
+
+
+def readjudication_identifiers(args):
+    values = list(args.readjudicate or [])
+    for path in args.readjudicate_file or []:
+        values.extend(read_readjudicate_file(path))
+    return unique_preserve_order(values)
+
+
+def append_resume_reset_rows(journal, record_id):
+    for step in ("identity", "citations", "pinpoints", "progeny"):
+        journal.append(record_id=record_id, step=step, status="pending", adjudication_reset=True)
+    for lane, _cap in TREATMENT_LANES:
+        journal.append(record_id=record_id, step="treatment", lane=lane, status="pending", adjudication_reset=True)
+
+
+def readjudication_roster_source(row):
+    return normalize_source_record({
+        key: row.get(key)
+        for key in READJUDICATION_ROSTER_KEYS
+        if key in row
+    })
+
+
+def field_has_payload(value):
+    if isinstance(value, dict):
+        return any(field_has_payload(item) for item in value.values())
+    if isinstance(value, list):
+        return bool(value)
+    return value not in (None, "", False)
+
+
+def journal_readjudication_field_resets(journal, record_id, before_record, after_record):
+    before_record = before_record or {}
+    for field in READJUDICATION_RESET_FIELDS:
+        before_value = before_record.get(field)
+        after_value = after_record.get(field)
+        row = {
+            "step": "adjudication.field-reset",
+            "record_id": record_id,
+            "field": field,
+            "status": "reset",
+            "before_populated": field_has_payload(before_value),
+            "reset_to_empty_shell": True,
+        }
+        if field == "identity":
+            row["before_cluster_id"] = (before_value or {}).get("cluster_id") if isinstance(before_value, dict) else None
+            row["after_cluster_id"] = (after_value or {}).get("cluster_id") if isinstance(after_value, dict) else None
+        journal.append(**row)
+
+
+def apply_readjudications(paths, manifest, journal, identifiers, build_run):
+    reset_ids = []
+    for identifier in identifiers:
+        record_id = manifest.resolve_record_id(identifier)
+        if not record_id:
+            raise SystemExit("readjudicate record not found in manifest: %s" % identifier)
+        row = manifest.reset_for_readjudication(record_id)
+        if not row:
+            raise SystemExit("readjudicate record not found in manifest: %s" % identifier)
+        source_record = readjudication_roster_source(row)
+        previous_record = load_case_record(paths, record_id)
+        record_json = empty_record_shell(record_id, source_record, build_run)
+        set_record_status(
+            record_json,
+            "pending",
+            "adjudicated reset for %s" % ",".join(READJUDICATION_FINDINGS),
+            explicit_adjudication=True,
+        )
+        journal_readjudication_field_resets(journal, record_id, previous_record, record_json)
+        write_case_record(paths, record_json)
+        journal.append(
+            step="adjudication",
+            record_id=record_id,
+            findings=READJUDICATION_FINDINGS,
+            adjudicated_by=READJUDICATION_ADJUDICATOR,
+            action="reset-identity-and-rerun",
+        )
+        append_resume_reset_rows(journal, record_id)
+        reset_ids.append(record_id)
+    return reset_ids
 
 
 def ensure_cluster_for_record(record_json, client, record_id, cluster=None, step="identity.cluster.reload"):
@@ -2573,9 +2978,10 @@ def process_frontier_record(source_record, client, paths, precedence, journal, r
     cluster = client.get_cluster(result.get("cluster_id"), record_id=unresolved_id, step="frontier.identity.cluster")
     canonical = cluster.get("case_name") or result.get("caseName") or source_record.get("caption")
     final_id = cluster_stub_record_id(canonical, cluster.get("id") or result.get("cluster_id"))
+    canonical_match = canonical_caption_match_cluster(source_record.get("caption"), cluster, canonical)
     shell["record_id"] = final_id
     shell["stub"] = True
-    shell["status"] = "verified_identity" if canonical_caption_match(source_record.get("caption"), canonical) else "fabrication_suspected"
+    shell["status"] = "verified_identity" if canonical_match else "fabrication_suspected"
     shell["identity"].update({
         "case_name": canonical,
         "case_name_short": cluster.get("case_name_short"),
@@ -2585,7 +2991,7 @@ def process_frontier_record(source_record, client, paths, precedence, journal, r
         "identity_method": "frontier-identity",
         "expected_citation_found": bool(cluster.get("citations")),
         "party_name_in_text": False,
-        "canonical_name_match": canonical_caption_match(source_record.get("caption"), canonical),
+        "canonical_name_match": canonical_match,
     })
     shell["citations"] = classify_citations(cluster.get("citations") or [], source_record.get("court_level") or "state", precedence)
     shell["treatment"]["scope_note"] = "Frontier stub: treatment/progeny intentionally not derived until S6 promotion."
@@ -2609,10 +3015,14 @@ def run_ingest(args):
     run_id = manifest.ensure_build_id(args.run_id)
     if args.run_id or manifest.normalized or not had_build_id:
         manifest.save()
-    token = read_token(args.token_path)
-    fingerprint = sha256_text(token)[:12]
     journal_path = os.path.join(paths.journal, "s2-ingest-%s.jsonl" % run_id)
     journal = Journal(journal_path, run_id)
+    readjudicate_ids = readjudication_identifiers(args)
+    if readjudicate_ids:
+        apply_readjudications(paths, manifest, journal, readjudicate_ids, run_id)
+        manifest.save()
+    token = read_token(args.token_path)
+    fingerprint = sha256_text(token)[:12]
     if args.resume:
         resume_rows = journal.rows()
         if not args.run_id:
@@ -2645,6 +3055,7 @@ def run_ingest(args):
             journal.append(step="case-interruption", status="interrupted", reason="call_budget_exhausted", budget=budget.snapshot())
             break
         old_id = source_record["record_id"]
+        record_call_start = budget.session_calls
         try:
             if source_record.get("stub"):
                 record_json, final_id = process_frontier_record(source_record, client, paths, precedence, journal, resume, run_id)
@@ -2665,7 +3076,7 @@ def run_ingest(args):
             final_id = record_json["record_id"]
         interrupted = record_json.pop("_ingest_interrupted", None)
         current_resume = ResumeState(manifest.resume_rows() + journal.rows()) if args.resume and not args.run_id else ResumeState(journal.rows())
-        manifest.update(old_id, record_json, counts={"cl_calls": budget.session_calls}, final_record_id=final_id, resume_state=current_resume)
+        manifest.update(old_id, record_json, counts={"cl_calls": budget.session_calls - record_call_start}, final_record_id=final_id, resume_state=current_resume)
         manifest.save()
         journal.append(
             record_id=final_id,
@@ -2861,6 +3272,323 @@ class SelfTestClient:
         return {"count": 0, "results": [], "next": None}
 
 
+class IdentityApplyClient:
+    def __init__(self, text):
+        self.text = text
+
+    def opinion_ref(self, opinion_id, source_array, context=None):
+        return {"opinion_id": int(opinion_id), "source_array": source_array, "context": context or {}}
+
+    def text_for_opinion(self, opinion_ref, record_id=None, step="opinion_text"):
+        return self.text
+
+
+class BirchfieldFallbackClient:
+    def __init__(self):
+        self.search_calls = []
+        self.cluster_calls = []
+
+    def search(self, params, cache=True, record_id=None, step=None):
+        self.search_calls.append({"params": dict(params), "step": step})
+        if params.get("case_name"):
+            return {"count": 0, "results": [], "next": None}
+        if params.get("q"):
+            return {
+                "count": 10,
+                "results": [
+                    {
+                        "cluster_id": 9000 + i,
+                        "caseName": "Unrelated v. Result %s" % i,
+                        "opinions": [{"id": 8000 + i, "type": "020lead"}],
+                    }
+                    for i in range(10)
+                ],
+                "next": None,
+            }
+        if params.get("citation") == "579 U.S. 438":
+            return {
+                "count": 1,
+                "results": [{
+                    "cluster_id": 3216497,
+                    "caseName": "Birchfield v. N. Dakota. William Robert Bernard",
+                    "opinions": [{"id": 4321, "type": "020lead"}],
+                    "sibling_ids": [4321],
+                }],
+                "next": None,
+            }
+        raise AssertionError("unexpected fallback params %r" % params)
+
+    def get_cluster(self, cluster_id, record_id=None, step="identity.cluster"):
+        self.cluster_calls.append({"cluster_id": int(cluster_id), "step": step})
+        if 9000 <= int(cluster_id) < 9010:
+            return {
+                "id": int(cluster_id),
+                "case_name": "Unrelated v. Result",
+                "case_name_short": "Unrelated",
+                "case_name_full": "Unrelated v. Result",
+                "date_filed": "1999-01-01",
+                "court": "ca9",
+                "citations": [{"volume": 999, "reporter": "F.3d", "page": int(cluster_id), "type": 1}],
+                "sub_opinions": [{"id": int(cluster_id) + 100, "type": "020lead"}],
+            }
+        return {
+            "id": int(cluster_id),
+            "case_name": "Birchfield v. N. Dakota. William Robert Bernard",
+            "case_name_short": "Birchfield",
+            "case_name_full": "Birchfield v. N. Dakota. William Robert Bernard",
+            "date_filed": "2016-06-23",
+            "court": "scotus",
+            "citations": [{"volume": 579, "reporter": "U.S.", "page": 438, "type": 1}],
+            "sub_opinions": [{"id": 4321, "type": "020lead"}],
+        }
+
+
+class ExhaustedFallbackClient:
+    def __init__(self):
+        self.search_calls = []
+        self.cluster_calls = []
+
+    def search(self, params, cache=True, record_id=None, step=None):
+        self.search_calls.append({"params": dict(params), "step": step})
+        return {"count": 0, "results": [], "next": None}
+
+    def get_cluster(self, cluster_id, record_id=None, step="identity.cluster"):
+        self.cluster_calls.append({"cluster_id": int(cluster_id), "step": step})
+        raise AssertionError("exhausted fallback fixture must not fetch clusters")
+
+
+def identity_fixture_search_result(cluster_id=100, opinion_id=200):
+    return {
+        "cluster_id": cluster_id,
+        "caseName": "fixture",
+        "opinions": [{"id": opinion_id, "type": "020lead"}],
+        "sibling_ids": [opinion_id],
+    }
+
+
+def self_test_identity_caption_and_cite_fixtures():
+    assert normalize_cite("283 F.3d 1040 (9th Cir. 2002)") == "283 F.3d 1040"
+    assert normalize_cite("389 U.S. 35 (1967)") == "389 U.S. 35"
+    assert normalize_cite("1 U.S. 2") == "1 U.S. 2"
+    assert normalize_cite("foo (internal) 1 U.S. 2") == "foo (internal) 1 U.S. 2"
+
+    assert canonical_caption_match(
+        "Bivens v. Six Unknown Named Agents",
+        "Bivens v. Six Unknown Named Agents of Federal Bureau of Narcotics",
+    )
+    assert canonical_caption_match(
+        "Board of Education v. Earls",
+        "Board of Education of Independent School District No. 92 of Pottawatomie County v. Earls",
+    )
+    assert canonical_caption_match(
+        "Brower v. County of Inyo",
+        "Brower Ex Rel. Estate of Caldwell v. County of Inyo",
+    )
+    assert not canonical_caption_match("Adams v. Williams", "Williams v. Adams")
+
+    journal = Journal("/tmp/s2-identity-caption-self-test.jsonl", "selftest")
+    try:
+        os.unlink(journal.path)
+    except FileNotFoundError:
+        pass
+
+    shortened_source = {
+        "record_id": "bivens-short",
+        "title": "Bivens v. Six Unknown Named Agents",
+        "expected_citation": "403 U.S. 388 (1971)",
+        "court_level": "scotus",
+    }
+    shortened_record = empty_record_shell("bivens-short", shortened_source, "selftest")
+    shortened_cluster = {
+        "id": 108375,
+        "case_name": "Bivens v. Six Unknown Named Agents of Federal Bureau of Narcotics",
+        "case_name_short": "Bivens",
+        "case_name_full": "Bivens v. Six Unknown Named Agents of Federal Bureau of Narcotics",
+        "date_filed": "1971-06-21",
+        "court": "scotus",
+        "citations": [{"volume": 403, "reporter": "U.S.", "page": 388, "type": 1}],
+        "sub_opinions": [{"id": 200, "type": "020lead"}],
+    }
+    apply_identity(
+        shortened_record,
+        shortened_source,
+        identity_fixture_search_result(108375, 200),
+        shortened_cluster,
+        [],
+        IdentityApplyClient("Bivens sued the Six Unknown Named Agents in this opinion."),
+        journal,
+    )
+    assert shortened_record["status"] == "under_review"
+    assert shortened_record["identity"]["canonical_name_match"] is True
+    assert shortened_record["identity"]["identity_method"] == "citation+party-text"
+    assert shortened_record["identity"]["reason_code"] == "awaiting_r15_structural_gates"
+
+    birchfield_source = {
+        "record_id": "birchfield-caption",
+        "title": "Birchfield v. North Dakota",
+        "expected_citation": "579 U.S. 438",
+        "court_level": "scotus",
+        "year": 2016,
+    }
+    birchfield_record = empty_record_shell("birchfield-caption", birchfield_source, "selftest")
+    birchfield_cluster = {
+        "id": 3216497,
+        "case_name": "Birchfield v. N. Dakota. William Robert Bernard",
+        "case_name_short": "Birchfield",
+        "case_name_full": "Birchfield v. N. Dakota. William Robert Bernard",
+        "date_filed": "2016-06-23",
+        "court": "scotus",
+        "citations": [{"volume": 579, "reporter": "U.S.", "page": 438, "type": 1}],
+        "sub_opinions": [{"id": 4321, "type": "020lead"}],
+    }
+    apply_identity(
+        birchfield_record,
+        birchfield_source,
+        identity_fixture_search_result(3216497, 4321),
+        birchfield_cluster,
+        [],
+        IdentityApplyClient("Birchfield and North Dakota are both named in the lead opinion."),
+        journal,
+    )
+    assert birchfield_record["status"] == "under_review"
+    assert birchfield_record["identity"]["canonical_name_match"] is False
+    assert birchfield_record["identity"]["identity_method"] == "citation+party-text"
+    assert birchfield_record["identity"]["reason_code"] == "caption_mismatch_canonical"
+    assert "input caption does not match CL canonical caption" in birchfield_record["provenance"]["warnings"]
+
+    reversed_source = {
+        "record_id": "adams-reversed",
+        "title": "Adams v. Williams",
+        "expected_citation": "407 U.S. 143",
+        "court_level": "scotus",
+    }
+    reversed_record = empty_record_shell("adams-reversed", reversed_source, "selftest")
+    reversed_cluster = {
+        "id": 999,
+        "case_name": "Williams v. Adams",
+        "case_name_short": "Williams v. Adams",
+        "case_name_full": "Williams v. Adams",
+        "date_filed": "1972-06-12",
+        "court": "scotus",
+        "citations": [{"volume": 407, "reporter": "U.S.", "page": 143, "type": 1}],
+        "sub_opinions": [{"id": 201, "type": "020lead"}],
+    }
+    apply_identity(
+        reversed_record,
+        reversed_source,
+        identity_fixture_search_result(999, 201),
+        reversed_cluster,
+        [],
+        IdentityApplyClient("Adams is named, but the other side is absent."),
+        journal,
+    )
+    assert reversed_record["status"] == "fabrication_suspected"
+    assert reversed_record["identity"]["reason_code"] == "canonical_name_mismatch"
+    rows = journal.rows()
+    assert any(row.get("step") == "identity.party-text" and row.get("missing_terms") == ["williams"] for row in rows)
+
+
+def self_test_identity_fallback_ladder():
+    path = "/tmp/s2-identity-fallback-self-test.jsonl"
+    try:
+        os.unlink(path)
+    except FileNotFoundError:
+        pass
+    journal = Journal(path, "selftest")
+    source = {
+        "record_id": "Birchfield v. North Dakota",
+        "title": "Birchfield v. North Dakota",
+        "expected_citation": "579 U.S. 438 (2016)",
+        "court_level": "scotus",
+        "year": 2016,
+    }
+    client = BirchfieldFallbackClient()
+    result, cluster, alternates = resolve_identity(source, client, journal, ResumeState([]), "selftest")
+    assert result["cluster_id"] == 3216497
+    assert cluster["id"] == 3216497
+    assert alternates == []
+    assert [call["step"] for call in client.search_calls] == [
+        "identity.search",
+        "identity.search.fallback",
+        "identity.search.fallback",
+    ]
+    assert client.search_calls[1]["params"]["q"] == "Birchfield v. North Dakota"
+    assert client.search_calls[2]["params"]["citation"] == "579 U.S. 438"
+    assert "filed_after" not in client.search_calls[2]["params"]
+    assert [call["cluster_id"] for call in client.cluster_calls] == [9000, 9001, 9002, 3216497]
+    fallback_rows = [row for row in journal.rows() if row.get("step") == "identity.search.fallback"]
+    assert [
+        (row.get("rung"), row.get("result_count"), row.get("clusters_fetched"), row.get("viable"))
+        for row in fallback_rows
+    ] == [("q", 10, 3, False), ("citation", 1, 1, True)]
+    identity_rows = [row for row in journal.rows() if row.get("step") == "identity"]
+    assert identity_rows[-1]["search_rung"] == "citation"
+
+    exhausted_path = "/tmp/s2-identity-fallback-exhausted-self-test.jsonl"
+    try:
+        os.unlink(exhausted_path)
+    except FileNotFoundError:
+        pass
+    exhausted_journal = Journal(exhausted_path, "selftest")
+    exhausted_source = {
+        "record_id": "Missing v. Case",
+        "title": "Missing v. Case",
+        "expected_citation": "1 U.S. 999",
+        "court_level": "scotus",
+        "year": 2020,
+        "docket": "20-999",
+    }
+    exhausted_client = ExhaustedFallbackClient()
+    missing_result, missing_cluster, missing_alternates = resolve_identity(
+        exhausted_source,
+        exhausted_client,
+        exhausted_journal,
+        ResumeState([]),
+        "selftest",
+    )
+    assert missing_result is None
+    assert missing_cluster is None
+    assert missing_alternates is None
+    assert exhausted_client.cluster_calls == []
+    exhausted_rows = [row for row in exhausted_journal.rows() if row.get("step") == "identity.search.fallback"]
+    assert [row.get("rung") for row in exhausted_rows] == ["q", "citation", "docket_number"]
+    assert all(row.get("clusters_fetched") == 0 and row.get("viable") is False for row in exhausted_rows)
+
+    tmp = tempfile.mkdtemp(prefix="s2-fallback-exhaustion-selftest-")
+    try:
+        paths = LakePaths(tmp, os.path.join(tmp, "pool"))
+        paths.ensure()
+        not_found_journal = Journal(os.path.join(tmp, "journal.jsonl"), "selftest")
+        not_found_client = ExhaustedFallbackClient()
+        record = process_page_record(
+            exhausted_source,
+            not_found_client,
+            paths,
+            {"court_classes": {}},
+            {"mappings": {}},
+            not_found_journal,
+            ResumeState([]),
+            "selftest",
+            SessionTimer(None),
+        )
+        assert record["status"] == "not_found"
+        rows = not_found_journal.rows()
+        fallback_indexes = [
+            index
+            for index, row in enumerate(rows)
+            if row.get("step") == "identity.search.fallback"
+        ]
+        not_found_indexes = [
+            index
+            for index, row in enumerate(rows)
+            if row.get("step") == "identity" and row.get("final_status") == "not_found"
+        ]
+        assert [rows[index].get("rung") for index in fallback_indexes] == ["q", "citation", "docket_number"]
+        assert not_found_indexes and max(fallback_indexes) < not_found_indexes[-1]
+    finally:
+        shutil.rmtree(tmp)
+
+
 class ProgenyBoundedClient:
     def __init__(self, paths):
         self.paths = paths
@@ -3033,6 +3761,130 @@ def self_test_budget_interruption_resume():
         resumed_rows = journal.rows()
         assert any(row.get("step") == "citations" and row.get("status") == "complete" for row in resumed_rows)
         assert any(row.get("step") == "progeny" and row.get("status") == "complete" for row in resumed_rows)
+    finally:
+        shutil.rmtree(tmp)
+
+
+def self_test_readjudicate_reset_reruns_fail_closed_record():
+    tmp = tempfile.mkdtemp(prefix="s2-readjudicate-selftest-")
+    try:
+        paths = LakePaths(tmp, os.path.join(tmp, "pool"))
+        paths.ensure()
+        manifest_data = {
+            "schema_version": "s2.manifest.v1",
+            "generated_at": iso_now(),
+            "records": [{
+                "record_id": "smith-v-jones",
+                "record_id_status": "resolved",
+                "source": "content/cases",
+                "stub": False,
+                "title": "Smith v. Jones",
+                "expected_citation": "1 U.S. 2",
+                "court_level": "scotus",
+                "year": 2024,
+                "legacy_treatment_status": "good",
+                "legacy_treatment_as_of": "2026-06-30",
+                "status": "fabrication_suspected",
+                "lane_status": {
+                    "identity": "complete",
+                    "citations": "complete",
+                    "pinpoints": "complete",
+                    "progeny": "complete",
+                    "treatment": {
+                        "lane1_negative": {"status": "complete", "cursor": None},
+                        "lane2_top_cited": {"status": "complete", "cursor": None},
+                        "lane3_recency": {"status": "complete", "cursor": None},
+                    },
+                    "provenance": "pending",
+                },
+                "counts": {"cl_calls": 99},
+            }],
+        }
+        write_json(paths.manifest, manifest_data)
+        manifest = ManifestStore(paths.manifest)
+        journal = Journal(os.path.join(tmp, "journal.jsonl"), "selftest")
+        journal.append(record_id="smith-v-jones", step="identity", status="complete", selected_cluster_id=100)
+        journal.append(record_id="smith-v-jones", step="citations", status="complete")
+        journal.append(record_id="smith-v-jones", step="pinpoints", status="complete")
+        journal.append(record_id="smith-v-jones", step="progeny", status="complete")
+        for lane, _cap in TREATMENT_LANES:
+            journal.append(record_id="smith-v-jones", step="treatment", lane=lane, status="complete")
+
+        source = manifest.by_record_id["smith-v-jones"]
+        fail_closed = empty_record_shell("smith-v-jones", source, "selftest")
+        fail_closed["status"] = "fabrication_suspected"
+        fail_closed["identity"].update({
+            "case_name": "Stale v. Payload",
+            "cluster_id": 999999,
+            "lead_opinion_id": 888888,
+            "sibling_ids": [888888, 777777],
+            "identity_method": "fabrication-check",
+            "expected_citation_found": True,
+            "party_name_in_text": True,
+            "canonical_name_match": False,
+        })
+        fail_closed["identity"]["reason_code"] = "canonical_name_mismatch"
+        fail_closed["citations"]["display"] = "999 U.S. 1"
+        fail_closed["citations"]["all"] = [{"cite": "999 U.S. 1", "source": "stale"}]
+        fail_closed["pinpoints"] = [{"id": "stale-pin", "quote": "stale"}]
+        fail_closed["progeny"].update({
+            "complete_query": "cites:(888888)",
+            "citation_count": 12,
+            "outbound_opinion_edges": [{"source_opinion_id": 888888, "cited_id": 1, "source": "stale"}],
+        })
+        fail_closed["treatment"].update({
+            "field_i_validity": "good_law",
+            "edges": [{"citing_case": {"name": "Stale v. Payload"}}],
+        })
+        write_case_record(paths, fail_closed)
+
+        reset_ids = apply_readjudications(paths, manifest, journal, ["smith-v-jones"], "selftest")
+        assert reset_ids == ["smith-v-jones"]
+        reset_record = load_case_record(paths, "smith-v-jones")
+        assert reset_record["status"] == "pending"
+        assert reset_record["identity"]["cluster_id"] is None
+        assert reset_record["identity"]["lead_opinion_id"] is None
+        assert reset_record["identity"]["sibling_ids"] == []
+        assert reset_record["identity"]["identity_method"] == "pending"
+        assert reset_record["identity"]["expected_citation_found"] is False
+        assert reset_record["citations"]["display"] is None
+        assert reset_record["citations"]["all"] == []
+        assert reset_record["pinpoints"] == []
+        assert reset_record["progeny"]["complete_query"] is None
+        assert reset_record["progeny"]["outbound_opinion_edges"] == []
+        assert reset_record["treatment"]["field_i_validity"] == "unverified"
+        assert reset_record["treatment"]["edges"] == []
+        reset_resume = ResumeState(manifest.resume_rows() + journal.rows())
+        assert not reset_resume.step_complete("smith-v-jones", "identity")
+        assert not reset_resume.lane_complete("smith-v-jones", "treatment", "lane1_negative")
+        field_rows = [row for row in journal.rows() if row.get("step") == "adjudication.field-reset"]
+        assert {row.get("field") for row in field_rows} == set(READJUDICATION_RESET_FIELDS)
+        identity_reset = [row for row in field_rows if row.get("field") == "identity"][0]
+        assert identity_reset["before_cluster_id"] == 999999
+        assert identity_reset["after_cluster_id"] is None
+        assert any(
+            row.get("step") == "adjudication"
+            and row.get("findings") == READJUDICATION_FINDINGS
+            and row.get("action") == "reset-identity-and-rerun"
+            for row in journal.rows()
+        )
+
+        precedence = {"court_classes": {"scotus": {"reporters": {"U.S.": 1}}}}
+        migration = {
+            "mappings": {
+                "good": {
+                    "field_i_validity": "good_law",
+                    "requires_point_overrides": False,
+                    "requires_edge": False,
+                    "varies_by_point": False,
+                }
+            }
+        }
+        client = SelfTestClient(paths, journal)
+        rerun = process_page_record(source, client, paths, precedence, migration, journal, reset_resume, "selftest", SessionTimer(None))
+        assert rerun["status"] == "under_review"
+        assert rerun["identity"]["identity_method"] == "citation+party-text"
+        assert any(call["step"] == "identity.search" for call in client.search_calls)
     finally:
         shutil.rmtree(tmp)
 
@@ -3489,10 +4341,13 @@ def run_self_tests():
     self_test_token_bucket()
     self_test_collective_global_limiter()
     self_test_journal_resume()
+    self_test_identity_caption_and_cite_fixtures()
+    self_test_identity_fallback_ladder()
     self_test_bounded_progeny()
     self_test_outbound_edges_from_search_result()
     self_test_identity_skip_preserves_record()
     self_test_budget_interruption_resume()
+    self_test_readjudicate_reset_reruns_fail_closed_record()
     self_test_treatment_partial_resume()
     self_test_treatment_snippet_triage()
     self_test_transport_timeout_retry_pending()
@@ -3511,6 +4366,8 @@ def parse_args(argv):
     parser.add_argument("--smoke", help="run one manifest record by record_id/title slug; targets ~30-70 calls/case and enforces <=80 calls")
     parser.add_argument("--self-test", action="store_true", help="run offline unit checks and exit")
     parser.add_argument("--run-id", help="explicit fresh build id override; default is the stable id persisted in _manifest.json")
+    parser.add_argument("--readjudicate", action="append", default=[], help="reset identity and downstream resume state for a record_id/title; repeatable")
+    parser.add_argument("--readjudicate-file", action="append", default=[], help="file of record IDs/titles to readjudicate, one per line or JSON list")
     parser.add_argument("--token-path", default=TOKEN_PATH, help="CourtListener token path")
     parser.add_argument("--rate-per-minute", type=int, default=14, help="token bucket refill and capacity")
     parser.add_argument("--hourly-limit", type=int, default=900, help="hourly guard ceiling")

@@ -252,6 +252,25 @@ launches; lanes now run with codex exec's default fail-closed approvals (escalat
 inside the same sandbox configs — functionally identical for our recipes, which never request
 escalations.
 
+### F-S2-16/17/18 fix loop CLOSED ✅ (2026-07-04) — CLEAR-TO-RELAUNCH
+
+Three-loop writer≠checker cycle on scripts/s2/ingest.py (Codex builder wrote, 2nd Codex lane
+read-only reviewed, orchestrator adjudicated): loop-1 implemented the work order (caption
+containment + two-key precedence · normalize_cite year-parenthetical strip · zero-hit fallback
+ladder · --readjudicate CLI); loop-2 review returned CLEAR-TO-RELAUNCH: no with three UPHELD
+findings (R-01 unbounded rungs + premature ladder stop → cap 3 clusters/rung, viable-only
+termination, best-so-far last resort; R-02 readjudication left stale identity payload →
+empty-shell rebuild with roster-only preserves + field-level journaling; R-03 self-test gaps →
+bounded-call/continuation/exhaustion/stale-cluster fixtures); loop-3 targeted re-verify: all
+three FIXED with file:line evidence, no new drift, CLEAR-TO-RELAUNCH: yes. Orchestrator
+independently ran the full self-test suite green (the read-only review lane cannot — temp
+files). Ledger rows F-S2-16..18 closed. **Session 4 launch adds the five-row re-adjudication
+pre-step:** `--readjudicate` × {Benn v. Lambert, Bivens v. Six Unknown Named Agents, Board of
+Education v. Earls, Brower v. County of Inyo, Birchfield v. North Dakota}; expected outcomes:
+Bivens/Earls/Brower → under_review (citation+party-text) · Benn → under_review (name+docket;
+"Lambert" absent from opinion body is data-truth) · Birchfield → under_review via the fallback
+ladder (cluster 3216497) with caption_mismatch_canonical warning.
+
 ### ⚠️ DEVIATION — pool storage root (user-visible, reversible)
 
 The signed pool root `/Volumes/AIStore2` (S2 A10) does not exist; the AIStore2 APFS volume is
