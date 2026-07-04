@@ -45,7 +45,16 @@ spec inherits) · **`CL-DATA-INVENTORY.md`** (exactly what CourtListener gives u
      they existed in signed spec text but were missing from this enumeration): S6 §9 (frontier
      yield >150 pages) · S7 §9 (>10 tier promotions) · S9 R7 (>10 new pages from completeness
      instruments) · S9 R7.5 (the sampled-frontier **tripwire** firing the full 13-category
-     re-run — pause + surface evidence and revised wall-clock before proceeding).
+     re-run — pause + surface evidence and revised wall-clock before proceeding);
+  8. the **agent/lane-outage pause** (user decision 2026-07-04): if an agent lane breaks —
+     realistically Codex — the run first attempts self-resolution (retry/backoff, fresh
+     session, config/timeout fixes); if unresolved, **Codex-required workflows HALT and the
+     issue elevates to the user** (interactive re-auth is always a user fix — headless cannot
+     re-auth). **Never substitute a Claude lane to keep a Codex-required workflow moving** —
+     the lake build, the 2 panel lanes, case-grain Thread-N reads, and dual-model discovery
+     lose their writer≠checker / model-diversity guarantees without Codex. Independent
+     non-Codex work may continue, checkpointed, only where it neither consumes nor
+     substitutes for the halted lanes' outputs.
   *Entries:* **2026-07-02** content hotfix (Chatrie + Third-Party) — user-approved. **2026-07-03**
   deploy decision: hotfix commit `be02044` ships with the full-bundle deploy after EXECUTE — no
   interim push to main (user-decided; the pre-deploy live site knowingly retains the pre-fix pages).

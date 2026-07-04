@@ -71,7 +71,16 @@ lanes read-only; input manifests journaled — S9 R1); find→adjudicate→fix, 
 Codex recipes: reviewer `codex exec -s read-only …` / discovery `-c tools.web_search=true`
 (the root `--search` flag does NOT pass through `exec`) / builder per S2 R10 — all stdin
 `/dev/null`, caller-side timeout (COH-31). The officer-BLUF layer stays banned (S1 §2.2/R6).
-The 7 enumerated pauses (§0) are the only stops; report each with evidence attached.
+The 8 enumerated pauses (§0) are the only stops; report each with evidence attached.
+**Lane-outage rule (§0 pause #8 — user decision 2026-07-04):** on any agent-lane failure
+(realistically Codex), attempt self-resolution first — retry/backoff, fresh `codex exec`
+session, config/timeout fixes, `codex --version` sanity; a failure requiring interactive
+re-auth (the known OAuth/login class) is NEVER self-resolvable headless. If still broken:
+**HALT every Codex-required workflow** (the S2 lake build · the 2 Codex panel lanes ·
+case-grain Thread-N reads · dual-model discovery lanes) **and elevate to the user with the
+error evidence** — do not proceed Claude-only through work whose guarantees (writer≠checker,
+model diversity, ≥2-of-3 tallies) require Codex. Independent non-Codex work may continue,
+checkpointed, only where it neither consumes nor substitutes for the halted lanes' outputs.
 
 ## Done
 = the S9 R13 release gate: every box PASS or a logged `_review-needed/` escalation; zero silent
