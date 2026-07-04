@@ -46,13 +46,20 @@ Opus, with Fable as a fourth perspective at adjudication — extra diversity at 
 seam). **Sonnet** takes pure-mechanical sweeps (greps, counters, regeneration checks).
 **Codex gpt-5.5** stays per spec: lake builder + 2 review lanes + case-grain Thread-N reads +
 web-search discovery lanes.
-*Mechanics:* sub-agents via the Agent tool's `model:` parameter (sonnet/opus/haiku/fable;
+**Reasoning effort (user decision, 2026-07-04): Opus 4.8 and Codex run at EXTRA-HIGH on every
+call.** Mechanics — the Agent tool has NO per-call effort override (effort comes from the agent
+definition or the session), so: **Opus fleets spawn as the committed agent type
+`o2-opus-xhigh`** (`.claude/agents/o2-opus-xhigh.md` — `model: opus`, `effort: xhigh`; ships on
+the branch) or via Workflow `agent()` with `opts: {model:'opus', effort:'xhigh'}`; **every
+`codex exec` recipe adds `-c model_reasoning_effort=xhigh`** (the global `~/.codex/config.toml`
+currently matches, but the run pins it per-invocation — never depend on a mutable global).
+*Other mechanics:* sub-agents via the Agent tool's `model:` parameter (sonnet/opus/haiku/fable;
 **forks always inherit the parent** — use regular spawns for cross-tier work); Workflow
-`agent()` takes `opts.model`; Codex via the `codex exec` recipes. Every ledger row records the
-**exact model id** (`claude-fable-5` / `claude-opus-4-8` / `gpt-5.5`) in its `{lane, model}`
-fields so writer≠checker and tally diversity stay machine-auditable. At P0, confirm the
-CL-MCP connector is reachable from a sub-agent lane; if not, the identity slice runs in the
-orchestrator's own session (still the Claude credential, still serial).
+`agent()` takes `opts.model`/`opts.effort`. Every ledger row records the **exact model id**
+(`claude-fable-5` / `claude-opus-4-8` / `gpt-5.5`) in its `{lane, model}` fields so
+writer≠checker and tally diversity stay machine-auditable. At P0, confirm the CL-MCP connector
+is reachable from a sub-agent lane; if not, the identity slice runs in the orchestrator's own
+session (still the Claude credential, still serial).
 
 ## Standing disciplines (non-negotiable)
 Thin orchestrator + fresh sub-agents + small on-disk handoffs; **one serial CL lane per
