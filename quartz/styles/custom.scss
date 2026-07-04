@@ -211,3 +211,29 @@ article li > ol {
   --border: rgba(183, 148, 246, 0.4);
   --bg: rgba(183, 148, 246, 0.07);
 }
+
+// ---------------------------------------------------------------------------
+// S8 mockup — deep-link landing highlight.
+// When a reader arrives via a pinpoint deep link ([[Case#^pin-N]]) or any
+// anchor link, the target block flashes so the eye lands on the exact passage.
+// Fades to a faint persistent tint; clears on next navigation.
+@keyframes s8-target-flash {
+  0% {
+    background: rgba(255, 208, 84, 0.55);
+  }
+  100% {
+    background: rgba(255, 208, 84, 0.16);
+  }
+}
+
+article :target {
+  animation: s8-target-flash 1.6s ease-out 1 forwards;
+  border-radius: 4px;
+  box-decoration-break: clone;
+}
+
+:root[saved-theme="dark"] article :target {
+  animation: none;
+  background: rgba(255, 208, 84, 0.14);
+  border-radius: 4px;
+}
