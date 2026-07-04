@@ -70,6 +70,42 @@ register drift (S3 renames + S7 prose) · LINT-9 = 297 HIGH mid-line pins (S8 R6
 fail-closed into run_all. Wave-0 acceptance (S1 §7): all criteria delivered or explicitly
 deferred to their owning spec (LINT-11 → S9 per A2/A5; LINT-3 rebuild → S9; LINT-12/13/14 → S2).
 
+## Wave 1 — S2 lake ∥ S4 platform (2026-07-04)
+
+### S4 platform — wave-1 scope COMPLETE ✅ (R8 retirement deliberately rides Wave 4)
+
+Opus-xhigh lane (wf_a6ab4eda) landed the post-mockup deltas: R3 weight-reading sortFn
+(ContentDetails.weight; folder inherit via trie index assignment; unweighted rendering
+byte-identical to stock — the one §1983/Brady adjacent swap vs the interim mockup sort is the
+intended interim→stock correction, on record); R10c prefix-with-separator; R10d continue; R5
+casetable badge = a.internal.treatment-badge (delegation was already in-tree from mockup);
+LINT-26 goodlaw-target; R6 tooltip verified already-correct with S2's as_of_content/as_of_treatment
+names; R9 fork-posture in README. about.md finalized (R7). Build clean (523 files).
+Review loop (Codex xhigh read-only): 4 findings — F-S4-01 HIGH upheld (LINT-26 basename resolve =
+false-negative class for the raw-href constant → rewritten to exact-FullSlug matching mirroring
+quartz sluggify, incl. loop-2 segment-aware _index fix verified against quartz/util/path.ts
+source + unit tests); F-S4-02 about.md alias dropped (R12 literal); F-S4-03 roster docs;
+F-S4-04 README wording. Commits: a1b179d · 6dd84e1 · 02a3cb3 · 23778a9.
+
+### S2 lake — builder authored; review loop in flight (CLEAR-TO-SMOKE: no → loop 2)
+
+Codex xhigh authored the lake scaffold (_schema/_advisory/_reporter-precedence/
+_treatment-migration/_manifest 458+93/README) + scripts/s2/ingest.py (62KB stdlib) + README;
+self-test green (commit cadc668). **Roster drift, fully attributed by the review lane:** 457→458
+pages (United States v. Smith (2024) authored at the S6 interview — its roster row self-closed);
+89→94 scan rows (+6: Carroll v. Carman, Morgan v. Fairfield County, People v. Frederick, State v.
+Christensen — all S6 A1 planning-time discoveries now named in the Knock-and-Talk mockup content —
+plus 2 caption variants for S6 to adjudicate: Carman v. Carroll (lower-court caption of the same
+litigation) and Morse v. French (cert-denial caption of French v. Merrill)). Manifest = 93
+frontier rows (LLC v. John Doe excluded per seed §c).
+**Pre-run review (2nd Codex lane, read-only): 9 findings, 7 HIGH — CLEAR-TO-SMOKE: no.** The
+review provably paid for itself: resume was run-id-scoped (every relaunch would re-burn ALL
+treatment quota), treatment lanes had no partial cursors, a cluster_id could still reach
+/opinions/ (the A1 scar), verified+unverified-treatment records violated the schema, 40
+circuit/state manifest rows used a court vocabulary the lane filters don't recognize, and the
+token bucket allowed a 27-call first minute. All 9 UPHELD → builder lane fixing (loop 2), then
+re-review, then smoke (Terry + Chatrie), then the paced run.
+
 ### ⚠️ DEVIATION — pool storage root (user-visible, reversible)
 
 The signed pool root `/Volumes/AIStore2` (S2 A10) does not exist; the AIStore2 APFS volume is
