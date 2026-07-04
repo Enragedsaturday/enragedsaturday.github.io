@@ -35,6 +35,17 @@ COURT_CLASS_ALIASES = {
     "state-app": "state",
 }
 FAIL_CLOSED_STATUSES = {"fabrication_suspected", "not_found", "blocked"}
+PRESEEDED_FIELD_I_VALIDITIES = {"good_law", "history", "caution", "questioned", "superseded"}
+PRESEEDED_TREATMENT_PROVENANCE = "pre-seeded new-schema treatment (planning-time projection); R6 derivation to confirm"
+PRESEEDED_TREATMENT_CARRY_KEYS = (
+    "as_of_content",
+    "as_of_treatment",
+    "composite_basis",
+    "composite_basis_ref",
+    "varies_by_point",
+    "scope_note",
+    "point_overrides",
+)
 TREATMENT_LANES = [
     ("lane1_negative", 200),
     ("lane2_top_cited", 25),
@@ -1059,6 +1070,10 @@ def parse_frontmatter_scalar(value):
     value = value.strip()
     if value in ("", "null", "~"):
         return None
+    if value.lower() == "true":
+        return True
+    if value.lower() == "false":
+        return False
     if value in ("[]", "{}"):
         return [] if value == "[]" else {}
     if value.startswith("[") and value.endswith("]"):
@@ -1073,6 +1088,39 @@ def parse_frontmatter_scalar(value):
     return value
 
 
+def parse_treatment_frontmatter_lines(lines):
+    treatment = {}
+    current_list_key = None
+    current_item = None
+    for line in lines:
+        if not line.strip():
+            continue
+        indent = len(line) - len(line.lstrip(" "))
+        stripped = line.strip()
+        if indent <= 2 and not stripped.startswith("- ") and ":" in stripped:
+            key, _, value = stripped.partition(":")
+            key = key.strip()
+            if value.strip() == "":
+                treatment[key] = [] if key == "point_overrides" else None
+                current_list_key = key if key == "point_overrides" else None
+            else:
+                treatment[key] = parse_frontmatter_scalar(value)
+                current_list_key = None
+            current_item = None
+            continue
+        if current_list_key == "point_overrides" and indent >= 4:
+            if stripped.startswith("- "):
+                current_item = {}
+                treatment.setdefault("point_overrides", []).append(current_item)
+                stripped = stripped[2:].strip()
+                if not stripped:
+                    continue
+            if current_item is not None and ":" in stripped:
+                key, _, value = stripped.partition(":")
+                current_item[key.strip()] = parse_frontmatter_scalar(value)
+    return treatment
+
+
 def legacy_treatment_from_page(page_path):
     if not page_path or not os.path.exists(page_path):
         return {}
@@ -1084,7 +1132,7 @@ def legacy_treatment_from_page(page_path):
     if end < 0:
         return {}
     lines = text[4:end].splitlines()
-    treatment = {}
+    treatment_lines = []
     in_treatment = False
     for line in lines:
         if not in_treatment:
@@ -1093,12 +1141,8 @@ def legacy_treatment_from_page(page_path):
             continue
         if line and not line.startswith(" "):
             break
-        stripped = line.strip()
-        if not stripped or ":" not in stripped:
-            continue
-        key, _, value = stripped.partition(":")
-        treatment[key.strip()] = parse_frontmatter_scalar(value)
-    return treatment
+        treatment_lines.append(line)
+    return parse_treatment_frontmatter_lines(treatment_lines)
 
 
 def empty_record_shell(record_id, source_record, build_run):
@@ -1648,6 +1692,41 @@ def controlling_cases_from_legacy(by_values, field_ii):
     return out
 
 
+def seed_preseeded_treatment(record_json, page_treatment):
+    field_i = normalize_roster_value(page_treatment.get("field_i_validity"))
+    if field_i not in PRESEEDED_FIELD_I_VALIDITIES:
+        return False
+
+    was_treatment_migration_block = (
+        record_json.get("status") == "blocked"
+        and record_json["identity"].get("reason_code") == "treatment_migration_unmapped"
+    )
+    treatment = record_json["treatment"]
+    treatment["field_i_validity"] = field_i
+    for key in PRESEEDED_TREATMENT_CARRY_KEYS:
+        if key in page_treatment and page_treatment[key] is not None:
+            treatment[key] = page_treatment[key]
+    if treatment.get("point_overrides") and "varies_by_point" not in page_treatment:
+        treatment["varies_by_point"] = True
+    if treatment.get("composite_basis") == "unverified" and treatment.get("composite_basis_ref"):
+        treatment["composite_basis"] = "principal-holding"
+    set_record_status(
+        record_json,
+        "under_review",
+        PRESEEDED_TREATMENT_PROVENANCE,
+        explicit_adjudication=was_treatment_migration_block,
+    )
+    if was_treatment_migration_block and record_json.get("status") == "under_review":
+        record_json["identity"]["reason_code"] = None
+    warnings = record_json["provenance"]["warnings"]
+    if PRESEEDED_TREATMENT_PROVENANCE not in warnings:
+        warnings.append(PRESEEDED_TREATMENT_PROVENANCE)
+    record_json["provenance"]["field_provenance"]["treatment.field_i_validity"] = base_field_provenance(PRESEEDED_TREATMENT_PROVENANCE)
+    if treatment.get("point_overrides"):
+        record_json["provenance"]["field_provenance"]["point_overrides"] = base_field_provenance(PRESEEDED_TREATMENT_PROVENANCE)
+    return True
+
+
 def seed_treatment_from_migration(record_json, source_record, migration):
     if record_json.get("stub"):
         return False
@@ -1662,6 +1741,8 @@ def seed_treatment_from_migration(record_json, source_record, migration):
         if legacy.get(key) in (None, "", []):
             legacy[key] = value
     legacy_status = normalize_roster_value(legacy.get("status"))
+    if not legacy_status and seed_preseeded_treatment(record_json, page_legacy):
+        return True
     mapping = (migration.get("mappings") or {}).get(legacy_status)
     if not mapping:
         set_record_status(record_json, "blocked", "legacy treatment value lacks migration mapping")
@@ -2320,6 +2401,82 @@ def self_test_migration_round_trip():
     assert verified_candidate["treatment"]["field_i_validity"] != "unverified"
 
 
+def self_test_preseeded_new_schema_treatment():
+    migration = read_json(os.path.join(os.getcwd(), "_overhaul2", "lake", "_treatment-migration.json"))
+    expected = {
+        "New York v. Belton": "caution",
+        "United States v. Smith (2024)": "good_law",
+    }
+    outcomes = []
+    for case_name, field_i in expected.items():
+        page_path = os.path.join(os.getcwd(), "content", "cases", case_name + ".md")
+        page_treatment = legacy_treatment_from_page(page_path)
+        assert "status" not in page_treatment
+        assert page_treatment["field_i_validity"] == field_i
+        assert page_treatment["varies_by_point"] is True
+        assert page_treatment["point_overrides"]
+        source = {
+            "record_id": case_name,
+            "title": case_name,
+            "page_path": page_path,
+        }
+        record = empty_record_shell(case_name, source, "selftest")
+        changed = seed_treatment_from_migration(record, source, migration)
+        assert changed
+        assert record["status"] == "under_review"
+        assert record["identity"].get("reason_code") is None
+        assert record["treatment"]["field_i_validity"] == field_i
+        assert record["treatment"]["as_of_content"] == page_treatment["as_of_content"]
+        assert record["treatment"]["as_of_treatment"] == page_treatment["as_of_treatment"]
+        assert record["treatment"]["point_overrides"] == page_treatment["point_overrides"]
+        assert PRESEEDED_TREATMENT_PROVENANCE in record["provenance"]["warnings"]
+        blocked_record = empty_record_shell(case_name, source, "selftest")
+        blocked_record["status"] = "blocked"
+        blocked_record["identity"]["reason_code"] = "treatment_migration_unmapped"
+        assert seed_treatment_from_migration(blocked_record, source, migration)
+        assert blocked_record["status"] == "under_review"
+        assert blocked_record["identity"].get("reason_code") is None
+        outcomes.append("%s=%s/%s/%s override(s)" % (
+            case_name,
+            record["treatment"]["field_i_validity"],
+            record["status"],
+            len(record["treatment"]["point_overrides"]),
+        ))
+
+    tmp = tempfile.mkdtemp(prefix="s2-preseed-selftest-")
+    try:
+        neither_path = os.path.join(tmp, "Neither v. Key.md")
+        with open(neither_path, "w", encoding="utf-8") as f:
+            f.write("---\ntitle: \"Neither v. Key\"\ntreatment:\n  note: \"missing legacy status and Field-I\"\n---\n")
+        neither_source = {
+            "record_id": "Neither v. Key",
+            "title": "Neither v. Key",
+            "page_path": neither_path,
+        }
+        neither_record = empty_record_shell("Neither v. Key", neither_source, "selftest")
+        assert seed_treatment_from_migration(neither_record, neither_source, migration)
+        assert neither_record["status"] == "blocked"
+        assert neither_record["identity"]["reason_code"] == "treatment_migration_unmapped"
+
+        unverified_path = os.path.join(tmp, "Unverified v. Key.md")
+        with open(unverified_path, "w", encoding="utf-8") as f:
+            f.write("---\ntitle: \"Unverified v. Key\"\ntreatment:\n  field_i_validity: unverified\n---\n")
+        unverified_source = {
+            "record_id": "Unverified v. Key",
+            "title": "Unverified v. Key",
+            "page_path": unverified_path,
+        }
+        unverified_record = empty_record_shell("Unverified v. Key", unverified_source, "selftest")
+        assert seed_treatment_from_migration(unverified_record, unverified_source, migration)
+        assert unverified_record["status"] == "blocked"
+        assert unverified_record["identity"]["reason_code"] == "treatment_migration_unmapped"
+    finally:
+        shutil.rmtree(tmp)
+    outcomes.append("neither-key=blocked")
+    outcomes.append("unverified-field-i=blocked")
+    print("preseeded treatment self-test: " + "; ".join(outcomes))
+
+
 def self_test_status_preserve():
     record = empty_record_shell("status-case", {"record_id": "status-case", "title": "Status v. Case"}, "selftest")
     record["status"] = "fabrication_suspected"
@@ -2340,6 +2497,7 @@ def run_self_tests():
     self_test_treatment_partial_resume()
     self_test_opinion_cluster_id_rejected()
     self_test_migration_round_trip()
+    self_test_preseeded_new_schema_treatment()
     self_test_status_preserve()
     print("self-test passed")
 
