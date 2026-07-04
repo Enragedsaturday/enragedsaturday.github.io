@@ -31,7 +31,7 @@ related: ["[[Consent Searches]]", "[[Curtilage]]", "[[Plain View Doctrine]]", "[
 
 **Manner: knock, wait briefly, and leave.** Leaving is part of the license. The First Circuit held that repeated returns to the curtilage after the occupant refused to answer, capped by a pre-dawn visit with knocking on the bedroom window and a flashlight through the covering, exceeded the license and violated law clearly established by *Jardines* itself. *[[French v. Merrill|French]]*, 15 F.4th 116 (1st Cir. 2021), reh'g en banc denied, 24 F.4th 93 (2022). "No Trespassing" signs generally do **not** revoke the license on the Tenth Circuit's view: such signs lack any "talismanic" revoking power, judged by what an objective officer would perceive. *[[United States v. Carloss|Carloss]]*, 818 F.3d 988, 995 (10th Cir. 2016) (then-Judge Gorsuch dissenting).
 
-**What a lawful approach yields.** From the lawful vantage, officers may use what they see under the [[Plain View Doctrine]] and may ask for consent; the encounter stays consensual so long as "a reasonable person would feel free to decline the officers' requests or otherwise terminate the encounter." *[[Florida v. Bostick#^pin-436|Bostick]]*, 501 U.S. 429, 436 (1991). Officers need not advise the resident of the right to refuse. *[[United States v. Drayton#^pin-206|Drayton]]*, 536 U.S. 194, 206 (2002). The approach yields **no entry, no seizure, and no sense-enhancing search**: the automobile exception, for one, does not permit a warrantless entry of the home or its curtilage to search a vehicle there. *[[Collins v. Virginia|Collins]]*, 584 U.S. 586 (2018).
+**What a lawful approach yields.** From the lawful vantage, officers may use what they see under the [[Plain View Doctrine]] — including what a flashlight reveals of the *already exposed*, since illumination alone is not a search, *[[Texas v. Brown#^pin-739|Brown]]*, 460 U.S. 730, 739–40 (1983) (plurality); *[[United States v. Dunn|Dunn]]*, 480 U.S. 294 (1987), though probing the *concealed* is (see the exposure line on [[Plain View Doctrine]]) — and may ask for consent; the encounter stays consensual so long as "a reasonable person would feel free to decline the officers' requests or otherwise terminate the encounter." *[[Florida v. Bostick#^pin-436|Bostick]]*, 501 U.S. 429, 436 (1991). Officers need not advise the resident of the right to refuse. *[[United States v. Drayton#^pin-206|Drayton]]*, 536 U.S. 194, 206 (2002). The approach yields **no entry, no seizure, and no sense-enhancing search**: the automobile exception, for one, does not permit a warrantless entry of the home or its curtilage to search a vehicle there. *[[Collins v. Virginia|Collins]]*, 584 U.S. 586 (2018).
 
 **The threshold backstops.** The license ends at the door. A warrantless, nonconsensual crossing of the threshold to arrest is presumptively unreasonable, *[[Payton v. New York|Payton]]*, 445 U.S. 573 (1980); see [[Arrest in the Home]], and there is no freestanding community-caretaking power to enter a home, *[[Caniglia v. Strom|Caniglia]]*, 593 U.S. 194 (2021); see [[Emergency Aid]]. A show of authority demanding that occupants open up converts the "talk" into a **seizure**, and any consent it produces is invalid. *[[United States v. Conner|Conner]]*, 127 F.3d 663 (8th Cir. 1997).
 
@@ -42,14 +42,14 @@ related: ["[[Consent Searches]]", "[[Curtilage]]", "[[Plain View Doctrine]]", "[
 **Apply it.**
 1. **Route** — take the path a visitor would take: front walk to the customary door; a small departure only to contact an occupant you can see (*Walker*).
 2. **Hour** — knock during normal waking hours unless specific facts show the resident receives visitors at that hour or the reason is weighty (*Lundin*; *Walker*).
-3. **Conduct** — knock, announce, wait briefly. No flashlight sweeps of windows, no dog, no peering into the curtilage (*Jardines*; *French*).
+3. **Conduct** — knock, announce, wait briefly. No dog, and no peering through windows or coverings, with or without a light (*Jardines*; *French*).
 4. **Purpose** — come to ask questions and seek consent. If your conduct would objectively reveal a search (or the approach exists to effect a warrantless arrest), stop: that is not a knock-and-talk (*Jardines*; *Lundin*).
 5. **Exit** — no answer or a refusal means leave. Returning again on the same information invites suppression and civil liability (*French*).
 6. **Fruits** — use plain view from the lawful vantage; anything more (entry, seizure, enhancement) needs consent or a recognized exception (*Collins*; *Payton*).
 
 **Common pitfalls.**
 - **Treating "knock and talk" as its own warrant exception.** It is not; without consent or another exception, nothing inside the home is fair game.
-- **Straying off the customary route.** Cutting to the back yard, lingering in the curtilage, or bringing a dog or flashlight to the porch breaks the license (*[[Florida v. Jardines|Jardines]]*; [[Curtilage]]).
+- **Straying off the customary route.** Cutting to the back yard, lingering in the curtilage, or bringing a dog to the porch to gather evidence breaks the license (*[[Florida v. Jardines|Jardines]]*; [[Curtilage]]). A flashlight by itself does not: illuminating the exposed is no search (*[[Texas v. Brown|Brown]]*), but flashlight-assisted peering through coverings is strong evidence the license was exceeded (*[[French v. Merrill|French]]*).
 - **Knocking in the dead of night.** A middle-of-the-night approach without a weighty, resident-accepted reason exceeds the license in the Ninth Circuit (*[[United States v. Lundin|Lundin]]*), and hour-by-totality circuits still weigh it against you (*[[United States v. Walker|Walker]]*).
 - **Overstaying or returning after a refusal.** Repeated intrusion converts the approach into a search (*[[French v. Merrill|French]]*).
 - **Reading silence as suspicion or exigency.** The occupant may refuse to answer, and that refusal supplies neither (*[[Kentucky v. King|King]]*, 563 U.S. at 469–70).
@@ -91,7 +91,7 @@ flowchart TD
   AREA -->|"deviates into curtilage<br/>(back yard, peering around)"| SRCH["SEARCH of curtilage —<br/>needs warrant / exception<br/><i>Jardines · Lundin</i>"]
   AREA -->|"front-door confinement +<br/>perimeter positioning"| SPLIT["CIRCUIT SPLIT (open)<br/>1st / 3d / 6th: front door only,<br/>no flanking (<i>French · Morgan</i>)<br/>11th: visitor-plausible departures OK<br/>SCOTUS reserved (<i>Carroll v. Carman</i>)"]
   AREA -->|Yes| PURP{"PURPOSE: to ask questions,<br/>NOT to conduct a search?<br/>(objective test) <i>Jardines · Walker</i>"}
-  PURP -->|"dog / flashlight / snooping"| SRCH
+  PURP -->|"dog / peering / snooping"| SRCH
   PURP -->|Yes| TIME{"TIME: a reasonable hour<br/>a visitor would knock?<br/><i>Lundin</i> — 4 a.m. exceeds"}
   TIME -->|"middle of the night,<br/>no weighty reason"| SRCH
   TIME -->|Yes| MAN{"MANNER: knock, wait briefly,<br/>and leave if unanswered / refused?<br/><i>French</i>"}
