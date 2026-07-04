@@ -107,7 +107,7 @@ async function _navigate(url: URL, isBack: boolean = false) {
   // scroll into place and add history
   if (!isBack) {
     if (url.hash) {
-      const el = document.getElementById(decodeURIComponent(url.hash.substring(1)))
+      const el = flashTargetBlock(url.hash)
       el?.scrollIntoView()
     } else {
       window.scrollTo({ top: 0 })
@@ -128,6 +128,18 @@ async function _navigate(url: URL, isBack: boolean = false) {
 
   notifyNav(getFullSlug(window))
   delete announcer.dataset.persist
+}
+
+// S8 — deep-link landing highlight. history.pushState never updates the
+// `:target` pseudo-class, so SPA hash landings apply a class instead; the
+// stylesheet targets both (`:target` covers hard loads).
+function flashTargetBlock(hash: string): HTMLElement | null {
+  const el = document.getElementById(decodeURIComponent(hash.substring(1)))
+  document.querySelectorAll(".s8-target").forEach((n) => n.classList.remove("s8-target"))
+  if (!el) return null
+  void el.offsetWidth // restart the animation on re-click
+  el.classList.add("s8-target")
+  return el
 }
 
 async function navigate(url: URL, isBack: boolean = false) {
@@ -154,7 +166,7 @@ function createRouter() {
       event.preventDefault()
 
       if (isSamePage(url) && url.hash) {
-        const el = document.getElementById(decodeURIComponent(url.hash.substring(1)))
+        const el = flashTargetBlock(url.hash)
         el?.scrollIntoView()
         history.pushState({}, "", url)
         return

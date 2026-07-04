@@ -33,7 +33,11 @@ related: ["[[Two Definitions of Search]]", "[[Fourth Amendment Framework]]", "[[
 > [!rule] Black-letter rule — stated on [[Knock and Talk]]
 > ![[7-exceptions-warrant/7b-pc-not-needed/Knock and Talk#^rule-knock-and-talk]]
 
-Stay inside that license and the lawful approach is no search; **exceed** it — bring a drug dog onto the porch, peer with a flashlight, or linger to snoop — and the same approach becomes a trespassory search. "[I]ntroducing a trained police dog to explore the area around the home in hopes of discovering incriminating evidence... There is no customary invitation to do that." *[[Florida v. Jardines#^pin-9|Jardines]]*, 569 U.S. at 9. (The license is also bounded by **time and purpose** in the circuits — see Recent developments.)
+Stay inside that license and the lawful approach is no search; **exceed** it — bring a drug dog onto the porch, peer with a flashlight, or linger to snoop — and the same approach becomes a trespassory search. The controlling passage is pinned on the case page and embedded here:
+
+![[cases/Florida v. Jardines#^pin-9]]
+
+(The license is also bounded by **time and purpose** in the circuits — see Recent developments.)
 
 **Curtilage carries the home's protection against the warrant exceptions — including the automobile exception.** Because curtilage is part of the home, an officer may not use a warrant **exception** for one thing (the car) to justify the separate trespass of entering protected ground. *[[Collins v. Virginia|Collins]]* held "the automobile exception does not permit an officer without a warrant to enter a home or its curtilage in order to search a vehicle therein." 584 U.S. 586, ___ (2018) (slip op., at 14). Lawful authority to search a vehicle is **not** lawful authority to walk into the curtilage to reach it.
 
