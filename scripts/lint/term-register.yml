@@ -1,0 +1,134 @@
+# CSSI term register — machine-readable source of truth (S1 R11, A3).
+# Consumed directly by LINT-7 (extended). docs/STYLE.md §4 REFERENCES this file;
+# it never duplicates it (single source of truth — no two-copy drift).
+#
+# Schema (term-register.v1):
+#   canonical:        the one sanctioned spelling of the term of art
+#   banned_variants:  spellings that FAIL in rendered prose (LINT-7, HIGH).
+#                     Matching is case-insensitive and word-bounded; hits inside
+#                     direct quotations and code fences are exempt (quoted text
+#                     keeps its original form).
+#   drift_set:        sibling terms this one must never silently drift into
+#                     (judgment — CHECKLIST:D5, not machine-enforced)
+#   glossary:         wikilink target in Common Legal Terms (optional; anchor
+#                     resolution enforcement arrives with the S8 LINT-7 rewrite)
+#   note:             usage guidance for authors
+#
+# Seeding decision (S1 §9 open item, settled at EXECUTE): seed with the
+# corpus's load-bearing terms of art + every hyphenation the Humanizer REJECT
+# row protects (S1 Appendix A: never de-hyphenate terms of art). The register
+# grows during S7/S8 as the glossary audit surfaces terms; additions land here.
+
+schema: term-register.v1
+terms:
+  - canonical: stop-and-frisk
+    banned_variants: ["stop and frisk"]
+    glossary: "Common Legal Terms#stop-and-frisk"
+    note: "Hyphenated term of art (Humanizer REJECT row: never de-hyphenate)."
+
+  - canonical: good-faith exception
+    banned_variants: ["good faith exception"]
+    glossary: "Common Legal Terms#good-faith-exception"
+    note: "Hyphenate 'good-faith' when it modifies (good-faith exception, good-faith reliance); 'acted in good faith' (predicate) is correct unhyphenated and is not a banned form."
+
+  - canonical: bright-line rule
+    banned_variants: ["bright line rule"]
+    glossary: "Common Legal Terms#bright-line-rule"
+    note: "Hyphenated term of art."
+
+  - canonical: knock-and-talk
+    banned_variants: ["knock and talk"]
+    glossary: "Common Legal Terms#knock-and-talk"
+    note: "Hyphenated term of art."
+
+  - canonical: knock-and-announce
+    banned_variants: ["knock and announce"]
+    glossary: "Common Legal Terms#knock-and-announce"
+    note: "Hyphenated term of art."
+
+  - canonical: search incident to arrest
+    banned_variants: ["search-incident-to-arrest doctrine", "search incident to lawful arrest doctrine"]
+    glossary: "Common Legal Terms#search-incident-to-arrest"
+    note: "Unhyphenated as a noun phrase; SITA acceptable on later mentions after first spell-out."
+
+  - canonical: probable cause
+    drift_set: ["reasonable suspicion", "preponderance of the evidence"]
+    glossary: "Common Legal Terms#probable-cause"
+    note: "Never interchange with reasonable suspicion; the burden pyramid places PC BELOW preponderance."
+
+  - canonical: reasonable suspicion
+    drift_set: ["probable cause", "hunch"]
+    glossary: "Common Legal Terms#reasonable-suspicion"
+    note: "Requires specific, articulable facts; never 'mere hunch'."
+
+  - canonical: exigent circumstances
+    banned_variants: ["exigency circumstances"]
+    glossary: "Common Legal Terms#exigent-circumstances"
+    note: "'Exigency' alone is fine as the noun; 'exigency circumstances' is a corpus typo class."
+
+  - canonical: plain-view doctrine
+    banned_variants: ["plain view doctrine"]
+    glossary: "Common Legal Terms#plain-view-doctrine"
+    note: "Hyphenate when compound-modifying (plain-view doctrine, plain-view seizure); 'in plain view' (predicate) is correct unhyphenated."
+
+  - canonical: curtilage
+    glossary: "Common Legal Terms#curtilage"
+    note: "Term of art; always glossary-linked on non-vernacular use."
+
+  - canonical: Terry stop
+    banned_variants: ["terry-stop"]
+    glossary: "Common Legal Terms#terry-stop"
+    note: "Case-derived term: capitalized Terry, no hyphen."
+
+  - canonical: fruit of the poisonous tree
+    glossary: "Common Legal Terms#fruit-of-the-poisonous-tree"
+    note: "Never 'fruits of the poisonous tree' as the doctrine name."
+    banned_variants: ["fruits of the poisonous tree doctrine"]
+
+  - canonical: totality of the circumstances
+    banned_variants: ["totality of circumstances"]
+    glossary: "Common Legal Terms#totality-of-the-circumstances"
+    note: "Keep the article: 'of the circumstances'."
+
+  - canonical: objectively reasonable
+    drift_set: ["subjectively reasonable", "reasonable"]
+    glossary: "Common Legal Terms#objective-reasonableness"
+    note: "Keep the legal modality (Humanizer ADAPT row); never strip 'objectively' from a stated standard."
+
+  - canonical: warrantless
+    banned_variants: ["warrant-less", "warrant less"]
+    note: "One word."
+
+  - canonical: pat-down
+    banned_variants: ["patdown", "pat down search"]
+    glossary: "Common Legal Terms#pat-down"
+    note: "Hyphenated noun/modifier: a pat-down, a pat-down search. The verb form 'pat down the outer clothing' is correct unhyphenated and is not a banned form."
+
+  - canonical: seizure
+    drift_set: ["stop", "detention", "arrest"]
+    glossary: "Common Legal Terms#seizure"
+    note: "The R11 drift scar: never drift stop→detention→seizure across a page; pick the doctrinally precise term and repeat it (don't cycle synonyms)."
+
+  - canonical: reasonable expectation of privacy
+    banned_variants: ["reasonable expectation to privacy"]
+    glossary: "Common Legal Terms#reasonable-expectation-of-privacy"
+    note: "REP acceptable after first spell-out."
+
+  - canonical: qualified immunity
+    glossary: "Common Legal Terms#qualified-immunity"
+    note: "Never 'limited immunity' for this doctrine."
+
+  - canonical: inevitable discovery
+    banned_variants: ["inevitable-discovery"]
+    glossary: "Common Legal Terms#inevitable-discovery"
+    note: "Unhyphenated as noun phrase ('inevitable discovery doctrine')."
+
+  - canonical: independent source
+    glossary: "Common Legal Terms#independent-source"
+    note: "Doctrine name; pairs with inevitable discovery and attenuation, never interchangeably."
+    drift_set: ["inevitable discovery", "attenuation"]
+
+  - canonical: attenuation
+    glossary: "Common Legal Terms#attenuation"
+    drift_set: ["independent source", "inevitable discovery"]
+    note: "The third exclusionary-rule exception; keep the trio distinct."
