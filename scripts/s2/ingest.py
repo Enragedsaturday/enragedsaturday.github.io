@@ -13,6 +13,7 @@ import os
 import random
 import re
 import shutil
+import socket
 import sqlite3  # noqa: F401 - stdlib dependency reserved for the R13 loader path.
 import sys
 import tempfile
@@ -27,6 +28,9 @@ DEFAULT_CSSI_LAKE_ROOT = "/Users/johngalt/cssi-lake"
 TOKEN_PATH = os.path.expanduser("~/.config/cssi/cl-token")
 CONSUMER_IDENTITY = "S2-BUILDER-AUTHORING"
 SCHEMA_VERSION = "s2.v1"
+URL_TIMEOUT_SECONDS = 60
+FETCH_RETRY_DELAYS = (5.0, 15.0, 45.0)
+RETRYABLE_HTTP_CODES = {429, 500, 502, 503, 504}
 
 STRICT_COURT_CLASSES = {"scotus", "coa", "district", "state", "other"}
 COURT_CLASS_ALIASES = {
@@ -588,6 +592,18 @@ class IngestInterrupted(Exception):
         self.step = step
 
 
+class FetchFailed(Exception):
+    def __init__(self, method, url, step, reason, attempts, status=None, original=None):
+        super().__init__("%s %s failed after %s attempt(s): %s" % (method, url, attempts, reason))
+        self.method = method
+        self.url = url
+        self.step = step
+        self.reason = reason
+        self.attempts = attempts
+        self.status = status
+        self.original = original
+
+
 class Journal:
     def __init__(self, path, run_id):
         self.path = path
@@ -639,6 +655,10 @@ class ResumeState:
                     "reviewed": row.get("reviewed"),
                     "proposed": row.get("proposed"),
                     "cap_hit": row.get("cap_hit"),
+                    "retry_pending": row.get("retry_pending"),
+                    "fetch_failed": row.get("fetch_failed"),
+                    "note": row.get("note"),
+                    "failed_step": row.get("failed_step"),
                 }
             else:
                 self.steps[(record_id, step)] = status
@@ -708,6 +728,10 @@ def resume_rows_from_manifest(records):
                     "reviewed": state.get("reviewed"),
                     "proposed": state.get("proposed"),
                     "cap_hit": state.get("cap_hit"),
+                    "retry_pending": state.get("retry_pending"),
+                    "fetch_failed": state.get("fetch_failed"),
+                    "note": state.get("note"),
+                    "failed_step": state.get("failed_step"),
                 })
     return rows
 
@@ -722,8 +746,8 @@ class LakePaths:
         self.treatment_migration = os.path.join(self.lake, "_treatment-migration.json")
         self.pool = pool_root
         self.http_cache = os.path.join(pool_root, "cache", "http")
-        self.progeny = os.path.join(pool_root, "progeny")
-        self.text = os.path.join(pool_root, "text")
+        self.progeny = os.path.join(pool_root, "cache", "progeny")
+        self.text = os.path.join(pool_root, "cache", "text")
         self.journal = os.path.join(pool_root, "journal")
         self.logs = os.path.join(pool_root, "logs")
         self.db = os.path.join(pool_root, "db")
@@ -761,6 +785,8 @@ class CourtListenerClient:
         self.hourly = hourly
         self.run_id = run_id
         self.call_log = os.path.join(paths.logs, "cl-calls.log")
+        self.urlopen = urllib.request.urlopen
+        self.sleep = time.sleep
 
     def build_url(self, endpoint, params=None):
         endpoint = endpoint.strip("/")
@@ -799,6 +825,80 @@ class CourtListenerClient:
         if extra_rate_bucket is not None:
             extra_rate_bucket.mark_completed()
 
+    def retry_jitter(self):
+        return random.uniform(0.25, 1.5)
+
+    def sleep_before_retry(self, attempt):
+        delay = FETCH_RETRY_DELAYS[attempt - 1] + self.retry_jitter()
+        self.sleep(delay)
+
+    def transport_failure_reason(self, exc):
+        reason = getattr(exc, "reason", exc)
+        if isinstance(reason, BaseException):
+            return "%s: %s" % (reason.__class__.__name__, reason)
+        return "%s: %s" % (exc.__class__.__name__, reason)
+
+    def journal_fetch_failed(self, method, url, record_id, step, attempts, reason, status=None):
+        self.journal.append(
+            record_id=record_id,
+            step=step or "http",
+            status="fetch_failed",
+            url_sha1=sha1_text(url),
+            http_status=status,
+            attempts=attempts,
+            retry_pending=True,
+            reason=reason,
+            budget=self.budget.snapshot(),
+        )
+
+    def request_json_url(self, method, url, body=None, record_id=None, step=None, rate_bucket=None, timeout=URL_TIMEOUT_SECONDS):
+        attempt = 0
+        while True:
+            attempt += 1
+            self.wait_for_network_call(record_id=record_id, step=step or method.lower(), extra_rate_bucket=rate_bucket)
+            req = urllib.request.Request(url, data=body, method=method)
+            req.add_header("Authorization", "Token %s" % self.token)
+            req.add_header("Accept", "application/json")
+            req.add_header("User-Agent", "cssi-s2-builder/1.0")
+            if body is not None:
+                req.add_header("Content-Type", "application/json")
+            try:
+                with self.urlopen(req, timeout=timeout) as resp:
+                    response_body = resp.read().decode("utf-8")
+                    status = getattr(resp, "status", 200)
+                self.log_call(method, url, status=status)
+                self.mark_network_call_completed(extra_rate_bucket=rate_bucket)
+                data = json.loads(response_body)
+                self.journal.append(
+                    record_id=record_id,
+                    step=step or method.lower(),
+                    status="network",
+                    url_sha1=sha1_text(url),
+                    http_status=status,
+                    budget=self.budget.snapshot(),
+                )
+                return data
+            except urllib.error.HTTPError as exc:
+                self.log_call(method, url, status=exc.code)
+                self.mark_network_call_completed(extra_rate_bucket=rate_bucket)
+                if exc.code in RETRYABLE_HTTP_CODES:
+                    if attempt <= len(FETCH_RETRY_DELAYS):
+                        self.sleep_before_retry(attempt)
+                        continue
+                    reason = "http_%s" % exc.code
+                    self.journal_fetch_failed(method, url, record_id, step, attempt, reason, status=exc.code)
+                    raise FetchFailed(method, url, step, reason, attempt, status=exc.code, original=exc)
+                raise
+            except (urllib.error.URLError, TimeoutError, socket.timeout, ConnectionResetError) as exc:
+                self.log_call(method, url, status="transport_error")
+                self.mark_network_call_completed(extra_rate_bucket=rate_bucket)
+                reason = self.transport_failure_reason(exc)
+                if attempt <= len(FETCH_RETRY_DELAYS):
+                    self.sleep_before_retry(attempt)
+                    continue
+                self.journal_fetch_failed(method, url, record_id, step, attempt, reason)
+                raise FetchFailed(method, url, step, reason, attempt, original=exc)
+
     def get_json_url(self, url, cache=True, record_id=None, step=None):
         cache_file = self.cache_path(url)
         if cache and os.path.exists(cache_file):
@@ -812,75 +912,15 @@ class CourtListenerClient:
             )
             return data
 
-        attempt = 0
-        while True:
-            attempt += 1
-            self.wait_for_network_call(record_id=record_id, step=step or "http")
-            req = urllib.request.Request(url)
-            req.add_header("Authorization", "Token %s" % self.token)
-            req.add_header("Accept", "application/json")
-            req.add_header("User-Agent", "cssi-s2-builder/1.0")
-            try:
-                with urllib.request.urlopen(req, timeout=45) as resp:
-                    body = resp.read().decode("utf-8")
-                    status = getattr(resp, "status", 200)
-                self.log_call("GET", url, status=status)
-                self.mark_network_call_completed()
-                data = json.loads(body)
-                if cache:
-                    with open(cache_file, "w", encoding="utf-8") as f:
-                        json.dump(data, f)
-                self.journal.append(
-                    record_id=record_id,
-                    step=step or "http",
-                    status="network",
-                    url_sha1=sha1_text(url),
-                    http_status=status,
-                    budget=self.budget.snapshot(),
-                )
-                return data
-            except urllib.error.HTTPError as exc:
-                self.log_call("GET", url, status=exc.code)
-                self.mark_network_call_completed()
-                if exc.code in (429, 500, 502, 503, 504) and attempt < 6:
-                    time.sleep(min(120, (2 ** attempt) + random.uniform(0.25, 1.5)))
-                    continue
-                raise
+        data = self.request_json_url("GET", url, record_id=record_id, step=step or "http")
+        if cache:
+            with open(cache_file, "w", encoding="utf-8") as f:
+                json.dump(data, f)
+        return data
 
     def post_json_url(self, url, payload, record_id=None, step=None, rate_bucket=None):
         body = json.dumps(payload).encode("utf-8")
-        attempt = 0
-        while True:
-            attempt += 1
-            self.wait_for_network_call(record_id=record_id, step=step or "post", extra_rate_bucket=rate_bucket)
-            req = urllib.request.Request(url, data=body, method="POST")
-            req.add_header("Authorization", "Token %s" % self.token)
-            req.add_header("Accept", "application/json")
-            req.add_header("Content-Type", "application/json")
-            req.add_header("User-Agent", "cssi-s2-builder/1.0")
-            try:
-                with urllib.request.urlopen(req, timeout=60) as resp:
-                    response_body = resp.read().decode("utf-8")
-                    status = getattr(resp, "status", 200)
-                self.log_call("POST", url, status=status)
-                self.mark_network_call_completed(extra_rate_bucket=rate_bucket)
-                data = json.loads(response_body)
-                self.journal.append(
-                    record_id=record_id,
-                    step=step or "post",
-                    status="network",
-                    url_sha1=sha1_text(url),
-                    http_status=status,
-                    budget=self.budget.snapshot(),
-                )
-                return data
-            except urllib.error.HTTPError as exc:
-                self.log_call("POST", url, status=exc.code)
-                self.mark_network_call_completed(extra_rate_bucket=rate_bucket)
-                if exc.code in (429, 500, 502, 503, 504) and attempt < 6:
-                    time.sleep(min(120, (2 ** attempt) + random.uniform(0.25, 1.5)))
-                    continue
-                raise
+        return self.request_json_url("POST", url, body=body, record_id=record_id, step=step or "post", rate_bucket=rate_bucket)
 
     def search(self, params, cache=True, record_id=None, step=None):
         return self.get_json_url(self.build_url("search", params), cache=cache, record_id=record_id, step=step or "search")
@@ -1621,6 +1661,70 @@ def review_treatment_hit(result, opinion_text_value=""):
     return event
 
 
+def treatment_edge_key(edge):
+    citing = edge.get("citing_case") or {}
+    return (
+        citing.get("cluster_id"),
+        citing.get("name"),
+        edge.get("field_ii"),
+        edge.get("field_iii"),
+        edge.get("point"),
+    )
+
+
+def append_treatment_edges(record_json, proposed):
+    edges = record_json["treatment"].setdefault("edges", [])
+    existing = {treatment_edge_key(edge) for edge in edges}
+    added = 0
+    for edge in proposed:
+        key = treatment_edge_key(edge)
+        if key in existing:
+            continue
+        edges.append(edge)
+        existing.add(key)
+        added += 1
+    return added
+
+
+def mark_treatment_fetch_failed(record_json, journal, lane_name, query, cap, reviewed, proposed, cursor, failure):
+    record_id = record_json["record_id"]
+    append_treatment_edges(record_json, proposed)
+    derivation = record_json["treatment"].setdefault("derivation", {})
+    derivation[lane_name] = {
+        "query": query,
+        "reviewed": reviewed,
+        "cap": cap,
+        "cap_hit": False,
+        "final_cursor": cursor,
+        "audit_needed": False,
+        "proposed_negative_events": len(proposed),
+        "fetch_failed": True,
+        "retry_pending": True,
+        "failed_step": failure.step,
+        "failure_reason": failure.reason,
+        "attempts": failure.attempts,
+    }
+    warning = "treatment %s fetch failed after bounded retries; retry pending" % lane_name
+    warnings = record_json["provenance"].setdefault("warnings", [])
+    if warning not in warnings:
+        warnings.append(warning)
+    journal.append(
+        record_id=record_id,
+        step="treatment",
+        lane=lane_name,
+        status="partial",
+        cursor=cursor,
+        reviewed=reviewed,
+        proposed=len(proposed),
+        note="fetch_failed",
+        fetch_failed=True,
+        retry_pending=True,
+        failed_step=failure.step,
+        attempts=failure.attempts,
+        reason=failure.reason,
+    )
+
+
 def run_treatment(record_json, source_record, client, journal, resume, session):
     record_id = source_record["record_id"]
     if record_json.get("stub"):
@@ -1651,86 +1755,92 @@ def run_treatment(record_json, source_record, client, journal, resume, session):
             changed = True
             completed_lanes.add(lane_name)
             continue
-        reviewed = int(lane_state.get("reviewed") or 0)
+        retry_pending = bool(lane_state.get("retry_pending"))
+        reviewed = 0 if retry_pending else int(lane_state.get("reviewed") or 0)
         proposed = []
-        cursor = lane_state.get("cursor")
-        data = client.get_json_url(cursor, cache=False, record_id=record_id, step="treatment.%s.resume" % lane_name) if cursor else client.search(params, cache=False, record_id=record_id, step="treatment.%s.search" % lane_name)
+        cursor = None if retry_pending else lane_state.get("cursor")
         cap_hit = False
         final_cursor = cursor
-        while True:
-            for result in search_results(data):
-                if reviewed >= cap:
-                    break
-                reviewed += 1
-                hit_text = treatment_hit_text(client, result, record_id, lane_name)
-                field_ii = review_treatment_hit(result, hit_text)
-                if field_ii:
-                    proposed.append({
-                        "citing_case": {
-                            "name": result.get("caseName") or result.get("case_name") or "",
-                            "cluster_id": extract_id(result.get("cluster_id")),
-                            "cite": result.get("citation") or None,
+        try:
+            data = client.get_json_url(cursor, cache=False, record_id=record_id, step="treatment.%s.resume" % lane_name) if cursor else client.search(params, cache=False, record_id=record_id, step="treatment.%s.search" % lane_name)
+            while True:
+                for result in search_results(data):
+                    if reviewed >= cap:
+                        break
+                    reviewed += 1
+                    hit_text = treatment_hit_text(client, result, record_id, lane_name)
+                    field_ii = review_treatment_hit(result, hit_text)
+                    if field_ii:
+                        proposed.append({
+                            "citing_case": {
+                                "name": result.get("caseName") or result.get("case_name") or "",
+                                "cluster_id": extract_id(result.get("cluster_id")),
+                                "cite": result.get("citation") or None,
+                                "field_ii": field_ii,
+                            },
                             "field_ii": field_ii,
-                        },
-                        "field_ii": field_ii,
-                        "field_iii": "mentioned",
-                        "point": None,
-                        "proposed": True,
-                        "journal_ref": "%s:%s" % (record_id, lane_name),
-                    })
-            if reviewed >= cap:
-                cap_hit = True
-                final_cursor = next_url(data)
+                            "field_iii": "mentioned",
+                            "point": None,
+                            "proposed": True,
+                            "journal_ref": "%s:%s" % (record_id, lane_name),
+                        })
+                if reviewed >= cap:
+                    cap_hit = True
+                    final_cursor = next_url(data)
+                    journal.append(
+                        record_id=record_id,
+                        step="treatment",
+                        lane=lane_name,
+                        status="complete",
+                        cap_hit=True,
+                        cursor=final_cursor,
+                        audit_needed=True,
+                        reviewed=reviewed,
+                        proposed=len(proposed),
+                    )
+                    break
+                url = next_url(data)
+                if not url:
+                    final_cursor = None
+                    journal.append(
+                        record_id=record_id,
+                        step="treatment",
+                        lane=lane_name,
+                        status="complete",
+                        cap_hit=False,
+                        cursor=None,
+                        audit_needed=False,
+                        reviewed=reviewed,
+                        proposed=len(proposed),
+                    )
+                    break
+                final_cursor = url
                 journal.append(
                     record_id=record_id,
                     step="treatment",
                     lane=lane_name,
-                    status="complete",
-                    cap_hit=True,
-                    cursor=final_cursor,
-                    audit_needed=True,
+                    status="partial",
+                    cursor=url,
                     reviewed=reviewed,
                     proposed=len(proposed),
                 )
-                break
-            url = next_url(data)
-            if not url:
-                final_cursor = None
-                journal.append(
-                    record_id=record_id,
-                    step="treatment",
-                    lane=lane_name,
-                    status="complete",
-                    cap_hit=False,
-                    cursor=None,
-                    audit_needed=False,
-                    reviewed=reviewed,
-                    proposed=len(proposed),
-                )
-                break
-            final_cursor = url
-            journal.append(
-                record_id=record_id,
-                step="treatment",
-                lane=lane_name,
-                status="partial",
-                cursor=url,
-                reviewed=reviewed,
-                proposed=len(proposed),
-            )
-            if session.expired():
-                derivation[lane_name] = {
-                    "query": query,
-                    "reviewed": reviewed,
-                    "cap": cap,
-                    "cap_hit": False,
-                    "final_cursor": url,
-                    "audit_needed": False,
-                    "proposed_negative_events": len(proposed),
-                }
-                record_json["treatment"]["edges"].extend(proposed)
-                return True
-            data = client.get_json_url(url, cache=False, record_id=record_id, step="treatment.%s.page" % lane_name)
+                if session.expired():
+                    derivation[lane_name] = {
+                        "query": query,
+                        "reviewed": reviewed,
+                        "cap": cap,
+                        "cap_hit": False,
+                        "final_cursor": url,
+                        "audit_needed": False,
+                        "proposed_negative_events": len(proposed),
+                    }
+                    append_treatment_edges(record_json, proposed)
+                    return True
+                data = client.get_json_url(url, cache=False, record_id=record_id, step="treatment.%s.page" % lane_name)
+        except FetchFailed as exc:
+            mark_treatment_fetch_failed(record_json, journal, lane_name, query, cap, reviewed, proposed, final_cursor, exc)
+            changed = True
+            continue
         derivation[lane_name] = {
             "query": query,
             "reviewed": reviewed,
@@ -1741,7 +1851,7 @@ def run_treatment(record_json, source_record, client, journal, resume, session):
             "audit_marker": "R15 treatment audit required" if cap_hit else None,
             "proposed_negative_events": len(proposed),
         }
-        record_json["treatment"]["edges"].extend(proposed)
+        append_treatment_edges(record_json, proposed)
         changed = True
         completed_lanes.add(lane_name)
     if all(resume.lane_complete(record_id, "treatment", lane) or lane in completed_lanes for lane, _cap in TREATMENT_LANES):
@@ -1961,6 +2071,14 @@ class ManifestStore:
                     treatment[lane]["proposed"] = state.get("proposed")
                 if state.get("cap_hit") is not None:
                     treatment[lane]["cap_hit"] = state.get("cap_hit")
+                if state.get("retry_pending") is not None:
+                    treatment[lane]["retry_pending"] = bool(state.get("retry_pending"))
+                if state.get("fetch_failed") is not None:
+                    treatment[lane]["fetch_failed"] = bool(state.get("fetch_failed"))
+                if state.get("note") is not None:
+                    treatment[lane]["note"] = state.get("note")
+                if state.get("failed_step") is not None:
+                    treatment[lane]["failed_step"] = state.get("failed_step")
 
     def update(self, old_record_id, record_json, counts=None, final_record_id=None, resume_state=None):
         row = self.by_record_id.get(old_record_id)
@@ -2021,6 +2139,37 @@ def interrupt_case_at_boundary(record_json, paths, journal, client, session, aft
     write_case_record(paths, record_json)
     record_json["_ingest_interrupted"] = reason
     return True
+
+
+def persist_case_interruption(record_json, paths, journal, client, reason, during_step=None, error=None):
+    budget = getattr(client, "budget", None)
+    row = {
+        "record_id": record_json["record_id"],
+        "step": "case-interruption",
+        "status": "interrupted",
+        "reason": reason,
+        "during_step": during_step,
+        "budget": budget.snapshot() if budget is not None else None,
+    }
+    if isinstance(error, FetchFailed):
+        row.update({
+            "fetch_failed": True,
+            "retry_pending": True,
+            "failed_step": error.step,
+            "attempts": error.attempts,
+            "failure_reason": error.reason,
+            "url_sha1": sha1_text(error.url),
+            "http_status": error.status,
+        })
+    elif error is not None:
+        row.update({
+            "error_type": error.__class__.__name__,
+            "error_message": str(error),
+        })
+    journal.append(**row)
+    write_case_record(paths, record_json)
+    record_json["_ingest_interrupted"] = reason
+    return record_json
 
 
 def process_page_record(source_record, client, paths, precedence, migration, journal, resume, build_run, session):
@@ -2109,16 +2258,11 @@ def process_page_record(source_record, client, paths, precedence, migration, jou
             record_json["provenance"]["field_provenance"]["point_overrides"] = base_field_provenance("S2 treatment derivation proposed only")
             write_case_record(paths, record_json)
     except IngestInterrupted as exc:
-        journal.append(
-            record_id=record_json["record_id"],
-            step="case-interruption",
-            status="interrupted",
-            reason=exc.reason,
-            during_step=exc.step,
-            budget=client.budget.snapshot() if getattr(client, "budget", None) is not None else None,
-        )
-        write_case_record(paths, record_json)
-        record_json["_ingest_interrupted"] = exc.reason
+        persist_case_interruption(record_json, paths, journal, client, exc.reason, during_step=exc.step, error=exc)
+    except FetchFailed as exc:
+        persist_case_interruption(record_json, paths, journal, client, "fetch_failed", during_step=exc.step, error=exc)
+    except Exception as exc:
+        persist_case_interruption(record_json, paths, journal, client, "unhandled_exception", error=exc)
     return record_json
 
 
@@ -2228,10 +2372,23 @@ def run_ingest(args):
             journal.append(step="case-interruption", status="interrupted", reason="call_budget_exhausted", budget=budget.snapshot())
             break
         old_id = source_record["record_id"]
-        if source_record.get("stub"):
-            record_json, final_id = process_frontier_record(source_record, client, paths, precedence, journal, resume, run_id)
-        else:
-            record_json = process_page_record(source_record, client, paths, precedence, migration, journal, resume, run_id, session)
+        try:
+            if source_record.get("stub"):
+                record_json, final_id = process_frontier_record(source_record, client, paths, precedence, journal, resume, run_id)
+            else:
+                record_json = process_page_record(source_record, client, paths, precedence, migration, journal, resume, run_id, session)
+                final_id = record_json["record_id"]
+        except IngestInterrupted as exc:
+            record_json = load_case_record(paths, old_id) or empty_record_shell(old_id, source_record, run_id)
+            persist_case_interruption(record_json, paths, journal, client, exc.reason, during_step=exc.step, error=exc)
+            final_id = record_json["record_id"]
+        except FetchFailed as exc:
+            record_json = load_case_record(paths, old_id) or empty_record_shell(old_id, source_record, run_id)
+            persist_case_interruption(record_json, paths, journal, client, "fetch_failed", during_step=exc.step, error=exc)
+            final_id = record_json["record_id"]
+        except Exception as exc:
+            record_json = load_case_record(paths, old_id) or empty_record_shell(old_id, source_record, run_id)
+            persist_case_interruption(record_json, paths, journal, client, "unhandled_exception", error=exc)
             final_id = record_json["record_id"]
         interrupted = record_json.pop("_ingest_interrupted", None)
         current_resume = ResumeState(manifest.resume_rows() + journal.rows()) if args.resume and not args.run_id else ResumeState(journal.rows())
@@ -2628,6 +2785,103 @@ class TreatmentResumeClient:
         return ""
 
 
+class CountingLimiter:
+    def __init__(self):
+        self.waits = 0
+        self.completed = 0
+
+    def wait(self):
+        self.waits += 1
+
+    def mark_completed(self):
+        self.completed += 1
+
+
+class CountingHourly:
+    def __init__(self):
+        self.waits = 0
+
+    def wait(self):
+        self.waits += 1
+
+
+class TimeoutDuringTreatmentClient(CourtListenerClient):
+    def __init__(self, paths, journal):
+        self.counting_rate = CountingLimiter()
+        self.counting_hourly = CountingHourly()
+        super().__init__(
+            paths=paths,
+            token="selftest-token",
+            token_fingerprint="selftest",
+            journal=journal,
+            budget=CallBudget(max_calls=10),
+            rate=self.counting_rate,
+            hourly=self.counting_hourly,
+            run_id="selftest",
+        )
+        self.search_steps = []
+        self.urlopen_calls = []
+        self.retry_sleeps = []
+        self.sleep = self.retry_sleeps.append
+        self.retry_jitter = lambda: 0.0
+        self.urlopen = self.timeout_urlopen
+
+    def timeout_urlopen(self, req, timeout=None):
+        self.urlopen_calls.append({"url": req.full_url, "timeout": timeout})
+        raise TimeoutError("socket read timeout")
+
+    def search(self, params, cache=True, record_id=None, step=None):
+        self.search_steps.append(step)
+        if step == "identity.search":
+            return {
+                "count": 1,
+                "results": [{
+                    "cluster_id": 100,
+                    "caseName": "Smith v. Jones",
+                    "opinions": [{"id": 200, "type": "020lead"}],
+                    "sibling_ids": [200],
+                }],
+                "next": None,
+            }
+        if step == "progeny.search":
+            return {"count": 1, "results": [{"id": "citing-row"}], "next": None}
+        if step == "progeny.per_sibling":
+            return {"count": 1, "results": [{"id": "count-row"}], "next": None}
+        if step == "treatment.lane1_negative.search":
+            return {
+                "count": 1,
+                "results": [{
+                    "caseName": "Timeout Citer",
+                    "cluster_id": 300,
+                    "citation": "2 U.S. 3",
+                    "opinions": [{"id": 301, "type": "020lead"}],
+                }],
+                "next": None,
+            }
+        if step and step.startswith("treatment."):
+            return {"count": 0, "results": [], "next": None}
+        raise AssertionError("unexpected search step %r" % step)
+
+    def get_cluster(self, cluster_id, record_id=None, step="identity.cluster"):
+        return {
+            "id": int(cluster_id),
+            "case_name": "Smith v. Jones",
+            "case_name_short": "Smith",
+            "case_name_full": "Smith v. Jones",
+            "date_filed": "2024-01-01",
+            "court": "scotus",
+            "citation_count": 1,
+            "absolute_url": "/opinion/100/smith-v-jones/",
+            "citations": [{"volume": 1, "reporter": "U.S.", "page": 2, "type": 1}],
+            "sub_opinions": [{"id": 200, "type": "020lead"}],
+        }
+
+    def text_for_opinion(self, opinion_ref, record_id=None, step="opinion_text"):
+        if step and step.startswith("identity."):
+            return "Smith and Jones are both named in this opinion."
+        return super().text_for_opinion(opinion_ref, record_id=record_id, step=step)
+
+
 class ExpireAfterFirstPage:
     def __init__(self):
         self.calls = 0
@@ -2667,6 +2921,70 @@ def self_test_treatment_partial_resume():
     run_treatment(resumed_record, source, resume_client, journal, ResumeState(journal.rows()), ExpireAfterFirstPage())
     assert resume_client.url_calls and resume_client.url_calls[0] == "page-2"
     assert "treatment.lane1_negative.search" not in resume_client.search_calls
+
+
+def self_test_transport_timeout_retry_pending():
+    tmp = tempfile.mkdtemp(prefix="s2-timeout-selftest-")
+    try:
+        paths = LakePaths(tmp, os.path.join(tmp, "pool"))
+        paths.ensure()
+        journal = Journal(os.path.join(tmp, "journal.jsonl"), "selftest")
+        source = {
+            "record_id": "timeout-case",
+            "title": "Smith v. Jones",
+            "expected_citation": "1 U.S. 2",
+            "court_level": "scotus",
+            "year": 2024,
+            "legacy_treatment_status": "good",
+            "legacy_treatment_as_of": "2026-06-30",
+            "counts": {},
+        }
+        precedence = {"court_classes": {"scotus": {"reporters": {"U.S.": 1}}}}
+        migration = {
+            "mappings": {
+                "good": {
+                    "field_i_validity": "good_law",
+                    "requires_point_overrides": False,
+                    "requires_edge": False,
+                    "varies_by_point": False,
+                }
+            }
+        }
+        client = TimeoutDuringTreatmentClient(paths, journal)
+        record = process_page_record(source, client, paths, precedence, migration, journal, ResumeState([]), "selftest", SessionTimer(None))
+        assert not record.get("_ingest_interrupted"), record.get("_ingest_interrupted")
+        assert os.path.exists(os.path.join(paths.cases, "timeout-case.json"))
+        assert len(client.urlopen_calls) == 4, client.urlopen_calls
+        assert all(call["timeout"] == URL_TIMEOUT_SECONDS for call in client.urlopen_calls)
+        assert client.retry_sleeps == list(FETCH_RETRY_DELAYS), client.retry_sleeps
+        assert client.counting_rate.waits == 4 and client.counting_rate.completed == 4
+        assert client.counting_hourly.waits == 4
+        assert client.budget.session_calls == 4
+        assert "treatment.lane2_top_cited.search" in client.search_steps
+
+        rows = journal.rows()
+        fetch_rows = [
+            row for row in rows
+            if row.get("step") == "treatment.lane1_negative.hit_text" and row.get("status") == "fetch_failed"
+        ]
+        assert fetch_rows and fetch_rows[-1]["attempts"] == 4, fetch_rows
+        lane = ResumeState(rows).lane_status("timeout-case", "treatment", "lane1_negative")
+        assert lane["status"] == "partial", lane
+        assert lane["retry_pending"] is True and lane["fetch_failed"] is True, lane
+        assert lane["note"] == "fetch_failed", lane
+
+        write_json(paths.manifest, {
+            "schema_version": SCHEMA_VERSION,
+            "generated_at": iso_now(),
+            "records": [dict(source, lane_status=default_lane_status())],
+        })
+        manifest = ManifestStore(paths.manifest)
+        manifest.update("timeout-case", record, counts={"cl_calls": client.budget.session_calls}, resume_state=ResumeState(rows))
+        lane_status = manifest.data["records"][0]["lane_status"]["treatment"]["lane1_negative"]
+        assert lane_status["status"] == "partial", lane_status
+        assert lane_status["retry_pending"] is True and lane_status["note"] == "fetch_failed", lane_status
+    finally:
+        shutil.rmtree(tmp)
 
 
 def self_test_opinion_cluster_id_rejected():
@@ -2809,6 +3127,7 @@ def run_self_tests():
     self_test_identity_skip_preserves_record()
     self_test_budget_interruption_resume()
     self_test_treatment_partial_resume()
+    self_test_transport_timeout_retry_pending()
     self_test_opinion_cluster_id_rejected()
     self_test_migration_round_trip()
     self_test_preseeded_new_schema_treatment()
