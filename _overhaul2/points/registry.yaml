@@ -1,0 +1,755 @@
+# _overhaul2/points/registry.yaml
+# S3 R4 — the point-of-law registry: the controlled list of atomic legal
+# propositions (finer than a page) that S2 case-treatment, S7 assertions, and
+# S8 term/embed linking bind to. Built at _overhaul2/points/ for the run;
+# graduation to data/points/ is a post-publish task (S3 §9).
+#
+# Governing law: S3 R4 (schema), R5 (binding), R6 (granularity: page split =
+# point split), R7 (placed-not-authored), Appendix C (mandatory seed set),
+# Decision-Log SD1. STANDARDS.md SR-14 (single-source / transclusion).
+#
+# GRANULARITY (R6): a node is minted ONLY when (a) S2 has, or plausibly could
+# have, split treatment on it; (b) it is a distinct black-letter rule a page
+# states; or (c) it is transcluded across pages. Never per sentence. Every node
+# carries a `why:` field: seeds say "SEED (Appendix C)"; beyond-seed nodes cite
+# the R6 clause that justifies the mint (grep for `why:` to audit the set).
+#
+# STATEMENT grade (draft): where a node's home_page is an AUTHORED page, the
+# statement is a verbatim-grounded 1-3 sentence proposition harvested from that
+# page's black-letter rule (S7 refines to `verified`). Where the home_page is a
+# placed-empty stub (R7), statement is '' (status draft) — EXCEPT load-bearing
+# nodes (the Belton/Gant SIA-vehicles binding target, the two geofence binding
+# targets, and the Appendix C seed pairs whose rule lives on a sibling authored
+# page recorded in also_on) carry a grounded draft. NO invented law anywhere.
+
+schema:
+  version: "s3.points.registry.v1"
+  node_fields:
+    core: [id, label, statement, home_page, also_on, status]   # R4-validated
+    provenance: [seed, why]                                     # R6 build/adjudication metadata
+  status_enum: [draft, verified]
+  id_grammar: "area.object.point, kebab-case; object segment omitted where it does not apply (e.g. proof.probable-cause); sub-point segments allowed (e.g. search.home.exigency.emergency-aid). area ~ the 13 categories."
+  home_page: "exact repo-relative content path (content/...); resolves on disk. also_on[] lists secondary homes (multi-homed / transcluded content)."
+
+nodes:
+
+  # ============================================================
+  # CATEGORY 1 — Foundations & the Fourth Amendment  (area: foundations)
+  # ============================================================
+  - id: foundations.fourth-amendment-framework
+    label: "The Fourth Amendment analytic framework"
+    statement: "The Fourth Amendment bars only *unreasonable* searches and seizures; analysis proceeds in two steps — whether a Fourth Amendment *search or seizure* occurred (the threshold), then whether it was *reasonable* (the warrant-preference rule and its recognized exceptions). Even small intrusions count: moving an object to read a serial number is a search. *Arizona v. Hicks*, 480 U.S. 321 (1987)."
+    home_page: "content/foundations-and-the-fourth-amendment/Fourth Amendment Framework.md"
+    also_on: []
+    status: draft
+    seed: false
+    why: "R6(b)+(c) — the overarching reasonableness/warrant-preference framework is a distinct black-letter proposition and is transcluded/referenced across the analysis pages (Common Law Origins, Analysis Checklist, Recalibration state history/method, not independent rules — no nodes)."
+
+  # ============================================================
+  # CATEGORY 2 — Standards of Proof  (area: proof)
+  # ============================================================
+  - id: proof.reasonable-suspicion
+    label: "Reasonable suspicion"
+    statement: "Reasonable suspicion requires 'specific reasonable inferences' drawn from articulable facts in light of the officer's experience — a particularized and objective basis judged on the whole picture; an 'inchoate and unparticularized suspicion or hunch' is not enough. *Terry v. Ohio*, 392 U.S. 1, 27 (1968); *United States v. Cortez*, 449 U.S. 411 (1981)."
+    home_page: "content/standards-of-proof/Probable Cause and Reasonable Suspicion.md"
+    also_on: []
+    status: draft
+    seed: true
+    why: "SEED (Appendix C) — Sokolow / Terry line."
+
+  - id: proof.probable-cause
+    label: "Probable cause"
+    statement: "Probable cause exists when, under the totality of the circumstances, there is a 'fair probability that contraband or evidence of a crime will be found in a particular place' — a practical, non-technical probability on which reasonable people act, never a fixed percentage. *Illinois v. Gates*, 462 U.S. 213, 238 (1983); *Brinegar v. United States*, 338 U.S. 160 (1949)."
+    home_page: "content/standards-of-proof/Probable Cause and Reasonable Suspicion.md"
+    also_on: []
+    status: draft
+    seed: true
+    why: "SEED (Appendix C) — Gates line."
+
+  - id: proof.proof-ladder
+    label: "The proof ladder"
+    statement: ""
+    home_page: "content/standards-of-proof/The Proof Ladder.md"
+    also_on: []
+    status: draft
+    seed: false
+    why: "R6(b) — the ordered ladder of proof standards (hunch < reasonable suspicion < probable cause < preponderance < clear-and-convincing < beyond-reasonable-doubt) is a distinct proposition; placed-empty (R7)."
+
+  # ============================================================
+  # CATEGORY 3 — Searches  (area: search)
+  # ============================================================
+  - id: search.rep
+    label: "Reasonable expectation of privacy (Katz)"
+    statement: ""
+    home_page: "content/searches/two-definitions-of-search/Reasonable Expectation of Privacy.md"
+    also_on: []
+    status: draft
+    seed: false
+    why: "R6(a)+(b) — the Katz REP test (the seminal 'what is a search'); Katz re-homed here (R3, Appendix B); a prime split-treatment locus. Placed-empty (R7)."
+
+  - id: search.trespass
+    label: "Trespass / physical-intrusion test (Jones)"
+    statement: ""
+    home_page: "content/searches/two-definitions-of-search/Trespass.md"
+    also_on: []
+    status: draft
+    seed: false
+    why: "R6(b) — the Jones physical-intrusion definition of a search, a distinct threshold rule the page states. Placed-empty (R7)."
+
+  - id: search.curtilage
+    label: "Curtilage"
+    statement: "Curtilage — 'the area immediately surrounding and associated with the home' — is treated as part of the home itself, so a physical intrusion onto curtilage to gather evidence is a search, presumptively unreasonable without a warrant or exception; everything beyond it is open fields, which receive no Fourth Amendment protection. *Florida v. Jardines*, 569 U.S. 1 (2013); *Oliver v. United States*, 466 U.S. 170 (1984)."
+    home_page: "content/searches/Curtilage.md"
+    also_on: []
+    status: draft
+    seed: false
+    why: "R6(b) — curtilage-is-part-of-the-home is a distinct black-letter rule; a major training point per the Decision Log."
+
+  - id: search.open-fields
+    label: "Open fields"
+    statement: ""
+    home_page: "content/searches/Open Fields.md"
+    also_on: []
+    status: draft
+    seed: false
+    why: "R6(b) — the open-fields no-protection rule (Oliver/Hester) is distinct from curtilage; the page split IS the point split. Placed-empty (R7)."
+
+  - id: search.aerial-surveillance
+    label: "Aerial & enhanced surveillance"
+    statement: ""
+    home_page: "content/searches/Aerial and Enhanced Surveillance.md"
+    also_on: []
+    status: draft
+    seed: false
+    why: "R6(b) — aerial/enhanced-sensor surveillance (Ciraolo/Florida v. Riley/Dow/Kyllo) is a distinct black-letter rule. Placed-empty (R7, greenlit new node)."
+
+  - id: search.digital.third-party
+    label: "Third-party doctrine & CSLI"
+    statement: "Under the third-party doctrine a person has no legitimate expectation of privacy in information voluntarily turned over to a third party, so the government may obtain it without a warrant (*Smith v. Maryland*; *United States v. Miller*); *Carpenter v. United States* (2018) carved a narrow digital limit — acquiring historical cell-site location information is a search that generally requires a warrant — without overruling *Smith* or *Miller*."
+    home_page: "content/searches/the-third-party-doctrine-and-digital-surveillance/index.md"
+    also_on: []
+    status: draft
+    seed: false
+    why: "R6(a)+(b) — the third-party doctrine and the Carpenter digital limit are the anchor of the hardest-to-find case family (A6); prime split-treatment locus. Home is the sub-umbrella overview, which states the rule."
+
+  - id: search.digital.cell-site-simulator
+    label: "Cell-site simulators"
+    statement: ""
+    home_page: "content/searches/the-third-party-doctrine-and-digital-surveillance/Cell-Site Simulators.md"
+    also_on: []
+    status: draft
+    seed: false
+    why: "R6(b) — cell-site simulator (stingray) doctrine is a distinct proposition. Placed-empty (R7, A6 reserved child)."
+
+  - id: search.digital.geofence-threshold
+    label: "Geofence acquisition is a search (threshold)"
+    statement: "Government acquisition of geofence (bulk device-location) data is a Fourth Amendment search — confirmed by *Chatrie v. United States* (2026, SCOTUS) and *United States v. Smith*, 110 F.4th 817 (5th Cir. 2024) (geofence acquisition IS a search)."
+    home_page: "content/searches/the-third-party-doctrine-and-digital-surveillance/Reverse-Keyword and Geofence Warrants.md"
+    also_on: []
+    status: draft
+    seed: false
+    why: "R6(a) — LOAD-BEARING: binds Smith (2024) `composite_basis_ref: search.digital.geofence-threshold`; the search-threshold holding split from the general-warrant validity point. Grounded draft from the Smith/Chatrie treatment records (home page placed-empty, R7)."
+
+  - id: search.digital.geofence-warrant
+    label: "Geofence warrants as general warrants"
+    statement: "Whether geofence warrants are categorically unconstitutional general warrants is unsettled: the Fifth Circuit held they are (*United States v. Smith*, 110 F.4th 817 (2024)), but the Supreme Court in *Chatrie v. United States* (2026) expressly declined to adopt the categorical rule, leaving the probable-cause/particularity of geofence warrants the live question on remand."
+    home_page: "content/searches/the-third-party-doctrine-and-digital-surveillance/Reverse-Keyword and Geofence Warrants.md"
+    also_on: []
+    status: draft
+    seed: false
+    why: "R6(a) — LOAD-BEARING: binds S2 override slug `search.warrant.geofence-general-warrant` (Smith 2024, caution/varies by circuit). Grounded draft from the Smith point_override scope_note (home page placed-empty, R7)."
+
+  - id: search.digital.real-time-tracking
+    label: "Real-time location tracking"
+    statement: ""
+    home_page: "content/searches/the-third-party-doctrine-and-digital-surveillance/Real-Time Tracking.md"
+    also_on: []
+    status: draft
+    seed: false
+    why: "R6(b) — real-time GPS/tower tracking (Knotts/Karo/Jones) is a distinct proposition. Placed-empty (R7, A6 reserved child)."
+
+  - id: search.digital.genetic-genealogy
+    label: "Investigative genetic genealogy"
+    statement: ""
+    home_page: "content/searches/the-third-party-doctrine-and-digital-surveillance/Investigative Genetic Genealogy.md"
+    also_on: []
+    status: draft
+    seed: false
+    why: "R6(b) — IGG (forensic DNA database matching) is a distinct post-Chatrie proposition. Placed-empty (R7, A6 reserved child)."
+
+  - id: search.digital.title-iii
+    label: "Electronic surveillance & Title III"
+    statement: ""
+    home_page: "content/searches/Electronic Surveillance and Title III.md"
+    also_on: []
+    status: draft
+    seed: false
+    why: "R6(b) — the Title III statutory wiretap regime (Berger/Katz progeny) has no other home in the tree (A6). Placed-empty (R7)."
+
+  - id: search.private-foreign
+    label: "Private & foreign searches"
+    statement: ""
+    home_page: "content/searches/Private and Foreign Searches.md"
+    also_on: []
+    status: draft
+    seed: false
+    why: "R6(b) — the private-search (Jacobsen) and foreign/extraterritorial-search (Verdugo-Urquidez) doctrines are distinct propositions. Placed-empty (R7, greenlit new node)."
+
+  - id: search.abandonment
+    label: "Abandonment"
+    statement: "A person who voluntarily abandons property or a place loses any reasonable expectation of privacy in it and has no standing to challenge its later search or seizure; abandonment is judged by the *Katz* expectation-of-privacy standard, not property law, and must be voluntary — a relinquishment that is the product of unlawful police conduct does not count. *California v. Greenwood*, 486 U.S. 35 (1988)."
+    home_page: "content/searches/Abandonment.md"
+    also_on: []
+    status: draft
+    seed: false
+    why: "R6(b) — voluntary-abandonment is a distinct black-letter rule the page states."
+
+  - id: search.tents
+    label: "Tents & temporary dwellings"
+    statement: "A tent or temporary dwelling can support a reasonable expectation of privacy depending on where it is pitched (private land or a paid campground) versus open or public land the occupant has no right to occupy; the *Katz* REP test, not the structure's permanence, decides whether entry is a search."
+    home_page: "content/searches/Tents.md"
+    also_on: []
+    status: draft
+    seed: false
+    why: "R6(b) — REP-in-temporary-dwellings is a distinct proposition the page states (split by placement)."
+
+  - id: search.plain-view
+    label: "Plain view & plain feel"
+    statement: "To seize an item in plain view without a warrant, all three *Horton* elements must be met: the officer is lawfully present at the vantage point, the item's incriminating character is immediately apparent, and the officer has a lawful right of access to the item. *Horton v. California*, 496 U.S. 128 (1990). Plain view justifies a *seizure*, not a search — its home is the search/seizure threshold, not a warrant exception (R3/Appendix B)."
+    home_page: "content/searches/Plain View Doctrine.md"
+    also_on: []
+    status: draft
+    seed: false
+    why: "R6(b) — the Horton three-element plain-view rule; re-homed to the Searches threshold (R3, Appendix B). Also the target of the Coolidge pending binding (inadvertence prong superseded by Horton)."
+
+  # ============================================================
+  # CATEGORY 4 — Seizures  (area: seizure)
+  # ============================================================
+  - id: seizure.person.when-seized
+    label: "When a seizure of the person occurs"
+    statement: "A person is 'seized' under the Fourth Amendment in one of two ways: (1) the application of physical force to the body with intent to restrain, or (2) a show of authority to which the person submits. *California v. Hodari D.*, 499 U.S. 621 (1991); *Torres v. Madrid*, 592 U.S. 306 (2021)."
+    home_page: "content/seizures/Seizure of the Person.md"
+    also_on: []
+    status: draft
+    seed: false
+    why: "R6(b) — the Hodari D. / Mendenhall two-roads seizure rule fixes the threshold moment; a distinct proposition."
+
+  - id: seizure.property
+    label: "Seizure of property"
+    statement: ""
+    home_page: "content/seizures/Seizure of Property.md"
+    also_on: []
+    status: draft
+    seed: false
+    why: "R6(b) — a seizure of property is a meaningful interference with a possessory interest (Jacobsen/Soldal); distinct from a seizure of the person. Placed-empty (R7, greenlit new node)."
+
+  - id: seizure.person.terry-stop
+    label: "Terry stops & the protective frisk"
+    statement: "On reasonable, articulable suspicion that criminal activity is afoot an officer may make a brief investigative stop; and on separate suspicion that the person is armed and presently dangerous may conduct a limited protective frisk — a pat-down of the outer clothing for weapons. *Terry v. Ohio*, 392 U.S. 1 (1968); *Adams v. Williams*, 407 U.S. 143 (1972)."
+    home_page: "content/seizures/Terry Stops and Reasonable Suspicion.md"
+    also_on: []
+    status: draft
+    seed: true
+    why: "SEED (Appendix C) — Terry line."
+
+  - id: seizure.person.stop-and-identify
+    label: "Stop-and-identify"
+    statement: ""
+    home_page: "content/seizures/Stop-and-Identify.md"
+    also_on: []
+    status: draft
+    seed: false
+    why: "R6(b) — the Hiibel stop-and-identify rule is a distinct proposition. Placed-empty (R7, greenlit new node)."
+
+  - id: seizure.person.traffic-stop
+    label: "Traffic stops"
+    statement: "A traffic stop is a Fourth Amendment seizure of everyone in the vehicle, justified — like a *Terry* stop — by reasonable articulable suspicion or probable cause of a traffic or criminal violation; random, standardless stops are forbidden, and the stop may last no longer than needed to complete its mission. *Delaware v. Prouse*, 440 U.S. 648 (1979); *Rodriguez v. United States*, 575 U.S. 348 (2015)."
+    home_page: "content/seizures/Traffic Stops.md"
+    also_on: []
+    status: draft
+    seed: false
+    why: "R6(a)+(b) — traffic-stop-as-seizure plus the Rodriguez duration limit; Brendlin (passenger seizure) re-homed here (R3, Appendix B). Plausible split-treatment locus."
+
+  - id: seizure.person.arrest-warrant
+    label: "Arrest & arrest warrants"
+    statement: ""
+    home_page: "content/seizures/arrests/Arrest and Arrest Warrants.md"
+    also_on: []
+    status: draft
+    seed: false
+    why: "R6(b) — the warrantless-public-arrest-on-PC rule (Watson) and the arrest-warrant requirement are distinct propositions. Placed-empty content (R7)."
+
+  - id: seizure.person.arrest-in-home
+    label: "Arrest in the home"
+    statement: "Absent consent or exigent circumstances, police may not make a warrantless, nonconsensual entry into a suspect's home to make a routine felony arrest; an arrest warrant carries the limited authority to enter the arrestee's own home when there is reason to believe he is within (*Payton v. New York*), while entering a third party's home to arrest requires a search warrant (*Steagald v. United States*)."
+    home_page: "content/seizures/arrests/Arrest in the Home.md"
+    also_on: ["content/warrant-exceptions/home-entry-and-search/Entry to Arrest.md"]
+    status: draft
+    seed: false
+    why: "R6(b)+(c) — the Payton/Steagald rule is a distinct proposition transcluded onto the Home-Entry umbrella (Entry to Arrest, multi-homed); one node, not two."
+
+  - id: seizure.person.prompt-pc
+    label: "Prompt probable-cause determination"
+    statement: ""
+    home_page: "content/seizures/arrests/Prompt Probable-Cause Determination.md"
+    also_on: []
+    status: draft
+    seed: false
+    why: "R6(b) — the Gerstein/McLaughlin prompt-PC (48-hour) rule is a distinct proposition. Placed-empty (R7, greenlit new node)."
+
+  - id: seizure.collective-knowledge
+    label: "Collective knowledge & the fellow-officer rule"
+    statement: "Under the collective-knowledge (fellow-officer) doctrine, the probable cause or reasonable suspicion held by one officer is imputed to another who acts at his direction or in objective reliance on a bulletin or dispatch; but the doctrine pools knowledge and never manufactures it — if the department in fact lacked the required basis, the seizure is invalid regardless of the acting officer's good faith."
+    home_page: "content/seizures/Collective Knowledge and the Fellow-Officer Rule.md"
+    also_on: []
+    status: draft
+    seed: false
+    why: "R6(b) — the imputation rule is a distinct proposition that reaches searches, warrants, and arrests."
+
+  # ============================================================
+  # CATEGORY 5 — The Warrant  (area: warrant)
+  # ============================================================
+  - id: warrant.requirement
+    label: "The warrant requirement"
+    statement: "A valid search warrant must be supported by probable cause, particularly describe the place to be searched and the things to be seized, and be issued by a neutral and detached magistrate on oath or affirmation; a facially deficient warrant may still spare the evidence from suppression where officers relied on it in objectively reasonable good faith (*United States v. Leon*), subject to floors (no *Franks* falsehood, no non-neutral magistrate, no so-facially-deficient warrant)."
+    home_page: "content/the-warrant/The Warrant Requirement.md"
+    also_on: []
+    status: draft
+    seed: false
+    why: "R6(b)+(c) — the four warrant requisites are the anchor proposition of the category, transcluded across the getting/executing sub-pages."
+
+  - id: warrant.probable-cause-affidavit
+    label: "Probable cause in the affidavit"
+    statement: ""
+    home_page: "content/the-warrant/getting-a-warrant/Probable Cause in the Affidavit.md"
+    also_on: []
+    status: draft
+    seed: false
+    why: "R6(a)+(b) — the Gates totality PC-in-the-affidavit standard; Aguilar/Spinelli (abrogated) re-point here. Placed-empty content (R7)."
+
+  - id: warrant.neutral-magistrate
+    label: "The neutral & detached magistrate"
+    statement: ""
+    home_page: "content/the-warrant/getting-a-warrant/The Neutral and Detached Magistrate.md"
+    also_on: []
+    status: draft
+    seed: false
+    why: "R6(b) — the neutral-and-detached-magistrate requirement (Coolidge/Lo-Ji/Connally) is a distinct proposition. Placed-empty content (R7)."
+
+  - id: warrant.particularity
+    label: "Particularity"
+    statement: ""
+    home_page: "content/the-warrant/getting-a-warrant/Particularity.md"
+    also_on: []
+    status: draft
+    seed: false
+    why: "R6(b) — the particularity requirement (Groh/Andresen; general-warrant bar) is a distinct proposition. Placed-empty content (R7)."
+
+  - id: warrant.franks-challenge
+    label: "Franks challenges"
+    statement: ""
+    home_page: "content/the-warrant/getting-a-warrant/Franks Challenges.md"
+    also_on: []
+    status: draft
+    seed: false
+    why: "R6(b) — the Franks materially-false-affidavit challenge is a distinct proposition. Placed-empty (R7, greenlit new node)."
+
+  - id: warrant.knock-and-announce
+    label: "Knock-and-announce"
+    statement: ""
+    home_page: "content/the-warrant/executing-a-warrant/Knock-and-Announce.md"
+    also_on: []
+    status: draft
+    seed: false
+    why: "R6(a)+(b) — the Wilson/Richards knock-and-announce rule and its Hudson no-suppression remedy split; a plausible split-treatment locus. Placed-empty content (R7)."
+
+  - id: warrant.detention-at-scene
+    label: "Detention & search of persons at the scene"
+    statement: ""
+    home_page: "content/the-warrant/executing-a-warrant/Detention and Search of Persons at the Scene.md"
+    also_on: []
+    status: draft
+    seed: false
+    why: "R6(b) — the Summers/Bailey detention-incident-to-warrant rule and the Ybarra no-automatic-search-of-bystanders rule are distinct propositions. Placed-empty (R7, greenlit new node)."
+
+  - id: warrant.scope-manner
+    label: "Scope, manner & related issues"
+    statement: ""
+    home_page: "content/the-warrant/executing-a-warrant/Scope Manner and Related Issues.md"
+    also_on: []
+    status: draft
+    seed: false
+    why: "R6(b) — the reasonable-scope/manner-of-execution rules (Ramirez; Hicks; media ride-alongs) are distinct propositions. Placed-empty content (R7)."
+
+  # ============================================================
+  # CATEGORY 6 — Warrant Exceptions  (area: search / seizure by object)
+  # ============================================================
+  # -- Searching a Person --
+  - id: search.person.sia
+    label: "Search incident to arrest — persons"
+    statement: ""
+    home_page: "content/warrant-exceptions/searching-a-person/SIA Persons.md"
+    also_on: ["content/warrant-exceptions/Search Incident to Arrest.md"]
+    status: draft
+    seed: true
+    why: "SEED (Appendix C) — Robinson (full search of the person incident to lawful custodial arrest). Home is the placed-empty split page; the authored parent SITA page carries the rule pending S7 redistribution (also_on)."
+
+  - id: search.person.sia-cellphone
+    label: "Search incident to arrest — cell phones"
+    statement: ""
+    home_page: "content/warrant-exceptions/searching-a-person/SIA Cell Phones.md"
+    also_on: ["content/warrant-exceptions/Search Incident to Arrest.md"]
+    status: draft
+    seed: true
+    why: "SEED (Appendix C) — Riley (no SIA of digital cell-phone contents without a warrant). SIA-family split (R6 calibration). Placed-empty content (R7)."
+
+  - id: search.person.sia-alcohol
+    label: "Search incident to arrest — alcohol/chemical tests"
+    statement: ""
+    home_page: "content/warrant-exceptions/searching-a-person/SIA Alcohol Tests.md"
+    also_on: []
+    status: draft
+    seed: true
+    why: "SEED (Appendix C) — Birchfield / McNeely (breath test yes, blood test needs a warrant, incident to a DUI arrest). SIA-family split (R6 calibration). Placed-empty content (R7)."
+
+  # -- Searching a Vehicle --
+  - id: search.vehicle.automobile
+    label: "The automobile exception"
+    statement: "Under the automobile exception a warrantless search of a vehicle is permitted when (1) the vehicle is readily mobile and (2) the officer has probable cause to believe it contains contraband or evidence; on those two facts the search needs no warrant and no separate showing of exigency, and it reaches every part of the car and any container where the object of the probable cause could be hidden. *Carroll v. United States*, 267 U.S. 132 (1925); *California v. Acevedo*, 500 U.S. 565 (1991)."
+    home_page: "content/warrant-exceptions/searching-a-vehicle/Automobile Exception.md"
+    also_on: []
+    status: draft
+    seed: true
+    why: "SEED (Appendix C) — Carroll/Acevedo."
+
+  - id: search.vehicle.sia-recent-occupant
+    label: "Vehicle search incident to a recent occupant's arrest"
+    statement: "Police may search the passenger compartment of a vehicle incident to a recent occupant's arrest only when the arrestee is unsecured and within reaching distance of the compartment, or it is reasonable to believe the vehicle contains evidence of the offense of arrest — *Arizona v. Gant*, 556 U.S. 332 (2009), which replaced *New York v. Belton*'s automatic passenger-compartment rule."
+    home_page: "content/warrant-exceptions/searching-a-vehicle/SIA Vehicles.md"
+    also_on: ["content/warrant-exceptions/Search Incident to Arrest.md"]
+    status: draft
+    seed: true
+    why: "SEED (Appendix C) — LOAD-BEARING: the R5 worked binding. Binds Belton (110559) override + composite (superseded_by Gant 145887) and Thornton (pending). SIA-family split distinct from search.person.sia (R6 calibration). Grounded draft from the Belton point_override scope_note (home page placed-empty, R7)."
+
+  - id: search.vehicle.inventory
+    label: "Vehicle inventory searches"
+    statement: ""
+    home_page: "content/warrant-exceptions/searching-a-vehicle/Inventory Searches.md"
+    also_on: ["content/warrant-exceptions/programmatic-and-special-needs-searches/Special Needs and Administrative Searches.md"]
+    status: draft
+    seed: true
+    why: "SEED (Appendix C) — Opperman/Bertine (standardized-procedure inventory, no PC; not a ruse for rummaging, Wells). Promoted from the Special-Needs mega-page (R3). Placed-empty content (R7)."
+
+  - id: seizure.vehicle.checkpoint-sobriety
+    label: "Sobriety / safety checkpoints"
+    statement: "A suspicionless vehicle checkpoint whose primary purpose is highway safety — e.g., a sobriety checkpoint — is reasonable under a programmatic balancing of the State's interest against the brief intrusion. *Michigan Dep't of State Police v. Sitz*, 496 U.S. 444 (1990)."
+    home_page: "content/warrant-exceptions/searching-a-vehicle/Checkpoints and Roadblocks.md"
+    also_on: ["content/seizures/Traffic Stops.md"]
+    status: draft
+    seed: true
+    why: "SEED (Appendix C) — Sitz (valid). Distinct point from its Edmond sibling (page split = point split). Grounded draft from the authored Traffic Stops page (also_on); home page placed-empty (R7)."
+
+  - id: seizure.vehicle.checkpoint-crime-control
+    label: "General-crime-control checkpoints"
+    statement: "A vehicle checkpoint whose primary purpose is general crime control (e.g., narcotics interdiction) is unconstitutional; a checkpoint programme must serve a special need beyond ordinary law enforcement to be reasonable without individualized suspicion. *City of Indianapolis v. Edmond*, 531 U.S. 32 (2000)."
+    home_page: "content/warrant-exceptions/searching-a-vehicle/Checkpoints and Roadblocks.md"
+    also_on: ["content/seizures/Traffic Stops.md", "content/warrant-exceptions/programmatic-and-special-needs-searches/Special Needs and Administrative Searches.md"]
+    status: draft
+    seed: true
+    why: "SEED (Appendix C) — Edmond (invalid). Distinct point from its Sitz sibling (the S2 good/bad split the registry exists to hold). Grounded draft from the authored Traffic Stops page (also_on); home page placed-empty (R7)."
+
+  # -- Home Entry & Search --
+  - id: search.home.exigency.emergency-aid
+    label: "Exigency — emergency aid"
+    statement: "Police may enter a home without a warrant when they have an objectively reasonable basis for believing that an occupant is seriously injured or imminently threatened with such injury; the standard is purely objective and the officer's subjective motivation is irrelevant. *Brigham City v. Stuart*, 547 U.S. 398 (2006)."
+    home_page: "content/warrant-exceptions/home-entry-and-search/Emergency Aid.md"
+    also_on: []
+    status: draft
+    seed: true
+    why: "SEED (Appendix C) — Brigham City."
+
+  - id: search.home.exigency.hot-pursuit
+    label: "Exigency — hot pursuit"
+    statement: "Where police have probable cause, a warrantless home entry and search is reasonable when the exigencies of the situation make that course imperative; hot (and fresh) pursuit of a fleeing suspect is one recognized exigency, always subject to the gravity-of-offense and no-police-created-exigency limits. *Warden v. Hayden*, 387 U.S. 294 (1967); *Lange v. California*, 594 U.S. 295 (2021)."
+    home_page: "content/warrant-exceptions/home-entry-and-search/Exigent Circumstances and Hot Pursuit.md"
+    also_on: []
+    status: draft
+    seed: true
+    why: "SEED (Appendix C) — Santana / Lange (the hot-pursuit exigency page)."
+
+  - id: search.home.exigency.destruction
+    label: "Exigency — imminent destruction of evidence"
+    statement: "The imminent destruction of evidence is a recognized exigency permitting warrantless entry on probable cause, provided the police did not create the exigency by threatening to violate the Fourth Amendment. *Kentucky v. King*, 563 U.S. 452 (2011)."
+    home_page: "content/warrant-exceptions/home-entry-and-search/Destruction of Evidence.md"
+    also_on: ["content/warrant-exceptions/home-entry-and-search/Exigent Circumstances and Hot Pursuit.md"]
+    status: draft
+    seed: true
+    why: "SEED (Appendix C) — King. Grounded draft from the authored Exigent Circumstances page (also_on); home page placed-empty (R7)."
+
+  - id: search.home.protective-sweep
+    label: "Protective sweeps & securing the scene"
+    statement: "Incident to an in-home arrest, officers may conduct a protective sweep — a quick, limited inspection of spaces where a person might be hiding — on reasonable, articulable suspicion that the area harbors an individual posing a danger, and as a precaution may look in spaces immediately adjoining the place of arrest without any suspicion. *Maryland v. Buie*, 494 U.S. 325 (1990)."
+    home_page: "content/warrant-exceptions/home-entry-and-search/Securing the Scene.md"
+    also_on: []
+    status: draft
+    seed: false
+    why: "R6(b) — the Buie protective-sweep rule (plus Segura/McArthur securing-the-premises) is a distinct proposition."
+
+  - id: search.home.community-caretaking
+    label: "Community caretaking"
+    statement: "The community-caretaking rationale justifies limited warrantless police action in noninvestigatory caretaking functions, chiefly as to vehicles (*Cady v. Dombrowski*); it does not supply a standalone exception for warrantless entry into a home — *Caniglia v. Strom* (2021) refused to extend it to the home."
+    home_page: "content/warrant-exceptions/home-entry-and-search/Community Caretaking.md"
+    also_on: []
+    status: draft
+    seed: false
+    why: "R6(a)+(b) — Cady caretaking limited to non-home contexts post-Caniglia; a distinct, split-treatment-carrying proposition."
+
+  - id: search.home.fire-scene
+    label: "Fire-scene entries"
+    statement: ""
+    home_page: "content/warrant-exceptions/home-entry-and-search/Fire-Scene Entries.md"
+    also_on: []
+    status: draft
+    seed: false
+    why: "R6(b) — the Tyler/Clifford fire-scene-entry rule is a distinct proposition. Placed-empty (R7, greenlit new node)."
+
+  # -- Effects / Consent / Programmatic / Knock-and-Talk --
+  - id: search.effects.containers
+    label: "Searching effects & containers"
+    statement: "A closed container or piece of luggage generally may not be searched without a warrant, but the high-privacy footlocker rule of *United States v. Chadwick* is limited by *California v. Acevedo* for a container found in a vehicle, where probable cause as to the container permits an on-the-spot search."
+    home_page: "content/warrant-exceptions/Searching Effects and Containers.md"
+    also_on: ["content/warrant-exceptions/searching-a-vehicle/Automobile Exception.md"]
+    status: draft
+    seed: false
+    why: "R6(b) — the container/luggage rules (Chadwick/Ross/Acevedo) are a distinct proposition; binds Chadwick (pending). Grounded draft from the authored Automobile Exception page (also_on); home page placed-empty (R7)."
+
+  - id: search.consent
+    label: "Consent searches"
+    statement: "A warrantless search is valid where the government proves, by a preponderance and on the totality of the circumstances, that consent was freely and voluntarily given by someone with actual or apparent authority; acquiescence to a claim of lawful authority is not consent. *Schneckloth v. Bustamonte*, 412 U.S. 218 (1973); *United States v. Matlock*, 415 U.S. 164 (1974); *Illinois v. Rodriguez*, 497 U.S. 177 (1990)."
+    home_page: "content/warrant-exceptions/Consent Searches.md"
+    also_on: []
+    status: draft
+    seed: false
+    why: "R6(b) — the consent voluntariness rule (Schneckloth/Matlock/Rodriguez/Randolph) is a distinct black-letter rule the page states."
+
+  - id: search.special-needs
+    label: "Special-needs & administrative searches"
+    statement: "When a search or seizure serves a special need beyond the normal need for law enforcement, the Fourth Amendment is satisfied not by a warrant and probable cause but by a reasonableness balance of the government's interest against the privacy intrusion, which can sustain suspicionless or reduced-suspicion action in defined contexts."
+    home_page: "content/warrant-exceptions/programmatic-and-special-needs-searches/Special Needs and Administrative Searches.md"
+    also_on: []
+    status: draft
+    seed: false
+    why: "R6(a)+(b) — the special-needs balancing framework is a distinct, split-treatment-carrying proposition (Skinner/Von Raab/T.L.O./Griffin)."
+
+  - id: search.border
+    label: "Border searches"
+    statement: "Routine searches at the international border are reasonable simply because they occur at the border, requiring no warrant, probable cause, or suspicion; non-routine, highly intrusive searches require at least reasonable suspicion. *United States v. Ramsey*, 431 U.S. 606 (1977); *United States v. Flores-Montano*, 541 U.S. 149 (2004)."
+    home_page: "content/warrant-exceptions/programmatic-and-special-needs-searches/Border Searches.md"
+    also_on: []
+    status: draft
+    seed: false
+    why: "R6(b) — the routine/non-routine border-search split (plus the circuit split on device searches, Cotterman/Touset) is a distinct proposition. Re-parented under Programmatic (R3, A7)."
+
+  - id: search.knock-and-talk
+    label: "Knock and talk"
+    statement: "Officers, like any private visitor, hold an implied license to approach a home by the front path, knock, wait briefly, and leave; a knock-and-talk that stays within that license in area, purpose, time, and manner is not a search, but exceeding it is. *Florida v. Jardines*, 569 U.S. 1 (2013); *Kentucky v. King*, 563 U.S. 452 (2011)."
+    home_page: "content/warrant-exceptions/Knock and Talk.md"
+    also_on: []
+    status: draft
+    seed: false
+    why: "R6(b) — the implied-license knock-and-talk rule is a distinct black-letter rule (block-ref anchored on the page)."
+
+  # ============================================================
+  # CATEGORY 7 — Exclusionary Rule, Remedies & Standing  (area: remedy)
+  # ============================================================
+  - id: remedy.exclusionary
+    label: "The exclusionary rule"
+    statement: "The exclusionary rule bars the prosecution from using, in its case-in-chief, evidence obtained in violation of the Fourth Amendment and the fruits of that violation; it is not a personal constitutional right but a judicially created remedy whose primary justification is deterring police misconduct. *Weeks v. United States* (1914); *Mapp v. Ohio* (1961); *United States v. Calandra*, 414 U.S. 338 (1974)."
+    home_page: "content/the-exclusionary-rule-remedies-and-standing/the-exclusionary-rule/index.md"
+    also_on: []
+    status: draft
+    seed: false
+    why: "R6(b)+(c) — the deterrence-remedy rule anchors the split ER sub-umbrella (A4); the overview states it. Home is the ER sub-umbrella overview."
+
+  - id: remedy.fruits-attenuation
+    label: "Fruits & attenuation"
+    statement: ""
+    home_page: "content/the-exclusionary-rule-remedies-and-standing/the-exclusionary-rule/Fruits and Attenuation.md"
+    also_on: []
+    status: draft
+    seed: false
+    why: "R6(b) — fruit-of-the-poisonous-tree plus the attenuation exception (Wong Sun/Brown/Strieff) is a distinct proposition. Placed-empty (R7, A4 new-split)."
+
+  - id: remedy.good-faith
+    label: "The good-faith exception"
+    statement: ""
+    home_page: "content/the-exclusionary-rule-remedies-and-standing/the-exclusionary-rule/The Good-Faith Exception.md"
+    also_on: []
+    status: draft
+    seed: false
+    why: "R6(a)+(b) — the Leon good-faith exception and its floors (Franks/facially-deficient) is a distinct, split-treatment-carrying proposition. Placed-empty (R7, A4 new-split)."
+
+  - id: remedy.inevitable-independent
+    label: "Inevitable discovery & independent source"
+    statement: ""
+    home_page: "content/the-exclusionary-rule-remedies-and-standing/the-exclusionary-rule/Inevitable Discovery and Independent Source.md"
+    also_on: []
+    status: draft
+    seed: false
+    why: "R6(b) — inevitable discovery (Nix) and independent source (Murray) are distinct propositions. Placed-empty (R7, A4 new-split)."
+
+  - id: remedy.standing
+    label: "Standing to challenge a search"
+    statement: "Fourth Amendment rights are personal and may not be vicariously asserted; a defendant may seek suppression only if he had a personal, legitimate expectation of privacy — measured by the *Katz* test — in the place or thing searched. *Rakas v. Illinois*, 439 U.S. 128 (1978); *Alderman v. United States*, 394 U.S. 165 (1969)."
+    home_page: "content/the-exclusionary-rule-remedies-and-standing/Standing to Challenge a Search.md"
+    also_on: []
+    status: draft
+    seed: false
+    why: "R6(b) — the Rakas personal-REP standing rule is a distinct proposition (Brendlin re-homed out of Standing, R3)."
+
+  # ============================================================
+  # CATEGORY 8 — Confessions, Interrogation & the Fifth Amendment  (area: confession)
+  # ============================================================
+  - id: confession.voluntariness
+    label: "Due-process voluntariness"
+    statement: "A confession is inadmissible under the Due Process Clause if, under the totality of the circumstances, official coercion overbore the defendant's will; the inquiry weighs interrogation conditions, threats or promises, and the suspect's individual characteristics, with no single factor dispositive."
+    home_page: "content/confessions-interrogation-and-the-fifth-amendment/Due-Process Voluntariness of Confessions.md"
+    also_on: []
+    status: draft
+    seed: false
+    why: "R6(b) — the due-process coercion/totality rule is a distinct proposition, independent of Miranda."
+
+  - id: confession.miranda
+    label: "Miranda & custodial interrogation"
+    statement: "Before custodial interrogation, police must warn a suspect of the right to silence, that statements may be used against him, and the right to counsel (appointed if indigent); statements from custodial interrogation without warnings and a valid waiver are inadmissible in the prosecution's case-in-chief. *Miranda v. Arizona*, 384 U.S. 436 (1966)."
+    home_page: "content/confessions-interrogation-and-the-fifth-amendment/Miranda and Custodial Interrogation.md"
+    also_on: []
+    status: draft
+    seed: false
+    why: "R6(a)+(b) — the custody+interrogation warnings gate; binds Mathis (1968) (pending). Distinct from the waiver/invocation node (page split)."
+
+  - id: confession.miranda-waiver
+    label: "Miranda waiver & invocation"
+    statement: "After warnings, a suspect may waive Miranda rights knowingly, intelligently, and voluntarily; an unambiguous invocation of counsel bars further interrogation until counsel is present (*Edwards v. Arizona*), and the admissibility of a voluntary second statement or physical fruits turns on the Miranda-fruits line (*Oregon v. Elstad*; *Missouri v. Seibert*; *United States v. Patane*)."
+    home_page: "content/confessions-interrogation-and-the-fifth-amendment/Miranda Waiver and Invocation.md"
+    also_on: []
+    status: draft
+    seed: false
+    why: "R6(a)+(b) — the waiver/invocation/Edwards + Miranda-fruits rule; binds Elstad (pending). Distinct from the warnings-gate node (page split)."
+
+  - id: confession.garrity
+    label: "Public-employee compelled statements (Garrity)"
+    statement: "Statements compelled from a public employee under threat of losing the job are coerced, and the Constitution bars their use against the employee in a subsequent criminal case; the immunity attaches from the compulsion itself and reaches the statement's fruits. *Garrity v. New Jersey*, 385 U.S. 493 (1967); *Lefkowitz v. Turley*, 414 U.S. 70 (1973)."
+    home_page: "content/confessions-interrogation-and-the-fifth-amendment/Public-Employee Compelled Statements (Garrity).md"
+    also_on: []
+    status: draft
+    seed: false
+    why: "R6(b) — Garrity immunity is a distinct black-letter rule (audience-CORE per the page provenance note)."
+
+  # ============================================================
+  # CATEGORY 9 — The Right to Counsel  (area: counsel)
+  # ============================================================
+  - id: counsel.sixth-amendment
+    label: "Sixth Amendment right to counsel"
+    statement: "The Sixth Amendment right to counsel attaches at the initiation of adversary judicial proceedings and is offense-specific; once it attaches, the Massiah rule bars the government from deliberately eliciting incriminating statements about the charged offense outside the presence of counsel, absent a valid waiver. *Massiah v. United States*, 377 U.S. 201 (1964); *Kirby v. Illinois*, 406 U.S. 682 (1972); *Rothgery v. Gillespie County*, 554 U.S. 191 (2008)."
+    home_page: "content/the-right-to-counsel/Sixth Amendment Right to Counsel.md"
+    also_on: []
+    status: draft
+    seed: false
+    why: "R6(b) — the attachment + Massiah deliberate-elicitation rule is a distinct proposition; binds Escobedo (pending, confined by Kirby/Miranda)."
+
+  - id: counsel.lineup
+    label: "Lineups & the right to counsel"
+    statement: ""
+    home_page: "content/the-right-to-counsel/Lineups and the Right to Counsel.md"
+    also_on: []
+    status: draft
+    seed: false
+    why: "R6(b) — the Wade/Gilbert post-attachment corporeal-lineup counsel right, and its Kirby (pre-charge) / Ash (photo array) limits, is a distinct proposition. Placed-empty (R7, greenlit new node)."
+
+  # ============================================================
+  # CATEGORY 10 — Fair-Trial & Reliability Doctrines  (area: fairtrial)
+  # ============================================================
+  - id: fairtrial.brady
+    label: "Brady & Giglio"
+    statement: "Due process forbids the prosecution to suppress evidence favorable to the accused that is material to guilt or punishment, irrespective of the prosecution's good or bad faith; the duty is no-fault, extends to impeachment evidence (*Giglio*), and runs even absent a defense request. *Brady v. Maryland*, 373 U.S. 83 (1963); *Giglio v. United States*, 405 U.S. 150 (1972)."
+    home_page: "content/fair-trial-and-reliability-doctrines/Brady and Giglio.md"
+    also_on: []
+    status: draft
+    seed: false
+    why: "R6(b) — the Brady no-fault disclosure duty is a distinct proposition; re-homed here off Use-of-Force (R3, Appendix B). Binds Agurs (pending, materiality limited by Bagley)."
+
+  - id: fairtrial.eyewitness
+    label: "Eyewitness identification"
+    statement: "An eyewitness identification obtained through police-arranged procedures so unnecessarily suggestive as to create a substantial likelihood of misidentification violates due process, judged by reliability under the totality of the circumstances; and a post-attachment corporeal lineup is a critical stage at which the accused has a Sixth Amendment right to counsel. *Manson v. Brathwaite*, 432 U.S. 98 (1977); *United States v. Wade*, 388 U.S. 218 (1967)."
+    home_page: "content/fair-trial-and-reliability-doctrines/Eyewitness Identification.md"
+    also_on: ["content/the-right-to-counsel/Lineups and the Right to Counsel.md"]
+    status: draft
+    seed: false
+    why: "R6(b) — the due-process suggestiveness/reliability rule (with the Wade lineup-counsel cross-home) is a distinct proposition."
+
+  - id: fairtrial.entrapment
+    label: "Entrapment"
+    statement: "Federal entrapment has two elements — government inducement of the crime and the defendant's lack of predisposition to commit it — and predisposition, not the fact of inducement, controls: a predisposed defendant is not entrapped even if induced. *Sorrells v. United States*, 287 U.S. 435 (1932); *Sherman v. United States*, 356 U.S. 369 (1958)."
+    home_page: "content/fair-trial-and-reliability-doctrines/Entrapment.md"
+    also_on: []
+    status: draft
+    seed: false
+    why: "R6(b) — the federal subjective entrapment test is a distinct black-letter rule the page states."
+
+  # ============================================================
+  # CATEGORY 11 — Use of Force & Liability  (area: liability)
+  # ============================================================
+  - id: liability.use-of-force
+    label: "Use of force"
+    statement: "All claims that officers used excessive force in the course of an arrest, investigatory stop, or other seizure of a free person are analyzed under the Fourth Amendment's objective-reasonableness standard, judged from the perspective of a reasonable officer on the scene rather than with hindsight, and without regard to the officer's underlying intent. *Graham v. Connor*, 490 U.S. 386 (1989)."
+    home_page: "content/use-of-force-and-liability/Use of Force.md"
+    also_on: []
+    status: draft
+    seed: false
+    why: "R6(b) — the Graham objective-reasonableness standard is a distinct proposition; Graham re-homed here off §1983 (R3, Appendix B)."
+
+  - id: liability.section-1983
+    label: "Section 1983 & municipal liability"
+    statement: "42 U.S.C. § 1983 creates a civil action against a person who, acting under color of state law, deprives another of a federal right; a municipality is liable only where the deprivation is caused by an official policy or custom, not on respondeat superior. *Monroe v. Pape*, 365 U.S. 167 (1961); *Monell v. Department of Social Services*, 436 U.S. 658 (1978)."
+    home_page: "content/use-of-force-and-liability/Section 1983 Liability and Qualified Immunity.md"
+    also_on: []
+    status: draft
+    seed: false
+    why: "R6(b) — the §1983 elements + Monell municipal-liability rule is a distinct proposition; binds Monroe v. Pape (pending, municipal-immunity holding overruled by Monell)."
+
+  - id: liability.qualified-immunity
+    label: "Qualified immunity"
+    statement: "Qualified immunity shields officials from § 1983 damages unless their conduct violated a clearly established statutory or constitutional right of which a reasonable person would have known; courts may address the two prongs (violation and clearly-established) in either order. *Harlow v. Fitzgerald*, 457 U.S. 800 (1982); *Pearson v. Callahan*, 555 U.S. 223 (2009)."
+    home_page: "content/use-of-force-and-liability/Qualified Immunity.md"
+    also_on: ["content/use-of-force-and-liability/Section 1983 Liability and Qualified Immunity.md"]
+    status: draft
+    seed: false
+    why: "R6(a)+(b) — QI is split from §1983 (Decision Log: two questions/parties/remedies); binds Saucier (pending, rigid two-step limited by Pearson). Grounded draft from the authored combined page (also_on); home page placed-empty (R7, new-split)."
+
+  - id: liability.retaliatory-arrest
+    label: "Retaliatory arrest"
+    statement: ""
+    home_page: "content/use-of-force-and-liability/Retaliatory Arrest.md"
+    also_on: []
+    status: draft
+    seed: false
+    why: "R6(b) — the Nieves/Gonzalez probable-cause bar to First Amendment retaliatory-arrest claims is a distinct proposition. Placed-empty (R7, A5 greenlit new node)."
+
+  - id: liability.malicious-prosecution
+    label: "Malicious prosecution under the Fourth Amendment"
+    statement: ""
+    home_page: "content/use-of-force-and-liability/Malicious Prosecution under the Fourth Amendment.md"
+    also_on: []
+    status: draft
+    seed: false
+    why: "R6(b) — the Thompson/Chiaverini Fourth-Amendment malicious-prosecution claim is a distinct proposition. Placed-empty (R7, A5 greenlit new node)."
+
+  - id: liability.civil-forfeiture
+    label: "Civil asset forfeiture"
+    statement: ""
+    home_page: "content/use-of-force-and-liability/Civil Asset Forfeiture.md"
+    also_on: []
+    status: draft
+    seed: false
+    why: "R6(b) — the Culley/Timbs civil-forfeiture and excessive-fines doctrine is a distinct proposition. Placed-empty (R7, A5 greenlit new node)."

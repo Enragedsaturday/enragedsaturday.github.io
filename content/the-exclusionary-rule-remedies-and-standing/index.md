@@ -8,4 +8,7 @@ type: index
 
 # The Exclusionary Rule, Remedies & Standing
 
-The suppression remedy and its exceptions, plus the personal-rights gate — standing — that decides who may invoke it.
+What happens when a Fourth Amendment violation produces evidence: the suppression remedy and its exceptions, and the personal-rights gate that decides who may even ask for it.
+
+- **The Exclusionary Rule** — the suppression remedy and the four escape hatches that let evidence in anyway: independent source, inevitable discovery, attenuation, and the good-faith exception.
+- [[Standing to Challenge a Search]] — the rule that Fourth Amendment rights are personal, so only a defendant whose own privacy was invaded may seek suppression.

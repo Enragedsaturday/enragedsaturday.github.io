@@ -1,0 +1,137 @@
+# _overhaul2/points/s2-binding.yaml
+# S3 R5 — the `point -> S3 node` binding map: resolves S2's provisional
+# `treatment.point_overrides[].point` slugs (and, where a slug, `composite_basis_ref`)
+# to one or more registry.yaml node ids. 1:N and N:1 are allowed.
+#
+# Governing law: S3 R5 (binding map + fail-closed lint), S2 R5/A8
+# (provisional slugs, composite_basis_ref, s3_binding_status:"provisional"),
+# S2 A13 + lake/_treatment-migration.json (the 11 mandatory `limited` overrides),
+# STANDARDS.md SR-14.
+#
+# LINT (S3 R5 / S2 A8): activates ONLY when BOTH registry.yaml and this file
+# exist on the branch (they now do). It then checks:
+#   (a) every `point_overrides[].point` slug present in the lake resolves to >=1
+#       registry node;
+#   (b) every bound node id exists in registry.yaml;
+#   (c) the bound node's `home_page` renders the override's treatment (per-page
+#       routing) — e.g. Belton's `superseded` flag renders on the SIA-Vehicles node.
+# The lint reads the lake at CI time; `bound[]` rows are live now, `pending[]` rows
+# activate incrementally as S2 lands each case's override (see README).
+#
+# IDENTIFIER NOTE: `cluster_id` = the CourtListener CLUSTER id (the value in each
+# case page's `courtlistener.opinion_url` /opinion/<cluster_id>/ path; the frontmatter
+# field is mislabeled `opinion_id` but equals the lake record's `cluster_id`, verified
+# on Terry v. Ohio = 107729). This sidesteps the cluster-vs-opinion id confusion.
+
+schema:
+  version: "s3.points.s2-binding.v1"
+  bound_row: [s2_point, row_type, nodes, note]         # row_type: point_override | composite_basis_ref
+  pending_row: [pending_slug, case, cluster_id, expected_field_ii, nodes, note]
+  cardinality: "1:N and N:1 permitted (a slug may bind many nodes; many slugs may bind one node)."
+  activation: "bound[] = live (slug present in the lake now); pending[] = pre-registered, activates when S2 lands that case's point_overrides[].point slug."
+
+# ------------------------------------------------------------------
+# BOUND — override/composite slugs already present in the lake / projected
+# into content-page frontmatter (grep of the lake + content/cases[].treatment).
+# ------------------------------------------------------------------
+bound:
+  - s2_point: "search.vehicle.sia-recent-occupant"
+    row_type: point_override
+    nodes: ["search.vehicle.sia-recent-occupant"]
+    note: "THE R5 worked binding. New York v. Belton (cluster 110559) vehicle-search override, field_i_validity=superseded, superseded_by Arizona v. Gant (cluster 145887, 556 U.S. 332 (2009)). The node's home_page (SIA — Vehicles) renders the `superseded` flag exactly there while the Belton case page composite stays caution/varies. Belton is the one `limited`-list case already landed in the tree — it is bound here, not pending."
+
+  - s2_point: "search.vehicle.sia-recent-occupant"
+    row_type: composite_basis_ref
+    nodes: ["search.vehicle.sia-recent-occupant"]
+    note: "Belton's `composite_basis_ref` is the same slug as its override — the principal-holding referent (S2 A8). Same node; recorded so the A8 composite-basis resolution passes."
+
+  - s2_point: "search.warrant.geofence-general-warrant"
+    row_type: point_override
+    nodes: ["search.digital.geofence-warrant"]
+    note: "United States v. Smith (cluster: 5th Cir. 2024, 110 F.4th 817) override, field_i_validity=caution (varies by circuit); the categorical geofence-as-general-warrant holding is binding in the 5th Cir. but SCOTUS in Chatrie v. United States (2026) expressly declined to adopt it. Renders on the Reverse-Keyword & Geofence Warrants node."
+
+  - s2_point: "search.digital.geofence-threshold"
+    row_type: composite_basis_ref
+    nodes: ["search.digital.geofence-threshold"]
+    note: "United States v. Smith `composite_basis_ref` — the search-threshold holding (geofence acquisition IS a search), confirmed by Chatrie (2026). Split from the general-warrant validity point that varies; both home to the same page, distinct nodes (page-split calibration, R6)."
+
+# ------------------------------------------------------------------
+# PENDING — the mandatory `limited` overrides that WILL exist per S2 A13 +
+# lake/_treatment-migration.json.limited_cases (11 cases; Belton is already
+# BOUND above, so 10 rows here). Each row pre-registers the EXPECTED mapping
+# keyed by case + cluster_id so the R5 lint can activate the instant S2 lands
+# that case's `point_overrides[].point`. `nodes` names the registry node the
+# override is expected to bind (best-fit at S3 time; S6/S7 confirm the home).
+# `expected_field_ii` follows the migration policy (limited, or superseded
+# where the point was replaced outright).
+# ------------------------------------------------------------------
+pending:
+  - pending_slug: true
+    case: "Boyd v. United States"
+    cluster_id: 91573
+    expected_field_ii: limited
+    nodes: ["search.effects.containers"]
+    note: "The 'mere evidence' / compelled-production-of-papers doctrine, long eroded (Warden v. Hayden abolished the mere-evidence rule; Gouled overruled). Best-fit home pending S6 authoring; the effects/containers node is the nearest reservable seat. Candidate alt: a Fifth-Amendment act-of-production node (out of remit per S3 §9)."
+
+  - pending_slug: true
+    case: "Coolidge v. New Hampshire"
+    cluster_id: 108377
+    expected_field_ii: limited
+    nodes: ["search.plain-view"]
+    note: "The plain-view 'inadvertence' prong is superseded by Horton v. California (1990). Coolidge also touches the neutral-and-detached-magistrate rule (alt node: warrant.neutral-magistrate) — S2 may split into >1 override; both nodes exist."
+
+  - pending_slug: true
+    case: "Escobedo v. Illinois"
+    cluster_id: 106883
+    expected_field_ii: limited
+    nodes: ["counsel.sixth-amendment"]
+    note: "Escobedo's Sixth-Amendment-counsel-at-interrogation holding is confined by Kirby v. Illinois and largely absorbed into the Miranda framework. Alt node: confession.miranda."
+
+  - pending_slug: true
+    case: "Mathis v. United States (1968)"
+    cluster_id: 107676
+    expected_field_ii: limited
+    nodes: ["confession.miranda"]
+    note: "Mathis (Miranda applies to IRS civil-investigation questioning of an already-incarcerated person) is the limited point on the custody/interrogation gate."
+
+  - pending_slug: true
+    case: "Monroe v. Pape"
+    cluster_id: 106170
+    expected_field_ii: limited
+    nodes: ["liability.section-1983"]
+    note: "The 'under color of law' holding survives, but Monroe's municipal-immunity holding was overruled by Monell v. Department of Social Services (1978) — the municipal-liability point is the limited/superseded one."
+
+  - pending_slug: true
+    case: "Oregon v. Elstad"
+    cluster_id: 111364
+    expected_field_ii: limited
+    nodes: ["confession.miranda-waiver"]
+    note: "Elstad (a voluntary second, warned statement is not tainted by an earlier unwarned one) is limited by Missouri v. Seibert (2004) on deliberate two-step interrogation. Alt node: remedy.fruits-attenuation."
+
+  - pending_slug: true
+    case: "Saucier v. Katz"
+    cluster_id: 118449
+    expected_field_ii: limited
+    nodes: ["liability.qualified-immunity"]
+    note: "Saucier's mandatory rigid two-step QI sequence is limited by Pearson v. Callahan (2009), which made the order of the two prongs discretionary."
+
+  - pending_slug: true
+    case: "Thornton v. United States"
+    cluster_id: 134746
+    expected_field_ii: limited
+    nodes: ["search.vehicle.sia-recent-occupant"]
+    note: "Vehicle search incident to a recent occupant's arrest — limited by Arizona v. Gant (2009), the same line as Belton. N:1 with the Belton binding onto the SIA-Vehicles node."
+
+  - pending_slug: true
+    case: "United States v. Agurs"
+    cluster_id: 109506
+    expected_field_ii: limited
+    nodes: ["fairtrial.brady"]
+    note: "Agurs's no-request Brady duty survives, but its materiality standard is limited/superseded by United States v. Bagley (1985), which unified materiality under the reasonable-probability test."
+
+  - pending_slug: true
+    case: "United States v. Chadwick"
+    cluster_id: 109714
+    expected_field_ii: limited
+    nodes: ["search.effects.containers"]
+    note: "Chadwick's footlocker/luggage warrant rule is limited by California v. Acevedo (1991) for a container found in a vehicle. Alt node: search.vehicle.automobile."
