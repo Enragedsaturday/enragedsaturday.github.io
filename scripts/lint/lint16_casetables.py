@@ -44,28 +44,31 @@ import _common as c  # noqa: E402
 
 LINT = "LINT-16"
 
-# R17 — opinion-link host whitelist (a CONSTANT, per the spec). CourtListener plus
-# the S2 R14 fallback order: Justia -> Google Scholar -> Cornell LII -> official
-# court/reporter sites (allowed by government-domain suffix).
-OPINION_HOST_WHITELIST = {
-    "courtlistener.com", "www.courtlistener.com",
-    "justia.com", "law.justia.com", "supreme.justia.com", "cases.justia.com",
+# R17 — opinion-link host whitelist (F-S5-06). An EXACT host set for the S2 R14
+# fallback chain (CourtListener -> Justia -> Google Scholar -> Cornell LII). No
+# broad `.gov`/`.us` suffix acceptance — `evil.us` / `evil.gov` must NOT pass.
+OPINION_HOST_WHITELIST = frozenset({
+    "www.courtlistener.com", "courtlistener.com",
+    "law.justia.com", "supreme.justia.com",
     "scholar.google.com",
-    "law.cornell.edu", "www.law.cornell.edu",
-    "supremecourt.gov", "www.supremecourt.gov",
-}
-# official court/reporter sites (R17 "official court sites"): government domains.
-OFFICIAL_HOST_SUFFIXES = (".uscourts.gov", ".gov", ".us")
+    "www.law.cornell.edu", "law.cornell.edu",
+})
+# EXTENSIBLE — official court/reporter hosts (R17 "official court/reporter site").
+# Add vetted government court hosts here as the corpus needs them. Seed: the
+# Supreme Court's own site. Kept as an exact-host set (apex + www) so it never
+# widens into a broad `.gov` accept.
+OFFICIAL_COURT_HOSTS = frozenset({
+    "www.supremecourt.gov", "supremecourt.gov",
+    "uscourts.gov",
+})
+# The federal Judiciary's per-court subdomains (ca9.uscourts.gov, cand.uscourts.gov,
+# …) are all under the government-controlled `.uscourts.gov` zone — matched by
+# suffix. This is the ONLY suffix accept (a specific, government-owned zone).
+OFFICIAL_COURT_HOST_SUFFIXES = (".uscourts.gov",)
 
-# R7 — authority-weight allowlist label strings (S1 A8). Their presence in a case
-# table row is authored data (the weight box injects it).
-WEIGHT_LABEL_STRINGS = [
-    "Binding — SCOTUS",
-    "Binding in-circuit",
-    "Persuasive (outside circuit)",
-    "Persuasive only — non-precedential",
-    "Persuasive — state, illustrative",
-]
+# R7 — authority-weight allowlist detection (S1 A8, full six tiers incl.
+# 'Historical'). Sourced from the ONE canonical allowlist in _common (F-S5-07);
+# see c.weight_label_in_cell.
 
 # R7/R13 — Field-I / legacy treatment status tokens (whole-cell data values).
 STATUS_TOKEN_RE = re.compile(
@@ -85,9 +88,10 @@ def _host(url):
 
 
 def _host_ok(host):
-    if host in OPINION_HOST_WHITELIST:
+    if host in OPINION_HOST_WHITELIST or host in OFFICIAL_COURT_HOSTS:
         return True
-    return any(host == s.lstrip(".") or host.endswith(s) for s in OFFICIAL_HOST_SUFFIXES)
+    # ONLY the government-owned `.uscourts.gov` zone is accepted by suffix.
+    return any(host.endswith(s) for s in OFFICIAL_COURT_HOST_SUFFIXES)
 
 
 def _strip_md(text):
@@ -112,12 +116,34 @@ def _page_identity(path, fm):
     return {c.CorpusIndex.norm(n) for n in names}
 
 
+def _is_case_index_page(path, fm):
+    """The reference/router Case Index is the ONLY page where the bare
+    `| Case | Primary home | Opinion |` schema is accepted (F-S5-04)."""
+    stem = os.path.splitext(os.path.basename(path))[0].strip().lower()
+    if stem == "case index":
+        return True
+    title = fm.get("title")
+    if isinstance(title, str) and title.strip().lower() == "case index":
+        return True
+    return False
+
+
 def check_file(path):
     out = []
     text = c.read_text(path)
     fm, body, start = c.split_frontmatter(text)
     body_lines = body.split("\n")
     identity = _page_identity(path, fm)
+    is_index_page = _is_case_index_page(path, fm)
+
+    # H2 section map (for the section-aware schema requirement, F-S5-04)
+    secs = c.sections(body_lines)
+
+    def _section_title_for(idx):
+        for s in secs:
+            if s["start"] <= idx < s["end"]:
+                return s["title"]
+        return None
 
     for hidx, header_cells, rows in c.iter_tables(body_lines):
         norm_header = [h.strip().lower() for h in header_cells]
@@ -129,12 +155,37 @@ def check_file(path):
 
         hline = start + hidx
 
-        # (1) exact schema header
-        if not any(header_cells == hdrs for (hdrs, _roles) in c.CASE_TABLE_SCHEMAS.values()):
+        # (1) SCHEMA — exact header AND section-appropriate (F-S5-04)
+        sec_title = _section_title_for(hidx)
+        required = c.section_schema_kind(sec_title)  # 'related'|'key'|'index'|None
+        actual = c.schema_of_header(header_cells)     # exact schema key or None
+        sec_label = sec_title.strip() if sec_title else "(no section)"
+        if actual is None:
+            if required is not None:
+                want = c.CASE_TABLE_SCHEMAS[required][0]
+                out.append(c.make_violation(
+                    LINT, path, hline, c.HIGH,
+                    "non-sanctioned Case-table header %s under '## %s' — this "
+                    "section requires the %s schema %s [R6]"
+                    % (header_cells, sec_label, required, want)))
+            else:
+                out.append(c.make_violation(
+                    LINT, path, hline, c.HIGH,
+                    "non-sanctioned Case-table header %s — must match a sanctioned "
+                    "schema exactly (Key cases / Related / Case Index) [R6]"
+                    % header_cells))
+        elif required is not None and actual != required:
+            want = c.CASE_TABLE_SCHEMAS[required][0]
             out.append(c.make_violation(
                 LINT, path, hline, c.HIGH,
-                "non-sanctioned Case-table header %s — must match a sanctioned "
-                "schema exactly (Key cases / Related / Case Index) [R6]"
+                "wrong schema for '## %s': found the %s schema %s, but this "
+                "section requires the %s schema %s [R6]"
+                % (sec_label, actual, header_cells, required, want)))
+        elif required is None and actual == "index" and not is_index_page:
+            out.append(c.make_violation(
+                LINT, path, hline, c.HIGH,
+                "Case Index schema %s is reserved for the Case Index page (or a "
+                "'## Case Index' section) — use Key cases or Related here [R6]"
                 % header_cells))
 
         # column roles for targeted checks
@@ -150,14 +201,13 @@ def check_file(path):
 
             # (2) authored-data tokens (R7/R13)
             for cell in cells:
-                for lbl in WEIGHT_LABEL_STRINGS:
-                    if lbl in cell:
-                        out.append(c.make_violation(
-                            LINT, path, rline, c.HIGH,
-                            "authored authority-weight label '%s' in a case-table "
-                            "row — weight renders via injection, never a cell [R7]"
-                            % lbl))
-                        break
+                wlbl = c.weight_label_in_cell(cell)  # full A8 allowlist incl. Historical
+                if wlbl:
+                    out.append(c.make_violation(
+                        LINT, path, rline, c.HIGH,
+                        "authored authority-weight label '%s' in a case-table "
+                        "row — weight renders via injection, never a cell [R7]"
+                        % wlbl))
                 if ISO_DATE_RE.search(cell):
                     out.append(c.make_violation(
                         LINT, path, rline, c.HIGH,
@@ -172,15 +222,25 @@ def check_file(path):
                         "('%s') — treatment renders via injection [R7]"
                         % _strip_md(cell)[:30]))
 
-            # (3) opinion anchor text + (R17) host — check every md-url link in the row
-            for cell in cells:
-                for m in c.MDLINK_URL_RE.finditer(cell):
+            # (3) OPINION COLUMN ONLY (F-S5-08): exactly one opinion link
+            # (F-S5-01), exact-case 'opinion' anchor (F-S5-05), whitelisted
+            # host (F-S5-06/R17). Links in other columns are NOT opinion links.
+            if opinion_col is not None and opinion_col < len(cells):
+                ocell = cells[opinion_col]
+                links = list(c.MDLINK_URL_RE.finditer(ocell))
+                if len(links) != 1:
+                    out.append(c.make_violation(
+                        LINT, path, rline, c.HIGH,
+                        "Opinion column must carry exactly one non-empty opinion "
+                        "link, found %d [R6/R17]" % len(links)))
+                for m in links:
                     anchor, url = m.group(1).strip(), m.group(2)
-                    if anchor.lower() != "opinion":
+                    if anchor != "opinion":          # EXACT case (F-S5-05)
                         out.append(c.make_violation(
                             LINT, path, rline, c.HIGH,
                             "opinion link anchor text is '%s' — the one sanctioned "
-                            "anchor text is 'opinion' [R6/TEACH-13]" % anchor))
+                            "anchor text is exactly 'opinion' [R6/TEACH-13]"
+                            % anchor))
                     host = _host(url)
                     if host and not _host_ok(host):
                         out.append(c.make_violation(

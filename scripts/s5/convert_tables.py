@@ -121,6 +121,21 @@ def convert_tables(body_lines, report):
         dropped = sorted({k for k in kinds if k in ("weight", "treatment", "year")})
         missing = [r for r in order if r not in col_of]
 
+        # F-S5-01 — a Case table with no derivable Opinion source is DEFERRED
+        # (reported for human sourcing), NEVER blank-filled. Emitting empty
+        # Opinion cells would sanction a schema-conformant table that LINT-16
+        # then reports 0 violations on — laundering a missing source.
+        if "opinion" in missing:
+            plans[hidx] = (None, None, {
+                "pass": "tables",
+                "reason": "missing-opinion-source",
+                "detail": "Case-column table maps to the %s schema but has no "
+                          "Opinion source column — deferred (opinion links must "
+                          "be sourced, never blank-filled)" % schema,
+                "line": hidx + 1,
+            }, end)
+            continue
+
         new_rows = ["| " + " | ".join(headers) + " |",
                     "|" + "|".join(["---"] * len(headers)) + "|"]
         for ridx in rows:
@@ -139,8 +154,7 @@ def convert_tables(body_lines, report):
             action = {
                 "pass": "tables", "type": "schema-rewrite", "schema": schema,
                 "line": hidx + 1, "dropped_columns": dropped, "rows": len(rows),
-                "note": ("no Opinion source column — emitted empty Opinion cells"
-                         if "opinion" in missing else ""),
+                "note": "",
             }
         plans[hidx] = (new_rows, action, None, end)
 
@@ -260,20 +274,41 @@ SOURCE_RE = re.compile(
 )
 
 
-def _clean_source_text(text):
-    """A source link-text is mechanical iff it is a single italic case name +
-    citation ending in a 4-digit year: exactly two '*' (the case-name italics),
-    no embedded em-dash, no embedded URL, and a year is present."""
+# a citation-year close paren: `(` … <4-digit year> `)`. The parenthetical may
+# carry a court ("9th Cir. 1996") but must END on the year's `)`.
+_CITE_YEAR_PAREN_RE = re.compile(r"\([^()]*(?:1[6-9]\d\d|20\d\d)\)")
+
+
+def _split_source_text(text):
+    """R12/F-S5-02 — split a Sources link text at the cite year. A mechanical
+    link text is a single italic case name + citation ENDING at the cite-year
+    `)`. Returns (link_text, trailing_extra):
+
+      link_text     everything up to and including the FIRST paren that closes on
+                    a 4-digit year (`*Case*, 471 U.S. 1 (1985)`), the anchor text.
+      trailing_extra any further parenthetical / text ('(plurality)', pinpoints) —
+                    kept OUT of the link, emitted as trailing plain text.
+
+    Returns None when the split is not mechanically clean — no cite-year paren,
+    ragged case-name italics, or an embedded second link/em-dash — so the row is
+    DEFERRED for human judgment rather than mis-bracketed."""
     t = text.strip()
     if not t.startswith("*"):
-        return False
-    if t.count("*") != 2:
-        return False
-    if "—" in t or "http" in t:
-        return False
-    if not re.search(r"\b(1[6-9]\d\d|20\d\d)\b", t):
-        return False
-    return True
+        return None
+    m = _CITE_YEAR_PAREN_RE.search(t)
+    if not m:
+        return None
+    link_text = t[:m.end()].strip()
+    extra = t[m.end():].strip()
+    # link text must be exactly one italic case name + cite, ending at the year
+    if link_text.count("*") != 2:
+        return None
+    if "—" in link_text or "http" in link_text:
+        return None
+    # the trailing remainder must be plain text — no second link / italic / dash
+    if "http" in extra or "*" in extra or "—" in extra:
+        return None
+    return link_text, extra
 
 
 def convert_sources(body_lines, report):
@@ -294,24 +329,28 @@ def convert_sources(body_lines, report):
         if not m:
             continue
         text = m.group("text").strip()
-        if not _clean_source_text(text):
+        split = _split_source_text(text)
+        if split is None:
             report["deferred"].append({
                 "pass": "sources", "reason": "ambiguous-source",
-                "detail": "non-mechanical Sources row (multiple URLs / embedded "
-                          "parenthetical / no clean case-name+cite): %s" % line.strip()[:90],
+                "detail": "non-mechanical Sources row (no clean case-name+cite "
+                          "ending at the cite-year / multiple links / embedded "
+                          "parenthetical): %s" % line.strip()[:90],
                 "line": i + 1,
             })
             continue
+        link_text, extra = split
         trail = m.group("trail")
         trail = re.sub(r"^\s*—\s*", "", trail).strip()  # drop leading em-dash sep
-        new = "%s[%s](%s)" % (m.group("indent"), text, m.group("url"))
-        if trail:
-            new += " " + trail
+        tail_parts = [p for p in (extra, trail) if p]
+        new = "%s[%s](%s)" % (m.group("indent"), link_text, m.group("url"))
+        if tail_parts:
+            new += " " + " ".join(tail_parts)
         if new != line:
             body_lines[i] = new
             report["actions"].append({
                 "pass": "sources", "type": "bracket-link",
-                "detail": text, "line": i + 1,
+                "detail": link_text, "line": i + 1,
             })
     return body_lines
 
@@ -404,6 +443,74 @@ def convert_page(path):
     return report, new_text
 
 
+# ---------------------------------------------------------------------------
+# self-test — labeled fixtures under scripts/s5/fixtures/ (F-S5-01/02/03)
+# ---------------------------------------------------------------------------
+
+def _deferred_reasons(report):
+    return [d.get("reason") for d in report["deferred"]]
+
+
+def _action_types(report):
+    return [(a.get("pass"), a.get("type")) for a in report["actions"]]
+
+
+def _check_defer_missing_opinion(report, new_text, orig):
+    # F-S5-01: a Case table with no Opinion source is DEFERRED, never rewritten
+    # with blank Opinion cells.
+    reasons = _deferred_reasons(report)
+    ok = ("missing-opinion-source" in reasons
+          and new_text == orig
+          and ("tables", "schema-rewrite") not in _action_types(report))
+    return ok, "deferred=%s changed=%s" % (reasons, new_text != orig)
+
+
+def _check_sources_split(report, new_text, orig):
+    # F-S5-02: link text ends at the cite year; the trailing parenthetical splits
+    # OUT as plain text; a non-mechanical row is deferred.
+    ok = (
+        "](https://www.courtlistener.com/opinion/107252/miranda-v-arizona/) (plurality)"
+        in new_text
+        and "(plurality)](" not in new_text           # NOT folded into the link text
+        and "(9th Cir. 1996)](" in new_text            # circuit year closes the link text
+        and "/united-states-v-foo/) (en banc)" in new_text
+        and "ambiguous-source" in _deferred_reasons(report)
+    )
+    return ok, "defer=%s" % _deferred_reasons(report)
+
+
+def _check_footnote_not_row(report, new_text, orig):
+    # F-S5-03: a footnote definition abutting a table is NOT swallowed as a row.
+    ok = ("\n[^note]: This is a footnote with a | pipe" in new_text
+          and not report["changed"])
+    return ok, "changed=%s footnote_intact=%s" % (
+        report["changed"], "\n[^note]:" in new_text)
+
+
+def _self_test():
+    fixdir = os.path.join(HERE, "fixtures")
+    checks = {
+        "defer-missing-opinion.md": _check_defer_missing_opinion,
+        "sources-split.md": _check_sources_split,
+        "footnote-not-row.md": _check_footnote_not_row,
+    }
+    ok = True
+    for name in sorted(checks):
+        path = os.path.join(fixdir, name)
+        if not os.path.exists(path):
+            sys.stderr.write("[self-test] %-28s -> FAIL (missing fixture)\n" % name)
+            ok = False
+            continue
+        report, new_text = convert_page(path)
+        orig = c.read_text(path)
+        passed, detail = checks[name](report, new_text, orig)
+        ok = ok and passed
+        sys.stderr.write("[self-test] %-28s -> %s  %s\n" % (
+            name, "OK" if passed else "MISMATCH", detail))
+    sys.stderr.write("[self-test] %s\n" % ("PASS" if ok else "FAIL"))
+    return 0 if ok else 1
+
+
 def main():
     ap = argparse.ArgumentParser(description="S5 mechanical entry-model converter")
     mode = ap.add_mutually_exclusive_group()
@@ -459,4 +566,6 @@ def main():
 
 
 if __name__ == "__main__":
+    if "--self-test" in sys.argv[1:]:
+        sys.exit(_self_test())
     main()

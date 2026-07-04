@@ -52,24 +52,21 @@ LINT = "LINT-4"
 EM = "—"        # em dash  —
 EN = "–"        # en dash  –
 MIDDOT = "·"    # middle dot  ·  (composite "Weight · Treatment" separator)
-TIER_WORDS = ("binding", "persuasive", "historical")
+# The A8 tier words + allowlist are the ONE canonical copy in _common (shared
+# with LINT-16 — F-S5-07). Rebound here (identical values) so this lint keeps
+# its short local names without maintaining a second copy.
+TIER_WORDS = c.WEIGHT_TIER_WORDS
 
 # banned phrasings (R10)
 BANNED_RE = re.compile(
     r"persuasive\s*,?\s*(?:but\s+)?not\s+binding"
     r"|not\s+binding\s*,?\s*(?:but\s+)?persuasive", re.IGNORECASE)
 
-# --- the A8 exact allowlist -------------------------------------------------
-_CIRCUIT = r"(?:1st|2d|3d|4th|5th|6th|7th|8th|9th|10th|11th|D\.C\.|Fed\.) Cir\."
-_EXACT_LABELS = {
-    "Binding — SCOTUS",
-    "Persuasive — state, illustrative",
-    "Persuasive only — non-precedential",
-    "Historical",
-}
-_BINDING_INCIRCUIT_RE = re.compile(r"^Binding in-circuit — %s$" % _CIRCUIT)
-_PERSUASIVE_OUTSIDE_RE = re.compile(
-    r"^Persuasive \(outside circuit\) — %s$" % _CIRCUIT)
+# --- the A8 exact allowlist (canonical copy in _common, F-S5-07) ------------
+_CIRCUIT = c.WEIGHT_CIRCUIT_RE_SRC
+_EXACT_LABELS = c.WEIGHT_EXACT_LABELS
+_BINDING_INCIRCUIT_RE = c.WEIGHT_BINDING_INCIRCUIT_RE
+_PERSUASIVE_OUTSIDE_RE = c.WEIGHT_PERSUASIVE_OUTSIDE_RE
 
 # Prefix (start-anchored, no trailing `$`) forms of the two circuit-suffixed
 # labels — used by the prose candidate scanner (lane D) to decide whether a

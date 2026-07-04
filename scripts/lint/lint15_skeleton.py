@@ -80,7 +80,38 @@ PITFALL_KEYWORDS_RE = re.compile(
 BOLD_LEAD_RE = re.compile(r"^\s*(?:[-*]\s+)?\*\*(?P<bold>.+?)\*\*")
 CANON_PITFALL_BOLD = "common pitfalls."
 
+# F-S5-09 — the REQUIRED doctrine H2 sections (absent = HIGH). Optional sections
+# (Lower-court developments, Related cases across doctrines, Visual) may be
+# absent but are never reordered (the ordinal check enforces order).
+REQUIRED_DOCTRINE_H2 = ("the brief", "key cases", "sources")
+
+# a single italic line, e.g. the field-decisive question `*…?*` (NOT bold `**…**`)
+_ITALIC_LINE_RE = re.compile(r"^\*(?!\*).+\*$")
+
 EXEMPT_TYPES = {"overview", "reference", "craft", "category", "fixture", "index"}
+
+# F-S5-10 — fail-closed page typing. A content page whose `type` is missing or
+# unrecognized cannot be classified by LINT-15 and is a HIGH finding, EXCEPT the
+# structurally-typeless pages below.
+RECOGNIZED_TYPES = {"doctrine", "case", "reference", "index", "practical"}
+# top-level special pages that legitimately carry no doctrine/case type:
+#   about     — R1-listed exempt reference page
+#   flashcards — the interactive spaced-repetition deck page (app shell, no type)
+_TYPING_EXEMPT_STEMS = {"about", "flashcards", "index", "_index"}
+
+
+def _typing_exempt(path):
+    """R1/F-S5-10 exemptions from the fail-closed typing check: the cases/ tree,
+    Quartz tag pages, S3-tree index.md files, and the top-level special pages."""
+    rp = c.relpath(path).replace(os.sep, "/")
+    stem = os.path.splitext(os.path.basename(path))[0].lower()
+    if rp.startswith("content/cases/") or rp.startswith("content/tags/"):
+        return True
+    return stem in _TYPING_EXEMPT_STEMS
+
+
+def _is_italic_question_line(s):
+    return bool(_ITALIC_LINE_RE.match(s))
 
 
 def _norm_title(t):
@@ -103,13 +134,42 @@ def _h2_titles(body_lines):
             for (i, lvl, txt) in c.iter_headings(body_lines) if lvl == 2]
 
 
-def check_doctrine(path, body, start):
+def _callout_misplaced(body_lines, callout_line, fenced):
+    """True iff content OTHER THAN the H1 and an optional single italic question
+    line precedes the rule callout (F-S5-09 placement rule — the callout must be
+    the FIRST block after the H1 / optional question, never after prose)."""
+    seen_h1 = seen_q = False
+    for i in range(callout_line):
+        if i in fenced:
+            return True  # a fenced block before the callout is not valid preamble
+        s = body_lines[i].strip()
+        if s == "":
+            continue
+        m = c.HEADING_RE.match(body_lines[i])
+        if m and len(m.group(1)) == 1 and not seen_h1:
+            seen_h1 = True
+            continue
+        if _is_italic_question_line(s) and not seen_q:
+            seen_q = True
+            continue
+        return True  # arbitrary prose / another heading / a table / etc.
+    return False
+
+
+def check_doctrine(path, body, start, fm):
     out = []
     body_lines = body.split("\n")
     h2s = _h2_titles(body_lines)
+    h2_norms = [t for (_i, t) in h2s]
+
+    # placed-empty stub (S3 R7): status: draft + NO H2s at all -> EXEMPT. These
+    # placed nodes fail LINT-15 only once authored.
+    if str(fm.get("status", "")).strip().lower() == "draft" and not h2s:
+        return []
+
     first_h2_line = h2s[0][0] if h2s else len(body_lines)
 
-    # --- rule callout: present + in the header zone (before the first H2) ---
+    # --- rule callout: present + correctly placed (F-S5-09, HIGH) ---
     callout_line = None
     fenced = c.fenced_line_numbers(body_lines)
     for i, line in enumerate(body_lines):
@@ -118,16 +178,25 @@ def check_doctrine(path, body, start):
         if RULE_CALLOUT_RE.match(line):
             callout_line = i
             break
-    if callout_line is None:
+    if callout_line is None or callout_line >= first_h2_line:
         out.append(c.make_violation(
-            LINT, path, start, c.MEDIUM,
-            "doctrine skeleton: missing the '> [!rule]' black-letter callout "
-            "(R1/R2 — opens every doctrine page)"))
-    elif callout_line >= first_h2_line:
+            LINT, path, start, c.HIGH,
+            "doctrine skeleton: missing the '> [!rule]' black-letter callout in "
+            "the header zone (R1/R2 — opens every doctrine page, before the "
+            "first H2)"))
+    elif _callout_misplaced(body_lines, callout_line, fenced):
         out.append(c.make_violation(
-            LINT, path, start + callout_line, c.MEDIUM,
-            "doctrine skeleton: '> [!rule]' callout is not in the header zone "
-            "(must precede the first H2, after the H1/italic question) [R1]"))
+            LINT, path, start + callout_line, c.HIGH,
+            "doctrine skeleton: '> [!rule]' callout is placed after prose — it "
+            "must be the FIRST block after the H1 / optional italic question [R1]"))
+
+    # --- required H2 sections present (F-S5-09, HIGH) ---
+    for req in REQUIRED_DOCTRINE_H2:
+        if req not in h2_norms:
+            out.append(c.make_violation(
+                LINT, path, start, c.HIGH,
+                "doctrine skeleton: missing required '## %s' section [R1]"
+                % req.title()))
 
     # --- H2 order (known sections never reordered) ---
     seq = [(i, t, DOCTRINE_ORDINAL[t]) for (i, t) in h2s if t in DOCTRINE_ORDINAL]
@@ -194,11 +263,22 @@ def check_case(path, body, start):
 def check_file(path):
     text = c.read_text(path)
     fm, body, start = c.split_frontmatter(text)
-    ptype = str(fm.get("type", "")).lower()
+    ptype = str(fm.get("type", "")).strip().lower()
+
+    # F-S5-10 — fail-closed page typing: a content page LINT-15 cannot classify
+    # is a HIGH finding (a mistyped doctrine page must not silently bypass the
+    # skeleton check), except the structurally-typeless exempt pages.
+    if ptype not in RECOGNIZED_TYPES and not _typing_exempt(path):
+        raw = fm.get("type")
+        return [c.make_violation(
+            LINT, path, 1, c.HIGH,
+            "untyped content page — LINT-15 cannot classify (type=%r; recognized: "
+            "doctrine/case/reference/index/practical) [F-S5-10]" % (raw,))]
+
     if ptype == "doctrine":
         if is_exempt(path, fm):
             return []
-        return check_doctrine(path, body, start)
+        return check_doctrine(path, body, start, fm)
     if ptype == "case":
         return check_case(path, body, start)
     return []

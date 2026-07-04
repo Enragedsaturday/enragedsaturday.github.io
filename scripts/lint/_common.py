@@ -448,9 +448,40 @@ def is_separator_row(line):
         _TABLE_SEP_CELL_RE.match(x.replace(" ", "")) for x in cells)
 
 
+# F-S5-03 — a pipe-bearing line immediately after a table header+separator is a
+# real DATA ROW only if its shape is table-row-like. A footnote definition
+# ([^id]: … | …) or a trailing block anchor must NOT be swallowed as a row.
+FOOTNOTE_DEF_RE = re.compile(r"^\s*\[\^[^\]]+\]:")
+BLOCK_ANCHOR_ONLY_RE = re.compile(r"^\s*\^[A-Za-z0-9][A-Za-z0-9-]*\s*$")
+
+
+def is_table_body_row(line, header_count):
+    """True iff `line` is a valid GFM table DATA row for a table whose header
+    has `header_count` cells (F-S5-03 row-shape validation):
+
+      * it is a table row (contains an unescaped pipe, non-blank), AND
+      * its cell count is within ±1 of the header, AND
+      * it is NOT a footnote definition  `[^id]: …`, AND
+      * it is NOT a block-anchor-only line  `^anchor`.
+
+    This stops footnote definitions, trailing block anchors, and stray
+    pipe-bearing prose that abuts a table from being consumed as table rows
+    (which the converter would then rewrite and LINT-16 would mis-scan)."""
+    if not is_table_row(line):
+        return False
+    if FOOTNOTE_DEF_RE.match(line):
+        return False
+    if BLOCK_ANCHOR_ONLY_RE.match(line):
+        return False
+    cells = split_table_row(line)
+    return abs(len(cells) - header_count) <= 1
+
+
 def iter_tables(body_lines):
     """Yield (header_line_index, header_cells, body_row_indexes) for every GFM
-    table (header + separator + rows) outside fenced code blocks."""
+    table (header + separator + rows) outside fenced code blocks. Data rows are
+    validated by row shape (see is_table_body_row) so footnote definitions and
+    block anchors abutting a table are not mistaken for rows (F-S5-03)."""
     fenced = fenced_line_numbers(body_lines)
     i, n = 0, len(body_lines)
     while i < n:
@@ -463,9 +494,11 @@ def iter_tables(body_lines):
             and is_separator_row(body_lines[i + 1])
         ):
             header_cells = split_table_row(body_lines[i])
+            hcount = len(header_cells)
             j = i + 2
             rows = []
-            while j < n and j not in fenced and is_table_row(body_lines[j]):
+            while (j < n and j not in fenced
+                   and is_table_body_row(body_lines[j], hcount)):
                 rows.append(j)
                 j += 1
             yield i, header_cells, rows
@@ -518,7 +551,9 @@ CASE_TABLE_SCHEMAS = {
 
 def classify_case_table(kinds):
     """Given the header column ROLES, return a sanctioned-schema key or None
-    (None => not a sanctioned/recognizable case table)."""
+    (None => not a sanctioned/recognizable case table). PURE role mapping —
+    section context is applied separately (see section_schema_kind), so the
+    mechanical converter keeps its role-only view of a table."""
     if "case" not in kinds:
         return None
     has = lambda k: k in kinds  # noqa: E731
@@ -528,6 +563,89 @@ def classify_case_table(kinds):
         return "index"
     if has("holding") and not has("home"):
         return "key"
+    return None
+
+
+def schema_of_header(header_cells):
+    """Return the sanctioned schema key ('key'|'related'|'index') iff
+    header_cells EXACTLY equals that schema's header strings, else None."""
+    for key, (hdrs, _roles) in CASE_TABLE_SCHEMAS.items():
+        if header_cells == hdrs:
+            return key
+    return None
+
+
+def section_schema_kind(section_title):
+    """F-S5-04 — the section-aware schema requirement. Given the H2 title a
+    case-table sits under, return the REQUIRED sanctioned schema key, or None if
+    the section does not by itself constrain the schema:
+
+        '## Related cases across doctrines'  -> 'related'  (needs 'Relevance here')
+        '## Case Index'                      -> 'index'
+        '## Key cases'                       -> 'key'
+
+    The Case Index schema is otherwise reserved for the Case Index page (checked
+    at the call site by page title/stem), so a bare '| Case | Primary home |
+    Opinion |' inside a Related section is a mismatch, not a silently-accepted
+    Case Index."""
+    if not section_title:
+        return None
+    t = re.sub(r"\s+", " ", section_title.strip().lower())
+    if "related cases" in t:
+        return "related"
+    if "case index" in t:
+        return "index"
+    if t == "key cases" or t.startswith("key cases"):
+        return "key"
+    return None
+
+
+# --------------------------------------------------------------------------
+# S1 A8 authority-weight allowlist — the ONE canonical copy (shared by LINT-4's
+# exact validation and LINT-16's authored-data detection, F-S5-07). The six
+# tiers, incl. 'Historical'; the two circuit-suffixed tiers carry a mandatory
+# circuit suffix.
+# --------------------------------------------------------------------------
+
+WEIGHT_CIRCUIT_RE_SRC = (
+    r"(?:1st|2d|3d|4th|5th|6th|7th|8th|9th|10th|11th|D\.C\.|Fed\.) Cir\.")
+WEIGHT_EXACT_LABELS = frozenset({
+    "Binding — SCOTUS",
+    "Persuasive — state, illustrative",
+    "Persuasive only — non-precedential",
+    "Historical",
+})
+WEIGHT_BINDING_INCIRCUIT_RE = re.compile(
+    r"^Binding in-circuit — %s$" % WEIGHT_CIRCUIT_RE_SRC)
+WEIGHT_PERSUASIVE_OUTSIDE_RE = re.compile(
+    r"^Persuasive \(outside circuit\) — %s$" % WEIGHT_CIRCUIT_RE_SRC)
+WEIGHT_TIER_WORDS = ("binding", "persuasive", "historical")
+
+# Detection LEADS for an authored weight LABEL leaking into a table cell
+# (LINT-16 R7). Multi-word tier labels are distinctive substrings; the two
+# circuit-suffixed tiers match on their fixed prefix (any '<tier> — <circuit>');
+# the bare tier word 'Historical' matches only as a whole word to avoid firing
+# on holding prose (e.g. 'the historical practice').
+WEIGHT_LABEL_LEADS = (
+    "Binding — SCOTUS",
+    "Binding in-circuit —",
+    "Persuasive (outside circuit) —",
+    "Persuasive — state, illustrative",
+    "Persuasive only — non-precedential",
+    "Historical",
+)
+_HISTORICAL_WORD_RE = re.compile(r"\bHistorical\b")
+
+
+def weight_label_in_cell(cell):
+    """Return the S1 A8 authority-weight label authored into a table cell
+    (LINT-16 R7), or None. Covers all six tiers including 'Historical'."""
+    for lead in WEIGHT_LABEL_LEADS:
+        if lead == "Historical":
+            if _HISTORICAL_WORD_RE.search(cell):
+                return "Historical"
+        elif lead in cell:
+            return lead
     return None
 
 
