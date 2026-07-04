@@ -1,0 +1,22 @@
+{
+  "schema": "s9.vote.v1",
+  "finding_id": "F-DEMO-001",
+  "lane": "codex-B",
+  "model": "gpt-5.5",
+  "sandbox": "read-only (reviewer lane cannot write)",
+  "independent": "isolated codex exec; no sibling votes or Claude vote in context",
+  "verdict": "refuted",
+  "reasons": [
+    "The two cited lines are not clean false positives: each line goes beyond a status note and teaches the SCOTUS result/holding in Recent developments, including the later Chatrie v. United States / 609 U.S. ___ reference.",
+    "The proposed suppression uses a preceding circuit token as a proxy for subject court, but a real SCOTUS entry can naturally mention lower-court provenance before a bare SCOTUS tag, e.g. on cert from the 9th Cir. - SCOTUS held ..., so the tag-only true positive would be hidden.",
+    "Limiting the suppression to window[:tag.start()] does not solve the core ambiguity; it only proves a circuit reference appears before the tag, not that the first case is circuit-only or that no SCOTUS holding is being taught elsewhere on the line.",
+    "The fixture as described would encode the disputed examples as allowed even though N5's stated purpose says SCOTUS holdings belong in Key cases, not Recent developments."
+  ],
+  "breaks_true_positives": true,
+  "residual_risks": [
+    "Current 45-character-first-case window can miss a later SCOTUS case name, reporter cite, or holding language in the same bullet.",
+    "A bare Supreme Court reference remains intentionally exempt, so holding verbs plus a SCOTUS case name/cite later need separate detection rather than a broader tag suppression.",
+    "Scanning the whole line before the tag for circuit references would be even noisier because unrelated lower-court context could suppress a SCOTUS-tag violation."
+  ],
+  "suggested_tightening": "Do not suppress solely because a circuit reference precedes SCOTUS. If metadata labels like 'superseded by SCOTUS' are allowed, suppress only that narrow status-label pattern after a classified circuit subject and only when the remainder of the line contains no SCOTUS case name, U.S./S.Ct. cite, or holding/result verbs; otherwise leave the HIGH active."
+}

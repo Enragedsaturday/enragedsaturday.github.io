@@ -696,3 +696,15 @@ match against the R9(b) cached opinion text — no live CL calls). `lake/_schema
 fields optional; records without them remain schema-valid. *Rationale:* the fragment is derived
 pinpoint data with exactly one natural home — the pinpoint record; storing it anywhere else
 would fork the lake's SSOT.
+
+---
+
+## Amendments — 2026-07-04 (S9 roster codification)
+
+### A15 — Lint names re-pointed: `LINT-S2-*` → LINT-12/13/14 (COH-21 executed)
+**Source:** S9 R8's normative roster table (per S1 A5's mapping; the 2026-07-02 closure
+verification flagged that A5's "executed there" clause had never landed in this spec's text).
+From this date: **`LINT-S2-drift` ≡ LINT-12 · `LINT-S2-schema` ≡ LINT-13 · `LINT-S2-pagerecord`
+≡ LINT-14.** This spec's body text (R1, R12, Method 5–6, §6, A6) stands as written; the
+`LINT-S2-*` names survive only as deprecated aliases, and the CI implementation registers under
+the numeric ids. No check semantics change.

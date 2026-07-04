@@ -472,6 +472,20 @@ Each: **Direction · Research first · Interview-extract (choices + what to show
   (gpt-5.5) + how the two Codex lanes stay independent; definition-of-done. *Show:* the
   finding/adjudication JSON schema + one worked finding through find→adjudicate→fix→re-review.
 - **Deliverable.** `S9-verification.spec.md`.
+  ✅ **Written 2026-07-04** (worked exhibit `_overhaul2/s9-demo/` — one real finding (COH-28)
+  driven live through find → 3-lane panel → ≥2-of-3 refute kill → MODIFIED adjudication → fix →
+  non-author re-review (NOT-FIXED round 1, FIXED loop 2); ledger schema signed on it; all
+  injected:S9 rows + S7 inputs (a)–(e) + S8 handoffs dispositioned in the Decision Log). Decided
+  highlights: **exhaustive blind re-derivation** corpus-wide with a serious discordance
+  adjudication layer (D1 — cache-fed, zero CL quota; Thread-N staffing split by grain, D2);
+  panel = legal assertions + rule layer (D3); release gate = full composite (D4);
+  completeness = bounded instruments + absence-claim sweep + **sampled frontier re-run with a
+  fail-closed full-re-run tripwire** (D7), all discovery **dual-model Claude + Codex**
+  (`codex exec -c tools.web_search=true` verified live; the root `--search` flag does NOT pass
+  through `exec`); CL first-class with whitelisted-secondary evidence fallback; lint roster
+  codified LINT-1…30 (LINT-12/13/14 re-pointing executed — S2 § A15; LINT-3 rebuilt lake-driven
+  per the demo adjudication); maintenance handoff to GH#2 as machine artifacts (D6); S6 § A2
+  filed (dual-model frontier). The spec text wins over this entry (§0 precedence).
 - **Audit inputs (2026-07-02)** — from `AUDIT-2026-07-02.md`; address each (adopt / adapt /
   reject-with-rationale) in the spec's Decision Log:
   **COH-17** writer ≠ checker weakened (Codex builds the lake AND staffs 2 of 3 review lanes) — route
@@ -553,7 +567,7 @@ exact CourtListener fields/calls per data element (the S2 schema).
 | S6 Coverage & Ingest | ✅ | ✅ |
 | S7 Doctrine Production | ✅ | ✅ |
 | S8 Legal-Term & Case Linking | ✅ | ✅ |
-| S9 Verification Pipeline & Release Gate | ☐ | ☐ |
+| S9 Verification Pipeline & Release Gate | ✅ | ✅ |
 
 *Coherence pass over all nine → one autonomous EXECUTE run (data-lake first).*
 

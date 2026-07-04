@@ -340,3 +340,17 @@ Cir. 2018) · *United States v. Morgan*, 743 F.2d 1158 (6th Cir. 1984) · *Unite
 only as a mid-wave trickle; pre-seeding books them into the batched verification lanes and books
 the alias traps before any page-mint. No requirement text changes; the R5 union was built to be
 extended by named legs.
+
+---
+
+## Amendments — 2026-07-04 (S9-interview intake)
+
+### A2 — Dual-model frontier discovery (extends R6; no text superseded)
+**Source:** the S9 interview (user note, 2026-07-04): "The fan out/frontier search should use
+claude and codex. The first iterations were claude only, we should have model diversity for that."
+At EXECUTE, each category's R6 frontier discovery runs **both** a Claude lane **and** a Codex
+`web_search` lane (recipe: `codex exec -c tools.web_search=true -s read-only …` — S9 R7;
+feasibility live-verified 2026-07-04: 74 search events, real find verified on Justia), with the
+two lanes' finds **unioned before the R7 candidate queue** (web never asserts; CL/stub
+confirmation unchanged). S9's sampled frontier re-run (S9 R7.5) audits both lanes' saturation
+logs. *(Filed by the S9 thread — precedent: A1 above, filed by the S7 thread.)*

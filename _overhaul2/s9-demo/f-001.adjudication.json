@@ -1,0 +1,31 @@
+{
+  "schema": "s9.adjudication.v1",
+  "finding_id": "F-DEMO-001",
+  "refute_tally": {
+    "claude": "stands-modified",
+    "codex-A": "refuted",
+    "codex-B": "refuted",
+    "rule": ">=2-of-3 refute kills the finding as framed",
+    "result": "KILLED-AS-FRAMED (2 refute + 1 stands-modified); all three lanes independently converged on the same premise defect"
+  },
+  "verdict": "MODIFIED",
+  "adjudicated_holding": [
+    "(1) PREMISE REFUTED: the two live LINT-3 HIGHs are TRUE positives on today's text, not false positives. Both flagged bullets teach the SCOTUS holding ('acquiring geofence Location History IS a search', with [[Chatrie v. United States]] wikilinks and 'Binding - SCOTUS' label) inside a Recent-developments section - exactly what N5 exists to catch. This matches audit row TEACH-01, which names these very lines (ER :129, Standing) as injected:S7 relocation work. The O1 ticket's 'content verified correct - no content defect' conflated treatment-FACT accuracy with PLACEMENT correctness.",
+    "(2) PROPOSED FIX REJECTED: both Codex lanes independently showed the circuit-ref-precedes-tag suppression breaks true positives - (a) the 'on cert from the 9th Cir. - SCOTUS held...' shape hides a tag-only violation; (b) the 45-char window can miss the real SCOTUS cite/holding later in the line, so suppressing has_tag can erase the only in-window signal. The window patch is NOT applied.",
+    "(3) THE REAL TOOL DEFECT (spawned as F-DEMO-002): the 45-char first-case-window heuristic both over-detects (descriptor tokens) and under-detects (out-of-window SCOTUS cites/holdings). The structural fix is already mandated by S1 A2's concretized R14 check: LINT-3-extended at EXECUTE replaces the token-window heuristic with a SECTION-SCOPED, LAKE-DRIVEN check - no 'Binding - SCOTUS' label and no wikilink to a SCOTUS-court case page (court read from the S2 lake) anywhere inside a Lower-court-developments section. That kills both failure modes structurally; COH-28 lands as this rewrite, not as a window patch.",
+    "(4) CONTENT HALF: relocation of the SCOTUS-holding sentences stays on TEACH-01/S7's row (already ADOPT-dispositioned in S7's Decision Log; executes at S7 under the planning-time content freeze). The two live HIGHs correctly stay red until S7 relocates. No lint change may encode today's lines as allowed.",
+    "(5) FIX APPLIED NOW: the committed acceptance fixture (scripts/lint/fixtures/lint-3-n5.md) encodes the ADJUDICATED semantics for the EXECUTE-time rewritten check - descriptor-only circuit-subject lines pass; any line teaching a SCOTUS holding / carrying a SCOTUS-court wikilink or 'Binding - SCOTUS' label fires - with the current lint's behavior recorded as baseline (fires on all 5 shapes, incl. the 2 descriptor-only)."
+  ],
+  "evidence": [
+    {"kind": "live-repro", "ref": "python3 scripts/lint/lint3_structure.py -> 2 HIGH (Standing:80, ER:129), 2026-07-04"},
+    {"kind": "register", "ref": "AUDIT-2026-07-02 TEACH-01 (ER :129 'narrated bullet', Standing - SCOTUS holdings taught in RD; injected:S7)"},
+    {"kind": "register", "ref": "AUDIT-2026-07-02 COH-28 (LINT-3 precision -> injected:S9 roster)"},
+    {"kind": "spec", "ref": "S1 Amendments A2 (LINT-3-extended N5 check: section-scoped grep vs the S2 lake court field)"},
+    {"kind": "panel", "ref": "_overhaul2/s9-demo/f-001.vote.{claude,codex-A,codex-B}.json (independent lanes, read-only sandbox, votes recorded before mutual disclosure)"},
+    {"kind": "fixture-baseline", "ref": "current token-window lint fires HIGH on ALL SIX committed fixture shapes (TP-1..TP-4 + FP-1/FP-2) - re-run and independently confirmed by the codex-C re-review 2026-07-04; the earlier 'all 5 shapes' figure was the pre-adjudication draft fixture's baseline (stale pointer caught by re-review round 1, corrected loop 2)"}
+  ],
+  "adjudicator": {"lane": "claude", "model": "claude-fable-5"},
+  "role_separation": "finder = O1 closeout lane (historical ticket) + audit agents; panel = claude + codex-A + codex-B (codex lanes sandboxed read-only - mechanically cannot edit); adjudicator = claude; fix author = claude; post-fix re-review = codex-C (non-author). No lane closed its own finding.",
+  "spawned_findings": ["F-DEMO-002 (LINT-3 window under-detection; absorbed by adjudicated_holding (3) - same rewrite)"],
+  "at": "2026-07-04T09:22:00-04:00"
+}

@@ -1,0 +1,19 @@
+{
+  "schema": "s9.vote.v1",
+  "finding_id": "F-DEMO-001",
+  "lane": "claude",
+  "model": "claude-fable-5",
+  "recorded_before_other_votes_read": true,
+  "at": "2026-07-04T09:12:00-04:00",
+  "verdict": "stands-modified",
+  "reasons": [
+    "The tool-precision half STANDS: the heuristic keys on token adjacency ('SCOTUS' within 45 chars of a case name), not on whether a SCOTUS holding is being taught. Even a clean post-S7 entry ('*United States v. Chatrie* (4th Cir.) -> superseded by SCOTUS - see Key cases') would fire HIGH. The docstring's no-false-positive promise is violated by the bare-token branch.",
+    "REFUTATION PARTIALLY LANDS on the finding's premise, via attack angle (1): the O1 ticket's claim 'content verified correct - no content defect' is contradicted by audit row TEACH-01, which names these very lines (Exclusionary Rule :129 'narrated bullet', Standing) as SCOTUS holdings TAUGHT inside Recent developments - an N5 pedagogy violation routed injected:S7 (relocate at EXECUTE). Both flagged bullets narrate the SCOTUS outcome ('acquiring geofence Location History IS a search (Binding - SCOTUS)') inside the RD section. The treatment FACT is accurate; the PLACEMENT is the defect N5 exists to catch. On these two specimens the lint was right for the wrong reason.",
+    "Therefore: fix the lint (the heuristic must survive post-S7 clean descriptors) AND keep the content half on TEACH-01/S7's row (already dispositioned ADOPT in S7's Decision Log; relocation happens at EXECUTE under the planning-time content freeze). The O1 FP ticket closes only when both halves land."
+  ],
+  "breaks_true_positives": false,
+  "residual_risks": [
+    "A genuine SCOTUS entry phrased 'Foo v. Bar, on cert from the 9th Cir. - SCOTUS held...' would be suppressed (circuit ref precedes the token). Mitigation: such an entry almost always carries a U.S./S. Ct. reporter cite in the window (has_us branch untouched, still fires); the fixture must pin this shape.",
+    "Scanning only window[:tag.start()] (45 chars) rather than the whole pre-tag line is deliberate - the subject court parenthetical hugs the case name; widening the scan would over-suppress."
+  ]
+}

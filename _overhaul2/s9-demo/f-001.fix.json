@@ -1,0 +1,19 @@
+{
+  "schema": "s9.fix.v1",
+  "finding_id": "F-DEMO-001",
+  "adjudication_verdict": "MODIFIED",
+  "applied_by": {"lane": "claude", "model": "claude-fable-5"},
+  "artifacts": [
+    "scripts/lint/fixtures/lint-3-n5.md (adjudicated acceptance fixture, 6 shapes; the rejected window patch was NOT applied to lint3_structure.py)",
+    "_overhaul2/s9-demo/f-001.adjudication.json (evidence line corrected at loop 2)"
+  ],
+  "content_edits": "NONE - the content half (relocating the taught SCOTUS holdings out of the frontier sections) stays on TEACH-01/S7's register row; planning-time content freeze holds",
+  "loops": [
+    {"loop": 1, "re_review": {"lane": "codex-C", "model": "gpt-5.5", "round": 1, "verdict": "NOT-FIXED",
+      "issue": "stale fixture-baseline evidence pointer ('all 5 shapes' vs the committed 6-shape fixture); re-reviewer independently re-ran the lint (6 HIGHs)"}},
+    {"loop": 2, "re_review": {"lane": "codex-C", "model": "gpt-5.5", "round": 2, "verdict": "FIXED", "issues": []}}
+  ],
+  "loop_cap": 3,
+  "writer_neq_checker": "fix author (claude) never re-reviewed its own fix; re-review lane (codex-C) authored nothing",
+  "at": "2026-07-04T09:35:00-04:00"
+}

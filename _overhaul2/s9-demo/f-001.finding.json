@@ -1,0 +1,27 @@
+{
+  "schema": "s9.finding.v1",
+  "id": "F-DEMO-001",
+  "run": "s9-planning-demo-2026-07-04",
+  "object": "scripts/lint/lint3_structure.py",
+  "object_class": "tooling",
+  "dimension": "D-TOOL",
+  "gate": null,
+  "assertion_id": null,
+  "locator": {
+    "section": "check_file / (b) no-SCOTUS-in-Recent-developments",
+    "lines": "104-117",
+    "verbatim": "has_tag = bool(SCOTUS_TAG_RE.search(window))"
+  },
+  "problem": "LINT-3's N5 heuristic fires HIGH on Recent-developments entries whose SUBJECT case is a circuit case when the 45-char window after the case name contains a descriptive bare 'SCOTUS' token ('-> superseded by SCOTUS'). Two live HIGHs: 'Standing to Challenge a Search.md':80 and 'The Exclusionary Rule.md':129 - both entries' subject is United States v. Chatrie (4th Cir. en banc, 136 F.4th 100), correctly placed as a superseded circuit development; the SCOTUS decision (Chatrie v. United States, 609 U.S. ___) is homed in Key cases elsewhere. The lint's own docstring promises passing references 'do NOT trigger'. A permanently-red HIGH teaches operators to ignore the roster (S1 A8's alarm-fatigue failure mode) and blocks a fail-closed CI gate on correct content.",
+  "severity": "high",
+  "proposed_fix": "Suppress the SCOTUS-tag branch (not the reporter-cite branch) when a circuit-court reference (e.g. '4th Cir.', 'D.C. Cir.' - parenthesized or not; line 129 uses a backtick label, not parens) precedes the SCOTUS token inside the window: the entry's own court is named between the case name and the token, so the token is subsequent-history description, not the subject court. Ship a pass/fail fixture (scripts/lint/fixtures/lint-3-n5.md) proving both live FP shapes are suppressed AND true positives (U.S. reporter cite; '(SCOTUS)' tag with no preceding circuit ref) still fire.",
+  "needs_cl": false,
+  "found_by": {
+    "lane": "o1-s9-closeout",
+    "model": "claude (O1 pass, 2026-06-30)",
+    "note": "raised as _review-needed/lint3-chatrie-recent-dev-false-positive.md; re-confirmed live 2026-07-04 by the S9-planning thread (both HIGHs reproduce on the current tree)",
+    "register": "AUDIT-2026-07-02 COH-28 (injected:S9)"
+  },
+  "refute_tally": null,
+  "confidence": 0.95
+}

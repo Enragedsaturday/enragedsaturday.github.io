@@ -1,0 +1,21 @@
+{
+  "schema": "s9.vote.v1",
+  "finding_id": "F-DEMO-001",
+  "lane": "codex-A",
+  "model": "gpt-5.5",
+  "sandbox": "read-only (reviewer lane cannot write)",
+  "independent": "isolated codex exec; no sibling votes or Claude vote in context",
+  "verdict": "refuted",
+  "reasons": [
+    "The two cited lines are not clean false positives under the stated N5 purpose. They do more than identify a circuit case as superseded; they teach the SCOTUS disposition/holding inside Recent developments, including the Supreme Court reversal and the search-question result.",
+    "The proposed suppression would hide true positives. A line can mention a circuit provenance before a SCOTUS tag while still being a SCOTUS Recent-developments violation, e.g. a SCOTUS case described as coming from the 9th Cir. before saying SCOTUS held something.",
+    "Keeping has_us untouched does not save this fix because the lint only inspects the 45-character window after the first case name. In the provided lines, the later 609 U.S. cite and SCOTUS holding can sit outside that window, so suppressing has_tag can erase the only current signal.",
+    "window[:tag.start()] is not a sound semantic boundary. It misses circuit context before the matched case name, while a broader whole-line scan would create even more masking risk for real SCOTUS entries that mention lower-court history."
+  ],
+  "breaks_true_positives": true,
+  "residual_risks": [
+    "The current lint may be detecting these examples for the wrong immediate token, but the line-level violation still appears real.",
+    "There may be genuine provenance-only mentions of 'superseded by SCOTUS' that deserve lower-noise handling, but this proposed exception is too broad."
+  ],
+  "suggested_tightening": "Do not suppress solely because a circuit reference precedes a SCOTUS token. Instead classify whether the line contains a SCOTUS case/cite or holding language anywhere in the Recent-developments entry; only consider a narrow provenance-only exception when there is no later SCOTUS case name, reporter cite, or holding/disposition language."
+}
