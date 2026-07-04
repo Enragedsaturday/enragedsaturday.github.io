@@ -429,12 +429,30 @@ Each: **Direction · Research first · Interview-extract (choices + what to show
 - **Interview-extract.** Term-of-art inclusion test; every-occurrence vs first-occurrence (user leans
   every); highlight/pinpoint policy. *Show:* a page at the proposed link density + hover previews.
 - **Deliverable.** `S8-linking-glossary.spec.md`.
+  ✅ **Written 2026-07-04** (mockup commits `981b286` + `51e1f4b` + `baa1e17` + `5b48d85` +
+  `5d747f9` — Knock and Talk at signed density + Curtilage embeds + Jardines/Walker/Lundin
+  pincite exhibits; all S8 audit rows dispositioned in the Decision Log). Decided highlights:
+  **every-occurrence** linking (D1) with a shared exemption-zone catalog; four-way term routing
+  (page / glossary / citing / vernacular-skip) as register columns (D2); the **split pincite
+  convention** (D5) — case name → internal **pin-deep** with a centered flash + persistent tint
+  (D3), pincite pages → **external CL `#:~:text=` fragment** highlighting the verified quote
+  (D4; fragments derive only from G3-passed lake quotes, validated against cached text —
+  S2 § A14 adds `pinpoints[].fragment`); embeds = **rule nodes + pinned quotes only**, boundary
+  = the S1 A3 shingle detector, **full-slug targets** (alias-stub transclusion trap found live)
+  (D6); glossary-definition embeds rejected (hover suffices). Fail-closed short-name resolver
+  (three-Morgans guard); `_run/s8-link-ledger.json` joins S6's ledger = the COH-15 machine
+  reconciliation; LINT-5/LINT-7 rewritten (ledger-aware bare-caption rule; first-occurrence rule
+  deleted; broken anchors → HIGH); **mid-line-pin remediation moves content-side to S8** (R6;
+  LINT-9 + verification stay S9 — NUM-03 boundary). The spec text wins over this entry (§0
+  precedence).
 - **Audit inputs (2026-07-02)** — from `AUDIT-2026-07-02.md`; address each (adopt / adapt /
   reject-with-rationale) in the spec's Decision Log:
   **COH-15** link ALL 388 bare-mention cases once pages exist (S6 authors the no-page subset;
   reconcile the 388 / ~84 / LINT-5 numbers jointly with S6) · **NUM-04** the 388 seed is confirmed
   (40/40 sample hit-rate; conservative floor ≥365) · **NUM-02** pipe-escaping work list: **18 files /
-  69 affected table lines** (per-file list in the audit report).
+  69 affected table lines** (per-file list in the audit report). *(All three dispositioned in the
+  signed spec — COH-15/NUM-04 ADOPT, NUM-02 ADOPT-ADAPTED seed-not-gospel; plus an ADAPT pointer
+  on S9's NUM-03: remediation rides S8 R6, lint+verify stay S9.)*
 
 ### S9 — Verification Pipeline & Release Gate
 - **Direction.** The continuous, fail-closed pipeline (not just a final pass) + the release gate:
@@ -534,7 +552,7 @@ exact CourtListener fields/calls per data element (the S2 schema).
 | S5 Entry Models | ✅ | ✅ |
 | S6 Coverage & Ingest | ✅ | ✅ |
 | S7 Doctrine Production | ✅ | ✅ |
-| S8 Legal-Term & Case Linking | ☐ | ☐ |
+| S8 Legal-Term & Case Linking | ✅ | ✅ |
 | S9 Verification Pipeline & Release Gate | ☐ | ☐ |
 
 *Coherence pass over all nine → one autonomous EXECUTE run (data-lake first).*

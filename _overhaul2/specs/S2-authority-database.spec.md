@@ -680,3 +680,19 @@ recorded, sanctioned old→new map is an irreversible information discard.
 
 *Inventory-side amendments (S2F-09a–e + the S2F-06 caveat correction) are applied directly in
 `_overhaul2/CL-DATA-INVENTORY.md`, marked "(audit 2026-07-02, live-verified)".*
+
+---
+
+## Amendments — 2026-07-04 (S8-interview intake)
+
+### A14 — R3: optional pinpoint `fragment` field (external text-fragment links)
+**Source:** the S8 interview/spec (`S8-linking-glossary.spec.md` R5; precedent: S6 § A1 authored
+at the S7 interview). **Adds to R3 (no text superseded):** each pinpoint MAY carry
+**`fragment`** — the validated `#:~:text=` string S8 generates from the pin's G3-verified
+`quote` — plus **`fragment_validated_at`**. Written back through R3's existing "new pinpoints
+authored downstream are written back" path; generation + validation semantics are wholly S8 R5's
+(fragments derive only from G3-passed quotes, validated to exactly one whitespace-insensitive
+match against the R9(b) cached opinion text — no live CL calls). `lake/_schema.json` marks both
+fields optional; records without them remain schema-valid. *Rationale:* the fragment is derived
+pinpoint data with exactly one natural home — the pinpoint record; storing it anywhere else
+would fork the lake's SSOT.
