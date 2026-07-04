@@ -199,6 +199,22 @@ first real catch). Known-red rows all carry named owners (S7/S8/S9 per the ledge
 **Wave 3 (S6 → S7 → S8) opens when the S2 lake lands** (S6's candidate queue + verification
 read from it; R15 build-QA gates the handoff). S2 session 1 still in flight at wave-2 close.
 
+### S2 session-1 GATE: FAIL → the F-S2-15 cost-model adjudication (2026-07-04)
+
+Session 1 (150 min, 1,525 calls): pipeline HEALTHY (clean boundary exit, 0 crashes, 9 transport
+errors all auto-recovered, pacing min 4s, 0×429; 6 cases completed end-to-end, 9 lake records
+committed e2634b4) — but the COST MODEL failed the gate: ~228 calls per completed case
+(alphabetically-early mega-cases; full-text reads on every lane-1/3 treatment hit dominate),
+projecting ~105k calls corpus-wide vs the signed 15–25k envelope (weeks, not the signed
+multi-day run). **Orchestrator adjudication (F-S2-15), under S2 §9's execution-tunable lane
+parameters ("revisit against real hit-rates during the run" — this is that revisit):
+snippet-first triage for lanes 1/3** — full opinion reads only for genuine candidates (negative
+keyword near the target case's name / binding-court ambiguity / no snippet), every triage
+decision journaled per hit, lane 2 (top-25) keeps full reads, negative events remain
+proposed-only behind S9's two-reviewer rule. Recall risk bounded + documented; S9's blind
+re-derivation samples validate the triage. Builder implementing; then a validation session
+(finish Terry + normal-case sample) re-gates before the cadence resumes.
+
 ### ⚠️ DEVIATION — pool storage root (user-visible, reversible)
 
 The signed pool root `/Volumes/AIStore2` (S2 A10) does not exist; the AIStore2 APFS volume is
