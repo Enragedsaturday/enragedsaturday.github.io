@@ -12,8 +12,10 @@ import json
 import os
 import random
 import re
+import shutil
 import sqlite3  # noqa: F401 - stdlib dependency reserved for the R13 loader path.
 import sys
+import tempfile
 import time
 import urllib.error
 import urllib.parse
@@ -25,6 +27,19 @@ DEFAULT_CSSI_LAKE_ROOT = "/Users/johngalt/cssi-lake"
 TOKEN_PATH = os.path.expanduser("~/.config/cssi/cl-token")
 CONSUMER_IDENTITY = "S2-BUILDER-AUTHORING"
 SCHEMA_VERSION = "s2.v1"
+
+STRICT_COURT_CLASSES = {"scotus", "coa", "district", "state", "other"}
+COURT_CLASS_ALIASES = {
+    "circuit": "coa",
+    "state-high": "state",
+    "state-app": "state",
+}
+FAIL_CLOSED_STATUSES = {"fabrication_suspected", "not_found", "blocked"}
+TREATMENT_LANES = [
+    ("lane1_negative", 200),
+    ("lane2_top_cited", 25),
+    ("lane3_recency", 200),
+]
 
 ALLOWED_OPINION_SOURCES = {
     "cluster.sub_opinions[]",
@@ -196,6 +211,23 @@ def slugify(value):
     return value or "case"
 
 
+def normalize_court_class(value):
+    if value is None:
+        return None
+    key = str(value).strip().lower()
+    key = COURT_CLASS_ALIASES.get(key, key)
+    if key in STRICT_COURT_CLASSES:
+        return key
+    return "other"
+
+
+def normalize_source_record(record):
+    out = dict(record)
+    if "court_level" in out:
+        out["court_level"] = normalize_court_class(out.get("court_level"))
+    return out
+
+
 def normalize_roster_value(value):
     if value is None:
         return ""
@@ -361,7 +393,7 @@ def state_family_from_identity(identity):
 
 
 def binding_jurisdiction_filter(identity):
-    level = (identity.get("court_level") or "").lower()
+    level = normalize_court_class(identity.get("court_level"))
     if level == "scotus":
         return ""
     if level == "coa":
@@ -382,6 +414,12 @@ def binding_jurisdiction_filter(identity):
     return "AND court_id:(scotus)"
 
 
+def numeric_tail(value):
+    text = str(value).rstrip("/")
+    m = re.search(r"(\d+)$", text)
+    return int(m.group(1)) if m else None
+
+
 def extract_id(value):
     if value is None:
         return None
@@ -391,9 +429,27 @@ def extract_id(value):
         for key in ("id", "opinion_id", "cluster_id"):
             if key in value:
                 return extract_id(value[key])
-    text = str(value).rstrip("/")
-    m = re.search(r"(\d+)$", text)
-    return int(m.group(1)) if m else None
+    return numeric_tail(value)
+
+
+def extract_opinion_id(value, source_label):
+    """Extract only opinion ids from opinion-bearing arrays.
+
+    Dicts are intentionally stricter than generic CL id parsing: `cluster_id`
+    is a different namespace and must never be accepted as an opinion id.
+    """
+    if value is None:
+        return None
+    if isinstance(value, int):
+        return value
+    if isinstance(value, dict):
+        for key in ("id", "opinion_id"):
+            if key in value and value[key] not in (None, ""):
+                return extract_opinion_id(value[key], source_label)
+        if "cluster_id" in value:
+            raise ValueError("%s carried cluster_id but no opinion id" % source_label)
+        return None
+    return numeric_tail(value)
 
 
 def first_party_terms(case_name):
@@ -425,37 +481,38 @@ def recency_window_start(build_date=None, years=3):
 
 
 class TokenBucket:
-    def __init__(self, rate_per_minute=14, capacity=14, start_time=None):
+    """Capacity-1 paced limiter kept under the old class name.
+
+    A full token bucket can burst above a literal "N calls in any 60 seconds"
+    rule. This limiter reserves one call every 60/N seconds; runtime `wait()`
+    adds jitter before every network call, including the first call.
+    """
+
+    def __init__(self, rate_per_minute=14, capacity=None, start_time=None):
         self.rate_per_minute = float(rate_per_minute)
-        self.capacity = float(capacity)
-        self.tokens = float(capacity)
-        self.updated_at = float(time.time() if start_time is None else start_time)
+        if self.rate_per_minute <= 0:
+            raise ValueError("rate_per_minute must be positive")
+        self.capacity = 1.0
+        self.interval = (60.0 / self.rate_per_minute) + 0.000001
+        self.next_available_at = float(time.time() if start_time is None else start_time)
 
     @property
     def refill_per_second(self):
         return self.rate_per_minute / 60.0
 
-    def _refill(self, now):
-        elapsed = max(0.0, float(now) - self.updated_at)
-        self.tokens = min(self.capacity, self.tokens + elapsed * self.refill_per_second)
-        self.updated_at = float(now)
-
     def consume_at(self, now, amount=1):
-        self._refill(now)
         amount = float(amount)
-        if self.tokens >= amount:
-            self.tokens -= amount
-            return 0.0
-        missing = amount - self.tokens
-        wait = missing / self.refill_per_second
-        self.tokens = 0.0
-        self.updated_at = float(now) + wait
+        if amount != 1.0:
+            raise ValueError("paced limiter only supports single-call reservations")
+        now = float(now)
+        scheduled_at = max(now, self.next_available_at)
+        wait = max(0.0, scheduled_at - now)
+        self.next_available_at = scheduled_at + self.interval
         return wait
 
     def wait(self):
         wait = self.consume_at(time.time())
-        if wait > 0:
-            time.sleep(wait + random.uniform(0.05, 0.35))
+        time.sleep(wait + random.uniform(0.05, 0.35))
 
 
 class HourlyGuard:
@@ -537,7 +594,10 @@ class Journal:
 class ResumeState:
     def __init__(self, rows):
         self.steps = {}
+        self.step_rows = {}
         self.lanes = {}
+        self.selected_clusters = {}
+        self.final_record_ids = {}
         for row in rows:
             record_id = row.get("record_id")
             step = row.get("step")
@@ -549,18 +609,80 @@ class ResumeState:
                 self.lanes[(record_id, step, lane)] = {
                     "status": status,
                     "cursor": row.get("cursor"),
+                    "reviewed": row.get("reviewed"),
+                    "proposed": row.get("proposed"),
+                    "cap_hit": row.get("cap_hit"),
                 }
             else:
                 self.steps[(record_id, step)] = status
+                self.step_rows[(record_id, step)] = row
+            if row.get("selected_cluster_id") is not None:
+                self.selected_clusters[(record_id, step)] = row.get("selected_cluster_id")
+            if row.get("final_record_id"):
+                self.final_record_ids[(record_id, step)] = row.get("final_record_id")
 
     def step_complete(self, record_id, step):
         return self.steps.get((record_id, step)) == "complete"
+
+    def step_status(self, record_id, step):
+        return self.steps.get((record_id, step))
+
+    def selected_cluster_id(self, record_id, step="identity"):
+        return self.selected_clusters.get((record_id, step))
+
+    def final_record_id(self, record_id, step="identity"):
+        return self.final_record_ids.get((record_id, step))
 
     def lane_status(self, record_id, step, lane):
         return self.lanes.get((record_id, step, lane), {"status": "pending", "cursor": None})
 
     def lane_complete(self, record_id, step, lane):
         return self.lane_status(record_id, step, lane).get("status") == "complete"
+
+
+def default_lane_status():
+    return {
+        "identity": "pending",
+        "citations": "pending",
+        "pinpoints": "pending",
+        "progeny": "pending",
+        "treatment": {
+            lane: {"status": "pending", "cursor": None}
+            for lane, _cap in TREATMENT_LANES
+        },
+        "provenance": "pending",
+    }
+
+
+def resume_rows_from_manifest(records):
+    rows = []
+    for row in records:
+        record_id = row.get("record_id")
+        lane_status = row.get("lane_status") or {}
+        if not record_id:
+            continue
+        for step in ("identity", "citations", "pinpoints", "progeny"):
+            status = lane_status.get(step)
+            if status in ("pending", "partial", "complete"):
+                rows.append({"record_id": record_id, "step": step, "status": status})
+        treatment = lane_status.get("treatment") or {}
+        for lane, _cap in TREATMENT_LANES:
+            state = treatment.get(lane) or {}
+            if isinstance(state, str):
+                state = {"status": state}
+            status = state.get("status")
+            if status in ("pending", "partial", "complete"):
+                rows.append({
+                    "record_id": record_id,
+                    "step": "treatment",
+                    "lane": lane,
+                    "status": status,
+                    "cursor": state.get("cursor"),
+                    "reviewed": state.get("reviewed"),
+                    "proposed": state.get("proposed"),
+                    "cap_hit": state.get("cap_hit"),
+                })
+    return rows
 
 
 class LakePaths:
@@ -570,6 +692,7 @@ class LakePaths:
         self.cases = os.path.join(self.lake, "cases")
         self.manifest = os.path.join(self.lake, "_manifest.json")
         self.precedence = os.path.join(self.lake, "_reporter-precedence.json")
+        self.treatment_migration = os.path.join(self.lake, "_treatment-migration.json")
         self.pool = pool_root
         self.http_cache = os.path.join(pool_root, "cache", "http")
         self.progeny = os.path.join(pool_root, "progeny")
@@ -607,7 +730,7 @@ class CourtListenerClient:
         self.journal = journal
         self.budget = budget
         self.rate = rate
-        self.analyze_rate = TokenBucket(rate_per_minute=60, capacity=60)
+        self.analyze_rate = TokenBucket(rate_per_minute=60, capacity=1)
         self.hourly = hourly
         self.run_id = run_id
         self.call_log = os.path.join(paths.logs, "cl-calls.log")
@@ -798,7 +921,10 @@ def opinion_text(opinion):
 def opinion_refs_from_cluster(client, cluster):
     refs = []
     for item in cluster.get("sub_opinions") or []:
-        opinion_id = extract_id(item)
+        try:
+            opinion_id = extract_opinion_id(item, "cluster.sub_opinions[]")
+        except ValueError:
+            continue
         if opinion_id:
             refs.append(client.opinion_ref(opinion_id, "cluster.sub_opinions[]", {"cluster_id": cluster.get("id")}))
     return refs
@@ -806,11 +932,18 @@ def opinion_refs_from_cluster(client, cluster):
 
 def opinion_refs_from_search_result(client, result):
     refs = []
-    for opinion_id in result.get("sibling_ids") or []:
-        if extract_id(opinion_id):
-            refs.append(client.opinion_ref(extract_id(opinion_id), "search.sibling_ids[]", {"cluster_id": result.get("cluster_id")}))
+    for item in result.get("sibling_ids") or []:
+        try:
+            opinion_id = extract_opinion_id(item, "search.sibling_ids[]")
+        except ValueError:
+            continue
+        if opinion_id:
+            refs.append(client.opinion_ref(opinion_id, "search.sibling_ids[]", {"cluster_id": result.get("cluster_id")}))
     for opinion in result.get("opinions") or []:
-        opinion_id = extract_id(opinion)
+        try:
+            opinion_id = extract_opinion_id(opinion, "search.opinions[]")
+        except ValueError:
+            continue
         if opinion_id:
             refs.append(client.opinion_ref(opinion_id, "search.opinions[].id", {"cluster_id": result.get("cluster_id")}))
     return refs
@@ -823,12 +956,22 @@ def pick_lead_ref(client, cluster, search_result=None):
         for opinion in search_opinions:
             otype = str(opinion.get("type") or "").lower()
             if otype in LEAD_OPINION_TYPES:
-                return client.opinion_ref(extract_id(opinion), "search.opinions[].id", {"lead_type": otype})
+                try:
+                    opinion_id = extract_opinion_id(opinion, "search.opinions[]")
+                except ValueError:
+                    continue
+                if opinion_id:
+                    return client.opinion_ref(opinion_id, "search.opinions[].id", {"lead_type": otype})
     for item in cluster.get("sub_opinions") or []:
         if isinstance(item, dict):
             otype = str(item.get("type") or "").lower()
             if otype in LEAD_OPINION_TYPES:
-                return client.opinion_ref(extract_id(item), "cluster.sub_opinions[]", {"lead_type": otype})
+                try:
+                    opinion_id = extract_opinion_id(item, "cluster.sub_opinions[]")
+                except ValueError:
+                    continue
+                if opinion_id:
+                    return client.opinion_ref(opinion_id, "cluster.sub_opinions[]", {"lead_type": otype})
     refs = opinion_refs_from_cluster(client, cluster)
     return refs[0] if refs else None
 
@@ -856,7 +999,7 @@ def next_url(data):
 
 
 def court_search_id(record):
-    level = (record.get("court_level") or "").lower()
+    level = normalize_court_class(record.get("court_level"))
     if level == "scotus":
         return "scotus"
     if level == "coa":
@@ -902,7 +1045,64 @@ def base_field_provenance(src, verifier=CONSUMER_IDENTITY):
     return {"src": src, "at": iso_now(), "verifier": verifier}
 
 
+def set_record_status(record_json, status, reason=None, explicit_adjudication=False):
+    current = record_json.get("status")
+    if current in FAIL_CLOSED_STATUSES and current != status and not explicit_adjudication:
+        if reason:
+            record_json["provenance"]["warnings"].append("preserved %s over %s: %s" % (current, status, reason))
+        return False
+    record_json["status"] = status
+    return True
+
+
+def parse_frontmatter_scalar(value):
+    value = value.strip()
+    if value in ("", "null", "~"):
+        return None
+    if value in ("[]", "{}"):
+        return [] if value == "[]" else {}
+    if value.startswith("[") and value.endswith("]"):
+        try:
+            return json.loads(value)
+        except json.JSONDecodeError:
+            return [item.strip().strip("\"'") for item in value[1:-1].split(",") if item.strip()]
+    if len(value) >= 2 and value[0] == value[-1] and value[0] in "\"'":
+        return value[1:-1]
+    if re.fullmatch(r"\d{4}", value):
+        return int(value)
+    return value
+
+
+def legacy_treatment_from_page(page_path):
+    if not page_path or not os.path.exists(page_path):
+        return {}
+    with open(page_path, encoding="utf-8") as f:
+        text = f.read()
+    if not text.startswith("---\n"):
+        return {}
+    end = text.find("\n---", 4)
+    if end < 0:
+        return {}
+    lines = text[4:end].splitlines()
+    treatment = {}
+    in_treatment = False
+    for line in lines:
+        if not in_treatment:
+            if line.strip() == "treatment:":
+                in_treatment = True
+            continue
+        if line and not line.startswith(" "):
+            break
+        stripped = line.strip()
+        if not stripped or ":" not in stripped:
+            continue
+        key, _, value = stripped.partition(":")
+        treatment[key.strip()] = parse_frontmatter_scalar(value)
+    return treatment
+
+
 def empty_record_shell(record_id, source_record, build_run):
+    source_record = normalize_source_record(source_record)
     now = iso_now()
     return {
         "schema_version": SCHEMA_VERSION,
@@ -982,6 +1182,7 @@ def empty_record_shell(record_id, source_record, build_run):
 
 
 def classify_citations(cluster_citations, court_class, precedence):
+    court_class = normalize_court_class(court_class) or "other"
     all_cites = []
     vendor = []
     for citation in cluster_citations or []:
@@ -1082,7 +1283,12 @@ def official_domain_allowed(url):
 def resolve_identity(record, client, journal, resume, build_run):
     record_id = record["record_id"]
     if resume.step_complete(record_id, "identity"):
-        journal.append(record_id=record_id, step="identity", status="complete", skipped=True)
+        selected_cluster_id = resume.selected_cluster_id(record_id, "identity")
+        if selected_cluster_id:
+            cluster = client.get_cluster(selected_cluster_id, record_id=record_id, step="identity.cluster.replay")
+            journal.append(record_id=record_id, step="identity", status="complete", skipped=True, replayed_selection=True)
+            return {"cluster_id": selected_cluster_id, "opinions": []}, cluster, []
+        journal.append(record_id=record_id, step="identity", status="complete", skipped=True, replayed_selection=False)
         return None, None, None
 
     params = identity_search_params(record)
@@ -1141,7 +1347,7 @@ def apply_identity(record_json, source_record, search_result, cluster, alternate
         "case_name_full": cluster.get("case_name_full"),
         "court": source_record.get("court") or cluster.get("court") or search_result.get("court_citation_string"),
         "court_id": search_result.get("court_id") or cluster.get("court"),
-        "court_level": source_record.get("court_level") or identity.get("court_level"),
+        "court_level": normalize_court_class(source_record.get("court_level") or identity.get("court_level")),
         "circuit": source_record.get("circuit") or identity.get("circuit"),
         "date_decided": cluster.get("date_filed") or source_record.get("date_decided"),
         "year": source_record.get("year") or identity.get("year"),
@@ -1164,19 +1370,20 @@ def apply_identity(record_json, source_record, search_result, cluster, alternate
     })
     warnings = record_json["provenance"]["warnings"]
     if not canonical_match:
-        record_json["status"] = "fabrication_suspected"
+        set_record_status(record_json, "fabrication_suspected")
         identity["identity_method"] = "fabrication-check"
         identity["reason_code"] = "canonical_name_mismatch"
         warnings.append("input caption does not match CL canonical caption")
     elif expected_found and party_found:
-        record_json["status"] = "verified"
+        set_record_status(record_json, "under_review", "R15 structural gates have not cleared")
         identity["identity_method"] = "citation+party-text"
+        identity["reason_code"] = "awaiting_r15_structural_gates"
     elif source_record.get("docket"):
-        record_json["status"] = "under_review"
+        set_record_status(record_json, "under_review")
         identity["identity_method"] = "name+docket"
         identity["reason_code"] = "recent_or_no_official_cite"
     else:
-        record_json["status"] = "under_review"
+        set_record_status(record_json, "under_review")
         identity["identity_method"] = "pending"
         identity["reason_code"] = "two_key_not_satisfied"
         warnings.append("two-key identity check did not fully satisfy citation plus party text")
@@ -1188,10 +1395,10 @@ def apply_identity(record_json, source_record, search_result, cluster, alternate
 
 def apply_citations(record_json, cluster, precedence, journal):
     record_id = record_json["record_id"]
-    court_class = record_json["identity"].get("court_level") or "other"
+    court_class = normalize_court_class(record_json["identity"].get("court_level")) or "other"
     record_json["citations"] = classify_citations(cluster.get("citations") or [], court_class, precedence)
     if record_json["citations"]["official"] is None:
-        record_json["status"] = "under_review"
+        set_record_status(record_json, "under_review", "official cite selection failed")
         record_json["provenance"]["warnings"].append("official cite selection failed closed: %s" % record_json["citations"]["official_selection"]["reason"])
     journal.append(record_id=record_id, step="citations", status="complete", official=record_json["citations"]["display"])
 
@@ -1205,14 +1412,14 @@ def apply_pinpoints(record_json, source_record, lead_text, journal):
 
 def fetch_progeny(record_json, source_record, client, journal, resume):
     record_id = source_record["record_id"]
-    if resume.step_complete(record_id, "progeny"):
+    if resume.step_complete(record_id, "progeny") and record_json["progeny"].get("complete_query"):
         journal.append(record_id=record_id, step="progeny", status="complete", skipped=True)
-        return
+        return False
     sibling_ids = record_json["identity"].get("sibling_ids") or []
     query = complete_cites_query(sibling_ids)
     if not query:
         journal.append(record_id=record_id, step="progeny", status="complete", skipped=True, reason="no_sibling_ids")
-        return
+        return False
     first = client.search({"type": "o", "q": query, "order_by": "score desc", "page_size": 100}, cache=True, record_id=record_id, step="progeny.search")
     count = search_count(first)
     cache_path = os.path.join(client.paths.progeny, "%s.jsonl" % slugify(record_id))
@@ -1241,10 +1448,11 @@ def fetch_progeny(record_json, source_record, client, journal, resume):
         "indexed_citing_opinions": count,
         "count_source": "search",
         "per_sibling": per_sibling,
-        "citation_count": None,
+        "citation_count": record_json["progeny"].get("citation_count"),
         "cache_path": cache_path,
     }
     journal.append(record_id=record_id, step="progeny", status="complete", indexed_citing_opinions=count, rows_cached=written)
+    return True
 
 
 def lane_query(record_json, lane_name):
@@ -1293,28 +1501,39 @@ def review_treatment_hit(result, opinion_text_value=""):
 def run_treatment(record_json, source_record, client, journal, resume, session):
     record_id = source_record["record_id"]
     if record_json.get("stub"):
-        return
-    lanes = [
-        ("lane1_negative", 200),
-        ("lane2_top_cited", 25),
-        ("lane3_recency", 200),
-    ]
+        return False
+    changed = False
+    completed_lanes = set()
     derivation = record_json["treatment"].setdefault("derivation", {})
-    for lane_name, cap in lanes:
+    for lane_name, cap in TREATMENT_LANES:
         if session.expired():
-            return
+            return changed
         lane_state = resume.lane_status(record_id, "treatment", lane_name)
         if lane_state.get("status") == "complete":
             journal.append(record_id=record_id, step="treatment", lane=lane_name, status="complete", skipped=True)
+            completed_lanes.add(lane_name)
             continue
         query, params = lane_query(record_json, lane_name)
         if not query:
             journal.append(record_id=record_id, step="treatment", lane=lane_name, status="complete", reason="no_progeny_query")
+            derivation[lane_name] = {
+                "query": None,
+                "reviewed": 0,
+                "cap": cap,
+                "cap_hit": False,
+                "final_cursor": None,
+                "audit_needed": False,
+                "proposed_negative_events": 0,
+            }
+            changed = True
+            completed_lanes.add(lane_name)
             continue
-        reviewed = 0
+        reviewed = int(lane_state.get("reviewed") or 0)
         proposed = []
         cursor = lane_state.get("cursor")
         data = client.get_json_url(cursor, cache=False, record_id=record_id, step="treatment.%s.resume" % lane_name) if cursor else client.search(params, cache=False, record_id=record_id, step="treatment.%s.search" % lane_name)
+        cap_hit = False
+        final_cursor = cursor
         while True:
             for result in search_results(data):
                 if reviewed >= cap:
@@ -1337,35 +1556,166 @@ def run_treatment(record_json, source_record, client, journal, resume, session):
                         "journal_ref": "%s:%s" % (record_id, lane_name),
                     })
             if reviewed >= cap:
-                journal.append(record_id=record_id, step="treatment", lane=lane_name, status="complete", cap_hit=True, reviewed=reviewed, proposed=len(proposed))
+                cap_hit = True
+                final_cursor = next_url(data)
+                journal.append(
+                    record_id=record_id,
+                    step="treatment",
+                    lane=lane_name,
+                    status="complete",
+                    cap_hit=True,
+                    cursor=final_cursor,
+                    audit_needed=True,
+                    reviewed=reviewed,
+                    proposed=len(proposed),
+                )
                 break
             url = next_url(data)
             if not url:
-                journal.append(record_id=record_id, step="treatment", lane=lane_name, status="complete", reviewed=reviewed, proposed=len(proposed))
+                final_cursor = None
+                journal.append(
+                    record_id=record_id,
+                    step="treatment",
+                    lane=lane_name,
+                    status="complete",
+                    cap_hit=False,
+                    cursor=None,
+                    audit_needed=False,
+                    reviewed=reviewed,
+                    proposed=len(proposed),
+                )
                 break
+            final_cursor = url
+            journal.append(
+                record_id=record_id,
+                step="treatment",
+                lane=lane_name,
+                status="partial",
+                cursor=url,
+                reviewed=reviewed,
+                proposed=len(proposed),
+            )
+            if session.expired():
+                derivation[lane_name] = {
+                    "query": query,
+                    "reviewed": reviewed,
+                    "cap": cap,
+                    "cap_hit": False,
+                    "final_cursor": url,
+                    "audit_needed": False,
+                    "proposed_negative_events": len(proposed),
+                }
+                record_json["treatment"]["edges"].extend(proposed)
+                return True
             data = client.get_json_url(url, cache=False, record_id=record_id, step="treatment.%s.page" % lane_name)
         derivation[lane_name] = {
             "query": query,
             "reviewed": reviewed,
             "cap": cap,
+            "cap_hit": cap_hit,
+            "final_cursor": final_cursor,
+            "audit_needed": cap_hit,
+            "audit_marker": "R15 treatment audit required" if cap_hit else None,
             "proposed_negative_events": len(proposed),
         }
         record_json["treatment"]["edges"].extend(proposed)
-    if all(resume.lane_complete(record_id, "treatment", lane) for lane, _cap in lanes):
+        changed = True
+        completed_lanes.add(lane_name)
+    if all(resume.lane_complete(record_id, "treatment", lane) or lane in completed_lanes for lane, _cap in TREATMENT_LANES):
         journal.append(record_id=record_id, step="treatment", status="complete")
+    return changed
 
 
-def seed_treatment_from_migration(record_json, source_record):
-    record_json["treatment"].update({
-        "field_i_validity": "unverified",
-        "as_of_content": None,
-        "as_of_treatment": None,
-        "composite_basis": "unverified",
+def strip_wikilink(value):
+    text = str(value or "").strip()
+    if text.startswith("[[") and text.endswith("]]"):
+        text = text[2:-2]
+    return text
+
+
+def controlling_cases_from_legacy(by_values, field_ii):
+    out = []
+    for value in by_values or []:
+        name = strip_wikilink(value)
+        if not name:
+            continue
+        out.append({
+            "name": name,
+            "cluster_id": None,
+            "cite": None,
+            "field_ii": field_ii,
+        })
+    return out
+
+
+def seed_treatment_from_migration(record_json, source_record, migration):
+    if record_json.get("stub"):
+        return False
+    legacy = {
+        "status": source_record.get("legacy_treatment_status") or source_record.get("treatment_status"),
+        "as_of": source_record.get("legacy_treatment_as_of") or source_record.get("treatment_as_of"),
+        "note": source_record.get("legacy_treatment_note") or source_record.get("treatment_note"),
+        "by": source_record.get("legacy_treatment_by") or source_record.get("treatment_by") or [],
+    }
+    page_legacy = legacy_treatment_from_page(source_record.get("page_path"))
+    for key, value in page_legacy.items():
+        if legacy.get(key) in (None, "", []):
+            legacy[key] = value
+    legacy_status = normalize_roster_value(legacy.get("status"))
+    mapping = (migration.get("mappings") or {}).get(legacy_status)
+    if not mapping:
+        set_record_status(record_json, "blocked", "legacy treatment value lacks migration mapping")
+        record_json["identity"]["reason_code"] = record_json["identity"].get("reason_code") or "treatment_migration_unmapped"
+        record_json["provenance"]["warnings"].append("legacy treatment value lacks migration mapping: %s" % (legacy.get("status") or "<missing>"))
+        return True
+
+    field_i = mapping["field_i_validity"]
+    old = json.dumps(record_json.get("treatment", {}), sort_keys=True)
+    edge_field_ii = (mapping.get("edge_field_ii") or [None])[0]
+    by_cases = controlling_cases_from_legacy(legacy.get("by"), edge_field_ii) if edge_field_ii else []
+    treatment = record_json["treatment"]
+    treatment.update({
+        "field_i_validity": field_i,
+        "as_of_content": source_record.get("date_decided") or None,
+        "as_of_treatment": str(legacy.get("as_of")) if legacy.get("as_of") else None,
+        "composite_basis": "migration-seed",
         "composite_basis_ref": source_record.get("title") or source_record.get("caption") or record_json["record_id"],
-        "varies_by_point": False,
-        "scope_note": "Treatment seeded as unverified until migration and three-lane derivation complete.",
+        "varies_by_point": bool(mapping.get("varies_by_point")),
+        "scope_note": legacy.get("note") or mapping.get("notes") or "Treatment seeded from the sanctioned legacy migration table; three-lane derivation must confirm.",
     })
-    record_json["provenance"]["field_provenance"]["treatment.field_i_validity"] = base_field_provenance("S2 migration gate pending")
+    if record_json.get("status") == "verified":
+        set_record_status(record_json, "under_review", "migration seed requires R15 structural gates")
+    if mapping.get("requires_point_overrides") and by_cases and not treatment.get("point_overrides"):
+        treatment["point_overrides"] = [{
+            "point": "legacy-limited-" + slugify(record_json["record_id"]),
+            "point_label": "Legacy limited treatment point",
+            "field_i_validity": field_i,
+            "as_of_treatment": treatment["as_of_treatment"] or utc_now().date().isoformat(),
+            "s3_binding_status": "provisional",
+            "by": by_cases,
+            "scope_note": legacy.get("note") or "Legacy limited treatment seed; S9 must adjudicate the point.",
+        }]
+    if mapping.get("requires_edge") and by_cases:
+        existing = {
+            (edge.get("citing_case", {}).get("name"), edge.get("field_ii"))
+            for edge in treatment.get("edges") or []
+        }
+        for case in by_cases:
+            key = (case["name"], edge_field_ii)
+            if key not in existing:
+                treatment.setdefault("edges", []).append({
+                    "citing_case": case,
+                    "field_ii": edge_field_ii,
+                    "field_iii": "mentioned",
+                    "point": None,
+                    "proposed": True,
+                    "journal_ref": "migration:%s" % legacy_status,
+                })
+    if (mapping.get("requires_edge") or mapping.get("requires_point_overrides")) and not by_cases:
+        record_json["provenance"]["warnings"].append("legacy treatment %s requires edge metadata; staged for S9 review" % legacy_status)
+    record_json["provenance"]["warnings"].append("legacy treatment migrated: %s -> %s" % (legacy_status, field_i))
+    record_json["provenance"]["field_provenance"]["treatment.field_i_validity"] = base_field_provenance("_treatment-migration.json + page frontmatter")
+    return json.dumps(record_json.get("treatment", {}), sort_keys=True) != old
 
 
 def write_case_record(paths, record_json):
@@ -1375,11 +1725,45 @@ def write_case_record(paths, record_json):
     write_json(os.path.join(paths.cases, record_id + ".json"), record_json)
 
 
+def load_case_record(paths, record_id):
+    path = os.path.join(paths.cases, record_id + ".json")
+    if not os.path.exists(path):
+        return None
+    return read_json(path)
+
+
 class ManifestStore:
     def __init__(self, path):
         self.path = path
         self.data = read_json(path)
+        self.normalized = False
+        for row in self.data.get("records", []):
+            before = row.get("court_level")
+            row.update(normalize_source_record(row))
+            if row.get("court_level") != before:
+                self.normalized = True
+            row.setdefault("lane_status", default_lane_status())
         self.by_record_id = {row["record_id"]: row for row in self.data.get("records", [])}
+
+    def ensure_build_id(self, override=None):
+        if override:
+            self.data["build_id"] = override
+            self.data["active_journal"] = "s2-ingest-%s.jsonl" % override
+            return override
+        build_id = self.data.get("build_id")
+        if not build_id:
+            seed = "%s|%s|%s" % (
+                self.data.get("schema_version") or "s2",
+                self.data.get("generated_at") or iso_now(),
+                len(self.data.get("records", [])),
+            )
+            build_id = "s2-build-%s" % sha1_text(seed)[:12]
+            self.data["build_id"] = build_id
+            self.data["active_journal"] = "s2-ingest-%s.jsonl" % build_id
+        return build_id
+
+    def resume_rows(self):
+        return resume_rows_from_manifest(self.data.get("records", []))
 
     def select(self, smoke_slug=None):
         records = self.data.get("records", [])
@@ -1396,7 +1780,29 @@ class ManifestStore:
                 return [row]
         raise SystemExit("smoke slug not found in manifest: %s" % smoke_slug)
 
-    def update(self, old_record_id, record_json, counts=None, final_record_id=None):
+    def update_lane_status(self, row, record_id, resume_state):
+        lane_status = row.setdefault("lane_status", default_lane_status())
+        for step in ("identity", "citations", "pinpoints", "progeny"):
+            status = resume_state.step_status(record_id, step)
+            if status == "complete":
+                lane_status[step] = "complete"
+        treatment = lane_status.setdefault("treatment", {})
+        for lane, _cap in TREATMENT_LANES:
+            state = resume_state.lane_status(record_id, "treatment", lane)
+            status = state.get("status")
+            if status in ("partial", "complete"):
+                treatment[lane] = {
+                    "status": status,
+                    "cursor": state.get("cursor"),
+                }
+                if state.get("reviewed") is not None:
+                    treatment[lane]["reviewed"] = state.get("reviewed")
+                if state.get("proposed") is not None:
+                    treatment[lane]["proposed"] = state.get("proposed")
+                if state.get("cap_hit") is not None:
+                    treatment[lane]["cap_hit"] = state.get("cap_hit")
+
+    def update(self, old_record_id, record_json, counts=None, final_record_id=None, resume_state=None):
         row = self.by_record_id.get(old_record_id)
         if not row:
             return
@@ -1411,43 +1817,115 @@ class ManifestStore:
         row["cluster_id"] = record_json["identity"].get("cluster_id")
         row["lead_opinion_id"] = record_json["identity"].get("lead_opinion_id")
         row["official_cite"] = record_json["citations"].get("display")
+        if resume_state:
+            self.update_lane_status(row, old_record_id, resume_state)
+            if final_record_id and final_record_id != old_record_id:
+                self.update_lane_status(row, final_record_id, resume_state)
 
     def save(self):
         self.data["generated_at"] = self.data.get("generated_at")
         write_json(self.path, self.data)
 
 
-def process_page_record(source_record, client, paths, precedence, journal, resume, build_run, session):
+def ensure_cluster_for_record(record_json, client, record_id, cluster=None, step="identity.cluster.reload"):
+    if cluster:
+        return cluster
+    cluster_id = record_json["identity"].get("cluster_id")
+    if cluster_id:
+        return client.get_cluster(cluster_id, record_id=record_id, step=step)
+    return None
+
+
+def process_page_record(source_record, client, paths, precedence, migration, journal, resume, build_run, session):
+    source_record = normalize_source_record(source_record)
     record_id = page_record_id(source_record["record_id"])
-    record_json = empty_record_shell(record_id, source_record, build_run)
-    search_result, cluster, alternates = resolve_identity(source_record, client, journal, resume, build_run)
+    existing = load_case_record(paths, record_id)
+    record_json = existing or empty_record_shell(record_id, source_record, build_run)
+    changed = existing is None
+    search_result = None
+    cluster = None
+    alternates = []
     lead_text = ""
+
+    if resume.step_complete(record_id, "identity") and record_json["identity"].get("cluster_id"):
+        journal.append(record_id=record_id, step="identity", status="complete", skipped=True, loaded_existing=True)
+    else:
+        search_result, cluster, alternates = resolve_identity(source_record, client, journal, resume, build_run)
+
     if cluster:
         lead_ref, lead_text = apply_identity(record_json, source_record, search_result, cluster, alternates, client, journal)
+        changed = True
+
+    if not record_json["identity"].get("cluster_id") and not cluster:
+        if resume.step_complete(record_id, "identity"):
+            set_record_status(record_json, "blocked", "identity was complete but no existing record or journaled selection was available")
+            record_json["identity"]["identity_method"] = "blocked"
+            record_json["identity"]["reason_code"] = "identity_complete_without_record_or_selection"
+            record_json["provenance"]["warnings"].append("identity completion could not be replayed; blocked rather than marking not_found")
+        else:
+            set_record_status(record_json, "not_found")
+            record_json["identity"]["identity_method"] = "not_found"
+            record_json["identity"]["reason_code"] = "no_candidate_cluster"
+            record_json["provenance"]["warnings"].append("not found in CL identity search; not proof of fabrication")
+            journal.append(record_id=record_id, step="identity", status="complete", final_status="not_found")
+        if seed_treatment_from_migration(record_json, source_record, migration):
+            changed = True
+        changed = True
+        record_json["provenance"]["field_provenance"]["point_overrides"] = base_field_provenance("S2 treatment derivation proposed only")
+        write_case_record(paths, record_json)
+        return record_json
+
+    citations_ready = resume.step_complete(record_id, "citations") and existing and record_json["citations"].get("all")
+    need_cluster = (not citations_ready) or (record_json["progeny"].get("citation_count") is None)
+    if need_cluster:
+        cluster = ensure_cluster_for_record(record_json, client, record_id, cluster)
+    if resume.step_complete(record_id, "citations") and existing and record_json["citations"].get("all"):
+        journal.append(record_id=record_id, step="citations", status="complete", skipped=True, loaded_existing=True)
+    elif cluster:
         apply_citations(record_json, cluster, precedence, journal)
-        apply_pinpoints(record_json, source_record, lead_text, journal)
-        record_json["progeny"]["citation_count"] = cluster.get("citation_count")
-        seed_treatment_from_migration(record_json, source_record)
-        if not session.expired():
-            fetch_progeny(record_json, source_record, client, journal, resume)
-        if not session.expired() and record_json["status"] in ("verified", "under_review"):
-            run_treatment(record_json, source_record, client, journal, resume, session)
+        changed = True
+
+    if resume.step_complete(record_id, "pinpoints") and existing:
+        journal.append(record_id=record_id, step="pinpoints", status="complete", skipped=True, loaded_existing=True)
     else:
-        record_json["status"] = "not_found"
-        record_json["identity"]["identity_method"] = "not_found"
-        record_json["identity"]["reason_code"] = "no_candidate_cluster"
-        record_json["provenance"]["warnings"].append("not found in CL identity search; not proof of fabrication")
-        journal.append(record_id=record_id, step="identity", status="complete", final_status="not_found")
-    record_json["provenance"]["field_provenance"]["point_overrides"] = base_field_provenance("S2 treatment derivation proposed only")
-    write_case_record(paths, record_json)
+        if not lead_text and record_json["identity"].get("lead_opinion_id"):
+            lead_ref = client.opinion_ref(record_json["identity"]["lead_opinion_id"], "cluster.sub_opinions[]", {"replayed_from_record": True})
+            lead_text = client.text_for_opinion(lead_ref, record_id=record_id, step="identity.lead_text.replay")
+        apply_pinpoints(record_json, source_record, lead_text, journal)
+        changed = True
+
+    if cluster and record_json["progeny"].get("citation_count") != cluster.get("citation_count"):
+        record_json["progeny"]["citation_count"] = cluster.get("citation_count")
+        changed = True
+    if not existing or record_json["treatment"].get("field_i_validity") == "unverified":
+        if seed_treatment_from_migration(record_json, source_record, migration):
+            changed = True
+    if not session.expired():
+        changed = fetch_progeny(record_json, source_record, client, journal, resume) or changed
+    if not session.expired() and record_json["status"] in ("verified", "under_review"):
+        changed = run_treatment(record_json, source_record, client, journal, resume, session) or changed
+    if changed:
+        record_json["provenance"]["field_provenance"]["point_overrides"] = base_field_provenance("S2 treatment derivation proposed only")
+        write_case_record(paths, record_json)
     return record_json
 
 
 def process_frontier_record(source_record, client, paths, precedence, journal, resume, build_run):
+    source_record = normalize_source_record(source_record)
     unresolved_id = source_record["record_id"]
     shell = empty_record_shell(unresolved_id, source_record, build_run)
     if resume.step_complete(unresolved_id, "identity"):
-        journal.append(record_id=unresolved_id, step="identity", status="complete", skipped=True)
+        final_id = resume.final_record_id(unresolved_id, "identity") or unresolved_id
+        existing = load_case_record(paths, final_id) or load_case_record(paths, unresolved_id)
+        if existing:
+            journal.append(record_id=unresolved_id, step="identity", status="complete", skipped=True, loaded_existing=True, final_record_id=existing["record_id"])
+            return existing, existing["record_id"]
+        shell["status"] = "blocked"
+        shell["identity"]["identity_method"] = "blocked"
+        shell["identity"]["reason_code"] = "frontier_identity_complete_without_record"
+        shell["provenance"]["warnings"].append("frontier identity completion could not be replayed; blocked rather than returning an empty shell")
+        write_case_record(paths, shell)
+        journal.append(record_id=unresolved_id, step="identity", status="complete", skipped=True, final_record_id=unresolved_id, final_status="blocked")
         return shell, unresolved_id
     search = client.search(identity_search_params(source_record), cache=True, record_id=unresolved_id, step="frontier.identity.search")
     results = search_results(search)
@@ -1497,12 +1975,22 @@ def run_ingest(args):
     pool_root = os.environ.get("CSSI_LAKE_ROOT", DEFAULT_CSSI_LAKE_ROOT)
     paths = LakePaths(repo_root, pool_root)
     paths.ensure()
+    manifest = ManifestStore(paths.manifest)
+    had_build_id = bool(manifest.data.get("build_id"))
+    run_id = manifest.ensure_build_id(args.run_id)
+    if args.run_id or manifest.normalized or not had_build_id:
+        manifest.save()
     token = read_token(args.token_path)
     fingerprint = sha256_text(token)[:12]
-    run_id = args.run_id or utc_now().strftime("%Y%m%dT%H%M%SZ")
     journal_path = os.path.join(paths.journal, "s2-ingest-%s.jsonl" % run_id)
     journal = Journal(journal_path, run_id)
-    resume = ResumeState(journal.rows()) if args.resume else ResumeState([])
+    if args.resume:
+        resume_rows = journal.rows()
+        if not args.run_id:
+            resume_rows = manifest.resume_rows() + resume_rows
+        resume = ResumeState(resume_rows)
+    else:
+        resume = ResumeState([])
     max_calls = 40 if args.smoke else args.max_calls
     budget = CallBudget(max_calls=max_calls)
     client = CourtListenerClient(
@@ -1511,12 +1999,12 @@ def run_ingest(args):
         token_fingerprint=fingerprint,
         journal=journal,
         budget=budget,
-        rate=TokenBucket(rate_per_minute=args.rate_per_minute, capacity=args.rate_per_minute),
+        rate=TokenBucket(rate_per_minute=args.rate_per_minute, capacity=1),
         hourly=HourlyGuard(max_per_hour=args.hourly_limit),
         run_id=run_id,
     )
-    manifest = ManifestStore(paths.manifest)
     precedence = read_json(paths.precedence)
+    migration = read_json(paths.treatment_migration)
     session = SessionTimer(args.session_minutes)
     records = manifest.select(args.smoke)
     journal.append(step="budget-checkpoint", status="start", budget=budget.snapshot(estimated_remaining="15-25k total-run envelope"))
@@ -1527,9 +2015,10 @@ def run_ingest(args):
         if source_record.get("stub"):
             record_json, final_id = process_frontier_record(source_record, client, paths, precedence, journal, resume, run_id)
         else:
-            record_json = process_page_record(source_record, client, paths, precedence, journal, resume, run_id, session)
+            record_json = process_page_record(source_record, client, paths, precedence, migration, journal, resume, run_id, session)
             final_id = record_json["record_id"]
-        manifest.update(old_id, record_json, counts={"cl_calls": budget.session_calls}, final_record_id=final_id)
+        current_resume = ResumeState(manifest.resume_rows() + journal.rows()) if args.resume and not args.run_id else ResumeState(journal.rows())
+        manifest.update(old_id, record_json, counts={"cl_calls": budget.session_calls}, final_record_id=final_id, resume_state=current_resume)
         manifest.save()
         journal.append(record_id=final_id, step="case-checkpoint", status="complete", budget=budget.snapshot())
     journal.append(step="budget-checkpoint", status="end", budget=budget.snapshot(estimated_remaining="review checkpoint required before relaunch"))
@@ -1591,19 +2080,39 @@ def self_test_precedence():
 
 def self_test_binding_filters():
     assert binding_jurisdiction_filter({"court_level": "scotus"}) == ""
+    assert binding_jurisdiction_filter({"court_level": "circuit", "circuit": "4th Cir."}) == "AND court_id:(scotus OR ca4)"
     assert binding_jurisdiction_filter({"court_level": "coa", "circuit": "4th Cir."}) == "AND court_id:(scotus OR ca4)"
     assert binding_jurisdiction_filter({"court_level": "district", "circuit": "9"}) == "AND court_id:(scotus OR ca9)"
-    state = binding_jurisdiction_filter({"court_level": "state", "state": "California"})
+    state = binding_jurisdiction_filter({"court_level": "state-high", "state": "California"})
     assert state == "AND court_id:(scotus OR cal OR calctapp OR calappdeptsuper)", state
+    assert normalize_court_class("state-app") == "state"
+    assert normalize_court_class("state-high") == "state"
+    assert normalize_court_class("circuit") == "coa"
+    assert normalize_court_class("coa") == "coa"
+    params = identity_search_params({"court_level": "circuit", "circuit": "4th Cir.", "title": "Case v. Name"})
+    assert params["court"] == "ca4"
 
 
 def self_test_token_bucket():
-    bucket = TokenBucket(rate_per_minute=14, capacity=14, start_time=0)
-    waits = [bucket.consume_at(0) for _ in range(14)]
-    assert waits == [0.0] * 14
-    wait = bucket.consume_at(0)
-    assert 4.28 < wait < 4.29, wait
-    assert 4.28 < bucket.consume_at(wait) < 4.29
+    bucket = TokenBucket(rate_per_minute=14, capacity=1, start_time=0)
+    now = 0.0
+    calls = []
+    for _ in range(30):
+        wait = bucket.consume_at(now)
+        now += wait
+        calls.append(now)
+    for i, start in enumerate(calls):
+        in_window = [call for call in calls[i:] if call - start < 60.0]
+        assert len(in_window) <= 14, (start, in_window)
+    analyze = TokenBucket(rate_per_minute=60, capacity=1, start_time=0)
+    now = 0.0
+    calls = []
+    for _ in range(130):
+        wait = analyze.consume_at(now)
+        now += wait
+        calls.append(now)
+    for i, start in enumerate(calls):
+        assert len([call for call in calls[i:] if call - start < 60.0]) <= 60
 
 
 def self_test_journal_resume():
@@ -1621,12 +2130,217 @@ def self_test_journal_resume():
     assert not state.lane_complete("Terry v. Ohio", "treatment", "lane2_top_cited")
 
 
+class SelfTestClient:
+    def __init__(self, paths, journal):
+        self.paths = paths
+        self.journal = journal
+        self.search_calls = []
+        self.url_calls = []
+
+    def opinion_ref(self, opinion_id, source_array, context=None):
+        return {"opinion_id": int(opinion_id), "source_array": source_array, "context": context or {}}
+
+    def search(self, params, cache=True, record_id=None, step=None):
+        self.search_calls.append({"params": dict(params), "step": step})
+        if params.get("case_name"):
+            return {
+                "count": 1,
+                "results": [{
+                    "cluster_id": 100,
+                    "caseName": "Smith v. Jones",
+                    "opinions": [{"id": 200, "type": "020lead"}],
+                    "sibling_ids": [200],
+                }],
+            }
+        return {"count": 0, "results": [], "next": None}
+
+    def get_cluster(self, cluster_id, record_id=None, step="identity.cluster"):
+        return {
+            "id": int(cluster_id),
+            "case_name": "Smith v. Jones",
+            "case_name_short": "Smith",
+            "case_name_full": "Smith v. Jones",
+            "date_filed": "2024-01-01",
+            "court": "scotus",
+            "citation_count": 3,
+            "absolute_url": "/opinion/100/smith-v-jones/",
+            "citations": [{"volume": 1, "reporter": "U.S.", "page": 2, "type": 1}],
+            "sub_opinions": [{"id": 200, "type": "020lead"}],
+        }
+
+    def text_for_opinion(self, opinion_ref, record_id=None, step="opinion_text"):
+        return "Smith and Jones are both named in this opinion."
+
+    def get_json_url(self, url, cache=True, record_id=None, step=None):
+        self.url_calls.append({"url": url, "step": step})
+        return {"count": 0, "results": [], "next": None}
+
+
+def self_test_identity_skip_preserves_record():
+    tmp = tempfile.mkdtemp(prefix="s2-selftest-")
+    try:
+        paths = LakePaths(tmp, os.path.join(tmp, "pool"))
+        paths.ensure()
+        journal = Journal(os.path.join(tmp, "journal.jsonl"), "selftest")
+        source = {
+            "record_id": "smith-v-jones",
+            "title": "Smith v. Jones",
+            "expected_citation": "1 U.S. 2",
+            "court_level": "scotus",
+            "year": 2024,
+            "legacy_treatment_status": "good",
+            "legacy_treatment_as_of": "2026-06-30",
+        }
+        precedence = {"court_classes": {"scotus": {"reporters": {"U.S.": 1}}}}
+        migration = {
+            "mappings": {
+                "good": {
+                    "field_i_validity": "good_law",
+                    "requires_point_overrides": False,
+                    "requires_edge": False,
+                    "varies_by_point": False,
+                }
+            }
+        }
+        client = SelfTestClient(paths, journal)
+        session = SessionTimer(None)
+        first = process_page_record(source, client, paths, precedence, migration, journal, ResumeState([]), "selftest", session)
+        assert first["status"] == "under_review"
+        before = json.dumps(load_case_record(paths, "smith-v-jones"), sort_keys=True)
+        resumed = ResumeState(journal.rows())
+        second = process_page_record(source, client, paths, precedence, migration, journal, resumed, "selftest", SessionTimer(None))
+        after = json.dumps(load_case_record(paths, "smith-v-jones"), sort_keys=True)
+        assert second["status"] != "not_found"
+        assert before == after
+    finally:
+        shutil.rmtree(tmp)
+
+
+class TreatmentResumeClient:
+    def __init__(self, pages):
+        self.pages = dict(pages)
+        self.search_calls = []
+        self.url_calls = []
+
+    def search(self, params, cache=True, record_id=None, step=None):
+        self.search_calls.append(step)
+        return self.pages["first"]
+
+    def get_json_url(self, url, cache=True, record_id=None, step=None):
+        self.url_calls.append(url)
+        return self.pages[url]
+
+    def opinion_ref(self, opinion_id, source_array, context=None):
+        return {"opinion_id": int(opinion_id), "source_array": source_array, "context": context or {}}
+
+    def text_for_opinion(self, opinion_ref, record_id=None, step="opinion_text"):
+        return ""
+
+
+class ExpireAfterFirstPage:
+    def __init__(self):
+        self.calls = 0
+
+    def expired(self):
+        self.calls += 1
+        return self.calls > 1
+
+
+def self_test_treatment_partial_resume():
+    path = "/tmp/s2-treatment-resume-self-test.jsonl"
+    try:
+        os.unlink(path)
+    except FileNotFoundError:
+        pass
+    journal = Journal(path, "selftest")
+    source = {"record_id": "resume-case", "title": "Resume v. Case", "court_level": "scotus"}
+    record = empty_record_shell("resume-case", source, "selftest")
+    record["status"] = "under_review"
+    record["identity"]["sibling_ids"] = [200]
+    record["progeny"]["complete_query"] = "cites:(200)"
+    first_page = {"results": [{"caseName": "A", "cluster_id": 1, "opinions": []}], "next": "page-2"}
+    second_page = {"results": [{"caseName": "B", "cluster_id": 2, "opinions": []}], "next": None}
+    client = TreatmentResumeClient({"first": first_page, "page-2": second_page})
+    changed = run_treatment(record, source, client, journal, ResumeState([]), ExpireAfterFirstPage())
+    assert changed
+    assert client.search_calls == ["treatment.lane1_negative.search"]
+    assert client.url_calls == []
+    partial = ResumeState(journal.rows()).lane_status("resume-case", "treatment", "lane1_negative")
+    assert partial["status"] == "partial" and partial["cursor"] == "page-2", partial
+
+    resumed_record = empty_record_shell("resume-case", source, "selftest")
+    resumed_record["status"] = "under_review"
+    resumed_record["identity"]["sibling_ids"] = [200]
+    resumed_record["progeny"]["complete_query"] = "cites:(200)"
+    resume_client = TreatmentResumeClient({"first": first_page, "page-2": second_page})
+    run_treatment(resumed_record, source, resume_client, journal, ResumeState(journal.rows()), ExpireAfterFirstPage())
+    assert resume_client.url_calls and resume_client.url_calls[0] == "page-2"
+    assert "treatment.lane1_negative.search" not in resume_client.search_calls
+
+
+def self_test_opinion_cluster_id_rejected():
+    client = SelfTestClient(LakePaths("/tmp", "/tmp"), Journal("/tmp/s2-opinion-self-test.jsonl", "selftest"))
+    result = {"cluster_id": 999, "opinions": [{"cluster_id": 999, "type": "020lead"}], "sibling_ids": []}
+    assert opinion_refs_from_search_result(client, result) == []
+    assert pick_lead_ref(client, {"sub_opinions": []}, result) is None
+    try:
+        extract_opinion_id({"cluster_id": 999}, "search.opinions[]")
+    except ValueError:
+        pass
+    else:
+        raise AssertionError("cluster_id-only opinion object was accepted")
+
+
+def self_test_migration_round_trip():
+    migration = read_json(os.path.join(os.getcwd(), "_overhaul2", "lake", "_treatment-migration.json"))
+    source = {
+        "record_id": "terry-v-ohio",
+        "title": "Terry v. Ohio",
+        "court_level": "scotus",
+        "date_decided": "1968-06-10",
+        "legacy_treatment_status": "good",
+        "legacy_treatment_as_of": "2026-06-30",
+    }
+    record = empty_record_shell("terry-v-ohio", source, "selftest")
+    record["status"] = "verified"
+    changed = seed_treatment_from_migration(record, source, migration)
+    assert changed
+    assert record["status"] == "under_review"
+    assert record["treatment"]["field_i_validity"] == "good_law"
+    assert record["treatment"]["field_i_validity"] != "unverified"
+    round_trip = json.loads(json.dumps(record))
+    assert round_trip["treatment"]["field_i_validity"] == "good_law"
+    verified_candidate = json.loads(json.dumps(record))
+    verified_candidate["status"] = "verified"
+    verified_candidate["identity"]["identity_method"] = "citation+party-text"
+    verified_candidate["identity"]["cluster_id"] = 1
+    verified_candidate["identity"]["lead_opinion_id"] = 2
+    verified_candidate["identity"]["party_name_in_text"] = True
+    verified_candidate["identity"]["expected_citation_found"] = True
+    assert verified_candidate["treatment"]["field_i_validity"] != "unverified"
+
+
+def self_test_status_preserve():
+    record = empty_record_shell("status-case", {"record_id": "status-case", "title": "Status v. Case"}, "selftest")
+    record["status"] = "fabrication_suspected"
+    precedence = {"court_classes": {"other": {"reporters": {}}}}
+    cluster = {"citations": [{"volume": 1, "reporter": "Unknown", "page": 1, "type": 1}]}
+    journal = Journal("/tmp/s2-status-self-test.jsonl", "selftest")
+    apply_citations(record, cluster, precedence, journal)
+    assert record["status"] == "fabrication_suspected"
+
+
 def run_self_tests():
     self_test_record_ids()
     self_test_precedence()
     self_test_binding_filters()
     self_test_token_bucket()
     self_test_journal_resume()
+    self_test_identity_skip_preserves_record()
+    self_test_treatment_partial_resume()
+    self_test_opinion_cluster_id_rejected()
+    self_test_migration_round_trip()
+    self_test_status_preserve()
     print("self-test passed")
 
 
@@ -1637,7 +2351,7 @@ def parse_args(argv):
     parser.add_argument("--no-resume", dest="resume", action="store_false", help="ignore existing journal state")
     parser.add_argument("--smoke", help="run one manifest record by record_id/title slug; enforces <=40 calls")
     parser.add_argument("--self-test", action="store_true", help="run offline unit checks and exit")
-    parser.add_argument("--run-id", help="journal run id; defaults to UTC timestamp")
+    parser.add_argument("--run-id", help="explicit fresh build id override; default is the stable id persisted in _manifest.json")
     parser.add_argument("--token-path", default=TOKEN_PATH, help="CourtListener token path")
     parser.add_argument("--rate-per-minute", type=int, default=14, help="token bucket refill and capacity")
     parser.add_argument("--hourly-limit", type=int, default=900, help="hourly guard ceiling")
