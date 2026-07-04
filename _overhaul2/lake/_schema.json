@@ -1,0 +1,920 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://cssi.local/s2.v1.schema.json",
+  "title": "CSSI S2 authority record",
+  "description": "One verified authority record per case. Filesystem-wide assertions for content/cases stems and global record_id uniqueness are enforced by LINT-13 because draft-07 validates one JSON instance at a time.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "record_id",
+    "status",
+    "identity",
+    "citations",
+    "pinpoints",
+    "treatment",
+    "progeny",
+    "off_cl_links",
+    "provenance"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "s2.v1"
+    },
+    "record_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "stub": {
+      "type": "boolean",
+      "default": false
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "draft",
+        "under_review",
+        "verified",
+        "verified_identity",
+        "not_found",
+        "fabrication_suspected",
+        "blocked"
+      ]
+    },
+    "identity": {
+      "$ref": "#/definitions/identity"
+    },
+    "citations": {
+      "$ref": "#/definitions/citations"
+    },
+    "pinpoints": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/pinpoint"
+      }
+    },
+    "treatment": {
+      "$ref": "#/definitions/treatment"
+    },
+    "progeny": {
+      "$ref": "#/definitions/progeny"
+    },
+    "off_cl_links": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/off_cl_link"
+      }
+    },
+    "provenance": {
+      "$ref": "#/definitions/provenance"
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "stub": {
+            "const": true
+          }
+        },
+        "required": [
+          "stub"
+        ]
+      },
+      "then": {
+        "properties": {
+          "record_id": {
+            "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*--(?:[0-9]+|u[0-9a-f]{8})$"
+          },
+          "status": {
+            "enum": [
+              "verified_identity",
+              "not_found",
+              "fabrication_suspected",
+              "blocked",
+              "under_review"
+            ]
+          }
+        }
+      },
+      "else": {
+        "properties": {
+          "record_id": {
+            "not": {
+              "pattern": "--"
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "status": {
+            "const": "verified"
+          }
+        },
+        "required": [
+          "status"
+        ]
+      },
+      "then": {
+        "properties": {
+          "identity": {
+            "required": [
+              "identity_method",
+              "cluster_id",
+              "lead_opinion_id",
+              "party_name_in_text",
+              "expected_citation_found"
+            ],
+            "properties": {
+              "party_name_in_text": {
+                "const": true
+              },
+              "expected_citation_found": {
+                "const": true
+              }
+            }
+          },
+          "treatment": {
+            "properties": {
+              "field_i_validity": {
+                "not": {
+                  "const": "unverified"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "definitions": {
+    "identity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "case_name",
+        "input_case_name",
+        "court",
+        "court_level",
+        "cluster_id",
+        "lead_opinion_id",
+        "sibling_ids",
+        "identity_method",
+        "expected_citation_found",
+        "party_name_in_text"
+      ],
+      "properties": {
+        "case_name": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "case_name_short": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "case_name_full": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "input_case_name": {
+          "type": "string"
+        },
+        "court": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "court_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "court_level": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "scotus",
+            "coa",
+            "district",
+            "state",
+            "other",
+            null
+          ]
+        },
+        "circuit": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "state": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "date_decided": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "year": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "docket": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "cluster_id": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "lead_opinion_id": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "sibling_ids": {
+          "type": "array",
+          "items": {
+            "type": "integer"
+          },
+          "uniqueItems": true
+        },
+        "absolute_url": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "identity_method": {
+          "type": "string",
+          "enum": [
+            "citation+party-text",
+            "name+docket",
+            "frontier-identity",
+            "not_found",
+            "fabrication-check",
+            "blocked",
+            "pending"
+          ]
+        },
+        "expected_citation_found": {
+          "type": "boolean"
+        },
+        "party_name_in_text": {
+          "type": "boolean"
+        },
+        "canonical_name_match": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "alternates": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "reason_code": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "citation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "cite",
+        "type",
+        "source"
+      ],
+      "properties": {
+        "cite": {
+          "type": "string"
+        },
+        "volume": {
+          "type": [
+            "string",
+            "integer",
+            "null"
+          ]
+        },
+        "reporter": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "page": {
+          "type": [
+            "string",
+            "integer",
+            "null"
+          ]
+        },
+        "type": {
+          "type": [
+            "integer",
+            "string"
+          ]
+        },
+        "selected_official": {
+          "type": "boolean",
+          "default": false
+        },
+        "source": {
+          "type": "string"
+        }
+      }
+    },
+    "citations": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "official",
+        "parallel",
+        "vendor_neutral",
+        "all",
+        "display"
+      ],
+      "properties": {
+        "official": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/citation"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "parallel": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/citation"
+          }
+        },
+        "vendor_neutral": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/citation"
+          }
+        },
+        "all": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/citation"
+          }
+        },
+        "display": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "official_selection": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "court_class": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "selected": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "reason": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "pinpoint": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "page",
+        "quote",
+        "pinpoint_status",
+        "quote_fidelity"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "page": {
+          "type": [
+            "string",
+            "integer",
+            "null"
+          ]
+        },
+        "quote": {
+          "type": "string"
+        },
+        "star_marker": {
+          "type": [
+            "string",
+            "integer",
+            "null"
+          ]
+        },
+        "quote_fidelity": {
+          "type": "string",
+          "enum": [
+            "matched",
+            "not_checked",
+            "mismatch"
+          ]
+        },
+        "pinpoint_status": {
+          "type": "string",
+          "enum": [
+            "star-verified",
+            "slip-only"
+          ]
+        },
+        "position": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "fragment": {
+          "type": "string"
+        },
+        "fragment_validated_at": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    },
+    "treatment": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "field_i_validity",
+        "as_of_content",
+        "as_of_treatment",
+        "composite_basis",
+        "composite_basis_ref",
+        "varies_by_point",
+        "point_overrides",
+        "edges"
+      ],
+      "properties": {
+        "field_i_validity": {
+          "type": "string",
+          "enum": [
+            "good_law",
+            "history",
+            "caution",
+            "questioned",
+            "superseded",
+            "unverified"
+          ]
+        },
+        "as_of_content": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date"
+        },
+        "as_of_treatment": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date"
+        },
+        "composite_basis": {
+          "type": "string",
+          "enum": [
+            "principal-holding",
+            "migration-seed",
+            "unverified"
+          ]
+        },
+        "composite_basis_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "varies_by_point": {
+          "type": "boolean"
+        },
+        "scope_note": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "point_overrides": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/point_override"
+          }
+        },
+        "edges": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/treatment_edge"
+          }
+        },
+        "derivation": {
+          "type": "object"
+        }
+      }
+    },
+    "point_override": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "point",
+        "point_label",
+        "field_i_validity",
+        "as_of_treatment",
+        "s3_binding_status",
+        "by",
+        "scope_note"
+      ],
+      "properties": {
+        "point": {
+          "type": "string"
+        },
+        "point_label": {
+          "type": "string"
+        },
+        "field_i_validity": {
+          "type": "string",
+          "enum": [
+            "good_law",
+            "history",
+            "caution",
+            "questioned",
+            "superseded",
+            "unverified"
+          ]
+        },
+        "as_of_treatment": {
+          "type": "string",
+          "format": "date"
+        },
+        "s3_binding_status": {
+          "type": "string",
+          "enum": [
+            "provisional",
+            "bound"
+          ]
+        },
+        "by": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/controlling_case"
+          },
+          "minItems": 1
+        },
+        "scope_note": {
+          "type": "string"
+        }
+      }
+    },
+    "controlling_case": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "name",
+        "cluster_id",
+        "cite",
+        "field_ii"
+      ],
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "cluster_id": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "cite": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "field_ii": {
+          "$ref": "#/definitions/field_ii"
+        }
+      }
+    },
+    "treatment_edge": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "citing_case",
+        "field_ii",
+        "field_iii"
+      ],
+      "properties": {
+        "citing_case": {
+          "$ref": "#/definitions/controlling_case"
+        },
+        "field_ii": {
+          "$ref": "#/definitions/field_ii"
+        },
+        "field_iii": {
+          "type": "string",
+          "enum": [
+            "examined",
+            "discussed",
+            "cited",
+            "mentioned",
+            "quoted"
+          ]
+        },
+        "point": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "proposed": {
+          "type": "boolean",
+          "default": true
+        },
+        "journal_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "field_ii": {
+      "type": "string",
+      "enum": [
+        "overruled",
+        "abrogated",
+        "superseded_by_statute",
+        "limited",
+        "distinguished",
+        "criticized",
+        "questioned",
+        "modified",
+        "followed",
+        "explained",
+        "reaffirmed",
+        "expanded"
+      ]
+    },
+    "progeny": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "complete_query",
+        "indexed_citing_opinions",
+        "count_source",
+        "per_sibling",
+        "citation_count"
+      ],
+      "properties": {
+        "complete_query": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "indexed_citing_opinions": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "count_source": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "search",
+            "cluster.citation_count",
+            "opinions-cited",
+            null
+          ]
+        },
+        "per_sibling": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "opinion_id",
+              "count",
+              "count_source"
+            ],
+            "properties": {
+              "opinion_id": {
+                "type": "integer"
+              },
+              "count": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "count_source": {
+                "type": "string",
+                "enum": [
+                  "search",
+                  "cluster.citation_count",
+                  "opinions-cited"
+                ]
+              }
+            }
+          }
+        },
+        "citation_count": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "cache_path": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "off_cl_link": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source",
+        "url",
+        "purpose",
+        "vetted_at"
+      ],
+      "properties": {
+        "source": {
+          "type": "string",
+          "enum": [
+            "Justia",
+            "Google Scholar",
+            "Cornell LII",
+            "Official court"
+          ]
+        },
+        "url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "purpose": {
+          "type": "string",
+          "enum": [
+            "reader-link",
+            "parallel-cite-cross-check",
+            "citing-refs-corroboration",
+            "coverage-gap"
+          ]
+        },
+        "vetted_at": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "cl_source",
+        "cl_api",
+        "built_by",
+        "build_run",
+        "date_created",
+        "date_modified",
+        "warnings",
+        "field_provenance"
+      ],
+      "properties": {
+        "cl_source": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "cl_api": {
+          "type": "string"
+        },
+        "built_by": {
+          "type": "string"
+        },
+        "build_run": {
+          "type": "string"
+        },
+        "date_created": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "date_modified": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "warnings": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "field_provenance": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "identity",
+            "treatment.field_i_validity",
+            "point_overrides",
+            "pinpoints"
+          ],
+          "properties": {
+            "identity": {
+              "$ref": "#/definitions/field_provenance"
+            },
+            "treatment.field_i_validity": {
+              "$ref": "#/definitions/field_provenance"
+            },
+            "point_overrides": {
+              "$ref": "#/definitions/field_provenance"
+            },
+            "pinpoints": {
+              "$ref": "#/definitions/field_provenance"
+            }
+          }
+        }
+      }
+    },
+    "field_provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "src",
+        "at",
+        "verifier"
+      ],
+      "properties": {
+        "src": {
+          "type": "string"
+        },
+        "at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "verifier": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

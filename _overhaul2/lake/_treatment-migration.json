@@ -1,0 +1,111 @@
+{
+  "schema_version": "s2.treatment-migration.v1",
+  "source": "docs/STANDARDS.md section 3.2 / S1 A4 mechanical encoding",
+  "review_policy": {
+    "reserved_for": [
+      "legacy value not present in the S1 A4 mapping table",
+      "required edge or override metadata cannot be determined"
+    ],
+    "not_allowed_for": [
+      "general uncertainty",
+      "runtime convenience",
+      "records never verified"
+    ],
+    "projector_behavior": "refuse_overwrite_until_adjudicated"
+  },
+  "no_migrated_case_maps_to": [
+    "unverified"
+  ],
+  "mappings": {
+    "good": {
+      "observed_count_2026_07_02": 439,
+      "field_i_validity": "good_law",
+      "requires_point_overrides": false,
+      "requires_edge": false,
+      "varies_by_point": false,
+      "edge_field_ii": [],
+      "notes": "Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade."
+    },
+    "limited": {
+      "observed_count_2026_07_02": 11,
+      "field_i_validity": "caution",
+      "requires_point_overrides": true,
+      "requires_edge": true,
+      "varies_by_point": true,
+      "edge_field_ii": [
+        "limited",
+        "superseded_by_statute"
+      ],
+      "notes": "Mandatory at least one point_overrides[] entry on the limited point; use limited unless the point was replaced outright."
+    },
+    "overruled": {
+      "observed_count_2026_07_02": 5,
+      "field_i_validity": "superseded",
+      "composite_name": "superseded/not_current",
+      "requires_point_overrides": false,
+      "requires_edge": true,
+      "varies_by_point": false,
+      "edge_field_ii": [
+        "overruled"
+      ],
+      "authority_weight_effect": "tier_6_historical",
+      "notes": "Requires edge to the overruling case."
+    },
+    "abrogated": {
+      "observed_count_2026_07_02": 2,
+      "field_i_validity": "superseded",
+      "composite_name": "superseded/not_current",
+      "requires_point_overrides": false,
+      "requires_edge": true,
+      "varies_by_point": false,
+      "edge_field_ii": [
+        "abrogated"
+      ],
+      "authority_weight_effect": "tier_6_historical",
+      "notes": "Requires edge to the abrogating case."
+    },
+    "criticized": {
+      "observed_count_2026_07_02": 0,
+      "field_i_validity": "caution",
+      "requires_point_overrides": false,
+      "requires_edge": true,
+      "varies_by_point": false,
+      "edge_field_ii": [
+        "criticized",
+        "questioned"
+      ],
+      "notes": "Default caution; escalate to questioned only when negative treatment hits the relied-on point in a binding jurisdiction."
+    }
+  },
+  "known_legacy_counts": {
+    "good": 439,
+    "limited": 11,
+    "overruled": 5,
+    "abrogated": 2,
+    "criticized": 0
+  },
+  "limited_cases": [
+    "Boyd",
+    "Coolidge",
+    "Escobedo",
+    "Mathis (1968)",
+    "Monroe v. Pape",
+    "Belton",
+    "Elstad",
+    "Saucier",
+    "Thornton",
+    "Agurs",
+    "Chadwick"
+  ],
+  "overruled_cases": [
+    "Gouled",
+    "Jones (1960)",
+    "Michigan v. Jackson",
+    "Olmstead",
+    "Wolf"
+  ],
+  "abrogated_cases": [
+    "Aguilar",
+    "Spinelli"
+  ]
+}

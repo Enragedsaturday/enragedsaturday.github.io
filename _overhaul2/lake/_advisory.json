@@ -1,0 +1,31 @@
+{
+  "schema_version": "s2.advisory.v1",
+  "non_blocking": true,
+  "notes": [
+    {
+      "object_type": "cluster",
+      "id": 10881683,
+      "case_name": "Chatrie v. United States",
+      "note": "MUST ingest. SCOTUS cluster decided 2026-06-29; lead opinion 11349205. The old corruption legend came from fetching this cluster id against /opinions/."
+    },
+    {
+      "object_type": "cluster",
+      "id": 10813527,
+      "case_name": "Zorn v. Linton",
+      "note": "MUST ingest. SCOTUS cluster decided 2026-03-23; sub-opinion 11280281. The old corruption legend came from fetching this cluster id against /opinions/."
+    },
+    {
+      "object_type": "opinion",
+      "id": 10881683,
+      "case_name": "Harmon v. ABC 2 News",
+      "note": "Valid unrelated opinion object in cluster 10415095. Not corruption; this numeric id collides with the Chatrie cluster id in a different namespace."
+    },
+    {
+      "object_type": "opinion",
+      "id": 10813527,
+      "case_name": "Strike 3 Holdings",
+      "note": "Valid unrelated opinion object in cluster 10346939. Not corruption; this numeric id collides with the Zorn cluster id in a different namespace."
+    }
+  ],
+  "root_cause": "O1 crossed CourtListener namespaces by fetching cluster ids through /opinions/. The S2 builder prevents this with typed get_cluster/get_opinion fetchers and journal-traceable opinion-id provenance."
+}
