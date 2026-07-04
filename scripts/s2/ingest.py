@@ -80,6 +80,27 @@ NEGATIVE_TERMS = [
     "vacat*",
     "reversed",
 ]
+NEGATIVE_TRIAGE_STEMS = ("overrul", "abrogat", "supersed", "vacat", "revers", "criticiz", "question")
+NEGATIVE_TRIAGE_PHRASES = (("recede", "from"), ("no", "longer", "good", "law"))
+SNIPPET_FIRST_TRIAGE_LANES = {"lane1_negative", "lane3_recency"}
+SNIPPET_PROXIMITY_WORDS = 60
+TREATMENT_SNIPPET_FIELD = "results[].opinions[].snippet"
+TREATMENT_SNIPPET_SEARCH_FIELDS = ",".join([
+    "absolute_url",
+    "caseName",
+    "caseNameFull",
+    "citation",
+    "citeCount",
+    "cluster_id",
+    "court",
+    "court_citation_string",
+    "court_id",
+    "dateFiled",
+    "opinions",
+    "sibling_ids",
+    "status",
+    "syllabus",
+])
 
 STATE_FAMILIES = {
     "al": ["ala", "alacivapp", "alacrimapp"],
@@ -427,6 +448,22 @@ def binding_jurisdiction_filter(identity):
             return "AND court_id:(scotus)"
         return "AND court_id:(scotus OR %s)" % " OR ".join(family)
     return "AND court_id:(scotus)"
+
+
+def binding_court_ids(identity):
+    level = normalize_court_class(identity.get("court_level"))
+    if level == "scotus":
+        return None
+    if level == "coa":
+        circuit = parse_circuit(identity.get("circuit") or identity.get("court_id") or identity.get("court"))
+        return {"scotus", circuit} if circuit else {"scotus"}
+    if level == "district":
+        circuit = parse_circuit(identity.get("circuit") or identity.get("court"))
+        return {"scotus", circuit} if circuit else {"scotus"}
+    if level == "state":
+        family = state_family_from_identity(identity)
+        return set(["scotus"] + family) if family else {"scotus"}
+    return {"scotus"}
 
 
 def numeric_tail(value):
@@ -1628,14 +1665,186 @@ def lane_query(record_json, lane_name):
             " OR ".join(NEGATIVE_TERMS),
             binding_jurisdiction_filter(record_json["identity"]),
         )
-        return bounded, {"type": "o", "q": bounded, "stat_Published": "on", "order_by": "dateFiled desc", "page_size": 100}
+        return bounded, {
+            "type": "o",
+            "q": bounded,
+            "stat_Published": "on",
+            "order_by": "dateFiled desc",
+            "page_size": 100,
+            "fields": TREATMENT_SNIPPET_SEARCH_FIELDS,
+        }
     if lane_name == "lane2_top_cited":
         return query, {"type": "o", "q": query, "order_by": "citeCount desc", "page_size": 25}
     if lane_name == "lane3_recency":
         filed_after = recency_window_start()
         recent = "%s AND filed_after:%s" % (query, filed_after)
-        return recent, {"type": "o", "q": recent, "order_by": "dateFiled desc", "filed_after": filed_after, "page_size": 100}
+        return recent, {
+            "type": "o",
+            "q": recent,
+            "order_by": "dateFiled desc",
+            "filed_after": filed_after,
+            "page_size": 100,
+            "fields": TREATMENT_SNIPPET_SEARCH_FIELDS,
+        }
     raise ValueError("unknown lane %s" % lane_name)
+
+
+def snippet_text(value):
+    if value is None:
+        return ""
+    if isinstance(value, list):
+        return "\n".join(snippet_text(item) for item in value if item is not None)
+    return str(value)
+
+
+def treatment_result_snippet(result):
+    snippets = []
+    top_level = snippet_text(result.get("snippet"))
+    if top_level:
+        snippets.append(top_level)
+    for opinion in result.get("opinions") or []:
+        if not isinstance(opinion, dict):
+            continue
+        value = snippet_text(opinion.get("snippet"))
+        if value:
+            snippets.append(value)
+    return "\n".join(snippets).strip()
+
+
+def word_tokens(value):
+    return re.findall(r"[a-z0-9]+", str(value or "").lower())
+
+
+def phrase_positions(tokens, phrase):
+    phrase = tuple(phrase)
+    if not phrase or len(phrase) > len(tokens):
+        return []
+    positions = []
+    width = len(phrase)
+    for index in range(0, len(tokens) - width + 1):
+        if tuple(tokens[index:index + width]) == phrase:
+            positions.append(index)
+    return positions
+
+
+def negative_keyword_positions(tokens):
+    positions = []
+    for index, token in enumerate(tokens):
+        if any(token.startswith(stem) for stem in NEGATIVE_TRIAGE_STEMS):
+            positions.append(index)
+    for phrase in NEGATIVE_TRIAGE_PHRASES:
+        positions.extend(phrase_positions(tokens, phrase))
+    return sorted(set(positions))
+
+
+def add_target_phrase(phrases, seen, value, min_tokens=2):
+    tokens = tuple(word_tokens(value))
+    if len(tokens) < min_tokens or tokens in seen:
+        return
+    seen.add(tokens)
+    phrases.append(tokens)
+
+
+def target_case_phrases(record_json):
+    identity = record_json.get("identity") or {}
+    phrases = []
+    seen = set()
+    for key in ("case_name", "case_name_full", "input_case_name"):
+        add_target_phrase(phrases, seen, identity.get(key))
+    short_name = identity.get("case_name_short")
+    if short_name and len(str(short_name).strip()) >= 5:
+        add_target_phrase(phrases, seen, short_name, min_tokens=1)
+
+    citations = record_json.get("citations") or {}
+    cite_values = [citations.get("display")]
+    official = citations.get("official")
+    if isinstance(official, dict):
+        cite_values.append(official.get("cite") or citation_to_string(official))
+    for cite in citations.get("all") or []:
+        if isinstance(cite, dict):
+            cite_values.append(cite.get("cite") or citation_to_string(cite))
+            reporter = cite.get("reporter")
+            page = cite.get("page")
+            if reporter and page:
+                cite_values.append("%s %s" % (reporter, page))
+        else:
+            cite_values.append(cite)
+    for value in cite_values:
+        add_target_phrase(phrases, seen, value)
+    return phrases
+
+
+def target_positions(tokens, record_json):
+    positions = []
+    for phrase in target_case_phrases(record_json):
+        positions.extend(phrase_positions(tokens, phrase))
+    return sorted(set(positions))
+
+
+def citing_court_is_binding(result, identity):
+    allowed = binding_court_ids(identity)
+    if allowed is None:
+        return True
+    court_id = str(result.get("court_id") or "").lower()
+    return court_id in allowed
+
+
+def treatment_hit_id(result):
+    cluster_id = extract_id(result.get("cluster_id") or result.get("cluster"))
+    if cluster_id:
+        return "cluster:%s" % cluster_id
+    for opinion in result.get("opinions") or []:
+        if isinstance(opinion, dict):
+            opinion_id = extract_id(opinion.get("id"))
+            if opinion_id:
+                return "opinion:%s" % opinion_id
+    if result.get("absolute_url"):
+        return "url:%s" % result["absolute_url"]
+    return "sha1:%s" % sha1_text(json.dumps(result, sort_keys=True, default=str))
+
+
+def triage_treatment_hit(record_json, result):
+    snippet = treatment_result_snippet(result)
+    hit_id = treatment_hit_id(result)
+    if not snippet:
+        return {"hit_id": hit_id, "decision": "read", "reason": "missing_snippet"}
+
+    tokens = word_tokens(snippet)
+    negative_positions = negative_keyword_positions(tokens)
+    if not negative_positions:
+        return {"hit_id": hit_id, "decision": "snippet-classified", "reason": "no_negative_keyword_in_snippet"}
+
+    nearby_targets = target_positions(tokens, record_json)
+    if nearby_targets:
+        distance = min(abs(negative - target) for negative in negative_positions for target in nearby_targets)
+        if distance <= SNIPPET_PROXIMITY_WORDS:
+            return {"hit_id": hit_id, "decision": "read", "reason": "negative_keyword_near_target"}
+        return {"hit_id": hit_id, "decision": "snippet-classified", "reason": "negative_keyword_not_near_target"}
+
+    if citing_court_is_binding(result, record_json.get("identity") or {}):
+        return {"hit_id": hit_id, "decision": "read", "reason": "binding_ambiguous_negative_keyword"}
+    return {"hit_id": hit_id, "decision": "snippet-classified", "reason": "nonbinding_ambiguous_negative_keyword"}
+
+
+def treatment_derivation_row(lane_name, query, reviewed, cap, cap_hit, final_cursor, proposed, audit_needed=None, extra=None):
+    if audit_needed is None:
+        audit_needed = cap_hit
+    row = {
+        "query": query,
+        "reviewed": reviewed,
+        "cap": cap,
+        "cap_hit": cap_hit,
+        "final_cursor": final_cursor,
+        "audit_needed": audit_needed,
+        "proposed_negative_events": len(proposed),
+    }
+    row["audit_marker"] = "R15 treatment audit required" if cap_hit else None
+    if lane_name in SNIPPET_FIRST_TRIAGE_LANES:
+        row["triage_mode"] = "snippet-first"
+        row["snippet_field"] = TREATMENT_SNIPPET_FIELD
+    if extra:
+        row.update(extra)
+    return row
 
 
 def treatment_hit_text(client, result, record_id, lane_name):
@@ -1686,24 +1895,30 @@ def append_treatment_edges(record_json, proposed):
     return added
 
 
-def mark_treatment_fetch_failed(record_json, journal, lane_name, query, cap, reviewed, proposed, cursor, failure):
+def mark_treatment_fetch_failed(record_json, journal, lane_name, query, cap, reviewed, proposed, cursor, failure, triage_extra=None):
     record_id = record_json["record_id"]
     append_treatment_edges(record_json, proposed)
     derivation = record_json["treatment"].setdefault("derivation", {})
-    derivation[lane_name] = {
-        "query": query,
-        "reviewed": reviewed,
-        "cap": cap,
-        "cap_hit": False,
-        "final_cursor": cursor,
-        "audit_needed": False,
-        "proposed_negative_events": len(proposed),
+    extra = {
         "fetch_failed": True,
         "retry_pending": True,
         "failed_step": failure.step,
         "failure_reason": failure.reason,
         "attempts": failure.attempts,
     }
+    if triage_extra:
+        extra.update(triage_extra)
+    derivation[lane_name] = treatment_derivation_row(
+        lane_name,
+        query,
+        reviewed,
+        cap,
+        False,
+        cursor,
+        proposed,
+        audit_needed=False,
+        extra=extra,
+    )
     warning = "treatment %s fetch failed after bounded retries; retry pending" % lane_name
     warnings = record_json["provenance"].setdefault("warnings", [])
     if warning not in warnings:
@@ -1761,6 +1976,9 @@ def run_treatment(record_json, source_record, client, journal, resume, session):
         cursor = None if retry_pending else lane_state.get("cursor")
         cap_hit = False
         final_cursor = cursor
+        triaged = 0
+        triage_reads = 0
+        snippet_classified = 0
         try:
             data = client.get_json_url(cursor, cache=False, record_id=record_id, step="treatment.%s.resume" % lane_name) if cursor else client.search(params, cache=False, record_id=record_id, step="treatment.%s.search" % lane_name)
             while True:
@@ -1768,8 +1986,31 @@ def run_treatment(record_json, source_record, client, journal, resume, session):
                     if reviewed >= cap:
                         break
                     reviewed += 1
-                    hit_text = treatment_hit_text(client, result, record_id, lane_name)
-                    field_ii = review_treatment_hit(result, hit_text)
+                    if lane_name in SNIPPET_FIRST_TRIAGE_LANES:
+                        triage = triage_treatment_hit(record_json, result)
+                        triaged += 1
+                        if triage["decision"] == "read":
+                            triage_reads += 1
+                        else:
+                            snippet_classified += 1
+                        journal.append(
+                            record_id=record_id,
+                            step="treatment.triage",
+                            lane=lane_name,
+                            status="journaled",
+                            hit_id=triage["hit_id"],
+                            decision=triage["decision"],
+                            reason=triage["reason"],
+                            snippet_field=TREATMENT_SNIPPET_FIELD,
+                        )
+                        if triage["decision"] == "read":
+                            hit_text = treatment_hit_text(client, result, record_id, lane_name)
+                            field_ii = review_treatment_hit(result, hit_text)
+                        else:
+                            field_ii = None
+                    else:
+                        hit_text = treatment_hit_text(client, result, record_id, lane_name)
+                        field_ii = review_treatment_hit(result, hit_text)
                     if field_ii:
                         proposed.append({
                             "citing_case": {
@@ -1797,6 +2038,9 @@ def run_treatment(record_json, source_record, client, journal, resume, session):
                         audit_needed=True,
                         reviewed=reviewed,
                         proposed=len(proposed),
+                        triaged=triaged if lane_name in SNIPPET_FIRST_TRIAGE_LANES else None,
+                        full_text_reads=triage_reads if lane_name in SNIPPET_FIRST_TRIAGE_LANES else None,
+                        snippet_classified=snippet_classified if lane_name in SNIPPET_FIRST_TRIAGE_LANES else None,
                     )
                     break
                 url = next_url(data)
@@ -1812,6 +2056,9 @@ def run_treatment(record_json, source_record, client, journal, resume, session):
                         audit_needed=False,
                         reviewed=reviewed,
                         proposed=len(proposed),
+                        triaged=triaged if lane_name in SNIPPET_FIRST_TRIAGE_LANES else None,
+                        full_text_reads=triage_reads if lane_name in SNIPPET_FIRST_TRIAGE_LANES else None,
+                        snippet_classified=snippet_classified if lane_name in SNIPPET_FIRST_TRIAGE_LANES else None,
                     )
                     break
                 final_cursor = url
@@ -1823,34 +2070,60 @@ def run_treatment(record_json, source_record, client, journal, resume, session):
                     cursor=url,
                     reviewed=reviewed,
                     proposed=len(proposed),
+                    triaged=triaged if lane_name in SNIPPET_FIRST_TRIAGE_LANES else None,
+                    full_text_reads=triage_reads if lane_name in SNIPPET_FIRST_TRIAGE_LANES else None,
+                    snippet_classified=snippet_classified if lane_name in SNIPPET_FIRST_TRIAGE_LANES else None,
                 )
                 if session.expired():
-                    derivation[lane_name] = {
-                        "query": query,
-                        "reviewed": reviewed,
-                        "cap": cap,
-                        "cap_hit": False,
-                        "final_cursor": url,
-                        "audit_needed": False,
-                        "proposed_negative_events": len(proposed),
-                    }
+                    extra = {}
+                    if lane_name in SNIPPET_FIRST_TRIAGE_LANES:
+                        extra = {
+                            "triage_journaled": triaged,
+                            "triage_read": triage_reads,
+                            "triage_snippet_classified": snippet_classified,
+                        }
+                    derivation[lane_name] = treatment_derivation_row(
+                        lane_name,
+                        query,
+                        reviewed,
+                        cap,
+                        False,
+                        url,
+                        proposed,
+                        audit_needed=False,
+                        extra=extra,
+                    )
                     append_treatment_edges(record_json, proposed)
                     return True
                 data = client.get_json_url(url, cache=False, record_id=record_id, step="treatment.%s.page" % lane_name)
         except FetchFailed as exc:
-            mark_treatment_fetch_failed(record_json, journal, lane_name, query, cap, reviewed, proposed, final_cursor, exc)
+            extra = {}
+            if lane_name in SNIPPET_FIRST_TRIAGE_LANES:
+                extra = {
+                    "triage_journaled": triaged,
+                    "triage_read": triage_reads,
+                    "triage_snippet_classified": snippet_classified,
+                }
+            mark_treatment_fetch_failed(record_json, journal, lane_name, query, cap, reviewed, proposed, final_cursor, exc, triage_extra=extra)
             changed = True
             continue
-        derivation[lane_name] = {
-            "query": query,
-            "reviewed": reviewed,
-            "cap": cap,
-            "cap_hit": cap_hit,
-            "final_cursor": final_cursor,
-            "audit_needed": cap_hit,
-            "audit_marker": "R15 treatment audit required" if cap_hit else None,
-            "proposed_negative_events": len(proposed),
-        }
+        extra = {}
+        if lane_name in SNIPPET_FIRST_TRIAGE_LANES:
+            extra = {
+                "triage_journaled": triaged,
+                "triage_read": triage_reads,
+                "triage_snippet_classified": snippet_classified,
+            }
+        derivation[lane_name] = treatment_derivation_row(
+            lane_name,
+            query,
+            reviewed,
+            cap,
+            cap_hit,
+            final_cursor,
+            proposed,
+            extra=extra,
+        )
         append_treatment_edges(record_json, proposed)
         changed = True
         completed_lanes.add(lane_name)
@@ -2363,7 +2636,7 @@ def run_ingest(args):
     migration = read_json(paths.treatment_migration)
     session = SessionTimer(args.session_minutes)
     records = manifest.select(args.smoke)
-    journal.append(step="budget-checkpoint", status="start", budget=budget.snapshot(estimated_remaining="15-25k total-run envelope"))
+    journal.append(step="budget-checkpoint", status="start", budget=budget.snapshot(estimated_remaining="30-70 calls/case with snippet-first treatment triage"))
     for source_record in records:
         if session.expired():
             journal.append(step="case-interruption", status="interrupted", reason="session_limit", budget=budget.snapshot())
@@ -2403,7 +2676,7 @@ def run_ingest(args):
         )
         if interrupted:
             break
-    journal.append(step="budget-checkpoint", status="end", budget=budget.snapshot(estimated_remaining="review checkpoint required before relaunch"))
+    journal.append(step="budget-checkpoint", status="end", budget=budget.snapshot(estimated_remaining="review checkpoint required before relaunch; expect 30-70 calls/case"))
     print("journal: %s" % journal_path)
     print("calls this session: %s" % budget.session_calls)
 
@@ -2923,6 +3196,100 @@ def self_test_treatment_partial_resume():
     assert "treatment.lane1_negative.search" not in resume_client.search_calls
 
 
+class SnippetTriageClient:
+    def __init__(self, hits):
+        self.hits = hits
+        self.search_calls = []
+        self.read_count = 0
+
+    def search(self, params, cache=True, record_id=None, step=None):
+        self.search_calls.append({"params": dict(params), "step": step})
+        return {"count": len(self.hits), "results": self.hits, "next": None}
+
+    def opinion_ref(self, opinion_id, source_array, context=None):
+        return {"opinion_id": int(opinion_id), "source_array": source_array, "context": context or {}}
+
+    def text_for_opinion(self, opinion_ref, record_id=None, step="opinion_text"):
+        self.read_count += 1
+        return "Target v. Case was overruled for this self-test."
+
+
+def snippet_triage_hit(cluster_id, opinion_id, snippet=None, court_id="cal"):
+    opinion = {"id": opinion_id, "type": "020lead"}
+    if snippet is not None:
+        opinion["snippet"] = snippet
+    return {
+        "caseName": "Citing %s" % cluster_id,
+        "cluster_id": cluster_id,
+        "citation": ["999 Test 1"],
+        "court_id": court_id,
+        "opinions": [opinion],
+        "sibling_ids": [opinion_id],
+    }
+
+
+def self_test_treatment_snippet_triage():
+    path = "/tmp/s2-snippet-triage-self-test.jsonl"
+    try:
+        os.unlink(path)
+    except FileNotFoundError:
+        pass
+    journal = Journal(path, "selftest")
+    source = {
+        "record_id": "triage-case",
+        "title": "Target v. Case",
+        "court_level": "state",
+        "state": "California",
+    }
+    record = empty_record_shell("triage-case", source, "selftest")
+    record["status"] = "under_review"
+    record["identity"].update({
+        "case_name": "Target v. Case",
+        "case_name_full": "Target v. Case",
+        "case_name_short": "Target",
+        "court_level": "state",
+        "state": "California",
+        "sibling_ids": [200],
+    })
+    record["citations"]["display"] = "1 Cal. 2d 3"
+    record["citations"]["all"] = [{"cite": "1 Cal. 2d 3", "volume": 1, "reporter": "Cal. 2d", "page": 3}]
+    record["progeny"]["complete_query"] = "cites:(200)"
+    far_words = " ".join("filler%s" % i for i in range(SNIPPET_PROXIMITY_WORDS + 2))
+    hits = [
+        snippet_triage_hit(1, 101, "Target v. Case was overruled by the later decision."),
+        snippet_triage_hit(2, 102, "The later court abrogated 1 Cal. 2d 3 in part."),
+        snippet_triage_hit(3, 103, "We overrule the older line of cases without naming that authority.", court_id="cal"),
+        snippet_triage_hit(4, 104, None),
+        snippet_triage_hit(5, 105, "Target v. Case appears here as a string cite only."),
+        snippet_triage_hit(6, 106, "overruled %s Target v. Case" % far_words),
+    ]
+    client = SnippetTriageClient(hits)
+    resume = ResumeState([
+        {"record_id": "triage-case", "step": "treatment", "lane": "lane2_top_cited", "status": "complete"},
+        {"record_id": "triage-case", "step": "treatment", "lane": "lane3_recency", "status": "complete"},
+    ])
+    assert run_treatment(record, source, client, journal, resume, SessionTimer(None))
+    assert client.read_count == 4, client.read_count
+    assert client.search_calls[0]["step"] == "treatment.lane1_negative.search"
+    assert client.search_calls[0]["params"]["fields"] == TREATMENT_SNIPPET_SEARCH_FIELDS
+    assert "opinions" in client.search_calls[0]["params"]["fields"].split(",")
+    rows = [row for row in journal.rows() if row.get("step") == "treatment.triage"]
+    assert len(rows) == 6, rows
+    assert len([row for row in rows if row.get("decision") == "read"]) == 4, rows
+    assert len([row for row in rows if row.get("decision") == "snippet-classified"]) == 2, rows
+    reasons = {row.get("reason") for row in rows}
+    assert "negative_keyword_near_target" in reasons
+    assert "binding_ambiguous_negative_keyword" in reasons
+    assert "missing_snippet" in reasons
+    assert "no_negative_keyword_in_snippet" in reasons
+    assert "negative_keyword_not_near_target" in reasons
+    derivation = record["treatment"]["derivation"]["lane1_negative"]
+    assert derivation["triage_mode"] == "snippet-first"
+    assert derivation["triage_journaled"] == 6
+    assert derivation["triage_read"] == 4
+    assert derivation["triage_snippet_classified"] == 2
+
+
 def self_test_transport_timeout_retry_pending():
     tmp = tempfile.mkdtemp(prefix="s2-timeout-selftest-")
     try:
@@ -3127,6 +3494,7 @@ def run_self_tests():
     self_test_identity_skip_preserves_record()
     self_test_budget_interruption_resume()
     self_test_treatment_partial_resume()
+    self_test_treatment_snippet_triage()
     self_test_transport_timeout_retry_pending()
     self_test_opinion_cluster_id_rejected()
     self_test_migration_round_trip()
@@ -3140,7 +3508,7 @@ def parse_args(argv):
     parser.add_argument("--session-minutes", type=float, default=None, help="cleanly stop at a checkpoint after N minutes")
     parser.add_argument("--resume", dest="resume", action="store_true", default=True, help="consult journal and skip complete work (default)")
     parser.add_argument("--no-resume", dest="resume", action="store_false", help="ignore existing journal state")
-    parser.add_argument("--smoke", help="run one manifest record by record_id/title slug; enforces <=80 calls")
+    parser.add_argument("--smoke", help="run one manifest record by record_id/title slug; targets ~30-70 calls/case and enforces <=80 calls")
     parser.add_argument("--self-test", action="store_true", help="run offline unit checks and exit")
     parser.add_argument("--run-id", help="explicit fresh build id override; default is the stable id persisted in _manifest.json")
     parser.add_argument("--token-path", default=TOKEN_PATH, help="CourtListener token path")
