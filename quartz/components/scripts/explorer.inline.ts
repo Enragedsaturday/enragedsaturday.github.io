@@ -151,10 +151,13 @@ function createFolderNode(
     opts.folderDefaultState === "collapsed"
 
   // if this folder is a prefix of the current path we
-  // want to open it anyways
+  // want to open it anyways.
+  // S4 · R10c (audit CODE-07b): compare PREFIX-WITH-SEPARATOR (or exact equality),
+  // never a bare character-slice — otherwise folder `searches` spuriously "contains"
+  // `searches-incident/...` and auto-opens. Load-bearing under A8's unnumbered slugs.
   const simpleFolderPath = simplifySlug(folderPath)
   const folderIsPrefixOfCurrentSlug =
-    simpleFolderPath === currentSlug.slice(0, simpleFolderPath.length)
+    simpleFolderPath === currentSlug || currentSlug.startsWith(simpleFolderPath + "/")
 
   if (isSubtree || !isCollapsed || folderIsPrefixOfCurrentSlug) {
     folderOuter.classList.add("open")
@@ -297,7 +300,9 @@ document.addEventListener("nav", async (e: CustomEventMap["nav"]) => {
   // if mobile hamburger is visible, collapse by default
   for (const explorer of document.getElementsByClassName("explorer")) {
     const mobileExplorer = explorer.querySelector(".mobile-explorer")
-    if (!mobileExplorer) return
+    // S4 · R10d (audit CODE-07c): `continue` — one explorer lacking the mobile
+    // toggle must not abort the loop for every remaining explorer.
+    if (!mobileExplorer) continue
 
     if (mobileExplorer.checkVisibility()) {
       explorer.classList.add("collapsed")

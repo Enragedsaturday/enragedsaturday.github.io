@@ -6,9 +6,16 @@ import * as Component from "./quartz/components"
 // nested folders render as always-open branches whose header links to their
 // overview. The displayNames table targets the O2 Appendix-A tree; until S3's
 // restructure lands at execution, unmatched folders fall back to their own names.
-// ORDERING (S3 A8 — user decision 2026-07-03): final ordering reads frontmatter
-// `weight:` (pages) + folder-index `weight:` (categories); the numeric-prefix
-// `sortFn` below is the mockup interim and is superseded on this point.
+// ORDERING (S3 A8 / TAX-09 — user decision 2026-07-03): ordering reads frontmatter
+// `weight:` (pages) + folder-index `weight:` (categories, inherited onto the folder
+// node by the trie). The weight-reading `sortFn` below (S4 · R3) SUPERSEDES the
+// mockup's numeric-prefix interim: compare `node.data?.weight` ascending; a missing
+// weight sorts as +∞ (unweighted after weighted); ties fall back to a numeric-aware
+// `localeCompare` of the display name; and the stock folders-before-files rule
+// applies ONLY between two unweighted nodes (Appendix A interleaves pages and
+// sub-umbrellas, so weight must be able to express that). With NO `weight:`
+// frontmatter present, every node is unweighted (+∞), so this reduces EXACTLY to
+// stock Quartz order — folders-before-files + alphabetical.
 //
 // `mapFn`/`sortFn` MUST be closure-free: Quartz serializes them with `.toString()`
 // and re-evaluates them client-side, so they cannot reference any outer-scope
@@ -19,13 +26,22 @@ const categoryExplorer = Component.Explorer({
   useSavedState: true,
   // About is footer-owned (S4); keep it (and tags) out of the tree
   filterFn: (node) => node.slugSegment !== "tags" && node.slugSegment !== "about",
-  // Order by the numeric filename/slug prefix at every level, so authored page
-  // order (e.g. Proof Ladder first) holds instead of alphabetical. Closure-free.
-  sortFn: (a, b) =>
-    (a.slugSegment ?? "").localeCompare(b.slugSegment ?? "", undefined, {
+  // S4 · R3 — weight-reading sort (closure-free; serialized to the client).
+  sortFn: (a, b) => {
+    const wa = a.data?.weight ?? Infinity
+    const wb = b.data?.weight ?? Infinity
+    if (wa !== wb) return wa - wb
+    // equal weights (incl. both unweighted = +∞): apply folders-before-files ONLY
+    // when both are unweighted, then break the tie by display name.
+    if (wa === Infinity && wb === Infinity) {
+      if (a.isFolder && !b.isFolder) return -1
+      if (!a.isFolder && b.isFolder) return 1
+    }
+    return a.displayName.localeCompare(b.displayName, undefined, {
       numeric: true,
       sensitivity: "base",
-    }),
+    })
+  },
   mapFn: (node) => {
     const displayNames: Record<string, string> = {
       "1-foundations": "1 · Foundations & the Fourth Amendment",

@@ -19,6 +19,11 @@ export type ContentDetails = {
   richContent?: string
   date?: Date
   description?: string
+  // S4 · R3 (S3 A8 / TAX-09) — authored ordering weight read from page frontmatter
+  // (`weight:`). Folder nodes inherit their folder-index's weight because the trie
+  // assigns the index file's ContentDetails to the folder node (fileTrie `insert`).
+  // Consumed by the explorer's weight-reading `sortFn`; absent ⇒ unweighted (+∞).
+  weight?: number
 }
 
 interface Options {
@@ -103,6 +108,11 @@ export const ContentIndex: QuartzEmitterPlugin<Partial<Options>> = (opts) => {
         const slug = file.data.slug!
         const date = getDate(ctx.cfg.configuration, file.data) ?? new Date()
         if (opts?.includeEmptyFiles || (file.data.text && file.data.text !== "")) {
+          // S4 · R3 — carry the frontmatter ordering weight through to the client
+          // content index. Only a real number becomes `weight`; anything else stays
+          // undefined so `JSON.stringify` omits the key and the sortFn reads +∞.
+          const rawWeight = file.data.frontmatter?.weight
+          const weight = typeof rawWeight === "number" && Number.isFinite(rawWeight) ? rawWeight : undefined
           linkIndex.set(slug, {
             slug,
             filePath: file.data.relativePath!,
@@ -115,6 +125,7 @@ export const ContentIndex: QuartzEmitterPlugin<Partial<Options>> = (opts) => {
               : undefined,
             date: date,
             description: file.data.description ?? "",
+            weight,
           })
         }
       }

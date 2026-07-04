@@ -30,6 +30,7 @@ import lint7_glossary as l7        # noqa: E402
 import lint8_guardrails as l8      # noqa: E402
 import lint9_carat_leak as l9      # noqa: E402
 import lint10_emdash as l10        # noqa: E402
+import lint26_goodlaw_target as l26  # noqa: E402
 
 LINTS = [
     ("LINT-2", "quote/pinpoint (L1)", l2.run),
@@ -41,6 +42,7 @@ LINTS = [
     ("LINT-8", "guardrails (D6)", l8.run),
     ("LINT-9", "carat-leak (mid-line ^block anchors) (R13)", l9.run),
     ("LINT-10", "em-dash budget (R8/A7/A8)", l10.run),
+    ("LINT-26", "good-law target resolves (S4 R5, fail-closed)", l26.run),
 ]
 
 

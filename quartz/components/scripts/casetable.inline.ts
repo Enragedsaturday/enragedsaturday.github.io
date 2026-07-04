@@ -161,7 +161,14 @@ function injectCaseMeta(
 
   if (rec.treatment && !hasTreatmentCol) {
     const pill = document.createElement("a")
-    pill.className = `internal casetable-pill treatment-${rec.treatment.replace(/_/g, "-")}`
+    // S4 · R5 — every treatment badge (page pill + table pill) is an
+    // `a.internal.treatment-badge` pointing at the good-law page via the ONE
+    // exported constant (CaseTable emits `goodLawHref = "/" + GOOD_LAW_SLUG`).
+    // `casetable-pill` is retained for the table-scoped styling (casetable.scss);
+    // the `.treatment-badge` visual rules are scoped under `.treatment-badges`, so
+    // they never touch this table pill — the class is here for selector parity and
+    // popover delegation resolves it via `a.internal` regardless.
+    pill.className = `internal treatment-badge casetable-pill treatment-${rec.treatment.replace(/_/g, "-")}`
     pill.href = index.goodLawHref ?? "#"
     pill.title = rec.hover || `Treatment: ${rec.treatmentLabel}`
     pill.dataset.treatment = rec.treatment
