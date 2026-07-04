@@ -33,8 +33,21 @@ import lint7_glossary as l7        # noqa: E402
 import lint8_guardrails as l8      # noqa: E402
 import lint9_carat_leak as l9      # noqa: E402
 import lint10_emdash as l10        # noqa: E402
+import lint18_depth as l18         # noqa: E402
+import lint19_overview as l19      # noqa: E402
+import lint20_points as l20        # noqa: E402
+import lint21_binding as l21       # noqa: E402
+import lint22_derip as l22         # noqa: E402
+import lint23_order_weight as l23  # noqa: E402
+import lint24_urls as l24          # noqa: E402
+import lint25_deck as l25          # noqa: E402
 import lint26_goodlaw_target as l26  # noqa: E402
 
+# LINT-24 (URL resolution) reads the CURRENT BUILD OUTPUT (public/). Unlike
+# LINT-1 (network CL identity, serial-gate-only), it is CI-SAFE to register here:
+# it self-guards — if public/ is absent/stale (no public/index.html) it emits ONE
+# MEDIUM and skips (exit 0, never a false HIGH), so it runs cleanly in CI right
+# after the `npx quartz build` step. The remaining S3 lints are pure repo scans.
 LINTS = [
     ("LINT-2", "quote/pinpoint (L1)", l2.run),
     ("LINT-3", "structure / no-SCOTUS-in-recent-dev (N5/N8)", l3.run),
@@ -45,6 +58,14 @@ LINTS = [
     ("LINT-8", "guardrails (D6)", l8.run),
     ("LINT-9", "carat-leak (mid-line ^block anchors) (R13)", l9.run),
     ("LINT-10", "em-dash budget (R8/A7/A8)", l10.run),
+    ("LINT-18", "S3 depth cap (R1/R10, fail-closed)", l18.run),
+    ("LINT-19", "S3 overview: body + no case table (R2)", l19.run),
+    ("LINT-20", "S3 point registry (R4, fail-closed)", l20.run),
+    ("LINT-21", "S3 point->node binding (R5, fail-closed)", l21.run),
+    ("LINT-22", "S3 de-rip naming (R9)", l22.run),
+    ("LINT-23", "S3 order/weight (R10/A8c)", l23.run),
+    ("LINT-24", "S3 url stability (R13/A1, build-guarded)", l24.run),
+    ("LINT-25", "S3 deck-stem preservation (R14/A2, fail-closed)", l25.run),
     ("LINT-26", "good-law target resolves (S4 R5, fail-closed)", l26.run),
 ]
 
