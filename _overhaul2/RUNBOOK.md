@@ -382,6 +382,18 @@ Each: **Direction · Research first · Interview-extract (choices + what to show
 - **Interview-extract.** The brief template + section order sign-off; which topics get exhaustive
   treatment; voice heaviness. *Show:* one fully rewritten doctrine brief as the pattern.
 - **Deliverable.** `S7-doctrine-production.spec.md` + per-page change-list.
+  ✅ **Written 2026-07-03** (pattern page = mockup commits `e0935ce` + `4b48a4a` — Knock and Talk,
+  the normative template; change-list `_overhaul2/S7-CHANGELIST.md` signed with the spec, 93 rows
+  tiered; all injected:S7 audit rows dispositioned in the Decision Log). Decided highlights:
+  template signed as shown (D1); TEACH-04e = convert-or-delete content test (D2); **Prompt.md
+  reference DROPPED** (D3, COH-14 closed — the §4-S7 list is the record, consumed verify-then-
+  apply; the "community caretaking reaches persons" item was REFUTED by research and corrected);
+  depth tiers A/B/C (D4/D6); **non-investigative person seizures covered caretaking-adjacent**
+  (D5); **SACO/constructive entry head-on** in Arrest-in-the-Home (D7, *Nora* spine); TEACH-03 =
+  four-tier pinpoint-conversion method; two new scar rules (no verification inheritance ·
+  per-item citation support) from the flashlight correction (D8). Cross-spec: S6 § Amendments A1
+  (planning-time candidates) + §4-S9 S7-interview inputs (a)–(e). The spec text wins over this
+  entry (§0 precedence).
 - **Audit inputs (2026-07-02)** — from `AUDIT-2026-07-02.md`; address each (adopt / adapt /
   reject-with-rationale) in the spec's Decision Log:
   **TEACH-01** relocate SCOTUS holdings out of every "Recent developments" section (5+ pages; FA
@@ -521,7 +533,7 @@ exact CourtListener fields/calls per data element (the S2 schema).
 | S4 Platform, Nav & Reader-Signaling | ✅ | ✅ |
 | S5 Entry Models | ✅ | ✅ |
 | S6 Coverage & Ingest | ✅ | ✅ |
-| S7 Doctrine Production | ☐ | ☐ |
+| S7 Doctrine Production | ✅ | ✅ |
 | S8 Legal-Term & Case Linking | ☐ | ☐ |
 | S9 Verification Pipeline & Release Gate | ☐ | ☐ |
 
