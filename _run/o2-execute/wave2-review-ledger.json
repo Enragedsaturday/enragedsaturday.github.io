@@ -1,0 +1,31 @@
+{
+  "schema": "o2.wave-review.v1",
+  "wave": 2,
+  "specs": ["S3", "S5"],
+  "s5_tooling_review": {
+    "review_lane": {"lane": "codex-review", "model": "gpt-5.5", "effort": "xhigh"},
+    "findings": 12,
+    "dispositions": {
+      "F-S5-01..08_10": "UPHELD, fixed by fresh Opus-xhigh lane (wf_58e90ac3), round-2 verified FIXED",
+      "F-S5-09": "loop-1 fix applied (required-sections bypass closed); round-2 residual DISMISSED — reviewer wanted Lower-court developments required, but the adjudication made it optional and S5 R11's own Check ('every page that has both') contemplates pages without it",
+      "F-S5-11": "UPHELD, fixed by orchestrator — THE LIVE PROOF: the S3 migration moved Verifying Good Law and LINT-26 caught the stale GOOD_LAW_SLUG naming the correct new path",
+      "F-S5-12": "UPHELD (latent, no live FP), fixed by orchestrator — RECOGNIZED_TYPES ⊇ EXEMPT_TYPES"
+    },
+    "outcome": "CLOSED (commits 05e0186, 364b818, 7f4db81)"
+  },
+  "s3_acceptance_review": {
+    "review_lane": {"lane": "codex-review", "model": "gpt-5.5", "effort": "xhigh", "output": "scratchpad/s3-acceptance-codex.md"},
+    "criteria": "19 walked (§7 + A1..A8 acceptance lines): 16 PASS on disk evidence, 3 findings",
+    "findings": [
+      {"id": "F-S3-01", "verdict": "UPHELD", "fix": "Case Index generator re-pointed + index regenerated (Brendlin/Katz/Graham route to new homes[0]); commit ac5c20e", "status": "fixed"},
+      {"id": "F-S3-02", "verdict": "DEFERRED-TO-S7 (tracked)", "reason": "re-pointing 44 ER-homed cases to placed-empty stubs routes readers to blank pages; the re-point rides S7's ER content extraction (same commit); A4 acceptance gates at S9", "owner": "S7"},
+      {"id": "F-S3-03", "verdict": "DISMISSED", "reason": "R6 granularity law governs minting; a citation-conventions reference page states no point of law; R7's 'with a point-of-law id' presumes doctrine-type additions; P3 README records the scope note. S9's blind re-derivation may re-test this call."}
+    ]
+  },
+  "known_red_tracked": {
+    "LINT-19 (8 HIGH)": "3 sub-umbrella indexes hold doctrine content until S7 extracts into split children — owner S7",
+    "LINT-16 Case Index legacy treatment column": "generator emits old schema; conversion rides S7's converter pass — owner S7",
+    "LINT-15 MED (95) / LINT-16 HIGH (~2232) / LINT-9 (297) / LINT-10 (3989) / LINT-7 (118) / LINT-4 (34)": "pre-S7/S8 corpus state, owners as journaled at Wave 0"
+  },
+  "wave2_exit": "S3 P1-P4 landed (commits aa9b6a6, da0a0a3, 9cf19ae, ac5c20e + fixes); S5 tooling closed (95b2783, 05e0186, 364b818); S3 lints 18,20,21,22,23,24,25 = ZERO live; registry 76 nodes adjudicated APPROVED-draft; binding 4 bound + 10 pending; deferred items carry named owners"
+}

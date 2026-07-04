@@ -182,6 +182,23 @@ overview prose · S3-P3 point registry + binding map (granularity mints come bac
 orchestrator for adjudication). S3-P4 (the six S3 lints → LINT-18..25) waits for the S5 fix
 lane to settle _common.py.
 
+### WAVE 2 CLOSED ✅ (2026-07-04) — S3 restructure + S5 entry models
+
+S3 executed in four phases, all committed + review-closed: P1 tree migration (aa9b6a6) · P2
+20 overviews (lint-clean) + P3 registry (76 nodes, orchestrator-adjudicated APPROVED-draft) +
+binding map (4 bound incl. the Belton→Gant worked binding + 10 pending mandatory rows)
+(da0a0a3) · P4 lints 18–25 with 34 fixtures (9cf19ae) — live run: depth/points/binding/derip/
+weights/urls/deck ALL ZERO on the migrated tree. Acceptance review (Codex, 19 criteria): 16
+PASS; F-S3-01 fixed (Case Index generator re-pointed + regenerated, ac5c20e); F-S3-02
+DEFER-TO-S7 (ER-split homes re-point rides the content extraction); F-S3-03 DISMISSED (R6
+governs minting — reference pages carry no point of law). S5 tooling closed after a 12-finding
+review loop (ledger: `_run/o2-execute/wave2-review-ledger.json`) — the headline: **LINT-26
+caught the migration-moved GOOD_LAW_SLUG live, naming the fix** (the fail-closed design's
+first real catch). Known-red rows all carry named owners (S7/S8/S9 per the ledger).
+
+**Wave 3 (S6 → S7 → S8) opens when the S2 lake lands** (S6's candidate queue + verification
+read from it; R15 build-QA gates the handoff). S2 session 1 still in flight at wave-2 close.
+
 ### ⚠️ DEVIATION — pool storage root (user-visible, reversible)
 
 The signed pool root `/Volumes/AIStore2` (S2 A10) does not exist; the AIStore2 APFS volume is
