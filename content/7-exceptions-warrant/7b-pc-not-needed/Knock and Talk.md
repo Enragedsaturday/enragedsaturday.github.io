@@ -39,9 +39,6 @@ related: ["[[Consent Searches]]", "[[Curtilage]]", "[[Plain View Doctrine]]", "[
 
 **Burden and remedy.** When the government relies on consent obtained at the door, it must prove the consent was freely and voluntarily given on the [[Common Legal Terms#totality-of-the-circumstances|totality of the circumstances]]; acquiescence to a claim of lawful authority is not enough. *[[Bumper v. North Carolina|Bumper]]*, 391 U.S. 543, 548–49 (1968); *[[Schneckloth v. Bustamonte|Schneckloth]]*, 412 U.S. 218 (1973). If the defendant contends the approach itself exceeded the license, the government must show the officers stayed within it. Historical facts are reviewed for [[Common Legal Terms#clear-error|clear error]], the ultimate scope question [[Common Legal Terms#de-novo|de novo]]; the remedy for exceeding the license, or for involuntary consent, is suppression under [[The Exclusionary Rule]].
 
-> [!note]- Term — totality of the circumstances *(embedded from the glossary — transclusion flavor 3, for comparison against the hover preview)*
-> ![[2-legal-system-research/Common Legal Terms#Totality of the circumstances]]
-
 **Apply it.**
 1. **Route** — take the path a visitor would take: front walk to the customary door; a small departure only to contact an occupant you can see (*[[United States v. Walker|Walker]]*).
 2. **Hour** — knock during normal waking hours unless specific facts show the resident receives visitors at that hour or the reason is weighty (*[[United States v. Lundin|Lundin]]*; *[[United States v. Walker|Walker]]*).

@@ -108,7 +108,7 @@ async function _navigate(url: URL, isBack: boolean = false) {
   if (!isBack) {
     if (url.hash) {
       const el = flashTargetBlock(url.hash)
-      el?.scrollIntoView()
+      el?.scrollIntoView({ block: "center" })
     } else {
       window.scrollTo({ top: 0 })
     }
@@ -167,7 +167,7 @@ function createRouter() {
 
       if (isSamePage(url) && url.hash) {
         const el = flashTargetBlock(url.hash)
-        el?.scrollIntoView()
+        el?.scrollIntoView({ block: "center" })
         history.pushState({}, "", url)
         return
       }
