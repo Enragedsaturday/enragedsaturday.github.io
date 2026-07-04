@@ -35,6 +35,25 @@ order) → `_overhaul2/PRACTICES.md` + `_overhaul2/CL-DATA-INVENTORY.md` →
   → deploy → verify live → S4 R8 retirement + re-verify (S9 R15) → maintenance handoff to GH#2
   (R12).
 
+## Model fleet (user decision, 2026-07-04)
+Launch this thread on **Fable** — it is the orchestrator AND the high-judgment lanes:
+discordance adjudications ("what diverged / which stands"), doctrine-grain blind
+re-derivations, borderline + human-pause packet calls, the release-gate evaluation.
+**Opus 4.8** carries the heavy-but-structured fleets — S6 R8 page authoring, S5 converter
+batches, lint implementation, inventory/ledger plumbing, mechanical corpus passes — **and the
+Claude PANEL-VOTE lane** (tallies then span three model flavors: 2× gpt-5.5 lens-diverse +
+Opus, with Fable as a fourth perspective at adjudication — extra diversity at the COH-17
+seam). **Sonnet** takes pure-mechanical sweeps (greps, counters, regeneration checks).
+**Codex gpt-5.5** stays per spec: lake builder + 2 review lanes + case-grain Thread-N reads +
+web-search discovery lanes.
+*Mechanics:* sub-agents via the Agent tool's `model:` parameter (sonnet/opus/haiku/fable;
+**forks always inherit the parent** — use regular spawns for cross-tier work); Workflow
+`agent()` takes `opts.model`; Codex via the `codex exec` recipes. Every ledger row records the
+**exact model id** (`claude-fable-5` / `claude-opus-4-8` / `gpt-5.5`) in its `{lane, model}`
+fields so writer≠checker and tally diversity stay machine-auditable. At P0, confirm the
+CL-MCP connector is reachable from a sub-agent lane; if not, the identity slice runs in the
+orchestrator's own session (still the Claude credential, still serial).
+
 ## Standing disciplines (non-negotiable)
 Thin orchestrator + fresh sub-agents + small on-disk handoffs; **one serial CL lane per
 credential** (builder token = builder only; Claude MCP = interactive spot-checks; consumer
