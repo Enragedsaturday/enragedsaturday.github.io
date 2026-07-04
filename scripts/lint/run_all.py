@@ -28,6 +28,8 @@ import lint5_link_every_case as l5  # noqa: E402
 import lint6_treatment_status as l6  # noqa: E402
 import lint7_glossary as l7        # noqa: E402
 import lint8_guardrails as l8      # noqa: E402
+import lint9_carat_leak as l9      # noqa: E402
+import lint10_emdash as l10        # noqa: E402
 
 LINTS = [
     ("LINT-2", "quote/pinpoint (L1)", l2.run),
@@ -37,6 +39,8 @@ LINTS = [
     ("LINT-6", "treatment-status presence (N13)", l6.run),
     ("LINT-7", "glossary wiring (N11, auto half)", l7.run),
     ("LINT-8", "guardrails (D6)", l8.run),
+    ("LINT-9", "carat-leak (mid-line ^block anchors) (R13)", l9.run),
+    ("LINT-10", "em-dash budget (R8/A7/A8)", l10.run),
 ]
 
 
