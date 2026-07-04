@@ -138,6 +138,24 @@ Session cadence: ~150 min each; commit `_overhaul2/lake/` after each session (ch
 discipline); relaunches are idempotent (stable build_id resume — F-S2-01). Wave 2 (S3+S5)
 runs concurrently; S6 waits on lake completion + R15 build-QA.
 
+### S2 PACED RUN LAUNCHED (2026-07-04) — session 1 in flight
+
+Smoke loop closed across 3 iterations + F-S2-14 (transport-timeout resilience; crash-safe
+wrapper; record writes confirmed repo-side). Re-smoke #3 live-proved: journal resume (0 calls
+before lane-1 cursor resume), pacing (min 4.0s truncated-second gaps), clean interruption +
+checkpoints, identity/cites/bounded-progeny on the mega-case. **Orchestrator adjudication:**
+Terry (22k progeny) structurally cannot finish treatment inside a smoke budget (lane-1 cap =
+200 reads by design); the two un-exercised paths (lane cap_hit evidence · normal-case
+three-lane completion) are GATE-CHECKED at the session-1 end-of-session report before session 2
+launches. Session 1 = 150 min, launched as background codex task btmj2azgp. Launch recipe above.
+
+## Wave 2 — S3 restructure + S5 entry models (OPENED 2026-07-04)
+
+Gate artifact committed BEFORE any move: `_overhaul2/url-inventory.json` (1,336 pre-move paths
+from the emitted HTML set, commit 5519c69) — S3 A1/R13 satisfied. Sequencing: S3 tree
+materialization first (content/ structure), S5 table conversion after the tree settles (both
+touch content/); S5 component work was already landed by the mockups + S4.
+
 ### ⚠️ DEVIATION — pool storage root (user-visible, reversible)
 
 The signed pool root `/Volumes/AIStore2` (S2 A10) does not exist; the AIStore2 APFS volume is
