@@ -215,6 +215,18 @@ proposed-only behind S9's two-reviewer rule. Recall risk bounded + documented; S
 re-derivation samples validate the triage. Builder implementing; then a validation session
 (finish Terry + normal-case sample) re-gates before the cadence resumes.
 
+### S2 CADENCE GATE: PASS (2026-07-04) — steady state entered
+
+Validation session (60 min, 508 calls): triage read-rate 3.69% (73/1,979, every decision
+journaled with reason), snippet classifications spot-verified sound, per-completed-case
+44–55 calls (median 51), **whole-run projection ~22.9–23.5k — inside the signed 15–25k
+envelope**. 10 substantive completions; zero-call resume-skips on all 6 prior completions
+(idempotence live-proven again). Terry completes in roster order (cursor preserved — no
+re-burn; the partial-resume mechanism was proven in re-smoke #3); Ashcraft supplied lane-cap
+evidence. **Cadence resumed: 150-min sessions, relaunched per the recipe above after each
+end-of-session checkpoint review; anomalies surface by exception.** At ~500 calls/hr the lake
+lands in ~2–3 days of sessions. Wave 3 (S6 → S7 → S8) opens on lake completion + R15 build-QA.
+
 ### ⚠️ DEVIATION — pool storage root (user-visible, reversible)
 
 The signed pool root `/Volumes/AIStore2` (S2 A10) does not exist; the AIStore2 APFS volume is
