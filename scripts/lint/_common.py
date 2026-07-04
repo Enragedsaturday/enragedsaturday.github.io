@@ -384,6 +384,154 @@ def mask_links_and_code(line):
 
 
 # --------------------------------------------------------------------------
+# GFM table helpers (shared by S5's convert_tables + LINT-16)
+# --------------------------------------------------------------------------
+
+# a markdown link whose target is an absolute http(s) URL: [anchor](https://…)
+MDLINK_URL_RE = re.compile(r"\[([^\]]*)\]\((https?://[^)\s]+)\)")
+_TABLE_SEP_CELL_RE = re.compile(r"^:?-{1,}:?$")
+
+
+def split_table_row(line):
+    """Split a GFM table row into trimmed cell strings, honoring [[wikilink|pipes]]
+    and `code | spans` (their pipes are NOT cell boundaries) and escaped \\| pipes.
+    Bounding pipes yield empty edge cells, which are dropped."""
+    s = line.strip()
+    cells, buf = [], []
+    depth_wiki = 0
+    in_code = False
+    i, n = 0, len(s)
+    while i < n:
+        ch = s[i]
+        if ch == "`":
+            in_code = not in_code
+            buf.append(ch)
+            i += 1
+            continue
+        if not in_code and ch == "[" and i + 1 < n and s[i + 1] == "[":
+            depth_wiki += 1
+            buf.append("[[")
+            i += 2
+            continue
+        if not in_code and ch == "]" and i + 1 < n and s[i + 1] == "]":
+            if depth_wiki > 0:
+                depth_wiki -= 1
+            buf.append("]]")
+            i += 2
+            continue
+        if ch == "\\" and i + 1 < n:
+            buf.append(s[i:i + 2])
+            i += 2
+            continue
+        if ch == "|" and not in_code and depth_wiki == 0:
+            cells.append("".join(buf))
+            buf = []
+            i += 1
+            continue
+        buf.append(ch)
+        i += 1
+    cells.append("".join(buf))
+    if cells and cells[0].strip() == "":
+        cells = cells[1:]
+    if cells and cells[-1].strip() == "":
+        cells = cells[:-1]
+    return [x.strip() for x in cells]
+
+
+def is_table_row(line):
+    return "|" in line and line.strip() != ""
+
+
+def is_separator_row(line):
+    cells = split_table_row(line)
+    return len(cells) > 0 and all(
+        _TABLE_SEP_CELL_RE.match(x.replace(" ", "")) for x in cells)
+
+
+def iter_tables(body_lines):
+    """Yield (header_line_index, header_cells, body_row_indexes) for every GFM
+    table (header + separator + rows) outside fenced code blocks."""
+    fenced = fenced_line_numbers(body_lines)
+    i, n = 0, len(body_lines)
+    while i < n:
+        if (
+            i not in fenced
+            and is_table_row(body_lines[i])
+            and i + 1 < n
+            and (i + 1) not in fenced
+            and is_table_row(body_lines[i + 1])
+            and is_separator_row(body_lines[i + 1])
+        ):
+            header_cells = split_table_row(body_lines[i])
+            j = i + 2
+            rows = []
+            while j < n and j not in fenced and is_table_row(body_lines[j]):
+                rows.append(j)
+                j += 1
+            yield i, header_cells, rows
+            i = j
+            continue
+        i += 1
+
+
+def _strip_md_header(text):
+    t = text.strip().lower()
+    t = re.sub(r"\*+", "", t)
+    t = re.sub(r"\[\[([^\]|#]+)(?:[#|][^\]]*)?\]\]", r"\1", t)
+    t = re.sub(r"[`_]", "", t)
+    return t.strip()
+
+
+def classify_case_header(text):
+    """Classify a Case-table header cell into a column ROLE (S5 R6). The data
+    columns are tested before the broad case/name test; order matters."""
+    t = _strip_md_header(text)
+    if "courtlistener" in t or re.search(r"\bcl\b", t) or "opinion" in t or "link" in t:
+        return "opinion"
+    if "primary home" in t or re.search(r"\bhome\b", t):
+        return "home"
+    if "relevance" in t or "why it matters" in t or "framed here" in t:
+        return "relevance"
+    if "holding" in t:
+        return "holding"
+    if "weight" in t or "authority" in t or "precedential" in t:
+        return "weight"
+    if "treatment" in t or "status" in t or "good law" in t or "good-law" in t:
+        return "treatment"
+    if re.search(r"\byear\b", t) or re.search(r"\bdate\b", t) or "decided" in t:
+        return "year"
+    if re.search(r"\b(case|name)\b", t):
+        return "case"
+    return "other"
+
+
+# the three sanctioned Case-table schemas (S5 R6): key -> (headers, roles)
+CASE_TABLE_SCHEMAS = {
+    "key": (["Case", "Holding", "Opinion"], ["case", "holding", "opinion"]),
+    "related": (
+        ["Case", "Relevance here", "Primary home", "Opinion"],
+        ["case", "relevance", "home", "opinion"],
+    ),
+    "index": (["Case", "Primary home", "Opinion"], ["case", "home", "opinion"]),
+}
+
+
+def classify_case_table(kinds):
+    """Given the header column ROLES, return a sanctioned-schema key or None
+    (None => not a sanctioned/recognizable case table)."""
+    if "case" not in kinds:
+        return None
+    has = lambda k: k in kinds  # noqa: E731
+    if has("home") and has("relevance"):
+        return "related"
+    if has("home") and not has("relevance") and not has("holding"):
+        return "index"
+    if has("holding") and not has("home"):
+        return "key"
+    return None
+
+
+# --------------------------------------------------------------------------
 # corpus index (pages + anchors + aliases) for link resolution
 # --------------------------------------------------------------------------
 

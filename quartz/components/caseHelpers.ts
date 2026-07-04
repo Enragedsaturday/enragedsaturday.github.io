@@ -315,6 +315,23 @@ export function isCasePage(fileData: QuartzPluginData): boolean {
   return fileData.frontmatter?.type === "case"
 }
 
+// S5 · R15 — draft-state / unverified banner predicate. A case page renders the
+// top-of-content ⚪ banner when its lake PUBLISH state is draft/under_review, OR
+// when its resolved Field-I composite is `unverified`. Because resolveTreatment
+// maps any UNMAPPED legacy status to `unverified` (S1 A4 / audit COH-11 → R14),
+// an injected bogus status fails VISIBLE here (fail-visible, never silent). This
+// is defense-in-depth behind S2 R12's page↔record publish gate, so S1 R2's "⚪
+// never reaches a reader unbannered" holds even on previews.
+export function shouldDraftBanner(fm: Record<string, any> | undefined): boolean {
+  if (!fm) return false
+  const lakeStatus = String(fm?.lake?.status ?? "")
+    .toLowerCase()
+    .trim()
+  if (lakeStatus === "draft" || lakeStatus === "under_review") return true
+  const rt = resolveTreatment(fm)
+  return rt?.fieldI === "unverified"
+}
+
 export function caseSlugKey(file: QuartzPluginData): string {
   return simplifySlug(file.slug!)
 }

@@ -110,6 +110,10 @@ export const defaultContentPageLayout: PageLayout = {
       condition: (page) => page.fileData.slug !== "index",
     }),
     Component.ArticleTitle(),
+    // S5 · R15 — draft-state / unverified banner (case pages only; renders nothing
+    // on verified pages and non-case pages). Top-of-content, above the header
+    // badges, so S1 R2's "⚪ never reaches a reader unbannered" holds on previews.
+    Component.DraftBanner(),
     // S3 · R4 #1 — treatment + authority-weight badges (case pages only; degrades to
     // the plain-markdown header line already on the page).
     Component.TreatmentBadge(),

@@ -24,6 +24,7 @@ import Comments from "./Comments"
 import Flex from "./Flex"
 import ConditionalRender from "./ConditionalRender"
 import TreatmentBadge from "./TreatmentBadge"
+import DraftBanner from "./DraftBanner"
 import CaseTable from "./CaseTable"
 import DoctrineFlowchart from "./DoctrineFlowchart"
 import CaseBrowser from "./CaseBrowser"
@@ -56,6 +57,7 @@ export {
   Flex,
   ConditionalRender,
   TreatmentBadge,
+  DraftBanner,
   CaseTable,
   DoctrineFlowchart,
   CaseBrowser,
