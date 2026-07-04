@@ -521,6 +521,13 @@ class TokenBucket:
         self.next_available_at = scheduled_at + self.interval
         return wait
 
+    def mark_completed_at(self, completed_at):
+        completed_at = float(completed_at)
+        self.next_available_at = max(self.next_available_at, completed_at + self.interval)
+
+    def mark_completed(self):
+        self.mark_completed_at(time.time())
+
     def wait(self):
         wait = self.consume_at(time.time())
         time.sleep(wait + random.uniform(0.05, 0.35))
@@ -557,11 +564,12 @@ class CallBudget:
         self.session_calls = 0
         self.cumulative_calls = 0
 
+    def exhausted(self):
+        return self.max_calls is not None and self.session_calls >= self.max_calls
+
     def record_call(self):
         self.session_calls += 1
         self.cumulative_calls += 1
-        if self.max_calls is not None and self.session_calls > self.max_calls:
-            raise RuntimeError("call budget exceeded: %s > %s" % (self.session_calls, self.max_calls))
 
     def snapshot(self, estimated_remaining=None):
         return {
@@ -570,6 +578,14 @@ class CallBudget:
             "remaining_estimate": estimated_remaining,
             "max_calls_this_session": self.max_calls,
         }
+
+
+class IngestInterrupted(Exception):
+    def __init__(self, reason, record_id=None, step=None):
+        super().__init__(reason)
+        self.reason = reason
+        self.record_id = record_id
+        self.step = step
 
 
 class Journal:
@@ -769,6 +785,20 @@ class CourtListenerClient:
         with open(self.call_log, "a", encoding="utf-8") as f:
             f.write(json.dumps(row, sort_keys=True) + "\n")
 
+    def wait_for_network_call(self, record_id=None, step=None, extra_rate_bucket=None):
+        if self.budget.exhausted():
+            raise IngestInterrupted("call_budget_exhausted", record_id=record_id, step=step)
+        self.rate.wait()
+        if extra_rate_bucket is not None:
+            extra_rate_bucket.wait()
+        self.hourly.wait()
+        self.budget.record_call()
+
+    def mark_network_call_completed(self, extra_rate_bucket=None):
+        self.rate.mark_completed()
+        if extra_rate_bucket is not None:
+            extra_rate_bucket.mark_completed()
+
     def get_json_url(self, url, cache=True, record_id=None, step=None):
         cache_file = self.cache_path(url)
         if cache and os.path.exists(cache_file):
@@ -785,9 +815,7 @@ class CourtListenerClient:
         attempt = 0
         while True:
             attempt += 1
-            self.rate.wait()
-            self.hourly.wait()
-            self.budget.record_call()
+            self.wait_for_network_call(record_id=record_id, step=step or "http")
             req = urllib.request.Request(url)
             req.add_header("Authorization", "Token %s" % self.token)
             req.add_header("Accept", "application/json")
@@ -797,6 +825,7 @@ class CourtListenerClient:
                     body = resp.read().decode("utf-8")
                     status = getattr(resp, "status", 200)
                 self.log_call("GET", url, status=status)
+                self.mark_network_call_completed()
                 data = json.loads(body)
                 if cache:
                     with open(cache_file, "w", encoding="utf-8") as f:
@@ -812,6 +841,7 @@ class CourtListenerClient:
                 return data
             except urllib.error.HTTPError as exc:
                 self.log_call("GET", url, status=exc.code)
+                self.mark_network_call_completed()
                 if exc.code in (429, 500, 502, 503, 504) and attempt < 6:
                     time.sleep(min(120, (2 ** attempt) + random.uniform(0.25, 1.5)))
                     continue
@@ -822,9 +852,7 @@ class CourtListenerClient:
         attempt = 0
         while True:
             attempt += 1
-            (rate_bucket or self.rate).wait()
-            self.hourly.wait()
-            self.budget.record_call()
+            self.wait_for_network_call(record_id=record_id, step=step or "post", extra_rate_bucket=rate_bucket)
             req = urllib.request.Request(url, data=body, method="POST")
             req.add_header("Authorization", "Token %s" % self.token)
             req.add_header("Accept", "application/json")
@@ -835,6 +863,7 @@ class CourtListenerClient:
                     response_body = resp.read().decode("utf-8")
                     status = getattr(resp, "status", 200)
                 self.log_call("POST", url, status=status)
+                self.mark_network_call_completed(extra_rate_bucket=rate_bucket)
                 data = json.loads(response_body)
                 self.journal.append(
                     record_id=record_id,
@@ -847,6 +876,7 @@ class CourtListenerClient:
                 return data
             except urllib.error.HTTPError as exc:
                 self.log_call("POST", url, status=exc.code)
+                self.mark_network_call_completed(extra_rate_bucket=rate_bucket)
                 if exc.code in (429, 500, 502, 503, 504) and attempt < 6:
                     time.sleep(min(120, (2 ** attempt) + random.uniform(0.25, 1.5)))
                     continue
@@ -958,6 +988,32 @@ def opinion_refs_from_search_result(client, result):
         if opinion_id:
             refs.append(client.opinion_ref(opinion_id, "search.opinions[].id", {"cluster_id": result.get("cluster_id")}))
     return refs
+
+
+def outbound_edges_from_search_result(result):
+    edges = []
+    seen = set()
+    for opinion in result.get("opinions") or []:
+        try:
+            source_opinion_id = extract_opinion_id(opinion, "search.opinions[]")
+        except ValueError:
+            continue
+        if not source_opinion_id:
+            continue
+        for cited in opinion.get("cites") or []:
+            cited_id = extract_id(cited)
+            if not cited_id:
+                continue
+            key = (int(source_opinion_id), int(cited_id))
+            if key in seen:
+                continue
+            seen.add(key)
+            edges.append({
+                "source_opinion_id": int(source_opinion_id),
+                "cited_id": int(cited_id),
+                "source": "search.opinions[].cites[]",
+            })
+    return edges
 
 
 def pick_lead_ref(client, cluster, search_result=None):
@@ -1205,6 +1261,10 @@ def empty_record_shell(record_id, source_record, build_run):
             "per_sibling": [],
             "citation_count": None,
             "cache_path": None,
+            "enumeration": None,
+            "cursor": None,
+            "rows_cached": 0,
+            "outbound_opinion_edges": [],
         },
         "off_cl_links": [],
         "provenance": {
@@ -1384,6 +1444,7 @@ def apply_identity(record_json, source_record, search_result, cluster, alternate
     for ref in opinion_refs_from_cluster(client, cluster):
         sibling_ids.append(int(ref["opinion_id"]))
     sibling_ids = sorted(set(sibling_ids))
+    record_json["progeny"]["outbound_opinion_edges"] = outbound_edges_from_search_result(search_result)
     identity = record_json["identity"]
     identity.update({
         "case_name": canonical,
@@ -1467,35 +1528,53 @@ def fetch_progeny(record_json, source_record, client, journal, resume):
     first = client.search({"type": "o", "q": query, "order_by": "score desc", "page_size": 100}, cache=True, record_id=record_id, step="progeny.search")
     count = search_count(first)
     cache_path = os.path.join(client.paths.progeny, "%s.jsonl" % slugify(record_id))
-    written = 0
-    data = first
-    url = next_url(data)
+    cursor = next_url(first)
+    rows = search_results(first)
     with open(cache_path, "w", encoding="utf-8") as f:
-        while True:
-            for result in search_results(data):
-                f.write(json.dumps(result, sort_keys=True) + "\n")
-                written += 1
-            if not url:
-                break
-            data = client.get_json_url(url, cache=True, record_id=record_id, step="progeny.page")
-            url = next_url(data)
+        f.write(json.dumps({
+            "_meta": "progeny-cache",
+            "record_id": record_id,
+            "complete_query": query,
+            "enumeration": "bounded",
+            "partial": bool(cursor),
+            "cursor": cursor,
+            "indexed_citing_opinions": count,
+            "count_source": "search",
+            "rows_cached": len(rows),
+        }, sort_keys=True) + "\n")
+        for result in rows:
+            f.write(json.dumps(result, sort_keys=True) + "\n")
     per_sibling = []
     for sibling_id in sibling_ids:
-        per = client.search({"type": "o", "q": "cites:(%s)" % sibling_id, "page_size": 1}, cache=True, record_id=record_id, step="progeny.per_sibling")
+        per = client.search({"type": "o", "q": "cites:(%s)" % sibling_id, "page_size": 1, "fields": "id"}, cache=True, record_id=record_id, step="progeny.per_sibling")
         per_sibling.append({
             "opinion_id": int(sibling_id),
             "count": search_count(per) or 0,
             "count_source": "search",
         })
+    old_progeny = record_json.get("progeny") or {}
     record_json["progeny"] = {
         "complete_query": query,
         "indexed_citing_opinions": count,
         "count_source": "search",
         "per_sibling": per_sibling,
-        "citation_count": record_json["progeny"].get("citation_count"),
+        "citation_count": old_progeny.get("citation_count"),
         "cache_path": cache_path,
+        "enumeration": "bounded",
+        "cursor": cursor,
+        "rows_cached": len(rows),
+        "outbound_opinion_edges": old_progeny.get("outbound_opinion_edges") or [],
     }
-    journal.append(record_id=record_id, step="progeny", status="complete", indexed_citing_opinions=count, rows_cached=written)
+    journal.append(
+        record_id=record_id,
+        step="progeny",
+        status="complete",
+        indexed_citing_opinions=count,
+        count_source="search",
+        enumeration="bounded",
+        cursor=cursor,
+        rows_cached=len(rows),
+    )
     return True
 
 
@@ -1917,6 +1996,33 @@ def ensure_cluster_for_record(record_json, client, record_id, cluster=None, step
     return None
 
 
+def interruption_reason(client, session):
+    if session is not None and session.expired():
+        return "session_limit"
+    budget = getattr(client, "budget", None)
+    if budget is not None and budget.exhausted():
+        return "call_budget_exhausted"
+    return None
+
+
+def interrupt_case_at_boundary(record_json, paths, journal, client, session, after_step):
+    reason = interruption_reason(client, session)
+    if not reason:
+        return False
+    budget = getattr(client, "budget", None)
+    journal.append(
+        record_id=record_json["record_id"],
+        step="case-interruption",
+        status="interrupted",
+        reason=reason,
+        after_step=after_step,
+        budget=budget.snapshot() if budget is not None else None,
+    )
+    write_case_record(paths, record_json)
+    record_json["_ingest_interrupted"] = reason
+    return True
+
+
 def process_page_record(source_record, client, paths, precedence, migration, journal, resume, build_run, session):
     source_record = normalize_source_record(source_record)
     record_id = page_record_id(source_record["record_id"])
@@ -1928,66 +2034,91 @@ def process_page_record(source_record, client, paths, precedence, migration, jou
     alternates = []
     lead_text = ""
 
-    if resume.step_complete(record_id, "identity") and record_json["identity"].get("cluster_id"):
-        journal.append(record_id=record_id, step="identity", status="complete", skipped=True, loaded_existing=True)
-    else:
-        search_result, cluster, alternates = resolve_identity(source_record, client, journal, resume, build_run)
-
-    if cluster:
-        lead_ref, lead_text = apply_identity(record_json, source_record, search_result, cluster, alternates, client, journal)
-        changed = True
-
-    if not record_json["identity"].get("cluster_id") and not cluster:
-        if resume.step_complete(record_id, "identity"):
-            set_record_status(record_json, "blocked", "identity was complete but no existing record or journaled selection was available")
-            record_json["identity"]["identity_method"] = "blocked"
-            record_json["identity"]["reason_code"] = "identity_complete_without_record_or_selection"
-            record_json["provenance"]["warnings"].append("identity completion could not be replayed; blocked rather than marking not_found")
+    try:
+        if resume.step_complete(record_id, "identity") and record_json["identity"].get("cluster_id"):
+            journal.append(record_id=record_id, step="identity", status="complete", skipped=True, loaded_existing=True)
         else:
-            set_record_status(record_json, "not_found")
-            record_json["identity"]["identity_method"] = "not_found"
-            record_json["identity"]["reason_code"] = "no_candidate_cluster"
-            record_json["provenance"]["warnings"].append("not found in CL identity search; not proof of fabrication")
-            journal.append(record_id=record_id, step="identity", status="complete", final_status="not_found")
-        if seed_treatment_from_migration(record_json, source_record, migration):
+            search_result, cluster, alternates = resolve_identity(source_record, client, journal, resume, build_run)
+
+        if cluster:
+            lead_ref, lead_text = apply_identity(record_json, source_record, search_result, cluster, alternates, client, journal)
             changed = True
-        changed = True
-        record_json["provenance"]["field_provenance"]["point_overrides"] = base_field_provenance("S2 treatment derivation proposed only")
-        write_case_record(paths, record_json)
-        return record_json
 
-    citations_ready = resume.step_complete(record_id, "citations") and existing and record_json["citations"].get("all")
-    need_cluster = (not citations_ready) or (record_json["progeny"].get("citation_count") is None)
-    if need_cluster:
-        cluster = ensure_cluster_for_record(record_json, client, record_id, cluster)
-    if resume.step_complete(record_id, "citations") and existing and record_json["citations"].get("all"):
-        journal.append(record_id=record_id, step="citations", status="complete", skipped=True, loaded_existing=True)
-    elif cluster:
-        apply_citations(record_json, cluster, precedence, journal)
-        changed = True
+        if interrupt_case_at_boundary(record_json, paths, journal, client, session, "identity"):
+            return record_json
 
-    if resume.step_complete(record_id, "pinpoints") and existing:
-        journal.append(record_id=record_id, step="pinpoints", status="complete", skipped=True, loaded_existing=True)
-    else:
-        if not lead_text and record_json["identity"].get("lead_opinion_id"):
-            lead_ref = client.opinion_ref(record_json["identity"]["lead_opinion_id"], "cluster.sub_opinions[]", {"replayed_from_record": True})
-            lead_text = client.text_for_opinion(lead_ref, record_id=record_id, step="identity.lead_text.replay")
-        apply_pinpoints(record_json, source_record, lead_text, journal)
-        changed = True
-
-    if cluster and record_json["progeny"].get("citation_count") != cluster.get("citation_count"):
-        record_json["progeny"]["citation_count"] = cluster.get("citation_count")
-        changed = True
-    if not existing or record_json["treatment"].get("field_i_validity") == "unverified":
-        if seed_treatment_from_migration(record_json, source_record, migration):
+        if not record_json["identity"].get("cluster_id") and not cluster:
+            if resume.step_complete(record_id, "identity"):
+                set_record_status(record_json, "blocked", "identity was complete but no existing record or journaled selection was available")
+                record_json["identity"]["identity_method"] = "blocked"
+                record_json["identity"]["reason_code"] = "identity_complete_without_record_or_selection"
+                record_json["provenance"]["warnings"].append("identity completion could not be replayed; blocked rather than marking not_found")
+            else:
+                set_record_status(record_json, "not_found")
+                record_json["identity"]["identity_method"] = "not_found"
+                record_json["identity"]["reason_code"] = "no_candidate_cluster"
+                record_json["provenance"]["warnings"].append("not found in CL identity search; not proof of fabrication")
+                journal.append(record_id=record_id, step="identity", status="complete", final_status="not_found")
+            if seed_treatment_from_migration(record_json, source_record, migration):
+                changed = True
             changed = True
-    if not session.expired():
-        changed = fetch_progeny(record_json, source_record, client, journal, resume) or changed
-    if not session.expired() and record_json["status"] in ("verified", "under_review"):
-        changed = run_treatment(record_json, source_record, client, journal, resume, session) or changed
-    if changed:
-        record_json["provenance"]["field_provenance"]["point_overrides"] = base_field_provenance("S2 treatment derivation proposed only")
+            record_json["provenance"]["field_provenance"]["point_overrides"] = base_field_provenance("S2 treatment derivation proposed only")
+            write_case_record(paths, record_json)
+            return record_json
+
+        citations_ready = resume.step_complete(record_id, "citations") and existing and record_json["citations"].get("all")
+        need_cluster = (not citations_ready) or (record_json["progeny"].get("citation_count") is None)
+        if need_cluster:
+            cluster = ensure_cluster_for_record(record_json, client, record_id, cluster)
+        if resume.step_complete(record_id, "citations") and existing and record_json["citations"].get("all"):
+            journal.append(record_id=record_id, step="citations", status="complete", skipped=True, loaded_existing=True)
+        elif cluster:
+            apply_citations(record_json, cluster, precedence, journal)
+            changed = True
+
+        if interrupt_case_at_boundary(record_json, paths, journal, client, session, "citations"):
+            return record_json
+
+        if resume.step_complete(record_id, "pinpoints") and existing:
+            journal.append(record_id=record_id, step="pinpoints", status="complete", skipped=True, loaded_existing=True)
+        else:
+            if not lead_text and record_json["identity"].get("lead_opinion_id"):
+                lead_ref = client.opinion_ref(record_json["identity"]["lead_opinion_id"], "cluster.sub_opinions[]", {"replayed_from_record": True})
+                lead_text = client.text_for_opinion(lead_ref, record_id=record_id, step="identity.lead_text.replay")
+            apply_pinpoints(record_json, source_record, lead_text, journal)
+            changed = True
+
+        if interrupt_case_at_boundary(record_json, paths, journal, client, session, "pinpoints"):
+            return record_json
+
+        if cluster and record_json["progeny"].get("citation_count") != cluster.get("citation_count"):
+            record_json["progeny"]["citation_count"] = cluster.get("citation_count")
+            changed = True
+        if not existing or record_json["treatment"].get("field_i_validity") == "unverified":
+            if seed_treatment_from_migration(record_json, source_record, migration):
+                changed = True
+        if not interruption_reason(client, session):
+            changed = fetch_progeny(record_json, source_record, client, journal, resume) or changed
+        if interrupt_case_at_boundary(record_json, paths, journal, client, session, "progeny"):
+            return record_json
+        if not interruption_reason(client, session) and record_json["status"] in ("verified", "under_review"):
+            changed = run_treatment(record_json, source_record, client, journal, resume, session) or changed
+        if interrupt_case_at_boundary(record_json, paths, journal, client, session, "treatment"):
+            return record_json
+        if changed:
+            record_json["provenance"]["field_provenance"]["point_overrides"] = base_field_provenance("S2 treatment derivation proposed only")
+            write_case_record(paths, record_json)
+    except IngestInterrupted as exc:
+        journal.append(
+            record_id=record_json["record_id"],
+            step="case-interruption",
+            status="interrupted",
+            reason=exc.reason,
+            during_step=exc.step,
+            budget=client.budget.snapshot() if getattr(client, "budget", None) is not None else None,
+        )
         write_case_record(paths, record_json)
+        record_json["_ingest_interrupted"] = exc.reason
     return record_json
 
 
@@ -2072,7 +2203,7 @@ def run_ingest(args):
         resume = ResumeState(resume_rows)
     else:
         resume = ResumeState([])
-    max_calls = 40 if args.smoke else args.max_calls
+    max_calls = 80 if args.smoke else args.max_calls
     budget = CallBudget(max_calls=max_calls)
     client = CourtListenerClient(
         paths=paths,
@@ -2091,6 +2222,10 @@ def run_ingest(args):
     journal.append(step="budget-checkpoint", status="start", budget=budget.snapshot(estimated_remaining="15-25k total-run envelope"))
     for source_record in records:
         if session.expired():
+            journal.append(step="case-interruption", status="interrupted", reason="session_limit", budget=budget.snapshot())
+            break
+        if budget.exhausted():
+            journal.append(step="case-interruption", status="interrupted", reason="call_budget_exhausted", budget=budget.snapshot())
             break
         old_id = source_record["record_id"]
         if source_record.get("stub"):
@@ -2098,10 +2233,19 @@ def run_ingest(args):
         else:
             record_json = process_page_record(source_record, client, paths, precedence, migration, journal, resume, run_id, session)
             final_id = record_json["record_id"]
+        interrupted = record_json.pop("_ingest_interrupted", None)
         current_resume = ResumeState(manifest.resume_rows() + journal.rows()) if args.resume and not args.run_id else ResumeState(journal.rows())
         manifest.update(old_id, record_json, counts={"cl_calls": budget.session_calls}, final_record_id=final_id, resume_state=current_resume)
         manifest.save()
-        journal.append(record_id=final_id, step="case-checkpoint", status="complete", budget=budget.snapshot())
+        journal.append(
+            record_id=final_id,
+            step="case-checkpoint",
+            status="interrupted" if interrupted else "complete",
+            reason=interrupted,
+            budget=budget.snapshot(),
+        )
+        if interrupted:
+            break
     journal.append(step="budget-checkpoint", status="end", budget=budget.snapshot(estimated_remaining="review checkpoint required before relaunch"))
     print("journal: %s" % journal_path)
     print("calls this session: %s" % budget.session_calls)
@@ -2196,6 +2340,36 @@ def self_test_token_bucket():
         assert len([call for call in calls[i:] if call - start < 60.0]) <= 60
 
 
+def self_test_collective_global_limiter():
+    global_bucket = TokenBucket(rate_per_minute=14, capacity=1, start_time=0)
+    analyze_bucket = TokenBucket(rate_per_minute=60, capacity=1, start_time=0)
+    now = 0.0
+    starts = []
+    completions = []
+    durations = [0.0, 5.5, 0.1, 1.7, 0.0, 6.2, 0.2]
+    for i in range(35):
+        extra = analyze_bucket if i % 4 == 0 else None
+        wait = global_bucket.consume_at(now)
+        now += wait
+        if extra is not None:
+            wait = extra.consume_at(now)
+            now += wait
+        start = now
+        complete = start + durations[i % len(durations)]
+        global_bucket.mark_completed_at(complete)
+        if extra is not None:
+            extra.mark_completed_at(complete)
+        starts.append(start)
+        completions.append(complete)
+        now = complete
+    for series in (starts, completions):
+        for i, start in enumerate(series):
+            in_window = [call for call in series[i:] if call - start < 60.0]
+            assert len(in_window) <= 14, (start, in_window)
+    min_completion_gap = min(b - a for a, b in zip(completions, completions[1:]))
+    assert min_completion_gap + 0.000001 >= global_bucket.interval, min_completion_gap
+
+
 def self_test_journal_resume():
     path = "/tmp/s2-journal-self-test.jsonl"
     try:
@@ -2257,6 +2431,95 @@ class SelfTestClient:
         return {"count": 0, "results": [], "next": None}
 
 
+class ProgenyBoundedClient:
+    def __init__(self, paths):
+        self.paths = paths
+        self.search_calls = []
+        self.url_calls = []
+
+    def search(self, params, cache=True, record_id=None, step=None):
+        self.search_calls.append({"params": dict(params), "step": step})
+        query = params.get("q")
+        if query == "cites:(200 OR 201)":
+            return {
+                "count": 5,
+                "results": [{"id": "row-1"}, {"id": "row-2"}],
+                "next": "page-2",
+            }
+        if query == "cites:(200)":
+            return {"count": 3, "results": [{"id": "only-count"}], "next": None}
+        if query == "cites:(201)":
+            return {"count": 4, "results": [{"id": "only-count"}], "next": None}
+        raise AssertionError("unexpected progeny query %r" % query)
+
+    def get_json_url(self, url, cache=True, record_id=None, step=None):
+        self.url_calls.append({"url": url, "step": step})
+        raise AssertionError("bounded progeny must not paginate: %s" % url)
+
+
+class InterruptAfterIdentityClient(SelfTestClient):
+    def __init__(self, paths, journal):
+        super().__init__(paths, journal)
+        self.budget = CallBudget(max_calls=1)
+
+    def text_for_opinion(self, opinion_ref, record_id=None, step="opinion_text"):
+        text = super().text_for_opinion(opinion_ref, record_id=record_id, step=step)
+        self.budget.record_call()
+        return text
+
+
+def self_test_bounded_progeny():
+    tmp = tempfile.mkdtemp(prefix="s2-progeny-selftest-")
+    try:
+        paths = LakePaths(tmp, os.path.join(tmp, "pool"))
+        paths.ensure()
+        journal = Journal(os.path.join(tmp, "journal.jsonl"), "selftest")
+        source = {"record_id": "bounded-case", "title": "Bounded v. Case"}
+        record = empty_record_shell("bounded-case", source, "selftest")
+        record["identity"]["sibling_ids"] = [200, 201]
+        record["progeny"]["citation_count"] = 9
+        record["progeny"]["outbound_opinion_edges"] = [{"source_opinion_id": 200, "cited_id": 999, "source": "test"}]
+        client = ProgenyBoundedClient(paths)
+        assert fetch_progeny(record, source, client, journal, ResumeState([]))
+        assert client.url_calls == []
+        assert record["progeny"]["complete_query"] == "cites:(200 OR 201)"
+        assert record["progeny"]["indexed_citing_opinions"] == 5
+        assert record["progeny"]["count_source"] == "search"
+        assert record["progeny"]["enumeration"] == "bounded"
+        assert record["progeny"]["cursor"] == "page-2"
+        assert record["progeny"]["rows_cached"] == 2
+        assert record["progeny"]["citation_count"] == 9
+        assert record["progeny"]["outbound_opinion_edges"][0]["cited_id"] == 999
+        per_queries = [call["params"] for call in client.search_calls if call["step"] == "progeny.per_sibling"]
+        assert per_queries == [
+            {"type": "o", "q": "cites:(200)", "page_size": 1, "fields": "id"},
+            {"type": "o", "q": "cites:(201)", "page_size": 1, "fields": "id"},
+        ]
+        with open(record["progeny"]["cache_path"], encoding="utf-8") as f:
+            cached = [json.loads(line) for line in f if line.strip()]
+        assert cached[0]["_meta"] == "progeny-cache"
+        assert cached[0]["partial"] is True and cached[0]["cursor"] == "page-2"
+        assert [row["id"] for row in cached[1:]] == ["row-1", "row-2"]
+    finally:
+        shutil.rmtree(tmp)
+
+
+def self_test_outbound_edges_from_search_result():
+    result = {
+        "cluster_id": 100,
+        "opinions": [
+            {"id": 200, "cites": [1, 2, 2, {"id": 3}]},
+            {"cluster_id": 999, "cites": [4]},
+            {"id": 201, "cites": []},
+        ],
+    }
+    assert outbound_edges_from_search_result(result) == [
+        {"source_opinion_id": 200, "cited_id": 1, "source": "search.opinions[].cites[]"},
+        {"source_opinion_id": 200, "cited_id": 2, "source": "search.opinions[].cites[]"},
+        {"source_opinion_id": 200, "cited_id": 3, "source": "search.opinions[].cites[]"},
+    ]
+
+
 def self_test_identity_skip_preserves_record():
     tmp = tempfile.mkdtemp(prefix="s2-selftest-")
     try:
@@ -2293,6 +2556,53 @@ def self_test_identity_skip_preserves_record():
         after = json.dumps(load_case_record(paths, "smith-v-jones"), sort_keys=True)
         assert second["status"] != "not_found"
         assert before == after
+    finally:
+        shutil.rmtree(tmp)
+
+
+def self_test_budget_interruption_resume():
+    tmp = tempfile.mkdtemp(prefix="s2-budget-selftest-")
+    try:
+        paths = LakePaths(tmp, os.path.join(tmp, "pool"))
+        paths.ensure()
+        journal = Journal(os.path.join(tmp, "journal.jsonl"), "selftest")
+        source = {
+            "record_id": "smith-v-jones",
+            "title": "Smith v. Jones",
+            "expected_citation": "1 U.S. 2",
+            "court_level": "scotus",
+            "year": 2024,
+            "legacy_treatment_status": "good",
+            "legacy_treatment_as_of": "2026-06-30",
+        }
+        precedence = {"court_classes": {"scotus": {"reporters": {"U.S.": 1}}}}
+        migration = {
+            "mappings": {
+                "good": {
+                    "field_i_validity": "good_law",
+                    "requires_point_overrides": False,
+                    "requires_edge": False,
+                    "varies_by_point": False,
+                }
+            }
+        }
+        first_client = InterruptAfterIdentityClient(paths, journal)
+        first = process_page_record(source, first_client, paths, precedence, migration, journal, ResumeState([]), "selftest", SessionTimer(None))
+        assert first.get("_ingest_interrupted") == "call_budget_exhausted"
+        persisted = load_case_record(paths, "smith-v-jones")
+        assert persisted and persisted["identity"]["cluster_id"] == 100
+        rows = journal.rows()
+        assert any(row.get("step") == "case-interruption" and row.get("after_step") == "identity" for row in rows)
+        assert not any(row.get("step") == "citations" and row.get("status") == "complete" for row in rows)
+
+        resume_client = SelfTestClient(paths, journal)
+        resumed = process_page_record(source, resume_client, paths, precedence, migration, journal, ResumeState(rows), "selftest", SessionTimer(None))
+        assert resumed["citations"]["display"] == "1 U.S. 2"
+        assert resumed["progeny"]["complete_query"] == "cites:(200)"
+        assert not any(call["params"].get("case_name") for call in resume_client.search_calls)
+        resumed_rows = journal.rows()
+        assert any(row.get("step") == "citations" and row.get("status") == "complete" for row in resumed_rows)
+        assert any(row.get("step") == "progeny" and row.get("status") == "complete" for row in resumed_rows)
     finally:
         shutil.rmtree(tmp)
 
@@ -2492,8 +2802,12 @@ def run_self_tests():
     self_test_precedence()
     self_test_binding_filters()
     self_test_token_bucket()
+    self_test_collective_global_limiter()
     self_test_journal_resume()
+    self_test_bounded_progeny()
+    self_test_outbound_edges_from_search_result()
     self_test_identity_skip_preserves_record()
+    self_test_budget_interruption_resume()
     self_test_treatment_partial_resume()
     self_test_opinion_cluster_id_rejected()
     self_test_migration_round_trip()
@@ -2507,7 +2821,7 @@ def parse_args(argv):
     parser.add_argument("--session-minutes", type=float, default=None, help="cleanly stop at a checkpoint after N minutes")
     parser.add_argument("--resume", dest="resume", action="store_true", default=True, help="consult journal and skip complete work (default)")
     parser.add_argument("--no-resume", dest="resume", action="store_false", help="ignore existing journal state")
-    parser.add_argument("--smoke", help="run one manifest record by record_id/title slug; enforces <=40 calls")
+    parser.add_argument("--smoke", help="run one manifest record by record_id/title slug; enforces <=80 calls")
     parser.add_argument("--self-test", action="store_true", help="run offline unit checks and exit")
     parser.add_argument("--run-id", help="explicit fresh build id override; default is the stable id persisted in _manifest.json")
     parser.add_argument("--token-path", default=TOKEN_PATH, help="CourtListener token path")

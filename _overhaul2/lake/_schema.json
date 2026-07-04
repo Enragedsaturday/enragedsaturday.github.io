@@ -785,6 +785,52 @@
             "string",
             "null"
           ]
+        },
+        "enumeration": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "bounded",
+            null
+          ]
+        },
+        "cursor": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "rows_cached": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "outbound_opinion_edges": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "source_opinion_id",
+              "cited_id",
+              "source"
+            ],
+            "properties": {
+              "source_opinion_id": {
+                "type": "integer"
+              },
+              "cited_id": {
+                "type": "integer"
+              },
+              "source": {
+                "type": "string",
+                "enum": [
+                  "search.opinions[].cites[]"
+                ]
+              }
+            }
+          }
         }
       }
     },
