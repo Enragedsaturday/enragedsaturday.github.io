@@ -106,6 +106,38 @@ circuit/state manifest rows used a court vocabulary the lane filters don't recog
 token bucket allowed a 27-call first minute. All 9 UPHELD → builder lane fixing (loop 2), then
 re-review, then smoke (Terry + Chatrie), then the paced run.
 
+### S2 smoke loop (2026-07-04) + THE FULL-RUN LAUNCH RECIPE
+
+Smoke 1 (Terry+Chatrie): DO-NOT-PROCEED — three new findings, all UPHELD and fixed (ledger
+updated): F-S2-11 unbounded progeny pagination (bounded per R4/A5: page-1 count + per-sibling
+counts + complete_query + cursor; outbound edges persisted for intra_edges) · F-S2-12 budget
+exhaustion crashed without persisting (now clean interruption + partial record + checkpoints) ·
+F-S2-13 1.0s inter-call gaps (root cause: post-response log timestamps + a real analyze-bucket
+bypass; now ONE global ≤14/min gate for every call, analyze's 60/min stacked after it). Chatrie
+smoke record committed (first lake record: under_review, name+docket, cluster 10881683 / lead
+11349205 — the A1 must-ingest guard passed live). Smoke cap now 80. Codex writable_roots
+verified for ~/cssi-lake.
+
+**FULL-RUN LAUNCH RECIPE (repeat until `_manifest.json` shows roster complete; relaunch on each
+session-end notification after checking the budget checkpoint in the journal tail):**
+
+```sh
+codex exec -s workspace-write -c approval_policy=never \
+  -c 'sandbox_workspace_write.network_access=true' \
+  -c 'sandbox_workspace_write.writable_roots=["/Users/johngalt/cssi-lake"]' \
+  -c model_reasoning_effort=xhigh --skip-git-repo-check \
+  -C /Users/johngalt/Projects/cssi-quartz \
+  "S2 BUILDER session. CSSI_LAKE_ROOT=/Users/johngalt/cssi-lake python3 scripts/s2/ingest.py \
+   --session-minutes 150. On exit report: the end budget checkpoint (calls this session / \
+   cumulative / remaining estimate), cases completed this session, current manifest counts by \
+   status, any anomalies (429s, backoff events, fabrication_suspected, not_found)." \
+  < /dev/null   # run as a BACKGROUND Bash task; commit lake records at each session end
+```
+
+Session cadence: ~150 min each; commit `_overhaul2/lake/` after each session (checkpoint
+discipline); relaunches are idempotent (stable build_id resume — F-S2-01). Wave 2 (S3+S5)
+runs concurrently; S6 waits on lake completion + R15 build-QA.
+
 ### ⚠️ DEVIATION — pool storage root (user-visible, reversible)
 
 The signed pool root `/Volumes/AIStore2` (S2 A10) does not exist; the AIStore2 APFS volume is
