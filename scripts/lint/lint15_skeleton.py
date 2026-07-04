@@ -93,7 +93,10 @@ EXEMPT_TYPES = {"overview", "reference", "craft", "category", "fixture", "index"
 # F-S5-10 — fail-closed page typing. A content page whose `type` is missing or
 # unrecognized cannot be classified by LINT-15 and is a HIGH finding, EXCEPT the
 # structurally-typeless pages below.
-RECOGNIZED_TYPES = {"doctrine", "case", "reference", "index", "practical"}
+# F-S5-12: RECOGNIZED must be a superset of EXEMPT — a page typed with a valid
+# skeleton-exempt type (e.g. `overview`) is recognized, just not skeleton-checked;
+# the two sets diverging made exempt types fail the typing gate.
+RECOGNIZED_TYPES = {"doctrine", "case", "reference", "index", "practical"} | EXEMPT_TYPES
 # top-level special pages that legitimately carry no doctrine/case type:
 #   about     — R1-listed exempt reference page
 #   flashcards — the interactive spaced-repetition deck page (app shell, no type)
