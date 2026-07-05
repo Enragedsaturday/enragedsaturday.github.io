@@ -244,6 +244,30 @@ STATE_NAME_TO_ABBR = {
     "wyoming": "wy",
 }
 
+CAPTION_TOKEN_CONTRACTIONS = {
+    "commonwealth": "com",  # Bluebook T6 governmental party abbreviation.
+    "board": "bd",  # Bluebook T6 governmental/organizational party abbreviation.
+    "education": "ed",  # Normalize full form to CL caption abbreviation.
+    "educ": "ed",  # Normalize alternate education abbreviation to CL form.
+    "school": "sch",  # Bluebook T6 school abbreviation.
+    "district": "dist",  # Bluebook T6 district abbreviation.
+    "county": "cty",  # Keep distinct from company -> co.
+    "cnty": "cty",  # Normalize alternate county abbreviation without colliding with company.
+    "cty": "cty",  # Preserve already-contracted county form.
+    "township": "twp",  # Bluebook T6 township abbreviation.
+    "department": "dep",  # Normalize full form to CL caption abbreviation.
+    "dept": "dep",  # Normalize alternate department abbreviation to CL form.
+    "university": "univ",  # Normalize full form to CL caption abbreviation.
+    "univ": "univ",  # Preserve already-contracted university form.
+    "insurance": "ins",  # Normalize full form to CL caption abbreviation.
+    "ins": "ins",  # Preserve already-contracted insurance form.
+    "company": "co",  # Company may contract to co because county contracts to cty.
+    "north": "n",  # Directional abbreviation; one-char outputs are retained.
+    "south": "s",  # Directional abbreviation; one-char outputs are retained.
+    "east": "e",  # Directional abbreviation; one-char outputs are retained.
+    "west": "w",  # Directional abbreviation; one-char outputs are retained.
+}
+
 
 def utc_now():
     return dt.datetime.now(dt.timezone.utc).replace(microsecond=0)
@@ -353,6 +377,14 @@ def normalize_cite(cite):
     cite = re.sub(TRAILING_YEAR_PAREN_RE, "", cite)
     cite = cite.replace("\u00a0", " ")
     cite = re.sub(r"\s+", " ", cite).strip()
+    return cite
+
+
+def citation_compare_key(cite):
+    cite = normalize_cite(cite)
+    cite = cite.casefold().replace(".", "")
+    cite = re.sub(r"\s+", " ", cite).strip()
+    cite = re.sub(r"(?<=[a-z])\s+(?=\d+[a-z])", "", cite)
     return cite
 
 
@@ -558,7 +590,11 @@ def first_party_terms(case_name):
 def caption_token_set(value):
     if not str(value or "").strip():
         return set()
-    return {token for token in slugify(value).split("-") if token}
+    return {
+        CAPTION_TOKEN_CONTRACTIONS.get(token, token)
+        for token in slugify(value).split("-")
+        if token
+    }
 
 
 def caption_sides(value):
@@ -1394,11 +1430,11 @@ def identity_candidates(record, client, results, expected_cite, record_id, max_c
 
 
 def citation_matches_expected(cluster, expected):
-    expected = normalize_cite(expected)
+    expected = citation_compare_key(expected)
     if not expected:
         return False
     for citation in cluster.get("citations") or []:
-        if normalize_cite(citation) == expected:
+        if citation_compare_key(citation) == expected:
             return True
     return False
 
@@ -3371,7 +3407,17 @@ def self_test_identity_caption_and_cite_fixtures():
     assert normalize_cite("389 U.S. 35 (1967)") == "389 U.S. 35"
     assert normalize_cite("1 U.S. 2") == "1 U.S. 2"
     assert normalize_cite("foo (internal) 1 U.S. 2") == "foo (internal) 1 U.S. 2"
+    assert citation_compare_key("2026 PA Super 114") == citation_compare_key("2026 Pa. Super. 114")
+    assert citation_compare_key("283 F.3d 1040") == citation_compare_key("283 F. 3d 1040")
+    assert citation_compare_key("403 U.S. 388") == citation_compare_key("403 US 388")
+    assert citation_compare_key("403 U.S. 388") != citation_compare_key("403 U.S. 389")
 
+    assert canonical_caption_match("Commonwealth v. Herlth", "Com. v. Herlth, J.")
+    assert canonical_caption_match(
+        "Birchfield v. North Dakota",
+        "Birchfield v. N. Dakota. William Robert Bernard",
+    )
+    assert canonical_caption_match("Board of Education v. Earls", "Board of Ed. v. Earls")
     assert canonical_caption_match(
         "Bivens v. Six Unknown Named Agents",
         "Bivens v. Six Unknown Named Agents of Federal Bureau of Narcotics",
@@ -3385,6 +3431,7 @@ def self_test_identity_caption_and_cite_fixtures():
         "Brower Ex Rel. Estate of Caldwell v. County of Inyo",
     )
     assert not canonical_caption_match("Adams v. Williams", "Williams v. Adams")
+    assert not canonical_caption_match("County of Inyo", "Company of Inyo")
 
     journal = Journal("/tmp/s2-identity-caption-self-test.jsonl", "selftest")
     try:
@@ -3423,6 +3470,40 @@ def self_test_identity_caption_and_cite_fixtures():
     assert shortened_record["identity"]["identity_method"] == "citation+party-text"
     assert shortened_record["identity"]["reason_code"] == "awaiting_r15_structural_gates"
 
+    herlth_source = {
+        "record_id": "commonwealth-v-herlth",
+        "title": "Commonwealth v. Herlth",
+        "expected_citation": "2026 PA Super 114",
+        "court_level": "state",
+        "year": 2026,
+    }
+    herlth_record = empty_record_shell("commonwealth-v-herlth", herlth_source, "selftest")
+    herlth_cluster = {
+        "id": 10870804,
+        "case_name": "Com. v. Herlth, J.",
+        "case_name_short": "Com. v. Herlth",
+        "case_name_full": "Com. v. Herlth, J.",
+        "date_filed": "2026-05-23",
+        "court": "pasuperct",
+        "citations": [{"cite": "2026 Pa. Super. 114", "type": 6}],
+        "sub_opinions": [{"id": 10870805, "type": "020lead"}],
+    }
+    apply_identity(
+        herlth_record,
+        herlth_source,
+        identity_fixture_search_result(10870804, 10870805),
+        herlth_cluster,
+        [],
+        IdentityApplyClient("The Commonwealth and Herlth are both named in the lead opinion."),
+        journal,
+    )
+    assert herlth_record["status"] == "under_review"
+    assert herlth_record["identity"]["expected_citation_found"] is True
+    assert herlth_record["identity"]["party_name_in_text"] is True
+    assert herlth_record["identity"]["canonical_name_match"] is True
+    assert herlth_record["identity"]["identity_method"] == "citation+party-text"
+    assert herlth_record["identity"]["reason_code"] == "awaiting_r15_structural_gates"
+
     birchfield_source = {
         "record_id": "birchfield-caption",
         "title": "Birchfield v. North Dakota",
@@ -3451,10 +3532,10 @@ def self_test_identity_caption_and_cite_fixtures():
         journal,
     )
     assert birchfield_record["status"] == "under_review"
-    assert birchfield_record["identity"]["canonical_name_match"] is False
+    assert birchfield_record["identity"]["canonical_name_match"] is True
     assert birchfield_record["identity"]["identity_method"] == "citation+party-text"
-    assert birchfield_record["identity"]["reason_code"] == "caption_mismatch_canonical"
-    assert "input caption does not match CL canonical caption" in birchfield_record["provenance"]["warnings"]
+    assert birchfield_record["identity"]["reason_code"] == "awaiting_r15_structural_gates"
+    assert "input caption does not match CL canonical caption" not in birchfield_record["provenance"]["warnings"]
 
     reversed_source = {
         "record_id": "adams-reversed",
@@ -3709,11 +3790,14 @@ def self_test_identity_skip_preserves_record():
         first = process_page_record(source, client, paths, precedence, migration, journal, ResumeState([]), "selftest", session)
         assert first["status"] == "under_review"
         before = json.dumps(load_case_record(paths, "smith-v-jones"), sort_keys=True)
+        calls_before = (len(client.search_calls), len(client.url_calls))
         resumed = ResumeState(journal.rows())
         second = process_page_record(source, client, paths, precedence, migration, journal, resumed, "selftest", SessionTimer(None))
         after = json.dumps(load_case_record(paths, "smith-v-jones"), sort_keys=True)
+        calls_after = (len(client.search_calls), len(client.url_calls))
         assert second["status"] != "not_found"
         assert before == after
+        assert calls_after == calls_before
     finally:
         shutil.rmtree(tmp)
 

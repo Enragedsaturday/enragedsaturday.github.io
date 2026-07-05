@@ -2,24 +2,183 @@
   "schema": "o2.wave-review.v1",
   "wave": 1,
   "spec": "S2",
-  "reviewed": ["scripts/s2/ingest.py", "_overhaul2/lake/_schema.json", "_overhaul2/lake/_advisory.json", "_overhaul2/lake/_reporter-precedence.json", "_overhaul2/lake/_treatment-migration.json", "_overhaul2/lake/_manifest.json", "_overhaul2/lake/README.md"],
-  "writer_lane": {"lane": "codex-builder", "model": "gpt-5.5", "effort": "xhigh", "sandbox": "workspace-write (offline authoring)"},
-  "review_lane": {"lane": "codex-review-2nd", "model": "gpt-5.5", "effort": "xhigh", "sandbox": "read-only", "round1": "scratchpad/s2-review-codex.md", "round2": "scratchpad/s2-rereview-codex.md"},
-  "adjudicator": {"lane": "orchestrator", "model": "claude-fable-5"},
+  "reviewed": [
+    "scripts/s2/ingest.py",
+    "_overhaul2/lake/_schema.json",
+    "_overhaul2/lake/_advisory.json",
+    "_overhaul2/lake/_reporter-precedence.json",
+    "_overhaul2/lake/_treatment-migration.json",
+    "_overhaul2/lake/_manifest.json",
+    "_overhaul2/lake/README.md"
+  ],
+  "writer_lane": {
+    "lane": "codex-builder",
+    "model": "gpt-5.5",
+    "effort": "xhigh",
+    "sandbox": "workspace-write (offline authoring)"
+  },
+  "review_lane": {
+    "lane": "codex-review-2nd",
+    "model": "gpt-5.5",
+    "effort": "xhigh",
+    "sandbox": "read-only",
+    "round1": "scratchpad/s2-review-codex.md",
+    "round2": "scratchpad/s2-rereview-codex.md"
+  },
+  "adjudicator": {
+    "lane": "orchestrator",
+    "model": "claude-fable-5"
+  },
   "findings": [
-    {"id": "F-S2-01", "severity": "high", "verdict": "UPHELD", "summary": "resume was run-id-scoped — every relaunch re-burns treatment quota", "fix": "stable manifest build_id + default resume from manifest lane_status + journal", "status": "fixed", "verified": "round-2 FIXED"},
-    {"id": "F-S2-02", "severity": "high", "verdict": "UPHELD", "summary": "skipped identity step fell through to not_found", "fix": "load existing record / replay journaled selection; missing replay blocks", "status": "fixed", "verified": "round-2 FIXED"},
-    {"id": "F-S2-03", "severity": "high", "verdict": "UPHELD", "summary": "no partial cursors mid-treatment-lane; kill re-burns scanned pages", "fix": "journal partial(cursor) per page before next call; session expiry inside loop", "status": "fixed", "verified": "round-2 FIXED"},
-    {"id": "F-S2-04", "severity": "high", "verdict": "UPHELD", "summary": "generic extract_id let cluster_id reach /opinions/ (the A1 scar)", "fix": "opinion-id-only extractors; cluster_id-only dicts rejected", "status": "fixed", "verified": "round-2 FIXED"},
-    {"id": "F-S2-05", "severity": "high", "verdict": "UPHELD", "summary": "builder wrote verified alongside unverified treatment (schema-invalid; A13 unapplied)", "fix": "builder never self-verifies; migration table actually seeds Field-I; under_review until R15 gates", "status": "fixed", "verified": "round-2 FIXED"},
-    {"id": "F-S2-06", "severity": "high", "verdict": "UPHELD", "summary": "40 manifest rows carried circuit/state-high/state-app outside the schema court enum — lane filters dead", "fix": "single court-class normalizer at manifest load + search + precedence + binding filters; manifest migrated in place", "status": "fixed", "verified": "round-2 FIXED (bad_levels [])"},
-    {"id": "F-S2-07", "severity": "high", "verdict": "UPHELD", "summary": "token bucket allowed 27-call first minute (literal ≤14/min violated)", "fix": "capacity-1 paced limiter at 60/rate+epsilon; same shape for analyze_citations", "status": "fixed", "verified": "round-2 FIXED (burst math re-done)"},
-    {"id": "F-S2-08", "severity": "med", "verdict": "UPHELD", "summary": "citation-step downgrade masked fabrication_suspected/not_found/blocked", "fix": "fail-closed status preservation in set_record_status", "status": "fixed", "verified": "round-2 FIXED"},
-    {"id": "F-S2-09", "severity": "med", "verdict": "UPHELD", "summary": "lane cap hits journaled but absent from record derivation trail", "fix": "cap_hit + final_cursor + audit_needed stored in treatment.derivation[lane]", "status": "fixed", "verified": "round-2 FIXED"},
-    {"id": "F-S2-10", "severity": "high", "verdict": "UPHELD", "summary": "loop-2 regression: new-schema pre-seeded treatment (Belton/Smith planning projections) fell to blocked/unverified — seeder keyed only legacy status", "fix": "legacy-status-first, then valid field_i_validity accepted with overrides/dates carried (under_review); neither-key/unverified -> blocked per A13(a); self-test on real frontmatter", "status": "fixed", "verified": "round-3 FIXED; CLEAR-TO-SMOKE: yes", "loops": 3},
-    {"id": "F-S2-16", "severity": "high", "phase": "paced-run session 3", "verdict": "UPHELD", "summary": "canonical_caption_match = exact slug equality, hard-gating ABOVE the passed two-key — false fabrication_suspected on wiki-short captions (Bivens/Earls/Brower: two-key PASS, correct clusters 108375/121171/112218)", "fix": "order-sensitive per-side token containment vs {case_name, case_name_full, case_name_short}; containment-fail + two-key-pass -> under_review + caption_mismatch_canonical warning; containment-fail + two-key-incomplete -> fabrication_suspected unchanged; reversed-caption (Adams/Williams) fixture must still flag", "status": "fixed", "verified": "loop-3 re-review FIXED; orchestrator ran self-test suite green", "loops": 3, "loop2_findings": "F-S2-16R-01 fallback rungs unbounded + premature ladder stop (cap 3 clusters/rung, viable-only termination, best-so-far last resort) · F-S2-16R-02 readjudication left stale payload (empty-shell rebuild, roster-only preserves, field-level journaling) · F-S2-16R-03 self-test gaps (bounded-call + continuation + exhaustion + stale-cluster fixtures) — all UPHELD, fixed, re-verified with file:line evidence", "adjudicated_by": "orchestrator claude-fable-5", "evidence": "session-3 records + journal 19:39-20:42Z; work orders _run/o2-execute/S2-FIX-16-18-WORKORDER.md + S2-FIX-16-18-LOOP2.md"},
-    {"id": "F-S2-17", "severity": "high", "phase": "paced-run session 3", "verdict": "UPHELD", "summary": "normalize_cite strips only bare (YYYY) tails — circuit-style '(9th Cir. 2002)' parentheticals survive, so the citation key can NEVER match for COA/state roster rows (silent corpus-wide degradation; produced the Benn false flag with F-S2-16)", "fix": "strip any trailing parenthetical containing a year", "status": "fixed", "verified": "loop-3 re-review + self-test fixtures", "adjudicated_by": "orchestrator claude-fable-5"},
-    {"id": "F-S2-18", "severity": "high", "phase": "paced-run session 3", "verdict": "UPHELD", "summary": "single case_name-filtered identity search, no fallback ladder before not_found — Birchfield v. North Dakota zero-hit because CL's canonical caseName is the mangled consolidated caption 'Birchfield v. N. Dakota. William Robert Bernard' (merits cluster 3216497)", "fix": "fallback ladder on zero-hit: q=caption -> citation=expected -> docket+court, each rung journaled (R7 cross-check trail), <=3 cluster fetches/rung, viable-only termination; verified live via CL-MCP spot-check lane (q-query rank 3/14, citation-query rank 1/2)", "status": "fixed", "verified": "loop-3 re-review + self-test fixtures", "adjudicated_by": "orchestrator claude-fable-5"}
+    {
+      "id": "F-S2-01",
+      "severity": "high",
+      "verdict": "UPHELD",
+      "summary": "resume was run-id-scoped — every relaunch re-burns treatment quota",
+      "fix": "stable manifest build_id + default resume from manifest lane_status + journal",
+      "status": "fixed",
+      "verified": "round-2 FIXED"
+    },
+    {
+      "id": "F-S2-02",
+      "severity": "high",
+      "verdict": "UPHELD",
+      "summary": "skipped identity step fell through to not_found",
+      "fix": "load existing record / replay journaled selection; missing replay blocks",
+      "status": "fixed",
+      "verified": "round-2 FIXED"
+    },
+    {
+      "id": "F-S2-03",
+      "severity": "high",
+      "verdict": "UPHELD",
+      "summary": "no partial cursors mid-treatment-lane; kill re-burns scanned pages",
+      "fix": "journal partial(cursor) per page before next call; session expiry inside loop",
+      "status": "fixed",
+      "verified": "round-2 FIXED"
+    },
+    {
+      "id": "F-S2-04",
+      "severity": "high",
+      "verdict": "UPHELD",
+      "summary": "generic extract_id let cluster_id reach /opinions/ (the A1 scar)",
+      "fix": "opinion-id-only extractors; cluster_id-only dicts rejected",
+      "status": "fixed",
+      "verified": "round-2 FIXED"
+    },
+    {
+      "id": "F-S2-05",
+      "severity": "high",
+      "verdict": "UPHELD",
+      "summary": "builder wrote verified alongside unverified treatment (schema-invalid; A13 unapplied)",
+      "fix": "builder never self-verifies; migration table actually seeds Field-I; under_review until R15 gates",
+      "status": "fixed",
+      "verified": "round-2 FIXED"
+    },
+    {
+      "id": "F-S2-06",
+      "severity": "high",
+      "verdict": "UPHELD",
+      "summary": "40 manifest rows carried circuit/state-high/state-app outside the schema court enum — lane filters dead",
+      "fix": "single court-class normalizer at manifest load + search + precedence + binding filters; manifest migrated in place",
+      "status": "fixed",
+      "verified": "round-2 FIXED (bad_levels [])"
+    },
+    {
+      "id": "F-S2-07",
+      "severity": "high",
+      "verdict": "UPHELD",
+      "summary": "token bucket allowed 27-call first minute (literal ≤14/min violated)",
+      "fix": "capacity-1 paced limiter at 60/rate+epsilon; same shape for analyze_citations",
+      "status": "fixed",
+      "verified": "round-2 FIXED (burst math re-done)"
+    },
+    {
+      "id": "F-S2-08",
+      "severity": "med",
+      "verdict": "UPHELD",
+      "summary": "citation-step downgrade masked fabrication_suspected/not_found/blocked",
+      "fix": "fail-closed status preservation in set_record_status",
+      "status": "fixed",
+      "verified": "round-2 FIXED"
+    },
+    {
+      "id": "F-S2-09",
+      "severity": "med",
+      "verdict": "UPHELD",
+      "summary": "lane cap hits journaled but absent from record derivation trail",
+      "fix": "cap_hit + final_cursor + audit_needed stored in treatment.derivation[lane]",
+      "status": "fixed",
+      "verified": "round-2 FIXED"
+    },
+    {
+      "id": "F-S2-10",
+      "severity": "high",
+      "verdict": "UPHELD",
+      "summary": "loop-2 regression: new-schema pre-seeded treatment (Belton/Smith planning projections) fell to blocked/unverified — seeder keyed only legacy status",
+      "fix": "legacy-status-first, then valid field_i_validity accepted with overrides/dates carried (under_review); neither-key/unverified -> blocked per A13(a); self-test on real frontmatter",
+      "status": "fixed",
+      "verified": "round-3 FIXED; CLEAR-TO-SMOKE: yes",
+      "loops": 3
+    },
+    {
+      "id": "F-S2-16",
+      "severity": "high",
+      "phase": "paced-run session 3",
+      "verdict": "UPHELD",
+      "summary": "canonical_caption_match = exact slug equality, hard-gating ABOVE the passed two-key — false fabrication_suspected on wiki-short captions (Bivens/Earls/Brower: two-key PASS, correct clusters 108375/121171/112218)",
+      "fix": "order-sensitive per-side token containment vs {case_name, case_name_full, case_name_short}; containment-fail + two-key-pass -> under_review + caption_mismatch_canonical warning; containment-fail + two-key-incomplete -> fabrication_suspected unchanged; reversed-caption (Adams/Williams) fixture must still flag",
+      "status": "fixed",
+      "verified": "loop-3 re-review FIXED; orchestrator ran self-test suite green",
+      "loops": 3,
+      "loop2_findings": "F-S2-16R-01 fallback rungs unbounded + premature ladder stop (cap 3 clusters/rung, viable-only termination, best-so-far last resort) · F-S2-16R-02 readjudication left stale payload (empty-shell rebuild, roster-only preserves, field-level journaling) · F-S2-16R-03 self-test gaps (bounded-call + continuation + exhaustion + stale-cluster fixtures) — all UPHELD, fixed, re-verified with file:line evidence",
+      "adjudicated_by": "orchestrator claude-fable-5",
+      "evidence": "session-3 records + journal 19:39-20:42Z; work orders _run/o2-execute/S2-FIX-16-18-WORKORDER.md + S2-FIX-16-18-LOOP2.md"
+    },
+    {
+      "id": "F-S2-17",
+      "severity": "high",
+      "phase": "paced-run session 3",
+      "verdict": "UPHELD",
+      "summary": "normalize_cite strips only bare (YYYY) tails — circuit-style '(9th Cir. 2002)' parentheticals survive, so the citation key can NEVER match for COA/state roster rows (silent corpus-wide degradation; produced the Benn false flag with F-S2-16)",
+      "fix": "strip any trailing parenthetical containing a year",
+      "status": "fixed",
+      "verified": "loop-3 re-review + self-test fixtures",
+      "adjudicated_by": "orchestrator claude-fable-5"
+    },
+    {
+      "id": "F-S2-18",
+      "severity": "high",
+      "phase": "paced-run session 3",
+      "verdict": "UPHELD",
+      "summary": "single case_name-filtered identity search, no fallback ladder before not_found — Birchfield v. North Dakota zero-hit because CL's canonical caseName is the mangled consolidated caption 'Birchfield v. N. Dakota. William Robert Bernard' (merits cluster 3216497)",
+      "fix": "fallback ladder on zero-hit: q=caption -> citation=expected -> docket+court, each rung journaled (R7 cross-check trail), <=3 cluster fetches/rung, viable-only termination; verified live via CL-MCP spot-check lane (q-query rank 3/14, citation-query rank 1/2)",
+      "status": "fixed",
+      "verified": "loop-3 re-review + self-test fixtures",
+      "adjudicated_by": "orchestrator claude-fable-5"
+    },
+    {
+      "id": "F-S2-19",
+      "severity": "med",
+      "phase": "paced-run session 4",
+      "verdict": "UPHELD",
+      "summary": "caption token containment has no legal-abbreviation normalization — CL Pa. captions (Com. v. X) and T6-class abbreviations (Bd./Ed./N.) fail containment (Commonwealth v. Herlth false fabrication_suspected; Birchfield cosmetic warning)",
+      "fix": "deterministic contraction table in caption_token_set (contract-only, both sides; county/company non-colliding; 1-char directionals survive filtering)",
+      "status": "fixed",
+      "verified": "single-loop review CLEAR-TO-RELAUNCH: yes (no findings); orchestrator ran self-test suite green",
+      "adjudicated_by": "orchestrator claude-fable-5"
+    },
+    {
+      "id": "F-S2-20",
+      "severity": "med",
+      "phase": "paced-run session 4",
+      "verdict": "UPHELD",
+      "summary": "cite equality is punctuation/case-sensitive — roster neutral-cite styling (2026 PA Super 114) never matches CL (2026 Pa. Super. 114)",
+      "fix": "citation_compare_key wrapper: casefold + strip periods + collapse whitespace after parenthetical strip, digits exact; comparison-key only (no leakage into stored/display forms, reviewer-verified)",
+      "status": "fixed",
+      "verified": "single-loop review CLEAR-TO-RELAUNCH: yes; self-test fixtures",
+      "adjudicated_by": "orchestrator claude-fable-5"
+    }
   ],
   "roster_delta_attribution": {
     "pages": "457→458: United States v. Smith (2024) authored at the S6 interview (roster row self-closed)",

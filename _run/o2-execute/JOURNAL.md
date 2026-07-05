@@ -271,6 +271,23 @@ Bivens/Earls/Brower → under_review (citation+party-text) · Benn → under_rev
 "Lambert" absent from opinion body is data-truth) · Birchfield → under_review via the fallback
 ladder (cluster 3216497) with caption_mismatch_canonical warning.
 
+### S2 session-4 gate: PASS — F-S2-16/17/18 live-validated; F-S2-19/20 micro-loop (2026-07-04)
+
+Session 4 (150 min, 1,310 calls, 4,741 cumulative vs ~23k, 0×429, min 4s/median 5s): **all five
+readjudicated rows landed exactly as predicted** — Bivens/Earls/Brower under_review via
+citation+party-text on the correct clusters, Benn under_review name+docket (party-absence is
+data-truth), Birchfield under_review via the fallback ladder to merits cluster 3216497. ~32 new
+completions; lake at 87 under_review / 463 pending (48b601b). One new flag, adjudicated FP with
+two NEW small gaps (the F-S2-16/17/18 machinery itself behaved correctly — ladder found the
+right cluster, fail-closed held): **F-S2-19** caption containment lacks legal-abbreviation
+normalization (CL's "Com. v. Herlth, J." vs "Commonwealth v. Herlth"; T6 class) and **F-S2-20**
+cite equality is punctuation/case-sensitive ("2026 PA Super 114" vs CL "2026 Pa. Super. 114").
+Fixed via deterministic contraction table + comparison-key wrapper (no stored-form leakage,
+reviewer-verified); single-loop review CLEAR-TO-RELAUNCH: yes, no findings; orchestrator ran
+the self-test suite green independently. Session 5 relaunches with
+`--readjudicate "Commonwealth v. Herlth"` (expected: under_review, citation+party-text,
+cluster 10870804).
+
 ### ⚠️ DEVIATION — pool storage root (user-visible, reversible)
 
 The signed pool root `/Volumes/AIStore2` (S2 A10) does not exist; the AIStore2 APFS volume is
