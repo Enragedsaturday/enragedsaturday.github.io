@@ -1,0 +1,75 @@
+#!/usr/bin/env bash
+# Spec-completion CodeRabbit gate (RUNBOOK §5 standing amendment, 2026-07-05).
+#
+# Runs a headless CodeRabbit CLI review of COMMITTED changes in a detached git
+# worktree pinned to the spec-close commit, so the live builder working tree
+# (S2's paced lane journals/caches/records) is never touched and the review is
+# deterministic even while the build keeps moving. Scope is enforced by the
+# repo-root .coderabbit.yaml path filters (code paths only — never the lake,
+# content/, or run ledgers).
+#
+# Usage: scripts/gates/coderabbit_gate.sh <SPEC-ID> [ref] [base]
+#   SPEC-ID  e.g. S2 — names the artifact
+#   ref      commit to review as of (default HEAD)
+#   base     branch or commit to diff against (default main; falls back to
+#            origin/main if no local main)
+#
+# Artifact: _run/gates/<SPEC-ID>-coderabbit-<shortsha>.md
+# Exit: non-zero only on mechanical failure (CLI/worktree). Findings are NOT an
+# exit condition — they are adjudicated find→adjudicate→fix (loop-cap-3 →
+# _review-needed/), never auto-applied. Writer≠approver holds.
+set -euo pipefail
+
+SPEC="${1:?usage: coderabbit_gate.sh <SPEC-ID> [ref] [base]}"
+REF="${2:-HEAD}"
+BASE="${3:-main}"
+
+CODERABBIT_BIN="${CODERABBIT_BIN:-$(command -v coderabbit || echo "$HOME/.local/bin/coderabbit")}"
+REPO_ROOT="$(git rev-parse --show-toplevel)"
+SHA="$(git -C "$REPO_ROOT" rev-parse --short "$REF")"
+OUT_DIR="$REPO_ROOT/_run/gates"
+OUT="$OUT_DIR/${SPEC}-coderabbit-${SHA}.md"
+WT="$(mktemp -d "${TMPDIR:-/tmp}/cr-gate-${SPEC}-XXXXXX")"
+mkdir -p "$OUT_DIR"
+
+cleanup() {
+  git -C "$REPO_ROOT" worktree remove --force "$WT" 2>/dev/null || true
+  rm -rf "$WT" 2>/dev/null || true
+}
+trap cleanup EXIT
+
+# mktemp created the dir; worktree add needs it absent.
+rmdir "$WT"
+git -C "$REPO_ROOT" worktree add --detach "$WT" "$SHA" >/dev/null 2>&1
+
+# Branch base -> --base; anything else that resolves to a commit -> --base-commit.
+if git -C "$WT" rev-parse --verify --quiet "refs/heads/${BASE}" >/dev/null; then
+  BASE_ARGS=(--base "$BASE")
+elif git -C "$WT" rev-parse --verify --quiet "refs/remotes/origin/${BASE}" >/dev/null; then
+  BASE_ARGS=(--base "origin/${BASE}")
+elif git -C "$WT" rev-parse --verify --quiet "${BASE}^{commit}" >/dev/null; then
+  BASE_ARGS=(--base-commit "$BASE")
+else
+  echo "coderabbit_gate: base '${BASE}' resolves to neither branch nor commit" >&2
+  exit 2
+fi
+
+{
+  echo "# CodeRabbit gate — ${SPEC} @ ${SHA} (base: ${BASE})"
+  echo ""
+  echo "- run: $(date -u +%Y-%m-%dT%H:%M:%SZ)"
+  echo "- cli: $("$CODERABBIT_BIN" --version 2>/dev/null || echo unknown)"
+  echo "- mode: --plain --type committed ${BASE_ARGS[*]}"
+  echo "- scope: .coderabbit.yaml path filters (code only)"
+  echo ""
+  echo '```'
+} > "$OUT"
+
+set +e
+(cd "$WT" && "$CODERABBIT_BIN" review --plain --type committed "${BASE_ARGS[@]}") >> "$OUT" 2>&1
+RC=$?
+set -e
+echo '```' >> "$OUT"
+
+echo "coderabbit_gate: exit=${RC} artifact=${OUT}"
+exit "$RC"

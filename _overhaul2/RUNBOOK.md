@@ -545,6 +545,36 @@ graded-authority entry model (§5), the AI guardrails G1–G10 (§6), the reader
 (§7), and the style-manual + term-register + CI approach (§8). See **`CL-DATA-INVENTORY.md`** for the
 exact CourtListener fields/calls per data element (the S2 schema).
 
+**Spec-completion CodeRabbit gate (standing amendment — user decision 2026-07-05).** An O1 lived
+practice (session-level CodeRabbit review) that never landed in the O1 artifacts and was therefore
+missed when this kit was mined from them; restored and codified here. At each spec's completion
+gate — after its structural gates pass, **before** its outputs flip to their accepted state and
+before S9 reads from them — run the CodeRabbit CLI review over the spec's **code deliverables
+only**:
+- **In scope:** `scripts/**` (incl. `_overhaul2/scripts/`), `quartz/**`, repo config/CI. Per spec:
+  **S2** `scripts/s2/` + the LINT-S2 lints · **S4** explorer/search/pill TS+SCSS · **S5**
+  `caseHelpers.ts`/components + `convert_tables.py` · **S6** `audit_cases.py` + LINT-17 + R8
+  pipeline tooling · **S8** `scripts/s8/` + the lint5/lint7 rewrites · **S9** the lint roster 1–30
+  + invariant script · **S1/S3** lint extensions (ride along with their wave). **S7 ships no code —
+  no gate.**
+- **Never in scope:** `_overhaul2/lake/**`, `content/**` (authored prose + projected frontmatter),
+  `_run/**`, ledgers/journals/specs. Enforced mechanically by the repo-root `.coderabbit.yaml`
+  path filters — legal content is the S9 panel's jurisdiction, not a code reviewer's.
+- **Mechanics (non-interrupting, headless):** `scripts/gates/coderabbit_gate.sh <SPEC-ID>` — pins a
+  **detached worktree** at the spec-close commit (the live builder working tree and its paced CL
+  lane are never touched), runs `coderabbit review --plain --type committed --base main`, writes
+  `_run/gates/<SPEC-ID>-coderabbit-<sha>.md`. Uses the CodeRabbit credential — **zero CL quota,
+  no lane contention**; runnable by any lane. This is NOT a human pause (§0 register unchanged);
+  it runs autonomously and only its findings-adjudication can escalate.
+- **Findings:** code-path findings are **blocking but adjudicated** — find→adjudicate→fix,
+  loop-cap-3 → `_review-needed/`; never auto-applied (writer≠approver, PRACTICES §1). CodeRabbit
+  is a third mechanical reviewer feeding the existing machinery, not a substitute for the
+  per-fix-loop writer≠checker cycles (unchanged) or the S9 release gate (still final).
+- **PR layer:** the standing draft PR (`overhaul2/execute` → `main`) is the human-visible vehicle
+  and manual escape hatch. The CodeRabbit **GitHub App is not installed** on the fork, so the CLI
+  lane is the enforcement; if the App is installed later, the same PR auto-reviews under the same
+  `.coderabbit.yaml` filters.
+
 ## 6. Reference inputs & key paths
 - **O2 planning:** `_overhaul2/RUNBOOK.md` (this) · `PRACTICES.md` · `CL-DATA-INVENTORY.md` ·
   `specs/` (outputs). Briefs: `~/briefs/2026-07-01-cssi-overhaul-2-findings-and-bundle.html`,

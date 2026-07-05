@@ -1,0 +1,42 @@
+# CodeRabbit config — CSSI Overhaul-2 spec-completion gate (RUNBOOK §5 standing
+# amendment, 2026-07-05). Scope: CODE deliverables only. The data lake, authored
+# legal prose, run ledgers, and planning markdown are NEVER CodeRabbit's to
+# review — legal content is verified by the S9 pipeline (writer≠checker panel),
+# not a code reviewer.
+language: "en-US"
+reviews:
+  # Exclusions only — everything not excluded (scripts/**, quartz/**,
+  # _overhaul2/scripts/**, repo config/CI) is in scope.
+  path_filters:
+    - "!_overhaul/**"            # O1 archive
+    - "!_overhaul2/lake/**"      # the data lake (S2 records/manifest/schema)
+    - "!_overhaul2/points/**"    # points-of-law registry data
+    - "!_overhaul2/s9-demo/**"   # signed demo exhibits
+    - "!_overhaul2/specs/**"     # signed specs (panel jurisdiction)
+    - "!_overhaul2/wrappers/**"
+    - "!_overhaul2/*.md"         # runbook/practices/journals/briefs
+    - "!_overhaul2/*.json"       # url-inventory etc.
+    - "!_overhaul2/*.html"
+    - "!content/**"              # authored prose + projected frontmatter
+    - "!_run/**"                 # run artifacts/ledgers
+    - "!_review-needed/**"
+    - "!logs/**"
+    - "!public/**"               # build output
+    - "!**/*.jsonl"              # journals wherever they live
+  path_instructions:
+    - path: "scripts/**"
+      instructions: >-
+        Build/gate tooling for a verified legal-authority pipeline. Prioritize:
+        fail-closed behavior (errors must never pass silently as success),
+        resumability/idempotence (journal + cache driven), API-quota safety
+        (pacing, no duplicate calls on resume), and correctness of comparison/
+        normalization logic. Flag any path where an exception or empty result
+        could be recorded as a verified state.
+    - path: "quartz/**"
+      instructions: >-
+        TypeScript/SCSS on a Quartz fork. Prioritize type correctness,
+        accessibility, and not breaking upstream-merge posture (prefer additive
+        components over invasive core edits).
+  auto_review:
+    enabled: true
+    drafts: true # the standing O2 EXECUTE PR is a draft; review it anyway if the GitHub App is ever installed

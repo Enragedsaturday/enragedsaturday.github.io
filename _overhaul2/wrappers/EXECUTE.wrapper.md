@@ -72,6 +72,11 @@ Codex recipes: reviewer `codex exec -s read-only …` / discovery `-c tools.web_
 (the root `--search` flag does NOT pass through `exec`) / builder per S2 R10 — all stdin
 `/dev/null`, caller-side timeout (COH-31). The officer-BLUF layer stays banned (S1 §2.2/R6).
 The 8 enumerated pauses (§0) are the only stops; report each with evidence attached.
+**Spec-completion CodeRabbit gate (standing amendment 2026-07-05 — RUNBOOK §5):** at each spec
+close, before outputs flip to accepted state, run `scripts/gates/coderabbit_gate.sh <SPEC-ID>`
+(detached-worktree, headless, code paths only per `.coderabbit.yaml`; zero CL quota; NOT a
+human pause). Findings on code paths are blocking but adjudicated find→adjudicate→fix,
+loop-cap-3 → `_review-needed/` — never auto-applied. S7 ships no code — no gate.
 **Lane-outage rule (§0 pause #8 — user decision 2026-07-04):** on any agent-lane failure
 (realistically Codex), attempt self-resolution first — retry/backoff, fresh `codex exec`
 session, config/timeout fixes, `codex --version` sanity; a failure requiring interactive
