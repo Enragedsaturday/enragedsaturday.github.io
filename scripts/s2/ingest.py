@@ -1280,10 +1280,18 @@ def court_search_id(record):
     return None
 
 
+def identity_search_case_name(record):
+    raw = record.get("title") or record.get("caption") or record.get("record_id")
+    if raw is None:
+        return None
+    text = str(raw)
+    return strip_trailing_year_parenthetical(text) or text.strip()
+
+
 def identity_search_params(record):
     params = {
         "type": "o",
-        "case_name": record.get("title") or record.get("caption") or record.get("record_id"),
+        "case_name": identity_search_case_name(record),
         "order_by": "score desc",
         "page_size": 10,
     }
@@ -1388,11 +1396,12 @@ def identity_candidate_evidence(record, result, cluster, expected_cite):
     citation_match = citation_matches_expected(cluster, expected_cite)
     year_match = identity_year_matches(record, result, cluster)
     court_match = identity_court_matches(record, result, cluster)
+    has_expected_cite = bool(normalize_cite(expected_cite))
     return {
         "expected_citation_match": citation_match,
         "year_match": year_match,
         "court_match": court_match,
-        "viable": citation_match or (year_match and court_match),
+        "viable": citation_match or (not has_expected_cite and year_match and court_match),
     }
 
 
@@ -3379,6 +3388,120 @@ class BirchfieldFallbackClient:
         }
 
 
+class LewisDisambiguatorFallbackClient:
+    def __init__(self):
+        self.search_calls = []
+        self.cluster_calls = []
+
+    def search(self, params, cache=True, record_id=None, step=None):
+        self.search_calls.append({"params": dict(params), "step": step})
+        if params.get("case_name"):
+            return {"count": 0, "results": [], "next": None}
+        if params.get("q"):
+            return {
+                "count": 3,
+                "results": [
+                    {
+                        "cluster_id": cluster_id,
+                        "caseName": case_name,
+                        "dateFiled": "1966-12-05",
+                        "court": "scotus",
+                        "opinions": [{"id": 7000 + i, "type": "020lead"}],
+                    }
+                    for i, (cluster_id, case_name) in enumerate([
+                        (107303, "United States v. Demko"),
+                        (107304, "Wrong v. United States"),
+                        (107305, "Lewis v. Wrong"),
+                    ])
+                ],
+                "next": None,
+            }
+        if params.get("citation") == "385 U.S. 206":
+            return {
+                "count": 1,
+                "results": [{
+                    "cluster_id": 385206,
+                    "caseName": "Lewis v. United States",
+                    "dateFiled": "1966-12-05",
+                    "court": "scotus",
+                    "opinions": [{"id": 7206, "type": "020lead"}],
+                    "sibling_ids": [7206],
+                }],
+                "next": None,
+            }
+        raise AssertionError("unexpected Lewis fallback params %r" % params)
+
+    def get_cluster(self, cluster_id, record_id=None, step="identity.cluster"):
+        cluster_id = int(cluster_id)
+        self.cluster_calls.append({"cluster_id": cluster_id, "step": step})
+        wrong_pages = {
+            107303: ("United States v. Demko", 149),
+            107304: ("Wrong v. United States", 150),
+            107305: ("Lewis v. Wrong", 151),
+        }
+        if cluster_id in wrong_pages:
+            case_name, page = wrong_pages[cluster_id]
+            return {
+                "id": cluster_id,
+                "case_name": case_name,
+                "case_name_short": case_name,
+                "case_name_full": case_name,
+                "date_filed": "1966-12-05",
+                "court": "scotus",
+                "citations": [{"volume": 385, "reporter": "U.S.", "page": page, "type": 1}],
+                "sub_opinions": [{"id": cluster_id + 1000, "type": "020lead"}],
+            }
+        return {
+            "id": cluster_id,
+            "case_name": "Lewis v. United States",
+            "case_name_short": "Lewis",
+            "case_name_full": "Lewis v. United States",
+            "date_filed": "1966-12-05",
+            "court": "scotus",
+            "citations": [{"volume": 385, "reporter": "U.S.", "page": 206, "type": 1}],
+            "sub_opinions": [{"id": 7206, "type": "020lead"}],
+        }
+
+
+class NoCiteFallbackClient:
+    def __init__(self):
+        self.search_calls = []
+        self.cluster_calls = []
+
+    def search(self, params, cache=True, record_id=None, step=None):
+        self.search_calls.append({"params": dict(params), "step": step})
+        if params.get("case_name"):
+            return {"count": 0, "results": [], "next": None}
+        if params.get("q"):
+            return {
+                "count": 1,
+                "results": [{
+                    "cluster_id": 202601,
+                    "caseName": "Recent v. Case",
+                    "dateFiled": "2026-01-15",
+                    "court": "scotus",
+                    "opinions": [{"id": 2601, "type": "020lead"}],
+                    "sibling_ids": [2601],
+                }],
+                "next": None,
+            }
+        raise AssertionError("unexpected no-cite fallback params %r" % params)
+
+    def get_cluster(self, cluster_id, record_id=None, step="identity.cluster"):
+        cluster_id = int(cluster_id)
+        self.cluster_calls.append({"cluster_id": cluster_id, "step": step})
+        return {
+            "id": cluster_id,
+            "case_name": "Recent v. Case",
+            "case_name_short": "Recent",
+            "case_name_full": "Recent v. Case",
+            "date_filed": "2026-01-15",
+            "court": "scotus",
+            "citations": [],
+            "sub_opinions": [{"id": 2601, "type": "020lead"}],
+        }
+
+
 class ExhaustedFallbackClient:
     def __init__(self):
         self.search_calls = []
@@ -3570,6 +3693,96 @@ def self_test_identity_caption_and_cite_fixtures():
 
 
 def self_test_identity_fallback_ladder():
+    lewis_source = {
+        "record_id": "Lewis v. United States (1966)",
+        "title": "Lewis v. United States (1966)",
+        "expected_citation": "385 U.S. 206 (1966)",
+        "court_level": "scotus",
+        "year": 1966,
+        "docket": "36",
+    }
+    lewis_params = identity_search_params(lewis_source)
+    assert lewis_params["case_name"] == "Lewis v. United States"
+    assert lewis_params["court"] == "scotus"
+    assert lewis_params["filed_after"] == "1966-01-01"
+    assert lewis_params["filed_before"] == "1966-12-31"
+    lewis_fallbacks = dict(identity_fallback_params(lewis_source, lewis_source["expected_citation"]))
+    assert lewis_fallbacks["q"]["q"] == "Lewis v. United States"
+    assert lewis_fallbacks["q"]["court"] == "scotus"
+    assert lewis_fallbacks["q"]["filed_after"] == "1966-01-01"
+    assert lewis_fallbacks["q"]["filed_before"] == "1966-12-31"
+    assert "case_name" not in lewis_fallbacks["q"]
+    assert lewis_source["record_id"] == "Lewis v. United States (1966)"
+    assert lewis_source["title"] == "Lewis v. United States (1966)"
+
+    lewis_path = "/tmp/s2-identity-lewis-disambiguator-self-test.jsonl"
+    try:
+        os.unlink(lewis_path)
+    except FileNotFoundError:
+        pass
+    lewis_journal = Journal(lewis_path, "selftest")
+    lewis_client = LewisDisambiguatorFallbackClient()
+    lewis_result, lewis_cluster, lewis_alternates = resolve_identity(
+        lewis_source,
+        lewis_client,
+        lewis_journal,
+        ResumeState([]),
+        "selftest",
+    )
+    assert lewis_result["cluster_id"] == 385206
+    assert lewis_cluster["id"] == 385206
+    assert lewis_alternates == []
+    assert [call["step"] for call in lewis_client.search_calls] == [
+        "identity.search",
+        "identity.search.fallback",
+        "identity.search.fallback",
+    ]
+    assert lewis_client.search_calls[0]["params"]["case_name"] == "Lewis v. United States"
+    assert lewis_client.search_calls[1]["params"]["q"] == "Lewis v. United States"
+    assert lewis_client.search_calls[2]["params"]["citation"] == "385 U.S. 206"
+    assert [call["cluster_id"] for call in lewis_client.cluster_calls] == [107303, 107304, 107305, 385206]
+    lewis_rows = [row for row in lewis_journal.rows() if row.get("step") == "identity.search.fallback"]
+    assert [
+        (row.get("rung"), row.get("result_count"), row.get("clusters_fetched"), row.get("viable"))
+        for row in lewis_rows
+    ] == [("q", 3, 3, False), ("citation", 1, 1, True)]
+    lewis_identity_rows = [row for row in lewis_journal.rows() if row.get("step") == "identity"]
+    assert lewis_identity_rows[-1]["search_rung"] == "citation"
+
+    no_cite_path = "/tmp/s2-identity-no-cite-year-court-self-test.jsonl"
+    try:
+        os.unlink(no_cite_path)
+    except FileNotFoundError:
+        pass
+    no_cite_journal = Journal(no_cite_path, "selftest")
+    no_cite_source = {
+        "record_id": "recent-no-cite",
+        "title": "Recent v. Case (2026)",
+        "court_level": "scotus",
+        "year": 2026,
+    }
+    no_cite_client = NoCiteFallbackClient()
+    no_cite_result, no_cite_cluster, no_cite_alternates = resolve_identity(
+        no_cite_source,
+        no_cite_client,
+        no_cite_journal,
+        ResumeState([]),
+        "selftest",
+    )
+    assert no_cite_result["cluster_id"] == 202601
+    assert no_cite_cluster["id"] == 202601
+    assert no_cite_alternates == []
+    assert [call["step"] for call in no_cite_client.search_calls] == ["identity.search", "identity.search.fallback"]
+    assert no_cite_client.search_calls[0]["params"]["case_name"] == "Recent v. Case"
+    assert no_cite_client.search_calls[1]["params"]["q"] == "Recent v. Case"
+    no_cite_rows = [row for row in no_cite_journal.rows() if row.get("step") == "identity.search.fallback"]
+    assert [
+        (row.get("rung"), row.get("result_count"), row.get("clusters_fetched"), row.get("viable"))
+        for row in no_cite_rows
+    ] == [("q", 1, 1, True)]
+    no_cite_identity_rows = [row for row in no_cite_journal.rows() if row.get("step") == "identity"]
+    assert no_cite_identity_rows[-1]["search_rung"] == "q"
+
     path = "/tmp/s2-identity-fallback-self-test.jsonl"
     try:
         os.unlink(path)
@@ -3707,6 +3920,34 @@ class InterruptAfterIdentityClient(SelfTestClient):
         return text
 
 
+class NoCallResumeClient:
+    def __init__(self):
+        self.calls = []
+        self.search_calls = []
+        self.url_calls = []
+
+    def _unexpected(self, method):
+        self.calls.append(method)
+        raise AssertionError("resume-stability fixture made unexpected %s call" % method)
+
+    def search(self, params, cache=True, record_id=None, step=None):
+        self.search_calls.append({"params": dict(params), "step": step})
+        self._unexpected("search")
+
+    def get_json_url(self, url, cache=True, record_id=None, step=None):
+        self.url_calls.append({"url": url, "step": step})
+        self._unexpected("get_json_url")
+
+    def get_cluster(self, cluster_id, record_id=None, step="identity.cluster"):
+        self._unexpected("get_cluster")
+
+    def opinion_ref(self, opinion_id, source_array, context=None):
+        self._unexpected("opinion_ref")
+
+    def text_for_opinion(self, opinion_ref, record_id=None, step="opinion_text"):
+        self._unexpected("text_for_opinion")
+
+
 def self_test_bounded_progeny():
     tmp = tempfile.mkdtemp(prefix="s2-progeny-selftest-")
     try:
@@ -3798,6 +4039,72 @@ def self_test_identity_skip_preserves_record():
         assert second["status"] != "not_found"
         assert before == after
         assert calls_after == calls_before
+
+        lucky_sources = [
+            ("Henry v. United States (1959)", "361 U.S. 98 (1959)", 1959),
+            ("Chapman v. United States (1961)", "365 U.S. 610 (1961)", 1961),
+            ("Davis v. United States (2011)", "564 U.S. 229 (2011)", 2011),
+            ("Harris v. United States (1968)", "390 U.S. 234 (1968)", 1968),
+        ]
+        for index, (record_id, expected_citation, year) in enumerate(lucky_sources, start=1):
+            disambiguated_source = {
+                "record_id": record_id,
+                "title": record_id,
+                "expected_citation": expected_citation,
+                "court_level": "scotus",
+                "year": year,
+            }
+            record = empty_record_shell(record_id, disambiguated_source, "selftest")
+            record["status"] = "under_review"
+            record["identity"].update({
+                "cluster_id": 5000 + index,
+                "lead_opinion_id": 6000 + index,
+                "sibling_ids": [6000 + index],
+                "identity_method": "citation+party-text",
+                "expected_citation_found": True,
+                "party_name_in_text": True,
+                "canonical_name_match": True,
+            })
+            record["citations"]["display"] = normalize_cite(expected_citation)
+            record["citations"]["all"] = [{"cite": normalize_cite(expected_citation), "source": "selftest"}]
+            record["progeny"]["complete_query"] = "cites:(%s)" % (6000 + index)
+            record["progeny"]["citation_count"] = index
+            record["treatment"]["field_i_validity"] = "good_law"
+            write_case_record(paths, record)
+            journal.append(record_id=record_id, step="identity", status="complete", selected_cluster_id=5000 + index)
+            journal.append(record_id=record_id, step="citations", status="complete")
+            journal.append(record_id=record_id, step="pinpoints", status="complete")
+            journal.append(record_id=record_id, step="progeny", status="complete")
+            for lane, _cap in TREATMENT_LANES:
+                journal.append(record_id=record_id, step="treatment", lane=lane, status="complete")
+
+        no_call_client = NoCallResumeClient()
+        completed_resume = ResumeState(journal.rows())
+        for record_id, expected_citation, year in lucky_sources:
+            disambiguated_source = {
+                "record_id": record_id,
+                "title": record_id,
+                "expected_citation": expected_citation,
+                "court_level": "scotus",
+                "year": year,
+            }
+            before = json.dumps(load_case_record(paths, record_id), sort_keys=True)
+            resumed_record = process_page_record(
+                disambiguated_source,
+                no_call_client,
+                paths,
+                precedence,
+                migration,
+                journal,
+                completed_resume,
+                "selftest",
+                SessionTimer(None),
+            )
+            after = json.dumps(load_case_record(paths, record_id), sort_keys=True)
+            assert resumed_record["status"] == "under_review"
+            assert "_ingest_interrupted" not in resumed_record
+            assert before == after
+        assert no_call_client.calls == []
     finally:
         shutil.rmtree(tmp)
 

@@ -309,3 +309,20 @@ cache/http, progeny, text, journal, logs, db). No verification guarantee is affe
 placement only; cache is regenerable/movable). **Remediation path:** grant Full Disk Access to
 the session's responsible app (or fix the volume's TCC), then rsync `~/cssi-lake/` →
 `/Users/Shared/AIStore/store2/cssi-lake/` and flip the constant. User notified.
+
+### S2 sessions 6–8 + F-S2-21/22 loop (2026-07-05)
+
+Sessions 6–7 gated clean (0 anomalies; 32 + 33 completions; journal-verified cumulative 7,970
+at session-7 close — builder reports now cite the journal call-log count). Session 8 (+35, lake
+219/330, 9,141 cumulative = 39.7%): one flag, **Lewis v. United States (1966)
+fabrication_suspected = wrong-candidate rejection** (fail-closed held; nothing wrong ingested).
+Adjudicated two defects: **F-S2-21** — the wiki year-disambiguator "(1966)" flowed raw into
+search params (case_name zero-hits; fallback q returned Demko/Hoffa/Catto noise; 8-row class,
+4 prior completions were q-rung luck: Henry/Chapman/Davis/Harris); **F-S2-22** — rung viability
+accepted year+court alone, so same-year same-court Demko (385 U.S. 149) terminated the ladder
+before the citation rung that finds Lewis precisely (385 U.S. 206, docket 36). Fixed
+(strip-params-only + citation-gated viability when expected cite exists; no-cite rows keep
+year+court per R2(b)); single-loop review CLEAR (298/309 added lines are fixtures, incl.
+resume-stability for the 4 lucky-path rows); orchestrator self-test green. Session 9 relaunches
+with `--readjudicate "Lewis v. United States (1966)"`; the 3 pending class rows (Mathis 1968,
+US v. Harris 1971, US v. Smith 2024) now de-risked ahead of the M's.
