@@ -343,3 +343,17 @@ capped at 3, baseline top-10 untouched (conservative scope, adjudicated); loop-3
 FIXED. Session 11 relaunches with `--readjudicate "Peters v. New York"` (expected: under_review
 via two-key on Sibron 107730 + caption_mismatch_canonical — the honest companion-case resting
 state for S6/S9).
+
+### S2 session 11 + F-S2-24 micro-loop (2026-07-05)
+
+Session 11: Peters readjudicated under_review/citation+party-text/107730 (Sibron) +
+caption_mismatch_canonical — F-S2-23 live-validated, consolidated-companion resting state
+landed. +35 completions; lake 335/214; 12,557 cumulative (54.6%). One flag, adjudicated FP:
+**Skinner v. Railway Labor Executives' Ass'n** — cite MATCHED and cluster 112219 correct, but
+containment failed on apostrophe styling (ass'n vs CL "Assn.") and the party-text key used the
+Bluebook abbreviation "ass'n", absent from opinion prose ("Association"). **F-S2-24**:
+apostrophe-normalized caption tokens (ASCII+curly) + T6 association→assn + abbreviation-aware
+party-term candidate set (last-word selection preserved). Single-loop review CLEAR, no
+findings; orchestrator self-test green. Session 12 relaunches with
+`--readjudicate "Skinner v. Railway Labor Executives' Ass'n"` (expected: under_review via
+citation+party-text on 112219, no caption warning).

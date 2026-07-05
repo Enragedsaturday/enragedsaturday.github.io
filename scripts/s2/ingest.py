@@ -261,6 +261,7 @@ CAPTION_TOKEN_CONTRACTIONS = {
     "univ": "univ",  # Preserve already-contracted university form.
     "insurance": "ins",  # Normalize full form to CL caption abbreviation.
     "ins": "ins",  # Preserve already-contracted insurance form.
+    "association": "assn",  # Bluebook T6 association abbreviation.
     "company": "co",  # Company may contract to co because county contracts to cty.
     "north": "n",  # Directional abbreviation; one-char outputs are retained.
     "south": "s",  # Directional abbreviation; one-char outputs are retained.
@@ -587,12 +588,16 @@ def first_party_terms(case_name):
     return terms
 
 
+def strip_apostrophes(value):
+    return str(value or "").replace("'", "").replace("\u2019", "").replace("\u2018", "")
+
+
 def caption_token_set(value):
     if not str(value or "").strip():
         return set()
     return {
         CAPTION_TOKEN_CONTRACTIONS.get(token, token)
-        for token in slugify(value).split("-")
+        for token in slugify(strip_apostrophes(value)).split("-")
         if token
     }
 
@@ -642,12 +647,28 @@ def canonical_caption_match_cluster(input_name, cluster, fallback_name=None):
     return False
 
 
+def party_term_candidates(term):
+    lowered = str(term or "").lower()
+    stripped = strip_apostrophes(lowered)
+    candidates = {candidate for candidate in (lowered, stripped) if candidate}
+    candidates.update(
+        full
+        for full, contraction in CAPTION_TOKEN_CONTRACTIONS.items()
+        if stripped and contraction == stripped
+    )
+    return candidates
+
+
 def missing_party_terms(case_name, text):
     terms = first_party_terms(case_name)
     if not terms:
         return []
     lowered = (text or "").lower()
-    return [term for term in terms if term not in lowered]
+    return [
+        term
+        for term in terms
+        if not any(candidate in lowered for candidate in party_term_candidates(term))
+    ]
 
 
 def recency_window_start(build_date=None, years=3):
@@ -3753,6 +3774,15 @@ def self_test_identity_caption_and_cite_fixtures():
         "Brower v. County of Inyo",
         "Brower Ex Rel. Estate of Caldwell v. County of Inyo",
     )
+    assert canonical_caption_match(
+        "Skinner v. Railway Labor Executives' Ass'n",
+        "Skinner v. Railway Labor Executives' Assn.",
+    )
+    assert party_term_candidates("ass'n") == {"ass'n", "assn", "association"}
+    assert party_term_candidates("skinner") == {"skinner"}
+    association_text = "Skinner challenged the testing program adopted by the Association."
+    assert "ass'n" not in association_text.lower()
+    assert text_names_parties("Skinner v. Railway Labor Executives' Ass'n", association_text)
     assert not canonical_caption_match("Adams v. Williams", "Williams v. Adams")
     assert not canonical_caption_match("County of Inyo", "Company of Inyo")
 
@@ -3859,6 +3889,42 @@ def self_test_identity_caption_and_cite_fixtures():
     assert birchfield_record["identity"]["identity_method"] == "citation+party-text"
     assert birchfield_record["identity"]["reason_code"] == "awaiting_r15_structural_gates"
     assert "input caption does not match CL canonical caption" not in birchfield_record["provenance"]["warnings"]
+
+    skinner_source = {
+        "record_id": "skinner-association",
+        "title": "Skinner v. Railway Labor Executives' Ass'n",
+        "expected_citation": "489 U.S. 602",
+        "court_level": "scotus",
+        "year": 1989,
+    }
+    skinner_record = empty_record_shell("skinner-association", skinner_source, "selftest")
+    skinner_cluster = {
+        "id": 112219,
+        "case_name": "Skinner v. Railway Labor Executives' Assn.",
+        "case_name_short": "Skinner",
+        "case_name_full": "Skinner v. Railway Labor Executives' Assn.",
+        "date_filed": "1989-03-21",
+        "court": "scotus",
+        "citations": [{"volume": 489, "reporter": "U.S.", "page": 602, "type": 1}],
+        "sub_opinions": [{"id": 5321, "type": "020lead"}],
+    }
+    skinner_text = "Skinner challenged the testing program adopted by the Association."
+    assert "ass'n" not in skinner_text.lower()
+    apply_identity(
+        skinner_record,
+        skinner_source,
+        identity_fixture_search_result(112219, 5321),
+        skinner_cluster,
+        [],
+        IdentityApplyClient(skinner_text),
+        journal,
+    )
+    assert skinner_record["status"] == "under_review"
+    assert skinner_record["identity"]["expected_citation_found"] is True
+    assert skinner_record["identity"]["party_name_in_text"] is True
+    assert skinner_record["identity"]["canonical_name_match"] is True
+    assert skinner_record["identity"]["identity_method"] == "citation+party-text"
+    assert "input caption does not match CL canonical caption" not in skinner_record["provenance"]["warnings"]
 
     reversed_source = {
         "record_id": "adams-reversed",
