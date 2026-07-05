@@ -288,7 +288,16 @@ the self-test suite green independently. Session 5 relaunches with
 `--readjudicate "Commonwealth v. Herlth"` (expected: under_review, citation+party-text,
 cluster 10870804).
 
-### ⚠️ DEVIATION — pool storage root (user-visible, reversible)
+### S2 session-5 gate: PASS clean (2026-07-05) — steady state holding
+
+Session 5 (1,093 calls, 5,834 cumulative vs ~23k, 0×429, min 4s/median 6s): Herlth
+readjudicated to under_review/citation+party-text/10870804 exactly as predicted (F-S2-19/20
+live-validated); 33 new completions; lake 119 under_review / 431 pending; Florida v. Meyers
+cursor-preserved at session limit. One not_found, **adjudicated TRUE**: Entick v. Carrington
+(1765, Court of Common Pleas, 19 How. St. Tr. 1029) is an English case outside CL's corpus —
+the fallback ladder exhausted honestly (q + citation rungs zero, journaled); R2(d)/R7 resting
+state correct; S7/S8/S9 source Entick off-CL. No fix loop. Cadence continues; journal entries
+stay compact while sessions gate clean.
 
 The signed pool root `/Volumes/AIStore2` (S2 A10) does not exist; the AIStore2 APFS volume is
 mounted at `/Users/Shared/AIStore/store2` but **TCC-blocked (EPERM) for every process in this
