@@ -570,7 +570,7 @@ only**:
   loop-cap-3 → `_review-needed/`; never auto-applied (writer≠approver, PRACTICES §1). CodeRabbit
   is a third mechanical reviewer feeding the existing machinery, not a substitute for the
   per-fix-loop writer≠checker cycles (unchanged) or the S9 release gate (still final).
-- **PR layer:** the standing draft PR (`overhaul2/execute` → `main`) is the human-visible vehicle
+- **PR layer:** the standing draft PR **#3** (`overhaul2/execute` → `main`) is the human-visible vehicle
   and manual escape hatch. The CodeRabbit **GitHub App is not installed** on the fork, so the CLI
   lane is the enforcement; if the App is installed later, the same PR auto-reviews under the same
   `.coderabbit.yaml` filters.
