@@ -1425,9 +1425,68 @@ def identity_viable_candidates(record, candidates, expected_cite):
     ]
 
 
-def identity_candidates(record, client, results, expected_cite, record_id, max_clusters=IDENTITY_PRIMARY_CLUSTER_LIMIT):
+def search_result_citations(result):
+    citations = result.get("citation") if isinstance(result, dict) else None
+    if citations in (None, ""):
+        return []
+    if isinstance(citations, (list, tuple)):
+        return citations
+    return [citations]
+
+
+def search_result_citation_matches_expected(result, expected_key):
+    if not expected_key:
+        return False
+    return any(citation_compare_key(citation) == expected_key for citation in search_result_citations(result))
+
+
+def identity_candidate_result_plan(results, expected_cite, max_clusters, prefilter_max_clusters=None):
+    expected_key = citation_compare_key(normalize_cite(expected_cite))
+    prefilter_matches = []
+    if expected_key:
+        prefilter_matches = [
+            result
+            for result in results
+            if search_result_citation_matches_expected(result, expected_key)
+        ]
+    if prefilter_matches:
+        limit = prefilter_max_clusters if prefilter_max_clusters is not None else max_clusters
+        candidate_results = prefilter_matches[:limit]
+    else:
+        candidate_results = results[:max_clusters]
+    prefilter_fetched_cluster_ids = []
+    if prefilter_matches:
+        for result in candidate_results:
+            cluster_id = extract_id(result.get("cluster_id") or result.get("cluster"))
+            if cluster_id is not None:
+                prefilter_fetched_cluster_ids.append(cluster_id)
+    prefilter_info = {
+        "citation_prefilter_matched_rows": len(prefilter_matches),
+        "citation_prefilter_fetched_cluster_ids": prefilter_fetched_cluster_ids,
+    }
+    return candidate_results, prefilter_info
+
+
+def identity_candidates(
+    record,
+    client,
+    results,
+    expected_cite,
+    record_id,
+    max_clusters=IDENTITY_PRIMARY_CLUSTER_LIMIT,
+    prefilter_max_clusters=None,
+    prefilter_info=None,
+):
     candidates = []
-    for result in results[:max_clusters]:
+    candidate_results, local_prefilter_info = identity_candidate_result_plan(
+        results,
+        expected_cite,
+        max_clusters,
+        prefilter_max_clusters=prefilter_max_clusters,
+    )
+    if prefilter_info is not None:
+        prefilter_info.update(local_prefilter_info)
+    for result in candidate_results:
         cluster_id = result.get("cluster_id") or result.get("cluster")
         if not cluster_id:
             continue
@@ -1746,9 +1805,28 @@ def resolve_identity(record, client, journal, resume, build_run):
     search = client.search(params, cache=True, record_id=record_id, step="identity.search")
     results = search_results(search)
     expected_cite = record.get("expected_citation") or record.get("citation") or ""
-    candidates = identity_candidates(record, client, results, expected_cite, record_id)
+    primary_prefilter = {}
+    candidates = identity_candidates(
+        record,
+        client,
+        results,
+        expected_cite,
+        record_id,
+        prefilter_max_clusters=IDENTITY_FALLBACK_CLUSTER_LIMIT,
+        prefilter_info=primary_prefilter,
+    )
     selected_rung = "case_name"
     viable_candidates = identity_viable_candidates(record, candidates, expected_cite)
+    journal.append(
+        record_id=record_id,
+        step="identity.search.prefilter",
+        status="complete",
+        rung="case_name",
+        result_count=identity_result_count(search),
+        clusters_fetched=len(candidates),
+        viable=bool(viable_candidates),
+        **primary_prefilter,
+    )
     if not viable_candidates:
         best_candidates = candidates
         best_rung = "case_name" if best_candidates else None
@@ -1756,6 +1834,7 @@ def resolve_identity(record, client, journal, resume, build_run):
         for rung, fallback in identity_fallback_params(record, expected_cite):
             fallback_search = client.search(fallback, cache=True, record_id=record_id, step="identity.search.fallback")
             fallback_results = search_results(fallback_search)
+            fallback_prefilter = {}
             rung_candidates = identity_candidates(
                 record,
                 client,
@@ -1763,6 +1842,7 @@ def resolve_identity(record, client, journal, resume, build_run):
                 expected_cite,
                 record_id,
                 max_clusters=IDENTITY_FALLBACK_CLUSTER_LIMIT,
+                prefilter_info=fallback_prefilter,
             )
             rung_viable = bool(identity_viable_candidates(record, rung_candidates, expected_cite))
             journal.append(
@@ -1773,6 +1853,7 @@ def resolve_identity(record, client, journal, resume, build_run):
                 result_count=identity_result_count(fallback_search),
                 clusters_fetched=len(rung_candidates),
                 viable=rung_viable,
+                **fallback_prefilter,
             )
             if rung_candidates and (not best_candidates or rung_candidates[0][0] > best_candidates[0][0]):
                 best_candidates = rung_candidates
@@ -3463,6 +3544,79 @@ class LewisDisambiguatorFallbackClient:
         }
 
 
+class PetersCitationPrefilterClient:
+    def __init__(self):
+        self.search_calls = []
+        self.cluster_calls = []
+
+    def search(self, params, cache=True, record_id=None, step=None):
+        self.search_calls.append({"params": dict(params), "step": step})
+        if params.get("case_name"):
+            return {"count": 0, "results": [], "next": None}
+        if params.get("q"):
+            return {"count": 0, "results": [], "next": None}
+        if params.get("citation") == "392 U.S. 40":
+            rows = [
+                ("107700", "Crossmatch v. One", ["40 S. Ct. 392"]),
+                ("107701", "Crossmatch v. Two", ["392 F.2d 40"]),
+                ("107702", "Crossmatch v. Three", ["55 Empl. Prac. Dec. (CCH) 40,392"]),
+                ("107703", "Crossmatch v. Four", ["40 Misc. 392"]),
+                ("107730", "Sibron v. New York", ["392 U.S. 40", "88 S. Ct. 1889"]),
+                ("107705", "Crossmatch v. Six", ["392 U.S. 41"]),
+                ("107706", "Crossmatch v. Seven", ["40 N.Y.2d 392"]),
+                ("107707", "Crossmatch v. Eight", ["392 A.2d 40"]),
+                ("107708", "Crossmatch v. Nine", ["40 Cal. App. 392"]),
+                ("107709", "Crossmatch v. Ten", ["392 P.2d 40"]),
+                ("107710", "Crossmatch v. Eleven", ["40 F. Supp. 392"]),
+                ("107711", "Crossmatch v. Twelve", ["392 So. 2d 40"]),
+                ("107712", "Crossmatch v. Thirteen", ["40 U.S. 392"]),
+                ("107713", "Crossmatch v. Fourteen", ["392 N.E.2d 40"]),
+            ]
+            return {
+                "count": 14,
+                "results": [
+                    {
+                        "cluster_id": int(cluster_id),
+                        "caseName": case_name,
+                        "dateFiled": "1968-06-10",
+                        "court": "scotus",
+                        "court_id": "scotus",
+                        "citation": citations,
+                        "opinions": [{"id": int(cluster_id) + 1, "type": "020lead"}],
+                        "sibling_ids": [int(cluster_id) + 1],
+                    }
+                    for cluster_id, case_name, citations in rows
+                ],
+                "next": None,
+            }
+        raise AssertionError("unexpected Peters fallback params %r" % params)
+
+    def get_cluster(self, cluster_id, record_id=None, step="identity.cluster"):
+        cluster_id = int(cluster_id)
+        self.cluster_calls.append({"cluster_id": cluster_id, "step": step})
+        if cluster_id == 107730:
+            return {
+                "id": 107730,
+                "case_name": "Sibron v. New York",
+                "case_name_short": "Sibron",
+                "case_name_full": "Sibron v. New York",
+                "date_filed": "1968-06-10",
+                "court": "scotus",
+                "citations": [{"volume": 392, "reporter": "U.S.", "page": 40, "type": 1}],
+                "sub_opinions": [{"id": 107731, "type": "020lead"}],
+            }
+        return {
+            "id": cluster_id,
+            "case_name": "Crossmatch v. Result",
+            "case_name_short": "Crossmatch",
+            "case_name_full": "Crossmatch v. Result",
+            "date_filed": "1968-06-10",
+            "court": "scotus",
+            "citations": [{"volume": 999, "reporter": "U.S.", "page": cluster_id, "type": 1}],
+            "sub_opinions": [{"id": cluster_id + 1, "type": "020lead"}],
+        }
+
+
 class NoCiteFallbackClient:
     def __init__(self):
         self.search_calls = []
@@ -3522,6 +3676,52 @@ def identity_fixture_search_result(cluster_id=100, opinion_id=200):
         "caseName": "fixture",
         "opinions": [{"id": opinion_id, "type": "020lead"}],
         "sibling_ids": [opinion_id],
+    }
+
+
+def self_test_identity_primary_prefilter_plan():
+    matched_results = [
+        {"cluster_id": 7100 + i, "citation": ["500 U.S. 1"], "caseName": "Match %s" % i}
+        for i in range(11)
+    ]
+    planned, info = identity_candidate_result_plan(
+        matched_results,
+        "500 U.S. 1 (1991)",
+        IDENTITY_PRIMARY_CLUSTER_LIMIT,
+        prefilter_max_clusters=IDENTITY_FALLBACK_CLUSTER_LIMIT,
+    )
+    assert planned == matched_results[:IDENTITY_FALLBACK_CLUSTER_LIMIT]
+    assert info == {
+        "citation_prefilter_matched_rows": 11,
+        "citation_prefilter_fetched_cluster_ids": [7100, 7101, 7102],
+    }
+
+    no_match_results = [
+        {"cluster_id": 7200 + i, "citation": ["501 U.S. %s" % i], "caseName": "No Match %s" % i}
+        for i in range(11)
+    ]
+    planned, info = identity_candidate_result_plan(
+        no_match_results,
+        "500 U.S. 1",
+        IDENTITY_PRIMARY_CLUSTER_LIMIT,
+        prefilter_max_clusters=IDENTITY_FALLBACK_CLUSTER_LIMIT,
+    )
+    assert planned == no_match_results[:IDENTITY_PRIMARY_CLUSTER_LIMIT]
+    assert info == {
+        "citation_prefilter_matched_rows": 0,
+        "citation_prefilter_fetched_cluster_ids": [],
+    }
+
+    planned, info = identity_candidate_result_plan(
+        no_match_results,
+        "",
+        IDENTITY_PRIMARY_CLUSTER_LIMIT,
+        prefilter_max_clusters=IDENTITY_FALLBACK_CLUSTER_LIMIT,
+    )
+    assert planned == no_match_results[:IDENTITY_PRIMARY_CLUSTER_LIMIT]
+    assert info == {
+        "citation_prefilter_matched_rows": 0,
+        "citation_prefilter_fetched_cluster_ids": [],
     }
 
 
@@ -3749,6 +3949,68 @@ def self_test_identity_fallback_ladder():
     lewis_identity_rows = [row for row in lewis_journal.rows() if row.get("step") == "identity"]
     assert lewis_identity_rows[-1]["search_rung"] == "citation"
 
+    peters_path = "/tmp/s2-identity-peters-prefilter-self-test.jsonl"
+    try:
+        os.unlink(peters_path)
+    except FileNotFoundError:
+        pass
+    peters_journal = Journal(peters_path, "selftest")
+    peters_source = {
+        "record_id": "Peters v. New York",
+        "title": "Peters v. New York",
+        "expected_citation": "392 U.S. 40 (1968)",
+        "court_level": "scotus",
+        "year": 1968,
+    }
+    peters_client = PetersCitationPrefilterClient()
+    peters_result, peters_cluster, peters_alternates = resolve_identity(
+        peters_source,
+        peters_client,
+        peters_journal,
+        ResumeState([]),
+        "selftest",
+    )
+    assert peters_result["cluster_id"] == 107730
+    assert peters_cluster["id"] == 107730
+    assert peters_alternates == []
+    assert [call["step"] for call in peters_client.search_calls] == [
+        "identity.search",
+        "identity.search.fallback",
+        "identity.search.fallback",
+    ]
+    assert peters_client.search_calls[2]["params"]["citation"] == "392 U.S. 40"
+    assert [call["cluster_id"] for call in peters_client.cluster_calls] == [107730]
+    peters_rows = [row for row in peters_journal.rows() if row.get("step") == "identity.search.fallback"]
+    assert [
+        (
+            row.get("rung"),
+            row.get("result_count"),
+            row.get("clusters_fetched"),
+            row.get("viable"),
+            row.get("citation_prefilter_matched_rows"),
+            row.get("citation_prefilter_fetched_cluster_ids"),
+        )
+        for row in peters_rows
+    ] == [("q", 0, 0, False, 0, []), ("citation", 14, 1, True, 1, [107730])]
+    peters_record = empty_record_shell("Peters v. New York", peters_source, "selftest")
+    apply_identity(
+        peters_record,
+        peters_source,
+        peters_result,
+        peters_cluster,
+        peters_alternates,
+        IdentityApplyClient("Peters and New York are both named in the lead opinion."),
+        peters_journal,
+    )
+    assert peters_record["status"] == "under_review"
+    assert peters_record["identity"]["cluster_id"] == 107730
+    assert peters_record["identity"]["expected_citation_found"] is True
+    assert peters_record["identity"]["party_name_in_text"] is True
+    assert peters_record["identity"]["canonical_name_match"] is False
+    assert peters_record["identity"]["identity_method"] == "citation+party-text"
+    assert peters_record["identity"]["reason_code"] == "caption_mismatch_canonical"
+    assert "input caption does not match CL canonical caption" in peters_record["provenance"]["warnings"]
+
     no_cite_path = "/tmp/s2-identity-no-cite-year-court-self-test.jsonl"
     try:
         os.unlink(no_cite_path)
@@ -3815,6 +4077,10 @@ def self_test_identity_fallback_ladder():
         (row.get("rung"), row.get("result_count"), row.get("clusters_fetched"), row.get("viable"))
         for row in fallback_rows
     ] == [("q", 10, 3, False), ("citation", 1, 1, True)]
+    assert [
+        (row.get("rung"), row.get("citation_prefilter_matched_rows"), row.get("citation_prefilter_fetched_cluster_ids"))
+        for row in fallback_rows
+    ] == [("q", 0, []), ("citation", 0, [])]
     identity_rows = [row for row in journal.rows() if row.get("step") == "identity"]
     assert identity_rows[-1]["search_rung"] == "citation"
 
@@ -4732,6 +4998,7 @@ def run_self_tests():
     self_test_token_bucket()
     self_test_collective_global_limiter()
     self_test_journal_resume()
+    self_test_identity_primary_prefilter_plan()
     self_test_identity_caption_and_cite_fixtures()
     self_test_identity_fallback_ladder()
     self_test_bounded_progeny()

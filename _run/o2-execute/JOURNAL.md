@@ -326,3 +326,20 @@ year+court per R2(b)); single-loop review CLEAR (298/309 added lines are fixture
 resume-stability for the 4 lucky-path rows); orchestrator self-test green. Session 9 relaunches
 with `--readjudicate "Lewis v. United States (1966)"`; the 3 pending class rows (Mathis 1968,
 US v. Harris 1971, US v. Smith 2024) now de-risked ahead of the M's.
+
+### S2 sessions 9–10 + F-S2-23 loop (2026-07-05)
+
+Session 9: clean gate — Lewis readjudicated under_review/citation+party-text/107312 (385 U.S.
+206 confirmed; F-S2-21/22 live-validated; Mathis passed the fixed path silently); +39; lake
+259/291; 10,376 cumulative (45%). Session 10: +41, lake 300/249, 11,588 (50.4%); one flag —
+**Peters v. New York, adjudicated = the consolidated-companion class**: CL has no separate
+Peters cluster (Peters is decided inside Sibron v. New York, 392 U.S. 40); the citation rung's
+search results held the true Sibron cluster 107730 at rank 5 with the exact cite in the row's
+own citation array, but the bounded fetch (top-3) never examined it; fail-closed refused the
+wrong best-so-far (a Warner memorandum). **F-S2-23**: exact citation_compare_key prefilter on
+search-row citation arrays before spending any fetch budget (primary + all rungs), prefiltered
+rows first, no-match paths byte-identical; loop-2 (review R-01): prefilter-matched primary
+capped at 3, baseline top-10 untouched (conservative scope, adjudicated); loop-3 re-verify
+FIXED. Session 11 relaunches with `--readjudicate "Peters v. New York"` (expected: under_review
+via two-key on Sibron 107730 + caption_mismatch_canonical — the honest companion-case resting
+state for S6/S9).
