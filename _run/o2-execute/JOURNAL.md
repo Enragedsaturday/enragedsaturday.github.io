@@ -381,3 +381,17 @@ hosts both English cases (Entick [1765] EWHC KB J98 — KB filing label vs histo
 recorded as a cataloguing note; Wilkes [1763] EWHC CP J95); Founders' Constitution + English
 Reports facsimiles are the second-source candidates; options 1/2/3 in the brief. Non-blocking:
 cadence continues; Entick/Wilkes elevation waits on the answer + the F-S2-26 code landing.
+
+### F-S2-25/26/27 combined loop CLOSED ✅ (2026-07-06) — CLEAR-TO-RELAUNCH
+
+One builder loop, one review, one targeted re-verify (writer≠checker throughout): F-S2-25
+(forward party-term candidates with the mandatory word-boundary bound — 1–2 char contractions
+probed non-matching — + text-side apostrophe strip, straight+curly) · F-S2-26 (terminal-
+not_found skip ends the Entick churn; warning dedupe; full A16 schema + --elevate-off-cl with
+adjudication-file verification — reviewer confirmed BAILII is correctly REJECTED pending the
+user's whitelist decision and the builder can never self-elevate) · F-S2-27 (input-caption stub
+ids + 100-char filename cap; interrupted arkansas-v-sanders row re-runs on normal resume,
+7-point confirmation reviewer-verified). Loop-2 fixed the single review finding (whitespace-
+only official cite could pass elevation → strip-and-reject + schema pattern \\S); loop-3
+FIXED with file:line evidence. Orchestrator ran the self-test suite green independently at
+every loop. Session 16 relaunches into the frontier tail (89 pending).

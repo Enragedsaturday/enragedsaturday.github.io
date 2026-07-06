@@ -223,6 +223,42 @@
       "status": "fixed",
       "verified": "single-loop review CLEAR-TO-RELAUNCH: yes (no findings); orchestrator self-test green",
       "adjudicated_by": "orchestrator claude-fable-5"
+    },
+    {
+      "id": "F-S2-25",
+      "severity": "high",
+      "phase": "CodeRabbit spec-gate smoke (side-session 2026-07-05)",
+      "verdict": "CONFIRMED (side-session adjudication; orchestrator concurred at pickup)",
+      "summary": "party-term candidates lacked the full->abbreviation direction (caption Association vs text Ass-n false-fails) and missing_party_terms never apostrophe-stripped the text side",
+      "fix": "forward candidates with MANDATORY word-boundary matching (1-2 char contractions guarded: co/n/s/e/w/ed/bd + embedding forms com/dep/ins probed non-matching) + text-side apostrophe strip (straight+curly); T-Z scan for live FPs of this class: EMPTY",
+      "status": "fixed",
+      "verified": "combined-loop review + loop-3; orchestrator self-test green",
+      "loops": 3,
+      "adjudicated_by": "side-session claude-fable-5; pickup orchestrator claude-fable-5"
+    },
+    {
+      "id": "F-S2-26",
+      "severity": "high",
+      "phase": "side-session 2026-07-05 (A16 implementation)",
+      "verdict": "UPHELD",
+      "summary": "terminal not_found reprocessed every session (Entick: 24 journal touches, warning triplets duplicated) + A16 verified_off_cl resting state unimplemented",
+      "fix": "terminal-not_found resume skip (readjudicate still resets); append-if-absent warning dedupe; A16 schema (verified_off_cl, identity_method off_cl, off_cl_links[] confirmed-shape, progeny off_cl_na) + --elevate-off-cl with adjudication-file verification (>=2 distinct R14-whitelisted sources, BAILII correctly REJECTED pending the user whitelist decision, builder can never self-elevate)",
+      "status": "fixed",
+      "verified": "combined-loop review + loop-3 (incl. R-01 whitespace-cite strip-and-reject + schema pattern \\S); orchestrator self-test green",
+      "loops": 3,
+      "adjudicated_by": "orchestrator claude-fable-5 (A16 user-approved 2026-07-05)"
+    },
+    {
+      "id": "F-S2-27",
+      "severity": "high",
+      "phase": "paced-run session 15",
+      "verdict": "UPHELD",
+      "summary": "frontier resolved-stub filenames derived from CL canonical caption slug — 300-char caption (UNRESOLVED:arkansas-v-sanders x Gov.-Sanders-2024 cluster 10601315) exceeded the 255-byte filename limit, OSError 63 crashed the session",
+      "fix": "stub ids from INPUT-caption slug per the spec scheme + 100-char slug cap (suffix intact), .tmp inherits; partial UNRESOLVED shell removed only after successful resolved write; interrupted row confirmed to re-run on normal resume (7-point builder confirmation, reviewer-verified)",
+      "status": "fixed",
+      "verified": "combined-loop review + loop-3; orchestrator self-test green",
+      "loops": 3,
+      "adjudicated_by": "orchestrator claude-fable-5"
     }
   ],
   "roster_delta_attribution": {

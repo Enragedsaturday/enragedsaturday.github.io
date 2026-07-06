@@ -89,6 +89,14 @@ TREATMENT_LANES = [
     ("lane2_top_cited", 25),
     ("lane3_recency", 200),
 ]
+MAX_RECORD_SLUG_CHARS = 100
+OFF_CL_ALLOWED_SOURCES = {
+    "Justia",
+    "Google Scholar",
+    "Cornell LII",
+    "Official court",
+    "Official reporter",
+}
 
 ALLOWED_OPINION_SOURCES = {
     "cluster.sub_opinions[]",
@@ -306,6 +314,10 @@ def slugify(value):
     return value or "case"
 
 
+def bounded_record_slug(value, limit=MAX_RECORD_SLUG_CHARS):
+    return slugify(value)[:limit].strip("-") or "case"
+
+
 def normalize_court_class(value):
     if value is None:
         return None
@@ -354,12 +366,12 @@ def page_record_id(page_stem):
 def cluster_stub_record_id(case_name, cluster_id):
     if not cluster_id:
         raise ValueError("cluster stub requires cluster_id")
-    return "%s--%s" % (slugify(case_name), int(cluster_id))
+    return "%s--%s" % (bounded_record_slug(case_name), int(cluster_id))
 
 
 def not_found_stub_record_id(row):
     key = normalized_roster_key(row)
-    return "%s--u%s" % (slugify(row.get("caption") or row.get("title") or "case"), sha1_text(key)[:8])
+    return "%s--u%s" % (bounded_record_slug(row.get("caption") or row.get("title") or "case"), sha1_text(key)[:8])
 
 
 def citation_to_string(citation):
@@ -371,6 +383,12 @@ def citation_to_string(citation):
         return str(citation["cite"])
     parts = [citation.get("volume"), citation.get("reporter"), citation.get("page")]
     return " ".join(str(p).strip() for p in parts if p not in (None, ""))
+
+
+def stripped_citation_text(citation):
+    if isinstance(citation, (str, dict)) or not citation:
+        return citation_to_string(citation).strip()
+    return str(citation).strip()
 
 
 def normalize_cite(cite):
@@ -647,28 +665,48 @@ def canonical_caption_match_cluster(input_name, cluster, fallback_name=None):
     return False
 
 
-def party_term_candidates(term):
+def party_term_candidate_sets(term):
     lowered = str(term or "").lower()
     stripped = strip_apostrophes(lowered)
-    candidates = {candidate for candidate in (lowered, stripped) if candidate}
-    candidates.update(
+    containment_candidates = {candidate for candidate in (lowered, stripped) if candidate}
+    containment_candidates.update(
         full
         for full, contraction in CAPTION_TOKEN_CONTRACTIONS.items()
         if stripped and contraction == stripped
     )
-    return candidates
+    boundary_candidates = set()
+    if stripped in CAPTION_TOKEN_CONTRACTIONS:
+        boundary_candidates.add(CAPTION_TOKEN_CONTRACTIONS[stripped])
+    return containment_candidates, boundary_candidates
+
+
+def party_term_candidates(term):
+    containment_candidates, boundary_candidates = party_term_candidate_sets(term)
+    return containment_candidates | boundary_candidates
+
+
+def text_contains_party_candidate(text, candidate, boundary=False):
+    if not candidate:
+        return False
+    if boundary:
+        return re.search(r"\b%s\b" % re.escape(candidate), text) is not None
+    return candidate in text
 
 
 def missing_party_terms(case_name, text):
     terms = first_party_terms(case_name)
     if not terms:
         return []
-    lowered = (text or "").lower()
-    return [
-        term
-        for term in terms
-        if not any(candidate in lowered for candidate in party_term_candidates(term))
-    ]
+    lowered = strip_apostrophes((text or "").lower())
+    missing = []
+    for term in terms:
+        containment_candidates, boundary_candidates = party_term_candidate_sets(term)
+        if any(text_contains_party_candidate(lowered, candidate) for candidate in containment_candidates):
+            continue
+        if any(text_contains_party_candidate(lowered, candidate, boundary=True) for candidate in boundary_candidates):
+            continue
+        missing.append(term)
+    return missing
 
 
 def recency_window_start(build_date=None, years=3):
@@ -1539,11 +1577,17 @@ def base_field_provenance(src, verifier=CONSUMER_IDENTITY):
     return {"src": src, "at": iso_now(), "verifier": verifier}
 
 
+def append_warning(record_json, warning):
+    warnings = record_json["provenance"].setdefault("warnings", [])
+    if warning not in warnings:
+        warnings.append(warning)
+
+
 def set_record_status(record_json, status, reason=None, explicit_adjudication=False):
     current = record_json.get("status")
     if current in FAIL_CLOSED_STATUSES and current != status and not explicit_adjudication:
         if reason:
-            record_json["provenance"]["warnings"].append("preserved %s over %s: %s" % (current, status, reason))
+            append_warning(record_json, "preserved %s over %s: %s" % (current, status, reason))
         return False
     record_json["status"] = status
     return True
@@ -1957,7 +2001,6 @@ def apply_identity(record_json, source_record, search_result, cluster, alternate
             for score, _alt_result, alt_cluster in alternates[:5]
         ],
     })
-    warnings = record_json["provenance"]["warnings"]
     if canonical_match and expected_found and party_found:
         set_record_status(record_json, "under_review", "R15 structural gates have not cleared")
         identity["identity_method"] = "citation+party-text"
@@ -1966,12 +2009,12 @@ def apply_identity(record_json, source_record, search_result, cluster, alternate
         set_record_status(record_json, "under_review")
         identity["identity_method"] = "citation+party-text"
         identity["reason_code"] = "caption_mismatch_canonical"
-        warnings.append("input caption does not match CL canonical caption")
+        append_warning(record_json, "input caption does not match CL canonical caption")
     elif not canonical_match:
         set_record_status(record_json, "fabrication_suspected")
         identity["identity_method"] = "fabrication-check"
         identity["reason_code"] = "canonical_name_mismatch"
-        warnings.append("input caption does not match CL canonical caption")
+        append_warning(record_json, "input caption does not match CL canonical caption")
     elif source_record.get("docket"):
         set_record_status(record_json, "under_review")
         identity["identity_method"] = "name+docket"
@@ -1980,7 +2023,7 @@ def apply_identity(record_json, source_record, search_result, cluster, alternate
         set_record_status(record_json, "under_review")
         identity["identity_method"] = "pending"
         identity["reason_code"] = "two_key_not_satisfied"
-        warnings.append("two-key identity check did not fully satisfy citation plus party text")
+        append_warning(record_json, "two-key identity check did not fully satisfy citation plus party text")
     record_json["provenance"]["cl_source"] = cluster.get("source")
     record_json["provenance"]["field_provenance"]["identity"] = base_field_provenance("CourtListener search + clusters + lead opinion text")
     journal.append(record_id=record_id, step="identity", status="complete", final_status=record_json["status"])
@@ -1993,7 +2036,7 @@ def apply_citations(record_json, cluster, precedence, journal):
     record_json["citations"] = classify_citations(cluster.get("citations") or [], court_class, precedence)
     if record_json["citations"]["official"] is None:
         set_record_status(record_json, "under_review", "official cite selection failed")
-        record_json["provenance"]["warnings"].append("official cite selection failed closed: %s" % record_json["citations"]["official_selection"]["reason"])
+        append_warning(record_json, "official cite selection failed closed: %s" % record_json["citations"]["official_selection"]["reason"])
     journal.append(record_id=record_id, step="citations", status="complete", official=record_json["citations"]["display"])
 
 
@@ -2331,10 +2374,7 @@ def mark_treatment_fetch_failed(record_json, journal, lane_name, query, cap, rev
         audit_needed=False,
         extra=extra,
     )
-    warning = "treatment %s fetch failed after bounded retries; retry pending" % lane_name
-    warnings = record_json["provenance"].setdefault("warnings", [])
-    if warning not in warnings:
-        warnings.append(warning)
+    append_warning(record_json, "treatment %s fetch failed after bounded retries; retry pending" % lane_name)
     journal.append(
         record_id=record_id,
         step="treatment",
@@ -2592,9 +2632,7 @@ def seed_preseeded_treatment(record_json, page_treatment):
     )
     if was_treatment_migration_block and record_json.get("status") == "under_review":
         record_json["identity"]["reason_code"] = None
-    warnings = record_json["provenance"]["warnings"]
-    if PRESEEDED_TREATMENT_PROVENANCE not in warnings:
-        warnings.append(PRESEEDED_TREATMENT_PROVENANCE)
+    append_warning(record_json, PRESEEDED_TREATMENT_PROVENANCE)
     record_json["provenance"]["field_provenance"]["treatment.field_i_validity"] = base_field_provenance(PRESEEDED_TREATMENT_PROVENANCE)
     if treatment.get("point_overrides"):
         record_json["provenance"]["field_provenance"]["point_overrides"] = base_field_provenance(PRESEEDED_TREATMENT_PROVENANCE)
@@ -2621,7 +2659,7 @@ def seed_treatment_from_migration(record_json, source_record, migration):
     if not mapping:
         set_record_status(record_json, "blocked", "legacy treatment value lacks migration mapping")
         record_json["identity"]["reason_code"] = record_json["identity"].get("reason_code") or "treatment_migration_unmapped"
-        record_json["provenance"]["warnings"].append("legacy treatment value lacks migration mapping: %s" % (legacy.get("status") or "<missing>"))
+        append_warning(record_json, "legacy treatment value lacks migration mapping: %s" % (legacy.get("status") or "<missing>"))
         return True
 
     field_i = mapping["field_i_validity"]
@@ -2667,8 +2705,8 @@ def seed_treatment_from_migration(record_json, source_record, migration):
                     "journal_ref": "migration:%s" % legacy_status,
                 })
     if (mapping.get("requires_edge") or mapping.get("requires_point_overrides")) and not by_cases:
-        record_json["provenance"]["warnings"].append("legacy treatment %s requires edge metadata; staged for S9 review" % legacy_status)
-    record_json["provenance"]["warnings"].append("legacy treatment migrated: %s -> %s" % (legacy_status, field_i))
+        append_warning(record_json, "legacy treatment %s requires edge metadata; staged for S9 review" % legacy_status)
+    append_warning(record_json, "legacy treatment migrated: %s -> %s" % (legacy_status, field_i))
     record_json["provenance"]["field_provenance"]["treatment.field_i_validity"] = base_field_provenance("_treatment-migration.json + page frontmatter")
     return json.dumps(record_json.get("treatment", {}), sort_keys=True) != old
 
@@ -2685,6 +2723,23 @@ def load_case_record(paths, record_id):
     if not os.path.exists(path):
         return None
     return read_json(path)
+
+
+def remove_frontier_partial_record(paths, unresolved_id, final_id):
+    if not unresolved_id or unresolved_id == final_id:
+        return False
+    path = os.path.join(paths.cases, unresolved_id + ".json")
+    if not os.path.exists(path):
+        return False
+    try:
+        partial = read_json(path)
+    except (OSError, json.JSONDecodeError):
+        return False
+    identity = partial.get("identity") or {}
+    if partial.get("record_id") == unresolved_id and partial.get("status") in ("draft", "blocked") and identity.get("identity_method") in ("pending", "blocked"):
+        os.remove(path)
+        return True
+    return False
 
 
 class ManifestStore:
@@ -2898,6 +2953,223 @@ def journal_readjudication_field_resets(journal, record_id, before_record, after
         journal.append(**row)
 
 
+def read_adjudication_file(path):
+    if not path:
+        raise ValueError("--elevate-off-cl requires --adjudication <file>")
+    return read_json(path)
+
+
+def citation_object_from_adjudication(value, selected_official=False):
+    cite = stripped_citation_text(value)
+    if not cite:
+        raise ValueError("off-CL adjudication citation is empty")
+    if isinstance(value, dict):
+        return {
+            "cite": cite,
+            "volume": value.get("volume"),
+            "reporter": citation_reporter(value) or value.get("reporter") or None,
+            "page": value.get("page"),
+            "type": value.get("type") or ("official" if selected_official else "parallel"),
+            "selected_official": bool(selected_official),
+            "source": value.get("source") or "off_cl.adjudication",
+        }
+    return {
+        "cite": cite,
+        "volume": None,
+        "reporter": citation_reporter(cite) or None,
+        "page": None,
+        "type": "official" if selected_official else "parallel",
+        "selected_official": bool(selected_official),
+        "source": "off_cl.adjudication",
+    }
+
+
+def normalize_off_cl_citations(citations):
+    if not isinstance(citations, dict):
+        raise ValueError("off-CL adjudication citations must be an object")
+    official = citation_object_from_adjudication(citations.get("official"), selected_official=True)
+    parallel_values = citations.get("parallel") or []
+    vendor_values = citations.get("vendor_neutral") or []
+    if isinstance(parallel_values, (str, dict)):
+        parallel_values = [parallel_values]
+    if isinstance(vendor_values, (str, dict)):
+        vendor_values = [vendor_values]
+    parallel = [citation_object_from_adjudication(value) for value in parallel_values]
+    vendor = [citation_object_from_adjudication(value) for value in vendor_values]
+    display = stripped_citation_text(citations.get("display")) or normalize_cite(official)
+    return {
+        "official": official,
+        "parallel": parallel,
+        "vendor_neutral": vendor,
+        "all": [official] + parallel + vendor,
+        "display": display,
+        "official_selection": {
+            "court_class": citations.get("official_selection", {}).get("court_class") if isinstance(citations.get("official_selection"), dict) else None,
+            "selected": display,
+            "reason": "off_cl_adjudication",
+        },
+    }
+
+
+def require_iso_date(value, field):
+    if not isinstance(value, str) or not re.fullmatch(r"\d{4}-\d{2}-\d{2}", value):
+        raise ValueError("%s must be YYYY-MM-DD" % field)
+    return value
+
+
+def normalize_off_cl_links(links):
+    if not isinstance(links, list):
+        raise ValueError("off_cl_links must be a list")
+    out = []
+    for index, link in enumerate(links):
+        if not isinstance(link, dict):
+            raise ValueError("off_cl_links[%s] must be an object" % index)
+        source = link.get("source")
+        if source not in OFF_CL_ALLOWED_SOURCES:
+            raise ValueError("off_cl_links[%s].source is not R14-whitelisted: %r" % (index, source))
+        url = str(link.get("url") or "").strip()
+        parsed = urllib.parse.urlparse(url)
+        if parsed.scheme not in ("http", "https") or not parsed.netloc:
+            raise ValueError("off_cl_links[%s].url must be an absolute http(s) URI" % index)
+        confirmed = link.get("confirmed")
+        if not isinstance(confirmed, dict):
+            raise ValueError("off_cl_links[%s].confirmed must be an object" % index)
+        normalized_confirmed = {}
+        for field in ("caption", "cite", "court", "date"):
+            value = confirmed.get(field)
+            if not isinstance(value, str) or not value.strip():
+                raise ValueError("off_cl_links[%s].confirmed.%s must be a non-empty string" % (index, field))
+            normalized_confirmed[field] = value.strip()
+        require_iso_date(normalized_confirmed["date"], "off_cl_links[%s].confirmed.date" % index)
+        checked_date = require_iso_date(link.get("checked_date"), "off_cl_links[%s].checked_date" % index)
+        out.append({
+            "source": source,
+            "url": url,
+            "confirmed": normalized_confirmed,
+            "checked_date": checked_date,
+        })
+    distinct_sources = {link["source"] for link in out}
+    if len(distinct_sources) < 2:
+        raise ValueError("verified_off_cl requires at least two distinct R14-whitelisted sources")
+    return out
+
+
+def verify_off_cl_adjudication(adjudication, record_id=None):
+    if not isinstance(adjudication, dict):
+        raise ValueError("off-CL adjudication file must be a JSON object")
+    if adjudication.get("record_id") not in (None, record_id):
+        raise ValueError("off-CL adjudication record_id does not match %s" % record_id)
+    if "trail" not in adjudication:
+        raise ValueError("off-CL adjudication file must include trail")
+    citations = normalize_off_cl_citations(adjudication.get("citations"))
+    links = normalize_off_cl_links(adjudication.get("off_cl_links"))
+    return citations, links, adjudication.get("trail")
+
+
+def apply_off_cl_elevation(paths, manifest, journal, identifier, adjudication_path, build_run):
+    if not adjudication_path:
+        raise SystemExit("--elevate-off-cl requires --adjudication <file>; builder never self-elevates")
+    record_id = manifest.resolve_record_id(identifier)
+    if not record_id:
+        raise SystemExit("off-CL elevation record not found in manifest: %s" % identifier)
+    row = manifest.by_record_id.get(record_id)
+    if not row:
+        raise SystemExit("off-CL elevation record not found in manifest: %s" % identifier)
+    previous_record = load_case_record(paths, record_id)
+    previous_status = (previous_record or {}).get("status") or row.get("status")
+    if previous_status != "not_found":
+        raise SystemExit("off-CL elevation requires a terminal not_found record: %s is %s" % (record_id, previous_status))
+    adjudication = read_adjudication_file(adjudication_path)
+    citations, links, trail = verify_off_cl_adjudication(adjudication, record_id=record_id)
+
+    manifest.reset_for_readjudication(record_id)
+    source_record = readjudication_roster_source(row)
+    record_json = empty_record_shell(record_id, source_record, build_run)
+    caption = (
+        adjudication.get("case_name")
+        or links[0]["confirmed"]["caption"]
+        or source_record.get("title")
+        or source_record.get("caption")
+        or record_id
+    )
+    record_json["identity"].update({
+        "case_name": caption,
+        "case_name_short": adjudication.get("case_name_short") or caption,
+        "case_name_full": adjudication.get("case_name_full") or caption,
+        "court": source_record.get("court") or links[0]["confirmed"]["court"],
+        "court_id": None,
+        "court_level": source_record.get("court_level") or "other",
+        "date_decided": source_record.get("date_decided") or links[0]["confirmed"]["date"],
+        "year": source_record.get("year"),
+        "docket": source_record.get("docket") or None,
+        "cluster_id": None,
+        "lead_opinion_id": None,
+        "sibling_ids": [],
+        "absolute_url": None,
+        "identity_method": "off_cl",
+        "expected_citation_found": True,
+        "party_name_in_text": True,
+        "canonical_name_match": True,
+        "reason_code": "outside_cl_corpus_verified_by_off_cl_two_key",
+    })
+    record_json["citations"] = citations
+    record_json["off_cl_links"] = links
+    record_json["progeny"].update({
+        "complete_query": None,
+        "indexed_citing_opinions": None,
+        "count_source": "off_cl_na",
+        "per_sibling": [],
+        "citation_count": None,
+        "cache_path": None,
+        "enumeration": None,
+        "cursor": None,
+        "rows_cached": 0,
+        "outbound_opinion_edges": [],
+    })
+    set_record_status(record_json, "verified_off_cl", explicit_adjudication=True)
+    record_json["provenance"]["field_provenance"]["identity"] = base_field_provenance(
+        "off-CL adjudication file: %s" % adjudication_path,
+        verifier=READJUDICATION_ADJUDICATOR,
+    )
+    record_json["provenance"]["field_provenance"]["treatment.field_i_validity"] = base_field_provenance(
+        "verified_off_cl: CL treatment lanes intentionally not run",
+        verifier=READJUDICATION_ADJUDICATOR,
+    )
+    record_json["provenance"]["field_provenance"]["point_overrides"] = base_field_provenance(
+        "verified_off_cl: no CL-derived point overrides",
+        verifier=READJUDICATION_ADJUDICATOR,
+    )
+    record_json["provenance"]["field_provenance"]["pinpoints"] = base_field_provenance(
+        "verified_off_cl: no CL lead-opinion pinpoints",
+        verifier=READJUDICATION_ADJUDICATOR,
+    )
+
+    journal_readjudication_field_resets(journal, record_id, previous_record, record_json)
+    write_case_record(paths, record_json)
+    journal.append(
+        step="adjudication",
+        record_id=record_id,
+        action="elevate-off-cl",
+        status="verified_off_cl",
+        adjudicated_by=READJUDICATION_ADJUDICATOR,
+        adjudication_file=adjudication_path,
+        off_cl_sources=sorted({link["source"] for link in links}),
+        trail=trail,
+    )
+    journal.append(record_id=record_id, step="identity", status="complete", final_status="verified_off_cl", off_cl=True)
+    journal.append(record_id=record_id, step="citations", status="complete", official=record_json["citations"]["display"], off_cl=True)
+    journal.append(record_id=record_id, step="pinpoints", status="complete", skipped=True, off_cl_na=True)
+    journal.append(record_id=record_id, step="progeny", status="complete", skipped=True, count_source="off_cl_na")
+    manifest.update(
+        record_id,
+        record_json,
+        counts={"cl_calls": 0},
+        final_record_id=record_id,
+        resume_state=ResumeState(journal.rows()),
+    )
+    return record_json
+
+
 def apply_readjudications(paths, manifest, journal, identifiers, build_run):
     reset_ids = []
     for identifier in identifiers:
@@ -2997,6 +3269,14 @@ def persist_case_interruption(record_json, paths, journal, client, reason, durin
     return record_json
 
 
+def completed_cl_silent_identity(record_json):
+    if not record_json or record_json["identity"].get("cluster_id"):
+        return False
+    status = record_json.get("status")
+    method = record_json["identity"].get("identity_method")
+    return (status == "not_found" and method in ("not_found", "blocked")) or (status == "verified_off_cl" and method == "off_cl")
+
+
 def process_page_record(source_record, client, paths, precedence, migration, journal, resume, build_run, session):
     source_record = normalize_source_record(source_record)
     record_id = page_record_id(source_record["record_id"])
@@ -3009,6 +3289,11 @@ def process_page_record(source_record, client, paths, precedence, migration, jou
     lead_text = ""
 
     try:
+        if existing and resume.step_complete(record_id, "identity") and completed_cl_silent_identity(record_json):
+            extra = {"terminal_not_found": True} if record_json.get("status") == "not_found" else {"terminal_verified_off_cl": True}
+            journal.append(record_id=record_id, step="identity", status="complete", skipped=True, loaded_existing=True, **extra)
+            return record_json
+
         if resume.step_complete(record_id, "identity") and record_json["identity"].get("cluster_id"):
             journal.append(record_id=record_id, step="identity", status="complete", skipped=True, loaded_existing=True)
         else:
@@ -3026,12 +3311,12 @@ def process_page_record(source_record, client, paths, precedence, migration, jou
                 set_record_status(record_json, "blocked", "identity was complete but no existing record or journaled selection was available")
                 record_json["identity"]["identity_method"] = "blocked"
                 record_json["identity"]["reason_code"] = "identity_complete_without_record_or_selection"
-                record_json["provenance"]["warnings"].append("identity completion could not be replayed; blocked rather than marking not_found")
+                append_warning(record_json, "identity completion could not be replayed; blocked rather than marking not_found")
             else:
                 set_record_status(record_json, "not_found")
                 record_json["identity"]["identity_method"] = "not_found"
                 record_json["identity"]["reason_code"] = "no_candidate_cluster"
-                record_json["provenance"]["warnings"].append("not found in CL identity search; not proof of fabrication")
+                append_warning(record_json, "not found in CL identity search; not proof of fabrication")
                 journal.append(record_id=record_id, step="identity", status="complete", final_status="not_found")
             if seed_treatment_from_migration(record_json, source_record, migration):
                 changed = True
@@ -3104,7 +3389,7 @@ def process_frontier_record(source_record, client, paths, precedence, journal, r
         shell["status"] = "blocked"
         shell["identity"]["identity_method"] = "blocked"
         shell["identity"]["reason_code"] = "frontier_identity_complete_without_record"
-        shell["provenance"]["warnings"].append("frontier identity completion could not be replayed; blocked rather than returning an empty shell")
+        append_warning(shell, "frontier identity completion could not be replayed; blocked rather than returning an empty shell")
         write_case_record(paths, shell)
         journal.append(record_id=unresolved_id, step="identity", status="complete", skipped=True, final_record_id=unresolved_id, final_status="blocked")
         return shell, unresolved_id
@@ -3117,14 +3402,15 @@ def process_frontier_record(source_record, client, paths, precedence, journal, r
         shell["status"] = "not_found"
         shell["identity"]["identity_method"] = "not_found"
         shell["identity"]["reason_code"] = "frontier_no_candidate_cluster"
-        shell["provenance"]["warnings"].append("frontier not_found requires web/second-source cross-check before fabrication inference")
+        append_warning(shell, "frontier not_found requires web/second-source cross-check before fabrication inference")
         write_case_record(paths, shell)
         journal.append(record_id=unresolved_id, step="identity", status="complete", final_record_id=final_id, final_status="not_found")
         return shell, final_id
     result = results[0]
     cluster = client.get_cluster(result.get("cluster_id"), record_id=unresolved_id, step="frontier.identity.cluster")
     canonical = cluster.get("case_name") or result.get("caseName") or source_record.get("caption")
-    final_id = cluster_stub_record_id(canonical, cluster.get("id") or result.get("cluster_id"))
+    input_caption = source_record.get("caption") or source_record.get("title") or unresolved_id
+    final_id = cluster_stub_record_id(input_caption, cluster.get("id") or result.get("cluster_id"))
     canonical_match = canonical_caption_match_cluster(source_record.get("caption"), cluster, canonical)
     shell["record_id"] = final_id
     shell["stub"] = True
@@ -3148,6 +3434,7 @@ def process_frontier_record(source_record, client, paths, precedence, journal, r
     shell["provenance"]["field_provenance"]["point_overrides"] = base_field_provenance("frontier stub, no treatment")
     shell["provenance"]["field_provenance"]["pinpoints"] = base_field_provenance("frontier stub, no pinpoints")
     write_case_record(paths, shell)
+    remove_frontier_partial_record(paths, unresolved_id, final_id)
     journal.append(record_id=unresolved_id, step="identity", status="complete", final_record_id=final_id, final_status=shell["status"])
     return shell, final_id
 
@@ -3164,6 +3451,16 @@ def run_ingest(args):
         manifest.save()
     journal_path = os.path.join(paths.journal, "s2-ingest-%s.jsonl" % run_id)
     journal = Journal(journal_path, run_id)
+    if args.elevate_off_cl:
+        if args.readjudicate or args.readjudicate_file:
+            raise SystemExit("--elevate-off-cl cannot be combined with --readjudicate")
+        apply_off_cl_elevation(paths, manifest, journal, args.elevate_off_cl, args.adjudication, run_id)
+        manifest.save()
+        print("journal: %s" % journal_path)
+        print("off-CL elevation complete: %s" % args.elevate_off_cl)
+        return
+    if args.adjudication:
+        raise SystemExit("--adjudication is only valid with --elevate-off-cl")
     readjudicate_ids = readjudication_identifiers(args)
     if readjudicate_ids:
         apply_readjudications(paths, manifest, journal, readjudicate_ids, run_id)
@@ -3260,6 +3557,18 @@ def self_test_record_ids():
     row2 = dict(row)
     row2["court_era"] = "9th Cir. 2024"
     assert not_found_stub_record_id(row) != not_found_stub_record_id(row2)
+    long_caption = "Long " + ("Caption " * 60) + "v. Other"
+    long_cluster_id = 10601315
+    bounded = cluster_stub_record_id(long_caption, long_cluster_id)
+    slug_part, suffix = bounded.rsplit("--", 1)
+    assert len(slug_part) <= MAX_RECORD_SLUG_CHARS
+    assert suffix == str(long_cluster_id)
+    assert len((bounded + ".json").encode("utf-8")) <= 120
+    long_row = dict(row, caption=long_caption)
+    not_found = not_found_stub_record_id(long_row)
+    slug_part, suffix = not_found.rsplit("--", 1)
+    assert len(slug_part) <= MAX_RECORD_SLUG_CHARS
+    assert re.match(r"^u[0-9a-f]{8}$", suffix), suffix
 
 
 def self_test_precedence():
@@ -3691,6 +4000,47 @@ class ExhaustedFallbackClient:
         raise AssertionError("exhausted fallback fixture must not fetch clusters")
 
 
+class NoSearchClient:
+    def search(self, params, cache=True, record_id=None, step=None):
+        raise AssertionError("terminal not_found resume skip must not search")
+
+    def get_cluster(self, cluster_id, record_id=None, step="identity.cluster"):
+        raise AssertionError("terminal not_found resume skip must not fetch cluster")
+
+
+class FrontierLongCaptionClient:
+    def __init__(self, canonical_caption):
+        self.canonical_caption = canonical_caption
+        self.search_calls = []
+        self.cluster_calls = []
+
+    def search(self, params, cache=True, record_id=None, step=None):
+        self.search_calls.append({"params": dict(params), "step": step, "record_id": record_id})
+        return {
+            "count": 1,
+            "results": [{
+                "cluster_id": 10601315,
+                "caseName": self.canonical_caption,
+                "absolute_url": "/opinion/10601315/sarah-sanders-v-arkansas-board-of-corrections/",
+            }],
+            "next": None,
+        }
+
+    def get_cluster(self, cluster_id, record_id=None, step="identity.cluster"):
+        self.cluster_calls.append({"cluster_id": int(cluster_id), "step": step, "record_id": record_id})
+        return {
+            "id": int(cluster_id),
+            "case_name": self.canonical_caption,
+            "case_name_short": "Sanders",
+            "case_name_full": self.canonical_caption,
+            "date_filed": "2024-01-01",
+            "court": "ark",
+            "absolute_url": "/opinion/10601315/sarah-sanders-v-arkansas-board-of-corrections/",
+            "citations": [{"cite": "2024 Ark. 1", "type": 6}],
+            "sub_opinions": [],
+        }
+
+
 def identity_fixture_search_result(cluster_id=100, opinion_id=200):
     return {
         "cluster_id": cluster_id,
@@ -3779,10 +4129,16 @@ def self_test_identity_caption_and_cite_fixtures():
         "Skinner v. Railway Labor Executives' Assn.",
     )
     assert party_term_candidates("ass'n") == {"ass'n", "assn", "association"}
+    assert party_term_candidates("association") == {"association", "assn"}
     assert party_term_candidates("skinner") == {"skinner"}
     association_text = "Skinner challenged the testing program adopted by the Association."
     assert "ass'n" not in association_text.lower()
     assert text_names_parties("Skinner v. Railway Labor Executives' Ass'n", association_text)
+    assert text_names_parties("Skinner v. Railway Labor Executives Association", "Skinner challenged the Ass'n policy.")
+    assert text_names_parties("Skinner v. Railway Labor Executives Association", "Skinner challenged the Ass\u2019n policy.")
+    assert text_names_parties("Skinner v. Railway Labor Executives Ass'n", "Skinner challenged the Association policy.")
+    assert not text_names_parties("Acme v. Company", "Acme asked the court to resolve a common issue.")
+    assert not text_names_parties("Smith v. North", "Smith argued nothing about the other side.")
     assert not canonical_caption_match("Adams v. Williams", "Williams v. Adams")
     assert not canonical_caption_match("County of Inyo", "Company of Inyo")
 
@@ -4211,6 +4567,358 @@ def self_test_identity_fallback_ladder():
         ]
         assert [rows[index].get("rung") for index in fallback_indexes] == ["q", "citation", "docket_number"]
         assert not_found_indexes and max(fallback_indexes) < not_found_indexes[-1]
+    finally:
+        shutil.rmtree(tmp)
+
+
+def self_test_terminal_not_found_skip_and_warning_dedupe():
+    tmp = tempfile.mkdtemp(prefix="s2-terminal-not-found-selftest-")
+    try:
+        paths = LakePaths(tmp, os.path.join(tmp, "pool"))
+        paths.ensure()
+        source = {
+            "record_id": "Entick v. Carrington",
+            "title": "Entick v. Carrington",
+            "expected_citation": "19 How. St. Tr. 1029",
+            "court_level": "other",
+            "year": 1765,
+            "counts": {},
+        }
+        record = empty_record_shell("Entick v. Carrington", source, "selftest")
+        record["status"] = "not_found"
+        record["identity"]["identity_method"] = "not_found"
+        record["identity"]["reason_code"] = "no_candidate_cluster"
+        append_warning(record, "not found in CL identity search; not proof of fabrication")
+        write_case_record(paths, record)
+        before = read_json(os.path.join(paths.cases, "Entick v. Carrington.json"))
+        journal = Journal(os.path.join(tmp, "journal.jsonl"), "selftest")
+        resume = ResumeState([{"record_id": "Entick v. Carrington", "step": "identity", "status": "complete"}])
+        skipped = process_page_record(
+            source,
+            NoSearchClient(),
+            paths,
+            {"court_classes": {}},
+            {"mappings": {}},
+            journal,
+            resume,
+            "selftest",
+            SessionTimer(None),
+        )
+        after = read_json(os.path.join(paths.cases, "Entick v. Carrington.json"))
+        assert skipped["status"] == "not_found"
+        assert before == after
+        rows = journal.rows()
+        assert rows == [{
+            "record_id": "Entick v. Carrington",
+            "step": "identity",
+            "status": "complete",
+            "skipped": True,
+            "loaded_existing": True,
+            "terminal_not_found": True,
+            "ts": rows[0]["ts"],
+            "run": "selftest",
+        }], rows
+
+        reset_shell = empty_record_shell("Entick v. Carrington", source, "selftest-reset")
+        set_record_status(reset_shell, "pending", explicit_adjudication=True)
+        write_case_record(paths, reset_shell)
+        rerun_journal = Journal(os.path.join(tmp, "rerun-journal.jsonl"), "selftest")
+        rerun_client = ExhaustedFallbackClient()
+        rerun = process_page_record(
+            source,
+            rerun_client,
+            paths,
+            {"court_classes": {}},
+            {"mappings": {}},
+            rerun_journal,
+            ResumeState([
+                {"record_id": "Entick v. Carrington", "step": "identity", "status": "complete"},
+                {"record_id": "Entick v. Carrington", "step": "identity", "status": "pending", "adjudication_reset": True},
+            ]),
+            "selftest",
+            SessionTimer(None),
+        )
+        assert rerun["status"] == "not_found"
+        assert rerun_client.search_calls
+
+        duplicate_record = empty_record_shell("dupe-case", {"record_id": "dupe-case", "title": "Dupe v. Case"}, "selftest")
+        duplicate_record["status"] = "not_found"
+        for _ in range(3):
+            set_record_status(duplicate_record, "blocked", "identity was complete but no existing record or journaled selection was available")
+            append_warning(duplicate_record, "identity completion could not be replayed; blocked rather than marking not_found")
+            append_warning(duplicate_record, "legacy treatment migrated: good -> good_law")
+        warnings = duplicate_record["provenance"]["warnings"]
+        assert warnings.count("preserved not_found over blocked: identity was complete but no existing record or journaled selection was available") == 1
+        assert warnings.count("identity completion could not be replayed; blocked rather than marking not_found") == 1
+        assert warnings.count("legacy treatment migrated: good -> good_law") == 1
+    finally:
+        shutil.rmtree(tmp)
+
+
+def off_cl_link_fixture(source, cite="19 How. St. Tr. 1029"):
+    return {
+        "source": source,
+        "url": "https://example.com/%s/entick" % slugify(source),
+        "confirmed": {
+            "caption": "Entick v. Carrington",
+            "cite": cite,
+            "court": "Court of Common Pleas",
+            "date": "1765-11-02",
+        },
+        "checked_date": "2026-07-05",
+    }
+
+
+def off_cl_adjudication_fixture(record_id="Entick v. Carrington"):
+    return {
+        "record_id": record_id,
+        "case_name": "Entick v. Carrington",
+        "citations": {
+            "official": "19 How. St. Tr. 1029",
+            "parallel": ["95 Eng. Rep. 807"],
+        },
+        "off_cl_links": [
+            off_cl_link_fixture("Google Scholar"),
+            off_cl_link_fixture("Official reporter", cite="95 Eng. Rep. 807"),
+        ],
+        "trail": {
+            "adjudicated_by": "orchestrator",
+            "finding": "A16 outside-CL corpus fixture",
+        },
+    }
+
+
+def verified_off_cl_schema_errors(record, schema):
+    errors = []
+    if record.get("status") not in schema["properties"]["status"]["enum"]:
+        errors.append("status enum rejected %s" % record.get("status"))
+    method = record.get("identity", {}).get("identity_method")
+    if method not in schema["definitions"]["identity"]["properties"]["identity_method"]["enum"]:
+        errors.append("identity_method enum rejected %s" % method)
+    count_source = record.get("progeny", {}).get("count_source")
+    if count_source not in schema["definitions"]["progeny"]["properties"]["count_source"]["enum"]:
+        errors.append("progeny.count_source enum rejected %s" % count_source)
+    link_required = set(schema["definitions"]["off_cl_link"]["required"])
+    for link in record.get("off_cl_links") or []:
+        missing = link_required - set(link)
+        if missing:
+            errors.append("off_cl_link missing %s" % sorted(missing))
+    if record.get("status") == "verified_off_cl":
+        identity = record.get("identity") or {}
+        if identity.get("identity_method") != "off_cl":
+            errors.append("verified_off_cl identity_method must be off_cl")
+        if identity.get("cluster_id") is not None or identity.get("lead_opinion_id") is not None:
+            errors.append("verified_off_cl CL identity ids must be null")
+        official = record.get("citations", {}).get("official")
+        if not stripped_citation_text(official):
+            errors.append("verified_off_cl citations.official must be non-empty")
+        sources = {link.get("source") for link in record.get("off_cl_links") or []}
+        if len(sources) < 2:
+            errors.append("verified_off_cl requires two distinct off_cl sources")
+        if record.get("progeny", {}).get("count_source") != "off_cl_na":
+            errors.append("verified_off_cl progeny.count_source must be off_cl_na")
+    return errors
+
+
+def verified_off_cl_record_fixture():
+    source = {
+        "record_id": "Entick v. Carrington",
+        "title": "Entick v. Carrington",
+        "court": "Court of Common Pleas",
+        "court_level": "other",
+        "date_decided": "1765-11-02",
+        "year": 1765,
+    }
+    record = empty_record_shell("Entick v. Carrington", source, "selftest")
+    citations, links, _trail = verify_off_cl_adjudication(off_cl_adjudication_fixture(), record_id="Entick v. Carrington")
+    record["status"] = "verified_off_cl"
+    record["identity"].update({
+        "case_name": "Entick v. Carrington",
+        "case_name_short": "Entick v. Carrington",
+        "case_name_full": "Entick v. Carrington",
+        "identity_method": "off_cl",
+        "cluster_id": None,
+        "lead_opinion_id": None,
+        "expected_citation_found": True,
+        "party_name_in_text": True,
+        "canonical_name_match": True,
+    })
+    record["citations"] = citations
+    record["off_cl_links"] = links
+    record["progeny"]["count_source"] = "off_cl_na"
+    return record
+
+
+def self_test_verified_off_cl_schema():
+    schema = read_json(os.path.join(os.getcwd(), "_overhaul2", "lake", "_schema.json"))
+    valid = verified_off_cl_record_fixture()
+    assert verified_off_cl_schema_errors(valid, schema) == []
+    duplicate_source = json.loads(json.dumps(valid))
+    duplicate_source["off_cl_links"][1]["source"] = duplicate_source["off_cl_links"][0]["source"]
+    assert "verified_off_cl requires two distinct off_cl sources" in verified_off_cl_schema_errors(duplicate_source, schema)
+    null_official = json.loads(json.dumps(valid))
+    null_official["citations"]["official"] = None
+    assert "verified_off_cl citations.official must be non-empty" in verified_off_cl_schema_errors(null_official, schema)
+    blank_official_string = json.loads(json.dumps(valid))
+    blank_official_string["citations"]["official"] = "  "
+    assert "verified_off_cl citations.official must be non-empty" in verified_off_cl_schema_errors(blank_official_string, schema)
+    blank_official_dict = json.loads(json.dumps(valid))
+    blank_official_dict["citations"]["official"]["cite"] = "  "
+    assert "verified_off_cl citations.official must be non-empty" in verified_off_cl_schema_errors(blank_official_dict, schema)
+
+
+def self_test_off_cl_elevation_path():
+    tmp = tempfile.mkdtemp(prefix="s2-off-cl-elevation-selftest-")
+    try:
+        paths = LakePaths(tmp, os.path.join(tmp, "pool"))
+        paths.ensure()
+        source = {
+            "record_id": "Entick v. Carrington",
+            "record_id_status": "resolved",
+            "source": "content/cases",
+            "stub": False,
+            "title": "Entick v. Carrington",
+            "expected_citation": "19 How. St. Tr. 1029",
+            "parallel_cite": "95 Eng. Rep. 807",
+            "court": "Court of Common Pleas",
+            "court_level": "other",
+            "date_decided": "1765-11-02",
+            "year": 1765,
+            "lane_status": default_lane_status(),
+            "counts": {},
+        }
+        write_json(paths.manifest, {
+            "schema_version": "s2.manifest.v1",
+            "generated_at": iso_now(),
+            "records": [dict(source)],
+        })
+        previous = empty_record_shell("Entick v. Carrington", source, "oldrun")
+        previous["status"] = "not_found"
+        previous["identity"]["identity_method"] = "blocked"
+        previous["provenance"]["warnings"] = [
+            "identity completion could not be replayed; blocked rather than marking not_found",
+            "identity completion could not be replayed; blocked rather than marking not_found",
+            "legacy treatment migrated: good -> good_law",
+        ]
+        write_case_record(paths, previous)
+        adjudication_path = os.path.join(tmp, "entick-adjudication.json")
+        write_json(adjudication_path, off_cl_adjudication_fixture())
+        manifest = ManifestStore(paths.manifest)
+        journal = Journal(os.path.join(tmp, "journal.jsonl"), "selftest")
+        elevated = apply_off_cl_elevation(paths, manifest, journal, "Entick v. Carrington", adjudication_path, "selftest")
+        assert elevated["status"] == "verified_off_cl"
+        assert elevated["identity"]["identity_method"] == "off_cl"
+        assert elevated["identity"]["cluster_id"] is None
+        assert elevated["citations"]["official"]["cite"] == "19 How. St. Tr. 1029"
+        assert len({link["source"] for link in elevated["off_cl_links"]}) == 2
+        assert elevated["progeny"]["count_source"] == "off_cl_na"
+        assert elevated["provenance"]["warnings"] == []
+        assert manifest.by_record_id["Entick v. Carrington"]["status"] == "verified_off_cl"
+        rows = journal.rows()
+        assert any(row.get("step") == "adjudication" and row.get("action") == "elevate-off-cl" for row in rows)
+        assert any(row.get("step") == "progeny" and row.get("count_source") == "off_cl_na" for row in rows)
+
+        padded_official = off_cl_adjudication_fixture()
+        padded_official["citations"]["official"] = "  19 How. St. Tr. 1029  "
+        padded_citations, _links, _trail = verify_off_cl_adjudication(padded_official, record_id="Entick v. Carrington")
+        assert padded_citations["official"]["cite"] == "19 How. St. Tr. 1029"
+        assert padded_citations["display"] == "19 How. St. Tr. 1029"
+
+        padded_official_dict = off_cl_adjudication_fixture()
+        padded_official_dict["citations"]["official"] = {"cite": "  19 How. St. Tr. 1029  "}
+        padded_citations, _links, _trail = verify_off_cl_adjudication(padded_official_dict, record_id="Entick v. Carrington")
+        assert padded_citations["official"]["cite"] == "19 How. St. Tr. 1029"
+        assert padded_citations["display"] == "19 How. St. Tr. 1029"
+
+        bad_duplicate_path = os.path.join(tmp, "bad-duplicate-source.json")
+        bad_duplicate = off_cl_adjudication_fixture()
+        bad_duplicate["off_cl_links"][1]["source"] = bad_duplicate["off_cl_links"][0]["source"]
+        write_json(bad_duplicate_path, bad_duplicate)
+        try:
+            verify_off_cl_adjudication(read_json(bad_duplicate_path), record_id="Entick v. Carrington")
+        except ValueError as exc:
+            assert "two distinct" in str(exc)
+        else:
+            raise AssertionError("duplicate off-CL sources were accepted")
+
+        for label, official in (
+            ("null", None),
+            ("blank-string", "  "),
+            ("blank-dict", {"cite": "  "}),
+        ):
+            bad_official_path = os.path.join(tmp, "bad-official-%s.json" % label)
+            bad_official = off_cl_adjudication_fixture()
+            bad_official["citations"]["official"] = official
+            write_json(bad_official_path, bad_official)
+            try:
+                verify_off_cl_adjudication(read_json(bad_official_path), record_id="Entick v. Carrington")
+            except ValueError as exc:
+                assert "citation is empty" in str(exc)
+            else:
+                raise AssertionError("%s official citation was accepted" % label)
+
+        try:
+            apply_off_cl_elevation(paths, manifest, journal, "Entick v. Carrington", None, "selftest")
+        except SystemExit as exc:
+            assert "builder never self-elevates" in str(exc)
+        else:
+            raise AssertionError("off-CL elevation ran without an adjudication file")
+    finally:
+        shutil.rmtree(tmp)
+
+
+def self_test_frontier_stub_record_id_bounds_and_resume():
+    tmp = tempfile.mkdtemp(prefix="s2-frontier-long-caption-selftest-")
+    try:
+        paths = LakePaths(tmp, os.path.join(tmp, "pool"))
+        paths.ensure()
+        source = {
+            "record_id": "UNRESOLVED:arkansas-v-sanders",
+            "record_id_status": "UNRESOLVED",
+            "stub": True,
+            "caption": "Arkansas v. Sanders",
+            "slug": "arkansas-v-sanders",
+            "court_level": "state",
+            "year": 1979,
+            "roster_key": "Arkansas v. Sanders|1979|fixture",
+            "source_row_index": 4,
+            "counts": {},
+        }
+        partial = empty_record_shell(source["record_id"], source, "selftest")
+        write_case_record(paths, partial)
+        canonical = (
+            "Sarah Sanders, in her official capacity as Governor of Arkansas, Lindsay Wallace, "
+            "in her official capacity as Secretary of the Arkansas Department of Corrections, "
+            "and the Arkansas Department of Corrections v. Arkansas Board of Corrections and "
+            "Benny Magness, in his official capacity as Chairman of the Arkansas Board of Corrections"
+        )
+        assert len(slugify(canonical)) > 255
+        journal = Journal(os.path.join(tmp, "journal.jsonl"), "selftest")
+        client = FrontierLongCaptionClient(canonical)
+        record, final_id = process_frontier_record(
+            source,
+            client,
+            paths,
+            {"court_classes": {"state": {"reporter_classes": {"official": 1}, "regional_reporters": {}}}},
+            journal,
+            ResumeState([{"record_id": source["record_id"], "step": "case-interruption", "status": "interrupted", "reason": "unhandled_exception"}]),
+            "selftest",
+        )
+        assert final_id == "arkansas-v-sanders--10601315", final_id
+        assert record["record_id"] == final_id
+        assert re.match(r"^[a-z0-9]+(?:-[a-z0-9]+)*--[0-9]+$", final_id), final_id
+        assert len((final_id + ".json").encode("utf-8")) <= 120
+        assert os.path.exists(os.path.join(paths.cases, final_id + ".json"))
+        assert not os.path.exists(os.path.join(paths.cases, source["record_id"] + ".json"))
+        assert client.search_calls and client.cluster_calls
+        rows = journal.rows()
+        assert rows[-1]["record_id"] == source["record_id"]
+        assert rows[-1]["final_record_id"] == final_id
+
+        no_result = dict(source)
+        no_result["caption"] = "No Result v. Case"
+        not_found_id = not_found_stub_record_id(no_result)
+        assert re.match(r"^no-result-v-case--u[0-9a-f]{8}$", not_found_id), not_found_id
     finally:
         shutil.rmtree(tmp)
 
@@ -5067,6 +5775,10 @@ def run_self_tests():
     self_test_identity_primary_prefilter_plan()
     self_test_identity_caption_and_cite_fixtures()
     self_test_identity_fallback_ladder()
+    self_test_terminal_not_found_skip_and_warning_dedupe()
+    self_test_verified_off_cl_schema()
+    self_test_off_cl_elevation_path()
+    self_test_frontier_stub_record_id_bounds_and_resume()
     self_test_bounded_progeny()
     self_test_outbound_edges_from_search_result()
     self_test_identity_skip_preserves_record()
@@ -5092,6 +5804,8 @@ def parse_args(argv):
     parser.add_argument("--run-id", help="explicit fresh build id override; default is the stable id persisted in _manifest.json")
     parser.add_argument("--readjudicate", action="append", default=[], help="reset identity and downstream resume state for a record_id/title; repeatable")
     parser.add_argument("--readjudicate-file", action="append", default=[], help="file of record IDs/titles to readjudicate, one per line or JSON list")
+    parser.add_argument("--elevate-off-cl", help="elevate a terminal not_found record using an orchestrator-prepared off-CL adjudication file")
+    parser.add_argument("--adjudication", help="JSON adjudication file required by --elevate-off-cl")
     parser.add_argument("--token-path", default=TOKEN_PATH, help="CourtListener token path")
     parser.add_argument("--rate-per-minute", type=int, default=14, help="token bucket refill and capacity")
     parser.add_argument("--hourly-limit", type=int, default=900, help="hourly guard ceiling")
