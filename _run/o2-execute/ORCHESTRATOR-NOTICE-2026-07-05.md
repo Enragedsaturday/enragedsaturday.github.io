@@ -26,3 +26,11 @@ Items landed on the branch while session 12 was running; pick up at this gate:
    fresh. RETRO-W0W1 CodeRabbit artifacts land in `_run/gates/` (scoped: scripts/lint, quartz,
    scripts/s5, scripts/gates — scripts/s2 deliberately excluded, its gate runs at S2 close);
    any resulting work orders will sit alongside this notice.
+6. **S2 § A16 (user-approved 2026-07-05) + F-S2-26** (`S2-FIX-26-WORKORDER.md`): the
+   `verified_off_cl` resting state for outside-CL-corpus cases (Entick) + the terminal-not_found
+   churn fix. Dispatch F-S2-26 with F-S2-25 at the next fix window — same loop, no session
+   interrupt (spec/schema text is inert to the running process; code changes bind at relaunch).
+   Do NOT hand-edit the Entick record while a session is live (the churn bug rewrites it every
+   session until Defect 1 lands); its elevation runs through the new `--elevate-off-cl` path
+   with an orchestrator-prepared, web-verified adjudication file. Mind the work order's R14
+   whitelist caveat — a whitelist-extension decision may need to surface to the user.

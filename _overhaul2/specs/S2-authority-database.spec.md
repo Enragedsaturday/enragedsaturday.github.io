@@ -57,7 +57,8 @@ citation+date+court, record the alternates in `provenance.warnings`; (b) **recen
 investigate (we compare the input name to `cluster.case_name` ourselves — the auto warning is masked by
 cite dedup); (d) **not found** → `not_found`, web + 2nd-source cross-check, **never delete**. *Check:*
 100% of `verified` records pass the two-key; every non-verified record carries a reason code.
-`CHECKLIST:D1` · `PROCESS` · maps guardrail G1/G3.
+`CHECKLIST:D1` · `PROCESS` · maps guardrail G1/G3. *Amended — see Amendments A16 (edge case (e):
+outside-corpus → `verified_off_cl` via the off-CL two-key analogue).*
 
 **R3 — Citations & pinpoints.** `citations` carries the official cite (`type=1`), parallels, vendor-
 neutral (Lexis/WL/neutral), each typed, plus a `display` string. CL `citation.type` map:
@@ -178,7 +179,8 @@ treatment (lake) vs the authored **prose** "Treatment & subsequent history" sect
 by a **coherence gate (S9)**, not the drift lint. *Check:* managed frontmatter deep-equals the
 projection site-wide; no managed field hand-editable without lint failure; every case page ↔ a record.
 `AUTO:LINT-S2-drift` · `AUTO:LINT-S2-pagerecord`. *Amended — see Amendments A13 (treatment-enum
-migration mapping gates the first projection).*
+migration mapping gates the first projection), A16 (page↔record lint also accepts
+`verified_off_cl`).*
 
 **R13 — Derived SQLite query layer (rebuildable).** `authority.sqlite`, loaded from `cases/` + the
 progeny cache, holds: `cases` (record_id, cluster_id, lead_opinion_id, court_level, year,
@@ -195,7 +197,8 @@ A7 (lake-hash + cache-hash stamps + consumer freshness assert), A10 (`<pool>` de
 **R14 — Off-CL link whitelist + vetting.** Coverage-gap fallbacks are drawn from a whitelist —
 **Justia, Google Scholar, Cornell LII, the official court/reporter site** — for reader links + parallel-
 cite cross-check + independent citing-refs corroboration (G10). No open-web parametric links. *Check:*
-every `off_cl_links[].source` is on the whitelist. `AUTO`.
+every `off_cl_links[].source` is on the whitelist. `AUTO`. *Amended — see Amendments A16 (for
+`verified_off_cl` records the whitelist links are load-bearing Key-2 identity evidence).*
 
 **R15 — S2 build-QA gates + the S9 boundary.** S2 acceptance = **structural gates**: 100% schema-valid;
 100% two-key on `verified` records; denylist enforced; dual dates + provenance present; drift lint +
@@ -708,3 +711,44 @@ From this date: **`LINT-S2-drift` ≡ LINT-12 · `LINT-S2-schema` ≡ LINT-13 ·
 ≡ LINT-14.** This spec's body text (R1, R12, Method 5–6, §6, A6) stands as written; the
 `LINT-S2-*` names survive only as deprecated aliases, and the CI implementation registers under
 the numeric ids. No check semantics change.
+
+---
+
+## Amendments — 2026-07-05 (EXECUTE run; user decision)
+
+### A16 — R2/R12/R14: `verified_off_cl` — the off-CL resting state for outside-CL-corpus cases
+**Source:** live EXECUTE finding (session-5 adjudication: *Entick v. Carrington* (1765, Court of
+Common Pleas, 19 How. St. Tr. 1029; 95 Eng. Rep. 807) is honestly `not_found` — an English case
+outside CL's corpus — yet holds a roster page). As written, R12's page↔record lint (`verified`/
+`under_review` only) makes such a page **unpublishable forever**: its record can never reach
+`verified` (the R2 two-key requires CL `citations[]` + party text) and `not_found` fails the
+lint. The status vocabulary and lint gain one state; nothing else changes.
+
+**Adds to R2 (no text superseded):** a fifth named edge case — (e) **outside-corpus** → a
+`not_found` record MAY be elevated to **`verified_off_cl`** when it satisfies the **off-CL
+two-key analogue**: **Key 1** — official citation(s) recorded from an authoritative reporter
+(`citations.official` + parallels; for Entick: 19 How. St. Tr. 1029 / 95 Eng. Rep. 807);
+**Key 2** — **≥2 independent R14-whitelisted sources** (Justia, Google Scholar, Cornell LII,
+official court/reporter site) each confirming caption + cite + court + date, recorded as
+`off_cl_links[]` with a G10 cross-check trail in `provenance` (per-source: url, what was
+confirmed, checked-date). Identity fields stay CL-null (`cluster_id: null` is the honest
+value); `identity_method: "off_cl"`. The elevation is an **orchestrator adjudication** (not
+builder-automatic): each candidate is a named user-visible decision journaled at a session gate.
+
+**Adds to R12:** the page↔record lint accepts `verified_off_cl` alongside `verified`/
+`under_review` for the page↔record check. The drift lint/projector treat it as a normal managed
+status; the projected frontmatter carries the off-CL reader links (R14's reader-link purpose).
+The **treatment lanes stay CL-silent** for such records: Field-I derives from the R6 web lane +
+S7 prose only, `varies_by_point` per normal rules; progeny stays empty with
+`count_source: "off_cl_na"` — no lane may fabricate CL-shaped data for a record CL does not hold.
+
+**Adds to R14 (no text superseded):** for `verified_off_cl` records the whitelist links are
+**load-bearing identity evidence** (Key 2), not just reader fallbacks; the existing R14 check
+(`every off_cl_links[].source on the whitelist`) plus a new check — every `verified_off_cl`
+record carries ≥2 distinct-source `off_cl_links[]` and non-null `citations.official` — both
+enforced by LINT-13 (schema) at build and re-verified at the S9 panel like any identity.
+
+**Scope guard:** `verified_off_cl` is lawful ONLY where the R2 ladder exhausted honestly AND the
+case is plausibly outside CL's corpus (pre-1789 English, some state-archaic, foreign); a US case
+that *should* be in CL stays `not_found` pending investigation (R7's "not found ≠ fabricated"
+discipline is unchanged). Expected initial population: exactly one (Entick).
