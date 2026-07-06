@@ -575,6 +575,45 @@ only**:
   lane is the enforcement; if the App is installed later, the same PR auto-reviews under the same
   `.coderabbit.yaml` filters.
 
+**Session-gate checkpoint + pause notifications + publish dogfood (standing amendment #2 — user
+decision 2026-07-05; adversarially reviewed pre-landing, 15 findings adjudicated).** Three more
+restored O1/original-build lived practices (same artifact-mining gap as the CodeRabbit gate), plus
+their retroactive application:
+- **(a) Offsite checkpoint at every session gate.** The original build's Day 1 began with a
+  timestamped backup (`docs/RUNBOOK.md` §"Day 1"); this kit said "commit per wave step" but never
+  *push* — proven live 2026-07-05: the execute branch had never been pushed, and `~/cssi-lake/`
+  (journal + HTTP cache + db — the multi-day quota investment) had no copy anywhere. At **every
+  session gate** run `scripts/gates/session_checkpoint.sh`: `git push` of the current branch +
+  a lake backup over a first-success-wins chain — **git commit+push of `~/cssi-lake` to its
+  private backup repo** (`cssi-lake-backup`, true offsite, no mount/TCC dependency) → NAS rsync →
+  local-second-disk rsync (the rsync legs need a macOS TCC grant to this process tree; the
+  sandbox allowlist for them is in `.claude/settings.json`). **Fail-soft and time-bounded**
+  (alarm-bounded legs — a dead mount or credential prompt cannot stall the gate; exit is always 0
+  with WARN lines for the journal). **≥2 consecutive failed checkpoints → the orchestrator
+  push-notifies the user** (a notification, NOT a new pause). Zero CL calls.
+  *Retroactive application:* branch pushed + draft PR #3 opened 2026-07-05; lake repo initialized
+  + full snapshot committed 2026-07-05 (first offsite push user-reviewed per auto-mode policy;
+  incremental pushes run unattended thereafter).
+- **(b) Human-pause notification protocol.** The 8 §0 pauses + the lane-outage halt "elevate to
+  the user" — with the user remote, elevation must be *pushed*, not parked: when a pause/halt
+  fires, (1) send a push notification (pause id + one-line reason), (2) serve the evidence packet
+  as an HTML brief with the decision options, (3) journal both, then wait. **This changes HOW
+  pauses surface, not WHICH pauses exist** — the §0 register is untouched; no new stop is created.
+  *Retroactive application:* none needed — no §0 pause has fired during the EXECUTE run.
+- **(c) Dual-viewport dogfood at publish (S9 R15 execution note).** The original build ended with
+  a puppeteer dogfood pass (desktop + mobile); R15's "verify live" enumerates functional checks
+  but no viewport sweep. Execution note: R15's verify-live step drives the deployed site in a
+  real browser at **desktop AND mobile viewports** — nav/explorer drawer, search, popovers, a
+  case page, a landing-highlight deep link — before the retirement step.
+- **(d) Retroactive CodeRabbit gate over pre-gate code (RETRO-W0W1).** The CodeRabbit gate was
+  adopted mid-run; Wave 0 (S1 lint scaffolding) and Wave-1 S4 (platform TS/SCSS) completed before
+  it existed — Codex-reviewed but never CodeRabbit-gated. Retroactive scoped runs (artifacts
+  `_run/gates/RETRO-*`) cover the **stable** code legs: `scripts/lint/`, `quartz/`, `scripts/s5/`,
+  `scripts/gates/`. **`scripts/s2/` is deliberately excluded** — it is mid-accumulation under
+  live fix loops; the S2-close gate (above) reviews its final state. Findings feed the normal
+  find→adjudicate→fix machinery as work orders. Note: the CodeRabbit CLI self-updated 0.6.0 →
+  0.6.4 between the SMOKE and RETRO runs; each gate artifact stamps its CLI version.
+
 ## 6. Reference inputs & key paths
 - **O2 planning:** `_overhaul2/RUNBOOK.md` (this) · `PRACTICES.md` · `CL-DATA-INVENTORY.md` ·
   `specs/` (outputs). Briefs: `~/briefs/2026-07-01-cssi-overhaul-2-findings-and-bundle.html`,

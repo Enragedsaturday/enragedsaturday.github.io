@@ -77,6 +77,12 @@ close, before outputs flip to accepted state, run `scripts/gates/coderabbit_gate
 (detached-worktree, headless, code paths only per `.coderabbit.yaml`; zero CL quota; NOT a
 human pause). Findings on code paths are blocking but adjudicated find→adjudicate→fix,
 loop-cap-3 → `_review-needed/` — never auto-applied. S7 ships no code — no gate.
+**Session-gate checkpoint + pause notifications (standing amendment #2 2026-07-05 — RUNBOOK §5):**
+every session gate ends with `scripts/gates/session_checkpoint.sh` (branch push + lake backup;
+fail-soft, alarm-bounded — journal any WARN; a CHECKPOINT-ESCALATE line means push-notify the
+user). Every §0 pause/halt fires a push notification + a served HTML-brief evidence packet
+before waiting (surfacing only — the pause register is unchanged). S9 R15 verify-live includes
+the desktop+mobile browser dogfood sweep.
 **Lane-outage rule (§0 pause #8 — user decision 2026-07-04):** on any agent-lane failure
 (realistically Codex), attempt self-resolution first — retry/backoff, fresh `codex exec`
 session, config/timeout fixes, `codex --version` sanity; a failure requiring interactive
