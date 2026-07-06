@@ -470,3 +470,31 @@ logged ✓ · treatment audit recorded (4 flags, all closed) ✓. **Total run: 1
 `_run/o2-execute/S6-HANDOFF.md` (25 flags + 65 shells + dedupe pairs + the S9 residuals note).
 Defect ledger F-S2-16..31: every finding adjudicated, fixed, and live-validated; fail-closed
 held every single time — zero wrong ingestions across the entire build.
+
+## Wave 3 — S6 coverage/ingest (OPENED 2026-07-06)
+
+**Step 1 + PACKET A (pause #2 — SURFACED, awaiting dispositions):** roster regenerated +
+reconciled (94 rows, drift fully attributed; LLC v. John Doe = documented §c exclusion). R4
+dual-model two-key re-verification (blind Codex web leg ∥ Claude Opus leg, zero CL): **27/29
+fabrication suspects REAL-with-keys** — incl. all 4 O1-era SEED §a suspects REFUTED
+(Mayville/Small/Lyle real, holdings match; Moore-Bush scar absent from current text) — 2
+genuinely unverifiable (US v. West, US v. White: stolen-vehicle standing propositions) →
+recommend REMOVE+re-anchor. Divergences adjudicated: arkansas-v-sanders stub matched the
+WRONG case (2024 Gov.-Sanders; real = 442 U.S. 753 → re-key), Morse→French + Carroll/Carman +
+Chatrie-stub = alias-folds. Packet: `_run/s6-fabrications.md` + served brief + notification.
+
+**Step 2 (COMPLETE): GAP + term sweep.** GAP queue (7 new AUTHOR + Egbert-stub-exists +
+Martin-rides-packet-A + Noem WATCH + Villarreal REJECT). Term sweep OT2019→present: blind
+dual-model enumeration (Codex 63 ∥ Claude 48), 25 Codex singletons existence-verified — **0
+fabrications in either leg** (frame divergence only); 3 docket corrections + 1 caption fix;
+Wikipedia OT2025 flagged as hallucination-polluted (avoided). Reconciled universe: 73 rows.
+**R2 gate** (Opus writer, 84 rows): 61 INGEST (48 page-candidates / 13 in-scope-non-page
+incl. 9 noted-orders + Noem watch + 2 same-litigation folds) · 19 EXCLUDE · 4 BORDERLINE.
+**Codex re-check** (19 sampled incl. all borderlines + 5 suspect picks): 4 DISAGREEMENTS
+auto-promoted to packet B (Reed v. Goertz, Williams v. Reed → borderline; Price v. Montgomery
+→ exclude-craft dispute; **Villarreal GAP-04f caption/rationale mismatch — the queued caption
+is the in-scope Lagordiloca case while the reject rationale describes Villarreal v. Texas —
+user resolution rides packet B**). Folds + no-Confrontation-line corpus check verified.
+Packet-B accumulator: 4 writer-borderlines + 4 re-check promotions + R3's pre-registered
+members. R7 queue batch 1: 30 rows (2 pulled pending packet B), every row docket/cite-keyed;
+intake mechanism (--add-candidates, dedupe + journaled provenance) with the builder.
