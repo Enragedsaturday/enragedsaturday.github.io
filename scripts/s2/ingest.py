@@ -35,6 +35,8 @@ RETRYABLE_HTTP_CODES = {429, 500, 502, 503, 504}
 TRAILING_YEAR_PAREN_RE = r"\s*\([^()]*(?:17|18|19|20)\d{2}\)\s*$"
 READJUDICATION_FINDINGS = ["F-S2-16", "F-S2-17", "F-S2-18"]
 READJUDICATION_ADJUDICATOR = "orchestrator claude-fable-5"
+S6_CANDIDATE_INTAKE_ADJUDICATOR = "orchestrator claude-fable-5 (R2 gate 2026-07-06)"
+S6_CANDIDATE_SOURCE_PREFIX = "s6-candidates/"
 IDENTITY_PRIMARY_CLUSTER_LIMIT = 10
 IDENTITY_FALLBACK_CLUSTER_LIMIT = 3
 READJUDICATION_RESET_FIELDS = ("identity", "citations", "pinpoints", "progeny", "treatment", "off_cl_links")
@@ -971,6 +973,17 @@ def default_lane_status():
     }
 
 
+def frontier_stub_lane_status(identity="pending"):
+    return {
+        "identity": identity,
+        "fabrication_check": "pending",
+        "citations": "pending",
+        "off_cl_links": "pending",
+        "provenance": "pending",
+        "treatment": {},
+    }
+
+
 TREATMENT_LANE_STATE_FIELDS = (
     "cursor",
     "reviewed",
@@ -1486,6 +1499,25 @@ def identity_fallback_params(record, expected_cite):
         if base.get("court"):
             by_docket["court"] = base["court"]
         yield "docket_number", by_docket
+
+
+def frontier_identity_search_results(source_record, client, unresolved_id):
+    attempts = [("case_name", identity_search_params(source_record))]
+    expected_cite = source_record.get("expected_citation") or source_record.get("citation") or ""
+    seen = {json.dumps(attempts[0][1], sort_keys=True)}
+    for rung, params in identity_fallback_params(source_record, expected_cite):
+        key = json.dumps(params, sort_keys=True)
+        if key in seen:
+            continue
+        seen.add(key)
+        attempts.append((rung, params))
+    for rung, params in attempts:
+        step = "frontier.identity.search" if rung == "case_name" else "frontier.identity.search.%s" % rung
+        search = client.search(params, cache=True, record_id=unresolved_id, step=step)
+        results = search_results(search)
+        if results:
+            return results, rung
+    return [], None
 
 
 def identity_year_matches(record, result, cluster):
@@ -2844,7 +2876,7 @@ class ManifestStore:
             row.update(normalize_source_record(row))
             if row.get("court_level") != before:
                 self.normalized = True
-            row.setdefault("lane_status", default_lane_status())
+            row.setdefault("lane_status", frontier_stub_lane_status() if row.get("stub") else default_lane_status())
             row.setdefault("counts", {})
         self.by_record_id = {row["record_id"]: row for row in self.data.get("records", [])}
 
@@ -2974,7 +3006,28 @@ class ManifestStore:
             for status, count in sorted(status_counts.items(), key=lambda item: str(item[0]))
         }
 
+    def assert_unique_record_ids(self):
+        seen = {}
+        duplicates = {}
+        for idx, row in enumerate(self.data.get("records", [])):
+            if not isinstance(row, dict):
+                raise ValueError("manifest record at index %s is not an object" % idx)
+            record_id = row.get("record_id")
+            if not record_id:
+                raise ValueError("manifest record at index %s missing record_id" % idx)
+            if record_id in seen:
+                duplicates.setdefault(record_id, [seen[record_id]]).append(idx)
+            else:
+                seen[record_id] = idx
+        if duplicates:
+            summary = ", ".join(
+                "%s at records[%s]" % (record_id, ",".join(str(idx) for idx in indexes))
+                for record_id, indexes in sorted(duplicates.items())
+            )
+            raise ValueError("duplicate manifest record_id(s): %s" % summary)
+
     def save(self):
+        self.assert_unique_record_ids()
         self.data["generated_at"] = self.data.get("generated_at")
         write_json(self.path, self.data)
 
@@ -2988,6 +3041,290 @@ def unique_preserve_order(values):
             seen.add(value)
             out.append(value)
     return out
+
+
+def clean_s6_candidate_value(value):
+    if value is None:
+        return None
+    value = str(value).strip()
+    return value or None
+
+
+def read_s6_candidate_queue(path):
+    rows = []
+    with open(path, encoding="utf-8") as f:
+        for line_no, line in enumerate(f, start=1):
+            line = line.strip()
+            if not line:
+                continue
+            try:
+                row = json.loads(line)
+            except json.JSONDecodeError as exc:
+                raise ValueError("%s:%s: invalid JSONL row: %s" % (path, line_no, exc)) from exc
+            if not isinstance(row, dict):
+                raise ValueError("%s:%s: candidate queue row must be a JSON object" % (path, line_no))
+            if not clean_s6_candidate_value(row.get("caption")):
+                if "queue" in row and ("rows" in row or "note" in row or "generated" in row):
+                    continue
+                raise ValueError("%s:%s: candidate queue row missing caption" % (path, line_no))
+            rows.append((line_no, row))
+    return rows
+
+
+def s6_candidate_year(candidate):
+    date = clean_s6_candidate_value(candidate.get("date") or candidate.get("date_decided"))
+    if date:
+        m = re.match(r"^((?:17|18|19|20)\d{2})", date)
+        if m:
+            return int(m.group(1))
+    cite = clean_s6_candidate_value(candidate.get("citation") or candidate.get("expected_citation"))
+    if cite:
+        matches = re.findall(r"\b((?:17|18|19|20)\d{2})\b", cite)
+        if matches:
+            return int(matches[-1])
+    return None
+
+
+def s6_candidate_court_fields(candidate):
+    court = clean_s6_candidate_value(candidate.get("court"))
+    court_level = normalize_court_class(court)
+    circuit = None
+    if court_level == "other":
+        circuit = parse_circuit(court)
+        if circuit:
+            court_level = "coa"
+    return court, court_level, circuit
+
+
+def s6_candidate_roster_key(row):
+    return "|".join(
+        normalize_roster_value(value)
+        for value in (
+            row.get("caption"),
+            row.get("court") or row.get("court_level"),
+            row.get("date") or row.get("date_decided") or row.get("year"),
+            row.get("docket") or row.get("expected_citation") or row.get("citation"),
+            row.get("source"),
+            row.get("source_row_index"),
+            row.get("prong"),
+            row.get("posture"),
+        )
+    )
+
+
+def unresolved_s6_candidate_record_id(caption, roster_key):
+    slug = bounded_record_slug(caption, limit=72)
+    return "UNRESOLVED:s6-candidate-%s-%s" % (slug, sha1_text(roster_key)[:8])
+
+
+def s6_candidate_manifest_row(candidate, line_no):
+    caption = clean_s6_candidate_value(candidate.get("caption"))
+    leg = clean_s6_candidate_value(candidate.get("leg"))
+    if not caption:
+        raise ValueError("S6 candidate row missing caption")
+    if not leg:
+        raise ValueError("S6 candidate row for %s missing leg" % caption)
+    if "/" in leg or "\\" in leg:
+        raise ValueError("S6 candidate leg must be a simple path segment: %r" % leg)
+
+    citation = clean_s6_candidate_value(candidate.get("citation") or candidate.get("expected_citation"))
+    docket = clean_s6_candidate_value(candidate.get("docket"))
+    date = clean_s6_candidate_value(candidate.get("date") or candidate.get("date_decided"))
+    court, court_level, circuit = s6_candidate_court_fields(candidate)
+    year = s6_candidate_year(candidate)
+    source = S6_CANDIDATE_SOURCE_PREFIX + leg
+    row = {
+        "record_id_status": "UNRESOLVED",
+        "source": source,
+        "stub": True,
+        "page_path": None,
+        "slug": slugify(caption),
+        "caption": caption,
+        "status": "pending",
+        "lane_status": frontier_stub_lane_status(),
+        "counts": {},
+        "last_record_write": iso_now(),
+        "source_row_index": line_no,
+        "leg": leg,
+    }
+    if citation:
+        row["citation"] = citation
+        row["expected_citation"] = citation
+    if docket:
+        row["docket"] = docket
+    if date:
+        row["date"] = date
+        if re.fullmatch(r"\d{4}-\d{2}-\d{2}", date):
+            row["date_decided"] = date
+    if year is not None:
+        row["year"] = year
+    if court:
+        row["court"] = court
+    if court_level:
+        row["court_level"] = court_level
+    if circuit:
+        row["circuit"] = circuit
+    for field in ("prong", "posture"):
+        value = clean_s6_candidate_value(candidate.get(field))
+        if value:
+            row[field] = value
+    if "page_candidate" in candidate:
+        row["page_candidate"] = bool(candidate.get("page_candidate"))
+
+    row["roster_key"] = s6_candidate_roster_key(row)
+    row["roster_key_sha1"] = sha1_text(normalized_roster_key(row))
+    row["record_id"] = unresolved_s6_candidate_record_id(caption, row["roster_key"])
+    return row
+
+
+def manifest_row_caption_slug(row):
+    value = row.get("slug") or row.get("caption") or row.get("title")
+    return slugify(value) if value else None
+
+
+def docket_compare_key(value):
+    value = normalize_roster_value(value)
+    if not value:
+        return None
+    value = re.sub(r"^(?:no\.?|docket(?:\s+no\.?)?)\s+", "", value)
+    return value or None
+
+
+def citation_values(value):
+    if value is None:
+        return []
+    if isinstance(value, dict):
+        return [citation_to_string(value)]
+    if isinstance(value, (list, tuple)):
+        out = []
+        for item in value:
+            out.extend(citation_values(item))
+        return out
+    return [part.strip() for part in re.split(r"\s*;\s*", str(value)) if part.strip()]
+
+
+def citation_has_dedupe_page_number(value):
+    cite = normalize_cite(value)
+    if not cite or "___" in cite:
+        return False
+    if isinstance(value, dict) and "page" in value:
+        page = str(value.get("page") or "").strip()
+        return bool(page and "___" not in page and re.search(r"\d", page))
+    return re.search(r"^\s*\d+[A-Za-z]*\s+.+\s+\d+[A-Za-z]*(?:[-\u2013]\d+[A-Za-z]*)?\s*$", cite) is not None
+
+
+def citation_compare_keys_from_value(value):
+    keys = set()
+    for cite in citation_values(value):
+        if not citation_has_dedupe_page_number(cite):
+            continue
+        key = citation_compare_key(cite)
+        if key:
+            keys.add(key)
+    return keys
+
+
+def manifest_row_citation_keys(row):
+    keys = set()
+    for field in ("expected_citation", "citation", "official_cite", "parallel_cite", "neutral_cite"):
+        keys.update(citation_compare_keys_from_value(row.get(field)))
+    return keys
+
+
+def index_manifest_candidate_row(indexes, row):
+    record_id = row.get("record_id")
+    if not record_id:
+        return
+    slug = manifest_row_caption_slug(row)
+    if slug:
+        indexes["caption_slug"].setdefault(slug, row)
+    docket = docket_compare_key(row.get("docket"))
+    if docket:
+        indexes["docket"].setdefault(docket, row)
+    for key in manifest_row_citation_keys(row):
+        indexes["citation"].setdefault(key, row)
+
+
+def build_manifest_candidate_dedupe(records):
+    indexes = {"caption_slug": {}, "docket": {}, "citation": {}}
+    for row in records:
+        if isinstance(row, dict):
+            index_manifest_candidate_row(indexes, row)
+    return indexes
+
+
+def find_s6_candidate_duplicate(row, indexes):
+    checks = (
+        ("caption-slug", row.get("slug"), indexes["caption_slug"]),
+        ("docket", docket_compare_key(row.get("docket")), indexes["docket"]),
+    )
+    for field, key, index in checks:
+        if key and key in index:
+            return field, key, index[key]
+    for key in sorted(manifest_row_citation_keys(row)):
+        if key in indexes["citation"]:
+            return "citation", key, indexes["citation"][key]
+    return None
+
+
+def journal_s6_candidate_skip(journal, row, duplicate, queue_path):
+    duplicate_field, duplicate_key, existing = duplicate
+    journal.append(
+        step="s6-candidate-intake",
+        action="skip-duplicate",
+        status="skipped",
+        leg=row.get("leg"),
+        adjudicated_by=S6_CANDIDATE_INTAKE_ADJUDICATOR,
+        queue_path=queue_path,
+        source_row_index=row.get("source_row_index"),
+        caption=row.get("caption"),
+        docket=row.get("docket"),
+        citation=row.get("citation"),
+        duplicate_by=duplicate_field,
+        duplicate_key=duplicate_key,
+        existing_record_id=existing.get("record_id"),
+        existing_status=existing.get("status"),
+        existing_source=existing.get("source"),
+    )
+
+
+def journal_s6_candidate_append(journal, row, queue_path):
+    journal.append(
+        step="s6-candidate-intake",
+        action="append",
+        status="pending",
+        record_id=row.get("record_id"),
+        leg=row.get("leg"),
+        adjudicated_by=S6_CANDIDATE_INTAKE_ADJUDICATOR,
+        queue_path=queue_path,
+        source=row.get("source"),
+        source_row_index=row.get("source_row_index"),
+        caption=row.get("caption"),
+        docket=row.get("docket"),
+        citation=row.get("citation"),
+        page_candidate=row.get("page_candidate"),
+    )
+
+
+def add_s6_candidates(manifest, journal, queue_path):
+    records = manifest.data.setdefault("records", [])
+    indexes = build_manifest_candidate_dedupe(records)
+    appended = []
+    skipped = []
+    for line_no, candidate in read_s6_candidate_queue(queue_path):
+        row = s6_candidate_manifest_row(candidate, line_no)
+        duplicate = find_s6_candidate_duplicate(row, indexes)
+        if duplicate:
+            skipped.append({"row": row, "duplicate": duplicate})
+            journal_s6_candidate_skip(journal, row, duplicate, queue_path)
+            continue
+        records.append(row)
+        manifest.by_record_id[row["record_id"]] = row
+        index_manifest_candidate_row(indexes, row)
+        appended.append(row)
+        journal_s6_candidate_append(journal, row, queue_path)
+    manifest.regenerate_counts()
+    return {"appended": appended, "skipped": skipped}
 
 
 def read_readjudicate_file(path):
@@ -4333,8 +4670,7 @@ def process_frontier_record(source_record, client, paths, precedence, journal, r
         write_case_record(paths, shell)
         journal.append(record_id=unresolved_id, step="identity", status="complete", skipped=True, final_record_id=unresolved_id, final_status="blocked")
         return shell, unresolved_id
-    search = client.search(identity_search_params(source_record), cache=True, record_id=unresolved_id, step="frontier.identity.search")
-    results = search_results(search)
+    results, search_rung = frontier_identity_search_results(source_record, client, unresolved_id)
     if not results:
         final_id = not_found_stub_record_id(source_record)
         shell["record_id"] = final_id
@@ -4375,7 +4711,7 @@ def process_frontier_record(source_record, client, paths, precedence, journal, r
     shell["provenance"]["field_provenance"]["pinpoints"] = base_field_provenance("frontier stub, no pinpoints")
     write_case_record(paths, shell)
     remove_frontier_partial_record(paths, unresolved_id, final_id)
-    journal.append(record_id=unresolved_id, step="identity", status="complete", final_record_id=final_id, final_status=shell["status"])
+    journal.append(record_id=unresolved_id, step="identity", status="complete", final_record_id=final_id, final_status=shell["status"], search_rung=search_rung)
     return shell, final_id
 
 
@@ -4383,7 +4719,10 @@ def run_ingest(args):
     repo_root = os.getcwd()
     pool_root = os.environ.get("CSSI_LAKE_ROOT", DEFAULT_CSSI_LAKE_ROOT)
     paths = LakePaths(repo_root, pool_root)
-    paths.ensure()
+    if args.add_candidates:
+        os.makedirs(os.path.join(paths.lake, "journal"), exist_ok=True)
+    else:
+        paths.ensure()
     manifest = ManifestStore(paths.manifest)
     had_build_id = bool(manifest.data.get("build_id"))
     run_id = manifest.ensure_build_id(args.run_id)
@@ -4391,6 +4730,28 @@ def run_ingest(args):
         manifest.save()
     journal_path = os.path.join(paths.journal, "s2-ingest-%s.jsonl" % run_id)
     journal = Journal(journal_path, run_id)
+    if args.add_candidates:
+        if (
+            args.repair_migration_refs
+            or args.repair_failclosed_treatment
+            or args.flip_verified
+            or args.elevate_off_cl
+            or args.adjudication
+            or args.readjudicate
+            or args.readjudicate_file
+            or args.rerun_lane
+            or args.records
+            or args.smoke
+        ):
+            raise SystemExit("--add-candidates cannot be combined with other action/filter options")
+        journal, journal_fallback = writable_repair_journal(paths, journal)
+        result = add_s6_candidates(manifest, journal, args.add_candidates)
+        manifest.save()
+        print("journal: %s%s" % (journal.path, " (repo-local fallback)" if journal_fallback else ""))
+        print("s6 candidates appended: %s" % len(result["appended"]))
+        print("s6 candidates skipped: %s" % len(result["skipped"]))
+        print("total manifest records: %s" % manifest.data.get("counts", {}).get("total_manifest_records"))
+        return
     if args.records and not args.rerun_lane:
         raise SystemExit("--records is only valid with --rerun-lane")
     if args.repair_migration_refs:
@@ -5063,6 +5424,40 @@ class FrontierLongCaptionClient:
             "court": "ark",
             "absolute_url": "/opinion/10601315/sarah-sanders-v-arkansas-board-of-corrections/",
             "citations": [{"cite": "2024 Ark. 1", "type": 6}],
+            "sub_opinions": [],
+        }
+
+
+class FrontierCitationFallbackClient:
+    def __init__(self):
+        self.search_calls = []
+        self.cluster_calls = []
+
+    def search(self, params, cache=True, record_id=None, step=None):
+        self.search_calls.append({"params": dict(params), "step": step, "record_id": record_id})
+        if params.get("citation") == "123 U.S. 456":
+            return {
+                "count": 1,
+                "results": [{
+                    "cluster_id": 123456,
+                    "caseName": "Citation Fallback v. Case",
+                    "absolute_url": "/opinion/123456/citation-fallback-v-case/",
+                }],
+                "next": None,
+            }
+        return {"count": 0, "results": [], "next": None}
+
+    def get_cluster(self, cluster_id, record_id=None, step="identity.cluster"):
+        self.cluster_calls.append({"cluster_id": int(cluster_id), "step": step, "record_id": record_id})
+        return {
+            "id": int(cluster_id),
+            "case_name": "Citation Fallback v. Case",
+            "case_name_short": "Citation Fallback",
+            "case_name_full": "Citation Fallback v. Case",
+            "date_filed": "2026-01-01",
+            "court": "scotus",
+            "absolute_url": "/opinion/123456/citation-fallback-v-case/",
+            "citations": [{"volume": 123, "reporter": "U.S.", "page": 456, "type": 1}],
             "sub_opinions": [],
         }
 
@@ -5970,10 +6365,224 @@ def self_test_frontier_stub_record_id_bounds_and_resume():
         assert rows[-1]["record_id"] == source["record_id"]
         assert rows[-1]["final_record_id"] == final_id
 
+        fallback_source = {
+            "record_id": "UNRESOLVED:citation-fallback",
+            "record_id_status": "UNRESOLVED",
+            "stub": True,
+            "caption": "Citation Fallback v. Case",
+            "slug": "citation-fallback-v-case",
+            "court_level": "scotus",
+            "expected_citation": "123 U.S. 456 (2026)",
+            "docket": "25-1",
+            "year": 2026,
+            "roster_key": "Citation Fallback v. Case|scotus|2026|123 U.S. 456|fixture",
+            "source_row_index": 5,
+            "counts": {},
+        }
+        fallback_client = FrontierCitationFallbackClient()
+        fallback_record, fallback_id = process_frontier_record(
+            fallback_source,
+            fallback_client,
+            paths,
+            {"court_classes": {"scotus": {"reporters": {"U.S.": 1}}}},
+            journal,
+            ResumeState([]),
+            "selftest",
+        )
+        assert fallback_id == "citation-fallback-v-case--123456", fallback_id
+        assert fallback_record["status"] == "verified_identity"
+        assert any(call["step"] == "frontier.identity.search.citation" for call in fallback_client.search_calls), fallback_client.search_calls
+        assert journal.rows()[-1]["search_rung"] == "citation"
+
         no_result = dict(source)
         no_result["caption"] = "No Result v. Case"
         not_found_id = not_found_stub_record_id(no_result)
         assert re.match(r"^no-result-v-case--u[0-9a-f]{8}$", not_found_id), not_found_id
+    finally:
+        shutil.rmtree(tmp)
+
+
+def self_test_s6_candidate_intake():
+    tmp = tempfile.mkdtemp(prefix="s2-s6-candidate-intake-selftest-")
+    try:
+        paths = LakePaths(tmp, os.path.join(tmp, "pool"))
+        paths.ensure()
+        existing_caption = {
+            "record_id": "Existing Caption v. Case",
+            "record_id_status": "resolved",
+            "source": "content/cases",
+            "stub": False,
+            "page_path": "content/cases/Existing Caption v. Case.md",
+            "slug": "existing-caption-v-case",
+            "title": "Existing Caption v. Case",
+            "expected_citation": "1 U.S. 1 (1901)",
+            "docket": "10-1",
+            "court_level": "scotus",
+            "status": "verified",
+            "lane_status": default_lane_status(),
+            "counts": {},
+        }
+        existing_docket = {
+            "record_id": "Existing Docket v. Case",
+            "record_id_status": "resolved",
+            "source": "content/cases",
+            "stub": False,
+            "page_path": "content/cases/Existing Docket v. Case.md",
+            "slug": "existing-docket-v-case",
+            "title": "Existing Docket v. Case",
+            "expected_citation": "2 U.S. 2 (1902)",
+            "docket": "22-333",
+            "court_level": "scotus",
+            "status": "under_review",
+            "lane_status": default_lane_status(),
+            "counts": {},
+        }
+        write_json(paths.manifest, {
+            "schema_version": "s2.manifest.v1",
+            "generated_at": iso_now(),
+            "counts": {},
+            "records": [existing_caption, existing_docket],
+        })
+        queue_path = os.path.join(tmp, "queue.jsonl")
+        queue_rows = [
+            {
+                "queue": "S6->S2 R7 candidate fixture",
+                "rows": 6,
+                "note": "metadata header must be ignored",
+                "generated": "2026-07-06",
+            },
+            {
+                "caption": "Novel Candidate v. Case",
+                "docket": "99-100",
+                "citation": "999 U.S. 100 (2026)",
+                "date": "2026-05-01",
+                "court": "scotus",
+                "leg": "sweep",
+                "prong": "c",
+                "posture": None,
+                "page_candidate": True,
+            },
+            {
+                "caption": "Slip Status One v. Case",
+                "docket": "25-101",
+                "citation": "607 U.S. ___",
+                "date": "2026-05-01",
+                "court": "scotus",
+                "leg": "sweep",
+                "prong": "c",
+                "posture": None,
+                "page_candidate": True,
+            },
+            {
+                "caption": "Slip Status Two v. Case",
+                "docket": "25-102",
+                "citation": "607 U.S. ___",
+                "date": "2026-05-01",
+                "court": "scotus",
+                "leg": "sweep",
+                "prong": "c",
+                "posture": None,
+                "page_candidate": True,
+            },
+            {
+                "caption": "Existing Caption v. Case",
+                "docket": "88-777",
+                "citation": "888 U.S. 8 (2026)",
+                "date": "2026-05-02",
+                "court": "scotus",
+                "leg": "sweep",
+                "prong": "c",
+                "posture": None,
+                "page_candidate": True,
+            },
+            {
+                "caption": "Citation Duplicate v. Case",
+                "docket": "55-5",
+                "citation": "1 U.S. 1",
+                "date": "2026-05-02",
+                "court": "scotus",
+                "leg": "sweep",
+                "prong": "c",
+                "posture": None,
+                "page_candidate": True,
+            },
+            {
+                "caption": "Different Caption v. Docket",
+                "docket": "22-333",
+                "citation": "777 U.S. 7 (2026)",
+                "date": "2026-05-03",
+                "court": "scotus",
+                "leg": "sweep",
+                "prong": "c",
+                "posture": None,
+                "page_candidate": True,
+            },
+        ]
+        with open(queue_path, "w", encoding="utf-8") as f:
+            for row in queue_rows:
+                f.write(json.dumps(row, sort_keys=True) + "\n")
+
+        manifest = ManifestStore(paths.manifest)
+        journal = Journal(os.path.join(tmp, "journal.jsonl"), "selftest")
+        result = add_s6_candidates(manifest, journal, queue_path)
+        manifest.save()
+
+        assert len(result["appended"]) == 3, result
+        assert len(result["skipped"]) == 3, result
+        saved = read_json(paths.manifest)
+        assert saved["counts"]["total_manifest_records"] == 5, saved["counts"]
+        assert saved["counts"]["status_counts"]["pending"] == 3, saved["counts"]
+        ids = [row["record_id"] for row in saved["records"]]
+        assert len(ids) == len(set(ids)), ids
+
+        appended = result["appended"][0]
+        assert appended["source"] == "s6-candidates/sweep"
+        assert appended["status"] == "pending"
+        assert appended["stub"] is True
+        assert appended["page_candidate"] is True
+        assert appended["lane_status"] == frontier_stub_lane_status()
+        assert appended["record_id"].startswith("UNRESOLVED:s6-candidate-novel-candidate-v-case-")
+        assert appended["expected_citation"] == "999 U.S. 100 (2026)"
+        assert appended["docket"] == "99-100"
+        assert appended["year"] == 2026
+        placeholder_appended = [row for row in result["appended"] if row.get("citation") == "607 U.S. ___"]
+        assert [row.get("docket") for row in placeholder_appended] == ["25-101", "25-102"], placeholder_appended
+        assert manifest_row_citation_keys(placeholder_appended[0]) == set()
+
+        rows = journal.rows()
+        assert len(rows) == 6, rows
+        assert all(row.get("step") == "s6-candidate-intake" for row in rows)
+        assert all(row.get("adjudicated_by") == S6_CANDIDATE_INTAKE_ADJUDICATOR for row in rows)
+        append_rows = [row for row in rows if row.get("action") == "append"]
+        skip_rows = [row for row in rows if row.get("action") == "skip-duplicate"]
+        assert len(append_rows) == 3 and append_rows[0]["record_id"] == appended["record_id"], rows
+        assert {row.get("duplicate_by") for row in skip_rows} == {"caption-slug", "docket", "citation"}, skip_rows
+        assert {row.get("existing_record_id") for row in skip_rows} == {
+            "Existing Caption v. Case",
+            "Existing Docket v. Case",
+        }, skip_rows
+        assert any(row.get("duplicate_by") == "citation" and row.get("duplicate_key") == "1 us 1" for row in skip_rows), skip_rows
+
+        bad_manifest = ManifestStore(paths.manifest)
+        bad_manifest.data["records"].append(dict(bad_manifest.data["records"][0]))
+        try:
+            bad_manifest.save()
+            assert False, "duplicate record_id save should fail"
+        except ValueError as exc:
+            assert "duplicate manifest record_id" in str(exc), exc
+        assert read_json(paths.manifest)["counts"]["total_manifest_records"] == 5
+
+        indexes = build_manifest_candidate_dedupe([existing_caption, existing_docket])
+        citation_duplicate = s6_candidate_manifest_row({
+            "caption": "Citation Duplicate v. Case",
+            "docket": "55-5",
+            "citation": "1 U.S. 1",
+            "court": "scotus",
+            "leg": "sweep",
+            "page_candidate": True,
+        }, 10)
+        duplicate = find_s6_candidate_duplicate(citation_duplicate, indexes)
+        assert duplicate[0] == "citation" and duplicate[2]["record_id"] == "Existing Caption v. Case", duplicate
     finally:
         shutil.rmtree(tmp)
 
@@ -7528,6 +8137,7 @@ def run_self_tests():
     self_test_verified_off_cl_schema()
     self_test_off_cl_elevation_path()
     self_test_frontier_stub_record_id_bounds_and_resume()
+    self_test_s6_candidate_intake()
     self_test_bounded_progeny()
     self_test_outbound_edges_from_search_result()
     self_test_identity_skip_preserves_record()
@@ -7564,6 +8174,7 @@ def parse_args(argv):
     parser.add_argument("--repair-migration-refs", action="store_true", help="offline one-shot repair for migration/pre-seed controlling-case refs")
     parser.add_argument("--repair-failclosed-treatment", action="store_true", help="offline one-shot repair for fail-closed treatment validity seeded by F-S2-31")
     parser.add_argument("--flip-verified", action="store_true", help="offline R15 adjudicated flip from under_review to verified after structural gates")
+    parser.add_argument("--add-candidates", help="offline append an S6 candidate queue JSONL as pending frontier stubs")
     parser.add_argument("--elevate-off-cl", help="elevate a terminal not_found record using an orchestrator-prepared off-CL adjudication file")
     parser.add_argument("--adjudication", help="JSON adjudication file required by --elevate-off-cl")
     parser.add_argument("--token-path", default=TOKEN_PATH, help="CourtListener token path")
