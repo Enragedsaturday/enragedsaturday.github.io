@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "border-searches", "reasonable-suspicion", "a
 holding: "The prolonged detention of a suspected alimentary-canal (balloon) smuggler at the border is reasonable when customs officers have…"
 lake:
   record_id: United States v. Montoya de Hernandez
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

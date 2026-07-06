@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "use-of-force", "deadly-force", "seizure"]
 holding: "Deadly force against an apparently unarmed, non-dangerous fleeing suspect is an unreasonable seizure; deadly force needs PC to believe the suspect poses a significant threat of death or serious injury."
 lake:
   record_id: Tennessee v. Garner
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

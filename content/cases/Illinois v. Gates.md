@@ -36,7 +36,7 @@ tags: ["case", "fourth-amendment", "probable-cause", "informants", "totality-of-
 holding: "Probable cause from an informant's tip is judged by the **totality of the circumstances** — the issuing magistrate makes a practical,…"
 lake:
   record_id: Illinois v. Gates
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

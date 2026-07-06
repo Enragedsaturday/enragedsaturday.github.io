@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "search", "third-party-doctrine", "pen-regist
 holding: "No reasonable expectation of privacy in phone numbers voluntarily conveyed to the phone company; installing and using a pen register is not a Fourth Amendment search (third-party doctrine)."
 lake:
   record_id: Smith v. Maryland
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

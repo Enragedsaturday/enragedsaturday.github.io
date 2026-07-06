@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "arrest-in-the-home", "warrant", "exigent-cir
 holding: "Absent exigent circumstances, police may not enter a home to make a warrantless arrest; a lawful home entry requires a warrant or probable cause plus exigent circumstances (reaffirming Payton)."
 lake:
   record_id: Kirk v. Louisiana
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

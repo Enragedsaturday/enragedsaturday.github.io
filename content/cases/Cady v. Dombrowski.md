@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "community-caretaking", "vehicle-search", "in
 holding: "Origin of the 'community caretaking' concept: police perform many noncriminal caretaking functions with VEHICLES (disabled cars,…"
 lake:
   record_id: Cady v. Dombrowski
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

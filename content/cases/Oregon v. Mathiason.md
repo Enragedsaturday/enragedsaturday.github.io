@@ -34,7 +34,7 @@ tags: ["case", "fifth-amendment", "miranda", "custody", "station-house"]
 holding: "A suspect who comes voluntarily to the station, is told he is not under arrest, and is free to leave is NOT in custody for Miranda —…"
 lake:
   record_id: Oregon v. Mathiason
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

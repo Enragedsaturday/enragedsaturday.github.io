@@ -36,7 +36,7 @@ tags: ["case", "fourth-amendment", "special-needs", "school-search", "strip-sear
 holding: "Under the T.L.O. school-search standard, a strip search of a student must be justified by reasonable suspicion that matches its intrusiveness; strip-searching a 13-year-old for common pain relievers, absent reason to believe they were dangerous or hidden in her underwear, was unreasonable — but the officials had qualified immunity because the right was not clearly established."
 lake:
   record_id: Safford Unified School District v. Redding
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

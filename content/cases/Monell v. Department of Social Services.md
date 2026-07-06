@@ -34,7 +34,7 @@ tags: ["case", "section-1983", "municipal-liability", "policy-or-custom", "respo
 holding: "Local governments ARE 'persons' suable under § 1983, but ONLY when the constitutional injury is caused by the execution of an official…"
 lake:
   record_id: Monell v. Department of Social Services
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

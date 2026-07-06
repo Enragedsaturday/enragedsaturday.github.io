@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "standing", "expectation-of-privacy", "overni
 holding: "An overnight guest has a reasonable expectation of privacy in his host's home and therefore standing to challenge a warrantless entry to…"
 lake:
   record_id: Minnesota v. Olson
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

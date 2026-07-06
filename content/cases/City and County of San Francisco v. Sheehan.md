@@ -36,7 +36,7 @@ tags: ["case", "use-of-force", "qualified-immunity", "mentally-ill", "clearly-es
 holding: "Officers who used force against an armed, mentally ill suspect after a second entry into her room were entitled to qualified immunity because they violated no clearly established Fourth Amendment right; the ADA-accommodation question was dismissed as improvidently granted."
 lake:
   record_id: City and County of San Francisco v. Sheehan
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

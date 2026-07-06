@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "administrative-search", "special-needs", "pr
 holding: "A hotel guest-registry inspection ordinance is facially unconstitutional because it gives operators no opportunity for pre-compliance…"
 lake:
   record_id: City of Los Angeles v. Patel
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "border-searches", "immigration-checkpoint", 
 holding: "Brief stops at fixed/permanent interior immigration checkpoints are constitutional without any individualized suspicion; routine…"
 lake:
   record_id: United States v. Martinez-Fuerte
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

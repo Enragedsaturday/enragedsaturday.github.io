@@ -34,7 +34,7 @@ tags: ["case", "fifth-amendment", "fourteenth-amendment", "confessions", "volunt
 holding: "A confession's admissibility under the Due Process Clause turns solely on whether police coercion overbore the suspect's will; the confession's probable truth or reliability is constitutionally irrelevant, and a voluntariness standard that takes reliability into account is invalid."
 lake:
   record_id: Rogers v. Richmond
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

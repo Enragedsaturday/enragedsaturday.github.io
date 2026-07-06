@@ -36,7 +36,7 @@ tags: ["case", "fourth-amendment", "seizure", "investigative-detention", "de-fac
 holding: "A consensual airport encounter escalated into a de facto arrest requiring probable cause when officers held the suspect's ticket and ID and confined him; Terry detentions must use the least intrusive means."
 lake:
   record_id: Florida v. Royer
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

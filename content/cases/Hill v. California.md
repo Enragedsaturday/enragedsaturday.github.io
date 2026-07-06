@@ -36,7 +36,7 @@ tags: ["case", "fourth-amendment", "arrest", "probable-cause", "mistaken-identit
 holding: "An arrest of the wrong person is valid where police have probable cause to arrest one person and reasonably, in good faith, mistake the arrestee for that person; the search incident to that arrest is likewise valid."
 lake:
   record_id: Hill v. California
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

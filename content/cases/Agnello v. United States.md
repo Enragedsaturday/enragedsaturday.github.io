@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "search-incident-to-arrest", "home", "histori
 holding: "A search incident to arrest reaches the arrestee's person and the place where the arrest is made, but does not extend to a separate house blocks away that is entered and searched without a warrant after the arrest is complete and the suspects are in custody elsewhere."
 lake:
   record_id: Agnello v. United States
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

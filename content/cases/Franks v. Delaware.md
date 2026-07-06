@@ -36,7 +36,7 @@ tags: ["case", "fourth-amendment", "warrant", "affidavit", "franks-hearing", "ve
 holding: "A warrant affidavit containing a knowing/intentional or reckless material falsehood may be challenged at a hearing on a substantial…"
 lake:
   record_id: Franks v. Delaware
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

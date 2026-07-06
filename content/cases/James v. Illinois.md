@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "exclusionary-rule", "impeachment-exception",
 holding: "The impeachment exception to the exclusionary rule is confined to the defendant's own testimony; the prosecution may not use illegally obtained evidence to impeach the testimony of other defense witnesses."
 lake:
   record_id: James v. Illinois
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

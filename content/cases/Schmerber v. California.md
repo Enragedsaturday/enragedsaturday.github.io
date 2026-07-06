@@ -36,7 +36,7 @@ tags: ["case", "fourth-amendment", "fifth-amendment", "exigent-circumstances", "
 holding: "Compelled blood/BAC evidence is physical, not testimonial, so it does not violate the Fifth Amendment; and a warrantless blood draw on probable cause is reasonable where exigency — dissipating alcohol plus time already lost — leaves no time to obtain a warrant."
 lake:
   record_id: Schmerber v. California
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

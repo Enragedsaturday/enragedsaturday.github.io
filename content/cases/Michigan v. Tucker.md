@@ -34,7 +34,7 @@ tags: ["case", "fifth-amendment", "miranda", "fruits", "prophylactic-rule"]
 holding: "The 'fruits' of a mere prophylactic Miranda violation — here, a witness whose identity was learned from a statement taken with incomplete warnings — need not be suppressed where the statement was voluntary and not actually compelled; a Miranda procedural lapse is not itself a Fifth Amendment violation."
 lake:
   record_id: Michigan v. Tucker
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

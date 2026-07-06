@@ -36,7 +36,7 @@ tags: ["case", "fourth-amendment", "search-incident-to-arrest", "exigency", "des
 holding: "Where probable cause exists and evidence is readily destructible, the very limited search needed to preserve highly evanescent evidence (fingernail scrapings) is reasonable on the Chimel rationale, even without a formal arrest — though a full Chimel search would not be."
 lake:
   record_id: Cupp v. Murphy
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

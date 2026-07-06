@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "warrant", "search-warrant", "electronic-surv
 holding: "A court order authorizing Title III electronic surveillance implicitly authorizes the covert entry needed to install the device; the Fourth Amendment does not require a warrant to specify the manner of its execution, including covert entry."
 lake:
   record_id: Dalia v. United States
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

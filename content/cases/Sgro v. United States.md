@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "warrant", "search-warrant", "staleness", "wa
 holding: "A search warrant void for non-execution within its statutory life cannot be revived by redating; reissuing a warrant is a new proceeding that must rest on a fresh, contemporaneous probable-cause finding."
 lake:
   record_id: Sgro v. United States
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

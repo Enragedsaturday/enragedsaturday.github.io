@@ -34,7 +34,7 @@ tags: ["case", "fifth-amendment", "fourteenth-amendment", "confessions", "volunt
 holding: "The prosecution need prove the voluntariness of a confession only by a preponderance of the evidence, not beyond a reasonable doubt; and a defendant whose voluntariness claim the judge has decided is not entitled to have the jury redetermine voluntariness. States may adopt a higher standard."
 lake:
   record_id: Lego v. Twomey
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

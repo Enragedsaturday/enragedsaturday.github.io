@@ -34,7 +34,7 @@ tags: ["case", "entrapment", "predisposition", "inducement", "due-process"]
 holding: "Where the government induces the crime, it must prove the defendant was predisposed to commit it INDEPENDENT of, and PRIOR TO, the…"
 lake:
   record_id: Jacobson v. United States
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

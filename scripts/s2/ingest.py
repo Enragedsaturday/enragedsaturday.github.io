@@ -21,6 +21,7 @@ import time
 import urllib.error
 import urllib.parse
 import urllib.request
+from collections import Counter
 
 
 API_BASE = "https://www.courtlistener.com/api/rest/v4"
@@ -93,6 +94,27 @@ TREATMENT_LANE_NAMES = tuple(lane for lane, _cap in TREATMENT_LANES)
 LANE_RERUN_FINDINGS = ["F-S2-28"]
 MIGRATION_REF_REPAIR_FINDINGS = ["F-S2-29"]
 MIGRATION_REF_REPAIR_PROVENANCE = "F-S2-29 migration reference repair"
+FAIL_CLOSED_TREATMENT_REPAIR_FINDINGS = ["F-S2-31"]
+FAIL_CLOSED_TREATMENT_REPAIR_PROVENANCE = "F-S2-31 fail-closed treatment repair"
+FAIL_CLOSED_TREATMENT_REPAIR_RECORD_IDS = ("Entick v. Carrington", "Wilkes v. Wood")
+R15_FLIP_EXPECTED_COUNT = 421
+R15_FLIP_GATES = [
+    "schema",
+    "two-key",
+    "a1-replacement",
+    "dual-dates+provenance",
+    "drift",
+    "spot-check",
+    "treatment-audit",
+    "coderabbit",
+]
+R15_UNTOUCHED_EXPECTED_COUNTS = {
+    "under_review:name+docket": 21,
+    "under_review:pending": 14,
+    "verified_identity": 65,
+    "fabrication_suspected": 25,
+    "not_found": 5,
+}
 CONTROLLING_CASE_NO_OFFICIAL_CITE_WARNING = "controlling case has no official cite in lake; cite omitted"
 POINT_OVERRIDE_SCHEMA_KEYS = (
     "point",
@@ -857,6 +879,13 @@ class Journal:
         row.setdefault("run", self.run_id)
         with open(self.path, "a", encoding="utf-8") as f:
             f.write(json.dumps(row, sort_keys=True) + "\n")
+
+    def ensure_writable(self):
+        directory = os.path.dirname(self.path)
+        if directory:
+            os.makedirs(directory, exist_ok=True)
+        with open(self.path, "a", encoding="utf-8"):
+            pass
 
     def rows(self):
         if not os.path.exists(self.path):
@@ -2666,6 +2695,8 @@ def controlling_cases_from_legacy(by_values, field_ii):
 
 
 def seed_preseeded_treatment(record_json, page_treatment):
+    if record_json.get("status") in FAIL_CLOSED_STATUSES:
+        return False
     field_i = normalize_roster_value(page_treatment.get("field_i_validity"))
     if field_i not in PRESEEDED_FIELD_I_VALIDITIES:
         return False
@@ -2700,6 +2731,8 @@ def seed_preseeded_treatment(record_json, page_treatment):
 
 def seed_treatment_from_migration(record_json, source_record, migration):
     if record_json.get("stub"):
+        return False
+    if record_json.get("status") in FAIL_CLOSED_STATUSES:
         return False
     legacy = {
         "status": source_record.get("legacy_treatment_status") or source_record.get("treatment_status"),
@@ -2930,6 +2963,16 @@ class ManifestStore:
             self.update_lane_status(row, old_record_id, resume_state)
             if final_record_id and final_record_id != old_record_id:
                 self.update_lane_status(row, final_record_id, resume_state)
+
+    def regenerate_counts(self):
+        records = self.data.get("records", [])
+        status_counts = Counter(row.get("status") for row in records if isinstance(row, dict))
+        counts = self.data.setdefault("counts", {})
+        counts["total_manifest_records"] = len(records)
+        counts["status_counts"] = {
+            str(status): count
+            for status, count in sorted(status_counts.items(), key=lambda item: str(item[0]))
+        }
 
     def save(self):
         self.data["generated_at"] = self.data.get("generated_at")
@@ -3469,10 +3512,7 @@ def load_s2_binding_statuses(paths, schema):
 def manifest_rows_by_record_id(paths):
     if not os.path.exists(paths.manifest):
         return {}
-    try:
-        manifest = read_json(paths.manifest)
-    except (OSError, json.JSONDecodeError):
-        return {}
+    manifest = read_json(paths.manifest)
     return {
         row.get("record_id"): row
         for row in manifest.get("records") or []
@@ -3850,6 +3890,258 @@ def repair_migration_refs(paths, journal, migration):
     return [record["record_id"] for _path, record in candidates]
 
 
+def repair_failclosed_treatment(paths, journal, record_ids=FAIL_CLOSED_TREATMENT_REPAIR_RECORD_IDS):
+    repaired = []
+    journaled = {
+        row.get("record_id")
+        for row in journal.rows()
+        if row.get("action") == "repair-failclosed-treatment"
+    }
+    for record_id in record_ids:
+        path = os.path.join(paths.cases, record_id + ".json")
+        if not os.path.exists(path):
+            raise SystemExit("fail-closed treatment repair target missing: %s" % path)
+        record = read_json(path)
+        if record.get("status") not in FAIL_CLOSED_STATUSES:
+            raise SystemExit(
+                "fail-closed treatment repair target %r has status=%r"
+                % (record_id, record.get("status"))
+        )
+        treatment = record.setdefault("treatment", {})
+        if treatment.get("field_i_validity") == "unverified":
+            provenance = record.get("provenance", {}).get("field_provenance", {}).get("treatment.field_i_validity", {})
+            if provenance.get("src") == FAIL_CLOSED_TREATMENT_REPAIR_PROVENANCE and record_id not in journaled:
+                journal.append(
+                    step="adjudication",
+                    record_id=record_id,
+                    action="repair-failclosed-treatment",
+                    findings=FAIL_CLOSED_TREATMENT_REPAIR_FINDINGS,
+                    adjudicated_by=READJUDICATION_ADJUDICATOR,
+                    status="repaired",
+                    before_field_i_validity=None,
+                    after_field_i_validity="unverified",
+                )
+                repaired.append(record_id)
+            continue
+        before = treatment.get("field_i_validity")
+        treatment["field_i_validity"] = "unverified"
+        append_warning(record, FAIL_CLOSED_TREATMENT_REPAIR_PROVENANCE)
+        record.setdefault("provenance", {}).setdefault("field_provenance", {})[
+            "treatment.field_i_validity"
+        ] = base_field_provenance(
+            FAIL_CLOSED_TREATMENT_REPAIR_PROVENANCE,
+            verifier=READJUDICATION_ADJUDICATOR,
+        )
+        write_case_record(paths, record)
+        journal.append(
+            step="adjudication",
+            record_id=record_id,
+            action="repair-failclosed-treatment",
+            findings=FAIL_CLOSED_TREATMENT_REPAIR_FINDINGS,
+            adjudicated_by=READJUDICATION_ADJUDICATOR,
+            status="repaired",
+            before_field_i_validity=before,
+            after_field_i_validity="unverified",
+        )
+        repaired.append(record_id)
+    return repaired
+
+
+def writable_repair_journal(paths, journal):
+    try:
+        journal.ensure_writable()
+        return journal, False
+    except OSError:
+        fallback_path = os.path.join(paths.lake, "journal", os.path.basename(journal.path))
+        fallback = Journal(fallback_path, journal.run_id)
+        fallback.ensure_writable()
+        return fallback, True
+
+
+def load_lint13_validator():
+    lint_dir = os.path.join(os.getcwd(), "scripts", "lint")
+    if lint_dir not in sys.path:
+        sys.path.insert(0, lint_dir)
+    lint13_schema = __import__("lint13_schema")
+    schema = lint13_schema.load_json(lint13_schema.SCHEMA_PATH)
+    return lint13_schema, schema
+
+
+def lint13_record_messages(lint13_schema, schema, path, record):
+    return [violation.get("message") for violation in lint13_schema.validate_record(path, record, schema)]
+
+
+def r15_two_key_eligible(record):
+    identity = record.get("identity") or {}
+    return (
+        record.get("status") == "under_review"
+        and identity.get("identity_method") == "citation+party-text"
+        and identity.get("expected_citation_found") is True
+        and identity.get("party_name_in_text") is True
+    )
+
+
+def r15_untouched_class(record):
+    status = record.get("status")
+    identity = record.get("identity") or {}
+    if status == "under_review" and identity.get("identity_method") in ("name+docket", "pending"):
+        return "under_review:%s" % identity.get("identity_method")
+    if status in ("verified_identity", "fabrication_suspected", "not_found"):
+        return status
+    return None
+
+
+def r15_status_counts(records):
+    counts = Counter(record.get("status") for _path, record in records)
+    return {
+        str(status): count
+        for status, count in sorted(counts.items(), key=lambda item: str(item[0]))
+    }
+
+
+def r15_format_id_list(record_ids):
+    return "\n".join("  - %s" % record_id for record_id in sorted(record_ids))
+
+
+def r15_assert_manifest_alignment(manifest, all_record_ids):
+    manifest_ids = {row.get("record_id") for row in manifest.data.get("records") or [] if isinstance(row, dict)}
+    missing = sorted(all_record_ids - manifest_ids)
+    extra = sorted(manifest_ids - all_record_ids)
+    if missing or extra:
+        raise SystemExit(
+            "r15 flip manifest/case record_id mismatch\n"
+            "missing from manifest:\n%s\n"
+            "extra in manifest:\n%s"
+            % (r15_format_id_list(missing) if missing else "  - <none>",
+               r15_format_id_list(extra) if extra else "  - <none>")
+        )
+
+
+def r15_assert_untouched_counts(protected_by_class, expected_counts):
+    actual_counts = {name: len(record_ids) for name, record_ids in protected_by_class.items()}
+    expected_keys = set(expected_counts)
+    actual_keys = set(actual_counts)
+    mismatched = []
+    for key in sorted(expected_keys | actual_keys):
+        if actual_counts.get(key, 0) != expected_counts.get(key, 0):
+            mismatched.append("%s expected=%s actual=%s" % (key, expected_counts.get(key, 0), actual_counts.get(key, 0)))
+    if mismatched:
+        details = []
+        for key in sorted(expected_keys | actual_keys):
+            details.append("%s:\n%s" % (key, r15_format_id_list(protected_by_class.get(key, [])) or "  - <none>"))
+        raise SystemExit(
+            "r15 untouched-class count mismatch:\n%s\n\nrecord_id diff by class:\n%s"
+            % ("\n".join(mismatched), "\n".join(details))
+        )
+
+
+def r15_raise_flip_mismatch(expected_ids, eligible_ids, expected_count, schema_rejected):
+    missing = sorted(expected_ids - eligible_ids)
+    extra = sorted(eligible_ids - expected_ids)
+    lines = [
+        "r15 flip count/set mismatch",
+        "expected_count=%s actual_count=%s" % (expected_count, len(eligible_ids)),
+        "missing expected record_id(s):",
+        r15_format_id_list(missing) if missing else "  - <none>",
+        "unexpected eligible record_id(s):",
+        r15_format_id_list(extra) if extra else "  - <none>",
+    ]
+    if schema_rejected:
+        lines.append("schema-rejected two-key record_id(s):")
+        for record_id, messages in sorted(schema_rejected.items()):
+            lines.append("  - %s: %s" % (record_id, "; ".join(messages[:3])))
+    raise SystemExit("\n".join(lines))
+
+
+def flip_verified_records(paths, manifest, journal, expected_count=R15_FLIP_EXPECTED_COUNT,
+                          expected_untouched_counts=None):
+    expected_untouched_counts = expected_untouched_counts or R15_UNTOUCHED_EXPECTED_COUNTS
+    lint13_schema, schema = load_lint13_validator()
+    case_records = []
+    for path in case_json_paths(paths):
+        case_records.append((path, read_json(path)))
+    missing_id_paths = [path for path, record in case_records if not record.get("record_id")]
+    if missing_id_paths:
+        raise SystemExit(
+            "r15 flip found record JSON missing record_id:\n%s"
+            % r15_format_id_list(os.path.relpath(path, paths.repo_root) for path in missing_id_paths)
+        )
+    all_record_ids = {record.get("record_id") for _path, record in case_records if record.get("record_id")}
+    r15_assert_manifest_alignment(manifest, all_record_ids)
+
+    protected_by_class = {name: [] for name in expected_untouched_counts}
+    protected_before = {}
+    for path, record in case_records:
+        record_id = record.get("record_id")
+        protected_class = r15_untouched_class(record)
+        if protected_class:
+            protected_by_class.setdefault(protected_class, []).append(record_id)
+            with open(path, encoding="utf-8") as f:
+                protected_before[record_id] = f.read()
+    r15_assert_untouched_counts(protected_by_class, expected_untouched_counts)
+    protected_ids = set(protected_before)
+    expected_ids = all_record_ids - protected_ids
+
+    eligible = []
+    schema_rejected = {}
+    post_schema_rejected = {}
+    for path, record in case_records:
+        record_id = record.get("record_id")
+        if not r15_two_key_eligible(record):
+            continue
+        pre_messages = lint13_record_messages(lint13_schema, schema, path, record)
+        if pre_messages:
+            schema_rejected[record_id] = pre_messages
+            continue
+        candidate = json.loads(json.dumps(record))
+        candidate["status"] = "verified"
+        if candidate.get("identity", {}).get("reason_code") == "awaiting_r15_structural_gates":
+            candidate["identity"]["reason_code"] = None
+        post_messages = lint13_record_messages(lint13_schema, schema, path, candidate)
+        if post_messages:
+            post_schema_rejected[record_id] = post_messages
+            continue
+        eligible.append((path, candidate))
+
+    eligible_ids = {record["record_id"] for _path, record in eligible}
+    if post_schema_rejected:
+        schema_rejected.update(post_schema_rejected)
+    if eligible_ids != expected_ids or len(eligible_ids) != expected_count or schema_rejected:
+        r15_raise_flip_mismatch(expected_ids, eligible_ids, expected_count, schema_rejected)
+
+    for path, record in eligible:
+        record_id = record["record_id"]
+        write_case_record(paths, record)
+        journal.append(
+            step="r15-flip",
+            record_id=record_id,
+            gates=list(R15_FLIP_GATES),
+            adjudicated_by=READJUDICATION_ADJUDICATOR,
+        )
+        manifest.update(record_id, record, counts={}, final_record_id=record_id)
+
+    untouched_changed = []
+    for record_id, before in protected_before.items():
+        path = os.path.join(paths.cases, record_id + ".json")
+        with open(path, encoding="utf-8") as f:
+            if f.read() != before:
+                untouched_changed.append(record_id)
+    if untouched_changed:
+        raise SystemExit(
+            "r15 untouched-class byte assertion failed:\n%s"
+            % r15_format_id_list(untouched_changed)
+        )
+
+    manifest.regenerate_counts()
+    manifest.save()
+    case_records_after = [(path, read_json(path)) for path in case_json_paths(paths)]
+    return {
+        "flipped": sorted(eligible_ids),
+        "protected_counts": {key: len(value) for key, value in sorted(protected_by_class.items())},
+        "status_counts": r15_status_counts(case_records_after),
+    }
+
+
 def ensure_cluster_for_record(record_json, client, record_id, cluster=None, step="identity.cluster.reload"):
     if cluster:
         return cluster
@@ -4102,12 +4394,31 @@ def run_ingest(args):
     if args.records and not args.rerun_lane:
         raise SystemExit("--records is only valid with --rerun-lane")
     if args.repair_migration_refs:
-        if args.elevate_off_cl or args.readjudicate or args.readjudicate_file or args.rerun_lane or args.records or args.adjudication or args.smoke:
+        if args.repair_failclosed_treatment or args.elevate_off_cl or args.readjudicate or args.readjudicate_file or args.rerun_lane or args.records or args.adjudication or args.smoke or args.flip_verified:
             raise SystemExit("--repair-migration-refs cannot be combined with other action/filter options")
         repaired = repair_migration_refs(paths, journal, read_json(paths.treatment_migration))
         manifest.save()
         print("journal: %s" % journal_path)
         print("migration refs repaired: %s" % len(repaired))
+        return
+    if args.repair_failclosed_treatment:
+        if args.elevate_off_cl or args.readjudicate or args.readjudicate_file or args.rerun_lane or args.records or args.adjudication or args.smoke or args.flip_verified:
+            raise SystemExit("--repair-failclosed-treatment cannot be combined with other action/filter options")
+        journal, journal_fallback = writable_repair_journal(paths, journal)
+        repaired = repair_failclosed_treatment(paths, journal)
+        print("journal: %s%s" % (journal.path, " (repo-local fallback)" if journal_fallback else ""))
+        print("fail-closed treatment repaired: %s" % len(repaired))
+        return
+    if args.flip_verified:
+        if args.elevate_off_cl or args.readjudicate or args.readjudicate_file or args.rerun_lane or args.records or args.adjudication or args.smoke:
+            raise SystemExit("--flip-verified cannot be combined with other action/filter options")
+        journal, journal_fallback = writable_repair_journal(paths, journal)
+        result = flip_verified_records(paths, manifest, journal)
+        print("journal: %s%s" % (journal.path, " (repo-local fallback)" if journal_fallback else ""))
+        print("verified flips: %s" % len(result["flipped"]))
+        print("expected flips: %s" % R15_FLIP_EXPECTED_COUNT)
+        print("untouched classes: %s" % json.dumps(result["protected_counts"], sort_keys=True))
+        print("status counts: %s" % json.dumps(result["status_counts"], sort_keys=True))
         return
     if args.elevate_off_cl:
         if args.readjudicate or args.readjudicate_file or args.rerun_lane:
@@ -5234,6 +5545,8 @@ def self_test_identity_fallback_ladder():
         "court_level": "scotus",
         "year": 2020,
         "docket": "20-999",
+        "legacy_treatment_status": "good",
+        "legacy_treatment_as_of": "2026-06-30",
     }
     exhausted_client = ExhaustedFallbackClient()
     missing_result, missing_cluster, missing_alternates = resolve_identity(
@@ -5257,12 +5570,22 @@ def self_test_identity_fallback_ladder():
         paths.ensure()
         not_found_journal = Journal(os.path.join(tmp, "journal.jsonl"), "selftest")
         not_found_client = ExhaustedFallbackClient()
+        good_migration = {
+            "mappings": {
+                "good": {
+                    "field_i_validity": "good_law",
+                    "requires_point_overrides": False,
+                    "requires_edge": False,
+                    "varies_by_point": False,
+                }
+            }
+        }
         record = process_page_record(
             exhausted_source,
             not_found_client,
             paths,
             {"court_classes": {}},
-            {"mappings": {}},
+            good_migration,
             not_found_journal,
             ResumeState([]),
             "selftest",
@@ -5270,6 +5593,11 @@ def self_test_identity_fallback_ladder():
         )
         assert record["status"] == "not_found"
         rows = not_found_journal.rows()
+        primary_rows = [
+            row
+            for row in rows
+            if row.get("step") == "identity.search.prefilter"
+        ]
         fallback_indexes = [
             index
             for index, row in enumerate(rows)
@@ -5280,8 +5608,20 @@ def self_test_identity_fallback_ladder():
             for index, row in enumerate(rows)
             if row.get("step") == "identity" and row.get("final_status") == "not_found"
         ]
+        assert [
+            (row.get("rung"), row.get("result_count"), row.get("clusters_fetched"), row.get("viable"))
+            for row in primary_rows
+        ] == [("case_name", 0, 0, False)]
         assert [rows[index].get("rung") for index in fallback_indexes] == ["q", "citation", "docket_number"]
+        assert all(rows[index].get("clusters_fetched") == 0 and rows[index].get("viable") is False for index in fallback_indexes)
         assert not_found_indexes and max(fallback_indexes) < not_found_indexes[-1]
+        persisted = load_case_record(paths, exhausted_source["record_id"])
+        assert persisted["status"] == "not_found"
+        assert persisted["treatment"]["field_i_validity"] == "unverified"
+        before_seed = json.dumps(persisted, sort_keys=True)
+        assert seed_treatment_from_migration(persisted, exhausted_source, good_migration) is False
+        assert json.dumps(persisted, sort_keys=True) == before_seed
+        assert not_found_client.cluster_calls == []
     finally:
         shutil.rmtree(tmp)
 
@@ -6605,6 +6945,32 @@ def self_test_migration_round_trip():
     assert verified_candidate["treatment"]["field_i_validity"] != "unverified"
 
 
+def self_test_failclosed_treatment_seed_guard():
+    migration = read_json(os.path.join(os.getcwd(), "_overhaul2", "lake", "_treatment-migration.json"))
+    source = {
+        "record_id": "failclosed-seed-case",
+        "title": "Failclosed Seed Case",
+        "court_level": "other",
+        "date_decided": "1765-11-02",
+        "legacy_treatment_status": "good",
+        "legacy_treatment_as_of": "2026-06-30",
+    }
+    for status in sorted(FAIL_CLOSED_STATUSES):
+        record = empty_record_shell(source["record_id"], source, "selftest")
+        record["status"] = status
+        changed = seed_treatment_from_migration(record, source, migration)
+        assert changed is False
+        assert record["status"] == status
+        assert record["treatment"]["field_i_validity"] == "unverified"
+
+    preseeded = empty_record_shell("preseeded-failclosed", {"record_id": "preseeded-failclosed", "title": "Preseeded"}, "selftest")
+    preseeded["status"] = "not_found"
+    changed = seed_preseeded_treatment(preseeded, {"field_i_validity": "good_law"})
+    assert changed is False
+    assert preseeded["status"] == "not_found"
+    assert preseeded["treatment"]["field_i_validity"] == "unverified"
+
+
 def self_test_preseeded_new_schema_treatment():
     migration = read_json(os.path.join(os.getcwd(), "_overhaul2", "lake", "_treatment-migration.json"))
     expected = {
@@ -6637,9 +7003,10 @@ def self_test_preseeded_new_schema_treatment():
         blocked_record = empty_record_shell(case_name, source, "selftest")
         blocked_record["status"] = "blocked"
         blocked_record["identity"]["reason_code"] = "treatment_migration_unmapped"
-        assert seed_treatment_from_migration(blocked_record, source, migration)
-        assert blocked_record["status"] == "under_review"
-        assert blocked_record["identity"].get("reason_code") is None
+        assert seed_treatment_from_migration(blocked_record, source, migration) is False
+        assert blocked_record["status"] == "blocked"
+        assert blocked_record["identity"].get("reason_code") == "treatment_migration_unmapped"
+        assert blocked_record["treatment"]["field_i_validity"] == "unverified"
         outcomes.append("%s=%s/%s/%s override(s)" % (
             case_name,
             record["treatment"]["field_i_validity"],
@@ -6681,6 +7048,33 @@ def self_test_preseeded_new_schema_treatment():
     print("preseeded treatment self-test: " + "; ".join(outcomes))
 
 
+def self_test_repair_failclosed_treatment():
+    tmp = tempfile.mkdtemp(prefix="s2-failclosed-treatment-repair-selftest-")
+    try:
+        paths = LakePaths(tmp, os.path.join(tmp, "pool"))
+        paths.ensure()
+        journal = Journal(os.path.join(tmp, "journal.jsonl"), "selftest")
+        for record_id in FAIL_CLOSED_TREATMENT_REPAIR_RECORD_IDS:
+            record = empty_record_shell(record_id, {"record_id": record_id, "title": record_id, "court_level": "other"}, "selftest")
+            record["status"] = "not_found"
+            record["treatment"]["field_i_validity"] = "good_law"
+            write_case_record(paths, record)
+        repaired = repair_failclosed_treatment(paths, journal)
+        assert repaired == list(FAIL_CLOSED_TREATMENT_REPAIR_RECORD_IDS), repaired
+        for record_id in FAIL_CLOSED_TREATMENT_REPAIR_RECORD_IDS:
+            record = load_case_record(paths, record_id)
+            assert record["status"] == "not_found"
+            assert record["treatment"]["field_i_validity"] == "unverified"
+            assert FAIL_CLOSED_TREATMENT_REPAIR_PROVENANCE in record["provenance"]["warnings"]
+            assert record["provenance"]["field_provenance"]["treatment.field_i_validity"]["src"] == FAIL_CLOSED_TREATMENT_REPAIR_PROVENANCE
+        rows = journal.rows()
+        assert len(rows) == len(FAIL_CLOSED_TREATMENT_REPAIR_RECORD_IDS), rows
+        assert all(row.get("action") == "repair-failclosed-treatment" for row in rows)
+        assert repair_failclosed_treatment(paths, journal) == []
+    finally:
+        shutil.rmtree(tmp)
+
+
 def migration_ref_record(record_id, cluster_id=None, cite=None):
     record = empty_record_shell(record_id, {"record_id": record_id, "title": record_id, "court_level": "scotus"}, "selftest")
     record["status"] = "under_review"
@@ -6715,6 +7109,10 @@ def self_test_repair_real_belton_smith_fixture():
     tmp = tempfile.mkdtemp(prefix="s2-belton-smith-repair-selftest-")
     target_ids = ["New York v. Belton", "United States v. Smith (2024)"]
     support_ids = target_ids + ["Arizona v. Gant", "Chatrie v. United States", "united-states-v-chatrie--10881683"]
+    legacy_override_by = {
+        "New York v. Belton": ("[[Arizona v. Gant]]", "556 U.S. 332"),
+        "United States v. Smith (2024)": ("[[Chatrie v. United States]]", "609 U.S. ___ (2026)"),
+    }
     try:
         paths = LakePaths(tmp, os.path.join(tmp, "pool"))
         paths.ensure()
@@ -6730,7 +7128,14 @@ def self_test_repair_real_belton_smith_fixture():
         }
         for record_id in support_ids:
             source_path = os.path.join(os.getcwd(), "_overhaul2", "lake", "cases", record_id + ".json")
-            write_json(os.path.join(paths.cases, record_id + ".json"), read_json(source_path))
+            record = read_json(source_path)
+            if record_id in legacy_override_by:
+                by, by_cite = legacy_override_by[record_id]
+                override = record["treatment"]["point_overrides"][0]
+                override["by"] = by
+                override["by_cite"] = by_cite
+                override["field_ii"] = "limited"
+            write_json(os.path.join(paths.cases, record_id + ".json"), record)
         write_json(paths.manifest, {
             "schema_version": SCHEMA_VERSION,
             "generated_at": iso_now(),
@@ -6938,6 +7343,177 @@ def self_test_status_preserve():
     assert record["status"] == "fabrication_suspected"
 
 
+def r15_flip_fixture_record(record_id, status, method="citation+party-text", stub=False,
+                            expected=True, party=True, cluster_id=100):
+    source = {
+        "record_id": record_id,
+        "title": record_id,
+        "caption": record_id,
+        "court_level": "scotus",
+        "stub": stub,
+    }
+    record = empty_record_shell(record_id, source, "selftest")
+    record["stub"] = stub
+    record["status"] = status
+    record["identity"].update({
+        "case_name": record_id.replace("--123", "").replace("--u12345678", ""),
+        "case_name_short": record_id.split(" v. ")[0],
+        "case_name_full": record_id.replace("--123", "").replace("--u12345678", ""),
+        "court": "U.S. Supreme Court",
+        "court_id": "scotus",
+        "court_level": "scotus",
+        "date_decided": "2020-01-02",
+        "year": 2020,
+        "docket": "19-1",
+        "cluster_id": cluster_id,
+        "lead_opinion_id": cluster_id + 1,
+        "sibling_ids": [cluster_id + 1],
+        "absolute_url": "/opinion/%s/%s/" % (cluster_id, slugify(record_id)),
+        "identity_method": method,
+        "expected_citation_found": expected,
+        "party_name_in_text": party,
+        "canonical_name_match": True,
+        "reason_code": "awaiting_r15_structural_gates" if method == "citation+party-text" else None,
+    })
+    cite = {
+        "cite": "590 U.S. %s" % (cluster_id % 100),
+        "volume": "590",
+        "reporter": "U.S.",
+        "page": str(cluster_id % 100),
+        "type": 1,
+        "selected_official": True,
+        "source": "selftest",
+    }
+    record["citations"].update({
+        "official": cite,
+        "parallel": [],
+        "vendor_neutral": [],
+        "all": [cite],
+        "display": cite["cite"],
+        "official_selection": {"court_class": "scotus", "selected": cite["cite"], "reason": "selftest"},
+    })
+    record["treatment"].update({
+        "field_i_validity": "good_law" if status == "under_review" and method == "citation+party-text" else "unverified",
+        "as_of_content": "2020-01-02",
+        "as_of_treatment": "2026-07-06",
+        "composite_basis": "principal-holding" if status == "under_review" and method == "citation+party-text" else "unverified",
+        "composite_basis_ref": "selftest" if status == "under_review" and method == "citation+party-text" else None,
+    })
+    record["progeny"].update({
+        "complete_query": "cites:(%s)" % (cluster_id + 1),
+        "indexed_citing_opinions": 0,
+        "count_source": "search",
+        "per_sibling": [{"opinion_id": cluster_id + 1, "count": 0, "count_source": "search"}],
+        "citation_count": 0,
+    })
+    if method in ("pending", "not_found", "blocked"):
+        record["identity"]["cluster_id"] = None
+        record["identity"]["lead_opinion_id"] = None
+        record["identity"]["sibling_ids"] = []
+        record["identity"]["absolute_url"] = None
+    if method == "not_found":
+        record["identity"]["expected_citation_found"] = False
+        record["identity"]["party_name_in_text"] = False
+    if method == "frontier-identity":
+        record["identity"]["lead_opinion_id"] = None
+        record["identity"]["sibling_ids"] = []
+        record["identity"]["party_name_in_text"] = False
+        record["treatment"]["scope_note"] = "Frontier stub: treatment/progeny intentionally not derived until S6 promotion."
+        record["progeny"]["complete_query"] = None
+        record["progeny"]["indexed_citing_opinions"] = None
+        record["progeny"]["count_source"] = None
+        record["progeny"]["per_sibling"] = []
+        record["progeny"]["citation_count"] = None
+    return record
+
+
+def self_test_flip_verified():
+    tmp = tempfile.mkdtemp(prefix="s2-r15-flip-selftest-")
+    try:
+        paths = LakePaths(tmp, os.path.join(tmp, "pool"))
+        paths.ensure()
+        fixtures = [
+            r15_flip_fixture_record("Eligible v. One", "under_review", cluster_id=101),
+            r15_flip_fixture_record("Eligible v. Two", "under_review", cluster_id=102),
+            r15_flip_fixture_record("Name Docket v. Case", "under_review", method="name+docket", expected=True, party=False, cluster_id=201),
+            r15_flip_fixture_record("Pending v. Case", "under_review", method="pending", expected=False, party=False, cluster_id=301),
+            r15_flip_fixture_record("frontier-case--123", "verified_identity", method="frontier-identity", stub=True, expected=True, party=False, cluster_id=123),
+            r15_flip_fixture_record("Fabricated v. Case", "fabrication_suspected", method="fabrication-check", expected=True, party=False, cluster_id=401),
+            r15_flip_fixture_record("Not Found v. Case", "not_found", method="not_found", expected=False, party=False, cluster_id=501),
+        ]
+        for record in fixtures:
+            write_case_record(paths, record)
+        write_json(paths.manifest, {
+            "schema_version": "s2.manifest.v1",
+            "generated_at": iso_now(),
+            "records": [
+                {
+                    "record_id": record["record_id"],
+                    "record_id_status": "resolved",
+                    "source": "content/cases" if not record.get("stub") else "s6-frontier",
+                    "stub": record.get("stub", False),
+                    "title": record["record_id"],
+                    "status": record["status"],
+                    "lane_status": default_lane_status(),
+                    "counts": {},
+                }
+                for record in fixtures
+            ],
+            "counts": {},
+        })
+        manifest = ManifestStore(paths.manifest)
+        journal = Journal(os.path.join(tmp, "journal.jsonl"), "selftest")
+        protected_counts = {
+            "under_review:name+docket": 1,
+            "under_review:pending": 1,
+            "verified_identity": 1,
+            "fabrication_suspected": 1,
+            "not_found": 1,
+        }
+        try:
+            flip_verified_records(paths, manifest, journal, expected_count=3, expected_untouched_counts=protected_counts)
+        except SystemExit as exc:
+            assert "expected_count=3 actual_count=2" in str(exc)
+        else:
+            raise AssertionError("r15 flip count mismatch did not fail closed")
+        assert journal.rows() == []
+
+        protected_ids = ["Name Docket v. Case", "Pending v. Case", "frontier-case--123", "Fabricated v. Case", "Not Found v. Case"]
+        before = {}
+        for record_id in protected_ids:
+            with open(os.path.join(paths.cases, record_id + ".json"), encoding="utf-8") as f:
+                before[record_id] = f.read()
+
+        result = flip_verified_records(paths, manifest, journal, expected_count=2, expected_untouched_counts=protected_counts)
+        assert result["flipped"] == ["Eligible v. One", "Eligible v. Two"], result
+        assert result["protected_counts"] == protected_counts
+        assert result["status_counts"] == {
+            "fabrication_suspected": 1,
+            "not_found": 1,
+            "under_review": 2,
+            "verified": 2,
+            "verified_identity": 1,
+        }
+        for record_id in result["flipped"]:
+            record = load_case_record(paths, record_id)
+            assert record["status"] == "verified"
+            assert record["identity"]["reason_code"] is None
+        for record_id in protected_ids:
+            with open(os.path.join(paths.cases, record_id + ".json"), encoding="utf-8") as f:
+                assert f.read() == before[record_id]
+        rows = journal.rows()
+        flip_rows = [row for row in rows if row.get("step") == "r15-flip"]
+        assert len(flip_rows) == 2, rows
+        for row in flip_rows:
+            assert row["gates"] == R15_FLIP_GATES
+            assert row["adjudicated_by"] == READJUDICATION_ADJUDICATOR
+            assert set(["step", "record_id", "gates", "adjudicated_by", "ts", "run"]) <= set(row)
+        saved_manifest = read_json(paths.manifest)
+        assert saved_manifest["counts"]["status_counts"] == result["status_counts"]
+    finally:
+        shutil.rmtree(tmp)
+
+
 def run_self_tests():
     self_test_record_ids()
     self_test_precedence()
@@ -6964,9 +7540,12 @@ def run_self_tests():
     self_test_transport_timeout_retry_pending()
     self_test_opinion_cluster_id_rejected()
     self_test_migration_round_trip()
+    self_test_failclosed_treatment_seed_guard()
     self_test_preseeded_new_schema_treatment()
+    self_test_repair_failclosed_treatment()
     self_test_repair_migration_refs()
     self_test_status_preserve()
+    self_test_flip_verified()
     print("self-test passed")
 
 
@@ -6983,6 +7562,8 @@ def parse_args(argv):
     parser.add_argument("--rerun-lane", action="append", default=[], help="reset and rerun a treatment lane by name; repeatable")
     parser.add_argument("--records", action="append", default=[], help="record_id/title filter for --rerun-lane; repeatable")
     parser.add_argument("--repair-migration-refs", action="store_true", help="offline one-shot repair for migration/pre-seed controlling-case refs")
+    parser.add_argument("--repair-failclosed-treatment", action="store_true", help="offline one-shot repair for fail-closed treatment validity seeded by F-S2-31")
+    parser.add_argument("--flip-verified", action="store_true", help="offline R15 adjudicated flip from under_review to verified after structural gates")
     parser.add_argument("--elevate-off-cl", help="elevate a terminal not_found record using an orchestrator-prepared off-CL adjudication file")
     parser.add_argument("--adjudication", help="JSON adjudication file required by --elevate-off-cl")
     parser.add_argument("--token-path", default=TOKEN_PATH, help="CourtListener token path")

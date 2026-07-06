@@ -36,7 +36,7 @@ tags: ["case", "fourth-amendment", "exigent-circumstances", "hot-pursuit", "misd
 holding: "Pursuit of a fleeing MISDEMEANOR suspect does not categorically justify warrantless home entry; courts apply a case-by-case exigency…"
 lake:
   record_id: Lange v. California
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

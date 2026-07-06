@@ -36,7 +36,7 @@ tags: ["case", "fourth-amendment", "warrant-requirement", "neutral-and-detached-
 holding: "A magistrate who abandons the neutral-and-detached role — here the Town Justice joined and effectively led the search party, conducting…"
 lake:
   record_id: "Lo-Ji Sales, Inc. v. New York"
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "border-searches", "forensic-search", "electr
 holding: "The Fourth Amendment requires no suspicion — not even reasonable suspicion — for a forensic search of an electronic device at the…"
 lake:
   record_id: United States v. Touset
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

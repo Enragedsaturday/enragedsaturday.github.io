@@ -34,7 +34,7 @@ tags: ["case", "fifth-amendment", "self-incrimination", "public-employee", "garr
 holding: "Statements compelled from a public employee under threat of removal from office are involuntary, and the Fourteenth Amendment bars their use against the employee in a subsequent criminal prosecution (the Garrity rule)."
 lake:
   record_id: Garrity v. New Jersey
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

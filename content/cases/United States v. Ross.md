@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "automobile-exception", "containers", "probab
 holding: "When PC justifies the search of a lawfully stopped vehicle, it justifies a search of every part of the vehicle and every container…"
 lake:
   record_id: United States v. Ross
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

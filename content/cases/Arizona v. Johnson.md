@@ -36,7 +36,7 @@ tags: ["case", "fourth-amendment", "traffic-stop", "frisk", "passenger", "terry-
 holding: "During a lawful traffic stop, a passenger is seized for the duration of the stop (satisfying Terry's first condition without separate suspicion of the passenger's criminal activity); an officer may frisk the passenger on reasonable suspicion that the passenger is armed and dangerous."
 lake:
   record_id: Arizona v. Johnson
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

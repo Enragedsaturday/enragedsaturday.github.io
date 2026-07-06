@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "special-needs", "drug-testing", "administrat
 holding: "Suspicionless drug testing of Customs employees seeking drug-interdiction or firearm-carrying positions is reasonable under the…"
 lake:
   record_id: National Treasury Employees Union v. Von Raab
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

@@ -34,7 +34,7 @@ tags: ["case", "fifth-amendment", "due-process", "confessions", "voluntariness",
 holding: "A confession is \"involuntary\" for due-process purposes only when there is COERCIVE POLICE ACTIVITY; a suspect's mental illness or…"
 lake:
   record_id: Colorado v. Connelly
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

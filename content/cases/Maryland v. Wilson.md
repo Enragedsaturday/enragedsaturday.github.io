@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "traffic-stops", "passengers", "officer-safet
 holding: "Mimms extends to passengers: an officer making a lawful traffic stop may order the passengers, as well as the driver, out of the car…"
 lake:
   record_id: Maryland v. Wilson
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

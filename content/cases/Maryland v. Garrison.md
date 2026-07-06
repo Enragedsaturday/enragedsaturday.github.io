@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "warrant-requirement", "particularity", "reas
 holding: "A warrant's validity is judged on the information reasonably available to officers when they sought it; a reasonable, good-faith mistake…"
 lake:
   record_id: Maryland v. Garrison
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

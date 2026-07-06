@@ -36,7 +36,7 @@ tags: ["case", "fourth-amendment", "search-threshold", "undercover", "misplaced-
 holding: "When an occupant converts his home into a commercial center and invites an undercover agent in to transact illegal business, the agent's entry and purchase are no Fourth Amendment search; the agent may not, however, exceed the invitation to conduct a general search."
 lake:
   record_id: "Lewis v. United States (1966)"
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

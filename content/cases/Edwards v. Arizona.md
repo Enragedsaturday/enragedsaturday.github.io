@@ -34,7 +34,7 @@ tags: ["case", "fifth-amendment", "miranda", "invocation", "right-to-counsel", "
 holding: "Once an accused invokes his Fifth Amendment right to counsel, police may not reinitiate interrogation until counsel has been made…"
 lake:
   record_id: Edwards v. Arizona
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

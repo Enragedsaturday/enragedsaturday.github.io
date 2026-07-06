@@ -36,7 +36,7 @@ tags: ["case", "fourth-amendment", "seizure", "possessory-interest", "property",
 holding: "A 'seizure' of property occurs whenever there is meaningful interference with possessory interests; the Fourth Amendment protects property interests independent of privacy or liberty."
 lake:
   record_id: Soldal v. Cook County
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

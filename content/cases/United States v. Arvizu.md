@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "reasonable-suspicion"]
 holding: "Reasonable suspicion is judged on the totality of the circumstances — the \"whole picture\" — and reviewing courts may NOT use a…"
 lake:
   record_id: United States v. Arvizu
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

@@ -34,7 +34,7 @@ tags: ["case", "brady", "giglio", "impeachment-evidence", "informant", "prosecut
 holding: "A Brady violation occurred where the State withheld that a key prosecution witness was a paid police informant and affirmatively represented it had disclosed everything; a defendant who reasonably relies on the prosecution's representations does not forfeit the claim by failing to discover the concealed evidence — 'prosecutor may hide, defendant must seek' is not tenable."
 lake:
   record_id: Banks v. Dretke
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

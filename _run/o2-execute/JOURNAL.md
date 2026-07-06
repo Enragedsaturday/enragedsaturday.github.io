@@ -444,3 +444,29 @@ Lint truth-state at this gate: LINT-12 = 458 (expected: projection held) · LINT
 repair's target) · LINT-14 = 2 (Entick/Wilkes, user decision pending). Next: the rerun/repair
 network session (lane3 corpus rerun + lane2 ×3 + --repair-migration-refs), then first
 projection, 1-in-10 spot-check, structural gates, CodeRabbit gate, verified-flips, S6 handoff.
+
+### 🏁 S2 SPEC CLOSED (2026-07-06) — the flip executed; Wave 3 opens
+
+The full close sequence, all writer≠checker: rerun/repair session (migration refs ×19 →
+LINT-13=0; lane2 ×3 cursors restored; **lane3 corpus rerun 456/456 in one session — 19,197
+hits triaged, 248 proposed negative events where the broken lane had structural zero**, staged
+proposed-only for S9's two-reviewer rule) → **THE FIRST PROJECTION** (458 pages, legacy →
+3-field vocabulary + dual dates; LINT-12 458→0; idempotence proven live) → **spot-check** (2nd
+Codex lane, 68 records live incl. all 15 readjudicated rows: 0 errors) → **CodeRabbit spec
+gate** (27 findings: the critical CONFIRMED LIVE — migration seeding wrote field_i_validity
+onto fail-closed records, bounded to Entick/Wilkes, repaired to unverified + re-projected
+(F-S2-31); 6 S2 majors fixed fail-closed; RETRO re-detections deduped; lint/quartz items
+routed: RETRO A 24 fixed/1 refuted-with-proof + B/C 10 fixed, all lanes tsc/build/self-test
+clean) → **THE FLIP: 421/421 verified**, exact record-id match, untouched classes held
+(35 under_review → S9 · 65+25 frontier → S6 · 5 not_found), 421 r15-flip journal events with
+the full gate list.
+
+**S2 §7 acceptance:** schema 100% (LINT-13=0) ✓ · two-key 100% on verified (flip construction)
+✓ · A1 replacement gate ✓ · dual dates + provenance ✓ · drift + page↔record lints green EXCEPT
+the one NAMED pair (Entick/Wilkes = LINT-14's 2 + LINT-6's 2 — rides the user's R14 whitelist
+decision, elevation path built and gated on an orchestrator adjudication file) · spot-check
+logged ✓ · treatment audit recorded (4 flags, all closed) ✓. **Total run: 17,169 CL calls =
+74.7% of the ~23k projection, 0×429 across 16 paced sessions + reruns.** S6 handoff:
+`_run/o2-execute/S6-HANDOFF.md` (25 flags + 65 shells + dedupe pairs + the S9 residuals note).
+Defect ledger F-S2-16..31: every finding adjudicated, fixed, and live-validated; fail-closed
+held every single time — zero wrong ingestions across the entire build.

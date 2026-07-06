@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "knock-and-talk", "curtilage", "implied-licen
 holding: "The scope of the 'knock and talk' exception to the warrant requirement is controlled by the implied social license to enter the…"
 lake:
   record_id: French v. Merrill
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

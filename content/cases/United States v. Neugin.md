@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "exclusionary-rule", "inevitable-discovery", 
 holding: "Illustrative application of inevitable discovery where the exception did NOT apply: the chain to discovery was too speculative, so…"
 lake:
   record_id: United States v. Neugin
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

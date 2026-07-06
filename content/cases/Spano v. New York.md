@@ -34,7 +34,7 @@ tags: ["case", "confession", "voluntariness", "due-process"]
 holding: "A confession produced by psychological pressure — here a friend's feigned distress plus persistent overnight questioning of a suspect…"
 lake:
   record_id: Spano v. New York
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

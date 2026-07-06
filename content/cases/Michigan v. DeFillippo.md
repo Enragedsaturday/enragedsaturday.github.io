@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "exclusionary-rule", "probable-cause", "arres
 holding: "An arrest based on a presumptively valid ordinance later declared unconstitutional was valid (supported by probable cause at the time),…"
 lake:
   record_id: Michigan v. DeFillippo
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

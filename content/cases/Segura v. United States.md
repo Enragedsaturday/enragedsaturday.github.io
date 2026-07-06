@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "independent-source", "exclusionary-rule", "s
 holding: "Evidence seized under a valid warrant is admissible even after an earlier illegal entry, where the warrant was supported wholly by…"
 lake:
   record_id: Segura v. United States
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

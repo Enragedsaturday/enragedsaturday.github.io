@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "seizure", "consensual-encounter", "bus-sweep
 holding: "On a bus (where the passenger isn't free to leave regardless), the seizure question is whether a reasonable person would feel free to…"
 lake:
   record_id: Florida v. Bostick
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

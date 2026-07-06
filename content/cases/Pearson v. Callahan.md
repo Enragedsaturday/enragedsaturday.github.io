@@ -34,7 +34,7 @@ tags: ["case", "qualified-immunity", "section-1983", "saucier-sequence", "clearl
 holding: "The Saucier two-step sequence, while often appropriate, is NO LONGER MANDATORY. Lower courts may exercise discretion over which prong…"
 lake:
   record_id: Pearson v. Callahan
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

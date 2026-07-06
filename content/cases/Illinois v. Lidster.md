@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "checkpoint", "special-needs", "information-s
 holding: "An information-seeking checkpoint — stopping motorists to ask whether they witnessed an earlier crime committed by *someone else* — is…"
 lake:
   record_id: Illinois v. Lidster
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "automobile-exception", "impound", "forfeitur
 holding: "A warrantless search of a car the police lawfully hold in custody for forfeiture is reasonable where the search is closely related to the reason the car was seized and is being retained; reasonableness, not state-law authorization, is the Fourth Amendment test."
 lake:
   record_id: Cooper v. California
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

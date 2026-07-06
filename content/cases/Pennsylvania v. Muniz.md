@@ -34,7 +34,7 @@ tags: ["case", "fifth-amendment", "miranda", "testimonial", "booking-exception",
 holding: "The slurred manner of a DUI suspect's speech is non-testimonial physical evidence admissible without Miranda; but a question whose answer's content reveals the suspect's impaired mental state (the 'sixth birthday' question) elicits a testimonial response that must be suppressed if unwarned; routine biographical booking questions fall within a 'routine booking question' exception to Miranda interrogation."
 lake:
   record_id: Pennsylvania v. Muniz
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

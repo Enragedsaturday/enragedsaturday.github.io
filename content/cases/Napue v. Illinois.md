@@ -34,7 +34,7 @@ tags: ["case", "due-process", "false-testimony", "brady-giglio", "credibility"]
 holding: "The State may not knowingly use false testimony to obtain a conviction, and that duty applies even when the false testimony goes only to…"
 lake:
   record_id: Napue v. Illinois
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

@@ -36,7 +36,7 @@ tags: ["case", "fourth-amendment", "automobile-exception", "reduced-expectation-
 holding: "Examining a car's exterior (paint scrapings, tire tread) on probable cause in a public lot invades no privacy interest the warrant requirement protects; one has a reduced expectation of privacy in a vehicle, especially its exterior."
 lake:
   record_id: Cardwell v. Lewis
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

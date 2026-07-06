@@ -36,7 +36,7 @@ tags: ["case", "fourth-amendment", "search", "luggage", "tactile", "reasonable-e
 holding: "An officer's physical manipulation (squeezing) of a bus passenger's soft carry-on luggage is a Fourth Amendment search; tactile inspection is more intrusive than visual observation."
 lake:
   record_id: Bond v. United States
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

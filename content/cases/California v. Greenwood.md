@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "abandonment", "garbage", "expectation-of-pri
 holding: "No reasonable expectation of privacy in garbage bags left for collection at the curb, outside the curtilage; warrantless search/seizure of curbside trash does not violate the 4A."
 lake:
   record_id: California v. Greenwood
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

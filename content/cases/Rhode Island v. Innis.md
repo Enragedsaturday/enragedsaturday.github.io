@@ -34,7 +34,7 @@ tags: ["case", "fifth-amendment", "miranda", "interrogation", "functional-equiva
 holding: "'Interrogation' under Miranda is not limited to express questioning. It also includes the 'functional equivalent' of express…"
 lake:
   record_id: Rhode Island v. Innis
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

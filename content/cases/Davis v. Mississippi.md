@@ -36,7 +36,7 @@ tags: ["case", "fourth-amendment", "seizure", "fingerprinting", "investigative-d
 holding: "Detaining and transporting a suspect to the station for fingerprinting without probable cause or judicial authorization is an unreasonable seizure; the fingerprints are suppressible."
 lake:
   record_id: Davis v. Mississippi
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

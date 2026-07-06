@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "arrest", "probable-cause", "pretrial-detenti
 holding: "A judicial probable-cause determination provided within 48 hours of a warrantless arrest is presumptively prompt under Gerstein; if it comes later, the burden shifts to the government to show a bona fide emergency or extraordinary circumstance (intervening weekends do not qualify)."
 lake:
   record_id: County of Riverside v. McLaughlin
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

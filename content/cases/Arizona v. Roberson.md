@@ -34,7 +34,7 @@ tags: ["case", "fifth-amendment", "miranda", "right-to-counsel", "interrogation"
 holding: "The Edwards bar is not offense-specific — once a suspect invokes counsel, police may not interrogate him about ANY offense, including an…"
 lake:
   record_id: Arizona v. Roberson
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "consent", "securing-the-scene"]
 holding: "Where police, under color of authority, demand that occupants of a motel room open the door, and an occupant opens the door not…"
 lake:
   record_id: United States v. Conner
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

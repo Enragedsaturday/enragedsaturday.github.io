@@ -12,7 +12,7 @@ date_decided: 1765-11-02
 docket: ""
 authority_weight: Historical
 treatment:
-  field_i_validity: good_law
+  field_i_validity: unverified
   as_of_content: 1765-11-02
   as_of_treatment: 2026-06-30
   composite_basis: migration-seed

@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "knock-and-announce", "exclusionary-rule", "w
 holding: "A knock-and-announce violation does NOT require suppression of the evidence found inside; the interests protected by knock-and-announce…"
 lake:
   record_id: Hudson v. Michigan
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

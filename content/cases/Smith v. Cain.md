@@ -34,7 +34,7 @@ tags: ["case", "brady", "impeachment", "materiality", "due-process"]
 holding: "Modern *Brady* reversal: undisclosed impeachment of the sole eyewitness is material — conviction reversed."
 lake:
   record_id: Smith v. Cain
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

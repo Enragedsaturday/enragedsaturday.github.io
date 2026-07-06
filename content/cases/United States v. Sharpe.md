@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "seizure", "terry-stop", "duration", "investi
 holding: "There is no rigid time limit for a Terry stop; a 20-minute investigative detention was reasonable where police diligently pursued an investigation likely to confirm or dispel suspicion quickly."
 lake:
   record_id: United States v. Sharpe
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

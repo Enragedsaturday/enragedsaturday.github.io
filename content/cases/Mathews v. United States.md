@@ -34,7 +34,7 @@ tags: ["case", "entrapment", "affirmative-defense", "jury-instruction"]
 holding: "A defendant who denies one or more elements of the charged crime is nonetheless entitled to an entrapment instruction whenever there is…"
 lake:
   record_id: Mathews v. United States
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

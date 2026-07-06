@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "special-needs", "workplace", "public-employe
 holding: "A government employer's review of an employee's text messages on an employer-issued pager is a reasonable search where it is motivated by a legitimate work-related purpose and not excessive in scope; the Court assumed a privacy expectation without deciding it, declining to set broad rules for emerging communications technology."
 lake:
   record_id: City of Ontario v. Quon
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

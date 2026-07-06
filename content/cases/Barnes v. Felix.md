@@ -36,7 +36,7 @@ tags: ["case", "use-of-force", "deadly-force", "totality-of-circumstances", "mom
 holding: "Excessive-force reasonableness under the Fourth Amendment is judged on the totality of the circumstances, which has no time limit; the 'moment of threat' rule that ignores the events leading up to the use of force is rejected."
 lake:
   record_id: Barnes v. Felix
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

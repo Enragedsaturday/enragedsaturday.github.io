@@ -36,7 +36,7 @@ tags: ["case", "section-1983", "qualified-immunity", "warrant", "overbroad-warra
 holding: "Officers retain qualified immunity for obtaining and executing a facially overbroad warrant where their reliance on the magistrate's approval was objectively reasonable; the Malley exception is a high threshold."
 lake:
   record_id: Messerschmidt v. Millender
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

@@ -38,7 +38,7 @@ tags: ["case", "fourth-amendment", "search", "home", "thermal-imaging", "surveil
 holding: "Using sense-enhancing technology not in general public use to explore details of a home's interior that could not otherwise be obtained without physical intrusion is a Fourth Amendment search, presumptively unreasonable without a warrant."
 lake:
   record_id: Kyllo v. United States
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

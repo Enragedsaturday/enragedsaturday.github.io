@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "consent-search", "voluntariness", "custody",
 holding: "Custody alone does not render consent involuntary. The fact of being under arrest / in custody is ONE factor in the…"
 lake:
   record_id: United States v. Watson
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

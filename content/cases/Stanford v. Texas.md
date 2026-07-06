@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "warrant-requirement", "particularity", "gene
 holding: "When a warrant authorizes the seizure of books and papers because of the ideas they contain, the particularity requirement must be applied with the most scrupulous exactitude; a warrant authorizing seizure of all materials 'concerning' a subject is an unconstitutional general warrant."
 lake:
   record_id: Stanford v. Texas
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

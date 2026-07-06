@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "border-searches", "vehicle-search", "gas-tan
 holding: "The government's authority to conduct suspicionless searches of vehicles at the border includes disassembling and reassembling a gas…"
 lake:
   record_id: United States v. Flores-Montano
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

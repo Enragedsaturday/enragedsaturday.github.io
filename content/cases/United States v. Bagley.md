@@ -34,7 +34,7 @@ tags: ["case", "due-process", "brady"]
 holding: "Set the unified MATERIALITY standard for Brady (covering no-request, general-request, and specific-request cases) and confirmed…"
 lake:
   record_id: United States v. Bagley
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

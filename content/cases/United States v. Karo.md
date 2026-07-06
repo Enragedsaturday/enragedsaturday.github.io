@@ -36,7 +36,7 @@ tags: ["case", "fourth-amendment", "search", "beeper", "tracking", "surveillance
 holding: "Monitoring a beeper inside a private residence — a location not open to visual surveillance — is a Fourth Amendment search requiring a warrant, because it reveals a critical fact about the interior of the home."
 lake:
   record_id: United States v. Karo
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

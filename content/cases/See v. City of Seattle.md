@@ -36,7 +36,7 @@ tags: ["case", "fourth-amendment", "administrative-search", "inspections", "comm
 holding: "An administrative inspection of the nonpublic portions of commercial premises generally requires a warrant; a businessman, like a homeowner, may refuse a warrantless regulatory entry and cannot be punished for that refusal."
 lake:
   record_id: See v. City of Seattle
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

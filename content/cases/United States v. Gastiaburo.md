@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "automobile-exception", "impoundment", "delay
 holding: "The automobile exception is not subject to a temporal limit; a 38-day gap between the car's seizure and the warrantless search did not…"
 lake:
   record_id: United States v. Gastiaburo
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

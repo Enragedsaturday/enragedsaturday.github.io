@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "automobile-exception", "curtilage", "home", 
 holding: "The automobile exception does NOT authorize a warrantless entry of a home or its curtilage to search a vehicle parked there. The…"
 lake:
   record_id: Collins v. Virginia
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

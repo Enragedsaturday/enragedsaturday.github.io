@@ -34,7 +34,7 @@ tags: ["case", "fifth-amendment", "fourteenth-amendment", "confessions", "volunt
 holding: "A confession is involuntary and coerced where police obtain it by threatening that the suspect will lose state financial aid for her children and have her children taken away unless she cooperates, given to a person with no prior criminal experience, alone and encircled by officers."
 lake:
   record_id: Lynumn v. Illinois
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

@@ -34,7 +34,7 @@ tags: ["case", "entrapment", "predisposition", "due-process"]
 holding: "Entrapment is established as a matter of law when the government, through its informant, implants the criminal design in an…"
 lake:
   record_id: Sherman v. United States
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

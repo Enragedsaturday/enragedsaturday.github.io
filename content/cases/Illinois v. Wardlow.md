@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "reasonable-suspicion", "terry-stop", "flight
 holding: "Unprovoked headlong flight upon noticing police, combined with presence in a high-crime area, can furnish reasonable suspicion for a…"
 lake:
   record_id: Illinois v. Wardlow
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

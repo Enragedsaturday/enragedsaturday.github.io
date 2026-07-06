@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "exclusionary-rule", "particularity", "genera
 holding: "A facially overbroad / general warrant (authorizing seizure of records 'relating to' violations of the export laws, offering no…"
 lake:
   record_id: United States v. Leary
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

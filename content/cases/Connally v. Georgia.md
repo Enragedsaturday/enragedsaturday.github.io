@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "warrant-requirement", "neutral-magistrate"]
 holding: "A search warrant issued by a magistrate who is paid a fee for issuing a warrant but nothing for denying one is invalid: such a magistrate has a direct, personal, pecuniary interest in issuance and is not neutral and detached as the Fourth Amendment requires."
 lake:
   record_id: Connally v. Georgia
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

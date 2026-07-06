@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "emergency-aid", "warrantless-entry", "home",
 holding: "Applies Brigham City: emergency-aid entry upheld where it was objectively reasonable to believe an occupant was injured or about to be;…"
 lake:
   record_id: Michigan v. Fisher
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

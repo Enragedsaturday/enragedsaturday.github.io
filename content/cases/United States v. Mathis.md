@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "exclusionary-rule", "good-faith-exception", 
 holding: "Even assuming the search warrant lacked probable cause, the Leon good-faith exception applied: the detective had an objectively…"
 lake:
   record_id: United States v. Mathis
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

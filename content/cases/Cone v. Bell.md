@@ -34,7 +34,7 @@ tags: ["case", "brady", "giglio", "materiality", "sentencing", "procedural-defau
 holding: "Brady's disclosure obligation extends to evidence material to punishment as well as guilt; a state court's mistaken belief that a claim was 'previously determined' does not bar federal habeas review. Although the suppressed drug-impairment evidence was not material to guilt, the lower courts failed to assess its materiality to the death sentence, requiring remand."
 lake:
   record_id: Cone v. Bell
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

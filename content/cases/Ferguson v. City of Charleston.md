@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "special-needs", "drug-testing", "programmati
 holding: "Covertly drug-testing pregnant patients and reporting results to law enforcement is an unreasonable search; the special-needs exception…"
 lake:
   record_id: Ferguson v. City of Charleston
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

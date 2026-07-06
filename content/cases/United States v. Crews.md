@@ -36,7 +36,7 @@ tags: ["case", "fourth-amendment", "exclusionary-rule", "fruit-of-the-poisonous-
 holding: "A victim's in-court identification of the accused is not a suppressible fruit of his illegal arrest where the victim's presence and her ability to identify him have an independent source predating the police misconduct."
 lake:
   record_id: United States v. Crews
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

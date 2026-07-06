@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "search-incident-to-arrest", "full-custody-ar
 holding: "A lawful custodial arrest categorically authorizes a full search of the arrestee's person; the search needs no additional justification…"
 lake:
   record_id: United States v. Robinson
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

@@ -34,7 +34,7 @@ tags: ["case", "section-1983", "bivens", "qualified-immunity", "media-ride-along
 holding: "A media ride-along during the execution of a search warrant violated the Fourth Amendment under Wilson v. Layne, but the officers were entitled to qualified immunity."
 lake:
   record_id: Hanlon v. Berger
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

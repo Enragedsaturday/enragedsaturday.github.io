@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "reasonable-expectation-of-privacy", "search"
 holding: "Electronic eavesdropping that invades a justified expectation of privacy is a search even with no physical trespass; overruled…"
 lake:
   record_id: Katz v. United States
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

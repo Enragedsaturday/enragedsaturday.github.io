@@ -34,7 +34,7 @@ tags: ["case", "sixth-amendment", "right-to-counsel", "deliberate-elicitation", 
 holding: "Once adversary proceedings have begun (here, post-indictment), the government violates the Sixth Amendment when it deliberately elicits…"
 lake:
   record_id: Massiah v. United States
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

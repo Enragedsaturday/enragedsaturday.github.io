@@ -34,7 +34,7 @@ tags: ["case", "due-process", "eyewitness-identification", "suggestive-procedure
 holding: "There is no per se rule excluding identifications from unnecessarily suggestive procedures; reliability is the linchpin, assessed under…"
 lake:
   record_id: Manson v. Brathwaite
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

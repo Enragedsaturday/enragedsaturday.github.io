@@ -36,7 +36,7 @@ tags: ["case", "fourth-amendment", "border-searches", "automobile"]
 holding: "A warrantless search of a vehicle by a roving Border Patrol on a California road at least 20 miles north of the Mexican border, without…"
 lake:
   record_id: Almeida-Sanchez v. United States
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

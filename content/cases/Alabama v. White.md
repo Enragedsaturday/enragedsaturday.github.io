@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "reasonable-suspicion", "informants", "terry-
 holding: "An anonymous tip can supply reasonable suspicion when sufficiently corroborated by police observation — especially of the tipster's…"
 lake:
   record_id: Alabama v. White
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

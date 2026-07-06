@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "automobile-exception", "forfeiture", "warran
 holding: "When police have probable cause to believe a vehicle is itself forfeitable contraband, the Fourth Amendment does not require a warrant to seize the car from a public place."
 lake:
   record_id: Florida v. White
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

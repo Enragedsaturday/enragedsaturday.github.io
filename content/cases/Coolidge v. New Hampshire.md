@@ -47,7 +47,7 @@ tags: ["case", "fourth-amendment", "plain-view", "warrant-requirement", "inadver
 holding: "ORIGIN of the modern plain-view doctrine (Stewart plurality). Plain view justifies a warrantless seizure only where the incriminating…"
 lake:
   record_id: Coolidge v. New Hampshire
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

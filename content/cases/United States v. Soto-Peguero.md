@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "exclusionary-rule", "inevitable-discovery", 
 holding: "Illustrative application of inevitable discovery: government met its burden (agent would have sought and obtained a warrant regardless),…"
 lake:
   record_id: United States v. Soto-Peguero
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

@@ -36,7 +36,7 @@ tags: ["case", "fourth-amendment", "knock-and-talk", "implied-license", "curtila
 holding: "The knock-and-talk implied license is bounded by both time and purpose: a pre-dawn (around 4:00 a.m.) knock, undertaken with the intent to arrest the occupant rather than to ask questions, exceeds the customary license — so the exception does not apply and the porch knock (and the search it precipitated) violated the Fourth Amendment."
 lake:
   record_id: United States v. Lundin
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

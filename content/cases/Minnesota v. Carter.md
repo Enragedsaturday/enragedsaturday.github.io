@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "standing", "expectation-of-privacy", "home",
 holding: "A short-term visitor present in another's home for a purely commercial purpose (bagging drugs), with no prior relationship and no…"
 lake:
   record_id: Minnesota v. Carter
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

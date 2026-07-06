@@ -36,7 +36,7 @@ tags: ["case", "fourth-amendment", "exclusionary-rule", "parole", "revocation-he
 holding: "The federal Fourth Amendment exclusionary rule does not bar the introduction at a parole-revocation hearing of evidence seized in violation of a parolee's Fourth Amendment rights."
 lake:
   record_id: Pennsylvania Board of Probation and Parole v. Scott
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

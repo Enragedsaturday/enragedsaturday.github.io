@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "exclusionary-rule", "good-faith-exception", 
 holding: "Although the warrant application failed to supply probable cause, the deputy acted in objectively reasonable good faith (affidavit…"
 lake:
   record_id: United States v. Jackson
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

@@ -36,7 +36,7 @@ tags: ["case", "fifth-amendment", "confessions", "mcnabb-mallory", "prompt-prese
 holding: "18 U.S.C. §3501 modified but did not supplant the McNabb-Mallory rule: a federal confession made before presentment and more than six hours after arrest must be suppressed if the presentment delay was unreasonable or unnecessary."
 lake:
   record_id: Corley v. United States
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

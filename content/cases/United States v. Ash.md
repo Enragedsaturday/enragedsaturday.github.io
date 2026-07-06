@@ -34,7 +34,7 @@ tags: ["case", "sixth-amendment", "eyewitness-identification", "right-to-counsel
 holding: "The Sixth Amendment does not grant a right to counsel at a post-indictment photographic display (no trial-like confrontation, since the…"
 lake:
   record_id: United States v. Ash
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

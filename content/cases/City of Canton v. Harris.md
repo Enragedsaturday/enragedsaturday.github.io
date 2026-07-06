@@ -34,7 +34,7 @@ tags: ["case", "section-1983", "municipal-liability", "failure-to-train", "delib
 holding: "A municipality is liable under § 1983 for inadequate police training only where the failure to train amounts to deliberate indifference to the rights of persons with whom the police come into contact."
 lake:
   record_id: City of Canton v. Harris
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

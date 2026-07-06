@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "securing-the-scene", "temporary-seizure", "e
 holding: "Where police have probable cause to believe a home contains contraband, they may reasonably impose a temporary restraint on a resident —…"
 lake:
   record_id: Illinois v. McArthur
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

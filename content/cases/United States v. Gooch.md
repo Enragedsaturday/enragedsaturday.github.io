@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "tent", "reasonable-expectation-of-privacy", 
 holding: "(9th Cir. — persuasive) An occupant has a reasonable expectation of privacy in a tent in a public campground; 'a tent is more like a house than a car,' so its warrantless search violated the 4A."
 lake:
   record_id: United States v. Gooch
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

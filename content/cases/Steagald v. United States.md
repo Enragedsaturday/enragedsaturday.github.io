@@ -36,7 +36,7 @@ tags: ["case", "fourth-amendment", "arrest-warrant", "search-warrant", "third-pa
 holding: "To search a THIRD PARTY'S home for the subject of an arrest warrant, police need a SEARCH warrant (absent exigency or consent); an…"
 lake:
   record_id: Steagald v. United States
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

@@ -36,7 +36,7 @@ tags: ["case", "fourth-amendment", "search-incident-to-arrest", "traffic-stops",
 holding: "Issuing a traffic citation, without a custodial arrest, does not authorize a search incident to arrest; neither the officer-safety nor the evidence-preservation rationale supports a full search where the driver is merely cited."
 lake:
   record_id: Knowles v. Iowa
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

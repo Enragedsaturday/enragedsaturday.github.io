@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "consent-searches", "voluntariness", "totalit
 holding: "The voluntariness of consent to search is a question of fact determined from the TOTALITY OF ALL THE CIRCUMSTANCES; the government need…"
 lake:
   record_id: Schneckloth v. Bustamonte
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

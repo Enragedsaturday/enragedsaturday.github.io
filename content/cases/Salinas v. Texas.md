@@ -34,7 +34,7 @@ tags: ["case", "fifth-amendment", "self-incrimination", "silence", "invocation",
 holding: "Pre-custody, pre-Miranda silence during voluntary, noncustodial questioning is not protected by the Fifth Amendment unless the suspect expressly invokes the privilege; a suspect who simply falls silent without invoking may have that silence used against him at trial."
 lake:
   record_id: Salinas v. Texas
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

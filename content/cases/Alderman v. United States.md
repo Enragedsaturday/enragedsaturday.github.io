@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "standing", "exclusionary-rule", "electronic-
 holding: "Fourth Amendment rights are personal and may not be vicariously asserted; only a defendant whose own rights were violated by the search or surveillance — not a co-defendant or co-conspirator aggrieved solely by the evidence — may move to suppress."
 lake:
   record_id: Alderman v. United States
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

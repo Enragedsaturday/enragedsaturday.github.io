@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "standing", "expectation-of-privacy", "workpl
 holding: "A union official has Fourth Amendment standing to challenge a warrantless search of the office he shares with other officials, because capacity to claim the Amendment turns on a reasonable expectation of freedom from governmental intrusion in the area, not on a property right."
 lake:
   record_id: Mancusi v. DeForte
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

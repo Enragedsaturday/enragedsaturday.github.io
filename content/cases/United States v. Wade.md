@@ -34,7 +34,7 @@ tags: ["case", "sixth-amendment", "eyewitness-identification", "lineup", "right-
 holding: "A post-indictment lineup is a critical stage of the prosecution at which the accused has a Sixth Amendment right to counsel; counsel's…"
 lake:
   record_id: United States v. Wade
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

@@ -34,7 +34,7 @@ tags: ["case", "sixth-amendment", "right-to-counsel", "attachment"]
 holding: "The Sixth Amendment right to counsel attaches only at or after the initiation of adversary judicial proceedings (formal charge, preliminary hearing, indictment, information, or arraignment); inmates held in administrative segregation during a preindictment investigation have no Sixth Amendment right to counsel."
 lake:
   record_id: United States v. Gouveia
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "checkpoint", "roadblock", "special-needs", "
 holding: "A checkpoint program whose primary purpose is to detect ordinary criminal wrongdoing / general crime control (here, drug interdiction)…"
 lake:
   record_id: City of Indianapolis v. Edmond
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "bodily-intrusion", "warrant-requirement", "r
 holding: "Court-ordered surgery under general anesthesia to recover a bullet for use as evidence is an unreasonable search where, under the Schmerber balance, the severe intrusion on bodily integrity and safety outweighs the State's need for the evidence — even with probable cause and a judicial order."
 lake:
   record_id: Winston v. Lee
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "standing", "automatic-standing", "possessory
 holding: "Abolished automatic standing; a defendant charged with a possessory crime must show that his own Fourth Amendment rights (a legitimate…"
 lake:
   record_id: United States v. Salvucci
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

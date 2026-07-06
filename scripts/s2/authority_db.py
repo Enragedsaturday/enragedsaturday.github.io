@@ -641,6 +641,8 @@ def verify_roundtrip(path=None):
     conn = sqlite3.connect(path)
     rows = conn.execute("SELECT record_id, record_path, record_json FROM cases ORDER BY record_id").fetchall()
     conn.close()
+    if not rows:
+        raise RuntimeError("cases.record_json roundtrip failed: cases table has zero rows")
     errors = []
     for rid, rel, record_json in rows:
         source = load_json(os.path.join(REPO_ROOT, rel))
@@ -661,9 +663,21 @@ def self_test():
         first = build(os.path.join(root, "db", "authority-one.sqlite"), root=root)
         second = build(os.path.join(root, "db", "authority-two.sqlite"), root=root)
         deterministic = comparable_table_content(first) == comparable_table_content(second)
-    ok = hash_ok and deterministic
+        empty_db = os.path.join(root, "db", "empty.sqlite")
+        conn = sqlite3.connect(empty_db)
+        init_schema(conn)
+        conn.commit()
+        conn.close()
+        try:
+            verify_roundtrip(empty_db)
+        except RuntimeError as exc:
+            zero_row_ok = "zero rows" in str(exc)
+        else:
+            zero_row_ok = False
+    ok = hash_ok and deterministic and zero_row_ok
     sys.stderr.write("[self-test] hash inputs -> %s (cache files=%d)\n" % ("OK" if hash_ok else "FAIL", len(paths)))
     sys.stderr.write("[self-test] two rebuilds deterministic except meta.built_at -> %s\n" % ("OK" if deterministic else "FAIL"))
+    sys.stderr.write("[self-test] empty cases roundtrip fails closed -> %s\n" % ("OK" if zero_row_ok else "FAIL"))
     return 0 if ok else 1
 
 

@@ -36,7 +36,7 @@ tags: ["case", "fourth-amendment", "standing", "expectation-of-privacy", "passen
 holding: "Fourth Amendment rights are personal; a defendant must show his own legitimate expectation of privacy was infringed and cannot…"
 lake:
   record_id: Rakas v. Illinois
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

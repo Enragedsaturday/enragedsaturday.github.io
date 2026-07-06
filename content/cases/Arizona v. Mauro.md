@@ -34,7 +34,7 @@ tags: ["case", "fifth-amendment", "miranda", "interrogation", "functional-equiva
 holding: "Allowing a suspect who has invoked his Miranda rights to speak with his wife, with a police officer present and a recorder running, is not 'interrogation' or its functional equivalent; officers do not interrogate a suspect merely by hoping he will incriminate himself, so the resulting volunteered statements are admissible."
 lake:
   record_id: Arizona v. Mauro
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

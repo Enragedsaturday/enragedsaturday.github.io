@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "traffic-stop", "reasonable-suspicion", "rand
 holding: "Random, suspicionless stops of motorists to check license and registration are unreasonable under the Fourth Amendment; an officer needs…"
 lake:
   record_id: Delaware v. Prouse
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

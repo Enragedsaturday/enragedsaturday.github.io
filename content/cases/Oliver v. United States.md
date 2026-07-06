@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "open-fields", "curtilage", "search"]
 holding: "Reaffirms that open fields get no Fourth Amendment protection — even fenced, posted 'No Trespassing' land; only curtilage carries the home's protection."
 lake:
   record_id: Oliver v. United States
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

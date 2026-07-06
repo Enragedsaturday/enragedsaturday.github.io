@@ -36,7 +36,7 @@ tags: ["case", "fourth-amendment", "search", "wiretap", "eavesdropping", "partic
 holding: "New York's permissive eavesdropping statute was unconstitutional for lack of particularity and safeguards; the case sets Fourth Amendment standards for electronic-surveillance warrants."
 lake:
   record_id: Berger v. New York
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

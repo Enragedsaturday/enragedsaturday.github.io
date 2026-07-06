@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "border-searches", "international-mail", "cus
 holding: "Routine searches at the international border (including incoming international mail) require neither a warrant nor probable cause; the…"
 lake:
   record_id: United States v. Ramsey
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

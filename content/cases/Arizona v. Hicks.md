@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "plain-view", "search"]
 holding: "Moving stereo equipment a few inches to read serial numbers was a SEARCH separate from the lawful entry, and 'immediately apparent'…"
 lake:
   record_id: Arizona v. Hicks
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

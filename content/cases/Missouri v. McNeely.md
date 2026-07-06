@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "exigent-circumstances", "blood-draw", "dui",
 holding: "The natural metabolization of alcohol is NOT a per se exigency justifying a warrantless DUI blood draw in every case; exigency must be…"
 lake:
   record_id: Missouri v. McNeely
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

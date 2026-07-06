@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "exclusionary-rule", "civil-proceeding", "det
 holding: "The exclusionary rule does not bar evidence unlawfully seized by state law-enforcement officers from being used in a federal civil (tax) proceeding, because the marginal deterrence of an intersovereign civil exclusion does not outweigh its substantial social costs."
 lake:
   record_id: United States v. Janis
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

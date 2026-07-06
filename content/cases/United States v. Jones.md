@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "search-definition", "trespass-theory", "gps-
 holding: "Installing a GPS tracker on a vehicle and monitoring it was a search under the revived trespass theory — physical intrusion on an 'effect' to obtain information; the controlling modern trespass-search case."
 lake:
   record_id: United States v. Jones
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

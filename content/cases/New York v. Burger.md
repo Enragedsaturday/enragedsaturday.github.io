@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "administrative-search", "closely-regulated-b
 holding: "A warrantless administrative inspection of a closely (pervasively) regulated business — here, an automobile junkyard — is reasonable if…"
 lake:
   record_id: New York v. Burger
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "warrant", "neutral-magistrate", "probable-ca
 holding: "Probable-cause inferences must be drawn by a neutral and detached magistrate, not by the officer engaged in ferreting out crime."
 lake:
   record_id: Johnson v. United States
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

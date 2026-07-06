@@ -36,7 +36,7 @@ tags: ["case", "fourth-amendment", "search-incident-to-arrest", "warrant-require
 holding: "A search of a house cannot be justified as incident to an arrest made outside the house; a warrantless dwelling search requires a recognized exception, and a street arrest is not its own exigent circumstance."
 lake:
   record_id: Vale v. Louisiana
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

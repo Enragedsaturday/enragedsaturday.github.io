@@ -34,7 +34,7 @@ tags: ["case", "qualified-immunity", "section-1983", "excessive-force", "clearly
 holding: "For QI, the plaintiff must identify a case that put the officer on notice that his specific conduct was unlawful, 'in light of the specific context of the case, not as a broad general proposition.'"
 lake:
   record_id: Rivas-Villegas v. Cortesluna
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

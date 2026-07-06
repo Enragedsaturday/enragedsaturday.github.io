@@ -34,7 +34,7 @@ tags: ["case", "miranda", "custody", "objective-test"]
 holding: "Custody is determined by the objective circumstances of the interrogation, not by the subjective, undisclosed views of the officer or…"
 lake:
   record_id: Stansbury v. California
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

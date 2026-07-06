@@ -34,7 +34,7 @@ tags: ["case", "public-employee", "garrity", "federal-employee", "representation
 holding: "A NASA Office of Inspector General investigator examining a NASA employee is a 'representative of the agency' under 5 U.S.C. § 7114(a)(2)(B), so the employee's statutory right to union representation at an investigatory examination that may lead to discipline applies (the federal-sector representation right)."
 lake:
   record_id: NASA v. FLRA
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

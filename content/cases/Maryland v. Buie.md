@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "protective-sweep", "officer-safety", "arrest
 holding: "Protective sweep incident to an in-home arrest: (1) without probable cause or reasonable suspicion, officers may as a precaution look in…"
 lake:
   record_id: Maryland v. Buie
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

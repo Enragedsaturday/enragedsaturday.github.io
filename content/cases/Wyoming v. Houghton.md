@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "automobile-exception", "containers", "passen
 holding: "With PC to search a car, officers may search a passenger's belongings capable of concealing the object; a non-suspect passenger's ownership is no shield."
 lake:
   record_id: Wyoming v. Houghton
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

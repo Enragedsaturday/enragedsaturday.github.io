@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "traffic-stops", "officer-safety", "order-out
 holding: "Once a vehicle is lawfully stopped for a traffic violation, an officer may order the driver out of the vehicle as a matter of course;…"
 lake:
   record_id: Pennsylvania v. Mimms
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

@@ -36,7 +36,7 @@ tags: ["case", "fourth-amendment", "exigent-circumstances", "fire", "administrat
 holding: "A burning building is an exigency justifying warrantless entry; firefighters may stay a reasonable time to fight the fire and investigate its cause and may seize arson evidence in plain view, but later investigative entries, once the exigency has ended, require a warrant (administrative or, on probable cause of arson, criminal)."
 lake:
   record_id: Michigan v. Tyler
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

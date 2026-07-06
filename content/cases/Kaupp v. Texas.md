@@ -38,7 +38,7 @@ tags: ["case", "fourth-amendment", "seizure", "probable-cause", "exclusionary-ru
 holding: "Awakening a 17-year-old at 3 a.m. and transporting him, handcuffed and in his underwear, to the station for interrogation without probable cause is an arrest; his 'Okay' was mere submission to authority, not consent, and the ensuing confession must be suppressed unless the State shows the taint was purged."
 lake:
   record_id: Kaupp v. Texas
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

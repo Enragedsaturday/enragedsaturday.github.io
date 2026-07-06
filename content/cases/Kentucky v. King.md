@@ -38,7 +38,7 @@ tags: ["case", "fourth-amendment", "exigent-circumstances", "police-created-exig
 holding: "The exigent-circumstances rule applies even where police 'created' the exigency, SO LONG AS the police did not create it by engaging or…"
 lake:
   record_id: Kentucky v. King
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

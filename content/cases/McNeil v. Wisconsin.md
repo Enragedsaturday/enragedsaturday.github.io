@@ -34,7 +34,7 @@ tags: ["case", "sixth-amendment", "right-to-counsel", "offense-specific", "miran
 holding: "The Sixth Amendment right to counsel is offense-specific, and a 6A invocation is NOT an invocation of the Fifth Amendment *Miranda-Edwards* right to counsel; the two are distinct."
 lake:
   record_id: McNeil v. Wisconsin
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

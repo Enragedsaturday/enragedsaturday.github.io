@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "exclusionary-rule", "impeachment-exception",
 holding: "Illegally seized evidence may be used to impeach a defendant's false statements first elicited on cross-examination, so long as that cross-examination was reasonably suggested by the defendant's direct testimony; such evidence remains inadmissible as substantive proof of guilt."
 lake:
   record_id: United States v. Havens
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

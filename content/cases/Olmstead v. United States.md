@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "wiretap", "trespass", "overruled", "historic
 holding: "Wiretapping with no physical entry was not a search — pure property/trespass framing; overruled on the privacy point by *Katz* (property instinct later revived by *Jones*)."
 lake:
   record_id: Olmstead v. United States
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

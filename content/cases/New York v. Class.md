@@ -36,7 +36,7 @@ tags: ["case", "fourth-amendment", "search", "vehicle", "vin", "traffic-stop", "
 holding: "There is no reasonable expectation of privacy in a VIN required by law to be visible; reaching into the car to move papers obscuring the VIN was a minimal but reasonable search."
 lake:
   record_id: New York v. Class
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

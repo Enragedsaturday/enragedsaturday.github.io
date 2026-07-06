@@ -34,7 +34,7 @@ tags: ["case", "exclusionary-rule", "independent-source", "fruit-of-the-poisonou
 holding: "Independent source: evidence first observed during an unlawful entry is admissible if later acquired through a genuinely independent…"
 lake:
   record_id: Murray v. United States
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

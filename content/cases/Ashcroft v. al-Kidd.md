@@ -36,7 +36,7 @@ tags: ["case", "section-1983", "bivens", "qualified-immunity", "material-witness
 holding: "An objectively reasonable arrest of a material witness on a valid warrant cannot be challenged as unconstitutional on the basis of the officer's subjective motive; subjective intent is irrelevant to Fourth Amendment reasonableness, and the contrary theory was not clearly established (QI)."
 lake:
   record_id: Ashcroft v. al-Kidd
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

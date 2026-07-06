@@ -36,7 +36,7 @@ tags: ["case", "fourth-amendment", "arrest-in-the-home", "arrest-warrant", "warr
 holding: "Warrantless, nonconsensual entry into a SUSPECT'S OWN home to make a routine felony arrest is presumptively unreasonable; an arrest…"
 lake:
   record_id: Payton v. New York
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

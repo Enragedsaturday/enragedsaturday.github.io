@@ -34,7 +34,7 @@ tags: ["case", "fifth-amendment", "miranda", "custody", "station-house", "per-cu
 holding: "A suspect who is not under arrest, voluntarily comes to the police station, and is allowed to leave after a brief interview is not 'in custody' for Miranda purposes; the ultimate custody inquiry is whether there was a formal arrest or restraint on freedom of movement of the degree associated with a formal arrest."
 lake:
   record_id: California v. Beheler
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

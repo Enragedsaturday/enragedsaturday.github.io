@@ -34,7 +34,7 @@ tags: ["case", "section-1983", "qualified-immunity", "excessive-force", "clearly
 holding: "'Clearly established' law must be particularized to the specific context — 'the dispositive question is whether the violative nature of particular conduct is clearly established.'"
 lake:
   record_id: Mullenix v. Luna
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

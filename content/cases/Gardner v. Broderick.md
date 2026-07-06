@@ -34,7 +34,7 @@ tags: ["case", "fifth-amendment", "self-incrimination", "public-employee", "garr
 holding: "A public employee (here a police officer) may not be dismissed solely for refusing to waive his Fifth Amendment immunity; but he may be required to answer questions specifically, directly, and narrowly related to his official duties under a grant of use immunity, and discharged if he refuses to answer those."
 lake:
   record_id: Gardner v. Broderick
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

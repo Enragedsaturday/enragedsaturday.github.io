@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "probable-cause"]
 holding: "Classic probable-cause standard: practical, non-technical probabilities on which reasonable people act."
 lake:
   record_id: Brinegar v. United States
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

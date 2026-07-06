@@ -34,7 +34,7 @@ tags: ["case", "section-1983", "color-of-law", "section-242", "civil-rights", "s
 holding: "Misuse of power possessed by virtue of state law and made possible only because the wrongdoer is clothed with state authority is action taken 'under color of' state law — the anchor color-of-law definition later applied to § 1983."
 lake:
   record_id: United States v. Classic
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

@@ -36,7 +36,7 @@ tags: ["case", "fourth-amendment", "emergency-aid", "exigent-circumstances", "wa
 holding: "Emergency aid exception: police may enter a home without a warrant when they have an objectively reasonable basis to believe an occupant…"
 lake:
   record_id: Brigham City v. Stuart
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

@@ -33,7 +33,7 @@ treatment:
       scope_note: "Binding in the Fifth Circuit; SCOTUS in Chatrie expressly declined to adopt the categorical rule — the probable-cause/particularity of geofence warrants is the live question on Chatrie's remand."
 lake:
   record_id: "United States v. Smith (2024)"
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/10036119/united-states-v-smith/"

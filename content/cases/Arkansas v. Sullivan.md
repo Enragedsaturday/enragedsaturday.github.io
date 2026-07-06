@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "traffic-stop", "pretext", "arrest", "per-cur
 holding: "An arrest supported by probable cause is reasonable under the Fourth Amendment regardless of the officer's pretextual or subjective motivation, extending Whren's rule from stops to arrests."
 lake:
   record_id: Arkansas v. Sullivan
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

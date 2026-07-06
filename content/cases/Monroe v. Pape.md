@@ -45,7 +45,7 @@ tags: ["case", "section-1983", "under-color-of-law", "civil-rights", "federal-re
 holding: "Revived § 1983 as a real federal remedy: 'under color of' state law reaches the MISUSE of authority an officer possesses by virtue of…"
 lake:
   record_id: Monroe v. Pape
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

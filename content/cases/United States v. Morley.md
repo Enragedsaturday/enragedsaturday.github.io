@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "automobile-exception", "vehicle-search", "pr
 holding: "Recites the modern two-element formulation of the automobile exception: a warrantless vehicle search is permitted if (1) the vehicle is…"
 lake:
   record_id: United States v. Morley
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

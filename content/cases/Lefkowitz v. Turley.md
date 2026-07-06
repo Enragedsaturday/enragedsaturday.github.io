@@ -34,7 +34,7 @@ tags: ["case", "fifth-amendment", "self-incrimination", "public-employee", "garr
 holding: "A State may not compel a person (employee or contractor) to choose between waiving Fifth Amendment immunity and losing state employment or contracts; it may compel testimony about official functions only by granting use-and-derivative-use immunity, never by insisting on a waiver."
 lake:
   record_id: Lefkowitz v. Turley
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

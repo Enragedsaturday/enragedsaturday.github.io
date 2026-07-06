@@ -34,7 +34,7 @@ tags: ["case", "state-constitution", "digital-search", "computer-warrant", "part
 holding: "Decided under Article I, section 9 of the OREGON Constitution: the State may not USE information found in a computer search that the…"
 lake:
   record_id: State v. Mansor
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

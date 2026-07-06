@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "search-definition", "seizure-definition", "p
 holding: "Defines a property seizure; the Amendment reaches only government action — once a private party exposes contents, a government inspection within that scope invades no remaining privacy (private-search doctrine)."
 lake:
   record_id: United States v. Jacobsen
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

@@ -36,7 +36,7 @@ tags: ["case", "fourth-amendment", "jail-search", "strip-search", "booking", "sp
 holding: "Jail officials may conduct a close visual strip search of every arrestee admitted to the general population without reasonable suspicion, regardless of the minor nature of the offense; the Fourth and Fourteenth Amendments do not require an exception for minor offenders."
 lake:
   record_id: Florence v. County of Burlington
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

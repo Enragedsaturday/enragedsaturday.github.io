@@ -34,7 +34,7 @@ tags: ["case", "due-process", "eyewitness-identification", "reliability", "showu
 holding: "Even an unnecessarily suggestive identification is admissible if, under the totality of the circumstances, it is nonetheless reliable;…"
 lake:
   record_id: Neil v. Biggers
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

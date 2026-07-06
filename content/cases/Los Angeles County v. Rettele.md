@@ -36,7 +36,7 @@ tags: ["case", "fourth-amendment", "securing-the-scene", "warrant-execution", "d
 holding: "Officers executing a valid search warrant may briefly detain the occupants and exercise unquestioned command of the situation to protect themselves — including ordering unclothed occupants out of bed for a few minutes while securing the room — without violating the Fourth Amendment, provided the detention is not prolonged."
 lake:
   record_id: Los Angeles County v. Rettele
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

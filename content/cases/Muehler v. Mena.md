@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "detention", "search-warrant", "handcuffs"]
 holding: "Officers executing a search warrant for weapons at a gang house may detain occupants in handcuffs for the entire duration of the search…"
 lake:
   record_id: Muehler v. Mena
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

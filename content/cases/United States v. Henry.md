@@ -34,7 +34,7 @@ tags: ["case", "sixth-amendment", "right-to-counsel", "jailhouse-informant", "de
 holding: "By intentionally creating a situation likely to induce the indicted defendant to make incriminating statements, the government (through…"
 lake:
   record_id: United States v. Henry
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

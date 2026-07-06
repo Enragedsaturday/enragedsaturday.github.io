@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "warrant", "search-warrant", "third-party-pre
 holding: "A warrant may authorize the search of premises held by a third party not suspected of crime — including a newspaper — whenever there is probable cause to believe evidence is located there; the First Amendment requires only that the warrant requirements be applied with scrupulous exactitude, not a subpoena-first rule."
 lake:
   record_id: Zurcher v. Stanford Daily
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

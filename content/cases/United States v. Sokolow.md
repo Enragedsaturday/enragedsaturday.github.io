@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "terry-stop", "reasonable-suspicion", "totali
 holding: "Factors each individually consistent with innocence can, taken together, amount to reasonable suspicion."
 lake:
   record_id: United States v. Sokolow
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

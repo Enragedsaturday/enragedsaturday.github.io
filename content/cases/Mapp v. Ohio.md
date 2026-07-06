@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "exclusionary-rule", "incorporation", "fourte
 holding: "The exclusionary rule applies to the States through the Fourteenth Amendment."
 lake:
   record_id: Mapp v. Ohio
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

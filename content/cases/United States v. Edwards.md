@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "search-incident-to-arrest", "custodial-arres
 holding: "A search incident to arrest may extend in time: clothing and effects in an arrestee's possession that were subject to search at the time of arrest may be seized and examined without a warrant at the jail, even after a substantial, reasonable delay."
 lake:
   record_id: United States v. Edwards
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

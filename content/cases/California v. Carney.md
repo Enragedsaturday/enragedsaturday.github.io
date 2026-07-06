@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "automobile-exception", "motor-home", "mobili
 holding: "The automobile exception applies to a motor home being used as a vehicle, and articulates the exception's TWO justifications: (1) ready…"
 lake:
   record_id: California v. Carney
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

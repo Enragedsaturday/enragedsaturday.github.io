@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "standing", "expectation-of-privacy", "rental
 holding: "A driver in lawful possession and control of a rental car generally has a reasonable expectation of privacy in it, even though he is not…"
 lake:
   record_id: Byrd v. United States
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

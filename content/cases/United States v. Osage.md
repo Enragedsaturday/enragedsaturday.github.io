@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "consent-searches", "scope-of-consent", "cont
 holding: "General consent to a search does not authorize an officer to destroy a container: before an officer may actually destroy or render completely useless a container otherwise within the scope of a permissive search, the officer must obtain explicit authorization or have some other lawful basis to proceed."
 lake:
   record_id: United States v. Osage
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

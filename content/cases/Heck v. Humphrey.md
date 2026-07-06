@@ -34,7 +34,7 @@ tags: ["case", "section-1983", "favorable-termination", "heck-bar", "habeas", "c
 holding: "A § 1983 damages claim whose success would necessarily imply the invalidity of an outstanding conviction or sentence is not cognizable unless the conviction has first been reversed, expunged, declared invalid, or called into question by habeas (the favorable-termination requirement)."
 lake:
   record_id: Heck v. Humphrey
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

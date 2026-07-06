@@ -34,7 +34,7 @@ tags: ["case", "sixth-amendment", "right-to-counsel", "lineup", "eyewitness-iden
 holding: "Testimony that a witness identified the accused at an uncounseled post-indictment lineup must be excluded per se — a strict rule (no…"
 lake:
   record_id: Gilbert v. California
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "standing", "traffic-stop", "seizure", "passe
 holding: "When a vehicle is stopped, a passenger is seized just as the driver is, and so may challenge the constitutionality of the stop."
 lake:
   record_id: Brendlin v. California
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

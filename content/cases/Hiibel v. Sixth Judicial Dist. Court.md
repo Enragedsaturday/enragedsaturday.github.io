@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "terry-stop", "stop-and-identify", "reasonabl
 holding: "A state stop-and-identify law compelling a suspect to give his name during a valid *Terry* stop is consistent with the Fourth Amendment."
 lake:
   record_id: Hiibel v. Sixth Judicial Dist. Court
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

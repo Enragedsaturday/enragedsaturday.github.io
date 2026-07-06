@@ -36,7 +36,7 @@ tags: ["case", "fourth-amendment", "search", "dog-sniff", "traffic-stop", "contr
 holding: "A dog sniff during a lawful traffic stop that does not prolong the stop needs no independent suspicion, because it reveals only contraband and does not implicate legitimate privacy interests."
 lake:
   record_id: Illinois v. Caballes
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

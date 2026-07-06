@@ -34,7 +34,7 @@ tags: ["case", "fifth-amendment", "miranda", "warning-adequacy"]
 holding: "Miranda warnings telling a suspect counsel will be appointed 'if and when you go to court' are not inadequate where, read in their totality, the warnings reasonably convey the right to counsel before and during questioning."
 lake:
   record_id: Duckworth v. Eagan
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

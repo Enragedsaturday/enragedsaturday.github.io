@@ -34,7 +34,7 @@ tags: ["case", "due-process", "brady", "disclosure", "exculpatory-evidence"]
 holding: "The prosecution's suppression of evidence favorable to the accused that is material to guilt or punishment violates due process —…"
 lake:
   record_id: Brady v. Maryland
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

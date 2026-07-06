@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "reasonable-suspicion", "terry-stop"]
 holding: "Reasonable suspicion = a particularized and objective basis on the totality of the circumstances (the 'whole picture')."
 lake:
   record_id: United States v. Cortez
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

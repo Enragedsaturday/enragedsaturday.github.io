@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "probable-cause", "informants", "historical"]
 holding: "A magistrate may issue a warrant on an informant's hearsay only if the affidavit shows **(1) the informant's basis of knowledge** (how…"
 lake:
   record_id: Aguilar v. Texas
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

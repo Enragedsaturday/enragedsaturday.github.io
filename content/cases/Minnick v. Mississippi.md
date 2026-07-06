@@ -34,7 +34,7 @@ tags: ["case", "fifth-amendment", "miranda", "edwards", "right-to-counsel", "inv
 holding: "Once counsel is invoked, Edwards bars police-initiated re-interrogation without counsel PRESENT — and that protection is not satisfied…"
 lake:
   record_id: Minnick v. Mississippi
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

@@ -34,7 +34,7 @@ tags: ["case", "entrapment", "due-process", "predisposition", "outrageous-govern
 holding: "Neither the entrapment defense nor the Due Process Clause bars conviction of a PREDISPOSED defendant even where a government agent…"
 lake:
   record_id: Hampton v. United States
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

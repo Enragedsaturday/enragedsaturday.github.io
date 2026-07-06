@@ -34,7 +34,7 @@ tags: ["case", "qualified-immunity", "section-1983", "clearly-established-law", 
 holding: "Reformulated qualified immunity as a purely OBJECTIVE test: officials performing discretionary functions are shielded from civil damages…"
 lake:
   record_id: Harlow v. Fitzgerald
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

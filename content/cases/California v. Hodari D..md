@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "seizure", "show-of-authority", "flight"]
 holding: "A show-of-authority seizure is not complete until the suspect submits; contraband discarded while still fleeing is not the fruit of a seizure."
 lake:
   record_id: California v. Hodari D.
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

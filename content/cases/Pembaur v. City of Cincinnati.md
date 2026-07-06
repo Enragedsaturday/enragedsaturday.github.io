@@ -34,7 +34,7 @@ tags: ["case", "section-1983", "municipal-liability", "policy-or-custom", "final
 holding: "A single decision by a municipal official with final policymaking authority for the relevant subject matter can be the 'official policy' that triggers Monell liability."
 lake:
   record_id: Pembaur v. City of Cincinnati
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

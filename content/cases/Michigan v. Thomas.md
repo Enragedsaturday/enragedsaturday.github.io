@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "automobile-exception", "impound", "station-h
 holding: "The automobile exception permits a warrantless search of an impounded car at the station on probable cause; the justification does not vanish once the car is immobilized and no separate showing of exigency is required."
 lake:
   record_id: Michigan v. Thomas
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

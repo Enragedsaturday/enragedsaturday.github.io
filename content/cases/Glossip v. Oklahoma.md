@@ -34,7 +34,7 @@ tags: ["case", "brady", "giglio", "napue", "false-testimony", "prosecutorial-mis
 holding: "The prosecution's knowing failure to correct a key witness's false testimony (the State's only direct-evidence witness denied his bipolar diagnosis and lithium prescription) violated the Napue due-process duty to correct false testimony; because the witness's credibility was necessarily determinative, there was a reasonable likelihood the false testimony affected the verdict, entitling the defendant to a new trial."
 lake:
   record_id: Glossip v. Oklahoma
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

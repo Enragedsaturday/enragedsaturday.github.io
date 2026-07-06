@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "exclusionary-rule", "good-faith", "warrant-d
 holding: "Companion to Leon: where a warrant was technically/clerically defective in form (wrong pre-printed form) but officers reasonably relied…"
 lake:
   record_id: Massachusetts v. Sheppard
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

@@ -34,7 +34,7 @@ tags: ["case", "fifth-amendment", "miranda", "constitutional-rule", "section-350
 holding: "Miranda is a constitutional rule that Congress may not supersede by statute; § 3501 is unconstitutional and Miranda governs the…"
 lake:
   record_id: Dickerson v. United States
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

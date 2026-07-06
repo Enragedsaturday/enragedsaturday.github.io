@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "school-search", "special-needs", "reasonable
 holding: "A school official's search of a student requires only reasonableness under all the circumstances — justified at inception + reasonably…"
 lake:
   record_id: New Jersey v. T.L.O.
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

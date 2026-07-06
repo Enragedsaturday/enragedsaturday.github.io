@@ -34,7 +34,7 @@ tags: ["case", "due-process", "eyewitness-identification", "suggestive-identific
 holding: "The Due Process Clause requires a preliminary judicial screening of eyewitness-identification reliability ONLY when the suggestive…"
 lake:
   record_id: Perry v. New Hampshire
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "terry-stop", "frisk", "scope-of-search", "we
 holding: "A protective frisk must be a limited pat-down of outer clothing for weapons, justified by particular facts that the suspect is armed and dangerous; reaching into a pocket to search for narcotics exceeds the scope Terry allows."
 lake:
   record_id: Sibron v. New York
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

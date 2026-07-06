@@ -34,7 +34,7 @@ tags: ["case", "brady", "giglio", "impeachment", "disclosure", "witness-credibil
 holding: "Impeachment evidence falls within the Brady rule: nondisclosure of evidence affecting a key witness's credibility — including a promise…"
 lake:
   record_id: Giglio v. United States
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

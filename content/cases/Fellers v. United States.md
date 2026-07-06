@@ -34,7 +34,7 @@ tags: ["case", "sixth-amendment", "right-to-counsel", "massiah", "deliberate-eli
 holding: "After indictment, officers who deliberately elicit incriminating statements from a defendant outside the presence of counsel and without a waiver violate the Sixth Amendment under Massiah — and the Sixth Amendment standard is deliberate elicitation, not Miranda 'interrogation,' so the absence of interrogation does not defeat the claim."
 lake:
   record_id: Fellers v. United States
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

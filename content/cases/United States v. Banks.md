@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "knock-and-announce", "warrant-execution", "e
 holding: "A 15–20-second wait after knocking and announcing before forcing entry to execute a felony drug warrant is reasonable: when the exigency is the imminent destruction of easily disposable evidence, the relevant time is how long disposal would take, not how long the occupant needs to reach the door."
 lake:
   record_id: United States v. Banks
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

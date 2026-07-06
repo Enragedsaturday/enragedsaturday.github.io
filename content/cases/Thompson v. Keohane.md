@@ -34,7 +34,7 @@ tags: ["case", "fifth-amendment", "miranda", "custody", "objective-test", "habea
 holding: "The Miranda 'in custody' determination involves two inquiries — the circumstances of the interrogation (factual) and whether, given those circumstances, a reasonable person would have felt free to terminate the interrogation and leave (objective). The ultimate custody determination is a mixed question of law and fact qualifying for independent federal review."
 lake:
   record_id: Thompson v. Keohane
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

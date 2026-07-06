@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "search", "mere-evidence-rule", "ruse-entry",
 holding: "Mere-evidence rule: warrants may seize only contraband, fruits, or instrumentalities, not items of solely evidentiary value (overruled by Warden v. Hayden); entry obtained by stealth or ruse can render a search unreasonable."
 lake:
   record_id: Gouled v. United States
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

@@ -34,7 +34,7 @@ tags: ["case", "section-1983", "bivens", "federal-officer-liability", "fourth-am
 holding: "A victim of a Fourth Amendment violation by federal officers acting under color of federal authority may recover money damages directly under the Constitution — the implied federal-officer analog to § 1983."
 lake:
   record_id: Bivens v. Six Unknown Named Agents
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

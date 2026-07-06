@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "traffic-stops", "pretext", "probable-cause",
 holding: "An officer's subjective motive is irrelevant to the Fourth Amendment validity of a traffic stop; a stop supported by an objective,…"
 lake:
   record_id: Whren v. United States
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

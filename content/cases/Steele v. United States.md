@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "warrant-requirement", "particularity", "desc
 holding: "A warrant satisfies the Fourth Amendment's particularity-of-place requirement if its description is such that the executing officer can, with reasonable effort, ascertain and identify the place intended to be searched."
 lake:
   record_id: Steele v. United States
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

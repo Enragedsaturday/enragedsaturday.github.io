@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "exclusionary-rule", "attenuation", "fruit-of
 holding: "Attenuation: discovery of a valid pre-existing arrest warrant during an unlawful stop was an intervening circumstance that attenuated…"
 lake:
   record_id: Utah v. Strieff
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

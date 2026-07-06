@@ -34,7 +34,7 @@ tags: ["case", "eyewitness-identification", "due-process", "suggestive-identific
 holding: "A confrontation that is unnecessarily suggestive and conducive to irreparable mistaken identification can violate due process;…"
 lake:
   record_id: Stovall v. Denno
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

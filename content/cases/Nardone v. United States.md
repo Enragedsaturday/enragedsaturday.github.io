@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "exclusionary-rule", "fruit-of-the-poisonous-
 holding: "Illegally obtained evidence may not be used derivatively: a defendant who proves an unlawful search/wiretap may show that a substantial part of the case against him is a 'fruit of the poisonous tree,' which must be excluded — unless the Government shows an independent origin, or the connection has become so attenuated as to dissipate the taint."
 lake:
   record_id: Nardone v. United States
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

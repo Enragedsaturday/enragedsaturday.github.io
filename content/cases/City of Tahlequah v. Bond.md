@@ -34,7 +34,7 @@ tags: ["case", "qualified-immunity", "section-1983", "excessive-force", "clearly
 holding: "Courts must not define clearly established law at too high a level of generality; QI protects 'all but the plainly incompetent or those who knowingly violate the law.'"
 lake:
   record_id: City of Tahlequah v. Bond
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

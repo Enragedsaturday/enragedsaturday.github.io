@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "arrest", "probable-cause", "pretrial-detenti
 holding: "A person arrested without a warrant is entitled under the Fourth Amendment to a prompt judicial determination of probable cause as a prerequisite to any extended pretrial restraint of liberty; the determination need not be an adversary hearing."
 lake:
   record_id: Gerstein v. Pugh
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

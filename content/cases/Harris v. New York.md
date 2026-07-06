@@ -36,7 +36,7 @@ tags: ["case", "fifth-amendment", "miranda", "impeachment", "exclusionary-rule"]
 holding: "A statement taken in violation of Miranda, but otherwise voluntary, may be used to impeach the defendant's contrary trial testimony; Miranda's shield may not be turned into a license to commit perjury free from confrontation with prior inconsistent statements."
 lake:
   record_id: Harris v. New York
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

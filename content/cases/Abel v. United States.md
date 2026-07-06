@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "abandonment"]
 holding: "Items left in a hotel-room wastebasket after the guest paid up and **vacated** the room were abandoned ('bona vacantia'); their warrantless seizure was lawful."
 lake:
   record_id: Abel v. United States
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

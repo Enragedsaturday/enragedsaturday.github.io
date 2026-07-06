@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "dna", "booking", "arrestee", "special-needs"
 holding: "Taking a buccal (cheek) DNA swab from a person arrested for a serious offense and held in custody is a reasonable booking procedure…"
 lake:
   record_id: Maryland v. King
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

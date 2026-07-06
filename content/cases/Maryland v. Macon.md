@@ -36,7 +36,7 @@ tags: ["case", "fourth-amendment", "search", "seizure", "undercover", "first-ame
 holding: "An undercover officer's purchase of magazines from a public store is neither a search (no REP in wares exposed to the public) nor a seizure (the seller voluntarily transferred possession)."
 lake:
   record_id: Maryland v. Macon
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

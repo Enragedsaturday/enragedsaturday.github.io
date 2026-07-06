@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "emergency-aid", "exigent-circumstances", "wa
 holding: "No 'murder scene' exception: the seriousness of the offense does not by itself create exigency. BUT police may make warrantless entries…"
 lake:
   record_id: Mincey v. Arizona
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

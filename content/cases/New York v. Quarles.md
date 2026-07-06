@@ -34,7 +34,7 @@ tags: ["case", "fifth-amendment", "miranda", "public-safety-exception", "interro
 holding: "There is a \"public safety\" exception to Miranda — when officers ask questions reasonably prompted by an immediate threat to public…"
 lake:
   record_id: New York v. Quarles
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

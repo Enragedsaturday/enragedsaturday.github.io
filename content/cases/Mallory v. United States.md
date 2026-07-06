@@ -34,7 +34,7 @@ tags: ["case", "fifth-amendment", "confessions", "mcnabb-mallory", "prompt-prese
 holding: "A confession obtained from an arrestee during a period of unnecessary delay in bringing him before a committing magistrate, in violation of Federal Rule of Criminal Procedure 5(a), is inadmissible in a federal prosecution; delay used to give an opportunity to extract a confession is 'unnecessary delay.'"
 lake:
   record_id: Mallory v. United States
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

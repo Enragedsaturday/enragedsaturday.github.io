@@ -34,7 +34,7 @@ tags: ["case", "fifth-amendment", "miranda", "custodial-interrogation", "warning
 holding: "Statements from custodial interrogation are inadmissible unless police first gave the warnings and the suspect knowingly, voluntarily…"
 lake:
   record_id: Miranda v. Arizona
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

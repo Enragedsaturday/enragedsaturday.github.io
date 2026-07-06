@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "search", "third-party-doctrine", "bank-recor
 holding: "No legitimate expectation of privacy in bank records (checks, deposit slips) voluntarily conveyed to a bank; a depositor assumes the risk the bank will disclose them to the government (third-party doctrine)."
 lake:
   record_id: United States v. Miller
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

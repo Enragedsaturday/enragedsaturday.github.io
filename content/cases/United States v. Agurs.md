@@ -45,7 +45,7 @@ tags: ["case", "brady", "giglio", "materiality", "disclosure", "no-request", "du
 holding: "The prosecution's duty to disclose exculpatory evidence exists even when the defense makes no request, but a nondisclosure is a constitutional violation only when the omission is material — defined (in the no-request situation) as evidence that creates a reasonable doubt that did not otherwise exist. (Materiality standard later unified under Bagley's 'reasonable probability' test.)"
 lake:
   record_id: United States v. Agurs
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

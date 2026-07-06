@@ -34,7 +34,7 @@ tags: ["case", "civil-rights", "color-of-law", "section-242", "willfulness"]
 holding: "Construing 18 U.S.C. § 242 'willfully' — the criminal civil-rights statute requires a specific-intent (willful) deprivation of constitutional rights under color of law."
 lake:
   record_id: Screws v. United States
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "special-needs", "drug-testing", "administrat
 holding: "Suspicionless drug/alcohol testing of railway employees after accidents is reasonable under the special-needs doctrine."
 lake:
   record_id: "Skinner v. Railway Labor Executives' Ass'n"
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

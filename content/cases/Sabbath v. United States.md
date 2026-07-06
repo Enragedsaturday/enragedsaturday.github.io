@@ -36,7 +36,7 @@ tags: ["case", "fourth-amendment", "knock-and-announce", "warrant-requirement", 
 holding: "An unannounced 'breaking' for knock-and-announce purposes is not limited to forcible entry; opening a closed but unlocked door without first announcing authority and purpose is an unannounced intrusion governed by the announcement requirement of 18 U.S.C. § 3109."
 lake:
   record_id: Sabbath v. United States
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

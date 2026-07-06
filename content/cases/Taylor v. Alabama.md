@@ -36,7 +36,7 @@ tags: ["case", "fourth-amendment", "exclusionary-rule", "fruit-of-the-poisonous-
 holding: "A confession obtained after a warrantless arrest made without probable cause must be suppressed as the fruit of the illegal arrest where no significant intervening event broke the causal chain; Miranda warnings, the passage of a few hours, and a later ex parte warrant did not attenuate the taint."
 lake:
   record_id: Taylor v. Alabama
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

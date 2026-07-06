@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "special-needs", "drug-testing", "schools", "
 holding: "Suspicionless random drug testing of public-school student athletes is reasonable under the special-needs doctrine, given athletes'…"
 lake:
   record_id: Vernonia School District 47J v. Acton
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

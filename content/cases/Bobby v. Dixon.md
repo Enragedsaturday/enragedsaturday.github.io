@@ -34,7 +34,7 @@ tags: ["case", "fifth-amendment", "miranda", "two-step", "elstad", "seibert", "a
 holding: "A later Mirandized confession is admissible under Elstad — and Seibert's question-first bar does not apply — where there was no deliberate two-step strategy and no nexus between the earlier unwarned statement and the later warned confession; the Sixth Circuit's contrary habeas grant unreasonably applied clearly established law."
 lake:
   record_id: Bobby v. Dixon
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

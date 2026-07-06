@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "automobile-exception", "containers", "probab
 holding: "Unified rule for containers in vehicles: police may search a container in a car without a warrant where they have PC to believe it holds…"
 lake:
   record_id: California v. Acevedo
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "standing", "suppression", "historical"]
 holding: "Established \"automatic standing\" for those charged with possessory offenses and the broader rule that anyone \"legitimately on the…"
 lake:
   record_id: Jones v. United States
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

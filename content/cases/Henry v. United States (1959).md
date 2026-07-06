@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "probable-cause", "warrantless-arrest", "seiz
 holding: "Probable cause for a warrantless arrest is judged by the facts known at the moment of arrest; outwardly innocent conduct (mere package movement) does not supply it, and an arrest is not justified by what the subsequent search discloses."
 lake:
   record_id: "Henry v. United States (1959)"
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

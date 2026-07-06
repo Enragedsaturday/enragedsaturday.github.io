@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "warrant", "particularity", "qualified-immuni
 holding: "A warrant that utterly **fails to describe the persons or things to be seized** is facially invalid under the Particularity Clause —…"
 lake:
   record_id: Groh v. Ramirez
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

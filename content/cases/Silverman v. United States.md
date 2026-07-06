@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "search", "trespass", "electronic-surveillanc
 holding: "A 'spike mike' physically penetrating the wall into the house was a search — an unauthorized physical intrusion into a constitutionally protected area, not measured by 'technical trespass' niceties."
 lake:
   record_id: Silverman v. United States
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

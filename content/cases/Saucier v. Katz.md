@@ -45,7 +45,7 @@ tags: ["case", "qualified-immunity", "section-1983", "two-step-sequence", "clear
 holding: "Established the (then-mandatory) two-step qualified-immunity sequence: (1) taken in the light most favorable to the plaintiff, do the…"
 lake:
   record_id: Saucier v. Katz
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

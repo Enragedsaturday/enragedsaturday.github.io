@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "knock-and-announce", "no-knock", "reasonable
 holding: "There is **no blanket exception** to knock-and-announce for entire categories of crime (e.g., felony drug cases); the no-knock decision…"
 lake:
   record_id: Richards v. Wisconsin
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

@@ -34,7 +34,7 @@ tags: ["case", "fifth-amendment", "miranda", "self-incrimination", "physical-fru
 holding: "Physical fruits of an un-warned but voluntary statement are admissible."
 lake:
   record_id: United States v. Patane
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

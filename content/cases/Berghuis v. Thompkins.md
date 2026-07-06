@@ -34,7 +34,7 @@ tags: ["case", "fifth-amendment", "miranda", "waiver", "invocation", "right-to-r
 holding: "The right to remain silent must be invoked UNAMBIGUOUSLY; merely staying silent does not invoke it, and a suspect who answers questions…"
 lake:
   record_id: Berghuis v. Thompkins
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

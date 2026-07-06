@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "automobile-exception", "no-exigency", "proba
 holding: "The automobile exception has no separate exigency requirement; if a car is readily mobile and probable cause exists to believe it contains contraband, police may search it without a warrant even when there was ample time to obtain one."
 lake:
   record_id: Maryland v. Dyson
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

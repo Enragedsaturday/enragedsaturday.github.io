@@ -36,7 +36,7 @@ tags: ["case", "use-of-force", "high-speed-pursuit", "substantive-due-process", 
 holding: "A death caused by a high-speed police pursuit, absent a Fourth Amendment seizure, is analyzed under Fourteenth Amendment substantive due process; only a purpose to cause harm unrelated to the legitimate object of arrest shocks the conscience — deliberate indifference is not enough in a pursuit."
 lake:
   record_id: County of Sacramento v. Lewis
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "traffic-stops", "stop-duration", "dog-sniff"
 holding: "A traffic stop may last no longer than necessary to complete the stop's 'mission' (addressing the violation and ordinary inquiries).…"
 lake:
   record_id: Rodriguez v. United States
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

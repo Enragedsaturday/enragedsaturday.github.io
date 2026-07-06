@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "search", "controlled-delivery", "container",
 holding: "Reopening a container after a lawful controlled delivery is not a new search where no substantial likelihood exists that the contents changed during a gap in surveillance — the earlier lawful inspection already extinguished any privacy interest."
 lake:
   record_id: Illinois v. Andreas
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

@@ -36,7 +36,7 @@ tags: ["case", "fourth-amendment", "exclusionary-rule", "good-faith-exception", 
 holding: "Good-faith exception: evidence obtained by officers in objectively reasonable reliance on a search warrant later found unsupported by…"
 lake:
   record_id: United States v. Leon
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

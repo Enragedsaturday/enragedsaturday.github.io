@@ -36,7 +36,7 @@ tags: ["case", "fourth-amendment", "warrant-requirement", "affidavit", "exclusio
 holding: "A warrant resting on a wholly conclusory affidavit is invalid; and where a federal officer participates in a state search under color of federal office, the search is in substance a federal undertaking bound by federal constitutional standards, so its fruits are inadmissible in federal court."
 lake:
   record_id: Byars v. United States
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

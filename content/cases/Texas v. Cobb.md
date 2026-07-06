@@ -34,7 +34,7 @@ tags: ["case", "sixth-amendment", "right-to-counsel"]
 holding: "The Sixth Amendment right to counsel is offense-specific; it attaches only to the charged offense and does not extend to other,…"
 lake:
   record_id: Texas v. Cobb
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

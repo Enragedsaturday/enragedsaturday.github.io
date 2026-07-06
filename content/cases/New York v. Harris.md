@@ -36,7 +36,7 @@ tags: ["case", "fourth-amendment", "arrest-in-the-home", "exclusionary-rule", "p
 holding: "Where police have probable cause to arrest, a Payton violation does not require suppression of a statement the suspect makes outside his home; such a statement is not the fruit of the in-home location of the arrest."
 lake:
   record_id: New York v. Harris
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

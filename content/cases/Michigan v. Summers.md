@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "search-warrant", "detention", "securing-the-
 holding: "A warrant to search premises for contraband, founded on probable cause, implicitly carries the limited authority to detain the occupants…"
 lake:
   record_id: Michigan v. Summers
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

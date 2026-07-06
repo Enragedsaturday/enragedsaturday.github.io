@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "crime-scene", "warrant-requirement", "homici
 holding: "There is no 'murder-scene exception' to the warrant requirement; a warrantless two-hour general search of a homicide scene in a private home is unreasonable, even though shorter than the four-day search in Mincey, and the victim's call for help does not diminish her expectation of privacy."
 lake:
   record_id: Thompson v. Louisiana
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

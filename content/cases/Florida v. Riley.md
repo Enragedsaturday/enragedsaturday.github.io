@@ -36,7 +36,7 @@ tags: ["case", "fourth-amendment", "search", "aerial-surveillance", "curtilage",
 holding: "Naked-eye observation of a backyard greenhouse from a helicopter lawfully in public airspace at 400 feet is not a search."
 lake:
   record_id: Florida v. Riley
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

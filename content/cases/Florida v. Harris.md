@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "probable-cause", "drug-dog", "dog-sniff"]
 holding: "Whether a dog's alert furnishes probable cause is a totality-of-the-circumstances question; evidence of a dog's satisfactory performance…"
 lake:
   record_id: Florida v. Harris
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

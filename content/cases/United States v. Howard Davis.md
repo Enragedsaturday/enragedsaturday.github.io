@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "search-incident-to-arrest", "gant", "contain
 holding: "Gant's FIRST holding (the Chimel reachability/officer-safety prong) applies OUTSIDE the vehicle context — to non-vehicular containers…"
 lake:
   record_id: United States v. Howard Davis
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

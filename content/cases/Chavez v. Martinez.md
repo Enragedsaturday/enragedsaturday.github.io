@@ -38,7 +38,7 @@ tags: ["case", "fifth-amendment", "self-incrimination", "section-1983", "qualifi
 holding: "The Self-Incrimination Clause is a trial right: coercive police questioning that produces no statement used against the suspect in a criminal case is not, by itself, a completed Fifth Amendment violation, so it cannot ground a § 1983 claim. Any remedy for the coercion lies (if at all) in substantive due process — remanded."
 lake:
   record_id: Chavez v. Martinez
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

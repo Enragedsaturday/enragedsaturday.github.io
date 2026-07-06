@@ -34,7 +34,7 @@ tags: ["case", "fifth-amendment", "self-incrimination", "public-employee", "garr
 holding: "A federal employee may be discharged for refusing to answer narrowly job-related questions only if first adequately advised both that refusal subjects him to discharge and that his answers (and their fruits) cannot be used against him in a criminal case — the 'Kalkines warning.'"
 lake:
   record_id: Kalkines v. United States
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "exclusionary-rule", "deportation", "civil-pr
 holding: "The exclusionary rule generally does NOT apply in civil deportation/removal proceedings: an admission of unlawful presence made after an…"
 lake:
   record_id: "Immigration & Naturalization Service v. Lopez-Mendoza"
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

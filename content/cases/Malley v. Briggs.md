@@ -36,7 +36,7 @@ tags: ["case", "section-1983", "qualified-immunity", "warrant", "probable-cause"
 holding: "An officer who applies for a warrant on an affidavit so lacking in probable cause that no reasonably competent officer would have sought it loses qualified immunity; warrant-applying officers get qualified, not absolute, immunity."
 lake:
   record_id: Malley v. Briggs
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

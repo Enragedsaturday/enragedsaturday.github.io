@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "special-needs", "drug-testing", "schools"]
 holding: "Suspicionless drug testing of all students participating in competitive extracurricular activities is a reasonable special-needs search."
 lake:
   record_id: Board of Education v. Earls
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "checkpoint", "special-needs", "dui", "seizur
 holding: "Suspicionless sobriety (DUI) checkpoints are constitutional; the state's interest in combating drunk driving and the checkpoint's…"
 lake:
   record_id: Michigan Dept. of State Police v. Sitz
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

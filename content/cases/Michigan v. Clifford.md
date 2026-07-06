@@ -36,7 +36,7 @@ tags: ["case", "fourth-amendment", "fire", "administrative-warrant", "exigent-ci
 holding: "Where reasonable privacy interests remain in fire-damaged property, a post-fire investigative search after the blaze is out and the scene is secured requires a warrant absent consent or a new exigency; an administrative warrant suffices to determine cause and origin, but a search whose primary object is to gather evidence of crime requires a criminal warrant on probable cause."
 lake:
   record_id: Michigan v. Clifford
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

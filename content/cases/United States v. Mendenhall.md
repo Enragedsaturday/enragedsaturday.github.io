@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "seizure-of-the-person", "free-to-leave", "co
 holding: "The 'free to leave' benchmark: a person is seized only if, under all the circumstances, a reasonable person would not have believed himself free to leave."
 lake:
   record_id: United States v. Mendenhall
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

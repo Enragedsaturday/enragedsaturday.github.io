@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "exclusionary-rule"]
 holding: "The exclusionary rule is a judicially created deterrent remedy, not a personal constitutional right; it does not apply to grand-jury…"
 lake:
   record_id: United States v. Calandra
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

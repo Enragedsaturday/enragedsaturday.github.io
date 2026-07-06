@@ -34,7 +34,7 @@ tags: ["case", "section-1983", "qualified-immunity", "excessive-force", "false-a
 holding: "The Sixth Circuit REVERSED summary judgment / denial of qualified immunity on multiple Fourth Amendment § 1983 claims: excessive force…"
 lake:
   record_id: Wright v. City of Euclid
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

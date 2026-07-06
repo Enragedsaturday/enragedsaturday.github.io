@@ -34,7 +34,7 @@ tags: ["case", "fifth-amendment", "miranda", "right-to-silence", "invocation"]
 holding: "After a suspect invokes the right to SILENCE, later statements are admissible if police \"scrupulously honored\" the invocation — here,…"
 lake:
   record_id: Michigan v. Mosley
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

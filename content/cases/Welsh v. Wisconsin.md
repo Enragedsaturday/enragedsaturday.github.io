@@ -36,7 +36,7 @@ tags: ["case", "fourth-amendment", "exigent-circumstances", "arrest-in-the-home"
 holding: "The gravity of the underlying offense is a key factor in the exigency analysis; warrantless home entry for a MINOR offense should rarely…"
 lake:
   record_id: Welsh v. Wisconsin
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

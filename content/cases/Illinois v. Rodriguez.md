@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "consent", "apparent-authority", "third-party
 holding: "APPARENT AUTHORITY: a warrantless entry on third-party consent is valid if officers REASONABLY (though mistakenly) believed the…"
 lake:
   record_id: Illinois v. Rodriguez
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

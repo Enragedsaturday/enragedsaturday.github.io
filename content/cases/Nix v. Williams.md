@@ -34,7 +34,7 @@ tags: ["case", "exclusionary-rule", "inevitable-discovery", "fruit-of-the-poison
 holding: "Inevitable discovery: unlawfully obtained evidence is admissible if the prosecution proves by a preponderance it would inevitably have…"
 lake:
   record_id: Nix v. Williams
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

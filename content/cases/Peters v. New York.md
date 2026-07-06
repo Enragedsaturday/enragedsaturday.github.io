@@ -36,7 +36,7 @@ tags: ["case", "fourth-amendment", "search-incident-to-arrest", "probable-cause"
 holding: "Where probable cause to arrest existed (furtive conduct and flight indicating attempted burglary), the search of the suspect was valid as incident to a lawful arrest, even though the formal arrest followed the seizure."
 lake:
   record_id: Peters v. New York
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

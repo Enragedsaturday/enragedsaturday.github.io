@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "reasonable-suspicion", "anonymous-tip", "tra
 holding: "A 911 call reporting dangerous/reckless driving can supply reasonable suspicion for a stop when it bears adequate indicia of reliability…"
 lake:
   record_id: Navarette v. California
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

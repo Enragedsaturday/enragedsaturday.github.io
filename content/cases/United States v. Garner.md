@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "community-caretaking", "investigative-detent
 holding: "A community-caretaking detention of a person is valid under a three-part test — (1) specific and articulable facts warranting the intrusion, (2) the government's caretaking interest outweighing the individual's liberty interest, and (3) scope and duration tailored to the caretaking purpose; once that purpose is satisfied, continued detention requires independent reasonable suspicion."
 lake:
   record_id: United States v. Garner
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

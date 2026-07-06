@@ -36,7 +36,7 @@ tags: ["case", "use-of-force", "pretrial-detainee", "objective-reasonableness", 
 holding: "A pretrial detainee's Fourteenth Amendment excessive-force claim requires only that the force purposely or knowingly used against him was objectively unreasonable; no subjective awareness of unreasonableness need be shown."
 lake:
   record_id: Kingsley v. Hendrickson
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

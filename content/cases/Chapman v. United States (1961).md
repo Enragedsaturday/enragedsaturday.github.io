@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "consent", "third-party-consent", "landlord-t
 holding: "A landlord cannot give valid third-party consent to a search of premises currently leased to a tenant; a warrantless entry of the tenant's home on the landlord's authority alone violates the Fourth Amendment."
 lake:
   record_id: "Chapman v. United States (1961)"
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

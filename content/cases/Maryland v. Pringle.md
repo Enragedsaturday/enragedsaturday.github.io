@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "probable-cause", "arrest", "common-enterpris
 holding: "Where drugs and cash are found in a car and no occupant claims them, an officer has probable cause to arrest all the occupants on a…"
 lake:
   record_id: Maryland v. Pringle
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "exclusionary-rule", "fruit-of-the-poisonous-
 holding: "Live-witness testimony is far less readily suppressed as a fruit of an illegal search than inanimate evidence; the exclusionary rule applies with much greater reluctance to the discovery of a willing witness."
 lake:
   record_id: United States v. Ceccolini
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

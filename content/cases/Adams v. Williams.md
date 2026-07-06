@@ -36,7 +36,7 @@ tags: ["case", "fourth-amendment", "terry-stop", "reasonable-suspicion", "inform
 holding: "A tip from a known, face-to-face informant can supply the reasonable suspicion needed for a Terry stop and protective frisk; reasonable suspicion may rest on reliable information supplied by another, not only the officer's own observation."
 lake:
   record_id: Adams v. Williams
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

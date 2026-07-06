@@ -35,16 +35,19 @@ def load_json(path):
         return json.load(f)
 
 
-def load_records(lake_root=None):
+def load_records(lake_root=None, diagnostics=None):
     lake_root = lake_root or os.path.join(REPO_ROOT, LAKE_REL)
     records = {}
     record_paths = {}
     for path in sorted(glob.glob(os.path.join(lake_root, "cases", "*.json"))):
         record = load_json(path)
         rid = record.get("record_id")
-        if rid:
-            records[rid] = record
-            record_paths[rid] = path
+        if not rid:
+            if diagnostics is not None:
+                diagnostics.append({"path": path, "warning": "missing record_id"})
+            continue
+        records[rid] = record
+        record_paths[rid] = path
     return records, record_paths
 
 
@@ -212,7 +215,7 @@ def load_migration(migration_path=None):
     return data.get("mappings", {})
 
 
-def a13_gate(paths=None, migration_path=None):
+def a13_gate(paths=None, migration_path=None, records=None):
     mappings = load_migration(migration_path)
     mapped = set(mappings.keys())
     counts = Counter()
@@ -220,11 +223,16 @@ def a13_gate(paths=None, migration_path=None):
     review = []
     new_form = 0
     missing = []
+    unmatched = []
     for path in case_page_paths(paths):
         text = serializer.read_markdown(path)
         fm, _body, _start = serializer.split_frontmatter(text)
         if fm.get("type") != "case" or serializer.is_draft_page(fm):
             continue
+        lake = fm.get("lake") if isinstance(fm.get("lake"), dict) else {}
+        rid = lake.get("record_id") or page_stem(path)
+        if records is not None and rid not in records:
+            unmatched.append((path, rid))
         treatment = fm.get("treatment") if isinstance(fm.get("treatment"), dict) else {}
         if "field_i_validity" in treatment:
             new_form += 1
@@ -245,8 +253,9 @@ def a13_gate(paths=None, migration_path=None):
         "review": review,
         "new_form_pages": new_form,
         "missing_treatment_status": missing,
+        "unmatched_records": unmatched,
         "mapping_keys": sorted(mapped),
-        "ok_to_project": not unmapped,
+        "ok_to_project": not unmapped and not missing and not unmatched,
     }
 
 
@@ -265,7 +274,9 @@ def _field_counter(diff_paths):
 
 
 def dry_run_or_write(paths=None, write=False, lake_root=None):
-    gate = a13_gate(paths)
+    record_diagnostics = []
+    records, record_paths = load_records(lake_root, diagnostics=record_diagnostics)
+    gate = a13_gate(paths, records=records)
     if not gate["ok_to_project"]:
         return {
             "gate": gate,
@@ -273,9 +284,19 @@ def dry_run_or_write(paths=None, write=False, lake_root=None):
             "pages_changed": 0,
             "field_counts": {},
             "page_results": [],
+            "record_load_warnings": record_diagnostics,
         }
 
-    records, record_paths = load_records(lake_root)
+    if write and record_diagnostics:
+        return {
+            "gate": gate,
+            "refused": True,
+            "pages_changed": 0,
+            "field_counts": {},
+            "page_results": [],
+            "record_load_warnings": record_diagnostics,
+        }
+
     results = []
     field_counts = Counter()
     pages_changed = 0
@@ -315,6 +336,7 @@ def dry_run_or_write(paths=None, write=False, lake_root=None):
         "pages_changed": pages_changed,
         "field_counts": dict(sorted(field_counts.items())),
         "page_results": results,
+        "record_load_warnings": record_diagnostics,
     }
 
 
@@ -326,12 +348,26 @@ def print_summary(result, stream=None):
     stream.write("new-form pages: %d\n" % gate["new_form_pages"])
     stream.write("review-staged pages: %d\n" % len(gate["review"]))
     stream.write("missing treatment status/new field: %d\n" % len(gate["missing_treatment_status"]))
+    stream.write("unmatched case pages: %d\n" % len(gate.get("unmatched_records", [])))
+    stream.write("record JSON missing record_id: %d\n" % len(result.get("record_load_warnings", [])))
     if gate["unmapped"]:
         stream.write("unmapped legacy values:\n")
         for path, value in gate["unmapped"]:
             stream.write("  %s: %s\n" % (os.path.relpath(path, REPO_ROOT), value))
+    if gate["missing_treatment_status"]:
+        stream.write("missing treatment status/new field pages:\n")
+        for path in gate["missing_treatment_status"]:
+            stream.write("  %s\n" % os.path.relpath(path, REPO_ROOT))
+    if gate.get("unmatched_records"):
+        stream.write("unmatched case pages:\n")
+        for path, rid in gate["unmatched_records"]:
+            stream.write("  %s: %s\n" % (os.path.relpath(path, REPO_ROOT), rid))
+    if result.get("record_load_warnings"):
+        stream.write("record load warnings:\n")
+        for row in result["record_load_warnings"]:
+            stream.write("  WARNING %s: %s\n" % (os.path.relpath(row["path"], REPO_ROOT), row["warning"]))
     if result["refused"]:
-        stream.write("projection refused by A13 gate\n")
+        stream.write("projection refused by A13 gate or record load warnings\n")
         return
     stream.write("pages that would change: %d\n" % result["pages_changed"])
     stream.write("field counts: %s\n" % json.dumps(result["field_counts"], sort_keys=True))
@@ -425,10 +461,57 @@ def self_test():
     preserve_after = serializer.replace_frontmatter(preserve_source, projected)
     preserve_ok = preserved_bytes(preserve_source) == preserved_bytes(preserve_after)
 
-    ok = ok and off_cl_ok and preserve_ok
+    with tempfile.TemporaryDirectory(prefix="s2-project-gate-self-test-") as tmp:
+        lake_root = os.path.join(tmp, "lake")
+        lake_cases = os.path.join(lake_root, "cases")
+        page_root = os.path.join(tmp, "pages")
+        os.makedirs(lake_cases, exist_ok=True)
+        os.makedirs(page_root, exist_ok=True)
+
+        matched_record = json.loads(json.dumps(record))
+        matched_record["record_id"] = "matched-case"
+        with open(os.path.join(lake_cases, "matched-case.json"), "w", encoding="utf-8") as f:
+            json.dump(matched_record, f)
+        with open(os.path.join(lake_cases, "missing-id.json"), "w", encoding="utf-8") as f:
+            json.dump({"status": "under_review"}, f)
+
+        good_page_dir = os.path.join(page_root, "good")
+        missing_status_dir = os.path.join(page_root, "missing-status")
+        unmatched_dir = os.path.join(page_root, "unmatched")
+        for directory in (good_page_dir, missing_status_dir, unmatched_dir):
+            os.makedirs(directory, exist_ok=True)
+        with open(os.path.join(good_page_dir, "matched-case.md"), "w", encoding="utf-8") as f:
+            f.write("---\ntype: case\nlake:\n  record_id: matched-case\ntreatment:\n  field_i_validity: unverified\n---\n")
+        with open(os.path.join(missing_status_dir, "matched-case.md"), "w", encoding="utf-8") as f:
+            f.write("---\ntype: case\nlake:\n  record_id: matched-case\ntreatment:\n  scope_note: missing status fixture\n---\n")
+        with open(os.path.join(unmatched_dir, "absent-case.md"), "w", encoding="utf-8") as f:
+            f.write("---\ntype: case\nlake:\n  record_id: absent-case\ntreatment:\n  field_i_validity: unverified\n---\n")
+
+        good_result = dry_run_or_write([good_page_dir], lake_root=lake_root)
+        missing_status_result = dry_run_or_write([missing_status_dir], lake_root=lake_root)
+        unmatched_result = dry_run_or_write([unmatched_dir], lake_root=lake_root)
+        write_warning_result = dry_run_or_write([good_page_dir], write=True, lake_root=lake_root)
+        load_warning_ok = len(good_result["record_load_warnings"]) == 1 and not good_result["refused"]
+        missing_status_ok = (
+            missing_status_result["refused"]
+            and len(missing_status_result["gate"]["missing_treatment_status"]) == 1
+        )
+        unmatched_ok = (
+            unmatched_result["refused"]
+            and unmatched_result["gate"]["unmatched_records"] == [
+                (os.path.join(unmatched_dir, "absent-case.md"), "absent-case")
+            ]
+        )
+        write_warning_ok = write_warning_result["refused"] and len(write_warning_result["record_load_warnings"]) == 1
+
+    ok = ok and off_cl_ok and preserve_ok and load_warning_ok and missing_status_ok and unmatched_ok and write_warning_ok
     sys.stderr.write("[self-test] project idempotence -> %s\n" % ("OK" if once == twice else "FAIL"))
     sys.stderr.write("[self-test] verified_off_cl off_cl_links projection -> %s\n" % ("OK" if off_cl_ok else "FAIL"))
     sys.stderr.write("[self-test] preserved raw frontmatter bytes -> %s\n" % ("OK" if preserve_ok else "FAIL"))
+    sys.stderr.write("[self-test] missing record_id load warning -> %s\n" % ("OK" if load_warning_ok else "FAIL"))
+    sys.stderr.write("[self-test] missing treatment status gate -> %s\n" % ("OK" if missing_status_ok else "FAIL"))
+    sys.stderr.write("[self-test] unmatched case page gate -> %s\n" % ("OK" if unmatched_ok else "FAIL"))
+    sys.stderr.write("[self-test] write refused on load warning -> %s\n" % ("OK" if write_warning_ok else "FAIL"))
     return 0 if ok else 1
 
 
@@ -441,6 +524,8 @@ def main(argv=None):
     parser.add_argument("--self-test", action="store_true", help="Run offline projector self-test")
     parser.add_argument("--verify-idempotent", action="store_true", help="Project-write twice in a temp copy of content/cases and require the second run to be clean")
     args = parser.parse_args(argv)
+    if args.write and args.dry_run:
+        parser.error("--write and --dry-run cannot be combined")
     if args.self_test:
         return self_test()
     if args.verify_idempotent:
@@ -449,7 +534,7 @@ def main(argv=None):
     print_summary(result, sys.stderr)
     if args.summary_json:
         sys.stdout.write(json.dumps(result, sort_keys=True, default=str) + "\n")
-    return 2 if result["refused"] else 0
+    return 2 if result["refused"] or (args.write and result.get("record_load_warnings")) else 0
 
 
 if __name__ == "__main__":

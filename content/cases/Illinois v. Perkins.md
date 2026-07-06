@@ -34,7 +34,7 @@ tags: ["case", "fifth-amendment", "miranda", "undercover", "custodial-interrogat
 holding: "Miranda warnings are not required when an undercover officer (or agent) posing as an inmate elicits statements from a suspect — because…"
 lake:
   record_id: Illinois v. Perkins
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

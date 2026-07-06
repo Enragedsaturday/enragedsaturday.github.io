@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "administrative-search", "inspections", "perv
 holding: "A warrantless inspection of a federally licensed firearms dealer under the Gun Control Act is reasonable: dealing in firearms is a pervasively regulated business whose licensee accepts inspection as a condition, and unannounced warrantless inspection is essential to effective enforcement."
 lake:
   record_id: United States v. Biswell
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "consent-search", "voluntariness", "traffic-s
 holding: "No-warning rule: officers need not tell a lawfully stopped motorist he is 'free to go' for his subsequent consent to search to be voluntary."
 lake:
   record_id: Ohio v. Robinette
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

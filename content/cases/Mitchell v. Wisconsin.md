@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "exigent-circumstances", "blood-draw", "dui",
 holding: "When police have probable cause for DUI and the driver's unconsciousness/stupor forces hospitalization before a breath test can be…"
 lake:
   record_id: Mitchell v. Wisconsin
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

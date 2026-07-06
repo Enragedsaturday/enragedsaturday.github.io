@@ -34,7 +34,7 @@ tags: ["case", "fifth-amendment", "miranda", "custody", "custodial-interrogation
 holding: "Miranda warnings were required where four officers questioned a suspect under arrest in his own bedroom in the early morning; custody…"
 lake:
   record_id: Orozco v. Texas
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

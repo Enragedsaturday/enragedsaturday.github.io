@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "inventory-search", "search-incident-to-arres
 holding: "UPHELD an inventory search of a carry-on bag (cocaine found in a container) conducted at a bus station: the officer followed the…"
 lake:
   record_id: United States v. Evans
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

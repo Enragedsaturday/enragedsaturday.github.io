@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "administrative-search", "inspections", "OSHA
 holding: "OSHA's authorization of warrantless workplace inspections is unconstitutional; a nonconsensual inspection of an ordinary business generally requires an administrative warrant, unless the pervasively-regulated-industry exception applies."
 lake:
   record_id: "Marshall v. Barlow's Inc"
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

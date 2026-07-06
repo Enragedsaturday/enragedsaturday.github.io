@@ -34,7 +34,7 @@ tags: ["case", "fifth-amendment", "miranda", "waiver"]
 holding: "A Miranda waiver is knowing and intelligent even though police did not tell the suspect all of the crimes or subjects the interrogation would cover; awareness of every possible subject of questioning is not a prerequisite to a valid waiver, and silence about the subject matter is not trickery."
 lake:
   record_id: Colorado v. Spring
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

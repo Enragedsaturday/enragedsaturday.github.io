@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "automobile-exception", "warrantless-search",
 holding: "Origin of the automobile exception: a vehicle may be searched without a warrant on probable cause because, unlike a fixed structure, it…"
 lake:
   record_id: Carroll v. United States
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

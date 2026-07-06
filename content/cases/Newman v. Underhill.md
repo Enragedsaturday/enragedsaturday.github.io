@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "exigent-circumstances", "hot-pursuit", "fres
 holding: "The hot-pursuit exception requires officers to be in 'immediate' and 'continuous' pursuit of a suspect from the scene of the crime at the moment of entry; a pause to wait for backup may delay but not break that continuity, and a roughly nine-minute gap — far shorter than a continuity-breaking 30-minute gap — did not break the chase where officers kept a reasonably good idea of the suspect's location and kept actively working to apprehend him."
 lake:
   record_id: Newman v. Underhill
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

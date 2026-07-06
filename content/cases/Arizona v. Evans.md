@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "exclusionary-rule", "good-faith"]
 holding: "The good-faith exception extends to evidence seized on a mistaken arrest record caused by clerical errors of court employees (here, a…"
 lake:
   record_id: Arizona v. Evans
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

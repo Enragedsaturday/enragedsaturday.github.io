@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "detention", "search-warrant", "securing-the-
 holding: "The detention authority recognized in Michigan v. Summers is limited to the immediate vicinity of the premises to be searched; it does…"
 lake:
   record_id: Bailey v. United States
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

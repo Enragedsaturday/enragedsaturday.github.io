@@ -34,7 +34,7 @@ tags: ["case", "fifth-amendment", "miranda", "custody", "juveniles", "age"]
 holding: "A child's age is a relevant factor in the Miranda custody analysis when it was known to or objectively apparent to the officer — because…"
 lake:
   record_id: J.D.B. v. North Carolina
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

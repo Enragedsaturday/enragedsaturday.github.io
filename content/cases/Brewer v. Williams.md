@@ -34,7 +34,7 @@ tags: ["case", "sixth-amendment", "right-to-counsel", "deliberate-elicitation", 
 holding: "The detective's \"Christian burial speech\" was the functional equivalent of interrogation and deliberately elicited incriminating…"
 lake:
   record_id: Brewer v. Williams
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

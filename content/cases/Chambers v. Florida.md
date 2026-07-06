@@ -34,7 +34,7 @@ tags: ["case", "fifth-amendment", "due-process", "confessions", "voluntariness",
 holding: "Confessions extracted through prolonged, incommunicado interrogation of helpless prisoners were the product of compulsion and their use…"
 lake:
   record_id: Chambers v. Florida
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

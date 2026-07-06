@@ -34,7 +34,7 @@ tags: ["case", "fifth-amendment", "miranda", "two-step", "question-first", "waiv
 holding: "A deliberate \"question-first, warn-later\" two-step interrogation is invalid."
 lake:
   record_id: Missouri v. Seibert
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

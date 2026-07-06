@@ -36,7 +36,7 @@ tags: ["case", "fourth-amendment", "seizure-of-property", "reasonable-suspicion"
 holding: "First-class mail may be detained without a warrant on reasonable suspicion while officers diligently pursue a search warrant; the brief detention invades no Fourth Amendment privacy interest, which is implicated only when the package is opened under a warrant."
 lake:
   record_id: United States v. Van Leeuwen
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

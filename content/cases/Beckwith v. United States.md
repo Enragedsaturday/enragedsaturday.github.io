@@ -34,7 +34,7 @@ tags: ["case", "fifth-amendment", "miranda", "custody", "focus", "irs", "noncust
 holding: "Miranda warnings are required by custody, not by the fact that an investigation has 'focused' on the suspect; a noncustodial interview by IRS special agents — even of a person who is the target of a criminal tax investigation, conducted in a private home — does not trigger Miranda."
 lake:
   record_id: Beckwith v. United States
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

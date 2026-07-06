@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "plain-view", "pole-camera", "surveillance", 
 holding: "Long-term pole-camera surveillance of a home's exterior did not violate the Fourth Amendment under existing doctrine, BUT the court…"
 lake:
   record_id: United States v. Tuggle
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

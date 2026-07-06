@@ -36,7 +36,7 @@ tags: ["case", "fourth-amendment", "search-incident-to-arrest", "automobile", "v
 holding: "Cabins Belton. A vehicle search incident to a recent occupant's arrest is permitted only when (1) the arrestee is unsecured and within…"
 lake:
   record_id: Arizona v. Gant
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

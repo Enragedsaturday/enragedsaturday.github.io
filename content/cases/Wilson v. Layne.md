@@ -36,7 +36,7 @@ tags: ["case", "section-1983", "qualified-immunity", "media-ride-along", "warran
 holding: "Bringing the media or other third parties into a home during the execution of a warrant, when not in aid of the warrant, violates the Fourth Amendment — but the officers had qualified immunity because that right was not clearly established."
 lake:
   record_id: Wilson v. Layne
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

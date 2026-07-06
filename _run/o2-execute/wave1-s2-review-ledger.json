@@ -306,6 +306,18 @@
       "status": "fixed",
       "verified": "reviewer C-check: schema diff minimal, LINT-13 live run = 8 findings all Belton/Smith, EOF newline restored",
       "adjudicated_by": "orchestrator claude-fable-5"
+    },
+    {
+      "id": "F-S2-31",
+      "severity": "critical",
+      "phase": "S2 close: CodeRabbit spec gate (S2-coderabbit-50ef21f.md, 27 findings: 1C/15M/11m)",
+      "verdict": "CRITICAL CONFIRMED LIVE + 6 majors UPHELD (S2 flip-gating set); RETRO re-detections deduped to Dispatch A/B; quartz/lint-lane items routed to their owners",
+      "summary": "migration seeding mutated treatment.field_i_validity BEFORE the fail-closed status gate — Entick+Wilkes carried good_law on not_found records (the exact failure the pipeline exists to prevent; bounded to 2); plus fail-open/silent-skip majors in lint14 loader, authority_db empty roundtrip, project.py x3, ingest manifest reader",
+      "fix": "seed guards on FAIL_CLOSED_STATUSES before any mutation + --repair-failclosed-treatment (2 records -> unverified, journaled, re-projected) + all 6 majors fail-closed + 2 minors; combined identity->not_found+legacy fixture added at re-verify demand",
+      "status": "fixed",
+      "verified": "targeted re-verify all runtime paths FIXED with file:line; fixture gap closed in micro-loop; orchestrator verified fixture scope mechanically (self-test-only hunks) + real-lake override counts unchanged",
+      "loops": 3,
+      "adjudicated_by": "orchestrator claude-fable-5"
     }
   ],
   "roster_delta_attribution": {
@@ -314,5 +326,11 @@
     "unexplained": "none"
   },
   "loops_run": 3,
-  "outcome": "CLEAR-TO-SMOKE: yes (2026-07-04); smoke = Terry + Chatrie, ≤40 calls each, builder lane"
+  "outcome": "CLEAR-TO-SMOKE: yes (2026-07-04); smoke = Terry + Chatrie, ≤40 calls each, builder lane",
+  "s2_close": {
+    "flip": "421/421 verified (exact record-id match); untouched: 21 name+docket + 14 pending under_review (S9 deep pass), 65 verified_identity + 25 fabrication_suspected (S6 queue), 5 not_found; 421 r15-flip journal events with full gate list",
+    "gates": "schema 100% (LINT-13=0) · two-key 100% on verified (flip construction) · A1 replacement gate (id-namespace + two-key, code-enforced + audited) · dual dates + provenance (schema-required, LINT-13=0) · LINT-12=0 · LINT-14=2 NAMED (Entick/Wilkes, rides the user R14 whitelist decision; same pair appears as LINT-6 +2)",
+    "build_review": "spot-check 68 records live 0 errors (12.3%) · treatment audit 4 flags all closed · CodeRabbit spec gate 27 findings adjudicated",
+    "budget": "17,169 CL calls of ~23k projection (74.7%); 0x429 across the entire run"
+  }
 }

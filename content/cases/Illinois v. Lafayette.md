@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "inventory-search", "booking", "search-incide
 holding: "As part of the routine booking/incarceration process (a stationhouse inventory), police may search any container or article in an…"
 lake:
   record_id: Illinois v. Lafayette
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

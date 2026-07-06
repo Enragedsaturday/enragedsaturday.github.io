@@ -34,7 +34,7 @@ tags: ["case", "fifth-amendment", "miranda", "custody", "objective-test", "juven
 holding: "Because the Miranda custody test is objective and the Court's cases had not made a suspect's age or experience part of it, a state court's conclusion that a 17-year-old was not in custody was not an unreasonable application of clearly established federal law, and AEDPA barred habeas relief."
 lake:
   record_id: Yarborough v. Alvarado
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

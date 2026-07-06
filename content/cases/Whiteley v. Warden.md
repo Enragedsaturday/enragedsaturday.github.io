@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "collective-knowledge", "fellow-officer-rule"
 holding: "An officer may act on the strength of a police radio bulletin and assume the issuing officer had probable cause. But where the issuing…"
 lake:
   record_id: Whiteley v. Warden
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "consent", "seizure"]
 holding: "A bus sweep with consent-to-search requests is not a seizure, and consent can be voluntary even though officers do not advise passengers…"
 lake:
   record_id: United States v. Drayton
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

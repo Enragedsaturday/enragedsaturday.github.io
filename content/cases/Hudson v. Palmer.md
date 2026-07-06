@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "search", "prisoner", "reasonable-expectation
 holding: "A prisoner has no reasonable expectation of privacy in his prison cell; the Fourth Amendment's proscription against unreasonable searches does not apply within the cell."
 lake:
   record_id: Hudson v. Palmer
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

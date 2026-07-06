@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "consent", "co-occupant", "third-party-consen
 holding: "A PHYSICALLY PRESENT co-occupant's express refusal to consent prevails over another occupant's consent, rendering the warrantless search…"
 lake:
   record_id: Georgia v. Randolph
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

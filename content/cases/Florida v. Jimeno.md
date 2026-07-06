@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "consent", "scope-of-consent", "containers", 
 holding: "The SCOPE of a consent search is measured by OBJECTIVE REASONABLENESS — what the typical reasonable person would have understood by the…"
 lake:
   record_id: Florida v. Jimeno
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

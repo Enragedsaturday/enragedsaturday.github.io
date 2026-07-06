@@ -36,7 +36,7 @@ tags: ["case", "fourth-amendment", "search-incident-to-arrest", "dui", "blood-dr
 holding: "A breath test may be administered as a search incident to a DUI arrest without a warrant, but a blood test may not be justified as a search incident to arrest (it needs a warrant or exigency); and a State may not impose criminal penalties for refusing a warrantless blood test."
 lake:
   record_id: Birchfield v. North Dakota
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

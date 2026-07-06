@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "exclusionary-rule", "fruit-of-the-poisonous-
 holding: "'Fruit of the poisonous tree': derivative evidence is suppressed if come at by exploitation of the primary illegality, not merely 'but…"
 lake:
   record_id: Wong Sun v. United States
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

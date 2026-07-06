@@ -36,7 +36,7 @@ tags: ["case", "use-of-force", "deadly-force", "qualified-immunity", "section-19
 holding: "Officer Brosseau was entitled to qualified immunity for shooting a fleeing suspect in a vehicle: Garner and Graham are cast at too high a level of generality to clearly establish that the shooting was unlawful, and the handful of relevant fact-specific cases placed her conduct in the 'hazy border between excessive and acceptable force.'"
 lake:
   record_id: Brosseau v. Haugen
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

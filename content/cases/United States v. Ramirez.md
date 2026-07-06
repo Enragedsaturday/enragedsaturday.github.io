@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "knock-and-announce", "no-knock", "warrant-ex
 holding: "The Fourth Amendment does not impose a higher standard on a no-knock entry merely because the entry causes property damage; the entry is judged by Richards' reasonable-suspicion test, although excessive or unnecessary destruction of property in a search may itself violate the Fourth Amendment."
 lake:
   record_id: United States v. Ramirez
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

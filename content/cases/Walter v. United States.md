@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "private-search", "scope", "search-definition
 holding: "The government may not exceed the scope of a prior private search; the FBI's screening of films the private party had not viewed was a separate, unlawful search."
 lake:
   record_id: Walter v. United States
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

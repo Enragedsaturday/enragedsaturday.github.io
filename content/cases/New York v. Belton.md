@@ -33,7 +33,7 @@ treatment:
       scope_note: "The automatic passenger-compartment rule is replaced by Gant's two-justification test."
 lake:
   record_id: New York v. Belton
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/110559/new-york-v-belton/"

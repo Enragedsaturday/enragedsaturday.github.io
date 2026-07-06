@@ -36,7 +36,7 @@ tags: ["case", "fourth-amendment", "traffic-stop", "reasonable-suspicion", "vehi
 holding: "An officer who learns that a vehicle's registered owner has a revoked license has reasonable suspicion to stop the vehicle, absent information negating the inference that the owner is the driver."
 lake:
   record_id: Kansas v. Glover
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

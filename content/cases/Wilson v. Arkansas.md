@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "knock-and-announce", "warrant-execution", "r
 holding: "The common-law **knock-and-announce** principle — that officers must announce their presence and authority before forcibly entering a…"
 lake:
   record_id: Wilson v. Arkansas
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

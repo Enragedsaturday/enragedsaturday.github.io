@@ -34,7 +34,7 @@ tags: ["case", "fifth-amendment", "fourteenth-amendment", "miranda", "silence", 
 holding: "Using a defendant's post-arrest, post-Miranda silence to impeach his exculpatory trial testimony violates the Due Process Clause, because the Miranda warnings carry an implicit assurance that silence will carry no penalty."
 lake:
   record_id: Doyle v. Ohio
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

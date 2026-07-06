@@ -34,7 +34,7 @@ tags: ["case", "section-1983", "qualified-immunity", "clearly-established-law", 
 holding: "A right can be clearly established **without a factually identical case** — in an 'obvious case,' officials have fair warning even in novel circumstances (the QI 'obvious case' escape hatch)."
 lake:
   record_id: Hope v. Pelzer
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

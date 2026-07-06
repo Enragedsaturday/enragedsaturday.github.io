@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "tents", "expectation-of-privacy", "public-la
 holding: "(9th Cir. — persuasive) A reasonable expectation of privacy in a tent on public (BLM) land does not turn on whether the camper had permission to be there; denial of suppression reversed."
 lake:
   record_id: United States v. Sandoval
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "reasonable-suspicion", "anonymous-tip", "sto
 holding: "A bare anonymous tip that a person is carrying a gun, without more, is NOT reasonable suspicion for a stop and frisk; an accurate…"
 lake:
   record_id: Florida v. J.L.
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

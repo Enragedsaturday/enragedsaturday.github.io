@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "consent-search", "third-party-consent", "com
 holding: "COMMON AUTHORITY: consent of one who possesses common authority over premises or effects is valid against an absent, nonconsenting…"
 lake:
   record_id: United States v. Matlock
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

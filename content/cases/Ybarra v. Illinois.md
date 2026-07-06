@@ -36,7 +36,7 @@ tags: ["case", "fourth-amendment", "warrants", "search-of-persons", "terry-frisk
 holding: "A warrant to search premises does not authorize searching persons who merely happen to be present; a search or frisk of a person requires cause particularized to that person — probable cause to search, or for a Terry frisk reasonable suspicion that the person is armed and dangerous."
 lake:
   record_id: Ybarra v. Illinois
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

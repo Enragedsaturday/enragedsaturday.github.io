@@ -34,7 +34,7 @@ tags: ["case", "sixth-amendment", "right-to-counsel", "attachment", "initial-app
 holding: "A criminal defendant's initial appearance before a magistrate, where he learns the charge against him and his liberty is restricted,…"
 lake:
   record_id: Rothgery v. Gillespie County
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

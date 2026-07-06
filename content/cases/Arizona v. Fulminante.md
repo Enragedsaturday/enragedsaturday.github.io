@@ -34,7 +34,7 @@ tags: ["case", "due-process", "confessions", "voluntariness", "harmless-error"]
 holding: "The admission of an involuntary/coerced confession is a \"trial error\" subject to harmless-error analysis under Chapman, not automatic…"
 lake:
   record_id: Arizona v. Fulminante
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

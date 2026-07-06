@@ -34,7 +34,7 @@ tags: ["case", "fifth-amendment", "miranda", "juvenile", "invocation", "waiver"]
 holding: "A juvenile's request to speak with his probation officer is not a per se invocation of the Fifth Amendment (unlike a request for a lawyer); whether a juvenile validly waived his Miranda rights is judged by the totality of the circumstances."
 lake:
   record_id: Fare v. Michael C
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

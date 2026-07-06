@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "exclusionary-rule", "incorporation", "fourte
 holding: "The Fourth Amendment's core security against arbitrary police intrusion is enforceable against the States through the Fourteenth Amendment's Due Process Clause, but the Weeks exclusionary rule is not itself commanded of the States — a remedy holding later overruled by Mapp v. Ohio."
 lake:
   record_id: Wolf v. Colorado
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

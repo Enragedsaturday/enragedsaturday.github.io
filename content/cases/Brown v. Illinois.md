@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "exclusionary-rule", "attenuation", "fruit-of
 holding: "Sets out the attenuation factors: temporal proximity, intervening circumstances, and the purpose and flagrancy of the official…"
 lake:
   record_id: Brown v. Illinois
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

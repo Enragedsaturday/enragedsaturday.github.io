@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "curtilage", "aerial-surveillance", "expectat
 holding: "Warrantless naked-eye aerial observation of a fenced curtilage from navigable airspace (1,000 ft) is not a search — no reasonable expectation of privacy from the air."
 lake:
   record_id: California v. Ciraolo
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

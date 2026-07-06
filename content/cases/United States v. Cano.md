@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "border-search", "digital-privacy"]
 holding: "Manual border searches of a cell phone need no suspicion, but a *forensic* (Cellebrite-type) device search requires reasonable suspicion…"
 lake:
   record_id: United States v. Cano
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

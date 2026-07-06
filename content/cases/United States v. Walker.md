@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "knock-and-talk", "implied-license", "curtila
 holding: "A 'small departure' from the front door — here, approaching the occupant's car parked in an open-sided carport beside the house when seeking to contact him — stays within the geographic scope of the knock-and-talk implied license, and a pre-dawn (5:04 a.m.) knock and talk is not a search and needs no exigent circumstances where the surrounding circumstances make the approach reasonable."
 lake:
   record_id: United States v. Walker
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "seizure"]
 holding: "Physical force applied with intent to restrain is a seizure at the moment of application, even if the person does not submit and is not subdued."
 lake:
   record_id: Torres v. Madrid
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

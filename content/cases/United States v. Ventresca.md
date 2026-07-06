@@ -36,7 +36,7 @@ tags: ["case", "fourth-amendment", "warrant-requirement", "affidavit", "probable
 holding: "A search-warrant affidavit must be read in a commonsense and realistic — not hypertechnical — manner, and doubtful or marginal probable-cause questions are resolved by the preference accorded to warrants; an affidavit that recites detailed underlying circumstances (even hearsay with a substantial basis) establishes probable cause."
 lake:
   record_id: United States v. Ventresca
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

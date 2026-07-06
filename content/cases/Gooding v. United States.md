@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "warrant", "search-warrant", "warrant-executi
 holding: "Under 21 U.S.C. § 879(a), a narcotics search warrant may be executed at night with no special showing of need beyond probable cause that the contraband is likely to be on the premises at that time."
 lake:
   record_id: Gooding v. United States
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

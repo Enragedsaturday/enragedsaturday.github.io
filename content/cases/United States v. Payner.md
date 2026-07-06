@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "standing", "exclusionary-rule", "supervisory
 holding: "A federal court may not invoke its supervisory power to suppress evidence obtained through the deliberate violation of a third party's Fourth Amendment rights at the instance of a defendant whose own rights were not violated; the supervisory power cannot circumvent the standing requirement."
 lake:
   record_id: United States v. Payner
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

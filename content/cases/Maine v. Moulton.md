@@ -34,7 +34,7 @@ tags: ["case", "sixth-amendment", "right-to-counsel", "deliberate-elicitation", 
 holding: "The Sixth Amendment is violated when the State knowingly exploits an opportunity to confront the accused without counsel — it makes no…"
 lake:
   record_id: Maine v. Moulton
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

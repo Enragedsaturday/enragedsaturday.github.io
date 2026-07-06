@@ -36,7 +36,7 @@ tags: ["case", "fourth-amendment", "seizure", "roadblock", "use-of-force", "sect
 holding: "A Fourth Amendment seizure occurs only when the government terminates a person's freedom of movement through means intentionally applied; stopping a fleeing driver with a roadblock he crashes into is a seizure because he is stopped by the very instrumentality put in place to stop him."
 lake:
   record_id: Brower v. County of Inyo
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

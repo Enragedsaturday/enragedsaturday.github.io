@@ -34,7 +34,7 @@ tags: ["case", "fifth-amendment", "miranda", "custody", "prisoners"]
 holding: "Imprisonment alone does not make questioning custodial for Miranda; whether an inmate is \"in custody\" depends on the totality — here,…"
 lake:
   record_id: Howes v. Fields
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

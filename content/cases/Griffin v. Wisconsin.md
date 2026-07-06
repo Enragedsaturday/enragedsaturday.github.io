@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "special-needs", "probation", "warrantless-se
 holding: "A warrantless search of a probationer's home pursuant to a valid regulation is reasonable when supported by \"reasonable grounds\";…"
 lake:
   record_id: Griffin v. Wisconsin
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

@@ -36,7 +36,7 @@ tags: ["case", "fourth-amendment", "arrest", "probable-cause", "misdemeanor", "s
 holding: "A warrantless custodial arrest for a fine-only misdemeanor committed in the officer's presence, supported by probable cause, does not violate the Fourth Amendment; probable cause governs all arrests without individualized balancing."
 lake:
   record_id: Atwater v. City of Lago Vista
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

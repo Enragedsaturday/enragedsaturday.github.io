@@ -38,7 +38,7 @@ tags: ["case", "fourth-amendment", "seizure", "probable-cause", "exclusionary-ru
 holding: "Involuntarily transporting a suspect to the station and detaining him for custodial interrogation, on less than probable cause, is a seizure tantamount to arrest requiring probable cause; the resulting confession is a fruit of the illegal seizure that Miranda warnings alone do not attenuate."
 lake:
   record_id: Dunaway v. New York
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

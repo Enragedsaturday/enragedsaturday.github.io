@@ -34,7 +34,7 @@ tags: ["case", "section-1983", "qualified-immunity", "clearly-established", "obv
 holding: "Qualified immunity can be defeated without a case directly on point where the constitutional violation is so obvious that any reasonable officer would have known the conduct was unlawful."
 lake:
   record_id: Taylor v. Riojas
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

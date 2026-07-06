@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "probable-cause", "informant", "corroboration
 holding: "A reliable informant's detailed tip, the innocent details of which police personally corroborate, establishes probable cause to arrest even though the corroborated facts are themselves innocent."
 lake:
   record_id: Draper v. United States
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

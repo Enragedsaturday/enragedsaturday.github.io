@@ -34,7 +34,7 @@ tags: ["case", "fifth-amendment", "miranda", "waiver"]
 holding: "A Miranda waiver is valid even though police failed to tell the suspect that an attorney was trying to reach him; events outside the…"
 lake:
   record_id: Moran v. Burbine
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

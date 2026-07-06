@@ -34,7 +34,7 @@ tags: ["case", "due-process", "confessions", "voluntariness", "interrogation"]
 holding: "Thirty-six hours of continuous, relay interrogation without sleep is \"inherently coercive,\" rendering the resulting confession…"
 lake:
   record_id: Ashcraft v. Tennessee
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

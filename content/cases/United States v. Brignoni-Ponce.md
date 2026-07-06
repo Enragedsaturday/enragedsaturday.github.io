@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "border-search", "reasonable-suspicion"]
 holding: "A roving Border Patrol may stop a vehicle near the border to question occupants only on reasonable suspicion, based on specific…"
 lake:
   record_id: United States v. Brignoni-Ponce
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

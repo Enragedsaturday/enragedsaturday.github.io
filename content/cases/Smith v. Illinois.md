@@ -34,7 +34,7 @@ tags: ["case", "fifth-amendment", "miranda", "invocation", "right-to-counsel"]
 holding: "Once an accused unambiguously requests counsel, his postrequest responses to continued interrogation may not be used to cast retrospective doubt on the clarity of that invocation; such later statements bear only on the distinct question of waiver."
 lake:
   record_id: Smith v. Illinois
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

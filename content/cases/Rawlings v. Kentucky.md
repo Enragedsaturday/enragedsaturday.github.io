@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "standing", "expectation-of-privacy", "owners
 holding: "Owning the items seized is not enough to challenge a search; a defendant must have a legitimate expectation of privacy in the PLACE…"
 lake:
   record_id: Rawlings v. Kentucky
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

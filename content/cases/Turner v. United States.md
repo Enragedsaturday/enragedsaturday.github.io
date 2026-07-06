@@ -34,7 +34,7 @@ tags: ["case", "due-process", "brady"]
 holding: "Counterweight: *Brady* materiality is demanding and judged on the whole record; the suppression here was immaterial — no *Brady* violation."
 lake:
   record_id: Turner v. United States
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

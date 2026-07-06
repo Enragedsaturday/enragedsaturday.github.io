@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "consent", "voluntariness", "claim-of-authori
 holding: "Consent to search is involuntary, and cannot justify a search, when it is given only in acquiescence to an officer's claim of lawful authority — including a false or unsubstantiated assertion that the officer holds a warrant; the State bears the burden of proving voluntary consent."
 lake:
   record_id: Bumper v. North Carolina
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

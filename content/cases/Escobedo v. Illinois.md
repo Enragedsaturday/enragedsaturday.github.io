@@ -55,7 +55,7 @@ tags: ["case", "sixth-amendment", "fifth-amendment", "right-to-counsel", "interr
 holding: "Where an investigation has focused on a suspect in custody, the police are interrogating to elicit incriminating statements, the suspect has requested and been denied the chance to consult his retained lawyer, and he has not been warned of his right to remain silent, he has been denied the Sixth Amendment right to counsel and his statements are inadmissible."
 lake:
   record_id: Escobedo v. Illinois
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

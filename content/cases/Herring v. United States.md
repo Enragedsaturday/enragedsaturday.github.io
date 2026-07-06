@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "exclusionary-rule", "good-faith", "deterrenc
 holding: "Suppression is warranted only where deterrence benefits outweigh costs; isolated, attenuated police negligence (a recordkeeping error)…"
 lake:
   record_id: Herring v. United States
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

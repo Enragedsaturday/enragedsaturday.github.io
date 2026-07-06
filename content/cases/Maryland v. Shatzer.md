@@ -34,7 +34,7 @@ tags: ["case", "fifth-amendment", "miranda", "edwards-rule", "break-in-custody",
 holding: "Edwards protection ends after a 14-day break in Miranda custody; once 14 days pass, police may re-approach and seek a fresh waiver.…"
 lake:
   record_id: Maryland v. Shatzer
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "warrant", "particularity", "fifth-amendment"
 holding: "A particularized warrant to search for and seize a person's business records, and their introduction in evidence, does not violate the…"
 lake:
   record_id: Andresen v. Maryland
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

@@ -34,7 +34,7 @@ tags: ["case", "sixth-amendment", "right-to-counsel", "informants", "attachment"
 holding: "A defendant has no Sixth Amendment claim when a government informant elicits statements **before** the right has attached; planting an informant raises no 6A problem pre-attachment."
 lake:
   record_id: Hoffa v. United States
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "search-incident-to-arrest", "immediate-contr
 holding: "Foundational scope of search incident to arrest: the arrestee's person and the area 'within his immediate control' — meaning the area…"
 lake:
   record_id: Chimel v. California
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

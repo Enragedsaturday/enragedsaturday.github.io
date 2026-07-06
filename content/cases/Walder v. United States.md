@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "exclusionary-rule", "impeachment-exception",
 holding: "Illegally seized evidence, though inadmissible in the prosecution's case in chief, may be used to impeach a defendant who, on his own direct examination, makes a sweeping affirmative assertion beyond a denial of the charged offense; the exclusionary rule is a shield, not a license to commit perjury."
 lake:
   record_id: Walder v. United States
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

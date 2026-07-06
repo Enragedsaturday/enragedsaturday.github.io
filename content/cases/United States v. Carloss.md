@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "knock-and-talk", "implied-license", "no-tres
 holding: "On these facts, 'No Trespassing' signs posted around a home and on its front door did not revoke the implied license that lets an officer, like any citizen, approach the front door and knock to seek a consensual conversation; whether signage revokes the license is judged by what an objective officer would perceive, and a 'No Trespassing' sign by itself is not enough."
 lake:
   record_id: United States v. Carloss
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

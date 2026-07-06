@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "probation-search", "reasonable-suspicion", "
 holding: "A warrantless search of a probationer subject to a search condition, supported by reasonable suspicion, is reasonable under the Fourth…"
 lake:
   record_id: United States v. Knights
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

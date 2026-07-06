@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "protective-sweep", "securing-the-scene"]
 holding: "(Binding in-circuit — 5th Cir.; Persuasive (outside circuit)) Articulates a four-part protective-sweep test and extends *Buie*'s officer-safety rationale to curtilage and to a non-arrest, investigatory entry."
 lake:
   record_id: United States v. August
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "automobile-exception", "warrantless-search",
 holding: "Where there was PC and mobility at the scene, officers may search the vehicle without a warrant later at the station house; immediate…"
 lake:
   record_id: Chambers v. Maroney
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

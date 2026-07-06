@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "automobile-exception", "container-search", "
 holding: "A warrantless search of packages lawfully removed from a vehicle on PC is not rendered unreasonable merely because officers delayed the…"
 lake:
   record_id: United States v. Johns
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

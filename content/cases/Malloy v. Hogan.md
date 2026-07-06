@@ -36,7 +36,7 @@ tags: ["case", "fifth-amendment", "fourteenth-amendment", "incorporation", "self
 holding: "The Fifth Amendment privilege against self-incrimination is enforceable against the States through the Fourteenth Amendment by the same standards that apply to the Federal Government; Twining and Adamson are overruled to that extent."
 lake:
   record_id: Malloy v. Hogan
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

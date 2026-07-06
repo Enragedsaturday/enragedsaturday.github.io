@@ -36,7 +36,7 @@ tags: ["case", "use-of-force", "deadly-force", "qualified-immunity", "section-19
 holding: "An officer who shot a woman holding a large kitchen knife who had moved within striking distance of another woman and ignored commands to drop it was entitled to qualified immunity: clearly established law in excessive-force cases must be defined at a high level of specificity, and officers get immunity unless existing precedent 'squarely governs' the specific facts at issue."
 lake:
   record_id: Kisela v. Hughes
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

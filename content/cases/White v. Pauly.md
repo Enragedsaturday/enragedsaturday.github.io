@@ -36,7 +36,7 @@ tags: ["case", "section-1983", "qualified-immunity", "excessive-force", "clearly
 holding: "Garner and Graham do not by themselves create clearly established law outside an obvious case; an officer who arrives late to an ongoing scene did not violate clearly established law by using deadly force without first shouting a warning."
 lake:
   record_id: White v. Pauly
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

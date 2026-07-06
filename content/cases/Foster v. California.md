@@ -34,7 +34,7 @@ tags: ["case", "due-process", "eyewitness-identification", "lineup", "suggestive
 holding: "An identification procedure may be so unnecessarily suggestive that it denies due process; here a lineup that made the suspect stand out, followed by a one-on-one showup and a repeat lineup in which he was the only carryover, made identification all but inevitable and violated due process — the rare such reversal."
 lake:
   record_id: Foster v. California
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

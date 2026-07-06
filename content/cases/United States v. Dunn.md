@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "search", "curtilage", "open-fields", "home"]
 holding: "Curtilage is determined by four factors — proximity to the home, whether the area is within an enclosure surrounding the home, the nature of its use, and steps taken to shield it from observation — all bearing on whether the area is so intimately tied to the home as to fall under the home's Fourth Amendment umbrella."
 lake:
   record_id: United States v. Dunn
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

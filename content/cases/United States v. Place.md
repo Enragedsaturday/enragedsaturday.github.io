@@ -36,7 +36,7 @@ tags: ["case", "fourth-amendment", "search", "seizure", "dog-sniff", "luggage", 
 holding: "A canine sniff of luggage in a public place is sui generis and not a search; but a 90-minute investigative seizure of the luggage exceeded the permissible limits of a Terry stop."
 lake:
   record_id: United States v. Place
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

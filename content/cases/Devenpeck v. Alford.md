@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "probable-cause", "arrest", "objective-standa
 holding: "An arrest is lawful so long as the known facts give probable cause for SOME criminal offense; the offense need not be the one the…"
 lake:
   record_id: Devenpeck v. Alford
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

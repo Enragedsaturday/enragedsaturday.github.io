@@ -34,7 +34,7 @@ tags: ["case", "fifth-amendment", "fourteenth-amendment", "confessions", "volunt
 holding: "A written confession obtained in an atmosphere of substantial coercion and inducement — incommunicado detention plus the express threat of continued isolation and the promise of contact with family conditioned on signing a confession — is involuntary under the totality of circumstances and inadmissible under the Fourteenth Amendment."
 lake:
   record_id: Haynes v. Washington
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

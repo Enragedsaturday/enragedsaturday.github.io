@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "special-needs", "drug-testing", "suspicionle
 holding: "Georgia's suspicionless drug-testing requirement for candidates for state office is unconstitutional — there was no concrete, special…"
 lake:
   record_id: Chandler v. Miller
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

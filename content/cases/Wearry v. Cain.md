@@ -34,7 +34,7 @@ tags: ["case", "due-process", "brady", "materiality", "impeachment", "per-curiam
 holding: "Reaffirms cumulative *Brady* materiality: suppressed evidence assessed collectively undermined confidence in the verdict."
 lake:
   record_id: Wearry v. Cain
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

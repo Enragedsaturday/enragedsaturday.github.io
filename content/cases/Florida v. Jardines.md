@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "curtilage", "knock-and-talk", "dog-sniff", "
 holding: "Bringing a drug dog onto the home's curtilage (the front porch) to investigate exceeded the implied license to approach and knock — a…"
 lake:
   record_id: Florida v. Jardines
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

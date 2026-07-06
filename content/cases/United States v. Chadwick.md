@@ -47,7 +47,7 @@ tags: ["case", "fourth-amendment", "automobile-exception", "containers", "luggag
 holding: "Luggage/containers carry a high expectation of privacy; once seized and reduced to exclusive police control with no exigency, a footlocker may not be searched without a warrant, and the search is not incident to arrest."
 lake:
   record_id: United States v. Chadwick
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

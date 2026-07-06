@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "terry-stop", "collective-knowledge", "fellow
 holding: "Police may conduct a Terry investigatory stop in objective reliance on a wanted flyer or bulletin issued by another police department if…"
 lake:
   record_id: United States v. Hensley
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

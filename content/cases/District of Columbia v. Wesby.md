@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "probable-cause", "totality-of-the-circumstan
 holding: "Probable cause is a totality inquiry; courts must not divide-and-conquer the facts."
 lake:
   record_id: District of Columbia v. Wesby
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

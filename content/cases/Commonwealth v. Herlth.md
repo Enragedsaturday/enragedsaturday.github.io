@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "plain-view", "immediately-apparent", "closed
 holding: "A closed, opaque shoebox with a one-inch manufacturer's hole, inside a residence, retains a reasonable expectation of privacy; a trooper…"
 lake:
   record_id: Commonwealth v. Herlth
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

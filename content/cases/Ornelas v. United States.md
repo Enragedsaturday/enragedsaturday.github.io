@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "probable-cause", "reasonable-suspicion", "st
 holding: "Appellate review of determinations of reasonable suspicion and probable cause to make a warrantless search/stop is de novo (historical…"
 lake:
   record_id: Ornelas v. United States
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

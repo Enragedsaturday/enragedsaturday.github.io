@@ -34,7 +34,7 @@ tags: ["case", "fifth-amendment", "miranda", "warning-adequacy", "right-to-couns
 holding: "Miranda warnings need not be given in any precise words; the four warnings are substantively invariable but the test is whether the advice, given a commonsense reading, reasonably conveys the suspect's rights — including, here, the right to have counsel present throughout interrogation."
 lake:
   record_id: Florida v. Powell
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

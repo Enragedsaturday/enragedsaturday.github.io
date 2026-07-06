@@ -36,7 +36,7 @@ tags: ["case", "section-1983", "municipal-liability", "failure-to-train", "delib
 holding: "A single Brady violation, without a pattern of similar violations, generally cannot establish the deliberate indifference required for municipal failure-to-train liability; prosecutorial Brady training is not within Canton's narrow single-incident exception."
 lake:
   record_id: Connick v. Thompson
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

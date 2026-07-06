@@ -34,7 +34,7 @@ tags: ["case", "fifth-amendment", "miranda", "waiver", "implied-waiver"]
 holding: "An express written or oral waiver is not required; a valid Miranda waiver may be inferred from the suspect's words and conduct — but…"
 lake:
   record_id: North Carolina v. Butler
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

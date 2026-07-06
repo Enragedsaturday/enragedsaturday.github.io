@@ -34,7 +34,7 @@ tags: ["case", "sixth-amendment", "right-to-counsel", "waiver", "post-indictment
 holding: "An accused may knowingly and intelligently waive the Sixth Amendment right to counsel for post-indictment questioning through the…"
 lake:
   record_id: Patterson v. Illinois
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

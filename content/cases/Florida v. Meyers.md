@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "automobile-exception", "impound", "second-se
 holding: "A second warrantless search of an already-impounded automobile, conducted hours after the first, is valid under the automobile exception; immobilization in police custody does not defeat the exception."
 lake:
   record_id: Florida v. Meyers
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

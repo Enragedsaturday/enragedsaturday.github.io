@@ -36,7 +36,7 @@ tags: ["case", "fourth-amendment", "search", "aerial-surveillance", "open-fields
 holding: "Precision aerial photography of the open areas of an industrial complex from navigable airspace is not a Fourth Amendment search; such open areas are more like open fields than the curtilage of a home."
 lake:
   record_id: Dow Chemical Co. v. United States
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

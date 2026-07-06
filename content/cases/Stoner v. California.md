@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "consent", "third-party-consent", "apparent-a
 holding: "A hotel desk clerk cannot give valid third-party consent to a police search of a current guest's room; a guest retains Fourth Amendment protection that only the guest may waive, and unrealistic notions of 'apparent authority' do not validate the search."
 lake:
   record_id: Stoner v. California
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

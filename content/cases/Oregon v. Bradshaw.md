@@ -34,7 +34,7 @@ tags: ["case", "fifth-amendment", "miranda", "invocation", "edwards", "initiatio
 holding: "After invoking counsel, a suspect 'initiates' further communication under Edwards only by a statement evincing a desire to open a generalized discussion about the investigation (not a routine request); even then, any resulting statement is admissible only if the suspect also validly waived counsel under the totality of the circumstances."
 lake:
   record_id: Oregon v. Bradshaw
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

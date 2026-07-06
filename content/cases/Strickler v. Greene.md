@@ -34,7 +34,7 @@ tags: ["case", "brady", "materiality", "suppression", "prejudice"]
 holding: "Canonical statement of the THREE Brady components: (1) the evidence must be favorable (exculpatory OR impeaching); (2) it must have been…"
 lake:
   record_id: Strickler v. Greene
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

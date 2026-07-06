@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "search-incident-to-arrest", "inevitable-disc
 holding: "The government CONCEDED the warrantless search of Braxton's backpack was not a valid search incident to arrest, then relied on…"
 lake:
   record_id: United States v. Braxton
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

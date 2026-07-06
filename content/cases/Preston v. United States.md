@@ -36,7 +36,7 @@ tags: ["case", "fourth-amendment", "search-incident-to-arrest", "automobile", "v
 holding: "A warrantless search of a vehicle is not a valid search incident to arrest once the arrestee is in custody and the car has been removed; a search remote in time or place from the arrest cannot be justified as incident to it."
 lake:
   record_id: Preston v. United States
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

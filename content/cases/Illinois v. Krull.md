@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "exclusionary-rule", "good-faith", "statute"]
 holding: "Good-faith reliance on a STATUTE later held unconstitutional does not trigger exclusion; excluding such evidence would have no deterrent…"
 lake:
   record_id: Illinois v. Krull
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

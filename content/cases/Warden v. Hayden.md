@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "exigent-circumstances", "hot-pursuit", "warr
 holding: "Hot pursuit of a fleeing armed robber into a house is a valid warrantless entry and search where \"the exigencies of the situation made…"
 lake:
   record_id: Warden v. Hayden
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

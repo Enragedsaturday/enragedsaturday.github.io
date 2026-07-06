@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "seizure", "fingerprinting", "investigative-d
 holding: "Transporting a suspect to the station for fingerprinting without consent, a warrant, or probable cause is a seizure tantamount to arrest requiring probable cause (brief field fingerprinting on reasonable suspicion left open)."
 lake:
   record_id: Hayes v. Florida
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

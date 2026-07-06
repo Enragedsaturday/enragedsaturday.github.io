@@ -36,7 +36,7 @@ tags: ["case", "use-of-force", "deadly-force", "high-speed-chase", "qualified-im
 holding: "Using deadly force to end a dangerous high-speed chase is reasonable under the Fourth Amendment, and officers need not stop shooting until the threat ends; even if it were unreasonable, the officers would be entitled to qualified immunity."
 lake:
   record_id: Plumhoff v. Rickard
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

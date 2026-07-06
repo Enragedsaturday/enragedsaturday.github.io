@@ -36,7 +36,7 @@ tags: ["case", "fourth-amendment", "probable-cause", "informant", "warrant-requi
 holding: "An informant's statement against his penal interest is itself an indicium of reliability that can support probable cause for a warrant; admissions of crime 'carry their own indicia of credibility,' and a magistrate may also rely on an officer's knowledge of the suspect's reputation."
 lake:
   record_id: "United States v. Harris (1971)"
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "parolee", "suspicionless-search", "diminishe
 holding: "A suspicionless search of a parolee is reasonable; a parolee subject to a search condition has severely diminished privacy expectations,…"
 lake:
   record_id: Samson v. California
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

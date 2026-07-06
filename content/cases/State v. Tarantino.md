@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "plain-view", "open-view", "expectation-of-pr
 holding: "A reasonable expectation of privacy in a building's interior is NOT eliminated by small (quarter-inch) cracks; an officer who must 'bend…"
 lake:
   record_id: State v. Tarantino
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

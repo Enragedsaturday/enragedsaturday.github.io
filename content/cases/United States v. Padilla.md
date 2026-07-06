@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "standing", "conspiracy", "expectation-of-pri
 holding: "There is no 'coconspirator exception' to Fourth Amendment standing; a defendant's supervisory role in or joint control over a conspiracy does not by itself confer standing — only a personal privacy or property interest invaded by the search does."
 lake:
   record_id: United States v. Padilla
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

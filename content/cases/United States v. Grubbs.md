@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "warrant-requirement", "anticipatory-warrant"
 holding: "**Anticipatory warrants** — warrants that take effect only upon a future 'triggering condition' — are not categorically…"
 lake:
   record_id: United States v. Grubbs
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

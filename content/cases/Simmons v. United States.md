@@ -36,7 +36,7 @@ tags: ["case", "fourth-amendment", "fifth-amendment", "standing", "eyewitness-id
 holding: "A pretrial photographic identification violates due process only if it was so impermissibly suggestive as to give rise to a very substantial likelihood of irreparable misidentification; and a defendant's testimony given to establish Fourth Amendment standing at a suppression hearing may not be used against him at trial on guilt."
 lake:
   record_id: Simmons v. United States
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

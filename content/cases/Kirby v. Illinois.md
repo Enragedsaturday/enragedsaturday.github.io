@@ -36,7 +36,7 @@ tags: ["case", "sixth-amendment", "right-to-counsel", "attachment", "eyewitness-
 holding: "The Sixth Amendment right to counsel attaches only at or after the initiation of adversary judicial criminal proceedings (formal charge,…"
 lake:
   record_id: Kirby v. Illinois
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

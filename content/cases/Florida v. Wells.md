@@ -36,7 +36,7 @@ tags: ["case", "fourth-amendment", "inventory-search", "standardized-criteria", 
 holding: "An inventory search must not be a ruse for general rummaging to discover incriminating evidence; standardized criteria or established…"
 lake:
   record_id: Florida v. Wells
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

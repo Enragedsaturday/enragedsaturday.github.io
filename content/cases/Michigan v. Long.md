@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "terry", "protective-search", "vehicle", "wea
 holding: "Terry's protective-frisk rationale extends to vehicles: on specific and articulable facts giving the officer a reasonable belief the…"
 lake:
   record_id: Michigan v. Long
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

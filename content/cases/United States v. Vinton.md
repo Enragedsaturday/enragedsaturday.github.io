@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "traffic-stop", "protective-search", "michiga
 holding: "Gant's 'secured arrestee' limitation does not abate a Michigan v. Long protective (Terry) vehicle search: the protective-search…"
 lake:
   record_id: United States v. Vinton
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

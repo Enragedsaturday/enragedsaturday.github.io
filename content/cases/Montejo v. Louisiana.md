@@ -34,7 +34,7 @@ tags: ["case", "sixth-amendment", "right-to-counsel", "waiver", "interrogation"]
 holding: "A defendant may validly waive his Sixth Amendment right to counsel during police-initiated interrogation even after counsel has been…"
 lake:
   record_id: Montejo v. Louisiana
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

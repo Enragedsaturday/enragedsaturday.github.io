@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "community-caretaking", "mental-health-seizur
 holding: "After Caniglia v. Strom, using the 'community caretaking' label for warrantless psychiatric seizures is a category error; a seizure of a person for an emergency mental-health evaluation is reasonable under the Fourth Amendment only on probable cause that the person is mentally ill and dangerous to herself or others (though the officers received qualified immunity because that standard was not clearly established in the circuit)."
 lake:
   record_id: Graham v. Barnette
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

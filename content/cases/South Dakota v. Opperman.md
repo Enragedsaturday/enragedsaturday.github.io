@@ -36,7 +36,7 @@ tags: ["case", "fourth-amendment", "inventory", "impoundment", "administrative-s
 holding: "An inventory search of a lawfully impounded vehicle conducted pursuant to standard police procedures, and not as a pretext concealing an…"
 lake:
   record_id: South Dakota v. Opperman
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

@@ -38,7 +38,7 @@ tags: ["case", "fourth-amendment", "arrest-in-the-home", "hot-pursuit", "exigent
 holding: "A suspect standing in her own doorway/threshold is in a 'public' place for Fourth Amendment purposes; she cannot defeat a lawful arrest…"
 lake:
   record_id: United States v. Santana
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

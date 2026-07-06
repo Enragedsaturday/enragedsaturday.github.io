@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "exclusionary-rule", "silver-platter", "deter
 holding: "The 'silver-platter' doctrine is abolished: evidence obtained by state officers in a search that would violate the Fourth Amendment if conducted by federal officers is inadmissible in a federal criminal trial, because the exclusionary rule's purpose is to deter unconstitutional searches by removing the incentive to make them."
 lake:
   record_id: Elkins v. United States
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

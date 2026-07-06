@@ -34,7 +34,7 @@ tags: ["case", "entrapment", "predisposition", "subjective-test", "outrageous-go
 holding: "There is no entrapment where the defendant was predisposed, even though a government agent supplied a difficult-to-obtain but legal…"
 lake:
   record_id: United States v. Russell
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

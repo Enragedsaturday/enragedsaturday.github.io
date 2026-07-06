@@ -36,7 +36,7 @@ tags: ["case", "fourth-amendment", "plain-view", "impound", "protective-measure"
 holding: "Objects falling in the plain view of an officer who has a right to be in the position to have that view are subject to seizure and admissible; a protective measure taken to secure a lawfully impounded car is not a search."
 lake:
   record_id: "Harris v. United States (1968)"
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

@@ -36,7 +36,7 @@ tags: ["case", "fourth-amendment", "search", "beeper", "tracking", "surveillance
 holding: "Beeper-aided tracking of a vehicle over public roads is not a search; a person has no reasonable expectation of privacy in his movements over public thoroughfares."
 lake:
   record_id: United States v. Knotts
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

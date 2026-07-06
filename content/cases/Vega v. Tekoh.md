@@ -36,7 +36,7 @@ tags: ["case", "fifth-amendment", "miranda", "section-1983", "qualified-immunity
 holding: "A violation of the Miranda rules is not itself a violation of the Fifth Amendment and does not provide a basis for a § 1983 damages claim against the officer who took an un-Mirandized statement."
 lake:
   record_id: Vega v. Tekoh
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "consent", "co-occupant", "third-party-consen
 holding: "Randolph is limited to a PHYSICALLY PRESENT objector. Once the objecting occupant is lawfully removed (e.g., by arrest), the remaining…"
 lake:
   record_id: Fernandez v. California
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

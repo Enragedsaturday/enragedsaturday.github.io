@@ -34,7 +34,7 @@ tags: ["case", "brady", "exculpatory-evidence", "materiality", "disclosure"]
 holding: "Two load-bearing points: (1) materiality is assessed CUMULATIVELY — all suppressed evidence considered collectively, not item by item;…"
 lake:
   record_id: Kyles v. Whitley
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

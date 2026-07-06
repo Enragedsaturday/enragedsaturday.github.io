@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "community-caretaking", "home", "warrantless-
 holding: "There is NO freestanding 'community caretaking' exception authorizing warrantless entry into the HOME. Cady's caretaking rationale was…"
 lake:
   record_id: Caniglia v. Strom
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

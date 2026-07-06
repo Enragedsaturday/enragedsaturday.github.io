@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "automobile-exception", "ready-mobility", "pe
 holding: "No separate exigency requirement beyond ready mobility: if a car is readily mobile and PC exists to believe it contains contraband, the…"
 lake:
   record_id: Pennsylvania v. Labron
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

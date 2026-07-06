@@ -47,7 +47,7 @@ tags: ["case", "fourth-amendment", "search-incident-to-arrest", "automobile", "v
 holding: "New York v. Belton's rule permitting a vehicle search incident to an occupant's arrest applies even when the officer first makes contact after the arrestee has exited the vehicle — i.e., to a 'recent occupant' (later cabined by Arizona v. Gant's two-justification test)."
 lake:
   record_id: Thornton v. United States
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

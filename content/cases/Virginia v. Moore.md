@@ -38,7 +38,7 @@ tags: ["case", "fourth-amendment", "arrest", "search-incident-to-arrest", "exclu
 holding: "A warrantless arrest on probable cause for a crime committed in the officer's presence is reasonable under the Fourth Amendment even if state law forbade the arrest (requiring a summons); the search incident requires no additional justification, and a state-law-only violation does not trigger exclusion."
 lake:
   record_id: Virginia v. Moore
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

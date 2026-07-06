@@ -45,7 +45,7 @@ tags: ["case", "fifth-amendment", "miranda", "two-step", "unwarned-statement", "
 holding: "An initial, un-warned but voluntary statement does not automatically taint a later confession; if the suspect is then properly…"
 lake:
   record_id: Oregon v. Elstad
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

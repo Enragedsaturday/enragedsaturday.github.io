@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "search-incident-to-arrest", "home", "warrant
 holding: "Police may not search a home as incident to an arrest made outside it; a search is incident to arrest only if substantially contemporaneous with the arrest and confined to the immediate vicinity of the arrest."
 lake:
   record_id: Shipley v. California
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

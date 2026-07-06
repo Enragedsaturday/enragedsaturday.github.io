@@ -36,7 +36,7 @@ tags: ["case", "fourth-amendment", "terry-stop", "reasonable-suspicion"]
 holding: "An investigative stop and protective frisk require reasonable, articulable suspicion grounded in specific facts and rational inferences…"
 lake:
   record_id: Terry v. Ohio
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

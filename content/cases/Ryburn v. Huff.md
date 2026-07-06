@@ -36,7 +36,7 @@ tags: ["case", "fourth-amendment", "emergency-aid", "exigent-circumstances", "qu
 holding: "Officers may make a warrantless entry into a home when they have an objectively reasonable basis to fear that violence is imminent; viewed from the perspective of a reasonable officer making a split-second on-scene judgment (not with hindsight), such an entry is reasonable, and the officers here were entitled to qualified immunity."
 lake:
   record_id: Ryburn v. Huff
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

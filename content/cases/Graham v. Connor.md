@@ -34,7 +34,7 @@ tags: ["case", "fourth-amendment", "excessive-force", "section-1983", "objective
 holding: "Excessive-force § 1983 claims arising from an arrest, stop, or other seizure are analyzed under the Fourth Amendment's 'objective…"
 lake:
   record_id: Graham v. Connor
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 

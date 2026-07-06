@@ -45,7 +45,7 @@ tags: ["case", "fourth-amendment", "common-law-origins", "fifth-amendment", "his
 holding: "Recounts the founding history and adopts *Entick v. Carrington* as 'the true and ultimate expression of constitutional law' embodied in the Fourth Amendment."
 lake:
   record_id: Boyd v. United States
-  status: under_review
+  status: verified
   projected_at: 2026-07-06
 ---
 
