@@ -1,23 +1,28 @@
 ---
 title: "United States v. Vinton"
 type: case
-citation: "594 F.3d 14 (D.C. Cir. 2010)"
-parallel_cite: "389 U.S. App. D.C. 199"
-neutral_cite: ""
+citation: "594 F.3d 14 (2010)"
+parallel_cite: 389 U.S. App. D.C. 199
+neutral_cite: "2010 U.S. App. LEXIS 2450; 2010 WL 392347"
 court: "U.S. Court of Appeals, District of Columbia Circuit"
-court_level: circuit
-circuit: "D.C."
+court_level: coa
+circuit: D.C.
 year: 2010
 date_decided: 2010-02-05
 docket: ""
 authority_weight: "Binding in-circuit — D.C. Cir."
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: ""
-  by: []
+  field_i_validity: good_law
+  as_of_content: 2010-02-05
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: United States v. Vinton
+  varies_by_point: false
+  scope_note: "Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/187527/united-states-v-vinton/"
+  cluster_id: 187527
   opinion_id: 187527
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Michigan v. Long]]", "[[Arizona v. Gant]]", "[[Terry v. Ohio]]"]
 aliases: ["United States v. Vinton (D.C. Cir. 2010)"]
 tags: ["case", "fourth-amendment", "traffic-stop", "protective-search", "michigan-v-long", "arizona-v-gant", "dc-circuit"]
 holding: "Gant's 'secured arrestee' limitation does not abate a Michigan v. Long protective (Terry) vehicle search: the protective-search…"
+lake:
+  record_id: United States v. Vinton
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # United States v. Vinton

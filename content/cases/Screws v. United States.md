@@ -2,22 +2,27 @@
 title: "Screws v. United States"
 type: case
 citation: "325 U.S. 91 (1945)"
-parallel_cite: "65 S. Ct. 1031"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "65 S. Ct. 1031; 89 L. Ed. 1495; 162 A.L.R. 1330"
+neutral_cite: 1945 U.S. LEXIS 2096
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1945
 date_decided: 1945-05-07
-docket: "42"
+docket: 42
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Plurality (Douglas, J., announcing the judgment); the specific-intent construction of § 242 remains the controlling reading."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1945-05-07
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Screws v. United States
+  varies_by_point: false
+  scope_note: "Plurality (Douglas, J., announcing the judgment); the specific-intent construction of § 242 remains the controlling reading."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/104135/screws-v-united-states/"
+  cluster_id: 104135
   opinion_id: 104135
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Monroe v. Pape]]"]
 aliases: []
 tags: ["case", "civil-rights", "color-of-law", "section-242", "willfulness"]
 holding: "Construing 18 U.S.C. § 242 'willfully' — the criminal civil-rights statute requires a specific-intent (willful) deprivation of constitutional rights under color of law."
+lake:
+  record_id: Screws v. United States
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Screws v. United States

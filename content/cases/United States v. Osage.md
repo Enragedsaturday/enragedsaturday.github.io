@@ -1,23 +1,28 @@
 ---
 title: "United States v. Osage"
 type: case
-citation: "235 F.3d 518 (10th Cir. 2000)"
-parallel_cite: ""
-neutral_cite: ""
+citation: "235 F.3d 518 (2000)"
+parallel_cite: 2000 Colo. J. C.A.R. 6671
+neutral_cite: "2000 U.S. App. LEXIS 32020; 2000 WL 1842404"
 court: "U.S. Court of Appeals, 10th Circuit"
-court_level: circuit
-circuit: "10th"
+court_level: coa
+circuit: 10th
 year: 2000
 date_decided: 2000-12-15
 docket: ""
 authority_weight: "Binding in-circuit — 10th Cir."
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Good law. Applies and cabins Florida v. Jimeno: general consent does not authorize destroying a container."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 2000-12-15
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: United States v. Osage
+  varies_by_point: false
+  scope_note: "Good law. Applies and cabins Florida v. Jimeno: general consent does not authorize destroying a container."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/160502/united-states-v-osage/"
+  cluster_id: 160502
   opinion_id: 160502
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Florida v. Jimeno]]", "[[Schneckloth v. Bustamonte]]", "[[Georgia v
 aliases: ["United States v. David Blake Osage", "United States v. Osage (10th Cir. 2000)"]
 tags: ["case", "fourth-amendment", "consent-searches", "scope-of-consent", "containers", "tenth-circuit"]
 holding: "General consent to a search does not authorize an officer to destroy a container: before an officer may actually destroy or render completely useless a container otherwise within the scope of a permissive search, the officer must obtain explicit authorization or have some other lawful basis to proceed."
+lake:
+  record_id: United States v. Osage
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # United States v. Osage

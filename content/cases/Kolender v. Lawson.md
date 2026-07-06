@@ -2,9 +2,9 @@
 title: "Kolender v. Lawson"
 type: case
 citation: "461 U.S. 352 (1983)"
-parallel_cite: "103 S. Ct. 1855"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "103 S. Ct. 1855; 75 L. Ed. 2d 903; 51 U.S.L.W. 4532"
+neutral_cite: 1983 U.S. LEXIS 159
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1983
@@ -12,13 +12,18 @@ date_decided: 1983-05-02
 docket: ""
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Good law. A stop-and-identify statute requiring a suspect to provide 'credible and reliable' identification is void for vagueness (Fourteenth Amendment Due Process) because it gives police standardless discretion. Hiibel v. Sixth Judicial Dist. Court (2004) distinguished Kolender, upholding a narrower statute that required only that the suspect state his name."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1983-05-02
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Kolender v. Lawson
+  varies_by_point: false
+  scope_note: "Good law. A stop-and-identify statute requiring a suspect to provide 'credible and reliable' identification is void for vagueness (Fourteenth Amendment Due Process) because it gives police standardless discretion. Hiibel v. Sixth Judicial Dist. Court (2004) distinguished Kolender, upholding a narrower statute that required only that the suspect state his name."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/110926/kolender-v-lawson/"
-  opinion_id: 110926
+  cluster_id: 110926
+  opinion_id: 9429183
   identity_checked: true
 homes:
   - page: "[[Terry Stops and Reasonable Suspicion]]"
@@ -27,6 +32,10 @@ related: ["[[Terry v. Ohio]]", "[[Hiibel v. Sixth Judicial Dist. Court]]", "[[Br
 aliases: []
 tags: ["case", "fourth-amendment", "fourteenth-amendment", "stop-and-identify", "void-for-vagueness", "terry-stop"]
 holding: "A stop-and-identify statute that requires a detained suspect to provide 'credible and reliable' identification is unconstitutionally vague, because it vests police with standardless discretion to decide what satisfies it."
+lake:
+  record_id: Kolender v. Lawson
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Kolender v. Lawson

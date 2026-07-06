@@ -2,22 +2,27 @@
 title: "United States v. Ceccolini"
 type: case
 citation: "435 U.S. 268 (1978)"
-parallel_cite: "98 S. Ct. 1054"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "98 S. Ct. 1054; 55 L. Ed. 2d 268"
+neutral_cite: 1978 U.S. LEXIS 70
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1978
-date_decided: 1978-03-21
-docket: "76-1151"
+date_decided: 1978-12-05
+docket: 76-1151
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "The witness-attenuation factors remain the governing framework for suppressing live-witness testimony as a fruit; reaffirmed in the modern attenuation line."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1978-03-21
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: United States v. Ceccolini
+  varies_by_point: false
+  scope_note: "The witness-attenuation factors remain the governing framework for suppressing live-witness testimony as a fruit; reaffirmed in the modern attenuation line."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/109816/united-states-v-ceccolini/"
+  cluster_id: 109816
   opinion_id: 109816
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Wong Sun v. United States]]", "[[Brown v. Illinois]]", "[[Nardone v
 aliases: []
 tags: ["case", "fourth-amendment", "exclusionary-rule", "fruit-of-the-poisonous-tree", "attenuation", "live-witness"]
 holding: "Live-witness testimony is far less readily suppressed as a fruit of an illegal search than inanimate evidence; the exclusionary rule applies with much greater reluctance to the discovery of a willing witness."
+lake:
+  record_id: United States v. Ceccolini
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # United States v. Ceccolini

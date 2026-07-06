@@ -2,9 +2,9 @@
 title: "Mathews v. United States"
 type: case
 citation: "485 U.S. 58 (1988)"
-parallel_cite: "108 S. Ct. 883"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "108 S. Ct. 883; 99 L. Ed. 2d 54"
+neutral_cite: 1988 U.S. LEXIS 943
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1988
@@ -12,12 +12,17 @@ date_decided: 1988-02-24
 docket: ""
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: ""
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1988-02-24
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Mathews v. United States
+  varies_by_point: false
+  scope_note: "Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/112012/mathews-v-united-states/"
+  cluster_id: 112012
   opinion_id: 112012
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Sorrells v. United States]]", "[[Hampton v. United States]]", "[[Ja
 aliases: []
 tags: ["case", "entrapment", "affirmative-defense", "jury-instruction"]
 holding: "A defendant who denies one or more elements of the charged crime is nonetheless entitled to an entrapment instruction whenever there is…"
+lake:
+  record_id: Mathews v. United States
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Mathews v. United States

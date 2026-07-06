@@ -2,23 +2,28 @@
 title: "United States v. Dunn"
 type: case
 citation: "480 U.S. 294 (1987)"
-parallel_cite: "107 S. Ct. 1134"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "107 S. Ct. 1134; 94 L. Ed. 2d 326"
+neutral_cite: 1987 U.S. LEXIS 1057
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1987
-date_decided: 1987-03-03
-docket: "85-998"
+date_decided: 1987-04-20
+docket: 85-998
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Good law; the four-factor Dunn test remains the governing framework for determining the extent of a home's curtilage (applied in Jardines and Collins v. Virginia)."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1987-03-03
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: United States v. Dunn
+  varies_by_point: false
+  scope_note: "Good law; the four-factor Dunn test remains the governing framework for determining the extent of a home's curtilage (applied in Jardines and Collins v. Virginia)."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/111833/united-states-v-dunn/"
-  opinion_id: 111833
+  cluster_id: 111833
+  opinion_id: 9430862
   identity_checked: true
 homes:
   - page: "[[Curtilage]]"
@@ -27,6 +32,10 @@ related: ["[[Oliver v. United States]]", "[[California v. Ciraolo]]", "[[Hester 
 aliases: []
 tags: ["case", "fourth-amendment", "search", "curtilage", "open-fields", "home"]
 holding: "Curtilage is determined by four factors — proximity to the home, whether the area is within an enclosure surrounding the home, the nature of its use, and steps taken to shield it from observation — all bearing on whether the area is so intimately tied to the home as to fall under the home's Fourth Amendment umbrella."
+lake:
+  record_id: United States v. Dunn
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # United States v. Dunn

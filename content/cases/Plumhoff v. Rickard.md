@@ -1,23 +1,28 @@
 ---
 title: "Plumhoff v. Rickard"
 type: case
-citation: "572 U.S. 765 (2014)"
-parallel_cite: "134 S. Ct. 2012"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+citation: ""
+parallel_cite: "134 S. Ct. 2012; 188 L. Ed. 2d 1056; 82 U.S.L.W. 4394; 572 U.S. 765; 24 Fla. L. Weekly Fed. S 790"
+neutral_cite: "2014 U.S. LEXIS 3816; 2014 WL 2178335"
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 2014
 date_decided: 2014-05-27
-docket: "12-1117"
+docket: 12-1117
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Good law: deadly force to end a dangerous high-speed chase is reasonable; officers also had QI. Reasonableness is judged on the totality (consistent with Barnes v. Felix (2025))."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 2014-05-27
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Plumhoff v. Rickard
+  varies_by_point: false
+  scope_note: "Good law: deadly force to end a dangerous high-speed chase is reasonable; officers also had QI. Reasonableness is judged on the totality (consistent with Barnes v. Felix (2025))."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/2675750/plumhoff-v-rickard/"
+  cluster_id: 2675750
   opinion_id: 2675750
   identity_checked: true
 homes:
@@ -29,6 +34,10 @@ related: ["[[Scott v. Harris]]", "[[Graham v. Connor]]", "[[Mullenix v. Luna]]"]
 aliases: []
 tags: ["case", "use-of-force", "deadly-force", "high-speed-chase", "qualified-immunity", "section-1983"]
 holding: "Using deadly force to end a dangerous high-speed chase is reasonable under the Fourth Amendment, and officers need not stop shooting until the threat ends; even if it were unreasonable, the officers would be entitled to qualified immunity."
+lake:
+  record_id: Plumhoff v. Rickard
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Plumhoff v. Rickard

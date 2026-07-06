@@ -2,22 +2,27 @@
 title: "Gardner v. Broderick"
 type: case
 citation: "392 U.S. 273 (1968)"
-parallel_cite: "88 S. Ct. 1913"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "88 S. Ct. 1913; 20 L. Ed. 2d 1082"
+neutral_cite: 1968 U.S. LEXIS 1351
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1968
 date_decided: 1968-06-10
-docket: "635"
+docket: 635
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Good law; the Garrity companion drawing the line between firing an employee for asserting the privilege (barred) and compelling job-related answers under use immunity (permitted)."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1968-06-10
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Gardner v. Broderick
+  varies_by_point: false
+  scope_note: "Good law; the Garrity companion drawing the line between firing an employee for asserting the privilege (barred) and compelling job-related answers under use immunity (permitted)."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/107738/gardner-v-broderick/"
+  cluster_id: 107738
   opinion_id: 107738
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Garrity v. New Jersey]]", "[[Lefkowitz v. Turley]]", "[[Kalkines v.
 aliases: []
 tags: ["case", "fifth-amendment", "self-incrimination", "public-employee", "garrity", "immunity-waiver"]
 holding: "A public employee (here a police officer) may not be dismissed solely for refusing to waive his Fifth Amendment immunity; but he may be required to answer questions specifically, directly, and narrowly related to his official duties under a grant of use immunity, and discharged if he refuses to answer those."
+lake:
+  record_id: Gardner v. Broderick
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Gardner v. Broderick

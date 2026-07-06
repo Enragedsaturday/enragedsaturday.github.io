@@ -1,25 +1,30 @@
 ---
 title: "Entick v. Carrington"
 type: case
-citation: "19 How. St. Tr. 1029 (C.P. 1765)"
-parallel_cite: "95 Eng. Rep. 807; 2 Wils. K.B. 275"
-neutral_cite: "[1765] EWHC KB J98"
+citation: ""
+parallel_cite: ""
+neutral_cite: ""
 court: "Court of Common Pleas (England)"
 court_level: other
 circuit: ""
 year: 1765
 date_decided: 1765-11-02
 docket: ""
-authority_weight: "Historical"
+authority_weight: Historical
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Historical (English origin). Still cited as a foundational source of the Fourth Amendment — the principle that government intrusion on private property and papers requires positive legal authority, and the condemnation of general warrants. Identity confirmed via the authoritative reports (Howell's State Trials; English Reports), not CourtListener (no CL record)."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1765-11-02
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Entick v. Carrington
+  varies_by_point: false
+  scope_note: "Historical (English origin). Still cited as a foundational source of the Fourth Amendment — the principle that government intrusion on private property and papers requires positive legal authority, and the condemnation of general warrants. Identity confirmed via the authoritative reports (Howell's State Trials; English Reports), not CourtListener (no CL record)."
+  point_overrides: []
 courtlistener:
   opinion_url: ""
+  cluster_id: null
   opinion_id: null
-  identity_checked: true
+  identity_checked: false
 homes:
   - page: "[[Common Law Origins]]"
     role: "Key — Anchor (foundational origin)"
@@ -29,6 +34,10 @@ related: ["[[Wilkes v. Wood]]", "[[Boyd v. United States]]", "[[Katz v. United S
 aliases: []
 tags: ["case", "historical", "common-law-origins", "general-warrant", "fourth-amendment", "trespass", "english-origins"]
 holding: "A Secretary of State's general warrant to break into a home and seize the owner's books and papers in search of seditious libel is illegal: under the law of England every invasion of private property is a trespass requiring positive legal authority, and no such authority existed for this search and seizure."
+lake:
+  record_id: Entick v. Carrington
+  status: not_found
+  projected_at: 2026-07-06
 ---
 
 # Entick v. Carrington

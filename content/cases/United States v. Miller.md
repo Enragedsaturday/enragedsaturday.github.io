@@ -2,23 +2,28 @@
 title: "United States v. Miller"
 type: case
 citation: "425 U.S. 435 (1976)"
-parallel_cite: "96 S. Ct. 1619"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "96 S. Ct. 1619; 48 L. Ed. 2d 71; 37 A.F.T.R.2d (RIA) 1261"
+neutral_cite: 1976 U.S. LEXIS 148
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1976
 date_decided: 1976-04-21
-docket: "74-1179"
+docket: 74-1179
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Foundational third-party-doctrine case (bank records); remains good law. Carpenter v. United States (2018) declined to extend the third-party doctrine to cell-site location information but expressly did not overrule Miller."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1976-04-21
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: United States v. Miller
+  varies_by_point: false
+  scope_note: "Foundational third-party-doctrine case (bank records); remains good law. Carpenter v. United States (2018) declined to extend the third-party doctrine to cell-site location information but expressly did not overrule Miller."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/109433/united-states-v-miller/"
-  opinion_id: 109433
+  cluster_id: 109433
+  opinion_id: 9426375
   identity_checked: true
 homes:
   - page: "[[The Third-Party Doctrine and Digital Surveillance]]"
@@ -27,6 +32,10 @@ related: ["[[Smith v. Maryland]]", "[[Carpenter v. United States]]", "[[Katz v. 
 aliases: []
 tags: ["case", "fourth-amendment", "search", "third-party-doctrine", "bank-records", "standing"]
 holding: "No legitimate expectation of privacy in bank records (checks, deposit slips) voluntarily conveyed to a bank; a depositor assumes the risk the bank will disclose them to the government (third-party doctrine)."
+lake:
+  record_id: United States v. Miller
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # United States v. Miller

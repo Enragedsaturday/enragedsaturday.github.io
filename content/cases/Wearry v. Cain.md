@@ -1,10 +1,10 @@
 ---
 title: "Wearry v. Cain"
 type: case
-citation: "577 U.S. 385 (2016)"
-parallel_cite: "136 S. Ct. 1002"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+citation: ""
+parallel_cite: "577 U.S. 385; 136 S. Ct. 1002; 194 L. Ed. 2d 78; 84 U.S.L.W. 4125; 26 Fla. L. Weekly Fed. S 17"
+neutral_cite: "2016 U.S. LEXIS 1654; 2016 WL 854158"
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 2016
@@ -12,12 +12,17 @@ date_decided: 2016-03-07
 docket: ""
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Per curiam; reaffirms cumulative Brady materiality. Good law."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 2016-03-07
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Wearry v. Cain
+  varies_by_point: false
+  scope_note: "Per curiam; reaffirms cumulative Brady materiality. Good law."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/3183098/wearry-v-cain/"
+  cluster_id: 3183098
   opinion_id: 3183080
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Brady v. Maryland]]", "[[Kyles v. Whitley]]", "[[Smith v. Cain]]", 
 aliases: ["Wearry"]
 tags: ["case", "due-process", "brady", "materiality", "impeachment", "per-curiam"]
 holding: "Reaffirms cumulative *Brady* materiality: suppressed evidence assessed collectively undermined confidence in the verdict."
+lake:
+  record_id: Wearry v. Cain
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Wearry v. Cain

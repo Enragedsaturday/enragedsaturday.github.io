@@ -2,22 +2,27 @@
 title: "Scott v. Harris"
 type: case
 citation: "550 U.S. 372 (2007)"
-parallel_cite: "127 S. Ct. 1769"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "127 S. Ct. 1769; 167 L. Ed. 2d 686"
+neutral_cite: 2007 U.S. LEXIS 4748
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 2007
 date_decided: 2007-04-30
-docket: "05-1631"
+docket: 05-1631
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Reads Tennessee v. Garner as an application of Graham reasonableness, not a rigid test."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 2007-04-30
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Scott v. Harris
+  varies_by_point: false
+  scope_note: "Reads Tennessee v. Garner as an application of Graham reasonableness, not a rigid test."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/145738/scott-v-harris/"
+  cluster_id: 145738
   opinion_id: 145738
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Tennessee v. Garner]]", "[[Graham v. Connor]]"]
 aliases: []
 tags: ["case", "fourth-amendment", "use-of-force", "seizure", "section-1983"]
 holding: "*Garner* is not a rigid separate test but 'simply an application' of *Graham* reasonableness — no 'magical on/off switch'; ramming a fleeing motorist who endangered the public was reasonable."
+lake:
+  record_id: Scott v. Harris
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Scott v. Harris

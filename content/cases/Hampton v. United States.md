@@ -2,9 +2,9 @@
 title: "Hampton v. United States"
 type: case
 citation: "425 U.S. 484 (1976)"
-parallel_cite: "96 S. Ct. 1646"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "96 S. Ct. 1646; 48 L. Ed. 2d 113"
+neutral_cite: 1976 U.S. LEXIS 49
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1976
@@ -12,13 +12,18 @@ date_decided: 1976-04-27
 docket: ""
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Plurality opinion (Rehnquist, J.); Powell & Blackmun concurred in the judgment on narrower grounds."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1976-04-27
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Hampton v. United States
+  varies_by_point: false
+  scope_note: "Plurality opinion (Rehnquist, J.); Powell & Blackmun concurred in the judgment on narrower grounds."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/109437/hampton-v-united-states/"
-  opinion_id: 109437
+  cluster_id: 109437
+  opinion_id: 9426380
   identity_checked: true
 homes:
   - page: "[[Entrapment]]"
@@ -27,6 +32,10 @@ related: ["[[United States v. Russell]]", "[[Sorrells v. United States]]", "[[Sh
 aliases: ["Hampton v. US"]
 tags: ["case", "entrapment", "due-process", "predisposition", "outrageous-government-conduct"]
 holding: "Neither the entrapment defense nor the Due Process Clause bars conviction of a PREDISPOSED defendant even where a government agent…"
+lake:
+  record_id: Hampton v. United States
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Hampton v. United States

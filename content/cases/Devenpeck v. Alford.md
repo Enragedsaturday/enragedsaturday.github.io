@@ -2,9 +2,9 @@
 title: "Devenpeck v. Alford"
 type: case
 citation: "543 U.S. 146 (2004)"
-parallel_cite: "125 S. Ct. 588"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "125 S. Ct. 588; 160 L. Ed. 2d 537"
+neutral_cite: 2004 U.S. LEXIS 8272
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 2004
@@ -12,12 +12,17 @@ date_decided: 2004-12-13
 docket: ""
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: ""
-  by: []
+  field_i_validity: good_law
+  as_of_content: 2004-12-13
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Devenpeck v. Alford
+  varies_by_point: false
+  scope_note: "Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/137733/devenpeck-v-alford/"
+  cluster_id: 137733
   opinion_id: 137733
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Whren v. United States]]", "[[District of Columbia v. Wesby]]", "[[
 aliases: []
 tags: ["case", "fourth-amendment", "probable-cause", "arrest", "objective-standard", "closely-related-offense"]
 holding: "An arrest is lawful so long as the known facts give probable cause for SOME criminal offense; the offense need not be the one the…"
+lake:
+  record_id: Devenpeck v. Alford
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Devenpeck v. Alford

@@ -2,22 +2,27 @@
 title: "McNabb v. United States"
 type: case
 citation: "318 U.S. 332 (1943)"
-parallel_cite: "63 S. Ct. 608"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "63 S. Ct. 608; 87 L. Ed. 819"
+neutral_cite: 1943 U.S. LEXIS 1280
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1943
 date_decided: 1943-06-07
-docket: "25"
+docket: 25
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Good law as the 'McNabb' half of the McNabb-Mallory federal prompt-presentment rule. A federal supervisory-power / Rule 5(a) rule, not a constitutional rule binding the States; later modified — not supplanted — by 18 U.S.C. §3501, per Corley v. United States."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1943-06-07
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: McNabb v. United States
+  varies_by_point: false
+  scope_note: "Good law as the 'McNabb' half of the McNabb-Mallory federal prompt-presentment rule. A federal supervisory-power / Rule 5(a) rule, not a constitutional rule binding the States; later modified — not supplanted — by 18 U.S.C. §3501, per Corley v. United States."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/103791/mcnabb-v-united-states/"
+  cluster_id: 103791
   opinion_id: 103791
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Mallory v. United States]]", "[[Corley v. United States]]", "[[Gers
 aliases: []
 tags: ["case", "fifth-amendment", "confessions", "mcnabb-mallory", "prompt-presentment", "supervisory-power", "federal"]
 holding: "Under the Court's supervisory power over the federal courts, confessions obtained from federal arrestees during a prolonged detention conducted in flagrant disregard of the statutory duty to bring them promptly before a committing magistrate are inadmissible — independent of the Constitution."
+lake:
+  record_id: McNabb v. United States
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # McNabb v. United States

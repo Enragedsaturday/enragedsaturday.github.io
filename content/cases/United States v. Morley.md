@@ -1,23 +1,28 @@
 ---
 title: "United States v. Morley"
 type: case
-citation: "99 F.4th 1328 (11th Cir. 2024)"
+citation: "99 F.4th 1328 (2024)"
 parallel_cite: ""
 neutral_cite: ""
 court: "U.S. Court of Appeals, Eleventh Circuit"
-court_level: circuit
-circuit: "11th"
+court_level: coa
+circuit: 11th
 year: 2024
 date_decided: 2024-04-30
-docket: "22-12988"
+docket: 22-12988
 authority_weight: "Binding in-circuit — 11th Cir."
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: ""
-  by: []
+  field_i_validity: good_law
+  as_of_content: 2024-04-30
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: United States v. Morley
+  varies_by_point: false
+  scope_note: "Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/9498175/united-states-v-derrick-alfondso-morley/"
+  cluster_id: 9498175
   opinion_id: 9964788
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Carroll v. United States]]", "[[United States v. Ross]]", "[[Califo
 aliases: ["United States v. Morley (11th Cir. 2024)"]
 tags: ["case", "fourth-amendment", "automobile-exception", "vehicle-search", "probable-cause", "eleventh-circuit"]
 holding: "Recites the modern two-element formulation of the automobile exception: a warrantless vehicle search is permitted if (1) the vehicle is…"
+lake:
+  record_id: United States v. Morley
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # United States v. Morley

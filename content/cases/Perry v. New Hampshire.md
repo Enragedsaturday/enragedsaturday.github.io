@@ -1,24 +1,29 @@
 ---
 title: "Perry v. New Hampshire"
 type: case
-citation: "565 U.S. 228 (2012)"
-parallel_cite: "132 S. Ct. 716"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+citation: ""
+parallel_cite: "181 L. Ed. 2d 694; 132 S. Ct. 716; 565 U.S. 228; 23 Fla. L. Weekly Fed. S 60; 80 U.S.L.W. 4073"
+neutral_cite: "2012 U.S. LEXIS 579; 2012 WL 75048"
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 2012
 date_decided: 2012-01-11
-docket: "10-8974"
+docket: 10-8974
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: ""
-  by: []
+  field_i_validity: good_law
+  as_of_content: 2012-01-11
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Perry v. New Hampshire
+  varies_by_point: false
+  scope_note: "Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade."
+  point_overrides: []
 courtlistener:
-  opinion_url: "https://www.courtlistener.com/opinion/620671/perry-v-new-hampshire/"
-  opinion_id: 620671
+  opinion_url: "https://www.courtlistener.com/opinion/7350294/perry-v-new-hampshire/"
+  cluster_id: 7350294
+  opinion_id: 7268276
   identity_checked: true
 homes:
   - page: "[[Eyewitness Identification]]"
@@ -27,6 +32,10 @@ related: ["[[Manson v. Brathwaite]]", "[[Neil v. Biggers]]", "[[United States v.
 aliases: []
 tags: ["case", "due-process", "eyewitness-identification", "suggestive-identification", "reliability"]
 holding: "The Due Process Clause requires a preliminary judicial screening of eyewitness-identification reliability ONLY when the suggestive…"
+lake:
+  record_id: Perry v. New Hampshire
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Perry v. New Hampshire

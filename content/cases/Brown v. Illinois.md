@@ -2,22 +2,27 @@
 title: "Brown v. Illinois"
 type: case
 citation: "422 U.S. 590 (1975)"
-parallel_cite: "95 S. Ct. 2254"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "95 S. Ct. 2254; 45 L. Ed. 2d 416"
+neutral_cite: 1975 U.S. LEXIS 82
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1975
 date_decided: 1975-06-26
-docket: "73-6650"
+docket: 73-6650
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Attenuation factors remain the governing test; applied in Utah v. Strieff."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1975-06-26
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Brown v. Illinois
+  varies_by_point: false
+  scope_note: "Attenuation factors remain the governing test; applied in Utah v. Strieff."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/109304/brown-v-illinois/"
+  cluster_id: 109304
   opinion_id: 109304
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Wong Sun v. United States]]", "[[Utah v. Strieff]]", "[[Dunaway v. 
 aliases: []
 tags: ["case", "fourth-amendment", "exclusionary-rule", "attenuation", "fruit-of-the-poisonous-tree"]
 holding: "Sets out the attenuation factors: temporal proximity, intervening circumstances, and the purpose and flagrancy of the official…"
+lake:
+  record_id: Brown v. Illinois
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Brown v. Illinois

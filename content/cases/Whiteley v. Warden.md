@@ -2,23 +2,28 @@
 title: "Whiteley v. Warden"
 type: case
 citation: "401 U.S. 560 (1971)"
-parallel_cite: "91 S. Ct. 1031"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "91 S. Ct. 1031; 28 L. Ed. 2d 306; 58 Ohio Op. 2d 434"
+neutral_cite: 1971 U.S. LEXIS 65
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1971
 date_decided: 1971-03-29
-docket: "351"
+docket: 351
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Collective-knowledge rule reaffirmed in United States v. Hensley (1985); good law. Cf. Herring v. United States (2009) on good-faith reliance on another agency's records."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1971-03-29
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Whiteley v. Warden
+  varies_by_point: false
+  scope_note: "Collective-knowledge rule reaffirmed in United States v. Hensley (1985); good law. Cf. Herring v. United States (2009) on good-faith reliance on another agency's records."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/108297/whiteley-v-warden-wyoming-state-penitentiary/"
-  opinion_id: 108297
+  cluster_id: 108297
+  opinion_id: 9424493
   identity_checked: true
 homes:
   - page: "[[Collective Knowledge and the Fellow-Officer Rule]]"
@@ -27,6 +32,10 @@ related: ["[[United States v. Hensley]]", "[[Herring v. United States]]", "[[Map
 aliases: ["Whiteley v. Warden, Wyoming State Penitentiary", "Whiteley"]
 tags: ["case", "fourth-amendment", "collective-knowledge", "fellow-officer-rule", "probable-cause", "radio-bulletin"]
 holding: "An officer may act on the strength of a police radio bulletin and assume the issuing officer had probable cause. But where the issuing…"
+lake:
+  record_id: Whiteley v. Warden
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Whiteley v. Warden

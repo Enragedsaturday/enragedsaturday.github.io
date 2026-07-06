@@ -2,23 +2,28 @@
 title: "United States v. Jones"
 type: case
 citation: "565 U.S. 400 (2012)"
-parallel_cite: "132 S. Ct. 945"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "132 S. Ct. 945; 181 L. Ed. 2d 911"
+neutral_cite: 2012 U.S. LEXIS 1063
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 2012
 date_decided: 2012-01-23
-docket: "10-1259"
+docket: 10-1259
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: ""
-  by: []
+  field_i_validity: good_law
+  as_of_content: 2012-01-23
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: United States v. Jones
+  varies_by_point: false
+  scope_note: "Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade."
+  point_overrides: []
 courtlistener:
-  opinion_url: "https://www.courtlistener.com/opinion/7350871/united-states-v-jones/"
-  opinion_id: 7268856
+  opinion_url: "https://www.courtlistener.com/opinion/622304/united-states-v-jones/"
+  cluster_id: 622304
+  opinion_id: 9485324
   identity_checked: true
 homes:
   - page: "[[Two Definitions of Search]]"
@@ -27,6 +32,10 @@ related: ["[[Katz v. United States]]", "[[Carpenter v. United States]]", "[[Flor
 aliases: ["United States v. Jones (2012)", "United States v. Antoine Jones"]
 tags: ["case", "fourth-amendment", "search-definition", "trespass-theory", "gps-tracking", "physical-intrusion"]
 holding: "Installing a GPS tracker on a vehicle and monitoring it was a search under the revived trespass theory — physical intrusion on an 'effect' to obtain information; the controlling modern trespass-search case."
+lake:
+  record_id: United States v. Jones
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # United States v. Jones

@@ -2,22 +2,27 @@
 title: "Lynumn v. Illinois"
 type: case
 citation: "372 U.S. 528 (1963)"
-parallel_cite: "83 S. Ct. 917"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "83 S. Ct. 917; 9 L. Ed. 2d 922"
+neutral_cite: 1963 U.S. LEXIS 1907
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1963
 date_decided: 1963-03-25
-docket: "9"
+docket: 9
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Good law; a leading totality-of-circumstances coercion case — threats to cut off welfare aid and take a suspect's children render a confession involuntary."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1963-03-25
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Lynumn v. Illinois
+  varies_by_point: false
+  scope_note: "Good law; a leading totality-of-circumstances coercion case — threats to cut off welfare aid and take a suspect's children render a confession involuntary."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/106558/lynumn-v-illinois/"
+  cluster_id: 106558
   opinion_id: 106558
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Brown v. Mississippi]]", "[[Chambers v. Florida]]", "[[Spano v. New
 aliases: []
 tags: ["case", "fifth-amendment", "fourteenth-amendment", "confessions", "voluntariness", "due-process", "coercion"]
 holding: "A confession is involuntary and coerced where police obtain it by threatening that the suspect will lose state financial aid for her children and have her children taken away unless she cooperates, given to a person with no prior criminal experience, alone and encircled by officers."
+lake:
+  record_id: Lynumn v. Illinois
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Lynumn v. Illinois

@@ -2,22 +2,27 @@
 title: "Brendlin v. California"
 type: case
 citation: "551 U.S. 249 (2007)"
-parallel_cite: "127 S. Ct. 2400"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "127 S. Ct. 2400; 168 L. Ed. 2d 132"
+neutral_cite: 2007 U.S. LEXIS 7897
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 2007
 date_decided: 2007-06-18
-docket: "06-8120"
+docket: 06-8120
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: ""
-  by: []
+  field_i_validity: good_law
+  as_of_content: 2007-06-18
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Brendlin v. California
+  varies_by_point: false
+  scope_note: "Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/145712/brendlin-v-california/"
+  cluster_id: 145712
   opinion_id: 145712
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Rakas v. Illinois]]", "[[Delaware v. Prouse]]", "[[California v. Ho
 aliases: []
 tags: ["case", "fourth-amendment", "standing", "traffic-stop", "seizure", "passenger"]
 holding: "When a vehicle is stopped, a passenger is seized just as the driver is, and so may challenge the constitutionality of the stop."
+lake:
+  record_id: Brendlin v. California
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Brendlin v. California

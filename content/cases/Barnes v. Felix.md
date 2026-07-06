@@ -2,23 +2,28 @@
 title: "Barnes v. Felix"
 type: case
 citation: "605 U.S. 73 (2025)"
-parallel_cite: "145 S. Ct. 1353"
+parallel_cite: ""
 neutral_cite: ""
-court: "U.S. Supreme Court"
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 2025
 date_decided: 2025-05-15
-docket: "23-1239"
+docket: 23-1239
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Good law (2025, unanimous): excessive-force reasonableness is judged on the totality of the circumstances with no 'moment of threat' time limit. Slip opinion subject to formal revision."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 2025-05-15
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Barnes v. Felix
+  varies_by_point: false
+  scope_note: "Good law (2025, unanimous): excessive-force reasonableness is judged on the totality of the circumstances with no 'moment of threat' time limit. Slip opinion subject to formal revision."
+  point_overrides: []
 courtlistener:
-  opinion_url: "https://www.courtlistener.com/opinion/10584846/barnes-v-felix/"
-  opinion_id: 11051434
+  opinion_url: "https://www.courtlistener.com/opinion/10776852/barnes-v-felix/"
+  cluster_id: 10776852
+  opinion_id: 11243439
   identity_checked: true
 homes:
   - page: "[[Use of Force]]"
@@ -29,6 +34,10 @@ related: ["[[Graham v. Connor]]", "[[Tennessee v. Garner]]", "[[Plumhoff v. Rick
 aliases: []
 tags: ["case", "use-of-force", "deadly-force", "totality-of-circumstances", "moment-of-threat", "section-1983"]
 holding: "Excessive-force reasonableness under the Fourth Amendment is judged on the totality of the circumstances, which has no time limit; the 'moment of threat' rule that ignores the events leading up to the use of force is rejected."
+lake:
+  record_id: Barnes v. Felix
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Barnes v. Felix

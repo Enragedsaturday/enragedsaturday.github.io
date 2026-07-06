@@ -2,22 +2,27 @@
 title: "Cone v. Bell"
 type: case
 citation: "556 U.S. 449 (2009)"
-parallel_cite: "129 S. Ct. 1769"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "129 S. Ct. 1769; 173 L. Ed. 2d 701"
+neutral_cite: 2009 U.S. LEXIS 3298
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 2009
 date_decided: 2009-04-28
-docket: "07-1114"
+docket: 07-1114
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Good law. Confirms Brady's disclosure duty reaches evidence material to punishment, not just guilt, and that a state court's mistaken 'previously determined' ruling does not procedurally bar federal habeas review of the Brady claim."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 2009-04-28
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Cone v. Bell
+  varies_by_point: false
+  scope_note: "Good law. Confirms Brady's disclosure duty reaches evidence material to punishment, not just guilt, and that a state court's mistaken 'previously determined' ruling does not procedurally bar federal habeas review of the Brady claim."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/145883/cone-v-bell/"
+  cluster_id: 145883
   opinion_id: 145883
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Brady v. Maryland]]", "[[United States v. Bagley]]", "[[Kyles v. Wh
 aliases: []
 tags: ["case", "brady", "giglio", "materiality", "sentencing", "procedural-default", "due-process", "capital"]
 holding: "Brady's disclosure obligation extends to evidence material to punishment as well as guilt; a state court's mistaken belief that a claim was 'previously determined' does not bar federal habeas review. Although the suppressed drug-impairment evidence was not material to guilt, the lower courts failed to assess its materiality to the death sentence, requiring remand."
+lake:
+  record_id: Cone v. Bell
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Cone v. Bell

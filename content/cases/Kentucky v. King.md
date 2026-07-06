@@ -2,22 +2,27 @@
 title: "Kentucky v. King"
 type: case
 citation: "563 U.S. 452 (2011)"
-parallel_cite: "131 S. Ct. 1849"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "131 S. Ct. 1849; 179 L. Ed. 2d 865"
+neutral_cite: 2011 U.S. LEXIS 3541
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 2011
 date_decided: 2011-05-16
-docket: "09-1272"
+docket: 09-1272
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: ""
-  by: []
+  field_i_validity: good_law
+  as_of_content: 2011-05-16
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Kentucky v. King
+  varies_by_point: false
+  scope_note: "Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/216733/kentucky-v-king/"
+  cluster_id: 216733
   opinion_id: 216733
   identity_checked: true
 homes:
@@ -31,6 +36,10 @@ related: ["[[Brigham City v. Stuart]]", "[[Lange v. California]]", "[[Payton v. 
 aliases: []
 tags: ["case", "fourth-amendment", "exigent-circumstances", "police-created-exigency", "destruction-of-evidence"]
 holding: "The exigent-circumstances rule applies even where police 'created' the exigency, SO LONG AS the police did not create it by engaging or…"
+lake:
+  record_id: Kentucky v. King
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Kentucky v. King

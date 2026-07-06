@@ -2,9 +2,9 @@
 title: "Maryland v. Macon"
 type: case
 citation: "472 U.S. 463 (1985)"
-parallel_cite: "105 S. Ct. 2778"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "105 S. Ct. 2778; 86 L. Ed. 2d 370; 53 U.S.L.W. 4783"
+neutral_cite: 1985 U.S. LEXIS 110
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1985
@@ -12,13 +12,18 @@ date_decided: 1985-06-17
 docket: ""
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Good law; an undercover over-the-counter purchase of materials exposed for public sale is neither a search nor a seizure."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1985-06-17
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Maryland v. Macon
+  varies_by_point: false
+  scope_note: "Good law; an undercover over-the-counter purchase of materials exposed for public sale is neither a search nor a seizure."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/111477/maryland-v-macon/"
-  opinion_id: 111477
+  cluster_id: 111477
+  opinion_id: 9430099
   identity_checked: true
 homes:
   - page: "[[Two Definitions of Search]]"
@@ -29,6 +34,10 @@ related: ["[[United States v. Jacobsen]]", "[[Lo-Ji Sales, Inc. v. New York]]"]
 aliases: ["Maryland v. MacOn"]
 tags: ["case", "fourth-amendment", "search", "seizure", "undercover", "first-amendment-materials"]
 holding: "An undercover officer's purchase of magazines from a public store is neither a search (no REP in wares exposed to the public) nor a seizure (the seller voluntarily transferred possession)."
+lake:
+  record_id: Maryland v. Macon
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Maryland v. Macon

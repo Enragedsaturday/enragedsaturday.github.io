@@ -2,23 +2,28 @@
 title: "California v. Carney"
 type: case
 citation: "471 U.S. 386 (1985)"
-parallel_cite: "105 S. Ct. 2066"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "105 S. Ct. 2066; 85 L. Ed. 2d 406; 53 U.S.L.W. 4521"
+neutral_cite: 1985 U.S. LEXIS 8
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1985
 date_decided: 1985-05-13
-docket: "83-859"
+docket: 83-859
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: ""
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1985-05-13
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: California v. Carney
+  varies_by_point: false
+  scope_note: "Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/111423/california-v-carney/"
-  opinion_id: 111423
+  cluster_id: 111423
+  opinion_id: 9430011
   identity_checked: true
 homes:
   - page: "[[Automobile Exception]]"
@@ -27,6 +32,10 @@ related: ["[[Carroll v. United States]]", "[[United States v. Ross]]", "[[Califo
 aliases: []
 tags: ["case", "fourth-amendment", "automobile-exception", "motor-home", "mobility"]
 holding: "The automobile exception applies to a motor home being used as a vehicle, and articulates the exception's TWO justifications: (1) ready…"
+lake:
+  record_id: California v. Carney
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # California v. Carney

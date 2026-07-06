@@ -1,23 +1,28 @@
 ---
 title: "Banks v. Dretke"
 type: case
-citation: "540 U.S. 668 (2004)"
-parallel_cite: "124 S. Ct. 1256"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+citation: ""
+parallel_cite: "540 U.S. 668; 124 S. Ct. 1256; 157 L. Ed. 2d 1166; 72 U.S.L.W. 4193; 17 Fla. L. Weekly Fed. S 153"
+neutral_cite: 2004 U.S. LEXIS 1621
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 2004
 date_decided: 2004-02-24
-docket: "02-8286"
+docket: 02-8286
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Good law. Reaffirms the Strickler three-component Brady test and holds the State cannot present an informant as a witness while concealing his informant status; a defendant's failure to ferret out concealed Brady material does not forfeit the claim."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 2004-02-24
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Banks v. Dretke
+  varies_by_point: false
+  scope_note: "Good law. Reaffirms the Strickler three-component Brady test and holds the State cannot present an informant as a witness while concealing his informant status; a defendant's failure to ferret out concealed Brady material does not forfeit the claim."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/131165/banks-v-dretke/"
+  cluster_id: 131165
   opinion_id: 131165
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Brady v. Maryland]]", "[[Strickler v. Greene]]", "[[Giglio v. Unite
 aliases: []
 tags: ["case", "brady", "giglio", "impeachment-evidence", "informant", "prosecutorial-misconduct", "due-process"]
 holding: "A Brady violation occurred where the State withheld that a key prosecution witness was a paid police informant and affirmatively represented it had disclosed everything; a defendant who reasonably relies on the prosecution's representations does not forfeit the claim by failing to discover the concealed evidence — 'prosecutor may hide, defendant must seek' is not tenable."
+lake:
+  record_id: Banks v. Dretke
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Banks v. Dretke

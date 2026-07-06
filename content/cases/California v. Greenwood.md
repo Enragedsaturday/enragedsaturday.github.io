@@ -2,23 +2,28 @@
 title: "California v. Greenwood"
 type: case
 citation: "486 U.S. 35 (1988)"
-parallel_cite: "108 S. Ct. 1625"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "108 S. Ct. 1625; 100 L. Ed. 2d 30; 56 U.S.L.W. 4409"
+neutral_cite: 1988 U.S. LEXIS 2279
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1988
 date_decided: 1988-05-16
-docket: "86-684"
+docket: 86-684
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: ""
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1988-05-16
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: California v. Greenwood
+  varies_by_point: false
+  scope_note: "Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/112067/california-v-greenwood/"
-  opinion_id: 112067
+  cluster_id: 112067
+  opinion_id: 9431296
   identity_checked: true
 homes:
   - page: "[[Abandonment]]"
@@ -27,6 +32,10 @@ related: ["[[Abel v. United States]]", "[[Katz v. United States]]", "[[Californi
 aliases: []
 tags: ["case", "fourth-amendment", "abandonment", "garbage", "expectation-of-privacy"]
 holding: "No reasonable expectation of privacy in garbage bags left for collection at the curb, outside the curtilage; warrantless search/seizure of curbside trash does not violate the 4A."
+lake:
+  record_id: California v. Greenwood
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # California v. Greenwood

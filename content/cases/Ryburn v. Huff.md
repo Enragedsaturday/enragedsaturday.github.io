@@ -2,22 +2,27 @@
 title: "Ryburn v. Huff"
 type: case
 citation: "565 U.S. 469 (2012)"
-parallel_cite: "132 S. Ct. 987"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "132 S. Ct. 987; 181 L. Ed. 2d 966"
+neutral_cite: 2012 U.S. LEXIS 910
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 2012
 date_decided: 2012-01-23
-docket: "11-208"
+docket: 11-208
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Per curiam. Good law; consistent with the emergency-aid line and the qualified-immunity 'reasonable officer on the scene' standard."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 2012-01-23
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Ryburn v. Huff
+  varies_by_point: false
+  scope_note: "Per curiam. Good law; consistent with the emergency-aid line and the qualified-immunity 'reasonable officer on the scene' standard."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/622303/ryburn-v-huff/"
+  cluster_id: 622303
   opinion_id: 622303
   identity_checked: true
 homes:
@@ -29,6 +34,10 @@ related: ["[[Brigham City v. Stuart]]", "[[Michigan v. Fisher]]", "[[Graham v. C
 aliases: []
 tags: ["case", "fourth-amendment", "emergency-aid", "exigent-circumstances", "qualified-immunity", "section-1983"]
 holding: "Officers may make a warrantless entry into a home when they have an objectively reasonable basis to fear that violence is imminent; viewed from the perspective of a reasonable officer making a split-second on-scene judgment (not with hindsight), such an entry is reasonable, and the officers here were entitled to qualified immunity."
+lake:
+  record_id: Ryburn v. Huff
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Ryburn v. Huff

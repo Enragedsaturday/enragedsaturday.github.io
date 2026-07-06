@@ -2,22 +2,27 @@
 title: "Agnello v. United States"
 type: case
 citation: "269 U.S. 20 (1925)"
-parallel_cite: "46 S. Ct. 4"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "46 S. Ct. 4; 70 L. Ed. 145; 51 A.L.R. 409"
+neutral_cite: 1925 U.S. LEXIS 2
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1925
 date_decided: 1925-10-12
-docket: "6"
+docket: 6
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Foundational early limit on search incident to arrest; the rule that a SITA does not reach a separate home away from the arrest survives and is consistent with Chimel v. California."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1925-10-12
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Agnello v. United States
+  varies_by_point: false
+  scope_note: "Foundational early limit on search incident to arrest; the rule that a SITA does not reach a separate home away from the arrest survives and is consistent with Chimel v. California."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/100711/agnello-v-united-states/"
+  cluster_id: 100711
   opinion_id: 100711
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Chimel v. California]]", "[[Go-Bart Importing Co. v. United States]
 aliases: []
 tags: ["case", "fourth-amendment", "search-incident-to-arrest", "home", "historical", "warrant-requirement"]
 holding: "A search incident to arrest reaches the arrestee's person and the place where the arrest is made, but does not extend to a separate house blocks away that is entered and searched without a warrant after the arrest is complete and the suspects are in custody elsewhere."
+lake:
+  record_id: Agnello v. United States
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Agnello v. United States

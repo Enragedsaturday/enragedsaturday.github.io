@@ -2,9 +2,9 @@
 title: "United States v. Bagley"
 type: case
 citation: "473 U.S. 667 (1985)"
-parallel_cite: "105 S. Ct. 3375"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "105 S. Ct. 3375; 87 L. Ed. 2d 481; 53 U.S.L.W. 5084"
+neutral_cite: 1985 U.S. LEXIS 130
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1985
@@ -12,13 +12,18 @@ date_decided: 1985-07-02
 docket: ""
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Good law; the controlling Brady/Giglio materiality standard."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1985-07-02
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: United States v. Bagley
+  varies_by_point: false
+  scope_note: "Good law; the controlling Brady/Giglio materiality standard."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/111514/united-states-v-bagley/"
-  opinion_id: 111514
+  cluster_id: 111514
+  opinion_id: 9430189
   identity_checked: true
 homes:
   - page: "[[Brady and Giglio]]"
@@ -27,6 +32,10 @@ related: ["[[Brady v. Maryland]]", "[[Giglio v. United States]]", "[[Kyles v. Wh
 aliases: []
 tags: ["case", "due-process", "brady"]
 holding: "Set the unified MATERIALITY standard for Brady (covering no-request, general-request, and specific-request cases) and confirmed…"
+lake:
+  record_id: United States v. Bagley
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # United States v. Bagley

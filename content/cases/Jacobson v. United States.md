@@ -2,9 +2,9 @@
 title: "Jacobson v. United States"
 type: case
 citation: "503 U.S. 540 (1992)"
-parallel_cite: ""
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "112 S. Ct. 1535; 118 L. Ed. 2d 174"
+neutral_cite: 1992 U.S. LEXIS 2117
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1992
@@ -12,13 +12,18 @@ date_decided: 1992-04-06
 docket: ""
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: ""
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1992-04-06
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Jacobson v. United States
+  varies_by_point: false
+  scope_note: "Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/112720/jacobson-v-united-states/"
-  opinion_id: 112720
+  cluster_id: 112720
+  opinion_id: 9432514
   identity_checked: true
 homes:
   - page: "[[Entrapment]]"
@@ -27,6 +32,10 @@ related: ["[[Sorrells v. United States]]", "[[Sherman v. United States]]", "[[Ha
 aliases: []
 tags: ["case", "entrapment", "predisposition", "inducement", "due-process"]
 holding: "Where the government induces the crime, it must prove the defendant was predisposed to commit it INDEPENDENT of, and PRIOR TO, the…"
+lake:
+  record_id: Jacobson v. United States
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Jacobson v. United States

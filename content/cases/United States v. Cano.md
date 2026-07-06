@@ -1,23 +1,28 @@
 ---
 title: "United States v. Cano"
 type: case
-citation: "934 F.3d 1002 (9th Cir. 2019)"
+citation: "934 F.3d 1002 (2019)"
 parallel_cite: ""
 neutral_cite: ""
 court: "U.S. Court of Appeals, 9th Circuit"
-court_level: circuit
-circuit: "9th"
+court_level: coa
+circuit: 9th
 year: 2019
 date_decided: 2019-08-16
 docket: ""
 authority_weight: "Binding in-circuit — 9th Cir."
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Good law in-circuit; clarifies Cotterman and illustrates a circuit split with the 11th Cir. (Touset) on suspicion for border device searches."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 2019-08-16
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: United States v. Cano
+  varies_by_point: false
+  scope_note: "Good law in-circuit; clarifies Cotterman and illustrates a circuit split with the 11th Cir. (Touset) on suspicion for border device searches."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/4649091/united-states-v-miguel-cano/"
+  cluster_id: 4649091
   opinion_id: 4426344
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[United States v. Cotterman]]", "[[Riley v. California]]", "[[Carpen
 aliases: ["United States v. Miguel Cano"]
 tags: ["case", "fourth-amendment", "border-search", "digital-privacy"]
 holding: "Manual border searches of a cell phone need no suspicion, but a *forensic* (Cellebrite-type) device search requires reasonable suspicion…"
+lake:
+  record_id: United States v. Cano
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # United States v. Cano

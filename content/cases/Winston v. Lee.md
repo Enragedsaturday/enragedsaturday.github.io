@@ -2,23 +2,28 @@
 title: "Winston v. Lee"
 type: case
 citation: "470 U.S. 753 (1985)"
-parallel_cite: "105 S. Ct. 1611"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "105 S. Ct. 1611; 84 L. Ed. 2d 662; 53 U.S.L.W. 4367"
+neutral_cite: 1985 U.S. LEXIS 76
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1985
 date_decided: 1985-03-20
-docket: "83-1334"
+docket: 83-1334
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Controlling: a compelled surgical intrusion into the body for evidence may be unreasonable even with probable cause and a court order; reasonableness turns on the Schmerber balance of intrusion against need."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1985-03-20
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Winston v. Lee
+  varies_by_point: false
+  scope_note: "Controlling: a compelled surgical intrusion into the body for evidence may be unreasonable even with probable cause and a court order; reasonableness turns on the Schmerber balance of intrusion against need."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/111380/winston-v-lee/"
-  opinion_id: 111380
+  cluster_id: 111380
+  opinion_id: 9429963
   identity_checked: true
 homes:
   - page: "[[The Warrant Requirement]]"
@@ -27,6 +32,10 @@ related: ["[[Schmerber v. California]]", "[[Cupp v. Murphy]]", "[[Missouri v. Mc
 aliases: ["Lee v. Winston"]
 tags: ["case", "fourth-amendment", "bodily-intrusion", "warrant-requirement", "reasonableness", "surgery"]
 holding: "Court-ordered surgery under general anesthesia to recover a bullet for use as evidence is an unreasonable search where, under the Schmerber balance, the severe intrusion on bodily integrity and safety outweighs the State's need for the evidence — even with probable cause and a judicial order."
+lake:
+  record_id: Winston v. Lee
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Winston v. Lee

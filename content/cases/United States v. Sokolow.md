@@ -2,9 +2,9 @@
 title: "United States v. Sokolow"
 type: case
 citation: "490 U.S. 1 (1989)"
-parallel_cite: "109 S. Ct. 1581"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "109 S. Ct. 1581; 104 L. Ed. 2d 1; 57 U.S.L.W. 4401"
+neutral_cite: 1989 U.S. LEXIS 1694
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1989
@@ -12,12 +12,17 @@ date_decided: 1989-04-03
 docket: ""
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: ""
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1989-04-03
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: United States v. Sokolow
+  varies_by_point: false
+  scope_note: "Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/112239/united-states-v-sokolow/"
+  cluster_id: 112239
   opinion_id: 112239
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Terry v. Ohio]]", "[[United States v. Cortez]]", "[[United States v
 aliases: []
 tags: ["case", "fourth-amendment", "terry-stop", "reasonable-suspicion", "totality-of-the-circumstances", "drug-courier-profile"]
 holding: "Factors each individually consistent with innocence can, taken together, amount to reasonable suspicion."
+lake:
+  record_id: United States v. Sokolow
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # United States v. Sokolow

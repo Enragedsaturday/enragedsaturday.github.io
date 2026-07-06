@@ -1,24 +1,29 @@
 ---
 title: "City of Ontario v. Quon"
 type: case
-citation: "560 U.S. 746 (2010)"
-parallel_cite: "130 S. Ct. 2619"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+citation: ""
+parallel_cite: "177 L. Ed. 2d 216; 130 S. Ct. 2619; 560 U.S. 746; 30 I.E.R. Cas. (BNA) 1345; 78 U.S.L.W. 4591; 22 Fla. L. Weekly Fed. S 470; 93 Empl. Prac. Dec. (CCH) 43,907"
+neutral_cite: 2010 U.S. LEXIS 4972
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 2010
 date_decided: 2010-06-17
-docket: "08-1332"
+docket: 08-1332
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Good law; applies O'Connor v. Ortega to electronic communications. The Court deliberately declined to set broad rules about digital privacy expectations — a caution later echoed in Riley v. California and Carpenter."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 2010-06-17
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: City of Ontario v. Quon
+  varies_by_point: false
+  scope_note: "Good law; applies O'Connor v. Ortega to electronic communications. The Court deliberately declined to set broad rules about digital privacy expectations — a caution later echoed in Riley v. California and Carpenter."
+  point_overrides: []
 courtlistener:
-  opinion_url: "https://www.courtlistener.com/opinion/148797/city-of-ontario-v-quon/"
-  opinion_id: 148797
+  opinion_url: "https://www.courtlistener.com/opinion/6796843/city-of-ontario-v-quon/"
+  cluster_id: 6796843
+  opinion_id: 6681698
   identity_checked: true
 homes:
   - page: "[[Special Needs and Administrative Searches]]"
@@ -27,6 +32,10 @@ related: ["[[O'Connor v. Ortega]]"]
 aliases: ["Ontario v. Quon", "City of Ontario, California v. Quon"]
 tags: ["case", "fourth-amendment", "special-needs", "workplace", "public-employee", "electronic-communications", "text-messages"]
 holding: "A government employer's review of an employee's text messages on an employer-issued pager is a reasonable search where it is motivated by a legitimate work-related purpose and not excessive in scope; the Court assumed a privacy expectation without deciding it, declining to set broad rules for emerging communications technology."
+lake:
+  record_id: City of Ontario v. Quon
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # City of Ontario v. Quon

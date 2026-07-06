@@ -2,22 +2,27 @@
 title: "Lego v. Twomey"
 type: case
 citation: "404 U.S. 477 (1972)"
-parallel_cite: "92 S. Ct. 619"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "92 S. Ct. 619; 30 L. Ed. 2d 618"
+neutral_cite: 1972 U.S. LEXIS 100
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1972
 date_decided: 1972-01-12
-docket: "70-5037"
+docket: 70-5037
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Good law; the federal constitutional floor for proving confession voluntariness is a preponderance of the evidence. Reaffirmed and extended to Miranda-waiver proof in Colorado v. Connelly."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1972-01-12
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Lego v. Twomey
+  varies_by_point: false
+  scope_note: "Good law; the federal constitutional floor for proving confession voluntariness is a preponderance of the evidence. Reaffirmed and extended to Miranda-waiver proof in Colorado v. Connelly."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/108429/lego-v-twomey/"
+  cluster_id: 108429
   opinion_id: 108429
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Colorado v. Connelly]]", "[[Rogers v. Richmond]]", "[[Brown v. Miss
 aliases: []
 tags: ["case", "fifth-amendment", "fourteenth-amendment", "confessions", "voluntariness", "due-process", "burden-of-proof"]
 holding: "The prosecution need prove the voluntariness of a confession only by a preponderance of the evidence, not beyond a reasonable doubt; and a defendant whose voluntariness claim the judge has decided is not entitled to have the jury redetermine voluntariness. States may adopt a higher standard."
+lake:
+  record_id: Lego v. Twomey
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Lego v. Twomey

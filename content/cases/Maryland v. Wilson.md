@@ -2,9 +2,9 @@
 title: "Maryland v. Wilson"
 type: case
 citation: "519 U.S. 408 (1997)"
-parallel_cite: "117 S. Ct. 882"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "117 S. Ct. 882; 137 L. Ed. 2d 41"
+neutral_cite: 1997 U.S. LEXIS 1271
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1997
@@ -12,12 +12,17 @@ date_decided: 1997-02-19
 docket: ""
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: ""
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1997-02-19
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Maryland v. Wilson
+  varies_by_point: false
+  scope_note: "Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/118086/maryland-v-wilson/"
+  cluster_id: 118086
   opinion_id: 118086
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Pennsylvania v. Mimms]]", "[[Brendlin v. California]]", "[[Arizona 
 aliases: []
 tags: ["case", "fourth-amendment", "traffic-stops", "passengers", "officer-safety", "order-out"]
 holding: "Mimms extends to passengers: an officer making a lawful traffic stop may order the passengers, as well as the driver, out of the car…"
+lake:
+  record_id: Maryland v. Wilson
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Maryland v. Wilson

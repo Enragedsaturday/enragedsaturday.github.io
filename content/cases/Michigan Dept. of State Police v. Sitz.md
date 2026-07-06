@@ -2,9 +2,9 @@
 title: "Michigan Dept. of State Police v. Sitz"
 type: case
 citation: "496 U.S. 444 (1990)"
-parallel_cite: "110 S. Ct. 2481"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "110 S. Ct. 2481; 110 L. Ed. 2d 412; 58 U.S.L.W. 4781"
+neutral_cite: 1990 U.S. LEXIS 3144
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1990
@@ -12,13 +12,18 @@ date_decided: 1990-06-14
 docket: ""
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Distinguished by City of Indianapolis v. Edmond for checkpoints whose primary purpose is general crime control."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1990-06-14
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Michigan Dept. of State Police v. Sitz
+  varies_by_point: false
+  scope_note: Distinguished by City of Indianapolis v. Edmond for checkpoints whose primary purpose is general crime control.
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/112459/michigan-department-of-state-police-v-sitz/"
-  opinion_id: 112459
+  cluster_id: 112459
+  opinion_id: 9432063
   identity_checked: true
 homes:
   - page: "[[Special Needs and Administrative Searches]]"
@@ -27,6 +32,10 @@ related: ["[[City of Indianapolis v. Edmond]]", "[[Delaware v. Prouse]]", "[[Cam
 aliases: ["Michigan Department of State Police v. Sitz"]
 tags: ["case", "fourth-amendment", "checkpoint", "special-needs", "dui", "seizure"]
 holding: "Suspicionless sobriety (DUI) checkpoints are constitutional; the state's interest in combating drunk driving and the checkpoint's…"
+lake:
+  record_id: Michigan Dept. of State Police v. Sitz
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Michigan Dept. of State Police v. Sitz

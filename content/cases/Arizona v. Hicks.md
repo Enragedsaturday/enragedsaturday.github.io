@@ -2,9 +2,9 @@
 title: "Arizona v. Hicks"
 type: case
 citation: "480 U.S. 321 (1987)"
-parallel_cite: "107 S. Ct. 1149"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "107 S. Ct. 1149; 94 L. Ed. 2d 347; 55 U.S.L.W. 4258"
+neutral_cite: 1987 U.S. LEXIS 1056
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1987
@@ -12,13 +12,18 @@ date_decided: 1987-03-03
 docket: ""
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: ""
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1987-03-03
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Arizona v. Hicks
+  varies_by_point: false
+  scope_note: "Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/111834/arizona-v-hicks/"
-  opinion_id: 111834
+  cluster_id: 111834
+  opinion_id: 9430865
   identity_checked: true
 homes:
   - page: "[[Plain View Doctrine]]"
@@ -27,6 +32,10 @@ related: ["[[Coolidge v. New Hampshire]]", "[[Horton v. California]]", "[[Texas 
 aliases: []
 tags: ["case", "fourth-amendment", "plain-view", "search"]
 holding: "Moving stereo equipment a few inches to read serial numbers was a SEARCH separate from the lawful entry, and 'immediately apparent'…"
+lake:
+  record_id: Arizona v. Hicks
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Arizona v. Hicks

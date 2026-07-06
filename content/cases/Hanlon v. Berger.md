@@ -2,22 +2,27 @@
 title: "Hanlon v. Berger"
 type: case
 citation: "526 U.S. 808 (1999)"
-parallel_cite: "119 S. Ct. 1706"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "119 S. Ct. 1706; 143 L. Ed. 2d 978"
+neutral_cite: 1999 U.S. LEXIS 3634
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1999
 date_decided: 1999-05-24
-docket: "97-1927"
+docket: 97-1927
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Per curiam companion to Wilson v. Layne; good law."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1999-05-24
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Hanlon v. Berger
+  varies_by_point: false
+  scope_note: "Per curiam companion to Wilson v. Layne; good law."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/1087699/hanlon-v-berger/"
+  cluster_id: 1087699
   opinion_id: 1087699
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Wilson v. Layne]]", "[[Bivens v. Six Unknown Named Agents]]", "[[Ha
 aliases: []
 tags: ["case", "section-1983", "bivens", "qualified-immunity", "media-ride-along", "per-curiam"]
 holding: "A media ride-along during the execution of a search warrant violated the Fourth Amendment under Wilson v. Layne, but the officers were entitled to qualified immunity."
+lake:
+  record_id: Hanlon v. Berger
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Hanlon v. Berger

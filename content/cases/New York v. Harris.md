@@ -2,9 +2,9 @@
 title: "New York v. Harris"
 type: case
 citation: "495 U.S. 14 (1990)"
-parallel_cite: "110 S. Ct. 1640"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "110 S. Ct. 1640; 109 L. Ed. 2d 13; 58 U.S.L.W. 4457"
+neutral_cite: 1990 U.S. LEXIS 2037
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1990
@@ -12,13 +12,18 @@ date_decided: 1990-04-18
 docket: ""
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Good law. Where police have probable cause to arrest, a Payton violation (warrantless in-home arrest) does not require suppression of a statement the suspect later makes outside the home; the exclusionary remedy reaches only what is gathered inside the home. Distinct from the reversed-party case Harris v. New York, 401 U.S. 222 (1971) (Miranda impeachment)."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1990-04-18
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: New York v. Harris
+  varies_by_point: false
+  scope_note: "Good law. Where police have probable cause to arrest, a Payton violation (warrantless in-home arrest) does not require suppression of a statement the suspect later makes outside the home; the exclusionary remedy reaches only what is gathered inside the home. Distinct from the reversed-party case Harris v. New York, 401 U.S. 222 (1971) (Miranda impeachment)."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/112413/new-york-v-harris/"
-  opinion_id: 112413
+  cluster_id: 112413
+  opinion_id: 9431975
   identity_checked: true
 homes:
   - page: "[[Arrest in the Home]]"
@@ -29,6 +34,10 @@ related: ["[[Payton v. New York]]", "[[Brown v. Illinois]]", "[[Wong Sun v. Unit
 aliases: ["New York v. Harris (1990)"]
 tags: ["case", "fourth-amendment", "arrest-in-the-home", "exclusionary-rule", "payton-violation", "fruit-of-the-poisonous-tree"]
 holding: "Where police have probable cause to arrest, a Payton violation does not require suppression of a statement the suspect makes outside his home; such a statement is not the fruit of the in-home location of the arrest."
+lake:
+  record_id: New York v. Harris
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # New York v. Harris

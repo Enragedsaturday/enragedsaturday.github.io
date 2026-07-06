@@ -2,9 +2,9 @@
 title: "Oliver v. United States"
 type: case
 citation: "466 U.S. 170 (1984)"
-parallel_cite: "104 S. Ct. 1735"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "104 S. Ct. 1735; 80 L. Ed. 2d 214; 52 U.S.L.W. 4425"
+neutral_cite: 1984 U.S. LEXIS 55
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1984
@@ -12,13 +12,18 @@ date_decided: 1984-04-17
 docket: ""
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Reaffirms the open-fields doctrine and the curtilage distinction; good law."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1984-04-17
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Oliver v. United States
+  varies_by_point: false
+  scope_note: "Reaffirms the open-fields doctrine and the curtilage distinction; good law."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/111146/oliver-v-united-states/"
-  opinion_id: 111146
+  cluster_id: 111146
+  opinion_id: 9429563
   identity_checked: true
 homes:
   - page: "[[Curtilage]]"
@@ -27,6 +32,10 @@ related: ["[[Hester v. United States]]", "[[United States v. Dunn]]", "[[Florida
 aliases: []
 tags: ["case", "fourth-amendment", "open-fields", "curtilage", "search"]
 holding: "Reaffirms that open fields get no Fourth Amendment protection — even fenced, posted 'No Trespassing' land; only curtilage carries the home's protection."
+lake:
+  record_id: Oliver v. United States
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Oliver v. United States

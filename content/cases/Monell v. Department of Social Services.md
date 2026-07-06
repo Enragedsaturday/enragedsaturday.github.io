@@ -2,9 +2,9 @@
 title: "Monell v. Department of Social Services"
 type: case
 citation: "436 U.S. 658 (1978)"
-parallel_cite: "98 S. Ct. 2018"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "98 S. Ct. 2018; 56 L. Ed. 2d 611; 16 Empl. Prac. Dec. (CCH) 8345; 17 Fair Empl. Prac. Cas. (BNA) 873"
+neutral_cite: 1978 U.S. LEXIS 100
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1978
@@ -12,12 +12,17 @@ date_decided: 1978-06-06
 docket: ""
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Overruled Monroe v. Pape in part (municipal immunity from § 1983 suit)."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1978-06-06
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Monell v. Department of Social Services
+  varies_by_point: false
+  scope_note: "Overruled Monroe v. Pape in part (municipal immunity from § 1983 suit)."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/109881/monell-v-new-york-city-dept-of-social-servs/"
+  cluster_id: 109881
   opinion_id: 109881
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Monroe v. Pape]]", "[[City of Canton v. Harris]]", "[[Pembaur v. Ci
 aliases: ["Monell v. New York City Dept. of Social Servs.", "Monell v. Department of Social Services of the City of New York"]
 tags: ["case", "section-1983", "municipal-liability", "policy-or-custom", "respondeat-superior"]
 holding: "Local governments ARE 'persons' suable under § 1983, but ONLY when the constitutional injury is caused by the execution of an official…"
+lake:
+  record_id: Monell v. Department of Social Services
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Monell v. Department of Social Services

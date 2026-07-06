@@ -2,9 +2,9 @@
 title: "Johnson v. United States"
 type: case
 citation: "333 U.S. 10 (1948)"
-parallel_cite: ""
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "68 S. Ct. 367; 92 L. Ed. 2d 436; 92 L. Ed. 436"
+neutral_cite: 1948 U.S. LEXIS 2583
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1948
@@ -12,12 +12,17 @@ date_decided: 1948-02-02
 docket: ""
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: ""
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1948-02-02
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Johnson v. United States
+  varies_by_point: false
+  scope_note: "Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/104504/johnson-v-united-states/"
+  cluster_id: 104504
   opinion_id: 104504
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Katz v. United States]]", "[[Coolidge v. New Hampshire]]", "[[Payto
 aliases: []
 tags: ["case", "fourth-amendment", "warrant", "neutral-magistrate", "probable-cause"]
 holding: "Probable-cause inferences must be drawn by a neutral and detached magistrate, not by the officer engaged in ferreting out crime."
+lake:
+  record_id: Johnson v. United States
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Johnson v. United States

@@ -2,22 +2,27 @@
 title: "Minnesota v. Carter"
 type: case
 citation: "525 U.S. 83 (1998)"
-parallel_cite: "119 S. Ct. 469"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "119 S. Ct. 469; 142 L. Ed. 2d 373"
+neutral_cite: 1998 U.S. LEXIS 7844
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1998
-date_decided: 1998-12-01
+date_decided: 1999-02-23
 docket: ""
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: ""
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1998-12-01
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Minnesota v. Carter
+  varies_by_point: false
+  scope_note: "Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/118249/minnesota-v-carter/"
+  cluster_id: 118249
   opinion_id: 118249
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Minnesota v. Olson]]", "[[Rakas v. Illinois]]", "[[Byrd v. United S
 aliases: []
 tags: ["case", "fourth-amendment", "standing", "expectation-of-privacy", "home", "commercial"]
 holding: "A short-term visitor present in another's home for a purely commercial purpose (bagging drugs), with no prior relationship and no…"
+lake:
+  record_id: Minnesota v. Carter
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Minnesota v. Carter

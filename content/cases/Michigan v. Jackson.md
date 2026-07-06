@@ -2,23 +2,28 @@
 title: "Michigan v. Jackson"
 type: case
 citation: "475 U.S. 625 (1986)"
-parallel_cite: "106 S. Ct. 1404"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "106 S. Ct. 1404; 89 L. Ed. 2d 631; 54 U.S.L.W. 4334"
+neutral_cite: 1986 U.S. LEXIS 91
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1986
 date_decided: 1986-04-01
 docket: ""
-authority_weight: "Historical"
+authority_weight: "Binding — SCOTUS"
 treatment:
-  status: overruled
-  as_of: 2026-06-30
-  note: "Overruled by Montejo v. Louisiana, 556 U.S. 778 (2009); survives only as history."
-  by: ["[[Montejo v. Louisiana]]"]
+  field_i_validity: superseded
+  as_of_content: 1986-04-01
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Michigan v. Jackson
+  varies_by_point: false
+  scope_note: "Overruled by Montejo v. Louisiana, 556 U.S. 778 (2009); survives only as history."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/111622/michigan-v-jackson/"
-  opinion_id: 111622
+  cluster_id: 111622
+  opinion_id: 9430407
   identity_checked: true
 homes:
   - page: "[[Sixth Amendment Right to Counsel]]"
@@ -27,6 +32,10 @@ related: ["[[Montejo v. Louisiana]]", "[[Edwards v. Arizona]]", "[[McNeil v. Wis
 aliases: []
 tags: ["case", "sixth-amendment", "right-to-counsel", "waiver", "overruled", "historical"]
 holding: "Held a post-appointment, police-initiated waiver of the Sixth Amendment right to counsel presumptively invalid — **overruled by *Montejo v. Louisiana* (2009)**; survives only as history."
+lake:
+  record_id: Michigan v. Jackson
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Michigan v. Jackson

@@ -2,23 +2,28 @@
 title: "O'Connor v. Ortega"
 type: case
 citation: "480 U.S. 709 (1987)"
-parallel_cite: "107 S. Ct. 1492"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "107 S. Ct. 1492; 94 L. Ed. 2d 714; 1 I.E.R. Cas. (BNA) 1617; 55 U.S.L.W. 4405; 42 Empl. Prac. Dec. (CCH) 36,891"
+neutral_cite: 1987 U.S. LEXIS 1507
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1987
 date_decided: 1987-03-31
-docket: "85-530"
+docket: 85-530
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Plurality opinion (O'Connor, J.); Scalia concurred in the judgment, supplying a fifth vote for the reasonableness standard, which is controlling. Good law; reaffirmed and applied in City of Ontario v. Quon (2010)."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1987-03-31
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: "O'Connor v. Ortega"
+  varies_by_point: false
+  scope_note: "Plurality opinion (O'Connor, J.); Scalia concurred in the judgment, supplying a fifth vote for the reasonableness standard, which is controlling. Good law; reaffirmed and applied in City of Ontario v. Quon (2010)."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/111851/oconnor-v-ortega/"
-  opinion_id: 111851
+  cluster_id: 111851
+  opinion_id: 9430897
   identity_checked: true
 homes:
   - page: "[[Special Needs and Administrative Searches]]"
@@ -27,6 +32,10 @@ related: ["[[City of Ontario v. Quon]]"]
 aliases: []
 tags: ["case", "fourth-amendment", "special-needs", "workplace", "public-employee", "reasonable-expectation-of-privacy"]
 holding: "Public employees may have a reasonable expectation of privacy in their offices, desks, and files, subject to the operational realities of the workplace; but a public employer's work-related search — whether to retrieve work materials or to investigate work-related misconduct — is judged by reasonableness under all the circumstances, without a warrant or probable cause."
+lake:
+  record_id: "O'Connor v. Ortega"
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # O'Connor v. Ortega

@@ -1,23 +1,28 @@
 ---
 title: "United States v. Touset"
 type: case
-citation: "890 F.3d 1227 (11th Cir. 2018)"
+citation: "890 F.3d 1227 (2018)"
 parallel_cite: ""
 neutral_cite: ""
 court: "U.S. Court of Appeals, Eleventh Circuit"
-court_level: circuit
-circuit: "11th"
+court_level: coa
+circuit: 11th
 year: 2018
 date_decided: 2018-05-23
 docket: ""
 authority_weight: "Binding in-circuit — 11th Cir."
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Circuit split: the 9th Cir. (United States v. Cotterman) requires reasonable suspicion for forensic device searches at the border."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 2018-05-23
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: United States v. Touset
+  varies_by_point: false
+  scope_note: "Circuit split: the 9th Cir. (United States v. Cotterman) requires reasonable suspicion for forensic device searches at the border."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/4500452/united-states-v-karl-touset/"
+  cluster_id: 4500452
   opinion_id: 4277705
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[United States v. Ramsey]]", "[[United States v. Cotterman]]", "[[Un
 aliases: ["United States v. Touset (11th Cir. 2018)", "United States v. Karl Touset"]
 tags: ["case", "fourth-amendment", "border-searches", "forensic-search", "electronic-devices", "eleventh-circuit", "circuit-split"]
 holding: "The Fourth Amendment requires no suspicion — not even reasonable suspicion — for a forensic search of an electronic device at the…"
+lake:
+  record_id: United States v. Touset
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # United States v. Touset

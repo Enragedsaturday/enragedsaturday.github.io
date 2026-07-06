@@ -1,25 +1,30 @@
 ---
 title: "California v. Prysock"
 type: case
-citation: "451 U.S. 355 (1981)"
-parallel_cite: "101 S. Ct. 2806"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+citation: "453 U.S. 355 (1981)"
+parallel_cite: "101 S. Ct. 2806; 69 L. Ed. 2d 696; 49 U.S.L.W. 3964"
+neutral_cite: 1981 U.S. LEXIS 131
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1981
-date_decided: 1981-06-23
-docket: "80-1846"
+date_decided: 1981-06-29
+docket: 80-1846
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Reaffirmed and applied by Duckworth v. Eagan (1989) and Florida v. Powell (2010); good law."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1981-06-23
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: California v. Prysock
+  varies_by_point: false
+  scope_note: "Reaffirmed and applied by Duckworth v. Eagan (1989) and Florida v. Powell (2010); good law."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/110556/california-v-prysock/"
-  opinion_id: 110556
-  identity_checked: true
+  cluster_id: 110556
+  opinion_id: 9428478
+  identity_checked: false
 homes:
   - page: "[[Miranda and Custodial Interrogation]]"
     role: "Key — Progeny"
@@ -27,6 +32,10 @@ related: ["[[Duckworth v. Eagan]]", "[[Florida v. Powell]]", "[[Miranda v. Arizo
 aliases: []
 tags: ["case", "fifth-amendment", "miranda", "warning-adequacy"]
 holding: "Miranda warnings need not be a verbatim recital of the language in Miranda; a warning that reasonably conveys the suspect's rights is adequate — no talismanic incantation is required."
+lake:
+  record_id: California v. Prysock
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # California v. Prysock

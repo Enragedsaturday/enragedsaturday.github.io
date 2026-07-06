@@ -2,9 +2,9 @@
 title: "Florida v. Harris"
 type: case
 citation: "568 U.S. 237 (2013)"
-parallel_cite: "133 S. Ct. 1050"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "133 S. Ct. 1050; 185 L. Ed. 2d 61"
+neutral_cite: 2013 U.S. LEXIS 1121
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 2013
@@ -12,12 +12,17 @@ date_decided: 2013-02-19
 docket: ""
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: ""
-  by: []
+  field_i_validity: good_law
+  as_of_content: 2013-02-19
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Florida v. Harris
+  varies_by_point: false
+  scope_note: "Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/820744/florida-v-harris/"
+  cluster_id: 820744
   opinion_id: 820744
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Illinois v. Gates]]", "[[Florida v. Jardines]]", "[[District of Col
 aliases: []
 tags: ["case", "fourth-amendment", "probable-cause", "drug-dog", "dog-sniff"]
 holding: "Whether a dog's alert furnishes probable cause is a totality-of-the-circumstances question; evidence of a dog's satisfactory performance…"
+lake:
+  record_id: Florida v. Harris
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Florida v. Harris

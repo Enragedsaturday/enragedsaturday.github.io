@@ -2,22 +2,27 @@
 title: "Walder v. United States"
 type: case
 citation: "347 U.S. 62 (1954)"
-parallel_cite: "74 S. Ct. 354"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "74 S. Ct. 354; 98 L. Ed. 2d 503; 98 L. Ed. 503"
+neutral_cite: 1954 U.S. LEXIS 2453
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1954
 date_decided: 1954-02-01
-docket: "121"
+docket: 121
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Origin of the impeachment exception; remains good law and was extended (Harris v. New York, Havens) and cabined (James v. Illinois)."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1954-02-01
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Walder v. United States
+  varies_by_point: false
+  scope_note: "Origin of the impeachment exception; remains good law and was extended (Harris v. New York, Havens) and cabined (James v. Illinois)."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/105188/walder-v-united-states/"
+  cluster_id: 105188
   opinion_id: 105188
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Weeks v. United States]]", "[[Agnello v. United States]]", "[[Unite
 aliases: []
 tags: ["case", "fourth-amendment", "exclusionary-rule", "impeachment-exception", "credibility"]
 holding: "Illegally seized evidence, though inadmissible in the prosecution's case in chief, may be used to impeach a defendant who, on his own direct examination, makes a sweeping affirmative assertion beyond a denial of the charged offense; the exclusionary rule is a shield, not a license to commit perjury."
+lake:
+  record_id: Walder v. United States
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Walder v. United States

@@ -2,9 +2,9 @@
 title: "Hill v. California"
 type: case
 citation: "401 U.S. 797 (1971)"
-parallel_cite: "91 S. Ct. 1106"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "91 S. Ct. 1106; 28 L. Ed. 2d 484; 27 A.F.T.R.2d (RIA) 1006"
+neutral_cite: 1971 U.S. LEXIS 59
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1971
@@ -12,12 +12,17 @@ date_decided: 1971-04-05
 docket: ""
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Good law. When police have probable cause to arrest one person and reasonably, in good faith, mistake another for that person, the arrest of the second person is valid, and so is the ensuing search incident to arrest. Sufficient probability, not certainty, is the touchstone of Fourth Amendment reasonableness."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1971-04-05
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Hill v. California
+  varies_by_point: false
+  scope_note: "Good law. When police have probable cause to arrest one person and reasonably, in good faith, mistake another for that person, the arrest of the second person is valid, and so is the ensuing search incident to arrest. Sufficient probability, not certainty, is the touchstone of Fourth Amendment reasonableness."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/108305/hill-v-california/"
+  cluster_id: 108305
   opinion_id: 108305
   identity_checked: true
 homes:
@@ -29,6 +34,10 @@ related: ["[[Brinegar v. United States]]", "[[Chimel v. California]]", "[[Heien 
 aliases: []
 tags: ["case", "fourth-amendment", "arrest", "probable-cause", "mistaken-identity", "search-incident-to-arrest"]
 holding: "An arrest of the wrong person is valid where police have probable cause to arrest one person and reasonably, in good faith, mistake the arrestee for that person; the search incident to that arrest is likewise valid."
+lake:
+  record_id: Hill v. California
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Hill v. California

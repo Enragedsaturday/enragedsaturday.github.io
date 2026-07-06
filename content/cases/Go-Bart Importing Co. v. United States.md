@@ -2,22 +2,27 @@
 title: "Go-Bart Importing Co. v. United States"
 type: case
 citation: "282 U.S. 344 (1931)"
-parallel_cite: "51 S. Ct. 153"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "51 S. Ct. 153; 75 L. Ed. 374"
+neutral_cite: 1931 U.S. LEXIS 842
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1931
 date_decided: 1931-01-05
-docket: "111"
+docket: 111
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Foundational early limit on search incident to arrest; the principle that a SITA may not become a general exploratory search of the premises survives and was reaffirmed/structured in Chimel v. California."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1931-01-05
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Go-Bart Importing Co. v. United States
+  varies_by_point: false
+  scope_note: "Foundational early limit on search incident to arrest; the principle that a SITA may not become a general exploratory search of the premises survives and was reaffirmed/structured in Chimel v. California."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/101643/go-bart-importing-co-v-united-states/"
+  cluster_id: 101643
   opinion_id: 101643
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Chimel v. California]]", "[[Agnello v. United States]]", "[[United 
 aliases: []
 tags: ["case", "fourth-amendment", "search-incident-to-arrest", "general-search", "historical", "reasonableness"]
 holding: "A search incident to arrest may not become a general exploratory search of the premises; a warrantless arrest used to justify ransacking an office for evidence is an unreasonable general search, judged on each case's own facts."
+lake:
+  record_id: Go-Bart Importing Co. v. United States
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Go-Bart Importing Co. v. United States

@@ -2,22 +2,27 @@
 title: "United States v. Padilla"
 type: case
 citation: "508 U.S. 77 (1993)"
-parallel_cite: "113 S. Ct. 1936"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "113 S. Ct. 1936; 123 L. Ed. 2d 635"
+neutral_cite: 1993 U.S. LEXIS 3126
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1993
 date_decided: 1993-05-03
-docket: "92-207"
+docket: 92-207
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Rejects the Ninth Circuit's coconspirator exception; standing remains personal. Good law."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1993-05-03
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: United States v. Padilla
+  varies_by_point: false
+  scope_note: "Rejects the Ninth Circuit's coconspirator exception; standing remains personal. Good law."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/112856/united-states-v-padilla/"
+  cluster_id: 112856
   opinion_id: 112856
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Alderman v. United States]]", "[[Rakas v. Illinois]]", "[[Rawlings 
 aliases: []
 tags: ["case", "fourth-amendment", "standing", "conspiracy", "expectation-of-privacy"]
 holding: "There is no 'coconspirator exception' to Fourth Amendment standing; a defendant's supervisory role in or joint control over a conspiracy does not by itself confer standing — only a personal privacy or property interest invaded by the search does."
+lake:
+  record_id: United States v. Padilla
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # United States v. Padilla

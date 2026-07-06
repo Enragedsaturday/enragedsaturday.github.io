@@ -2,22 +2,27 @@
 title: "Brown v. Mississippi"
 type: case
 citation: "297 U.S. 278 (1936)"
-parallel_cite: "56 S. Ct. 461"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "56 S. Ct. 461; 80 L. Ed. 682"
+neutral_cite: 1936 U.S. LEXIS 527
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1936
 date_decided: 1936-02-17
-docket: "301"
+docket: 301
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Foundational due-process voluntariness case; good law."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1936-02-17
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Brown v. Mississippi
+  varies_by_point: false
+  scope_note: "Foundational due-process voluntariness case; good law."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/102604/brown-v-mississippi/"
+  cluster_id: 102604
   opinion_id: 102604
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Chambers v. Florida]]", "[[Ashcraft v. Tennessee]]", "[[Colorado v.
 aliases: []
 tags: ["case", "due-process", "confessions", "voluntariness", "coercion"]
 holding: "A confession extracted by physical torture is involuntary and its use to convict violates Fourteenth Amendment due process."
+lake:
+  record_id: Brown v. Mississippi
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Brown v. Mississippi

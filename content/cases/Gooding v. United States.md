@@ -2,22 +2,27 @@
 title: "Gooding v. United States"
 type: case
 citation: "416 U.S. 430 (1974)"
-parallel_cite: "94 S. Ct. 1780"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "94 S. Ct. 1780; 40 L. Ed. 2d 250"
+neutral_cite: 1974 U.S. LEXIS 133
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1974
 date_decided: 1974-04-29
-docket: "72-6902"
+docket: 72-6902
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Statutory holding interpreting 21 U.S.C. § 879(a); the statute remains in force and the construction stands. Good law."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1974-04-29
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Gooding v. United States
+  varies_by_point: false
+  scope_note: "Statutory holding interpreting 21 U.S.C. § 879(a); the statute remains in force and the construction stands. Good law."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/109017/gooding-v-united-states/"
+  cluster_id: 109017
   opinion_id: 109017
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: []
 aliases: []
 tags: ["case", "fourth-amendment", "warrant", "search-warrant", "warrant-execution", "nighttime-search", "narcotics"]
 holding: "Under 21 U.S.C. § 879(a), a narcotics search warrant may be executed at night with no special showing of need beyond probable cause that the contraband is likely to be on the premises at that time."
+lake:
+  record_id: Gooding v. United States
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Gooding v. United States

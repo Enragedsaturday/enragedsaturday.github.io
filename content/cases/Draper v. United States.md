@@ -2,9 +2,9 @@
 title: "Draper v. United States"
 type: case
 citation: "358 U.S. 307 (1959)"
-parallel_cite: "79 S. Ct. 329"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "79 S. Ct. 329; 3 L. Ed. 2d 327"
+neutral_cite: 1959 U.S. LEXIS 1607
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1959
@@ -12,12 +12,17 @@ date_decided: 1959-01-26
 docket: ""
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Good law. A reliable informant's detailed tip whose innocent details police personally corroborate furnishes probable cause to arrest, even though the corroborated facts are themselves innocent. Folded into the totality-of-circumstances test of Illinois v. Gates."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1959-01-26
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Draper v. United States
+  varies_by_point: false
+  scope_note: "Good law. A reliable informant's detailed tip whose innocent details police personally corroborate furnishes probable cause to arrest, even though the corroborated facts are themselves innocent. Folded into the totality-of-circumstances test of Illinois v. Gates."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/105820/draper-v-united-states/"
+  cluster_id: 105820
   opinion_id: 105820
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Brinegar v. United States]]", "[[Illinois v. Gates]]", "[[Aguilar v
 aliases: []
 tags: ["case", "fourth-amendment", "probable-cause", "informant", "corroboration", "warrantless-arrest"]
 holding: "A reliable informant's detailed tip, the innocent details of which police personally corroborate, establishes probable cause to arrest even though the corroborated facts are themselves innocent."
+lake:
+  record_id: Draper v. United States
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Draper v. United States

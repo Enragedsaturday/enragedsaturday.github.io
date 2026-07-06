@@ -2,22 +2,27 @@
 title: "Bivens v. Six Unknown Named Agents"
 type: case
 citation: "403 U.S. 388 (1971)"
-parallel_cite: "91 S. Ct. 1999"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "91 S. Ct. 1999; 29 L. Ed. 2d 619"
+neutral_cite: 1971 U.S. LEXIS 23
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1971
 date_decided: 1971-06-21
-docket: "301"
+docket: 301
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Core holding (4A damages against federal officers) remains good law; the Court has declined to extend Bivens to new contexts (Ziglar v. Abbasi (2017); Egbert v. Boule (2022))."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1971-06-21
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Bivens v. Six Unknown Named Agents
+  varies_by_point: false
+  scope_note: "Core holding (4A damages against federal officers) remains good law; the Court has declined to extend Bivens to new contexts (Ziglar v. Abbasi (2017); Egbert v. Boule (2022))."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/108375/bivens-v-six-unknown-named-agents-of-federal-bureau-of-narcotics/"
+  cluster_id: 108375
   opinion_id: 108375
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Monroe v. Pape]]", "[[Hanlon v. Berger]]", "[[Harlow v. Fitzgerald]
 aliases: ["Bivens v. Six Unknown Named Agents of Federal Bureau of Narcotics", "Bivens v. Six Unknown Fed. Narcotics Agents"]
 tags: ["case", "section-1983", "bivens", "federal-officer-liability", "fourth-amendment", "damages-remedy"]
 holding: "A victim of a Fourth Amendment violation by federal officers acting under color of federal authority may recover money damages directly under the Constitution — the implied federal-officer analog to § 1983."
+lake:
+  record_id: Bivens v. Six Unknown Named Agents
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Bivens v. Six Unknown Named Agents

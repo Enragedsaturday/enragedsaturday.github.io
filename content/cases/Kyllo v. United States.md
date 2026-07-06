@@ -2,22 +2,27 @@
 title: "Kyllo v. United States"
 type: case
 citation: "533 U.S. 27 (2001)"
-parallel_cite: "121 S. Ct. 2038"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "121 S. Ct. 2038; 150 L. Ed. 2d 94"
+neutral_cite: 2001 U.S. LEXIS 4487
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 2001
 date_decided: 2001-06-11
-docket: "99-8508"
+docket: 99-8508
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Good law; a cornerstone of the modern search-definition line, reinforced by Jones (2012), Jardines (2013), and Carpenter (2018)."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 2001-06-11
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Kyllo v. United States
+  varies_by_point: false
+  scope_note: "Good law; a cornerstone of the modern search-definition line, reinforced by Jones (2012), Jardines (2013), and Carpenter (2018)."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/118443/kyllo-v-united-states/"
+  cluster_id: 118443
   opinion_id: 118443
   identity_checked: true
 homes:
@@ -31,6 +36,10 @@ related: ["[[Katz v. United States]]", "[[California v. Ciraolo]]", "[[Florida v
 aliases: []
 tags: ["case", "fourth-amendment", "search", "home", "thermal-imaging", "surveillance", "technology"]
 holding: "Using sense-enhancing technology not in general public use to explore details of a home's interior that could not otherwise be obtained without physical intrusion is a Fourth Amendment search, presumptively unreasonable without a warrant."
+lake:
+  record_id: Kyllo v. United States
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Kyllo v. United States

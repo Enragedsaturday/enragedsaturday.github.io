@@ -2,9 +2,9 @@
 title: "Torres v. Madrid"
 type: case
 citation: "592 U.S. 306 (2021)"
-parallel_cite: "141 S. Ct. 989"
+parallel_cite: "141 S. Ct. 989; 209 L. Ed. 2d 190"
 neutral_cite: ""
-court: "U.S. Supreme Court"
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 2021
@@ -12,12 +12,17 @@ date_decided: 2021-03-25
 docket: ""
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Recent SCOTUS holding; good law."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 2021-03-25
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Torres v. Madrid
+  varies_by_point: false
+  scope_note: "Recent SCOTUS holding; good law."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/4867542/torres-v-madrid/"
+  cluster_id: 4867542
   opinion_id: 4671321
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[California v. Hodari D.]]", "[[Tennessee v. Garner]]", "[[Graham v.
 aliases: []
 tags: ["case", "fourth-amendment", "seizure"]
 holding: "Physical force applied with intent to restrain is a seizure at the moment of application, even if the person does not submit and is not subdued."
+lake:
+  record_id: Torres v. Madrid
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Torres v. Madrid

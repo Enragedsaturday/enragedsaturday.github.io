@@ -2,23 +2,28 @@
 title: "United States v. Johns"
 type: case
 citation: "469 U.S. 478 (1985)"
-parallel_cite: "105 S. Ct. 881"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "105 S. Ct. 881; 83 L. Ed. 2d 890; 53 U.S.L.W. 4126"
+neutral_cite: 1985 U.S. LEXIS 45
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1985
 date_decided: 1985-01-21
-docket: "83-1625"
+docket: 83-1625
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: ""
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1985-01-21
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: United States v. Johns
+  varies_by_point: false
+  scope_note: "Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/111305/united-states-v-johns/"
-  opinion_id: 111305
+  cluster_id: 111305
+  opinion_id: 9429826
   identity_checked: true
 homes:
   - page: "[[Automobile Exception]]"
@@ -27,6 +32,10 @@ related: ["[[Carroll v. United States]]", "[[California v. Acevedo]]", "[[Chambe
 aliases: []
 tags: ["case", "fourth-amendment", "automobile-exception", "container-search", "delayed-search", "probable-cause"]
 holding: "A warrantless search of packages lawfully removed from a vehicle on PC is not rendered unreasonable merely because officers delayed the…"
+lake:
+  record_id: United States v. Johns
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # United States v. Johns

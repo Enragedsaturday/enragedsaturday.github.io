@@ -2,22 +2,27 @@
 title: "Pennsylvania v. Muniz"
 type: case
 citation: "496 U.S. 582 (1990)"
-parallel_cite: "110 S. Ct. 2638"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "110 S. Ct. 2638; 110 L. Ed. 2d 528"
+neutral_cite: 1990 U.S. LEXIS 3211
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1990
 date_decided: 1990-06-18
-docket: "89-213"
+docket: 89-213
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Good law (fractured opinion). The slurred manner of speech is non-testimonial; the 'sixth birthday' answer was testimonial and required suppression (custodial, unwarned); the routine biographical booking questions fall within a 'routine booking question' exception to Miranda."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1990-06-18
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Pennsylvania v. Muniz
+  varies_by_point: false
+  scope_note: "Good law (fractured opinion). The slurred manner of speech is non-testimonial; the 'sixth birthday' answer was testimonial and required suppression (custodial, unwarned); the routine biographical booking questions fall within a 'routine booking question' exception to Miranda."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/112464/pennsylvania-v-muniz/"
+  cluster_id: 112464
   opinion_id: 112464
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Miranda v. Arizona]]", "[[Rhode Island v. Innis]]", "[[Schmerber v.
 aliases: []
 tags: ["case", "fifth-amendment", "miranda", "testimonial", "booking-exception", "dui", "self-incrimination"]
 holding: "The slurred manner of a DUI suspect's speech is non-testimonial physical evidence admissible without Miranda; but a question whose answer's content reveals the suspect's impaired mental state (the 'sixth birthday' question) elicits a testimonial response that must be suppressed if unwarned; routine biographical booking questions fall within a 'routine booking question' exception to Miranda interrogation."
+lake:
+  record_id: Pennsylvania v. Muniz
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Pennsylvania v. Muniz

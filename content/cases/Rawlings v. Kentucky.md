@@ -2,22 +2,27 @@
 title: "Rawlings v. Kentucky"
 type: case
 citation: "448 U.S. 98 (1980)"
-parallel_cite: "100 S. Ct. 2556"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "100 S. Ct. 2556; 65 L. Ed. 2d 633"
+neutral_cite: 1980 U.S. LEXIS 142
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1980
 date_decided: 1980-06-25
-docket: "79-5146"
+docket: 79-5146
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: ""
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1980-06-25
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Rawlings v. Kentucky
+  varies_by_point: false
+  scope_note: "Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/110326/rawlings-v-kentucky/"
+  cluster_id: 110326
   opinion_id: 110326
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Rakas v. Illinois]]", "[[Katz v. United States]]", "[[United States
 aliases: []
 tags: ["case", "fourth-amendment", "standing", "expectation-of-privacy", "ownership", "consent"]
 holding: "Owning the items seized is not enough to challenge a search; a defendant must have a legitimate expectation of privacy in the PLACE…"
+lake:
+  record_id: Rawlings v. Kentucky
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Rawlings v. Kentucky

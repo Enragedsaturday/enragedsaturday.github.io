@@ -2,22 +2,27 @@
 title: "Bobby v. Dixon"
 type: case
 citation: "565 U.S. 23 (2011)"
-parallel_cite: "132 S. Ct. 26"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "132 S. Ct. 26; 181 L. Ed. 2d 328"
+neutral_cite: 2011 U.S. LEXIS 7926
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 2011
 date_decided: 2011-11-07
-docket: "10-1540"
+docket: 10-1540
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Per curiam AEDPA reversal; good law."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 2011-11-07
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Bobby v. Dixon
+  varies_by_point: false
+  scope_note: "Per curiam AEDPA reversal; good law."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/616807/bobby-v-dixon/"
+  cluster_id: 616807
   opinion_id: 616807
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Oregon v. Elstad]]", "[[Missouri v. Seibert]]", "[[Miranda v. Arizo
 aliases: []
 tags: ["case", "fifth-amendment", "miranda", "two-step", "elstad", "seibert", "aedpa"]
 holding: "A later Mirandized confession is admissible under Elstad — and Seibert's question-first bar does not apply — where there was no deliberate two-step strategy and no nexus between the earlier unwarned statement and the later warned confession; the Sixth Circuit's contrary habeas grant unreasonably applied clearly established law."
+lake:
+  record_id: Bobby v. Dixon
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Bobby v. Dixon

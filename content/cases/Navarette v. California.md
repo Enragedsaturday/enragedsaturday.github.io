@@ -1,10 +1,10 @@
 ---
 title: "Navarette v. California"
 type: case
-citation: "572 U.S. 393 (2014)"
-parallel_cite: "134 S. Ct. 1683"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+citation: ""
+parallel_cite: "134 S. Ct. 1683; 188 L. Ed. 2d 680; 82 U.S.L.W. 4282; 572 U.S. 393; 24 Fla. L. Weekly Fed. S 690"
+neutral_cite: "2014 U.S. LEXIS 2930; 2014 WL 1577513"
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 2014
@@ -12,12 +12,17 @@ date_decided: 2014-04-22
 docket: ""
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Good law on anonymous-tip reliability for reasonable suspicion."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 2014-04-22
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Navarette v. California
+  varies_by_point: false
+  scope_note: Good law on anonymous-tip reliability for reasonable suspicion.
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/2670795/prado-navarette-v-california/"
+  cluster_id: 2670795
   opinion_id: 2670795
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Alabama v. White]]", "[[Florida v. J.L.]]", "[[Illinois v. Gates]]"
 aliases: ["Prado Navarette v. California"]
 tags: ["case", "fourth-amendment", "reasonable-suspicion", "anonymous-tip", "traffic-stop"]
 holding: "A 911 call reporting dangerous/reckless driving can supply reasonable suspicion for a stop when it bears adequate indicia of reliability…"
+lake:
+  record_id: Navarette v. California
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Navarette v. California

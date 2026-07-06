@@ -2,22 +2,27 @@
 title: "Jones v. United States"
 type: case
 citation: "362 U.S. 257 (1960)"
-parallel_cite: "80 S. Ct. 725"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "80 S. Ct. 725; 4 L. Ed. 2d 697; 78 A.L.R. 2d 233"
+neutral_cite: 1960 U.S. LEXIS 1413
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1960
 date_decided: 1960-03-28
 docket: ""
-authority_weight: "Historical"
+authority_weight: "Binding — SCOTUS"
 treatment:
-  status: overruled
-  as_of: 2026-06-30
-  note: "The 'automatic standing' rule was overruled by United States v. Salvucci (1980); the broad 'legitimately on premises' standing test was disavowed by Rakas v. Illinois (1978), which refocused standing on whether the defendant's own reasonable expectation of privacy was invaded."
-  by: ["[[Rakas v. Illinois]]", "[[United States v. Salvucci]]"]
+  field_i_validity: superseded
+  as_of_content: 1960-03-28
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Jones v. United States
+  varies_by_point: false
+  scope_note: "The 'automatic standing' rule was overruled by United States v. Salvucci (1980); the broad 'legitimately on premises' standing test was disavowed by Rakas v. Illinois (1978), which refocused standing on whether the defendant's own reasonable expectation of privacy was invaded."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/106022/jones-v-united-states/"
+  cluster_id: 106022
   opinion_id: 106022
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Rakas v. Illinois]]", "[[United States v. Salvucci]]", "[[Katz v. U
 aliases: []
 tags: ["case", "fourth-amendment", "standing", "suppression", "historical"]
 holding: "Established \"automatic standing\" for those charged with possessory offenses and the broader rule that anyone \"legitimately on the…"
+lake:
+  record_id: Jones v. United States
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Jones v. United States

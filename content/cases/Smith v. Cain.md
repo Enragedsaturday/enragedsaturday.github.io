@@ -2,22 +2,27 @@
 title: "Smith v. Cain"
 type: case
 citation: "565 U.S. 73 (2012)"
-parallel_cite: "132 S. Ct. 627"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "132 S. Ct. 627; 181 L. Ed. 2d 571"
+neutral_cite: 2012 U.S. LEXIS 576
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 2012
 date_decided: 2012-01-10
-docket: "10-8145"
+docket: 10-8145
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: ""
-  by: []
+  field_i_validity: good_law
+  as_of_content: 2012-01-10
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Smith v. Cain
+  varies_by_point: false
+  scope_note: "Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/620666/smith-v-cain/"
+  cluster_id: 620666
   opinion_id: 620666
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Brady v. Maryland]]", "[[Giglio v. United States]]", "[[Strickler v
 aliases: []
 tags: ["case", "brady", "impeachment", "materiality", "due-process"]
 holding: "Modern *Brady* reversal: undisclosed impeachment of the sole eyewitness is material — conviction reversed."
+lake:
+  record_id: Smith v. Cain
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Smith v. Cain

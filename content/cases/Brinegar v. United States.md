@@ -2,22 +2,27 @@
 title: "Brinegar v. United States"
 type: case
 citation: "338 U.S. 160 (1949)"
-parallel_cite: "69 S. Ct. 1302"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "69 S. Ct. 1302; 93 L. Ed. 2d 1879"
+neutral_cite: 1949 U.S. LEXIS 2084
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1949
-date_decided: 1949-06-27
-docket: "23"
+date_decided: 1949-10-10
+docket: 23
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Classic probable-cause standard; bedrock and good law."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1949-06-27
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Brinegar v. United States
+  varies_by_point: false
+  scope_note: "Classic probable-cause standard; bedrock and good law."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/104716/brinegar-v-united-states/"
+  cluster_id: 104716
   opinion_id: 104716
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Carroll v. United States]]", "[[Illinois v. Gates]]", "[[Maryland v
 aliases: ["Brinegar v. US"]
 tags: ["case", "fourth-amendment", "probable-cause"]
 holding: "Classic probable-cause standard: practical, non-technical probabilities on which reasonable people act."
+lake:
+  record_id: Brinegar v. United States
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Brinegar v. United States

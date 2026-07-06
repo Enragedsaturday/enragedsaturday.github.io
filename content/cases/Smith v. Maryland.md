@@ -2,22 +2,27 @@
 title: "Smith v. Maryland"
 type: case
 citation: "442 U.S. 735 (1979)"
-parallel_cite: "99 S. Ct. 2577"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "99 S. Ct. 2577; 61 L. Ed. 2d 220"
+neutral_cite: 1979 U.S. LEXIS 134
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1979
 date_decided: 1979-06-20
-docket: "78-5374"
+docket: 78-5374
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Foundational third-party-doctrine case; remains good law. Carpenter v. United States (2018) declined to extend the third-party doctrine to cell-site location information but expressly did not overrule Smith."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1979-06-20
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Smith v. Maryland
+  varies_by_point: false
+  scope_note: "Foundational third-party-doctrine case; remains good law. Carpenter v. United States (2018) declined to extend the third-party doctrine to cell-site location information but expressly did not overrule Smith."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/110118/smith-v-maryland/"
+  cluster_id: 110118
   opinion_id: 110118
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[United States v. Miller]]", "[[Carpenter v. United States]]", "[[Ka
 aliases: []
 tags: ["case", "fourth-amendment", "search", "third-party-doctrine", "pen-register", "surveillance"]
 holding: "No reasonable expectation of privacy in phone numbers voluntarily conveyed to the phone company; installing and using a pen register is not a Fourth Amendment search (third-party doctrine)."
+lake:
+  record_id: Smith v. Maryland
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Smith v. Maryland

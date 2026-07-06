@@ -1,23 +1,28 @@
 ---
 title: "United States v. Tuggle"
 type: case
-citation: "4 F.4th 505 (7th Cir. 2021)"
+citation: "4 F.4th 505 (2021)"
 parallel_cite: ""
 neutral_cite: ""
 court: "U.S. Court of Appeals, Seventh Circuit"
-court_level: circuit
-circuit: "7th"
+court_level: coa
+circuit: 7th
 year: 2021
 date_decided: 2021-07-14
-docket: "20-2352"
+docket: 20-2352
 authority_weight: "Binding in-circuit — 7th Cir."
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Issue of first impression; courts split on long-term pole-camera surveillance."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 2021-07-14
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: United States v. Tuggle
+  varies_by_point: false
+  scope_note: "Issue of first impression; courts split on long-term pole-camera surveillance."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/4899735/united-states-v-travis-tuggle/"
+  cluster_id: 4899735
   opinion_id: 4703514
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[California v. Ciraolo]]", "[[California v. Greenwood]]", "[[Carpent
 aliases: ["United States v. Tuggle (7th Cir. 2021)", "United States v. Travis Tuggle"]
 tags: ["case", "fourth-amendment", "plain-view", "pole-camera", "surveillance", "mosaic-theory", "seventh-circuit"]
 holding: "Long-term pole-camera surveillance of a home's exterior did not violate the Fourth Amendment under existing doctrine, BUT the court…"
+lake:
+  record_id: United States v. Tuggle
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # United States v. Tuggle

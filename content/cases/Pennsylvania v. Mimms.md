@@ -2,23 +2,28 @@
 title: "Pennsylvania v. Mimms"
 type: case
 citation: "434 U.S. 106 (1977)"
-parallel_cite: "98 S. Ct. 330"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "98 S. Ct. 330; 54 L. Ed. 2d 331"
+neutral_cite: 1977 U.S. LEXIS 157
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1977
 date_decided: 1977-12-05
-docket: "76-1830"
+docket: 76-1830
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: ""
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1977-12-05
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Pennsylvania v. Mimms
+  varies_by_point: false
+  scope_note: "Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/109751/pennsylvania-v-mimms/"
-  opinion_id: 109751
+  cluster_id: 109751
+  opinion_id: 9427002
   identity_checked: true
 homes:
   - page: "[[Traffic Stops]]"
@@ -27,6 +32,10 @@ related: ["[[Maryland v. Wilson]]", "[[Terry v. Ohio]]", "[[Rodriguez v. United 
 aliases: []
 tags: ["case", "fourth-amendment", "traffic-stops", "officer-safety", "order-out-of-vehicle", "per-curiam"]
 holding: "Once a vehicle is lawfully stopped for a traffic violation, an officer may order the driver out of the vehicle as a matter of course;…"
+lake:
+  record_id: Pennsylvania v. Mimms
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Pennsylvania v. Mimms

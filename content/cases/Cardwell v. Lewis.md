@@ -2,22 +2,27 @@
 title: "Cardwell v. Lewis"
 type: case
 citation: "417 U.S. 583 (1974)"
-parallel_cite: "94 S. Ct. 2464"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "94 S. Ct. 2464; 41 L. Ed. 2d 325; 69 Ohio Op. 2d 69"
+neutral_cite: 1974 U.S. LEXIS 75
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1974
 date_decided: 1974-06-17
-docket: "72-1603"
+docket: 72-1603
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Plurality opinion (Blackmun, J., joined by Burger, White, Rehnquist; Powell, J., concurring in the result). The reduced-expectation-of-privacy-in-a-vehicle's-exterior rationale is settled and routinely cited (e.g., quoted in United States v. Chadwick)."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1974-06-17
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Cardwell v. Lewis
+  varies_by_point: false
+  scope_note: "Plurality opinion (Blackmun, J., joined by Burger, White, Rehnquist; Powell, J., concurring in the result). The reduced-expectation-of-privacy-in-a-vehicle's-exterior rationale is settled and routinely cited (e.g., quoted in United States v. Chadwick)."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/109069/cardwell-v-lewis/"
+  cluster_id: 109069
   opinion_id: 109069
   identity_checked: true
 homes:
@@ -29,6 +34,10 @@ related: ["[[Chambers v. Maroney]]", "[[Cooper v. California]]", "[[Coolidge v. 
 aliases: []
 tags: ["case", "fourth-amendment", "automobile-exception", "reduced-expectation-of-privacy", "vehicle-exterior", "no-search"]
 holding: "Examining a car's exterior (paint scrapings, tire tread) on probable cause in a public lot invades no privacy interest the warrant requirement protects; one has a reduced expectation of privacy in a vehicle, especially its exterior."
+lake:
+  record_id: Cardwell v. Lewis
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Cardwell v. Lewis

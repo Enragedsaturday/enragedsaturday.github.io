@@ -2,22 +2,27 @@
 title: "Knowles v. Iowa"
 type: case
 citation: "525 U.S. 113 (1998)"
-parallel_cite: "119 S. Ct. 484"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "119 S. Ct. 484; 142 L. Ed. 2d 492"
+neutral_cite: 1998 U.S. LEXIS 8068
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1998
 date_decided: 1998-12-08
-docket: "97-7597"
+docket: 97-7597
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Controlling: there is no 'search incident to citation' — issuing a citation, without a custodial arrest, does not authorize a full search."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1998-12-08
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Knowles v. Iowa
+  varies_by_point: false
+  scope_note: "Controlling: there is no 'search incident to citation' — issuing a citation, without a custodial arrest, does not authorize a full search."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/118250/knowles-v-iowa/"
+  cluster_id: 118250
   opinion_id: 118250
   identity_checked: true
 homes:
@@ -29,6 +34,10 @@ related: ["[[United States v. Robinson]]", "[[Pennsylvania v. Mimms]]", "[[Maryl
 aliases: []
 tags: ["case", "fourth-amendment", "search-incident-to-arrest", "traffic-stops", "citation"]
 holding: "Issuing a traffic citation, without a custodial arrest, does not authorize a search incident to arrest; neither the officer-safety nor the evidence-preservation rationale supports a full search where the driver is merely cited."
+lake:
+  record_id: Knowles v. Iowa
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Knowles v. Iowa

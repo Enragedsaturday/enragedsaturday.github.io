@@ -2,9 +2,9 @@
 title: "Ohio v. Robinette"
 type: case
 citation: "519 U.S. 33 (1996)"
-parallel_cite: "117 S. Ct. 417"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "117 S. Ct. 417; 136 L. Ed. 2d 347"
+neutral_cite: 1996 U.S. LEXIS 6971
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1996
@@ -12,12 +12,17 @@ date_decided: 1996-11-18
 docket: ""
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "No 'free to go' advisory required for voluntary consent; good law."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1996-11-18
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Ohio v. Robinette
+  varies_by_point: false
+  scope_note: "No 'free to go' advisory required for voluntary consent; good law."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/118066/ohio-v-robinette/"
+  cluster_id: 118066
   opinion_id: 118066
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Schneckloth v. Bustamonte]]", "[[Florida v. Bostick]]"]
 aliases: []
 tags: ["case", "fourth-amendment", "consent-search", "voluntariness", "traffic-stop"]
 holding: "No-warning rule: officers need not tell a lawfully stopped motorist he is 'free to go' for his subsequent consent to search to be voluntary."
+lake:
+  record_id: Ohio v. Robinette
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Ohio v. Robinette

@@ -2,38 +2,43 @@
 title: "New York v. Belton"
 type: case
 citation: "453 U.S. 454 (1981)"
-parallel_cite: "101 S. Ct. 2860"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "101 S. Ct. 2860; 69 L. Ed. 2d 768"
+neutral_cite: 1981 U.S. LEXIS 13
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1981
-date_decided: ""
+date_decided: 1981-09-23
 docket: ""
 authority_weight: "Binding — SCOTUS"
 treatment:
   field_i_validity: caution
-  varies_by_point: true
   as_of_content: 2026-06-30
   as_of_treatment: 2026-06-30
+  composite_basis: principal-holding
+  composite_basis_ref: search.vehicle.sia-recent-occupant
+  varies_by_point: true
   scope_note: "Composite reflects the principal holding; the vehicle-search point is superseded by Arizona v. Gant (2009) — Belton's container rule survives within Gant's narrowed framework."
-  composite_basis_ref: "search.vehicle.sia-recent-occupant"
   point_overrides:
-    - point: "search.vehicle.sia-recent-occupant"
+    - point: search.vehicle.sia-recent-occupant
       point_label: "Vehicle search incident to a recent occupant's arrest"
       field_i_validity: superseded
-      field_ii: superseded
-      by: "[[Arizona v. Gant]]"
-      by_cite: "556 U.S. 332 (2009)"
       as_of_treatment: 2026-06-30
+      s3_binding_status: bound
+      by:
+        - name: Arizona v. Gant
+          cluster_id: 145887
+          cite: 556 U.S. 332
+          field_ii: limited
       scope_note: "The automatic passenger-compartment rule is replaced by Gant's two-justification test."
 lake:
-  record_id: "New York v. Belton"
-  status: verified
-  projected_at: 2026-07-03
+  record_id: New York v. Belton
+  status: under_review
+  projected_at: 2026-07-06
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/110559/new-york-v-belton/"
-  opinion_id: 110559
+  cluster_id: 110559
+  opinion_id: 9428488
   identity_checked: true
 homes:
   - page: "[[Search Incident to Arrest]]"

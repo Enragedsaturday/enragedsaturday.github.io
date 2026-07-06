@@ -2,9 +2,9 @@
 title: "Mooney v. Holohan"
 type: case
 citation: "294 U.S. 103 (1935)"
-parallel_cite: "55 S. Ct. 340"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "55 S. Ct. 340; 79 L. Ed. 791; 98 A.L.R. 406"
+neutral_cite: 1935 U.S. LEXIS 40
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1935
@@ -12,12 +12,17 @@ date_decided: 1935-01-21
 docket: ""
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Good law as to its core due-process principle — the precursor of the Napue/Giglio knowing-perjury line and the Brady disclosure line. (Its procedural holding remitting the petitioner to state habeas reflects 1935 exhaustion practice.)"
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1935-01-21
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Mooney v. Holohan
+  varies_by_point: false
+  scope_note: "Good law as to its core due-process principle — the precursor of the Napue/Giglio knowing-perjury line and the Brady disclosure line. (Its procedural holding remitting the petitioner to state habeas reflects 1935 exhaustion practice.)"
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/102372/mooney-v-holohan/"
+  cluster_id: 102372
   opinion_id: 102372
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Napue v. Illinois]]", "[[Giglio v. United States]]", "[[Brady v. Ma
 aliases: []
 tags: ["case", "brady", "giglio", "napue", "perjured-testimony", "prosecutorial-misconduct", "due-process", "historical"]
 holding: "The knowing use of perjured testimony by the prosecution to obtain a conviction violates Fourteenth Amendment due process — a 'deliberate deception of court and jury' is as inconsistent with justice as obtaining a conviction by intimidation. (Leave to file the original habeas petition was denied for failure to exhaust state remedies.)"
+lake:
+  record_id: Mooney v. Holohan
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Mooney v. Holohan

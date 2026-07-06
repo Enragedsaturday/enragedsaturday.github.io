@@ -2,9 +2,9 @@
 title: "Michigan v. Chesternut"
 type: case
 citation: "486 U.S. 567 (1988)"
-parallel_cite: "108 S. Ct. 1975"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "108 S. Ct. 1975; 100 L. Ed. 2d 565; 56 U.S.L.W. 4558"
+neutral_cite: 1988 U.S. LEXIS 2582
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1988
@@ -12,13 +12,18 @@ date_decided: 1988-06-13
 docket: ""
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Good law. Police pursuit, without more, is not a seizure; whether a seizure occurred is judged by the Mendenhall objective test (would a reasonable person have believed he was not free to leave). California v. Hodari D. (1991) later refined the show-of-authority branch to require submission."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1988-06-13
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Michigan v. Chesternut
+  varies_by_point: false
+  scope_note: "Good law. Police pursuit, without more, is not a seizure; whether a seizure occurred is judged by the Mendenhall objective test (would a reasonable person have believed he was not free to leave). California v. Hodari D. (1991) later refined the show-of-authority branch to require submission."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/112095/michigan-v-chesternut/"
-  opinion_id: 112095
+  cluster_id: 112095
+  opinion_id: 9431339
   identity_checked: true
 homes:
   - page: "[[Seizure of the Person]]"
@@ -27,6 +32,10 @@ related: ["[[United States v. Mendenhall]]", "[[California v. Hodari D.]]", "[[F
 aliases: []
 tags: ["case", "fourth-amendment", "seizure", "pursuit", "free-to-leave", "abandonment"]
 holding: "Police pursuit, standing alone, is not a Fourth Amendment seizure; whether police conduct is a seizure is determined by the Mendenhall objective test — whether, in all the circumstances, a reasonable person would have believed he was not free to leave."
+lake:
+  record_id: Michigan v. Chesternut
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Michigan v. Chesternut

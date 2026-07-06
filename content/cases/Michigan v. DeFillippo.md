@@ -2,9 +2,9 @@
 title: "Michigan v. DeFillippo"
 type: case
 citation: "443 U.S. 31 (1979)"
-parallel_cite: "99 S. Ct. 2627"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "99 S. Ct. 2627; 61 L. Ed. 2d 343"
+neutral_cite: 1979 U.S. LEXIS 135
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1979
@@ -12,12 +12,17 @@ date_decided: 1979-06-25
 docket: ""
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: ""
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1979-06-25
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Michigan v. DeFillippo
+  varies_by_point: false
+  scope_note: "Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/110127/michigan-v-defillippo/"
+  cluster_id: 110127
   opinion_id: 110127
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[United States v. Leon]]", "[[Illinois v. Krull]]", "[[Herring v. Un
 aliases: []
 tags: ["case", "fourth-amendment", "exclusionary-rule", "probable-cause", "arrest", "good-faith"]
 holding: "An arrest based on a presumptively valid ordinance later declared unconstitutional was valid (supported by probable cause at the time),…"
+lake:
+  record_id: Michigan v. DeFillippo
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Michigan v. DeFillippo

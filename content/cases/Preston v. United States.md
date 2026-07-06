@@ -2,22 +2,27 @@
 title: "Preston v. United States"
 type: case
 citation: "376 U.S. 364 (1964)"
-parallel_cite: "84 S. Ct. 881"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "84 S. Ct. 881; 11 L. Ed. 2d 777"
+neutral_cite: 1964 U.S. LEXIS 1578
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1964
 date_decided: 1964-03-23
-docket: "163"
+docket: 163
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "The search-incident-to-arrest remoteness holding remains controlling. Preston is a SITA case; the later automobile-exception line ([[Chambers v. Maroney]], [[Michigan v. Thomas]]) independently permits warrantless delayed vehicle searches on probable cause, distinguishing — not overruling — Preston, so it no longer implies every station-house car search is unreasonable."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1964-03-23
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Preston v. United States
+  varies_by_point: false
+  scope_note: "The search-incident-to-arrest remoteness holding remains controlling. Preston is a SITA case; the later automobile-exception line ([[Chambers v. Maroney]], [[Michigan v. Thomas]]) independently permits warrantless delayed vehicle searches on probable cause, distinguishing — not overruling — Preston, so it no longer implies every station-house car search is unreasonable."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/106771/preston-v-united-states/"
+  cluster_id: 106771
   opinion_id: 106771
   identity_checked: true
 homes:
@@ -29,6 +34,10 @@ related: ["[[Chambers v. Maroney]]", "[[Chimel v. California]]", "[[Agnello v. U
 aliases: []
 tags: ["case", "fourth-amendment", "search-incident-to-arrest", "automobile", "vehicle-search", "warrant-requirement"]
 holding: "A warrantless search of a vehicle is not a valid search incident to arrest once the arrestee is in custody and the car has been removed; a search remote in time or place from the arrest cannot be justified as incident to it."
+lake:
+  record_id: Preston v. United States
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Preston v. United States

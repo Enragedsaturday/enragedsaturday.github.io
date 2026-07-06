@@ -4,21 +4,26 @@ type: case
 citation: "604 U.S. 226 (2025)"
 parallel_cite: ""
 neutral_cite: ""
-court: "U.S. Supreme Court"
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 2025
 date_decided: 2025-02-25
-docket: "22-7466"
+docket: 22-7466
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Good law (2025). Applies Napue v. Illinois: the prosecution's knowing failure to correct a key witness's false testimony violated due process and warranted a new trial. Slip opinion subject to formal revision. Distinct from Glossip v. Gross, 576 U.S. 863 (2015) (lethal-injection protocol)."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 2025-02-25
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Glossip v. Oklahoma
+  varies_by_point: false
+  scope_note: "Good law (2025). Applies Napue v. Illinois: the prosecution's knowing failure to correct a key witness's false testimony violated due process and warranted a new trial. Slip opinion subject to formal revision. Distinct from Glossip v. Gross, 576 U.S. 863 (2015) (lethal-injection protocol)."
+  point_overrides: []
 courtlistener:
-  opinion_url: "https://www.courtlistener.com/opinion/10339023/glossip-v-oklahoma/"
-  opinion_id: 10805611
+  opinion_url: "https://www.courtlistener.com/opinion/10776870/glossip-v-oklahoma/"
+  cluster_id: 10776870
+  opinion_id: 11243457
   identity_checked: true
 homes:
   - page: "[[Brady and Giglio]]"
@@ -27,6 +32,10 @@ related: ["[[Napue v. Illinois]]", "[[Giglio v. United States]]", "[[Brady v. Ma
 aliases: []
 tags: ["case", "brady", "giglio", "napue", "false-testimony", "prosecutorial-misconduct", "due-process", "capital", "2025"]
 holding: "The prosecution's knowing failure to correct a key witness's false testimony (the State's only direct-evidence witness denied his bipolar diagnosis and lithium prescription) violated the Napue due-process duty to correct false testimony; because the witness's credibility was necessarily determinative, there was a reasonable likelihood the false testimony affected the verdict, entitling the defendant to a new trial."
+lake:
+  record_id: Glossip v. Oklahoma
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Glossip v. Oklahoma

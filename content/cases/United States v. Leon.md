@@ -2,23 +2,28 @@
 title: "United States v. Leon"
 type: case
 citation: "468 U.S. 897 (1984)"
-parallel_cite: "104 S. Ct. 3405"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "104 S. Ct. 3405; 82 L. Ed. 2d 677"
+neutral_cite: 1984 U.S. LEXIS 153
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1984
-date_decided: 1984-07-05
-docket: "82-1771"
+date_decided: 1984-09-18
+docket: 82-1771
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: ""
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1984-07-05
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: United States v. Leon
+  varies_by_point: false
+  scope_note: "Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/111262/united-states-v-leon/"
-  opinion_id: 111262
+  cluster_id: 111262
+  opinion_id: 9429766
   identity_checked: true
 homes:
   - page: "[[The Exclusionary Rule]]"
@@ -29,6 +34,10 @@ related: ["[[Massachusetts v. Sheppard]]", "[[Herring v. United States]]", "[[Da
 aliases: []
 tags: ["case", "fourth-amendment", "exclusionary-rule", "good-faith-exception", "search-warrant", "deterrence"]
 holding: "Good-faith exception: evidence obtained by officers in objectively reasonable reliance on a search warrant later found unsupported by…"
+lake:
+  record_id: United States v. Leon
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # United States v. Leon

@@ -2,22 +2,27 @@
 title: "Maryland v. Shatzer"
 type: case
 citation: "559 U.S. 98 (2010)"
-parallel_cite: "130 S. Ct. 1213"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "130 S. Ct. 1213; 175 L. Ed. 2d 1045"
+neutral_cite: 2010 U.S. LEXIS 1899
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 2010
 date_decided: 2010-02-24
-docket: "08-680"
+docket: 08-680
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: ""
-  by: []
+  field_i_validity: good_law
+  as_of_content: 2010-02-24
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Maryland v. Shatzer
+  varies_by_point: false
+  scope_note: "Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/1734/maryland-v-shatzer/"
+  cluster_id: 1734
   opinion_id: 1734
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Edwards v. Arizona]]", "[[Arizona v. Roberson]]", "[[Minnick v. Mis
 aliases: []
 tags: ["case", "fifth-amendment", "miranda", "edwards-rule", "break-in-custody", "reinterrogation"]
 holding: "Edwards protection ends after a 14-day break in Miranda custody; once 14 days pass, police may re-approach and seek a fresh waiver.…"
+lake:
+  record_id: Maryland v. Shatzer
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Maryland v. Shatzer

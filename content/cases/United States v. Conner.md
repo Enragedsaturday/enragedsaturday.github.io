@@ -1,24 +1,29 @@
 ---
 title: "United States v. Conner"
 type: case
-citation: "127 F.3d 663 (8th Cir. 1997)"
+citation: "127 F.3d 663 (1997)"
 parallel_cite: ""
-neutral_cite: ""
+neutral_cite: "1997 U.S. App. LEXIS 27680; 1997 WL 615947"
 court: "U.S. Court of Appeals, 8th Circuit"
-court_level: circuit
-circuit: "8th"
+court_level: coa
+circuit: 8th
 year: 1997
-date_decided: ""
+date_decided: 1997-10-08
 docket: ""
 authority_weight: "Binding in-circuit — 8th Cir."
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Good law in-circuit; a door opened in submission to a police demand under color of authority is not consensual."
-  by: []
+  field_i_validity: good_law
+  as_of_content: null
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: United States v. Conner
+  varies_by_point: false
+  scope_note: "Good law in-circuit; a door opened in submission to a police demand under color of authority is not consensual."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/747208/united-states-v-larry-duane-conner-united-states-of-america-v-john/"
-  opinion_id: 747208
+  cluster_id: 747208
+  opinion_id: 9490703
   identity_checked: true
 homes:
   - page: "[[Securing the Scene]]"
@@ -27,6 +32,10 @@ related: ["[[Payton v. New York]]", "[[Schneckloth v. Bustamonte]]", "[[United S
 aliases: ["United States v. Larry Duane Conner"]
 tags: ["case", "fourth-amendment", "consent", "securing-the-scene"]
 holding: "Where police, under color of authority, demand that occupants of a motel room open the door, and an occupant opens the door not…"
+lake:
+  record_id: United States v. Conner
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # United States v. Conner

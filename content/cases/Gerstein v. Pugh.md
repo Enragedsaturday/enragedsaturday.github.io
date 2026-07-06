@@ -2,9 +2,9 @@
 title: "Gerstein v. Pugh"
 type: case
 citation: "420 U.S. 103 (1975)"
-parallel_cite: "95 S. Ct. 854"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "95 S. Ct. 854; 43 L. Ed. 2d 54; 19 Fed. R. Serv. 2d 1499"
+neutral_cite: 1975 U.S. LEXIS 29
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1975
@@ -12,13 +12,18 @@ date_decided: 1975-02-18
 docket: ""
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Good law. The Fourth Amendment requires a prompt judicial determination of probable cause as a prerequisite to extended pretrial detention of a person arrested without a warrant; the determination need not be adversarial. Implemented by County of Riverside v. McLaughlin (48-hour presumption)."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1975-02-18
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Gerstein v. Pugh
+  varies_by_point: false
+  scope_note: "Good law. The Fourth Amendment requires a prompt judicial determination of probable cause as a prerequisite to extended pretrial detention of a person arrested without a warrant; the determination need not be adversarial. Implemented by County of Riverside v. McLaughlin (48-hour presumption)."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/109186/gerstein-v-pugh/"
-  opinion_id: 109186
+  cluster_id: 109186
+  opinion_id: 9425988
   identity_checked: true
 homes:
   - page: "[[Seizure of the Person]]"
@@ -27,6 +32,10 @@ related: ["[[County of Riverside v. McLaughlin]]", "[[Coolidge v. New Hampshire]
 aliases: []
 tags: ["case", "fourth-amendment", "arrest", "probable-cause", "pretrial-detention", "gerstein-hearing"]
 holding: "A person arrested without a warrant is entitled under the Fourth Amendment to a prompt judicial determination of probable cause as a prerequisite to any extended pretrial restraint of liberty; the determination need not be an adversary hearing."
+lake:
+  record_id: Gerstein v. Pugh
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Gerstein v. Pugh

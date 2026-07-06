@@ -1,23 +1,28 @@
 ---
 title: "City and County of San Francisco v. Sheehan"
 type: case
-citation: "575 U.S. 600 (2015)"
-parallel_cite: "135 S. Ct. 1765"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+citation: ""
+parallel_cite: "575 U.S. 600; 135 S. Ct. 1765; 191 L. Ed. 2d 856; 83 U.S.L.W. 4303; 25 Fla. L. Weekly Fed. S 254"
+neutral_cite: 2015 U.S. LEXIS 3200
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 2015
 date_decided: 2015-05-18
-docket: "13-1412"
+docket: 13-1412
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Good law: QI for force against an armed, mentally ill suspect; the ADA-accommodation question was dismissed as improvidently granted (left open)."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 2015-05-18
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: City and County of San Francisco v. Sheehan
+  varies_by_point: false
+  scope_note: "Good law: QI for force against an armed, mentally ill suspect; the ADA-accommodation question was dismissed as improvidently granted (left open)."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/2801435/city-and-county-of-san-francisco-v-sheehan/"
+  cluster_id: 2801435
   opinion_id: 2801435
   identity_checked: true
 homes:
@@ -29,6 +34,10 @@ related: ["[[Graham v. Connor]]", "[[Plumhoff v. Rickard]]", "[[Mullenix v. Luna
 aliases: ["San Francisco v. Sheehan"]
 tags: ["case", "use-of-force", "qualified-immunity", "mentally-ill", "clearly-established", "ada"]
 holding: "Officers who used force against an armed, mentally ill suspect after a second entry into her room were entitled to qualified immunity because they violated no clearly established Fourth Amendment right; the ADA-accommodation question was dismissed as improvidently granted."
+lake:
+  record_id: City and County of San Francisco v. Sheehan
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # City and County of San Francisco v. Sheehan

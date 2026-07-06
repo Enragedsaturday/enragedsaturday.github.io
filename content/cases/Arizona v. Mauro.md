@@ -2,23 +2,28 @@
 title: "Arizona v. Mauro"
 type: case
 citation: "481 U.S. 520 (1987)"
-parallel_cite: "107 S. Ct. 1931"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "107 S. Ct. 1931; 95 L. Ed. 2d 458"
+neutral_cite: 1987 U.S. LEXIS 1933
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1987
 date_decided: 1987-06-26
-docket: "85-2121"
+docket: 85-2121
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Good law; allowing a suspect who has invoked Miranda to speak with his spouse in an officer's presence (recorded) is not interrogation or its functional equivalent under Innis."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1987-06-26
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Arizona v. Mauro
+  varies_by_point: false
+  scope_note: "Good law; allowing a suspect who has invoked Miranda to speak with his spouse in an officer's presence (recorded) is not interrogation or its functional equivalent under Innis."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/111878/arizona-v-mauro/"
-  opinion_id: 111878
+  cluster_id: 111878
+  opinion_id: 9430952
   identity_checked: true
 homes:
   - page: "[[Miranda and Custodial Interrogation]]"
@@ -27,6 +32,10 @@ related: ["[[Rhode Island v. Innis]]", "[[Miranda v. Arizona]]", "[[Edwards v. A
 aliases: []
 tags: ["case", "fifth-amendment", "miranda", "interrogation", "functional-equivalent", "custodial-interrogation"]
 holding: "Allowing a suspect who has invoked his Miranda rights to speak with his wife, with a police officer present and a recorder running, is not 'interrogation' or its functional equivalent; officers do not interrogate a suspect merely by hoping he will incriminate himself, so the resulting volunteered statements are admissible."
+lake:
+  record_id: Arizona v. Mauro
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Arizona v. Mauro

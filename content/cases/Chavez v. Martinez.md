@@ -2,22 +2,27 @@
 title: "Chavez v. Martinez"
 type: case
 citation: "538 U.S. 760 (2003)"
-parallel_cite: "123 S. Ct. 1994"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "123 S. Ct. 1994; 155 L. Ed. 2d 984"
+neutral_cite: 2003 U.S. LEXIS 4274
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 2003
 date_decided: 2003-05-27
-docket: "01-1444"
+docket: 01-1444
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Fractured decision; the Self-Incrimination holding was reaffirmed and clarified by Vega v. Tekoh (2022). Good law."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 2003-05-27
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Chavez v. Martinez
+  varies_by_point: false
+  scope_note: "Fractured decision; the Self-Incrimination holding was reaffirmed and clarified by Vega v. Tekoh (2022). Good law."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/127927/chavez-v-martinez/"
+  cluster_id: 127927
   opinion_id: 127927
   identity_checked: true
 homes:
@@ -31,6 +36,10 @@ related: ["[[Vega v. Tekoh]]", "[[Dickerson v. United States]]", "[[Miranda v. A
 aliases: []
 tags: ["case", "fifth-amendment", "self-incrimination", "section-1983", "qualified-immunity"]
 holding: "The Self-Incrimination Clause is a trial right: coercive police questioning that produces no statement used against the suspect in a criminal case is not, by itself, a completed Fifth Amendment violation, so it cannot ground a § 1983 claim. Any remedy for the coercion lies (if at all) in substantive due process — remanded."
+lake:
+  record_id: Chavez v. Martinez
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Chavez v. Martinez

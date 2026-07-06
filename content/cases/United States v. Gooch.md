@@ -1,23 +1,28 @@
 ---
 title: "United States v. Gooch"
 type: case
-citation: "6 F.3d 673 (9th Cir. 1993)"
-parallel_cite: ""
-neutral_cite: ""
+citation: "6 F.3d 673 (1993)"
+parallel_cite: 93 Daily Journal DAR 12716
+neutral_cite: "93 Cal. Daily Op. Serv. 7462; 1993 U.S. App. LEXIS 25518; 1993 WL 390206"
 court: "U.S. Court of Appeals, Ninth Circuit"
-court_level: circuit
-circuit: "9th"
+court_level: coa
+circuit: 9th
 year: 1993
-date_decided: 1993-09-23
-docket: "92-30358"
+date_decided: 1993-10-06
+docket: 92-30358
 authority_weight: "Binding in-circuit — 9th Cir."
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: ""
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1993-09-23
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: United States v. Gooch
+  varies_by_point: false
+  scope_note: "Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/654273/united-states-v-kenneth-d-gooch/"
+  cluster_id: 654273
   opinion_id: 654273
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Katz v. United States]]", "[[California v. Carney]]", "[[United Sta
 aliases: ["United States v. Gooch (9th Cir. 1993)", "United States v. Kenneth D. Gooch"]
 tags: ["case", "fourth-amendment", "tent", "reasonable-expectation-of-privacy", "campground", "ninth-circuit"]
 holding: "(9th Cir. — persuasive) An occupant has a reasonable expectation of privacy in a tent in a public campground; 'a tent is more like a house than a car,' so its warrantless search violated the 4A."
+lake:
+  record_id: United States v. Gooch
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # United States v. Gooch

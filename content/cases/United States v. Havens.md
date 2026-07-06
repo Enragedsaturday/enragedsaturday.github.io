@@ -2,23 +2,28 @@
 title: "United States v. Havens"
 type: case
 citation: "446 U.S. 620 (1980)"
-parallel_cite: "100 S. Ct. 1912"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "100 S. Ct. 1912; 64 L. Ed. 2d 559"
+neutral_cite: 1980 U.S. LEXIS 103
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1980
-date_decided: 1980-05-27
-docket: "79-305"
+date_decided: 1980-08-11
+docket: 79-305
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Extends Walder's impeachment exception to cross-examination reasonably suggested by direct; remains good law."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1980-05-27
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: United States v. Havens
+  varies_by_point: false
+  scope_note: "Extends Walder's impeachment exception to cross-examination reasonably suggested by direct; remains good law."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/110267/united-states-v-havens/"
-  opinion_id: 110267
+  cluster_id: 110267
+  opinion_id: 9427937
   identity_checked: true
 homes:
   - page: "[[The Exclusionary Rule]]"
@@ -27,6 +32,10 @@ related: ["[[Walder v. United States]]", "[[Agnello v. United States]]", "[[Jame
 aliases: []
 tags: ["case", "fourth-amendment", "exclusionary-rule", "impeachment-exception", "cross-examination"]
 holding: "Illegally seized evidence may be used to impeach a defendant's false statements first elicited on cross-examination, so long as that cross-examination was reasonably suggested by the defendant's direct testimony; such evidence remains inadmissible as substantive proof of guilt."
+lake:
+  record_id: United States v. Havens
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # United States v. Havens

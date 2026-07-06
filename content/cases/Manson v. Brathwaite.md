@@ -2,9 +2,9 @@
 title: "Manson v. Brathwaite"
 type: case
 citation: "432 U.S. 98 (1977)"
-parallel_cite: "97 S. Ct. 2243"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "97 S. Ct. 2243; 53 L. Ed. 2d 140"
+neutral_cite: 1977 U.S. LEXIS 116
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1977
@@ -12,12 +12,17 @@ date_decided: 1977-06-16
 docket: ""
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Reliability/totality standard intact; Perry v. New Hampshire (2012) confirmed the due-process screen applies only where police arranged the suggestive circumstances, without disturbing the Manson reliability factors."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1977-06-16
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Manson v. Brathwaite
+  varies_by_point: false
+  scope_note: "Reliability/totality standard intact; Perry v. New Hampshire (2012) confirmed the due-process screen applies only where police arranged the suggestive circumstances, without disturbing the Manson reliability factors."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/109693/manson-v-brathwaite/"
+  cluster_id: 109693
   opinion_id: 109693
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Neil v. Biggers]]", "[[Stovall v. Denno]]", "[[United States v. Wad
 aliases: []
 tags: ["case", "due-process", "eyewitness-identification", "suggestive-procedure", "reliability"]
 holding: "There is no per se rule excluding identifications from unnecessarily suggestive procedures; reliability is the linchpin, assessed under…"
+lake:
+  record_id: Manson v. Brathwaite
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Manson v. Brathwaite

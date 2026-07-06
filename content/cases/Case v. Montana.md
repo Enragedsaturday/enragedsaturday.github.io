@@ -1,25 +1,30 @@
 ---
 title: "Case v. Montana"
 type: case
-citation: "607 U.S. ___ (2026)"
+citation: ""
 parallel_cite: ""
-neutral_cite: "No. 24-624"
-court: "U.S. Supreme Court"
+neutral_cite: ""
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 2026
 date_decided: 2026-01-14
-docket: "24-624"
+docket: 24-624
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Decided January 14, 2026 (slip opinion; final U.S. Reports pagination pending). Kagan, J., for a unanimous Court; Sotomayor, J., and Gorsuch, J., concurring. Current good law."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 2026-01-14
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Case v. Montana
+  varies_by_point: false
+  scope_note: "Decided January 14, 2026 (slip opinion; final U.S. Reports pagination pending). Kagan, J., for a unanimous Court; Sotomayor, J., and Gorsuch, J., concurring. Current good law."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/10774335/case-v-montana/"
+  cluster_id: 10774335
   opinion_id: 11240920
-  identity_checked: true
+  identity_checked: false
 homes:
   - page: "[[Emergency Aid]]"
     role: "Key — Progeny / Refinement"
@@ -27,6 +32,10 @@ related: ["[[Brigham City v. Stuart]]", "[[Caniglia v. Strom]]", "[[Michigan v. 
 aliases: []
 tags: ["case", "fourth-amendment", "emergency-aid", "exigent-circumstances", "objectively-reasonable", "suicide", "mental-health"]
 holding: "Brigham City's objective-reasonableness standard for warrantless home entries to render emergency aid applies without further gloss — it is neither lowered to Terry reasonable suspicion nor raised to probable cause — and asks only whether an officer had an objectively reasonable basis for believing entry was needed to prevent or deal with serious harm."
+lake:
+  record_id: Case v. Montana
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Case v. Montana

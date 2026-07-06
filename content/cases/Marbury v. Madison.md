@@ -1,10 +1,10 @@
 ---
 title: "Marbury v. Madison"
 type: case
-citation: "5 U.S. (1 Cranch) 137 (1803)"
-parallel_cite: "2 L. Ed. 60"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+citation: "5 U.S. 137 (1803)"
+parallel_cite: "2 L. Ed. 60; 1 Cranch 137"
+neutral_cite: 1803 U.S. LEXIS 352
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1803
@@ -12,14 +12,19 @@ date_decided: 1803-02-24
 docket: ""
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: ""
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1803-02-24
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Marbury v. Madison
+  varies_by_point: false
+  scope_note: "Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/84759/marbury-v-madison/"
+  cluster_id: 84759
   opinion_id: 84759
-  identity_checked: true
+  identity_checked: false
 homes:
   - page: "[[The Federal Court System]]"
     role: "Key — Anchor"
@@ -27,6 +32,10 @@ related: []
 aliases: []
 tags: ["case", "constitutional-law", "judicial-review", "federal-courts", "separation-of-powers"]
 holding: "Establishes judicial review: it is the province and duty of the judiciary to say what the law is, and a law repugnant to the…"
+lake:
+  record_id: Marbury v. Madison
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Marbury v. Madison

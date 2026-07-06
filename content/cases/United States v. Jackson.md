@@ -1,23 +1,28 @@
 ---
 title: "United States v. Jackson"
 type: case
-citation: "784 F.3d 1227 (8th Cir. 2015)"
+citation: "784 F.3d 1227 (2015)"
 parallel_cite: ""
-neutral_cite: ""
+neutral_cite: "2015 U.S. App. LEXIS 7397; 2015 WL 2048440"
 court: "U.S. Court of Appeals, Eighth Circuit"
-court_level: circuit
-circuit: "8th"
+court_level: coa
+circuit: 8th
 year: 2015
 date_decided: 2015-05-05
 docket: ""
 authority_weight: "Binding in-circuit — 8th Cir."
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: ""
-  by: []
+  field_i_validity: good_law
+  as_of_content: 2015-05-05
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: United States v. Jackson
+  varies_by_point: false
+  scope_note: "Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/2798587/united-states-v-ac-jackson/"
+  cluster_id: 2798587
   opinion_id: 2798587
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[United States v. Leon]]", "[[Massachusetts v. Sheppard]]", "[[Herri
 aliases: ["United States v. A.C. Jackson", "United States v. Jackson (8th Cir. 2015)"]
 tags: ["case", "fourth-amendment", "exclusionary-rule", "good-faith-exception", "leon", "search-warrant", "eighth-circuit"]
 holding: "Although the warrant application failed to supply probable cause, the deputy acted in objectively reasonable good faith (affidavit…"
+lake:
+  record_id: United States v. Jackson
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # United States v. Jackson

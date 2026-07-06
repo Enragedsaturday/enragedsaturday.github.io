@@ -2,22 +2,27 @@
 title: "Wolf v. Colorado"
 type: case
 citation: "338 U.S. 25 (1949)"
-parallel_cite: "69 S. Ct. 1359"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "69 S. Ct. 1359; 93 L. Ed. 2d 1782; 93 L. Ed. 1782"
+neutral_cite: 1949 U.S. LEXIS 2079
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1949
 date_decided: 1949-06-27
 docket: "17, 18"
-authority_weight: "Historical"
+authority_weight: "Binding — SCOTUS"
 treatment:
-  status: overruled
-  as_of: 2026-06-30
-  note: "Wolf's holding that the Fourteenth Amendment does not require the exclusionary rule of the States was overruled on that remedy point by Mapp v. Ohio (1961). Wolf's separate holding incorporating the Fourth Amendment's core against the States survived and was reaffirmed in Mapp."
-  by: ["[[Mapp v. Ohio]]"]
+  field_i_validity: superseded
+  as_of_content: 1949-06-27
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Wolf v. Colorado
+  varies_by_point: false
+  scope_note: "Wolf's holding that the Fourteenth Amendment does not require the exclusionary rule of the States was overruled on that remedy point by Mapp v. Ohio (1961). Wolf's separate holding incorporating the Fourth Amendment's core against the States survived and was reaffirmed in Mapp."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/104709/wolf-v-colorado/"
+  cluster_id: 104709
   opinion_id: 104709
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Mapp v. Ohio]]", "[[Weeks v. United States]]", "[[Elkins v. United 
 aliases: []
 tags: ["case", "fourth-amendment", "exclusionary-rule", "incorporation", "fourteenth-amendment", "overruled", "historical"]
 holding: "The Fourth Amendment's core security against arbitrary police intrusion is enforceable against the States through the Fourteenth Amendment's Due Process Clause, but the Weeks exclusionary rule is not itself commanded of the States — a remedy holding later overruled by Mapp v. Ohio."
+lake:
+  record_id: Wolf v. Colorado
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Wolf v. Colorado

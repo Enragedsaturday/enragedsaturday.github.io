@@ -2,23 +2,39 @@
 title: "Mathis v. United States (1968)"
 type: case
 citation: "391 U.S. 1 (1968)"
-parallel_cite: "88 S. Ct. 1503"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "88 S. Ct. 1503; 20 L. Ed. 2d 381; 2 C.B. 903; 21 A.F.T.R.2d (RIA) 1251"
+neutral_cite: 1968 U.S. LEXIS 3108
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1968
 date_decided: 1968-05-06
-docket: "726"
+docket: 726
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: limited
-  as_of: 2026-06-30
-  note: "Holding stands: Miranda is not lost because in-custody questioning concerns a separate/unrelated matter (here, an IRS interview of a state prisoner). But the broad reading that incarceration itself is always Miranda 'custody' was rejected/limited by Howes v. Fields, 565 U.S. 499 (2012) — prison questioning now takes a totality-of-circumstances custody analysis."
-  by: ["[[Howes v. Fields]]"]
+  field_i_validity: caution
+  as_of_content: 1968-05-06
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: "Mathis v. United States (1968)"
+  varies_by_point: true
+  scope_note: "Holding stands: Miranda is not lost because in-custody questioning concerns a separate/unrelated matter (here, an IRS interview of a state prisoner). But the broad reading that incarceration itself is always Miranda 'custody' was rejected/limited by Howes v. Fields, 565 U.S. 499 (2012) — prison questioning now takes a totality-of-circumstances custody analysis."
+  point_overrides:
+    - point: legacy-limited-mathis-v-united-states-1968
+      point_label: Legacy limited treatment point
+      field_i_validity: caution
+      as_of_treatment: 2026-06-30
+      s3_binding_status: provisional
+      by:
+        - name: Howes v. Fields
+          cluster_id: 623144
+          cite: 565 U.S. 499
+          field_ii: limited
+      scope_note: "Holding stands: Miranda is not lost because in-custody questioning concerns a separate/unrelated matter (here, an IRS interview of a state prisoner). But the broad reading that incarceration itself is always Miranda 'custody' was rejected/limited by Howes v. Fields, 565 U.S. 499 (2012) — prison questioning now takes a totality-of-circumstances custody analysis."
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/107676/mathis-v-united-states/"
-  opinion_id: 107676
+  cluster_id: 107676
+  opinion_id: 9423682
   identity_checked: true
 homes:
   - page: "[[Miranda and Custodial Interrogation]]"
@@ -27,6 +43,10 @@ related: ["[[Miranda v. Arizona]]", "[[Howes v. Fields]]", "[[Orozco v. Texas]]"
 aliases: ["Mathis v. United States"]
 tags: ["case", "fifth-amendment", "miranda", "custody", "prison-inmate", "irs"]
 holding: "Miranda warnings are required when a person already in custody (here, serving a prison sentence) is interrogated by officers, even though the questioning concerns an entirely separate matter and even though it is a routine tax investigation; the reason the person is in custody does not curtail the warnings."
+lake:
+  record_id: "Mathis v. United States (1968)"
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Mathis v. United States (1968)

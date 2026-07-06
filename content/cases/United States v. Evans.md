@@ -1,23 +1,28 @@
 ---
 title: "United States v. Evans"
 type: case
-citation: "937 F.2d 1534 (10th Cir. 1991)"
+citation: "937 F.2d 1534 (1991)"
 parallel_cite: ""
-neutral_cite: ""
+neutral_cite: "1991 U.S. App. LEXIS 14383; 1991 WL 118519"
 court: "U.S. Court of Appeals, Tenth Circuit"
-court_level: circuit
-circuit: "10th"
+court_level: coa
+circuit: 10th
 year: 1991
 date_decided: 1991-07-08
-docket: "90-6234"
+docket: 90-6234
 authority_weight: "Binding in-circuit — 10th Cir."
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: ""
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1991-07-08
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: United States v. Evans
+  varies_by_point: false
+  scope_note: "Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/564407/united-states-v-daryl-lee-evans/"
+  cluster_id: 564407
   opinion_id: 564407
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Florida v. Wells]]", "[[Colorado v. Bertine]]", "[[Illinois v. Lafa
 aliases: ["United States v. Evans (10th Cir. 1991)", "United States v. Daryl Lee Evans"]
 tags: ["case", "fourth-amendment", "inventory-search", "search-incident-to-arrest", "standardized-criteria", "tenth-circuit"]
 holding: "UPHELD an inventory search of a carry-on bag (cocaine found in a container) conducted at a bus station: the officer followed the…"
+lake:
+  record_id: United States v. Evans
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # United States v. Evans

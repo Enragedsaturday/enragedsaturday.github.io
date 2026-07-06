@@ -2,22 +2,27 @@
 title: "Orozco v. Texas"
 type: case
 citation: "394 U.S. 324 (1969)"
-parallel_cite: "89 S. Ct. 1095"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "89 S. Ct. 1095; 22 L. Ed. 2d 311"
+neutral_cite: 1969 U.S. LEXIS 2154
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1969
 date_decided: 1969-03-25
-docket: "641"
+docket: 641
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: ""
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1969-03-25
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Orozco v. Texas
+  varies_by_point: false
+  scope_note: "Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/107883/orozco-v-texas/"
+  cluster_id: 107883
   opinion_id: 107883
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Miranda v. Arizona]]", "[[Berkemer v. McCarty]]", "[[Howes v. Field
 aliases: []
 tags: ["case", "fifth-amendment", "miranda", "custody", "custodial-interrogation"]
 holding: "Miranda warnings were required where four officers questioned a suspect under arrest in his own bedroom in the early morning; custody…"
+lake:
+  record_id: Orozco v. Texas
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Orozco v. Texas

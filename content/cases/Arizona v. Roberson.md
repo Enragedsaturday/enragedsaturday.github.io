@@ -2,9 +2,9 @@
 title: "Arizona v. Roberson"
 type: case
 citation: "486 U.S. 675 (1988)"
-parallel_cite: "108 S. Ct. 2093"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "108 S. Ct. 2093; 100 L. Ed. 2d 704; 56 U.S.L.W. 4590"
+neutral_cite: 1988 U.S. LEXIS 2726
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1988
@@ -12,13 +12,18 @@ date_decided: 1988-06-15
 docket: ""
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: ""
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1988-06-15
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Arizona v. Roberson
+  varies_by_point: false
+  scope_note: "Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/112100/arizona-v-roberson/"
-  opinion_id: 112100
+  cluster_id: 112100
+  opinion_id: 9431349
   identity_checked: true
 homes:
   - page: "[[Miranda Waiver and Invocation]]"
@@ -27,6 +32,10 @@ related: ["[[Edwards v. Arizona]]", "[[Minnick v. Mississippi]]", "[[Maryland v.
 aliases: []
 tags: ["case", "fifth-amendment", "miranda", "right-to-counsel", "interrogation"]
 holding: "The Edwards bar is not offense-specific — once a suspect invokes counsel, police may not interrogate him about ANY offense, including an…"
+lake:
+  record_id: Arizona v. Roberson
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Arizona v. Roberson

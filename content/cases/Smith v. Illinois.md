@@ -2,23 +2,28 @@
 title: "Smith v. Illinois"
 type: case
 citation: "469 U.S. 91 (1984)"
-parallel_cite: "105 S. Ct. 490"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "105 S. Ct. 490; 83 L. Ed. 2d 488; 53 U.S.L.W. 3430"
+neutral_cite: 1984 U.S. LEXIS 167
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1984
 date_decided: 1984-12-10
-docket: "84-5332"
+docket: 84-5332
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Good law on its narrow holding; the threshold question whether the initial request was unambiguous is governed by Davis v. United States (1994)."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1984-12-10
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Smith v. Illinois
+  varies_by_point: false
+  scope_note: "Good law on its narrow holding; the threshold question whether the initial request was unambiguous is governed by Davis v. United States (1994)."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/111288/smith-v-illinois/"
-  opinion_id: 111288
+  cluster_id: 111288
+  opinion_id: 9429796
   identity_checked: true
 homes:
   - page: "[[Miranda Waiver and Invocation]]"
@@ -27,6 +32,10 @@ related: ["[[Edwards v. Arizona]]", "[[Davis v. United States]]", "[[Miranda v. 
 aliases: []
 tags: ["case", "fifth-amendment", "miranda", "invocation", "right-to-counsel"]
 holding: "Once an accused unambiguously requests counsel, his postrequest responses to continued interrogation may not be used to cast retrospective doubt on the clarity of that invocation; such later statements bear only on the distinct question of waiver."
+lake:
+  record_id: Smith v. Illinois
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Smith v. Illinois

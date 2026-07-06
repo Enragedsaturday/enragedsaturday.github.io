@@ -2,22 +2,27 @@
 title: "Thompson v. Keohane"
 type: case
 citation: "516 U.S. 99 (1995)"
-parallel_cite: "116 S. Ct. 457"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "116 S. Ct. 457; 133 L. Ed. 2d 383"
+neutral_cite: "1995 U.S. LEXIS 8315; 95 Cal. Daily Op. Serv. 8968"
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1995
 date_decided: 1995-11-29
-docket: "94-6615"
+docket: 94-6615
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Good law; the Miranda custody inquiry is objective (would a reasonable person feel free to terminate the interrogation and leave) and is a mixed question of law and fact. The §2254(d) habeas-review framework was later changed by AEDPA (1996); see Yarborough v. Alvarado for custody under AEDPA deference."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1995-11-29
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Thompson v. Keohane
+  varies_by_point: false
+  scope_note: "Good law; the Miranda custody inquiry is objective (would a reasonable person feel free to terminate the interrogation and leave) and is a mixed question of law and fact. The §2254(d) habeas-review framework was later changed by AEDPA (1996); see Yarborough v. Alvarado for custody under AEDPA deference."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/117982/thompson-v-keohane/"
+  cluster_id: 117982
   opinion_id: 117982
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Miranda v. Arizona]]", "[[California v. Beheler]]", "[[Stansbury v.
 aliases: []
 tags: ["case", "fifth-amendment", "miranda", "custody", "objective-test", "habeas", "standard-of-review"]
 holding: "The Miranda 'in custody' determination involves two inquiries — the circumstances of the interrogation (factual) and whether, given those circumstances, a reasonable person would have felt free to terminate the interrogation and leave (objective). The ultimate custody determination is a mixed question of law and fact qualifying for independent federal review."
+lake:
+  record_id: Thompson v. Keohane
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Thompson v. Keohane

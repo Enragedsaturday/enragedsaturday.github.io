@@ -2,22 +2,27 @@
 title: "Heck v. Humphrey"
 type: case
 citation: "512 U.S. 477 (1994)"
-parallel_cite: "114 S. Ct. 2364"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "114 S. Ct. 2364; 129 L. Ed. 2d 383"
+neutral_cite: 1994 U.S. LEXIS 4824
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1994
 date_decided: 1994-06-24
-docket: "93-6188"
+docket: 93-6188
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Good law: the favorable-termination rule for § 1983 damages claims that would imply the invalidity of a conviction."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1994-06-24
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Heck v. Humphrey
+  varies_by_point: false
+  scope_note: "Good law: the favorable-termination rule for § 1983 damages claims that would imply the invalidity of a conviction."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/117864/heck-v-humphrey/"
+  cluster_id: 117864
   opinion_id: 117864
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Monroe v. Pape]]"]
 aliases: []
 tags: ["case", "section-1983", "favorable-termination", "heck-bar", "habeas", "conviction"]
 holding: "A § 1983 damages claim whose success would necessarily imply the invalidity of an outstanding conviction or sentence is not cognizable unless the conviction has first been reversed, expunged, declared invalid, or called into question by habeas (the favorable-termination requirement)."
+lake:
+  record_id: Heck v. Humphrey
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Heck v. Humphrey

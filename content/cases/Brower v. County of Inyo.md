@@ -2,9 +2,9 @@
 title: "Brower v. County of Inyo"
 type: case
 citation: "489 U.S. 593 (1989)"
-parallel_cite: "109 S. Ct. 1378"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "109 S. Ct. 1378; 103 L. Ed. 2d 628; 57 U.S.L.W. 4321"
+neutral_cite: 1989 U.S. LEXIS 1569
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1989
@@ -12,12 +12,17 @@ date_decided: 1989-03-21
 docket: ""
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Good law. A Fourth Amendment seizure occurs only when the government terminates a person's freedom of movement through means intentionally applied; a stop produced by the very instrumentality the police put in place is a seizure. Canonical caption is Brower v. County of Inyo; the ingest queue refers to it as Brower v. Inyo County (aliased)."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1989-03-21
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Brower v. County of Inyo
+  varies_by_point: false
+  scope_note: "Good law. A Fourth Amendment seizure occurs only when the government terminates a person's freedom of movement through means intentionally applied; a stop produced by the very instrumentality the police put in place is a seizure. Canonical caption is Brower v. County of Inyo; the ingest queue refers to it as Brower v. Inyo County (aliased)."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/112218/brower-ex-rel-estate-of-caldwell-v-county-of-inyo/"
+  cluster_id: 112218
   opinion_id: 112218
   identity_checked: true
 homes:
@@ -29,6 +34,10 @@ related: ["[[California v. Hodari D.]]", "[[Torres v. Madrid]]", "[[Scott v. Har
 aliases: ["Brower v. Inyo County"]
 tags: ["case", "fourth-amendment", "seizure", "roadblock", "use-of-force", "section-1983"]
 holding: "A Fourth Amendment seizure occurs only when the government terminates a person's freedom of movement through means intentionally applied; stopping a fleeing driver with a roadblock he crashes into is a seizure because he is stopped by the very instrumentality put in place to stop him."
+lake:
+  record_id: Brower v. County of Inyo
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Brower v. County of Inyo

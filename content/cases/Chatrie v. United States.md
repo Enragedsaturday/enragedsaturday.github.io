@@ -1,25 +1,30 @@
 ---
 title: "Chatrie v. United States"
 type: case
-citation: "609 U.S. ___ (2026)"
+citation: ""
 parallel_cite: ""
 neutral_cite: ""
-court: "U.S. Supreme Court"
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 2026
 date_decided: 2026-06-29
-docket: "25-112"
+docket: 25-112
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "New Binding — SCOTUS anchor (decided 2026-06-29, post-capture). Geofence/Google Location History acquisition IS a Fourth Amendment search; the probable-cause/particularity of geofence warrants was left open on remand. Slip-op sourced; CL-verified 2026-07-02 (cluster 10881683 → lead opinion 11349205)."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 2026-06-29
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Chatrie v. United States
+  varies_by_point: false
+  scope_note: "New Binding — SCOTUS anchor (decided 2026-06-29, post-capture). Geofence/Google Location History acquisition IS a Fourth Amendment search; the probable-cause/particularity of geofence warrants was left open on remand. Slip-op sourced; CL-verified 2026-07-02 (cluster 10881683 → lead opinion 11349205)."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/10881683/chatrie-v-united-states/"
+  cluster_id: 10881683
   opinion_id: 11349205
-  identity_checked: true
+  identity_checked: false
 homes:
   - page: "[[Two Definitions of Search]]"
     role: "Key — Anchor"
@@ -29,6 +34,10 @@ related: ["[[Carpenter v. United States]]", "[[United States v. Jones]]", "[[Kat
 aliases: []
 tags: ["case", "fourth-amendment", "search", "digital-privacy", "geofence", "location-history", "third-party-doctrine"]
 holding: "Acquiring a cell-phone user's Google Location History (geofence) data is a Fourth Amendment search — there is a reasonable expectation of privacy in the record of one's phone's location, even for a short period and even when the data is held by a third party; the Court did not decide whether geofence warrants satisfy probable cause and particularity, vacating and remanding."
+lake:
+  record_id: Chatrie v. United States
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Chatrie v. United States

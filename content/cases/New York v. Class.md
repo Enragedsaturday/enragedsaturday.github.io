@@ -2,9 +2,9 @@
 title: "New York v. Class"
 type: case
 citation: "475 U.S. 106 (1986)"
-parallel_cite: "106 S. Ct. 960"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "106 S. Ct. 960; 89 L. Ed. 2d 81; 54 U.S.L.W. 4178"
+neutral_cite: 1986 U.S. LEXIS 5
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1986
@@ -12,13 +12,18 @@ date_decided: 1986-02-25
 docket: ""
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Good law; no reasonable expectation of privacy in a VIN required by law to be visible, and a minimal intrusion to read it during a lawful traffic stop is reasonable."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1986-02-25
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: New York v. Class
+  varies_by_point: false
+  scope_note: "Good law; no reasonable expectation of privacy in a VIN required by law to be visible, and a minimal intrusion to read it during a lawful traffic stop is reasonable."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/111600/new-york-v-class/"
-  opinion_id: 111600
+  cluster_id: 111600
+  opinion_id: 9430353
   identity_checked: true
 homes:
   - page: "[[Two Definitions of Search]]"
@@ -29,6 +34,10 @@ related: ["[[Pennsylvania v. Mimms]]", "[[Delaware v. Prouse]]", "[[South Dakota
 aliases: []
 tags: ["case", "fourth-amendment", "search", "vehicle", "vin", "traffic-stop", "reasonable-expectation-of-privacy"]
 holding: "There is no reasonable expectation of privacy in a VIN required by law to be visible; reaching into the car to move papers obscuring the VIN was a minimal but reasonable search."
+lake:
+  record_id: New York v. Class
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # New York v. Class

@@ -2,9 +2,9 @@
 title: "Florida v. Royer"
 type: case
 citation: "460 U.S. 491 (1983)"
-parallel_cite: "103 S. Ct. 1319"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "103 S. Ct. 1319; 75 L. Ed. 2d 229; 51 U.S.L.W. 4293"
+neutral_cite: 1983 U.S. LEXIS 151
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1983
@@ -12,13 +12,18 @@ date_decided: 1983-03-23
 docket: ""
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Controlling plurality (White, J.); Brennan, J., concurred in the result and Powell, J., concurred. Good law; the least-intrusive-means and de-facto-arrest principles for investigative detentions remain well established."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1983-03-23
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Florida v. Royer
+  varies_by_point: false
+  scope_note: "Controlling plurality (White, J.); Brennan, J., concurred in the result and Powell, J., concurred. Good law; the least-intrusive-means and de-facto-arrest principles for investigative detentions remain well established."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/110890/florida-v-royer/"
-  opinion_id: 110890
+  cluster_id: 110890
+  opinion_id: 9429117
   identity_checked: true
 homes:
   - page: "[[Seizure of the Person]]"
@@ -29,6 +34,10 @@ related: ["[[Terry v. Ohio]]", "[[United States v. Mendenhall]]", "[[Florida v. 
 aliases: []
 tags: ["case", "fourth-amendment", "seizure", "investigative-detention", "de-facto-arrest", "consent", "airport"]
 holding: "A consensual airport encounter escalated into a de facto arrest requiring probable cause when officers held the suspect's ticket and ID and confined him; Terry detentions must use the least intrusive means."
+lake:
+  record_id: Florida v. Royer
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Florida v. Royer

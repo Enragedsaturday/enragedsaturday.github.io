@@ -1,10 +1,10 @@
 ---
 title: "Hiibel v. Sixth Judicial Dist. Court"
 type: case
-citation: "542 U.S. 177 (2004)"
-parallel_cite: ""
-neutral_cite: ""
-court: "U.S. Supreme Court"
+citation: ""
+parallel_cite: "542 U.S. 177; 124 S. Ct. 2451; 159 L. Ed. 2d 292; 17 Fla. L. Weekly Fed. S 406; 72 U.S.L.W. 4509"
+neutral_cite: 2004 U.S. LEXIS 4385
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 2004
@@ -12,12 +12,17 @@ date_decided: 2004-06-21
 docket: ""
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: ""
-  by: []
+  field_i_validity: good_law
+  as_of_content: 2004-06-21
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Hiibel v. Sixth Judicial Dist. Court
+  varies_by_point: false
+  scope_note: "Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/136990/hiibel-v-sixth-judicial-dist-court-of-nev-humboldt-cty/"
+  cluster_id: 136990
   opinion_id: 136990
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Terry v. Ohio]]", "[[Berkemer v. McCarty]]", "[[Brown v. Texas]]"]
 aliases: ["Hiibel v. Sixth Judicial District Court of Nevada", "Hiibel v. Sixth Judicial District Court of Nevada, Humboldt County"]
 tags: ["case", "fourth-amendment", "terry-stop", "stop-and-identify", "reasonable-suspicion"]
 holding: "A state stop-and-identify law compelling a suspect to give his name during a valid *Terry* stop is consistent with the Fourth Amendment."
+lake:
+  record_id: Hiibel v. Sixth Judicial Dist. Court
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Hiibel v. Sixth Judicial Dist. Court

@@ -2,22 +2,27 @@
 title: "Collins v. Virginia"
 type: case
 citation: "584 U.S. 586 (2018)"
-parallel_cite: "138 S. Ct. 1663"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "138 S. Ct. 1663; 201 L. Ed. 2d 9"
+neutral_cite: 2018 U.S. LEXIS 3210
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 2018
 date_decided: 2018-05-29
-docket: "16-1027"
+docket: 16-1027
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: ""
-  by: []
+  field_i_validity: good_law
+  as_of_content: 2018-05-29
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Collins v. Virginia
+  varies_by_point: false
+  scope_note: "Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/4501697/collins-v-virginia/"
+  cluster_id: 4501697
   opinion_id: 4278950
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Carroll v. United States]]", "[[California v. Carney]]", "[[Florida
 aliases: []
 tags: ["case", "fourth-amendment", "automobile-exception", "curtilage", "home", "warrantless-search"]
 holding: "The automobile exception does NOT authorize a warrantless entry of a home or its curtilage to search a vehicle parked there. The…"
+lake:
+  record_id: Collins v. Virginia
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Collins v. Virginia

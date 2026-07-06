@@ -2,9 +2,9 @@
 title: "Napue v. Illinois"
 type: case
 citation: "360 U.S. 264 (1959)"
-parallel_cite: "79 S. Ct. 1173"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "79 S. Ct. 1173; 3 L. Ed. 2d 1217"
+neutral_cite: 1959 U.S. LEXIS 811
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1959
@@ -12,12 +12,17 @@ date_decided: 1959-06-15
 docket: ""
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Foundational false-testimony due-process rule; carried into the Giglio line; good law."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1959-06-15
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Napue v. Illinois
+  varies_by_point: false
+  scope_note: "Foundational false-testimony due-process rule; carried into the Giglio line; good law."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/105912/napue-v-illinois/"
+  cluster_id: 105912
   opinion_id: 105912
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Giglio v. United States]]", "[[Brady v. Maryland]]", "[[Mooney v. H
 aliases: []
 tags: ["case", "due-process", "false-testimony", "brady-giglio", "credibility"]
 holding: "The State may not knowingly use false testimony to obtain a conviction, and that duty applies even when the false testimony goes only to…"
+lake:
+  record_id: Napue v. Illinois
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Napue v. Illinois

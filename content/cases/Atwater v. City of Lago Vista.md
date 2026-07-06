@@ -1,10 +1,10 @@
 ---
 title: "Atwater v. City of Lago Vista"
 type: case
-citation: "532 U.S. 318 (2001)"
-parallel_cite: "121 S. Ct. 1536"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+citation: ""
+parallel_cite: "532 U.S. 318; 121 S. Ct. 1536; 149 L. Ed. 2d 549; 2001 Daily Journal DAR 3953; 2001 Colo. J. C.A.R. 2069; 14 Fla. L. Weekly Fed. S 193; 69 U.S.L.W. 4262"
+neutral_cite: "2001 U.S. LEXIS 3366; 2001 Cal. Daily Op. Serv. 3203"
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 2001
@@ -12,12 +12,17 @@ date_decided: 2001-04-24
 docket: ""
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Good law. If an officer has probable cause to believe a person has committed even a very minor criminal offense (including a fine-only misdemeanor) in his presence, a warrantless custodial arrest does not violate the Fourth Amendment; no case-by-case balancing is required. Extended by Virginia v. Moore (2008)."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 2001-04-24
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Atwater v. City of Lago Vista
+  varies_by_point: false
+  scope_note: "Good law. If an officer has probable cause to believe a person has committed even a very minor criminal offense (including a fine-only misdemeanor) in his presence, a warrantless custodial arrest does not violate the Fourth Amendment; no case-by-case balancing is required. Extended by Virginia v. Moore (2008)."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/2620702/atwater-v-city-of-lago-vista/"
+  cluster_id: 2620702
   opinion_id: 2620702
   identity_checked: true
 homes:
@@ -29,6 +34,10 @@ related: ["[[Whren v. United States]]", "[[Arkansas v. Sullivan]]", "[[Devenpeck
 aliases: []
 tags: ["case", "fourth-amendment", "arrest", "probable-cause", "misdemeanor", "seizure"]
 holding: "A warrantless custodial arrest for a fine-only misdemeanor committed in the officer's presence, supported by probable cause, does not violate the Fourth Amendment; probable cause governs all arrests without individualized balancing."
+lake:
+  record_id: Atwater v. City of Lago Vista
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Atwater v. City of Lago Vista

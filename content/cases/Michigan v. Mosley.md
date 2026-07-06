@@ -2,9 +2,9 @@
 title: "Michigan v. Mosley"
 type: case
 citation: "423 U.S. 96 (1975)"
-parallel_cite: "96 S. Ct. 321"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "96 S. Ct. 321; 46 L. Ed. 2d 313"
+neutral_cite: 1975 U.S. LEXIS 100
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1975
@@ -12,12 +12,17 @@ date_decided: 1975-12-09
 docket: ""
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: ""
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1975-12-09
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Michigan v. Mosley
+  varies_by_point: false
+  scope_note: "Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/109336/michigan-v-mosley/"
+  cluster_id: 109336
   opinion_id: 109336
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Miranda v. Arizona]]", "[[Edwards v. Arizona]]", "[[Berghuis v. Tho
 aliases: []
 tags: ["case", "fifth-amendment", "miranda", "right-to-silence", "invocation"]
 holding: "After a suspect invokes the right to SILENCE, later statements are admissible if police \"scrupulously honored\" the invocation — here,…"
+lake:
+  record_id: Michigan v. Mosley
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Michigan v. Mosley

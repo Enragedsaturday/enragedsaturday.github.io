@@ -2,9 +2,9 @@
 title: "Minnesota v. Dickerson"
 type: case
 citation: "508 U.S. 366 (1993)"
-parallel_cite: "113 S. Ct. 2130"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "113 S. Ct. 2130; 124 L. Ed. 2d 334"
+neutral_cite: 1993 U.S. LEXIS 4018
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1993
@@ -12,13 +12,18 @@ date_decided: 1993-06-07
 docket: ""
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: ""
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1993-06-07
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Minnesota v. Dickerson
+  varies_by_point: false
+  scope_note: "Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/112873/minnesota-v-dickerson/"
-  opinion_id: 112873
+  cluster_id: 112873
+  opinion_id: 9432823
   identity_checked: true
 homes:
   - page: "[[Plain View Doctrine]]"
@@ -27,6 +32,10 @@ related: ["[[Terry v. Ohio]]", "[[Horton v. California]]", "[[Arizona v. Hicks]]
 aliases: []
 tags: ["case", "fourth-amendment", "plain-feel", "plain-view", "terry", "frisk"]
 holding: "Plain-feel corollary: contraband whose identity is immediately apparent by touch during a lawful *Terry* frisk may be seized — but not where the officer squeezed/manipulated it to ID it."
+lake:
+  record_id: Minnesota v. Dickerson
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Minnesota v. Dickerson

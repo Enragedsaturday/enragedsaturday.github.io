@@ -1,24 +1,29 @@
 ---
 title: "Safford Unified School District v. Redding"
 type: case
-citation: "557 U.S. 364 (2009)"
-parallel_cite: "129 S. Ct. 2633"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+citation: ""
+parallel_cite: "557 U.S. 364; 129 S. Ct. 2633; 174 L. Ed. 2d 354; 21 Fla. L. Weekly Fed. S 1011; 77 U.S.L.W. 4591"
+neutral_cite: 2009 U.S. LEXIS 4735
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 2009
 date_decided: 2009-06-25
-docket: "08-479"
+docket: 08-479
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Good law; applies and cabins the New Jersey v. T.L.O. school-search standard to strip searches."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 2009-06-25
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Safford Unified School District v. Redding
+  varies_by_point: false
+  scope_note: "Good law; applies and cabins the New Jersey v. T.L.O. school-search standard to strip searches."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/145852/safford-unified-school-district-1-v-redding/"
-  opinion_id: 145852
+  cluster_id: 145852
+  opinion_id: 9435302
   identity_checked: true
 homes:
   - page: "[[Special Needs and Administrative Searches]]"
@@ -29,6 +34,10 @@ related: ["[[New Jersey v. T.L.O.]]"]
 aliases: ["Safford Unified School District No. 1 v. Redding"]
 tags: ["case", "fourth-amendment", "special-needs", "school-search", "strip-search", "qualified-immunity"]
 holding: "Under the T.L.O. school-search standard, a strip search of a student must be justified by reasonable suspicion that matches its intrusiveness; strip-searching a 13-year-old for common pain relievers, absent reason to believe they were dangerous or hidden in her underwear, was unreasonable — but the officials had qualified immunity because the right was not clearly established."
+lake:
+  record_id: Safford Unified School District v. Redding
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Safford Unified School District v. Redding

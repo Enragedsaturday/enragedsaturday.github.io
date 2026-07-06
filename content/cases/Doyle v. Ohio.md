@@ -2,22 +2,27 @@
 title: "Doyle v. Ohio"
 type: case
 citation: "426 U.S. 610 (1976)"
-parallel_cite: "96 S. Ct. 2240"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "96 S. Ct. 2240; 49 L. Ed. 2d 91"
+neutral_cite: 1976 U.S. LEXIS 66
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1976
 date_decided: 1976-06-17
-docket: "75-5014"
+docket: 75-5014
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Good law; cabined to post-Miranda silence (see Jenkins v. Anderson, Fletcher v. Weir, Salinas) but the core Doyle rule is intact."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1976-06-17
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Doyle v. Ohio
+  varies_by_point: false
+  scope_note: "Good law; cabined to post-Miranda silence (see Jenkins v. Anderson, Fletcher v. Weir, Salinas) but the core Doyle rule is intact."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/109491/doyle-v-ohio/"
+  cluster_id: 109491
   opinion_id: 109491
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Harris v. New York]]", "[[Miranda v. Arizona]]", "[[Salinas v. Texa
 aliases: []
 tags: ["case", "fifth-amendment", "fourteenth-amendment", "miranda", "silence", "impeachment", "due-process"]
 holding: "Using a defendant's post-arrest, post-Miranda silence to impeach his exculpatory trial testimony violates the Due Process Clause, because the Miranda warnings carry an implicit assurance that silence will carry no penalty."
+lake:
+  record_id: Doyle v. Ohio
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Doyle v. Ohio

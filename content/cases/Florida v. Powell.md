@@ -2,22 +2,27 @@
 title: "Florida v. Powell"
 type: case
 citation: "559 U.S. 50 (2010)"
-parallel_cite: "130 S. Ct. 1195"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "130 S. Ct. 1195; 175 L. Ed. 2d 1009"
+neutral_cite: 2010 U.S. LEXIS 1898
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 2010
 date_decided: 2010-02-23
-docket: "08-1175"
+docket: 08-1175
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Good law; the four Miranda warnings are invariable in substance but need not be conveyed in any precise words — the test is whether the warnings reasonably convey the suspect's rights."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 2010-02-23
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Florida v. Powell
+  varies_by_point: false
+  scope_note: "Good law; the four Miranda warnings are invariable in substance but need not be conveyed in any precise words — the test is whether the warnings reasonably convey the suspect's rights."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/1736/florida-v-powell/"
+  cluster_id: 1736
   opinion_id: 1736
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Miranda v. Arizona]]", "[[Rhode Island v. Innis]]", "[[Dickerson v.
 aliases: []
 tags: ["case", "fifth-amendment", "miranda", "warning-adequacy", "right-to-counsel", "custodial-interrogation"]
 holding: "Miranda warnings need not be given in any precise words; the four warnings are substantively invariable but the test is whether the advice, given a commonsense reading, reasonably conveys the suspect's rights — including, here, the right to have counsel present throughout interrogation."
+lake:
+  record_id: Florida v. Powell
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Florida v. Powell

@@ -1,25 +1,30 @@
 ---
 title: "United States v. Cotterman"
 type: case
-citation: "709 F.3d 952 (9th Cir. 2013) (en banc)"
+citation: "709 F.3d 952 (2013)"
 parallel_cite: ""
-neutral_cite: ""
+neutral_cite: "2013 WL 856292; 2013 U.S. App. LEXIS 4731"
 court: "U.S. Court of Appeals, 9th Circuit (en banc)"
-court_level: circuit
-circuit: "9th"
+court_level: coa
+circuit: 9th
 year: 2013
 date_decided: 2013-03-08
 docket: ""
 authority_weight: "Binding in-circuit — 9th Cir."
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Good law in-circuit; later clarified by United States v. Cano (reasonable suspicion = suspicion of digital contraband) and part of a circuit split with the 11th Cir. (Touset)."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 2013-03-08
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: United States v. Cotterman
+  varies_by_point: false
+  scope_note: "Good law in-circuit; later clarified by United States v. Cano (reasonable suspicion = suspicion of digital contraband) and part of a circuit split with the 11th Cir. (Touset)."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/854692/united-states-v-howard-cotterman/"
+  cluster_id: 854692
   opinion_id: 854692
-  identity_checked: true
+  identity_checked: false
 homes:
   - page: "[[Border Searches]]"
     role: "Illustrates a circuit split"
@@ -27,6 +32,10 @@ related: ["[[United States v. Cano]]", "[[Riley v. California]]", "[[Carpenter v
 aliases: ["United States v. Howard Cotterman"]
 tags: ["case", "fourth-amendment", "border-search", "digital-privacy"]
 holding: "A forensic (comprehensive) examination of an electronic device seized at the border requires reasonable suspicion; it is the…"
+lake:
+  record_id: United States v. Cotterman
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # United States v. Cotterman

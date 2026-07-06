@@ -2,22 +2,27 @@
 title: "Howes v. Fields"
 type: case
 citation: "565 U.S. 499 (2012)"
-parallel_cite: ""
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "132 S. Ct. 1181; 182 L. Ed. 2d 17"
+neutral_cite: "2012 U.S. LEXIS 1077; 2012 WL 538280"
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 2012
 date_decided: 2012-02-21
-docket: "10-680"
+docket: 10-680
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: ""
-  by: []
+  field_i_validity: good_law
+  as_of_content: 2012-02-21
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Howes v. Fields
+  varies_by_point: false
+  scope_note: "Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/623144/howes-v-fields/"
+  cluster_id: 623144
   opinion_id: 623144
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Maryland v. Shatzer]]", "[[Berkemer v. McCarty]]", "[[Miranda v. Ar
 aliases: []
 tags: ["case", "fifth-amendment", "miranda", "custody", "prisoners"]
 holding: "Imprisonment alone does not make questioning custodial for Miranda; whether an inmate is \"in custody\" depends on the totality — here,…"
+lake:
+  record_id: Howes v. Fields
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Howes v. Fields

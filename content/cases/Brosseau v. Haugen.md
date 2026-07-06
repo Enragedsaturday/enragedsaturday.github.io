@@ -2,22 +2,27 @@
 title: "Brosseau v. Haugen"
 type: case
 citation: "543 U.S. 194 (2004)"
-parallel_cite: "125 S. Ct. 596"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "125 S. Ct. 596; 160 L. Ed. 2d 583"
+neutral_cite: 2004 U.S. LEXIS 8275
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 2004
 date_decided: 2004-12-13
-docket: "03-1261"
+docket: 03-1261
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Good law (per curiam). The leading specificity case for qualified immunity in the use-of-force setting: Graham and Garner are 'cast at a high level of generality' and rarely clearly establish the answer in a particular shooting; repeatedly reaffirmed (e.g. Mullenix v. Luna, Kisela v. Hughes)."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 2004-12-13
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Brosseau v. Haugen
+  varies_by_point: false
+  scope_note: "Good law (per curiam). The leading specificity case for qualified immunity in the use-of-force setting: Graham and Garner are 'cast at a high level of generality' and rarely clearly establish the answer in a particular shooting; repeatedly reaffirmed (e.g. Mullenix v. Luna, Kisela v. Hughes)."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/137736/brosseau-v-haugen/"
+  cluster_id: 137736
   opinion_id: 137736
   identity_checked: true
 homes:
@@ -29,6 +34,10 @@ related: ["[[Tennessee v. Garner]]", "[[Graham v. Connor]]", "[[Mullenix v. Luna
 aliases: []
 tags: ["case", "use-of-force", "deadly-force", "qualified-immunity", "section-1983", "clearly-established-law", "fleeing-suspect"]
 holding: "Officer Brosseau was entitled to qualified immunity for shooting a fleeing suspect in a vehicle: Garner and Graham are cast at too high a level of generality to clearly establish that the shooting was unlawful, and the handful of relevant fact-specific cases placed her conduct in the 'hazy border between excessive and acceptable force.'"
+lake:
+  record_id: Brosseau v. Haugen
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Brosseau v. Haugen

@@ -2,23 +2,28 @@
 title: "Pennsylvania Board of Probation and Parole v. Scott"
 type: case
 citation: "524 U.S. 357 (1998)"
-parallel_cite: "118 S. Ct. 2014"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "118 S. Ct. 2014; 141 L. Ed. 2d 344"
+neutral_cite: 1998 U.S. LEXIS 4037
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1998
-date_decided: 1998-06-22
-docket: "97-581"
+date_decided: 1998-06-25
+docket: 97-581
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "The federal exclusionary rule does not apply at parole-revocation hearings; good law."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1998-06-22
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Pennsylvania Board of Probation and Parole v. Scott
+  varies_by_point: false
+  scope_note: "The federal exclusionary rule does not apply at parole-revocation hearings; good law."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/118235/pennsylvania-bd-of-probation-and-parole-v-scott/"
-  opinion_id: 118235
+  cluster_id: 118235
+  opinion_id: 9433685
   identity_checked: true
 homes:
   - page: "[[The Exclusionary Rule]]"
@@ -29,6 +34,10 @@ related: ["[[United States v. Calandra]]", "[[United States v. Janis]]", "[[Unit
 aliases: ["Pennsylvania Bd. of Probation and Parole v. Scott"]
 tags: ["case", "fourth-amendment", "exclusionary-rule", "parole", "revocation-hearing", "deterrence"]
 holding: "The federal Fourth Amendment exclusionary rule does not bar the introduction at a parole-revocation hearing of evidence seized in violation of a parolee's Fourth Amendment rights."
+lake:
+  record_id: Pennsylvania Board of Probation and Parole v. Scott
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Pennsylvania Board of Probation and Parole v. Scott

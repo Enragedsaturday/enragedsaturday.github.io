@@ -2,23 +2,28 @@
 title: "United States v. Salvucci"
 type: case
 citation: "448 U.S. 83 (1980)"
-parallel_cite: "100 S. Ct. 2547"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "100 S. Ct. 2547; 65 L. Ed. 2d 619"
+neutral_cite: 1980 U.S. LEXIS 141
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1980
 date_decided: 1980-06-25
-docket: "79-244"
+docket: 79-244
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: ""
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1980-06-25
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: United States v. Salvucci
+  varies_by_point: false
+  scope_note: "Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/110325/united-states-v-salvucci/"
-  opinion_id: 110325
+  cluster_id: 110325
+  opinion_id: 9428036
   identity_checked: true
 homes:
   - page: "[[Standing to Challenge a Search]]"
@@ -27,6 +32,10 @@ related: ["[[Rakas v. Illinois]]", "[[Jones v. United States]]", "[[Rawlings v. 
 aliases: []
 tags: ["case", "fourth-amendment", "standing", "automatic-standing", "possessory-offense", "expectation-of-privacy"]
 holding: "Abolished automatic standing; a defendant charged with a possessory crime must show that his own Fourth Amendment rights (a legitimate…"
+lake:
+  record_id: United States v. Salvucci
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # United States v. Salvucci

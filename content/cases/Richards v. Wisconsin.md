@@ -2,22 +2,27 @@
 title: "Richards v. Wisconsin"
 type: case
 citation: "520 U.S. 385 (1997)"
-parallel_cite: "117 S. Ct. 1416"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "117 S. Ct. 1416; 137 L. Ed. 2d 615"
+neutral_cite: 1997 U.S. LEXIS 2794
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1997
 date_decided: 1997-04-28
-docket: "96-5955"
+docket: 96-5955
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: ""
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1997-04-28
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Richards v. Wisconsin
+  varies_by_point: false
+  scope_note: "Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/118103/richards-v-wisconsin/"
+  cluster_id: 118103
   opinion_id: 118103
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Wilson v. Arkansas]]", "[[Hudson v. Michigan]]", "[[Maryland v. Bui
 aliases: []
 tags: ["case", "fourth-amendment", "knock-and-announce", "no-knock", "reasonable-suspicion", "warrant-execution"]
 holding: "There is **no blanket exception** to knock-and-announce for entire categories of crime (e.g., felony drug cases); the no-knock decision…"
+lake:
+  record_id: Richards v. Wisconsin
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Richards v. Wisconsin

@@ -2,9 +2,9 @@
 title: "Graham v. Connor"
 type: case
 citation: "490 U.S. 386 (1989)"
-parallel_cite: "109 S. Ct. 1865"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "109 S. Ct. 1865; 104 L. Ed. 2d 443; 57 U.S.L.W. 4513"
+neutral_cite: 1989 U.S. LEXIS 2467
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1989
@@ -12,12 +12,17 @@ date_decided: 1989-05-15
 docket: ""
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: ""
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1989-05-15
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Graham v. Connor
+  varies_by_point: false
+  scope_note: "Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/112257/graham-v-connor/"
+  cluster_id: 112257
   opinion_id: 112257
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Tennessee v. Garner]]", "[[Scott v. Harris]]", "[[Saucier v. Katz]]
 aliases: []
 tags: ["case", "fourth-amendment", "excessive-force", "section-1983", "objective-reasonableness", "seizure"]
 holding: "Excessive-force § 1983 claims arising from an arrest, stop, or other seizure are analyzed under the Fourth Amendment's 'objective…"
+lake:
+  record_id: Graham v. Connor
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Graham v. Connor

@@ -2,22 +2,27 @@
 title: "Mapp v. Ohio"
 type: case
 citation: "367 U.S. 643 (1961)"
-parallel_cite: "81 S. Ct. 1684"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "81 S. Ct. 1684; 6 L. Ed. 2d 1081"
+neutral_cite: 1961 U.S. LEXIS 812
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1961
-date_decided: 1961-06-19
+date_decided: 1961-10-09
 docket: ""
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: ""
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1961-06-19
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Mapp v. Ohio
+  varies_by_point: false
+  scope_note: "Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/106285/mapp-v-ohio/"
+  cluster_id: 106285
   opinion_id: 106285
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Weeks v. United States]]", "[[Wolf v. Colorado]]", "[[United States
 aliases: []
 tags: ["case", "fourth-amendment", "exclusionary-rule", "incorporation", "fourteenth-amendment"]
 holding: "The exclusionary rule applies to the States through the Fourteenth Amendment."
+lake:
+  record_id: Mapp v. Ohio
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Mapp v. Ohio

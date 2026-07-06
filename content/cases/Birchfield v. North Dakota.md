@@ -2,22 +2,27 @@
 title: "Birchfield v. North Dakota"
 type: case
 citation: "579 U.S. 438 (2016)"
-parallel_cite: "136 S. Ct. 2160"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "195 L. Ed. 2d 560; 136 S. Ct. 2160"
+neutral_cite: 2016 U.S. LEXIS 4058
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 2016
 date_decided: 2016-06-23
-docket: "14-1468"
+docket: 14-1468
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Good law. Refines the Schmerber/McNeely DUI-testing line: breath tests are valid as a search incident to arrest, blood tests are not; States may not criminalize refusal of a warrantless blood test."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 2016-06-23
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Birchfield v. North Dakota
+  varies_by_point: false
+  scope_note: "Good law. Refines the Schmerber/McNeely DUI-testing line: breath tests are valid as a search incident to arrest, blood tests are not; States may not criminalize refusal of a warrantless blood test."
+  point_overrides: []
 courtlistener:
-  opinion_url: "https://www.courtlistener.com/opinion/3216497/birchfield-v-north-dakota/"
+  opinion_url: "https://www.courtlistener.com/opinion/3216497/birchfield-v-n-dakota-william-robert-bernard/"
+  cluster_id: 3216497
   opinion_id: 3216391
   identity_checked: true
 homes:
@@ -29,6 +34,10 @@ related: ["[[Schmerber v. California]]", "[[Missouri v. McNeely]]", "[[Riley v. 
 aliases: []
 tags: ["case", "fourth-amendment", "search-incident-to-arrest", "dui", "blood-draw", "breath-test", "implied-consent"]
 holding: "A breath test may be administered as a search incident to a DUI arrest without a warrant, but a blood test may not be justified as a search incident to arrest (it needs a warrant or exigency); and a State may not impose criminal penalties for refusing a warrantless blood test."
+lake:
+  record_id: Birchfield v. North Dakota
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Birchfield v. North Dakota

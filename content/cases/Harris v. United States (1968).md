@@ -2,22 +2,27 @@
 title: "Harris v. United States (1968)"
 type: case
 citation: "390 U.S. 234 (1968)"
-parallel_cite: "88 S. Ct. 992"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "88 S. Ct. 992; 19 L. Ed. 2d 1067"
+neutral_cite: 1968 U.S. LEXIS 2283
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1968
 date_decided: 1968-03-05
-docket: "92"
+docket: 92
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Per curiam. The plain-view-seizure formulation remains settled law; it was later structured (no-inadvertence requirement) by Horton v. California. Distinct case from the 1947 Harris v. United States (search incident to arrest), which Chimel v. California overruled."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1968-03-05
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: "Harris v. United States (1968)"
+  varies_by_point: false
+  scope_note: "Per curiam. The plain-view-seizure formulation remains settled law; it was later structured (no-inadvertence requirement) by Horton v. California. Distinct case from the 1947 Harris v. United States (search incident to arrest), which Chimel v. California overruled."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/107625/harris-v-united-states/"
+  cluster_id: 107625
   opinion_id: 107625
   identity_checked: true
 homes:
@@ -29,6 +34,10 @@ related: ["[[Coolidge v. New Hampshire]]", "[[Horton v. California]]", "[[Texas 
 aliases: ["Harris v. United States"]
 tags: ["case", "fourth-amendment", "plain-view", "impound", "protective-measure", "automobile"]
 holding: "Objects falling in the plain view of an officer who has a right to be in the position to have that view are subject to seizure and admissible; a protective measure taken to secure a lawfully impounded car is not a search."
+lake:
+  record_id: "Harris v. United States (1968)"
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Harris v. United States (1968)

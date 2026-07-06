@@ -2,22 +2,27 @@
 title: "Pearson v. Callahan"
 type: case
 citation: "555 U.S. 223 (2009)"
-parallel_cite: "129 S. Ct. 808"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "129 S. Ct. 808; 172 L. Ed. 2d 565"
+neutral_cite: 2009 U.S. LEXIS 591
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 2009
 date_decided: 2009-01-21
-docket: "07-751"
+docket: 07-751
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: ""
-  by: []
+  field_i_validity: good_law
+  as_of_content: 2009-01-21
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Pearson v. Callahan
+  varies_by_point: false
+  scope_note: "Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/145918/pearson-v-callahan/"
+  cluster_id: 145918
   opinion_id: 145918
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Saucier v. Katz]]", "[[Harlow v. Fitzgerald]]", "[[Graham v. Connor
 aliases: []
 tags: ["case", "qualified-immunity", "section-1983", "saucier-sequence", "clearly-established"]
 holding: "The Saucier two-step sequence, while often appropriate, is NO LONGER MANDATORY. Lower courts may exercise discretion over which prong…"
+lake:
+  record_id: Pearson v. Callahan
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Pearson v. Callahan

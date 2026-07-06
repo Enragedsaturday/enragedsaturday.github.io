@@ -1,23 +1,28 @@
 ---
 title: "United States v. Neugin"
 type: case
-citation: "958 F.3d 924 (10th Cir. 2020)"
+citation: "958 F.3d 924 (2020)"
 parallel_cite: ""
 neutral_cite: ""
 court: "U.S. Court of Appeals, Tenth Circuit"
-court_level: circuit
-circuit: "10th"
+court_level: coa
+circuit: 10th
 year: 2020
 date_decided: 2020-05-01
-docket: "19-7043"
+docket: 19-7043
 authority_weight: "Binding in-circuit — 10th Cir."
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: ""
-  by: []
+  field_i_validity: good_law
+  as_of_content: 2020-05-01
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: United States v. Neugin
+  varies_by_point: false
+  scope_note: "Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/4750564/united-states-v-neugin/"
+  cluster_id: 4750564
   opinion_id: 4530911
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Nix v. Williams]]", "[[Brigham City v. Stuart]]", "[[Horton v. Cali
 aliases: ["United States v. Neugin (10th Cir. 2020)"]
 tags: ["case", "fourth-amendment", "exclusionary-rule", "inevitable-discovery", "community-caretaking", "tenth-circuit"]
 holding: "Illustrative application of inevitable discovery where the exception did NOT apply: the chain to discovery was too speculative, so…"
+lake:
+  record_id: United States v. Neugin
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # United States v. Neugin

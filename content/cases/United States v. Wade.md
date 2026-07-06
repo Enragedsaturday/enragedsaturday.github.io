@@ -2,9 +2,9 @@
 title: "United States v. Wade"
 type: case
 citation: "388 U.S. 218 (1967)"
-parallel_cite: "87 S. Ct. 1926"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "87 S. Ct. 1926; 18 L. Ed. 2d 1149"
+neutral_cite: 1967 U.S. LEXIS 1085
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1967
@@ -12,13 +12,18 @@ date_decided: 1967-06-12
 docket: ""
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Right-to-counsel reach later limited by Kirby v. Illinois (post-charge only) and United States v. Ash (no counsel at photo arrays)."
-  by: ["[[Kirby v. Illinois]]", "[[United States v. Ash]]"]
+  field_i_validity: good_law
+  as_of_content: 1967-06-12
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: United States v. Wade
+  varies_by_point: false
+  scope_note: "Right-to-counsel reach later limited by Kirby v. Illinois (post-charge only) and United States v. Ash (no counsel at photo arrays)."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/107486/united-states-v-wade/"
-  opinion_id: 107486
+  cluster_id: 107486
+  opinion_id: 9423472
   identity_checked: true
 homes:
   - page: "[[Eyewitness Identification]]"
@@ -27,6 +32,10 @@ related: ["[[Gilbert v. California]]", "[[Kirby v. Illinois]]", "[[United States
 aliases: []
 tags: ["case", "sixth-amendment", "eyewitness-identification", "lineup", "right-to-counsel", "critical-stage"]
 holding: "A post-indictment lineup is a critical stage of the prosecution at which the accused has a Sixth Amendment right to counsel; counsel's…"
+lake:
+  record_id: United States v. Wade
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # United States v. Wade

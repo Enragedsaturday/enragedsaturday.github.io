@@ -2,22 +2,27 @@
 title: "See v. City of Seattle"
 type: case
 citation: "387 U.S. 541 (1967)"
-parallel_cite: "87 S. Ct. 1737"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "87 S. Ct. 1737; 18 L. Ed. 2d 943"
+neutral_cite: 1967 U.S. LEXIS 1255
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1967
 date_decided: 1967-06-05
-docket: "180"
+docket: 180
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Good law; the commercial-premises companion to Camara. Later cases recognized the pervasively-regulated-industry exception (Barlow's, Donovan v. Dewey, Biswell, Burger) but did not disturb See's general warrant rule."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1967-06-05
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: See v. City of Seattle
+  varies_by_point: false
+  scope_note: "Good law; the commercial-premises companion to Camara. Later cases recognized the pervasively-regulated-industry exception (Barlow's, Donovan v. Dewey, Biswell, Burger) but did not disturb See's general warrant rule."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/107474/see-v-city-of-seattle/"
+  cluster_id: 107474
   opinion_id: 107474
   identity_checked: true
 homes:
@@ -29,6 +34,10 @@ related: ["[[Camara v. Municipal Court]]", "[[Marshall v. Barlow's Inc.]]"]
 aliases: []
 tags: ["case", "fourth-amendment", "administrative-search", "inspections", "commercial-premises", "warrant"]
 holding: "An administrative inspection of the nonpublic portions of commercial premises generally requires a warrant; a businessman, like a homeowner, may refuse a warrantless regulatory entry and cannot be punished for that refusal."
+lake:
+  record_id: See v. City of Seattle
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # See v. City of Seattle

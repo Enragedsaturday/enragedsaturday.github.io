@@ -2,22 +2,27 @@
 title: "Lange v. California"
 type: case
 citation: "594 U.S. 295 (2021)"
-parallel_cite: "141 S. Ct. 2011"
+parallel_cite: ""
 neutral_cite: ""
-court: "U.S. Supreme Court"
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 2021
 date_decided: 2021-06-23
-docket: "20-18"
+docket: 20-18
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: ""
-  by: []
+  field_i_validity: good_law
+  as_of_content: 2021-06-23
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Lange v. California
+  varies_by_point: false
+  scope_note: "Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/4894407/lange-v-california/"
+  cluster_id: 4894407
   opinion_id: 4698186
   identity_checked: true
 homes:
@@ -29,6 +34,10 @@ related: ["[[United States v. Santana]]", "[[Welsh v. Wisconsin]]", "[[Kentucky 
 aliases: []
 tags: ["case", "fourth-amendment", "exigent-circumstances", "hot-pursuit", "misdemeanor", "home-entry"]
 holding: "Pursuit of a fleeing MISDEMEANOR suspect does not categorically justify warrantless home entry; courts apply a case-by-case exigency…"
+lake:
+  record_id: Lange v. California
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Lange v. California

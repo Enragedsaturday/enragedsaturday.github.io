@@ -2,22 +2,27 @@
 title: "Haynes v. Washington"
 type: case
 citation: "373 U.S. 503 (1963)"
-parallel_cite: "83 S. Ct. 1336"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "83 S. Ct. 1336; 10 L. Ed. 2d 513"
+neutral_cite: 1963 U.S. LEXIS 1439
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1963
 date_decided: 1963-05-27
-docket: "147"
+docket: 147
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Good law; incommunicado detention plus an express threat/promise (you may call your wife only if you sign a confession) renders a written confession involuntary under the totality of circumstances."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1963-05-27
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Haynes v. Washington
+  varies_by_point: false
+  scope_note: "Good law; incommunicado detention plus an express threat/promise (you may call your wife only if you sign a confession) renders a written confession involuntary under the totality of circumstances."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/106625/haynes-v-washington/"
+  cluster_id: 106625
   opinion_id: 106625
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Lynumn v. Illinois]]", "[[Spano v. New York]]", "[[Ashcraft v. Tenn
 aliases: []
 tags: ["case", "fifth-amendment", "fourteenth-amendment", "confessions", "voluntariness", "due-process", "incommunicado", "coercion"]
 holding: "A written confession obtained in an atmosphere of substantial coercion and inducement — incommunicado detention plus the express threat of continued isolation and the promise of contact with family conditioned on signing a confession — is involuntary under the totality of circumstances and inadmissible under the Fourteenth Amendment."
+lake:
+  record_id: Haynes v. Washington
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Haynes v. Washington

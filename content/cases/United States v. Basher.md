@@ -1,23 +1,28 @@
 ---
 title: "United States v. Basher"
 type: case
-citation: "629 F.3d 1161 (9th Cir. 2011)"
+citation: "629 F.3d 1161 (2011)"
 parallel_cite: ""
-neutral_cite: ""
+neutral_cite: "2011 U.S. App. LEXIS 1064; 2011 WL 167045"
 court: "U.S. Court of Appeals, 9th Circuit"
-court_level: circuit
-circuit: "9th"
+court_level: coa
+circuit: 9th
 year: 2011
-date_decided: ""
+date_decided: 2011-01-20
 docket: ""
 authority_weight: "Binding in-circuit — 9th Cir."
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Good law in-circuit; reaffirms tent privacy while holding the area outside a dispersed-campsite tent is not curtilage."
-  by: []
+  field_i_validity: good_law
+  as_of_content: null
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: United States v. Basher
+  varies_by_point: false
+  scope_note: "Good law in-circuit; reaffirms tent privacy while holding the area outside a dispersed-campsite tent is not curtilage."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/183144/united-states-v-basher/"
+  cluster_id: 183144
   opinion_id: 183144
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Oliver v. United States]]", "[[California v. Ciraolo]]", "[[Katz v.
 aliases: []
 tags: ["case", "fourth-amendment", "curtilage", "tents"]
 holding: "(9th Cir. — persuasive) Reaffirms privacy inside a tent ('comparable to a house, apartment, or hotel room'), but the area outside the tent in a dispersed public-land campsite is not curtilage."
+lake:
+  record_id: United States v. Basher
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # United States v. Basher

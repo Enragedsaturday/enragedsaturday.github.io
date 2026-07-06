@@ -2,9 +2,9 @@
 title: "North Carolina v. Butler"
 type: case
 citation: "441 U.S. 369 (1979)"
-parallel_cite: "99 S. Ct. 1755"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "99 S. Ct. 1755; 60 L. Ed. 2d 286"
+neutral_cite: 1979 U.S. LEXIS 91
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1979
@@ -12,13 +12,18 @@ date_decided: 1979-04-24
 docket: ""
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Implied-waiver rule; reaffirmed in Berghuis v. Thompkins; good law."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1979-04-24
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: North Carolina v. Butler
+  varies_by_point: false
+  scope_note: "Implied-waiver rule; reaffirmed in Berghuis v. Thompkins; good law."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/110065/north-carolina-v-butler/"
-  opinion_id: 110065
+  cluster_id: 110065
+  opinion_id: 9427547
   identity_checked: true
 homes:
   - page: "[[Miranda Waiver and Invocation]]"
@@ -27,6 +32,10 @@ related: ["[[Miranda v. Arizona]]", "[[Berghuis v. Thompkins]]", "[[Moran v. Bur
 aliases: []
 tags: ["case", "fifth-amendment", "miranda", "waiver", "implied-waiver"]
 holding: "An express written or oral waiver is not required; a valid Miranda waiver may be inferred from the suspect's words and conduct — but…"
+lake:
+  record_id: North Carolina v. Butler
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # North Carolina v. Butler

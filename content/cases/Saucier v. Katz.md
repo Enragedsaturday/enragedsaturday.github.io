@@ -2,22 +2,38 @@
 title: "Saucier v. Katz"
 type: case
 citation: "533 U.S. 194 (2001)"
-parallel_cite: "121 S. Ct. 2151"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "121 S. Ct. 2151; 150 L. Ed. 2d 272"
+neutral_cite: 2001 U.S. LEXIS 4664
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 2001
 date_decided: 2001-06-18
-docket: "99-1977"
+docket: 99-1977
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: limited
-  as_of: 2026-06-30
-  note: "Pearson v. Callahan (2009) held that Saucier's two-step sequence is no longer mandatory; Saucier's two-part qualified-immunity test survives."
-  by: ["[[Pearson v. Callahan]]"]
+  field_i_validity: caution
+  as_of_content: 2001-06-18
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Saucier v. Katz
+  varies_by_point: true
+  scope_note: "Pearson v. Callahan (2009) held that Saucier's two-step sequence is no longer mandatory; Saucier's two-part qualified-immunity test survives."
+  point_overrides:
+    - point: legacy-limited-saucier-v-katz
+      point_label: Legacy limited treatment point
+      field_i_validity: caution
+      as_of_treatment: 2026-06-30
+      s3_binding_status: provisional
+      by:
+        - name: Pearson v. Callahan
+          cluster_id: 145918
+          cite: 555 U.S. 223
+          field_ii: limited
+      scope_note: "Pearson v. Callahan (2009) held that Saucier's two-step sequence is no longer mandatory; Saucier's two-part qualified-immunity test survives."
 courtlistener:
-  opinion_url: "https://www.courtlistener.com/opinion/118449/saucier-v-katz/"
+  opinion_url: "https://www.courtlistener.com/opinion/118449/saucier-v-katz-et-al/"
+  cluster_id: 118449
   opinion_id: 118449
   identity_checked: true
 homes:
@@ -27,6 +43,10 @@ related: ["[[Pearson v. Callahan]]", "[[Harlow v. Fitzgerald]]", "[[Graham v. Co
 aliases: []
 tags: ["case", "qualified-immunity", "section-1983", "two-step-sequence", "clearly-established", "excessive-force"]
 holding: "Established the (then-mandatory) two-step qualified-immunity sequence: (1) taken in the light most favorable to the plaintiff, do the…"
+lake:
+  record_id: Saucier v. Katz
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Saucier v. Katz

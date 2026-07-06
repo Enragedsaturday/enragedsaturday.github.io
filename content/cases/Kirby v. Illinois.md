@@ -2,9 +2,9 @@
 title: "Kirby v. Illinois"
 type: case
 citation: "406 U.S. 682 (1972)"
-parallel_cite: "92 S. Ct. 1877"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "92 S. Ct. 1877; 32 L. Ed. 2d 411"
+neutral_cite: 1972 U.S. LEXIS 49
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1972
@@ -12,12 +12,17 @@ date_decided: 1972-06-07
 docket: ""
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Plurality opinion; its attachment rule was subsequently adopted by a majority (e.g., Moore v. Illinois) and reaffirmed in Rothgery v. Gillespie County (2008)."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1972-06-07
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Kirby v. Illinois
+  varies_by_point: false
+  scope_note: "Plurality opinion; its attachment rule was subsequently adopted by a majority (e.g., Moore v. Illinois) and reaffirmed in Rothgery v. Gillespie County (2008)."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/108554/kirby-v-illinois/"
+  cluster_id: 108554
   opinion_id: 108554
   identity_checked: true
 homes:
@@ -29,6 +34,10 @@ related: ["[[United States v. Wade]]", "[[Gilbert v. California]]", "[[Massiah v
 aliases: []
 tags: ["case", "sixth-amendment", "right-to-counsel", "attachment", "eyewitness-identification", "showup"]
 holding: "The Sixth Amendment right to counsel attaches only at or after the initiation of adversary judicial criminal proceedings (formal charge,…"
+lake:
+  record_id: Kirby v. Illinois
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Kirby v. Illinois

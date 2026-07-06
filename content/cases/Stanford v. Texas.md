@@ -2,22 +2,27 @@
 title: "Stanford v. Texas"
 type: case
 citation: "379 U.S. 476 (1965)"
-parallel_cite: "85 S. Ct. 506"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "85 S. Ct. 506; 13 L. Ed. 2d 431"
+neutral_cite: 1965 U.S. LEXIS 2380
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1965
 date_decided: 1965-03-01
-docket: "40"
+docket: 40
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Controlling: warrants for expressive materials seized for their ideas demand 'the most scrupulous exactitude'; a warrant sweeping in books and papers by subject matter is an unconstitutional general warrant."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1965-03-01
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Stanford v. Texas
+  varies_by_point: false
+  scope_note: "Controlling: warrants for expressive materials seized for their ideas demand 'the most scrupulous exactitude'; a warrant sweeping in books and papers by subject matter is an unconstitutional general warrant."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/106964/stanford-v-texas/"
+  cluster_id: 106964
   opinion_id: 106964
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Maryland v. Garrison]]", "[[Groh v. Ramirez]]", "[[Andresen v. Mary
 aliases: []
 tags: ["case", "fourth-amendment", "warrant-requirement", "particularity", "general-warrant", "first-amendment"]
 holding: "When a warrant authorizes the seizure of books and papers because of the ideas they contain, the particularity requirement must be applied with the most scrupulous exactitude; a warrant authorizing seizure of all materials 'concerning' a subject is an unconstitutional general warrant."
+lake:
+  record_id: Stanford v. Texas
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Stanford v. Texas

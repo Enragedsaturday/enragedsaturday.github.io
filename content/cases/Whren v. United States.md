@@ -2,22 +2,27 @@
 title: "Whren v. United States"
 type: case
 citation: "517 U.S. 806 (1996)"
-parallel_cite: "116 S. Ct. 1769"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "116 S. Ct. 1769; 135 L. Ed. 2d 89"
+neutral_cite: 1996 U.S. LEXIS 3720
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1996
-date_decided: 1996-06-10
-docket: "95-5841"
+date_decided: 1996-05-15
+docket: 95-5841
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Pretext-irrelevance rule reaffirmed throughout; good law."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1996-06-10
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Whren v. United States
+  varies_by_point: false
+  scope_note: "Pretext-irrelevance rule reaffirmed throughout; good law."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/118036/whren-v-united-states/"
+  cluster_id: 118036
   opinion_id: 118036
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Delaware v. Prouse]]", "[[Pennsylvania v. Mimms]]", "[[Heien v. Nor
 aliases: ["Whren"]
 tags: ["case", "fourth-amendment", "traffic-stops", "pretext", "probable-cause", "subjective-intent"]
 holding: "An officer's subjective motive is irrelevant to the Fourth Amendment validity of a traffic stop; a stop supported by an objective,…"
+lake:
+  record_id: Whren v. United States
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Whren v. United States

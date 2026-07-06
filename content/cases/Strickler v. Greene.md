@@ -2,22 +2,27 @@
 title: "Strickler v. Greene"
 type: case
 citation: "527 U.S. 263 (1999)"
-parallel_cite: "119 S. Ct. 1936"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "119 S. Ct. 1936; 144 L. Ed. 2d 286"
+neutral_cite: 1999 U.S. LEXIS 4191
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1999
 date_decided: 1999-06-17
-docket: "98-5864"
+docket: 98-5864
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: ""
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1999-06-17
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Strickler v. Greene
+  varies_by_point: false
+  scope_note: "Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/118307/strickler-v-greene/"
+  cluster_id: 118307
   opinion_id: 118307
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Brady v. Maryland]]", "[[Giglio v. United States]]", "[[Smith v. Ca
 aliases: []
 tags: ["case", "brady", "materiality", "suppression", "prejudice"]
 holding: "Canonical statement of the THREE Brady components: (1) the evidence must be favorable (exculpatory OR impeaching); (2) it must have been…"
+lake:
+  record_id: Strickler v. Greene
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Strickler v. Greene

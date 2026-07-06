@@ -2,22 +2,27 @@
 title: "Simmons v. United States"
 type: case
 citation: "390 U.S. 377 (1968)"
-parallel_cite: "88 S. Ct. 967"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "88 S. Ct. 967; 19 L. Ed. 2d 1247"
+neutral_cite: 1968 U.S. LEXIS 2167
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1968
 date_decided: 1968-03-18
-docket: "55"
+docket: 55
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Both holdings — the photographic-identification due-process standard and the immunity for suppression-hearing testimony — remain good law."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1968-03-18
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Simmons v. United States
+  varies_by_point: false
+  scope_note: "Both holdings — the photographic-identification due-process standard and the immunity for suppression-hearing testimony — remain good law."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/107636/simmons-v-united-states/"
+  cluster_id: 107636
   opinion_id: 107636
   identity_checked: true
 homes:
@@ -29,6 +34,10 @@ related: ["[[Stovall v. Denno]]", "[[Manson v. Brathwaite]]", "[[Neil v. Biggers
 aliases: []
 tags: ["case", "fourth-amendment", "fifth-amendment", "standing", "eyewitness-identification", "photographic-identification", "due-process"]
 holding: "A pretrial photographic identification violates due process only if it was so impermissibly suggestive as to give rise to a very substantial likelihood of irreparable misidentification; and a defendant's testimony given to establish Fourth Amendment standing at a suppression hearing may not be used against him at trial on guilt."
+lake:
+  record_id: Simmons v. United States
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Simmons v. United States

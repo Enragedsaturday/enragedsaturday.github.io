@@ -2,22 +2,27 @@
 title: "Byars v. United States"
 type: case
 citation: "273 U.S. 28 (1927)"
-parallel_cite: "47 S. Ct. 248"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "47 S. Ct. 248; 71 L. Ed. 520"
+neutral_cite: 1927 U.S. LEXIS 679
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1927
 date_decided: 1927-01-03
-docket: "72"
+docket: 72
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Not overruled. Its core Fourth Amendment holdings — a conclusory affidavit cannot support a warrant, and an unconstitutional search is not validated by its fruits — survive. The federal-participation / silver-platter framework it operated within was superseded by Elkins v. United States (1960) and [[Mapp v. Ohio]] (1961), which extended exclusion to all illegally seized evidence regardless of which sovereign's officers searched."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1927-01-03
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Byars v. United States
+  varies_by_point: false
+  scope_note: "Not overruled. Its core Fourth Amendment holdings — a conclusory affidavit cannot support a warrant, and an unconstitutional search is not validated by its fruits — survive. The federal-participation / silver-platter framework it operated within was superseded by Elkins v. United States (1960) and [[Mapp v. Ohio]] (1961), which extended exclusion to all illegally seized evidence regardless of which sovereign's officers searched."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/100980/byars-v-united-states/"
+  cluster_id: 100980
   opinion_id: 100980
   identity_checked: true
 homes:
@@ -29,6 +34,10 @@ related: ["[[Weeks v. United States]]", "[[Boyd v. United States]]", "[[Mapp v. 
 aliases: []
 tags: ["case", "fourth-amendment", "warrant-requirement", "affidavit", "exclusionary-rule", "silver-platter"]
 holding: "A warrant resting on a wholly conclusory affidavit is invalid; and where a federal officer participates in a state search under color of federal office, the search is in substance a federal undertaking bound by federal constitutional standards, so its fruits are inadmissible in federal court."
+lake:
+  record_id: Byars v. United States
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Byars v. United States

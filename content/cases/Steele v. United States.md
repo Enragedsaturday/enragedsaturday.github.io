@@ -2,22 +2,27 @@
 title: "Steele v. United States"
 type: case
 citation: "267 U.S. 498 (1925)"
-parallel_cite: "45 S. Ct. 414"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "45 S. Ct. 414; 69 L. Ed. 757"
+neutral_cite: 1925 U.S. LEXIS 386
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1925
 date_decided: 1925-04-13
-docket: "235"
+docket: 235
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Controlling and canonical: the particularity-of-place requirement is satisfied if an officer can, with reasonable effort, ascertain and identify the place intended."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1925-04-13
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Steele v. United States
+  varies_by_point: false
+  scope_note: "Controlling and canonical: the particularity-of-place requirement is satisfied if an officer can, with reasonable effort, ascertain and identify the place intended."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/100621/steele-v-united-states-no-1/"
+  cluster_id: 100621
   opinion_id: 100621
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Maryland v. Garrison]]", "[[Groh v. Ramirez]]", "[[Stanford v. Texa
 aliases: ["Steele v. United States No. 1"]
 tags: ["case", "fourth-amendment", "warrant-requirement", "particularity", "description-of-place"]
 holding: "A warrant satisfies the Fourth Amendment's particularity-of-place requirement if its description is such that the executing officer can, with reasonable effort, ascertain and identify the place intended to be searched."
+lake:
+  record_id: Steele v. United States
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Steele v. United States

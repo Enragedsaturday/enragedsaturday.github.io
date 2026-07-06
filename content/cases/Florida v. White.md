@@ -2,23 +2,28 @@
 title: "Florida v. White"
 type: case
 citation: "526 U.S. 559 (1999)"
-parallel_cite: "119 S. Ct. 1555"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "119 S. Ct. 1555; 143 L. Ed. 2d 748"
+neutral_cite: 1999 U.S. LEXIS 3172
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1999
 date_decided: 1999-05-17
-docket: "98-223"
+docket: 98-223
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Good law. Souter, J. (joined by Breyer, J.), concurred to caution against reading the holding as a general endorsement of warrantless seizures of anything a State labels 'contraband.'"
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1999-05-17
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Florida v. White
+  varies_by_point: false
+  scope_note: "Good law. Souter, J. (joined by Breyer, J.), concurred to caution against reading the holding as a general endorsement of warrantless seizures of anything a State labels 'contraband.'"
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/118287/florida-v-white/"
-  opinion_id: 118287
+  cluster_id: 118287
+  opinion_id: 9433798
   identity_checked: true
 homes:
   - page: "[[Automobile Exception]]"
@@ -27,6 +32,10 @@ related: ["[[Carroll v. United States]]", "[[Cooper v. California]]", "[[United 
 aliases: []
 tags: ["case", "fourth-amendment", "automobile-exception", "forfeiture", "warrantless-seizure", "public-place", "contraband"]
 holding: "When police have probable cause to believe a vehicle is itself forfeitable contraband, the Fourth Amendment does not require a warrant to seize the car from a public place."
+lake:
+  record_id: Florida v. White
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Florida v. White

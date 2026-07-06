@@ -2,22 +2,27 @@
 title: "Sorrells v. United States"
 type: case
 citation: "287 U.S. 435 (1932)"
-parallel_cite: "53 S. Ct. 210"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "53 S. Ct. 210; 77 L. Ed. 413; 86 A.L.R. 249"
+neutral_cite: 1932 U.S. LEXIS 30
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1932
 date_decided: 1932-12-19
-docket: "100"
+docket: 100
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: ""
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1932-12-19
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Sorrells v. United States
+  varies_by_point: false
+  scope_note: "Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/101997/sorrells-v-united-states/"
+  cluster_id: 101997
   opinion_id: 101997
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Sherman v. United States]]", "[[Hampton v. United States]]", "[[Jac
 aliases: []
 tags: ["case", "entrapment", "predisposition", "prohibition"]
 holding: "Entrapment is a valid defense; it arises when government officials implant the criminal design in the mind of a person who had no…"
+lake:
+  record_id: Sorrells v. United States
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Sorrells v. United States

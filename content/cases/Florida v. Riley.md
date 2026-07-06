@@ -2,22 +2,27 @@
 title: "Florida v. Riley"
 type: case
 citation: "488 U.S. 445 (1989)"
-parallel_cite: "109 S. Ct. 693"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "109 S. Ct. 693; 102 L. Ed. 2d 835"
+neutral_cite: 1989 U.S. LEXIS 580
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1989
-date_decided: ""
+date_decided: 1989-04-03
 docket: ""
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Controlling plurality (White, J.), with O'Connor, J., concurring in the judgment on a public-use rationale. Good law; the naked-eye-from-lawful-public-airspace holding governs aerial observation."
-  by: []
+  field_i_validity: good_law
+  as_of_content: null
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Florida v. Riley
+  varies_by_point: false
+  scope_note: "Controlling plurality (White, J.), with O'Connor, J., concurring in the judgment on a public-use rationale. Good law; the naked-eye-from-lawful-public-airspace holding governs aerial observation."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/112175/florida-v-riley/"
+  cluster_id: 112175
   opinion_id: 112175
   identity_checked: true
 homes:
@@ -29,6 +34,10 @@ related: ["[[California v. Ciraolo]]", "[[Dow Chemical Co. v. United States]]", 
 aliases: []
 tags: ["case", "fourth-amendment", "search", "aerial-surveillance", "curtilage", "helicopter"]
 holding: "Naked-eye observation of a backyard greenhouse from a helicopter lawfully in public airspace at 400 feet is not a search."
+lake:
+  record_id: Florida v. Riley
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Florida v. Riley

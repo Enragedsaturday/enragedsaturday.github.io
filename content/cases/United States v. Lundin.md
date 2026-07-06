@@ -1,23 +1,28 @@
 ---
 title: "United States v. Lundin"
 type: case
-citation: "817 F.3d 1151 (9th Cir. 2016)"
+citation: "817 F.3d 1151 (2016)"
 parallel_cite: ""
-neutral_cite: ""
+neutral_cite: "2016 WL 1104851; 2016 U.S. App. LEXIS 5236"
 court: "U.S. Court of Appeals, 9th Circuit"
-court_level: circuit
-circuit: "9th"
+court_level: coa
+circuit: 9th
 year: 2016
 date_decided: 2016-03-22
 docket: ""
 authority_weight: "Binding in-circuit — 9th Cir."
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Good law. Holds the knock-and-talk implied license is bounded by time and purpose, and that an officer's intent to arrest defeats the exception."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 2016-03-22
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: United States v. Lundin
+  varies_by_point: false
+  scope_note: "Good law. Holds the knock-and-talk implied license is bounded by time and purpose, and that an officer's intent to arrest defeats the exception."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/3187682/united-states-v-eric-lundin/"
+  cluster_id: 3187682
   opinion_id: 3187625
   identity_checked: true
 homes:
@@ -29,6 +34,10 @@ related: ["[[Florida v. Jardines]]", "[[Kentucky v. King]]", "[[Oliver v. United
 aliases: ["United States v. Eric Lundin", "United States v. Lundin (9th Cir. 2016)"]
 tags: ["case", "fourth-amendment", "knock-and-talk", "implied-license", "curtilage", "arrest", "ninth-circuit"]
 holding: "The knock-and-talk implied license is bounded by both time and purpose: a pre-dawn (around 4:00 a.m.) knock, undertaken with the intent to arrest the occupant rather than to ask questions, exceeds the customary license — so the exception does not apply and the porch knock (and the search it precipitated) violated the Fourth Amendment."
+lake:
+  record_id: United States v. Lundin
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # United States v. Lundin

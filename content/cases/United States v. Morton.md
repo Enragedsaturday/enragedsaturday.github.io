@@ -1,25 +1,30 @@
 ---
 title: "United States v. Morton"
 type: case
-citation: "46 F.4th 331 (5th Cir. 2022)"
+citation: ""
 parallel_cite: ""
 neutral_cite: ""
 court: "U.S. Court of Appeals, Fifth Circuit"
-court_level: circuit
-circuit: "5th"
+court_level: coa
+circuit: 5th
 year: 2022
 date_decided: 2022-08-23
-docket: "19-10842"
+docket: 19-10842
 authority_weight: "Binding in-circuit — 5th Cir."
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "En banc; resolved on the good-faith exception."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 2022-08-23
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: United States v. Morton
+  varies_by_point: false
+  scope_note: "En banc; resolved on the good-faith exception."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/7859188/united-states-v-morton/"
+  cluster_id: 7859188
   opinion_id: 7803054
-  identity_checked: true
+  identity_checked: false
 homes:
   - page: "[[Plain View Doctrine]]"
     role: "Recent development (role-based)"
@@ -27,6 +32,10 @@ related: ["[[Riley v. California]]", "[[Carpenter v. United States]]", "[[United
 aliases: ["United States v. Morton (5th Cir. 2022)", "United States v. Morton (en banc)"]
 tags: ["case", "fourth-amendment", "plain-view", "digital-searches", "cell-phone", "good-faith-exception", "fifth-circuit"]
 holding: "En banc 5th Circuit (resolving on good-faith grounds) discusses the digital general-warrant problem and flags, in concurrence, that the…"
+lake:
+  record_id: United States v. Morton
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # United States v. Morton

@@ -2,22 +2,27 @@
 title: "Rivas-Villegas v. Cortesluna"
 type: case
 citation: "595 U.S. 1 (2021)"
-parallel_cite: "142 S. Ct. 4"
+parallel_cite: "142 S. Ct. 4; 211 L. Ed. 2d 164"
 neutral_cite: ""
-court: "U.S. Supreme Court"
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 2021
 date_decided: 2021-10-18
-docket: "20-1539"
+docket: 20-1539
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: ""
-  by: []
+  field_i_validity: good_law
+  as_of_content: 2021-10-18
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Rivas-Villegas v. Cortesluna
+  varies_by_point: false
+  scope_note: "Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/5290447/rivas-villegas-v-cortesluna/"
+  cluster_id: 5290447
   opinion_id: 5118993
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[City of Tahlequah v. Bond]]", "[[District of Columbia v. Wesby]]", 
 aliases: []
 tags: ["case", "qualified-immunity", "section-1983", "excessive-force", "clearly-established", "per-curiam"]
 holding: "For QI, the plaintiff must identify a case that put the officer on notice that his specific conduct was unlawful, 'in light of the specific context of the case, not as a broad general proposition.'"
+lake:
+  record_id: Rivas-Villegas v. Cortesluna
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Rivas-Villegas v. Cortesluna

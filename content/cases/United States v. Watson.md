@@ -2,22 +2,27 @@
 title: "United States v. Watson"
 type: case
 citation: "423 U.S. 411 (1976)"
-parallel_cite: "96 S. Ct. 820"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "96 S. Ct. 820; 46 L. Ed. 2d 598"
+neutral_cite: 1976 U.S. LEXIS 121
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1976
-date_decided: 1976-01-26
+date_decided: 1975-10-06
 docket: ""
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: ""
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1976-01-26
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: United States v. Watson
+  varies_by_point: false
+  scope_note: "Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/109352/united-states-v-watson/"
+  cluster_id: 109352
   opinion_id: 109352
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Schneckloth v. Bustamonte]]", "[[United States v. Drayton]]", "[[Un
 aliases: []
 tags: ["case", "fourth-amendment", "consent-search", "voluntariness", "custody", "warrantless-arrest"]
 holding: "Custody alone does not render consent involuntary. The fact of being under arrest / in custody is ONE factor in the…"
+lake:
+  record_id: United States v. Watson
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # United States v. Watson

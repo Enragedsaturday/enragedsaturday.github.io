@@ -2,22 +2,38 @@
 title: "United States v. Agurs"
 type: case
 citation: "427 U.S. 97 (1976)"
-parallel_cite: "96 S. Ct. 2392"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "96 S. Ct. 2392; 49 L. Ed. 2d 342"
+neutral_cite: 1976 U.S. LEXIS 72
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1976
 date_decided: 1976-06-24
-docket: "75-491"
+docket: 75-491
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: limited
-  as_of: 2026-06-30
-  note: "Core duty survives: obviously exculpatory evidence must be disclosed even absent a defense request. But Agurs's distinct 'reasonable doubt that did not otherwise exist' materiality formula for the no-request situation was superseded by the single 'reasonable probability' standard of United States v. Bagley (1985), which collapsed Agurs's three-situation framework."
-  by: ["[[United States v. Bagley]]"]
+  field_i_validity: caution
+  as_of_content: 1976-06-24
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: United States v. Agurs
+  varies_by_point: true
+  scope_note: "Core duty survives: obviously exculpatory evidence must be disclosed even absent a defense request. But Agurs's distinct 'reasonable doubt that did not otherwise exist' materiality formula for the no-request situation was superseded by the single 'reasonable probability' standard of United States v. Bagley (1985), which collapsed Agurs's three-situation framework."
+  point_overrides:
+    - point: legacy-limited-united-states-v-agurs
+      point_label: Legacy limited treatment point
+      field_i_validity: caution
+      as_of_treatment: 2026-06-30
+      s3_binding_status: provisional
+      by:
+        - name: United States v. Bagley
+          cluster_id: 111514
+          cite: 473 U.S. 667
+          field_ii: limited
+      scope_note: "Core duty survives: obviously exculpatory evidence must be disclosed even absent a defense request. But Agurs's distinct 'reasonable doubt that did not otherwise exist' materiality formula for the no-request situation was superseded by the single 'reasonable probability' standard of United States v. Bagley (1985), which collapsed Agurs's three-situation framework."
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/109506/united-states-v-agurs/"
+  cluster_id: 109506
   opinion_id: 109506
   identity_checked: true
 homes:
@@ -27,6 +43,10 @@ related: ["[[Brady v. Maryland]]", "[[United States v. Bagley]]", "[[Kyles v. Wh
 aliases: []
 tags: ["case", "brady", "giglio", "materiality", "disclosure", "no-request", "due-process"]
 holding: "The prosecution's duty to disclose exculpatory evidence exists even when the defense makes no request, but a nondisclosure is a constitutional violation only when the omission is material — defined (in the no-request situation) as evidence that creates a reasonable doubt that did not otherwise exist. (Materiality standard later unified under Bagley's 'reasonable probability' test.)"
+lake:
+  record_id: United States v. Agurs
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # United States v. Agurs

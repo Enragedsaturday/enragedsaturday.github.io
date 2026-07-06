@@ -2,22 +2,27 @@
 title: "Gouled v. United States"
 type: case
 citation: "255 U.S. 298 (1921)"
-parallel_cite: "41 S. Ct. 261"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "41 S. Ct. 261; 65 L. Ed. 647"
+neutral_cite: 1921 U.S. LEXIS 1826
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1921
 date_decided: 1921-02-28
 docket: ""
-authority_weight: "Historical"
+authority_weight: "Binding — SCOTUS"
 treatment:
-  status: overruled
-  as_of: 2026-06-30
-  note: "The mere-evidence rule was overruled/abandoned by Warden v. Hayden (1967), which held the Fourth Amendment does not bar the seizure of items of solely evidentiary value. The separate Gouled holding — that entry obtained by stealth, ruse, or social pretext can render a subsequent search unreasonable — retains vitality."
-  by: ["[[Warden v. Hayden]]"]
+  field_i_validity: superseded
+  as_of_content: 1921-02-28
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Gouled v. United States
+  varies_by_point: false
+  scope_note: "The mere-evidence rule was overruled/abandoned by Warden v. Hayden (1967), which held the Fourth Amendment does not bar the seizure of items of solely evidentiary value. The separate Gouled holding — that entry obtained by stealth, ruse, or social pretext can render a subsequent search unreasonable — retains vitality."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/99745/gouled-v-united-states/"
+  cluster_id: 99745
   opinion_id: 99745
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Warden v. Hayden]]", "[[Boyd v. United States]]", "[[Weeks v. Unite
 aliases: []
 tags: ["case", "fourth-amendment", "search", "mere-evidence-rule", "ruse-entry", "historical"]
 holding: "Mere-evidence rule: warrants may seize only contraband, fruits, or instrumentalities, not items of solely evidentiary value (overruled by Warden v. Hayden); entry obtained by stealth or ruse can render a search unreasonable."
+lake:
+  record_id: Gouled v. United States
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Gouled v. United States

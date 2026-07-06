@@ -2,22 +2,27 @@
 title: "United States v. Ventresca"
 type: case
 citation: "380 U.S. 102 (1965)"
-parallel_cite: "85 S. Ct. 741"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "85 S. Ct. 741; 13 L. Ed. 2d 684; 16 A.F.T.R.2d (RIA) 5787"
+neutral_cite: 1965 U.S. LEXIS 2438
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1965
 date_decided: 1965-03-01
-docket: "28"
+docket: 28
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Controlling and foundational: warrant affidavits are read in a commonsense, not hypertechnical, manner and doubtful cases are resolved in favor of the warrant — a cornerstone of the deferential review reaffirmed in Illinois v. Gates and the good-faith rule of United States v. Leon."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1965-03-01
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: United States v. Ventresca
+  varies_by_point: false
+  scope_note: "Controlling and foundational: warrant affidavits are read in a commonsense, not hypertechnical, manner and doubtful cases are resolved in favor of the warrant — a cornerstone of the deferential review reaffirmed in Illinois v. Gates and the good-faith rule of United States v. Leon."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/106990/united-states-v-ventresca/"
+  cluster_id: 106990
   opinion_id: 106990
   identity_checked: true
 homes:
@@ -29,6 +34,10 @@ related: ["[[Illinois v. Gates]]", "[[Aguilar v. Texas]]", "[[Brinegar v. United
 aliases: []
 tags: ["case", "fourth-amendment", "warrant-requirement", "affidavit", "probable-cause"]
 holding: "A search-warrant affidavit must be read in a commonsense and realistic — not hypertechnical — manner, and doubtful or marginal probable-cause questions are resolved by the preference accorded to warrants; an affidavit that recites detailed underlying circumstances (even hearsay with a substantial basis) establishes probable cause."
+lake:
+  record_id: United States v. Ventresca
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # United States v. Ventresca

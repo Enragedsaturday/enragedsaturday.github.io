@@ -2,22 +2,27 @@
 title: "United States v. Santana"
 type: case
 citation: "427 U.S. 38 (1976)"
-parallel_cite: "96 S. Ct. 2406"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "96 S. Ct. 2406; 49 L. Ed. 2d 300"
+neutral_cite: 1976 U.S. LEXIS 71
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1976
 date_decided: 1976-06-24
-docket: "75-19"
+docket: 75-19
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Hot-pursuit reading for misdemeanor pursuits limited by Lange v. California (2021) — no longer categorical; the threshold/public-place and felony hot-pursuit holdings are intact."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1976-06-24
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: United States v. Santana
+  varies_by_point: false
+  scope_note: "Hot-pursuit reading for misdemeanor pursuits limited by Lange v. California (2021) — no longer categorical; the threshold/public-place and felony hot-pursuit holdings are intact."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/109504/united-states-v-santana/"
+  cluster_id: 109504
   opinion_id: 109504
   identity_checked: true
 homes:
@@ -31,6 +36,10 @@ related: ["[[United States v. Watson]]", "[[Payton v. New York]]", "[[Lange v. C
 aliases: []
 tags: ["case", "fourth-amendment", "arrest-in-the-home", "hot-pursuit", "exigent-circumstances", "doorway", "public-place"]
 holding: "A suspect standing in her own doorway/threshold is in a 'public' place for Fourth Amendment purposes; she cannot defeat a lawful arrest…"
+lake:
+  record_id: United States v. Santana
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # United States v. Santana

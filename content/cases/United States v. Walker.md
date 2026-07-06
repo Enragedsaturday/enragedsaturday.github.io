@@ -1,23 +1,28 @@
 ---
 title: "United States v. Walker"
 type: case
-citation: "799 F.3d 1361 (11th Cir. 2015)"
+citation: "799 F.3d 1361 (2015)"
 parallel_cite: ""
-neutral_cite: ""
+neutral_cite: 2015 WL 5157456
 court: "U.S. Court of Appeals, 11th Circuit"
-court_level: circuit
-circuit: "11th"
+court_level: coa
+circuit: 11th
 year: 2015
 date_decided: 2015-09-03
 docket: ""
 authority_weight: "Binding in-circuit — 11th Cir."
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Good law. Per curiam; applies Florida v. Jardines and United States v. Taylor to the geographic scope of the knock-and-talk implied license."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 2015-09-03
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: United States v. Walker
+  varies_by_point: false
+  scope_note: "Good law. Per curiam; applies Florida v. Jardines and United States v. Taylor to the geographic scope of the knock-and-talk implied license."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/2844024/united-states-v-wayne-walker/"
+  cluster_id: 2844024
   opinion_id: 2844024
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Florida v. Jardines]]", "[[French v. Merrill]]", "[[United States v
 aliases: ["United States v. Wayne Walker", "United States v. Walker (11th Cir. 2015)"]
 tags: ["case", "fourth-amendment", "knock-and-talk", "implied-license", "curtilage", "eleventh-circuit"]
 holding: "A 'small departure' from the front door — here, approaching the occupant's car parked in an open-sided carport beside the house when seeking to contact him — stays within the geographic scope of the knock-and-talk implied license, and a pre-dawn (5:04 a.m.) knock and talk is not a search and needs no exigent circumstances where the surrounding circumstances make the approach reasonable."
+lake:
+  record_id: United States v. Walker
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # United States v. Walker

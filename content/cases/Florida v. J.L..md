@@ -2,9 +2,9 @@
 title: "Florida v. J.L."
 type: case
 citation: "529 U.S. 266 (2000)"
-parallel_cite: "120 S. Ct. 1375"
+parallel_cite: ""
 neutral_cite: ""
-court: "U.S. Supreme Court"
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 2000
@@ -12,13 +12,18 @@ date_decided: 2000-03-28
 docket: ""
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: ""
-  by: []
+  field_i_validity: good_law
+  as_of_content: 2000-03-28
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Florida v. J.L.
+  varies_by_point: false
+  scope_note: "Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade."
+  point_overrides: []
 courtlistener:
-  opinion_url: "https://www.courtlistener.com/opinion/118352/florida-v-jl/"
-  opinion_id: 118352
+  opinion_url: "https://www.courtlistener.com/opinion/9189388/florida-v-j-l/"
+  cluster_id: 9189388
+  opinion_id: 9184148
   identity_checked: true
 homes:
   - page: "[[Probable Cause and Reasonable Suspicion]]"
@@ -27,6 +32,10 @@ related: ["[[Alabama v. White]]", "[[Terry v. Ohio]]", "[[Illinois v. Gates]]"]
 aliases: ["Florida v. JL"]
 tags: ["case", "fourth-amendment", "reasonable-suspicion", "anonymous-tip", "stop-and-frisk"]
 holding: "A bare anonymous tip that a person is carrying a gun, without more, is NOT reasonable suspicion for a stop and frisk; an accurate…"
+lake:
+  record_id: Florida v. J.L.
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Florida v. J.L.

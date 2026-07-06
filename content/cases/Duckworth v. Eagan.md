@@ -2,23 +2,28 @@
 title: "Duckworth v. Eagan"
 type: case
 citation: "492 U.S. 195 (1989)"
-parallel_cite: "109 S. Ct. 2875"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "109 S. Ct. 2875; 106 L. Ed. 2d 166; 57 U.S.L.W. 4942"
+neutral_cite: 1989 U.S. LEXIS 3196
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1989
 date_decided: 1989-06-26
-docket: "88-317"
+docket: 88-317
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Reasonably-conveys standard applied; reaffirmed in Florida v. Powell (2010); good law."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1989-06-26
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Duckworth v. Eagan
+  varies_by_point: false
+  scope_note: "Reasonably-conveys standard applied; reaffirmed in Florida v. Powell (2010); good law."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/112322/duckworth-v-eagan/"
-  opinion_id: 112322
+  cluster_id: 112322
+  opinion_id: 9431819
   identity_checked: true
 homes:
   - page: "[[Miranda and Custodial Interrogation]]"
@@ -27,6 +32,10 @@ related: ["[[California v. Prysock]]", "[[Florida v. Powell]]", "[[Miranda v. Ar
 aliases: []
 tags: ["case", "fifth-amendment", "miranda", "warning-adequacy"]
 holding: "Miranda warnings telling a suspect counsel will be appointed 'if and when you go to court' are not inadequate where, read in their totality, the warnings reasonably convey the right to counsel before and during questioning."
+lake:
+  record_id: Duckworth v. Eagan
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Duckworth v. Eagan

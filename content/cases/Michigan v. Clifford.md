@@ -2,23 +2,28 @@
 title: "Michigan v. Clifford"
 type: case
 citation: "464 U.S. 287 (1984)"
-parallel_cite: "104 S. Ct. 641"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "104 S. Ct. 641; 78 L. Ed. 2d 477; 52 U.S.L.W. 4056"
+neutral_cite: 1984 U.S. LEXIS 14
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1984
 date_decided: 1984-01-11
-docket: "82-357"
+docket: 82-357
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Plurality opinion (Powell, J., joined by Brennan, White, Marshall; Stevens, J., concurring in the judgment supplied the fifth vote on the result). The administrative-warrant / criminal-warrant framework for post-fire searches is the controlling teaching and is good law."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1984-01-11
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Michigan v. Clifford
+  varies_by_point: false
+  scope_note: "Plurality opinion (Powell, J., joined by Brennan, White, Marshall; Stevens, J., concurring in the judgment supplied the fifth vote on the result). The administrative-warrant / criminal-warrant framework for post-fire searches is the controlling teaching and is good law."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/111057/michigan-v-clifford/"
-  opinion_id: 111057
+  cluster_id: 111057
+  opinion_id: 9429413
   identity_checked: true
 homes:
   - page: "[[Emergency Aid]]"
@@ -29,6 +34,10 @@ related: ["[[Michigan v. Tyler]]", "[[Camara v. Municipal Court]]", "[[Mincey v.
 aliases: []
 tags: ["case", "fourth-amendment", "fire", "administrative-warrant", "exigent-circumstances", "privacy-interests"]
 holding: "Where reasonable privacy interests remain in fire-damaged property, a post-fire investigative search after the blaze is out and the scene is secured requires a warrant absent consent or a new exigency; an administrative warrant suffices to determine cause and origin, but a search whose primary object is to gather evidence of crime requires a criminal warrant on probable cause."
+lake:
+  record_id: Michigan v. Clifford
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Michigan v. Clifford

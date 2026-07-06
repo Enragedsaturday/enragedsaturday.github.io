@@ -2,9 +2,9 @@
 title: "Colorado v. Connelly"
 type: case
 citation: "479 U.S. 157 (1986)"
-parallel_cite: "107 S. Ct. 515"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "107 S. Ct. 515; 93 L. Ed. 2d 473; 55 U.S.L.W. 4043"
+neutral_cite: 1986 U.S. LEXIS 23
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1986
@@ -12,13 +12,18 @@ date_decided: 1986-12-10
 docket: ""
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: ""
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1986-12-10
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Colorado v. Connelly
+  varies_by_point: false
+  scope_note: "Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/111779/colorado-v-connelly/"
-  opinion_id: 111779
+  cluster_id: 111779
+  opinion_id: 9430748
   identity_checked: true
 homes:
   - page: "[[Due-Process Voluntariness of Confessions]]"
@@ -27,6 +32,10 @@ related: ["[[Brown v. Mississippi]]", "[[Chambers v. Florida]]", "[[Ashcraft v. 
 aliases: []
 tags: ["case", "fifth-amendment", "due-process", "confessions", "voluntariness", "police-coercion", "state-action"]
 holding: "A confession is \"involuntary\" for due-process purposes only when there is COERCIVE POLICE ACTIVITY; a suspect's mental illness or…"
+lake:
+  record_id: Colorado v. Connelly
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Colorado v. Connelly

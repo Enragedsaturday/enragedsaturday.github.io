@@ -2,22 +2,27 @@
 title: "Carpenter v. United States"
 type: case
 citation: "585 U.S. 296 (2018)"
-parallel_cite: "138 S. Ct. 2206"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "138 S. Ct. 2206; 201 L. Ed. 2d 507"
+neutral_cite: 2018 U.S. LEXIS 3844
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 2018
 date_decided: 2018-06-22
-docket: "16-402"
+docket: 16-402
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Carpenter itself narrows the third-party doctrine for digital-age location data; it is good law."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 2018-06-22
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Carpenter v. United States
+  varies_by_point: false
+  scope_note: "Carpenter itself narrows the third-party doctrine for digital-age location data; it is good law."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/4510032/carpenter-v-united-states/"
+  cluster_id: 4510032
   opinion_id: 4287285
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[United States v. Jones]]", "[[Katz v. United States]]", "[[Smith v.
 aliases: []
 tags: ["case", "fourth-amendment", "search", "digital-privacy", "cell-site", "third-party-doctrine"]
 holding: "Acquiring extended historical cell-site location information is a search — a reasonable expectation of privacy in 'the whole of [one's] physical movements'; narrows the third-party doctrine for digital-age data."
+lake:
+  record_id: Carpenter v. United States
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Carpenter v. United States

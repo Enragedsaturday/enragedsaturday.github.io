@@ -2,9 +2,9 @@
 title: "Hester v. United States"
 type: case
 citation: "265 U.S. 57 (1924)"
-parallel_cite: ""
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "44 S. Ct. 445; 68 L. Ed. 898"
+neutral_cite: 1924 U.S. LEXIS 2577
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1924
@@ -12,12 +12,17 @@ date_decided: 1924-05-05
 docket: ""
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: ""
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1924-05-05
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Hester v. United States
+  varies_by_point: false
+  scope_note: "Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/100413/hester-v-united-states/"
+  cluster_id: 100413
   opinion_id: 100413
   identity_checked: true
 homes:
@@ -29,6 +34,10 @@ related: ["[[Oliver v. United States]]", "[[United States v. Dunn]]", "[[Califor
 aliases: []
 tags: ["case", "fourth-amendment", "open-fields", "curtilage", "abandonment"]
 holding: "Origin of the open-fields doctrine — 4A protection of 'persons, houses, papers, and effects' does not extend to open fields; and a fleeing suspect who drops containers abandons any 4A interest in them."
+lake:
+  record_id: Hester v. United States
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Hester v. United States

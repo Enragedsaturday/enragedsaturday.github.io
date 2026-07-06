@@ -1,10 +1,10 @@
 ---
 title: "Florida v. Jardines"
 type: case
-citation: "569 U.S. 1 (2013)"
-parallel_cite: "133 S. Ct. 1409"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+citation: ""
+parallel_cite: "133 S. Ct. 1409; 185 L. Ed. 2d 495; 569 U.S. 1; 24 Fla. L. Weekly Fed. S 117; 81 U.S.L.W. 4209"
+neutral_cite: "2013 U.S. LEXIS 2542; 2013 WL 1196577"
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 2013
@@ -12,12 +12,17 @@ date_decided: 2013-03-26
 docket: ""
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: ""
-  by: []
+  field_i_validity: good_law
+  as_of_content: 2013-03-26
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Florida v. Jardines
+  varies_by_point: false
+  scope_note: "Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/856347/florida-v-jardines/"
+  cluster_id: 856347
   opinion_id: 856347
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Florida v. Harris]]", "[[United States v. Jones]]", "[[California v
 aliases: []
 tags: ["case", "fourth-amendment", "curtilage", "knock-and-talk", "dog-sniff", "trespass"]
 holding: "Bringing a drug dog onto the home's curtilage (the front porch) to investigate exceeded the implied license to approach and knock — a…"
+lake:
+  record_id: Florida v. Jardines
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Florida v. Jardines

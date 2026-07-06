@@ -2,23 +2,28 @@
 title: "Colorado v. Bertine"
 type: case
 citation: "479 U.S. 367 (1987)"
-parallel_cite: "107 S. Ct. 738"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "107 S. Ct. 738; 93 L. Ed. 2d 739; 55 U.S.L.W. 4105"
+neutral_cite: 1987 U.S. LEXIS 286
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1987
-date_decided: 1987-01-13
+date_decided: 1987-01-14
 docket: ""
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: ""
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1987-01-13
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Colorado v. Bertine
+  varies_by_point: false
+  scope_note: "Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/111788/colorado-v-bertine/"
-  opinion_id: 111788
+  cluster_id: 111788
+  opinion_id: 9430773
   identity_checked: true
 homes:
   - page: "[[Search Incident to Arrest]]"
@@ -29,6 +34,10 @@ related: ["[[Illinois v. Lafayette]]", "[[Florida v. Wells]]", "[[South Dakota v
 aliases: []
 tags: ["case", "fourth-amendment", "inventory-search", "impoundment", "standardized-criteria", "closed-container"]
 holding: "Inventory searches (including opening closed containers) are permissible where police discretion is exercised according to standardized…"
+lake:
+  record_id: Colorado v. Bertine
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Colorado v. Bertine

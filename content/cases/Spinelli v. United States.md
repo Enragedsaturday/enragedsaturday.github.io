@@ -2,22 +2,27 @@
 title: "Spinelli v. United States"
 type: case
 citation: "393 U.S. 410 (1969)"
-parallel_cite: "89 S. Ct. 584"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "89 S. Ct. 584; 21 L. Ed. 2d 637"
+neutral_cite: 1969 U.S. LEXIS 2701
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1969
 date_decided: 1969-01-27
-docket: "8"
-authority_weight: "Historical"
+docket: 8
+authority_weight: "Binding — SCOTUS"
 treatment:
-  status: abrogated
-  as_of: 2026-06-30
-  note: "Refined the Aguilar two-prong informant-tip test; the rigid Aguilar-Spinelli framework was abandoned for a totality-of-the-circumstances approach by Illinois v. Gates (1983)."
-  by: ["[[Illinois v. Gates]]"]
+  field_i_validity: superseded
+  as_of_content: 1969-01-27
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Spinelli v. United States
+  varies_by_point: false
+  scope_note: "Refined the Aguilar two-prong informant-tip test; the rigid Aguilar-Spinelli framework was abandoned for a totality-of-the-circumstances approach by Illinois v. Gates (1983)."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/107831/spinelli-v-united-states/"
+  cluster_id: 107831
   opinion_id: 107831
   identity_checked: true
 homes:
@@ -29,6 +34,10 @@ related: ["[[Aguilar v. Texas]]", "[[Illinois v. Gates]]"]
 aliases: []
 tags: ["case", "fourth-amendment", "probable-cause", "informants", "warrants", "historical"]
 holding: "Refined Aguilar's two-prong informant-tip test: a tip is first measured against the basis-of-knowledge and veracity prongs, and innocent corroboration cannot cure a deficient tip — later abandoned by Illinois v. Gates' totality test."
+lake:
+  record_id: Spinelli v. United States
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Spinelli v. United States

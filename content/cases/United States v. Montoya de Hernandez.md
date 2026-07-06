@@ -2,23 +2,28 @@
 title: "United States v. Montoya de Hernandez"
 type: case
 citation: "473 U.S. 531 (1985)"
-parallel_cite: "105 S. Ct. 3304"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "105 S. Ct. 3304; 87 L. Ed. 2d 381; 53 U.S.L.W. 5048"
+neutral_cite: 1985 U.S. LEXIS 120
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1985
 date_decided: 1985-07-01
-docket: "84-755"
+docket: 84-755
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: ""
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1985-07-01
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: United States v. Montoya de Hernandez
+  varies_by_point: false
+  scope_note: "Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/111509/united-states-v-montoya-de-hernandez/"
-  opinion_id: 111509
+  cluster_id: 111509
+  opinion_id: 9430181
   identity_checked: true
 homes:
   - page: "[[Border Searches]]"
@@ -27,6 +32,10 @@ related: ["[[United States v. Flores-Montano]]", "[[United States v. Martinez-Fu
 aliases: ["United States v. Rosa Elvira Montoya de Hernandez"]
 tags: ["case", "fourth-amendment", "border-searches", "reasonable-suspicion", "alimentary-canal-smuggling", "detention"]
 holding: "The prolonged detention of a suspected alimentary-canal (balloon) smuggler at the border is reasonable when customs officers have…"
+lake:
+  record_id: United States v. Montoya de Hernandez
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # United States v. Montoya de Hernandez

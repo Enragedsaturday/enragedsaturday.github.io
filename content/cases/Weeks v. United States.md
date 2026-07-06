@@ -2,22 +2,27 @@
 title: "Weeks v. United States"
 type: case
 citation: "232 U.S. 383 (1914)"
-parallel_cite: "34 S. Ct. 341"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "34 S. Ct. 341; 58 L. Ed. 652"
+neutral_cite: 1914 U.S. LEXIS 1368
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1914
 date_decided: 1914-02-24
-docket: "461"
+docket: 461
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Origin of the federal exclusionary rule; extended to the States by Mapp v. Ohio (1961). Good law."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1914-02-24
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Weeks v. United States
+  varies_by_point: false
+  scope_note: "Origin of the federal exclusionary rule; extended to the States by Mapp v. Ohio (1961). Good law."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/98094/weeks-v-united-states/"
+  cluster_id: 98094
   opinion_id: 98094
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Mapp v. Ohio]]", "[[Wong Sun v. United States]]", "[[United States 
 aliases: ["Weeks"]
 tags: ["case", "fourth-amendment", "exclusionary-rule", "warrantless-search", "origin"]
 holding: "Origin of the federal exclusionary rule: evidence obtained in violation of the Fourth Amendment is inadmissible against a defendant in…"
+lake:
+  record_id: Weeks v. United States
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Weeks v. United States

@@ -2,22 +2,27 @@
 title: "Rakas v. Illinois"
 type: case
 citation: "439 U.S. 128 (1978)"
-parallel_cite: "99 S. Ct. 421"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "99 S. Ct. 421; 58 L. Ed. 2d 387"
+neutral_cite: 1978 U.S. LEXIS 2452
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1978
-date_decided: 1978-12-05
-docket: "77-5781"
+date_decided: 1979-01-15
+docket: 77-5781
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: ""
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1978-12-05
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Rakas v. Illinois
+  varies_by_point: false
+  scope_note: "Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/109953/rakas-v-illinois/"
+  cluster_id: 109953
   opinion_id: 109953
   identity_checked: true
 homes:
@@ -29,6 +34,10 @@ related: ["[[Katz v. United States]]", "[[Rawlings v. Kentucky]]", "[[Minnesota 
 aliases: []
 tags: ["case", "fourth-amendment", "standing", "expectation-of-privacy", "passenger", "vehicle-search"]
 holding: "Fourth Amendment rights are personal; a defendant must show his own legitimate expectation of privacy was infringed and cannot…"
+lake:
+  record_id: Rakas v. Illinois
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Rakas v. Illinois

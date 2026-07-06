@@ -2,22 +2,27 @@
 title: "Garrity v. New Jersey"
 type: case
 citation: "385 U.S. 493 (1967)"
-parallel_cite: "87 S. Ct. 616"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "87 S. Ct. 616; 17 L. Ed. 2d 562"
+neutral_cite: 1967 U.S. LEXIS 2882
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1967
-date_decided: 1967-01-16
-docket: "13"
+date_decided: 1967-01-23
+docket: 13
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Good law; foundation of the 'Garrity rule' / Garrity warnings for compelled public-employee statements."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1967-01-16
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Garrity v. New Jersey
+  varies_by_point: false
+  scope_note: "Good law; foundation of the 'Garrity rule' / Garrity warnings for compelled public-employee statements."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/107336/garrity-v-new-jersey/"
+  cluster_id: 107336
   opinion_id: 107336
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Gardner v. Broderick]]", "[[Lefkowitz v. Turley]]", "[[Kalkines v. 
 aliases: []
 tags: ["case", "fifth-amendment", "self-incrimination", "public-employee", "garrity", "compelled-statements"]
 holding: "Statements compelled from a public employee under threat of removal from office are involuntary, and the Fourteenth Amendment bars their use against the employee in a subsequent criminal prosecution (the Garrity rule)."
+lake:
+  record_id: Garrity v. New Jersey
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Garrity v. New Jersey

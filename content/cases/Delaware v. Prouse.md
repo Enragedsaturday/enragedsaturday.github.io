@@ -2,9 +2,9 @@
 title: "Delaware v. Prouse"
 type: case
 citation: "440 U.S. 648 (1979)"
-parallel_cite: "99 S. Ct. 1391"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "99 S. Ct. 1391; 59 L. Ed. 2d 660"
+neutral_cite: 1979 U.S. LEXIS 80
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1979
@@ -12,12 +12,17 @@ date_decided: 1979-03-27
 docket: ""
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: ""
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1979-03-27
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Delaware v. Prouse
+  varies_by_point: false
+  scope_note: "Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/110045/delaware-v-prouse/"
+  cluster_id: 110045
   opinion_id: 110045
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Heien v. North Carolina]]", "[[City of Indianapolis v. Edmond]]", "
 aliases: []
 tags: ["case", "fourth-amendment", "traffic-stop", "reasonable-suspicion", "random-stop", "license-check"]
 holding: "Random, suspicionless stops of motorists to check license and registration are unreasonable under the Fourth Amendment; an officer needs…"
+lake:
+  record_id: Delaware v. Prouse
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Delaware v. Prouse

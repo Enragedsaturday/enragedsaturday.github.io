@@ -2,9 +2,9 @@
 title: "Andresen v. Maryland"
 type: case
 citation: "427 U.S. 463 (1976)"
-parallel_cite: "96 S. Ct. 2737"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "96 S. Ct. 2737; 49 L. Ed. 2d 627"
+neutral_cite: 1976 U.S. LEXIS 78
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1976
@@ -12,12 +12,17 @@ date_decided: 1976-06-29
 docket: ""
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: ""
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1976-06-29
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Andresen v. Maryland
+  varies_by_point: false
+  scope_note: "Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/109522/andresen-v-maryland/"
+  cluster_id: 109522
   opinion_id: 109522
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Groh v. Ramirez]]", "[[Coolidge v. New Hampshire]]", "[[Warden v. H
 aliases: []
 tags: ["case", "fourth-amendment", "warrant", "particularity", "fifth-amendment", "business-records"]
 holding: "A particularized warrant to search for and seize a person's business records, and their introduction in evidence, does not violate the…"
+lake:
+  record_id: Andresen v. Maryland
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Andresen v. Maryland

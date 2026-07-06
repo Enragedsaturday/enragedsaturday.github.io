@@ -2,23 +2,28 @@
 title: "Elkins v. United States"
 type: case
 citation: "364 U.S. 206 (1960)"
-parallel_cite: "80 S. Ct. 1437"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "80 S. Ct. 1437; 4 L. Ed. 2d 1669"
+neutral_cite: 1960 U.S. LEXIS 1989
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1960
 date_decided: 1960-06-27
-docket: "126"
+docket: 126
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Good law. Decided the term before Mapp v. Ohio, which extended the exclusionary rule to the states and largely mooted the silver-platter problem; Elkins's deterrence rationale for the exclusionary rule remains foundational and is widely cited."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1960-06-27
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Elkins v. United States
+  varies_by_point: false
+  scope_note: "Good law. Decided the term before Mapp v. Ohio, which extended the exclusionary rule to the states and largely mooted the silver-platter problem; Elkins's deterrence rationale for the exclusionary rule remains foundational and is widely cited."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/106107/elkins-v-united-states/"
-  opinion_id: 106107
+  cluster_id: 106107
+  opinion_id: 9422064
   identity_checked: true
 homes:
   - page: "[[The Exclusionary Rule]]"
@@ -27,6 +32,10 @@ related: ["[[Weeks v. United States]]", "[[Mapp v. Ohio]]"]
 aliases: []
 tags: ["case", "fourth-amendment", "exclusionary-rule", "silver-platter", "deterrence", "federalism"]
 holding: "The 'silver-platter' doctrine is abolished: evidence obtained by state officers in a search that would violate the Fourth Amendment if conducted by federal officers is inadmissible in a federal criminal trial, because the exclusionary rule's purpose is to deter unconstitutional searches by removing the incentive to make them."
+lake:
+  record_id: Elkins v. United States
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Elkins v. United States

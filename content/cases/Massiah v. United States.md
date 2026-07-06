@@ -2,9 +2,9 @@
 title: "Massiah v. United States"
 type: case
 citation: "377 U.S. 201 (1964)"
-parallel_cite: "84 S. Ct. 1199"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "84 S. Ct. 1199; 12 L. Ed. 2d 246"
+neutral_cite: 1964 U.S. LEXIS 1277
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1964
@@ -12,12 +12,17 @@ date_decided: 1964-05-18
 docket: ""
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: ""
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1964-05-18
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Massiah v. United States
+  varies_by_point: false
+  scope_note: "Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/106822/massiah-v-united-states/"
+  cluster_id: 106822
   opinion_id: 106822
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Maine v. Moulton]]", "[[Kuhlmann v. Wilson]]", "[[Brewer v. William
 aliases: []
 tags: ["case", "sixth-amendment", "right-to-counsel", "deliberate-elicitation", "post-indictment"]
 holding: "Once adversary proceedings have begun (here, post-indictment), the government violates the Sixth Amendment when it deliberately elicits…"
+lake:
+  record_id: Massiah v. United States
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Massiah v. United States

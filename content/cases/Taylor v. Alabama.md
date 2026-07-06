@@ -2,22 +2,27 @@
 title: "Taylor v. Alabama"
 type: case
 citation: "457 U.S. 687 (1982)"
-parallel_cite: "102 S. Ct. 2664"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "102 S. Ct. 2664; 73 L. Ed. 2d 314"
+neutral_cite: 1982 U.S. LEXIS 138
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1982
 date_decided: 1982-06-23
-docket: "81-5152"
+docket: 81-5152
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Applies the Brown v. Illinois attenuation factors; the confession was conceded voluntary for Fifth Amendment purposes yet still suppressed as a Fourth Amendment fruit. Good law."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1982-06-23
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Taylor v. Alabama
+  varies_by_point: false
+  scope_note: "Applies the Brown v. Illinois attenuation factors; the confession was conceded voluntary for Fifth Amendment purposes yet still suppressed as a Fourth Amendment fruit. Good law."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/110760/taylor-v-alabama/"
+  cluster_id: 110760
   opinion_id: 110760
   identity_checked: true
 homes:
@@ -29,6 +34,10 @@ related: ["[[Brown v. Illinois]]", "[[Dunaway v. New York]]", "[[Wong Sun v. Uni
 aliases: []
 tags: ["case", "fourth-amendment", "exclusionary-rule", "fruit-of-the-poisonous-tree", "attenuation", "illegal-arrest", "confession"]
 holding: "A confession obtained after a warrantless arrest made without probable cause must be suppressed as the fruit of the illegal arrest where no significant intervening event broke the causal chain; Miranda warnings, the passage of a few hours, and a later ex parte warrant did not attenuate the taint."
+lake:
+  record_id: Taylor v. Alabama
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Taylor v. Alabama

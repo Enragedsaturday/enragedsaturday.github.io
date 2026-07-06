@@ -2,23 +2,28 @@
 title: "Pembaur v. City of Cincinnati"
 type: case
 citation: "475 U.S. 469 (1986)"
-parallel_cite: "106 S. Ct. 1292"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "106 S. Ct. 1292; 89 L. Ed. 2d 452; 54 U.S.L.W. 4289"
+neutral_cite: 1986 U.S. LEXIS 33
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1986
 date_decided: 1986-03-25
-docket: "84-1160"
+docket: 84-1160
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Plurality on the single-decision point; the rule that a final policymaker's single decision can be municipal policy is settled law."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1986-03-25
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Pembaur v. City of Cincinnati
+  varies_by_point: false
+  scope_note: "Plurality on the single-decision point; the rule that a final policymaker's single decision can be municipal policy is settled law."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/111615/pembaur-v-city-of-cincinnati/"
-  opinion_id: 111615
+  cluster_id: 111615
+  opinion_id: 9430387
   identity_checked: true
 homes:
   - page: "[[Section 1983 Liability and Qualified Immunity]]"
@@ -27,6 +32,10 @@ related: ["[[Monell v. Department of Social Services]]", "[[City of Canton v. Ha
 aliases: []
 tags: ["case", "section-1983", "municipal-liability", "policy-or-custom", "final-policymaker", "monell"]
 holding: "A single decision by a municipal official with final policymaking authority for the relevant subject matter can be the 'official policy' that triggers Monell liability."
+lake:
+  record_id: Pembaur v. City of Cincinnati
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Pembaur v. City of Cincinnati

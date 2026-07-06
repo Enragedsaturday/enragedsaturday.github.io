@@ -1,24 +1,29 @@
 ---
 title: "United States v. Carloss"
 type: case
-citation: "818 F.3d 988 (10th Cir. 2016)"
+citation: "818 F.3d 988 (2016)"
 parallel_cite: ""
-neutral_cite: ""
+neutral_cite: "2016 WL 929663; 2016 U.S. App. LEXIS 4547"
 court: "U.S. Court of Appeals, 10th Circuit"
-court_level: circuit
-circuit: "10th"
+court_level: coa
+circuit: 10th
 year: 2016
 date_decided: 2016-03-11
-docket: "13-7082"
+docket: 13-7082
 authority_weight: "Binding in-circuit — 10th Cir."
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Good law. Then-Judge Gorsuch dissented, illustrating the divide over whether 'No Trespassing' signage revokes the implied knock-and-talk license."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 2016-03-11
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: United States v. Carloss
+  varies_by_point: false
+  scope_note: "Good law. Then-Judge Gorsuch dissented, illustrating the divide over whether 'No Trespassing' signage revokes the implied knock-and-talk license."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/3184928/united-states-v-carloss/"
-  opinion_id: 3184893
+  cluster_id: 3184928
+  opinion_id: 9822082
   identity_checked: true
 homes:
   - page: "[[Knock and Talk]]"
@@ -27,6 +32,10 @@ related: ["[[Florida v. Jardines]]", "[[Oliver v. United States]]", "[[United St
 aliases: ["United States v. Ralph Carloss", "United States v. Carloss (10th Cir. 2016)"]
 tags: ["case", "fourth-amendment", "knock-and-talk", "implied-license", "no-trespassing", "curtilage", "tenth-circuit"]
 holding: "On these facts, 'No Trespassing' signs posted around a home and on its front door did not revoke the implied license that lets an officer, like any citizen, approach the front door and knock to seek a consensual conversation; whether signage revokes the license is judged by what an objective officer would perceive, and a 'No Trespassing' sign by itself is not enough."
+lake:
+  record_id: United States v. Carloss
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # United States v. Carloss

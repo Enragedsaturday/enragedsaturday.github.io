@@ -1,23 +1,28 @@
 ---
 title: "United States v. Mathis"
 type: case
-citation: "767 F.3d 1264 (11th Cir. 2014)"
+citation: "767 F.3d 1264 (2014)"
 parallel_cite: ""
-neutral_cite: ""
+neutral_cite: "2014 U.S. App. LEXIS 18297; 2014 WL 4724697"
 court: "U.S. Court of Appeals, Eleventh Circuit"
-court_level: circuit
-circuit: "11th"
+court_level: coa
+circuit: 11th
 year: 2014
-date_decided: ""
+date_decided: 2014-09-24
 docket: ""
 authority_weight: "Binding in-circuit — 11th Cir."
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: ""
-  by: []
+  field_i_validity: good_law
+  as_of_content: null
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: United States v. Mathis
+  varies_by_point: false
+  scope_note: "Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/2736649/united-states-v-arnold-maurice-mathis/"
+  cluster_id: 2736649
   opinion_id: 2736649
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[United States v. Leon]]", "[[Massachusetts v. Sheppard]]", "[[Unite
 aliases: ["United States v. Mathis (11th Cir. 2014)", "United States v. Arnold Maurice Mathis"]
 tags: ["case", "fourth-amendment", "exclusionary-rule", "good-faith-exception", "leon", "phone-search", "eleventh-circuit"]
 holding: "Even assuming the search warrant lacked probable cause, the Leon good-faith exception applied: the detective had an objectively…"
+lake:
+  record_id: United States v. Mathis
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # United States v. Mathis

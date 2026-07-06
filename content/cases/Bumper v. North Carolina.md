@@ -2,22 +2,27 @@
 title: "Bumper v. North Carolina"
 type: case
 citation: "391 U.S. 543 (1968)"
-parallel_cite: "88 S. Ct. 1788"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "88 S. Ct. 1788; 20 L. Ed. 2d 797; 46 Ohio Op. 2d 382"
+neutral_cite: 1968 U.S. LEXIS 1470
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1968
 date_decided: 1968-06-03
-docket: "1016"
+docket: 1016
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Foundational consent-voluntariness rule; good law and incorporated into the Schneckloth totality-of-circumstances framework."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1968-06-03
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Bumper v. North Carolina
+  varies_by_point: false
+  scope_note: "Foundational consent-voluntariness rule; good law and incorporated into the Schneckloth totality-of-circumstances framework."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/107716/bumper-v-north-carolina/"
+  cluster_id: 107716
   opinion_id: 107716
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Schneckloth v. Bustamonte]]"]
 aliases: []
 tags: ["case", "fourth-amendment", "consent", "voluntariness", "claim-of-authority", "warrant"]
 holding: "Consent to search is involuntary, and cannot justify a search, when it is given only in acquiescence to an officer's claim of lawful authority — including a false or unsubstantiated assertion that the officer holds a warrant; the State bears the burden of proving voluntary consent."
+lake:
+  record_id: Bumper v. North Carolina
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Bumper v. North Carolina

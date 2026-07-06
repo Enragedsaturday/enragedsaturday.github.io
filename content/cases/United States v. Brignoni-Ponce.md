@@ -2,9 +2,9 @@
 title: "United States v. Brignoni-Ponce"
 type: case
 citation: "422 U.S. 873 (1975)"
-parallel_cite: "95 S. Ct. 2574"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "95 S. Ct. 2574; 45 L. Ed. 2d 607"
+neutral_cite: 1975 U.S. LEXIS 10
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1975
@@ -12,12 +12,17 @@ date_decided: 1975-06-30
 docket: ""
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Holding (roving-patrol stops require reasonable suspicion) is good law; the dictum treating apparent ancestry as a permissible factor has been widely criticized."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1975-06-30
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: United States v. Brignoni-Ponce
+  varies_by_point: false
+  scope_note: "Holding (roving-patrol stops require reasonable suspicion) is good law; the dictum treating apparent ancestry as a permissible factor has been widely criticized."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/109311/united-states-v-brignoni-ponce/"
+  cluster_id: 109311
   opinion_id: 109311
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Almeida-Sanchez v. United States]]", "[[Terry v. Ohio]]", "[[Delawa
 aliases: ["United States v. Felix Humberto Brignoni-Ponce"]
 tags: ["case", "fourth-amendment", "border-search", "reasonable-suspicion"]
 holding: "A roving Border Patrol may stop a vehicle near the border to question occupants only on reasonable suspicion, based on specific…"
+lake:
+  record_id: United States v. Brignoni-Ponce
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # United States v. Brignoni-Ponce

@@ -2,23 +2,39 @@
 title: "United States v. Chadwick"
 type: case
 citation: "433 U.S. 1 (1977)"
-parallel_cite: "97 S. Ct. 2476"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "97 S. Ct. 2476; 53 L. Ed. 2d 538"
+neutral_cite: 1977 U.S. LEXIS 133
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1977
 date_decided: 1977-06-21
-docket: "75-1721"
+docket: 75-1721
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: limited
-  as_of: 2026-06-30
-  note: "The Chadwick-Sanders distinction — that luggage/containers carry a high REP demanding a warrant even when connected to a car — was collapsed in the automobile context by California v. Acevedo, which lets police search a container in a vehicle on PC alone. Chadwick's core (property reduced to exclusive police control, no exigency, needs a warrant) survives outside the auto-container setting."
-  by: ["[[California v. Acevedo]]"]
+  field_i_validity: caution
+  as_of_content: 1977-06-21
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: United States v. Chadwick
+  varies_by_point: true
+  scope_note: "The Chadwick-Sanders distinction — that luggage/containers carry a high REP demanding a warrant even when connected to a car — was collapsed in the automobile context by California v. Acevedo, which lets police search a container in a vehicle on PC alone. Chadwick's core (property reduced to exclusive police control, no exigency, needs a warrant) survives outside the auto-container setting."
+  point_overrides:
+    - point: legacy-limited-united-states-v-chadwick
+      point_label: Legacy limited treatment point
+      field_i_validity: caution
+      as_of_treatment: 2026-06-30
+      s3_binding_status: provisional
+      by:
+        - name: California v. Acevedo
+          cluster_id: 112608
+          cite: 500 U.S. 565
+          field_ii: limited
+      scope_note: "The Chadwick-Sanders distinction — that luggage/containers carry a high REP demanding a warrant even when connected to a car — was collapsed in the automobile context by California v. Acevedo, which lets police search a container in a vehicle on PC alone. Chadwick's core (property reduced to exclusive police control, no exigency, needs a warrant) survives outside the auto-container setting."
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/109714/united-states-v-chadwick/"
-  opinion_id: 109714
+  cluster_id: 109714
+  opinion_id: 9426913
   identity_checked: true
 homes:
   - page: "[[Automobile Exception]]"
@@ -29,6 +45,10 @@ related: ["[[California v. Acevedo]]", "[[United States v. Ross]]", "[[Chambers 
 aliases: []
 tags: ["case", "fourth-amendment", "automobile-exception", "containers", "luggage", "search-incident-to-arrest", "warrant-requirement"]
 holding: "Luggage/containers carry a high expectation of privacy; once seized and reduced to exclusive police control with no exigency, a footlocker may not be searched without a warrant, and the search is not incident to arrest."
+lake:
+  record_id: United States v. Chadwick
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # United States v. Chadwick

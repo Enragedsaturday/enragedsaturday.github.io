@@ -2,22 +2,27 @@
 title: "Florence v. County of Burlington"
 type: case
 citation: "566 U.S. 318 (2012)"
-parallel_cite: "132 S. Ct. 1510"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "132 S. Ct. 1510; 182 L. Ed. 2d 566"
+neutral_cite: 2012 U.S. LEXIS 2712
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 2012
 date_decided: 2012-04-02
-docket: "10-945"
+docket: 10-945
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Controlling: jail-intake visual strip searches of all arrestees entering the general population are reasonable without individualized suspicion. Roberts and Alito concurred to note the holding may not reach detainees not admitted to the general population."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 2012-04-02
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Florence v. County of Burlington
+  varies_by_point: false
+  scope_note: "Controlling: jail-intake visual strip searches of all arrestees entering the general population are reasonable without individualized suspicion. Roberts and Alito concurred to note the holding may not reach detainees not admitted to the general population."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/626454/florence-v-board-of-chosen-freeholders-of-county-of-burlington/"
+  cluster_id: 626454
   opinion_id: 626454
   identity_checked: true
 homes:
@@ -29,6 +34,10 @@ related: ["[[Illinois v. Lafayette]]", "[[Maryland v. King]]", "[[Atwater v. Cit
 aliases: ["Florence v. Board of Chosen Freeholders of County of Burlington", "Florence v. Board of Chosen Freeholders"]
 tags: ["case", "fourth-amendment", "jail-search", "strip-search", "booking", "special-needs"]
 holding: "Jail officials may conduct a close visual strip search of every arrestee admitted to the general population without reasonable suspicion, regardless of the minor nature of the offense; the Fourth and Fourteenth Amendments do not require an exception for minor offenders."
+lake:
+  record_id: Florence v. County of Burlington
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Florence v. County of Burlington

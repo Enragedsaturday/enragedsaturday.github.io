@@ -2,22 +2,27 @@
 title: "Zurcher v. Stanford Daily"
 type: case
 citation: "436 U.S. 547 (1978)"
-parallel_cite: "98 S. Ct. 1970"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "98 S. Ct. 1970; 56 L. Ed. 2d 525"
+neutral_cite: 1978 U.S. LEXIS 98
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1978
-date_decided: 1978-05-31
-docket: "76-1484"
+date_decided: 1978-10-02
+docket: 76-1484
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Fourth Amendment holding remains good law. Congress responded with the Privacy Protection Act of 1980 (42 U.S.C. § 2000aa), which statutorily restricts searches of press/documentary work product — a statutory overlay, not a constitutional limitation of Zurcher."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1978-05-31
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Zurcher v. Stanford Daily
+  varies_by_point: false
+  scope_note: "Fourth Amendment holding remains good law. Congress responded with the Privacy Protection Act of 1980 (42 U.S.C. § 2000aa), which statutorily restricts searches of press/documentary work product — a statutory overlay, not a constitutional limitation of Zurcher."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/109876/zurcher-v-stanford-daily/"
+  cluster_id: 109876
   opinion_id: 109876
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Stanford v. Texas]]"]
 aliases: []
 tags: ["case", "fourth-amendment", "warrant", "search-warrant", "third-party-premises", "first-amendment", "press"]
 holding: "A warrant may authorize the search of premises held by a third party not suspected of crime — including a newspaper — whenever there is probable cause to believe evidence is located there; the First Amendment requires only that the warrant requirements be applied with scrupulous exactitude, not a subpoena-first rule."
+lake:
+  record_id: Zurcher v. Stanford Daily
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Zurcher v. Stanford Daily

@@ -2,22 +2,27 @@
 title: "Spano v. New York"
 type: case
 citation: "360 U.S. 315 (1959)"
-parallel_cite: "79 S. Ct. 1202"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "79 S. Ct. 1202; 3 L. Ed. 2d 1265"
+neutral_cite: 1959 U.S. LEXIS 751
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1959
 date_decided: 1959-06-22
-docket: "326"
+docket: 326
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: ""
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1959-06-22
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Spano v. New York
+  varies_by_point: false
+  scope_note: "Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/105917/spano-v-new-york/"
+  cluster_id: 105917
   opinion_id: 105917
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Brown v. Mississippi]]", "[[Chambers v. Florida]]", "[[Ashcraft v. 
 aliases: []
 tags: ["case", "confession", "voluntariness", "due-process"]
 holding: "A confession produced by psychological pressure — here a friend's feigned distress plus persistent overnight questioning of a suspect…"
+lake:
+  record_id: Spano v. New York
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Spano v. New York

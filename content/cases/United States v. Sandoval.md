@@ -1,23 +1,28 @@
 ---
 title: "United States v. Sandoval"
 type: case
-citation: "200 F.3d 659 (9th Cir. 2000)"
-parallel_cite: ""
-neutral_cite: ""
+citation: "200 F.3d 659 (2000)"
+parallel_cite: 2000 Daily Journal DAR 907
+neutral_cite: "2000 Cal. Daily Op. Serv. 581; 2000 U.S. App. LEXIS 805; 2000 WL 48991"
 court: "U.S. Court of Appeals, Ninth Circuit"
-court_level: circuit
-circuit: "9th"
+court_level: coa
+circuit: 9th
 year: 2000
 date_decided: 2000-01-24
 docket: ""
 authority_weight: "Binding in-circuit — 9th Cir."
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Circuit split: the 10th Cir. reached a different conclusion in United States v. Ruckman, 806 F.2d 1471."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 2000-01-24
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: United States v. Sandoval
+  varies_by_point: false
+  scope_note: "Circuit split: the 10th Cir. reached a different conclusion in United States v. Ruckman, 806 F.2d 1471."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/767260/united-states-v-rodrigo-sandoval/"
+  cluster_id: 767260
   opinion_id: 767260
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Katz v. United States]]", "[[California v. Ciraolo]]", "[[United St
 aliases: ["United States v. Sandoval (9th Cir. 2000)", "United States v. Rodrigo Sandoval"]
 tags: ["case", "fourth-amendment", "tents", "expectation-of-privacy", "public-land", "blm", "ninth-circuit"]
 holding: "(9th Cir. — persuasive) A reasonable expectation of privacy in a tent on public (BLM) land does not turn on whether the camper had permission to be there; denial of suppression reversed."
+lake:
+  record_id: United States v. Sandoval
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # United States v. Sandoval

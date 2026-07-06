@@ -2,23 +2,28 @@
 title: "California v. Beheler"
 type: case
 citation: "463 U.S. 1121 (1983)"
-parallel_cite: "103 S. Ct. 3517"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "103 S. Ct. 3517; 77 L. Ed. 2d 1275; 51 U.S.L.W. 3934"
+neutral_cite: 1983 U.S. LEXIS 114
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1983
 date_decided: 1983-07-06
-docket: "82-1666"
+docket: 82-1666
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Good law; the 'Beheler' formulation of Miranda custody — a suspect who voluntarily comes to the station, is told he is not under arrest, and is free to leave is not in custody. The custody test is restraint 'of the degree associated with a formal arrest.'"
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1983-07-06
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: California v. Beheler
+  varies_by_point: false
+  scope_note: "Good law; the 'Beheler' formulation of Miranda custody — a suspect who voluntarily comes to the station, is told he is not under arrest, and is free to leave is not in custody. The custody test is restraint 'of the degree associated with a formal arrest.'"
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/111023/california-v-beheler/"
-  opinion_id: 111023
+  cluster_id: 111023
+  opinion_id: 9429374
   identity_checked: true
 homes:
   - page: "[[Miranda and Custodial Interrogation]]"
@@ -27,6 +32,10 @@ related: ["[[Oregon v. Mathiason]]", "[[Miranda v. Arizona]]", "[[Berkemer v. Mc
 aliases: []
 tags: ["case", "fifth-amendment", "miranda", "custody", "station-house", "per-curiam"]
 holding: "A suspect who is not under arrest, voluntarily comes to the police station, and is allowed to leave after a brief interview is not 'in custody' for Miranda purposes; the ultimate custody inquiry is whether there was a formal arrest or restraint on freedom of movement of the degree associated with a formal arrest."
+lake:
+  record_id: California v. Beheler
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # California v. Beheler

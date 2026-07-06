@@ -2,22 +2,27 @@
 title: "Sgro v. United States"
 type: case
 citation: "287 U.S. 206 (1932)"
-parallel_cite: "53 S. Ct. 138"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "53 S. Ct. 138; 77 L. Ed. 260; 85 A.L.R. 108"
+neutral_cite: 1932 U.S. LEXIS 13
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1932
 date_decided: 1932-12-05
-docket: "55"
+docket: 55
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Foundational warrant-staleness / prompt-execution holding; the principle that a stale warrant cannot be revived by redating without a fresh probable-cause finding remains good law and is widely cited."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1932-12-05
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Sgro v. United States
+  varies_by_point: false
+  scope_note: "Foundational warrant-staleness / prompt-execution holding; the principle that a stale warrant cannot be revived by redating without a fresh probable-cause finding remains good law and is widely cited."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/101970/sgro-v-united-states/"
+  cluster_id: 101970
   opinion_id: 101970
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Byars v. United States]]"]
 aliases: []
 tags: ["case", "fourth-amendment", "warrant", "search-warrant", "staleness", "warrant-execution"]
 holding: "A search warrant void for non-execution within its statutory life cannot be revived by redating; reissuing a warrant is a new proceeding that must rest on a fresh, contemporaneous probable-cause finding."
+lake:
+  record_id: Sgro v. United States
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Sgro v. United States

@@ -1,10 +1,10 @@
 ---
 title: "Ferguson v. City of Charleston"
 type: case
-citation: "532 U.S. 67 (2001)"
-parallel_cite: "121 S. Ct. 1281"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+citation: ""
+parallel_cite: "532 U.S. 67; 121 S. Ct. 1281; 149 L. Ed. 2d 205; 2001 Daily Journal DAR 2839; 2001 Colo. J. C.A.R. 1427; 14 Fla. L. Weekly Fed. S 152; 69 U.S.L.W. 4184"
+neutral_cite: 2001 U.S. LEXIS 2460
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 2001
@@ -12,12 +12,17 @@ date_decided: 2001-03-21
 docket: ""
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: ""
-  by: []
+  field_i_validity: good_law
+  as_of_content: 2001-03-21
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Ferguson v. City of Charleston
+  varies_by_point: false
+  scope_note: "Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/118414/ferguson-v-city-of-charleston/"
+  cluster_id: 118414
   opinion_id: 118414
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[City of Indianapolis v. Edmond]]", "[[Chandler v. Miller]]", "[[Boa
 aliases: []
 tags: ["case", "fourth-amendment", "special-needs", "drug-testing", "programmatic-purpose"]
 holding: "Covertly drug-testing pregnant patients and reporting results to law enforcement is an unreasonable search; the special-needs exception…"
+lake:
+  record_id: Ferguson v. City of Charleston
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Ferguson v. City of Charleston

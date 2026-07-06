@@ -2,23 +2,28 @@
 title: "Tennessee v. Garner"
 type: case
 citation: "471 U.S. 1 (1985)"
-parallel_cite: "105 S. Ct. 1694"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "105 S. Ct. 1694; 85 L. Ed. 2d 1; 53 U.S.L.W. 4410"
+neutral_cite: 1985 U.S. LEXIS 195
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1985
 date_decided: 1985-03-27
-docket: "83-1035"
+docket: 83-1035
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Clarified (not limited) by Scott v. Harris: Garner is an application of Graham reasonableness, not a rigid on/off switch."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1985-03-27
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Tennessee v. Garner
+  varies_by_point: false
+  scope_note: "Clarified (not limited) by Scott v. Harris: Garner is an application of Graham reasonableness, not a rigid on/off switch."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/111397/tennessee-v-garner/"
-  opinion_id: 111397
+  cluster_id: 111397
+  opinion_id: 9429990
   identity_checked: true
 homes:
   - page: "[[Use of Force]]"
@@ -27,6 +32,10 @@ related: ["[[Graham v. Connor]]", "[[Scott v. Harris]]"]
 aliases: []
 tags: ["case", "fourth-amendment", "use-of-force", "deadly-force", "seizure"]
 holding: "Deadly force against an apparently unarmed, non-dangerous fleeing suspect is an unreasonable seizure; deadly force needs PC to believe the suspect poses a significant threat of death or serious injury."
+lake:
+  record_id: Tennessee v. Garner
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Tennessee v. Garner

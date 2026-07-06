@@ -1,23 +1,28 @@
 ---
 title: "Wright v. City of Euclid"
 type: case
-citation: "962 F.3d 852 (6th Cir. 2020)"
+citation: "962 F.3d 852 (2020)"
 parallel_cite: ""
 neutral_cite: ""
 court: "U.S. Court of Appeals, Sixth Circuit"
-court_level: circuit
-circuit: "6th"
+court_level: coa
+circuit: 6th
 year: 2020
 date_decided: 2020-06-18
-docket: "19-3452"
+docket: 19-3452
 authority_weight: "Binding in-circuit — 6th Cir."
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Published Sixth Circuit decision; good law."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 2020-06-18
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Wright v. City of Euclid
+  varies_by_point: false
+  scope_note: "Published Sixth Circuit decision; good law."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/4762133/lamar-wright-v-city-of-euclid/"
+  cluster_id: 4762133
   opinion_id: 4542480
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Graham v. Connor]]", "[[Monell v. Department of Social Services]]",
 aliases: ["Lamar Wright v. City of Euclid", "Wright v. Euclid"]
 tags: ["case", "section-1983", "qualified-immunity", "excessive-force", "false-arrest", "municipal-liability", "sixth-circuit"]
 holding: "The Sixth Circuit REVERSED summary judgment / denial of qualified immunity on multiple Fourth Amendment § 1983 claims: excessive force…"
+lake:
+  record_id: Wright v. City of Euclid
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Wright v. City of Euclid

@@ -2,22 +2,27 @@
 title: "United States v. Van Leeuwen"
 type: case
 citation: "397 U.S. 249 (1970)"
-parallel_cite: "90 S. Ct. 1029"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "90 S. Ct. 1029; 25 L. Ed. 2d 282"
+neutral_cite: 1970 U.S. LEXIS 57
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1970
 date_decided: 1970-04-27
-docket: "403"
+docket: 403
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Controlling: a brief detention of mailed packages on reasonable suspicion, while a warrant is diligently sought, is reasonable; mere detention invades no privacy interest until the package is opened under a warrant. A precursor to the property-detention analysis of United States v. Place."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1970-04-27
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: United States v. Van Leeuwen
+  varies_by_point: false
+  scope_note: "Controlling: a brief detention of mailed packages on reasonable suspicion, while a warrant is diligently sought, is reasonable; mere detention invades no privacy interest until the package is opened under a warrant. A precursor to the property-detention analysis of United States v. Place."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/108099/united-states-v-van-leeuwen/"
+  cluster_id: 108099
   opinion_id: 108099
   identity_checked: true
 homes:
@@ -29,6 +34,10 @@ related: ["[[United States v. Place]]", "[[Terry v. Ohio]]", "[[Illinois v. McAr
 aliases: []
 tags: ["case", "fourth-amendment", "seizure-of-property", "reasonable-suspicion", "mail", "warrant-requirement"]
 holding: "First-class mail may be detained without a warrant on reasonable suspicion while officers diligently pursue a search warrant; the brief detention invades no Fourth Amendment privacy interest, which is implicated only when the package is opened under a warrant."
+lake:
+  record_id: United States v. Van Leeuwen
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # United States v. Van Leeuwen

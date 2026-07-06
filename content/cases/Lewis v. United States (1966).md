@@ -2,23 +2,28 @@
 title: "Lewis v. United States (1966)"
 type: case
 citation: "385 U.S. 206 (1966)"
-parallel_cite: "87 S. Ct. 424"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "87 S. Ct. 424; 17 L. Ed. 2d 312"
+neutral_cite: 1966 U.S. LEXIS 3
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1966
-date_decided: 1966-12-12
-docket: "36"
+date_decided: 1967-01-09
+docket: 36
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Good law; part of the settled misplaced-trust / false-friend line (Hoffa, Lopez, On Lee, later United States v. White) holding that undercover dealing with a willing party is no Fourth Amendment search."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1966-12-12
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: "Lewis v. United States (1966)"
+  varies_by_point: false
+  scope_note: "Good law; part of the settled misplaced-trust / false-friend line (Hoffa, Lopez, On Lee, later United States v. White) holding that undercover dealing with a willing party is no Fourth Amendment search."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/107312/lewis-v-united-states/"
-  opinion_id: 107312
+  cluster_id: 107312
+  opinion_id: 9423294
   identity_checked: true
 homes:
   - page: "[[Two Definitions of Search]]"
@@ -29,6 +34,10 @@ related: ["[[Gouled v. United States]]"]
 aliases: ["Lewis v. United States"]
 tags: ["case", "fourth-amendment", "search-threshold", "undercover", "misplaced-trust", "consent", "home"]
 holding: "When an occupant converts his home into a commercial center and invites an undercover agent in to transact illegal business, the agent's entry and purchase are no Fourth Amendment search; the agent may not, however, exceed the invitation to conduct a general search."
+lake:
+  record_id: "Lewis v. United States (1966)"
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Lewis v. United States (1966)

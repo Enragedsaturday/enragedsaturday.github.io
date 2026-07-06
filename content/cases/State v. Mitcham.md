@@ -1,25 +1,30 @@
 ---
 title: "State v. Mitcham"
 type: case
-citation: "258 Ariz. 435 (2024)"
-parallel_cite: "559 P.3d 1099"
+citation: "559 P.3d 1099 (2024)"
+parallel_cite: ""
 neutral_cite: ""
-court: "Arizona Supreme Court"
-court_level: state-high
+court: Arizona Supreme Court
+court_level: state
 circuit: ""
 year: 2024
 date_decided: 2024-12-17
-docket: "CR-23-0238-PR"
+docket: CR-23-0238-PR
 authority_weight: "Persuasive — state, illustrative"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: ""
-  by: []
+  field_i_validity: good_law
+  as_of_content: 2024-12-17
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: State v. Mitcham
+  varies_by_point: false
+  scope_note: "Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/10293607/state-of-arizona-v-ian-mitcham/"
+  cluster_id: 10293607
   opinion_id: 10760195
-  identity_checked: true
+  identity_checked: false
 homes:
   - page: "[[The Exclusionary Rule]]"
     role: "Recent development (role-based)"
@@ -27,6 +32,10 @@ related: ["[[Nix v. Williams]]", "[[Murray v. United States]]", "[[Segura v. Uni
 aliases: ["State of Arizona v. Ian Mitcham"]
 tags: ["case", "exclusionary-rule", "inevitable-discovery", "independent-source", "dna", "arizona"]
 holding: "Arizona Supreme Court applies the independent-source exception: evidence discovered during/because of an unlawful search is admissible…"
+lake:
+  record_id: State v. Mitcham
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # State v. Mitcham

@@ -2,22 +2,27 @@
 title: "United States v. Ramirez"
 type: case
 citation: "523 U.S. 65 (1998)"
-parallel_cite: "118 S. Ct. 992"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "118 S. Ct. 992; 140 L. Ed. 2d 191"
+neutral_cite: 1998 U.S. LEXIS 1600
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1998
 date_decided: 1998-03-04
-docket: "96-1469"
+docket: 96-1469
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Controlling: a no-knock entry that damages property is judged by the same Richards reasonable-suspicion standard — no heightened showing is required because property is destroyed — though excessive or unnecessary destruction may independently violate the Fourth Amendment."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1998-03-04
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: United States v. Ramirez
+  varies_by_point: false
+  scope_note: "Controlling: a no-knock entry that damages property is judged by the same Richards reasonable-suspicion standard — no heightened showing is required because property is destroyed — though excessive or unnecessary destruction may independently violate the Fourth Amendment."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/118180/united-states-v-ramirez/"
+  cluster_id: 118180
   opinion_id: 118180
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Richards v. Wisconsin]]", "[[Wilson v. Arkansas]]", "[[United State
 aliases: []
 tags: ["case", "fourth-amendment", "knock-and-announce", "no-knock", "warrant-execution", "property-damage"]
 holding: "The Fourth Amendment does not impose a higher standard on a no-knock entry merely because the entry causes property damage; the entry is judged by Richards' reasonable-suspicion test, although excessive or unnecessary destruction of property in a search may itself violate the Fourth Amendment."
+lake:
+  record_id: United States v. Ramirez
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # United States v. Ramirez

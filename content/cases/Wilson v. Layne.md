@@ -2,23 +2,28 @@
 title: "Wilson v. Layne"
 type: case
 citation: "526 U.S. 603 (1999)"
-parallel_cite: "119 S. Ct. 1692"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "119 S. Ct. 1692; 143 L. Ed. 2d 818"
+neutral_cite: 1999 U.S. LEXIS 3633
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1999
 date_decided: 1999-05-24
-docket: "98-83"
+docket: 98-83
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Good law: media ride-along into a home during warrant execution violates the 4A; officers had QI on the then-undeveloped law."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1999-05-24
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Wilson v. Layne
+  varies_by_point: false
+  scope_note: "Good law: media ride-along into a home during warrant execution violates the 4A; officers had QI on the then-undeveloped law."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/118289/wilson-v-layne/"
-  opinion_id: 118289
+  cluster_id: 118289
+  opinion_id: 9433801
   identity_checked: true
 homes:
   - page: "[[Section 1983 Liability and Qualified Immunity]]"
@@ -29,6 +34,10 @@ related: ["[[Hanlon v. Berger]]", "[[Harlow v. Fitzgerald]]", "[[Graham v. Conno
 aliases: []
 tags: ["case", "section-1983", "qualified-immunity", "media-ride-along", "warrant-execution", "clearly-established"]
 holding: "Bringing the media or other third parties into a home during the execution of a warrant, when not in aid of the warrant, violates the Fourth Amendment — but the officers had qualified immunity because that right was not clearly established."
+lake:
+  record_id: Wilson v. Layne
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Wilson v. Layne

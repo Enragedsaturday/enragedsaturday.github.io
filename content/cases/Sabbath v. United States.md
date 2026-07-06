@@ -2,22 +2,27 @@
 title: "Sabbath v. United States"
 type: case
 citation: "391 U.S. 585 (1968)"
-parallel_cite: "88 S. Ct. 1755"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "88 S. Ct. 1755; 20 L. Ed. 2d 828"
+neutral_cite: 1968 U.S. LEXIS 1472
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1968
 date_decided: 1968-06-03
-docket: "898"
+docket: 898
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "The definition of an unannounced 'breaking' — including opening a closed but unlocked door — remains good law. The suppression remedy Sabbath applied for knock-and-announce violations was later sharply limited (for Fourth Amendment violations) by Hudson v. Michigan (2006), which does not disturb Sabbath's substantive holding."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1968-06-03
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Sabbath v. United States
+  varies_by_point: false
+  scope_note: "The definition of an unannounced 'breaking' — including opening a closed but unlocked door — remains good law. The suppression remedy Sabbath applied for knock-and-announce violations was later sharply limited (for Fourth Amendment violations) by Hudson v. Michigan (2006), which does not disturb Sabbath's substantive holding."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/107718/sabbath-v-united-states/"
+  cluster_id: 107718
   opinion_id: 107718
   identity_checked: true
 homes:
@@ -29,6 +34,10 @@ related: ["[[Wilson v. Arkansas]]", "[[Richards v. Wisconsin]]", "[[Hudson v. Mi
 aliases: []
 tags: ["case", "fourth-amendment", "knock-and-announce", "warrant-requirement", "arrest-in-home"]
 holding: "An unannounced 'breaking' for knock-and-announce purposes is not limited to forcible entry; opening a closed but unlocked door without first announcing authority and purpose is an unannounced intrusion governed by the announcement requirement of 18 U.S.C. § 3109."
+lake:
+  record_id: Sabbath v. United States
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Sabbath v. United States

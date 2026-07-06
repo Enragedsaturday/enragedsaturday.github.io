@@ -1,25 +1,30 @@
 ---
 title: "Davis v. United States (2011)"
 type: case
-citation: "564 U.S. 229 (2011)"
-parallel_cite: "131 S. Ct. 2419"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+citation: "565 U.S. 1100 (2011)"
+parallel_cite: "181 L. Ed. 2d 563; 132 S. Ct. 864; 80 U.S.L.W. 3555"
+neutral_cite: 2011 U.S. LEXIS 8943
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 2011
-date_decided: 2011-06-16
-docket: "09-11328"
+date_decided: 2011-12-12
+docket: 09-11328
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Extends the Leon good-faith line to objectively reasonable reliance on binding appellate precedent later overruled. Good law."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 2011-06-16
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: "Davis v. United States (2011)"
+  varies_by_point: false
+  scope_note: Extends the Leon good-faith line to objectively reasonable reliance on binding appellate precedent later overruled. Good law.
+  point_overrides: []
 courtlistener:
-  opinion_url: "https://www.courtlistener.com/opinion/218926/davis-v-united-states/"
-  opinion_id: 218926
-  identity_checked: true
+  opinion_url: "https://www.courtlistener.com/opinion/7350241/davis-v-united-states/"
+  cluster_id: 7350241
+  opinion_id: 7268220
+  identity_checked: false
 homes:
   - page: "[[The Exclusionary Rule]]"
     role: "Key — Progeny (good faith)"
@@ -27,6 +32,10 @@ related: ["[[United States v. Leon]]", "[[Herring v. United States]]", "[[Illino
 aliases: []
 tags: ["case", "fourth-amendment", "exclusionary-rule", "good-faith", "automobile", "search-incident-to-arrest"]
 holding: "The exclusionary rule does not apply to evidence obtained during a search conducted in objectively reasonable reliance on binding appellate precedent that is only later overruled, because there is no culpable police misconduct to deter."
+lake:
+  record_id: "Davis v. United States (2011)"
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Davis v. United States (2011)

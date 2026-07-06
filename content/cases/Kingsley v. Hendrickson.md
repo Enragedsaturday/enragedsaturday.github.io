@@ -1,23 +1,28 @@
 ---
 title: "Kingsley v. Hendrickson"
 type: case
-citation: "576 U.S. 389 (2015)"
-parallel_cite: "135 S. Ct. 2466"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+citation: ""
+parallel_cite: "576 U.S. 389; 135 S. Ct. 2466; 192 L. Ed. 2d 416; 25 Fla. L. Weekly Fed. S 401; 83 U.S.L.W. 4515"
+neutral_cite: 2015 U.S. LEXIS 4073
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 2015
 date_decided: 2015-06-22
-docket: "14-6368"
+docket: 14-6368
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Good law: pretrial-detainee excessive-force claims use a purely objective-reasonableness standard under the Fourteenth Amendment."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 2015-06-22
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Kingsley v. Hendrickson
+  varies_by_point: false
+  scope_note: "Good law: pretrial-detainee excessive-force claims use a purely objective-reasonableness standard under the Fourteenth Amendment."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/2811847/kingsley-v-hendrickson/"
+  cluster_id: 2811847
   opinion_id: 9808641
   identity_checked: true
 homes:
@@ -29,6 +34,10 @@ related: ["[[Graham v. Connor]]", "[[County of Sacramento v. Lewis]]"]
 aliases: []
 tags: ["case", "use-of-force", "pretrial-detainee", "objective-reasonableness", "fourteenth-amendment", "section-1983"]
 holding: "A pretrial detainee's Fourteenth Amendment excessive-force claim requires only that the force purposely or knowingly used against him was objectively unreasonable; no subjective awareness of unreasonableness need be shown."
+lake:
+  record_id: Kingsley v. Hendrickson
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Kingsley v. Hendrickson

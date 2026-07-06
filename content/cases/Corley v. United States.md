@@ -2,22 +2,27 @@
 title: "Corley v. United States"
 type: case
 citation: "556 U.S. 303 (2009)"
-parallel_cite: "129 S. Ct. 1558"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "129 S. Ct. 1558; 173 L. Ed. 2d 443"
+neutral_cite: 2009 U.S. LEXIS 2512
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 2009
 date_decided: 2009-04-06
-docket: "07-10441"
+docket: 07-10441
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Good law; the controlling modern statement of the federal McNabb-Mallory prompt-presentment rule as modified by 18 U.S.C. §3501. A federal-court rule (Rule 5(a)/§3501), not a constitutional rule binding the States."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 2009-04-06
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Corley v. United States
+  varies_by_point: false
+  scope_note: "Good law; the controlling modern statement of the federal McNabb-Mallory prompt-presentment rule as modified by 18 U.S.C. §3501. A federal-court rule (Rule 5(a)/§3501), not a constitutional rule binding the States."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/145888/corley-v-united-states/"
+  cluster_id: 145888
   opinion_id: 145888
   identity_checked: true
 homes:
@@ -29,6 +34,10 @@ related: ["[[McNabb v. United States]]", "[[Mallory v. United States]]", "[[Mira
 aliases: []
 tags: ["case", "fifth-amendment", "confessions", "mcnabb-mallory", "prompt-presentment", "section-3501", "voluntariness"]
 holding: "18 U.S.C. §3501 modified but did not supplant the McNabb-Mallory rule: a federal confession made before presentment and more than six hours after arrest must be suppressed if the presentment delay was unreasonable or unnecessary."
+lake:
+  record_id: Corley v. United States
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Corley v. United States

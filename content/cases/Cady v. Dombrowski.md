@@ -2,22 +2,27 @@
 title: "Cady v. Dombrowski"
 type: case
 citation: "413 U.S. 433 (1973)"
-parallel_cite: "93 S. Ct. 2523"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "93 S. Ct. 2523; 37 L. Ed. 2d 706"
+neutral_cite: 1973 U.S. LEXIS 48
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1973
 date_decided: 1973-06-21
-docket: "72-586"
+docket: 72-586
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Vehicle caretaking holding intact; Caniglia v. Strom (2021) declined to extend Cady's caretaking rationale to the home."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1973-06-21
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Cady v. Dombrowski
+  varies_by_point: false
+  scope_note: "Vehicle caretaking holding intact; Caniglia v. Strom (2021) declined to extend Cady's caretaking rationale to the home."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/108850/cady-v-dombrowski/"
+  cluster_id: 108850
   opinion_id: 108850
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[South Dakota v. Opperman]]", "[[Caniglia v. Strom]]", "[[Colorado v
 aliases: []
 tags: ["case", "fourth-amendment", "community-caretaking", "vehicle-search", "inventory"]
 holding: "Origin of the 'community caretaking' concept: police perform many noncriminal caretaking functions with VEHICLES (disabled cars,…"
+lake:
+  record_id: Cady v. Dombrowski
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Cady v. Dombrowski

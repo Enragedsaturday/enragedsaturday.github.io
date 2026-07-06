@@ -2,9 +2,9 @@
 title: "Kansas v. Glover"
 type: case
 citation: "589 U.S. 376 (2020)"
-parallel_cite: "140 S. Ct. 1183"
+parallel_cite: "140 S. Ct. 1183; 206 L. Ed. 2d 412"
 neutral_cite: ""
-court: "U.S. Supreme Court"
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 2020
@@ -12,12 +12,17 @@ date_decided: 2020-04-06
 docket: ""
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Good law; an officer who learns a vehicle's registered owner has a revoked license has reasonable suspicion to stop it absent information negating the inference that the owner is driving. The Court stressed the narrow scope of the holding: additional facts (e.g., an obvious mismatch between the owner and the observed driver) can dispel that suspicion."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 2020-04-06
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Kansas v. Glover
+  varies_by_point: false
+  scope_note: "Good law; an officer who learns a vehicle's registered owner has a revoked license has reasonable suspicion to stop it absent information negating the inference that the owner is driving. The Court stressed the narrow scope of the holding: additional facts (e.g., an obvious mismatch between the owner and the observed driver) can dispel that suspicion."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/9231313/kansas-v-glover/"
+  cluster_id: 9231313
   opinion_id: 9226123
   identity_checked: true
 homes:
@@ -29,6 +34,10 @@ related: ["[[Navarette v. California]]", "[[Delaware v. Prouse]]", "[[Heien v. N
 aliases: []
 tags: ["case", "fourth-amendment", "traffic-stop", "reasonable-suspicion", "vehicle-stop"]
 holding: "An officer who learns that a vehicle's registered owner has a revoked license has reasonable suspicion to stop the vehicle, absent information negating the inference that the owner is the driver."
+lake:
+  record_id: Kansas v. Glover
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Kansas v. Glover

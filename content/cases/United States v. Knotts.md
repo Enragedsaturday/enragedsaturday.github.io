@@ -2,9 +2,9 @@
 title: "United States v. Knotts"
 type: case
 citation: "460 U.S. 276 (1983)"
-parallel_cite: "103 S. Ct. 1081"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "103 S. Ct. 1081; 75 L. Ed. 2d 55; 51 U.S.L.W. 4232"
+neutral_cite: 1983 U.S. LEXIS 135
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1983
@@ -12,13 +12,18 @@ date_decided: 1983-03-02
 docket: ""
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Good law for short-term tracking of public movements. United States v. Jones (2012) decided GPS installation on trespass grounds without disturbing Knotts, and Carpenter (2018) distinguished short-term public tracking from long-term aggregation; neither overruled Knotts."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1983-03-02
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: United States v. Knotts
+  varies_by_point: false
+  scope_note: "Good law for short-term tracking of public movements. United States v. Jones (2012) decided GPS installation on trespass grounds without disturbing Knotts, and Carpenter (2018) distinguished short-term public tracking from long-term aggregation; neither overruled Knotts."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/110882/united-states-v-knotts/"
-  opinion_id: 110882
+  cluster_id: 110882
+  opinion_id: 9429102
   identity_checked: true
 homes:
   - page: "[[The Third-Party Doctrine and Digital Surveillance]]"
@@ -29,6 +34,10 @@ related: ["[[United States v. Karo]]", "[[United States v. Jones]]", "[[Carpente
 aliases: []
 tags: ["case", "fourth-amendment", "search", "beeper", "tracking", "surveillance", "public-movements"]
 holding: "Beeper-aided tracking of a vehicle over public roads is not a search; a person has no reasonable expectation of privacy in his movements over public thoroughfares."
+lake:
+  record_id: United States v. Knotts
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # United States v. Knotts

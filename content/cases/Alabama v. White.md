@@ -2,9 +2,9 @@
 title: "Alabama v. White"
 type: case
 citation: "496 U.S. 325 (1990)"
-parallel_cite: "110 S. Ct. 2412"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "110 S. Ct. 2412; 110 L. Ed. 2d 301"
+neutral_cite: 1990 U.S. LEXIS 3053
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1990
@@ -12,13 +12,18 @@ date_decided: 1990-06-11
 docket: ""
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: ""
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1990-06-11
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Alabama v. White
+  varies_by_point: false
+  scope_note: "Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/112454/alabama-v-white/"
-  opinion_id: 112454
+  cluster_id: 112454
+  opinion_id: 9432055
   identity_checked: true
 homes:
   - page: "[[Probable Cause and Reasonable Suspicion]]"
@@ -27,6 +32,10 @@ related: ["[[Illinois v. Gates]]", "[[Florida v. J.L.]]", "[[Terry v. Ohio]]"]
 aliases: []
 tags: ["case", "fourth-amendment", "reasonable-suspicion", "informants", "terry-stop"]
 holding: "An anonymous tip can supply reasonable suspicion when sufficiently corroborated by police observation — especially of the tipster's…"
+lake:
+  record_id: Alabama v. White
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Alabama v. White

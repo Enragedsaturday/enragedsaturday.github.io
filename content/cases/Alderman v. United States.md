@@ -2,23 +2,28 @@
 title: "Alderman v. United States"
 type: case
 citation: "394 U.S. 165 (1969)"
-parallel_cite: "89 S. Ct. 961"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "89 S. Ct. 961; 22 L. Ed. 2d 176"
+neutral_cite: 1969 U.S. LEXIS 3287
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1969
-date_decided: 1969-03-10
-docket: "133"
+date_decided: 1969-03-24
+docket: 133
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "The personal-rights standing rule remains good law; Rakas v. Illinois (1978) recast the inquiry as a substantive Fourth Amendment merits question but reaffirmed Alderman's core principle."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1969-03-10
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Alderman v. United States
+  varies_by_point: false
+  scope_note: "The personal-rights standing rule remains good law; Rakas v. Illinois (1978) recast the inquiry as a substantive Fourth Amendment merits question but reaffirmed Alderman's core principle."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/107872/alderman-v-united-states/"
-  opinion_id: 107872
+  cluster_id: 107872
+  opinion_id: 9423945
   identity_checked: true
 homes:
   - page: "[[Standing to Challenge a Search]]"
@@ -27,6 +32,10 @@ related: ["[[Rakas v. Illinois]]", "[[Jones v. United States]]", "[[Mancusi v. D
 aliases: []
 tags: ["case", "fourth-amendment", "standing", "exclusionary-rule", "electronic-surveillance", "personal-rights"]
 holding: "Fourth Amendment rights are personal and may not be vicariously asserted; only a defendant whose own rights were violated by the search or surveillance — not a co-defendant or co-conspirator aggrieved solely by the evidence — may move to suppress."
+lake:
+  record_id: Alderman v. United States
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Alderman v. United States

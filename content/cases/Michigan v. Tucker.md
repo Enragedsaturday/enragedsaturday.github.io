@@ -2,23 +2,28 @@
 title: "Michigan v. Tucker"
 type: case
 citation: "417 U.S. 433 (1974)"
-parallel_cite: "94 S. Ct. 2357"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "94 S. Ct. 2357; 41 L. Ed. 2d 182"
+neutral_cite: 1974 U.S. LEXIS 71
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1974
 date_decided: 1974-06-10
-docket: "73-482"
+docket: 73-482
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Dickerson v. United States (2000) reaffirmed Miranda's constitutional status, but the Tucker fruits principle survives and was applied in United States v. Patane (2004)."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1974-06-10
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Michigan v. Tucker
+  varies_by_point: false
+  scope_note: "Dickerson v. United States (2000) reaffirmed Miranda's constitutional status, but the Tucker fruits principle survives and was applied in United States v. Patane (2004)."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/109063/michigan-v-tucker/"
-  opinion_id: 109063
+  cluster_id: 109063
+  opinion_id: 9425753
   identity_checked: true
 homes:
   - page: "[[Miranda Waiver and Invocation]]"
@@ -27,6 +32,10 @@ related: ["[[United States v. Patane]]", "[[Oregon v. Elstad]]", "[[Dickerson v.
 aliases: []
 tags: ["case", "fifth-amendment", "miranda", "fruits", "prophylactic-rule"]
 holding: "The 'fruits' of a mere prophylactic Miranda violation — here, a witness whose identity was learned from a statement taken with incomplete warnings — need not be suppressed where the statement was voluntary and not actually compelled; a Miranda procedural lapse is not itself a Fifth Amendment violation."
+lake:
+  record_id: Michigan v. Tucker
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Michigan v. Tucker

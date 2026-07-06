@@ -2,23 +2,28 @@
 title: "Texas v. Cobb"
 type: case
 citation: "532 U.S. 162 (2001)"
-parallel_cite: "121 S. Ct. 1335"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "121 S. Ct. 1335; 149 L. Ed. 2d 321"
+neutral_cite: 2001 U.S. LEXIS 2696
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 2001
-date_decided: 2001-04-02
+date_decided: 2001-04-17
 docket: ""
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Good law; defines the scope of the Sixth Amendment right by the Blockburger same-elements test."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 2001-04-02
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Texas v. Cobb
+  varies_by_point: false
+  scope_note: "Good law; defines the scope of the Sixth Amendment right by the Blockburger same-elements test."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/118417/texas-v-cobb/"
-  opinion_id: 118417
+  cluster_id: 118417
+  opinion_id: 9434063
   identity_checked: true
 homes:
   - page: "[[Sixth Amendment Right to Counsel]]"
@@ -27,6 +32,10 @@ related: ["[[McNeil v. Wisconsin]]", "[[Massiah v. United States]]", "[[Brewer v
 aliases: []
 tags: ["case", "sixth-amendment", "right-to-counsel"]
 holding: "The Sixth Amendment right to counsel is offense-specific; it attaches only to the charged offense and does not extend to other,…"
+lake:
+  record_id: Texas v. Cobb
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Texas v. Cobb

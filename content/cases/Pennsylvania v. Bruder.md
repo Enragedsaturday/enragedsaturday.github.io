@@ -2,22 +2,27 @@
 title: "Pennsylvania v. Bruder"
 type: case
 citation: "488 U.S. 9 (1988)"
-parallel_cite: "109 S. Ct. 205"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "109 S. Ct. 205; 102 L. Ed. 2d 172"
+neutral_cite: 1988 U.S. LEXIS 4816
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1988
 date_decided: 1988-10-31
-docket: "88-161"
+docket: 88-161
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Good law; per curiam application of Berkemer v. McCarty — ordinary traffic stops are non-custodial, so roadside DUI questioning needs no Miranda warnings before arrest."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1988-10-31
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Pennsylvania v. Bruder
+  varies_by_point: false
+  scope_note: "Good law; per curiam application of Berkemer v. McCarty — ordinary traffic stops are non-custodial, so roadside DUI questioning needs no Miranda warnings before arrest."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/112152/pennsylvania-v-bruder/"
+  cluster_id: 112152
   opinion_id: 112152
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Berkemer v. McCarty]]", "[[Miranda v. Arizona]]", "[[California v. 
 aliases: []
 tags: ["case", "fifth-amendment", "miranda", "custody", "traffic-stop", "dui", "per-curiam"]
 holding: "Ordinary roadside questioning of a motorist detained during a routine traffic stop — including DUI field-sobriety questioning before arrest — is not custodial interrogation, so Miranda warnings are not required and the roadside responses are admissible (applying Berkemer v. McCarty)."
+lake:
+  record_id: Pennsylvania v. Bruder
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Pennsylvania v. Bruder

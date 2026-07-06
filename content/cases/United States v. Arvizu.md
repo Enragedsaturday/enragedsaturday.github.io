@@ -2,9 +2,9 @@
 title: "United States v. Arvizu"
 type: case
 citation: "534 U.S. 266 (2002)"
-parallel_cite: "122 S. Ct. 744"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "122 S. Ct. 744; 151 L. Ed. 2d 740"
+neutral_cite: 2002 U.S. LEXIS 490
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 2002
@@ -12,12 +12,17 @@ date_decided: 2002-01-15
 docket: ""
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Good law; reaffirms the totality-of-the-circumstances reasonable-suspicion standard."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 2002-01-15
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: United States v. Arvizu
+  varies_by_point: false
+  scope_note: "Good law; reaffirms the totality-of-the-circumstances reasonable-suspicion standard."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/118474/united-states-v-arvizu/"
+  cluster_id: 118474
   opinion_id: 118474
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Terry v. Ohio]]", "[[United States v. Cortez]]", "[[Illinois v. War
 aliases: []
 tags: ["case", "fourth-amendment", "reasonable-suspicion"]
 holding: "Reasonable suspicion is judged on the totality of the circumstances — the \"whole picture\" — and reviewing courts may NOT use a…"
+lake:
+  record_id: United States v. Arvizu
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # United States v. Arvizu

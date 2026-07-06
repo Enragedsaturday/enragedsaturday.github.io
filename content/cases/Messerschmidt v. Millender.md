@@ -2,23 +2,28 @@
 title: "Messerschmidt v. Millender"
 type: case
 citation: "565 U.S. 535 (2012)"
-parallel_cite: "132 S. Ct. 1235"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "132 S. Ct. 1235; 182 L. Ed. 2d 47"
+neutral_cite: 2012 U.S. LEXIS 1687
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 2012
 date_decided: 2012-02-22
-docket: "10-704"
+docket: 10-704
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Good law on qualified immunity for executing a magistrate-approved warrant later claimed to be overbroad."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 2012-02-22
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Messerschmidt v. Millender
+  varies_by_point: false
+  scope_note: Good law on qualified immunity for executing a magistrate-approved warrant later claimed to be overbroad.
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/623242/messerschmidt-v-millender/"
-  opinion_id: 9485385
+  cluster_id: 623242
+  opinion_id: 623242
   identity_checked: true
 homes:
   - page: "[[Section 1983 Liability and Qualified Immunity]]"
@@ -29,6 +34,10 @@ related: ["[[Malley v. Briggs]]", "[[United States v. Leon]]", "[[Harlow v. Fitz
 aliases: []
 tags: ["case", "section-1983", "qualified-immunity", "warrant", "overbroad-warrant", "objective-reasonableness"]
 holding: "Officers retain qualified immunity for obtaining and executing a facially overbroad warrant where their reliance on the magistrate's approval was objectively reasonable; the Malley exception is a high threshold."
+lake:
+  record_id: Messerschmidt v. Millender
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Messerschmidt v. Millender

@@ -1,10 +1,10 @@
 ---
 title: "Maryland v. King"
 type: case
-citation: "569 U.S. 435 (2013)"
-parallel_cite: "133 S. Ct. 1958"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+citation: ""
+parallel_cite: "133 S. Ct. 1958; 186 L. Ed. 2d 1; 569 U.S. 435; 24 Fla. L. Weekly Fed. S 234; 81 U.S.L.W. 4343"
+neutral_cite: "2013 U.S. LEXIS 4165; 2013 WL 2371466"
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 2013
@@ -12,12 +12,17 @@ date_decided: 2013-06-03
 docket: ""
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: ""
-  by: []
+  field_i_validity: good_law
+  as_of_content: 2013-06-03
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Maryland v. King
+  varies_by_point: false
+  scope_note: "Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/873669/maryland-v-king/"
+  cluster_id: 873669
   opinion_id: 873669
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Schmerber v. California]]", "[[Florence v. Board of Chosen Freehold
 aliases: []
 tags: ["case", "fourth-amendment", "dna", "booking", "arrestee", "special-needs"]
 holding: "Taking a buccal (cheek) DNA swab from a person arrested for a serious offense and held in custody is a reasonable booking procedure…"
+lake:
+  record_id: Maryland v. King
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Maryland v. King

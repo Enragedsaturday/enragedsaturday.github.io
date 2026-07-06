@@ -1,8 +1,8 @@
 ---
 title: "Wilkes v. Wood"
 type: case
-citation: "19 How. St. Tr. 1153 (C.P. 1763)"
-parallel_cite: "98 Eng. Rep. 489; Lofft 1"
+citation: ""
+parallel_cite: ""
 neutral_cite: ""
 court: "Court of Common Pleas (England)"
 court_level: other
@@ -10,16 +10,21 @@ circuit: ""
 year: 1763
 date_decided: 1763-12-06
 docket: ""
-authority_weight: "Historical"
+authority_weight: Historical
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Historical (English origin). Still cited as a foundational source of the Fourth Amendment's hostility to general warrants and as an early endorsement of exemplary (punitive) damages against officials. Identity confirmed via the authoritative reports (Howell's State Trials; English Reports / Lofft), not CourtListener (no CL record)."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1763-12-06
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Wilkes v. Wood
+  varies_by_point: false
+  scope_note: "Historical (English origin). Still cited as a foundational source of the Fourth Amendment's hostility to general warrants and as an early endorsement of exemplary (punitive) damages against officials. Identity confirmed via the authoritative reports (Howell's State Trials; English Reports / Lofft), not CourtListener (no CL record)."
+  point_overrides: []
 courtlistener:
   opinion_url: ""
+  cluster_id: null
   opinion_id: null
-  identity_checked: true
+  identity_checked: false
 homes:
   - page: "[[Common Law Origins]]"
     role: "Key — Anchor (foundational origin)"
@@ -29,6 +34,10 @@ related: ["[[Entick v. Carrington]]", "[[Boyd v. United States]]", "[[Katz v. Un
 aliases: []
 tags: ["case", "historical", "common-law-origins", "general-warrant", "fourth-amendment", "exemplary-damages", "english-origins"]
 holding: "A general warrant authorizing officers to search for and seize the papers of unnamed persons suspected of seditious libel is unlawful and 'totally subversive of the liberty of the subject'; a jury may award exemplary damages against the officers both to compensate and to punish and deter the practice."
+lake:
+  record_id: Wilkes v. Wood
+  status: not_found
+  projected_at: 2026-07-06
 ---
 
 # Wilkes v. Wood

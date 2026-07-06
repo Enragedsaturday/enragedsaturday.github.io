@@ -2,9 +2,9 @@
 title: "Chambers v. Florida"
 type: case
 citation: "309 U.S. 227 (1940)"
-parallel_cite: "60 S. Ct. 472"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "60 S. Ct. 472; 84 L. Ed. 716"
+neutral_cite: 1940 U.S. LEXIS 911
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1940
@@ -12,12 +12,17 @@ date_decided: 1940-02-12
 docket: ""
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: ""
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1940-02-12
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Chambers v. Florida
+  varies_by_point: false
+  scope_note: "Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/103301/chambers-v-florida/"
+  cluster_id: 103301
   opinion_id: 103301
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Brown v. Mississippi]]", "[[Ashcraft v. Tennessee]]", "[[Colorado v
 aliases: []
 tags: ["case", "fifth-amendment", "due-process", "confessions", "voluntariness", "coercion"]
 holding: "Confessions extracted through prolonged, incommunicado interrogation of helpless prisoners were the product of compulsion and their use…"
+lake:
+  record_id: Chambers v. Florida
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Chambers v. Florida

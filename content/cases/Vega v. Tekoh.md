@@ -2,22 +2,27 @@
 title: "Vega v. Tekoh"
 type: case
 citation: "597 U.S. 134 (2022)"
-parallel_cite: "142 S. Ct. 2095"
+parallel_cite: "213 L. Ed. 2d 479; 142 S. Ct. 2095"
 neutral_cite: ""
-court: "U.S. Supreme Court"
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 2022
 date_decided: 2022-06-23
-docket: "21-499"
+docket: 21-499
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Recent controlling decision; good law."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 2022-06-23
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Vega v. Tekoh
+  varies_by_point: false
+  scope_note: "Recent controlling decision; good law."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/6480695/vega-v-tekoh/"
+  cluster_id: 6480695
   opinion_id: 6352828
   identity_checked: true
 homes:
@@ -29,6 +34,10 @@ related: ["[[Chavez v. Martinez]]", "[[Dickerson v. United States]]", "[[Miranda
 aliases: []
 tags: ["case", "fifth-amendment", "miranda", "section-1983", "qualified-immunity"]
 holding: "A violation of the Miranda rules is not itself a violation of the Fifth Amendment and does not provide a basis for a § 1983 damages claim against the officer who took an un-Mirandized statement."
+lake:
+  record_id: Vega v. Tekoh
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Vega v. Tekoh

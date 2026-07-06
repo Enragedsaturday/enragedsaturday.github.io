@@ -2,23 +2,28 @@
 title: "United States v. Gouveia"
 type: case
 citation: "467 U.S. 180 (1984)"
-parallel_cite: "104 S. Ct. 2292"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "104 S. Ct. 2292; 81 L. Ed. 2d 146; 52 U.S.L.W. 4659"
+neutral_cite: 1984 U.S. LEXIS 91
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1984
 date_decided: 1984-05-29
-docket: "83-128"
+docket: 83-128
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Good law; the attachment rule was reaffirmed in Rothgery v. Gillespie County (2008)."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1984-05-29
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: United States v. Gouveia
+  varies_by_point: false
+  scope_note: "Good law; the attachment rule was reaffirmed in Rothgery v. Gillespie County (2008)."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/111193/united-states-v-gouveia/"
-  opinion_id: 111193
+  cluster_id: 111193
+  opinion_id: 9429629
   identity_checked: true
 homes:
   - page: "[[Sixth Amendment Right to Counsel]]"
@@ -27,6 +32,10 @@ related: ["[[Kirby v. Illinois]]", "[[Massiah v. United States]]", "[[Brewer v. 
 aliases: []
 tags: ["case", "sixth-amendment", "right-to-counsel", "attachment"]
 holding: "The Sixth Amendment right to counsel attaches only at or after the initiation of adversary judicial proceedings (formal charge, preliminary hearing, indictment, information, or arraignment); inmates held in administrative segregation during a preindictment investigation have no Sixth Amendment right to counsel."
+lake:
+  record_id: United States v. Gouveia
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # United States v. Gouveia

@@ -2,23 +2,28 @@
 title: "United States v. Knights"
 type: case
 citation: "534 U.S. 112 (2001)"
-parallel_cite: "122 S. Ct. 587"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "122 S. Ct. 587; 151 L. Ed. 2d 497"
+neutral_cite: 2001 U.S. LEXIS 10950
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 2001
 date_decided: 2001-12-10
-docket: "00-1260"
+docket: 00-1260
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: ""
-  by: []
+  field_i_validity: good_law
+  as_of_content: 2001-12-10
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: United States v. Knights
+  varies_by_point: false
+  scope_note: "Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/118468/united-states-v-knights/"
-  opinion_id: 118468
+  cluster_id: 118468
+  opinion_id: 9434170
   identity_checked: true
 homes:
   - page: "[[Special Needs and Administrative Searches]]"
@@ -27,6 +32,10 @@ related: ["[[Griffin v. Wisconsin]]", "[[Samson v. California]]", "[[United Stat
 aliases: []
 tags: ["case", "fourth-amendment", "probation-search", "reasonable-suspicion", "search-condition", "general-balancing"]
 holding: "A warrantless search of a probationer subject to a search condition, supported by reasonable suspicion, is reasonable under the Fourth…"
+lake:
+  record_id: United States v. Knights
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # United States v. Knights

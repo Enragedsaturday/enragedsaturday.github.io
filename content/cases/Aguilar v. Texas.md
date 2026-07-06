@@ -2,22 +2,27 @@
 title: "Aguilar v. Texas"
 type: case
 citation: "378 U.S. 108 (1964)"
-parallel_cite: "84 S. Ct. 1509"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "84 S. Ct. 1509; 12 L. Ed. 2d 723"
+neutral_cite: 1964 U.S. LEXIS 994
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1964
 date_decided: 1964-06-15
 docket: ""
-authority_weight: "Historical"
+authority_weight: "Binding — SCOTUS"
 treatment:
-  status: abrogated
-  as_of: 2026-06-30
-  note: "Two-prong Aguilar-Spinelli test for informant tips abandoned for a totality-of-the-circumstances approach by Illinois v. Gates (1983)."
-  by: ["[[Illinois v. Gates]]"]
+  field_i_validity: superseded
+  as_of_content: 1964-06-15
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Aguilar v. Texas
+  varies_by_point: false
+  scope_note: "Two-prong Aguilar-Spinelli test for informant tips abandoned for a totality-of-the-circumstances approach by Illinois v. Gates (1983)."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/106865/aguilar-v-texas/"
+  cluster_id: 106865
   opinion_id: 106865
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Illinois v. Gates]]", "[[Spinelli v. United States]]"]
 aliases: []
 tags: ["case", "fourth-amendment", "probable-cause", "informants", "historical"]
 holding: "A magistrate may issue a warrant on an informant's hearsay only if the affidavit shows **(1) the informant's basis of knowledge** (how…"
+lake:
+  record_id: Aguilar v. Texas
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Aguilar v. Texas

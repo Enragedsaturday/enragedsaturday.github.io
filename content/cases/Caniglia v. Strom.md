@@ -2,22 +2,27 @@
 title: "Caniglia v. Strom"
 type: case
 citation: "593 U.S. 194 (2021)"
-parallel_cite: "141 S. Ct. 1596"
+parallel_cite: "209 L. Ed. 2d 604; 141 S. Ct. 1596"
 neutral_cite: ""
-court: "U.S. Supreme Court"
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 2021
 date_decided: 2021-05-17
-docket: "20-157"
+docket: 20-157
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: ""
-  by: []
+  field_i_validity: good_law
+  as_of_content: 2021-05-17
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Caniglia v. Strom
+  varies_by_point: false
+  scope_note: "Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/4883694/caniglia-v-strom/"
+  cluster_id: 4883694
   opinion_id: 4687473
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Cady v. Dombrowski]]", "[[Brigham City v. Stuart]]", "[[Kentucky v.
 aliases: []
 tags: ["case", "fourth-amendment", "community-caretaking", "home", "warrantless-entry"]
 holding: "There is NO freestanding 'community caretaking' exception authorizing warrantless entry into the HOME. Cady's caretaking rationale was…"
+lake:
+  record_id: Caniglia v. Strom
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Caniglia v. Strom

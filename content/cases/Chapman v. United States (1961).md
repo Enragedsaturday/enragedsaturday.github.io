@@ -2,22 +2,27 @@
 title: "Chapman v. United States (1961)"
 type: case
 citation: "365 U.S. 610 (1961)"
-parallel_cite: "81 S. Ct. 776"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "81 S. Ct. 776; 5 L. Ed. 2d 828"
+neutral_cite: 1961 U.S. LEXIS 1396
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1961
 date_decided: 1961-04-03
-docket: "175"
+docket: 175
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Landlord-cannot-consent rule remains good law; consistent with the later common-authority consent framework (Matlock) and reaffirmed in spirit by Stoner v. California and Georgia v. Randolph."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1961-04-03
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: "Chapman v. United States (1961)"
+  varies_by_point: false
+  scope_note: "Landlord-cannot-consent rule remains good law; consistent with the later common-authority consent framework (Matlock) and reaffirmed in spirit by Stoner v. California and Georgia v. Randolph."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/106197/chapman-v-united-states/"
+  cluster_id: 106197
   opinion_id: 106197
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Stoner v. California]]"]
 aliases: ["Chapman v. United States"]
 tags: ["case", "fourth-amendment", "consent", "third-party-consent", "landlord-tenant", "home"]
 holding: "A landlord cannot give valid third-party consent to a search of premises currently leased to a tenant; a warrantless entry of the tenant's home on the landlord's authority alone violates the Fourth Amendment."
+lake:
+  record_id: "Chapman v. United States (1961)"
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Chapman v. United States (1961)

@@ -2,22 +2,27 @@
 title: "Wilson v. Arkansas"
 type: case
 citation: "514 U.S. 927 (1995)"
-parallel_cite: "115 S. Ct. 1914"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "115 S. Ct. 1914; 131 L. Ed. 2d 976"
+neutral_cite: 1995 U.S. LEXIS 3464
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1995
 date_decided: 1995-05-22
-docket: "94-5707"
+docket: 94-5707
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Knock-and-announce as part of reasonableness; refined by Richards v. Wisconsin (1997). Hudson v. Michigan (2006) held a violation does not trigger suppression. Good law."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1995-05-22
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Wilson v. Arkansas
+  varies_by_point: false
+  scope_note: "Knock-and-announce as part of reasonableness; refined by Richards v. Wisconsin (1997). Hudson v. Michigan (2006) held a violation does not trigger suppression. Good law."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/117936/wilson-v-arkansas/"
+  cluster_id: 117936
   opinion_id: 117936
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Richards v. Wisconsin]]", "[[Hudson v. Michigan]]"]
 aliases: ["Wilson"]
 tags: ["case", "fourth-amendment", "knock-and-announce", "warrant-execution", "reasonableness"]
 holding: "The common-law **knock-and-announce** principle — that officers must announce their presence and authority before forcibly entering a…"
+lake:
+  record_id: Wilson v. Arkansas
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Wilson v. Arkansas

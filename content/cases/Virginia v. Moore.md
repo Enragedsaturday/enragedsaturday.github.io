@@ -2,22 +2,27 @@
 title: "Virginia v. Moore"
 type: case
 citation: "553 U.S. 164 (2008)"
-parallel_cite: "128 S. Ct. 1598"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "128 S. Ct. 1598; 170 L. Ed. 2d 559"
+neutral_cite: 2008 U.S. LEXIS 3674
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 2008
 date_decided: 2008-04-23
-docket: "06-1082"
+docket: 06-1082
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Controlling: an arrest on probable cause is reasonable under the Fourth Amendment even if it violates state arrest law; the search incident follows and no suppression results from the state-law violation."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 2008-04-23
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Virginia v. Moore
+  varies_by_point: false
+  scope_note: "Controlling: an arrest on probable cause is reasonable under the Fourth Amendment even if it violates state arrest law; the search incident follows and no suppression results from the state-law violation."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/145814/virginia-v-moore/"
+  cluster_id: 145814
   opinion_id: 145814
   identity_checked: true
 homes:
@@ -31,6 +36,10 @@ related: ["[[United States v. Robinson]]", "[[Atwater v. City of Lago Vista]]", 
 aliases: []
 tags: ["case", "fourth-amendment", "arrest", "search-incident-to-arrest", "exclusionary-rule", "state-law"]
 holding: "A warrantless arrest on probable cause for a crime committed in the officer's presence is reasonable under the Fourth Amendment even if state law forbade the arrest (requiring a summons); the search incident requires no additional justification, and a state-law-only violation does not trigger exclusion."
+lake:
+  record_id: Virginia v. Moore
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Virginia v. Moore

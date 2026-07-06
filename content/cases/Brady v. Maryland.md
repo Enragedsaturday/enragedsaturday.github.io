@@ -2,22 +2,27 @@
 title: "Brady v. Maryland"
 type: case
 citation: "373 U.S. 83 (1963)"
-parallel_cite: "83 S. Ct. 1194"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "83 S. Ct. 1194; 10 L. Ed. 2d 215"
+neutral_cite: 1963 U.S. LEXIS 1615
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1963
 date_decided: 1963-05-13
-docket: "490"
+docket: 490
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Foundational disclosure rule; later refined (not undermined) by Giglio and United States v. Bagley."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1963-05-13
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Brady v. Maryland
+  varies_by_point: false
+  scope_note: "Foundational disclosure rule; later refined (not undermined) by Giglio and United States v. Bagley."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/106598/brady-v-maryland/"
+  cluster_id: 106598
   opinion_id: 106598
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Giglio v. United States]]", "[[United States v. Bagley]]", "[[Kyles
 aliases: ["Brady v. MD"]
 tags: ["case", "due-process", "brady", "disclosure", "exculpatory-evidence"]
 holding: "The prosecution's suppression of evidence favorable to the accused that is material to guilt or punishment violates due process —…"
+lake:
+  record_id: Brady v. Maryland
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Brady v. Maryland

@@ -2,9 +2,9 @@
 title: "United States v. Sharpe"
 type: case
 citation: "470 U.S. 675 (1985)"
-parallel_cite: "105 S. Ct. 1568"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "105 S. Ct. 1568; 84 L. Ed. 2d 605; 53 U.S.L.W. 4346"
+neutral_cite: 1985 U.S. LEXIS 74
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1985
@@ -12,13 +12,18 @@ date_decided: 1985-03-20
 docket: ""
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Good law; the diligence test for the permissible duration of a Terry stop (no rigid time limit) remains controlling and underlies Rodriguez v. United States."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1985-03-20
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: United States v. Sharpe
+  varies_by_point: false
+  scope_note: "Good law; the diligence test for the permissible duration of a Terry stop (no rigid time limit) remains controlling and underlies Rodriguez v. United States."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/111378/united-states-v-sharpe/"
-  opinion_id: 111378
+  cluster_id: 111378
+  opinion_id: 9429956
   identity_checked: true
 homes:
   - page: "[[Terry Stops and Reasonable Suspicion]]"
@@ -27,6 +32,10 @@ related: ["[[Terry v. Ohio]]", "[[United States v. Place]]", "[[Florida v. Royer
 aliases: []
 tags: ["case", "fourth-amendment", "seizure", "terry-stop", "duration", "investigative-detention"]
 holding: "There is no rigid time limit for a Terry stop; a 20-minute investigative detention was reasonable where police diligently pursued an investigation likely to confirm or dispel suspicion quickly."
+lake:
+  record_id: United States v. Sharpe
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # United States v. Sharpe

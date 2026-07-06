@@ -1,10 +1,10 @@
 ---
 title: "Mullenix v. Luna"
 type: case
-citation: "577 U.S. 7 (2015)"
-parallel_cite: "136 S. Ct. 305"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+citation: ""
+parallel_cite: "577 U.S. 7; 136 S. Ct. 305; 193 L. Ed. 2d 255; 84 U.S.L.W. 4003; 25 Fla. L. Weekly Fed. S 555"
+neutral_cite: 2015 U.S. LEXIS 7160
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 2015
@@ -12,12 +12,17 @@ date_decided: 2015-11-09
 docket: ""
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Per curiam; good law on the specificity of 'clearly established' law for qualified immunity."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 2015-11-09
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Mullenix v. Luna
+  varies_by_point: false
+  scope_note: "Per curiam; good law on the specificity of 'clearly established' law for qualified immunity."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/3153112/mullenix-v-luna/"
+  cluster_id: 3153112
   opinion_id: 3153112
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Tennessee v. Garner]]", "[[Scott v. Harris]]", "[[Kisela v. Hughes]
 aliases: []
 tags: ["case", "section-1983", "qualified-immunity", "excessive-force", "clearly-established"]
 holding: "'Clearly established' law must be particularized to the specific context — 'the dispositive question is whether the violative nature of particular conduct is clearly established.'"
+lake:
+  record_id: Mullenix v. Luna
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Mullenix v. Luna

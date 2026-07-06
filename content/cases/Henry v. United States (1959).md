@@ -2,9 +2,9 @@
 title: "Henry v. United States (1959)"
 type: case
 citation: "361 U.S. 98 (1959)"
-parallel_cite: "80 S. Ct. 168"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "80 S. Ct. 168; 4 L. Ed. 2d 134"
+neutral_cite: 1959 U.S. LEXIS 89
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1959
@@ -12,12 +12,17 @@ date_decided: 1959-11-23
 docket: ""
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Good law. Probable cause for a warrantless arrest is measured by the facts known to the officer at the moment of arrest; outwardly innocent conduct does not supply it, and an arrest cannot be justified by what the ensuing search reveals. Year-suffixed filename to disambiguate from the reversed-party case United States v. Henry, 447 U.S. 264 (1980)."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1959-11-23
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: "Henry v. United States (1959)"
+  varies_by_point: false
+  scope_note: "Good law. Probable cause for a warrantless arrest is measured by the facts known to the officer at the moment of arrest; outwardly innocent conduct does not supply it, and an arrest cannot be justified by what the ensuing search reveals. Year-suffixed filename to disambiguate from the reversed-party case United States v. Henry, 447 U.S. 264 (1980)."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/105963/henry-v-united-states/"
+  cluster_id: 105963
   opinion_id: 105963
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Brinegar v. United States]]", "[[Carroll v. United States]]", "[[Jo
 aliases: ["Henry v. United States"]
 tags: ["case", "fourth-amendment", "probable-cause", "warrantless-arrest", "seizure"]
 holding: "Probable cause for a warrantless arrest is judged by the facts known at the moment of arrest; outwardly innocent conduct (mere package movement) does not supply it, and an arrest is not justified by what the subsequent search discloses."
+lake:
+  record_id: "Henry v. United States (1959)"
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Henry v. United States (1959)

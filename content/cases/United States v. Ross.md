@@ -2,9 +2,9 @@
 title: "United States v. Ross"
 type: case
 citation: "456 U.S. 798 (1982)"
-parallel_cite: "102 S. Ct. 2157"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "102 S. Ct. 2157; 72 L. Ed. 2d 572; 50 U.S.L.W. 4580"
+neutral_cite: 1982 U.S. LEXIS 18
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1982
@@ -12,12 +12,17 @@ date_decided: 1982-06-01
 docket: ""
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: ""
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1982-06-01
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: United States v. Ross
+  varies_by_point: false
+  scope_note: "Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/110719/united-states-v-ross/"
+  cluster_id: 110719
   opinion_id: 110719
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Carroll v. United States]]", "[[California v. Acevedo]]", "[[Califo
 aliases: []
 tags: ["case", "fourth-amendment", "automobile-exception", "containers", "probable-cause", "vehicle-search"]
 holding: "When PC justifies the search of a lawfully stopped vehicle, it justifies a search of every part of the vehicle and every container…"
+lake:
+  record_id: United States v. Ross
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # United States v. Ross

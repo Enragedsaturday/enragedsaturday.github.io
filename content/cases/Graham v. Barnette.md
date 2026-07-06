@@ -1,23 +1,28 @@
 ---
 title: "Graham v. Barnette"
 type: case
-citation: "5 F.4th 872 (8th Cir. 2021)"
+citation: "5 F.4th 872 (2021)"
 parallel_cite: ""
 neutral_cite: ""
 court: "U.S. Court of Appeals, 8th Circuit"
-court_level: circuit
-circuit: "8th"
+court_level: coa
+circuit: 8th
 year: 2021
 date_decided: 2021-07-16
-docket: "19-2512"
+docket: 19-2512
 authority_weight: "Binding in-circuit — 8th Cir."
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Good law; decided on remand from the Supreme Court in light of Caniglia v. Strom. Holds that post-Caniglia the 'community caretaking' label for psychiatric seizures is a category error and that probable cause of dangerousness governs."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 2021-07-16
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Graham v. Barnette
+  varies_by_point: false
+  scope_note: "Good law; decided on remand from the Supreme Court in light of Caniglia v. Strom. Holds that post-Caniglia the 'community caretaking' label for psychiatric seizures is a category error and that probable cause of dangerousness governs."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/4900401/teresa-graham-v-shannon-barnette/"
+  cluster_id: 4900401
   opinion_id: 4704180
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Caniglia v. Strom]]", "[[United States v. Garner]]", "[[United Stat
 aliases: ["Teresa Graham v. Shannon Barnette", "Graham v. Barnette (8th Cir. 2021)"]
 tags: ["case", "fourth-amendment", "community-caretaking", "mental-health-seizure", "probable-cause", "qualified-immunity", "eighth-circuit", "persons-in-public"]
 holding: "After Caniglia v. Strom, using the 'community caretaking' label for warrantless psychiatric seizures is a category error; a seizure of a person for an emergency mental-health evaluation is reasonable under the Fourth Amendment only on probable cause that the person is mentally ill and dangerous to herself or others (though the officers received qualified immunity because that standard was not clearly established in the circuit)."
+lake:
+  record_id: Graham v. Barnette
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Graham v. Barnette

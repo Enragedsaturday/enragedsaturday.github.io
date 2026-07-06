@@ -2,9 +2,9 @@
 title: "Missouri v. Seibert"
 type: case
 citation: "542 U.S. 600 (2004)"
-parallel_cite: "124 S. Ct. 2601"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "124 S. Ct. 2601; 159 L. Ed. 2d 643"
+neutral_cite: 2004 U.S. LEXIS 4578
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 2004
@@ -12,12 +12,17 @@ date_decided: 2004-06-28
 docket: ""
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Plurality opinion; Justice Kennedy's concurrence in the judgment is generally treated as controlling."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 2004-06-28
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Missouri v. Seibert
+  varies_by_point: false
+  scope_note: "Plurality opinion; Justice Kennedy's concurrence in the judgment is generally treated as controlling."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/137002/missouri-v-seibert/"
+  cluster_id: 137002
   opinion_id: 137002
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Oregon v. Elstad]]", "[[Miranda v. Arizona]]", "[[Dickerson v. Unit
 aliases: []
 tags: ["case", "fifth-amendment", "miranda", "two-step", "question-first", "waiver"]
 holding: "A deliberate \"question-first, warn-later\" two-step interrogation is invalid."
+lake:
+  record_id: Missouri v. Seibert
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Missouri v. Seibert

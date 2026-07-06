@@ -2,22 +2,27 @@
 title: "Ornelas v. United States"
 type: case
 citation: "517 U.S. 690 (1996)"
-parallel_cite: "116 S. Ct. 1657"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "116 S. Ct. 1657; 134 L. Ed. 2d 911"
+neutral_cite: 1996 U.S. LEXIS 3391
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1996
 date_decided: 1996-06-10
-docket: "95-5257"
+docket: 95-5257
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: ""
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1996-06-10
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Ornelas v. United States
+  varies_by_point: false
+  scope_note: "Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/118030/ornelas-v-united-states/"
+  cluster_id: 118030
   opinion_id: 118030
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Illinois v. Gates]]", "[[Brinegar v. United States]]", "[[Terry v. 
 aliases: []
 tags: ["case", "fourth-amendment", "probable-cause", "reasonable-suspicion", "standard-of-review", "de-novo"]
 holding: "Appellate review of determinations of reasonable suspicion and probable cause to make a warrantless search/stop is de novo (historical…"
+lake:
+  record_id: Ornelas v. United States
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Ornelas v. United States

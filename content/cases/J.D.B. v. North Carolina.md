@@ -2,23 +2,28 @@
 title: "J.D.B. v. North Carolina"
 type: case
 citation: "564 U.S. 261 (2011)"
-parallel_cite: ""
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "180 L. Ed. 2d 310; 131 S. Ct. 2394"
+neutral_cite: 2011 U.S. LEXIS 4557
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 2011
 date_decided: 2011-06-16
-docket: "09-11121"
+docket: 09-11121
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: ""
-  by: []
+  field_i_validity: good_law
+  as_of_content: 2011-06-16
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: J.D.B. v. North Carolina
+  varies_by_point: false
+  scope_note: "Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade."
+  point_overrides: []
 courtlistener:
-  opinion_url: "https://www.courtlistener.com/opinion/218925/j-d-b-v-north-carolina/"
-  opinion_id: 218925
+  opinion_url: "https://www.courtlistener.com/opinion/7345714/j-d-b-v-north-carolina/"
+  cluster_id: 7345714
+  opinion_id: 7263680
   identity_checked: true
 homes:
   - page: "[[Miranda and Custodial Interrogation]]"
@@ -27,6 +32,10 @@ related: ["[[Yarborough v. Alvarado]]", "[[Berkemer v. McCarty]]", "[[Miranda v.
 aliases: ["In re J.D.B."]
 tags: ["case", "fifth-amendment", "miranda", "custody", "juveniles", "age"]
 holding: "A child's age is a relevant factor in the Miranda custody analysis when it was known to or objectively apparent to the officer — because…"
+lake:
+  record_id: J.D.B. v. North Carolina
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # J.D.B. v. North Carolina

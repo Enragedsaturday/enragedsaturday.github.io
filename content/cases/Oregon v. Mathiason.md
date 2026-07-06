@@ -2,9 +2,9 @@
 title: "Oregon v. Mathiason"
 type: case
 citation: "429 U.S. 492 (1977)"
-parallel_cite: "97 S. Ct. 711"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "97 S. Ct. 711; 50 L. Ed. 2d 714"
+neutral_cite: 1977 U.S. LEXIS 38
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1977
@@ -12,12 +12,17 @@ date_decided: 1977-01-25
 docket: ""
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Per curiam; voluntary station-house interview is not custody; good law."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1977-01-25
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Oregon v. Mathiason
+  varies_by_point: false
+  scope_note: "Per curiam; voluntary station-house interview is not custody; good law."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/109587/oregon-v-mathiason/"
+  cluster_id: 109587
   opinion_id: 109587
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Miranda v. Arizona]]", "[[California v. Beheler]]", "[[Stansbury v.
 aliases: []
 tags: ["case", "fifth-amendment", "miranda", "custody", "station-house"]
 holding: "A suspect who comes voluntarily to the station, is told he is not under arrest, and is free to leave is NOT in custody for Miranda —…"
+lake:
+  record_id: Oregon v. Mathiason
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Oregon v. Mathiason

@@ -1,25 +1,30 @@
 ---
 title: "State v. Volle"
 type: case
-citation: "580 P.3d 1223 (Kan. 2025)"
+citation: ""
 parallel_cite: ""
 neutral_cite: ""
-court: "Kansas Supreme Court"
-court_level: state-high
+court: Kansas Supreme Court
+court_level: state
 circuit: ""
 year: 2025
 date_decided: 2025-12-12
 docket: ""
 authority_weight: "Persuasive — state, illustrative"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: ""
-  by: []
+  field_i_validity: good_law
+  as_of_content: 2025-12-12
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: State v. Volle
+  varies_by_point: false
+  scope_note: "Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/10811858/state-v-volle/"
+  cluster_id: 10811858
   opinion_id: 11278610
-  identity_checked: true
+  identity_checked: false
 homes:
   - page: "[[Plain View Doctrine]]"
     role: "Recent development (role-based)"
@@ -27,6 +32,10 @@ related: ["[[Riley v. California]]", "[[Carpenter v. United States]]", "[[State 
 aliases: []
 tags: ["case", "fourth-amendment", "digital-search", "computer-warrant", "particularity", "kansas"]
 holding: "Because relevant information may be stored anywhere on a digital device, a warrant ordinarily cannot prescribe in advance exactly how…"
+lake:
+  record_id: State v. Volle
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # State v. Volle

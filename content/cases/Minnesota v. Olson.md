@@ -2,9 +2,9 @@
 title: "Minnesota v. Olson"
 type: case
 citation: "495 U.S. 91 (1990)"
-parallel_cite: "110 S. Ct. 1684"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "110 S. Ct. 1684; 109 L. Ed. 2d 85; 58 U.S.L.W. 4464"
+neutral_cite: 1990 U.S. LEXIS 2038
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1990
@@ -12,12 +12,17 @@ date_decided: 1990-04-18
 docket: ""
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: ""
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1990-04-18
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Minnesota v. Olson
+  varies_by_point: false
+  scope_note: "Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/112416/minnesota-v-olson/"
+  cluster_id: 112416
   opinion_id: 112416
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Minnesota v. Carter]]", "[[Rakas v. Illinois]]", "[[Jones v. United
 aliases: []
 tags: ["case", "fourth-amendment", "standing", "expectation-of-privacy", "overnight-guest", "home"]
 holding: "An overnight guest has a reasonable expectation of privacy in his host's home and therefore standing to challenge a warrantless entry to…"
+lake:
+  record_id: Minnesota v. Olson
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Minnesota v. Olson

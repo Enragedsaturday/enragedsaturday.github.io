@@ -2,22 +2,27 @@
 title: "Lefkowitz v. Turley"
 type: case
 citation: "414 U.S. 70 (1973)"
-parallel_cite: "94 S. Ct. 316"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "94 S. Ct. 316; 38 L. Ed. 2d 274"
+neutral_cite: 1973 U.S. LEXIS 132
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1973
 date_decided: 1973-11-19
-docket: "72-331"
+docket: 72-331
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Good law; extends the Garrity/Gardner principle to independent contractors and fixes the rule that the State must grant immunity rather than demand a waiver."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1973-11-19
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Lefkowitz v. Turley
+  varies_by_point: false
+  scope_note: "Good law; extends the Garrity/Gardner principle to independent contractors and fixes the rule that the State must grant immunity rather than demand a waiver."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/108882/lefkowitz-v-turley/"
+  cluster_id: 108882
   opinion_id: 108882
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Garrity v. New Jersey]]", "[[Gardner v. Broderick]]", "[[Kalkines v
 aliases: []
 tags: ["case", "fifth-amendment", "self-incrimination", "public-employee", "garrity", "immunity", "contractors"]
 holding: "A State may not compel a person (employee or contractor) to choose between waiving Fifth Amendment immunity and losing state employment or contracts; it may compel testimony about official functions only by granting use-and-derivative-use immunity, never by insisting on a waiver."
+lake:
+  record_id: Lefkowitz v. Turley
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Lefkowitz v. Turley

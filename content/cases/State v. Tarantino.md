@@ -1,24 +1,29 @@
 ---
 title: "State v. Tarantino"
 type: case
-citation: "322 N.C. 386 (1988)"
-parallel_cite: "368 S.E.2d 588"
+citation: ""
+parallel_cite: "368 S.E.2d 588; 322 N.C. 386; 1988 N.C. LEXIS 373"
 neutral_cite: ""
-court: "North Carolina Supreme Court"
-court_level: state-high
+court: North Carolina Supreme Court
+court_level: state
 circuit: ""
 year: 1988
 date_decided: 1988-06-02
-docket: "678PA87"
+docket: 678PA87
 authority_weight: "Persuasive — state, illustrative"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: ""
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1988-06-02
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: State v. Tarantino
+  varies_by_point: false
+  scope_note: "Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/1294594/state-v-tarantino/"
-  opinion_id: 1294594
+  cluster_id: 1294594
+  opinion_id: 9854442
   identity_checked: true
 homes:
   - page: "[[Plain View Doctrine]]"
@@ -27,6 +32,10 @@ related: ["[[California v. Ciraolo]]", "[[Arizona v. Hicks]]", "[[Katz v. United
 aliases: []
 tags: ["case", "fourth-amendment", "plain-view", "open-view", "expectation-of-privacy", "north-carolina"]
 holding: "A reasonable expectation of privacy in a building's interior is NOT eliminated by small (quarter-inch) cracks; an officer who must 'bend…"
+lake:
+  record_id: State v. Tarantino
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # State v. Tarantino

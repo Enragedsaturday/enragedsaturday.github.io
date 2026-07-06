@@ -2,9 +2,9 @@
 title: "Sibron v. New York"
 type: case
 citation: "392 U.S. 40 (1968)"
-parallel_cite: "88 S. Ct. 1889"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "88 S. Ct. 1889; 20 L. Ed. 2d 917; 44 Ohio Op. 2d 402"
+neutral_cite: 1968 U.S. LEXIS 1346
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1968
@@ -12,12 +12,17 @@ date_decided: 1968-06-10
 docket: ""
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Good law. A protective frisk is confined to a limited pat-down of outer clothing for weapons on reasonable grounds the suspect is armed and dangerous; reaching directly into a pocket for narcotics exceeds Terry. Decided the same day as, and as a companion to, Terry v. Ohio (consolidated with Peters v. New York)."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1968-06-10
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Sibron v. New York
+  varies_by_point: false
+  scope_note: "Good law. A protective frisk is confined to a limited pat-down of outer clothing for weapons on reasonable grounds the suspect is armed and dangerous; reaching directly into a pocket for narcotics exceeds Terry. Decided the same day as, and as a companion to, Terry v. Ohio (consolidated with Peters v. New York)."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/107730/sibron-v-new-york/"
+  cluster_id: 107730
   opinion_id: 107730
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Terry v. Ohio]]", "[[Peters v. New York]]", "[[Minnesota v. Dickers
 aliases: []
 tags: ["case", "fourth-amendment", "terry-stop", "frisk", "scope-of-search", "weapons"]
 holding: "A protective frisk must be a limited pat-down of outer clothing for weapons, justified by particular facts that the suspect is armed and dangerous; reaching into a pocket to search for narcotics exceeds the scope Terry allows."
+lake:
+  record_id: Sibron v. New York
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Sibron v. New York

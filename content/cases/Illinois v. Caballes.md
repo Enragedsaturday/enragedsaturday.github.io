@@ -2,9 +2,9 @@
 title: "Illinois v. Caballes"
 type: case
 citation: "543 U.S. 405 (2005)"
-parallel_cite: "125 S. Ct. 834"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "125 S. Ct. 834; 160 L. Ed. 2d 842"
+neutral_cite: 2005 U.S. LEXIS 769
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 2005
@@ -12,12 +12,17 @@ date_decided: 2005-01-24
 docket: ""
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Good law. Rodriguez v. United States (2015) applied the no-prolongation principle (a stop may not be extended even briefly for a dog sniff absent reasonable suspicion). Florida v. Jardines (2013) held a dog sniff at a home's curtilage is a search — a context boundary, not an overruling of the vehicle holding."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 2005-01-24
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Illinois v. Caballes
+  varies_by_point: false
+  scope_note: "Good law. Rodriguez v. United States (2015) applied the no-prolongation principle (a stop may not be extended even briefly for a dog sniff absent reasonable suspicion). Florida v. Jardines (2013) held a dog sniff at a home's curtilage is a search — a context boundary, not an overruling of the vehicle holding."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/137742/illinois-v-caballes/"
+  cluster_id: 137742
   opinion_id: 137742
   identity_checked: true
 homes:
@@ -29,6 +34,10 @@ related: ["[[United States v. Place]]", "[[Rodriguez v. United States]]", "[[Flo
 aliases: []
 tags: ["case", "fourth-amendment", "search", "dog-sniff", "traffic-stop", "contraband"]
 holding: "A dog sniff during a lawful traffic stop that does not prolong the stop needs no independent suspicion, because it reveals only contraband and does not implicate legitimate privacy interests."
+lake:
+  record_id: Illinois v. Caballes
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Illinois v. Caballes

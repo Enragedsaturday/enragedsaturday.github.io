@@ -2,23 +2,28 @@
 title: "Stansbury v. California"
 type: case
 citation: "511 U.S. 318 (1994)"
-parallel_cite: "114 S. Ct. 1526"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "114 S. Ct. 1526; 128 L. Ed. 2d 293"
+neutral_cite: 1994 U.S. LEXIS 3293
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1994
 date_decided: 1994-04-26
-docket: "93-5770"
+docket: 93-5770
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Per curiam."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1994-04-26
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Stansbury v. California
+  varies_by_point: false
+  scope_note: Per curiam.
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/117843/stansbury-v-california/"
-  opinion_id: 117843
+  cluster_id: 117843
+  opinion_id: 9432992
   identity_checked: true
 homes:
   - page: "[[Miranda and Custodial Interrogation]]"
@@ -27,6 +32,10 @@ related: ["[[Berkemer v. McCarty]]", "[[Howes v. Fields]]"]
 aliases: []
 tags: ["case", "miranda", "custody", "objective-test"]
 holding: "Custody is determined by the objective circumstances of the interrogation, not by the subjective, undisclosed views of the officer or…"
+lake:
+  record_id: Stansbury v. California
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Stansbury v. California

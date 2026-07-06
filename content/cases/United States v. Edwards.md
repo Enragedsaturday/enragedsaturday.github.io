@@ -2,22 +2,27 @@
 title: "United States v. Edwards"
 type: case
 citation: "415 U.S. 800 (1974)"
-parallel_cite: "94 S. Ct. 1234"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "94 S. Ct. 1234; 39 L. Ed. 2d 771"
+neutral_cite: 1974 U.S. LEXIS 120
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1974
 date_decided: 1974-03-26
-docket: "73-88"
+docket: 73-88
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Still controlling on the timing of a search incident to arrest: effects subject to search at arrest may be seized at the jail after a reasonable delay."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1974-03-26
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: United States v. Edwards
+  varies_by_point: false
+  scope_note: "Still controlling on the timing of a search incident to arrest: effects subject to search at arrest may be seized at the jail after a reasonable delay."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/108995/united-states-v-edwards/"
+  cluster_id: 108995
   opinion_id: 108995
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[United States v. Robinson]]", "[[Chimel v. California]]", "[[Abel v
 aliases: []
 tags: ["case", "fourth-amendment", "search-incident-to-arrest", "custodial-arrest", "booking"]
 holding: "A search incident to arrest may extend in time: clothing and effects in an arrestee's possession that were subject to search at the time of arrest may be seized and examined without a warrant at the jail, even after a substantial, reasonable delay."
+lake:
+  record_id: United States v. Edwards
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # United States v. Edwards

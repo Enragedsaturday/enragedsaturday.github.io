@@ -2,23 +2,28 @@
 title: "United States v. Crews"
 type: case
 citation: "445 U.S. 463 (1980)"
-parallel_cite: "100 S. Ct. 1244"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "100 S. Ct. 1244; 63 L. Ed. 2d 537"
+neutral_cite: 1980 U.S. LEXIS 1293
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1980
 date_decided: 1980-03-25
-docket: "78-777"
+docket: 78-777
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "The independent-source analysis of an in-court identification, and the rule that a defendant's presence is not a suppressible fruit, remain good law."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1980-03-25
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: United States v. Crews
+  varies_by_point: false
+  scope_note: "The independent-source analysis of an in-court identification, and the rule that a defendant's presence is not a suppressible fruit, remain good law."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/110230/united-states-v-crews/"
-  opinion_id: 110230
+  cluster_id: 110230
+  opinion_id: 9427838
   identity_checked: true
 homes:
   - page: "[[The Exclusionary Rule]]"
@@ -29,6 +34,10 @@ related: ["[[Wong Sun v. United States]]", "[[Silverthorne Lumber Co. v. United 
 aliases: []
 tags: ["case", "fourth-amendment", "exclusionary-rule", "fruit-of-the-poisonous-tree", "independent-source", "eyewitness-identification"]
 holding: "A victim's in-court identification of the accused is not a suppressible fruit of his illegal arrest where the victim's presence and her ability to identify him have an independent source predating the police misconduct."
+lake:
+  record_id: United States v. Crews
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # United States v. Crews

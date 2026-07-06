@@ -2,9 +2,9 @@
 title: "Davis v. Mississippi"
 type: case
 citation: "394 U.S. 721 (1969)"
-parallel_cite: "89 S. Ct. 1394"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "89 S. Ct. 1394; 22 L. Ed. 2d 676"
+neutral_cite: 1969 U.S. LEXIS 1869
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1969
@@ -12,12 +12,17 @@ date_decided: 1969-04-23
 docket: ""
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Good law; dragnet station-house detention for fingerprinting without probable cause or judicial authorization is unreasonable. The Court reserved whether a narrowly circumscribed fingerprinting procedure on less than probable cause might be permissible — a question revisited in Hayes v. Florida."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1969-04-23
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Davis v. Mississippi
+  varies_by_point: false
+  scope_note: "Good law; dragnet station-house detention for fingerprinting without probable cause or judicial authorization is unreasonable. The Court reserved whether a narrowly circumscribed fingerprinting procedure on less than probable cause might be permissible — a question revisited in Hayes v. Florida."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/107912/davis-v-mississippi/"
+  cluster_id: 107912
   opinion_id: 107912
   identity_checked: true
 homes:
@@ -29,6 +34,10 @@ related: ["[[Hayes v. Florida]]", "[[Terry v. Ohio]]"]
 aliases: []
 tags: ["case", "fourth-amendment", "seizure", "fingerprinting", "investigative-detention", "dragnet"]
 holding: "Detaining and transporting a suspect to the station for fingerprinting without probable cause or judicial authorization is an unreasonable seizure; the fingerprints are suppressible."
+lake:
+  record_id: Davis v. Mississippi
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Davis v. Mississippi

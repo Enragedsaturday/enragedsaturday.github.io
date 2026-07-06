@@ -2,22 +2,27 @@
 title: "State v. Mansor"
 type: case
 citation: "363 Or. 185 (2018)"
-parallel_cite: "421 P.3d 323"
+parallel_cite: 421 P.3d 323
 neutral_cite: ""
-court: "Oregon Supreme Court"
-court_level: state-high
+court: Oregon Supreme Court
+court_level: state
 circuit: ""
 year: 2018
 date_decided: 2018-06-28
 docket: ""
 authority_weight: "Persuasive — state, illustrative"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Decided under Article I, section 9 of the Oregon Constitution, not the Fourth Amendment."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 2018-06-28
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: State v. Mansor
+  varies_by_point: false
+  scope_note: "Decided under Article I, section 9 of the Oregon Constitution, not the Fourth Amendment."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/6656738/state-v-mansor/"
+  cluster_id: 6656738
   opinion_id: 6534035
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Riley v. California]]", "[[Carpenter v. United States]]", "[[State 
 aliases: []
 tags: ["case", "state-constitution", "digital-search", "computer-warrant", "particularity", "oregon"]
 holding: "Decided under Article I, section 9 of the OREGON Constitution: the State may not USE information found in a computer search that the…"
+lake:
+  record_id: State v. Mansor
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # State v. Mansor

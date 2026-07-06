@@ -1,23 +1,28 @@
 ---
 title: "United States v. Soto-Peguero"
 type: case
-citation: "978 F.3d 13 (1st Cir. 2020)"
+citation: "978 F.3d 13 (2020)"
 parallel_cite: ""
 neutral_cite: ""
 court: "U.S. Court of Appeals, First Circuit"
-court_level: circuit
-circuit: "1st"
+court_level: coa
+circuit: 1st
 year: 2020
 date_decided: 2020-10-19
 docket: ""
 authority_weight: "Binding in-circuit — 1st Cir."
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: ""
-  by: []
+  field_i_validity: good_law
+  as_of_content: 2020-10-19
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: United States v. Soto-Peguero
+  varies_by_point: false
+  scope_note: "Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/4798028/united-states-v-soto-peguero/"
+  cluster_id: 4798028
   opinion_id: 4578375
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Nix v. Williams]]", "[[United States v. Neugin]]", "[[Murray v. Uni
 aliases: ["United States v. Soto-Peguero (1st Cir. 2020)"]
 tags: ["case", "fourth-amendment", "exclusionary-rule", "inevitable-discovery", "search-warrant", "first-circuit"]
 holding: "Illustrative application of inevitable discovery: government met its burden (agent would have sought and obtained a warrant regardless),…"
+lake:
+  record_id: United States v. Soto-Peguero
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # United States v. Soto-Peguero

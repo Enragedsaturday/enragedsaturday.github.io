@@ -2,22 +2,27 @@
 title: "Brigham City v. Stuart"
 type: case
 citation: "547 U.S. 398 (2006)"
-parallel_cite: "126 S. Ct. 1943"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "126 S. Ct. 1943; 164 L. Ed. 2d 650"
+neutral_cite: 2006 U.S. LEXIS 4155
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 2006
 date_decided: 2006-05-22
-docket: "05-502"
+docket: 05-502
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: ""
-  by: []
+  field_i_validity: good_law
+  as_of_content: 2006-05-22
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Brigham City v. Stuart
+  varies_by_point: false
+  scope_note: "Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/145654/brigham-city-v-stuart/"
+  cluster_id: 145654
   opinion_id: 145654
   identity_checked: true
 homes:
@@ -29,6 +34,10 @@ related: ["[[Michigan v. Fisher]]", "[[Mincey v. Arizona]]", "[[Caniglia v. Stro
 aliases: []
 tags: ["case", "fourth-amendment", "emergency-aid", "exigent-circumstances", "warrantless-entry"]
 holding: "Emergency aid exception: police may enter a home without a warrant when they have an objectively reasonable basis to believe an occupant…"
+lake:
+  record_id: Brigham City v. Stuart
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Brigham City v. Stuart

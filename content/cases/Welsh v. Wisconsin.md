@@ -2,23 +2,28 @@
 title: "Welsh v. Wisconsin"
 type: case
 citation: "466 U.S. 740 (1984)"
-parallel_cite: "104 S. Ct. 2091"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "104 S. Ct. 2091; 80 L. Ed. 2d 732; 52 U.S.L.W. 4581"
+neutral_cite: 1984 U.S. LEXIS 82
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1984
 date_decided: 1984-05-15
-docket: "82-5466"
+docket: 82-5466
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Gravity-of-offense factor reaffirmed; good law (cf. Lange v. California (2021), misdemeanor hot pursuit is not categorical)."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1984-05-15
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Welsh v. Wisconsin
+  varies_by_point: false
+  scope_note: "Gravity-of-offense factor reaffirmed; good law (cf. Lange v. California (2021), misdemeanor hot pursuit is not categorical)."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/111173/welsh-v-wisconsin/"
-  opinion_id: 111173
+  cluster_id: 111173
+  opinion_id: 9429597
   identity_checked: true
 homes:
   - page: "[[Arrest in the Home]]"
@@ -29,6 +34,10 @@ related: ["[[Payton v. New York]]", "[[Lange v. California]]", "[[Kentucky v. Ki
 aliases: ["Welsh"]
 tags: ["case", "fourth-amendment", "exigent-circumstances", "arrest-in-the-home", "minor-offense", "dui"]
 holding: "The gravity of the underlying offense is a key factor in the exigency analysis; warrantless home entry for a MINOR offense should rarely…"
+lake:
+  record_id: Welsh v. Wisconsin
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Welsh v. Wisconsin

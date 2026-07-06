@@ -2,9 +2,9 @@
 title: "Montejo v. Louisiana"
 type: case
 citation: "556 U.S. 778 (2009)"
-parallel_cite: "129 S. Ct. 2079"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "129 S. Ct. 2079; 173 L. Ed. 2d 955"
+neutral_cite: 2009 U.S. LEXIS 3973
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 2009
@@ -12,12 +12,17 @@ date_decided: 2009-05-26
 docket: ""
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Montejo itself overruled Michigan v. Jackson; Montejo is good law."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 2009-05-26
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Montejo v. Louisiana
+  varies_by_point: false
+  scope_note: "Montejo itself overruled Michigan v. Jackson; Montejo is good law."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/145873/montejo-v-louisiana/"
+  cluster_id: 145873
   opinion_id: 145873
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Michigan v. Jackson]]", "[[Edwards v. Arizona]]", "[[McNeil v. Wisc
 aliases: []
 tags: ["case", "sixth-amendment", "right-to-counsel", "waiver", "interrogation"]
 holding: "A defendant may validly waive his Sixth Amendment right to counsel during police-initiated interrogation even after counsel has been…"
+lake:
+  record_id: Montejo v. Louisiana
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Montejo v. Louisiana

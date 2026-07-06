@@ -2,23 +2,28 @@
 title: "Cooper v. California"
 type: case
 citation: "386 U.S. 58 (1967)"
-parallel_cite: "87 S. Ct. 788"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "87 S. Ct. 788; 17 L. Ed. 2d 730"
+neutral_cite: 1967 U.S. LEXIS 2199
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1967
 date_decided: 1967-02-20
-docket: "103"
+docket: 103
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Pre-dates the modern inventory line (Opperman/Bertine) and the articulated automobile exception, but remains good law as a reasonableness-of-custodial-search holding; no negative treatment."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1967-02-20
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Cooper v. California
+  varies_by_point: false
+  scope_note: "Pre-dates the modern inventory line (Opperman/Bertine) and the articulated automobile exception, but remains good law as a reasonableness-of-custodial-search holding; no negative treatment."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/107360/cooper-v-california/"
-  opinion_id: 107360
+  cluster_id: 107360
+  opinion_id: 9423351
   identity_checked: true
 homes:
   - page: "[[Automobile Exception]]"
@@ -27,6 +32,10 @@ related: ["[[South Dakota v. Opperman]]", "[[Colorado v. Bertine]]", "[[Florida 
 aliases: []
 tags: ["case", "fourth-amendment", "automobile-exception", "impound", "forfeiture", "custodial-search", "reasonableness"]
 holding: "A warrantless search of a car the police lawfully hold in custody for forfeiture is reasonable where the search is closely related to the reason the car was seized and is being retained; reasonableness, not state-law authorization, is the Fourth Amendment test."
+lake:
+  record_id: Cooper v. California
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Cooper v. California

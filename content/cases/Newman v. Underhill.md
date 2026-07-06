@@ -1,23 +1,28 @@
 ---
 title: "Newman v. Underhill"
 type: case
-citation: "134 F.4th 1025 (9th Cir. 2025)"
+citation: "134 F.4th 1025 (2025)"
 parallel_cite: ""
 neutral_cite: ""
 court: "U.S. Court of Appeals, 9th Circuit"
-court_level: circuit
-circuit: "9th"
+court_level: coa
+circuit: 9th
 year: 2025
 date_decided: 2025-04-23
 docket: ""
 authority_weight: "Binding in-circuit — 9th Cir."
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Good law; recent (decided 2025-04-23). Illustrates the continuity-of-pursuit requirement — a nine-minute gap delayed but did not break a hot pursuit."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 2025-04-23
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Newman v. Underhill
+  varies_by_point: false
+  scope_note: "Good law; recent (decided 2025-04-23). Illustrates the continuity-of-pursuit requirement — a nine-minute gap delayed but did not break a hot pursuit."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/10382777/newman-v-underhill/"
+  cluster_id: 10382777
   opinion_id: 10849365
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[United States v. Santana]]", "[[Welsh v. Wisconsin]]", "[[Lange v. 
 aliases: ["Newman v. Underhill (9th Cir. 2025)"]
 tags: ["case", "fourth-amendment", "exigent-circumstances", "hot-pursuit", "fresh-pursuit", "warrantless-entry", "ninth-circuit"]
 holding: "The hot-pursuit exception requires officers to be in 'immediate' and 'continuous' pursuit of a suspect from the scene of the crime at the moment of entry; a pause to wait for backup may delay but not break that continuity, and a roughly nine-minute gap — far shorter than a continuity-breaking 30-minute gap — did not break the chase where officers kept a reasonably good idea of the suspect's location and kept actively working to apprehend him."
+lake:
+  record_id: Newman v. Underhill
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Newman v. Underhill

@@ -2,22 +2,27 @@
 title: "Schmerber v. California"
 type: case
 citation: "384 U.S. 757 (1966)"
-parallel_cite: "86 S. Ct. 1826"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "86 S. Ct. 1826; 16 L. Ed. 2d 908"
+neutral_cite: 1966 U.S. LEXIS 1129
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1966
 date_decided: 1966-06-20
-docket: "658"
+docket: 658
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Foundational warrantless-blood-draw / bodily-intrusion case; good law. Missouri v. McNeely (2013) clarified that the natural dissipation of alcohol is not a per se exigency (exigency is case-by-case), and Birchfield v. North Dakota (2016) held blood tests are not justified as a search incident to arrest (breath tests are). Schmerber's own fact-bound holding stands."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1966-06-20
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Schmerber v. California
+  varies_by_point: false
+  scope_note: "Foundational warrantless-blood-draw / bodily-intrusion case; good law. Missouri v. McNeely (2013) clarified that the natural dissipation of alcohol is not a per se exigency (exigency is case-by-case), and Birchfield v. North Dakota (2016) held blood tests are not justified as a search incident to arrest (breath tests are). Schmerber's own fact-bound holding stands."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/107262/schmerber-v-california/"
+  cluster_id: 107262
   opinion_id: 107262
   identity_checked: true
 homes:
@@ -29,6 +34,10 @@ related: ["[[Missouri v. McNeely]]", "[[Birchfield v. North Dakota]]"]
 aliases: []
 tags: ["case", "fourth-amendment", "fifth-amendment", "exigent-circumstances", "blood-draw", "dui", "bodily-intrusion"]
 holding: "Compelled blood/BAC evidence is physical, not testimonial, so it does not violate the Fifth Amendment; and a warrantless blood draw on probable cause is reasonable where exigency — dissipating alcohol plus time already lost — leaves no time to obtain a warrant."
+lake:
+  record_id: Schmerber v. California
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Schmerber v. California

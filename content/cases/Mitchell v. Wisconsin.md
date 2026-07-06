@@ -2,9 +2,9 @@
 title: "Mitchell v. Wisconsin"
 type: case
 citation: "588 U.S. 840 (2019)"
-parallel_cite: "139 S. Ct. 2525"
+parallel_cite: "139 S. Ct. 2525; 204 L. Ed. 2d 1040"
 neutral_cite: ""
-court: "U.S. Supreme Court"
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 2019
@@ -12,12 +12,17 @@ date_decided: 2019-06-27
 docket: ""
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Plurality opinion (Alito, J.); judgment supported by Thomas, J., concurring in the judgment."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 2019-06-27
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Mitchell v. Wisconsin
+  varies_by_point: false
+  scope_note: "Plurality opinion (Alito, J.); judgment supported by Thomas, J., concurring in the judgment."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/9231242/mitchell-v-wisconsin/"
+  cluster_id: 9231242
   opinion_id: 9226047
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Missouri v. McNeely]]", "[[Schmerber v. California]]", "[[Birchfiel
 aliases: []
 tags: ["case", "fourth-amendment", "exigent-circumstances", "blood-draw", "dui", "unconscious-driver"]
 holding: "When police have probable cause for DUI and the driver's unconsciousness/stupor forces hospitalization before a breath test can be…"
+lake:
+  record_id: Mitchell v. Wisconsin
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Mitchell v. Wisconsin

@@ -2,9 +2,9 @@
 title: "Maryland v. Pringle"
 type: case
 citation: "540 U.S. 366 (2003)"
-parallel_cite: "124 S. Ct. 795"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "124 S. Ct. 795; 157 L. Ed. 2d 769"
+neutral_cite: 2003 U.S. LEXIS 9198
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 2003
@@ -12,12 +12,17 @@ date_decided: 2003-12-15
 docket: ""
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: ""
-  by: []
+  field_i_validity: good_law
+  as_of_content: 2003-12-15
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Maryland v. Pringle
+  varies_by_point: false
+  scope_note: "Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/131150/maryland-v-pringle/"
+  cluster_id: 131150
   opinion_id: 131150
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Ybarra v. Illinois]]", "[[Illinois v. Gates]]", "[[Devenpeck v. Alf
 aliases: []
 tags: ["case", "fourth-amendment", "probable-cause", "arrest", "common-enterprise"]
 holding: "Where drugs and cash are found in a car and no occupant claims them, an officer has probable cause to arrest all the occupants on a…"
+lake:
+  record_id: Maryland v. Pringle
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Maryland v. Pringle

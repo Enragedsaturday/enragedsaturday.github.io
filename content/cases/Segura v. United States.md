@@ -2,23 +2,28 @@
 title: "Segura v. United States"
 type: case
 citation: "468 U.S. 796 (1984)"
-parallel_cite: "104 S. Ct. 3380"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "104 S. Ct. 3380; 82 L. Ed. 2d 599; 52 U.S.L.W. 5128"
+neutral_cite: 1984 U.S. LEXIS 150
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1984
 date_decided: 1984-07-05
-docket: "82-5298"
+docket: 82-5298
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: ""
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1984-07-05
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Segura v. United States
+  varies_by_point: false
+  scope_note: "Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/111259/segura-v-united-states/"
-  opinion_id: 111259
+  cluster_id: 111259
+  opinion_id: 9429757
   identity_checked: true
 homes:
   - page: "[[Securing the Scene]]"
@@ -27,6 +32,10 @@ related: ["[[Murray v. United States]]", "[[Nix v. Williams]]", "[[Illinois v. M
 aliases: []
 tags: ["case", "fourth-amendment", "independent-source", "exclusionary-rule", "securing-premises"]
 holding: "Evidence seized under a valid warrant is admissible even after an earlier illegal entry, where the warrant was supported wholly by…"
+lake:
+  record_id: Segura v. United States
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Segura v. United States

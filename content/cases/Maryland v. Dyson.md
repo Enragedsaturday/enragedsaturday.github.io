@@ -2,23 +2,28 @@
 title: "Maryland v. Dyson"
 type: case
 citation: "527 U.S. 465 (1999)"
-parallel_cite: "119 S. Ct. 2013"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "119 S. Ct. 2013; 144 L. Ed. 2d 442"
+neutral_cite: 1999 U.S. LEXIS 4200
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1999
 date_decided: 1999-06-21
-docket: "98-1062"
+docket: 98-1062
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Per curiam. Settled statement of the automobile exception; no negative treatment."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1999-06-21
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Maryland v. Dyson
+  varies_by_point: false
+  scope_note: "Per curiam. Settled statement of the automobile exception; no negative treatment."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/2621047/maryland-v-dyson/"
-  opinion_id: 2621047
+  cluster_id: 2621047
+  opinion_id: 9795106
   identity_checked: true
 homes:
   - page: "[[Automobile Exception]]"
@@ -27,6 +32,10 @@ related: ["[[Pennsylvania v. Labron]]", "[[United States v. Ross]]", "[[Californ
 aliases: []
 tags: ["case", "fourth-amendment", "automobile-exception", "no-exigency", "probable-cause", "readily-mobile"]
 holding: "The automobile exception has no separate exigency requirement; if a car is readily mobile and probable cause exists to believe it contains contraband, police may search it without a warrant even when there was ample time to obtain one."
+lake:
+  record_id: Maryland v. Dyson
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Maryland v. Dyson

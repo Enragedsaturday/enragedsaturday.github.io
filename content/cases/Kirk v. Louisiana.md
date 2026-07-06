@@ -2,9 +2,9 @@
 title: "Kirk v. Louisiana"
 type: case
 citation: "536 U.S. 635 (2002)"
-parallel_cite: "122 S. Ct. 2458"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "122 S. Ct. 2458; 153 L. Ed. 2d 599; 2002 D.A.R. 7071"
+neutral_cite: 2002 U.S. LEXIS 4682
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 2002
@@ -12,12 +12,17 @@ date_decided: 2002-06-24
 docket: ""
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Good law. Per curiam. Reaffirms Payton v. New York: absent exigent circumstances, police may not make a warrantless entry into a home to arrest; they need either a warrant or probable cause plus exigent circumstances."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 2002-06-24
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Kirk v. Louisiana
+  varies_by_point: false
+  scope_note: "Good law. Per curiam. Reaffirms Payton v. New York: absent exigent circumstances, police may not make a warrantless entry into a home to arrest; they need either a warrant or probable cause plus exigent circumstances."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/121167/kirk-v-louisiana/"
+  cluster_id: 121167
   opinion_id: 121167
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Payton v. New York]]", "[[Steagald v. United States]]", "[[Welsh v.
 aliases: []
 tags: ["case", "fourth-amendment", "arrest-in-the-home", "warrant", "exigent-circumstances", "per-curiam"]
 holding: "Absent exigent circumstances, police may not enter a home to make a warrantless arrest; a lawful home entry requires a warrant or probable cause plus exigent circumstances (reaffirming Payton)."
+lake:
+  record_id: Kirk v. Louisiana
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Kirk v. Louisiana

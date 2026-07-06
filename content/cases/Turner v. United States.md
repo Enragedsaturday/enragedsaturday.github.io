@@ -1,10 +1,10 @@
 ---
 title: "Turner v. United States"
 type: case
-citation: "582 U.S. 313 (2017)"
-parallel_cite: "137 S. Ct. 1885"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+citation: ""
+parallel_cite: "582 U.S. 313; 137 S. Ct. 1885; 198 L. Ed. 2d 443; 26 Fla. L. Weekly Fed. S 700; 85 U.S.L.W. 4488"
+neutral_cite: "2017 U.S. LEXIS 4041; 2017 WL 2674152"
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 2017
@@ -12,12 +12,17 @@ date_decided: 2017-06-22
 docket: ""
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Good law; applies the Brady/Bagley materiality standard and finds no violation on the record."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 2017-06-22
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Turner v. United States
+  varies_by_point: false
+  scope_note: "Good law; applies the Brady/Bagley materiality standard and finds no violation on the record."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/4403802/turner-v-united-states/"
+  cluster_id: 4403802
   opinion_id: 4181055
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Brady v. Maryland]]", "[[United States v. Bagley]]", "[[Kyles v. Wh
 aliases: []
 tags: ["case", "due-process", "brady"]
 holding: "Counterweight: *Brady* materiality is demanding and judged on the whole record; the suppression here was immaterial — no *Brady* violation."
+lake:
+  record_id: Turner v. United States
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Turner v. United States

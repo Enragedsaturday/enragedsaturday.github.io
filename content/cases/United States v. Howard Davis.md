@@ -1,23 +1,28 @@
 ---
 title: "United States v. Howard Davis"
 type: case
-citation: "997 F.3d 191 (4th Cir. 2021)"
+citation: "997 F.3d 191 (2021)"
 parallel_cite: ""
 neutral_cite: ""
 court: "U.S. Court of Appeals, Fourth Circuit"
-court_level: circuit
-circuit: "4th"
+court_level: coa
+circuit: 4th
 year: 2021
 date_decided: 2021-05-07
 docket: ""
 authority_weight: "Binding in-circuit — 4th Cir."
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: ""
-  by: []
+  field_i_validity: good_law
+  as_of_content: 2021-05-07
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: United States v. Howard Davis
+  varies_by_point: false
+  scope_note: "Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/4881258/united-states-v-howard-davis/"
+  cluster_id: 4881258
   opinion_id: 4685037
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Arizona v. Gant]]", "[[Chimel v. California]]"]
 aliases: ["United States v. Howard Davis (4th Cir. 2021)"]
 tags: ["case", "fourth-amendment", "search-incident-to-arrest", "gant", "container-search", "reaching-distance", "fourth-circuit"]
 holding: "Gant's FIRST holding (the Chimel reachability/officer-safety prong) applies OUTSIDE the vehicle context — to non-vehicular containers…"
+lake:
+  record_id: United States v. Howard Davis
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # United States v. Howard Davis

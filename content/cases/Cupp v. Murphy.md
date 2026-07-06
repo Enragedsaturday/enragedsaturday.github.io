@@ -2,22 +2,27 @@
 title: "Cupp v. Murphy"
 type: case
 citation: "412 U.S. 291 (1973)"
-parallel_cite: "93 S. Ct. 2000"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "93 S. Ct. 2000; 36 L. Ed. 2d 900"
+neutral_cite: 1973 U.S. LEXIS 63
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1973
 date_decided: 1973-05-29
-docket: "72-212"
+docket: 72-212
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Good law; a narrow holding confined to a very limited intrusion on probable cause where the evidence is readily destructible and no formal arrest was made."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1973-05-29
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Cupp v. Murphy
+  varies_by_point: false
+  scope_note: "Good law; a narrow holding confined to a very limited intrusion on probable cause where the evidence is readily destructible and no formal arrest was made."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/108801/cupp-v-murphy/"
+  cluster_id: 108801
   opinion_id: 108801
   identity_checked: true
 homes:
@@ -29,6 +34,10 @@ related: ["[[Chimel v. California]]", "[[Schmerber v. California]]", "[[Davis v.
 aliases: []
 tags: ["case", "fourth-amendment", "search-incident-to-arrest", "exigency", "destruction-of-evidence", "probable-cause"]
 holding: "Where probable cause exists and evidence is readily destructible, the very limited search needed to preserve highly evanescent evidence (fingernail scrapings) is reasonable on the Chimel rationale, even without a formal arrest — though a full Chimel search would not be."
+lake:
+  record_id: Cupp v. Murphy
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Cupp v. Murphy

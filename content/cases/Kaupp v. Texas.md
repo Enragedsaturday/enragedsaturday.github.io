@@ -2,22 +2,27 @@
 title: "Kaupp v. Texas"
 type: case
 citation: "538 U.S. 626 (2003)"
-parallel_cite: "123 S. Ct. 1843"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "123 S. Ct. 1843; 155 L. Ed. 2d 814"
+neutral_cite: 2003 U.S. LEXIS 3670
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 2003
 date_decided: 2003-05-05
-docket: "02-5636"
+docket: 02-5636
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Per curiam application of Dunaway/Brown: a 3 a.m. station-house removal without probable cause is an arrest; the confession is its fruit absent attenuation. Good law."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 2003-05-05
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Kaupp v. Texas
+  varies_by_point: false
+  scope_note: "Per curiam application of Dunaway/Brown: a 3 a.m. station-house removal without probable cause is an arrest; the confession is its fruit absent attenuation. Good law."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/127919/kaupp-v-texas/"
+  cluster_id: 127919
   opinion_id: 127919
   identity_checked: true
 homes:
@@ -31,6 +36,10 @@ related: ["[[Dunaway v. New York]]", "[[Brown v. Illinois]]", "[[Wong Sun v. Uni
 aliases: []
 tags: ["case", "fourth-amendment", "seizure", "probable-cause", "exclusionary-rule", "fruit-of-the-poisonous-tree", "consent"]
 holding: "Awakening a 17-year-old at 3 a.m. and transporting him, handcuffed and in his underwear, to the station for interrogation without probable cause is an arrest; his 'Okay' was mere submission to authority, not consent, and the ensuing confession must be suppressed unless the State shows the taint was purged."
+lake:
+  record_id: Kaupp v. Texas
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Kaupp v. Texas

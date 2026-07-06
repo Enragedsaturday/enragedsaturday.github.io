@@ -2,23 +2,28 @@
 title: "United States v. Henry"
 type: case
 citation: "447 U.S. 264 (1980)"
-parallel_cite: "100 S. Ct. 2183"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "100 S. Ct. 2183; 65 L. Ed. 2d 115"
+neutral_cite: 1980 U.S. LEXIS 111
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1980
 date_decided: 1980-06-16
-docket: "79-121"
+docket: 79-121
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Cabined by Kuhlmann v. Wilson (a passive 'listening post' informant who does not deliberately elicit does not violate the Sixth Amendment); Henry itself remains good law."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1980-06-16
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: United States v. Henry
+  varies_by_point: false
+  scope_note: "Cabined by Kuhlmann v. Wilson (a passive 'listening post' informant who does not deliberately elicit does not violate the Sixth Amendment); Henry itself remains good law."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/110300/united-states-v-henry/"
-  opinion_id: 110300
+  cluster_id: 110300
+  opinion_id: 9427972
   identity_checked: true
 homes:
   - page: "[[Sixth Amendment Right to Counsel]]"
@@ -27,6 +32,10 @@ related: ["[[Massiah v. United States]]", "[[Brewer v. Williams]]", "[[Kuhlmann 
 aliases: []
 tags: ["case", "sixth-amendment", "right-to-counsel", "jailhouse-informant", "deliberately-elicited", "massiah"]
 holding: "By intentionally creating a situation likely to induce the indicted defendant to make incriminating statements, the government (through…"
+lake:
+  record_id: United States v. Henry
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # United States v. Henry

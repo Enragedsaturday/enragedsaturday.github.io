@@ -2,9 +2,9 @@
 title: "Boyd v. United States"
 type: case
 citation: "116 U.S. 616 (1886)"
-parallel_cite: "6 S. Ct. 524"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "6 S. Ct. 524; 29 L. Ed. 746; 3 A.F.T.R. (P-H) 2488"
+neutral_cite: 1886 U.S. LEXIS 1806
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1886
@@ -12,12 +12,28 @@ date_decided: 1886-02-01
 docket: ""
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: limited
-  as_of: 2026-06-30
-  note: "Boyd's holding that compelling production of private papers violates the Fourth/Fifth Amendments, and its 'mere evidence' rule, have been abandoned (Warden v. Hayden) and sharply limited (Fisher v. United States). Boyd's account of Entick v. Carrington as the historical foundation of the Fourth Amendment — the proposition for which it is cited here — remains good law and is frequently cited."
-  by: ["[[Warden v. Hayden]]"]
+  field_i_validity: caution
+  as_of_content: 1886-02-01
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Boyd v. United States
+  varies_by_point: true
+  scope_note: "Boyd's holding that compelling production of private papers violates the Fourth/Fifth Amendments, and its 'mere evidence' rule, have been abandoned (Warden v. Hayden) and sharply limited (Fisher v. United States). Boyd's account of Entick v. Carrington as the historical foundation of the Fourth Amendment — the proposition for which it is cited here — remains good law and is frequently cited."
+  point_overrides:
+    - point: legacy-limited-boyd-v-united-states
+      point_label: Legacy limited treatment point
+      field_i_validity: caution
+      as_of_treatment: 2026-06-30
+      s3_binding_status: provisional
+      by:
+        - name: Warden v. Hayden
+          cluster_id: 107465
+          cite: 387 U.S. 294
+          field_ii: limited
+      scope_note: "Boyd's holding that compelling production of private papers violates the Fourth/Fifth Amendments, and its 'mere evidence' rule, have been abandoned (Warden v. Hayden) and sharply limited (Fisher v. United States). Boyd's account of Entick v. Carrington as the historical foundation of the Fourth Amendment — the proposition for which it is cited here — remains good law and is frequently cited."
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/91573/boyd-v-united-states/"
+  cluster_id: 91573
   opinion_id: 91573
   identity_checked: true
 homes:
@@ -27,6 +43,10 @@ related: ["[[Entick v. Carrington]]", "[[Warden v. Hayden]]"]
 aliases: ["Boyd v. US"]
 tags: ["case", "fourth-amendment", "common-law-origins", "fifth-amendment", "history"]
 holding: "Recounts the founding history and adopts *Entick v. Carrington* as 'the true and ultimate expression of constitutional law' embodied in the Fourth Amendment."
+lake:
+  record_id: Boyd v. United States
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Boyd v. United States

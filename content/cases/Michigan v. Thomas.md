@@ -2,22 +2,27 @@
 title: "Michigan v. Thomas"
 type: case
 citation: "458 U.S. 259 (1982)"
-parallel_cite: "102 S. Ct. 3079"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "102 S. Ct. 3079; 73 L. Ed. 2d 750; 50 U.S.L.W. 3998"
+neutral_cite: 1982 U.S. LEXIS 145
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1982
 date_decided: 1982-06-28
-docket: "81-593"
+docket: 81-593
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Per curiam. Reaffirmed by the Court's later auto-exception cases (e.g., Maryland v. Dyson)."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1982-06-28
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Michigan v. Thomas
+  varies_by_point: false
+  scope_note: "Per curiam. Reaffirmed by the Court's later auto-exception cases (e.g., Maryland v. Dyson)."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/110776/michigan-v-thomas/"
+  cluster_id: 110776
   opinion_id: 110776
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Chambers v. Maroney]]", "[[United States v. Ross]]", "[[South Dakot
 aliases: []
 tags: ["case", "fourth-amendment", "automobile-exception", "impound", "station-house", "no-exigency", "probable-cause"]
 holding: "The automobile exception permits a warrantless search of an impounded car at the station on probable cause; the justification does not vanish once the car is immobilized and no separate showing of exigency is required."
+lake:
+  record_id: Michigan v. Thomas
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Michigan v. Thomas

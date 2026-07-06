@@ -2,23 +2,28 @@
 title: "United States v. Hensley"
 type: case
 citation: "469 U.S. 221 (1985)"
-parallel_cite: "105 S. Ct. 675"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "105 S. Ct. 675; 83 L. Ed. 2d 604; 53 U.S.L.W. 4053"
+neutral_cite: 1985 U.S. LEXIS 34
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1985
 date_decided: 1985-01-08
-docket: "83-1330"
+docket: 83-1330
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: ""
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1985-01-08
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: United States v. Hensley
+  varies_by_point: false
+  scope_note: "Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/111294/united-states-v-hensley/"
-  opinion_id: 111294
+  cluster_id: 111294
+  opinion_id: 9429804
   identity_checked: true
 homes:
   - page: "[[Collective Knowledge and the Fellow-Officer Rule]]"
@@ -27,6 +32,10 @@ related: ["[[Terry v. Ohio]]", "[[Delaware v. Prouse]]", "[[United States v. Cor
 aliases: []
 tags: ["case", "fourth-amendment", "terry-stop", "collective-knowledge", "fellow-officer-rule", "wanted-flyer", "completed-crime"]
 holding: "Police may conduct a Terry investigatory stop in objective reliance on a wanted flyer or bulletin issued by another police department if…"
+lake:
+  record_id: United States v. Hensley
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # United States v. Hensley

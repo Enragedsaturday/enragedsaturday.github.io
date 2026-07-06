@@ -2,9 +2,9 @@
 title: "Terry v. Ohio"
 type: case
 citation: "392 U.S. 1 (1968)"
-parallel_cite: "88 S. Ct. 1868"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "88 S. Ct. 1868; 20 L. Ed. 2d 889; 44 Ohio Op. 2d 383"
+neutral_cite: 1968 U.S. LEXIS 1345
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1968
@@ -12,13 +12,18 @@ date_decided: 1968-06-10
 docket: ""
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Foundational stop-and-frisk authority; repeatedly reaffirmed and refined (Cortez, Arvizu, Wardlow)."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1968-06-10
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Terry v. Ohio
+  varies_by_point: false
+  scope_note: "Foundational stop-and-frisk authority; repeatedly reaffirmed and refined (Cortez, Arvizu, Wardlow)."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/107729/terry-v-ohio/"
-  opinion_id: 107729
+  cluster_id: 107729
+  opinion_id: 9423752
   identity_checked: true
 homes:
   - page: "[[Probable Cause and Reasonable Suspicion]]"
@@ -29,6 +34,10 @@ related: ["[[United States v. Cortez]]", "[[United States v. Arvizu]]", "[[Illin
 aliases: []
 tags: ["case", "fourth-amendment", "terry-stop", "reasonable-suspicion"]
 holding: "An investigative stop and protective frisk require reasonable, articulable suspicion grounded in specific facts and rational inferences…"
+lake:
+  record_id: Terry v. Ohio
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Terry v. Ohio

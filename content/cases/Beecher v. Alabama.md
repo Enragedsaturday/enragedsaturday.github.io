@@ -2,23 +2,28 @@
 title: "Beecher v. Alabama"
 type: case
 citation: "389 U.S. 35 (1967)"
-parallel_cite: "88 S. Ct. 189"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "88 S. Ct. 189; 19 L. Ed. 2d 35"
+neutral_cite: 1967 U.S. LEXIS 435
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1967
 date_decided: 1967-10-23
-docket: "92 Misc."
+docket: 92 Misc.
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Good law; per curiam. A confession extracted at gunpoint from a wounded suspect, and a later statement signed while drugged and in intense pain, are the product of gross coercion and involuntary."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1967-10-23
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Beecher v. Alabama
+  varies_by_point: false
+  scope_note: "Good law; per curiam. A confession extracted at gunpoint from a wounded suspect, and a later statement signed while drugged and in intense pain, are the product of gross coercion and involuntary."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/107526/beecher-v-alabama/"
-  opinion_id: 107526
+  cluster_id: 107526
+  opinion_id: 9423505
   identity_checked: true
 homes:
   - page: "[[Due-Process Voluntariness of Confessions]]"
@@ -27,6 +32,10 @@ related: ["[[Brown v. Mississippi]]", "[[Chambers v. Florida]]", "[[Townsend v. 
 aliases: []
 tags: ["case", "fifth-amendment", "fourteenth-amendment", "confessions", "voluntariness", "due-process", "coercion", "per-curiam"]
 holding: "A confession obtained at gunpoint from a wounded suspect threatened with death, and a second statement signed five days later while drugged on morphine and in intense pain with no break in the stream of events, are the product of gross coercion and involuntary; no conviction tainted by such a confession can stand."
+lake:
+  record_id: Beecher v. Alabama
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Beecher v. Alabama

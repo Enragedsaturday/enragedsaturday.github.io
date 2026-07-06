@@ -2,9 +2,9 @@
 title: "New York v. Burger"
 type: case
 citation: "482 U.S. 691 (1987)"
-parallel_cite: "107 S. Ct. 2636"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "107 S. Ct. 2636; 96 L. Ed. 2d 601; 55 U.S.L.W. 4890"
+neutral_cite: 1987 U.S. LEXIS 2725
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1987
@@ -12,13 +12,18 @@ date_decided: 1987-06-19
 docket: ""
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Three-part test for warrantless inspection of closely regulated businesses; good law."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1987-06-19
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: New York v. Burger
+  varies_by_point: false
+  scope_note: "Three-part test for warrantless inspection of closely regulated businesses; good law."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/111927/new-york-v-burger/"
-  opinion_id: 111927
+  cluster_id: 111927
+  opinion_id: 9431050
   identity_checked: true
 homes:
   - page: "[[Special Needs and Administrative Searches]]"
@@ -27,6 +32,10 @@ related: ["[[Donovan v. Dewey]]", "[[Marshall v. Barlow's, Inc.]]", "[[United St
 aliases: []
 tags: ["case", "fourth-amendment", "administrative-search", "closely-regulated-business", "inspection"]
 holding: "A warrantless administrative inspection of a closely (pervasively) regulated business — here, an automobile junkyard — is reasonable if…"
+lake:
+  record_id: New York v. Burger
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # New York v. Burger

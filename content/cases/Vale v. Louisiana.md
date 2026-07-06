@@ -2,22 +2,27 @@
 title: "Vale v. Louisiana"
 type: case
 citation: "399 U.S. 30 (1970)"
-parallel_cite: "90 S. Ct. 1969"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "90 S. Ct. 1969; 26 L. Ed. 2d 409"
+neutral_cite: 1970 U.S. LEXIS 18
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1970
 date_decided: 1970-06-22
-docket: "727"
+docket: 727
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Applies Chimel's spatial limit to dwellings; still the controlling rule that a search incident to arrest cannot reach a house when the arrest occurs outside it."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1970-06-22
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Vale v. Louisiana
+  varies_by_point: false
+  scope_note: "Applies Chimel's spatial limit to dwellings; still the controlling rule that a search incident to arrest cannot reach a house when the arrest occurs outside it."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/108183/vale-v-louisiana/"
+  cluster_id: 108183
   opinion_id: 108183
   identity_checked: true
 homes:
@@ -29,6 +34,10 @@ related: ["[[Chimel v. California]]", "[[Shipley v. California]]", "[[Agnello v.
 aliases: []
 tags: ["case", "fourth-amendment", "search-incident-to-arrest", "warrant-requirement", "exigent-circumstances"]
 holding: "A search of a house cannot be justified as incident to an arrest made outside the house; a warrantless dwelling search requires a recognized exception, and a street arrest is not its own exigent circumstance."
+lake:
+  record_id: Vale v. Louisiana
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Vale v. Louisiana

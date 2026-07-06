@@ -2,22 +2,27 @@
 title: "Connally v. Georgia"
 type: case
 citation: "429 U.S. 245 (1977)"
-parallel_cite: "97 S. Ct. 546"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "97 S. Ct. 546; 50 L. Ed. 2d 444"
+neutral_cite: 1977 U.S. LEXIS 27
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1977
 date_decided: 1977-01-10
-docket: "76-461"
+docket: 76-461
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Controlling: a magistrate with a direct pecuniary interest in issuing warrants is not neutral and detached, so such warrants are void."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1977-01-10
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Connally v. Georgia
+  varies_by_point: false
+  scope_note: "Controlling: a magistrate with a direct pecuniary interest in issuing warrants is not neutral and detached, so such warrants are void."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/109572/connally-v-georgia/"
+  cluster_id: 109572
   opinion_id: 109572
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Coolidge v. New Hampshire]]", "[[Lo-Ji Sales, Inc. v. New York]]"]
 aliases: []
 tags: ["case", "fourth-amendment", "warrant-requirement", "neutral-magistrate"]
 holding: "A search warrant issued by a magistrate who is paid a fee for issuing a warrant but nothing for denying one is invalid: such a magistrate has a direct, personal, pecuniary interest in issuance and is not neutral and detached as the Fourth Amendment requires."
+lake:
+  record_id: Connally v. Georgia
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Connally v. Georgia

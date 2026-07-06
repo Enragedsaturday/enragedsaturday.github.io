@@ -2,22 +2,27 @@
 title: "Pennsylvania v. Labron"
 type: case
 citation: "518 U.S. 938 (1996)"
-parallel_cite: "116 S. Ct. 2485"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "116 S. Ct. 2485; 135 L. Ed. 2d 1031"
+neutral_cite: 1996 U.S. LEXIS 4268
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1996
 date_decided: 1996-07-01
-docket: "95-1691"
+docket: 95-1691
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: ""
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1996-07-01
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Pennsylvania v. Labron
+  varies_by_point: false
+  scope_note: "Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/118063/pennsylvania-v-labron/"
+  cluster_id: 118063
   opinion_id: 118063
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Carroll v. United States]]", "[[California v. Carney]]", "[[Chamber
 aliases: ["Pennsylvania v. Kilgore"]
 tags: ["case", "fourth-amendment", "automobile-exception", "ready-mobility", "per-curiam"]
 holding: "No separate exigency requirement beyond ready mobility: if a car is readily mobile and PC exists to believe it contains contraband, the…"
+lake:
+  record_id: Pennsylvania v. Labron
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Pennsylvania v. Labron

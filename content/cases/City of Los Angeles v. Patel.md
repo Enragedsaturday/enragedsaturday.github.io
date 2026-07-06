@@ -1,24 +1,29 @@
 ---
 title: "City of Los Angeles v. Patel"
 type: case
-citation: "576 U.S. 409 (2015)"
-parallel_cite: "135 S. Ct. 2443"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+citation: ""
+parallel_cite: "576 U.S. 409; 135 S. Ct. 2443; 192 L. Ed. 2d 435; 83 U.S.L.W. 4520; 25 Fla. L. Weekly Fed. S 412"
+neutral_cite: 2015 U.S. LEXIS 4065
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 2015
 date_decided: 2015-06-22
-docket: "13-1175"
+docket: 13-1175
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: ""
-  by: []
+  field_i_validity: good_law
+  as_of_content: 2015-06-22
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: City of Los Angeles v. Patel
+  varies_by_point: false
+  scope_note: "Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade."
+  point_overrides: []
 courtlistener:
-  opinion_url: "https://www.courtlistener.com/opinion/2810524/los-angeles-v-patel/"
-  opinion_id: 2810524
+  opinion_url: "https://www.courtlistener.com/opinion/2811846/city-of-l-a-v-patel/"
+  cluster_id: 2811846
+  opinion_id: 2811846
   identity_checked: true
 homes:
   - page: "[[Special Needs and Administrative Searches]]"
@@ -27,6 +32,10 @@ related: ["[[Camara v. Municipal Court]]", "[[City of Indianapolis v. Edmond]]"]
 aliases: ["Los Angeles v. Patel"]
 tags: ["case", "fourth-amendment", "administrative-search", "special-needs", "precompliance-review", "facial-challenge"]
 holding: "A hotel guest-registry inspection ordinance is facially unconstitutional because it gives operators no opportunity for pre-compliance…"
+lake:
+  record_id: City of Los Angeles v. Patel
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # City of Los Angeles v. Patel

@@ -2,9 +2,9 @@
 title: "Lo-Ji Sales, Inc. v. New York"
 type: case
 citation: "442 U.S. 319 (1979)"
-parallel_cite: "99 S. Ct. 2319"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "99 S. Ct. 2319; 60 L. Ed. 2d 920; 5 Media L. Rep. (BNA) 1177"
+neutral_cite: 1979 U.S. LEXIS 107
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1979
@@ -12,12 +12,17 @@ date_decided: 1979-06-11
 docket: ""
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: ""
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1979-06-11
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: "Lo-Ji Sales, Inc. v. New York"
+  varies_by_point: false
+  scope_note: "Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/110100/lo-ji-sales-inc-v-new-york/"
+  cluster_id: 110100
   opinion_id: 110100
   identity_checked: true
 homes:
@@ -29,6 +34,10 @@ related: ["[[Coolidge v. New Hampshire]]", "[[Groh v. Ramirez]]", "[[United Stat
 aliases: ["Lo-Ji Sales", "Lo-Ji"]
 tags: ["case", "fourth-amendment", "warrant-requirement", "neutral-and-detached-magistrate", "general-warrant", "particularity"]
 holding: "A magistrate who abandons the neutral-and-detached role — here the Town Justice joined and effectively led the search party, conducting…"
+lake:
+  record_id: "Lo-Ji Sales, Inc. v. New York"
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Lo-Ji Sales, Inc. v. New York

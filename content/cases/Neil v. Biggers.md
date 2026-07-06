@@ -2,9 +2,9 @@
 title: "Neil v. Biggers"
 type: case
 citation: "409 U.S. 188 (1972)"
-parallel_cite: "93 S. Ct. 375"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "93 S. Ct. 375; 34 L. Ed. 2d 401"
+neutral_cite: 1972 U.S. LEXIS 6
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1972
@@ -12,12 +12,17 @@ date_decided: 1972-12-06
 docket: ""
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Source of the five reliability factors; carried forward in Manson v. Brathwaite; good law."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1972-12-06
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Neil v. Biggers
+  varies_by_point: false
+  scope_note: "Source of the five reliability factors; carried forward in Manson v. Brathwaite; good law."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/108639/neil-v-biggers/"
+  cluster_id: 108639
   opinion_id: 108639
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Manson v. Brathwaite]]", "[[Stovall v. Denno]]", "[[Perry v. New Ha
 aliases: []
 tags: ["case", "due-process", "eyewitness-identification", "reliability", "showup"]
 holding: "Even an unnecessarily suggestive identification is admissible if, under the totality of the circumstances, it is nonetheless reliable;…"
+lake:
+  record_id: Neil v. Biggers
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Neil v. Biggers

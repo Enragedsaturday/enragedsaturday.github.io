@@ -2,23 +2,28 @@
 title: "Steagald v. United States"
 type: case
 citation: "451 U.S. 204 (1981)"
-parallel_cite: "101 S. Ct. 1642"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "101 S. Ct. 1642; 68 L. Ed. 2d 38; 49 U.S.L.W. 4418"
+neutral_cite: 1981 U.S. LEXIS 89
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1981
 date_decided: 1981-04-21
-docket: "79-6777"
+docket: 79-6777
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: ""
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1981-04-21
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Steagald v. United States
+  varies_by_point: false
+  scope_note: "Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/110464/steagald-v-united-states/"
-  opinion_id: 110464
+  cluster_id: 110464
+  opinion_id: 9428299
   identity_checked: true
 homes:
   - page: "[[Arrest in the Home]]"
@@ -29,6 +34,10 @@ related: ["[[Payton v. New York]]", "[[Bailey v. United States]]"]
 aliases: []
 tags: ["case", "fourth-amendment", "arrest-warrant", "search-warrant", "third-party-home"]
 holding: "To search a THIRD PARTY'S home for the subject of an arrest warrant, police need a SEARCH warrant (absent exigency or consent); an…"
+lake:
+  record_id: Steagald v. United States
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Steagald v. United States

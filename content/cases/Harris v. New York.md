@@ -2,22 +2,27 @@
 title: "Harris v. New York"
 type: case
 citation: "401 U.S. 222 (1971)"
-parallel_cite: "91 S. Ct. 643"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "91 S. Ct. 643; 28 L. Ed. 2d 1"
+neutral_cite: 1971 U.S. LEXIS 75
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1971
 date_decided: 1971-02-24
-docket: "206"
+docket: 206
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Good law; the Miranda impeachment exception was extended in Oregon v. Hass and (for the Fourth Amendment) tracks Walder/Havens, but does not reach silence (Doyle) or defense witnesses (James v. Illinois)."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1971-02-24
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Harris v. New York
+  varies_by_point: false
+  scope_note: "Good law; the Miranda impeachment exception was extended in Oregon v. Hass and (for the Fourth Amendment) tracks Walder/Havens, but does not reach silence (Doyle) or defense witnesses (James v. Illinois)."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/108272/harris-v-new-york/"
+  cluster_id: 108272
   opinion_id: 108272
   identity_checked: true
 homes:
@@ -29,6 +34,10 @@ related: ["[[James v. Illinois]]", "[[United States v. Havens]]", "[[Doyle v. Oh
 aliases: []
 tags: ["case", "fifth-amendment", "miranda", "impeachment", "exclusionary-rule"]
 holding: "A statement taken in violation of Miranda, but otherwise voluntary, may be used to impeach the defendant's contrary trial testimony; Miranda's shield may not be turned into a license to commit perjury free from confrontation with prior inconsistent statements."
+lake:
+  record_id: Harris v. New York
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Harris v. New York

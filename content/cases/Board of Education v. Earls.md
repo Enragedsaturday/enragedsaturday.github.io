@@ -1,23 +1,28 @@
 ---
 title: "Board of Education v. Earls"
 type: case
-citation: "536 U.S. 822 (2002)"
-parallel_cite: "122 S. Ct. 2559"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+citation: ""
+parallel_cite: "536 U.S. 822; 122 S. Ct. 2559; 153 L. Ed. 2d 735; 2002 Daily Journal DAR 7275; 70 U.S.L.W. 4737; 15 Fla. L. Weekly Fed. S 483"
+neutral_cite: "2002 U.S. LEXIS 4882; 2002 Cal. Daily Op. Serv. 5761"
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 2002
 date_decided: 2002-06-27
-docket: "01-332"
+docket: 01-332
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Extends Vernonia to non-athletes; good law."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 2002-06-27
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Board of Education v. Earls
+  varies_by_point: false
+  scope_note: "Extends Vernonia to non-athletes; good law."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/121171/board-of-education-of-independent-school-district-no-92-of-pottawatomie/"
+  cluster_id: 121171
   opinion_id: 121171
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Vernonia School District 47J v. Acton]]", "[[New Jersey v. T.L.O.]]
 aliases: ["Board of Education of Independent School District No. 92 of Pottawatomie County v. Earls", "Earls"]
 tags: ["case", "fourth-amendment", "special-needs", "drug-testing", "schools"]
 holding: "Suspicionless drug testing of all students participating in competitive extracurricular activities is a reasonable special-needs search."
+lake:
+  record_id: Board of Education v. Earls
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Board of Education v. Earls

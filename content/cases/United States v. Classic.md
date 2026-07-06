@@ -2,22 +2,27 @@
 title: "United States v. Classic"
 type: case
 citation: "313 U.S. 299 (1941)"
-parallel_cite: "61 S. Ct. 1031"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "61 S. Ct. 1031; 85 L. Ed. 1368"
+neutral_cite: 1941 U.S. LEXIS 601
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1941
-date_decided: 1941-05-26
-docket: "618"
+date_decided: 1941-10-13
+docket: 618
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "The 'under color of' state law definition remains the governing test; adopted for § 1983 in Monroe v. Pape. (Classic overruled Grovey v. Townsend on the primary-voting point.)"
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1941-05-26
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: United States v. Classic
+  varies_by_point: false
+  scope_note: "The 'under color of' state law definition remains the governing test; adopted for § 1983 in Monroe v. Pape. (Classic overruled Grovey v. Townsend on the primary-voting point.)"
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/103531/united-states-v-classic/"
+  cluster_id: 103531
   opinion_id: 103531
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Monroe v. Pape]]", "[[Screws v. United States]]"]
 aliases: []
 tags: ["case", "section-1983", "color-of-law", "section-242", "civil-rights", "state-action"]
 holding: "Misuse of power possessed by virtue of state law and made possible only because the wrongdoer is clothed with state authority is action taken 'under color of' state law — the anchor color-of-law definition later applied to § 1983."
+lake:
+  record_id: United States v. Classic
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # United States v. Classic

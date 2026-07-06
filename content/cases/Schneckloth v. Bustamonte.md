@@ -2,22 +2,27 @@
 title: "Schneckloth v. Bustamonte"
 type: case
 citation: "412 U.S. 218 (1973)"
-parallel_cite: "93 S. Ct. 2041"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "93 S. Ct. 2041; 36 L. Ed. 2d 854"
+neutral_cite: 1973 U.S. LEXIS 6
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1973
 date_decided: 1973-05-29
-docket: "71-732"
+docket: 71-732
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: ""
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1973-05-29
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Schneckloth v. Bustamonte
+  varies_by_point: false
+  scope_note: "Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/108800/schneckloth-v-bustamonte/"
+  cluster_id: 108800
   opinion_id: 108800
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Florida v. Bostick]]", "[[United States v. Drayton]]", "[[Georgia v
 aliases: []
 tags: ["case", "fourth-amendment", "consent-searches", "voluntariness", "totality-of-circumstances"]
 holding: "The voluntariness of consent to search is a question of fact determined from the TOTALITY OF ALL THE CIRCUMSTANCES; the government need…"
+lake:
+  record_id: Schneckloth v. Bustamonte
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Schneckloth v. Bustamonte

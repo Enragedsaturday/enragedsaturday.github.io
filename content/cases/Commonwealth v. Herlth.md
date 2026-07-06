@@ -1,23 +1,28 @@
 ---
 title: "Commonwealth v. Herlth"
 type: case
-citation: "2026 PA Super 114 (Pa. Super. Ct. June 5, 2026)"
+citation: "2026 Pa. Super. 114 (2026)"
 parallel_cite: ""
-neutral_cite: "2026 PA Super 114"
-court: "Pennsylvania Superior Court"
-court_level: state-app
+neutral_cite: 2026 Pa. Super. 114
+court: Pennsylvania Superior Court
+court_level: state
 circuit: ""
 year: 2026
 date_decided: 2026-06-05
-docket: "183 MDA 2024"
+docket: 183 MDA 2024
 authority_weight: "Persuasive — state, illustrative"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: ""
-  by: []
+  field_i_validity: good_law
+  as_of_content: 2026-06-05
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Commonwealth v. Herlth
+  varies_by_point: false
+  scope_note: "Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/10870804/com-v-herlth-j/"
+  cluster_id: 10870804
   opinion_id: 11338267
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Horton v. California]]", "[[Arizona v. Hicks]]", "[[Coolidge v. New
 aliases: ["Com. v. Herlth", "Commonwealth v. Herlth (Pa. Super. 2026)"]
 tags: ["case", "fourth-amendment", "plain-view", "immediately-apparent", "closed-container", "pennsylvania", "state-appellate"]
 holding: "A closed, opaque shoebox with a one-inch manufacturer's hole, inside a residence, retains a reasonable expectation of privacy; a trooper…"
+lake:
+  record_id: Commonwealth v. Herlth
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Commonwealth v. Herlth

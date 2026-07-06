@@ -2,22 +2,27 @@
 title: "United States v. Janis"
 type: case
 citation: "428 U.S. 433 (1976)"
-parallel_cite: "96 S. Ct. 3021"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "96 S. Ct. 3021; 49 L. Ed. 2d 1046"
+neutral_cite: 1976 U.S. LEXIS 162
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1976
-date_decided: 1976-07-06
-docket: "74-958"
+date_decided: 1976-10-04
+docket: 74-958
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "The exclusionary rule does not extend to a federal civil tax proceeding to bar evidence unlawfully seized by state officers; good law."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1976-07-06
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: United States v. Janis
+  varies_by_point: false
+  scope_note: "The exclusionary rule does not extend to a federal civil tax proceeding to bar evidence unlawfully seized by state officers; good law."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/109539/united-states-v-janis/"
+  cluster_id: 109539
   opinion_id: 109539
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[United States v. Calandra]]", "[[United States v. Leon]]", "[[Elkin
 aliases: []
 tags: ["case", "fourth-amendment", "exclusionary-rule", "civil-proceeding", "deterrence", "cost-benefit"]
 holding: "The exclusionary rule does not bar evidence unlawfully seized by state law-enforcement officers from being used in a federal civil (tax) proceeding, because the marginal deterrence of an intersovereign civil exclusion does not outweigh its substantial social costs."
+lake:
+  record_id: United States v. Janis
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # United States v. Janis

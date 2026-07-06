@@ -2,23 +2,28 @@
 title: "City of Tahlequah v. Bond"
 type: case
 citation: "595 U.S. 9 (2021)"
-parallel_cite: "142 S. Ct. 9"
+parallel_cite: ""
 neutral_cite: ""
-court: "U.S. Supreme Court"
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 2021
 date_decided: 2021-10-18
-docket: "20-1668"
+docket: 20-1668
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: ""
-  by: []
+  field_i_validity: good_law
+  as_of_content: 2021-10-18
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: City of Tahlequah v. Bond
+  varies_by_point: false
+  scope_note: "Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade."
+  point_overrides: []
 courtlistener:
-  opinion_url: "https://www.courtlistener.com/opinion/5290448/city-of-tahlequah-v-bond/"
-  opinion_id: 5118994
+  opinion_url: "https://www.courtlistener.com/opinion/5292018/city-of-tahlequah-v-bond/"
+  cluster_id: 5292018
+  opinion_id: 5120580
   identity_checked: true
 homes:
   - page: "[[Section 1983 Liability and Qualified Immunity]]"
@@ -27,6 +32,10 @@ related: ["[[District of Columbia v. Wesby]]", "[[Graham v. Connor]]", "[[Harlow
 aliases: ["Tahlequah v. Bond"]
 tags: ["case", "qualified-immunity", "section-1983", "excessive-force", "clearly-established-law", "per-curiam"]
 holding: "Courts must not define clearly established law at too high a level of generality; QI protects 'all but the plainly incompetent or those who knowingly violate the law.'"
+lake:
+  record_id: City of Tahlequah v. Bond
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # City of Tahlequah v. Bond

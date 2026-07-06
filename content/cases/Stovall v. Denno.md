@@ -2,22 +2,27 @@
 title: "Stovall v. Denno"
 type: case
 citation: "388 U.S. 293 (1967)"
-parallel_cite: "87 S. Ct. 1967"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "87 S. Ct. 1967; 18 L. Ed. 2d 1199"
+neutral_cite: 1967 U.S. LEXIS 1087
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1967
 date_decided: 1967-06-12
-docket: "254"
+docket: 254
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Due-process suggestiveness holding remains good law; reliability framework later developed in Neil v. Biggers / Manson v. Brathwaite."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1967-06-12
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Stovall v. Denno
+  varies_by_point: false
+  scope_note: "Due-process suggestiveness holding remains good law; reliability framework later developed in Neil v. Biggers / Manson v. Brathwaite."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/107488/stovall-v-denno/"
+  cluster_id: 107488
   opinion_id: 107488
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Gilbert v. California]]", "[[United States v. Wade]]", "[[Neil v. B
 aliases: []
 tags: ["case", "eyewitness-identification", "due-process", "suggestive-identification"]
 holding: "A confrontation that is unnecessarily suggestive and conducive to irreparable mistaken identification can violate due process;…"
+lake:
+  record_id: Stovall v. Denno
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Stovall v. Denno

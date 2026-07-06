@@ -2,9 +2,9 @@
 title: "Muehler v. Mena"
 type: case
 citation: "544 U.S. 93 (2005)"
-parallel_cite: "125 S. Ct. 1465"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "125 S. Ct. 1465; 161 L. Ed. 2d 299"
+neutral_cite: 2005 U.S. LEXIS 2755
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 2005
@@ -12,12 +12,17 @@ date_decided: 2005-03-22
 docket: ""
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Applies Michigan v. Summers detention authority; good law."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 2005-03-22
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Muehler v. Mena
+  varies_by_point: false
+  scope_note: "Applies Michigan v. Summers detention authority; good law."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/142878/muehler-v-mena/"
+  cluster_id: 142878
   opinion_id: 142878
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Michigan v. Summers]]", "[[Bailey v. United States]]", "[[Los Angel
 aliases: []
 tags: ["case", "fourth-amendment", "detention", "search-warrant", "handcuffs"]
 holding: "Officers executing a search warrant for weapons at a gang house may detain occupants in handcuffs for the entire duration of the search…"
+lake:
+  record_id: Muehler v. Mena
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Muehler v. Mena

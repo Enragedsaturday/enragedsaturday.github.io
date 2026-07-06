@@ -1,23 +1,28 @@
 ---
 title: "French v. Merrill"
 type: case
-citation: "15 F.4th 116 (1st Cir. 2021)"
+citation: "15 F.4th 116 (2021)"
 parallel_cite: ""
 neutral_cite: ""
 court: "U.S. Court of Appeals, First Circuit"
-court_level: circuit
-circuit: "1st"
+court_level: coa
+circuit: 1st
 year: 2021
 date_decided: 2021-10-01
 docket: ""
 authority_weight: "Binding in-circuit — 1st Cir."
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: ""
-  by: []
+  field_i_validity: good_law
+  as_of_content: 2021-10-01
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: French v. Merrill
+  varies_by_point: false
+  scope_note: "Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/5273192/french-v-merrill/"
+  cluster_id: 5273192
   opinion_id: 5100775
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Florida v. Jardines]]", "[[Kentucky v. King]]"]
 aliases: ["French v. Merrill (1st Cir. 2021)"]
 tags: ["case", "fourth-amendment", "knock-and-talk", "curtilage", "implied-license", "first-circuit", "qualified-immunity"]
 holding: "The scope of the 'knock and talk' exception to the warrant requirement is controlled by the implied social license to enter the…"
+lake:
+  record_id: French v. Merrill
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # French v. Merrill

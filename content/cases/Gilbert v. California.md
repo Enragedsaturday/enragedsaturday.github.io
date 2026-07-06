@@ -2,9 +2,9 @@
 title: "Gilbert v. California"
 type: case
 citation: "388 U.S. 263 (1967)"
-parallel_cite: "87 S. Ct. 1951"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "87 S. Ct. 1951; 18 L. Ed. 2d 1178"
+neutral_cite: 1967 U.S. LEXIS 1086
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1967
@@ -12,12 +12,17 @@ date_decided: 1967-06-12
 docket: ""
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Wade-Gilbert right to counsel attaches only at/after initiation of adversary judicial proceedings (Kirby v. Illinois)."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1967-06-12
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Gilbert v. California
+  varies_by_point: false
+  scope_note: "Wade-Gilbert right to counsel attaches only at/after initiation of adversary judicial proceedings (Kirby v. Illinois)."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/107487/gilbert-v-california/"
+  cluster_id: 107487
   opinion_id: 107487
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[United States v. Wade]]", "[[Stovall v. Denno]]", "[[Kirby v. Illin
 aliases: []
 tags: ["case", "sixth-amendment", "right-to-counsel", "lineup", "eyewitness-identification", "per-se-exclusion"]
 holding: "Testimony that a witness identified the accused at an uncounseled post-indictment lineup must be excluded per se — a strict rule (no…"
+lake:
+  record_id: Gilbert v. California
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Gilbert v. California

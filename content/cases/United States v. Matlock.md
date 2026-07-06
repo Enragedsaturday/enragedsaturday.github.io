@@ -2,23 +2,28 @@
 title: "United States v. Matlock"
 type: case
 citation: "415 U.S. 164 (1974)"
-parallel_cite: "94 S. Ct. 988"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "94 S. Ct. 988; 39 L. Ed. 2d 242"
+neutral_cite: 1974 U.S. LEXIS 8
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1974
 date_decided: 1974-02-20
-docket: "72-1355"
+docket: 72-1355
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: ""
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1974-02-20
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: United States v. Matlock
+  varies_by_point: false
+  scope_note: "Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/108967/united-states-v-matlock/"
-  opinion_id: 108967
+  cluster_id: 108967
+  opinion_id: 9425606
   identity_checked: true
 homes:
   - page: "[[Consent Searches]]"
@@ -27,6 +32,10 @@ related: ["[[Illinois v. Rodriguez]]", "[[Georgia v. Randolph]]", "[[Fernandez v
 aliases: []
 tags: ["case", "fourth-amendment", "consent-search", "third-party-consent", "common-authority", "joint-access"]
 holding: "COMMON AUTHORITY: consent of one who possesses common authority over premises or effects is valid against an absent, nonconsenting…"
+lake:
+  record_id: United States v. Matlock
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # United States v. Matlock

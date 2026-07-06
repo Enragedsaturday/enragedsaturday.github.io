@@ -2,22 +2,27 @@
 title: "Skinner v. Railway Labor Executives' Ass'n"
 type: case
 citation: "489 U.S. 602 (1989)"
-parallel_cite: "109 S. Ct. 1402"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "109 S. Ct. 1402; 103 L. Ed. 2d 639; 4 I.E.R. Cas. (BNA) 224; 1989 CCH OSHD 28,476; 57 U.S.L.W. 4324; 13 OSHC (BNA) 2065; 130 L.R.R.M. (BNA) 2857; 49 Empl. Prac. Dec. (CCH) 38,791"
+neutral_cite: 1989 U.S. LEXIS 1568
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1989
 date_decided: 1989-03-21
-docket: "87-1555"
+docket: 87-1555
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: ""
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1989-03-21
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: "Skinner v. Railway Labor Executives' Ass'n"
+  varies_by_point: false
+  scope_note: "Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/112219/skinner-v-railway-labor-executives-assn/"
+  cluster_id: 112219
   opinion_id: 112219
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[National Treasury Employees Union v. Von Raab]]", "[[Vernonia Schoo
 aliases: ["Skinner v. Railway Labor Executives' Assn.", "Skinner v. Railway Labor Executives' Association", "Skinner v. Railway Labor Executives Association"]
 tags: ["case", "fourth-amendment", "special-needs", "drug-testing", "administrative-search"]
 holding: "Suspicionless drug/alcohol testing of railway employees after accidents is reasonable under the special-needs doctrine."
+lake:
+  record_id: "Skinner v. Railway Labor Executives' Ass'n"
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Skinner v. Railway Labor Executives' Ass'n

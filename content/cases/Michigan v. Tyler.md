@@ -2,22 +2,27 @@
 title: "Michigan v. Tyler"
 type: case
 citation: "436 U.S. 499 (1978)"
-parallel_cite: "98 S. Ct. 1942"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "98 S. Ct. 1942; 56 L. Ed. 2d 486"
+neutral_cite: 1978 U.S. LEXIS 97
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1978
 date_decided: 1978-05-31
-docket: "76-1608"
+docket: 76-1608
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Good law; refined by Michigan v. Clifford (after the fire is out and the scene secured, further investigative entry needs an administrative or criminal warrant)."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1978-05-31
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Michigan v. Tyler
+  varies_by_point: false
+  scope_note: "Good law; refined by Michigan v. Clifford (after the fire is out and the scene secured, further investigative entry needs an administrative or criminal warrant)."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/109874/michigan-v-tyler/"
+  cluster_id: 109874
   opinion_id: 109874
   identity_checked: true
 homes:
@@ -29,6 +34,10 @@ related: ["[[Michigan v. Clifford]]", "[[Camara v. Municipal Court]]", "[[Mincey
 aliases: []
 tags: ["case", "fourth-amendment", "exigent-circumstances", "fire", "administrative-warrant", "plain-view"]
 holding: "A burning building is an exigency justifying warrantless entry; firefighters may stay a reasonable time to fight the fire and investigate its cause and may seize arson evidence in plain view, but later investigative entries, once the exigency has ended, require a warrant (administrative or, on probable cause of arson, criminal)."
+lake:
+  record_id: Michigan v. Tyler
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Michigan v. Tyler

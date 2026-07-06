@@ -2,22 +2,27 @@
 title: "Taylor v. Riojas"
 type: case
 citation: "592 U.S. 7 (2020)"
-parallel_cite: "141 S. Ct. 52"
+parallel_cite: "141 S. Ct. 52; 208 L. Ed. 2d 164"
 neutral_cite: ""
-court: "U.S. Supreme Court"
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 2020
 date_decided: 2020-11-02
-docket: "19-1261"
+docket: 19-1261
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Per curiam; good law on the 'obvious case' route to defeating qualified immunity without a case directly on point."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 2020-11-02
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Taylor v. Riojas
+  varies_by_point: false
+  scope_note: "Per curiam; good law on the 'obvious case' route to defeating qualified immunity without a case directly on point."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/4802501/taylor-v-riojas/"
+  cluster_id: 4802501
   opinion_id: 4582848
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[White v. Pauly]]", "[[Mullenix v. Luna]]", "[[Harlow v. Fitzgerald]
 aliases: []
 tags: ["case", "section-1983", "qualified-immunity", "clearly-established", "obvious-case", "eighth-amendment"]
 holding: "Qualified immunity can be defeated without a case directly on point where the constitutional violation is so obvious that any reasonable officer would have known the conduct was unlawful."
+lake:
+  record_id: Taylor v. Riojas
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Taylor v. Riojas

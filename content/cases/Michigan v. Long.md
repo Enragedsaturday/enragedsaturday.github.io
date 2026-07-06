@@ -2,9 +2,9 @@
 title: "Michigan v. Long"
 type: case
 citation: "463 U.S. 1032 (1983)"
-parallel_cite: "103 S. Ct. 3469"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "103 S. Ct. 3469; 77 L. Ed. 2d 1201; 51 U.S.L.W. 5231"
+neutral_cite: 1983 U.S. LEXIS 7
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1983
@@ -12,13 +12,18 @@ date_decided: 1983-07-06
 docket: ""
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: ""
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1983-07-06
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Michigan v. Long
+  varies_by_point: false
+  scope_note: "Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/111020/michigan-v-long/"
-  opinion_id: 111020
+  cluster_id: 111020
+  opinion_id: 9842054
   identity_checked: true
 homes:
   - page: "[[Traffic Stops]]"
@@ -27,6 +32,10 @@ related: ["[[Terry v. Ohio]]", "[[Pennsylvania v. Mimms]]", "[[Maryland v. Wilso
 aliases: []
 tags: ["case", "fourth-amendment", "terry", "protective-search", "vehicle", "weapons"]
 holding: "Terry's protective-frisk rationale extends to vehicles: on specific and articulable facts giving the officer a reasonable belief the…"
+lake:
+  record_id: Michigan v. Long
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Michigan v. Long

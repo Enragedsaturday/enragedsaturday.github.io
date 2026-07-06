@@ -2,23 +2,28 @@
 title: "United States v. Karo"
 type: case
 citation: "468 U.S. 705 (1984)"
-parallel_cite: "104 S. Ct. 3296"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "104 S. Ct. 3296; 82 L. Ed. 2d 530"
+neutral_cite: 1984 U.S. LEXIS 148
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1984
-date_decided: ""
+date_decided: 1984-09-18
 docket: ""
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Good law; the rule that monitoring a tracking device inside a private residence is a search requiring a warrant remains controlling and was reinforced by the trespass/aggregation analyses of United States v. Jones and Carpenter."
-  by: []
+  field_i_validity: good_law
+  as_of_content: null
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: United States v. Karo
+  varies_by_point: false
+  scope_note: "Good law; the rule that monitoring a tracking device inside a private residence is a search requiring a warrant remains controlling and was reinforced by the trespass/aggregation analyses of United States v. Jones and Carpenter."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/111257/united-states-v-karo/"
-  opinion_id: 111257
+  cluster_id: 111257
+  opinion_id: 9429751
   identity_checked: true
 homes:
   - page: "[[The Third-Party Doctrine and Digital Surveillance]]"
@@ -29,6 +34,10 @@ related: ["[[United States v. Knotts]]", "[[Kyllo v. United States]]", "[[United
 aliases: []
 tags: ["case", "fourth-amendment", "search", "beeper", "tracking", "surveillance", "home"]
 holding: "Monitoring a beeper inside a private residence — a location not open to visual surveillance — is a Fourth Amendment search requiring a warrant, because it reveals a critical fact about the interior of the home."
+lake:
+  record_id: United States v. Karo
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # United States v. Karo

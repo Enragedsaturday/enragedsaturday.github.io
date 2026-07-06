@@ -1,25 +1,30 @@
 ---
 title: "United States v. Rideau"
 type: case
-citation: "969 F.2d 1572 (5th Cir. 1992) (en banc)"
+citation: "969 F.2d 1572 (1992)"
 parallel_cite: ""
-neutral_cite: ""
+neutral_cite: "1992 U.S. App. LEXIS 18693; 1992 WL 195842"
 court: "U.S. Court of Appeals, 5th Circuit"
-court_level: circuit
-circuit: "5th"
+court_level: coa
+circuit: 5th
 year: 1992
 date_decided: 1992-08-14
 docket: ""
 authority_weight: "Binding in-circuit — 5th Cir."
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Good law; en banc. Public-welfare/community-caretaking function applied to an impaired person in the roadway."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1992-08-14
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: United States v. Rideau
+  varies_by_point: false
+  scope_note: "Good law; en banc. Public-welfare/community-caretaking function applied to an impaired person in the roadway."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/587275/united-states-v-izeal-rideau-jr/"
+  cluster_id: 587275
   opinion_id: 587275
-  identity_checked: true
+  identity_checked: false
 homes:
   - page: "[[Community Caretaking]]"
     role: "Key — Progeny"
@@ -27,6 +32,10 @@ related: ["[[United States v. Garner]]", "[[Cady v. Dombrowski]]", "[[Terry v. O
 aliases: ["United States v. Izeal Rideau, Jr.", "United States v. Rideau (5th Cir. 1992)"]
 tags: ["case", "fourth-amendment", "community-caretaking", "public-welfare", "investigative-detention", "persons-in-public", "fifth-circuit"]
 holding: "Police serve a public-welfare/community-caretaking function by removing apparently intoxicated people from the public streets, and an officer is warranted in stopping to check on the condition of an impaired person standing in the roadway; on these facts the en banc court held the stop and protective patdown reasonable under the Fourth Amendment."
+lake:
+  record_id: United States v. Rideau
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # United States v. Rideau

@@ -2,9 +2,9 @@
 title: "Chandler v. Miller"
 type: case
 citation: "520 U.S. 305 (1997)"
-parallel_cite: "117 S. Ct. 1295"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "117 S. Ct. 1295; 137 L. Ed. 2d 513"
+neutral_cite: 1997 U.S. LEXIS 2505
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1997
@@ -12,13 +12,18 @@ date_decided: 1997-04-15
 docket: ""
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: ""
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1997-04-15
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Chandler v. Miller
+  varies_by_point: false
+  scope_note: "Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/118100/chandler-v-miller/"
-  opinion_id: 118100
+  cluster_id: 118100
+  opinion_id: 9433438
   identity_checked: true
 homes:
   - page: "[[Special Needs and Administrative Searches]]"
@@ -27,6 +32,10 @@ related: ["[[City of Indianapolis v. Edmond]]", "[[Ferguson v. City of Charlesto
 aliases: []
 tags: ["case", "fourth-amendment", "special-needs", "drug-testing", "suspicionless-search"]
 holding: "Georgia's suspicionless drug-testing requirement for candidates for state office is unconstitutional — there was no concrete, special…"
+lake:
+  record_id: Chandler v. Miller
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Chandler v. Miller

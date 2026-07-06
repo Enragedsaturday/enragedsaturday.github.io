@@ -2,22 +2,27 @@
 title: "County of Sacramento v. Lewis"
 type: case
 citation: "523 U.S. 833 (1998)"
-parallel_cite: "118 S. Ct. 1708"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "118 S. Ct. 1708; 140 L. Ed. 2d 1043"
+neutral_cite: 1998 U.S. LEXIS 3404
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1998
 date_decided: 1998-05-26
-docket: "96-1337"
+docket: 96-1337
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Good law: pursuit deaths without a seizure are judged under Fourteenth Amendment substantive due process ('shocks the conscience'), requiring a purpose to cause harm."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1998-05-26
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: County of Sacramento v. Lewis
+  varies_by_point: false
+  scope_note: "Good law: pursuit deaths without a seizure are judged under Fourteenth Amendment substantive due process ('shocks the conscience'), requiring a purpose to cause harm."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/118214/county-of-sacramento-v-lewis/"
+  cluster_id: 118214
   opinion_id: 118214
   identity_checked: true
 homes:
@@ -29,6 +34,10 @@ related: ["[[Graham v. Connor]]", "[[Scott v. Harris]]", "[[Kingsley v. Hendrick
 aliases: ["Sacramento v. Lewis"]
 tags: ["case", "use-of-force", "high-speed-pursuit", "substantive-due-process", "shocks-the-conscience", "section-1983"]
 holding: "A death caused by a high-speed police pursuit, absent a Fourth Amendment seizure, is analyzed under Fourteenth Amendment substantive due process; only a purpose to cause harm unrelated to the legitimate object of arrest shocks the conscience — deliberate indifference is not enough in a pursuit."
+lake:
+  record_id: County of Sacramento v. Lewis
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # County of Sacramento v. Lewis

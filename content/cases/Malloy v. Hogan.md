@@ -2,22 +2,27 @@
 title: "Malloy v. Hogan"
 type: case
 citation: "378 U.S. 1 (1964)"
-parallel_cite: "84 S. Ct. 1489"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "84 S. Ct. 1489; 12 L. Ed. 2d 653"
+neutral_cite: 1964 U.S. LEXIS 993
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1964
 date_decided: 1964-06-15
-docket: "110"
+docket: 110
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Foundational incorporation of the Fifth Amendment privilege against the States; good law and the constitutional predicate for Miranda. Overruled Twining and Adamson on this point."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1964-06-15
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Malloy v. Hogan
+  varies_by_point: false
+  scope_note: "Foundational incorporation of the Fifth Amendment privilege against the States; good law and the constitutional predicate for Miranda. Overruled Twining and Adamson on this point."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/106862/malloy-v-hogan/"
+  cluster_id: 106862
   opinion_id: 106862
   identity_checked: true
 homes:
@@ -29,6 +34,10 @@ related: ["[[Miranda v. Arizona]]", "[[Mapp v. Ohio]]", "[[Brown v. Mississippi]
 aliases: []
 tags: ["case", "fifth-amendment", "fourteenth-amendment", "incorporation", "self-incrimination", "voluntariness"]
 holding: "The Fifth Amendment privilege against self-incrimination is enforceable against the States through the Fourteenth Amendment by the same standards that apply to the Federal Government; Twining and Adamson are overruled to that extent."
+lake:
+  record_id: Malloy v. Hogan
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Malloy v. Hogan

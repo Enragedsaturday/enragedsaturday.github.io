@@ -2,22 +2,27 @@
 title: "California v. Hodari D."
 type: case
 citation: "499 U.S. 621 (1991)"
-parallel_cite: "111 S. Ct. 1547"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "111 S. Ct. 1547; 113 L. Ed. 2d 690; 59 U.S.L.W. 4335; 91 Daily Journal DAR 4665"
+neutral_cite: "1991 U.S. LEXIS 2397; 91 Cal. Daily Op. Serv. 2893"
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1991
 date_decided: 1991-04-23
-docket: "89-1632"
+docket: 89-1632
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: ""
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1991-04-23
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: California v. Hodari D.
+  varies_by_point: false
+  scope_note: "Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/112579/california-v-hodari-d/"
+  cluster_id: 112579
   opinion_id: 112579
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Terry v. Ohio]]", "[[United States v. Mendenhall]]", "[[Brendlin v.
 aliases: ["California v. Hodari D", "Hodari D."]
 tags: ["case", "fourth-amendment", "seizure", "show-of-authority", "flight"]
 holding: "A show-of-authority seizure is not complete until the suspect submits; contraband discarded while still fleeing is not the fruit of a seizure."
+lake:
+  record_id: California v. Hodari D.
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # California v. Hodari D.

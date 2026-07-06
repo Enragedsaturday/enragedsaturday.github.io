@@ -2,9 +2,9 @@
 title: "Illinois v. McArthur"
 type: case
 citation: "531 U.S. 326 (2001)"
-parallel_cite: ""
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "121 S. Ct. 946; 148 L. Ed. 2d 838"
+neutral_cite: "2001 U.S. LEXIS 962; 1 Cal. Daily Op. Serv. 1442"
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 2001
@@ -12,12 +12,17 @@ date_decided: 2001-02-20
 docket: ""
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: ""
-  by: []
+  field_i_validity: good_law
+  as_of_content: 2001-02-20
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Illinois v. McArthur
+  varies_by_point: false
+  scope_note: "Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/118405/illinois-v-mcarthur/"
+  cluster_id: 118405
   opinion_id: 118405
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Michigan v. Summers]]", "[[Segura v. United States]]", "[[Bailey v.
 aliases: []
 tags: ["case", "fourth-amendment", "securing-the-scene", "temporary-seizure", "exigent-circumstances", "warrant"]
 holding: "Where police have probable cause to believe a home contains contraband, they may reasonably impose a temporary restraint on a resident —…"
+lake:
+  record_id: Illinois v. McArthur
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Illinois v. McArthur

@@ -1,23 +1,28 @@
 ---
 title: "United States v. Braxton"
 type: case
-citation: "61 F.4th 830 (10th Cir. 2023)"
+citation: "61 F.4th 830 (2023)"
 parallel_cite: ""
 neutral_cite: ""
 court: "U.S. Court of Appeals, 10th Circuit"
-court_level: circuit
-circuit: "10th"
+court_level: coa
+circuit: 10th
 year: 2023
 date_decided: 2023-03-07
-docket: "21-1149"
+docket: 21-1149
 authority_weight: "Binding in-circuit — 10th Cir."
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Good law in-circuit; backpack search conceded invalid as SITA, and inevitable discovery did not save it."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 2023-03-07
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: United States v. Braxton
+  varies_by_point: false
+  scope_note: "Good law in-circuit; backpack search conceded invalid as SITA, and inevitable discovery did not save it."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/9381854/united-states-v-braxton/"
+  cluster_id: 9381854
   opinion_id: 9377330
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Arizona v. Gant]]", "[[Chimel v. California]]", "[[Riley v. Califor
 aliases: []
 tags: ["case", "fourth-amendment", "search-incident-to-arrest", "inevitable-discovery"]
 holding: "The government CONCEDED the warrantless search of Braxton's backpack was not a valid search incident to arrest, then relied on…"
+lake:
+  record_id: United States v. Braxton
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # United States v. Braxton

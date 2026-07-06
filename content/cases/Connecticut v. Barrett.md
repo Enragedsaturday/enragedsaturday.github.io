@@ -2,22 +2,27 @@
 title: "Connecticut v. Barrett"
 type: case
 citation: "479 U.S. 523 (1987)"
-parallel_cite: "107 S. Ct. 828"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "107 S. Ct. 828; 93 L. Ed. 2d 920; 55 U.S.L.W. 4151"
+neutral_cite: 1987 U.S. LEXIS 419
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1987
 date_decided: 1987-01-27
-docket: "85-899"
+docket: 85-899
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Good law."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1987-01-27
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Connecticut v. Barrett
+  varies_by_point: false
+  scope_note: Good law.
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/111796/connecticut-v-barrett/"
+  cluster_id: 111796
   opinion_id: 111796
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Edwards v. Arizona]]", "[[Smith v. Illinois]]", "[[Miranda v. Arizo
 aliases: []
 tags: ["case", "fifth-amendment", "miranda", "invocation", "right-to-counsel"]
 holding: "A suspect may make a limited invocation of counsel; where he refuses to give a written statement without a lawyer but affirmatively agrees to talk orally, that limited request does not bar oral interrogation — courts honor the scope of the invocation as the suspect framed it."
+lake:
+  record_id: Connecticut v. Barrett
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Connecticut v. Barrett

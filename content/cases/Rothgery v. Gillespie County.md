@@ -1,23 +1,28 @@
 ---
 title: "Rothgery v. Gillespie County"
 type: case
-citation: "554 U.S. 191 (2008)"
-parallel_cite: "128 S. Ct. 2578"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+citation: ""
+parallel_cite: "554 U.S. 191; 128 S. Ct. 2578; 171 L. Ed. 2d 366; 21 Fla. L. Weekly Fed. S 429; 76 U.S.L.W. 4520"
+neutral_cite: 2008 U.S. LEXIS 5057
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 2008
 date_decided: 2008-06-23
-docket: "07-440"
+docket: 07-440
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: ""
-  by: []
+  field_i_validity: good_law
+  as_of_content: 2008-06-23
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Rothgery v. Gillespie County
+  varies_by_point: false
+  scope_note: "Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/145785/rothgery-v-gillespie-county/"
+  cluster_id: 145785
   opinion_id: 145785
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Brewer v. Williams]]", "[[Patterson v. Illinois]]", "[[Kirby v. Ill
 aliases: []
 tags: ["case", "sixth-amendment", "right-to-counsel", "attachment", "initial-appearance"]
 holding: "A criminal defendant's initial appearance before a magistrate, where he learns the charge against him and his liberty is restricted,…"
+lake:
+  record_id: Rothgery v. Gillespie County
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Rothgery v. Gillespie County

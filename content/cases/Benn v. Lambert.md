@@ -1,24 +1,29 @@
 ---
 title: "Benn v. Lambert"
 type: case
-citation: "283 F.3d 1040 (9th Cir. 2002)"
-parallel_cite: ""
-neutral_cite: ""
+citation: "283 F.3d 1040 (2002)"
+parallel_cite: 2002 Daily Journal DAR 2161
+neutral_cite: "2002 Cal. Daily Op. Serv. 1758; 2002 U.S. App. LEXIS 2899; 2002 WL 264622"
 court: "U.S. Court of Appeals, Ninth Circuit"
-court_level: circuit
-circuit: "9th"
+court_level: coa
+circuit: 9th
 year: 2002
 date_decided: 2002-02-26
-docket: "00-99014"
+docket: 00-99014
 authority_weight: "Binding in-circuit — 9th Cir."
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: ""
-  by: []
+  field_i_validity: good_law
+  as_of_content: 2002-02-26
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Benn v. Lambert
+  varies_by_point: false
+  scope_note: "Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/776954/gary-benn-v-john-lambert-superintendent-of-the-washington-state/"
-  opinion_id: 776954
+  cluster_id: 776954
+  opinion_id: 9494850
   identity_checked: true
 homes:
   - page: "[[Brady and Giglio]]"
@@ -27,6 +32,10 @@ related: ["[[Brady v. Maryland]]", "[[Giglio v. United States]]", "[[Kyles v. Wh
 aliases: ["Benn v. Lambert (9th Cir. 2002)"]
 tags: ["case", "brady", "giglio", "exculpatory-evidence", "impeachment", "ninth-circuit", "habeas"]
 holding: "Granted habeas relief: the prosecution suppressed BOTH material exculpatory evidence (expert evidence on the cause of the fire) AND…"
+lake:
+  record_id: Benn v. Lambert
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Benn v. Lambert

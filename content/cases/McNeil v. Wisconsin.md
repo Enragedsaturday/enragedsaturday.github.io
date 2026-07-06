@@ -2,9 +2,9 @@
 title: "McNeil v. Wisconsin"
 type: case
 citation: "501 U.S. 171 (1991)"
-parallel_cite: "111 S. Ct. 2204"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "111 S. Ct. 2204; 115 L. Ed. 2d 158"
+neutral_cite: 1991 U.S. LEXIS 3483
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1991
@@ -12,13 +12,18 @@ date_decided: 1991-06-13
 docket: ""
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: ""
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1991-06-13
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: McNeil v. Wisconsin
+  varies_by_point: false
+  scope_note: "Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/112622/mcneil-v-wisconsin/"
-  opinion_id: 112622
+  cluster_id: 112622
+  opinion_id: 9432329
   identity_checked: true
 homes:
   - page: "[[Sixth Amendment Right to Counsel]]"
@@ -27,6 +32,10 @@ related: ["[[Edwards v. Arizona]]", "[[Michigan v. Jackson]]", "[[Montejo v. Lou
 aliases: []
 tags: ["case", "sixth-amendment", "right-to-counsel", "offense-specific", "miranda"]
 holding: "The Sixth Amendment right to counsel is offense-specific, and a 6A invocation is NOT an invocation of the Fifth Amendment *Miranda-Edwards* right to counsel; the two are distinct."
+lake:
+  record_id: McNeil v. Wisconsin
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # McNeil v. Wisconsin

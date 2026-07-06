@@ -2,9 +2,9 @@
 title: "New York v. Quarles"
 type: case
 citation: "467 U.S. 649 (1984)"
-parallel_cite: "104 S. Ct. 2626"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "104 S. Ct. 2626; 81 L. Ed. 2d 550; 52 U.S.L.W. 4790"
+neutral_cite: 1984 U.S. LEXIS 111
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1984
@@ -12,13 +12,18 @@ date_decided: 1984-06-12
 docket: ""
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Establishes the public-safety exception to Miranda; good law."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1984-06-12
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: New York v. Quarles
+  varies_by_point: false
+  scope_note: "Establishes the public-safety exception to Miranda; good law."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/111214/new-york-v-quarles/"
-  opinion_id: 111214
+  cluster_id: 111214
+  opinion_id: 9429664
   identity_checked: true
 homes:
   - page: "[[Miranda and Custodial Interrogation]]"
@@ -27,6 +32,10 @@ related: ["[[Miranda v. Arizona]]", "[[Berkemer v. McCarty]]"]
 aliases: []
 tags: ["case", "fifth-amendment", "miranda", "public-safety-exception", "interrogation"]
 holding: "There is a \"public safety\" exception to Miranda — when officers ask questions reasonably prompted by an immediate threat to public…"
+lake:
+  record_id: New York v. Quarles
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # New York v. Quarles

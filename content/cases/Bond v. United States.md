@@ -2,23 +2,28 @@
 title: "Bond v. United States"
 type: case
 citation: "529 U.S. 334 (2000)"
-parallel_cite: "120 S. Ct. 1462"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "120 S. Ct. 1462; 146 L. Ed. 2d 365"
+neutral_cite: 2000 U.S. LEXIS 2520
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 2000
 date_decided: 2000-04-17
-docket: "98-9349"
+docket: 98-9349
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Good law; the rule that exploratory tactile manipulation of a traveler's bag is a search remains controlling."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 2000-04-17
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Bond v. United States
+  varies_by_point: false
+  scope_note: "Good law; the rule that exploratory tactile manipulation of a traveler's bag is a search remains controlling."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/118354/bond-v-united-states/"
-  opinion_id: 118354
+  cluster_id: 118354
+  opinion_id: 9433930
   identity_checked: true
 homes:
   - page: "[[Two Definitions of Search]]"
@@ -29,6 +34,10 @@ related: ["[[California v. Ciraolo]]", "[[Florida v. Riley]]", "[[United States 
 aliases: ["Bond v. United States (2000)"]
 tags: ["case", "fourth-amendment", "search", "luggage", "tactile", "reasonable-expectation-of-privacy"]
 holding: "An officer's physical manipulation (squeezing) of a bus passenger's soft carry-on luggage is a Fourth Amendment search; tactile inspection is more intrusive than visual observation."
+lake:
+  record_id: Bond v. United States
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Bond v. United States

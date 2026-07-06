@@ -1,24 +1,29 @@
 ---
 title: "Connick v. Thompson"
 type: case
-citation: "563 U.S. 51 (2011)"
-parallel_cite: "131 S. Ct. 1350"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+citation: ""
+parallel_cite: "179 L. Ed. 2d 417; 131 S. Ct. 1350; 563 U.S. 51; 22 Fla. L. Weekly Fed. S 887; 79 U.S.L.W. 4195"
+neutral_cite: 2011 U.S. LEXIS 2594
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 2011
 date_decided: 2011-03-29
-docket: "09-571"
+docket: 09-571
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Good law: a single Brady violation, without a pattern, does not establish municipal failure-to-train liability."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 2011-03-29
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Connick v. Thompson
+  varies_by_point: false
+  scope_note: "Good law: a single Brady violation, without a pattern, does not establish municipal failure-to-train liability."
+  point_overrides: []
 courtlistener:
-  opinion_url: "https://www.courtlistener.com/opinion/213505/connick-v-thompson/"
-  opinion_id: 9441299
+  opinion_url: "https://www.courtlistener.com/opinion/7343085/connick-v-thompson/"
+  cluster_id: 7343085
+  opinion_id: 7261027
   identity_checked: true
 homes:
   - page: "[[Section 1983 Liability and Qualified Immunity]]"
@@ -29,6 +34,10 @@ related: ["[[City of Canton v. Harris]]", "[[Monell v. Department of Social Serv
 aliases: []
 tags: ["case", "section-1983", "municipal-liability", "failure-to-train", "deliberate-indifference", "brady"]
 holding: "A single Brady violation, without a pattern of similar violations, generally cannot establish the deliberate indifference required for municipal failure-to-train liability; prosecutorial Brady training is not within Canton's narrow single-incident exception."
+lake:
+  record_id: Connick v. Thompson
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Connick v. Thompson

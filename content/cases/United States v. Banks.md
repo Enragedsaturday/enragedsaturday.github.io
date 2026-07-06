@@ -2,22 +2,27 @@
 title: "United States v. Banks"
 type: case
 citation: "540 U.S. 31 (2003)"
-parallel_cite: "124 S. Ct. 521"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "124 S. Ct. 521; 157 L. Ed. 2d 343"
+neutral_cite: 2003 U.S. LEXIS 8966
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 2003
 date_decided: 2003-12-02
-docket: "02-473"
+docket: 02-473
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Controlling: in a felony drug case, a 15–20-second wait after knock-and-announce before forcible entry is reasonable where the exigency is imminent destruction of easily disposable evidence; reasonableness turns on the time to dispose of evidence, not travel time to the door."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 2003-12-02
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: United States v. Banks
+  varies_by_point: false
+  scope_note: "Controlling: in a felony drug case, a 15–20-second wait after knock-and-announce before forcible entry is reasonable where the exigency is imminent destruction of easily disposable evidence; reasonableness turns on the time to dispose of evidence, not travel time to the door."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/131146/united-states-v-banks/"
+  cluster_id: 131146
   opinion_id: 131146
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[United States v. Ramirez]]", "[[Richards v. Wisconsin]]", "[[Wilson
 aliases: []
 tags: ["case", "fourth-amendment", "knock-and-announce", "warrant-execution", "exigent-circumstances"]
 holding: "A 15–20-second wait after knocking and announcing before forcing entry to execute a felony drug warrant is reasonable: when the exigency is the imminent destruction of easily disposable evidence, the relevant time is how long disposal would take, not how long the occupant needs to reach the door."
+lake:
+  record_id: United States v. Banks
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # United States v. Banks

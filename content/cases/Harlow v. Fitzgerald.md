@@ -2,9 +2,9 @@
 title: "Harlow v. Fitzgerald"
 type: case
 citation: "457 U.S. 800 (1982)"
-parallel_cite: "102 S. Ct. 2727"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "102 S. Ct. 2727; 73 L. Ed. 2d 396"
+neutral_cite: 1982 U.S. LEXIS 139
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1982
@@ -12,13 +12,18 @@ date_decided: 1982-06-24
 docket: ""
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Objective standard refined (not displaced) by later cases governing the clearly-established inquiry."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1982-06-24
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Harlow v. Fitzgerald
+  varies_by_point: false
+  scope_note: "Objective standard refined (not displaced) by later cases governing the clearly-established inquiry."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/110763/harlow-v-fitzgerald/"
-  opinion_id: 110763
+  cluster_id: 110763
+  opinion_id: 9428863
   identity_checked: true
 homes:
   - page: "[[Section 1983 Liability and Qualified Immunity]]"
@@ -27,6 +32,10 @@ related: ["[[Saucier v. Katz]]", "[[Pearson v. Callahan]]", "[[City of Tahlequah
 aliases: []
 tags: ["case", "qualified-immunity", "section-1983", "clearly-established-law", "objective-test"]
 holding: "Reformulated qualified immunity as a purely OBJECTIVE test: officials performing discretionary functions are shielded from civil damages…"
+lake:
+  record_id: Harlow v. Fitzgerald
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Harlow v. Fitzgerald

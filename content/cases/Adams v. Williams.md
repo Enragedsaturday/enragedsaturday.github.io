@@ -2,9 +2,9 @@
 title: "Adams v. Williams"
 type: case
 citation: "407 U.S. 143 (1972)"
-parallel_cite: "92 S. Ct. 1921"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "92 S. Ct. 1921; 32 L. Ed. 2d 612"
+neutral_cite: 1972 U.S. LEXIS 2206
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1972
@@ -12,12 +12,17 @@ date_decided: 1972-06-12
 docket: ""
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Good law. A tip from a known, face-to-face informant carries enough indicia of reliability to justify a Terry stop and protective frisk; reasonable suspicion need not rest on the officer's personal observation. The anonymous-tip line (Alabama v. White, Florida v. J.L., Navarette) develops the contrast but does not disturb Adams."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1972-06-12
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Adams v. Williams
+  varies_by_point: false
+  scope_note: "Good law. A tip from a known, face-to-face informant carries enough indicia of reliability to justify a Terry stop and protective frisk; reasonable suspicion need not rest on the officer's personal observation. The anonymous-tip line (Alabama v. White, Florida v. J.L., Navarette) develops the contrast but does not disturb Adams."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/108571/adams-v-williams/"
+  cluster_id: 108571
   opinion_id: 108571
   identity_checked: true
 homes:
@@ -29,6 +34,10 @@ related: ["[[Terry v. Ohio]]", "[[Alabama v. White]]", "[[Florida v. J.L.]]", "[
 aliases: []
 tags: ["case", "fourth-amendment", "terry-stop", "reasonable-suspicion", "informant", "frisk"]
 holding: "A tip from a known, face-to-face informant can supply the reasonable suspicion needed for a Terry stop and protective frisk; reasonable suspicion may rest on reliable information supplied by another, not only the officer's own observation."
+lake:
+  record_id: Adams v. Williams
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Adams v. Williams

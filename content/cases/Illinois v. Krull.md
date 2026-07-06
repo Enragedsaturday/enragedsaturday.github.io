@@ -2,9 +2,9 @@
 title: "Illinois v. Krull"
 type: case
 citation: "480 U.S. 340 (1987)"
-parallel_cite: ""
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "107 S. Ct. 1160; 94 L. Ed. 2d 364; 55 U.S.L.W. 4291"
+neutral_cite: 1987 U.S. LEXIS 1061
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1987
@@ -12,12 +12,17 @@ date_decided: 1987-03-09
 docket: ""
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: ""
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1987-03-09
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Illinois v. Krull
+  varies_by_point: false
+  scope_note: "Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/111835/illinois-v-krull/"
+  cluster_id: 111835
   opinion_id: 111835
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[United States v. Leon]]", "[[Massachusetts v. Sheppard]]", "[[Arizo
 aliases: []
 tags: ["case", "fourth-amendment", "exclusionary-rule", "good-faith", "statute"]
 holding: "Good-faith reliance on a STATUTE later held unconstitutional does not trigger exclusion; excluding such evidence would have no deterrent…"
+lake:
+  record_id: Illinois v. Krull
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Illinois v. Krull

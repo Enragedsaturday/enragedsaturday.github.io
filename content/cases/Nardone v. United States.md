@@ -2,22 +2,27 @@
 title: "Nardone v. United States"
 type: case
 citation: "308 U.S. 338 (1939)"
-parallel_cite: "60 S. Ct. 266"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "60 S. Ct. 266; 84 L. Ed. 307"
+neutral_cite: 1939 U.S. LEXIS 1132
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1939
 date_decided: 1939-12-11
-docket: "240"
+docket: 240
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Foundational good law. Though arising under § 605 of the Communications Act, its 'fruit of the poisonous tree' and attenuation doctrine was carried into Fourth Amendment exclusionary-rule law (Wong Sun, Brown v. Illinois) and remains controlling."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1939-12-11
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Nardone v. United States
+  varies_by_point: false
+  scope_note: "Foundational good law. Though arising under § 605 of the Communications Act, its 'fruit of the poisonous tree' and attenuation doctrine was carried into Fourth Amendment exclusionary-rule law (Wong Sun, Brown v. Illinois) and remains controlling."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/103259/nardone-v-united-states/"
+  cluster_id: 103259
   opinion_id: 103259
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Silverthorne Lumber Co. v. United States]]", "[[Wong Sun v. United 
 aliases: ["Nardone v. United States (1939)"]
 tags: ["case", "fourth-amendment", "exclusionary-rule", "fruit-of-the-poisonous-tree", "attenuation", "wiretap"]
 holding: "Illegally obtained evidence may not be used derivatively: a defendant who proves an unlawful search/wiretap may show that a substantial part of the case against him is a 'fruit of the poisonous tree,' which must be excluded — unless the Government shows an independent origin, or the connection has become so attenuated as to dissipate the taint."
+lake:
+  record_id: Nardone v. United States
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Nardone v. United States

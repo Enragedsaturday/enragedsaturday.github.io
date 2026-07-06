@@ -2,22 +2,27 @@
 title: "District of Columbia v. Wesby"
 type: case
 citation: "583 U.S. 48 (2018)"
-parallel_cite: "138 S. Ct. 577"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "138 S. Ct. 577; 199 L. Ed. 2d 453"
+neutral_cite: 2018 U.S. LEXIS 760
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 2018
 date_decided: 2018-01-22
-docket: "15-1485"
+docket: 15-1485
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: ""
-  by: []
+  field_i_validity: good_law
+  as_of_content: 2018-01-22
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: District of Columbia v. Wesby
+  varies_by_point: false
+  scope_note: "Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/4460854/district-of-columbia-v-wesby/"
+  cluster_id: 4460854
   opinion_id: 4238107
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Illinois v. Gates]]", "[[Maryland v. Pringle]]", "[[Devenpeck v. Al
 aliases: ["DC v. Wesby"]
 tags: ["case", "fourth-amendment", "probable-cause", "totality-of-the-circumstances", "qualified-immunity"]
 holding: "Probable cause is a totality inquiry; courts must not divide-and-conquer the facts."
+lake:
+  record_id: District of Columbia v. Wesby
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # District of Columbia v. Wesby

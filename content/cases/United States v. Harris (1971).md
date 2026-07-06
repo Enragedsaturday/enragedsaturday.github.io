@@ -2,22 +2,27 @@
 title: "United States v. Harris (1971)"
 type: case
 citation: "403 U.S. 573 (1971)"
-parallel_cite: "91 S. Ct. 2075"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "91 S. Ct. 2075; 29 L. Ed. 2d 723"
+neutral_cite: 1971 U.S. LEXIS 18
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1971
 date_decided: 1971-06-28
-docket: "30"
+docket: 30
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "The penal-interest reliability principle survives — a declaration against penal interest remains a recognized indicium of an informant's reliability, carried forward into the totality-of-the-circumstances test. The Aguilar-Spinelli two-pronged framework this plurality was eroding was later replaced by Illinois v. Gates (1983)."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1971-06-28
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: "United States v. Harris (1971)"
+  varies_by_point: false
+  scope_note: "The penal-interest reliability principle survives — a declaration against penal interest remains a recognized indicium of an informant's reliability, carried forward into the totality-of-the-circumstances test. The Aguilar-Spinelli two-pronged framework this plurality was eroding was later replaced by Illinois v. Gates (1983)."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/108379/united-states-v-harris/"
+  cluster_id: 108379
   opinion_id: 108379
   identity_checked: true
 homes:
@@ -29,6 +34,10 @@ related: ["[[Aguilar v. Texas]]", "[[Spinelli v. United States]]", "[[Illinois v
 aliases: ["United States v. Harris"]
 tags: ["case", "fourth-amendment", "probable-cause", "informant", "warrant-requirement"]
 holding: "An informant's statement against his penal interest is itself an indicium of reliability that can support probable cause for a warrant; admissions of crime 'carry their own indicia of credibility,' and a magistrate may also rely on an officer's knowledge of the suspect's reputation."
+lake:
+  record_id: "United States v. Harris (1971)"
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # United States v. Harris (1971)

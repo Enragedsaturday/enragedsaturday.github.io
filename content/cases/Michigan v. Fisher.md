@@ -2,9 +2,9 @@
 title: "Michigan v. Fisher"
 type: case
 citation: "558 U.S. 45 (2009)"
-parallel_cite: "130 S. Ct. 546"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "130 S. Ct. 546; 175 L. Ed. 2d 410"
+neutral_cite: 2009 U.S. LEXIS 8773
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 2009
@@ -12,13 +12,18 @@ date_decided: 2009-12-07
 docket: ""
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Per curiam; applies Brigham City v. Stuart."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 2009-12-07
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Michigan v. Fisher
+  varies_by_point: false
+  scope_note: "Per curiam; applies Brigham City v. Stuart."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/1755/michigan-v-fisher/"
-  opinion_id: 1755
+  cluster_id: 1755
+  opinion_id: 9413217
   identity_checked: true
 homes:
   - page: "[[Emergency Aid]]"
@@ -27,6 +32,10 @@ related: ["[[Brigham City v. Stuart]]", "[[Mincey v. Arizona]]", "[[Caniglia v. 
 aliases: []
 tags: ["case", "fourth-amendment", "emergency-aid", "warrantless-entry", "home", "per-curiam"]
 holding: "Applies Brigham City: emergency-aid entry upheld where it was objectively reasonable to believe an occupant was injured or about to be;…"
+lake:
+  record_id: Michigan v. Fisher
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Michigan v. Fisher

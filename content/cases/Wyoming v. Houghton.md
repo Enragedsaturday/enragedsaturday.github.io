@@ -2,22 +2,27 @@
 title: "Wyoming v. Houghton"
 type: case
 citation: "526 U.S. 295 (1999)"
-parallel_cite: "119 S. Ct. 1297"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "119 S. Ct. 1297; 143 L. Ed. 2d 408"
+neutral_cite: 1999 U.S. LEXIS 2347
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1999
 date_decided: 1999-04-05
-docket: "98-184"
+docket: 98-184
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Extends the Ross container rule to a passenger's belongings; good law. Does not authorize searching a passenger's person."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1999-04-05
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Wyoming v. Houghton
+  varies_by_point: false
+  scope_note: "Extends the Ross container rule to a passenger's belongings; good law. Does not authorize searching a passenger's person."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/118277/wyoming-v-houghton/"
+  cluster_id: 118277
   opinion_id: 118277
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[United States v. Ross]]", "[[California v. Acevedo]]", "[[Maryland 
 aliases: ["Houghton"]
 tags: ["case", "fourth-amendment", "automobile-exception", "containers", "passengers", "probable-cause"]
 holding: "With PC to search a car, officers may search a passenger's belongings capable of concealing the object; a non-suspect passenger's ownership is no shield."
+lake:
+  record_id: Wyoming v. Houghton
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Wyoming v. Houghton

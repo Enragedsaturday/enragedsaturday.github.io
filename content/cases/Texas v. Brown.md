@@ -1,10 +1,10 @@
 ---
 title: "Texas v. Brown"
 type: case
-citation: "460 U.S. 730 (1983) (plurality)"
-parallel_cite: "103 S. Ct. 1535"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+citation: "460 U.S. 730 (1983)"
+parallel_cite: "103 S. Ct. 1535; 75 L. Ed. 2d 502; 51 U.S.L.W. 4361"
+neutral_cite: 1983 U.S. LEXIS 143
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1983
@@ -12,14 +12,19 @@ date_decided: 1983-04-19
 docket: ""
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Plurality opinion; its 'immediately apparent = probable cause' reading is settled and was confirmed for plain view in Arizona v. Hicks and Horton v. California."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1983-04-19
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Texas v. Brown
+  varies_by_point: false
+  scope_note: "Plurality opinion; its 'immediately apparent = probable cause' reading is settled and was confirmed for plain view in Arizona v. Hicks and Horton v. California."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/110901/texas-v-brown/"
-  opinion_id: 110901
-  identity_checked: true
+  cluster_id: 110901
+  opinion_id: 9429131
+  identity_checked: false
 homes:
   - page: "[[Plain View Doctrine]]"
     role: "Key — Progeny / Refinement"
@@ -27,6 +32,10 @@ related: ["[[Coolidge v. New Hampshire]]", "[[Arizona v. Hicks]]", "[[Horton v. 
 aliases: []
 tags: ["case", "fourth-amendment", "plain-view"]
 holding: "'Immediately apparent' means probable cause, not certainty ('an unhappy choice of words'); shining a flashlight into a car interior is not a search."
+lake:
+  record_id: Texas v. Brown
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Texas v. Brown

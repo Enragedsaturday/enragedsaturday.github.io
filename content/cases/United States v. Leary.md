@@ -1,23 +1,28 @@
 ---
 title: "United States v. Leary"
 type: case
-citation: "846 F.2d 592 (10th Cir. 1988)"
+citation: "846 F.2d 592 (1988)"
 parallel_cite: ""
-neutral_cite: ""
+neutral_cite: "1988 U.S. App. LEXIS 5755; 1988 WL 39811"
 court: "U.S. Court of Appeals, Tenth Circuit"
-court_level: circuit
-circuit: "10th"
+court_level: coa
+circuit: 10th
 year: 1988
-date_decided: ""
+date_decided: 1988-05-02
 docket: ""
 authority_weight: "Binding in-circuit — 10th Cir."
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: ""
-  by: []
+  field_i_validity: good_law
+  as_of_content: null
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: United States v. Leary
+  varies_by_point: false
+  scope_note: "Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/505922/united-states-v-richard-j-leary-and-fl-kleinberg-co/"
+  cluster_id: 505922
   opinion_id: 505922
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[United States v. Leon]]", "[[Massachusetts v. Sheppard]]", "[[Cooli
 aliases: ["United States v. Leary (10th Cir. 1988)", "United States v. Richard J. Leary"]
 tags: ["case", "fourth-amendment", "exclusionary-rule", "particularity", "general-warrant", "overbreadth", "good-faith-exception", "tenth-circuit"]
 holding: "A facially overbroad / general warrant (authorizing seizure of records 'relating to' violations of the export laws, offering no…"
+lake:
+  record_id: United States v. Leary
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # United States v. Leary

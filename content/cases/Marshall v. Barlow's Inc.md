@@ -2,22 +2,27 @@
 title: "Marshall v. Barlow's, Inc."
 type: case
 citation: "436 U.S. 307 (1978)"
-parallel_cite: "98 S. Ct. 1816"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "98 S. Ct. 1816; 56 L. Ed. 2d 305; 8 Envtl. L. Rep. (Envtl. Law Inst.) 20434; 6 OSHC (BNA) 1571"
+neutral_cite: 1978 U.S. LEXIS 26
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1978
 date_decided: 1978-05-23
-docket: "76-1143"
+docket: 76-1143
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Good law. OSHA § 8(a)'s warrantless-inspection authorization held unconstitutional; the administrative-warrant requirement for ordinary workplaces stands."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1978-05-23
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: "Marshall v. Barlow's, Inc."
+  varies_by_point: false
+  scope_note: "Good law. OSHA § 8(a)'s warrantless-inspection authorization held unconstitutional; the administrative-warrant requirement for ordinary workplaces stands."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/109866/marshall-v-barlows-inc/"
+  cluster_id: 109866
   opinion_id: 109866
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[See v. City of Seattle]]", "[[Camara v. Municipal Court]]", "[[Dono
 aliases: ["Marshall v. Barlow's"]
 tags: ["case", "fourth-amendment", "administrative-search", "inspections", "OSHA", "workplace", "warrant"]
 holding: "OSHA's authorization of warrantless workplace inspections is unconstitutional; a nonconsensual inspection of an ordinary business generally requires an administrative warrant, unless the pervasively-regulated-industry exception applies."
+lake:
+  record_id: "Marshall v. Barlow's Inc"
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Marshall v. Barlow's, Inc.

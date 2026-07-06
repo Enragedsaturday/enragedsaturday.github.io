@@ -1,23 +1,28 @@
 ---
 title: "United States v. Gastiaburo"
 type: case
-citation: "16 F.3d 582 (4th Cir. 1994)"
+citation: "16 F.3d 582 (1994)"
 parallel_cite: ""
-neutral_cite: ""
+neutral_cite: 1994 WL 32623
 court: "U.S. Court of Appeals, Fourth Circuit"
-court_level: circuit
-circuit: "4th"
+court_level: coa
+circuit: 4th
 year: 1994
 date_decided: 1994-02-08
 docket: ""
 authority_weight: "Binding in-circuit — 4th Cir."
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: ""
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1994-02-08
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: United States v. Gastiaburo
+  varies_by_point: false
+  scope_note: "Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/7027957/united-states-v-gastiaburo/"
+  cluster_id: 7027957
   opinion_id: 6929715
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[California v. Acevedo]]", "[[Carroll v. United States]]", "[[United
 aliases: ["United States v. Gastiaburo (4th Cir. 1994)"]
 tags: ["case", "fourth-amendment", "automobile-exception", "impoundment", "delayed-search", "fourth-circuit"]
 holding: "The automobile exception is not subject to a temporal limit; a 38-day gap between the car's seizure and the warrantless search did not…"
+lake:
+  record_id: United States v. Gastiaburo
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # United States v. Gastiaburo

@@ -1,25 +1,30 @@
 ---
 title: "Riley v. California"
 type: case
-citation: "573 U.S. 373 (2014)"
-parallel_cite: "134 S. Ct. 2473"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+citation: "572 U.S. 1055 (2014)"
+parallel_cite: "134 S. Ct. 1870; 188 L. Ed. 2d 774; 82 U.S.L.W. 3608"
+neutral_cite: "2014 WL 1499818; 2014 U.S. LEXIS 2544"
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 2014
-date_decided: 2014-06-25
-docket: "13-132"
+date_decided: 2014-04-18
+docket: 13-132
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: ""
-  by: []
+  field_i_validity: good_law
+  as_of_content: 2014-06-25
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Riley v. California
+  varies_by_point: false
+  scope_note: "Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade."
+  point_overrides: []
 courtlistener:
-  opinion_url: "https://www.courtlistener.com/opinion/2680439/riley-v-cal-united-states/"
-  opinion_id: 2680439
-  identity_checked: true
+  opinion_url: "https://www.courtlistener.com/opinion/8416508/riley-v-california/"
+  cluster_id: 8416508
+  opinion_id: 8386852
+  identity_checked: false
 homes:
   - page: "[[Search Incident to Arrest]]"
     role: "Key — Progeny / Refinement"
@@ -29,6 +34,10 @@ related: ["[[United States v. Robinson]]", "[[Chimel v. California]]", "[[Arizon
 aliases: ["Riley v. California (2014)", "United States v. Wurie"]
 tags: ["case", "fourth-amendment", "search-incident-to-arrest", "cell-phone", "digital-search", "warrant-requirement"]
 holding: "The Robinson bright-line search-incident rule does NOT extend to the digital contents of a cell phone seized incident to arrest.…"
+lake:
+  record_id: Riley v. California
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Riley v. California

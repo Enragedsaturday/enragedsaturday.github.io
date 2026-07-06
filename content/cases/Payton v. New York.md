@@ -2,22 +2,27 @@
 title: "Payton v. New York"
 type: case
 citation: "445 U.S. 573 (1980)"
-parallel_cite: "100 S. Ct. 1371"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "100 S. Ct. 1371; 63 L. Ed. 2d 639"
+neutral_cite: 1980 U.S. LEXIS 13
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1980
 date_decided: 1980-04-15
-docket: "78-5420"
+docket: 78-5420
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: ""
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1980-04-15
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Payton v. New York
+  varies_by_point: false
+  scope_note: "Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/110235/payton-v-new-york/"
+  cluster_id: 110235
   opinion_id: 110235
   identity_checked: true
 homes:
@@ -29,6 +34,10 @@ related: ["[[United States v. Watson]]", "[[Steagald v. United States]]", "[[Mar
 aliases: []
 tags: ["case", "fourth-amendment", "arrest-in-the-home", "arrest-warrant", "warrant-requirement", "threshold"]
 holding: "Warrantless, nonconsensual entry into a SUSPECT'S OWN home to make a routine felony arrest is presumptively unreasonable; an arrest…"
+lake:
+  record_id: Payton v. New York
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Payton v. New York

@@ -2,22 +2,27 @@
 title: "Mallory v. United States"
 type: case
 citation: "354 U.S. 449 (1957)"
-parallel_cite: "77 S. Ct. 1356"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "77 S. Ct. 1356; 1 L. Ed. 2d 1479"
+neutral_cite: 1957 U.S. LEXIS 586
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1957
 date_decided: 1957-06-24
-docket: "521"
+docket: 521
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Good law as the 'Mallory' half of the McNabb-Mallory federal prompt-presentment rule. A federal-court rule (Rule 5(a)), not a constitutional rule binding the States; later modified — not supplanted — by 18 U.S.C. §3501's six-hour safe harbor, per Corley v. United States."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1957-06-24
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Mallory v. United States
+  varies_by_point: false
+  scope_note: "Good law as the 'Mallory' half of the McNabb-Mallory federal prompt-presentment rule. A federal-court rule (Rule 5(a)), not a constitutional rule binding the States; later modified — not supplanted — by 18 U.S.C. §3501's six-hour safe harbor, per Corley v. United States."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/105545/mallory-v-united-states/"
+  cluster_id: 105545
   opinion_id: 105545
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[McNabb v. United States]]", "[[Corley v. United States]]", "[[Count
 aliases: []
 tags: ["case", "fifth-amendment", "confessions", "mcnabb-mallory", "prompt-presentment", "rule-5a", "federal"]
 holding: "A confession obtained from an arrestee during a period of unnecessary delay in bringing him before a committing magistrate, in violation of Federal Rule of Criminal Procedure 5(a), is inadmissible in a federal prosecution; delay used to give an opportunity to extract a confession is 'unnecessary delay.'"
+lake:
+  record_id: Mallory v. United States
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Mallory v. United States

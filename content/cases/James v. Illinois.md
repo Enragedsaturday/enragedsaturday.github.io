@@ -2,22 +2,27 @@
 title: "James v. Illinois"
 type: case
 citation: "493 U.S. 307 (1990)"
-parallel_cite: "110 S. Ct. 648"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "110 S. Ct. 648; 107 L. Ed. 2d 676; 58 U.S.L.W. 4115"
+neutral_cite: 1990 U.S. LEXIS 335
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1990
 date_decided: 1990-01-10
-docket: "88-6075"
+docket: 88-6075
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Caps the impeachment exception at the defendant's own testimony; good law."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1990-01-10
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: James v. Illinois
+  varies_by_point: false
+  scope_note: "Caps the impeachment exception at the defendant's own testimony; good law."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/112350/james-v-illinois/"
+  cluster_id: 112350
   opinion_id: 112350
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Walder v. United States]]", "[[United States v. Havens]]", "[[Elkin
 aliases: []
 tags: ["case", "fourth-amendment", "exclusionary-rule", "impeachment-exception", "defense-witness", "deterrence"]
 holding: "The impeachment exception to the exclusionary rule is confined to the defendant's own testimony; the prosecution may not use illegally obtained evidence to impeach the testimony of other defense witnesses."
+lake:
+  record_id: James v. Illinois
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # James v. Illinois

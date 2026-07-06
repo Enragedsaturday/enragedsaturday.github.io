@@ -2,22 +2,27 @@
 title: "United States v. Grubbs"
 type: case
 citation: "547 U.S. 90 (2006)"
-parallel_cite: "126 S. Ct. 1494"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "126 S. Ct. 1494; 164 L. Ed. 2d 195"
+neutral_cite: 2006 U.S. LEXIS 2496
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 2006
 date_decided: 2006-03-21
-docket: "04-1414"
+docket: 04-1414
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: ""
-  by: []
+  field_i_validity: good_law
+  as_of_content: 2006-03-21
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: United States v. Grubbs
+  varies_by_point: false
+  scope_note: "Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/145670/united-states-v-grubbs/"
+  cluster_id: 145670
   opinion_id: 145670
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Illinois v. Gates]]", "[[Groh v. Ramirez]]", "[[Massachusetts v. Sh
 aliases: []
 tags: ["case", "fourth-amendment", "warrant-requirement", "anticipatory-warrant", "triggering-condition", "particularity"]
 holding: "**Anticipatory warrants** — warrants that take effect only upon a future 'triggering condition' — are not categorically…"
+lake:
+  record_id: United States v. Grubbs
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # United States v. Grubbs

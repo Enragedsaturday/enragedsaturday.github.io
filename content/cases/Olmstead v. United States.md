@@ -2,22 +2,27 @@
 title: "Olmstead v. United States"
 type: case
 citation: "277 U.S. 438 (1928)"
-parallel_cite: "48 S. Ct. 564"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "48 S. Ct. 564; 72 L. Ed. 944; 66 A.L.R. 376"
+neutral_cite: 1928 U.S. LEXIS 694
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1928
 date_decided: 1928-06-04
 docket: ""
-authority_weight: "Historical"
+authority_weight: "Binding — SCOTUS"
 treatment:
-  status: overruled
-  as_of: 2026-06-30
-  note: "Overruled on the privacy point by Katz v. United States (1967); survives only as history. The property-trespass approach was later revived as an alternative test in United States v. Jones (2012)."
-  by: ["[[Katz v. United States]]"]
+  field_i_validity: superseded
+  as_of_content: 1928-06-04
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Olmstead v. United States
+  varies_by_point: false
+  scope_note: "Overruled on the privacy point by Katz v. United States (1967); survives only as history. The property-trespass approach was later revived as an alternative test in United States v. Jones (2012)."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/101320/olmstead-v-united-states/"
+  cluster_id: 101320
   opinion_id: 101320
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Katz v. United States]]", "[[United States v. Jones]]", "[[Berger v
 aliases: []
 tags: ["case", "fourth-amendment", "wiretap", "trespass", "overruled", "historical"]
 holding: "Wiretapping with no physical entry was not a search — pure property/trespass framing; overruled on the privacy point by *Katz* (property instinct later revived by *Jones*)."
+lake:
+  record_id: Olmstead v. United States
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Olmstead v. United States

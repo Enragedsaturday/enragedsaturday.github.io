@@ -2,22 +2,27 @@
 title: "Fare v. Michael C."
 type: case
 citation: "442 U.S. 707 (1979)"
-parallel_cite: "99 S. Ct. 2560"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "99 S. Ct. 2560; 61 L. Ed. 2d 197"
+neutral_cite: 1979 U.S. LEXIS 133
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1979
-date_decided: 1979-06-20
-docket: "78-334"
+date_decided: 1979-10-01
+docket: 78-334
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Good law; the juvenile totality-of-the-circumstances waiver test remains the rule (cf. J.D.B. v. North Carolina on age in the custody inquiry)."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1979-06-20
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Fare v. Michael C.
+  varies_by_point: false
+  scope_note: "Good law; the juvenile totality-of-the-circumstances waiver test remains the rule (cf. J.D.B. v. North Carolina on age in the custody inquiry)."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/110117/fare-v-michael-c/"
+  cluster_id: 110117
   opinion_id: 110117
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Miranda v. Arizona]]", "[[Yarborough v. Alvarado]]", "[[J.D.B. v. N
 aliases: []
 tags: ["case", "fifth-amendment", "miranda", "juvenile", "invocation", "waiver"]
 holding: "A juvenile's request to speak with his probation officer is not a per se invocation of the Fifth Amendment (unlike a request for a lawyer); whether a juvenile validly waived his Miranda rights is judged by the totality of the circumstances."
+lake:
+  record_id: Fare v. Michael C
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Fare v. Michael C.

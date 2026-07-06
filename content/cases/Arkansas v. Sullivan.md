@@ -2,9 +2,9 @@
 title: "Arkansas v. Sullivan"
 type: case
 citation: "532 U.S. 769 (2001)"
-parallel_cite: "121 S. Ct. 1876"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "121 S. Ct. 1876; 149 L. Ed. 2d 994"
+neutral_cite: 2001 U.S. LEXIS 4118
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 2001
@@ -12,13 +12,18 @@ date_decided: 2001-05-29
 docket: ""
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Good law. Per curiam. An arrest supported by probable cause is valid under the Fourth Amendment regardless of the officer's pretextual or subjective motivation, extending Whren v. United States from traffic stops to arrests; a state may not, as a matter of federal constitutional law, provide greater protection by inquiring into subjective motive."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 2001-05-29
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Arkansas v. Sullivan
+  varies_by_point: false
+  scope_note: "Good law. Per curiam. An arrest supported by probable cause is valid under the Fourth Amendment regardless of the officer's pretextual or subjective motivation, extending Whren v. United States from traffic stops to arrests; a state may not, as a matter of federal constitutional law, provide greater protection by inquiring into subjective motive."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/2620699/arkansas-v-sullivan/"
-  opinion_id: 2620699
+  cluster_id: 2620699
+  opinion_id: 9795082
   identity_checked: true
 homes:
   - page: "[[Traffic Stops]]"
@@ -27,6 +32,10 @@ related: ["[[Whren v. United States]]", "[[Atwater v. City of Lago Vista]]", "[[
 aliases: []
 tags: ["case", "fourth-amendment", "traffic-stop", "pretext", "arrest", "per-curiam"]
 holding: "An arrest supported by probable cause is reasonable under the Fourth Amendment regardless of the officer's pretextual or subjective motivation, extending Whren's rule from stops to arrests."
+lake:
+  record_id: Arkansas v. Sullivan
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Arkansas v. Sullivan

@@ -1,24 +1,29 @@
 ---
 title: "Rodriguez v. United States"
 type: case
-citation: "575 U.S. 348 (2015)"
-parallel_cite: "135 S. Ct. 1609"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+citation: ""
+parallel_cite: "575 U.S. 348; 135 S. Ct. 1609; 191 L. Ed. 2d 492; 83 U.S.L.W. 4241; 25 Fla. L. Weekly Fed. S 191"
+neutral_cite: 2015 U.S. LEXIS 2807
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 2015
 date_decided: 2015-04-21
-docket: "13-9972"
+docket: 13-9972
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: ""
-  by: []
+  field_i_validity: good_law
+  as_of_content: 2015-04-21
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Rodriguez v. United States
+  varies_by_point: false
+  scope_note: "Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/2795278/rodriguez-v-united-states/"
-  opinion_id: 2795278
+  cluster_id: 2795278
+  opinion_id: 9806947
   identity_checked: true
 homes:
   - page: "[[Traffic Stops]]"
@@ -27,6 +32,10 @@ related: ["[[Pennsylvania v. Mimms]]", "[[Delaware v. Prouse]]", "[[Berkemer v. 
 aliases: ["Rodriguez v. United States (2015)"]
 tags: ["case", "fourth-amendment", "traffic-stops", "stop-duration", "dog-sniff", "mission"]
 holding: "A traffic stop may last no longer than necessary to complete the stop's 'mission' (addressing the violation and ordinary inquiries).…"
+lake:
+  record_id: Rodriguez v. United States
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Rodriguez v. United States

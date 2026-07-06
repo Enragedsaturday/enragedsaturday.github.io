@@ -2,22 +2,27 @@
 title: "Dickerson v. United States"
 type: case
 citation: "530 U.S. 428 (2000)"
-parallel_cite: "120 S. Ct. 2326"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "120 S. Ct. 2326; 147 L. Ed. 2d 405"
+neutral_cite: 2000 U.S. LEXIS 4305
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 2000
 date_decided: 2000-06-26
-docket: "99-5525"
+docket: 99-5525
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: ""
-  by: []
+  field_i_validity: good_law
+  as_of_content: 2000-06-26
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Dickerson v. United States
+  varies_by_point: false
+  scope_note: "Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/118380/dickerson-v-united-states/"
+  cluster_id: 118380
   opinion_id: 118380
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Miranda v. Arizona]]", "[[Berkemer v. McCarty]]", "[[Berghuis v. Th
 aliases: []
 tags: ["case", "fifth-amendment", "miranda", "constitutional-rule", "section-3501", "stare-decisis"]
 holding: "Miranda is a constitutional rule that Congress may not supersede by statute; § 3501 is unconstitutional and Miranda governs the…"
+lake:
+  record_id: Dickerson v. United States
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Dickerson v. United States

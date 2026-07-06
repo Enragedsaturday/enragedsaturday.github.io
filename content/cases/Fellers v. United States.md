@@ -2,22 +2,27 @@
 title: "Fellers v. United States"
 type: case
 citation: "540 U.S. 519 (2004)"
-parallel_cite: "124 S. Ct. 1019"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "124 S. Ct. 1019; 157 L. Ed. 2d 1016"
+neutral_cite: 2004 U.S. LEXIS 825
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 2004
 date_decided: 2004-01-26
-docket: "02-6320"
+docket: 02-6320
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Good law; unanimous. Remanded on the fruits question (whether Elstad's Fifth Amendment analysis governs a Sixth Amendment violation)."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 2004-01-26
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Fellers v. United States
+  varies_by_point: false
+  scope_note: "Good law; unanimous. Remanded on the fruits question (whether Elstad's Fifth Amendment analysis governs a Sixth Amendment violation)."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/131158/fellers-v-united-states/"
+  cluster_id: 131158
   opinion_id: 131158
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Massiah v. United States]]", "[[Brewer v. Williams]]", "[[Oregon v.
 aliases: []
 tags: ["case", "sixth-amendment", "right-to-counsel", "massiah", "deliberate-elicitation"]
 holding: "After indictment, officers who deliberately elicit incriminating statements from a defendant outside the presence of counsel and without a waiver violate the Sixth Amendment under Massiah — and the Sixth Amendment standard is deliberate elicitation, not Miranda 'interrogation,' so the absence of interrogation does not defeat the claim."
+lake:
+  record_id: Fellers v. United States
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Fellers v. United States

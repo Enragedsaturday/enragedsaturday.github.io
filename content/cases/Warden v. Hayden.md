@@ -2,23 +2,28 @@
 title: "Warden v. Hayden"
 type: case
 citation: "387 U.S. 294 (1967)"
-parallel_cite: "87 S. Ct. 1642"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "87 S. Ct. 1642; 18 L. Ed. 2d 782"
+neutral_cite: 1967 U.S. LEXIS 2753
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1967
 date_decided: 1967-05-29
-docket: "480"
+docket: 480
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Foundational hot-pursuit case; also abolished the 'mere evidence' rule of Gouled v. United States. Good law."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1967-05-29
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Warden v. Hayden
+  varies_by_point: false
+  scope_note: "Foundational hot-pursuit case; also abolished the 'mere evidence' rule of Gouled v. United States. Good law."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/107465/warden-maryland-penitentiary-v-hayden/"
-  opinion_id: 107465
+  cluster_id: 107465
+  opinion_id: 9423434
   identity_checked: true
 homes:
   - page: "[[Exigent Circumstances and Hot Pursuit]]"
@@ -27,6 +32,10 @@ related: ["[[United States v. Santana]]", "[[Kentucky v. King]]", "[[Welsh v. Wi
 aliases: ["Warden, Maryland Penitentiary v. Hayden", "Hayden"]
 tags: ["case", "fourth-amendment", "exigent-circumstances", "hot-pursuit", "warrantless-entry"]
 holding: "Hot pursuit of a fleeing armed robber into a house is a valid warrantless entry and search where \"the exigencies of the situation made…"
+lake:
+  record_id: Warden v. Hayden
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Warden v. Hayden

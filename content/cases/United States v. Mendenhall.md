@@ -2,23 +2,28 @@
 title: "United States v. Mendenhall"
 type: case
 citation: "446 U.S. 544 (1980)"
-parallel_cite: "100 S. Ct. 1870"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "100 S. Ct. 1870; 64 L. Ed. 2d 497"
+neutral_cite: 1980 U.S. LEXIS 102
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1980
-date_decided: 1980-05-27
-docket: "78-1821"
+date_decided: 1980-06-30
+docket: 78-1821
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "The 'free to leave' test was announced in Justice Stewart's opinion (joined on the seizure point only by Justice Rehnquist) but was later adopted by the full Court and is the governing standard."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1980-05-27
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: United States v. Mendenhall
+  varies_by_point: false
+  scope_note: "The 'free to leave' test was announced in Justice Stewart's opinion (joined on the seizure point only by Justice Rehnquist) but was later adopted by the full Court and is the governing standard."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/110264/united-states-v-mendenhall/"
-  opinion_id: 110264
+  cluster_id: 110264
+  opinion_id: 9427929
   identity_checked: true
 homes:
   - page: "[[Seizure of the Person]]"
@@ -27,6 +32,10 @@ related: ["[[Terry v. Ohio]]", "[[Florida v. Bostick]]", "[[California v. Hodari
 aliases: []
 tags: ["case", "fourth-amendment", "seizure-of-the-person", "free-to-leave", "consensual-encounter", "drug-courier-profile"]
 holding: "The 'free to leave' benchmark: a person is seized only if, under all the circumstances, a reasonable person would not have believed himself free to leave."
+lake:
+  record_id: United States v. Mendenhall
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # United States v. Mendenhall

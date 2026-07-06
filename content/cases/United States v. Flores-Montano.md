@@ -1,23 +1,28 @@
 ---
 title: "United States v. Flores-Montano"
 type: case
-citation: "541 U.S. 149 (2004)"
-parallel_cite: "124 S. Ct. 1582"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+citation: ""
+parallel_cite: "541 U.S. 149; 124 S. Ct. 1582; 158 L. Ed. 2d 311; 72 U.S.L.W. 4263; 17 Fla. L. Weekly Fed. S 207"
+neutral_cite: 2004 U.S. LEXIS 2548
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 2004
 date_decided: 2004-03-30
-docket: "02-1794"
+docket: 02-1794
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: ""
-  by: []
+  field_i_validity: good_law
+  as_of_content: 2004-03-30
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: United States v. Flores-Montano
+  varies_by_point: false
+  scope_note: "Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/134729/united-states-v-flores-montano/"
+  cluster_id: 134729
   opinion_id: 134729
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[United States v. Montoya de Hernandez]]", "[[United States v. Marti
 aliases: []
 tags: ["case", "fourth-amendment", "border-searches", "vehicle-search", "gas-tank", "suspicionless-search"]
 holding: "The government's authority to conduct suspicionless searches of vehicles at the border includes disassembling and reassembling a gas…"
+lake:
+  record_id: United States v. Flores-Montano
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # United States v. Flores-Montano

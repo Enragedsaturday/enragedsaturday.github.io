@@ -2,22 +2,27 @@
 title: "Silverthorne Lumber Co. v. United States"
 type: case
 citation: "251 U.S. 385 (1920)"
-parallel_cite: "40 S. Ct. 182"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "40 S. Ct. 182; 64 L. Ed. 319"
+neutral_cite: 1920 U.S. LEXIS 1685
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1920
-date_decided: 1920-01-26
-docket: "358"
+date_decided: 1920-03-01
+docket: 358
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Foundational good law; origin of both the fruit-of-the-poisonous-tree rule and the independent-source exception, applied continuously through Wong Sun, Murray, and modern attenuation cases."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1920-01-26
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Silverthorne Lumber Co. v. United States
+  varies_by_point: false
+  scope_note: "Foundational good law; origin of both the fruit-of-the-poisonous-tree rule and the independent-source exception, applied continuously through Wong Sun, Murray, and modern attenuation cases."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/99506/silverthorne-lumber-co-v-united-states/"
+  cluster_id: 99506
   opinion_id: 99506
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Weeks v. United States]]", "[[Nardone v. United States]]"]
 aliases: ["Silverthorne Lumber Co v United States"]
 tags: ["case", "fourth-amendment", "exclusionary-rule", "fruit-of-the-poisonous-tree", "independent-source"]
 holding: "Evidence obtained through an unconstitutional search may not be used at all — directly or indirectly — and the government may not exploit knowledge gained from its own illegal seizure; but facts learned from a genuinely independent source may still be proved (the independent-source exception)."
+lake:
+  record_id: Silverthorne Lumber Co. v. United States
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Silverthorne Lumber Co. v. United States

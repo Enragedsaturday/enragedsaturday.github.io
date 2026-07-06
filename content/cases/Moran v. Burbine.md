@@ -2,9 +2,9 @@
 title: "Moran v. Burbine"
 type: case
 citation: "475 U.S. 412 (1986)"
-parallel_cite: "106 S. Ct. 1135"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "106 S. Ct. 1135; 89 L. Ed. 2d 410; 54 U.S.L.W. 4265"
+neutral_cite: 1986 U.S. LEXIS 32
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1986
@@ -12,12 +12,17 @@ date_decided: 1986-03-10
 docket: ""
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Canonical statement of the two-dimensional Miranda-waiver standard; no negative treatment."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1986-03-10
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Moran v. Burbine
+  varies_by_point: false
+  scope_note: "Canonical statement of the two-dimensional Miranda-waiver standard; no negative treatment."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/111614/moran-v-burbine/"
+  cluster_id: 111614
   opinion_id: 111614
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Miranda v. Arizona]]", "[[North Carolina v. Butler]]", "[[Edwards v
 aliases: []
 tags: ["case", "fifth-amendment", "miranda", "waiver"]
 holding: "A Miranda waiver is valid even though police failed to tell the suspect that an attorney was trying to reach him; events outside the…"
+lake:
+  record_id: Moran v. Burbine
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Moran v. Burbine

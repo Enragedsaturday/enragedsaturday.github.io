@@ -2,22 +2,27 @@
 title: "Dunaway v. New York"
 type: case
 citation: "442 U.S. 200 (1979)"
-parallel_cite: "99 S. Ct. 2248"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "99 S. Ct. 2248; 60 L. Ed. 2d 824"
+neutral_cite: 1979 U.S. LEXIS 126
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1979
 date_decided: 1979-06-05
-docket: "78-5066"
+docket: 78-5066
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Foundational: a station-house detention for interrogation requires probable cause, and Miranda warnings alone do not attenuate the taint of an illegal arrest. Good law."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1979-06-05
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Dunaway v. New York
+  varies_by_point: false
+  scope_note: "Foundational: a station-house detention for interrogation requires probable cause, and Miranda warnings alone do not attenuate the taint of an illegal arrest. Good law."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/110096/dunaway-v-new-york/"
+  cluster_id: 110096
   opinion_id: 110096
   identity_checked: true
 homes:
@@ -31,6 +36,10 @@ related: ["[[Brown v. Illinois]]", "[[Wong Sun v. United States]]", "[[Davis v. 
 aliases: []
 tags: ["case", "fourth-amendment", "seizure", "probable-cause", "exclusionary-rule", "fruit-of-the-poisonous-tree", "interrogation"]
 holding: "Involuntarily transporting a suspect to the station and detaining him for custodial interrogation, on less than probable cause, is a seizure tantamount to arrest requiring probable cause; the resulting confession is a fruit of the illegal seizure that Miranda warnings alone do not attenuate."
+lake:
+  record_id: Dunaway v. New York
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Dunaway v. New York

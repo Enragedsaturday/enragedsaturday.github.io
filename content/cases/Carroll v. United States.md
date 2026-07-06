@@ -2,22 +2,27 @@
 title: "Carroll v. United States"
 type: case
 citation: "267 U.S. 132 (1925)"
-parallel_cite: "45 S. Ct. 280"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "45 S. Ct. 280; 69 L. Ed. 543"
+neutral_cite: 1925 U.S. LEXIS 361
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1925
-date_decided: 1925-03-02
+date_decided: 1925-11-26
 docket: ""
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Origin of the automobile exception; repeatedly reaffirmed and refined (Chambers, Ross, Carney, Acevedo). Good law."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1925-03-02
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Carroll v. United States
+  varies_by_point: false
+  scope_note: "Origin of the automobile exception; repeatedly reaffirmed and refined (Chambers, Ross, Carney, Acevedo). Good law."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/100567/carroll-v-united-states/"
+  cluster_id: 100567
   opinion_id: 100567
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Chambers v. Maroney]]", "[[California v. Carney]]", "[[California v
 aliases: []
 tags: ["case", "fourth-amendment", "automobile-exception", "warrantless-search", "vehicle", "probable-cause"]
 holding: "Origin of the automobile exception: a vehicle may be searched without a warrant on probable cause because, unlike a fixed structure, it…"
+lake:
+  record_id: Carroll v. United States
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Carroll v. United States

@@ -2,9 +2,9 @@
 title: "United States v. Drayton"
 type: case
 citation: "536 U.S. 194 (2002)"
-parallel_cite: "122 S. Ct. 2105"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "122 S. Ct. 2105; 153 L. Ed. 2d 242"
+neutral_cite: 2002 U.S. LEXIS 4420
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 2002
@@ -12,12 +12,17 @@ date_decided: 2002-06-17
 docket: ""
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Good law; bus-sweep questioning and consent requests are not a per se seizure, and officers need not advise of the right to refuse."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 2002-06-17
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: United States v. Drayton
+  varies_by_point: false
+  scope_note: "Good law; bus-sweep questioning and consent requests are not a per se seizure, and officers need not advise of the right to refuse."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/121153/united-states-v-drayton/"
+  cluster_id: 121153
   opinion_id: 121153
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Florida v. Bostick]]", "[[Schneckloth v. Bustamonte]]", "[[Ohio v. 
 aliases: []
 tags: ["case", "fourth-amendment", "consent", "seizure"]
 holding: "A bus sweep with consent-to-search requests is not a seizure, and consent can be voluntary even though officers do not advise passengers…"
+lake:
+  record_id: United States v. Drayton
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # United States v. Drayton

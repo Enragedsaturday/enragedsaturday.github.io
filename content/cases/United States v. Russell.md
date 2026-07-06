@@ -2,9 +2,9 @@
 title: "United States v. Russell"
 type: case
 citation: "411 U.S. 423 (1973)"
-parallel_cite: "93 S. Ct. 1637"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "93 S. Ct. 1637; 36 L. Ed. 2d 366"
+neutral_cite: 1973 U.S. LEXIS 79
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1973
@@ -12,12 +12,17 @@ date_decided: 1973-04-24
 docket: ""
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: ""
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1973-04-24
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: United States v. Russell
+  varies_by_point: false
+  scope_note: "Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/108768/united-states-v-russell/"
+  cluster_id: 108768
   opinion_id: 108768
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Sorrells v. United States]]", "[[Sherman v. United States]]", "[[Ha
 aliases: []
 tags: ["case", "entrapment", "predisposition", "subjective-test", "outrageous-government-conduct", "due-process"]
 holding: "There is no entrapment where the defendant was predisposed, even though a government agent supplied a difficult-to-obtain but legal…"
+lake:
+  record_id: United States v. Russell
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # United States v. Russell

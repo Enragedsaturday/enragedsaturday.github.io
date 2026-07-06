@@ -2,9 +2,9 @@
 title: "Arizona v. Gant"
 type: case
 citation: "556 U.S. 332 (2009)"
-parallel_cite: "129 S. Ct. 1710"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "129 S. Ct. 1710; 173 L. Ed. 2d 485"
+neutral_cite: 2009 U.S. LEXIS 3120
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 2009
@@ -12,13 +12,18 @@ date_decided: 2009-04-21
 docket: ""
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Gant itself cabins the broad reading of New York v. Belton; Gant is good law."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 2009-04-21
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Arizona v. Gant
+  varies_by_point: false
+  scope_note: "Gant itself cabins the broad reading of New York v. Belton; Gant is good law."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/145887/arizona-v-gant/"
-  opinion_id: 145887
+  cluster_id: 145887
+  opinion_id: 9435359
   identity_checked: true
 homes:
   - page: "[[Search Incident to Arrest]]"
@@ -29,6 +34,10 @@ related: ["[[New York v. Belton]]", "[[Chimel v. California]]", "[[Thornton v. U
 aliases: []
 tags: ["case", "fourth-amendment", "search-incident-to-arrest", "automobile", "vehicle-search"]
 holding: "Cabins Belton. A vehicle search incident to a recent occupant's arrest is permitted only when (1) the arrestee is unsecured and within…"
+lake:
+  record_id: Arizona v. Gant
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Arizona v. Gant

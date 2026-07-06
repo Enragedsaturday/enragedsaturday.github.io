@@ -2,22 +2,27 @@
 title: "Kisela v. Hughes"
 type: case
 citation: "584 U.S. 100 (2018)"
-parallel_cite: "138 S. Ct. 1148"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "138 S. Ct. 1148; 200 L. Ed. 2d 449"
+neutral_cite: 2018 U.S. LEXIS 2066
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 2018
 date_decided: 2018-04-02
-docket: "17-467"
+docket: 17-467
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Good law (per curiam). Reaffirms and applies the Brosseau/Mullenix specificity rule: in excessive-force cases officers get qualified immunity unless existing precedent 'squarely governs' the specific facts. Sotomayor (joined by Ginsburg) dissented."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 2018-04-02
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Kisela v. Hughes
+  varies_by_point: false
+  scope_note: "Good law (per curiam). Reaffirms and applies the Brosseau/Mullenix specificity rule: in excessive-force cases officers get qualified immunity unless existing precedent 'squarely governs' the specific facts. Sotomayor (joined by Ginsburg) dissented."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/4482892/kisela-v-hughes/"
+  cluster_id: 4482892
   opinion_id: 4260145
   identity_checked: true
 homes:
@@ -29,6 +34,10 @@ related: ["[[Graham v. Connor]]", "[[Tennessee v. Garner]]", "[[Mullenix v. Luna
 aliases: []
 tags: ["case", "use-of-force", "deadly-force", "qualified-immunity", "section-1983", "clearly-established-law", "mental-illness"]
 holding: "An officer who shot a woman holding a large kitchen knife who had moved within striking distance of another woman and ignored commands to drop it was entitled to qualified immunity: clearly established law in excessive-force cases must be defined at a high level of specificity, and officers get immunity unless existing precedent 'squarely governs' the specific facts at issue."
+lake:
+  record_id: Kisela v. Hughes
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Kisela v. Hughes

@@ -2,22 +2,27 @@
 title: "Yarborough v. Alvarado"
 type: case
 citation: "541 U.S. 652 (2004)"
-parallel_cite: "124 S. Ct. 2140"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "124 S. Ct. 2140; 158 L. Ed. 2d 938"
+neutral_cite: 2004 U.S. LEXIS 3843
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 2004
 date_decided: 2004-06-01
-docket: "02-1684"
+docket: 02-1684
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Good law; the Miranda custody test is objective and the Court's cases had not made a suspect's age/experience part of it, so a state court did not unreasonably apply clearly established law (AEDPA). Qualified for juveniles by J.D.B. v. North Carolina (2011): a child's age is part of the custody analysis when known to the officer or objectively apparent — J.D.B. distinguished Alvarado as an AEDPA-deference holding."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 2004-06-01
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Yarborough v. Alvarado
+  varies_by_point: false
+  scope_note: "Good law; the Miranda custody test is objective and the Court's cases had not made a suspect's age/experience part of it, so a state court did not unreasonably apply clearly established law (AEDPA). Qualified for juveniles by J.D.B. v. North Carolina (2011): a child's age is part of the custody analysis when known to the officer or objectively apparent — J.D.B. distinguished Alvarado as an AEDPA-deference holding."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/134748/yarborough-v-alvarado/"
+  cluster_id: 134748
   opinion_id: 134748
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Miranda v. Arizona]]", "[[California v. Beheler]]", "[[J.D.B. v. No
 aliases: []
 tags: ["case", "fifth-amendment", "miranda", "custody", "objective-test", "juvenile", "aedpa", "habeas"]
 holding: "Because the Miranda custody test is objective and the Court's cases had not made a suspect's age or experience part of it, a state court's conclusion that a 17-year-old was not in custody was not an unreasonable application of clearly established federal law, and AEDPA barred habeas relief."
+lake:
+  record_id: Yarborough v. Alvarado
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Yarborough v. Alvarado

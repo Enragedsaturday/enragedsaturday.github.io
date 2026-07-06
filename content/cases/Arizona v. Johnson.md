@@ -2,9 +2,9 @@
 title: "Arizona v. Johnson"
 type: case
 citation: "555 U.S. 323 (2009)"
-parallel_cite: "129 S. Ct. 781"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "129 S. Ct. 781; 172 L. Ed. 2d 694"
+neutral_cite: 2009 U.S. LEXIS 868
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 2009
@@ -12,12 +12,17 @@ date_decided: 2009-01-26
 docket: ""
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Good law. During a lawful traffic stop every occupant is seized for the stop's duration, so the first Terry condition is satisfied without separate suspicion that a passenger is committing a crime; to frisk that passenger the officer needs reasonable suspicion the passenger is armed and dangerous."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 2009-01-26
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Arizona v. Johnson
+  varies_by_point: false
+  scope_note: "Good law. During a lawful traffic stop every occupant is seized for the stop's duration, so the first Terry condition is satisfied without separate suspicion that a passenger is committing a crime; to frisk that passenger the officer needs reasonable suspicion the passenger is armed and dangerous."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/145912/arizona-v-johnson/"
+  cluster_id: 145912
   opinion_id: 145912
   identity_checked: true
 homes:
@@ -29,6 +34,10 @@ related: ["[[Terry v. Ohio]]", "[[Brendlin v. California]]", "[[Maryland v. Wils
 aliases: []
 tags: ["case", "fourth-amendment", "traffic-stop", "frisk", "passenger", "terry-stop"]
 holding: "During a lawful traffic stop, a passenger is seized for the duration of the stop (satisfying Terry's first condition without separate suspicion of the passenger's criminal activity); an officer may frisk the passenger on reasonable suspicion that the passenger is armed and dangerous."
+lake:
+  record_id: Arizona v. Johnson
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Arizona v. Johnson

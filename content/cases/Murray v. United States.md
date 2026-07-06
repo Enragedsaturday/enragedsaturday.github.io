@@ -2,9 +2,9 @@
 title: "Murray v. United States"
 type: case
 citation: "487 U.S. 533 (1988)"
-parallel_cite: "108 S. Ct. 2529"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "108 S. Ct. 2529; 101 L. Ed. 2d 472; 56 U.S.L.W. 4801"
+neutral_cite: 1988 U.S. LEXIS 2881
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1988
@@ -12,13 +12,18 @@ date_decided: 1988-06-27
 docket: ""
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Extends the independent-source doctrine to re-seizure under a later warrant; good law."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1988-06-27
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Murray v. United States
+  varies_by_point: false
+  scope_note: "Extends the independent-source doctrine to re-seizure under a later warrant; good law."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/112136/murray-v-united-states/"
-  opinion_id: 112136
+  cluster_id: 112136
+  opinion_id: 9431434
   identity_checked: true
 homes:
   - page: "[[The Exclusionary Rule]]"
@@ -27,6 +32,10 @@ related: ["[[Nix v. Williams]]", "[[Silverthorne Lumber Co. v. United States]]",
 aliases: []
 tags: ["case", "exclusionary-rule", "independent-source", "fruit-of-the-poisonous-tree"]
 holding: "Independent source: evidence first observed during an unlawful entry is admissible if later acquired through a genuinely independent…"
+lake:
+  record_id: Murray v. United States
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Murray v. United States

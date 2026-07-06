@@ -2,9 +2,9 @@
 title: "National Treasury Employees Union v. Von Raab"
 type: case
 citation: "489 U.S. 656 (1989)"
-parallel_cite: "109 S. Ct. 1384"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "109 S. Ct. 1384; 103 L. Ed. 2d 685; 1989 CCH OSHD 28,589; 4 I.E.R. Cas. (BNA) 246; 57 U.S.L.W. 4338; 49 Empl. Prac. Dec. (CCH) 38,792"
+neutral_cite: 1989 U.S. LEXIS 6033
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1989
@@ -12,13 +12,18 @@ date_decided: 1989-03-21
 docket: ""
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Special-needs suspicionless-testing precedent; good law."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1989-03-21
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: National Treasury Employees Union v. Von Raab
+  varies_by_point: false
+  scope_note: "Special-needs suspicionless-testing precedent; good law."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/112220/national-treasury-employees-union-v-von-raab/"
-  opinion_id: 112220
+  cluster_id: 112220
+  opinion_id: 9431609
   identity_checked: true
 homes:
   - page: "[[Special Needs and Administrative Searches]]"
@@ -27,6 +32,10 @@ related: ["[[Skinner v. Railway Labor Executives' Association]]", "[[New Jersey 
 aliases: ["Von Raab", "NTEU v. Von Raab"]
 tags: ["case", "fourth-amendment", "special-needs", "drug-testing", "administrative-search"]
 holding: "Suspicionless drug testing of Customs employees seeking drug-interdiction or firearm-carrying positions is reasonable under the…"
+lake:
+  record_id: National Treasury Employees Union v. Von Raab
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # National Treasury Employees Union v. Von Raab

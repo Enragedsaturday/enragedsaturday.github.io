@@ -1,23 +1,28 @@
 ---
 title: "Los Angeles County v. Rettele"
 type: case
-citation: "550 U.S. 609 (2007)"
-parallel_cite: "127 S. Ct. 1989"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+citation: ""
+parallel_cite: "550 U.S. 609; 127 S. Ct. 1989; 167 L. Ed. 2d 974; 75 U.S.L.W. 3619; 20 Fla. L. Weekly Fed. S 281"
+neutral_cite: 2007 U.S. LEXIS 5900
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 2007
 date_decided: 2007-05-21
-docket: "06-605"
+docket: 06-605
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Controlling: officers executing a valid warrant may briefly detain occupants and exercise unquestioned command — including ordering them, unclothed, out of bed for a few minutes — to secure the scene without violating the Fourth Amendment, so long as the detention is not prolonged."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 2007-05-21
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Los Angeles County v. Rettele
+  varies_by_point: false
+  scope_note: "Controlling: officers executing a valid warrant may briefly detain occupants and exercise unquestioned command — including ordering them, unclothed, out of bed for a few minutes — to secure the scene without violating the Fourth Amendment, so long as the detention is not prolonged."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/145728/los-angeles-county-california-v-rettele/"
+  cluster_id: 145728
   opinion_id: 145728
   identity_checked: true
 homes:
@@ -29,6 +34,10 @@ related: ["[[Michigan v. Summers]]", "[[Muehler v. Mena]]", "[[Bailey v. United 
 aliases: ["Los Angeles County, California v. Rettele"]
 tags: ["case", "fourth-amendment", "securing-the-scene", "warrant-execution", "detention", "qualified-immunity"]
 holding: "Officers executing a valid search warrant may briefly detain the occupants and exercise unquestioned command of the situation to protect themselves — including ordering unclothed occupants out of bed for a few minutes while securing the room — without violating the Fourth Amendment, provided the detention is not prolonged."
+lake:
+  record_id: Los Angeles County v. Rettele
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Los Angeles County v. Rettele

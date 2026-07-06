@@ -2,22 +2,27 @@
 title: "Camara v. Municipal Court"
 type: case
 citation: "387 U.S. 523 (1967)"
-parallel_cite: "87 S. Ct. 1727"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "87 S. Ct. 1727; 18 L. Ed. 2d 930"
+neutral_cite: 1967 U.S. LEXIS 1254
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1967
 date_decided: 1967-06-05
-docket: "92"
+docket: 92
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Overruled Frank v. Maryland; remains the foundational administrative-warrant case."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1967-06-05
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Camara v. Municipal Court
+  varies_by_point: false
+  scope_note: "Overruled Frank v. Maryland; remains the foundational administrative-warrant case."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/107473/camara-v-municipal-court-of-city-and-county-of-san-francisco/"
+  cluster_id: 107473
   opinion_id: 107473
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[See v. City of Seattle]]", "[[City of Los Angeles v. Patel]]", "[[N
 aliases: ["Camara v. Municipal Court of City and County of San Francisco"]
 tags: ["case", "fourth-amendment", "administrative-search", "inspection", "warrant"]
 holding: "Administrative inspections of private property generally require a warrant, but it may be an \"area warrant\" issued on reasonable…"
+lake:
+  record_id: Camara v. Municipal Court
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Camara v. Municipal Court

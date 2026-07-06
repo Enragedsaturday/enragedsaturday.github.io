@@ -2,22 +2,27 @@
 title: "Thompson v. Louisiana"
 type: case
 citation: "469 U.S. 17 (1984)"
-parallel_cite: "105 S. Ct. 409"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "105 S. Ct. 409; 83 L. Ed. 2d 246"
+neutral_cite: 1984 U.S. LEXIS 161
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1984
 date_decided: 1985-01-21
-docket: "83-6775"
+docket: 83-6775
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Per curiam (announced January 21, 1985; reported at 469 U.S. 17, O.T. 1984). Reaffirms Mincey v. Arizona; no negative treatment."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1985-01-21
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Thompson v. Louisiana
+  varies_by_point: false
+  scope_note: "Per curiam (announced January 21, 1985; reported at 469 U.S. 17, O.T. 1984). Reaffirms Mincey v. Arizona; no negative treatment."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/111282/thompson-v-louisiana/"
+  cluster_id: 111282
   opinion_id: 111282
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Mincey v. Arizona]]", "[[Flippo v. West Virginia]]", "[[Michigan v.
 aliases: []
 tags: ["case", "fourth-amendment", "crime-scene", "warrant-requirement", "homicide", "emergency-aid", "plain-view"]
 holding: "There is no 'murder-scene exception' to the warrant requirement; a warrantless two-hour general search of a homicide scene in a private home is unreasonable, even though shorter than the four-day search in Mincey, and the victim's call for help does not diminish her expectation of privacy."
+lake:
+  record_id: Thompson v. Louisiana
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Thompson v. Louisiana

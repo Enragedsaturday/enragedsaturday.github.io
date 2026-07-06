@@ -2,9 +2,9 @@
 title: "Shipley v. California"
 type: case
 citation: "395 U.S. 818 (1969)"
-parallel_cite: "89 S. Ct. 2053"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "89 S. Ct. 2053; 23 L. Ed. 2d 732"
+neutral_cite: 1969 U.S. LEXIS 1169
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1969
@@ -12,12 +12,17 @@ date_decided: 1969-06-23
 docket: "540, Misc."
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Per curiam, decided the same day as Chimel v. California; applies the search-incident-to-arrest limits. No negative treatment."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1969-06-23
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Shipley v. California
+  varies_by_point: false
+  scope_note: "Per curiam, decided the same day as Chimel v. California; applies the search-incident-to-arrest limits. No negative treatment."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/107982/shipley-v-california/"
+  cluster_id: 107982
   opinion_id: 107982
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Chimel v. California]]", "[[Agnello v. United States]]", "[[Go-Bart
 aliases: []
 tags: ["case", "fourth-amendment", "search-incident-to-arrest", "home", "warrant-requirement"]
 holding: "Police may not search a home as incident to an arrest made outside it; a search is incident to arrest only if substantially contemporaneous with the arrest and confined to the immediate vicinity of the arrest."
+lake:
+  record_id: Shipley v. California
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Shipley v. California

@@ -2,23 +2,28 @@
 title: "Donovan v. Dewey"
 type: case
 citation: "452 U.S. 594 (1981)"
-parallel_cite: "101 S. Ct. 2534"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "101 S. Ct. 2534; 69 L. Ed. 2d 262"
+neutral_cite: 1980 U.S. LEXIS 58
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1981
 date_decided: 1981-06-17
-docket: "80-901"
+docket: 80-901
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Good law; part of the Colonnade-Biswell pervasively-regulated-industry line, later refined into the three-part test of New York v. Burger (1987)."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1981-06-17
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Donovan v. Dewey
+  varies_by_point: false
+  scope_note: "Good law; part of the Colonnade-Biswell pervasively-regulated-industry line, later refined into the three-part test of New York v. Burger (1987)."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/110530/donovan-v-dewey/"
-  opinion_id: 110530
+  cluster_id: 110530
+  opinion_id: 9428427
   identity_checked: true
 homes:
   - page: "[[Special Needs and Administrative Searches]]"
@@ -27,6 +32,10 @@ related: ["[[United States v. Biswell]]", "[[Marshall v. Barlow's Inc.]]", "[[Se
 aliases: []
 tags: ["case", "fourth-amendment", "administrative-search", "inspections", "pervasively-regulated", "mines", "warrant"]
 holding: "Warrantless inspections of a pervasively regulated industry (mines) are reasonable where a comprehensive statutory scheme — defining the certainty, regularity, frequency, and scope of inspection — provides a constitutionally adequate substitute for a warrant."
+lake:
+  record_id: Donovan v. Dewey
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Donovan v. Dewey

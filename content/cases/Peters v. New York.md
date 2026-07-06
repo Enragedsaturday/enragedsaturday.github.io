@@ -2,9 +2,9 @@
 title: "Peters v. New York"
 type: case
 citation: "392 U.S. 40 (1968)"
-parallel_cite: "88 S. Ct. 1889"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "88 S. Ct. 1889; 20 L. Ed. 2d 917; 44 Ohio Op. 2d 402"
+neutral_cite: 1968 U.S. LEXIS 1346
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1968
@@ -12,13 +12,18 @@ date_decided: 1968-06-10
 docket: ""
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Good law. Decided in the same opinion as Sibron v. New York (and companion to Terry v. Ohio): where probable cause to arrest existed, the search was valid as a search incident to a lawful arrest. opinion_id shared with Sibron (consolidated)."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1968-06-10
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Peters v. New York
+  varies_by_point: false
+  scope_note: "Good law. Decided in the same opinion as Sibron v. New York (and companion to Terry v. Ohio): where probable cause to arrest existed, the search was valid as a search incident to a lawful arrest. opinion_id shared with Sibron (consolidated)."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/107730/sibron-v-new-york/"
-  opinion_id: 107730
+  cluster_id: 107730
+  opinion_id: 9423756
   identity_checked: true
 homes:
   - page: "[[Terry Stops and Reasonable Suspicion]]"
@@ -29,6 +34,10 @@ related: ["[[Sibron v. New York]]", "[[Terry v. Ohio]]", "[[Henry v. United Stat
 aliases: []
 tags: ["case", "fourth-amendment", "search-incident-to-arrest", "probable-cause", "terry-stop", "burglary"]
 holding: "Where probable cause to arrest existed (furtive conduct and flight indicating attempted burglary), the search of the suspect was valid as incident to a lawful arrest, even though the formal arrest followed the seizure."
+lake:
+  record_id: Peters v. New York
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Peters v. New York

@@ -2,23 +2,28 @@
 title: "Berger v. New York"
 type: case
 citation: "388 U.S. 41 (1967)"
-parallel_cite: "87 S. Ct. 1873"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "87 S. Ct. 1873; 18 L. Ed. 2d 1040"
+neutral_cite: 1967 U.S. LEXIS 2964
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1967
 date_decided: 1967-06-12
-docket: "615"
+docket: 615
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Good law as the constitutional baseline for electronic-surveillance warrants. Together with Katz it prompted Congress to enact Title III of the Omnibus Crime Control Act of 1968, which codified conforming wiretap standards."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1967-06-12
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Berger v. New York
+  varies_by_point: false
+  scope_note: "Good law as the constitutional baseline for electronic-surveillance warrants. Together with Katz it prompted Congress to enact Title III of the Omnibus Crime Control Act of 1968, which codified conforming wiretap standards."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/107483/berger-v-new-york/"
-  opinion_id: 107483
+  cluster_id: 107483
+  opinion_id: 9423459
   identity_checked: true
 homes:
   - page: "[[The Third-Party Doctrine and Digital Surveillance]]"
@@ -29,6 +34,10 @@ related: ["[[Katz v. United States]]", "[[Olmstead v. United States]]", "[[Unite
 aliases: []
 tags: ["case", "fourth-amendment", "search", "wiretap", "eavesdropping", "particularity", "surveillance"]
 holding: "New York's permissive eavesdropping statute was unconstitutional for lack of particularity and safeguards; the case sets Fourth Amendment standards for electronic-surveillance warrants."
+lake:
+  record_id: Berger v. New York
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Berger v. New York

@@ -2,22 +2,27 @@
 title: "Brewer v. Williams"
 type: case
 citation: "430 U.S. 387 (1977)"
-parallel_cite: "97 S. Ct. 1232"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "97 S. Ct. 1232; 51 L. Ed. 2d 424"
+neutral_cite: 1977 U.S. LEXIS 64
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1977
 date_decided: 1977-05-16
-docket: "74-1263"
+docket: 74-1263
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Sixth Amendment holding intact; the sequel Nix v. Williams concerned the exclusionary remedy (inevitable discovery), not Brewer's right-to-counsel holding."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1977-05-16
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Brewer v. Williams
+  varies_by_point: false
+  scope_note: "Sixth Amendment holding intact; the sequel Nix v. Williams concerned the exclusionary remedy (inevitable discovery), not Brewer's right-to-counsel holding."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/109624/brewer-v-williams/"
+  cluster_id: 109624
   opinion_id: 109624
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Massiah v. United States]]", "[[Nix v. Williams]]", "[[Kirby v. Ill
 aliases: ["Brewer v. Williams (Williams I)"]
 tags: ["case", "sixth-amendment", "right-to-counsel", "deliberate-elicitation", "interrogation"]
 holding: "The detective's \"Christian burial speech\" was the functional equivalent of interrogation and deliberately elicited incriminating…"
+lake:
+  record_id: Brewer v. Williams
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Brewer v. Williams

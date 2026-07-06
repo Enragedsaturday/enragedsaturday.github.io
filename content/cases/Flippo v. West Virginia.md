@@ -2,22 +2,27 @@
 title: "Flippo v. West Virginia"
 type: case
 citation: "528 U.S. 11 (1999)"
-parallel_cite: "120 S. Ct. 7"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "120 S. Ct. 7; 145 L. Ed. 2d 16"
+neutral_cite: 1999 U.S. LEXIS 6924
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1999
 date_decided: 1999-10-18
-docket: "98-8770"
+docket: 98-8770
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Per curiam. Reaffirms Mincey v. Arizona and Thompson v. Louisiana; no negative treatment."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1999-10-18
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Flippo v. West Virginia
+  varies_by_point: false
+  scope_note: "Per curiam. Reaffirms Mincey v. Arizona and Thompson v. Louisiana; no negative treatment."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/1854815/flippo-v-west-virginia/"
+  cluster_id: 1854815
   opinion_id: 1854815
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Mincey v. Arizona]]", "[[Thompson v. Louisiana]]", "[[Michigan v. T
 aliases: []
 tags: ["case", "fourth-amendment", "crime-scene", "warrant-requirement", "homicide", "emergency-aid"]
 holding: "There is no general 'crime-scene exception' to the warrant requirement; a warrantless search of a secured homicide scene (including opening a closed briefcase) is invalid unless a recognized exception applies."
+lake:
+  record_id: Flippo v. West Virginia
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Flippo v. West Virginia

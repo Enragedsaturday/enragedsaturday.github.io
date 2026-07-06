@@ -1,23 +1,28 @@
 ---
 title: "White v. Pauly"
 type: case
-citation: "580 U.S. 73 (2017)"
-parallel_cite: "137 S. Ct. 548"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+citation: ""
+parallel_cite: "580 U.S. 73; 196 L. Ed. 2d 463; 137 S. Ct. 548; 26 Fla. L. Weekly Fed. S 409; 85 U.S.L.W. 4027"
+neutral_cite: "2017 U.S. LEXIS 5; 2017 WL 69170"
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 2017
 date_decided: 2017-01-09
-docket: "16-67"
+docket: 16-67
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Per curiam; good law on the specificity ('particularized') requirement for clearly established law in excessive-force cases."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 2017-01-09
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: White v. Pauly
+  varies_by_point: false
+  scope_note: "Per curiam; good law on the specificity ('particularized') requirement for clearly established law in excessive-force cases."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/4374579/white-v-pauly/"
+  cluster_id: 4374579
   opinion_id: 4151832
   identity_checked: true
 homes:
@@ -29,6 +34,10 @@ related: ["[[Mullenix v. Luna]]", "[[Ashcroft v. al-Kidd]]", "[[Graham v. Connor
 aliases: []
 tags: ["case", "section-1983", "qualified-immunity", "excessive-force", "clearly-established", "per-curiam"]
 holding: "Garner and Graham do not by themselves create clearly established law outside an obvious case; an officer who arrives late to an ongoing scene did not violate clearly established law by using deadly force without first shouting a warning."
+lake:
+  record_id: White v. Pauly
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # White v. Pauly

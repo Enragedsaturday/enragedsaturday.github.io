@@ -2,9 +2,9 @@
 title: "Monroe v. Pape"
 type: case
 citation: "365 U.S. 167 (1961)"
-parallel_cite: "81 S. Ct. 473"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "81 S. Ct. 473; 5 L. Ed. 2d 492"
+neutral_cite: 1961 U.S. LEXIS 1687
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1961
@@ -12,12 +12,28 @@ date_decided: 1961-02-20
 docket: ""
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: limited
-  as_of: 2026-06-30
-  note: "Overruled in part by Monell v. Department of Social Services (1978) as to municipal liability; the 'under color of' state-law holding remains good law."
-  by: ["[[Monell v. Department of Social Services]]"]
+  field_i_validity: caution
+  as_of_content: 1961-02-20
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Monroe v. Pape
+  varies_by_point: true
+  scope_note: "Overruled in part by Monell v. Department of Social Services (1978) as to municipal liability; the 'under color of' state-law holding remains good law."
+  point_overrides:
+    - point: legacy-limited-monroe-v-pape
+      point_label: Legacy limited treatment point
+      field_i_validity: caution
+      as_of_treatment: 2026-06-30
+      s3_binding_status: provisional
+      by:
+        - name: Monell v. Department of Social Services
+          cluster_id: 109881
+          cite: 436 U.S. 658
+          field_ii: limited
+      scope_note: "Overruled in part by Monell v. Department of Social Services (1978) as to municipal liability; the 'under color of' state-law holding remains good law."
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/106170/monroe-v-pape/"
+  cluster_id: 106170
   opinion_id: 106170
   identity_checked: true
 homes:
@@ -27,6 +43,10 @@ related: ["[[Monell v. Department of Social Services]]", "[[Harlow v. Fitzgerald
 aliases: []
 tags: ["case", "section-1983", "under-color-of-law", "civil-rights", "federal-remedy"]
 holding: "Revived § 1983 as a real federal remedy: 'under color of' state law reaches the MISUSE of authority an officer possesses by virtue of…"
+lake:
+  record_id: Monroe v. Pape
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Monroe v. Pape

@@ -2,9 +2,9 @@
 title: "Illinois v. Lidster"
 type: case
 citation: "540 U.S. 419 (2004)"
-parallel_cite: ""
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "124 S. Ct. 885; 157 L. Ed. 2d 843"
+neutral_cite: 2004 U.S. LEXIS 656
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 2004
@@ -12,12 +12,17 @@ date_decided: 2004-01-13
 docket: ""
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: ""
-  by: []
+  field_i_validity: good_law
+  as_of_content: 2004-01-13
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Illinois v. Lidster
+  varies_by_point: false
+  scope_note: "Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/131154/illinois-v-lidster/"
+  cluster_id: 131154
   opinion_id: 131154
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[City of Indianapolis v. Edmond]]", "[[Michigan Dept. of State Polic
 aliases: []
 tags: ["case", "fourth-amendment", "checkpoint", "special-needs", "information-seeking-stop"]
 holding: "An information-seeking checkpoint — stopping motorists to ask whether they witnessed an earlier crime committed by *someone else* — is…"
+lake:
+  record_id: Illinois v. Lidster
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Illinois v. Lidster

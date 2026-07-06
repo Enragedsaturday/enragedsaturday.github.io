@@ -1,10 +1,10 @@
 ---
 title: "Heien v. North Carolina"
 type: case
-citation: "574 U.S. 54 (2014)"
-parallel_cite: "135 S. Ct. 530"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+citation: ""
+parallel_cite: "135 S. Ct. 530; 190 L. Ed. 2d 475; 83 U.S.L.W. 4021; 25 Fla. L. Weekly Fed. S 20"
+neutral_cite: 2014 U.S. LEXIS 8306
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 2014
@@ -12,14 +12,19 @@ date_decided: 2014-12-15
 docket: ""
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: ""
-  by: []
+  field_i_validity: good_law
+  as_of_content: 2014-12-15
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Heien v. North Carolina
+  varies_by_point: false
+  scope_note: "Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/2760668/heien-v-north-carolina/"
+  cluster_id: 2760668
   opinion_id: 9805193
-  identity_checked: true
+  identity_checked: false
 homes:
   - page: "[[Traffic Stops]]"
     role: "Key — Progeny / Refinement"
@@ -27,6 +32,10 @@ related: ["[[Delaware v. Prouse]]", "[[Brendlin v. California]]", "[[Whren v. Un
 aliases: []
 tags: ["case", "fourth-amendment", "traffic-stop", "reasonable-suspicion", "mistake-of-law"]
 holding: "A traffic stop is valid if based on an officer's objectively reasonable mistake of law (as well as a reasonable mistake of fact); a…"
+lake:
+  record_id: Heien v. North Carolina
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Heien v. North Carolina

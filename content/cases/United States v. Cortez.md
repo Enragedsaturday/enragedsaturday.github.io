@@ -2,9 +2,9 @@
 title: "United States v. Cortez"
 type: case
 citation: "449 U.S. 411 (1981)"
-parallel_cite: "101 S. Ct. 690"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "101 S. Ct. 690; 66 L. Ed. 2d 621; 49 U.S.L.W. 4099"
+neutral_cite: 1981 U.S. LEXIS 58
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1981
@@ -12,12 +12,17 @@ date_decided: 1981-01-21
 docket: ""
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Good law; the 'particularized and objective basis' / 'whole picture' formulation of reasonable suspicion."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1981-01-21
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: United States v. Cortez
+  varies_by_point: false
+  scope_note: "Good law; the 'particularized and objective basis' / 'whole picture' formulation of reasonable suspicion."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/110377/united-states-v-cortez/"
+  cluster_id: 110377
   opinion_id: 110377
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Terry v. Ohio]]", "[[United States v. Arvizu]]", "[[Navarette v. Ca
 aliases: []
 tags: ["case", "fourth-amendment", "reasonable-suspicion", "terry-stop"]
 holding: "Reasonable suspicion = a particularized and objective basis on the totality of the circumstances (the 'whole picture')."
+lake:
+  record_id: United States v. Cortez
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # United States v. Cortez

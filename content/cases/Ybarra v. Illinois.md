@@ -2,23 +2,28 @@
 title: "Ybarra v. Illinois"
 type: case
 citation: "444 U.S. 85 (1979)"
-parallel_cite: "100 S. Ct. 338"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "100 S. Ct. 338; 62 L. Ed. 2d 238"
+neutral_cite: 1979 U.S. LEXIS 151
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1979
-date_decided: 1979-11-28
-docket: "78-5937"
+date_decided: 1980-01-21
+docket: 78-5937
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Good law; the rule that a premises warrant confers no authority to search persons merely present remains controlling. Distinct from Michigan v. Summers / Bailey v. United States, which permit detaining occupants during execution of a premises warrant."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1979-11-28
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Ybarra v. Illinois
+  varies_by_point: false
+  scope_note: "Good law; the rule that a premises warrant confers no authority to search persons merely present remains controlling. Distinct from Michigan v. Summers / Bailey v. United States, which permit detaining occupants during execution of a premises warrant."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/110158/ybarra-v-illinois/"
-  opinion_id: 110158
+  cluster_id: 110158
+  opinion_id: 9427721
   identity_checked: true
 homes:
   - page: "[[Securing the Scene]]"
@@ -29,6 +34,10 @@ related: ["[[Michigan v. Summers]]", "[[Bailey v. United States]]", "[[Terry v. 
 aliases: []
 tags: ["case", "fourth-amendment", "warrants", "search-of-persons", "terry-frisk", "probable-cause"]
 holding: "A warrant to search premises does not authorize searching persons who merely happen to be present; a search or frisk of a person requires cause particularized to that person — probable cause to search, or for a Terry frisk reasonable suspicion that the person is armed and dangerous."
+lake:
+  record_id: Ybarra v. Illinois
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Ybarra v. Illinois

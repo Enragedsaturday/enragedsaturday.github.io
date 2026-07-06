@@ -2,22 +2,27 @@
 title: "LaChance v. Erickson"
 type: case
 citation: "522 U.S. 262 (1998)"
-parallel_cite: "118 S. Ct. 753"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "118 S. Ct. 753; 139 L. Ed. 2d 695"
+neutral_cite: 1998 U.S. LEXIS 636
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1998
 date_decided: 1998-01-21
-docket: "96-1395"
+docket: 96-1395
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Good law; marks the boundary of the Garrity line — the privilege lets a public employee stay silent, but not lie."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1998-01-21
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: LaChance v. Erickson
+  varies_by_point: false
+  scope_note: "Good law; marks the boundary of the Garrity line — the privilege lets a public employee stay silent, but not lie."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/118163/lachance-v-erickson/"
+  cluster_id: 118163
   opinion_id: 118163
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Garrity v. New Jersey]]", "[[Gardner v. Broderick]]", "[[Lefkowitz 
 aliases: []
 tags: ["case", "fifth-amendment", "due-process", "public-employee", "garrity", "false-statements", "federal-employee"]
 holding: "Neither due process nor the civil-service statutes bar a federal agency from disciplining an employee for making false statements to investigators in response to an underlying misconduct charge; the right to be heard does not include a right to lie (an employee facing criminal exposure may stay silent, but may not lie)."
+lake:
+  record_id: LaChance v. Erickson
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # LaChance v. Erickson

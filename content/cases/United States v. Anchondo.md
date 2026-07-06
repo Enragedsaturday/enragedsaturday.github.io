@@ -1,23 +1,28 @@
 ---
 title: "United States v. Anchondo"
 type: case
-citation: "156 F.3d 1043 (10th Cir. 1998)"
+citation: "156 F.3d 1043 (1998)"
 parallel_cite: ""
-neutral_cite: ""
+neutral_cite: "1998 U.S. App. LEXIS 21392; 1998 WL 559355"
 court: "U.S. Court of Appeals, 10th Circuit"
-court_level: circuit
-circuit: "10th"
+court_level: coa
+circuit: 10th
 year: 1998
-date_decided: ""
+date_decided: 1998-09-01
 docket: ""
 authority_weight: "Binding in-circuit — 10th Cir."
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Good law. Often miscited as an automobile-exception case; its actual holding is search incident to arrest."
-  by: []
+  field_i_validity: good_law
+  as_of_content: null
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: United States v. Anchondo
+  varies_by_point: false
+  scope_note: "Good law. Often miscited as an automobile-exception case; its actual holding is search incident to arrest."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/758111/united-states-v-erick-anchondo/"
+  cluster_id: 758111
   opinion_id: 758111
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Chimel v. California]]", "[[Rawlings v. Kentucky]]", "[[Arizona v. 
 aliases: ["United States v. Erick Anchondo"]
 tags: ["case", "fourth-amendment", "search-incident-to-arrest", "automobile"]
 holding: "ACTUAL holding: cocaine found on the defendant's body was the product of a lawful SEARCH INCIDENT TO ARREST, not the automobile…"
+lake:
+  record_id: United States v. Anchondo
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # United States v. Anchondo

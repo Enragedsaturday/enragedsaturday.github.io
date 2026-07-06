@@ -1,25 +1,30 @@
 ---
 title: "People v. Hughes"
 type: case
-citation: "506 Mich. 512, 958 N.W.2d 98 (2020)"
-parallel_cite: "958 N.W.2d 98"
+citation: ""
+parallel_cite: ""
 neutral_cite: ""
-court: "Michigan Supreme Court"
-court_level: state-high
+court: Michigan Supreme Court
+court_level: state
 circuit: ""
 year: 2020
 date_decided: 2020-12-28
-docket: "158652"
+docket: 158652
 authority_weight: "Persuasive — state, illustrative"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: ""
-  by: []
+  field_i_validity: good_law
+  as_of_content: 2020-12-28
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: People v. Hughes
+  varies_by_point: false
+  scope_note: "Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/4843477/people-of-michigan-v-kristopher-allen-hughes/"
+  cluster_id: 4843477
   opinion_id: 4647256
-  identity_checked: true
+  identity_checked: false
 homes:
   - page: "[[Plain View Doctrine]]"
     role: "Key — Progeny / Refinement"
@@ -27,6 +32,10 @@ related: ["[[Riley v. California]]", "[[Carpenter v. United States]]", "[[Horton
 aliases: ["People of Michigan v. Hughes", "People v Hughes", "People v. Hughes (Mich. 2020)"]
 tags: ["case", "fourth-amendment", "plain-view", "digital-search", "cell-phone", "warrant-scope", "michigan", "state-supreme"]
 holding: "Declines a per se rule that an officer may always review the ENTIRE contents of digital data seized under a warrant on the mere…"
+lake:
+  record_id: People v. Hughes
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # People v. Hughes

@@ -2,9 +2,9 @@
 title: "United States v. Ash"
 type: case
 citation: "413 U.S. 300 (1973)"
-parallel_cite: "93 S. Ct. 2568"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "93 S. Ct. 2568; 37 L. Ed. 2d 619"
+neutral_cite: 1973 U.S. LEXIS 45
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1973
@@ -12,12 +12,17 @@ date_decided: 1973-06-21
 docket: ""
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Good law; no Sixth Amendment right to counsel at a photographic display."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1973-06-21
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: United States v. Ash
+  varies_by_point: false
+  scope_note: "Good law; no Sixth Amendment right to counsel at a photographic display."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/108846/united-states-v-ash/"
+  cluster_id: 108846
   opinion_id: 108846
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Kirby v. Illinois]]", "[[Gilbert v. California]]", "[[Manson v. Bra
 aliases: ["United States v. Charles J. Ash, Jr."]
 tags: ["case", "sixth-amendment", "eyewitness-identification", "right-to-counsel"]
 holding: "The Sixth Amendment does not grant a right to counsel at a post-indictment photographic display (no trial-like confrontation, since the…"
+lake:
+  record_id: United States v. Ash
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # United States v. Ash

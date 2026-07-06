@@ -2,9 +2,9 @@
 title: "Georgia v. Randolph"
 type: case
 citation: "547 U.S. 103 (2006)"
-parallel_cite: "126 S. Ct. 1515"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "126 S. Ct. 1515; 164 L. Ed. 2d 208"
+neutral_cite: 2006 U.S. LEXIS 2498
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 2006
@@ -12,12 +12,17 @@ date_decided: 2006-03-22
 docket: ""
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Confined to a physically present objector by Fernandez v. California (2014)."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 2006-03-22
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Georgia v. Randolph
+  varies_by_point: false
+  scope_note: "Confined to a physically present objector by Fernandez v. California (2014)."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/145669/georgia-v-randolph/"
+  cluster_id: 145669
   opinion_id: 145669
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Fernandez v. California]]", "[[Illinois v. Rodriguez]]", "[[United 
 aliases: []
 tags: ["case", "fourth-amendment", "consent", "co-occupant", "third-party-consent", "present-objector"]
 holding: "A PHYSICALLY PRESENT co-occupant's express refusal to consent prevails over another occupant's consent, rendering the warrantless search…"
+lake:
+  record_id: Georgia v. Randolph
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Georgia v. Randolph

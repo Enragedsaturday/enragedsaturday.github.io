@@ -2,9 +2,9 @@
 title: "Michigan v. Summers"
 type: case
 citation: "452 U.S. 692 (1981)"
-parallel_cite: "101 S. Ct. 2587"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "101 S. Ct. 2587; 69 L. Ed. 2d 340; 49 U.S.L.W. 4776"
+neutral_cite: 1981 U.S. LEXIS 118
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1981
@@ -12,13 +12,18 @@ date_decided: 1981-06-22
 docket: ""
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Spatial limit set by Bailey v. United States (immediate vicinity of the premises)."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1981-06-22
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Michigan v. Summers
+  varies_by_point: false
+  scope_note: "Spatial limit set by Bailey v. United States (immediate vicinity of the premises)."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/110534/michigan-v-summers/"
-  opinion_id: 110534
+  cluster_id: 110534
+  opinion_id: 9428436
   identity_checked: true
 homes:
   - page: "[[Securing the Scene]]"
@@ -27,6 +32,10 @@ related: ["[[Bailey v. United States]]", "[[Muehler v. Mena]]"]
 aliases: []
 tags: ["case", "fourth-amendment", "search-warrant", "detention", "securing-the-scene"]
 holding: "A warrant to search premises for contraband, founded on probable cause, implicitly carries the limited authority to detain the occupants…"
+lake:
+  record_id: Michigan v. Summers
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Michigan v. Summers

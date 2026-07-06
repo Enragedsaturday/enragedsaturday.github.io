@@ -2,9 +2,9 @@
 title: "Hayes v. Florida"
 type: case
 citation: "470 U.S. 811 (1985)"
-parallel_cite: "105 S. Ct. 1643"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "105 S. Ct. 1643; 84 L. Ed. 2d 705; 53 U.S.L.W. 4382"
+neutral_cite: 1985 U.S. LEXIS 1523
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1985
@@ -12,13 +12,18 @@ date_decided: 1985-03-20
 docket: ""
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Good law; transporting a suspect to the station for fingerprinting without consent, a warrant, or probable cause is a seizure tantamount to arrest. The Court left open (dicta) that brief field fingerprinting on reasonable suspicion, carried out with dispatch, might be permissible."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1985-03-20
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Hayes v. Florida
+  varies_by_point: false
+  scope_note: "Good law; transporting a suspect to the station for fingerprinting without consent, a warrant, or probable cause is a seizure tantamount to arrest. The Court left open (dicta) that brief field fingerprinting on reasonable suspicion, carried out with dispatch, might be permissible."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/111382/hayes-v-florida/"
-  opinion_id: 111382
+  cluster_id: 111382
+  opinion_id: 9429967
   identity_checked: true
 homes:
   - page: "[[Seizure of the Person]]"
@@ -27,6 +32,10 @@ related: ["[[Davis v. Mississippi]]", "[[Florida v. Royer]]", "[[United States v
 aliases: []
 tags: ["case", "fourth-amendment", "seizure", "fingerprinting", "investigative-detention", "arrest"]
 holding: "Transporting a suspect to the station for fingerprinting without consent, a warrant, or probable cause is a seizure tantamount to arrest requiring probable cause (brief field fingerprinting on reasonable suspicion left open)."
+lake:
+  record_id: Hayes v. Florida
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Hayes v. Florida

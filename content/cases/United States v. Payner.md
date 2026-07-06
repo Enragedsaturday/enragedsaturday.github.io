@@ -2,23 +2,28 @@
 title: "United States v. Payner"
 type: case
 citation: "447 U.S. 727 (1980)"
-parallel_cite: "100 S. Ct. 2439"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "100 S. Ct. 2439; 65 L. Ed. 2d 468"
+neutral_cite: 1980 U.S. LEXIS 136
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1980
-date_decided: 1980-06-23
-docket: "78-1729"
+date_decided: 1980-08-11
+docket: 78-1729
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "A federal court may not use its supervisory power to evade the Fourth Amendment standing rules. Good law."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1980-06-23
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: United States v. Payner
+  varies_by_point: false
+  scope_note: A federal court may not use its supervisory power to evade the Fourth Amendment standing rules. Good law.
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/110317/united-states-v-payner/"
-  opinion_id: 110317
+  cluster_id: 110317
+  opinion_id: 9428014
   identity_checked: true
 homes:
   - page: "[[Standing to Challenge a Search]]"
@@ -27,6 +32,10 @@ related: ["[[Rakas v. Illinois]]", "[[Alderman v. United States]]", "[[Elkins v.
 aliases: []
 tags: ["case", "fourth-amendment", "standing", "exclusionary-rule", "supervisory-power", "third-party"]
 holding: "A federal court may not invoke its supervisory power to suppress evidence obtained through the deliberate violation of a third party's Fourth Amendment rights at the instance of a defendant whose own rights were not violated; the supervisory power cannot circumvent the standing requirement."
+lake:
+  record_id: United States v. Payner
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # United States v. Payner

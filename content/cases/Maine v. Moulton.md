@@ -2,9 +2,9 @@
 title: "Maine v. Moulton"
 type: case
 citation: "474 U.S. 159 (1985)"
-parallel_cite: "106 S. Ct. 477"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "106 S. Ct. 477; 88 L. Ed. 2d 481; 54 U.S.L.W. 4039"
+neutral_cite: 1985 U.S. LEXIS 147
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1985
@@ -12,13 +12,18 @@ date_decided: 1985-12-10
 docket: ""
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: ""
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1985-12-10
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Maine v. Moulton
+  varies_by_point: false
+  scope_note: "Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/111546/maine-v-moulton/"
-  opinion_id: 111546
+  cluster_id: 111546
+  opinion_id: 9430241
   identity_checked: true
 homes:
   - page: "[[Sixth Amendment Right to Counsel]]"
@@ -27,6 +32,10 @@ related: ["[[Massiah v. United States]]", "[[Kuhlmann v. Wilson]]", "[[United St
 aliases: []
 tags: ["case", "sixth-amendment", "right-to-counsel", "deliberate-elicitation", "informant"]
 holding: "The Sixth Amendment is violated when the State knowingly exploits an opportunity to confront the accused without counsel — it makes no…"
+lake:
+  record_id: Maine v. Moulton
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Maine v. Moulton

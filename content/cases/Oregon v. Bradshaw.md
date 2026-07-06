@@ -2,23 +2,28 @@
 title: "Oregon v. Bradshaw"
 type: case
 citation: "462 U.S. 1039 (1983)"
-parallel_cite: "103 S. Ct. 2830"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "103 S. Ct. 2830; 77 L. Ed. 2d 405; 51 U.S.L.W. 4940"
+neutral_cite: 1983 U.S. LEXIS 82
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1983
 date_decided: 1983-06-23
-docket: "81-1857"
+docket: 81-1857
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Plurality; the two-step Edwards initiation/waiver framework it states is settled and good law."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1983-06-23
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Oregon v. Bradshaw
+  varies_by_point: false
+  scope_note: "Plurality; the two-step Edwards initiation/waiver framework it states is settled and good law."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/110987/oregon-v-bradshaw/"
-  opinion_id: 110987
+  cluster_id: 110987
+  opinion_id: 9429286
   identity_checked: true
 homes:
   - page: "[[Miranda Waiver and Invocation]]"
@@ -27,6 +32,10 @@ related: ["[[Edwards v. Arizona]]", "[[Miranda v. Arizona]]"]
 aliases: []
 tags: ["case", "fifth-amendment", "miranda", "invocation", "edwards", "initiation"]
 holding: "After invoking counsel, a suspect 'initiates' further communication under Edwards only by a statement evincing a desire to open a generalized discussion about the investigation (not a routine request); even then, any resulting statement is admissible only if the suspect also validly waived counsel under the totality of the circumstances."
+lake:
+  record_id: Oregon v. Bradshaw
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Oregon v. Bradshaw

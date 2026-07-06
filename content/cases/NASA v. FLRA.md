@@ -2,23 +2,28 @@
 title: "NASA v. FLRA"
 type: case
 citation: "527 U.S. 229 (1999)"
-parallel_cite: "119 S. Ct. 1979"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "119 S. Ct. 1979; 144 L. Ed. 2d 258"
+neutral_cite: 1999 U.S. LEXIS 4190
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1999
 date_decided: 1999-06-17
-docket: "98-369"
+docket: 98-369
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Good law; a statutory (FSLMRS) holding on federal-sector representation rights — distinct from the Fifth Amendment Garrity line, grouped with it for the public-employee compelled-interview context."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1999-06-17
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: NASA v. FLRA
+  varies_by_point: false
+  scope_note: "Good law; a statutory (FSLMRS) holding on federal-sector representation rights — distinct from the Fifth Amendment Garrity line, grouped with it for the public-employee compelled-interview context."
+  point_overrides: []
 courtlistener:
-  opinion_url: "https://www.courtlistener.com/opinion/9188189/national-aeronautics-space-administration-v-federal-labor-relations-authority/"
-  opinion_id: 9182940
+  opinion_url: "https://www.courtlistener.com/opinion/118306/nasa-v-flra/"
+  cluster_id: 118306
+  opinion_id: 118306
   identity_checked: true
 homes:
   - page: "[[Public-Employee Compelled Statements (Garrity)]]"
@@ -27,6 +32,10 @@ related: ["[[Garrity v. New Jersey]]", "[[Lefkowitz v. Turley]]", "[[Kalkines v.
 aliases: ["National Aeronautics and Space Administration v. Federal Labor Relations Authority", "NASA v. Federal Labor Relations Authority"]
 tags: ["case", "public-employee", "garrity", "federal-employee", "representation-rights", "fslmrs", "weingarten"]
 holding: "A NASA Office of Inspector General investigator examining a NASA employee is a 'representative of the agency' under 5 U.S.C. § 7114(a)(2)(B), so the employee's statutory right to union representation at an investigatory examination that may lead to discipline applies (the federal-sector representation right)."
+lake:
+  record_id: NASA v. FLRA
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # NASA v. FLRA

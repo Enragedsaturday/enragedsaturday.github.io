@@ -1,23 +1,28 @@
 ---
 title: "Salinas v. Texas"
 type: case
-citation: "570 U.S. 178 (2013)"
-parallel_cite: "133 S. Ct. 2174"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+citation: ""
+parallel_cite: "133 S. Ct. 2174; 186 L. Ed. 2d 376; 570 U.S. 178; 81 U.S.L.W. 4467; 24 Fla. L. Weekly Fed. S 294"
+neutral_cite: "2013 U.S. LEXIS 4697; 2013 WL 2922119"
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 2013
 date_decided: 2013-06-17
-docket: "12-246"
+docket: 12-246
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Fractured 5-4 (Alito plurality of three; Thomas & Scalia concurring in the judgment on a broader ground). The express-invocation holding governs."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 2013-06-17
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Salinas v. Texas
+  varies_by_point: false
+  scope_note: "Fractured 5-4 (Alito plurality of three; Thomas & Scalia concurring in the judgment on a broader ground). The express-invocation holding governs."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/903977/salinas-v-texas/"
+  cluster_id: 903977
   opinion_id: 903977
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Berghuis v. Thompkins]]", "[[Doyle v. Ohio]]", "[[Miranda v. Arizon
 aliases: []
 tags: ["case", "fifth-amendment", "self-incrimination", "silence", "invocation", "pre-custody"]
 holding: "Pre-custody, pre-Miranda silence during voluntary, noncustodial questioning is not protected by the Fifth Amendment unless the suspect expressly invokes the privilege; a suspect who simply falls silent without invoking may have that silence used against him at trial."
+lake:
+  record_id: Salinas v. Texas
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Salinas v. Texas

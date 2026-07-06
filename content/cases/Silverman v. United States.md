@@ -2,22 +2,27 @@
 title: "Silverman v. United States"
 type: case
 citation: "365 U.S. 505 (1961)"
-parallel_cite: "81 S. Ct. 679"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "81 S. Ct. 679; 5 L. Ed. 2d 734; 97 A.L.R. 2d 1277"
+neutral_cite: 1961 U.S. LEXIS 1605
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1961
 date_decided: 1961-03-06
-docket: "66"
+docket: 66
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Pre-Katz trespass-based holding; the property-intrusion test was reaffirmed as an independent approach in United States v. Jones."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1961-03-06
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Silverman v. United States
+  varies_by_point: false
+  scope_note: "Pre-Katz trespass-based holding; the property-intrusion test was reaffirmed as an independent approach in United States v. Jones."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/106187/silverman-v-united-states/"
+  cluster_id: 106187
   opinion_id: 106187
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Katz v. United States]]", "[[United States v. Jones]]", "[[Olmstead
 aliases: []
 tags: ["case", "fourth-amendment", "search", "trespass", "electronic-surveillance"]
 holding: "A 'spike mike' physically penetrating the wall into the house was a search — an unauthorized physical intrusion into a constitutionally protected area, not measured by 'technical trespass' niceties."
+lake:
+  record_id: Silverman v. United States
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Silverman v. United States

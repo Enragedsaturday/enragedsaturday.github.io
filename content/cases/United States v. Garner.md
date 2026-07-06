@@ -1,23 +1,28 @@
 ---
 title: "United States v. Garner"
 type: case
-citation: "416 F.3d 1208 (10th Cir. 2005)"
+citation: "416 F.3d 1208 (2005)"
 parallel_cite: ""
-neutral_cite: ""
+neutral_cite: "2005 U.S. App. LEXIS 15369; 2005 WL 1766377"
 court: "U.S. Court of Appeals, 10th Circuit"
-court_level: circuit
-circuit: "10th"
+court_level: coa
+circuit: 10th
 year: 2005
 date_decided: 2005-07-27
 docket: ""
 authority_weight: "Binding in-circuit — 10th Cir."
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Good law; anchor for the persons-in-public caretaking strand. Caniglia v. Strom (2021) confined its no-freestanding-caretaking holding to the home and does not disturb a community-caretaking detention of a person in public."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 2005-07-27
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: United States v. Garner
+  varies_by_point: false
+  scope_note: "Good law; anchor for the persons-in-public caretaking strand. Caniglia v. Strom (2021) confined its no-freestanding-caretaking holding to the home and does not disturb a community-caretaking detention of a person in public."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/166206/united-states-v-garner/"
+  cluster_id: 166206
   opinion_id: 166206
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Cady v. Dombrowski]]", "[[United States v. Rideau]]", "[[Graham v. 
 aliases: ["United States v. Garner (10th Cir. 2005)", "United States v. Mark James Garner"]
 tags: ["case", "fourth-amendment", "community-caretaking", "investigative-detention", "persons-in-public", "tenth-circuit"]
 holding: "A community-caretaking detention of a person is valid under a three-part test — (1) specific and articulable facts warranting the intrusion, (2) the government's caretaking interest outweighing the individual's liberty interest, and (3) scope and duration tailored to the caretaking purpose; once that purpose is satisfied, continued detention requires independent reasonable suspicion."
+lake:
+  record_id: United States v. Garner
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # United States v. Garner

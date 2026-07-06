@@ -2,9 +2,9 @@
 title: "United States v. Calandra"
 type: case
 citation: "414 U.S. 338 (1974)"
-parallel_cite: "94 S. Ct. 613"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "94 S. Ct. 613; 38 L. Ed. 2d 561; 66 Ohio Op. 2d 320"
+neutral_cite: 1974 U.S. LEXIS 145
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1974
@@ -12,12 +12,17 @@ date_decided: 1974-01-08
 docket: ""
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Good law; foundational statement of the exclusionary rule as a deterrent remedy, central to later good-faith and cost-benefit cases."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1974-01-08
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: United States v. Calandra
+  varies_by_point: false
+  scope_note: "Good law; foundational statement of the exclusionary rule as a deterrent remedy, central to later good-faith and cost-benefit cases."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/108898/united-states-v-calandra/"
+  cluster_id: 108898
   opinion_id: 108898
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Mapp v. Ohio]]", "[[Herring v. United States]]", "[[Hudson v. Michi
 aliases: []
 tags: ["case", "fourth-amendment", "exclusionary-rule"]
 holding: "The exclusionary rule is a judicially created deterrent remedy, not a personal constitutional right; it does not apply to grand-jury…"
+lake:
+  record_id: United States v. Calandra
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # United States v. Calandra

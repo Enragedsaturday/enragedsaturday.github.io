@@ -2,22 +2,27 @@
 title: "Stoner v. California"
 type: case
 citation: "376 U.S. 483 (1964)"
-parallel_cite: "84 S. Ct. 889"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "84 S. Ct. 889; 11 L. Ed. 2d 856"
+neutral_cite: 1964 U.S. LEXIS 1579
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1964
-date_decided: 1964-03-23
-docket: "209"
+date_decided: 1964-05-18
+docket: 209
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Good law. Later apparent-authority doctrine (Illinois v. Rodriguez) permits searches on an officer's reasonable belief in a consenter's authority, but a hotel clerk still lacks authority to consent to a current guest's room; Stoner remains good law."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1964-03-23
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Stoner v. California
+  varies_by_point: false
+  scope_note: "Good law. Later apparent-authority doctrine (Illinois v. Rodriguez) permits searches on an officer's reasonable belief in a consenter's authority, but a hotel clerk still lacks authority to consent to a current guest's room; Stoner remains good law."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/106777/stoner-v-california/"
+  cluster_id: 106777
   opinion_id: 106777
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Chapman v. United States (1961)]]", "[[Illinois v. Rodriguez]]"]
 aliases: []
 tags: ["case", "fourth-amendment", "consent", "third-party-consent", "apparent-authority", "hotel"]
 holding: "A hotel desk clerk cannot give valid third-party consent to a police search of a current guest's room; a guest retains Fourth Amendment protection that only the guest may waive, and unrealistic notions of 'apparent authority' do not validate the search."
+lake:
+  record_id: Stoner v. California
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Stoner v. California

@@ -1,38 +1,43 @@
 ---
 title: "United States v. Smith (2024)"
 type: case
-citation: "110 F.4th 817 (5th Cir. 2024)"
+citation: "110 F.4th 817 (2024)"
 parallel_cite: ""
 neutral_cite: ""
-court: "U.S. Court of Appeals for the Fifth Circuit"
-court_level: circuit
-circuit: "5th"
+court: U.S. Court of Appeals for the Fifth Circuit
+court_level: coa
+circuit: 5th
 year: 2024
 date_decided: 2024-08-09
-docket: "23-60321"
+docket: 23-60321
 authority_weight: "Binding in-circuit — 5th Cir."
 treatment:
   field_i_validity: good_law
-  varies_by_point: true
   as_of_content: 2026-07-03
   as_of_treatment: 2026-07-03
+  composite_basis: principal-holding
+  composite_basis_ref: search.digital.geofence-threshold
+  varies_by_point: true
   scope_note: "Composite reflects the search-threshold holding (geofence acquisition IS a search), confirmed by Chatrie v. United States (2026). The categorical general-warrant holding is the point that varies — binding in the Fifth Circuit, not adopted by SCOTUS."
-  composite_basis_ref: "search.digital.geofence-threshold"
   point_overrides:
-    - point: "search.warrant.geofence-general-warrant"
-      point_label: "Geofence warrants are categorically unconstitutional general warrants"
+    - point: search.warrant.geofence-general-warrant
+      point_label: Geofence warrants are categorically unconstitutional general warrants
       field_i_validity: caution
-      field_ii: ""
-      by: "[[Chatrie v. United States]]"
-      by_cite: "609 U.S. ___ (2026)"
       as_of_treatment: 2026-07-03
+      s3_binding_status: bound
+      by:
+        - name: Chatrie v. United States
+          cluster_id: 10881683
+          cite: "609 U.S. ___ (2026)"
+          field_ii: limited
       scope_note: "Binding in the Fifth Circuit; SCOTUS in Chatrie expressly declined to adopt the categorical rule — the probable-cause/particularity of geofence warrants is the live question on Chatrie's remand."
 lake:
   record_id: "United States v. Smith (2024)"
   status: under_review
-  projected_at: 2026-07-03
+  projected_at: 2026-07-06
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/10036119/united-states-v-smith/"
+  cluster_id: 10036119
   opinion_id: 10502720
   identity_checked: true
 homes:

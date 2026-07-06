@@ -2,9 +2,9 @@
 title: "Herring v. United States"
 type: case
 citation: "555 U.S. 135 (2009)"
-parallel_cite: ""
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "129 S. Ct. 695; 172 L. Ed. 2d 496"
+neutral_cite: 2009 U.S. LEXIS 581
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 2009
@@ -12,12 +12,17 @@ date_decided: 2009-01-14
 docket: ""
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: ""
-  by: []
+  field_i_validity: good_law
+  as_of_content: 2009-01-14
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Herring v. United States
+  varies_by_point: false
+  scope_note: "Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/145922/herring-v-united-states/"
+  cluster_id: 145922
   opinion_id: 145922
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[United States v. Leon]]", "[[Arizona v. Evans]]", "[[Mapp v. Ohio]]
 aliases: []
 tags: ["case", "fourth-amendment", "exclusionary-rule", "good-faith", "deterrence"]
 holding: "Suppression is warranted only where deterrence benefits outweigh costs; isolated, attenuated police negligence (a recordkeeping error)…"
+lake:
+  record_id: Herring v. United States
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Herring v. United States

@@ -2,22 +2,27 @@
 title: "California v. Acevedo"
 type: case
 citation: "500 U.S. 565 (1991)"
-parallel_cite: "111 S. Ct. 1982"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "111 S. Ct. 1982; 114 L. Ed. 2d 619"
+neutral_cite: 1991 U.S. LEXIS 3016
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1991
-date_decided: 1991-05-30
-docket: "89-1690"
+date_decided: 1991-06-03
+docket: 89-1690
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Adopted a unified container rule, overruling Arkansas v. Sanders; Acevedo itself is good law."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1991-05-30
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: California v. Acevedo
+  varies_by_point: false
+  scope_note: "Adopted a unified container rule, overruling Arkansas v. Sanders; Acevedo itself is good law."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/112608/california-v-acevedo/"
+  cluster_id: 112608
   opinion_id: 112608
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Carroll v. United States]]", "[[United States v. Ross]]", "[[United
 aliases: []
 tags: ["case", "fourth-amendment", "automobile-exception", "containers", "probable-cause"]
 holding: "Unified rule for containers in vehicles: police may search a container in a car without a warrant where they have PC to believe it holds…"
+lake:
+  record_id: California v. Acevedo
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # California v. Acevedo

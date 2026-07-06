@@ -2,22 +2,27 @@
 title: "Dalia v. United States"
 type: case
 citation: "441 U.S. 238 (1979)"
-parallel_cite: "99 S. Ct. 1682"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "99 S. Ct. 1682; 60 L. Ed. 2d 177"
+neutral_cite: 1979 U.S. LEXIS 89
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1979
 date_decided: 1979-04-18
-docket: "77-1722"
+docket: 77-1722
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Constitutional holdings on covert entry and manner-of-execution remain good law and are regularly applied to surveillance-installation warrants."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1979-04-18
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Dalia v. United States
+  varies_by_point: false
+  scope_note: Constitutional holdings on covert entry and manner-of-execution remain good law and are regularly applied to surveillance-installation warrants.
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/110061/dalia-v-united-states/"
+  cluster_id: 110061
   opinion_id: 110061
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Berger v. New York]]"]
 aliases: []
 tags: ["case", "fourth-amendment", "warrant", "search-warrant", "electronic-surveillance", "covert-entry", "warrant-execution", "title-iii"]
 holding: "A court order authorizing Title III electronic surveillance implicitly authorizes the covert entry needed to install the device; the Fourth Amendment does not require a warrant to specify the manner of its execution, including covert entry."
+lake:
+  record_id: Dalia v. United States
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Dalia v. United States

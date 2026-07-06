@@ -2,22 +2,27 @@
 title: "Rogers v. Richmond"
 type: case
 citation: "365 U.S. 534 (1961)"
-parallel_cite: "81 S. Ct. 735"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "81 S. Ct. 735; 5 L. Ed. 2d 760"
+neutral_cite: 1961 U.S. LEXIS 1494
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1961
 date_decided: 1961-03-20
-docket: "40"
+docket: 40
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Good law; the foundational statement that confession voluntariness is measured by coercion alone, with complete disregard of the confession's probable truth or reliability."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1961-03-20
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Rogers v. Richmond
+  varies_by_point: false
+  scope_note: "Good law; the foundational statement that confession voluntariness is measured by coercion alone, with complete disregard of the confession's probable truth or reliability."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/106192/rogers-v-richmond/"
+  cluster_id: 106192
   opinion_id: 106192
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Brown v. Mississippi]]", "[[Chambers v. Florida]]", "[[Spano v. New
 aliases: []
 tags: ["case", "fifth-amendment", "fourteenth-amendment", "confessions", "voluntariness", "due-process", "coercion"]
 holding: "A confession's admissibility under the Due Process Clause turns solely on whether police coercion overbore the suspect's will; the confession's probable truth or reliability is constitutionally irrelevant, and a voluntariness standard that takes reliability into account is invalid."
+lake:
+  record_id: Rogers v. Richmond
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Rogers v. Richmond

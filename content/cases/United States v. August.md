@@ -1,23 +1,28 @@
 ---
 title: "United States v. August"
 type: case
-citation: "136 F.4th 595 (5th Cir. 2025)"
+citation: "136 F.4th 595 (2025)"
 parallel_cite: ""
 neutral_cite: ""
 court: "U.S. Court of Appeals, 5th Circuit"
-court_level: circuit
-circuit: "5th"
+court_level: coa
+circuit: 5th
 year: 2025
 date_decided: 2025-05-08
-docket: "24-30457"
+docket: 24-30457
 authority_weight: "Binding in-circuit — 5th Cir."
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Recent published 5th Circuit decision; good law in-circuit."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 2025-05-08
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: United States v. August
+  varies_by_point: false
+  scope_note: "Recent published 5th Circuit decision; good law in-circuit."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/10574922/united-states-v-august/"
+  cluster_id: 10574922
   opinion_id: 11041510
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Maryland v. Buie]]", "[[United States v. Conner]]"]
 aliases: []
 tags: ["case", "fourth-amendment", "protective-sweep", "securing-the-scene"]
 holding: "(Binding in-circuit — 5th Cir.; Persuasive (outside circuit)) Articulates a four-part protective-sweep test and extends *Buie*'s officer-safety rationale to curtilage and to a non-arrest, investigatory entry."
+lake:
+  record_id: United States v. August
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # United States v. August

@@ -2,9 +2,9 @@
 title: "Miranda v. Arizona"
 type: case
 citation: "384 U.S. 436 (1966)"
-parallel_cite: "86 S. Ct. 1602"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "86 S. Ct. 1602; 16 L. Ed. 2d 694; 10 Ohio Misc. 9; 36 Ohio Op. 2d 237; 10 A.L.R. 3d 974"
+neutral_cite: 1966 U.S. LEXIS 2817
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1966
@@ -12,13 +12,18 @@ date_decided: 1966-06-13
 docket: ""
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Reaffirmed as a constitutional rule in Dickerson v. United States."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1966-06-13
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Miranda v. Arizona
+  varies_by_point: false
+  scope_note: Reaffirmed as a constitutional rule in Dickerson v. United States.
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/107252/miranda-v-arizona/"
-  opinion_id: 107252
+  cluster_id: 107252
+  opinion_id: 9423233
   identity_checked: true
 homes:
   - page: "[[Miranda and Custodial Interrogation]]"
@@ -27,6 +32,10 @@ related: ["[[Dickerson v. United States]]", "[[Berkemer v. McCarty]]", "[[Berghu
 aliases: []
 tags: ["case", "fifth-amendment", "miranda", "custodial-interrogation", "warnings", "self-incrimination"]
 holding: "Statements from custodial interrogation are inadmissible unless police first gave the warnings and the suspect knowingly, voluntarily…"
+lake:
+  record_id: Miranda v. Arizona
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Miranda v. Arizona

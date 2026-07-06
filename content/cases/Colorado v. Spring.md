@@ -2,23 +2,28 @@
 title: "Colorado v. Spring"
 type: case
 citation: "479 U.S. 564 (1987)"
-parallel_cite: "107 S. Ct. 851"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "107 S. Ct. 851; 93 L. Ed. 2d 954; 55 U.S.L.W. 4162"
+neutral_cite: 1987 U.S. LEXIS 418
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1987
 date_decided: 1987-01-27
-docket: "85-1517"
+docket: 85-1517
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Good law."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1987-01-27
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Colorado v. Spring
+  varies_by_point: false
+  scope_note: Good law.
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/111798/colorado-v-spring/"
-  opinion_id: 111798
+  cluster_id: 111798
+  opinion_id: 9430793
   identity_checked: true
 homes:
   - page: "[[Miranda Waiver and Invocation]]"
@@ -27,6 +32,10 @@ related: ["[[Moran v. Burbine]]", "[[Miranda v. Arizona]]"]
 aliases: []
 tags: ["case", "fifth-amendment", "miranda", "waiver"]
 holding: "A Miranda waiver is knowing and intelligent even though police did not tell the suspect all of the crimes or subjects the interrogation would cover; awareness of every possible subject of questioning is not a prerequisite to a valid waiver, and silence about the subject matter is not trickery."
+lake:
+  record_id: Colorado v. Spring
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Colorado v. Spring

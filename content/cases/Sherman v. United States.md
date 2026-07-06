@@ -2,22 +2,27 @@
 title: "Sherman v. United States"
 type: case
 citation: "356 U.S. 369 (1958)"
-parallel_cite: "78 S. Ct. 819"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "78 S. Ct. 819; 2 L. Ed. 2d 848"
+neutral_cite: 1958 U.S. LEXIS 1024
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1958
 date_decided: 1958-05-19
-docket: "87"
+docket: 87
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: ""
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1958-05-19
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Sherman v. United States
+  varies_by_point: false
+  scope_note: "Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/105681/sherman-v-united-states/"
+  cluster_id: 105681
   opinion_id: 105681
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Sorrells v. United States]]", "[[Hampton v. United States]]", "[[Ja
 aliases: []
 tags: ["case", "entrapment", "predisposition", "due-process"]
 holding: "Entrapment is established as a matter of law when the government, through its informant, implants the criminal design in an…"
+lake:
+  record_id: Sherman v. United States
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Sherman v. United States

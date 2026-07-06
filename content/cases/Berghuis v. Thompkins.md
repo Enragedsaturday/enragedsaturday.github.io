@@ -1,24 +1,29 @@
 ---
 title: "Berghuis v. Thompkins"
 type: case
-citation: "560 U.S. 370 (2010)"
-parallel_cite: "130 S. Ct. 2250"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+citation: ""
+parallel_cite: "176 L. Ed. 2d 1098; 130 S. Ct. 2250; 560 U.S. 370; 22 Fla. L. Weekly Fed. S 375; 78 U.S.L.W. 4479"
+neutral_cite: 2010 U.S. LEXIS 4379
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 2010
 date_decided: 2010-06-01
-docket: "08-1470"
+docket: 08-1470
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: ""
-  by: []
+  field_i_validity: good_law
+  as_of_content: 2010-06-01
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Berghuis v. Thompkins
+  varies_by_point: false
+  scope_note: "Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade."
+  point_overrides: []
 courtlistener:
-  opinion_url: "https://www.courtlistener.com/opinion/147529/berghuis-v-thompkins/"
-  opinion_id: 147529
+  opinion_url: "https://www.courtlistener.com/opinion/6796082/berghuis-v-thompkins/"
+  cluster_id: 6796082
+  opinion_id: 6680916
   identity_checked: true
 homes:
   - page: "[[Miranda Waiver and Invocation]]"
@@ -27,6 +32,10 @@ related: ["[[Davis v. United States]]", "[[North Carolina v. Butler]]", "[[Michi
 aliases: []
 tags: ["case", "fifth-amendment", "miranda", "waiver", "invocation", "right-to-remain-silent"]
 holding: "The right to remain silent must be invoked UNAMBIGUOUSLY; merely staying silent does not invoke it, and a suspect who answers questions…"
+lake:
+  record_id: Berghuis v. Thompkins
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Berghuis v. Thompkins

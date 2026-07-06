@@ -2,22 +2,27 @@
 title: "Mancusi v. DeForte"
 type: case
 citation: "392 U.S. 364 (1968)"
-parallel_cite: "88 S. Ct. 2120"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "88 S. Ct. 2120; 20 L. Ed. 2d 1154; 68 L.R.R.M. (BNA) 2449"
+neutral_cite: 1968 U.S. LEXIS 3075
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1968
 date_decided: 1968-06-17
-docket: "844"
+docket: 844
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "The holding that an employee can have a reasonable expectation of privacy in a shared workplace survives; Rakas v. Illinois (1978) recast 'standing' as a substantive REP merits question but did not disturb this result."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1968-06-17
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Mancusi v. DeForte
+  varies_by_point: false
+  scope_note: "The holding that an employee can have a reasonable expectation of privacy in a shared workplace survives; Rakas v. Illinois (1978) recast 'standing' as a substantive REP merits question but did not disturb this result."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/107745/mancusi-v-deforte/"
+  cluster_id: 107745
   opinion_id: 107745
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Jones v. United States]]", "[[Katz v. United States]]", "[[Rakas v.
 aliases: []
 tags: ["case", "fourth-amendment", "standing", "expectation-of-privacy", "workplace", "shared-office"]
 holding: "A union official has Fourth Amendment standing to challenge a warrantless search of the office he shares with other officials, because capacity to claim the Amendment turns on a reasonable expectation of freedom from governmental intrusion in the area, not on a property right."
+lake:
+  record_id: Mancusi v. DeForte
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Mancusi v. DeForte

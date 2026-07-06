@@ -2,9 +2,9 @@
 title: "Hudson v. Palmer"
 type: case
 citation: "468 U.S. 517 (1984)"
-parallel_cite: "104 S. Ct. 3194"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "104 S. Ct. 3194; 82 L. Ed. 2d 393; 52 U.S.L.W. 5052"
+neutral_cite: 1984 U.S. LEXIS 143
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1984
@@ -12,13 +12,18 @@ date_decided: 1984-07-03
 docket: ""
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Good law; a prisoner has no Fourth Amendment reasonable expectation of privacy in his cell. (The companion holding on intentional property deprivations and adequate post-deprivation remedies — the Parratt-Hudson doctrine — is a Fourteenth Amendment due-process matter outside this Fourth Amendment home.)"
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1984-07-03
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Hudson v. Palmer
+  varies_by_point: false
+  scope_note: "Good law; a prisoner has no Fourth Amendment reasonable expectation of privacy in his cell. (The companion holding on intentional property deprivations and adequate post-deprivation remedies — the Parratt-Hudson doctrine — is a Fourteenth Amendment due-process matter outside this Fourth Amendment home.)"
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/111252/hudson-v-palmer/"
-  opinion_id: 111252
+  cluster_id: 111252
+  opinion_id: 9429735
   identity_checked: true
 homes:
   - page: "[[Two Definitions of Search]]"
@@ -27,6 +32,10 @@ related: ["[[Katz v. United States]]", "[[Maryland v. King]]"]
 aliases: []
 tags: ["case", "fourth-amendment", "search", "prisoner", "reasonable-expectation-of-privacy", "prison-cell"]
 holding: "A prisoner has no reasonable expectation of privacy in his prison cell; the Fourth Amendment's proscription against unreasonable searches does not apply within the cell."
+lake:
+  record_id: Hudson v. Palmer
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Hudson v. Palmer

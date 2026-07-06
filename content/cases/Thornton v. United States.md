@@ -2,22 +2,38 @@
 title: "Thornton v. United States"
 type: case
 citation: "541 U.S. 615 (2004)"
-parallel_cite: "124 S. Ct. 2127"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "124 S. Ct. 2127; 158 L. Ed. 2d 905"
+neutral_cite: 2004 U.S. LEXIS 3681
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 2004
 date_decided: 2004-05-24
-docket: "03-5165"
+docket: 03-5165
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: limited
-  as_of: 2026-06-30
-  note: "Extended Belton to 'recent occupants'; its automatic-search rule was cabined by Arizona v. Gant (2009), which replaced it with a two-justification test (arrestee unsecured and within reach, or reason to believe the vehicle contains evidence of the offense of arrest)."
-  by: ["[[Arizona v. Gant]]"]
+  field_i_validity: caution
+  as_of_content: 2004-05-24
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Thornton v. United States
+  varies_by_point: true
+  scope_note: "Extended Belton to 'recent occupants'; its automatic-search rule was cabined by Arizona v. Gant (2009), which replaced it with a two-justification test (arrestee unsecured and within reach, or reason to believe the vehicle contains evidence of the offense of arrest)."
+  point_overrides:
+    - point: legacy-limited-thornton-v-united-states
+      point_label: Legacy limited treatment point
+      field_i_validity: caution
+      as_of_treatment: 2026-06-30
+      s3_binding_status: provisional
+      by:
+        - name: Arizona v. Gant
+          cluster_id: 145887
+          cite: 556 U.S. 332
+          field_ii: limited
+      scope_note: "Extended Belton to 'recent occupants'; its automatic-search rule was cabined by Arizona v. Gant (2009), which replaced it with a two-justification test (arrestee unsecured and within reach, or reason to believe the vehicle contains evidence of the offense of arrest)."
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/134746/thornton-v-united-states/"
+  cluster_id: 134746
   opinion_id: 134746
   identity_checked: true
 homes:
@@ -29,6 +45,10 @@ related: ["[[New York v. Belton]]", "[[Arizona v. Gant]]", "[[Chimel v. Californ
 aliases: []
 tags: ["case", "fourth-amendment", "search-incident-to-arrest", "automobile", "vehicle-search", "recent-occupant"]
 holding: "New York v. Belton's rule permitting a vehicle search incident to an occupant's arrest applies even when the officer first makes contact after the arrestee has exited the vehicle — i.e., to a 'recent occupant' (later cabined by Arizona v. Gant's two-justification test)."
+lake:
+  record_id: Thornton v. United States
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Thornton v. United States

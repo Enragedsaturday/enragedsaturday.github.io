@@ -2,9 +2,9 @@
 title: "Dow Chemical Co. v. United States"
 type: case
 citation: "476 U.S. 227 (1986)"
-parallel_cite: "106 S. Ct. 1819"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "106 S. Ct. 1819; 90 L. Ed. 2d 226; 16 Envtl. L. Rep. (Envtl. Law Inst.) 20679; 54 U.S.L.W. 4464; 24 ERC (BNA) 1385"
+neutral_cite: 1986 U.S. LEXIS 155
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1986
@@ -12,13 +12,18 @@ date_decided: 1986-05-19
 docket: ""
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Good law; the open-areas-as-open-fields/navigable-airspace holding remains the governing rule for aerial observation of commercial and industrial premises."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1986-05-19
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Dow Chemical Co. v. United States
+  varies_by_point: false
+  scope_note: "Good law; the open-areas-as-open-fields/navigable-airspace holding remains the governing rule for aerial observation of commercial and industrial premises."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/111667/dow-chemical-co-v-united-states-ex-rel-administrator/"
-  opinion_id: 111667
+  cluster_id: 111667
+  opinion_id: 9430504
   identity_checked: true
 homes:
   - page: "[[Curtilage]]"
@@ -29,6 +34,10 @@ related: ["[[California v. Ciraolo]]", "[[Florida v. Riley]]", "[[Oliver v. Unit
 aliases: ["Dow Chemical Co. v. United States Ex Rel. Administrator"]
 tags: ["case", "fourth-amendment", "search", "aerial-surveillance", "open-fields", "curtilage", "commercial-premises"]
 holding: "Precision aerial photography of the open areas of an industrial complex from navigable airspace is not a Fourth Amendment search; such open areas are more like open fields than the curtilage of a home."
+lake:
+  record_id: Dow Chemical Co. v. United States
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Dow Chemical Co. v. United States

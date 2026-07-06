@@ -2,23 +2,28 @@
 title: "Walter v. United States"
 type: case
 citation: "447 U.S. 649 (1980)"
-parallel_cite: "100 S. Ct. 2395"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "100 S. Ct. 2395; 65 L. Ed. 2d 410"
+neutral_cite: 1980 U.S. LEXIS 135
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1980
 date_decided: 1980-06-20
-docket: "79-67"
+docket: 79-67
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Plurality (Stevens, J., announcing the judgment); private-search principle later adopted and refined in United States v. Jacobsen (1984); good law."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1980-06-20
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Walter v. United States
+  varies_by_point: false
+  scope_note: "Plurality (Stevens, J., announcing the judgment); private-search principle later adopted and refined in United States v. Jacobsen (1984); good law."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/110314/walter-v-united-states/"
-  opinion_id: 110314
+  cluster_id: 110314
+  opinion_id: 9428007
   identity_checked: true
 homes:
   - page: "[[Fourth Amendment Framework]]"
@@ -27,6 +32,10 @@ related: ["[[United States v. Jacobsen]]"]
 aliases: ["Walter v. US"]
 tags: ["case", "fourth-amendment", "private-search", "scope", "search-definition"]
 holding: "The government may not exceed the scope of a prior private search; the FBI's screening of films the private party had not viewed was a separate, unlawful search."
+lake:
+  record_id: Walter v. United States
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Walter v. United States

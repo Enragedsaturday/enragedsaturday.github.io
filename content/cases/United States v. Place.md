@@ -2,9 +2,9 @@
 title: "United States v. Place"
 type: case
 citation: "462 U.S. 696 (1983)"
-parallel_cite: "103 S. Ct. 2637"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "103 S. Ct. 2637; 77 L. Ed. 2d 110; 51 U.S.L.W. 4844"
+neutral_cite: 1983 U.S. LEXIS 74
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1983
@@ -12,13 +12,18 @@ date_decided: 1983-06-20
 docket: ""
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Good law. The luggage dog-sniff-is-not-a-search holding was applied in Illinois v. Caballes (2005); Florida v. Jardines (2013) held a dog sniff at a home's curtilage IS a search (trespass), a boundary on context, not an overruling. The duration holding is developed by United States v. Sharpe (no rigid time limit) and Rodriguez v. United States (no prolongation)."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1983-06-20
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: United States v. Place
+  varies_by_point: false
+  scope_note: "Good law. The luggage dog-sniff-is-not-a-search holding was applied in Illinois v. Caballes (2005); Florida v. Jardines (2013) held a dog sniff at a home's curtilage IS a search (trespass), a boundary on context, not an overruling. The duration holding is developed by United States v. Sharpe (no rigid time limit) and Rodriguez v. United States (no prolongation)."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/110979/united-states-v-place/"
-  opinion_id: 110979
+  cluster_id: 110979
+  opinion_id: 9429264
   identity_checked: true
 homes:
   - page: "[[Two Definitions of Search]]"
@@ -29,6 +34,10 @@ related: ["[[Illinois v. Caballes]]", "[[Florida v. Jardines]]", "[[Terry v. Ohi
 aliases: []
 tags: ["case", "fourth-amendment", "search", "seizure", "dog-sniff", "luggage", "terry-stop", "duration"]
 holding: "A canine sniff of luggage in a public place is sui generis and not a search; but a 90-minute investigative seizure of the luggage exceeded the permissible limits of a Terry stop."
+lake:
+  record_id: United States v. Place
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # United States v. Place

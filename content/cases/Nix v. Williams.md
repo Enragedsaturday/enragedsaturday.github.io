@@ -2,9 +2,9 @@
 title: "Nix v. Williams"
 type: case
 citation: "467 U.S. 431 (1984)"
-parallel_cite: "104 S. Ct. 2501"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "104 S. Ct. 2501; 81 L. Ed. 2d 377; 52 U.S.L.W. 4732"
+neutral_cite: 1984 U.S. LEXIS 101
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1984
@@ -12,13 +12,18 @@ date_decided: 1984-06-11
 docket: ""
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Establishes the inevitable-discovery exception to the exclusionary rule; good law."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1984-06-11
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Nix v. Williams
+  varies_by_point: false
+  scope_note: "Establishes the inevitable-discovery exception to the exclusionary rule; good law."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/111204/nix-v-williams/"
-  opinion_id: 111204
+  cluster_id: 111204
+  opinion_id: 9429647
   identity_checked: true
 homes:
   - page: "[[The Exclusionary Rule]]"
@@ -27,6 +32,10 @@ related: ["[[Murray v. United States]]", "[[Brewer v. Williams]]", "[[Segura v. 
 aliases: []
 tags: ["case", "exclusionary-rule", "inevitable-discovery", "fruit-of-the-poisonous-tree"]
 holding: "Inevitable discovery: unlawfully obtained evidence is admissible if the prosecution proves by a preponderance it would inevitably have…"
+lake:
+  record_id: Nix v. Williams
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Nix v. Williams

@@ -2,22 +2,27 @@
 title: "Foster v. California"
 type: case
 citation: "394 U.S. 440 (1969)"
-parallel_cite: "89 S. Ct. 1127"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "89 S. Ct. 1127; 22 L. Ed. 2d 402"
+neutral_cite: 1969 U.S. LEXIS 2050
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1969
 date_decided: 1969-04-01
-docket: "47"
+docket: 47
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Good law; the rare case in which the Court found a pretrial identification so suggestive as to violate due process (noted as such in Perry v. New Hampshire)."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1969-04-01
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Foster v. California
+  varies_by_point: false
+  scope_note: "Good law; the rare case in which the Court found a pretrial identification so suggestive as to violate due process (noted as such in Perry v. New Hampshire)."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/107890/foster-v-california/"
+  cluster_id: 107890
   opinion_id: 107890
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Stovall v. Denno]]", "[[Neil v. Biggers]]", "[[Manson v. Brathwaite
 aliases: []
 tags: ["case", "due-process", "eyewitness-identification", "lineup", "suggestive"]
 holding: "An identification procedure may be so unnecessarily suggestive that it denies due process; here a lineup that made the suspect stand out, followed by a one-on-one showup and a repeat lineup in which he was the only carryover, made identification all but inevitable and violated due process — the rare such reversal."
+lake:
+  record_id: Foster v. California
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Foster v. California

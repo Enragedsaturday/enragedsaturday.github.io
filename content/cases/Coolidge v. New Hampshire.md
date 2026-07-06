@@ -2,9 +2,9 @@
 title: "Coolidge v. New Hampshire"
 type: case
 citation: "403 U.S. 443 (1971)"
-parallel_cite: "91 S. Ct. 2022"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "91 S. Ct. 2022; 29 L. Ed. 2d 564"
+neutral_cite: 1971 U.S. LEXIS 25
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1971
@@ -12,12 +12,28 @@ date_decided: 1971-06-21
 docket: ""
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: limited
-  as_of: 2026-06-30
-  note: "Horton v. California (1990) abandoned the inadvertence requirement of the Coolidge plurality's plain-view formulation; the prior-justification and immediately-apparent requirements survive."
-  by: ["[[Horton v. California]]"]
+  field_i_validity: caution
+  as_of_content: 1971-06-21
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Coolidge v. New Hampshire
+  varies_by_point: true
+  scope_note: "Horton v. California (1990) abandoned the inadvertence requirement of the Coolidge plurality's plain-view formulation; the prior-justification and immediately-apparent requirements survive."
+  point_overrides:
+    - point: legacy-limited-coolidge-v-new-hampshire
+      point_label: Legacy limited treatment point
+      field_i_validity: caution
+      as_of_treatment: 2026-06-30
+      s3_binding_status: provisional
+      by:
+        - name: Horton v. California
+          cluster_id: 112448
+          cite: 496 U.S. 128
+          field_ii: limited
+      scope_note: "Horton v. California (1990) abandoned the inadvertence requirement of the Coolidge plurality's plain-view formulation; the prior-justification and immediately-apparent requirements survive."
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/108377/coolidge-v-new-hampshire/"
+  cluster_id: 108377
   opinion_id: 108377
   identity_checked: true
 homes:
@@ -29,6 +45,10 @@ related: ["[[Horton v. California]]", "[[Arizona v. Hicks]]", "[[Texas v. Brown]
 aliases: []
 tags: ["case", "fourth-amendment", "plain-view", "warrant-requirement", "inadvertence", "immediately-apparent"]
 holding: "ORIGIN of the modern plain-view doctrine (Stewart plurality). Plain view justifies a warrantless seizure only where the incriminating…"
+lake:
+  record_id: Coolidge v. New Hampshire
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Coolidge v. New Hampshire

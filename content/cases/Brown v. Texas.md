@@ -2,9 +2,9 @@
 title: "Brown v. Texas"
 type: case
 citation: "443 U.S. 47 (1979)"
-parallel_cite: "99 S. Ct. 2637"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "99 S. Ct. 2637; 61 L. Ed. 2d 357"
+neutral_cite: 1979 U.S. LEXIS 136
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1979
@@ -12,12 +12,17 @@ date_decided: 1979-06-25
 docket: ""
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Good law. Police may not detain a person and demand identification without reasonable suspicion; the case supplies the three-factor balancing test for suspicionless seizures. Hiibel v. Sixth Judicial Dist. Court (2004) later upheld an identify-yourself demand during a lawful Terry stop — the question Brown expressly reserved — and does not disturb Brown."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1979-06-25
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Brown v. Texas
+  varies_by_point: false
+  scope_note: "Good law. Police may not detain a person and demand identification without reasonable suspicion; the case supplies the three-factor balancing test for suspicionless seizures. Hiibel v. Sixth Judicial Dist. Court (2004) later upheld an identify-yourself demand during a lawful Terry stop — the question Brown expressly reserved — and does not disturb Brown."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/110128/brown-v-texas/"
+  cluster_id: 110128
   opinion_id: 110128
   identity_checked: true
 homes:
@@ -29,6 +34,10 @@ related: ["[[Terry v. Ohio]]", "[[Delaware v. Prouse]]", "[[Hiibel v. Sixth Judi
 aliases: []
 tags: ["case", "fourth-amendment", "terry-stop", "reasonable-suspicion", "stop-and-identify", "seizure"]
 holding: "Police may not stop a person and demand identification without reasonable suspicion of criminal activity; the constitutionality of suspicionless seizures is judged by balancing public concern, advancement of the public interest, and the severity of the intrusion on liberty."
+lake:
+  record_id: Brown v. Texas
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Brown v. Texas

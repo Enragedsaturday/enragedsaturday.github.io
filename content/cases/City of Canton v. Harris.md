@@ -2,22 +2,27 @@
 title: "City of Canton v. Harris"
 type: case
 citation: "489 U.S. 378 (1989)"
-parallel_cite: "109 S. Ct. 1197"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "109 S. Ct. 1197; 103 L. Ed. 2d 412; 57 U.S.L.W. 4270"
+neutral_cite: 1989 U.S. LEXIS 1200
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1989
 date_decided: 1989-02-28
-docket: "86-1088"
+docket: 86-1088
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Good law: the 'deliberate indifference' standard for municipal failure-to-train liability."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1989-02-28
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: City of Canton v. Harris
+  varies_by_point: false
+  scope_note: "Good law: the 'deliberate indifference' standard for municipal failure-to-train liability."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/112209/city-of-canton-v-harris/"
+  cluster_id: 112209
   opinion_id: 112209
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Monell v. Department of Social Services]]", "[[Pembaur v. City of C
 aliases: ["Canton v. Harris", "City of Canton, Ohio v. Harris"]
 tags: ["case", "section-1983", "municipal-liability", "failure-to-train", "deliberate-indifference", "monell"]
 holding: "A municipality is liable under § 1983 for inadequate police training only where the failure to train amounts to deliberate indifference to the rights of persons with whom the police come into contact."
+lake:
+  record_id: City of Canton v. Harris
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # City of Canton v. Harris

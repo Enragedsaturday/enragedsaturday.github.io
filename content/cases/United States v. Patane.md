@@ -2,9 +2,9 @@
 title: "United States v. Patane"
 type: case
 citation: "542 U.S. 630 (2004)"
-parallel_cite: "124 S. Ct. 2620"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "124 S. Ct. 2620; 159 L. Ed. 2d 667"
+neutral_cite: 2004 U.S. LEXIS 4577
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 2004
@@ -12,12 +12,17 @@ date_decided: 2004-06-28
 docket: ""
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Plurality opinion; Kennedy and O'Connor, JJ., concurred in the judgment."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 2004-06-28
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: United States v. Patane
+  varies_by_point: false
+  scope_note: "Plurality opinion; Kennedy and O'Connor, JJ., concurred in the judgment."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/137003/united-states-v-patane/"
+  cluster_id: 137003
   opinion_id: 137003
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Oregon v. Elstad]]", "[[Dickerson v. United States]]", "[[Missouri 
 aliases: []
 tags: ["case", "fifth-amendment", "miranda", "self-incrimination", "physical-fruits", "fruit-of-the-poisonous-tree"]
 holding: "Physical fruits of an un-warned but voluntary statement are admissible."
+lake:
+  record_id: United States v. Patane
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # United States v. Patane

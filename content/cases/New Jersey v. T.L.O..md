@@ -2,9 +2,9 @@
 title: "New Jersey v. T.L.O."
 type: case
 citation: "469 U.S. 325 (1985)"
-parallel_cite: "105 S. Ct. 733"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "105 S. Ct. 733; 83 L. Ed. 2d 720; 53 U.S.L.W. 4083"
+neutral_cite: 1985 U.S. LEXIS 41
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1985
@@ -12,13 +12,18 @@ date_decided: 1985-01-15
 docket: ""
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Anchor for the reasonableness standard governing school searches; good law."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1985-01-15
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: New Jersey v. T.L.O.
+  varies_by_point: false
+  scope_note: "Anchor for the reasonableness standard governing school searches; good law."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/111301/new-jersey-v-t-l-o/"
-  opinion_id: 111301
+  cluster_id: 111301
+  opinion_id: 9429812
   identity_checked: true
 homes:
   - page: "[[Special Needs and Administrative Searches]]"
@@ -27,6 +32,10 @@ related: ["[[Vernonia School District 47J v. Acton]]", "[[Safford Unified School
 aliases: ["New Jersey v. TLO"]
 tags: ["case", "fourth-amendment", "school-search", "special-needs", "reasonableness"]
 holding: "A school official's search of a student requires only reasonableness under all the circumstances — justified at inception + reasonably…"
+lake:
+  record_id: New Jersey v. T.L.O.
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # New Jersey v. T.L.O.

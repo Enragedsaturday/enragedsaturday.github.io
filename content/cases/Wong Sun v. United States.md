@@ -2,22 +2,27 @@
 title: "Wong Sun v. United States"
 type: case
 citation: "371 U.S. 471 (1963)"
-parallel_cite: "83 S. Ct. 407"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "83 S. Ct. 407; 9 L. Ed. 2d 441"
+neutral_cite: 1963 U.S. LEXIS 2431
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1963
 date_decided: 1963-01-14
-docket: "36"
+docket: 36
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Foundational fruit-of-the-poisonous-tree / attenuation case; good law."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1963-01-14
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Wong Sun v. United States
+  varies_by_point: false
+  scope_note: "Foundational fruit-of-the-poisonous-tree / attenuation case; good law."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/106515/wong-sun-v-united-states/"
+  cluster_id: 106515
   opinion_id: 106515
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Brown v. Illinois]]", "[[Utah v. Strieff]]", "[[Nix v. Williams]]"]
 aliases: ["Wong Sun"]
 tags: ["case", "fourth-amendment", "exclusionary-rule", "fruit-of-the-poisonous-tree", "attenuation"]
 holding: "'Fruit of the poisonous tree': derivative evidence is suppressed if come at by exploitation of the primary illegality, not merely 'but…"
+lake:
+  record_id: Wong Sun v. United States
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Wong Sun v. United States

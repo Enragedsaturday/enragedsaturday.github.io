@@ -2,23 +2,28 @@
 title: "Malley v. Briggs"
 type: case
 citation: "475 U.S. 335 (1986)"
-parallel_cite: "106 S. Ct. 1092"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "106 S. Ct. 1092; 89 L. Ed. 2d 271; 54 U.S.L.W. 4243"
+neutral_cite: 1986 U.S. LEXIS 29
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1986
 date_decided: 1986-03-05
-docket: "84-1586"
+docket: 84-1586
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Good law: officers applying for warrants get qualified, not absolute, immunity; the 'no reasonably competent officer' standard governs."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1986-03-05
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Malley v. Briggs
+  varies_by_point: false
+  scope_note: "Good law: officers applying for warrants get qualified, not absolute, immunity; the 'no reasonably competent officer' standard governs."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/111611/malley-v-briggs/"
-  opinion_id: 111611
+  cluster_id: 111611
+  opinion_id: 9430379
   identity_checked: true
 homes:
   - page: "[[Section 1983 Liability and Qualified Immunity]]"
@@ -29,6 +34,10 @@ related: ["[[Messerschmidt v. Millender]]", "[[United States v. Leon]]", "[[Harl
 aliases: []
 tags: ["case", "section-1983", "qualified-immunity", "warrant", "probable-cause", "objective-reasonableness"]
 holding: "An officer who applies for a warrant on an affidavit so lacking in probable cause that no reasonably competent officer would have sought it loses qualified immunity; warrant-applying officers get qualified, not absolute, immunity."
+lake:
+  record_id: Malley v. Briggs
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Malley v. Briggs

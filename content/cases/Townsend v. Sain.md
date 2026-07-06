@@ -2,22 +2,27 @@
 title: "Townsend v. Sain"
 type: case
 citation: "372 U.S. 293 (1963)"
-parallel_cite: "83 S. Ct. 745"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "83 S. Ct. 745; 9 L. Ed. 2d 770"
+neutral_cite: 1963 U.S. LEXIS 1941
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1963
 date_decided: 1963-03-18
-docket: "8"
+docket: 8
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Good law on the confession-voluntariness holding (a drug/'truth serum'-induced confession not the product of a free intellect is inadmissible). The separate federal-habeas evidentiary-hearing standard (the Townsend circumstances/deliberate-bypass) was abrogated by Keeney v. Tamayo-Reyes, 504 U.S. 1 (1992), and superseded by AEDPA, 28 U.S.C. §2254(e)(2)."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1963-03-18
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Townsend v. Sain
+  varies_by_point: false
+  scope_note: "Good law on the confession-voluntariness holding (a drug/'truth serum'-induced confession not the product of a free intellect is inadmissible). The separate federal-habeas evidentiary-hearing standard (the Townsend circumstances/deliberate-bypass) was abrogated by Keeney v. Tamayo-Reyes, 504 U.S. 1 (1992), and superseded by AEDPA, 28 U.S.C. §2254(e)(2)."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/106544/townsend-v-sain/"
+  cluster_id: 106544
   opinion_id: 106544
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Rogers v. Richmond]]", "[[Beecher v. Alabama]]", "[[Lynumn v. Illin
 aliases: []
 tags: ["case", "fifth-amendment", "fourteenth-amendment", "confessions", "voluntariness", "due-process", "coercion", "habeas"]
 holding: "A confession that is the product of a drug having the effect of a 'truth serum' (scopolamine/hyoscine), administered to a suspect, is involuntary and inadmissible if it was not the product of a rational intellect and free will — regardless of whether the drug was administered by persons unaware of its properties and regardless of the confession's reliability."
+lake:
+  record_id: Townsend v. Sain
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Townsend v. Sain

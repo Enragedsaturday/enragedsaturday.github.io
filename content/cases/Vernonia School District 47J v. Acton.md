@@ -2,23 +2,28 @@
 title: "Vernonia School District 47J v. Acton"
 type: case
 citation: "515 U.S. 646 (1995)"
-parallel_cite: "115 S. Ct. 2386"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "115 S. Ct. 2386; 132 L. Ed. 2d 564"
+neutral_cite: 1995 U.S. LEXIS 4275
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1995
 date_decided: 1995-06-26
-docket: "94-590"
+docket: 94-590
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Extended to non-athlete competitive extracurriculars by Board of Education v. Earls (2002); good law."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1995-06-26
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Vernonia School District 47J v. Acton
+  varies_by_point: false
+  scope_note: "Extended to non-athlete competitive extracurriculars by Board of Education v. Earls (2002); good law."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/117964/vernonia-school-district-47j-v-acton/"
-  opinion_id: 117964
+  cluster_id: 117964
+  opinion_id: 9433198
   identity_checked: true
 homes:
   - page: "[[Special Needs and Administrative Searches]]"
@@ -27,6 +32,10 @@ related: ["[[Board of Education v. Earls]]", "[[New Jersey v. T.L.O.]]", "[[Skin
 aliases: ["Vernonia v. Acton", "Acton"]
 tags: ["case", "fourth-amendment", "special-needs", "drug-testing", "schools", "student-athletes"]
 holding: "Suspicionless random drug testing of public-school student athletes is reasonable under the special-needs doctrine, given athletes'…"
+lake:
+  record_id: Vernonia School District 47J v. Acton
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Vernonia School District 47J v. Acton

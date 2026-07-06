@@ -2,22 +2,27 @@
 title: "Samson v. California"
 type: case
 citation: "547 U.S. 843 (2006)"
-parallel_cite: "126 S. Ct. 2193"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "126 S. Ct. 2193; 165 L. Ed. 2d 250"
+neutral_cite: 2006 U.S. LEXIS 4885
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 2006
 date_decided: 2006-06-19
-docket: "04-9728"
+docket: 04-9728
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: ""
-  by: []
+  field_i_validity: good_law
+  as_of_content: 2006-06-19
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Samson v. California
+  varies_by_point: false
+  scope_note: "Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/145640/samson-v-california/"
+  cluster_id: 145640
   opinion_id: 145640
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[United States v. Knights]]", "[[Griffin v. Wisconsin]]", "[[Board o
 aliases: []
 tags: ["case", "fourth-amendment", "parolee", "suspicionless-search", "diminished-privacy", "special-needs"]
 holding: "A suspicionless search of a parolee is reasonable; a parolee subject to a search condition has severely diminished privacy expectations,…"
+lake:
+  record_id: Samson v. California
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Samson v. California

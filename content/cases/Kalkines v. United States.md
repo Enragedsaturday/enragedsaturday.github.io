@@ -1,23 +1,28 @@
 ---
 title: "Kalkines v. United States"
 type: case
-citation: "473 F.2d 1391 (Ct. Cl. 1973)"
-parallel_cite: "200 Ct. Cl. 570"
+citation: ""
+parallel_cite: "200 Ct. Cl. 570; 473 F.2d 1391; 1973 U.S. Ct. Cl. LEXIS 11"
 neutral_cite: ""
-court: "U.S. Court of Claims"
+court: U.S. Court of Claims
 court_level: other
 circuit: ""
 year: 1973
 date_decided: 1973-02-16
 docket: ""
-authority_weight: "Binding in-circuit — Fed. Cir."
+authority_weight: Historical
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Good law; the 'Kalkines warning' remains the governing standard for compelling federal employees to answer job-related questions. A U.S. Court of Claims decision; its precedent was adopted as binding by the Federal Circuit (South Corp. v. United States)."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1973-02-16
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Kalkines v. United States
+  varies_by_point: false
+  scope_note: "Good law; the 'Kalkines warning' remains the governing standard for compelling federal employees to answer job-related questions. A U.S. Court of Claims decision; its precedent was adopted as binding by the Federal Circuit (South Corp. v. United States)."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/8615714/kalkines-v-united-states/"
+  cluster_id: 8615714
   opinion_id: 8594616
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Garrity v. New Jersey]]", "[[Gardner v. Broderick]]", "[[Lefkowitz 
 aliases: []
 tags: ["case", "fifth-amendment", "self-incrimination", "public-employee", "garrity", "kalkines-warning", "federal-employee"]
 holding: "A federal employee may be discharged for refusing to answer narrowly job-related questions only if first adequately advised both that refusal subjects him to discharge and that his answers (and their fruits) cannot be used against him in a criminal case — the 'Kalkines warning.'"
+lake:
+  record_id: Kalkines v. United States
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Kalkines v. United States

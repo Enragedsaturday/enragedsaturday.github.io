@@ -1,10 +1,10 @@
 ---
 title: "Soldal v. Cook County"
 type: case
-citation: "506 U.S. 56 (1992)"
-parallel_cite: "113 S. Ct. 538"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+citation: ""
+parallel_cite: "506 U.S. 56; 113 S. Ct. 538; 121 L. Ed. 2d 450; 92 Daily Journal DAR 16378; 61 U.S.L.W. 4019; 6 Fla. L. Weekly Fed. S 769"
+neutral_cite: "1992 U.S. LEXIS 7835; 92 Cal. Daily Op. Serv. 9794"
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1992
@@ -12,12 +12,17 @@ date_decided: 1992-12-08
 docket: ""
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Good law; the holding that the Fourth Amendment protects possessory interests independent of privacy and liberty remains controlling."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1992-12-08
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Soldal v. Cook County
+  varies_by_point: false
+  scope_note: "Good law; the holding that the Fourth Amendment protects possessory interests independent of privacy and liberty remains controlling."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/112795/soldal-v-cook-county/"
+  cluster_id: 112795
   opinion_id: 112795
   identity_checked: true
 homes:
@@ -29,6 +34,10 @@ related: ["[[United States v. Jacobsen]]", "[[Horton v. California]]", "[[Oliver
 aliases: []
 tags: ["case", "fourth-amendment", "seizure", "possessory-interest", "property", "section-1983"]
 holding: "A 'seizure' of property occurs whenever there is meaningful interference with possessory interests; the Fourth Amendment protects property interests independent of privacy or liberty."
+lake:
+  record_id: Soldal v. Cook County
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Soldal v. Cook County

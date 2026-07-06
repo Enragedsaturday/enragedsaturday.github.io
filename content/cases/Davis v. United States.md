@@ -1,25 +1,30 @@
 ---
 title: "Davis v. United States"
 type: case
-citation: "512 U.S. 452 (1994)"
-parallel_cite: "114 S. Ct. 2350"
+citation: "513 U.S. 1008 (1994)"
+parallel_cite: ""
 neutral_cite: ""
-court: "U.S. Supreme Court"
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1994
-date_decided: 1994-06-24
+date_decided: 1994-11-14
 docket: ""
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: ""
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1994-06-24
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Davis v. United States
+  varies_by_point: false
+  scope_note: "Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade."
+  point_overrides: []
 courtlistener:
-  opinion_url: "https://www.courtlistener.com/opinion/117863/davis-v-united-states/"
-  opinion_id: 117863
-  identity_checked: true
+  opinion_url: "https://www.courtlistener.com/opinion/9148721/davis-v-united-states/"
+  cluster_id: 9148721
+  opinion_id: 9143409
+  identity_checked: false
 homes:
   - page: "[[Miranda Waiver and Invocation]]"
     role: "Key — Progeny / Refinement"
@@ -27,6 +32,10 @@ related: ["[[Edwards v. Arizona]]", "[[Berghuis v. Thompkins]]", "[[Arizona v. R
 aliases: ["Davis v. United States (1994)"]
 tags: ["case", "fifth-amendment", "miranda", "invocation", "right-to-counsel", "ambiguous-request"]
 holding: "A suspect must invoke the right to counsel UNAMBIGUOUSLY; an equivocal or ambiguous reference (\"maybe I should talk to a lawyer\") does…"
+lake:
+  record_id: Davis v. United States
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Davis v. United States

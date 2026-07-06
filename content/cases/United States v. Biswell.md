@@ -2,22 +2,27 @@
 title: "United States v. Biswell"
 type: case
 citation: "406 U.S. 311 (1972)"
-parallel_cite: "92 S. Ct. 1593"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "92 S. Ct. 1593; 32 L. Ed. 2d 87"
+neutral_cite: 1972 U.S. LEXIS 60
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1972
 date_decided: 1972-05-15
-docket: "71-81"
+docket: 71-81
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Good law; foundational pervasively-regulated-industry case (with Colonnade), applied in Donovan v. Dewey and organized into the three-part test of New York v. Burger (1987)."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1972-05-15
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: United States v. Biswell
+  varies_by_point: false
+  scope_note: "Good law; foundational pervasively-regulated-industry case (with Colonnade), applied in Donovan v. Dewey and organized into the three-part test of New York v. Burger (1987)."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/108533/united-states-v-biswell/"
+  cluster_id: 108533
   opinion_id: 108533
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Donovan v. Dewey]]", "[[Marshall v. Barlow's Inc.]]", "[[See v. Cit
 aliases: []
 tags: ["case", "fourth-amendment", "administrative-search", "inspections", "pervasively-regulated", "firearms", "gun-control-act"]
 holding: "A warrantless inspection of a federally licensed firearms dealer under the Gun Control Act is reasonable: dealing in firearms is a pervasively regulated business whose licensee accepts inspection as a condition, and unannounced warrantless inspection is essential to effective enforcement."
+lake:
+  record_id: United States v. Biswell
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # United States v. Biswell

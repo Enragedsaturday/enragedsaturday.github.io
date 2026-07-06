@@ -2,22 +2,27 @@
 title: "County of Riverside v. McLaughlin"
 type: case
 citation: "500 U.S. 44 (1991)"
-parallel_cite: "111 S. Ct. 1661"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "111 S. Ct. 1661; 114 L. Ed. 2d 49"
+neutral_cite: 1991 U.S. LEXIS 2528
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1991
-date_decided: ""
+date_decided: 1991-05-20
 docket: ""
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Good law. Implements Gerstein v. Pugh: a judicial probable-cause determination within 48 hours of a warrantless arrest is presumptively prompt; beyond 48 hours the burden shifts to the government to show a bona fide emergency or other extraordinary circumstance, and intervening weekends/holidays do not excuse delay. (date_decided omitted — CL dateFiled 1991-05-20 differs from the announced May 13, 1991; year certain.)"
-  by: []
+  field_i_validity: good_law
+  as_of_content: null
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: County of Riverside v. McLaughlin
+  varies_by_point: false
+  scope_note: "Good law. Implements Gerstein v. Pugh: a judicial probable-cause determination within 48 hours of a warrantless arrest is presumptively prompt; beyond 48 hours the burden shifts to the government to show a bona fide emergency or other extraordinary circumstance, and intervening weekends/holidays do not excuse delay. (date_decided omitted — CL dateFiled 1991-05-20 differs from the announced May 13, 1991; year certain.)"
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/112585/county-of-riverside-v-mclaughlin/"
+  cluster_id: 112585
   opinion_id: 112585
   identity_checked: true
 homes:
@@ -27,6 +32,10 @@ related: ["[[Gerstein v. Pugh]]"]
 aliases: []
 tags: ["case", "fourth-amendment", "arrest", "probable-cause", "pretrial-detention", "gerstein-hearing"]
 holding: "A judicial probable-cause determination provided within 48 hours of a warrantless arrest is presumptively prompt under Gerstein; if it comes later, the burden shifts to the government to show a bona fide emergency or extraordinary circumstance (intervening weekends do not qualify)."
+lake:
+  record_id: County of Riverside v. McLaughlin
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # County of Riverside v. McLaughlin

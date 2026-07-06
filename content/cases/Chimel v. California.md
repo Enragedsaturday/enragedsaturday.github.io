@@ -2,9 +2,9 @@
 title: "Chimel v. California"
 type: case
 citation: "395 U.S. 752 (1969)"
-parallel_cite: "89 S. Ct. 2034"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "89 S. Ct. 2034; 23 L. Ed. 2d 685"
+neutral_cite: 1969 U.S. LEXIS 1166
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1969
@@ -12,13 +12,18 @@ date_decided: 1969-06-23
 docket: ""
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: "Good law and the foundational SITA rule; Gant (relying on Chimel's reaching-distance rationale) cabined the broad Belton reading of vehicle searches. Chimel's core is undisturbed."
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1969-06-23
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Chimel v. California
+  varies_by_point: false
+  scope_note: "Good law and the foundational SITA rule; Gant (relying on Chimel's reaching-distance rationale) cabined the broad Belton reading of vehicle searches. Chimel's core is undisturbed."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/107979/chimel-v-california/"
-  opinion_id: 107979
+  cluster_id: 107979
+  opinion_id: 9841975
   identity_checked: true
 homes:
   - page: "[[Search Incident to Arrest]]"
@@ -27,6 +32,10 @@ related: ["[[Arizona v. Gant]]", "[[New York v. Belton]]", "[[Riley v. Californi
 aliases: []
 tags: ["case", "fourth-amendment", "search-incident-to-arrest", "immediate-control", "warrantless-search"]
 holding: "Foundational scope of search incident to arrest: the arrestee's person and the area 'within his immediate control' — meaning the area…"
+lake:
+  record_id: Chimel v. California
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Chimel v. California

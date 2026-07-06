@@ -2,9 +2,9 @@
 title: "Maryland v. Garrison"
 type: case
 citation: "480 U.S. 79 (1987)"
-parallel_cite: "107 S. Ct. 1013"
-neutral_cite: ""
-court: "U.S. Supreme Court"
+parallel_cite: "107 S. Ct. 1013; 94 L. Ed. 2d 72; 55 U.S.L.W. 4190"
+neutral_cite: 1987 U.S. LEXIS 559
+court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1987
@@ -12,13 +12,18 @@ date_decided: 1987-02-24
 docket: ""
 authority_weight: "Binding — SCOTUS"
 treatment:
-  status: good
-  as_of: 2026-06-30
-  note: ""
-  by: []
+  field_i_validity: good_law
+  as_of_content: 1987-02-24
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Maryland v. Garrison
+  varies_by_point: false
+  scope_note: "Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade."
+  point_overrides: []
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/111823/maryland-v-garrison/"
-  opinion_id: 111823
+  cluster_id: 111823
+  opinion_id: 9430836
   identity_checked: true
 homes:
   - page: "[[The Warrant Requirement]]"
@@ -27,6 +32,10 @@ related: ["[[Hill v. California]]", "[[Groh v. Ramirez]]", "[[Andresen v. Maryla
 aliases: []
 tags: ["case", "fourth-amendment", "warrant-requirement", "particularity", "reasonable-mistake", "overbroad-warrant"]
 holding: "A warrant's validity is judged on the information reasonably available to officers when they sought it; a reasonable, good-faith mistake…"
+lake:
+  record_id: Maryland v. Garrison
+  status: under_review
+  projected_at: 2026-07-06
 ---
 
 # Maryland v. Garrison
