@@ -395,3 +395,24 @@ ids + 100-char filename cap; interrupted arkansas-v-sanders row re-runs on norma
 only official cite could pass elevation → strip-and-reject + schema pattern \\S); loop-3
 FIXED with file:line evidence. Orchestrator ran the self-test suite green independently at
 every loop. Session 16 relaunches into the frontier tail (89 pending).
+
+### 🏁 S2 LAKE ROSTER COMPLETE (2026-07-06) — session 16, pending=0
+
+Sixteen paced sessions, 15,959 cumulative CL calls (69% of the ~23k projection, inside the
+signed 15–25k envelope), zero 429s across the entire run, pacing ≤14/min held throughout.
+Final distribution: **456 under_review** (page rows) · **65 verified_identity** (frontier
+shells) · **25 fabrication_suspected** (frontier flags = the designed S6 adjudication queue
+per SD10, each with cross-check trail) · **5 not_found** (Entick + Wilkes = adjudicated-TRUE
+off-CL class awaiting the R14 whitelist answer; alasaad-v-mayorkas = adjudicated caption
+variant of verified alasaad-v-wolf; beautiful-struggle-v-baltimore-police-dep-t +
+morgan-v-fairfield-county = frontier seeds for S6 cross-check). Session 16 live-validated
+F-S2-27 (arkansas-v-sanders--10601315 bounded stub, fabrication_suspected as predicted) and
+F-S2-26 defect 1 (Entick skipped=true/terminal_not_found=true, zero rewrites). Run-defect
+ledger for the paced run: F-S2-16..27, all closed writer≠checker, every fix live-validated
+on readjudication; fail-closed held every time — zero wrong ingestions.
+
+**S2 the SPEC is not yet closed:** remaining Method deliverables — projector
+(scripts/s2/project.py + canonical serializer), drift lints LINT-12/13/14 (incl. A16 checks),
+R15 structural gates + verified-flips, the S6 handoff assembly — then the spec-completion
+CodeRabbit gate (coderabbit_gate.sh S2) before verified-flips per the RUNBOOK §5 amendment.
+Entick/Wilkes elevation rides the user's whitelist decision (brief served 2026-07-06).
