@@ -66,15 +66,25 @@ def load_registry_ids(registry_path):
 
 
 def collect_lake_overrides(lake_dir):
-    """Scan the lake for point-override slugs actually present now. Returns a
-    list of (slug, cluster_id, source_file). Primary source is
-    treatment.point_overrides[].point; a slug-shaped treatment.composite_basis_ref
-    is also collected (the binding map registers composite_basis_ref rows)."""
+    """Scan the lake for point-override slugs actually present now. Returns
+    (overrides, unreadable): overrides is a list of (slug, cluster_id,
+    source_file); unreadable is the list of case files that failed to parse.
+    Primary source is treatment.point_overrides[].point; a slug-shaped
+    treatment.composite_basis_ref is also collected (the binding map registers
+    composite_basis_ref rows).
+
+    A corrupt/unreadable case file is NOT silently dropped (that would let an
+    unbound override slug in a broken record vanish from the scan) — it is
+    returned in `unreadable` so the caller can surface it as a HIGH, fail-closed
+    per this lint's mandate."""
     out = []
+    unreadable = []
     for f in sorted(glob.glob(os.path.join(lake_dir, "*.json"))):
         try:
-            d = json.load(open(f, encoding="utf-8"))
+            with open(f, encoding="utf-8") as fh:
+                d = json.load(fh)
         except (OSError, ValueError):
+            unreadable.append(f)
             continue
         if not isinstance(d, dict):
             continue
@@ -92,7 +102,7 @@ def collect_lake_overrides(lake_dir):
         cbr = t.get("composite_basis_ref")
         if isinstance(cbr, str) and SLUG_SHAPE_RE.match(cbr.strip()):
             out.append((cbr.strip(), cluster, f))
-    return out
+    return out, unreadable
 
 
 def _cluster_id(case_dict):
@@ -165,8 +175,12 @@ def check_binding(binding_path, registry_ids, lake_overrides):
 
     # (a) every live lake override slug resolves (bound) or is bound-pending (LOW)
     for slug, cluster, src in lake_overrides:
-        if slug in slug_map:
-            continue  # bound live (its nodes were dangling-checked above)
+        if slug_map.get(slug):
+            # bound live to >= 1 node (its nodes were dangling-checked above). A
+            # bound[] row with missing/empty `nodes` registers an EMPTY list here
+            # and must NOT count as bound — the invariant is "resolves to >= 1
+            # registry node id" (contract (a)), so it falls through to HIGH.
+            continue
         if cluster is not None and cluster in pending_by_cluster:
             out.append(c.make_violation(
                 LINT, src, 1, c.LOW,
@@ -184,9 +198,16 @@ def check_binding(binding_path, registry_ids, lake_overrides):
 
 def run(paths=None):  # noqa: ARG001 (roster signature; scoping arg ignored)
     registry_ids = load_registry_ids(os.path.join(c.REPO_ROOT, REGISTRY_REL))
-    lake_overrides = collect_lake_overrides(os.path.join(c.REPO_ROOT, LAKE_CASES_REL))
-    return check_binding(os.path.join(c.REPO_ROOT, BINDING_REL),
-                         registry_ids, lake_overrides)
+    lake_overrides, unreadable = collect_lake_overrides(
+        os.path.join(c.REPO_ROOT, LAKE_CASES_REL))
+    out = [c.make_violation(
+        LINT, f, 1, c.HIGH,
+        "unreadable/corrupt lake case file %s — cannot scan it for point-override "
+        "slugs; an unbound override hidden in a broken record would vanish from "
+        "the check (fail-closed) [R5]" % c.relpath(f)) for f in unreadable]
+    out.extend(check_binding(os.path.join(c.REPO_ROOT, BINDING_REL),
+                             registry_ids, lake_overrides))
+    return out
 
 
 # --------------------------------------------------------------------------
@@ -198,10 +219,12 @@ def self_test():
     reg = os.path.join(fixdir, "lint-21-registry.yaml")
     b_pass = os.path.join(fixdir, "lint-21-binding-pass.yaml")
     b_dangle = os.path.join(fixdir, "lint-21-binding-dangling-fail.yaml")
+    b_emptynodes = os.path.join(fixdir, "lint-21-binding-emptynodes-fail.yaml")
     lake_bound = os.path.join(fixdir, "lint-21-lake-bound")
     lake_pending = os.path.join(fixdir, "lint-21-lake-pending")
     lake_unbound = os.path.join(fixdir, "lint-21-lake-unbound")
-    for req in (reg, b_pass, b_dangle):
+    lake_corrupt = os.path.join(fixdir, "lint-21-lake-corrupt")
+    for req in (reg, b_pass, b_dangle, b_emptynodes):
         if not os.path.isfile(req):
             sys.stderr.write("[self-test] FAIL: missing fixture %s\n" % req)
             return 1
@@ -211,7 +234,7 @@ def self_test():
 
     def case(desc, binding, lake_dir, expect):
         nonlocal ok
-        ovr = collect_lake_overrides(lake_dir) if lake_dir else []
+        ovr = collect_lake_overrides(lake_dir)[0] if lake_dir else []
         viols = check_binding(binding, reg_ids, ovr)
         n_high = sum(1 for v in viols if v["severity"] == c.HIGH)
         n_low = sum(1 for v in viols if v["severity"] == c.LOW)
@@ -239,6 +262,17 @@ def self_test():
     case("pending slug (cluster match)", b_pass, lake_pending, "low")
     case("unbound lake slug", b_pass, lake_unbound, "high")
     case("dangling node id", b_dangle, lake_bound, "high")
+    # CONFIRMED critical #1: a bound[] row with EMPTY nodes must NOT satisfy the
+    # override check — the live lake slug it names resolves to zero nodes -> HIGH.
+    case("empty-nodes bound row (bypass)", b_emptynodes, lake_bound, "high")
+
+    # CONFIRMED critical #2: a corrupt/unreadable lake case file is surfaced as a
+    # HIGH, never silently skipped (fail-closed).
+    corrupt_ovr, corrupt_unread = collect_lake_overrides(lake_corrupt)
+    passed = len(corrupt_unread) >= 1 and corrupt_ovr == []
+    ok = ok and passed
+    sys.stderr.write("[self-test] %-34s expect=1-unread -> %s (%d unreadable)\n" % (
+        "corrupt lake case file", "OK" if passed else "MISMATCH", len(corrupt_unread)))
 
     sys.stderr.write("[self-test] %s\n" % ("PASS" if ok else "FAIL"))
     return 0 if ok else 1

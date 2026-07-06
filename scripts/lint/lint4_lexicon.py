@@ -214,17 +214,23 @@ def _split_cells(row):
     return [x.strip() for x in cells]
 
 
-def _table_rows(body_lines, start):
+def _table_rows(body_lines, start, fenced=frozenset()):
     """Yield (lineno, cells, header_cells) for GFM data rows, pairing each with
-    its table's header row. Bracket-aware cell splitting."""
+    its table's header row. Bracket-aware cell splitting. Lines inside ``` code
+    fences are skipped (`fenced`), so an example authority table inside a fenced
+    block is never parsed as a real weight table (which would emit a spurious
+    HIGH)."""
     i, n = 0, len(body_lines)
     while i < n:
         line = body_lines[i]
-        if "|" in line and i + 1 < n and re.match(
-                r"^\s*\|?[\s:|\-]+\|?\s*$", body_lines[i + 1]) and line.strip():
+        if (i not in fenced and (i + 1) not in fenced
+                and "|" in line and i + 1 < n
+                and re.match(r"^\s*\|?[\s:|\-]+\|?\s*$", body_lines[i + 1])
+                and line.strip()):
             header = _split_cells(line)
             j = i + 2
-            while j < n and "|" in body_lines[j] and body_lines[j].strip():
+            while (j < n and j not in fenced
+                   and "|" in body_lines[j] and body_lines[j].strip()):
                 yield start + j, _split_cells(body_lines[j]), header
                 j += 1
             i = j
@@ -379,9 +385,10 @@ def check_file(path):
                 "banned authority phrasing 'persuasive, not binding' — use a "
                 "six-tier label (e.g. 'Persuasive (outside circuit)') [R10]"))
 
-    # (b) exact-allowlist validation of weight cells
+    # (b) exact-allowlist validation of weight cells (fenced example tables are
+    # skipped — a weight table inside a ``` block is illustrative, not authored)
     weight_cell_lines = set()
-    for lineno, cells, header in _table_rows(body_lines, start):
+    for lineno, cells, header in _table_rows(body_lines, start, fenced):
         widx = _weight_col(header)
         if widx is None or widx >= len(cells):
             continue

@@ -44,15 +44,18 @@ LINT = "LINT-22"
 # other-source verbatim titles are identified — one entry per banned surface form.
 # ---------------------------------------------------------------------------
 BANNED_TITLES = (
-    # R9's five named Bandiero TOC part titles:
+    # R9's named Bandiero TOC part titles — the VERBATIM slash-combined original
+    # ("What is a Search/Seizure?") plus the defensive split variants:
     "Levels of Suspicion",
     "Search Warrant Exceptions",
     "The Sixth Amendment Right to Counsel",
+    "What is a Search/Seizure?",   # R9's exact copied surface form (slash-combined)
     "What is a Search?",
     "What is a Seizure?",
     # the retired 7a/7b PC-needed / not-needed exception split (R9: "the copied
-    # 7a/7b PC-needed split is gone") — conceptual labels + the historical
-    # pre-O2 display names:
+    # 7a/7b PC-needed split is gone") — the slash-combined original plus the
+    # conceptual labels + the historical pre-O2 display names:
+    "PC needed / PC not needed",   # R9's exact copied surface form (slash-combined)
     "PC needed",
     "PC not needed",
     "Probable Cause Needed",

@@ -3,7 +3,7 @@
 // S3 · R4 #2 / R8 — sortable + filterable case table. The static markdown table is
 // untouched until JS runs, and the existing `.table-container { overflow-x: auto }`
 // keeps the fallback horizontally scrollable on mobile.
-//
+
 // S5 — the ONE table schema (NUM-07): narrow columns are pinned, holding/relevance
 // flexes, the table fits its container with no side-scroll. The case cell carries a
 // META LINE (authority weight + Field-I treatment pill-as-anchor) injected under the
@@ -136,13 +136,20 @@ table.casetable {
       width: 0.45rem;
       height: 0.45rem;
       border-radius: 50%;
-      background: currentColor;
+      background: currentcolor;
       flex-shrink: 0;
     }
 
     &:hover {
       filter: brightness(1.08);
       cursor: pointer;
+    }
+
+    // Keyboard focus indicator: the pill is a real interactive `a` (S4 · R5), so
+    // keyboard users must get a visible focus ring, not just the hover brighten.
+    &:focus-visible {
+      outline: 2px solid var(--secondary);
+      outline-offset: 2px;
     }
 
     // Field-I composite colors — same six classes as the page-header pill

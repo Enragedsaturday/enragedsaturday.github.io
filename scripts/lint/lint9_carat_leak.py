@@ -22,6 +22,7 @@ here until S8 completes — by design.
 Usage: python3 lint9_carat_leak.py [glob ...]
 """
 
+import glob
 import os
 import re
 import sys
@@ -49,15 +50,21 @@ def _mask_html_comments(text):
 
 
 def _mask_links_and_code(line):
-    """Blank inline-code spans and [[wikilinks]] to same-length NON-space filler.
+    """Blank inline-code spans and [[wikilinks]] to same-length NON-word filler.
 
-    Unlike _common.mask_links_and_code (which blanks to SPACES), we fill with
-    'x' so that (a) a '^' inside a masked wikilink [[Page#^pin-3]] is not seen,
-    AND (b) a real anchor that is FOLLOWED by a wikilink/code span is correctly
-    treated as mid-line (blanking to spaces + rstrip would wrongly make it look
-    end-of-line and hide the leak)."""
+    Unlike _common.mask_links_and_code (which blanks to SPACES), we fill with a
+    NON-WORD char ('#') so that (a) a '^' inside a masked wikilink [[Page#^pin-3]]
+    is not seen, AND (b) a real anchor that is FOLLOWED by a wikilink/code span is
+    correctly treated as mid-line (blanking to spaces + rstrip would wrongly make
+    it look end-of-line and hide the leak).
+
+    The filler MUST be outside BLOCK_ANCHOR_RE's char class [A-Za-z0-9-]: an 'x'
+    filler is alnum, so `See rule ^pin-3[[Terry v. Ohio]]` masked to
+    `See rule ^pin-3xxxxxxxxxxxxxxxxx` let the anchor match run through the fill to
+    end-of-line — a false negative that hid a real mid-line leak. '#' stops the
+    match at the anchor's true end so the mid-line leak is flagged."""
     def fill(m):
-        return "x" * (m.end() - m.start())
+        return "#" * (m.end() - m.start())
     line = c.INLINE_CODE_RE.sub(fill, line)
     line = c.WIKILINK_RE.sub(fill, line)
     return line
@@ -94,5 +101,36 @@ def run(paths=None):
     return out
 
 
+# --------------------------------------------------------------------------
+# self-test — labeled fixtures (filename suffix -pass / -fail)
+# --------------------------------------------------------------------------
+
+def self_test():
+    fixdir = os.path.join(c.HERE, "fixtures")
+    files = sorted(glob.glob(os.path.join(fixdir, "lint-9-*.md")))
+    if not files:
+        sys.stderr.write("[self-test] FAIL: no lint-9-*.md fixtures\n")
+        return 1
+    ok = True
+    for f in files:
+        name = os.path.basename(f)
+        expect = "pass" if name.endswith("-pass.md") else \
+                 "fail" if name.endswith("-fail.md") else None
+        if expect is None:
+            continue
+        viols = check_file(f)
+        passed = (len(viols) == 0) if expect == "pass" else (len(viols) > 0)
+        ok = ok and passed
+        sys.stderr.write("[self-test] %-32s expect=%-4s -> %s (%d viol)\n" % (
+            name, expect, "OK" if passed else "MISMATCH", len(viols)))
+        if not passed:
+            for v in viols:
+                sys.stderr.write("             %s\n" % v["message"])
+    sys.stderr.write("[self-test] %s\n" % ("PASS" if ok else "FAIL"))
+    return 0 if ok else 1
+
+
 if __name__ == "__main__":
+    if "--self-test" in sys.argv[1:]:
+        sys.exit(self_test())
     c.cli_main(run, LINT)

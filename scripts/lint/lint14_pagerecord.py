@@ -11,6 +11,7 @@ import glob
 import json
 import os
 import sys
+import tempfile
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import _common as c  # noqa: E402
@@ -25,15 +26,36 @@ LINT = "LINT-14"
 ACCEPTED = {"verified", "under_review", "verified_off_cl"}
 
 
-def load_records():
+def load_records(cases_dir=None):
+    cases_dir = cases_dir or os.path.join(c.REPO_ROOT, "_overhaul2", "lake", "cases")
     records = {}
-    for path in sorted(glob.glob(os.path.join(c.REPO_ROOT, "_overhaul2", "lake", "cases", "*.json"))):
+    violations = []
+    for path in sorted(glob.glob(os.path.join(cases_dir, "*.json"))):
         try:
             record = json.load(open(path, encoding="utf-8"))
-        except json.JSONDecodeError:
+        except json.JSONDecodeError as exc:
+            violations.append(c.make_violation(
+                LINT,
+                path,
+                getattr(exc, "lineno", 1),
+                c.HIGH,
+                "S2 lake record JSON parse failed; page-record gate fails closed: %s" % exc.msg,
+            ))
             continue
-        records[record.get("record_id")] = (path, record)
-    return records
+        rid = record.get("record_id")
+        if rid in records:
+            first_path, _first = records[rid]
+            violations.append(c.make_violation(
+                LINT,
+                path,
+                1,
+                c.HIGH,
+                "duplicate S2 lake record_id %r in %s; first seen in %s"
+                % (rid, c.relpath(path), c.relpath(first_path)),
+            ))
+            continue
+        records[rid] = (path, record)
+    return records, violations
 
 
 def page_record_id(path, fm):
@@ -93,8 +115,7 @@ def check_page(path, records):
 
 
 def run(paths=None):
-    records = load_records()
-    out = []
+    records, out = load_records()
     for path in c.iter_markdown_files(paths or [os.path.join("content", "cases")]):
         out.extend(check_page(path, records))
     return out
@@ -111,6 +132,22 @@ def self_test():
         "lint-14-page-fail": ("fixtures/lint-14-bad.json", {"record_id": "lint-14-page-fail", "status": "not_found", "stub": False}),
     }
     ok = True
+    with tempfile.TemporaryDirectory(prefix="lint14-load-records-self-test-") as tmp:
+        with open(os.path.join(tmp, "bad.json"), "w", encoding="utf-8") as f:
+            f.write("{not json")
+        with open(os.path.join(tmp, "one.json"), "w", encoding="utf-8") as f:
+            json.dump({"record_id": "dup-case", "status": "verified", "stub": False}, f)
+        with open(os.path.join(tmp, "two.json"), "w", encoding="utf-8") as f:
+            json.dump({"record_id": "dup-case", "status": "verified", "stub": False}, f)
+        loaded, load_violations = load_records(tmp)
+        load_records_ok = (
+            set(loaded) == {"dup-case"}
+            and len(load_violations) == 2
+            and all(v["severity"] == c.HIGH for v in load_violations)
+        )
+    ok = ok and load_records_ok
+    sys.stderr.write("[self-test] %-32s expect=%-4s -> %s (%d viol)\n" % (
+        "load-records-failclosed", "fail", "OK" if load_records_ok else "MISMATCH", len(load_violations)))
     for path in pages:
         name = os.path.basename(path)
         expect = "pass" if name.endswith("-pass.md") else "fail" if name.endswith("-fail.md") else None

@@ -17,7 +17,7 @@ For every GFM table that has a Case/Name column, enforces the drift-killer set:
   * ONE ANCHOR TEXT (R6/TEACH-13): every opinion link's anchor text is `opinion`.
   * SELF-REFERENCE BAN (R6): a Related row whose Primary home is the CURRENT page
     is an error (it belongs in Key cases).
-  * OPINION-LINK HOST (R17): every opinion link's host ∈ CourtListener ∪ the
+  * OPINION-LINK HOST (R17): every opinion link's host ∈ CourtListener or the
     whitelisted fallbacks (Justia · Google Scholar · Cornell LII · official court
     sites) — implemented as the OPINION_HOST_WHITELIST constant below.
 
@@ -38,6 +38,7 @@ import glob
 import os
 import re
 import sys
+from urllib.parse import urlsplit
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import _common as c  # noqa: E402
@@ -81,10 +82,18 @@ R5_CARVEOUT = ["point of law", "status", "controlling authority"]
 
 
 def _host(url):
-    m = re.match(r"https?://([^/]+)", url.strip())
-    if not m:
+    """Extract the real host of an opinion link. Uses urllib.parse.urlsplit so
+    URL userinfo (`https://www.courtlistener.com:x@evil.com/…`) cannot smuggle a
+    whitelisted string past the R17 check — urlsplit().hostname returns the true
+    host (`evil.com`), not the userinfo. Non-http(s) schemes and hostless URLs
+    (`https:///…`) yield '' (rejected by the empty-host guard at the call site)."""
+    try:
+        parts = urlsplit(url.strip())
+    except ValueError:
         return ""
-    return m.group(1).lower().split(":")[0]
+    if parts.scheme not in ("http", "https"):
+        return ""
+    return (parts.hostname or "").lower()
 
 
 def _host_ok(host):
@@ -225,7 +234,16 @@ def check_file(path):
             # (3) OPINION COLUMN ONLY (F-S5-08): exactly one opinion link
             # (F-S5-01), exact-case 'opinion' anchor (F-S5-05), whitelisted
             # host (F-S5-06/R17). Links in other columns are NOT opinion links.
-            if opinion_col is not None and opinion_col < len(cells):
+            if opinion_col is not None and opinion_col >= len(cells):
+                # SHORT ROW: iter_tables admits a row one cell shorter than the
+                # header, so a row missing its Opinion cell would otherwise skip
+                # every opinion check silently. Flag it (fail-closed).
+                out.append(c.make_violation(
+                    LINT, path, rline, c.HIGH,
+                    "case-table row is missing its Opinion cell (%d cells, Opinion "
+                    "is column %d) — every Key-cases/Related/Index row carries one "
+                    "'opinion' link [R6/R17]" % (len(cells), opinion_col + 1)))
+            elif opinion_col is not None:
                 ocell = cells[opinion_col]
                 links = list(c.MDLINK_URL_RE.finditer(ocell))
                 if len(links) != 1:
@@ -242,7 +260,9 @@ def check_file(path):
                             "anchor text is exactly 'opinion' [R6/TEACH-13]"
                             % anchor))
                     host = _host(url)
-                    if host and not _host_ok(host):
+                    if not host or not _host_ok(host):
+                        # empty host = a hostless `https:///…` or non-http scheme;
+                        # a non-empty host that is not whitelisted. Both fail R17.
                         out.append(c.make_violation(
                             LINT, path, rline, c.HIGH,
                             "opinion link host '%s' is not CourtListener or a "

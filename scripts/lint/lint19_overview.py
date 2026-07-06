@@ -49,9 +49,9 @@ def _is_overview_index(path):
         return False
     if rel == "index.md":            # site root master index — not a taxonomy node
         return False
-    if rel.split("/")[0] == "cases":  # cases/index.md — R13(d) router landing
-        return False
-    return True
+    if rel == "cases/index.md":       # ONLY the R13(d) router landing is exempt —
+        return False                  # a nested content/cases/<x>/index.md overview
+    return True                       # is still checked (spec exempts only the landing)
 
 
 def check_overview_body(path):
@@ -62,10 +62,28 @@ def check_overview_body(path):
     body_lines = body.split("\n")
     fenced = c.fenced_line_numbers(body_lines)
 
-    # (1) non-empty body: >= MIN_PROSE_LINES non-heading, non-blank lines
+    # table lines (header + separator + data rows) — NOT authored on-ramp prose,
+    # so they must not satisfy the non-stub threshold (a table-only body is a
+    # stub). Collected once and reused for the no-case-table check.
+    table_lines = set()
+    case_table_viols = []
+    for hidx, header_cells, rows in c.iter_tables(body_lines):
+        table_lines.add(hidx)
+        table_lines.add(hidx + 1)   # separator row
+        table_lines.update(rows)
+        kinds = [c.classify_case_header(h) for h in header_cells]
+        if "case" in kinds:
+            case_table_viols.append(c.make_violation(
+                LINT, path, start + hidx, c.HIGH,
+                "overview contains a case table %s — key-case tables live on "
+                "doctrine/case pages, never on an overview [R2]" % header_cells))
+
+    # (1) non-empty body: >= MIN_PROSE_LINES non-heading, non-blank, non-TABLE lines
     prose = 0
     for i, line in enumerate(body_lines):
         if i in fenced:
+            continue
+        if i in table_lines:
             continue
         if line.strip() == "":
             continue
@@ -75,18 +93,12 @@ def check_overview_body(path):
     if prose < MIN_PROSE_LINES:
         out.append(c.make_violation(
             LINT, path, start, c.HIGH,
-            "overview body is a stub (%d non-heading prose line(s); needs >= %d) — "
-            "every category + sub-umbrella carries an authored, on-ramp overview "
-            "[R2]" % (prose, MIN_PROSE_LINES)))
+            "overview body is a stub (%d non-heading, non-table prose line(s); "
+            "needs >= %d) — every category + sub-umbrella carries an authored, "
+            "on-ramp overview [R2]" % (prose, MIN_PROSE_LINES)))
 
     # (2) no case table
-    for hidx, header_cells, _rows in c.iter_tables(body_lines):
-        kinds = [c.classify_case_header(h) for h in header_cells]
-        if "case" in kinds:
-            out.append(c.make_violation(
-                LINT, path, start + hidx, c.HIGH,
-                "overview contains a case table %s — key-case tables live on "
-                "doctrine/case pages, never on an overview [R2]" % header_cells))
+    out.extend(case_table_viols)
     return out
 
 

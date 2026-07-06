@@ -27,10 +27,17 @@ const categoryExplorer = Component.Explorer({
   // About is footer-owned (S4); keep it (and tags) out of the tree.
   // S3 R8: cases/ is unlisted from the explorer (the Case Index routes);
   // files stay frozen at their URLs (R13(b)) — display-only filtering.
-  filterFn: (node) =>
-    node.slugSegment !== "tags" &&
-    node.slugSegment !== "about" &&
-    node.slugSegment !== "cases",
+  // Scope the exclusion to TOP-LEVEL nodes only: filterFn runs on every trie node
+  // at every depth, so a bare name test would also hide any nested page/folder
+  // named about/tags/cases. A top-level node's full slug is just its own segment
+  // (a file) or `<segment>/index` (a folder), so nested homonyms stay visible.
+  filterFn: (node) => {
+    const named =
+      node.slugSegment === "tags" || node.slugSegment === "about" || node.slugSegment === "cases"
+    if (!named) return true
+    const topLevel = node.slug === node.slugSegment || node.slug === `${node.slugSegment}/index`
+    return !topLevel
+  },
   // S4 · R3 — weight-reading sort (closure-free; serialized to the client).
   sortFn: (a, b) => {
     const wa = a.data?.weight ?? Infinity

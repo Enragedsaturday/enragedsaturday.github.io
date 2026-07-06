@@ -160,7 +160,11 @@ function injectCaseMeta(
   }
 
   if (rec.treatment && !hasTreatmentCol) {
-    const pill = document.createElement("a")
+    // Render a real `a.internal` anchor ONLY when the good-law page target is known;
+    // otherwise degrade to a non-interactive <span> rather than an `a href="#"` that
+    // would scroll-to-top on click (goodLawHref is optional on CaseIndex, so a stale
+    // or partial data island can omit it).
+    const pill = document.createElement(index.goodLawHref ? "a" : "span")
     // S4 · R5 — every treatment badge (page pill + table pill) is an
     // `a.internal.treatment-badge` pointing at the good-law page via the ONE
     // exported constant (CaseTable emits `goodLawHref = "/" + GOOD_LAW_SLUG`).
@@ -169,7 +173,7 @@ function injectCaseMeta(
     // they never touch this table pill — the class is here for selector parity and
     // popover delegation resolves it via `a.internal` regardless.
     pill.className = `internal treatment-badge casetable-pill treatment-${rec.treatment.replace(/_/g, "-")}`
-    pill.href = index.goodLawHref ?? "#"
+    if (index.goodLawHref && pill instanceof HTMLAnchorElement) pill.href = index.goodLawHref
     pill.title = rec.hover || `Treatment: ${rec.treatmentLabel}`
     pill.dataset.treatment = rec.treatment
     const dot = document.createElement("span")
@@ -263,14 +267,24 @@ function enhanceTable(table: HTMLTableElement, index: CaseIndex) {
         return WEIGHT_RANK[row.dataset.weightTier ?? "unknown"] ?? 99
       case "treatment":
         return TREAT_RANK[(row.dataset.treatment ?? "") as string] ?? 99
-      case "case":
-        // sort by the case NAME only — the injected meta line must not pollute order
-        return (
-          row.cells[col]?.querySelector("a, em, i")?.textContent ??
-          txt
-        )
-          .toLowerCase()
-          .trim()
+      case "case": {
+        // sort by the case NAME only — the injected meta line (weight text +
+        // treatment PILL anchor) must not pollute order. Prefer a case-name element
+        // (link/em/i) that is NOT inside the injected `.casetable-case-meta` span;
+        // for a plain-text case name, fall back to the cell text with the meta
+        // stripped (never the pill's treatment label — the bug this guards against).
+        if (!cell) return txt.toLowerCase().trim()
+        const meta = cell.querySelector(".casetable-case-meta")
+        for (const el of Array.from(cell.querySelectorAll("a, em, i"))) {
+          if (!meta || !meta.contains(el)) return (el.textContent ?? "").toLowerCase().trim()
+        }
+        let name = ""
+        for (const node of Array.from(cell.childNodes)) {
+          if (node === meta) continue
+          name += node.textContent ?? ""
+        }
+        return (name.trim() || txt).toLowerCase().trim()
+      }
       default:
         return txt.toLowerCase()
     }

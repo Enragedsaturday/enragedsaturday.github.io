@@ -118,7 +118,12 @@ def convert_tables(body_lines, report):
         col_of = {}
         for idx, k in enumerate(kinds):
             col_of.setdefault(k, idx)  # first column of each role
-        dropped = sorted({k for k in kinds if k in ("weight", "treatment", "year")})
+        # Report EVERY source column whose role is not carried into the target
+        # schema — weight/treatment/date+year are the data columns, but any extra
+        # unmapped ('other') column is stripped too. Reporting only the three data
+        # roles under-counted silent column loss (the human review reads this).
+        order_set = set(order)
+        dropped = sorted({k for k in kinds if k not in order_set})
         missing = [r for r in order if r not in col_of]
 
         # F-S5-01 — a Case table with no derivable Opinion source is DEFERRED
@@ -527,12 +532,20 @@ def main():
     paths = list(c.iter_markdown_files(args.pages))
     reports = []
     n_changed = 0
+    n_errors = 0
     for path in paths:
         try:
             report, new_text = convert_page(path)
         except Exception as e:  # never die on one bad page
-            reports.append({"page": c.relpath(path), "error": str(e)})
+            # keep the error report shape consistent with success reports (same
+            # keys) so downstream consumers can iterate uniformly; the error is
+            # surfaced via the extra "error" key AND the n_errors exit code below.
+            reports.append({
+                "page": c.relpath(path), "changed": False,
+                "actions": [], "deferred": [], "error": str(e),
+            })
             sys.stderr.write("[convert] ERROR %s: %s\n" % (c.relpath(path), e))
+            n_errors += 1
             continue
         reports.append(report)
         if report["changed"]:
@@ -559,10 +572,17 @@ def main():
     total_actions = sum(len(r.get("actions", [])) for r in reports)
     total_defer = sum(len(r.get("deferred", [])) for r in reports)
     sys.stderr.write(
-        "\n[convert] %d page(s): %d would change%s · %d action(s) · %d deferred\n" % (
+        "\n[convert] %d page(s): %d would change%s · %d action(s) · %d deferred · "
+        "%d error(s)\n" % (
             len(paths), n_changed, "" if apply else " (dry-run)",
-            total_actions, total_defer))
-    sys.exit(0)
+            total_actions, total_defer, n_errors))
+    # Fail closed on the exit code (a build/gate reads it): an empty page set (a
+    # bad glob resolving to zero files) and any per-page error must NOT be reported
+    # as a clean success — otherwise a silent no-op is indistinguishable from a run.
+    if not paths:
+        sys.stderr.write("[convert] no pages matched the given path(s)/glob(s)\n")
+        sys.exit(2)
+    sys.exit(1 if n_errors else 0)
 
 
 if __name__ == "__main__":

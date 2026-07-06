@@ -49,6 +49,11 @@ def _check_path(path, content_root):
     page cap relative to `content_root`, else None. cases/ and tags/ exempt."""
     rel = os.path.relpath(path, content_root).replace(os.sep, "/")
     segs = rel.split("/")
+    # A path OUTSIDE content_root (a scoped `paths` arg can yield one) produces
+    # leading `..` segments; it is not a taxonomy node, so the depth cap does not
+    # apply and the miscounted `..` segments must not fabricate a false HIGH.
+    if segs and (segs[0] == ".." or os.path.isabs(rel)):
+        return None
     if segs and segs[0] in EXEMPT_TOP:
         return None
     if len(segs) > MAX_PAGE_SEGMENTS:
@@ -70,6 +75,16 @@ def check_tree(content_root, paths=None):
     else:
         files = sorted(glob.glob(os.path.join(content_root, "**", "*.md"),
                                  recursive=True))
+        # FAIL-CLOSED (R1/R10): a whole-tree run that finds a MISSING or EMPTY
+        # content root must not certify "depth OK" on an empty corpus — an empty
+        # scan is an environmental fault, not a vacuous pass. (Scoped runs may
+        # legitimately match zero files, so this guards the unscoped run only.)
+        if not files:
+            return [c.make_violation(
+                LINT, content_root, 1, c.HIGH,
+                "content root %s has zero markdown files (missing/empty tree) — "
+                "refusing to certify an empty corpus as depth-clean (fail-closed) "
+                "[R1/R10]" % c.relpath(content_root))]
     for p in files:
         v = _check_path(p, content_root)
         if v:
@@ -110,6 +125,24 @@ def self_test():
         "lint-18/fail tree", "OK" if passed else "MISMATCH", len(fail_viols)))
     for v in fail_viols:
         sys.stderr.write("             %s\n" % v["message"])
+
+    # FAIL-CLOSED: an empty (or missing) content root -> exactly one HIGH.
+    empty_root = os.path.join(base, "empty")
+    if not os.path.isdir(empty_root):
+        os.makedirs(empty_root, exist_ok=True)
+    empty_viols = check_tree(empty_root)
+    passed = len(empty_viols) == 1 and empty_viols[0]["severity"] == c.HIGH
+    ok = ok and passed
+    sys.stderr.write("[self-test] %-28s expect=1-high -> %s (%d viol)\n" % (
+        "empty content root", "OK" if passed else "MISMATCH", len(empty_viols)))
+
+    # OUTSIDE-ROOT: a path that is not a descendant of content_root is not a
+    # taxonomy node — _check_path must return None (no fabricated depth HIGH).
+    outside = os.path.join(base, "..", "..", "deep", "a", "b", "c", "page.md")
+    passed = _check_path(outside, ok_root) is None
+    ok = ok and passed
+    sys.stderr.write("[self-test] %-28s expect=None  -> %s\n" % (
+        "outside-root path skipped", "OK" if passed else "MISMATCH"))
 
     sys.stderr.write("[self-test] %s\n" % ("PASS" if ok else "FAIL"))
     return 0 if ok else 1

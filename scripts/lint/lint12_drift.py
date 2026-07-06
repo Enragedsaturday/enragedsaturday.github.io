@@ -51,7 +51,7 @@ def check_page(path, record, record_path):
         c.HIGH,
         "S2 managed frontmatter drift in %s; differing fields: %s. Edit the "
         "lake record, not frontmatter: %s. Re-project with: %s"
-        % (c.relpath(record_path), shown, c.relpath(record_path), _project_command(path)),
+        % (c.relpath(path), shown, c.relpath(record_path), _project_command(path)),
     )]
 
 

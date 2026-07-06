@@ -17,8 +17,10 @@
   .explorer .explorer-content {
     flex: 1 1 auto;
     min-height: 0;
+
     // contain belongs HERE (the scroll container) so the explorer doesn't scroll the page
     overscroll-behavior: contain;
+
     // and this must actually BE the scroll container: stock `div:has(> .overflow)`
     // (base.scss) forces it hidden while the inner ul.overflow scrolls — which is what
     // silently broke scroll save/restore (found live, S4 mockup round; see the
@@ -87,6 +89,7 @@
       bottom: 0;
       border-left: 1px solid var(--lightgray);
     }
+
     // horizontal tick into the row — 0.95rem aligns with row centers
     // (file rows ≈0.975rem, folder rows ≈0.95rem — audit CODE-06; was 0.85rem)
     &::after {
@@ -97,6 +100,7 @@
       width: 0.55rem;
       border-top: 1px solid var(--lightgray);
     }
+
     // last item: run stops at the tick → └ elbow
     &:last-child::before {
       bottom: auto;

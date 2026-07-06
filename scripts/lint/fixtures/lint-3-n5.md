@@ -47,3 +47,5 @@ must scope this check to BOTH `Lower-court developments` (current) and the legac
 ## Sources
 
 - [*Riley v. California*, 573 U.S. 373 (2014)](https://www.courtlistener.com/opinion/2687642/riley-v-california/)
+- *[[Torres v. Madrid]]* (SCOTUS 2021)
+- *[[Chatrie v. United States]]*, 609 U.S. ___ (2026)

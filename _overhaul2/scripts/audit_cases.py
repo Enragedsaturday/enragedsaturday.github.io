@@ -621,9 +621,14 @@ def o1_residual(o1_path: str, index: PageIndex):
 # ---------------------------------------------------------------------------
 
 def assert_no_page_collisions(roster, index: PageIndex):
+    # Explicit raise (not `assert`): this collision gate is the last-line guarantee
+    # that no roster row aliases an existing case page, and `assert` is compiled out
+    # under `python -O` / PYTHONOPTIMIZE — which would let a colliding roster emit
+    # silently as a PASS. The check must not be optimizable away.
     for row in roster:
-        assert index.match(row["norm"], row["caption"]) is None, (
-            f"roster row matches an existing case page: {row['caption']}")
+        if index.match(row["norm"], row["caption"]) is not None:
+            raise AssertionError(
+                f"roster row matches an existing case page: {row['caption']}")
 
 
 def fmt_sources(sources, cap=3):

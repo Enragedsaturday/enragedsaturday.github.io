@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """
-Runner for the NON-CL CSSI lints (LINT-2,3,4,5,6,7,8,9,10,12,13,14 + LINT-26) over
-content/. Fixture self-tests for LINT-10/12/13/14 run first, fail-closed. The
-full numeric roster LINT-1…30 is codified at S9 (S9 R8); rows land here as
-their owning specs execute.
+Runner for the NON-CL CSSI lints (LINT-2,3,4,5,6,7,8,9,10,12,13,14,18,19,20,21,
+22,23,24,25,26) over content/ and the S3 repo scans. Fixture self-tests for
+LINT-10/12/13/14 run first, fail-closed. The full numeric roster LINT-1…30 is
+codified at S9 (S9 R8); rows land here as their owning specs execute.
 
 LINT-1 (CourtListener identity) is DELIBERATELY EXCLUDED here: it touches the
 network and must run only through its assigned serial credential lane at the

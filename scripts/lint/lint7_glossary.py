@@ -62,9 +62,12 @@ def load_register(path=REGISTER_PATH):
     """
     try:
         text = c.read_text(path)
-    except OSError:
-        return [], ("term register missing at %s — fail-closed [term register]"
-                    % c.relpath(path))
+    except (OSError, UnicodeDecodeError):
+        # UnicodeDecodeError is a ValueError, NOT an OSError — without it, an
+        # invalid-UTF-8 register would CRASH the lint instead of failing closed
+        # to the intended one-HIGH violation.
+        return [], ("term register missing or unreadable at %s — fail-closed "
+                    "[term register]" % c.relpath(path))
     try:
         data = c.parse_yaml_subset(text.split("\n"))
     except Exception:

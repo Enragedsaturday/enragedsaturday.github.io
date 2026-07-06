@@ -58,22 +58,30 @@ def normalize_stem(s):
 
 
 def deck_stems(decks_dir):
-    """Union of `page` stems across every deck JSON (A2 extraction set)."""
+    """Union of `page` stems across every deck JSON (A2 extraction set). Returns
+    (stems, errors): errors is a list of (path, reason) for any deck file that
+    fails to parse or lacks a valid card list — surfaced as HIGH by the caller so
+    a corrupt/frozen deck among healthy siblings can't be silently dropped (which
+    would record an exception as a clean state)."""
     stems = set()
+    errors = []
     for f in sorted(glob.glob(os.path.join(decks_dir, "*.json"))):
         try:
-            d = json.load(open(f, encoding="utf-8"))
-        except (OSError, ValueError):
+            with open(f, encoding="utf-8") as fh:
+                d = json.load(fh)
+        except (OSError, ValueError) as e:
+            errors.append((f, "parse error: %s" % e))
             continue
         cards = d if isinstance(d, list) else d.get("cards") if isinstance(d, dict) else None
         if not isinstance(cards, list):
+            errors.append((f, "no card list found (not a list, and no `cards` list)"))
             continue
         for card in cards:
             if isinstance(card, dict) and isinstance(card.get("page"), str):
                 p = card["page"].strip()
                 if p:
                     stems.add(p)
-    return stems
+    return stems, errors
 
 
 def resolution_targets(content_root):
@@ -118,16 +126,22 @@ def acknowledged_stems(spec_path):
 
 def check_decks(decks_dir, content_root, spec_path=None):
     """A2 check. Returns violations (fail-closed on unresolved, unacknowledged
-    stems)."""
-    stems = deck_stems(decks_dir)
+    stems, and on any deck file that failed to parse / lacked a card list)."""
+    stems, errors = deck_stems(decks_dir)
+    out = [c.make_violation(
+        LINT, f, 1, c.HIGH,
+        "deck file failed to load (%s) — a frozen deck cannot be silently dropped "
+        "from the join-key audit (fail-closed) [R14/A2]" % reason)
+        for f, reason in errors]
     if not stems:
-        return [c.make_violation(
+        return out + [c.make_violation(
             LINT, decks_dir, 1, c.HIGH,
             "no deck `page` stems extracted from %s — the frozen deck's join key "
             "is absent (fail-closed) [R14/A2]" % c.relpath(decks_dir))]
     targets = resolution_targets(content_root)
     acked = acknowledged_stems(spec_path) if spec_path else set()
-    out = []
+    # keep the deck-load errors already collected in `out`; append resolution
+    # violations to them (do NOT reset).
     for s in sorted(stems):
         n = normalize_stem(s)
         if n in targets:
@@ -182,6 +196,18 @@ def self_test():
 
     check("stems resolve (stem + alias)", decks_pass, "pass")
     check("unresolvable stem", decks_fail, "high")
+
+    # a corrupt deck among healthy siblings is surfaced as HIGH, not dropped.
+    decks_corrupt = os.path.join(fixdir, "lint-25-decks-corrupt")
+    if os.path.isdir(decks_corrupt):
+        _stems, errs = deck_stems(decks_corrupt)
+        viols = check_decks(decks_corrupt, content, None)
+        n_high = sum(1 for v in viols if v["severity"] == c.HIGH)
+        passed = len(errs) >= 1 and n_high >= 1
+        ok = ok and passed
+        sys.stderr.write("[self-test] %-34s expect=high -> %s (%d err, %d high)\n" % (
+            "corrupt deck among siblings", "OK" if passed else "MISMATCH",
+            len(errs), n_high))
 
     sys.stderr.write("[self-test] %s\n" % ("PASS" if ok else "FAIL"))
     return 0 if ok else 1

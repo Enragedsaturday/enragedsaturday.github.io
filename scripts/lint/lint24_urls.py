@@ -147,15 +147,29 @@ def check_inventory(inventory_path, public_root):
 
     routes = emitted_routes(public_root)
     out = []
+    checked = 0
     for p in paths:
         if not isinstance(p, str):
+            # a non-string path entry is malformed — do NOT silently skip it, or
+            # an all-non-string inventory would resolve zero URLs yet pass clean
+            # (an empty result recorded as verified) [R13/A1].
+            out.append(c.make_violation(
+                LINT, inventory_path, 1, c.HIGH,
+                "url-inventory contains a non-string path entry %r — malformed "
+                "artifact (fail-closed) [R13/A1]" % (p,)))
             continue
+        checked += 1
         if normalize_url(p) not in routes:
             out.append(c.make_violation(
                 LINT, inventory_path, 1, c.HIGH,
                 "inventory path %r (normalized %r) resolves to no emitted page or "
                 "alias redirect in the build output — a pre-O2 URL that now 404s "
                 "(fail-closed) [R13/A1]" % (p, normalize_url(p))))
+    if checked == 0:
+        out.append(c.make_violation(
+            LINT, inventory_path, 1, c.HIGH,
+            "url-inventory has no checkable string paths — refusing to report a "
+            "resolved state on zero real paths (fail-closed) [R13/A1]"))
     return out
 
 
@@ -268,6 +282,11 @@ def self_test():
     if os.path.isfile(empty_inv):
         check("empty inventory -> HIGH",
               lambda: check_inventory(empty_inv, pub), "high")
+    # all-non-string inventory -> HIGH (fail-open guard; every non-str flagged)
+    nonstr_inv = os.path.join(fixdir, "lint-24-inventory-nonstring.json")
+    if os.path.isfile(nonstr_inv):
+        check("all-non-string inventory -> HIGH",
+              lambda: check_inventory(nonstr_inv, pub), "high")
 
     # (B) old-path sweep
     check("old-path in aliases only (pass)",

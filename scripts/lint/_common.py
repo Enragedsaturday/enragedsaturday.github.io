@@ -438,8 +438,45 @@ def split_table_row(line):
     return [x.strip() for x in cells]
 
 
+def _has_cell_pipe(line):
+    """True iff `line` carries a GFM cell-delimiter pipe — a top-level '|' that
+    is NOT inside a [[wikilink]] (its display pipe), an inline `code` span, or
+    escaped (\\|). Mirrors split_table_row's masking so prose such as
+    ``See [[Page|alias]] ...`` or ``See `x | y` ...`` is not mistaken for a table
+    row (which iter_tables would otherwise treat as a header if a separator-shaped
+    line follows)."""
+    depth_wiki = 0
+    in_code = False
+    i, n = 0, len(line)
+    while i < n:
+        ch = line[i]
+        if ch == "`":
+            in_code = not in_code
+            i += 1
+            continue
+        if not in_code and ch == "[" and i + 1 < n and line[i + 1] == "[":
+            depth_wiki += 1
+            i += 2
+            continue
+        if not in_code and ch == "]" and i + 1 < n and line[i + 1] == "]":
+            if depth_wiki > 0:
+                depth_wiki -= 1
+            i += 2
+            continue
+        if ch == "\\" and i + 1 < n:
+            i += 2
+            continue
+        if ch == "|" and not in_code and depth_wiki == 0:
+            return True
+        i += 1
+    return False
+
+
 def is_table_row(line):
-    return "|" in line and line.strip() != ""
+    # A line is a GFM table row only if it carries an UNMASKED cell pipe — a '|'
+    # outside wikilinks/code/escapes (F-S5-03 hardening; reuses split_table_row's
+    # masking so wikilink display pipes and code-span pipes never trip detection).
+    return line.strip() != "" and _has_cell_pipe(line)
 
 
 def is_separator_row(line):

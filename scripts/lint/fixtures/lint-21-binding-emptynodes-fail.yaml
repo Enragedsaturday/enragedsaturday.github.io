@@ -1,0 +1,12 @@
+schema:
+  version: "test"
+bound:
+  # A bound[] row whose `nodes` list is EMPTY. Before the F-RETRO-A fix this
+  # registered "node.alpha.one" in slug_map with [], and `if slug in slug_map`
+  # treated the live lake override as "bound live" with ZERO nodes — a
+  # fail-open. `if slug_map.get(slug)` now falls through to a HIGH.
+  - s2_point: "node.alpha.one"
+    row_type: point_override
+    nodes: []
+    note: "empty nodes — must NOT count as bound (lake-bound uses node.alpha.one)"
+pending: []

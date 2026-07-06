@@ -134,7 +134,16 @@ async function _navigate(url: URL, isBack: boolean = false) {
 // `:target` pseudo-class, so SPA hash landings apply a class instead; the
 // stylesheet targets both (`:target` covers hard loads).
 function flashTargetBlock(hash: string): HTMLElement | null {
-  const el = document.getElementById(decodeURIComponent(hash.substring(1)))
+  let id: string
+  try {
+    id = decodeURIComponent(hash.substring(1))
+  } catch {
+    // Malformed %-encoding in the hash (e.g. "#%E0%A4") makes decodeURIComponent
+    // throw a URIError. On the same-page click path this runs AFTER preventDefault,
+    // so an uncaught throw would silently break navigation — treat it as no target.
+    return null
+  }
+  const el = document.getElementById(id)
   document.querySelectorAll(".s8-target").forEach((n) => n.classList.remove("s8-target"))
   if (!el) return null
   void el.offsetWidth // restart the animation on re-click

@@ -33,8 +33,16 @@ Every lint:
 | `lint12_drift.py` | **LINT-12** | **S2 R12/A13** | Case-page managed frontmatter must deep-equal the S2 lake projection by parsed value; draft pages exempt; unmapped legacy treatment blocks projection. |
 | `lint13_schema.py` | **LINT-13** | **S2 R1/R13/A5/A16** | S2 authority records parse and satisfy the live `_overhaul2/lake/_schema.json`; the stdlib schema interpreter fails closed on unsupported schema keywords and self-tests keyword coverage. |
 | `lint14_pagerecord.py` | **LINT-14** | **S2 R12/A16** | Every non-draft `type: case` page resolves to a lake record whose status is `verified`, `under_review`, or `verified_off_cl`; records need not have pages. |
+| `lint18_depth.py` | **LINT-18** | **S3 R1/R10** | Depth cap — the tree nests no deeper than category → sub-umbrella → page (folder depth ≤ 2); a 4th level is HIGH. `cases/`, `tags/` exempt. Fail-closed on a missing/empty content root. (Alias `LINT-S3-depth`; S9 R8 row 18.) |
+| `lint19_overview.py` | **LINT-19** | **S3 R2** | Every category / sub-umbrella `index.md` overview carries an authored, non-stub body (≥ 2 non-table prose lines) and **no** case table. Exempts only `content/index.md` + `content/cases/index.md`. (Alias `LINT-S3-overview`; S9 R8 row 19.) |
+| `lint20_points.py` | **LINT-20** | **S3 R4** | Point-of-law `registry.yaml` schema/grammar/uniqueness; every `home_page`/`also_on` resolves on disk (malformed `also_on` fails closed). Missing registry ⇒ HIGH. (Alias `LINT-S3-points`; S9 R8 row 20.) |
+| `lint21_binding.py` | **LINT-21** | **S3 R5** | `s2-binding.yaml` resolves every live lake point-override slug to ≥ 1 registry node (empty `nodes` ≠ bound); no dangling node ids; corrupt lake case files surface as HIGH. (Alias `LINT-S3-binding`; S9 R8 row 21.) |
+| `lint22_derip.py` | **LINT-22** | **S3 R9** | No category / sub-umbrella label reproduces a banned (Bandiero / retired-split) part title, incl. the slash-combined originals. (Alias `LINT-S3-derip`; S9 R8 row 22.) |
+| `lint23_order_weight.py` | **LINT-23** | **S3 R10/A8c** | Intra-category ordering weights are present, integer, and non-negative. (Alias `LINT-S3-order`; S9 R8 row 23.) |
+| `lint24_urls.py` | **LINT-24** | **S3 R13/A1** | The pre-move URL inventory exists, is non-empty, and every path resolves against the current build output (`public/`); zero retired old-path references remain in source. Build-guarded (MEDIUM + skip if `public/` absent). (Alias `LINT-S3-urls`; S9 R8 row 24.) |
+| `lint25_deck.py` | **LINT-25** | **S3 R14/A2** | Every frozen flashcard-deck `page` stem resolves to an emitted page stem or bare-stem alias; corrupt deck JSON fails closed. (Alias `LINT-S3-deck`; S9 R8 row 25.) |
 | `lint26_goodlaw_target.py` | **LINT-26** | **S4 R5** | The exported `GOOD_LAW_SLUG` constant (treatment-pill target) is the EXACT Quartz FullSlug of a real content page — a stale path fails the build instead of shipping dead pill links. (Alias `LINT-S4-goodlaw-target`; S9 R8 row 26.) |
-| `run_all.py` | runner | — | Runs the **non-CL** lints (2–10, 12–14, 18–26) over `content/`, LINT-10/12/13/14 self-tests first (fail-closed), and prints a per-lint violation summary. |
+| `run_all.py` | runner | — | Runs the **non-CL** lints (2–10, 12–14, 18–26) over `content/` plus the S3 repo scans, LINT-10/12/13/14 self-tests first (fail-closed), and prints a per-lint violation summary. |
 | `_common.py` | shared lib | — | Frontmatter parsing (stdlib YAML subset), corpus page/anchor index, shared regexes, JSON-line emission. |
 
 ## LINT-1 is serial-CL-gate-only (L4)

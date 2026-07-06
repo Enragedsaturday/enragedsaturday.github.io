@@ -135,9 +135,21 @@ def check_registry(registry_path):
                 LINT, registry_path, 1, c.HIGH,
                 "%s: home_page %r does not resolve on disk [R4]" % (where, home)))
         also = node.get("also_on")
-        if isinstance(also, list):
+        if also is not None and not isinstance(also, list):
+            # malformed shape (e.g. a bare string) — do NOT silently skip
+            # validation; a non-list also_on is fail-closed HIGH [R4].
+            out.append(c.make_violation(
+                LINT, registry_path, 1, c.HIGH,
+                "%s: also_on must be a YAML list of content paths, got %r [R4]"
+                % (where, also)))
+        elif isinstance(also, list):
             for ao in also:
-                if isinstance(ao, str) and ao.strip() and not _resolve_on_disk(ao):
+                if not (isinstance(ao, str) and ao.strip()):
+                    out.append(c.make_violation(
+                        LINT, registry_path, 1, c.HIGH,
+                        "%s: also_on entry %r is not a non-empty string [R4]"
+                        % (where, ao)))
+                elif not _resolve_on_disk(ao):
                     out.append(c.make_violation(
                         LINT, registry_path, 1, c.HIGH,
                         "%s: also_on entry %r does not resolve on disk [R4]"

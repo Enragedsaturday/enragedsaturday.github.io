@@ -84,6 +84,14 @@ CANON_PITFALL_BOLD = "common pitfalls."
 # (Lower-court developments, Related cases across doctrines, Visual) may be
 # absent but are never reordered (the ordinal check enforces order).
 REQUIRED_DOCTRINE_H2 = ("the brief", "key cases", "sources")
+# Explicit canonical display forms — `.title()` yields "Key Cases", but the
+# canonical R1 heading is "## Key cases" (lowercase 'cases'), so the violation
+# message must name the exact heading an author should add.
+REQUIRED_DOCTRINE_H2_DISPLAY = {
+    "the brief": "The Brief",
+    "key cases": "Key cases",
+    "sources": "Sources",
+}
 
 # a single italic line, e.g. the field-decisive question `*…?*` (NOT bold `**…**`)
 _ITALIC_LINE_RE = re.compile(r"^\*(?!\*).+\*$")
@@ -181,12 +189,17 @@ def check_doctrine(path, body, start, fm):
         if RULE_CALLOUT_RE.match(line):
             callout_line = i
             break
-    if callout_line is None or callout_line >= first_h2_line:
+    if callout_line is None:
         out.append(c.make_violation(
             LINT, path, start, c.HIGH,
             "doctrine skeleton: missing the '> [!rule]' black-letter callout in "
             "the header zone (R1/R2 — opens every doctrine page, before the "
             "first H2)"))
+    elif callout_line >= first_h2_line:
+        out.append(c.make_violation(
+            LINT, path, start + callout_line, c.HIGH,
+            "doctrine skeleton: '> [!rule]' callout appears after the first H2 — "
+            "it must sit in the header zone, before the first H2 [R1/R2]"))
     elif _callout_misplaced(body_lines, callout_line, fenced):
         out.append(c.make_violation(
             LINT, path, start + callout_line, c.HIGH,
@@ -199,7 +212,7 @@ def check_doctrine(path, body, start, fm):
             out.append(c.make_violation(
                 LINT, path, start, c.HIGH,
                 "doctrine skeleton: missing required '## %s' section [R1]"
-                % req.title()))
+                % REQUIRED_DOCTRINE_H2_DISPLAY[req]))
 
     # --- H2 order (known sections never reordered) ---
     seq = [(i, t, DOCTRINE_ORDINAL[t]) for (i, t) in h2s if t in DOCTRINE_ORDINAL]
