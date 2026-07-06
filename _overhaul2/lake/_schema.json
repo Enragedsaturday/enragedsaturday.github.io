@@ -1011,7 +1011,7 @@
       ],
       "properties": {
         "citing_case": {
-          "$ref": "#/definitions/controlling_case"
+          "$ref": "#/definitions/citing_case_ref"
         },
         "field_ii": {
           "$ref": "#/definitions/field_ii"
@@ -1333,6 +1333,41 @@
         },
         "verifier": {
           "type": "string"
+        }
+      }
+    },
+    "citing_case_ref": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "name",
+        "cluster_id",
+        "cite",
+        "field_ii"
+      ],
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "cluster_id": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "cite": {
+          "type": [
+            "string",
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          },
+          "description": "Citing-case cite as CL search rows return it: a single cite string, the full parallel-cite array, or null. Adjudicated F-S2-30 2026-07-06: the array form is the honest CL data; controlling_case (point_overrides.by[]) deliberately stays string|null per F-S2-29 semantics."
+        },
+        "field_ii": {
+          "$ref": "#/definitions/field_ii"
         }
       }
     }

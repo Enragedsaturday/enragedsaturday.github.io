@@ -89,6 +89,21 @@ TREATMENT_LANES = [
     ("lane2_top_cited", 25),
     ("lane3_recency", 200),
 ]
+TREATMENT_LANE_NAMES = tuple(lane for lane, _cap in TREATMENT_LANES)
+LANE_RERUN_FINDINGS = ["F-S2-28"]
+MIGRATION_REF_REPAIR_FINDINGS = ["F-S2-29"]
+MIGRATION_REF_REPAIR_PROVENANCE = "F-S2-29 migration reference repair"
+CONTROLLING_CASE_NO_OFFICIAL_CITE_WARNING = "controlling case has no official cite in lake; cite omitted"
+POINT_OVERRIDE_SCHEMA_KEYS = (
+    "point",
+    "point_label",
+    "field_i_validity",
+    "as_of_treatment",
+    "s3_binding_status",
+    "by",
+    "scope_note",
+)
+CONTROLLING_CASE_SCHEMA_KEYS = ("name", "cluster_id", "cite", "field_ii")
 MAX_RECORD_SLUG_CHARS = 100
 OFF_CL_ALLOWED_SOURCES = {
     "Justia",
@@ -876,6 +891,7 @@ class ResumeState:
             if lane:
                 self.lanes[(record_id, step, lane)] = {
                     "status": status,
+                    "skipped": row.get("skipped"),
                     "cursor": row.get("cursor"),
                     "reviewed": row.get("reviewed"),
                     "proposed": row.get("proposed"),
@@ -926,6 +942,34 @@ def default_lane_status():
     }
 
 
+TREATMENT_LANE_STATE_FIELDS = (
+    "cursor",
+    "reviewed",
+    "proposed",
+    "cap_hit",
+    "retry_pending",
+    "fetch_failed",
+    "note",
+    "failed_step",
+)
+
+
+def treatment_lane_resume_row(record_id, lane, state, status=None, skipped=False):
+    row = {
+        "record_id": record_id,
+        "step": "treatment",
+        "lane": lane,
+        "status": status if status is not None else state.get("status"),
+    }
+    if skipped:
+        row["skipped"] = True
+    for field in TREATMENT_LANE_STATE_FIELDS:
+        value = state.get(field)
+        if value is not None:
+            row[field] = value
+    return row
+
+
 def resume_rows_from_manifest(records):
     rows = []
     for row in records:
@@ -965,8 +1009,11 @@ class LakePaths:
     def __init__(self, repo_root, pool_root):
         self.repo_root = repo_root
         self.lake = os.path.join(repo_root, "_overhaul2", "lake")
+        self.points = os.path.join(repo_root, "_overhaul2", "points")
         self.cases = os.path.join(self.lake, "cases")
         self.manifest = os.path.join(self.lake, "_manifest.json")
+        self.schema = os.path.join(self.lake, "_schema.json")
+        self.s2_binding = os.path.join(self.points, "s2-binding.yaml")
         self.precedence = os.path.join(self.lake, "_reporter-precedence.json")
         self.treatment_migration = os.path.join(self.lake, "_treatment-migration.json")
         self.pool = pool_root
@@ -1328,6 +1375,14 @@ def next_url(data):
     if isinstance(data, dict):
         return data.get("next")
     return None
+
+
+def initial_search_cursor(client, params):
+    build_url = getattr(client, "build_url", None)
+    if callable(build_url):
+        return build_url("search", params)
+    query = urllib.parse.urlencode(params or {}, doseq=True)
+    return "%s?%s" % (API_BASE + "/search/", query) if query else API_BASE + "/search/"
 
 
 def court_search_id(record):
@@ -2132,10 +2187,9 @@ def lane_query(record_json, lane_name):
         return query, {"type": "o", "q": query, "order_by": "citeCount desc", "page_size": 25}
     if lane_name == "lane3_recency":
         filed_after = recency_window_start()
-        recent = "%s AND filed_after:%s" % (query, filed_after)
-        return recent, {
+        return query, {
             "type": "o",
-            "q": recent,
+            "q": query,
             "order_by": "dateFiled desc",
             "filed_after": filed_after,
             "page_size": 100,
@@ -2403,9 +2457,10 @@ def run_treatment(record_json, source_record, client, journal, resume, session):
         if session.expired():
             return changed
         lane_state = resume.lane_status(record_id, "treatment", lane_name)
-        if lane_state.get("status") == "complete":
-            journal.append(record_id=record_id, step="treatment", lane=lane_name, status="complete", skipped=True)
-            completed_lanes.add(lane_name)
+        if lane_state.get("skipped") or lane_state.get("status") == "complete":
+            journal.append(**treatment_lane_resume_row(record_id, lane_name, lane_state, skipped=True))
+            if lane_state.get("status") == "complete":
+                completed_lanes.add(lane_name)
             continue
         query, params = lane_query(record_json, lane_name)
         if not query:
@@ -2432,6 +2487,7 @@ def run_treatment(record_json, source_record, client, journal, resume, session):
         triage_reads = 0
         snippet_classified = 0
         try:
+            current_page_cursor = cursor or initial_search_cursor(client, params)
             data = client.get_json_url(cursor, cache=False, record_id=record_id, step="treatment.%s.resume" % lane_name) if cursor else client.search(params, cache=False, record_id=record_id, step="treatment.%s.search" % lane_name)
             while True:
                 for result in search_results(data):
@@ -2479,7 +2535,7 @@ def run_treatment(record_json, source_record, client, journal, resume, session):
                         })
                 if reviewed >= cap:
                     cap_hit = True
-                    final_cursor = next_url(data)
+                    final_cursor = next_url(data) or current_page_cursor
                     journal.append(
                         record_id=record_id,
                         step="treatment",
@@ -2547,6 +2603,7 @@ def run_treatment(record_json, source_record, client, journal, resume, session):
                     )
                     append_treatment_edges(record_json, proposed)
                     return True
+                current_page_cursor = url
                 data = client.get_json_url(url, cache=False, record_id=record_id, step="treatment.%s.page" % lane_name)
         except FetchFailed as exc:
             extra = {}
@@ -2588,6 +2645,8 @@ def strip_wikilink(value):
     text = str(value or "").strip()
     if text.startswith("[[") and text.endswith("]]"):
         text = text[2:-2]
+    if "|" in text:
+        text = text.split("|", 1)[0].strip()
     return text
 
 
@@ -2829,6 +2888,10 @@ class ManifestStore:
             state = resume_state.lane_status(record_id, "treatment", lane)
             status = state.get("status")
             if status in ("partial", "complete"):
+                existing = treatment.get(lane)
+                existing_status = existing.get("status") if isinstance(existing, dict) else existing
+                if state.get("skipped") and existing_status == status:
+                    continue
                 treatment[lane] = {
                     "status": status,
                     "cursor": state.get("cursor"),
@@ -3202,6 +3265,591 @@ def apply_readjudications(paths, manifest, journal, identifiers, build_run):
     return reset_ids
 
 
+def validate_rerun_lanes(lanes):
+    lanes = unique_preserve_order(lanes)
+    unknown = [lane for lane in lanes if lane not in TREATMENT_LANE_NAMES]
+    if unknown:
+        raise SystemExit("--rerun-lane must be one of %s; got %s" % (", ".join(TREATMENT_LANE_NAMES), ", ".join(unknown)))
+    return lanes
+
+
+def selected_manifest_rows(manifest, identifiers):
+    if not identifiers:
+        return list(manifest.data.get("records", []))
+    rows = []
+    seen = set()
+    for identifier in unique_preserve_order(identifiers):
+        record_id = manifest.resolve_record_id(identifier)
+        if not record_id:
+            raise SystemExit("--records target not found in manifest: %s" % identifier)
+        if record_id in seen:
+            continue
+        seen.add(record_id)
+        rows.append(manifest.by_record_id[record_id])
+    return rows
+
+
+def reset_record_lanes_for_rerun(paths, manifest, journal, lanes, identifiers=None):
+    selected = []
+    explicit = bool(identifiers)
+    for row in selected_manifest_rows(manifest, identifiers or []):
+        record_id = row.get("record_id")
+        if row.get("stub"):
+            if explicit:
+                raise SystemExit("--rerun-lane target is a stub/frontier record: %s" % record_id)
+            continue
+        record_json = load_case_record(paths, record_id)
+        if not record_json:
+            if explicit:
+                raise SystemExit("--rerun-lane target has no case record: %s" % record_id)
+            continue
+        if record_json.get("status") != "under_review":
+            if explicit:
+                raise SystemExit("--rerun-lane target is not under_review: %s is %s" % (record_id, record_json.get("status")))
+            continue
+        treatment = record_json.setdefault("treatment", {})
+        derivation = treatment.setdefault("derivation", {})
+        lane_status = row.setdefault("lane_status", default_lane_status())
+        treatment_status = lane_status.setdefault("treatment", {})
+        for lane in lanes:
+            derivation.pop(lane, None)
+            treatment_status[lane] = {"status": "pending", "cursor": None}
+            journal.append(
+                record_id=record_id,
+                step="treatment",
+                lane=lane,
+                status="pending",
+                adjudication_reset=True,
+                findings=LANE_RERUN_FINDINGS,
+                action="reset-treatment-lane",
+            )
+        journal.append(
+            step="adjudication",
+            record_id=record_id,
+            action="reset-treatment-lanes-for-rerun",
+            lanes=lanes,
+            findings=LANE_RERUN_FINDINGS,
+            adjudicated_by=READJUDICATION_ADJUDICATOR,
+            status="reset",
+        )
+        write_case_record(paths, record_json)
+        selected.append(row)
+    if explicit and not selected:
+        raise SystemExit("--rerun-lane did not select any under_review records")
+    return selected
+
+
+def lane_scoped_resume(rows, record_id, lanes):
+    scoped = list(rows)
+    prior = ResumeState(scoped)
+    targets = set(lanes)
+    for lane in TREATMENT_LANE_NAMES:
+        if lane in targets:
+            scoped.append({
+                "record_id": record_id,
+                "step": "treatment",
+                "lane": lane,
+                "status": "pending",
+                "cursor": None,
+            })
+        else:
+            scoped.append(treatment_lane_resume_row(
+                record_id,
+                lane,
+                prior.lane_status(record_id, "treatment", lane),
+                skipped=True,
+            ))
+    return ResumeState(scoped)
+
+
+def case_json_paths(paths):
+    if not os.path.isdir(paths.cases):
+        return []
+    return [
+        os.path.join(paths.cases, name)
+        for name in sorted(os.listdir(paths.cases))
+        if name.endswith(".json")
+    ]
+
+
+def case_lookup_key(value):
+    text = strip_wikilink(value)
+    text = text.replace("\u2019", "'").replace("\u2018", "'")
+    text = re.sub(r"\s+", " ", text).strip().casefold()
+    return text
+
+
+def official_cite_from_record(record):
+    citations = record.get("citations") or {}
+    official = stripped_citation_text(citations.get("official"))
+    return official or stripped_citation_text(citations.get("display")) or None
+
+
+def fallback_repo_path(paths, *parts):
+    primary = os.path.join(paths.repo_root, *parts)
+    if os.path.exists(primary):
+        return primary
+    return os.path.join(os.getcwd(), *parts)
+
+
+def read_lake_schema(paths):
+    return read_json(fallback_repo_path(paths, "_overhaul2", "lake", "_schema.json"))
+
+
+def schema_field_ii_values(schema):
+    values = (((schema.get("definitions") or {}).get("field_ii") or {}).get("enum") or [])
+    return set(values)
+
+
+def schema_s3_binding_status_values(schema):
+    point_override = ((schema.get("definitions") or {}).get("point_override") or {})
+    status = ((point_override.get("properties") or {}).get("s3_binding_status") or {})
+    return set(status.get("enum") or [])
+
+
+def parse_simple_yaml_value(value):
+    value = value.strip()
+    if not value:
+        return ""
+    if value in ("true", "false"):
+        return value == "true"
+    if value[0] in ("'", '"') and value[-1:] == value[0]:
+        return value[1:-1]
+    return value
+
+
+def parse_s2_binding_rows(path):
+    if not os.path.exists(path):
+        return []
+    rows = []
+    section = None
+    current = None
+    with open(path, encoding="utf-8") as f:
+        for raw in f:
+            line = raw.split("#", 1)[0].rstrip()
+            if not line.strip():
+                continue
+            section_match = re.match(r"^(bound|pending):\s*$", line)
+            if section_match:
+                section = section_match.group(1)
+                current = None
+                continue
+            if section not in ("bound", "pending"):
+                continue
+            item_match = re.match(r"^\s*-\s+([^:]+):\s*(.*)$", line)
+            if item_match:
+                current = {"_section": section}
+                current[item_match.group(1).strip()] = parse_simple_yaml_value(item_match.group(2))
+                rows.append(current)
+                continue
+            prop_match = re.match(r"^\s{4}([^:]+):\s*(.*)$", line)
+            if prop_match and current is not None:
+                current[prop_match.group(1).strip()] = parse_simple_yaml_value(prop_match.group(2))
+    return rows
+
+
+def load_s2_binding_statuses(paths, schema):
+    status_values = schema_s3_binding_status_values(schema)
+    bound_token = "bound" if "bound" in status_values else None
+    provisional_token = "provisional" if "provisional" in status_values else None
+    path = fallback_repo_path(paths, "_overhaul2", "points", "s2-binding.yaml")
+    statuses = {}
+    for row in parse_s2_binding_rows(path):
+        if row.get("_section") == "bound" and row.get("row_type") == "point_override" and row.get("s2_point"):
+            if bound_token:
+                statuses[str(row["s2_point"])] = bound_token
+        elif row.get("_section") == "pending" and provisional_token:
+            for key in ("s2_point", "point", "pending_slug"):
+                slug = row.get(key)
+                if isinstance(slug, str) and slug and slug != "true":
+                    statuses[slug] = provisional_token
+    return statuses
+
+
+def manifest_rows_by_record_id(paths):
+    if not os.path.exists(paths.manifest):
+        return {}
+    try:
+        manifest = read_json(paths.manifest)
+    except (OSError, json.JSONDecodeError):
+        return {}
+    return {
+        row.get("record_id"): row
+        for row in manifest.get("records") or []
+        if isinstance(row, dict) and row.get("record_id")
+    }
+
+
+def case_lookup_class(ref):
+    source = ref.get("source")
+    if source == "content/cases" or (ref.get("stub") is False and not str(ref.get("record_id") or "").count("--")):
+        return "page"
+    if ref.get("stub") or (source and source != "content/cases"):
+        return "frontier"
+    return "other"
+
+
+def build_completed_case_lookup(paths):
+    lookup = {}
+    manifest_rows = manifest_rows_by_record_id(paths)
+    for path in case_json_paths(paths):
+        try:
+            record = read_json(path)
+        except (OSError, json.JSONDecodeError):
+            continue
+        identity = record.get("identity") or {}
+        cluster_id = identity.get("cluster_id")
+        manifest_row = manifest_rows.get(record.get("record_id")) or {}
+        ref = {
+            "record_id": record.get("record_id"),
+            "cluster_id": int(cluster_id) if cluster_id is not None else None,
+            "cite": official_cite_from_record(record),
+            "source": manifest_row.get("source", record.get("source")),
+            "stub": manifest_row.get("stub", record.get("stub")),
+            "page_path": manifest_row.get("page_path") or record.get("page_path"),
+            "path": path,
+        }
+        ref["lookup_class"] = case_lookup_class(ref)
+        names = [
+            record.get("record_id"),
+            identity.get("input_case_name"),
+            identity.get("case_name"),
+            identity.get("case_name_full"),
+            identity.get("case_name_short"),
+        ]
+        for name in names:
+            key = case_lookup_key(name)
+            if not key:
+                continue
+            bucket = lookup.setdefault(key, [])
+            if not any(item["record_id"] == ref["record_id"] for item in bucket):
+                bucket.append(ref)
+    return lookup
+
+
+def parse_controlling_case_entries(value):
+    if value in (None, "", []):
+        return []
+    if isinstance(value, dict):
+        return [dict(value)]
+    if isinstance(value, list):
+        out = []
+        for item in value:
+            out.extend(parse_controlling_case_entries(item))
+        return out
+    text = str(value).strip()
+    if not text:
+        return []
+    if text.startswith("[") and text.endswith("]"):
+        try:
+            parsed = json.loads(text)
+        except json.JSONDecodeError:
+            parsed = None
+        if parsed is not None:
+            return parse_controlling_case_entries(parsed)
+    wikilinks = re.findall(r"\[\[([^\]]+)\]\]", text)
+    if wikilinks:
+        return [{"name": strip_wikilink(name)} for name in wikilinks if strip_wikilink(name)]
+    name = strip_wikilink(text)
+    return [{"name": name}] if name else []
+
+
+def migration_primary_field_ii(migration, mapping_name):
+    edge_values = (migration.get("mappings", {}).get(mapping_name) or {}).get("edge_field_ii") or []
+    return edge_values[0] if edge_values else None
+
+
+def migration_case_list_matches(record_id, cases):
+    record_key = case_lookup_key(record_id)
+    record_tokens = caption_token_set(record_id)
+    for case in cases or []:
+        case_key = case_lookup_key(case)
+        if case_key and case_key == record_key:
+            return True
+        case_tokens = caption_token_set(case)
+        if case_tokens and record_tokens and case_tokens <= record_tokens:
+            return True
+    return False
+
+
+def valid_field_ii(value, field_ii_values):
+    text = str(value or "").strip()
+    return bool(text) and (not field_ii_values or text in field_ii_values)
+
+
+def migration_default_field_ii(record_id, override, migration, field_ii_values=None):
+    if migration_case_list_matches(record_id, migration.get("limited_cases") or []):
+        return migration_primary_field_ii(migration, "limited")
+    existing = str(override.get("field_ii") or "").strip()
+    if valid_field_ii(existing, field_ii_values):
+        return existing
+    field_i = normalize_roster_value(override.get("field_i_validity"))
+    if field_i == "caution":
+        return migration_primary_field_ii(migration, "limited")
+    if field_i == "superseded":
+        return migration_primary_field_ii(migration, "overruled")
+    return None
+
+
+def controlling_case_complete(entry):
+    return (
+        isinstance(entry, dict)
+        and bool(str(entry.get("name") or "").strip())
+        and entry.get("cluster_id") is not None
+        and "cite" in entry
+        and bool(str(entry.get("field_ii") or "").strip())
+    )
+
+
+def override_by_complete(override):
+    by = override.get("by")
+    return isinstance(by, list) and bool(by) and all(controlling_case_complete(entry) for entry in by)
+
+
+def resolve_controlling_case(name, lookup, errors, record_id, context, warnings=None, dedupe_pointers=None):
+    key = case_lookup_key(name)
+    matches = lookup.get(key) or []
+    if not matches:
+        errors.append("%s %s unresolved controlling case %r: %s match(es)" % (record_id, context, name, len(matches)))
+        return None
+    page_matches = [ref for ref in matches if ref.get("lookup_class") == "page"]
+    frontier_matches = [ref for ref in matches if ref.get("lookup_class") == "frontier"]
+    if len(page_matches) == 1 and len(page_matches) + len(frontier_matches) == len(matches):
+        ref = page_matches[0]
+        for stub in frontier_matches:
+            if dedupe_pointers is not None:
+                dedupe_pointers.append({
+                    "record_id": record_id,
+                    "context": context,
+                    "controlling_case": name,
+                    "selected_record_id": ref.get("record_id"),
+                    "passed_over_record_id": stub.get("record_id"),
+                })
+    elif len(matches) == 1:
+        ref = matches[0]
+    else:
+        classes = {}
+        for match in matches:
+            classes.setdefault(match.get("lookup_class") or "other", []).append(match.get("record_id"))
+        errors.append(
+            "%s %s unresolved controlling case %r: %s match(es) by class %s"
+            % (record_id, context, name, len(matches), json.dumps(classes, sort_keys=True))
+        )
+        return None
+    if ref.get("cluster_id") is None:
+        errors.append("%s %s controlling case %r has no cluster_id in lake record %s" % (record_id, context, name, ref.get("record_id")))
+        return None
+    cite = ref.get("cite") or None
+    if cite is None:
+        if warnings is not None:
+            warnings.append(CONTROLLING_CASE_NO_OFFICIAL_CITE_WARNING)
+    return {"name": name, "cluster_id": ref["cluster_id"], "cite": cite}
+
+
+def point_override_binding_status(override, binding_statuses, status_values):
+    point = str(override.get("point") or "")
+    if point in binding_statuses:
+        return binding_statuses[point]
+    existing = str(override.get("s3_binding_status") or "").strip()
+    if existing in status_values:
+        return existing
+    return "provisional" if "provisional" in status_values else None
+
+
+def normalize_point_override_shape(record_id, override, repaired_by, binding_statuses, status_values, errors):
+    normalized = {}
+    for key in POINT_OVERRIDE_SCHEMA_KEYS:
+        if key == "by":
+            normalized[key] = repaired_by
+            continue
+        if key == "s3_binding_status":
+            status = point_override_binding_status(override, binding_statuses, status_values)
+            if not status:
+                errors.append("%s point_override %r cannot derive s3_binding_status" % (record_id, override.get("point")))
+                continue
+            normalized[key] = status
+            continue
+        if key in override:
+            normalized[key] = override[key]
+        else:
+            errors.append("%s point_override %r missing required key %r" % (record_id, override.get("point"), key))
+    override.clear()
+    override.update(normalized)
+
+
+def repair_override_refs(record_id, override, lookup, migration, binding_statuses, status_values, field_ii_values, errors, warnings, dedupe_pointers):
+    if "by" not in override:
+        return False
+    if (
+        set(override) <= set(POINT_OVERRIDE_SCHEMA_KEYS)
+        and override.get("s3_binding_status") in status_values
+        and override_by_complete(override)
+    ):
+        return False
+    before = json.dumps(override, sort_keys=True)
+    default_field_ii = migration_default_field_ii(record_id, override, migration, field_ii_values)
+    fallback_cite = stripped_citation_text(override.get("by_cite")) or None
+    repaired = []
+    entries = parse_controlling_case_entries(override.get("by"))
+    if not entries:
+        errors.append("%s point_override %r has no controlling case in by" % (record_id, override.get("point")))
+        return False
+    for entry in entries:
+        name = strip_wikilink(entry.get("name"))
+        if not name:
+            errors.append("%s point_override %r has blank controlling case name" % (record_id, override.get("point")))
+            continue
+        resolved = resolve_controlling_case(
+            name,
+            lookup,
+            errors,
+            record_id,
+            "point_override:%s" % override.get("point"),
+            warnings=warnings,
+            dedupe_pointers=dedupe_pointers,
+        )
+        if not resolved:
+            continue
+        entry_field_ii = str(entry.get("field_ii") or "").strip()
+        field_ii = (entry_field_ii if valid_field_ii(entry_field_ii, field_ii_values) else None) or default_field_ii
+        if not field_ii:
+            errors.append("%s point_override %r controlling case %r cannot derive field_ii" % (record_id, override.get("point"), name))
+            continue
+        cite = resolved["cite"]
+        if cite is None:
+            cite = stripped_citation_text(entry.get("cite")) or fallback_cite
+        new_entry = {
+            "name": name,
+            "cluster_id": entry.get("cluster_id") or resolved["cluster_id"],
+            "cite": cite,
+            "field_ii": field_ii,
+        }
+        repaired.append(new_entry)
+    if repaired:
+        normalize_point_override_shape(record_id, override, repaired, binding_statuses, status_values, errors)
+    return json.dumps(override, sort_keys=True) != before
+
+
+def repair_migration_edge(record_id, edge, lookup, errors, warnings, dedupe_pointers):
+    if not str(edge.get("journal_ref") or "").startswith("migration:"):
+        return False
+    citing = edge.get("citing_case")
+    if not isinstance(citing, dict):
+        errors.append("%s migration edge has non-object citing_case" % record_id)
+        return False
+    before = json.dumps(edge, sort_keys=True)
+    name = strip_wikilink(citing.get("name"))
+    if not name:
+        errors.append("%s migration edge has blank citing_case.name" % record_id)
+        return False
+    resolved = resolve_controlling_case(
+        name,
+        lookup,
+        errors,
+        record_id,
+        "edge:%s" % edge.get("journal_ref"),
+        warnings=warnings,
+        dedupe_pointers=dedupe_pointers,
+    )
+    if not resolved:
+        return False
+    citing["name"] = name
+    if not citing.get("cluster_id"):
+        citing["cluster_id"] = resolved["cluster_id"]
+    citing["cite"] = resolved["cite"]
+    if not str(citing.get("field_ii") or "").strip() and edge.get("field_ii"):
+        citing["field_ii"] = edge["field_ii"]
+    return json.dumps(edge, sort_keys=True) != before
+
+
+def repair_record_migration_refs(record, lookup, migration, binding_statuses, status_values, field_ii_values, errors, dedupe_pointers):
+    treatment = record.get("treatment") or {}
+    changed = False
+    record_id = record.get("record_id")
+    warnings = []
+    for override in treatment.get("point_overrides") or []:
+        if isinstance(override, dict):
+            changed = repair_override_refs(
+                record_id,
+                override,
+                lookup,
+                migration,
+                binding_statuses,
+                status_values,
+                field_ii_values,
+                errors,
+                warnings,
+                dedupe_pointers,
+            ) or changed
+    for edge in treatment.get("edges") or []:
+        if isinstance(edge, dict):
+            changed = repair_migration_edge(record_id, edge, lookup, errors, warnings, dedupe_pointers) or changed
+    existing_warnings = set(record.setdefault("provenance", {}).setdefault("warnings", []))
+    for warning in warnings:
+        append_warning(record, warning)
+        if warning not in existing_warnings:
+            changed = True
+    if changed:
+        append_warning(record, MIGRATION_REF_REPAIR_PROVENANCE)
+        record["provenance"]["field_provenance"]["point_overrides"] = base_field_provenance(
+            MIGRATION_REF_REPAIR_PROVENANCE,
+            verifier=READJUDICATION_ADJUDICATOR,
+        )
+    return changed
+
+
+def repair_migration_refs(paths, journal, migration):
+    schema = read_lake_schema(paths)
+    binding_statuses = load_s2_binding_statuses(paths, schema)
+    status_values = schema_s3_binding_status_values(schema)
+    field_ii_values = schema_field_ii_values(schema)
+    lookup = build_completed_case_lookup(paths)
+    candidates = []
+    errors = []
+    dedupe_pointers = []
+    for path in case_json_paths(paths):
+        record = read_json(path)
+        candidate = json.loads(json.dumps(record))
+        if repair_record_migration_refs(
+            candidate,
+            lookup,
+            migration,
+            binding_statuses,
+            status_values,
+            field_ii_values,
+            errors,
+            dedupe_pointers,
+        ):
+            candidates.append((path, candidate))
+    if errors:
+        raise SystemExit("migration reference repair failed:\n" + "\n".join(sorted(errors)))
+    for path, record in candidates:
+        write_case_record(paths, record)
+        journal.append(
+            step="adjudication",
+            record_id=record["record_id"],
+            action="repair-migration-refs",
+            findings=MIGRATION_REF_REPAIR_FINDINGS,
+            adjudicated_by=READJUDICATION_ADJUDICATOR,
+            status="repaired",
+        )
+    seen_pointers = set()
+    for pointer in dedupe_pointers:
+        key = json.dumps(pointer, sort_keys=True)
+        if key in seen_pointers:
+            continue
+        seen_pointers.add(key)
+        journal.append(
+            step="dedupe",
+            action="s6-dedupe-pointer",
+            findings=MIGRATION_REF_REPAIR_FINDINGS,
+            adjudicated_by=READJUDICATION_ADJUDICATOR,
+            status="pointer",
+            **pointer,
+        )
+    return [record["record_id"] for _path, record in candidates]
+
+
 def ensure_cluster_for_record(record_json, client, record_id, cluster=None, step="identity.cluster.reload"):
     if cluster:
         return cluster
@@ -3451,9 +4099,19 @@ def run_ingest(args):
         manifest.save()
     journal_path = os.path.join(paths.journal, "s2-ingest-%s.jsonl" % run_id)
     journal = Journal(journal_path, run_id)
+    if args.records and not args.rerun_lane:
+        raise SystemExit("--records is only valid with --rerun-lane")
+    if args.repair_migration_refs:
+        if args.elevate_off_cl or args.readjudicate or args.readjudicate_file or args.rerun_lane or args.records or args.adjudication or args.smoke:
+            raise SystemExit("--repair-migration-refs cannot be combined with other action/filter options")
+        repaired = repair_migration_refs(paths, journal, read_json(paths.treatment_migration))
+        manifest.save()
+        print("journal: %s" % journal_path)
+        print("migration refs repaired: %s" % len(repaired))
+        return
     if args.elevate_off_cl:
-        if args.readjudicate or args.readjudicate_file:
-            raise SystemExit("--elevate-off-cl cannot be combined with --readjudicate")
+        if args.readjudicate or args.readjudicate_file or args.rerun_lane:
+            raise SystemExit("--elevate-off-cl cannot be combined with --readjudicate or --rerun-lane")
         apply_off_cl_elevation(paths, manifest, journal, args.elevate_off_cl, args.adjudication, run_id)
         manifest.save()
         print("journal: %s" % journal_path)
@@ -3461,6 +4119,9 @@ def run_ingest(args):
         return
     if args.adjudication:
         raise SystemExit("--adjudication is only valid with --elevate-off-cl")
+    rerun_lanes = validate_rerun_lanes(args.rerun_lane)
+    if rerun_lanes and (args.readjudicate or args.readjudicate_file):
+        raise SystemExit("--rerun-lane cannot be combined with --readjudicate")
     readjudicate_ids = readjudication_identifiers(args)
     if readjudicate_ids:
         apply_readjudications(paths, manifest, journal, readjudicate_ids, run_id)
@@ -3486,6 +4147,60 @@ def run_ingest(args):
         hourly=HourlyGuard(max_per_hour=args.hourly_limit),
         run_id=run_id,
     )
+    if rerun_lanes:
+        rerun_record_filters = list(args.records or [])
+        if args.smoke:
+            rerun_record_filters.append(args.smoke)
+        target_rows = reset_record_lanes_for_rerun(paths, manifest, journal, rerun_lanes, identifiers=rerun_record_filters)
+        manifest.save()
+        session = SessionTimer(args.session_minutes)
+        journal.append(
+            step="budget-checkpoint",
+            status="start",
+            mode="rerun-lane",
+            lanes=rerun_lanes,
+            budget=budget.snapshot(estimated_remaining="lane-scoped rerun only; identity/citations/progeny untouched"),
+        )
+        for source_record in target_rows:
+            if session.expired():
+                journal.append(step="case-interruption", status="interrupted", reason="session_limit", budget=budget.snapshot())
+                break
+            if budget.exhausted():
+                journal.append(step="case-interruption", status="interrupted", reason="call_budget_exhausted", budget=budget.snapshot())
+                break
+            record_id = source_record["record_id"]
+            record_call_start = budget.session_calls
+            record_json = load_case_record(paths, record_id)
+            try:
+                base_rows = manifest.resume_rows() + journal.rows() if args.resume else journal.rows()
+                resume = lane_scoped_resume(base_rows, record_id, rerun_lanes)
+                if run_treatment(record_json, source_record, client, journal, resume, session):
+                    write_case_record(paths, record_json)
+            except IngestInterrupted as exc:
+                persist_case_interruption(record_json, paths, journal, client, exc.reason, during_step=exc.step, error=exc)
+            except FetchFailed as exc:
+                persist_case_interruption(record_json, paths, journal, client, "fetch_failed", during_step=exc.step, error=exc)
+            except Exception as exc:
+                persist_case_interruption(record_json, paths, journal, client, "unhandled_exception", error=exc)
+            interrupted = record_json.pop("_ingest_interrupted", None)
+            current_resume = ResumeState(manifest.resume_rows() + journal.rows()) if args.resume else ResumeState(journal.rows())
+            manifest.update(record_id, record_json, counts={"cl_calls": budget.session_calls - record_call_start}, final_record_id=record_id, resume_state=current_resume)
+            manifest.save()
+            journal.append(
+                record_id=record_id,
+                step="case-checkpoint",
+                status="interrupted" if interrupted else "complete",
+                reason=interrupted,
+                mode="rerun-lane",
+                lanes=rerun_lanes,
+                budget=budget.snapshot(),
+            )
+            if interrupted:
+                break
+        journal.append(step="budget-checkpoint", status="end", mode="rerun-lane", lanes=rerun_lanes, budget=budget.snapshot())
+        print("journal: %s" % journal_path)
+        print("calls this session: %s" % budget.session_calls)
+        return
     precedence = read_json(paths.precedence)
     migration = read_json(paths.treatment_migration)
     session = SessionTimer(args.session_minutes)
@@ -5341,6 +6056,49 @@ class TreatmentResumeClient:
         return ""
 
 
+class TreatmentCapCursorClient:
+    def __init__(self):
+        self.search_calls = []
+
+    def build_url(self, endpoint, params=None):
+        endpoint = endpoint.strip("/")
+        query = urllib.parse.urlencode(params or {}, doseq=True)
+        return "https://fixture.example/%s/%s" % (endpoint, "?" + query if query else "")
+
+    def search(self, params, cache=True, record_id=None, step=None):
+        self.search_calls.append({"params": dict(params), "step": step})
+        return {
+            "count": 25,
+            "results": [
+                {"caseName": "Citing %02d" % index, "cluster_id": 9000 + index, "opinions": []}
+                for index in range(25)
+            ],
+            "next": None,
+        }
+
+    def get_json_url(self, url, cache=True, record_id=None, step=None):
+        raise AssertionError("cap cursor fixture should not request a follow-up URL")
+
+
+class LaneOnlyTreatmentClient:
+    def __init__(self):
+        self.search_calls = []
+
+    def build_url(self, endpoint, params=None):
+        endpoint = endpoint.strip("/")
+        query = urllib.parse.urlencode(params or {}, doseq=True)
+        return "https://fixture.example/%s/%s" % (endpoint, "?" + query if query else "")
+
+    def search(self, params, cache=True, record_id=None, step=None):
+        self.search_calls.append({"params": dict(params), "step": step})
+        if step != "treatment.lane2_top_cited.search":
+            raise AssertionError("rerun fixture executed non-target lane: %s" % step)
+        return {"count": 0, "results": [], "next": None}
+
+    def get_json_url(self, url, cache=True, record_id=None, step=None):
+        raise AssertionError("rerun fixture should not resume URL %s" % url)
+
+
 class CountingLimiter:
     def __init__(self):
         self.waits = 0
@@ -5477,6 +6235,174 @@ def self_test_treatment_partial_resume():
     run_treatment(resumed_record, source, resume_client, journal, ResumeState(journal.rows()), ExpireAfterFirstPage())
     assert resume_client.url_calls and resume_client.url_calls[0] == "page-2"
     assert "treatment.lane1_negative.search" not in resume_client.search_calls
+
+
+def self_test_treatment_lane_query_shapes_and_cap_cursor():
+    path = "/tmp/s2-treatment-query-shape-self-test.jsonl"
+    try:
+        os.unlink(path)
+    except FileNotFoundError:
+        pass
+    source = {"record_id": "query-case", "title": "Query v. Case", "court_level": "scotus"}
+    record = empty_record_shell("query-case", source, "selftest")
+    record["status"] = "under_review"
+    record["identity"]["sibling_ids"] = [200]
+    record["progeny"]["complete_query"] = "cites:(200)"
+
+    lane_queries = {}
+    for lane, _cap in TREATMENT_LANES:
+        query, params = lane_query(record, lane)
+        lane_queries[lane] = query
+        assert "filed_after:" not in query
+        assert "filed_after:" not in params["q"]
+    lane3_query, lane3_params = lane_query(record, "lane3_recency")
+    assert lane3_query == record["progeny"]["complete_query"]
+    assert lane3_params["q"] == record["progeny"]["complete_query"]
+    assert lane3_params["filed_after"] == recency_window_start()
+    assert lane_queries["lane2_top_cited"] == lane_queries["lane3_recency"]
+
+    journal = Journal(path, "selftest")
+    client = TreatmentCapCursorClient()
+    resume = ResumeState([
+        {"record_id": "query-case", "step": "treatment", "lane": "lane1_negative", "status": "complete"},
+        {"record_id": "query-case", "step": "treatment", "lane": "lane3_recency", "status": "complete"},
+    ])
+    assert run_treatment(record, source, client, journal, resume, SessionTimer(None))
+    assert [call["step"] for call in client.search_calls] == ["treatment.lane2_top_cited.search"]
+    expected_cursor = client.build_url("search", client.search_calls[0]["params"])
+    derivation = record["treatment"]["derivation"]["lane2_top_cited"]
+    assert derivation["cap_hit"] is True
+    assert derivation["audit_needed"] is True
+    assert derivation["final_cursor"] == expected_cursor
+    lane = ResumeState(journal.rows()).lane_status("query-case", "treatment", "lane2_top_cited")
+    assert lane["cap_hit"] is True and lane["cursor"] == expected_cursor
+
+
+def self_test_rerun_lane_reset_scope():
+    tmp = tempfile.mkdtemp(prefix="s2-rerun-lane-selftest-")
+    try:
+        paths = LakePaths(tmp, os.path.join(tmp, "pool"))
+        paths.ensure()
+        manifest_data = {
+            "schema_version": SCHEMA_VERSION,
+            "generated_at": iso_now(),
+            "records": [
+                {
+                    "record_id": "rerun-case",
+                    "record_id_status": "resolved",
+                    "source": "content/cases",
+                    "stub": False,
+                    "title": "Rerun v. Case",
+                    "court_level": "scotus",
+                    "status": "under_review",
+                    "lane_status": {
+                        "identity": "complete",
+                        "citations": "complete",
+                        "pinpoints": "complete",
+                        "progeny": "complete",
+                        "treatment": {
+                            "lane1_negative": {
+                                "status": "complete",
+                                "cursor": "lane1-cursor",
+                                "reviewed": 17,
+                                "proposed": 1,
+                                "cap_hit": False,
+                            },
+                            "lane2_top_cited": {"status": "complete", "cursor": None, "cap_hit": True, "reviewed": 25},
+                            "lane3_recency": {
+                                "status": "complete",
+                                "cursor": "lane3-cursor",
+                                "reviewed": 42,
+                                "proposed": 2,
+                                "cap_hit": True,
+                            },
+                        },
+                        "provenance": "pending",
+                    },
+                    "counts": {},
+                },
+                {
+                    "record_id": "untouched-case",
+                    "record_id_status": "resolved",
+                    "source": "content/cases",
+                    "stub": False,
+                    "title": "Untouched v. Case",
+                    "court_level": "scotus",
+                    "status": "under_review",
+                    "lane_status": default_lane_status(),
+                    "counts": {},
+                },
+            ],
+        }
+        write_json(paths.manifest, manifest_data)
+        manifest = ManifestStore(paths.manifest)
+        non_target_before = {
+            lane: json.dumps(
+                manifest.by_record_id["rerun-case"]["lane_status"]["treatment"][lane],
+                sort_keys=False,
+            )
+            for lane in ("lane1_negative", "lane3_recency")
+        }
+
+        source = manifest.by_record_id["rerun-case"]
+        record = empty_record_shell("rerun-case", source, "selftest")
+        record["status"] = "under_review"
+        record["identity"]["sibling_ids"] = [222]
+        record["progeny"]["complete_query"] = "cites:(222)"
+        record["treatment"]["derivation"] = {
+            "lane1_negative": {"query": "lane1", "final_cursor": "lane1-cursor"},
+            "lane2_top_cited": {"query": "lane2", "final_cursor": None, "cap_hit": True},
+            "lane3_recency": {"query": "lane3", "final_cursor": "lane3-cursor"},
+        }
+        write_case_record(paths, record)
+
+        untouched = empty_record_shell("untouched-case", manifest.by_record_id["untouched-case"], "selftest")
+        untouched["status"] = "under_review"
+        untouched["treatment"]["derivation"] = {"lane2_top_cited": {"query": "untouched"}}
+        write_case_record(paths, untouched)
+        untouched_path = os.path.join(paths.cases, "untouched-case.json")
+        with open(untouched_path, encoding="utf-8") as f:
+            untouched_before = f.read()
+
+        journal = Journal(os.path.join(tmp, "journal.jsonl"), "selftest")
+        selected = reset_record_lanes_for_rerun(paths, manifest, journal, ["lane2_top_cited"], identifiers=["rerun-case"])
+        assert [row["record_id"] for row in selected] == ["rerun-case"]
+        reset_record = load_case_record(paths, "rerun-case")
+        assert "lane2_top_cited" not in reset_record["treatment"]["derivation"]
+        assert reset_record["treatment"]["derivation"]["lane1_negative"]["final_cursor"] == "lane1-cursor"
+        assert reset_record["treatment"]["derivation"]["lane3_recency"]["final_cursor"] == "lane3-cursor"
+        assert manifest.by_record_id["rerun-case"]["lane_status"]["treatment"]["lane2_top_cited"] == {"status": "pending", "cursor": None}
+        assert manifest.by_record_id["rerun-case"]["lane_status"]["treatment"]["lane1_negative"]["cursor"] == "lane1-cursor"
+        with open(untouched_path, encoding="utf-8") as f:
+            assert f.read() == untouched_before
+        rows = journal.rows()
+        assert any(row.get("step") == "adjudication" and row.get("findings") == LANE_RERUN_FINDINGS for row in rows)
+        assert not ResumeState(manifest.resume_rows() + rows).lane_complete("rerun-case", "treatment", "lane2_top_cited")
+
+        client = LaneOnlyTreatmentClient()
+        resume = lane_scoped_resume(manifest.resume_rows() + rows, "rerun-case", ["lane2_top_cited"])
+        assert run_treatment(reset_record, source, client, journal, resume, SessionTimer(None))
+        assert [call["step"] for call in client.search_calls] == ["treatment.lane2_top_cited.search"]
+        assert reset_record["treatment"]["derivation"]["lane1_negative"]["final_cursor"] == "lane1-cursor"
+        assert reset_record["treatment"]["derivation"]["lane3_recency"]["final_cursor"] == "lane3-cursor"
+        skip_rows = {
+            row.get("lane"): row
+            for row in journal.rows()
+            if row.get("step") == "treatment" and row.get("skipped")
+        }
+        assert skip_rows["lane1_negative"]["cursor"] == "lane1-cursor"
+        assert skip_rows["lane1_negative"]["reviewed"] == 17
+        assert skip_rows["lane1_negative"]["cap_hit"] is False
+        assert skip_rows["lane3_recency"]["cursor"] == "lane3-cursor"
+        assert skip_rows["lane3_recency"]["reviewed"] == 42
+        assert skip_rows["lane3_recency"]["cap_hit"] is True
+        current_resume = ResumeState(manifest.resume_rows() + journal.rows())
+        manifest.update("rerun-case", reset_record, counts={"cl_calls": 0}, final_record_id="rerun-case", resume_state=current_resume)
+        for lane, before in non_target_before.items():
+            after = manifest.by_record_id["rerun-case"]["lane_status"]["treatment"][lane]
+            assert json.dumps(after, sort_keys=False) == before, (lane, before, after)
+    finally:
+        shutil.rmtree(tmp)
 
 
 class SnippetTriageClient:
@@ -5755,6 +6681,253 @@ def self_test_preseeded_new_schema_treatment():
     print("preseeded treatment self-test: " + "; ".join(outcomes))
 
 
+def migration_ref_record(record_id, cluster_id=None, cite=None):
+    record = empty_record_shell(record_id, {"record_id": record_id, "title": record_id, "court_level": "scotus"}, "selftest")
+    record["status"] = "under_review"
+    if cluster_id is not None:
+        record["identity"]["cluster_id"] = cluster_id
+    if cite:
+        record["citations"]["official"] = {"cite": cite, "source": "selftest"}
+        record["citations"]["display"] = cite
+        record["citations"]["all"] = [{"cite": cite, "source": "selftest"}]
+    return record
+
+
+def migration_repair_fixture_mapping():
+    return {
+        "mappings": {
+            "limited": {"edge_field_ii": ["limited"]},
+            "overruled": {"edge_field_ii": ["overruled"]},
+        }
+    }
+
+
+def lint13_validate_fixture_record(path, record):
+    lint_dir = os.path.join(os.getcwd(), "scripts", "lint")
+    if lint_dir not in sys.path:
+        sys.path.insert(0, lint_dir)
+    lint13_schema = __import__("lint13_schema")
+    schema = lint13_schema.load_json(lint13_schema.SCHEMA_PATH)
+    return lint13_schema.validate_record(path, record, schema)
+
+
+def self_test_repair_real_belton_smith_fixture():
+    tmp = tempfile.mkdtemp(prefix="s2-belton-smith-repair-selftest-")
+    target_ids = ["New York v. Belton", "United States v. Smith (2024)"]
+    support_ids = target_ids + ["Arizona v. Gant", "Chatrie v. United States", "united-states-v-chatrie--10881683"]
+    try:
+        paths = LakePaths(tmp, os.path.join(tmp, "pool"))
+        paths.ensure()
+        os.makedirs(paths.points, exist_ok=True)
+        shutil.copyfile(os.path.join(os.getcwd(), "_overhaul2", "lake", "_schema.json"), paths.schema)
+        shutil.copyfile(os.path.join(os.getcwd(), "_overhaul2", "points", "s2-binding.yaml"), paths.s2_binding)
+
+        real_manifest = read_json(os.path.join(os.getcwd(), "_overhaul2", "lake", "_manifest.json"))
+        real_rows = {
+            row.get("record_id"): row
+            for row in real_manifest.get("records") or []
+            if isinstance(row, dict) and row.get("record_id") in support_ids
+        }
+        for record_id in support_ids:
+            source_path = os.path.join(os.getcwd(), "_overhaul2", "lake", "cases", record_id + ".json")
+            write_json(os.path.join(paths.cases, record_id + ".json"), read_json(source_path))
+        write_json(paths.manifest, {
+            "schema_version": SCHEMA_VERSION,
+            "generated_at": iso_now(),
+            "records": [real_rows[record_id] for record_id in support_ids if record_id in real_rows],
+        })
+
+        journal = Journal(os.path.join(tmp, "journal.jsonl"), "selftest")
+        migration = read_json(os.path.join(os.getcwd(), "_overhaul2", "lake", "_treatment-migration.json"))
+        repaired = repair_migration_refs(paths, journal, migration)
+        assert repaired == target_ids, repaired
+
+        schema = read_lake_schema(paths)
+        binding_statuses = load_s2_binding_statuses(paths, schema)
+        limited_field_ii = migration_primary_field_ii(migration, "limited")
+        lint_findings = []
+        status_report = []
+        for record_id in target_ids:
+            record = load_case_record(paths, record_id)
+            lint_findings.extend(lint13_validate_fixture_record(record_id + ".json", record))
+            override = record["treatment"]["point_overrides"][0]
+            assert set(override) == set(POINT_OVERRIDE_SCHEMA_KEYS), override
+            assert set(override["by"][0]) == set(CONTROLLING_CASE_SCHEMA_KEYS), override["by"][0]
+            assert "field_ii" not in override and "by_cite" not in override
+            assert override["s3_binding_status"] == binding_statuses[override["point"]]
+            status_report.append("%s:%s" % (record_id, override["s3_binding_status"]))
+        belton = load_case_record(paths, "New York v. Belton")["treatment"]["point_overrides"][0]
+        assert belton["by"][0]["field_ii"] == limited_field_ii
+        smith = load_case_record(paths, "United States v. Smith (2024)")["treatment"]["point_overrides"][0]
+        assert smith["by"][0]["name"] == "Chatrie v. United States"
+        assert smith["by"][0]["cluster_id"] == 10881683
+        assert smith["by"][0]["cite"] == "609 U.S. ___ (2026)"
+        rows = journal.rows()
+        dedupe_rows = [row for row in rows if row.get("action") == "s6-dedupe-pointer"]
+        assert any(row.get("passed_over_record_id") == "united-states-v-chatrie--10881683" for row in dedupe_rows), dedupe_rows
+        assert lint_findings == [], [finding.get("message") for finding in lint_findings]
+        print(
+            "migration repair acceptance fixture: repaired=%s; lint13_findings=%d; dedupe_pointers=%d; statuses=%s"
+            % (", ".join(repaired), len(lint_findings), len(dedupe_rows), ", ".join(status_report))
+        )
+    finally:
+        shutil.rmtree(tmp)
+
+
+def self_test_repair_migration_refs():
+    duplicate_page_errors = []
+    duplicate_page = {
+        "duplicate v. case": [
+            {"record_id": "Duplicate v. Case", "lookup_class": "page", "cluster_id": 1, "cite": "1 U.S. 1"},
+            {"record_id": "Duplicate v. Case Again", "lookup_class": "page", "cluster_id": 2, "cite": "2 U.S. 2"},
+        ]
+    }
+    assert resolve_controlling_case("Duplicate v. Case", duplicate_page, duplicate_page_errors, "Target", "selftest") is None
+    assert "page" in duplicate_page_errors[0]
+
+    tmp = tempfile.mkdtemp(prefix="s2-migration-ref-repair-selftest-")
+    try:
+        paths = LakePaths(tmp, os.path.join(tmp, "pool"))
+        paths.ensure()
+        journal = Journal(os.path.join(tmp, "journal.jsonl"), "selftest")
+        controller = migration_ref_record("Controller v. Case", cluster_id=12345, cite="1 U.S. 1")
+        write_case_record(paths, controller)
+        chatrie = migration_ref_record("United States v. Chatrie", cluster_id=777)
+        chatrie["identity"]["docket"] = "19-1304"
+        write_case_record(paths, chatrie)
+        target = migration_ref_record("Target v. Case", cluster_id=999, cite="9 U.S. 9")
+        target["treatment"]["point_overrides"] = [
+            {
+                "point": "point-a",
+                "point_label": "Point A",
+                "field_i_validity": "caution",
+                "field_ii": "",
+                "as_of_treatment": "2026-07-06",
+                "s3_binding_status": "provisional",
+                "by": "[[Controller v. Case]]",
+                "by_cite": "fallback cite",
+                "scope_note": "stringified by fixture",
+            },
+            {
+                "point": "point-chatrie",
+                "point_label": "Point Chatrie",
+                "field_i_validity": "caution",
+                "field_ii": "",
+                "as_of_treatment": "2026-07-06",
+                "s3_binding_status": "provisional",
+                "by": "[[United States v. Chatrie]]",
+                "by_cite": "unverified fallback cite",
+                "scope_note": "name+docket fixture without official cite",
+            },
+        ]
+        target["treatment"]["edges"] = [{
+            "citing_case": {
+                "name": "Controller v. Case",
+                "cluster_id": None,
+                "cite": None,
+                "field_ii": "limited",
+            },
+            "field_ii": "limited",
+            "field_iii": "mentioned",
+            "point": None,
+            "proposed": True,
+            "journal_ref": "migration:limited",
+        }]
+        write_case_record(paths, target)
+        repaired = repair_migration_refs(paths, journal, migration_repair_fixture_mapping())
+        assert repaired == ["Target v. Case"], repaired
+        repaired_target = load_case_record(paths, "Target v. Case")
+        override = repaired_target["treatment"]["point_overrides"][0]
+        assert set(override) == set(POINT_OVERRIDE_SCHEMA_KEYS)
+        assert "field_ii" not in override and "by_cite" not in override
+        assert override["by"] == [{
+            "name": "Controller v. Case",
+            "cluster_id": 12345,
+            "cite": "1 U.S. 1",
+            "field_ii": "limited",
+        }]
+        chatrie_override = repaired_target["treatment"]["point_overrides"][1]
+        assert set(chatrie_override) == set(POINT_OVERRIDE_SCHEMA_KEYS)
+        assert chatrie_override["by"] == [{
+            "name": "United States v. Chatrie",
+            "cluster_id": 777,
+            "cite": "unverified fallback cite",
+            "field_ii": "limited",
+        }]
+        assert repaired_target["treatment"]["edges"][0]["citing_case"]["cluster_id"] == 12345
+        assert repaired_target["treatment"]["edges"][0]["citing_case"]["cite"] == "1 U.S. 1"
+        assert MIGRATION_REF_REPAIR_PROVENANCE in repaired_target["provenance"]["warnings"]
+        assert CONTROLLING_CASE_NO_OFFICIAL_CITE_WARNING in repaired_target["provenance"]["warnings"]
+        assert any(row.get("action") == "repair-migration-refs" and row.get("findings") == MIGRATION_REF_REPAIR_FINDINGS for row in journal.rows())
+    finally:
+        shutil.rmtree(tmp)
+
+    self_test_repair_real_belton_smith_fixture()
+
+    tmp = tempfile.mkdtemp(prefix="s2-migration-ref-fail-selftest-")
+    try:
+        paths = LakePaths(tmp, os.path.join(tmp, "pool"))
+        paths.ensure()
+        journal = Journal(os.path.join(tmp, "journal.jsonl"), "selftest")
+        bad = migration_ref_record("Bad Target v. Case", cluster_id=999, cite="9 U.S. 9")
+        bad["treatment"]["point_overrides"] = [{
+            "point": "point-b",
+            "point_label": "Point B",
+            "field_i_validity": "caution",
+            "as_of_treatment": "2026-07-06",
+            "s3_binding_status": "provisional",
+            "by": "[[Missing v. Case]]",
+            "scope_note": "unresolvable fixture",
+        }]
+        write_case_record(paths, bad)
+        bad_path = os.path.join(paths.cases, "Bad Target v. Case.json")
+        with open(bad_path, encoding="utf-8") as f:
+            before = f.read()
+        try:
+            repair_migration_refs(paths, journal, migration_repair_fixture_mapping())
+        except SystemExit as exc:
+            assert "Missing v. Case" in str(exc)
+        else:
+            raise AssertionError("unresolvable migration ref did not fail closed")
+        with open(bad_path, encoding="utf-8") as f:
+            assert f.read() == before
+        assert journal.rows() == []
+    finally:
+        shutil.rmtree(tmp)
+
+    tmp = tempfile.mkdtemp(prefix="s2-migration-ref-byte-selftest-")
+    try:
+        paths = LakePaths(tmp, os.path.join(tmp, "pool"))
+        paths.ensure()
+        journal = Journal(os.path.join(tmp, "journal.jsonl"), "selftest")
+        well = migration_ref_record("Well Formed v. Case", cluster_id=222, cite="2 U.S. 2")
+        well["treatment"]["point_overrides"] = [{
+            "point": "point-c",
+            "point_label": "Point C",
+            "field_i_validity": "caution",
+            "as_of_treatment": "2026-07-06",
+            "s3_binding_status": "provisional",
+            "by": [{
+                "name": "Already v. Resolved",
+                "cluster_id": 333,
+                "cite": "3 U.S. 3",
+                "field_ii": "limited",
+            }],
+            "scope_note": "already well formed",
+        }]
+        write_case_record(paths, well)
+        well_path = os.path.join(paths.cases, "Well Formed v. Case.json")
+        with open(well_path, encoding="utf-8") as f:
+            before = f.read()
+        repaired = repair_migration_refs(paths, journal, migration_repair_fixture_mapping())
+        assert repaired == []
+        with open(well_path, encoding="utf-8") as f:
+            assert f.read() == before
+        assert journal.rows() == []
+    finally:
+        shutil.rmtree(tmp)
+
+
 def self_test_status_preserve():
     record = empty_record_shell("status-case", {"record_id": "status-case", "title": "Status v. Case"}, "selftest")
     record["status"] = "fabrication_suspected"
@@ -5785,11 +6958,14 @@ def run_self_tests():
     self_test_budget_interruption_resume()
     self_test_readjudicate_reset_reruns_fail_closed_record()
     self_test_treatment_partial_resume()
+    self_test_treatment_lane_query_shapes_and_cap_cursor()
+    self_test_rerun_lane_reset_scope()
     self_test_treatment_snippet_triage()
     self_test_transport_timeout_retry_pending()
     self_test_opinion_cluster_id_rejected()
     self_test_migration_round_trip()
     self_test_preseeded_new_schema_treatment()
+    self_test_repair_migration_refs()
     self_test_status_preserve()
     print("self-test passed")
 
@@ -5804,6 +6980,9 @@ def parse_args(argv):
     parser.add_argument("--run-id", help="explicit fresh build id override; default is the stable id persisted in _manifest.json")
     parser.add_argument("--readjudicate", action="append", default=[], help="reset identity and downstream resume state for a record_id/title; repeatable")
     parser.add_argument("--readjudicate-file", action="append", default=[], help="file of record IDs/titles to readjudicate, one per line or JSON list")
+    parser.add_argument("--rerun-lane", action="append", default=[], help="reset and rerun a treatment lane by name; repeatable")
+    parser.add_argument("--records", action="append", default=[], help="record_id/title filter for --rerun-lane; repeatable")
+    parser.add_argument("--repair-migration-refs", action="store_true", help="offline one-shot repair for migration/pre-seed controlling-case refs")
     parser.add_argument("--elevate-off-cl", help="elevate a terminal not_found record using an orchestrator-prepared off-CL adjudication file")
     parser.add_argument("--adjudication", help="JSON adjudication file required by --elevate-off-cl")
     parser.add_argument("--token-path", default=TOKEN_PATH, help="CourtListener token path")

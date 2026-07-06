@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
-Runner for the NON-CL CSSI lints (LINT-2,3,4,5,6,7,8,9,10 + LINT-26) over
-content/. LINT-10's fixture self-test runs first, fail-closed (S1 A3). The
+Runner for the NON-CL CSSI lints (LINT-2,3,4,5,6,7,8,9,10,12,13,14 + LINT-26) over
+content/. Fixture self-tests for LINT-10/12/13/14 run first, fail-closed. The
 full numeric roster LINT-1…30 is codified at S9 (S9 R8); rows land here as
 their owning specs execute.
 
@@ -33,6 +33,9 @@ import lint7_glossary as l7        # noqa: E402
 import lint8_guardrails as l8      # noqa: E402
 import lint9_carat_leak as l9      # noqa: E402
 import lint10_emdash as l10        # noqa: E402
+import lint12_drift as l12         # noqa: E402
+import lint13_schema as l13        # noqa: E402
+import lint14_pagerecord as l14    # noqa: E402
 import lint18_depth as l18         # noqa: E402
 import lint19_overview as l19      # noqa: E402
 import lint20_points as l20        # noqa: E402
@@ -58,6 +61,9 @@ LINTS = [
     ("LINT-8", "guardrails (D6)", l8.run),
     ("LINT-9", "carat-leak (mid-line ^block anchors) (R13)", l9.run),
     ("LINT-10", "em-dash budget (R8/A7/A8)", l10.run),
+    ("LINT-12", "S2 lake/frontmatter drift (R12/A13)", l12.run),
+    ("LINT-13", "S2 authority-record schema (R1/A5/A16)", l13.run),
+    ("LINT-14", "S2 case page-to-record gate (R12/A16)", l14.run),
     ("LINT-18", "S3 depth cap (R1/R10, fail-closed)", l18.run),
     ("LINT-19", "S3 overview: body + no case table (R2)", l19.run),
     ("LINT-20", "S3 point registry (R4, fail-closed)", l20.run),
@@ -67,6 +73,13 @@ LINTS = [
     ("LINT-24", "S3 url stability (R13/A1, build-guarded)", l24.run),
     ("LINT-25", "S3 deck-stem preservation (R14/A2, fail-closed)", l25.run),
     ("LINT-26", "good-law target resolves (S4 R5, fail-closed)", l26.run),
+]
+
+SELF_TESTS = [
+    ("LINT-10", "LINT-10 self-test gate (S1 A3, fail-closed)", l10.self_test, l10.FIXTURE),
+    ("LINT-12", "LINT-12 self-test gate (S2 R12/A13, fail-closed)", l12.self_test, os.path.join(c.HERE, "fixtures")),
+    ("LINT-13", "LINT-13 self-test gate (S2 schema, fail-closed)", l13.self_test, os.path.join(c.HERE, "fixtures")),
+    ("LINT-14", "LINT-14 self-test gate (S2 R12/A16, fail-closed)", l14.self_test, os.path.join(c.HERE, "fixtures")),
 ]
 
 
@@ -79,24 +92,22 @@ def main():
     rows = []
     total_high = 0
 
-    # Fail-closed self-test gate (S1 A3 / F-S1-08): LINT-10's self-test must
-    # pass BEFORE we trust the corpus scan. A broken em-dash lint must never
-    # green-light a publish, so a self-test failure becomes a synthetic HIGH
-    # violation and forces a nonzero exit. self_test() prints its own
-    # [self-test] diagnostics to stderr (visible even under --quiet) and returns
-    # 0 on pass, 1 on failure — it never raises.
-    selftest_viols = []
-    if l10.self_test() != 0:
-        selftest_viols.append(c.make_violation(
-            "LINT-10", l10.FIXTURE, 1, c.HIGH,
-            "LINT-10 self-test FAILED — the em-dash lint is broken; refusing to "
-            "certify the corpus scan (fail-closed) [S1 A3/F-S1-08]"))
-    if not quiet:
-        c.emit(selftest_viols)
-    st_high = sum(1 for v in selftest_viols if v["severity"] == c.HIGH)
-    total_high += st_high
-    rows.append(("SELFTEST", "LINT-10 self-test gate (S1 A3, fail-closed)",
-                 len(selftest_viols), st_high, 0, 0))
+    # Fail-closed self-test gate: these self-tests must pass BEFORE we trust
+    # the corpus scan. A broken lint must never green-light a publish, so a
+    # self-test failure becomes a synthetic HIGH violation and forces a nonzero
+    # exit. self_test() prints its own [self-test] diagnostics to stderr.
+    for lint_name, desc, test_fn, source_path in SELF_TESTS:
+        selftest_viols = []
+        if test_fn() != 0:
+            selftest_viols.append(c.make_violation(
+                lint_name, source_path, 1, c.HIGH,
+                "%s self-test FAILED; refusing to certify the corpus scan "
+                "(fail-closed)" % lint_name))
+        if not quiet:
+            c.emit(selftest_viols)
+        st_high = sum(1 for v in selftest_viols if v["severity"] == c.HIGH)
+        total_high += st_high
+        rows.append(("SELFTEST", desc, len(selftest_viols), st_high, 0, 0))
 
     for name, desc, run_fn in LINTS:
         violations = run_fn(paths)

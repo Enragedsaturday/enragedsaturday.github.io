@@ -1,0 +1,134 @@
+#!/usr/bin/env python3
+"""
+LINT-14 - S2 case page-to-record gate (alias LINT-S2-pagerecord).
+
+Every non-draft `type: case` page must resolve to a lake record whose status is
+publish-eligible for S2: verified, under_review, or verified_off_cl. Records do
+not need pages.
+"""
+
+import glob
+import json
+import os
+import sys
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import _common as c  # noqa: E402
+
+REPO_ROOT = c.REPO_ROOT
+if REPO_ROOT not in sys.path:
+    sys.path.insert(0, REPO_ROOT)
+
+from scripts.s2 import serializer  # noqa: E402
+
+LINT = "LINT-14"
+ACCEPTED = {"verified", "under_review", "verified_off_cl"}
+
+
+def load_records():
+    records = {}
+    for path in sorted(glob.glob(os.path.join(c.REPO_ROOT, "_overhaul2", "lake", "cases", "*.json"))):
+        try:
+            record = json.load(open(path, encoding="utf-8"))
+        except json.JSONDecodeError:
+            continue
+        records[record.get("record_id")] = (path, record)
+    return records
+
+
+def page_record_id(path, fm):
+    lake = fm.get("lake") if isinstance(fm.get("lake"), dict) else {}
+    return lake.get("record_id") or os.path.splitext(os.path.basename(path))[0]
+
+
+def check_page(path, records):
+    text = serializer.read_markdown(path)
+    fm, _body, _start = serializer.split_frontmatter(text)
+    if fm.get("type") != "case" or serializer.is_draft_page(fm):
+        return []
+    out = []
+    stem = os.path.splitext(os.path.basename(path))[0]
+    rid = page_record_id(path, fm)
+    if rid != stem:
+        out.append(c.make_violation(
+            LINT,
+            path,
+            1,
+            c.HIGH,
+            "case page resolves to lake.record_id=%r, but page-backed record_id "
+            "must equal filename stem %r [A6/R12]" % (rid, stem),
+        ))
+    if rid not in records:
+        out.append(c.make_violation(
+            LINT,
+            path,
+            1,
+            c.HIGH,
+            "case page has no matching S2 lake record %r at "
+            "_overhaul2/lake/cases/%s.json" % (rid, rid),
+        ))
+        return out
+    record_path, record = records[rid]
+    if record.get("stub"):
+        out.append(c.make_violation(
+            LINT,
+            path,
+            1,
+            c.HIGH,
+            "case page resolves to stub record %s; S6 promotion must rename the "
+            "record to the page stem in the same commit [A6]" % c.relpath(record_path),
+        ))
+    status = record.get("status")
+    if status not in ACCEPTED:
+        out.append(c.make_violation(
+            LINT,
+            path,
+            1,
+            c.HIGH,
+            "case page record %s has status=%r; publish gate accepts only "
+            "verified, under_review, or verified_off_cl [R12/A16]"
+            % (c.relpath(record_path), status),
+        ))
+    return out
+
+
+def run(paths=None):
+    records = load_records()
+    out = []
+    for path in c.iter_markdown_files(paths or [os.path.join("content", "cases")]):
+        out.extend(check_page(path, records))
+    return out
+
+
+def self_test():
+    fixdir = os.path.join(c.HERE, "fixtures")
+    pages = sorted(glob.glob(os.path.join(fixdir, "lint-14-page-*.md")))
+    if not pages:
+        sys.stderr.write("[self-test] FAIL: no lint-14-page-*.md fixtures\n")
+        return 1
+    records = {
+        "lint-14-page-pass": ("fixtures/lint-14-pass.json", {"record_id": "lint-14-page-pass", "status": "verified_off_cl", "stub": False}),
+        "lint-14-page-fail": ("fixtures/lint-14-bad.json", {"record_id": "lint-14-page-fail", "status": "not_found", "stub": False}),
+    }
+    ok = True
+    for path in pages:
+        name = os.path.basename(path)
+        expect = "pass" if name.endswith("-pass.md") else "fail" if name.endswith("-fail.md") else None
+        if expect is None:
+            continue
+        violations = check_page(path, records)
+        passed = (len(violations) == 0) if expect == "pass" else (len(violations) > 0)
+        ok = ok and passed
+        sys.stderr.write("[self-test] %-32s expect=%-4s -> %s (%d viol)\n" % (
+            name, expect, "OK" if passed else "MISMATCH", len(violations)))
+        if not passed:
+            for violation in violations:
+                sys.stderr.write("             %s\n" % violation["message"])
+    sys.stderr.write("[self-test] %s\n" % ("PASS" if ok else "FAIL"))
+    return 0 if ok else 1
+
+
+if __name__ == "__main__":
+    if "--self-test" in sys.argv[1:]:
+        sys.exit(self_test())
+    c.cli_main(run, LINT)

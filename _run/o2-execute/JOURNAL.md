@@ -416,3 +416,31 @@ on readjudication; fail-closed held every time — zero wrong ingestions.
 R15 structural gates + verified-flips, the S6 handoff assembly — then the spec-completion
 CodeRabbit gate (coderabbit_gate.sh S2) before verified-flips per the RUNBOOK §5 amendment.
 Entick/Wilkes elevation rides the user's whitelist decision (brief served 2026-07-06).
+
+### S2 close, part 1 (2026-07-06): Method 4/5/6 built + R15 treatment audit + four fix cycles
+
+**Method 4/5/6 landed** (Codex builder, spec-as-work-order): authority.sqlite (551 cases /
+4,093 citations / 14,326 edges / 6,089 intra_edges; A5 columns, A7 stamps, two-rebuild
+determinism); project.py + ONE shared canonical serializer (managed-key splice — preserved
+frontmatter BYTE-identical; A13 gate PASS: 456 legacy pages fully mapped, 0 REVIEW;
+--verify-idempotent live proof: run-2 zero diffs on a temp tree; the REAL first projection
+write stays HELD until treatment data settles); LINT-12/13/14 CI-fail-closed (LINT-13 =
+live schema interpreter, fail-closed on unknown keywords — proven when it refused the
+orchestrator's own oneOf edit). Review loop: 8 findings all UPHELD → fixed → re-verified.
+
+**R15 Claude-lane treatment audit** (Opus-xhigh, read-only; R15-TREATMENT-AUDIT.md): safety
+core HELD — 14,326/14,326 edges proposed-only, zero auto-applied negatives. 4 flags →
+**F-S2-28** (lane3_recency inert corpus-wide: q-string injected a nonexistent filed_after:
+field — 455 zero-result searches; + 3 lane2 terminal-boundary cursor losses) and **F-S2-29**
+(pre-seed override corruption + name-only controlling refs). Both fixed through multi-loop
+writer≠checker cycles with every repair value traced to a signed source (binding yaml,
+migration table, the lake itself); Chatrie page/stub collision → page-row-over-stub rule +
+s6-dedupe-pointer. **F-S2-30** (orchestrator schema adjudication, reviewer-checked): the new
+LINT-13 exposed citing_case.cite parallel-cite ARRAYS vs the scaffold's string|null — schema
+widened via citing_case_ref for edges only; 13,137 findings collapsed to the 8 known
+Belton/Smith rows (which the repair zeroes, acceptance-fixtured against the real validator).
+
+Lint truth-state at this gate: LINT-12 = 458 (expected: projection held) · LINT-13 = 8 (the
+repair's target) · LINT-14 = 2 (Entick/Wilkes, user decision pending). Next: the rerun/repair
+network session (lane3 corpus rerun + lane2 ×3 + --repair-migration-refs), then first
+projection, 1-in-10 spot-check, structural gates, CodeRabbit gate, verified-flips, S6 handoff.
