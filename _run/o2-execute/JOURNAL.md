@@ -357,3 +357,27 @@ party-term candidate set (last-word selection preserved). Single-loop review CLE
 findings; orchestrator self-test green. Session 12 relaunches with
 `--readjudicate "Skinner v. Railway Labor Executives' Ass'n"` (expected: under_review via
 citation+party-text on 112219, no caption warning).
+
+### S2 sessions 12–15 + the 2026-07-06 fix-window gate (F-S2-25/26/27)
+
+Sessions 12–14 gated clean (commit-message checkpoints 12: Skinner readjudicated as predicted,
+F-S2-24 live-validated, manifest fabrication_suspected=0 · 13: +37 incl. US v. Harris (1971)
+silently · 14: +41 incl. US v. Smith (2024) silently — the F-S2-21/22 class fully retired;
+Wilkes v. Wood not_found adjudicated TRUE, same off-CL class as Entick). Session 15 partial
+(+7, frontier leg opened): CRASH — OSError 63 filename overflow building a frontier stub name
+from a 300-char CL canonical caption (UNRESOLVED:arkansas-v-sanders × the 2024 Gov.-Sanders
+prison-board case) → **F-S2-27** (input-caption-slug stub ids per the spec scheme + 100-char
+filename cap + interrupted-row resume). alasaad-v-mayorkas not_found adjudicated TRUE — CL
+files the litigation as Alasaad v. Wolf (4855246, already verified_identity via sibling row);
+S6 caption-variant dedupe class.
+
+**Side-session pickup (ORCHESTRATOR-NOTICE-2026-07-05):** absorbed A16 + RUNBOOK §5 standing
+amendments (CodeRabbit spec gate · session_checkpoint.sh + pause push-notification protocol) +
+draft PR #3. T–Z scan for the F-S2-25 party-key class: EMPTY — no readjudication batch.
+Combined builder fix loop dispatched: **F-S2-25 + F-S2-26 + F-S2-27** (one loop, one review).
+**R14 whitelist-extension decision SURFACED to the user per protocol** (terminal notification —
+mobile push inactive — + served brief `2026-07-06-r14-whitelist-english-cases.html`): BAILII
+hosts both English cases (Entick [1765] EWHC KB J98 — KB filing label vs historical C.P.
+recorded as a cataloguing note; Wilkes [1763] EWHC CP J95); Founders' Constitution + English
+Reports facsimiles are the second-source candidates; options 1/2/3 in the brief. Non-blocking:
+cadence continues; Entick/Wilkes elevation waits on the answer + the F-S2-26 code landing.
