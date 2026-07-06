@@ -36,6 +36,10 @@ LOCAL_DST="/Users/Shared/AIStore/store3/cssi-backups/cssi-lake"
 STATE_FILE="$HOME/.cssi-checkpoint-failcount"
 PUSH_TIMEOUT="${CHECKPOINT_PUSH_TIMEOUT:-120}"
 RSYNC_TIMEOUT="${CHECKPOINT_RSYNC_TIMEOUT:-1800}"
+# Invalid/zero timeouts would silently remove the hang guarantee — reset to
+# defaults with a WARN rather than exit (the always-exit-0 contract holds).
+case "$PUSH_TIMEOUT" in ''|*[!0-9]*|0) echo "checkpoint: WARN — invalid CHECKPOINT_PUSH_TIMEOUT; using 120" >&2; PUSH_TIMEOUT=120 ;; esac
+case "$RSYNC_TIMEOUT" in ''|*[!0-9]*|0) echo "checkpoint: WARN — invalid CHECKPOINT_RSYNC_TIMEOUT; using 1800" >&2; RSYNC_TIMEOUT=1800 ;; esac
 
 # alarm survives exec, so the exec'd command gets SIGALRM at the bound and
 # dies (shell reports 142). Portable caller-side timeout without GNU timeout.
@@ -108,7 +112,10 @@ if [ ! -d "$LAKE_SRC" ]; then
   fail=1
 else
   LOG_DIR="$LAKE_SRC/logs"
-  mkdir -p "$LOG_DIR"
+  if ! bounded 30 mkdir -p "$LOG_DIR" 2>/dev/null; then
+    echo "checkpoint: note — could not create $LOG_DIR; logging to TMPDIR" >&2
+    LOG_DIR="${TMPDIR:-/tmp}"
+  fi
   RSYNC_LOG="$LOG_DIR/checkpoint-rsync-$(date +%Y%m%d-%H%M%S).log"
   backed_up=0
   if try_git_backup; then
@@ -131,7 +138,9 @@ fi
 
 # --- Escalation counter ------------------------------------------------------
 if [ "$fail" -ne 0 ]; then
-  count=$(( $(cat "$STATE_FILE" 2>/dev/null || echo 0) + 1 ))
+  prev="$(cat "$STATE_FILE" 2>/dev/null || echo 0)"
+  case "$prev" in ''|*[!0-9]*) prev=0 ;; esac
+  count=$(( prev + 1 ))
   echo "$count" > "$STATE_FILE"
   echo "checkpoint: completed WITH WARNINGS (consecutive failures: $count)"
   if [ "$count" -ge 2 ]; then

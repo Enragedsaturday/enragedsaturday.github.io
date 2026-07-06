@@ -41,7 +41,10 @@ CODERABBIT_BIN="${CODERABBIT_BIN:-$(command -v coderabbit || echo "$HOME/.local/
 REPO_ROOT="$(git rev-parse --show-toplevel)"
 SHA="$(git -C "$REPO_ROOT" rev-parse --short "$REF")"
 OUT_DIR="$REPO_ROOT/_run/gates"
-OUT="$OUT_DIR/${SPEC}-coderabbit-${SHA}.md"
+# SPEC names the artifact file — sanitize so a stray '/' or '..' can never
+# escape _run/gates (the raw SPEC still appears in the artifact header).
+SAFE_SPEC="$(printf '%s' "$SPEC" | tr -c 'A-Za-z0-9._-' '_')"
+OUT="$OUT_DIR/${SAFE_SPEC}-coderabbit-${SHA}.md"
 WT="$(mktemp -d "${TMPDIR:-/tmp}/cr-gate-${SPEC}-XXXXXX")"
 mkdir -p "$OUT_DIR"
 
