@@ -316,6 +316,14 @@ CAPTION_TOKEN_CONTRACTIONS = {
     "west": "w",  # Directional abbreviation; one-char outputs are retained.
 }
 
+# Manifest/roster-backed agency initialisms only. Keep this phrase-level map
+# separate from T6 token contractions so party-text checks do not substring-match
+# broad abbreviations such as company -> co.
+CAPTION_PHRASE_TOKEN_CONTRACTIONS = (
+    (("federal", "bureau", "of", "investigation"), "fbi"),
+    (("immigration", "and", "naturalization", "service"), "ins"),
+)
+
 
 def utc_now():
     return dt.datetime.now(dt.timezone.utc).replace(microsecond=0)
@@ -639,9 +647,9 @@ def first_party_terms(case_name):
         return [text.strip()] if text.strip() else []
     terms = []
     for part in parts:
-        words = [w for w in re.findall(r"[A-Za-z][A-Za-z'-]+", part) if len(w) > 2]
-        if words:
-            terms.append(words[-1].lower())
+        term = party_side_last_term(part)
+        if term:
+            terms.append(term)
     return terms
 
 
@@ -649,12 +657,52 @@ def strip_apostrophes(value):
     return str(value or "").replace("'", "").replace("\u2019", "").replace("\u2018", "")
 
 
+def caption_word_tokens(value):
+    return [token for token in slugify(strip_apostrophes(value)).split("-") if token]
+
+
+def contract_caption_phrase_tokens(tokens):
+    out = []
+    changed = False
+    i = 0
+    while i < len(tokens):
+        for phrase, contraction in CAPTION_PHRASE_TOKEN_CONTRACTIONS:
+            phrase_len = len(phrase)
+            if tuple(tokens[i:i + phrase_len]) == phrase:
+                out.append(contraction)
+                i += phrase_len
+                changed = True
+                break
+        else:
+            out.append(tokens[i])
+            i += 1
+    return out, changed
+
+
+def party_side_last_term(value):
+    phrase_tokens, phrase_changed = contract_caption_phrase_tokens(caption_word_tokens(value))
+    if phrase_changed:
+        words = [token for token in phrase_tokens if len(token) > 2]
+    else:
+        words = [w.lower() for w in re.findall(r"[A-Za-z][A-Za-z'-]+", value) if len(w) > 2]
+    return words[-1] if words else None
+
+
+def caption_phrase_initialisms(value):
+    phrase_tokens, phrase_changed = contract_caption_phrase_tokens(caption_word_tokens(value))
+    if not phrase_changed:
+        return set()
+    contractions = {contraction for _phrase, contraction in CAPTION_PHRASE_TOKEN_CONTRACTIONS}
+    return {token for token in phrase_tokens if token in contractions}
+
+
 def caption_token_set(value):
     if not str(value or "").strip():
         return set()
+    tokens, _changed = contract_caption_phrase_tokens(caption_word_tokens(value))
     return {
         CAPTION_TOKEN_CONTRACTIONS.get(token, token)
-        for token in slugify(strip_apostrophes(value)).split("-")
+        for token in tokens
         if token
     }
 
@@ -714,6 +762,7 @@ def party_term_candidate_sets(term):
         if stripped and contraction == stripped
     )
     boundary_candidates = set()
+    boundary_candidates.update(caption_phrase_initialisms(stripped))
     if stripped in CAPTION_TOKEN_CONTRACTIONS:
         boundary_candidates.add(CAPTION_TOKEN_CONTRACTIONS[stripped])
     return containment_candidates, boundary_candidates
@@ -5549,6 +5598,19 @@ def self_test_identity_caption_and_cite_fixtures():
         "Skinner v. Railway Labor Executives' Ass'n",
         "Skinner v. Railway Labor Executives' Assn.",
     )
+    assert caption_token_set("Federal Bureau of Investigation") == {"fbi"}
+    assert "fbn" not in caption_token_set("Federal Bureau of Narcotics")
+    assert canonical_caption_match(
+        "FBI v. Fazaga",
+        "Federal Bureau of Investigation v. Fazaga",
+    )
+    assert not canonical_caption_match("FBN v. Bivens", "Federal Bureau of Narcotics v. Bivens")
+    assert first_party_terms("Federal Bureau of Investigation v. Fazaga") == ["fbi", "fazaga"]
+    assert "fbi" in party_term_candidates("Federal Bureau of Investigation")
+    assert text_names_parties(
+        "Federal Bureau of Investigation v. Fazaga",
+        "The FBI invoked the state secrets privilege against Fazaga.",
+    )
     assert party_term_candidates("ass'n") == {"ass'n", "assn", "association"}
     assert party_term_candidates("association") == {"association", "assn"}
     assert party_term_candidates("skinner") == {"skinner"}
@@ -5702,6 +5764,41 @@ def self_test_identity_caption_and_cite_fixtures():
     assert skinner_record["identity"]["canonical_name_match"] is True
     assert skinner_record["identity"]["identity_method"] == "citation+party-text"
     assert "input caption does not match CL canonical caption" not in skinner_record["provenance"]["warnings"]
+
+    fazaga_source = {
+        "record_id": "federal-bureau-of-investigation-v-fazaga--6448059",
+        "caption": "Federal Bureau of Investigation v. Fazaga",
+        "expected_citation": "595 U.S. 344",
+        "court_level": "scotus",
+        "year": 2022,
+        "docket": "20-828",
+    }
+    fazaga_record = empty_record_shell(fazaga_source["record_id"], fazaga_source, "selftest")
+    fazaga_cluster = {
+        "id": 6448059,
+        "case_name": "FBI v. Fazaga",
+        "case_name_short": "Fazaga",
+        "case_name_full": "",
+        "date_filed": "2022-03-04",
+        "court": "scotus",
+        "citations": [{"volume": 595, "reporter": "U.S.", "page": 344, "type": 1}],
+        "sub_opinions": [{"id": 6448060, "type": "020lead"}],
+    }
+    apply_identity(
+        fazaga_record,
+        fazaga_source,
+        identity_fixture_search_result(6448059, 6448060),
+        fazaga_cluster,
+        [],
+        IdentityApplyClient("The FBI and Fazaga disputed the privilege question."),
+        journal,
+    )
+    assert fazaga_record["status"] == "under_review"
+    assert fazaga_record["identity"]["expected_citation_found"] is True
+    assert fazaga_record["identity"]["party_name_in_text"] is True
+    assert fazaga_record["identity"]["canonical_name_match"] is True
+    assert fazaga_record["identity"]["identity_method"] == "citation+party-text"
+    assert "input caption does not match CL canonical caption" not in fazaga_record["provenance"]["warnings"]
 
     reversed_source = {
         "record_id": "adams-reversed",
