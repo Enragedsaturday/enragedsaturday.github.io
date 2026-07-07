@@ -733,3 +733,22 @@ BEFORE W5: (a) proactive audit of ALL 36 remaining unminted W5/W6/W7/W8 rows (ca
 reads + doctrine-term cross-check vs worklist note/homes — catch the class wholesale), (b)
 dual-leg web re-keys for everything queued+found, (c) scoped readjudication. W5 waits on its
 report. Scoreboard: 54/148 minted.
+
+**PRE-W5 AUDIT + RE-KEYS LANDED (2026-07-07):** wholesale identity audit of 86 rows (77 pending
+W5-W8 + 9 skip-queue): **63 CLEAN · 20 MIS-KEY · 2 cite-dup-swap · 1 escalate · 0 unsure**;
+W7/W8 all-clean. **HEADLINE: the COA-STATE session's cite-corroboration was CIRCULAR** (roster
+expected_citation derived from the mis-keyed cluster → self-corroborating wrong same-surname
+cases) — masked 5 (loera/porter/trent/ruckman/davis); + new finds lee (274 U.S. 559; "Lee" was a
+middle name), ruiz (536 U.S. 622 SCOTUS, not CAAF), larson (Or. 1999, not the Iowa a/k/a).
+**22/22 re-keys landed** verified_identity/canonical (targets from the wiki's own opinion links +
+direct CL verify; trent hand-reconstructed docket-collision → S9-reverify flag; robinson
+slug-rename retry landed right cluster), bijection 662=662, 0×429 (57 REST + ~28 MCP).
+ORCHESTRATOR: remap-2 (22 rows) applied to signed worklist + wave plan (journaled in-row);
+ganias spurious Border-Searches home REMOVED per audit (2d Cir. data-retention case, no border
+nexus; Plain View stands); holcomb ESCALATED (cites WITHDRAWN opinion 132 F.4th 1118 → W5 skip +
+investigation queued); cache-only enrichment probe on the 4 nocite rows → 3 genuine CL cite gaps
+(lewis/mendoza|porter/trent-class → slip/web-cite tail handling), 1 cache-miss resumable.
+wiki_pageless flag (14 rows) reviewed: expected pre-authoring state, signed verdicts stand.
+Queued micro-items: reddick ca5→ca3 label · larson same_rank_tie tiebreak · long-lake
+parse_circuit bare-year bug (ingest.py:549) · holcomb superseding-opinion check. Readiness:
+W5 16/18 (skips holcomb+lewis) · W6 15/18 · W7/W8 41/41. Scoreboard 54/148; W5 dispatching.
