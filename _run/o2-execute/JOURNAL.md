@@ -545,3 +545,21 @@ calls ≈ 76.1% envelope, zero 429s run-wide. ALL page-authoring preconditions s
 next: R8 worklist assembly (homes+roles per candidate from gated.jsonl + panel implementation
 notes + S3 tree), orchestrator gate, then the authoring waves (~95–130 pages incl. the 9
 packet-B pages), R11 ledger at wave close, S7 opens.
+
+**R8 WORKLIST SIGNED (2026-07-07):** assembler (Opus-xhigh) delivered R8-WORKLIST.json +
+R8-NONPAGE-LEDGER.json with a partition proof (195 vi stubs = 147 pages + 4 escalations + 44
+non-page, exact; removed/folded rows verified absent; Chapman double-count bug caught by the
+partition check and fixed pre-delivery). Orchestrator gate: 4 escalations adjudicated —
+Gaetjens = PAGE (prong a, D1 flip; quoted+weight-labeled reliance in Three Golden Rules; home
+Emergency Aid) · Serge = excluded-remit (citation-format specimen on the S8 page) · DC v.
+Heller = excluded-remit (2A; the corpus's own 'not Fourth Amendment authority' annotation is
+the permanent treatment; caption trap vs Heller-NY logged) · Cruz = watch-S7-deferred
+(bare-caption trap; R10/R4 discipline — identity ≠ proposition linkage). **Final: 148 pages**
+(over the ~95–130 planning estimate, under the §9 guard of 150 — driver: frontier floor 41 +
+D1-flip roster 67; surfaced per §9, no trim). By basis: 67 D1-flip · 37 frontier-controlling ·
+18 sweep · 9 GAP · 7 packet-B (+2 overlap-based) · 5 history-D2 · 4 frontier-split. Non-page:
+58 placements + 3 escalation terminals. NEXT SESSION: R8 pipeline BUILD (no promotion CLI
+exists yet — stub→record promotion + born-conformant mint + Case-Index/homes/ledger rows, S5
+R3 skeleton, specimen = U.S. v. Smith (2024)) via builder work order + review loop, then
+authoring waves per R10 step 5 (GAP/sweep first, then roster, then frontier), serial lane,
+~15–25/batch, R11 ledger at close.
