@@ -34,6 +34,8 @@ homes:
     role: Anchor
 related:
   - "[[Civil Asset Forfeiture]]"
+  - "[[United States v. Bajakajian]]"
+  - "[[Timbs v. Indiana]]"
 tags:
   - case
   - eighth-amendment
@@ -68,7 +70,7 @@ Sections 881(a)(4) and (a)(7) tie forfeiture to the property's role in a crime a
 The judgment was **reversed** and the case remanded for consideration of excessiveness. Blackmun, J., delivered the opinion of the Court; Scalia, J., and Kennedy, J. (joined by Rehnquist, C.J., and Thomas, J.), concurred in part and in the judgment.
 
 ## Treatment & subsequent history
-**Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub; its citator and progeny history have not completed the project's two-key verification, so it renders under the ⚪ banner until S9 promotion. *Austin* is the anchor for subjecting civil forfeiture to the Excessive Fines Clause. It left the excessiveness *standard* open; the Court supplied it five years later in *United States v. Bajakajian* (1998) (a fine is unconstitutional if grossly disproportional to the offense), and it applied the Clause against the States through the Fourteenth Amendment in *Timbs v. Indiana* (2019). Teach *Austin* as step one — the Clause *applies* — and *Bajakajian*/*Timbs* as the standard and its reach. (Case-page cross-links to *Bajakajian* and *Timbs* are deferred: both are minted in a later frontier wave, so they are named here rather than wikilinked to avoid a dead link.)
+**Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub; its citator and progeny history have not completed the project's two-key verification, so it renders under the ⚪ banner until S9 promotion. *Austin* is the anchor for subjecting civil forfeiture to the Excessive Fines Clause. It left the excessiveness *standard* open; the Court supplied it five years later in *[[United States v. Bajakajian]]* (1998) (a fine is unconstitutional if grossly disproportional to the offense), and it applied the Clause against the States through the Fourteenth Amendment in *[[Timbs v. Indiana]]* (2019). Teach *Austin* as step one — the Clause *applies* — and *[[United States v. Bajakajian|Bajakajian]]*/*[[Timbs v. Indiana|Timbs]]* as the standard and its reach.
 
 ## Appears on
 - [[Civil Asset Forfeiture]] — *Anchor*

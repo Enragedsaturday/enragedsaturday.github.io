@@ -802,3 +802,17 @@ Carroll/Benn ¶-class, 0 NEW) + LEXIS type-2 state noise-list (5 literal reporte
 LEXIS structurally excluded) w/ larson enrich verified in-memory (159 Or. App. 34 / 977 P.2d
 1175 parallel) PREPARED for the next lane session (cluster uncached). Scoreboard: **105/148
 minted** (W1-W7). W8 (frontier 2, 20 rows) dispatching — last main wave; then W9 tail + R11.
+
+**W8 CLOSED — MAIN WAVES COMPLETE (2026-07-07):** **20/20 minted, 0 skips/escalations** (Roaden·
+Timbs·Bajakajian·$8,850·James-Daniel-Good·Von-Neumann·Scott·Donovan·Giordano·Keith·Stone-v-
+Powell·Blue·Caceres·Satterfield·Neville·Weatherford·Will·Warshak·Robinson-4th-en-banc·Rochin);
+~65 calls 0×429; Case Index 594 (+20); build 696/2575 green; mint-gate clean; Rochin history-
+rendered per §7 (DP shocks-the-conscience live via Sacramento-v-Lewis, 4A-exclusion function
+superseded by Mapp — precise, not disguised); Robinson-4th/Satterfield frontier-splits framed
+per LINT-21 (Terry armed-vs-dangerous; Nix active-pursuit); Austin↔Timbs/Bajakajian reciprocal
+re-link LANDED (owed from W7); modern-id cluster→sub-opinion trap caught on read (4591916-as-
+opinion = 1993 Tax Court memo — refetched, verified). **MAIN-WAVE TOTALS W1–W8: 125/148 minted,
+0×429 across ~400 wave CL calls, 2 CL outages survived per L4 discipline, 8 wrong-case mis-keys +
+1 duplicate caught by on-read verification, zero pages authored on a broken identity.** W9 tail
+dispatching per R8-W9-TAIL-PLAN.md (8 mintable now + ≤7 behind bounded cite recovery + holcomb-
+watch/zorn terminals); then R11 ledger + non-page fold + LINT-17 + S7 handoff.
