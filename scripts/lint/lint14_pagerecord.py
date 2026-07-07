@@ -60,7 +60,13 @@ def load_records(cases_dir=None):
 
 def page_record_id(path, fm):
     lake = fm.get("lake") if isinstance(fm.get("lake"), dict) else {}
-    return lake.get("record_id") or os.path.splitext(os.path.basename(path))[0]
+    # CR-12: only fall back to the filename stem when record_id is ABSENT. An
+    # explicitly empty `record_id: ""` (an authoring mistake) must NOT be masked as
+    # the stem — return it as-is so the page↔record gate flags the malformed override.
+    rid = lake.get("record_id")
+    if rid is None:
+        return os.path.splitext(os.path.basename(path))[0]
+    return rid
 
 
 def check_page(path, records):
@@ -130,6 +136,10 @@ def self_test():
     records = {
         "lint-14-page-pass": ("fixtures/lint-14-pass.json", {"record_id": "lint-14-page-pass", "status": "verified_off_cl", "stub": False}),
         "lint-14-page-fail": ("fixtures/lint-14-bad.json", {"record_id": "lint-14-page-fail", "status": "not_found", "stub": False}),
+        # CR-12: a valid record at the emptyid page's STEM, so before the fix the
+        # empty record_id masked to this (clean) record; after the fix the empty
+        # override is flagged instead of silently resolving here.
+        "lint-14-page-emptyid-fail": ("fixtures/lint-14-emptyid.json", {"record_id": "lint-14-page-emptyid-fail", "status": "verified", "stub": False}),
     }
     ok = True
     with tempfile.TemporaryDirectory(prefix="lint14-load-records-self-test-") as tmp:

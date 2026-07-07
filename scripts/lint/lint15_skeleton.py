@@ -257,9 +257,15 @@ def check_doctrine(path, body, start, fm):
     return out
 
 
-def check_case(path, body, start):
+def check_case(path, body, start, fm):
     out = []
     body_lines = body.split("\n")
+    # S3 R7 placed-stub parity with check_doctrine (CR-04): a `status: draft` case
+    # page with NO H2 headings yet is a not-yet-authored placed stub — exempt until
+    # authored, mirroring the doctrine placed-stub exemption. "placed nodes fail
+    # LINT-15 only once authored."
+    if str(fm.get("status", "")).strip().lower() == "draft" and not _h2_titles(body_lines):
+        return []
     titles = [t for (_i, t) in _h2_titles(body_lines)]
     if titles != BIRAC:
         # locate the first point of divergence for a useful line number
@@ -296,7 +302,7 @@ def check_file(path):
             return []
         return check_doctrine(path, body, start, fm)
     if ptype == "case":
-        return check_case(path, body, start)
+        return check_case(path, body, start, fm)
     return []
 
 

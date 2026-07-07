@@ -137,33 +137,66 @@ def check_binding(binding_path, registry_ids, lake_overrides):
             % c.relpath(binding_path))]
 
     doc = c.parse_yaml_subset(c.read_text(binding_path).split("\n"))
-    bound = doc.get("bound") if isinstance(doc.get("bound"), list) else []
-    pending = doc.get("pending") if isinstance(doc.get("pending"), list) else []
+    # CR-10: a malformed binding file must NOT be normalized away — bound/pending
+    # must both be lists, or the whole map fails closed (else a broken file
+    # silently disappears from both the live-slug and dangling-node checks).
+    if not isinstance(doc.get("bound"), list) or not isinstance(doc.get("pending"), list):
+        return [c.make_violation(
+            LINT, binding_path, 1, c.HIGH,
+            "binding map has invalid bound/pending structure — both must be lists "
+            "(fail-closed) [R5]")]
+    bound = doc["bound"]
+    pending = doc["pending"]
 
     out = []
+
+    def _collect_nodes(row, section):
+        """Nodes for one binding row. CR-10: a non-string node id (or a non-list
+        `nodes`) is REJECTED as a HIGH, never silently skipped."""
+        raw = row.get("nodes")
+        if raw is None:
+            return []
+        if not isinstance(raw, list):
+            out.append(c.make_violation(
+                LINT, binding_path, 1, c.HIGH,
+                "%s row `nodes` is not a list [R5]" % section))
+            return []
+        good = []
+        for n in raw:
+            if isinstance(n, str):
+                good.append(n)
+            else:
+                out.append(c.make_violation(
+                    LINT, binding_path, 1, c.HIGH,
+                    "%s row has a non-string node id %r [R5]" % (section, n)))
+        return good
 
     # bound slug -> nodes
     slug_map = {}
     mapped_nodes = set()
     for r in bound:
         if not isinstance(r, dict):
+            out.append(c.make_violation(
+                LINT, binding_path, 1, c.HIGH, "bound[] entry is not a mapping [R5]"))
             continue
         slug = r.get("s2_point")
-        nodes = r.get("nodes") if isinstance(r.get("nodes"), list) else []
+        nodes = _collect_nodes(r, "bound")
         if isinstance(slug, str) and slug.strip():
             slug_map.setdefault(slug.strip(), []).extend(nodes)
-        mapped_nodes.update(n for n in nodes if isinstance(n, str))
+        mapped_nodes.update(nodes)
 
     # pending case (by cluster_id) -> nodes
     pending_by_cluster = {}
     for r in pending:
         if not isinstance(r, dict):
+            out.append(c.make_violation(
+                LINT, binding_path, 1, c.HIGH, "pending[] entry is not a mapping [R5]"))
             continue
-        nodes = r.get("nodes") if isinstance(r.get("nodes"), list) else []
+        nodes = _collect_nodes(r, "pending")
         cl = r.get("cluster_id")
         if cl is not None:
             pending_by_cluster[str(cl)] = nodes
-        mapped_nodes.update(n for n in nodes if isinstance(n, str))
+        mapped_nodes.update(nodes)
 
     # (b) every mapped node id exists in the registry
     for nid in sorted(mapped_nodes):
@@ -265,6 +298,15 @@ def self_test():
     # CONFIRMED critical #1: a bound[] row with EMPTY nodes must NOT satisfy the
     # override check — the live lake slug it names resolves to zero nodes -> HIGH.
     case("empty-nodes bound row (bypass)", b_emptynodes, lake_bound, "high")
+
+    # CR-10: a malformed binding structure (bound/pending not a list) is HIGH,
+    # never coerced to []; a non-string node id is rejected, never silently dropped.
+    b_badstruct = os.path.join(fixdir, "lint-21-binding-badstruct-fail.yaml")
+    if os.path.isfile(b_badstruct):
+        case("malformed bound/pending struct", b_badstruct, lake_bound, "high")
+    b_nonstr = os.path.join(fixdir, "lint-21-binding-nonstring-node-fail.yaml")
+    if os.path.isfile(b_nonstr):
+        case("non-string node id", b_nonstr, lake_bound, "high")
 
     # CONFIRMED critical #2: a corrupt/unreadable lake case file is surfaced as a
     # HIGH, never silently skipped (fail-closed).

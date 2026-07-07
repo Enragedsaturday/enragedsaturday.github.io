@@ -31,6 +31,12 @@ REF="${2:-HEAD}"
 BASE="${3:-main}"
 SCOPE_DIR="${4:-}"
 CR_GATE_TIMEOUT="${CR_GATE_TIMEOUT:-3600}"
+# CR-18: `:-` only defaults on unset/empty, so an explicit 0 (or a non-numeric
+# value perl coerces to 0) would reach `alarm 0` and CANCEL the timer, defeating
+# the "can never hang a session" guarantee. Reject non-positive/non-numeric values.
+case "$CR_GATE_TIMEOUT" in
+  ''|*[!0-9]*|0) echo "coderabbit_gate: CR_GATE_TIMEOUT must be a positive integer (got '${CR_GATE_TIMEOUT}')" >&2; exit 2 ;;
+esac
 
 bounded() { # bounded <seconds> <cmd...>
   local secs="$1"; shift

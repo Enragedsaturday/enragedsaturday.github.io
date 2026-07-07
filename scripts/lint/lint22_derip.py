@@ -66,7 +66,11 @@ BANNED_TITLES = (
 
 
 def _norm(s):
-    return re.sub(r"\s+", " ", (s or "").strip().lower())
+    # CR-11: collapse hyphens/underscores (as well as whitespace) so a folder-
+    # derived label like `probable-cause-exceptions` -> "probable cause exceptions"
+    # matches its banned surface form. Both the banned list and the input pass
+    # through here, so the normalization stays symmetric.
+    return re.sub(r"[\s\-_]+", " ", (s or "").strip().lower())
 
 
 _BANNED_NORM = {_norm(b): b for b in BANNED_TITLES}
@@ -141,6 +145,18 @@ def self_test():
         if not passed:
             for v in viols:
                 sys.stderr.write("             %s\n" % v["message"])
+
+    # CR-11: a titleless overview under a hyphenated retired folder derives its
+    # label via _folder_display_name (hyphens -> spaces); _norm must collapse the
+    # banned surface form's hyphens the same way so it reconciles. Before the fix
+    # the banned key kept its hyphen and never matched the space-folded label.
+    synthetic = _folder_display_name(os.path.join("x", "probable-cause-exceptions", "index.md"))
+    cr11_ok = (_norm(synthetic) == "probable cause exceptions"
+               and _BANNED_NORM.get(_norm(synthetic)) == "Probable-Cause Exceptions")
+    ok = ok and cr11_ok
+    sys.stderr.write("[self-test] %-32s -> %s (label=%r)\n" % (
+        "CR-11 folder-label reconciles", "OK" if cr11_ok else "MISMATCH", _norm(synthetic)))
+
     sys.stderr.write("[self-test] %s\n" % ("PASS" if ok else "FAIL"))
     return 0 if ok else 1
 

@@ -178,10 +178,18 @@ def check_inventory(inventory_path, public_root):
 # ---------------------------------------------------------------------------
 
 def _retired_in(value):
-    """Return the retired prefix found as a path segment in `value`, or None."""
+    """Return the retired prefix found as a path segment in `value`, or None.
+    CR-07: unwrap a wikilink-syntax frontmatter value (`[[folder/Page]]`) before
+    matching, so a retired-folder reference written as a wikilink in homes:/related:
+    can't slip past — _RETIRED_SEG_RE anchors on start-of-string or `/`, and the
+    leading `[[` would otherwise block the match."""
     if not isinstance(value, str):
         return None
-    m = _RETIRED_SEG_RE.search(value)
+    v = value.strip()
+    wl = re.match(r"^\[\[(.*?)\]\]$", v)
+    if wl:
+        v = wl.group(1).split("|")[0].split("#")[0].strip()
+    m = _RETIRED_SEG_RE.search(v)
     return m.group(1) if m else None
 
 
@@ -293,6 +301,12 @@ def self_test():
           lambda: check_oldpaths(op_pass), "pass")
     check("old-path in wikilink/homes (fail)",
           lambda: check_oldpaths(op_fail), "high")
+    # CR-07: a wikilink-syntax related:/homes: frontmatter value is the ONLY retired
+    # reference here — before the unwrap fix it slipped past silently.
+    op_wl_fail = os.path.join(fixdir, "lint-24-oldpath-wikilink-fail.md")
+    if os.path.isfile(op_wl_fail):
+        check("old-path in wikilink-only frontmatter (fail)",
+              lambda: check_oldpaths(op_wl_fail), "high")
 
     sys.stderr.write("[self-test] %s\n" % ("PASS" if ok else "FAIL"))
     return 0 if ok else 1

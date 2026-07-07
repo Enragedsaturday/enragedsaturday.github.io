@@ -741,14 +741,13 @@ def plan_mint(record_id, payload_path, worklist_path, lake_root, content_root,
 
     manifest = load_manifest(lake_root)
 
-    # F-R8-06: homes[]/roles[] must be in bijection — no silent Key default.
-    desync = homes_roles_desync(row)
-    if desync:
-        return refuse(REFUSE_HOMES_ROLES_DESYNC, desync)
-
     caption = row.get("caption") or record_id
     old_path = lake_record_path(lake_root, record_id)
     old_exists = os.path.exists(old_path)
+    # NOTE (CR-02): the homes[]/roles[] bijection gate (F-R8-06) is deferred to the
+    # FRESH path below — it must NOT run before the already-authored/crash-tail
+    # classification, or a post-authoring worklist edit would break the documented
+    # idempotent no-op of an already-promoted row.
 
     # ---- POST-COMMIT / CRASH-TAIL classification (old stub json gone) ----------
     if not old_exists:
@@ -817,6 +816,13 @@ def plan_mint(record_id, payload_path, worklist_path, lake_root, content_root,
                       "lake record %r is not a stub (stub!=true) — R8 mints only from "
                       "verified stubs; a page-backed record must not be re-promoted [A6/F-R8-01]"
                       % record_id)
+
+    # F-R8-06 (CR-02: fresh-path only — after the already-authored/crash-tail
+    # classification, so a post-authoring worklist edit never disturbs the no-op):
+    # homes[]/roles[] must be in bijection — no silent Key default.
+    desync = homes_roles_desync(row)
+    if desync:
+        return refuse(REFUSE_HOMES_ROLES_DESYNC, desync)
 
     special = row.get("special") or []
     if isinstance(special, str):
@@ -1381,6 +1387,15 @@ def self_test():
               and all(hr.get("stem") == "Fixture Alpha Case" and hr.get("cite") for hr in last["home_rows"]))
         check("idempotent already-authored (lake-derived, F-R8-02)",
               mint(b, "fixture-alpha--900001", payload).get("already_authored") is True)
+        # CR-02: a post-authoring worklist edit that DESYNCS homes/roles must NOT
+        # break the already-authored no-op (the desync gate is fresh-path only).
+        wl_desync_b = os.path.join(root, "wl-desync-b.json")
+        _write_json(wl_desync_b, {"rows": [{"record_id": "fixture-alpha--900001",
+                    "caption": "Fixture Alpha Case", "leg": "roster", "prong": "a",
+                    "homes": ["doctrine/Fixture Doctrine.md", "doctrine/Fixture Related Home.md"],
+                    "roles": [{"home": "doctrine/Fixture Doctrine.md", "role": "Key"}]}]})
+        check("idempotent survives post-authoring worklist desync (CR-02)",
+              mint(b, "fixture-alpha--900001", payload, wl=wl_desync_b).get("already_authored") is True)
 
         # ---- group C: collision + history + bad-skeleton + missing-home ----
         c = setup(os.path.join(root, "C"))

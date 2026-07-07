@@ -137,7 +137,12 @@ def _scalar(value):
         if not inner:
             return []
         return [_unquote(x.strip()) for x in _split_flow(inner)]
-    # inline flow map {a: b} -> keep raw (rare; not needed by lints)
+    # inline flow map {a: b} -> keep raw (rare; not needed by lints), but an
+    # EMPTY flow map {} must reparse to a real empty dict for parity with [] so
+    # serializer output "key: {}" (CR-15) does not reparse as a phantom-drift
+    # string ("{}") against a projected empty mapping.
+    if value == "{}":
+        return {}
     return _unquote(value)
 
 
@@ -672,16 +677,28 @@ WEIGHT_LABEL_LEADS = (
     "Historical",
 )
 _HISTORICAL_WORD_RE = re.compile(r"\bHistorical\b")
+# CR-06: fold every dash variant (hyphen-minus, unicode hyphens, en/em dashes,
+# minus sign) to one form before matching, so a leaked label written with `-` or
+# `–` instead of the canonical `—` can't slip past LINT-16 as clean. Both the cell
+# and the lead are normalized identically, so internal hyphens (in-circuit,
+# non-precedential) stay consistent and never cause a mismatch.
+_DASH_NORM_RE = re.compile(r"[‐‑‒–—―−-]")
+
+
+def _normalize_dashes(s):
+    return _DASH_NORM_RE.sub("-", s)
 
 
 def weight_label_in_cell(cell):
     """Return the S1 A8 authority-weight label authored into a table cell
-    (LINT-16 R7), or None. Covers all six tiers including 'Historical'."""
+    (LINT-16 R7), or None. Covers all six tiers including 'Historical'. Dash
+    variants are normalized (CR-06) so a wrong-dash leak still matches."""
+    norm_cell = _normalize_dashes(cell)
     for lead in WEIGHT_LABEL_LEADS:
         if lead == "Historical":
             if _HISTORICAL_WORD_RE.search(cell):
                 return "Historical"
-        elif lead in cell:
+        elif _normalize_dashes(lead) in norm_cell:
             return lead
     return None
 

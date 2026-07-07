@@ -141,8 +141,13 @@ def convert_tables(body_lines, report):
             }, end)
             continue
 
-        new_rows = ["| " + " | ".join(headers) + " |",
-                    "|" + "|".join(["---"] * len(headers)) + "|"]
+        # CR-16: the table-level guard above only catches a missing Opinion
+        # COLUMN. If the column exists but an individual ROW's Opinion cell is
+        # blank, rewriting it schema-conformant with an empty Opinion cell is the
+        # same "laundering a missing source" failure at row granularity. Detect any
+        # blank per-row Opinion cell and DEFER the whole table (never blank-fill).
+        row_data = []
+        blank_opinion_lines = []
         for ridx in rows:
             src = c.split_table_row(body_lines[ridx])
             cells = []
@@ -150,7 +155,27 @@ def convert_tables(body_lines, report):
                 val = src[col_of[role]] if (role in col_of and col_of[role] < len(src)) else ""
                 if role == "opinion":
                     val = normalize_opinion_cell(val)
+                    if val == "":
+                        blank_opinion_lines.append(ridx + 1)
                 cells.append(val)
+            row_data.append(cells)
+
+        if blank_opinion_lines:
+            plans[hidx] = (None, None, {
+                "pass": "tables",
+                "reason": "blank-opinion-cell",
+                "detail": "Case table maps to the %s schema and has an Opinion "
+                          "column, but %d row(s) carry no link — deferred (opinion "
+                          "links must be sourced, never blank-filled)"
+                          % (schema, len(blank_opinion_lines)),
+                "line": hidx + 1,
+                "row_lines": blank_opinion_lines,
+            }, end)
+            continue
+
+        new_rows = ["| " + " | ".join(headers) + " |",
+                    "|" + "|".join(["---"] * len(headers)) + "|"]
+        for cells in row_data:
             new_rows.append("| " + " | ".join(cells) + " |")
 
         original = body_lines[hidx:end]
@@ -443,6 +468,17 @@ def convert_page(path):
     body_lines = convert_sources(body_lines, report)
     body_lines = convert_pitfalls(body_lines, report)
 
+    # CR-17: every pass computes `line`/`row_lines` from body_lines indices
+    # (post-frontmatter). Offset them by the frontmatter length so the report this
+    # pipeline hands to S7 points at the real file line, not a frontmatter-short one.
+    offset = len(prefix)
+    for entry in report["actions"] + report["deferred"]:
+        if "line" in entry and isinstance(entry["line"], int):
+            entry["line"] += offset
+        if "row_lines" in entry and isinstance(entry["row_lines"], list):
+            entry["row_lines"] = [n + offset if isinstance(n, int) else n
+                                  for n in entry["row_lines"]]
+
     new_text = "\n".join(prefix + body_lines)
     report["changed"] = new_text != text
     return report, new_text
@@ -492,12 +528,27 @@ def _check_footnote_not_row(report, new_text, orig):
         report["changed"], "\n[^note]:" in new_text)
 
 
+def _check_blank_opinion_and_offset(report, new_text, orig):
+    # CR-16: a row with a blank Opinion cell (column present) DEFERS the whole
+    # table, never blank-fills it. CR-17: reported line numbers are offset by the
+    # frontmatter length (the header sits at file line 10; the blank row at 13).
+    deferred = [d for d in report["deferred"] if d.get("reason") == "blank-opinion-cell"]
+    cr16 = (len(deferred) == 1 and new_text == orig
+            and ("tables", "schema-rewrite") not in _action_types(report))
+    cr17 = bool(deferred) and deferred[0].get("line") == 10 and deferred[0].get("row_lines") == [13]
+    ok = cr16 and cr17
+    return ok, "cr16=%s cr17_line=%s row_lines=%s" % (
+        cr16, deferred[0].get("line") if deferred else None,
+        deferred[0].get("row_lines") if deferred else None)
+
+
 def _self_test():
     fixdir = os.path.join(HERE, "fixtures")
     checks = {
         "defer-missing-opinion.md": _check_defer_missing_opinion,
         "sources-split.md": _check_sources_split,
         "footnote-not-row.md": _check_footnote_not_row,
+        "blank-opinion-cell.md": _check_blank_opinion_and_offset,
     }
     ok = True
     for name in sorted(checks):

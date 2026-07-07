@@ -96,6 +96,49 @@ def unsupported_schema_keywords(schema):
     return sorted(schema_keywords(schema) - SUPPORTED_SCHEMA_KEYWORDS)
 
 
+# CR-08: the `format` values format_matches() actually validates. An unrecognized
+# format must fail closed (both a schema-level gate AND a defensive False in
+# format_matches), never silently accept any string for that field.
+SUPPORTED_FORMATS = {"date", "date-time", "uri"}
+
+
+def schema_formats(schema):
+    """Every `format` value used anywhere in the schema (mirrors schema_keywords'
+    traversal of the draft-07 subset)."""
+    found = set()
+
+    def walk(node):
+        if isinstance(node, list):
+            for item in node:
+                walk(item)
+            return
+        if not isinstance(node, dict):
+            return
+        for key, value in node.items():
+            if key == "format" and isinstance(value, str):
+                found.add(value)
+            if key in ("properties", "definitions"):
+                if isinstance(value, dict):
+                    for child in value.values():
+                        walk(child)
+                continue
+            if key in ("allOf", "anyOf"):
+                walk(value)
+                continue
+            if key in ("items", "contains", "not", "if", "then", "else"):
+                walk(value)
+                continue
+            if key == "additionalProperties" and isinstance(value, dict):
+                walk(value)
+
+    walk(schema)
+    return found
+
+
+def unsupported_schema_formats(schema):
+    return sorted(schema_formats(schema) - SUPPORTED_FORMATS)
+
+
 def json_kind(value):
     if value is None:
         return "null"
@@ -261,7 +304,22 @@ class SchemaValidator:
         if fmt == "uri":
             parsed = urllib.parse.urlparse(value)
             return bool(parsed.scheme and (parsed.netloc or parsed.scheme not in ("http", "https")))
-        return True
+        # CR-08: an unrecognized format fails CLOSED (was `return True`, which
+        # silently accepted any string). run() gates unsupported formats up front,
+        # so this is the defensive belt-and-suspenders fallback.
+        return False
+
+
+def check_cases_dir(cases_dir, case_paths):
+    """CR-09: fail closed on a missing/empty lake/cases directory (glob returns []
+    silently on a typo'd or deleted dir). Returns a list of violations."""
+    if not os.path.isdir(cases_dir):
+        return [v(cases_dir, "lake/cases directory is missing — refusing to certify "
+                  "an empty authority lake (fail-closed)")]
+    if not case_paths:
+        return [v(cases_dir, "lake/cases directory contains no record JSON files — "
+                  "refusing to certify an empty authority lake (fail-closed)")]
+    return []
 
 
 def validate_record(path, record, schema=None):
@@ -279,8 +337,19 @@ def run(paths=None):  # noqa: ARG001
     unsupported = unsupported_schema_keywords(schema)
     if unsupported:
         return [v(SCHEMA_PATH, "_schema.json uses unsupported JSON-Schema keyword(s): %s" % ", ".join(unsupported))]
+    # CR-08: fail closed if the schema declares a format this validator does not
+    # actually enforce (format_matches would otherwise accept any string for it).
+    unsupported_fmts = unsupported_schema_formats(schema)
+    if unsupported_fmts:
+        return [v(SCHEMA_PATH, "_schema.json uses unsupported format value(s) not "
+                  "enforced by this validator: %s" % ", ".join(unsupported_fmts))]
 
-    case_paths = sorted(glob.glob(os.path.join(c.REPO_ROOT, "_overhaul2", "lake", "cases", "*.json")))
+    cases_dir = os.path.join(c.REPO_ROOT, "_overhaul2", "lake", "cases")
+    case_paths = sorted(glob.glob(os.path.join(cases_dir, "*.json")))
+    # CR-09: a missing/empty lake/cases dir must NOT read as "0 violations".
+    dir_viols = check_cases_dir(cases_dir, case_paths)
+    if dir_viols:
+        return dir_viols
     ids = []
     for path in case_paths:
         try:
@@ -328,6 +397,37 @@ def self_test():
         "OK" if coverage_ok else "FAIL", len(schema_keywords(schema))))
     if unsupported:
         sys.stderr.write("[self-test] unsupported keyword(s): %s\n" % ", ".join(unsupported))
+
+    # CR-08: live schema format coverage + a synthetic unknown-format fail-closed check.
+    live_unsupported_fmts = unsupported_schema_formats(schema)
+    fmt_coverage_ok = not live_unsupported_fmts
+    sys.stderr.write("[self-test] live schema format coverage -> %s (%s)\n" % (
+        "OK" if fmt_coverage_ok else "FAIL", sorted(schema_formats(schema))))
+    if live_unsupported_fmts:
+        sys.stderr.write("[self-test] unsupported format(s): %s\n" % ", ".join(live_unsupported_fmts))
+    synthetic_fmt = {"type": "object", "properties": {"x": {"type": "string", "format": "email"}}}
+    fmt_gate_ok = (unsupported_schema_formats(synthetic_fmt) == ["email"]
+                   and SchemaValidator.format_matches("anyone@example.com", "email") is False)
+    sys.stderr.write("[self-test] unknown format fails closed (CR-08) -> %s\n"
+                     % ("OK" if fmt_gate_ok else "FAIL"))
+
+    # CR-09: missing/empty lake/cases dir is fail-closed; a populated dir is clean.
+    import tempfile
+    with tempfile.TemporaryDirectory(prefix="lint13-cases-dir-") as tmp:
+        missing = os.path.join(tmp, "nope")
+        empty = os.path.join(tmp, "empty")
+        populated = os.path.join(tmp, "full")
+        os.makedirs(empty)
+        os.makedirs(populated)
+        with open(os.path.join(populated, "x.json"), "w", encoding="utf-8") as f:
+            f.write("{}")
+        full_paths = sorted(glob.glob(os.path.join(populated, "*.json")))
+        dir_gate_ok = (len(check_cases_dir(missing, [])) == 1
+                       and len(check_cases_dir(empty, [])) == 1
+                       and check_cases_dir(populated, full_paths) == [])
+    sys.stderr.write("[self-test] missing/empty cases dir fails closed (CR-09) -> %s\n"
+                     % ("OK" if dir_gate_ok else "FAIL"))
+    coverage_ok = coverage_ok and fmt_coverage_ok and fmt_gate_ok and dir_gate_ok
 
     fixdir = os.path.join(c.HERE, "fixtures")
     files = sorted(glob.glob(os.path.join(fixdir, "lint-13-record-*.json")))

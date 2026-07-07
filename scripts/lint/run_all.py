@@ -107,7 +107,9 @@ def main():
             c.emit(selftest_viols)
         st_high = sum(1 for v in selftest_viols if v["severity"] == c.HIGH)
         total_high += st_high
-        rows.append(("SELFTEST", desc, len(selftest_viols), st_high, 0, 0))
+        # CR-05: carry the real per-lint name (not a hardcoded "SELFTEST"), so a
+        # batch-close roster/summary can tell WHICH self-test failed.
+        rows.append((lint_name, desc, len(selftest_viols), st_high, 0, 0))
 
     for name, desc, run_fn in LINTS:
         violations = run_fn(paths)
