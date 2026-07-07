@@ -714,3 +714,22 @@ Michigan re-key · robinson→10838748 · military namesakes cole/lyle/small/men
 investigation (R3 data) · wilson · 8 escalated-vi · long-lake ca2021 bug. W4 dispatching w/ cole
 known-skip; W5 blockers lewis+lyle; W6 blockers mendoza/ruiz/small/wilson — all queued-class.
 Scoreboard: 43/148 minted.
+
+**W4 CLOSED + CARTER SLIP-FIX (2026-07-07):** W4: **11 minted** (Karston·Weaver·Wint·Aigbekaen·
+Amos·Berkowitz·Black·Brinkley·Camou·Carlton-Williams·Daniels; ~55 calls 0×429; mint-gate 0/0/0;
+Case Index 523 +11; build 625/2215; endemic-only lint delta, zero new signatures; ratified
+body-only finalization ×4 incl. Berkowitz pincite upgraded star-verified). 7 skips: cole
+(known military-namesake) + larson (deferred-recovery, a/k/a caption flag) + **5 wrong-case
+clusters DISCOVERED on read: burgess/capers/castillo/chavez/crumble** — a residual mis-key class
+(ambiguous US-v-surname rows resolved to modern criminal appeals; invisible to prior repairs
+because they carry citations) — each confirmed by zero-hit doctrine-term searches, recommended
+re-keys in W4 report. ∥ Carter LINT-12 slip-drift FIXED (derive_slip_cite moved to project.py as
+single source; marker-derived, never enters citations.display; LINT-12 1→0 corpus-wide, zero
+content diffs — the page was already right; projector/idempotent/mint 41/41/specimen/stamp 7/7
+green). ORCHESTRATOR DECISION: re-key queue now ~15 (frederick·robinson→10838748·cole·lyle·
+small·mendoza·ruiz·wilson·larson·lewis-nocite + burgess·capers·castillo·chavez·crumble) and the
+class predicts more in W5/W6 → ONE comprehensive identity-audit + re-key session dispatched
+BEFORE W5: (a) proactive audit of ALL 36 remaining unminted W5/W6/W7/W8 rows (cached cluster
+reads + doctrine-term cross-check vs worklist note/homes — catch the class wholesale), (b)
+dual-leg web re-keys for everything queued+found, (c) scoped readjudication. W5 waits on its
+report. Scoreboard: 54/148 minted.

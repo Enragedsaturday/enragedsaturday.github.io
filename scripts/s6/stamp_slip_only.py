@@ -198,6 +198,11 @@ def self_test():
                             "landor-v-louisiana-department-of-corrections-and-public-safety--10878535.json")
         base = read_json(live)
         base["record_id"] = "fixture-slip--900700"
+        # start from an UNstamped base regardless of whether the live record has
+        # already been stamped by the real gate run — the self-test owns its state.
+        base.setdefault("citations", {})
+        base["citations"].pop("slip_only", None)
+        base["citations"].pop("slip_only_provenance", None)
         with open(os.path.join(lake, "fixture-slip--900700.json"), "w", encoding="utf-8") as f:
             json.dump(base, f, ensure_ascii=False)
         # a cite-bearing record (must be refused)

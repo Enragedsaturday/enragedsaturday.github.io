@@ -357,50 +357,12 @@ def as_of_to_iso(as_of):
     return s  # bare date; project.date_from_record slices [:10]
 
 
-# --------------------------------------------------------------------------
-# slip-only support (S2 A3 slip precedent): a real case whose reporter cite does
-# not exist yet, marked EXPLICITLY on the lake record (citations.slip_only: true).
-# --------------------------------------------------------------------------
-
-def record_is_slip_only(record):
-    """True iff the lake record carries the EXPLICIT slip-only marker (never
-    inferred from an absent citation)."""
-    return (record.get("citations") or {}).get("slip_only") is True
-
-
-def slip_court_abbr(record):
-    """Bluebook-ish court abbreviation for a slip cite, from identity."""
-    ident = record.get("identity") or {}
-    level = ident.get("court_level")
-    if level == "scotus":
-        return "U.S."
-    if level == "coa":
-        circ = ident.get("circuit")
-        return s2project.circuit_label(circ) if circ else None
-    if level == "state":
-        return ident.get("state") or None
-    return None
-
-
-def derive_slip_cite(record):
-    """PROPOSED slip-opinion cite form for the header + Case cell, behind the
-    citations.slip_only marker (FLAGGED FOR RATIFICATION — S2 A3 sanctions slip
-    PINPOINTS, not a slip citation display; S5 R3 sanctions no slip header form).
-    Bluebook slip form: `No. <docket>, slip op. (<court> <year>)`. Returns None if
-    identity is too sparse for any honest cite (no docket AND no court/year)."""
-    ident = record.get("identity") or {}
-    docket = ident.get("docket")
-    year = ident.get("year")
-    court = slip_court_abbr(record)
-    tail_parts = [p for p in (court, str(year) if year else None) if p]
-    tail = "(%s)" % " ".join(tail_parts) if tail_parts else ""
-    if docket:
-        head = "No. %s, slip op." % docket
-    elif tail:
-        head = "slip op."
-    else:
-        return None
-    return ("%s %s" % (head, tail)).strip()
+# slip-only support (S2 A3): the derivation lives in scripts/s2/project.py as the
+# SINGLE source so the projector and this mint agree (no LINT-12 page-vs-projection
+# drift). project_record already emits the slip cite for a marked record, so the
+# mint no longer injects it — it only gates.
+record_is_slip_only = s2project.record_is_slip_only
+derive_slip_cite = s2project.derive_slip_cite
 
 
 def homes_roles_desync(row):
@@ -830,10 +792,6 @@ def plan_mint(record_id, payload_path, worklist_path, lake_root, content_root,
             projection = s2project.project_record(promoted_rec)
         except ValueError as exc:
             return refuse("projection-failed", str(exc))
-        if not projection.get("citation") and record_is_slip_only(promoted_rec):
-            sc = derive_slip_cite(promoted_rec)
-            if sc:
-                projection["citation"] = sc
         holding = payload_fm.get("holding") or ""
         primary = primary_home_link(row)
         rc_born = promoted_rec.get("status") or born_status
@@ -921,21 +879,19 @@ def plan_mint(record_id, payload_path, worklist_path, lake_root, content_root,
         return refuse("projection-failed", str(exc))
     # slip-only support: an EXPLICIT citations.slip_only marker (S2 A3 precedent)
     # lets a real case whose reporter cite does not exist yet mint with an honest
-    # slip form; `record-missing-citation` stays exactly as-is for UNMARKED rows.
-    slip_only = record_is_slip_only(record)
-    slip_cite = None
+    # slip form — project_record (the single source) already emitted it into
+    # `projection["citation"]`. `record-missing-citation` stays exactly as-is for
+    # UNMARKED rows; a marked-but-underivable identity gets the distinct
+    # `record-slip-identity-incomplete`.
     if not projection.get("citation"):
-        if slip_only:
-            slip_cite = derive_slip_cite(promoted)
-            if not slip_cite:
-                return refuse(REFUSE_SLIP_INCOMPLETE,
-                              "record %r is slip_only but its identity lacks a docket AND a "
-                              "court/year — cannot derive an honest slip cite; complete "
-                              "identity before mint" % record_id)
-        else:
-            return refuse(REFUSE_MISSING_CITATION,
-                          "projected citation is empty for %r — the stub's citations lane "
-                          "must be populated (S2 builder) before R8 mint" % record_id)
+        if record_is_slip_only(record):
+            return refuse(REFUSE_SLIP_INCOMPLETE,
+                          "record %r is slip_only but its identity lacks a docket AND a "
+                          "court/year — cannot derive an honest slip cite; complete "
+                          "identity before mint" % record_id)
+        return refuse(REFUSE_MISSING_CITATION,
+                      "projected citation is empty for %r — the stub's citations lane "
+                      "must be populated (S2 builder) before R8 mint" % record_id)
 
     # payload
     if not payload_path or not os.path.exists(payload_path):
@@ -947,12 +903,6 @@ def plan_mint(record_id, payload_path, worklist_path, lake_root, content_root,
                       errors=body_errs)
 
     frontmatter, projection = assemble_frontmatter(promoted, row, payload_fm, stem)
-    if slip_cite:
-        # inject the honest slip cite into the frontmatter + projection (the
-        # projector emits no cite for a slip-only record) so the page's citation,
-        # the Case-cell, and the ledger all carry the slip form.
-        frontmatter["citation"] = slip_cite
-        projection["citation"] = slip_cite
     page_text = render_page(frontmatter, body)
     page_abs = os.path.join(content_root, "cases", stem + ".md")
     page_rel = os.path.relpath(page_abs, os.path.dirname(content_root))

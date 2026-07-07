@@ -447,3 +447,32 @@ Files touched: `_overhaul2/lake/_schema.json`, `scripts/s6/{mint_page.py, stamp_
 fixtures (`scripts/s6/fixtures/{stub-fixture-slip.json, payload-slip.md}`,
 `scripts/lint/fixtures/lint-13-record-slip-only-{pass,malformed-fail}.json`) + this addendum. No real
 lake-record writes, no `content/`, no `scripts/s2/`.
+
+---
+
+## 13. Addendum — slip-cite drift fix, project.py is the single source (2026-07-07, W3 escalation)
+
+LINT-12 slip-cite drift on **Carter v. United States**: the mint's slip path wrote the derived slip
+cite into the born page's `citation` frontmatter, but `project_record` returned `''` (the record's
+citations block is empty by design for slip rows), so the drift lint fired page-vs-projection.
+
+**Fix (single source, chosen direction):** `derive_slip_cite` / `slip_court_abbr` /
+`record_is_slip_only` MOVED into `scripts/s2/project.py` (verified `scripts/s2` free first);
+`citation_with_year` now derives the slip form when a record carries `citations.slip_only: true` and
+has no reporter cite, so the projector and the S6 mint agree. The slip form is NEVER written into
+`citations.display` — the marker is the truth, both consumers derive. `scripts/s6/mint_page.py` now
+imports these from `s2project` (no circular import: project.py imports nothing from s6) and DROPPED
+its slip-cite injection — the projection carries the slip cite through `assemble_frontmatter`
+naturally. Projector self-test gains a slip assertion (marked record → slip cite; unmarked citeless →
+`''`); the stamp self-test was made robust to a live record that the real gate run has already
+stamped.
+
+**Carter before/after:** LINT-12 on Carter **1 → 0**. The projector re-projection of Carter is a
+confirmed **no-op** (dry-run: `refused=False, pages_changed=0`) — the page already carried the correct
+slip cite from the mint, so no `content/` write was needed (zero page diffs). Full-corpus LINT-12 **0**,
+LINT-13 **0**.
+
+**Tests:** projector `--self-test` PASS (+ slip assertion) · `--verify-idempotent` PASS · mint
+`--self-test` **41/41** · specimen PASS · stamp `--self-test` **7/7** · LINT-13 self-test PASS. Files
+touched: `scripts/s2/project.py`, `scripts/s6/{mint_page.py, stamp_slip_only.py}` + this addendum —
+no `content/` write, no other lake writes, nothing committed.

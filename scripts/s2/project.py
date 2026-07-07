@@ -99,6 +99,14 @@ def citation_with_year(record):
     official = citation_string(record.get("citations", {}).get("official"))
     if not official:
         official = record.get("citations", {}).get("display") or ""
+    # slip-only single source (S2 A3): a record marked `citations.slip_only` with no
+    # reporter cite yet derives the honest slip form HERE, so the projector and the
+    # S6 mint agree — no page-vs-projection drift (LINT-12). The slip cite already
+    # carries its year, so it is returned as-is.
+    if not official and record_is_slip_only(record):
+        slip = derive_slip_cite(record)
+        if slip:
+            return slip
     year = record.get("identity", {}).get("year")
     if official and year and "(%s)" % year not in official:
         return "%s (%s)" % (official, year)
@@ -128,6 +136,55 @@ def circuit_label(value):
         return None
     suffix = {1: "1st", 2: "2d", 3: "3d"}.get(num, "%sth" % num if num else text)
     return "%s Cir." % suffix
+
+
+# --------------------------------------------------------------------------
+# slip-only support (S2 A3 slip precedent) — the SINGLE source shared by the
+# projector (citation_with_year) and the S6 mint (scripts/s6/mint_page.py imports
+# these), so a slip row's page citation and its projection agree (no LINT-12 drift).
+# --------------------------------------------------------------------------
+
+def record_is_slip_only(record):
+    """True iff the lake record carries the EXPLICIT slip-only marker — never
+    inferred from an absent citation."""
+    return (record.get("citations") or {}).get("slip_only") is True
+
+
+def slip_court_abbr(record):
+    """Bluebook-ish court abbreviation for a slip cite, from identity."""
+    ident = record.get("identity") or {}
+    level = ident.get("court_level")
+    if level == "scotus":
+        return "U.S."
+    if level == "coa":
+        circ = ident.get("circuit")
+        return circuit_label(circ) if circ else None
+    if level == "state":
+        return ident.get("state") or None
+    return None
+
+
+def derive_slip_cite(record):
+    """PROPOSED slip-opinion cite form for the header + Case cell, behind the
+    citations.slip_only marker (FLAGGED FOR RATIFICATION — S2 A3 sanctions slip
+    PINPOINTS, not a slip citation display; S5 R3 sanctions no slip header form).
+    Bluebook slip form: `No. <docket>, slip op. (<court> <year>)`. Returns None if
+    identity is too sparse for any honest cite (no docket AND no court/year). The
+    slip form is NEVER written into citations.display — the marker is the truth and
+    both the projector and the mint derive from it."""
+    ident = record.get("identity") or {}
+    docket = ident.get("docket")
+    year = ident.get("year")
+    court = slip_court_abbr(record)
+    tail_parts = [p for p in (court, str(year) if year else None) if p]
+    tail = "(%s)" % " ".join(tail_parts) if tail_parts else ""
+    if docket:
+        head = "No. %s, slip op." % docket
+    elif tail:
+        head = "slip op."
+    else:
+        return None
+    return ("%s %s" % (head, tail)).strip()
 
 
 def authority_weight(record):
@@ -614,7 +671,27 @@ def self_test():
             and good_coa_before == good_coa_after  # good page NOT partially written
         )
 
-    ok = ok and off_cl_ok and preserve_ok and load_warning_ok and missing_status_ok and unmatched_ok and write_warning_ok and cr13_ok and cr14_ok
+    # slip-only single-source projection (S2 A3): a slip-marked record with no
+    # reporter cite derives the slip form from citation_with_year, so the mint and
+    # the projector agree; an UNMARKED citeless record stays "" (unchanged).
+    slip_rec = {
+        "record_id": "Slip Fixture",
+        "status": "under_review",
+        "identity": {"court": "U.S. Supreme Court", "court_level": "scotus", "circuit": None,
+                     "year": 2026, "docket": "23-1197"},
+        "citations": {"official": None, "parallel": [], "vendor_neutral": [], "all": [],
+                      "display": "", "slip_only": True},
+        "provenance": {"date_modified": "2026-07-07T00:00:00Z"},
+    }
+    slip_proj = project_record(slip_rec).get("citation")
+    unmarked = json.loads(json.dumps(slip_rec))
+    unmarked["citations"]["slip_only"] = False
+    unmarked_proj = project_record(unmarked).get("citation")
+    slip_ok = (slip_proj == "No. 23-1197, slip op. (U.S. 2026)" and unmarked_proj == "")
+
+    ok = ok and off_cl_ok and preserve_ok and load_warning_ok and missing_status_ok and unmatched_ok and write_warning_ok and cr13_ok and cr14_ok and slip_ok
+    sys.stderr.write("[self-test] slip-only projection single-source (S2 A3) -> %s (slip=%r unmarked=%r)\n"
+                     % ("OK" if slip_ok else "FAIL", slip_proj, unmarked_proj))
     sys.stderr.write("[self-test] project idempotence -> %s\n" % ("OK" if once == twice else "FAIL"))
     sys.stderr.write("[self-test] verified_off_cl off_cl_links projection -> %s\n" % ("OK" if off_cl_ok else "FAIL"))
     sys.stderr.write("[self-test] preserved raw frontmatter bytes -> %s\n" % ("OK" if preserve_ok else "FAIL"))
