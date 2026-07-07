@@ -789,3 +789,16 @@ extension approved). GATE MUTATIONS: davis fold APPLIED (A18, alias-folds:1, rec
 7688717 court_id=ca5); the audit flag was wrong, W6's on-read mint correct; verify-before-mutate
 held against the run's own audit artifact. Scoreboard: **84/148 minted** (W1-W6), W7/W8 41 rows
 all-clean-audited, W9 tail ~8. W7 dispatching ∥ lint/serializer micro-fix.
+
+**W7 CLOSED (2026-07-07):** **21/21 minted, 0 skips, 0 escalations** — the pre-W5 audit's
+clean-frontier call held on read (every row re-verified; cluster-collision guard passed); 48 MCP
+calls 0×429 no outage; Case Index 574 (+21); build 676/2464 green; mint-gate 0/0/0 ×21; LINT-2/9
+= 0 after ratified body-only remediation (incl. de-linking Austin's forward refs to W8-pending
+Timbs/Bajakajian — reciprocal re-link owed at W8). Data honesty: modern SCOTUS rows pinned to the
+S.Ct. parallel reporter CL actually paginates; Lozman A3 slip; Burdeau/Ex-parte-Jackson OCR
+normalized; Youngblood lake-year quirk (1989 vs decided 1988-11-29) flagged S2. ∥ Micro-fix lane
+landed: PINCITE_RE ¶/¶¶ extension — LINT-2 corpus 311→302 (−9 = Ruckman + the O1-deferred
+Carroll/Benn ¶-class, 0 NEW) + LEXIS type-2 state noise-list (5 literal reporters; federal
+LEXIS structurally excluded) w/ larson enrich verified in-memory (159 Or. App. 34 / 977 P.2d
+1175 parallel) PREPARED for the next lane session (cluster uncached). Scoreboard: **105/148
+minted** (W1-W7). W8 (frontier 2, 20 rows) dispatching — last main wave; then W9 tail + R11.

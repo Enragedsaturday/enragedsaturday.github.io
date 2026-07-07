@@ -92,5 +92,55 @@ def run(paths=None):
     return out
 
 
+def self_test():
+    """Fixtures for the ¶-pin extension (W6 Ruckman escalation): a paragraph-pinned
+    quote passes; the identical quote unpinned still fails. Also re-checks the
+    reporter-pincite and `at N` forms so the ¶ alternative did not regress them."""
+    import tempfile
+    results = []
+
+    def check(label, cond):
+        results.append((label, bool(cond)))
+        sys.stderr.write("[lint2 self-test] %-44s -> %s\n" % (label, "OK" if cond else "FAIL"))
+
+    def viols(body):
+        with tempfile.NamedTemporaryFile("w", suffix=".md", delete=False, encoding="utf-8") as f:
+            f.write("---\ntitle: t\n---\n\n# t\n\n" + body + "\n")
+            p = f.name
+        try:
+            return check_file(p)
+        finally:
+            os.remove(p)
+
+    quote = ('As the court held: "Without belaboring the matter, we decline to hold that '
+             'the instant case comes within the ambit of the Fourth Amendment."')
+    # ¶-pinned inline quote passes (Ruckman shape)
+    check("¶ N pin clears the inline quote",
+          not viols(quote + " — 806 F.2d 1471 (10th Cir. 1986) (majority op. ¶ 9). ^pin-9"))
+    # ¶¶ N–M range pin passes
+    check("¶¶ N–M range pin clears the quote",
+          not viols(quote + " — 749 F.3d 192 (3d Cir. 2014) (¶¶ 12–14)."))
+    # identical quote with NO pin still fails
+    check("unpinned inline quote still fails",
+          any(v["lint"] == LINT for v in viols(quote)))
+    # ¶-pinned block quote passes; unpinned block quote fails
+    check("¶ pin clears a block quotation",
+          not viols("> Some substantial quoted passage of the opinion here.\n\nSee id. ¶ 7."))
+    check("unpinned block quotation still fails",
+          any(v["lint"] == LINT for v in viols("> Some substantial quoted passage of the opinion here.")))
+    # regression guards: the pre-existing pincite forms still clear
+    check("reporter pincite `vol Rep p, pin` still clears",
+          not viols(quote + " 569 U.S. 1, 6."))
+    check("`at N` pincite still clears",
+          not viols(quote + " 547 U.S. at 403."))
+
+    ok = all(v for _l, v in results)
+    sys.stderr.write("[lint2 self-test] %s (%d/%d)\n"
+                     % ("PASS" if ok else "FAIL", sum(v for _l, v in results), len(results)))
+    return 0 if ok else 1
+
+
 if __name__ == "__main__":
+    if "--self-test" in sys.argv[1:]:
+        sys.exit(self_test())
     c.cli_main(run, LINT)

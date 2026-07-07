@@ -188,3 +188,84 @@ Written to `_run/o2-execute/GATE-MUTATIONS-PREPARED.md` (exact precondition → 
   (`parse_circuit` + tests).
 - Prepared artifacts: `_run/o2-execute/GATE-MUTATIONS-PREPARED.md`,
   `_run/o2-execute/davis-fold.jsonl`, `_run/o2-execute/larson-web-cites.jsonl`.
+
+---
+
+# ADDENDUM — two coordinator-adjudicated follow-ups (2026-07-07, W7 live)
+
+Allowed surface honored: only `scripts/lint/_common.py`, `scripts/lint/lint2_quote_pinpoint.py`
+(the LINT-2 checker — its self-test only; **no check-logic change**), `scripts/s2/ingest.py`, and this
+report. Zero CL calls; **zero lake/content/manifest/wave writes.**
+
+## A — PINCITE_RE ¶-pin extension (W6 Ruckman escalation, option (a)) — DONE, green
+
+**Change.** `scripts/lint/_common.py::PINCITE_RE` gained a paragraph-pin alternative
+`(?:¶¶?\s*\d{1,4}(?:\s*[–—-]\s*\d{1,4})?)` — matches `¶ N` and the `¶¶ N–M` range form (en/em/hyphen
+dash). PINCITE_RE has exactly one consumer (`lint2_quote_pinpoint.py`), so the blast radius is LINT-2
+only. Ruckman's honest pin `806 F.2d 1471 (10th Cir. 1986) (majority op. ¶ 9)` (no `, page` reporter
+pincite; CL opinion text is paragraph-numbered) now clears.
+
+**Fixture + self-test.** `lint2_quote_pinpoint.py --self-test` → **PASS (7/7)**: ¶ N clears an inline
+quote; ¶¶ N–M range clears; an identical unpinned quote still fails; ¶ clears a block quote; an
+unpinned block quote still fails; both pre-existing forms (`vol Rep p, pin` and `at N`) still clear
+(regression guard).
+
+**LINT-2 corpus-wide delta (before → after): 311 → 302 (−9 cleared, 0 NEW).** All 9 clears are genuine
+paragraph pincites (the O1-deferred Carroll/Benn FP class):
+| file | line(s) | pin |
+|---|---|---|
+| United States v. Ruckman | 65 | ¶ 9 |
+| Benn v. Lambert | 53, 55 | ¶ 1, ¶ 58 |
+| Carroll v. United States | 53 | ¶ 37 |
+| State v. Mitcham | 53 (×3) | ¶ 34/36/37 |
+| Reading and Citing Cases | 140, 141 | ¶ 21, ¶ 7 |
+
+Zero new violations introduced (stop-condition not triggered).
+
+## B — LEXIS noise-list extension (Larson finding, preferred path) — DONE, green; enrich PREPARED
+
+**Change.** Added the **type-2 state** LEXIS database locators actually present in the lake to
+`ingest.py::OFFICIAL_SELECTION_NOISE_REPORTERS` — literal + minimal: `Ore. App. LEXIS`, `Tenn. LEXIS`,
+`N.C. LEXIS`, `Tex. Crim. App. LEXIS`, `Pa. LEXIS`. The federal LEXIS forms present (`U.S. LEXIS` /
+`U.S. App. LEXIS` = CL **type 6** vendor_neutral; `U.S. Ct. Cl. LEXIS` = type 4) are already excluded
+structurally (non-type-1 / vendor) and are intentionally NOT listed. `ingest.py --self-test` →
+**self-test passed** (incl. `self_test_precedence`).
+
+**Larson outcome — verified in-memory (read-only; no lake write).** Ran `classify_citations` over the
+record's existing `citations.all` with the loaded precedence + new noise list:
+```
+official : 159 Or. App. 34
+display  : 159 Or. App. 34      (was null / same_rank_tie)
+parallel : ['977 P.2d 1175', '1999 Ore. App. LEXIS 384']
+reason   : selected_rank_1
+```
+Matches the dual-leg web verification (Justia + Oregon Legislature annotations). The `977 P.2d 1175`
+parallel is preserved; the LEXIS locator is demoted out of OFFICIAL selection (it lingers in the
+`parallel[]` array because it is type-2, not vendor type-6/7/8 — cosmetic, does not affect `display`).
+
+**Persistence = PREPARED instruction (not executed).** Cluster **1187724 is NOT in the local HTTP
+cache**, so `--enrich-citations state-v-larson--1187724 --max-calls 0` would **queue-for-lane** (no
+live call, no write) per the coordinator's fallback. Also, the `--enrich-citations`/`--apply-web-cites`
+write-path touches the lake case record (and the manifest row's `official_cite`) — a shared write-point
+during live W6/W7 promotions — so this lane does not persist it. Prepared for the next CL-lane / gate
+session:
+```bash
+# after this ingest.py noise-list fix is on disk, in a CL-lane session (cache warm or cluster cached):
+python3 scripts/s2/ingest.py --enrich-citations _run/o2-execute/R8-R2-enrich-ids.txt  # or a larson-only ids file
+#   expect: state-v-larson--1187724 -> display "159 Or. App. 34"  (now that the tie is broken)
+```
+The `_run/o2-execute/larson-web-cites.jsonl` `--apply-web-cites` alternative remains valid as a no-refetch
+path (explicit cite + legs).
+
+## Addendum test summary
+
+| Check | Result |
+|---|---|
+| `lint2_quote_pinpoint.py --self-test` | **PASS 7/7** |
+| LINT-2 corpus before → after | **311 → 302** (−9 genuine ¶-pin clears incl. Ruckman; **0 NEW**) |
+| `ingest.py --self-test` (with noise-list + parse_circuit) | **PASS** (exit 0) |
+| Larson in-memory classify (new noise list) | official/display `159 Or. App. 34`, reason `selected_rank_1`, parallel keeps `977 P.2d 1175` |
+| larson cluster 1187724 cached? | **no** → enrich prepared for CL-lane (no live call, no write) |
+
+**Addendum files touched:** `scripts/lint/_common.py` (PINCITE_RE), `scripts/lint/lint2_quote_pinpoint.py`
+(self-test only, no logic change), `scripts/s2/ingest.py` (noise list). Lake/content/manifest/wave: untouched.

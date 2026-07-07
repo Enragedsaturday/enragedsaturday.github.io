@@ -283,10 +283,14 @@ _REPORTER = (r"U\.?\s?S\.?|S\.?\s?Ct\.?|L\.?\s?Ed\.?(?:\s?2d)?|"
              r"Cal\.?(?:\s?(?:App|Rptr)\.?)?(?:\s?(?:2d|3d|4th|5th))?")
 REPORTER_RE = re.compile(r"\b\d{1,4}\s+(?:%s)\s+\d" % _REPORTER)
 
-# a pinpoint cite: either "... at <page>"  or  "vol Reporter first, <pin>"
+# a pinpoint cite: "... at <page>", "vol Reporter first, <pin>", or a paragraph
+# pin "¶ N" / "¶¶ N–M" (opinions whose CL text is paragraph-numbered with no
+# reporter star-pagination — e.g. Ruckman "majority op. ¶ 9"; the O1-deferred
+# Carroll/Benn ¶-pin false-positive class). Range dash = en/em/hyphen.
 PINCITE_RE = re.compile(
     r"(?:\bat\s+\*?\d{1,4})"                                  # "at 838"
     r"|(?:\b\d{1,4}\s+(?:%s)\s+\d{1,4}\s*,\s*\d{1,4})"        # "569 U.S. 1, 6"
+    r"|(?:¶¶?\s*\d{1,4}(?:\s*[–—-]\s*\d{1,4})?)"  # "¶ 9" / "¶¶ 12–14"
     % _REPORTER)
 
 # U.S. Reports citation (strong SCOTUS signal): "547 U.S. 398"

@@ -512,6 +512,19 @@ def citation_rank(citation, court_class, precedence):
 OFFICIAL_SELECTION_NOISE_REPORTERS = frozenset({
     "Fla. L. Weekly Fed. S",  # Florida Law Weekly Federal Supreme — pinpoint service, CL type 1
     "FED App.",               # Sixth Circuit "FED App. 0092P" published-opinion tag, CL type 1
+    # LEXIS vendor DATABASE locators CL tags as state-official (type 2) — they map
+    # to reporter_classes.official rank 1 and TIE with the real state reporter
+    # (e.g. Larson: "1999 Ore. App. LEXIS 384" tying with "159 Or. App. 34" ->
+    # same_rank_tie). Literal, minimal: only the state (type-2) LEXIS forms actually
+    # present in the lake and observed blocking a valid official cite. The federal
+    # LEXIS forms ("U.S. LEXIS"/"U.S. App. LEXIS", CL type 6 = vendor_neutral;
+    # "U.S. Ct. Cl. LEXIS", type 4) are already excluded structurally (non-type-1 /
+    # vendor) and are intentionally NOT listed here.
+    "Ore. App. LEXIS",        # State v. Larson (Or. Ct. App. 1999), CL type 2
+    "Tenn. LEXIS",            # CL type 2
+    "N.C. LEXIS",             # CL type 2
+    "Tex. Crim. App. LEXIS",  # CL type 2
+    "Pa. LEXIS",              # CL type 2
 })
 
 
