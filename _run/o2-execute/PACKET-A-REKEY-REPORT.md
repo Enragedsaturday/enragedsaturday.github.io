@@ -248,3 +248,50 @@ real fabrication. On ratification, fabrication_suspected → 2.
 - Journal: `/Users/johngalt/cssi-lake/journal/s2-ingest-s2-build-96d841cbb12e.jsonl`
   (21 `packet-a.web-keys`, 3 `packet-a.alias-fold`, 3 `s6-dedupe-pointer`, 1 orphan-removal —
   all carry `{lane: s2-builder, model: claude-opus-4-8}`).
+
+---
+
+## Addendum — Carpenter-remand re-key (packet-B item 13, 2026-07-06, same lane)
+
+Follow-up authorized by the coordinator after the packet-A gate passed (`ec60dea`; both my
+escalations ratified — robinson → verified_identity, `folded-alias` recorded as **spec A18**).
+
+**Defect (panel-verified):** `united-states-v-carpenter--10614578` was `verified_identity` but
+**mis-keyed** — `official_cite: 140 F.4th 733` is the later 6th-Cir. First Step Act §924(c)
+resentencing (2025 volume, same defendant, wrong decision). The corpus Exclusionary-Rule prose
+relies on the **2019 good-faith remand**: *United States v. Carpenter*, **926 F.3d 313 (6th Cir.
+2019)** (corpus Sources line links CL `/opinion/4628336/`).
+
+**Code adaptation:** the target was a mis-keyed `verified_identity`, but `--apply-web-keys`
+defaults to a `fabrication_suspected`-only guard (gate-reviewed). Rather than erode that
+default, I added a narrow, self-tested opt-in flag **`--web-keys-allow-verified-identity`**
+(`apply_web_keys` now takes an `allow_statuses` tuple; default unchanged). Self-test extended:
+default still refuses a `verified_identity` row; the opt-in accepts it. `--self-test` green.
+
+**Execution (standing path, scoped):**
+1. `--apply-web-keys _run/o2-execute/carpenter-web-keys.jsonl --web-keys-allow-verified-identity`
+   — landed keys `926 F.3d 313 · 6th Cir. (ca6) · 2019` (docket left null; the F.3d citation is
+   the strong rung; journaled `packet-a.web-keys` with before/after/provenance/lane/model).
+2. `--readjudicate united-states-v-carpenter--10614578 --smoke united-states-v-carpenter--10614578`
+   — scoped the live loop to the single record (avoided the full-manifest resume pass and its
+   incidental page-record touches; confirmed none occurred).
+
+**Result:**
+
+| field | value |
+|---|---|
+| terminal record_id | `united-states-v-carpenter--4628336` (renamed from `--10614578`, F-S2-33 Timbs path) |
+| status | **verified_identity** |
+| cluster | **4628336** |
+| calls used | **2** (0×429) |
+
+**Two-key verify:** (1) citation rung `926 F.3d 313` landed cluster 4628336; (2) the corpus
+Sources line independently links that same cluster (`/opinion/4628336/`). Landed record:
+canonical *"United States v. Timothy Carpenter"*, 6th Cir., 2019, `official_cite` now
+**926 F.3d 313** (was 140 F.4th 733), `canonical_name_match=True`, `expected_citation_found=True`.
+The SCOTUS row (4510032) was untouched. Old `--10614578` reset-shell removed + journaled
+(`s6-queue-correction`). Case-file ↔ manifest bijection intact (662 = 662).
+
+**Gates:** LINT-13 + LINT-12 green; `--self-test` green. Distribution unchanged
+(`fabrication_suspected = 2`; verified_identity 195). Own-page authoring (panel item 13) is now
+unblocked (landed verified_identity). Nothing committed — orchestrator commits at the gate.

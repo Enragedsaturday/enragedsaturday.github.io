@@ -3923,8 +3923,9 @@ def read_packet_a_jsonl(path):
     return rows
 
 
-def apply_web_keys(paths, manifest, journal, keys_path, build_run):
+def apply_web_keys(paths, manifest, journal, keys_path, build_run, allow_statuses=("fabrication_suspected",)):
     entries = read_packet_a_jsonl(keys_path)
+    allow_statuses = tuple(allow_statuses)
     applied = []
     for entry in entries:
         raw_id = entry.get("record_id")
@@ -3935,10 +3936,10 @@ def apply_web_keys(paths, manifest, journal, keys_path, build_run):
         if not row:
             raise SystemExit("--apply-web-keys record not found in manifest: %s" % raw_id)
         status = row.get("status")
-        if status != "fabrication_suspected":
+        if status not in allow_statuses:
             raise SystemExit(
-                "--apply-web-keys refuses non-fabrication_suspected row %s (status=%s)"
-                % (record_id, status)
+                "--apply-web-keys refuses row %s (status=%s); permitted: %s"
+                % (record_id, status, ", ".join(allow_statuses))
             )
         before = {field: row.get(field) for field in PACKET_A_WEB_KEY_APPLY_FIELDS}
         cite = clean_s6_candidate_value(entry.get("expected_citation") or entry.get("citation"))
@@ -5259,7 +5260,8 @@ def run_ingest(args):
             or args.flip_verified
         ):
             raise SystemExit("--apply-web-keys cannot be combined with other action/filter options")
-        applied = apply_web_keys(paths, manifest, journal, args.apply_web_keys, run_id)
+        allow_statuses = ("fabrication_suspected", "verified_identity") if args.web_keys_allow_verified_identity else ("fabrication_suspected",)
+        applied = apply_web_keys(paths, manifest, journal, args.apply_web_keys, run_id, allow_statuses=allow_statuses)
         manifest.regenerate_counts()
         manifest.save()
         print("journal: %s" % journal_path)
@@ -8903,16 +8905,24 @@ def self_test_packet_a_web_keys_landing():
         assert rows[0]["before"]["expected_citation"] is None
         assert rows[0]["after"]["expected_citation"] == "442 U.S. 753"
 
-        # guard: refuse a non-fabrication_suspected row
+        # guard: refuse a non-fabrication_suspected row by default
         bad = os.path.join(tmp, "bad.jsonl")
         with open(bad, "w", encoding="utf-8") as f:
-            f.write(json.dumps({"record_id": "already-verified--12345", "expected_citation": "1 U.S. 1"}) + "\n")
+            f.write(json.dumps({"record_id": "already-verified--12345", "expected_citation": "1 U.S. 1", "court": "U.S."}) + "\n")
         try:
             apply_web_keys(paths, manifest, journal, bad, "selftest")
         except SystemExit:
             pass
         else:
-            raise AssertionError("apply_web_keys accepted a non-fabrication_suspected row")
+            raise AssertionError("apply_web_keys accepted a non-fabrication_suspected row by default")
+
+        # opt-in: a mis-keyed verified_identity row is permitted only with allow_statuses
+        applied_vi = apply_web_keys(
+            paths, manifest, journal, bad, "selftest",
+            allow_statuses=("fabrication_suspected", "verified_identity"),
+        )
+        assert applied_vi == ["already-verified--12345"], applied_vi
+        assert manifest.by_record_id["already-verified--12345"]["expected_citation"] == "1 U.S. 1"
 
         # guard: refuse an unknown record_id
         missing = os.path.join(tmp, "missing.jsonl")
@@ -9079,6 +9089,7 @@ def parse_args(argv):
     parser.add_argument("--flip-verified", action="store_true", help="offline R15 adjudicated flip from under_review to verified after structural gates")
     parser.add_argument("--add-candidates", help="offline append an S6 candidate queue JSONL as pending frontier stubs")
     parser.add_argument("--apply-web-keys", help="offline: land recovered dual-leg web search keys onto fabrication_suspected roster rows (packet A step 1)")
+    parser.add_argument("--web-keys-allow-verified-identity", action="store_true", help="opt-in: also permit --apply-web-keys on a mis-keyed verified_identity row (panel-verified re-key correction)")
     parser.add_argument("--apply-alias-folds", help="offline: retire caption-duplicate stubs into a surviving litigation row as folded-alias (packet A step 3)")
     parser.add_argument("--elevate-off-cl", help="elevate a terminal not_found record using an orchestrator-prepared off-CL adjudication file")
     parser.add_argument("--adjudication", help="JSON adjudication file required by --elevate-off-cl")

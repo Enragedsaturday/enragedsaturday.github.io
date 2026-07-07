@@ -532,3 +532,16 @@ date fixes, stale statuses, stale path. Net +9 packet-B pages; within §9 scope 
 Dispositions folded: s6-borderline.md + s6-fabrications.md + gap-docket.jsonl:12 +
 gated.jsonl:72 + DISPOSITIONS-2026-07-06.md. R8 authoring waves unblock when the re-key
 session lands (packet-A rows + Carpenter); R11 ledger emits at wave close.
+
+**DISPOSITION PHASE CLOSED (2026-07-06/07):** packet-A re-keys EXECUTED (21 rows: 20 clean +
+Robinson orchestrator-ratified on docket exact-match; arkansas-v-sanders wrong-case reset →
+442 U.S. 753/110119; 52 calls, 0×429) + 3 alias-folds (new ratified `folded-alias` terminal,
+spec A18) + Carpenter-remand re-key (10614578 → united-states-v-carpenter--4628336,
+verified_identity, 926 F.3d 313, 2 calls; narrow opt-in --web-keys-allow-verified-identity
+gate-reviewed) + West/White removals + R14 elevation. Manifest 662: 421 verified / 195
+verified_identity / 35 under_review / 4 not_found / 3 folded-alias / 2 verified_off_cl / 2
+fabrication_suspected (= the removed pair, ledger-terminal `removed`). Cumulative ~17,495
+calls ≈ 76.1% envelope, zero 429s run-wide. ALL page-authoring preconditions satisfied →
+next: R8 worklist assembly (homes+roles per candidate from gated.jsonl + panel implementation
+notes + S3 tree), orchestrator gate, then the authoring waves (~95–130 pages incl. the 9
+packet-B pages), R11 ledger at wave close, S7 opens.
