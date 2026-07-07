@@ -563,3 +563,57 @@ exists yet — stub→record promotion + born-conformant mint + Case-Index/homes
 R3 skeleton, specimen = U.S. v. Smith (2024)) via builder work order + review loop, then
 authoring waves per R10 step 5 (GAP/sweep first, then roster, then frontier), serial lane,
 ~15–25/batch, R11 ledger at close.
+
+**R8 PIPELINE BUILD (2026-07-07, orchestrator session post-d28e200):** builder work order
+(`R8-PIPELINE-WORKORDER.md`) → Opus-xhigh builder delivered `scripts/s6/mint_page.py` + 16
+fixtures: dry-run default, guarded --write, atomic staging w/ LINT-15/16/14 validation +
+reverse-order rollback, A6 stub→record promotion, authored-ledger JSONL, idempotent no-op,
+14 machine-readable refusal codes; self-test 19/19 PASS, Smith-specimen conformance PASS
+(projector deep-equals modulo lake.status). 4 escalations adjudicated
+(`R8-PIPELINE-ADJUDICATION.md`): E1 born-status `under_review` RATIFIED (schema-real; R8's
+"draft" = R15 banner family; §8 names under_review) · E2/E3 NO corpus-wide convert-first
+(preserves S5 §5.2 "S7 converts per-page") — Case-Index insertion REMOVED from the CLI
+(single-writer = build_case_index.py, regenerated per wave batch; mint already merges payload
+`holding:` + projects `homes`) and homes-page Key/Related rows LEDGER-DEFERRED to S7
+(materialized from s6-authored-ledger.jsonl at per-page conversion; R8 atomic contract
+transitionally amended; pre-publish window, no reader exposure; R11 close gains owed-homes
+accounting; S7 handoff item) · E4 80/148 stubs identity-only (SD10, no citations block) →
+bounded `--enrich-citations` ingest.py surface + paced run over exactly those rows
+(~80–160 cluster fetches, cache-likely; `S2-ENRICH-CITATIONS-WORKORDER.md`). Deferred+journaled:
+off_cl_links drop under born-status override (no off-CL row in the 148); R6 schema-3 index flip
+(S7/S8, generator-owned). Wave plan staged: `R8-WAVE-PLAN.json` — 8 batches in R10 order
+(W1 GAP+sweep 18 · W2 sweep+packet-B 16 · W3 history+roster 19 · W4–6 roster 18/18/18 ·
+W7 frontier 21 · W8 frontier 20; Σ=148 exact, dedup-checked; each batch closes w/ index regen).
+In flight: s6 builder loop-2 (surface removals) ∥ S2 citations builder (offline build, then the
+serial-lane run). Next gate: reviewer lane over both diffs → orchestrator commit → CodeRabbit
+spec-gate over scripts/s6 + scripts/s2 delta (standing amendment, PR #3 vehicle) →
+session_checkpoint.sh → wave W1.
+
+**R8 PIPELINE GATE CLOSED (2026-07-07, same session):** find→adjudicate→fix ran the full loop —
+reviewer (fresh Opus-xhigh, read-only, 8 scar-class dimensions) returned 12 findings (2 HIGH:
+unwired stub gate = same-stem write-then-delete lake destruction path; non-crash-atomic commit =
+wedge/silent-ledger-drop windows), ALL UPHELD (F-R8-04 half-refuted: `renames` IS the manifest
+schema's designated slot; stale-fields residue upheld; manifest ruled AUTHORITATIVE live state) →
+builder loop-3 fixed all 12 (lake-derived completion classification w/ crash-tail roll-forward
+journaled as `reconciled`, wedged-partial fail-loud, stub gate + old==new guard, fail-closed
+manifest/desync/global-uniqueness checks, commit-time failure-injection test; self-tests 21→36/36)
+→ reviewer VERIFY pass: 12/12 genuinely FIXED (ran tests itself), 1 new LOW F-R8-13 (reconcile
+path trusts on-disk page w/o re-lint + orphaned partial ledger line appended-after not truncated;
+both fail-safe/loud) — orchestrator disposition: ACCEPTED-DEFERRED, folds into the next s6 touch.
+CLEAR-TO-COMMIT: YES. Also this gate: F-R8-11 root-caused to the orchestrator's own Gaetjens
+worklist row (content/-prefixed home + bare-caption role) — normalized + noted in-row; all 148
+rows now pass homes-existence + homes/roles-bijection. ∥ S2 ENRICH-CITATIONS lane landed: 80-row
+scope, 32 enriched (100% cache-hit, 0 live CL calls, 0×429), 28 citations-empty (CL data gap,
+honest), 13 no-display, 7 cite-mismatch — the new mis-key guard (roster expected_citation must
+appear in cluster) caught 7 wrong-cluster cites pre-ship (orders/cert/companion clusters incl.
+Bennis 517 U.S. 1163≠516 U.S. 442, Quantity 1967 proceeding≠1964 landmark); court-class ladder +
+guard both RATIFIED (`R8-CITATIONS-ADJUDICATION.md`). 48 mint-blocked rows partitioned into
+recovery lanes R1 (≤14 identity re-keys, packet-A machinery) · R2 (6 rows, AUTHORIZED narrow
+noise-reporter exclusion in signed serializer, F-S2-15 precedent) · R3 (28 rows, AUTHORIZED
+dual-leg web-cite recovery w/ distinct provenance source + schema/LINT-13 extension; slip-only →
+A3 precedent) — work order `R8-CITE-RECOVERY-WORKORDER.md`. Wave gating: W1 17/18 mintable,
+launches at gate close; blocked rows skip w/ journaled `deferred-recovery`, tail-batch W9.
+Committing: scripts/s6 (mint CLI, 36/36 + specimen) + scripts/s2 --enrich-citations + 32 lake
+records + manifest + worklist fix + adjudications/work-orders/reports/review-ledger + wave plan.
+Next: scoped CodeRabbit gate (this commit's scripts delta) → session checkpoint → recovery lane
+∥ wave W1.

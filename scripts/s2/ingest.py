@@ -4081,6 +4081,278 @@ def apply_alias_folds(paths, manifest, journal, folds_path, build_run):
     return folded
 
 
+# ---------------------------------------------------------------------------
+# R8 citations enrichment — bounded surface (E4 adjudication, work order
+# S2-ENRICH-CITATIONS-WORKORDER.md). SD10 identity-only stubs carry no official
+# cite; the R8 mint fail-closes on `record-missing-citation`. This surface
+# fetches the ALREADY-VERIFIED cluster through the existing paced client + HTTP
+# cache, runs the SIGNED official-selection serializer (classify_citations),
+# and writes ONLY the citations block. Identity is never re-run; status stays
+# `verified_identity`. Modeled on --apply-web-keys: a Phase-1 pre-pass fails
+# closed on any out-of-scope / unknown / missing-on-disk row before a single
+# write; the per-row Phase-2 pass is journaled + resumable. Clusters with zero
+# citations[] and clusters the serializer refuses to rank are left honest (no
+# fabricated cite) and surfaced for orchestrator adjudication.
+# ---------------------------------------------------------------------------
+ENRICH_CITATIONS_STEP = "r8.enrich-citations"
+ENRICH_CITATIONS_LANE = "s2-builder"
+ENRICH_CITATIONS_MODEL = "claude-opus-4-8"
+ENRICH_CITATIONS_ALLOW_STATUSES = ("verified_identity",)
+ENRICH_CITATIONS_TERMINAL_STATUSES = frozenset(
+    {"enriched", "citations-empty", "no-display", "cite-mismatch", "already-bearing", "refused-no-cluster"}
+)
+# Builder domain-review escalations: verified clusters that carry a real cite
+# but whose cite is facially a later-proceeding / orders / rehearing entry, not
+# the landmark the corpus record intends — and which the roster carries NO
+# expected_citation for, so the machine cross-check below cannot catch them.
+# These fail closed (cite-mismatch, no write) and are escalated for orchestrator
+# identity re-key verification. Precedent: FAIL_CLOSED_TREATMENT_REPAIR_RECORD_IDS.
+ENRICH_REVIEW_SUSPECTED_MISKEYS = {
+    "g-m-leasing-corp-v-united-states--9017014":
+        "cluster 9017014 = 435 U.S. 923 (1978), citation_count 0, no scdb_id — a rehearing/orders entry; merits G.M. Leasing Corp. v. United States is 429 U.S. 338 (1977)",
+    "quantity-of-copies-of-books-v-kansas--107502":
+        "cluster 107502 = 388 U.S. 452 (1967) — a different proceeding; the search-and-seizure landmark A Quantity of Copies of Books v. Kansas is 378 U.S. 205 (1964)",
+}
+ENRICH_SCOTUS_COURT_NAMES = frozenset(
+    {
+        "u.s. supreme court",
+        "united states supreme court",
+        "supreme court of the united states",
+        "u.s.",
+        "scotus",
+    }
+)
+# Federal reporter abbreviation "Cir." unambiguously marks a U.S. court of
+# appeals; bare years and "D.C. Court of Appeals" (a state-class local court)
+# do not match, so this never mis-tags a non-circuit court as coa.
+ENRICH_CIRCUIT_ABBREV_RE = re.compile(r"\bcir\.", re.IGNORECASE)
+
+
+def derive_enrich_court_class(identity, cluster):
+    """Deterministic, safe court_class ladder for citation enrichment.
+
+    Returns (court_class, source). The lake's roster court fields are corrupt
+    for the SD10 residue (bare years, doctrinal annotations, "other" on
+    mis-normalized SCOTUS rows), so a plain court_level read is inadequate.
+    Every rung is exclusive/unambiguous and its source is journaled per row so
+    the orchestrator can audit or override any derivation. No rung can attach a
+    facially-wrong cite: a mis-keyed or multi-reporter cluster falls through to
+    the permissive "state" default where the signed serializer fail-closes
+    (same_rank_tie) rather than guessing.
+    """
+    roster = normalize_court_class(identity.get("court_level"))
+    if roster in ("scotus", "coa", "district", "state"):
+        return roster, "roster:court_level"
+    court = str(identity.get("court") or "").strip()
+    if court.lower() in ENRICH_SCOTUS_COURT_NAMES:
+        return "scotus", "identity:court-scotus-name"
+    if ENRICH_CIRCUIT_ABBREV_RE.search(court):
+        return "coa", "identity:court-circuit-abbrev"
+    reporters = {str((c or {}).get("reporter") or "").strip() for c in (cluster.get("citations") or [])}
+    if "U.S." in reporters:  # the U.S. Reports reporter is Supreme-Court-exclusive
+        return "scotus", "cluster:us-reporter-exclusive"
+    return "state", "default:state-permissive"
+
+
+def enrich_completed_record_ids(journal):
+    """Record ids already carried to a terminal enrich outcome (resume set)."""
+    done = set()
+    for row in journal.rows():
+        if (
+            row.get("step") == ENRICH_CITATIONS_STEP
+            and row.get("status") in ENRICH_CITATIONS_TERMINAL_STATUSES
+            and row.get("record_id")
+        ):
+            done.add(row["record_id"])
+    return done
+
+
+def new_enrich_summary(scope):
+    return {
+        "scope": scope,
+        "enriched": 0,
+        "citations_empty": 0,
+        "no_display": 0,
+        "cite_mismatch": 0,
+        "already_bearing": 0,
+        "refused_no_cluster": 0,
+        "skipped_resume": 0,
+        "fetched": 0,
+        "cache_hits": 0,
+        "network_calls": 0,
+        "interrupted": None,
+        "outcomes": {
+            "enriched": [],
+            "citations_empty": [],
+            "no_display": [],
+            "cite_mismatch": [],
+            "already_bearing": [],
+            "refused_no_cluster": [],
+        },
+    }
+
+
+def roster_expected_cite(row):
+    """The manifest row's intended official cite, if the roster recorded one."""
+    return clean_s6_candidate_value(row.get("expected_citation") or row.get("citation"))
+
+
+def _enrich_journal(journal, **row):
+    row.setdefault("lane", ENRICH_CITATIONS_LANE)
+    row.setdefault("model", ENRICH_CITATIONS_MODEL)
+    journal.append(step=ENRICH_CITATIONS_STEP, **row)
+
+
+def enrich_citations(paths, manifest, journal, client, precedence, ids_path, session,
+                     allow_statuses=ENRICH_CITATIONS_ALLOW_STATUSES, resume=True):
+    ids = read_readjudicate_file(ids_path)
+    if not ids:
+        raise SystemExit("--enrich-citations ids-file is empty: %s" % ids_path)
+    allow_statuses = tuple(allow_statuses)
+
+    # Phase 1 — bounded-surface validation. Fail closed on the whole batch
+    # before any write, exactly like --apply-web-keys refuses up front.
+    targets = []
+    seen = set()
+    for raw_id in ids:
+        record_id = manifest.resolve_record_id(raw_id) or raw_id
+        if record_id in seen:
+            continue
+        seen.add(record_id)
+        row = manifest.by_record_id.get(record_id)
+        if not row:
+            raise SystemExit("--enrich-citations record not found in manifest: %s" % raw_id)
+        status = row.get("status")
+        if status not in allow_statuses:
+            raise SystemExit(
+                "--enrich-citations refuses out-of-scope row %s (status=%s); permitted: %s"
+                % (record_id, status, ", ".join(allow_statuses))
+            )
+        record = load_case_record(paths, record_id)
+        if record is None:
+            raise SystemExit("--enrich-citations lake record missing on disk: %s" % record_id)
+        targets.append((record_id, row, record))
+
+    # Phase 2 — per-row enrichment: journaled, resumable, session/budget bound.
+    done = enrich_completed_record_ids(journal) if resume else set()
+    summary = new_enrich_summary(len(targets))
+    outcomes = summary["outcomes"]
+    for record_id, row, record in targets:
+        if session is not None and session.expired():
+            _enrich_journal(journal, status="interrupted", reason="session_limit")
+            summary["interrupted"] = "session_limit"
+            break
+        if record_id in done:
+            summary["skipped_resume"] += 1
+            continue
+        citations = record.get("citations") or {}
+        current_display = citations.get("display")
+        if current_display:
+            _enrich_journal(
+                journal, record_id=record_id, status="already-bearing",
+                before=current_display, after=current_display, source="cluster.citations[]",
+            )
+            summary["already_bearing"] += 1
+            outcomes["already_bearing"].append(record_id)
+            continue
+        cluster_id = (record.get("identity") or {}).get("cluster_id")
+        if not cluster_id:
+            _enrich_journal(
+                journal, record_id=record_id, status="refused-no-cluster",
+                before=None, after=None, reason="record has no identity.cluster_id",
+                source="cluster.citations[]",
+            )
+            summary["refused_no_cluster"] += 1
+            outcomes["refused_no_cluster"].append(record_id)
+            continue
+        budget = getattr(client, "budget", None)
+        calls_before = budget.session_calls if budget is not None else 0
+        try:
+            cluster = client.get_cluster(cluster_id, record_id=record_id, step=ENRICH_CITATIONS_STEP + ".cluster")
+        except (IngestInterrupted, FetchFailed) as exc:
+            reason = getattr(exc, "reason", None) or getattr(exc, "step", None) or "fetch_failed"
+            _enrich_journal(
+                journal, record_id=record_id, status="fetch-failed",
+                reason=str(reason), retry_pending=True,
+            )
+            summary["interrupted"] = "fetch_failed"
+            break
+        summary["fetched"] += 1
+        if budget is not None and budget.session_calls > calls_before:
+            summary["network_calls"] += 1
+        else:
+            summary["cache_hits"] += 1
+        cluster_citations = cluster.get("citations") or []
+        if not cluster_citations:
+            _enrich_journal(
+                journal, record_id=record_id, status="citations-empty",
+                before=None, after=None, cluster_id=int(cluster_id),
+                citation_count=cluster.get("citation_count"), source="cluster.citations[]",
+            )
+            summary["citations_empty"] += 1
+            outcomes["citations_empty"].append(record_id)
+            continue
+        court_class, court_class_source = derive_enrich_court_class(record["identity"], cluster)
+        block = classify_citations(cluster_citations, court_class, precedence)
+        display = block.get("display")
+        if not display:
+            reason = block["official_selection"]["reason"]
+            reporters = [str((c or {}).get("reporter") or "") for c in cluster_citations]
+            _enrich_journal(
+                journal, record_id=record_id, status="no-display",
+                before=None, after=None, cluster_id=int(cluster_id),
+                court_class=court_class, court_class_source=court_class_source,
+                reason=reason, reporters=reporters, source="cluster.citations[]",
+            )
+            summary["no_display"] += 1
+            outcomes["no_display"].append({"record_id": record_id, "court_class": court_class, "reason": reason, "reporters": reporters})
+            continue
+        # Mis-key cross-check — a verified cluster_id can point to an orders-list
+        # / cert-denial / rehearing / companion entry rather than the merits, in
+        # which case the faithful cluster cite is the wrong cite for the record.
+        # Fail closed (cite-mismatch, no write) and escalate; never ship a cite
+        # that contradicts the roster's own intended cite or a builder-reviewed
+        # landmark. Identity re-key is the orchestrator's, not this surface's.
+        cluster_cite_keys = {citation_compare_key(c.get("cite")) for c in block["all"]}
+        expected = roster_expected_cite(row)
+        mismatch_reason = None
+        if expected and citation_compare_key(expected) not in cluster_cite_keys:
+            mismatch_reason = "roster-expected-absent-from-cluster"
+        elif record_id in ENRICH_REVIEW_SUSPECTED_MISKEYS:
+            mismatch_reason = "builder-review-no-roster-groundtruth"
+        if mismatch_reason:
+            _enrich_journal(
+                journal, record_id=record_id, status="cite-mismatch",
+                before=None, after=None, cluster_id=int(cluster_id),
+                subtype=mismatch_reason, expected=expected,
+                candidate_display=display,
+                cluster_date_filed=cluster.get("date_filed"),
+                note=ENRICH_REVIEW_SUSPECTED_MISKEYS.get(record_id),
+                source="cluster.citations[]",
+            )
+            summary["cite_mismatch"] += 1
+            outcomes["cite_mismatch"].append({
+                "record_id": record_id, "subtype": mismatch_reason,
+                "expected": expected, "candidate_display": display,
+                "cluster_date_filed": cluster.get("date_filed"),
+                "note": ENRICH_REVIEW_SUSPECTED_MISKEYS.get(record_id),
+            })
+            continue
+        record["citations"] = block
+        write_case_record(paths, record)
+        row["official_cite"] = display
+        row["last_record_write"] = iso_now()
+        _enrich_journal(
+            journal, record_id=record_id, status="enriched",
+            before=current_display, after=display, cluster_id=int(cluster_id),
+            court_class=court_class, court_class_source=court_class_source,
+            source="cluster.citations[]",
+        )
+        summary["enriched"] += 1
+        outcomes["enriched"].append({"record_id": record_id, "court_class": court_class, "court_class_source": court_class_source, "display": display})
+    return summary
+
+
 def validate_rerun_lanes(lanes):
     lanes = unique_preserve_order(lanes)
     unknown = [lane for lane in lanes if lane not in TREATMENT_LANE_NAMES]
@@ -5208,6 +5480,7 @@ def run_ingest(args):
             or args.smoke
             or args.apply_web_keys
             or args.apply_alias_folds
+            or args.enrich_citations
         ):
             raise SystemExit("--add-candidates cannot be combined with other action/filter options")
         journal, journal_fallback = writable_repair_journal(paths, journal)
@@ -5220,6 +5493,65 @@ def run_ingest(args):
         return
     if args.records and not args.rerun_lane:
         raise SystemExit("--records is only valid with --rerun-lane")
+    if args.enrich_citations:
+        if (
+            args.apply_web_keys
+            or args.apply_alias_folds
+            or args.repair_migration_refs
+            or args.repair_failclosed_treatment
+            or args.flip_verified
+            or args.elevate_off_cl
+            or args.adjudication
+            or args.readjudicate
+            or args.readjudicate_file
+            or args.rerun_lane
+            or args.records
+            or args.smoke
+        ):
+            raise SystemExit("--enrich-citations cannot be combined with other action/filter options")
+        token = read_token(args.token_path)
+        fingerprint = sha256_text(token)[:12]
+        budget = CallBudget(max_calls=args.max_calls)
+        client = CourtListenerClient(
+            paths=paths,
+            token=token,
+            token_fingerprint=fingerprint,
+            journal=journal,
+            budget=budget,
+            rate=TokenBucket(rate_per_minute=args.rate_per_minute, capacity=1),
+            hourly=HourlyGuard(max_per_hour=args.hourly_limit),
+            run_id=run_id,
+        )
+        precedence = read_json(paths.precedence)
+        session = SessionTimer(args.session_minutes)
+        journal.append(
+            step="budget-checkpoint",
+            status="start",
+            mode="enrich-citations",
+            budget=budget.snapshot(estimated_remaining="1 cluster fetch/row; HTTP-cache-likely"),
+        )
+        summary = enrich_citations(paths, manifest, journal, client, precedence, args.enrich_citations, session, resume=args.resume)
+        manifest.regenerate_counts()
+        manifest.save()
+        journal.append(step="budget-checkpoint", status="end", mode="enrich-citations", budget=budget.snapshot())
+        print("journal: %s" % journal_path)
+        print("enrich scope: %s" % summary["scope"])
+        print(
+            "enriched: %s | citations-empty: %s | no-display: %s | cite-mismatch: %s | already-bearing: %s | refused-no-cluster: %s | skipped(resume): %s"
+            % (
+                summary["enriched"], summary["citations_empty"], summary["no_display"],
+                summary["cite_mismatch"], summary["already_bearing"], summary["refused_no_cluster"],
+                summary["skipped_resume"],
+            )
+        )
+        print(
+            "clusters fetched: %s (cache-hits: %s, network: %s)"
+            % (summary["fetched"], summary["cache_hits"], summary["network_calls"])
+        )
+        print("calls this session: %s" % budget.session_calls)
+        if summary["interrupted"]:
+            print("interrupted: %s (resumable)" % summary["interrupted"])
+        return
     if args.repair_migration_refs:
         if args.repair_failclosed_treatment or args.elevate_off_cl or args.readjudicate or args.readjudicate_file or args.rerun_lane or args.records or args.adjudication or args.smoke or args.flip_verified:
             raise SystemExit("--repair-migration-refs cannot be combined with other action/filter options")
@@ -9034,6 +9366,181 @@ def self_test_packet_a_alias_fold():
         shutil.rmtree(tmp)
 
 
+def self_test_enrich_citations():
+    tmp = tempfile.mkdtemp(prefix="s2-enrich-selftest-")
+    try:
+        paths = LakePaths(tmp, os.path.join(tmp, "pool"))
+        paths.ensure()
+        precedence = {
+            "court_classes": {
+                "scotus": {"reporters": {"U.S.": 1, "S. Ct.": 2, "L. Ed. 2d": 3}},
+                "coa": {"reporters": {"F.3d": 1}},
+                "state": {
+                    "reporter_classes": {"official": 1, "regional": 2, "other": 3},
+                    "regional_reporters": {},
+                },
+            }
+        }
+
+        def stub_row(rid, status="verified_identity", court_level=None, court=None, cluster_id=None, expected_citation=None):
+            return {
+                "record_id": rid, "record_id_status": "resolved", "source": "S6-SEED",
+                "stub": True, "caption": rid, "court": court, "court_level": court_level,
+                "status": status, "lane_status": frontier_stub_lane_status(), "counts": {},
+                "cluster_id": cluster_id, "expected_citation": expected_citation,
+            }
+
+        manifest_data = {
+            "schema_version": "s2.manifest.v1",
+            "generated_at": iso_now(),
+            "records": [
+                stub_row("happy-scotus--111", court_level="other", court="U.S. Supreme Court", cluster_id=111),
+                stub_row("already-bearing--222", court_level="scotus", court="U.S.", cluster_id=222),
+                stub_row("no-cluster--333", court_level="scotus", court="U.S.", cluster_id=None),
+                stub_row("empty-cluster--444", court_level="scotus", court="U.S.", cluster_id=444),
+                stub_row("out-of-scope--555", status="fabrication_suspected", court_level="scotus", court="U.S.", cluster_id=555),
+                # roster expects the merits cite but the verified cluster is an orders entry
+                stub_row("miskey-scotus--666", court_level="scotus", court="U.S.", cluster_id=666, expected_citation="509 U.S. 602"),
+            ],
+        }
+        write_json(paths.manifest, manifest_data)
+        manifest = ManifestStore(paths.manifest)
+        journal = Journal(os.path.join(tmp, "journal.jsonl"), "selftest")
+
+        def seed(rid, cluster_id, display=None, court=None, court_level=None):
+            rec = empty_record_shell(rid, manifest.by_record_id[rid], "selftest")
+            rec["status"] = "verified_identity"
+            rec["identity"]["cluster_id"] = cluster_id
+            rec["identity"]["court"] = court
+            rec["identity"]["court_level"] = court_level
+            if display:
+                official = {"cite": display, "volume": None, "reporter": None, "page": None,
+                            "type": 1, "selected_official": True, "source": "cluster.citations[]"}
+                rec["citations"].update({"official": official, "all": [official], "display": display})
+            write_case_record(paths, rec)
+
+        seed("happy-scotus--111", 111, court="U.S. Supreme Court", court_level="other")
+        seed("already-bearing--222", 222, display="1 U.S. 1", court="U.S.", court_level="scotus")
+        seed("no-cluster--333", None, court="U.S.", court_level="scotus")
+        seed("empty-cluster--444", 444, court="U.S.", court_level="scotus")
+        seed("out-of-scope--555", 555, court="U.S.", court_level="scotus")
+        seed("miskey-scotus--666", 666, court="U.S.", court_level="scotus")
+
+        clusters = {
+            111: {"id": 111, "citations": [
+                {"volume": "488", "reporter": "U.S.", "page": "51", "type": 1},
+                {"volume": "109", "reporter": "S. Ct.", "page": "333", "type": 1},
+            ]},
+            444: {"id": 444, "citations": [], "citation_count": 0},
+            # verified cluster carries the orders cite (510 U.S. 904), not the roster's merits (509 U.S. 602)
+            666: {"id": 666, "date_filed": "1993-10-04", "citations": [
+                {"volume": "510", "reporter": "U.S.", "page": "904", "type": 1},
+            ]},
+        }
+
+        class StubClient:
+            def __init__(self):
+                self.budget = CallBudget()
+                self.calls = []
+
+            def get_cluster(self, cluster_id, record_id=None, step=None):
+                self.calls.append(int(cluster_id))
+                self.budget.record_call()  # a cache-less stub reads like a network fetch
+                return clusters[int(cluster_id)]
+
+        ids_path = os.path.join(tmp, "ids.txt")
+        with open(ids_path, "w", encoding="utf-8") as f:
+            f.write("# R8 enrich scope\nhappy-scotus--111\nalready-bearing--222\nno-cluster--333\nempty-cluster--444\nmiskey-scotus--666\n")
+
+        summary = enrich_citations(paths, manifest, journal, StubClient(), precedence, ids_path, SessionTimer(None))
+        assert summary["scope"] == 5, summary
+        assert summary["enriched"] == 1, summary
+        assert summary["already_bearing"] == 1, summary
+        assert summary["refused_no_cluster"] == 1, summary
+        assert summary["citations_empty"] == 1, summary
+        assert summary["cite_mismatch"] == 1, summary
+        assert summary["fetched"] == 3, summary  # only rows that reached the cluster fetch
+
+        # happy path: display populated from cluster, court_class = scotus, status untouched
+        happy = load_case_record(paths, "happy-scotus--111")
+        assert happy["citations"]["display"] == "488 U.S. 51", happy["citations"]
+        assert happy["citations"]["official"]["cite"] == "488 U.S. 51"
+        assert happy["citations"]["official_selection"]["court_class"] == "scotus"
+        assert happy["status"] == "verified_identity"
+        assert manifest.by_record_id["happy-scotus--111"]["official_cite"] == "488 U.S. 51"
+
+        # already-bearing: untouched no-op
+        already = load_case_record(paths, "already-bearing--222")
+        assert already["citations"]["display"] == "1 U.S. 1"
+
+        # empty cluster: honest, no fabricated cite
+        empty = load_case_record(paths, "empty-cluster--444")
+        assert empty["citations"]["display"] is None
+
+        # journal rows carry the work-order schema
+        erows = [r for r in journal.rows() if r.get("step") == ENRICH_CITATIONS_STEP and r.get("record_id")]
+        by_id = {r["record_id"]: r for r in erows}
+        hp = by_id["happy-scotus--111"]
+        assert hp["status"] == "enriched" and hp["before"] is None and hp["after"] == "488 U.S. 51"
+        assert hp["source"] == "cluster.citations[]"
+        assert hp["lane"] == ENRICH_CITATIONS_LANE and hp["model"] == ENRICH_CITATIONS_MODEL
+        assert hp["court_class_source"] == "identity:court-scotus-name"
+        assert by_id["empty-cluster--444"]["status"] == "citations-empty"
+        assert by_id["no-cluster--333"]["status"] == "refused-no-cluster"
+
+        # cite-mismatch: roster expected cite absent from the verified cluster -> not written, escalated
+        assert by_id["miskey-scotus--666"]["status"] == "cite-mismatch"
+        assert by_id["miskey-scotus--666"]["subtype"] == "roster-expected-absent-from-cluster"
+        assert by_id["miskey-scotus--666"]["candidate_display"] == "510 U.S. 904"
+        miskey = load_case_record(paths, "miskey-scotus--666")
+        assert miskey["citations"]["display"] is None
+        assert "official_cite" not in manifest.by_record_id["miskey-scotus--666"] or manifest.by_record_id["miskey-scotus--666"]["official_cite"] is None
+
+        # resume: a second run skips every completed row and fetches nothing
+        resume_client = StubClient()
+        summary2 = enrich_citations(paths, manifest, journal, resume_client, precedence, ids_path, SessionTimer(None))
+        assert summary2["skipped_resume"] == 5, summary2
+        assert resume_client.calls == [], resume_client.calls
+
+        # --no-resume re-processes every row idempotently: the row enriched in run 1
+        # now reads already-bearing, and the mis-key is re-detected (still not written)
+        noresume_client = StubClient()
+        summary3 = enrich_citations(paths, manifest, journal, noresume_client, precedence, ids_path, SessionTimer(None), resume=False)
+        assert summary3["skipped_resume"] == 0, summary3
+        assert summary3["cite_mismatch"] == 1, summary3
+        assert summary3["already_bearing"] == 2 and summary3["enriched"] == 0, summary3
+
+        # out-of-scope refusal: a non-verified_identity row fails closed (bounded surface)
+        bad_ids = os.path.join(tmp, "bad.txt")
+        with open(bad_ids, "w", encoding="utf-8") as f:
+            f.write("out-of-scope--555\n")
+        try:
+            enrich_citations(paths, manifest, journal, StubClient(), precedence, bad_ids, SessionTimer(None))
+        except SystemExit:
+            pass
+        else:
+            raise AssertionError("enrich_citations accepted an out-of-scope (non-verified_identity) row")
+
+        # unknown record_id fails closed before any write
+        ghost_ids = os.path.join(tmp, "ghost.txt")
+        with open(ghost_ids, "w", encoding="utf-8") as f:
+            f.write("ghost--99\n")
+        try:
+            enrich_citations(paths, manifest, journal, StubClient(), precedence, ghost_ids, SessionTimer(None))
+        except SystemExit:
+            pass
+        else:
+            raise AssertionError("enrich_citations accepted an unknown record_id")
+
+        # court_class ladder rungs
+        assert derive_enrich_court_class({"court_level": "coa", "court": "x"}, {})[0] == "coa"
+        assert derive_enrich_court_class({"court_level": "other", "court": "9th Cir. 2014"}, {})[1] == "identity:court-circuit-abbrev"
+        assert derive_enrich_court_class({"court_level": None, "court": "1977"}, {"citations": [{"reporter": "U.S."}]})[1] == "cluster:us-reporter-exclusive"
+        assert derive_enrich_court_class({"court_level": None, "court": "1959"}, {"citations": [{"reporter": "F.3d"}]})[0] == "state"
+    finally:
+        shutil.rmtree(tmp)
+
+
 def run_self_tests():
     self_test_record_ids()
     self_test_precedence()
@@ -9069,6 +9576,7 @@ def run_self_tests():
     self_test_flip_verified()
     self_test_packet_a_web_keys_landing()
     self_test_packet_a_alias_fold()
+    self_test_enrich_citations()
     print("self-test passed")
 
 
@@ -9091,6 +9599,7 @@ def parse_args(argv):
     parser.add_argument("--apply-web-keys", help="offline: land recovered dual-leg web search keys onto fabrication_suspected roster rows (packet A step 1)")
     parser.add_argument("--web-keys-allow-verified-identity", action="store_true", help="opt-in: also permit --apply-web-keys on a mis-keyed verified_identity row (panel-verified re-key correction)")
     parser.add_argument("--apply-alias-folds", help="offline: retire caption-duplicate stubs into a surviving litigation row as folded-alias (packet A step 3)")
+    parser.add_argument("--enrich-citations", help="bounded: populate citations.display on identity-only R8-WORKLIST stubs from their verified cluster.citations[] (E4); one paced cluster fetch/row, resumable, status untouched")
     parser.add_argument("--elevate-off-cl", help="elevate a terminal not_found record using an orchestrator-prepared off-CL adjudication file")
     parser.add_argument("--adjudication", help="JSON adjudication file required by --elevate-off-cl")
     parser.add_argument("--token-path", default=TOKEN_PATH, help="CourtListener token path")

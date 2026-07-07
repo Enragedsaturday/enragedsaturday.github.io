@@ -1,0 +1,184 @@
+[
+  {
+    "id": "F-R8-01",
+    "severity": "HIGH",
+    "dimension": "A6 promotion fidelity / worklist-manifest discipline / atomicity",
+    "file": "scripts/s6/mint_page.py",
+    "lines": "103, 629-631, 830-836",
+    "claim": "The report §4 states the CLI mints \"iff the lake record is stub: true AND status in {verified_identity, verified, verified_off_cl}\". The code did NOT enforce stub: true. REFUSE_NOT_A_STUB was defined but never used; the stub gate was a bare `pass`. A non-stub record with an accepted status was not refused and proceeded to promotion, and when rid==stem the commit's write-then-remove-same-path deleted the lake JSON.",
+    "evidence": "Original: line 629-631 `if not record.get(\"stub\"): pass`. Destructive path: commit_plan `write_json_atomic(new); os.remove(old)` with old==new deletes the record.",
+    "proposed_fix": "Wire the stub gate to return REFUSE_NOT_A_STUB; guard the old==new remove in commit_plan.",
+    "verify": {
+      "status": "FIXED",
+      "evidence": "Stub gate wired at lines 815-819 (`if not record.get(\"stub\"): return refuse(REFUSE_NOT_A_STUB, ...)`). Same-path remove guarded at line 1046 (`if os.path.abspath(old) != os.path.abspath(new): os.remove(old)`), so a same-stem rename can never delete a record. Self-test group A adds a real non-stub fixture (record_id fixture-nonstub--900005, stub:False, status:verified) and asserts REFUSE_NOT_A_STUB ('non-stub refusal (F-R8-01)' -> OK, ran self-test). Because the stub gate now precedes the rename and stubs always carry `--` in rid (stem never does), old==new is unreachable on the fresh path; the guard is correct defense-in-depth."
+    }
+  },
+  {
+    "id": "F-R8-02",
+    "severity": "HIGH",
+    "dimension": "Atomicity/rollback + idempotence/resumability (crash-mid-commit)",
+    "file": "scripts/s6/mint_page.py",
+    "lines": "819-869, 571-577, 605-615, 834-836, 843-849",
+    "claim": "The multi-file commit was exception-safe but not crash-atomic, and idempotency keyed on the mid-sequence manifest write. Crash between lake-rename and manifest wedged the row (re-run refused no-lake-record); crash between manifest and ledger silently dropped the ledger row; an os.remove failure after write_json_atomic(new) orphaned the new record.",
+    "evidence": "Original: idempotency via manifest renames only; ledger append last with the manifest 'done' marker written before it; `renamed` set only after os.remove(old).",
+    "proposed_fix": "Make idempotency lake-derived; roll forward crash-tails; track `new` for rollback before os.remove; add a reconcile path.",
+    "verify": {
+      "status": "FIXED",
+      "evidence": "Completion is now LAKE-DERIVED. plan_mint (730-924) branches on `old_exists`. When the old stub json is gone it finds the promoted record via the `provenance.s6_promotion.from_record_id` marker (promoted_at_candidates fast path + promoted_record_scan full-scan fallback that handles a disambiguated stem, 604-634) and classifies: page-missing -> REFUSE_WEDGED_PARTIAL (768-771); manifest+ledger both present -> already_authored (772-774); otherwise crash-tail -> mode=reconcile that rolls forward ONLY the missing steps 4-5 (775-803, _roll_forward 973-1000), journaled terminal:reconciled. Window (a) [rename landed, manifest didn't] now reconciles instead of refusing no-lake-record; window (b) [manifest landed, ledger didn't] now re-appends the ledger row (ledger_has_authored reports it absent) instead of silently dropping it. The os.remove orphan is closed: commit_plan sets the `renamed` marker dict BEFORE write/remove (1043), and rollback removes the new record when `not new_existed` and restores old only when `removed_old` (1068-1073), so an os.remove failure leaves neither an orphan nor a lost old record. Page-first ordering (step 1) guarantees the page is present whenever the rename has landed, so a crash before the rename simply re-does fresh. Real coverage: self-test group D injects a mid-commit failure in _append_ledger and asserts page absent + old byte-restored + new removed + manifest byte-restored + ledger truncated (6 assertions -> OK); group E hand-applies steps 1-3 then asserts mode==reconcile, rolls forward manifest+ledger (terminal reconciled), post-reconcile==already-authored, and a dual-record state -> REFUSE_WEDGED_PARTIAL (all -> OK; ran self-test 36/36). RESIDUAL (acceptable, fail-closed, NOT silent): a hard crash in the sub-syscall window between write_json_atomic(new) (1045) and os.remove(old) (1047) leaves old+new both present; re-run refuses REFUSE_WEDGED_PARTIAL loudly for manual reconcile (no double-write, no silent corruption)."
+    }
+  },
+  {
+    "id": "F-R8-03",
+    "severity": "MED",
+    "dimension": "Worklist/manifest ground-truth discipline (fail-closed) + self-test honesty",
+    "file": "scripts/s6/mint_page.py",
+    "lines": "110, 872-881, 1081-1104",
+    "claim": "REFUSE_MANIFEST_MISSING_RECORD was defined but never used; _apply_manifest_promotion silently no-oped the record flip when the manifest lacked the record; the manifest mutation had no self-test assertion.",
+    "evidence": "Original: `rec = manifest_record(old); if rec is not None: ...` with no refusal, and no test on the post-commit manifest.",
+    "proposed_fix": "Refuse fail-closed when the manifest lacks the row's record; add a manifest-flip assertion.",
+    "verify": {
+      "status": "FIXED",
+      "evidence": "Fresh path fail-closes at 854-857 (`if manifest_record(manifest, record_id) is None: return refuse(REFUSE_MANIFEST_MISSING_RECORD, ...)`). Self-test group A adds a lake stub absent from the manifest and asserts the refusal ('manifest-missing-record refusal (F-R8-03)' -> OK). Group B asserts the post-commit manifest gained the rename entry (manifest_has_rename) AND the flipped record (stub False, status under_review, slug, record_id_status) at 1362-1369 -> OK. MINOR RESIDUAL: the crash-tail reconcile path does NOT re-run this fail-close (only the fresh path does); in a genuine crash-tail the old stub's manifest record was present pre-crash, so this is not reachable in practice, but _apply_manifest_promotion would append a rename without flipping if the record were absent during a reconcile."
+    }
+  },
+  {
+    "id": "F-R8-04",
+    "severity": "MED",
+    "dimension": "A6 promotion fidelity vs precedent (F-S2-33/Timbs) / manifest discipline",
+    "file": "scripts/s6/mint_page.py",
+    "lines": "738-740, 872-881",
+    "claim": "The mint hand-mutated a GENERATED manifest, invented a `renames` convention the S2 re-key flow does not use, and left slug/title/caption/record_id_status/lane_status stale and provenance mismatched.",
+    "evidence": "Original: _apply_manifest_promotion flipped only record_id/stub/status/page_path; stale fields untouched; no provenance stamp.",
+    "proposed_fix": "Refresh the stale record fields and stamp provenance if authoritative; otherwise stop hand-editing and record renames in a dedicated journal.",
+    "verify": {
+      "status": "FIXED",
+      "evidence": "Manifest treated as authoritative live state. _apply_manifest_promotion (1084-1110) refreshes slug (via ingest_slug), title, caption, record_id_status='resolved', source='content/cases', and lane_status.identity='complete', and appends a file-level s6_mutations[] provenance entry WITHOUT touching generated_by/generated_at/build_id. ingest_slug (1113-1118) is a byte-exact mirror of scripts/s2/ingest.py::slugify — verified equal across 5 captions incl. '&'->'and' and paren cases (ran comparison; 5/5 MATCH). Self-test asserts s6_mutations present AND generated_by intact (1370-1371 -> OK). MINOR RESIDUAL: ingest.py also has bounded_record_slug (truncates to MAX_RECORD_SLUG_CHARS); short case captions never diverge, but a pathologically long caption's slug could differ from a bounded scaffold regen. The rename-entry shape remains a mint-local convention (no lint validates it; no F-S2-33 manifest precedent exists) — acceptable now that idempotency no longer depends on it (F-R8-02)."
+    }
+  },
+  {
+    "id": "F-R8-05",
+    "severity": "MED",
+    "dimension": "Self-test honesty (rollback coverage)",
+    "file": "scripts/s6/mint_page.py",
+    "lines": "851-869, 1118-1124",
+    "claim": "The 'rollback' test exercised only the plan (dry-run) stage; commit_plan's except/rollback block was never executed by any test.",
+    "evidence": "Original: only commit_plan call was the happy path (succeeds); bad-skeleton test was a dry-run plan_mint.",
+    "proposed_fix": "Add a commit-time failure-injection test that forces a mid-commit exception and asserts full byte-restore.",
+    "verify": {
+      "status": "FIXED",
+      "evidence": "Self-test group D (1410-1444) monkeypatches globals()['_append_ledger'] to write a partial line then raise mid-commit, calls commit_plan, and asserts it raised + page absent + old lake byte-restored + new lake removed + manifest byte-restored + ledger truncated to pre-size (6 assertions, all -> OK when run). This genuinely enters the except block at 1063-1081. Because the injection is at the LAST step (ledger), the rollback restores the full superset (page + lake rename + manifest), covering earlier-step failure modes too."
+    }
+  },
+  {
+    "id": "F-R8-06",
+    "severity": "MED",
+    "dimension": "Worklist ground-truth discipline (no silent fallbacks) / S7 ledger fidelity",
+    "file": "scripts/s6/mint_page.py",
+    "lines": "357-362, 415-423, 446-450, 465-490",
+    "claim": "A home in homes[] absent from roles[] silently defaulted to role \"Key\" (schema-1) everywhere.",
+    "evidence": "Original: `role_by_home.get(h) or \"Key\"`; role_class_of(None) -> \"key\"; no bijection check.",
+    "proposed_fix": "Refuse fail-closed if homes[] and roles[] are not in bijection; do not default.",
+    "verify": {
+      "status": "FIXED",
+      "evidence": "homes_roles_desync() (359-375) checks homes-without-role, roles-without-home, blank-role, and duplicate-role-home; plan_mint refuses REFUSE_HOMES_ROLES_DESYNC at 745-747 BEFORE any homes/roles consumer runs. build_homes_frontmatter no longer defaults to Key (386 emits role_by_home.get(h) verbatim, reached only on a desync-clean row). Self-test group A asserts a home-without-role worklist -> REFUSE_HOMES_ROLES_DESYNC ('homes/roles desync refusal (F-R8-06)' -> OK). Report claims 0 desync across all 148 signed rows after the Gaetjens fix; the code fail-closes regardless."
+    }
+  },
+  {
+    "id": "F-R8-07",
+    "severity": "LOW",
+    "dimension": "A6/R9 stem + collision correctness",
+    "file": "scripts/s6/mint_page.py",
+    "lines": "238-243",
+    "claim": "The court+year disambiguation produced a malformed stem `Caption (ca9 )` when the record had a court but no year; the `.strip().rstrip()` was redundant.",
+    "evidence": "Original: `cand = \"%s (%s %s)\" % (caption, court, year or \"\")` then `.strip().rstrip()`.",
+    "proposed_fix": "Build the suffix from non-empty parts only; drop the redundant rstrip.",
+    "verify": {
+      "status": "FIXED",
+      "evidence": "Lines 244-245: `suffix = \" \".join(p for p in (str(court), str(year) if year else \"\") if p); cand = \"%s (%s)\" % (caption, suffix)` — a court-but-no-year record now yields `Caption (ca9)`, never `Caption (ca9 )`. The redundant `.rstrip()` is removed (grep: no `.rstrip()` remains). Not unit-tested (no court-but-no-year collision fixture) but correct by inspection."
+    }
+  },
+  {
+    "id": "F-R8-08",
+    "severity": "LOW",
+    "dimension": "Validator fidelity (R12 Sources)",
+    "file": "scripts/s6/mint_page.py",
+    "lines": "299-312",
+    "claim": "The Sources validator only flagged the em-dash `- *Case*` form; a plain-text (non-link) Sources bullet passed.",
+    "evidence": "Original: flagged only when SOURCES_BULLET_BAD_RE matched and SOURCES_BULLET_OK_RE did not.",
+    "proposed_fix": "Require every Sources bullet to match the bracketed `- [...](...)` form.",
+    "verify": {
+      "status": "FIXED",
+      "evidence": "Line 312: `if not SOURCES_BULLET_OK_RE.match(b):` now rejects ANY non-bracketed bullet (plain-text or em-dash). The now-unused SOURCES_BULLET_BAD_RE is removed (grep: absent). Specimen test still passes (Smith's Sources bullets are all bracketed -> 0 errs), confirming no false-positive regression on a conformant page."
+    }
+  },
+  {
+    "id": "F-R8-09",
+    "severity": "LOW",
+    "dimension": "Ledger-row sufficiency for S7 (R6 cell formats)",
+    "file": "scripts/s6/mint_page.py",
+    "lines": "465-490, 703-729",
+    "claim": "home_rows[] entries carried no stem/cite, so S7 had to join back to the row-level record_id_after for the `*[[stem]]*, <cite>` Case cell, and using `caption` would break disambiguated wikilinks.",
+    "evidence": "Original: home_rows entries carried only home/role/hints.",
+    "proposed_fix": "Denormalize stem (=record_id_after) and cite into each home_rows[] entry.",
+    "verify": {
+      "status": "FIXED",
+      "evidence": "build_home_rows_ledger now takes stem+cite and adds ('stem', stem) and ('cite', cite) to every entry (508-509); the docstring states stem is the Case-cell wikilink target (NOT caption). Self-test asserts all home_rows carry stem=='Fixture Alpha Case' and a non-empty cite (1378-1381 -> OK). S7 can now build a schema-1/2 row from a single home_rows entry without a row-level join."
+    }
+  },
+  {
+    "id": "F-R8-10",
+    "severity": "LOW",
+    "dimension": "Determinism / housekeeping",
+    "file": "scripts/s6/mint_page.py",
+    "lines": "55, 241, 807-816",
+    "claim": "Dead code: unused `import datetime as dt`, an unused `created` list, and a redundant `.strip().rstrip()`.",
+    "evidence": "Original: line 55 import, line 807/816 created list, line 241 rstrip.",
+    "proposed_fix": "Remove the unused import, the created list, and the redundant rstrip.",
+    "verify": {
+      "status": "FIXED",
+      "evidence": "grep confirms `import datetime`/`dt.` absent, the `created` list gone (only unrelated `date_created` at 338 and the test label 'commit created page' remain), `.rstrip()` absent, and the now-unused SOURCES_BULLET_BAD_RE also removed. Determinism remains CLEAN: no time/random/datetime.now/.today anywhere; all journaled values derive from --as-of."
+    }
+  },
+  {
+    "id": "F-R8-11",
+    "severity": "LOW",
+    "dimension": "Kept home-page-missing gate (works) / wave readiness",
+    "file": "scripts/s6/mint_page.py",
+    "lines": "695-698",
+    "claim": "The home-page-missing gate is correct and fail-closed, but one of the 42 distinct home targets (content/warrant-exceptions/home-entry-and-search/Emergency Aid.md) is currently absent, so its row(s) will refuse until the page exists.",
+    "evidence": "41/42 home targets resolve under content/; Emergency Aid.md absent.",
+    "proposed_fix": "Ensure every homes[] doctrine page exists before the waves, or correct the worklist path. No code change required.",
+    "verify": {
+      "status": "FIXED",
+      "evidence": "Correctly resolved as a no-code-change readiness item (report §9 F-R8-11). The home-page-missing gate is retained (890-893) and remains fail-closed. The Emergency Aid.md target is a wave-sequencing/data item for the orchestrator, not a code defect; the review's role was to surface it (done)."
+    }
+  },
+  {
+    "id": "F-R8-12",
+    "severity": "LOW",
+    "dimension": "A6 global record_id uniqueness / validator fidelity",
+    "file": "scripts/s6/mint_page.py",
+    "lines": "215-219, 229, 784-798",
+    "claim": "Stem uniqueness was checked only against existing case-page filenames, not against global lake record_ids; a foreign lake record already holding record_id==stem would duplicate.",
+    "evidence": "Original: choose_stem checked only content/cases/*.md; _staged_records dedupes by dict key.",
+    "proposed_fix": "Verify no existing lake record already holds record_id==stem before promoting.",
+    "verify": {
+      "status": "FIXED",
+      "evidence": "global_record_id_conflict (666-680) checks lake_record_path(stem); if it exists and its s6_promotion marker != this row's from_record_id (a FOREIGN record, not our own prior promotion), plan_mint refuses REFUSE_RECORD_ID_COLLISION (840-845). Self-test group C plants a foreign record at 'Fixture History Case.json' (no marker) and asserts REFUSE_RECORD_ID_COLLISION ('global record_id collision refused (F-R8-12)' -> OK). RESIDUAL (acceptable for LOW): the check only inspects the file NAMED <stem>.json, not a differently-named file whose record_id field ==stem; that violates the corpus's file-named-by-record_id invariant (verified: all 662 records file-named by record_id), so it is not reachable in practice."
+    }
+  },
+  {
+    "id": "F-R8-13",
+    "severity": "LOW",
+    "dimension": "Atomicity/rollback + validator fidelity — NEW, introduced by the F-R8-02 roll-forward path",
+    "file": "scripts/s6/mint_page.py",
+    "lines": "773-803, 968-1000, 646-663",
+    "claim": "The new crash-tail reconcile path (a) rolls forward manifest+ledger while TRUSTING the on-disk page without re-running the staged LINT-15/16/14 gate the fresh path enforces pre-commit, and (b) after a hard crash mid-ledger-append, ledger_has_authored skips the unparseable partial line and _roll_forward appends a fresh line AFTER it rather than truncating, leaving an orphaned malformed line in s6-authored-ledger.jsonl.",
+    "evidence": "The reconcile plan (775-803) sets file_plans:[] and lint_findings:[] and never calls _stage_and_lint over the on-disk page; _roll_forward (973-1000) only writes manifest + appends the ledger row. ledger_has_authored (646-663) does `except json.JSONDecodeError: continue`, so a partial line from a mid-append crash is ignored and a new complete line is appended after it. Both are fail-safe: reconcile never fabricates an authored claim (requires --payload and re-derives cite/year/weight from the authoritative on-disk promoted record via project_record at 784), and the page was LINT-15/16/14-clean when the crashed fresh run wrote it (page is commit step 1, always pre-linted), and S9/CI re-lints the corpus before release. But a page hand-edited between crash and reconcile would be ledgered reconciled without a staged-lint gate, and downstream ledger consumers (R11 fold, S7) must tolerate malformed lines the way ledger_has_authored does.",
+    "proposed_fix": "In the reconcile branch, re-run staged_lints_ok over the on-disk page before rolling forward (refuse REFUSE_LINT_FAILED on regression). Optionally, when the ledger's last physical line fails to parse, truncate it before appending so no orphaned partial line persists. Hardening only; current behavior is loud/fail-closed with no silent corruption.",
+    "verify": {
+      "status": "NOT-FIXED",
+      "evidence": "New observation from this verify pass; postdates loop-3, so no fix attempted or expected. Recorded for orchestrator disposition. Low risk: pre-publish execute branch, page pre-linted at original write, S9 gates release. Does not block the 12 loop-3 fixes, all of which are verified FIXED."
+    }
+  }
+]
