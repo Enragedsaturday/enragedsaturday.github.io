@@ -498,6 +498,23 @@ def citation_rank(citation, court_class, precedence):
     return None
 
 
+# R2 (adjudication R8-CITATIONS-ADJUDICATION.md §R2, execution-tunable
+# precedent F-S2-15): a narrow, NAMED list of specialty/pinpoint "noise"
+# reporters that CourtListener tags as type-1 but that are not official
+# reporters and carry no rank in the signed precedence table. Before this list,
+# such a stray specialty cite made select_official_cite hard-fail
+# ("unlisted_reporter") before the real official cite (U.S./F.3d) could be
+# ranked — even though a valid official cite was present in the cluster.
+# Excluded reporters never COMPETE for official selection; everything else is
+# unchanged and the selector still fail-closes (same_rank_tie / unlisted_reporter
+# for anything OFF this list) on any genuine ambiguity. Keep minimal + literal:
+# only reporters actually observed blocking a valid cite in the R8 corpus.
+OFFICIAL_SELECTION_NOISE_REPORTERS = frozenset({
+    "Fla. L. Weekly Fed. S",  # Florida Law Weekly Federal Supreme — pinpoint service, CL type 1
+    "FED App.",               # Sixth Circuit "FED App. 0092P" published-opinion tag, CL type 1
+})
+
+
 def select_official_cite(citations, court_class, precedence):
     """Return (citation_or_none, reason). Same-rank ties fail closed."""
     candidates = []
@@ -505,6 +522,8 @@ def select_official_cite(citations, court_class, precedence):
         ctype = citation_type(citation)
         if court_class in ("scotus", "coa", "district") and ctype != 1:
             continue
+        if citation_reporter(citation) in OFFICIAL_SELECTION_NOISE_REPORTERS:
+            continue  # named specialty/noise reporter never competes for official selection
         rank = citation_rank(citation, court_class, precedence)
         if rank is None:
             return None, "unlisted_reporter:%s" % citation_reporter(citation)
@@ -523,6 +542,8 @@ def parse_circuit(value):
     if value is None:
         return None
     text = str(value).strip().lower()
+    if text in ("cadc", "cafc"):  # CR-03: CourtListener D.C./Federal Circuit slugs
+        return text
     if text.startswith("ca") and text[2:].isdigit():
         return "ca%s" % int(text[2:])
     m = re.search(r"(\d+)(?:st|nd|rd|th)?", text)
@@ -4353,6 +4374,257 @@ def enrich_citations(paths, manifest, journal, client, precedence, ids_path, ses
     return summary
 
 
+# ---------------------------------------------------------------------------
+# R8 R3 web-cite recovery — bounded offline surface (adjudication
+# R8-CITATIONS-ADJUDICATION.md §R3). The CL clusters for these verified_identity
+# rows carry zero citations[] (a genuine CL data gap). Two INDEPENDENT web legs
+# (packet-A style) enumerate the official cite off-line; this surface lands it
+# with a DISTINCT provenance — every citation entry is source "web-dual-leg" and
+# the block carries a web_legs trail — so a web-recovered cite can never
+# masquerade as cluster.citations[]. Legs must agree on the cite and come from
+# two DISTINCT approved (non-Wikipedia) publishers; disagreement/ambiguity is
+# escalated upstream and never reaches this surface. Genuinely slip-only rows
+# (too recent for a reporter) journal a slip-only terminal and keep display
+# empty (S2 A3 precedent) — the mint's record-missing-citation handling for them
+# is a separate orchestrator decision. Mirrors --apply-web-keys: Phase-1 fails
+# closed on the whole batch before any write; Phase-2 is per-row journaled.
+# ---------------------------------------------------------------------------
+WEB_CITES_STEP = "r8.web-cites"
+WEB_CITES_LANE = "s2-builder"
+WEB_CITES_MODEL = "claude-opus-4-8"
+WEB_CITES_SOURCE = "web-dual-leg"
+WEB_CITES_ALLOW_STATUSES = ("verified_identity",)
+WEB_CITES_COURT_CLASSES = frozenset({"scotus", "coa", "district", "state"})
+# Approved independent web-leg publishers — MUST mirror _schema.json
+# definitions.web_leg.source enum. Wikipedia is deliberately absent: it can
+# never count as a leg (work order R3: no Wikipedia-only sourcing).
+WEB_CITE_LEG_SOURCES = frozenset({
+    "Justia", "Google Scholar", "CaseText", "Cornell LII", "Official court",
+    "Official reporter", "Court PDF", "Oyez", "SCOTUSblog", "vLex", "Casemine",
+    "Fastcase", "FindLaw",
+})
+
+
+def _web_cites_journal(journal, **row):
+    row.setdefault("lane", WEB_CITES_LANE)
+    row.setdefault("model", WEB_CITES_MODEL)
+    journal.append(step=WEB_CITES_STEP, **row)
+
+
+def parse_reporter_cite(cite):
+    """"988 F.3d 8" -> {volume, reporter, page}; None if not a reporter cite."""
+    cite = normalize_cite(cite)
+    m = re.match(r"^(\d+)\s+(.+?)\s+(\d+[A-Za-z]?)$", cite)
+    if not m:
+        return None
+    return {"volume": m.group(1), "reporter": m.group(2).strip(), "page": m.group(3)}
+
+
+def validate_web_legs(record_id, legs, official_cite):
+    """Two+ INDEPENDENT approved legs that all agree with the official cite."""
+    if not isinstance(legs, list) or len(legs) < 2:
+        raise SystemExit("--apply-web-cites row %s needs >=2 web legs" % record_id)
+    target = citation_compare_key(official_cite)
+    seen_sources = set()
+    clean = []
+    for leg in legs:
+        if not isinstance(leg, dict):
+            raise SystemExit("--apply-web-cites row %s leg must be an object: %r" % (record_id, leg))
+        source = clean_s6_candidate_value(leg.get("source"))
+        url = clean_s6_candidate_value(leg.get("url"))
+        cite = clean_s6_candidate_value(leg.get("cite"))
+        if source not in WEB_CITE_LEG_SOURCES:
+            raise SystemExit("--apply-web-cites row %s leg source not approved (Wikipedia never counts): %r" % (record_id, source))
+        if not url or not cite:
+            raise SystemExit("--apply-web-cites row %s leg missing url/cite" % record_id)
+        if source in seen_sources:
+            raise SystemExit("--apply-web-cites row %s legs must be INDEPENDENT (distinct sources); repeated %r" % (record_id, source))
+        seen_sources.add(source)
+        if citation_compare_key(cite) != target:
+            raise SystemExit("--apply-web-cites row %s leg cite %r disagrees with official %r (escalate; never average)" % (record_id, cite, official_cite))
+        clean.append({
+            "source": source, "url": url, "cite": normalize_cite(cite),
+            "checked_date": clean_s6_candidate_value(leg.get("checked_date")) or iso_now()[:10],
+        })
+    return clean
+
+
+def apply_web_cites(paths, manifest, journal, cites_path, allow_statuses=WEB_CITES_ALLOW_STATUSES):
+    entries = read_packet_a_jsonl(cites_path)
+    allow_statuses = tuple(allow_statuses)
+    # Phase 1 — validate the whole batch before any write (fail closed).
+    plans = []
+    seen = set()
+    for entry in entries:
+        raw_id = entry.get("record_id")
+        if not raw_id:
+            raise SystemExit("--apply-web-cites row missing record_id: %r" % entry)
+        record_id = manifest.resolve_record_id(raw_id) or raw_id
+        if record_id in seen:
+            raise SystemExit("--apply-web-cites duplicate record_id: %s" % record_id)
+        seen.add(record_id)
+        row = manifest.by_record_id.get(record_id)
+        if not row:
+            raise SystemExit("--apply-web-cites record not found in manifest: %s" % raw_id)
+        status = row.get("status")
+        if status not in allow_statuses:
+            raise SystemExit(
+                "--apply-web-cites refuses out-of-scope row %s (status=%s); permitted: %s"
+                % (record_id, status, ", ".join(allow_statuses))
+            )
+        record = load_case_record(paths, record_id)
+        if record is None:
+            raise SystemExit("--apply-web-cites lake record missing on disk: %s" % record_id)
+        current_display = ((record.get("citations") or {}).get("display"))
+        if current_display:
+            raise SystemExit("--apply-web-cites refuses already-citation-bearing row %s (display=%s)" % (record_id, current_display))
+        if entry.get("slip_only"):
+            plans.append(("slip", record_id, row, record, entry, None, None))
+            continue
+        official_cite = clean_s6_candidate_value(entry.get("cite"))
+        if not official_cite:
+            raise SystemExit("--apply-web-cites row %s needs 'cite' or slip_only:true" % record_id)
+        court_class = clean_s6_candidate_value(entry.get("court_class"))
+        if court_class not in WEB_CITES_COURT_CLASSES:
+            raise SystemExit("--apply-web-cites row %s court_class must be one of %s" % (record_id, sorted(WEB_CITES_COURT_CLASSES)))
+        legs = validate_web_legs(record_id, entry.get("legs"), official_cite)
+        parts = {"volume": entry.get("volume"), "reporter": entry.get("reporter"), "page": entry.get("page")}
+        if not (parts["volume"] and parts["reporter"] and parts["page"]):
+            parsed = parse_reporter_cite(official_cite)
+            if not parsed:
+                raise SystemExit("--apply-web-cites row %s cannot parse cite %r; supply volume/reporter/page" % (record_id, official_cite))
+            parts = parsed
+        plans.append(("cite", record_id, row, record, entry, (official_cite, court_class, parts), legs))
+
+    # Phase 2 — apply per row, journaled.
+    applied = []
+    slipped = []
+    for kind, record_id, row, record, entry, cite_info, legs in plans:
+        if kind == "slip":
+            note = clean_s6_candidate_value(entry.get("note")) or "slip-only: no reporter cite exists yet (CL citation_count 0)"
+            _web_cites_journal(
+                journal, record_id=record_id, status="slip-only", before=None, after=None,
+                note=note, evidence=entry.get("legs") or entry.get("evidence"),
+                cluster_id=(record.get("identity") or {}).get("cluster_id"), source=WEB_CITES_SOURCE,
+            )
+            slipped.append(record_id)
+            continue
+        official_cite, court_class, parts = cite_info
+        display = normalize_cite(official_cite)
+        official = {
+            "cite": display, "volume": parts["volume"], "reporter": parts["reporter"],
+            "page": parts["page"], "type": 1, "selected_official": True, "source": WEB_CITES_SOURCE,
+        }
+        record["citations"] = {
+            "official": official, "parallel": [], "vendor_neutral": [], "all": [official],
+            "display": display,
+            "official_selection": {"court_class": court_class, "selected": display, "reason": WEB_CITES_SOURCE},
+            "web_legs": legs,
+        }
+        write_case_record(paths, record)
+        row["official_cite"] = display
+        row["last_record_write"] = iso_now()
+        _web_cites_journal(
+            journal, record_id=record_id, status="applied", before=None, after=display,
+            court_class=court_class, cite=display,
+            legs=[{"source": l["source"], "url": l["url"], "cite": l["cite"]} for l in legs],
+            source=WEB_CITES_SOURCE,
+        )
+        applied.append(record_id)
+    return {"applied": applied, "slipped": slipped}
+
+
+# ---------------------------------------------------------------------------
+# R8 addendum — cache-served identity-field repair (coordinator 2026-07-07).
+# SD10 residue leaves some verified_identity rows with a corrupt identity block
+# (court a bare year, court_level null/"other", year/date null) that projects a
+# false "Historical" authority weight even though the cite is enriched. When the
+# verified cluster is already in the local HTTP cache, re-derive court_class,
+# date, and year from it CACHE-SERVED (zero live CL; a cache miss fails closed
+# and is queued for the CL lane), and journal the before/after. Bounded to the
+# unambiguous SCOTUS case (U.S.-Reports-exclusive / SCOTUS court-name); other
+# court classes need circuit/state derivation and are queued, not guessed.
+# ---------------------------------------------------------------------------
+IDENTITY_REPAIR_STEP = "r8.identity-repair"
+
+
+def repair_identity_from_cache(paths, manifest, journal, client, record_ids,
+                               allow_statuses=("verified_identity",)):
+    allow_statuses = tuple(allow_statuses)
+    repaired = []
+    queued = []
+    for raw_id in unique_preserve_order(record_ids):
+        record_id = manifest.resolve_record_id(raw_id) or raw_id
+        row = manifest.by_record_id.get(record_id)
+        if not row:
+            raise SystemExit("--repair-identity-from-cache record not found in manifest: %s" % raw_id)
+        if row.get("status") not in allow_statuses:
+            raise SystemExit("--repair-identity-from-cache refuses row %s (status=%s)" % (record_id, row.get("status")))
+        record = load_case_record(paths, record_id)
+        if record is None:
+            raise SystemExit("--repair-identity-from-cache lake record missing on disk: %s" % record_id)
+        identity = record.get("identity") or {}
+        cluster_id = identity.get("cluster_id")
+        if not cluster_id:
+            raise SystemExit("--repair-identity-from-cache row %s has no identity.cluster_id" % record_id)
+        try:
+            cluster = client.get_cluster(cluster_id, record_id=record_id, step=IDENTITY_REPAIR_STEP + ".cluster")
+        except (IngestInterrupted, FetchFailed) as exc:
+            # not cached: budget-exhausted (--max-calls 0) or fetch failure — do
+            # NOT touch the CL lane; journal + queue for the lane grant.
+            _journal_identity_repair(journal, record_id=record_id, status="queued-for-lane",
+                                     reason=getattr(exc, "reason", None) or "not_cached", cluster_id=int(cluster_id))
+            queued.append(record_id)
+            continue
+        court_class, court_class_source = derive_enrich_court_class(identity, cluster)
+        if court_class != "scotus":
+            # coa/state need circuit/state derivation; refuse rather than guess.
+            _journal_identity_repair(journal, record_id=record_id, status="queued-for-lane",
+                                     reason="non-scotus court_class %s needs circuit/state re-derive" % court_class,
+                                     cluster_id=int(cluster_id))
+            queued.append(record_id)
+            continue
+        date_filed = cluster.get("date_filed")
+        year = None
+        if date_filed and re.match(r"^\d{4}", str(date_filed)):
+            year = int(str(date_filed)[:4])
+        fields = ("court", "court_id", "court_level", "date_decided", "year")
+        before = {f: identity.get(f) for f in fields}
+        row_before = {f: row.get(f) for f in ("court", "court_level", "date_decided", "year")}
+        identity["court_level"] = "scotus"
+        identity["court_id"] = "scotus"
+        if not identity.get("court") or re.fullmatch(r"\d{4}", str(identity.get("court") or "").strip()):
+            identity["court"] = "U.S. Supreme Court"
+        if date_filed:
+            identity["date_decided"] = date_filed
+        if year is not None:
+            identity["year"] = year
+        record["identity"] = identity
+        record.setdefault("provenance", {})["date_modified"] = iso_now()
+        write_case_record(paths, record)
+        row["court"] = identity["court"]
+        row["court_level"] = "scotus"
+        if date_filed:
+            row["date_decided"] = date_filed
+        if year is not None:
+            row["year"] = year
+        row["last_record_write"] = iso_now()
+        after = {f: identity.get(f) for f in fields}
+        _journal_identity_repair(
+            journal, record_id=record_id, status="repaired", before=before, after=after,
+            row_before=row_before, cluster_id=int(cluster_id),
+            court_class_source=court_class_source, source="cluster-cache-served",
+        )
+        repaired.append(record_id)
+    return {"repaired": repaired, "queued": queued}
+
+
+def _journal_identity_repair(journal, **row):
+    row.setdefault("lane", WEB_CITES_LANE)
+    row.setdefault("model", WEB_CITES_MODEL)
+    journal.append(step=IDENTITY_REPAIR_STEP, **row)
+
+
 def validate_rerun_lanes(lanes):
     lanes = unique_preserve_order(lanes)
     unknown = [lane for lane in lanes if lane not in TREATMENT_LANE_NAMES]
@@ -5481,6 +5753,8 @@ def run_ingest(args):
             or args.apply_web_keys
             or args.apply_alias_folds
             or args.enrich_citations
+            or args.apply_web_cites
+            or args.repair_identity_from_cache
         ):
             raise SystemExit("--add-candidates cannot be combined with other action/filter options")
         journal, journal_fallback = writable_repair_journal(paths, journal)
@@ -5493,6 +5767,47 @@ def run_ingest(args):
         return
     if args.records and not args.rerun_lane:
         raise SystemExit("--records is only valid with --rerun-lane")
+    if args.apply_web_cites:
+        if (
+            args.apply_web_keys or args.apply_alias_folds or args.enrich_citations
+            or args.repair_identity_from_cache or args.repair_migration_refs
+            or args.repair_failclosed_treatment or args.flip_verified or args.elevate_off_cl
+            or args.adjudication or args.readjudicate or args.readjudicate_file
+            or args.rerun_lane or args.records or args.smoke or args.add_candidates
+        ):
+            raise SystemExit("--apply-web-cites cannot be combined with other action/filter options")
+        result = apply_web_cites(paths, manifest, journal, args.apply_web_cites)
+        manifest.regenerate_counts()
+        manifest.save()
+        print("journal: %s" % journal_path)
+        print("web cites applied: %s | slip-only journaled: %s" % (len(result["applied"]), len(result["slipped"])))
+        return
+    if args.repair_identity_from_cache:
+        if (
+            args.apply_web_keys or args.apply_alias_folds or args.enrich_citations
+            or args.apply_web_cites or args.repair_migration_refs
+            or args.repair_failclosed_treatment or args.flip_verified or args.elevate_off_cl
+            or args.adjudication or args.readjudicate or args.readjudicate_file
+            or args.rerun_lane or args.records or args.smoke or args.add_candidates
+        ):
+            raise SystemExit("--repair-identity-from-cache cannot be combined with other action/filter options")
+        token = read_token(args.token_path)
+        # cache-served by construction: max_calls=0 blocks any live CL call (a
+        # cache miss raises IngestInterrupted -> queued-for-lane), so this never
+        # touches the serial CL lane owned elsewhere.
+        budget = CallBudget(max_calls=0)
+        client = CourtListenerClient(
+            paths=paths, token=token, token_fingerprint=sha256_text(token)[:12],
+            journal=journal, budget=budget,
+            rate=TokenBucket(rate_per_minute=args.rate_per_minute, capacity=1),
+            hourly=HourlyGuard(max_per_hour=args.hourly_limit), run_id=run_id,
+        )
+        result = repair_identity_from_cache(paths, manifest, journal, client, args.repair_identity_from_cache)
+        manifest.regenerate_counts()
+        manifest.save()
+        print("journal: %s" % journal_path)
+        print("identity repaired (cache-served): %s | queued-for-lane: %s" % (len(result["repaired"]), len(result["queued"])))
+        return
     if args.enrich_citations:
         if (
             args.apply_web_keys
@@ -5822,6 +6137,34 @@ def self_test_precedence():
     selected, reason = select_official_cite(unlisted, "scotus", precedence)
     assert selected is None and reason.startswith("unlisted_reporter")
 
+    # R2 named-noise-reporter policy (F-S2-15): a stray type-1 specialty reporter
+    # must be SKIPPED (never compete) so the valid official cite still wins;
+    # anything OFF the named list still hard-fails as unlisted_reporter.
+    mendez = [
+        {"volume": 581, "reporter": "U.S.", "page": 420, "type": 1},
+        {"volume": 137, "reporter": "S. Ct.", "page": 1539, "type": 1},
+        {"volume": 26, "reporter": "Fla. L. Weekly Fed. S", "page": 604, "type": 1},
+    ]
+    selected, reason = select_official_cite(mendez, "scotus", precedence)
+    assert citation_reporter(selected) == "U.S." and normalize_cite(selected) == "581 U.S. 420", (selected, reason)
+    northrup = [
+        {"volume": 785, "reporter": "F.3d", "page": 1128, "type": 1},
+        {"volume": 2015, "reporter": "FED App.", "page": "0092P", "type": 1},
+    ]
+    selected, reason = select_official_cite(northrup, "coa", precedence)
+    assert normalize_cite(selected) == "785 F.3d 1128", (selected, reason)
+    # control: an unlisted reporter NOT on the noise list still fails closed
+    control = [
+        {"volume": 785, "reporter": "F.3d", "page": 1128, "type": 1},
+        {"volume": 1, "reporter": "Bogus Rptr.", "page": 1, "type": 1},
+    ]
+    selected, reason = select_official_cite(control, "coa", precedence)
+    assert selected is None and reason == "unlisted_reporter:Bogus Rptr.", (selected, reason)
+    # a cluster whose ONLY type-1 cite is a noise reporter fails closed cleanly
+    noise_only = [{"volume": 26, "reporter": "Fla. L. Weekly Fed. S", "page": 604, "type": 1}]
+    selected, reason = select_official_cite(noise_only, "scotus", precedence)
+    assert selected is None and reason == "no_official_class_citation", (selected, reason)
+
 
 def self_test_binding_filters():
     assert binding_jurisdiction_filter({"court_level": "scotus"}) == ""
@@ -5836,6 +6179,14 @@ def self_test_binding_filters():
     assert normalize_court_class("coa") == "coa"
     params = identity_search_params({"court_level": "circuit", "circuit": "4th Cir.", "title": "Case v. Name"})
     assert params["court"] == "ca4"
+    # CR-03: CourtListener slugs cadc/cafc must not drop to None in the ladder
+    assert parse_circuit("cadc") == "cadc"
+    assert parse_circuit("cafc") == "cafc"
+    assert parse_circuit("D.C. Cir.") == "cadc"
+    assert parse_circuit("Federal Circuit") == "cafc"
+    assert parse_circuit("4th Cir.") == "ca4"
+    assert binding_jurisdiction_filter({"court_level": "coa", "circuit": "cadc"}) == "AND court_id:(scotus OR cadc)"
+    assert binding_jurisdiction_filter({"court_level": "coa", "circuit": "cafc"}) == "AND court_id:(scotus OR cafc)"
 
 
 def self_test_token_bucket():
@@ -9541,6 +9892,174 @@ def self_test_enrich_citations():
         shutil.rmtree(tmp)
 
 
+def self_test_apply_web_cites():
+    tmp = tempfile.mkdtemp(prefix="s2-webcites-selftest-")
+    try:
+        paths = LakePaths(tmp, os.path.join(tmp, "pool"))
+        paths.ensure()
+
+        def stub_row(rid, status="verified_identity", cluster_id=None):
+            return {"record_id": rid, "record_id_status": "resolved", "source": "S6-SEED",
+                    "stub": True, "caption": rid, "status": status,
+                    "lane_status": frontier_stub_lane_status(), "counts": {}, "cluster_id": cluster_id}
+        manifest_data = {"schema_version": "s2.manifest.v1", "generated_at": iso_now(), "records": [
+            stub_row("empty-coa--111", cluster_id=111),
+            stub_row("slip-scotus--222", cluster_id=222),
+            stub_row("already-bearing--333", cluster_id=333),
+            stub_row("out-of-scope--444", status="fabrication_suspected", cluster_id=444),
+        ]}
+        write_json(paths.manifest, manifest_data)
+        manifest = ManifestStore(paths.manifest)
+        journal = Journal(os.path.join(tmp, "journal.jsonl"), "selftest")
+
+        def seed(rid, display=None):
+            rec = empty_record_shell(rid, manifest.by_record_id[rid], "selftest")
+            rec["status"] = "verified_identity"
+            rec["identity"]["cluster_id"] = manifest.by_record_id[rid]["cluster_id"]
+            if display:
+                official = {"cite": display, "volume": None, "reporter": None, "page": None,
+                            "type": 1, "selected_official": True, "source": "cluster.citations[]"}
+                rec["citations"].update({"official": official, "all": [official], "display": display})
+            write_case_record(paths, rec)
+        for rid in ("empty-coa--111", "slip-scotus--222", "out-of-scope--444"):
+            seed(rid)
+        seed("already-bearing--333", display="1 U.S. 1")
+
+        def jl(entries):
+            p = os.path.join(tmp, "cites-%d.jsonl" % random.randint(0, 1_000_000))
+            with open(p, "w", encoding="utf-8") as f:
+                for e in entries:
+                    f.write(json.dumps(e) + "\n")
+            return p
+
+        good = jl([
+            {"record_id": "empty-coa--111", "cite": "988 F.3d 8", "court_class": "coa", "legs": [
+                {"source": "Google Scholar", "url": "https://scholar.google.com/x", "cite": "988 F.3d 8", "checked_date": "2026-07-07"},
+                {"source": "Court PDF", "url": "https://media.ca1.uscourts.gov/x.pdf", "cite": "988 F.3d 8 (1st Cir. 2021)"}]},
+            {"record_id": "slip-scotus--222", "slip_only": True, "court_class": "scotus",
+             "note": "607 U.S. ___ (2026); no S. Ct. page yet",
+             "legs": [{"source": "Cornell LII", "url": "https://www.law.cornell.edu/x", "cite": "No. 24-993"}]},
+        ])
+        result = apply_web_cites(paths, manifest, journal, good)
+        assert result["applied"] == ["empty-coa--111"], result
+        assert result["slipped"] == ["slip-scotus--222"], result
+
+        rec = load_case_record(paths, "empty-coa--111")
+        cit = rec["citations"]
+        assert cit["display"] == "988 F.3d 8"
+        assert cit["official"]["source"] == "web-dual-leg"
+        assert all(c["source"] == "web-dual-leg" for c in cit["all"])
+        assert len(cit["web_legs"]) == 2 and {l["source"] for l in cit["web_legs"]} == {"Google Scholar", "Court PDF"}
+        assert rec["status"] == "verified_identity"
+        assert manifest.by_record_id["empty-coa--111"]["official_cite"] == "988 F.3d 8"
+        # slip row: no citations written, display still empty, terminal journaled
+        slip = load_case_record(paths, "slip-scotus--222")
+        assert slip["citations"].get("display") is None
+        srows = [r for r in journal.rows() if r.get("step") == WEB_CITES_STEP and r.get("record_id") == "slip-scotus--222"]
+        assert srows and srows[-1]["status"] == "slip-only", srows
+
+        # refusals — each fails closed with SystemExit, no partial write
+        def refuses(entries):
+            try:
+                apply_web_cites(paths, manifest, journal, jl(entries))
+            except SystemExit:
+                return True
+            return False
+        assert refuses([{"record_id": "empty-coa--111", "cite": "1 F.3d 1", "court_class": "coa", "legs": [  # only 1 leg
+            {"source": "Justia", "url": "u", "cite": "1 F.3d 1"}]}])
+        assert refuses([{"record_id": "empty-coa--111", "cite": "1 F.3d 1", "court_class": "coa", "legs": [  # same source twice
+            {"source": "Justia", "url": "u1", "cite": "1 F.3d 1"}, {"source": "Justia", "url": "u2", "cite": "1 F.3d 1"}]}])
+        assert refuses([{"record_id": "empty-coa--111", "cite": "1 F.3d 1", "court_class": "coa", "legs": [  # Wikipedia never counts
+            {"source": "Justia", "url": "u1", "cite": "1 F.3d 1"}, {"source": "Wikipedia", "url": "u2", "cite": "1 F.3d 1"}]}])
+        assert refuses([{"record_id": "empty-coa--111", "cite": "1 F.3d 1", "court_class": "coa", "legs": [  # legs disagree
+            {"source": "Justia", "url": "u1", "cite": "1 F.3d 1"}, {"source": "Oyez", "url": "u2", "cite": "9 F.3d 9"}]}])
+        assert refuses([{"record_id": "already-bearing--333", "cite": "2 U.S. 2", "court_class": "scotus", "legs": [
+            {"source": "Justia", "url": "u1", "cite": "2 U.S. 2"}, {"source": "Oyez", "url": "u2", "cite": "2 U.S. 2"}]}])  # already-bearing
+        assert refuses([{"record_id": "out-of-scope--444", "cite": "3 U.S. 3", "court_class": "scotus", "legs": [
+            {"source": "Justia", "url": "u1", "cite": "3 U.S. 3"}, {"source": "Oyez", "url": "u2", "cite": "3 U.S. 3"}]}])  # bad status
+        assert refuses([{"record_id": "ghost--99", "cite": "4 U.S. 4", "court_class": "scotus", "legs": [
+            {"source": "Justia", "url": "u1", "cite": "4 U.S. 4"}, {"source": "Oyez", "url": "u2", "cite": "4 U.S. 4"}]}])  # unknown id
+        # structural conformance of the written block (schema is covered by LINT-13 fixtures)
+        assert set(cit) == {"official", "parallel", "vendor_neutral", "all", "display", "official_selection", "web_legs"}
+        assert cit["official_selection"]["reason"] == "web-dual-leg"
+    finally:
+        shutil.rmtree(tmp)
+
+
+def self_test_repair_identity_from_cache():
+    tmp = tempfile.mkdtemp(prefix="s2-idrepair-selftest-")
+    try:
+        paths = LakePaths(tmp, os.path.join(tmp, "pool"))
+        paths.ensure()
+
+        def stub_row(rid, status="verified_identity", cluster_id=None):
+            return {"record_id": rid, "record_id_status": "resolved", "source": "S6-SEED",
+                    "stub": True, "caption": rid, "status": status,
+                    "lane_status": frontier_stub_lane_status(), "counts": {}, "cluster_id": cluster_id}
+        manifest_data = {"schema_version": "s2.manifest.v1", "generated_at": iso_now(), "records": [
+            stub_row("egbert-like--111", cluster_id=111),
+            stub_row("coa-like--222", cluster_id=222),
+            stub_row("uncached--333", cluster_id=333),
+        ]}
+        write_json(paths.manifest, manifest_data)
+        manifest = ManifestStore(paths.manifest)
+        journal = Journal(os.path.join(tmp, "journal.jsonl"), "selftest")
+
+        def seed(rid, court):
+            rec = empty_record_shell(rid, manifest.by_record_id[rid], "selftest")
+            rec["status"] = "verified_identity"
+            rec["identity"].update({"cluster_id": manifest.by_record_id[rid]["cluster_id"],
+                                    "court": court, "court_level": None, "year": None, "date_decided": None})
+            write_case_record(paths, rec)
+        seed("egbert-like--111", "2022")
+        seed("coa-like--222", "9th Cir. 2021")
+        seed("uncached--333", "2020")
+
+        clusters = {
+            111: {"id": 111, "date_filed": "2022-06-08", "citations": [{"volume": "596", "reporter": "U.S.", "page": "482", "type": 1}]},
+            222: {"id": 222, "date_filed": "2021-09-21", "citations": [{"volume": "13", "reporter": "F.4th", "page": "961", "type": 1}]},
+        }
+
+        class CacheClient:
+            def __init__(self):
+                self.budget = CallBudget(max_calls=0)
+            def get_cluster(self, cluster_id, record_id=None, step=None):
+                cid = int(cluster_id)
+                if cid not in clusters:
+                    raise IngestInterrupted("not_cached", record_id=record_id, step=step)
+                return clusters[cid]
+
+        result = repair_identity_from_cache(paths, manifest, journal, CacheClient(),
+                                            ["egbert-like--111", "coa-like--222", "uncached--333"])
+        assert result["repaired"] == ["egbert-like--111"], result
+        assert set(result["queued"]) == {"coa-like--222", "uncached--333"}, result
+
+        fixed = load_case_record(paths, "egbert-like--111")
+        assert fixed["identity"]["court_level"] == "scotus"
+        assert fixed["identity"]["year"] == 2022
+        assert fixed["identity"]["date_decided"] == "2022-06-08"
+        assert fixed["identity"]["court"] == "U.S. Supreme Court"
+        assert manifest.by_record_id["egbert-like--111"]["court_level"] == "scotus"
+        # non-scotus and uncached are queued, not written
+        assert load_case_record(paths, "coa-like--222")["identity"]["court_level"] is None
+        assert load_case_record(paths, "uncached--333")["identity"]["court_level"] is None
+        rrows = {r["record_id"]: r for r in journal.rows() if r.get("step") == IDENTITY_REPAIR_STEP}
+        assert rrows["egbert-like--111"]["status"] == "repaired"
+        assert rrows["coa-like--222"]["status"] == "queued-for-lane"
+        assert rrows["uncached--333"]["status"] == "queued-for-lane"
+
+        # out-of-scope status fails closed
+        manifest.by_record_id["egbert-like--111"]["status"] = "fabrication_suspected"
+        try:
+            repair_identity_from_cache(paths, manifest, journal, CacheClient(), ["egbert-like--111"])
+        except SystemExit:
+            pass
+        else:
+            raise AssertionError("repair_identity_from_cache accepted a non-verified_identity row")
+    finally:
+        shutil.rmtree(tmp)
+
+
 def run_self_tests():
     self_test_record_ids()
     self_test_precedence()
@@ -9577,6 +10096,8 @@ def run_self_tests():
     self_test_packet_a_web_keys_landing()
     self_test_packet_a_alias_fold()
     self_test_enrich_citations()
+    self_test_apply_web_cites()
+    self_test_repair_identity_from_cache()
     print("self-test passed")
 
 
@@ -9600,6 +10121,8 @@ def parse_args(argv):
     parser.add_argument("--web-keys-allow-verified-identity", action="store_true", help="opt-in: also permit --apply-web-keys on a mis-keyed verified_identity row (panel-verified re-key correction)")
     parser.add_argument("--apply-alias-folds", help="offline: retire caption-duplicate stubs into a surviving litigation row as folded-alias (packet A step 3)")
     parser.add_argument("--enrich-citations", help="bounded: populate citations.display on identity-only R8-WORKLIST stubs from their verified cluster.citations[] (E4); one paced cluster fetch/row, resumable, status untouched")
+    parser.add_argument("--apply-web-cites", help="offline (R8 R3): land dual-leg web-recovered official cites (source web-dual-leg + web_legs trail) or journal slip-only terminals onto citations-empty verified_identity rows")
+    parser.add_argument("--repair-identity-from-cache", action="append", default=[], help="cache-served (R8 addendum): re-derive court/date/year for a verified_identity row from its cached cluster; a cache miss is queued for the CL lane; repeatable")
     parser.add_argument("--elevate-off-cl", help="elevate a terminal not_found record using an orchestrator-prepared off-CL adjudication file")
     parser.add_argument("--adjudication", help="JSON adjudication file required by --elevate-off-cl")
     parser.add_argument("--token-path", default=TOKEN_PATH, help="CourtListener token path")

@@ -325,3 +325,67 @@ Specimen test unchanged — still **PASS**. No new fixture files (loop-3 variant
 modifications are the **parallel E4 citations-enrichment lane** + orchestrator journaling — this lane
 touched only `scripts/s6/**` and this report, and mutated no real-lake data (self-tests run in temp
 sandboxes; dry-runs never write).
+
+---
+
+## 10. Addendum — schema/mint coherence fix (2026-07-07, W1-blocking)
+
+The recovery lane (`R8-CITE-RECOVERY-REPORT.md`, finding 1) surfaced that every record the mint
+promotes carries `provenance.s6_promotion` (the F-R8-02 completion marker), but
+`_overhaul2/lake/_schema.json` `definitions.provenance` is `additionalProperties: false` — so the
+15 records W1 had minted all FAILED LINT-13, blocking W1's batch-close gate.
+
+**Fix (additive, this lane):** added an **optional** `s6_promotion` property to
+`definitions.provenance.properties` matching the exact on-disk shape the CLI writes (verified against
+`promote_record` + a real minted record, `Nieves v. Bartlett.json`):
+`{from_record_id: string, to_record_id: string, as_of: string, born_status: string∈{under_review,
+draft}}`, itself `additionalProperties: false` with all four keys required. It is NOT added to
+`provenance.required` (a non-promoted record has no marker). The recovery lane's uncommitted
+`web_leg`/`web_legs` extensions were left intact (edited additively, not clobbered).
+
+**Manifest side:** LINT-13 validates the manifest only for `record_id` uniqueness + JSON parse (no
+schema validation), so the manifest's `s6_mutations[]` + rename entries (15 present from W1) need no
+schema coverage — LINT-13 reads 0 with them present. No manifest schema change made.
+
+**Coverage:** two auto-discovered LINT-13 fixtures — `lint-13-record-s6promotion-pass.json` (a real
+minted record WITH the marker → 0 viol) and `lint-13-record-s6promotion-malformed-fail.json`
+(off-enum `born_status` → 1 viol). LINT-13 `--self-test` PASS.
+
+**Before/after (full real lake):** LINT-13 **15 → 0** violations; all 15 (now 15) `s6_promotion`
+records pass; every prior violation was the `s6_promotion` `additionalProperties` rejection and no
+other violation changed, so the total delta vs pre-W1 (zero minted records → zero such violations)
+is **0**. Files touched: `_overhaul2/lake/_schema.json` + the two fixtures + this addendum (no
+lake-record writes, no `scripts/s2/`).
+
+---
+
+## 11. Addendum — LINT-6 / R15 banner-state coherence (2026-07-07, W1-blocking)
+
+W1's batch report flagged **LINT-6 ×15 HIGH** on the minted pages. Verified (not assumed) by running
+LINT-6 on the 15 minted content pages: every one is check **(d)** —
+`treatment is 'unverified' but the page is not draft: true — unverified must never reach a reader
+unbannered [R2]`. Root cause: these GAP/sweep stubs are identity-only (SD10; treatment not yet
+derived) so `field_i_validity: unverified`, and the mint (adjudicated E1) projects that plus
+`lake.status: under_review`.
+
+**Reconciliation with the specs — amend LINT-6 (not the mint):** S5 R15 renders the ⚪ banner for a
+case page whose `lake.status ∈ {draft, under_review}` **or** whose Field-I is `unverified`. The
+minted pages carry BOTH → the R15 banner renders → the reader IS bannered → S1 R2 ("⚪ never reaches a
+reader unbannered") is satisfied. LINT-6 (d) was testing the literal `draft: true` key, which (i) is
+NOT R15's banner driver, and (ii) `draft: true` would EXCLUDE the page from the Quartz build (hide
+it) — not the design. The lint's real invariant is "an unverified page carries the R15 banner-driving
+state." **Mint is spec-conformant; the gap is in LINT-6.**
+
+**Change:** added `_banner_driven(fm)` (True iff `draft: true` OR `lake.status ∈ {draft,
+under_review}`) and replaced the two `not draft` conditions in check (d) (the unverified-unbannered
+HIGH and the ⚪-in-table MEDIUM) with `not _banner_driven(fm)`. The legacy `draft: true` signal is
+preserved (still accepted); the verified-page checks are unchanged (a verified page with no
+banner-driver still fires). Added a `--self-test` (LINT-6 had none) + three fixtures:
+`lint-6-minted-underreview-pass.md` (minted shape → 0 HIGH), `lint-6-draft-flag-pass.md`
+(legacy `draft: true` → 0 HIGH), `lint-6-unverified-unbannered-fail.md` (unverified + `lake.status:
+verified` + no draft → 1 HIGH).
+
+**Before/after (full corpus):** LINT-6 **15 → 0** HIGH; all 15 cleared are the check-(d)
+unverified-unbannered on the minted pages, **0 newly introduced, 0 other deltas** (the 15 were the
+only LINT-6 violations in the corpus). Files touched: `scripts/lint/lint6_treatment_status.py` + the
+three fixtures + this addendum (no mint change, no lake/content writes, no `scripts/s2/`).

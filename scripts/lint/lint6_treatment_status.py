@@ -76,6 +76,28 @@ def _is_draft(fm):
     return isinstance(v, str) and v.strip().lower() == "true"
 
 
+# S5 R15 draft-state banner: a case page renders the top-of-content ⚪ unverified
+# banner when its `lake.status` ∈ {draft, under_review} OR the top-level `draft`
+# flag is set (the third R15 driver — Field-I `unverified` — IS the condition
+# guarded by (d), so a SEPARATE banner-state signal is required there as
+# defense-in-depth behind the S2 R12 publish gate). NOTE: the born-draft mint
+# (adjudicated E1) emits `lake.status: under_review`, NOT `draft: true` — the
+# latter would EXCLUDE the page from the Quartz build (hide it), which is not the
+# design; the R15 banner + S2 R12 gate are.
+LAKE_BANNER_STATUSES = {"draft", "under_review"}
+
+
+def _banner_driven(fm):
+    """True iff the page carries a banner-driving state per S5 R15 (a `draft: true`
+    flag OR a `lake.status` ∈ {draft, under_review})."""
+    if _is_draft(fm):
+        return True
+    lake = fm.get("lake")
+    if isinstance(lake, dict):
+        return str(lake.get("status", "")).strip().lower() in LAKE_BANNER_STATUSES
+    return False
+
+
 def _blank(v):
     return v is None or (isinstance(v, str) and not v.strip())
 
@@ -220,7 +242,7 @@ def check_file(path):
     _check_forbidden_glyph(path, text, out)
 
     has_lake = isinstance(fm.get("lake"), dict) and bool(fm.get("lake"))
-    draft = _is_draft(fm)
+    banner_driven = _banner_driven(fm)
 
     validity = None
     if has_lake:
@@ -228,13 +250,17 @@ def check_file(path):
     elif fm.get("type") == "case":
         validity = _check_legacy(path, fm, start, out)          # (b)
 
-    # (d) unverified treatment must not render unbannered
-    if validity and "unverified" in str(validity).lower() and not draft:
+    # (d) unverified treatment must not render unbannered. The invariant is "an
+    # unverified page carries the R15 banner-driving state," NOT the literal
+    # `draft: true` key — a born-draft mint page (lake.status: under_review) IS
+    # bannered by R15 and must pass here.
+    if validity and "unverified" in str(validity).lower() and not banner_driven:
         out.append(c.make_violation(
             LINT, path, start, c.HIGH,
-            "treatment is 'unverified' but the page is not draft: true — "
-            "unverified must never reach a reader unbannered [R2]"))
-    if not draft:
+            "treatment is 'unverified' but the page carries no R15 banner-driving "
+            "state (draft: true or lake.status ∈ {draft, under_review}) — "
+            "unverified must never reach a reader unbannered [R2/S5 R15]"))
+    if not banner_driven:
         _check_unverified_glyph_in_tables(path, body, start, out)
 
     # (e) Case Index blank-treatment
@@ -250,5 +276,43 @@ def run(paths=None):
     return out
 
 
+# --------------------------------------------------------------------------
+# self-test — labeled fixtures (filename suffix -pass / -fail). A -pass fixture
+# yields zero HIGH; a -fail fixture yields >=1 HIGH. Covers the R15/R2 born-draft
+# reconciliation: a minted-shape page (lake.status: under_review + Field-I
+# unverified) PASSES; an unverified page with NEITHER banner signal FAILS.
+# --------------------------------------------------------------------------
+
+import glob  # noqa: E402
+
+
+def self_test():
+    fixdir = os.path.join(c.HERE, "fixtures")
+    files = sorted(glob.glob(os.path.join(fixdir, "lint-6-*.md")))
+    if not files:
+        sys.stderr.write("[self-test] FAIL: no lint-6-*.md fixtures\n")
+        return 1
+    ok = True
+    for f in files:
+        name = os.path.basename(f)
+        expect = "pass" if name.endswith("-pass.md") else \
+                 "fail" if name.endswith("-fail.md") else None
+        if expect is None:
+            continue
+        viols = check_file(f)
+        n_high = sum(1 for v in viols if v["severity"] == c.HIGH)
+        passed = (n_high == 0) if expect == "pass" else (n_high >= 1)
+        ok = ok and passed
+        sys.stderr.write("[self-test] %-40s expect=%-4s -> %s (%d high)\n" % (
+            name, expect, "OK" if passed else "MISMATCH", n_high))
+        if not passed:
+            for v in viols:
+                sys.stderr.write("             [%s] %s\n" % (v["severity"], v["message"]))
+    sys.stderr.write("[self-test] %s\n" % ("PASS" if ok else "FAIL"))
+    return 0 if ok else 1
+
+
 if __name__ == "__main__":
+    if "--self-test" in sys.argv[1:]:
+        sys.exit(self_test())
     c.cli_main(run, LINT)

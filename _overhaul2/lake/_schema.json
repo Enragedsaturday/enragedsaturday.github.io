@@ -1317,6 +1317,81 @@
               ]
             }
           }
+        },
+        "web_legs": {
+          "type": "array",
+          "minItems": 2,
+          "items": {
+            "$ref": "#/definitions/web_leg"
+          }
+        }
+      },
+      "if": {
+        "required": [
+          "all"
+        ],
+        "properties": {
+          "all": {
+            "type": "array",
+            "contains": {
+              "type": "object",
+              "required": [
+                "source"
+              ],
+              "properties": {
+                "source": {
+                  "const": "web-dual-leg"
+                }
+              }
+            }
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "web_legs"
+        ]
+      }
+    },
+    "web_leg": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source",
+        "url",
+        "cite",
+        "checked_date"
+      ],
+      "properties": {
+        "source": {
+          "type": "string",
+          "enum": [
+            "Justia",
+            "Google Scholar",
+            "CaseText",
+            "Cornell LII",
+            "Official court",
+            "Official reporter",
+            "Court PDF",
+            "Oyez",
+            "SCOTUSblog",
+            "vLex",
+            "Casemine",
+            "Fastcase",
+            "FindLaw"
+          ]
+        },
+        "url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "cite": {
+          "type": "string",
+          "minLength": 1
+        },
+        "checked_date": {
+          "type": "string",
+          "format": "date"
         }
       }
     },
@@ -1855,6 +1930,34 @@
             },
             "pinpoints": {
               "$ref": "#/definitions/field_provenance"
+            }
+          }
+        },
+        "s6_promotion": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "from_record_id",
+            "to_record_id",
+            "as_of",
+            "born_status"
+          ],
+          "properties": {
+            "from_record_id": {
+              "type": "string"
+            },
+            "to_record_id": {
+              "type": "string"
+            },
+            "as_of": {
+              "type": "string"
+            },
+            "born_status": {
+              "type": "string",
+              "enum": [
+                "under_review",
+                "draft"
+              ]
             }
           }
         }

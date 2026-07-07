@@ -203,12 +203,16 @@ def dumps_frontmatter_body(frontmatter):
     lines = []
     for key, value in frontmatter.items():
         if isinstance(value, (dict, list)):
-            rendered = _dump_yaml_lines(value, 2)
             if isinstance(value, list) and not value:
                 lines.append("%s: []" % key)
+            elif isinstance(value, dict) and not value:
+                # CR-15: a bare "key:" reparses as null, not {}; emit "key: {}"
+                # to mirror the empty-list case and _dump_yaml_lines' empty-dict
+                # handling, so canonicalize({}) does not report phantom drift.
+                lines.append("%s: {}" % key)
             else:
                 lines.append("%s:" % key)
-                lines.extend(rendered)
+                lines.extend(_dump_yaml_lines(value, 2))
         else:
             lines.append("%s: %s" % (key, yaml_scalar(value)))
     return lines
@@ -319,3 +323,35 @@ def diff_paths(left, right, prefix=""):
                 paths.extend(diff_paths(left[idx], right[idx], child))
         return paths
     return [prefix or "$"]
+
+
+def self_test():
+    """CR-15: an empty managed dict must serialize as `key: {}` and round-trip
+    back to an empty mapping (not null/string) so it does not phantom-drift
+    against a projected empty dict. Mirrors the existing empty-list handling."""
+    fm = OrderedDict([("title", "T"), ("treatment", {}), ("lake", {}), ("off_cl_links", [])])
+    text = dumps_frontmatter(fm)
+    assert "treatment: {}" in text, text
+    assert "lake: {}" in text, text
+    assert "off_cl_links: []" in text, text
+    parsed, _body, _start = split_frontmatter(text)
+    assert parsed["treatment"] == {}, repr(parsed["treatment"])
+    assert parsed["lake"] == {}, repr(parsed["lake"])
+    assert parsed["off_cl_links"] == [], repr(parsed["off_cl_links"])
+    # no phantom drift vs a projection carrying real empty containers
+    actual = managed_subset(parsed)
+    assert diff_paths(actual, OrderedDict([("treatment", {}), ("lake", {}), ("off_cl_links", [])])) == []
+    # replace_frontmatter path renders empty dicts the same way
+    doc = "---\ntitle: T\ntreatment: {}\n---\nbody\n"
+    out = replace_frontmatter(doc, OrderedDict([("treatment", {})]))
+    assert "treatment: {}" in out, out
+    # the parser (not canonicalize) narrows the empty flow map to a real dict,
+    # matching how the empty flow list is already narrowed to a real list
+    assert split_frontmatter("---\nk: {}\n---\n")[0]["k"] == {}
+    assert split_frontmatter("---\nk: []\n---\n")[0]["k"] == []
+    print("serializer self-test passed")
+
+
+if __name__ == "__main__":
+    if "--self-test" in sys.argv[1:]:
+        self_test()

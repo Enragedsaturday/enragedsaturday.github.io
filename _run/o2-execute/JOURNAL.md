@@ -617,3 +617,36 @@ Committing: scripts/s6 (mint CLI, 36/36 + specimen) + scripts/s2 --enrich-citati
 records + manifest + worklist fix + adjudications/work-orders/reports/review-ledger + wave plan.
 Next: scoped CodeRabbit gate (this commit's scripts delta) → session checkpoint → recovery lane
 ∥ wave W1.
+
+**WAVE W1 CLOSED + RECOVERY LANE LANDED (2026-07-07):** W1 (GAP + sweep first half): **15 pages
+minted** through the R8 pipeline (Chiaverini · Culley · Gonzalez-v-Trevino · Nieves · Thompson-v-
+Clark · Cooley · Lombardo · Martin · Brownback · Dupree · Fazaga(2 homes) · Fikre · Goldey ·
+Hernandez-v-Mesa · Lackey), all born under_review/⚪, exact BIRAC skeleton, verbatim pinned
+holdings, R12 sources w/ corroboration trails (Nieves spot-checked instructor-grade: ^pin-406 +
+star-pagination corroborated via Gonzalez 602 U.S. 653); 3 honest skips (R.W. deferred-recovery ·
+Egbert data-escalation, repaired mid-batch by recovery lane via new --repair-identity-from-cache,
+false-Historical→Binding-SCOTUS · Gutierrez cl-text-unavailable, no-fabrication). ~45 CL calls,
+0×429, 3 transient 502s backed off clean. Build 586 files OK; Case Index regenerated; manifest
+bijection EXACT under concurrent lanes (662=662, 15 renames, 195-15=180 vi / 35+15=50 ur). W1
+agent self-fixed 2 self-introduced lint regressions (LINT-9 pin placement ×3, LINT-2 incidental
+quotes ×6). ∥ RECOVERY lane (zero live CL, zero network): R1 13 re-keys dual-leg web-verified
+READY-PENDING-LANE-GRANT (carroll reclassified → R3: right per-curiam cluster, CL just lacks the
+U.S. cite); R2 DONE — serializer noise-list landed (Fla. L. Weekly Fed. S/FED App.), 6/6 enriched
+cache-served; R3 10 web-dual-leg cites landed (LINT-13-conformant provenance) + 15 slip-only
+journaled + 4 escalated (young/williams/lewis/black; black+lewis = suspected upstream mis-keys →
+R1 candidates); CR-03/CR-15 fixed. **Two mint↔lint systemic gaps found+fixed same session (the
+F-S2-21 class again):** LINT-13 rejected the mint's provenance.s6_promotion marker (schema
+amendment, 15→0, pass/fail fixtures) and LINT-6 demanded literal draft:true where R15's banner
+drivers are lake.status∈{draft,under_review}∨Field-I-unverified (lint amended w/ _banner_driven +
+first-ever LINT-6 self-test, 15→0 HIGH, 0 other deltas; draft:true would have HIDDEN pages from
+the build — wrong tool). Systemic follow-ups queued for the consolidated CL session: bulk
+court_level re-derive (~30 SCOTUS-residue rows share Egbert's corruption) · R1 readjudication ·
+black/lewis investigation · CR-13/14 project.py (deferred on a work-order scope contradiction the
+builder correctly caught — scripts/s2 was locked) · Gutierrez text-availability check. Process
+notes (honest): CR-03/15 addendum was briefly MISROUTED to the W1 agent (orchestrator dispatch
+error; W1 refused correctly on file-boundary + collision grounds — the writer≠checker boundary
+held); commit 70996d8's `git add scripts/lint` swept 3 in-flight recovery-lane LINT-13 web-cite
+fixtures mid-work (benign, reconciled this commit). Known-endemic corpus reds unchanged (LINT-10
+×48 / LINT-5 ×46, specimen-triggered, S8/S9 remit). Mintable arithmetic: 148 = 15 minted + 3 W1
+skips + 16 recovery-unblocked + 13 R1-pending + 15 slip-only + 4 R3-escalated + rest already
+mintable; W9 tail sweeps stragglers.
