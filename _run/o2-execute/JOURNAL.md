@@ -498,3 +498,37 @@ user resolution rides packet B**). Folds + no-Confrontation-line corpus check ve
 Packet-B accumulator: 4 writer-borderlines + 4 re-check promotions + R3's pre-registered
 members. R7 queue batch 1: 30 rows (2 pulled pending packet B), every row docket/cite-keyed;
 intake mechanism (--add-candidates, dedupe + journaled provenance) with the builder.
+
+**ALL THREE DECISION SURFACES RETURNED (2026-07-06, new orchestrator session @ d134883):**
+R14 = Option 1 → IMPLEMENTED same session (A17 amendment; BAILII/Founders'/Eng.-Rep.-facsimile
+whitelist in code + schema (pairwise 10→28); Entick+Wilkes elevated verified_off_cl via
+adjudication files, all 4 sources live-confirmed, BAILII via archive snapshots; Field-I
+re-seeded good_law/migration-seed (F-S2-31 revert cured by elevation); re-projected;
+LINT-6/12/13/14 ALL GREEN — S2 §7's named exception pair closed; +2 F-S2-33 orphan shells
+removed+journaled; commit 80d11a8). Packet A = ALL FOUR GROUPS APPROVED → 23-row re-key +
+alias-fold builder session dispatched (PACKET-A-REKEY-WORKORDER.md; lane note: Opus-xhigh
+substitute builder — permission classifier declined the headless-Codex full-auto pattern;
+same writer≠checker discipline). Group-3 removals EXECUTED (R4): West/White — Case Index
+rows updated w/ Byrd re-anchor pointers, omissions tombstones, s6-removals.jsonl terminal
+rows; lake stubs stay fabrication_suspected (CL-honest), no silent deletion.
+
+**PACKET B = USER-DELEGATED 3-AGENT PANEL (user protocol, verbatim: blind Fable reviewer ∥
+blind Codex reviewer → Fable adjudicator → implement).** Recommendation-stripped ITEMS.md;
+both lanes zero-CL, mutually blind; adjudicator alone read this packet's recs. Outcomes
+(packetb-dispositions.jsonl + panel ADJUDICATION.md): items 1-4 EXCLUDE-remit (unanimous);
+5-6 EXCLUDE (both lanes; orchestrator's bullet recs DECLINED — INGEST needs a prong); 7
+INGEST noted-order mention prong (c) (resolved against Codex); 8-10 INGEST-author (Wyman /
+G.M. Leasing / Verdugo, re-key-gated); 11 EXCLUDE remedies-remit; 12 referent = Villarreal
+v. Texas 24-557 (GAP-04f caption mislabel; D6→D7 attribution fix; PREMISE CORRECTION:
+Alaniz IS the Laredo litigation — one ledger identity, alias folded into gated.jsonl:72,
+en-banc merits = Lower-court-dev bullet, NO page); 13 OWN PAGE after re-key (record
+10614578 mis-keyed to First Step Act decision; correct = 926 F.3d 313 / CL 4628336 —
+CARPENTER-REKEY-WORKORDER.md queued behind packet-A session); 14 Bennis PAGE (orchestrator
+bullets-rec OVERRULED) + Calero-Toledo bullet (against Codex); 15 all three Bivens PAGES
+(Hernandez premise corrected: NOT in prose — R5.iv sweep leg basis); 16 Heller v. New York
+PAGE (all-bullets rec OVERRULED) + 3 bullets (against Codex on P.J. Video/Fort Wayne).
+Premise-correction ledger: 8 items incl. Hencely 2026-04-22 + Price cert-denial 2024-07-02
+date fixes, stale statuses, stale path. Net +9 packet-B pages; within §9 scope guard.
+Dispositions folded: s6-borderline.md + s6-fabrications.md + gap-docket.jsonl:12 +
+gated.jsonl:72 + DISPOSITIONS-2026-07-06.md. R8 authoring waves unblock when the re-key
+session lands (packet-A rows + Carpenter); R11 ledger emits at wave close.

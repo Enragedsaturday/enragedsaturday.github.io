@@ -247,3 +247,46 @@ Paging-scope calls (Group III):
     page-less tracked / page Egbert only]
 16. **Expressive-material trim** — Lee Art / Heller / P.J. Video / Fort Wayne as bullets under
     Marcus/Roaden? [confirm / pages for named subset]
+
+---
+
+## DISPOSITIONS RETURNED (2026-07-06) — via user-delegated review panel
+
+The user delegated the 16 dispositions to a 3-agent panel (directive received 2026-07-06):
+two mutually-blind reviewers (Fable lane ∥ Codex lane, recommendation-stripped items) + a
+Fable final adjudicator reconciling both reviews against this packet and the spec. Full
+record: `_run/o2-execute/packetb-panel/` (ITEMS.md · both review JSONLs · ADJUDICATION.md).
+Machine-readable fold: `_run/o2-execute/packetb-dispositions.jsonl`.
+
+1. Talevski — EXCLUDE-remit ✔ (unanimous)
+2. Vullo — EXCLUDE-remit ✔ (unanimous)
+3. Medina — EXCLUDE-remit ✔ (unanimous)
+4. Hencely — EXCLUDE-remit ✔ (unanimous; decided 2026-04-22, packet said 2025)
+5. Reed v. Goertz — **EXCLUDE** (both lanes; this packet's INGEST-bullet rec DECLINED — no prong, no D1 anchor)
+6. Williams v. Reed — **EXCLUDE** (same; Monroe carries the no-exhaustion point)
+7. Price — INGEST noted-order mention, prong (c) (adjudicator resolved against Codex's EXCLUDE; cert denied 2024-07-02)
+8. Wyman — INGEST, author after packet-A re-key ✔
+9. G.M. Leasing — INGEST, author from shell ✔
+10. Verdugo-Urquidez — INGEST, author after corrected re-key (494 U.S. 259) ✔
+11. Chapman — EXCLUDE (remedies-reference remit) ✔
+12. Villarreal — referent = **Villarreal v. Texas 24-557** (REJECT stands; caption was the
+    mislabel; attribution corrected D6→D7). PREMISE CORRECTION: only TWO Villarreals —
+    *Alaniz* (25-29) IS the City-of-Laredo/Lagordiloca litigation at cert stage. One ledger
+    identity (Alaniz noted-order row + alias); en banc merits = Lower-court-developments
+    bullet; NO page (R9 fold + cert-denial guard rail; adjudicator resolved against Codex).
+13. 6th-Cir. Carpenter remand — OWN PAGE (R9's named exception), AFTER re-key: record
+    10614578 is mis-keyed to the later First Step Act decision (140 F.4th 733); the 2019
+    remand is 926 F.3d 313 (CL opinion 4628336). R1 blocks authoring until corrected.
+14. Forfeiture trim — **Bennis = PAGE** (innocent-owner rule; this packet's bullets-for-both
+    rec OVERRULED), Calero-Toledo = mention/bullet (living carriers Good/Bennis/Culley;
+    adjudicator resolved against Codex's page).
+15. Bivens — ALL THREE PAGES ✔; basis corrected: Hernandez is NOT named in prose (packet
+    premise wrong) — it pages via the R5.iv sweep leg, prong (c).
+16. Expressive-material trim — **Heller v. New York = PAGE** (this packet's all-bullets rec
+    OVERRULED, within the named-subset option); Lee Art / P.J. Video / Fort Wayne Books =
+    bullets (adjudicator resolved against Codex on the latter two). R9 caption trap logged:
+    never merge Heller v. New York with the district-of-columbia-v-heller stub.
+
+Net: 9 packet-B pages (Wyman · G.M. Leasing · Verdugo · Carpenter-remand · Bennis ·
+Hernandez · Ziglar · Egbert · Heller v. New York) + the anchors/core-four that author
+regardless. All other members terminal excluded-remit/bullet/mention per above.

@@ -137,3 +137,14 @@ _Subtotal A2: 4 candidates._
 
 _Subtotal B: 67 persuasive-only/illustrative candidates._
 
+
+## Removals — 2026-07-06 (O2 S6 packet A, Group 3; user-approved; R4 protocol)
+
+| Caption | Proposition claimed | Verification | Terminal state |
+|---|---|---|---|
+| United States v. West (10653830 stub) | stolen-vehicle / no-standing | Codex leg NOT-FOUND ∥ Claude leg NOT-FOUND (nearest real authorities captioned Ostrum / Smith, 4th Cir. 2023) — dual-blind, zero CL | **removed** — tombstone here; Case Index row updated; no prose asserted the proposition outside the flagged index row; S7 re-anchor pointer: [[Byrd v. United States]] (car-thief standing premise) |
+| United States v. White (10349533 stub) | stolen-vehicle / no-standing (same family) | Codex CONTEXT-MISMATCH (401 U.S. 745 = false-friend White, wrong proposition) ∥ Claude NOT-FOUND (8th-Cir. 2020 rental-car near-miss, identity unconfirmed) — orchestrator adjudication: UNVERIFIABLE | **removed** — same protocol; Florida v. White identity note already marks the caption unverifiable; S7 re-anchor pointer: [[Byrd v. United States]] |
+
+Never silent: lake stubs remain `fabrication_suspected` (CL-honest), the coverage ledger carries
+terminal `removed` rows (`_run/o2-execute/s6-removals.jsonl`), and the R1 door stays open (no
+resurrection without verification).
