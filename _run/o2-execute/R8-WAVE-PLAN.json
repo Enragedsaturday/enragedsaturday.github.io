@@ -133,7 +133,32 @@
     "state-v-christensen--4381703",
     "state-v-demesme--5035127"
    ],
-   "status": "pending"
+   "status": "authored",
+   "authored_by": {
+    "lane": "r8-wave-author",
+    "model": "claude-opus-4-8",
+    "as_of": "2026-07-07"
+   },
+   "minted": 17,
+   "skipped": [
+    {
+     "record_id": "people-v-frederick--10579458",
+     "reason": "data-escalation",
+     "note": "Known-ahead skip (work order): cluster 10579458 is a New York same-caption namesake; the corpus intends the Michigan knock-and-talk People v. Frederick. Wrong-case re-key queued in the parallel repair queue — do NOT author from cluster 10579458."
+    },
+    {
+     "record_id": "robinson-v-commonwealth--10793178",
+     "reason": "data-escalation",
+     "note": "WRONG-CASE CLUSTER discovered on read: cluster 10793178 (opinion 11259820) is Commonwealth v. Daryen T. Robinson, SJC-13756 (Mass. SJC, argued 2025-10-08, decided 2026-02-13) — a traffic-stop exit-order/consent case — NOT the intended Virginia Court of Appeals Flock-ALPR case (Robinson v. Commonwealth, Record No. 1912-24-1, digital-surveillance home). Lake identity metadata (Va. Ct. App./docket 1912-24-1/'Eddie Eugene Robinson') mismatches the actual cluster contents (Egbert/frederick precedent). Lake record's own alternate cluster 10838748 ('Eddie Eugene Robinson v. Commonwealth of Virginia') is the likely-correct case for the repair lane. Not authored on a broken identity."
+    }
+   ],
+   "escalations": [
+    {
+     "record_id": "carter-v-united-states--10662535",
+     "kind": "lint-gap-disclosed",
+     "note": "MINTED, but carries LINT-12 (S2 managed-frontmatter drift on 'citation'). Slip-cite amendment gap: derive_slip_cite writes 'No. 23-CF-0388, slip op. (dc 2025)' to the PAGE frontmatter, but the promoted lake record's citations.display stays null, so project_record returns '' and LINT-12 reports drift. R7/tooling (not body-fixable): fix = populate the lake record's citations at mint (cf. scripts/s6/stamp_slip_only.py) OR make LINT-12 slip-aware. Page is substantively CL-verified. Orchestrator adjudicates."
+    }
+   ]
   },
   {
    "id": "W4",

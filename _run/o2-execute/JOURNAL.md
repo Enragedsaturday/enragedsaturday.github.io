@@ -694,3 +694,23 @@ circuit="ca2021" (parse_circuit-year artifact in s6_candidate_court_fields). 59 
 0×429, 76% cache. Next repair batch queue: frederick re-key · military-namesake re-keys
 (cole/lyle/small/mendoza) · ruiz CAAF off-model decision · wilson · 8 escalated-vi · long-lake
 bug. W3 dispatching: 18 expected mints + frederick skip.
+
+**W3 CLOSED (2026-07-07):** **17 minted** — 5 history D2 renders (Sanders·Frank·Quantity·Robbins·
+Trupiano: Historical weight, precise overruling verb, wikilinked successor, ⚪ banner) + 12 roster
+D1-flips (Alasaad·Alvarez·Carroll-v-Carman·Carter·Gaetjens·Jimerson·Johnson-v-Glick·Knight·
+LaDuke·Milam·Christensen·Demesme); ~51 MCP calls 0×429 (2 upstream blips yielded+backed off);
+mint-gate lints 0/0/0; Case Index 512 (+17 exact); build 614/2192 green. 2 data-escalation skips:
+frederick (known NY namesake) + **robinson-v-commonwealth DISCOVERED wrong-case on read**
+(cluster 10793178 = Mass. SJC Commonwealth-v-Daryen-T.-Robinson traffic-stop case, NOT the Va.
+Flock-ALPR case; packet-A's docket-exact-match ratification was WRONG — record's own alternate
+cluster 10838748 queued as likely-correct; honest correction, journaled). Body-only prose fixes
+×3 RATIFIED (standing class). History Field-I unverified→superseded DEFERRED to S9 (treatment
+promotion is S9 remit; pages already render Historical + verb). CARTER LINT-12 ESCALATION
+adjudicated → s6 fix: slip-cite drift (mint writes slip cite to page frontmatter; project_record
+returns '' for the promoted record) — fix = projector derives the SAME slip form from the
+citations.slip_only marker via derive_slip_cite as single source; never write the slip form into
+citations.display (would masquerade as a reporter cite). Repair queue (post-W4): frederick→
+Michigan re-key · robinson→10838748 · military namesakes cole/lyle/small/mendoza · ruiz CAAF
+investigation (R3 data) · wilson · 8 escalated-vi · long-lake ca2021 bug. W4 dispatching w/ cole
+known-skip; W5 blockers lewis+lyle; W6 blockers mendoza/ruiz/small/wilson — all queued-class.
+Scoreboard: 43/148 minted.
