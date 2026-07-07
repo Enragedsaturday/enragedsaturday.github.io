@@ -677,3 +677,20 @@ mint on identity-incomplete + corrupt-cluster escalation — belt+braces held). 
 "other" residue (extend --repair-identity-from-cache w/ court→circuit/state derivation) + 9
 slip-identity completions + zorn off-CL identity decision. Scoreboard: 26/148 minted, mintable
 122+6-slip=near-full, envelope ~76.3%, 0×429 run-wide.
+
+**COA/STATE IDENTITY REPAIR (2026-07-07):** `--repair-coa-state-from-cache` landed —
+docket-court_id-authoritative derivation (court is NOT on cached clusters; docket structural for
+ca1-11/cadc/cafc, court-object jurisdiction for state/district; D.C. trap resolved: court_id
+"dc"→state), fail-closed on class/state swaps + military/unclassifiable + uncorroborated circuit
+swaps. Run: 44/52 repaired (37 coa + 7 state; residue 65→21: 8 escalated-vi surfaced + 2 excluded
+zorn/chapman + 11 off-scope non-vi); manifest coa 66→103 state 9→16; 0 projection errors, pages
+473→484. W3-8: 7/8 CLEAN; people-v-frederick ESCALATED (roster-state-swap: cluster 10579458 = NY
+namesake, corpus intends the Michigan knock-and-talk case — wrong-case re-key queued, W3 skips).
+Slip: 12/15 mintable (6 newly completed incl. davis via ratified docket-match; wilson analogue
+REFUTED + escalated — the discipline works both directions). NEW MIS-KEY CLASS: military
+namesakes (cole/lyle/small/mendoza → armfor/nmcca clusters; why CL held no cite; correct targets
+already web-recovered in R8-R3-web-cites.jsonl). Pre-existing bug noted: long-lake stub
+circuit="ca2021" (parse_circuit-year artifact in s6_candidate_court_fields). 59 network calls,
+0×429, 76% cache. Next repair batch queue: frederick re-key · military-namesake re-keys
+(cole/lyle/small/mendoza) · ruiz CAAF off-model decision · wilson · 8 escalated-vi · long-lake
+bug. W3 dispatching: 18 expected mints + frederick skip.

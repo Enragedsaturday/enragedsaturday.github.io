@@ -626,6 +626,359 @@ def binding_court_ids(identity):
     return {"scotus"}
 
 
+# ---------------------------------------------------------------------------
+# R8 addendum — coa/state court_level derivation from the CourtListener docket.
+# The cluster endpoint in this cache carries NO court (court=None); the deciding
+# court lives on the docket (docket.court_id, e.g. ca1..ca11/cadc/cafc/scotus or
+# a state slug). The court object's `jurisdiction` ("F" federal-appellate, "FD"
+# federal-district, "S"/"SA"/"ST"/"SS" state) is the authoritative classifier and
+# its `citation_string` ("11th Cir.", "La.", "D.C.") the authoritative label. The
+# cluster's citation reporters give the court CLASS (F.2d/F.3d/F.4th -> coa;
+# regional/state reporters -> state; F. Supp. -> district) as an independent
+# cross-check. The roster `identity.court` string ("9th Cir. 2020", "La. 2017",
+# "D.C. Court of Appeals 2025", "unknown") is a known-unreliable secondary hint
+# (roster circuits can be stale/wrong; see the R3-esc mis-key class) used only for
+# reconciliation and cache-only fallback — never as the sole basis for a write in
+# docket-authoritative mode.
+# ---------------------------------------------------------------------------
+
+# CourtListener court `jurisdiction` code -> our authority class. Federal
+# appellate ("F") maps to coa but REQUIRES a numbered/named circuit slug to be
+# projectable; a federal-appellate court that is not a circuit (specialty Article I
+# courts) fails closed. Military ("MA"/"MT"), committee/international/tribal/testing
+# codes are absent here on purpose: they are not on the scotus/coa/district/state
+# ladder, so classify_cl_court_id returns None (escalate) rather than force-fit.
+CL_JURISDICTION_TO_CLASS = {
+    "F": "coa",
+    "FD": "district", "FB": "district", "FBP": "district", "FS": "district",
+    "S": "state", "SA": "state", "ST": "state", "SS": "state", "SAG": "state",
+}
+# "dccir" is a STATE_FAMILIES quirk (a DC case's binding-jurisdiction set spans the
+# D.C. Circuit); it is a FEDERAL appellate slug and must never reverse-map to a
+# state court class.
+FEDERAL_APPELLATE_SLUGS = frozenset({"cadc", "cafc", "dccir"})
+
+
+def _build_state_slug_to_abbr():
+    out = {}
+    for abbr, slugs in STATE_FAMILIES.items():
+        for slug in slugs:
+            if slug in FEDERAL_APPELLATE_SLUGS:
+                continue
+            out.setdefault(str(slug).lower(), abbr)
+    return out
+
+
+STATE_SLUG_TO_ABBR = _build_state_slug_to_abbr()
+
+
+def circuit_ordinal(n):
+    return {1: "1st", 2: "2d", 3: "3d"}.get(int(n), "%dth" % int(n))
+
+
+def classify_cl_court_id(court_id, court_obj=None):
+    """Place a CourtListener court slug (+ optional court object) on the authority
+    ladder. Returns a dict {court_level, circuit, state, label, basis} or None when
+    the court cannot be placed (fail-closed: specialty/military/unknown courts)."""
+    cid = str(court_id or "").strip().lower()
+    if not cid:
+        return None
+    label = None
+    if isinstance(court_obj, dict):
+        label = clean_court_label(court_obj.get("citation_string") or court_obj.get("short_name"))
+    if cid == "scotus":
+        return {"court_level": "scotus", "circuit": None, "state": None,
+                "label": label or "U.S. Supreme Court", "basis": "court_id:scotus"}
+    m = re.fullmatch(r"ca(\d+)", cid)
+    if m and 1 <= int(m.group(1)) <= 11:
+        n = int(m.group(1))
+        return {"court_level": "coa", "circuit": "ca%d" % n, "state": None,
+                "label": label or ("%s Cir." % circuit_ordinal(n)), "basis": "court_id:circuit"}
+    if cid in ("cadc", "cafc"):
+        return {"court_level": "coa", "circuit": cid, "state": None,
+                "label": label or ("D.C. Cir." if cid == "cadc" else "Fed. Cir."),
+                "basis": "court_id:named-circuit"}
+    if isinstance(court_obj, dict) and court_obj.get("jurisdiction"):
+        jur = str(court_obj.get("jurisdiction")).strip().upper()
+        klass = CL_JURISDICTION_TO_CLASS.get(jur)
+        if klass == "coa":
+            # federal appellate but not a numbered/named circuit -> unprojectable
+            return None
+        if klass == "district":
+            return {"court_level": "district", "circuit": None, "state": None,
+                    "label": label, "basis": "court.jurisdiction:%s" % jur}
+        if klass == "state":
+            st = STATE_SLUG_TO_ABBR.get(cid) or state_abbr(label)
+            return {"court_level": "state", "circuit": None, "state": st,
+                    "label": label, "basis": "court.jurisdiction:%s" % jur}
+        return None
+    # no court object: only the state-slug table is safe (federal district/military
+    # slugs are absent from it, so they fail closed to None).
+    st = STATE_SLUG_TO_ABBR.get(cid)
+    if st:
+        return {"court_level": "state", "circuit": None, "state": st,
+                "label": label, "basis": "state-slug-table"}
+    return None
+
+
+def clean_court_label(value):
+    if value is None:
+        return None
+    text = re.sub(r"\s+", " ", str(value)).strip()
+    return text or None
+
+
+def canonical_reporter(reporter):
+    return re.sub(r"[.\s']", "", str(reporter or "").lower())
+
+
+SCOTUS_REPORTERS = frozenset({"us", "sct", "led", "led2d"})
+COA_REPORTERS = frozenset({"f", "f2d", "f3d", "f4th", "fappx", "fedappx", "usapplexis"})
+NEUTRAL_REPORTERS = frozenset({"wl", "uslw", "lexis", "uslexis"})
+REGIONAL_REPORTERS = frozenset({
+    "a", "a2d", "a3d", "so", "so2d", "so3d", "p", "p2d", "p3d",
+    "ne", "ne2d", "ne3d", "nw", "nw2d", "nw3d", "se", "se2d", "se3d",
+    "sw", "sw2d", "sw3d",
+})
+STATE_SPECIFIC_REPORTERS = {
+    "pa": "pa", "palexis": "pa", "nj": "nj", "njlexis": "nj",
+    "ny": "ny", "ny2d": "ny", "ny3d": "ny", "nyslipop": "ny", "nylexis": "ny",
+    "cal": "ca", "cal2d": "ca", "cal3d": "ca", "cal4th": "ca", "cal5th": "ca", "calrptr": "ca",
+    "mass": "ma", "md": "md", "mdapp": "md", "mich": "mi",
+    "ill": "il", "ill2d": "il", "tex": "tx",
+    "ohio": "oh", "ohiost": "oh", "ohiost2d": "oh", "ohiost3d": "oh", "ohioapp": "oh",
+    "va": "va", "vaapp": "va", "wash": "wa", "wash2d": "wa",
+}
+
+
+def single_reporter_class(reporter):
+    c = canonical_reporter(reporter)
+    if not c or c in NEUTRAL_REPORTERS:
+        return (None, None)
+    if c in SCOTUS_REPORTERS:
+        return ("scotus", None)
+    if c in COA_REPORTERS:
+        return ("coa", None)
+    if c.startswith("fsupp") or c == "frd":
+        return ("district", None)
+    if c in STATE_SPECIFIC_REPORTERS:
+        return ("state", STATE_SPECIFIC_REPORTERS[c])
+    if c in REGIONAL_REPORTERS:
+        return ("state", None)
+    return (None, None)
+
+
+def reporter_court_class(reporters):
+    """Return (class, state_abbr_or_None, conflict_or_None). `conflict` is the
+    class->reporters map when the cluster's reporters imply >1 class (a corrupt or
+    mis-keyed cluster) — the caller fails closed on it."""
+    classes = {}
+    state_hint = None
+    for raw in reporters or []:
+        cls, st = single_reporter_class(raw)
+        if cls:
+            classes.setdefault(cls, []).append(raw)
+        if st and state_hint is None:
+            state_hint = st
+    if not classes:
+        return (None, None, None)
+    if len(classes) > 1:
+        return (None, state_hint, dict(classes))
+    (cls,) = classes.keys()
+    return (cls, state_hint, None)
+
+
+def cluster_reporters(cluster):
+    return [str((c or {}).get("reporter") or "").strip()
+            for c in ((cluster or {}).get("citations") or [])
+            if str((c or {}).get("reporter") or "").strip()]
+
+
+def detect_state_in_roster(text):
+    """State abbr for a roster court string ("La. 2017", "Maryland Ct. of Special
+    Appeals", "D.C. Court of Appeals 2025"), or None. Missing a state is safe (the
+    docket is authoritative); a wrong hit only forces a fail-closed escalation."""
+    low = str(text or "").lower()
+    depunct = re.sub(r"[.,]", "", low)
+    # full names first, longest-first so "west virginia" beats "virginia"
+    for name in sorted(STATE_NAME_TO_ABBR, key=len, reverse=True):
+        if name in depunct:
+            return STATE_NAME_TO_ABBR[name]
+    tokens = depunct.split()
+    if tokens:
+        head = tokens[0]
+        if head in STATE_SLUG_TO_ABBR:
+            return STATE_SLUG_TO_ABBR[head]
+        if head in ROSTER_STATE_ALIASES:
+            return ROSTER_STATE_ALIASES[head]
+        two = state_abbr(head)
+        if two:
+            return two
+    return None
+
+
+ROSTER_STATE_ALIASES = {"ore": "or", "calif": "ca", "penn": "pa", "wisc": "wi", "dc": "dc"}
+
+
+def roster_court_hint(court_string):
+    """Parse the roster `identity.court` era string into (class, circuit, state).
+    Requires the "Cir." abbreviation to tag coa (so "D.C. Court of Appeals" -> the
+    DC state high court, never the cadc federal circuit)."""
+    text = clean_court_label(court_string) or ""
+    low = text.lower()
+    if not text or low == "unknown":
+        return (None, None, None)
+    if re.fullmatch(r"(?:1[789]|20)\d{2}", low):  # bare year only
+        return (None, None, None)
+    if low in ENRICH_SCOTUS_COURT_NAMES or "supreme court of the united states" in low:
+        return ("scotus", None, None)
+    if ENRICH_CIRCUIT_ABBREV_RE.search(text):
+        if "d.c. cir" in low or "dc cir" in low:
+            return ("coa", "cadc", None)
+        if "fed. cir" in low or "federal cir" in low:
+            return ("coa", "cafc", None)
+        # strip any 4-digit year so it can't be mistaken for a circuit number
+        stripped = re.sub(r"\b(?:1[789]|20)\d{2}\b", " ", text)
+        return ("coa", parse_circuit(stripped), None)
+    if re.search(r"\b[nsewm]\.?\s?d\.", low) or "district court" in low:
+        return ("district", None, None)
+    st = detect_state_in_roster(text)
+    if st:
+        return ("state", None, st)
+    if "court of appeals" in low and ("u.s." in low or "united states" in low or "federal" in low):
+        return ("coa", None, None)  # class known, circuit not stated -> fails closed downstream
+    return (None, None, None)
+
+
+def _court_slug_from_url(url):
+    if not url:
+        return None
+    m = re.search(r"/courts/([^/]+)/?$", str(url))
+    return m.group(1).lower() if m else None
+
+
+def _court_id_is_structural(court_id):
+    """True when the court slug classifies without a court-object fetch
+    (SCOTUS or a numbered/named federal circuit)."""
+    cid = str(court_id or "").lower()
+    return cid == "scotus" or bool(re.fullmatch(r"ca\d+", cid)) or cid in ("cadc", "cafc")
+
+
+def derive_coa_state_court(identity, cluster, docket=None, court_obj=None):
+    """Fail-closed derivation of court_level (+ circuit/state/year/docket_number)
+    for a court_level-residue record.
+
+    docket/court_obj present -> docket-authoritative mode (the docket court_id and
+    the court object's jurisdiction decide; the cluster reporter is an internal
+    cross-check; the roster string reconciles). Absent -> cache-only (roster +
+    reporter must agree, coa needs a circuit). Returns a decision dict; decision is
+    'write' or 'refuse'. Never guesses: a reporter/docket class or state mismatch,
+    a roster jurisdiction swap, a coa without a circuit, or an unclassifiable court
+    all fail closed with a specific reason.
+    """
+    reporters = cluster_reporters(cluster)
+    rep_class, rep_state, rep_conflict = reporter_court_class(reporters)
+    roster_class, roster_circ, roster_state = roster_court_hint(identity.get("court"))
+    date_filed = (cluster or {}).get("date_filed")
+    year = int(str(date_filed)[:4]) if date_filed and re.match(r"^\d{4}", str(date_filed)) else None
+    docket_court_id = None
+    docket_number = None
+    if isinstance(docket, dict):
+        docket_court_id = (docket.get("court_id") or _court_slug_from_url(docket.get("court")))
+        docket_court_id = str(docket_court_id).lower() if docket_court_id else None
+        docket_number = clean_court_label(docket.get("docket_number"))
+    base = {
+        "reporters": reporters, "reporter_class": rep_class, "reporter_state": rep_state,
+        "roster_hint": {"class": roster_class, "circuit": roster_circ, "state": roster_state},
+        "court_id": docket_court_id, "docket_number": docket_number,
+        "date_filed": date_filed, "year": year, "notes": [],
+    }
+
+    def refuse(reason, **extra):
+        out = dict(base)
+        out.update(extra)
+        out["decision"] = "refuse"
+        out["reason"] = reason
+        return out
+
+    def write(level, circuit, state, label, basis, confidence, notes=None):
+        out = dict(base)
+        out["decision"] = "write"
+        out.update({"court_level": level, "circuit": circuit, "state": state,
+                    "label": label, "basis": basis, "confidence": confidence,
+                    "notes": notes or []})
+        return out
+
+    if rep_conflict:
+        return refuse("reporter-class-conflict (cluster reporters imply >1 court class)",
+                      reporter_conflict=rep_conflict)
+
+    if docket_court_id:
+        auth = classify_cl_court_id(docket_court_id, court_obj)
+        if auth is None:
+            return refuse("unclassifiable-court court_id=%s (specialty/military/unknown jurisdiction)" % docket_court_id)
+        level, circuit, state = auth["court_level"], auth["circuit"], auth["state"]
+        label = auth["label"]
+        notes = []
+        if rep_class and rep_class != level:
+            return refuse("reporter-docket-class-mismatch (reporter=%s docket-court=%s)" % (rep_class, level))
+        if level == "state" and rep_state and state and rep_state != state:
+            return refuse("reporter-docket-state-mismatch (reporter=%s docket-court=%s)" % (rep_state, state))
+        if level == "coa" and not circuit:
+            return refuse("coa-no-circuit court_id=%s" % docket_court_id)
+        if roster_class:
+            if roster_class != level:
+                return refuse("roster-class-swap roster=%s docket-court=%s (suspected re-key, not a court repair)" % (roster_class, level))
+            if level == "coa" and roster_circ and circuit and roster_circ != circuit:
+                # A roster circuit that disagrees with the docket is a stale
+                # annotation ONLY when the cluster cite corroborates the intended
+                # case (expected_citation_found). Absent corroboration the cluster
+                # may be a same-name namesake in another circuit (a wrong-case
+                # mis-key) -> fail closed, do not silently "correct" the circuit.
+                if identity.get("expected_citation_found") is True:
+                    notes.append("circuit corrected: roster %s -> docket %s (cite-corroborated)" % (roster_circ, circuit))
+                else:
+                    return refuse("circuit-swap-uncorroborated roster=%s docket-court=%s (cluster cite empty/unmatched; verify the cluster is the intended case, not a namesake)" % (roster_circ, circuit))
+            elif level == "state" and roster_state and state and roster_state != state:
+                return refuse("roster-state-swap roster=%s docket-court=%s (suspected re-key, not a court repair)" % (roster_state, state))
+        if level == "state" and state is None:
+            hint = roster_state or rep_state
+            if hint:
+                state = hint
+                notes.append("state filled from %s hint" % ("roster" if roster_state else "reporter"))
+        return write(level, circuit, state, label, auth["basis"], "docket-authoritative", notes)
+
+    # cache-only fallback: roster + reporter must agree; coa needs a circuit.
+    classes = set()
+    if roster_class:
+        classes.add(roster_class)
+    if rep_class:
+        classes.add(rep_class)
+    if not classes:
+        return refuse("no-court-signal (roster silent + no classifying reporter; fetch docket to resolve)")
+    if len(classes) > 1:
+        return refuse("roster-reporter-class-conflict roster=%s reporter=%s" % (roster_class, rep_class))
+    level = classes.pop()
+    label = clean_court_label(identity.get("court"))
+    if level == "coa":
+        if not roster_circ:
+            return refuse("coa-no-circuit-cache (no circuit in roster; fetch docket to resolve)")
+        return write("coa", roster_circ, None, label, "roster+reporter(cache)",
+                     "cache-only (roster circuit; no docket confirmation)")
+    if level == "state":
+        if roster_state and rep_state and roster_state != rep_state:
+            return refuse("roster-reporter-state-conflict roster=%s reporter=%s" % (roster_state, rep_state))
+        return write("state", None, roster_state or rep_state, label, "roster+reporter(cache)",
+                     "cache-only (no docket confirmation)")
+    if level == "district":
+        return write("district", None, None, label, "roster+reporter(cache)",
+                     "cache-only (no docket confirmation)")
+    if level == "scotus":
+        return write("scotus", None, None, "U.S. Supreme Court", "roster+reporter(cache)",
+                     "cache-only (no docket confirmation)")
+    return refuse("unhandled-court-class %s" % level)
+
+
 def numeric_tail(value):
     text = str(value).rstrip("/")
     m = re.search(r"(\d+)$", text)
@@ -1326,6 +1679,16 @@ class CourtListenerClient:
     def get_cluster(self, cluster_id, record_id=None, step="identity.cluster"):
         cluster_id = int(cluster_id)
         return self.get_json_url(self.build_url("clusters/%s" % cluster_id), cache=True, record_id=record_id, step=step)
+
+    def get_docket(self, docket_id, record_id=None, step="identity.docket"):
+        docket_id = int(docket_id)
+        return self.get_json_url(self.build_url("dockets/%s" % docket_id), cache=True, record_id=record_id, step=step)
+
+    def get_court(self, court_id, record_id=None, step="identity.court"):
+        court_id = str(court_id).strip().lower()
+        if not re.fullmatch(r"[a-z0-9_-]+", court_id):
+            raise ValueError("refusing to fetch untraceable court id: %r" % court_id)
+        return self.get_json_url(self.build_url("courts/%s" % court_id), cache=True, record_id=record_id, step=step)
 
     def opinion_ref(self, opinion_id, source_array, context=None):
         if source_array not in ALLOWED_OPINION_SOURCES:
@@ -4625,6 +4988,181 @@ def _journal_identity_repair(journal, **row):
     journal.append(step=IDENTITY_REPAIR_STEP, **row)
 
 
+# ---------------------------------------------------------------------------
+# R8 addendum #2 — coa/state (+ district) court_level repair. Sibling of
+# --repair-identity-from-cache for the 54 verified_identity residue rows whose
+# court_level is None/"other" (they project authority_weight "Historical" — a
+# wrong/unknown weight). The court is not on the cached cluster (court=None); it
+# is on the docket. Default is fail-closed cache-only (roster + reporter must
+# agree, coa needs a circuit). The --repair-coa-state-allow-docket-fetch opt-in
+# gate (mirrors --web-keys-allow-verified-identity) permits the paced serial CL
+# lane to fetch the docket (court_id) + court object (jurisdiction) for an
+# authoritative derivation; the docket is cache-first (re-runs are 0-CL). When a
+# docket is fetched, the docket_number also completes identity.docket (slip
+# mintability). Fail-closed throughout: mismatches, jurisdiction swaps, and
+# unclassifiable/military courts are escalated, never written.
+# ---------------------------------------------------------------------------
+COA_STATE_REPAIR_STEP = "r8.coa-state-repair"
+COA_STATE_REPAIR_ALLOW_STATUSES = ("verified_identity",)
+
+
+def _journal_coa_state_repair(journal, **row):
+    row.setdefault("lane", WEB_CITES_LANE)
+    row.setdefault("model", WEB_CITES_MODEL)
+    journal.append(step=COA_STATE_REPAIR_STEP, **row)
+
+
+def repair_coa_state_from_cache(paths, manifest, journal, client, record_ids,
+                                allow_docket_fetch=False,
+                                allow_statuses=COA_STATE_REPAIR_ALLOW_STATUSES):
+    """Re-derive court_level (+ circuit/state/year/docket) for coa/state/district
+    residue rows. Cache-only by default; allow_docket_fetch permits paced docket +
+    court fetches for an authoritative derivation. Fail-closed: Phase 1 validates
+    the whole batch (status + on-disk + cluster_id) before any write; Phase 2 is
+    per-row journaled and every refusal carries a specific reason."""
+    allow_statuses = tuple(allow_statuses)
+    # Phase 1 — bounded-surface validation; fail closed on the whole batch first.
+    targets = []
+    seen = set()
+    for raw_id in unique_preserve_order(record_ids):
+        record_id = manifest.resolve_record_id(raw_id) or raw_id
+        if record_id in seen:
+            continue
+        seen.add(record_id)
+        row = manifest.by_record_id.get(record_id)
+        if not row:
+            raise SystemExit("--repair-coa-state-from-cache record not found in manifest: %s" % raw_id)
+        if row.get("status") not in allow_statuses:
+            raise SystemExit("--repair-coa-state-from-cache refuses row %s (status=%s); permitted: %s"
+                             % (record_id, row.get("status"), ", ".join(allow_statuses)))
+        record = load_case_record(paths, record_id)
+        if record is None:
+            raise SystemExit("--repair-coa-state-from-cache lake record missing on disk: %s" % record_id)
+        if not (record.get("identity") or {}).get("cluster_id"):
+            raise SystemExit("--repair-coa-state-from-cache row %s has no identity.cluster_id" % record_id)
+        targets.append((record_id, row, record))
+
+    repaired = []
+    confirmed = []
+    queued = []
+    escalated = []
+    fields = ("court", "court_id", "court_level", "circuit", "state", "date_decided", "year", "docket")
+
+    for record_id, row, record in targets:
+        identity = record.get("identity") or {}
+        cluster_id = int(identity["cluster_id"])
+        try:
+            cluster = client.get_cluster(cluster_id, record_id=record_id, step=COA_STATE_REPAIR_STEP + ".cluster")
+        except (IngestInterrupted, FetchFailed) as exc:
+            _journal_coa_state_repair(journal, record_id=record_id, status="queued-for-lane",
+                                      reason=getattr(exc, "reason", None) or "cluster_not_cached",
+                                      cluster_id=cluster_id)
+            queued.append(record_id)
+            continue
+        docket = None
+        court_obj = None
+        docket_fetch_note = None
+        if allow_docket_fetch:
+            docket_url = (cluster.get("docket") if isinstance(cluster, dict) else None)
+            docket_id = numeric_tail(docket_url) if docket_url else (cluster.get("docket_id") if isinstance(cluster, dict) else None)
+            if docket_id:
+                try:
+                    docket = client.get_docket(int(docket_id), record_id=record_id, step=COA_STATE_REPAIR_STEP + ".docket")
+                except (IngestInterrupted,) as exc:
+                    _journal_coa_state_repair(journal, record_id=record_id, status="queued-for-lane",
+                                              reason=getattr(exc, "reason", None) or "docket_budget",
+                                              cluster_id=cluster_id)
+                    queued.append(record_id)
+                    continue
+                except FetchFailed as exc:
+                    docket_fetch_note = "docket-fetch-failed:%s" % (getattr(exc, "status", None) or getattr(exc, "reason", None))
+                    docket = None
+            else:
+                docket_fetch_note = "cluster-has-no-docket-ref"
+            court_slug = None
+            if isinstance(docket, dict):
+                court_slug = (docket.get("court_id") or _court_slug_from_url(docket.get("court")))
+            # Federal circuits/SCOTUS classify structurally; only state/district (and
+            # unknown) slugs need the court object's jurisdiction -> saves the fetch.
+            if court_slug and not _court_id_is_structural(court_slug):
+                try:
+                    court_obj = client.get_court(court_slug, record_id=record_id, step=COA_STATE_REPAIR_STEP + ".court")
+                except (IngestInterrupted,) as exc:
+                    _journal_coa_state_repair(journal, record_id=record_id, status="queued-for-lane",
+                                              reason=getattr(exc, "reason", None) or "court_budget",
+                                              cluster_id=cluster_id)
+                    queued.append(record_id)
+                    continue
+                except FetchFailed as exc:
+                    court_obj = None  # classify falls back to structural / state-slug; may escalate
+
+        decision = derive_coa_state_court(identity, cluster, docket=docket, court_obj=court_obj)
+        common = {
+            "cluster_id": cluster_id, "court_id": decision.get("court_id"),
+            "reporters": decision.get("reporters"), "reporter_class": decision.get("reporter_class"),
+            "roster_hint": decision.get("roster_hint"), "confidence": decision.get("confidence"),
+            "basis": decision.get("basis"), "docket_number": decision.get("docket_number"),
+        }
+        if docket_fetch_note:
+            common["docket_fetch_note"] = docket_fetch_note
+
+        if decision["decision"] == "refuse":
+            _journal_coa_state_repair(journal, record_id=record_id, status="escalated",
+                                      reason=decision["reason"], **common)
+            escalated.append({"record_id": record_id, "reason": decision["reason"],
+                              "court_id": decision.get("court_id")})
+            continue
+
+        level = decision["court_level"]
+        circuit = decision.get("circuit")
+        state = decision.get("state")
+        date_filed = decision.get("date_filed")
+        year = decision.get("year")
+        docket_number = decision.get("docket_number")
+        label = decision.get("label")
+
+        before = {f: identity.get(f) for f in fields}
+        identity["court_level"] = level
+        if decision.get("court_id"):
+            identity["court_id"] = decision["court_id"]
+        if circuit:
+            identity["circuit"] = circuit
+        if level == "state" and state:
+            identity["state"] = state
+        if label:
+            identity["court"] = ("%s %s" % (label, year)) if year else label
+        if date_filed:
+            identity["date_decided"] = date_filed
+        if year is not None:
+            identity["year"] = year
+        if docket_number and not identity.get("docket"):
+            identity["docket"] = docket_number
+        record["identity"] = identity
+        write_case_record(paths, record)
+
+        row["court"] = identity.get("court")
+        row["court_level"] = level
+        if circuit:
+            row["circuit"] = circuit
+        if date_filed:
+            row["date_decided"] = date_filed
+        if year is not None:
+            row["year"] = year
+        if identity.get("docket"):
+            row["docket"] = identity["docket"]
+        row["last_record_write"] = iso_now()
+
+        after = {f: identity.get(f) for f in fields}
+        status = "repaired" if before != after else "confirmed"
+        _journal_coa_state_repair(journal, record_id=record_id, status=status,
+                                  before=before, after=after, notes=decision.get("notes") or [],
+                                  source="docket-cache-served" if allow_docket_fetch else "cluster-cache-served",
+                                  **common)
+        (repaired if status == "repaired" else confirmed).append(record_id)
+
+    return {"repaired": repaired, "confirmed": confirmed, "queued": queued, "escalated": escalated}
+
+
 def validate_rerun_lanes(lanes):
     lanes = unique_preserve_order(lanes)
     unknown = [lane for lane in lanes if lane not in TREATMENT_LANE_NAMES]
@@ -5755,6 +6293,7 @@ def run_ingest(args):
             or args.enrich_citations
             or args.apply_web_cites
             or args.repair_identity_from_cache
+            or args.repair_coa_state_from_cache
         ):
             raise SystemExit("--add-candidates cannot be combined with other action/filter options")
         journal, journal_fallback = writable_repair_journal(paths, journal)
@@ -5770,7 +6309,7 @@ def run_ingest(args):
     if args.apply_web_cites:
         if (
             args.apply_web_keys or args.apply_alias_folds or args.enrich_citations
-            or args.repair_identity_from_cache or args.repair_migration_refs
+            or args.repair_identity_from_cache or args.repair_coa_state_from_cache or args.repair_migration_refs
             or args.repair_failclosed_treatment or args.flip_verified or args.elevate_off_cl
             or args.adjudication or args.readjudicate or args.readjudicate_file
             or args.rerun_lane or args.records or args.smoke or args.add_candidates
@@ -5785,7 +6324,7 @@ def run_ingest(args):
     if args.repair_identity_from_cache:
         if (
             args.apply_web_keys or args.apply_alias_folds or args.enrich_citations
-            or args.apply_web_cites or args.repair_migration_refs
+            or args.apply_web_cites or args.repair_migration_refs or args.repair_coa_state_from_cache
             or args.repair_failclosed_treatment or args.flip_verified or args.elevate_off_cl
             or args.adjudication or args.readjudicate or args.readjudicate_file
             or args.rerun_lane or args.records or args.smoke or args.add_candidates
@@ -5807,6 +6346,42 @@ def run_ingest(args):
         manifest.save()
         print("journal: %s" % journal_path)
         print("identity repaired (cache-served): %s | queued-for-lane: %s" % (len(result["repaired"]), len(result["queued"])))
+        return
+    if args.repair_coa_state_from_cache:
+        if (
+            args.apply_web_keys or args.apply_alias_folds or args.enrich_citations
+            or args.apply_web_cites or args.repair_migration_refs or args.repair_identity_from_cache
+            or args.repair_failclosed_treatment or args.flip_verified or args.elevate_off_cl
+            or args.adjudication or args.readjudicate or args.readjudicate_file
+            or args.rerun_lane or args.records or args.smoke or args.add_candidates
+        ):
+            raise SystemExit("--repair-coa-state-from-cache cannot be combined with other action/filter options")
+        token = read_token(args.token_path)
+        # Default is cache-only (max_calls=0 -> a cache miss fails closed and is
+        # queued for the lane). The opt-in docket-fetch gate permits the paced
+        # serial CL lane to fetch the docket + court object (authoritative
+        # court_id/jurisdiction); the docket is cache-first, so re-runs are 0-CL.
+        allow_docket = bool(args.repair_coa_state_allow_docket_fetch)
+        budget = CallBudget(max_calls=(args.max_calls if allow_docket else 0))
+        client = CourtListenerClient(
+            paths=paths, token=token, token_fingerprint=sha256_text(token)[:12],
+            journal=journal, budget=budget,
+            rate=TokenBucket(rate_per_minute=args.rate_per_minute, capacity=1),
+            hourly=HourlyGuard(max_per_hour=args.hourly_limit), run_id=run_id,
+        )
+        journal.append(step="budget-checkpoint", status="start", mode="repair-coa-state",
+                       allow_docket_fetch=allow_docket,
+                       budget=budget.snapshot(estimated_remaining="<=1 docket + 1 court fetch/row; HTTP-cache-first"))
+        result = repair_coa_state_from_cache(paths, manifest, journal, client,
+                                             args.repair_coa_state_from_cache,
+                                             allow_docket_fetch=allow_docket)
+        manifest.regenerate_counts()
+        manifest.save()
+        print("journal: %s" % journal_path)
+        print("coa/state repaired: %s | confirmed: %s | queued-for-lane: %s | escalated: %s"
+              % (len(result["repaired"]), len(result["confirmed"]), len(result["queued"]), len(result["escalated"])))
+        for esc in result["escalated"]:
+            print("  ESCALATE %s: %s" % (esc["record_id"], esc["reason"]))
         return
     if args.enrich_citations:
         if (
@@ -10060,6 +10635,224 @@ def self_test_repair_identity_from_cache():
         shutil.rmtree(tmp)
 
 
+def self_test_derive_coa_state_pure():
+    # docket-authoritative coa (roster agrees)
+    d = derive_coa_state_court(
+        {"court": "9th Cir. 2020"},
+        {"date_filed": "2020-05-01", "citations": [{"reporter": "F.3d"}]},
+        docket={"court_id": "ca9", "docket_number": "19-1"},
+        court_obj={"jurisdiction": "F", "citation_string": "9th Cir."})
+    assert d["decision"] == "write" and d["court_level"] == "coa" and d["circuit"] == "ca9", d
+    assert d["year"] == 2020 and d["docket_number"] == "19-1", d
+    # docket-authoritative circuit CORRECTION on a CITE-CORROBORATED case is in-scope
+    d = derive_coa_state_court(
+        {"court": "5th Cir. 2023", "expected_citation_found": True},
+        {"date_filed": "2025-01-28", "citations": [{"reporter": "F.4th"}]},
+        docket={"court_id": "ca1", "docket_number": "21-1599"},
+        court_obj={"jurisdiction": "F", "citation_string": "1st Cir."})
+    assert d["decision"] == "write" and d["circuit"] == "ca1", d
+    assert any("circuit corrected" in n for n in d["notes"]), d
+    # circuit swap WITHOUT cite corroboration (namesake mis-key risk) -> refuse
+    d = derive_coa_state_court(
+        {"court": "9th Cir. 2021", "expected_citation_found": False},
+        {"date_filed": "2025-08-29", "citations": []},
+        docket={"court_id": "ca5", "docket_number": "25-30105"},
+        court_obj={"jurisdiction": "F", "citation_string": "5th Cir."})
+    assert d["decision"] == "refuse" and "circuit-swap-uncorroborated" in d["reason"], d
+    # D.C. Court of Appeals trap -> state dc, NEVER cadc
+    d = derive_coa_state_court(
+        {"court": "D.C. Court of Appeals 2025"},
+        {"date_filed": "2025-08-28", "citations": []},
+        docket={"court_id": "dc", "docket_number": "23-CF-0388"},
+        court_obj={"jurisdiction": "S", "citation_string": "D.C."})
+    assert d["decision"] == "write" and d["court_level"] == "state" and d["state"] == "dc", d
+    # cadc federal circuit stays coa
+    d = derive_coa_state_court(
+        {"court": "D.C. Cir. 2019"}, {"date_filed": "2019-01-01", "citations": [{"reporter": "F.3d"}]},
+        docket={"court_id": "cadc"}, court_obj={"jurisdiction": "F", "citation_string": "D.C. Cir."})
+    assert d["decision"] == "write" and d["court_level"] == "coa" and d["circuit"] == "cadc", d
+    # cafc
+    d = derive_coa_state_court(
+        {"court": "Fed. Cir. 2018"}, {"date_filed": "2018-01-01", "citations": [{"reporter": "F.3d"}]},
+        docket={"court_id": "cafc"}, court_obj={"jurisdiction": "F", "citation_string": "Fed. Cir."})
+    assert d["court_level"] == "coa" and d["circuit"] == "cafc", d
+    # reporter/docket STATE mismatch (frederick: NY Slip Op vs mich) -> refuse
+    d = derive_coa_state_court(
+        {"court": "Mich. 2017"}, {"date_filed": "2025-05-08", "citations": [{"reporter": "NY Slip Op"}]},
+        docket={"court_id": "mich"}, court_obj={"jurisdiction": "S", "citation_string": "Mich."})
+    assert d["decision"] == "refuse" and "state-mismatch" in d["reason"], d
+    # roster class swap (roster state, docket coa) -> refuse (re-key question)
+    d = derive_coa_state_court(
+        {"court": "La. 2017"}, {"date_filed": "2020-01-01", "citations": [{"reporter": "F.3d"}]},
+        docket={"court_id": "ca5"}, court_obj={"jurisdiction": "F", "citation_string": "5th Cir."})
+    assert d["decision"] == "refuse" and "class-swap" in d["reason"], d
+    # unclassifiable / military court -> refuse
+    d = derive_coa_state_court(
+        {"court": "C.A.A.F. 2025"}, {"date_filed": "2025-08-08", "citations": []},
+        docket={"court_id": "armfor"}, court_obj={"jurisdiction": "MA", "citation_string": "C.A.A.F."})
+    assert d["decision"] == "refuse" and "unclassifiable" in d["reason"], d
+    # reporter internal conflict -> refuse
+    d = derive_coa_state_court(
+        {"court": "unknown"}, {"date_filed": "2020-01-01", "citations": [{"reporter": "F.3d"}, {"reporter": "So. 3d"}]},
+        docket={"court_id": "ca9"}, court_obj={"jurisdiction": "F", "citation_string": "9th Cir."})
+    assert d["decision"] == "refuse" and "reporter-class-conflict" in d["reason"], d
+    # CACHE-ONLY: clean coa writes from roster+reporter
+    d = derive_coa_state_court({"court": "7th Cir. 2021"}, {"date_filed": "2021-01-01", "citations": [{"reporter": "F.4th"}]})
+    assert d["decision"] == "write" and d["circuit"] == "ca7" and "cache-only" in d["confidence"], d
+    # CACHE-ONLY: coa with no circuit (roster "unknown", F.2d) -> refuse
+    d = derive_coa_state_court({"court": "unknown"}, {"date_filed": "1973-01-01", "citations": [{"reporter": "F.2d"}]})
+    assert d["decision"] == "refuse" and "coa-no-circuit-cache" in d["reason"], d
+    # CACHE-ONLY: no signal at all -> refuse
+    d = derive_coa_state_court({"court": "unknown"}, {"date_filed": "2025-01-01", "citations": []})
+    assert d["decision"] == "refuse" and "no-court-signal" in d["reason"], d
+    # CACHE-ONLY: state from regional reporter + roster state
+    d = derive_coa_state_court({"court": "La. 2017"}, {"date_filed": "2017-10-27", "citations": [{"reporter": "So. 3d"}]})
+    assert d["decision"] == "write" and d["court_level"] == "state" and d["state"] == "la", d
+
+
+def self_test_repair_coa_state_from_cache():
+    self_test_derive_coa_state_pure()
+    tmp = tempfile.mkdtemp(prefix="s2-coastate-selftest-")
+    try:
+        paths = LakePaths(tmp, os.path.join(tmp, "pool"))
+        paths.ensure()
+
+        def stub_row(rid, cluster_id):
+            return {"record_id": rid, "record_id_status": "resolved", "source": "S6-SEED",
+                    "stub": True, "caption": rid, "status": "verified_identity",
+                    "lane_status": frontier_stub_lane_status(), "counts": {}, "cluster_id": cluster_id}
+        rids = ["coa--1", "state--2", "dctrap--3", "frederick--4", "uncached--5", "cachecoa--6"]
+        manifest_data = {"schema_version": "s2.manifest.v1", "generated_at": iso_now(),
+                         "records": [stub_row("coa--1", 1), stub_row("state--2", 2), stub_row("dctrap--3", 3),
+                                     stub_row("frederick--4", 4), stub_row("uncached--5", 5), stub_row("cachecoa--6", 6)]}
+        write_json(paths.manifest, manifest_data)
+        manifest = ManifestStore(paths.manifest)
+        journal = Journal(os.path.join(tmp, "journal.jsonl"), "selftest")
+
+        def seed(rid, court, reporters):
+            rec = empty_record_shell(rid, manifest.by_record_id[rid], "selftest")
+            rec["status"] = "verified_identity"
+            rec["identity"].update({"cluster_id": manifest.by_record_id[rid]["cluster_id"],
+                                    "court": court, "court_level": None, "circuit": None, "state": None,
+                                    "year": None, "date_decided": None, "docket": None})
+            write_case_record(paths, rec)
+        seed("coa--1", "11th Cir. 2002", ["F.3d"])
+        seed("state--2", "La. 2017", ["So. 3d", "WL"])
+        seed("dctrap--3", "D.C. Court of Appeals 2025", [])
+        seed("frederick--4", "Mich. 2017", ["NY Slip Op"])
+        seed("uncached--5", "5th Cir. 2024", [])
+        seed("cachecoa--6", "9th Cir. 2021", ["F.4th"])
+
+        clusters = {
+            1: {"id": 1, "date_filed": "2002-09-18", "citations": [{"reporter": "F.3d"}], "docket": "https://x/dockets/11/"},
+            2: {"id": 2, "date_filed": "2017-10-27", "citations": [{"reporter": "So. 3d"}], "docket": "https://x/dockets/22/"},
+            3: {"id": 3, "date_filed": "2025-08-28", "citations": [], "docket": "https://x/dockets/33/"},
+            4: {"id": 4, "date_filed": "2025-05-08", "citations": [{"reporter": "NY Slip Op"}], "docket": "https://x/dockets/44/"},
+            6: {"id": 6, "date_filed": "2021-09-21", "citations": [{"reporter": "F.4th"}], "docket": "https://x/dockets/66/"},
+        }
+        dockets = {
+            11: {"court_id": "ca11", "docket_number": "01-15506"},
+            22: {"court_id": "la", "docket_number": "No. 2017-KK-0954"},
+            33: {"court_id": "dc", "docket_number": "23-CF-0388"},
+            44: {"court_id": "mich", "docket_number": "154407"},
+            66: {"court_id": "ca9", "docket_number": "18-50440"},
+        }
+        courts = {
+            "ca11": {"jurisdiction": "F", "citation_string": "11th Cir."},
+            "la": {"jurisdiction": "S", "citation_string": "La."},
+            "dc": {"jurisdiction": "S", "citation_string": "D.C."},
+            "mich": {"jurisdiction": "S", "citation_string": "Mich."},
+            "ca9": {"jurisdiction": "F", "citation_string": "9th Cir."},
+        }
+
+        class CacheClient:
+            def __init__(self, max_calls=0):
+                self.budget = CallBudget(max_calls=max_calls)
+            def get_cluster(self, cluster_id, record_id=None, step=None):
+                if int(cluster_id) not in clusters:
+                    raise IngestInterrupted("not_cached", record_id=record_id, step=step)
+                return clusters[int(cluster_id)]
+            def get_docket(self, docket_id, record_id=None, step=None):
+                return dockets[int(docket_id)]
+            def get_court(self, court_id, record_id=None, step=None):
+                return courts[str(court_id)]
+
+        # docket-authoritative over all 6
+        result = repair_coa_state_from_cache(
+            paths, manifest, journal, CacheClient(max_calls=None),
+            ["coa--1", "state--2", "dctrap--3", "frederick--4", "uncached--5", "cachecoa--6"],
+            allow_docket_fetch=True)
+        assert set(result["repaired"]) == {"coa--1", "state--2", "dctrap--3", "cachecoa--6"}, result
+        assert result["queued"] == ["uncached--5"], result  # cluster 5 not cached
+        assert [e["record_id"] for e in result["escalated"]] == ["frederick--4"], result
+        assert "state-mismatch" in result["escalated"][0]["reason"], result
+
+        coa1 = load_case_record(paths, "coa--1")["identity"]
+        assert coa1["court_level"] == "coa" and coa1["circuit"] == "ca11" and coa1["court_id"] == "ca11", coa1
+        assert coa1["year"] == 2002 and coa1["docket"] == "01-15506", coa1
+        assert coa1["court"] == "11th Cir. 2002", coa1
+        st2 = load_case_record(paths, "state--2")["identity"]
+        assert st2["court_level"] == "state" and st2["state"] == "la", st2
+        dc3 = load_case_record(paths, "dctrap--3")["identity"]
+        assert dc3["court_level"] == "state" and dc3["state"] == "dc" and dc3.get("circuit") is None, dc3
+        # frederick NOT written (escalated)
+        assert load_case_record(paths, "frederick--4")["identity"]["court_level"] is None
+        # manifest rows synced
+        assert manifest.by_record_id["coa--1"]["court_level"] == "coa"
+        assert manifest.by_record_id["dctrap--3"]["court_level"] == "state"
+
+        # idempotence: re-run confirms, does not re-repair
+        result2 = repair_coa_state_from_cache(
+            paths, manifest, journal, CacheClient(max_calls=None), ["coa--1"], allow_docket_fetch=True)
+        assert result2["confirmed"] == ["coa--1"] and result2["repaired"] == [], result2
+
+        # CACHE-ONLY mode (no docket): clean coa writes; state writes; the docket
+        # is never fetched. Use a fresh lake to avoid the already-repaired rows.
+        tmp2 = tempfile.mkdtemp(prefix="s2-coastate-cacheonly-")
+        try:
+            p2 = LakePaths(tmp2, os.path.join(tmp2, "pool")); p2.ensure()
+            md2 = {"schema_version": "s2.manifest.v1", "generated_at": iso_now(),
+                   "records": [stub_row("c6", 6), stub_row("nocirc", 7)]}
+            write_json(p2.manifest, md2)
+            m2 = ManifestStore(p2.manifest)
+            j2 = Journal(os.path.join(tmp2, "journal.jsonl"), "selftest2")
+            def seed2(rid, court, reporters, cid, cl):
+                rec = empty_record_shell(rid, m2.by_record_id[rid], "selftest2")
+                rec["status"] = "verified_identity"
+                rec["identity"].update({"cluster_id": cid, "court": court, "court_level": None,
+                                        "circuit": None, "state": None, "year": None, "date_decided": None})
+                write_case_record(p2, rec)
+                cl[cid] = {"id": cid, "date_filed": "2021-01-01",
+                           "citations": [{"reporter": r} for r in reporters], "docket": "https://x/dockets/%d/" % cid}
+            cache_clusters = {}
+            seed2("c6", "9th Cir. 2021", ["F.4th"], 6, cache_clusters)
+            seed2("nocirc", "U.S. Court of Appeals", ["F.3d"], 7, cache_clusters)
+            class CacheOnly(CacheClient):
+                def get_cluster(self, cluster_id, record_id=None, step=None):
+                    return cache_clusters[int(cluster_id)]
+                def get_docket(self, *a, **k):
+                    raise AssertionError("cache-only mode must not fetch dockets")
+            r3 = repair_coa_state_from_cache(p2, m2, j2, CacheOnly(max_calls=0),
+                                             ["c6", "nocirc"], allow_docket_fetch=False)
+            assert r3["repaired"] == ["c6"], r3
+            assert [e["record_id"] for e in r3["escalated"]] == ["nocirc"], r3
+            assert "coa-no-circuit-cache" in r3["escalated"][0]["reason"], r3
+            assert load_case_record(p2, "c6")["identity"]["circuit"] == "ca9"
+        finally:
+            shutil.rmtree(tmp2)
+
+        # out-of-scope status fails closed on the whole batch
+        manifest.by_record_id["coa--1"]["status"] = "verified"
+        try:
+            repair_coa_state_from_cache(paths, manifest, journal, CacheClient(), ["coa--1"], allow_docket_fetch=True)
+        except SystemExit:
+            pass
+        else:
+            raise AssertionError("repair_coa_state_from_cache accepted a non-verified_identity row")
+    finally:
+        shutil.rmtree(tmp)
+
+
 def run_self_tests():
     self_test_record_ids()
     self_test_precedence()
@@ -10098,6 +10891,7 @@ def run_self_tests():
     self_test_enrich_citations()
     self_test_apply_web_cites()
     self_test_repair_identity_from_cache()
+    self_test_repair_coa_state_from_cache()
     print("self-test passed")
 
 
@@ -10123,6 +10917,8 @@ def parse_args(argv):
     parser.add_argument("--enrich-citations", help="bounded: populate citations.display on identity-only R8-WORKLIST stubs from their verified cluster.citations[] (E4); one paced cluster fetch/row, resumable, status untouched")
     parser.add_argument("--apply-web-cites", help="offline (R8 R3): land dual-leg web-recovered official cites (source web-dual-leg + web_legs trail) or journal slip-only terminals onto citations-empty verified_identity rows")
     parser.add_argument("--repair-identity-from-cache", action="append", default=[], help="cache-served (R8 addendum): re-derive court/date/year for a verified_identity row from its cached cluster; a cache miss is queued for the CL lane; repeatable")
+    parser.add_argument("--repair-coa-state-from-cache", action="append", default=[], help="R8 addendum #2: re-derive court_level (+circuit/state/year/docket) for a coa/state residue verified_identity row; cache-only by default; repeatable")
+    parser.add_argument("--repair-coa-state-allow-docket-fetch", action="store_true", help="opt-in gate for --repair-coa-state-from-cache: permit the paced serial CL lane to fetch the docket + court object for an authoritative court_id/jurisdiction derivation (cache-first)")
     parser.add_argument("--elevate-off-cl", help="elevate a terminal not_found record using an orchestrator-prepared off-CL adjudication file")
     parser.add_argument("--adjudication", help="JSON adjudication file required by --elevate-off-cl")
     parser.add_argument("--token-path", default=TOKEN_PATH, help="CourtListener token path")
