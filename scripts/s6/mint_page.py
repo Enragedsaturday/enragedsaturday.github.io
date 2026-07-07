@@ -101,6 +101,7 @@ REFUSE_NO_LAKE_RECORD = "no-lake-record"
 REFUSE_WRONG_STATUS = "wrong-status"
 REFUSE_NOT_A_STUB = "not-a-stub"
 REFUSE_MISSING_CITATION = "record-missing-citation"
+REFUSE_SLIP_INCOMPLETE = "record-slip-identity-incomplete"  # slip_only but no docket/court/year
 REFUSE_STEM_RESERVED = "stem-contains-double-dash"
 REFUSE_STEM_COLLISION = "stem-collision-distinct-case"
 REFUSE_PAYLOAD_INVALID = "payload-invalid"
@@ -354,6 +355,52 @@ def as_of_to_iso(as_of):
     if "T" in s or " " in s:
         return s.replace(" ", "T")
     return s  # bare date; project.date_from_record slices [:10]
+
+
+# --------------------------------------------------------------------------
+# slip-only support (S2 A3 slip precedent): a real case whose reporter cite does
+# not exist yet, marked EXPLICITLY on the lake record (citations.slip_only: true).
+# --------------------------------------------------------------------------
+
+def record_is_slip_only(record):
+    """True iff the lake record carries the EXPLICIT slip-only marker (never
+    inferred from an absent citation)."""
+    return (record.get("citations") or {}).get("slip_only") is True
+
+
+def slip_court_abbr(record):
+    """Bluebook-ish court abbreviation for a slip cite, from identity."""
+    ident = record.get("identity") or {}
+    level = ident.get("court_level")
+    if level == "scotus":
+        return "U.S."
+    if level == "coa":
+        circ = ident.get("circuit")
+        return s2project.circuit_label(circ) if circ else None
+    if level == "state":
+        return ident.get("state") or None
+    return None
+
+
+def derive_slip_cite(record):
+    """PROPOSED slip-opinion cite form for the header + Case cell, behind the
+    citations.slip_only marker (FLAGGED FOR RATIFICATION — S2 A3 sanctions slip
+    PINPOINTS, not a slip citation display; S5 R3 sanctions no slip header form).
+    Bluebook slip form: `No. <docket>, slip op. (<court> <year>)`. Returns None if
+    identity is too sparse for any honest cite (no docket AND no court/year)."""
+    ident = record.get("identity") or {}
+    docket = ident.get("docket")
+    year = ident.get("year")
+    court = slip_court_abbr(record)
+    tail_parts = [p for p in (court, str(year) if year else None) if p]
+    tail = "(%s)" % " ".join(tail_parts) if tail_parts else ""
+    if docket:
+        head = "No. %s, slip op." % docket
+    elif tail:
+        head = "slip op."
+    else:
+        return None
+    return ("%s %s" % (head, tail)).strip()
 
 
 def homes_roles_desync(row):
@@ -783,6 +830,10 @@ def plan_mint(record_id, payload_path, worklist_path, lake_root, content_root,
             projection = s2project.project_record(promoted_rec)
         except ValueError as exc:
             return refuse("projection-failed", str(exc))
+        if not projection.get("citation") and record_is_slip_only(promoted_rec):
+            sc = derive_slip_cite(promoted_rec)
+            if sc:
+                projection["citation"] = sc
         holding = payload_fm.get("holding") or ""
         primary = primary_home_link(row)
         rc_born = promoted_rec.get("status") or born_status
@@ -868,10 +919,23 @@ def plan_mint(record_id, payload_path, worklist_path, lake_root, content_root,
         projection = s2project.project_record(promoted)
     except ValueError as exc:
         return refuse("projection-failed", str(exc))
+    # slip-only support: an EXPLICIT citations.slip_only marker (S2 A3 precedent)
+    # lets a real case whose reporter cite does not exist yet mint with an honest
+    # slip form; `record-missing-citation` stays exactly as-is for UNMARKED rows.
+    slip_only = record_is_slip_only(record)
+    slip_cite = None
     if not projection.get("citation"):
-        return refuse(REFUSE_MISSING_CITATION,
-                      "projected citation is empty for %r — the stub's citations lane "
-                      "must be populated (S2 builder) before R8 mint" % record_id)
+        if slip_only:
+            slip_cite = derive_slip_cite(promoted)
+            if not slip_cite:
+                return refuse(REFUSE_SLIP_INCOMPLETE,
+                              "record %r is slip_only but its identity lacks a docket AND a "
+                              "court/year — cannot derive an honest slip cite; complete "
+                              "identity before mint" % record_id)
+        else:
+            return refuse(REFUSE_MISSING_CITATION,
+                          "projected citation is empty for %r — the stub's citations lane "
+                          "must be populated (S2 builder) before R8 mint" % record_id)
 
     # payload
     if not payload_path or not os.path.exists(payload_path):
@@ -883,6 +947,12 @@ def plan_mint(record_id, payload_path, worklist_path, lake_root, content_root,
                       errors=body_errs)
 
     frontmatter, projection = assemble_frontmatter(promoted, row, payload_fm, stem)
+    if slip_cite:
+        # inject the honest slip cite into the frontmatter + projection (the
+        # projector emits no cite for a slip-only record) so the page's citation,
+        # the Case-cell, and the ledger all carry the slip form.
+        frontmatter["citation"] = slip_cite
+        projection["citation"] = slip_cite
     page_text = render_page(frontmatter, body)
     page_abs = os.path.join(content_root, "cases", stem + ".md")
     page_rel = os.path.relpath(page_abs, os.path.dirname(content_root))
@@ -1487,6 +1557,44 @@ def self_test():
                           pw["lake_rename"]["record"])   # new present WHILE old still present
         check("wedged-partial (dual-record) refused (F-R8-02)",
               mint(w, "fixture-alpha--900001", payload).get("code") == REFUSE_WEDGED_PARTIAL)
+
+        # ---- group F: slip-only support (S2 A3) ----
+        fs = setup(os.path.join(root, "F"))
+        slipstub = read_json(os.path.join(fx, "stub-fixture-slip.json"))
+        _write_json(os.path.join(fs["lr"], "cases", "fixture-slip--900700.json"), slipstub)
+        mani = read_json(os.path.join(fs["lr"], MANIFEST_NAME))
+        mani["records"].append({"record_id": "fixture-slip--900700", "stub": True,
+                                "status": "verified_identity", "slug": "fixture-slip",
+                                "caption": "Fixture Slip Case", "page_path": None})
+        # an unmarked no-cite stub (marker removed) to prove the refusal is unchanged
+        nocite = read_json(os.path.join(fx, "stub-fixture-slip.json"))
+        nocite["record_id"] = "fixture-nocite--900701"
+        nocite["citations"].pop("slip_only", None)
+        nocite["citations"].pop("slip_only_provenance", None)
+        _write_json(os.path.join(fs["lr"], "cases", "fixture-nocite--900701.json"), nocite)
+        mani["records"].append({"record_id": "fixture-nocite--900701", "stub": True,
+                                "status": "verified_identity", "slug": "fixture-nocite",
+                                "caption": "Fixture Nocite Case", "page_path": None})
+        _write_json(os.path.join(fs["lr"], MANIFEST_NAME), mani)
+        wl_slip = os.path.join(root, "wl-slip.json")
+        _write_json(wl_slip, {"rows": [
+            {"record_id": "fixture-slip--900700", "caption": "Fixture Slip Case", "leg": "sweep",
+             "prong": "a", "homes": ["doctrine/Fixture Doctrine.md"],
+             "roles": [{"home": "doctrine/Fixture Doctrine.md", "role": "Key"}]},
+            {"record_id": "fixture-nocite--900701", "caption": "Fixture Nocite Case", "leg": "roster",
+             "prong": "a", "homes": ["doctrine/Fixture Doctrine.md"],
+             "roles": [{"home": "doctrine/Fixture Doctrine.md", "role": "Key"}]}]})
+        p = mint(fs, "fixture-slip--900700", os.path.join(fx, "payload-slip.md"), wl=wl_slip)
+        check("slip-only marked row mints (S2 A3)", p.get("ok") and not p.get("refused"))
+        check("slip cite injected into frontmatter",
+              "No. 23-1197, slip op. (U.S. 2026)" in (p.get("page", {}) or {}).get("text", ""))
+        check("slip cite in ledger + home_rows",
+              p["ledger"]["row"]["cite"] == "No. 23-1197, slip op. (U.S. 2026)"
+              and p["ledger"]["row"]["home_rows"][0]["cite"] == "No. 23-1197, slip op. (U.S. 2026)")
+        # UNMARKED no-cite row still refuses record-missing-citation (unchanged)
+        p = mint(fs, "fixture-nocite--900701", os.path.join(fx, "payload-alpha.md"), wl=wl_slip)
+        check("unmarked no-cite row still refuses (record-missing-citation)",
+              p.get("code") == REFUSE_MISSING_CITATION)
 
     ok = all(v for _l, v in results)
     sys.stderr.write("[self-test] %s (%d/%d)\n"

@@ -650,3 +650,30 @@ fixtures mid-work (benign, reconciled this commit). Known-endemic corpus reds un
 ×48 / LINT-5 ×46, specimen-triggered, S8/S9 remit). Mintable arithmetic: 148 = 15 minted + 3 W1
 skips + 16 recovery-unblocked + 13 R1-pending + 15 slip-only + 4 R3-escalated + rest already
 mintable; W9 tail sweeps stragglers.
+
+**W2 CLOSED + CONSOLIDATED REPAIR + SLIP-ONLY SUPPORT (2026-07-07):** W2: **11 minted** (4 sweep
+§1983/QI: Nance·Perttu·Tanzin·Uzuegbunam + all 7 packet-B: Bennis(+Calero note)·G.M.Leasing·
+Heller-NY(caption-trap vs DC-v-Heller)·Carpenter-remand-926-F.3d-313(caption-trap vs SCOTUS
+Carpenter — spot-checked exemplary, ^pin-313)·Verdugo(corrected 494 U.S. 259)·Wyman·Ziglar), each
+identity re-verified vs cluster pre-authoring; 5 journaled skips (4 slip-only deferred-recovery +
+zorn data-escalation); ~35 MCP calls 0×429; mint-gate lints 0 findings; body-only prose
+finalization (LINT-9 ×6/LINT-2 ×3/dead-wikilinks ×4 on own fresh pages) RATIFIED (W1 class; S9
+certifies); corpus HIGH 4742→4731; build 597/2144 OK; Case Index 495 rows. ∥ CONSOLIDATED REPAIR
+(35 CL calls REST-token — MCP lane unauthorized in that env, honest lane note): R1 13/13 re-keyed
+verified_identity (scoped --smoke per row; unscoped --readjudicate-file now UNSAFE post-W1 —
+would re-fetch minted pages, documented); 64 SCOTUS false-Historical repaired (0 remain); R3-esc
+4/4 = one frontier mis-key CLASS (roster year unset → search grabbed 2025 same-surname cases) —
+black/young/williams/lewis re-keyed dual-leg; CR-13/14 landed (project.py fail-closed dates +
+pre-validate, 9/9 + idempotent + mint 37/37); Gutierrez text FOUND (plain_text 117KB — MCP
+read_document is html_with_citations-BLIND; wave order amended w/ the fallback + stop-if-
+unauthorized rule); zorn(corrupt Strike-3 cluster)+chapman(cert-orders mis-key, EXCLUDE-remit
+anyway) left honest. ORCHESTRATOR: 17-row re-key remap applied to signed worklist+wave-plan
+(journaled in-row); slip-only mint support RATIFIED both flags (Bluebook slip header `No. <dkt>,
+slip op. (<court> <yr>)` behind explicit citations.slip_only marker — S9 to sample; stamper in
+scripts/s6 since scripts/s2 wasn't free — builder's gate check caught my stale premise);
+**stamp run EXECUTED at this gate: 15/15 stamped, 0 refused** (zorn stamped but still refuses
+mint on identity-incomplete + corrupt-cluster escalation — belt+braces held). Mint self-tests
+41/41. **Next repair queue (pre-W3, blocking 8/19 W3 rows):** 41 coa + 17 state court_level=
+"other" residue (extend --repair-identity-from-cache w/ court→circuit/state derivation) + 9
+slip-identity completions + zorn off-CL identity decision. Scoreboard: 26/148 minted, mintable
+122+6-slip=near-full, envelope ~76.3%, 0×429 run-wide.

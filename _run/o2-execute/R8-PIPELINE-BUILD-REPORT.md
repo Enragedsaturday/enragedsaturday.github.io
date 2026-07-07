@@ -389,3 +389,61 @@ verified` + no draft → 1 HIGH).
 unverified-unbannered on the minted pages, **0 newly introduced, 0 other deltas** (the 15 were the
 only LINT-6 violations in the corpus). Files touched: `scripts/lint/lint6_treatment_status.py` + the
 three fixtures + this addendum (no mint change, no lake/content writes, no `scripts/s2/`).
+
+---
+
+## 12. Addendum — slip-only support (S2 A3 slip precedent, 2026-07-07)
+
+The mint must support **slip-only** rows — real cases (mostly OT2025) whose reporter cite does not
+exist yet — instead of hard-refusing `record-missing-citation` (which conflated "no cite exists yet"
+with "cite missing/unverified"). Adjudicated per R8-CITE-RECOVERY-WORKORDER §R3.3 follow-up.
+
+**Trigger = explicit marker, never inference.** The mint keys off `citations.slip_only: true` on the
+lake record — never off an absent citation. `record-missing-citation` is UNCHANGED for unmarked rows
+(self-tested: `unmarked no-cite row still refuses`).
+
+**Stamp surface (delivered, self-tested; NOT run on real records this session).**
+`scripts/s6/stamp_slip_only.py` — bounded, journaled, dry-run default, `--write` guarded, `--as-of`
+required. It stamps `citations.slip_only: true` + a `citations.slip_only_provenance` trail
+(`{source, note, as_of, by, legs[]}`) onto EXACTLY the slip-only allowlist —
+`_run/o2-execute/R8-R3-web-cites.jsonl` rows with `slip_only: true` (**15**: Mendoza, Carter,
+Robinson, Larson, Davis, Holcomb, Hunt, Ruiz, Lee, Zorn, District of Columbia v. R.W., Landor,
+Olivier, Konan, GEO Group). It **refuses** any record_id not in the allowlist, any record already
+carrying a real citation, and is idempotent (already-stamped → no-op). Self-test 7/7 (incl. a
+stamped record validating clean against the live LINT-13 schema). **Placement note:** the coordinator
+said `scripts/s2` is free, but `git status` shows `M scripts/s2/project.py` (the repair lane's
+uncommitted CR-13/14 work), so per the coordinator's own "confirm no other lane's uncommitted
+scripts/s2 work" gate I kept the standalone in `scripts/s6/` (its own lane, alongside `mint_page.py`)
+rather than adding to `scripts/s2/ingest.py`; the orchestrator may relocate it later.
+
+**Mint slip cite (PROPOSED — flagged for ratification).** S2 A3 sanctions slip *pinpoints*, not a
+slip citation display; S5 R3's header line sanctions no slip form. I implemented the Bluebook slip
+form behind the marker: `derive_slip_cite` → **`No. <docket>, slip op. (<court> <year>)`** (e.g.
+`No. 23-1197, slip op. (U.S. 2026)` for Landor), injected into the born page's `citation`
+frontmatter, the Case-cell, and the authored-ledger `cite` + `home_rows[].cite`. If a marked
+record's identity lacks a docket AND a court/year, the mint refuses with a distinct
+`record-slip-identity-incomplete` (never a degenerate `slip op. ()`).
+
+**Readiness (surfaced, not blocking):** after stamping, **6 of 15 mint now** (docket+court+year
+present: Robinson, D.C. v. R.W., Landor, Olivier, Konan, GEO Group); **9 need identity completion
+first** (docket/court/year absent on the record — the JSONL notes have them, the identity block does
+not: Mendoza, Carter, Larson, Davis, Holcomb, Hunt, Ruiz, Lee, Zorn) — an S2 identity task, distinct
+from the slip marker.
+
+**LINT-13/16.** Schema extended additively: `citations.slip_only` (boolean) + `slip_only_provenance`
+(object) added to `definitions.citations.properties`, NOT to `required`, `web_legs`/`if-then`
+untouched — full-lake LINT-13 stays **0**; a stamped record validates clean. Fixtures:
+`lint-13-record-slip-only-pass.json` (0 viol) + `lint-13-record-slip-only-malformed-fail.json`
+(missing-`by` → 1 viol). LINT-16: a slip born page has no case tables (only the R5 carve-out), and
+the slip cite carries no ISO-date/weight token, so LINT-16 passes (mint self-test stages LINT-15/16/14
+on the born page → clean). Mint self-test **41/41**, specimen PASS.
+
+**EXACT ready-to-run stamp command (at the next orchestrator gate, after W2 pauses):**
+```
+python3 scripts/s6/stamp_slip_only.py --allowlist _run/o2-execute/R8-R3-web-cites.jsonl --as-of 2026-07-07 --write
+```
+(Dry-run — same without `--write` — was run this session: 15 targets, 0 written, 0 refused.)
+Files touched: `_overhaul2/lake/_schema.json`, `scripts/s6/{mint_page.py, stamp_slip_only.py}`, and
+fixtures (`scripts/s6/fixtures/{stub-fixture-slip.json, payload-slip.md}`,
+`scripts/lint/fixtures/lint-13-record-slip-only-{pass,malformed-fail}.json`) + this addendum. No real
+lake-record writes, no `content/`, no `scripts/s2/`.

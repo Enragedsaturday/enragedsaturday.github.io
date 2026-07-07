@@ -27,6 +27,13 @@ Repo `/Users/johngalt/Projects/cssi-quartz`, branch `overhaul2/execute`; **commi
    mints it). Never guess a cite.
 2. Read the opinion through the CourtListener MCP tools (`read_document`/`search_document` on the
    record's `lead_opinion_id`; cached reads are free) — quotes must be VERBATIM from CL text with
+   **[Amended 2026-07-07, W1 lesson]** MCP `read_document` reads `html_with_citations` and is
+   BLIND to opinions whose text lives only in `plain_text` (the W1 Gutierrez false-skip). If a
+   read returns empty/no text, do NOT skip yet: check the cluster's sibling opinions, then the
+   `plain_text` field via the REST method recorded in
+   `_run/o2-execute/CONSOLIDATED-REPAIR-REPORT.md` (Gutierrez §task-5). Only after both are empty
+   is a `cl-text-unavailable` skip honest. If the MCP CL connection itself is unauthorized in
+   your session, STOP and report — do not improvise an alternative CL access path.
    pins per R16 (`^pin-N` anchors in Rule/Application; slip-style where no reporter pagination —
    S2 A3). Single serial lane, pace ≤14/min across the WHOLE batch, 0×429 tolerance; on any
    backoff YIELD and wait — never parallel CL, never relaunch yourself (L4 scar).

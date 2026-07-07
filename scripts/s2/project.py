@@ -5,7 +5,6 @@ Dry-run is the default. Use --write for the guarded content rewrite.
 """
 
 import argparse
-import datetime as dt
 import glob
 import json
 import os
@@ -74,7 +73,15 @@ def date_from_record(record):
     modified = record.get("provenance", {}).get("date_modified")
     if isinstance(modified, str) and len(modified) >= 10:
         return modified[:10]
-    return dt.date.today().isoformat()
+    # CR-13: fail closed rather than guessing today()'s date. A today()
+    # fallback silently writes a fresh lake.projected_at on every new-day run,
+    # producing a phantom diff that defeats the idempotence contract this tool
+    # tests via verify_idempotent()/self_test(). Consistent with the rest of
+    # this file (authority_weight raises rather than guessing a bad circuit).
+    rid = record.get("record_id") or "<unknown>"
+    raise ValueError(
+        "record %r lacks provenance.date_modified; fill it before projection" % rid
+    )
 
 
 def citation_string(citation):
@@ -285,6 +292,7 @@ def dry_run_or_write(paths=None, write=False, lake_root=None):
             "field_counts": {},
             "page_results": [],
             "record_load_warnings": record_diagnostics,
+            "projection_errors": [],
         }
 
     if write and record_diagnostics:
@@ -295,12 +303,55 @@ def dry_run_or_write(paths=None, write=False, lake_root=None):
             "field_counts": {},
             "page_results": [],
             "record_load_warnings": record_diagnostics,
+            "projection_errors": [],
+        }
+
+    skipped_review = set(gate["review"])
+
+    # CR-14: pre-validate project_record() for every matched record BEFORE any
+    # write. authority_weight() (and now date_from_record()) raises for bad
+    # data (e.g. a COA record missing/with an unrecognized circuit). The a13
+    # gate never calls project_record(), so without this pass a bad record only
+    # surfaces once the write loop reaches it — by which point earlier pages may
+    # already have been os.replace()'d, leaving a partially-projected corpus and
+    # a bare traceback instead of the structured refused/exit-2 path. Mirror the
+    # gate's accumulate-then-refuse posture so a bad record blocks the whole
+    # batch cleanly.
+    projection_errors = []
+    for path in case_page_paths(paths):
+        text = serializer.read_markdown(path)
+        fm, _body, _start = serializer.split_frontmatter(text)
+        if fm.get("type") != "case" or serializer.is_draft_page(fm):
+            continue
+        if path in skipped_review:
+            continue
+        rid = fm.get("lake", {}).get("record_id") if isinstance(fm.get("lake"), dict) else None
+        rid = rid or page_stem(path)
+        record = records.get(rid)
+        if not record:
+            continue
+        try:
+            project_record(record)
+        except Exception as exc:  # noqa: BLE001 - surface any bad record, never write a partial batch
+            projection_errors.append({
+                "page": os.path.relpath(path, REPO_ROOT),
+                "record": os.path.relpath(record_paths[rid], REPO_ROOT),
+                "error": "%s: %s" % (type(exc).__name__, exc),
+            })
+    if projection_errors:
+        return {
+            "gate": gate,
+            "refused": True,
+            "pages_changed": 0,
+            "field_counts": {},
+            "page_results": [],
+            "record_load_warnings": record_diagnostics,
+            "projection_errors": projection_errors,
         }
 
     results = []
     field_counts = Counter()
     pages_changed = 0
-    skipped_review = set(gate["review"])
     for path in case_page_paths(paths):
         text = serializer.read_markdown(path)
         fm, _body, _start = serializer.split_frontmatter(text)
@@ -337,6 +388,7 @@ def dry_run_or_write(paths=None, write=False, lake_root=None):
         "field_counts": dict(sorted(field_counts.items())),
         "page_results": results,
         "record_load_warnings": record_diagnostics,
+        "projection_errors": [],
     }
 
 
@@ -366,8 +418,12 @@ def print_summary(result, stream=None):
         stream.write("record load warnings:\n")
         for row in result["record_load_warnings"]:
             stream.write("  WARNING %s: %s\n" % (os.path.relpath(row["path"], REPO_ROOT), row["warning"]))
+    if result.get("projection_errors"):
+        stream.write("projection validation errors (batch refused, no writes): %d\n" % len(result["projection_errors"]))
+        for row in result["projection_errors"]:
+            stream.write("  ERROR %s: %s\n" % (row["page"], row["error"]))
     if result["refused"]:
-        stream.write("projection refused by A13 gate or record load warnings\n")
+        stream.write("projection refused by A13 gate, record load warnings, or projection validation errors\n")
         return
     stream.write("pages that would change: %d\n" % result["pages_changed"])
     stream.write("field counts: %s\n" % json.dumps(result["field_counts"], sort_keys=True))
@@ -461,6 +517,24 @@ def self_test():
     preserve_after = serializer.replace_frontmatter(preserve_source, projected)
     preserve_ok = preserved_bytes(preserve_source) == preserved_bytes(preserve_after)
 
+    # CR-13: date_from_record fails closed (no today() guess) on a record with
+    # no/short provenance.date_modified; a valid date passes straight through.
+    try:
+        date_from_record({"record_id": "no-date", "provenance": {}})
+    except ValueError:
+        cr13_missing_ok = True
+    else:
+        cr13_missing_ok = False
+    try:
+        date_from_record({"record_id": "short-date", "provenance": {"date_modified": "2026"}})
+    except ValueError:
+        cr13_short_ok = True
+    else:
+        cr13_short_ok = False
+    cr13_ok = cr13_missing_ok and cr13_short_ok and date_from_record(
+        {"record_id": "ok", "provenance": {"date_modified": "2026-07-07T12:00:00Z"}}
+    ) == "2026-07-07"
+
     with tempfile.TemporaryDirectory(prefix="s2-project-gate-self-test-") as tmp:
         lake_root = os.path.join(tmp, "lake")
         lake_cases = os.path.join(lake_root, "cases")
@@ -504,7 +578,43 @@ def self_test():
         )
         write_warning_ok = write_warning_result["refused"] and len(write_warning_result["record_load_warnings"]) == 1
 
-    ok = ok and off_cl_ok and preserve_ok and load_warning_ok and missing_status_ok and unmatched_ok and write_warning_ok
+        # CR-14: a batch containing a record that raises on project_record()
+        # (here a COA record with no circuit) must be refused up front with
+        # projection_errors, and NO page in the batch may be partially written.
+        cr14_lake = os.path.join(tmp, "cr14-lake")
+        cr14_cases = os.path.join(cr14_lake, "cases")
+        cr14_pages = os.path.join(tmp, "cr14-pages")
+        os.makedirs(cr14_cases, exist_ok=True)
+        os.makedirs(cr14_pages, exist_ok=True)
+        good_coa = json.loads(json.dumps(record))
+        good_coa["record_id"] = "good-coa"
+        good_coa["identity"]["court_level"] = "coa"
+        good_coa["identity"]["circuit"] = "ca9"
+        bad_coa = json.loads(json.dumps(record))
+        bad_coa["record_id"] = "bad-coa"
+        bad_coa["identity"]["court_level"] = "coa"
+        bad_coa["identity"]["circuit"] = None  # authority_weight raises ValueError
+        for rec in (good_coa, bad_coa):
+            with open(os.path.join(cr14_cases, rec["record_id"] + ".json"), "w", encoding="utf-8") as f:
+                json.dump(rec, f)
+        good_coa_page = os.path.join(cr14_pages, "good-coa.md")
+        for rid in ("good-coa", "bad-coa"):
+            with open(os.path.join(cr14_pages, rid + ".md"), "w", encoding="utf-8") as f:
+                f.write("---\ntype: case\nlake:\n  record_id: %s\ntreatment:\n  field_i_validity: unverified\n---\n" % rid)
+        good_coa_before = serializer.read_markdown(good_coa_page)
+        cr14_dry = dry_run_or_write([cr14_pages], lake_root=cr14_lake)
+        cr14_write = dry_run_or_write([cr14_pages], write=True, lake_root=cr14_lake)
+        good_coa_after = serializer.read_markdown(good_coa_page)
+        cr14_ok = (
+            cr14_dry["refused"]
+            and len(cr14_dry["projection_errors"]) == 1
+            and cr14_dry["projection_errors"][0]["record"].endswith("bad-coa.json")
+            and cr14_write["refused"]
+            and len(cr14_write["projection_errors"]) == 1
+            and good_coa_before == good_coa_after  # good page NOT partially written
+        )
+
+    ok = ok and off_cl_ok and preserve_ok and load_warning_ok and missing_status_ok and unmatched_ok and write_warning_ok and cr13_ok and cr14_ok
     sys.stderr.write("[self-test] project idempotence -> %s\n" % ("OK" if once == twice else "FAIL"))
     sys.stderr.write("[self-test] verified_off_cl off_cl_links projection -> %s\n" % ("OK" if off_cl_ok else "FAIL"))
     sys.stderr.write("[self-test] preserved raw frontmatter bytes -> %s\n" % ("OK" if preserve_ok else "FAIL"))
@@ -512,6 +622,8 @@ def self_test():
     sys.stderr.write("[self-test] missing treatment status gate -> %s\n" % ("OK" if missing_status_ok else "FAIL"))
     sys.stderr.write("[self-test] unmatched case page gate -> %s\n" % ("OK" if unmatched_ok else "FAIL"))
     sys.stderr.write("[self-test] write refused on load warning -> %s\n" % ("OK" if write_warning_ok else "FAIL"))
+    sys.stderr.write("[self-test] CR-13 date_from_record fails closed on missing/short date -> %s\n" % ("OK" if cr13_ok else "FAIL"))
+    sys.stderr.write("[self-test] CR-14 bad record refuses batch, no partial write -> %s\n" % ("OK" if cr14_ok else "FAIL"))
     return 0 if ok else 1
 
 
