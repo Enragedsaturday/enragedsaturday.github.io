@@ -111,6 +111,7 @@ REFUSE_MANIFEST_MISSING_RECORD = "manifest-missing-record"
 REFUSE_WEDGED_PARTIAL = "wedged-partial-state"       # F-R8-02: unrecoverable half-commit
 REFUSE_HOMES_ROLES_DESYNC = "homes-roles-desync"     # F-R8-06: homes[]/roles[] not in bijection
 REFUSE_RECORD_ID_COLLISION = "record-id-collision"   # F-R8-12: global lake record_id clash
+REFUSE_CLUSTER_COLLISION = "cluster-collision"       # F-R8-13: identity.cluster_id already paged
 # Retired loop-2 (R8-PIPELINE-ADJUDICATION E2/E3): the Case-Index insertion and
 # the homes-page row insertion were REMOVED — the Case Index has a single writer
 # (scripts/build_case_index.py, regenerated per wave batch) and S7 materializes
@@ -689,6 +690,44 @@ def global_record_id_conflict(lake_root, stem, from_record_id):
     return p
 
 
+def _cluster_key(value):
+    """Normalize an identity.cluster_id for equality. None/empty -> None (a record
+    with no cluster never collides — off-CL Entick/Wilkes and slip-only rows
+    legitimately share 'no cluster')."""
+    if value is None:
+        return None
+    s = str(value).strip()
+    return s or None
+
+
+def cluster_collision(lake_root, record_id, cluster_id):
+    """F-R8-13 (W5 Davis lesson): even when the stem/record_id is free, a stub whose
+    identity.cluster_id already belongs to ANOTHER lake record (typically an authored
+    page under a DIFFERENT caption — e.g. `united-states-v-davis--4881258` sharing
+    cluster 4881258 with the authored `United States v. Howard Davis` page) would
+    silently double-page the same opinion. Scan every OTHER lake record for a matching
+    identity.cluster_id; return (path, record_id) of the first collider, else
+    (None, None). Excludes our own stub and our own prior promotion (roll-forward).
+    A null/absent cluster_id never collides."""
+    key = _cluster_key(cluster_id)
+    if key is None:
+        return None, None
+    for p in sorted(glob.glob(os.path.join(lake_cases_dir(lake_root), "*.json"))):
+        try:
+            rec = read_json(p)
+        except Exception:
+            continue
+        rid = rec.get("record_id")
+        if rid == record_id:
+            continue                                  # our own stub
+        if promotion_marker(rec) == record_id:
+            continue                                  # our own prior promotion (roll-forward)
+        other = _cluster_key((rec.get("identity") or {}).get("cluster_id"))
+        if other is not None and other == key:
+            return p, rid
+    return None, None
+
+
 # --------------------------------------------------------------------------
 # plan (dry-run) + commit (--write)
 # --------------------------------------------------------------------------
@@ -870,6 +909,22 @@ def plan_mint(record_id, payload_path, worklist_path, lake_root, content_root,
         return refuse(REFUSE_MANIFEST_MISSING_RECORD,
                       "lake record %r is absent from the manifest — manifest ground-truth "
                       "broken; refusing to promote [F-R8-03]" % record_id)
+
+    # F-R8-13 (W5 Davis lesson): the stem/record_id can be free yet the OPINION already
+    # be paged — a stub whose identity.cluster_id already belongs to another lake record
+    # (an authored page under a different caption) would double-page the same decision.
+    # Refuse fail-closed; the orchestrator folds the duplicate (A18 folded-alias) instead
+    # of minting it. Checked after F-R8-12 so a same-stem clash still reports as the more
+    # specific record-id-collision.
+    cluster_id = (record.get("identity") or {}).get("cluster_id")
+    cc_path, cc_rid = cluster_collision(lake_root, record_id, cluster_id)
+    if cc_path:
+        return refuse(REFUSE_CLUSTER_COLLISION,
+                      "identity.cluster_id %r already belongs to lake record %r (%s) — minting "
+                      "would double-page the same opinion under a different caption; fold the "
+                      "duplicate (A18 folded-alias) instead of minting [A18/F-R8-13]"
+                      % (cluster_id, cc_rid, lint_common.relpath(cc_path)),
+                      cluster_id=cluster_id, conflicting_record_id=cc_rid)
 
     # projection + citation completeness gate
     promoted = promote_record(record, stem, born_status, as_of)
@@ -1282,8 +1337,8 @@ def self_test():
     class, and every refusal + rollback path — including the loop-3 additions:
     non-stub gate (F-R8-01), lake-derived crash-tail reconcile + wedged-partial
     (F-R8-02), manifest cross-check + record-flip (F-R8-03), commit-time
-    failure-injection rollback (F-R8-05), homes/roles desync (F-R8-06), and
-    global record_id collision (F-R8-12)."""
+    failure-injection rollback (F-R8-05), homes/roles desync (F-R8-06),
+    global record_id collision (F-R8-12), and cluster_id collision (F-R8-13)."""
     import shutil
     import tempfile
     results = []
@@ -1442,6 +1497,27 @@ def self_test():
         check("global record_id collision refused (F-R8-12)",
               mint(c, "fixture-history--900004", payload_hist).get("code") == REFUSE_RECORD_ID_COLLISION)
 
+        # ---- group CC: cluster-collision (F-R8-13, W5 Davis lesson) ----
+        # A page-backed record under a DIFFERENT caption/stem that shares the stub's
+        # identity.cluster_id would double-page the same opinion: refuse (distinct from
+        # F-R8-12, which is a same-stem record_id clash). Fresh sandbox so the ONLY
+        # collision is on cluster_id, not record_id.
+        cc = setup(os.path.join(root, "CC"))
+        twin = read_json(os.path.join(fx, "stub-fixture-history.json"))
+        twin.update({"record_id": "Foreign Cluster Twin", "stub": False, "status": "verified"})
+        twin["identity"]["case_name"] = "Foreign Cluster Twin"
+        twin.get("provenance", {}).pop("s6_promotion", None)   # cluster_id stays 900004
+        _write_json(os.path.join(cc["lr"], "cases", "Foreign Cluster Twin.json"), twin)
+        ccp = mint(cc, "fixture-history--900004", payload_hist)
+        check("cluster-collision refused (F-R8-13 / Davis)",
+              ccp.get("code") == REFUSE_CLUSTER_COLLISION
+              and ccp.get("conflicting_record_id") == "Foreign Cluster Twin")
+        # control: with no twin, the same row mints clean — the guard does not over-fire
+        # on the ambient distinct-cluster fixtures.
+        cc2 = setup(os.path.join(root, "CC2"))
+        check("no cluster-collision false-positive (distinct clusters)",
+              mint(cc2, "fixture-history--900004", payload_hist).get("ok") is True)
+
         # ---- group D: commit-time failure-injection rollback (F-R8-05) ----
         d = setup(os.path.join(root, "D"))
         p = mint(d, "fixture-alpha--900001", payload)
@@ -1516,9 +1592,12 @@ def self_test():
         mani["records"].append({"record_id": "fixture-slip--900700", "stub": True,
                                 "status": "verified_identity", "slug": "fixture-slip",
                                 "caption": "Fixture Slip Case", "page_path": None})
-        # an unmarked no-cite stub (marker removed) to prove the refusal is unchanged
+        # an unmarked no-cite stub (marker removed) to prove the refusal is unchanged.
+        # It is a DISTINCT case, so give it its own cluster_id (a copy that reused the
+        # slip cluster would trip the new F-R8-13 cluster-collision guard).
         nocite = read_json(os.path.join(fx, "stub-fixture-slip.json"))
         nocite["record_id"] = "fixture-nocite--900701"
+        nocite["identity"]["cluster_id"] = 900701
         nocite["citations"].pop("slip_only", None)
         nocite["citations"].pop("slip_only_provenance", None)
         _write_json(os.path.join(fs["lr"], "cases", "fixture-nocite--900701.json"), nocite)

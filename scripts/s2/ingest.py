@@ -538,21 +538,39 @@ def select_official_cite(citations, court_class, precedence):
     return best[0][2], "selected_rank_%s" % best_rank
 
 
+def _circuit_in_range(n):
+    """Only the 11 numbered federal circuits (1-11) map to a `ca<n>` slug. Any other
+    integer — 0, a stray YEAR (2021), a 3-4-digit token — is NOT a circuit and fails
+    closed to None. Guards the long-lake-township `circuit=ca2021` bare-year artifact
+    (a year in the court string was being coerced into a fake circuit)."""
+    return "ca%d" % n if 1 <= n <= 11 else None
+
+
 def parse_circuit(value):
     if value is None:
         return None
     text = str(value).strip().lower()
     if text in ("cadc", "cafc"):  # CR-03: CourtListener D.C./Federal Circuit slugs
         return text
-    if text.startswith("ca") and text[2:].isdigit():
-        return "ca%s" % int(text[2:])
-    m = re.search(r"(\d+)(?:st|nd|rd|th)?", text)
-    if m:
-        return "ca%s" % int(m.group(1))
+    # D.C./Federal are matched BEFORE any digit scan, so a court string that also
+    # carries a year (e.g. "D.C. Cir. 2021") is not mis-read as ca<year>.
     if "d.c." in text or text in ("dc", "d c"):
         return "cadc"
     if "federal" in text:
         return "cafc"
+    if text.startswith("ca") and text[2:].isdigit():
+        return _circuit_in_range(int(text[2:]))     # "ca2021" -> None (was the bug)
+    # an explicit ordinal circuit token anywhere in the string. Includes the bare
+    # legal abbreviations "2d"/"3d" (Second/Third Cir.) alongside st/nd/rd/th.
+    m = re.search(r"\b(\d+)(?:st|nd|rd|th|d)\b", text)
+    if m:
+        return _circuit_in_range(int(m.group(1)))
+    # else a bare digit token, accepted ONLY when it names a real circuit 1-11
+    # ("9", "circuit 11"). A stray year like 2021 in "Michigan (COA 2021; Sup.
+    # Ct. 2024)" is out of range -> None (fail closed), never ca2021.
+    m = re.search(r"\b(\d+)\b", text)
+    if m:
+        return _circuit_in_range(int(m.group(1)))
     return None
 
 
@@ -6762,6 +6780,19 @@ def self_test_binding_filters():
     assert parse_circuit("4th Cir.") == "ca4"
     assert binding_jurisdiction_filter({"court_level": "coa", "circuit": "cadc"}) == "AND court_id:(scotus OR cadc)"
     assert binding_jurisdiction_filter({"court_level": "coa", "circuit": "cafc"}) == "AND court_id:(scotus OR cafc)"
+    # bare-year / out-of-range digits must NOT coerce into a fake circuit — the
+    # long-lake-township `circuit=ca2021` artifact (a YEAR in the court string).
+    # Only the 11 numbered federal circuits map; everything else fails closed to None.
+    assert parse_circuit("Michigan (COA 2021; Sup. Ct. 2024)") is None
+    assert parse_circuit("ca2021") is None
+    assert parse_circuit("2021") is None
+    assert parse_circuit("9") == "ca9"                 # bare in-range circuit still maps
+    assert parse_circuit("11th Cir.") == "ca11"
+    assert parse_circuit("12th Cir.") is None          # no 12th circuit -> fail closed
+    assert parse_circuit("9th Cir. 2021") == "ca9"     # ordinal wins; the year is ignored
+    assert parse_circuit("2d Cir. en banc") == "ca2"   # legal "2d" abbreviation preserved
+    assert parse_circuit("3d Cir.") == "ca3"           # legal "3d" abbreviation preserved
+    assert binding_jurisdiction_filter({"court_level": "coa", "circuit": "ca2021"}) == "AND court_id:(scotus)"
 
 
 def self_test_token_bucket():

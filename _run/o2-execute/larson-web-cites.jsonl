@@ -1,0 +1,19 @@
+# Prepared Larson official-cite instruction (O2 micro-repair lane, 2026-07-07). NOT executed.
+# state-v-larson--1187724 = State v. Larson, 159 Or. App. 34, 977 P.2d 1175 (1999) (Or. Ct. App.,
+# curtilage/apartment-common-area; CA A96052; filed 1999-03-17; Multnomah County) — identity CORRECT.
+# Enrichment hit official_selection.reason="same_rank_tie" (display=null): the CL-type-2 database
+# cite "1999 Ore. App. LEXIS 384" maps to state-official rank 1 and TIES with 159 Or. App. 34
+# (also type-2/rank-1). Official = 159 Or. App. 34 (Oregon Reports, Court of Appeals — the OFFICIAL
+# reporter per Bluebook T1 and the corpus precedence: type-2 state-official = rank 1; P.2d = regional
+# rank 2). Parallel = 977 P.2d 1175. Two independent sources: Justia (a96052) + Oregon Legislature
+# official annotations (lead "159 Or App 34", parallel "977 P2d 1175").
+#
+# PREFERRED FIX (S2-builder remit; preserves the P.2d parallel, auto-derived, no web legs): add the
+# LEXIS/Westlaw vendor-database reporters to OFFICIAL_SELECTION_NOISE_REPORTERS in ingest.py so the
+# "Ore. App. LEXIS" cite never competes, THEN re-run --enrich-citations on this record -> selects
+# 159 Or. App. 34, parallel 977 P.2d 1175, display "159 Or. App. 34". See MICRO-REPAIR-REPORT §4.
+#
+# ALTERNATIVE (no code change; drops the parallel): --apply-web-cites with this line. Leg 1 (Justia)
+# is confirmed; leg 2 needs a second APPROVED-source URL attached by the S2/W6 lane (Google Scholar /
+# Casemine / Fastcase) — the tool fail-closes until a real, agreeing second leg is present.
+{"record_id": "state-v-larson--1187724", "cite": "159 Or. App. 34", "court_class": "state", "volume": "159", "reporter": "Or. App.", "page": "34", "legs": [{"source": "Justia", "url": "https://law.justia.com/cases/oregon/court-of-appeals/1998/a96052.html", "cite": "159 Or. App. 34"}, {"source": "Google Scholar", "url": "PENDING-S2-LANE-CONFIRM-scholar_case-url-for-State-v-Larson-159-Or-App-34", "cite": "159 Or. App. 34"}]}

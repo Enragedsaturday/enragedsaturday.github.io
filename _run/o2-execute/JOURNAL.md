@@ -771,3 +771,21 @@ zero new-signature lint. Scoreboard: **69/148 minted.** W6 dispatching (15/18 kn
 offline micro-repair lane (cluster-collision guard · long-lake parse_circuit bare-year fix ·
 holcomb/larson/reddick investigations; LAKE mutations incl. davis fold DEFERRED to W6 gate —
 manifest is a shared write-point, no concurrent writers).
+
+**W6 CLOSED + GATE MUTATIONS (2026-07-07):** W6: **15 minted** through a FLAPPING CL token (3
+pre-verified rows minted offline from CL-locked quotes rather than zero-yield — ratified; then
+lane held and 12 read+minted; 0×429, no expired-token retries, no alt paths); 3 known
+deferred-recovery skips (mendoza/porter/trent → W9); Ruckman minted w/ adjudicated ¶-pin (¶ 9) —
+carries 1 disclosed LINT-2 medium because PINCITE_RE lacks ¶ support (the O1-deferred FP class
+resurfaces) → ADJUDICATED option (a): extend PINCITE_RE, fix dispatched w/ Larson LEXIS-noise-
+list item; Ruckman stale-docket + Williams star-sparsity noted for S9. Case Index 553 (+15),
+build 655/2343 green, mint gate 0/0/0 ×15. Micro-repair lane landed earlier: cluster-collision
+mint guard (43/43, real dry-run of davis stub now REFUSED [cluster-collision]) · parse_circuit
+bare-year fix (+2d/3d ordinal regression caught) · holcomb WATCH adjudicated (panel withdrew own
+opinion, reh'g moot, NO successor as of 2026-07 → page-less watch terminal, pointer ca9 23-469 /
+cluster 10365516) · larson official=159 Or. App. 34 (LEXIS-cite tie was spurious → noise-list
+extension approved). GATE MUTATIONS: davis fold APPLIED (A18, alias-folds:1, record kept);
+**reddick ca5→ca3 REFUTED-DECLINED** — orchestrator fetched ground truth at the gate (docket
+7688717 court_id=ca5); the audit flag was wrong, W6's on-read mint correct; verify-before-mutate
+held against the run's own audit artifact. Scoreboard: **84/148 minted** (W1-W6), W7/W8 41 rows
+all-clean-audited, W9 tail ~8. W7 dispatching ∥ lint/serializer micro-fix.
