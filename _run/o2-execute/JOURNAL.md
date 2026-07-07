@@ -752,3 +752,22 @@ wiki_pageless flag (14 rows) reviewed: expected pre-authoring state, signed verd
 Queued micro-items: reddick ca5→ca3 label · larson same_rank_tie tiebreak · long-lake
 parse_circuit bare-year bug (ingest.py:549) · holcomb superseding-opinion check. Readiness:
 W5 16/18 (skips holcomb+lewis) · W6 15/18 · W7/W8 41/41. Scoreboard 54/148; W5 dispatching.
+
+**W5 CLOSED (2026-07-07) — incl. mid-batch CL MCP OUTAGE handled by the book:** lane died after
+the metadata pass (~21 calls in), tools never re-registered across ~8min retries → agent yielded
+with a DEFINITIVE handoff (0 pages authored w/o pincites, wave-plan honestly left pending, cached
+opinion→cluster map preserved) — orchestrator probed lane healthy + RESUMED SAME AGENT (L4
+discipline; no relaunch, no duplicate lane). Outage productive: davis--4881258 diagnosed as
+DUPLICATE of the already-authored Howard-Davis page (same cluster 4881258/997 F.3d 191; the mint
+collision-checks by stem not cluster — would have double-paged) → orchestrator FOLD applied
+(worklist terminal folded-duplicate, W5 row removed; lake fold + cluster-collision mint guard
+queued); hunt RECLASSIFIED mintable (explicit slip_only marker, A3 path). Resume → **15 minted**
+(Ganias·Hanapel·Hay·Hunt-slip·Kolsuz·Lee·Liddell·Loera·Loines·Lyle·Maez·Massenburg·May-Shaw·
+Mayville·Mendez; star-pins where CL paginates, A3 slip pins elsewhere; Kolsuz spot-checked —
+honest reporter+slip-pin hybrid; Loines lake docket mismatch caught+corrected on read 21-1516→
+22-3073); 2 known skips (holcomb withdrawn-opinion, lewis cite-gap); ~61 calls 0×429; LINT-2 ×21
+first-pass remediated body-only → 0; mint gate 0/0/0 ×15; Case Index 538 (+15); build 640 green;
+zero new-signature lint. Scoreboard: **69/148 minted.** W6 dispatching (15/18 known-ready) ∥
+offline micro-repair lane (cluster-collision guard · long-lake parse_circuit bare-year fix ·
+holcomb/larson/reddick investigations; LAKE mutations incl. davis fold DEFERRED to W6 gate —
+manifest is a shared write-point, no concurrent writers).
