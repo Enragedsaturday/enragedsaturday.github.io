@@ -783,3 +783,15 @@ trail notes the source's filing label — a cataloguing artifact is not an ident
 Founders' Constitution (both sources live-confirmed 2026-07-06; BAILII content machine-verified
 via archive.org snapshots because bailii.org bot-challenges non-interactive fetches — snapshot
 URLs recorded in the adjudication trails).
+
+### A18 — R11/A6: `folded-alias` — the lake terminal for alias-folded stub records
+**Source:** packet-A Group-2 execution (2026-07-06, builder lane; orchestrator-ratified same
+session). S6 R9 alias-folds need a machine-terminal for the passed-over record: `folded-alias`
+joins the stub status vocabulary (schema enum + LINT-13). Semantics: the record is subsumed by
+a controlling row — the manifest carries `folded_into`, the journal carries the
+`s6-dedupe-pointer` + `packet-a.alias-fold` events, and provenance warns human readers. A
+folded row is never authored, never counted as pending work, and never deleted (no silent
+merges — R9). Population at signing: morse-v-french--6536632 (→ French v. Merrill) ·
+carman-v-carroll--8693292 (→ carroll-v-carman--2750102) · united-states-v-chatrie--10881683
+(→ Chatrie v. United States page row). The name matches S6 R11's ledger terminal
+`folded-alias` by design.

@@ -3817,6 +3817,269 @@ def apply_readjudications(paths, manifest, journal, identifiers, build_run):
     return reset_ids
 
 
+# ---------------------------------------------------------------------------
+# Packet A (2026-07-06): offline recovered-key landing + caption alias-folds.
+# Both operate on the manifest roster + lake/journal only; no CL calls, no
+# content/ writes. Web keys feed the readjudication ladder; folds retire
+# caption-duplicate stubs into a surviving litigation row.
+# ---------------------------------------------------------------------------
+PACKET_A_LANE = "s2-builder"
+PACKET_A_MODEL = "claude-opus-4-8"
+PACKET_A_WEB_KEYS_PROVENANCE = "s6-webverify dual-leg 2026-07-06"
+PACKET_A_WEB_KEYS_ADJUDICATOR = "packet-a group-1 (user-approved DISPOSITIONS-2026-07-06)"
+PACKET_A_FOLD_ADJUDICATOR = "packet-a group-2 (user-approved DISPOSITIONS-2026-07-06)"
+FOLDED_ALIAS_STATUS = "folded-alias"
+PACKET_A_WEB_KEY_APPLY_FIELDS = (
+    "expected_citation",
+    "citation",
+    "docket",
+    "year",
+    "court",
+    "court_level",
+    "circuit",
+    "state",
+    "date_decided",
+)
+PACKET_A_SCOTUS_MARKERS = {
+    "u s",
+    "us",
+    "scotus",
+    "united states",
+    "u s supreme court",
+    "united states supreme court",
+    "supreme court of the united states",
+}
+PACKET_A_STATE_TOKENS = {
+    "ala": "Alabama", "alaska": "Alaska", "ariz": "Arizona", "ark": "Arkansas",
+    "cal": "California", "calif": "California", "colo": "Colorado", "conn": "Connecticut",
+    "del": "Delaware", "fla": "Florida", "ga": "Georgia", "haw": "Hawaii",
+    "idaho": "Idaho", "ill": "Illinois", "ind": "Indiana", "iowa": "Iowa",
+    "kan": "Kansas", "ky": "Kentucky", "la": "Louisiana", "me": "Maine",
+    "md": "Maryland", "mass": "Massachusetts", "mich": "Michigan", "minn": "Minnesota",
+    "miss": "Mississippi", "mo": "Missouri", "mont": "Montana", "neb": "Nebraska",
+    "nev": "Nevada", "nh": "New Hampshire", "nj": "New Jersey", "nm": "New Mexico",
+    "ny": "New York", "nc": "North Carolina", "nd": "North Dakota", "ohio": "Ohio",
+    "okla": "Oklahoma", "ore": "Oregon", "pa": "Pennsylvania", "ri": "Rhode Island",
+    "sc": "South Carolina", "sd": "South Dakota", "tenn": "Tennessee", "tex": "Texas",
+    "utah": "Utah", "vt": "Vermont", "va": "Virginia", "wash": "Washington",
+    "wva": "West Virginia", "wis": "Wisconsin", "wyo": "Wyoming",
+}
+
+
+def packet_a_normalize_court_text(text):
+    return re.sub(r"\s+", " ", re.sub(r"[^a-z0-9 ]", " ", (text or "").lower())).strip()
+
+
+def packet_a_state_name(court):
+    text = (court or "").strip()
+    if not text:
+        return None
+    key = text.lower().rstrip(".")
+    if key in STATE_NAME_TO_ABBR:
+        return text if any(ch.isupper() for ch in text) else text.title()
+    token = re.split(r"[.\s]+", text)[0].lower()
+    return PACKET_A_STATE_TOKENS.get(token)
+
+
+def packet_a_court_fields(court):
+    """Bounded web court-string -> (court, court_level, circuit, state).
+
+    Scotus and coa land a search court filter; state courts fall to caption +
+    citation + docket rungs (court_search_id returns None for state).
+    """
+    text = (court or "").strip()
+    if packet_a_normalize_court_text(text) in PACKET_A_SCOTUS_MARKERS:
+        return (text or "U.S."), "scotus", None, None
+    _court, level, circuit = s6_candidate_court_fields({"court": text})
+    if level == "coa" and circuit:
+        return text, "coa", circuit, None
+    state = packet_a_state_name(text)
+    if state:
+        return text, "state", None, state
+    return (text or None), None, None, None
+
+
+def read_packet_a_jsonl(path):
+    with open(path, encoding="utf-8") as f:
+        text = f.read()
+    stripped = text.strip()
+    if not stripped:
+        return []
+    if stripped.startswith("["):
+        data = json.loads(stripped)
+        if not isinstance(data, list):
+            raise ValueError("packet-A file JSON must be a list")
+        rows = data
+    else:
+        rows = []
+        for line in text.splitlines():
+            line = line.strip()
+            if not line or line.startswith("#"):
+                continue
+            rows.append(json.loads(line))
+    for entry in rows:
+        if not isinstance(entry, dict):
+            raise ValueError("packet-A row must be a JSON object: %r" % entry)
+    return rows
+
+
+def apply_web_keys(paths, manifest, journal, keys_path, build_run):
+    entries = read_packet_a_jsonl(keys_path)
+    applied = []
+    for entry in entries:
+        raw_id = entry.get("record_id")
+        if not raw_id:
+            raise SystemExit("--apply-web-keys row missing record_id: %r" % entry)
+        record_id = manifest.resolve_record_id(raw_id) or raw_id
+        row = manifest.by_record_id.get(record_id)
+        if not row:
+            raise SystemExit("--apply-web-keys record not found in manifest: %s" % raw_id)
+        status = row.get("status")
+        if status != "fabrication_suspected":
+            raise SystemExit(
+                "--apply-web-keys refuses non-fabrication_suspected row %s (status=%s)"
+                % (record_id, status)
+            )
+        before = {field: row.get(field) for field in PACKET_A_WEB_KEY_APPLY_FIELDS}
+        cite = clean_s6_candidate_value(entry.get("expected_citation") or entry.get("citation"))
+        docket = clean_s6_candidate_value(entry.get("docket"))
+        date_decided = clean_s6_candidate_value(entry.get("date_decided") or entry.get("date"))
+        court_raw = clean_s6_candidate_value(entry.get("court"))
+        court, court_level, circuit, state = packet_a_court_fields(court_raw)
+        if cite:
+            row["expected_citation"] = cite
+            row["citation"] = cite
+        if docket:
+            row["docket"] = docket
+        year = entry.get("year")
+        if isinstance(year, bool):
+            year = None
+        if isinstance(year, int):
+            row["year"] = year
+        elif year:
+            match = re.match(r"^((?:17|18|19|20)\d{2})", str(year))
+            if match:
+                row["year"] = int(match.group(1))
+        if date_decided and re.fullmatch(r"\d{4}-\d{2}-\d{2}", date_decided):
+            row["date_decided"] = date_decided
+        if court:
+            row["court"] = court
+        if court_level:
+            row["court_level"] = court_level
+        if circuit:
+            row["circuit"] = circuit
+        if state:
+            row["state"] = state
+        row["last_record_write"] = iso_now()
+        after = {field: row.get(field) for field in PACKET_A_WEB_KEY_APPLY_FIELDS}
+        provenance = clean_s6_candidate_value(entry.get("source")) or PACKET_A_WEB_KEYS_PROVENANCE
+        journal.append(
+            step="packet-a.web-keys",
+            record_id=record_id,
+            status="applied",
+            before=before,
+            after=after,
+            provenance=provenance,
+            adjudicated_by=PACKET_A_WEB_KEYS_ADJUDICATOR,
+            lane=PACKET_A_LANE,
+            model=PACKET_A_MODEL,
+        )
+        applied.append(record_id)
+    return applied
+
+
+def apply_alias_folds(paths, manifest, journal, folds_path, build_run):
+    entries = read_packet_a_jsonl(folds_path)
+    folded = []
+    for entry in entries:
+        raw_id = entry.get("record_id")
+        raw_survivor = entry.get("folded_into") or entry.get("selected_record_id")
+        if not raw_id or not raw_survivor:
+            raise SystemExit(
+                "--apply-alias-folds row needs record_id + folded_into: %r" % entry
+            )
+        record_id = manifest.resolve_record_id(raw_id) or raw_id
+        row = manifest.by_record_id.get(record_id)
+        if not row:
+            raise SystemExit("--apply-alias-folds record not found in manifest: %s" % raw_id)
+        survivor_id = manifest.resolve_record_id(raw_survivor) or raw_survivor
+        survivor_row = manifest.by_record_id.get(survivor_id)
+        if not survivor_row:
+            raise SystemExit("--apply-alias-folds survivor not found in manifest: %s" % raw_survivor)
+        if survivor_id == record_id:
+            raise SystemExit("--apply-alias-folds cannot fold a record into itself: %s" % record_id)
+        if survivor_row.get("status") == FOLDED_ALIAS_STATUS:
+            raise SystemExit("--apply-alias-folds survivor is itself folded: %s" % survivor_id)
+        if "--" not in record_id:
+            raise SystemExit("--apply-alias-folds refuses to fold a non-stub page record: %s" % record_id)
+        prev_status = row.get("status")
+        if prev_status not in ("fabrication_suspected", "verified_identity"):
+            raise SystemExit(
+                "--apply-alias-folds refuses status %s for %s" % (prev_status, record_id)
+            )
+        controlling = (
+            clean_s6_candidate_value(entry.get("controlling_case"))
+            or survivor_row.get("caption")
+            or survivor_row.get("title")
+            or survivor_id
+        )
+        context = clean_s6_candidate_value(entry.get("context"))
+        findings = entry.get("findings") or []
+        fold_source = clean_s6_candidate_value(entry.get("source")) or "s6-fabrications packet A Group 2"
+        now = iso_now()
+        row["status"] = FOLDED_ALIAS_STATUS
+        row["folded_into"] = survivor_id
+        row["fold_provenance"] = {
+            "controlling_case": controlling,
+            "adjudicated_by": PACKET_A_FOLD_ADJUDICATOR,
+            "source": fold_source,
+            "lane": PACKET_A_LANE,
+            "model": PACKET_A_MODEL,
+            "ts": now,
+        }
+        row["last_record_write"] = now
+        record_json = load_case_record(paths, record_id)
+        if record_json:
+            set_record_status(
+                record_json,
+                FOLDED_ALIAS_STATUS,
+                "packet-a alias-fold into %s" % survivor_id,
+                explicit_adjudication=True,
+            )
+            append_warning(
+                record_json,
+                "folded-alias: subsumed into %s (packet-A Group-2); see _manifest.json folded_into + journal s6-dedupe-pointer"
+                % survivor_id,
+            )
+            write_case_record(paths, record_json)
+        journal.append(
+            step="dedupe",
+            action="s6-dedupe-pointer",
+            status="pointer",
+            record_id=survivor_id,
+            passed_over_record_id=record_id,
+            selected_record_id=survivor_id,
+            controlling_case=controlling,
+            context=context,
+            findings=findings,
+            adjudicated_by=PACKET_A_FOLD_ADJUDICATOR,
+            lane=PACKET_A_LANE,
+            model=PACKET_A_MODEL,
+        )
+        journal.append(
+            step="packet-a.alias-fold",
+            record_id=record_id,
+            status=FOLDED_ALIAS_STATUS,
+            before_status=prev_status,
+            folded_into=survivor_id,
+            controlling_case=controlling,
+            lane=PACKET_A_LANE,
+            model=PACKET_A_MODEL,
+        )
+        folded.append((record_id, survivor_id))
+    return folded
+
+
 def validate_rerun_lanes(lanes):
     lanes = unique_preserve_order(lanes)
     unknown = [lane for lane in lanes if lane not in TREATMENT_LANE_NAMES]
@@ -4942,6 +5205,8 @@ def run_ingest(args):
             or args.rerun_lane
             or args.records
             or args.smoke
+            or args.apply_web_keys
+            or args.apply_alias_folds
         ):
             raise SystemExit("--add-candidates cannot be combined with other action/filter options")
         journal, journal_fallback = writable_repair_journal(paths, journal)
@@ -4980,6 +5245,43 @@ def run_ingest(args):
         print("expected flips: %s" % R15_FLIP_EXPECTED_COUNT)
         print("untouched classes: %s" % json.dumps(result["protected_counts"], sort_keys=True))
         print("status counts: %s" % json.dumps(result["status_counts"], sort_keys=True))
+        return
+    if args.apply_web_keys:
+        if (
+            args.apply_alias_folds
+            or args.elevate_off_cl
+            or args.adjudication
+            or args.readjudicate
+            or args.readjudicate_file
+            or args.rerun_lane
+            or args.records
+            or args.smoke
+            or args.flip_verified
+        ):
+            raise SystemExit("--apply-web-keys cannot be combined with other action/filter options")
+        applied = apply_web_keys(paths, manifest, journal, args.apply_web_keys, run_id)
+        manifest.regenerate_counts()
+        manifest.save()
+        print("journal: %s" % journal_path)
+        print("web keys applied: %s" % len(applied))
+        return
+    if args.apply_alias_folds:
+        if (
+            args.elevate_off_cl
+            or args.adjudication
+            or args.readjudicate
+            or args.readjudicate_file
+            or args.rerun_lane
+            or args.records
+            or args.smoke
+            or args.flip_verified
+        ):
+            raise SystemExit("--apply-alias-folds cannot be combined with other action/filter options")
+        folded = apply_alias_folds(paths, manifest, journal, args.apply_alias_folds, run_id)
+        manifest.regenerate_counts()
+        manifest.save()
+        print("journal: %s" % journal_path)
+        print("alias folds applied: %s" % len(folded))
         return
     if args.elevate_off_cl:
         if args.readjudicate or args.readjudicate_file or args.rerun_lane:
@@ -8515,6 +8817,213 @@ def self_test_flip_verified():
         shutil.rmtree(tmp)
 
 
+def self_test_packet_a_web_keys_landing():
+    tmp = tempfile.mkdtemp(prefix="s2-webkeys-selftest-")
+    try:
+        paths = LakePaths(tmp, os.path.join(tmp, "pool"))
+        paths.ensure()
+
+        def fab_stub(record_id, caption, court_era):
+            return {
+                "record_id": record_id,
+                "record_id_status": "resolved",
+                "source": "S6-SEED/audit_cases.py",
+                "stub": True,
+                "page_path": None,
+                "slug": record_id.rsplit("--", 1)[0],
+                "caption": caption,
+                "court_era": court_era,
+                "status": "fabrication_suspected",
+                "lane_status": frontier_stub_lane_status(),
+                "counts": {},
+                "cluster_id": int(record_id.rsplit("--", 1)[1]),
+            }
+
+        manifest_data = {
+            "schema_version": "s2.manifest.v1",
+            "generated_at": iso_now(),
+            "records": [
+                fab_stub("scotus-case--10601315", "Scotus Case", "1979"),
+                fab_stub("coa-case--8429176", "Coa Case", "2d Cir. en banc"),
+                fab_stub("state-case--10657325", "State Case", "Tenn. 2017"),
+                {
+                    "record_id": "already-verified--12345",
+                    "record_id_status": "resolved",
+                    "source": "S6-SEED/audit_cases.py",
+                    "stub": True,
+                    "caption": "Already Verified",
+                    "status": "verified_identity",
+                    "lane_status": frontier_stub_lane_status(),
+                    "counts": {},
+                    "cluster_id": 12345,
+                },
+            ],
+        }
+        write_json(paths.manifest, manifest_data)
+        manifest = ManifestStore(paths.manifest)
+        journal = Journal(os.path.join(tmp, "journal.jsonl"), "selftest")
+
+        keys_path = os.path.join(tmp, "keys.jsonl")
+        with open(keys_path, "w", encoding="utf-8") as f:
+            f.write(json.dumps({"record_id": "scotus-case--10601315", "expected_citation": "442 U.S. 753", "docket": "77-1497", "year": 1979, "court": "U.S.", "date_decided": "1979-06-20", "source": "dual-leg"}) + "\n")
+            f.write(json.dumps({"record_id": "coa-case--8429176", "expected_citation": "824 F.3d 199", "docket": "12-240-cr", "year": 2016, "court": "2d Cir. en banc", "date_decided": "2016-05-27"}) + "\n")
+            f.write(json.dumps({"record_id": "state-case--10657325", "expected_citation": "517 S.W.3d 60", "docket": "W2014-00931-SC-R11-CD", "year": 2017, "court": "Tenn.", "date_decided": "2017-04-07"}) + "\n")
+
+        applied = apply_web_keys(paths, manifest, journal, keys_path, "selftest")
+        assert applied == ["scotus-case--10601315", "coa-case--8429176", "state-case--10657325"], applied
+
+        scotus = manifest.by_record_id["scotus-case--10601315"]
+        assert scotus["expected_citation"] == "442 U.S. 753"
+        assert scotus["citation"] == "442 U.S. 753"
+        assert scotus["docket"] == "77-1497"
+        assert scotus["year"] == 1979
+        assert scotus["date_decided"] == "1979-06-20"
+        assert scotus["court_level"] == "scotus"
+        assert scotus["court"] == "U.S."
+        assert court_search_id(scotus) == "scotus"
+
+        coa = manifest.by_record_id["coa-case--8429176"]
+        assert coa["court_level"] == "coa"
+        assert coa["circuit"] == "ca2"
+        assert court_search_id(coa) == "ca2"
+        assert coa["docket"] == "12-240-cr"
+
+        state = manifest.by_record_id["state-case--10657325"]
+        assert state["court_level"] == "state"
+        assert state["state"] == "Tennessee"
+        assert court_search_id(state) is None
+        assert state["expected_citation"] == "517 S.W.3d 60"
+
+        rows = [r for r in journal.rows() if r.get("step") == "packet-a.web-keys"]
+        assert len(rows) == 3, rows
+        for row in rows:
+            assert row["status"] == "applied"
+            assert row["lane"] == PACKET_A_LANE and row["model"] == PACKET_A_MODEL
+            assert "before" in row and "after" in row and row.get("provenance")
+        assert rows[0]["before"]["expected_citation"] is None
+        assert rows[0]["after"]["expected_citation"] == "442 U.S. 753"
+
+        # guard: refuse a non-fabrication_suspected row
+        bad = os.path.join(tmp, "bad.jsonl")
+        with open(bad, "w", encoding="utf-8") as f:
+            f.write(json.dumps({"record_id": "already-verified--12345", "expected_citation": "1 U.S. 1"}) + "\n")
+        try:
+            apply_web_keys(paths, manifest, journal, bad, "selftest")
+        except SystemExit:
+            pass
+        else:
+            raise AssertionError("apply_web_keys accepted a non-fabrication_suspected row")
+
+        # guard: refuse an unknown record_id
+        missing = os.path.join(tmp, "missing.jsonl")
+        with open(missing, "w", encoding="utf-8") as f:
+            f.write(json.dumps({"record_id": "ghost--99", "expected_citation": "1 U.S. 1"}) + "\n")
+        try:
+            apply_web_keys(paths, manifest, journal, missing, "selftest")
+        except SystemExit:
+            pass
+        else:
+            raise AssertionError("apply_web_keys accepted an unknown record_id")
+    finally:
+        shutil.rmtree(tmp)
+
+
+def self_test_packet_a_alias_fold():
+    # folded-alias must be a live schema-valid terminal status
+    schema = read_json(os.path.join(os.getcwd(), "_overhaul2", "lake", "_schema.json"))
+    assert FOLDED_ALIAS_STATUS in schema["properties"]["status"]["enum"]
+
+    tmp = tempfile.mkdtemp(prefix="s2-aliasfold-selftest-")
+    try:
+        paths = LakePaths(tmp, os.path.join(tmp, "pool"))
+        paths.ensure()
+        manifest_data = {
+            "schema_version": "s2.manifest.v1",
+            "generated_at": iso_now(),
+            "records": [
+                {
+                    "record_id": "stub-fab--111", "record_id_status": "resolved",
+                    "source": "S6-SEED", "stub": True, "caption": "Stub Fab",
+                    "status": "fabrication_suspected",
+                    "lane_status": frontier_stub_lane_status(), "counts": {}, "cluster_id": 111,
+                },
+                {
+                    "record_id": "stub-vi--222", "record_id_status": "resolved",
+                    "source": "S6-SEED", "stub": True, "caption": "Stub Vi",
+                    "status": "verified_identity",
+                    "lane_status": frontier_stub_lane_status(), "counts": {}, "cluster_id": 222,
+                },
+                {
+                    "record_id": "Survivor Page", "record_id_status": "resolved",
+                    "source": "content/cases", "stub": False, "caption": "Survivor Page",
+                    "page_path": "content/cases/Survivor Page.md",
+                    "status": "verified",
+                    "lane_status": default_lane_status(), "counts": {}, "cluster_id": 333,
+                },
+            ],
+        }
+        write_json(paths.manifest, manifest_data)
+        manifest = ManifestStore(paths.manifest)
+        journal = Journal(os.path.join(tmp, "journal.jsonl"), "selftest")
+
+        for rid, cid in (("stub-fab--111", 111), ("stub-vi--222", 222)):
+            rec = empty_record_shell(rid, manifest.by_record_id[rid], "selftest")
+            rec["status"] = manifest.by_record_id[rid]["status"]
+            rec["identity"]["cluster_id"] = cid
+            write_case_record(paths, rec)
+
+        folds_path = os.path.join(tmp, "folds.jsonl")
+        with open(folds_path, "w", encoding="utf-8") as f:
+            f.write(json.dumps({"record_id": "stub-fab--111", "folded_into": "Survivor Page", "controlling_case": "Survivor Page", "context": "unit"}) + "\n")
+            f.write(json.dumps({"record_id": "stub-vi--222", "folded_into": "Survivor Page", "controlling_case": "Survivor Page"}) + "\n")
+
+        folded = apply_alias_folds(paths, manifest, journal, folds_path, "selftest")
+        assert folded == [("stub-fab--111", "Survivor Page"), ("stub-vi--222", "Survivor Page")], folded
+
+        for rid in ("stub-fab--111", "stub-vi--222"):
+            row = manifest.by_record_id[rid]
+            assert row["status"] == FOLDED_ALIAS_STATUS
+            assert row["folded_into"] == "Survivor Page"
+            assert row["fold_provenance"]["lane"] == PACKET_A_LANE
+            case = load_case_record(paths, rid)
+            assert case["status"] == FOLDED_ALIAS_STATUS
+            assert any("folded-alias" in w for w in case["provenance"]["warnings"])
+
+        pointers = [r for r in journal.rows() if r.get("action") == "s6-dedupe-pointer"]
+        assert len(pointers) == 2, pointers
+        for row in pointers:
+            assert row["status"] == "pointer" and row["step"] == "dedupe"
+            assert row["selected_record_id"] == "Survivor Page"
+            assert row["passed_over_record_id"] in ("stub-fab--111", "stub-vi--222")
+            assert row["lane"] == PACKET_A_LANE and row["model"] == PACKET_A_MODEL
+        fold_rows = [r for r in journal.rows() if r.get("step") == "packet-a.alias-fold"]
+        assert len(fold_rows) == 2
+
+        # guard: fold into self
+        bad = os.path.join(tmp, "bad-self.jsonl")
+        with open(bad, "w", encoding="utf-8") as f:
+            f.write(json.dumps({"record_id": "stub-fab--111", "folded_into": "stub-fab--111"}) + "\n")
+        try:
+            apply_alias_folds(paths, manifest, journal, bad, "selftest")
+        except SystemExit:
+            pass
+        else:
+            raise AssertionError("apply_alias_folds accepted a self-fold")
+
+        # guard: refuse folding a non-stub page record
+        bad2 = os.path.join(tmp, "bad-page.jsonl")
+        with open(bad2, "w", encoding="utf-8") as f:
+            f.write(json.dumps({"record_id": "Survivor Page", "folded_into": "stub-fab--111"}) + "\n")
+        try:
+            apply_alias_folds(paths, manifest, journal, bad2, "selftest")
+        except SystemExit:
+            pass
+        else:
+            raise AssertionError("apply_alias_folds folded a non-stub page record")
+    finally:
+        shutil.rmtree(tmp)
+
+
 def run_self_tests():
     self_test_record_ids()
     self_test_precedence()
@@ -8548,6 +9057,8 @@ def run_self_tests():
     self_test_repair_migration_refs()
     self_test_status_preserve()
     self_test_flip_verified()
+    self_test_packet_a_web_keys_landing()
+    self_test_packet_a_alias_fold()
     print("self-test passed")
 
 
@@ -8567,6 +9078,8 @@ def parse_args(argv):
     parser.add_argument("--repair-failclosed-treatment", action="store_true", help="offline one-shot repair for fail-closed treatment validity seeded by F-S2-31")
     parser.add_argument("--flip-verified", action="store_true", help="offline R15 adjudicated flip from under_review to verified after structural gates")
     parser.add_argument("--add-candidates", help="offline append an S6 candidate queue JSONL as pending frontier stubs")
+    parser.add_argument("--apply-web-keys", help="offline: land recovered dual-leg web search keys onto fabrication_suspected roster rows (packet A step 1)")
+    parser.add_argument("--apply-alias-folds", help="offline: retire caption-duplicate stubs into a surviving litigation row as folded-alias (packet A step 3)")
     parser.add_argument("--elevate-off-cl", help="elevate a terminal not_found record using an orchestrator-prepared off-CL adjudication file")
     parser.add_argument("--adjudication", help="JSON adjudication file required by --elevate-off-cl")
     parser.add_argument("--token-path", default=TOKEN_PATH, help="CourtListener token path")
