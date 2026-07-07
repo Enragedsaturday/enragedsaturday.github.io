@@ -1,9 +1,9 @@
 ---
 title: "Entick v. Carrington"
 type: case
-citation: ""
-parallel_cite: ""
-neutral_cite: ""
+citation: "19 How. St. Tr. 1029 (1765)"
+parallel_cite: "95 Eng. Rep. 807; 2 Wils. K.B. 275"
+neutral_cite: "[1765] EWHC KB J98"
 court: "Court of Common Pleas (England)"
 court_level: other
 circuit: ""
@@ -12,19 +12,19 @@ date_decided: 1765-11-02
 docket: ""
 authority_weight: Historical
 treatment:
-  field_i_validity: unverified
+  field_i_validity: good_law
   as_of_content: 1765-11-02
   as_of_treatment: 2026-06-30
   composite_basis: migration-seed
   composite_basis_ref: Entick v. Carrington
   varies_by_point: false
-  scope_note: "Historical (English origin). Still cited as a foundational source of the Fourth Amendment — the principle that government intrusion on private property and papers requires positive legal authority, and the condemnation of general warrants. Identity confirmed via the authoritative reports (Howell's State Trials; English Reports), not CourtListener (no CL record)."
+  scope_note: "Off-CL record (A16/A17): CL citator lanes intentionally not run. Validity rests on the O1 web-verified page treatment (legacy 'good', as of 2026-06-30) re-seeded post-elevation per the S1 A4 mapping; Entick's foundational status is favorably restated by SCOTUS (Boyd, Jones, Riley). Authority weight remains Historical (English origin)."
   point_overrides: []
 courtlistener:
   opinion_url: ""
   cluster_id: null
   opinion_id: null
-  identity_checked: false
+  identity_checked: true
 homes:
   - page: "[[Common Law Origins]]"
     role: "Key — Anchor (foundational origin)"
@@ -36,8 +36,25 @@ tags: ["case", "historical", "common-law-origins", "general-warrant", "fourth-am
 holding: "A Secretary of State's general warrant to break into a home and seize the owner's books and papers in search of seditious libel is illegal: under the law of England every invasion of private property is a trespass requiring positive legal authority, and no such authority existed for this search and seizure."
 lake:
   record_id: Entick v. Carrington
-  status: not_found
-  projected_at: 2026-07-06
+  status: verified_off_cl
+  projected_at: 2026-07-07
+off_cl_links:
+  - source: BAILII
+    url: "https://www.bailii.org/ew/cases/EWHC/KB/1765/J98.html"
+    confirmed:
+      caption: "Entick v Carrington & Ors"
+      cite: "[1765] EWHC KB J98; 95 ER 807; 19 St Tr 1029; [1558-1774] All ER Rep 41"
+      court: "King's Bench (BAILII retrospective filing label; historical court of decision: Court of Common Pleas, Camden CJ)"
+      date: 1765-11-02
+    checked_date: 2026-07-06
+  - source: "Founders' Constitution"
+    url: "https://press-pubs.uchicago.edu/founders/documents/amendIVs6.html"
+    confirmed:
+      caption: Entick v. Carrington
+      cite: 95 Eng. Rep. 807
+      court: "K.B. (Wilson's-Reports reprint label; historical court of decision: Court of Common Pleas)"
+      date: 1765-11-02
+    checked_date: 2026-07-06
 ---
 
 # Entick v. Carrington

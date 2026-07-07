@@ -752,3 +752,34 @@ enforced by LINT-13 (schema) at build and re-verified at the S9 panel like any i
 case is plausibly outside CL's corpus (pre-1789 English, some state-archaic, foreign); a US case
 that *should* be in CL stays `not_found` pending investigation (R7's "not found ≠ fabricated"
 discipline is unchanged). Expected initial population: exactly one (Entick).
+
+---
+
+## Amendments — 2026-07-06 (EXECUTE run; user decision)
+
+### A17 — R14: whitelist extension for English/foreign-corpus cases (user Option 1)
+**Source:** the R14 decision packet (`~/briefs/2026-07-06-r14-whitelist-english-cases.html`),
+user disposition 2026-07-06: **"Extend for English-corpus cases: BAILII + scholarly/facsimile
+second source"** (Option 1 as recommended).
+
+**Adds to R14 (no text superseded), scoped to cases adjudicated outside CL's corpus (the A16
+scope guard):** the whitelist gains **(a) BAILII** (bailii.org — Free Access to Law; treated as
+official-reporter-equivalent for English case law) and **(b)** the scholarly/facsimile class:
+**Founders' Constitution** (Univ. of Chicago Press scholarly edition) and **English Reports
+facsimile** (CommonLII or an academic-hosted scan of the actual reporter page). The US-centric
+whitelist members are unchanged; the new sources are NOT valid Key-2 evidence for a case CL
+should hold.
+
+**Precision + labeling honesty (recorded so trails stay literal):** (i) a scholarly/facsimile
+source may confirm the decision **date to year precision**; day precision then rides the
+reporter/BAILII record, and the per-source trail states the precision each source actually
+supports — the `confirmed.date` field carries the adjudicated ISO date, never a fabricated one.
+(ii) Where a source's **catalogue label** differs from the historical court of decision (BAILII
+and the Wilson's-Reports reprint file *Entick* under K.B.; the State Trials report and modern
+scholarship agree on C.P., Camden CJ), the record keeps the adjudicated historical court and the
+trail notes the source's filing label — a cataloguing artifact is not an identity doubt.
+
+**Population at signing:** Entick v. Carrington + Wilkes v. Wood, each elevated with BAILII +
+Founders' Constitution (both sources live-confirmed 2026-07-06; BAILII content machine-verified
+via archive.org snapshots because bailii.org bot-challenges non-interactive fetches — snapshot
+URLs recorded in the adjudication trails).

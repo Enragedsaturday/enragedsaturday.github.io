@@ -101,3 +101,14 @@ authority exists for the propositions as cited:
 3. **Group 3: approve the 2 removals** (with re-anchor surgery + tombstones) — [approve /
    hold either for more research]
 4. **Acknowledge Group 4** (no action) — [ack]
+
+---
+
+## DISPOSITIONS RETURNED (2026-07-06)
+
+User: **all four groups approved** (ask 1 approve · ask 2 approve · ask 3 approve both removals
+with re-anchor surgery + tombstones · ask 4 ack). Full record:
+`_run/o2-execute/DISPOSITIONS-2026-07-06.md`. Execution: re-keys + alias-folds →
+`_run/o2-execute/PACKET-A-REKEY-WORKORDER.md` (builder serial lane); removals → orchestrator
+prose-surgery pass after the packet-B panel closes (R4 protocol: mention-site re-anchor +
+omissions-register tombstone + ledger `removed` rows — never silent).

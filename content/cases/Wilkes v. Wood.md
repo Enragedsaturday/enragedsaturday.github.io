@@ -1,9 +1,9 @@
 ---
 title: "Wilkes v. Wood"
 type: case
-citation: ""
-parallel_cite: ""
-neutral_cite: ""
+citation: "19 How. St. Tr. 1153 (1763)"
+parallel_cite: "98 Eng. Rep. 489; Lofft 1"
+neutral_cite: "[1763] EWHC CP J95"
 court: "Court of Common Pleas (England)"
 court_level: other
 circuit: ""
@@ -12,19 +12,19 @@ date_decided: 1763-12-06
 docket: ""
 authority_weight: Historical
 treatment:
-  field_i_validity: unverified
+  field_i_validity: good_law
   as_of_content: 1763-12-06
   as_of_treatment: 2026-06-30
   composite_basis: migration-seed
   composite_basis_ref: Wilkes v. Wood
   varies_by_point: false
-  scope_note: "Historical (English origin). Still cited as a foundational source of the Fourth Amendment's hostility to general warrants and as an early endorsement of exemplary (punitive) damages against officials. Identity confirmed via the authoritative reports (Howell's State Trials; English Reports / Lofft), not CourtListener (no CL record)."
+  scope_note: "Off-CL record (A16/A17): CL citator lanes intentionally not run. Validity rests on the O1 web-verified page treatment (legacy 'good', as of 2026-06-30) re-seeded post-elevation per the S1 A4 mapping; Wilkes' general-warrant condemnation is favorably restated by SCOTUS (Stanford v. Texas, Marcus, Torres v. Madrid). Authority weight remains Historical (English origin)."
   point_overrides: []
 courtlistener:
   opinion_url: ""
   cluster_id: null
   opinion_id: null
-  identity_checked: false
+  identity_checked: true
 homes:
   - page: "[[Common Law Origins]]"
     role: "Key — Anchor (foundational origin)"
@@ -36,8 +36,25 @@ tags: ["case", "historical", "common-law-origins", "general-warrant", "fourth-am
 holding: "A general warrant authorizing officers to search for and seize the papers of unnamed persons suspected of seditious libel is unlawful and 'totally subversive of the liberty of the subject'; a jury may award exemplary damages against the officers both to compensate and to punish and deter the practice."
 lake:
   record_id: Wilkes v. Wood
-  status: not_found
-  projected_at: 2026-07-06
+  status: verified_off_cl
+  projected_at: 2026-07-07
+off_cl_links:
+  - source: BAILII
+    url: "https://www.bailii.org/ew/cases/EWHC/CP/1763/J95.html"
+    confirmed:
+      caption: "Wilkes v Wood (John WILKES v Robert WOOD)"
+      cite: "[1763] EWHC CP J95; 98 ER 489"
+      court: Court of Common Pleas
+      date: 1763-12-06
+    checked_date: 2026-07-06
+  - source: "Founders' Constitution"
+    url: "https://press-pubs.uchicago.edu/founders/documents/amendIVs4.html"
+    confirmed:
+      caption: Wilkes v. Wood
+      cite: "98 Eng. Rep. 489, 498-99"
+      court: C.P.
+      date: 1763-12-06
+    checked_date: 2026-07-06
 ---
 
 # Wilkes v. Wood

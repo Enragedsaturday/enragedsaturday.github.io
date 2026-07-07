@@ -33,12 +33,14 @@ URL_TIMEOUT_SECONDS = 60
 FETCH_RETRY_DELAYS = (5.0, 15.0, 45.0)
 RETRYABLE_HTTP_CODES = {429, 500, 502, 503, 504}
 TRAILING_YEAR_PAREN_RE = r"\s*\([^()]*(?:17|18|19|20)\d{2}\)\s*$"
+TRAILING_PAREN_RE = r"\s*\([^()]*\)\s*$"
 READJUDICATION_FINDINGS = ["F-S2-16", "F-S2-17", "F-S2-18"]
 READJUDICATION_ADJUDICATOR = "orchestrator claude-fable-5"
 S6_CANDIDATE_INTAKE_ADJUDICATOR = "orchestrator claude-fable-5 (R2 gate 2026-07-06)"
 S6_CANDIDATE_SOURCE_PREFIX = "s6-candidates/"
 IDENTITY_PRIMARY_CLUSTER_LIMIT = 10
 IDENTITY_FALLBACK_CLUSTER_LIMIT = 3
+STRONG_IDENTITY_RUNGS = {"citation", "docket_number"}
 READJUDICATION_RESET_FIELDS = ("identity", "citations", "pinpoints", "progeny", "treatment", "off_cl_links")
 READJUDICATION_ROSTER_KEYS = (
     "record_id",
@@ -135,6 +137,11 @@ OFF_CL_ALLOWED_SOURCES = {
     "Cornell LII",
     "Official court",
     "Official reporter",
+    # A17 (2026-07-06): English/foreign-corpus extension — lawful only within the A16
+    # outside-CL-corpus scope guard, never as Key-2 for a case CL should hold.
+    "BAILII",
+    "Founders' Constitution",
+    "English Reports facsimile",
 }
 
 ALLOWED_OPINION_SOURCES = {
@@ -638,6 +645,13 @@ def extract_opinion_id(value, source_label):
 
 def strip_trailing_year_parenthetical(value):
     return re.sub(TRAILING_YEAR_PAREN_RE, "", value or "").strip()
+
+
+def strip_trailing_parenthetical(value):
+    text = str(value or "").strip()
+    while re.search(TRAILING_PAREN_RE, text):
+        text = re.sub(TRAILING_PAREN_RE, "", text).strip()
+    return text
 
 
 def first_party_terms(case_name):
@@ -1490,7 +1504,7 @@ def identity_search_case_name(record):
     if raw is None:
         return None
     text = str(raw)
-    return strip_trailing_year_parenthetical(text) or text.strip()
+    return strip_trailing_parenthetical(text) or text.strip()
 
 
 def identity_search_params(record):
@@ -1550,16 +1564,46 @@ def identity_fallback_params(record, expected_cite):
         yield "docket_number", by_docket
 
 
-def frontier_identity_search_results(source_record, client, unresolved_id):
-    attempts = [("case_name", identity_search_params(source_record))]
-    expected_cite = source_record.get("expected_citation") or source_record.get("citation") or ""
+def identity_search_attempts(record, expected_cite):
+    attempts = [("case_name", identity_search_params(record))]
     seen = {json.dumps(attempts[0][1], sort_keys=True)}
-    for rung, params in identity_fallback_params(source_record, expected_cite):
+    for rung, params in identity_fallback_params(record, expected_cite):
         key = json.dumps(params, sort_keys=True)
         if key in seen:
             continue
         seen.add(key)
         attempts.append((rung, params))
+    return attempts
+
+
+def remaining_stronger_key_rungs(attempts, index):
+    return [
+        rung
+        for rung, _params in attempts[index + 1:]
+        if rung in STRONG_IDENTITY_RUNGS
+    ]
+
+
+def identity_candidate_caption_match(record, result, cluster):
+    input_caption = record.get("title") or record.get("caption") or record.get("record_id")
+    canonical = None
+    if isinstance(cluster, dict):
+        canonical = cluster.get("case_name")
+    if not canonical and isinstance(result, dict):
+        canonical = result.get("caseName") or result.get("case_name")
+    return canonical_caption_match_cluster(input_caption, cluster, canonical)
+
+
+def first_candidate_caption_match(record, candidates):
+    if not candidates:
+        return None
+    _score, result, cluster = candidates[0]
+    return identity_candidate_caption_match(record, result, cluster)
+
+
+def frontier_identity_search_results(source_record, client, unresolved_id):
+    expected_cite = source_record.get("expected_citation") or source_record.get("citation") or ""
+    attempts = identity_search_attempts(source_record, expected_cite)
     for rung, params in attempts:
         step = "frontier.identity.search" if rung == "case_name" else "frontier.identity.search.%s" % rung
         search = client.search(params, cache=True, record_id=unresolved_id, step=step)
@@ -1567,6 +1611,62 @@ def frontier_identity_search_results(source_record, client, unresolved_id):
         if results:
             return results, rung
     return [], None
+
+
+def frontier_identity_selection(source_record, client, journal, unresolved_id):
+    expected_cite = source_record.get("expected_citation") or source_record.get("citation") or ""
+    attempts = identity_search_attempts(source_record, expected_cite)
+    best_candidates = []
+    best_rung = None
+    selected_candidates = []
+    selected_rung = None
+    for attempt_index, (rung, params) in enumerate(attempts):
+        step = "frontier.identity.search" if rung == "case_name" else "frontier.identity.search.%s" % rung
+        search = client.search(params, cache=True, record_id=unresolved_id, step=step)
+        results = search_results(search)
+        prefilter = {}
+        candidates = identity_candidates(
+            source_record,
+            client,
+            results,
+            expected_cite,
+            unresolved_id,
+            max_clusters=IDENTITY_FALLBACK_CLUSTER_LIMIT,
+            prefilter_info=prefilter,
+            rung=rung,
+        )
+        remaining = remaining_stronger_key_rungs(attempts, attempt_index)
+        viable_for_rung = identity_viable_candidates(
+            source_record,
+            candidates,
+            expected_cite,
+            remaining,
+            rung=rung,
+        )
+        journal.append(
+            record_id=unresolved_id,
+            step="frontier.identity.search.prefilter" if rung == "case_name" else "frontier.identity.search.fallback",
+            status="complete",
+            rung=rung,
+            result_count=identity_result_count(search),
+            clusters_fetched=len(candidates),
+            viable=bool(viable_for_rung),
+            caption_match=first_candidate_caption_match(source_record, candidates),
+            remaining_stronger_rungs=remaining,
+            **prefilter,
+        )
+        if candidates and (not best_candidates or candidates[0][0] > best_candidates[0][0]):
+            best_candidates = candidates
+            best_rung = rung
+        if viable_for_rung:
+            selected_candidates = viable_for_rung
+            selected_rung = rung
+            break
+    candidates = selected_candidates or best_candidates
+    rung = selected_rung if selected_candidates else best_rung
+    if not candidates:
+        return None, None, [], None
+    return candidates[0][1], candidates[0][2], candidates[1:], rung
 
 
 def identity_year_matches(record, result, cluster):
@@ -1616,24 +1716,28 @@ def identity_court_matches(record, result, cluster):
     return expected.lower() in actual
 
 
-def identity_candidate_evidence(record, result, cluster, expected_cite):
+def identity_candidate_evidence(record, result, cluster, expected_cite, rung=None):
     citation_match = citation_matches_expected(cluster, expected_cite)
     year_match = identity_year_matches(record, result, cluster)
     court_match = identity_court_matches(record, result, cluster)
     has_expected_cite = bool(normalize_cite(expected_cite))
+    docket_key_match = rung == "docket_number" and bool(record.get("docket"))
     return {
         "expected_citation_match": citation_match,
+        "docket_key_match": docket_key_match,
         "year_match": year_match,
         "court_match": court_match,
-        "viable": citation_match or (not has_expected_cite and year_match and court_match),
+        "viable": citation_match or docket_key_match or (not has_expected_cite and year_match and court_match),
     }
 
 
-def identity_candidate_score(record, result, cluster, expected_cite):
-    evidence = identity_candidate_evidence(record, result, cluster, expected_cite)
+def identity_candidate_score(record, result, cluster, expected_cite, rung=None):
+    evidence = identity_candidate_evidence(record, result, cluster, expected_cite, rung=rung)
     score = 0
     if evidence["expected_citation_match"]:
         score += 100
+    if evidence["docket_key_match"]:
+        score += 90
     if evidence["year_match"]:
         score += 10
     if evidence["court_match"]:
@@ -1641,11 +1745,16 @@ def identity_candidate_score(record, result, cluster, expected_cite):
     return score
 
 
-def identity_viable_candidates(record, candidates, expected_cite):
+def identity_viable_candidates(record, candidates, expected_cite, remaining_stronger_rungs=None, rung=None):
+    remaining_stronger_rungs = remaining_stronger_rungs or []
     return [
         candidate
         for candidate in candidates
-        if identity_candidate_evidence(record, candidate[1], candidate[2], expected_cite)["viable"]
+        if identity_candidate_evidence(record, candidate[1], candidate[2], expected_cite, rung=rung)["viable"]
+        and (
+            not remaining_stronger_rungs
+            or identity_candidate_caption_match(record, candidate[1], candidate[2])
+        )
     ]
 
 
@@ -1700,6 +1809,7 @@ def identity_candidates(
     max_clusters=IDENTITY_PRIMARY_CLUSTER_LIMIT,
     prefilter_max_clusters=None,
     prefilter_info=None,
+    rung=None,
 ):
     candidates = []
     candidate_results, local_prefilter_info = identity_candidate_result_plan(
@@ -1715,7 +1825,7 @@ def identity_candidates(
         if not cluster_id:
             continue
         cluster = client.get_cluster(cluster_id, record_id=record_id, step="identity.cluster")
-        score = identity_candidate_score(record, result, cluster, expected_cite)
+        score = identity_candidate_score(record, result, cluster, expected_cite, rung=rung)
         candidates.append((score, result, cluster))
     candidates.sort(key=lambda item: item[0], reverse=True)
     return candidates
@@ -2031,10 +2141,11 @@ def resolve_identity(record, client, journal, resume, build_run):
         journal.append(record_id=record_id, step="identity", status="complete", skipped=True, replayed_selection=False)
         return None, None, None
 
-    params = identity_search_params(record)
+    expected_cite = record.get("expected_citation") or record.get("citation") or ""
+    attempts = identity_search_attempts(record, expected_cite)
+    primary_rung, params = attempts[0]
     search = client.search(params, cache=True, record_id=record_id, step="identity.search")
     results = search_results(search)
-    expected_cite = record.get("expected_citation") or record.get("citation") or ""
     primary_prefilter = {}
     candidates = identity_candidates(
         record,
@@ -2044,24 +2155,29 @@ def resolve_identity(record, client, journal, resume, build_run):
         record_id,
         prefilter_max_clusters=IDENTITY_FALLBACK_CLUSTER_LIMIT,
         prefilter_info=primary_prefilter,
+        rung=primary_rung,
     )
-    selected_rung = "case_name"
-    viable_candidates = identity_viable_candidates(record, candidates, expected_cite)
+    selected_rung = primary_rung
+    primary_remaining = remaining_stronger_key_rungs(attempts, 0)
+    viable_candidates = identity_viable_candidates(record, candidates, expected_cite, primary_remaining, rung=primary_rung)
+    best_candidates = candidates
+    best_rung = primary_rung if best_candidates else None
+    selected_candidates = viable_candidates
+    selected_rung = primary_rung if selected_candidates else None
     journal.append(
         record_id=record_id,
         step="identity.search.prefilter",
         status="complete",
-        rung="case_name",
+        rung=primary_rung,
         result_count=identity_result_count(search),
         clusters_fetched=len(candidates),
         viable=bool(viable_candidates),
+        caption_match=first_candidate_caption_match(record, candidates),
+        remaining_stronger_rungs=primary_remaining,
         **primary_prefilter,
     )
-    if not viable_candidates:
-        best_candidates = candidates
-        best_rung = "case_name" if best_candidates else None
-        selected_candidates = []
-        for rung, fallback in identity_fallback_params(record, expected_cite):
+    if not selected_candidates:
+        for attempt_index, (rung, fallback) in enumerate(attempts[1:], start=1):
             fallback_search = client.search(fallback, cache=True, record_id=record_id, step="identity.search.fallback")
             fallback_results = search_results(fallback_search)
             fallback_prefilter = {}
@@ -2073,8 +2189,11 @@ def resolve_identity(record, client, journal, resume, build_run):
                 record_id,
                 max_clusters=IDENTITY_FALLBACK_CLUSTER_LIMIT,
                 prefilter_info=fallback_prefilter,
+                rung=rung,
             )
-            rung_viable = bool(identity_viable_candidates(record, rung_candidates, expected_cite))
+            remaining = remaining_stronger_key_rungs(attempts, attempt_index)
+            viable_for_rung = identity_viable_candidates(record, rung_candidates, expected_cite, remaining, rung=rung)
+            rung_viable = bool(viable_for_rung)
             journal.append(
                 record_id=record_id,
                 step="identity.search.fallback",
@@ -2083,6 +2202,8 @@ def resolve_identity(record, client, journal, resume, build_run):
                 result_count=identity_result_count(fallback_search),
                 clusters_fetched=len(rung_candidates),
                 viable=rung_viable,
+                caption_match=first_candidate_caption_match(record, rung_candidates),
+                remaining_stronger_rungs=remaining,
                 **fallback_prefilter,
             )
             if rung_candidates and (not best_candidates or rung_candidates[0][0] > best_candidates[0][0]):
@@ -2090,11 +2211,13 @@ def resolve_identity(record, client, journal, resume, build_run):
                 best_rung = rung
             if rung_viable:
                 results = fallback_results
-                selected_candidates = rung_candidates
+                selected_candidates = viable_for_rung
                 selected_rung = rung
                 break
         candidates = selected_candidates or best_candidates or []
         selected_rung = selected_rung if selected_candidates else best_rung
+    else:
+        candidates = selected_candidates
     selected = candidates[0] if candidates else None
     journal.append(
         record_id=record_id,
@@ -4719,8 +4842,8 @@ def process_frontier_record(source_record, client, paths, precedence, journal, r
         write_case_record(paths, shell)
         journal.append(record_id=unresolved_id, step="identity", status="complete", skipped=True, final_record_id=unresolved_id, final_status="blocked")
         return shell, unresolved_id
-    results, search_rung = frontier_identity_search_results(source_record, client, unresolved_id)
-    if not results:
+    result, cluster, alternates, search_rung = frontier_identity_selection(source_record, client, journal, unresolved_id)
+    if not result or not cluster:
         final_id = not_found_stub_record_id(source_record)
         shell["record_id"] = final_id
         shell["stub"] = True
@@ -4731,15 +4854,16 @@ def process_frontier_record(source_record, client, paths, precedence, journal, r
         write_case_record(paths, shell)
         journal.append(record_id=unresolved_id, step="identity", status="complete", final_record_id=final_id, final_status="not_found")
         return shell, final_id
-    result = results[0]
-    cluster = client.get_cluster(result.get("cluster_id"), record_id=unresolved_id, step="frontier.identity.cluster")
     canonical = cluster.get("case_name") or result.get("caseName") or source_record.get("caption")
     input_caption = source_record.get("caption") or source_record.get("title") or unresolved_id
     final_id = cluster_stub_record_id(input_caption, cluster.get("id") or result.get("cluster_id"))
     canonical_match = canonical_caption_match_cluster(source_record.get("caption"), cluster, canonical)
+    expected_cite = source_record.get("expected_citation") or source_record.get("citation") or ""
+    expected_found = citation_matches_expected(cluster, expected_cite) if expected_cite else bool(cluster.get("citations"))
+    strong_key_match = bool(expected_found or search_rung == "docket_number")
     shell["record_id"] = final_id
     shell["stub"] = True
-    shell["status"] = "verified_identity" if canonical_match else "fabrication_suspected"
+    shell["status"] = "verified_identity" if (canonical_match or strong_key_match) else "fabrication_suspected"
     shell["identity"].update({
         "case_name": canonical,
         "case_name_short": cluster.get("case_name_short"),
@@ -4747,10 +4871,26 @@ def process_frontier_record(source_record, client, paths, precedence, journal, r
         "cluster_id": extract_id(cluster.get("id") or result.get("cluster_id")),
         "absolute_url": cluster.get("absolute_url") or result.get("absolute_url"),
         "identity_method": "frontier-identity",
-        "expected_citation_found": bool(cluster.get("citations")),
+        "expected_citation_found": bool(expected_found),
         "party_name_in_text": False,
         "canonical_name_match": canonical_match,
+        "alternates": [
+            {
+                "cluster_id": alt_cluster.get("id"),
+                "score": score,
+                "case_name": alt_cluster.get("case_name"),
+            }
+            for score, _alt_result, alt_cluster in alternates[:5]
+        ],
+        "reason_code": None if canonical_match else (
+            "caption_mismatch_accepted_by_%s" % search_rung
+            if strong_key_match else "canonical_name_mismatch"
+        ),
     })
+    if not canonical_match:
+        append_warning(shell, "input caption does not match CL canonical caption")
+        if strong_key_match:
+            append_warning(shell, "frontier identity accepted by %s rung despite caption mismatch" % search_rung)
     shell["citations"] = classify_citations(cluster.get("citations") or [], source_record.get("court_level") or "state", precedence)
     shell["treatment"]["scope_note"] = "Frontier stub: treatment/progeny intentionally not derived until S6 promotion."
     shell["progeny"]["complete_query"] = None
@@ -4760,7 +4900,18 @@ def process_frontier_record(source_record, client, paths, precedence, journal, r
     shell["provenance"]["field_provenance"]["pinpoints"] = base_field_provenance("frontier stub, no pinpoints")
     write_case_record(paths, shell)
     remove_frontier_partial_record(paths, unresolved_id, final_id)
-    journal.append(record_id=unresolved_id, step="identity", status="complete", final_record_id=final_id, final_status=shell["status"], search_rung=search_rung)
+    journal.append(
+        record_id=unresolved_id,
+        step="identity",
+        status="complete",
+        final_record_id=final_id,
+        final_status=shell["status"],
+        selected_cluster_id=shell["identity"]["cluster_id"],
+        search_rung=search_rung,
+        canonical_match=canonical_match,
+        expected_citation_found=bool(expected_found),
+        strong_key_match=strong_key_match,
+    )
     return shell, final_id
 
 
@@ -5422,6 +5573,71 @@ class NoCiteFallbackClient:
         }
 
 
+class DocketContinuationFrontierClient:
+    def __init__(self):
+        self.search_calls = []
+        self.cluster_calls = []
+
+    def search(self, params, cache=True, record_id=None, step=None):
+        self.search_calls.append({"params": dict(params), "step": step, "record_id": record_id})
+        if params.get("case_name"):
+            return {
+                "count": 1,
+                "results": [{
+                    "cluster_id": 88100,
+                    "caseName": "United States v. $23,407.69 in U.S. Currency",
+                    "dateFiled": "1983-05-23",
+                    "court": "scotus",
+                    "court_id": "scotus",
+                    "opinions": [{"id": 88101, "type": "020lead"}],
+                }],
+                "next": None,
+            }
+        if params.get("q"):
+            return {"count": 0, "results": [], "next": None}
+        if params.get("docket_number") == "81-1062":
+            return {
+                "count": 1,
+                "results": [{
+                    "cluster_id": 88500,
+                    "caseName": "United States v. Eight Thousand Eight Hundred Fifty Dollars in U.S. Currency",
+                    "dateFiled": "1983-05-23",
+                    "court": "scotus",
+                    "court_id": "scotus",
+                    "opinions": [{"id": 88501, "type": "020lead"}],
+                }],
+                "next": None,
+            }
+        raise AssertionError("unexpected docket-continuation params %r" % params)
+
+    def get_cluster(self, cluster_id, record_id=None, step="identity.cluster"):
+        cluster_id = int(cluster_id)
+        self.cluster_calls.append({"cluster_id": cluster_id, "step": step, "record_id": record_id})
+        if cluster_id == 88100:
+            return {
+                "id": cluster_id,
+                "case_name": "United States v. $23,407.69 in U.S. Currency",
+                "case_name_short": "United States v. $23,407.69",
+                "case_name_full": "United States v. $23,407.69 in U.S. Currency",
+                "date_filed": "1983-05-23",
+                "court": "scotus",
+                "absolute_url": "/opinion/88100/united-states-v-2340769-in-us-currency/",
+                "citations": [{"volume": 715, "reporter": "F.2d", "page": 162, "type": 1}],
+                "sub_opinions": [{"id": 88101, "type": "020lead"}],
+            }
+        return {
+            "id": cluster_id,
+            "case_name": "United States v. Eight Thousand Eight Hundred Fifty Dollars in U.S. Currency",
+            "case_name_short": "United States v. Eight Thousand Eight Hundred Fifty Dollars",
+            "case_name_full": "United States v. Eight Thousand Eight Hundred Fifty Dollars in U.S. Currency",
+            "date_filed": "1983-05-23",
+            "court": "scotus",
+            "absolute_url": "/opinion/88500/united-states-v-eight-thousand-eight-hundred-fifty-dollars/",
+            "citations": [{"volume": 461, "reporter": "U.S.", "page": 555, "type": 1}],
+            "sub_opinions": [{"id": 88501, "type": "020lead"}],
+        }
+
+
 class ExhaustedFallbackClient:
     def __init__(self):
         self.search_calls = []
@@ -5833,6 +6049,41 @@ def self_test_identity_caption_and_cite_fixtures():
 
 
 def self_test_identity_fallback_ladder():
+    keith_source = {
+        "record_id": "united-states-v-united-states-district-court-keith--108581",
+        "caption": "United States v. United States District Court (Keith)",
+        "expected_citation": "407 U.S. 297 (1972)",
+        "court_level": "scotus",
+        "year": 1972,
+    }
+    keith_params = identity_search_params(keith_source)
+    assert keith_params["case_name"] == "United States v. United States District Court"
+    assert keith_params["court"] == "scotus"
+    assert keith_params["filed_after"] == "1972-01-01"
+    assert keith_params["filed_before"] == "1972-12-31"
+    assert keith_source["caption"] == "United States v. United States District Court (Keith)"
+    keith_fallbacks = dict(identity_fallback_params(keith_source, keith_source["expected_citation"]))
+    assert keith_fallbacks["q"]["q"] == "United States v. United States District Court"
+
+    robinson_source = {
+        "record_id": "united-states-v-robinson-4th-cir-en-banc--4385870",
+        "caption": "United States v. Robinson (4th Cir. en banc)",
+        "expected_citation": "846 F.3d 694 (4th Cir. 2017)",
+        "court_level": "coa",
+        "court": "U.S. Court of Appeals, 4th Cir. (en banc)",
+        "year": 2017,
+        "docket": "No. 14-4902",
+    }
+    robinson_params = identity_search_params(robinson_source)
+    assert robinson_params["case_name"] == "United States v. Robinson"
+    assert robinson_params["court"] == "ca4"
+    assert robinson_params["filed_after"] == "2017-01-01"
+    assert robinson_params["filed_before"] == "2017-12-31"
+    assert robinson_source["caption"] == "United States v. Robinson (4th Cir. en banc)"
+    robinson_fallbacks = dict(identity_fallback_params(robinson_source, robinson_source["expected_citation"]))
+    assert robinson_fallbacks["q"]["q"] == "United States v. Robinson"
+    assert robinson_fallbacks["docket_number"]["docket_number"] == "No. 14-4902"
+
     lewis_source = {
         "record_id": "Lewis v. United States (1966)",
         "title": "Lewis v. United States (1966)",
@@ -6490,6 +6741,50 @@ def self_test_frontier_stub_record_id_bounds_and_resume():
         assert fallback_record["status"] == "verified_identity"
         assert any(call["step"] == "frontier.identity.search.citation" for call in fallback_client.search_calls), fallback_client.search_calls
         assert journal.rows()[-1]["search_rung"] == "citation"
+
+        docket_source = {
+            "record_id": "UNRESOLVED:docket-continuation",
+            "record_id_status": "UNRESOLVED",
+            "stub": True,
+            "caption": "United States v. $8,850 in Currency",
+            "slug": "united-states-v-8-850-in-currency",
+            "court_level": "scotus",
+            "docket": "81-1062",
+            "year": 1983,
+            "roster_key": "United States v. $8,850 in Currency|scotus|1983|81-1062|fixture",
+            "source_row_index": 6,
+            "counts": {},
+        }
+        docket_client = DocketContinuationFrontierClient()
+        docket_record, docket_id = process_frontier_record(
+            docket_source,
+            docket_client,
+            paths,
+            {"court_classes": {"scotus": {"reporters": {"U.S.": 1}, "reporter_classes": {"official": 1}}}},
+            journal,
+            ResumeState([]),
+            "selftest",
+        )
+        assert docket_id == "united-states-v-8-850-in-currency--88500", docket_id
+        assert docket_record["status"] == "verified_identity"
+        assert docket_record["identity"]["canonical_name_match"] is False
+        assert docket_record["identity"]["reason_code"] == "caption_mismatch_accepted_by_docket_number"
+        assert any(call["params"].get("docket_number") == "81-1062" for call in docket_client.search_calls), docket_client.search_calls
+        assert [call["cluster_id"] for call in docket_client.cluster_calls] == [88100, 88500]
+        docket_rows = [
+            row for row in journal.rows()
+            if row.get("record_id") == docket_source["record_id"]
+            and row.get("step") in ("frontier.identity.search.prefilter", "frontier.identity.search.fallback")
+        ]
+        assert [
+            (row.get("rung"), row.get("clusters_fetched"), row.get("viable"), row.get("caption_match"), row.get("remaining_stronger_rungs"))
+            for row in docket_rows
+        ] == [
+            ("case_name", 1, False, False, ["docket_number"]),
+            ("q", 0, False, None, ["docket_number"]),
+            ("docket_number", 1, True, False, []),
+        ]
+        assert journal.rows()[-1]["search_rung"] == "docket_number"
 
         no_result = dict(source)
         no_result["caption"] = "No Result v. Case"
