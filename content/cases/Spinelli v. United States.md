@@ -26,7 +26,7 @@ courtlistener:
   opinion_id: 107831
   identity_checked: true
 homes:
-  - page: "[[Probable Cause and Reasonable Suspicion]]"
+  - page: "[[Probable Cause]]"
     role: "Key — Progeny / Refinement"
   - page: "[[The Warrant Requirement]]"
     role: "Related (cross-doctrine)"
@@ -67,7 +67,7 @@ The warrant was not supported by probable cause; the conviction resting on the s
 - The structured two-prong "basis of knowledge" + "veracity" framework of [[Aguilar v. Texas]] and *Spinelli* was **abandoned by [[Illinois v. Gates]]** (1983) in favor of a **totality-of-the-circumstances** test. Under *Gates* the two prongs survive only as relevant, non-dispositive considerations.
 
 ## Appears on
-- [[Probable Cause and Reasonable Suspicion]] — *Key — Progeny / Refinement*
+- [[Probable Cause]] — *Key — Progeny / Refinement*
 - [[The Warrant Requirement]] — *Related (cross-doctrine)*
 
 ## Sources

@@ -2,7 +2,6 @@
 weight: 30
 aliases:
   - "Stop and Frisk"
-  - "Reasonable Suspicion"
   - "Terry Stop"
   - "Terry Stops and Reasonable Suspicion"
   - "4-what-is-a-seizure/Terry-Stops-and-Reasonable-Suspicion"

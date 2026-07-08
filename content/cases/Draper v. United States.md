@@ -26,7 +26,7 @@ courtlistener:
   opinion_id: 105820
   identity_checked: true
 homes:
-  - page: "[[Probable Cause and Reasonable Suspicion]]"
+  - page: "[[Probable Cause]]"
     role: "Progeny"
 related: ["[[Brinegar v. United States]]", "[[Illinois v. Gates]]", "[[Aguilar v. Texas]]", "[[Spinelli v. United States]]"]
 aliases: []
@@ -65,7 +65,7 @@ Probable cause existed; the warrantless arrest and the search incident to it wer
 - No negative treatment. *Draper*'s corroboration principle was preserved and absorbed into the totality-of-the-circumstances test of [[Illinois v. Gates]] (which abandoned the rigid [[Aguilar v. Texas]]/[[Spinelli v. United States]] two-pronged formulation while reaffirming *Draper*-style corroboration as strong evidence of probable cause).
 
 ## Appears on
-- [[Probable Cause and Reasonable Suspicion]] — *Progeny*
+- [[Probable Cause]] — *Progeny*
 
 ## Sources
 - *Draper v. United States*, 358 U.S. 307 (1959) — https://www.courtlistener.com/opinion/105820/draper-v-united-states/ — pinpoint: 313.

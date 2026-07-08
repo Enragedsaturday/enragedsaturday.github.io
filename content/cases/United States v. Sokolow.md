@@ -28,6 +28,8 @@ courtlistener:
 homes:
   - page: "[[Terry Stops and Reasonable Suspicion]]"
     role: "Key — Progeny / Refinement"
+  - page: "[[Reasonable Suspicion]]"
+    role: "Key — Progeny / Refinement"
 related: ["[[Terry v. Ohio]]", "[[United States v. Cortez]]", "[[United States v. Arvizu]]", "[[Illinois v. Wardlow]]"]
 aliases: []
 tags: ["case", "fourth-amendment", "terry-stop", "reasonable-suspicion", "totality-of-the-circumstances", "drug-courier-profile"]
@@ -66,6 +68,7 @@ The investigative stop was supported by reasonable suspicion under the totality 
 
 ## Appears on
 - [[Terry Stops and Reasonable Suspicion]] — *Key — Progeny / Refinement*
+- [[Reasonable Suspicion]] — *Key — Progeny / Refinement*
 
 ## Sources
 - *United States v. Sokolow*, 490 U.S. 1 (1989) — https://www.courtlistener.com/opinion/112239/united-states-v-sokolow/ — pinpoints: 8, 9 (parallel 109 S. Ct. 1581).

@@ -28,7 +28,7 @@ courtlistener:
 homes:
   - page: "[[The Warrant Requirement]]"
     role: "Progeny"
-  - page: "[[Probable Cause and Reasonable Suspicion]]"
+  - page: "[[Probable Cause]]"
     role: "Related (cross-doctrine)"
 related: ["[[Illinois v. Gates]]", "[[Aguilar v. Texas]]", "[[Brinegar v. United States]]"]
 aliases: []
@@ -68,7 +68,7 @@ The affidavit established probable cause and the warrant was valid; the judgment
 
 ## Appears on
 - [[The Warrant Requirement]] — *Progeny*
-- [[Probable Cause and Reasonable Suspicion]] — *Related (cross-doctrine)*
+- [[Probable Cause]] — *Related (cross-doctrine)*
 
 ## Sources
 - *United States v. Ventresca*, 380 U.S. 102 (1965) — https://www.courtlistener.com/opinion/106990/united-states-v-ventresca/ — pinpoints: 106–107, 108, 109.

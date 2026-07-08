@@ -26,7 +26,7 @@ courtlistener:
   opinion_id: 105963
   identity_checked: true
 homes:
-  - page: "[[Probable Cause and Reasonable Suspicion]]"
+  - page: "[[Probable Cause]]"
     role: "Anchor"
 related: ["[[Brinegar v. United States]]", "[[Carroll v. United States]]", "[[Johnson v. United States]]", "[[Draper v. United States]]"]
 aliases: ["Henry v. United States"]
@@ -66,7 +66,7 @@ The arrest was complete when the car was stopped, probable cause did not exist a
 - *Disambiguation:* distinct from the reversed-party case *United States v. Henry*, 447 U.S. 264 (1980) (Sixth Amendment, deliberate elicitation by a jailhouse informant); bare `[[Henry v. United States]]` resolves here via alias.
 
 ## Appears on
-- [[Probable Cause and Reasonable Suspicion]] — *Anchor*
+- [[Probable Cause]] — *Anchor*
 
 ## Sources
 - *Henry v. United States*, 361 U.S. 98 (1959) — https://www.courtlistener.com/opinion/105963/henry-v-united-states/ — pinpoints: 102, 103, 104.

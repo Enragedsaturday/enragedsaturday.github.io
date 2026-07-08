@@ -26,7 +26,7 @@ courtlistener:
   opinion_id: 118474
   identity_checked: true
 homes:
-  - page: "[[Probable Cause and Reasonable Suspicion]]"
+  - page: "[[Reasonable Suspicion]]"
     role: "Key — Progeny / Refinement"
 related: ["[[Terry v. Ohio]]", "[[United States v. Cortez]]", "[[Illinois v. Wardlow]]", "[[Ornelas v. United States]]"]
 aliases: []
@@ -63,7 +63,7 @@ The stop was supported by reasonable suspicion; the Ninth Circuit's reversal was
 - *Arvizu* applies the reasonable-suspicion standard of [[Terry v. Ohio]] and the "whole picture"/"particularized and objective basis" formulation of [[United States v. Cortez]]; it parallels the totality approach approved in [[Illinois v. Wardlow]] and the deference to officer inferences in [[Ornelas v. United States]].
 
 ## Appears on
-- [[Probable Cause and Reasonable Suspicion]] — *Key — Progeny / Refinement*
+- [[Reasonable Suspicion]] — *Key — Progeny / Refinement*
 
 ## Sources
 - *United States v. Arvizu*, 534 U.S. 266 (2002) — https://www.courtlistener.com/opinion/118474/united-states-v-arvizu/ — pinpoints: 273, 274.

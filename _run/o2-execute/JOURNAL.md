@@ -922,3 +922,28 @@ LCD headings is S9's roster job per S5 R11/§9, RECORDED: N5 coverage dark on re
 until then); LINT-15 standalone 131→71 (rename-pending 30→0, order 30→0, HIGH 36→36 no new);
 build 719/2710; transformer scripts/s7/teach08.py committed. NEXT: Phase 2 category batches —
 pilot = cat-2 Standards of Proof (PC/RS split → RS + PC children Tier A + Proof Ladder C).
+
+**PHASE 2 PILOT CLOSED — CAT-2 STANDARDS OF PROOF (2026-07-08):** PC/RS parent SPLIT → Reasonable
+Suspicion (A) + Probable Cause (A), Proof Ladder stub AUTHORED (C), parent dissolved; all born
+draft. R3 no-inheritance: 4 CL MCP spot-checks (Gates 238 / Brinegar 175 / Cortez 417-18 /
+Pringle common-enterprise) CONFIRMED against primary text, opinion-ids from lake identity, 0 REST;
+lake good-law re-verified (Aguilar/Spinelli superseded-correct foils; DANIELS under_review R3
+catch → paraphrase + case-cite + ⚪, S9-owed). Named fixes: TEACH-04a maxim + 04f CREW mislink +
+02c meta-intro APPLIED; 04e hit REFUTED-AS-TARGET (substantive who-decides doctrine, retained
+reworded). 27 case pages re-homed/keyed (RS 9 + PC 14 + re-points); 1 owed home_row discharged
+(Daniels→RS LCD, zero drops); aliases: PC = successor (old title + 2 old paths + DECK STEM
+probable-cause-reasonable-suspicion per R13/R14 — 31-card deck resolves); registry re-pointed
+(proof.* home_pages + proof-ladder statement filled). ORCHESTRATOR ADJUDICATIONS: rung anchors
+Terry/Gates/Brinegar multi-homed Key-on Ladder (R3 model, Key-table truthfulness); Cortez+Sokolow
+Key-on RS (A6 findability-without-re-homing, primaries stay Terry Stops); deck-stem successor PC
+RATIFIED; mnemonic GR#3 placement RATIFIED. TEMPLATE RULES A-F adopted (split batch re-points own
+category index + owns alias collisions; no broken mid-line pin deep-links; LINT-15/16 standalone
+per batch — NOT in run_all roster; no bare weight-tier words in authored cells; plain-italic
+registry mirror = S7 standard). Journaled: Case Index 622 LINT-16 pre-existing generated-schema
+condition (schema-3 flip owed S7/S8 to generator); master-index + 11 doctrine-page wikilinks to
+dissolved title resolve via alias, re-point in owning batches/S3 A7(4) regen. GATES: run_all
+8335→8330 (all deltas explained; LINT-5 HIGH -2 broken anchors not reproduced; LINT-7 -2 incl.
+stop-and-frisk register fix ×7; LINT-16 Historical-token catch FIXED in-batch), LINT-15/16
+standalone 0/0 on authored+touched, survey 90 pages em 23.9/1k, build 720/2715 green (+1 input =
+-1 parent +2 children). NEXT: cat-3a Two Definitions severance (deferred-as-index C1 item →
+Trespass A + REP A, Katz re-homed in).

@@ -36,7 +36,7 @@ related:
   - "[[Collective Knowledge and the Fellow-Officer Rule]]"
   - "[[Terry Stops and Reasonable Suspicion]]"
   - "[[United States v. Hensley]]"
-  - "[[Probable Cause and Reasonable Suspicion]]"
+  - "[[Reasonable Suspicion]]"
 tags:
   - case
   - fourth-amendment

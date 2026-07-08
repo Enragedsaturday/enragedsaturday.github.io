@@ -28,7 +28,7 @@ courtlistener:
 homes:
   - page: "[[Traffic Stops]]"
     role: "Progeny"
-  - page: "[[Probable Cause and Reasonable Suspicion]]"
+  - page: "[[Reasonable Suspicion]]"
     role: "Related (cross-doctrine)"
 related: ["[[Navarette v. California]]", "[[Delaware v. Prouse]]", "[[Heien v. North Carolina]]", "[[Terry v. Ohio]]", "[[United States v. Cortez]]"]
 aliases: []
@@ -68,7 +68,7 @@ The traffic stop was supported by reasonable suspicion; the Kansas Supreme Court
 
 ## Appears on
 - [[Traffic Stops]] — *Progeny*
-- [[Probable Cause and Reasonable Suspicion]] — *Related (cross-doctrine)*
+- [[Reasonable Suspicion]] — *Related (cross-doctrine)*
 
 ## Sources
 - *Kansas v. Glover*, 589 U.S. 376 (2020) — https://www.courtlistener.com/opinion/9231313/kansas-v-glover/ — pinpoints (S. Ct.): 1186, 1188, 1191.

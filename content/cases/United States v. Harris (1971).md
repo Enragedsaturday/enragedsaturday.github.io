@@ -26,7 +26,7 @@ courtlistener:
   opinion_id: 108379
   identity_checked: true
 homes:
-  - page: "[[Probable Cause and Reasonable Suspicion]]"
+  - page: "[[Probable Cause]]"
     role: "Progeny"
   - page: "[[The Warrant Requirement]]"
     role: "Related (cross-doctrine)"
@@ -65,7 +65,7 @@ The affidavit established probable cause and the warrant was valid; the judgment
 - The penal-interest reliability principle remains valid and is a recognized factor in assessing an informant's credibility. The *Aguilar*–*Spinelli* two-pronged test that this plurality was already eroding was later abandoned for a totality-of-the-circumstances inquiry in [[Illinois v. Gates]] (1983), within which *Harris*'s penal-interest insight survives. No negative treatment of *Harris* itself.
 
 ## Appears on
-- [[Probable Cause and Reasonable Suspicion]] — *Progeny*
+- [[Probable Cause]] — *Progeny*
 - [[The Warrant Requirement]] — *Related (cross-doctrine)*
 
 ## Sources

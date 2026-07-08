@@ -26,7 +26,7 @@ courtlistener:
   opinion_id: 9433881
   identity_checked: true
 homes:
-  - page: "[[Probable Cause and Reasonable Suspicion]]"
+  - page: "[[Reasonable Suspicion]]"
     role: "Key — Progeny / Refinement"
 related: ["[[Terry v. Ohio]]", "[[Florida v. J.L.]]", "[[Alabama v. White]]", "[[Brown v. Texas]]"]
 aliases: []
@@ -65,7 +65,7 @@ The stop was supported by reasonable suspicion; the judgment suppressing the han
 - No negative treatment. *Wardlow* applies the reasonable-suspicion standard of [[Terry v. Ohio]], treating unprovoked flight in a high-crime area as supplying reasonable suspicion under the totality of the circumstances.
 
 ## Appears on
-- [[Probable Cause and Reasonable Suspicion]] — *Key — Progeny / Refinement*
+- [[Reasonable Suspicion]] — *Key — Progeny / Refinement*
 
 ## Sources
 - *Illinois v. Wardlow*, 528 U.S. 119 (2000) — https://www.courtlistener.com/opinion/118326/illinois-v-wardlow/ — pinpoint: 124.

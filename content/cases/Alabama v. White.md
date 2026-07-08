@@ -26,7 +26,7 @@ courtlistener:
   opinion_id: 9432055
   identity_checked: true
 homes:
-  - page: "[[Probable Cause and Reasonable Suspicion]]"
+  - page: "[[Reasonable Suspicion]]"
     role: "Key — Progeny / Refinement"
 related: ["[[Illinois v. Gates]]", "[[Florida v. J.L.]]", "[[Terry v. Ohio]]"]
 aliases: []
@@ -67,7 +67,7 @@ The investigatory stop was supported by reasonable suspicion; the Alabama Court 
 - No negative treatment. *White* anchors the rule that police corroboration of an anonymous tip's predictive detail can supply reasonable suspicion. The line was refined by [[Florida v. J.L.]] (a bare anonymous tip of a concealed gun, lacking predictive corroboration, is **not** reasonable suspicion) and applied in [[Navarette v. California]] (a contemporaneous, reliable 911 report can supply reasonable suspicion).
 
 ## Appears on
-- [[Probable Cause and Reasonable Suspicion]] — *Key — Progeny / Refinement*
+- [[Reasonable Suspicion]] — *Key — Progeny / Refinement*
 
 ## Sources
 - *Alabama v. White*, 496 U.S. 325 (1990) — https://www.courtlistener.com/opinion/112454/alabama-v-white/ — pinpoints: 330, 332.

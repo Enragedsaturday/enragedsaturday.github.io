@@ -36,7 +36,7 @@ related:
   - "[[Terry Stops and Reasonable Suspicion]]"
   - "[[Terry v. Ohio]]"
   - "[[California v. Hodari D.]]"
-  - "[[Probable Cause and Reasonable Suspicion]]"
+  - "[[Reasonable Suspicion]]"
 tags:
   - case
   - fourth-amendment

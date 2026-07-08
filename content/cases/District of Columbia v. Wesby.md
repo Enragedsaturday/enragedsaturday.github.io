@@ -26,7 +26,7 @@ courtlistener:
   opinion_id: 4238107
   identity_checked: true
 homes:
-  - page: "[[Probable Cause and Reasonable Suspicion]]"
+  - page: "[[Probable Cause]]"
     role: "Key — Progeny / Refinement"
 related: ["[[Illinois v. Gates]]", "[[Maryland v. Pringle]]", "[[Devenpeck v. Alford]]", "[[Brinegar v. United States]]"]
 aliases: ["DC v. Wesby"]
@@ -65,7 +65,7 @@ The officers had probable cause to arrest, and were in any event entitled to qua
 - No negative treatment. *Wesby* reaffirms the totality-of-the-circumstances standard of [[Illinois v. Gates]] and [[Maryland v. Pringle]], rejecting divide-and-conquer analysis of probable cause.
 
 ## Appears on
-- [[Probable Cause and Reasonable Suspicion]] — *Key — Progeny / Refinement*
+- [[Probable Cause]] — *Key — Progeny / Refinement*
 
 ## Sources
 - *District of Columbia v. Wesby*, 583 U.S. 48 (2018) — https://www.courtlistener.com/opinion/4460854/district-of-columbia-v-wesby/ — pinpoint: slip op., at 11 (CL carries the slip opinion; cluster 4460854 → opinion 4238107).

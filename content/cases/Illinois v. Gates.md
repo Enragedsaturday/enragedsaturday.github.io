@@ -26,10 +26,12 @@ courtlistener:
   opinion_id: 9429232
   identity_checked: true
 homes:
-  - page: "[[Probable Cause and Reasonable Suspicion]]"
+  - page: "[[Probable Cause]]"
     role: "Key — Anchor"
   - page: "[[The Warrant Requirement]]"
     role: "Related (cross-doctrine)"
+  - page: "[[The Proof Ladder]]"
+    role: "Key — rung anchor"
 related: ["[[Aguilar v. Texas]]", "[[Spinelli v. United States]]", "[[Brinegar v. United States]]"]
 aliases: []
 tags: ["case", "fourth-amendment", "probable-cause", "informants", "totality-of-the-circumstances", "warrant"]
@@ -67,8 +69,9 @@ The warrant was valid under the totality-of-the-circumstances test; the suppress
 - No negative treatment of *Gates*. *Gates* itself **abandoned** the rigid two-pronged framework of [[Aguilar v. Texas]] and [[Spinelli v. United States]], replacing it with the flexible totality-of-the-circumstances standard.
 
 ## Appears on
-- [[Probable Cause and Reasonable Suspicion]] — *Key — Anchor*
+- [[Probable Cause]] — *Key — Anchor*
 - [[The Warrant Requirement]] — *Related (cross-doctrine)*
+- [[The Proof Ladder]] — *Key — rung anchor*
 
 ## Sources
 - *Illinois v. Gates*, 462 U.S. 213 (1983) — https://www.courtlistener.com/opinion/110959/illinois-v-gates/ — pinpoint: 238.

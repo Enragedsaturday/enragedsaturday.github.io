@@ -26,7 +26,7 @@ courtlistener:
   opinion_id: 108305
   identity_checked: true
 homes:
-  - page: "[[Probable Cause and Reasonable Suspicion]]"
+  - page: "[[Probable Cause]]"
     role: "Progeny"
   - page: "[[Search Incident to Arrest]]"
     role: "Related (cross-doctrine)"
@@ -67,7 +67,7 @@ The reasonable, good-faith arrest of the wrong man was valid, as was the search 
 - No negative treatment. *Hill*'s reasonable-mistake principle applies the practical probable-cause standard of [[Brinegar v. United States]] and parallels [[Maryland v. Garrison]] (reasonable mistake as to the apartment to be searched) and [[Heien v. North Carolina]] (reasonable mistake of law); the search-incident analysis tracks [[Chimel v. California]].
 
 ## Appears on
-- [[Probable Cause and Reasonable Suspicion]] — *Progeny*
+- [[Probable Cause]] — *Progeny*
 - [[Search Incident to Arrest]] — *Related (cross-doctrine)*
 
 ## Sources

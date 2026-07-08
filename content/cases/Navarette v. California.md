@@ -26,7 +26,7 @@ courtlistener:
   opinion_id: 2670795
   identity_checked: true
 homes:
-  - page: "[[Probable Cause and Reasonable Suspicion]]"
+  - page: "[[Reasonable Suspicion]]"
     role: "Key — Progeny / Refinement"
 related: ["[[Alabama v. White]]", "[[Florida v. J.L.]]", "[[Illinois v. Gates]]", "[[Terry v. Ohio]]"]
 aliases: ["Prado Navarette v. California"]
@@ -63,7 +63,7 @@ The traffic stop complied with the Fourth Amendment; the judgment was affirmed.
 - No negative treatment. *Navarette* applies the anonymous-tip framework of [[Alabama v. White]] and distinguishes [[Florida v. J.L.]], holding that a contemporaneous, eyewitness 911 report of dangerous driving can carry enough indicia of reliability to justify a stop.
 
 ## Appears on
-- [[Probable Cause and Reasonable Suspicion]] — *Key — Progeny / Refinement*
+- [[Reasonable Suspicion]] — *Key — Progeny / Refinement*
 
 ## Sources
 - *Navarette v. California*, 572 U.S. 393 (2014) — https://www.courtlistener.com/opinion/2670795/prado-navarette-v-california/ — pinpoint: 398.

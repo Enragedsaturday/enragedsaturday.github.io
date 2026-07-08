@@ -28,6 +28,8 @@ courtlistener:
 homes:
   - page: "[[Terry Stops and Reasonable Suspicion]]"
     role: "Key — Progeny / Refinement"
+  - page: "[[Reasonable Suspicion]]"
+    role: "Key — Anchor"
 related: ["[[Terry v. Ohio]]", "[[United States v. Arvizu]]", "[[Navarette v. California]]", "[[Ornelas v. United States]]"]
 aliases: []
 tags: ["case", "fourth-amendment", "reasonable-suspicion", "terry-stop"]
@@ -64,6 +66,7 @@ The stop was supported by reasonable suspicion and was upheld. Reasonable suspic
 
 ## Appears on
 - [[Terry Stops and Reasonable Suspicion]] — *Key — Progeny / Refinement*
+- [[Reasonable Suspicion]] — *Key — Anchor*
 
 ## Sources
 - *United States v. Cortez*, 449 U.S. 411 (1981) — https://www.courtlistener.com/opinion/110377/united-states-v-cortez/ — pinpoint: 417–18.

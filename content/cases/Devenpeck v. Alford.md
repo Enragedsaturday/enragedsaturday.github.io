@@ -26,7 +26,7 @@ courtlistener:
   opinion_id: 137733
   identity_checked: true
 homes:
-  - page: "[[Probable Cause and Reasonable Suspicion]]"
+  - page: "[[Probable Cause]]"
     role: "Key — Progeny / Refinement"
 related: ["[[Whren v. United States]]", "[[District of Columbia v. Wesby]]", "[[Brinegar v. United States]]"]
 aliases: []
@@ -65,7 +65,7 @@ The "closely related offense" requirement was rejected; the judgment was reverse
 - No negative treatment. *Devenpeck* extends the objective-cause logic of [[Whren v. United States]] to the offense of arrest and feeds the totality-of-the-circumstances analysis reaffirmed in [[District of Columbia v. Wesby]].
 
 ## Appears on
-- [[Probable Cause and Reasonable Suspicion]] — *Key — Progeny / Refinement*
+- [[Probable Cause]] — *Key — Progeny / Refinement*
 
 ## Sources
 - *Devenpeck v. Alford*, 543 U.S. 146 (2004) — https://www.courtlistener.com/opinion/137733/devenpeck-v-alford/ — pinpoint: 153 (verbatim passage confirmed on CourtListener; reporter page per the verified 543 U.S. 153–55 cite).

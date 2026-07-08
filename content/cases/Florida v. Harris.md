@@ -26,7 +26,7 @@ courtlistener:
   opinion_id: 820744
   identity_checked: true
 homes:
-  - page: "[[Probable Cause and Reasonable Suspicion]]"
+  - page: "[[Probable Cause]]"
     role: "Key — Progeny / Refinement"
 related: ["[[Illinois v. Gates]]", "[[Florida v. Jardines]]", "[[District of Columbia v. Wesby]]"]
 aliases: []
@@ -65,7 +65,7 @@ A trained dog's alert can furnish probable cause under the totality of the circu
 - No negative treatment. *Harris* governs the reliability side of a dog sniff; the separate question whether bringing a drug dog onto a home's curtilage is itself a search is answered in [[Florida v. Jardines]].
 
 ## Appears on
-- [[Probable Cause and Reasonable Suspicion]] — *Key — Progeny / Refinement*
+- [[Probable Cause]] — *Key — Progeny / Refinement*
 
 ## Sources
 - *Florida v. Harris*, 568 U.S. 237 (2013) — https://www.courtlistener.com/opinion/820744/florida-v-harris/ — pinpoints: 247, 248.

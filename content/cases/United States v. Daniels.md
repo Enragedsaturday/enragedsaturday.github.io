@@ -32,12 +32,12 @@ lake:
 homes:
   - page: "[[Terry Stops and Reasonable Suspicion]]"
     role: Key
-  - page: "[[Probable Cause and Reasonable Suspicion]]"
+  - page: "[[Reasonable Suspicion]]"
     role: "Related (cross-doctrine)"
 related:
   - "[[Terry v. Ohio]]"
   - "[[United States v. Black]]"
-  - "[[Probable Cause and Reasonable Suspicion]]"
+  - "[[Reasonable Suspicion]]"
 tags:
   - case
   - fourth-amendment
@@ -73,7 +73,7 @@ Each factor fell short. The non-emergency "area watch" tip alleged no illegality
 
 ## Appears on
 - [[Terry Stops and Reasonable Suspicion]] — *Key*
-- [[Probable Cause and Reasonable Suspicion]] — *Related (cross-doctrine)*
+- [[Reasonable Suspicion]] — *Related (cross-doctrine)*
 
 ## Sources
 - [*United States v. Daniels*, 101 F.4th 770 (10th Cir. 2024)](https://www.courtlistener.com/opinion/9500360/united-states-v-daniels/) — pinpoint: slip op. at 6 (totality / no-reasonable-suspicion holding); the CL opinion text carries the slip-opinion page numbers rather than 101 F.4th star pagination, so the pin is slip-style per S2 A3. Rule quote string-matched to the CL opinion text 2026-07-07.

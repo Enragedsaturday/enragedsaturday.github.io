@@ -26,10 +26,12 @@ courtlistener:
   opinion_id: 9423752
   identity_checked: true
 homes:
-  - page: "[[Probable Cause and Reasonable Suspicion]]"
+  - page: "[[Reasonable Suspicion]]"
     role: "Key — Anchor"
   - page: "[[Traffic Stops]]"
     role: "Related (cross-doctrine)"
+  - page: "[[The Proof Ladder]]"
+    role: "Key — rung anchor"
 related: ["[[United States v. Cortez]]", "[[United States v. Arvizu]]", "[[Illinois v. Wardlow]]", "[[Florida v. J.L.]]", "[[Hiibel v. Sixth Judicial Dist. Court]]"]
 aliases: []
 tags: ["case", "fourth-amendment", "terry-stop", "reasonable-suspicion"]
@@ -67,8 +69,9 @@ The stop and protective frisk were reasonable under the Fourth Amendment; Terry'
 - The reasonable-suspicion standard was elaborated in [[United States v. Cortez]] ("particularized and objective basis"; "whole picture") and [[United States v. Arvizu]] (totality of the circumstances; no "divide-and-conquer"), and applied to flight in [[Illinois v. Wardlow]] and anonymous tips in [[Florida v. J.L.]].
 
 ## Appears on
-- [[Probable Cause and Reasonable Suspicion]] — *Key — Anchor*
+- [[Reasonable Suspicion]] — *Key — Anchor*
 - [[Traffic Stops]] — *Related (cross-doctrine)*
+- [[The Proof Ladder]] — *Key — rung anchor*
 
 ## Sources
 - *Terry v. Ohio*, 392 U.S. 1 (1968) — https://www.courtlistener.com/opinion/107729/terry-v-ohio/ — pinpoints: 21, 27, 30.

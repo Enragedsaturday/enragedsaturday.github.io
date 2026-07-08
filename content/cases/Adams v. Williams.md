@@ -28,7 +28,7 @@ courtlistener:
 homes:
   - page: "[[Terry Stops and Reasonable Suspicion]]"
     role: "Progeny"
-  - page: "[[Probable Cause and Reasonable Suspicion]]"
+  - page: "[[Reasonable Suspicion]]"
     role: "Related (cross-doctrine)"
 related: ["[[Terry v. Ohio]]", "[[Alabama v. White]]", "[[Florida v. J.L.]]", "[[Navarette v. California]]", "[[Draper v. United States]]"]
 aliases: []
@@ -68,7 +68,7 @@ The stop, the protective seizure of the gun, and the search incident to the resu
 
 ## Appears on
 - [[Terry Stops and Reasonable Suspicion]] — *Progeny*
-- [[Probable Cause and Reasonable Suspicion]] — *Related (cross-doctrine)*
+- [[Reasonable Suspicion]] — *Related (cross-doctrine)*
 
 ## Sources
 - *Adams v. Williams*, 407 U.S. 143 (1972) — https://www.courtlistener.com/opinion/108571/adams-v-williams/ — pinpoints: 147, 148.

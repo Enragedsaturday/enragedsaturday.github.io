@@ -26,7 +26,7 @@ courtlistener:
   opinion_id: 9184148
   identity_checked: true
 homes:
-  - page: "[[Probable Cause and Reasonable Suspicion]]"
+  - page: "[[Reasonable Suspicion]]"
     role: "Key — Progeny / Refinement"
 related: ["[[Alabama v. White]]", "[[Terry v. Ohio]]", "[[Illinois v. Gates]]"]
 aliases: ["Florida v. JL"]
@@ -65,7 +65,7 @@ The anonymous gun tip did not supply reasonable suspicion; the firearm seized in
 - No negative treatment. *J.L.* refines the anonymous-tip analysis of [[Alabama v. White]]: an accurate description of a suspect's appearance, without indicia that the tipster knows of criminal activity, does not establish reasonable suspicion.
 
 ## Appears on
-- [[Probable Cause and Reasonable Suspicion]] — *Key — Progeny / Refinement*
+- [[Reasonable Suspicion]] — *Key — Progeny / Refinement*
 
 ## Sources
 - *Florida v. J.L.*, 529 U.S. 266 (2000) — https://www.courtlistener.com/opinion/118352/florida-v-jl/ — pinpoint: 272.

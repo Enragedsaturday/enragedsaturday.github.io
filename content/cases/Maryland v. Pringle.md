@@ -26,7 +26,7 @@ courtlistener:
   opinion_id: 131150
   identity_checked: true
 homes:
-  - page: "[[Probable Cause and Reasonable Suspicion]]"
+  - page: "[[Probable Cause]]"
     role: "Key — Progeny / Refinement"
 related: ["[[Ybarra v. Illinois]]", "[[Illinois v. Gates]]", "[[Devenpeck v. Alford]]", "[[Brinegar v. United States]]"]
 aliases: []
@@ -63,7 +63,7 @@ Reversed: the officer had probable cause to arrest Pringle for possession of the
 - *Pringle* applies the totality-of-the-circumstances probable-cause standard ([[Illinois v. Gates]]; [[Brinegar v. United States]]) to a confined common-enterprise setting and distinguishes the bystander situation of [[Ybarra v. Illinois]]; it remains good law.
 
 ## Appears on
-- [[Probable Cause and Reasonable Suspicion]] — *Key — Progeny / Refinement*
+- [[Probable Cause]] — *Key — Progeny / Refinement*
 
 ## Sources
 - *Maryland v. Pringle*, 540 U.S. 366 (2003) — https://www.courtlistener.com/opinion/131150/maryland-v-pringle/ — pinpoint: 372.

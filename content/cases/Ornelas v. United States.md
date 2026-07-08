@@ -26,7 +26,7 @@ courtlistener:
   opinion_id: 118030
   identity_checked: true
 homes:
-  - page: "[[Probable Cause and Reasonable Suspicion]]"
+  - page: "[[Probable Cause]]"
     role: "Key — Progeny / Refinement"
 related: ["[[Illinois v. Gates]]", "[[Brinegar v. United States]]", "[[Terry v. Ohio]]", "[[Devenpeck v. Alford]]"]
 aliases: []
@@ -64,7 +64,7 @@ Reasonable-suspicion and probable-cause determinations get independent, de novo 
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**. The de novo standard for reviewing reasonable suspicion and probable cause remains controlling.
 
 ## Appears on
-- [[Probable Cause and Reasonable Suspicion]] — *Key — Progeny / Refinement*
+- [[Probable Cause]] — *Key — Progeny / Refinement*
 
 ## Sources
 - *Ornelas v. United States*, 517 U.S. 690 (1996) — https://www.courtlistener.com/opinion/118030/ornelas-v-united-states/ — pinpoints: 691, 699–700.

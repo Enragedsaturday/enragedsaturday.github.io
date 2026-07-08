@@ -26,8 +26,10 @@ courtlistener:
   opinion_id: 104716
   identity_checked: true
 homes:
-  - page: "[[Probable Cause and Reasonable Suspicion]]"
+  - page: "[[Probable Cause]]"
     role: "Key — Anchor"
+  - page: "[[The Proof Ladder]]"
+    role: "Key — rung anchor"
 related: ["[[Carroll v. United States]]", "[[Illinois v. Gates]]", "[[Maryland v. Pringle]]"]
 aliases: ["Brinegar v. US"]
 tags: ["case", "fourth-amendment", "probable-cause"]
@@ -65,7 +67,8 @@ Probable cause supported the search; the conviction was affirmed.
 - No negative treatment. *Brinegar*'s "reasonable and prudent" formulation remains the bedrock statement of probable cause, carried forward through [[Illinois v. Gates]] and applied in cases such as [[Maryland v. Pringle]].
 
 ## Appears on
-- [[Probable Cause and Reasonable Suspicion]] — *Key — Anchor*
+- [[Probable Cause]] — *Key — Anchor*
+- [[The Proof Ladder]] — *Key — rung anchor*
 
 ## Sources
 - *Brinegar v. United States*, 338 U.S. 160 (1949) — https://www.courtlistener.com/opinion/104716/brinegar-v-united-states/ — pinpoints: 175, 176.
