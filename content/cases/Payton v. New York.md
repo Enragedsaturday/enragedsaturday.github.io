@@ -28,6 +28,8 @@ courtlistener:
 homes:
   - page: "[[Arrest in the Home]]"
     role: "Key — Anchor"
+  - page: "[[Entry to Arrest]]"
+    role: "Key — Anchor"
   - page: "[[Securing the Scene]]"
     role: "Related (cross-doctrine)"
 related: ["[[United States v. Watson]]", "[[Steagald v. United States]]", "[[Maryland v. Buie]]"]
@@ -67,6 +69,7 @@ Warrantless, nonconsensual home entry to make a routine felony arrest is presump
 
 ## Appears on
 - [[Arrest in the Home]] — *Key — Anchor*
+- [[Entry to Arrest]] — *Key — Anchor*
 - [[Securing the Scene]] — *Related (cross-doctrine)*
 
 ## Sources

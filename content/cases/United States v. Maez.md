@@ -30,9 +30,12 @@ lake:
   status: under_review
   projected_at: 2026-07-07
 homes:
+  - page: "[[Entry to Arrest]]"
+    role: "Key — constructive-entry (10th Cir. recognizing side: SWAT loudspeaker order = warrantless in-home arrest, 872 F.2d at 1451)"
   - page: "[[Arrest in the Home]]"
-    role: Key
+    role: "Related — constructive-entry cross-ref"
 related:
+  - "[[Entry to Arrest]]"
   - "[[Arrest in the Home]]"
   - "[[Payton v. New York]]"
   - "[[Seizure of the Person]]"
@@ -73,7 +76,8 @@ The officers had no arrest warrant, yet they surrounded Maez's trailer with a SW
 **Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub and renders under the ⚪ banner until S9 promotion. *Maez* is a leading Tenth Circuit statement of **constructive entry** under *[[Payton v. New York|Payton]]*: police who mount a coercive show of force to draw a suspect out of his home and arrest him have made a warrantless arrest "in the home," even without crossing the threshold — the arrestee's location, not the officers', controls. Pair it with *Payton*'s firm line at the entrance to the house and with the fruit-of-the-poisonous-tree consequences for evidence and consent obtained afterward.
 
 ## Appears on
-- [[Arrest in the Home]] — *Key*
+- [[Entry to Arrest]] — *Key*
+- [[Arrest in the Home]] — *Related*
 
 ## Sources
 - [*United States v. Maez*, 872 F.2d 1444 (10th Cir. 1989)](https://www.courtlistener.com/opinion/521939/united-states-v-arthur-maez/) — pinpoint: 1451 (the constructive-entry / show-of-force *Payton* holding; the CL majority text is paragraph-numbered, and the court's own opinion cross-references this holding to reporter page 1451). Rule quote string-matched to the CL opinion text 2026-07-07.

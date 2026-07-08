@@ -30,9 +30,12 @@ lake:
   status: under_review
   projected_at: 2026-07-07
 homes:
+  - page: "[[Entry to Arrest]]"
+    role: "Key — constructive-entry (7th Cir. narrow side: voice-from-outside arrest OK, warrantless entry before arrest not, 927 F.2d at 1386)"
   - page: "[[Arrest in the Home]]"
-    role: Key
+    role: "Related — constructive-entry cross-ref"
 related:
+  - "[[Entry to Arrest]]"
   - "[[Arrest in the Home]]"
   - "[[Payton v. New York]]"
   - "[[United States v. Watson]]"
@@ -71,7 +74,8 @@ Berkowitz's assistance-of-counsel and sentencing challenges were rejected, but t
 **Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub and renders under the ⚪ banner until S9 promotion. *Berkowitz* is the Seventh Circuit's framework for the "knock and arrest" at the doorway: *Payton* is not offended when officers announce an arrest from outside and the suspect surrenders at the threshold, but it is violated by a warrantless, nonexigent entry made before the arrest is effected — the same line later drawn in *[[Knight v. Jacobson]]* between the officer's body and his voice.
 
 ## Appears on
-- [[Arrest in the Home]] — *Key*
+- [[Entry to Arrest]] — *Key*
+- [[Arrest in the Home]] — *Related*
 
 ## Sources
 - [*United States v. Berkowitz*, 927 F.2d 1376 (7th Cir. 1991)](https://www.courtlistener.com/opinion/557342/united-states-v-marvin-berkowitz/) — pinpoint: 1386 (threshold / voice-vs-entry holding). The primary CL opinion object is paragraph-numbered; the reporter-paginated sibling opinion (CL 9481419) star-paginates 927 F.2d and places the quoted holding at 1386. Rule quote string-matched to the CL opinion text 2026-07-07.

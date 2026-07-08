@@ -26,8 +26,10 @@ courtlistener:
   opinion_id: 2620702
   identity_checked: true
 homes:
+  - page: "[[Arrest and Arrest Warrants]]"
+    role: "Key — Anchor (minor-offense custodial arrest on probable cause)"
   - page: "[[Seizure of the Person]]"
-    role: "Anchor"
+    role: "Related (cross-doctrine)"
   - page: "[[Search Incident to Arrest]]"
     role: "Related (cross-doctrine)"
 related: ["[[Whren v. United States]]", "[[Arkansas v. Sullivan]]", "[[Devenpeck v. Alford]]", "[[Tennessee v. Garner]]"]
@@ -67,7 +69,8 @@ The warrantless custodial arrest for the fine-only seatbelt offense, supported b
 - No negative treatment. *Atwater*'s categorical rule is extended by [[Virginia v. Moore]] (an arrest on probable cause is reasonable under the Fourth Amendment even if it violates state arrest law) and is consistent with the objective, motive-irrelevant approach of [[Whren v. United States]], [[Arkansas v. Sullivan]] (its same-day companion), and [[Devenpeck v. Alford]].
 
 ## Appears on
-- [[Seizure of the Person]] — *Anchor*
+- [[Arrest and Arrest Warrants]] — *Key — Anchor*
+- [[Seizure of the Person]] — *Related (cross-doctrine)*
 - [[Search Incident to Arrest]] — *Related (cross-doctrine)*
 
 ## Sources

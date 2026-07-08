@@ -28,6 +28,8 @@ courtlistener:
 homes:
   - page: "[[Arrest in the Home]]"
     role: "Limiting"
+  - page: "[[Entry to Arrest]]"
+    role: "Limiting"
   - page: "[[The Exclusionary Rule]]"
     role: "Related (cross-doctrine)"
 related: ["[[Payton v. New York]]", "[[Brown v. Illinois]]", "[[Wong Sun v. United States]]", "[[Kirk v. Louisiana]]"]
@@ -69,6 +71,7 @@ With probable cause to arrest, a *Payton* violation does not require suppression
 
 ## Appears on
 - [[Arrest in the Home]] — *Limiting*
+- [[Entry to Arrest]] — *Limiting*
 - [[The Exclusionary Rule]] — *Related (cross-doctrine)*
 
 ## Sources

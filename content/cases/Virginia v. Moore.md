@@ -26,8 +26,10 @@ courtlistener:
   opinion_id: 145814
   identity_checked: true
 homes:
+  - page: "[[Arrest and Arrest Warrants]]"
+    role: "Key — a state-law arrest violation is not a Fourth Amendment violation"
   - page: "[[Seizure of the Person]]"
-    role: "Progeny"
+    role: "Related (cross-doctrine)"
   - page: "[[Search Incident to Arrest]]"
     role: "Progeny"
   - page: "[[The Exclusionary Rule]]"
@@ -69,7 +71,8 @@ The arrest and the search incident to it were constitutional; the Fourth Amendme
 - *Moore* remains controlling: a probable-cause arrest is Fourth-Amendment-reasonable regardless of contrary state arrest law, the search incident follows automatically, and a state-law-only violation does not trigger the exclusionary rule. It applies [[United States v. Robinson]] and runs alongside [[Atwater v. City of Lago Vista]] and [[Devenpeck v. Alford]]. No negative treatment.
 
 ## Appears on
-- [[Seizure of the Person]] — *Progeny*
+- [[Arrest and Arrest Warrants]] — *Key*
+- [[Seizure of the Person]] — *Related (cross-doctrine)*
 - [[Search Incident to Arrest]] — *Progeny*
 - [[The Exclusionary Rule]] — *Related (cross-doctrine)*
 

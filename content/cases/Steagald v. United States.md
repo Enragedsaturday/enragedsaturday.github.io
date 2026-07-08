@@ -28,6 +28,8 @@ courtlistener:
 homes:
   - page: "[[Arrest in the Home]]"
     role: "Key — Progeny / Refinement"
+  - page: "[[Entry to Arrest]]"
+    role: "Key — Progeny / Refinement"
   - page: "[[Securing the Scene]]"
     role: "Related (cross-doctrine)"
 related: ["[[Payton v. New York]]", "[[Bailey v. United States]]"]
@@ -66,6 +68,7 @@ A search warrant was required to search the third party's home for the subject o
 
 ## Appears on
 - [[Arrest in the Home]] — *Key — Progeny / Refinement*
+- [[Entry to Arrest]] — *Key — Progeny / Refinement*
 - [[Securing the Scene]] — *Related (cross-doctrine)*
 
 ## Sources

@@ -26,6 +26,8 @@ courtlistener:
   opinion_id: 109352
   identity_checked: true
 homes:
+  - page: "[[Arrest and Arrest Warrants]]"
+    role: "Key — Anchor (warrantless public arrest on probable cause)"
   - page: "[[Consent Searches]]"
     role: "Key — Progeny / Refinement"
 related: ["[[Schneckloth v. Bustamonte]]", "[[United States v. Drayton]]", "[[United States v. Mendenhall]]", "[[United States v. Santana]]"]
@@ -65,6 +67,7 @@ The warrantless public arrest was lawful and Watson's consent to the search was 
 - No negative treatment. *Watson* applies the [[Schneckloth v. Bustamonte]] totality-of-the-circumstances voluntariness test to a custodial setting: being under arrest is one factor, not a disqualifier, and the suspect need not be told he may refuse. *Watson*'s separate holding — that a warrantless felony arrest in public on probable cause is reasonable — also remains good law and informs [[United States v. Santana]].
 
 ## Appears on
+- [[Arrest and Arrest Warrants]] — *Key — Anchor*
 - [[Consent Searches]] — *Key — Progeny / Refinement*
 
 ## Sources

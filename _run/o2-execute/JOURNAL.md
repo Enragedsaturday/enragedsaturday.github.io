@@ -1173,3 +1173,29 @@ paged + Berkowitz 7th paged + Allen 2d/Fisher 9th terminals + Harris remedy tail
 1st/3d/4th/8th + Morgan-6th/Knight-11th honest-unmapped. NEXT: cat-4c arrests batch
 (Arrest-in-the-Home A + Entry to Arrest A w/ D7 SACO section + point node + Arrest & Arrest
 Warrants B + Prompt-PC C).
+
+**BATCH 9 CLOSED — CAT-4c ARRESTS + D7 SACO (2026-07-08) — CATEGORY 4 COMPLETE:** Entry to
+Arrest AUTHORED (A, T2#30) carrying the D7 SACO/constructive-entry section + NEW POINT NODE
+seizure.person.constructive-entry (grammar corrected vs dispatch — sibling family is
+seizure.person.*, no seizure.home object; LINT-20 0 + self-test PASS) — split taught honestly:
+recognizing 2d(Allen terminal)/9th(Nora★1054-55/Al-Azzawy/Vaneaton pages)/10th(Maez page) +
+6th named-only; narrow 7th(Berkowitz page)/11th(KNIGHT PAGE — IDENTITY CATCH #4: L2 map said
+unnameable, ground truth = full authored page, split STRONGER)/5th named-only; 1st/3d/4th/8th
+unmapped plainly; containment-line poles + Nora-1055 perimeter point + Harris remedy tail all
+authored. Arrest in the Home born-again (A, em 81→2; SD2 held: constructive-entry strand
+moved ONCE, Payton/Steagald black-letter stays canonical here w/ reason-to-believe LCD
+Brinkley/Vasquez-Algarin); Arrest & Arrest Warrants (B) + Prompt-PC (C) authored. R5:
+Case-v-Montana slip REFUTED-AS-TARGET (current-term sanctioned). Batch-7-owed re-homes
+executed row-by-row (Atwater/Virginia-v-Moore/Gerstein/McLaughlin primary→arrests pages,
+Seizure-of-Person tables demoted to Related; Moore-v-Illinois 6A namesake disambiguated,
+untouched). 11/11 owed rows zero-drop. Registry: constructive-entry NEW + arrest-warrant +
+prompt-pc statements filled. 5 MCP calls 0 REST (Watson ★424, Atwater 354, Devenpeck 153,
+Gerstein 114, McLaughlin 56-57). Anchor-cleanup register +2 (Gerstein/McLaughlin → 11 total);
+al-Kidd URL divergence → S9. GATES: run_all 7933→7913 (HIGH 4802, -23, zero new), LINT-15/16
+0/0 x5, LINT-17 0 (no ledger regen needed — no new terminals), LINT-20/25 0, survey em 3190,
+build 724/2794 (+11 alias redirects), Case Index 620 idempotent. SCOREBOARD: cats 2/3/4
+COMPLETE = 30 doctrine units born draft + 3 S7-minted case pages; run_all 8372→7913 HIGH
+-408 since S7 open. NEXT: cat-5 The Warrant (SD2 mega-batch: parent dissolves → Getting a
+Warrant sub-umbrella [PC-Affidavit A · Magistrate B · Particularity A · Franks B] + Executing
+[Knock-and-Announce A · Detention-at-Scene B · Scope-Manner B]; TEACH-01 Chatrie relocation +
+GAP-06 :62 + TEACH-04h :149; geofence re-points now available to the authored digital page).

@@ -26,8 +26,10 @@ courtlistener:
   opinion_id: 112585
   identity_checked: true
 homes:
+  - page: "[[Prompt Probable-Cause Determination]]"
+    role: "Key — the 48-hour presumption implementing Gerstein"
   - page: "[[Seizure of the Person]]"
-    role: "Progeny"
+    role: "Related (cross-doctrine)"
 related: ["[[Gerstein v. Pugh]]"]
 aliases: []
 tags: ["case", "fourth-amendment", "arrest", "probable-cause", "pretrial-detention", "gerstein-hearing"]
@@ -65,7 +67,8 @@ A judicial probable-cause determination within 48 hours of a warrantless arrest 
 - No negative treatment. *McLaughlin* implements the "promptly after arrest" requirement of [[Gerstein v. Pugh]] with the operative 48-hour benchmark (and the over-48-hour burden shift) that governs post-arrest detention timing.
 
 ## Appears on
-- [[Seizure of the Person]] — *Progeny*
+- [[Prompt Probable-Cause Determination]] — *Key*
+- [[Seizure of the Person]] — *Related (cross-doctrine)*
 
 ## Sources
 - *County of Riverside v. McLaughlin*, 500 U.S. 44 (1991) — https://www.courtlistener.com/opinion/112585/county-of-riverside-v-mclaughlin/ — pinpoints: 56, 57.

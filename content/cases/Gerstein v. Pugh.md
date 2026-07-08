@@ -26,8 +26,10 @@ courtlistener:
   opinion_id: 9425988
   identity_checked: true
 homes:
+  - page: "[[Prompt Probable-Cause Determination]]"
+    role: "Key — Anchor (prompt judicial PC determination after a warrantless arrest)"
   - page: "[[Seizure of the Person]]"
-    role: "Anchor"
+    role: "Related (cross-doctrine)"
 related: ["[[County of Riverside v. McLaughlin]]", "[[Coolidge v. New Hampshire]]", "[[Payton v. New York]]"]
 aliases: []
 tags: ["case", "fourth-amendment", "arrest", "probable-cause", "pretrial-detention", "gerstein-hearing"]
@@ -65,7 +67,8 @@ The Fourth Amendment requires a timely judicial determination of probable cause 
 - No negative treatment. *Gerstein*'s "promptly after arrest" requirement is implemented by [[County of Riverside v. McLaughlin]], which set a presumptive 48-hour window for the judicial probable-cause determination. The neutral-magistrate principle traces to [[Coolidge v. New Hampshire]]; *Gerstein* concerns post-arrest detention and is distinct from the in-home arrest-warrant rule of [[Payton v. New York]].
 
 ## Appears on
-- [[Seizure of the Person]] — *Anchor*
+- [[Prompt Probable-Cause Determination]] — *Key — Anchor*
+- [[Seizure of the Person]] — *Related (cross-doctrine)*
 
 ## Sources
 - *Gerstein v. Pugh*, 420 U.S. 103 (1975) — https://www.courtlistener.com/opinion/109186/gerstein-v-pugh/ — pinpoints: 113–114, 125.

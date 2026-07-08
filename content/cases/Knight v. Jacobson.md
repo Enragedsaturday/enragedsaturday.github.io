@@ -30,9 +30,12 @@ lake:
   status: under_review
   projected_at: 2026-07-07
 homes:
+  - page: "[[Entry to Arrest]]"
+    role: "Key — constructive-entry (11th Cir. narrow side: officer's body, not his voice, stays outside the threshold, 300 F.3d at 1277)"
   - page: "[[Arrest in the Home]]"
-    role: Key
+    role: "Related — constructive-entry cross-ref"
 related:
+  - "[[Entry to Arrest]]"
   - "[[Arrest in the Home]]"
   - "[[Payton v. New York]]"
   - "[[United States v. Watson]]"
@@ -71,7 +74,8 @@ The denial of summary judgment was **reversed**; Officer Jacobson was entitled t
 **Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub and renders under the ⚪ banner until S9 promotion. *Knight v. Jacobson* marks the boundary of the *[[Payton v. New York|Payton]]* rule: the constitutional protection attaches to physical entry across the threshold, so an officer's summons to a suspect to come outside — followed by a warrantless arrest supported by probable cause under *[[United States v. Watson]]* — does not offend the Fourth Amendment.
 
 ## Appears on
-- [[Arrest in the Home]] — *Key*
+- [[Entry to Arrest]] — *Key*
+- [[Arrest in the Home]] — *Related*
 
 ## Sources
 - [*Knight v. Jacobson*, 300 F.3d 1272 (11th Cir. 2002)](https://www.courtlistener.com/opinion/778847/arthur-knight-v-jacobson-officer-badge-3359-individual/) — pinpoint: 1277 (Opinion of the Court); Rule quote string-matched to the CL opinion text 2026-07-07.
