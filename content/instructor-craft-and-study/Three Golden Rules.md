@@ -13,6 +13,8 @@ status: verified
 related: ["[[Use of Force]]", "[[Fourth Amendment Framework]]", "[[CREW]]", "[[Seizure of the Person]]"]
 ---
 
+# The Three Golden Rules
+
 ## Rule
 
 Three teaching maxims for building **articulation** — habits of thought, not legal tests. They are heuristics that track how courts actually apply the Fourth Amendment's reasonableness standard; the *law* they rest on is cited and verified below.

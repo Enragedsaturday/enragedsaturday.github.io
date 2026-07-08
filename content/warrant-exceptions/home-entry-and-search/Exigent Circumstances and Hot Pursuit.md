@@ -12,6 +12,8 @@ status: verified
 related: ["[[Arrest in the Home]]", "[[Emergency Aid]]", "[[Securing the Scene]]", "[[Automobile Exception]]", "[[Search Incident to Arrest]]", "[[The Warrant Requirement]]", "[[Knock and Talk]]"]
 ---
 
+# Exigent Circumstances and Hot Pursuit
+
 ## The Brief
 
 **Field-decisive question:** *Is there a true emergency that lets me act now without a warrant — and how far does it go?* The exception turns on two things in tandem: a **genuine exigency** that makes getting a warrant impracticable, and a **scope** no wider than the emergency that justified acting.

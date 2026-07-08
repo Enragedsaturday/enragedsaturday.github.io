@@ -12,6 +12,8 @@ status: verified
 related: ["[[Fourth Amendment Framework]]", "[[Fourth Amendment Analysis Checklist]]", "[[Curtilage]]", "[[Abandonment]]", "[[Three Golden Rules]]"]
 ---
 
+# C.R.E.W. — The Three Justifications
+
 ## Rule
 Once you have established that a **search or seizure occurred** and that the claimant has **standing**, the only remaining question is whether the government action was **reasonable**. **C.R.E.W.** is the field checklist for that last step — a search or seizure is reasonable when it rests on **at least one** of three justifications:
 

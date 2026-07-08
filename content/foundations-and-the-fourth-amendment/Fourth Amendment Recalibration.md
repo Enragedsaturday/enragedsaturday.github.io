@@ -11,6 +11,8 @@ status: verified
 related: ["[[The Third-Party Doctrine and Digital Surveillance]]", "[[Two Definitions of Search]]", "[[Automobile Exception]]", "[[The Exclusionary Rule]]", "[[Common Law Origins]]"]
 ---
 
+# Fourth Amendment Recalibration
+
 ## Rule
 The Fourth Amendment is not a fixed snapshot of 1791 — it is a **balance** between government power and individual privacy that the Supreme Court has had to **recalibrate** every time technology or society shifts the ground under it. Think of it as a doctrine that periodically needs a new release: a **"Fourth Amendment 2.0."** The balance is inherently unstable, because each generation produces new tools — the automobile, the telephone and the wiretap, the searchlight, the thermal imager, the smartphone, cell-site location data — that the existing doctrine never anticipated, and the Court must decide whether the old rule still fits. **Two engines drive the recalibration:** (1) **new surveillance and transport technology**, which sometimes *expands* government power (the automobile justified warrantless searches in *Carroll*; the wiretap escaped the Amendment entirely in *Olmstead*) and sometimes *contracts* it (privacy reclaimed the wiretap in *Katz*, the phone in *Riley*, location data in *Carpenter*); and (2) **incorporation against the states** — the Amendment going from a federal-only restraint to a fully state-binding one, the right incorporated in *Wolf* (1949) and the exclusionary remedy added in *Mapp* (1961). The throughline: the same constitutional text, re-fitted again and again to a changed world.
 

@@ -11,6 +11,8 @@ status: verified
 related: ["[[Abandonment]]", "[[CREW]]", "[[Fourth Amendment Analysis Checklist]]", "[[Knock and Talk]]", "[[Traffic Stops]]", "[[Seizure of the Person]]", "[[Terry Stops and Reasonable Suspicion]]"]
 ---
 
+# Consent Searches
+
 ## The Brief
 
 **Field-decisive question:** *Do I have valid consent — from someone who can give it, and how far does it reach?* Consent is the "C" of CREW — a **recognized, warrant-free justification** for a search that needs **no warrant and no probable cause**. But a consent search is valid only when **three prongs all line up**, and the burden of proving each is the government's.

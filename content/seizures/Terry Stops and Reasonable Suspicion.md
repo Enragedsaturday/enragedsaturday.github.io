@@ -16,6 +16,8 @@ status: verified
 related: ["[[Seizure of the Person]]", "[[Traffic Stops]]", "[[Probable Cause and Reasonable Suspicion]]", "[[Consent Searches]]", "[[Plain View Doctrine]]", "[[Use of Force]]", "[[Fourth Amendment Analysis Checklist]]"]
 ---
 
+# Terry Stops and Reasonable Suspicion
+
 ## The Brief
 
 **Field-decisive question:** *Do I have reasonable suspicion to **stop** — and, separately, reasonable suspicion the person is **armed and dangerous**, to **frisk**?* These are **two** calls, not one. Clearing the stop does not clear the frisk.

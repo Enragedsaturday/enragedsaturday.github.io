@@ -12,6 +12,8 @@ status: verified
 related: ["[[Reading and Citing Cases]]", "[[Verifying Good Law]]", "[[Common Legal Terms]]", "[[Fourth Amendment Framework]]", "[[Fourth Amendment Analysis Checklist]]"]
 ---
 
+# The Federal Court System
+
 Every doctrine page in this wiki weights authority the same way: **SCOTUS binding; a circuit holding binds only within its own circuit (Persuasive (outside circuit) elsewhere — splits flagged); state cases illustrative only (Persuasive — state, illustrative).** That hierarchy is not a house preference — it is how the federal judiciary actually works, and it is the spine of the wiki's six-tier authority lexicon (see [[Verifying Good Law]]). This page is the reference that explains *why* a Ninth Circuit case binds in San Francisco but not in Dallas, why a district-court opinion settles nothing, and why a "circuit split" is a signal rather than a rule. Read it once, then lean on it whenever you decide how much a case is worth.
 
 ## The three-tier hierarchy

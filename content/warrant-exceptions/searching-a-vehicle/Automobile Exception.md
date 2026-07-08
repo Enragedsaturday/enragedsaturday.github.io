@@ -11,6 +11,8 @@ status: verified
 related: ["[[Traffic Stops]]", "[[Search Incident to Arrest]]", "[[Special Needs and Administrative Searches]]", "[[Curtilage]]"]
 ---
 
+# The Automobile Exception
+
 ## The Brief
 
 **Field-decisive question:** *Can I search this vehicle right now without a warrant — and if so, how far does the search reach?* One fact decides it: **probable cause** to believe a **readily mobile** vehicle contains evidence or contraband. If you have it, you may search the car on the spot — or later, at the station, after impoundment — **without a warrant and without any separate showing of exigency**, and the search reaches every part of the car and every container in it where the object of your probable cause could be hidden. If you don't have PC, the exception gives you nothing.

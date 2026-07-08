@@ -11,6 +11,8 @@ status: verified
 related: ["[[Reading and Citing Cases]]", "[[Verifying Good Law]]", "[[The Federal Court System]]", "[[Common Legal Terms]]"]
 ---
 
+# Legal Research Tools
+
 **You don't have Westlaw or Lexis. How do you find — and trust — a free copy of the opinion?** You don't need a paid subscription to do this course's research: the free, primary-source ecosystem is strong, and it's the same set of tools this wiki verifies against. This page leads with the **free backbone**, then flags a small **low-cost/paid** subsection. It pairs with [[Reading and Citing Cases]] (decoding what you find) and [[Verifying Good Law]] (confirming it still stands).
 
 > [!note] Verified current as of **2026-06-30**

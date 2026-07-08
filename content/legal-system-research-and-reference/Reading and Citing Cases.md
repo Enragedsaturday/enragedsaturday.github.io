@@ -13,6 +13,8 @@ status: verified
 related: ["[[Legal Research Tools]]", "[[Verifying Good Law]]", "[[The Federal Court System]]", "[[Common Legal Terms]]", "[[Fourth Amendment Analysis Checklist]]"]
 ---
 
+# Reading & Citing Cases
+
 **You're handed a cite — what does each part tell you, and is it worth trusting?** This page decodes a citation left to right, then covers the state conventions the federal rules don't, and ends with a quick-reference glossary of the citation and posture terms that show up in opinions. It is one of three companion references: this one on **reading and citing**, [[Legal Research Tools]] on **finding the opinion free**, and [[Verifying Good Law]] on **confirming it still stands**. House style throughout is **Bluebook**, and every case this wiki asserts is verified on CourtListener before it goes on a page.
 
 ## Reading a federal citation

@@ -13,6 +13,8 @@ status: verified
 related: ["[[Fourth Amendment Framework]]", "[[Two Definitions of Search]]", "[[Seizure of the Person]]", "[[CREW]]", "[[Curtilage]]", "[[Abandonment]]", "[[Three Golden Rules]]"]
 ---
 
+# Fourth Amendment Analysis Checklist
+
 ## Rule
 A field-and-exam quick-reference for running any Fourth Amendment problem. Work the questions **in order** — if an earlier one fails, you never reach the next. This page is the checklist; the doctrine behind each step lives on the linked pages. The full decision tree is drawn on [[Fourth Amendment Framework]].
 

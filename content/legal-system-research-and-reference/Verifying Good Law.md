@@ -11,6 +11,8 @@ status: verified
 related: ["[[Reading and Citing Cases]]", "[[Legal Research Tools]]", "[[The Federal Court System]]", "[[Case Index]]"]
 ---
 
+# Verifying Good Law
+
 **Before I teach or rely on this case — is it still good law?** Finding an opinion is only half the job; a case that's been narrowed, reversed, or overruled is a trap, not a rule. Lawyers run Shepard's or KeyCite for a red-flag. You don't have that budget — so here is how to **shepardize by hand** with free tools. This page closes the loop opened by [[Legal Research Tools]] (finding it) and [[Reading and Citing Cases]] (reading it).
 
 ## Run the citator by hand

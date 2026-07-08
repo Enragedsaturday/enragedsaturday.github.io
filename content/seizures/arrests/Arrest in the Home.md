@@ -11,6 +11,8 @@ status: verified
 related: ["[[Seizure of the Person]]", "[[Exigent Circumstances and Hot Pursuit]]", "[[Securing the Scene]]", "[[Standing to Challenge a Search]]", "[[Search Incident to Arrest]]", "[[Emergency Aid]]", "[[Curtilage]]"]
 ---
 
+# Arrest in the Home
+
 ## The Brief
 
 **Field-decisive question:** *May I enter this home to arrest — and what do I need?*

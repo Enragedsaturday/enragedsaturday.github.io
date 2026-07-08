@@ -10,6 +10,8 @@ status: verified
 related: ["[[Three Golden Rules]]", "[[CREW]]"]
 ---
 
+# Instructor Development
+
 ## The standard
 An effective CSSI instructor pairs genuine command of the material with a service posture toward the students and the field. The ten principles below describe what that looks like in the classroom — they are habits of credibility, not a checklist to recite.
 

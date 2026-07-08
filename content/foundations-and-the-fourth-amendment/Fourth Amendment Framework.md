@@ -13,6 +13,8 @@ status: verified
 related: ["[[Fourth Amendment Analysis Checklist]]", "[[Two Definitions of Search]]", "[[Seizure of the Person]]", "[[CREW]]", "[[Curtilage]]", "[[Use of Force]]", "[[Common Law Origins]]"]
 ---
 
+# Fourth Amendment Framework
+
 ## Rule
 The Fourth Amendment secures "[t]he right of the people to be secure in their persons, houses, papers, and effects, against unreasonable searches and seizures," and commands that "no Warrants shall issue, but upon probable cause." U.S. Const. amend. IV. It contains **two clauses**: a **reasonableness clause** (the general command that searches and seizures be reasonable) and a **warrant clause** (the requirements for issuing a warrant). It restrains **the government only** — not private parties acting on their own. *United States v. Jacobsen*, 466 U.S. 109, 113–14 (1984). Every problem is worked in the same order: (1) was a constitutionally protected area or interest involved; (2) did a **search** or **seizure** occur; (3) does the claimant have **standing** (were the claimant's *own* rights invaded); and (4) was the government action **reasonable** — justified by **C.R.E.W.**: **C**onsent, a **R**ecognized **E**xception, or a **W**arrant.
 

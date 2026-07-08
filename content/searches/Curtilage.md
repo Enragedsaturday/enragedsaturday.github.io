@@ -11,6 +11,8 @@ status: verified
 related: ["[[Two Definitions of Search]]", "[[Fourth Amendment Framework]]", "[[Abandonment]]", "[[Tents]]", "[[Knock and Talk]]", "[[Plain View Doctrine]]"]
 ---
 
+# Curtilage
+
 ## The Brief
 
 **Field-decisive question:** *Is the ground the officer is standing on — or wants to enter, or to observe from outside — **curtilage**, the home's protected extension, or is it an **open field**?* Same officer, same patch of marijuana: which side of that one line the ground falls on decides whether a "search" happened at all, and therefore whether the evidence is suppressed.
