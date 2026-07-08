@@ -32,7 +32,7 @@ lake:
 homes:
   - page: "[[Fourth Amendment Framework]]"
     role: Key
-  - page: "[[Two Definitions Of Search]]"
+  - page: "[[Reasonable Expectation of Privacy]]"
     role: "Related (cross-doctrine)"
 related:
   - "[[Fourth Amendment Framework]]"
@@ -79,7 +79,7 @@ The Ninth Circuit **reversed** the denial of suppression and **vacated** Wilson'
 
 ## Appears on
 - [[Fourth Amendment Framework]] — *Key*
-- [[Two Definitions of Search]] — *Related (cross-doctrine)*
+- [[Reasonable Expectation of Privacy]] — *Related (cross-doctrine)*
 
 ## Sources
 - [*United States v. Wilson*, 13 F.4th 961 (9th Cir. 2021)](https://www.courtlistener.com/opinion/5296785/united-states-v-luke-wilson/) — pinpoint: slip op. at 6 (government's warrantless viewing exceeded the antecedent private search; the CL opinion text carries slip pagination, so the pin is slip-style per S2 A3). Rule quote string-matched to the CL opinion text 2026-07-07.

@@ -28,7 +28,7 @@ courtlistener:
 homes:
   - page: "[[Terry Stops and Reasonable Suspicion]]"
     role: "Related (cross-doctrine)"
-  - page: "[[Two Definitions of Search]]"
+  - page: "[[Reasonable Expectation of Privacy]]"
     role: "Related (cross-doctrine)"
 related: ["[[United States v. Place]]", "[[Terry v. Ohio]]", "[[Illinois v. McArthur]]"]
 aliases: []
@@ -68,7 +68,7 @@ The detention of the packages pending the warrant was reasonable; the evidence w
 
 ## Appears on
 - [[Terry Stops and Reasonable Suspicion]] — *Related (cross-doctrine)*
-- [[Two Definitions of Search]] — *Related (cross-doctrine)*
+- [[Reasonable Expectation of Privacy]] — *Related (cross-doctrine)*
 
 ## Sources
 - *United States v. Van Leeuwen*, 397 U.S. 249 (1970) — https://www.courtlistener.com/opinion/108099/united-states-v-van-leeuwen/ — pinpoints: 252, 253.

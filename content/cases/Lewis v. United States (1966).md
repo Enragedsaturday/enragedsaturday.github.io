@@ -26,7 +26,7 @@ courtlistener:
   opinion_id: 9423294
   identity_checked: true
 homes:
-  - page: "[[Two Definitions of Search]]"
+  - page: "[[Reasonable Expectation of Privacy]]"
     role: "Related (undercover entry / misplaced trust)"
   - page: "[[Consent Searches]]"
     role: "Related"
@@ -69,7 +69,7 @@ The undercover purchase in the home was not a Fourth Amendment search; the convi
 - No negative treatment. *Lewis* is a settled member of the misplaced-trust / false-friend line — a person who deals with someone who turns out to be an undercover agent assumes the risk of that misplaced trust — alongside *Hoffa v. United States*, *Lopez v. United States*, and later affirmed in *United States v. White*. Its limit (no general search beyond the invitation) traces to [[Gouled v. United States]].
 
 ## Appears on
-- [[Two Definitions of Search]] — *Related (undercover entry / misplaced trust)*
+- [[Reasonable Expectation of Privacy]] — *Related (undercover entry / misplaced trust)*
 - [[Consent Searches]] — *Related*
 
 ## Sources

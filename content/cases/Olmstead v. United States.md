@@ -26,7 +26,7 @@ courtlistener:
   opinion_id: 101320
   identity_checked: true
 homes:
-  - page: "[[Two Definitions of Search]]"
+  - page: "[[Trespass]]"
     role: "Historical / origin"
 related: ["[[Katz v. United States]]", "[[United States v. Jones]]", "[[Berger v. New York]]"]
 aliases: []
@@ -63,7 +63,7 @@ On these facts the warrantless wiretapping was held not to be a Fourth Amendment
 - **Overruled by [[Katz v. United States]] (1967)**, which rejected *Olmstead*'s trespass and "material things" framing and held that the Fourth Amendment protects people, not places, so that a warrantless wiretap of a telephone conversation is a search. The property-trespass approach *Olmstead* embodied was later partially revived as an alternative test in [[United States v. Jones]] (2012), but *Olmstead*'s holding that wiretapping is not a search remains overruled.
 
 ## Appears on
-- [[Two Definitions of Search]] — *Historical / origin*
+- [[Trespass]] — *Historical / origin*
 
 ## Sources
 - *Olmstead v. United States*, 277 U.S. 438 (1928) — https://www.courtlistener.com/opinion/101320/olmstead-v-united-states/ — pinpoint: 464.

@@ -26,7 +26,7 @@ courtlistener:
   opinion_id: 106187
   identity_checked: true
 homes:
-  - page: "[[Two Definitions of Search]]"
+  - page: "[[Trespass]]"
     role: "Key — Progeny / Refinement"
 related: ["[[Katz v. United States]]", "[[United States v. Jones]]", "[[Olmstead v. United States]]"]
 aliases: []
@@ -63,7 +63,7 @@ The spike-mike intrusion into the home was an unconstitutional search; the judgm
 - *Silverman*'s actual-intrusion holding predates [[Katz v. United States]], which supplemented it with the reasonable-expectation-of-privacy test; the property-based trespass approach *Silverman* exemplifies was reaffirmed as an independent test in [[United States v. Jones]], and it marks the boundary of the wiretap rule of [[Olmstead v. United States]].
 
 ## Appears on
-- [[Two Definitions of Search]] — *Key — Progeny / Refinement*
+- [[Trespass]] — *Key — Progeny / Refinement*
 
 ## Sources
 - *Silverman v. United States*, 365 U.S. 505 (1961) — https://www.courtlistener.com/opinion/106187/silverman-v-united-states/ — pinpoints: 509, 510, 511.

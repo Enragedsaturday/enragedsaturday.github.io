@@ -26,8 +26,8 @@ courtlistener:
   opinion_id: 118443
   identity_checked: true
 homes:
-  - page: "[[Two Definitions of Search]]"
-    role: "Key — Anchor"
+  - page: "[[Reasonable Expectation of Privacy]]"
+    role: "Key"
   - page: "[[Curtilage]]"
     role: "Related (cross-doctrine)"
   - page: "[[The Third-Party Doctrine and Digital Surveillance]]"
@@ -69,7 +69,7 @@ The thermal imaging was an unlawful warrantless search; the case was remanded to
 - *Kyllo* remains good law and is a cornerstone of the modern search-definition line: its concern with privacy-eroding technology and home sanctity informs [[United States v. Jones]] (2012), [[Florida v. Jardines]] (2013), and [[Carpenter v. United States]] (2018).
 
 ## Appears on
-- [[Two Definitions of Search]] — *Key — Anchor*
+- [[Reasonable Expectation of Privacy]] — *Key*
 - [[Curtilage]] — *Related (cross-doctrine)*
 - [[The Third-Party Doctrine and Digital Surveillance]] — *Related (cross-doctrine)*
 

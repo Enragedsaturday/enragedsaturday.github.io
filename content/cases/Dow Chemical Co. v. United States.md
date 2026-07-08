@@ -28,7 +28,7 @@ courtlistener:
 homes:
   - page: "[[Curtilage]]"
     role: "Related"
-  - page: "[[Two Definitions of Search]]"
+  - page: "[[Reasonable Expectation of Privacy]]"
     role: "Related (cross-doctrine)"
 related: ["[[California v. Ciraolo]]", "[[Florida v. Riley]]", "[[Oliver v. United States]]", "[[Kyllo v. United States]]"]
 aliases: ["Dow Chemical Co. v. United States Ex Rel. Administrator"]
@@ -68,7 +68,7 @@ The aerial photography was not a Fourth Amendment search. The judgment for the U
 
 ## Appears on
 - [[Curtilage]] — *Related*
-- [[Two Definitions of Search]] — *Related (cross-doctrine)*
+- [[Reasonable Expectation of Privacy]] — *Related (cross-doctrine)*
 
 ## Sources
 - *Dow Chemical Co. v. United States*, 476 U.S. 227 (1986) — https://www.courtlistener.com/opinion/111667/dow-chemical-co-v-united-states-ex-rel-administrator/ — pinpoint: 239.

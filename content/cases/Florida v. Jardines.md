@@ -28,6 +28,8 @@ courtlistener:
 homes:
   - page: "[[Knock and Talk]]"
     role: "Key — Anchor"
+  - page: "[[Trespass]]"
+    role: "Key"
 related: ["[[Florida v. Harris]]", "[[United States v. Jones]]", "[[California v. Ciraolo]]"]
 aliases: []
 tags: ["case", "fourth-amendment", "curtilage", "knock-and-talk", "dog-sniff", "trespass"]
@@ -66,6 +68,7 @@ The front-porch dog sniff was an unlicensed physical intrusion and thus a Fourth
 
 ## Appears on
 - [[Knock and Talk]] — *Key — Anchor*
+- [[Trespass]] — *Key*
 
 ## Sources
 - *Florida v. Jardines*, 569 U.S. 1 (2013) — https://www.courtlistener.com/opinion/856347/florida-v-jardines/ — pinpoints: 6, 9.

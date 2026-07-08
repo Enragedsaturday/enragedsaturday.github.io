@@ -26,7 +26,7 @@ courtlistener:
   opinion_id: 4287285
   identity_checked: true
 homes:
-  - page: "[[Two Definitions of Search]]"
+  - page: "[[Reasonable Expectation of Privacy]]"
     role: "Key — Progeny / Refinement"
 related: ["[[United States v. Jones]]", "[[Katz v. United States]]", "[[Smith v. Maryland]]", "[[Riley v. California]]", "[[Chatrie v. United States]]"]
 aliases: []
@@ -66,7 +66,7 @@ Acquiring Carpenter's historical CSLI was a Fourth Amendment search; the judgmen
 - **Extended (2026):** *[[Chatrie v. United States]]*, 609 U.S. ___ (2026), **applies and extends *Carpenter*** to bulk **geofence / Google Location History** data — holding its acquisition is a Fourth Amendment search even for a short (~2-hour) window and even though held by a third party (rejecting the opt-in/third-party rationale) — and leaves geofence-warrant probable cause/particularity for remand. *Carpenter* remains good law and anchors that ruling.
 
 ## Appears on
-- [[Two Definitions of Search]] — *Key — Progeny / Refinement*
+- [[Reasonable Expectation of Privacy]] — *Key — Progeny / Refinement*
 
 ## Sources
 - *Carpenter v. United States*, 585 U.S. 296 (2018) — https://www.courtlistener.com/opinion/4510032/carpenter-v-united-states/ — pinpoint: slip op., at 11 (CL carries the slip opinion; cluster 4510032 → opinion 4287285).

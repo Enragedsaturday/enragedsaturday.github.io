@@ -26,7 +26,7 @@ courtlistener:
   opinion_id: 99745
   identity_checked: true
 homes:
-  - page: "[[Two Definitions of Search]]"
+  - page: "[[Trespass]]"
     role: "Historical (foil)"
 related: ["[[Warden v. Hayden]]", "[[Boyd v. United States]]", "[[Weeks v. United States]]"]
 aliases: []
@@ -66,7 +66,7 @@ The clandestine taking and the use of the evidentiary papers violated Gouled's F
 - **Surviving principle:** the holding that entry obtained by stealth, ruse, or social pretext can render the ensuing search unreasonable remains good law and is cited in the consent/undercover line (cf. *Lewis v. United States* (1966), distinguishing a legitimate undercover business visit).
 
 ## Appears on
-- [[Two Definitions of Search]] — *Historical (foil)*
+- [[Trespass]] — *Historical (foil)*
 
 ## Sources
 - *Gouled v. United States*, 255 U.S. 298 (1921) — https://www.courtlistener.com/opinion/99745/gouled-v-united-states/ — pinpoints: 306, 309.

@@ -26,7 +26,7 @@ courtlistener:
   opinion_id: 112795
   identity_checked: true
 homes:
-  - page: "[[Two Definitions of Search]]"
+  - page: "[[Trespass]]"
     role: "Key — Anchor (seizure of property)"
   - page: "[[Seizure of the Person]]"
     role: "Related (cross-doctrine)"
@@ -67,7 +67,7 @@ The towing of the Soldals' home was a Fourth Amendment seizure; the Seventh Circ
 - Applies the seizure definition of [[United States v. Jacobsen]] to possessory interests and complements the plain-view seizure analysis of [[Horton v. California]]; the Court cautioned the Amendment does not protect possessory interests in *all* property (cf. [[Oliver v. United States]], open fields).
 
 ## Appears on
-- [[Two Definitions of Search]] — *Key — Anchor (seizure of property)*
+- [[Trespass]] — *Key — Anchor (seizure of property)*
 - [[Seizure of the Person]] — *Related (cross-doctrine)*
 
 ## Sources

@@ -26,8 +26,8 @@ courtlistener:
   opinion_id: 9429264
   identity_checked: true
 homes:
-  - page: "[[Two Definitions of Search]]"
-    role: "Key — Anchor (dog-sniff)"
+  - page: "[[Reasonable Expectation of Privacy]]"
+    role: "Key — boundary"
   - page: "[[Terry Stops and Reasonable Suspicion]]"
     role: "Limiting (duration)"
 related: ["[[Illinois v. Caballes]]", "[[Florida v. Jardines]]", "[[Terry v. Ohio]]", "[[Rodriguez v. United States]]", "[[United States v. Sharpe]]"]
@@ -67,7 +67,7 @@ The dog sniff was not a search, but the 90-minute seizure of the luggage exceede
 - Dog-sniff holding applied to vehicles in [[Illinois v. Caballes]]; bounded at the home's curtilage by [[Florida v. Jardines]]. Duration analysis developed by [[United States v. Sharpe]] (no rigid time limit; diligence test) and [[Rodriguez v. United States]] (a stop may not be prolonged even briefly for a sniff absent reasonable suspicion).
 
 ## Appears on
-- [[Two Definitions of Search]] — *Key — Anchor (dog-sniff)*
+- [[Reasonable Expectation of Privacy]] — *Key — boundary*
 - [[Terry Stops and Reasonable Suspicion]] — *Limiting (duration)*
 
 ## Sources

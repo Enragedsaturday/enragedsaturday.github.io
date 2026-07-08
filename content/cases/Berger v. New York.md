@@ -28,7 +28,7 @@ courtlistener:
 homes:
   - page: "[[The Third-Party Doctrine and Digital Surveillance]]"
     role: "Historical/Anchor"
-  - page: "[[Two Definitions of Search]]"
+  - page: "[[Reasonable Expectation of Privacy]]"
     role: "Related (cross-doctrine)"
 related: ["[[Katz v. United States]]", "[[Olmstead v. United States]]", "[[United States v. Karo]]"]
 aliases: []
@@ -68,7 +68,7 @@ New York's eavesdropping statute violated the Fourth and Fourteenth Amendments; 
 
 ## Appears on
 - [[The Third-Party Doctrine and Digital Surveillance]] — *Historical/Anchor*
-- [[Two Definitions of Search]] — *Related (cross-doctrine)*
+- [[Reasonable Expectation of Privacy]] — *Related (cross-doctrine)*
 
 ## Sources
 - *Berger v. New York*, 388 U.S. 41 (1967) — https://www.courtlistener.com/opinion/107483/berger-v-new-york/ — pinpoints: 44, 56.

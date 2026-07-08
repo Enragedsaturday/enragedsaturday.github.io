@@ -28,6 +28,8 @@ courtlistener:
 homes:
   - page: "[[Plain View Doctrine]]"
     role: "Key — Anchor"
+  - page: "[[Trespass]]"
+    role: "Related (cross-doctrine)"
 related: ["[[Coolidge v. New Hampshire]]", "[[Horton v. California]]", "[[Texas v. Brown]]"]
 aliases: []
 tags: ["case", "fourth-amendment", "plain-view", "search"]
@@ -66,6 +68,7 @@ Moving the equipment was an unreasonable search; the judgment of the Arizona Cou
 
 ## Appears on
 - [[Plain View Doctrine]] — *Key — Anchor*
+- [[Trespass]] — *Related (cross-doctrine)*
 
 ## Sources
 - *Arizona v. Hicks*, 480 U.S. 321 (1987) — https://www.courtlistener.com/opinion/111834/arizona-v-hicks/ — pinpoints: 324, 325, 326.

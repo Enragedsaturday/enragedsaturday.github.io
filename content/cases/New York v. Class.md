@@ -26,8 +26,8 @@ courtlistener:
   opinion_id: 9430353
   identity_checked: true
 homes:
-  - page: "[[Two Definitions of Search]]"
-    role: "Related"
+  - page: "[[Reasonable Expectation of Privacy]]"
+    role: "Related (cross-doctrine)"
   - page: "[[Traffic Stops]]"
     role: "Related (cross-doctrine)"
 related: ["[[Pennsylvania v. Mimms]]", "[[Delaware v. Prouse]]", "[[South Dakota v. Opperman]]"]
@@ -67,7 +67,7 @@ Reading the obscured VIN by a brief reach into the car was a reasonable, minimal
 - Builds on the diminished vehicle-privacy line ([[South Dakota v. Opperman]]) and the traffic-stop officer-safety/authority cases ([[Pennsylvania v. Mimms]], [[Delaware v. Prouse]]).
 
 ## Appears on
-- [[Two Definitions of Search]] — *Related*
+- [[Reasonable Expectation of Privacy]] — *Related (cross-doctrine)*
 - [[Traffic Stops]] — *Related (cross-doctrine)*
 
 ## Sources

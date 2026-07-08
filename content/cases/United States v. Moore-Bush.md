@@ -36,7 +36,7 @@ homes:
     role: "Related (cross-doctrine)"
   - page: "[[The Third Party Doctrine And Digital Surveillance]]"
     role: "Related (cross-doctrine)"
-  - page: "[[Two Definitions Of Search]]"
+  - page: "[[Reasonable Expectation of Privacy]]"
     role: "Related (cross-doctrine)"
 related:
   - "[[Fourth Amendment Framework]]"
@@ -88,7 +88,7 @@ The district court's suppression order was **unanimously reversed** and the case
 - [[Fourth Amendment Framework]] — *Key*
 - [[Curtilage]] — *Related (cross-doctrine)*
 - [[The Third-Party Doctrine and Digital Surveillance]] — *Related (cross-doctrine)*
-- [[Two Definitions of Search]] — *Related (cross-doctrine)*
+- [[Reasonable Expectation of Privacy]] — *Related (cross-doctrine)*
 
 ## Sources
 - [*United States v. Moore-Bush*, 36 F.4th 320 (1st Cir. 2022) (en banc)](https://www.courtlistener.com/opinion/6476395/united-states-v-moore-bush/) — pinpoint: slip op. at 3 (per curiam disposition — unanimous reversal, court equally divided on whether the surveillance was a search; the CL opinion text carries slip pagination, so the pin is slip-style per S2 A3). Rule quote string-matched to the CL opinion text 2026-07-07.

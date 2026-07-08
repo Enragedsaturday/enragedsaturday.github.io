@@ -43,8 +43,6 @@ courtlistener:
 homes:
   - page: "[[The Third-Party Doctrine and Digital Surveillance]]"
     role: "Key — Circuit anchor (geofence)"
-  - page: "[[Two Definitions of Search]]"
-    role: "Related (cross-doctrine)"
 related: ["[[Chatrie v. United States]]", "[[Carpenter v. United States]]", "[[United States v. Leon]]", "[[The Warrant Requirement]]", "[[The Exclusionary Rule]]"]
 aliases: ["United States v. Smith", "United States v. Smith (5th Cir. 2024)"]
 tags: ["case", "fourth-amendment", "search", "digital-privacy", "geofence", "location-history", "good-faith-exception"]
@@ -84,7 +82,6 @@ The Supreme Court's 2026 *Chatrie* decision resolved the circuit split *Smith* a
 
 ## Appears on
 - [[The Third-Party Doctrine and Digital Surveillance]] — *Key — Circuit anchor (geofence)*
-- [[Two Definitions of Search]] — *Related (cross-doctrine)*
 
 ## Sources
 - [*United States v. Smith*, 110 F.4th 817 (5th Cir. 2024)](https://www.courtlistener.com/opinion/10036119/united-states-v-smith/) — pinpoint: 838 (general-warrant holding + good-faith disposition; quote string-matched against the CL opinion text 2026-07-03).

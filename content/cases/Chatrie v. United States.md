@@ -26,8 +26,8 @@ courtlistener:
   opinion_id: 11349205
   identity_checked: false
 homes:
-  - page: "[[Two Definitions of Search]]"
-    role: "Key — Anchor"
+  - page: "[[Reasonable Expectation of Privacy]]"
+    role: "Key — geofence (cross-ref)"
   - page: "[[The Third-Party Doctrine and Digital Surveillance]]"
     role: "Key — Progeny / Refinement"
 related: ["[[Carpenter v. United States]]", "[[United States v. Jones]]", "[[Katz v. United States]]", "[[Smith v. Maryland]]", "[[The Warrant Requirement]]", "[[Standing to Challenge a Search]]", "[[The Exclusionary Rule]]"]
@@ -68,7 +68,7 @@ Acquiring geofence Location History is a Fourth Amendment search. The judgment w
 - **CL-confirm: VERIFIED (2026-07-02).** CourtListener **cluster** `10881683` **is** the genuine SCOTUS *Chatrie* (`scotus / 25-112 / 2026-06-29`); its lead opinion is `11349205`, against which the Rule quote above was matched verbatim. The earlier "corrupted object" warning was a cluster-vs-opinion ID mix-up: `10881683` is a *cluster* id, and fetching it from the `/opinions/` endpoint returns an unrelated case — use `/clusters/10881683/` or opinion `11349205` instead. See Sources.
 
 ## Appears on
-- [[Two Definitions of Search]] — *Key — Anchor*
+- [[Reasonable Expectation of Privacy]] — *Key — geofence (cross-ref)*
 - [[The Third-Party Doctrine and Digital Surveillance]] — *Key — Progeny / Refinement*
 
 ## Sources

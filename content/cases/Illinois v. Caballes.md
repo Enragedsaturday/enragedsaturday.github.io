@@ -28,7 +28,7 @@ courtlistener:
 homes:
   - page: "[[Traffic Stops]]"
     role: "Key — Anchor"
-  - page: "[[Two Definitions of Search]]"
+  - page: "[[Reasonable Expectation of Privacy]]"
     role: "Related (cross-doctrine)"
 related: ["[[United States v. Place]]", "[[Rodriguez v. United States]]", "[[Florida v. Jardines]]", "[[Kyllo v. United States]]", "[[Florida v. Harris]]"]
 aliases: []
@@ -70,7 +70,7 @@ A dog sniff during an unprolonged, lawful traffic stop is not a Fourth Amendment
 
 ## Appears on
 - [[Traffic Stops]] — *Key — Anchor*
-- [[Two Definitions of Search]] — *Related (cross-doctrine)*
+- [[Reasonable Expectation of Privacy]] — *Related (cross-doctrine)*
 
 ## Sources
 - *Illinois v. Caballes*, 543 U.S. 405 (2005) — https://www.courtlistener.com/opinion/137742/illinois-v-caballes/ — pinpoints: 407, 409, 410.

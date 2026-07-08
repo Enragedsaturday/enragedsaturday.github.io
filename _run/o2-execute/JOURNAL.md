@@ -947,3 +947,27 @@ stop-and-frisk register fix ×7; LINT-16 Historical-token catch FIXED in-batch),
 standalone 0/0 on authored+touched, survey 90 pages em 23.9/1k, build 720/2715 green (+1 input =
 -1 parent +2 children). NEXT: cat-3a Two Definitions severance (deferred-as-index C1 item →
 Trespass A + REP A, Katz re-homed in).
+
+**BATCH 2 CLOSED — CAT-3a TWO DEFINITIONS SEVERANCE (2026-07-08):** the S3 wave-2
+deferred-as-index item severed: index → lean sub-umbrella overview (R2 no-tables, born draft) +
+Trespass (A) + Reasonable Expectation of Privacy (A) authored, born draft. R3/R6: 6 CL MCP
+search_document calls, opinion-ids from lake identity incl. Katz HARLAN CONCURRENCE via
+sibling_ids (never cluster), 0 REST 0x429; Jones *405 / Katz 351 / Harlan 361 confirmed;
+Carpenter html_with_citations = SLIP-ONLY (no US star) → R5 T3 paraphrase-downgrade w/ 585 U.S.
+296 case-cite (G3/G4 honest); Chatrie = T4 current-Term (corrupted CL cluster 10881683 noted,
+no call). TEACH-01 APPLIED (Chatrie SCOTUS-in-developments → REP Key mention + cross-ref;
+geofence exposition NOT authored — D6 digital batch owns); 02c leaks → HTML-comment provenance;
+TEACH-05 worst-density page cleared (135 raw removed; children 0 LINT-10). KATZ APPENDIX-B MOVE
+EXECUTED: primary REP Key-Anchor, Standing keeps Related cross-doctrine (Rakas measures REP).
+27 case pages re-pointed row-by-row; owed home_rows 3/3 discharged (Grady→Trespass Anchor
+[under_review honest, S9 promotes], Wilson+Moore-Bush→REP Related). ADJUDICATIONS ACCEPTED:
+Jardines Key-on-Trespass (A6, primary stays Knock and Talk); Smith (2024) dead index-framing
+DROPPED not re-pointed (digital batch carries Smith Key w/ Chatrie — OBLIGATION JOURNALED);
+Carpenter primary→REP VERIFIED CORRECT (old primary WAS the dissolving index, not Third-Party;
+digital batch may co-home); overview type:doctrine matches sibling (normalization Q → S9).
+NEW TEMPLATE RULE G ADOPTED: dissolving-index Related rows whose substance belongs to a third
+page are DROPPED with the real primary kept, never re-pointed into a wrong-scope child;
+zero-drop binds only owed ledger home_rows. GATES: run_all 8330→8273 (-57, every lint ↓ or
+held), LINT-15/16 standalone 0/0, survey em 23.0/1k slip 63, build 720/2722 green, Case Index
+617 idempotent. NEXT: cat-3b Curtilage (A) + Open Fields split-out (B); SACO stays cat-6
+Entry-to-Arrest per spec R10 precedence (changelist row-7 note is a cross-ref, not placement).

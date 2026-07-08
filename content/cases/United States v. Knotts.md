@@ -28,7 +28,7 @@ courtlistener:
 homes:
   - page: "[[The Third-Party Doctrine and Digital Surveillance]]"
     role: "Key — Anchor"
-  - page: "[[Two Definitions of Search]]"
+  - page: "[[Reasonable Expectation of Privacy]]"
     role: "Related (cross-doctrine)"
 related: ["[[United States v. Karo]]", "[[United States v. Jones]]", "[[Carpenter v. United States]]"]
 aliases: []
@@ -68,7 +68,7 @@ The beeper-aided tracking of public movements was not a Fourth Amendment search.
 
 ## Appears on
 - [[The Third-Party Doctrine and Digital Surveillance]] — *Key — Anchor*
-- [[Two Definitions of Search]] — *Related (cross-doctrine)*
+- [[Reasonable Expectation of Privacy]] — *Related (cross-doctrine)*
 
 ## Sources
 - *United States v. Knotts*, 460 U.S. 276 (1983) — https://www.courtlistener.com/opinion/110882/united-states-v-knotts/ — pinpoints: 281, 282.

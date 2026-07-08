@@ -26,8 +26,8 @@ courtlistener:
   opinion_id: 9430099
   identity_checked: true
 homes:
-  - page: "[[Two Definitions of Search]]"
-    role: "Related"
+  - page: "[[Reasonable Expectation of Privacy]]"
+    role: "Related (cross-doctrine)"
   - page: "[[Consent Searches]]"
     role: "Related (cross-doctrine)"
 related: ["[[United States v. Jacobsen]]", "[[Lo-Ji Sales, Inc. v. New York]]"]
@@ -67,7 +67,7 @@ The undercover purchase was neither a search nor a seizure; the magazines were p
 - Applies the seizure definition of [[United States v. Jacobsen]] and the misplaced-trust/invited-entry reasoning of *Lewis v. United States* (1966); distinguishes the unconstitutional wholesale magistrate-led seizure in [[Lo-Ji Sales, Inc. v. New York]].
 
 ## Appears on
-- [[Two Definitions of Search]] — *Related*
+- [[Reasonable Expectation of Privacy]] — *Related (cross-doctrine)*
 - [[Consent Searches]] — *Related (cross-doctrine)*
 
 ## Sources

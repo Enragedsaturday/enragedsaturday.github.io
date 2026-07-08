@@ -28,7 +28,7 @@ courtlistener:
 homes:
   - page: "[[Automobile Exception]]"
     role: "Related (cross-doctrine)"
-  - page: "[[Two Definitions of Search]]"
+  - page: "[[Reasonable Expectation of Privacy]]"
     role: "Related (cross-doctrine)"
 related: ["[[Chambers v. Maroney]]", "[[Cooper v. California]]", "[[Coolidge v. New Hampshire]]", "[[New York v. Class]]"]
 aliases: []
@@ -70,7 +70,7 @@ The exterior examination was reasonable; the seizure and examination did not vio
 
 ## Appears on
 - [[Automobile Exception]] — *Related (cross-doctrine)*
-- [[Two Definitions of Search]] — *Related (cross-doctrine)*
+- [[Reasonable Expectation of Privacy]] — *Related (cross-doctrine)*
 
 ## Sources
 - *Cardwell v. Lewis*, 417 U.S. 583 (1974) — https://www.courtlistener.com/opinion/109069/cardwell-v-lewis/ — pinpoints: 590, 591, 592.

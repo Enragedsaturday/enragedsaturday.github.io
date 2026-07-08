@@ -26,7 +26,7 @@ courtlistener:
   opinion_id: 9485324
   identity_checked: true
 homes:
-  - page: "[[Two Definitions of Search]]"
+  - page: "[[Trespass]]"
     role: "Key — Anchor"
 related: ["[[Katz v. United States]]", "[[Carpenter v. United States]]", "[[Florida v. Jardines]]", "[[Olmstead v. United States]]", "[[United States v. Jacobsen]]"]
 aliases: ["United States v. Jones (2012)", "United States v. Antoine Jones"]
@@ -65,7 +65,7 @@ Attaching and using the GPS device was a search; the D.C. Circuit's judgment rev
 - No negative subsequent treatment identified. *Jones* revives the common-law trespass test as one of the "two definitions of search" alongside the [[Katz v. United States]] privacy test; it anchors the property-based line later applied to the curtilage in [[Florida v. Jardines]] and informs the digital-privacy analysis of [[Carpenter v. United States]].
 
 ## Appears on
-- [[Two Definitions of Search]] — *Key — Anchor*
+- [[Trespass]] — *Key — Anchor*
 
 ## Sources
 - *United States v. Jones*, 565 U.S. 400 (2012) — https://www.courtlistener.com/opinion/7350871/united-states-v-jones/ — pinpoints: 404, 409. (Lead majority opinion id 7268856.)

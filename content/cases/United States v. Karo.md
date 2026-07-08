@@ -28,7 +28,7 @@ courtlistener:
 homes:
   - page: "[[The Third-Party Doctrine and Digital Surveillance]]"
     role: "Key — Anchor/Progeny"
-  - page: "[[Two Definitions of Search]]"
+  - page: "[[Reasonable Expectation of Privacy]]"
     role: "Related (cross-doctrine)"
 related: ["[[United States v. Knotts]]", "[[Kyllo v. United States]]", "[[United States v. Jones]]", "[[Carpenter v. United States]]"]
 aliases: []
@@ -68,7 +68,7 @@ Warrantless monitoring of the beeper inside the residence violated the Fourth Am
 
 ## Appears on
 - [[The Third-Party Doctrine and Digital Surveillance]] — *Key — Anchor/Progeny*
-- [[Two Definitions of Search]] — *Related (cross-doctrine)*
+- [[Reasonable Expectation of Privacy]] — *Related (cross-doctrine)*
 
 ## Sources
 - *United States v. Karo*, 468 U.S. 705 (1984) — https://www.courtlistener.com/opinion/111257/united-states-v-karo/ — pinpoints: 714, 715.
