@@ -26,6 +26,8 @@ courtlistener:
   opinion_id: 9429183
   identity_checked: true
 homes:
+  - page: "[[Stop-and-Identify]]"
+    role: "Key — statutory-vagueness limit"
   - page: "[[Terry Stops and Reasonable Suspicion]]"
     role: "Related (cross-doctrine)"
 related: ["[[Terry v. Ohio]]", "[[Hiibel v. Sixth Judicial Dist. Court]]", "[[Brown v. Texas]]"]

@@ -26,8 +26,10 @@ courtlistener:
   opinion_id: 136990
   identity_checked: true
 homes:
+  - page: "[[Stop-and-Identify]]"
+    role: "Key — Anchor"
   - page: "[[Terry Stops and Reasonable Suspicion]]"
-    role: "Key — Progeny / Refinement"
+    role: "Key-on (during a valid Terry stop)"
 related: ["[[Terry v. Ohio]]", "[[Berkemer v. McCarty]]", "[[Brown v. Texas]]"]
 aliases: ["Hiibel v. Sixth Judicial District Court of Nevada", "Hiibel v. Sixth Judicial District Court of Nevada, Humboldt County"]
 tags: ["case", "fourth-amendment", "terry-stop", "stop-and-identify", "reasonable-suspicion"]

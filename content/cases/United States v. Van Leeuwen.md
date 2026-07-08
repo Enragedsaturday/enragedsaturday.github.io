@@ -26,6 +26,8 @@ courtlistener:
   opinion_id: 108099
   identity_checked: true
 homes:
+  - page: "[[Seizure of Property]]"
+    role: "Key — package / mail detention"
   - page: "[[Terry Stops and Reasonable Suspicion]]"
     role: "Related (cross-doctrine)"
   - page: "[[Reasonable Expectation of Privacy]]"

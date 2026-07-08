@@ -26,8 +26,10 @@ courtlistener:
   opinion_id: 112795
   identity_checked: true
 homes:
-  - page: "[[Trespass]]"
+  - page: "[[Seizure of Property]]"
     role: "Key — Anchor (seizure of property)"
+  - page: "[[Trespass]]"
+    role: "Related (cross-doctrine)"
   - page: "[[Seizure of the Person]]"
     role: "Related (cross-doctrine)"
 related: ["[[United States v. Jacobsen]]", "[[Horton v. California]]", "[[Oliver v. United States]]"]

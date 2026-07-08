@@ -1075,3 +1075,29 @@ Horton/Brown mid-line ^pin carat-leak class → S9 sweep. GATES: run_all 8198→
 19.9/1k, build 721/2772. CAT-3 DONE: 13 units (overview + 12 pages) across batches 2-6.
 NEXT: cat-4a — When a Seizure Occurs (A retitle, TEACH-04b :48 qualifier + TEACH-04e DONOR
 :54 conversion) + Seizure of Property (B new) + Stop-and-Identify (C new, Hiibel).
+
+**BATCH 7 CLOSED — CAT-4a SEIZURE THRESHOLD (2026-07-08):** When a Seizure Occurs (A born-again
+RETITLE, filename kept per precedent, deck 28 cards LINT-25 0, +"When a Seizure Occurs" alias)
++ Seizure of Property (B authored) + Stop-and-Identify (C authored, honest no-LCD both). 21 MCP
+calls 0 REST: Mendenhall 554, Hodari ★626, Jacobsen ★113, Place ★709, Hiibel ★186/188
+confirmed; TORRES = slip-only (no CAP star, "bullet that missed" 0 hits — Torres never
+addresses missed shots) → T3 downgrade, all Torres quotes/pins removed. TEACH-04b APPLIED as
+qualified rule: shot-that-HITS = force seizure at that instant (Torres); shot-that-MISSES = no
+force seizure BUT show-of-authority + submission can still seize (Hodari/Mendenhall) — framed
+as doctrinal inference, NO fabricated Torres quote. TEACH-04e DONOR CONVERTED (D2): the :54
+"Field framing" decision sequence → 5-step Apply-it list, LOGGED; corpus ff 3→2. Re-homes:
+Soldal Key-Anchor Trespass→Seizure-of-Property (SD2, batch-2 interim home superseded);
+Hiibel Terry→Stop-and-Identify + Kolender added; Van Leeuwen +Key; Brendlin stale
+Standing pointer → Traffic Stops (App-B). Owed rows 2/2 (Carter/Amos → LCD). Registry:
+seizure.property + stop-and-identify statements filled. ORCHESTRATOR REPAIR (own-run drift,
+Hester precedent): batch-2 Trespass page's stale Soldal Key-row DEMOTED to Related w/
+[[Seizure of Property]] primary-home cell (run_all 8092→8091). J′ invoked properly: 2 LINT-7
+Knock-and-Talk page-title FPs explained per-finding, content not lint-shaped. OWED FORWARD:
+cat-4b Terry batch reconciles Hiibel(Key-on)/Kolender(Related) presentation; arrests batch
+decides Atwater/Gerstein/Moore/McLaughlin Key placement (kept honest on Person page while
+arrests/ stubs unauthored); 5 case pages w/ malformed mid-line ^pin anchors
+(Jacobsen/Brower/Chesternut/Hiibel/Kolender) → S9/S6 anchor-cleanup register. GATES: run_all
+8136→8091 (HIGH -39), LINT-15/16 0/0, LINT-17 0, LINT-25 0, survey em 19.1/1k Person
+26.7→1.5/1k, build 721/2777 (+5 alias redirects). NEXT: cat-4b — Terry Stops (A) + Traffic
+Stops (A, Brendlin Key landing) + Collective Knowledge (A, horizontal-pooling split section +
+Herring→Key w/ Whiteley caveat).
