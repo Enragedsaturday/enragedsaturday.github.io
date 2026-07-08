@@ -37,10 +37,12 @@ courtlistener:
   opinion_id: 9426913
   identity_checked: true
 homes:
-  - page: "[[Automobile Exception]]"
-    role: "Key — Limiting / Historical"
+  - page: "[[Searching Effects and Containers]]"
+    role: "Key — Anchor"
   - page: "[[SIA Persons]]"
     role: "Related (cross-doctrine)"
+  - page: "[[Automobile Exception]]"
+    role: "Related (limited by Acevedo for a container in a car)"
 related: ["[[California v. Acevedo]]", "[[United States v. Ross]]", "[[Chambers v. Maroney]]", "[[Chimel v. California]]"]
 aliases: []
 tags: ["case", "fourth-amendment", "automobile-exception", "containers", "luggage", "search-incident-to-arrest", "warrant-requirement"]

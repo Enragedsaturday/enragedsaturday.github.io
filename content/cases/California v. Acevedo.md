@@ -26,6 +26,8 @@ courtlistener:
   opinion_id: 112608
   identity_checked: true
 homes:
+  - page: "[[Searching Effects and Containers]]"
+    role: "Key — Container unification"
   - page: "[[Automobile Exception]]"
     role: "Key — Progeny / Refinement"
 related: ["[[Carroll v. United States]]", "[[United States v. Ross]]", "[[United States v. Chadwick]]"]

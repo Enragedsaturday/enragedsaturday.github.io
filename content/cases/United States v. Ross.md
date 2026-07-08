@@ -28,6 +28,8 @@ courtlistener:
 homes:
   - page: "[[Automobile Exception]]"
     role: "Key — Anchor"
+  - page: "[[Searching Effects and Containers]]"
+    role: "Key — Container bridge"
 related: ["[[Carroll v. United States]]", "[[California v. Acevedo]]", "[[California v. Carney]]", "[[United States v. Morley]]"]
 aliases: []
 tags: ["case", "fourth-amendment", "automobile-exception", "containers", "probable-cause", "vehicle-search"]

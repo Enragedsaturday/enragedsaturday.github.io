@@ -1307,3 +1307,28 @@ unverified (S2/S9 treatment verification), Braxton doctrinal home ratified. GATE
 ER-only, LINT-20/24/25 0, survey 87pp em 2470 (12.3/1k) slip 38 leaks 28, build 722/2823,
 Case Index idempotent. CAT-6 REMAINING: 6d (Consent A w/ Matlock+3-prongs fixes · Automobile
 A · Effects & Containers B) — then cat-6 COMPLETE.
+
+**BATCH 14 CLOSED — CAT-6d (2026-07-08) — CATEGORY 6 COMPLETE:** Consent (A born-again, em
+29.4→3.3/1k, worst-remaining page cleared: 3-prong test up front [Schneckloth/Matlock-
+Rodriguez/Jimeno] + Osage destruction scope-pitfall in Brief AND pitfalls; Matlock
+table-entry fix VERIFIED-HELD; Phase-1b compound-label residue RESOLVED via 3-col schema
+migration; title/hook reconciled: title=H1=filename canonical, "Consent" hook preserved as
+alias + router display) + Automobile (A born-again, em 29.9→2.6/1k, slip 1→0 Collins T3,
+Carroll→Chambers→Ross→Acevedo→Labron/Dyson→Collins spine) + Effects & Containers (B authored
+from 33-word stub: container-unification story, Chadwick luggage-vs-car anchor).
+CONTAINER-FAMILY ADJUDICATED by exposition-ownership principle: Chadwick primary→Effects
+(caution/varies IS the Effects charter, R13 prose), Acevedo/Ross Key on BOTH (vehicle-scope
+vs unification, intentional multi-home), Sanders/Robbins stay Automobile (owed rows
+discharged there zero-drop). STYLE MIGRATION RATIFIED: both O1-legacy 5-col Key tables →
+current 3-col schema + plain wikilinks (resolves LINT-4, LINT-9 0). R5: Collins/Camou/
+Morley/Lewis/Carlton-Williams T3 paraphrases (no fabricated pins, unverified-lake honored).
+Mode lake-grounded 0 CL. Owed rows 5/5. TEACH-02c 5→0 w/ wikilink upgrade. GATES: run_all
+7532→7434 (HIGH 4394, -91; sole increase = 1 LINT-7 J′-exempt page-title FP), LINT-15/16
+0/0 x3, LINT-17 0, LINT-4 resolved, LINT-20/25 0, survey em 11.1/1k slip 37 leaks 23, build
+722/2826, Case Index 620 (3 rows). Residue → S9: Chadwick index-glyph good-vs-caution
+mapping, Frazier/Riley/Anchondo under_review status class. SCOREBOARD: CATS 2-6 COMPLETE =
+55 doctrine units born draft + 3 S7-minted cases; HIGH since S7 open -546. NEXT: cat-7 ER
+family (A4 severance: ER index [the pre-existing LINT-19 4-HIGH holder] → Fruits &
+Attenuation A + Good-Faith A + Inevitable Discovery & Independent Source B; Standing A
+born-again w/ TEACH-01 Chatrie relocation; 44 homed cases re-point; the inevitable-discovery
+active-pursuit split-block placement lands).
