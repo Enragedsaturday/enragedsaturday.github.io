@@ -816,3 +816,20 @@ opinion = 1993 Tax Court memo — refetched, verified). **MAIN-WAVE TOTALS W1–
 1 duplicate caught by on-read verification, zero pages authored on a broken identity.** W9 tail
 dispatching per R8-W9-TAIL-PLAN.md (8 mintable now + ≤7 behind bounded cite recovery + holcomb-
 watch/zorn terminals); then R11 ledger + non-page fold + LINT-17 + S7 handoff.
+
+**W9 TAIL CLOSED — R8 AUTHORING COMPLETE (2026-07-07):** cite recovery 7/7 (larson enriched 159
+Or. App. 34 · frederick web-cited 500 Mich. 228 dual-leg · robinson/lewis/mendoza/porter/trent
+slip-stamped under CURRENT ids, allowlist +5, stamper 7/7) → **20 minted, 0 honest skips** — the
+15 dispatched + 5 SUPPLEMENTAL (burgess/capers/castillo/chavez/crumble: re-keyed in the pre-W5
+audit but never re-dispatched; agent re-derived mintable from the lake and closed them, driving
+deferred to 0); gutierrez authored via the plain_text REST method as documented. Terminals:
+holcomb→watch, zorn→data-escalation/unverifiable-pending (lake untouched, worklist in-row).
+**FINAL R8 PARTITION (R11 input, sums exactly): authored 145 · folded 1 (davis) · watch 1
+(holcomb) · escalated 1 (zorn) = 148.** ~55 calls 0×429; Case Index 614 (+20); build 716/2699
+green; mint-gate LINT-14/15/16 = 0 CORPUS-WIDE. S9-owed carried honestly: capers/castillo lake-
+docket mismatches (body uses CL-correct), capers/chavez best-effort star pincites, trent
+unpublished-6th-Cir. reverify flag, plus the standing history-Field-I + Williams star + Ruckman
+docket items. NEXT: S6 close-out — R11 coverage-ledger assembly (148-row proof + the 58 non-page
+placements fold + mention-stub/removed/folded universe), LINT-17 wiring (R12), S6-close
+CodeRabbit gate over the full S6 code surface, S6→S7 handoff (ledger-deferred homes rows ·
+Case-Index schema-3 flip · plain_text blind-spot · Field-I S9 items).
