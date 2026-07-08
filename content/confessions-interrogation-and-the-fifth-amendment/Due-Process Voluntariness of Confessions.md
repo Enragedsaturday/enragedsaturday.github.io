@@ -40,6 +40,11 @@ related:
 - **Pitfall — treating any lie as coercive.** Per [[Frazier v. Cupp|Frazier]], lawful factual deception is weighed in the totality; it is not per se coercion.
 - This inquiry is **distinct from** [[Miranda Waiver and Invocation|Miranda waiver]] and the [[Sixth Amendment Right to Counsel]]; suppression of an involuntary confession is independent of the [[The Exclusionary Rule|exclusionary]] analyses tied to those doctrines.
 
+## Lower-court developments
+Role-based, **circuit/state only** — any SCOTUS holding lives in **Key cases** regardless of date (N5). The [[Colorado v. Connelly|Connelly]] state-action predicate and the [[Frazier v. Cupp|Frazier]] "deception is not per se coercion" rule remain the SCOTUS baseline; lower federal courts continue to police where lawful technique tips into overbearing the will — distinguishing tolerated deception *about facts* from intolerable **misrepresentations of law** and **false promises of leniency**.
+
+- ***United States v. Young*** (10th Cir. 2020) — **Binding in-circuit — 10th Cir.; Persuasive (outside circuit)** · *role: application/refinement of the totality test.* Applying the *Connelly*/totality framework, the court found a confession involuntary where an FBI agent falsely claimed to have spoken with the federal judge about the case and falsely promised the suspect could "buy down"/shorten his sentence with each truthful answer. While deception about facts is tolerated, misrepresentations of law and false promises of sentencing leniency critically impaired the suspect's capacity for self-determination and overbore his will; conviction reversed, judgment vacated, and remanded. *(No CSSI case page — cited plain.)* [opinion](https://www.courtlistener.com/opinion/4766220/united-states-v-young/)
+
 ## Key cases
 
 | Case | Holding (one line) | Role | Weight | Treatment | CL |
@@ -73,11 +78,6 @@ These cases are treated in full on other doctrine pages but bear directly on due
 | [[Missouri v. Seibert]], 542 U.S. 600 (2004) | A question-first / warn-later case decided on **Miranda** prophylactic grounds — offered only as an instructive parallel to the due-process concern with intentionally undermining free choice; the two tests remain doctrinally distinct. | [[Miranda Waiver and Invocation]] | Binding — SCOTUS | good · 2026-06-30 | [opinion](https://www.courtlistener.com/opinion/137002/missouri-v-seibert/) |
 | [[Schneckloth v. Bustamonte]], 412 U.S. 218 (1973) | The canonical statement of the **totality-of-the-circumstances** test this doctrine uses: consent voluntariness is judged by the same framework the Court built from the due-process confession cases (*Brown*, *Chambers*, *Ashcraft*, *Spano*). | [[Consent Searches]] | Binding — SCOTUS | good · 2026-06-30 | [opinion](https://www.courtlistener.com/opinion/108800/schneckloth-v-bustamonte/) |
 | [[Brewer v. Williams]], 430 U.S. 387 (1977) | The "Christian burial speech" — the classic example of psychological pressure short of force; though decided on Sixth Amendment grounds, it illustrates the same overbearing-the-will concern (cf. *Spano*) animating voluntariness review. | [[Sixth Amendment Right to Counsel]] | Binding — SCOTUS | good · 2026-06-30 | [opinion](https://www.courtlistener.com/opinion/109624/brewer-v-williams/) |
-
-## Recent developments
-Role-based, **circuit/state only** — any SCOTUS holding lives in **Key cases** regardless of date (N5). The [[Colorado v. Connelly|Connelly]] state-action predicate and the [[Frazier v. Cupp|Frazier]] "deception is not per se coercion" rule remain the SCOTUS baseline; lower federal courts continue to police where lawful technique tips into overbearing the will — distinguishing tolerated deception *about facts* from intolerable **misrepresentations of law** and **false promises of leniency**.
-
-- ***United States v. Young*** (10th Cir. 2020) — **Binding in-circuit — 10th Cir.; Persuasive (outside circuit)** · *role: application/refinement of the totality test.* Applying the *Connelly*/totality framework, the court found a confession involuntary where an FBI agent falsely claimed to have spoken with the federal judge about the case and falsely promised the suspect could "buy down"/shorten his sentence with each truthful answer. While deception about facts is tolerated, misrepresentations of law and false promises of sentencing leniency critically impaired the suspect's capacity for self-determination and overbore his will; conviction reversed, judgment vacated, and remanded. *(No CSSI case page — cited plain.)* [opinion](https://www.courtlistener.com/opinion/4766220/united-states-v-young/)
 
 ## Visual
 ```mermaid

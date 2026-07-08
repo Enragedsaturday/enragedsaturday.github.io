@@ -51,6 +51,12 @@ related:
 - **Do not treat a passive jailhouse informant as automatically unlawful.** Mere listening is not deliberate elicitation ([[Kuhlmann v. Wilson]]); the violation is in *inducing* the statements ([[United States v. Henry]]/[[Maine v. Moulton]]). Compare the pre-charge undercover-informant setting, governed by *Miranda* (and permitted), where the 6A is not yet at issue ([[Illinois v. Perkins]]).
 - **Do not cite *Michigan v. Jackson* as live law.** It is **overruled** ([[Montejo v. Louisiana]]).
 
+## Lower-court developments
+
+Role-based, **circuit/state only** — every SCOTUS holding in this doctrine lives in **Key cases** regardless of date (N5). The controlling framework here is entirely Supreme Court: the *Kirby*/*Rothgery* attachment line, the *Cobb*/*McNeil* offense-specificity line, the *Massiah*/*Henry*/*Kuhlmann* deliberate-elicitation-vs-listening-post line, and the *Patterson*/*Montejo* waiver line all remain settled at the SCOTUS level.
+
+- *No circuit/state development is currently tracked on this page.* The subsequent-treatment content that formerly sat here (the post-*Montejo* waiver landscape and the continued vitality of the *Massiah* informant line) is **SCOTUS** and has been folded into the brief above, per N5. A circuit/state frontier pass — e.g. how the circuits draw the active-inducement / passive-listening-post line and the point-of-attachment quantum — is **deferred to EXECUTE** (serial CL, L4; no CL calls were made in this free reformat).
+
 ## Key cases
 
 | Case | Holding (one line) | Role | Weight | Treatment | CL |
@@ -83,12 +89,6 @@ These cases are treated in full on other doctrine pages but bear directly on the
 | [[United States v. Ash]], 413 U.S. 300 (1973) | Limit post-attachment: **no** right to counsel at a photographic array — it is not a trial-like adversary confrontation of the accused. | [[Eyewitness Identification]] | Binding — SCOTUS | good · 2026-06-30 | [opinion](https://www.courtlistener.com/opinion/108846/united-states-v-ash/) |
 | [[Illinois v. Perkins]], 496 U.S. 292 (1990) | The pre-charge undercover-informant counterpart: no *Miranda* "police-dominated" coercion, and the 6A is **not** at issue because the suspect had not been charged — fixing the line that *Massiah* deliberate-elicitation applies only **after** attachment. | [[Miranda and Custodial Interrogation]] | Binding — SCOTUS | good · 2026-06-30 | [opinion](https://www.courtlistener.com/opinion/112452/illinois-v-perkins/) |
 | [[Arizona v. Roberson]], 486 U.S. 675 (1988) | Contrast on offense-specificity: the **5A** *Edwards* bar is **not** offense-specific — once counsel is invoked, police may not interrogate about **any** offense. Pair with *Cobb* to show the divide from the offense-specific 6A right. | [[Miranda Waiver and Invocation]] | Binding — SCOTUS | good · 2026-06-30 | [opinion](https://www.courtlistener.com/opinion/112100/arizona-v-roberson/) |
-
-## Recent developments
-
-Role-based, **circuit/state only** — every SCOTUS holding in this doctrine lives in **Key cases** regardless of date (N5). The controlling framework here is entirely Supreme Court: the *Kirby*/*Rothgery* attachment line, the *Cobb*/*McNeil* offense-specificity line, the *Massiah*/*Henry*/*Kuhlmann* deliberate-elicitation-vs-listening-post line, and the *Patterson*/*Montejo* waiver line all remain settled at the SCOTUS level.
-
-- *No circuit/state development is currently tracked on this page.* The subsequent-treatment content that formerly sat here (the post-*Montejo* waiver landscape and the continued vitality of the *Massiah* informant line) is **SCOTUS** and has been folded into the brief above, per N5. A circuit/state frontier pass — e.g. how the circuits draw the active-inducement / passive-listening-post line and the point-of-attachment quantum — is **deferred to EXECUTE** (serial CL, L4; no CL calls were made in this free reformat).
 
 ## Visual
 

@@ -54,6 +54,12 @@ related:
 
 > **Scope note.** This page covers whether warnings are **required** — the custody + interrogation gate — plus the **content of the warnings** and the **public-safety exception**, with a summary of the fruits line. What happens *after* warnings — **waiver, invocation, and the fuller fruits/impeachment analysis** — lives in [[Miranda Waiver and Invocation]]. Coercion claims independent of *Miranda* go to [[Due-Process Voluntariness of Confessions]]. The distinct, offense-specific **Sixth Amendment** right that attaches at formal charging is treated in [[Sixth Amendment Right to Counsel]].
 
+## Lower-court developments
+
+Circuit/state authority only; no SCOTUS. The core *Miranda* trigger (custody + interrogation) and the *Quarles* public-safety exception remain settled, but the circuits diverge on how far the public-safety exception reaches once an arrestee is secured.
+
+- **United States v. Liddell, 517 F.3d 1007 (8th Cir. 2008)** — role: **expand / illustrates-a-split**. The Eighth Circuit read the public-safety exception broadly, extending it to the **generalized** risk that officers might mishandle an undiscovered weapon when searching a **secured** arrestee's car or apartment — even absent a true immediate exigency — so that questions about weapons or contraband are admissible: "the risk of police officers being injured by the mishandling of unknown firearms or drug paraphernalia provides a sufficient public safety basis to ask a suspect who has been arrested and secured whether there are weapons or contraband in a car or apartment that the police are about to search" (517 F.3d at 1009–10). **Binding in-circuit — 8th Cir.** (Persuasive outside the circuit); the opinion expressly acknowledges a **circuit split** (Judge Gruender [[Common Legal Terms#concurring-opinion|concurred]] to criticize the broad reading as untethered from *Quarles*'s exigency requirement), with a narrower line confining the exception to an actual, immediate threat. ⚖ Circuit split. [opinion](https://www.courtlistener.com/opinion/1461978/united-states-v-liddell/).
+
 ## Key cases
 
 | Case | Holding (one line) | Weight | Treatment | CourtListener |
@@ -95,12 +101,6 @@ These cases are treated in full on other pages but bear directly on custodial in
 | [[Dunaway v. New York]] | An arrest-tantamount seizure on less than probable cause makes the resulting confession a fruit of the illegal seizure that *Miranda* warnings alone do not attenuate. | [[Seizure of the Person]] | Binding — SCOTUS | good | [opinion](https://www.courtlistener.com/opinion/110096/dunaway-v-new-york/) |
 | [[Kaupp v. Texas]] | A 3 a.m. removal without probable cause is an arrest; "Okay" was submission, not consent, so the confession is suppressed unless the taint is purged — warnings do not cure the illegal seizure. | [[Seizure of the Person]] | Binding — SCOTUS | good | [opinion](https://www.courtlistener.com/opinion/127919/kaupp-v-texas/) |
 | [[Pennsylvania v. Bruder]] | Ordinary roadside DUI field-sobriety questioning before arrest is not custodial interrogation (applying *Berkemer*). | [[Traffic Stops]] | Binding — SCOTUS | good | [opinion](https://www.courtlistener.com/opinion/112152/pennsylvania-v-bruder/) |
-
-## Recent developments
-
-Circuit/state authority only; no SCOTUS. The core *Miranda* trigger (custody + interrogation) and the *Quarles* public-safety exception remain settled, but the circuits diverge on how far the public-safety exception reaches once an arrestee is secured.
-
-- **United States v. Liddell, 517 F.3d 1007 (8th Cir. 2008)** — role: **expand / illustrates-a-split**. The Eighth Circuit read the public-safety exception broadly, extending it to the **generalized** risk that officers might mishandle an undiscovered weapon when searching a **secured** arrestee's car or apartment — even absent a true immediate exigency — so that questions about weapons or contraband are admissible: "the risk of police officers being injured by the mishandling of unknown firearms or drug paraphernalia provides a sufficient public safety basis to ask a suspect who has been arrested and secured whether there are weapons or contraband in a car or apartment that the police are about to search" (517 F.3d at 1009–10). **Binding in-circuit — 8th Cir.** (Persuasive outside the circuit); the opinion expressly acknowledges a **circuit split** (Judge Gruender [[Common Legal Terms#concurring-opinion|concurred]] to criticize the broad reading as untethered from *Quarles*'s exigency requirement), with a narrower line confining the exception to an actual, immediate threat. ⚖ Circuit split. [opinion](https://www.courtlistener.com/opinion/1461978/united-states-v-liddell/).
 
 ## Visual
 

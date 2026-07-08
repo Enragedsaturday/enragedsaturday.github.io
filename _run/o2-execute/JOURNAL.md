@@ -883,3 +883,42 @@ S9-owed register, lake state (665 records; 662-vs-665 prose-drift + baseline-56-
 documented honestly in §6). **S6 IS CLOSED. NEXT: S7 opens with its USER INTERVIEW** (runbook:
 Prompt.md regenerate-or-drop decision at minimum rides it) — autonomous stretch ends at this
 pause; run brief served.
+
+---
+
+## S7 EXECUTE (opened 2026-07-08)
+
+**S7 OPEN + PHASE 0 (2026-07-08):** User opened S7 at the S6-close pause. Prompt.md question
+resolved from the record: COH-14 → S7 interview D3 (2026-07-03) DROPPED the reference — the
+RUNBOOK §4-S7 fix-list is the record, verify-then-apply; no re-interview needed. Taxonomy
+flexibility researched at user request (read-only): structure flexible BY DESIGN (R6 evergreen
+test, A5/A6 reserve-don't-recut precedent, A8 weight-ordering); evidence sweep found scope
+boundary HELD (Confrontation/habeas/§1983-mechanics clusters excluded on remit, 0 homeless
+cases) but 3 intra-cat-11 strain signals: §1983/QI node absorbed 29 Keys across ~8
+sub-doctrines (Bivens/§242 deferred R6 decision RIPE + unlogged; Tanzin/Landor awkward fits),
+CAF (8 Keys) + Title III (4+3) under-tiered at C, officer-created-danger split-block
+node-candidate. All deferred to cat-11 batch; Bivens shape surfaces to user before landing.
+PHASE 0 committed 97dccb9: scripts/s7/survey.py (self-test 46/46) + build_worklist.py;
+48/48 T1 rows path-resolved (0 unresolved), 45/45 T2 nodes exist (41 placed-stubs; only
+pattern page authored — clean opening baseline), tiers carried UNCHANGED (R2); honest deltas:
+slip 76→65 (pattern -11), c3 meta-intro 5→24 + inverted 21→36 (S5/S6 growth), TEACH-04e
+19-vs-4 metric mismatch (re-derive at authoring).
+
+**PHASE 1 MECHANICAL PASSES CLOSED (2026-07-08):** R15 step-1, one commit per pass, converter
+deliberately NOT here (E2/E3: per-page at rewrite). **1a TEACH-12a (c3fc18d):** 17/17 H1s,
+missing_h1 17→0; H1=title except 4 hook-title pages → canonical name per 72-page conformant
+convention (ADJUDICATED; title-vs-hook rides R3 rewrites); run_all byte-identical 8372; build
+719/2710. **1b TEACH-04d (1a37a0d):** 28 inverted labels → S1 canonical tier-word-first; 8
+justified skips (incl. Framework:88 multi-circuit compound → its R3 rewrite); ORCHESTRATOR
+REPAIR: worker's 3 Case-Index hand-edits re-rooted per single-writer — source = holding:
+frontmatter on Basher/Gooch/Sandoval, sources fixed, index REGENERATED (converged byte-exact);
+survey inverted 36→8 (=skips); run_all 8372→8337; S9-journaled: Basher tier disagreement vs
+Curtilage:82, compound-label class. **1c TEACH-08:** 33/34 RD→"Lower-court developments"
+renamed+moved above tables (verbatim content moves; [Brief, LCD, Key, Related, Visual,
+Sources] order = exemplars); 1 FULL SKIP Fourth Amendment Framework (rule-skeleton legacy, no
+Brief anchor, "& subsequent treatment" variant — rides its R3 rewrite); rd 34→1, lcd 2→35;
+run_all 8337→8335 (the 2 known Chatrie LINT-3 FPs left the renamed scope — N5 re-pointing to
+LCD headings is S9's roster job per S5 R11/§9, RECORDED: N5 coverage dark on renamed sections
+until then); LINT-15 standalone 131→71 (rename-pending 30→0, order 30→0, HIGH 36→36 no new);
+build 719/2710; transformer scripts/s7/teach08.py committed. NEXT: Phase 2 category batches —
+pilot = cat-2 Standards of Proof (PC/RS split → RS + PC children Tier A + Proof Ladder C).

@@ -51,6 +51,12 @@ related:
 
 **The civil boundary (clearly CIVIL — not the criminal *Brady* spine).** A single *Brady* violation by a prosecutor — even one that sends an innocent man toward execution — does **not** by itself establish municipal **§1983** failure-to-train liability: "A pattern of similar constitutional violations by untrained employees is 'ordinarily necessary' to demonstrate deliberate indifference for purposes of failure to train." *[[Connick v. Thompson#^pin-62|Connick v. Thompson]]*, 563 U.S. 51, 62 (2011). This is the civil ceiling, distinct from the criminal due-process duty — see [[Section 1983 Liability and Qualified Immunity]].
 
+## Lower-court developments
+
+Role-based circuit/state developments only — **no SCOTUS** (the controlling Supreme Court cases, including the 2025 *[[Glossip v. Oklahoma|Glossip]]* application of *Napue*, home to **Key cases** regardless of date). The live frontier here is **timing**: whether the disclosure duty reaches the **pre-plea** stage, where the circuits have divided and the Supreme Court has so far declined to resolve it. The case below is circuit law — binding only within its own circuit — and does not state nationwide law. It has no standalone case page (page-less; named in plain text with its CourtListener link).
+
+- **Alvarez v. City of Brownsville (5th Cir. 2018) (en banc)** — *Limits / narrows · circuit split.* Sitting en banc, the Fifth Circuit held that *Brady* is a **trial right** that does not operate at the guilty-plea stage — there is **no** constitutional duty to disclose even directly exculpatory evidence before a plea, extending *United States v. Ruiz*, 536 U.S. 622 (2002) (no duty to disclose **impeachment** evidence pre-plea; page-less) to **exculpatory** evidence. Because no such right exists, the City could not face §1983 municipal liability and dismissal was rendered for the City; the Supreme Court denied certiorari (2019), leaving the split intact. **Binding in-circuit — 5th Cir.** · good. ⚖ Circuit split. [opinion](https://www.courtlistener.com/opinion/4536189/george-alvarez-v-city-of-brownsville/)
+
 ## Key cases
 
 | Case | Holding in one line | Weight | Treatment | CourtListener |
@@ -78,12 +84,6 @@ These cases are treated in full on other doctrine pages but bear on the *Brady*/
 | Case | Relevance to Brady/Giglio (framed here) | Primary home (doctrine) | Treatment | CourtListener |
 |---|---|---|---|---|
 | *[[Connick v. Thompson]]*, 563 U.S. 51 (2011) | A single *Brady* violation — even one that frees an innocent man from death row — will not by itself prove a prosecutor's office liable under **§1983** for failure to train; a **pattern** is "ordinarily necessary." The **civil ceiling** on the criminal *Brady* duty. | [[Section 1983 Liability and Qualified Immunity]] | good *(2026-06-30)* | [link](https://www.courtlistener.com/opinion/213505/connick-v-thompson/) |
-
-## Recent developments
-
-Role-based circuit/state developments only — **no SCOTUS** (the controlling Supreme Court cases, including the 2025 *[[Glossip v. Oklahoma|Glossip]]* application of *Napue*, home to **Key cases** regardless of date). The live frontier here is **timing**: whether the disclosure duty reaches the **pre-plea** stage, where the circuits have divided and the Supreme Court has so far declined to resolve it. The case below is circuit law — binding only within its own circuit — and does not state nationwide law. It has no standalone case page (page-less; named in plain text with its CourtListener link).
-
-- **Alvarez v. City of Brownsville (5th Cir. 2018) (en banc)** — *Limits / narrows · circuit split.* Sitting en banc, the Fifth Circuit held that *Brady* is a **trial right** that does not operate at the guilty-plea stage — there is **no** constitutional duty to disclose even directly exculpatory evidence before a plea, extending *United States v. Ruiz*, 536 U.S. 622 (2002) (no duty to disclose **impeachment** evidence pre-plea; page-less) to **exculpatory** evidence. Because no such right exists, the City could not face §1983 municipal liability and dismissal was rendered for the City; the Supreme Court denied certiorari (2019), leaving the split intact. **Binding in-circuit — 5th Cir.** · good. ⚖ Circuit split. [opinion](https://www.courtlistener.com/opinion/4536189/george-alvarez-v-city-of-brownsville/)
 
 ## Visual
 

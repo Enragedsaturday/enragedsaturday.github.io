@@ -35,6 +35,10 @@ A tent used as a temporary dwelling is, for Fourth Amendment purposes, analyzed 
 
 These appellate decisions are **binding in-circuit (9th Cir.)** within the Ninth Circuit and **persuasive (outside circuit)** elsewhere; treat them as the best-developed federal guidance, not a settled nationwide rule.
 
+## Lower-court developments
+
+*Role: circuit split / unresolved frontier (no SCOTUS).* The Supreme Court has **never** addressed tents directly, so the doctrine remains **circuit-built** — developed most fully in the **Ninth Circuit** (*LaDuke* → *Gooch* → *Sandoval* → *Basher*). The live frontier is the ⚖ **split** on whether a **legal right to occupy** matters to the expectation of privacy: the **Ninth Circuit** (*Sandoval*) holds it does **not** for a closed tent on public land, while the **Tenth Circuit** (*Ruckman*) tied the expectation to a right to occupy and found none for a long-term cave dweller on federal land. The related open question — how far the home-like protection extends beyond the tent's interior on undeveloped public land — is answered in-circuit by *Basher* (no curtilage around a dispersed campsite) but is otherwise unsettled nationwide. No post-decision SCOTUS authority has resolved the split.
+
 ## Key cases
 
 | Case (Bluebook) | Holding in one line | Authority weight | Treatment | CourtListener | Case page |
@@ -55,10 +59,6 @@ These are treated in full elsewhere but frame the tent question.
 | *Minnesota v. Carter*, 525 U.S. 83 (1998) | The **boundary** of the guest rule: one "merely present with the consent of the householder" for a short, purely commercial visit has **no** expectation of privacy — so mere presence in another's tent is not automatically protected. *Home:* [[Standing to Challenge a Search]]. | Binding — SCOTUS | good *(2026-06-30)* | [opinion](https://www.courtlistener.com/opinion/118249/minnesota-v-carter/) | [[Minnesota v. Carter]] |
 | *Oliver v. United States*, 466 U.S. 170 (1984) | The **open-fields / curtilage boundary**: only the curtilage carries the home's protection; exposed open land does not — the doctrinal basis for *Basher*'s holding that the ground **outside** a public-land tent is not protected. *Home:* [[Curtilage]]. | Binding — SCOTUS | good *(2026-06-30)* | [opinion](https://www.courtlistener.com/opinion/111146/oliver-v-united-states/) | [[Oliver v. United States]] |
 | *Payton v. New York*, 445 U.S. 573 (1980) | A warrant is generally required to cross the "firm line at the entrance to the house" to make an arrest. Applying that rule, *Gooch* held a **closed tent** is a "non-public" place, so police needed an **arrest warrant** (absent exigency) to enter and arrest the occupant inside. *Home:* [[Arrest in the Home]]. | Binding — SCOTUS | good *(2026-06-30)* | [opinion](https://www.courtlistener.com/opinion/110235/payton-v-new-york/) | [[Payton v. New York]] |
-
-## Recent developments
-
-*Role: circuit split / unresolved frontier (no SCOTUS).* The Supreme Court has **never** addressed tents directly, so the doctrine remains **circuit-built** — developed most fully in the **Ninth Circuit** (*LaDuke* → *Gooch* → *Sandoval* → *Basher*). The live frontier is the ⚖ **split** on whether a **legal right to occupy** matters to the expectation of privacy: the **Ninth Circuit** (*Sandoval*) holds it does **not** for a closed tent on public land, while the **Tenth Circuit** (*Ruckman*) tied the expectation to a right to occupy and found none for a long-term cave dweller on federal land. The related open question — how far the home-like protection extends beyond the tent's interior on undeveloped public land — is answered in-circuit by *Basher* (no curtilage around a dispersed campsite) but is otherwise unsettled nationwide. No post-decision SCOTUS authority has resolved the split.
 
 ## Visual
 

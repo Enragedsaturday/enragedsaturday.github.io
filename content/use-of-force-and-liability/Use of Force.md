@@ -47,6 +47,12 @@ Because *Graham* is litigated as a civil claim, the operational apparatus is unu
 - **Confusing the standard with liability.** *Graham* fixes the constitutional force standard; qualified immunity and § 1983 damages are separate questions and do not change what the Fourth Amendment requires.
 - **Applying the wrong amendment.** Free-person seizure → 4A *Graham*; pretrial detainee → 14A *Kingsley* (objective); convicted prisoner → 8A malicious-and-sadistic; unintended pursuit death (no seizure) → 14A *Lewis* shocks-the-conscience.
 
+## Lower-court developments
+
+The Supreme Court supplies the governing force standard; the circuit courts do the day-to-day line-drawing on the *Graham* factors. The decision below is **Binding in-circuit** within its own circuit and **Persuasive (outside circuit)** elsewhere — never state a circuit holding as nationwide law.
+
+- **Application of the *Graham* factors — *[[Wright v. City of Euclid]]* (6th Cir. 2020).** A published Sixth Circuit decision reversing summary judgment and denying qualified immunity: taking the plaintiff's account as true, "drawing a weapon on a suspect who was not fleeing or posing a safety risk and tasering a suspect who was not actively resisting arrest constituted excessive force," and that was clearly established. A worked circuit example of the *Graham* factors (low offense severity, no immediate threat, no active resistance) cutting against the force used. **Binding in-circuit — 6th Cir.; Persuasive (outside circuit)** elsewhere. [opinion](https://www.courtlistener.com/opinion/4762133/lamar-wright-v-city-of-euclid/).
+
 ## Key cases
 
 | Case (Bluebook) | Holding in one line | Authority weight | Treatment | CourtListener |
@@ -72,12 +78,6 @@ These cases are treated in full on other pages but bear directly on the use-of-f
 | *[[Mullenix v. Luna]]*, 577 U.S. 7 (2015) (per curiam) | Reinforces that "clearly established" law must be defined with particularity to the specific context ("whether the violative nature of particular conduct is clearly established") — immunity for shooting a fleeing, intoxicated suspect who had threatened officers. | [[Section 1983 Liability and Qualified Immunity]] | [opinion](https://www.courtlistener.com/opinion/3153112/mullenix-v-luna/) |
 | *[[Rivas-Villegas v. Cortesluna]]*, 595 U.S. 1 (2021) (per curiam) | The plaintiff must identify a case putting the officer on notice that "his specific conduct was unlawful," judged "in light of the specific context of the case, not as a broad general proposition" — a brief knee-to-the-back during a serious domestic-violence call was immune. | [[Section 1983 Liability and Qualified Immunity]] | [opinion](https://www.courtlistener.com/opinion/5290447/rivas-villegas-v-cortesluna/) |
 | *[[Brower v. County of Inyo]]*, 489 U.S. 593 (1989) | Defines when force effects a **seizure** at all: only a "termination of freedom of movement through means intentionally applied" — the threshold that separates a *Graham* Fourth Amendment claim from the *Lewis* substantive-due-process track for unintended pursuit harm. | [[Seizure of the Person]] | [opinion](https://www.courtlistener.com/opinion/112218/brower-ex-rel-estate-of-caldwell-v-county-of-inyo/) |
-
-## Recent developments
-
-The Supreme Court supplies the governing force standard; the circuit courts do the day-to-day line-drawing on the *Graham* factors. The decision below is **Binding in-circuit** within its own circuit and **Persuasive (outside circuit)** elsewhere — never state a circuit holding as nationwide law.
-
-- **Application of the *Graham* factors — *[[Wright v. City of Euclid]]* (6th Cir. 2020).** A published Sixth Circuit decision reversing summary judgment and denying qualified immunity: taking the plaintiff's account as true, "drawing a weapon on a suspect who was not fleeing or posing a safety risk and tasering a suspect who was not actively resisting arrest constituted excessive force," and that was clearly established. A worked circuit example of the *Graham* factors (low offense severity, no immediate threat, no active resistance) cutting against the force used. **Binding in-circuit — 6th Cir.; Persuasive (outside circuit)** elsewhere. [opinion](https://www.courtlistener.com/opinion/4762133/lamar-wright-v-city-of-euclid/).
 
 ## Visual
 
