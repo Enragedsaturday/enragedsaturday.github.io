@@ -971,3 +971,28 @@ zero-drop binds only owed ledger home_rows. GATES: run_all 8330→8273 (-57, eve
 held), LINT-15/16 standalone 0/0, survey em 23.0/1k slip 63, build 720/2722 green, Case Index
 617 idempotent. NEXT: cat-3b Curtilage (A) + Open Fields split-out (B); SACO stays cat-6
 Entry-to-Arrest per spec R10 precedence (changelist row-7 note is a cross-ref, not placement).
+
+**BATCH 3 CLOSED — CAT-3b CURTILAGE + OPEN FIELDS (2026-07-08):** Curtilage REWRITTEN (A, born
+draft) + Open Fields AUTHORED (B, born draft, honest no-LCD — no verified open-fields circuit
+case, fail-closed not fabricated). R6: 11 MCP calls 0 REST 0x429, opinion-ids from lake
+lead_opinion_id; Dunn ★301/★302, Oliver ★179/★173, Hester ★59, Jardines ★6/★7 CONFIRMED;
+Collins 2018 = CL slip-only (same class as Carpenter) → R5 T3 paraphrase-downgrade w/ 584 U.S.
+586 case-cite, evidence pos 48767; Curtilage slip 1→0 leaks 3→0. DUNN-FACTORS-IN-THE-RULE
+APPLIED (own ^rule-curtilage callout, borrowed KT callout demoted to cross-ref — cleared the 2
+baseline LINT-2 findings). Split re-homing: Hester+Oliver primary→Open Fields w/ Key-on
+Curtilage (the line IS the training point); Dunn primary stays Curtilage (factors=test) w/
+Key-on OF (barn=worked example); See/King/French/Basher +Curtilage:Related (A6). Owed
+home_rows 6/6 discharged (GM Leasing Key-table; May-Shaw/Karston/Larson/Weaver ledger-Key →
+LCD bullets; Moore-Bush Related→LCD). ADJUDICATIONS ACCEPTED + TEMPLATE RULES: H — ledger
+home_row discharge = page-presence; presentational tier (Key-table vs LCD bullet) is the
+author's S5 call, LCD honest for circuit/state developments. I — ZERO em-dashes inside table
+cells (LINT-10 sums a table as one block, confirmed empirically). Aerial restraint held (SD7):
+Ciraolo/Riley/Dow exposition deferred to T2#5, case frontmatter UNTOUCHED — AERIAL BATCH OWES
+primary moves + search.aerial-surveillance statement fill (JOURNALED). Tuggle home gap
+(Plain-View-only home, curtilage substance) → S9 coherence. SACO cross-ref only per spec R10.
+Registry: curtilage statement +Dunn factors, open-fields filled. GATES: run_all 8273→8233
+(-40 all-decrease), LINT-15/16 0/0, survey em 22.4/1k slip 62 leaks 53, build 720/2725, Case
+Index 617 idempotent. NEXT: cat-3 digital sub-umbrella (SD2: Third-Party & CSLI parent A +
+D6 children CSS B / Reverse-Keyword & Geofence B / Real-Time C / IGG C + Title III C sibling
+w/ GAP-03c §702) — carries journaled obligations: Smith (2024) Key w/ Chatrie, Carpenter
+co-home decision, Chatrie exposition home.

@@ -30,6 +30,8 @@ homes:
     role: "Anchor (commercial inspections)"
   - page: "[[The Warrant Requirement]]"
     role: "Related (cross-doctrine)"
+  - page: "[[Curtilage]]"
+    role: "Related (cross-doctrine)"
 related: ["[[Camara v. Municipal Court]]", "[[Marshall v. Barlow's Inc.]]"]
 aliases: []
 tags: ["case", "fourth-amendment", "administrative-search", "inspections", "commercial-premises", "warrant"]

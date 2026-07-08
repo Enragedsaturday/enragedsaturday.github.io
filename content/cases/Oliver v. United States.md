@@ -26,8 +26,10 @@ courtlistener:
   opinion_id: 9429563
   identity_checked: true
 homes:
+  - page: "[[Open Fields]]"
+    role: "Key — Anchor"
   - page: "[[Curtilage]]"
-    role: "Key — Progeny / Refinement"
+    role: "Key"
 related: ["[[Hester v. United States]]", "[[United States v. Dunn]]", "[[Florida v. Jardines]]", "[[California v. Ciraolo]]"]
 aliases: []
 tags: ["case", "fourth-amendment", "open-fields", "curtilage", "search"]

@@ -32,6 +32,8 @@ homes:
     role: "Related (cross-doctrine)"
   - page: "[[Knock and Talk]]"
     role: "Related (cross-doctrine)"
+  - page: "[[Curtilage]]"
+    role: "Related (cross-doctrine)"
 related: ["[[Brigham City v. Stuart]]", "[[Lange v. California]]", "[[Payton v. New York]]"]
 aliases: []
 tags: ["case", "fourth-amendment", "exigent-circumstances", "police-created-exigency", "destruction-of-evidence"]

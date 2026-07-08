@@ -28,6 +28,8 @@ courtlistener:
 homes:
   - page: "[[Tents]]"
     role: "Key — Progeny / Refinement"
+  - page: "[[Curtilage]]"
+    role: "Related (cross-doctrine)"
 related: ["[[Oliver v. United States]]", "[[California v. Ciraolo]]", "[[Katz v. United States]]"]
 aliases: []
 tags: ["case", "fourth-amendment", "curtilage", "tents"]

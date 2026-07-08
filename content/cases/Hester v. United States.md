@@ -26,8 +26,10 @@ courtlistener:
   opinion_id: 100413
   identity_checked: true
 homes:
-  - page: "[[Curtilage]]"
+  - page: "[[Open Fields]]"
     role: "Key — Anchor"
+  - page: "[[Curtilage]]"
+    role: "Key"
   - page: "[[Abandonment]]"
     role: "Key — Progeny / Refinement"
 related: ["[[Oliver v. United States]]", "[[United States v. Dunn]]", "[[California v. Greenwood]]", "[[Abel v. United States]]"]

@@ -28,6 +28,8 @@ courtlistener:
 homes:
   - page: "[[Knock and Talk]]"
     role: "Key — Progeny / Refinement"
+  - page: "[[Curtilage]]"
+    role: "Related (cross-doctrine)"
 related: ["[[Florida v. Jardines]]", "[[Kentucky v. King]]"]
 aliases: ["French v. Merrill (1st Cir. 2021)"]
 tags: ["case", "fourth-amendment", "knock-and-talk", "curtilage", "implied-license", "first-circuit", "qualified-immunity"]

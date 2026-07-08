@@ -28,6 +28,8 @@ courtlistener:
 homes:
   - page: "[[Curtilage]]"
     role: "Key — Anchor"
+  - page: "[[Open Fields]]"
+    role: "Key"
 related: ["[[Oliver v. United States]]", "[[California v. Ciraolo]]", "[[Hester v. United States]]", "[[Florida v. Jardines]]", "[[Collins v. Virginia]]"]
 aliases: []
 tags: ["case", "fourth-amendment", "search", "curtilage", "open-fields", "home"]
