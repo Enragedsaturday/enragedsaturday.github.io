@@ -358,6 +358,28 @@ def main():
                   note=e.get("note"),
                   source="S7-L1-POOLING-DISPOSITIONS.jsonl")
 
+    # ---- 6c-2) S7 mini-lane L2 SACO/constructive-entry dispositions (D7) -----
+    # The signed D7 SACO section names the constructive-entry split; its page-less
+    # split members need brief-mention terminals so LINT-17 lets the Entry-to-Arrest
+    # section name them. Identity-verified via CourtListener MCP (SEARCH-first; 0
+    # REST). assemble=false rows are the 3 page-mint candidates (Nora/Al-Azzawy/
+    # Vaneaton) blocked on the S2 REST identity leg — documentation-only, NOT
+    # assembled (they enter as `authored` rows when the S2 builder resolves their
+    # verified_identity stub and mint_page authors the staged payloads).
+    s7saco = os.path.join(O2, "S7-L2-SACO-DISPOSITIONS.jsonl")
+    if os.path.isfile(s7saco):
+        for e in load_jsonl(s7saco):
+            if e.get("assemble") is False:
+                continue
+            L.add(e["caption"], e.get("canonical") or e["caption"], e["terminal"],
+                  cluster_id=e.get("cluster_id"), leg=e.get("leg"),
+                  verdict=e.get("verdict"), prong=e.get("prong"),
+                  rationale=e.get("rationale"),
+                  cl=e.get("cl"), independent=e.get("independent"),
+                  pointer=e.get("pointer"), aliases=e.get("aliases"),
+                  note=e.get("note"),
+                  source="S7-L2-SACO-DISPOSITIONS.jsonl")
+
     # ---- 6b) any remaining page_path=None manifest stub not yet placed ------
     # (verified_identity brief-mention shells whose caption did not text-match a
     # non-page-ledger record_id — belt-and-braces: place by manifest status.)

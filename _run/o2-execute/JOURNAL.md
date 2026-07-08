@@ -1145,3 +1145,31 @@ authored. D7's Nora-spine section (pincites at 1055) requires a MINT WAVE. Mini-
 dispatched TWO-PHASE: (a) identity verify + evidence + page-vs-terminal proposal per S6 D5
 frontier floor, PAUSE; (b) orchestrator adjudicates, then standard-leg mint (W10 precedent).
 Arrests batch (cat-4c + Entry-to-Arrest D7) holds until L2 lands.
+
+**MINI-LANE L2 CLOSED — D7 SACO MINT WAVE (2026-07-08):** TWO-PHASE lane complete. Phase (a):
+5 identities verified SEARCH-first (16 MCP 0 REST) — Nora 765 F.3d 1049 (9th 2014, ★1055
+confirmed; corrects dispatch's 743 guess vs signed S6 A1), Al-Azzawy 784 F.2d 890 (9th 1986,
+not the 1985 sister), Vaneaton 49 F.3d 1423 (9th 1995), Fisher-San-Jose 558 F.3d 1069 EN BANC
+ONLY (panels barred), Allen 813 F.3d 76 (2d 2016, namesakes refuted); page-vs-terminal
+proposal per S6 D5 frontier floor. ORCHESTRATOR ADJUDICATION: mint 3 (spine + both
+containment-line poles) / terminal 2; §9 guard = S6's own scope guard, S7 discoveries ride
+the mint w/ frontier floor (S6 148 untouched; S7-minted counter = 3); BERKOWITZ CORRECTION
+(paged 7th-Cir narrow-side rep — L2a over-caution reversed, nameable). Phase (b): worker
+STOPPED HONESTLY at credential boundary (no token in its env; refused to force) → terminals
+booked + ledger 246→248 + payloads staged. ORCHESTRATOR RAN THE S2 BUILDER LEG (token at
+~/.config/cssi/cl-token per memory): --add-candidates 3/3 appended (manifest 665→668) → R1
+smokes 3/3 verified_identity (2+2+4 calls, cache-assisted, 0x429) → worklist +3 rows leg
+s7-discovery w/ adjudication notes (W10 lint17-catch precedent; 151→154, s7_discoveries
+counter) → dry-runs 3/3 clean staged-lint 0 → MINTED 3/3 born under_review. FINALIZATION
+(body-only, own fresh pages, ratified class): 6 mid-line ^pin anchors → end-of-line splits,
+5 em-dash blocks → parens/period-cite, ENRICH-CONFIRM resolved by orchestrator MCP
+spot-check — Nora Payton-quote pin = ★1054 EXACT (position 15602 between markers 14213/22131,
+evidence in-comment). Maez treatment enrich → S9 (cache absent, honest). LEDGER FINAL:
+251 rows PASS (authored 151 + brief-mention 60 + excluded 26 + folded 8 + watch 3 + removed 2
++ unverifiable 1); Case Index 620. GATES: LINT-17 0, LINT-13 0, run_all 7933 (HIGH 4825 =
+baseline EXACT, +21 MED/LOW baseline-class on 3 new case pages), build 724/2783. D7 reliance
+map COMPLETE for the arrests batch: 9th at page grain (Nora/Al-Azzawy/Vaneaton) + Maez 10th
+paged + Berkowitz 7th paged + Allen 2d/Fisher 9th terminals + Harris remedy tail paged;
+1st/3d/4th/8th + Morgan-6th/Knight-11th honest-unmapped. NEXT: cat-4c arrests batch
+(Arrest-in-the-Home A + Entry to Arrest A w/ D7 SACO section + point node + Arrest & Arrest
+Warrants B + Prompt-PC C).
