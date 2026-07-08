@@ -1101,3 +1101,25 @@ arrests/ stubs unauthored); 5 case pages w/ malformed mid-line ^pin anchors
 26.7→1.5/1k, build 721/2777 (+5 alias redirects). NEXT: cat-4b — Terry Stops (A) + Traffic
 Stops (A, Brendlin Key landing) + Collective Knowledge (A, horizontal-pooling split section +
 Herring→Key w/ Whiteley caveat).
+
+**BATCH 8 CLOSED — CAT-4b STOPS FAMILY (2026-07-08):** 3 Tier-A born-again rewrites: Terry
+Stops (em 137→10, ff 1→0 CONVERTED w/ logged D2, quantum/stop boundary split vs batch-1 RS
+page) · Traffic Stops (em 118→4, BRENDLIN KEY SEAT landed ★251 MCP-confirmed, Glover Key
+honest primary, Whren→Rodriguez→Heien spine) · Collective Knowledge (em 61→8, HERRING→KEY w/
+WHITELEY CAVEAT as own Brief para — imputation baseline vs exclusion consequence + new
+"reading Herring as imputation" pitfall; Pringle suspect-side STRENGTHENED w/ 371/373 pins).
+7 MCP calls 0 REST. IDENTITY CATCH: D.C. v. R.W. stub identity_checked:false → CONFIRMED
+GENUINE 2026 SCOTUS per curiam (op 11312795, anti-divide-and-conquer dispatch-stop rule) →
+Key per N5, T4 slip; LAKE FLIP OWED to S2 repair lane (journaled). LINT-17 DISCIPLINE HELD:
+Nafzger/Ibarra/Balser NOT NAMED (no page/no terminal — fail-closed refusal correct), Cook
+dropped (framing depends on Balser); split taught w/ 4 page-backed circuits. ORCHESTRATOR
+RULING: spec R9 signs the NAMED split (Massenburg / communication-nexus / Cook-Balser) —
+completion via brief-mention coverage-ledger terminals dispatched as mini-lane L1 (identity
+verify → disposition artifact → build_coverage_ledger regen → page naming patch), the honest
+lightweight path vs 3 full mints. Owed rows 11/11 (Cooley+R.W. Key per N5; 9 circuit → LCD
+rule H). Hiibel/Kolender batch-7 presentation reconciled (Related w/ Stop-and-Identify
+primary). Anchor-cleanup register +4 (Hensley/Adams/Sibron/Whren mid-line pins; now 9 total).
+Cooley Field-I unverified ⚪ → S9 standing class. GATES: run_all 8091→7904 (HIGH -138
+strictly-decreasing), LINT-15/16 0/0, LINT-17 0, LINT-25 0, survey corpus em 3268 ff 1,
+build 721/2777 byte-identical, Case Index idempotent. NEXT: mini-lane L1 (pooling terminals)
+then cat-4c arrests (Arrest-in-the-Home A + Arrest & Arrest Warrants B + Prompt-PC C).
