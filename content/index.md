@@ -79,7 +79,7 @@ updated: 2026-07-04
 
 ## The Warrant
 
-- [[The Warrant Requirement]] — what a valid warrant requires and how it fails: **probable cause** shown to a **neutral and detached magistrate** (*Johnson*; *Lo-Ji Sales*; *Coolidge*), **particularity** (*Groh*, *Garrison*, *Andresen*), the *Franks* challenge to a false affidavit, **knock-and-announce** (*Wilson*, *Richards*, *Hudson*), and **anticipatory** warrants (*Grubbs*).
+- [[The Warrant]] — what a valid warrant requires and how it fails: **probable cause** shown to a **neutral and detached magistrate** (*Johnson*; *Lo-Ji Sales*; *Coolidge*), **particularity** (*Groh*, *Garrison*, *Andresen*), the *Franks* challenge to a false affidavit, **knock-and-announce** (*Wilson*, *Richards*, *Hudson*), and **anticipatory** warrants (*Grubbs*).
 
 - **Getting a Warrant** — Building a warrant that survives review: probable cause in the affidavit, a neutral and detached magistrate, particularity, and the Franks challenge to a false affidavit.
   - [[Probable Cause in the Affidavit]] — *placed by S3 — S6 verifies cases, S7 authors prose.*

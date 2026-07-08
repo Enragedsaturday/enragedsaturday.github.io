@@ -26,7 +26,7 @@ courtlistener:
   opinion_id: 131146
   identity_checked: true
 homes:
-  - page: "[[The Warrant Requirement]]"
+  - page: "[[Knock-and-Announce]]"
     role: "Progeny"
 related: ["[[United States v. Ramirez]]", "[[Richards v. Wisconsin]]", "[[Wilson v. Arkansas]]"]
 aliases: []
@@ -63,7 +63,7 @@ The 15-to-20-second wait and forcible entry were reasonable under the Fourth Ame
 - *Banks* remains the controlling treatment of how long officers must wait after knock-and-announce before forcing entry, applying a fact-specific exigency analysis. It builds on [[Richards v. Wisconsin]] and [[Wilson v. Arkansas]] and pairs with [[United States v. Ramirez]] on property damage during forced entry. No negative treatment.
 
 ## Appears on
-- [[The Warrant Requirement]] — *Progeny*
+- [[Knock-and-Announce]] — *Progeny*
 
 ## Sources
 - *United States v. Banks*, 540 U.S. 31 (2003) — https://www.courtlistener.com/opinion/131146/united-states-v-banks/ — pinpoints: 38, 40.

@@ -26,7 +26,7 @@ courtlistener:
   opinion_id: 107718
   identity_checked: true
 homes:
-  - page: "[[The Warrant Requirement]]"
+  - page: "[[Knock-and-Announce]]"
     role: "Progeny"
   - page: "[[Arrest in the Home]]"
     role: "Related (cross-doctrine)"
@@ -65,7 +65,7 @@ The entry violated § 3109; the evidence should have been suppressed, and the ju
 - *Sabbath*'s definition of an unannounced "breaking" — reaching the opening of a closed but unlocked door — remains sound and feeds the constitutional knock-and-announce rule recognized in [[Wilson v. Arkansas]] and refined in [[Richards v. Wisconsin]]. The suppression remedy *Sabbath* applied for such violations was later curtailed for Fourth Amendment knock-and-announce violations by [[Hudson v. Michigan]] (2006), which does not disturb *Sabbath*'s substantive holding about what counts as an unannounced entry.
 
 ## Appears on
-- [[The Warrant Requirement]] — *Progeny*
+- [[Knock-and-Announce]] — *Progeny*
 - [[Arrest in the Home]] — *Related (cross-doctrine)*
 
 ## Sources

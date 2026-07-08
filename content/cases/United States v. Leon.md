@@ -28,7 +28,7 @@ courtlistener:
 homes:
   - page: "[[The Exclusionary Rule]]"
     role: "Key — Anchor"
-  - page: "[[The Warrant Requirement]]"
+  - page: "[[Franks Challenges]]"
     role: "Related (cross-doctrine)"
 related: ["[[Massachusetts v. Sheppard]]", "[[Herring v. United States]]", "[[Davis v. United States]]", "[[Franks v. Delaware]]", "[[Illinois v. Gates]]"]
 aliases: []
@@ -68,7 +68,7 @@ Evidence seized in objectively reasonable reliance on a later-invalidated warran
 
 ## Appears on
 - [[The Exclusionary Rule]] — *Key — Anchor*
-- [[The Warrant Requirement]] — *Related (cross-doctrine)*
+- [[Franks Challenges]] — *Related (cross-doctrine)*
 
 ## Sources
 - *United States v. Leon*, 468 U.S. 897 (1984) — https://www.courtlistener.com/opinion/111262/united-states-v-leon/ — pinpoints: 922, 923.

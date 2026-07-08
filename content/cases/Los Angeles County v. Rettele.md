@@ -30,6 +30,8 @@ homes:
     role: "Progeny"
   - page: "[[Section 1983 Liability and Qualified Immunity]]"
     role: "Related (cross-doctrine)"
+  - page: "[[Detention and Search of Persons at the Scene]]"
+    role: "Key (executing a warrant)"
 related: ["[[Michigan v. Summers]]", "[[Muehler v. Mena]]", "[[Bailey v. United States]]"]
 aliases: ["Los Angeles County, California v. Rettele"]
 tags: ["case", "fourth-amendment", "securing-the-scene", "warrant-execution", "detention", "qualified-immunity"]

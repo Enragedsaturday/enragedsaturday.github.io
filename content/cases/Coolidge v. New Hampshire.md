@@ -39,7 +39,7 @@ courtlistener:
 homes:
   - page: "[[Plain View Doctrine]]"
     role: "Key — Anchor"
-  - page: "[[The Warrant Requirement]]"
+  - page: "[[The Neutral and Detached Magistrate]]"
     role: "Related (cross-doctrine)"
 related: ["[[Horton v. California]]", "[[Arizona v. Hicks]]", "[[Texas v. Brown]]"]
 aliases: []
@@ -81,7 +81,7 @@ The warrantless seizure of the car could not be justified as plain view; the evi
 
 ## Appears on
 - [[Plain View Doctrine]] — *Key — Anchor*
-- [[The Warrant Requirement]] — *Related (cross-doctrine)*
+- [[The Neutral and Detached Magistrate]] — *Related (cross-doctrine)*
 
 ## Sources
 - *Coolidge v. New Hampshire*, 403 U.S. 443 (1971) — https://www.courtlistener.com/opinion/108377/coolidge-v-new-hampshire/ — pinpoint: 466.

@@ -26,7 +26,7 @@ courtlistener:
   opinion_id: 110100
   identity_checked: true
 homes:
-  - page: "[[The Warrant Requirement]]"
+  - page: "[[The Neutral and Detached Magistrate]]"
     role: "Key — Progeny / Refinement"
   - page: "[[The Exclusionary Rule]]"
     role: "Related (cross-doctrine)"
@@ -65,7 +65,7 @@ The search violated the Fourth Amendment; the seized materials should have been 
 - *Lo-Ji* remains a leading illustration of two failures: the loss of the **neutral and detached magistrate** (cf. [[Coolidge v. New Hampshire]]) and the **general-warrant / particularity** defect (cf. [[Groh v. Ramirez]]). On the exclusionary-rule side it marks a boundary of the [[United States v. Leon]] good-faith exception — good faith fails where the issuing magistrate has wholly abandoned the judicial role.
 
 ## Appears on
-- [[The Warrant Requirement]] — *Key — Progeny / Refinement*
+- [[The Neutral and Detached Magistrate]] — *Key — Progeny / Refinement*
 - [[The Exclusionary Rule]] — *Related (cross-doctrine)*
 
 ## Sources

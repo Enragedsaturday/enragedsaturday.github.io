@@ -28,8 +28,6 @@ courtlistener:
 homes:
   - page: "[[Special Needs and Administrative Searches]]"
     role: "Anchor (commercial inspections)"
-  - page: "[[The Warrant Requirement]]"
-    role: "Related (cross-doctrine)"
   - page: "[[Curtilage]]"
     role: "Related (cross-doctrine)"
 related: ["[[Camara v. Municipal Court]]", "[[Marshall v. Barlow's Inc.]]"]
@@ -70,7 +68,6 @@ See could not be convicted for refusing the warrantless inspection; his convicti
 
 ## Appears on
 - [[Special Needs and Administrative Searches]] — *Anchor (commercial inspections)*
-- [[The Warrant Requirement]] — *Related (cross-doctrine)*
 
 ## Sources
 - *See v. City of Seattle*, 387 U.S. 541 (1967) — https://www.courtlistener.com/opinion/107474/see-v-city-of-seattle/ — pinpoints: 543, 545.

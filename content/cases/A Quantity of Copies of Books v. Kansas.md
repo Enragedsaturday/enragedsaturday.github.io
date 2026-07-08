@@ -30,7 +30,7 @@ lake:
   status: under_review
   projected_at: 2026-07-07
 homes:
-  - page: "[[The Warrant Requirement]]"
+  - page: "[[Particularity]]"
     role: Historical / origin
 related:
   - "[[Stanford v. Texas]]"
@@ -73,7 +73,7 @@ The judgment of the Supreme Court of Kansas was **reversed**; the seizure proced
 *Status note (⚪):* authored from a CourtListener-verified identity stub; renders under the ⚪ banner until S9 promotion. The successor pages *Marcus v. Search Warrant* and *Roaden v. Kentucky* are not yet in the corpus (queued in later authoring waves); they are named in plain text here to avoid dangling links.
 
 ## Appears on
-- [[The Warrant Requirement]] — *Historical / origin*
+- [[Particularity]] — *Historical / origin*
 
 ## Sources
 - [*A Quantity of Copies of Books v. Kansas*, 378 U.S. 205 (1964)](https://www.courtlistener.com/opinion/106878/a-quantity-of-copies-of-books-v-kansas/) — pinpoint: 211 (plurality; Brennan, J.); Rule quote string-matched to the CL opinion text 2026-07-07.

@@ -26,7 +26,7 @@ courtlistener:
   opinion_id: 106964
   identity_checked: true
 homes:
-  - page: "[[The Warrant Requirement]]"
+  - page: "[[Particularity]]"
     role: "Progeny"
 related: ["[[Maryland v. Garrison]]", "[[Groh v. Ramirez]]", "[[Andresen v. Maryland]]"]
 aliases: []
@@ -63,7 +63,7 @@ The warrant was an unconstitutional general warrant; the order was vacated and t
 - *Stanford* remains the controlling statement that warrants reaching expressive materials demand heightened, "scrupulous" particularity, drawing directly on the general-warrant history of *Entick v. Carrington*. It sits within the particularity line alongside [[Maryland v. Garrison]], [[Groh v. Ramirez]], and [[Andresen v. Maryland]]. No negative treatment.
 
 ## Appears on
-- [[The Warrant Requirement]] — *Progeny*
+- [[Particularity]] — *Progeny*
 
 ## Sources
 - *Stanford v. Texas*, 379 U.S. 476 (1965) — https://www.courtlistener.com/opinion/106964/stanford-v-texas/ — pinpoints: 485, 486.

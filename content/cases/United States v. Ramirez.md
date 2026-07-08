@@ -26,7 +26,7 @@ courtlistener:
   opinion_id: 118180
   identity_checked: true
 homes:
-  - page: "[[The Warrant Requirement]]"
+  - page: "[[Knock-and-Announce]]"
     role: "Progeny"
 related: ["[[Richards v. Wisconsin]]", "[[Wilson v. Arkansas]]", "[[United States v. Banks]]", "[[Sabbath v. United States]]"]
 aliases: []
@@ -63,7 +63,7 @@ No Fourth Amendment or § 3109 violation occurred; the judgment suppressing the 
 - *Ramirez* remains controlling: property damage does not raise the bar for a no-knock entry, which is governed by the reasonable-suspicion standard of [[Richards v. Wisconsin]] (building on [[Wilson v. Arkansas]]), while excessive destruction can independently offend the Fourth Amendment. It is taught with [[United States v. Banks]] (timing of forcible entry) and [[Sabbath v. United States]] (what counts as an entry). No negative treatment.
 
 ## Appears on
-- [[The Warrant Requirement]] — *Progeny*
+- [[Knock-and-Announce]] — *Progeny*
 
 ## Sources
 - *United States v. Ramirez*, 523 U.S. 65 (1998) — https://www.courtlistener.com/opinion/118180/united-states-v-ramirez/ — pinpoints: 68, 71.

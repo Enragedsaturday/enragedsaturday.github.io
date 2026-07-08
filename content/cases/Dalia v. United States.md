@@ -26,7 +26,7 @@ courtlistener:
   opinion_id: 110061
   identity_checked: true
 homes:
-  - page: "[[The Warrant Requirement]]"
+  - page: "[[Scope Manner and Related Issues]]"
     role: "Progeny (manner of execution / covert entry)"
 related: ["[[Berger v. New York]]"]
 aliases: []
@@ -65,7 +65,7 @@ The covert entry to install the bug was constitutional and authorized by the Tit
 - No negative treatment. *Dalia*'s constitutional holdings — that covert entry to install lawful surveillance equipment is not per se unreasonable, and that a warrant need not specify the manner of its execution — remain good law and govern surveillance-installation and analogous warrant-execution questions.
 
 ## Appears on
-- [[The Warrant Requirement]] — *Progeny (manner of execution / covert entry)*
+- [[Scope Manner and Related Issues]] — *Progeny (manner of execution / covert entry)*
 
 ## Sources
 - *Dalia v. United States*, 441 U.S. 238 (1979) — https://www.courtlistener.com/opinion/110061/dalia-v-united-states/ — pinpoints: 248, 257.

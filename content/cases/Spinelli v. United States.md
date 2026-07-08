@@ -28,7 +28,7 @@ courtlistener:
 homes:
   - page: "[[Probable Cause]]"
     role: "Key — Progeny / Refinement"
-  - page: "[[The Warrant Requirement]]"
+  - page: "[[Probable Cause in the Affidavit]]"
     role: "Related (cross-doctrine)"
 related: ["[[Aguilar v. Texas]]", "[[Illinois v. Gates]]"]
 aliases: []
@@ -68,7 +68,7 @@ The warrant was not supported by probable cause; the conviction resting on the s
 
 ## Appears on
 - [[Probable Cause]] — *Key — Progeny / Refinement*
-- [[The Warrant Requirement]] — *Related (cross-doctrine)*
+- [[Probable Cause in the Affidavit]] — *Related (cross-doctrine)*
 
 ## Sources
 - *Spinelli v. United States*, 393 U.S. 410 (1969) — https://www.courtlistener.com/opinion/107831/spinelli-v-united-states/ — pinpoints: 415, 418.

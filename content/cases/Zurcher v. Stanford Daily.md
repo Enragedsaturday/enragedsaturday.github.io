@@ -26,7 +26,7 @@ courtlistener:
   opinion_id: 109876
   identity_checked: true
 homes:
-  - page: "[[The Warrant Requirement]]"
+  - page: "[[Scope Manner and Related Issues]]"
     role: "Progeny (third-party premises)"
 related: ["[[Stanford v. Texas]]"]
 aliases: []
@@ -65,7 +65,7 @@ The warranted search of the newspaper's offices did not violate the Fourth or Fi
 - **Statutory overlay (field-relevant):** Congress responded to *Zurcher* with the Privacy Protection Act of 1980 (42 U.S.C. § 2000aa), which generally bars searches for a journalist's or author's documentary "work product" and instead requires a subpoena, subject to exceptions (e.g., the possessor is a suspect, or imminent risk to life). The PPA constrains the field practice for press searches by statute; it does not disturb *Zurcher*'s Fourth Amendment holding, which remains good law.
 
 ## Appears on
-- [[The Warrant Requirement]] — *Progeny (third-party premises)*
+- [[Scope Manner and Related Issues]] — *Progeny (third-party premises)*
 
 ## Sources
 - *Zurcher v. Stanford Daily*, 436 U.S. 547 (1978) — https://www.courtlistener.com/opinion/109876/zurcher-v-stanford-daily/ — pinpoints: 556, 564.

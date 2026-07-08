@@ -28,6 +28,8 @@ courtlistener:
 homes:
   - page: "[[Securing the Scene]]"
     role: "Key — Progeny / Refinement"
+  - page: "[[Detention and Search of Persons at the Scene]]"
+    role: "Key (executing a warrant)"
 related: ["[[Michigan v. Summers]]", "[[Bailey v. United States]]", "[[Los Angeles County v. Rettele]]"]
 aliases: []
 tags: ["case", "fourth-amendment", "detention", "search-warrant", "handcuffs"]

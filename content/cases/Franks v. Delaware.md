@@ -26,7 +26,7 @@ courtlistener:
   opinion_id: 109925
   identity_checked: true
 homes:
-  - page: "[[The Warrant Requirement]]"
+  - page: "[[Franks Challenges]]"
     role: "Key — Anchor"
   - page: "[[The Exclusionary Rule]]"
     role: "Related (cross-doctrine)"
@@ -67,7 +67,7 @@ A defendant may challenge a warrant affidavit's veracity on a substantial prelim
 - No negative treatment. The "Franks hearing" remains the standard mechanism for attacking deliberate or reckless falsehoods in a warrant affidavit.
 
 ## Appears on
-- [[The Warrant Requirement]] — *Key — Anchor*
+- [[Franks Challenges]] — *Key — Anchor*
 - [[The Exclusionary Rule]] — *Related (cross-doctrine)*
 
 ## Sources

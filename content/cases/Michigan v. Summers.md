@@ -28,6 +28,8 @@ courtlistener:
 homes:
   - page: "[[Securing the Scene]]"
     role: "Key — Anchor"
+  - page: "[[Detention and Search of Persons at the Scene]]"
+    role: "Key (executing a warrant)"
 related: ["[[Bailey v. United States]]", "[[Muehler v. Mena]]"]
 aliases: []
 tags: ["case", "fourth-amendment", "search-warrant", "detention", "securing-the-scene"]

@@ -26,7 +26,7 @@ courtlistener:
   opinion_id: 118103
   identity_checked: true
 homes:
-  - page: "[[The Warrant Requirement]]"
+  - page: "[[Knock-and-Announce]]"
     role: "Key — Progeny / Refinement"
 related: ["[[Wilson v. Arkansas]]", "[[Hudson v. Michigan]]", "[[Maryland v. Buie]]"]
 aliases: []
@@ -62,7 +62,7 @@ There is no blanket knock-and-announce exception for drug cases; case-specific r
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**. *Richards* refines the knock-and-announce rule of [[Wilson v. Arkansas]]; suppression for a knock-and-announce violation was later denied in [[Hudson v. Michigan]].
 
 ## Appears on
-- [[The Warrant Requirement]] — *Key — Progeny / Refinement*
+- [[Knock-and-Announce]] — *Key — Progeny / Refinement*
 
 ## Sources
 - *Richards v. Wisconsin*, 520 U.S. 385 (1997) — https://www.courtlistener.com/opinion/118103/richards-v-wisconsin/ — pinpoint: 394.

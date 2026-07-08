@@ -26,7 +26,7 @@ courtlistener:
   opinion_id: 145646
   identity_checked: true
 homes:
-  - page: "[[The Warrant Requirement]]"
+  - page: "[[Knock-and-Announce]]"
     role: "Key — Progeny / Refinement"
 related: ["[[Wilson v. Arkansas]]", "[[Richards v. Wisconsin]]", "[[Mapp v. Ohio]]", "[[United States v. Leon]]"]
 aliases: []
@@ -65,7 +65,7 @@ A knock-and-announce violation does not trigger the exclusionary rule; the denia
 - No negative treatment. *Hudson* leaves the knock-and-announce requirement of [[Wilson v. Arkansas]] and [[Richards v. Wisconsin]] intact but withholds the exclusionary remedy for its violation, applying the cost-benefit, deterrence-focused approach of the modern exclusionary-rule cases.
 
 ## Appears on
-- [[The Warrant Requirement]] — *Key — Progeny / Refinement*
+- [[Knock-and-Announce]] — *Key — Progeny / Refinement*
 
 ## Sources
 - *Hudson v. Michigan*, 547 U.S. 586 (2006) — https://www.courtlistener.com/opinion/145646/hudson-v-michigan/ — pinpoint: 594.

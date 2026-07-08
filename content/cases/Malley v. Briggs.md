@@ -28,7 +28,7 @@ courtlistener:
 homes:
   - page: "[[Section 1983 Liability and Qualified Immunity]]"
     role: "Key — Progeny / Refinement"
-  - page: "[[The Warrant Requirement]]"
+  - page: "[[Franks Challenges]]"
     role: "Related (cross-doctrine)"
 related: ["[[Messerschmidt v. Millender]]", "[[United States v. Leon]]", "[[Harlow v. Fitzgerald]]"]
 aliases: []
@@ -66,7 +66,7 @@ Affirmed in part and remanded. Officers who apply for warrants enjoy only qualif
 
 ## Appears on
 - [[Section 1983 Liability and Qualified Immunity]] — *Key — Progeny / Refinement*
-- [[The Warrant Requirement]] — *Related (cross-doctrine)*
+- [[Franks Challenges]] — *Related (cross-doctrine)*
 
 ## Sources
 - *Malley v. Briggs*, 475 U.S. 335 (1986) — https://www.courtlistener.com/opinion/111611/malley-v-briggs/ — pinpoints: 341, 345.

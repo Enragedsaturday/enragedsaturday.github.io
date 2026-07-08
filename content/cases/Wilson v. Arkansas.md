@@ -26,7 +26,7 @@ courtlistener:
   opinion_id: 117936
   identity_checked: true
 homes:
-  - page: "[[The Warrant Requirement]]"
+  - page: "[[Knock-and-Announce]]"
     role: "Key — Anchor"
 related: ["[[Richards v. Wisconsin]]", "[[Hudson v. Michigan]]"]
 aliases: ["Wilson"]
@@ -65,7 +65,7 @@ The knock-and-announce principle is part of Fourth Amendment reasonableness; the
 - No negative treatment. *Wilson* was refined by [[Richards v. Wisconsin]] (1997), which set the "reasonable suspicion" standard for dispensing with announcement (danger, futility, or destruction of evidence). [[Hudson v. Michigan]] (2006) held that a knock-and-announce violation does not by itself trigger the exclusionary rule — limiting the remedy, not the underlying requirement.
 
 ## Appears on
-- [[The Warrant Requirement]] — *Key — Anchor*
+- [[Knock-and-Announce]] — *Key — Anchor*
 
 ## Sources
 - *Wilson v. Arkansas*, 514 U.S. 927 (1995) — https://www.courtlistener.com/opinion/117936/wilson-v-arkansas/ — pinpoints: 929, 934.

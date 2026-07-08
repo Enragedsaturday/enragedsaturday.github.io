@@ -30,7 +30,7 @@ lake:
   status: under_review
   projected_at: 2026-07-07
 homes:
-  - page: "[[The Warrant Requirement]]"
+  - page: "[[Particularity]]"
     role: Anchor
 related:
   - "[[The Warrant Requirement]]"
@@ -75,7 +75,7 @@ The judgment of the Court of Appeals of Kentucky was **reversed** and the case r
 **Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub; its citator and progeny history have not completed the project's two-key verification, so it renders under the ⚪ banner until S9 promotion. *Roaden* is a warrant-requirement anchor for the special protection expressive materials receive at the seizure stage: where the "things to be seized" are presumptively First-Amendment-protected, the Fourth Amendment tolerates no shortcut around the warrant and the prior judicial determination it secures. Teach it alongside its companion *[[Heller v. New York]]* (decided the same day, sustaining a seizure made under a warrant after the magistrate viewed the film) and its antecedents *[[Marcus v. Search Warrant|Marcus]]* and *[[A Quantity of Copies of Books v. Kansas|A Quantity of Books]]*.
 
 ## Appears on
-- [[The Warrant Requirement]] — *Anchor*
+- [[Particularity]] — *Anchor*
 
 ## Sources
 - [*Roaden v. Kentucky*, 413 U.S. 496 (1973)](https://www.courtlistener.com/opinion/108854/roaden-v-kentucky/) — pinpoint: 504 (Burger, C.J., for the Court; the CL opinion text carries the reporter star `*504` at the start of the paragraph containing the quoted "higher hurdle" holding). Rule quote string-matched to the CL opinion text 2026-07-07.

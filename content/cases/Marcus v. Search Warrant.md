@@ -30,7 +30,7 @@ lake:
   status: under_review
   projected_at: 2026-07-07
 homes:
-  - page: "[[The Warrant Requirement]]"
+  - page: "[[Particularity]]"
     role: Anchor
 related:
   - "[[The Warrant Requirement]]"
@@ -74,7 +74,7 @@ The judgment was **reversed**. Brennan, J., delivered the opinion of the Court; 
 **Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub; its citator and progeny history have not completed the project's two-key verification, so it renders under the ⚪ banner until S9 promotion. *Marcus* is a **warrant-requirement anchor**: it enforces the particularity command by condemning warrants that leave the choice of what to seize to the officer's discretion — the modern echo of the general-warrant abuses that produced the Fourth Amendment. Its First Amendment overlay — heightened procedural safeguards when the thing seized is expression — was developed in *[[A Quantity of Copies of Books v. Kansas]]* (1964) and *Roaden v. Kentucky* (1973). Teach it for the core lesson that a warrant must particularly describe what may be seized.
 
 ## Appears on
-- [[The Warrant Requirement]] — *Anchor*
+- [[Particularity]] — *Anchor*
 
 ## Sources
 - [*Marcus v. Search Warrant of Property at 104 East Tenth Street, Kansas City, Missouri*, 367 U.S. 717 (1961)](https://www.courtlistener.com/opinion/106287/marcus-v-search-warrant/) — pinpoint: 732 (Brennan, J., for the Court; the CL opinion text carries the reporter star `*732` immediately before the quoted sentence). Rule quote string-matched to the CL opinion text 2026-07-07.

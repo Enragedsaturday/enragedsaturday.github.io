@@ -28,7 +28,7 @@ courtlistener:
 homes:
   - page: "[[Section 1983 Liability and Qualified Immunity]]"
     role: "Key — Progeny / Refinement"
-  - page: "[[The Warrant Requirement]]"
+  - page: "[[Franks Challenges]]"
     role: "Related (cross-doctrine)"
 related: ["[[Malley v. Briggs]]", "[[United States v. Leon]]", "[[Harlow v. Fitzgerald]]", "[[Pearson v. Callahan]]"]
 aliases: []
@@ -66,7 +66,7 @@ Reversed. The officers were entitled to qualified immunity; their reliance on th
 
 ## Appears on
 - [[Section 1983 Liability and Qualified Immunity]] — *Key — Progeny / Refinement*
-- [[The Warrant Requirement]] — *Related (cross-doctrine)*
+- [[Franks Challenges]] — *Related (cross-doctrine)*
 
 ## Sources
 - *Messerschmidt v. Millender*, 565 U.S. 535 (2012) — https://www.courtlistener.com/opinion/623242/messerschmidt-v-millender/ — pinpoint: 547 (lead opinion id 9485385).

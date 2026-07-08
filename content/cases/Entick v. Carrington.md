@@ -28,8 +28,6 @@ courtlistener:
 homes:
   - page: "[[Common Law Origins]]"
     role: "Key — Anchor (foundational origin)"
-  - page: "[[The Warrant Requirement]]"
-    role: "Related (cross-doctrine)"
 related: ["[[Wilkes v. Wood]]", "[[Boyd v. United States]]", "[[Katz v. United States]]"]
 aliases: []
 tags: ["case", "historical", "common-law-origins", "general-warrant", "fourth-amendment", "trespass", "english-origins"]
@@ -85,7 +83,6 @@ Judgment for Entick. The general warrant was illegal and afforded the messengers
 
 ## Appears on
 - [[Common Law Origins]] — *Key — Anchor (foundational origin)*
-- [[The Warrant Requirement]] — *Related (cross-doctrine)*
 
 ## Sources
 - *Entick v. Carrington*, 19 How. St. Tr. 1029 (C.P. 1765); 95 Eng. Rep. 807; 2 Wils. K.B. 275 — pinpoints: 19 How. St. Tr. at 1066 (95 Eng. Rep. at 817). No CourtListener record (English King's-era case); identity and quotations confirmed against Howell's State Trials and the English Reports. *(Decided in the Court of Common Pleas, Lord Camden, C.J.; the "Wils. K.B." citation is the Wilson's King's Bench Reports series, not the deciding court.)*

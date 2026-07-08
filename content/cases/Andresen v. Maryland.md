@@ -26,7 +26,7 @@ courtlistener:
   opinion_id: 109522
   identity_checked: true
 homes:
-  - page: "[[The Warrant Requirement]]"
+  - page: "[[Particularity]]"
     role: "Key — Progeny / Refinement"
 related: ["[[Groh v. Ramirez]]", "[[Coolidge v. New Hampshire]]", "[[Warden v. Hayden]]"]
 aliases: []
@@ -65,7 +65,7 @@ Neither the Fifth Amendment nor the particularity requirement was violated; the 
 - No negative treatment. *Andresen* remains the leading authority that pre-existing, voluntarily prepared business records seized under a valid warrant are not "compelled" testimony, and that a particular list of items is not made "general" by a contextually limited catch-all phrase. Compare [[Groh v. Ramirez]] (a warrant that fails altogether to describe the things to be seized is facially invalid).
 
 ## Appears on
-- [[The Warrant Requirement]] — *Key — Progeny / Refinement*
+- [[Particularity]] — *Key — Progeny / Refinement*
 
 ## Sources
 - *Andresen v. Maryland*, 427 U.S. 463 (1976) — https://www.courtlistener.com/opinion/109522/andresen-v-maryland/ — pinpoints: 473, 477, 480.

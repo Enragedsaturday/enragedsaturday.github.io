@@ -26,7 +26,7 @@ courtlistener:
   opinion_id: 131161
   identity_checked: true
 homes:
-  - page: "[[The Warrant Requirement]]"
+  - page: "[[Particularity]]"
     role: "Key — Progeny / Refinement"
 related: ["[[Maryland v. Garrison]]", "[[United States v. Leon]]", "[[Massachusetts v. Sheppard]]"]
 aliases: []
@@ -65,7 +65,7 @@ The facially deficient warrant rendered the search unconstitutional, and the off
 - No negative treatment. *Groh* is a leading particularity-clause decision and a marker for when a warrant is so facially deficient that good-faith reliance on it is unreasonable.
 
 ## Appears on
-- [[The Warrant Requirement]] — *Key — Progeny / Refinement*
+- [[Particularity]] — *Key — Progeny / Refinement*
 
 ## Sources
 - *Groh v. Ramirez*, 540 U.S. 551 (2004) — https://www.courtlistener.com/opinion/131161/groh-v-ramirez/ — pinpoints: 557, 558.

@@ -26,7 +26,7 @@ courtlistener:
   opinion_id: 9430836
   identity_checked: true
 homes:
-  - page: "[[The Warrant Requirement]]"
+  - page: "[[Particularity]]"
     role: "Key — Progeny / Refinement"
 related: ["[[Hill v. California]]", "[[Groh v. Ramirez]]", "[[Andresen v. Maryland]]"]
 aliases: []
@@ -63,7 +63,7 @@ Affirmed: a warrant valid when issued is not retroactively invalidated by a late
 - *Garrison* applies the reasonable-mistake logic of [[Hill v. California]] to warrant execution and remains good law on warrant particularity and objectively reasonable execution; compare the facial-particularity failure in [[Groh v. Ramirez]].
 
 ## Appears on
-- [[The Warrant Requirement]] — *Key — Progeny / Refinement*
+- [[Particularity]] — *Key — Progeny / Refinement*
 
 ## Sources
 - *Maryland v. Garrison*, 480 U.S. 79 (1987) — https://www.courtlistener.com/opinion/111823/maryland-v-garrison/ — pinpoints: 85, 88.

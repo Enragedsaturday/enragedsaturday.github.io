@@ -26,7 +26,7 @@ courtlistener:
   opinion_id: 109572
   identity_checked: true
 homes:
-  - page: "[[The Warrant Requirement]]"
+  - page: "[[The Neutral and Detached Magistrate]]"
     role: "Progeny"
 related: ["[[Coolidge v. New Hampshire]]", "[[Lo-Ji Sales, Inc. v. New York]]"]
 aliases: []
@@ -63,7 +63,7 @@ The warrant violated the Fourth and Fourteenth Amendments; the judgment of the G
 - *Connally* remains controlling on the neutral-and-detached-magistrate requirement, applying the disqualifying-financial-interest principle to warrant issuance. It is taught alongside [[Coolidge v. New Hampshire]] (warrant issued by the prosecuting attorney general) and [[Lo-Ji Sales, Inc. v. New York]] (magistrate who joined the search). No negative treatment.
 
 ## Appears on
-- [[The Warrant Requirement]] — *Progeny*
+- [[The Neutral and Detached Magistrate]] — *Progeny*
 
 ## Sources
 - *Connally v. Georgia*, 429 U.S. 245 (1977) (per curiam) — https://www.courtlistener.com/opinion/109572/connally-v-georgia/ — pinpoints: 250, 251.

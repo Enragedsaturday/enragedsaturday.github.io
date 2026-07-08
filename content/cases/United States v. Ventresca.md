@@ -26,7 +26,7 @@ courtlistener:
   opinion_id: 106990
   identity_checked: true
 homes:
-  - page: "[[The Warrant Requirement]]"
+  - page: "[[Probable Cause in the Affidavit]]"
     role: "Progeny"
   - page: "[[Probable Cause]]"
     role: "Related (cross-doctrine)"
@@ -67,7 +67,7 @@ The affidavit established probable cause and the warrant was valid; the judgment
 - *Ventresca* remains foundational: affidavits are read commonsensically and doubtful cases favor the warrant. Its deferential posture anchors the totality-of-the-circumstances review of [[Illinois v. Gates]] and the good-faith reliance rule. No negative treatment.
 
 ## Appears on
-- [[The Warrant Requirement]] — *Progeny*
+- [[Probable Cause in the Affidavit]] — *Progeny*
 - [[Probable Cause]] — *Related (cross-doctrine)*
 
 ## Sources

@@ -26,7 +26,7 @@ courtlistener:
   opinion_id: 100621
   identity_checked: true
 homes:
-  - page: "[[The Warrant Requirement]]"
+  - page: "[[Particularity]]"
     role: "Progeny"
 related: ["[[Maryland v. Garrison]]", "[[Groh v. Ramirez]]", "[[Stanford v. Texas]]"]
 aliases: ["Steele v. United States No. 1"]
@@ -63,7 +63,7 @@ The warrant complied with the Fourth Amendment; the liquor was lawfully seized a
 - *Steele* remains the canonical statement of the particularity-of-place standard — reasonable-effort identification of the premises — and is regularly cited in the line that includes [[Maryland v. Garrison]] and [[Groh v. Ramirez]]. No negative treatment.
 
 ## Appears on
-- [[The Warrant Requirement]] — *Progeny*
+- [[Particularity]] — *Progeny*
 
 ## Sources
 - *Steele v. United States No. 1*, 267 U.S. 498 (1925) — https://www.courtlistener.com/opinion/100621/steele-v-united-states-no-1/ — pinpoint: 503.

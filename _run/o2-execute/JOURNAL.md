@@ -1199,3 +1199,31 @@ COMPLETE = 30 doctrine units born draft + 3 S7-minted case pages; run_all 8372�
 Warrant sub-umbrella [PC-Affidavit A · Magistrate B · Particularity A · Franks B] + Executing
 [Knock-and-Announce A · Detention-at-Scene B · Scope-Manner B]; TEACH-01 Chatrie relocation +
 GAP-06 :62 + TEACH-04h :149; geofence re-points now available to the authored digital page).
+
+**BATCH 10 CLOSED — CAT-5 THE WARRANT (2026-07-08) — CATEGORY 5 COMPLETE:** the SD2 mega-batch
+survived THREE consecutive API 529s (L4 discipline: same-agent resume x3 w/ 4-min + 15-min
+backoffs; zero duplicate lanes, zero lost work). Parent The Warrant Requirement DISSOLVED
+ENTIRELY (Appendix A has no such node) → 7 children authored born draft: Getting a Warrant
+[PC-in-Affidavit A · Neutral Magistrate B (TEACH-04h :149 Johnson residue landed as Anchor) ·
+Particularity A (expressive-materials strand surfaced: Marcus/Roaden/Heller/A-Quantity
+page-backed + Fort-Wayne/Lee-Art terminals; GAP-06 verified no-residue; digital cross-ref
+only, TEACH-01 held) · Franks B] + Executing [Knock-and-Announce A · Detention-at-Scene B ·
+Scope-Manner B]. RESEARCH MODE ADAPTED TO OUTAGE: 0 MCP calls — every pin lake-grounded from
+verified case-page records (the sanctioned S2-DB path); R3 carried assertions route to S9
+panel as always; worker AUDITED ITS OWN 6 inferred opinion-ids wrong → corrected to case-page
+values (citation-hygiene catch). 39 parent-homed cases re-pointed row-by-row + 5 detention
+co-homes (primary kept Securing-the-Scene, cat-6 confirms) + rule-G drops (See/GM-Leasing/
+Entick/Wilkes). Deck-stem warrant-requirement (33 cards) + 3 dying-path aliases → category
+landing (ADJUDICATED); warrant.requirement node re-homed to landing. ORCHESTRATOR REPAIR:
+worker's 3 hand-edited ledger pointers REVERTED by regen (single-source held — the assembler
+is the only writer); Fort-Wayne/Lee-Art/PJ-Video rows remain valid terminals w/ STALE
+POINTERS to the dead parent → coverage-repair register (joins Cook re-key + R.W. flip).
+Anchor-cleanup register +21 (now ~32; the NUM-03 mid-line class, S9-owned). Hicks URL
+111831-vs-111834 → S9 confirm. TEACH-02c leaks 41→37 + slip 60→59 (died with parent, no
+conversion owed — Chatrie current-term). GATES: run_all 7913→7850 (HIGH 4755, -47 zero-new),
+LINT-15/16 0/0 x7, LINT-17 0 (re-verified post-revert), LINT-19/20/24/25 0, survey 88 pages
+em 3047, build 723/2806, Case Index 620 idempotent. SCOREBOARD: cats 2/3/4/5 COMPLETE — 37
+doctrine units born draft + 3 S7-minted cases; HIGH -455 since S7 open. NEXT: cat-6 Warrant
+Exceptions in sub-batches (6a searching-a-person SIA family; 6b searching-a-vehicle; 6c
+home-entry w/ D5 caretaking + Emergency Aid + exigent splits; 6d consent/programmatic/
+effects).

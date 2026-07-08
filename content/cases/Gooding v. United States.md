@@ -26,7 +26,7 @@ courtlistener:
   opinion_id: 109017
   identity_checked: true
 homes:
-  - page: "[[The Warrant Requirement]]"
+  - page: "[[Scope Manner and Related Issues]]"
     role: "Related (nighttime execution)"
 related: []
 aliases: []
@@ -65,7 +65,7 @@ The nighttime narcotics search was authorized under § 879(a) on the showing mad
 - No negative treatment. *Gooding* is a statutory-construction holding interpreting 21 U.S.C. § 879(a); the statute remains in force and the construction governs nighttime execution of federal narcotics warrants.
 
 ## Appears on
-- [[The Warrant Requirement]] — *Related (nighttime execution)*
+- [[Scope Manner and Related Issues]] — *Related (nighttime execution)*
 
 ## Sources
 - *Gooding v. United States*, 416 U.S. 430 (1974) — https://www.courtlistener.com/opinion/109017/gooding-v-united-states/ — pinpoints: 439, 458.

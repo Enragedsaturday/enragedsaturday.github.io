@@ -184,7 +184,7 @@ flowchart TD
 - *Safford Unified School District v. Redding*, 557 U.S. 364 (2009) — https://www.courtlistener.com/opinion/145852/safford-unified-school-district-1-v-redding/
 - *Devenpeck v. Alford*, 543 U.S. 146 (2004) — https://www.courtlistener.com/opinion/137733/devenpeck-v-alford/
 - *Heien v. North Carolina*, 574 U.S. 54 (2014) — https://www.courtlistener.com/opinion/2760668/heien-v-north-carolina/
-- *Maryland v. Garrison*, 480 U.S. 79 (1987) — https://www.courtlistener.com/opinion/111826/maryland-v-garrison/ *(wrong-place / reasonable-effort-to-identify; primary home [[The Warrant Requirement]])*
+- *Maryland v. Garrison*, 480 U.S. 79 (1987) — https://www.courtlistener.com/opinion/111826/maryland-v-garrison/ *(wrong-place / reasonable-effort-to-identify; primary home [[Particularity]])*
 - *Wright v. City of Euclid*, 962 F.3d 852 (6th Cir. 2020) — pinpoint 868 — https://www.courtlistener.com/opinion/4762133/lamar-wright-v-city-of-euclid/ *(illustrative QI denial)*
 - *Jimerson v. Lewis*, 116 F.4th 407 (5th Cir. 2024) — https://www.courtlistener.com/opinion/9471275/jimerson-v-lewis/ *(wrong-house-raid QI; circuit split; no case page — page-less)*
 - *Martin v. United States*, 605 U.S. 395 (2025) — https://www.courtlistener.com/opinion/10776839/martin-v-united-states/ *(FTCA wrong-house-raid parallel track; no case page — page-less)*

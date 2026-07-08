@@ -26,7 +26,7 @@ courtlistener:
   opinion_id: 145670
   identity_checked: true
 homes:
-  - page: "[[The Warrant Requirement]]"
+  - page: "[[Probable Cause in the Affidavit]]"
     role: "Key — Progeny / Refinement"
 related: ["[[Illinois v. Gates]]", "[[Groh v. Ramirez]]", "[[Massachusetts v. Sheppard]]"]
 aliases: []
@@ -67,7 +67,7 @@ Anticipatory warrants are constitutional, and the triggering condition need not 
 - No negative subsequent treatment identified. *Grubbs* applies the totality probable-cause standard of [[Illinois v. Gates]] to anticipatory warrants and distinguishes the particularity defect of [[Groh v. Ramirez]] (which concerned the place/things-to-be-seized particularity that the Fourth Amendment's text *does* require).
 
 ## Appears on
-- [[The Warrant Requirement]] — *Key — Progeny / Refinement*
+- [[Probable Cause in the Affidavit]] — *Key — Progeny / Refinement*
 
 ## Sources
 - *United States v. Grubbs*, 547 U.S. 90 (2006) — https://www.courtlistener.com/opinion/145670/united-states-v-grubbs/ — pinpoints: 96, 99.

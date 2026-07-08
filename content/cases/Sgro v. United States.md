@@ -26,7 +26,7 @@ courtlistener:
   opinion_id: 101970
   identity_checked: true
 homes:
-  - page: "[[The Warrant Requirement]]"
+  - page: "[[Scope Manner and Related Issues]]"
     role: "Progeny (staleness)"
 related: ["[[Byars v. United States]]"]
 aliases: []
@@ -67,7 +67,7 @@ The redated warrant was invalid and the search unlawful; the judgment of convict
 - No negative treatment. Decided on the governing federal warrant statute, *Sgro* states the enduring Fourth Amendment principle that probable cause must be current at issuance and that a stale or expired warrant cannot be revived by redating without a fresh probable-cause showing — the foundational staleness / prompt-execution rule still cited today.
 
 ## Appears on
-- [[The Warrant Requirement]] — *Progeny (staleness)*
+- [[Scope Manner and Related Issues]] — *Progeny (staleness)*
 
 ## Sources
 - *Sgro v. United States*, 287 U.S. 206 (1932) — https://www.courtlistener.com/opinion/101970/sgro-v-united-states/ — pinpoints: 210, 211, 212.

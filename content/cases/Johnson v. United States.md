@@ -26,7 +26,7 @@ courtlistener:
   opinion_id: 104504
   identity_checked: true
 homes:
-  - page: "[[The Warrant Requirement]]"
+  - page: "[[The Neutral and Detached Magistrate]]"
     role: "Key — Anchor"
 related: ["[[Katz v. United States]]", "[[Coolidge v. New Hampshire]]", "[[Payton v. New York]]"]
 aliases: []
@@ -65,7 +65,7 @@ The warrantless search was invalid; the conviction resting on the seized evidenc
 - No negative treatment. *Johnson*'s neutral-and-detached-magistrate principle remains a cornerstone of the warrant requirement and is invoked across the modern Fourth Amendment cases, including [[Katz v. United States]] and [[Coolidge v. New Hampshire]].
 
 ## Appears on
-- [[The Warrant Requirement]] — *Key — Anchor*
+- [[The Neutral and Detached Magistrate]] — *Key — Anchor*
 
 ## Sources
 - *Johnson v. United States*, 333 U.S. 10 (1948) — https://www.courtlistener.com/opinion/104504/johnson-v-united-states/ — pinpoints: 13, 14.

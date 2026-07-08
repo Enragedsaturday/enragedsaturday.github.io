@@ -30,7 +30,7 @@ lake:
   status: under_review
   projected_at: 2026-07-07
 homes:
-  - page: "[[The Warrant Requirement]]"
+  - page: "[[Particularity]]"
     role: Key
 related:
   - "[[The Warrant Requirement]]"
@@ -73,7 +73,7 @@ The judgment of the New York Court of Appeals was **vacated** and the case **rem
 **Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub; its citator and progeny history have not completed the two-key verification, so it renders under the ⚪ banner until S9 promotion. *Heller v. New York* supplies the affirmative, officer-facing operational rule that complements the prior-restraint prohibitions of *Marcus v. Search Warrant* and *Roaden v. Kentucky*: how a single copy of expressive material may lawfully be seized as evidence under a warrant, with a prompt post-seizure adversary hearing as the safeguard. **Caption note:** it is unrelated to *District of Columbia v. Heller* (2008), the Second Amendment decision.
 
 ## Appears on
-- [[The Warrant Requirement]] — *Key*
+- [[Particularity]] — *Key*
 
 ## Sources
 - [*Heller v. New York*, 413 U.S. 483 (1973)](https://www.courtlistener.com/opinion/108853/heller-v-new-york/) — pinpoint: 492 (Opinion of the Court, holding; Burger, C.J.); quote string-matched to the CL opinion text 2026-07-07.

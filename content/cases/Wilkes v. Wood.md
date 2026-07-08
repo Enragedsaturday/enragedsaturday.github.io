@@ -28,8 +28,6 @@ courtlistener:
 homes:
   - page: "[[Common Law Origins]]"
     role: "Key — Anchor (foundational origin)"
-  - page: "[[The Warrant Requirement]]"
-    role: "Related (cross-doctrine)"
 related: ["[[Entick v. Carrington]]", "[[Boyd v. United States]]", "[[Katz v. United States]]"]
 aliases: []
 tags: ["case", "historical", "common-law-origins", "general-warrant", "fourth-amendment", "exemplary-damages", "english-origins"]
@@ -85,7 +83,6 @@ Verdict for Wilkes. General warrants of this kind are illegal and subversive of 
 
 ## Appears on
 - [[Common Law Origins]] — *Key — Anchor (foundational origin)*
-- [[The Warrant Requirement]] — *Related (cross-doctrine)*
 
 ## Sources
 - *Wilkes v. Wood*, 19 How. St. Tr. 1153 (C.P. 1763); 98 Eng. Rep. 489 (Lofft 1) — pinpoints: 98 Eng. Rep. at 498–499. No CourtListener record (English King's-era case); identity and quotations confirmed against Howell's State Trials and the English Reports (Lofft). *(Decided in the Court of Common Pleas, Pratt, C.J.)*

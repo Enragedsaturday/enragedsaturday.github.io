@@ -28,7 +28,7 @@ courtlistener:
 homes:
   - page: "[[Probable Cause]]"
     role: "Progeny"
-  - page: "[[The Warrant Requirement]]"
+  - page: "[[Probable Cause in the Affidavit]]"
     role: "Related (cross-doctrine)"
 related: ["[[Aguilar v. Texas]]", "[[Spinelli v. United States]]", "[[Illinois v. Gates]]"]
 aliases: ["United States v. Harris"]
@@ -66,7 +66,7 @@ The affidavit established probable cause and the warrant was valid; the judgment
 
 ## Appears on
 - [[Probable Cause]] — *Progeny*
-- [[The Warrant Requirement]] — *Related (cross-doctrine)*
+- [[Probable Cause in the Affidavit]] — *Related (cross-doctrine)*
 
 ## Sources
 - *United States v. Harris*, 403 U.S. 573 (1971) — https://www.courtlistener.com/opinion/108379/united-states-v-harris/ — pinpoints: 583, 584.

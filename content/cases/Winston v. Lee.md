@@ -26,7 +26,7 @@ courtlistener:
   opinion_id: 9429963
   identity_checked: true
 homes:
-  - page: "[[The Warrant Requirement]]"
+  - page: "[[Scope Manner and Related Issues]]"
     role: "Limiting"
 related: ["[[Schmerber v. California]]", "[[Cupp v. Murphy]]", "[[Missouri v. McNeely]]"]
 aliases: ["Lee v. Winston"]
@@ -63,7 +63,7 @@ Compelling the surgery would be an unreasonable search under the Fourth Amendmen
 - *Winston* remains the controlling authority that a deep, compelled surgical bodily intrusion can be unreasonable even with a warrant and probable cause, decided under the [[Schmerber v. California]] balancing framework. It contrasts with minor, justified intrusions like the fingernail scraping in [[Cupp v. Murphy]] and informs the bodily-intrusion analysis applied in [[Missouri v. McNeely]]. No negative treatment.
 
 ## Appears on
-- [[The Warrant Requirement]] — *Limiting*
+- [[Scope Manner and Related Issues]] — *Limiting*
 
 ## Sources
 - *Winston v. Lee*, 470 U.S. 753 (1985) — https://www.courtlistener.com/opinion/111380/winston-v-lee/ — pinpoints: 759, 760, 766, 767.

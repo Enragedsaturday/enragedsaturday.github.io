@@ -32,8 +32,6 @@ lake:
 homes:
   - page: "[[Curtilage]]"
     role: Key
-  - page: "[[The Warrant Requirement]]"
-    role: "Related (cross-doctrine)"
 related:
   - "[[Curtilage]]"
   - "[[The Warrant Requirement]]"
@@ -77,7 +75,6 @@ The judgment was **affirmed in part and reversed in part**, and the case **reman
 
 ## Appears on
 - [[Curtilage]] — *Key*
-- [[The Warrant Requirement]] — *Related (cross-doctrine)*
 
 ## Sources
 - [*G. M. Leasing Corp. v. United States*, 429 U.S. 338 (1977)](https://www.courtlistener.com/opinion/109579/g-m-leasing-corp-v-united-states/) — pinpoint: 351 (public-place seizure, no invasion of privacy), 352 (intrusion into the privacy of the offices); Opinion of the Court, Blackmun, J.; quotes string-matched to the CL opinion text 2026-07-07.

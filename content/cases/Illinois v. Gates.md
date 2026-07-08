@@ -28,7 +28,7 @@ courtlistener:
 homes:
   - page: "[[Probable Cause]]"
     role: "Key — Anchor"
-  - page: "[[The Warrant Requirement]]"
+  - page: "[[Probable Cause in the Affidavit]]"
     role: "Related (cross-doctrine)"
   - page: "[[The Proof Ladder]]"
     role: "Key — rung anchor"
@@ -70,7 +70,7 @@ The warrant was valid under the totality-of-the-circumstances test; the suppress
 
 ## Appears on
 - [[Probable Cause]] — *Key — Anchor*
-- [[The Warrant Requirement]] — *Related (cross-doctrine)*
+- [[Probable Cause in the Affidavit]] — *Related (cross-doctrine)*
 - [[The Proof Ladder]] — *Key — rung anchor*
 
 ## Sources

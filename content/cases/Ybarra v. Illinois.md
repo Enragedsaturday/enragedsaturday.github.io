@@ -30,6 +30,8 @@ homes:
     role: "Limits / Narrows"
   - page: "[[Terry Stops and Reasonable Suspicion]]"
     role: "Related (cross-doctrine)"
+  - page: "[[Detention and Search of Persons at the Scene]]"
+    role: "Key (executing a warrant)"
 related: ["[[Michigan v. Summers]]", "[[Bailey v. United States]]", "[[Terry v. Ohio]]", "[[Maryland v. Buie]]"]
 aliases: []
 tags: ["case", "fourth-amendment", "warrants", "search-of-persons", "terry-frisk", "probable-cause"]
