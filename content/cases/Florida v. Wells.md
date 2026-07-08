@@ -26,8 +26,8 @@ courtlistener:
   opinion_id: 9431971
   identity_checked: true
 homes:
-  - page: "[[Special Needs and Administrative Searches]]"
-    role: "Key — Progeny / Refinement"
+  - page: "[[Inventory Searches]]"
+    role: "Key — Limiting"
 related: ["[[Colorado v. Bertine]]", "[[Illinois v. Lafayette]]", "[[South Dakota v. Opperman]]"]
 aliases: []
 tags: ["case", "fourth-amendment", "inventory-search", "standardized-criteria", "impoundment"]

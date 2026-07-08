@@ -26,7 +26,7 @@ courtlistener:
   opinion_id: 131154
   identity_checked: true
 homes:
-  - page: "[[Special Needs and Administrative Searches]]"
+  - page: "[[Checkpoints and Roadblocks]]"
     role: "Key — Progeny / Refinement"
 related: ["[[City of Indianapolis v. Edmond]]", "[[Michigan Dept. of State Police v. Sitz]]", "[[Brown v. Texas]]"]
 aliases: []

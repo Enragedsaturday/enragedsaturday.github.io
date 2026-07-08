@@ -28,6 +28,8 @@ courtlistener:
 homes:
   - page: "[[Community Caretaking]]"
     role: "Key — Anchor"
+  - page: "[[Inventory Searches]]"
+    role: "Related (cross-doctrine)"
 related: ["[[South Dakota v. Opperman]]", "[[Caniglia v. Strom]]", "[[Colorado v. Bertine]]"]
 aliases: []
 tags: ["case", "fourth-amendment", "community-caretaking", "vehicle-search", "inventory"]

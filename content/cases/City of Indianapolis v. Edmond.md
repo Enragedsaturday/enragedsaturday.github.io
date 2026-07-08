@@ -26,8 +26,12 @@ courtlistener:
   opinion_id: 118391
   identity_checked: true
 homes:
+  - page: "[[Checkpoints and Roadblocks]]"
+    role: "Key — Anchor"
   - page: "[[Special Needs and Administrative Searches]]"
-    role: "Key — Progeny / Refinement"
+    role: "Related (cross-doctrine)"
+  - page: "[[Border Searches]]"
+    role: "Related (cross-doctrine)"
 related: ["[[Illinois v. Lidster]]", "[[Delaware v. Prouse]]", "[[Ferguson v. City of Charleston]]"]
 aliases: ["Indianapolis v. Edmond"]
 tags: ["case", "fourth-amendment", "checkpoint", "roadblock", "special-needs", "programmatic-purpose"]

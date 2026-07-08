@@ -28,6 +28,8 @@ courtlistener:
 homes:
   - page: "[[Border Searches]]"
     role: "Key — Anchor"
+  - page: "[[Checkpoints and Roadblocks]]"
+    role: "Related (cross-doctrine)"
 related: ["[[United States v. Brignoni-Ponce]]", "[[Almeida-Sanchez v. United States]]", "[[Michigan Dept. of State Police v. Sitz]]", "[[City of Indianapolis v. Edmond]]"]
 aliases: []
 tags: ["case", "fourth-amendment", "border-searches", "immigration-checkpoint", "fixed-checkpoint", "individualized-suspicion"]

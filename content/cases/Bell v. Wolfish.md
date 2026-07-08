@@ -32,6 +32,8 @@ lake:
 homes:
   - page: "[[Special Needs and Administrative Searches]]"
     role: "Key — Foundational (institutional-deference reasonableness balancing)"
+  - page: "[[Inventory Searches]]"
+    role: "Related (cross-doctrine)"
 related:
   - "[[Florence v. County of Burlington]]"
   - "[[Maryland v. King]]"

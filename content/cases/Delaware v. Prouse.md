@@ -28,6 +28,8 @@ courtlistener:
 homes:
   - page: "[[Traffic Stops]]"
     role: "Key — Progeny / Refinement"
+  - page: "[[Checkpoints and Roadblocks]]"
+    role: "Related (cross-doctrine)"
 related: ["[[Heien v. North Carolina]]", "[[City of Indianapolis v. Edmond]]", "[[Whren v. United States]]"]
 aliases: []
 tags: ["case", "fourth-amendment", "traffic-stop", "reasonable-suspicion", "random-stop", "license-check"]

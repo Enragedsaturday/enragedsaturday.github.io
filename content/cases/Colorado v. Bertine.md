@@ -26,8 +26,8 @@ courtlistener:
   opinion_id: 9430773
   identity_checked: true
 homes:
-  - page: "[[Special Needs and Administrative Searches]]"
-    role: "Related (cross-doctrine)"
+  - page: "[[Inventory Searches]]"
+    role: "Key — Progeny / Refinement"
 related: ["[[Illinois v. Lafayette]]", "[[Florida v. Wells]]", "[[South Dakota v. Opperman]]"]
 aliases: []
 tags: ["case", "fourth-amendment", "inventory-search", "impoundment", "standardized-criteria", "closed-container"]

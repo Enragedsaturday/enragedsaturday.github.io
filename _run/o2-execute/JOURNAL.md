@@ -1283,3 +1283,27 @@ repaired). GATES: run_all 7781→7621 (HIGH 4556, -149 zero-new), LINT-15/16 0/0
 620. REGISTER GROWS: Morgan identity · King re-key · Gaetjens enrich. NEXT: cat-6b
 programmatic family (Special Needs B parent + Inventory B + Checkpoints B extractions +
 Border B re-parent + the 5 stale SIA cells).
+
+**BATCH 13 CLOSED — CAT-6b PROGRAMMATIC & VEHICLE-ADMIN (2026-07-08):** the MEGA-PAGE CURE
+delivered: Special Needs (B born-again, 41-case load accounted ZERO-DROP row-by-row) splits
+out Inventory Searches (B: Opperman/Bertine/Wells/Lafayette + Evans/Braxton LCD) +
+Checkpoints & Roadblocks (B: Sitz ✓ / Edmond ✗ / Lidster + Prouse/Martinez-Fuerte co-homes);
+Border (B born-again re-parent): worst-leak page CLEARED 6→0 — ALL formerly-"(No standalone)"
+device-split cases now PAGED → WIKILINKED (TEACH-02c upgrade beyond the R8 name-plainly
+fallback, ADJUDICATED ACCEPTED); slip 4→0 (Cotterman/Cano T3 paraphrase-downgrades, G3/G4
+fail-closed lake-only; T1 star upgrade available at S9 maintenance); em 37.2→10.5/1k.
+BOOKING-INVENTORY LINE ADJUDICATED BY DOCTRINE: Lafayette → Inventory (same
+standardized-criteria rule); Florence + Bell STAY Special Needs (Bell-v-Wolfish institutional
+balancing ≠ property catalog; consistent w/ batch-11 rule-G). Batch-11-owed reconcile: 5
+stale SIA primary cells resolved, zero stale refs remain. Mode = lake-grounded 0 CL calls
+(batch-10 precedent); anchors re-verified at bound pins. Rule-B anchor repair: 5 broken
+deep-links → plain wikilinks + prose pins (LINT-5 HIGH 83→77). Registry: inventory statement
+filled + 2 also_on cleanups, 0 new nodes. ORCHESTRATOR NORMALIZATION: worker wrote
+baseline/after survey side-files, canonical s7-survey.json left stale → regenerated canonical,
+side-files removed (one-artifact convention; git history is the record). Residue → registers:
+Riley opinion_url divergence (extends catch #5), Frank/Bell/Wyman + device-split field_i
+unverified (S2/S9 treatment verification), Braxton doctrinal home ratified. GATES: run_all
+7621→7532 (HIGH 4485, -71 zero-new), LINT-15/16 0/0 x4, LINT-17 0, LINT-19 4 pre-existing
+ER-only, LINT-20/24/25 0, survey 87pp em 2470 (12.3/1k) slip 38 leaks 28, build 722/2823,
+Case Index idempotent. CAT-6 REMAINING: 6d (Consent A w/ Matlock+3-prongs fixes · Automobile
+A · Effects & Containers B) — then cat-6 COMPLETE.

@@ -27,6 +27,8 @@ courtlistener:
   identity_checked: true
 homes:
   - page: "[[Special Needs and Administrative Searches]]"
+    role: "Key — Progeny / Refinement"
+  - page: "[[Inventory Searches]]"
     role: "Related (cross-doctrine)"
 related: ["[[Illinois v. Lafayette]]", "[[Maryland v. King]]", "[[Atwater v. City of Lago Vista]]"]
 aliases: ["Florence v. Board of Chosen Freeholders of County of Burlington", "Florence v. Board of Chosen Freeholders"]

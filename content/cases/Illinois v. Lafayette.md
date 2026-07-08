@@ -26,7 +26,7 @@ courtlistener:
   opinion_id: 9429258
   identity_checked: true
 homes:
-  - page: "[[Special Needs and Administrative Searches]]"
+  - page: "[[Inventory Searches]]"
     role: "Key — Progeny / Refinement"
 related: ["[[South Dakota v. Opperman]]", "[[Colorado v. Bertine]]", "[[Florida v. Wells]]", "[[Chimel v. California]]"]
 aliases: []

@@ -26,7 +26,7 @@ courtlistener:
   opinion_id: 109537
   identity_checked: true
 homes:
-  - page: "[[Special Needs and Administrative Searches]]"
+  - page: "[[Inventory Searches]]"
     role: "Key — Anchor"
 related: ["[[Colorado v. Bertine]]", "[[Florida v. Wells]]", "[[Cady v. Dombrowski]]", "[[Illinois v. Lafayette]]"]
 aliases: []

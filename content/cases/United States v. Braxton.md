@@ -26,7 +26,7 @@ courtlistener:
   opinion_id: 9377330
   identity_checked: true
 homes:
-  - page: "[[Special Needs and Administrative Searches]]"
+  - page: "[[Inventory Searches]]"
     role: "Recent development (role-based)"
 related: ["[[Arizona v. Gant]]", "[[Chimel v. California]]", "[[Riley v. California]]", "[[Nix v. Williams]]"]
 aliases: []

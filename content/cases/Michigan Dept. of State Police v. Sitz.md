@@ -26,8 +26,8 @@ courtlistener:
   opinion_id: 9432063
   identity_checked: true
 homes:
-  - page: "[[Special Needs and Administrative Searches]]"
-    role: "Key — Progeny / Refinement"
+  - page: "[[Checkpoints and Roadblocks]]"
+    role: "Key — Anchor"
 related: ["[[City of Indianapolis v. Edmond]]", "[[Delaware v. Prouse]]", "[[Camara v. Municipal Court]]"]
 aliases: ["Michigan Department of State Police v. Sitz"]
 tags: ["case", "fourth-amendment", "checkpoint", "special-needs", "dui", "seizure"]
