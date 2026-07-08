@@ -20,8 +20,8 @@ This page is **legal history**, not binding precedent. The Fourth Amendment did 
 ## Key cases
 | Case (Bluebook) | Holding / significance in one line | Weight | CourtListener |
 |---|---|---|---|
-| *Boyd v. United States*, 116 U.S. 616 (1886) | Recounts the founding history at length and adopts *Entick v. Carrington* as "the true and ultimate expression of constitutional law" embodied in the Fourth Amendment. | SCOTUS — binding | [link](https://www.courtlistener.com/opinion/91573/boyd-v-united-states/) |
-| *Riley v. California*, 573 U.S. 373 (2014) | Modern Court reaffirms that the Fourth Amendment was the founding generation's response to general warrants and writs of assistance — "one of the driving forces behind the Revolution itself." | SCOTUS — binding | [link](https://www.courtlistener.com/opinion/2680439/riley-v-california/) |
+| *Boyd v. United States*, 116 U.S. 616 (1886) | Recounts the founding history at length and adopts *Entick v. Carrington* as "the true and ultimate expression of constitutional law" embodied in the Fourth Amendment. | Binding — SCOTUS | [link](https://www.courtlistener.com/opinion/91573/boyd-v-united-states/) |
+| *Riley v. California*, 573 U.S. 373 (2014) | Modern Court reaffirms that the Fourth Amendment was the founding generation's response to general warrants and writs of assistance — "one of the driving forces behind the Revolution itself." | Binding — SCOTUS | [link](https://www.courtlistener.com/opinion/2680439/riley-v-california/) |
 
 > Historical antecedents — Paxton's Case, Wilkes v. Wood, Entick v. Carrington, the state declarations, and Madison's drafting of the Bill of Rights — are **English/colonial legal history: non-binding, and not found in U.S. case-law databases.** Their substance is grounded here through *Boyd* and *Riley*, which quote and recount them. The English/colonial reporters appear under Sources for reference only.
 

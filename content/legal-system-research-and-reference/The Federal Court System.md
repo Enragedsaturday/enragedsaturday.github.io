@@ -76,7 +76,7 @@ Because review is discretionary, a **denial of certiorari is not a ruling on the
 
 | Case | Holding | Weight | CourtListener |
 | --- | --- | --- | --- |
-| *Marbury v. Madison*, 5 U.S. (1 Cranch) 137 (1803) | Establishes **judicial review** — it is the province and duty of the judiciary to say what the law is, and a law repugnant to the Constitution is void. | SCOTUS — binding | [link](https://www.courtlistener.com/opinion/84759/marbury-v-madison/) |
+| *Marbury v. Madison*, 5 U.S. (1 Cranch) 137 (1803) | Establishes **judicial review** — it is the province and duty of the judiciary to say what the law is, and a law repugnant to the Constitution is void. | Binding — SCOTUS | [link](https://www.courtlistener.com/opinion/84759/marbury-v-madison/) |
 
 ## Common pitfalls
 

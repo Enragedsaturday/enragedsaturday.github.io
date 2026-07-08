@@ -31,7 +31,7 @@ homes:
 related: ["[[Katz v. United States]]", "[[California v. Carney]]", "[[United States v. Basher]]"]
 aliases: ["United States v. Gooch (9th Cir. 1993)", "United States v. Kenneth D. Gooch"]
 tags: ["case", "fourth-amendment", "tent", "reasonable-expectation-of-privacy", "campground", "ninth-circuit"]
-holding: "(9th Cir. — persuasive) An occupant has a reasonable expectation of privacy in a tent in a public campground; 'a tent is more like a house than a car,' so its warrantless search violated the 4A."
+holding: "(Persuasive (outside circuit) — 9th Cir.) An occupant has a reasonable expectation of privacy in a tent in a public campground; 'a tent is more like a house than a car,' so its warrantless search violated the 4A."
 lake:
   record_id: United States v. Gooch
   status: verified
