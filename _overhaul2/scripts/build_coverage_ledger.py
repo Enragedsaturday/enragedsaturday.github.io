@@ -336,6 +336,28 @@ def main():
           survivor="Villarreal v. Alaniz", pointer=None,
           source="packetb-dispositions.jsonl:item12")
 
+    # ---- 6c) S7 mini-lane L1 pooling dispositions (spec R9 named split) ------
+    # The signed R9/§11 named horizontal-pooling split (Massenburg / communication-
+    # nexus circuits / Cook-Balser) needs its page-less split members to carry
+    # brief-mention terminals so LINT-17 lets the Collective Knowledge page name
+    # them. Identity-verified via CourtListener MCP (SEARCH-first; 0 REST). Rows
+    # flagged "assemble": false are documentation-only (identity corrections) and
+    # are NOT assembled — e.g. the Cook identity note, which leaves the pre-existing
+    # ledger row untouched (writer != checker on the coverage machinery).
+    s7pool = os.path.join(O2, "S7-L1-POOLING-DISPOSITIONS.jsonl")
+    if os.path.isfile(s7pool):
+        for e in load_jsonl(s7pool):
+            if e.get("assemble") is False:
+                continue
+            L.add(e["caption"], e.get("canonical") or e["caption"], e["terminal"],
+                  cluster_id=e.get("cluster_id"), leg=e.get("leg"),
+                  verdict=e.get("verdict"), prong=e.get("prong"),
+                  rationale=e.get("rationale"),
+                  cl=e.get("cl"), independent=e.get("independent"),
+                  pointer=e.get("pointer"), aliases=e.get("aliases"),
+                  note=e.get("note"),
+                  source="S7-L1-POOLING-DISPOSITIONS.jsonl")
+
     # ---- 6b) any remaining page_path=None manifest stub not yet placed ------
     # (verified_identity brief-mention shells whose caption did not text-match a
     # non-page-ledger record_id — belt-and-braces: place by manifest status.)

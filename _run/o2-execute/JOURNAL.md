@@ -1123,3 +1123,25 @@ Cooley Field-I unverified ⚪ → S9 standing class. GATES: run_all 8091→7904 
 strictly-decreasing), LINT-15/16 0/0, LINT-17 0, LINT-25 0, survey corpus em 3268 ff 1,
 build 721/2777 byte-identical, Case Index idempotent. NEXT: mini-lane L1 (pooling terminals)
 then cat-4c arrests (Arrest-in-the-Home A + Arrest & Arrest Warrants B + Prompt-PC C).
+
+**MINI-LANE L1 CLOSED — SPEC-R9 NAMED POOLING SPLIT (2026-07-08):** Nafzger/Ibarra/Balser
+identity-verified via MCP SEARCH-first (0 REST) w/ TWO ANNEX CORRECTIONS: Ibarra = 5th Cir.
+2007 (493 F.3d 526, 530 — annex/dispatch guessed 10th; namesakes refuted) and Balser = 1st
+Cir. 2023 (70 F.4th 613 — annex said 6th); Nafzger 974 F.2d 906, 913-14 (7th) exact.
+IDENTITY CATCH #2 THIS SESSION: ledger "United States v. Cook" cluster 3165557 = OSHAN Cook
+(2015), the doctrinal case is DONALD Cook 277 F.3d 82, 86 (1st Cir. 2002, cluster 776186) —
+RE-KEY OWED to S2 repair lane (joins R.W. identity flip; consolidated repair before S7
+close). Signed disposition artifact S7-L1-POOLING-DISPOSITIONS.{md,jsonl}; assembler gained
+minimal section-6c loader (code delta — rides the standing code gate); ledger REGENERATED
+PROGRAMMATICALLY: partition 243→246 (brief-mention 55→58), machine-check PASS 0 conflicts,
+corpus_mention_baseline 56 unchanged; LINT-17 allowlist regenerated in-write. Collective
+Knowledge page patched surgically (+9/-5): Ramirez accord-roster (Nafzger/Ibarra plain-italic
+w/ verified pins), Cook–Balser reservation bullet (1st Cir. geography corrected), synthesis +
+Sources. GATES: LINT-17 0, run_all 7904→7912 (+8 all LINT-5 MED page-less-name class, HIGH
+unchanged 4825), LINT-15/16 0/0, build 721/2777. SPEC R9 NAMED SPLIT NOW COMPLETE on-page.
+D7 PRE-FLIGHT FINDING: SACO family (Nora/Fisher-San-Jose/Al-Azzawy/Allen/Vaneaton) has NO
+pages, NO terminals, NO manifest records — S6 A1 pre-seed did not cover it; Maez alone
+authored. D7's Nora-spine section (pincites at 1055) requires a MINT WAVE. Mini-lane L2
+dispatched TWO-PHASE: (a) identity verify + evidence + page-vs-terminal proposal per S6 D5
+frontier floor, PAUSE; (b) orchestrator adjudicates, then standard-leg mint (W10 precedent).
+Arrests batch (cat-4c + Entry-to-Arrest D7) holds until L2 lands.
