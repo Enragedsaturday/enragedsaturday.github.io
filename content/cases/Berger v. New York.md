@@ -26,8 +26,10 @@ courtlistener:
   opinion_id: 9423459
   identity_checked: true
 homes:
-  - page: "[[The Third-Party Doctrine and Digital Surveillance]]"
-    role: "Historical/Anchor"
+  - page: "[[Electronic Surveillance and Title III]]"
+    role: "Key — Anchor"
+  - page: "[[Third-Party Doctrine & CSLI]]"
+    role: "Related (cross-ref — electronic-surveillance floor)"
   - page: "[[Reasonable Expectation of Privacy]]"
     role: "Related (cross-doctrine)"
 related: ["[[Katz v. United States]]", "[[Olmstead v. United States]]", "[[United States v. Karo]]"]
@@ -67,7 +69,8 @@ New York's eavesdropping statute violated the Fourth and Fourteenth Amendments; 
 - Marks the transition from the property-trespass approach of [[Olmstead v. United States]] toward the privacy framework completed in [[Katz v. United States]]; its standards shaped Title III of the Omnibus Crime Control Act of 1968 and the interior-monitoring analysis of [[United States v. Karo]].
 
 ## Appears on
-- [[The Third-Party Doctrine and Digital Surveillance]] — *Historical/Anchor*
+- [[Electronic Surveillance and Title III]] — *Key — Anchor*
+- [[Third-Party Doctrine & CSLI]] — *Related (cross-ref — electronic-surveillance floor)*
 - [[Reasonable Expectation of Privacy]] — *Related (cross-doctrine)*
 
 ## Sources

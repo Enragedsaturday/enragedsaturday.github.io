@@ -26,9 +26,11 @@ courtlistener:
   opinion_id: 11349205
   identity_checked: false
 homes:
+  - page: "[[Reverse-Keyword and Geofence Warrants]]"
+    role: "Key — Anchor (geofence exposition home)"
   - page: "[[Reasonable Expectation of Privacy]]"
     role: "Key — geofence (cross-ref)"
-  - page: "[[The Third-Party Doctrine and Digital Surveillance]]"
+  - page: "[[Third-Party Doctrine & CSLI]]"
     role: "Key — Progeny / Refinement"
 related: ["[[Carpenter v. United States]]", "[[United States v. Jones]]", "[[Katz v. United States]]", "[[Smith v. Maryland]]", "[[The Warrant Requirement]]", "[[Standing to Challenge a Search]]", "[[The Exclusionary Rule]]"]
 aliases: []
@@ -64,12 +66,13 @@ Acquiring geofence Location History is a Fourth Amendment search. The judgment w
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS** anchor on the geofence search-threshold question.
-- **Doctrinal effect:** **RESOLVES** the former circuit split on whether acquiring geofence Location History is a *search* (5th Cir. *[[The Warrant Requirement|Smith]]* = yes; 4th Cir. en banc *Chatrie* = fractured) — **it is a search**. *Smith*'s further holding that geofence warrants are "modern-day general warrants" and **categorically unconstitutional** was **not** adopted; it is now the persuasive minority position feeding the **remanded** probable-cause/particularity question — the new live frontier.
+- **Doctrinal effect:** **RESOLVES** the former circuit split on whether acquiring geofence Location History is a *search* (5th Cir. *[[United States v. Smith (2024)|Smith]]* = yes; 4th Cir. en banc *Chatrie* = fractured) — **it is a search**. *Smith*'s further holding that geofence warrants are "modern-day general warrants" and **categorically unconstitutional** was **not** adopted; it is now the persuasive minority position feeding the **remanded** probable-cause/particularity question — the new live frontier.
 - **CL-confirm: VERIFIED (2026-07-02).** CourtListener **cluster** `10881683` **is** the genuine SCOTUS *Chatrie* (`scotus / 25-112 / 2026-06-29`); its lead opinion is `11349205`, against which the Rule quote above was matched verbatim. The earlier "corrupted object" warning was a cluster-vs-opinion ID mix-up: `10881683` is a *cluster* id, and fetching it from the `/opinions/` endpoint returns an unrelated case — use `/clusters/10881683/` or opinion `11349205` instead. See Sources.
 
 ## Appears on
+- [[Reverse-Keyword and Geofence Warrants]] — *Key — Anchor (geofence exposition home)*
 - [[Reasonable Expectation of Privacy]] — *Key — geofence (cross-ref)*
-- [[The Third-Party Doctrine and Digital Surveillance]] — *Key — Progeny / Refinement*
+- [[Third-Party Doctrine & CSLI]] — *Key — Progeny / Refinement*
 
 ## Sources
 - *Chatrie v. United States*, 609 U.S. ___ (2026) (No. 25-112) — **slip opinion (PRIMARY):** https://www.supremecourt.gov/opinions/25pdf/25-112_0am4.pdf — decided June 29, 2026.

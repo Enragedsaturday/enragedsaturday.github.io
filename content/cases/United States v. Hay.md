@@ -30,10 +30,10 @@ lake:
   status: under_review
   projected_at: 2026-07-07
 homes:
-  - page: "[[The Third Party Doctrine And Digital Surveillance]]"
-    role: Key
+  - page: "[[Third-Party Doctrine & CSLI]]"
+    role: "Lower-court development (pole cameras)"
 related:
-  - "[[The Third-Party Doctrine and Digital Surveillance]]"
+  - "[[Third-Party Doctrine & CSLI]]"
   - "[[Carpenter v. United States]]"
   - "[[Kyllo v. United States]]"
   - "[[United States v. Knotts]]"
@@ -73,7 +73,7 @@ Hay's argument that sixty-eight days of continuous recording "painted an intimat
 **Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub and renders under the ⚪ banner until S9 promotion. *Hay* is a leading data point on the **unsettled pole-camera question**: the Tenth Circuit (like the Fifth, Sixth, and Seventh) declines to extend *Carpenter*'s mosaic theory to fixed exterior camera surveillance of a home, while a First Circuit en banc court deadlocked and the Fourth Circuit found aerial city-wide tracking a search. Teach it as circuit-split / unsettled authority — never as a settled nationwide rule that pole cameras are categorically permissible.
 
 ## Appears on
-- [[The Third-Party Doctrine and Digital Surveillance]] — *Key*
+- [[Third-Party Doctrine & CSLI]] — *Lower-court development (pole cameras)*
 
 ## Sources
 - [*United States v. Hay*, 95 F.4th 1304 (10th Cir. 2024)](https://www.courtlistener.com/opinion/9485331/united-states-v-hay/) — pinpoint: slip op. at 18 (the *Jackson*-binding / *Carpenter*-does-not-disturb holding; the CL opinion text carries the court's internal slip pagination, so the pin is slip-style per S2 A3). Rule quote string-matched to the CL opinion text 2026-07-07.

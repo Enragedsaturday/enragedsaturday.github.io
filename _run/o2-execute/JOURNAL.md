@@ -996,3 +996,32 @@ Index 617 idempotent. NEXT: cat-3 digital sub-umbrella (SD2: Third-Party & CSLI 
 D6 children CSS B / Reverse-Keyword & Geofence B / Real-Time C / IGG C + Title III C sibling
 w/ GAP-03c §702) — carries journaled obligations: Smith (2024) Key w/ Chatrie, Carpenter
 co-home decision, Chatrie exposition home.
+
+**BATCH 4 CLOSED — CAT-3 DIGITAL SUB-UMBRELLA + TITLE III (2026-07-08):** biggest batch: index
+SEVERED (worker's substantive-index first-pass REFUTED BY LINT-19 — R2 no-tables — and
+self-corrected; A6 taxonomy line confirms "Third-Party Doctrine & CSLI" is the FIRST CHILD) →
+lean umbrella overview + 6 authored pages born draft: Third-Party & CSLI (A) · Reverse-Keyword
+& Geofence (B, CHATRIE EXPOSITION HOME — batch-2 obligation discharged, Smith (2024) Key
+alongside per journal) · Cell-Site Simulators (B) · Real-Time Tracking (C) · IGG (C, honest
+no-controlling-precedent) · Electronic Surveillance & Title III (C + GAP-03c §702/parallel-
+construction). R6: 7 MCP calls 0 REST (Smith-v-Maryland ★744, Miller ★443, Knotts 281, Karo
+715, Berger ★56 confirmed); R5: Carpenter T3 / Chatrie T4 / Smith(2024) F.4th reporter pin.
+18 case re-homes incl. CARPENTER CO-HOME RATIFIED (Key on CSLI child, primary stays REP);
+Knotts/Karo primary→Real-Time; Berger primary→Title III; 10/10 owed home_rows discharged
+(rule H: index-owed circuit rows → LCD honest tier). CHATRIE CLUSTER ADJUDICATED: lake record
+IS the source of truth — cluster 10881683 GENUINE (lead 11349205, S2-built 07-04); the
+batch-2 "corrupted/do-not-ingest" note was STALE pre-ingest state, RETIRED; T4 unaffected
+(no reporter cite yet, status under_review current-Term). LINT-17 attestation: corpus 0 —
+Andrews/Seymour/Gratkowski/Beautiful-Struggle cited as plain-italic brief-mention terminals,
+Lambis avoided (no terminal), dead wikilinks to page-less captions FIXED. TEMPLATE RULE J
+ADOPTED: net-additive AUTHORING batches are judged zero-new-HIGH + explained baseline-class
+MED/LOW deltas, not strict run_all ≤ (mechanical passes keep strict ≤): run_all 8233→8252
+(+19 all MED/LOW exemplar-class; LINT-10 0, 15/16 0/0, 17 corpus 0, 19 overview 0). Registry:
+7 search.digital.* nodes existed, 4 statements filled, third-party home re-pointed. Build
+720→721 (+1 severed child)/2755; Case Index 617 idempotent (18 rows = the re-homes).
+RESIDUE JOURNALED: Riley disambiguation owed (Florida v. Riley = aerial batch; Riley v.
+California umbrella Key-on → CSLI child or drop, aerial/SIA batches decide); 7 residual
+LINT-2 med honest (5 Chatrie T4 quotes + 2 IGG paraphrase-rule heuristic — no unverified pin
+added to silence a lint). NEXT: cat-3c sibling sweep — Aerial & Enhanced (B, OWES
+Ciraolo/Florida-v-Riley/Dow primary moves + registry fill) + Private & Foreign (B) +
+Abandonment (B) + Tents (C retitle w/ S3-owned alias); then Plain View & Plain Feel (A).

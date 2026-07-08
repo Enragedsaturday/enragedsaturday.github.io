@@ -26,7 +26,7 @@ courtlistener:
   opinion_id: 9426375
   identity_checked: true
 homes:
-  - page: "[[The Third-Party Doctrine and Digital Surveillance]]"
+  - page: "[[Third-Party Doctrine & CSLI]]"
     role: "Key — Anchor"
 related: ["[[Smith v. Maryland]]", "[[Carpenter v. United States]]", "[[Katz v. United States]]"]
 aliases: []
@@ -65,7 +65,7 @@ Miller had no protectable Fourth Amendment interest in the bank records; obtaini
 - *Miller* remains good law. [[Carpenter v. United States]] (2018) declined to extend the third-party doctrine to historical cell-site location information, but **expressly declined to overrule** *Miller* or [[Smith v. Maryland]]; the bank-records holding stands. (The result also prompted the statutory Right to Financial Privacy Act, a non-constitutional check.)
 
 ## Appears on
-- [[The Third-Party Doctrine and Digital Surveillance]] — *Key — Anchor*
+- [[Third-Party Doctrine & CSLI]] — *Key — Anchor*
 
 ## Sources
 - *United States v. Miller*, 425 U.S. 435 (1976) — https://www.courtlistener.com/opinion/109433/united-states-v-miller/ — pinpoints: 442, 443.

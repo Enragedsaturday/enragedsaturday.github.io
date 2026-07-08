@@ -41,8 +41,10 @@ courtlistener:
   opinion_id: 10502720
   identity_checked: true
 homes:
-  - page: "[[The Third-Party Doctrine and Digital Surveillance]]"
+  - page: "[[Reverse-Keyword and Geofence Warrants]]"
     role: "Key — Circuit anchor (geofence)"
+  - page: "[[Third-Party Doctrine & CSLI]]"
+    role: "Related (cross-ref — umbrella)"
 related: ["[[Chatrie v. United States]]", "[[Carpenter v. United States]]", "[[United States v. Leon]]", "[[The Warrant Requirement]]", "[[The Exclusionary Rule]]"]
 aliases: ["United States v. Smith", "United States v. Smith (5th Cir. 2024)"]
 tags: ["case", "fourth-amendment", "search", "digital-privacy", "geofence", "location-history", "good-faith-exception"]
@@ -81,7 +83,8 @@ Convictions **affirmed**: the geofence warrant was unconstitutional, but suppres
 The Supreme Court's 2026 *Chatrie* decision resolved the circuit split *Smith* anchored: acquiring geofence Location History **is** a search, as *Smith* held (and the Fourth Circuit's en banc *Chatrie* had fractured over). But the Court stopped at the threshold — it did not decide whether any geofence warrant can satisfy probable cause and particularity, so *Smith*'s stronger point remains the minority answer to a question SCOTUS left open.
 
 ## Appears on
-- [[The Third-Party Doctrine and Digital Surveillance]] — *Key — Circuit anchor (geofence)*
+- [[Reverse-Keyword and Geofence Warrants]] — *Key — Circuit anchor (geofence)*
+- [[Third-Party Doctrine & CSLI]] — *Related (cross-ref — umbrella)*
 
 ## Sources
 - [*United States v. Smith*, 110 F.4th 817 (5th Cir. 2024)](https://www.courtlistener.com/opinion/10036119/united-states-v-smith/) — pinpoint: 838 (general-warrant holding + good-faith disposition; quote string-matched against the CL opinion text 2026-07-03).

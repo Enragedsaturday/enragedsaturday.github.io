@@ -28,6 +28,8 @@ courtlistener:
 homes:
   - page: "[[Trespass]]"
     role: "Historical / origin"
+  - page: "[[Electronic Surveillance and Title III]]"
+    role: "Key — Historical (overruled by Katz)"
 related: ["[[Katz v. United States]]", "[[United States v. Jones]]", "[[Berger v. New York]]"]
 aliases: []
 tags: ["case", "fourth-amendment", "wiretap", "trespass", "overruled", "historical"]
@@ -64,6 +66,7 @@ On these facts the warrantless wiretapping was held not to be a Fourth Amendment
 
 ## Appears on
 - [[Trespass]] — *Historical / origin*
+- [[Electronic Surveillance and Title III]] — *Key — Historical (overruled by Katz)*
 
 ## Sources
 - *Olmstead v. United States*, 277 U.S. 438 (1928) — https://www.courtlistener.com/opinion/101320/olmstead-v-united-states/ — pinpoint: 464.

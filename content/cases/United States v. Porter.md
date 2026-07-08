@@ -30,8 +30,8 @@ lake:
   status: under_review
   projected_at: 2026-07-07
 homes:
-  - page: "[[The Third Party Doctrine And Digital Surveillance]]"
-    role: Key
+  - page: "[[Third-Party Doctrine & CSLI]]"
+    role: "Lower-court development (ALPR)"
 related:
   - "[[Carpenter v. United States]]"
   - "[[United States v. Knotts]]"
@@ -75,7 +75,7 @@ Detecting a plate as the vehicle passed a fixed public-road camera revealed only
 **Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub; its citator and progeny history have not completed the two-key verification, so it renders under the ⚪ banner until S9 promotion. *Porter* sits alongside *[[Robinson v. Commonwealth]]* on the ALPR frontier: like Norfolk's Flock system, a fixed LPR that captures a plate on a public road is treated as no search under the public-movements logic of *[[United States v. Knotts|Knotts]]*, distinguished from the pervasive tracking that made *[[Carpenter v. United States|Carpenter]]* a search.
 
 ## Appears on
-- [[The Third-Party Doctrine and Digital Surveillance]] — *Key*
+- [[Third-Party Doctrine & CSLI]] — *Lower-court development (ALPR)*
 
 ## Sources
 - [*United States v. Porter*, No. 25-60163, slip op. (5th Cir. 2026)](https://www.courtlistener.com/opinion/10810059/united-states-v-porter/) — pinpoint: slip op. at 1 (LPR use is not a search; plain-view firearm seizure; reasonable-suspicion stop). Rule quote string-matched to the CL opinion text 2026-07-07. Published 5th Cir. slip; no F.4th cite assigned yet (S2 A3 slip precedent).

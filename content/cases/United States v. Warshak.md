@@ -30,10 +30,10 @@ lake:
   status: under_review
   projected_at: 2026-07-07
 homes:
-  - page: "[[The Third Party Doctrine And Digital Surveillance]]"
-    role: Anchor
+  - page: "[[Third-Party Doctrine & CSLI]]"
+    role: "Lower-court development (content/metadata line)"
 related:
-  - "[[The Third-Party Doctrine and Digital Surveillance]]"
+  - "[[Third-Party Doctrine & CSLI]]"
   - "[[Katz v. United States]]"
   - "[[United States v. Jacobsen]]"
   - "[[Carpenter v. United States]]"
@@ -75,7 +75,7 @@ The court held the warrantless acquisition of Warshak's emails **violated the Fo
 **Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub; its citator and progeny history have not completed the project's two-key verification, so it renders under the ⚪ banner until S9 promotion. *Warshak* is the anchor circuit decision extending Fourth Amendment protection to the *contents* of emails held by a third-party ISP — a landmark limiting the third-party doctrine in the digital context and a widely followed precursor to the Supreme Court's *[[Carpenter v. United States]]* (2018). Teach it in the *[[Katz v. United States|Katz]]*/*[[United States v. Jacobsen|Jacobsen]]* line as the case that treats an ISP like a post office, while noting its in-circuit (6th Cir.) authority and the good-faith limit on suppression.
 
 ## Appears on
-- [[The Third-Party Doctrine and Digital Surveillance]] — *Anchor*
+- [[Third-Party Doctrine & CSLI]] — *Lower-court development (content/metadata line)*
 
 ## Sources
 - [*United States v. Warshak*, 631 F.3d 266 (6th Cir. 2010)](https://www.courtlistener.com/opinion/181032/united-states-v-warshak/) — pinpoint: 288 (Boggs, J., for the court; the CL opinion text carries the reporter star `*288` in the *Miller* discussion immediately before the quoted holding paragraph, which sits on page 288). Rule quote string-matched to the CL opinion text 2026-07-07.

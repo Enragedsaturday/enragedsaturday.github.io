@@ -30,7 +30,7 @@ homes:
     role: "Key"
   - page: "[[Curtilage]]"
     role: "Related (cross-doctrine)"
-  - page: "[[The Third-Party Doctrine and Digital Surveillance]]"
+  - page: "[[Third-Party Doctrine & CSLI]]"
     role: "Related (cross-doctrine)"
 related: ["[[Katz v. United States]]", "[[California v. Ciraolo]]", "[[Florida v. Jardines]]", "[[United States v. Jones]]", "[[Carpenter v. United States]]"]
 aliases: []
@@ -71,7 +71,7 @@ The thermal imaging was an unlawful warrantless search; the case was remanded to
 ## Appears on
 - [[Reasonable Expectation of Privacy]] — *Key*
 - [[Curtilage]] — *Related (cross-doctrine)*
-- [[The Third-Party Doctrine and Digital Surveillance]] — *Related (cross-doctrine)*
+- [[Third-Party Doctrine & CSLI]] — *Related (cross-doctrine)*
 
 ## Sources
 - *Kyllo v. United States*, 533 U.S. 27 (2001) — https://www.courtlistener.com/opinion/118443/kyllo-v-united-states/ — pinpoints: 34, 37, 40.

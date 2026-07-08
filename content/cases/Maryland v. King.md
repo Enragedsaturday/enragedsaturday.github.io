@@ -28,6 +28,8 @@ courtlistener:
 homes:
   - page: "[[Special Needs and Administrative Searches]]"
     role: "Key — Progeny / Refinement"
+  - page: "[[Investigative Genetic Genealogy]]"
+    role: "Key — cross-ref (nearest DNA anchor)"
 related: ["[[Schmerber v. California]]", "[[Florence v. Board of Chosen Freeholders]]", "[[Skinner v. Railway Labor Executives Association]]"]
 aliases: []
 tags: ["case", "fourth-amendment", "dna", "booking", "arrestee", "special-needs"]
@@ -64,6 +66,7 @@ Reversed: DNA cheek-swabbing of arrestees held for serious offenses is a reasona
 
 ## Appears on
 - [[Special Needs and Administrative Searches]] — *Key — Progeny / Refinement*
+- [[Investigative Genetic Genealogy]] — *Key — cross-ref (nearest DNA anchor)*
 
 ## Sources
 - *Maryland v. King*, 569 U.S. 435 (2013) — https://www.courtlistener.com/opinion/873669/maryland-v-king/ — pinpoint: 465–466.

@@ -26,8 +26,10 @@ courtlistener:
   opinion_id: 9429751
   identity_checked: true
 homes:
-  - page: "[[The Third-Party Doctrine and Digital Surveillance]]"
-    role: "Key — Anchor/Progeny"
+  - page: "[[Real-Time Tracking]]"
+    role: "Key — Anchor (interior context-flip)"
+  - page: "[[Third-Party Doctrine & CSLI]]"
+    role: "Related (cross-ref — umbrella)"
   - page: "[[Reasonable Expectation of Privacy]]"
     role: "Related (cross-doctrine)"
 related: ["[[United States v. Knotts]]", "[[Kyllo v. United States]]", "[[United States v. Jones]]", "[[Carpenter v. United States]]"]
@@ -67,7 +69,8 @@ Warrantless monitoring of the beeper inside the residence violated the Fourth Am
 - Companion to [[United States v. Knotts]]. Its interior-of-the-home reasoning anticipates [[Kyllo v. United States]] (sense-enhancing technology and the home) and the modern location-tracking cases [[United States v. Jones]] (trespassory GPS installation) and [[Carpenter v. United States]] (long-term cell-site aggregation).
 
 ## Appears on
-- [[The Third-Party Doctrine and Digital Surveillance]] — *Key — Anchor/Progeny*
+- [[Real-Time Tracking]] — *Key — Anchor (interior context-flip)*
+- [[Third-Party Doctrine & CSLI]] — *Related (cross-ref — umbrella)*
 - [[Reasonable Expectation of Privacy]] — *Related (cross-doctrine)*
 
 ## Sources

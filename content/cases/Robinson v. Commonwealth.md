@@ -30,8 +30,8 @@ lake:
   status: under_review
   projected_at: 2026-07-07
 homes:
-  - page: "[[The Third Party Doctrine And Digital Surveillance]]"
-    role: Key
+  - page: "[[Third-Party Doctrine & CSLI]]"
+    role: "Lower-court development (ALPR network)"
 related:
   - "[[Carpenter v. United States]]"
   - "[[United States v. Knotts]]"
@@ -76,7 +76,7 @@ Distinguishing *Carpenter* and the Fourth Circuit's aerial-surveillance decision
 **Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub; its citator and progeny history have not completed the two-key verification, so it renders under the ⚪ banner until S9 promotion. *Robinson* is a frontier state-court application of *[[Carpenter v. United States|Carpenter]]* to fixed ALPR networks, expressly fact-bound and explicitly declining to say whether a denser or longer-retained system might cross the line. It is persuasive, illustrative authority on the third-party-doctrine/digital-surveillance frontier, not binding federal precedent, and the "comprehensive chronicle" question it reserves remains open.
 
 ## Appears on
-- [[The Third-Party Doctrine and Digital Surveillance]] — *Key*
+- [[Third-Party Doctrine & CSLI]] — *Lower-court development (ALPR network)*
 
 ## Sources
 - [*Eddie Eugene Robinson v. Commonwealth of Virginia*, No. 1912-24-1, slip op. (Va. Ct. App. 2026)](https://www.courtlistener.com/opinion/10838748/eddie-eugene-robinson-v-commonwealth-of-virginia/) — pinpoint: slip op. at 9 (Flock ALPR query not a Fourth Amendment search on this record). Rule quote string-matched to the CL opinion text 2026-07-07. Published Va. Ct. App. slip; no S.E.2d/Va. App. reporter cite assigned yet (S2 A3 slip precedent).

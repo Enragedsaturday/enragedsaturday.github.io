@@ -26,8 +26,10 @@ courtlistener:
   opinion_id: 9429102
   identity_checked: true
 homes:
-  - page: "[[The Third-Party Doctrine and Digital Surveillance]]"
-    role: "Key — Anchor"
+  - page: "[[Real-Time Tracking]]"
+    role: "Key — Anchor (baseline)"
+  - page: "[[Third-Party Doctrine & CSLI]]"
+    role: "Related (cross-ref — umbrella)"
   - page: "[[Reasonable Expectation of Privacy]]"
     role: "Related (cross-doctrine)"
 related: ["[[United States v. Karo]]", "[[United States v. Jones]]", "[[Carpenter v. United States]]"]
@@ -67,7 +69,8 @@ The beeper-aided tracking of public movements was not a Fourth Amendment search.
 - Companion to [[United States v. Karo]]. [[United States v. Jones]] (2012) reached GPS *installation* on a trespass theory while preserving *Knotts*; [[Carpenter v. United States]] (2018) distinguished short-term public tracking (Knotts) from the long-term, comprehensive aggregation of cell-site records. *Knotts*' core holding for short-term public tracking stands.
 
 ## Appears on
-- [[The Third-Party Doctrine and Digital Surveillance]] — *Key — Anchor*
+- [[Real-Time Tracking]] — *Key — Anchor (baseline)*
+- [[Third-Party Doctrine & CSLI]] — *Related (cross-ref — umbrella)*
 - [[Reasonable Expectation of Privacy]] — *Related (cross-doctrine)*
 
 ## Sources

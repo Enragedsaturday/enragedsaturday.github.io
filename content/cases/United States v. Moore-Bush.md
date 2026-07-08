@@ -34,14 +34,14 @@ homes:
     role: Key
   - page: "[[Curtilage]]"
     role: "Related (cross-doctrine)"
-  - page: "[[The Third Party Doctrine And Digital Surveillance]]"
+  - page: "[[Third-Party Doctrine & CSLI]]"
     role: "Related (cross-doctrine)"
   - page: "[[Reasonable Expectation of Privacy]]"
     role: "Related (cross-doctrine)"
 related:
   - "[[Fourth Amendment Framework]]"
   - "[[Curtilage]]"
-  - "[[The Third-Party Doctrine and Digital Surveillance]]"
+  - "[[Third-Party Doctrine & CSLI]]"
   - "[[Two Definitions of Search]]"
   - "[[Carpenter v. United States]]"
   - "[[Katz v. United States]]"
@@ -87,7 +87,7 @@ The district court's suppression order was **unanimously reversed** and the case
 ## Appears on
 - [[Fourth Amendment Framework]] — *Key*
 - [[Curtilage]] — *Related (cross-doctrine)*
-- [[The Third-Party Doctrine and Digital Surveillance]] — *Related (cross-doctrine)*
+- [[Third-Party Doctrine & CSLI]] — *Related (cross-doctrine)*
 - [[Reasonable Expectation of Privacy]] — *Related (cross-doctrine)*
 
 ## Sources

@@ -28,6 +28,8 @@ courtlistener:
 homes:
   - page: "[[Reasonable Expectation of Privacy]]"
     role: "Key — Progeny / Refinement"
+  - page: "[[Third-Party Doctrine & CSLI]]"
+    role: "Key — CSLI dividing line (co-home, A6)"
 related: ["[[United States v. Jones]]", "[[Katz v. United States]]", "[[Smith v. Maryland]]", "[[Riley v. California]]", "[[Chatrie v. United States]]"]
 aliases: []
 tags: ["case", "fourth-amendment", "search", "digital-privacy", "cell-site", "third-party-doctrine"]
@@ -67,6 +69,7 @@ Acquiring Carpenter's historical CSLI was a Fourth Amendment search; the judgmen
 
 ## Appears on
 - [[Reasonable Expectation of Privacy]] — *Key — Progeny / Refinement*
+- [[Third-Party Doctrine & CSLI]] — *Key — CSLI dividing line (co-home)*
 
 ## Sources
 - *Carpenter v. United States*, 585 U.S. 296 (2018) — https://www.courtlistener.com/opinion/4510032/carpenter-v-united-states/ — pinpoint: slip op., at 11 (CL carries the slip opinion; cluster 4510032 → opinion 4287285).

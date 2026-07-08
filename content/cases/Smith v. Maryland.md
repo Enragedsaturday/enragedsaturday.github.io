@@ -26,7 +26,7 @@ courtlistener:
   opinion_id: 110118
   identity_checked: true
 homes:
-  - page: "[[The Third-Party Doctrine and Digital Surveillance]]"
+  - page: "[[Third-Party Doctrine & CSLI]]"
     role: "Key — Anchor"
 related: ["[[United States v. Miller]]", "[[Carpenter v. United States]]", "[[Katz v. United States]]"]
 aliases: []
@@ -65,7 +65,7 @@ Installation and use of the pen register was not a search; the Fourth Amendment 
 - *Smith* remains good law. [[Carpenter v. United States]] (2018) held the third-party doctrine does **not** extend to historical cell-site location information given its uniquely revealing, comprehensive nature, but **expressly declined to overrule** *Smith* or [[United States v. Miller]]; the pen-register/short-term-conveyance holding stands.
 
 ## Appears on
-- [[The Third-Party Doctrine and Digital Surveillance]] — *Key — Anchor*
+- [[Third-Party Doctrine & CSLI]] — *Key — Anchor*
 
 ## Sources
 - *Smith v. Maryland*, 442 U.S. 735 (1979) — https://www.courtlistener.com/opinion/110118/smith-v-maryland/ — pinpoints: 743–744.

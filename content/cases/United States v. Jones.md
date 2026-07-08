@@ -28,6 +28,10 @@ courtlistener:
 homes:
   - page: "[[Trespass]]"
     role: "Key — Anchor"
+  - page: "[[Real-Time Tracking]]"
+    role: "Key — cross-ref (GPS trespass; mosaic concurrences)"
+  - page: "[[Third-Party Doctrine & CSLI]]"
+    role: "Related (cross-ref — mosaic seed for Carpenter)"
 related: ["[[Katz v. United States]]", "[[Carpenter v. United States]]", "[[Florida v. Jardines]]", "[[Olmstead v. United States]]", "[[United States v. Jacobsen]]"]
 aliases: ["United States v. Jones (2012)", "United States v. Antoine Jones"]
 tags: ["case", "fourth-amendment", "search-definition", "trespass-theory", "gps-tracking", "physical-intrusion"]
@@ -66,6 +70,8 @@ Attaching and using the GPS device was a search; the D.C. Circuit's judgment rev
 
 ## Appears on
 - [[Trespass]] — *Key — Anchor*
+- [[Real-Time Tracking]] — *Key — cross-ref (GPS trespass; mosaic concurrences)*
+- [[Third-Party Doctrine & CSLI]] — *Related (cross-ref — mosaic seed for Carpenter)*
 
 ## Sources
 - *United States v. Jones*, 565 U.S. 400 (2012) — https://www.courtlistener.com/opinion/7350871/united-states-v-jones/ — pinpoints: 404, 409. (Lead majority opinion id 7268856.)
