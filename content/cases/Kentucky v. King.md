@@ -26,8 +26,10 @@ courtlistener:
   opinion_id: 216733
   identity_checked: true
 homes:
-  - page: "[[Exigent Circumstances and Hot Pursuit]]"
+  - page: "[[Destruction of Evidence]]"
     role: "Key — Anchor"
+  - page: "[[Exigent Circumstances and Hot Pursuit]]"
+    role: "Related (no-police-created-exigency outer limit)"
   - page: "[[Arrest in the Home]]"
     role: "Related (cross-doctrine)"
   - page: "[[Knock and Talk]]"

@@ -26,8 +26,8 @@ courtlistener:
   opinion_id: 108801
   identity_checked: true
 homes:
-  - page: "[[Exigent Circumstances and Hot Pursuit]]"
-    role: "Related (cross-doctrine)"
+  - page: "[[Destruction of Evidence]]"
+    role: "Key — evanescent evidence"
 related: ["[[Chimel v. California]]", "[[Schmerber v. California]]", "[[Davis v. Mississippi]]"]
 aliases: []
 tags: ["case", "fourth-amendment", "search-incident-to-arrest", "exigency", "destruction-of-evidence", "probable-cause"]

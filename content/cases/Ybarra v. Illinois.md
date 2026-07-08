@@ -26,12 +26,12 @@ courtlistener:
   opinion_id: 9427721
   identity_checked: true
 homes:
+  - page: "[[Detention and Search of Persons at the Scene]]"
+    role: "Key — Limits / Narrows"
   - page: "[[Securing the Scene]]"
-    role: "Limits / Narrows"
+    role: "Related (scene-securing overlap)"
   - page: "[[Terry Stops and Reasonable Suspicion]]"
     role: "Related (cross-doctrine)"
-  - page: "[[Detention and Search of Persons at the Scene]]"
-    role: "Key (executing a warrant)"
 related: ["[[Michigan v. Summers]]", "[[Bailey v. United States]]", "[[Terry v. Ohio]]", "[[Maryland v. Buie]]"]
 aliases: []
 tags: ["case", "fourth-amendment", "warrants", "search-of-persons", "terry-frisk", "probable-cause"]

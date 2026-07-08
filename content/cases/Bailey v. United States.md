@@ -26,10 +26,10 @@ courtlistener:
   opinion_id: 9502775
   identity_checked: true
 homes:
-  - page: "[[Securing the Scene]]"
-    role: "Key — Progeny / Refinement"
   - page: "[[Detention and Search of Persons at the Scene]]"
-    role: "Key (executing a warrant)"
+    role: "Key — Progeny / Refinement"
+  - page: "[[Securing the Scene]]"
+    role: "Related (scene-securing overlap)"
 related: ["[[Michigan v. Summers]]", "[[Illinois v. McArthur]]", "[[Terry v. Ohio]]"]
 aliases: ["Bailey v. US"]
 tags: ["case", "fourth-amendment", "detention", "search-warrant", "securing-the-scene"]

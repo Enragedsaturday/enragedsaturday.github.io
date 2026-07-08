@@ -26,10 +26,10 @@ courtlistener:
   opinion_id: 142878
   identity_checked: true
 homes:
-  - page: "[[Securing the Scene]]"
-    role: "Key — Progeny / Refinement"
   - page: "[[Detention and Search of Persons at the Scene]]"
-    role: "Key (executing a warrant)"
+    role: "Key — Progeny / Refinement"
+  - page: "[[Securing the Scene]]"
+    role: "Related (scene-securing overlap)"
 related: ["[[Michigan v. Summers]]", "[[Bailey v. United States]]", "[[Los Angeles County v. Rettele]]"]
 aliases: []
 tags: ["case", "fourth-amendment", "detention", "search-warrant", "handcuffs"]

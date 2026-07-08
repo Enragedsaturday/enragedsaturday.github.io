@@ -28,8 +28,8 @@ courtlistener:
 homes:
   - page: "[[SIA Alcohol Tests]]"
     role: "Key — Anchor"
-  - page: "[[Exigent Circumstances and Hot Pursuit]]"
-    role: "Related (cross-doctrine)"
+  - page: "[[Destruction of Evidence]]"
+    role: "Related (blood draw needs exigency or warrant)"
 related: ["[[Schmerber v. California]]", "[[Missouri v. McNeely]]", "[[Riley v. California]]", "[[Maryland v. King]]"]
 aliases: []
 tags: ["case", "fourth-amendment", "search-incident-to-arrest", "dui", "blood-draw", "breath-test", "implied-consent"]

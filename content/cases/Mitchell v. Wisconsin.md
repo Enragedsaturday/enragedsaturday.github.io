@@ -26,7 +26,7 @@ courtlistener:
   opinion_id: 9226047
   identity_checked: true
 homes:
-  - page: "[[Exigent Circumstances and Hot Pursuit]]"
+  - page: "[[Destruction of Evidence]]"
     role: "Key — Progeny / Refinement"
   - page: "[[SIA Alcohol Tests]]"
     role: "Related (cross-doctrine)"

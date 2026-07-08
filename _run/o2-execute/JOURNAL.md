@@ -1253,3 +1253,33 @@ Trupiano dedup · Hicks URL · Maez treatment · anchor class). NEXT: cat-6c hom
 batch): Community Caretaking A w/ D5 persons-seizure section + point node · Emergency Aid A
 · Exigent splits (Hot Pursuit retained parent A + Destruction child A, Santana/Lange R13
 point-status) · Protective Sweeps & Securing B (Buie unit) · Fire-Scene C.
+
+**BATCH 12 CLOSED — CAT-6c HOME ENTRY & SEARCH (2026-07-08):** the last big interview payload:
+**D5 REALIZED** — Community Caretaking (A born-again) shaped vehicles → "Seizing people for
+non-investigative purposes (public)" + NEW NODE seizure.person.noninvestigative-caretaking
+(2nd/2 interview-owed nodes; LINT-20 green) → home tombstone (→Emergency Aid); unsettled
+taught as unsettled (Garner 10th 3-part · Rideau 5th en banc · Graham-v-Barnette 8th PAGED ·
+ALITO OPEN FLAG MCP-VERIFIED verbatim from the Caniglia concurrence, T3 paraphrased);
+welfare-check aliases live. **MORGAN FAIL-CLOSED:** lake record = not_found + year mismatch
+(2018 vs spec's 2023) → NOT NAMED, routed to S2 identity lane (L1/L2 precedent); D5
+function-cabining carried by verified Graham-v-Barnette meanwhile. **R13 EXEMPLAR AUTHORED:**
+Santana/Lange point-status table on Hot Pursuit exactly per signed §11 (doorway ✓ · felony ✓
+w/ reservation noted 594 U.S. 303-04 · broad reading LIMITED 313) + reconciling prose +
+Bandiero hot/fresh-pursuit mnemonic woven register-verbatim (LINT-8 0); felony reservation →
+COH-27 poll. Exigent SPLIT: Hot Pursuit (A retained) + Destruction of Evidence (A child,
+King/Schmerber/McNeely/Mitchell/Cupp strand moved once). R5 SWEEP cleared the two biggest
+slip loads (EA 8 + Exigent 7): **KING UPGRADED slip→T1 BOUND 462** (star *462 verified op
+9441559 — also IDENTITY CATCH #7: case-page opinion_id=cluster_id 216733, true lead 9441559,
+the cluster-vs-opinion trap AGAIN); Caniglia/Lange/Graham/Newman/August/Gaetjens T3;
+Case-v-Montana T4 retained. Protective Sweeps & Securing (B authored at Buie-unit depth,
+T2#33) + Fire-Scene (C). DETENTION-FAMILY PRIMARIES FLIPPED to the batch-10 Detention page
+(taxonomy-grounded: warrant.detention-at-scene owns Summers/Muehler/Bailey/Rettele/Ybarra;
+Securing keeps Buie/McArthur/Segura) — batch-10 deferral ratified. Owed rows 5/5 incl.
+GAETJENS CATCH (O1 page never satisfied its ledger row — discharged as honest LCD). R3 flips:
+4 O1-era illegitimate verified → draft. Rule-B: 21 broken deep-links to NUM-03 mid-line
+anchors stripped (linter-parsed, working anchors preserved, 1 over-strip artifact caught +
+repaired). GATES: run_all 7781→7621 (HIGH 4556, -149 zero-new), LINT-15/16 0/0 x6, LINT-17
+0, LINT-20/24/25 0, survey em 2657 (-296 R11 delivered) slip 42, build 722/2820, Case Index
+620. REGISTER GROWS: Morgan identity · King re-key · Gaetjens enrich. NEXT: cat-6b
+programmatic family (Special Needs B parent + Inventory B + Checkpoints B extractions +
+Border B re-parent + the 5 stale SIA cells).

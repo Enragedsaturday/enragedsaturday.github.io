@@ -26,10 +26,10 @@ courtlistener:
   opinion_id: 9428436
   identity_checked: true
 homes:
-  - page: "[[Securing the Scene]]"
-    role: "Key — Anchor"
   - page: "[[Detention and Search of Persons at the Scene]]"
-    role: "Key (executing a warrant)"
+    role: "Key — Anchor"
+  - page: "[[Securing the Scene]]"
+    role: "Related (scene-securing overlap)"
 related: ["[[Bailey v. United States]]", "[[Muehler v. Mena]]"]
 aliases: []
 tags: ["case", "fourth-amendment", "search-warrant", "detention", "securing-the-scene"]
