@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """
-Runner for the NON-CL CSSI lints (LINT-2,3,4,5,6,7,8,9,10,12,13,14,18,19,20,21,
-22,23,24,25,26) over content/ and the S3 repo scans. Fixture self-tests for
-LINT-10/12/13/14 run first, fail-closed. The full numeric roster LINT-1…30 is
+Runner for the NON-CL CSSI lints (LINT-2,3,4,5,6,7,8,9,10,12,13,14,17,18,19,20,
+21,22,23,24,25,26) over content/ and the S3 repo scans. Fixture self-tests for
+LINT-10/12/13/14/17 run first, fail-closed. The full numeric roster LINT-1…30 is
 codified at S9 (S9 R8); rows land here as their owning specs execute.
 
 LINT-1 (CourtListener identity) is DELIBERATELY EXCLUDED here: it touches the
@@ -36,6 +36,7 @@ import lint10_emdash as l10        # noqa: E402
 import lint12_drift as l12         # noqa: E402
 import lint13_schema as l13        # noqa: E402
 import lint14_pagerecord as l14    # noqa: E402
+import lint17_coverage as l17      # noqa: E402
 import lint18_depth as l18         # noqa: E402
 import lint19_overview as l19      # noqa: E402
 import lint20_points as l20        # noqa: E402
@@ -64,6 +65,7 @@ LINTS = [
     ("LINT-12", "S2 lake/frontmatter drift (R12/A13)", l12.run),
     ("LINT-13", "S2 authority-record schema (R1/A5/A16)", l13.run),
     ("LINT-14", "S2 case page-to-record gate (R12/A16)", l14.run),
+    ("LINT-17", "S6 coverage: prose caption->page|ledger (R12, fail-closed)", l17.run),
     ("LINT-18", "S3 depth cap (R1/R10, fail-closed)", l18.run),
     ("LINT-19", "S3 overview: body + no case table (R2)", l19.run),
     ("LINT-20", "S3 point registry (R4, fail-closed)", l20.run),
@@ -80,6 +82,7 @@ SELF_TESTS = [
     ("LINT-12", "LINT-12 self-test gate (S2 R12/A13, fail-closed)", l12.self_test, os.path.join(c.HERE, "fixtures")),
     ("LINT-13", "LINT-13 self-test gate (S2 schema, fail-closed)", l13.self_test, os.path.join(c.HERE, "fixtures")),
     ("LINT-14", "LINT-14 self-test gate (S2 R12/A16, fail-closed)", l14.self_test, os.path.join(c.HERE, "fixtures")),
+    ("LINT-17", "LINT-17 self-test gate (S6 R11/R12, fail-closed)", l17.self_test, os.path.join(c.HERE, "fixtures")),
 ]
 
 

@@ -833,3 +833,19 @@ docket items. NEXT: S6 close-out — R11 coverage-ledger assembly (148-row proof
 placements fold + mention-stub/removed/folded universe), LINT-17 wiring (R12), S6-close
 CodeRabbit gate over the full S6 code surface, S6→S7 handoff (ledger-deferred homes rows ·
 Case-Index schema-3 flip · plain_text blind-spot · Field-I S9 items).
+
+**S6 CLOSE-OUT DELIVERED (2026-07-07):** R11 coverage ledger assembled PROGRAMMATICALLY
+(`_overhaul2/scripts/build_coverage_ledger.py` from signed artifacts + manifest) — partition
+PASS: **authored 145 + brief-mention 55 + excluded-remit 26 + folded-alias 8 + watch 3 +
+removed 2 + unverifiable 1 = 240 captions**, every one exactly one terminal, authored 145/145
+page+lake+manifest verified, folds name survivors, R8 148-partition re-derives exactly. NUM-04
+handled HONESTLY: no machine artifact of the 388 exists → no fabricated reconciliation; ledger
+exposes the join surface + a labeled corpus_mention_baseline instead. LINT-17 live:
+fail-closed HIGH, frozen-allowlist, 9/9 self-tests, corpus 0/734 captions, registered in
+run_all. Honest residual: 5 cite-format placeholders excluded-remit + 53 legacy antecedent
+bare-mentions brief-mention/not-adjudicated w/ pointers. **LINT-17's FIRST CATCH (pre-CI): 3
+page-less captions clearing R2 on their face — Anderson v. Creighton (QI, in White v. Pauly) ·
+Bell v. Wolfish (detainee searches, in Florence) · Colonnade Catering (closely-regulated, in
+Biswell). ORCHESTRATOR ADJUDICATION: mini-batch W10 through the standard leg (stub → R1 two-key
+→ mint) — same D1-flip class as the worklist, §9 guard holds (148 ≤ 150), "surfaced not
+trimmed."** Ledger + LINT-17 re-run after W10; then S6 CodeRabbit gate + handoff.
