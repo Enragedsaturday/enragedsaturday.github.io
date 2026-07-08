@@ -849,3 +849,17 @@ Bell v. Wolfish (detainee searches, in Florence) · Colonnade Catering (closely-
 Biswell). ORCHESTRATOR ADJUDICATION: mini-batch W10 through the standard leg (stub → R1 two-key
 → mint) — same D1-flip class as the worklist, §9 guard holds (148 ≤ 150), "surfaced not
 trimmed."** Ledger + LINT-17 re-run after W10; then S6 CodeRabbit gate + handoff.
+
+**W10 MINI-WAVE CLOSED — S6 AUTHORING FINAL (2026-07-07):** LINT-17's 3 catches minted through
+the FULL standard leg (--add-candidates → --smoke R1 two-key → enrich → repair-from-cache →
+R8 mint; no hand-written records; Colonnade seed-date corrected 03-05→02-25 by the cache-
+authoritative repair): Anderson v. Creighton (QI Key) · Bell v. Wolfish (Special Needs Key +
+SITA Related) · Colonnade (closely-regulated Key). 16 calls 0×429; LINT-13 0; mint-gate 0 ×3;
+build 719/2710; Case Index 617 (+3 exact). **FINAL R11 PARTITION: authored 148 + brief-mention
+55 + excluded-remit 26 + folded-alias 8 + watch 3 + removed 2 + unverifiable 1 = 243 distinct
+captions, machine-checked PASS; ledger escalations 3→0** (Anderson's page surfaced Mitchell v.
+Forsyth as a legit new brief-mention row — the ledger machinery working as designed). Scope
+arithmetic stated honestly: authored PAGES = 148 ≤ §9 guard 150 (page-planned rows ever = 151;
+3 of the original 148 went to honest non-page terminals). LINT-17 corpus PASS page-backed (not
+allowlisted). S6 AUTHORING COMPLETE — remaining S6-close: spec-completion CodeRabbit gate over
+the S6 code surface (formal trigger), S6→S7 handoff, run brief.
