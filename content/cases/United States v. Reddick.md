@@ -32,6 +32,8 @@ lake:
 homes:
   - page: "[[Fourth Amendment Framework]]"
     role: Key
+  - page: "[[Private and Foreign Searches]]"
+    role: "Key — hash-match split (5th Cir.)"
 related:
   - "[[Fourth Amendment Framework]]"
   - "[[United States v. Jacobsen]]"
@@ -76,6 +78,7 @@ Microsoft's automated hash-value comparison had already identified Reddick's fil
 
 ## Appears on
 - [[Fourth Amendment Framework]] — *Key*
+- [[Private and Foreign Searches]] — *Key — hash-match split (5th Cir.)*
 
 ## Sources
 - [*United States v. Reddick*, 900 F.3d 636 (5th Cir. 2018)](https://www.courtlistener.com/opinion/4527853/united-states-v-henry-reddick/) — pinpoint: 637 (private-search-doctrine holding; Ho, J.; the CL opinion text carries the reporter page-label *637). Rule quote string-matched to the CL opinion text 2026-07-07.

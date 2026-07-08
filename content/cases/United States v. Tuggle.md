@@ -28,6 +28,8 @@ courtlistener:
 homes:
   - page: "[[Plain View Doctrine]]"
     role: "Recent development (role-based)"
+  - page: "[[Aerial and Enhanced Surveillance]]"
+    role: "Related (cross-doctrine — pole camera)"
 related: ["[[California v. Ciraolo]]", "[[California v. Greenwood]]", "[[Carpenter v. United States]]", "[[United States v. Jones]]"]
 aliases: ["United States v. Tuggle (7th Cir. 2021)", "United States v. Travis Tuggle"]
 tags: ["case", "fourth-amendment", "plain-view", "pole-camera", "surveillance", "mosaic-theory", "seventh-circuit"]
@@ -66,6 +68,7 @@ The warrantless long-term pole-camera surveillance of the home's exterior did no
 
 ## Appears on
 - [[Plain View Doctrine]] — *Recent development (role-based)*
+- [[Aerial and Enhanced Surveillance]] — *Related (cross-doctrine — pole camera)*
 
 ## Sources
 - *United States v. Tuggle*, 4 F.4th 505 (7th Cir. 2021) — https://www.courtlistener.com/opinion/4899735/united-states-v-travis-tuggle/ — pinpoint given as slip-opinion page (CourtListener carries the slip opinion; cluster 4899735 → opinion 4703514).

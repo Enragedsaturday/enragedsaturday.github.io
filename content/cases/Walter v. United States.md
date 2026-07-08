@@ -28,6 +28,8 @@ courtlistener:
 homes:
   - page: "[[Fourth Amendment Framework]]"
     role: "Key — Anchor"
+  - page: "[[Private and Foreign Searches]]"
+    role: "Key — scope limit"
 related: ["[[United States v. Jacobsen]]"]
 aliases: ["Walter v. US"]
 tags: ["case", "fourth-amendment", "private-search", "scope", "search-definition"]
@@ -66,6 +68,7 @@ The warrantless projection of the films exceeded the scope of the private search
 
 ## Appears on
 - [[Fourth Amendment Framework]] — *Key — Anchor*
+- [[Private and Foreign Searches]] — *Key — scope limit*
 
 ## Sources
 - *Walter v. United States*, 447 U.S. 649 (1980) — https://www.courtlistener.com/opinion/110314/walter-v-united-states/ — pinpoints: 654, 657.

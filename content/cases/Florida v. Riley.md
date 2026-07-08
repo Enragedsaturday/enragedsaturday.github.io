@@ -26,10 +26,8 @@ courtlistener:
   opinion_id: 112175
   identity_checked: true
 homes:
-  - page: "[[Curtilage]]"
-    role: "Progeny (Ciraolo line)"
-  - page: "[[The Third-Party Doctrine and Digital Surveillance]]"
-    role: "Related (cross-doctrine)"
+  - page: "[[Aerial and Enhanced Surveillance]]"
+    role: "Key — Anchor"
 related: ["[[California v. Ciraolo]]", "[[Dow Chemical Co. v. United States]]", "[[Kyllo v. United States]]", "[[United States v. Dunn]]"]
 aliases: []
 tags: ["case", "fourth-amendment", "search", "aerial-surveillance", "curtilage", "helicopter"]
@@ -67,8 +65,7 @@ The aerial observation was not a search; the Florida Supreme Court's suppression
 - Follows [[California v. Ciraolo]] and the open-areas reasoning of [[Dow Chemical Co. v. United States]]. The home-interior, technology-enhanced line is governed instead by [[Kyllo v. United States]] (2001), which the plurality's "intimate details" caveat foreshadows.
 
 ## Appears on
-- [[Curtilage]] — *Progeny (Ciraolo line)*
-- [[The Third-Party Doctrine and Digital Surveillance]] — *Related (cross-doctrine)*
+- [[Aerial and Enhanced Surveillance]] — *Key — Anchor*
 
 ## Sources
 - *Florida v. Riley*, 488 U.S. 445 (1989) — https://www.courtlistener.com/opinion/112175/florida-v-riley/ — pinpoints: 451, 452.

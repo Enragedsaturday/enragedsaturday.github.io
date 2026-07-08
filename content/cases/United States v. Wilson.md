@@ -32,6 +32,8 @@ lake:
 homes:
   - page: "[[Fourth Amendment Framework]]"
     role: Key
+  - page: "[[Private and Foreign Searches]]"
+    role: "Key — hash-match split (9th Cir.)"
   - page: "[[Reasonable Expectation of Privacy]]"
     role: "Related (cross-doctrine)"
 related:
@@ -79,6 +81,7 @@ The Ninth Circuit **reversed** the denial of suppression and **vacated** Wilson'
 
 ## Appears on
 - [[Fourth Amendment Framework]] — *Key*
+- [[Private and Foreign Searches]] — *Key — hash-match split (9th Cir.)*
 - [[Reasonable Expectation of Privacy]] — *Related (cross-doctrine)*
 
 ## Sources

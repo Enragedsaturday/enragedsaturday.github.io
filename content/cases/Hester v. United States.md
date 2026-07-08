@@ -32,6 +32,8 @@ homes:
     role: "Key"
   - page: "[[Abandonment]]"
     role: "Key — Progeny / Refinement"
+  - page: "[[Abandonment]]"
+    role: "Key — Progeny / Refinement"
 related: ["[[Oliver v. United States]]", "[[United States v. Dunn]]", "[[California v. Greenwood]]", "[[Abel v. United States]]"]
 aliases: []
 tags: ["case", "fourth-amendment", "open-fields", "curtilage", "abandonment"]
@@ -69,7 +71,8 @@ The judgment of conviction was affirmed. Discarded containers were abandoned, an
 - No negative treatment. The open-fields doctrine originating here was reaffirmed and elaborated in [[Oliver v. United States]] and [[United States v. Dunn]] (distinguishing the protected curtilage from unprotected open fields).
 
 ## Appears on
-- [[Curtilage]] — *Key — Anchor*
+- [[Open Fields]] — *Key — Anchor*
+- [[Curtilage]] — *Key*
 - [[Abandonment]] — *Key — Progeny / Refinement*
 
 ## Sources

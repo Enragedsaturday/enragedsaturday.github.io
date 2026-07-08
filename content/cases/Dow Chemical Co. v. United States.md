@@ -26,8 +26,8 @@ courtlistener:
   opinion_id: 9430504
   identity_checked: true
 homes:
-  - page: "[[Curtilage]]"
-    role: "Related"
+  - page: "[[Aerial and Enhanced Surveillance]]"
+    role: "Key — Anchor"
   - page: "[[Reasonable Expectation of Privacy]]"
     role: "Related (cross-doctrine)"
 related: ["[[California v. Ciraolo]]", "[[Florida v. Riley]]", "[[Oliver v. United States]]", "[[Kyllo v. United States]]"]
@@ -67,7 +67,7 @@ The aerial photography was not a Fourth Amendment search. The judgment for the U
 - Decided the same day as [[California v. Ciraolo]] (naked-eye aerial view of a home's curtilage) and reinforced by [[Florida v. Riley]] (helicopter observation). [[Kyllo v. United States]] (2001) later cabined *sense-enhancing technology* directed at the *home's* interior, distinguishing the open-area/commercial setting here.
 
 ## Appears on
-- [[Curtilage]] — *Related*
+- [[Aerial and Enhanced Surveillance]] — *Key — Anchor*
 - [[Reasonable Expectation of Privacy]] — *Related (cross-doctrine)*
 
 ## Sources

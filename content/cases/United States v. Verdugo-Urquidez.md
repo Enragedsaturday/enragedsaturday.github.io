@@ -32,6 +32,8 @@ lake:
 homes:
   - page: "[[Fourth Amendment Framework]]"
     role: Key
+  - page: "[[Private and Foreign Searches]]"
+    role: "Key — Anchor (foreign search)"
 related:
   - "[[Fourth Amendment Framework]]"
   - "[[Fourth Amendment Recalibration]]"
@@ -71,6 +73,7 @@ The judgment of the Ninth Circuit was **reversed**. Rehnquist, C.J., delivered t
 
 ## Appears on
 - [[Fourth Amendment Framework]] — *Key*
+- [[Private and Foreign Searches]] — *Key — Anchor (foreign search)*
 
 ## Sources
 - [*United States v. Verdugo-Urquidez*, 494 U.S. 259 (1990)](https://www.courtlistener.com/opinion/112382/united-states-v-verdugo-urquidez/) — pinpoint: 265 (Opinion of the Court, "the people" holding; Rehnquist, C.J.); quote string-matched to the CL opinion text 2026-07-07.

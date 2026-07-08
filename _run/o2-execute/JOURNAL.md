@@ -1025,3 +1025,27 @@ LINT-2 med honest (5 Chatrie T4 quotes + 2 IGG paraphrase-rule heuristic — no 
 added to silence a lint). NEXT: cat-3c sibling sweep — Aerial & Enhanced (B, OWES
 Ciraolo/Florida-v-Riley/Dow primary moves + registry fill) + Private & Foreign (B) +
 Abandonment (B) + Tents (C retitle w/ S3-owned alias); then Plain View & Plain Feel (A).
+
+**BATCH 5 CLOSED — CAT-3c SIBLING SWEEP (2026-07-08):** 4 units born draft: Aerial & Enhanced
+(B authored — batch-3 residue DISCHARGED: Ciraolo/Florida-v-Riley/Dow primary→Aerial w/
+Curtilage homes dropped-not-Related [index-table consistency], Kyllo A6 co-home Key, Tuggle
+home gap closed +Aerial Related) · Private & Foreign (B authored — Jacobsen ★115 / Walter
+★657 T1; hash-match split Wilson/Reddick wikilinked vs 6th-Cir MILLER PLAIN-ITALIC
+brief-mention w/ 1976-Miller disambiguation comment, LINT-17 honest) · Abandonment (B
+born-again, ff 1→0 w/ LOGGED D2 dispositions: BLUF section DELETED w/ genuine content →
+Apply-it items, em 25.2→3.1/1k) · Tents (C born-again RETITLED "Tents & Temporary Dwellings",
+filename KEPT so slug satisfies R14(i) + bare-stem alias, deck 17 cards LINT-25=0, "(woven
+in)" c4 leak cleared). 6 MCP calls 0 REST (Ciraolo ★215, Kyllo ★40/★35, Riley ★452 w/
+FAA caveat, Dow ★239). FLORIDA-v-RILEY STALE DIGITAL MIS-HOME REMOVED (data error, aerial ≠
+third-party — explains batch-4's "Riley homes to overview" residue); Riley v. California
+confirmed SIA-owned, untouched. Owed home_rows 6/6 (Burdeau by-presence; Hunt/Small/Crumble→
+Abandonment LCD; Ruckman Key + LaDuke lineage → Tents, stale no-page notes cleared). Drone/UAS
+= honest gap, no terminal no case. ORCHESTRATOR REPAIR: Hester mirror drift (batch-3 ours) —
+homes[] had dropped Abandonment, Appears-on missed Open Fields + stale Curtilage role; BOTH
+SIDES repaired, index regenerated (own-run drift never accumulates to S9). OWED FORWARD:
+FA-Framework batch demotes its private-search bullets/co-anchor homes to Private&Foreign
+pointer (rule A); Case-Index-good vs lake-under_review divergence (Wilson/Verdugo/Burdeau)
+pre-existing → S9; ER-index 4 LINT-19 HIGH pre-existing → its A4 severance batch. GATES:
+run_all 8252→8198 all-decrease (introduced anchors fixed→0), LINT-15/16 0/0, LINT-17 0,
+LINT-25 0, survey em 20.5/1k, build 721/2768 (+13 alias redirects). NEXT: Plain View & Plain
+Feel (A, closes cat-3) — TEACH-02c ×6, TEACH-03 ×5, Dickerson in-page note T2#12.

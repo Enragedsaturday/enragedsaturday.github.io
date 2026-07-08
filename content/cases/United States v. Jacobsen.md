@@ -28,6 +28,8 @@ courtlistener:
 homes:
   - page: "[[Fourth Amendment Framework]]"
     role: "Key — Anchor"
+  - page: "[[Private and Foreign Searches]]"
+    role: "Key — Anchor"
 related: ["[[Katz v. United States]]", "[[Carpenter v. United States]]", "[[United States v. Jones]]"]
 aliases: []
 tags: ["case", "fourth-amendment", "search-definition", "seizure-definition", "private-search-doctrine", "field-test", "government-action"]
@@ -68,6 +70,7 @@ Neither the reinspection of the package nor the field test was an unreasonable s
 
 ## Appears on
 - [[Fourth Amendment Framework]] — *Key — Anchor*
+- [[Private and Foreign Searches]] — *Key — Anchor*
 
 ## Sources
 - *United States v. Jacobsen*, 466 U.S. 109 (1984) — https://www.courtlistener.com/opinion/111143/united-states-v-jacobsen/ — pinpoints: 113, 115, 123.

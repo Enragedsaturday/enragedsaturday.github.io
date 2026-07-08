@@ -26,8 +26,8 @@ courtlistener:
   opinion_id: 9430502
   identity_checked: true
 homes:
-  - page: "[[Curtilage]]"
-    role: "Key — Progeny / Refinement"
+  - page: "[[Aerial and Enhanced Surveillance]]"
+    role: "Key — Anchor"
 related: ["[[Florida v. Riley]]", "[[California v. Greenwood]]", "[[Kyllo v. United States]]", "[[Florida v. Jardines]]"]
 aliases: []
 tags: ["case", "fourth-amendment", "curtilage", "aerial-surveillance", "expectation-of-privacy"]
@@ -63,7 +63,7 @@ The aerial observation was not a Fourth Amendment search; the judgment suppressi
 - No negative treatment. *Ciraolo* was **followed** by [[Florida v. Riley]] (helicopter at 400 feet) and is **distinguished** from sense-enhancing-technology cases such as [[Kyllo v. United States]] and the physical-intrusion analysis of [[Florida v. Jardines]].
 
 ## Appears on
-- [[Curtilage]] — *Key — Progeny / Refinement*
+- [[Aerial and Enhanced Surveillance]] — *Key — Anchor*
 
 ## Sources
 - *California v. Ciraolo*, 476 U.S. 207 (1986) — https://www.courtlistener.com/opinion/111666/california-v-ciraolo/ — pinpoint: 215.

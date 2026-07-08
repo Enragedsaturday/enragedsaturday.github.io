@@ -28,6 +28,8 @@ courtlistener:
 homes:
   - page: "[[Reasonable Expectation of Privacy]]"
     role: "Key"
+  - page: "[[Aerial and Enhanced Surveillance]]"
+    role: "Key — enhanced-sensor limit"
   - page: "[[Curtilage]]"
     role: "Related (cross-doctrine)"
   - page: "[[Third-Party Doctrine & CSLI]]"
@@ -70,6 +72,7 @@ The thermal imaging was an unlawful warrantless search; the case was remanded to
 
 ## Appears on
 - [[Reasonable Expectation of Privacy]] — *Key*
+- [[Aerial and Enhanced Surveillance]] — *Key — enhanced-sensor limit*
 - [[Curtilage]] — *Related (cross-doctrine)*
 - [[Third-Party Doctrine & CSLI]] — *Related (cross-doctrine)*
 
