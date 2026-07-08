@@ -38,6 +38,7 @@ import json
 import os
 import re
 import sys
+import tempfile
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import _common as c  # noqa: E402
@@ -133,6 +134,15 @@ def covered_by_page(caption, idx, page_tokenlists):
     return False
 
 
+# The known non-authored terminal states (module docstring / S6 R11). Any other
+# `terminal` value on a ledger row is un-vetted and must fail closed rather than
+# silently allowlist a caption as covered.
+_NONAUTHORED_TERMINALS = {
+    "brief-mention", "excluded-remit", "unverifiable",
+    "removed", "folded-alias", "watch",
+}
+
+
 def load_allowlist(ledger_path=None):
     """Normalized caption/alias set of every NON-authored ledger row + every
     frozen corpus_mention_baseline row. Returns (allowlist:set, error:str|None)."""
@@ -141,15 +151,26 @@ def load_allowlist(ledger_path=None):
         return set(), ("coverage ledger missing: %s not found — LINT-17 cannot "
                        "allowlist non-page terminals [S6 R11/R12]" % LEDGER_REL)
     try:
-        led = json.load(open(path, encoding="utf-8"))
+        with open(path, encoding="utf-8") as f:
+            led = json.load(f)
     except (OSError, json.JSONDecodeError) as exc:
         return set(), "coverage ledger unreadable (%s): %s" % (LEDGER_REL, exc)
+    if not isinstance(led, dict):
+        return set(), "coverage ledger malformed (%s): expected a JSON object" % LEDGER_REL
     allow = set()
     for row in led.get("rows", []):
-        if row.get("terminal") == "authored":
+        if not isinstance(row, dict):
+            return set(), "coverage ledger malformed (%s): non-dict row" % LEDGER_REL
+        term = row.get("terminal")
+        if term == "authored":
             continue
+        if term not in _NONAUTHORED_TERMINALS:
+            return set(), ("coverage ledger row has unknown terminal state %r "
+                           "[S6 R11]" % term)
         _add_allow(allow, row)
     for row in led.get("corpus_mention_baseline", []):
+        if not isinstance(row, dict):
+            return set(), "coverage ledger malformed (%s): non-dict baseline row" % LEDGER_REL
         _add_allow(allow, row)
     return allow, None
 
@@ -241,6 +262,37 @@ def self_test():
         check("fixture-pass-no-missing", miss, [])
     else:
         check("fixture-pass-present", False, True)
+
+    # (3) load_allowlist() fail-closed gate — the actual ledger-parsing path, the
+    #     highest-value thing to self-test. Each malformed/unexpected ledger must
+    #     return a non-None error, never a silent empty allowlist.
+    def allow_err(name, content, want_err):
+        with tempfile.NamedTemporaryFile("w", suffix=".json", delete=False,
+                                         encoding="utf-8") as tf:
+            tf.write(content)
+            tmp = tf.name
+        try:
+            _, err = load_allowlist(tmp)
+        finally:
+            os.unlink(tmp)
+        check(name, err is not None, want_err)
+
+    # missing ledger file (path does not exist) -> error
+    missing_path = os.path.join(tempfile.gettempdir(), "lint17-nonexistent-ledger.json")
+    if os.path.exists(missing_path):
+        os.unlink(missing_path)
+    _, merr = load_allowlist(missing_path)
+    check("load_allowlist-missing-ledger", merr is not None, True)
+    allow_err("load_allowlist-malformed-json", "{ not: json", True)
+    allow_err("load_allowlist-top-level-not-object", '["a", "list"]', True)
+    allow_err("load_allowlist-non-dict-row",
+              json.dumps({"rows": ["notadict"]}), True)
+    allow_err("load_allowlist-unknown-terminal",
+              json.dumps({"rows": [{"terminal": "bogus", "caption": "X v. Y"}]}), True)
+    allow_err("load_allowlist-non-dict-baseline",
+              json.dumps({"corpus_mention_baseline": ["notadict"]}), True)
+    allow_err("load_allowlist-valid-nonauthored",
+              json.dumps({"rows": [{"terminal": "brief-mention", "caption": "X v. Y"}]}), False)
 
     sys.stderr.write("[self-test] %s\n" % ("PASS" if ok else "FAIL"))
     return 0 if ok else 1

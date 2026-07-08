@@ -863,3 +863,23 @@ arithmetic stated honestly: authored PAGES = 148 ≤ §9 guard 150 (page-planned
 3 of the original 148 went to honest non-page terminals). LINT-17 corpus PASS page-backed (not
 allowlisted). S6 AUTHORING COMPLETE — remaining S6-close: spec-completion CodeRabbit gate over
 the S6 code surface (formal trigger), S6→S7 handoff, run brief.
+
+**S6 CLOSED (2026-07-07):** spec-completion CodeRabbit gate (formal trigger, artifact
+S6-coderabbit-2f77004.md): 15 findings (12 major/3 minor), ALL UPHELD → ALL FIXED same session
+(fail-closed hardening across gate.sh timeout, lint21 mandatory fixtures, lint17 allowlist
+validation + 7 fail-closed self-tests, ingest state-None/slip-evidence/fetch-fail-queue/batch-
+prevalidate/writeback-normalize + flag-dependency refusals + ruff batch, stamper WARN, mint
+cluster-guard fail-open→RAISE, slip-test de-tautologized); item-10 read-only lake scan CLEAN
+(665 records: 0 dup-year labels, 0 stale mutex fields — the executed repairs left no damage;
+fix purely preventive). Suites: ingest/mint 43/43/projector/serializer/lint17/lint21 all green;
+LINT-13 + LINT-17 corpus 0; run_all findings byte-identical to baseline. KNOWN-RED noted w/
+owner: stamp_slip_only --self-test crashes on a hard-coded pre-promotion Landor path
+(pre-existing, proven by stash test; stamper's real work complete + dormant; fix = fixture-seed,
+next s6 touch). S6→S7 HANDOFF delivered (`_run/o2-execute/S6-TO-S7-HANDOFF.md`): scoreboard,
+pipeline entry point + payload contract, **158 owed home_rows** (148 Key + 10 Related — S7
+materializes at per-page conversion, zero-drop accounting) + 58 non-page placements, binding
+amendments (per-page convert · schema-3 flip · plain_text fallback · L4 · no-S7-code-gate),
+S9-owed register, lake state (665 records; 662-vs-665 prose-drift + baseline-56-vs-58 gaps
+documented honestly in §6). **S6 IS CLOSED. NEXT: S7 opens with its USER INTERVIEW** (runbook:
+Prompt.md regenerate-or-drop decision at minimum rides it) — autonomous stretch ends at this
+pause; run brief served.

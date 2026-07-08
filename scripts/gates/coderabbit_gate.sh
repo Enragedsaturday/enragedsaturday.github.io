@@ -34,9 +34,17 @@ CR_GATE_TIMEOUT="${CR_GATE_TIMEOUT:-3600}"
 # CR-18: `:-` only defaults on unset/empty, so an explicit 0 (or a non-numeric
 # value perl coerces to 0) would reach `alarm 0` and CANCEL the timer, defeating
 # the "can never hang a session" guarantee. Reject non-positive/non-numeric values.
+# CR-S6: the literal `|0)` case only catches the string "0" — a multi-zero value
+# like "00"/"000" survives `[!0-9]` (all digits) yet perl coerces it to numeric 0
+# and cancels the timer. Reject non-numeric here, then reject any zero-equivalent
+# via base-10 arithmetic (10# so "08"/"09" aren't mis-read as bad octal).
 case "$CR_GATE_TIMEOUT" in
-  ''|*[!0-9]*|0) echo "coderabbit_gate: CR_GATE_TIMEOUT must be a positive integer (got '${CR_GATE_TIMEOUT}')" >&2; exit 2 ;;
+  ''|*[!0-9]*) echo "coderabbit_gate: CR_GATE_TIMEOUT must be a positive integer (got '${CR_GATE_TIMEOUT}')" >&2; exit 2 ;;
 esac
+if [ "$((10#$CR_GATE_TIMEOUT))" -le 0 ]; then
+  echo "coderabbit_gate: CR_GATE_TIMEOUT must be a positive integer (got '${CR_GATE_TIMEOUT}')" >&2
+  exit 2
+fi
 
 bounded() { # bounded <seconds> <cmd...>
   local secs="$1"; shift

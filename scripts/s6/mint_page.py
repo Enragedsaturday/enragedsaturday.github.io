@@ -715,8 +715,15 @@ def cluster_collision(lake_root, record_id, cluster_id):
     for p in sorted(glob.glob(os.path.join(lake_cases_dir(lake_root), "*.json"))):
         try:
             rec = read_json(p)
-        except Exception:
-            continue
+        except Exception as exc:
+            # Fail-closed (F-R8-13/Davis): an unreadable record could be the very
+            # one that collides on cluster_id. Silently skipping it (fail-OPEN)
+            # would report "no collider" and let the mint double-page the opinion —
+            # the exact failure this guard exists to prevent.
+            raise RuntimeError(
+                "cluster-collision scan cannot verify %r is unique — unreadable "
+                "lake record %s: %s" % (record_id, lint_common.relpath(p), exc)
+            ) from exc
         rid = rec.get("record_id")
         if rid == record_id:
             continue                                  # our own stub
@@ -1615,8 +1622,12 @@ def self_test():
              "roles": [{"home": "doctrine/Fixture Doctrine.md", "role": "Key"}]}]})
         p = mint(fs, "fixture-slip--900700", os.path.join(fx, "payload-slip.md"), wl=wl_slip)
         check("slip-only marked row mints (S2 A3)", p.get("ok") and not p.get("refused"))
+        # Assert on the DERIVED projection value, not the rendered page text: the
+        # payload-slip.md fixture body already hard-codes this string, so a text
+        # search would pass even if slip-cite derivation/frontmatter injection were
+        # broken. projection.citation is produced by derive_slip_cite, not the body.
         check("slip cite injected into frontmatter",
-              "No. 23-1197, slip op. (U.S. 2026)" in (p.get("page", {}) or {}).get("text", ""))
+              (p.get("projection", {}) or {}).get("citation") == "No. 23-1197, slip op. (U.S. 2026)")
         check("slip cite in ledger + home_rows",
               p["ledger"]["row"]["cite"] == "No. 23-1197, slip op. (U.S. 2026)"
               and p["ledger"]["row"]["home_rows"][0]["cite"] == "No. 23-1197, slip op. (U.S. 2026)")

@@ -476,3 +476,98 @@ LINT-13 **0**.
 `--self-test` **41/41** · specimen PASS · stamp `--self-test` **7/7** · LINT-13 self-test PASS. Files
 touched: `scripts/s2/project.py`, `scripts/s6/{mint_page.py, stamp_slip_only.py}` + this addendum —
 no `content/` write, no other lake writes, nothing committed.
+
+---
+
+## 14. Addendum — S6 spec-completion CodeRabbit gate, 15 findings applied (2026-07-08, @2f77004)
+
+The S6 gate (`_run/gates/S6-coderabbit-2f77004.md`, cli 0.6.4, scope `scripts/` only) returned **15
+findings (12 major / 3 minor), all UPHELD**. Each verified against the live code before applying (the
+artifact's patches were suggestions); every one was a genuine fix — **0 declined**. Code-only; **no
+`content/`, no lake writes, nothing committed** (orchestrator commits at the gate).
+
+**Per-finding status (all FIXED + independently verified):**
+1. `gates/coderabbit_gate.sh` — the `|0)` case matched only the literal `"0"`; multi-zero `"00"/"000"`
+   survived `[!0-9]` yet perl coerces them to `alarm 0` (timer cancelled). Now: reject non-numeric in the
+   `case`, then reject any zero-equivalent via `[ "$((10#$TIMEOUT))" -le 0 ]` (10# so `08`/`09` aren't
+   mis-read as bad octal). Verified on the real script: `00/000/0` → exit-2 guard message; `08→8s`, `3600`
+   accepted.
+2. `lint21_binding.py` self-test — badstruct/non-string-node fixtures moved from optional `if
+   os.path.isfile` into the MANDATORY required-fixtures tuple (fail if missing). Self-test **PASS** (both
+   cases now always run).
+3. `s2/ingest.py` `self_test_apply_web_cites` — the 4 web-leg refusal cases (only-1-leg / duplicate-source
+   / Wikipedia / disagreement) ran against `empty-coa--111`, which the `good` batch had already made
+   citation-bearing, so the already-bearing guard fired **before** `validate_web_legs` (validation never
+   exercised). Added a fresh non-bearing `fresh-coa--555` row and repointed the 4 cases at it; kept one
+   explicit already-bearing refusal on `empty-coa--111`. ingest `--self-test` **passed**.
+4. `s2/ingest.py` — `--repair-coa-state-allow-docket-fetch` without `--repair-coa-state-from-cache` was
+   silently ignored. Added a fail-closed guard in `run_ingest` (co-located with the `--records` guard,
+   before any CL/lake work). Verified: fires with exact message, **zero CL calls, lake untouched**.
+5. `s2/ingest.py` ruff batch — 2 ambiguous `l`→`leg` (comprehensions), 2 redundant single-item
+   `except (IngestInterrupted,)`→`except IngestInterrupted`, 1 semicolon statement split. `py_compile` OK.
+6. `s2/ingest.py` `derive_coa_state_court` — both the docket-authoritative and cache-only state branches
+   could `write` `court_level="state"` with `state=None`. Now both `refuse`
+   (`state-no-state`/`state-no-state-cache`). Verified on both paths; the roster/reporter-hint control
+   still writes.
+7. `s2/ingest.py` `apply_web_cites` — `slip_only:true` journaled a terminal slip-only outcome even with
+   empty legs/evidence. Now requires `legs`/`evidence` in Phase-1 validation (SystemExit otherwise). All
+   20 real slip rows in `R8-R3-web-cites.jsonl` carry evidence, so re-runs are unaffected. Verified.
+8. `s2/ingest.py` `repair_coa_state_from_cache` — a `FetchFailed` during `allow_docket_fetch` (docket AND
+   court legs) fell through to a weaker cache-only write. Now journals `queued-for-lane` + `continue` (no
+   write after an authoritative fetch error). Verified: docket `FetchFailed:503` → queued, `court_level`
+   unchanged.
+9. `s2/ingest.py` `repair_identity_from_cache` — validated+wrote per row; a later out-of-scope/missing row
+   could leave earlier rows already repaired. Restructured to Phase-1 batch pre-validation → Phase-2
+   write (mirrors `repair_coa_state_from_cache`). Verified: a later `fabrication_suspected` row aborts the
+   batch with the first row **unwritten**.
+10. `s2/ingest.py` coa/state writeback — normalized: never double-stamp a year onto a label that already
+    carries it (`re.search(\b<year>\b)`); clear mutually-exclusive fields (`circuit` only on coa, `state`
+    only on state — safe because each is non-None only at its own level); mirror `circuit`/`state` to the
+    manifest row. Verified on the exact `9th Cir. 2021` case: label stays `9th Cir. 2021` (no dup), stale
+    state cleared; a `La.` state row gets `La. 2019` with its stale `ca5` circuit cleared; manifest mirrored.
+11. `lint17_coverage.py` — added `load_allowlist()` self-test cases (missing ledger / malformed JSON /
+    non-object top / non-dict row / unknown terminal → error; valid non-authored → ok). lint17
+    `--self-test` **PASS** (all 7 new).
+12. `lint17_coverage.py` `load_allowlist` fail-closed hardening — context-managed handle; `isinstance(led,
+    dict)`; non-dict row/baseline → clean error (not `AttributeError`); terminal validated against
+    `_NONAUTHORED_TERMINALS` (unknown → error). Real ledger carries only the 7 known terminals (authored
+    148 / brief-mention 55 / excluded-remit 26 / folded-alias 8 / removed 2 / unverifiable 1 / watch 3), so
+    **LINT-17 corpus-wide stays 0/0/0**.
+13. `s6/stamp_slip_only.py` `load_allowlist` — malformed JSONL lines were silently dropped; now WARN to
+    stderr with the parse error. Verified in isolation (bad line warned, valid `slip_only` rows still
+    loaded).
+14. `s6/mint_page.py` `cluster_collision` — `except Exception: continue` was fail-OPEN (an unreadable
+    record could be the very collider — the F-R8-13/Davis double-page this guard prevents). Now RAISE
+    fail-closed. Verified: an unreadable lake record raises `RuntimeError`; the null-cluster short-circuit
+    still returns `(None, None)`.
+15. `s6/mint_page.py` slip self-test — the assertion searched the rendered page text for a string the
+    `payload-slip.md` body already hard-codes (tautological). Now asserts on the derived
+    `p["projection"]["citation"]` (produced by `derive_slip_cite`, not the body). mint `--self-test`
+    **43/43**.
+
+**Test totals (all green or explained):** ingest `--self-test` **PASS** · mint `--self-test` **43/43** ·
+projector `--self-test` **PASS** · serializer `--self-test` PASS · lint21 `--self-test` **PASS** · lint17
+`--self-test` **PASS** · `bash -n coderabbit_gate.sh` OK · `py_compile` (all 5 py) OK · **LINT-13
+corpus-wide 0/0/0** · **LINT-17 corpus-wide 0/0/0** · `run_all.py` JSON findings **byte-identical to the
+pre-edit baseline** (8372 lines; only 7 new `[self-test] … -> OK` stderr lines from finding-11 cases —
+run_all's exit=1 is entirely pre-existing legacy-content lints on files this lane never touched).
+
+**One explained non-green:** `s6/stamp_slip_only.py --self-test` exits 1 — **pre-existing, unrelated to
+this gate.** It crashes at `self_test` line 205 `read_json(live)` reading a hard-coded pre-promotion stub
+path `…/landor-…--10878535.json`; the Landor slip case was minted → promoted to
+`Landor v. Louisiana Dept. of Corrections.json` in a later W-wave, so the stub is gone (§13 recorded this
+self-test at 7/7 before that promotion). Proven independent of finding-13's edit by re-running with my
+hunk `git stash`ed — **identical crash**, and the crash is upstream of the `load_allowlist` I changed.
+Recommendation (NOT one of the 15, left for the orchestrator): de-fragile the self-test to seed its own
+slip-shaped fixture instead of reading a live lake record.
+
+**Item-10 mandated READ-ONLY lake damage scan** (pre-fix coa/state repairs already ran in the W-waves —
+scanned 665 lake case files + 665 manifest rows for the damage classes finding-10 warns about):
+**CLEAN — 0 findings.** 0 duplicated-year labels (e.g. `9th Cir. 2021 2021`), 0 any-token-repeat labels,
+0 stale circuit on state rows, 0 stale state on coa rows (non-vacuous: 527 scotus / 107 coa / 17 state / 4
+other / 10 null; the mutual-exclusion invariant already holds lake-wide). **No remediation write is owed;
+finding-10's fix is purely preventive going forward. No fix note prepared (nothing to fix).**
+
+Files touched: `scripts/gates/coderabbit_gate.sh`, `scripts/lint/{lint17_coverage.py, lint21_binding.py}`,
+`scripts/s2/ingest.py`, `scripts/s6/{mint_page.py, stamp_slip_only.py}` + this addendum. No `content/`, no
+lake writes, no `scripts/s2/project.py`, nothing committed.

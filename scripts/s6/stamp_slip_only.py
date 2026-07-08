@@ -77,7 +77,13 @@ def load_allowlist(path):
                 continue
             try:
                 row = json.loads(line)
-            except json.JSONDecodeError:
+            except json.JSONDecodeError as exc:
+                # The allowlist is the enumerated source of truth (never a
+                # wildcard); a corrupt/truncated line for one of the real cases
+                # would silently vanish from `out` and later be refused as
+                # NOT_IN_ALLOWLIST — indistinguishable from "not meant to stamp".
+                # Surface the parse failure so the operator sees the file is bad.
+                sys.stderr.write("WARN: malformed allowlist line skipped: %s\n" % exc)
                 continue
             if row.get("slip_only") is True and row.get("record_id"):
                 out[row["record_id"]] = row

@@ -253,11 +253,13 @@ def self_test():
     b_pass = os.path.join(fixdir, "lint-21-binding-pass.yaml")
     b_dangle = os.path.join(fixdir, "lint-21-binding-dangling-fail.yaml")
     b_emptynodes = os.path.join(fixdir, "lint-21-binding-emptynodes-fail.yaml")
+    b_badstruct = os.path.join(fixdir, "lint-21-binding-badstruct-fail.yaml")
+    b_nonstr = os.path.join(fixdir, "lint-21-binding-nonstring-node-fail.yaml")
     lake_bound = os.path.join(fixdir, "lint-21-lake-bound")
     lake_pending = os.path.join(fixdir, "lint-21-lake-pending")
     lake_unbound = os.path.join(fixdir, "lint-21-lake-unbound")
     lake_corrupt = os.path.join(fixdir, "lint-21-lake-corrupt")
-    for req in (reg, b_pass, b_dangle, b_emptynodes):
+    for req in (reg, b_pass, b_dangle, b_emptynodes, b_badstruct, b_nonstr):
         if not os.path.isfile(req):
             sys.stderr.write("[self-test] FAIL: missing fixture %s\n" % req)
             return 1
@@ -301,12 +303,11 @@ def self_test():
 
     # CR-10: a malformed binding structure (bound/pending not a list) is HIGH,
     # never coerced to []; a non-string node id is rejected, never silently dropped.
-    b_badstruct = os.path.join(fixdir, "lint-21-binding-badstruct-fail.yaml")
-    if os.path.isfile(b_badstruct):
-        case("malformed bound/pending struct", b_badstruct, lake_bound, "high")
-    b_nonstr = os.path.join(fixdir, "lint-21-binding-nonstring-node-fail.yaml")
-    if os.path.isfile(b_nonstr):
-        case("non-string node id", b_nonstr, lake_bound, "high")
+    # CR-S6: these two fail-closed fixtures are MANDATORY (asserted present above,
+    # like reg/b_pass/b_dangle/b_emptynodes) — an optional os.path.isfile gate that
+    # quietly no-ops is the self-test analogue of silent-success-on-missing-input.
+    case("malformed bound/pending struct", b_badstruct, lake_bound, "high")
+    case("non-string node id", b_nonstr, lake_bound, "high")
 
     # CONFIRMED critical #2: a corrupt/unreadable lake case file is surfaced as a
     # HIGH, never silently skipped (fail-closed).

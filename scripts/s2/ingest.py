@@ -977,6 +977,10 @@ def derive_coa_state_court(identity, cluster, docket=None, court_obj=None):
             if hint:
                 state = hint
                 notes.append("state filled from %s hint" % ("roster" if roster_state else "reporter"))
+            else:
+                # Fail closed: a state court identity with no state is incomplete,
+                # not a verified identity — escalate rather than record it.
+                return refuse("state-no-state docket-court=%s (no roster/reporter state hint)" % docket_court_id)
         return write(level, circuit, state, label, auth["basis"], "docket-authoritative", notes)
 
     # cache-only fallback: roster + reporter must agree; coa needs a circuit.
@@ -999,7 +1003,12 @@ def derive_coa_state_court(identity, cluster, docket=None, court_obj=None):
     if level == "state":
         if roster_state and rep_state and roster_state != rep_state:
             return refuse("roster-reporter-state-conflict roster=%s reporter=%s" % (roster_state, rep_state))
-        return write("state", None, roster_state or rep_state, label, "roster+reporter(cache)",
+        state = roster_state or rep_state
+        if not state:
+            # Fail closed: a regional/state reporter without any state hint cannot
+            # yield a complete state identity from cache — escalate to a docket fetch.
+            return refuse("state-no-state-cache (regional/state reporter without state hint; fetch docket to resolve)")
+        return write("state", None, state, label, "roster+reporter(cache)",
                      "cache-only (no docket confirmation)")
     if level == "district":
         return write("district", None, None, label, "roster+reporter(cache)",
@@ -4873,6 +4882,12 @@ def apply_web_cites(paths, manifest, journal, cites_path, allow_statuses=WEB_CIT
         if current_display:
             raise SystemExit("--apply-web-cites refuses already-citation-bearing row %s (display=%s)" % (record_id, current_display))
         if entry.get("slip_only"):
+            # slip_only bypasses leg/cite validation; still require concrete
+            # evidence so an empty result can never journal a verified terminal
+            # slip-only outcome (fail-closed).
+            evidence = entry.get("legs") or entry.get("evidence")
+            if not evidence:
+                raise SystemExit("--apply-web-cites row %s slip_only:true requires legs/evidence" % record_id)
             plans.append(("slip", record_id, row, record, entry, None, None))
             continue
         official_cite = clean_s6_candidate_value(entry.get("cite"))
@@ -4921,7 +4936,7 @@ def apply_web_cites(paths, manifest, journal, cites_path, allow_statuses=WEB_CIT
         _web_cites_journal(
             journal, record_id=record_id, status="applied", before=None, after=display,
             court_class=court_class, cite=display,
-            legs=[{"source": l["source"], "url": l["url"], "cite": l["cite"]} for l in legs],
+            legs=[{"source": leg["source"], "url": leg["url"], "cite": leg["cite"]} for leg in legs],
             source=WEB_CITES_SOURCE,
         )
         applied.append(record_id)
@@ -4945,10 +4960,16 @@ IDENTITY_REPAIR_STEP = "r8.identity-repair"
 def repair_identity_from_cache(paths, manifest, journal, client, record_ids,
                                allow_statuses=("verified_identity",)):
     allow_statuses = tuple(allow_statuses)
-    repaired = []
-    queued = []
+    # Phase 1 — validate the whole batch before any write (fail closed): an
+    # out-of-scope, missing, or cluster-less record must abort BEFORE any earlier
+    # row is repaired (mirrors repair_coa_state_from_cache's batch pre-validation).
+    targets = []
+    seen = set()
     for raw_id in unique_preserve_order(record_ids):
         record_id = manifest.resolve_record_id(raw_id) or raw_id
+        if record_id in seen:
+            continue
+        seen.add(record_id)
         row = manifest.by_record_id.get(record_id)
         if not row:
             raise SystemExit("--repair-identity-from-cache record not found in manifest: %s" % raw_id)
@@ -4957,10 +4978,16 @@ def repair_identity_from_cache(paths, manifest, journal, client, record_ids,
         record = load_case_record(paths, record_id)
         if record is None:
             raise SystemExit("--repair-identity-from-cache lake record missing on disk: %s" % record_id)
-        identity = record.get("identity") or {}
-        cluster_id = identity.get("cluster_id")
+        cluster_id = (record.get("identity") or {}).get("cluster_id")
         if not cluster_id:
             raise SystemExit("--repair-identity-from-cache row %s has no identity.cluster_id" % record_id)
+        targets.append((record_id, row, record, cluster_id))
+
+    # Phase 2 — per-row cache fetch + write, journaled.
+    repaired = []
+    queued = []
+    for record_id, row, record, cluster_id in targets:
+        identity = record.get("identity") or {}
         try:
             cluster = client.get_cluster(cluster_id, record_id=record_id, step=IDENTITY_REPAIR_STEP + ".cluster")
         except (IngestInterrupted, FetchFailed) as exc:
@@ -5099,15 +5126,22 @@ def repair_coa_state_from_cache(paths, manifest, journal, client, record_ids,
             if docket_id:
                 try:
                     docket = client.get_docket(int(docket_id), record_id=record_id, step=COA_STATE_REPAIR_STEP + ".docket")
-                except (IngestInterrupted,) as exc:
+                except IngestInterrupted as exc:
                     _journal_coa_state_repair(journal, record_id=record_id, status="queued-for-lane",
                                               reason=getattr(exc, "reason", None) or "docket_budget",
                                               cluster_id=cluster_id)
                     queued.append(record_id)
                     continue
                 except FetchFailed as exc:
-                    docket_fetch_note = "docket-fetch-failed:%s" % (getattr(exc, "status", None) or getattr(exc, "reason", None))
-                    docket = None
+                    # An authoritative docket fetch that ERRORED must not fall
+                    # through to a weaker cache-only derivation; queue for the lane.
+                    _journal_coa_state_repair(
+                        journal, record_id=record_id, status="queued-for-lane",
+                        reason="docket-fetch-failed:%s" % (getattr(exc, "status", None) or getattr(exc, "reason", None)),
+                        cluster_id=cluster_id,
+                    )
+                    queued.append(record_id)
+                    continue
             else:
                 docket_fetch_note = "cluster-has-no-docket-ref"
             court_slug = None
@@ -5118,14 +5152,22 @@ def repair_coa_state_from_cache(paths, manifest, journal, client, record_ids,
             if court_slug and not _court_id_is_structural(court_slug):
                 try:
                     court_obj = client.get_court(court_slug, record_id=record_id, step=COA_STATE_REPAIR_STEP + ".court")
-                except (IngestInterrupted,) as exc:
+                except IngestInterrupted as exc:
                     _journal_coa_state_repair(journal, record_id=record_id, status="queued-for-lane",
                                               reason=getattr(exc, "reason", None) or "court_budget",
                                               cluster_id=cluster_id)
                     queued.append(record_id)
                     continue
                 except FetchFailed as exc:
-                    court_obj = None  # classify falls back to structural / state-slug; may escalate
+                    # An authoritative court fetch that ERRORED must not fall
+                    # through to a weaker cache-only derivation; queue for the lane.
+                    _journal_coa_state_repair(
+                        journal, record_id=record_id, status="queued-for-lane",
+                        reason="court-fetch-failed:%s" % (getattr(exc, "status", None) or getattr(exc, "reason", None)),
+                        cluster_id=cluster_id,
+                    )
+                    queued.append(record_id)
+                    continue
 
         decision = derive_coa_state_court(identity, cluster, docket=docket, court_obj=court_obj)
         common = {
@@ -5156,12 +5198,17 @@ def repair_coa_state_from_cache(paths, manifest, journal, client, record_ids,
         identity["court_level"] = level
         if decision.get("court_id"):
             identity["court_id"] = decision["court_id"]
-        if circuit:
-            identity["circuit"] = circuit
-        if level == "state" and state:
-            identity["state"] = state
+        # Clear mutually-exclusive fields: circuit belongs only to coa, state only
+        # to state. `circuit` is non-None only for coa and `state` only for state,
+        # so this writes the derived value AND clears a stale annotation left by a
+        # prior mis-key (circuit on a state row / state on a coa row).
+        identity["circuit"] = circuit if level == "coa" else None
+        identity["state"] = state if level == "state" else None
         if label:
-            identity["court"] = ("%s %s" % (label, year)) if year else label
+            # Never double-stamp the year onto a label that already carries it
+            # (cache-only labels like "9th Cir. 2021" must not become "9th Cir. 2021 2021").
+            label_has_year = bool(year and re.search(r"\b%s\b" % re.escape(str(year)), str(label)))
+            identity["court"] = ("%s %s" % (label, year)) if year and not label_has_year else label
         if date_filed:
             identity["date_decided"] = date_filed
         if year is not None:
@@ -5173,8 +5220,10 @@ def repair_coa_state_from_cache(paths, manifest, journal, client, record_ids,
 
         row["court"] = identity.get("court")
         row["court_level"] = level
-        if circuit:
-            row["circuit"] = circuit
+        # Mirror the normalized identity to the manifest row, including the cleared
+        # mutually-exclusive fields (so a stale circuit/state cannot survive here).
+        row["circuit"] = identity.get("circuit")
+        row["state"] = identity.get("state")
         if date_filed:
             row["date_decided"] = date_filed
         if year is not None:
@@ -6337,6 +6386,11 @@ def run_ingest(args):
         return
     if args.records and not args.rerun_lane:
         raise SystemExit("--records is only valid with --rerun-lane")
+    if args.repair_coa_state_allow_docket_fetch and not args.repair_coa_state_from_cache:
+        # Fail closed: the docket-fetch opt-in is meaningless (and silently
+        # ignored) without the repair action it gates — refuse rather than fall
+        # through to the normal ingest path and consume CL calls.
+        raise SystemExit("--repair-coa-state-allow-docket-fetch requires --repair-coa-state-from-cache")
     if args.apply_web_cites:
         if (
             args.apply_web_keys or args.apply_alias_folds or args.enrich_citations
@@ -10526,6 +10580,12 @@ def self_test_apply_web_cites():
             stub_row("slip-scotus--222", cluster_id=222),
             stub_row("already-bearing--333", cluster_id=333),
             stub_row("out-of-scope--444", status="fabrication_suspected", cluster_id=444),
+            # A fresh, in-scope, NON-citation-bearing row dedicated to the web-leg
+            # validation refusals below: empty-coa--111 becomes citation-bearing after
+            # the `good` batch, so pointing leg refusals at it would trip the
+            # already-bearing guard BEFORE validate_web_legs runs — masking the
+            # duplicate-source/Wikipedia/disagreement checks the cases mean to exercise.
+            stub_row("fresh-coa--555", cluster_id=555),
         ]}
         write_json(paths.manifest, manifest_data)
         manifest = ManifestStore(paths.manifest)
@@ -10540,7 +10600,7 @@ def self_test_apply_web_cites():
                             "type": 1, "selected_official": True, "source": "cluster.citations[]"}
                 rec["citations"].update({"official": official, "all": [official], "display": display})
             write_case_record(paths, rec)
-        for rid in ("empty-coa--111", "slip-scotus--222", "out-of-scope--444"):
+        for rid in ("empty-coa--111", "slip-scotus--222", "out-of-scope--444", "fresh-coa--555"):
             seed(rid)
         seed("already-bearing--333", display="1 U.S. 1")
 
@@ -10568,7 +10628,7 @@ def self_test_apply_web_cites():
         assert cit["display"] == "988 F.3d 8"
         assert cit["official"]["source"] == "web-dual-leg"
         assert all(c["source"] == "web-dual-leg" for c in cit["all"])
-        assert len(cit["web_legs"]) == 2 and {l["source"] for l in cit["web_legs"]} == {"Google Scholar", "Court PDF"}
+        assert len(cit["web_legs"]) == 2 and {leg["source"] for leg in cit["web_legs"]} == {"Google Scholar", "Court PDF"}
         assert rec["status"] == "verified_identity"
         assert manifest.by_record_id["empty-coa--111"]["official_cite"] == "988 F.3d 8"
         # slip row: no citations written, display still empty, terminal journaled
@@ -10584,14 +10644,20 @@ def self_test_apply_web_cites():
             except SystemExit:
                 return True
             return False
-        assert refuses([{"record_id": "empty-coa--111", "cite": "1 F.3d 1", "court_class": "coa", "legs": [  # only 1 leg
+        # These run against the fresh NON-bearing row so validate_web_legs is the
+        # actual gate that refuses (not the already-bearing guard).
+        assert refuses([{"record_id": "fresh-coa--555", "cite": "1 F.3d 1", "court_class": "coa", "legs": [  # only 1 leg
             {"source": "Justia", "url": "u", "cite": "1 F.3d 1"}]}])
-        assert refuses([{"record_id": "empty-coa--111", "cite": "1 F.3d 1", "court_class": "coa", "legs": [  # same source twice
+        assert refuses([{"record_id": "fresh-coa--555", "cite": "1 F.3d 1", "court_class": "coa", "legs": [  # same source twice
             {"source": "Justia", "url": "u1", "cite": "1 F.3d 1"}, {"source": "Justia", "url": "u2", "cite": "1 F.3d 1"}]}])
-        assert refuses([{"record_id": "empty-coa--111", "cite": "1 F.3d 1", "court_class": "coa", "legs": [  # Wikipedia never counts
+        assert refuses([{"record_id": "fresh-coa--555", "cite": "1 F.3d 1", "court_class": "coa", "legs": [  # Wikipedia never counts
             {"source": "Justia", "url": "u1", "cite": "1 F.3d 1"}, {"source": "Wikipedia", "url": "u2", "cite": "1 F.3d 1"}]}])
-        assert refuses([{"record_id": "empty-coa--111", "cite": "1 F.3d 1", "court_class": "coa", "legs": [  # legs disagree
+        assert refuses([{"record_id": "fresh-coa--555", "cite": "1 F.3d 1", "court_class": "coa", "legs": [  # legs disagree
             {"source": "Justia", "url": "u1", "cite": "1 F.3d 1"}, {"source": "Oyez", "url": "u2", "cite": "9 F.3d 9"}]}])
+        # empty-coa--111 is now citation-bearing (from the `good` batch) — keep an
+        # explicit already-bearing refusal on it so that guard stays covered too.
+        assert refuses([{"record_id": "empty-coa--111", "cite": "1 F.3d 1", "court_class": "coa", "legs": [  # already-bearing guard
+            {"source": "Justia", "url": "u1", "cite": "1 F.3d 1"}, {"source": "Oyez", "url": "u2", "cite": "1 F.3d 1"}]}])
         assert refuses([{"record_id": "already-bearing--333", "cite": "2 U.S. 2", "court_class": "scotus", "legs": [
             {"source": "Justia", "url": "u1", "cite": "2 U.S. 2"}, {"source": "Oyez", "url": "u2", "cite": "2 U.S. 2"}]}])  # already-bearing
         assert refuses([{"record_id": "out-of-scope--444", "cite": "3 U.S. 3", "court_class": "scotus", "legs": [
@@ -10854,7 +10920,8 @@ def self_test_repair_coa_state_from_cache():
         # is never fetched. Use a fresh lake to avoid the already-repaired rows.
         tmp2 = tempfile.mkdtemp(prefix="s2-coastate-cacheonly-")
         try:
-            p2 = LakePaths(tmp2, os.path.join(tmp2, "pool")); p2.ensure()
+            p2 = LakePaths(tmp2, os.path.join(tmp2, "pool"))
+            p2.ensure()
             md2 = {"schema_version": "s2.manifest.v1", "generated_at": iso_now(),
                    "records": [stub_row("c6", 6), stub_row("nocirc", 7)]}
             write_json(p2.manifest, md2)
