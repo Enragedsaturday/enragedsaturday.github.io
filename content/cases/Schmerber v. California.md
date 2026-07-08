@@ -28,7 +28,7 @@ courtlistener:
 homes:
   - page: "[[Exigent Circumstances and Hot Pursuit]]"
     role: "Key — Anchor"
-  - page: "[[Search Incident to Arrest]]"
+  - page: "[[SIA Alcohol Tests]]"
     role: "Related (cross-doctrine)"
 related: ["[[Missouri v. McNeely]]", "[[Birchfield v. North Dakota]]"]
 aliases: []
@@ -69,7 +69,7 @@ Neither the Fifth nor the Fourth Amendment was violated; the conviction was affi
 
 ## Appears on
 - [[Exigent Circumstances and Hot Pursuit]] — *Key — Anchor*
-- [[Search Incident to Arrest]] — *Related (cross-doctrine)*
+- [[SIA Alcohol Tests]] — *Related (cross-doctrine)*
 
 ## Sources
 - *Schmerber v. California*, 384 U.S. 757 (1966) — https://www.courtlistener.com/opinion/107262/schmerber-v-california/ — pinpoints: 761, 770–771.

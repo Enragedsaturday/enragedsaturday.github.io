@@ -26,7 +26,7 @@ courtlistener:
   opinion_id: 101643
   identity_checked: true
 homes:
-  - page: "[[Search Incident to Arrest]]"
+  - page: "[[SIA Persons]]"
     role: "Key — Historical / Foundational"
 related: ["[[Chimel v. California]]", "[[Agnello v. United States]]", "[[United States v. Robinson]]"]
 aliases: []
@@ -65,7 +65,7 @@ Reversed. The general search of the office was unreasonable; the papers had to b
 - The general-exploratory-search limit survives and was given its modern structure in [[Chimel v. California]] (SITA confined to the arrestee's person and the area within immediate control); it is companion to [[Agnello v. United States]]. (The Court's contemporaneous "mere evidence" assumptions, drawn from *Gouled*, were later changed by *Warden v. Hayden* — but that does not disturb *Go-Bart*'s search-incident-to-arrest holding.)
 
 ## Appears on
-- [[Search Incident to Arrest]] — *Key — Historical / Foundational*
+- [[SIA Persons]] — *Key — Historical / Foundational*
 
 ## Sources
 - *Go-Bart Importing Co. v. United States*, 282 U.S. 344 (1931) — https://www.courtlistener.com/opinion/101643/go-bart-importing-co-v-united-states/ — pinpoints: 357, 358.

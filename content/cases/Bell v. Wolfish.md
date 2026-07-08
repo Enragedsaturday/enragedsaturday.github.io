@@ -32,8 +32,6 @@ lake:
 homes:
   - page: "[[Special Needs and Administrative Searches]]"
     role: "Key — Foundational (institutional-deference reasonableness balancing)"
-  - page: "[[Search Incident to Arrest]]"
-    role: "Related (jail-intake / booking-reasonableness track)"
 related:
   - "[[Florence v. County of Burlington]]"
   - "[[Maryland v. King]]"
@@ -78,7 +76,6 @@ Applying that balance, the Court sustained the body-cavity inspections. However 
 
 ## Appears on
 - [[Special Needs and Administrative Searches]] — *Key — Foundational (institutional-deference reasonableness balancing)*
-- [[Search Incident to Arrest]] — *Related (jail-intake / booking-reasonableness track)*
 
 ## Sources
 - [*Bell v. Wolfish*, 441 U.S. 520 (1979)](https://www.courtlistener.com/opinion/110075/bell-v-wolfish/) — pinpoint: 559 (Fourth Amendment reasonableness-balancing test — the four *Wolfish* factors; Rehnquist, J.); quote string-matched to the CL opinion text 2026-07-07.

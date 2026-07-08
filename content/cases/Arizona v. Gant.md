@@ -26,7 +26,7 @@ courtlistener:
   opinion_id: 9435359
   identity_checked: true
 homes:
-  - page: "[[Search Incident to Arrest]]"
+  - page: "[[SIA Vehicles]]"
     role: "Key — Anchor"
   - page: "[[Traffic Stops]]"
     role: "Related (cross-doctrine)"
@@ -67,7 +67,7 @@ The vehicle search was unconstitutional; the judgment of the Arizona Supreme Cou
 - No negative treatment of *Gant*. *Gant* itself **narrowed** the expansive reading of [[New York v. Belton]] (and [[Thornton v. United States]]) for vehicle searches incident to arrest, replacing automatic passenger-compartment searches with its two-justification test.
 
 ## Appears on
-- [[Search Incident to Arrest]] — *Key — Anchor*
+- [[SIA Vehicles]] — *Key — Anchor*
 - [[Traffic Stops]] — *Related (cross-doctrine)*
 
 ## Sources

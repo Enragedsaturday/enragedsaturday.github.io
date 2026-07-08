@@ -26,7 +26,7 @@ courtlistener:
   opinion_id: 9841975
   identity_checked: true
 homes:
-  - page: "[[Search Incident to Arrest]]"
+  - page: "[[SIA Persons]]"
     role: "Key — Anchor"
 related: ["[[Arizona v. Gant]]", "[[New York v. Belton]]", "[[Riley v. California]]"]
 aliases: []
@@ -65,7 +65,7 @@ The warrantless, house-wide search incident to arrest was unreasonable; the conv
 - No negative treatment of *Chimel* itself. [[Arizona v. Gant]] **relied on** *Chimel*'s reaching-distance rationale to **narrow** the broad reading of [[New York v. Belton]] for vehicle searches; *Chimel*'s core person-and-immediate-control rule remains controlling.
 
 ## Appears on
-- [[Search Incident to Arrest]] — *Key — Anchor*
+- [[SIA Persons]] — *Key — Anchor*
 
 ## Sources
 - *Chimel v. California*, 395 U.S. 752 (1969) — https://www.courtlistener.com/opinion/107979/chimel-v-california/ — pinpoint: 763.

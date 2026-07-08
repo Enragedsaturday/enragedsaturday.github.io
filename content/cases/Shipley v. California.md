@@ -26,8 +26,8 @@ courtlistener:
   opinion_id: 107982
   identity_checked: true
 homes:
-  - page: "[[Search Incident to Arrest]]"
-    role: "Related (cross-doctrine)"
+  - page: "[[SIA Persons]]"
+    role: "Key — Limiting (contemporaneity)"
 related: ["[[Chimel v. California]]", "[[Agnello v. United States]]", "[[Go-Bart Importing Co. v. United States]]"]
 aliases: []
 tags: ["case", "fourth-amendment", "search-incident-to-arrest", "home", "warrant-requirement"]
@@ -65,7 +65,7 @@ Reversed (per curiam). A warrantless search of the home, incident to an arrest m
 - Decided the same day as [[Chimel v. California]] and applying its limits; consistent with [[Agnello v. United States]] (SITA does not reach a separate home) and [[Go-Bart Importing Co. v. United States]] (no general exploratory search).
 
 ## Appears on
-- [[Search Incident to Arrest]] — *Related (cross-doctrine)*
+- [[SIA Persons]] — *Key — Limiting (contemporaneity)*
 
 ## Sources
 - *Shipley v. California*, 395 U.S. 818 (1969) — https://www.courtlistener.com/opinion/107982/shipley-v-california/ — pinpoints: 819, 820.

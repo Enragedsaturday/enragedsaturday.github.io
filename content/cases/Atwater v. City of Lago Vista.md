@@ -30,7 +30,7 @@ homes:
     role: "Key — Anchor (minor-offense custodial arrest on probable cause)"
   - page: "[[Seizure of the Person]]"
     role: "Related (cross-doctrine)"
-  - page: "[[Search Incident to Arrest]]"
+  - page: "[[SIA Persons]]"
     role: "Related (cross-doctrine)"
 related: ["[[Whren v. United States]]", "[[Arkansas v. Sullivan]]", "[[Devenpeck v. Alford]]", "[[Tennessee v. Garner]]"]
 aliases: []
@@ -71,7 +71,7 @@ The warrantless custodial arrest for the fine-only seatbelt offense, supported b
 ## Appears on
 - [[Arrest and Arrest Warrants]] — *Key — Anchor*
 - [[Seizure of the Person]] — *Related (cross-doctrine)*
-- [[Search Incident to Arrest]] — *Related (cross-doctrine)*
+- [[SIA Persons]] — *Related (cross-doctrine)*
 
 ## Sources
 - *Atwater v. City of Lago Vista*, 532 U.S. 318 (2001) — https://www.courtlistener.com/opinion/2620702/atwater-v-city-of-lago-vista/ — pinpoints: 354, 355.

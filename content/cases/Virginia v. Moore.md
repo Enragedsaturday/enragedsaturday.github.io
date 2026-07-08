@@ -30,8 +30,8 @@ homes:
     role: "Key — a state-law arrest violation is not a Fourth Amendment violation"
   - page: "[[Seizure of the Person]]"
     role: "Related (cross-doctrine)"
-  - page: "[[Search Incident to Arrest]]"
-    role: "Progeny"
+  - page: "[[SIA Persons]]"
+    role: "Related (cross-doctrine)"
   - page: "[[The Exclusionary Rule]]"
     role: "Related (cross-doctrine)"
 related: ["[[United States v. Robinson]]", "[[Atwater v. City of Lago Vista]]", "[[Knowles v. Iowa]]", "[[Devenpeck v. Alford]]"]
@@ -73,7 +73,7 @@ The arrest and the search incident to it were constitutional; the Fourth Amendme
 ## Appears on
 - [[Arrest and Arrest Warrants]] — *Key*
 - [[Seizure of the Person]] — *Related (cross-doctrine)*
-- [[Search Incident to Arrest]] — *Progeny*
+- [[SIA Persons]] — *Related (cross-doctrine)*
 - [[The Exclusionary Rule]] — *Related (cross-doctrine)*
 
 ## Sources

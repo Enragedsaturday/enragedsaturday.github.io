@@ -1227,3 +1227,29 @@ doctrine units born draft + 3 S7-minted cases; HIGH -455 since S7 open. NEXT: ca
 Exceptions in sub-batches (6a searching-a-person SIA family; 6b searching-a-vehicle; 6c
 home-entry w/ D5 caretaking + Emergency Aid + exigent splits; 6d consent/programmatic/
 effects).
+
+**BATCH 11 CLOSED — CAT-6a SIA FAMILY (2026-07-08):** parent SPLIT across two sub-umbrellas,
+DISSOLVED (2nd-worst em-dash page cleared, -147): SIA Persons (A, deck-stem successor
+ADJUDICATED child-model — 57-card whole-family deck + all parent aliases, LINT-24/25 0) +
+SIA Cell Phones (A, Riley keeps signed primary) + SIA Alcohol Tests (B, Birchfield +
+Schmerber/McNeely line) + SIA Vehicles (A). **R5 CALIBRATION ANCHOR HELD:** Belton→Gant
+point-status renders EXACTLY per the S3 R5 worked binding — SIA-Vehicles carries the
+superseding table (auto-compartment SUPERSEDED / scope-containers GOOD) + reconciling prose,
+Belton composite stays caution/varies, LINT-21 binding green. MCP-live mode 15 calls 0 REST
+(Robinson 235, Chimel 763, Gant 351, Thornton 623-24, Riley 403/387, Birchfield 474
+confirmed). IDENTITY CATCHES #5/#6 → S2 register: Riley case-page opinion_id 8386852 = 184-char
+DOCKET-ORDER STUB (true merits 2680439); Thornton frontmatter carries GANT's cluster 145887 +
+its own cluster-as-opinion-id (true lead 9434613) — the cluster-vs-opinion trap live again.
+Inventory strand PARKED on Special Needs (A7(2) source, avoids stub-primaries; cat-6b
+reconciles the 5 stale Primary-home cells + extracts vehicle-inventory). 34 re-homes
+two-sided; owed rows 3: Trupiano/Perez discharged + Bell rule-G (jail-intake = Special Needs
+scope). Coverage-repair register grows: authored-ledger home_rows naming dead parents
+(assembler-owned, not hand-edited) + Trupiano page-vs-brief-mention dedup (S6-owned).
+Anchor register +4 (~36). GATES: run_all 7850→7781 (HIGH 4705, -50 zero-new), LINT-15/16 0/0
+x4, LINT-17 0, LINT-19/20/21/24/25 clean, survey 87 pages em 2953, build 722/2809, Case
+Index 620. CONSOLIDATED S2/COVERAGE REPAIR LANE now clearly warranted pre-close (register:
+R.W. flip · Cook re-key · pointer triple · dead-parent home_rows · Riley/Thornton ids ·
+Trupiano dedup · Hicks URL · Maez treatment · anchor class). NEXT: cat-6c home-entry (D5
+batch): Community Caretaking A w/ D5 persons-seizure section + point node · Emergency Aid A
+· Exigent splits (Hot Pursuit retained parent A + Destruction child A, Santana/Lange R13
+point-status) · Protective Sweeps & Securing B (Buie unit) · Fire-Scene C.

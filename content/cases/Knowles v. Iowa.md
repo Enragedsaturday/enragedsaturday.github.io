@@ -26,7 +26,7 @@ courtlistener:
   opinion_id: 118250
   identity_checked: true
 homes:
-  - page: "[[Search Incident to Arrest]]"
+  - page: "[[SIA Persons]]"
     role: "Limiting"
   - page: "[[Traffic Stops]]"
     role: "Related (cross-doctrine)"
@@ -67,7 +67,7 @@ The full search of the car was unconstitutional; the judgment of the Iowa Suprem
 - *Knowles* remains controlling: there is no "search incident to citation." It cabins [[United States v. Robinson]]'s bright-line rule to actual custodial arrests and is the contrast point in [[Virginia v. Moore]] (full search permitted because Moore was *arrested*). No negative treatment.
 
 ## Appears on
-- [[Search Incident to Arrest]] — *Limiting*
+- [[SIA Persons]] — *Limiting*
 - [[Traffic Stops]] — *Related (cross-doctrine)*
 
 ## Sources

@@ -41,7 +41,7 @@ courtlistener:
   opinion_id: 9428488
   identity_checked: true
 homes:
-  - page: "[[Search Incident to Arrest]]"
+  - page: "[[SIA Vehicles]]"
     role: "Key — Progeny / Refinement"
   - page: "[[Traffic Stops]]"
     role: "Related (cross-doctrine)"
@@ -83,7 +83,7 @@ The search of the jacket was a lawful search incident to arrest; the New York Co
 *Gant* rejected the broad reading of *Belton* that authorized an automatic passenger-compartment search whenever an occupant was arrested. After *Gant*, a vehicle search incident to arrest is permissible only if the arrestee is within reaching distance of the passenger compartment at the time of the search, or it is reasonable to believe the vehicle contains evidence of the offense of arrest. Officers' reasonable pre-*Gant* reliance on *Belton* was addressed in [[Davis v. United States]].
 
 ## Appears on
-- [[Search Incident to Arrest]] — *Key — Progeny / Refinement*
+- [[SIA Vehicles]] — *Key — Progeny / Refinement*
 - [[Traffic Stops]] — *Related (cross-doctrine)*
 
 ## Sources

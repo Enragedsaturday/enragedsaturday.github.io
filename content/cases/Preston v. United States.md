@@ -26,7 +26,7 @@ courtlistener:
   opinion_id: 106771
   identity_checked: true
 homes:
-  - page: "[[Search Incident to Arrest]]"
+  - page: "[[SIA Persons]]"
     role: "Historical"
   - page: "[[Automobile Exception]]"
     role: "Related (cross-doctrine)"
@@ -65,7 +65,7 @@ The warrantless garage search of the car was unreasonable and its fruits inadmis
 - *Preston* remains a controlling statement of the temporal/spatial limit on searches incident to arrest, regularly cited (e.g., in [[United States v. Chadwick]]). It was decided solely on search-incident grounds; the later automobile-exception line ([[Chambers v. Maroney]], [[Michigan v. Thomas]]) **distinguished** *Preston* and now independently permits a warrantless delayed vehicle search on probable cause — so *Preston* does not bar every station-house car search, but its search-incident holding is intact and not overruled.
 
 ## Appears on
-- [[Search Incident to Arrest]] — *Historical*
+- [[SIA Persons]] — *Historical*
 - [[Automobile Exception]] — *Related (cross-doctrine)*
 
 ## Sources

@@ -28,7 +28,7 @@ courtlistener:
 homes:
   - page: "[[Probable Cause]]"
     role: "Progeny"
-  - page: "[[Search Incident to Arrest]]"
+  - page: "[[SIA Persons]]"
     role: "Related (cross-doctrine)"
 related: ["[[Brinegar v. United States]]", "[[Chimel v. California]]", "[[Heien v. North Carolina]]", "[[Maryland v. Garrison]]"]
 aliases: []
@@ -68,7 +68,7 @@ The reasonable, good-faith arrest of the wrong man was valid, as was the search 
 
 ## Appears on
 - [[Probable Cause]] — *Progeny*
-- [[Search Incident to Arrest]] — *Related (cross-doctrine)*
+- [[SIA Persons]] — *Related (cross-doctrine)*
 
 ## Sources
 - *Hill v. California*, 401 U.S. 797 (1971) — https://www.courtlistener.com/opinion/108305/hill-v-california/ — pinpoints: 802, 804–805.

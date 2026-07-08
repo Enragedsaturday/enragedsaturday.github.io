@@ -26,8 +26,8 @@ courtlistener:
   opinion_id: 3216391
   identity_checked: true
 homes:
-  - page: "[[Search Incident to Arrest]]"
-    role: "Key — Progeny / Refinement"
+  - page: "[[SIA Alcohol Tests]]"
+    role: "Key — Anchor"
   - page: "[[Exigent Circumstances and Hot Pursuit]]"
     role: "Related (cross-doctrine)"
 related: ["[[Schmerber v. California]]", "[[Missouri v. McNeely]]", "[[Riley v. California]]", "[[Maryland v. King]]"]
@@ -67,7 +67,7 @@ Warrantless breath tests are permissible as searches incident to a DUI arrest; w
 - *Birchfield* is good law and itself refines [[Schmerber v. California]] and [[Missouri v. McNeely]]; it draws the controlling breath-vs-blood line for searches incident to a drunk-driving arrest.
 
 ## Appears on
-- [[Search Incident to Arrest]] — *Key — Progeny / Refinement*
+- [[SIA Alcohol Tests]] — *Key — Anchor*
 - [[Exigent Circumstances and Hot Pursuit]] — *Related (cross-doctrine)*
 
 ## Sources

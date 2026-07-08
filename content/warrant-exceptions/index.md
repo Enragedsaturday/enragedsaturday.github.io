@@ -12,7 +12,6 @@ type: index
 
 The recognized justifications for searching without a warrant, organized by the object of the search: the person, the vehicle, the home, and effects, plus consent and the programmatic group.
 
-- [[Search Incident to Arrest]] — the automatic search of an arrestee and the area within reach that a lawful arrest permits.
 - **Searching a Person** — search incident to arrest as applied to the arrestee's body, cell phones, and chemical testing.
 - **Searching a Vehicle** — warrantless vehicle searches: the automobile exception, the search of a recent occupant, inventory, and checkpoints.
 - **Home Entry & Search** — the premises bucket: entering to arrest, the emergency exceptions, protective sweeps, and community caretaking.

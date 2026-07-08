@@ -26,7 +26,7 @@ courtlistener:
   opinion_id: 108183
   identity_checked: true
 homes:
-  - page: "[[Search Incident to Arrest]]"
+  - page: "[[SIA Persons]]"
     role: "Limiting"
   - page: "[[Arrest in the Home]]"
     role: "Related (cross-doctrine)"
@@ -67,7 +67,7 @@ The warrantless search of the house was unconstitutional, and admitting its frui
 - *Vale* remains the controlling statement that a search incident to a recent arrest cannot reach a dwelling when the arrest occurred outside it, and that the State bears the burden of justifying any warrantless home search. It applies the spatial limit of [[Chimel v. California]] and is regularly cited alongside [[Shipley v. California]] and [[Agnello v. United States]]. No negative treatment.
 
 ## Appears on
-- [[Search Incident to Arrest]] — *Limiting*
+- [[SIA Persons]] — *Limiting*
 - [[Arrest in the Home]] — *Related (cross-doctrine)*
 
 ## Sources

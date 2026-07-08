@@ -26,8 +26,6 @@ courtlistener:
   opinion_id: 108801
   identity_checked: true
 homes:
-  - page: "[[Search Incident to Arrest]]"
-    role: "Related (cross-doctrine)"
   - page: "[[Exigent Circumstances and Hot Pursuit]]"
     role: "Related (cross-doctrine)"
 related: ["[[Chimel v. California]]", "[[Schmerber v. California]]", "[[Davis v. Mississippi]]"]
@@ -69,7 +67,6 @@ Reversed. A limited warrantless search to preserve highly destructible evidence,
 - No negative treatment. *Cupp* sits at the intersection of the [[Search Incident to Arrest]] rationale ([[Chimel v. California]]) and the destruction-of-evidence exigency, alongside [[Schmerber v. California]]; it builds on the seizure-of-the-person limits of [[Davis v. Mississippi]] (distinguished, because here probable cause existed).
 
 ## Appears on
-- [[Search Incident to Arrest]] — *Related (cross-doctrine)*
 - [[Exigent Circumstances and Hot Pursuit]] — *Related (cross-doctrine)*
 
 ## Sources

@@ -26,7 +26,7 @@ courtlistener:
   opinion_id: 564407
   identity_checked: true
 homes:
-  - page: "[[Search Incident to Arrest]]"
+  - page: "[[Special Needs and Administrative Searches]]"
     role: "Key — Progeny / Refinement"
 related: ["[[Florida v. Wells]]", "[[Colorado v. Bertine]]", "[[Illinois v. Lafayette]]", "[[South Dakota v. Opperman]]", "[[Nix v. Williams]]"]
 aliases: ["United States v. Evans (10th Cir. 1991)", "United States v. Daryl Lee Evans"]
@@ -65,7 +65,7 @@ The bus-station opening of the carry-on bag was a valid inventory search; the de
 - No negative subsequent treatment identified. The decision applies the SCOTUS inventory-search line — [[South Dakota v. Opperman]], [[Illinois v. Lafayette]], [[Colorado v. Bertine]], and [[Florida v. Wells]] — to a locked carry-on bag opened under standardized policy.
 
 ## Appears on
-- [[Search Incident to Arrest]] — *Key — Progeny / Refinement*
+- [[Special Needs and Administrative Searches]] — *Key — Progeny / Refinement*
 
 ## Sources
 - *United States v. Evans*, 937 F.2d 1534 (10th Cir. 1991) — https://www.courtlistener.com/opinion/564407/united-states-v-daryl-lee-evans/ — pinpoint: 1539.

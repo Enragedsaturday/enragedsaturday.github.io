@@ -37,7 +37,7 @@ courtlistener:
   opinion_id: 134746
   identity_checked: true
 homes:
-  - page: "[[Search Incident to Arrest]]"
+  - page: "[[SIA Vehicles]]"
     role: "Key — Progeny / Refinement"
   - page: "[[Automobile Exception]]"
     role: "Related (cross-doctrine)"
@@ -78,7 +78,7 @@ Thornton had just driven and parked the car, stepping out only moments before Of
 - **Limited by [[Arizona v. Gant]] (2009):** *Gant* cabined the broad, automatic vehicle-search rule of *Belton* and *Thornton*. After *Gant*, a vehicle search incident to a recent occupant's arrest is permitted only when (1) the arrestee is unsecured and within reaching distance of the passenger compartment at the time of the search, or (2) it is reasonable to believe the vehicle contains evidence of the offense of arrest. On *Thornton*'s own facts the search would fail *Gant*'s first prong (Thornton was handcuffed in the patrol car) but could be analyzed under the second.
 
 ## Appears on
-- [[Search Incident to Arrest]] — *Key — Progeny / Refinement*
+- [[SIA Vehicles]] — *Key — Progeny / Refinement*
 - [[Automobile Exception]] — *Related (cross-doctrine)*
 
 ## Sources

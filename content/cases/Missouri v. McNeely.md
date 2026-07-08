@@ -28,6 +28,8 @@ courtlistener:
 homes:
   - page: "[[Exigent Circumstances and Hot Pursuit]]"
     role: "Key — Progeny / Refinement"
+  - page: "[[SIA Alcohol Tests]]"
+    role: "Related (cross-doctrine)"
 related: ["[[Schmerber v. California]]", "[[Mitchell v. Wisconsin]]", "[[Birchfield v. North Dakota]]"]
 aliases: []
 tags: ["case", "fourth-amendment", "exigent-circumstances", "blood-draw", "dui", "warrant"]
@@ -64,6 +66,7 @@ Affirmed; on these facts the warrantless blood draw was not justified by a per s
 
 ## Appears on
 - [[Exigent Circumstances and Hot Pursuit]] — *Key — Progeny / Refinement*
+- [[SIA Alcohol Tests]] — *Related (cross-doctrine)*
 
 ## Sources
 - *Missouri v. McNeely*, 569 U.S. 141 (2013) — https://www.courtlistener.com/opinion/858288/missouri-v-mcneely/ — pinpoint: 156 (per the official U.S. Reports citation; CL carries the reporter text without inline star pagination).

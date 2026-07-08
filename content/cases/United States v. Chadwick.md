@@ -39,7 +39,7 @@ courtlistener:
 homes:
   - page: "[[Automobile Exception]]"
     role: "Key — Limiting / Historical"
-  - page: "[[Search Incident to Arrest]]"
+  - page: "[[SIA Persons]]"
     role: "Related (cross-doctrine)"
 related: ["[[California v. Acevedo]]", "[[United States v. Ross]]", "[[Chambers v. Maroney]]", "[[Chimel v. California]]"]
 aliases: []
@@ -81,7 +81,7 @@ The warrantless search was unreasonable; suppression was affirmed. The Warrant C
 
 ## Appears on
 - [[Automobile Exception]] — *Key — Limiting / Historical*
-- [[Search Incident to Arrest]] — *Related (cross-doctrine)*
+- [[SIA Persons]] — *Related (cross-doctrine)*
 
 ## Sources
 - *United States v. Chadwick*, 433 U.S. 1 (1977) — https://www.courtlistener.com/opinion/109714/united-states-v-chadwick/ — pinpoints: 11, 13, 15.

@@ -26,8 +26,6 @@ courtlistener:
   opinion_id: 626454
   identity_checked: true
 homes:
-  - page: "[[Search Incident to Arrest]]"
-    role: "Progeny"
   - page: "[[Special Needs and Administrative Searches]]"
     role: "Related (cross-doctrine)"
 related: ["[[Illinois v. Lafayette]]", "[[Maryland v. King]]", "[[Atwater v. City of Lago Vista]]"]
@@ -67,7 +65,6 @@ The suspicionless visual strip searches at intake were constitutional; the judgm
 - *Florence* remains the controlling authority that jail-intake visual strip searches of arrestees entering the general population need no individualized suspicion. It extends the *Bell v. Wolfish* institutional-deference line and sits beside [[Illinois v. Lafayette]] (booking inventory) and [[Maryland v. King]] (DNA at booking). The Roberts/Alito concurrences cabin its reach to detainees actually committed to the general population. No negative treatment.
 
 ## Appears on
-- [[Search Incident to Arrest]] — *Progeny*
 - [[Special Needs and Administrative Searches]] — *Related (cross-doctrine)*
 
 ## Sources

@@ -26,7 +26,7 @@ courtlistener:
   opinion_id: 108995
   identity_checked: true
 homes:
-  - page: "[[Search Incident to Arrest]]"
+  - page: "[[SIA Persons]]"
     role: "Progeny"
 related: ["[[United States v. Robinson]]", "[[Chimel v. California]]", "[[Abel v. United States]]", "[[Illinois v. Lafayette]]"]
 aliases: []
@@ -65,7 +65,7 @@ The warrantless seizure and examination of Edwards' clothing were valid; the Cou
 - *Edwards* remains the controlling authority that a search incident to arrest may extend in time — effects subject to search at arrest may be seized and examined at the place of detention after a reasonable delay. It builds on [[United States v. Robinson]] and [[Chimel v. California]] and is paired with station-house cases like [[Illinois v. Lafayette]]. No negative treatment.
 
 ## Appears on
-- [[Search Incident to Arrest]] — *Progeny*
+- [[SIA Persons]] — *Progeny*
 
 ## Sources
 - *United States v. Edwards*, 415 U.S. 800 (1974) — https://www.courtlistener.com/opinion/108995/united-states-v-edwards/ — pinpoints: 803, 807, 808–809.

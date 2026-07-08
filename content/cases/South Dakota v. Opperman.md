@@ -28,8 +28,6 @@ courtlistener:
 homes:
   - page: "[[Special Needs and Administrative Searches]]"
     role: "Key — Anchor"
-  - page: "[[Search Incident to Arrest]]"
-    role: "Related (cross-doctrine)"
 related: ["[[Colorado v. Bertine]]", "[[Florida v. Wells]]", "[[Cady v. Dombrowski]]", "[[Illinois v. Lafayette]]"]
 aliases: []
 tags: ["case", "fourth-amendment", "inventory", "impoundment", "administrative-search"]
@@ -66,7 +64,6 @@ The routine inventory under standard procedures was reasonable; the South Dakota
 
 ## Appears on
 - [[Special Needs and Administrative Searches]] — *Key — Anchor*
-- [[Search Incident to Arrest]] — *Related (cross-doctrine)*
 
 ## Sources
 - *South Dakota v. Opperman*, 428 U.S. 364 (1976) — https://www.courtlistener.com/opinion/109537/south-dakota-v-opperman/ — pinpoint: 376.

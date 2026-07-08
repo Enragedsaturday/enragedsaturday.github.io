@@ -26,7 +26,7 @@ courtlistener:
   opinion_id: 100711
   identity_checked: true
 homes:
-  - page: "[[Search Incident to Arrest]]"
+  - page: "[[SIA Persons]]"
     role: "Key — Historical / Foundational"
 related: ["[[Chimel v. California]]", "[[Go-Bart Importing Co. v. United States]]", "[[Weeks v. United States]]"]
 aliases: []
@@ -65,7 +65,7 @@ Reversed. The warrantless search of Agnello's distant home could not be sustaine
 - The limit survives and is consistent with the modern boundary drawn in [[Chimel v. California]] (SITA confined to the arrestee's person and the area within immediate control); it is companion to [[Go-Bart Importing Co. v. United States]] (no general exploratory search) and builds on [[Weeks v. United States]].
 
 ## Appears on
-- [[Search Incident to Arrest]] — *Key — Historical / Foundational*
+- [[SIA Persons]] — *Key — Historical / Foundational*
 
 ## Sources
 - *Agnello v. United States*, 269 U.S. 20 (1925) — https://www.courtlistener.com/opinion/100711/agnello-v-united-states/ — pinpoints: 30, 31.

@@ -26,8 +26,8 @@ courtlistener:
   opinion_id: 4685037
   identity_checked: true
 homes:
-  - page: "[[Search Incident to Arrest]]"
-    role: "Key — Progeny / Refinement"
+  - page: "[[SIA Vehicles]]"
+    role: "Lower-court development (role-based)"
 related: ["[[Arizona v. Gant]]", "[[Chimel v. California]]"]
 aliases: ["United States v. Howard Davis (4th Cir. 2021)"]
 tags: ["case", "fourth-amendment", "search-incident-to-arrest", "gant", "container-search", "reaching-distance", "fourth-circuit"]
@@ -65,7 +65,7 @@ On these facts the search could not be sustained as a search incident to arrest 
 - No negative subsequent treatment identified. The decision extends the first holding of [[Arizona v. Gant]] — rooted in [[Chimel v. California]] — beyond vehicles to non-vehicular containers, joining sister circuits on that question.
 
 ## Appears on
-- [[Search Incident to Arrest]] — *Key — Progeny / Refinement*
+- [[SIA Vehicles]] — *Lower-court development (role-based)*
 
 ## Sources
 - *United States v. Howard Davis*, 997 F.3d 191 (4th Cir. 2021) — https://www.courtlistener.com/opinion/4881258/united-states-v-howard-davis/ — pinpoint: 196. (CL's copy is the court's slip-opinion PDF without F.3d star-pagination; the 196 pinpoint is the standard reporter pinpoint for the holding — quotes verbatim-verified against the opinion text; lead opinion id 4685037.)

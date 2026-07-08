@@ -26,7 +26,7 @@ courtlistener:
   opinion_id: 9377330
   identity_checked: true
 homes:
-  - page: "[[Search Incident to Arrest]]"
+  - page: "[[Special Needs and Administrative Searches]]"
     role: "Recent development (role-based)"
 related: ["[[Arizona v. Gant]]", "[[Chimel v. California]]", "[[Riley v. California]]", "[[Nix v. Williams]]"]
 aliases: []
@@ -63,7 +63,7 @@ The backpack search was an invalid search incident to arrest, and inevitable dis
 - *Braxton* applies the reaching-distance limit on searches incident to arrest from [[Chimel v. California]] and [[Arizona v. Gant]] (and the circuit's *Knapp* rule for bags), and the inevitable-discovery doctrine of [[Nix v. Williams]]; on digital/container limits compare [[Riley v. California]].
 
 ## Appears on
-- [[Search Incident to Arrest]] — *Recent development (role-based)*
+- [[Special Needs and Administrative Searches]] — *Recent development (role-based)*
 
 ## Sources
 - *United States v. Braxton*, 61 F.4th 830 (10th Cir. 2023) — https://www.courtlistener.com/opinion/9381854/united-states-v-braxton/ — pinpoints: slip op., at 7, 17 (CL carries the slip opinion; cluster 9381854 → opinion 9377330).

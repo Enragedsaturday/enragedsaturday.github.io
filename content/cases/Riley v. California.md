@@ -26,8 +26,8 @@ courtlistener:
   opinion_id: 8386852
   identity_checked: false
 homes:
-  - page: "[[Search Incident to Arrest]]"
-    role: "Key — Progeny / Refinement"
+  - page: "[[SIA Cell Phones]]"
+    role: "Key — Anchor"
   - page: "[[Plain View Doctrine]]"
     role: "Related (cross-doctrine)"
 related: ["[[United States v. Robinson]]", "[[Chimel v. California]]", "[[Arizona v. Gant]]", "[[Carpenter v. United States]]", "[[People v. Hughes]]"]
@@ -64,7 +64,7 @@ Officers must generally obtain a warrant before searching a cell phone seized in
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**. *Riley* cabins the bright-line rule of [[United States v. Robinson]] for digital data and anchors the digital-privacy reasoning later extended in [[Carpenter v. United States]].
 
 ## Appears on
-- [[Search Incident to Arrest]] — *Key — Progeny / Refinement*
+- [[SIA Cell Phones]] — *Key — Anchor*
 - [[Plain View Doctrine]] — *Related (cross-doctrine)*
 
 ## Sources

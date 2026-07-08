@@ -28,6 +28,8 @@ courtlistener:
 homes:
   - page: "[[Exigent Circumstances and Hot Pursuit]]"
     role: "Key — Progeny / Refinement"
+  - page: "[[SIA Alcohol Tests]]"
+    role: "Related (cross-doctrine)"
 related: ["[[Missouri v. McNeely]]", "[[Schmerber v. California]]", "[[Birchfield v. North Dakota]]"]
 aliases: []
 tags: ["case", "fourth-amendment", "exigent-circumstances", "blood-draw", "dui", "unconscious-driver"]
@@ -64,6 +66,7 @@ Vacated and remanded; the warrantless blood draw was generally permissible, subj
 
 ## Appears on
 - [[Exigent Circumstances and Hot Pursuit]] — *Key — Progeny / Refinement*
+- [[SIA Alcohol Tests]] — *Related (cross-doctrine)*
 
 ## Sources
 - *Mitchell v. Wisconsin*, 588 U.S. 840 (2019) — https://www.courtlistener.com/opinion/9231242/mitchell-v-wisconsin/ — pinpoint: 139 S. Ct. 2539 (plurality, Part IV). (CL carries the official reporter text; cluster 9231242 → lead opinion 9226047. The pinpoint uses the S. Ct. reporter page carried in the CL text.)

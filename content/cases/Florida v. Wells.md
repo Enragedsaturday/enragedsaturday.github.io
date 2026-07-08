@@ -28,8 +28,6 @@ courtlistener:
 homes:
   - page: "[[Special Needs and Administrative Searches]]"
     role: "Key — Progeny / Refinement"
-  - page: "[[Search Incident to Arrest]]"
-    role: "Related (cross-doctrine)"
 related: ["[[Colorado v. Bertine]]", "[[Illinois v. Lafayette]]", "[[South Dakota v. Opperman]]"]
 aliases: []
 tags: ["case", "fourth-amendment", "inventory-search", "standardized-criteria", "impoundment"]
@@ -68,7 +66,6 @@ The suppression of the marijuana was affirmed; absent a standardized policy on o
 
 ## Appears on
 - [[Special Needs and Administrative Searches]] — *Key — Progeny / Refinement*
-- [[Search Incident to Arrest]] — *Related (cross-doctrine)*
 
 ## Sources
 - *Florida v. Wells*, 495 U.S. 1 (1990) — https://www.courtlistener.com/opinion/112412/florida-v-wells/ — pinpoint: 4.

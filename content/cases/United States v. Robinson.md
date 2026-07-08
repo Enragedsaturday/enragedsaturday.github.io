@@ -26,7 +26,7 @@ courtlistener:
   opinion_id: 9425474
   identity_checked: true
 homes:
-  - page: "[[Search Incident to Arrest]]"
+  - page: "[[SIA Persons]]"
     role: "Key — Anchor"
 related: ["[[Chimel v. California]]", "[[Arizona v. Gant]]", "[[Riley v. California]]"]
 aliases: []
@@ -65,7 +65,7 @@ The search of Robinson's person and the seizure of the heroin were valid as inci
 - No negative treatment. *Robinson* states the bright-line rule for searches of the person incident to a custodial arrest. [[Riley v. California]] later declined to extend that automatic-search authority to the **digital contents of a cell phone** (those require a warrant), and [[Arizona v. Gant]] cabined vehicle searches incident to arrest — but neither disturbs *Robinson*'s rule for a full search of the arrestee's person and physical effects.
 
 ## Appears on
-- [[Search Incident to Arrest]] — *Key — Anchor*
+- [[SIA Persons]] — *Key — Anchor*
 
 ## Sources
 - *United States v. Robinson*, 414 U.S. 218 (1973) — https://www.courtlistener.com/opinion/108893/united-states-v-robinson/ — pinpoint: 235 (parallel 94 S. Ct. 467).

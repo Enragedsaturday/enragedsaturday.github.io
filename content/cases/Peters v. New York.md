@@ -28,8 +28,8 @@ courtlistener:
 homes:
   - page: "[[Terry Stops and Reasonable Suspicion]]"
     role: "Related (cross-doctrine)"
-  - page: "[[Search Incident to Arrest]]"
-    role: "Progeny"
+  - page: "[[SIA Persons]]"
+    role: "Related (cross-doctrine)"
 related: ["[[Sibron v. New York]]", "[[Terry v. Ohio]]", "[[Henry v. United States (1959)]]", "[[Brinegar v. United States]]"]
 aliases: []
 tags: ["case", "fourth-amendment", "search-incident-to-arrest", "probable-cause", "terry-stop", "burglary"]
@@ -68,7 +68,7 @@ The search was valid as incident to a lawful arrest founded on probable cause, a
 
 ## Appears on
 - [[Terry Stops and Reasonable Suspicion]] — *Related (cross-doctrine)*
-- [[Search Incident to Arrest]] — *Progeny*
+- [[SIA Persons]] — *Related (cross-doctrine)*
 
 ## Sources
 - *Peters v. New York* (decided with *Sibron v. New York*), 392 U.S. 40 (1968) — https://www.courtlistener.com/opinion/107730/sibron-v-new-york/ — pinpoints: 66–67.

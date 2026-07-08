@@ -30,10 +30,10 @@ lake:
   status: under_review
   projected_at: 2026-07-07
 homes:
-  - page: "[[Search Incident to Arrest]]"
-    role: Key
+  - page: "[[SIA Vehicles]]"
+    role: "Lower-court development (role-based)"
 related:
-  - "[[Search Incident to Arrest]]"
+  - "[[SIA Vehicles]]"
   - "[[Arizona v. Gant]]"
   - "[[Riley v. California]]"
   - "[[Chimel v. California]]"
@@ -75,7 +75,7 @@ Perez's core contention was that *Gant* (which cabined vehicle searches incident
 **Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub; its citator and progeny history have not completed the two-key verification, so it renders under the ⚪ banner until S9 promotion. *Perez* is a useful post-*Riley* boundary marker for **search incident to arrest**: it confirms that the *[[Chimel v. California|Chimel]]* grabbing-area rule still authorizes the warrantless search of an arrestee's nearby **physical container**, and that *[[Arizona v. Gant|Gant]]* (vehicles) and *[[Riley v. California|Riley]]* (cell phones) did not silently overrule that allowance. Teach it to keep students from over-reading *Riley* into a general container rule.
 
 ## Appears on
-- [[Search Incident to Arrest]] — *Key*
+- [[SIA Vehicles]] — *Lower-court development (role-based)*
 
 ## Sources
 - [*United States v. Perez*, 89 F.4th 247 (1st Cir. 2023)](https://www.courtlistener.com/opinion/9456060/united-states-v-perez/) — pinpoint: slip op. at 17 (*Eatherton*'s search-incident-to-arrest rule for an arrestee's bag survives *Gant* and *Riley*; the CL opinion text carries slip pagination, so the pin is slip-style per S2 A3). Rule quote string-matched to the CL opinion text 2026-07-07.

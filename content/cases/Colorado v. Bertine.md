@@ -26,8 +26,6 @@ courtlistener:
   opinion_id: 9430773
   identity_checked: true
 homes:
-  - page: "[[Search Incident to Arrest]]"
-    role: "Key — Progeny / Refinement"
   - page: "[[Special Needs and Administrative Searches]]"
     role: "Related (cross-doctrine)"
 related: ["[[Illinois v. Lafayette]]", "[[Florida v. Wells]]", "[[South Dakota v. Opperman]]"]
@@ -67,7 +65,6 @@ The inventory search, including the closed containers, was constitutional; the C
 - No negative treatment. *Bertine* applies the inventory doctrine of [[South Dakota v. Opperman]] and [[Illinois v. Lafayette]]; [[Florida v. Wells]] later confirmed that standardized criteria must in fact govern the opening of containers, lest the inventory become a pretext for general rummaging.
 
 ## Appears on
-- [[Search Incident to Arrest]] — *Key — Progeny / Refinement*
 - [[Special Needs and Administrative Searches]] — *Related (cross-doctrine)*
 
 ## Sources
