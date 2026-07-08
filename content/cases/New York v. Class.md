@@ -30,6 +30,8 @@ homes:
     role: "Related (cross-doctrine)"
   - page: "[[Traffic Stops]]"
     role: "Related (cross-doctrine)"
+  - page: "[[Plain View Doctrine]]"
+    role: "Related (cross-doctrine)"
 related: ["[[Pennsylvania v. Mimms]]", "[[Delaware v. Prouse]]", "[[South Dakota v. Opperman]]"]
 aliases: []
 tags: ["case", "fourth-amendment", "search", "vehicle", "vin", "traffic-stop", "reasonable-expectation-of-privacy"]
@@ -69,6 +71,7 @@ Reading the obscured VIN by a brief reach into the car was a reasonable, minimal
 ## Appears on
 - [[Reasonable Expectation of Privacy]] — *Related (cross-doctrine)*
 - [[Traffic Stops]] — *Related (cross-doctrine)*
+- [[Plain View Doctrine]] — *Related (cross-doctrine)*
 
 ## Sources
 - *New York v. Class*, 475 U.S. 106 (1986) — https://www.courtlistener.com/opinion/111600/new-york-v-class/ — pinpoints: 114, 119.

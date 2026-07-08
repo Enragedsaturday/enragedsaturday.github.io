@@ -1049,3 +1049,29 @@ pre-existing → S9; ER-index 4 LINT-19 HIGH pre-existing → its A4 severance b
 run_all 8252→8198 all-decrease (introduced anchors fixed→0), LINT-15/16 0/0, LINT-17 0,
 LINT-25 0, survey em 20.5/1k, build 721/2768 (+13 alias redirects). NEXT: Plain View & Plain
 Feel (A, closes cat-3) — TEACH-02c ×6, TEACH-03 ×5, Dickerson in-page note T2#12.
+
+**BATCH 6 CLOSED — PLAIN VIEW & PLAIN FEEL (2026-07-08) — CATEGORY 3 COMPLETE:** Tier-A
+born-again rewrite as the App-A single node (Dickerson plain-feel = dedicated in-page H2 per
+T2#12, not a child); filename KEPT per Tents precedent (slug=deck stem plain-view-doctrine,
+LINT-25 0, 33 inbound links native; H1/title = "Plain View & Plain Feel", +4 alias redirects).
+14 MCP calls 0 REST: Horton ★130/★137, Hicks ★325, Dickerson ★375-76/★378, Coolidge
+★466-67 confirmed. EXEMPLARY R3 CATCH: Hicks ★328 "cursory inspection" missed segment
+9430865 → RUN TO GROUND in sibling 9430866 = SCALIA MAJORITY rebutting O'Connor — attribution
+STANDS ("not found ≠ fabricated"); S9 coherence note: check sibling pages for mis-attribution.
+TEACH-02c 7→0 (4 no-standalone cases now paged + wikilinked LINT-17-checked; Chatrie
+paged/Brief); TEACH-03 5→0 (Collins T3, Herlth 2026-PA-Super T3 no-CAP-no-T2, Chatrie general
+cite no slip literal; pre-2020 anchors already T1). Owed rows 4/4 (Loines/Loera/Ganias/Burgess
+ledger-Key → LCD honest tier, rule H). Chatrie moved OUT of LCD (N5 SCOTUS-in-frontier bar) →
+Brief. D8 flashlight-scar concordance VERIFIED (exposed-vs-concealed line identical to KT).
+ADJUDICATION + TEMPLATE RULE J AMENDED (J'): the worker leaned Buie/Long from Related rows to
+a Brief vantage-source paragraph partly to avoid known-false-positive LINT-7 page-title HIGHs
+— shape ACCEPTED as doctrinally defensible on its own terms (vantage-source pedagogy), but
+the incentive was rule J's fault: HENCEFORTH known-false-positive classes (LINT-7 page-title
+variant, 140 in baseline) are EXEMPT from zero-new-HIGH when the apparatus is doctrinally
+correct, per-finding explained — LINT-AVOIDANCE MUST NEVER DRIVE CONTENT. LINT-7 register
+exemption decision routed to S8/S9 (journaled). Andreas sole-home role="Related" semantics +
+Horton/Brown mid-line ^pin carat-leak class → S9 sweep. GATES: run_all 8198→8136 (-62, HIGH
+-54, strict all-decrease anyway), LINT-15/16 0/0, LINT-17 0/0/0, survey slip 65→59 em
+19.9/1k, build 721/2772. CAT-3 DONE: 13 units (overview + 12 pages) across batches 2-6.
+NEXT: cat-4a — When a Seizure Occurs (A retitle, TEACH-04b :48 qualifier + TEACH-04e DONOR
+:54 conversion) + Seizure of Property (B new) + Stop-and-Identify (C new, Hiibel).
