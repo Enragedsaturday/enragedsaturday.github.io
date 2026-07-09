@@ -1384,3 +1384,27 @@ class), LINT-15/16 0/0 x4, LINT-17 0, LINT-8 0, LINT-20/25 0, survey em 8.5/1k l
 build 722/2834 byte-stable. SCOREBOARD: CATS 2-8 COMPLETE = 64 units born draft. NEXT:
 batch 17 cat-9+10 (6A RtC A + Lineups B new + Eyewitness B + Brady B + Entrapment B); then
 cat-1, cat-12/13, cat-11 (NOW UNBLOCKED per user decision), consolidated repair lane, close.
+
+**BATCH 17 CLOSED — CAT-9 + CAT-10 (2026-07-09) — CATEGORIES 9 AND 10 COMPLETE:** 6A Right to
+Counsel (A born-again: attachment→offense-specific→Massiah→Montejo-overrules-Jackson spine,
+em 35.2→7.2/1k) + Lineups & RtC (B AUTHORED: Wade/Gilbert critical-stage + per-se, Kirby/Ash
+limits; counsel-presence/reliability boundary held vs Eyewitness w/ intentional Wade/Gilbert
+dual-home per registry) + Eyewitness ID (B: Stovall→Biggers→Manson→Perry; Perry T3 — cache
+L.Ed.2d-only, no U.S. pins, refused proportional fabrication) + Brady & Giglio (B:
+officer-credibility framing, Kyles prosecution-team duty, Youngblood/Trombetta preserve-duty
+companion line added via owed rows; Smith-v-Cain T3) + Entrapment (B: subjective-test spine).
+**SELF-CAUGHT FABRICATION (the finest-grain catch of the run):** worker's draft Gilbert quote
+"the direct result of the illegal lineup" NOT IN TEXT → replaced w/ the verified per-se
+language at ★273; McNeil "serve different interests" carried quote REFUTED → paraphrase. R3
++ G3/G4 working at draft grain. STALE PREMISE CAUGHT AGAIN (Brady 04e — canonical 0, no
+conversion owed). Mode lake-grounded 0 CL (cache text pool). Owed rows 5/5 by presence w/
+case-level cites (no fabricated pins on under_review shells). TEACH-02c 6→0 across the 5
+pages; TEACH-04d Brady inverted 1→0; LINT-16 weight-label catches (Benn/Escobedo/Jackson
+cells). Rule-B: 22 broken deep-links → plain links (register +~26). Registry counsel.lineup
+statement filled. GATES: run_all 7204→7059 (HIGH 4018, -151 zero-new; +11 MED = Lineups
+bibliography class), LINT-15/16 0/0 x5, LINT-17 0, LINT-20/25 0, survey em 7.1/1k slip 27
+leaks 8 inverted 3, build 722/2839 (+5 aliases), Case Index byte-idempotent. S9 residue:
+S.Ct.-paginated cache pins (Wearry/Turner/Connick/Rothgery/Montejo) flagged for U.S.-pin
+confirm; 5 owed cases under_review status class. SCOREBOARD: CATS 2-10 COMPLETE = 69 units
+born draft. NEXT: batch 18 cat-1 Foundations (Framework B-hub w/ TEACH-01-worst + 12b hub
+migration + :88 multi-circuit label + batch-5-owed private-search demote; 3 C siblings).
