@@ -1601,3 +1601,9 @@ the baseline was the R6-epoch "remediation adds no refs" invariant; the 16 r2 up
 add refs. Load-bearing check (2) = 287/287 resolve, 0 unresolved. Steady-state guard moves to the
 R13 LINT-5 broken-anchor=HIGH rewrite. Corpus pincite state: 182 case-page + 548 doctrine external
 CL links (225 fragment-deep total), 16 deep upgrades, zero live CL.
+
+**Record correction (d4c87b4):** the commit-time build invocation raced the still-running :8080
+dev server (ENOTEMPTY on public/seizures) and the pipe masked the exit code — the "build green"
+claim in d4c87b4's message was premature at commit time. Server killed; clean rebuild verified:
+724 in / 2873 emitted, exit 0. Content state unaffected (public/ is gitignored; the race was
+emit-side only). Honest-record note per reporting discipline.
