@@ -1647,3 +1647,27 @@ validated against F-DEMO-001). O1's `_run/` S9 artifacts preserved as historical
 under `_run/s9/`. Next after P0 review+commit: P1 fan-out (panel review + Thread-N blind reads,
 Codex case-grain / Claude doctrine-grain; manifests journaled; Claude serial lane starts the
 ≥1-in-10 identity slice + COH-27 pending-marker polls).
+
+**P0 COMPLETE (2026-07-09).** Three lanes returned, orchestrator-reviewed:
+- **P0-A inventory:** 24,619 assertions / 9 classes, deterministic ids (byte-identical rebuild
+  proof; body_sha256 1d8dfe69…), cross-ties reconcile exactly (968 pinpoints, 14,184 mention rows,
+  252 coverage rows, 80 registry nodes, 42 glossary). Honest residuals → currency sweep: 35
+  unselected-official-cite pages (71 lake records), 5 cite-less 2022–26 cases; 3 holding-less
+  SACO mints; 2 no-CL English cases.
+- **P0-B Thread-P FROZEN:** 724 items (609 case/115 doctrine), hash 8e51d0c8… (header+sidecar),
+  idempotent, 779/779 homes resolved, no-regression floor = 724. R5 ordering law: NO Thread-N
+  manifest before this freeze — freeze commits now.
+- **P0-C roster:** renumbering already-in-place (no correction); LINT-3 REBUILT lake-driven
+  (N5 section-scoped; acceptance fixture passes; +2 TRUE N5 HIGHs at Arrest and Arrest
+  Warrants:53/54; +72 A9 case-wall HIGHs = genuine TEACH-07 content-remediation class);
+  LINT-8+TEACH-11 target/wording checks (corpus 0); LINT-30 invariant script validates
+  F-DEMO-001 clean + fail-fixture fires all 5 invariants; run_all TOTAL 4250 / HIGH 3455
+  (+74, all attributed to the LINT-3 rebuild — real findings, not FPs).
+**ORCHESTRATOR ADJUDICATIONS:** (1) A9 72 → R4-machine content findings at P3; (2) N5
+defect-scoped reading RATIFIED (2 fires vs 110 literal — F-DEMO-001 precedent); (3) LINT-15/16
+stay standalone (batch-1 rule C) but must be green at R13 — and the **Case Index schema-3 flip
+is ORPHANED work** (S7 handoff assigned S8; signed S8 spec never included it; S9 absorbs it as
+a mechanical generator+regen fix in P3, clearing the LINT-16 621-HIGH class); (4) LINT-11
+(TEACH-02b pipeline-vocab) = missing script, S9 R8 build item, next lane batch.
+NEXT: commit P0 → P1 fan-out (panel + Thread-N; manifests; Claude serial identity slice +
+COH-27 marker polls).

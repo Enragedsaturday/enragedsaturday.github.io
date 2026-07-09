@@ -1,20 +1,33 @@
 #!/usr/bin/env python3
 """
 Runner for the NON-CL CSSI lints (LINT-2,3,4,5,6,7,8,9,10,12,13,14,17,18,19,20,
-21,22,23,24,25,26,27,28,29) over content/ and the S3 repo scans. Fixture self-tests
-for LINT-5,7,10,12,13,14,17,27,28,29 run first, fail-closed. The full numeric roster
-LINT-1…30 is codified at S9 (S9 R8); rows land here as their owning specs execute.
-LINT-15/16 stay STANDALONE (batch-1 rule C) — never in this roster: they scan repo
-structure the way the S3/S5 tooling drives them, not the content sweep.
+21,22,23,24,25,26,27,28,29,30) over content/, the S3 repo scans, and the S9 ledger.
+Fixture self-tests for LINT-3,5,7,8,10,12,13,14,17,27,28,29,30 run first, fail-closed.
+The full numeric roster LINT-1…30 is codified at S9 (S9 R8).
+
+LINT-1 (CourtListener identity) is DELIBERATELY EXCLUDED here: it touches the
+network and must run only through its assigned serial credential lane at the
+publish gate (S1 L4'). This runner never makes a CL call.
+
+LINT-15 (skeleton) / LINT-16 (case-tables) remain STANDALONE (batch-1 rule C, kept
+by S9 R8's wiring): they scan repo structure the way the S3/S5 tooling drives them,
+not the content sweep, and the S8-close baseline (TOTAL 4176 / HIGH 3381) was
+measured with them out of this runner (LINT-16 carries a 622-HIGH standalone
+backlog). They run via their own self_test/standalone invocation. S9 R8's "run_all
+runs 2–30" is honored for the content/data/ledger rows; 15/16's runner placement
+is left to the orchestrator (they stay standalone here to preserve the baseline).
+
+S9 R8 rebuilds folded in here: LINT-3 rebuilt lake-driven — the O1 token-window N5
+heuristic is DEAD; N5 is now section-scoped against the S2 lake court field, plus
+the S1 A9 >3-cases-per-paragraph sub-check (F-DEMO-001 acceptance fixture
+lint-3-n5.md). LINT-8 gains TEACH-11 (mnemonic/maxim wikilink-target + register
+wording). LINT-30 is the R4 ledger-reconciliation invariant script (bootstrap-aware:
+NO-ROWS-YET green until the ledger fills, fail-closed after).
 
 S8 R13 additions: LINT-5 (ledger-aware bare-caption + broken-anchor HIGH + embed
 full-slug) and LINT-7 (register coverage + dead-anchor HIGH; old first-occurrence
 rule DELETED) are rewritten; LINT-27 (table pipes, R11), LINT-28 (fragment
 well-formedness, R13d) and LINT-29 (shingle boundary, R9) are new.
-
-LINT-1 (CourtListener identity) is DELIBERATELY EXCLUDED here: it touches the
-network and must run only through its assigned serial credential lane at the
-publish gate (S1 L4'). This runner never makes a CL call.
 
 Prints each lint's JSON-line violations (unless --quiet) and a per-lint summary
 table. Exits non-zero if any lint reports a high-severity violation.
@@ -57,6 +70,10 @@ import lint27_table_pipes as l27    # noqa: E402
 import lint28_fragments as l28      # noqa: E402
 import lint29_shingle_boundary as l29  # noqa: E402
 
+# LINT-30 (the R4 ledger reconciliation invariants) lives under scripts/s9/.
+sys.path.insert(0, os.path.join(os.path.dirname(c.HERE), "s9"))
+import check_ledger as l30          # noqa: E402
+
 # LINT-24 (URL resolution) reads the CURRENT BUILD OUTPUT (public/). Unlike
 # LINT-1 (network CL identity, serial-gate-only), it is CI-SAFE to register here:
 # it self-guards — if public/ is absent/stale (no public/index.html) it emits ONE
@@ -64,7 +81,7 @@ import lint29_shingle_boundary as l29  # noqa: E402
 # after the `npx quartz build` step. The remaining S3 lints are pure repo scans.
 LINTS = [
     ("LINT-2", "quote/pinpoint (L1)", l2.run),
-    ("LINT-3", "structure / no-SCOTUS-in-recent-dev (N5/N8)", l3.run),
+    ("LINT-3", "structure + N5 lake-driven + A9 case-wall (N5/N8/A9)", l3.run),
     ("LINT-4", "authority lexicon (N2)", l4.run),
     ("LINT-5", "link-every-case + wikilink resolution (N7)", l5.run),
     ("LINT-6", "treatment-status presence (N13)", l6.run),
@@ -88,10 +105,13 @@ LINTS = [
     ("LINT-27", "table pipe-escaping (S8 R11/NUM-02)", l27.run),
     ("LINT-28", "external text-fragment well-formedness (S8 R13d)", l28.run),
     ("LINT-29", "R9 transclusion/shingle boundary (S8 R9)", l29.run),
+    ("LINT-30", "R4 ledger reconciliation invariants (S9 R4, bootstrap-aware)", l30.run),
 ]
 
 SELF_TESTS = [
+    ("LINT-3", "LINT-3 self-test gate (N5 lake-driven + A9, fail-closed)", l3.self_test, l3.FIXTURE),
     ("LINT-5", "LINT-5 self-test gate (S8 R13a, fail-closed)", l5.self_test, l5.FIXTURE),
+    ("LINT-8", "LINT-8 self-test gate (TEACH-11 target+wording, fail-closed)", l8.self_test, l8.FIXTURE),
     ("LINT-7", "LINT-7 self-test gate (S8 R13b, fail-closed)", l7.self_test, l7.FIXTURE),
     ("LINT-10", "LINT-10 self-test gate (S1 A3, fail-closed)", l10.self_test, l10.FIXTURE),
     ("LINT-12", "LINT-12 self-test gate (S2 R12/A13, fail-closed)", l12.self_test, os.path.join(c.HERE, "fixtures")),
@@ -101,6 +121,7 @@ SELF_TESTS = [
     ("LINT-27", "LINT-27 self-test gate (S8 R11, fail-closed)", l27.self_test, l27.FIXTURE),
     ("LINT-28", "LINT-28 self-test gate (S8 R13d, fail-closed)", l28.self_test, l28.FIXTURE),
     ("LINT-29", "LINT-29 self-test gate (S8 R9, fail-closed)", l29.self_test, l29.FIXTURE),
+    ("LINT-30", "LINT-30 self-test gate (R4 invariants + F-DEMO-001, fail-closed)", l30.self_test, l30.DEMO_DIR),
 ]
 
 
