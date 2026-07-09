@@ -28,3 +28,11 @@ After: re-run fragments.py for affected records; re-run affected Thread-N reads;
 8. Zorn v. Linton: degenerate identity (court="2026", no year/opinion ids) — the KNOWN S6
    watch item (corrupt Strike-3 cluster; off-CL decision owed). Do NOT fetch; S9 adjudicates
    the off-CL path per the S6 register.
+
+## CONFIRMED TARGETS (resolution lane 2026-07-09, _run/s9/rekey-targets.jsonl — 12 CL calls)
+- Davis 1994: cluster 117863 / lead 9433017 (abandon stub 9148721/9143409)
+- Davis 2011: cluster 218926 / lead 9441776 (abandon stub 7350241/7268220; L.Ed.2d duplicate 7345713 noted)
+- Fisher: cluster 131160 / lead 9434538 (per curiam, docket 03-374 matched)
+- Wyman: NO RE-KEY (108223 confirmed Wyman; F-S9-DN-001 DISMISSED); text fetch lead 9424375 only
+- Flippo: FP confirmed, no action
+- 7 re-keyed leads: all opinion objects exist (types logged); text fetch each
