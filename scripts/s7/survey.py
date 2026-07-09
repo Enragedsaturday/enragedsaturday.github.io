@@ -365,6 +365,36 @@ def write_survey(survey, out_path):
         f.write("\n")
 
 
+def require_nonempty_survey(survey):
+    """Fail closed: a survey with zero substantive pages means a discovery/path
+    regression (the corpus is never legitimately empty). Never let that be written
+    as a valid-looking success artifact."""
+    if survey["totals"]["pages"] == 0:
+        raise RuntimeError(
+            "survey discovered 0 substantive pages — discovery/path regression, "
+            "refusing to write an empty survey as success")
+    return survey
+
+
+def resolve_out_path(argv, default_path):
+    """Resolve the --out override, fail-closed. A bare `--out` (no value) is an
+    error, not a silent fall-back to the default; a resolved path must stay under
+    REPO_ROOT so a relative `../..` cannot escape the repo."""
+    if "--out" not in argv:
+        return default_path
+    i = argv.index("--out")
+    if i + 1 >= len(argv):
+        raise ValueError("--out requires a path")
+    out_path = argv[i + 1]
+    if not os.path.isabs(out_path):
+        out_path = os.path.join(REPO_ROOT, out_path)
+    resolved = os.path.realpath(out_path)
+    root = os.path.realpath(REPO_ROOT)
+    if resolved != root and not resolved.startswith(root + os.sep):
+        raise ValueError("--out path must stay under the repository root: %r" % out_path)
+    return resolved
+
+
 # --------------------------------------------------------------------------
 # self-test (S1 A3 convention) — pure-detector unit checks + fixture scans
 # --------------------------------------------------------------------------
@@ -436,6 +466,31 @@ def self_test():
     check("rule-callout", has_rule_callout(["> [!rule] Terry rule", "> text"]), True)
     check("apply-it", has_apply_it("**Apply it.**\n1. do X"), True)
 
+    # fail-closed: empty survey must raise, non-empty passes through
+    def _raises(fn):
+        try:
+            fn()
+        except (RuntimeError, ValueError):
+            return True
+        return False
+    check("empty-survey-raises",
+          _raises(lambda: require_nonempty_survey({"totals": {"pages": 0}})), True)
+    check("nonempty-survey-ok",
+          require_nonempty_survey({"totals": {"pages": 3}})["totals"]["pages"], 3)
+
+    # --out resolution: default when absent, fail-closed on bare flag / escape
+    _dflt = os.path.join(REPO_ROOT, OUT_REL)
+    check("out-default", resolve_out_path([], _dflt), _dflt)
+    check("out-relative-under-root",
+          resolve_out_path(["--out", "_run/x.json"], _dflt),
+          os.path.join(os.path.realpath(REPO_ROOT), "_run", "x.json"))
+    check("out-bare-flag-raises",
+          _raises(lambda: resolve_out_path(["--out"], _dflt)), True)
+    check("out-escape-raises",
+          _raises(lambda: resolve_out_path(["--out", "../../etc/passwd"], _dflt)), True)
+    check("out-abs-escape-raises",
+          _raises(lambda: resolve_out_path(["--out", "/tmp/escape.json"], _dflt)), True)
+
     # ---- fixture-file integration scans ----
     for base, expect in (("legacy-page.md", {
             "h1_present": False, "rule_skeleton": True, "rd_heading": True,
@@ -472,17 +527,11 @@ def self_test():
 def main(argv):
     if "--self-test" in argv:
         return self_test()
-    survey = build_survey()
+    survey = require_nonempty_survey(build_survey())
     if "--stdout" in argv:
         sys.stdout.write(json.dumps(survey, ensure_ascii=False, indent=2) + "\n")
         return 0
-    out_path = os.path.join(REPO_ROOT, OUT_REL)
-    if "--out" in argv:
-        i = argv.index("--out")
-        if i + 1 < len(argv):
-            out_path = argv[i + 1]
-            if not os.path.isabs(out_path):
-                out_path = os.path.join(REPO_ROOT, out_path)
+    out_path = resolve_out_path(argv, os.path.join(REPO_ROOT, OUT_REL))
     write_survey(survey, out_path)
     t = survey["totals"]
     sys.stderr.write(

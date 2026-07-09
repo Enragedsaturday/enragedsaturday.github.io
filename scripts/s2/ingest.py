@@ -5099,8 +5099,14 @@ def harmonized_lead_from_cluster(cluster, cluster_id):
     for item in cluster.get("sub_opinions") or []:
         try:
             oid = extract_opinion_id(item, "cluster.sub_opinions[]")
-        except ValueError:
-            continue
+        except ValueError as exc:
+            # Fail closed: a partially parsed / corrupt cached sub_opinion must not
+            # be silently dropped — skipping it would let a LATER opinion id become
+            # the harmonized lead from incomplete ordering and be written as a
+            # verified re-key. Re-raise so the callers queue/abort before any write.
+            raise ValueError(
+                "cached cluster %s has an unparsable sub_opinion: %s" % (cluster_id, exc)
+            ) from exc
         if oid:
             subs.append(int(oid))
     if not subs:
@@ -5134,20 +5140,33 @@ def rekey_lead_opinion_from_cache(paths, manifest, journal, client, record_ids,
         record = load_case_record(paths, record_id)
         if record is None:
             raise SystemExit("--rekey-lead-opinion-from-cache lake record missing on disk: %s" % record_id)
-        cluster_id = (record.get("identity") or {}).get("cluster_id")
+        identity0 = record.get("identity") or {}
+        cluster_id = identity0.get("cluster_id")
         if not cluster_id:
             raise SystemExit("--rekey-lead-opinion-from-cache row %s has no identity.cluster_id" % record_id)
-        targets.append((record_id, row, record, int(cluster_id)))
+        # Normalize BOTH the cluster id and the current lead in phase 1 so a
+        # non-integer identity field aborts the whole batch BEFORE any row is
+        # written (the phase-1 all-batch-validation contract), never mid-phase-2.
+        try:
+            cluster_id = int(cluster_id)
+        except (TypeError, ValueError):
+            raise SystemExit("--rekey-lead-opinion-from-cache row %s has non-integer identity.cluster_id: %r"
+                             % (record_id, cluster_id)) from None
+        raw_lead = identity0.get("lead_opinion_id")
+        try:
+            current_lead = int(raw_lead) if raw_lead is not None else None
+        except (TypeError, ValueError):
+            raise SystemExit("--rekey-lead-opinion-from-cache row %s has non-integer identity.lead_opinion_id: %r"
+                             % (record_id, raw_lead)) from None
+        targets.append((record_id, row, record, cluster_id, current_lead))
 
     # Phase 2 — per-row cache fetch + write, journaled + resumable-by-outcome.
     rekeyed = []
     queued = []
     noop = []
     refused = []
-    for record_id, row, record, cluster_id in targets:
+    for record_id, row, record, cluster_id, current_lead in targets:
         identity = record.get("identity") or {}
-        current_lead = identity.get("lead_opinion_id")
-        current_lead = int(current_lead) if current_lead is not None else None
         try:
             cluster = client.get_cluster(cluster_id, record_id=record_id, step=REKEY_LEAD_STEP + ".cluster")
         except (IngestInterrupted, FetchFailed) as exc:
@@ -5157,7 +5176,16 @@ def rekey_lead_opinion_from_cache(paths, manifest, journal, client, record_ids,
                                 reason=getattr(exc, "reason", None) or "not_cached", cluster_id=cluster_id)
             queued.append(record_id)
             continue
-        harmonized, subs = harmonized_lead_from_cluster(cluster, cluster_id)
+        try:
+            harmonized, subs = harmonized_lead_from_cluster(cluster, cluster_id)
+        except ValueError as exc:
+            # corrupt cached cluster (unparsable sub_opinion): fail closed — never
+            # write a lead from incomplete ordering; queue for the lane instead.
+            _journal_rekey_lead(journal, record_id=record_id, status="queued-for-lane",
+                                reason="unparsable cached sub_opinion: %s" % exc,
+                                cluster_id=cluster_id)
+            queued.append(record_id)
+            continue
         if harmonized is None:
             _journal_rekey_lead(journal, record_id=record_id, status="queued-for-lane",
                                 reason="cached cluster carries no sub_opinion",
@@ -5282,8 +5310,22 @@ def rekey_cluster_panel(paths, manifest, journal, client, precedence, record_ref
             "--rekey-cluster-panel refuses row %s: expected cite %r absent from cached target cluster %s citations %s"
             % (record_id, expect_cite, target_cluster_id, sorted(cluster_cite_keys))
         )
+    # Fail closed: the official-selection serializer can carry the expected cite in
+    # `all` yet select NO official display (e.g. only vendor-neutral/unlisted-reporter
+    # cites qualify). Writing that block would mark the record verified while leaving
+    # the manifest row's official_cite stale — an empty result recorded as a verified
+    # state. Refuse before mutating the record.
+    if not block.get("display"):
+        raise SystemExit(
+            "--rekey-cluster-panel refuses row %s: cached target cluster %s produced no citations.display"
+            % (record_id, target_cluster_id)
+        )
 
-    harmonized, subs = harmonized_lead_from_cluster(cluster, target_cluster_id)
+    try:
+        harmonized, subs = harmonized_lead_from_cluster(cluster, target_cluster_id)
+    except ValueError as exc:
+        # corrupt cached target cluster (unparsable sub_opinion): fail closed, no write.
+        raise SystemExit("--rekey-cluster-panel refuses row %s: %s" % (record_id, exc)) from exc
     if harmonized is None:
         raise SystemExit("--rekey-cluster-panel target cluster %s carries no sub_opinion in cache"
                          % target_cluster_id)
@@ -5316,8 +5358,9 @@ def rekey_cluster_panel(paths, manifest, journal, client, precedence, record_ref
 
     row["cluster_id"] = target_cluster_id
     row["lead_opinion_id"] = harmonized
-    if block.get("display"):
-        row["official_cite"] = block["display"]
+    # display is guaranteed present (guarded above) — keep the manifest row's
+    # official_cite in lockstep with the freshly written record citations block.
+    row["official_cite"] = block["display"]
     row["last_record_write"] = iso_now()
     after = {
         "cluster_id": target_cluster_id, "lead_opinion_id": harmonized,
@@ -6680,6 +6723,15 @@ def run_ingest(args):
         # ignored) without the repair action it gates — refuse rather than fall
         # through to the normal ingest path and consume CL calls.
         raise SystemExit("--repair-coa-state-allow-docket-fetch requires --repair-coa-state-from-cache")
+    if (args.rekey_cluster_target or args.rekey_cluster_expect_cite
+            or args.rekey_cluster_evidence) and not args.rekey_cluster_panel:
+        # Fail closed / API-quota safety: the panel companion args are meaningless
+        # (and silently ignored) without --rekey-cluster-panel. Without this guard
+        # they fall through to the normal live-ingest path and can consume CL budget
+        # instead of running the intended cache-only maintenance action.
+        raise SystemExit(
+            "--rekey-cluster-target/--rekey-cluster-expect-cite/--rekey-cluster-evidence "
+            "require --rekey-cluster-panel")
     if args.apply_web_cites:
         if (
             args.apply_web_keys or args.apply_alias_folds or args.enrich_citations
@@ -11337,6 +11389,8 @@ def self_test_rekey_lead_opinion_from_cache():
             stub_row("single-self--500", status="under_review", cluster_id=500, lead_opinion_id=None),
             stub_row("empty-cluster--600", status="verified", cluster_id=600, lead_opinion_id=None),
             stub_row("uncached--333", status="verified", cluster_id=333, lead_opinion_id=333),
+            stub_row("malformed-sub--950", status="verified", cluster_id=950, lead_opinion_id=None),
+            stub_row("bad-lead--777", status="verified", cluster_id=777, lead_opinion_id=None),
         ]}
         write_json(paths.manifest, manifest_data)
         manifest = ManifestStore(paths.manifest)
@@ -11355,6 +11409,8 @@ def self_test_rekey_lead_opinion_from_cache():
         seed("single-self--500", 500, None)          # legit legacy single-opinion cluster (opinion == cluster)
         seed("empty-cluster--600", 600, None)        # cluster with zero sub_opinions -> queue
         seed("uncached--333", 333, 333)              # cluster not cached
+        seed("malformed-sub--950", 950, None)        # cached cluster w/ unparsable sub_opinion -> queue
+        seed("bad-lead--777", 777, None)             # record identity lead is non-integer -> abort
 
         def sub(oid):
             return "https://www.courtlistener.com/api/rest/v4/opinions/%s/" % oid
@@ -11365,6 +11421,9 @@ def self_test_rekey_lead_opinion_from_cache():
             800: {"id": 800, "sub_opinions": [sub(8001), sub(8002), sub(800)]},
             500: {"id": 500, "sub_opinions": [sub(500)]},  # sole opinion == cluster (legitimate lead)
             600: {"id": 600, "sub_opinions": []},
+            # unparsable sub_opinion: a dict carrying cluster_id but no opinion id
+            # (extract_opinion_id raises ValueError) -> harmonized_lead fails closed.
+            950: {"id": 950, "sub_opinions": [{"cluster_id": 950}]},
         }
 
         class CacheClient:
@@ -11432,6 +11491,29 @@ def self_test_rekey_lead_opinion_from_cache():
             pass
         else:
             raise AssertionError("rekey_lead accepted a cluster-less row")
+
+        # unparsable cached sub_opinion fails closed -> queued (never re-keyed from
+        # incomplete ordering)
+        msres = rekey_lead_opinion_from_cache(paths, manifest, journal, CacheClient(),
+                                              ["malformed-sub--950"])
+        assert msres["queued"] == ["malformed-sub--950"], msres
+        assert not msres["rekeyed"], msres
+        assert load_case_record(paths, "malformed-sub--950")["identity"]["lead_opinion_id"] is None
+        msrow = [r for r in journal.rows() if r.get("step") == REKEY_LEAD_STEP
+                 and r.get("record_id") == "malformed-sub--950"][-1]
+        assert msrow["status"] == "queued-for-lane" and "unparsable" in msrow["reason"], msrow
+
+        # non-integer identity.lead_opinion_id aborts in phase 1 (before any write)
+        badrec = load_case_record(paths, "bad-lead--777")
+        badrec["identity"]["lead_opinion_id"] = "not-an-int"
+        write_case_record(paths, badrec)
+        try:
+            rekey_lead_opinion_from_cache(paths, manifest, journal, CacheClient(),
+                                          ["king-like--216733", "bad-lead--777"])
+        except SystemExit:
+            pass
+        else:
+            raise AssertionError("rekey_lead accepted a non-integer lead_opinion_id")
     finally:
         shutil.rmtree(tmp)
 
@@ -11490,6 +11572,17 @@ def self_test_rekey_cluster_panel():
             9999999: {"id": 9999999, "date_filed": "2014-04-18", "absolute_url": "/opinion/9999999/decoy/",
                       "sub_opinions": [sub(9999999)],
                       "citations": [{"volume": "572", "reporter": "U.S.", "page": "1055", "type": 1}]},
+            # carries the expected cite in `all` but yields NO official display: a
+            # vendor-neutral (type 8) cite never wins scotus official selection, so
+            # `display` is None while `all` still matches expect -> display guard.
+            8888888: {"id": 8888888, "date_filed": "2014-06-25", "absolute_url": "/opinion/8888888/nodisplay/",
+                      "sub_opinions": [sub(8888888)],
+                      "citations": [{"volume": "500", "reporter": "U.S.", "page": "100", "type": 8}]},
+            # passes expect + display guards but has an unparsable sub_opinion ->
+            # harmonized_lead fails closed, no write.
+            7777777: {"id": 7777777, "date_filed": "2014-06-25", "absolute_url": "/opinion/7777777/badsub/",
+                      "sub_opinions": [{"cluster_id": 7777777}],
+                      "citations": [{"volume": "134", "reporter": "S. Ct.", "page": "2473", "type": 1}]},
         }
 
         class CacheClient:
@@ -11577,6 +11670,31 @@ def self_test_rekey_cluster_panel():
             pass
         else:
             raise AssertionError("rekey_cluster accepted an already-on-target re-key")
+
+        # target carries expect-cite in `all` but yields no official display ->
+        # fail closed (no write; manifest official_cite must be left untouched, not
+        # silently desynced from the record)
+        seed("riley-like--wrong", 8416508, 8386852, "572 U.S. 1055")
+        before_cite = manifest.by_record_id["riley-like--wrong"].get("official_cite")
+        try:
+            rekey_cluster_panel(paths, manifest, journal, CacheClient(), precedence,
+                                "riley-like--wrong", "8888888", "500 U.S. 100", "ev")
+        except SystemExit:
+            pass
+        else:
+            raise AssertionError("rekey_cluster accepted a target with no citations.display")
+        assert load_case_record(paths, "riley-like--wrong")["identity"]["cluster_id"] == 8416508
+        assert manifest.by_record_id["riley-like--wrong"].get("official_cite") == before_cite
+
+        # target with an unparsable sub_opinion -> fail closed, no write
+        try:
+            rekey_cluster_panel(paths, manifest, journal, CacheClient(), precedence,
+                                "riley-like--wrong", "7777777", "134 S. Ct. 2473", "ev")
+        except SystemExit:
+            pass
+        else:
+            raise AssertionError("rekey_cluster accepted a target with an unparsable sub_opinion")
+        assert load_case_record(paths, "riley-like--wrong")["identity"]["cluster_id"] == 8416508
     finally:
         shutil.rmtree(tmp)
 

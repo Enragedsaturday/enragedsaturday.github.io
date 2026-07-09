@@ -18,6 +18,7 @@ _run/o2-execute/.
 Usage: python3 scripts/s7/build_worklist.py [--stdout]
 """
 
+import argparse
 import json
 import os
 import sys
@@ -220,16 +221,39 @@ def build_indexes(survey):
     return by_path, by_base
 
 
-def resolve_t1_current(n, old_rel, by_base):
-    if n in T1_SPLIT_LANDINGS:
-        return T1_SPLIT_LANDINGS[n], "split-into-sub-umbrella-index-landing"
-    base = os.path.basename(old_rel)
-    hits = by_base.get(base, [])
+def resolve_unique_basename(by_base, basename):
+    """(path_or_None, resolution). A hardcoded/basename lookup is only 'resolved'
+    when it maps to exactly one survey page; ambiguity and absence are surfaced
+    distinctly (never collapsed into a single None that a caller reads as a
+    materialized state)."""
+    hits = by_base.get(basename, [])
     if len(hits) == 1:
         return hits[0], "basename-match"
     if len(hits) > 1:
         return None, "AMBIGUOUS:%s" % ";".join(hits)
-    return None, "unresolved"
+    return None, "absent"
+
+
+def resolve_t1_current(n, old_rel, known_paths, by_base):
+    if n in T1_SPLIT_LANDINGS:
+        # A hardcoded split-landing override is only 'resolved' if it names a page
+        # the survey actually visited — otherwise a renamed/deleted landing would be
+        # counted as resolved with '(no survey row)' flags. `known_paths` is the
+        # full page universe the survey saw (substantive rows PLUS the excluded
+        # index-stub / named landings), NOT just the substantive `by_path`: a
+        # sub-umbrella landing that has shrunk below the substantive-word threshold
+        # is legitimately stub-excluded yet still a real, correctly re-homed page,
+        # so it must stay resolved. Fail closed to unresolved only when the target
+        # is in NO known-page set.
+        cur = T1_SPLIT_LANDINGS[n]
+        if cur in known_paths:
+            return cur, "split-into-sub-umbrella-index-landing"
+        return None, "override-missing:%s" % cur
+    base = os.path.basename(old_rel)
+    cur, how = resolve_unique_basename(by_base, base)
+    if cur is None and how == "absent":
+        return None, "unresolved"
+    return cur, how
 
 
 def flags_str(row):
@@ -250,10 +274,10 @@ def flags_str(row):
         (row["diagnostics"]["status"] or "no-status"))
 
 
-def build_t1(by_path, by_base):
+def build_t1(by_path, by_base, known_paths):
     out = []
     for (n, old_rel, s3, tier, fixes, note) in T1:
-        cur, how = resolve_t1_current(n, old_rel, by_base)
+        cur, how = resolve_t1_current(n, old_rel, known_paths, by_base)
         row = by_path.get(cur) if cur else None
         out.append({
             "n": n, "old_path": "content/" + old_rel, "s3_target": s3,
@@ -282,27 +306,25 @@ def build_t2(by_path, by_base):
         note = ""
         if spec.startswith("__INPAGE:"):
             _, page, marker = spec.split(":", 2)
-            hits = by_base.get(page, [])
-            cur = hits[0] if len(hits) == 1 else None
-            kind = "in-page"
+            cur, resolution = resolve_unique_basename(by_base, page)
+            # A special host that fails to resolve uniquely must NOT keep its
+            # special state (that would count an unresolved row as materialized).
+            kind = "in-page" if cur else resolution
             note = "hosted in-page on %s (marker: %s)" % (page, marker)
         elif spec.startswith("__PARENT:"):
             page = spec.split(":", 1)[1]
-            hits = by_base.get(page, [])
-            cur = hits[0] if len(hits) == 1 else None
-            kind = "retained-parent"
+            cur, resolution = resolve_unique_basename(by_base, page)
+            kind = "retained-parent" if cur else resolution
             note = "materialized as retained parent page (see T1)"
         elif spec.startswith("__CROSSREF:"):
             page = spec.split(":", 1)[1]
-            hits = by_base.get(page, [])
-            cur = hits[0] if len(hits) == 1 else None
-            kind = "cross-ref"
+            cur, resolution = resolve_unique_basename(by_base, page)
+            kind = "cross-ref" if cur else resolution
             note = "existing page, not new prose (T1#19)"
         else:
-            hits = by_base.get(spec, [])
-            cur = hits[0] if len(hits) == 1 else None
+            cur, resolution = resolve_unique_basename(by_base, spec)
             row = by_path.get(cur) if cur else None
-            kind = classify_t2_state(row)
+            kind = classify_t2_state(row) if cur else resolution
         row = by_path.get(cur) if cur else None
         out.append({
             "n": n, "node": node, "expected_basename": spec, "tier_signed": tier,
@@ -453,10 +475,33 @@ def render_md(survey, t1, t2, t3):
     return "\n".join(L) + "\n"
 
 
+def atomic_write(path, text):
+    """Write via a temp file + os.replace so an interrupt never leaves a partial
+    artifact (rerun/resume safety, spec discipline)."""
+    tmp = path + ".tmp"
+    with open(tmp, "w", encoding="utf-8") as f:
+        f.write(text)
+    os.replace(tmp, path)
+
+
 def main(argv):
+    # Fail closed on unknown flags: a typo like `--stdotu` must error, never fall
+    # through and silently write output files.
+    parser = argparse.ArgumentParser(description="S7 worklist builder")
+    parser.add_argument("--stdout", action="store_true",
+                        help="print the worklist JSON + rendered MD to stdout, write nothing")
+    args = parser.parse_args(argv)
     survey = load_survey()
     by_path, by_base = build_indexes(survey)
-    t1 = build_t1(by_path, by_base)
+    # The full page universe the survey visited: substantive rows PLUS the pages it
+    # excluded as navigational index-stubs / named landings. Used to validate the
+    # hardcoded split-landing overrides against real pages (a stub-excluded landing
+    # is still real), not just the substantive `by_path`.
+    part = survey.get("partition", {})
+    known_paths = set(by_path)
+    known_paths.update(part.get("excluded_index_stubs", []))
+    known_paths.update(part.get("excluded_named", []))
+    t1 = build_t1(by_path, by_base, known_paths)
     t2 = build_t2(by_path, by_base)
     t3 = build_t3(survey)
     worklist = {
@@ -479,16 +524,14 @@ def main(argv):
         },
     }
     md = render_md(survey, t1, t2, t3)
-    if "--stdout" in argv:
+    if args.stdout:
         sys.stdout.write(json.dumps(worklist, ensure_ascii=False, indent=2) + "\n")
         sys.stdout.write("\n----- S7-WORKLIST.md -----\n")
         sys.stdout.write(md)
         return 0
-    with open(os.path.join(REPO_ROOT, OUT_JSON_REL), "w", encoding="utf-8") as f:
-        json.dump(worklist, f, ensure_ascii=False, indent=2)
-        f.write("\n")
-    with open(os.path.join(REPO_ROOT, OUT_MD_REL), "w", encoding="utf-8") as f:
-        f.write(md)
+    atomic_write(os.path.join(REPO_ROOT, OUT_JSON_REL),
+                 json.dumps(worklist, ensure_ascii=False, indent=2) + "\n")
+    atomic_write(os.path.join(REPO_ROOT, OUT_MD_REL), md)
     s = worklist["summary"]
     sys.stderr.write(
         "[s7-worklist] T1 %d/%d resolved (unresolved=%s) | T2 %d/%d exist "

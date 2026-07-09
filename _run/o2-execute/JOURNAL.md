@@ -1515,3 +1515,33 @@ Donald Cook. GATES: run_all 6829 (HIGH 3781 zero-new), LINT-17 0, LINT-13 0, led
 PASS, ingest self-test PASS, build 724/2873. REGISTER DISPOSITION: repaired 7 ids + Morgan +
 Neville + 6 pointers + 8 index dupes; honest residue = Cook 3-step + Maez/Konan/Landor
 treatments + optional 8th-Cir hunt (all S9/S2-registered). NEXT: S7 CLOSE.
+
+---
+
+**S7 CLOSED (2026-07-09).** The doctrine-production spec is complete. CLOSE RECORD:
+**Acceptance:** 11/11 spec-§7 criteria PASS or PASS-WITH-NOTE, machine-evidenced
+(S7-ACCEPTANCE-SWEEP.md); exactly ONE logged tier amendment (CAF C→B) vs the >10 pause guard;
+D5 + D7 + Bivens + Absolute-Immunity nodes live w/ filled statements; the corpus defect
+classes are DEAD (field-framing 0, rule-skel 0, inverted 0, RD-family 0, missing-H1 0,
+reader-facing pipeline vocab 0 on touched pages). **Zero-drop:** 164 home_rows (158 S6-owed
++ 6 S7-mint) + 58+3 non-page placements fully accounted (S7-OWED-ROWS-ACCOUNTING.md w/
+dead-parent→successor map); honest residue registered, nothing silent. **Close-blocker
+catches (fail-closed working on the orchestrator too):** the close sweep caught MY
+repair-lane over-claim — Riley's panel-rekey identity_method missing from the schema enum
+(LINT-13 1 HIGH, cured by additive enum extension per the web_legs precedent) + the
+un-regenerated Case Index (cured; 612 rows, dedup guard confirmed live). **Code gate:**
+S7-coderabbit-66d8f79.md — 11 findings, ALL UPHELD on the merits → ALL FIXED same session
+w/ extended self-tests (S7-coderabbit-adjudication.md); one reviewer patch REFINED with
+live evidence (the literal fix would have false-flagged stub-excluded-but-real landings);
+suites byte-identical post-fix. Worklist snapshot ADJUDICATED: stays committed as the
+Phase-0 planning record (ledgers are records; dispositions live in the journal + sweep).
+**FINAL GATES:** run_all 6828 (HIGH 3781; from 8372/5212 at S7 open = -1544/-1431), LINT-13
+0, LINT-15 0, LINT-17 0 (252-row ledger PASS 151/151/151), LINT-8/20/24/25 0, LINT-16 =
+the generated-index schema class (S8-owed flip), build 724/2873, ingest+survey self-tests
+PASS, Case Index 612 idempotent. **HANDOFF:** S7-TO-S8-HANDOFF.md delivered (scoreboard ·
+delivered · S8 inherits [388 join surface, linking passes, schema-3 flip, transclusion] ·
+binding decisions · CONSOLIDATED S9 REGISTER [anchor class ~60+, Field-I promotions,
+treatment derivations Maez/Konan/Landor, Cook 3-step, quote-fidelity items, lint
+refinements, the born-draft 89-unit corpus for the panel] · lake state 668 records · honest
+gaps). **S7 IS CLOSED. NEXT: S8 opens with its own read of the handoff; the S9 panel
+inherits the draft corpus. Run brief served.**

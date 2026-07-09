@@ -344,8 +344,15 @@ def main():
     # flagged "assemble": false are documentation-only (identity corrections) and
     # are NOT assembled — e.g. the Cook identity note, which leaves the pre-existing
     # ledger row untouched (writer != checker on the coverage machinery).
+    # Fail-closed accounting: these three S7 disposition files are committed inputs
+    # to the ledger. A renamed / missing / upstream-failed file would otherwise be
+    # silently skipped, producing a quietly smaller ledger that still reports PASS
+    # (an empty ingestion source indistinguishable from "legitimately zero rows").
+    # Record presence of each expected stage and fold it into the `ok` gate below.
+    s7_stage_status = {}
     s7pool = os.path.join(O2, "S7-L1-POOLING-DISPOSITIONS.jsonl")
-    if os.path.isfile(s7pool):
+    s7_stage_status["S7-L1-POOLING-DISPOSITIONS.jsonl"] = os.path.isfile(s7pool)
+    if s7_stage_status["S7-L1-POOLING-DISPOSITIONS.jsonl"]:
         for e in load_jsonl(s7pool):
             if e.get("assemble") is False:
                 continue
@@ -367,7 +374,8 @@ def main():
     # assembled (they enter as `authored` rows when the S2 builder resolves their
     # verified_identity stub and mint_page authors the staged payloads).
     s7saco = os.path.join(O2, "S7-L2-SACO-DISPOSITIONS.jsonl")
-    if os.path.isfile(s7saco):
+    s7_stage_status["S7-L2-SACO-DISPOSITIONS.jsonl"] = os.path.isfile(s7saco)
+    if s7_stage_status["S7-L2-SACO-DISPOSITIONS.jsonl"]:
         for e in load_jsonl(s7saco):
             if e.get("assemble") is False:
                 continue
@@ -386,7 +394,8 @@ def main():
     # is the different 2018 Fairfield County case). Rows are panel-verified via
     # the orchestrator's interactive CL MCP lane; same contract as 6c/6c-2.
     s7rl = os.path.join(O2, "S7-RL-DISPOSITIONS.jsonl")
-    if os.path.isfile(s7rl):
+    s7_stage_status["S7-RL-DISPOSITIONS.jsonl"] = os.path.isfile(s7rl)
+    if s7_stage_status["S7-RL-DISPOSITIONS.jsonl"]:
         for e in load_jsonl(s7rl):
             if e.get("assemble") is False:
                 continue
@@ -482,6 +491,7 @@ def main():
             "folded_with_survivor": {"ok": fold_ok, "bad": fold_bad},
             "conflicts": len(L.conflicts),
             "errors": len(errs),
+            "s7_dispositions_present": dict(sorted(s7_stage_status.items())),
         },
         "partition_arithmetic": None,  # filled below
         "conflicts": [
@@ -617,8 +627,16 @@ def main():
         for r in errs:
             print("  ROW-ERR  %-40s %s" % (r["caption"][:40], r["_ERR"]))
 
+    s7_missing = [name for name, present in sorted(s7_stage_status.items()) if not present]
+    print("-" * 72)
+    print("  s7 dispositions present: %s%s"
+          % (", ".join("%s=%s" % (k, "yes" if v else "NO")
+                       for k, v in sorted(s7_stage_status.items())),
+             "   MISSING: %s" % ", ".join(s7_missing) if s7_missing else ""))
+
     ok = (v_page == v_rec == v_rename == authored_n and fold_bad == 0
-          and not errs and all(c[5] != "UNRESOLVED" for c in L.conflicts))
+          and not errs and all(c[5] != "UNRESOLVED" for c in L.conflicts)
+          and not s7_missing)
 
     if write:
         # strip internal _ERR before writing
