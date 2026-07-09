@@ -1684,3 +1684,18 @@ supplements). **Pre-flight finding (offline, no CL needed) → R4 machine:**
 input "Illinois v. Fisher" — reason_code caption_mismatch_accepted_by_docket_number, status
 verified_identity: a builder acceptance of the WRONG CASE on a docket-number coincidence. Push
 notification fired. Continuing: P1-H harness+pilot (Codex lanes healthy), all cache-fed work.
+
+**COH-17 IDENTITY SLICE COMPLETE (2026-07-09, post-re-auth).** 74/74 live-checked (77 calls,
+paced, 3 transient retries): **72 MATCH / 2 MISMATCH / 0 UNREACHABLE.** The ≥1-in-10 requirement
+(662 keyed records → 67 sampled + 7 risk) is SATISFIED with verdicts recorded
+(`_run/s9/identity-slice.jsonl`). **Risk set 7/7 CONFIRMED** — Riley 2680439 merits cluster,
+King lead 9441559, Thornton lead 9434613, Carpenter, Md. v. King, Rideau, Morgan special row:
+every S7 repair-lane re-key HOLDS live. **Findings → R4 machine:**
+(1) `illinois-v-fisher--5141053` WRONG-CASE — live cluster = In re Mirsky (DC bar discipline,
+2004-10-21); record identity internally consistent with the WRONG case; builder acceptance via
+caption_mismatch_accepted_by_docket_number; cure = S2-surface re-key to the real Illinois v.
+Fisher (540 U.S. 544, per curiam 2004-02-23, docket 03-374) at P2/P3 adjudication (record is a
+verified_identity frontier shell — page blast radius to be assessed).
+(2) `Lewis v. United States (1966)` — lake-internal year (1966) vs date_decided 1967-01-09
+(live-confirmed); minor derivation defect. The lane also self-caught a checkpointing slip
+(Barrett row) via its coverage assert — restored, 74/74 accounted.
