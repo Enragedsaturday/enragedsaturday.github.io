@@ -28,7 +28,7 @@ courtlistener:
 homes:
   - page: "[[Emergency Aid]]"
     role: "Key — Progeny / Refinement"
-  - page: "[[Section 1983 Liability and Qualified Immunity]]"
+  - page: "[[Qualified Immunity]]"
     role: "Related (cross-doctrine)"
 related: ["[[Brigham City v. Stuart]]", "[[Michigan v. Fisher]]", "[[Graham v. Connor]]", "[[Caniglia v. Strom]]"]
 aliases: []

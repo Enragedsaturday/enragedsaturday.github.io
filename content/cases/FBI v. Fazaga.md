@@ -30,7 +30,7 @@ lake:
   status: under_review
   projected_at: 2026-07-07
 homes:
-  - page: "[[Section 1983 Liability and Qualified Immunity]]"
+  - page: "[[Suing Federal Officers]]"
     role: Recent development
   - page: "[[Electronic Surveillance and Title III]]"
     role: "Related (cross-doctrine)"

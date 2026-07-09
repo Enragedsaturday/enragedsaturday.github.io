@@ -37,7 +37,7 @@ courtlistener:
   opinion_id: 118449
   identity_checked: true
 homes:
-  - page: "[[Section 1983 Liability and Qualified Immunity]]"
+  - page: "[[Qualified Immunity]]"
     role: "Key — Progeny / Refinement"
 related: ["[[Pearson v. Callahan]]", "[[Harlow v. Fitzgerald]]", "[[Graham v. Connor]]", "[[Rivas-Villegas v. Cortesluna]]"]
 aliases: []

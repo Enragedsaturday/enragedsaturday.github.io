@@ -28,8 +28,6 @@ courtlistener:
 homes:
   - page: "[[Use of Force]]"
     role: "Key — Progeny / Refinement"
-  - page: "[[Section 1983 Liability and Qualified Immunity]]"
-    role: "Related (cross-doctrine)"
 related: ["[[Scott v. Harris]]", "[[Graham v. Connor]]", "[[Mullenix v. Luna]]"]
 aliases: []
 tags: ["case", "use-of-force", "deadly-force", "high-speed-chase", "qualified-immunity", "section-1983"]

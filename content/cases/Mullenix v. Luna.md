@@ -26,7 +26,7 @@ courtlistener:
   opinion_id: 3153112
   identity_checked: true
 homes:
-  - page: "[[Section 1983 Liability and Qualified Immunity]]"
+  - page: "[[Qualified Immunity]]"
     role: "Key — Progeny / Refinement"
 related: ["[[Tennessee v. Garner]]", "[[Scott v. Harris]]", "[[Kisela v. Hughes]]", "[[White v. Pauly]]"]
 aliases: []

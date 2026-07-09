@@ -26,7 +26,7 @@ courtlistener:
   opinion_id: 5120580
   identity_checked: true
 homes:
-  - page: "[[Section 1983 Liability and Qualified Immunity]]"
+  - page: "[[Qualified Immunity]]"
     role: "Key — Progeny / Refinement"
 related: ["[[District of Columbia v. Wesby]]", "[[Graham v. Connor]]", "[[Harlow v. Fitzgerald]]", "[[Hope v. Pelzer]]"]
 aliases: ["Tahlequah v. Bond"]

@@ -28,8 +28,6 @@ courtlistener:
 homes:
   - page: "[[Use of Force]]"
     role: "Key — Progeny / Refinement"
-  - page: "[[Section 1983 Liability and Qualified Immunity]]"
-    role: "Related (cross-doctrine)"
 related: ["[[Graham v. Connor]]", "[[County of Sacramento v. Lewis]]"]
 aliases: []
 tags: ["case", "use-of-force", "pretrial-detainee", "objective-reasonableness", "fourteenth-amendment", "section-1983"]

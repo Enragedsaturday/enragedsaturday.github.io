@@ -26,7 +26,7 @@ courtlistener:
   opinion_id: 108375
   identity_checked: true
 homes:
-  - page: "[[Section 1983 Liability and Qualified Immunity]]"
+  - page: "[[Suing Federal Officers]]"
     role: "Key — Anchor"
 related: ["[[Monroe v. Pape]]", "[[Hanlon v. Berger]]", "[[Harlow v. Fitzgerald]]"]
 aliases: ["Bivens v. Six Unknown Named Agents of Federal Bureau of Narcotics", "Bivens v. Six Unknown Fed. Narcotics Agents"]

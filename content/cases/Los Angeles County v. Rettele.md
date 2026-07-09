@@ -30,7 +30,7 @@ homes:
     role: "Key — Progeny"
   - page: "[[Securing the Scene]]"
     role: "Related (scene-securing overlap)"
-  - page: "[[Section 1983 Liability and Qualified Immunity]]"
+  - page: "[[Qualified Immunity]]"
     role: "Related (cross-doctrine)"
 related: ["[[Michigan v. Summers]]", "[[Muehler v. Mena]]", "[[Bailey v. United States]]"]
 aliases: ["Los Angeles County, California v. Rettele"]

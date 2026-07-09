@@ -26,7 +26,7 @@ courtlistener:
   opinion_id: 5118993
   identity_checked: true
 homes:
-  - page: "[[Section 1983 Liability and Qualified Immunity]]"
+  - page: "[[Qualified Immunity]]"
     role: "Key — Progeny / Refinement"
 related: ["[[City of Tahlequah v. Bond]]", "[[District of Columbia v. Wesby]]", "[[Saucier v. Katz]]", "[[Pearson v. Callahan]]", "[[Graham v. Connor]]"]
 aliases: []

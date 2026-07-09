@@ -26,7 +26,7 @@ courtlistener:
   opinion_id: 1087699
   identity_checked: true
 homes:
-  - page: "[[Section 1983 Liability and Qualified Immunity]]"
+  - page: "[[Qualified Immunity]]"
     role: "Key — Progeny / Refinement"
 related: ["[[Wilson v. Layne]]", "[[Bivens v. Six Unknown Named Agents]]", "[[Harlow v. Fitzgerald]]"]
 aliases: []

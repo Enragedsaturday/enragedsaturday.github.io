@@ -26,7 +26,7 @@ courtlistener:
   opinion_id: 9434318
   identity_checked: true
 homes:
-  - page: "[[Section 1983 Liability and Qualified Immunity]]"
+  - page: "[[Qualified Immunity]]"
     role: "Key — Progeny / Refinement"
 related: ["[[Harlow v. Fitzgerald]]", "[[Saucier v. Katz]]", "[[City of Tahlequah v. Bond]]"]
 aliases: []

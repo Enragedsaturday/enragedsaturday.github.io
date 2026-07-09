@@ -26,7 +26,7 @@ courtlistener:
   opinion_id: 4582848
   identity_checked: true
 homes:
-  - page: "[[Section 1983 Liability and Qualified Immunity]]"
+  - page: "[[Qualified Immunity]]"
     role: "Key — Limiting"
 related: ["[[White v. Pauly]]", "[[Mullenix v. Luna]]", "[[Harlow v. Fitzgerald]]"]
 aliases: []

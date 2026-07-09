@@ -26,7 +26,7 @@ courtlistener:
   opinion_id: 4542480
   identity_checked: true
 homes:
-  - page: "[[Section 1983 Liability and Qualified Immunity]]"
+  - page: "[[Qualified Immunity]]"
     role: "Recent development (role-based)"
 related: ["[[Graham v. Connor]]", "[[Monell v. Department of Social Services]]", "[[Pearson v. Callahan]]"]
 aliases: ["Lamar Wright v. City of Euclid", "Wright v. Euclid"]

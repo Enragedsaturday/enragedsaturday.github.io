@@ -26,7 +26,7 @@ courtlistener:
   opinion_id: 7262676
   identity_checked: true
 homes:
-  - page: "[[Section 1983 Liability and Qualified Immunity]]"
+  - page: "[[Qualified Immunity]]"
     role: "Key — Progeny / Refinement"
   - page: "[[Seizure of the Person]]"
     role: "Related (cross-doctrine)"

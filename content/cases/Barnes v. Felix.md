@@ -28,8 +28,6 @@ courtlistener:
 homes:
   - page: "[[Use of Force]]"
     role: "Key — Progeny / Refinement"
-  - page: "[[Section 1983 Liability and Qualified Immunity]]"
-    role: "Related (cross-doctrine)"
 related: ["[[Graham v. Connor]]", "[[Tennessee v. Garner]]", "[[Plumhoff v. Rickard]]"]
 aliases: []
 tags: ["case", "use-of-force", "deadly-force", "totality-of-circumstances", "moment-of-threat", "section-1983"]

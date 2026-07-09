@@ -531,3 +531,45 @@ scroll persistence; one bounded container; handoff to S4) is unchanged; only the
 description is corrected. Also per S4 D1 (interview 2026-07-03): the top-level "Overview
 first-child" storage sketched in §9 open item 1 is now the decided rendering (S4 R1) — the R2
 overview-storage note flexes exactly as §9 anticipated.
+
+### A10 — Cat-11 civil-remedies substructure: TWO new placed nodes (the A5-mandated TAX-02b resolution log) (A10 — user decision 2026-07-09)
+**Register:** TAX-02b (residual closure) · GAP-01a/GAP-02a/GAP-07 (already closed by A5).
+**Context:** A5 (2026-07-02) partially closed TAX-02b: it added *Retaliatory Arrest*, *Malicious
+Prosecution under the Fourth Amendment*, and *Civil Asset Forfeiture* to cat 11, but deliberately
+did **not** resolve the **Bivens/§242 substructure** inside *Section 1983 & Municipal Liability*.
+A5 reserved that residual to an **R6 granularity decision at execution**, and mandated that the
+decision **be logged in this Decision Log**. At the S7 Phase-2 cat-11 batch the user selected the
+"fuller build-out" option from a three-option taxonomy consultation (evidence: the S7 taxonomy
+sweep + the S6 homing data — 29 Keys across ~8 sub-doctrines on the mega-node). The two R6
+decisions below resolve the residual; the register pointer for TAX-02b now cites the A5 paragraph
+**plus these two entries**.
+
+**Decision-Log entry 1 — `Suing Federal Officers` (`liability.federal-officer-suits`), Tier B, PLACED.**
+The federal-officer damages line (*Bivens* → *Ziglar v. Abbasi* → *Hernandez v. Mesa* → *Egbert v.
+Boule*; the FTCA path *Brownback v. King* / *Martin v. United States* / *Postal Service v. Konan*;
+and the statutory cousins *Tanzin v. Tanvir* / *Landor v. Louisiana*) is severed from *Section 1983
+& Municipal Liability* into its own placed node. **R6 justification:** a distinct black-letter rule
+with its own docket — § 1983 reaches only state actors, so the *Bivens*/*Abbasi*/*Egbert* implied-
+remedy line and the FTCA waiver are a separate proposition, not a § 1983 sub-point; the *Bivens*/§242
+material was the awkward-fit residual A5 flagged. **Depth ≤ 3 holds** (cat 11 → node). Filename
+`Suing Federal Officers.md` (em-dash dropped from the signed working title for slug hygiene; the full
+title "Suing Federal Officers — Bivens & the FTCA" lives in `topic`/aliases). Statement plain-italic;
+registered `status: draft`.
+
+**Decision-Log entry 2 — `Absolute Immunity` (`liability.absolute-immunity`), Tier C, PLACED.**
+The functional-approach immunity line (*Imbler v. Pachtman* prosecutorial · *Buckley v. Fitzsimmons*
+function-not-office · *Briscoe v. LaHue* witness · *Rehberg v. Paulk* grand-jury witness) is placed
+as its own node, cross-referenced from *Qualified Immunity*. **R6 justification:** a distinct black-
+letter functional-approach rule — absolute immunity attaches to a protected *function* (advocacy,
+testimony, adjudication) rather than an office, and it is a **complete** bar with no clearly-
+established inquiry, doctrinally separate from qualified immunity. **Depth ≤ 3 holds** (cat 11 →
+node). Tier set at **C** (the consultation permitted C or B; chosen by material volume — four paged
+SCOTUS anchors plus page-less mentions). Statement plain-italic; registered `status: draft`.
+
+**Also logged (not a node — an R2 change-list amendment):** *Civil Asset Forfeiture* was **bumped
+C → B** at this batch (evidence: 8 Keys across three separable doctrines — Excessive Fines,
+procedural due process, innocent-owner). Recorded here for the taxonomy trail; the change-list
+amendment itself is journaled by the orchestrator, not signed into the changelist by the worker.
+**Rationale:** same reserve-don't-recut logic as A5/A6 — the residual is resolved by adding nodes at
+the natural cat-11 seat, never by re-cutting the signed tree; both nodes carry their own dockets and
+pass the R6 evergreen/distinct-rule test.

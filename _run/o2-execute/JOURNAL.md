@@ -1459,3 +1459,31 @@ class (mirror the [!rule] carve-out). SCOREBOARD: CATS 1-10+12+13 COMPLETE = 81 
 draft; ONLY CAT-11 REMAINS. NEXT: batch 20 — cat-11 FULLER BUILD-OUT per user decision
 (2 new nodes + 2 S3 Decision-Log entries + CAF C→B amendment + the 29-case mega-node
 dissolution + officer-created-danger split-block placement + Cruz disposition).
+
+**BATCH 20 CLOSED — CAT-11 FULLER BUILD-OUT (2026-07-09) — ALL 13 CATEGORIES COMPLETE:** the
+user decision REALIZED: §1983 mega-node (29 Keys/~8 sub-doctrines) DISSOLVED → §1983 &
+Municipal Liability (A, filename kept for URL+deck stability, Monell family + genuine-§1983
+remedies stay) + Qualified Immunity (A: Harlow→Anderson→Pearson spine + QI-critique docket
+plain-italic + ZORN as the 2026 per-curiam legend case w/ LAW-05 pipeline-legend VERIFIED
+STRIPPED) + NEW Suing Federal Officers (B: Bivens/Abbasi/Egbert + FTCA trio + Tanzin/Landor
+honest home; em-dash dropped from filename, full title in topic/aliases) + NEW Absolute
+Immunity (C: Imbler functional-approach quartet) + Use of Force (A: Graham→Garner→Barnes
+spine + OWED officer-created-danger split-block placed — ADJUDICATED SPLIT-BLOCK-NOT-NODE,
+Allen-v-Muskogee/Billington NOT NAMED fail-closed [no terminals], Mendez/Barnes carry + BWC
+evidence-practice prose no-node per A6) + Retaliatory Arrest (C: Nieves/Gonzalez) + Malicious
+Prosecution (C: Thompson/Chiaverini) + CAF (B — the LOGGED R2 AMENDMENT C→B, three titled
+strands: Excessive Fines / procedural DP / innocent owner). S3 DECISION-LOG A10 APPENDED
+(the A5-mandated TAX-02b logging): liability.federal-officer-suits + liability.absolute-
+immunity w/ R6 justifications + user-decision date; registry 2 new nodes + 3 statements
+filled, LINT-20 0. THE FIELD-FRAMING CLASS DIED CORPUS-WIDE (last hit converted D2, survey
+ff 0). 42-case redistribution row-by-row two-sided (22→QI, 11→Suing, 4→Absolute, 5 force-
+mirror drops, 16+family stay); GEO-Group/Fikre adjudicated OUT of cat-11 scope. CRUZ
+DISPOSITION (S7-owned): lake = Negron-Cruz frontier stub, no verified proposition →
+TERMINAL WATCH fail-closed ("not found ≠ fabricated"); S2 can promote if wanted. Konan/
+Landor 2026 at issue-altitude, holdings owed S2 treatment-derivation. Slip 26→12 (cat-11
+cleared). Mode lake-grounded 0 CL. GATES: run_all 6936→6833 (HIGH 3782, -152 zero-new;
+LINT-5 35→1 the Neville pre-existing), LINT-15/16 0/0 x8, LINT-17 0 (84-case spine
+pre-verified), LINT-20/25 0, survey 89 pages em 4.9/1k ff 0, build 724/2873 (+2 pages).
+**PHASE 2 COMPLETE: 89 units born draft across all 13 categories + 3 S7-minted case pages.
+HIGH 5212→3782 since S7 open (-1430). NEXT: consolidated repair lane (the register), then
+S7 close (acceptance greps, dispositions, run brief, S7→S8 handoff).**

@@ -26,7 +26,7 @@ courtlistener:
   opinion_id: 4151832
   identity_checked: true
 homes:
-  - page: "[[Section 1983 Liability and Qualified Immunity]]"
+  - page: "[[Qualified Immunity]]"
     role: "Key — Progeny / Refinement"
   - page: "[[Use of Force]]"
     role: "Related (cross-doctrine)"

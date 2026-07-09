@@ -28,8 +28,6 @@ courtlistener:
 homes:
   - page: "[[Use of Force]]"
     role: "Key — Progeny / Refinement"
-  - page: "[[Section 1983 Liability and Qualified Immunity]]"
-    role: "Related (cross-doctrine)"
 related: ["[[Graham v. Connor]]", "[[Scott v. Harris]]", "[[Kingsley v. Hendrickson]]"]
 aliases: ["Sacramento v. Lewis"]
 tags: ["case", "use-of-force", "high-speed-pursuit", "substantive-due-process", "shocks-the-conscience", "section-1983"]

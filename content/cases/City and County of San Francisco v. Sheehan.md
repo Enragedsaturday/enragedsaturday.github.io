@@ -28,8 +28,6 @@ courtlistener:
 homes:
   - page: "[[Use of Force]]"
     role: "Key — Progeny / Refinement"
-  - page: "[[Section 1983 Liability and Qualified Immunity]]"
-    role: "Related (cross-doctrine)"
 related: ["[[Graham v. Connor]]", "[[Plumhoff v. Rickard]]", "[[Mullenix v. Luna]]"]
 aliases: ["San Francisco v. Sheehan"]
 tags: ["case", "use-of-force", "qualified-immunity", "mentally-ill", "clearly-established", "ada"]

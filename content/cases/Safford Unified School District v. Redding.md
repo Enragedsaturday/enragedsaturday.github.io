@@ -28,7 +28,7 @@ courtlistener:
 homes:
   - page: "[[Special Needs and Administrative Searches]]"
     role: "Progeny (school searches)"
-  - page: "[[Section 1983 Liability and Qualified Immunity]]"
+  - page: "[[Qualified Immunity]]"
     role: "Related (qualified immunity)"
 related: ["[[New Jersey v. T.L.O.]]"]
 aliases: ["Safford Unified School District No. 1 v. Redding"]

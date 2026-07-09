@@ -28,7 +28,7 @@ courtlistener:
 homes:
   - page: "[[Use of Force]]"
     role: "Key — Progeny / Refinement"
-  - page: "[[Section 1983 Liability and Qualified Immunity]]"
+  - page: "[[Qualified Immunity]]"
     role: "Related (cross-doctrine)"
 related: ["[[Graham v. Connor]]", "[[Tennessee v. Garner]]", "[[Mullenix v. Luna]]", "[[White v. Pauly]]", "[[City and County of San Francisco v. Sheehan]]", "[[Brosseau v. Haugen]]"]
 aliases: []

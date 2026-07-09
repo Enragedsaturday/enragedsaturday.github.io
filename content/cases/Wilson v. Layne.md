@@ -26,7 +26,7 @@ courtlistener:
   opinion_id: 9433801
   identity_checked: true
 homes:
-  - page: "[[Section 1983 Liability and Qualified Immunity]]"
+  - page: "[[Qualified Immunity]]"
     role: "Key — Progeny / Refinement"
   - page: "[[Scope Manner and Related Issues]]"
     role: "Related (cross-doctrine)"

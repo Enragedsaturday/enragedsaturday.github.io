@@ -30,7 +30,7 @@ lake:
   status: under_review
   projected_at: 2026-07-07
 homes:
-  - page: "[[Section 1983 Liability and Qualified Immunity]]"
+  - page: "[[Absolute Immunity]]"
     role: Anchor
 related:
   - "[[Section 1983 Liability and Qualified Immunity]]"

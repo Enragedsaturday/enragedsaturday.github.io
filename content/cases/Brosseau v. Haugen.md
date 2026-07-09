@@ -28,7 +28,7 @@ courtlistener:
 homes:
   - page: "[[Use of Force]]"
     role: "Key — Progeny / Refinement"
-  - page: "[[Section 1983 Liability and Qualified Immunity]]"
+  - page: "[[Qualified Immunity]]"
     role: "Related (cross-doctrine)"
 related: ["[[Tennessee v. Garner]]", "[[Graham v. Connor]]", "[[Mullenix v. Luna]]", "[[Kisela v. Hughes]]", "[[Plumhoff v. Rickard]]"]
 aliases: []

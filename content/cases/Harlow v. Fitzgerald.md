@@ -26,7 +26,7 @@ courtlistener:
   opinion_id: 9428863
   identity_checked: true
 homes:
-  - page: "[[Section 1983 Liability and Qualified Immunity]]"
+  - page: "[[Qualified Immunity]]"
     role: "Key — Anchor"
 related: ["[[Saucier v. Katz]]", "[[Pearson v. Callahan]]", "[[City of Tahlequah v. Bond]]"]
 aliases: []
