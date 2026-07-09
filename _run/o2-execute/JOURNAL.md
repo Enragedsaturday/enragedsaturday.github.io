@@ -1438,3 +1438,24 @@ slip 26 leaks 7 inverted 1 rule-skel 2 RD 0, build 722/2839. SCOREBOARD: CATS 1-
 Reading & Citing C + State Citations NEW C + Legal Research split C + Verifying Good Law C;
 Craft: Golden Rules C + CREW C + Instructor Development C — the last rule-skels die); then
 cat-11 FULLER BUILD-OUT batch; repair lane; close.
+
+**BATCH 19 CLOSED — CATS 12+13 (2026-07-09) — CATEGORIES 12 AND 13 COMPLETE:** 8 Tier-C units
+(5 reference + 3 craft): Fed Court System · Reading & Citing (state-conventions H2 moved once)
+· State Citations AUTHORED (opencase.com landed HONESTLY as national-tool cross-ref w/
+hallucination caveat, not blind "state tool" framing — verify-then-apply) · Legal Research
+Tools + Verifying Good Law (title hooks → aliases per convention; the LINT-4 :51 banned
+phrase resolved — corpus LINT-4 → 1, only the generated index:55 remains for A7(4) regen) ·
+Golden Rules + CREW + Instructor Dev. **CREW HYPOTHESIS REFUTED against the signed register**
+(S1 R9: C/RE/W three justifications NEVER four, exigency inside RE; the R→RE fix was already
+applied — clarifier added, LINT-8 0). LAST RULE-SKELETONS DEAD (survey 2→0) + LAST INVERTED
+LABEL DEAD (1→0). Stale premises reconciled x2 (CREW leak, Instr-Dev ff — canonical 0).
+Honest-typing: first type:craft pages (pre-existing exempt class, no code change) + 2
+reference retypes (one load-bearing vs LINT-15). Integrity note: unverifiable Cornell URL
+REMOVED rather than shipped. Owed rows 0; registry clean (no node claims cat-12/13). Mode
+lake-grounded 0 CL. GATES: run_all 7001→6936 (HIGH 3934, -50 zero-new strict-decrease),
+LINT-15/16 0/0 x8 + self-tests PASS, LINT-17 0, LINT-4 →1, LINT-8 0, survey em 5.5/1k
+rule-skel 0 inverted 0, build 722/2845 (+6 aliases). S9 candidate: LINT-2 [!note]-callout FP
+class (mirror the [!rule] carve-out). SCOREBOARD: CATS 1-10+12+13 COMPLETE = 81 units born
+draft; ONLY CAT-11 REMAINS. NEXT: batch 20 — cat-11 FULLER BUILD-OUT per user decision
+(2 new nodes + 2 S3 Decision-Log entries + CAF C→B amendment + the 29-case mega-node
+dissolution + officer-created-danger split-block placement + Cruz disposition).
