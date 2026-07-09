@@ -56,7 +56,7 @@ A school search must be reasonable in scope as well as inception: "the search as
 
 "[W]hat was missing from the suspected facts that pointed to Savana was any indication of danger to the students from the power of the drugs or their quantity, and any reason to suppose that Savana was carrying pills in her underwear. We think that the combination of these deficiencies was fatal to finding the search reasonable." — 557 U.S. at 376–377. ^pin-376
 
-But the unconstitutionality was not clearly established: "because there is reason to question the clarity with which the right was established, the official who ordered the unconstitutional search is entitled to qualified immunity from liability." — *Id.* at 368. ^pin-368
+But the unconstitutionality was not clearly established: "because there is reason to question the clarity with which the right was established, the official who ordered the unconstitutional search is entitled to qualified immunity from liability." — [*Id.* at 368](https://www.courtlistener.com/opinion/145852/safford-unified-school-district-1-v-redding/#:~:text=because%20there%20is%20reason%20to). ^pin-368
 
 ## Application
 Reasonable suspicion supported searching Savana's backpack and outer clothing, but extending the search to her bra and underwear demanded a justification matching that intrusion. "Savana's subjective expectation of privacy … is inherent in her account of it as embarrassing, frightening, and humiliating." — 557 U.S. at 374–375. ^pin-374

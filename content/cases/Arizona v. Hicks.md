@@ -54,7 +54,7 @@ Whether moving stereo equipment to read its serial numbers — done on reasonabl
 ## Rule
 Moving the equipment to expose hidden information was a new search beyond the entry's justification: the moving of the components "did constitute a 'search' separate and apart from the search for ... the shooter, victims, and weapons that was the lawful objective of his entry into the apartment." — 480 U.S. at 324. ^pin-324
 
-"A search is a search, even if it happens to disclose nothing but the bottom of a turntable." — *Id.* at 325. ^pin-325
+"A search is a search, even if it happens to disclose nothing but the bottom of a turntable." — [*Id.* at 325](https://www.courtlistener.com/opinion/111834/arizona-v-hicks/#:~:text=A%20search%20is%20a%20search%2C). ^pin-325
 
 The plain-view doctrine requires probable cause: "We now hold that probable cause is required. To say otherwise would be to cut the 'plain view' doctrine loose from its theoretical and practical moorings." — *Id.* at 326. ^pin-326
 

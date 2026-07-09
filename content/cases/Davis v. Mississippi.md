@@ -54,7 +54,7 @@ Whether fingerprints obtained during an investigative detention undertaken witho
 ## Rule
 Investigative seizures are subject to the Fourth Amendment regardless of the label: "Nothing is more clear than that the Fourth Amendment was meant to prevent wholesale intrusions upon the personal security of our citizenry, whether these intrusions be termed 'arrests' or 'investigatory detentions.'" — 394 U.S. at 726–727. ^pin-726
 
-That protection reaches detentions for fingerprinting: "Detentions for the sole purpose of obtaining fingerprints are no less subject to the constraints of the Fourth Amendment." — *Id.* at 727. ^pin-727
+That protection reaches detentions for fingerprinting: "Detentions for the sole purpose of obtaining fingerprints are no less subject to the constraints of the Fourth Amendment." — [*Id.* at 727](https://www.courtlistener.com/opinion/107912/davis-v-mississippi/#:~:text=Detentions%20for%20the%20sole%20purpose). ^pin-727
 
 ## Application
 Davis was seized in a dragnet — taken to police headquarters and fingerprinted without probable cause to arrest, without a warrant, and without any judicial authorization for the detention. Because that station-house detention was an unreasonable seizure, the fingerprints obtained during it were its fruit and had to be suppressed. The Court added a caveat: because fingerprinting is a brief, reliable, non-coercive process, a narrowly circumscribed procedure conducted under judicial authorization might in some future case satisfy the Fourth Amendment even on less than probable cause — but no such procedure was used here.

@@ -52,7 +52,7 @@ Whether a public school's suspicionless drug testing of all students who partici
 ## Rule
 In the public-school special-needs context, the search need not rest on individualized suspicion: "In this context, the Fourth Amendment does not require a finding of individualized suspicion". — 536 U.S. at 837. ^pin-837
 
-Applying the special-needs reasonableness balance, the Court upheld the policy: "we hold only that Tecumseh's Policy is a reasonable means of furthering the School District's important interest in preventing and deterring drug use among its schoolchildren." — *Id.* at 838. ^pin-838
+Applying the special-needs reasonableness balance, the Court upheld the policy: "we hold only that Tecumseh's Policy is a reasonable means of furthering the School District's important interest in preventing and deterring drug use among its schoolchildren." — [*Id.* at 838](https://www.courtlistener.com/opinion/121171/board-of-education-of-independent-school-district-no-92-of-pottawatomie/#:~:text=we%20hold%20only%20that%20Tecumseh%27s). ^pin-838
 
 ## Application
 On these facts the testing reached students who voluntarily participated in extracurricular activities, the intrusion (a monitored but private urine sample, results kept confidential and not turned over to law enforcement) was limited, and the district faced a documented drug problem within its custodial responsibility over schoolchildren. Weighing those factors, the Court concluded the Tecumseh policy was a reasonable, effective means of addressing drug use and did not require individualized suspicion.

@@ -56,7 +56,7 @@ Whether the officer discovered the registration card by means of an illegal sear
 ## Rule
 No. A measure taken to protect an impounded car is not a search: "the discovery of the card was not the result of a search of the car, but of a measure taken to protect the car while it was in police custody. Nothing in the Fourth Amendment requires the police to obtain a warrant in these narrow circumstances." — 390 U.S. at 236. ^pin-236
 
-And plain-view objects are seizable: "It has long been settled that objects falling in the plain view of an officer who has a right to be in the position to have that view are subject to seizure and may be introduced in evidence." — *Id.* ^pin-236a
+And plain-view objects are seizable: "It has long been settled that objects falling in the plain view of an officer who has a right to be in the position to have that view are subject to seizure and may be introduced in evidence." — [*Id.*](https://www.courtlistener.com/opinion/107625/harris-v-united-states/#:~:text=It%20has%20long%20been%20settled) ^pin-236a
 
 ## Application
 The officer was lawfully securing a car properly impounded as evidence; the precise findings below were that the card was discovered while protecting the car, not while searching it. Once the door was lawfully opened to secure the window, the victim's registration card was "plainly visible," so it was subject to seizure. The Court expressly noted it was **not** deciding the admissibility of evidence found pursuant to the inventory regulation itself — only that this protective discovery was lawful.

@@ -54,7 +54,7 @@ Whether a stop-and-identify statute that requires a lawfully detained suspect to
 ## Rule
 Yes. "We conclude that the statute as it has been construed is unconstitutionally vague within the meaning of the Due Process Clause of the Fourteenth Amendment by failing to clarify what is contemplated by the requirement that a suspect provide a 'credible and reliable' identification." — 461 U.S. at 353–354. ^pin-353
 
-The governing standard targets standardless enforcement: "the void-for-vagueness doctrine requires that a penal statute define the criminal offense with sufficient definiteness that ordinary people can understand what conduct is prohibited and in a manner that does not encourage arbitrary and discriminatory enforcement." — *Id.* at 357. ^pin-357
+The governing standard targets standardless enforcement: "the void-for-vagueness doctrine requires that a penal statute define the criminal offense with sufficient definiteness that ordinary people can understand what conduct is prohibited and in a manner that does not encourage arbitrary and discriminatory enforcement." — [*Id.* at 357](https://www.courtlistener.com/opinion/110926/kolender-v-lawson/#:~:text=the%20void%2Dfor%2Dvagueness%20doctrine%20requires%20that). ^pin-357
 
 Section 647(e) failed that test: it "contains no standard for determining what a suspect has to do in order to satisfy the requirement to provide a 'credible and reliable' identification. As such, the statute vests virtually complete discretion in the hands of the police to determine whether the suspect has satisfied the statute and must be permitted to go on his way in the absence of probable cause to arrest." — *Id.* at 358. ^pin-358
 

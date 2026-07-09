@@ -52,7 +52,7 @@ Whether a search warrant that has become void for non-execution within its statu
 ## Rule
 No. The statute made the unexecuted warrant void after ten days, and "[t]here is no provision which authorizes the commissioner to extend its life or to revive it." — 287 U.S. at 210–211. ^pin-210
 
-"The issue of a second warrant is essentially a new proceeding which must have adequate support. The fact that it is a second warrant gives the commissioner no privilege to dispense with the statutory conditions. These cannot be escaped by describing the action as a reissue." — *Id.* at 211. ^pin-211
+"The issue of a second warrant is essentially a new proceeding which must have adequate support. The fact that it is a second warrant gives the commissioner no privilege to dispense with the statutory conditions. These cannot be escaped by describing the action as a reissue." — [*Id.* at 211](https://www.courtlistener.com/opinion/101970/sgro-v-united-states/#:~:text=The%20issue%20of%20a%20second). ^pin-211
 
 The supporting proof "must speak as of the time of the issue of that warrant," and "[t]he new warrant must rest upon a proper finding and statement by the commissioner that probable cause then exists." — *Id.* Because probable cause must appear current when the warrant issues, "[t]he purpose of the statute would be thwarted if by the simple expedient of redating, without more, the time for the execution of a warrant could be extended." — *Id.* ^pin-211b
 

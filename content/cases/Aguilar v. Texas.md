@@ -52,7 +52,7 @@ Whether an affidavit resting solely on an informant's tip — stated as a conclu
 ## Rule
 No. An affidavit may rest on hearsay, but the magistrate must be given the underlying facts behind both the informant's knowledge and his reliability. The "magistrate must be informed of some of the underlying circumstances from which the informant concluded that the narcotics were where he claimed they were, and some of the underlying circumstances from which the officer concluded that the informant . . . was 'credible' or his information 'reliable.'" — 378 U.S. at 114. ^pin-114
 
-Otherwise the probable-cause inference is drawn not "by a neutral and detached magistrate," as the Constitution requires, "but instead, by a police officer 'engaged in the often competitive enterprise of ferreting out crime.'" — *Id.* at 115. ^pin-115
+Otherwise the probable-cause inference is drawn not "by a neutral and detached magistrate," as the Constitution requires, "but instead, by a police officer 'engaged in the often competitive enterprise of ferreting out crime.'" — [*Id.* at 115](https://www.courtlistener.com/opinion/106865/aguilar-v-texas/#:~:text=by%20a%20neutral%20and%20detached%20magistrate%2C). ^pin-115
 
 ## Application
 The affidavit here was a bare conclusion: it offered the magistrate no underlying circumstances showing how the informant learned that narcotics were on the premises, and none showing why the informant was credible or his information reliable. On these facts the magistrate could only accept the informant's "suspicion," "belief," or "mere conclusion" without question, so the warrant lacked a sufficient basis and should not have issued.

@@ -54,7 +54,7 @@ Yes. Effective enforcement requires unannounced inspection: "if inspection is to
 
 The licensee's privacy expectation is reduced by his choice to enter the business: "When a dealer chooses to engage in this pervasively regulated business and to accept a federal license, he does so with the knowledge that his business records, firearms, and ammunition will be subject to effective inspection. … The dealer is not left to wonder about the purposes of the inspector or the limits of his task." — *Id.* at 316. ^pin-316b
 
-"We have little difficulty in concluding that where, as here, regulatory inspections further urgent federal interest, and the possibilities of abuse and the threat to privacy are not of impressive dimensions, the inspection may proceed without a warrant where specifically authorized by statute." — *Id.* at 317. ^pin-317
+"We have little difficulty in concluding that where, as here, regulatory inspections further urgent federal interest, and the possibilities of abuse and the threat to privacy are not of impressive dimensions, the inspection may proceed without a warrant where specifically authorized by statute." — [*Id.* at 317](https://www.courtlistener.com/opinion/108533/united-states-v-biswell/#:~:text=We%20have%20little%20difficulty%20in). ^pin-317
 
 ## Application
 Federal firearms regulation is of "central importance to federal efforts to prevent violent crime," and inspection is "a crucial part of the regulatory scheme." Biswell, as a licensed dealer, was annually furnished with the rules defining his obligations and the inspector's authority, so the warrantless inspection threatened only limited, anticipated privacy intrusion while serving an urgent interest. The seizure of the sawed-off rifles was therefore reasonable.

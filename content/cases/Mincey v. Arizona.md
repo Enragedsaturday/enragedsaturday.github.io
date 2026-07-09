@@ -52,7 +52,7 @@ Whether there is a "murder scene" exception permitting a warrantless search of t
 ## Rule
 There is no murder-scene exception, and the seriousness of the offense does not by itself create exigent circumstances. The Fourth Amendment does, however, permit warrantless action to render aid: "the Fourth Amendment does not bar police officers from making warrantless entries and searches when they reasonably believe that a person within is in need of immediate aid." — 437 U.S. at 392. ^pin-392
 
-And "the police may seize any evidence that is in plain view during the course of their legitimate emergency activities." — *Id.* at 393. ^pin-393
+And "the police may seize any evidence that is in plain view during the course of their legitimate emergency activities." — [*Id.* at 393](https://www.courtlistener.com/opinion/109905/mincey-v-arizona/#:~:text=the%20police%20may%20seize%20any). ^pin-393
 
 But any such warrantless search must be strictly circumscribed by the emergency that justifies it.
 

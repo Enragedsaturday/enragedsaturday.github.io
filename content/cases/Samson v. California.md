@@ -52,7 +52,7 @@ Whether a suspicionless search of a parolee, conducted pursuant to a state parol
 ## Rule
 No. Parolees have sharply reduced privacy expectations: "The extent and reach of these conditions clearly demonstrate that parolees like petitioner have severely diminished expectations of privacy by virtue of their status alone." — 547 U.S. at 852. ^pin-852
 
-Weighed against the State's substantial interests in supervising parolees and reducing recidivism, "we conclude that the Fourth Amendment does not prohibit a police officer from conducting a suspicionless search of a parolee." — 547 U.S. at 857. ^pin-857
+Weighed against the State's substantial interests in supervising parolees and reducing recidivism, "we conclude that the Fourth Amendment does not prohibit a police officer from conducting a suspicionless search of a parolee." — [547 U.S. at 857](https://www.courtlistener.com/opinion/145640/samson-v-california/#:~:text=we%20conclude%20that%20the%20Fourth). ^pin-857
 
 ## Application
 Samson was a California parolee subject to the State's clearly expressed, signed suspicionless-search condition, giving him severely diminished privacy expectations; the State's strong interests in closely supervising parolees (who reoffend at high rates) and reintegrating them justified the search. Because the search was not arbitrary, capricious, or harassing — conduct California law independently forbids — the suspicionless street search of Samson was reasonable.

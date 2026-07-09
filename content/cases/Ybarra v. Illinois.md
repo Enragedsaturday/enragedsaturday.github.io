@@ -56,7 +56,7 @@ Whether a warrant authorizing the search of a tavern and its bartender permits o
 ## Rule
 No. A premises warrant does not reach the persons of those merely present; cause must be individualized. "[A] person's mere propinquity to others independently suspected of criminal activity does not, without more, give rise to probable cause to search that person." — 444 U.S. at 91. ^pin-91
 
-"Where the standard is probable cause, a search or seizure of a person must be supported by probable cause particularized with respect to that person." — *Id.* ^pin-91a
+"Where the standard is probable cause, a search or seizure of a person must be supported by probable cause particularized with respect to that person." — [*Id.*](https://www.courtlistener.com/opinion/110158/ybarra-v-illinois/#:~:text=Where%20the%20standard%20is%20probable) ^pin-91a
 
 A protective frisk likewise demands individualized suspicion: "The initial frisk of Ybarra was simply not supported by a reasonable belief that he was armed and presently dangerous, a belief which this Court has invariably held must form the predicate to a patdown of a person for weapons." — *Id.* at 92–93. ^pin-92
 

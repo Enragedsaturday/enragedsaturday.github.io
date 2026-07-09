@@ -52,7 +52,7 @@ Whether the Supreme Court could issue the writ — and, underlying that, whether
 ## Rule
 The judiciary determines what the law is and must disregard a statute that conflicts with the Constitution. "It is emphatically the province and duty of the judicial department to say what the law is." — 5 U.S. (1 Cranch) at 177. ^pin-177
 
-And because the Constitution is supreme, "an act of the legislature, repugnant to the constitution, is void." — *Id.* ^pin-177a
+And because the Constitution is supreme, "an act of the legislature, repugnant to the constitution, is void." — [*Id.*](https://www.courtlistener.com/opinion/84759/marbury-v-madison/#:~:text=an%20act%20of%20the%20legislature%2C%20repugnant%20to%20the%20constitution%2C%20is%20void.) ^pin-177a
 
 ## Application
 Marbury was entitled to his commission and mandamus was a proper remedy, but the provision of the Judiciary Act of 1789 that purported to authorize the Supreme Court to issue mandamus in an original action enlarged the Court's original jurisdiction beyond what Article III allows. Confronting that conflict between the statute and the Constitution, the Court applied the principle that it must follow the Constitution and treat the repugnant statutory grant as void; it therefore lacked jurisdiction to issue the writ.

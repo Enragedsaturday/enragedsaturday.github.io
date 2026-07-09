@@ -59,7 +59,7 @@ Each element traced to a source independent of the illegal arrest. The victim's 
 
 Her capacity to identify rested on an independent recollection of the crime itself, uninfluenced by the suppressible pretrial procedures: "the victim's capacity to identify her assailant in court neither resulted from nor was biased by the unlawful police conduct committed long after she had developed that capacity." — *Id.* at 473. ^pin-473
 
-As to the third element, the defendant could not "claim immunity from prosecution simply because his appearance in court was precipitated by an unlawful arrest." — *Id.* at 474. ^pin-474
+As to the third element, the defendant could not "claim immunity from prosecution simply because his appearance in court was precipitated by an unlawful arrest." — [*Id.* at 474](https://www.courtlistener.com/opinion/110230/united-states-v-crews/#:~:text=claim%20immunity%20from%20prosecution%20simply). ^pin-474
 
 ## Conclusion
 Because the in-court identification was not the product of the Fourth Amendment violation, it was not a suppressible fruit; the District of Columbia Court of Appeals was reversed.

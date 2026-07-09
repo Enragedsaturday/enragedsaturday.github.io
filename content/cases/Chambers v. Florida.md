@@ -52,7 +52,7 @@ Whether confessions extracted by sustained, coercive incommunicado interrogation
 ## Rule
 No. The confessions were the product of compulsion, not free will, and their use violates due process: "To permit human lives to be forfeited upon confessions thus obtained would make of the constitutional requirement of due process of law a meaningless symbol." — 309 U.S. 227, 240. ^pin-240
 
-"Under our constitutional system, courts stand against any winds that blow as havens of refuge for those who might otherwise suffer because they are helpless, weak, outnumbered, or because they are non-conforming victims of prejudice and public excitement." — *Id.* at 241. ^pin-241
+"Under our constitutional system, courts stand against any winds that blow as havens of refuge for those who might otherwise suffer because they are helpless, weak, outnumbered, or because they are non-conforming victims of prejudice and public excitement." — [*Id.* at 241](https://www.courtlistener.com/opinion/103301/chambers-v-florida/#:~:text=Under%20our%20constitutional%20system%2C%20courts). ^pin-241
 
 ## Application
 For five days these petitioners were held without charges, isolated, and interrogated under circumstances "calculated to break the strongest nerves and the stoutest resistance," with the fear of mob violence surrounding them. On those facts the confessions were compelled rather than freely given, and using them to send the petitioners to death denied due process.

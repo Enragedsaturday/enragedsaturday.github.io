@@ -61,7 +61,7 @@ The Court cabined the rule. "We emphasize the narrow scope of our holding." — 
 Because the stop must be "justified at its inception," "the presence of additional facts might dispel reasonable suspicion" — for example, if the officer knows the registered owner is in his mid-sixties but observes that the driver is in her mid-twenties, the inference dissolves. — *Id.* ^pin-1191b
 
 ## Application
-On these stipulated facts the inference held. "From these three facts, Deputy Mehrer drew the commonsense inference that Glover was likely the driver of the vehicle, which provided more than reasonable suspicion to initiate the stop." — *Id.* at 1188. ^pin-1188
+On these stipulated facts the inference held. "From these three facts, Deputy Mehrer drew the commonsense inference that Glover was likely the driver of the vehicle, which provided more than reasonable suspicion to initiate the stop." — [*Id.* at 1188](https://www.courtlistener.com/opinion/9231313/kansas-v-glover/#:~:text=From%20these%20three%20facts%2C%20Deputy). ^pin-1188
 
 The deputy knew the plate was linked to a truck matching the one he observed and that the registered owner's license was revoked, and he possessed no [[Brady and Giglio|exculpatory]] information rebutting the inference that the owner was driving. Because nothing in the record dispelled the inference, the stop was reasonable at its inception.
 

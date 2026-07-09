@@ -52,7 +52,7 @@ Whether entrapment was established as a matter of law where a government informa
 ## Rule
 Entrapment turns on whether the government implanted the criminal design. "Entrapment occurs only when the criminal conduct was 'the product of the creative activity' of law-enforcement officials." — 356 U.S. at 372. ^pin-372
 
-"To determine whether entrapment has been established, a line must be drawn between the trap for the unwary innocent and the trap for the unwary criminal." — *Id.* ^pin-372a
+"To determine whether entrapment has been established, a line must be drawn between the trap for the unwary innocent and the trap for the unwary criminal." — [*Id.*](https://www.courtlistener.com/opinion/105681/sherman-v-united-states/#:~:text=To%20determine%20whether%20entrapment%20has) ^pin-372a
 
 ## Application
 The informant repeatedly importuned Sherman, exploiting their shared struggle with addiction, and the prosecution's own evidence showed Sherman was not ready and willing but was worked upon until he yielded; on that record the criminal design originated with the government, and entrapment was established as a matter of law, so the Court reversed.

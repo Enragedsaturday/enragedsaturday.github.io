@@ -52,7 +52,7 @@ Whether the exclusionary rule requires suppression of evidence seized incident t
 ## Rule
 No. Under the *[[United States v. Leon|Leon]]* cost-benefit framework, suppression is unwarranted because it would not deter the kind of error at issue: "the exclusionary rule was historically designed as a means of deterring police misconduct, not mistakes by court employees." — 514 U.S. at 14. ^pin-14
 
-Court clerks "are not adjuncts to the law enforcement team engaged in the often competitive enterprise of ferreting out crime," so excluding evidence would not deter their recordkeeping errors. Accordingly, "[a]pplication of the *Leon* framework supports a categorical exception to the exclusionary rule for clerical errors of court employees." — *Id.* at 16. ^pin-16
+Court clerks "are not adjuncts to the law enforcement team engaged in the often competitive enterprise of ferreting out crime," so excluding evidence would not deter their recordkeeping errors. Accordingly, "[a]pplication of the *Leon* framework supports a categorical exception to the exclusionary rule for clerical errors of court employees." — [*Id.* at 16](https://www.courtlistener.com/opinion/117905/arizona-v-evans/#:~:text=are%20not%20adjuncts%20to%20the). ^pin-16
 
 ## Application
 On these facts the inaccurate warrant record resulted from a court clerk's failure to remove a quashed warrant, and the arresting officer reasonably relied on the police computer. Because the error was the court's, not the arresting officer's, and exclusion could not be expected to deter such court-clerk mistakes, the deterrence purpose of the exclusionary rule did not justify suppressing the evidence here.

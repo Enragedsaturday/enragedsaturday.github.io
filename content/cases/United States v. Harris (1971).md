@@ -56,7 +56,7 @@ Yes. The informant's statements "were against the informant's penal interest, fo
 
 "That the informant may be paid or promised a 'break' does not eliminate the residual risk and opprobrium of having admitted criminal conduct." — *Id.* at 584. ^pin-584
 
-The admission of long-running illicit purchases "itself and without more, implicated that property and furnished probable cause to search." — *Id.* ^pin-584b
+The admission of long-running illicit purchases "itself and without more, implicated that property and furnished probable cause to search." — [*Id.*](https://www.courtlistener.com/opinion/108379/united-states-v-harris/#:~:text=itself%20and%20without%20more%2C%20implicated) ^pin-584b
 
 A magistrate may likewise rely on an officer's knowledge of a suspect's reputation as a "practical consideration of everyday life." — *Id.* at 583. ^pin-583b
 

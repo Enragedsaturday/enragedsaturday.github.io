@@ -54,7 +54,7 @@ No to both. The particularity requirement bars general, exploratory rummaging: i
 
 A warrant that fails to cabin the executing officer's discretion is an unconstitutional general warrant: "A warrant that directs an officer to seize records 'relating to' violations of the federal export laws offers no such guidelines. The officers were left to their own discretion." — *Id.* at 609. ^pin-609
 
-The Leon good-faith exception does not save such a warrant: "We find the warrant so facially deficient in its description of the items to be seized that the executing officers could not reasonably rely on it." — *Id.* at 609. ^pin-609a
+The Leon good-faith exception does not save such a warrant: "We find the warrant so facially deficient in its description of the items to be seized that the executing officers could not reasonably rely on it." — [*Id.* at 609](https://www.courtlistener.com/opinion/505922/united-states-v-richard-j-leary-and-fl-kleinberg-co/#:~:text=We%20find%20the%20warrant%20so). ^pin-609a
 
 "Accordingly, we hold that the 'good faith' exception is inapplicable in these circumstances and affirm the district court's decision to suppress all of the evidence from the Kleinberg warrant." — *Id.* at 610. ^pin-610
 

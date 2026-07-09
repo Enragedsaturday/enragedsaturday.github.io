@@ -56,7 +56,7 @@ No. A vehicle, and especially its exterior, carries a reduced expectation of pri
 
 Because only the exterior was examined, no protected privacy was invaded: "With the 'search' limited to the examination of the tire on the wheel and the taking of paint scrapings from the exterior of the vehicle left in the public parking lot, we fail to comprehend what expectation of privacy was infringed." — *Id.* at 591. ^pin-591
 
-The bottom line: "where probable cause exists, a warrantless examination of the exterior of a car is not unreasonable under the Fourth and Fourteenth Amendments." — *Id.* at 592. ^pin-592
+The bottom line: "where probable cause exists, a warrantless examination of the exterior of a car is not unreasonable under the Fourth and Fourteenth Amendments." — [*Id.* at 592](https://www.courtlistener.com/opinion/109069/cardwell-v-lewis/#:~:text=where%20probable%20cause%20exists%2C%20a). ^pin-592
 
 ## Application
 Nothing from the interior of the car and no personal effects were searched or seized; the evidence was limited to paint scrapings from the exterior and an observation of the tire tread on an operative wheel, taken from a car left in a public lot. With probable cause established, that exterior examination invaded no [[Reasonable Expectation of Privacy|reasonable expectation of privacy]], and the prior impoundment did not change the result, since police could have made the same examination on the spot.

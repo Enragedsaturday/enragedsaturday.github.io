@@ -56,7 +56,7 @@ No. A search "may be incident to an arrest ' "only if it is substantially contem
 
 "If a search of a house is to be upheld as incident to an arrest, that arrest must take place inside the house . . . not somewhere outside — whether two blocks away . . . twenty feet away . . . or on the sidewalk near the front steps." — *Id.* at 34. ^pin-34
 
-Beyond the search-incident rationale, only "a few specifically established and well-delineated" situations let a warrantless dwelling search survive even on probable cause, and "[t]he burden rests on the State to show the existence of such an exceptional situation." — *Id.* ^pin-34b
+Beyond the search-incident rationale, only "a few specifically established and well-delineated" situations let a warrantless dwelling search survive even on probable cause, and "[t]he burden rests on the State to show the existence of such an exceptional situation." — [*Id.*](https://www.courtlistener.com/opinion/108183/vale-v-louisiana/#:~:text=a%20few%20specifically%20established%20and) ^pin-34b
 
 The Court "decline[d] to hold that an arrest on the street can provide its own 'exigent circumstance' so as to justify a warrantless search of the arrestee's house." — *Id.* at 35. ^pin-35
 

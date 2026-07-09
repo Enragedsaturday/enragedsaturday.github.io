@@ -52,7 +52,7 @@ Whether the discovery of a valid pre-existing arrest warrant during an unlawful 
 ## Rule
 The attenuation exception is governed by the three *[[Brown v. Illinois]]* factors. The Court looks to "the 'temporal proximity'" between the misconduct and the discovery of evidence; "the presence of intervening circumstances"; and, "'particularly' significant," "the purpose and flagrancy of the official misconduct." — 136 S. Ct. at 2061–2062. ^pin-2062
 
-Here, the intervening-circumstances factor controlled: "the second factor, the presence of intervening circumstances, strongly favors the State" — the valid arrest warrant predated the stop and was entirely independent of it. — 136 S. Ct. at 2062. ^pin-2062a
+Here, the intervening-circumstances factor controlled: "the second factor, the presence of intervening circumstances, strongly favors the State" — the valid arrest warrant predated the stop and was entirely independent of it. — [136 S. Ct. at 2062](https://www.courtlistener.com/opinion/8176208/utah-v-strieff/#:~:text=the%20second%20factor%2C%20the%20presence). ^pin-2062a
 
 ## Application
 Although temporal proximity favored suppression — only minutes passed between the unlawful stop and the search — the discovery of the valid, pre-existing arrest warrant was an intervening circumstance that strongly favored the State, and Officer Fackrell's conduct was at most negligent rather than purposeful or flagrant. On balance, the warrant broke the causal chain between the unlawful stop and the evidence, so the methamphetamine and paraphernalia found incident to the lawful arrest on that warrant were admissible.

@@ -52,7 +52,7 @@ Whether unprovoked flight upon noticing the police, in an area of heavy narcotic
 ## Rule
 Yes. "Our cases have also recognized that nervous, evasive behavior is a pertinent factor in determining reasonable suspicion." — 528 U.S. at 124. ^pin-124
 
-"Headlong flight—wherever it occurs—is the consummate act of evasion: It is not necessarily indicative of wrongdoing, but it is certainly suggestive of such." — *Id.* ^pin-124a
+"Headlong flight—wherever it occurs—is the consummate act of evasion: It is not necessarily indicative of wrongdoing, but it is certainly suggestive of such." — [*Id.*](https://www.courtlistener.com/opinion/118326/illinois-v-wardlow/#:~:text=Headlong%20flight%E2%80%94wherever%20it%20occurs%E2%80%94is%20the) ^pin-124a
 
 Location is also a relevant consideration: "An individual's presence in an area of expected criminal activity, standing alone, is not enough to support a reasonable, particularized suspicion that the person is committing a crime. But officers are not required to ignore the relevant characteristics of a location in determining whether the circumstances are sufficiently suspicious to warrant further investigation." — *Id.* ^pin-124b
 

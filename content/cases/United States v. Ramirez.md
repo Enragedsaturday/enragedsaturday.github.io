@@ -54,7 +54,7 @@ No. "[W]hether the Fourth Amendment holds officers to a higher standard . . . wh
 
 "Under *Richards*, a no-knock entry is justified if police have a 'reasonable suspicion' that knocking and announcing would be dangerous, futile, or destructive to the purposes of the investigation. Whether such a 'reasonable suspicion' exists depends in no way on whether police must destroy property in order to enter." — *Id.* at 71. ^pin-71
 
-The manner of entry is still constrained by reasonableness: "Excessive or unnecessary destruction of property in the course of a search may violate the Fourth Amendment, even though the entry itself is lawful and the fruits of the search are not subject to suppression." — *Id.* ^pin-71b
+The manner of entry is still constrained by reasonableness: "Excessive or unnecessary destruction of property in the course of a search may violate the Fourth Amendment, even though the entry itself is lawful and the fruits of the search are not subject to suppression." — [*Id.*](https://www.courtlistener.com/opinion/118180/united-states-v-ramirez/#:~:text=Excessive%20or%20unnecessary%20destruction%20of) ^pin-71b
 
 Section 3109 codifies the common-law exceptions and imposes no greater requirement.
 

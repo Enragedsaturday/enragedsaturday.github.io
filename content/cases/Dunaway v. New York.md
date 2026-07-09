@@ -58,10 +58,10 @@ No. A station-house detention for interrogation is a seizure that requires proba
 
 A confession that follows the illegal seizure must be suppressed unless the taint is attenuated. Because the Fourth Amendment's interests are distinct from the Fifth's, "*Miranda* warnings, and the exclusion of a confession made without them, do not alone sufficiently deter a Fourth Amendment violation." — *Id.* at 217 (quoting *Brown v. Illinois*, 422 U.S. 590, 601). ^pin-217
 
-Voluntariness is only the "threshold requirement"; the court must then weigh "[t]he temporal proximity of the arrest and the confession, the presence of intervening circumstances, . . . and, particularly, the purpose and flagrancy of the official misconduct." — *Id.* at 218 (quoting *Brown*, 422 U.S. at 603–604). ^pin-218
+Voluntariness is only the "threshold requirement"; the court must then weigh "[t]he temporal proximity of the arrest and the confession, the presence of intervening circumstances, . . . and, particularly, the purpose and flagrancy of the official misconduct." — [*Id.* at 218](https://www.courtlistener.com/opinion/110096/dunaway-v-new-york/#:~:text=%22-,threshold%20requirement) (quoting *Brown*, 422 U.S. at 603–604). ^pin-218
 
 ## Application
-The case was "virtually a replica" of *[[Brown v. Illinois|Brown]]*. Dunaway "was also admittedly seized without probable cause in the hope that something might turn up, and confessed without any intervening event of significance." — *Id.* at 218. ^pin-218b
+The case was "virtually a replica" of *[[Brown v. Illinois|Brown]]*. Dunaway "was also admittedly seized without probable cause in the hope that something might turn up, and confessed without any intervening event of significance." — [*Id.* at 218](https://www.courtlistener.com/opinion/110096/dunaway-v-new-york/#:~:text=virtually%20a%20replica). ^pin-218b
 
 Less than the requisite [[Fruits and Attenuation|attenuation]] existed: the confession followed promptly on the illegal detention, no significant intervening circumstance broke the chain, and the seizure-for-interrogation had a purposeful, investigatory quality. That the police were courteous and gave [[Miranda and Custodial Interrogation|Miranda warnings]] did not cure the Fourth Amendment violation, because Fifth Amendment voluntariness is merely the threshold of the [[Fruits and Attenuation|attenuation]] inquiry.
 

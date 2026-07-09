@@ -52,7 +52,7 @@ Whether a state criminal conviction resting solely on confessions extracted by p
 ## Rule
 "And the trial equally is a mere pretense where the state authorities have contrived a conviction resting solely upon confessions obtained by violence." — 297 U.S. at 286. ^pin-286
 
-"It would be difficult to conceive of methods more revolting to the sense of justice than those taken to procure the confessions of these petitioners, and the use of the confessions thus obtained as the basis for conviction and sentence was a clear denial of due process." — *Id.* ^pin-286b
+"It would be difficult to conceive of methods more revolting to the sense of justice than those taken to procure the confessions of these petitioners, and the use of the confessions thus obtained as the basis for conviction and sentence was a clear denial of due process." — [*Id.*](https://www.courtlistener.com/opinion/102604/brown-v-mississippi/#:~:text=It%20would%20be%20difficult%20to) ^pin-286b
 
 ## Application
 The confessions here were wrung from the defendants by physical brutality, and the convictions rested on nothing else. Using such coerced confessions as the basis for conviction and sentence was a clear denial of due process of law.

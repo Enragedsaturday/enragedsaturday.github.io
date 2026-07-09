@@ -54,7 +54,7 @@ Yes, on a narrowed *[[Chimel v. California|Chimel]]* rationale. The taking of th
 
 The Court expressly did **not** authorize a full search: "we do not hold that a full *Chimel* search would have been justified in this case without a formal arrest and without a warrant." — *Id.* ^pin-296b
 
-Holding: "On the facts of this case, considering the existence of probable cause, the very limited intrusion undertaken incident to the station house detention, and the ready destructibility of the evidence, we cannot say that this search violated the Fourth and Fourteenth Amendments." — *Id.* ^pin-296a
+Holding: "On the facts of this case, considering the existence of probable cause, the very limited intrusion undertaken incident to the station house detention, and the ready destructibility of the evidence, we cannot say that this search violated the Fourth and Fourteenth Amendments." — [*Id.*](https://www.courtlistener.com/opinion/108801/cupp-v-murphy/#:~:text=On%20the%20facts%20of%20this) ^pin-296a
 
 ## Application
 There was probable cause that Murphy committed the murder. Although there was no formal arrest, his awareness of the detectives' suspicions and his conduct in rubbing his hands and concealing them showed an attempt to destroy the readily destructible evidence under his fingernails. The intrusion was confined to that evidence — not a full search of his person — so, given probable cause and the evidence's evanescence, the limited search was reasonable.

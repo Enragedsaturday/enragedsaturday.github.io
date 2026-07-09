@@ -52,7 +52,7 @@ Whether the government violates the Sixth Amendment right to counsel when an inf
 ## Rule
 No. The Court rejected the contention that the government must arrest a suspect as soon as it has probable cause so that the right to counsel will attach: "There is no constitutional right to be arrested." — 385 U.S. at 310. ^pin-310
 
-"The police are not required to guess at their peril the precise moment at which they have probable cause to arrest a suspect, risking a violation of the Fourth Amendment if they act too soon, and a violation of the Sixth Amendment if they wait too long." — *Id.* ^pin-310a
+"The police are not required to guess at their peril the precise moment at which they have probable cause to arrest a suspect, risking a violation of the Fourth Amendment if they act too soon, and a violation of the Sixth Amendment if they wait too long." — [*Id.*](https://www.courtlistener.com/opinion/107318/hoffa-v-united-states/#:~:text=The%20police%20are%20not%20required) ^pin-310a
 
 ## Application
 On these facts no adversary proceedings on the jury-tampering charge had begun when Hoffa spoke in Partin's presence, and the government had no duty to arrest or charge him earlier to trigger the right to counsel. Because the Sixth Amendment right had not attached as to that offense when the statements were made, the use of Partin to gather and report them was no violation of Hoffa's right to counsel.

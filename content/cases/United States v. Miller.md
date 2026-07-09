@@ -52,7 +52,7 @@ Whether a bank depositor has a Fourth Amendment-protected expectation of privacy
 ## Rule
 No. The records are the bank's business records, and the depositor has no legitimate expectation of privacy in information he conveys to the bank. "All of the documents obtained, including financial statements and deposit slips, contain only information voluntarily conveyed to the banks and exposed to their employees in the ordinary course of business." — 425 U.S. at 442. ^pin-442
 
-That voluntary exposure forfeits any Fourth Amendment claim: "The depositor takes the risk, in revealing his affairs to another, that the information will be conveyed by that person to the Government." — *Id.* at 443. ^pin-443
+That voluntary exposure forfeits any Fourth Amendment claim: "The depositor takes the risk, in revealing his affairs to another, that the information will be conveyed by that person to the Government." — [*Id.* at 443](https://www.courtlistener.com/opinion/109433/united-states-v-miller/#:~:text=The%20depositor%20takes%20the%20risk%2C). ^pin-443
 
 ## Application
 The checks were not confidential communications but negotiable instruments used in commercial transactions, and the statements and deposit slips contained only information Miller had voluntarily handed to his banks and exposed to their employees in the ordinary course of business. Because the records were not Miller's private papers and he had assumed the risk the banks would disclose them, he had no legitimate expectation of privacy and no Fourth Amendment interest the government's acquisition could invade.

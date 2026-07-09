@@ -52,7 +52,7 @@ Whether the automobile exception justifies a warrantless search of a car that ha
 ## Rule
 Yes. Probable cause supporting an automobile-exception search is not dissolved by impoundment or by the passage of time. The Fourth Circuit held the government's automobile-exception argument "is clearly correct." — 16 F.3d at 585. ^pin-585
 
-Immobilization does not matter: "the justification to conduct a warrantless search under the automobile exception does not disappear merely because the car has been immobilized and impounded." — *Id.* at 586. ^pin-586
+Immobilization does not matter: "the justification to conduct a warrantless search under the automobile exception does not disappear merely because the car has been immobilized and impounded." — [*Id.* at 586](https://www.courtlistener.com/opinion/7027957/united-states-v-gastiaburo/#:~:text=the%20justification%20to%20conduct%20a). ^pin-586
 
 Nor is there any temporal limit: "Not a single published federal case speaks of a 'temporal limit' to the automobile exception. The Supreme Court has repeatedly stated that a warrantless search of a car (1) need not occur contemporaneously with the car's lawful seizure and (2) need not be justified by the existence of exigent circumstances that might have made it impractical to secure a warrant prior to the search." — *Id.* at 587. ^pin-587
 

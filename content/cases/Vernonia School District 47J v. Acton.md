@@ -52,7 +52,7 @@ Whether a public school district's policy of random, suspicionless urinalysis dr
 ## Rule
 State-compelled urinalysis is a search, and "the ultimate measure of the constitutionality of a governmental search is 'reasonableness'" — judged, where there was no clear founding-era practice, by "balancing its intrusion on the individual's Fourth Amendment interests against its promotion of legitimate governmental interests." — 515 U.S. at 652–653. ^pin-652
 
-A school search may proceed without individualized suspicion under the "special needs" doctrine, and the relevant privacy expectation is reduced in the school setting and reduced further for athletes: "Legitimate privacy expectations are even less with regard to student athletes." — *Id.* at 657. ^pin-657
+A school search may proceed without individualized suspicion under the "special needs" doctrine, and the relevant privacy expectation is reduced in the school setting and reduced further for athletes: "Legitimate privacy expectations are even less with regard to student athletes." — [*Id.* at 657](https://www.courtlistener.com/opinion/117964/vernonia-school-district-47j-v-acton/#:~:text=%E2%80%9Cwhen-,special%20needs). ^pin-657
 
 Weighing "the decreased expectation of privacy, the relative unobtrusiveness of the search, and the severity of the need met by the search," the Court held: "we conclude Vernonia's Policy is reasonable and hence constitutional." — *Id.* at 664–665. ^pin-665
 

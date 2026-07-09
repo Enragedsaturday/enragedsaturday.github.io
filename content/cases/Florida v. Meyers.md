@@ -54,7 +54,7 @@ Whether a second warrantless search of an automobile already lawfully impounded 
 ## Rule
 Yes. The automobile exception is not defeated by the car's prior impoundment or by an earlier search: "In *Michigan* v. *Thomas*, 458 U. S. 259 (1982), we upheld a warrantless search of an automobile even though the automobile was in police custody and even though a prior inventory search had already been made. That ruling controls the disposition of this case." — 466 U.S. at 382. ^pin-382
 
-The Court reiterated, quoting *[[Michigan v. Thomas|Thomas]]*, that "the justification to conduct such a warrantless search does not vanish once the car has been immobilized." — *Id.* (quoting 458 U.S. at 261). ^pin-382a
+The Court reiterated, quoting *[[Michigan v. Thomas|Thomas]]*, that "the justification to conduct such a warrantless search does not vanish once the car has been immobilized." — [*Id.*](https://www.courtlistener.com/opinion/111157/florida-v-meyers/#:~:text=the%20justification%20to%20conduct%20such) (quoting 458 U.S. at 261). ^pin-382a
 
 ## Application
 The state appellate court's ground — that impoundment removed mobility and therefore required a warrant for the second search — was "clearly inconsistent" with *[[Michigan v. Thomas]]* and *[[Chambers v. Maroney]]*. Because the justification for the warrantless search did not disappear once the car was impounded, the second search of the secured vehicle was valid.

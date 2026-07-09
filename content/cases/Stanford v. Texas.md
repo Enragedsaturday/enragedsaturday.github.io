@@ -57,7 +57,7 @@ Particularity exists precisely so that, "[a]s to what is to be taken, nothing is
 A warrant whose sweep delegates that choice to the officer is the general warrant the Fourth Amendment forbids.
 
 ## Application
-The warrant authorized the seizure not of contraband but of "literary material" — "book[s], records, pamphlets, cards, receipts, lists, memoranda, pictures, recordings and other written instruments concerning the Communist Party of Texas." That "indiscriminate sweep of that language is constitutionally intolerable" because it left the selection of expressive materials, seized for their ideas, to the discretion of the executing officers. — *Id.* at 486. ^pin-486
+The warrant authorized the seizure not of contraband but of "literary material" — "book[s], records, pamphlets, cards, receipts, lists, memoranda, pictures, recordings and other written instruments concerning the Communist Party of Texas." That "indiscriminate sweep of that language is constitutionally intolerable" because it left the selection of expressive materials, seized for their ideas, to the discretion of the executing officers. — [*Id.* at 486](https://www.courtlistener.com/opinion/106964/stanford-v-texas/#:~:text=literary%20material). ^pin-486
 
 The Fourth and Fourteenth Amendments guarantee that no official "shall ransack [Stanford's] home and seize his books and papers under the unbridled authority of a general warrant — no less than the law 200 years ago shielded John Entick from the messengers of the King." — *Id.* ^pin-486b
 

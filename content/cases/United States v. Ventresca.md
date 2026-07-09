@@ -56,9 +56,9 @@ Yes. "[A]ffidavits for search warrants . . . must be tested and interpreted by m
 
 The limited exceptions to the warrant requirement "underscore[] the preference accorded police action taken under a warrant." — *Id.* at 106–07. ^pin-106
 
-An affidavit may not be "purely conclusory," but "where these circumstances are detailed, where reason for crediting the source of the information is given, and when a magistrate has found probable cause, the courts should not invalidate the warrant by interpreting the affidavit in a hypertechnical, rather than a commonsense, manner." — *Id.* at 108–09. ^pin-109a
+An affidavit may not be "purely conclusory," but "where these circumstances are detailed, where reason for crediting the source of the information is given, and when a magistrate has found probable cause, the courts should not invalidate the warrant by interpreting the affidavit in a hypertechnical, rather than a commonsense, manner." — [*Id.* at 108–09](https://www.courtlistener.com/opinion/106990/united-states-v-ventresca/#:~:text=purely%20conclusory%2C). ^pin-109a
 
-And "the resolution of doubtful or marginal cases in this area should be largely determined by the preference to be accorded to warrants." — *Id.* at 109. ^pin-109b
+And "the resolution of doubtful or marginal cases in this area should be largely determined by the preference to be accorded to warrants." — [*Id.* at 109](https://www.courtlistener.com/opinion/106990/united-states-v-ventresca/#:~:text=the%20resolution%20of%20doubtful%20or). ^pin-109b
 
 ## Application
 The affidavit was detailed and specific, setting forth "a good many" of the underlying circumstances — the affiant's and fellow investigators' mutually corroborating observations of still activity. Read commonsensically rather than technically, it amply established probable cause. The Court of Appeals' insistence that the affidavit label each fact as hearsay or firsthand was exactly the hypertechnical reading the Fourth Amendment does not require; the corroborated observations supplied a substantial basis for the Commissioner's probable-cause finding.

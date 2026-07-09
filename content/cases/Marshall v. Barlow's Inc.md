@@ -54,7 +54,7 @@ No. "The Warrant Clause of the Fourth Amendment protects commercial buildings as
 
 Following *[[Camara v. Municipal Court|Camara]]* and [[See v. City of Seattle]], "unless some recognized exception to the warrant requirement applies, *See v. Seattle* would require a warrant to conduct the inspection sought in this case." — *Id.* at 313. ^pin-313
 
-The Secretary's enforcement concerns "do not suffice to justify warrantless inspections under OSHA or vitiate the general constitutional requirement that for a search to be reasonable a warrant must be obtained." — *Id.* at 324. ^pin-324
+The Secretary's enforcement concerns "do not suffice to justify warrantless inspections under OSHA or vitiate the general constitutional requirement that for a search to be reasonable a warrant must be obtained." — [*Id.* at 324](https://www.courtlistener.com/opinion/109866/marshall-v-barlows-inc/#:~:text=do%20not%20suffice%20to%20justify). ^pin-324
 
 "We hold that Barlow's was entitled to a declaratory judgment that the Act is unconstitutional insofar as it purports to authorize inspections without warrant or its equivalent." — *Id.* at 325. ^pin-325
 

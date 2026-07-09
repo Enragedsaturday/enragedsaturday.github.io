@@ -52,9 +52,9 @@ Whether an officer acted reasonably under the Fourth Amendment in stopping an ap
 ## Rule
 Police actions in caring for an impaired person on the public streets serve a recognized public-welfare/community-caretaking function. "Police have long served the public welfare by removing intoxicated people from the public streets, where they pose a hazard to themselves and others." — 969 F.2d at 1574 (citing *Powell v. Texas* and *Cady v. Dombrowski*'s "community caretaking functions"). ^pin-1574
 
-Accordingly, "Officer Ellison was warranted in stopping to investigate the situation and check on the man's condition." — *Id.* ^pin-1574a
+Accordingly, "Officer Ellison was warranted in stopping to investigate the situation and check on the man's condition." — [*Id.*](https://www.courtlistener.com/opinion/587275/united-states-v-izeal-rideau-jr/#:~:text=Officer%20Ellison%20was%20warranted%20in) ^pin-1574a
 
-A lawful detention is not a license to frisk, but the protective patdown here was supported by specific and articulable facts: "A reasonably prudent man in Ellison's situation could have believed that his safety and that of his partner was in danger." — *Id.* ^pin-1574b
+A lawful detention is not a license to frisk, but the protective patdown here was supported by specific and articulable facts: "A reasonably prudent man in Ellison's situation could have believed that his safety and that of his partner was in danger." — [*Id.*](https://www.courtlistener.com/opinion/587275/united-states-v-izeal-rideau-jr/#:~:text=A%20reasonably%20prudent%20man%20in%20Ellison%27s) ^pin-1574b
 
 The court added that "police officers must have specific and articulable facts indicating that their safety is in danger to justify a patdown." — 969 F.2d at 1576. ^pin-1576
 

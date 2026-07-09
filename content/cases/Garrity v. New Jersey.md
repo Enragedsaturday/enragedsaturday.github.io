@@ -52,7 +52,7 @@ Whether statements obtained from public employees under threat of removal from o
 ## Rule
 No. The threat of discharge renders such statements involuntary. "The choice given petitioners was either to forfeit their jobs or to incriminate themselves. The option to lose their means of livelihood or to pay the penalty of self-incrimination is the antithesis of free choice to speak out or to remain silent." — 385 U.S. at 497. ^pin-497
 
-The Court therefore held: "We now hold the protection of the individual under the Fourteenth Amendment against coerced statements prohibits use in subsequent criminal proceedings of statements obtained under threat of removal from office, and that it extends to all, whether they are policemen or other members of our body politic." — *Id.* at 500. ^pin-500
+The Court therefore held: "We now hold the protection of the individual under the Fourteenth Amendment against coerced statements prohibits use in subsequent criminal proceedings of statements obtained under threat of removal from office, and that it extends to all, whether they are policemen or other members of our body politic." — [*Id.* at 500](https://www.courtlistener.com/opinion/107336/garrity-v-new-jersey/#:~:text=We%20now%20hold%20the%20protection). ^pin-500
 
 ## Application
 Each officer was confronted with the choice to answer the investigators' questions or lose his job under the forfeiture statute. Faced with self-incrimination on one side and loss of livelihood on the other, the officers' answers were the product of coercion rather than free will, much like the pressures condemned in *[[Miranda v. Arizona|Miranda]]*. Because the convictions rested on these compelled statements, they could not stand.

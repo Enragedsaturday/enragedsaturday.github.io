@@ -56,7 +56,7 @@ If reasonable privacy interests remain, a warrant is required: "If reasonable pr
 
 The object of the search sets the type of warrant: "If the primary object is to determine the cause and origin of a recent fire, an administrative warrant will suffice. . . . If the primary object of the search is to gather evidence of criminal activity, a criminal search warrant may be obtained only on a showing of probable cause." — *Id.* at 294. ^pin-294
 
-Applied to a home: "we hold that the Cliffords retained reasonable privacy interests in their fire-damaged residence and that the postfire investigations were subject to the warrant requirement." — *Id.* at 295. ^pin-295
+Applied to a home: "we hold that the Cliffords retained reasonable privacy interests in their fire-damaged residence and that the postfire investigations were subject to the warrant requirement." — [*Id.* at 295](https://www.courtlistener.com/opinion/111057/michigan-v-clifford/#:~:text=we%20hold%20that%20the%20Cliffords). ^pin-295
 
 ## Application
 Although the home was fire-damaged and uninhabitable, the exterior and some upstairs rooms were largely intact, personal belongings remained, and the Cliffords had secured the house against intrusion — so, given the strong privacy expectations in a home, reasonable privacy interests survived. The blaze was long out, officials had left, and the State claimed no [[Exigent Circumstances and Hot Pursuit|exigency]], so the later warrantless basement and upstairs searches were subject to the warrant requirement; because they were conducted without a warrant or consent, they were unconstitutional.

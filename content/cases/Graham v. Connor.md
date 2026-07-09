@@ -54,7 +54,7 @@ Such claims are governed by the Fourth Amendment's objective-reasonableness stan
 
 Reasonableness is judged objectively and from the officer's on-scene vantage: "The 'reasonableness' of a particular use of force must be judged from the perspective of a reasonable officer on the scene, rather than with the 20/20 vision of hindsight." — *Id.* at 396. ^pin-396
 
-The inquiry weighs the facts of each case, "including the severity of the crime at issue, whether the suspect poses an immediate threat to the safety of the officers or others, and whether he is actively resisting arrest or attempting to evade arrest by flight." — *Id.* ^pin-396a
+The inquiry weighs the facts of each case, "including the severity of the crime at issue, whether the suspect poses an immediate threat to the safety of the officers or others, and whether he is actively resisting arrest or attempting to evade arrest by flight." — [*Id.*](https://www.courtlistener.com/opinion/112257/graham-v-connor/#:~:text=including%20the%20severity%20of%20the) ^pin-396a
 
 ## Application
 Graham's claim arose from an investigatory stop and the force used during it — a Fourth Amendment "seizure" — so it had to be assessed under the objective-reasonableness standard rather than the *[[Johnson v. Glick]]* due-process test the Court of Appeals applied. Because the lower courts used a standard turning on the officers' subjective good or bad faith, the case was [[Reading and Citing Cases#on-remand|remanded]] for analysis under the proper Fourth Amendment framework.

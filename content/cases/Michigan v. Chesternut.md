@@ -52,14 +52,14 @@ Whether the officers' pursuit — driving alongside a fleeing pedestrian — was
 ## Rule
 Whether police conduct is a seizure is governed by the objective Mendenhall test: "The test provides that the police can be said to have seized an individual 'only if, in view of all of the circumstances surrounding the incident, a reasonable person would have believed that he was not free to leave.'" — 486 U.S. at 573 (quoting *United States v. Mendenhall*). ^pin-573
 
-"The test is necessarily imprecise, because it is designed to assess the coercive effect of police conduct, taken as a whole, rather than to focus on particular details of that conduct in isolation." — *Id.* ^pin-573b
+"The test is necessarily imprecise, because it is designed to assess the coercive effect of police conduct, taken as a whole, rather than to focus on particular details of that conduct in isolation." — [*Id.*](https://www.courtlistener.com/opinion/112095/michigan-v-chesternut/#:~:text=The%20test%20is%20necessarily%20imprecise%2C) ^pin-573b
 
-Applying it, the Court held: "we conclude that respondent was not seized by the police before he discarded the packets containing the controlled substance." — *Id.* at 574. ^pin-574
+Applying it, the Court held: "we conclude that respondent was not seized by the police before he discarded the packets containing the controlled substance." — [*Id.* at 574](https://www.courtlistener.com/opinion/112095/michigan-v-chesternut/#:~:text=we%20conclude%20that%20respondent%20was). ^pin-574
 
 ## Application
 Although an officer called the conduct a "chase," that label did not make it a seizure: "the police conduct involved here would not have communicated to the reasonable person an attempt to capture or otherwise intrude upon respondent's freedom of movement. The record does not reflect that the police activated a siren or flashers; or that they commanded respondent to halt, or displayed any weapons; or that they operated the car in an aggressive manner to block respondent's course or otherwise control the direction or speed of his movement." — *Id.* at 575. ^pin-575
 
-"While the very presence of a police car driving parallel to a running pedestrian could be somewhat intimidating, this kind of police presence does not, standing alone, constitute a seizure." — *Id.* at 575–576. ^pin-575b
+"While the very presence of a police car driving parallel to a running pedestrian could be somewhat intimidating, this kind of police presence does not, standing alone, constitute a seizure." — [*Id.* at 575–576](https://www.courtlistener.com/opinion/112095/michigan-v-chesternut/#:~:text=While%20the%20very%20presence%20of). ^pin-575b
 
 Because Chesternut had not been seized when he abandoned the packets, they were not the fruit of any seizure.
 

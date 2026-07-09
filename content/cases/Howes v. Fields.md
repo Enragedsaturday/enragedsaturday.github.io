@@ -52,7 +52,7 @@ Whether a prisoner is "in custody" for *[[Miranda v. Arizona|Miranda]]* purposes
 ## Rule
 No; there is no categorical rule, and imprisonment by itself is not *[[Miranda v. Arizona|Miranda]]* custody. "Not all restraints on freedom of movement amount to custody for purposes of Miranda." — *Howes v. Fields*, 565 U.S. 499 (2012) (slip op., at 9). ^pin-op9
 
-"If a break in custody can occur while a prisoner is serving an uninterrupted term of imprisonment, it must follow that imprisonment alone is not enough to create a custodial situation within the meaning of Miranda." — *Id.* (slip op., at 10). ^pin-op10
+"If a break in custody can occur while a prisoner is serving an uninterrupted term of imprisonment, it must follow that imprisonment alone is not enough to create a custodial situation within the meaning of Miranda." — *Id.* (slip op., at [10](https://www.courtlistener.com/opinion/623144/howes-v-fields/#:~:text=If%20a%20break%20in%20custody%20can%20occur%20while)). ^pin-op10
 
 Whether a prisoner is in custody depends on all the features of the interrogation, asking whether the environment presents the same inherently coercive pressures as station-house questioning.
 

@@ -54,7 +54,7 @@ Whether the Fourth Amendment permits a municipality to punish a businessman for 
 ## Rule
 No. Commercial premises receive Fourth Amendment protection against warrantless regulatory entry. "The businessman, like the occupant of a residence, has a constitutional right to go about his business free from unreasonable official entries upon his private commercial property." — 387 U.S. at 543. ^pin-543
 
-"We therefore conclude that administrative entry, without consent, upon the portions of commercial premises which are not open to the public may only be compelled through prosecution or physical force within the framework of a warrant procedure." — *Id.* at 545. ^pin-545
+"We therefore conclude that administrative entry, without consent, upon the portions of commercial premises which are not open to the public may only be compelled through prosecution or physical force within the framework of a warrant procedure." — [*Id.* at 545](https://www.courtlistener.com/opinion/107474/see-v-city-of-seattle/#:~:text=We%20therefore%20conclude%20that%20administrative). ^pin-545
 
 ## Application
 See's warehouse was private commercial property not open to the public, and the inspector had no warrant. Because the Fourth Amendment guards a businessman's commercial premises much as it guards a home, See had a constitutional right to insist on a warrant and could not be criminally punished for refusing the warrantless inspection. The Court left intact reasonable inspections in many regulatory settings and accepted licensing schemes, deciding only that a warrant procedure governs a contested nonpublic entry.

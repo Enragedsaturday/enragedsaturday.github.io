@@ -52,7 +52,7 @@ Whether the warrantless entry into Newman's home was justified by the hot-pursui
 ## Rule
 To invoke the hot-pursuit exception, officers must show (A) probable cause to search the home and (B) exigent circumstances — the pursuit of a fleeing suspect — justifying the warrantless intrusion. The underlying principle is that "a suspect may not defeat an arrest which has been set in motion in a public place . . . by the expedient of escaping to a private place." — *[[United States v. Santana]]*, 427 U.S. 38, 43 (1976) (quoted at slip op., at 8). The exception applies "only if the 'officers [were] in 'immediate' and 'continuous' pursuit of a suspect from the scene of the crime' at the moment they made entry." — *Newman v. Underhill*, 134 F.4th 1025 (9th Cir. 2025) (slip op., at 10). ^pin-op10
 
-Continuity is the contested element here: a decision to wait for backup "delay[s], but [does] not br[eak]," the "'continuity' of the chase." — *Id.* (slip op., at 12). ^pin-op12
+Continuity is the contested element here: a decision to wait for backup "delay[s], but [does] not br[eak]," the "'continuity' of the chase." — *Id.* (slip op., at [12](https://www.courtlistener.com/opinion/10382777/newman-v-underhill/#:~:text=delay%5Bs%5D%2C%20but%20%5Bdoes%5D%20not%20br%5Beak%5D%2C)). ^pin-op12
 
 Whether continuity breaks turns on two interrelated considerations — the degree to which officers lost track of the suspect's whereabouts, and whether they kept acting with speed to apprehend him — with the passage of time relevant to both.
 

@@ -52,7 +52,7 @@ What safeguards the prosecution must show were used before statements obtained f
 ## Rule
 "the prosecution may not use statements, whether exculpatory or inculpatory, stemming from custodial interrogation of the defendant unless it demonstrates the use of procedural safeguards effective to secure the privilege against self-incrimination." — 384 U.S. at 444. ^pin-444
 
-"By custodial interrogation, we mean questioning initiated by law enforcement officers after a person has been taken into custody or otherwise deprived of his freedom of action in any significant way." — *Id.* ^pin-444a
+"By custodial interrogation, we mean questioning initiated by law enforcement officers after a person has been taken into custody or otherwise deprived of his freedom of action in any significant way." — [*Id.*](https://www.courtlistener.com/opinion/107252/miranda-v-arizona/#:~:text=By%20custodial%20interrogation%2C%20we%20mean) ^pin-444a
 
 Absent other effective safeguards, before any custodial questioning the person must be warned that he has the right to remain silent, that anything he says may be used against him, and that he has the right to retained or appointed counsel.
 

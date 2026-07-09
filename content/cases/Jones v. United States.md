@@ -52,7 +52,7 @@ Whether a defendant charged with a possessory offense, or a person who is legiti
 ## Rule
 Yes, on two independent grounds. First, automatic standing for those charged with possession: "In cases where the indictment itself charges possession, the defendant in a very real sense is revealed as a 'person aggrieved by an unlawful search and seizure' upon a motion to suppress evidence prior to trial." — 362 U.S. at 264. ^pin-264
 
-Second, broader possessory-interest standing: "anyone legitimately on premises where a search occurs may challenge its legality by way of a motion to suppress, when its fruits are proposed to be used against him." — *Id.* at 267. ^pin-267
+Second, broader possessory-interest standing: "anyone legitimately on premises where a search occurs may challenge its legality by way of a motion to suppress, when its fruits are proposed to be used against him." — [*Id.* at 267](https://www.courtlistener.com/opinion/106022/jones-v-united-states/#:~:text=anyone%20legitimately%20on%20premises%20where). ^pin-267
 
 ## Application
 Jones was charged with a possessory narcotics offense and was, by his own testimony, present in Evans's apartment with Evans's consent at the time of the search. Under either ground — the automatic standing flowing from the possessory charge, or his legitimate presence on the premises — Jones was a "person aggrieved" entitled to litigate the search, so he was entitled to have his motion to suppress adjudicated on the merits (the Court then sustained the warrant as adequately supported by corroborated hearsay).

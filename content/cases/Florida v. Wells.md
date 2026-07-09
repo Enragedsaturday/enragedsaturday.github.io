@@ -52,7 +52,7 @@ Whether marijuana found inside a locked suitcase during an inventory search is a
 ## Rule
 No. An inventory search is valid only when conducted under standardized criteria or an established routine, so that it does not become a pretext for an investigatory search: "[A]n inventory search must not be a ruse for a general rummaging in order to discover incriminating evidence." — 495 U.S. at 4. ^pin-4
 
-"The policy or practice governing inventory searches should be designed to produce an inventory." — *Id.* ^pin-4a
+"The policy or practice governing inventory searches should be designed to produce an inventory." — [*Id.*](https://www.courtlistener.com/opinion/112412/florida-v-wells/#:~:text=The%20policy%20or%20practice%20governing) ^pin-4a
 
 Officers need not proceed in a "totally mechanical 'all or nothing' fashion," but they may not be left with uncanalized discretion over whether to open containers.
 

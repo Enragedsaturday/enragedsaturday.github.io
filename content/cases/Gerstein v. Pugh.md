@@ -54,7 +54,7 @@ Whether the Fourth Amendment requires a judicial determination of probable cause
 ## Rule
 A prompt judicial probable-cause determination is required. An officer's on-scene probable cause justifies the arrest and a brief booking detention, but not prolonged custody: "a policeman's on-the-scene assessment of probable cause provides legal justification for arresting a person suspected of crime, and for a brief period of detention to take the administrative steps incident to arrest. Once the suspect is in custody, however, the reasons that justify dispensing with the magistrate's neutral judgment evaporate." — 420 U.S. at 113–114. ^pin-113
 
-"Accordingly, we hold that the Fourth Amendment requires a judicial determination of probable cause as a prerequisite to extended restraint of liberty following arrest." — *Id.* at 114. ^pin-114
+"Accordingly, we hold that the Fourth Amendment requires a judicial determination of probable cause as a prerequisite to extended restraint of liberty following arrest." — [*Id.* at 114](https://www.courtlistener.com/opinion/109186/gerstein-v-pugh/#:~:text=Accordingly%2C%20we%20hold%20that%20the). ^pin-114
 
 The hearing may be informal and need not be adversarial, but it must be prompt: "it must provide a fair and reliable determination of probable cause as a condition for any significant pretrial restraint of liberty, and this determination must be made by a judicial officer either before or promptly after arrest." — *Id.* at 125. ^pin-125
 

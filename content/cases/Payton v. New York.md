@@ -56,7 +56,7 @@ Whether the Fourth Amendment permits police to make a warrantless and nonconsens
 ## Rule
 No. The Fourth Amendment "prohibits the police from making a warrantless and nonconsensual entry into a suspect's home in order to make a routine felony arrest." — 445 U.S. at 576. ^pin-576
 
-"In terms that apply equally to seizures of property and to seizures of persons, the Fourth Amendment has drawn a firm line at the entrance to the house. Absent exigent circumstances, that threshold may not reasonably be crossed without a warrant." — 445 U.S. at 590. ^pin-590
+"In terms that apply equally to seizures of property and to seizures of persons, the Fourth Amendment has drawn a firm line at the entrance to the house. Absent exigent circumstances, that threshold may not reasonably be crossed without a warrant." — [445 U.S. at 590](https://www.courtlistener.com/opinion/110235/payton-v-new-york/#:~:text=In%20terms%20that%20apply%20equally). ^pin-590
 
 ## Application
 The detectives had probable cause to arrest Payton but no warrant and no [[Exigent Circumstances and Hot Pursuit|exigent circumstances]] when they forced entry into his apartment; the same was true of the warrantless entry to arrest Riddick in his home. Because the Fourth Amendment draws a firm line at the entrance to the house, those warrantless, nonconsensual entries to make routine felony arrests were unconstitutional, and the evidence obtained (including the shell casing seized in Payton's apartment) could not stand on that basis.

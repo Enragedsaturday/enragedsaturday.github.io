@@ -54,7 +54,7 @@ Whether the *[[Michigan v. Summers|Summers]]* authority to detain occupants inci
 ## Rule
 No — the *[[Michigan v. Summers|Summers]]* detention authority is spatially limited. "A spatial constraint defined by the immediate vicinity of the premises to be searched is therefore required for detentions incident to the execution of a search warrant." — 568 U.S. at 201 (slip op., at 13). ^pin-201
 
-The interests *[[Michigan v. Summers|Summers]]* serves (officer safety, orderly completion of the search, preventing flight) do not reach a former occupant who has departed: that flight-prevention interest "does not independently justify detention of an occupant beyond the immediate vicinity of the premises to be searched." — *Id.* at 199 (slip op., at 11). ^pin-199
+The interests *[[Michigan v. Summers|Summers]]* serves (officer safety, orderly completion of the search, preventing flight) do not reach a former occupant who has departed: that flight-prevention interest "does not independently justify detention of an occupant beyond the immediate vicinity of the premises to be searched." — [*Id.* at 199](https://www.courtlistener.com/opinion/820749/bailey-v-united-states/#:~:text=does%20not%20independently%20justify%20detention) (slip op., at 11). ^pin-199
 
 ## Application
 Bailey was stopped about a mile from the apartment, well outside its immediate vicinity, after he had already left (apparently unaware of the impending search). Because he was not within the immediate vicinity, the *[[Michigan v. Summers|Summers]]* rule did not authorize his detention; absent that categorical authority, the officers would have needed probable cause to arrest or reasonable suspicion to make a *[[Terry v. Ohio|Terry]]* stop.

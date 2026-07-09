@@ -227,6 +227,20 @@ def wire_case_page(text, record_id, lake_entry, forms):
             continue
         base = blk["start"]
         seg = text[blk["start"]:blk["end"]]
+        # idempotency: after remediation there is one pin per block, so a fragment
+        # link already in this block means THIS pin is wired. Record the TERMINAL
+        # state (linked-external, preexisting) — re-derive the form off the stripped
+        # cite — so the R12 ledger is stable across runs and re-runs change 0 bytes.
+        if fragment and "#:~:text=" in seg:
+            stripped = re.sub(
+                r"\[([^\]]*)\]\(https://www\.courtlistener\.com/[^)]*#:~:text=[^)]*\)",
+                r"\1", seg)
+            sloc = locate_case_cite(stripped, pin_id, forms)
+            form = sloc[2] if sloc[0] is not None else None
+            row = _l(record_id, pin_id, "linked-external", None, form=form)
+            row["preexisting"] = True
+            ledger.append(row)
+            continue
         rel_s, form_or_reason = None, None
         loc = locate_case_cite(seg, pin_id, forms)
         rel_s, rel_e = loc[0], (loc[1] if loc[0] is not None else None)
@@ -271,107 +285,127 @@ def wire_case_page(text, record_id, lake_entry, forms):
 # DOCTRINE wiring  (rules 1/2/3; zone-aware; conservative / fail-closed)
 # ---------------------------------------------------------------------------
 
-# a pincite that trails a case reference: `, 569 U.S. at 8` / `, 569 U.S. 1, 8`
-_DOCTRINE_PINCITE = re.compile(
-    r"(?P<lead>,\s*)(?P<vol>\d{1,4})(?P<rep>\s+[A-Z][A-Za-z0-9.'’ ]*?)\s+"
-    r"(?:at\s+)?(?P<page>\d{1,4})(?P<range>(?:[–—-]\d{1,4})?)"
-)
+# The pincite that trails a case reference. The DOCTRINE convention wraps ONLY the
+# page number(s) (the reporter volume stays plain). A pincite exists in exactly two
+# forms; a BARE first-page cite (`391 U.S. 543`) is a general signal cite with NO
+# pincite and is never wired. The trailing `(?!\s+[A-Z])` rejects a parallel
+# reporter (`569 U.S. 1, 133 S. Ct. 1409`) so a parallel volume is never mistaken
+# for a pincite page.
+_PINCITE_TAIL = r"(?P<page>\d{1,4})(?P<range>(?:[–—-]\d{1,4})?)(?!\s+[A-Z])(?!\d)"
+_DPIN_AT = re.compile(r"^\*?,?\s*\d{1,4}\s+[A-Z][A-Za-z.'’ ]*?\s+at\s+" + _PINCITE_TAIL)
+_DPIN_COMMA = re.compile(r"^\*?,?\s*\d{1,4}\s+[A-Z][A-Za-z.'’ ]*?\s+\d{1,4},\s+" + _PINCITE_TAIL)
 _QUOTE_SPAN = re.compile(r"[\"“]([^\"“”]{8,})[\"”]")
+_MIN_QUOTE_MATCH = 20  # a rule-2 quote must share >=20 chars with a pin quote
 
 
 def _norm_q(s):
     return re.sub(r"\s+", " ", s or "").strip().lower()
 
 
-def wire_doctrine_page(text, page2rid, lake, forms=("rule1", "rule2", "rule3")):
-    """Conservative doctrine pincite wiring. Returns (new_text, ledger, journal).
+def match_doctrine_pincite(after):
+    """(rel_start, rel_end, page_text) of the pincite page in `after` (text just
+    past a case wikilink), or None. Already-wired (`[8](…)`) fails to match."""
+    for rx in (_DPIN_AT, _DPIN_COMMA):
+        m = rx.match(after)
+        if m:
+            return (m.start("page"), m.end("range"), after[m.start("page"):m.end("range")])
+    return None
 
-    Only edits OUTSIDE R2 zones. Rule 2 upgrades a name-half only on a UNIQUE quote
-    match against the cited case's pin quotes; anything ambiguous stays plain."""
+
+def _unique_quote_pin(entry, quotes):
+    """The single pin (matched-fidelity, validated fragment) whose quote overlaps a
+    sentence quotation by >=_MIN_QUOTE_MATCH chars. Returns pin_id, '__AMBIG__', or None."""
+    hit = None
+    for pin_id, pin in entry["pins"].items():
+        if pin.get("fidelity") != "matched" or not pin.get("fragment"):
+            continue
+        pq = _norm_q(pin.get("quote"))
+        for q in quotes:
+            nq = _norm_q(q)
+            if len(nq) >= _MIN_QUOTE_MATCH and (nq in pq or pq in nq):
+                if hit and hit != pin_id:
+                    return "__AMBIG__"
+                hit = pin_id
+    return hit
+
+
+def wire_doctrine_page(text, page2rid, lake, forms=("rule1", "rule2", "rule3")):
+    """Doctrine split-pincite wiring (spec R4, rules 1/2/3). Returns
+    (new_text, ledger, journal). Edits ONLY outside R2 zones and ONLY the pincite
+    page number; rule 2 upgrades a name-half solely on a UNIQUE quote match."""
     ledger = []
     journ = []
     z = zones.compute_zones(text)
     masked = zones.mask(text, z, fill="\x00")  # zone chars blanked; offsets preserved
 
-    # index case wikilinks in the (unmasked) text, skipping any that fall in a zone
     link_re = re.compile(r"\[\[(?P<target>[^\]|#]+?)(?P<anchor>#\^pin-[A-Za-z0-9-]+)?(?:\|(?P<disp>[^\]]+))?\]\]")
-    edits = []
+    edits = []  # (p_s, p_e, repl, rid, pin_id, action, before, extra_anchor_edit?)
+
+    def queue(lm, pm_span, url, action, rid, pin_id, rule, fragment, upgrade=None):
+        p_s = lm.end() + pm_span[0]
+        p_e = lm.end() + pm_span[1]
+        page_txt = text[p_s:p_e]
+        repl = "[%s](%s)" % (page_txt, url)
+        edits.append([p_s, p_e, repl, rid, pin_id, action, page_txt, rule, fragment])
+        if upgrade:
+            tgt_e = lm.start() + len("[[") + len(lm.group("target"))
+            edits.append([tgt_e, tgt_e, upgrade, rid, pin_id, "linked-deep", "", rule, True])
+
     for lm in link_re.finditer(text):
         if "\x00" in masked[lm.start():lm.end()]:
-            continue  # link sits inside a zone; never edit there
+            continue  # link sits inside a zone (quote/heading/citation/…); never edit
         target = lm.group("target").strip()
         rid = page2rid.get(target) or page2rid.get(target.replace("_", " "))
         if not rid or rid not in lake:
             continue
         entry = lake[rid]
+        # allow a closing italic `*` (and only that) between `]]` and the cite
+        after = text[lm.end():lm.end() + 90]
+        pm = match_doctrine_pincite(after)
+        if pm is None:
+            continue  # mention-only or bare signal cite -> nothing to wire
         url_base, host_reason = cl_external_url(entry.get("url"))
-        # look just past the link for a trailing pincite (allow *…* and , between)
-        after = text[lm.end():lm.end() + 120]
-        pm = _DOCTRINE_PINCITE.search(after)
-        if not pm or pm.start() > 40:
+        if url_base is None:
+            journ.append(_j(rid, None, "plain:%s" % host_reason))
+            ledger.append(_l(rid, None, "plain:%s" % host_reason, None))
             continue
-        pin_anchor = lm.group("anchor")
-        # RULE 1 — name-half already pin-deep
-        if pin_anchor:
-            pin_id = pin_anchor[1:]  # strip leading '#'
-            pin_id = pin_id[1:] if pin_id.startswith("^") else pin_id
+        anchor = lm.group("anchor")
+        if anchor:  # RULE 1 — name-half already pin-deep
+            pin_id = anchor.lstrip("#").lstrip("^")
             pin = entry["pins"].get(pin_id, {})
             frag = pin.get("fragment")
-            action, url = ("plain:paraphrase", None)
-            if frag and url_base:
-                url = url_base + frag
-                action = "linked-external"
-            elif url_base:
-                url = url_base
-                action = "plain:no-fragment-external"
-            _queue_pincite_edit(edits, text, lm, pm, url, action, rid, pin_id)
+            if frag:
+                queue(lm, pm, url_base + frag, "linked-external", rid, pin_id, 1, True)
+            else:  # tier-3 downgrade / unvalidatable: plain external, never a fragment
+                queue(lm, pm, url_base, "linked-external", rid, pin_id, 1, False)
             continue
-        # name-half is page-level/plain: RULE 2 (quotation -> unique upgrade) or RULE 3
+        # page-level name-half: RULE 2 (quotation -> unique upgrade) or RULE 3
         sent = _sentence_around(text, lm.start())
         quotes = _QUOTE_SPAN.findall(sent)
-        matched_pin = None
-        if quotes:
-            for pin_id, pin in entry["pins"].items():
-                if pin.get("fidelity") != "matched" or not pin.get("fragment"):
-                    continue
-                pq = _norm_q(pin.get("quote"))
-                for q in quotes:
-                    nq = _norm_q(q)
-                    if len(nq) >= 8 and (nq in pq or pq in nq):
-                        if matched_pin and matched_pin != pin_id:
-                            matched_pin = "__AMBIG__"
-                        elif matched_pin != "__AMBIG__":
-                            matched_pin = pin_id
-        if matched_pin and matched_pin != "__AMBIG__":
-            # RULE 2 hit: upgrade name-half + fragment-link the pincite
-            pin = entry["pins"][matched_pin]
-            url = (url_base + pin["fragment"]) if url_base else None
-            if url:
-                _queue_pincite_edit(edits, text, lm, pm, url, "linked-deep", rid, matched_pin,
-                                    upgrade_anchor="#^%s" % matched_pin)
-            continue
-        # RULE 3 (or ambiguous rule-2): pincite plain external, name-half untouched
-        if quotes and matched_pin == "__AMBIG__":
-            action = "plain:quote-multi-match"
-        elif quotes:
-            action = "plain:quote-no-match"
-        else:
-            action = "plain:paraphrase"
-        if url_base:
-            _queue_pincite_edit(edits, text, lm, pm, url_base, action, rid, None)
-        else:
-            journ.append(_j(rid, None, "plain:%s" % host_reason))
+        matched = _unique_quote_pin(entry, quotes) if quotes else None
+        if matched and matched != "__AMBIG__":  # RULE 2
+            queue(lm, pm, url_base + entry["pins"][matched]["fragment"],
+                  "linked-external", rid, matched, 2, True, upgrade="#^%s" % matched)
+        else:  # RULE 3 (or fail-closed rule-2): pincite plain external, name-half untouched
+            if matched == "__AMBIG__":
+                journ.append(_j(rid, None, "rule2-ambiguous-quote-left-plain"))
+            queue(lm, pm, url_base, "linked-external", rid, None, 3, False)
 
-    # apply edits reverse
+    # apply reverse, non-overlap
     edits.sort(key=lambda e: -e[0])
     last = None
-    for abs_s, abs_e, repl, rid, pin_id, action, before in edits:
-        if last is not None and abs_e > last:
+    for p_s, p_e, repl, rid, pin_id, action, before, rule, fragment in edits:
+        if last is not None and p_e > last:
             continue
-        text = text[:abs_s] + repl + text[abs_e:]
-        last = abs_s
-        journ.append(_j(rid, pin_id, action, before=before, after=repl))
-        ledger.append(_l(rid, pin_id, action, repl, before=before))
+        text = text[:p_s] + repl + text[p_e:]
+        last = p_s
+        row = _l(rid, pin_id, action, repl, before=before)
+        row["rule"] = rule
+        row["fragment"] = fragment
+        ledger.append(row)
+        jr = _j(rid, pin_id, action, before=before, after=repl)
+        jr["rule"] = rule
+        journ.append(jr)
     return text, ledger, journ
 
 
@@ -383,30 +417,16 @@ def _sentence_around(text, pos):
     return text[lo + 1:hi]
 
 
-def _queue_pincite_edit(edits, text, lm, pm, url, action, rid, pin_id, upgrade_anchor=None):
-    """Wrap ONLY the pincite page number(s) external (doctrine convention: the
-    reporter volume stays plain; the page becomes the link). Optionally upgrade the
-    name-half anchor (rule 2)."""
-    base = lm.end()
-    p_s = base + pm.start("page")
-    p_e = base + pm.end("range")
-    page_txt = text[p_s:p_e]
-    if text[p_s - 1:p_s] == "[":  # already wired
-        return
-    repl = "[%s](%s)" % (page_txt, url)
-    edits.append((p_s, p_e, repl, rid, pin_id, action, page_txt))
-    if upgrade_anchor and not lm.group("anchor"):
-        # insert the pin anchor into the wikilink: [[Target|disp]] -> [[Target#^pin|disp]]
-        tgt_e = lm.start() + len("[[") + len(lm.group("target"))
-        edits.append((tgt_e, tgt_e, upgrade_anchor, rid, pin_id, "upgrade-anchor", ""))
-
-
 # ---------------------------------------------------------------------------
 # ledger / journal rows
 # ---------------------------------------------------------------------------
 
 def _l(record_id, pin_id, action, after, form=None, before=None):
-    row = {"record_id": record_id, "pin_id": pin_id, "action": action}
+    # Every R12 ledger row carries {lane, model} per S1 (the mentions lane flagged
+    # earlier lane:null rows) + a `scope` so cases/doctrine rows coexist in the one
+    # canonical ledger and each scope re-runs idempotently.
+    row = {"record_id": record_id, "pin_id": pin_id, "action": action,
+           "lane": LANE, "model": MODEL}
     if form:
         row["form"] = form
     if before is not None:
@@ -465,21 +485,26 @@ def run_cases(forms=ALL_FORMS, write=False, limit=None, cases_dir=CONTENT_CASES,
         if not any(p.get("fragment") for p in lake[rid]["pins"].values()):
             continue
         new_text, ledger, journ = wire_case_page(text, rid, lake[rid], forms)
+        rel = os.path.relpath(f, REPO_ROOT)
         for row in ledger:
-            row["file"] = os.path.relpath(f, REPO_ROOT)
+            row["file"] = rel
+            row["scope"] = "cases"
+        for row in journ:
+            row["file"] = rel
+            row["scope"] = "cases"
         all_ledger.extend(ledger)
         all_journ.extend(journ)
         if new_text != text:
             changed_files += 1
             for row in ledger:
                 if row["action"].startswith("linked") and len(diffs) < 10000:
-                    diffs.append({"file": os.path.relpath(f, REPO_ROOT), "pin_id": row["pin_id"],
+                    diffs.append({"file": rel, "pin_id": row["pin_id"],
                                   "form": row.get("form"), "before": row.get("before"),
                                   "after": row.get("after")})
             if write and (limit is None or changed_files <= limit):
                 with open(f, "w", encoding="utf-8") as fh:
                     fh.write(new_text)
-    _emit(all_ledger, all_journ, write)
+    _emit(all_ledger, all_journ, write, scope="cases")
     return {"ledger": all_ledger, "journal": all_journ, "diffs": diffs,
             "changed_files": changed_files, "write": write}
 
@@ -497,28 +522,54 @@ def run_doctrine(write=False, cases_dir=CONTENT_CASES, lake_dir=LAKE_CASES,
     for f in files:
         text = open(f, encoding="utf-8").read()
         new_text, ledger, journ = wire_doctrine_page(text, page2rid, lake)
+        rel = os.path.relpath(f, REPO_ROOT)
         for row in ledger:
-            row["file"] = os.path.relpath(f, REPO_ROOT)
+            row["file"] = rel
+            row["scope"] = "doctrine"
+        for row in journ:
+            row["file"] = rel
+            row["scope"] = "doctrine"
         all_ledger.extend(ledger)
         all_journ.extend(journ)
         if new_text != text:
             changed_files += 1
             for row in ledger:
                 if row["action"].startswith("linked") and len(diffs) < 10000:
-                    diffs.append({"file": os.path.relpath(f, REPO_ROOT), "pin_id": row["pin_id"],
+                    diffs.append({"file": rel, "pin_id": row["pin_id"],
                                   "before": row.get("before"), "after": row.get("after")})
             if write:
                 with open(f, "w", encoding="utf-8") as fh:
                     fh.write(new_text)
-    _emit(all_ledger, all_journ, write)
+    _emit(all_ledger, all_journ, write, scope="doctrine")
     return {"ledger": all_ledger, "journal": all_journ, "diffs": diffs,
             "changed_files": changed_files, "write": write}
 
 
-def _emit(ledger, journ, write):
+def _read_jsonl(path):
+    if not os.path.exists(path):
+        return []
+    out = []
+    with open(path, encoding="utf-8") as fh:
+        for line in fh:
+            line = line.strip()
+            if line:
+                try:
+                    out.append(json.loads(line))
+                except json.JSONDecodeError:
+                    pass
+    return out
+
+
+def _emit(ledger, journ, write, scope):
+    """Merge this scope's rows into the single canonical ledger, preserving the
+    OTHER scope's rows (cases + doctrine coexist) and dropping legacy untagged
+    rows (the pre-backfill lane:null set) so every surviving row carries
+    {lane, model, scope}. Idempotent per scope."""
     os.makedirs(os.path.dirname(LEDGER_OUT), exist_ok=True)
+    existing = _read_jsonl(LEDGER_OUT)
+    kept = [r for r in existing if r.get("scope") and r.get("scope") != scope]
     with open(LEDGER_OUT, "w", encoding="utf-8") as fh:
-        for r in ledger:
+        for r in kept + ledger:
             fh.write(json.dumps(r, sort_keys=True) + "\n")
     if write:
         with open(JOURNAL_OUT, "a", encoding="utf-8") as fh:

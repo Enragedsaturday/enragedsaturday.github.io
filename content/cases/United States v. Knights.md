@@ -56,7 +56,7 @@ Yes. Balancing the probationer's diminished privacy against the State's interest
 
 The Court's ultimate holding: "We therefore hold that the warrantless search of Knights, supported by reasonable suspicion and authorized by a condition of probation, was reasonable within the meaning of the Fourth Amendment." — *Id.* at 122. ^pin-122
 
-It expressly reserved the question whether a *suspicionless* search would be reasonable, "because the search in this case was supported by reasonable suspicion." — *Id.* at 120 n.6. ^pin-120
+It expressly reserved the question whether a *suspicionless* search would be reasonable, "because the search in this case was supported by reasonable suspicion." — [*Id.* at 120](https://www.courtlistener.com/opinion/118468/united-states-v-knights/#:~:text=because%20the%20search%20in%20this) n.6. ^pin-120
 
 ## Application
 On these facts the apartment search was reasonable. Knights's probation order "significantly diminished" his expectation of privacy, while the State's heightened interest in apprehending probationer-recidivists justified a lesser-than-probable-cause standard. The investigatory purpose did not matter, because the Court rested its holding on "ordinary Fourth Amendment analysis," under which "[s]ubjective intentions play no role." Since the District Court found — and Knights conceded — that the search was supported by reasonable suspicion, and the probation condition authorized it, the warrantless search of his apartment satisfied the Fourth Amendment. The Court did not decide whether the same search would have been reasonable with no individualized suspicion at all.

@@ -52,9 +52,9 @@ Whether the bus passengers were seized when officers questioned them and request
 ## Rule
 Bus-sweep questioning is not a per se seizure; the test is objective: "Applying the *Bostick* framework to the facts of this particular case, we conclude that the police did not seize respondents when they boarded the bus and began questioning passengers." — 536 U.S. at 203. ^pin-203
 
-The inquiry is "whether a reasonable person would feel free to decline the officers' requests or otherwise terminate the encounter." — *Id.* at 202 (quoting *Florida v. Bostick*). ^pin-202
+The inquiry is "whether a reasonable person would feel free to decline the officers' requests or otherwise terminate the encounter." — [*Id.* at 202](https://www.courtlistener.com/opinion/121153/united-states-v-drayton/#:~:text=whether%20a%20reasonable%20person%20would) (quoting *Florida v. Bostick*). ^pin-202
 
-And officers need not warn of the right to refuse: "The Court has rejected in specific terms the suggestion that police officers must always inform citizens of their right to refuse when seeking permission to conduct a warrantless consent search." — *Id.* at 206. ^pin-206
+And officers need not warn of the right to refuse: "The Court has rejected in specific terms the suggestion that police officers must always inform citizens of their right to refuse when seeking permission to conduct a warrantless consent search." — [*Id.* at 206](https://www.courtlistener.com/opinion/121153/united-states-v-drayton/#:~:text=The%20Court%20has%20rejected%20in). ^pin-206
 
 ## Application
 On these facts the officers gave passengers no reason to believe they were required to cooperate: they did not brandish weapons, block the aisle, or use a commanding tone, and Drayton was free to refuse. The encounter was therefore not a seizure. And although the officer never told Drayton he could refuse the search, he did request permission to search rather than demand it, and under the [[Common Legal Terms#totality-of-the-circumstances|totality of the circumstances]] Drayton's consent was voluntary. The failure to advise of the right to refuse was one factor, not a disqualifier, so the searches were reasonable.

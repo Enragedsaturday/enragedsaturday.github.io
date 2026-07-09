@@ -54,7 +54,7 @@ May jail officials, consistent with the Fourth Amendment, conduct a close visual
 ## Rule
 Yes. Maintaining institutional safety requires deference to correctional officials, and "a regulation impinging on an inmate's constitutional rights must be upheld 'if it is reasonably related to legitimate penological interests.'" — 566 U.S. at 326 (quoting *Turner v. Safley*). ^pin-326
 
-There is a "substantial interest in preventing any new inmate, either of his own will or as a result of coercion, from putting all who live or work at these institutions at even greater risk when he is admitted to the general population." — *Id.* (Part IV). ^pin-iv
+There is a "substantial interest in preventing any new inmate, either of his own will or as a result of coercion, from putting all who live or work at these institutions at even greater risk when he is admitted to the general population." — [*Id.*](https://www.courtlistener.com/opinion/626454/florence-v-board-of-chosen-freeholders-of-county-of-burlington/#:~:text=substantial%20interest%20in%20preventing%20any) (Part IV). ^pin-iv
 
 Weighing those interests, the intake "search procedures . . . struck a reasonable balance between inmate privacy and the needs of the institutions[;] [t]he Fourth and Fourteenth Amendments do not require adoption of the framework of rules petitioner proposes." — *Id.* at 339. ^pin-339
 

@@ -52,7 +52,7 @@ Whether using a spike mike that physically penetrates a wall to listen to conver
 ## Rule
 A physical intrusion into the home to eavesdrop is a search. "[T]he eavesdropping was accomplished by means of an unauthorized physical penetration into the premises occupied by the petitioners." — 365 U.S. at 509. ^pin-509
 
-The Court distinguished its earlier electronic-surveillance decisions because there the eavesdropping "had not been accomplished by means of an unauthorized physical encroachment within a constitutionally protected area." — *Id.* at 510. ^pin-510
+The Court distinguished its earlier electronic-surveillance decisions because there the eavesdropping "had not been accomplished by means of an unauthorized physical encroachment within a constitutionally protected area." — [*Id.* at 510](https://www.courtlistener.com/opinion/106187/silverman-v-united-states/#:~:text=had%20not%20been%20accomplished%20by). ^pin-510
 
 And the result did not depend on property-law technicalities: "In these circumstances we need not pause to consider whether or not there was a technical trespass under the local property law .... Inherent Fourth Amendment rights are not inevitably measurable in terms of ancient niceties of tort or real property law." — *Id.* at 511. ^pin-511
 

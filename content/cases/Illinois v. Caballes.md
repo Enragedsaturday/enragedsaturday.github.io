@@ -56,7 +56,7 @@ A lawful stop must not be prolonged for the sniff: "A seizure that is justified 
 
 But a non-prolonging sniff invades no protected interest: "the use of a well-trained narcotics-detection dog — one that 'does not expose noncontraband items that otherwise would remain hidden from public view,' *Place*, 462 U.S., at 707 — during a lawful traffic stop, generally does not implicate legitimate privacy interests." — *Id.* at 409. ^pin-409
 
-The holding: "A dog sniff conducted during a concededly lawful traffic stop that reveals no information other than the location of a substance that no individual has any right to possess does not violate the Fourth Amendment." — *Id.* at 410. ^pin-410
+The holding: "A dog sniff conducted during a concededly lawful traffic stop that reveals no information other than the location of a substance that no individual has any right to possess does not violate the Fourth Amendment." — [*Id.* at 410](https://www.courtlistener.com/opinion/137742/illinois-v-caballes/#:~:text=A%20dog%20sniff%20conducted%20during). ^pin-410
 
 ## Application
 The traffic stop was lawful at its inception and was not extended by the dog sniff, which occurred while the warning ticket was being written. Because a reliable narcotics dog discloses only the presence or absence of contraband — in which no person has a legitimate privacy interest — the sniff of the car's exterior implicated no constitutionally cognizable privacy interest and required no independent reasonable suspicion. The alert then supplied probable cause for the trunk search.

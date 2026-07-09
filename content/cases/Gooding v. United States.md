@@ -55,7 +55,7 @@ The narcotics-specific statute, 21 U.S.C. § 879(a), controls rather than Federa
 "We therefore conclude that 21 U.S.C. § 879(a) requires no special showing for a nighttime search, other than a showing that the contraband is likely to be on the property or person to be searched at that time." — *Id.* at 458. ^pin-458
 
 ## Application
-The affidavit supporting Gooding's warrant "suggested that there was a continuing traffic of drugs from petitioner's apartment, and a prior purchase through an informer had confirmed that drugs were available." That was "sufficient to satisfy 21 U.S.C. § 879(a)," so the 9:30 p.m. execution was lawful and the seized contraband was admissible. — 416 U.S. at 458. ^pin-458b
+The affidavit supporting Gooding's warrant "suggested that there was a continuing traffic of drugs from petitioner's apartment, and a prior purchase through an informer had confirmed that drugs were available." That was "sufficient to satisfy 21 U.S.C. § 879(a)," so the 9:30 p.m. execution was lawful and the seized contraband was admissible. — [416 U.S. at 458](https://www.courtlistener.com/opinion/109017/gooding-v-united-states/#:~:text=suggested%20that%20there%20was%20a). ^pin-458b
 
 ## Conclusion
 The nighttime narcotics search was authorized under § 879(a) on the showing made; the Court of Appeals' judgment upholding the search was affirmed.

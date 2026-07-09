@@ -52,7 +52,7 @@ Whether the Due Process Clause of the Fourteenth Amendment requires a state cour
 ## Rule
 The Fourth Amendment's core is binding on the States, but its federal exclusionary remedy is not. "The security of one's privacy against arbitrary intrusion by the police—which is at the core of the Fourth Amendment—is basic to a free society. It is therefore implicit in 'the concept of ordered liberty' and as such enforceable against the States through the Due Process Clause." — 338 U.S. at 27–28. ^pin-27
 
-But the *[[Weeks v. United States|Weeks]]* exclusionary rule was a judicially implied remedy, not a constitutional command on the States: "in a prosecution in a State court for a State crime the Fourteenth Amendment does not forbid the admission of evidence obtained by an unreasonable search and seizure." — *Id.* at 33. ^pin-33
+But the *[[Weeks v. United States|Weeks]]* exclusionary rule was a judicially implied remedy, not a constitutional command on the States: "in a prosecution in a State court for a State crime the Fourteenth Amendment does not forbid the admission of evidence obtained by an unreasonable search and seizure." — [*Id.* at 33](https://www.courtlistener.com/opinion/104709/wolf-v-colorado/#:~:text=in%20a%20prosecution%20in%20a). ^pin-33
 
 **This remedy holding was overruled by [[Mapp v. Ohio]] (1961).**
 

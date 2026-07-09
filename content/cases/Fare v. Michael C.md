@@ -52,7 +52,7 @@ Whether a juvenile's request to speak with his probation officer is a [[Common L
 ## Rule
 A request for a probation officer is not a per se invocation. The per se rule for a request for *counsel* rests on the lawyer's unique role: "A probation officer simply is not necessary, in the way an attorney is, for the protection of the legal rights of the accused, juvenile or adult." Accordingly, "[n]or do we believe that a request by a juvenile to speak with his probation officer constitutes a *per se* request to remain silent. ... we decline to find that the request for the probation officer is tantamount to the request for an attorney." — 442 U.S. at 724. ^pin-724
 
-Juvenile waiver is governed by totality: "This totality-of-the-circumstances approach is adequate to determine whether there has been a waiver even where interrogation of juveniles is involved." — *Id.* at 725. ^pin-725
+Juvenile waiver is governed by totality: "This totality-of-the-circumstances approach is adequate to determine whether there has been a waiver even where interrogation of juveniles is involved." — [*Id.* at 725](https://www.courtlistener.com/opinion/110117/fare-v-michael-c/#:~:text=This%20totality%2Dof%2Dthe%2Dcircumstances%20approach%20is%20adequate). ^pin-725
 
 The inquiry weighs the juvenile's age, experience, education, background, and intelligence, and whether he understood the warnings and the consequences of waiving.
 

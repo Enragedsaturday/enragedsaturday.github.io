@@ -52,7 +52,7 @@ Whether, and on what fault standard, a municipality can be held liable under § 
 ## Rule
 Failure-to-train liability requires deliberate indifference. "We hold today that the inadequacy of police training may serve as the basis for § 1983 liability only where the failure to train amounts to deliberate indifference to the rights of persons with whom the police come into contact." — 489 U.S. at 388. ^pin-388
 
-That high standard is met where "the need for more or different training is so obvious, and the inadequacy so likely to result in the violation of constitutional rights, that the policymakers of the city can reasonably be said to have been deliberately indifferent to the need." — *Id.* at 390. ^pin-390
+That high standard is met where "the need for more or different training is so obvious, and the inadequacy so likely to result in the violation of constitutional rights, that the policymakers of the city can reasonably be said to have been deliberately indifferent to the need." — [*Id.* at 390](https://www.courtlistener.com/opinion/112209/city-of-canton-v-harris/#:~:text=employees-,the%20need%20for%20more%20or%20different%20training%20is%20so%20obvious%2C%20and%20the%20inadequacy%20so%20likely%20to%20result%20in%20the%20violation%20of%20constitutional%20rights%2C%20that%20the%20policymakers%20of%20the%20city%20can%20reasonably%20be%20said%20to%20have%20been%20deliberately%20indifferent%20to%20the%20need.). ^pin-390
 
 Only then does the training failure represent a municipal "policy" for which the city is responsible under *[[Monell v. Department of Social Services|Monell]]*.
 

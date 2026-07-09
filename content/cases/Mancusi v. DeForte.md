@@ -52,10 +52,10 @@ Whether DeForte had [[Standing to Challenge a Search|Fourth Amendment standing]]
 ## Rule
 Standing turns on a reasonable expectation of privacy in the area, not on ownership. "[C]apacity to claim the protection of the Amendment depends not upon a property right in the invaded place but upon whether the area was one in which there was a reasonable expectation of freedom from governmental intrusion." — 392 U.S. at 368 (citing *Katz v. United States*, 389 U.S. 347, 352). ^pin-368
 
-"We hold that in these circumstances DeForte had Fourth Amendment standing to object to the admission of the papers at his trial." — *Id.* at 369. ^pin-369
+"We hold that in these circumstances DeForte had Fourth Amendment standing to object to the admission of the papers at his trial." — [*Id.* at 369](https://www.courtlistener.com/opinion/107745/mancusi-v-deforte/#:~:text=We%20hold%20that%20in%20these). ^pin-369
 
 ## Application
-DeForte shared one large room with other union officials, spent considerable time there, and had custody of the records when they were seized. Even without a private office, "DeForte still could reasonably have expected that only those persons and their personal or business guests would enter the office, and that records would not be touched except with their permission or that of union higher-ups." — *Id.* at 369. ^pin-369b
+DeForte shared one large room with other union officials, spent considerable time there, and had custody of the records when they were seized. Even without a private office, "DeForte still could reasonably have expected that only those persons and their personal or business guests would enter the office, and that records would not be touched except with their permission or that of union higher-ups." — [*Id.* at 369](https://www.courtlistener.com/opinion/107745/mancusi-v-deforte/#:~:text=DeForte%20still%20could%20reasonably%20have). ^pin-369b
 
 That expectation "was inevitably defeated by the entrance of state officials, their conduct of a general search, and their removal of records which were in DeForte's custody." Because he had a [[Reasonable Expectation of Privacy|reasonable expectation of privacy]] in the shared office, he had standing; and the warrantless search on a bare DA subpoena was unreasonable.
 

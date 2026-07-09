@@ -52,7 +52,7 @@ Whether a passenger in a vehicle is "seized" by a traffic stop, so that he has [
 ## Rule
 "When a police officer makes a traffic stop, the driver of the car is seized within the meaning of the Fourth Amendment." — 551 U.S. at 251. ^pin-251
 
-"We hold that a passenger is seized as well and so may challenge the constitutionality of the stop." — *Id.* ^pin-251b
+"We hold that a passenger is seized as well and so may challenge the constitutionality of the stop." — [*Id.*](https://www.courtlistener.com/opinion/145712/brendlin-v-california/#:~:text=We%20hold%20that%20a%20passenger) ^pin-251b
 
 ## Application
 When the deputy pulled the car over, a reasonable person in Brendlin's position as a passenger would not have believed he was free to leave; he was therefore seized at the moment the car stopped. Because the State conceded the stop itself lacked justification, Brendlin could challenge it and seek suppression of what the seizure produced.

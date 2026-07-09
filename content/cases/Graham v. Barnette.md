@@ -52,7 +52,7 @@ After a series of escalating 911 calls on May 25, 2017 — including an anonymou
 ## Rule
 After *[[Caniglia v. Strom|Caniglia]]*, the "community caretaking" label does not fit a psychiatric seizure. "Now that *Caniglia* has made clear that 'there is no overarching "community caretaking" doctrine,' . . . our use of that label seems to be a category error." — *Graham v. Barnette*, 5 F.4th 872 (8th Cir. 2021) (slip op., at 10). ^pin-op10
 
-The governing standard is probable cause of dangerousness: "we again conclude that probable cause of dangerousness is the standard that must be met for a warrantless mental-health seizure to be reasonable under the Fourth Amendment." — *Id.* (slip op., at 10). ^pin-op10a
+The governing standard is probable cause of dangerousness: "we again conclude that probable cause of dangerousness is the standard that must be met for a warrantless mental-health seizure to be reasonable under the Fourth Amendment." — *Id.* (slip op., at [10](https://www.courtlistener.com/opinion/4900401/teresa-graham-v-shannon-barnette/#:~:text=we%20again%20conclude%20that%20probable)). ^pin-op10a
 
 The court noted that "[a]t least nine of our sister circuits have held that the Fourth Amendment requires probable cause that a person is mentally ill and dangerous to herself or others for a seizure for an emergency mental-health evaluation to be reasonable." — *Id.* (slip op., at 10-11). ^pin-op10b
 

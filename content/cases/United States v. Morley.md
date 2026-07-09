@@ -52,7 +52,7 @@ Whether the warrantless retrieval of the briefcase from the passenger compartmen
 ## Rule
 The automobile exception permits a warrantless vehicle search on two elements. The court restated the circuit's formulation: "The automobile exception allows law enforcement to conduct a warrantless search of a vehicle if (1) the vehicle is readily mobile and (2) law enforcement has probable cause to search it." — *United States v. Morley*, 99 F.4th 1328 (11th Cir. 2024) (slip op., at 15). ^pin-op15
 
-The first element is satisfied by mere operability: "All that is necessary to satisfy the first element is that the automobile is operational." — *Id.* ^pin-op15a
+The first element is satisfied by mere operability: "All that is necessary to satisfy the first element is that the automobile is operational." — [*Id.*](https://www.courtlistener.com/opinion/9498175/united-states-v-derrick-alfondso-morley/#:~:text=All%20that%20is%20necessary%20to) ^pin-op15a
 
 ## Application
 Both elements were satisfied here. Morley drove the car to the scene and did not dispute that it was readily mobile, so the first element was met. As to probable cause, Morley's associate had negotiated an $84,000 drug deal, Morley arrived and parked close to the associate's and the cooperating individual's cars, and the associate then directed the cooperating individual to retrieve the drugs from the passenger seat of Morley's car — facts the court held were more than enough to establish probable cause to search. Because both elements were met, law enforcement was authorized to conduct the warrantless search of Morley's car.

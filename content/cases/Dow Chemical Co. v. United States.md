@@ -54,7 +54,7 @@ Whether the EPA's warrantless taking of aerial photographs of the open areas of 
 ## Rule
 No. The open areas of a large industrial complex are not the constitutional equivalent of the curtilage of a home; "such an industrial complex is more comparable to an open field and as such it is open to the view and observation of persons in aircraft lawfully in the public airspace immediately above or sufficiently near the area for the reach of cameras." — 476 U.S. at 239. ^pin-239
 
-Accordingly, "the taking of aerial photographs of an industrial plant complex from navigable airspace is not a search prohibited by the Fourth Amendment." — *Id.* ^pin-239a
+Accordingly, "the taking of aerial photographs of an industrial plant complex from navigable airspace is not a search prohibited by the Fourth Amendment." — [*Id.*](https://www.courtlistener.com/opinion/111667/dow-chemical-co-v-united-states-ex-rel-administrator/#:~:text=the%20taking%20of%20aerial%20photographs) ^pin-239a
 
 ## Application
 Dow's exposed manufacturing facilities, though enclosed against ground-level intrusion, were open to observation from the air. Because the photographs were taken from lawful navigable airspace using a conventional (if precise) mapping camera, and because the open areas of the complex resembled open fields rather than the intimate [[Curtilage|curtilage]] of a dwelling, Dow had no [[Reasonable Expectation of Privacy|reasonable expectation of privacy]] against the overflight. The Court noted only that surveillance revealing intimate, enclosed details — or use of highly sophisticated equipment not generally available — might raise different questions, but the mapping photography here did not.

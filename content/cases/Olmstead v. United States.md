@@ -54,7 +54,7 @@ Whether wiretapping a person's telephone conversations, accomplished without phy
 ## Rule
 *(Historical — this holding has been overruled; see Treatment.)* The Court tied Fourth Amendment protection to physical trespass and tangible things: "The Amendment itself shows that the search is to be of material things — the person, the house, his papers or his effects." — 277 U.S. at 464. ^pin-464
 
-Because the wiretaps involved no physical entry, the Court held there was no search or seizure: "There was no searching. There was no seizure. The evidence was secured by the use of the sense of hearing and that only." — *Id.* ^pin-464b
+Because the wiretaps involved no physical entry, the Court held there was no search or seizure: "There was no searching. There was no seizure. The evidence was secured by the use of the sense of hearing and that only." — [*Id.*](https://www.courtlistener.com/opinion/101320/olmstead-v-united-states/#:~:text=There%20was%20no%20searching.%20There) ^pin-464b
 
 ## Application
 Because the wiretaps involved no physical entry into the defendants' premises and seized no tangible "material things" — only overheard conversations — the Court held there had been no search or seizure, and the wiretap evidence was admissible against Olmstead.

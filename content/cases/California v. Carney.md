@@ -52,7 +52,7 @@ Whether the automobile exception to the warrant requirement applies to a motor h
 ## Rule
 The vehicle exception rests on two justifications: "the pervasive schemes of regulation, which necessarily lead to reduced expectations of privacy, and the exigencies attendant to ready mobility justify searches without prior recourse to the authority of a magistrate so long as the overriding standard of probable cause is met." — 471 U.S. at 392. ^pin-392
 
-Both come into play for a readily mobile vehicle: "First, the vehicle is obviously readily mobile by the turn of an ignition key, if not actually moving. Second, there is a reduced expectation of privacy stemming from its use as a licensed motor vehicle subject to a range of police regulation inapplicable to a fixed dwelling." — *Id.* at 393. ^pin-393
+Both come into play for a readily mobile vehicle: "First, the vehicle is obviously readily mobile by the turn of an ignition key, if not actually moving. Second, there is a reduced expectation of privacy stemming from its use as a licensed motor vehicle subject to a range of police regulation inapplicable to a fixed dwelling." — [*Id.* at 393](https://www.courtlistener.com/opinion/111423/california-v-carney/#:~:text=First%2C%20the%20vehicle%20is%20obviously). ^pin-393
 
 ## Application
 Carney's motor home was readily mobile — licensed, on the public roads, and parked in a lot rather than set up as a residence — and was subject to the pervasive regulation that reduces privacy expectations in vehicles. Both justifications applied, so the warrantless search on probable cause fell within the automobile exception despite the vehicle's homelike attributes.

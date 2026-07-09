@@ -52,7 +52,7 @@ Whether [[Qualified Immunity|qualified immunity]] protects officials whenever no
 ## Rule
 A right may be clearly established without a factually identical case. "[O]fficials can still be on notice that their conduct violates established law even in novel factual circumstances." — 536 U.S. at 741. ^pin-741
 
-The controlling inquiry is fair warning: "the salient question that the Court of Appeals ought to have asked is whether the state of the law in 1995 gave respondents fair warning that their alleged treatment of Hope was unconstitutional." — *Id.* ^pin-741a
+The controlling inquiry is fair warning: "the salient question that the Court of Appeals ought to have asked is whether the state of the law in 1995 gave respondents fair warning that their alleged treatment of Hope was unconstitutional." — [*Id.*](https://www.courtlistener.com/opinion/121169/hope-v-pelzer/#:~:text=the%20salient%20question%20that%20the) ^pin-741a
 
 ## Application
 The Court held the guards had fair warning that handcuffing Hope to the hitching post was unlawful: binding circuit precedent, an Alabama Department of Corrections regulation, and a Justice Department report had all condemned the practice, and the wantonness of the conduct was obvious. Although no prior decision involved the identical hitching-post facts, the state of the law gave the guards fair warning, so they were not entitled to [[Qualified Immunity|qualified immunity]].

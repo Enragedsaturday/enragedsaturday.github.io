@@ -54,7 +54,7 @@ Yes, on these combined circumstances. "We conclude that the restriction at issue
 
 The Court considered: probable cause to believe the home held contraband; good reason to fear the evidence would be destroyed; police efforts to reconcile law-enforcement needs with privacy by imposing only a restraint rather than searching; and a limited duration.
 
-"We have found no case in which this Court has held unlawful a temporary seizure that was supported by probable cause and was designed to prevent the loss of evidence while the police diligently obtained a warrant in a reasonable period of time." — *Id.* at 334. ^pin-334
+"We have found no case in which this Court has held unlawful a temporary seizure that was supported by probable cause and was designed to prevent the loss of evidence while the police diligently obtained a warrant in a reasonable period of time." — [*Id.* at 334](https://www.courtlistener.com/opinion/118405/illinois-v-mcarthur/#:~:text=We%20have%20found%20no%20case). ^pin-334
 
 ## Application
 The officers had probable cause from Tera McArthur's reliable, firsthand report; good reason to fear McArthur would destroy the marijuana if left alone inside; and they imposed only a limited restraint — keeping him from entering unaccompanied — rather than searching without a warrant. The restraint lasted only about two hours while an officer diligently obtained the warrant. Considered together, these circumstances made the temporary restriction reasonable.

@@ -54,7 +54,7 @@ Whether a set of factors, each individually consistent with innocent travel, can
 ## Rule
 Reasonable suspicion is judged by the whole picture, not a divide-and-conquer of innocent explanations: "In evaluating the validity of a stop such as this, we must consider 'the totality of the circumstances — the whole picture.'" — 490 U.S. at 8. ^pin-8
 
-Factors innocent in isolation can combine into reasonable suspicion: "Any one of these factors is not by itself proof of any illegal conduct and is quite consistent with innocent travel. But we think taken together they amount to reasonable suspicion." — 490 U.S. at 9. ^pin-9
+Factors innocent in isolation can combine into reasonable suspicion: "Any one of these factors is not by itself proof of any illegal conduct and is quite consistent with innocent travel. But we think taken together they amount to reasonable suspicion." — [490 U.S. at 9](https://www.courtlistener.com/opinion/112239/united-states-v-sokolow/#:~:text=Any%20one%20of%20these%20factors). ^pin-9
 
 ## Application
 Sokolow's large cash payment from a roll of $20 bills, his apparent travel under an alias, and his brief 48-hour trip to a source city after a 20-hour round-trip flight were each consistent with innocent travel standing alone. Taken together, however, they gave the agents the minimal objective justification — less than probable cause — needed to stop him. The Ninth Circuit's attempt to sort the evidence into "ongoing criminal activity" versus "probabilistic" categories was rejected.

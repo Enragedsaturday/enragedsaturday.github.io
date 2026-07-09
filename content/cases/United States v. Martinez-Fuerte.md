@@ -54,7 +54,7 @@ Whether routine stops for brief questioning at a permanent immigration checkpoin
 ## Rule
 Yes. "In summary, we hold that stops for brief questioning routinely conducted at permanent checkpoints are consistent with the Fourth Amendment and need not be authorized by warrant." — 428 U.S. at 566. ^pin-566
 
-No individualized suspicion is required for the initial stop: "Accordingly, we hold that the stops and questioning at issue may be made in the absence of any individualized suspicion at reasonably located checkpoints." — *Id.* at 562. ^pin-562
+No individualized suspicion is required for the initial stop: "Accordingly, we hold that the stops and questioning at issue may be made in the absence of any individualized suspicion at reasonably located checkpoints." — [*Id.* at 562](https://www.courtlistener.com/opinion/109541/united-states-v-martinez-fuerte/#:~:text=Accordingly%2C%20we%20hold%20that%20the). ^pin-562
 
 Nor must referral to secondary inspection meet the roving-patrol standard: "We further believe that it is constitutional to refer motorists selectively to the secondary inspection area at the San Clemente checkpoint on the basis of criteria that would not sustain a roving-patrol stop. Thus, even if it be assumed that such referrals are made largely on the basis of apparent Mexican ancestry, we perceive no constitutional violation." — *Id.* at 563. ^pin-563
 

@@ -52,7 +52,7 @@ Whether prison inmates have a Sixth Amendment right to appointed counsel while h
 ## Rule
 No. "[O]ur cases have long recognized that the right to counsel attaches only at or after the initiation of adversary judicial proceedings against the defendant." — 467 U.S. at 187. ^pin-187
 
-Adopting the *[[Kirby v. Illinois|Kirby]]* formulation, the Court explained that the recognized points of attachment "have involved points of time at or after the initiation of adversary judicial criminal proceedings — whether by way of formal charge, preliminary hearing, indictment, information, or arraignment." — 467 U.S. at 188 (quoting *Kirby v. Illinois*, 406 U.S. at 689). ^pin-188
+Adopting the *[[Kirby v. Illinois|Kirby]]* formulation, the Court explained that the recognized points of attachment "have involved points of time at or after the initiation of adversary judicial criminal proceedings — whether by way of formal charge, preliminary hearing, indictment, information, or arraignment." — [467 U.S. at 188](https://www.courtlistener.com/opinion/111193/united-states-v-gouveia/#:~:text=have%20involved%20points%20of%20time) (quoting *Kirby v. Illinois*, 406 U.S. at 689). ^pin-188
 
 The right is tied to the defendant's status as an "accused" facing the prosecutorial forces of the State, which arises only when the government has committed itself to prosecute.
 

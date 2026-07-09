@@ -52,7 +52,7 @@ Whether a confession obtained after thirty-six hours of continuous, incommunicad
 ## Rule
 Such prolonged, relentless interrogation is inherently coercive and yields an involuntary confession: "We think a situation such as that here shown by uncontradicted evidence is so inherently coercive that its very existence is irreconcilable with the possession of mental freedom by a lone suspect against whom its full coercive force is brought to bear." — 322 U.S. at 154. ^pin-154
 
-"The Constitution of the United States stands as a bar against the conviction of any individual in an American court by means of a coerced confession." — *Id.* at 155. ^pin-155
+"The Constitution of the United States stands as a bar against the conviction of any individual in an American court by means of a coerced confession." — [*Id.* at 155](https://www.courtlistener.com/opinion/103981/ashcraft-v-tennessee/#:~:text=The%20Constitution%20of%20the%20United). ^pin-155
 
 ## Application
 Ashcraft was interrogated for thirty-six hours without rest or sleep, held incommunicado, by relays of officers and lawyers — a situation the Court found inherently coercive and irreconcilable with the mental freedom of a lone suspect. On these facts the resulting confession could not be treated as voluntary, and its use to convict him violated due process.

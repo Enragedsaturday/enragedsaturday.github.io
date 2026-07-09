@@ -52,7 +52,7 @@ Whether a police officer violates the Fourteenth Amendment's substantive-due-pro
 ## Rule
 Such a claim is judged under substantive due process, and only a purpose to harm shocks the conscience. "We answer no, and hold that in such circumstances only a purpose to cause harm unrelated to the legitimate object of arrest will satisfy the element of arbitrary conduct shocking to the conscience, necessary for a due process violation." — 523 U.S. at 836. ^pin-836
 
-"Accordingly, we hold that high-speed chases with no intent to harm suspects physically or to worsen their legal plight do not give rise to liability under the Fourteenth Amendment, redressible by an action under § 1983." — *Id.* at 854. ^pin-854
+"Accordingly, we hold that high-speed chases with no intent to harm suspects physically or to worsen their legal plight do not give rise to liability under the Fourteenth Amendment, redressible by an action under § 1983." — [*Id.* at 854](https://www.courtlistener.com/opinion/118214/county-of-sacramento-v-lewis/#:~:text=Accordingly%2C%20we%20hold%20that%20high%2Dspeed). ^pin-854
 
 ## Application
 Because no Fourth Amendment "seizure" occurred — Lewis's death resulted from the pursuit itself, not from a means intentionally applied to stop him — the claim fell under Fourteenth Amendment substantive due process rather than the Fourth Amendment. In the high-speed-pursuit setting, where officers must make instant judgments without time to deliberate, the deliberate-indifference standard used for unhurried custodial decisions does not apply; only an intent to harm unrelated to legitimate law enforcement shocks the conscience. Deputy Smith's conduct, even if reckless, did not meet that standard, so there was no due-process violation.

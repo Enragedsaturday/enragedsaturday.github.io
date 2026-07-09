@@ -54,7 +54,7 @@ The ultimate determinations are reviewed de novo. "We hold that the ultimate que
 
 "We therefore hold that as a general matter determinations of reasonable suspicion and probable cause should be reviewed *de novo* on appeal." — 517 U.S. at 699. ^pin-699
 
-At the same time, "a reviewing court should take care both to review findings of historical fact only for clear error and to give due weight to inferences drawn from those facts by resident judges and local law enforcement officers." — *Id.* at 699–700. ^pin-699a
+At the same time, "a reviewing court should take care both to review findings of historical fact only for clear error and to give due weight to inferences drawn from those facts by resident judges and local law enforcement officers." — [*Id.* at 699–700](https://www.courtlistener.com/opinion/118030/ornelas-v-united-states/#:~:text=a%20reviewing%20court%20should%20take). ^pin-699a
 
 ## Application
 The Seventh Circuit had reviewed the reasonable-suspicion and probable-cause rulings only for [[Common Legal Terms#clear-error|clear error]]. Because the ultimate mixed questions of reasonable suspicion and probable cause must instead be reviewed [[Common Legal Terms#de-novo|de novo]] — while the historical facts (here, the officer's observations and the loose panel) are reviewed for [[Common Legal Terms#clear-error|clear error]] with due weight to his experience-based inferences — the Court [[Reading and Citing Cases#vacated|vacated]] the judgment and [[Reading and Citing Cases#on-remand|remanded]] for the Court of Appeals to review those determinations [[Common Legal Terms#de-novo|de novo]].

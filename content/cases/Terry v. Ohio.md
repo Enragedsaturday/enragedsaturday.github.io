@@ -56,7 +56,7 @@ Whether a police officer who lacks probable cause to arrest may, consistent with
 ## Rule
 A brief investigative stop must rest on specific, objective facts, not a hunch: "in justifying the particular intrusion the police officer must be able to point to specific and articulable facts which, taken together with rational inferences from those facts, reasonably warrant that intrusion." — 392 U.S. at 21. ^pin-21
 
-A protective frisk is permitted where the officer reasonably fears for safety: "the issue is whether a reasonably prudent man in the circumstances would be warranted in the belief that his safety or that of others was in danger." — *Id.* at 27. ^pin-27
+A protective frisk is permitted where the officer reasonably fears for safety: "the issue is whether a reasonably prudent man in the circumstances would be warranted in the belief that his safety or that of others was in danger." — [*Id.* at 27](https://www.courtlistener.com/opinion/107729/terry-v-ohio/#:~:text=the%20issue%20is%20whether%20a). ^pin-27
 
 The Court held that "where a police officer observes unusual conduct which leads him reasonably to conclude in light of his experience that criminal activity may be afoot and that the persons with whom he is dealing may be armed and presently dangerous, where in the course of investigating this behavior he identifies himself as a policeman and makes reasonable inquiries, and where nothing in the initial stages of the encounter serves to dispel his reasonable fear for his own or others' safety, he is entitled for the protection of himself and others in the area to conduct a carefully limited search of the outer clothing of such persons in an attempt to discover weapons which might be used to assault him." — *Id.* at 30. ^pin-30
 
