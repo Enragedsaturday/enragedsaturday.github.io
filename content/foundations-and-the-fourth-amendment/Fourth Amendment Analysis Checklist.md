@@ -38,7 +38,7 @@ Steps 1–4 are the **threshold and standing** questions; step 5 is the **merits
 - **Order matters.** Most suppression fights are won or lost at the threshold (steps 1–3): if there was no government action, no protected interest, or no search or seizure, you never reach reasonableness. Do not jump straight to the warrant exceptions.
 - **Two theories of "search" run in parallel.** A trespass to gather information is a search, and so is invading a [[Reasonable Expectation of Privacy|reasonable expectation of privacy]]; either one is enough. → [[Two Definitions of Search]]
 - **Standing is personal.** "The search was illegal" is not the same as "*this* defendant can suppress." Confirm whose protected interest was invaded. → [[Standing to Challenge a Search]]
-- **"Standing" is shorthand, not a separate gate.** *[[Rakas v. Illinois]]*, 439 U.S. 128, 138–40 (1978), folded standing into the merits: the question is simply whether the challenged search invaded the defendant's *own* reasonable expectation of privacy (captured at step 2), not a distinct jurisdictional inquiry.
+- **"Standing" is shorthand, not a separate gate.** *[[Rakas v. Illinois]]*, 439 U.S. 128, [138–40](https://www.courtlistener.com/opinion/109953/rakas-v-illinois/) (1978), folded standing into the merits: the question is simply whether the challenged search invaded the defendant's *own* reasonable expectation of privacy (captured at step 2), not a distinct jurisdictional inquiry.
 - **C.R.E.W. is one step, not the whole test.** It answers only reasonableness, and only after the threshold and standing are satisfied. → [[CREW]]
 
 ## Common pitfalls

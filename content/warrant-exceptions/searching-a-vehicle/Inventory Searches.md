@@ -15,7 +15,7 @@ related: ["[[Automobile Exception]]", "[[SIA Vehicles]]", "[[Community Caretakin
 *Is this a genuine caretaking inventory run under a standardized policy, or an investigative search wearing an inventory's clothes?*
 
 > [!rule] Black-letter rule
-> An inventory of a lawfully impounded vehicle, or of an arrestee's effects during the routine booking process, is reasonable **without a warrant or probable cause** when two things hold: it is conducted **according to standardized procedures** that cabin officer discretion, and it is **not a ruse** for a general rummaging to find evidence. *[[South Dakota v. Opperman|Opperman]]*, 428 U.S. 364, 376 (1976); *[[Florida v. Wells|Wells]]*, 495 U.S. 1, 4 (1990). It is a **caretaking**, not an investigative, function; its lawfulness turns on the governing policy, never on suspicion of crime.
+> An inventory of a lawfully impounded vehicle, or of an arrestee's effects during the routine booking process, is reasonable **without a warrant or probable cause** when two things hold: it is conducted **according to standardized procedures** that cabin officer discretion, and it is **not a ruse** for a general rummaging to find evidence. *[[South Dakota v. Opperman|Opperman]]*, 428 U.S. 364, [376](https://www.courtlistener.com/opinion/109537/south-dakota-v-opperman/) (1976); *[[Florida v. Wells|Wells]]*, 495 U.S. 1, [4](https://www.courtlistener.com/opinion/112412/florida-v-wells/) (1990). It is a **caretaking**, not an investigative, function; its lawfulness turns on the governing policy, never on suspicion of crime.
 > ^rule-inventory
 
 ## The Brief
@@ -24,7 +24,7 @@ related: ["[[Automobile Exception]]", "[[SIA Vehicles]]", "[[Community Caretakin
 
 **The test up front.** A warrantless inventory is reasonable when:
 1. **Custody is lawful.** The vehicle was impounded, or the person arrested, on a legitimate basis; the impoundment itself must be a reasonable caretaking decision, not a pretext to search.
-2. **A standardized policy governs.** An established routine or written criteria control what is inventoried and when containers are opened, so the officer is not left with "uncanalized discretion." *[[Florida v. Wells|Wells]]*, 495 U.S. at 4.
+2. **A standardized policy governs.** An established routine or written criteria control what is inventoried and when containers are opened, so the officer is not left with "uncanalized discretion." *[[Florida v. Wells|Wells]]*, 495 U.S. at [4](https://www.courtlistener.com/opinion/112412/florida-v-wells/).
 3. **No investigative ruse.** The inventory is carried out in good faith to produce an inventory, not "as a ruse for a general rummaging in order to discover incriminating evidence." *Id.*
 
 **Standardized criteria are the whole ballgame.** *[[South Dakota v. Opperman|Opperman]]* upheld the routine inventory of an impounded car because "there [was] no suggestion whatever that this standard procedure . . . was a pretext concealing an investigatory police motive." 428 U.S. at 376. Discretion is permissible so long as it is cabined: *[[Colorado v. Bertine|Bertine]]* allows officers to open closed containers during an inventory, but only where "that discretion is exercised according to standard criteria and on the basis of something other than suspicion of evidence of criminal activity." 479 U.S. 367, 375 (1987). *[[Florida v. Wells|Wells]]* supplies the outer limit: with **no** policy at all on opening containers, the search fails, because the Fourth Amendment will not tolerate uncanalized discretion. 495 U.S. at 4.

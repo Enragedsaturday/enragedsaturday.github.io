@@ -20,7 +20,7 @@ related:
 *Was this confession voluntary, or did official coercion overbear the suspect's will?*
 
 > [!rule] Black-letter rule
-> A confession is inadmissible under the **Due Process Clause** (Fourteenth Amendment against the States; Fifth against the federal government) if, on the **totality of the circumstances**, official **coercion** overbore the defendant's will. The predicate is **state action**: "coercive police activity is a necessary predicate to the finding that a confession is not 'voluntary.'" *[[Colorado v. Connelly|Connelly]]*, 479 U.S. 157, 167 (1986). The measure is coercion, not reliability. *[[Rogers v. Richmond|Rogers]]*, 365 U.S. 534, 540–541 (1961); origin *[[Brown v. Mississippi|Brown]]*, 297 U.S. 278 (1936).
+> A confession is inadmissible under the **Due Process Clause** (Fourteenth Amendment against the States; Fifth against the federal government) if, on the **totality of the circumstances**, official **coercion** overbore the defendant's will. The predicate is **state action**: "coercive police activity is a necessary predicate to the finding that a confession is not 'voluntary.'" *[[Colorado v. Connelly|Connelly]]*, 479 U.S. 157, [167](https://www.courtlistener.com/opinion/111779/colorado-v-connelly/) (1986). The measure is coercion, not reliability. *[[Rogers v. Richmond|Rogers]]*, 365 U.S. 534, [540–541](https://www.courtlistener.com/opinion/106192/rogers-v-richmond/) (1961); origin *[[Brown v. Mississippi|Brown]]*, 297 U.S. 278 (1936).
 > ^rule-voluntariness
 
 ## The Brief

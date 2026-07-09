@@ -1589,3 +1589,15 @@ block-density HIGHs as a side effect; zero-new-HIGH holds), LINT-9 0, build 724/
 Artifacts: S8-PIN-REMEDIATION.jsonl (297 rows), S8-PIN-REVIEW-QUEUE.md (dispositioned EMPTY).
 R6 acceptance state: mid-line pins 0 · broken pin anchors 0 · pre-existing refs intact. NEXT:
 R1/R3 mention pass (workorder staged).
+
+**R4 PINCITES COMPLETE + R6-baseline adjudication (2026-07-09).** Doctrine write: 564 edits/72
+files (r1 181 [27 frag + 154 plain-external, tier-3 never fragmented] · r2 16 frag + 16 name-half
+`#^pin-N` upgrades [incl the Jones "legitimately on premises" short-match — distinctive standing
+phrase, uniquely resolving; ALL 16 → S9 register for sample review] · r3 351 plain-external).
+Strip-verified 72/72, idempotent, build green. Lane self-caught + fixed a ledger-wipe bug
+(no-op re-run blanked scope rows; _emit now preserves). Ledger 964 rows all {lane,model,scope}.
+**remediate_pins --verify check (3) now reads 287 refs vs 271 baseline — ADJUDICATED NOT-A-DEFECT:**
+the baseline was the R6-epoch "remediation adds no refs" invariant; the 16 r2 upgrades legitimately
+add refs. Load-bearing check (2) = 287/287 resolve, 0 unresolved. Steady-state guard moves to the
+R13 LINT-5 broken-anchor=HIGH rewrite. Corpus pincite state: 182 case-page + 548 doctrine external
+CL links (225 fragment-deep total), 16 deep upgrades, zero live CL.

@@ -564,10 +564,15 @@ def _emit(ledger, journ, write, scope):
     """Merge this scope's rows into the single canonical ledger, preserving the
     OTHER scope's rows (cases + doctrine coexist) and dropping legacy untagged
     rows (the pre-backfill lane:null set) so every surviving row carries
-    {lane, model, scope}. Idempotent per scope."""
+    {lane, model, scope}. A NO-OP re-run (0 rows for this scope — everything is
+    already wired, e.g. the doctrine pass which has no preexisting-detection)
+    PRESERVES the prior run's rows for the scope rather than blanking the R12
+    record. Idempotent per scope."""
     os.makedirs(os.path.dirname(LEDGER_OUT), exist_ok=True)
     existing = _read_jsonl(LEDGER_OUT)
     kept = [r for r in existing if r.get("scope") and r.get("scope") != scope]
+    if not ledger:
+        ledger = [r for r in existing if r.get("scope") == scope]
     with open(LEDGER_OUT, "w", encoding="utf-8") as fh:
         for r in kept + ledger:
             fh.write(json.dumps(r, sort_keys=True) + "\n")

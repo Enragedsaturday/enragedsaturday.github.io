@@ -23,7 +23,7 @@ related: ["[[Legal Research Tools]]", "[[Verifying Good Law]]", "[[State Citatio
 
 Take a neutral running example:
 
-> *[[Terry v. Ohio]]*, 392 U.S. 1, 30 (1968).
+> *[[Terry v. Ohio]]*, 392 U.S. 1, [30](https://www.courtlistener.com/opinion/107729/terry-v-ohio/) (1968).
 
 Read left to right, every standard cite has the same parts:
 
