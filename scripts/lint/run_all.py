@@ -53,6 +53,7 @@ import lint7_glossary as l7        # noqa: E402
 import lint8_guardrails as l8      # noqa: E402
 import lint9_carat_leak as l9      # noqa: E402
 import lint10_emdash as l10        # noqa: E402
+import lint11_pipeline_vocab as l11  # noqa: E402
 import lint12_drift as l12         # noqa: E402
 import lint13_schema as l13        # noqa: E402
 import lint14_pagerecord as l14    # noqa: E402
@@ -89,6 +90,7 @@ LINTS = [
     ("LINT-8", "guardrails (D6)", l8.run),
     ("LINT-9", "carat-leak (mid-line ^block anchors) (R13)", l9.run),
     ("LINT-10", "em-dash budget (R8/A7/A8)", l10.run),
+    ("LINT-11", "pipeline-vocab (S1 A2 five-class, TEACH-02b)", l11.run),
     ("LINT-12", "S2 lake/frontmatter drift (R12/A13)", l12.run),
     ("LINT-13", "S2 authority-record schema (R1/A5/A16)", l13.run),
     ("LINT-14", "S2 case page-to-record gate (R12/A16)", l14.run),
@@ -114,6 +116,7 @@ SELF_TESTS = [
     ("LINT-8", "LINT-8 self-test gate (TEACH-11 target+wording, fail-closed)", l8.self_test, l8.FIXTURE),
     ("LINT-7", "LINT-7 self-test gate (S8 R13b, fail-closed)", l7.self_test, l7.FIXTURE),
     ("LINT-10", "LINT-10 self-test gate (S1 A3, fail-closed)", l10.self_test, l10.FIXTURE),
+    ("LINT-11", "LINT-11 self-test gate (S1 A2 five-class, fail-closed)", l11.self_test, l11.FIXTURE),
     ("LINT-12", "LINT-12 self-test gate (S2 R12/A13, fail-closed)", l12.self_test, os.path.join(c.HERE, "fixtures")),
     ("LINT-13", "LINT-13 self-test gate (S2 schema, fail-closed)", l13.self_test, os.path.join(c.HERE, "fixtures")),
     ("LINT-14", "LINT-14 self-test gate (S2 R12/A16, fail-closed)", l14.self_test, os.path.join(c.HERE, "fixtures")),
