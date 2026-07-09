@@ -39,7 +39,7 @@ holding: "An investigative stop and protective frisk require reasonable, articul
 lake:
   record_id: Terry v. Ohio
   status: verified
-  projected_at: 2026-07-06
+  projected_at: 2026-07-09
 ---
 
 # Terry v. Ohio

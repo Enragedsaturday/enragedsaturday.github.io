@@ -37,7 +37,7 @@ holding: "Pursuit of a fleeing MISDEMEANOR suspect does not categorically justif
 lake:
   record_id: Lange v. California
   status: verified
-  projected_at: 2026-07-06
+  projected_at: 2026-07-09
 ---
 
 # Lange v. California

@@ -37,7 +37,7 @@ holding: "A Fourth Amendment seizure occurs only when the government terminates 
 lake:
   record_id: Brower v. County of Inyo
   status: verified
-  projected_at: 2026-07-06
+  projected_at: 2026-07-09
 ---
 
 # Brower v. County of Inyo

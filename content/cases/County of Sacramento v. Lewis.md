@@ -35,7 +35,7 @@ holding: "A death caused by a high-speed police pursuit, absent a Fourth Amendme
 lake:
   record_id: County of Sacramento v. Lewis
   status: verified
-  projected_at: 2026-07-06
+  projected_at: 2026-07-09
 ---
 
 # County of Sacramento v. Lewis

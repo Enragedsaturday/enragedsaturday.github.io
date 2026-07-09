@@ -1,14 +1,14 @@
 ---
 title: "Davis v. United States (2011)"
 type: case
-citation: "565 U.S. 1100 (2011)"
-parallel_cite: "181 L. Ed. 2d 563; 132 S. Ct. 864; 80 U.S.L.W. 3555"
-neutral_cite: 2011 U.S. LEXIS 8943
+citation: "564 U.S. 229 (2011)"
+parallel_cite: "131 S. Ct. 2419; 180 L. Ed. 2d 285"
+neutral_cite: 2011 U.S. LEXIS 4560
 court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 2011
-date_decided: 2011-12-12
+date_decided: 2011-06-16
 docket: 09-11328
 authority_weight: "Binding — SCOTUS"
 treatment:
@@ -21,10 +21,10 @@ treatment:
   scope_note: Extends the Leon good-faith line to objectively reasonable reliance on binding appellate precedent later overruled. Good law.
   point_overrides: []
 courtlistener:
-  opinion_url: "https://www.courtlistener.com/opinion/7350241/davis-v-united-states/"
-  cluster_id: 7350241
-  opinion_id: 7268220
-  identity_checked: false
+  opinion_url: "https://www.courtlistener.com/opinion/218926/davis-v-united-states/"
+  cluster_id: 218926
+  opinion_id: 9441776
+  identity_checked: true
 homes:
   - page: "[[The Good-Faith Exception]]"
     role: "Key — Progeny (good faith)"
@@ -35,7 +35,7 @@ holding: "The exclusionary rule does not apply to evidence obtained during a sea
 lake:
   record_id: "Davis v. United States (2011)"
   status: under_review
-  projected_at: 2026-07-06
+  projected_at: 2026-07-09
 ---
 
 # Davis v. United States (2011)

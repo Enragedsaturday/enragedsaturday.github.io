@@ -35,7 +35,7 @@ holding: "A NASA Office of Inspector General investigator examining a NASA emplo
 lake:
   record_id: NASA v. FLRA
   status: verified
-  projected_at: 2026-07-06
+  projected_at: 2026-07-09
 ---
 
 # NASA v. FLRA

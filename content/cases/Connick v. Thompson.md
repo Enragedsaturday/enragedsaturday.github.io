@@ -37,7 +37,7 @@ holding: "A single Brady violation, without a pattern of similar violations, gen
 lake:
   record_id: Connick v. Thompson
   status: verified
-  projected_at: 2026-07-06
+  projected_at: 2026-07-09
 ---
 
 # Connick v. Thompson

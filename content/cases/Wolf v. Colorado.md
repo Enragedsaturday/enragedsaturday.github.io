@@ -35,7 +35,7 @@ holding: "The Fourth Amendment's core security against arbitrary police intrusio
 lake:
   record_id: Wolf v. Colorado
   status: verified
-  projected_at: 2026-07-06
+  projected_at: 2026-07-09
 ---
 
 # Wolf v. Colorado

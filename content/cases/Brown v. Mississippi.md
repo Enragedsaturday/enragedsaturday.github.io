@@ -35,7 +35,7 @@ holding: "A confession extracted by physical torture is involuntary and its use 
 lake:
   record_id: Brown v. Mississippi
   status: under_review
-  projected_at: 2026-07-06
+  projected_at: 2026-07-09
 ---
 
 # Brown v. Mississippi

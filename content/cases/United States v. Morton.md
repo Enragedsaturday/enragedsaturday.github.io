@@ -35,7 +35,7 @@ holding: "En banc 5th Circuit (resolving on good-faith grounds) discusses the di
 lake:
   record_id: United States v. Morton
   status: under_review
-  projected_at: 2026-07-06
+  projected_at: 2026-07-09
 ---
 
 # United States v. Morton

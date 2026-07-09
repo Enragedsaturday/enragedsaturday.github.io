@@ -37,7 +37,7 @@ holding: "Factors each individually consistent with innocence can, taken togethe
 lake:
   record_id: United States v. Sokolow
   status: verified
-  projected_at: 2026-07-06
+  projected_at: 2026-07-09
 ---
 
 # United States v. Sokolow

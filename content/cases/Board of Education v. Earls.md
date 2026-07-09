@@ -35,7 +35,7 @@ holding: "Suspicionless drug testing of all students participating in competitiv
 lake:
   record_id: Board of Education v. Earls
   status: verified
-  projected_at: 2026-07-06
+  projected_at: 2026-07-09
 ---
 
 # Board of Education v. Earls

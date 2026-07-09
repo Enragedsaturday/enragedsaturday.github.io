@@ -35,7 +35,7 @@ holding: "A reliable informant's detailed tip, the innocent details of which pol
 lake:
   record_id: Draper v. United States
   status: verified
-  projected_at: 2026-07-06
+  projected_at: 2026-07-09
 ---
 
 # Draper v. United States

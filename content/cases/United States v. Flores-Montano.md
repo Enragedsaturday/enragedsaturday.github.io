@@ -35,7 +35,7 @@ holding: "The government's authority to conduct suspicionless searches of vehicl
 lake:
   record_id: United States v. Flores-Montano
   status: verified
-  projected_at: 2026-07-06
+  projected_at: 2026-07-09
 ---
 
 # United States v. Flores-Montano

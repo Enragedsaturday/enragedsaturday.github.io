@@ -35,7 +35,7 @@ holding: "Reaffirms cumulative *Brady* materiality: suppressed evidence assessed
 lake:
   record_id: Wearry v. Cain
   status: verified
-  projected_at: 2026-07-06
+  projected_at: 2026-07-09
 ---
 
 # Wearry v. Cain

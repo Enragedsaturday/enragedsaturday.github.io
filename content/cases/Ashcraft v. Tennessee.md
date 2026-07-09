@@ -35,7 +35,7 @@ holding: "Thirty-six hours of continuous, relay interrogation without sleep is \
 lake:
   record_id: Ashcraft v. Tennessee
   status: verified
-  projected_at: 2026-07-06
+  projected_at: 2026-07-09
 ---
 
 # Ashcraft v. Tennessee

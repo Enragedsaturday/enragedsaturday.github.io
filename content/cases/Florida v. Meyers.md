@@ -35,7 +35,7 @@ holding: "A second warrantless search of an already-impounded automobile, conduc
 lake:
   record_id: Florida v. Meyers
   status: verified
-  projected_at: 2026-07-06
+  projected_at: 2026-07-09
 ---
 
 # Florida v. Meyers

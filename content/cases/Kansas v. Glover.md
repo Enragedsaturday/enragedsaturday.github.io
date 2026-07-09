@@ -37,7 +37,7 @@ holding: "An officer who learns that a vehicle's registered owner has a revoked 
 lake:
   record_id: Kansas v. Glover
   status: verified
-  projected_at: 2026-07-06
+  projected_at: 2026-07-09
 ---
 
 # Kansas v. Glover

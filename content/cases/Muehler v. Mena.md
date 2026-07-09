@@ -37,7 +37,7 @@ holding: "Officers executing a search warrant for weapons at a gang house may de
 lake:
   record_id: Muehler v. Mena
   status: verified
-  projected_at: 2026-07-06
+  projected_at: 2026-07-09
 ---
 
 # Muehler v. Mena

@@ -37,7 +37,7 @@ holding: "A search-warrant affidavit must be read in a commonsense and realistic
 lake:
   record_id: United States v. Ventresca
   status: verified
-  projected_at: 2026-07-06
+  projected_at: 2026-07-09
 ---
 
 # United States v. Ventresca

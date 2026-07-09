@@ -37,7 +37,7 @@ holding: "An arrest of the wrong person is valid where police have probable caus
 lake:
   record_id: Hill v. California
   status: verified
-  projected_at: 2026-07-06
+  projected_at: 2026-07-09
 ---
 
 # Hill v. California

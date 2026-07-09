@@ -39,7 +39,7 @@ holding: "A warrant to search premises does not authorize searching persons who 
 lake:
   record_id: Ybarra v. Illinois
   status: verified
-  projected_at: 2026-07-06
+  projected_at: 2026-07-09
 ---
 
 # Ybarra v. Illinois

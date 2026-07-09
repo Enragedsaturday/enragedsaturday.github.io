@@ -35,7 +35,7 @@ holding: "Illegally seized evidence, though inadmissible in the prosecution's ca
 lake:
   record_id: Walder v. United States
   status: verified
-  projected_at: 2026-07-06
+  projected_at: 2026-07-09
 ---
 
 # Walder v. United States

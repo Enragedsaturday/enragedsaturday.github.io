@@ -37,7 +37,7 @@ holding: "A burning building is an exigency justifying warrantless entry; firefi
 lake:
   record_id: Michigan v. Tyler
   status: verified
-  projected_at: 2026-07-06
+  projected_at: 2026-07-09
 ---
 
 # Michigan v. Tyler

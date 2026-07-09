@@ -35,7 +35,7 @@ holding: "OSHA's authorization of warrantless workplace inspections is unconstit
 lake:
   record_id: "Marshall v. Barlow's Inc"
   status: verified
-  projected_at: 2026-07-06
+  projected_at: 2026-07-09
 ---
 
 # Marshall v. Barlow's, Inc.

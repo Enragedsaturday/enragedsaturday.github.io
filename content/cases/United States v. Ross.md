@@ -37,7 +37,7 @@ holding: "When PC justifies the search of a lawfully stopped vehicle, it justifi
 lake:
   record_id: United States v. Ross
   status: verified
-  projected_at: 2026-07-06
+  projected_at: 2026-07-09
 ---
 
 # United States v. Ross

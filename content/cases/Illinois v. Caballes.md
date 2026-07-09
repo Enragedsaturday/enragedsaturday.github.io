@@ -37,7 +37,7 @@ holding: "A dog sniff during a lawful traffic stop that does not prolong the sto
 lake:
   record_id: Illinois v. Caballes
   status: verified
-  projected_at: 2026-07-06
+  projected_at: 2026-07-09
 ---
 
 # Illinois v. Caballes

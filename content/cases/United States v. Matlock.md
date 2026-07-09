@@ -35,7 +35,7 @@ holding: "COMMON AUTHORITY: consent of one who possesses common authority over p
 lake:
   record_id: United States v. Matlock
   status: verified
-  projected_at: 2026-07-06
+  projected_at: 2026-07-09
 ---
 
 # United States v. Matlock

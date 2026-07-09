@@ -35,7 +35,7 @@ holding: "A written confession obtained in an atmosphere of substantial coercion
 lake:
   record_id: Haynes v. Washington
   status: verified
-  projected_at: 2026-07-06
+  projected_at: 2026-07-09
 ---
 
 # Haynes v. Washington

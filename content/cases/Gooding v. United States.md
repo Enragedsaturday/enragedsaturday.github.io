@@ -35,7 +35,7 @@ holding: "Under 21 U.S.C. § 879(a), a narcotics search warrant may be executed 
 lake:
   record_id: Gooding v. United States
   status: verified
-  projected_at: 2026-07-06
+  projected_at: 2026-07-09
 ---
 
 # Gooding v. United States

@@ -35,7 +35,7 @@ holding: "A community-caretaking detention of a person is valid under a three-pa
 lake:
   record_id: United States v. Garner
   status: verified
-  projected_at: 2026-07-06
+  projected_at: 2026-07-09
 ---
 
 # United States v. Garner

@@ -35,7 +35,7 @@ holding: "When a warrant authorizes the seizure of books and papers because of t
 lake:
   record_id: Stanford v. Texas
   status: verified
-  projected_at: 2026-07-06
+  projected_at: 2026-07-09
 ---
 
 # Stanford v. Texas

@@ -35,7 +35,7 @@ holding: "Foundational scope of search incident to arrest: the arrestee's person
 lake:
   record_id: Chimel v. California
   status: verified
-  projected_at: 2026-07-06
+  projected_at: 2026-07-09
 ---
 
 # Chimel v. California

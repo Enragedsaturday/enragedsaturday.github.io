@@ -23,12 +23,12 @@ treatment:
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/6457347/thompson-v-clark/"
   cluster_id: 6457347
-  opinion_id: null
+  opinion_id: 6329458
   identity_checked: true
 lake:
   record_id: Thompson v. Clark
   status: under_review
-  projected_at: 2026-07-07
+  projected_at: 2026-07-09
 homes:
   - page: "[[Malicious Prosecution under the Fourth Amendment]]"
     role: Key

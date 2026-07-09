@@ -35,7 +35,7 @@ holding: "A school official's search of a student requires only reasonableness u
 lake:
   record_id: New Jersey v. T.L.O.
   status: verified
-  projected_at: 2026-07-06
+  projected_at: 2026-07-09
 ---
 
 # New Jersey v. T.L.O.

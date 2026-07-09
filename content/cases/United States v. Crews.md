@@ -37,7 +37,7 @@ holding: "A victim's in-court identification of the accused is not a suppressibl
 lake:
   record_id: United States v. Crews
   status: verified
-  projected_at: 2026-07-06
+  projected_at: 2026-07-09
 ---
 
 # United States v. Crews

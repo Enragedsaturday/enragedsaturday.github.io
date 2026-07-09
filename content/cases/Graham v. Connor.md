@@ -35,7 +35,7 @@ holding: "Excessive-force § 1983 claims arising from an arrest, stop, or other 
 lake:
   record_id: Graham v. Connor
   status: verified
-  projected_at: 2026-07-06
+  projected_at: 2026-07-09
 ---
 
 # Graham v. Connor

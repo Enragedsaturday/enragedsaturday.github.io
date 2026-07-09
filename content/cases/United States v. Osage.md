@@ -35,7 +35,7 @@ holding: "General consent to a search does not authorize an officer to destroy a
 lake:
   record_id: United States v. Osage
   status: verified
-  projected_at: 2026-07-06
+  projected_at: 2026-07-09
 ---
 
 # United States v. Osage

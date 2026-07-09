@@ -37,7 +37,7 @@ holding: "Compelled blood/BAC evidence is physical, not testimonial, so it does 
 lake:
   record_id: Schmerber v. California
   status: verified
-  projected_at: 2026-07-06
+  projected_at: 2026-07-09
 ---
 
 # Schmerber v. California

@@ -5377,6 +5377,142 @@ def rekey_cluster_panel(paths, manifest, journal, client, precedence, record_ref
 
 
 # ---------------------------------------------------------------------------
+# S9 caption-repair (orchestrator sanction, S9 caption-repair + regen lane,
+# 2026-07-09) — the Fisher class, the complement of the panel-cluster-rekey
+# contract. `--rekey-cluster-panel` (R8 addendum #4) deliberately PRESERVES the
+# canonical `case_name` when re-pointing a record to its merits cluster: correct
+# for the Riley class, where the caption was already right and only the cluster
+# was the SG-order/cert stub. But when a record was mis-keyed by a docket-number
+# COINCIDENCE to an entirely different case (Fisher: keyed to cluster 5141053 =
+# In re Mirsky, a D.C. bar-discipline matter) the caption ITSELF is wrong, and the
+# preserve-contract leaves it stale after the cluster is corrected. This surface
+# repairs exactly that residue: it rewrites identity.case_name / case_name_short /
+# case_name_full (and absolute_url, which is caption-derived) FROM the record's
+# CACHED cluster object (zero live CL; a cache miss is queued for the CL lane). It
+# NEVER touches identity keys (cluster_id/lead_opinion_id) or the citations block
+# — a pure caption correction on an already-correctly-keyed record.
+# Fail-closed guards: the record must exist and be in an allowed status; a cached
+# cluster with no case_name is refused (never blank a caption); and a cached
+# caption that NORMALIZED-matches the current case_name is refused as
+# nothing-to-repair (the idempotent no-op guard). journal before/after per the
+# rekey-surface convention; max_calls=0. The case-page frontmatter is owned by the
+# projector: re-project affected pages with `project.py --write` after.
+# Registered defect: F-S9-IDS-001 loop 2 (illinois-v-fisher--5141053, the
+# 'In re Mirsky' caption residual left by the loop-1 panel cluster re-key).
+# ---------------------------------------------------------------------------
+REPAIR_CAPTION_STEP = "s9.caption-repair"
+REPAIR_CAPTION_ALLOW_STATUSES = ("verified_identity", "verified", "under_review")
+
+
+def _journal_caption_repair(journal, **row):
+    row.setdefault("lane", WEB_CITES_LANE)
+    row.setdefault("model", WEB_CITES_MODEL)
+    journal.append(step=REPAIR_CAPTION_STEP, **row)
+
+
+def normalize_caption_for_repair(value):
+    """Whitespace/case-folded caption key for the 'nothing to repair' guard.
+
+    Two captions that differ only in surrounding/internal whitespace or letter
+    case are 'the same caption' for the purpose of deciding whether this surface
+    has anything to repair; a genuine caption defect (a different case entirely,
+    e.g. 'In re Mirsky' vs 'Illinois v. Fisher') never collides under this key.
+    Deliberately conservative — it folds spacing+case ONLY, never party tokens —
+    so the surface repairs any substantive caption difference and refuses only a
+    true no-op (making the write idempotent on re-run).
+    """
+    return re.sub(r"\s+", " ", str(value or "").strip()).casefold()
+
+
+def repair_caption_from_cache(paths, manifest, journal, client, record_ids,
+                              allow_statuses=REPAIR_CAPTION_ALLOW_STATUSES):
+    allow_statuses = tuple(allow_statuses)
+    # Phase 1 — validate the whole batch before any write (fail closed): an
+    # out-of-scope, missing, or cluster-less record aborts BEFORE any earlier row
+    # is repaired (mirrors repair_identity_from_cache's batch pre-validation).
+    targets = []
+    seen = set()
+    for raw_id in unique_preserve_order(record_ids):
+        record_id = manifest.resolve_record_id(raw_id) or raw_id
+        if record_id in seen:
+            continue
+        seen.add(record_id)
+        row = manifest.by_record_id.get(record_id)
+        if not row:
+            raise SystemExit("--repair-caption-from-cache record not found in manifest: %s" % raw_id)
+        if row.get("status") not in allow_statuses:
+            raise SystemExit("--repair-caption-from-cache refuses row %s (status=%s); permitted: %s"
+                             % (record_id, row.get("status"), ", ".join(allow_statuses)))
+        record = load_case_record(paths, record_id)
+        if record is None:
+            raise SystemExit("--repair-caption-from-cache lake record missing on disk: %s" % record_id)
+        cluster_id = (record.get("identity") or {}).get("cluster_id")
+        if not cluster_id:
+            raise SystemExit("--repair-caption-from-cache row %s has no identity.cluster_id" % record_id)
+        try:
+            cluster_id = int(cluster_id)
+        except (TypeError, ValueError):
+            raise SystemExit("--repair-caption-from-cache row %s has non-integer identity.cluster_id: %r"
+                             % (record_id, cluster_id)) from None
+        targets.append((record_id, row, record, cluster_id))
+
+    # Phase 2 — per-row cache fetch + write, journaled + resumable-by-outcome.
+    repaired = []
+    queued = []
+    noop = []
+    refused = []
+    for record_id, row, record, cluster_id in targets:
+        identity = record.get("identity") or {}
+        try:
+            cluster = client.get_cluster(cluster_id, record_id=record_id, step=REPAIR_CAPTION_STEP + ".cluster")
+        except (IngestInterrupted, FetchFailed) as exc:
+            # not cached: budget-exhausted (--max-calls 0) or fetch failure — do
+            # NOT touch the CL lane; journal + queue for the lane grant.
+            _journal_caption_repair(journal, record_id=record_id, status="queued-for-lane",
+                                    reason=getattr(exc, "reason", None) or "not_cached", cluster_id=cluster_id)
+            queued.append(record_id)
+            continue
+        cluster_case_name = cluster.get("case_name")
+        if not str(cluster_case_name or "").strip():
+            # Fail closed: the cached cluster carries no case_name — a caption can
+            # not be derived. Refuse rather than blank the record's caption.
+            _journal_caption_repair(journal, record_id=record_id, status="refused-no-cluster-caption",
+                                    cluster_id=cluster_id,
+                                    reason="cached cluster carries no case_name")
+            refused.append(record_id)
+            continue
+        current_case_name = identity.get("case_name")
+        if normalize_caption_for_repair(current_case_name) == normalize_caption_for_repair(cluster_case_name):
+            # idempotent clean no-op: the current caption already normalized-matches
+            # the cached cluster caption — nothing to repair (the sanctioned guard).
+            _journal_caption_repair(journal, record_id=record_id, status="nothing-to-repair",
+                                    before=current_case_name, after=current_case_name,
+                                    cluster_id=cluster_id)
+            noop.append(record_id)
+            continue
+        before = {f: identity.get(f) for f in ("case_name", "case_name_short", "case_name_full", "absolute_url")}
+        identity["case_name"] = cluster_case_name
+        identity["case_name_short"] = cluster.get("case_name_short")
+        identity["case_name_full"] = cluster.get("case_name_full")
+        # absolute_url is caption-derived (CL builds the /opinion/<id>/<slug>/ slug
+        # from the case_name); refresh it from the cached cluster so the corrected
+        # caption's slug rides along. A cluster without one leaves it untouched.
+        cluster_absolute = cluster.get("absolute_url")
+        if cluster_absolute:
+            identity["absolute_url"] = cluster_absolute
+        record["identity"] = identity
+        record.setdefault("provenance", {})["date_modified"] = iso_now()
+        write_case_record(paths, record)
+        row["last_record_write"] = iso_now()
+        after = {f: identity.get(f) for f in ("case_name", "case_name_short", "case_name_full", "absolute_url")}
+        _journal_caption_repair(journal, record_id=record_id, status="repaired",
+                                before=before, after=after, cluster_id=cluster_id,
+                                source="cluster-cache-served")
+        repaired.append(record_id)
+    return {"repaired": repaired, "queued": queued, "noop": noop, "refused": refused}
+
+
+# ---------------------------------------------------------------------------
 # S8 § A14 — sanctioned offline fragment write-back (`--apply-fragments`).
 # scripts/s8/fragments.py generates + validates external text-fragments (the
 # WICG `#:~:text=` string) from each pin's G3-`matched` quote against S2's CACHED
@@ -6835,6 +6971,7 @@ def run_ingest(args):
             or args.rekey_lead_opinion_from_cache
             or args.rekey_cluster_panel
             or args.apply_fragments
+            or args.repair_caption_from_cache
         ):
             raise SystemExit("--add-candidates cannot be combined with other action/filter options")
         journal, journal_fallback = writable_repair_journal(paths, journal)
@@ -6869,6 +7006,7 @@ def run_ingest(args):
             or args.rekey_cluster_panel or args.repair_failclosed_treatment or args.flip_verified
             or args.elevate_off_cl or args.adjudication or args.readjudicate or args.readjudicate_file
             or args.rerun_lane or args.records or args.smoke or args.add_candidates
+            or args.repair_caption_from_cache
         ):
             raise SystemExit("--apply-fragments cannot be combined with other action/filter options")
         # Pure file op over s8-fragments.jsonl + the lake: no CL client is
@@ -6879,6 +7017,36 @@ def run_ingest(args):
               % (len(result["applied"]), len(result["updated"]), len(result["noop"]),
                  result["skipped_unvalidatable"], result["records_written"]))
         print("content wiring is scripts/s8/link_pincites.py (pinpoints[].fragment is lake-only data)")
+        return
+    if args.repair_caption_from_cache:
+        if (
+            args.apply_web_keys or args.apply_alias_folds or args.enrich_citations
+            or args.apply_web_cites or args.repair_migration_refs or args.repair_identity_from_cache
+            or args.repair_coa_state_from_cache or args.rekey_lead_opinion_from_cache
+            or args.rekey_cluster_panel or args.apply_fragments or args.repair_failclosed_treatment
+            or args.flip_verified or args.elevate_off_cl or args.adjudication or args.readjudicate
+            or args.readjudicate_file or args.rerun_lane or args.records or args.smoke or args.add_candidates
+        ):
+            raise SystemExit("--repair-caption-from-cache cannot be combined with other action/filter options")
+        token = read_token(args.token_path)
+        # cache-served by construction: max_calls=0 blocks any live CL call (a
+        # cache miss raises IngestInterrupted -> queued-for-lane), so this never
+        # touches the serial CL lane owned elsewhere.
+        budget = CallBudget(max_calls=0)
+        client = CourtListenerClient(
+            paths=paths, token=token, token_fingerprint=sha256_text(token)[:12],
+            journal=journal, budget=budget,
+            rate=TokenBucket(rate_per_minute=args.rate_per_minute, capacity=1),
+            hourly=HourlyGuard(max_per_hour=args.hourly_limit), run_id=run_id,
+        )
+        result = repair_caption_from_cache(paths, manifest, journal, client, args.repair_caption_from_cache)
+        manifest.regenerate_counts()
+        manifest.save()
+        print("journal: %s" % journal_path)
+        print("caption repaired (cache-served): %s | queued-for-lane: %s | nothing-to-repair: %s | refused: %s"
+              % (len(result["repaired"]), len(result["queued"]), len(result["noop"]), len(result["refused"])))
+        if result["repaired"]:
+            print("re-project affected pages (projector owns the courtlistener block): python3 scripts/s2/project.py --write")
         return
     if args.apply_web_cites:
         if (
@@ -11299,6 +11467,116 @@ def self_test_repair_identity_from_cache():
         shutil.rmtree(tmp)
 
 
+def self_test_repair_caption_from_cache():
+    tmp = tempfile.mkdtemp(prefix="s2-caption-repair-selftest-")
+    try:
+        paths = LakePaths(tmp, os.path.join(tmp, "pool"))
+        paths.ensure()
+
+        def stub_row(rid, status="verified_identity", cluster_id=None):
+            return {"record_id": rid, "record_id_status": "resolved", "source": "S6-SEED",
+                    "stub": True, "caption": rid, "status": status,
+                    "lane_status": frontier_stub_lane_status(), "counts": {}, "cluster_id": cluster_id}
+        rids = ["fisher-like--111", "clean--222", "uncached--333", "nocaption--444"]
+        manifest_data = {"schema_version": "s2.manifest.v1", "generated_at": iso_now(), "records": [
+            stub_row("fisher-like--111", cluster_id=111),
+            stub_row("clean--222", cluster_id=222),
+            stub_row("uncached--333", cluster_id=333),
+            stub_row("nocaption--444", cluster_id=444),
+        ]}
+        write_json(paths.manifest, manifest_data)
+        manifest = ManifestStore(paths.manifest)
+        journal = Journal(os.path.join(tmp, "journal.jsonl"), "selftest")
+
+        def seed(rid, case_name, short, full, absolute_url):
+            rec = empty_record_shell(rid, manifest.by_record_id[rid], "selftest")
+            rec["status"] = "verified_identity"
+            rec["identity"].update({"cluster_id": manifest.by_record_id[rid]["cluster_id"],
+                                    "case_name": case_name, "case_name_short": short,
+                                    "case_name_full": full, "absolute_url": absolute_url,
+                                    "lead_opinion_id": 555})
+            # a non-empty citations block to prove it is left UNTOUCHED by caption repair
+            rec["citations"] = {"display": "540 U.S. 544", "all": [{"cite": "540 U.S. 544"}]}
+            write_case_record(paths, rec)
+        # Fisher class: caption carries the WRONG case (In re Mirsky) after a
+        # docket-coincidence re-key; the cluster is the true Illinois v. Fisher.
+        seed("fisher-like--111", "In re Mirsky", "In re Mirsky",
+             "In re Steven E. MIRSKY, A Member of the Bar", "/opinion/999/in-re-mirsky/")
+        # clean: current caption already normalized-matches the cluster (only
+        # case/whitespace differ) -> nothing-to-repair.
+        seed("clean--222", "clean case  v. test", "test", "Clean Case v. Test",
+             "/opinion/222/clean-case-v-test/")
+        seed("uncached--333", "Some Stale Name", "Stale", "Some Stale Name",
+             "/opinion/000/some-stale-name/")
+        seed("nocaption--444", "Keep This Name", "Keep", "Keep This Name",
+             "/opinion/000/keep-this-name/")
+
+        clusters = {
+            111: {"id": 111, "case_name": "Illinois v. Fisher", "case_name_short": "Fisher",
+                  "case_name_full": "Illinois v. Fisher", "absolute_url": "/opinion/111/illinois-v-fisher/"},
+            222: {"id": 222, "case_name": "Clean Case v. Test", "case_name_short": "Test",
+                  "case_name_full": "Clean Case v. Test", "absolute_url": "/opinion/222/clean-case-v-test/"},
+            444: {"id": 444},  # cached, but carries no case_name -> refused
+        }
+
+        class CacheClient:
+            def __init__(self):
+                self.budget = CallBudget(max_calls=0)
+            def get_cluster(self, cluster_id, record_id=None, step=None):
+                cid = int(cluster_id)
+                if cid not in clusters:
+                    raise IngestInterrupted("not_cached", record_id=record_id, step=step)
+                return clusters[cid]
+
+        result = repair_caption_from_cache(paths, manifest, journal, CacheClient(), rids)
+        assert result["repaired"] == ["fisher-like--111"], result
+        assert result["noop"] == ["clean--222"], result
+        assert result["queued"] == ["uncached--333"], result
+        assert result["refused"] == ["nocaption--444"], result
+
+        fixed = load_case_record(paths, "fisher-like--111")["identity"]
+        assert fixed["case_name"] == "Illinois v. Fisher", fixed
+        assert fixed["case_name_short"] == "Fisher", fixed
+        assert fixed["case_name_full"] == "Illinois v. Fisher", fixed
+        assert fixed["absolute_url"] == "/opinion/111/illinois-v-fisher/", fixed
+        # identity keys + citations block are NEVER touched by caption repair
+        assert fixed["cluster_id"] == 111, fixed
+        assert fixed["lead_opinion_id"] == 555, fixed
+        assert load_case_record(paths, "fisher-like--111")["citations"]["display"] == "540 U.S. 544"
+        # noop / queued / refused rows left byte-stable on the caption fields
+        assert load_case_record(paths, "clean--222")["identity"]["case_name"] == "clean case  v. test"
+        assert load_case_record(paths, "uncached--333")["identity"]["case_name"] == "Some Stale Name"
+        assert load_case_record(paths, "nocaption--444")["identity"]["case_name"] == "Keep This Name"
+        rrows = {r["record_id"]: r for r in journal.rows() if r.get("step") == REPAIR_CAPTION_STEP}
+        assert rrows["fisher-like--111"]["status"] == "repaired", rrows
+        assert rrows["clean--222"]["status"] == "nothing-to-repair", rrows
+        assert rrows["uncached--333"]["status"] == "queued-for-lane", rrows
+        assert rrows["nocaption--444"]["status"] == "refused-no-cluster-caption", rrows
+
+        # idempotence: a second pass over the now-fixed Fisher record is a no-op
+        result2 = repair_caption_from_cache(paths, manifest, journal, CacheClient(), ["fisher-like--111"])
+        assert result2["repaired"] == [] and result2["noop"] == ["fisher-like--111"], result2
+
+        # REFUSAL GUARD 1 (out-of-scope status): the whole batch fails closed
+        manifest.by_record_id["fisher-like--111"]["status"] = "fabrication_suspected"
+        try:
+            repair_caption_from_cache(paths, manifest, journal, CacheClient(), ["fisher-like--111"])
+        except SystemExit:
+            pass
+        else:
+            raise AssertionError("repair_caption_from_cache accepted an out-of-scope status row")
+
+        # REFUSAL GUARD 2 (record not in manifest): fails closed
+        try:
+            repair_caption_from_cache(paths, manifest, journal, CacheClient(), ["ghost--000"])
+        except SystemExit:
+            pass
+        else:
+            raise AssertionError("repair_caption_from_cache accepted a record absent from the manifest")
+    finally:
+        shutil.rmtree(tmp)
+
+
 def self_test_derive_coa_state_pure():
     # docket-authoritative coa (roster agrees)
     d = derive_coa_state_court(
@@ -12002,6 +12280,7 @@ def run_self_tests():
     self_test_enrich_citations()
     self_test_apply_web_cites()
     self_test_repair_identity_from_cache()
+    self_test_repair_caption_from_cache()
     self_test_repair_coa_state_from_cache()
     self_test_rekey_lead_opinion_from_cache()
     self_test_rekey_cluster_panel()
@@ -12033,6 +12312,7 @@ def parse_args(argv):
     parser.add_argument("--repair-identity-from-cache", action="append", default=[], help="cache-served (R8 addendum): re-derive court/date/year for a verified_identity row from its cached cluster; a cache miss is queued for the CL lane; repeatable")
     parser.add_argument("--repair-coa-state-from-cache", action="append", default=[], help="R8 addendum #2: re-derive court_level (+circuit/state/year/docket) for a coa/state residue verified_identity row; cache-only by default; repeatable")
     parser.add_argument("--repair-coa-state-allow-docket-fetch", action="store_true", help="opt-in gate for --repair-coa-state-from-cache: permit the paced serial CL lane to fetch the docket + court object for an authoritative court_id/jurisdiction derivation (cache-first)")
+    parser.add_argument("--repair-caption-from-cache", action="append", default=[], help="cache-served (S9 caption-repair): rewrite identity.case_name/case_name_short/case_name_full (+ caption-derived absolute_url) for an already-correctly-keyed row from its CACHED cluster (the Fisher class: caption stale after a docket-coincidence re-key); refuses a normalized no-op or a captionless cluster; a cache miss is queued for the CL lane; repeatable")
     parser.add_argument("--rekey-lead-opinion-from-cache", action="append", default=[], help="cache-served (R8 addendum #3): re-key identity.lead_opinion_id to the harmonized lead sub_opinion of the CACHED cluster (the cluster-vs-opinion legacy trap, lead==cluster_id); only re-keys a provably-wrong lead; a cache miss is queued for the CL lane; repeatable")
     parser.add_argument("--rekey-cluster-panel", help="panel-verified (R8 addendum #4): re-key a record to an explicitly-supplied merits cluster (the Riley wrong-cluster class); requires --rekey-cluster-target + --rekey-cluster-expect-cite + --rekey-cluster-evidence; cache-only, fail-closed unless the target cluster's citations contain the expected cite")
     parser.add_argument("--rekey-cluster-target", help="target cluster id for --rekey-cluster-panel")

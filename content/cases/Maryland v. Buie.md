@@ -35,7 +35,7 @@ holding: "Protective sweep incident to an in-home arrest: (1) without probable c
 lake:
   record_id: Maryland v. Buie
   status: verified
-  projected_at: 2026-07-06
+  projected_at: 2026-07-09
 ---
 
 # Maryland v. Buie

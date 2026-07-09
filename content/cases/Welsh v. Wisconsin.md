@@ -37,7 +37,7 @@ holding: "The gravity of the underlying offense is a key factor in the exigency 
 lake:
   record_id: Welsh v. Wisconsin
   status: verified
-  projected_at: 2026-07-06
+  projected_at: 2026-07-09
 ---
 
 # Welsh v. Wisconsin

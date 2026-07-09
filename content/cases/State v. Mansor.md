@@ -35,7 +35,7 @@ holding: "Decided under Article I, section 9 of the OREGON Constitution: the Sta
 lake:
   record_id: State v. Mansor
   status: verified
-  projected_at: 2026-07-06
+  projected_at: 2026-07-09
 ---
 
 # State v. Mansor

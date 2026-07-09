@@ -37,7 +37,7 @@ holding: "The detention authority recognized in Michigan v. Summers is limited t
 lake:
   record_id: Bailey v. United States
   status: verified
-  projected_at: 2026-07-06
+  projected_at: 2026-07-09
 ---
 
 # Bailey v. United States

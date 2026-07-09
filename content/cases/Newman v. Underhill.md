@@ -35,7 +35,7 @@ holding: "The hot-pursuit exception requires officers to be in 'immediate' and '
 lake:
   record_id: Newman v. Underhill
   status: verified
-  projected_at: 2026-07-06
+  projected_at: 2026-07-09
 ---
 
 # Newman v. Underhill

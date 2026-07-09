@@ -35,7 +35,7 @@ holding: "A warrantless search of packages lawfully removed from a vehicle on PC
 lake:
   record_id: United States v. Johns
   status: verified
-  projected_at: 2026-07-06
+  projected_at: 2026-07-09
 ---
 
 # United States v. Johns

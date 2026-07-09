@@ -35,7 +35,7 @@ holding: "The good-faith exception extends to evidence seized on a mistaken arre
 lake:
   record_id: Arizona v. Evans
   status: verified
-  projected_at: 2026-07-06
+  projected_at: 2026-07-09
 ---
 
 # Arizona v. Evans

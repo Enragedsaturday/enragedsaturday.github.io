@@ -35,7 +35,7 @@ holding: "Establishes judicial review: it is the province and duty of the judici
 lake:
   record_id: Marbury v. Madison
   status: under_review
-  projected_at: 2026-07-06
+  projected_at: 2026-07-09
 ---
 
 # Marbury v. Madison

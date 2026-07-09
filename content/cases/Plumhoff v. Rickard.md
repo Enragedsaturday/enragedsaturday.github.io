@@ -35,7 +35,7 @@ holding: "Using deadly force to end a dangerous high-speed chase is reasonable u
 lake:
   record_id: Plumhoff v. Rickard
   status: verified
-  projected_at: 2026-07-06
+  projected_at: 2026-07-09
 ---
 
 # Plumhoff v. Rickard

@@ -35,7 +35,7 @@ holding: "Suspicionless random drug testing of public-school student athletes is
 lake:
   record_id: Vernonia School District 47J v. Acton
   status: verified
-  projected_at: 2026-07-06
+  projected_at: 2026-07-09
 ---
 
 # Vernonia School District 47J v. Acton

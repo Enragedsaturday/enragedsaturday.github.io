@@ -35,7 +35,7 @@ holding: "Where police have probable cause to believe a home contains contraband
 lake:
   record_id: Illinois v. McArthur
   status: verified
-  projected_at: 2026-07-06
+  projected_at: 2026-07-09
 ---
 
 # Illinois v. McArthur

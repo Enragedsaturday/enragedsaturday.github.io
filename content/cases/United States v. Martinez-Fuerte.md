@@ -37,7 +37,7 @@ holding: "Brief stops at fixed/permanent interior immigration checkpoints are co
 lake:
   record_id: United States v. Martinez-Fuerte
   status: verified
-  projected_at: 2026-07-06
+  projected_at: 2026-07-09
 ---
 
 # United States v. Martinez-Fuerte

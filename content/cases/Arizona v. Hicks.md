@@ -37,7 +37,7 @@ holding: "Moving stereo equipment a few inches to read serial numbers was a SEAR
 lake:
   record_id: Arizona v. Hicks
   status: verified
-  projected_at: 2026-07-06
+  projected_at: 2026-07-09
 ---
 
 # Arizona v. Hicks

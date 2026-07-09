@@ -37,7 +37,7 @@ holding: "A warrantless search of a vehicle is not a valid search incident to ar
 lake:
   record_id: Preston v. United States
   status: verified
-  projected_at: 2026-07-06
+  projected_at: 2026-07-09
 ---
 
 # Preston v. United States

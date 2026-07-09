@@ -39,7 +39,7 @@ holding: "First-class mail may be detained without a warrant on reasonable suspi
 lake:
   record_id: United States v. Van Leeuwen
   status: verified
-  projected_at: 2026-07-06
+  projected_at: 2026-07-09
 ---
 
 # United States v. Van Leeuwen

@@ -35,7 +35,7 @@ holding: "Fourth Amendment rights are personal and may not be vicariously assert
 lake:
   record_id: Alderman v. United States
   status: verified
-  projected_at: 2026-07-06
+  projected_at: 2026-07-09
 ---
 
 # Alderman v. United States

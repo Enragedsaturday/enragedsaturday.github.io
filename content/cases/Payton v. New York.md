@@ -39,7 +39,7 @@ holding: "Warrantless, nonconsensual entry into a SUSPECT'S OWN home to make a r
 lake:
   record_id: Payton v. New York
   status: verified
-  projected_at: 2026-07-06
+  projected_at: 2026-07-09
 ---
 
 # Payton v. New York

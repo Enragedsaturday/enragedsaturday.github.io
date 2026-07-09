@@ -35,7 +35,7 @@ holding: "(Persuasive (outside circuit) — 9th Cir.) An occupant has a reasonab
 lake:
   record_id: United States v. Gooch
   status: verified
-  projected_at: 2026-07-06
+  projected_at: 2026-07-09
 ---
 
 # United States v. Gooch

@@ -35,7 +35,7 @@ holding: "A suspicionless search of a parolee is reasonable; a parolee subject t
 lake:
   record_id: Samson v. California
   status: verified
-  projected_at: 2026-07-06
+  projected_at: 2026-07-09
 ---
 
 # Samson v. California

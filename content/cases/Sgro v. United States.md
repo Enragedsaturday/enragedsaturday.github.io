@@ -35,7 +35,7 @@ holding: "A search warrant void for non-execution within its statutory life cann
 lake:
   record_id: Sgro v. United States
   status: verified
-  projected_at: 2026-07-06
+  projected_at: 2026-07-09
 ---
 
 # Sgro v. United States

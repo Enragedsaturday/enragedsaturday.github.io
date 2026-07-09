@@ -35,7 +35,7 @@ holding: "Established \"automatic standing\" for those charged with possessory o
 lake:
   record_id: Jones v. United States
   status: verified
-  projected_at: 2026-07-06
+  projected_at: 2026-07-09
 ---
 
 # Jones v. United States

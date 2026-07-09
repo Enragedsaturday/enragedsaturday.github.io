@@ -1716,3 +1716,20 @@ verify the UoF page reflects it; retaliatory-arrest anchors (Nieves line) report
 lake — reconcile vs page/ledger state at P2. D-3: Riley motions-order claim now from a THIRD
 lane (vs the 82KB pool file — P2 must read the file head and settle it); Chatrie lead text
 missing (already in cache-repair order); LaDuke + chatrie-4th fabrication_suspected stubs noted.
+
+**CACHE/IDENTITY REPAIR ARC (2026-07-09, spanning builder leg + caption lane + lead backfill).**
+Builder-token leg (SANCTIONED, 18 paced REST calls via ingest.py's own client, journaled
+consumer=S2-BUILDER-AUTHORING): 3 targets staged, 3 guarded panel-rekeys landed (Davis-1994
+117863/9433017 · Davis-2011 218926/9441776 · Fisher 131160/9434538), 18/18 pool texts fetched +
+content-head verified. Lead backfill (cache-fed, 8 records incl Wyman 9424375). NEW SANCTIONED
+SURFACE --repair-caption-from-cache (Fisher-class complement of the caption-preserving Riley-class
+contract; self-tests both guards) → Fisher caption cured loop-2. project.py --write: 169 pages
+(9 substantive). Fragments 182→183 (Thornton pin-622 RECOVERED — the S8 fail-closed row cured).
+run_all delta +246 fully attributed (=+397 LINT-11 online −160 LINT-12 cured +9 LINT-30 state).
+**LINT-30 vs the orchestrator:** inv-3 fired on my self-adjudications — check scoped to spec text
+(D-TOOL exempt; legal self-adjudication clears only w/ independent confirmation vote, R14.2) +
+flat-fix-row shape accepted (production shape; demo loops[] still honored); self-tests green.
+DN-002 fix row booked. IN FLIGHT: DN-004 independent confirmation vote + IDS-002 six-date
+web-evidence fix (diagnosis INVERTED at adjudication: date_decided carries CL date_filed
+artifacts — rehearing/argument dates; year is reporter-correct). LINT-11's 397 HIGH = new
+backlog class for P3 adjudication-first (FP-rate unknown).

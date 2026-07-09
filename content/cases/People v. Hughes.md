@@ -35,7 +35,7 @@ holding: "Declines a per se rule that an officer may always review the ENTIRE co
 lake:
   record_id: People v. Hughes
   status: under_review
-  projected_at: 2026-07-06
+  projected_at: 2026-07-09
 ---
 
 # People v. Hughes

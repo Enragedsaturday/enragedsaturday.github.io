@@ -35,7 +35,7 @@ holding: "The automobile exception is not subject to a temporal limit; a 38-day 
 lake:
   record_id: United States v. Gastiaburo
   status: verified
-  projected_at: 2026-07-06
+  projected_at: 2026-07-09
 ---
 
 # United States v. Gastiaburo

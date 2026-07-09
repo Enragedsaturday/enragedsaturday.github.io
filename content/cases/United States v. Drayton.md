@@ -35,7 +35,7 @@ holding: "A bus sweep with consent-to-search requests is not a seizure, and cons
 lake:
   record_id: United States v. Drayton
   status: verified
-  projected_at: 2026-07-06
+  projected_at: 2026-07-09
 ---
 
 # United States v. Drayton

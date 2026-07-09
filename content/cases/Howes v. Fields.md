@@ -35,7 +35,7 @@ holding: "Imprisonment alone does not make questioning custodial for Miranda; wh
 lake:
   record_id: Howes v. Fields
   status: verified
-  projected_at: 2026-07-06
+  projected_at: 2026-07-09
 ---
 
 # Howes v. Fields

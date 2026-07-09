@@ -35,7 +35,7 @@ holding: "There is no per se rule excluding identifications from unnecessarily s
 lake:
   record_id: Manson v. Brathwaite
   status: verified
-  projected_at: 2026-07-06
+  projected_at: 2026-07-09
 ---
 
 # Manson v. Brathwaite

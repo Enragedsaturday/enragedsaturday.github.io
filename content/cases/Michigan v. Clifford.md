@@ -37,7 +37,7 @@ holding: "Where reasonable privacy interests remain in fire-damaged property, a 
 lake:
   record_id: Michigan v. Clifford
   status: verified
-  projected_at: 2026-07-06
+  projected_at: 2026-07-09
 ---
 
 # Michigan v. Clifford

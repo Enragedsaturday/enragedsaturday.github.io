@@ -35,7 +35,7 @@ holding: "Statements compelled from a public employee under threat of removal fr
 lake:
   record_id: Garrity v. New Jersey
   status: verified
-  projected_at: 2026-07-06
+  projected_at: 2026-07-09
 ---
 
 # Garrity v. New Jersey

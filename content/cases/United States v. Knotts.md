@@ -39,7 +39,7 @@ holding: "Beeper-aided tracking of a vehicle over public roads is not a search; 
 lake:
   record_id: United States v. Knotts
   status: verified
-  projected_at: 2026-07-06
+  projected_at: 2026-07-09
 ---
 
 # United States v. Knotts

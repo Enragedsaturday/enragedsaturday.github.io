@@ -35,7 +35,7 @@ holding: "Unprovoked headlong flight upon noticing police, combined with presenc
 lake:
   record_id: Illinois v. Wardlow
   status: verified
-  projected_at: 2026-07-06
+  projected_at: 2026-07-09
 ---
 
 # Illinois v. Wardlow

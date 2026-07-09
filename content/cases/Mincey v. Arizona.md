@@ -35,7 +35,7 @@ holding: "No 'murder scene' exception: the seriousness of the offense does not b
 lake:
   record_id: Mincey v. Arizona
   status: verified
-  projected_at: 2026-07-06
+  projected_at: 2026-07-09
 ---
 
 # Mincey v. Arizona

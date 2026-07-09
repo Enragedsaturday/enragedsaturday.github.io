@@ -35,7 +35,7 @@ holding: "Probable cause for a warrantless arrest is judged by the facts known a
 lake:
   record_id: "Henry v. United States (1959)"
   status: verified
-  projected_at: 2026-07-06
+  projected_at: 2026-07-09
 ---
 
 # Henry v. United States (1959)

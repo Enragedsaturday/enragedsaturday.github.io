@@ -35,7 +35,7 @@ holding: "Defines a property seizure; the Amendment reaches only government acti
 lake:
   record_id: United States v. Jacobsen
   status: verified
-  projected_at: 2026-07-06
+  projected_at: 2026-07-09
 ---
 
 # United States v. Jacobsen

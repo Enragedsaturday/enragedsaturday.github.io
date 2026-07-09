@@ -23,12 +23,12 @@ treatment:
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/112904/austin-v-united-states/"
   cluster_id: 112904
-  opinion_id: null
+  opinion_id: 9432892
   identity_checked: true
 lake:
   record_id: Austin v. United States
   status: under_review
-  projected_at: 2026-07-07
+  projected_at: 2026-07-09
 homes:
   - page: "[[Civil Asset Forfeiture]]"
     role: Anchor

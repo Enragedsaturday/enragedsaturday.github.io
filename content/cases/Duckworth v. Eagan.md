@@ -35,7 +35,7 @@ holding: "Miranda warnings telling a suspect counsel will be appointed 'if and w
 lake:
   record_id: Duckworth v. Eagan
   status: verified
-  projected_at: 2026-07-06
+  projected_at: 2026-07-09
 ---
 
 # Duckworth v. Eagan

@@ -37,7 +37,7 @@ holding: "A tip from a known, face-to-face informant can supply the reasonable s
 lake:
   record_id: Adams v. Williams
   status: verified
-  projected_at: 2026-07-06
+  projected_at: 2026-07-09
 ---
 
 # Adams v. Williams

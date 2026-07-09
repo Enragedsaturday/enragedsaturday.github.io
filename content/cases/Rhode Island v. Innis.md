@@ -35,7 +35,7 @@ holding: "'Interrogation' under Miranda is not limited to express questioning. I
 lake:
   record_id: Rhode Island v. Innis
   status: verified
-  projected_at: 2026-07-06
+  projected_at: 2026-07-09
 ---
 
 # Rhode Island v. Innis

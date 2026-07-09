@@ -35,7 +35,7 @@ holding: "Manual border searches of a cell phone need no suspicion, but a *foren
 lake:
   record_id: United States v. Cano
   status: verified
-  projected_at: 2026-07-06
+  projected_at: 2026-07-09
 ---
 
 # United States v. Cano

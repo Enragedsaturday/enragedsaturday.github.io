@@ -39,7 +39,7 @@ holding: "Involuntarily transporting a suspect to the station and detaining him 
 lake:
   record_id: Dunaway v. New York
   status: verified
-  projected_at: 2026-07-06
+  projected_at: 2026-07-09
 ---
 
 # Dunaway v. New York

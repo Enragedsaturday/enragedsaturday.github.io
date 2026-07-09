@@ -37,7 +37,7 @@ holding: "An administrative inspection of the nonpublic portions of commercial p
 lake:
   record_id: See v. City of Seattle
   status: verified
-  projected_at: 2026-07-06
+  projected_at: 2026-07-09
 ---
 
 # See v. City of Seattle

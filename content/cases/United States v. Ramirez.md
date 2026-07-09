@@ -35,7 +35,7 @@ holding: "The Fourth Amendment does not impose a higher standard on a no-knock e
 lake:
   record_id: United States v. Ramirez
   status: verified
-  projected_at: 2026-07-06
+  projected_at: 2026-07-09
 ---
 
 # United States v. Ramirez

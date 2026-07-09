@@ -35,7 +35,7 @@ holding: "The exclusionary rule does not bar evidence unlawfully seized by state
 lake:
   record_id: United States v. Janis
   status: verified
-  projected_at: 2026-07-06
+  projected_at: 2026-07-09
 ---
 
 # United States v. Janis

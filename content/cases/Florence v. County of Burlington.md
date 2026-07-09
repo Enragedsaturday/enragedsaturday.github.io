@@ -37,7 +37,7 @@ holding: "Jail officials may conduct a close visual strip search of every arrest
 lake:
   record_id: Florence v. County of Burlington
   status: verified
-  projected_at: 2026-07-06
+  projected_at: 2026-07-09
 ---
 
 # Florence v. County of Burlington

@@ -37,7 +37,7 @@ holding: "An objectively reasonable arrest of a material witness on a valid warr
 lake:
   record_id: Ashcroft v. al-Kidd
   status: verified
-  projected_at: 2026-07-06
+  projected_at: 2026-07-09
 ---
 
 # Ashcroft v. al-Kidd

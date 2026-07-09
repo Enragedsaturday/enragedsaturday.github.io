@@ -35,7 +35,7 @@ holding: "A municipality is liable under § 1983 for inadequate police training 
 lake:
   record_id: City of Canton v. Harris
   status: verified
-  projected_at: 2026-07-06
+  projected_at: 2026-07-09
 ---
 
 # City of Canton v. Harris

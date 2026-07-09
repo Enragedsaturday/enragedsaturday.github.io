@@ -35,7 +35,7 @@ holding: "Sets the modern plain-view SEIZURE test and DROPS the inadvertence req
 lake:
   record_id: Horton v. California
   status: under_review
-  projected_at: 2026-07-06
+  projected_at: 2026-07-09
 ---
 
 # Horton v. California

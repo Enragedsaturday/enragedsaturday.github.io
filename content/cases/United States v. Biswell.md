@@ -35,7 +35,7 @@ holding: "A warrantless inspection of a federally licensed firearms dealer under
 lake:
   record_id: United States v. Biswell
   status: verified
-  projected_at: 2026-07-06
+  projected_at: 2026-07-09
 ---
 
 # United States v. Biswell

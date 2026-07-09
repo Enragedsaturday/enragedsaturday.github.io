@@ -35,7 +35,7 @@ holding: "Appellate review of determinations of reasonable suspicion and probabl
 lake:
   record_id: Ornelas v. United States
   status: verified
-  projected_at: 2026-07-06
+  projected_at: 2026-07-09
 ---
 
 # Ornelas v. United States

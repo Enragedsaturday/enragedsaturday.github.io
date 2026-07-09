@@ -35,7 +35,7 @@ holding: "No legitimate expectation of privacy in bank records (checks, deposit 
 lake:
   record_id: United States v. Miller
   status: verified
-  projected_at: 2026-07-06
+  projected_at: 2026-07-09
 ---
 
 # United States v. Miller

@@ -35,7 +35,7 @@ holding: "Illustrative application of inevitable discovery where the exception d
 lake:
   record_id: United States v. Neugin
   status: verified
-  projected_at: 2026-07-06
+  projected_at: 2026-07-09
 ---
 
 # United States v. Neugin

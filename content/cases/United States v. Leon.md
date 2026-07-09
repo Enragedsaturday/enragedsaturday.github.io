@@ -37,7 +37,7 @@ holding: "Good-faith exception: evidence obtained by officers in objectively rea
 lake:
   record_id: United States v. Leon
   status: verified
-  projected_at: 2026-07-06
+  projected_at: 2026-07-09
 ---
 
 # United States v. Leon

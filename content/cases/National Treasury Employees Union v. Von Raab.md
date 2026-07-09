@@ -35,7 +35,7 @@ holding: "Suspicionless drug testing of Customs employees seeking drug-interdict
 lake:
   record_id: National Treasury Employees Union v. Von Raab
   status: verified
-  projected_at: 2026-07-06
+  projected_at: 2026-07-09
 ---
 
 # National Treasury Employees Union v. Von Raab

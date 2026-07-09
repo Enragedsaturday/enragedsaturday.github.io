@@ -37,7 +37,7 @@ holding: "Examining a car's exterior (paint scrapings, tire tread) on probable c
 lake:
   record_id: Cardwell v. Lewis
   status: verified
-  projected_at: 2026-07-06
+  projected_at: 2026-07-09
 ---
 
 # Cardwell v. Lewis

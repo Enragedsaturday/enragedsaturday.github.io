@@ -39,7 +39,7 @@ holding: "There is no reasonable expectation of privacy in a VIN required by law
 lake:
   record_id: New York v. Class
   status: verified
-  projected_at: 2026-07-06
+  projected_at: 2026-07-09
 ---
 
 # New York v. Class

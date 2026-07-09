@@ -35,7 +35,7 @@ holding: "Allowing a suspect who has invoked his Miranda rights to speak with hi
 lake:
   record_id: Arizona v. Mauro
   status: verified
-  projected_at: 2026-07-06
+  projected_at: 2026-07-09
 ---
 
 # Arizona v. Mauro

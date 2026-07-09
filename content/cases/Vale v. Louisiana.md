@@ -37,7 +37,7 @@ holding: "A search of a house cannot be justified as incident to an arrest made 
 lake:
   record_id: Vale v. Louisiana
   status: verified
-  projected_at: 2026-07-06
+  projected_at: 2026-07-09
 ---
 
 # Vale v. Louisiana

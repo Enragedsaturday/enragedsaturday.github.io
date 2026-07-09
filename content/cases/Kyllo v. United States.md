@@ -41,7 +41,7 @@ holding: "Using sense-enhancing technology not in general public use to explore 
 lake:
   record_id: Kyllo v. United States
   status: verified
-  projected_at: 2026-07-06
+  projected_at: 2026-07-09
 ---
 
 # Kyllo v. United States

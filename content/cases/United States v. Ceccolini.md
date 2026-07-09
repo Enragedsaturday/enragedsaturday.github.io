@@ -35,7 +35,7 @@ holding: "Live-witness testimony is far less readily suppressed as a fruit of an
 lake:
   record_id: United States v. Ceccolini
   status: verified
-  projected_at: 2026-07-06
+  projected_at: 2026-07-09
 ---
 
 # United States v. Ceccolini

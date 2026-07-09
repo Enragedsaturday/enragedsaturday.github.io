@@ -35,7 +35,7 @@ holding: "Police pursuit, standing alone, is not a Fourth Amendment seizure; whe
 lake:
   record_id: Michigan v. Chesternut
   status: verified
-  projected_at: 2026-07-06
+  projected_at: 2026-07-09
 ---
 
 # Michigan v. Chesternut

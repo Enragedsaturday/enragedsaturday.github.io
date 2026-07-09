@@ -35,7 +35,7 @@ holding: "The slurred manner of a DUI suspect's speech is non-testimonial physic
 lake:
   record_id: Pennsylvania v. Muniz
   status: verified
-  projected_at: 2026-07-06
+  projected_at: 2026-07-09
 ---
 
 # Pennsylvania v. Muniz

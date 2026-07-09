@@ -35,7 +35,7 @@ holding: "A 'spike mike' physically penetrating the wall into the house was a se
 lake:
   record_id: Silverman v. United States
   status: verified
-  projected_at: 2026-07-06
+  projected_at: 2026-07-09
 ---
 
 # Silverman v. United States

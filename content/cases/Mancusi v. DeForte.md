@@ -35,7 +35,7 @@ holding: "A union official has Fourth Amendment standing to challenge a warrantl
 lake:
   record_id: Mancusi v. DeForte
   status: verified
-  projected_at: 2026-07-06
+  projected_at: 2026-07-09
 ---
 
 # Mancusi v. DeForte

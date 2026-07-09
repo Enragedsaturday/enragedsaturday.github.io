@@ -35,7 +35,7 @@ holding: "An information-seeking checkpoint — stopping motorists to ask whethe
 lake:
   record_id: Illinois v. Lidster
   status: verified
-  projected_at: 2026-07-06
+  projected_at: 2026-07-09
 ---
 
 # Illinois v. Lidster

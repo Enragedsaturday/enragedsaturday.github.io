@@ -37,7 +37,7 @@ holding: "Issuing a traffic citation, without a custodial arrest, does not autho
 lake:
   record_id: Knowles v. Iowa
   status: verified
-  projected_at: 2026-07-06
+  projected_at: 2026-07-09
 ---
 
 # Knowles v. Iowa

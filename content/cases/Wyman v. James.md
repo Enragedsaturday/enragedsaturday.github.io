@@ -23,12 +23,12 @@ treatment:
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/108223/wyman-v-james/"
   cluster_id: 108223
-  opinion_id: null
+  opinion_id: 9424375
   identity_checked: true
 lake:
   record_id: Wyman v. James
   status: under_review
-  projected_at: 2026-07-07
+  projected_at: 2026-07-09
 homes:
   - page: "[[Special Needs and Administrative Searches]]"
     role: Key

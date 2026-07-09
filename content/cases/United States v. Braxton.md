@@ -35,7 +35,7 @@ holding: "The government CONCEDED the warrantless search of Braxton's backpack w
 lake:
   record_id: United States v. Braxton
   status: verified
-  projected_at: 2026-07-06
+  projected_at: 2026-07-09
 ---
 
 # United States v. Braxton

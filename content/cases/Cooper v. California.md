@@ -35,7 +35,7 @@ holding: "A warrantless search of a car the police lawfully hold in custody for 
 lake:
   record_id: Cooper v. California
   status: verified
-  projected_at: 2026-07-06
+  projected_at: 2026-07-09
 ---
 
 # Cooper v. California

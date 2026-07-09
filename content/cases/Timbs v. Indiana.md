@@ -23,12 +23,12 @@ treatment:
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/4591916/timbs-v-indiana/"
   cluster_id: 4591916
-  opinion_id: null
+  opinion_id: 9888039
   identity_checked: true
 lake:
   record_id: Timbs v. Indiana
   status: under_review
-  projected_at: 2026-07-07
+  projected_at: 2026-07-09
 homes:
   - page: "[[Civil Asset Forfeiture]]"
     role: Anchor

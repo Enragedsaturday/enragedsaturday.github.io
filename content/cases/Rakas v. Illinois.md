@@ -37,7 +37,7 @@ holding: "Fourth Amendment rights are personal; a defendant must show his own le
 lake:
   record_id: Rakas v. Illinois
   status: verified
-  projected_at: 2026-07-06
+  projected_at: 2026-07-09
 ---
 
 # Rakas v. Illinois

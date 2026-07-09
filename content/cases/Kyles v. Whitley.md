@@ -35,7 +35,7 @@ holding: "Two load-bearing points: (1) materiality is assessed CUMULATIVELY — 
 lake:
   record_id: Kyles v. Whitley
   status: verified
-  projected_at: 2026-07-06
+  projected_at: 2026-07-09
 ---
 
 # Kyles v. Whitley

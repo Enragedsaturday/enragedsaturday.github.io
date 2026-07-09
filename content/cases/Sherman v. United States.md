@@ -35,7 +35,7 @@ holding: "Entrapment is established as a matter of law when the government, thro
 lake:
   record_id: Sherman v. United States
   status: verified
-  projected_at: 2026-07-06
+  projected_at: 2026-07-09
 ---
 
 # Sherman v. United States

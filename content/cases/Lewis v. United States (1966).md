@@ -37,7 +37,7 @@ holding: "When an occupant converts his home into a commercial center and invite
 lake:
   record_id: "Lewis v. United States (1966)"
   status: verified
-  projected_at: 2026-07-06
+  projected_at: 2026-07-09
 ---
 
 # Lewis v. United States (1966)

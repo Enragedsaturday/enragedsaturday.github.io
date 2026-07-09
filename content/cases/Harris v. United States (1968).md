@@ -37,7 +37,7 @@ holding: "Objects falling in the plain view of an officer who has a right to be 
 lake:
   record_id: "Harris v. United States (1968)"
   status: verified
-  projected_at: 2026-07-06
+  projected_at: 2026-07-09
 ---
 
 # Harris v. United States (1968)

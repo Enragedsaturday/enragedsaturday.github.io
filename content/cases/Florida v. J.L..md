@@ -35,7 +35,7 @@ holding: "A bare anonymous tip that a person is carrying a gun, without more, is
 lake:
   record_id: Florida v. J.L.
   status: verified
-  projected_at: 2026-07-06
+  projected_at: 2026-07-09
 ---
 
 # Florida v. J.L.

@@ -35,7 +35,7 @@ holding: "The government may not exceed the scope of a prior private search; the
 lake:
   record_id: Walter v. United States
   status: verified
-  projected_at: 2026-07-06
+  projected_at: 2026-07-09
 ---
 
 # Walter v. United States

@@ -35,7 +35,7 @@ holding: "Police serve a public-welfare/community-caretaking function by removin
 lake:
   record_id: United States v. Rideau
   status: under_review
-  projected_at: 2026-07-06
+  projected_at: 2026-07-09
 ---
 
 # United States v. Rideau

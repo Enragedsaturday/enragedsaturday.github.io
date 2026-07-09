@@ -35,7 +35,7 @@ holding: "An officer's subjective motive is irrelevant to the Fourth Amendment v
 lake:
   record_id: Whren v. United States
   status: verified
-  projected_at: 2026-07-06
+  projected_at: 2026-07-09
 ---
 
 # Whren v. United States

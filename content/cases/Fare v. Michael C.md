@@ -35,7 +35,7 @@ holding: "A juvenile's request to speak with his probation officer is not a per 
 lake:
   record_id: Fare v. Michael C
   status: verified
-  projected_at: 2026-07-06
+  projected_at: 2026-07-09
 ---
 
 # Fare v. Michael C.

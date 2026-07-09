@@ -23,12 +23,12 @@ treatment:
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/10600074/chiaverini-v-city-of-napoleon/"
   cluster_id: 10600074
-  opinion_id: null
+  opinion_id: 11066663
   identity_checked: true
 lake:
   record_id: Chiaverini v. City of Napoleon
   status: under_review
-  projected_at: 2026-07-07
+  projected_at: 2026-07-09
 homes:
   - page: "[[Malicious Prosecution under the Fourth Amendment]]"
     role: Key

@@ -50,7 +50,7 @@ holding: "Luggage/containers carry a high expectation of privacy; once seized an
 lake:
   record_id: United States v. Chadwick
   status: verified
-  projected_at: 2026-07-06
+  projected_at: 2026-07-09
 ---
 
 # United States v. Chadwick

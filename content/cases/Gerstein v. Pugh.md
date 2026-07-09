@@ -37,7 +37,7 @@ holding: "A person arrested without a warrant is entitled under the Fourth Amend
 lake:
   record_id: Gerstein v. Pugh
   status: verified
-  projected_at: 2026-07-06
+  projected_at: 2026-07-09
 ---
 
 # Gerstein v. Pugh

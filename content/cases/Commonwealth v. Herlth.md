@@ -35,7 +35,7 @@ holding: "A closed, opaque shoebox with a one-inch manufacturer's hole, inside a
 lake:
   record_id: Commonwealth v. Herlth
   status: verified
-  projected_at: 2026-07-06
+  projected_at: 2026-07-09
 ---
 
 # Commonwealth v. Herlth

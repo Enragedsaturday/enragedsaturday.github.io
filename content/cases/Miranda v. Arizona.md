@@ -35,7 +35,7 @@ holding: "Statements from custodial interrogation are inadmissible unless police
 lake:
   record_id: Miranda v. Arizona
   status: verified
-  projected_at: 2026-07-06
+  projected_at: 2026-07-09
 ---
 
 # Miranda v. Arizona

@@ -37,7 +37,7 @@ holding: "Officers retain qualified immunity for obtaining and executing a facia
 lake:
   record_id: Messerschmidt v. Millender
   status: verified
-  projected_at: 2026-07-06
+  projected_at: 2026-07-09
 ---
 
 # Messerschmidt v. Millender

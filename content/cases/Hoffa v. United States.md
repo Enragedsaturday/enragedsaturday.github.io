@@ -35,7 +35,7 @@ holding: "A defendant has no Sixth Amendment claim when a government informant e
 lake:
   record_id: Hoffa v. United States
   status: verified
-  projected_at: 2026-07-06
+  projected_at: 2026-07-09
 ---
 
 # Hoffa v. United States

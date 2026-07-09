@@ -35,7 +35,7 @@ holding: "Recites the modern two-element formulation of the automobile exception
 lake:
   record_id: United States v. Morley
   status: verified
-  projected_at: 2026-07-06
+  projected_at: 2026-07-09
 ---
 
 # United States v. Morley

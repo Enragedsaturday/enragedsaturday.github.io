@@ -35,7 +35,7 @@ holding: "There is no 'coconspirator exception' to Fourth Amendment standing; a 
 lake:
   record_id: United States v. Padilla
   status: verified
-  projected_at: 2026-07-06
+  projected_at: 2026-07-09
 ---
 
 # United States v. Padilla

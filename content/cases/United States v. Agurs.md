@@ -46,7 +46,7 @@ holding: "The prosecution's duty to disclose exculpatory evidence exists even wh
 lake:
   record_id: United States v. Agurs
   status: verified
-  projected_at: 2026-07-06
+  projected_at: 2026-07-09
 ---
 
 # United States v. Agurs

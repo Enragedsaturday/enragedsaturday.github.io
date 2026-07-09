@@ -132,10 +132,18 @@ def load_ledger(dirpath):
 
 
 def _final_loop_verdict(fix):
+    # Two sanctioned row shapes: the demo per-object shape closes each loop via
+    # loops[-1].re_review.verdict; production lanes write FLAT rows whose
+    # operative closure is the top-level status field ("FIXED"/"NOT-FIXED").
+    # Highest-numbered flat row per finding wins (callers pass single rows;
+    # inv-1/5 aggregate with any()).
     loops = fix.get("loops") or []
-    if not loops:
-        return None
-    return ((loops[-1].get("re_review") or {}).get("verdict"))
+    if loops:
+        return ((loops[-1].get("re_review") or {}).get("verdict"))
+    status = fix.get("status")
+    if status in ("FIXED", "NOT-FIXED"):
+        return status
+    return None
 
 
 # --------------------------------------------------------------------------
@@ -220,13 +228,24 @@ def check_ledger(dirpath, completeness=False):
                     % (fid, refuted))
 
     # ---- invariant 3: lane identity (no lane closes its own row)
+    # Spec R4 inv-3 scopes finder!=adjudicator to LEGAL findings; editorial/
+    # structural/tooling dimensions (D-TOOL) run one-reviewer per user D3.
+    # A legal-dimension self-adjudication additionally clears when an
+    # independent confirmation vote (different lane) is recorded (R14.2).
     for f in findings:
         fid = f.get("id")
+        if (f.get("dimension") or "").upper() == "D-TOOL":
+            continue
         finder = (f.get("found_by") or {}).get("lane")
+        confirm_lanes = {v.get("lane") for v in votes_by_fid.get(fid, [])
+                         if v.get("verdict") in ("stands", "stands-modified")}
         for a in adj_by_fid.get(fid, []):
             adjud = (a.get("adjudicator") or {}).get("lane")
             if finder and adjud and finder == adjud:
-                add("[inv3] finding %s: finder lane == adjudicator lane (%s)"
+                if confirm_lanes - {finder}:
+                    continue  # independent confirmation on record
+                add("[inv3] finding %s: finder lane == adjudicator lane (%s), "
+                    "no independent confirmation vote"
                     % (fid, finder))
     for fx in fixes:
         fid = fx.get("finding_id")

@@ -35,7 +35,7 @@ holding: "A Miranda waiver is valid even though police failed to tell the suspec
 lake:
   record_id: Moran v. Burbine
   status: verified
-  projected_at: 2026-07-06
+  projected_at: 2026-07-09
 ---
 
 # Moran v. Burbine

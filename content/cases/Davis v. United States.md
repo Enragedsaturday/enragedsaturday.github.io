@@ -1,14 +1,14 @@
 ---
 title: "Davis v. United States"
 type: case
-citation: "513 U.S. 1008 (1994)"
-parallel_cite: ""
-neutral_cite: ""
+citation: "512 U.S. 452 (1994)"
+parallel_cite: "114 S. Ct. 2350; 129 L. Ed. 2d 362"
+neutral_cite: 1994 U.S. LEXIS 4827
 court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1994
-date_decided: 1994-11-14
+date_decided: 1994-06-24
 docket: ""
 authority_weight: "Binding — SCOTUS"
 treatment:
@@ -21,10 +21,10 @@ treatment:
   scope_note: "Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade."
   point_overrides: []
 courtlistener:
-  opinion_url: "https://www.courtlistener.com/opinion/9148721/davis-v-united-states/"
-  cluster_id: 9148721
-  opinion_id: 9143409
-  identity_checked: false
+  opinion_url: "https://www.courtlistener.com/opinion/117863/davis-v-united-states/"
+  cluster_id: 117863
+  opinion_id: 9433017
+  identity_checked: true
 homes:
   - page: "[[Miranda Waiver and Invocation]]"
     role: "Key — Progeny / Refinement"
@@ -35,7 +35,7 @@ holding: "A suspect must invoke the right to counsel UNAMBIGUOUSLY; an equivocal
 lake:
   record_id: Davis v. United States
   status: under_review
-  projected_at: 2026-07-06
+  projected_at: 2026-07-09
 ---
 
 # Davis v. United States

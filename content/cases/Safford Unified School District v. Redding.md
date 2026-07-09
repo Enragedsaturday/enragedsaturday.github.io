@@ -37,7 +37,7 @@ holding: "Under the T.L.O. school-search standard, a strip search of a student m
 lake:
   record_id: Safford Unified School District v. Redding
   status: verified
-  projected_at: 2026-07-06
+  projected_at: 2026-07-09
 ---
 
 # Safford Unified School District v. Redding

@@ -35,7 +35,7 @@ holding: "A court order authorizing Title III electronic surveillance implicitly
 lake:
   record_id: Dalia v. United States
   status: verified
-  projected_at: 2026-07-06
+  projected_at: 2026-07-09
 ---
 
 # Dalia v. United States

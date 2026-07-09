@@ -37,7 +37,7 @@ holding: "Detaining and transporting a suspect to the station for fingerprinting
 lake:
   record_id: Davis v. Mississippi
   status: verified
-  projected_at: 2026-07-06
+  projected_at: 2026-07-09
 ---
 
 # Davis v. Mississippi

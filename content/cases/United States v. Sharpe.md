@@ -35,7 +35,7 @@ holding: "There is no rigid time limit for a Terry stop; a 20-minute investigati
 lake:
   record_id: United States v. Sharpe
   status: verified
-  projected_at: 2026-07-06
+  projected_at: 2026-07-09
 ---
 
 # United States v. Sharpe

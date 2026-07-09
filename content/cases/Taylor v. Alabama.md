@@ -37,7 +37,7 @@ holding: "A confession obtained after a warrantless arrest made without probable
 lake:
   record_id: Taylor v. Alabama
   status: verified
-  projected_at: 2026-07-06
+  projected_at: 2026-07-09
 ---
 
 # Taylor v. Alabama

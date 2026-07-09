@@ -35,7 +35,7 @@ holding: "On a bus (where the passenger isn't free to leave regardless), the sei
 lake:
   record_id: Florida v. Bostick
   status: verified
-  projected_at: 2026-07-06
+  projected_at: 2026-07-09
 ---
 
 # Florida v. Bostick

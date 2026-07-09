@@ -35,7 +35,7 @@ holding: "Reopening a container after a lawful controlled delivery is not a new 
 lake:
   record_id: Illinois v. Andreas
   status: verified
-  projected_at: 2026-07-06
+  projected_at: 2026-07-09
 ---
 
 # Illinois v. Andreas

@@ -35,7 +35,7 @@ holding: "A defendant does not make out a Sixth Amendment violation merely by sh
 lake:
   record_id: Kuhlmann v. Wilson
   status: under_review
-  projected_at: 2026-07-06
+  projected_at: 2026-07-09
 ---
 
 # Kuhlmann v. Wilson

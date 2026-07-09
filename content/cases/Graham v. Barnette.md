@@ -35,7 +35,7 @@ holding: "After Caniglia v. Strom, using the 'community caretaking' label for wa
 lake:
   record_id: Graham v. Barnette
   status: verified
-  projected_at: 2026-07-06
+  projected_at: 2026-07-09
 ---
 
 # Graham v. Barnette

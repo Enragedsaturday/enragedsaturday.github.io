@@ -35,7 +35,7 @@ holding: "An inventory search must not be a ruse for general rummaging to discov
 lake:
   record_id: Florida v. Wells
   status: verified
-  projected_at: 2026-07-06
+  projected_at: 2026-07-09
 ---
 
 # Florida v. Wells

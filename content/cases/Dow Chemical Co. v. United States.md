@@ -37,7 +37,7 @@ holding: "Precision aerial photography of the open areas of an industrial comple
 lake:
   record_id: Dow Chemical Co. v. United States
   status: verified
-  projected_at: 2026-07-06
+  projected_at: 2026-07-09
 ---
 
 # Dow Chemical Co. v. United States

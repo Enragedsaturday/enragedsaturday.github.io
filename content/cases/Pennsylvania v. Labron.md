@@ -35,7 +35,7 @@ holding: "No separate exigency requirement beyond ready mobility: if a car is re
 lake:
   record_id: Pennsylvania v. Labron
   status: verified
-  projected_at: 2026-07-06
+  projected_at: 2026-07-09
 ---
 
 # Pennsylvania v. Labron

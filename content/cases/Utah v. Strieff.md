@@ -35,7 +35,7 @@ holding: "Attenuation: discovery of a valid pre-existing arrest warrant during a
 lake:
   record_id: Utah v. Strieff
   status: verified
-  projected_at: 2026-07-06
+  projected_at: 2026-07-09
 ---
 
 # Utah v. Strieff

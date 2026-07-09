@@ -35,7 +35,7 @@ holding: "Routine searches at the international border (including incoming inter
 lake:
   record_id: United States v. Ramsey
   status: verified
-  projected_at: 2026-07-06
+  projected_at: 2026-07-09
 ---
 
 # United States v. Ramsey

@@ -35,7 +35,7 @@ holding: "A right can be clearly established **without a factually identical cas
 lake:
   record_id: Hope v. Pelzer
   status: verified
-  projected_at: 2026-07-06
+  projected_at: 2026-07-09
 ---
 
 # Hope v. Pelzer

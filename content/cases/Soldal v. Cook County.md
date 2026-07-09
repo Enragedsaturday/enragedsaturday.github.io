@@ -39,7 +39,7 @@ holding: "A 'seizure' of property occurs whenever there is meaningful interferen
 lake:
   record_id: Soldal v. Cook County
   status: verified
-  projected_at: 2026-07-06
+  projected_at: 2026-07-09
 ---
 
 # Soldal v. Cook County

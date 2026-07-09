@@ -35,7 +35,7 @@ holding: "Naked-eye observation of a backyard greenhouse from a helicopter lawfu
 lake:
   record_id: Florida v. Riley
   status: verified
-  projected_at: 2026-07-06
+  projected_at: 2026-07-09
 ---
 
 # Florida v. Riley

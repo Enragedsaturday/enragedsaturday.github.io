@@ -35,7 +35,7 @@ holding: "With PC to search a car, officers may search a passenger's belongings 
 lake:
   record_id: Wyoming v. Houghton
   status: verified
-  projected_at: 2026-07-06
+  projected_at: 2026-07-09
 ---
 
 # Wyoming v. Houghton

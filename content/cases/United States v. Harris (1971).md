@@ -37,7 +37,7 @@ holding: "An informant's statement against his penal interest is itself an indic
 lake:
   record_id: "United States v. Harris (1971)"
   status: verified
-  projected_at: 2026-07-06
+  projected_at: 2026-07-09
 ---
 
 # United States v. Harris (1971)

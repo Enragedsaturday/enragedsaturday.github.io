@@ -37,7 +37,7 @@ holding: "The knock-and-talk implied license is bounded by both time and purpose
 lake:
   record_id: United States v. Lundin
   status: verified
-  projected_at: 2026-07-06
+  projected_at: 2026-07-09
 ---
 
 # United States v. Lundin

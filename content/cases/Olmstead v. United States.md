@@ -37,7 +37,7 @@ holding: "Wiretapping with no physical entry was not a search — pure property/
 lake:
   record_id: Olmstead v. United States
   status: verified
-  projected_at: 2026-07-06
+  projected_at: 2026-07-09
 ---
 
 # Olmstead v. United States

@@ -35,7 +35,7 @@ holding: "Where probable cause exists and evidence is readily destructible, the 
 lake:
   record_id: Cupp v. Murphy
   status: verified
-  projected_at: 2026-07-06
+  projected_at: 2026-07-09
 ---
 
 # Cupp v. Murphy

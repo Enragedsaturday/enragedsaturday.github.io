@@ -35,7 +35,7 @@ holding: "The admission of an involuntary/coerced confession is a \"trial error\
 lake:
   record_id: Arizona v. Fulminante
   status: verified
-  projected_at: 2026-07-06
+  projected_at: 2026-07-09
 ---
 
 # Arizona v. Fulminante

@@ -39,7 +39,7 @@ holding: "The Self-Incrimination Clause is a trial right: coercive police questi
 lake:
   record_id: Chavez v. Martinez
   status: verified
-  projected_at: 2026-07-06
+  projected_at: 2026-07-09
 ---
 
 # Chavez v. Martinez

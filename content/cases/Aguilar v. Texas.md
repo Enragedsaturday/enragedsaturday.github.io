@@ -35,7 +35,7 @@ holding: "A magistrate may issue a warrant on an informant's hearsay only if the
 lake:
   record_id: Aguilar v. Texas
   status: verified
-  projected_at: 2026-07-06
+  projected_at: 2026-07-09
 ---
 
 # Aguilar v. Texas

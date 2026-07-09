@@ -35,7 +35,7 @@ holding: "A confession that is the product of a drug having the effect of a 'tru
 lake:
   record_id: Townsend v. Sain
   status: verified
-  projected_at: 2026-07-06
+  projected_at: 2026-07-09
 ---
 
 # Townsend v. Sain

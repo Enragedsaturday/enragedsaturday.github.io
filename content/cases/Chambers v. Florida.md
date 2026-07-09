@@ -35,7 +35,7 @@ holding: "Confessions extracted through prolonged, incommunicado interrogation o
 lake:
   record_id: Chambers v. Florida
   status: verified
-  projected_at: 2026-07-06
+  projected_at: 2026-07-09
 ---
 
 # Chambers v. Florida

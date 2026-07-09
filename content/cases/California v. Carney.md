@@ -35,7 +35,7 @@ holding: "The automobile exception applies to a motor home being used as a vehic
 lake:
   record_id: California v. Carney
   status: verified
-  projected_at: 2026-07-06
+  projected_at: 2026-07-09
 ---
 
 # California v. Carney

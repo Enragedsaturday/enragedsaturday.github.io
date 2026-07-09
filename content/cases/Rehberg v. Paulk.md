@@ -23,12 +23,12 @@ treatment:
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/626447/rehberg-v-paulk/"
   cluster_id: 626447
-  opinion_id: null
+  opinion_id: 626447
   identity_checked: true
 lake:
   record_id: Rehberg v. Paulk
   status: under_review
-  projected_at: 2026-07-07
+  projected_at: 2026-07-09
 homes:
   - page: "[[Absolute Immunity]]"
     role: Anchor

@@ -35,7 +35,7 @@ holding: "When a vehicle is stopped, a passenger is seized just as the driver is
 lake:
   record_id: Brendlin v. California
   status: verified
-  projected_at: 2026-07-06
+  projected_at: 2026-07-09
 ---
 
 # Brendlin v. California

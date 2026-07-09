@@ -35,7 +35,7 @@ holding: "The Sixth Amendment right to counsel attaches only at or after the ini
 lake:
   record_id: United States v. Gouveia
   status: verified
-  projected_at: 2026-07-06
+  projected_at: 2026-07-09
 ---
 
 # United States v. Gouveia

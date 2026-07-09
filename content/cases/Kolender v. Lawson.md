@@ -37,7 +37,7 @@ holding: "A stop-and-identify statute that requires a detained suspect to provid
 lake:
   record_id: Kolender v. Lawson
   status: under_review
-  projected_at: 2026-07-06
+  projected_at: 2026-07-09
 ---
 
 # Kolender v. Lawson

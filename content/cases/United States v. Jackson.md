@@ -35,7 +35,7 @@ holding: "Although the warrant application failed to supply probable cause, the 
 lake:
   record_id: United States v. Jackson
   status: verified
-  projected_at: 2026-07-06
+  projected_at: 2026-07-09
 ---
 
 # United States v. Jackson
