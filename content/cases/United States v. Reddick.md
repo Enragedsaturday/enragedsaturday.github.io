@@ -30,8 +30,6 @@ lake:
   status: under_review
   projected_at: 2026-07-07
 homes:
-  - page: "[[Fourth Amendment Framework]]"
-    role: Key
   - page: "[[Private and Foreign Searches]]"
     role: "Key — hash-match split (5th Cir.)"
 related:
@@ -77,7 +75,6 @@ Microsoft's automated hash-value comparison had already identified Reddick's fil
 **Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub; its citator and progeny history have not completed the two-key verification, so it renders under the ⚪ banner until S9 promotion. *Reddick* applies the *[[United States v. Jacobsen|Jacobsen]]* private-search doctrine to automated hash-value matching: because a private company's hash comparison exposes a file's status before any officer looks, the officer's confirmatory viewing adds nothing the Fourth Amendment protects. Note the live cross-circuit tension over how far the doctrine reaches when no human at the private company ever viewed the specific file — the Ninth Circuit has diverged on that point — so teach *Reddick* as the Fifth Circuit's confirmatory-viewing rule, not a settled national standard.
 
 ## Appears on
-- [[Fourth Amendment Framework]] — *Key*
 - [[Private and Foreign Searches]] — *Key — hash-match split (5th Cir.)*
 
 ## Sources

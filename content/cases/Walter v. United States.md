@@ -26,8 +26,6 @@ courtlistener:
   opinion_id: 9428007
   identity_checked: true
 homes:
-  - page: "[[Fourth Amendment Framework]]"
-    role: "Key — Anchor"
   - page: "[[Private and Foreign Searches]]"
     role: "Key — scope limit"
 related: ["[[United States v. Jacobsen]]"]
@@ -67,7 +65,6 @@ The warrantless projection of the films exceeded the scope of the private search
 - No negative treatment. The private-search principle — that government agents may not exceed the scope of an earlier private search without independent justification — was adopted and refined by [[United States v. Jacobsen]] (1984), which framed the inquiry as whether the official conduct exceeded the scope of the private search.
 
 ## Appears on
-- [[Fourth Amendment Framework]] — *Key — Anchor*
 - [[Private and Foreign Searches]] — *Key — scope limit*
 
 ## Sources

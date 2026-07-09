@@ -1408,3 +1408,33 @@ S.Ct.-paginated cache pins (Wearry/Turner/Connick/Rothgery/Montejo) flagged for 
 confirm; 5 owed cases under_review status class. SCOREBOARD: CATS 2-10 COMPLETE = 69 units
 born draft. NEXT: batch 18 cat-1 Foundations (Framework B-hub w/ TEACH-01-worst + 12b hub
 migration + :88 multi-circuit label + batch-5-owed private-search demote; 3 C siblings).
+
+**BATCH 18 CLOSED — CAT-1 FOUNDATIONS (2026-07-09) — CATEGORY 1 COMPLETE:** FA Framework
+REBUILT AS PURE ROUTER HUB per SD1/§9 (H1 → orienting question → Brief roadmap
+[gov-action→threshold→standing→CREW→remedy] → non-case steps table → pitfalls → Visual;
+NO callout, NO Key table — the old Key table was pure drift, none of its cases homed here);
+FOUR standing debts cleared in one rewrite: TEACH-01-worst (Chatrie bullet OUT → digital
+cross-ref), Phase-1c full-skip ("& subsequent treatment" variant heading DEAD, survey RD
+1→0), Phase-1b Framework:88 (compound label resolved-by-relocation, LINT-4 3→2),
+batch-5-owed private-search demote (Jacobsen/Walter/Verdugo/Wilson/Reddick FA-Framework
+homes dropped two-sided, real primaries kept, Case Index 10 rows). Common Law (C: TEACH-04g
+Historical-tier language, Riley→Related w/ SIA-Cell-Phones primary, title=canonical +
+filename kept) + Analysis Checklist (C, type:practical, checklist IS the body) +
+Recalibration (C, Katz→Jones/Carpenter narrative, 04d residue 0). TEACH-12b: rule-skel 6→2
+(residual = CREW + Golden Rules, cat-13's). ADAMS QUOTE DOWNGRADED to paraphrase
+(least-certain, per batch-17 discipline); Otis/Camden/Boyd quote-pins → S9 G3/G4
+(quote_fidelity mismatch flags). ORCHESTRATOR FIX — LINT-15 HUB HOOK: the worker correctly
+REFUSED to fake a callout when LINT-15 (built pre-SD1) demanded one on the hub; resolution =
+"hub" added to EXEMPT_TYPES (auditable frontmatter classification, NOT the overview:true
+hack) + FA Framework type:doctrine→hub; self-test PASS, Framework findings 0, code delta
+rides the standing gate. Registry node foundations.fourth-amendment-framework now
+semantically orphaned (hub owns no point) → S3 DECISION JOURNALED (re-home to Two
+Definitions family or retire; LINT-20 stays green meanwhile). Owed rows 0 (verified all 251
+pointers). Mode lake-grounded 0 CL; Riley stub divergence re-confirmed (register);
+Lee/Milam/Verdugo-⚪ + Terry court_id:null → S9. GATES: run_all 7059→7001 (HIGH 3984→
+stable, -34 zero-new), LINT-15 hub 0 + suite 0/0, LINT-17 0, LINT-4 3→2, survey em 6.5/1k
+slip 26 leaks 7 inverted 1 rule-skel 2 RD 0, build 722/2839. SCOREBOARD: CATS 1-10 COMPLETE
+(all but 11-13) = 73 units born draft. NEXT: batch 19 cat-12+13 (Reference: Fed Courts C +
+Reading & Citing C + State Citations NEW C + Legal Research split C + Verifying Good Law C;
+Craft: Golden Rules C + CREW C + Instructor Development C — the last rule-skels die); then
+cat-11 FULLER BUILD-OUT batch; repair lane; close.

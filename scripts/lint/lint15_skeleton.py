@@ -96,7 +96,10 @@ REQUIRED_DOCTRINE_H2_DISPLAY = {
 # a single italic line, e.g. the field-decisive question `*…?*` (NOT bold `**…**`)
 _ITALIC_LINE_RE = re.compile(r"^\*(?!\*).+\*$")
 
-EXEMPT_TYPES = {"overview", "reference", "craft", "category", "fixture", "index"}
+EXEMPT_TYPES = {"overview", "reference", "craft", "category", "fixture", "index",
+                "hub"}  # "hub" = the S7 SD1 designated-hub exempt class (router pages
+                        # owning no point — no rule callout / Key-cases demanded;
+                        # adjudicated at batch-18, FA Framework exemplar)
 
 # F-S5-10 — fail-closed page typing. A content page whose `type` is missing or
 # unrecognized cannot be classified by LINT-15 and is a HIGH finding, EXCEPT the

@@ -30,8 +30,6 @@ lake:
   status: under_review
   projected_at: 2026-07-07
 homes:
-  - page: "[[Fourth Amendment Framework]]"
-    role: Key
   - page: "[[Private and Foreign Searches]]"
     role: "Key — Anchor (foreign search)"
 related:
@@ -72,7 +70,6 @@ The judgment of the Ninth Circuit was **reversed**. Rehnquist, C.J., delivered t
 **Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub; its citator and progeny history have not completed the two-key verification, so it renders under the ⚪ banner until S9 promotion. *Verdugo-Urquidez* fixes the personal scope of the Fourth Amendment — defining who counts as "the people" — and remains the framework anchor for questions about the Amendment's reach over nonresident aliens and conduct abroad.
 
 ## Appears on
-- [[Fourth Amendment Framework]] — *Key*
 - [[Private and Foreign Searches]] — *Key — Anchor (foreign search)*
 
 ## Sources

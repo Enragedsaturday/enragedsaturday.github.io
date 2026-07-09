@@ -30,8 +30,6 @@ lake:
   status: under_review
   projected_at: 2026-07-07
 homes:
-  - page: "[[Fourth Amendment Framework]]"
-    role: Key
   - page: "[[Private and Foreign Searches]]"
     role: "Key — hash-match split (9th Cir.)"
   - page: "[[Reasonable Expectation of Privacy]]"
@@ -80,7 +78,6 @@ The Ninth Circuit **reversed** the denial of suppression and **vacated** Wilson'
 **Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub; its citator and progeny history have not completed the two-key verification, so it renders under the ⚪ banner until S9 promotion. *Wilson* is the Ninth Circuit's counterweight on the digital **private-search** frontier: applying *[[United States v. Jacobsen|Jacobsen]]*'s exceed-the-scope test, it holds that an **algorithmic hash-match no human has viewed** does not let the government open the file without a warrant. That squarely diverges from the Fifth Circuit's *[[United States v. Reddick|Reddick]]* (and the Sixth Circuit's *Miller*), which treat the confirmatory viewing as within the private search — an unresolved split worth teaching alongside *[[Carpenter v. United States|Carpenter]]*'s caution about extending old doctrines to new technology.
 
 ## Appears on
-- [[Fourth Amendment Framework]] — *Key*
 - [[Private and Foreign Searches]] — *Key — hash-match split (9th Cir.)*
 - [[Reasonable Expectation of Privacy]] — *Related (cross-doctrine)*
 

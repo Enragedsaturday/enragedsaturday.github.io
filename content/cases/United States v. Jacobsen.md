@@ -26,8 +26,6 @@ courtlistener:
   opinion_id: 111143
   identity_checked: true
 homes:
-  - page: "[[Fourth Amendment Framework]]"
-    role: "Key — Anchor"
   - page: "[[Private and Foreign Searches]]"
     role: "Key — Anchor"
 related: ["[[Katz v. United States]]", "[[Carpenter v. United States]]", "[[United States v. Jones]]"]
@@ -69,7 +67,6 @@ Neither the reinspection of the package nor the field test was an unreasonable s
 - No negative subsequent treatment identified. *Jacobsen* supplies the canonical Fourth Amendment definitions of "search" and "seizure," the government-action requirement, and the private-search doctrine; it remains good law and is read alongside the trespass/privacy framework of [[Katz v. United States]], [[United States v. Jones]], and [[Carpenter v. United States]].
 
 ## Appears on
-- [[Fourth Amendment Framework]] — *Key — Anchor*
 - [[Private and Foreign Searches]] — *Key — Anchor*
 
 ## Sources
