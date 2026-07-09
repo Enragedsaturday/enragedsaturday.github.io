@@ -1699,3 +1699,11 @@ verified_identity frontier shell — page blast radius to be assessed).
 (2) `Lewis v. United States (1966)` — lake-internal year (1966) vs date_decided 1967-01-09
 (live-confirmed); minor derivation defect. The lane also self-caught a checkpointing slip
 (Barrett row) via its coverage assert — restored, 74/74 accounted.
+
+**MIS-KEY SWEEP (mechanical, offline).** 208 raw suspects → 198 = the known under_review
+no-lead mint class (expected, awaits S9 promotion — NOT mis-keys); true suspects 10: the 7
+S7-re-keyed records lack pool text under their NEW lead ids (re-key without text re-fetch —
+coherent class, identity itself live-confirmed), both Davis records are stubs (88B/154B),
+Flippo = likely regex FP. Riley nuance: lead text is 82KB (pilot read it) vs doctrine lanes'
+motions-order claim — P2 reconciles. S2 builder work order staged
+(S9-S2-CACHE-REPAIR-WORKORDER.md, ~15 REST calls). Findings 6 filed, LINT-30 holding open.
