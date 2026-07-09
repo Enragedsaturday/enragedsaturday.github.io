@@ -30,7 +30,7 @@ lake:
   status: under_review
   projected_at: 2026-07-07
 homes:
-  - page: "[[Confessions Interrogation And The Fifth Amendment]]"
+  - page: "[[Confessions, Interrogation & the Fifth Amendment]]"
     role: Anchor
 related:
   - "[[Schmerber v. California]]"

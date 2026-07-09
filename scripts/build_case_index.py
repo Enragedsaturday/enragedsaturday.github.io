@@ -119,8 +119,8 @@ def flagged_rows(existing_lines):
     return out
 
 
-def brief_rows():
-    """Append the 8 brief-mention exception rows (no `content/cases/` page)
+def brief_rows(page_titles=frozenset()):
+    """Append the brief-mention exception rows (no `content/cases/` page)
     from the machine-readable CASE-INDEX-EXPORT table in
     `brief-mention-queue.md`. These are S5-demoted cases that earn a
     Case-Index row + an S6 home-page history note but NO BIRAC page.
@@ -129,6 +129,12 @@ def brief_rows():
     page to link) tagged 'brief-mention — no page'; the one-line holding; the
     treatment glyph (N13 — never blank); the home-doctrine wikilink; and the
     CourtListener opinion link. Deterministic -> idempotent.
+
+    De-dup guard: a queued case that has SINCE been authored a
+    `content/cases/` page (S5 demotion is reversible; S7 promoted many) is
+    skipped here — its authored page row is the single source of truth, so it
+    must not also emit a stale "no page" brief-mention row (page-vs-brief-
+    mention duplicate). `page_titles` is the set of authored case-page titles.
     """
     out = []
     if not os.path.exists(BRIEF_QUEUE):
@@ -148,6 +154,8 @@ def brief_rows():
             if len(cells) != 5:
                 continue
             case, holding, status, home, url = cells
+            if case in page_titles:
+                continue  # authored page row wins (single source of truth)
             glyph = STATUS_LABEL.get(status.lower(), status or "good")
             cl = "[opinion](%s)" % url if url.startswith("http") else "—"
             label = "*%s — brief-mention (no page)*" % case
@@ -166,8 +174,13 @@ def build():
         raise RuntimeError("table header not found in Case Index.md")
     preamble = lines[:hdr_idx]
 
-    briefs = brief_rows()
-    rows = page_rows() + flagged_rows(lines) + briefs
+    pages = page_rows()
+    page_titles = frozenset(
+        cells[0][2:-2] for _k, cells in pages
+        if cells[0].startswith("[[") and cells[0].endswith("]]")
+    )
+    briefs = brief_rows(page_titles)
+    rows = pages + flagged_rows(lines) + briefs
     rows.sort(key=lambda r: r[0])
 
     body = [TABLE_HEADER, TABLE_SEP]
