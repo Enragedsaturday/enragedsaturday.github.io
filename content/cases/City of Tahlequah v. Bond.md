@@ -52,7 +52,7 @@ Whether the officers were entitled to [[Qualified Immunity|qualified immunity]] 
 ## Rule
 Yes. Clearly established law must be defined with specificity: "We have repeatedly told courts not to define clearly established law at too high a level of generality." — *City of Tahlequah v. Bond*, 595 U.S. 9 (2021) (slip op., at 3). ^pin-op3
 
-Qualified immunity "protects '"all but the plainly incompetent or those who knowingly violate the law."'" — *Id.* (slip op., at 3) (quoting *District of Columbia v. Wesby*). ^pin-op3a
+[[Qualified Immunity|Qualified immunity]] "protects '"all but the plainly incompetent or those who knowingly violate the law."'" — *Id.* (slip op., at 3) (quoting *District of Columbia v. Wesby*). ^pin-op3a
 
 ## Application
 None of the decisions the Tenth Circuit invoked involved facts close enough to give these officers fair notice that confronting an armed, intoxicated man who raised a hammer would violate the Fourth Amendment. Because no precedent squarely governed the situation the officers faced, they did not violate clearly established law and were entitled to [[Qualified Immunity|qualified immunity]] on this record.

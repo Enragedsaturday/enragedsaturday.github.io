@@ -35,13 +35,13 @@ related:
 - **Ignoring the probable-cause bar.** In the ordinary case the plaintiff must plead and prove **no probable cause**; its presence generally defeats the claim (*[[Nieves v. Bartlett|Nieves]]*).
 - **Reading the *[[Nieves v. Bartlett|Nieves]]* exception too narrowly.** After *[[Gonzalez v. Trevino|Gonzalez]]*, the plaintiff need not produce a perfectly identical comparator, and the exception is not confined to snap arrests.
 - **Confusing retaliatory arrest with malicious prosecution.** They are different claims with different elements; a seizure pursuant to legal process is [[Malicious Prosecution under the Fourth Amendment]].
-- **Forgetting qualified immunity.** Even a viable First Amendment theory meets the clearly-established defense (see [[Qualified Immunity]]); *Reichle v. Howards*, 566 U.S. 658 (2012), granted immunity precisely because the probable-cause question was then unsettled.
+- **Forgetting [[Qualified Immunity|qualified immunity]].** Even a viable First Amendment theory meets the clearly-established defense (see [[Qualified Immunity]]); *Reichle v. Howards*, 566 U.S. 658 (2012), granted immunity precisely because the probable-cause question was then unsettled.
 
 ## Lower-court developments
 
 The Supreme Court supplies the probable-cause framework; the circuits apply the *[[Nieves v. Bartlett|Nieves]]* exception case by case, and each decision below binds only in its own circuit.
 
-- **Villarreal v. Alaniz (5th Cir. 2024) (en banc), 91 F.4th 693** — *post-Gonzalez application (immunity granted).* The en banc court granted qualified immunity to officers who arrested a citizen-journalist, applying the *[[Nieves v. Bartlett|Nieves]]*/*[[Gonzalez v. Trevino|Gonzalez]]* framework to the specific facts. A worked example of how the narrow exception is litigated after *[[Gonzalez v. Trevino|Gonzalez]]*. *Role: application / immunity grant.* **Binding in-circuit — 5th Cir.**
+- **Villarreal v. Alaniz (5th Cir. 2024) (en banc), 91 F.4th 693** — *post-Gonzalez application (immunity granted).* The [[Reading and Citing Cases#en-banc|en banc]] court granted [[Qualified Immunity|qualified immunity]] to officers who arrested a citizen-journalist, applying the *[[Nieves v. Bartlett|Nieves]]*/*[[Gonzalez v. Trevino|Gonzalez]]* framework to the specific facts. A worked example of how the narrow exception is litigated after *[[Gonzalez v. Trevino|Gonzalez]]*. *Role: application / immunity grant.* **Binding in-circuit — 5th Cir.**
 
 ## Key cases
 

@@ -62,7 +62,7 @@ The warrantless federal seizure violated the Fourth Amendment; admitting the sei
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.
-- No negative treatment of its core holding. *Weeks* originally bound only federal officers; its exclusionary rule was **extended to the States** by [[Mapp v. Ohio]] (1961). The rule was later elaborated and qualified — derivative evidence in [[Wong Sun v. United States]] and the good-faith exception in [[United States v. Leon]] — but *Weeks* remains the foundational authority.
+- No negative treatment of its core holding. *Weeks* originally bound only federal officers; its exclusionary rule was **extended to the States** by [[Mapp v. Ohio]] (1961). The rule was later elaborated and qualified — derivative evidence in [[Wong Sun v. United States]] and the [[The Good-Faith Exception|good-faith exception]] in [[United States v. Leon]] — but *Weeks* remains the foundational authority.
 
 ## Appears on
 - [[The Exclusionary Rule]] — *Key — Anchor*

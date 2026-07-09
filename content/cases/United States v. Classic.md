@@ -50,7 +50,7 @@ Louisiana election commissioners were indicted under the federal criminal civil-
 Whether officials who misuse authority conferred on them by state law act "under color of" state law for purposes of the federal civil-rights statutes (and whether the right to vote in a primary is constitutionally protected).
 
 ## Rule
-Officials who abuse power held by virtue of their state office act under color of state law. "Misuse of power, possessed by virtue of state law and made possible only because the wrongdoer is clothed with the authority of state law, is action taken 'under color of' state law." — 313 U.S. at 326. ^pin-326
+Officials who abuse power held by virtue of their state office act under [[Section 1983 Liability and Qualified Immunity|color of state law]]. "Misuse of power, possessed by virtue of state law and made possible only because the wrongdoer is clothed with the authority of state law, is action taken 'under color of' state law." — 313 U.S. at 326. ^pin-326
 
 The Court also held that the constitutionally protected right to choose a Representative includes the right to vote in a primary that is an integral part of the election machinery, so the commissioners' fraud deprived voters of a federally secured right.
 

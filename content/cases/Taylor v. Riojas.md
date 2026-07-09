@@ -50,7 +50,7 @@ Trent Taylor, a Texas inmate, alleged that for six days correctional officers co
 Whether officers were entitled to [[Qualified Immunity|qualified immunity]] for these conditions of confinement merely because no prior decision had specifically addressed materially similar facts.
 
 ## Rule
-No. Where the unconstitutionality of conduct is obvious, qualified immunity does not require a prior case on point. "no reasonable correctional officer could have concluded that, under the extreme circumstances of this case, it was constitutionally permissible to house Taylor in such deplorably unsanitary conditions for such an extended period of time." — 592 U.S. 7 (slip op., at 2). ^pin-7
+No. Where the unconstitutionality of conduct is obvious, [[Qualified Immunity|qualified immunity]] does not require a prior case on point. "no reasonable correctional officer could have concluded that, under the extreme circumstances of this case, it was constitutionally permissible to house Taylor in such deplorably unsanitary conditions for such an extended period of time." — 592 U.S. 7 (slip op., at 2). ^pin-7
 
 Invoking *[[Hope v. Pelzer]]*, the Court reiterated that "a general constitutional rule already identified in the decisional law may apply with obvious clarity to the specific conduct in question." "Confronted with the particularly egregious facts of this case, any reasonable officer should have realized that Taylor's conditions of confinement offended the Constitution." — *Id.* (slip op., at 3). ^pin-7b
 
@@ -58,7 +58,7 @@ Invoking *[[Hope v. Pelzer]]*, the Court reiterated that "a general constitution
 The egregiousness of the conditions — cells teeming with human waste, with no necessity or [[Exigent Circumstances and Hot Pursuit|exigency]] shown and no reason the conditions could not have been mitigated — made the violation obvious, so the absence of a factually identical precedent did not entitle the officers to immunity. The Fifth Circuit's lone contrary case was "too dissimilar, in terms of both conditions and duration of confinement, to create any doubt about the obviousness of Taylor's right." The Court noted that an officer-by-officer analysis would still be required [[Reading and Citing Cases#on-remand|on remand]].
 
 ## Conclusion
-Certiorari granted, judgment vacated, and remanded (per curiam). Qualified immunity was wrongly granted; the obvious unconstitutionality of the conditions provided the officers fair warning even without a case directly on point.
+[[Reading and Citing Cases#certiorari-cert|Certiorari]] granted, judgment [[Reading and Citing Cases#vacated|vacated]], and [[Reading and Citing Cases#on-remand|remanded]] (per curiam). [[Qualified Immunity|Qualified immunity]] was wrongly granted; the obvious unconstitutionality of the conditions provided the officers fair warning even without a case directly on point.
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.

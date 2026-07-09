@@ -54,7 +54,7 @@ Whether the compelled, warrantless withdrawal and chemical analysis of a DUI arr
 ## Rule
 **Fifth Amendment** — blood-alcohol evidence is physical, not testimonial: "the privilege protects an accused only from being compelled to testify against himself, or otherwise provide the State with evidence of a testimonial or communicative nature, and that the withdrawal of blood and use of the analysis in question in this case did not involve compulsion to these ends." — 384 U.S. at 761. ^pin-761
 
-**Fourth Amendment** — a warrantless blood draw on probable cause is reasonable when exigency leaves no time for a warrant. Because alcohol diminishes after drinking stops and time was lost transporting the accused and investigating the scene, "there was no time to seek out a magistrate and secure a warrant. Given these special facts, we conclude that the attempt to secure evidence of blood-alcohol content in this case was an appropriate incident to petitioner's arrest." — [*Id.* at 770–771](https://www.courtlistener.com/opinion/107262/schmerber-v-california/#:~:text=there%20was%20no%20time%20to). ^pin-770
+**Fourth Amendment** — a warrantless blood draw on probable cause is reasonable when [[Exigent Circumstances and Hot Pursuit|exigency]] leaves no time for a warrant. Because alcohol diminishes after drinking stops and time was lost transporting the accused and investigating the scene, "there was no time to seek out a magistrate and secure a warrant. Given these special facts, we conclude that the attempt to secure evidence of blood-alcohol content in this case was an appropriate incident to petitioner's arrest." — [*Id.* at 770–771](https://www.courtlistener.com/opinion/107262/schmerber-v-california/#:~:text=there%20was%20no%20time%20to). ^pin-770
 
 ## Application
 Schmerber's blood-alcohol level was naturally falling as his body metabolized the alcohol, and the officer — who had probable cause to believe he had been driving while intoxicated — had spent the available time bringing him to the hospital and investigating the accident, leaving no opportunity to obtain a warrant. On those special facts the warrantless extraction of blood was a reasonable response to the threatened loss of evidence, and a blood test performed by a physician in a hospital was a reasonable means of obtaining it.
@@ -64,8 +64,8 @@ Neither the Fifth nor the Fourth Amendment was violated; the conviction was affi
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.
-- [[Missouri v. McNeely]] (2013) **clarified** that the natural dissipation of alcohol does **not** create a per se exigency justifying a warrantless DUI blood draw; exigency is judged case-by-case on the totality — consistent with *Schmerber*'s own fact-bound analysis.
-- [[Birchfield v. North Dakota]] (2016) held a warrantless **blood** test is **not** justified as a search incident to a DUI arrest (a **breath** test is), so post-*[[Birchfield v. North Dakota|Birchfield]]* a warrantless blood draw rests on exigency or another exception, not SITA.
+- [[Missouri v. McNeely]] (2013) **clarified** that the natural dissipation of alcohol does **not** create a [[Common Legal Terms#per-se|per se]] [[Exigent Circumstances and Hot Pursuit|exigency]] justifying a warrantless DUI blood draw; [[Exigent Circumstances and Hot Pursuit|exigency]] is judged case-by-case on the totality — consistent with *Schmerber*'s own fact-bound analysis.
+- [[Birchfield v. North Dakota]] (2016) held a warrantless **blood** test is **not** justified as a search incident to a DUI arrest (a **breath** test is), so post-*[[Birchfield v. North Dakota|Birchfield]]* a warrantless blood draw rests on [[Exigent Circumstances and Hot Pursuit|exigency]] or another exception, not SITA.
 
 ## Appears on
 - [[Exigent Circumstances and Hot Pursuit]] — *Key — Anchor*

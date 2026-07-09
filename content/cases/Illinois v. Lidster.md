@@ -50,7 +50,7 @@ A week after a fatal hit-and-run, police set up a highway checkpoint at the same
 Whether a highway checkpoint whose purpose is to ask motorists, as members of the public, for information about a crime committed by someone else is an unreasonable seizure under the Fourth Amendment.
 
 ## Rule
-No; such information-seeking stops are not per se unconstitutional and are judged by a balancing test. "The checkpoint stop here differs significantly from that in Edmond. The stop's primary law enforcement purpose was not to determine whether a vehicle's occupants were committing a crime, but to ask vehicle occupants, as members of the public, for their help in providing information about a crime in all likelihood committed by others." — 540 U.S. at 423. ^pin-423
+No; such information-seeking stops are not [[Common Legal Terms#per-se|per se]] unconstitutional and are judged by a balancing test. "The checkpoint stop here differs significantly from that in Edmond. The stop's primary law enforcement purpose was not to determine whether a vehicle's occupants were committing a crime, but to ask vehicle occupants, as members of the public, for their help in providing information about a crime in all likelihood committed by others." — 540 U.S. at 423. ^pin-423
 
 Reasonableness is judged "on the basis of the individual circumstances." — [*Id.* at 426](https://www.courtlistener.com/opinion/131154/illinois-v-lidster/#:~:text=on%20the%20basis%20of%20the). ^pin-426
 

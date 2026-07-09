@@ -44,7 +44,7 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-A prohibition agent saw cases marked "whiskey" being unloaded at a building at 611 W. 46th Street and confirmed there was no permit to store liquor there. A warrant issued to search the building — described as a garage used for business purposes — and any rooms, basement, or sub-cellar connected with the garage, for "cases of whiskey." Executing it, agents seized large quantities of liquor across multiple floors. Steele sought return of the property, arguing the warrant failed to describe the place to be searched with sufficient particularity.
+A prohibition agent saw cases marked "whiskey" being unloaded at a building at 611 W. 46th Street and confirmed there was no permit to store liquor there. A warrant issued to search the building — described as a garage used for business purposes — and any rooms, basement, or sub-cellar connected with the garage, for "cases of whiskey." Executing it, agents seized large quantities of liquor across multiple floors. Steele sought return of the property, arguing the warrant failed to describe the place to be searched with sufficient [[Particularity|particularity]].
 
 ## Issue
 Did the warrant's description of the place to be searched satisfy the Fourth Amendment's [[Particularity|particularity]] requirement?

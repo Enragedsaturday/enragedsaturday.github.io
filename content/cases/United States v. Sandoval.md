@@ -50,7 +50,7 @@ During a multi-site marijuana-grow investigation in Idaho, federal agents search
 Whether a camper has a [[Reasonable Expectation of Privacy|reasonable expectation of privacy]] in a closed tent on public (BLM) land, and whether that expectation depends on whether he had permission to be there.
 
 ## Rule
-A camper has a reasonable expectation of privacy in a closed tent, and that expectation does not turn on whether he had permission to be on the public land. Applying the two-part *[[Katz v. United States|Katz]]* test (subjective expectation society recognizes as reasonable), the court held: "we do not believe the reasonableness of Sandoval's expectation of privacy turns on whether he had permission to camp on public land. Such a distinction would mean that a camper who overstayed his permit in a public campground would lose his Fourth Amendment rights, while his neighbor, whose permit had not expired, would retain those rights." — *United States v. Sandoval*, 200 F.3d 659, 661 (9th Cir. 2000). ^pin-661
+A camper has a [[Reasonable Expectation of Privacy|reasonable expectation of privacy]] in a closed tent, and that expectation does not turn on whether he had permission to be on the public land. Applying the two-part *[[Katz v. United States|Katz]]* test (subjective expectation society recognizes as reasonable), the court held: "we do not believe the reasonableness of Sandoval's expectation of privacy turns on whether he had permission to camp on public land. Such a distinction would mean that a camper who overstayed his permit in a public campground would lose his Fourth Amendment rights, while his neighbor, whose permit had not expired, would retain those rights." — *United States v. Sandoval*, 200 F.3d 659, 661 (9th Cir. 2000). ^pin-661
 
 ## Application
 The closed, four-sided tent in dense vegetation, the bottle's invisibility from outside, and Sandoval's leaving a personal prescription bottle inside all showed a subjective expectation of privacy that the government's "illegal activity / no permission" arguments did not defeat. Extending the circuit's tent cases (*[[LaDuke v. Nelson|LaDuke]]* — private property; *[[United States v. Gooch|Gooch]]* — public campground), the court held the expectation objectively reasonable even on BLM land, regardless of permission. The warrantless entry therefore violated the Fourth Amendment.
@@ -60,7 +60,7 @@ The district court erred in denying suppression; the Ninth Circuit reversed Sand
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding in-circuit — 9th Cir.**
-- No negative treatment within the circuit. **Circuit split:** the court noted that the Tenth Circuit reached a different conclusion in *[[United States v. Ruckman]]*, 806 F.2d 1471 (10th Cir. 1986) (no reasonable expectation of privacy for a person occupying a cave on public land). *Sandoval* anchors the rule that a closed tent on public land retains Fourth Amendment protection independent of the camper's permission to be there.
+- No negative treatment within the circuit. **Circuit split:** the court noted that the Tenth Circuit reached a different conclusion in *[[United States v. Ruckman]]*, 806 F.2d 1471 (10th Cir. 1986) (no [[Reasonable Expectation of Privacy|reasonable expectation of privacy]] for a person occupying a cave on public land). *Sandoval* anchors the rule that a closed tent on public land retains Fourth Amendment protection independent of the camper's permission to be there.
 
 ## Appears on
 - [[Tents]] — *Key — Anchor*

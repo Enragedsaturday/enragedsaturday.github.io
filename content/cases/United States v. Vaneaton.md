@@ -55,7 +55,7 @@ If he so exposed himself, the *[[Payton v. New York|Payton]]* presumption is ove
 ## Application
 The record showed voluntary exposure. "When Vaneaton saw them through the window, he voluntarily opened the door and exposed both himself and the immediate area to them. No threats or force were used by the police to get him to open the door, and his actions were not taken in response to a claim of lawful authority. The police did not enter the house until they formally placed Vaneaton under arrest." 49 F.3d at 1427. ^pin-1427b
 
-Because voluntariness is a factual finding reviewed only for clear error (*[[United States v. Al-Azzawy]]*, 784 F.2d 890, 895 (9th Cir. 1986)), and the magistrate's findings were supported, no *[[Payton v. New York|Payton]]* violation occurred.
+Because voluntariness is a factual finding reviewed only for [[Common Legal Terms#clear-error|clear error]] (*[[United States v. Al-Azzawy]]*, 784 F.2d 890, 895 (9th Cir. 1986)), and the magistrate's findings were supported, no *[[Payton v. New York|Payton]]* violation occurred.
 
 ## Conclusion
 Affirmed. A suspect who voluntarily opens his door to a noncoercive knock and is arrested at the doorway has exposed himself to a lawful warrantless arrest; *[[Payton v. New York|Payton]]* is not offended. (Tashima, J., dissented, reading the result as contrary to *[[Payton v. New York|Payton]]*.)

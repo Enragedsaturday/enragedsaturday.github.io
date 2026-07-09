@@ -56,7 +56,7 @@ The officer gets **qualified**, not absolute, immunity, judged by the objective-
 
 The magistrate's approval does not automatically immunize the officer: the question is "whether a reasonably well-trained officer in petitioner's position would have known that his affidavit failed to establish probable cause and that he should not have applied for the warrant." — *Id.* at 345. ^pin-345
 
-Qualified immunity thus protects "all but the plainly incompetent or those who knowingly violate the law." — *Id.* at 341.
+[[Qualified Immunity|Qualified immunity]] thus protects "all but the plainly incompetent or those who knowingly violate the law." — *Id.* at 341.
 
 ## Application
 Malley argued that by presenting the affidavit to a judge he passed responsibility to the magistrate and earned absolute immunity. The Court rejected that: an officer who submits an affidavit that no reasonably competent officer would think establishes probable cause "created the unnecessary danger of an unlawful arrest" and cannot hide behind the magistrate's signature. Whether Malley's affidavit met that standard was a question for trial, so the Court [[Reading and Citing Cases#on-remand|remanded]] for application of the objective-reasonableness test.

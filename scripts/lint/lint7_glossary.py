@@ -155,6 +155,23 @@ def _blank_blockquotes(buf, text):
                     buf[i] = " "
 
 
+def _blank_wikilink_targets(buf, text):
+    """Blank the TARGET (page#anchor) portion of every `[[Target|display]]`,
+    keeping the display text visible. A wikilink target is a page NAME (a proper
+    noun / link address), never authored prose — so the page-title variant class
+    ('[[Plain View Doctrine]]' referencing the real page vs the prose term-of-art
+    'plain-view doctrine') is NOT a banned-variant defect (handoff §2.2, the
+    ~140-row known-FP class). Display text after `|` IS rendered prose and stays
+    visible (a piped '[[X|plain view doctrine]]' is still a real defect)."""
+    for m in _WIKI.finditer(text):
+        inner = text[m.start() + 2:m.end() - 2]
+        pipe = inner.find("|")
+        target_end = m.end() if pipe < 0 else (m.start() + 2 + pipe)
+        for i in range(m.start(), min(target_end, len(buf))):
+            if buf[i] != "\n":
+                buf[i] = " "
+
+
 def _line_starts(text):
     starts = [0]
     i = text.find("\n")
@@ -209,10 +226,14 @@ def check_file(path, idx, banned, routed, this_stem=None):
 
     zone_list = zones.compute_zones(text, page_stem=this_stem)
 
-    # banned-variant scan surface: R2 zones + block quotes masked (wikilink
-    # display text stays visible — a banned form authored into a link is wrong).
+    # banned-variant scan surface: R2 zones + block quotes + embed targets +
+    # wikilink TARGETS masked (the page-title FP class). Wikilink DISPLAY text and
+    # markdown-link text stay visible — a banned form authored into rendered prose
+    # is still a defect.
     banned_buf = list(zones.mask(text, zone_list))
     _blank_blockquotes(banned_buf, text)
+    _blank(banned_buf, _EMB, text)
+    _blank_wikilink_targets(banned_buf, text)
     banned_masked = "".join(banned_buf)
     for rx, canonical in banned:
         for m in rx.finditer(banned_masked):

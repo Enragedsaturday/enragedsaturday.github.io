@@ -50,7 +50,7 @@ Gail Fischer, showing signs of a beating, told police that Rodriguez had assault
 Whether a warrantless entry based on a third party's consent is valid when the police reasonably, but mistakenly, believe the consenting person has common authority over the premises.
 
 ## Rule
-The validity of an entry on apparent authority is measured by objective reasonableness, not by whether the consenting party actually had authority. The Court held that the determination of consent to enter must "be judged against an objective standard: would the facts available to the officer at the moment . . . 'warrant a man of reasonable caution in the belief'" that the consenting party had authority over the premises. — 497 U.S. at 188. ^pin-188
+The validity of an entry on [[Consent Searches|apparent authority]] is measured by objective reasonableness, not by whether the consenting party actually had authority. The Court held that the determination of consent to enter must "be judged against an objective standard: would the facts available to the officer at the moment . . . 'warrant a man of reasonable caution in the belief'" that the consenting party had authority over the premises. — 497 U.S. at 188. ^pin-188
 
 "If not, then warrantless entry without further inquiry is unlawful unless authority actually exists. But if so, the search is valid." — *Id.* at 188–189. ^pin-188a
 

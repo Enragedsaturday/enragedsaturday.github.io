@@ -50,7 +50,7 @@ An armed robber held up a taxi company and fled. Two cab drivers followed him an
 Whether the warrantless entry into and search of a house, in immediate pursuit of an armed robber reported to have entered moments earlier, was reasonable under the Fourth Amendment.
 
 ## Rule
-Hot pursuit of a fleeing armed suspect into a dwelling is a valid warrantless entry and search where the exigencies make it imperative: "neither the entry without warrant to search for the robber, nor the search for him without warrant was invalid. Under the circumstances of this case, 'the exigencies of the situation made that course imperative.'" — 387 U.S. at 298. ^pin-298
+[[Exigent Circumstances and Hot Pursuit|Hot pursuit]] of a fleeing armed suspect into a dwelling is a valid warrantless entry and search where the [[Exigent Circumstances and Hot Pursuit|exigencies]] make it imperative: "neither the entry without warrant to search for the robber, nor the search for him without warrant was invalid. Under the circumstances of this case, 'the exigencies of the situation made that course imperative.'" — 387 U.S. at 298. ^pin-298
 
 The scope follows the emergency: "The Fourth Amendment does not require police officers to delay in the course of an investigation if to do so would gravely endanger their lives or the lives of others." — *Id.* at 298–299. ^pin-299
 

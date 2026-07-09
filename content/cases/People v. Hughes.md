@@ -50,7 +50,7 @@ Hughes's cell phone was seized and its data extracted pursuant to a warrant auth
 Whether officers violated the Fourth Amendment by searching lawfully seized cell-phone data for evidence of a different crime (armed robbery) than the one for which the warrant issued (drug trafficking).
 
 ## Rule
-A warrant to search digital data authorizes review only to the extent reasonably consistent with the warrant's scope; there is no per se rule permitting review of the entire contents. "We hold that, as with any other search, an officer must limit a search of digital data from a cell phone in a manner reasonably directed to uncover evidence of the criminal activity alleged in the warrant." — *People v. Hughes*, 506 Mich. 512 (slip op., at 36–37). ^pin-36
+A warrant to search digital data authorizes review only to the extent reasonably consistent with the warrant's scope; there is no [[Common Legal Terms#per-se|per se]] rule permitting review of the entire contents. "We hold that, as with any other search, an officer must limit a search of digital data from a cell phone in a manner reasonably directed to uncover evidence of the criminal activity alleged in the warrant." — *People v. Hughes*, 506 Mich. 512 (slip op., at 36–37). ^pin-36
 
 Officers must "reasonably limit the scope of their searches to evidence related to the criminal activity alleged in the warrant and not employ that authorization as a basis for seizing and searching digital data in the manner of a general warrant in search of evidence of any and all criminal activity." — *Id.* (slip op., at [35–36](https://www.courtlistener.com/opinion/4843477/people-of-michigan-v-kristopher-allen-hughes/#:~:text=reasonably%20limit%20the%20scope%20of)). ^pin-35
 

@@ -61,7 +61,7 @@ The `¶` matters. It pins to a **paragraph** the court numbered itself, so the c
 
 ## Parallel citations (state)
 
-Some state practice strings the **official state reporter** and the **regional reporter** together. *Commonwealth v. Serge*, 586 Pa. 671, 896 A.2d 1170 (2006), is **one** case in two sets of books: `586 Pa. 671` (Pennsylvania Reports) and `896 A.2d 1170` (Atlantic Reporter), not two opinions. Many states have **discontinued their official reporters**; for those, cite the regional reporter (plus the neutral cite if the state uses one). Don't read a parallel cite as two different opinions.
+Some state practice strings the **official state [[Reading and Citing Cases#reporter|reporter]]** and the **regional [[Reading and Citing Cases#reporter|reporter]]** together. *Commonwealth v. Serge*, 586 Pa. 671, 896 A.2d 1170 (2006), is **one** case in two sets of books: `586 Pa. 671` (Pennsylvania Reports) and `896 A.2d 1170` (Atlantic [[Reading and Citing Cases#reporter|Reporter]]), not two opinions. Many states have **discontinued their official reporters**; for those, cite the regional [[Reading and Citing Cases#reporter|reporter]] (plus the neutral cite if the state uses one). Don't read a parallel cite as two different opinions.
 
 ## Finding a state high-court opinion free
 

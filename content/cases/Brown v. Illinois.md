@@ -50,9 +50,9 @@ Officers arrested Brown without probable cause or a warrant, broke into and wait
 Whether [[Miranda and Custodial Interrogation|Miranda warnings]], by themselves, break the causal chain between an illegal arrest and a subsequent confession so as to make the confession admissible under the Fourth Amendment.
 
 ## Rule
-Miranda warnings do not automatically purge the taint: "The Miranda warnings are an important factor, to be sure, in determining whether the confession is obtained by exploitation of an illegal arrest. But they are not the only factor to be considered." — 422 U.S. at 603. ^pin-603
+[[Miranda and Custodial Interrogation|Miranda warnings]] do not automatically purge the taint: "The Miranda warnings are an important factor, to be sure, in determining whether the confession is obtained by exploitation of an illegal arrest. But they are not the only factor to be considered." — 422 U.S. at 603. ^pin-603
 
-Voluntariness aside, attenuation turns on a multi-factor inquiry: "The temporal proximity of the arrest and the confession, the presence of intervening circumstances, . . . and, particularly, the purpose and flagrancy of the official misconduct . . . are all relevant." — *Id.* at 603-604. ^pin-604
+Voluntariness aside, [[Fruits and Attenuation|attenuation]] turns on a multi-factor inquiry: "The temporal proximity of the arrest and the confession, the presence of intervening circumstances, . . . and, particularly, the purpose and flagrancy of the official misconduct . . . are all relevant." — *Id.* at 603-604. ^pin-604
 
 ## Application
 Brown's first statement came less than two hours after the illegal arrest, with no significant intervening event, and the arrest had a purposeful, investigatory quality. Weighing those factors, the State failed to show the statements were sufficiently attenuated from the unlawful arrest, so the [[Miranda and Custodial Interrogation|Miranda warnings]] alone did not make them admissible.

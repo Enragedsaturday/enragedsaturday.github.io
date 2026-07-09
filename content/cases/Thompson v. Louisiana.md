@@ -58,7 +58,7 @@ The brevity of the search did not save it: "A 2-hour general search remains a si
 That the search lasted two hours (not four days, as in *[[Mincey v. Arizona|Mincey]]*) and occurred the same day did not matter — nothing in *[[Mincey v. Arizona|Mincey]]* turned on duration or timing. Nor did the petitioner's call for medical help diminish her expectation of privacy or convert her home into a public place: police could seize evidence in plain view while assisting her or during the limited victim-or-suspect search, but the evidence here was found in neither. The later general warrantless search therefore violated the Fourth Amendment.
 
 ## Conclusion
-Reversed and remanded (per curiam). A recent homicide does not, by itself, justify a warrantless general search of the scene; *[[Mincey v. Arizona|Mincey]]* controls.
+Reversed and [[Reading and Citing Cases#on-remand|remanded]] (per curiam). A recent homicide does not, by itself, justify a warrantless general search of the scene; *[[Mincey v. Arizona|Mincey]]* controls.
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS** (per curiam).

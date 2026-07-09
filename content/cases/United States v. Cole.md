@@ -54,7 +54,7 @@ aliases:
 
 # United States v. Cole
 
-*21 F.4th 421 (7th Cir. 2021)* (No. 20-2105, en banc) · U.S. Court of Appeals for the Seventh Circuit · **Binding in-circuit — 7th Cir.** · Treatment: **Unverified**
+*21 F.4th 421 (7th Cir. 2021)* (No. 20-2105, [[Reading and Citing Cases#en-banc|en banc]]) · U.S. Court of Appeals for the Seventh Circuit · **Binding in-circuit — 7th Cir.** · Treatment: **Unverified**
 <!-- header line; TreatmentBadge + weight render from frontmatter, degrading to the text above. Born under_review (⚪) — identity cluster 5307612 → majority opinion 5136163 (St. Eve, J., en banc; 21 F.4th 421, decided Dec. 17, 2021). Rule quote string-matched to the CL opinion text 2026-07-07; slip-style pin (the CL text carries only the slip-opinion pagination, not the 21 F.4th star pages) — S9 verifies the reporter pincite. -->
 
 ## Background
@@ -64,7 +64,7 @@ An Illinois state trooper stopped Janhoi Cole for following too closely on an in
 Whether travel-plan questions are part of the "mission" of a traffic stop under *[[Rodriguez v. United States]]*, such that asking them does not unlawfully prolong the stop.
 
 ## Rule
-Under *[[Rodriguez v. United States|Rodriguez]]*, a stop may last no longer than needed to complete its mission, and off-mission inquiries that add time require independent reasonable suspicion. Resolving an intra-circuit conflict, the en banc court held: "we hold that travel-plan questions ordinarily fall within the mission of a traffic stop. Travel-plan questions, however, like other police inquiries during a traffic stop, must be reasonable under the circumstances." — slip op. at 2. ^pin-slip2
+Under *[[Rodriguez v. United States|Rodriguez]]*, a stop may last no longer than needed to complete its mission, and off-mission inquiries that add time require independent reasonable suspicion. Resolving an intra-circuit conflict, the [[Reading and Citing Cases#en-banc|en banc]] court held: "we hold that travel-plan questions ordinarily fall within the mission of a traffic stop. Travel-plan questions, however, like other police inquiries during a traffic stop, must be reasonable under the circumstances." — slip op. at 2. ^pin-slip2
 
 ## Application
 Because travel-plan questions ordinarily belong to the stop's mission, the trooper's initial inquiries did not prolong the detention at all. His follow-up questions were reasonable responses to Cole's "less-than-forthright answers," and by the time the stop moved to the gas station for the dog sniff, the trooper had developed reasonable suspicion of drug trafficking to support the brief extension. The stop was lawfully initiated and never unreasonably prolonged.

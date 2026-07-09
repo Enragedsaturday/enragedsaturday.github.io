@@ -60,7 +60,7 @@ The panel's reliance on *[[Tennessee v. Garner|Garner]]* and *[[Graham v. Connor
 The Tenth Circuit "failed to identify a case where an officer acting under similar circumstances as Officer White was held to have violated the Fourth Amendment," relying instead on the general principles of *[[Graham v. Connor|Graham]]* and *[[Tennessee v. Garner|Garner]]*. The panel itself called the facts "a unique set of facts and circumstances" given White's late arrival — which alone should have signaled that any violation was not "clearly established." Clearly established law does not prohibit a reasonable officer who arrives late to an ongoing police action from assuming that proper procedures, such as officer identification, were already followed.
 
 ## Conclusion
-Certiorari granted, judgment vacated, and remanded (per curiam). On the record described by the court of appeals, Officer White did not violate clearly established law and was entitled to qualified immunity; the Court left open a potential alternative ground concerning what White witnessed.
+[[Reading and Citing Cases#certiorari-cert|Certiorari]] granted, judgment [[Reading and Citing Cases#vacated|vacated]], and [[Reading and Citing Cases#on-remand|remanded]] (per curiam). On the record described by the court of appeals, Officer White did not violate clearly established law and was entitled to [[Qualified Immunity|qualified immunity]]; the Court left open a potential alternative ground concerning what White witnessed.
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.

@@ -50,7 +50,7 @@ A 911 caller reported that a specific silver Ford pickup truck had just run her 
 Whether an anonymous 911 tip reporting dangerous driving can supply reasonable suspicion for an investigatory traffic stop.
 
 ## Rule
-Under the totality of the circumstances, an anonymous tip may supply reasonable suspicion when it bears adequate indicia of reliability. Here, "we conclude that the call bore adequate indicia of reliability for the officer to credit the caller's account." — 572 U.S. at 398. ^pin-398
+Under the [[Common Legal Terms#totality-of-the-circumstances|totality of the circumstances]], an anonymous tip may supply reasonable suspicion when it bears adequate indicia of reliability. Here, "we conclude that the call bore adequate indicia of reliability for the officer to credit the caller's account." — 572 U.S. at 398. ^pin-398
 
 The Court found the 911 call reliable because the caller claimed eyewitness knowledge of dangerous driving, reported it contemporaneously, and used the 911 system, which has features that allow tracing callers and deter false reports.
 

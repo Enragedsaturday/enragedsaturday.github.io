@@ -50,7 +50,7 @@ Federal revenue agents watched a cocaine sale at Alba's house and, when it was c
 Whether the warrantless search of the arrestee's home, several blocks from the place of arrest and after he was in custody elsewhere, can be justified as a [[Search Incident to Arrest|search incident to arrest]].
 
 ## Rule
-A search incident to arrest is real but bounded to the arrest scene: "The right without a search warrant contemporaneously to search persons lawfully arrested while committing crime and to search the place where the arrest is made in order to find and seize things connected with the crime as its fruits or as the means by which it was committed, as well as weapons and other things to effect an escape from custody, is not to be doubted." — 269 U.S. at 30. ^pin-30
+A [[Search Incident to Arrest|search incident to arrest]] is real but bounded to the arrest scene: "The right without a search warrant contemporaneously to search persons lawfully arrested while committing crime and to search the place where the arrest is made in order to find and seize things connected with the crime as its fruits or as the means by which it was committed, as well as weapons and other things to effect an escape from custody, is not to be doubted." — 269 U.S. at 30. ^pin-30
 
 But it does not reach a separate home: "But the right does not extend to other places. Frank Agnello's house was several blocks distant from Alba's house, where the arrest was made. When it was entered and searched, the conspiracy was ended and the defendants were under arrest and in custody elsewhere. That search cannot be sustained as an incident of the arrests." — *Id.* at 30–31. ^pin-30a
 

@@ -44,13 +44,13 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-After a series of escalating 911 calls on May 25, 2017 — including an anonymous caller claiming to be Teresa Graham's cousin who requested a "welfare check" and referenced a possible mental-health history — Sergeant Barnette ordered Minneapolis officers to take Graham into custody for an emergency mental-health evaluation under Minnesota's civil-commitment statute. The officers entered Graham's home, seized her, and transported her to a hospital, all without a warrant. Graham sued the officers and the City under 42 U.S.C. § 1983. The district court granted the officers summary judgment; the Eighth Circuit affirmed in 2020 (970 F.3d 1075), and the Supreme Court vacated and remanded for reconsideration in light of [[Caniglia v. Strom]].
+After a series of escalating 911 calls on May 25, 2017 — including an anonymous caller claiming to be Teresa Graham's cousin who requested a "welfare check" and referenced a possible mental-health history — Sergeant Barnette ordered Minneapolis officers to take Graham into custody for an emergency mental-health evaluation under Minnesota's civil-commitment statute. The officers entered Graham's home, seized her, and transported her to a hospital, all without a warrant. Graham sued the officers and the City under 42 U.S.C. § 1983. The district court granted the officers summary judgment; the Eighth Circuit affirmed in 2020 (970 F.3d 1075), and the Supreme Court [[Reading and Citing Cases#vacated|vacated]] and [[Reading and Citing Cases#on-remand|remanded]] for reconsideration in light of [[Caniglia v. Strom]].
 
 ## Issue
 [[Reading and Citing Cases#on-remand|On remand]] after *[[Caniglia v. Strom|Caniglia]]*, whether the "community caretaking" framing supports a warrantless seizure of a person for a mental-health evaluation, and what Fourth Amendment standard governs such a seizure.
 
 ## Rule
-After *[[Caniglia v. Strom|Caniglia]]*, the "community caretaking" label does not fit a psychiatric seizure. "Now that *Caniglia* has made clear that 'there is no overarching "community caretaking" doctrine,' . . . our use of that label seems to be a category error." — *Graham v. Barnette*, 5 F.4th 872 (8th Cir. 2021) (slip op., at 10). ^pin-op10
+After *[[Caniglia v. Strom|Caniglia]]*, the "community caretaking" label does not fit a psychiatric seizure. "Now that *Caniglia* has made clear that 'there is no overarching "[[Community Caretaking|community caretaking]]" doctrine,' . . . our use of that label seems to be a category error." — *Graham v. Barnette*, 5 F.4th 872 (8th Cir. 2021) (slip op., at 10). ^pin-op10
 
 The governing standard is probable cause of dangerousness: "we again conclude that probable cause of dangerousness is the standard that must be met for a warrantless mental-health seizure to be reasonable under the Fourth Amendment." — *Id.* (slip op., at [10](https://www.courtlistener.com/opinion/4900401/teresa-graham-v-shannon-barnette/#:~:text=we%20again%20conclude%20that%20probable)). ^pin-op10a
 

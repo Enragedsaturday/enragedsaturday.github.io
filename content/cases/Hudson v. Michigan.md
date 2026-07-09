@@ -50,7 +50,7 @@ Police executing a valid search warrant at Hudson's home announced their presenc
 Whether a violation of the [[Knock-and-Announce|knock-and-announce]] rule requires suppression of the evidence found in the ensuing search.
 
 ## Rule
-No. The interests protected by the knock-and-announce rule are not the interests served by suppression. "What the knock-and-announce rule has never protected, however, is one's interest in preventing the government from seeing or taking evidence described in a warrant." — 547 U.S. at 594. ^pin-594
+No. The interests protected by the [[Knock-and-Announce|knock-and-announce]] rule are not the interests served by suppression. "What the knock-and-announce rule has never protected, however, is one's interest in preventing the government from seeing or taking evidence described in a warrant." — 547 U.S. at 594. ^pin-594
 
 "Since the interests that were violated in this case have nothing to do with the seizure of the evidence, the exclusionary rule is inapplicable." — *Id.* ^pin-594a
 

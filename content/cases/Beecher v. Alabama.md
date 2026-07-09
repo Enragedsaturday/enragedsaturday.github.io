@@ -62,7 +62,7 @@ The confessions were the product of gross coercion and involuntary; [[Reading an
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS** (per curiam).
-- No negative treatment. *Beecher* sits in the due-process coercion line anchored by [[Brown v. Mississippi]] and [[Chambers v. Florida]]; its drugged-and-in-pain branch parallels the drug-induced involuntariness of [[Townsend v. Sain]]. (A later per curiam, *Beecher v. Alabama*, 408 U.S. 234 (1972), again reversed after a retrial; this page concerns the 1967 decision.)
+- No negative treatment. *Beecher* sits in the due-process coercion line anchored by [[Brown v. Mississippi]] and [[Chambers v. Florida]]; its drugged-and-in-pain branch parallels the drug-induced involuntariness of [[Townsend v. Sain]]. (A later [[Common Legal Terms#per-curiam|per curiam]], *Beecher v. Alabama*, 408 U.S. 234 (1972), again reversed after a retrial; this page concerns the 1967 decision.)
 
 ## Appears on
 - [[Due-Process Voluntariness of Confessions]] — *Key — Progeny / Refinement*

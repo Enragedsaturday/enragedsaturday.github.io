@@ -50,7 +50,7 @@ Acting on a tip, Detective Baker went at night to a closed, sealed building on T
 Whether a person retains a [[Reasonable Expectation of Privacy|reasonable expectation of privacy]] in a sealed building's interior despite small cracks in its wall, such that an officer's probing observation through them is a search.
 
 ## Rule
-Small gaps do not by themselves defeat a reasonable expectation of privacy. "This expectation was not unreasonable even though there were small cracks between the boards in the building's back wall. The presence of tiny cracks near the floor on the interior wall of a second-floor porch is not the kind of exposure which serves to eliminate a reasonable expectation of privacy." — 368 S.E.2d at 591. ^pin-591
+Small gaps do not by themselves defeat a [[Reasonable Expectation of Privacy|reasonable expectation of privacy]]. "This expectation was not unreasonable even though there were small cracks between the boards in the building's back wall. The presence of tiny cracks near the floor on the interior wall of a second-floor porch is not the kind of exposure which serves to eliminate a reasonable expectation of privacy." — 368 S.E.2d at 591. ^pin-591
 
 "Nothing in the Supreme Court's *Dunn* decision suggests that an expectation of privacy is eliminated by quarter-inch cracks in the back wall of an otherwise sealed building." — *Id.* at 591–592. ^pin-591a
 

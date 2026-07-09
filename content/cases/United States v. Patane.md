@@ -58,7 +58,7 @@ Because a mere failure to warn is not itself a constitutional violation, "the ex
 Patane's statement about the Glock was voluntary, and the pistol was nontestimonial physical evidence. Admitting that physical fruit did not compel Patane to be a witness against himself, so the Self-Incrimination Clause was not violated and the failure to warn did not require suppressing the gun. The plurality observed that the case for admitting nontestimonial physical fruits (the Glock) was even stronger than the case for admitting the postwarning statements held admissible in *[[Oregon v. Elstad]]* and *[[Michigan v. Tucker]]*.
 
 ## Conclusion
-The failure to give *[[Miranda v. Arizona|Miranda]]* warnings did not require suppression of the pistol; the Supreme Court reversed the Tenth Circuit and remanded. (Plurality opinion; Justices Kennedy and O'Connor concurred in the judgment, agreeing the gun need not be suppressed.)
+The failure to give *[[Miranda v. Arizona|Miranda]]* warnings did not require suppression of the pistol; the Supreme Court reversed the Tenth Circuit and [[Reading and Citing Cases#on-remand|remanded]]. (Plurality opinion; Justices Kennedy and O'Connor concurred in the judgment, agreeing the gun need not be suppressed.)
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.

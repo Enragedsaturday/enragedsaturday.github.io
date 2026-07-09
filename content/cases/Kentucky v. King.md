@@ -58,7 +58,7 @@ Officers pursuing a suspected drug dealer into an apartment breezeway smelled bu
 Whether the exigent-circumstances exception is forfeited under the "police-created exigency" doctrine when it is the officers' own [[Knock-and-Announce|knock-and-announce]] that prompts the occupants to begin destroying evidence.
 
 ## Rule
-The test keys on whether the police acted lawfully before the exigency arose: "a warrantless entry based on exigent circumstances is reasonable when the police did not create the exigency by engaging or threatening to engage in conduct violating the Fourth Amendment." — 563 U.S. at ___ (slip op., at 8). ^pin-op8
+The test keys on whether the police acted lawfully before the [[Exigent Circumstances and Hot Pursuit|exigency]] arose: "a warrantless entry based on exigent circumstances is reasonable when the police did not create the exigency by engaging or threatening to engage in conduct violating the Fourth Amendment." — 563 U.S. at ___ (slip op., at 8). ^pin-op8
 
 Conduct such as knocking on a door and announcing one's presence — which any private citizen may do — does not violate or threaten to violate the Fourth Amendment, and so does not impermissibly manufacture the [[Exigent Circumstances and Hot Pursuit|exigency]].
 
@@ -70,7 +70,7 @@ The judgment suppressing the evidence was reversed and the case [[Reading and Ci
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.
-- No negative treatment. [[Lange v. California]] (2021) later addressed a different exigency question (categorical hot pursuit of fleeing misdemeanants) and cited *King* for the case-specific "compelling need" standard, leaving *King*'s police-created-exigency holding intact.
+- No negative treatment. [[Lange v. California]] (2021) later addressed a different [[Exigent Circumstances and Hot Pursuit|exigency]] question (categorical [[Exigent Circumstances and Hot Pursuit|hot pursuit]] of fleeing misdemeanants) and cited *King* for the case-specific "compelling need" standard, leaving *King*'s police-created-[[Exigent Circumstances and Hot Pursuit|exigency]] holding intact.
 
 ## Appears on
 - [[Exigent Circumstances and Hot Pursuit]] — *Key — Anchor*

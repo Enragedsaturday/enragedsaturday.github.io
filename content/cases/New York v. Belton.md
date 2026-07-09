@@ -63,7 +63,7 @@ A police officer stopped a speeding car with four occupants, smelled marijuana, 
 What is the permissible scope of a search of an automobile's passenger compartment incident to the lawful custodial arrest of an occupant.
 
 ## Rule
-The Court adopted a bright-line rule: "when a policeman has made a lawful custodial arrest of the occupant of an automobile, he may, as a contemporaneous incident of that arrest, search the passenger compartment of that automobile." — 453 U.S. at 460. ^pin-460
+The Court adopted a [[Common Legal Terms#bright-line-rule|bright-line rule]]: "when a policeman has made a lawful custodial arrest of the occupant of an automobile, he may, as a contemporaneous incident of that arrest, search the passenger compartment of that automobile." — 453 U.S. at 460. ^pin-460
 
 "It follows from this conclusion that the police may also examine the contents of any containers found within the passenger compartment." — *Id.* ^pin-460b
 

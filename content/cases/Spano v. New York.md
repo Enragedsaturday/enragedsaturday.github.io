@@ -50,7 +50,7 @@ Spano, a foreign-born man of limited education, was indicted for murder and surr
 Whether a confession obtained by prolonged overnight questioning and a false-friend appeal, after the suspect was indicted, had counsel, and asked to remain silent, was voluntary.
 
 ## Rule
-Voluntariness is judged on the totality of the circumstances, and a confession produced by official pressure is involuntary. "We conclude that petitioner's will was overborne by official pressure, fatigue and sympathy falsely aroused, after considering all the facts in their post-indictment setting." — 360 U.S. at 323. ^pin-323
+Voluntariness is judged on the [[Common Legal Terms#totality-of-the-circumstances|totality of the circumstances]], and a confession produced by official pressure is involuntary. "We conclude that petitioner's will was overborne by official pressure, fatigue and sympathy falsely aroused, after considering all the facts in their post-indictment setting." — 360 U.S. at 323. ^pin-323
 
 ## Application
 The combination of persistent overnight questioning, the repeated denial of Spano's requests to consult his lawyer, and the calculated use of Bruno's feigned distress overbore Spano's will. On those facts the confession was involuntary, and its admission violated due process, so the conviction was reversed.

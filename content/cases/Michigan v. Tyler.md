@@ -52,7 +52,7 @@ A furniture store caught fire near midnight. As firefighters fought the blaze, t
 Whether, and for how long, officials may make warrantless entries into fire-damaged premises to fight the fire and investigate its cause, and when later investigative entries require a warrant.
 
 ## Rule
-A burning building is an exigency: "A burning building clearly presents an exigency of sufficient proportions to render a warrantless entry 'reasonable.' . . . And once in a building for this purpose, firefighters may seize evidence of arson that is in plain view." — 436 U.S. at 509. ^pin-509
+A burning building is an [[Exigent Circumstances and Hot Pursuit|exigency]]: "A burning building clearly presents an exigency of sufficient proportions to render a warrantless entry 'reasonable.' . . . And once in a building for this purpose, firefighters may seize evidence of arson that is in plain view." — 436 U.S. at 509. ^pin-509
 
 They may also stay to investigate cause: "officials need no warrant to remain in a building for a reasonable time to investigate the cause of a blaze after it has been extinguished." — [*Id.* at 510](https://www.courtlistener.com/opinion/109874/michigan-v-tyler/#:~:text=officials%20need%20no%20warrant%20to). ^pin-510
 

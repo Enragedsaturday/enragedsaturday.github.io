@@ -56,7 +56,7 @@ Fourth Amendment reasonableness is judged objectively, so subjective motive does
 
 "We hold that an objectively reasonable arrest and detention of a material witness pursuant to a validly obtained warrant cannot be challenged as unconstitutional on the basis of allegations that the arresting authority had an improper motive." — [*Id.* at 743](https://www.courtlistener.com/opinion/7344719/ashcroft-v-al-kidd/#:~:text=We%20hold%20that%20an%20objectively). ^pin-743
 
-And qualified immunity "protects 'all but the plainly incompetent or those who knowingly violate the law.'" — *Id.* (quoting [[Malley v. Briggs]], 475 U.S. at 341).
+And [[Qualified Immunity|qualified immunity]] "protects 'all but the plainly incompetent or those who knowingly violate the law.'" — *Id.* (quoting [[Malley v. Briggs]], 475 U.S. at 341).
 
 ## Application
 A warrant naming only al-Kidd, supported by individualized reasons to believe he was a material witness who might disappear, took the case outside the narrow special-needs/administrative-search exceptions where subjective purpose matters; the general rule that motive is irrelevant therefore governed. Even assuming the pretextual-material-witness theory could state a Fourth Amendment violation, it was not clearly established at the time — eight court-of-appeals judges had agreed with Ashcroft's position in a case of first impression — so he was entitled to [[Qualified Immunity|qualified immunity]], and the Court did not reach whether he also had absolute immunity.

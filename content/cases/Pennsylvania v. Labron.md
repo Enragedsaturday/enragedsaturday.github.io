@@ -50,7 +50,7 @@ In two consolidated cases, the Supreme Court of Pennsylvania suppressed evidence
 Whether the automobile exception requires a separate showing of [[Exigent Circumstances and Hot Pursuit|exigent circumstances]] beyond the vehicle's ready mobility and probable cause to believe it contains contraband.
 
 ## Rule
-No separate exigency is required. "If a car is readily mobile and probable cause exists to believe it contains contraband, the Fourth Amendment thus permits police to search the vehicle without more." — 518 U.S. at 940. ^pin-940
+No separate [[Exigent Circumstances and Hot Pursuit|exigency]] is required. "If a car is readily mobile and probable cause exists to believe it contains contraband, the Fourth Amendment thus permits police to search the vehicle without more." — 518 U.S. at 940. ^pin-940
 
 A vehicle's "ready mobility" is itself "an exigency sufficient to excuse failure to obtain a search warrant once probable cause to conduct the search is clear." — [*Id.*](https://www.courtlistener.com/opinion/118063/pennsylvania-v-labron/#:~:text=ready%20mobility) ^pin-940a
 

@@ -67,7 +67,7 @@ Standing requires an injury that is redressable by a favorable decision, but red
 Gutierrez's injury was the denial of access to DNA testing under an assertedly unconstitutional procedure. A declaration that Texas's scheme violates due process would redress that injury by knocking out the prosecutor's stated legal justification for refusing to test — even if the State might later invoke some other ground, and even though testing might not ultimately exonerate him. The Court analogized to *Reed v. Goertz*, where a nearly identical § 1983 challenge to the same Texas statute cleared the standing bar.
 
 ## Conclusion
-**Reversed and remanded** (93 F.4th 267). Justice Sotomayor wrote for the Court.
+**Reversed and [[Reading and Citing Cases#on-remand|remanded]]** (93 F.4th 267). Justice Sotomayor wrote for the Court.
 
 ## Treatment & subsequent history
 **Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub; its citator and progeny history have not completed the two-key verification, so it renders under the ⚪ banner until S9 promotion. *Gutierrez* extends *Reed v. Goertz* and reinforces that a § 1983 procedural-due-process plaintiff challenging a postconviction evidence scheme need only show that a favorable declaration would clear away the challenged barrier — a redressability point of general importance to standing under the civil-rights statute.

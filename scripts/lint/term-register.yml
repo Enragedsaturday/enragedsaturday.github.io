@@ -396,12 +396,14 @@ terms:
     route: citing
     target: "Reading and Citing Cases#vacated"
     match: ["vacatur"]
-    note: "FLAG: citation-parenthetical 'vacated' is masked; prose 'the court vacated' links. 'vacate'/'vacating' omitted (risk)."
+    skip_phrases: ["vacated the room", "vacated room", "vacated premises", "vacated the premises"]
+    note: "Citation-parenthetical 'vacated' is masked; prose 'the court vacated' links. 'vacate'/'vacating' omitted (risk). skip_phrases (orchestrator GO 2026-07-09): the physical 'vacated [the] room/premises' sense (e.g. Abel abandonment facts) is a correctness defect — suppressed. The legal 'vacated the judgment/conviction/sentence' sense is NOT caught."
 
   - canonical: reporter
     route: citing
     target: "Reading and Citing Cases#reporter"
-    note: "FLAG (risk): 'reporter' the citation term vs. everyday sense; distinctive in legal prose but orchestrator should confirm density."
+    skip_phrases: ["Washington Post reporter"]
+    note: "'reporter' the citation series (regional/official reporter). skip_phrases (orchestrator GO 2026-07-09): the journalist sense ('Washington Post reporter', Wilson v. Layne facts) is a correctness defect — suppressed. Instructor-editable: add other newspaper contexts as they arise."
 
   - canonical: parallel citation
     route: citing

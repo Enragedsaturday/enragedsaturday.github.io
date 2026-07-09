@@ -56,7 +56,7 @@ Whether Fourth Amendment protection turns on intrusion into a "constitutionally 
 ## Rule
 The inquiry is personal, not spatial: "the Fourth Amendment protects people, not places. What a person knowingly exposes to the public, even in his own home or office, is not a subject of Fourth Amendment protection. . . . But what he seeks to preserve as private, even in an area accessible to the public, may be constitutionally protected." — 389 U.S. at 351. ^pin-351
 
-Justice Harlan's concurrence supplied the now-governing test: there is "a twofold requirement, first that a person have exhibited an actual (subjective) expectation of privacy and, second, that the expectation be one that society is prepared to recognize as 'reasonable.'" — *Id.* at 361 (Harlan, J., concurring). ^pin-361
+Justice Harlan's [[Common Legal Terms#concurring-opinion|concurrence]] supplied the now-governing test: there is "a twofold requirement, first that a person have exhibited an actual (subjective) expectation of privacy and, second, that the expectation be one that society is prepared to recognize as 'reasonable.'" — *Id.* at 361 (Harlan, J., concurring). ^pin-361
 
 ## Application
 Katz justifiably relied on the privacy of the closed telephone booth when he placed his calls; he sought to exclude "the uninvited ear," not the eye. The government's electronic monitoring of his conversation violated that privacy upon which he justifiably relied and thus constituted a search and seizure, even though it involved no physical trespass into the booth. Because the agents acted without a warrant, the surveillance was unreasonable on these facts.

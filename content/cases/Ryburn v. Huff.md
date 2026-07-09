@@ -60,7 +60,7 @@ Reasonableness is judged from the officer's on-scene perspective, not in hindsig
 The Ninth Circuit erred by recasting the District Court's findings, by treating lawful conduct (the mother's refusal to answer and her sudden flight inside) as no cause for alarm, by analyzing each event in isolation rather than as a whole ("a combination of events each of which is mundane when viewed in isolation may paint an alarming picture"), and by second-guessing the officers' on-scene judgment with hindsight. Judged from the perspective of a reasonable officer facing a rapidly unfolding situation that culminated in the mother running into the house after refusing to answer about guns, the belief that entry was necessary to avoid injury was "eminently reasonable."
 
 ## Conclusion
-Reversed and remanded for entry of judgment for the officers (per curiam). A warrantless entry on an objectively reasonable belief of imminent violence is reasonable, and the officers were entitled to qualified immunity.
+Reversed and [[Reading and Citing Cases#on-remand|remanded]] for entry of judgment for the officers (per curiam). A warrantless entry on an objectively reasonable belief of imminent violence is reasonable, and the officers were entitled to [[Qualified Immunity|qualified immunity]].
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS** (per curiam).

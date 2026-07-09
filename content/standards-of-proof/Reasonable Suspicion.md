@@ -56,7 +56,7 @@ related:
 
 ## Lower-court developments
 
-- ***[[United States v. Daniels|Daniels]]* (10th Cir. 2024)** — *narrows: tightens the reasonable-suspicion floor.* On de novo totality review, a near-anonymous 911 tip (three men in dark hoodies near an idling SUV, reporting no actual illegality) plus the suspect's mere presence did not amount to reasonable suspicion; overly generic tips reporting lawful-sounding conduct hand police excessive discretion and fall below the floor. Tightens the *[[Florida v. J.L.|J.L.]]* and *[[Navarette v. California|Navarette]]* line. **Binding in-circuit — 10th Cir.** [opinion](https://www.courtlistener.com/opinion/9500360/united-states-v-daniels/)
+- ***[[United States v. Daniels|Daniels]]* (10th Cir. 2024)** — *narrows: tightens the reasonable-suspicion floor.* On [[Common Legal Terms#de-novo|de novo]] totality review, a near-anonymous 911 tip (three men in dark hoodies near an idling SUV, reporting no actual illegality) plus the suspect's mere presence did not amount to reasonable suspicion; overly generic tips reporting lawful-sounding conduct hand police excessive discretion and fall below the floor. Tightens the *[[Florida v. J.L.|J.L.]]* and *[[Navarette v. California|Navarette]]* line. **Binding in-circuit — 10th Cir.** [opinion](https://www.courtlistener.com/opinion/9500360/united-states-v-daniels/)
 
 ## Key cases
 

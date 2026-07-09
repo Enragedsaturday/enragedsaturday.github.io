@@ -54,7 +54,7 @@ The deadly force was reasonable. "it is beyond serious dispute that Rickard's fl
 
 And the number of shots was not excessive: "if police officers are justified in firing at a suspect in order to end a severe threat to public safety, the officers need not stop shooting until the threat has ended." — [*Id.*](https://www.courtlistener.com/opinion/2675750/plumhoff-v-rickard/#:~:text=if%20police%20officers%20are%20justified) ^pin-777b
 
-Alternatively, the officers had qualified immunity: "We have held that petitioners' conduct did not violate the Fourth Amendment, but even if that were not the case, petitioners would still be entitled to summary judgment based on qualified immunity." — *Id.* at 778. ^pin-778
+Alternatively, the officers had [[Qualified Immunity|qualified immunity]]: "We have held that petitioners' conduct did not violate the Fourth Amendment, but even if that were not the case, petitioners would still be entitled to summary judgment based on qualified immunity." — *Id.* at 778. ^pin-778
 
 ## Application
 Judged from the perspective of a reasonable officer at the moment force was used, Rickard's continued effort to flee — engine revving, wheels spinning against a cruiser — showed he was intent on resuming a chase that had already endangered many motorists, so deadly force to stop him was reasonable as in [[Scott v. Harris]]. Because Rickard never gave up during the roughly ten-second span of fire and in fact drove off afterward, the 15 shots did not make the force excessive. The passenger Kelly Allen's presence did not enhance Rickard's own Fourth Amendment rights. And even assuming a violation, no clearly established law (per *[[Brosseau v. Haugen]]*) precluded the officers' conduct, so [[Qualified Immunity|qualified immunity]] applied.

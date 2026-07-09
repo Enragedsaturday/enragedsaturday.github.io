@@ -50,7 +50,7 @@ With a warrant to search Banks's two-bedroom apartment for cocaine, North Las Ve
 In executing a felony drug warrant, was the officers' 15-to-20-second wait after knocking and announcing, before forcibly entering, reasonable under the Fourth Amendment?
 
 ## Rule
-Yes. Reasonableness depends on the totality of the circumstances and the particular exigency claimed. Where the exigency is the imminent destruction of easily disposable drugs, "we think that after 15 or 20 seconds without a response, police could fairly suspect that cocaine would be gone if they were reticent any longer." — 540 U.S. at 38. ^pin-38
+Yes. Reasonableness depends on the [[Common Legal Terms#totality-of-the-circumstances|totality of the circumstances]] and the particular [[Exigent Circumstances and Hot Pursuit|exigency]] claimed. Where the [[Exigent Circumstances and Hot Pursuit|exigency]] is the imminent destruction of easily disposable drugs, "we think that after 15 or 20 seconds without a response, police could fairly suspect that cocaine would be gone if they were reticent any longer." — 540 U.S. at 38. ^pin-38
 
 "[W]hen circumstances are exigent because a pusher may be near the point of putting his drugs beyond reach, it is imminent disposal, not travel time to the entrance, that governs when the police may reasonably enter." — *Id.* at 40. ^pin-40
 

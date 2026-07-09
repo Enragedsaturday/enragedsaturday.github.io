@@ -52,7 +52,7 @@ Whether a post-indictment lineup is a critical stage of the prosecution at which
 ## Rule
 A post-indictment lineup is a critical stage at which the accused is entitled to counsel: "there can be little doubt that for Wade the post-indictment lineup was a critical stage of the prosecution at which he was 'as much entitled to such aid [of counsel] . . . as at the trial itself.'" — 388 U.S. at 237. ^pin-237
 
-The remedy is not automatic exclusion of the in-court identification; the in-court identification is admissible only if it has a source independent of the tainted lineup. The Court vacated the conviction "pending a hearing to determine whether the in-court identifications had an independent source." — 388 U.S. at 242. ^pin-242
+The remedy is not automatic exclusion of the in-court identification; the in-court identification is admissible only if it has a source independent of the tainted lineup. The Court [[Reading and Citing Cases#vacated|vacated]] the conviction "pending a hearing to determine whether the in-court identifications had an independent source." — 388 U.S. at 242. ^pin-242
 
 ## Application
 Wade had been indicted and had counsel when the FBI conducted the lineup without notifying his lawyer; the lineup was therefore an uncounseled critical stage, violating Wade's Sixth Amendment right. Because the two bank employees' in-court identifications might have been tainted by that lineup, the proper course was to vacate the conviction and remand so the District Court could determine whether those identifications rested on an [[Inevitable Discovery and Independent Source|independent source]] (or whether their admission was harmless).

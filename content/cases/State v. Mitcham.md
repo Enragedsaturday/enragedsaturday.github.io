@@ -54,7 +54,7 @@ The Court distinguished and applied the exclusionary-rule exceptions. "The 'inde
 
 The two exceptions differ in that the distinction "rests on whether the evidence was discovered through an independent, untainted source ..., or whether the evidence would have been discovered through an independent, untainted source despite the illegal search ...." — *Id.* ¶ 36. ^pin-36
 
-Applying inevitable discovery, the Court held the State "would have inevitably obtained Mitcham's DNA profile from an independent, untainted source despite the warrantless search of the second vial of blood ...." — *Id.* ¶ 37. ^pin-37
+Applying [[Inevitable Discovery and Independent Source|inevitable discovery]], the Court held the State "would have inevitably obtained Mitcham's DNA profile from an independent, untainted source despite the warrantless search of the second vial of blood ...." — *Id.* ¶ 37. ^pin-37
 
 ## Application
 Mitcham's unrelated 2022 felony convictions and prison sentence triggered Arizona's statutory requirement (A.R.S. § 13-610) that the Department of Corrections collect his DNA for profiling. That lawful, untainted process would inevitably have produced the same DNA profile independent of the illegal 2018 search; the only reason it did not was that police already held a sample from the illegal search. Suppression would put the prosecution in a worse position than if the violation had never occurred, so the inevitable-discovery exception applied.

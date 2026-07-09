@@ -89,17 +89,34 @@ def _surface_regex(surface: str) -> re.Pattern:
                       re.IGNORECASE)
 
 
+def _skip_phrase_regex(phrase: str) -> re.Pattern:
+    """Word-bounded, case-insensitive matcher for a wrong-SENSE literal phrase
+    (register `skip_phrases`). Inter-word separator tolerates whitespace AND
+    emphasis markers (`*`/`_`) so 'Washington Post reporter' still spans the
+    italic '*Washington Post* reporter'. A candidate term match whose span is
+    CONTAINED in an occurrence of one of the term's skip_phrases is suppressed
+    (register DATA — a correctness guard, not a per-page exception; SD10 intact)."""
+    words = [re.escape(w) for w in phrase.split()]
+    body = r"[\s*_]+".join(words) if words else re.escape(phrase)
+    return re.compile(r"(?<![A-Za-z0-9])" + body + r"(?![A-Za-z0-9])",
+                      re.IGNORECASE)
+
+
 class Term:
     __slots__ = ("canonical", "route", "target", "page_part", "anchor",
-                 "eponym", "surfaces", "regexes", "dead")
+                 "eponym", "surfaces", "regexes", "dead",
+                 "skip_phrases", "skip_regexes")
 
-    def __init__(self, canonical, route, target, eponym, surfaces):
+    def __init__(self, canonical, route, target, eponym, surfaces,
+                 skip_phrases=None):
         self.canonical = canonical
         self.route = route
         self.target = target
         self.eponym = eponym
         self.surfaces = surfaces
         self.regexes = [(_surface_regex(s), s) for s in surfaces]
+        self.skip_phrases = list(skip_phrases or [])
+        self.skip_regexes = [_skip_phrase_regex(p) for p in self.skip_phrases]
         self.dead = None  # set to a reason string if target/anchor is dead
         if target:
             page, _, anchor = target.partition("#")
@@ -133,8 +150,13 @@ def load_register(path=REGISTER):
             for s in m:
                 if isinstance(s, str) and s.strip():
                     surfaces.append(s.strip())
+        sp = row.get("skip_phrases")
+        if isinstance(sp, str):
+            sp = [sp]
+        skip_phrases = [p.strip() for p in sp
+                        if isinstance(p, str) and p.strip()] if isinstance(sp, list) else []
         terms.append(Term(canonical, route, row.get("target"),
-                          _truth(row.get("eponym")), surfaces))
+                          _truth(row.get("eponym")), surfaces, skip_phrases))
     return terms, data.get("schema")
 
 
@@ -299,6 +321,18 @@ def build_link_plan(text, page_relpath, terms, idx, page_stem=None,
     tspans = _table_spans(text)
     prot = _protected_line_ranges(text, zlist) if protect_pincite_lines else []
 
+    # wrong-sense suppression spans (register skip_phrases), per term
+    suppress = {}  # id(term) -> list[(s, e)]
+    for t in terms:
+        if t.route == "skip" or t.dead or not t.skip_regexes:
+            continue
+        spans = []
+        for rx in t.skip_regexes:
+            for m in rx.finditer(masked):
+                spans.append((m.start(), m.end()))
+        if spans:
+            suppress[id(t)] = spans
+
     # 1) gather candidates from every LIVE, non-skip term
     cands = []  # (start, end, term, surface)
     for t in terms:
@@ -316,6 +350,14 @@ def build_link_plan(text, page_relpath, terms, idx, page_stem=None,
         if start < last_end:
             continue  # overlaps an already-accepted (longer/earlier) match
         surface = text[start:end]
+        # wrong-sense guard: register skip_phrases suppress this occurrence
+        sup = suppress.get(id(t))
+        if sup and any(a <= start and end <= b for (a, b) in sup):
+            records.append({"line": _line_no(text, start), "term": t.canonical,
+                            "route": t.route, "target": t.target,
+                            "surface": surface, "action": "skip-phrase"})
+            last_end = end
+            continue
         # sibling-lane guard: never touch a pincite / ^pin- / deep-link line
         if prot and any(not (end <= a or b <= start) for (a, b) in prot):
             records.append({"line": _line_no(text, start), "term": t.canonical,
@@ -357,6 +399,89 @@ def apply_edits(text, edits):
 
 
 # --------------------------------------------------------------------------
+# skip_phrases un-link pass — revert an already-written wrong-sense link to
+# plain text (idempotent partner of the ADD-path suppression: after this,
+# a --write re-run plans 0 for those spans because skip_phrases suppress them).
+# --------------------------------------------------------------------------
+
+_LINK_UNWRAP = re.compile(r"\[\[[^\]\n|]*(?:\\?\|([^\]\n]*))?\]\]")
+
+
+def _unwrap_seg(seg):
+    def r(m):
+        return m.group(1) if m.group(1) is not None else m.group(0)[2:-2]
+    return _LINK_UNWRAP.sub(r, seg)
+
+
+def unlink_skip_phrases(text, terms):
+    """Revert existing links that a register skip_phrase now suppresses. Matches
+    are gathered against the ORIGINAL text (accurate offsets), overlaps resolved
+    longest-first, then applied right-to-left. Returns (new_text, reverted) where
+    reverted = [{start, end, term, phrase, segment}] with original offsets."""
+    matches = []
+    for t in terms:
+        if not t.skip_phrases:
+            continue
+        surf_lower = {s.lower() for s in t.surfaces}
+        linkalt = (r"\[\[" + re.escape(t.page_part)
+                   + ((r"\#" + re.escape(t.anchor)) if t.anchor else "")
+                   + r"\\?\|[^\]\n]*\]\]")
+        for phrase in t.skip_phrases:
+            toks = []
+            for w in phrase.split():
+                if w.lower() in surf_lower:
+                    toks.append("(?:" + linkalt + "|" + re.escape(w) + ")")
+                else:
+                    toks.append(re.escape(w))
+            rx = re.compile(r"(?<![A-Za-z0-9])" + r"[\s*_]+".join(toks)
+                            + r"(?![A-Za-z0-9])", re.IGNORECASE)
+            for m in rx.finditer(text):
+                seg = m.group(0)
+                if "[[" in seg:   # only revert when the phrase actually contains a link
+                    matches.append((m.start(), m.end(), t.canonical, phrase, seg))
+    # resolve overlaps (a link may match several phrases) — leftmost, longest
+    matches.sort(key=lambda x: (x[0], -(x[1] - x[0])))
+    chosen = []
+    last = -1
+    for st, en, tc, ph, seg in matches:
+        if st < last:
+            continue
+        chosen.append((st, en, tc, ph, seg))
+        last = en
+    for st, en, tc, ph, seg in sorted(chosen, key=lambda x: x[0], reverse=True):
+        text = text[:st] + _unwrap_seg(seg) + text[en:]
+    reverted = [{"start": st, "end": en, "term": tc, "phrase": ph, "segment": seg}
+                for st, en, tc, ph, seg in chosen]
+    return text, reverted
+
+
+def run_unlink(write=False):
+    terms, _ = load_register()
+    total = 0
+    rows = []
+    for path in _md_files():
+        rel = os.path.relpath(path, CONTENT)
+        with open(path, encoding="utf-8") as fh:
+            text = fh.read()
+        new, reverted = unlink_skip_phrases(text, terms)
+        if not reverted:
+            continue
+        total += len(reverted)
+        for r in reverted:
+            rows.append((rel, _line_no(text, r["start"]), r["term"], r["phrase"]))
+        if write and new != text:
+            with open(path, "w", encoding="utf-8") as fh:
+                fh.write(new)
+    print("=== S8 skip_phrases un-link (%s) ===" % ("WRITE" if write else "DRY-RUN"))
+    print("wrong-sense links reverted: %d" % total)
+    for rel, ln, term, phrase in sorted(rows):
+        print("  %s:%d  [%s]  <- skip_phrase %r" % (rel, ln, term, phrase))
+    if not write:
+        print("(dry-run — pass --write to apply)")
+    return rows
+
+
+# --------------------------------------------------------------------------
 # corpus walk
 # --------------------------------------------------------------------------
 
@@ -387,6 +512,7 @@ def run(write=False, sample=10, protect_pincite_lines=True):
     by_term = {}
     self_skips = 0
     pincite_skips = 0
+    phrase_skips = 0
     files_scanned = 0
     files_touched = 0
     all_records = []      # (rel, record) for links only
@@ -403,6 +529,7 @@ def run(write=False, sample=10, protect_pincite_lines=True):
         links = [r for r in records if r["action"] == "link"]
         skips = [r for r in records if r["action"] == "self-skip"]
         pincite_skips += sum(1 for r in records if r["action"] == "skip-pincite-line")
+        phrase_skips += sum(1 for r in records if r["action"] == "skip-phrase")
         self_skips += len(skips)
         if not links and not skips:
             continue
@@ -442,6 +569,7 @@ def run(write=False, sample=10, protect_pincite_lines=True):
         print("  route:%-9s: %d" % (r, by_route[r]))
     print("self-skips (zone g): %d" % self_skips)
     print("pincite/pin/deep-link-line skips: %d" % pincite_skips)
+    print("wrong-sense skip_phrase suppressions: %d" % phrase_skips)
     print("by file-class   : %s" % json.dumps(by_class))
     print("dead register targets (refused, NOT linked): %d" % len(dead))
     for d in dead:
@@ -528,9 +656,9 @@ def _load(name):
 
 
 def _mini_terms():
-    def T(canon, route, target, match=None, eponym=False):
+    def T(canon, route, target, match=None, eponym=False, skip_phrases=None):
         surfaces = [canon] + (match or [])
-        return Term(canon, route, target, eponym, surfaces)
+        return Term(canon, route, target, eponym, surfaces, skip_phrases)
     return [
         T("curtilage", "page", "Curtilage"),
         T("de novo", "glossary", "Common Legal Terms#de-novo"),
@@ -538,6 +666,8 @@ def _mini_terms():
         T("arrest", "page", "Arrest"),                     # overlaps SITA -> loses
         T("deadterm", "glossary", "Common Legal Terms#does-not-exist"),
         T("skipword", "skip", None),
+        T("vacated", "citing", "Reading and Citing Cases#vacated",
+          skip_phrases=["vacated the room", "vacated room"]),
     ]
 
 
@@ -548,6 +678,8 @@ def _mini_index():
     idx.add("SITA.md", ["Search Incident to Arrest", "SITA"], "SITA", set())
     idx.add("Common Legal Terms.md", ["Common Legal Terms"], "Common Legal Terms",
             {"de-novo"})   # NOTE: 'does-not-exist' deliberately absent
+    idx.add("Reading and Citing Cases.md", ["Reading and Citing Cases"],
+            "Reading and Citing Cases", {"vacated"})
     return idx
 
 
@@ -628,6 +760,38 @@ def _self_test():
     check("[[Common Legal Terms#de-novo\\|de novo]]" in out,
           "table: display pipe not escaped inside a table cell")
 
+    # 9) skip_phrases — wrong-sense suppressed, correct-sense linked; and the
+    #    un-link pass reverts a written wrong link, after which ADD plans 0.
+    edits, recs = plan("skip_phrase.md", "skip_phrase.md")
+    out = apply_edits(_load("skip_phrase.md"), edits)
+    # correct sense ("vacated the judgment") LINKS
+    check("[[Reading and Citing Cases#vacated|vacated]] the judgment" in out,
+          "skip_phrase: correct-sense 'vacated the judgment' should link")
+    # wrong sense ("vacated the room" / "vacated room") SUPPRESSED (stays plain)
+    check("vacated the room" in out and "#vacated|vacated]] the room" not in out,
+          "skip_phrase: 'vacated the room' must NOT link")
+    check(out.count("[[Reading and Citing Cases#vacated") == 1,
+          "skip_phrase: exactly one (correct) vacated link expected, got %d"
+          % out.count("[[Reading and Citing Cases#vacated"))
+    check(any(r["action"] == "skip-phrase" for r in recs),
+          "skip_phrase: expected a skip-phrase record")
+    # un-link a pre-written wrong link, then ADD must plan 0 on the reverted text
+    wrong = ("The suspect [[Reading and Citing Cases#vacated|vacated]] the room "
+             "before the search.")
+    reverted_text, rev = unlink_skip_phrases(wrong, terms)
+    check(reverted_text == "The suspect vacated the room before the search.",
+          "unlink: wrong link not reverted -> %r" % reverted_text)
+    check(len(rev) == 1, "unlink: expected 1 reverted, got %d" % len(rev))
+    e_after, _ = build_link_plan(reverted_text, "any.md", terms, idx)
+    check(all("vacated" != ed.get("repl", "") for ed in e_after)
+          and not any("#vacated" in ed["repl"] for ed in e_after),
+          "unlink+suppress: re-run must NOT re-link the reverted wrong sense")
+    # un-link must NOT touch the correct sense
+    right = "The court [[Reading and Citing Cases#vacated|vacated]] the judgment."
+    right_after, rev2 = unlink_skip_phrases(right, terms)
+    check(right_after == right and len(rev2) == 0,
+          "unlink: correct-sense link must be preserved")
+
     if failures:
         print("link_terms.py --self-test: FAIL")
         for f in failures:
@@ -635,7 +799,7 @@ def _self_test():
         return 1
     print("link_terms.py --self-test: PASS "
           "(inflection / zone / self-page / longest-match / dead-anchor / skip / "
-          "idempotence / table-escape)")
+          "idempotence / table-escape / skip_phrases+unlink)")
     return 0
 
 
@@ -646,9 +810,14 @@ def main(argv):
     ap.add_argument("--samples", type=int, default=10, help="sample diffs to print")
     ap.add_argument("--allow-pincite-lines", action="store_true",
                     help="DISABLE the sibling-lane guard (only on a de-conflicted re-run)")
+    ap.add_argument("--unlink-skip-phrases", action="store_true",
+                    help="revert wrong-sense links that register skip_phrases now suppress")
     args = ap.parse_args(argv)
     if args.self_test:
         return _self_test()
+    if args.unlink_skip_phrases:
+        run_unlink(write=args.write)
+        return 0
     run(write=args.write, sample=args.samples,
         protect_pincite_lines=not args.allow_pincite_lines)
     return 0

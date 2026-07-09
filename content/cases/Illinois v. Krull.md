@@ -50,7 +50,7 @@ A state agent conducted a warrantless inspection of Krull's wrecking yard, exami
 Whether the [[The Good-Faith Exception|good-faith exception]] to the exclusionary rule applies to evidence obtained by an officer who acted in objectively reasonable reliance on a statute later held to be unconstitutional.
 
 ## Rule
-Yes. The Court extended the good-faith exception of *[[United States v. Leon|Leon]]* to reasonable reliance on a statute: "The application of the exclusionary rule to suppress evidence obtained by an officer acting in objectively reasonable reliance on a statute would have as little deterrent effect on the officer's actions as would the exclusion of evidence when an officer acts in objectively reasonable reliance on a warrant." — 480 U.S. at 349. ^pin-349
+Yes. The Court extended the [[The Good-Faith Exception|good-faith exception]] of *[[United States v. Leon|Leon]]* to reasonable reliance on a statute: "The application of the exclusionary rule to suppress evidence obtained by an officer acting in objectively reasonable reliance on a statute would have as little deterrent effect on the officer's actions as would the exclusion of evidence when an officer acts in objectively reasonable reliance on a warrant." — 480 U.S. at 349. ^pin-349
 
 "Unless a statute is clearly unconstitutional, an officer cannot be expected to question the judgment of the legislature that passed the law." — *Id.* at 349–350. ^pin-349a
 

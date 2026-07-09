@@ -58,7 +58,7 @@ The crime-scene rationale conflicts with *[[Mincey v. Arizona|Mincey]]*: "This p
 The trial court upheld the search solely as a permissible search of a secured "homicide crime scene," invoking no recognized warrant exception. That is exactly the "crime-scene exception" *[[Mincey v. Arizona|Mincey]]* and *[[Thompson v. Louisiana|Thompson]]* rejected. Police could have made a warrantless entry to render aid and a prompt search for other victims or a killer, but the prolonged general search of the cabin and the opening of a closed briefcase were not justified on that basis. The Court left open, for remand, whether consent or some other recognized exception might apply.
 
 ## Conclusion
-Reversed and remanded (per curiam). There is no general crime-scene exception; the warrantless processing of the secured homicide scene required a recognized exception, which the trial court never identified.
+Reversed and [[Reading and Citing Cases#on-remand|remanded]] (per curiam). There is no general crime-scene exception; the warrantless processing of the secured homicide scene required a recognized exception, which the trial court never identified.
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS** (per curiam).

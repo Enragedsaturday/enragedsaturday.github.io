@@ -50,7 +50,7 @@ Martin Frazier was questioned about a murder. During the interrogation an office
 Whether a confession is rendered involuntary, and thus inadmissible, because the police obtained it by falsely telling the suspect that an accomplice had already confessed.
 
 ## Rule
-No. Police deception is one relevant factor, but it does not by itself make an otherwise voluntary confession inadmissible; voluntariness is judged on the totality of the circumstances. "The fact that the police misrepresented the statements that Rawls had made is, while relevant, insufficient in our view to make this otherwise voluntary confession inadmissible. These cases must be decided by viewing the 'totality of the circumstances' . . . ." — 394 U.S. at 739. ^pin-739
+No. Police deception is one relevant factor, but it does not by itself make an otherwise voluntary confession inadmissible; voluntariness is judged on the [[Common Legal Terms#totality-of-the-circumstances|totality of the circumstances]]. "The fact that the police misrepresented the statements that Rawls had made is, while relevant, insufficient in our view to make this otherwise voluntary confession inadmissible. These cases must be decided by viewing the 'totality of the circumstances' . . . ." — 394 U.S. at 739. ^pin-739
 
 ## Application
 Frazier received partial warnings of his rights before confessing, the questioning was of short duration, and he was a mature individual of normal intelligence. Against that backdrop the officer's misrepresentation that Rawls had confessed — though relevant — was not enough to overbear his will, so on the totality of these circumstances the confession was voluntary and properly admitted.

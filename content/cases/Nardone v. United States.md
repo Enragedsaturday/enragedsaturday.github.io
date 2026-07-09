@@ -43,7 +43,7 @@ lake:
 *308 U.S. 338 (1939)* · U.S. Supreme Court · **Binding — SCOTUS** · Treatment: **good** *(as of 2026-06-30)*
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
-> **Disambiguation:** This is *Nardone v. United States*, 308 U.S. 338 (1939) ("Nardone II" — fruit of the poisonous tree / attenuation). It follows *Nardone v. United States*, 302 U.S. 379 (1937) ("Nardone I"), which held intercepted wiretap evidence inadmissible under § 605 of the Communications Act.
+> **Disambiguation:** This is *Nardone v. United States*, 308 U.S. 338 (1939) ("Nardone II" — [[Common Legal Terms#fruit-of-the-poisonous-tree|fruit of the poisonous tree]] / [[Fruits and Attenuation|attenuation]]). It follows *Nardone v. United States*, 302 U.S. 379 (1937) ("Nardone I"), which held intercepted wiretap evidence inadmissible under § 605 of the Communications Act.
 
 ## Background
 After *Nardone I* reversed the petitioners' fraud convictions because the prosecution rested on unlawfully intercepted telephone calls, they were retried and reconvicted. At the new trial the judge refused to let the defense examine the prosecution about the *uses* it had made of the wiretap information. The Court of Appeals read § 605 narrowly — barring only the intercepted words themselves, while allowing every derivative use of the unlawful taps.

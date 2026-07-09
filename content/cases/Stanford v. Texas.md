@@ -52,7 +52,7 @@ Does a warrant authorizing seizure of all books and papers "concerning the Commu
 ## Rule
 No. "[T]he constitutional requirement that warrants must particularly describe the 'things to be seized' is to be accorded the most scrupulous exactitude when the 'things' are books, and the basis for their seizure is the ideas which they contain." — 379 U.S. at 485. ^pin-485
 
-Particularity exists precisely so that, "[a]s to what is to be taken, nothing is left to the discretion of the officer executing the warrant." — *Id.* at 485–86 (quoting *Marron v. United States*). ^pin-485b
+[[Particularity]] exists precisely so that, "[a]s to what is to be taken, nothing is left to the discretion of the officer executing the warrant." — *Id.* at 485–86 (quoting *Marron v. United States*). ^pin-485b
 
 A warrant whose sweep delegates that choice to the officer is the general warrant the Fourth Amendment forbids.
 

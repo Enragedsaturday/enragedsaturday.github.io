@@ -56,7 +56,7 @@ Whether police with probable cause may make a warrantless arrest of a suspect st
 ## Rule
 A suspect standing in her own doorway is in a "public" place for arrest purposes: "While it may be true that under the common law of property the threshold of one's dwelling is 'private,' . . . it is nonetheless clear that under the cases interpreting the Fourth Amendment Santana was in a 'public' place. She was not in an area where she had any expectation of privacy. . . . She was not merely visible to the public but was as exposed to public view, speech, hearing, and touch as if she had been standing completely outside her house." — 427 U.S. at 42. ^pin-42
 
-And a suspect cannot defeat a lawful public arrest by retreating indoors; hot pursuit justifies the warrantless entry: "We thus conclude that a suspect may not defeat an arrest which has been set in motion in a public place, and is therefore proper under *Watson*, by the expedient of escaping to a private place." — 427 U.S. at 43. ^pin-43
+And a suspect cannot defeat a lawful public arrest by retreating indoors; [[Exigent Circumstances and Hot Pursuit|hot pursuit]] justifies the warrantless entry: "We thus conclude that a suspect may not defeat an arrest which has been set in motion in a public place, and is therefore proper under *Watson*, by the expedient of escaping to a private place." — 427 U.S. at 43. ^pin-43
 
 ## Application
 Santana was standing in her open doorway with the bag when officers who had probable cause approached to arrest her; she was therefore in a public place and the arrest was proper under [[United States v. Watson]]. When she retreated into the vestibule, the officers' immediate pursuit was a true [[Exigent Circumstances and Hot Pursuit|hot pursuit]] that justified the warrantless entry. The heroin that fell from the bag and the marked money found on her were lawfully seized incident to that arrest.
@@ -66,7 +66,7 @@ The warrantless entry and arrest were valid; the Supreme Court reversed the supp
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.
-- No negative treatment. *Santana* establishes the doorway-as-public-place rule and the hot-pursuit entry. [[Payton v. New York]] (1980) later held that a warrantless arrest **inside** the home requires a warrant absent exigency, and [[Lange v. California]] (2021) held that pursuit of a fleeing **misdemeanant** is not a categorical exigency — but neither disturbs *Santana*'s threshold/felony hot-pursuit holding.
+- No negative treatment. *Santana* establishes the doorway-as-public-place rule and the hot-pursuit entry. [[Payton v. New York]] (1980) later held that a warrantless arrest **inside** the home requires a warrant absent [[Exigent Circumstances and Hot Pursuit|exigency]], and [[Lange v. California]] (2021) held that pursuit of a fleeing **misdemeanant** is not a categorical [[Exigent Circumstances and Hot Pursuit|exigency]] — but neither disturbs *Santana*'s threshold/felony hot-pursuit holding.
 
 ## Appears on
 - [[Arrest in the Home]] — *Key — Anchor*

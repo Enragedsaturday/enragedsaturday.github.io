@@ -52,7 +52,7 @@ Federal agents, investigating a drug-manufacturing operation, crossed perimeter 
 Whether the area near the barn — located approximately 50 yards from the fence surrounding the ranch house — was within the [[Curtilage|curtilage]] of the house for Fourth Amendment purposes, such that the agents' warrantless observation invaded a protected area.
 
 ## Rule
-Curtilage is determined by reference to four factors: "curtilage questions should be resolved with particular reference to four factors: the proximity of the area claimed to be curtilage to the home, whether the area is included within an enclosure surrounding the home, the nature of the uses to which the area is put, and the steps taken by the resident to protect the area from observation by people passing by." — 480 U.S. at 301. ^pin-301
+[[Curtilage]] is determined by reference to four factors: "curtilage questions should be resolved with particular reference to four factors: the proximity of the area claimed to be curtilage to the home, whether the area is included within an enclosure surrounding the home, the nature of the uses to which the area is put, and the steps taken by the resident to protect the area from observation by people passing by." — 480 U.S. at 301. ^pin-301
 
 The factors are not a rigid formula but tools serving one question: "these factors are useful analytical tools only to the degree that, in any given case, they bear upon the centrally relevant consideration — whether the area in question is so intimately tied to the home itself that it should be placed under the home's 'umbrella' of Fourth Amendment protection." — *Id.* ^pin-301a
 

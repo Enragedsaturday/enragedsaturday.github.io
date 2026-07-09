@@ -59,7 +59,7 @@ George Alvarez pleaded guilty to assaulting a public servant based on a booking-
 Whether a criminal defendant has a constitutional right, enforceable under § 1983, to the disclosure of material [[Brady and Giglio|exculpatory]] evidence before entering a guilty plea.
 
 ## Rule
-The en banc court held that Alvarez's *[[Brady v. Maryland|Brady]]* claim failed and reaffirmed circuit precedent (*United States v. Conroy*) that there is no such pre-plea right: "This court also declines the invitation to disturb its precedent concerning a defendant's constitutional right to *Brady* material prior to entering a guilty plea." — 904 F.3d at 389. Because *[[Brady v. Maryland|Brady]]* is grounded in the right to a fair *trial*, its disclosure obligation does not attach to the plea-bargaining process.
+The [[Reading and Citing Cases#en-banc|en banc]] court held that Alvarez's *[[Brady v. Maryland|Brady]]* claim failed and reaffirmed circuit precedent (*United States v. Conroy*) that there is no such pre-plea right: "This court also declines the invitation to disturb its precedent concerning a defendant's constitutional right to *Brady* material prior to entering a guilty plea." — 904 F.3d at 389. Because *[[Brady v. Maryland|Brady]]* is grounded in the right to a fair *trial*, its disclosure obligation does not attach to the plea-bargaining process.
 
 ## Application
 Without an underlying constitutional violation, there could be no municipal liability: a city cannot be deliberately indifferent to a right the circuit has held does not exist. The court declined the invitation to extend *[[Brady v. Maryland|Brady]]* to the guilty-plea context, noting a split among the circuits but adhering to its own rule, and therefore reversed the judgment against the City.

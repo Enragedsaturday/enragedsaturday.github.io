@@ -62,7 +62,7 @@ The Miranda custody determination is an objective, mixed question of law and fac
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.
-- *Thompson* fixes the **objective** custody standard (reasonable person free to terminate and leave) in the [[Miranda v. Arizona]] line, building on [[California v. Beheler]] and the reasonable-person framing later confirmed in [[Stansbury v. California]]. The §2254(d) habeas-review framework it applied was **later changed by AEDPA (1996)**; [[Yarborough v. Alvarado]] subsequently addressed a custody determination under AEDPA's deferential standard.
+- *Thompson* fixes the **objective** custody standard (reasonable person free to terminate and leave) in the [[Miranda v. Arizona]] line, building on [[California v. Beheler]] and the reasonable-person framing later confirmed in [[Stansbury v. California]]. The §2254(d) [[Common Legal Terms#habeas-corpus|habeas]]-review framework it applied was **later changed by AEDPA (1996)**; [[Yarborough v. Alvarado]] subsequently addressed a custody determination under AEDPA's deferential standard.
 
 ## Appears on
 - [[Miranda and Custodial Interrogation]] — *Key — Progeny / Refinement*

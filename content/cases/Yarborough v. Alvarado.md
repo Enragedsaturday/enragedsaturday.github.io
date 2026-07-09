@@ -64,7 +64,7 @@ The state court reasonably applied clearly established law; AEDPA barred relief.
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.
-- **Juvenile qualifier (field-relevant):** [[J.D.B. v. North Carolina]], 564 U.S. 261 (2011), held that a child's age **is** part of the Miranda custody analysis when it was known to the officer or objectively apparent. *[[J.D.B. v. North Carolina|J.D.B.]]* **distinguished** *Alvarado* as a deferential AEDPA holding that did not decide, on de novo review, whether age is categorically irrelevant. *Alvarado*'s objective-custody rule still governs adults; for juveniles, *[[J.D.B. v. North Carolina|J.D.B.]]* now requires accounting for age.
+- **Juvenile qualifier (field-relevant):** [[J.D.B. v. North Carolina]], 564 U.S. 261 (2011), held that a child's age **is** part of the Miranda custody analysis when it was known to the officer or objectively apparent. *[[J.D.B. v. North Carolina|J.D.B.]]* **distinguished** *Alvarado* as a deferential AEDPA holding that did not decide, on [[Common Legal Terms#de-novo|de novo]] review, whether age is categorically irrelevant. *Alvarado*'s objective-custody rule still governs adults; for juveniles, *[[J.D.B. v. North Carolina|J.D.B.]]* now requires accounting for age.
 - The objective custody framework appears in [[California v. Beheler]] and [[Thompson v. Keohane]], in the [[Miranda v. Arizona]] line.
 
 ## Appears on

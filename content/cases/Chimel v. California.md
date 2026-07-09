@@ -50,7 +50,7 @@ Officers arrested Chimel in his home on a burglary warrant, then — over his ob
 Whether, incident to a lawful arrest, officers may search the arrestee's entire home without a warrant.
 
 ## Rule
-No; the search incident to arrest is limited to the arrestee's person and the area within his immediate reach. "There is ample justification, therefore, for a search of the arrestee's person and the area 'within his immediate control' — construing that phrase to mean the area from within which he might gain possession of a weapon or destructible evidence." — 395 U.S. 752, 763. ^pin-763
+No; the [[Search Incident to Arrest|search incident to arrest]] is limited to the arrestee's person and the area within his immediate reach. "There is ample justification, therefore, for a search of the arrestee's person and the area 'within his immediate control' — construing that phrase to mean the area from within which he might gain possession of a weapon or destructible evidence." — 395 U.S. 752, 763. ^pin-763
 
 "There is no comparable justification, however, for routinely searching any room other than that in which an arrest occurs — or, for that matter, for searching through all the desk drawers or other closed or concealed areas in that room itself." — [*Id.*](https://www.courtlistener.com/opinion/107979/chimel-v-california/#:~:text=There%20is%20no%20comparable%20justification%2C) ^pin-763a
 

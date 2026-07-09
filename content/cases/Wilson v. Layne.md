@@ -46,7 +46,7 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-In April 1992, deputy U.S. Marshals and county deputies executing arrest warrants for Dominic Wilson invited a *Washington Post* [[Reading and Citing Cases#reporter|reporter]] and photographer to accompany them into the home of Dominic's parents, Charles and Geraldine Wilson, during the early-morning entry. The parents were roused from bed; Charles Wilson, in his underwear, was subdued on the floor while the journalists observed and photographed (the photos were never published). Dominic was not there. The Wilsons sued the officers under *[[Bivens v. Six Unknown Named Agents|Bivens]]* and § 1983.
+In April 1992, deputy U.S. Marshals and county deputies executing arrest warrants for Dominic Wilson invited a *Washington Post* reporter and photographer to accompany them into the home of Dominic's parents, Charles and Geraldine Wilson, during the early-morning entry. The parents were roused from bed; Charles Wilson, in his underwear, was subdued on the floor while the journalists observed and photographed (the photos were never published). Dominic was not there. The Wilsons sued the officers under *[[Bivens v. Six Unknown Named Agents|Bivens]]* and § 1983.
 
 ## Issue
 Whether police violate the Fourth Amendment by bringing media into a home during the execution of a warrant, and if so, whether the officers were entitled to [[Qualified Immunity|qualified immunity]].
@@ -54,7 +54,7 @@ Whether police violate the Fourth Amendment by bringing media into a home during
 ## Rule
 Such a media intrusion violates the Fourth Amendment: "We hold that it is a violation of the Fourth Amendment for police to bring members of the media or other third parties into a home during the execution of a warrant when the presence of the third parties in the home was not in aid of the execution of the warrant." — 526 U.S. at 614. ^pin-614
 
-But qualified immunity still protects the officers unless the right was clearly established at the time. "We hold that it was not unreasonable for a police officer in April 1992 to have believed that bringing media observers along during the execution of an arrest warrant (even in a home) was lawful." — *Id.* at 615. ^pin-615
+But [[Qualified Immunity|qualified immunity]] still protects the officers unless the right was clearly established at the time. "We hold that it was not unreasonable for a police officer in April 1992 to have believed that bringing media observers along during the execution of an arrest warrant (even in a home) was lawful." — *Id.* at 615. ^pin-615
 
 ## Application
 Inviting the journalists served no purpose in executing the arrest warrant — they did not aid the search for Dominic — so their presence inside the home exceeded what the warrant authorized and violated the Fourth Amendment. On immunity, however, in 1992 the constitutional question was not "open and shut": no judicial decision had held that a media ride-along became unlawful when it entered a home, and the practice was common. Because the contours of the right were not sufficiently clear that a reasonable officer would have understood the entry to be unlawful, the officers were entitled to [[Qualified Immunity|qualified immunity]].

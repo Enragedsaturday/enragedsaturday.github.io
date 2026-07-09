@@ -52,7 +52,7 @@ After Dow refused a follow-up EPA inspection of its 2,000-acre chemical-manufact
 Whether the EPA's warrantless taking of aerial photographs of the open areas of an industrial plant complex, from navigable airspace, constitutes a "search" under the Fourth Amendment.
 
 ## Rule
-No. The open areas of a large industrial complex are not the constitutional equivalent of the curtilage of a home; "such an industrial complex is more comparable to an open field and as such it is open to the view and observation of persons in aircraft lawfully in the public airspace immediately above or sufficiently near the area for the reach of cameras." — 476 U.S. at 239. ^pin-239
+No. The open areas of a large industrial complex are not the constitutional equivalent of the [[Curtilage|curtilage]] of a home; "such an industrial complex is more comparable to an open field and as such it is open to the view and observation of persons in aircraft lawfully in the public airspace immediately above or sufficiently near the area for the reach of cameras." — 476 U.S. at 239. ^pin-239
 
 Accordingly, "the taking of aerial photographs of an industrial plant complex from navigable airspace is not a search prohibited by the Fourth Amendment." — [*Id.*](https://www.courtlistener.com/opinion/111667/dow-chemical-co-v-united-states-ex-rel-administrator/#:~:text=the%20taking%20of%20aerial%20photographs) ^pin-239a
 
@@ -64,7 +64,7 @@ The aerial photography was not a Fourth Amendment search. The judgment for the U
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.
-- Decided the same day as [[California v. Ciraolo]] (naked-eye aerial view of a home's curtilage) and reinforced by [[Florida v. Riley]] (helicopter observation). [[Kyllo v. United States]] (2001) later cabined *sense-enhancing technology* directed at the *home's* interior, distinguishing the open-area/commercial setting here.
+- Decided the same day as [[California v. Ciraolo]] (naked-eye aerial view of a home's [[Curtilage|curtilage]]) and reinforced by [[Florida v. Riley]] (helicopter observation). [[Kyllo v. United States]] (2001) later cabined *sense-enhancing technology* directed at the *home's* interior, distinguishing the open-area/commercial setting here.
 
 ## Appears on
 - [[Aerial and Enhanced Surveillance]] — *Key — Anchor*

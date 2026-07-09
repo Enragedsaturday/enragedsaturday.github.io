@@ -62,7 +62,7 @@ A confession caused by a "truth serum" drug, not the product of a free intellect
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**, on the confession-voluntariness holding.
-- **Habeas-procedure caveat (home-by-holding):** *Townsend* also set the standards for when a federal habeas court must hold an evidentiary hearing. That **procedural** holding (the deliberate-bypass branch) was **abrogated** by *Keeney v. Tamayo-Reyes*, 504 U.S. 1 (1992), and superseded by AEDPA, 28 U.S.C. §2254(e)(2). This page homes the case by its **confession-voluntariness** ratio, which remains good law.
+- **[[Common Legal Terms#habeas-corpus|Habeas]]-procedure caveat (home-by-holding):** *Townsend* also set the standards for when a federal [[Common Legal Terms#habeas-corpus|habeas]] court must hold an evidentiary hearing. That **procedural** holding (the deliberate-bypass branch) was **abrogated** by *Keeney v. Tamayo-Reyes*, 504 U.S. 1 (1992), and superseded by AEDPA, 28 U.S.C. §2254(e)(2). This page homes the case by its **confession-voluntariness** ratio, which remains good law.
 - The voluntariness holding extends the coercion-not-reliability principle of [[Rogers v. Richmond]] and the overborne-will test of [[Lynumn v. Illinois]] to drug-induced statements, paralleling the drugged-confession branch of [[Beecher v. Alabama]] in the due-process line anchored by [[Brown v. Mississippi]].
 
 ## Appears on

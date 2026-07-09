@@ -56,7 +56,7 @@ Moving the equipment to expose hidden information was a new search beyond the en
 
 "A search is a search, even if it happens to disclose nothing but the bottom of a turntable." — [*Id.* at 325](https://www.courtlistener.com/opinion/111834/arizona-v-hicks/#:~:text=A%20search%20is%20a%20search%2C). ^pin-325
 
-The plain-view doctrine requires probable cause: "We now hold that probable cause is required. To say otherwise would be to cut the 'plain view' doctrine loose from its theoretical and practical moorings." — *Id.* at 326. ^pin-326
+The [[Plain View Doctrine|plain-view doctrine]] requires probable cause: "We now hold that probable cause is required. To say otherwise would be to cut the 'plain view' doctrine loose from its theoretical and practical moorings." — *Id.* at 326. ^pin-326
 
 ## Application
 The officer's lawful basis for being in the apartment was the shooting [[Exigent Circumstances and Hot Pursuit|exigency]]; turning the turntable to read a concealed serial number was unrelated to that [[Exigent Circumstances and Hot Pursuit|exigency]] and exposed information the officer could not otherwise see, so it was a separate search. Because the State conceded the officer had only reasonable suspicion — not probable cause — that the equipment was stolen, the [[Plain View Doctrine|plain-view doctrine]] could not justify the search on these facts, and it was unreasonable.

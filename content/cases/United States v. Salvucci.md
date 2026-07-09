@@ -44,7 +44,7 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-Salvucci and Zackular were charged with possessing stolen mail (12 checks), seized by police from an apartment rented by Zackular's mother during a search conducted under a warrant. They moved to suppress the checks, arguing the warrant affidavit failed to establish probable cause. The government responded that they lacked standing to challenge the search. Relying on *[[Jones v. United States]]* (1960), the First Circuit held that, because they were charged with possessory crimes, they had "automatic standing" to challenge the search without showing any privacy interest in the apartment.
+Salvucci and Zackular were charged with possessing stolen mail (12 checks), seized by police from an apartment rented by Zackular's mother during a search conducted under a warrant. They moved to suppress the checks, arguing the warrant affidavit failed to establish probable cause. The government responded that they lacked [[Standing to Challenge a Search|standing to challenge]] the search. Relying on *[[Jones v. United States]]* (1960), the First Circuit held that, because they were charged with possessory crimes, they had "automatic standing" to challenge the search without showing any privacy interest in the apartment.
 
 ## Issue
 Whether a defendant charged with a possessory offense has "automatic standing" to challenge the search that produced the evidence, without showing that his own Fourth Amendment rights were violated.

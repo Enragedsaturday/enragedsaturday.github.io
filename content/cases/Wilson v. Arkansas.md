@@ -66,7 +66,7 @@ The [[Knock-and-Announce|knock-and-announce]] principle is part of Fourth Amendm
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.
-- No negative treatment. *Wilson* was refined by [[Richards v. Wisconsin]] (1997), which set the "reasonable suspicion" standard for dispensing with announcement (danger, futility, or destruction of evidence). [[Hudson v. Michigan]] (2006) held that a knock-and-announce violation does not by itself trigger the exclusionary rule — limiting the remedy, not the underlying requirement.
+- No negative treatment. *Wilson* was refined by [[Richards v. Wisconsin]] (1997), which set the "reasonable suspicion" standard for dispensing with announcement (danger, futility, or destruction of evidence). [[Hudson v. Michigan]] (2006) held that a [[Knock-and-Announce|knock-and-announce]] violation does not by itself trigger the exclusionary rule — limiting the remedy, not the underlying requirement.
 
 ## Appears on
 - [[Knock-and-Announce]] — *Key — Anchor*

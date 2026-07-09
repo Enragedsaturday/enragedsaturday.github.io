@@ -268,9 +268,33 @@ def assemble(src=None, content_root=None, scanned_head=None):
                     "authoritative fresh corpus scan with no provenance overlay; "
                     "the close re-run picks up the rows.")
 
+    # Base: the auto mention rows (pass-through). The auto file may OR MAY NOT
+    # already carry the adjudicated occurrences (a sibling regenerates it after
+    # the resolution links land — the workorder's concurrency case). Merge
+    # idempotently: enrich any pre-present adjudicated row with the queue/
+    # resolution provenance, and append only the ones the auto file is missing —
+    # never double-count.
     mentions = [_norm_mention(r) for r in auto]
-    adjudicated = build_adjudicated_rows(queue, resolutions)
-    mentions.extend(adjudicated)
+    auto_adj = {}
+    for m in mentions:
+        if (m.get("resolution") or {}).get("method") == "adjudicated":
+            auto_adj.setdefault(
+                (m["file"], m["line"], m["matched_text"]), []).append(m)
+
+    adj_built = build_adjudicated_rows(queue, resolutions)
+    adj_total = len(adj_built)
+    adj_appended = 0
+    for a in adj_built:
+        bucket = auto_adj.get((a["file"], a["line"], a["matched_text"]))
+        if bucket:
+            tgt = bucket.pop(0)
+            tgt["adjudication"] = a["adjudication"]
+            if not (tgt["resolution"] or {}).get("rationale") \
+                    and a["resolution"].get("rationale"):
+                tgt["resolution"]["rationale"] = a["resolution"]["rationale"]
+        else:
+            mentions.append(a)
+            adj_appended += 1
 
     terms = build_terms(term_rows)
     embeds = scan_embeds(content_root, embed_rows)
@@ -290,7 +314,8 @@ def assemble(src=None, content_root=None, scanned_head=None):
         "counts": {
             "mentions_total": len(mentions),
             "mentions_auto": len(auto),
-            "mentions_adjudicated": len(adjudicated),
+            "mentions_adjudicated": adj_total,
+            "mentions_adjudicated_appended": adj_appended,
             "mentions_by_action": action_hist,
             "terms_pages": len(terms.get("pages") or {}),
             "embeds": len(embeds),

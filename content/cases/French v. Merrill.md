@@ -52,7 +52,7 @@ Detectives investigating French repeatedly entered the [[Curtilage|curtilage]] o
 Whether officers who repeatedly entered the [[Curtilage|curtilage]] of a home and engaged in intrusive, pre-dawn conduct in the course of attempted knock and talks exceeded the implied social license — and whether [[Florida v. Jardines]] clearly established the unlawfulness of that conduct.
 
 ## Rule
-The knock-and-talk exception is bounded by the implied social license, which is limited in both area and purpose. The court explained that the license's scope "is limited not only to a particular area but also to a specific purpose, both of which are defined by what a homeowner might reasonably expect from a private citizen on the homeowner's curtilage." — *French v. Merrill*, 15 F.4th 116 (1st Cir. 2021) (slip op., at 39). ^pin-op39
+The [[Knock and Talk|knock-and-talk]] exception is bounded by the implied social license, which is limited in both area and purpose. The court explained that the license's scope "is limited not only to a particular area but also to a specific purpose, both of which are defined by what a homeowner might reasonably expect from a private citizen on the homeowner's curtilage." — *French v. Merrill*, 15 F.4th 116 (1st Cir. 2021) (slip op., at 39). ^pin-op39
 
 Officers who exceed that purpose through intrusive, repeated entries fall outside the license: "The officers in this case, like the officers in Jardines, in the absence of any license to do so, 'physically intrud[ed]' on a suspect's property repeatedly and engaged in intrusive conduct that no reasonable visitor could have understood as impliedly authorized by a resident." — *Id.* (slip op., at 39). ^pin-op39a
 

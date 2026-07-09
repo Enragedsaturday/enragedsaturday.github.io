@@ -52,7 +52,7 @@ Officer Rochelle Brosseau of the Puyallup, Washington, police responded to a rep
 Whether Officer Brosseau was entitled to [[Qualified Immunity|qualified immunity]] on the excessive-force claim — i.e., whether it was clearly established that shooting a fleeing suspect in these circumstances violated the Fourth Amendment.
 
 ## Rule
-Qualified immunity protects an officer who reasonably misjudges an unsettled legal question. "Qualified immunity shields an officer from suit when she makes a decision that, even if constitutionally deficient, reasonably misapprehends the law governing the circumstances she confronted." — 543 U.S. at 198. ^pin-198
+[[Qualified Immunity|Qualified immunity]] protects an officer who reasonably misjudges an unsettled legal question. "Qualified immunity shields an officer from suit when she makes a decision that, even if constitutionally deficient, reasonably misapprehends the law governing the circumstances she confronted." — 543 U.S. at 198. ^pin-198
 
 The clearly-established inquiry must be particularized, not abstract. "*Graham* and *Garner*, following the lead of the Fourth Amendment's text, are cast at a high level of generality." — 543 U.S. at 199. ^pin-199
 

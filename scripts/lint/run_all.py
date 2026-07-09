@@ -1,9 +1,16 @@
 #!/usr/bin/env python3
 """
 Runner for the NON-CL CSSI lints (LINT-2,3,4,5,6,7,8,9,10,12,13,14,17,18,19,20,
-21,22,23,24,25,26) over content/ and the S3 repo scans. Fixture self-tests for
-LINT-10/12/13/14/17 run first, fail-closed. The full numeric roster LINT-1…30 is
-codified at S9 (S9 R8); rows land here as their owning specs execute.
+21,22,23,24,25,26,27,28,29) over content/ and the S3 repo scans. Fixture self-tests
+for LINT-5,7,10,12,13,14,17,27,28,29 run first, fail-closed. The full numeric roster
+LINT-1…30 is codified at S9 (S9 R8); rows land here as their owning specs execute.
+LINT-15/16 stay STANDALONE (batch-1 rule C) — never in this roster: they scan repo
+structure the way the S3/S5 tooling drives them, not the content sweep.
+
+S8 R13 additions: LINT-5 (ledger-aware bare-caption + broken-anchor HIGH + embed
+full-slug) and LINT-7 (register coverage + dead-anchor HIGH; old first-occurrence
+rule DELETED) are rewritten; LINT-27 (table pipes, R11), LINT-28 (fragment
+well-formedness, R13d) and LINT-29 (shingle boundary, R9) are new.
 
 LINT-1 (CourtListener identity) is DELIBERATELY EXCLUDED here: it touches the
 network and must run only through its assigned serial credential lane at the
@@ -46,6 +53,9 @@ import lint23_order_weight as l23  # noqa: E402
 import lint24_urls as l24          # noqa: E402
 import lint25_deck as l25          # noqa: E402
 import lint26_goodlaw_target as l26  # noqa: E402
+import lint27_table_pipes as l27    # noqa: E402
+import lint28_fragments as l28      # noqa: E402
+import lint29_shingle_boundary as l29  # noqa: E402
 
 # LINT-24 (URL resolution) reads the CURRENT BUILD OUTPUT (public/). Unlike
 # LINT-1 (network CL identity, serial-gate-only), it is CI-SAFE to register here:
@@ -75,14 +85,22 @@ LINTS = [
     ("LINT-24", "S3 url stability (R13/A1, build-guarded)", l24.run),
     ("LINT-25", "S3 deck-stem preservation (R14/A2, fail-closed)", l25.run),
     ("LINT-26", "good-law target resolves (S4 R5, fail-closed)", l26.run),
+    ("LINT-27", "table pipe-escaping (S8 R11/NUM-02)", l27.run),
+    ("LINT-28", "external text-fragment well-formedness (S8 R13d)", l28.run),
+    ("LINT-29", "R9 transclusion/shingle boundary (S8 R9)", l29.run),
 ]
 
 SELF_TESTS = [
+    ("LINT-5", "LINT-5 self-test gate (S8 R13a, fail-closed)", l5.self_test, l5.FIXTURE),
+    ("LINT-7", "LINT-7 self-test gate (S8 R13b, fail-closed)", l7.self_test, l7.FIXTURE),
     ("LINT-10", "LINT-10 self-test gate (S1 A3, fail-closed)", l10.self_test, l10.FIXTURE),
     ("LINT-12", "LINT-12 self-test gate (S2 R12/A13, fail-closed)", l12.self_test, os.path.join(c.HERE, "fixtures")),
     ("LINT-13", "LINT-13 self-test gate (S2 schema, fail-closed)", l13.self_test, os.path.join(c.HERE, "fixtures")),
     ("LINT-14", "LINT-14 self-test gate (S2 R12/A16, fail-closed)", l14.self_test, os.path.join(c.HERE, "fixtures")),
     ("LINT-17", "LINT-17 self-test gate (S6 R11/R12, fail-closed)", l17.self_test, os.path.join(c.HERE, "fixtures")),
+    ("LINT-27", "LINT-27 self-test gate (S8 R11, fail-closed)", l27.self_test, l27.FIXTURE),
+    ("LINT-28", "LINT-28 self-test gate (S8 R13d, fail-closed)", l28.self_test, l28.FIXTURE),
+    ("LINT-29", "LINT-29 self-test gate (S8 R9, fail-closed)", l29.self_test, l29.FIXTURE),
 ]
 
 

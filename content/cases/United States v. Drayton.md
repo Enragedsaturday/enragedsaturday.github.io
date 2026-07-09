@@ -50,7 +50,7 @@ Three officers boarded a stopped interstate bus as part of a drug interdiction s
 Whether the bus passengers were seized when officers questioned them and requested consent to search, and whether their consent was involuntary because officers did not advise them of their right to refuse.
 
 ## Rule
-Bus-sweep questioning is not a per se seizure; the test is objective: "Applying the *Bostick* framework to the facts of this particular case, we conclude that the police did not seize respondents when they boarded the bus and began questioning passengers." — 536 U.S. at 203. ^pin-203
+Bus-sweep questioning is not a [[Common Legal Terms#per-se|per se]] seizure; the test is objective: "Applying the *Bostick* framework to the facts of this particular case, we conclude that the police did not seize respondents when they boarded the bus and began questioning passengers." — 536 U.S. at 203. ^pin-203
 
 The inquiry is "whether a reasonable person would feel free to decline the officers' requests or otherwise terminate the encounter." — [*Id.* at 202](https://www.courtlistener.com/opinion/121153/united-states-v-drayton/#:~:text=whether%20a%20reasonable%20person%20would) (quoting *Florida v. Bostick*). ^pin-202
 

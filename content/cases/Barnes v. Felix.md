@@ -50,7 +50,7 @@ Officer Roberto Felix, Jr. pulled over Ashtian Barnes near Houston for outstandi
 Whether a court evaluating an excessive-force claim may apply a "moment-of-threat" rule that confines the inquiry to the circumstances at the precise instant force was used, ignoring the events leading up to it.
 
 ## Rule
-No — the inquiry is the totality of the circumstances, with no time limit. "Today, we reject that approach as improperly narrowing the requisite Fourth Amendment analysis. To assess whether an officer acted reasonably in using force, a court must consider all the relevant circumstances, including facts and events leading up to the climactic moment." — 605 U.S. 73 (slip op., at 1). ^pin-73
+No — the inquiry is the [[Common Legal Terms#totality-of-the-circumstances|totality of the circumstances]], with no time limit. "Today, we reject that approach as improperly narrowing the requisite Fourth Amendment analysis. To assess whether an officer acted reasonably in using force, a court must consider all the relevant circumstances, including facts and events leading up to the climactic moment." — 605 U.S. 73 (slip op., at 1). ^pin-73
 
 The *[[Graham v. Connor]]* reasonableness test, assessed from the perspective of a reasonable officer on the scene, requires looking at the whole encounter: "A court deciding a use-of-force case cannot review the totality of the circumstances if it has put on chronological blinders." — *Id.* (slip op., at 7). ^pin-73b
 

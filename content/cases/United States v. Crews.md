@@ -52,7 +52,7 @@ A woman was robbed at gunpoint; she immediately notified police, gave a full des
 Whether a crime victim's in-court identification of the accused must be suppressed as a fruit of the defendant's unlawful arrest.
 
 ## Rule
-No, where the identification's components have an independent source that antedates the illegality. "A victim's in-court identification of the accused has three distinct elements" — the victim's presence to testify, her ability to reconstruct the crime and identify the defendant, and the defendant's own physical presence in the courtroom — and on these facts "none of these three elements 'has been come at by exploitation' of the violation of the defendant's Fourth Amendment rights." — 445 U.S. at 471 (quoting *Wong Sun v. United States*, 371 U.S. 471, 488). ^pin-471
+No, where the identification's components have an [[Inevitable Discovery and Independent Source|independent source]] that antedates the illegality. "A victim's in-court identification of the accused has three distinct elements" — the victim's presence to testify, her ability to reconstruct the crime and identify the defendant, and the defendant's own physical presence in the courtroom — and on these facts "none of these three elements 'has been come at by exploitation' of the violation of the defendant's Fourth Amendment rights." — 445 U.S. at 471 (quoting *Wong Sun v. United States*, 371 U.S. 471, 488). ^pin-471
 
 ## Application
 Each element traced to a source independent of the illegal arrest. The victim's presence was "not traceable to any Fourth Amendment violation," because "the victim's identity was known long before there was any official misconduct." — *Id.* at 472. ^pin-472

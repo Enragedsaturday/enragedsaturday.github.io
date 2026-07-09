@@ -50,7 +50,7 @@ An undercover officer, Glover, bought heroin from a seller he viewed for a few m
 Whether due process requires a [[Common Legal Terms#per-se|per se]] rule excluding identification evidence derived from an unnecessarily suggestive procedure, or whether admissibility turns on the reliability of the identification under the [[Common Legal Terms#totality-of-the-circumstances|totality of the circumstances]].
 
 ## Rule
-No per se exclusion; reliability governs. "reliability is the linchpin in determining the admissibility of identification testimony for both pre- and post-*Stovall* confrontations." — 432 U.S. at 114. ^pin-114
+No [[Common Legal Terms#per-se|per se]] exclusion; reliability governs. "reliability is the linchpin in determining the admissibility of identification testimony for both pre- and post-*Stovall* confrontations." — 432 U.S. at 114. ^pin-114
 
 The reliability factors, drawn from *[[Neil v. Biggers]]*, are "the opportunity of the witness to view the criminal at the time of the crime, the witness' degree of attention, the accuracy of his prior description of the criminal, the level of certainty demonstrated at the confrontation, and the time between the crime and the confrontation. Against these factors is to be weighed the corrupting effect of the suggestive identification itself." — [*Id.*](https://www.courtlistener.com/opinion/109693/manson-v-brathwaite/#:~:text=the%20opportunity%20of%20the%20witness) ^pin-114a
 

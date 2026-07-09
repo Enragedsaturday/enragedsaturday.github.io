@@ -54,7 +54,7 @@ Whether a camper has a [[Reasonable Expectation of Privacy|reasonable expectatio
 ## Rule
 A tent itself is a private space: "A tent is comparable to a house, apartment, or hotel room because it is a private area where people sleep and change clothing." — 629 F.3d at 1169. ^pin-1169
 
-But the open area around a tent on dispersed public land is not curtilage. The court held that, on these facts, "there was no expectation of privacy in the campsite, and that the area outside of the tent in these circumstances is not curtilage." — *Id.* at 1169. ^pin-1169a
+But the open area around a tent on dispersed public land is not [[Curtilage|curtilage]]. The court held that, on these facts, "there was no expectation of privacy in the campsite, and that the area outside of the tent in these circumstances is not curtilage." — *Id.* at 1169. ^pin-1169a
 
 ## Application
 Because Basher's camp sat on undeveloped public land, in an area open to the public and visible from the developed campground, the space outside his tent carried no [[Reasonable Expectation of Privacy|reasonable expectation of privacy]] and was not [[Curtilage|curtilage]] to be treated like the grounds of a home. The interior of the tent remained a protected private area, but the officers' observations and search of the exposed surrounding campsite did not invade a constitutionally protected privacy interest.

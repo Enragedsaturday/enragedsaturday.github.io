@@ -50,7 +50,7 @@ A. Ernest Fitzgerald, a former Air Force management analyst, sued senior aides t
 What standard governs the [[Qualified Immunity|qualified immunity]] of government officials performing discretionary functions when they are sued for civil damages.
 
 ## Rule
-Qualified immunity is governed by a purely objective standard keyed to clearly established law. "[G]overnment officials performing discretionary functions generally are shielded from liability for civil damages insofar as their conduct does not violate clearly established statutory or constitutional rights of which a reasonable person would have known." — 457 U.S. at 818. ^pin-818
+[[Qualified Immunity|Qualified immunity]] is governed by a purely objective standard keyed to clearly established law. "[G]overnment officials performing discretionary functions generally are shielded from liability for civil damages insofar as their conduct does not violate clearly established statutory or constitutional rights of which a reasonable person would have known." — 457 U.S. at 818. ^pin-818
 
 The Court abandoned the older inquiry's subjective "good faith / malice" prong because it too often defeated summary judgment and exposed officials to the burdens of trial and discovery; immunity now turns on the objective legal reasonableness of the conduct measured against clearly established law.
 

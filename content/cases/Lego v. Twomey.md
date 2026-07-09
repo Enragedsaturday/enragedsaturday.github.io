@@ -50,7 +50,7 @@ Lego was convicted of armed robbery on evidence that included his confession, wh
 Whether the prosecution must prove a confession's voluntariness [[Common Legal Terms#beyond-a-reasonable-doubt|beyond a reasonable doubt]], and whether a defendant is entitled to have the jury redetermine voluntariness after the judge has ruled it admissible.
 
 ## Rule
-A preponderance of the evidence is the constitutional floor. "[W]hen a confession challenged as involuntary is sought to be used against a criminal defendant at his trial, he is entitled to a reliable and clear-cut determination that the confession was in fact voluntarily rendered. Thus, the prosecution must prove at least by a preponderance of the evidence that the confession was voluntary. Of course, the States are free, pursuant to their own law, to adopt a higher standard." — 404 U.S. at 489. ^pin-489
+A [[Common Legal Terms#preponderance-of-the-evidence|preponderance of the evidence]] is the constitutional floor. "[W]hen a confession challenged as involuntary is sought to be used against a criminal defendant at his trial, he is entitled to a reliable and clear-cut determination that the confession was in fact voluntarily rendered. Thus, the prosecution must prove at least by a preponderance of the evidence that the confession was voluntary. Of course, the States are free, pursuant to their own law, to adopt a higher standard." — 404 U.S. at 489. ^pin-489
 
 The Court also held that, the judge having reliably determined voluntariness, the defendant has no constitutional right to have the jury pass on the claim a second time.
 

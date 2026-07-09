@@ -50,7 +50,7 @@ Plainclothes Euclid, Ohio officers in an unmarked car, suspecting a drug deal, s
 Whether genuine disputes of material fact precluded summary judgment — and whether [[Qualified Immunity|qualified immunity]] shielded the officers — on Wright's Fourth Amendment claims for excessive force, false arrest, and extended detention, and whether the City could face Monell municipal liability.
 
 ## Rule
-Qualified immunity is overcome where, taking the plaintiff's version of the facts as true, a jury could find a violation of a clearly established right. On excessive force: "It was clearly established as of November 4, 2016 that drawing a weapon on a suspect who was not fleeing or posing a safety risk and tasering a suspect who was not actively resisting arrest constituted excessive force." — *Wright v. City of Euclid*, 962 F.3d 852 (6th Cir. 2020) (slip op., at 17). ^pin-op17
+[[Qualified Immunity|Qualified immunity]] is overcome where, taking the plaintiff's version of the facts as true, a jury could find a violation of a clearly established right. On excessive force: "It was clearly established as of November 4, 2016 that drawing a weapon on a suspect who was not fleeing or posing a safety risk and tasering a suspect who was not actively resisting arrest constituted excessive force." — *Wright v. City of Euclid*, 962 F.3d 852 (6th Cir. 2020) (slip op., at 17). ^pin-op17
 
 On false arrest: "the right to be free from arrest without probable cause is a 'quintessential example[] of [a] "clearly established" constitutional right.'" — *Id.* (slip op., at 23). ^pin-op23
 

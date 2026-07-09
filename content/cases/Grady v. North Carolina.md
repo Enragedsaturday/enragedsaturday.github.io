@@ -62,13 +62,13 @@ Torrey Grady, a recidivist sex offender in North Carolina, was ordered under a s
 Whether a State conducts a Fourth Amendment search when it attaches a tracking device to a person's body, without consent, in order to monitor his movements.
 
 ## Rule
-Building directly on the Court's physical-intrusion cases, the per curiam opinion held: "it follows that a State also conducts a search when it attaches a device to a person's body, without consent, for the purpose of tracking that individual's movements." — 135 S. Ct. at 1370. ^pin-1370
+Building directly on the Court's physical-intrusion cases, the [[Common Legal Terms#per-curiam|per curiam]] opinion held: "it follows that a State also conducts a search when it attaches a device to a person's body, without consent, for the purpose of tracking that individual's movements." — 135 S. Ct. at 1370. ^pin-1370
 
 ## Application
 *[[United States v. Jones]]* and *[[Florida v. Jardines]]* establish that the government conducts a Fourth Amendment search when it physically intrudes on a constitutionally protected area to obtain information. Attaching a monitor to a person's body to track his movements is exactly such a physical intrusion — indeed a more direct one than the vehicle-mounted GPS in *[[United States v. Jones|Jones]]*. The civil label on North Carolina's program did not change the analysis, because Fourth Amendment coverage does not turn on whether the government's aim is civil or criminal. The Court held a search occurs and [[Reading and Citing Cases#on-remand|remanded]], expressly leaving open whether *this* search — lifetime satellite monitoring of a recidivist offender — is *reasonable*.
 
 ## Conclusion
-The judgment was **vacated** and the case remanded (per curiam) for a determination of the search's reasonableness.
+The judgment was **[[Reading and Citing Cases#vacated|vacated]]** and the case [[Reading and Citing Cases#on-remand|remanded]] (per curiam) for a determination of the search's reasonableness.
 
 ## Treatment & subsequent history
 **Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub; its citator and progeny history have not completed the project's two-key verification, so it renders under the ⚪ banner until S9 promotion. *Grady* applies the *[[United States v. Jones|Jones]]*/*[[Florida v. Jardines|Jardines]]* physical-intrusion (trespass) test to the human body: strapping a GPS monitor on a person is a search. It resolves only the threshold question; whether continuous or lifetime monitoring is a *reasonable* search — under the [[Common Legal Terms#totality-of-the-circumstances|totality of the circumstances]] and any special-needs justification — was left for the courts below. Teach it as the trespass theory reaching wearable tracking devices.

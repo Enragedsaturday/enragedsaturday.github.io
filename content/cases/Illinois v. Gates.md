@@ -54,7 +54,7 @@ Police received an anonymous letter stating that Lance and Susan Gates were drug
 Whether probable cause based on an informant's tip must satisfy the two independent prongs of the *[[Aguilar v. Texas|Aguilar]]*–*[[Spinelli v. United States|Spinelli]]* test, or is instead judged by the [[Common Legal Terms#totality-of-the-circumstances|totality of the circumstances]].
 
 ## Rule
-Probable cause from a tip is judged by the totality of the circumstances. "For all these reasons, we conclude that it is wiser to abandon the 'two-pronged test' established by our decisions in Aguilar and Spinelli. In its place we reaffirm the totality-of-the-circumstances analysis that traditionally has informed probable-cause determinations." — 462 U.S. at 238. ^pin-238
+Probable cause from a tip is judged by the [[Common Legal Terms#totality-of-the-circumstances|totality of the circumstances]]. "For all these reasons, we conclude that it is wiser to abandon the 'two-pronged test' established by our decisions in Aguilar and Spinelli. In its place we reaffirm the totality-of-the-circumstances analysis that traditionally has informed probable-cause determinations." — 462 U.S. at 238. ^pin-238
 
 "The task of the issuing magistrate is simply to make a practical, common-sense decision whether, given all the circumstances set forth in the affidavit before him, including the 'veracity' and 'basis of knowledge' of persons supplying hearsay information, there is a fair probability that contraband or evidence of a crime will be found in a particular place." — *Id.* ^pin-238a
 

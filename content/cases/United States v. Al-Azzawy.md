@@ -53,7 +53,7 @@ The location of the arrest is fixed by the suspect's position at the moment his 
 "Moreover, since appellee was in his trailer at the time he was surrounded by armed officers, and since he did not voluntarily expose himself to their view or control outside his trailer but only emerged under circumstances of extreme coercion, the arrest occurred while he was still inside his trailer." *Id.* at 894–95. ^pin-895
 
 ## Application
-Applying that rule, the court held that "appellee was arrested inside his residence" without a warrant. But the inquiry did not end there: because the reported threats (grenades, automatic weapons, and a threat to blow up the trailer park) established genuine exigent circumstances, the warrantless in-home arrest was justified, and the district court's suppression order was error. The court therefore **reversed**. ^pin-895b
+Applying that rule, the court held that "appellee was arrested inside his residence" without a warrant. But the inquiry did not end there: because the reported threats (grenades, automatic weapons, and a threat to blow up the trailer park) established genuine [[Exigent Circumstances and Hot Pursuit|exigent circumstances]], the warrantless in-home arrest was justified, and the district court's suppression order was error. The court therefore **reversed**. ^pin-895b
 
 Al-Azzawy thus establishes *both* poles of the analysis: coerced emergence from a surrounded home is an in-home arrest (the containment/exit-command rule), yet a real, present danger can supply the [[Exigent Circumstances and Hot Pursuit|exigency]] that excuses the warrant.
 
@@ -62,7 +62,7 @@ Reversed. A suspect who emerges from his surrounded home only under overwhelming
 
 ## Treatment & subsequent history
 - **Status:** ⚪ unverified (frontier stub) — **Binding in-circuit — 9th Cir.** Treatment/progeny not machine-certified until S9 promotion.
-- *Al-Azzawy* is the coerced-emergence pole of the Ninth-Circuit surround-and-call-out line. It is the anchor *[[United States v. Nora]]* distinguishes at 894 (Nora had no comparable "agitated and violent state," and the perimeter defeated any flight exigency), and the coercion counterpoint to the voluntary-exposure holding of *[[United States v. Vaneaton]]*, 49 F.3d 1423 (9th Cir. 1995).
+- *Al-Azzawy* is the coerced-emergence pole of the Ninth-Circuit surround-and-call-out line. It is the anchor *[[United States v. Nora]]* distinguishes at 894 (Nora had no comparable "agitated and violent state," and the perimeter defeated any flight [[Exigent Circumstances and Hot Pursuit|exigency]]), and the coercion counterpoint to the voluntary-exposure holding of *[[United States v. Vaneaton]]*, 49 F.3d 1423 (9th Cir. 1995).
 
 *Status note (⚪):* authored from a CourtListener-verified identity stub (two-key: cluster 465254 + 784 F.2d 890); renders under the ⚪ banner until S9 promotion.
 

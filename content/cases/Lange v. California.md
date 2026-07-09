@@ -52,7 +52,7 @@ A California highway patrol officer began following Lange, who was playing loud 
 Whether the pursuit of a fleeing misdemeanor suspect categorically (always) qualifies as an exigent circumstance justifying a warrantless entry into the home.
 
 ## Rule
-No — there is no categorical rule; exigency is judged case by case. "The question presented here is whether the pursuit of a fleeing misdemeanor suspect always — or more legally put, categorically — qualifies as an exigent circumstance. We hold it does not." — *Lange v. California*, 594 U.S. 295 (2021) (slip op., at 1). ^pin-op1
+No — there is no categorical rule; [[Exigent Circumstances and Hot Pursuit|exigency]] is judged case by case. "The question presented here is whether the pursuit of a fleeing misdemeanor suspect always — or more legally put, categorically — qualifies as an exigent circumstance. We hold it does not." — *Lange v. California*, 594 U.S. 295 (2021) (slip op., at 1). ^pin-op1
 
 "A great many misdemeanor pursuits involve exigencies allowing warrantless entry. But whether a given one does so turns on the particular facts of the case." — *Id.* (slip op., at [1](https://www.courtlistener.com/opinion/4894407/lange-v-california/#:~:text=A%20great%20many%20misdemeanor%20pursuits)). ^pin-op1a
 

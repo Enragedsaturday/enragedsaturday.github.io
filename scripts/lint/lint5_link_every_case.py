@@ -61,6 +61,17 @@ NONPAGE_TERMINALS = {"brief-mention", "excluded-remit", "folded-alias",
 _NON_CASE_LEFT = {"see", "cf", "e.g", "id", "compare", "accord", "but"}
 
 _EMBED_RE = re.compile(r"!\[\[([^\[\]]+?)\]\]")
+# display-pipe splitter: inside a table cell the pipe is escaped as `\|` (R11);
+# both `\|` and a bare `|` separate the target from its display text.
+_PIPE_SPLIT_RE = re.compile(r"\\?\|")
+
+
+def _target_parts(inner):
+    """(page, anchor) from a wikilink/embed inner, tolerating the `\\|` table
+    display pipe (Quartz self-heals `\\|` -> `|` at render and resolves the page)."""
+    target = _PIPE_SPLIT_RE.split(inner.strip(), 1)[0].strip()
+    page, _, anchor = target.partition("#")
+    return page.strip(), anchor.strip()
 
 
 # --------------------------------------------------------------------------
@@ -158,10 +169,8 @@ def check_file(path, idx, pagebacked, this_stem=None):
         embed_spans.append((m.start(), m.end()))
         if exempt_nolink(m.start()):
             continue
-        inner = m.group(1).strip().split("|", 1)[0].strip()
-        page, _, anchor = inner.partition("#")
-        page = page.strip()
-        anchor = anchor.strip()
+        inner = m.group(1).strip()
+        page, anchor = _target_parts(inner)
         lineno = _line_of(m.start(), starts)
         if "/" not in page:
             out.append(c.make_violation(
@@ -186,10 +195,8 @@ def check_file(path, idx, pagebacked, this_stem=None):
             continue
         if exempt_nolink(m.start()):
             continue
-        inner = m.group(1).strip().split("|", 1)[0].strip()
-        page, _, anchor = inner.partition("#")
-        page = page.strip()
-        anchor = anchor.strip()
+        inner = m.group(1).strip()
+        page, anchor = _target_parts(inner)
         lineno = _line_of(m.start(), starts)
         if page == "":
             if anchor and not idx.has_anchor(this_stem, anchor):
@@ -225,6 +232,9 @@ def check_file(path, idx, pagebacked, this_stem=None):
         if left.lower().rstrip(".") in _NON_CASE_LEFT:
             continue
         name = m.group(0).strip()
+        stem = idx.resolve(name) if idx else None
+        if stem is not None and stem == this_stem:
+            continue  # self-reference (R2 zone (g)) — a page never self-links
         if not _page_backed(name, idx, pagebacked):
             continue  # non-page terminal or genuinely uncovered -> stays plain (PASS)
         out.append(c.make_violation(

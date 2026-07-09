@@ -54,7 +54,7 @@ Officers stopped Class for two traffic violations. When Class exited the car, an
 Whether an officer's entry into the passenger compartment of a lawfully stopped car to move papers obscuring the VIN — a number required by law to be visible — violates the Fourth Amendment.
 
 ## Rule
-There is no reasonable expectation of privacy in the VIN itself: "because of the important role played by the VIN in the pervasive governmental regulation of the automobile and the efforts by the Federal Government to ensure that the VIN is placed in plain view, we hold that there was no reasonable expectation of privacy in the VIN." — 475 U.S. at 114. ^pin-114
+There is no [[Reasonable Expectation of Privacy|reasonable expectation of privacy]] in the VIN itself: "because of the important role played by the VIN in the pervasive governmental regulation of the automobile and the efforts by the Federal Government to ensure that the VIN is placed in plain view, we hold that there was no reasonable expectation of privacy in the VIN." — 475 U.S. at 114. ^pin-114
 
 The minimal intrusion to read it was reasonable: "We hold that this search was sufficiently unintrusive to be constitutionally permissible in light of the lack of a reasonable expectation of privacy in the VIN and the fact that the officers observed respondent commit two traffic violations." — [*Id.* at 119](https://www.courtlistener.com/opinion/111600/new-york-v-class/#:~:text=We%20hold%20that%20this%20search). ^pin-119
 

@@ -50,7 +50,7 @@ A 20-year veteran detective conducting drug-interdiction surveillance in Milwauk
 What standard of review applies on appeal to a trial court's determinations of reasonable suspicion to make a stop and probable cause to conduct a warrantless search.
 
 ## Rule
-The ultimate determinations are reviewed de novo. "We hold that the ultimate questions of reasonable suspicion and probable cause to make a warrantless search should be reviewed *de novo*." — 517 U.S. at 691. ^pin-691
+The ultimate determinations are reviewed [[Common Legal Terms#de-novo|de novo]]. "We hold that the ultimate questions of reasonable suspicion and probable cause to make a warrantless search should be reviewed *de novo*." — 517 U.S. at 691. ^pin-691
 
 "We therefore hold that as a general matter determinations of reasonable suspicion and probable cause should be reviewed *de novo* on appeal." — 517 U.S. at 699. ^pin-699
 

@@ -52,7 +52,7 @@ Whether a warrantless general search and seizure of papers throughout an office,
 ## Rule
 Reasonableness is fact-specific: "There is no formula for the determination of reasonableness. Each case is to be decided on its own facts and circumstances." — 282 U.S. at 357. ^pin-357
 
-A search incident to arrest may not become a general rummaging of the premises: by "pretension of right and threat of force he compelled Gowen to open the desk and the safe and with the others made a general and apparently unlimited search, ransacking the desk, safe, filing cases and other parts of the office. It was a lawless invasion of the premises and a general exploratory search in the hope that evidence of crime might be found." — *Id.* at 358. ^pin-358
+A [[Search Incident to Arrest|search incident to arrest]] may not become a general rummaging of the premises: by "pretension of right and threat of force he compelled Gowen to open the desk and the safe and with the others made a general and apparently unlimited search, ransacking the desk, safe, filing cases and other parts of the office. It was a lawless invasion of the premises and a general exploratory search in the hope that evidence of crime might be found." — *Id.* at 358. ^pin-358
 
 ## Application
 Unlike *Marron v. United States* — where officers executing a valid warrant seized a ledger and bills that were "visible and accessible and in the offender's immediate custody," with "no threat of force or general search or rummaging" — the agents here arrested the men without seeing any crime, then forced open the desk and safe and ransacked the entire office for evidence under a false claim of authority. That was a general exploratory search, not a permissible incident of the arrest, and was unreasonable.

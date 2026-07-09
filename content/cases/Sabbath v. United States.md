@@ -66,7 +66,7 @@ The entry violated § 3109; the evidence should have been suppressed, and the ju
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.
-- *Sabbath*'s definition of an unannounced "breaking" — reaching the opening of a closed but unlocked door — remains sound and feeds the constitutional knock-and-announce rule recognized in [[Wilson v. Arkansas]] and refined in [[Richards v. Wisconsin]]. The suppression remedy *Sabbath* applied for such violations was later curtailed for Fourth Amendment knock-and-announce violations by [[Hudson v. Michigan]] (2006), which does not disturb *Sabbath*'s substantive holding about what counts as an unannounced entry.
+- *Sabbath*'s definition of an unannounced "breaking" — reaching the opening of a closed but unlocked door — remains sound and feeds the constitutional [[Knock-and-Announce|knock-and-announce]] rule recognized in [[Wilson v. Arkansas]] and refined in [[Richards v. Wisconsin]]. The suppression remedy *Sabbath* applied for such violations was later curtailed for Fourth Amendment [[Knock-and-Announce|knock-and-announce]] violations by [[Hudson v. Michigan]] (2006), which does not disturb *Sabbath*'s substantive holding about what counts as an unannounced entry.
 
 ## Appears on
 - [[Knock-and-Announce]] — *Progeny*

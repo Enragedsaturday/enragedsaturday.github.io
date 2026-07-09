@@ -50,7 +50,7 @@ An ATF agent, Groh, prepared and obtained a warrant to search the Ramirezes' Mon
 Whether a warrant that wholly fails to describe the persons or things to be seized is valid because the supporting application described them — and whether the officer who prepared and led the search under such a warrant is entitled to [[Qualified Immunity|qualified immunity]].
 
 ## Rule
-No. Particularity is a requirement of the warrant itself, not of the supporting papers, so a warrant that omits the things to be seized is facially invalid. "The fact that the application adequately described the 'things to be seized' does not save the warrant from its facial invalidity. The Fourth Amendment by its terms requires particularity in the warrant, not in the supporting documents." — 540 U.S. at 557. ^pin-557
+No. [[Particularity]] is a requirement of the warrant itself, not of the supporting papers, so a warrant that omits the things to be seized is facially invalid. "The fact that the application adequately described the 'things to be seized' does not save the warrant from its facial invalidity. The Fourth Amendment by its terms requires particularity in the warrant, not in the supporting documents." — 540 U.S. at 557. ^pin-557
 
 Because the warrant "did not describe the items to be seized at all," it "was so obviously deficient that we must regard the search as 'warrantless'." — *Id.* at 558. ^pin-558
 
