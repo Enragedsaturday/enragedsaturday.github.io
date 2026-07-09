@@ -55,10 +55,10 @@ No. "Today we hold that defendants charged with crimes of possession may only cl
 Consistent with *Rakas v. Illinois*, the dispositive question is whether the defendant had a legitimate expectation of privacy in the area searched — not whether he possessed the item seized.
 
 ## Application
-Because Salvucci and Zackular were charged with possessing the stolen checks, they could no longer rely on automatic standing. To suppress the checks, they had to establish that their own legitimate expectation of privacy in the searched apartment had been violated. The Court reversed and remanded so that question could be addressed.
+Because Salvucci and Zackular were charged with possessing the stolen checks, they could no longer rely on automatic standing. To suppress the checks, they had to establish that their own legitimate expectation of privacy in the searched apartment had been violated. The Court reversed and [[Reading and Citing Cases#on-remand|remanded]] so that question could be addressed.
 
 ## Conclusion
-Automatic standing is overruled; a defendant charged with a possessory crime must show a violation of his **own** Fourth Amendment rights. The Supreme Court reversed and remanded.
+Automatic standing is overruled; a defendant charged with a possessory crime must show a violation of his **own** Fourth Amendment rights. The Supreme Court reversed and [[Reading and Citing Cases#on-remand|remanded]].
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.

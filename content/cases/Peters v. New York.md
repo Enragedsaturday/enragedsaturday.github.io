@@ -62,7 +62,7 @@ When the arrest is complete on probable cause, the officer may search: "When the
 Lasky's observations — strange noises at his door, two strangers tiptoeing furtively about the hallway, their continued maneuvers, and their flight the moment he entered — supplied probable cause to arrest for attempted burglary; the Court observed it was "difficult to conceive of stronger grounds for an arrest, short of actual eyewitness observation of criminal activity." When Lasky grabbed Peters by the collar, the arrest was, for constitutional purposes, already complete on probable cause, so the ensuing search — reasonably limited and conducted primarily for weapons — was a lawful search incident to that arrest, and the burglar's tools were admissible.
 
 ## Conclusion
-The search was valid as incident to a lawful arrest founded on probable cause, and the conviction was affirmed. *Peters* marks the other side of the line drawn in [[Sibron v. New York]]: where probable cause to arrest has developed, a full search incident to arrest is permissible — unlike the unjustified pocket search condemned in *Sibron*.
+The search was valid as incident to a lawful arrest founded on probable cause, and the conviction was affirmed. *Peters* marks the other side of the line drawn in [[Sibron v. New York]]: where probable cause to arrest has developed, a full [[Search Incident to Arrest|search incident to arrest]] is permissible — unlike the unjustified pocket search condemned in *Sibron*.
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.

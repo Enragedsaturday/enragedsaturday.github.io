@@ -59,10 +59,10 @@ The requirement is flexible, not absolute: "This is not to say, of course, that 
 Threats of violence, risk of escape, or likely destruction of evidence may make an unannounced entry reasonable.
 
 ## Application
-On these facts the Court announced that knock-and-announce is part of the reasonableness inquiry but did not itself decide whether the officers' entry was reasonable; it reversed and remanded because the state courts had wrongly held the principle irrelevant and so never weighed the countervailing circumstances. The Court flagged the facts the lower courts should consider — that Wilson had brandished a pistol and threatened to kill the informant, and that her cohabitant had a record of arson and firebombing — as potentially supporting law-enforcement interests in an unannounced entry.
+On these facts the Court announced that [[Knock-and-Announce|knock-and-announce]] is part of the reasonableness inquiry but did not itself decide whether the officers' entry was reasonable; it reversed and [[Reading and Citing Cases#on-remand|remanded]] because the state courts had wrongly held the principle irrelevant and so never weighed the countervailing circumstances. The Court flagged the facts the lower courts should consider — that Wilson had brandished a pistol and threatened to kill the informant, and that her cohabitant had a record of arson and firebombing — as potentially supporting law-enforcement interests in an unannounced entry.
 
 ## Conclusion
-The knock-and-announce principle is part of Fourth Amendment reasonableness; the judgment was reversed and the case remanded to determine whether the unannounced entry was reasonable under the circumstances.
+The [[Knock-and-Announce|knock-and-announce]] principle is part of Fourth Amendment reasonableness; the judgment was reversed and the case [[Reading and Citing Cases#on-remand|remanded]] to determine whether the unannounced entry was reasonable under the circumstances.
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.

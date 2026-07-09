@@ -47,13 +47,13 @@ lake:
 Acting on an anonymous tip that marijuana was growing in Ciraolo's backyard, officers who could not see over his two fences flew a private plane over the property at 1,000 feet and identified marijuana plants in the fenced yard with the naked eye. They used those observations to obtain a search warrant.
 
 ## Issue
-Whether warrantless, naked-eye aerial observation of a fenced backyard within the curtilage, from public navigable airspace, is a search under the Fourth Amendment.
+Whether warrantless, naked-eye aerial observation of a fenced backyard within the [[Curtilage|curtilage]], from public navigable airspace, is a search under the Fourth Amendment.
 
 ## Rule
 "In an age where private and commercial flight in the public airways is routine, it is unreasonable for respondent to expect that his marijuana plants were constitutionally protected from being observed with the naked eye from an altitude of 1,000 feet. The Fourth Amendment simply does not require the police traveling in the public airways at this altitude to obtain a warrant in order to observe what is visible to the naked eye." — 476 U.S. at 215. ^pin-215
 
 ## Application
-Although Ciraolo's yard was within the curtilage and shielded by fences from ground-level view, the plants were knowingly exposed to anyone flying overhead in lawful navigable airspace. The officers' naked-eye observation from 1,000 feet was therefore not a search, and the warrant obtained from those observations was valid.
+Although Ciraolo's yard was within the [[Curtilage|curtilage]] and shielded by fences from ground-level view, the plants were knowingly exposed to anyone flying overhead in lawful navigable airspace. The officers' naked-eye observation from 1,000 feet was therefore not a search, and the warrant obtained from those observations was valid.
 
 ## Conclusion
 The aerial observation was not a Fourth Amendment search; the judgment suppressing the evidence was reversed.

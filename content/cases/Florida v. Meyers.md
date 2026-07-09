@@ -64,7 +64,7 @@ Reversed (per curiam). A second warrantless search of an already-impounded car i
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS** (per curiam).
-- No negative treatment. *Meyers* applies [[Michigan v. Thomas]] and [[Chambers v. Maroney]] and sits within the line the Court later distilled in [[Maryland v. Dyson]] (auto exception has no separate exigency requirement).
+- No negative treatment. *Meyers* applies [[Michigan v. Thomas]] and [[Chambers v. Maroney]] and sits within the line the Court later distilled in [[Maryland v. Dyson]] (auto exception has no separate [[Exigent Circumstances and Hot Pursuit|exigency]] requirement).
 
 ## Appears on
 - [[Automobile Exception]] — *Related (cross-doctrine)*

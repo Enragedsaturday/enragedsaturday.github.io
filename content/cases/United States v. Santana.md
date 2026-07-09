@@ -59,7 +59,7 @@ A suspect standing in her own doorway is in a "public" place for arrest purposes
 And a suspect cannot defeat a lawful public arrest by retreating indoors; hot pursuit justifies the warrantless entry: "We thus conclude that a suspect may not defeat an arrest which has been set in motion in a public place, and is therefore proper under *Watson*, by the expedient of escaping to a private place." — 427 U.S. at 43. ^pin-43
 
 ## Application
-Santana was standing in her open doorway with the bag when officers who had probable cause approached to arrest her; she was therefore in a public place and the arrest was proper under [[United States v. Watson]]. When she retreated into the vestibule, the officers' immediate pursuit was a true hot pursuit that justified the warrantless entry. The heroin that fell from the bag and the marked money found on her were lawfully seized incident to that arrest.
+Santana was standing in her open doorway with the bag when officers who had probable cause approached to arrest her; she was therefore in a public place and the arrest was proper under [[United States v. Watson]]. When she retreated into the vestibule, the officers' immediate pursuit was a true [[Exigent Circumstances and Hot Pursuit|hot pursuit]] that justified the warrantless entry. The heroin that fell from the bag and the marked money found on her were lawfully seized incident to that arrest.
 
 ## Conclusion
 The warrantless entry and arrest were valid; the Supreme Court reversed the suppression order.

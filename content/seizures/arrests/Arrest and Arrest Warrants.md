@@ -37,14 +37,14 @@ related:
 
 **A state-law violation is not a Fourth Amendment violation.** An arrest supported by probable cause is reasonable under the Fourth Amendment **even if state law forbade it**. Where state law directed a summons but officers made a custodial arrest, "while States are free to regulate such arrests however they desire, state restrictions do not alter the Fourth Amendment's protections." *[[Virginia v. Moore#^pin-1607|Virginia v. Moore]]*, 553 U.S. 164, 168 (2008) (128 S. Ct. at 1607). Because the arrest was constitutionally valid, the search incident to it needed no additional justification, and the state-law-only violation triggered no exclusion.
 
-**When a warrant *is* required.** The public-arrest rule does not reach a **home**. To cross the threshold of a dwelling to arrest, officers need an **arrest warrant** for the suspect's own home (plus reason to believe he is within) or a **search warrant** for a third party's home, absent consent or exigency. *See* [[Arrest in the Home]] and [[Entry to Arrest]]. An arrest warrant also secures the neutral-magistrate judgment before the seizure; where officers arrest **without** a warrant, that neutral check moves to the **back end** as a prompt post-arrest determination. *See* [[Prompt Probable-Cause Determination]].
+**When a warrant *is* required.** The public-arrest rule does not reach a **home**. To cross the threshold of a dwelling to arrest, officers need an **arrest warrant** for the suspect's own home (plus reason to believe he is within) or a **search warrant** for a third party's home, absent consent or [[Exigent Circumstances and Hot Pursuit|exigency]]. *See* [[Arrest in the Home]] and [[Entry to Arrest]]. An arrest warrant also secures the neutral-magistrate judgment before the seizure; where officers arrest **without** a warrant, that neutral check moves to the **back end** as a prompt post-arrest determination. *See* [[Prompt Probable-Cause Determination]].
 
 **Common pitfalls.**
 - **Thinking a warrant is needed for an ordinary public arrest.** It is not; probable cause suffices, even with time to get a warrant. *[[United States v. Watson]]*.
 - **Assuming a petty offense cannot support a custodial arrest.** *Atwater* holds it can, on probable cause, without balancing. *[[Atwater v. City of Lago Vista]]*.
 - **Testing the arrest against the offense the officer named.** The question is whether the known facts give probable cause for **any** offense; the stated charge and the officer's motive do not control. *[[Devenpeck v. Alford]]*.
 - **Treating a state-law arrest violation as a Fourth Amendment violation.** It is not, and it triggers no exclusion. *[[Virginia v. Moore]]*.
-- **Forgetting the home line.** The public-arrest rule stops at the threshold; a home arrest needs a warrant or exigency. *[[Entry to Arrest]]*.
+- **Forgetting the home line.** The public-arrest rule stops at the threshold; a home arrest needs a warrant or [[Exigent Circumstances and Hot Pursuit|exigency]]. *[[Entry to Arrest]]*.
 
 ## Lower-court developments
 

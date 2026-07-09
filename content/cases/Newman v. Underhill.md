@@ -66,7 +66,7 @@ On this record there was no genuine issue of material fact that the continuity o
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding in-circuit — 9th Cir.** (decided April 23, 2025).
-- *Newman* is a recent Ninth Circuit illustration of the **continuity-of-pursuit** (fresh-pursuit) requirement: it applies [[United States v. Santana]] and [[Welsh v. Wisconsin]] and holds that a roughly nine-minute gap delayed but did not break a hot pursuit, distinguishing the longer gap that broke continuity in the circuit's leading precedent. Because the underlying offense was a felony, it does not implicate the misdemeanor limit of [[Lange v. California]].
+- *Newman* is a recent Ninth Circuit illustration of the **continuity-of-pursuit** (fresh-pursuit) requirement: it applies [[United States v. Santana]] and [[Welsh v. Wisconsin]] and holds that a roughly nine-minute gap delayed but did not break a [[Exigent Circumstances and Hot Pursuit|hot pursuit]], distinguishing the longer gap that broke continuity in the circuit's leading precedent. Because the underlying offense was a felony, it does not implicate the misdemeanor limit of [[Lange v. California]].
 
 ## Appears on
 - [[Exigent Circumstances and Hot Pursuit]] — *Recent development (role-based)*

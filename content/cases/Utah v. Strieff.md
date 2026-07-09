@@ -62,7 +62,7 @@ The discovery of the valid arrest warrant attenuated the connection between the 
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.
-- No negative treatment. *Strieff* applies the attenuation doctrine of [[Brown v. Illinois]]: a valid pre-existing arrest warrant discovered during an unlawful stop is an intervening circumstance that, absent flagrant police misconduct, attenuates the taint of the illegal stop. (Justice Sotomayor filed a vigorous dissent, but the decision is controlling law.)
+- No negative treatment. *Strieff* applies the [[Fruits and Attenuation|attenuation]] doctrine of [[Brown v. Illinois]]: a valid pre-existing arrest warrant discovered during an unlawful stop is an intervening circumstance that, absent flagrant police misconduct, attenuates the taint of the illegal stop. (Justice Sotomayor filed a vigorous [[Common Legal Terms#dissenting-opinion|dissent]], but the decision is controlling law.)
 
 ## Appears on
 - [[The Exclusionary Rule]] — *Key — Progeny / Refinement*

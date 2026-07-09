@@ -58,7 +58,7 @@ Whether the officers' conversation constituted "interrogation" under *Miranda*, 
 The officers' brief exchange was addressed to each other, not to Innis, and consisted of a few offhand remarks. Nothing showed the officers should have known their conversation was reasonably likely to elicit an incriminating response: there was no indication Innis was peculiarly susceptible to an appeal about the handicapped children, and the remarks were not designed to elicit a response. Because the exchange was not the functional equivalent of express questioning, Innis was not "interrogated," and suppression was not required.
 
 ## Conclusion
-The officers' conversation was not interrogation under *Miranda*; the Rhode Island Supreme Court's suppression order was vacated and the case remanded.
+The officers' conversation was not interrogation under *Miranda*; the Rhode Island Supreme Court's suppression order was [[Reading and Citing Cases#vacated|vacated]] and the case [[Reading and Citing Cases#on-remand|remanded]].
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**. *Innis* supplies the controlling definition of "interrogation" (express questioning or its functional equivalent) for *Miranda* purposes.

@@ -27,7 +27,7 @@ related:
 
 ## The Brief
 
-**What they are, and how they differ.** Both doctrines let untainted evidence in despite an antecedent illegality, and the difference is actual versus hypothetical. **Independent source** points to a lawful channel that *really produced* the evidence, separate from the illegal one. **Inevitable discovery** concedes there was no second channel in fact, but shows the evidence *would* have surfaced through lawful means the police were entitled to use. Keep them apart from **attenuation**, which admits the causal link but says it has weakened over time ([[Fruits & Attenuation]]).
+**What they are, and how they differ.** Both doctrines let untainted evidence in despite an antecedent illegality, and the difference is actual versus hypothetical. **Independent source** points to a lawful channel that *really produced* the evidence, separate from the illegal one. **Inevitable discovery** concedes there was no second channel in fact, but shows the evidence *would* have surfaced through lawful means the police were entitled to use. Keep them apart from **[[Fruits and Attenuation|attenuation]]**, which admits the causal link but says it has weakened over time ([[Fruits & Attenuation]]).
 
 **Independent source.** The idea traces to *[[Silverthorne Lumber Co. v. United States|Silverthorne]]* (facts learned lawfully from a genuinely independent source may still be proved) and is refined in *[[Murray v. United States|Murray]]*: where officers make an illegal entry, see evidence, then obtain a warrant, the later seizure is admissible **only if** the warrant application rested on information wholly independent of the entry and the decision to seek the warrant was not prompted by what the illegal entry revealed. 487 U.S. at 542. The rule extends beyond physical evidence to an **in-court identification** whose elements antedate and are independent of an illegal arrest. *[[United States v. Crews|Crews]]*, 445 U.S. 463, 471–74 (1980).
 
@@ -42,7 +42,7 @@ related:
 4. **Do not launder the illegality after the fact.** A warrant obtained only *after* the illegal search, prompted by it, is neither an independent source nor an inevitable one.
 
 **Common pitfalls.**
-- **Confusing the two with each other or with attenuation.** Independent source = actually obtained cleanly; inevitable discovery = would have been; attenuation = the taint faded.
+- **Confusing the two with each other or with [[Fruits and Attenuation|attenuation]].** Independent source = actually obtained cleanly; inevitable discovery = would have been; [[Fruits and Attenuation|attenuation]] = the taint faded.
 - **Accepting a speculative "we could have gotten a warrant."** The lawful route must be genuine, not a hypothetical the police never pursued.
 - **Missing the *Murray* prompting limit.** If the illegal entry prompted the warrant application, independent source fails.
 

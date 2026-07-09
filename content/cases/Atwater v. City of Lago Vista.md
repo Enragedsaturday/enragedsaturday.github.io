@@ -62,7 +62,7 @@ That categorical rule yields to individualized review only where an arrest is "c
 There was no dispute that Officer Turek had probable cause: Atwater admitted that neither she nor her children were belted, a crime committed in his presence, so he was "authorized (not required, but authorized) to make a custodial arrest without balancing costs and benefits or determining whether or not Atwater's arrest was in some sense necessary." Nor was the arrest carried out in an extraordinary manner — she was handcuffed, taken to the station, booked in the ordinary way, and held about an hour before release on bond. As the Court concluded: "The arrest and booking were inconvenient and embarrassing to Atwater, but not so extraordinary as to violate the Fourth Amendment." — *Id.* at 355. ^pin-355
 
 ## Conclusion
-The warrantless custodial arrest for the fine-only seatbelt offense, supported by probable cause and executed in an ordinary manner, was reasonable; the en banc Court of Appeals' judgment for the defendants was affirmed.
+The warrantless custodial arrest for the fine-only seatbelt offense, supported by probable cause and executed in an ordinary manner, was reasonable; the [[Reading and Citing Cases#en-banc|en banc]] Court of Appeals' judgment for the defendants was affirmed.
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.

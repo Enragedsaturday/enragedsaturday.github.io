@@ -62,7 +62,7 @@ The search of Robinson's person and the seizure of the heroin were valid as inci
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.
-- No negative treatment. *Robinson* states the bright-line rule for searches of the person incident to a custodial arrest. [[Riley v. California]] later declined to extend that automatic-search authority to the **digital contents of a cell phone** (those require a warrant), and [[Arizona v. Gant]] cabined vehicle searches incident to arrest — but neither disturbs *Robinson*'s rule for a full search of the arrestee's person and physical effects.
+- No negative treatment. *Robinson* states the [[Common Legal Terms#bright-line-rule|bright-line rule]] for searches of the person incident to a custodial arrest. [[Riley v. California]] later declined to extend that automatic-search authority to the **digital contents of a cell phone** (those require a warrant), and [[Arizona v. Gant]] cabined vehicle [[Search Incident to Arrest|searches incident to arrest]] — but neither disturbs *Robinson*'s rule for a full search of the arrestee's person and physical effects.
 
 ## Appears on
 - [[SIA Persons]] — *Key — Anchor*

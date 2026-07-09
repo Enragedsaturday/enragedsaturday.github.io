@@ -46,7 +46,7 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-Gant was arrested for driving on a suspended license. After he was handcuffed and locked in the back of a patrol car, officers searched his car and found cocaine in a jacket on the back seat. He moved to suppress the cocaine as the product of an unlawful search incident to arrest.
+Gant was arrested for driving on a suspended license. After he was handcuffed and locked in the back of a patrol car, officers searched his car and found cocaine in a jacket on the back seat. He moved to suppress the cocaine as the product of an unlawful [[Search Incident to Arrest|search incident to arrest]].
 
 ## Issue
 Whether police may search the passenger compartment of a vehicle incident to a recent occupant's arrest when the arrestee has been secured and cannot reach the vehicle, and there is no reason to believe the vehicle contains evidence of the offense of arrest.
@@ -57,14 +57,14 @@ A vehicle search incident to a recent occupant's arrest is allowed only on one o
 Absent those justifications, "a search of an arrestee's vehicle will be unreasonable unless police obtain a warrant or show that another exception to the warrant requirement applies." — *Id.* This reading cabins the broad understanding of [[New York v. Belton]] that had been taken to authorize a vehicle search whenever an occupant was arrested.
 
 ## Application
-On these facts both justifications were absent. Gant had been handcuffed and locked in a patrol car before the search, so he was not within reaching distance of the passenger compartment; and he was arrested for driving on a suspended license — an offense for which the car would hold no evidence. Because neither the officer-safety/evidence-preservation rationale of *Chimel* nor the evidence-of-the-offense rationale applied, the search incident to arrest was unreasonable.
+On these facts both justifications were absent. Gant had been handcuffed and locked in a patrol car before the search, so he was not within reaching distance of the passenger compartment; and he was arrested for driving on a suspended license — an offense for which the car would hold no evidence. Because neither the officer-safety/evidence-preservation rationale of *Chimel* nor the evidence-of-the-offense rationale applied, the [[Search Incident to Arrest|search incident to arrest]] was unreasonable.
 
 ## Conclusion
 The vehicle search was unconstitutional; the judgment of the Arizona Supreme Court suppressing the evidence was affirmed.
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.
-- No negative treatment of *Gant*. *Gant* itself **narrowed** the expansive reading of [[New York v. Belton]] (and [[Thornton v. United States]]) for vehicle searches incident to arrest, replacing automatic passenger-compartment searches with its two-justification test.
+- No negative treatment of *Gant*. *Gant* itself **narrowed** the expansive reading of [[New York v. Belton]] (and [[Thornton v. United States]]) for vehicle [[Search Incident to Arrest|searches incident to arrest]], replacing automatic passenger-compartment searches with its two-justification test.
 
 ## Appears on
 - [[SIA Vehicles]] — *Key — Anchor*

@@ -59,10 +59,10 @@ Because only the exterior was examined, no protected privacy was invaded: "With 
 The bottom line: "where probable cause exists, a warrantless examination of the exterior of a car is not unreasonable under the Fourth and Fourteenth Amendments." — *Id.* at 592. ^pin-592
 
 ## Application
-Nothing from the interior of the car and no personal effects were searched or seized; the evidence was limited to paint scrapings from the exterior and an observation of the tire tread on an operative wheel, taken from a car left in a public lot. With probable cause established, that exterior examination invaded no reasonable expectation of privacy, and the prior impoundment did not change the result, since police could have made the same examination on the spot.
+Nothing from the interior of the car and no personal effects were searched or seized; the evidence was limited to paint scrapings from the exterior and an observation of the tire tread on an operative wheel, taken from a car left in a public lot. With probable cause established, that exterior examination invaded no [[Reasonable Expectation of Privacy|reasonable expectation of privacy]], and the prior impoundment did not change the result, since police could have made the same examination on the spot.
 
 ## Conclusion
-The exterior examination was reasonable; the seizure and examination did not violate the Fourth Amendment, and the grant of habeas relief was reversed.
+The exterior examination was reasonable; the seizure and examination did not violate the Fourth Amendment, and the grant of [[Common Legal Terms#habeas-corpus|habeas]] relief was reversed.
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS** (plurality; Powell, J., concurred in the result on a different ground).

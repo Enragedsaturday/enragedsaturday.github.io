@@ -58,7 +58,7 @@ No; the search incident to arrest is limited to the arrestee's person and the ar
 The search of Chimel's entire house — every room, drawers opened on command — reached far beyond his person and the area from which he could have grabbed a weapon or destroyed evidence while under arrest. Because nothing justified that house-wide search as incident to the arrest, and the officers had no search warrant, the seizure of items throughout the home was unconstitutional.
 
 ## Conclusion
-The warrantless, house-wide search incident to arrest was unreasonable; the conviction was reversed. *Chimel* fixed the officer-safety/evidence-preservation rationale and the "immediate control" scope of search incident to arrest.
+The warrantless, house-wide [[Search Incident to Arrest|search incident to arrest]] was unreasonable; the conviction was reversed. *Chimel* fixed the officer-safety/evidence-preservation rationale and the "immediate control" scope of [[Search Incident to Arrest|search incident to arrest]].
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.

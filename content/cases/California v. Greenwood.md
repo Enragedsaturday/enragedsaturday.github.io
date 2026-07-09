@@ -47,7 +47,7 @@ lake:
 Acting on information that Greenwood might be dealing drugs, police asked his regular trash collector to set aside the opaque garbage bags Greenwood left at the curb for pickup. Searching the bags, officers found evidence of narcotics use, which they used to obtain warrants to search the house.
 
 ## Issue
-Whether the warrantless search and seizure of garbage left for collection at the curb, outside the home's curtilage, violates the Fourth Amendment.
+Whether the warrantless search and seizure of garbage left for collection at the curb, outside the home's [[Curtilage|curtilage]], violates the Fourth Amendment.
 
 ## Rule
 "Here, we conclude that respondents exposed their garbage to the public sufficiently to defeat their claim to Fourth Amendment protection." — 486 U.S. at 40. ^pin-40
@@ -55,7 +55,7 @@ Whether the warrantless search and seizure of garbage left for collection at the
 "It is common knowledge that plastic garbage bags left on or at the side of a public street are readily accessible to animals, children, scavengers, snoops, and other members of the public." — *Id.* ^pin-40b
 
 ## Application
-Greenwood placed his garbage in opaque bags at the curb for collection by a third party — exposing it to animals, scavengers, the public, and the trash collector who could have sorted through it or handed it to police. He thus had no objectively reasonable expectation of privacy in the discarded items, and the warrantless search of the bags did not violate the Fourth Amendment.
+Greenwood placed his garbage in opaque bags at the curb for collection by a third party — exposing it to animals, scavengers, the public, and the trash collector who could have sorted through it or handed it to police. He thus had no objectively [[Reasonable Expectation of Privacy|reasonable expectation of privacy]] in the discarded items, and the warrantless search of the bags did not violate the Fourth Amendment.
 
 ## Conclusion
 There was no Fourth Amendment violation; the judgment suppressing the evidence was reversed.

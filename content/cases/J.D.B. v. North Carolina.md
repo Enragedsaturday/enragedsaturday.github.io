@@ -55,10 +55,10 @@ Yes. "It is beyond dispute that children will often feel bound to submit to poli
 Including age keeps the analysis objective: "So long as the child's age was known to the officer at the time of the interview, or would have been objectively apparent to any reasonable officer, including age as part of the custody analysis requires officers neither to consider circumstances 'unknowable' to them . . . nor to 'anticipat[e] the frailties or idiosyncrasies' of the particular suspect whom they question." — *Id.* (slip op., at 11). ^pin-op11
 
 ## Application
-J.D.B.'s age — 13 — was known to the officers, who questioned him at his school; because age is an objective fact bearing on how a reasonable child in his position would have understood the situation, the state courts erred in excluding it from the custody inquiry. The Court did not itself decide whether J.D.B. was in custody; it remanded for the state courts to address custody taking account of all the circumstances, including his age.
+J.D.B.'s age — 13 — was known to the officers, who questioned him at his school; because age is an objective fact bearing on how a reasonable child in his position would have understood the situation, the state courts erred in excluding it from the custody inquiry. The Court did not itself decide whether J.D.B. was in custody; it [[Reading and Citing Cases#on-remand|remanded]] for the state courts to address custody taking account of all the circumstances, including his age.
 
 ## Conclusion
-A child's age, when known or objectively apparent, must be considered in the *Miranda* custody analysis; the judgment was reversed and remanded.
+A child's age, when known or objectively apparent, must be considered in the *Miranda* custody analysis; the judgment was reversed and [[Reading and Citing Cases#on-remand|remanded]].
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.

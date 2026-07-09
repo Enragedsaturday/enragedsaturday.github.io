@@ -46,10 +46,10 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-Harris was charged with selling heroin. He had made statements to police that were inadmissible in the prosecution's case-in-chief because adequate Miranda warnings had not been given. At trial Harris took the stand and gave testimony contradicting those statements. Over objection, the prosecution used the earlier statements on cross-examination to impeach his credibility. There was no claim the statements had been coerced or were involuntary.
+Harris was charged with selling heroin. He had made statements to police that were inadmissible in the prosecution's case-in-chief because adequate [[Miranda and Custodial Interrogation|Miranda warnings]] had not been given. At trial Harris took the stand and gave testimony contradicting those statements. Over objection, the prosecution used the earlier statements on cross-examination to impeach his credibility. There was no claim the statements had been coerced or were involuntary.
 
 ## Issue
-Whether a statement that is inadmissible in the prosecution's case-in-chief for want of Miranda warnings, but that is otherwise voluntary, may nonetheless be used to impeach the defendant's credibility when he testifies inconsistently at trial.
+Whether a statement that is inadmissible in the prosecution's case-in-chief for want of [[Miranda and Custodial Interrogation|Miranda warnings]], but that is otherwise voluntary, may nonetheless be used to impeach the defendant's credibility when he testifies inconsistently at trial.
 
 ## Rule
 Yes. "Having voluntarily taken the stand, petitioner was under an obligation to speak truthfully and accurately, and the prosecution here did no more than utilize the traditional truth-testing devices of the adversary process." — 401 U.S. at 225. ^pin-225
@@ -59,7 +59,7 @@ Yes. "Having voluntarily taken the stand, petitioner was under an obligation to 
 The exception applies only where the statement is otherwise voluntary and trustworthy; a coerced statement could not be used even to impeach.
 
 ## Application
-Harris's statements were voluntary; their only defect was the Miranda warning lapse. When he testified to a contrary account, the State could confront him with the prior inconsistent statements to test his credibility before the jury. *Miranda*'s exclusionary protection guards against using such statements as affirmative proof of guilt, but it does not license a defendant to take the stand and testify falsely immune from impeachment.
+Harris's statements were voluntary; their only defect was the [[Miranda and Custodial Interrogation|Miranda warning]] lapse. When he testified to a contrary account, the State could confront him with the prior inconsistent statements to test his credibility before the jury. *Miranda*'s exclusionary protection guards against using such statements as affirmative proof of guilt, but it does not license a defendant to take the stand and testify falsely immune from impeachment.
 
 ## Conclusion
 The impeachment use of the un-Mirandized but voluntary statements was proper; the conviction was affirmed. This established the **impeachment exception** to *Miranda*'s exclusionary rule.

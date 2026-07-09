@@ -55,10 +55,10 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-While Mathis was serving a state sentence in prison, a federal revenue agent interviewed him about his individual income-tax returns, obtaining documents and oral statements without giving any Miranda warnings. Those statements were later used to convict him in federal court of knowingly filing false claims for tax refunds. At trial he sought, unsuccessfully, to suppress the statements under [[Miranda v. Arizona]]; the District Court and Fifth Circuit rejected the claim.
+While Mathis was serving a state sentence in prison, a federal revenue agent interviewed him about his individual income-tax returns, obtaining documents and oral statements without giving any [[Miranda and Custodial Interrogation|Miranda warnings]]. Those statements were later used to convict him in federal court of knowingly filing false claims for tax refunds. At trial he sought, unsuccessfully, to suppress the statements under [[Miranda v. Arizona]]; the District Court and Fifth Circuit rejected the claim.
 
 ## Issue
-Whether Miranda warnings were required before a revenue agent questioned a person who was already in custody — serving a sentence for a separate offense — in the course of a tax investigation.
+Whether [[Miranda and Custodial Interrogation|Miranda warnings]] were required before a revenue agent questioned a person who was already in custody — serving a sentence for a separate offense — in the course of a tax investigation.
 
 ## Rule
 Yes. The Court rejected the Government's two distinctions. "The Government here seeks to escape application of the *Miranda* warnings on two arguments: (1) that these questions were asked as a part of a routine tax investigation . . . and (2) that the petitioner had not been put in jail by the officers questioning him, but was there for an entirely separate offense. These differences are too minor and shadowy to justify a departure from the well-considered conclusions of *Miranda* with reference to warnings to be given to a person held in custody." — 391 U.S. at 4. ^pin-4

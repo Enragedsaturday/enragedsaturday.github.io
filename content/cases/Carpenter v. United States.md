@@ -60,11 +60,11 @@ Because that acquisition is a search, the Government must generally obtain a war
 The Government accessed 127 days of Carpenter's CSLI without a warrant, relying instead on a court order issued on less than probable cause. Because that data provided an all-encompassing, retrospective record of his whereabouts — "an intimate window into a person's life" — its acquisition invaded a legitimate expectation of privacy and was a search; on these facts the warrantless acquisition could not be justified by the third-party doctrine.
 
 ## Conclusion
-Acquiring Carpenter's historical CSLI was a Fourth Amendment search; the judgment was reversed and the case remanded. The Court's holding was expressly narrow, declining to disturb conventional surveillance techniques or other business records.
+Acquiring Carpenter's historical CSLI was a Fourth Amendment search; the judgment was reversed and the case [[Reading and Citing Cases#on-remand|remanded]]. The Court's holding was expressly narrow, declining to disturb conventional surveillance techniques or other business records.
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.
-- No negative treatment. *Carpenter* itself **narrows** the third-party doctrine ([[Smith v. Maryland]]) for digital-age location data and builds on the mosaic concern voiced in the [[United States v. Jones]] concurrences.
+- No negative treatment. *Carpenter* itself **narrows** the third-party doctrine ([[Smith v. Maryland]]) for digital-age location data and builds on the mosaic concern voiced in the [[United States v. Jones]] [[Common Legal Terms#concurring-opinion|concurrences]].
 - **Extended (2026):** *[[Chatrie v. United States]]*, 609 U.S. ___ (2026), **applies and extends *Carpenter*** to bulk **geofence / Google Location History** data — holding its acquisition is a Fourth Amendment search even for a short (~2-hour) window and even though held by a third party (rejecting the opt-in/third-party rationale) — and leaves geofence-warrant probable cause/particularity for remand. *Carpenter* remains good law and anchors that ruling.
 
 ## Appears on

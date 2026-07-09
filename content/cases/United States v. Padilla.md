@@ -47,7 +47,7 @@ lake:
 Members of a drug-trafficking conspiracy were prosecuted after police stopped and searched a car and found cocaine. The Ninth Circuit had adopted a "coconspirator exception" to standing: a co-conspirator could challenge a search if he had either a supervisory role in the conspiracy or joint control over the place or property searched. Applying that rule, it allowed several respondents to contest the stop and search even without a personal interest in the car.
 
 ## Issue
-Whether a defendant may challenge a search on the strength of his supervisory role in, or joint control over property used by, a criminal conspiracy — that is, whether a "coconspirator exception" supplements the rule that Fourth Amendment standing requires a personal privacy or possessory interest.
+Whether a defendant may challenge a search on the strength of his supervisory role in, or joint control over property used by, a criminal conspiracy — that is, whether a "coconspirator exception" supplements the rule that [[Standing to Challenge a Search|Fourth Amendment standing]] requires a personal privacy or possessory interest.
 
 ## Rule
 No; standing is personal and the conspiracy adds nothing to it. Quoting *Alderman*: "suppression of the product of a Fourth Amendment violation can be successfully urged only by those whose rights were violated by the search itself, not by those who are aggrieved solely by the introduction of damaging evidence. Co-conspirators and codefendants have been accorded no special standing." — 508 U.S. at 82 (quoting *Alderman v. United States*, 394 U.S. 165, 171–172). ^pin-82
@@ -55,10 +55,10 @@ No; standing is personal and the conspiracy adds nothing to it. Quoting *Alderma
 "Expectations of privacy and property interests govern the analysis of Fourth Amendment search and seizure claims. Participants in a criminal conspiracy may have such expectations or interests, but the conspiracy itself neither adds to nor detracts from them." — *Id.* at 82. ^pin-82b
 
 ## Application
-The respondents' positions in the conspiracy — one serving as the "communication link," others "in charge of transportation" — had "no bearing on their respective Fourth Amendment rights." Whether any of them could suppress the cocaine turned, case by case, on whether that respondent personally held a property interest interfered with by the stop or a reasonable expectation of privacy invaded by the search of the car — not on his conspiratorial role. The Ninth Circuit's exception both contradicted *Alderman* and was at odds with the personal-rights principle.
+The respondents' positions in the conspiracy — one serving as the "communication link," others "in charge of transportation" — had "no bearing on their respective Fourth Amendment rights." Whether any of them could suppress the cocaine turned, case by case, on whether that respondent personally held a property interest interfered with by the stop or a [[Reasonable Expectation of Privacy|reasonable expectation of privacy]] invaded by the search of the car — not on his conspiratorial role. The Ninth Circuit's exception both contradicted *Alderman* and was at odds with the personal-rights principle.
 
 ## Conclusion
-Per curiam: the "coconspirator exception" was rejected; the judgment was reversed and remanded for individualized determinations of each respondent's personal Fourth Amendment interest.
+[[Common Legal Terms#per-curiam|Per curiam]]: the "coconspirator exception" was rejected; the judgment was reversed and [[Reading and Citing Cases#on-remand|remanded]] for individualized determinations of each respondent's personal Fourth Amendment interest.
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.

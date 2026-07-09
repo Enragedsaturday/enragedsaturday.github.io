@@ -44,7 +44,7 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-Gouveia and other federal prison inmates were suspected of a murder committed inside the prison and were placed in administrative detention (segregation) for months while the crime was investigated, before any indictment. They received no appointed counsel during that segregation. After indictment they were appointed counsel, tried, and convicted; the Ninth Circuit en banc held they had been entitled to counsel during the preindictment segregation.
+Gouveia and other federal prison inmates were suspected of a murder committed inside the prison and were placed in administrative detention (segregation) for months while the crime was investigated, before any indictment. They received no appointed counsel during that segregation. After indictment they were appointed counsel, tried, and convicted; the Ninth Circuit [[Reading and Citing Cases#en-banc|en banc]] held they had been entitled to counsel during the preindictment segregation.
 
 ## Issue
 Whether prison inmates have a Sixth Amendment right to appointed counsel while held in administrative segregation during the investigation of a crime, before adversary judicial proceedings have begun.

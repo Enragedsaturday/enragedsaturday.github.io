@@ -47,7 +47,7 @@ lake:
 Kevin Dewayne Powell was arrested in Tampa and questioned about a handgun found during the arrest. Before interrogation, the officers read him a standard form advising that he had "the right to talk to a lawyer before answering any of [their] questions" and "the right to use any of [his] rights at any time [he] want[ed] during th[e] interview." He admitted owning the gun and was convicted of being a felon in possession. The Florida Supreme Court held the warnings inadequate under Miranda because they did not expressly state that he could have a lawyer present *during* questioning, and suppressed the statement.
 
 ## Issue
-Whether Miranda warnings that advise of the right to talk to a lawyer "before answering any questions" and to use that right "at any time . . . during the interview," but do not expressly state a right to have counsel present throughout interrogation, adequately convey the right to counsel.
+Whether [[Miranda and Custodial Interrogation|Miranda warnings]] that advise of the right to talk to a lawyer "before answering any questions" and to use that right "at any time . . . during the interview," but do not expressly state a right to have counsel present throughout interrogation, adequately convey the right to counsel.
 
 ## Rule
 Yes — warnings need not track any precise script. "The four warnings *Miranda* requires are invariable, but this Court has not dictated the words in which the essential information must be conveyed." — 559 U.S. at 60. ^pin-60
@@ -60,7 +60,7 @@ Reading the two statements together, the warning passed the test. "The first sta
 A reasonable suspect would not infer the "counterintuitive" idea that he had to leave and reenter the room to consult counsel between questions. Though "not the clearest possible formulation," the advice was "sufficiently comprehensive and comprehensible when given a commonsense reading." (Before reaching the merits the Court confirmed its jurisdiction, finding the Florida decision rested on federal law rather than an independent state ground.)
 
 ## Conclusion
-The warnings reasonably conveyed Powell's right to counsel and satisfied Miranda; the judgment of the Florida Supreme Court was reversed and the case remanded.
+The warnings reasonably conveyed Powell's right to counsel and satisfied Miranda; the judgment of the Florida Supreme Court was reversed and the case [[Reading and Citing Cases#on-remand|remanded]].
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.

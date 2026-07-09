@@ -47,7 +47,7 @@ lake:
 Officers had probable cause to arrest Anchondo in connection with a drug transaction. They searched his person and found cocaine on his body, and the arrest followed shortly after the search. He moved to suppress the cocaine, and the search's validity turned on the search-incident-to-arrest exception rather than on any search of an automobile.
 
 ## Issue
-Whether cocaine found on the defendant's person was lawfully obtained as a search incident to arrest where the search preceded, rather than followed, the formal arrest.
+Whether cocaine found on the defendant's person was lawfully obtained as a [[Search Incident to Arrest|search incident to arrest]] where the search preceded, rather than followed, the formal arrest.
 
 ## Rule
 A search may validly precede the arrest it is incident to: "A warrantless search preceding an arrest is a legitimate 'search incident to arrest' as long as (1) a legitimate basis for the arrest existed before the search, and (2) the arrest followed shortly after the search." — 156 F.3d at 1045. ^pin-1045
@@ -55,14 +55,14 @@ A search may validly precede the arrest it is incident to: "A warrantless search
 Applying that rule, the court held that "the discovery of cocaine on the defendant's person was the result of a lawful search incident to arrest." — *Id.* at 1046. ^pin-1046
 
 ## Application
-Because the officers had a legitimate basis to arrest Anchondo before they searched him, and the arrest followed shortly after, the search of his person was a lawful search incident to arrest even though it came first; the cocaine found on his body was admissible. The court resolved the case on the search-incident-to-arrest exception — not the automobile exception — making *Anchondo* a frequently miscategorized authority.
+Because the officers had a legitimate basis to arrest Anchondo before they searched him, and the arrest followed shortly after, the search of his person was a lawful [[Search Incident to Arrest|search incident to arrest]] even though it came first; the cocaine found on his body was admissible. The court resolved the case on the search-incident-to-arrest exception — not the automobile exception — making *Anchondo* a frequently miscategorized authority.
 
 ## Conclusion
-The search of Anchondo's person was a lawful search incident to arrest and the cocaine was admissible; the conviction was affirmed. A search incident to arrest may precede the arrest when probable cause already exists and the arrest follows promptly.
+The search of Anchondo's person was a lawful [[Search Incident to Arrest|search incident to arrest]] and the cocaine was admissible; the conviction was affirmed. A [[Search Incident to Arrest|search incident to arrest]] may precede the arrest when probable cause already exists and the arrest follows promptly.
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding in-circuit — 10th Cir.**
-- *Anchondo* applies the search-incident-to-arrest doctrine of [[Chimel v. California]] and the search-may-precede-arrest principle of [[Rawlings v. Kentucky]]. It is listed here on the **Automobile Exception** page as a cautionary cross-reference: despite frequent miscitation, its holding rests on search incident to arrest, not the automobile exception (compare [[Arizona v. Gant]] on vehicle searches incident to arrest).
+- *Anchondo* applies the search-incident-to-arrest doctrine of [[Chimel v. California]] and the search-may-precede-arrest principle of [[Rawlings v. Kentucky]]. It is listed here on the **Automobile Exception** page as a cautionary cross-reference: despite frequent miscitation, its holding rests on [[Search Incident to Arrest|search incident to arrest]], not the automobile exception (compare [[Arizona v. Gant]] on vehicle [[Search Incident to Arrest|searches incident to arrest]]).
 
 ## Appears on
 - [[Automobile Exception]] — *Related (cross-doctrine)*

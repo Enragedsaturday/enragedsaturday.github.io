@@ -77,7 +77,7 @@ The split is squarely about *Jacobsen*'s "virtual certainty" test applied to an 
 | Case | Relevance here | Primary home | Opinion |
 |---|---|---|---|
 | *[[Coolidge v. New Hampshire]]*, 403 U.S. 443 (1971) | Evidence produced by a genuinely private search does not implicate the Amendment; state action turns on all the circumstances, including police instigation and purpose. | [[Fourth Amendment Framework]] | [opinion](https://www.courtlistener.com/opinion/108377/coolidge-v-new-hampshire/) |
-| *[[Katz v. United States]]*, 389 U.S. 347 (1967) | Supplies the privacy baseline the private-search cases measure against: a search invades a reasonable expectation of privacy, and a private party can frustrate that expectation before any officer arrives. | [[Reasonable Expectation of Privacy]] | [opinion](https://www.courtlistener.com/opinion/107564/katz-v-united-states/) |
+| *[[Katz v. United States]]*, 389 U.S. 347 (1967) | Supplies the privacy baseline the private-search cases measure against: a search invades a [[Reasonable Expectation of Privacy\|reasonable expectation of privacy]], and a private party can frustrate that expectation before any officer arrives. | [[Reasonable Expectation of Privacy]] | [opinion](https://www.courtlistener.com/opinion/107564/katz-v-united-states/) |
 
 <!-- Burdeau v. McDowell (256 U.S. 465): lake status under_review (treatment-derivation pending; holding + pincite 475 verified on the case page); S9 promotes. Registry home search.private-foreign Anchor. -->
 <!-- United States v. Verdugo-Urquidez (494 U.S. 259): lake status under_review (treatment-derivation pending; pincite 265 verified on the case page). -->

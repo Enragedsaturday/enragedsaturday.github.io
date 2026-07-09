@@ -55,10 +55,10 @@ The search is judged by reasonableness under *O'Connor v. Ortega*. Assuming argu
 The Court declined to announce broad rules about digital privacy: "The Court must proceed with care when considering the whole concept of privacy expectations in communications made on electronic equipment owned by a government employer. The judiciary risks error by elaborating too fully on the Fourth Amendment implications of emerging technology before its role in society has become clear." — *Id.* at 759. ^pin-759
 
 ## Application
-The chief ordered the audit for a legitimate, noninvestigatory purpose — to assess whether the City's wireless plan met the SWAT team's work needs — not to expose Quon's private life, so it was justified at its inception. In scope, the review was limited to transcripts of on-duty months and redacted off-duty messages, so it was not excessively intrusive given its purpose. Whether or not Quon had a reasonable expectation of privacy in the texts (a question the Court left open in light of fast-changing technology), the search was reasonable.
+The chief ordered the audit for a legitimate, noninvestigatory purpose — to assess whether the City's wireless plan met the SWAT team's work needs — not to expose Quon's private life, so it was justified at its inception. In scope, the review was limited to transcripts of on-duty months and redacted off-duty messages, so it was not excessively intrusive given its purpose. Whether or not Quon had a [[Reasonable Expectation of Privacy|reasonable expectation of privacy]] in the texts (a question the Court left open in light of fast-changing technology), the search was reasonable.
 
 ## Conclusion
-The review of Quon's pager messages was a reasonable, constitutional search; the Ninth Circuit's contrary judgment was reversed and remanded.
+The review of Quon's pager messages was a reasonable, constitutional search; the Ninth Circuit's contrary judgment was reversed and [[Reading and Citing Cases#on-remand|remanded]].
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.

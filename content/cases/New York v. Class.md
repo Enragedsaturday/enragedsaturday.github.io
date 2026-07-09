@@ -59,10 +59,10 @@ There is no reasonable expectation of privacy in the VIN itself: "because of the
 The minimal intrusion to read it was reasonable: "We hold that this search was sufficiently unintrusive to be constitutionally permissible in light of the lack of a reasonable expectation of privacy in the VIN and the fact that the officers observed respondent commit two traffic violations." — *Id.* at 119. ^pin-119
 
 ## Application
-The VIN is required by federal regulation to be visible from outside the car, so Class had no reasonable expectation of privacy in it, and placing papers over it did not create one. Although reaching into the passenger compartment was itself a minimal "search" of a space that retains some Fourth Amendment protection, it was reasonable here: the officers had observed two traffic violations, and had Class stayed in the car they could simply have asked him to move the papers. Because the intrusion was limited to the area where the VIN sits and was justified by the traffic violations, it was permissible — and the gun seen in the course of that lawful, minimal entry was admissible.
+The VIN is required by federal regulation to be visible from outside the car, so Class had no [[Reasonable Expectation of Privacy|reasonable expectation of privacy]] in it, and placing papers over it did not create one. Although reaching into the passenger compartment was itself a minimal "search" of a space that retains some Fourth Amendment protection, it was reasonable here: the officers had observed two traffic violations, and had Class stayed in the car they could simply have asked him to move the papers. Because the intrusion was limited to the area where the VIN sits and was justified by the traffic violations, it was permissible — and the gun seen in the course of that lawful, minimal entry was admissible.
 
 ## Conclusion
-Reading the obscured VIN by a brief reach into the car was a reasonable, minimal search; the gun was admissible. There is no reasonable expectation of privacy in a legally mandated, publicly visible VIN.
+Reading the obscured VIN by a brief reach into the car was a reasonable, minimal search; the gun was admissible. There is no [[Reasonable Expectation of Privacy|reasonable expectation of privacy]] in a legally mandated, publicly visible VIN.
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.

@@ -55,10 +55,10 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-Saucier, a military police officer providing security at a base where Vice President Gore was speaking, removed Katz — an animal-rights protester who tried to display a banner — and allegedly shoved him roughly while putting him into a van. Katz sued under *Bivens* for excessive force. Saucier asserted qualified immunity; the Ninth Circuit denied it, treating the qualified-immunity inquiry as identical to the Fourth Amendment excessive-force merits.
+Saucier, a military police officer providing security at a base where Vice President Gore was speaking, removed Katz — an animal-rights protester who tried to display a banner — and allegedly shoved him roughly while putting him into a van. Katz sued under *Bivens* for excessive force. Saucier asserted [[Qualified Immunity|qualified immunity]]; the Ninth Circuit denied it, treating the qualified-immunity inquiry as identical to the Fourth Amendment excessive-force merits.
 
 ## Issue
-How a court must analyze qualified immunity in an excessive-force case, and whether that inquiry collapses into the Fourth Amendment merits.
+How a court must analyze [[Qualified Immunity|qualified immunity]] in an excessive-force case, and whether that inquiry collapses into the Fourth Amendment merits.
 
 ## Rule
 A court analyzes qualified immunity in a fixed sequence. "A court required to rule upon the qualified immunity issue must consider, then, this threshold question: Taken in the light most favorable to the party asserting the injury, do the facts alleged show the officer's conduct violated a constitutional right? This must be the initial inquiry." — *Saucier v. Katz*, 533 U.S. at 201. ^pin-201
@@ -68,10 +68,10 @@ A court analyzes qualified immunity in a fixed sequence. "A court required to ru
 *(This sequence was held no longer mandatory by [[Pearson v. Callahan]] (2009); the two-part test itself remains good law.)*
 
 ## Application
-Applying its two-step framework, the Court held that even assuming a constitutional violation could be shown, Saucier was entitled to qualified immunity: in the context he confronted — securing an event for the Vice President — a reasonable officer could have believed that hustling Katz into the van was a lawful amount of force, so the asserted right was not clearly established at the specific level required. The excessive-force merits did not merge with, and could not substitute for, the distinct clearly-established inquiry.
+Applying its two-step framework, the Court held that even assuming a constitutional violation could be shown, Saucier was entitled to [[Qualified Immunity|qualified immunity]]: in the context he confronted — securing an event for the Vice President — a reasonable officer could have believed that hustling Katz into the van was a lawful amount of force, so the asserted right was not clearly established at the specific level required. The excessive-force merits did not merge with, and could not substitute for, the distinct clearly-established inquiry.
 
 ## Conclusion
-Qualified immunity is analyzed in sequence, and Saucier was entitled to it; the Ninth Circuit was reversed.
+[[Qualified Immunity|Qualified immunity]] is analyzed in sequence, and Saucier was entitled to it; the Ninth Circuit was reversed.
 
 ## Treatment & subsequent history
 - **Status:** limited *(as of 2026-06-30)* — **Binding — SCOTUS**. **Limited by** [[Pearson v. Callahan]] (2009), which held that *Saucier*'s two-step sequence "should no longer be regarded as mandatory," freeing courts to decide the prongs in either order. *Saucier*'s two-part qualified-immunity test (constitutional violation; clearly established) remains good law and is regularly applied (e.g., [[Rivas-Villegas v. Cortesluna]]).

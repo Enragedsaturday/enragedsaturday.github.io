@@ -55,10 +55,10 @@ The location of the arrest is fixed by the suspect's position at the moment his 
 ## Application
 Applying that rule, the court held that "appellee was arrested inside his residence" without a warrant. But the inquiry did not end there: because the reported threats (grenades, automatic weapons, and a threat to blow up the trailer park) established genuine exigent circumstances, the warrantless in-home arrest was justified, and the district court's suppression order was error. The court therefore **reversed**. ^pin-895b
 
-Al-Azzawy thus establishes *both* poles of the analysis: coerced emergence from a surrounded home is an in-home arrest (the containment/exit-command rule), yet a real, present danger can supply the exigency that excuses the warrant.
+Al-Azzawy thus establishes *both* poles of the analysis: coerced emergence from a surrounded home is an in-home arrest (the containment/exit-command rule), yet a real, present danger can supply the [[Exigent Circumstances and Hot Pursuit|exigency]] that excuses the warrant.
 
 ## Conclusion
-Reversed. A suspect who emerges from his surrounded home only under overwhelming coercion is arrested inside it; here, exigent circumstances arising from the armed threats justified the warrantless in-home arrest.
+Reversed. A suspect who emerges from his surrounded home only under overwhelming coercion is arrested inside it; here, [[Exigent Circumstances and Hot Pursuit|exigent circumstances]] arising from the armed threats justified the warrantless in-home arrest.
 
 ## Treatment & subsequent history
 - **Status:** ⚪ unverified (frontier stub) — **Binding in-circuit — 9th Cir.** Treatment/progeny not machine-certified until S9 promotion.

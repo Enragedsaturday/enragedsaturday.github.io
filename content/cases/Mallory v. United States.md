@@ -58,7 +58,7 @@ Delay to obtain a confession is "unnecessary": "The duty enjoined upon arresting
 The circumstances "preclude a holding that arraignment was 'without unnecessary delay.'" Mallory was held for hours near available magistrates, questioned and polygraphed without being advised of his rights, and was not arraigned until after he had confessed — "when any judicial caution had lost its purpose." The Court would not subordinate the prompt-arraignment rule to the officers' discretion to find investigative reasons for delay; Rule 5(a) "stands . . . as a barrier" against using station-house interrogation to build the case before presentment.
 
 ## Conclusion
-The confession was obtained during unnecessary presentment delay in violation of Rule 5(a) and was inadmissible; the conviction was reversed and the case remanded.
+The confession was obtained during unnecessary presentment delay in violation of Rule 5(a) and was inadmissible; the conviction was reversed and the case [[Reading and Citing Cases#on-remand|remanded]].
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.

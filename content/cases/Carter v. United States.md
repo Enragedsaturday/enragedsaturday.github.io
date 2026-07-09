@@ -64,7 +64,7 @@ The D.C. Court of Appeals reversed, holding that the seizure occurred earlier �
 The court weighed the officers' coercive show of authority — the number of officers, the accusatory and repetitive questioning, and the disbelief of Carter's initial cooperation — and, applying *Dozier*, considered how an objectively reasonable Black man in Carter's position would experience that pressure. On that record, a reasonable person would not have felt free to walk away when told to hike up his pants, so the seizure crystallized before the bulge that supplied suspicion.
 
 ## Conclusion
-Carter's convictions were **vacated** and the case remanded. McLeese, Associate Judge, concurred in the judgment.
+Carter's convictions were **[[Reading and Citing Cases#vacated|vacated]]** and the case [[Reading and Citing Cases#on-remand|remanded]]. McLeese, Associate Judge, concurred in the judgment.
 
 ## Treatment & subsequent history
 **Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub and renders under the ⚪ banner until S9 promotion. *Carter* illustrates the objective "free to terminate the encounter" test for when a *[[Seizure of the Person|seizure of the person]]* occurs and applies the D.C. rule (*Dozier v. United States*) that a suspect's race is relevant to that objective inquiry — a development the Supreme Court has not addressed. It is a published decision of the District of Columbia Court of Appeals, cited here for its reasoning.

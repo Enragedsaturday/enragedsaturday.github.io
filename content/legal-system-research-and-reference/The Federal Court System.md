@@ -21,7 +21,7 @@ Every doctrine page in this wiki weights authority the same way: **SCOTUS bindin
 Federal cases climb one ladder with three rungs:
 
 - **U.S. District Courts, the trial courts.** This is where federal cases *start*: criminal prosecutions and civil suits alike, with trials, evidentiary hearings, and (critically for this course) **suppression motions**. There is **at least one district in every state** (larger states have several), plus the territories and D.C. A case is normally heard by a **single district judge**; a handful of matters by statute go to a **three-judge district panel**.
-- **U.S. Courts of Appeals, the circuits.** The intermediate appellate level. A losing party in district court generally has **one appeal as of right** to the court of appeals for that region. Appeals are normally heard by a **three-judge panel**; the most significant cases can be reheard **en banc** (the full active bench of the circuit), which can overrule the panel.
+- **U.S. Courts of Appeals, the circuits.** The intermediate appellate level. A losing party in district court generally has **one appeal as of right** to the court of appeals for that region. Appeals are normally heard by a **three-judge panel**; the most significant cases can be reheard **[[Reading and Citing Cases#en-banc|en banc]]** (the full active bench of the circuit), which can overrule the panel.
 - **U.S. Supreme Court, the top.** One court, sitting over all of them, with the final word on federal law and the Constitution.
 
 **How many courts of appeals?** There are **13**, and the count trips people up:
@@ -35,13 +35,13 @@ For suppression work, the circuit you care about is the **regional** one over th
 
 *[[Common Legal Terms#stare-decisis|Stare decisis]]*, "to stand by things decided," is the rule that courts follow prior decisions. It runs in two directions, and getting them straight is the whole game.
 
-**Vertical stare decisis (up the ladder).** A court is bound by the courts *above it in its own line*:
+**Vertical [[Common Legal Terms#stare-decisis|stare decisis]] (up the ladder).** A court is bound by the courts *above it in its own line*:
 
 - District courts are bound by **their circuit** and by **SCOTUS**.
 - A circuit's panels are bound by **SCOTUS**.
 - **SCOTUS binds everyone** on a question of federal law: every federal court and, on federal questions, every state court too.
 
-**Horizontal stare decisis (a court respecting itself).** A court generally follows its *own* prior published decisions. A **circuit panel is bound by earlier published panel decisions of that same circuit**: one panel cannot overrule another. Only the **full court en banc**, or **SCOTUS**, can change settled circuit law.
+**Horizontal [[Common Legal Terms#stare-decisis|stare decisis]] (a court respecting itself).** A court generally follows its *own* prior published decisions. A **circuit panel is bound by earlier published panel decisions of that same circuit**: one panel cannot overrule another. Only the **full court [[Reading and Citing Cases#en-banc|en banc]]**, or **SCOTUS**, can change settled circuit law.
 
 From those two rules, four operational facts follow:
 
@@ -66,11 +66,11 @@ When SCOTUS interprets the Fourth Amendment, that interpretation is the binding 
 
 **How a case reaches the Court.** Almost entirely by the Court's *choice*:
 
-- **Writ of certiorari (the main road).** A party who lost below petitions the Court to hear the case. Review is **discretionary**: the Court grants only a small fraction. In a typical term it receives **several thousand petitions** (commonly **5,000–7,000**) and grants plenary review in only about **60–80** of them, roughly **1%**. Grant is governed by the **"rule of four"**: it takes **four of the nine Justices** voting to grant for a case to be heard. *(Resolving a circuit split is one of the most common reasons the Court grants.)*
+- **Writ of [[Reading and Citing Cases#certiorari-cert|certiorari]] (the main road).** A party who lost below petitions the Court to hear the case. Review is **discretionary**: the Court grants only a small fraction. In a typical term it receives **several thousand petitions** (commonly **5,000–7,000**) and grants plenary review in only about **60–80** of them, roughly **1%**. Grant is governed by the **"rule of four"**: it takes **four of the nine Justices** voting to grant for a case to be heard. *(Resolving a circuit split is one of the most common reasons the Court grants.)*
 - **Original jurisdiction (rare).** A narrow set of cases, chiefly disputes *between states*, may be filed directly in the Supreme Court.
 - **Certified questions (very rare).** A court of appeals may formally certify a question of law to the Court.
 
-Because review is discretionary, a **denial of certiorari is not a ruling on the merits**: it leaves the lower court's decision standing **without endorsing it** (see Common pitfalls).
+Because review is discretionary, a **denial of [[Reading and Citing Cases#certiorari-cert|certiorari]] is not a ruling on the merits**: it leaves the lower court's decision standing **without endorsing it** (see Common pitfalls).
 
 ## Common pitfalls
 
@@ -78,7 +78,7 @@ Because review is discretionary, a **denial of certiorari is not a ruling on the
 - **Citing an out-of-circuit case as binding.** A sister circuit's holding is persuasive only; it does not control your circuit. Confirm the case is from *your* circuit (or SCOTUS) before you teach a search from it.
 - **Treating a circuit split as settled law.** If the circuits disagree, there *is* no single federal answer yet. Flag the split and say so; don't pick a side and present it as the rule.
 - **Assuming a state court must follow its regional circuit on federal questions.** It must follow **SCOTUS**, not the geographic court of appeals. Mixing this up blurs federal and state authority.
-- **Reading "cert denied" as an affirmance.** A denial of certiorari decides nothing on the merits and sets no precedent; it just means the lower court's decision stands. Don't cite it as Supreme Court approval.
+- **Reading "cert denied" as an affirmance.** A denial of [[Reading and Citing Cases#certiorari-cert|certiorari]] decides nothing on the merits and sets no precedent; it just means the lower court's decision stands. Don't cite it as Supreme Court approval.
 
 ## Visual
 

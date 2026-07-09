@@ -47,7 +47,7 @@ lake:
 Customs agents investigating suspected violations of the federal export laws by F.L. Kleinberg & Co. (and Richard Leary) obtained a warrant authorizing seizure of business records "relating to" violations of the export laws, with no further limitation. Executing it, the agents seized broad swaths of documents, including records concerning transactions, countries, and commodities not mentioned in the affidavit and unrelated to the suspected deal. The district court suppressed the evidence as the product of an overbroad warrant; the government appealed.
 
 ## Issue
-(1) Whether a warrant authorizing seizure of records "relating to" violations of the export laws satisfies the Fourth Amendment's particularity requirement; and (2) whether the [[United States v. Leon]] good-faith exception saves evidence seized under such a facially overbroad warrant.
+(1) Whether a warrant authorizing seizure of records "relating to" violations of the export laws satisfies the Fourth Amendment's [[Particularity|particularity]] requirement; and (2) whether the [[United States v. Leon]] [[The Good-Faith Exception|good-faith exception]] saves evidence seized under such a facially overbroad warrant.
 
 ## Rule
 No to both. The particularity requirement bars general, exploratory rummaging: it "ensures that a search is confined in scope to particularly described evidence relating to a specific crime for which there is demonstrated probable cause." — 846 F.2d at 600 (quoting *Voss v. Bergsgaard*). ^pin-600
@@ -62,11 +62,11 @@ The Leon good-faith exception does not save such a warrant: "We find the warrant
 On these facts the warrant was an unconstitutional general warrant and good faith could not rescue it. The "relating to" language gave the agents no criteria to distinguish seizable from non-seizable records, and the record showed they used the warrant's breadth (not any affidavit specificity) to seize documents far beyond the suspected transaction — "[t]here is no portion of the Kleinberg warrant that adequately defines the items to be seized," so the affidavit could not cure it and severance was impossible. Good faith was unavailable because a reasonably well-trained officer "should know that a warrant must provide guidelines for determining what evidence may be seized," and a warrant this facially deficient could not be reasonably presumed valid — placing it within *Leon*'s own exception for warrants "so facially deficient . . . that the executing officers cannot reasonably presume it to be valid." The Court did not reach the separate probable-cause defect.
 
 ## Conclusion
-The warrant was facially overbroad and the *Leon* good-faith exception did not apply; the district court's suppression of all evidence seized under it was affirmed.
+The warrant was facially overbroad and the *Leon* [[The Good-Faith Exception|good-faith exception]] did not apply; the district court's suppression of all evidence seized under it was affirmed.
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding in-circuit — 10th Cir.**
-- No negative subsequent treatment identified. *Leary* applies the particularity rule of [[Coolidge v. New Hampshire]] and marks the boundary of [[United States v. Leon]] / [[Massachusetts v. Sheppard]] good-faith: a facially overbroad general warrant cannot support objectively reasonable reliance.
+- No negative subsequent treatment identified. *Leary* applies the [[Particularity|particularity]] rule of [[Coolidge v. New Hampshire]] and marks the boundary of [[United States v. Leon]] / [[Massachusetts v. Sheppard]] good-faith: a facially overbroad general warrant cannot support objectively reasonable reliance.
 
 ## Appears on
 - [[The Exclusionary Rule]] — *Key — Progeny / Refinement*

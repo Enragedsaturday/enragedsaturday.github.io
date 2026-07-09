@@ -56,7 +56,7 @@ holding: "On remand from Carpenter v. United States, the Sixth Circuit held that
 FBI agents obtained Timothy Carpenter's historical cell-site location information (CSLI) without a warrant, using court orders issued under the Stored Communications Act (SCA), 18 U.S.C. § 2703(d). The Sixth Circuit initially held that acquiring CSLI was not a Fourth Amendment search. In *Carpenter v. United States* (2018), the Supreme Court reversed, holding that the warrantless acquisition of the records was a search, and remanded. On remand, the question was whether the CSLI evidence had to be suppressed.
 
 ## Issue
-Whether the good-faith exception to the exclusionary rule permits admission of CSLI obtained without a warrant in reliance on the Stored Communications Act, after *Carpenter* held such acquisition unconstitutional.
+Whether the [[The Good-Faith Exception|good-faith exception]] to the exclusionary rule permits admission of CSLI obtained without a warrant in reliance on the Stored Communications Act, after *Carpenter* held such acquisition unconstitutional.
 
 ## Rule
 Evidence obtained in objectively reasonable, good-faith reliance on a statute later held not to authorize the search is not subject to exclusion, because suppression would not deter police who simply followed a duly enacted law (*Leon*; *Illinois v. Krull*). Applying that rule, the panel held: "Because these agents reasonably relied on the Stored Communications Act (SCA), we AFFIRM the judgment of the district court." — 926 F.3d at 313. ^pin-313

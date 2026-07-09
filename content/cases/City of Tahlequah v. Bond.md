@@ -44,10 +44,10 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-Officers responded to a call that Dominic Rollice, intoxicated, would not leave his ex-wife's garage. As they spoke with him, Rollice grabbed a hammer and raised it as if to strike or throw it; two officers shot and killed him. His estate sued under § 1983 for excessive force. The Tenth Circuit denied qualified immunity, holding the officers' earlier "cornering" of Rollice was reckless and that circuit precedent clearly established the violation.
+Officers responded to a call that Dominic Rollice, intoxicated, would not leave his ex-wife's garage. As they spoke with him, Rollice grabbed a hammer and raised it as if to strike or throw it; two officers shot and killed him. His estate sued under § 1983 for excessive force. The Tenth Circuit denied [[Qualified Immunity|qualified immunity]], holding the officers' earlier "cornering" of Rollice was reckless and that circuit precedent clearly established the violation.
 
 ## Issue
-Whether the officers were entitled to qualified immunity because no precedent clearly established that their conduct violated the Fourth Amendment.
+Whether the officers were entitled to [[Qualified Immunity|qualified immunity]] because no precedent clearly established that their conduct violated the Fourth Amendment.
 
 ## Rule
 Yes. Clearly established law must be defined with specificity: "We have repeatedly told courts not to define clearly established law at too high a level of generality." — *City of Tahlequah v. Bond*, 595 U.S. 9 (2021) (slip op., at 3). ^pin-op3
@@ -55,10 +55,10 @@ Yes. Clearly established law must be defined with specificity: "We have repeated
 Qualified immunity "protects '"all but the plainly incompetent or those who knowingly violate the law."'" — *Id.* (slip op., at 3) (quoting *District of Columbia v. Wesby*). ^pin-op3a
 
 ## Application
-None of the decisions the Tenth Circuit invoked involved facts close enough to give these officers fair notice that confronting an armed, intoxicated man who raised a hammer would violate the Fourth Amendment. Because no precedent squarely governed the situation the officers faced, they did not violate clearly established law and were entitled to qualified immunity on this record.
+None of the decisions the Tenth Circuit invoked involved facts close enough to give these officers fair notice that confronting an armed, intoxicated man who raised a hammer would violate the Fourth Amendment. Because no precedent squarely governed the situation the officers faced, they did not violate clearly established law and were entitled to [[Qualified Immunity|qualified immunity]] on this record.
 
 ## Conclusion
-The officers were entitled to qualified immunity; the Tenth Circuit's contrary judgment was reversed. The Court did not decide whether a constitutional violation occurred.
+The officers were entitled to [[Qualified Immunity|qualified immunity]]; the Tenth Circuit's contrary judgment was reversed. The Court did not decide whether a constitutional violation occurred.
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.

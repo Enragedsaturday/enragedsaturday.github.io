@@ -44,10 +44,10 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-Mauro was arrested after admitting he had killed his son. After receiving Miranda warnings he invoked his right to counsel, and questioning stopped. His wife, who was being questioned in another room, insisted on speaking with him. Officers tried to discourage her but relented, requiring that a detective be present and that a tape recorder be running in plain view. During the conversation Mauro made incriminating statements, which the prosecution later used to rebut his insanity defense. The Arizona Supreme Court held that allowing the spousal meeting was the functional equivalent of interrogation under [[Rhode Island v. Innis]].
+Mauro was arrested after admitting he had killed his son. After receiving [[Miranda and Custodial Interrogation|Miranda warnings]] he invoked his right to counsel, and questioning stopped. His wife, who was being questioned in another room, insisted on speaking with him. Officers tried to discourage her but relented, requiring that a detective be present and that a tape recorder be running in plain view. During the conversation Mauro made incriminating statements, which the prosecution later used to rebut his insanity defense. The Arizona Supreme Court held that allowing the spousal meeting was the functional equivalent of interrogation under [[Rhode Island v. Innis]].
 
 ## Issue
-Whether permitting a suspect who has invoked his Miranda rights to speak with his spouse, in the presence of an officer with a recorder, constitutes interrogation or its functional equivalent.
+Whether permitting a suspect who has invoked his [[Miranda and Custodial Interrogation|Miranda rights]] to speak with his spouse, in the presence of an officer with a recorder, constitutes interrogation or its functional equivalent.
 
 ## Rule
 No. "We think it is clear under both *Miranda* and *Innis* that Mauro was not interrogated. . . . There is no evidence that the officers sent Mrs. Mauro in to see her husband for the purpose of eliciting incriminating statements." — 481 U.S. at 527–528. ^pin-528
@@ -60,7 +60,7 @@ Because "Mauro was not subjected to compelling influences, psychological ploys, 
 The tape showed the detective asked Mauro no questions about the crime, and nothing suggested the officers used the meeting as a psychological ploy — they had discouraged the wife and "yielded to her insistent demands," and the officer's presence served legitimate, security-related reasons. Viewed from Mauro's perspective, a suspect told his wife may speak with him would not feel coerced to incriminate himself. The conduct was "far less questionable than the 'subtle compulsion'" held not to be interrogation in *Innis*, and did not implicate Miranda's purpose of preventing the coercive use of confinement to extract confessions. The officers therefore "acted reasonably and lawfully," and the Constitution did not bar the statements.
 
 ## Conclusion
-Mauro was not interrogated; his statements to his wife were admissible. The judgment of the Arizona Supreme Court was reversed and the case remanded.
+Mauro was not interrogated; his statements to his wife were admissible. The judgment of the Arizona Supreme Court was reversed and the case [[Reading and Citing Cases#on-remand|remanded]].
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.

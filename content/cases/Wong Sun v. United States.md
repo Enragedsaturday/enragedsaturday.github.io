@@ -58,11 +58,11 @@ Where the link between the illegality and the evidence is sufficiently weakened,
 Applying that test to each defendant's evidence, the Court reached different results. Toy's bedroom statements were come at by exploitation of the agents' unlawful entry — they followed immediately on the illegal break-in and were not purged of the primary taint — so they were suppressed; and the heroin Yee surrendered, traced through Toy's tainted statements, was inadmissible against Toy for the same reason. Wong Sun's statement was different: he had been released on his own recognizance after arraignment and returned voluntarily several days later, so the connection between his unlawful arrest and his statement had become so attenuated as to dissipate the taint, and the statement was admissible. (Wong Sun's conviction was nonetheless reversed because of corroboration concerns.)
 
 ## Conclusion
-Evidence obtained by exploiting an unlawful arrest is suppressed as fruit of the poisonous tree, but evidence sufficiently attenuated from the illegality is admissible. The judgment was reversed and the case remanded.
+Evidence obtained by exploiting an unlawful arrest is suppressed as [[Common Legal Terms#fruit-of-the-poisonous-tree|fruit of the poisonous tree]], but evidence sufficiently attenuated from the illegality is admissible. The judgment was reversed and the case [[Reading and Citing Cases#on-remand|remanded]].
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.
-- No negative treatment. *Wong Sun* is the foundational fruit-of-the-poisonous-tree case; its attenuation inquiry was given concrete factors in [[Brown v. Illinois]] and applied to an intervening arrest warrant in [[Utah v. Strieff]]. The related independent-source and inevitable-discovery limits appear in [[Nix v. Williams]].
+- No negative treatment. *Wong Sun* is the foundational fruit-of-the-poisonous-tree case; its [[Fruits and Attenuation|attenuation]] inquiry was given concrete factors in [[Brown v. Illinois]] and applied to an intervening arrest warrant in [[Utah v. Strieff]]. The related independent-source and inevitable-discovery limits appear in [[Nix v. Williams]].
 
 ## Appears on
 - [[The Exclusionary Rule]] — *Key — Anchor*

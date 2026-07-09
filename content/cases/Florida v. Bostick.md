@@ -44,7 +44,7 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-During a drug-interdiction sweep, two officers boarded a bus during a stopover and, without articulable suspicion, approached Terrance Bostick, asked for his ticket and identification, explained they were narcotics officers, and asked to search his luggage. Bostick consented and the officers found cocaine. The Florida Supreme Court adopted a per se rule that the police practice of "working the buses" was an unconstitutional seizure.
+During a drug-interdiction sweep, two officers boarded a bus during a stopover and, without articulable suspicion, approached Terrance Bostick, asked for his ticket and identification, explained they were narcotics officers, and asked to search his luggage. Bostick consented and the officers found cocaine. The Florida Supreme Court adopted a [[Common Legal Terms#per-se|per se]] rule that the police practice of "working the buses" was an unconstitutional seizure.
 
 ## Issue
 How to determine whether a police-citizen encounter is a Fourth Amendment seizure when the person's freedom of movement is already restricted by a factor independent of police conduct (being a passenger on a bus about to depart), so that the usual "free to leave" test does not fit.
@@ -55,10 +55,10 @@ When a person's movement is constrained by something other than the police, the 
 That objective standard governs all such encounters: "in order to determine whether a particular encounter constitutes a seizure, a court must consider all the circumstances surrounding the encounter to determine whether the police conduct would have communicated to a reasonable person that the person was not free to decline the officers' requests or otherwise terminate the encounter." — *Id.* at 439. ^pin-439
 
 ## Application
-Because Bostick's freedom to leave was limited by his being a passenger on a bus about to depart — not by any show of police authority — the Florida court erred in treating the encounter as a per se seizure. Whether he was seized turned on whether a reasonable person in his position would have felt free to decline the officers' requests; the Court remanded for that totality-of-the-circumstances assessment rather than resolving the seizure question categorically.
+Because Bostick's freedom to leave was limited by his being a passenger on a bus about to depart — not by any show of police authority — the Florida court erred in treating the encounter as a [[Common Legal Terms#per-se|per se]] seizure. Whether he was seized turned on whether a reasonable person in his position would have felt free to decline the officers' requests; the Court [[Reading and Citing Cases#on-remand|remanded]] for that totality-of-the-circumstances assessment rather than resolving the seizure question categorically.
 
 ## Conclusion
-The Florida Supreme Court's per se rule was reversed; whether a bus-sweep encounter is a seizure is judged by the free-to-decline-or-terminate standard on the totality of the circumstances, and the case was remanded.
+The Florida Supreme Court's [[Common Legal Terms#per-se|per se]] rule was reversed; whether a bus-sweep encounter is a seizure is judged by the free-to-decline-or-terminate standard on the [[Common Legal Terms#totality-of-the-circumstances|totality of the circumstances]], and the case was [[Reading and Citing Cases#on-remand|remanded]].
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.

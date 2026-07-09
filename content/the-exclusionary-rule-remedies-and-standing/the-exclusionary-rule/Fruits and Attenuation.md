@@ -63,7 +63,7 @@ related:
 **Common pitfalls.**
 - **Treating the fruits doctrine as but-for causation.** *[[Wong Sun v. United States|Wong Sun]]* asks about exploitation, not mere traceability; not every downstream item falls.
 - **Assuming *Miranda* warnings launder an illegal arrest.** They do not (*[[Brown v. Illinois|Brown]]*).
-- **Confusing attenuation with independent source or inevitable discovery.** Attenuation concedes the causal link but says it has weakened; the other two say there was (or would have been) a **clean** path. Keep them on their own pages.
+- **Confusing attenuation with [[Inevitable Discovery and Independent Source|independent source]] or [[Inevitable Discovery and Independent Source|inevitable discovery]].** Attenuation concedes the causal link but says it has weakened; the other two say there was (or would have been) a **clean** path. Keep them on their own pages.
 - **Forgetting the impeachment exception is defendant-only.** It cannot reach other defense witnesses (*[[James v. Illinois|James]]*).
 
 ## Key cases
@@ -74,7 +74,7 @@ related:
 | *[[Wolf v. Colorado]]*, 338 U.S. 25 (1949) | **Superseded on the remedy.** The Fourth Amendment binds the states, but its federal exclusionary remedy did not; overruled on that point by *Mapp*. | [opinion](https://www.courtlistener.com/opinion/104709/wolf-v-colorado/) |
 | *[[Mapp v. Ohio]]*, 367 U.S. 643 (1961) | **Incorporation of the remedy.** Applies the exclusionary rule to the states through the Fourteenth Amendment, overruling *Wolf*. | [opinion](https://www.courtlistener.com/opinion/106285/mapp-v-ohio/) |
 | *[[Elkins v. United States]]*, 364 U.S. 206 (1960) | **Deterrence purpose.** Abolishes the silver-platter doctrine; the rule's purpose is to deter by removing the incentive to disregard the guaranty. | [opinion](https://www.courtlistener.com/opinion/106107/elkins-v-united-states/) |
-| *[[Silverthorne Lumber Co. v. United States]]*, 251 U.S. 385 (1920) | **Fruits origin.** Illegally obtained knowledge "shall not be used at all," though a genuinely independent source may still prove the facts. | [opinion](https://www.courtlistener.com/opinion/99506/silverthorne-lumber-co-v-united-states/) |
+| *[[Silverthorne Lumber Co. v. United States]]*, 251 U.S. 385 (1920) | **Fruits origin.** Illegally obtained knowledge "shall not be used at all," though a genuinely [[Inevitable Discovery and Independent Source\|independent source]] may still prove the facts. | [opinion](https://www.courtlistener.com/opinion/99506/silverthorne-lumber-co-v-united-states/) |
 | *[[Nardone v. United States]]*, 308 U.S. 338 (1939) | **Names the doctrine.** Coins "fruit of the poisonous tree"; derivative use is barred unless the taint is dissipated. | [opinion](https://www.courtlistener.com/opinion/103259/nardone-v-united-states/) |
 | *[[Wong Sun v. United States]]*, 371 U.S. 471 (1963) | **Reach test.** Suppress fruits "come at by exploitation" of the illegality, not on mere but-for causation. | [opinion](https://www.courtlistener.com/opinion/106515/wong-sun-v-united-states/) |
 | *[[Brown v. Illinois]]*, 422 U.S. 590 (1975) | **Attenuation factors.** Temporal proximity, intervening circumstances, and (most important) purpose and flagrancy; *Miranda* warnings alone do not purge. | [opinion](https://www.courtlistener.com/opinion/109304/brown-v-illinois/) |
@@ -93,7 +93,7 @@ These are treated in full elsewhere but bear directly on the reach of suppressio
 |---|---|---|---|
 | *[[Dunaway v. New York]]*, 442 U.S. 200 (1979) | ***Attenuation failed.*** An involuntary station-house detention without probable cause; the confession that followed was suppressed under the *Brown* factors. | [[Seizure of the Person]] | [opinion](https://www.courtlistener.com/opinion/110096/dunaway-v-new-york/) |
 | *[[Kaupp v. Texas]]*, 538 U.S. 626 (2003) | ***Attenuation failed.*** A 3 a.m. warrantless removal without probable cause; the confession was not sufficiently purged of the taint. | [[Seizure of the Person]] | [opinion](https://www.courtlistener.com/opinion/127919/kaupp-v-texas/) |
-| *[[Hudson v. Michigan]]*, 547 U.S. 586 (2006) | ***Causation limit.*** A knock-and-announce violation does not trigger suppression; the interests it protects have nothing to do with the seizure of the evidence. | [[Knock-and-Announce]] | [opinion](https://www.courtlistener.com/opinion/145646/hudson-v-michigan/) |
+| *[[Hudson v. Michigan]]*, 547 U.S. 586 (2006) | ***Causation limit.*** A [[Knock-and-Announce\|knock-and-announce]] violation does not trigger suppression; the interests it protects have nothing to do with the seizure of the evidence. | [[Knock-and-Announce]] | [opinion](https://www.courtlistener.com/opinion/145646/hudson-v-michigan/) |
 | *[[New York v. Harris]]*, 495 U.S. 14 (1990) | ***Fruits limit.*** A *Payton* violation does not require suppressing a later out-of-home statement where police had probable cause to arrest. | [[Arrest in the Home]] | [opinion](https://www.courtlistener.com/opinion/112413/new-york-v-harris/) |
 | *[[Harris v. New York]]*, 401 U.S. 222 (1971) | ***Impeachment (Miranda).*** *Miranda*-defective statements may impeach the defendant's own conflicting trial testimony. | [[Miranda Waiver and Invocation]] | [opinion](https://www.courtlistener.com/opinion/108272/harris-v-new-york/) |
 
@@ -111,7 +111,7 @@ flowchart TD
 ```
 
 > [!tip] Mnemonic — Dominoes (Decision Sequencing)
-> Unlawful step taints what's derived after it; what's found *before* the first fallen domino survives. **Credit Bruce-Alan Barnard.** **Guardrail:** oversimplifies — attenuation / independent source / inevitable discovery mean not every later domino falls.
+> Unlawful step taints what's derived after it; what's found *before* the first fallen domino survives. **Credit Bruce-Alan Barnard.** **Guardrail:** oversimplifies — attenuation / [[Inevitable Discovery and Independent Source|independent source]] / [[Inevitable Discovery and Independent Source|inevitable discovery]] mean not every later domino falls.
 
 ## Sources
 - [*Weeks v. United States*, 232 U.S. 383 (1914)](https://www.courtlistener.com/opinion/98094/weeks-v-united-states/) (pinpoints: 393, 398)

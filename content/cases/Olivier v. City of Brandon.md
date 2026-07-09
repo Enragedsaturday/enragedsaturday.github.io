@@ -68,7 +68,7 @@ Whether *Heck v. Humphrey* bars a § 1983 suit for wholly prospective relief bro
 Olivier sought neither the reversal of his conviction nor damages for it — only forward-looking relief so he could preach without fear of future arrest. That request does not question the validity of his completed conviction; it seeks to prevent future enforcement, exactly the kind of claim *Wooley* permitted a previously convicted plaintiff to bring. Reading *Heck* to bar it would trap Olivier between intentionally flouting state law and forgoing what he believes to be constitutionally protected activity.
 
 ## Conclusion
-**Reversed and remanded.** Justice Kagan wrote for a unanimous Court (9–0).
+**Reversed and [[Reading and Citing Cases#on-remand|remanded]].** Justice Kagan wrote for a unanimous Court (9–0).
 
 ## Treatment & subsequent history
 **Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub; its citator and progeny history have not completed the two-key verification, so it renders under the ⚪ banner until S9 promotion. *Olivier* cabins *[[Heck v. Humphrey|Heck]]*'s favorable-termination rule to claims that would undermine a conviction or seek release/damages, confirming that prospective injunctive relief against future enforcement remains available under § 1983 even to a previously convicted plaintiff.

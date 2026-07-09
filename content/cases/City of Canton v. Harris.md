@@ -57,10 +57,10 @@ That high standard is met where "the need for more or different training is so o
 Only then does the training failure represent a municipal "policy" for which the city is responsible under *Monell*.
 
 ## Application
-Because the trial court's instructions had permitted liability on a theory closer to respondeat superior than deliberate indifference, the Court could not sustain the verdict and remanded. The plaintiff would have to show that the city's failure to train reflected a deliberate or conscious choice — a policy of inaction in the face of an obvious need — and that the identified training deficiency actually caused her injury, not merely that an officer was unsatisfactorily trained or that better training could have avoided the harm.
+Because the trial court's instructions had permitted liability on a theory closer to [[Common Legal Terms#respondeat-superior|respondeat superior]] than [[Section 1983 Liability and Qualified Immunity|deliberate indifference]], the Court could not sustain the verdict and [[Reading and Citing Cases#on-remand|remanded]]. The plaintiff would have to show that the city's failure to train reflected a deliberate or conscious choice — a policy of inaction in the face of an obvious need — and that the identified training deficiency actually caused her injury, not merely that an officer was unsatisfactorily trained or that better training could have avoided the harm.
 
 ## Conclusion
-Vacated and remanded. Inadequate training supports municipal § 1983 liability only on a showing of deliberate indifference, applied to the specific training deficiency that caused the constitutional injury.
+[[Reading and Citing Cases#vacated|Vacated]] and [[Reading and Citing Cases#on-remand|remanded]]. Inadequate training supports municipal § 1983 liability only on a showing of [[Section 1983 Liability and Qualified Immunity|deliberate indifference]], applied to the specific training deficiency that caused the constitutional injury.
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.

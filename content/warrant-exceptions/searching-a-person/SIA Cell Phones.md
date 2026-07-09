@@ -26,19 +26,19 @@ related: ["[[SIA Persons]]", "[[The Third-Party Doctrine and Digital Surveillanc
 
 **What officers may still do without a warrant.** Two things survive the arrest. First, they may **seize** the phone so it is not lost or destroyed. Second, they may examine the phone's **physical aspects**: officers "remain free to examine the physical aspects of a phone to ensure that it will not be used as a weapon — say, to determine whether there is a razor blade hidden between the phone and its case." *[[Riley v. California|Riley]]*, 573 U.S. at 387. What they may not do on the arrest alone is open the phone and read its data.
 
-**The doctrine interfaces: the ways in without an incident search.** *Riley* closed the search-incident door for data but left the ordinary doors open. A **warrant** is the routine answer. A genuine **exigency** (imminent remote-wiping or data encryption, a specific threat) can justify a warrantless search case by case, but *Riley* was skeptical of remote-wiping as a generic justification and pointed to less-intrusive alternatives (powering down, a Faraday bag). See [[Exigent Circumstances and Hot Pursuit]]. **Consent** to search the phone works if voluntary (see [[Consent Searches]]). And records held by a **provider** (cell-site location, account data) are governed by the third-party and *Carpenter* line, not by this rule; see [[The Third-Party Doctrine and Digital Surveillance]].
+**The doctrine interfaces: the ways in without an incident search.** *Riley* closed the search-incident door for data but left the ordinary doors open. A **warrant** is the routine answer. A genuine **[[Exigent Circumstances and Hot Pursuit|exigency]]** (imminent remote-wiping or data encryption, a specific threat) can justify a warrantless search case by case, but *Riley* was skeptical of remote-wiping as a generic justification and pointed to less-intrusive alternatives (powering down, a Faraday bag). See [[Exigent Circumstances and Hot Pursuit]]. **Consent** to search the phone works if voluntary (see [[Consent Searches]]). And records held by a **provider** (cell-site location, account data) are governed by the third-party and *Carpenter* line, not by this rule; see [[The Third-Party Doctrine and Digital Surveillance]].
 
 **Apply it.**
 1. **Seize** the phone incident to the arrest so it is preserved.
 2. Inspect only the **physical** device (for a weapon or a concealed blade) — not its data (*Riley*).
 3. To read the **data**, get a **warrant** (the default answer *Riley* gives).
-4. If you claim **exigency** (imminent wiping, encryption, a live threat), articulate the specific facts and consider a Faraday bag or powering down first; *Riley* rejects remote-wiping as an automatic justification.
+4. If you claim **[[Exigent Circumstances and Hot Pursuit|exigency]]** (imminent wiping, encryption, a live threat), articulate the specific facts and consider a Faraday bag or powering down first; *Riley* rejects remote-wiping as an automatic justification.
 5. For **location or account records** held by a carrier, do not rely on this rule — see the *Carpenter* line at [[The Third-Party Doctrine and Digital Surveillance]].
 
 **Common pitfalls.**
 - **Treating the phone like everything else in the pockets.** *Robinson* lets you search the pack of cigarettes; *Riley* stops you at the phone's data.
 - **Reading the whole phone "for officer safety."** The physical handset can hide a blade; the **data** cannot hurt anyone (*Riley*, 573 U.S. at 387).
-- **Calling routine remote-wiping risk an exigency.** *Riley* rejects that as a blanket justification; articulate specific facts or secure the device.
+- **Calling routine remote-wiping risk an [[Exigent Circumstances and Hot Pursuit|exigency]].** *Riley* rejects that as a blanket justification; articulate specific facts or secure the device.
 - **Conflating the phone's contents with carrier records.** Data on the device is *Riley*; historical location and account data held by the provider is the *Carpenter* / third-party line.
 
 ## Lower-court developments

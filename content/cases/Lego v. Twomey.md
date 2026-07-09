@@ -44,10 +44,10 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-Lego was convicted of armed robbery on evidence that included his confession, which he claimed the police had beaten out of him. At a pretrial suppression hearing the trial judge — applying the then-prevailing practice — found the confession voluntary by a preponderance of the evidence and admitted it. Lego argued that the Constitution required the prosecution to prove voluntariness beyond a reasonable doubt, and that he was entitled to have the jury decide voluntariness anew. He sought federal habeas corpus (Twomey was the prison warden).
+Lego was convicted of armed robbery on evidence that included his confession, which he claimed the police had beaten out of him. At a pretrial [[Common Legal Terms#suppression-hearing|suppression hearing]] the trial judge — applying the then-prevailing practice — found the confession voluntary by a [[Common Legal Terms#preponderance-of-the-evidence|preponderance of the evidence]] and admitted it. Lego argued that the Constitution required the prosecution to prove voluntariness [[Common Legal Terms#beyond-a-reasonable-doubt|beyond a reasonable doubt]], and that he was entitled to have the jury decide voluntariness anew. He sought federal [[Common Legal Terms#habeas-corpus|habeas corpus]] (Twomey was the prison warden).
 
 ## Issue
-Whether the prosecution must prove a confession's voluntariness beyond a reasonable doubt, and whether a defendant is entitled to have the jury redetermine voluntariness after the judge has ruled it admissible.
+Whether the prosecution must prove a confession's voluntariness [[Common Legal Terms#beyond-a-reasonable-doubt|beyond a reasonable doubt]], and whether a defendant is entitled to have the jury redetermine voluntariness after the judge has ruled it admissible.
 
 ## Rule
 A preponderance of the evidence is the constitutional floor. "[W]hen a confession challenged as involuntary is sought to be used against a criminal defendant at his trial, he is entitled to a reliable and clear-cut determination that the confession was in fact voluntarily rendered. Thus, the prosecution must prove at least by a preponderance of the evidence that the confession was voluntary. Of course, the States are free, pursuant to their own law, to adopt a higher standard." — 404 U.S. at 489. ^pin-489
@@ -55,10 +55,10 @@ A preponderance of the evidence is the constitutional floor. "[W]hen a confessio
 The Court also held that, the judge having reliably determined voluntariness, the defendant has no constitutional right to have the jury pass on the claim a second time.
 
 ## Application
-The trial judge had found Lego's confession voluntary under the preponderance standard, and that determination was constitutionally sufficient. *In re Winship*'s beyond-a-reasonable-doubt requirement governs proof of guilt, not the preliminary admissibility question of voluntariness, so the higher standard was not required. And because a judge's reliable voluntariness ruling adequately protects the defendant's rights, Lego was not entitled to relitigate voluntariness before the jury. His habeas petition therefore failed.
+The trial judge had found Lego's confession voluntary under the preponderance standard, and that determination was constitutionally sufficient. *In re Winship*'s beyond-a-reasonable-doubt requirement governs proof of guilt, not the preliminary admissibility question of voluntariness, so the higher standard was not required. And because a judge's reliable voluntariness ruling adequately protects the defendant's rights, Lego was not entitled to relitigate voluntariness before the jury. His [[Common Legal Terms#habeas-corpus|habeas]] petition therefore failed.
 
 ## Conclusion
-The prosecution need prove voluntariness only by a preponderance of the evidence, and the defendant has no right to a second, jury determination of voluntariness; the judgment denying habeas relief was affirmed. States remain free to impose a higher burden.
+The prosecution need prove voluntariness only by a [[Common Legal Terms#preponderance-of-the-evidence|preponderance of the evidence]], and the defendant has no right to a second, jury determination of voluntariness; the judgment denying [[Common Legal Terms#habeas-corpus|habeas]] relief was affirmed. States remain free to impose a higher burden.
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.

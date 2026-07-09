@@ -60,7 +60,7 @@ Yes — on a substantial preliminary showing, the defendant is entitled to a ver
 Franks made specific allegations — backed by an offer of proof — that the affiants had fabricated the statements they attributed to his acquaintances, and those statements bore on probable cause. Because that was the kind of substantial preliminary showing of deliberate or reckless falsehood that entitles a defendant to go behind the affidavit, the Delaware courts erred in treating such a challenge as categorically barred.
 
 ## Conclusion
-A defendant may challenge a warrant affidavit's veracity on a substantial preliminary showing; the Delaware Supreme Court's categorical bar was reversed and the case remanded.
+A defendant may challenge a warrant affidavit's veracity on a substantial preliminary showing; the Delaware Supreme Court's categorical bar was reversed and the case [[Reading and Citing Cases#on-remand|remanded]].
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.

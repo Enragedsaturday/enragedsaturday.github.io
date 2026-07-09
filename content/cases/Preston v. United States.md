@@ -62,11 +62,11 @@ On these facts, "the search was too remote in time or place to have been made as
 The car was not searched until the men had been arrested, booked, and taken into custody at the station, and the car had been towed to a garage. At that point none of the arrestees could have reached a weapon in the car or destroyed evidence, and there was no danger the car would be moved out of the locality. The search was therefore too remote in time and place from the arrest to qualify as incident to it, and no warrant had been obtained.
 
 ## Conclusion
-The warrantless garage search of the car was unreasonable and its fruits inadmissible. The judgment was reversed and remanded.
+The warrantless garage search of the car was unreasonable and its fruits inadmissible. The judgment was reversed and [[Reading and Citing Cases#on-remand|remanded]].
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.
-- *Preston* remains a controlling statement of the temporal/spatial limit on searches incident to arrest, regularly cited (e.g., in [[United States v. Chadwick]]). It was decided solely on search-incident grounds; the later automobile-exception line ([[Chambers v. Maroney]], [[Michigan v. Thomas]]) **distinguished** *Preston* and now independently permits a warrantless delayed vehicle search on probable cause — so *Preston* does not bar every station-house car search, but its search-incident holding is intact and not overruled.
+- *Preston* remains a controlling statement of the temporal/spatial limit on [[Search Incident to Arrest|searches incident to arrest]], regularly cited (e.g., in [[United States v. Chadwick]]). It was decided solely on search-incident grounds; the later automobile-exception line ([[Chambers v. Maroney]], [[Michigan v. Thomas]]) **distinguished** *Preston* and now independently permits a warrantless delayed vehicle search on probable cause — so *Preston* does not bar every station-house car search, but its search-incident holding is intact and not overruled.
 
 ## Appears on
 - [[SIA Persons]] — *Historical*

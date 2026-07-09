@@ -60,7 +60,7 @@ The illegally obtained statements were used to impeach Henderson, a defense witn
 ## Conclusion
 "[W]e adhere to the line drawn in our previous cases. Accordingly, we hold that the Illinois Supreme Court erred in affirming James' convictions despite the prosecutor's use of illegally obtained statements to impeach a defense witness' testimony." — *Id.* at 320. ^pin-320
 
-The judgment was reversed and remanded.
+The judgment was reversed and [[Reading and Citing Cases#on-remand|remanded]].
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.

@@ -55,10 +55,10 @@ A two-tier rule. As to spaces right next to the arrest, no suspicion is required
 Beyond that, reasonable suspicion is required: "there must be articulable facts which, taken together with the rational inferences from those facts, would warrant a reasonably prudent officer in believing that the area to be swept harbors an individual posing a danger to those on the arrest scene." — *Id.* And the sweep's scope is limited: it "is nevertheless not a full search of the premises, but may extend only to a cursory inspection of those spaces where a person may be found." — *Id.* at 335. ^pin-335
 
 ## Application
-The officers had arrest warrants and arrested Buie in his home for an armed robbery committed by two men, one still unaccounted for. Going into the basement to check for the second, dangerous person was the kind of protective sweep at issue; whether the basement entry was justified turned on whether the officers had articulable facts warranting a reasonable belief that the area harbored someone posing a danger. The Court remanded for the state courts to apply that reasonable-suspicion standard (the running suit having been seized in plain view during any lawful sweep).
+The officers had arrest warrants and arrested Buie in his home for an armed robbery committed by two men, one still unaccounted for. Going into the basement to check for the second, dangerous person was the kind of [[Securing the Scene|protective sweep]] at issue; whether the basement entry was justified turned on whether the officers had articulable facts warranting a reasonable belief that the area harbored someone posing a danger. The Court [[Reading and Citing Cases#on-remand|remanded]] for the state courts to apply that reasonable-suspicion standard (the running suit having been seized in plain view during any lawful sweep).
 
 ## Conclusion
-Vacated and remanded: a protective sweep beyond the area immediately adjoining the arrest is permissible only on reasonable, articulable suspicion of danger, and only as a limited, cursory inspection.
+[[Reading and Citing Cases#vacated|Vacated]] and [[Reading and Citing Cases#on-remand|remanded]]: a [[Securing the Scene|protective sweep]] beyond the area immediately adjoining the arrest is permissible only on reasonable, articulable suspicion of danger, and only as a limited, cursory inspection.
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.

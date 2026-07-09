@@ -44,7 +44,7 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-Lafayette was arrested for disturbing the peace and taken to the police station. During booking, an officer removed the contents of the shoulder bag Lafayette had been carrying and found amphetamine pills. The Illinois courts suppressed the pills, reasoning the search of the bag was neither a valid search incident to arrest nor a valid inventory.
+Lafayette was arrested for disturbing the peace and taken to the police station. During booking, an officer removed the contents of the shoulder bag Lafayette had been carrying and found amphetamine pills. The Illinois courts suppressed the pills, reasoning the search of the bag was neither a valid [[Search Incident to Arrest|search incident to arrest]] nor a valid inventory.
 
 ## Issue
 Whether, consistent with the Fourth Amendment, police may search the personal effects of a person under lawful arrest as part of the routine administrative procedure incident to booking and jailing the suspect.

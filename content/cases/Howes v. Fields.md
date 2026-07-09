@@ -44,7 +44,7 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-Randall Fields, serving a sentence in a Michigan jail, was taken from his cell to a conference room and questioned by two sheriff's deputies for five to seven hours about conduct that allegedly occurred before he came to prison. He was told more than once that he was free to leave and return to his cell, was not restrained, and was given food and water; he confessed without receiving *Miranda* warnings. The Sixth Circuit held that questioning a prisoner in isolation about outside conduct is custodial per se.
+Randall Fields, serving a sentence in a Michigan jail, was taken from his cell to a conference room and questioned by two sheriff's deputies for five to seven hours about conduct that allegedly occurred before he came to prison. He was told more than once that he was free to leave and return to his cell, was not restrained, and was given food and water; he confessed without receiving *Miranda* warnings. The Sixth Circuit held that questioning a prisoner in isolation about outside conduct is custodial [[Common Legal Terms#per-se|per se]].
 
 ## Issue
 Whether a prisoner is "in custody" for *Miranda* purposes — requiring warnings — simply because he is incarcerated and is questioned in private about events occurring outside the prison.

@@ -61,10 +61,10 @@ Beyond the search-incident rationale, only "a few specifically established and w
 The Court "decline[d] to hold that an arrest on the street can provide its own 'exigent circumstance' so as to justify a warrantless search of the arrestee's house." — *Id.* at 35. ^pin-35
 
 ## Application
-Vale was arrested on the front steps, not inside the dwelling, so the search of the rear bedroom was neither within the immediate vicinity of the arrest nor incident to it. Nor did any exception excuse the warrant: by the officers' own account they had satisfied themselves no one else was in the house when they entered, so there was no one to destroy evidence; no one consented; the officers were not responding to an emergency or in hot pursuit; the seized goods were not in the process of destruction and were not about to be removed; and the officers who had obtained two arrest warrants had no apparent reason they could not also obtain a search warrant. The street arrest supplied no exigency of its own.
+Vale was arrested on the front steps, not inside the dwelling, so the search of the rear bedroom was neither within the immediate vicinity of the arrest nor incident to it. Nor did any exception excuse the warrant: by the officers' own account they had satisfied themselves no one else was in the house when they entered, so there was no one to destroy evidence; no one consented; the officers were not responding to an emergency or in [[Exigent Circumstances and Hot Pursuit|hot pursuit]]; the seized goods were not in the process of destruction and were not about to be removed; and the officers who had obtained two arrest warrants had no apparent reason they could not also obtain a search warrant. The street arrest supplied no [[Exigent Circumstances and Hot Pursuit|exigency]] of its own.
 
 ## Conclusion
-The warrantless search of the house was unconstitutional, and admitting its fruits was constitutional error. The judgment was reversed and the case remanded.
+The warrantless search of the house was unconstitutional, and admitting its fruits was constitutional error. The judgment was reversed and the case [[Reading and Citing Cases#on-remand|remanded]].
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.

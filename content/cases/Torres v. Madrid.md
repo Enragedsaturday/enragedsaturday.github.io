@@ -58,7 +58,7 @@ A seizure by force is complete at the moment force is applied with intent to res
 Because the officers shot Torres with the intent to restrain her, the bullets that struck her effected a seizure at the moment of impact — notwithstanding that she managed to drive away and was not subdued or apprehended until the next day. The shooting was therefore a seizure of her person, and the lower court erred in holding that her escape defeated any seizure; whether that seizure was reasonable remained for remand.
 
 ## Conclusion
-The shooting was a seizure even though Torres temporarily eluded capture; the judgment was vacated and remanded. Physical force applied with intent to restrain seizes the person at the instant of application.
+The shooting was a seizure even though Torres temporarily eluded capture; the judgment was [[Reading and Citing Cases#vacated|vacated]] and [[Reading and Citing Cases#on-remand|remanded]]. Physical force applied with intent to restrain seizes the person at the instant of application.
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.

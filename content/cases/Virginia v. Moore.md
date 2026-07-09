@@ -64,7 +64,7 @@ Because such an arrest is constitutionally valid, "officers may perform searches
 The officers had probable cause to believe Moore was driving on a suspended license — an offense committed in their presence — so the arrest was reasonable under the Fourth Amendment even though Virginia law called for a summons. The Fourth Amendment is not a vehicle for enforcing state arrest law. Because the arrest was constitutionally permissible, the search incident to it required no additional justification, and the cocaine it produced was admissible. *Knowles v. Iowa* did not control, because Moore was arrested — and therefore the officers faced the custodial risks that justify a full search — rather than merely cited.
 
 ## Conclusion
-The arrest and the search incident to it were constitutional; the Fourth Amendment did not require suppression. The judgment of the Supreme Court of Virginia was reversed and the case remanded.
+The arrest and the search incident to it were constitutional; the Fourth Amendment did not require suppression. The judgment of the Supreme Court of Virginia was reversed and the case [[Reading and Citing Cases#on-remand|remanded]].
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.

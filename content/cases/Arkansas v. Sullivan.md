@@ -44,7 +44,7 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-Officer Taylor stopped Kenneth Sullivan for speeding and arrested him for traffic offenses, including a fine-only speeding violation. A search of the vehicle turned up drug-related evidence. Sullivan moved to suppress, arguing that his arrest was "merely a 'pretext and sham to search' him" and therefore violated the Fourth Amendment. The trial court suppressed the evidence and the Arkansas Supreme Court affirmed on rehearing, holding that an arrest — even one supported by probable cause — violates the Fourth Amendment if the officer's true motivation was to conduct a search, and that Arkansas could in any event read the Constitution to provide such protection. The State sought certiorari, and the Court decided the case per curiam.
+Officer Taylor stopped Kenneth Sullivan for speeding and arrested him for traffic offenses, including a fine-only speeding violation. A search of the vehicle turned up drug-related evidence. Sullivan moved to suppress, arguing that his arrest was "merely a 'pretext and sham to search' him" and therefore violated the Fourth Amendment. The trial court suppressed the evidence and the Arkansas Supreme Court affirmed on rehearing, holding that an arrest — even one supported by probable cause — violates the Fourth Amendment if the officer's true motivation was to conduct a search, and that Arkansas could in any event read the Constitution to provide such protection. The State sought [[Reading and Citing Cases#certiorari-cert|certiorari]], and the Court decided the case [[Common Legal Terms#per-curiam|per curiam]].
 
 ## Issue
 Whether an arrest supported by probable cause violates the Fourth Amendment because the arresting officer had a pretextual or improper subjective motivation, and whether a state may interpret the Federal Constitution to forbid such pretextual arrests.
@@ -60,7 +60,7 @@ A state also may not use the *federal* Constitution to impose greater restrictio
 The Arkansas Supreme Court never questioned Officer Taylor's authority to arrest Sullivan for a fine-only traffic violation, and the arrest was supported by probable cause. It suppressed the drug evidence solely on the theory that Taylor's real motivation was to search — exactly the subjective-motive inquiry *Whren* forecloses. Because *Whren*'s rule applies to a probable-cause arrest no less than to a stop, the pretext theory could not invalidate the arrest; and the state court's alternative basis (reading the Federal Constitution more broadly) was foreclosed by *Oregon v. Hass*.
 
 ## Conclusion
-A probable-cause arrest is reasonable regardless of the officer's pretextual or subjective motive, and a state may not hold otherwise as a matter of federal constitutional law. The judgment was reversed and the case remanded.
+A probable-cause arrest is reasonable regardless of the officer's pretextual or subjective motive, and a state may not hold otherwise as a matter of federal constitutional law. The judgment was reversed and the case [[Reading and Citing Cases#on-remand|remanded]].
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.

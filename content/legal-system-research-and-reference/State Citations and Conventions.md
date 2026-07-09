@@ -15,7 +15,7 @@ related: ["[[Reading and Citing Cases]]", "[[Legal Research Tools]]", "[[Verifyi
 
 # State Citations & Conventions
 
-**A state-court cite lands on your desk: how do you read the caption, the reporter, and the pincite once the federal patterns run out?** The federal rules on [[Reading and Citing Cases]] carry you through SCOTUS and the circuits. State reporting is its own world, and students hit it constantly. This page collects the conventions that actually change how you read a state cite: who the prosecuting party is, which regional reporter covers the state, the newer paragraph-pinned "neutral" cites, and how to pull a state opinion for free. For the full research toolset see [[Legal Research Tools]]; to confirm a case still stands, see [[Verifying Good Law]].
+**A state-court cite lands on your desk: how do you read the caption, the [[Reading and Citing Cases#reporter|reporter]], and the [[Reading and Citing Cases#pinpoint-cite-pin-cite|pincite]] once the federal patterns run out?** The federal rules on [[Reading and Citing Cases]] carry you through SCOTUS and the circuits. State reporting is its own world, and students hit it constantly. This page collects the conventions that actually change how you read a state cite: who the prosecuting party is, which regional [[Reading and Citing Cases#reporter|reporter]] covers the state, the newer paragraph-pinned "neutral" cites, and how to pull a state opinion for free. For the full research toolset see [[Legal Research Tools]]; to confirm a case still stands, see [[Verifying Good Law]].
 
 ## Prosecuting-party names (and the Bluebook short-form rule)
 
@@ -35,13 +35,13 @@ A caption is a **heuristic**, not a guarantee:
 - Government-first (*United States v. ___*, *State v. ___*) is **usually criminal**.
 - Two private-party names (*Smith v. Jones*) is **usually civil**.
 
-Name the exceptions so you don't overclaim. Government-first appears in plenty of **non-criminal** matters: civil enforcement suits (*United States v. [Corporation]*), **in rem** civil forfeiture styled against the property itself (*United States v. $124,700 in U.S. Currency*), and administrative actions. Criminal-adjacent postures carry their own captions too: *In re ___* (a matter, not two adversaries), *Ex parte ___* (one side only), and habeas corpus, which reads civil because the prisoner sues the custodian (*[Petitioner] v. [Warden]*). Read the caption as a first hint, then confirm from the opinion.
+Name the exceptions so you don't overclaim. Government-first appears in plenty of **non-criminal** matters: civil enforcement suits (*United States v. [Corporation]*), **in rem** civil forfeiture styled against the property itself (*United States v. $124,700 in U.S. Currency*), and administrative actions. Criminal-adjacent postures carry their own captions too: *In re ___* (a matter, not two adversaries), *[[Common Legal Terms#ex-parte|Ex parte]] ___* (one side only), and [[Common Legal Terms#habeas-corpus|habeas corpus]], which reads civil because the prisoner sues the custodian (*[Petitioner] v. [Warden]*). Read the caption as a first hint, then confirm from the opinion.
 
 ## Regional reporters (the West National Reporter System)
 
-West's National Reporter System groups the states into **seven regional reporters**. The abbreviation tells you the region, not the specific state:
+West's National [[Reading and Citing Cases#reporter|Reporter]] System groups the states into **seven regional reporters**. The abbreviation tells you the region, not the specific state:
 
-| Regional reporter | Abbreviation(s) |
+| Regional [[Reading and Citing Cases#reporter\|reporter]] | Abbreviation(s) |
 | --- | --- |
 | Atlantic | `A.` / `A.2d` / `A.3d` |
 | North Eastern | `N.E.` / `N.E.2d` / `N.E.3d` |
@@ -51,13 +51,13 @@ West's National Reporter System groups the states into **seven regional reporter
 | South Eastern | `S.E.` / `S.E.2d` |
 | South Western | `S.W.` / `S.W.2d` / `S.W.3d` |
 
-Each reporter covers a fixed cluster of states, but the cluster is **not** something to recite from memory. It is easy to misremember, and it isn't intuitive: Oklahoma sits in the Pacific reporter, not the South Western. **Bluebook Table T1** gives each state's official reporter and citation preference, and the front matter of any reporter volume lists its states. Look it up rather than guessing.
+Each [[Reading and Citing Cases#reporter|reporter]] covers a fixed cluster of states, but the cluster is **not** something to recite from memory. It is easy to misremember, and it isn't intuitive: Oklahoma sits in the Pacific [[Reading and Citing Cases#reporter|reporter]], not the South Western. **Bluebook Table T1** gives each state's official [[Reading and Citing Cases#reporter|reporter]] and citation preference, and the front matter of any [[Reading and Citing Cases#reporter|reporter]] volume lists its states. Look it up rather than guessing.
 
 ## Neutral / public-domain citations
 
-A growing number of states have adopted a **medium-neutral** (public-domain, vendor-neutral) citation: **year + court abbreviation + sequential opinion number**, with a **`¶` paragraph** pincite instead of a page. For example, *1997 ND 15, ¶ 21* is the 15th opinion the North Dakota Supreme Court released in 1997, at paragraph 21; *2021 WI 5, ¶ 7* is the 5th Wisconsin Supreme Court opinion of 2021, at paragraph 7.
+A growing number of states have adopted a **medium-neutral** (public-domain, vendor-neutral) citation: **year + court abbreviation + sequential opinion number**, with a **`¶` paragraph** [[Reading and Citing Cases#pinpoint-cite-pin-cite|pincite]] instead of a page. For example, *1997 ND 15, ¶ 21* is the 15th opinion the North Dakota Supreme Court released in 1997, at paragraph 21; *2021 WI 5, ¶ 7* is the 5th Wisconsin Supreme Court opinion of 2021, at paragraph 7.
 
-The `¶` matters. It pins to a **paragraph** the court numbered itself, so the cite survives no matter what page a reprint puts it on. Bluebook pairs the neutral cite with a **parallel** regional-reporter cite where one exists. The adopting-state list **drifts**, because states join over time and formats vary, so confirm the current list and each state's exact format against the authority rather than freezing a snapshot (see Sources: USC Law's *Universal Citation* guide and the deciding court's own citation rule).
+The `¶` matters. It pins to a **paragraph** the court numbered itself, so the cite survives no matter what page a reprint puts it on. Bluebook pairs the neutral cite with a **parallel** regional-[[Reading and Citing Cases#reporter|reporter]] cite where one exists. The adopting-state list **drifts**, because states join over time and formats vary, so confirm the current list and each state's exact format against the authority rather than freezing a snapshot (see Sources: USC Law's *Universal Citation* guide and the deciding court's own citation rule).
 
 ## Parallel citations (state)
 
@@ -69,7 +69,7 @@ You do not need Westlaw to pull a state supreme-court opinion. The fastest free 
 
 - **CourtListener**: all 50 states plus the federal system; full-text and citation search.
 - **Google Scholar** (Case law): state appellate and supreme coverage from roughly 1950 forward.
-- **The state court's own website**: the authoritative slip opinion, often posted the day it drops.
+- **The state court's own website**: the authoritative [[Reading and Citing Cases#slip-opinion|slip opinion]], often posted the day it drops.
 - **Justia**: browsable state collections by court.
 - **vLex Fastcase**: comprehensive, but free only through a bar-association membership (usually inaccessible to a police instructor, who is rarely a bar member).
 - **OpenCase** (`opencase.com`): an AI-assisted research tool that also reaches state law, since it is built on Cornell LII, RECAP, and govinfo data. Treat it as a **starting point only**. AI legal-research tools invent cases and quotations at rates high enough to burn you, so whatever it surfaces, open the real opinion on CourtListener and confirm it exists, says what the AI claims, and is still good law. The full caveat and sourcing are on [[Legal Research Tools]].

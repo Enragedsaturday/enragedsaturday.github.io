@@ -46,7 +46,7 @@ related:
 
 ## Lower-court developments
 
-The 48-hour framework is settled at the Supreme Court; the recurring questions below the Court are application questions (what delay is "unreasonable" within the window, and what remedy a *Gerstein* violation carries) rather than a split on the rule itself. No controlling circuit split is mapped in this build; a *Gerstein* violation is not itself a basis to suppress a later-obtained confession absent the ordinary attenuation analysis. *See* [[The Exclusionary Rule]].
+The 48-hour framework is settled at the Supreme Court; the recurring questions below the Court are application questions (what delay is "unreasonable" within the window, and what remedy a *Gerstein* violation carries) rather than a split on the rule itself. No controlling circuit split is mapped in this build; a *Gerstein* violation is not itself a basis to suppress a later-obtained confession absent the ordinary [[Fruits and Attenuation|attenuation]] analysis. *See* [[The Exclusionary Rule]].
 
 ## Key cases
 

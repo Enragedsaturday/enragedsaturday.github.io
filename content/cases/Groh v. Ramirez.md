@@ -44,10 +44,10 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-An ATF agent, Groh, prepared and obtained a warrant to search the Ramirezes' Montana ranch for specified firearms and explosives. But in the part of the warrant form describing the persons or things to be seized, Groh typed a description of the house itself ("a single dwelling residence . . . blue in color"), not the weapons. The supporting application listed the items, but the warrant did not, no document was incorporated by reference, and no copy describing the items was left with the family. Officers searched, found nothing, and the Ramirezes sued; Groh claimed qualified immunity.
+An ATF agent, Groh, prepared and obtained a warrant to search the Ramirezes' Montana ranch for specified firearms and explosives. But in the part of the warrant form describing the persons or things to be seized, Groh typed a description of the house itself ("a single dwelling residence . . . blue in color"), not the weapons. The supporting application listed the items, but the warrant did not, no document was incorporated by reference, and no copy describing the items was left with the family. Officers searched, found nothing, and the Ramirezes sued; Groh claimed [[Qualified Immunity|qualified immunity]].
 
 ## Issue
-Whether a warrant that wholly fails to describe the persons or things to be seized is valid because the supporting application described them — and whether the officer who prepared and led the search under such a warrant is entitled to qualified immunity.
+Whether a warrant that wholly fails to describe the persons or things to be seized is valid because the supporting application described them — and whether the officer who prepared and led the search under such a warrant is entitled to [[Qualified Immunity|qualified immunity]].
 
 ## Rule
 No. Particularity is a requirement of the warrant itself, not of the supporting papers, so a warrant that omits the things to be seized is facially invalid. "The fact that the application adequately described the 'things to be seized' does not save the warrant from its facial invalidity. The Fourth Amendment by its terms requires particularity in the warrant, not in the supporting documents." — 540 U.S. at 557. ^pin-557
@@ -55,14 +55,14 @@ No. Particularity is a requirement of the warrant itself, not of the supporting 
 Because the warrant "did not describe the items to be seized at all," it "was so obviously deficient that we must regard the search as 'warrantless'." — *Id.* at 558. ^pin-558
 
 ## Application
-Groh's warrant described only the house, not the firearms and explosives that were its object, and nothing cured the defect — no incorporation by reference, no affidavit accompanying the warrant, no copy of the items left with the family. Because the warrant failed the particularity requirement on its face, and so plainly that any reasonable officer who prepared it would have recognized the defect, the search was effectively warrantless and Groh — who drafted and led it — was not entitled to qualified immunity.
+Groh's warrant described only the house, not the firearms and explosives that were its object, and nothing cured the defect — no incorporation by reference, no affidavit accompanying the warrant, no copy of the items left with the family. Because the warrant failed the [[Particularity|particularity]] requirement on its face, and so plainly that any reasonable officer who prepared it would have recognized the defect, the search was effectively warrantless and Groh — who drafted and led it — was not entitled to [[Qualified Immunity|qualified immunity]].
 
 ## Conclusion
-The facially deficient warrant rendered the search unconstitutional, and the officer who prepared and executed it was denied qualified immunity; the judgment in his favor was reversed.
+The facially deficient warrant rendered the search unconstitutional, and the officer who prepared and executed it was denied [[Qualified Immunity|qualified immunity]]; the judgment in his favor was reversed.
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.
-- No negative treatment. *Groh* is a leading particularity-clause decision and a marker for when a warrant is so facially deficient that good-faith reliance on it is unreasonable.
+- No negative treatment. *Groh* is a leading [[Particularity|particularity]]-clause decision and a marker for when a warrant is so facially deficient that good-faith reliance on it is unreasonable.
 
 ## Appears on
 - [[Particularity]] — *Key — Progeny / Refinement*

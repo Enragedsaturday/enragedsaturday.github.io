@@ -22,9 +22,9 @@ A field-and-exam quick reference for running any Fourth Amendment problem. Work 
 ## The checklist
 
 1. **Who acted — a government agent?** The Fourth Amendment restrains the government, not private parties. A private actor is bound only if the government instigated, directed, or significantly participated (state-action and private-search doctrine). → [[Private and Foreign Searches]]
-2. **Was a protected area or interest involved?** Persons, houses, papers, and effects, **plus** any **reasonable expectation of privacy** (not limited to those four categories). The home's [[Curtilage|curtilage]] is protected; open fields and [[Abandonment|abandoned property]] are not. → [[Curtilage]] · [[Abandonment]]
+2. **Was a protected area or interest involved?** Persons, houses, papers, and effects, **plus** any **[[Reasonable Expectation of Privacy|reasonable expectation of privacy]]** (not limited to those four categories). The home's [[Curtilage|curtilage]] is protected; open fields and [[Abandonment|abandoned property]] are not. → [[Curtilage]] · [[Abandonment]]
 3. **Did a search or a seizure actually occur?**
-   - **Search** — a physical **trespass** on a protected area to obtain information, **or** an invasion of a **reasonable expectation of privacy**. → [[Two Definitions of Search]]
+   - **Search** — a physical **trespass** on a protected area to obtain information, **or** an invasion of a **[[Reasonable Expectation of Privacy|reasonable expectation of privacy]]**. → [[Two Definitions of Search]]
    - **Seizure of property** — a meaningful interference with possessory interests.
    - **Seizure of a person** — physical force with intent to restrain, or submission to a show of authority. → [[Seizure of the Person]]
    - *If neither a search nor a seizure occurred, the analysis ends: there is nothing to justify.*
@@ -36,7 +36,7 @@ Steps 1–4 are the **threshold and standing** questions; step 5 is the **merits
 ## Nuances & limits
 
 - **Order matters.** Most suppression fights are won or lost at the threshold (steps 1–3): if there was no government action, no protected interest, or no search or seizure, you never reach reasonableness. Do not jump straight to the warrant exceptions.
-- **Two theories of "search" run in parallel.** A trespass to gather information is a search, and so is invading a reasonable expectation of privacy; either one is enough. → [[Two Definitions of Search]]
+- **Two theories of "search" run in parallel.** A trespass to gather information is a search, and so is invading a [[Reasonable Expectation of Privacy|reasonable expectation of privacy]]; either one is enough. → [[Two Definitions of Search]]
 - **Standing is personal.** "The search was illegal" is not the same as "*this* defendant can suppress." Confirm whose protected interest was invaded. → [[Standing to Challenge a Search]]
 - **"Standing" is shorthand, not a separate gate.** *[[Rakas v. Illinois]]*, 439 U.S. 128, 138–40 (1978), folded standing into the merits: the question is simply whether the challenged search invaded the defendant's *own* reasonable expectation of privacy (captured at step 2), not a distinct jurisdictional inquiry.
 - **C.R.E.W. is one step, not the whole test.** It answers only reasonableness, and only after the threshold and standing are satisfied. → [[CREW]]

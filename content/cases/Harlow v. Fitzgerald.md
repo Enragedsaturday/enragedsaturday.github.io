@@ -44,10 +44,10 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-A. Ernest Fitzgerald, a former Air Force management analyst, sued senior aides to President Nixon, claiming he had been unlawfully discharged in retaliation for his whistleblowing testimony to Congress. The aides asserted qualified immunity. (The suit was a *Bivens* action against federal officials, but the immunity standard the Court announced governs § 1983 suits against state officials as well.) The Court used the case to re-examine the standard for qualified immunity.
+A. Ernest Fitzgerald, a former Air Force management analyst, sued senior aides to President Nixon, claiming he had been unlawfully discharged in retaliation for his whistleblowing testimony to Congress. The aides asserted [[Qualified Immunity|qualified immunity]]. (The suit was a *Bivens* action against federal officials, but the immunity standard the Court announced governs § 1983 suits against state officials as well.) The Court used the case to re-examine the standard for [[Qualified Immunity|qualified immunity]].
 
 ## Issue
-What standard governs the qualified immunity of government officials performing discretionary functions when they are sued for civil damages.
+What standard governs the [[Qualified Immunity|qualified immunity]] of government officials performing discretionary functions when they are sued for civil damages.
 
 ## Rule
 Qualified immunity is governed by a purely objective standard keyed to clearly established law. "[G]overnment officials performing discretionary functions generally are shielded from liability for civil damages insofar as their conduct does not violate clearly established statutory or constitutional rights of which a reasonable person would have known." — 457 U.S. at 818. ^pin-818
@@ -55,10 +55,10 @@ Qualified immunity is governed by a purely objective standard keyed to clearly e
 The Court abandoned the older inquiry's subjective "good faith / malice" prong because it too often defeated summary judgment and exposed officials to the burdens of trial and discovery; immunity now turns on the objective legal reasonableness of the conduct measured against clearly established law.
 
 ## Application
-Because the governing inquiry is objective, resolving the aides' immunity did not require probing their subjective intent; instead the question was whether their alleged conduct violated clearly established rights of which a reasonable official would have known. The Court therefore vacated the denial of summary judgment and remanded for the lower court to apply the new objective standard.
+Because the governing inquiry is objective, resolving the aides' immunity did not require probing their subjective intent; instead the question was whether their alleged conduct violated clearly established rights of which a reasonable official would have known. The Court therefore [[Reading and Citing Cases#vacated|vacated]] the denial of summary judgment and [[Reading and Citing Cases#on-remand|remanded]] for the lower court to apply the new objective standard.
 
 ## Conclusion
-Qualified immunity is determined by an objective "clearly established law" test, not by an official's subjective good faith; the judgment was vacated and the case remanded for application of that standard.
+[[Qualified Immunity|Qualified immunity]] is determined by an objective "clearly established law" test, not by an official's subjective good faith; the judgment was [[Reading and Citing Cases#vacated|vacated]] and the case [[Reading and Citing Cases#on-remand|remanded]] for application of that standard.
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.

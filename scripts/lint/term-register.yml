@@ -1,141 +1,701 @@
 # CSSI term register — machine-readable source of truth (S1 R11, A3).
-# Consumed directly by LINT-7 (extended). docs/STYLE.md §4 REFERENCES this file;
-# it never duplicates it (single source of truth — no two-copy drift).
+# Consumed by LINT-7 (banned-variant check) AND by the S8 term linker
+# (scripts/s8/link_terms.py). docs/STYLE.md §4 REFERENCES this file; it never
+# duplicates it (single source of truth — no two-copy drift).
 #
-# Schema (term-register.v1):
+# ---- Schema (term-register.v2) ------------------------------------------------
 #   canonical:        the one sanctioned spelling of the term of art
 #   banned_variants:  spellings that FAIL in rendered prose (LINT-7, HIGH).
 #                     Matching is case-insensitive and word-bounded; hits inside
-#                     direct quotations and code fences are exempt (quoted text
-#                     keeps its original form).
+#                     direct quotations and code fences are exempt.
 #   drift_set:        sibling terms this one must never silently drift into
 #                     (judgment — CHECKLIST:D5, not machine-enforced)
-#   glossary:         wikilink target in Common Legal Terms (optional; anchor
-#                     resolution enforcement arrives with the S8 LINT-7 rewrite)
 #   note:             usage guidance for authors
 #
-# DEFINITIONS (S1 R11's "canonical spelling/definition per term"): the reader-facing
-# definition of each term lives ONCE, in the glossary page (Common Legal Terms) — the
-# `glossary:` field above IS the binding from register entry to its canonical definition
-# (single source of truth; duplicating definition text here would create two-copy drift).
-# The S8 glossary audit + LINT-7 rewrite own definition coverage + anchor resolution
-# (a register entry whose glossary anchor stops resolving fails CI from S8 onward).
+#   --- S8 routing columns (spec S8 R7 four-way routing, D1 every-occurrence) ---
+#   route:            page | glossary | citing | skip
+#                       page      -> the term has a doctrine-page home; link it
+#                       glossary  -> non-vernacular term of art, no page home;
+#                                    link [[Common Legal Terms#anchor]]
+#                       citing    -> citation-mechanics term; link
+#                                    [[Reading and Citing Cases#anchor]]
+#                       skip      -> officer-vernacular / plain-English / no clean
+#                                    target; NEVER auto-linked in prose. The
+#                                    skip-list is instructor-editable register
+#                                    DATA (seeded from O1 map §E + spec R7).
+#   target:           the INNER wikilink content the linker wraps in [[...]]:
+#                       route:page      -> "Doctrine Page"        -> [[Doctrine Page|surface]]
+#                       route:glossary  -> "Common Legal Terms#anchor"
+#                       route:citing    -> "Reading and Citing Cases#anchor"
+#                       route:skip      -> omitted (never linked)
+#                     Matching preserves inflection: the matched surface text is
+#                     piped as the display ([[Target|surface]]); a bare page
+#                     whose surface == target renders [[Target]].
+#   match:            optional additional surface forms/inflections to link
+#                     (regex-free literal list; case-insensitive + word-bounded).
+#                     Banned variants are NEVER listed here (they must be fixed,
+#                     not linked in the wrong form).
+#   eponym:           true where the term embeds a case name (Terry stop, Miranda
+#                     warnings, Katz test, Brady material, Franks hearing, Garrity
+#                     warning, Monell claim, Bivens action, Massiah rule, …). The
+#                     S8 case-mention linker CONSULTS this flag: an eponym phrase
+#                     routes as a TERM (R7), while the bare italic name routes as
+#                     a case (R3). Keep the phrase (not the bare name) as canonical.
+#   glossary:         (legacy v1 field) retained ONLY where the anchor resolves to
+#                     a real ### entry AND the term keeps a glossary binding
+#                     (def-only reference anchor for route:skip pc/rs; the live
+#                     anchor for route:glossary fruit/totality). Superseded for
+#                     ROUTING by route/target; 18 v1 glossary fields that pointed
+#                     to anchors the S6/S7 restructure never minted are dropped
+#                     here (those terms gained doctrine pages -> route:page). See
+#                     the S8-TERMS report for the enumerated drop-list.
 #
-# Seeding decision (S1 §9 open item, settled at EXECUTE): seed with the
-# corpus's load-bearing terms of art + every hyphenation the Humanizer REJECT
-# row protects (S1 Appendix A: never de-hyphenate terms of art). The register
-# grows during S7/S8 as the glossary audit surfaces terms; additions land here.
+# DEFINITIONS live ONCE, in the glossary page (Common Legal Terms). The S8 glossary
+# audit + LINT-7 rewrite own definition coverage + anchor resolution (a register
+# entry whose glossary/citing anchor stops resolving fails CI from S8 onward).
+#
+# Routes below are SEEDED from the O1 term map (_overhaul/ledger/S7-term-map.md,
+# now retired to seed) re-projected onto the CURRENT (restructured) corpus, and
+# from spec R7's explicit lists. Rows flagged in the S8-TERMS report await
+# orchestrator GO/adjust before --write.
 
-schema: term-register.v1
+schema: term-register.v2
 terms:
+  # ==========================================================================
+  # v1 terms — extended with v2 routing (every v1 field/entry preserved except
+  # 18 provably-dead legacy glossary anchors, superseded by route/target).
+  # ==========================================================================
   - canonical: stop-and-frisk
     banned_variants: ["stop and frisk"]
-    glossary: "Common Legal Terms#stop-and-frisk"
-    note: "Hyphenated term of art (Humanizer REJECT row: never de-hyphenate)."
+    route: skip
+    note: "Hyphenated term of art (Humanizer REJECT row: never de-hyphenate). Skip: R7 lists 'stop, frisk' as officer-vernacular. FLAG: candidate route:page [[Terry Stops and Reasonable Suspicion]]."
 
   - canonical: good-faith exception
     banned_variants: ["good faith exception"]
-    glossary: "Common Legal Terms#good-faith-exception"
-    note: "Hyphenate 'good-faith' when it modifies (good-faith exception, good-faith reliance); 'acted in good faith' (predicate) is correct unhyphenated and is not a banned form."
+    route: page
+    target: "The Good-Faith Exception"
+    note: "Hyphenate 'good-faith' when it modifies (good-faith exception, good-faith reliance); 'acted in good faith' (predicate) is correct unhyphenated and is not a banned form. O1 §C route-to-page; re-pointed at the split doctrine page (was generic [[The Exclusionary Rule]]). Link only the doctrine phrase, never generic 'good faith'."
 
   - canonical: bright-line rule
     banned_variants: ["bright line rule"]
-    glossary: "Common Legal Terms#bright-line-rule"
-    note: "Hyphenated term of art."
+    route: glossary
+    target: "Common Legal Terms#bright-line-rule"
+    note: "Hyphenated term of art. R8-authored glossary entry (orchestrator GO 2026-07-09); flipped skip -> glossary."
 
   - canonical: knock-and-talk
     banned_variants: ["knock and talk"]
-    glossary: "Common Legal Terms#knock-and-talk"
-    note: "Hyphenated term of art."
+    route: page
+    target: "Knock and Talk"
+    note: "Hyphenated term of art; doctrine page home."
 
   - canonical: knock-and-announce
     banned_variants: ["knock and announce"]
-    glossary: "Common Legal Terms#knock-and-announce"
-    note: "Hyphenated term of art."
+    route: page
+    target: "Knock-and-Announce"
+    note: "Hyphenated term of art; doctrine page home (page exists in restructured corpus)."
 
   - canonical: search incident to arrest
     banned_variants: ["search-incident-to-arrest doctrine", "search incident to lawful arrest doctrine"]
-    glossary: "Common Legal Terms#search-incident-to-arrest"
-    note: "Unhyphenated as a noun phrase; SITA acceptable on later mentions after first spell-out."
+    route: page
+    target: "Search Incident to Arrest"
+    match: ["searches incident to arrest"]
+    note: "Unhyphenated as a noun phrase; SITA acceptable on later mentions after first spell-out. Longest-match beats 'arrest'/'search' (skip). FLAG: the [[Search Incident to Arrest]] alias resolves to SIA Persons; SITA was split into SIA Persons/Cell Phones/Alcohol/Vehicles — orchestrator to confirm hub target."
 
   - canonical: probable cause
     drift_set: ["reasonable suspicion", "preponderance of the evidence"]
     glossary: "Common Legal Terms#probable-cause"
-    note: "Never interchange with reasonable suspicion; the burden pyramid places PC BELOW preponderance."
+    route: skip
+    note: "Never interchange with reasonable suspicion; the burden pyramid places PC BELOW preponderance. Skip: R7 explicitly lists probable cause as officer-vernacular. Glossary keeps a def-only reference anchor (#probable-cause resolves); prose is NOT auto-linked. FLAG: O1 §C proposed route:page [[Probable Cause]] — superseded by R7's skip listing."
 
   - canonical: reasonable suspicion
     drift_set: ["probable cause", "hunch"]
     glossary: "Common Legal Terms#reasonable-suspicion"
-    note: "Requires specific, articulable facts; never 'mere hunch'."
+    route: skip
+    note: "Requires specific, articulable facts; never 'mere hunch'. Skip: R7 explicitly lists reasonable suspicion as officer-vernacular. Def-only reference anchor retained. FLAG: O1 §C proposed route:page [[Reasonable Suspicion]] — superseded by R7."
 
   - canonical: exigent circumstances
     banned_variants: ["exigency circumstances"]
-    glossary: "Common Legal Terms#exigent-circumstances"
-    note: "'Exigency' alone is fine as the noun; 'exigency circumstances' is a corpus typo class."
+    route: page
+    target: "Exigent Circumstances and Hot Pursuit"
+    match: ["exigency", "exigencies"]
+    note: "'Exigency' alone is fine as the noun; 'exigency circumstances' is a corpus typo class. Route:page per R7 ('exigency' listed as a page term) + O1 §C. FLAG: O1 §E also skip-listed it as vernacular — orchestrator may downgrade to skip."
 
   - canonical: plain-view doctrine
     banned_variants: ["plain view doctrine"]
-    glossary: "Common Legal Terms#plain-view-doctrine"
-    note: "Hyphenate when compound-modifying (plain-view doctrine, plain-view seizure); 'in plain view' (predicate) is correct unhyphenated."
+    route: page
+    target: "Plain View Doctrine"
+    note: "Hyphenate when compound-modifying (plain-view doctrine, plain-view seizure); 'in plain view' (predicate) is correct unhyphenated. Route only the doctrine phrase; bare 'plain view' is vernacular (skip row below)."
 
   - canonical: curtilage
-    glossary: "Common Legal Terms#curtilage"
-    note: "Term of art; always glossary-linked on non-vernacular use."
+    route: page
+    target: "Curtilage"
+    note: "Term of art; doctrine-page home. Self-links on the Curtilage page are suppressed (zone g)."
 
   - canonical: Terry stop
     banned_variants: ["terry-stop"]
-    glossary: "Common Legal Terms#terry-stop"
-    note: "Case-derived term: capitalized Terry, no hyphen."
+    route: page
+    target: "Terry Stops and Reasonable Suspicion"
+    match: ["Terry stops"]
+    eponym: true
+    note: "Case-derived term: capitalized Terry, no hyphen. EPONYM — mention linker routes 'Terry stop' as a TERM (R7), bare *Terry* as a case (R3)."
 
   - canonical: fruit of the poisonous tree
-    glossary: "Common Legal Terms#fruit-of-the-poisonous-tree"
-    note: "Never 'fruits of the poisonous tree' as the doctrine name."
     banned_variants: ["fruits of the poisonous tree doctrine"]
+    glossary: "Common Legal Terms#fruit-of-the-poisonous-tree"
+    route: glossary
+    target: "Common Legal Terms#fruit-of-the-poisonous-tree"
+    note: "Never 'fruits of the poisonous tree' as the doctrine name. Route:glossary (anchor exists; O1 §A incidental-mention wiring). FLAG: on [[Fruits and Attenuation]] it is near-subject — orchestrator may prefer route:page there (SD10: one route per term, not per-page)."
 
   - canonical: totality of the circumstances
     banned_variants: ["totality of circumstances"]
     glossary: "Common Legal Terms#totality-of-the-circumstances"
-    note: "Keep the article: 'of the circumstances'."
+    route: glossary
+    target: "Common Legal Terms#totality-of-the-circumstances"
+    note: "Keep the article: 'of the circumstances'. Cross-cutting standard, no page home (R3 counter-note keeps it included)."
 
   - canonical: objectively reasonable
     drift_set: ["subjectively reasonable", "reasonable"]
-    glossary: "Common Legal Terms#objective-reasonableness"
-    note: "Keep the legal modality (Humanizer ADAPT row); never strip 'objectively' from a stated standard."
+    route: skip
+    note: "Keep the legal modality (Humanizer ADAPT row); never strip 'objectively' from a stated standard. Skip: v1 glossary #objective-reasonableness was never minted; high-frequency (78) UoF standard. FLAG: candidate route:page [[Use of Force]] (Graham standard) or an R8 glossary entry."
 
   - canonical: warrantless
     banned_variants: ["warrant-less", "warrant less"]
-    note: "One word."
+    route: skip
+    note: "One word. Predicate adjective / near-vernacular; no link target."
 
   - canonical: pat-down
     banned_variants: ["patdown", "pat down search"]
-    glossary: "Common Legal Terms#pat-down"
-    note: "Hyphenated noun/modifier: a pat-down, a pat-down search. The verb form 'pat down the outer clothing' is correct unhyphenated and is not a banned form."
+    route: skip
+    note: "Hyphenated noun/modifier: a pat-down, a pat-down search. The verb form 'pat down the outer clothing' is correct unhyphenated and is not a banned form. Skip: R7 lists 'frisk' as officer-vernacular."
 
   - canonical: seizure
     drift_set: ["stop", "detention", "arrest"]
-    glossary: "Common Legal Terms#seizure"
-    note: "The R11 drift scar: never drift stop→detention→seizure across a page; pick the doctrinally precise term and repeat it (don't cycle synonyms)."
+    route: skip
+    note: "The R11 drift scar: never drift stop->detention->seizure across a page; pick the doctrinally precise term and repeat it. Skip: R7 lists 'seizure' as officer-vernacular (v1 glossary #seizure was never minted; [[Seizure of the Person]] exists)."
 
   - canonical: reasonable expectation of privacy
     banned_variants: ["reasonable expectation to privacy"]
-    glossary: "Common Legal Terms#reasonable-expectation-of-privacy"
-    note: "REP acceptable after first spell-out."
+    route: page
+    target: "Reasonable Expectation of Privacy"
+    note: "REP acceptable after first spell-out. Route:page — the restructure minted a dedicated [[Reasonable Expectation of Privacy]] page (O1 target was [[Two Definitions of Search]]). Near-vernacular for this audience (O1) — FLAG for possible skip."
 
   - canonical: qualified immunity
-    glossary: "Common Legal Terms#qualified-immunity"
-    note: "Never 'limited immunity' for this doctrine."
+    route: page
+    target: "Qualified Immunity"
+    note: "Never 'limited immunity' for this doctrine. Route:page — dedicated [[Qualified Immunity]] page now exists (distinct from [[Section 1983 Liability and Qualified Immunity]])."
 
   - canonical: inevitable discovery
     banned_variants: ["inevitable-discovery"]
-    glossary: "Common Legal Terms#inevitable-discovery"
-    note: "Unhyphenated as noun phrase ('inevitable discovery doctrine')."
+    route: page
+    target: "Inevitable Discovery and Independent Source"
+    note: "Unhyphenated as noun phrase. Route:page — re-pointed at the split doctrine page (was generic [[The Exclusionary Rule]])."
 
   - canonical: independent source
-    glossary: "Common Legal Terms#independent-source"
-    note: "Doctrine name; pairs with inevitable discovery and attenuation, never interchangeably."
     drift_set: ["inevitable discovery", "attenuation"]
+    route: page
+    target: "Inevitable Discovery and Independent Source"
+    note: "Doctrine name; pairs with inevitable discovery and attenuation, never interchangeably. Route:page. FLAG: on the eyewitness pages it is the Wade-lineup independent-source sense — SD10 keeps one route per term; orchestrator note."
 
   - canonical: attenuation
-    glossary: "Common Legal Terms#attenuation"
     drift_set: ["independent source", "inevitable discovery"]
-    note: "The third exclusionary-rule exception; keep the trio distinct."
+    route: page
+    target: "Fruits and Attenuation"
+    note: "The third exclusionary-rule exception; keep the trio distinct. Route:page — re-pointed at [[Fruits and Attenuation]] (was generic [[The Exclusionary Rule]])."
+
+  # ==========================================================================
+  # Glossary-routed additions (route:glossary) — every live ### anchor in
+  # Common Legal Terms gets register coverage. Reference-only rows (no current
+  # in-scope prose occurrence) are registered so future pages resolve + LINT-7
+  # anchor-checks the whole glossary.
+  # ==========================================================================
+  - canonical: de novo
+    route: glossary
+    target: "Common Legal Terms#de-novo"
+    note: "Appellate standard of review; page-less. Distinctive; safe to link at density."
+
+  - canonical: clear error
+    route: glossary
+    target: "Common Legal Terms#clear-error"
+    match: ["clearly erroneous"]
+    note: "Deferential fact-finding review; pairs with de novo."
+
+  - canonical: per se
+    route: glossary
+    target: "Common Legal Terms#per-se"
+    note: "Legal 'per se rule/exclusion' sense (categorical, no balancing). FLAG (O1 R4 borderline): matches the Latin adverb too — orchestrator may downgrade to skip or restrict to 'per se rule'."
+
+  - canonical: respondeat superior
+    route: glossary
+    target: "Common Legal Terms#respondeat-superior"
+    note: "Vicarious-liability principle; page-less. The Monell case-tied limit stays on [[Section 1983 Liability and Qualified Immunity]] (R9)."
+
+  - canonical: stare decisis
+    route: glossary
+    target: "Common Legal Terms#stare-decisis"
+    note: "Opaque Latin term of art; distinctive."
+
+  - canonical: per curiam
+    route: glossary
+    target: "Common Legal Terms#per-curiam"
+    note: "Not one of the 10 citation-mechanics terms — stays a glossary entry (O1 §D). Most occurrences are inside citation parentheticals (zone d, masked)."
+
+  - canonical: habeas corpus
+    route: glossary
+    target: "Common Legal Terms#habeas-corpus"
+    match: ["habeas"]
+    note: "Distinctive Latin term of art."
+
+  - canonical: ex parte
+    route: glossary
+    target: "Common Legal Terms#ex-parte"
+
+  - canonical: de minimis
+    route: glossary
+    target: "Common Legal Terms#de-minimis"
+
+  - canonical: de facto
+    route: glossary
+    target: "Common Legal Terms#de-facto"
+    note: "Split from the former paired 'De facto vs. de jure' entry (R7)."
+
+  - canonical: de jure
+    route: glossary
+    target: "Common Legal Terms#de-jure"
+    note: "Reference-only anchor; split from the paired entry."
+
+  - canonical: dicta
+    route: glossary
+    target: "Common Legal Terms#dicta"
+    match: ["dictum", "obiter dictum", "obiter dicta"]
+    note: "Canonical lemma; dictum/obiter noted in the entry body."
+
+  - canonical: mens rea
+    route: glossary
+    target: "Common Legal Terms#mens-rea"
+
+  - canonical: suppression hearing
+    route: glossary
+    target: "Common Legal Terms#suppression-hearing"
+
+  - canonical: prima facie
+    route: glossary
+    target: "Common Legal Terms#prima-facie"
+
+  - canonical: voir dire
+    route: glossary
+    target: "Common Legal Terms#voir-dire"
+
+  - canonical: concurring opinion
+    route: glossary
+    target: "Common Legal Terms#concurring-opinion"
+    match: ["concurrence", "concurrences"]
+    note: "Low priority (O1): instructor may treat as vernacular. 'concurring' bare omitted (over-links)."
+
+  - canonical: dissenting opinion
+    route: glossary
+    target: "Common Legal Terms#dissenting-opinion"
+    match: ["dissent", "dissents"]
+    note: "Low priority (O1). FLAG: bare 'dissent' is common — orchestrator may drop the match forms."
+
+  - canonical: majority opinion
+    route: glossary
+    target: "Common Legal Terms#majority-opinion"
+    note: "Reference-only in current corpus."
+
+  - canonical: plurality opinion
+    route: glossary
+    target: "Common Legal Terms#plurality-opinion"
+    note: "Reference-only in current corpus."
+
+  - canonical: holding
+    route: skip
+    note: "Glossary anchor #holding exists, BUT skipped as high-frequency audience-vernacular with a verb collision ('holding the door', 'holding cell'). Every-occurrence linking would over-link massively. FLAG: O1 flagged for R3 review — orchestrator GO required to enable route:glossary."
+
+  - canonical: modus operandi
+    route: glossary
+    target: "Common Legal Terms#modus-operandi"
+    note: "Reference-only. 'M.O.' abbreviation omitted from match (ambiguous)."
+
+  - canonical: corpus delicti
+    route: glossary
+    target: "Common Legal Terms#corpus-delicti"
+    note: "Reference-only."
+
+  - canonical: actus reus
+    route: glossary
+    target: "Common Legal Terms#actus-reus"
+    note: "Reference-only."
+
+  - canonical: motion in limine
+    route: glossary
+    target: "Common Legal Terms#motion-in-limine"
+    note: "Reference-only."
+
+  - canonical: statement of facts
+    route: skip
+    note: "Glossary anchor #statement-of-facts exists, but the phrase is a common description ('the statement of facts shows…'); FLAG: reference-only anchor, orchestrator may enable route:glossary. Seeded skip fail-closed."
+
+  - canonical: subpoena duces tecum
+    route: glossary
+    target: "Common Legal Terms#subpoena-duces-tecum"
+    note: "Reference-only."
+
+  - canonical: subpoena ad testificandum
+    route: glossary
+    target: "Common Legal Terms#subpoena-ad-testificandum"
+    note: "Reference-only."
+
+  - canonical: in forma pauperis
+    route: glossary
+    target: "Common Legal Terms#in-forma-pauperis"
+    note: "Reference-only. 'IFP' omitted from match."
+
+  - canonical: statute of limitations
+    route: glossary
+    target: "Common Legal Terms#statute-of-limitations"
+
+  - canonical: pro bono
+    route: glossary
+    target: "Common Legal Terms#pro-bono"
+    note: "Reference-only."
+
+  - canonical: pro se
+    route: glossary
+    target: "Common Legal Terms#pro-se"
+
+  - canonical: inter alia
+    route: glossary
+    target: "Common Legal Terms#inter-alia"
+
+  # ==========================================================================
+  # Citing-routed additions (route:citing) — the S8 citation-mechanics terms
+  # homed on Reading & Citing Cases. Left for THIS sweep to claim (O1 §D).
+  # ==========================================================================
+  - canonical: en banc
+    route: citing
+    target: "Reading and Citing Cases#en-banc"
+    note: "Prose occurrences link; citation-parenthetical uses ('(en banc)') are zone d, masked."
+
+  - canonical: certiorari
+    route: citing
+    target: "Reading and Citing Cases#certiorari-cert"
+    note: "CORRECTED anchor: the heading is '### Certiorari (cert.)' -> slug #certiorari-cert (O1 §D's #certiorari is DEAD). 'cert.' abbreviation omitted from match (risk)."
+
+  - canonical: slip opinion
+    route: citing
+    target: "Reading and Citing Cases#slip-opinion"
+    note: "Only the spelled-out 'slip opinion' links; 'slip op.' dropped from match (citation furniture, zone-d-adjacent risk) — orchestrator GO 2026-07-09."
+
+  - canonical: on remand
+    route: citing
+    target: "Reading and Citing Cases#on-remand"
+    match: ["remanded"]
+    note: "FLAG: 'remanded' in citation parentheticals is masked (zone d); prose 'the court remanded' links. Bare noun 'remand' omitted (too common). Orchestrator may restrict to the 'on remand' phrase only."
+
+  - canonical: vacated
+    route: citing
+    target: "Reading and Citing Cases#vacated"
+    match: ["vacatur"]
+    note: "FLAG: citation-parenthetical 'vacated' is masked; prose 'the court vacated' links. 'vacate'/'vacating' omitted (risk)."
+
+  - canonical: reporter
+    route: citing
+    target: "Reading and Citing Cases#reporter"
+    note: "FLAG (risk): 'reporter' the citation term vs. everyday sense; distinctive in legal prose but orchestrator should confirm density."
+
+  - canonical: parallel citation
+    route: citing
+    target: "Reading and Citing Cases#parallel-citation"
+    match: ["parallel citations"]
+    note: "Reference-only in current prose."
+
+  - canonical: pinpoint cite
+    route: citing
+    target: "Reading and Citing Cases#pinpoint-cite-pin-cite"
+    match: ["pin cite", "pin-cite", "pincite"]
+    note: "Reference-only in current prose. Slug confirmed: '### Pinpoint cite (pin cite)' -> #pinpoint-cite-pin-cite."
+
+  - canonical: supra
+    route: citing
+    target: "Reading and Citing Cases#supra"
+    note: "Rare in prose; mostly citation usage. FLAG (O1 §D): candidate do-not-wire."
+
+  - canonical: "id."
+    route: skip
+    note: "Anchor #id resolves, BUT 'id.' occurs only inside citation strings (zone d, always masked) — O1 §D says do NOT wire. Seeded route:skip (linking is moot + the bare 'id' surface risks false hits)."
+
+  # ==========================================================================
+  # Page-routed / eponym additions. Eponym rows carry eponym:true so the S8
+  # case-mention linker routes the PHRASE as a term (R7) and the bare italic
+  # name as a case (R3). Several eponym phrases have 0 current prose occurrences
+  # but are registered for the mention-lane flag.
+  # ==========================================================================
+  - canonical: particularity
+    route: page
+    target: "Particularity"
+    note: "The particularity requirement; dedicated doctrine page in the restructured corpus (O1 target was [[The Warrant Requirement]])."
+
+  - canonical: color of law
+    route: page
+    target: "Section 1983 Liability and Qualified Immunity"
+    match: ["under color of law", "color of state law"]
+    note: "Element 1 of a §1983 claim; defined on its page (self-links suppressed by zone g)."
+
+  - canonical: Miranda warnings
+    route: page
+    target: "Miranda and Custodial Interrogation"
+    match: ["Miranda warning", "Miranda rights", "Miranda rule"]
+    eponym: true
+    note: "EPONYM. FLAG: 'Miranda rights' included as an eponym phrase — orchestrator may trim. Bare 'Miranda' is vernacular (skip row)."
+
+  - canonical: Katz test
+    route: page
+    target: "Reasonable Expectation of Privacy"
+    eponym: true
+    note: "EPONYM (Katz REP test). 0 current prose occurrences of the phrase; registered for the mention-lane flag (bare *Katz* = 113 case mentions)."
+
+  - canonical: Brady material
+    route: page
+    target: "Brady and Giglio"
+    match: ["Brady evidence"]
+    eponym: true
+    note: "EPONYM. 0 current occurrences of the phrase; bare *Brady* (87) routes as a case. Registered for the flag."
+
+  - canonical: Franks hearing
+    route: page
+    target: "Franks Challenges"
+    match: ["Franks challenge", "Franks challenges"]
+    eponym: true
+    note: "EPONYM. Doctrine page [[Franks Challenges]] exists."
+
+  - canonical: Garrity warning
+    route: page
+    target: "Public-Employee Compelled Statements (Garrity)"
+    match: ["Garrity warnings"]
+    eponym: true
+    note: "EPONYM. Doctrine page exists. Bare *Garrity* (71) routes as a case."
+
+  - canonical: Monell claim
+    route: page
+    target: "Section 1983 Liability and Qualified Immunity"
+    match: ["Monell liability"]
+    eponym: true
+    note: "EPONYM (municipal liability). Bare *Monell* (21) routes as a case."
+
+  - canonical: Bivens action
+    route: page
+    target: "Suing Federal Officers"
+    match: ["Bivens claim", "Bivens remedy", "Bivens suit"]
+    eponym: true
+    note: "EPONYM. Doctrine page [[Suing Federal Officers]] exists. Bare *Bivens* (66) routes as a case."
+
+  - canonical: Massiah rule
+    route: page
+    target: "Sixth Amendment Right to Counsel"
+    match: ["Massiah doctrine"]
+    eponym: true
+    note: "EPONYM (6A right to counsel). Bare *Massiah* (30) routes as a case."
+
+  - canonical: Edwards rule
+    route: page
+    target: "Miranda Waiver and Invocation"
+    eponym: true
+    note: "EPONYM (Edwards v. Arizona reinterrogation bar). FLAG: home page inferred — orchestrator to confirm [[Miranda Waiver and Invocation]] vs. [[Sixth Amendment Right to Counsel]]. Bare *Edwards* (49) routes as a case."
+
+  - canonical: Batson challenge
+    route: skip
+    eponym: true
+    note: "EPONYM. Jury-selection doctrine, outside the 4A/search-seizure remit; no page home (0 corpus occurrences). Skip; eponym flag retained for the mention lane."
+
+  # ==========================================================================
+  # Fail-closed page candidates (seeded skip; distinctive-sense linking needs
+  # orchestrator adjudication because the bare surface is too common).
+  # ==========================================================================
+  - canonical: standing
+    route: skip
+    note: "Bare 'standing' is overwhelmingly ordinary English (standing in the doorway, standing water) — NEVER links. The disambiguated phrases route via the row below (orchestrator GO 2026-07-09)."
+
+  - canonical: Fourth Amendment standing
+    route: page
+    target: "Standing to Challenge a Search"
+    match: ["standing to challenge"]
+    note: "Disambiguated 4A-standing phrases only (orchestrator GO 2026-07-09): 'Fourth Amendment standing' + 'standing to challenge'. Bare 'standing' stays skip (row above)."
+
+  - canonical: taint
+    route: skip
+    note: "FLAG: exclusionary 'taint' -> [[Fruits and Attenuation]] (O1 §C low-priority), but 'taint' is a near-vernacular common verb. Fail-closed skip pending orchestrator GO."
+
+  # ==========================================================================
+  # Officer-vernacular / plain-English skip-list (route:skip DATA, R7 + O1 §E).
+  # Instructor-editable. Never auto-linked; documents what the sweep must leave
+  # plain, and feeds the mention lane's vernacular set.
+  # ==========================================================================
+  - canonical: search
+    route: skip
+    note: "R7 officer-vernacular."
+  - canonical: consent
+    route: skip
+    note: "R7 officer-vernacular."
+  - canonical: warrant
+    route: skip
+    note: "R7 officer-vernacular."
+  - canonical: arrest
+    route: skip
+    note: "R7 officer-vernacular."
+  - canonical: stop
+    route: skip
+    note: "R7 officer-vernacular."
+  - canonical: frisk
+    route: skip
+    note: "R7 officer-vernacular."
+  - canonical: detention
+    route: skip
+    note: "R3 officer-vernacular (O1 §E)."
+  - canonical: custody
+    route: skip
+    note: "R3 officer-vernacular (O1 §E)."
+  - canonical: plain view
+    route: skip
+    note: "R7 officer-vernacular (bare predicate 'in plain view'); the doctrine phrase 'plain-view doctrine' routes to page."
+  - canonical: contraband
+    route: skip
+    note: "R7 officer-vernacular."
+  - canonical: suspect
+    route: skip
+    note: "R3 officer-vernacular (O1 §E)."
+  - canonical: officer
+    route: skip
+    note: "R3 officer-vernacular (O1 §E)."
+  - canonical: evidence
+    route: skip
+    note: "R3 officer-vernacular (O1 §E)."
+  - canonical: Miranda
+    route: skip
+    note: "R7 Miranda-as-vernacular (bare). 'Miranda warnings' (eponym) routes to page; bare *Miranda* as a case routes via the mention lane."
+  - canonical: car
+    route: skip
+    note: "R4 plain-English (O1 §E)."
+  - canonical: house
+    route: skip
+    note: "R4 plain-English (O1 §E)."
+  - canonical: night
+    route: skip
+    note: "R4 plain-English (O1 §E)."
+  - canonical: money
+    route: skip
+    note: "R4 plain-English (O1 §E)."
+  - canonical: door
+    route: skip
+    note: "R4 plain-English (O1 §E)."
+  - canonical: knock
+    route: skip
+    note: "R4 plain-English (O1 §E); the doctrine phrases knock-and-talk / knock-and-announce route to page."
+  - canonical: statement
+    route: skip
+    note: "R4 plain-English (O1 §E)."
+  - canonical: question
+    route: skip
+    note: "R4 plain-English (O1 §E)."
+  - canonical: mistake
+    route: skip
+    note: "R4 plain-English (O1 §E)."
+
+  # ==========================================================================
+  # R8 sweep — orchestrator-approved additions (GO 2026-07-09). Glossary rows
+  # point at the 5 newly-authored ### entries in Common Legal Terms; page rows
+  # at existing doctrine homes; skip rows record the adjudicated skips.
+  # ==========================================================================
+  # --- glossary (authored this pass; bright-line rule flipped above) ---
+  - canonical: preponderance of the evidence
+    route: glossary
+    target: "Common Legal Terms#preponderance-of-the-evidence"
+    note: "R8-authored. Proof-triad; The Proof Ladder declines to teach trial burdens, so glossary is the home."
+
+  - canonical: clear and convincing
+    route: glossary
+    target: "Common Legal Terms#clear-and-convincing-evidence"
+    match: ["clear and convincing evidence"]
+    note: "R8-authored. Canonical lemma 'clear and convincing evidence' (heading slug); shorthand 'clear and convincing' also links."
+
+  - canonical: beyond a reasonable doubt
+    route: glossary
+    target: "Common Legal Terms#beyond-a-reasonable-doubt"
+    note: "R8-authored. Top of the proof triad; page-less."
+
+  - canonical: affirmative defense
+    route: glossary
+    target: "Common Legal Terms#affirmative-defense"
+    note: "R8-authored. Genuine term of art; pure definition (O1 §E deferred)."
+
+  # --- page routes (existing doctrine homes) ---
+  - canonical: exculpatory
+    route: page
+    target: "Brady and Giglio"
+    note: "R8-approved. Brady term of art (favorable, material evidence)."
+
+  - canonical: deliberate indifference
+    route: page
+    target: "Section 1983 Liability and Qualified Immunity"
+    note: "R8-approved. §1983 / municipal-liability term of art."
+
+  - canonical: apparent authority
+    route: page
+    target: "Consent Searches"
+    note: "R8-approved. Consent-search term of art (apparent-authority consent)."
+
+  - canonical: third-party consent
+    route: page
+    target: "Consent Searches"
+    note: "R8-approved. Consent-search term of art."
+
+  - canonical: hot pursuit
+    route: page
+    target: "Exigent Circumstances and Hot Pursuit"
+    note: "R8-approved. Doctrine term with a page home."
+
+  - canonical: emergency aid
+    route: page
+    target: "Emergency Aid"
+    note: "R8-approved. Dedicated doctrine page."
+
+  - canonical: community caretaking
+    route: page
+    target: "Community Caretaking"
+    note: "R8-approved. Dedicated doctrine page."
+
+  - canonical: protective sweep
+    route: page
+    target: "Securing the Scene"
+    note: "R8-approved. Buie's two tiers stated up front on [[Securing the Scene]] (orchestrator target)."
+
+  - canonical: plain feel
+    route: page
+    target: "Plain View Doctrine#plain-feel-minnesota-v-dickerson"
+    match: ["plain touch"]
+    note: "R8-approved. Dickerson plain-feel/plain-touch; deep-links to the [[Plain View Doctrine]] section anchor (slugger resolves it live)."
+
+  # --- adjudicated skips (R8 sweep — recorded as register DATA) ---
+  - canonical: articulable
+    route: skip
+    note: "R8 skip (GO): component of the RS standard ('specific and articulable facts'); near-vernacular."
+  - canonical: fair probability
+    route: skip
+    note: "R8 skip (GO): the PC definition phrase; component of doctrine."
+  - canonical: nexus
+    route: skip
+    note: "R8 skip (GO): near-plain 'connection/link'."
+  - canonical: prophylactic
+    route: skip
+    note: "R8 skip (GO): adjective describing the Miranda rule; not a standalone lemma."
+  - canonical: programmatic
+    route: skip
+    note: "R8 skip (GO): special-needs adjective ('programmatic purpose')."
+  - canonical: individualized suspicion
+    route: skip
+    note: "R8 skip (GO): RS / special-needs component phrase; near-vernacular."
+  - canonical: reasonable articulable suspicion
+    route: skip
+    note: "R8 skip (GO): RS variant phrase; vernacular/component."
+  - canonical: interlocutory
+    route: skip
+    note: "R8 skip (GO): 'interlocutory appeal' — low value; defer."

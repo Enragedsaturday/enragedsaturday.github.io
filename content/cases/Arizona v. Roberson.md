@@ -44,7 +44,7 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-Roberson was arrested at the scene of a burglary and, after Miranda warnings, said he wanted a lawyer before answering any questions. Three days later, while he was still in custody, a different officer — unaware of the earlier invocation — gave fresh Miranda warnings and questioned Roberson about a *different* burglary, and Roberson made an incriminating statement. He moved to suppress it.
+Roberson was arrested at the scene of a burglary and, after [[Miranda and Custodial Interrogation|Miranda warnings]], said he wanted a lawyer before answering any questions. Three days later, while he was still in custody, a different officer — unaware of the earlier invocation — gave fresh [[Miranda and Custodial Interrogation|Miranda warnings]] and questioned Roberson about a *different* burglary, and Roberson made an incriminating statement. He moved to suppress it.
 
 ## Issue
 Whether the *Edwards* rule barring police-initiated interrogation after a suspect invokes counsel applies when the later interrogation concerns a separate offense or investigation.
@@ -55,7 +55,7 @@ Yes — the *Edwards* bar is not offense-specific. "[T]he presumption raised by 
 "That a suspect's request for counsel should apply to any questions the police wish to pose follows, we think, not only from *Edwards* and *Miranda* . . . ." — *Id.* at 684. ^pin-684
 
 ## Application
-Roberson had asked for a lawyer before answering "any questions," and the presumption that he could not face custodial interrogation without counsel did not evaporate merely because a second officer approached him — still in custody, still without counsel — about a different burglary three days later. Fresh Miranda warnings did not cure the bar, and the second officer's ignorance of the earlier invocation was irrelevant. The statement was therefore inadmissible.
+Roberson had asked for a lawyer before answering "any questions," and the presumption that he could not face custodial interrogation without counsel did not evaporate merely because a second officer approached him — still in custody, still without counsel — about a different burglary three days later. Fresh [[Miranda and Custodial Interrogation|Miranda warnings]] did not cure the bar, and the second officer's ignorance of the earlier invocation was irrelevant. The statement was therefore inadmissible.
 
 ## Conclusion
 The *Edwards* bar applied to the separate-investigation questioning; the suppression of Roberson's statement was upheld and the Arizona Court of Appeals affirmed.

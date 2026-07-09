@@ -47,7 +47,7 @@ lake:
 Investigating violations of the Texas Communist Control Law, state officers obtained a warrant to search John Stanford's home for "books, records, pamphlets, cards, receipts, lists, memoranda, pictures, recordings and other written instruments concerning the Communist Party of Texas." Executing it, the officers spent hours seizing some 2,000 of Stanford's books and papers. Stanford challenged the warrant as an unconstitutional general warrant.
 
 ## Issue
-Does a warrant authorizing seizure of all books and papers "concerning the Communist Party of Texas" satisfy the Fourth Amendment's particularity requirement when the items seized are expressive materials taken for the ideas they contain?
+Does a warrant authorizing seizure of all books and papers "concerning the Communist Party of Texas" satisfy the Fourth Amendment's [[Particularity|particularity]] requirement when the items seized are expressive materials taken for the ideas they contain?
 
 ## Rule
 No. "[T]he constitutional requirement that warrants must particularly describe the 'things to be seized' is to be accorded the most scrupulous exactitude when the 'things' are books, and the basis for their seizure is the ideas which they contain." — 379 U.S. at 485. ^pin-485
@@ -62,11 +62,11 @@ The warrant authorized the seizure not of contraband but of "literary material" 
 The Fourth and Fourteenth Amendments guarantee that no official "shall ransack [Stanford's] home and seize his books and papers under the unbridled authority of a general warrant — no less than the law 200 years ago shielded John Entick from the messengers of the King." — *Id.* ^pin-486b
 
 ## Conclusion
-The warrant was an unconstitutional general warrant; the order was vacated and the cause remanded.
+The warrant was an unconstitutional general warrant; the order was [[Reading and Citing Cases#vacated|vacated]] and the cause [[Reading and Citing Cases#on-remand|remanded]].
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.
-- *Stanford* remains the controlling statement that warrants reaching expressive materials demand heightened, "scrupulous" particularity, drawing directly on the general-warrant history of *Entick v. Carrington*. It sits within the particularity line alongside [[Maryland v. Garrison]], [[Groh v. Ramirez]], and [[Andresen v. Maryland]]. No negative treatment.
+- *Stanford* remains the controlling statement that warrants reaching expressive materials demand heightened, "scrupulous" [[Particularity|particularity]], drawing directly on the general-warrant history of *Entick v. Carrington*. It sits within the [[Particularity|particularity]] line alongside [[Maryland v. Garrison]], [[Groh v. Ramirez]], and [[Andresen v. Maryland]]. No negative treatment.
 
 ## Appears on
 - [[Particularity]] — *Progeny*

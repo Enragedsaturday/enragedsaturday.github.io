@@ -46,7 +46,7 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-An Iowa officer stopped Knowles for driving 43 mph in a 25 mph zone and issued him a citation rather than arresting him, although Iowa law authorized either course. Relying on an Iowa statute the state courts read to permit a "search incident to citation," the officer then conducted a full search of the car and found marijuana and a pipe under the driver's seat. Knowles was arrested on drug charges. At the suppression hearing the officer conceded he had neither Knowles' consent nor probable cause to search.
+An Iowa officer stopped Knowles for driving 43 mph in a 25 mph zone and issued him a citation rather than arresting him, although Iowa law authorized either course. Relying on an Iowa statute the state courts read to permit a "search incident to citation," the officer then conducted a full search of the car and found marijuana and a pipe under the driver's seat. Knowles was arrested on drug charges. At the [[Common Legal Terms#suppression-hearing|suppression hearing]] the officer conceded he had neither Knowles' consent nor probable cause to search.
 
 ## Issue
 Does the Fourth Amendment permit an officer to conduct a full search of a vehicle incident to the issuance of a traffic citation, where the driver has not been placed under custodial arrest?
@@ -64,11 +64,11 @@ The Court refused to extend *Robinson*'s bright-line full-search rule "to a situ
 Knowles was cited, not arrested, and the officer had neither consent nor probable cause. Because a brief traffic stop poses a lesser safety risk — addressable by ordering the driver out, a frisk on reasonable suspicion, or a protective vehicle search — and because issuing the speeding citation had already secured all evidence of that offense, neither search-incident rationale applied. The "search incident to citation" had no constitutional basis.
 
 ## Conclusion
-The full search of the car was unconstitutional; the judgment of the Iowa Supreme Court was reversed and the case remanded.
+The full search of the car was unconstitutional; the judgment of the Iowa Supreme Court was reversed and the case [[Reading and Citing Cases#on-remand|remanded]].
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.
-- *Knowles* remains controlling: there is no "search incident to citation." It cabins [[United States v. Robinson]]'s bright-line rule to actual custodial arrests and is the contrast point in [[Virginia v. Moore]] (full search permitted because Moore was *arrested*). No negative treatment.
+- *Knowles* remains controlling: there is no "search incident to citation." It cabins [[United States v. Robinson]]'s [[Common Legal Terms#bright-line-rule|bright-line rule]] to actual custodial arrests and is the contrast point in [[Virginia v. Moore]] (full search permitted because Moore was *arrested*). No negative treatment.
 
 ## Appears on
 - [[SIA Persons]] — *Limiting*

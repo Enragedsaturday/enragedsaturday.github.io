@@ -57,10 +57,10 @@ Reasonableness is judged objectively and from the officer's on-scene vantage: "T
 The inquiry weighs the facts of each case, "including the severity of the crime at issue, whether the suspect poses an immediate threat to the safety of the officers or others, and whether he is actively resisting arrest or attempting to evade arrest by flight." — *Id.* ^pin-396a
 
 ## Application
-Graham's claim arose from an investigatory stop and the force used during it — a Fourth Amendment "seizure" — so it had to be assessed under the objective-reasonableness standard rather than the *Johnson v. Glick* due-process test the Court of Appeals applied. Because the lower courts used a standard turning on the officers' subjective good or bad faith, the case was remanded for analysis under the proper Fourth Amendment framework.
+Graham's claim arose from an investigatory stop and the force used during it — a Fourth Amendment "seizure" — so it had to be assessed under the objective-reasonableness standard rather than the *Johnson v. Glick* due-process test the Court of Appeals applied. Because the lower courts used a standard turning on the officers' subjective good or bad faith, the case was [[Reading and Citing Cases#on-remand|remanded]] for analysis under the proper Fourth Amendment framework.
 
 ## Conclusion
-Excessive-force claims arising from a seizure are governed by Fourth Amendment objective reasonableness; the judgment applying a substantive-due-process test was vacated and remanded.
+Excessive-force claims arising from a seizure are governed by Fourth Amendment objective reasonableness; the judgment applying a substantive-due-process test was [[Reading and Citing Cases#vacated|vacated]] and [[Reading and Citing Cases#on-remand|remanded]].
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.

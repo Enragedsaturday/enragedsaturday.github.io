@@ -59,7 +59,7 @@ Yes. "A 'seizure' of property, we have explained, occurs when 'there is some mea
 The Fourth Amendment is not limited to privacy: "our cases unmistakably hold that the Amendment protects property as well as privacy." — *Id.* at 62. ^pin-62
 
 ## Application
-The deputies' participation in physically wrenching the Soldals' trailer from its moorings and towing it away was a quintessential meaningful interference with the family's possessory interest — indeed, the home "literally was carried away." That the action invaded no privacy or liberty interest did not remove it from the Fourth Amendment, because the Amendment independently protects possessory interests in "effects" and "houses." The seizure therefore had to be reasonable, a question remanded for resolution.
+The deputies' participation in physically wrenching the Soldals' trailer from its moorings and towing it away was a quintessential meaningful interference with the family's possessory interest — indeed, the home "literally was carried away." That the action invaded no privacy or liberty interest did not remove it from the Fourth Amendment, because the Amendment independently protects possessory interests in "effects" and "houses." The seizure therefore had to be reasonable, a question [[Reading and Citing Cases#on-remand|remanded]] for resolution.
 
 ## Conclusion
 The towing of the Soldals' home was a Fourth Amendment seizure; the Seventh Circuit's contrary holding was reversed. *Soldal* establishes that property seizures are governed by the Fourth Amendment whether or not any privacy or liberty interest is also implicated.

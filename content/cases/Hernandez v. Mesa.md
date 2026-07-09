@@ -51,7 +51,7 @@ holding: "Bivens does not extend to a damages claim arising from a cross-border 
 <!-- header line; TreatmentBadge + weight render from frontmatter, degrading to the text above. Born under_review (⚪) — identity cluster 9231296 → opinion 9226104; quote string-matched to the CL opinion text 2026-07-07 (CL text carries S. Ct. star-pagination, 140 S. Ct. 735). S9 promotes. -->
 
 ## Background
-Sergio Adrián Hernández Güereca, a fifteen-year-old Mexican national, was playing in the concrete culvert that separates El Paso, Texas, from Ciudad Juárez, Mexico. U.S. Border Patrol Agent Jesus Mesa, standing on the U.S. side, fired across the border and killed Hernández, who was on the Mexican side. Hernández's parents sued Mesa for damages under *[[Bivens v. Six Unknown Named Agents|Bivens]]*, alleging violations of the Fourth and Fifth Amendments. The en banc Fifth Circuit refused to recognize a *Bivens* remedy, and the Supreme Court granted review.
+Sergio Adrián Hernández Güereca, a fifteen-year-old Mexican national, was playing in the concrete culvert that separates El Paso, Texas, from Ciudad Juárez, Mexico. U.S. Border Patrol Agent Jesus Mesa, standing on the U.S. side, fired across the border and killed Hernández, who was on the Mexican side. Hernández's parents sued Mesa for damages under *[[Bivens v. Six Unknown Named Agents|Bivens]]*, alleging violations of the Fourth and Fifth Amendments. The [[Reading and Citing Cases#en-banc|en banc]] Fifth Circuit refused to recognize a *Bivens* remedy, and the Supreme Court granted review.
 
 ## Issue
 Whether *Bivens* should be extended to provide a damages remedy against a federal officer for a cross-border shooting.

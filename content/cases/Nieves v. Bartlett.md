@@ -62,7 +62,7 @@ As a general rule, a plaintiff bringing a retaliatory-arrest claim "must plead a
 Bartlett's claim failed at the threshold. Probable cause supported his arrest for disorderly conduct and resisting, and he offered no objective evidence that officers typically exercise their discretion not to arrest others engaged in similar conduct but not in protected speech. Absent that comparative showing, the general no-probable-cause bar controlled and his retaliatory-arrest claim could not proceed. The Court grounded the rule in the practical difficulty of disentangling protected speech from legitimate arrest justifications and in the analogous causation framework of *Hartman v. Moore*.
 
 ## Conclusion
-The judgment of the Ninth Circuit was **reversed** and the case **remanded**. Roberts, C.J., delivered the opinion of the Court; Justices Thomas, Gorsuch, and Ginsburg concurred in part and/or dissented in part, and Justice Sotomayor dissented.
+The judgment of the Ninth Circuit was **reversed** and the case **[[Reading and Citing Cases#on-remand|remanded]]**. Roberts, C.J., delivered the opinion of the Court; Justices Thomas, Gorsuch, and Ginsburg concurred in part and/or dissented in part, and Justice Sotomayor dissented.
 
 ## Treatment & subsequent history
 **Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub; its citator and progeny history have not completed the two-key verification, so it renders under the ⚪ banner until S9 promotion. *Nieves* remains the controlling framework for retaliatory-arrest claims; the Supreme Court construed its exception in *[[Gonzalez v. Trevino]]* (2024), rejecting a demand for narrow comparator evidence.

@@ -47,7 +47,7 @@ lake:
 Prohibition agents, acting on an invalid warrant issued by a commissioner who lacked authority, entered the petitioners' import-company office, arrested Gowen and Bartels, and — under a false claim of having a warrant and by threat of force — compelled Gowen to open his desk and safe. The agents then ransacked the desk, safe, filing cabinets, and other parts of the office, seizing papers, even though they had ample information and time to obtain a valid warrant.
 
 ## Issue
-Whether a warrantless general search and seizure of papers throughout an office, conducted incident to an arrest, is a reasonable search incident to arrest or an unconstitutional general search.
+Whether a warrantless general search and seizure of papers throughout an office, conducted incident to an arrest, is a reasonable [[Search Incident to Arrest|search incident to arrest]] or an unconstitutional general search.
 
 ## Rule
 Reasonableness is fact-specific: "There is no formula for the determination of reasonableness. Each case is to be decided on its own facts and circumstances." — 282 U.S. at 357. ^pin-357
@@ -58,7 +58,7 @@ A search incident to arrest may not become a general rummaging of the premises: 
 Unlike *Marron v. United States* — where officers executing a valid warrant seized a ledger and bills that were "visible and accessible and in the offender's immediate custody," with "no threat of force or general search or rummaging" — the agents here arrested the men without seeing any crime, then forced open the desk and safe and ransacked the entire office for evidence under a false claim of authority. That was a general exploratory search, not a permissible incident of the arrest, and was unreasonable.
 
 ## Conclusion
-Reversed. The general search of the office was unreasonable; the papers had to be suppressed and returned. *Go-Bart* fixes an early outer limit on search incident to arrest — it cannot be converted into a general exploratory search.
+Reversed. The general search of the office was unreasonable; the papers had to be suppressed and returned. *Go-Bart* fixes an early outer limit on [[Search Incident to Arrest|search incident to arrest]] — it cannot be converted into a general exploratory search.
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.

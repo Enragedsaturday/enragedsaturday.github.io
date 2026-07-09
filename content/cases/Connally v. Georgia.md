@@ -57,10 +57,10 @@ The defendant is thus "subjected to what surely is judicial action by an officer
 The Court therefore "h[e]ld that the issuance of the search warrant by the justice of the peace in Connally's case effected a violation of the protections afforded him by the Fourth and Fourteenth Amendments." — *Id.* at 251. ^pin-251
 
 ## Application
-The Georgia justice of the peace earned $5 only when he issued a warrant and nothing when he denied one, so his compensation rose with issuance — the precise pecuniary temptation the neutral-magistrate requirement forbids, and one he candidly admitted entered his mind. The fee was not *de minimis*. Because the issuing official had a personal financial stake in granting the warrant, he was not the neutral and detached magistrate the Fourth Amendment demands, and the warrant was invalid.
+The Georgia justice of the peace earned $5 only when he issued a warrant and nothing when he denied one, so his compensation rose with issuance — the precise pecuniary temptation the neutral-magistrate requirement forbids, and one he candidly admitted entered his mind. The fee was not *[[Common Legal Terms#de-minimis|de minimis]]*. Because the issuing official had a personal financial stake in granting the warrant, he was not the neutral and detached magistrate the Fourth Amendment demands, and the warrant was invalid.
 
 ## Conclusion
-The warrant violated the Fourth and Fourteenth Amendments; the judgment of the Georgia Supreme Court was vacated and the case remanded.
+The warrant violated the Fourth and Fourteenth Amendments; the judgment of the Georgia Supreme Court was [[Reading and Citing Cases#vacated|vacated]] and the case [[Reading and Citing Cases#on-remand|remanded]].
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.

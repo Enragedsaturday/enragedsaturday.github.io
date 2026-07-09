@@ -59,10 +59,10 @@ In the traffic-stop setting both conditions are satisfied on the stop alone plus
 That is so because "[f]or the duration of a traffic stop, . . . a police officer effectively seizes 'everyone in the vehicle,' the driver and all passengers." — *Id.* (quoting *Brendlin v. California*). ^pin-327b
 
 ## Application
-The task-force officers lawfully stopped the car for a registration violation, and that stop seized all of its occupants — including Johnson — for its duration. Johnson therefore remained lawfully detained even though the officers had no suspicion he was independently committing a crime; the encounter had not become a consensual one merely because he was cooperative. Because Trevizo developed reasonable suspicion that Johnson was armed and dangerous (gang indicia, a scanner, evasive gang-related answers), she was entitled to pat him down for weapons. The Court reversed the Arizona Court of Appeals and remanded, leaving the appeals court free to revisit whether Trevizo in fact had reasonable suspicion that Johnson was armed — a point that court had only assumed.
+The task-force officers lawfully stopped the car for a registration violation, and that stop seized all of its occupants — including Johnson — for its duration. Johnson therefore remained lawfully detained even though the officers had no suspicion he was independently committing a crime; the encounter had not become a consensual one merely because he was cooperative. Because Trevizo developed reasonable suspicion that Johnson was armed and dangerous (gang indicia, a scanner, evasive gang-related answers), she was entitled to pat him down for weapons. The Court reversed the Arizona Court of Appeals and [[Reading and Citing Cases#on-remand|remanded]], leaving the appeals court free to revisit whether Trevizo in fact had reasonable suspicion that Johnson was armed — a point that court had only assumed.
 
 ## Conclusion
-The frisk did not require separate suspicion that the passenger was engaged in criminal activity; a lawful traffic stop seizes the passenger, and the frisk is justified by reasonable suspicion the passenger is armed and dangerous. Reversed and remanded.
+The frisk did not require separate suspicion that the passenger was engaged in criminal activity; a lawful traffic stop seizes the passenger, and the frisk is justified by reasonable suspicion the passenger is armed and dangerous. Reversed and [[Reading and Citing Cases#on-remand|remanded]].
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.

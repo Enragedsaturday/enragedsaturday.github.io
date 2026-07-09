@@ -40,7 +40,7 @@ The taught path is the first three rows; the rest are specialists you reach for 
 | **govinfo** (GPO) | Authenticated government PDFs, including historic bound **U.S. Reports** (~1790s–early 1990s). | Fully free, authoritative. | **High** (authenticated). | Not a search-by-proposition tool; use for official PDFs / older volumes. |
 | **Official court / SCOTUS sites** (supremecourt.gov; circuit & district sites) | **Authoritative** slip opinions day-of; bound U.S. Reports. | Free. | **Highest** (the court's own text). | Each hosts only **its own** opinions; no cross-court search; slip-op pagination is provisional. |
 | **Cornell LII** | Free primary law (statutes, rules), SCOTUS from 1990 + historic decisions, **Wex** legal dictionary. | Free. | **High** (Cornell). | Limited older case-law coverage; best for statutes/definitions, not deep case search. |
-| **OpenJurist** | Free **public-domain** federal case law (SCOTUS back to 1790; Federal Reporter back to 1880); fallback. | Free (ad-supported). | Moderate (older corpus). | Older, clunkier UI; ads; not comprehensive for modern cases. **≠ OpenCase** (a distinct AI tool, see below). |
+| **OpenJurist** | Free **public-domain** federal case law (SCOTUS back to 1790; Federal [[Reading and Citing Cases#reporter\|Reporter]] back to 1880); fallback. | Free (ad-supported). | Moderate (older corpus). | Older, clunkier UI; ads; not comprehensive for modern cases. **≠ OpenCase** (a distinct AI tool, see below). |
 
 ## Low-cost / paid (optional, clearly flagged)
 

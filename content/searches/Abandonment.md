@@ -22,7 +22,7 @@ related: ["[[Fourth Amendment Framework]]", "[[Two Definitions of Search]]", "[[
 
 ## The Brief
 
-**Abandonment is the absence of a retained privacy interest.** The doctrine has two facets that must both be present: an **outward act** (denial of ownership, discard, walking away) and the **intent** that act reveals, and the act must be **voluntary**. Courts synthesize the case law into four recurring factors, all bearing on one ultimate question and none an independent legal test: (1) **denial of ownership**; (2) **physical relinquishment or discard**; (3) the **location** where the item was left; and (4) **intent inferred from conduct**. The question they answer is always the same: was a reasonable expectation of privacy retained?
+**Abandonment is the absence of a retained privacy interest.** The doctrine has two facets that must both be present: an **outward act** (denial of ownership, discard, walking away) and the **intent** that act reveals, and the act must be **voluntary**. Courts synthesize the case law into four recurring factors, all bearing on one ultimate question and none an independent legal test: (1) **denial of ownership**; (2) **physical relinquishment or discard**; (3) the **location** where the item was left; and (4) **intent inferred from conduct**. The question they answer is always the same: was a [[Reasonable Expectation of Privacy|reasonable expectation of privacy]] retained?
 
 **Curbside trash.** There is **no** reasonable expectation of privacy in garbage bags left for collection at the curb, outside the curtilage of a home, so a warrantless search and seizure of curbside trash does not violate the Fourth Amendment. *[[California v. Greenwood|Greenwood]]*, 486 U.S. at 37, 40–41. The reason: "It is common knowledge that plastic garbage bags left on or at the side of a public street are readily accessible to animals, children, scavengers, snoops, and other members of the public." *[[California v. Greenwood#^pin-40b|Id.]]* at 40. Note the express boundary: the bags were left for collection "outside the curtilage of a home." Trash still **within** the curtilage (a can beside the back door) is a different question ([[Curtilage]]).
 
@@ -40,12 +40,12 @@ related: ["[[Fourth Amendment Framework]]", "[[Two Definitions of Search]]", "[[
 
 **Apply it.**
 1. **Ask whether a privacy interest was retained.** Run the four factors (denial, discard, location, intent) toward the single question of retained expectation of privacy; a clean disclaimer of any connection to the item supports the inference that none was retained.
-2. **Test voluntariness.** A disclaimer or discard forced by an **unlawful** stop or seizure is not a valid abandonment; it is fruit of the poisonous tree, and standing survives ([[Seizure of the Person]]).
+2. **Test voluntariness.** A disclaimer or discard forced by an **unlawful** stop or seizure is not a valid abandonment; it is [[Common Legal Terms#fruit-of-the-poisonous-tree|fruit of the poisonous tree]], and standing survives ([[Seizure of the Person]]).
 3. **Separate possession from privacy.** A bailment (bag to a bus, luggage to a hotel) is not abandonment (*[[Bond v. United States|Bond]]*); title to discarded property is not retained privacy (*[[California v. Greenwood|Greenwood]]*).
-4. **Route third-party consent to the right doctrine.** If a privacy interest was retained, a co-occupant's consent is analyzed under common authority ([[Consent Searches]]), never as abandonment.
+4. **Route [[Consent Searches|third-party consent]] to the right doctrine.** If a privacy interest was retained, a co-occupant's consent is analyzed under common authority ([[Consent Searches]]), never as abandonment.
 
 **Common pitfalls.**
-- **Treating all trash as fair game.** *Greenwood* authorizes the **curbside** bag left for collection outside the curtilage; trash within the curtilage is not covered on its terms ([[Curtilage]]).
+- **Treating all trash as fair game.** *Greenwood* authorizes the **curbside** bag left for collection outside the [[Curtilage|curtilage]]; trash within the [[Curtilage|curtilage]] is not covered on its terms ([[Curtilage]]).
 - **Confusing giving up possession with giving up privacy.** A bailment is not abandonment (*[[Bond v. United States|Bond]]*).
 - **Relying on a third party's property interest to imply consent.** Common authority turns on mutual **use** and joint **access or control**, not on who owns the item, and it belongs to [[Consent Searches]] (*[[United States v. Matlock|Matlock]]* n.7).
 - **Litigating abandonment as a property dispute.** The court asks about the expectation of privacy, not who holds title (*[[California v. Greenwood|Greenwood]]*).
@@ -63,14 +63,14 @@ The Supreme Court has not decided how abandonment applies to a cellphone, and th
 | Case | Holding | Opinion |
 |---|---|---|
 | *[[Hester v. United States]]*, 265 U.S. 57 (1924) | **Anchor (abandonment by flight).** A fleeing suspect who dropped containers abandoned any Fourth Amendment interest in them; examining the contents was "no seizure in the sense of the law." *(Primary home [[Open Fields]].)* | [opinion](https://www.courtlistener.com/opinion/100413/hester-v-united-states/) |
-| *[[Abel v. United States]]*, 362 U.S. 217 (1960) | **Anchor (checkout).** Items left in a hotel-room wastebasket after the guest paid up and **vacated** the room were abandoned (*bona vacantia*); the warrantless seizure was lawful. | [opinion](https://www.courtlistener.com/opinion/106021/abel-v-united-states/) |
-| *[[California v. Greenwood]]*, 486 U.S. 35 (1988) | **Anchor (curbside trash).** No reasonable expectation of privacy in garbage bags left for collection at the curb, outside the curtilage; the warrantless search and seizure of curbside trash does not violate the Fourth Amendment. | [opinion](https://www.courtlistener.com/opinion/112067/california-v-greenwood/) |
+| *[[Abel v. United States]]*, 362 U.S. 217 (1960) | **Anchor (checkout).** Items left in a hotel-room wastebasket after the guest paid up and **[[Reading and Citing Cases#vacated\|vacated]]** the room were abandoned (*bona vacantia*); the warrantless seizure was lawful. | [opinion](https://www.courtlistener.com/opinion/106021/abel-v-united-states/) |
+| *[[California v. Greenwood]]*, 486 U.S. 35 (1988) | **Anchor (curbside trash).** No [[Reasonable Expectation of Privacy\|reasonable expectation of privacy]] in garbage bags left for collection at the curb, outside the [[Curtilage\|curtilage]]; the warrantless search and seizure of curbside trash does not violate the Fourth Amendment. | [opinion](https://www.courtlistener.com/opinion/112067/california-v-greenwood/) |
 
 ## Related cases across doctrines
 
 | Case | Relevance here | Primary home | Opinion |
 |---|---|---|---|
-| *[[Bond v. United States]]*, 529 U.S. 334 (2000) | A bus passenger **retained** a reasonable expectation of privacy in a carry-on bag; an agent's exploratory squeezing was a search. A **bailment** is not abandonment. | [[Two Definitions of Search]] | [opinion](https://www.courtlistener.com/opinion/118354/bond-v-united-states/) |
+| *[[Bond v. United States]]*, 529 U.S. 334 (2000) | A bus passenger **retained** a [[Reasonable Expectation of Privacy\|reasonable expectation of privacy]] in a carry-on bag; an agent's exploratory squeezing was a search. A **bailment** is not abandonment. | [[Two Definitions of Search]] | [opinion](https://www.courtlistener.com/opinion/118354/bond-v-united-states/) |
 | *[[United States v. Matlock]]*, 415 U.S. 164 (1974) | The **consent** route, not abandonment: where a privacy interest was retained, a third party with common authority (mutual use plus joint access or control, not mere property interest) may validly consent. | [[Consent Searches]] | [opinion](https://www.courtlistener.com/opinion/108967/united-states-v-matlock/) |
 | *[[Rakas v. Illinois]]*, 439 U.S. 128 (1978) | Fourth Amendment rights are personal: a defendant who abandoned an item cannot vicariously assert another's expectation of privacy. Sets the defendant's burden (130–31 n.1). | [[Standing to Challenge a Search]] | [opinion](https://www.courtlistener.com/opinion/109953/rakas-v-illinois/) |
 | *[[Rawlings v. Kentucky]]*, 448 U.S. 98 (1980) | Owning the seized item is not enough; the defendant must have an expectation of privacy in the **place** searched. The property/privacy split that drives abandonment. | [[Standing to Challenge a Search]] | [opinion](https://www.courtlistener.com/opinion/110326/rawlings-v-kentucky/) |

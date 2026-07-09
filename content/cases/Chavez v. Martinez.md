@@ -48,7 +48,7 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-Officer Chavez questioned Martinez, who had been shot during a police encounter and was receiving emergency treatment, persistently and without Miranda warnings while Martinez screamed in pain and begged for treatment. Martinez was never charged with a crime and his statements were never used against him in any criminal proceeding. He sued under 42 U.S.C. § 1983, alleging the coercive interrogation violated his Fifth and Fourteenth Amendment rights; the Ninth Circuit denied Chavez qualified immunity.
+Officer Chavez questioned Martinez, who had been shot during a police encounter and was receiving emergency treatment, persistently and without [[Miranda and Custodial Interrogation|Miranda warnings]] while Martinez screamed in pain and begged for treatment. Martinez was never charged with a crime and his statements were never used against him in any criminal proceeding. He sued under 42 U.S.C. § 1983, alleging the coercive interrogation violated his Fifth and Fourteenth Amendment rights; the Ninth Circuit denied Chavez [[Qualified Immunity|qualified immunity]].
 
 ## Issue
 Whether coercive police questioning that yields no statement ever used against the suspect in a criminal case violates the Fifth Amendment's Self-Incrimination Clause (or substantive due process) so as to support a § 1983 damages action.
@@ -58,13 +58,13 @@ No completed Self-Incrimination Clause violation occurs from the questioning alo
 
 Statements compelled by interrogation may not be used at trial, "but it is not until their use in a criminal case that a violation of the Self-Incrimination Clause occurs" — the privilege is "a fundamental trial right." — *Id.* at 767 (plurality op.) (quoting *United States v. Verdugo-Urquidez*). ^pin-767
 
-Because the constitutional self-incrimination claim failed, the officer could not be liable under § 1983 on that theory. A separate question — whether the coercive interrogation independently violated **substantive due process** ("shocks the conscience") — was left open and remanded.
+Because the constitutional self-incrimination claim failed, the officer could not be liable under § 1983 on that theory. A separate question — whether the coercive interrogation independently violated **substantive due process** ("shocks the conscience") — was left open and [[Reading and Citing Cases#on-remand|remanded]].
 
 ## Application
-On Martinez's own facts the Self-Incrimination Clause was never triggered: he was never prosecuted and his answers were never admitted as testimony against him in a criminal case, so he "was never made to be a 'witness' against himself." Accordingly his § 1983 claim premised on a Fifth Amendment self-incrimination violation could not proceed, and Chavez was entitled to qualified immunity on that claim. The Court remanded Martinez's substantive-due-process claim for the lower courts to address in the first instance.
+On Martinez's own facts the Self-Incrimination Clause was never triggered: he was never prosecuted and his answers were never admitted as testimony against him in a criminal case, so he "was never made to be a 'witness' against himself." Accordingly his § 1983 claim premised on a Fifth Amendment self-incrimination violation could not proceed, and Chavez was entitled to [[Qualified Immunity|qualified immunity]] on that claim. The Court [[Reading and Citing Cases#on-remand|remanded]] Martinez's substantive-due-process claim for the lower courts to address in the first instance.
 
 ## Conclusion
-Coercive interrogation, standing alone and without use of the statements in a criminal case, is not a completed Fifth Amendment violation and cannot support a § 1983 self-incrimination claim. The judgment was reversed in part and the case remanded on the due-process theory. (Fractured Court; Justice Thomas announced the judgment, with Justice Souter (joined by Justice Breyer) supplying the controlling rationale and the remand.)
+Coercive interrogation, standing alone and without use of the statements in a criminal case, is not a completed Fifth Amendment violation and cannot support a § 1983 self-incrimination claim. The judgment was reversed in part and the case [[Reading and Citing Cases#on-remand|remanded]] on the due-process theory. (Fractured Court; Justice Thomas announced the judgment, with Justice Souter (joined by Justice Breyer) supplying the controlling rationale and the remand.)
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.

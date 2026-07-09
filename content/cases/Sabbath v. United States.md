@@ -49,7 +49,7 @@ lake:
 After customs agents arrested William Jones at the border with cocaine, Jones implicated "Johnny" (Sabbath) and agreed to a controlled delivery. Wired for sound, Jones entered Sabbath's apartment while agents waited outside. A few minutes later the agents went to the door, knocked, waited only a few seconds, and — receiving no response — opened the closed but unlocked door and entered with guns drawn, arresting Sabbath and finding cocaine under a cushion. The Ninth Circuit held that opening an unlocked door was not a "break[ing]" under 18 U.S.C. § 3109.
 
 ## Issue
-Does opening a closed but unlocked door to enter and arrest, without first announcing authority and purpose, constitute a "breaking" subject to the announcement requirement of § 3109 (codifying the common-law knock-and-announce rule)?
+Does opening a closed but unlocked door to enter and arrest, without first announcing authority and purpose, constitute a "breaking" subject to the announcement requirement of § 3109 (codifying the common-law [[Knock-and-Announce|knock-and-announce]] rule)?
 
 ## Rule
 Yes. "An unannounced intrusion into a dwelling — what § 3109 basically proscribes — is no less an unannounced intrusion whether officers break down a door, force open a chain lock on a partially open door, open a locked door by use of a passkey, or, as here, open a closed but unlocked door." — 391 U.S. at 590. ^pin-590

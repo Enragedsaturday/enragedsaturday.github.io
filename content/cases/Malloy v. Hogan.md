@@ -46,7 +46,7 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-Malloy, on probation for a state gambling misdemeanor, was called before a state inquiry into gambling. He refused to answer questions about his arrest and associates, invoking the privilege against self-incrimination. The Connecticut courts, relying on *Twining v. New Jersey* and *Adamson v. California*, held the privilege did not bind the State, found the questions non-incriminatory, and held him in contempt — imprisoning him until he answered. He sought habeas corpus.
+Malloy, on probation for a state gambling misdemeanor, was called before a state inquiry into gambling. He refused to answer questions about his arrest and associates, invoking the privilege against self-incrimination. The Connecticut courts, relying on *Twining v. New Jersey* and *Adamson v. California*, held the privilege did not bind the State, found the questions non-incriminatory, and held him in contempt — imprisoning him until he answered. He sought [[Common Legal Terms#habeas-corpus|habeas corpus]].
 
 ## Issue
 Whether the Fifth Amendment privilege against self-incrimination is safeguarded against state action by the Fourteenth Amendment, and by what standard.
@@ -62,7 +62,7 @@ The same standard governs in both forums: the Fourteenth Amendment does not appl
 Because the privilege binds the States by the same standard as the Federal Government, Connecticut could not imprison Malloy for contempt for declining to answer questions that might incriminate him, and its courts erred in measuring his claim against a less stringent, "watered-down" standard. Applying the federal test, his refusal was justified because truthful answers could have furnished a link in a chain of evidence connecting him to crime; the state inquiry could not compel him on pain of imprisonment.
 
 ## Conclusion
-The Fifth Amendment privilege is enforceable against the States through the Fourteenth Amendment by the same standards as in federal proceedings; the contempt judgment was reversed and the case remanded. *Twining* and *Adamson* were overruled to the extent they held otherwise.
+The Fifth Amendment privilege is enforceable against the States through the Fourteenth Amendment by the same standards as in federal proceedings; the contempt judgment was reversed and the case [[Reading and Citing Cases#on-remand|remanded]]. *Twining* and *Adamson* were overruled to the extent they held otherwise.
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.

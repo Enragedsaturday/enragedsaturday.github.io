@@ -46,10 +46,10 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-Simmons, Andrews, and Garrett were tried for the armed robbery of a federally insured Chicago savings and loan. Two issues bear on this wiki. First, the FBI showed bank-employee eyewitnesses group photographs the day after the robbery, and Simmons argued the photographic procedure was so suggestive that it tainted the in-court identifications. Second, Garrett, to establish standing to suppress a suitcase of incriminating evidence, testified at a pretrial suppression hearing that the suitcase was his; the Government used that admission against him at trial.
+Simmons, Andrews, and Garrett were tried for the armed robbery of a federally insured Chicago savings and loan. Two issues bear on this wiki. First, the FBI showed bank-employee eyewitnesses group photographs the day after the robbery, and Simmons argued the photographic procedure was so suggestive that it tainted the in-court identifications. Second, Garrett, to establish standing to suppress a suitcase of incriminating evidence, testified at a pretrial [[Common Legal Terms#suppression-hearing|suppression hearing]] that the suitcase was his; the Government used that admission against him at trial.
 
 ## Issue
-(1) When does a pretrial photographic identification procedure deny due process; and (2) whether testimony a defendant gives at a suppression hearing to establish Fourth Amendment standing may be admitted against him at trial on the issue of guilt.
+(1) When does a pretrial photographic identification procedure deny due process; and (2) whether testimony a defendant gives at a [[Common Legal Terms#suppression-hearing|suppression hearing]] to establish [[Standing to Challenge a Search|Fourth Amendment standing]] may be admitted against him at trial on the issue of guilt.
 
 ## Rule
 Two holdings. On identification: "convictions based on eyewitness identification at trial following a pretrial identification by photograph will be set aside on that ground only if the photographic identification procedure was so impermissibly suggestive as to give rise to a very substantial likelihood of irreparable misidentification." — 390 U.S. at 384. ^pin-384

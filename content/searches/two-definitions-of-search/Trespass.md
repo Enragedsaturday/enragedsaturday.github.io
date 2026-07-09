@@ -50,7 +50,7 @@ related:
 **Apply it.**
 1. **Ask the property question first.** Did officers physically enter or occupy a person, house, paper, or effect? If yes, you may have a search without ever reaching privacy (*[[United States v. Jones|Jones]]*).
 2. **Tie the intrusion to information-gathering.** The physical contact must be aimed at learning something; a trespass with no investigative purpose is not this kind of search (*[[United States v. Jones|Jones]]*).
-3. **Check the curtilage license.** An approach a visitor could make is permitted; exceeding it, as by deploying a dog to investigate the porch, is trespassory (*[[Florida v. Jardines|Jardines]]*).
+3. **Check the [[Curtilage|curtilage]] license.** An approach a visitor could make is permitted; exceeding it, as by deploying a dog to investigate the porch, is trespassory (*[[Florida v. Jardines|Jardines]]*).
 4. **Separate search from seizure.** If the conduct interfered with possession rather than gathered information, analyze it as a seizure of property (*[[Soldal v. Cook County|Soldal]]*).
 
 **Common pitfalls.**
@@ -65,7 +65,7 @@ related:
 |---|---|---|
 | *[[United States v. Jones]]*, 565 U.S. 400 (2012) | **Anchor.** Installing a GPS tracker on a vehicle and monitoring it is a search under the revived trespass theory: a physical intrusion on an "effect" to obtain information; the *Katz* test is "added to, not substituted for" the trespassory test. | [opinion](https://www.courtlistener.com/opinion/7350871/united-states-v-jones/) |
 | *[[Silverman v. United States]]*, 365 U.S. 505 (1961) | A "spike mike" physically penetrating the wall into the house is a search: an unauthorized physical intrusion into a protected area, not gauged by local-law "technical trespass" niceties. | [opinion](https://www.courtlistener.com/opinion/106187/silverman-v-united-states/) |
-| *[[Florida v. Jardines]]*, 569 U.S. 1 (2013) | Bringing a drug dog onto the home's **curtilage** (the front porch) to investigate exceeded the visitor's implied license: a trespassory search. | [opinion](https://www.courtlistener.com/opinion/856347/florida-v-jardines/) |
+| *[[Florida v. Jardines]]*, 569 U.S. 1 (2013) | Bringing a drug dog onto the home's **[[Curtilage\|curtilage]]** (the front porch) to investigate exceeded the visitor's implied license: a trespassory search. | [opinion](https://www.courtlistener.com/opinion/856347/florida-v-jardines/) |
 | *[[Grady v. North Carolina]]*, 575 U.S. 306 (2015) | **Anchor.** Attaching a satellite-monitoring device to a person's body to track his movements is a search; the civil character of the program does not remove it from the Fourth Amendment. Reasonableness left for remand. | [opinion](https://www.courtlistener.com/opinion/2789928/grady-v-north-carolina/) |
 | *[[Olmstead v. United States]]*, 277 U.S. 438 (1928) | The origin point: wiretapping with **no physical entry** was **not** a search under a property-only framing. Overruled on privacy by *Katz*; the property instinct was later revived by *Jones*. | [opinion](https://www.courtlistener.com/opinion/101320/olmstead-v-united-states/) |
 | *[[Gouled v. United States]]*, 255 U.S. 298 (1921) | Entry obtained by **stealth, ruse, or social pretext** can still render the ensuing search a Fourth Amendment violation. (Its separate "mere-evidence" rule was overruled by *Warden v. Hayden*; the ruse-entry holding survives.) | [opinion](https://www.courtlistener.com/opinion/99745/gouled-v-united-states/) |

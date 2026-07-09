@@ -62,7 +62,7 @@ On these facts the prosecution's case "resemble[d] a house of cards, built on th
 The withheld evidence went directly to the credibility of the only witnesses tying Wearry to the murder: it would have shown Scott coached a false story and had a motive to lie, that the role he assigned a confederate may have been physically impossible, and that Brown was angling for a sentence reduction. The state court compounded its error by weighing each item separately. Considered cumulatively, that evidence was enough to undermine confidence in the verdict, establishing a *Brady* violation.
 
 ## Conclusion
-The suppressed impeachment evidence was material; its cumulative weight undermined confidence in the verdict. The Court reversed and remanded for a new trial without reaching Wearry's ineffective-assistance claim.
+The suppressed impeachment evidence was material; its cumulative weight undermined confidence in the verdict. The Court reversed and [[Reading and Citing Cases#on-remand|remanded]] for a new trial without reaching Wearry's ineffective-assistance claim.
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS** (per curiam).

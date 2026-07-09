@@ -40,16 +40,16 @@ related:
 **The sensor line: technology that pierces the home is different.** Aerial and enhanced surveillance share one boundary, and *[[Kyllo v. United States|Kyllo]]* draws it. Aiming a thermal imager at a house to measure heat radiating from its walls was a search: "obtaining by sense-enhancing technology any information regarding the interior of the home that could not otherwise have been obtained without physical intrusion into a constitutionally protected area . . . constitutes a search — at least where (as here) the technology in question is not in general public use." *[[Kyllo v. United States#^pin-34|Kyllo]]*, 533 U.S. at 34. The Court refused to sort the data by how "intimate" it was, because "[i]n the home, . . . all details are intimate details." *[[Kyllo v. United States|Id.]]*, 533 U.S. at 37. Two variables therefore matter: whether the surveillance exposes the **interior of the home** (as opposed to exposed exterior or curtilage seen from the air), and whether the device is **in general public use**.
 
 **Apply it.**
-1. **Fix what was observed and from where.** Naked-eye observation of exposed ground or curtilage from an aircraft in public navigable airspace is not a search (*[[California v. Ciraolo|Ciraolo]]*, *[[Florida v. Riley|Riley]]*); the same observation of a commercial site's open areas is not a search (*[[Dow Chemical Co. v. United States|Dow Chemical]]*).
-2. **Test the vantage, not just the altitude.** Ask whether the public in fact travels where the officer was, routinely enough that the owner had no reasonable expectation of privacy from it; a lawful FAA altitude is evidence of that, not the whole answer (*[[Florida v. Riley|Riley]]*, O'Connor, J., concurring).
+1. **Fix what was observed and from where.** Naked-eye observation of exposed ground or [[Curtilage|curtilage]] from an aircraft in public navigable airspace is not a search (*[[California v. Ciraolo|Ciraolo]]*, *[[Florida v. Riley|Riley]]*); the same observation of a commercial site's open areas is not a search (*[[Dow Chemical Co. v. United States|Dow Chemical]]*).
+2. **Test the vantage, not just the altitude.** Ask whether the public in fact travels where the officer was, routinely enough that the owner had no [[Reasonable Expectation of Privacy|reasonable expectation of privacy]] from it; a lawful FAA altitude is evidence of that, not the whole answer (*[[Florida v. Riley|Riley]]*, O'Connor, J., concurring).
 3. **Watch for the sensor boundary.** If the surveillance uses a device not in general public use to reveal the interior of a home, it is a search and needs a warrant (*[[Kyllo v. United States|Kyllo]]*); a plain camera recording what the naked eye could lawfully see is not.
-4. **Keep entry separate from observation.** A lawful aerial vantage authorizes looking, never physical entry onto the curtilage ([[Curtilage]]) or a trespassory placement of equipment on protected space.
+4. **Keep entry separate from observation.** A lawful aerial vantage authorizes looking, never physical entry onto the [[Curtilage|curtilage]] ([[Curtilage]]) or a trespassory placement of equipment on protected space.
 
 **Common pitfalls.**
 - **Reading the aerial cases as "the sky is a free pass."** *Riley* was a plurality; its fifth vote (O'Connor, J.) turned on whether public flight at that altitude is genuinely routine, and the plurality reserved cases of intimate detail or physical disturbance.
-- **Applying *Dow Chemical* to a home.** Its reduced protection is for the **exposed** areas of a commercial or industrial site, not the curtilage or interior of a dwelling.
+- **Applying *Dow Chemical* to a home.** Its reduced protection is for the **exposed** areas of a commercial or industrial site, not the [[Curtilage|curtilage]] or interior of a dwelling.
 - **Assuming any camera or sensor is fine because the vantage is lawful.** *Kyllo* makes sense-enhancing technology that pierces the home a search regardless of vantage; the device's general public use and what it exposes are the questions.
-- **Confusing observation with intrusion.** Looking from lawful airspace is not a search; physically entering the curtilage, or installing equipment on protected ground, is a different inquiry ([[Curtilage]]; [[Plain View Doctrine]]).
+- **Confusing observation with intrusion.** Looking from lawful airspace is not a search; physically entering the [[Curtilage|curtilage]], or installing equipment on protected ground, is a different inquiry ([[Curtilage]]; [[Plain View Doctrine]]).
 
 ## Lower-court developments
 
@@ -62,9 +62,9 @@ The Supreme Court's aerial cases predate today's persistent and automated survei
 
 | Case | Holding | Opinion |
 |---|---|---|
-| *[[California v. Ciraolo]]*, 476 U.S. 207 (1986) | **Anchor.** Warrantless naked-eye observation of a fenced backyard within the curtilage, from a private plane at 1,000 feet in public navigable airspace, is not a search; the home's protection does not require officers to shield their eyes from public vantages. | [opinion](https://www.courtlistener.com/opinion/111666/california-v-ciraolo/) |
+| *[[California v. Ciraolo]]*, 476 U.S. 207 (1986) | **Anchor.** Warrantless naked-eye observation of a fenced backyard within the [[Curtilage\|curtilage]], from a private plane at 1,000 feet in public navigable airspace, is not a search; the home's protection does not require officers to shield their eyes from public vantages. | [opinion](https://www.courtlistener.com/opinion/111666/california-v-ciraolo/) |
 | *[[Florida v. Riley]]*, 488 U.S. 445 (1989) | **Anchor.** Naked-eye observation of a greenhouse in the curtilage from a helicopter at 400 feet is not a search (plurality), because the public may lawfully fly there; reserved where intimate detail is seen or the flight causes wind, dust, or injury. | [opinion](https://www.courtlistener.com/opinion/112175/florida-v-riley/) |
-| *[[Dow Chemical Co. v. United States]]*, 476 U.S. 227 (1986) | **Anchor.** Precision aerial photography of the open areas of a 2,000-acre industrial complex from navigable airspace is not a search; those exposed areas are more like an open field than the curtilage of a home. | [opinion](https://www.courtlistener.com/opinion/111667/dow-chemical-co-v-united-states-ex-rel-administrator/) |
+| *[[Dow Chemical Co. v. United States]]*, 476 U.S. 227 (1986) | **Anchor.** Precision aerial photography of the open areas of a 2,000-acre industrial complex from navigable airspace is not a search; those exposed areas are more like an open field than the [[Curtilage\|curtilage]] of a home. | [opinion](https://www.courtlistener.com/opinion/111667/dow-chemical-co-v-united-states-ex-rel-administrator/) |
 | *[[Kyllo v. United States]]*, 533 U.S. 27 (2001) | **The sensor limit.** Using a thermal imager (a device not in general public use) to obtain information about the interior of a home that could not be learned without physical intrusion is a search, presumptively unreasonable without a warrant. *(Primary home [[Reasonable Expectation of Privacy]].)* | [opinion](https://www.courtlistener.com/opinion/118443/kyllo-v-united-states/) |
 
 ## Related cases across doctrines
@@ -72,7 +72,7 @@ The Supreme Court's aerial cases predate today's persistent and automated survei
 | Case | Relevance here | Primary home | Opinion |
 |---|---|---|---|
 | *[[United States v. Tuggle]]*, 4 F.4th 505 (7th Cir. 2021) | Long-term fixed pole-camera surveillance of a home's exterior held not a search under current doctrine; the persistent-surveillance frontier for enhanced observation. | [[Plain View Doctrine]] | [opinion](https://www.courtlistener.com/opinion/4899735/united-states-v-travis-tuggle/) |
-| *[[Florida v. Jardines]]*, 569 U.S. 1 (2013) | The trespass counterpoint: looking at the curtilage from lawful airspace is not a search, but physically entering it to gather evidence (a drug dog at the door) is. | [[Knock and Talk]] | [opinion](https://www.courtlistener.com/opinion/2094497/florida-v-jardines/) |
+| *[[Florida v. Jardines]]*, 569 U.S. 1 (2013) | The trespass counterpoint: looking at the [[Curtilage\|curtilage]] from lawful airspace is not a search, but physically entering it to gather evidence (a drug dog at the door) is. | [[Knock and Talk]] | [opinion](https://www.courtlistener.com/opinion/2094497/florida-v-jardines/) |
 
 ## Visual
 

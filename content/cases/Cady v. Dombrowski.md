@@ -60,7 +60,7 @@ On these facts the caretaking search was reasonable: "Where, as here, the trunk 
 The officer reasonably believed the towed car's trunk held Dombrowski's service revolver, and the disabled vehicle, left at a private lot, was vulnerable to vandals who might take the gun. Searching the trunk to secure the weapon was a reasonable caretaking measure, not a criminal investigation, so the evidence found was admissible.
 
 ## Conclusion
-The warrantless caretaking search of the vehicle was reasonable; the judgment granting habeas relief was reversed.
+The warrantless caretaking search of the vehicle was reasonable; the judgment granting [[Common Legal Terms#habeas-corpus|habeas]] relief was reversed.
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.

@@ -44,7 +44,7 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-Phoenix police stopped Evans for a traffic violation; the patrol-car computer showed an outstanding misdemeanor arrest warrant. Officers arrested him and, in a search incident to arrest, found marijuana. In fact the warrant had been quashed weeks earlier, but a court clerk's error left it in the computer system. Evans moved to suppress the marijuana as the fruit of an unlawful arrest.
+Phoenix police stopped Evans for a traffic violation; the patrol-car computer showed an outstanding misdemeanor arrest warrant. Officers arrested him and, in a [[Search Incident to Arrest|search incident to arrest]], found marijuana. In fact the warrant had been quashed weeks earlier, but a court clerk's error left it in the computer system. Evans moved to suppress the marijuana as the fruit of an unlawful arrest.
 
 ## Issue
 Whether the exclusionary rule requires suppression of evidence seized incident to an arrest that resulted from inaccurate computer records attributable to the clerical error of a *court* employee rather than the police.
@@ -58,7 +58,7 @@ Court clerks "are not adjuncts to the law enforcement team engaged in the often 
 On these facts the inaccurate warrant record resulted from a court clerk's failure to remove a quashed warrant, and the arresting officer reasonably relied on the police computer. Because the error was the court's, not the arresting officer's, and exclusion could not be expected to deter such court-clerk mistakes, the deterrence purpose of the exclusionary rule did not justify suppressing the evidence here.
 
 ## Conclusion
-The exclusionary rule did not require suppression; the judgment of the Arizona Supreme Court was reversed and the case remanded.
+The exclusionary rule did not require suppression; the judgment of the Arizona Supreme Court was reversed and the case [[Reading and Citing Cases#on-remand|remanded]].
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.

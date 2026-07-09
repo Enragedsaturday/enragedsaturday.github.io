@@ -33,7 +33,7 @@ Open the most recent and most authoritative citing cases and read *how* they tre
 - **distinguished** it (limited to its facts, may not reach your situation),
 - **criticized** or **questioned** it (weakening, read closely),
 - **limited** or **narrowed** it (the rule is smaller than it looks), or
-- **overruled**, **abrogated**, or **vacated** it (it's no longer good law, history only).
+- **overruled**, **abrogated**, or **[[Reading and Citing Cases#vacated|vacated]]** it (it's no longer good law, history only).
 
 A **`vacated`** or **overruled** decision has been set aside, so do not rely on it (see [[Reading and Citing Cases#vacated]]). A narrowed or reversed case is the classic trap: the language still reads well, but the holding no longer stands where you'd use it. Note the **date** of the latest treatment; a case is only "good as of" the last time you checked it.
 

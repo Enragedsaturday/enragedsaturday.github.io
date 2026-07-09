@@ -101,7 +101,7 @@ These are treated in full elsewhere but bear directly on border searches, framed
 |---|---|---|---|
 | *[[Riley v. California]]*, 573 U.S. 373 (2014) | ***Analytic engine.*** A phone's vast digital contents are categorically different ("get a warrant"), the premise every circuit reasons from on device searches at the border. | [[SIA Cell Phones]] | [opinion](https://www.courtlistener.com/opinion/2680439/riley-v-california/) |
 | *[[City of Indianapolis v. Edmond]]*, 531 U.S. 32 (2000) | ***Checkpoint limit.*** A fixed checkpoint whose primary purpose is ordinary crime control is unconstitutional; interior crime-control stops cannot ride the border/checkpoint rationale. | [[Checkpoints and Roadblocks]] | [opinion](https://www.courtlistener.com/opinion/118391/city-of-indianapolis-v-edmond/) |
-| *[[Ornelas v. United States]]*, 517 U.S. 690 (1996) | ***Standard of review.*** Reasonable suspicion and probable cause are reviewed de novo, historical facts for clear error, the appellate posture for a contested border search. | [[Probable Cause]] | [opinion](https://www.courtlistener.com/opinion/118030/ornelas-v-united-states/) |
+| *[[Ornelas v. United States]]*, 517 U.S. 690 (1996) | ***Standard of review.*** Reasonable suspicion and probable cause are reviewed [[Common Legal Terms#de-novo\|de novo]], historical facts for [[Common Legal Terms#clear-error\|clear error]], the appellate posture for a contested border search. | [[Probable Cause]] | [opinion](https://www.courtlistener.com/opinion/118030/ornelas-v-united-states/) |
 
 ## Visual
 

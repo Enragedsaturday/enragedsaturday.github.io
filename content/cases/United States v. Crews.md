@@ -69,7 +69,7 @@ Because the in-court identification was not the product of the Fourth Amendment 
 - No negative treatment. *Crews* applies the [[Wong Sun v. United States]] / [[Silverthorne Lumber Co. v. United States]] independent-source principle to identification evidence, and dovetails with the [[United States v. Wade]] / [[Stovall v. Denno]] independent-source test for an in-court identification following a tainted pretrial procedure.
 
 ## Appears on
-- [[The Exclusionary Rule]] — *Key — Progeny (independent source)*
+- [[The Exclusionary Rule]] — *Key — Progeny ([[Inevitable Discovery and Independent Source|independent source]])*
 - [[Eyewitness Identification]] — *Related (cross-doctrine)*
 
 ## Sources

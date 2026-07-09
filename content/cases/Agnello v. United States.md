@@ -47,7 +47,7 @@ lake:
 Federal revenue agents watched a cocaine sale at Alba's house and, when it was consummated, rushed in and arrested the defendants there, seizing cocaine on the table and on Frank Agnello's person. While some agents took the defendants to the station, others went — without a search warrant — to Frank Agnello's home several blocks away, searched his bedroom, and found a can of cocaine. That can was ultimately admitted against him.
 
 ## Issue
-Whether the warrantless search of the arrestee's home, several blocks from the place of arrest and after he was in custody elsewhere, can be justified as a search incident to arrest.
+Whether the warrantless search of the arrestee's home, several blocks from the place of arrest and after he was in custody elsewhere, can be justified as a [[Search Incident to Arrest|search incident to arrest]].
 
 ## Rule
 A search incident to arrest is real but bounded to the arrest scene: "The right without a search warrant contemporaneously to search persons lawfully arrested while committing crime and to search the place where the arrest is made in order to find and seize things connected with the crime as its fruits or as the means by which it was committed, as well as weapons and other things to effect an escape from custody, is not to be doubted." — 269 U.S. at 30. ^pin-30
@@ -58,7 +58,7 @@ But it does not reach a separate home: "But the right does not extend to other p
 The arrests and the searches and seizures at Alba's house — where the arrests occurred — were not questioned. But Agnello's house was blocks away; by the time agents entered and searched it without a warrant, the sale was over and the defendants were already in custody at or en route to the station. Nothing about the arrest justified that separate, later search, so the can of cocaine found in his bedroom was the product of an unreasonable warrantless search.
 
 ## Conclusion
-Reversed. The warrantless search of Agnello's distant home could not be sustained as incident to the arrest; the evidence should have been excluded. *Agnello* fixes an early geographic and temporal limit on search incident to arrest.
+Reversed. The warrantless search of Agnello's distant home could not be sustained as incident to the arrest; the evidence should have been excluded. *Agnello* fixes an early geographic and temporal limit on [[Search Incident to Arrest|search incident to arrest]].
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.

@@ -60,7 +60,7 @@ Whether the compelled, warrantless withdrawal and chemical analysis of a DUI arr
 Schmerber's blood-alcohol level was naturally falling as his body metabolized the alcohol, and the officer — who had probable cause to believe he had been driving while intoxicated — had spent the available time bringing him to the hospital and investigating the accident, leaving no opportunity to obtain a warrant. On those special facts the warrantless extraction of blood was a reasonable response to the threatened loss of evidence, and a blood test performed by a physician in a hospital was a reasonable means of obtaining it.
 
 ## Conclusion
-Neither the Fifth nor the Fourth Amendment was violated; the conviction was affirmed. *Schmerber* anchors the warrantless-blood-draw/bodily-intrusion line later refined by [[Missouri v. McNeely]] (no per se DUI exigency) and [[Birchfield v. North Dakota]] (breath, not blood, as a search incident to arrest).
+Neither the Fifth nor the Fourth Amendment was violated; the conviction was affirmed. *Schmerber* anchors the warrantless-blood-draw/bodily-intrusion line later refined by [[Missouri v. McNeely]] (no [[Common Legal Terms#per-se|per se]] DUI [[Exigent Circumstances and Hot Pursuit|exigency]]) and [[Birchfield v. North Dakota]] (breath, not blood, as a [[Search Incident to Arrest|search incident to arrest]]).
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.

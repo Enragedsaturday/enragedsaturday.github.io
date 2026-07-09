@@ -58,7 +58,7 @@ The Court therefore held: "We now hold the protection of the individual under th
 Each officer was confronted with the choice to answer the investigators' questions or lose his job under the forfeiture statute. Faced with self-incrimination on one side and loss of livelihood on the other, the officers' answers were the product of coercion rather than free will, much like the pressures condemned in *Miranda*. Because the convictions rested on these compelled statements, they could not stand.
 
 ## Conclusion
-The statements were coerced and inadmissible in the criminal prosecutions; the convictions were reversed. *Garrity* establishes that a public employer may not compel an employee, on pain of job loss, to make statements that are then used against him in a criminal case — the foundation of the "Garrity rule" and Garrity warnings.
+The statements were coerced and inadmissible in the criminal prosecutions; the convictions were reversed. *Garrity* establishes that a public employer may not compel an employee, on pain of job loss, to make statements that are then used against him in a criminal case — the foundation of the "Garrity rule" and [[Public-Employee Compelled Statements (Garrity)|Garrity warnings]].
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.

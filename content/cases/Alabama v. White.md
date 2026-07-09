@@ -60,7 +60,7 @@ A bare anonymous tip is normally insufficient, but police corroboration of the t
 The anonymous tip here, standing alone, gave no basis to think the caller was honest or well informed. But the police corroborated significant details — most importantly the caller's accurate prediction of White's *future* conduct (the time she left, the described car, the route toward Dobey's Motel) — which showed the tipster had inside knowledge and made it reasonable to credit the tip's assertion about criminal activity. On the totality of these facts, the corroborated tip carried enough indicia of reliability to justify the stop, "[a]lthough it is a close case."
 
 ## Conclusion
-The investigatory stop was supported by reasonable suspicion; the Alabama Court of Criminal Appeals' suppression judgment was reversed and remanded.
+The investigatory stop was supported by reasonable suspicion; the Alabama Court of Criminal Appeals' suppression judgment was reversed and [[Reading and Citing Cases#on-remand|remanded]].
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.

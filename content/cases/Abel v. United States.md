@@ -44,10 +44,10 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-INS agents arrested the petitioner — a Soviet intelligence officer using the alias "Martin Collins" — at a New York City hotel on an administrative deportation warrant. Immediately after the petitioner paid his bill and checked out, an FBI agent searched the vacated room with the hotel management's consent and recovered, from the room's wastepaper basket, a hollowed-out pencil and a block of wood containing a "cipher pad." These and other items were introduced against him in an espionage prosecution.
+INS agents arrested the petitioner — a Soviet intelligence officer using the alias "Martin Collins" — at a New York City hotel on an administrative deportation warrant. Immediately after the petitioner paid his bill and checked out, an FBI agent searched the [[Reading and Citing Cases#vacated|vacated]] room with the hotel management's consent and recovered, from the room's wastepaper basket, a hollowed-out pencil and a block of wood containing a "cipher pad." These and other items were introduced against him in an espionage prosecution.
 
 ## Issue
-Whether the warrantless search of a hotel room — and seizure of items the guest had discarded in the wastebasket — after the guest paid his bill and vacated the room violated the Fourth Amendment.
+Whether the warrantless search of a hotel room — and seizure of items the guest had discarded in the wastebasket — after the guest paid his bill and [[Reading and Citing Cases#vacated|vacated]] the room violated the Fourth Amendment.
 
 ## Rule
 No. Once the guest vacated the room, the hotel regained the exclusive right to possession and could consent to the search; and the items left in the wastebasket were abandoned, so their warrantless seizure was lawful. The search "was entirely lawful, although undertaken without a warrant," because "at the time of the search petitioner had vacated the room. The hotel then had the exclusive right to its possession, and the hotel management freely gave its consent that the search be made." — 362 U.S. at 241. ^pin-241
@@ -58,7 +58,7 @@ As to the discarded items: "So far as the record shows, petitioner had abandoned
 On these facts the FBI agent did not enter until after the petitioner had paid his bill and given up the room, so the hotel — not the petitioner — controlled the space and validly consented to the entry; and the pencil and cipher-pad block had been thrown into the wastebasket as the petitioner packed to leave, marking them as abandoned. Seizing the abandoned articles without a warrant was therefore lawful, and their use in evidence did not offend the Fourth Amendment.
 
 ## Conclusion
-The warrantless search of the vacated room and seizure of the abandoned wastebasket items were lawful; the evidence was admissible and the conviction was affirmed.
+The warrantless search of the [[Reading and Citing Cases#vacated|vacated]] room and seizure of the abandoned wastebasket items were lawful; the evidence was admissible and the conviction was affirmed.
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.

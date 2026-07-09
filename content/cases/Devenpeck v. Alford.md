@@ -57,10 +57,10 @@ No; the inquiry is objective and offense-agnostic. "Our cases make clear that an
 An arrest is lawful so long as the facts known to the officer establish probable cause for some criminal offense, whether or not that offense is the one the officer cited or one "closely related" to it.
 
 ## Application
-Whether the privacy-act offense the officers named was valid or "closely related" to anything did not control; the question was whether the facts they knew amounted to probable cause for any offense. Because the "closely related offense" rule has no basis in precedent or reason, the Ninth Circuit erred in applying it, and the lawfulness of Alford's arrest had to be assessed under the objective probable-cause standard on remand.
+Whether the privacy-act offense the officers named was valid or "closely related" to anything did not control; the question was whether the facts they knew amounted to probable cause for any offense. Because the "closely related offense" rule has no basis in precedent or reason, the Ninth Circuit erred in applying it, and the lawfulness of Alford's arrest had to be assessed under the objective probable-cause standard [[Reading and Citing Cases#on-remand|on remand]].
 
 ## Conclusion
-The "closely related offense" requirement was rejected; the judgment was reversed and remanded for assessment of probable cause under the objective standard.
+The "closely related offense" requirement was rejected; the judgment was reversed and [[Reading and Citing Cases#on-remand|remanded]] for assessment of probable cause under the objective standard.
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.

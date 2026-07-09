@@ -64,7 +64,7 @@ The search violated the Fourth Amendment; the seized materials should have been 
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.
-- *Lo-Ji* remains a leading illustration of two failures: the loss of the **neutral and detached magistrate** (cf. [[Coolidge v. New Hampshire]]) and the **general-warrant / particularity** defect (cf. [[Groh v. Ramirez]]). On the exclusionary-rule side it marks a boundary of the [[United States v. Leon]] good-faith exception — good faith fails where the issuing magistrate has wholly abandoned the judicial role.
+- *Lo-Ji* remains a leading illustration of two failures: the loss of the **neutral and detached magistrate** (cf. [[Coolidge v. New Hampshire]]) and the **general-warrant / [[Particularity|particularity]]** defect (cf. [[Groh v. Ramirez]]). On the exclusionary-rule side it marks a boundary of the [[United States v. Leon]] [[The Good-Faith Exception|good-faith exception]] — good faith fails where the issuing magistrate has wholly abandoned the judicial role.
 
 ## Appears on
 - [[The Neutral and Detached Magistrate]] — *Key — Progeny / Refinement*

@@ -58,7 +58,7 @@ The Court grounded the defense in statutory construction: Congress is not presum
 The agent exploited a shared-veteran rapport and persistent entreaties to overcome Sorrells's repeated refusals; because the evidence permitted a finding that the criminal design originated with the government and that Sorrells was not otherwise disposed to the offense, the entrapment issue should have gone to the jury, and the Court reversed.
 
 ## Conclusion
-Entrapment is a valid defense resting on the inference that Congress did not intend to punish persons lured into crime by its own officers; the conviction was reversed and remanded for the jury to decide entrapment.
+Entrapment is a valid defense resting on the inference that Congress did not intend to punish persons lured into crime by its own officers; the conviction was reversed and [[Reading and Citing Cases#on-remand|remanded]] for the jury to decide entrapment.
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.

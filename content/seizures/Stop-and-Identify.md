@@ -66,7 +66,7 @@ These are treated in full on their own pages but frame the stop-and-identify pow
 | Case | Relevance here | Primary home | Opinion |
 |---|---|---|---|
 | *[[Brown v. Texas]]*, 443 U.S. 47 (1979) | ***No suspicion, no demand.*** Police may not stop a person and demand identification without reasonable suspicion; the stop-and-identify power presupposes a lawful stop. | [[Terry Stops and Reasonable Suspicion]] | [opinion](https://www.courtlistener.com/opinion/110128/brown-v-texas/) |
-| *[[Berkemer v. McCarty]]*, 468 U.S. 420 (1984) | ***May ask.*** An officer may ask a lawfully stopped suspect to identify himself; a *Terry* stop is ordinarily non-custodial, the dicta *Hiibel* later built on. | [[Miranda and Custodial Interrogation]] | [opinion](https://www.courtlistener.com/opinion/111249/berkemer-v-mccarty/) |
+| *[[Berkemer v. McCarty]]*, 468 U.S. 420 (1984) | ***May ask.*** An officer may ask a lawfully stopped suspect to identify himself; a *Terry* stop is ordinarily non-custodial, the [[Common Legal Terms#dicta\|dicta]] *Hiibel* later built on. | [[Miranda and Custodial Interrogation]] | [opinion](https://www.courtlistener.com/opinion/111249/berkemer-v-mccarty/) |
 
 ## Sources
 

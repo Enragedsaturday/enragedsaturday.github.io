@@ -60,11 +60,11 @@ A defendant must, however, have the opportunity to contest that evidence.
 Aldo had completed two recent narcotics-detection courses and maintained his proficiency through weekly training, and Harris did not contest that training in the trial court. On the totality of those circumstances, Aldo's alert gave the deputy probable cause to search the truck; the Florida Supreme Court's inflexible evidentiary checklist was the wrong standard.
 
 ## Conclusion
-A trained dog's alert can furnish probable cause under the totality of the circumstances; the Florida Supreme Court's rigid evidentiary rule was reversed.
+A trained dog's alert can furnish probable cause under the [[Common Legal Terms#totality-of-the-circumstances|totality of the circumstances]]; the Florida Supreme Court's rigid evidentiary rule was reversed.
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.
-- No negative treatment. *Harris* governs the reliability side of a dog sniff; the separate question whether bringing a drug dog onto a home's curtilage is itself a search is answered in [[Florida v. Jardines]].
+- No negative treatment. *Harris* governs the reliability side of a dog sniff; the separate question whether bringing a drug dog onto a home's [[Curtilage|curtilage]] is itself a search is answered in [[Florida v. Jardines]].
 
 ## Appears on
 - [[Probable Cause]] — *Key — Progeny / Refinement*

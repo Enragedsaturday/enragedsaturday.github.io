@@ -47,7 +47,7 @@ lake:
 An anonymous caller told Miami-Dade police that a young Black male standing at a particular bus stop and wearing a plaid shirt was carrying a gun. Officers went to the bus stop, saw J.L. (a juvenile) matching the description, frisked him on no other basis, and found a firearm. The tip supplied no predictive information, so the officers had no way to test the caller's knowledge or credibility before the frisk.
 
 ## Issue
-Whether an anonymous tip that a person is carrying a gun, without more, furnishes the reasonable suspicion needed to justify a Terry stop and frisk.
+Whether an anonymous tip that a person is carrying a gun, without more, furnishes the reasonable suspicion needed to justify a [[Terry Stops and Reasonable Suspicion|Terry stop]] and frisk.
 
 ## Rule
 No. A bare anonymous tip that merely identifies a person is not enough; the tip must be reliable about the alleged wrongdoing, not just about who the suspect is. "The reasonable suspicion here at issue requires that a tip be reliable in its assertion of illegality, not just in its tendency to identify a determinate person." — 529 U.S. at 272. ^pin-272

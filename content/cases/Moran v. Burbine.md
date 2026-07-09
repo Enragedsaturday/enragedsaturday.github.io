@@ -58,7 +58,7 @@ Information withheld from the suspect cannot bear on that inquiry: "Events occur
 Burbine's waiver was voluntary — there was no coercion — and knowing and intelligent, because he was repeatedly advised of and understood his rights. The police failure to tell him of the attorney's call, and any deception of the attorney, occurred outside his presence and were unknown to him, so they could not undermine his comprehension or the validity of his waiver. The Court also held that the Sixth Amendment had not attached because adversary judicial proceedings had not begun, and the police conduct did not violate due process on these facts. The confession was admissible.
 
 ## Conclusion
-The waiver was valid and the confession admissible; the First Circuit's grant of habeas relief was reversed.
+The waiver was valid and the confession admissible; the First Circuit's grant of [[Common Legal Terms#habeas-corpus|habeas]] relief was reversed.
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.

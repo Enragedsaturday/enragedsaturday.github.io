@@ -58,7 +58,7 @@ lake:
 Linda Agurs was convicted of second-degree murder for stabbing James Sewell during an altercation in a hotel room; her defense was self-defense. After trial, defense counsel learned that Sewell had a prior criminal record — including convictions for assault and carrying a deadly weapon — which the prosecutor had not disclosed and which counsel argued would have supported the self-defense theory. The defense had made no specific pretrial request for the victim's record. The Court of Appeals ordered a new trial; the Government sought review.
 
 ## Issue
-Whether, and under what standard of materiality, the prosecution's failure to disclose exculpatory evidence violates due process when the defense made no request (or only a general request) for it.
+Whether, and under what standard of materiality, the prosecution's failure to disclose [[Brady and Giglio|exculpatory]] evidence violates due process when the defense made no request (or only a general request) for it.
 
 ## Rule
 The duty to disclose can arise without a request, but only material omissions are constitutional error — **a standard later limited by** [[United States v. Bagley]]. The Court rejected any rule that the prosecutor must disclose anything that "might" affect the verdict: "the prosecutor will not have violated his constitutional duty of disclosure unless his omission is of sufficient significance to result in the denial of the defendant's right to a fair trial." — 427 U.S. at 108. ^pin-108
@@ -69,7 +69,7 @@ For the no-request situation, the Court fixed materiality to the justice of the 
 Measured against that standard, the prosecutor's failure to disclose Sewell's prior assault-and-weapons record was not a constitutional violation. The record of the victim's violent character, viewed against the entire trial record — Agurs had inflicted multiple stab wounds while suffering none herself, undercutting self-defense — did not create a reasonable doubt about guilt that did not otherwise exist. Because the undisclosed evidence was not material in that sense, the prosecutor's nondisclosure (absent any request) did not deny Agurs a fair trial, and a new trial was not warranted.
 
 ## Conclusion
-Reversed. The undisclosed evidence did not create a reasonable doubt that did not otherwise exist, so the nondisclosure was not a due-process violation; the prosecutor's duty to volunteer obviously exculpatory evidence is bounded by materiality.
+Reversed. The undisclosed evidence did not create a reasonable doubt that did not otherwise exist, so the nondisclosure was not a due-process violation; the prosecutor's duty to volunteer obviously [[Brady and Giglio|exculpatory]] evidence is bounded by materiality.
 
 ## Treatment & subsequent history
 - **Status:** limited *(as of 2026-06-30)* — **Binding — SCOTUS** (Stevens, J.; Marshall, J., joined by Brennan, J., dissenting).

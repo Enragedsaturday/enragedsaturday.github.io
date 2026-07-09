@@ -33,9 +33,9 @@ related:
 1. **Hunch.** A bare "inchoate and unparticularized suspicion or 'hunch'" authorizes nothing. *[[Terry v. Ohio|Terry]]*, 392 U.S. 1, 27 (1968).
 2. **Reasonable, articulable suspicion.** Specific facts plus the rational inferences an experienced officer draws from them: more than a hunch, well short of probable cause. It authorizes a brief investigative stop and a protective frisk. See [[Reasonable Suspicion]].
 3. **Probable cause.** A fair probability, judged on the totality, that a crime has occurred or that evidence will be found in a particular place. It authorizes an arrest, a full search, or a warrant. See [[Probable Cause]].
-4. **Proof beyond a reasonable doubt.** The conviction standard, marked here only to cap the ladder. It is a trial burden, never a field quantum, with preponderance and clear-and-convincing sitting between probable cause and it in civil and quasi-criminal settings.
+4. **Proof [[Common Legal Terms#beyond-a-reasonable-doubt|beyond a reasonable doubt]].** The conviction standard, marked here only to cap the ladder. It is a trial burden, never a field quantum, with preponderance and clear-and-convincing sitting between probable cause and it in civil and quasi-criminal settings.
 
-**Climbing the ladder.** The organizing rule is that the quantum rises with the government's intrusion on liberty or privacy: the more an action costs the citizen, the more proof the Fourth Amendment demands before an officer may take it. The two field rungs share a method. Both are measured on the totality of the circumstances, both are judged objectively through the eyes of a reasonable and experienced officer, and neither is a mathematical threshold a court will quantify.
+**Climbing the ladder.** The organizing rule is that the quantum rises with the government's intrusion on liberty or privacy: the more an action costs the citizen, the more proof the Fourth Amendment demands before an officer may take it. The two field rungs share a method. Both are measured on the [[Common Legal Terms#totality-of-the-circumstances|totality of the circumstances]], both are judged objectively through the eyes of a reasonable and experienced officer, and neither is a mathematical threshold a court will quantify.
 
 **Who decides, and how it is reviewed.** In the field the call belongs to the officer, drawing on training and experience; for a warrant it belongs to a neutral magistrate. On appeal the ultimate reasonable-suspicion and probable-cause questions are reviewed [[Common Legal Terms#de-novo|de novo]], while the trial court's historical facts are reviewed only for [[Common Legal Terms#clear-error|clear error]]. *[[Ornelas v. United States|Ornelas]]*, 517 U.S. 690, 699 (1996).
 
@@ -47,7 +47,7 @@ related:
 **Common pitfalls.**
 - **Collapsing the rungs.** Reasonable suspicion and probable cause are different quanta unlocking different powers; treating a stop's justification as if it licensed an arrest inverts the ladder (*[[Terry v. Ohio|Terry]]*; see [[Probable Cause]]).
 - **Putting a number on it.** Neither field rung reduces to a percentage; "probable cause is 51%" states a rule the Court has never adopted (*[[Illinois v. Gates|Gates]]*; *[[Brinegar v. United States|Brinegar]]*). This is Golden Rule #3: the Fourth Amendment deals in **probabilities, not possibilities**. See [[Three Golden Rules]].
-- **Reading trial burdens into the field.** Proof beyond a reasonable doubt is a conviction standard; an officer never needs it, and importing it would paralyze ordinary investigation.
+- **Reading trial burdens into the field.** Proof [[Common Legal Terms#beyond-a-reasonable-doubt|beyond a reasonable doubt]] is a conviction standard; an officer never needs it, and importing it would paralyze ordinary investigation.
 
 ## Key cases
 

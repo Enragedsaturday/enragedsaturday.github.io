@@ -44,7 +44,7 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-Salinas voluntarily went to the police station and answered questions about a double murder; he was not under arrest and had not been given Miranda warnings. When an officer asked whether shotgun shells found at the scene would match his gun, Salinas said nothing — he looked down, shuffled his feet, and bit his lip. At his murder trial the prosecutor used his silence and reaction as evidence of guilt. Salinas argued this violated his Fifth Amendment privilege against self-incrimination.
+Salinas voluntarily went to the police station and answered questions about a double murder; he was not under arrest and had not been given [[Miranda and Custodial Interrogation|Miranda warnings]]. When an officer asked whether shotgun shells found at the scene would match his gun, Salinas said nothing — he looked down, shuffled his feet, and bit his lip. At his murder trial the prosecutor used his silence and reaction as evidence of guilt. Salinas argued this violated his Fifth Amendment privilege against self-incrimination.
 
 ## Issue
 Whether the Fifth Amendment bars the prosecution from using, as evidence of guilt, a suspect's silence during voluntary, noncustodial police questioning where the suspect did not expressly invoke the privilege against self-incrimination.

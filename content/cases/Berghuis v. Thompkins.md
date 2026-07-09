@@ -44,7 +44,7 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-Thompkins was arrested for a fatal shooting and given Miranda warnings, which he declined to sign an acknowledgment of. During an interrogation lasting about three hours he was nearly silent, saying almost nothing. Near the end an officer asked whether he prayed to God to forgive him for "shooting that boy down," and Thompkins answered "Yes." That answer was admitted at trial and he was convicted of first-degree murder.
+Thompkins was arrested for a fatal shooting and given [[Miranda and Custodial Interrogation|Miranda warnings]], which he declined to sign an acknowledgment of. During an interrogation lasting about three hours he was nearly silent, saying almost nothing. Near the end an officer asked whether he prayed to God to forgive him for "shooting that boy down," and Thompkins answered "Yes." That answer was admitted at trial and he was convicted of first-degree murder.
 
 ## Issue
 (1) Whether Thompkins invoked his right to remain silent by staying largely silent for nearly three hours; and (2) whether he waived that right by answering the officer's question after receiving and understanding the warnings.
@@ -58,7 +58,7 @@ And a suspect waives the right by an uncoerced statement after understanding the
 Thompkins never said he wanted to remain silent or to stop the questioning, so his prolonged silence did not invoke the right. Because he had received the warnings and did not contend he failed to understand them, his uncoerced one-word answer to the officer's question was a course of conduct establishing an implied waiver. On these facts the statement was admissible, and the police were not required to obtain an express waiver before questioning him.
 
 ## Conclusion
-Thompkins did not invoke his right to remain silent and waived it through his uncoerced answer; the state court's rejection of his Miranda claim was correct, and the Sixth Circuit's grant of habeas relief was reversed.
+Thompkins did not invoke his right to remain silent and waived it through his uncoerced answer; the state court's rejection of his Miranda claim was correct, and the Sixth Circuit's grant of [[Common Legal Terms#habeas-corpus|habeas]] relief was reversed.
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.

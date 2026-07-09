@@ -58,7 +58,7 @@ Applying that standard: "The suggestive elements in this identification procedur
 The cumulative suggestiveness was extreme: Foster stood out by height and clothing in the first lineup; when that failed to produce a positive identification, police escalated to a one-on-one showup; and when David was still tentative, a second lineup placed Foster as the only repeat participant. Each step pointed the witness to Foster, so his eventual "conviction" that Foster was the robber was the product of the procedure rather than independent recollection — a denial of due process.
 
 ## Conclusion
-The identification procedure violated due process; the judgment was reversed and the case remanded. *Foster* is the rare instance in which the Supreme Court found a suggestive pretrial identification unconstitutional.
+The identification procedure violated due process; the judgment was reversed and the case [[Reading and Citing Cases#on-remand|remanded]]. *Foster* is the rare instance in which the Supreme Court found a suggestive pretrial identification unconstitutional.
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.

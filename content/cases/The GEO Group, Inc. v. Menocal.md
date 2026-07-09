@@ -70,7 +70,7 @@ Unlike qualified or sovereign immunity — which confer a right *not to stand tr
 **Affirmed.** Justice Kagan wrote for a unanimous Court (9–0); the Tenth Circuit's dismissal for lack of jurisdiction was upheld.
 
 ## Treatment & subsequent history
-**Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub; its citator and progeny history have not completed the two-key verification, so it renders under the ⚪ banner until S9 promotion. *GEO Group* sharpens the line between an "immunity from suit" (immediately appealable, like qualified immunity in § 1983 litigation) and a mere "merits defense" (not appealable until final judgment), classifying *Yearsley* federal-contractor protection as the latter.
+**Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub; its citator and progeny history have not completed the two-key verification, so it renders under the ⚪ banner until S9 promotion. *GEO Group* sharpens the line between an "immunity from suit" (immediately appealable, like [[Qualified Immunity|qualified immunity]] in § 1983 litigation) and a mere "merits defense" (not appealable until final judgment), classifying *Yearsley* federal-contractor protection as the latter.
 
 ## Appears on
 - [[Section 1983 Liability and Qualified Immunity]] — *Recent development*

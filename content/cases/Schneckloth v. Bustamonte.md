@@ -55,7 +55,7 @@ Voluntariness is judged on the totality of the circumstances, and knowledge of t
 "While knowledge of the right to refuse consent is one factor to be taken into account, the government need not establish such knowledge as the *sine qua non* of an effective consent." — *Id.* ^pin-227a
 
 ## Application
-The consent to search the car was given by Alcala after a routine traffic stop, with several officers present but no evidence of coercion. Because voluntariness turns on the totality of the circumstances and the State need not prove that Alcala knew he could refuse, his consent was voluntary on these facts, and the stolen checks discovered in the trunk were admissible.
+The consent to search the car was given by Alcala after a routine traffic stop, with several officers present but no evidence of coercion. Because voluntariness turns on the [[Common Legal Terms#totality-of-the-circumstances|totality of the circumstances]] and the State need not prove that Alcala knew he could refuse, his consent was voluntary on these facts, and the stolen checks discovered in the trunk were admissible.
 
 ## Conclusion
 Consent voluntariness is determined from the totality of all the circumstances, without any requirement that the consenter be told of the right to refuse; the Court of Appeals' contrary rule was reversed.

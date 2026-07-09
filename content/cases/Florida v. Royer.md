@@ -60,7 +60,7 @@ On these facts the encounter became an arrest: "What had begun as a consensual i
 Although the officers had reasonable suspicion to detain Royer briefly, by the time he produced his key the detention had exceeded what suspicion alone allows: the agents had identified themselves as narcotics officers, retained his ticket and identification, retrieved his luggage without consent, confined him in a small room, and never told him he was free to leave. That combination amounted, as a practical matter, to an arrest unsupported by probable cause. The officers could have used less intrusive means — returning his documents and telling him he was free to go — but did not. Because the detention was illegal, Royer's ensuing consent to the luggage search was tainted, and the marijuana was suppressed.
 
 ## Conclusion
-The detention ripened into an arrest without probable cause, and the tainted consent could not justify the search; suppression was affirmed. *Royer* supplies the least-intrusive-means principle and the markers (holding ID/ticket, confinement, no notice of freedom to leave) that turn a *Terry* stop into a de facto arrest.
+The detention ripened into an arrest without probable cause, and the tainted consent could not justify the search; suppression was affirmed. *Royer* supplies the least-intrusive-means principle and the markers (holding ID/ticket, confinement, no notice of freedom to leave) that turn a *Terry* stop into a [[Common Legal Terms#de-facto|de facto]] arrest.
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS** (controlling plurality).

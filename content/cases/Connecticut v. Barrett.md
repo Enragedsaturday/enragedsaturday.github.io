@@ -44,7 +44,7 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-After Miranda warnings, Barrett told police he would not give a *written* statement without a lawyer present, but that he was willing to talk about the incident *orally*. The police took his oral statements without counsel. The Connecticut Supreme Court treated his refusal to give a written statement as an invocation of counsel barring all interrogation and suppressed the oral statements.
+After [[Miranda and Custodial Interrogation|Miranda warnings]], Barrett told police he would not give a *written* statement without a lawyer present, but that he was willing to talk about the incident *orally*. The police took his oral statements without counsel. The Connecticut Supreme Court treated his refusal to give a written statement as an invocation of counsel barring all interrogation and suppressed the oral statements.
 
 ## Issue
 Whether a suspect who refuses to make a written statement without counsel, but agrees to speak orally, has invoked his right to counsel so as to bar all further interrogation under *Edwards v. Arizona*.

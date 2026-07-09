@@ -44,10 +44,10 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-Delma Banks was convicted of capital murder and sentenced to death in Texas. Two key prosecution witnesses, Robert Farr and Charles Cook, helped secure the conviction and death sentence. Farr — who supplied much of the evidence that Banks would commit future violence — was in fact a paid police informant, and the State had also withheld a transcript of a pretrial interview in which Cook's testimony was coached. Throughout trial and state postconviction proceedings the prosecution represented that it had disclosed everything and even denied that Farr was an informant. Banks raised the suppressed-evidence claims on federal habeas.
+Delma Banks was convicted of capital murder and sentenced to death in Texas. Two key prosecution witnesses, Robert Farr and Charles Cook, helped secure the conviction and death sentence. Farr — who supplied much of the evidence that Banks would commit future violence — was in fact a paid police informant, and the State had also withheld a transcript of a pretrial interview in which Cook's testimony was coached. Throughout trial and state postconviction proceedings the prosecution represented that it had disclosed everything and even denied that Farr was an informant. Banks raised the suppressed-evidence claims on federal [[Common Legal Terms#habeas-corpus|habeas]].
 
 ## Issue
-Whether Banks established a Brady violation as to Farr's concealed informant status — and whether his failure, in state proceedings, to prove what the State had hidden barred federal habeas relief.
+Whether Banks established a Brady violation as to Farr's concealed informant status — and whether his failure, in state proceedings, to prove what the State had hidden barred federal [[Common Legal Terms#habeas-corpus|habeas]] relief.
 
 ## Rule
 The Court reiterated *Brady*'s rule and the three-part test from [[Strickler v. Greene]]: a *Brady* "prosecutorial misconduct claim" has three essential components — "The evidence at issue must be favorable to the accused, either because it is exculpatory, or because it is impeaching; that evidence must have been suppressed by the State, either willfully or inadvertently; and prejudice must have ensued." — 540 U.S. at 691 (quoting *Strickler*, 527 U.S. at 281–282). ^pin-691

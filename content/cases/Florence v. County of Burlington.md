@@ -66,7 +66,7 @@ The suspicionless visual strip searches at intake were constitutional; the judgm
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.
-- *Florence* remains the controlling authority that jail-intake visual strip searches of arrestees entering the general population need no individualized suspicion. It extends the *Bell v. Wolfish* institutional-deference line and sits beside [[Illinois v. Lafayette]] (booking inventory) and [[Maryland v. King]] (DNA at booking). The Roberts/Alito concurrences cabin its reach to detainees actually committed to the general population. No negative treatment.
+- *Florence* remains the controlling authority that jail-intake visual strip searches of arrestees entering the general population need no individualized suspicion. It extends the *Bell v. Wolfish* institutional-deference line and sits beside [[Illinois v. Lafayette]] (booking inventory) and [[Maryland v. King]] (DNA at booking). The Roberts/Alito [[Common Legal Terms#concurring-opinion|concurrences]] cabin its reach to detainees actually committed to the general population. No negative treatment.
 
 ## Appears on
 - [[Special Needs and Administrative Searches]] — *Related (cross-doctrine)*

@@ -46,7 +46,7 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-After Dow refused a follow-up EPA inspection of its 2,000-acre chemical-manufacturing complex, the EPA hired a commercial aerial photographer who used a precision aerial mapping camera to photograph the plant's open areas from lawful navigable airspace. Dow sued, claiming the overflight photography was a Fourth Amendment search of an "industrial curtilage" in which it had a reasonable expectation of privacy.
+After Dow refused a follow-up EPA inspection of its 2,000-acre chemical-manufacturing complex, the EPA hired a commercial aerial photographer who used a precision aerial mapping camera to photograph the plant's open areas from lawful navigable airspace. Dow sued, claiming the overflight photography was a Fourth Amendment search of an "industrial curtilage" in which it had a [[Reasonable Expectation of Privacy|reasonable expectation of privacy]].
 
 ## Issue
 Whether the EPA's warrantless taking of aerial photographs of the open areas of an industrial plant complex, from navigable airspace, constitutes a "search" under the Fourth Amendment.
@@ -57,7 +57,7 @@ No. The open areas of a large industrial complex are not the constitutional equi
 Accordingly, "the taking of aerial photographs of an industrial plant complex from navigable airspace is not a search prohibited by the Fourth Amendment." — *Id.* ^pin-239a
 
 ## Application
-Dow's exposed manufacturing facilities, though enclosed against ground-level intrusion, were open to observation from the air. Because the photographs were taken from lawful navigable airspace using a conventional (if precise) mapping camera, and because the open areas of the complex resembled open fields rather than the intimate curtilage of a dwelling, Dow had no reasonable expectation of privacy against the overflight. The Court noted only that surveillance revealing intimate, enclosed details — or use of highly sophisticated equipment not generally available — might raise different questions, but the mapping photography here did not.
+Dow's exposed manufacturing facilities, though enclosed against ground-level intrusion, were open to observation from the air. Because the photographs were taken from lawful navigable airspace using a conventional (if precise) mapping camera, and because the open areas of the complex resembled open fields rather than the intimate [[Curtilage|curtilage]] of a dwelling, Dow had no [[Reasonable Expectation of Privacy|reasonable expectation of privacy]] against the overflight. The Court noted only that surveillance revealing intimate, enclosed details — or use of highly sophisticated equipment not generally available — might raise different questions, but the mapping photography here did not.
 
 ## Conclusion
 The aerial photography was not a Fourth Amendment search. The judgment for the United States was affirmed on the constitutional question.

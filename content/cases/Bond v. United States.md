@@ -57,7 +57,7 @@ Yes. Tactile examination is more invasive than visual observation: distinguishin
 A traveler retains a privacy interest against exploratory squeezing: "a bus passenger clearly expects that his bag may be handled. He does not expect that other passengers or bus employees will, as a matter of course, feel the bag in an exploratory manner. But this is exactly what the agent did here. We therefore hold that the agent's physical manipulation of petitioner's bag violated the Fourth Amendment." — *Id.* at 338–339. ^pin-338
 
 ## Application
-Bond, by placing his bag in the overhead bin, expected that fellow passengers and bus personnel might move or handle it — but not that they would feel it in the deliberate, exploratory manner the agent used to detect its contents. Because that manipulation exceeded the casual handling a traveler anticipates, it invaded a reasonable expectation of privacy and constituted a search; the agent had no warrant or other justification for it.
+Bond, by placing his bag in the overhead bin, expected that fellow passengers and bus personnel might move or handle it — but not that they would feel it in the deliberate, exploratory manner the agent used to detect its contents. Because that manipulation exceeded the casual handling a traveler anticipates, it invaded a [[Reasonable Expectation of Privacy|reasonable expectation of privacy]] and constituted a search; the agent had no warrant or other justification for it.
 
 ## Conclusion
 The agent's exploratory squeezing of the bag was a Fourth Amendment search; the judgment was reversed. Personal luggage carried by a traveler retains Fourth Amendment protection against tactile, exploratory inspection even when exposed to incidental public handling.

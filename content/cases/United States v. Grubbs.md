@@ -57,14 +57,14 @@ For a conditioned anticipatory warrant, "two prerequisites of probability must b
 The triggering condition need not appear on the warrant: "Because the Fourth Amendment does not require that the triggering condition for an anticipatory search warrant be set forth in the warrant itself, the Court of Appeals erred in invalidating the warrant at issue here." — *Id.* at 99. ^pin-99
 
 ## Application
-On these facts the warrant was valid. The affidavit's triggering condition — controlled delivery and movement of the package into the residence — established that it was then probable both that the delivery would occur and that, once it did, the contraband would be in the home; the supporting probable cause therefore existed when the warrant issued. The Court rejected Grubbs' particularity argument: the Fourth Amendment's particularity requirement reaches only the place to be searched and the persons or things to be seized, and "does not include the conditions precedent to execution of the warrant." Because probable cause itself — "the quintessential 'precondition to the valid exercise of executive power'" — need not be recited on the warrant, neither must the triggering condition. The controlled delivery satisfied the condition, and the search was lawful.
+On these facts the warrant was valid. The affidavit's triggering condition — controlled delivery and movement of the package into the residence — established that it was then probable both that the delivery would occur and that, once it did, the contraband would be in the home; the supporting probable cause therefore existed when the warrant issued. The Court rejected Grubbs' [[Particularity|particularity]] argument: the Fourth Amendment's [[Particularity|particularity]] requirement reaches only the place to be searched and the persons or things to be seized, and "does not include the conditions precedent to execution of the warrant." Because probable cause itself — "the quintessential 'precondition to the valid exercise of executive power'" — need not be recited on the warrant, neither must the triggering condition. The controlled delivery satisfied the condition, and the search was lawful.
 
 ## Conclusion
-Anticipatory warrants are constitutional, and the triggering condition need not be stated on the warrant's face; the Ninth Circuit's judgment was reversed and remanded.
+Anticipatory warrants are constitutional, and the triggering condition need not be stated on the warrant's face; the Ninth Circuit's judgment was reversed and [[Reading and Citing Cases#on-remand|remanded]].
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.
-- No negative subsequent treatment identified. *Grubbs* applies the totality probable-cause standard of [[Illinois v. Gates]] to anticipatory warrants and distinguishes the particularity defect of [[Groh v. Ramirez]] (which concerned the place/things-to-be-seized particularity that the Fourth Amendment's text *does* require).
+- No negative subsequent treatment identified. *Grubbs* applies the totality probable-cause standard of [[Illinois v. Gates]] to anticipatory warrants and distinguishes the [[Particularity|particularity]] defect of [[Groh v. Ramirez]] (which concerned the place/things-to-be-seized [[Particularity|particularity]] that the Fourth Amendment's text *does* require).
 
 ## Appears on
 - [[Probable Cause in the Affidavit]] — *Key — Progeny / Refinement*

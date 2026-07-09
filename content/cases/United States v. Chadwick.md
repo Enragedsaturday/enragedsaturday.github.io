@@ -62,7 +62,7 @@ lake:
 Federal agents had probable cause to believe a 200-pound double-locked footlocker shipped by train contained marijuana. After Chadwick and his confederates picked it up and loaded it into the trunk of a waiting car, agents arrested them and seized the footlocker. More than an hour later, at the federal building and with the footlocker under the agents' exclusive control, they opened and searched it without a warrant and found the marijuana.
 
 ## Issue
-Whether federal agents who have lawfully seized a footlocker incident to arrest, and reduced it to their exclusive control, may search it without a warrant when no exigency exists.
+Whether federal agents who have lawfully seized a footlocker incident to arrest, and reduced it to their exclusive control, may search it without a warrant when no [[Exigent Circumstances and Hot Pursuit|exigency]] exists.
 
 ## Rule
 No. Personal luggage carries a high expectation of privacy that the warrant requirement protects: "By placing personal effects inside a double-locked footlocker, respondents manifested an expectation that the contents would remain free from public examination. . . . There being no exigency, it was unreasonable for the Government to conduct this search without the safeguards a judicial warrant provides." — 433 U.S. at 11. ^pin-11
@@ -72,14 +72,14 @@ The vehicle's diminished privacy does not extend to luggage: "a person's expecta
 Nor is the search incident to arrest once the property is secured: "Once law enforcement officers have reduced luggage or other personal property not immediately associated with the person of the arrestee to their exclusive control, and there is no longer any danger that the arrestee might gain access to the property to seize a weapon or destroy evidence, a search of that property is no longer an incident of the arrest." — *Id.* at 15. ^pin-15
 
 ## Application
-The footlocker's brief contact with Chadwick's car did not make this an automobile search, and its diminished-privacy rationale did not apply to luggage. Once agents seized the footlocker and moved it to the federal building under their exclusive control, there was no danger of removal or destruction of evidence, so no exigency justified bypassing a magistrate; and because the search came more than an hour after the agents gained exclusive control and the arrestees were securely in custody, it could not be justified as incident to the arrest.
+The footlocker's brief contact with Chadwick's car did not make this an automobile search, and its diminished-privacy rationale did not apply to luggage. Once agents seized the footlocker and moved it to the federal building under their exclusive control, there was no danger of removal or destruction of evidence, so no [[Exigent Circumstances and Hot Pursuit|exigency]] justified bypassing a magistrate; and because the search came more than an hour after the agents gained exclusive control and the arrestees were securely in custody, it could not be justified as incident to the arrest.
 
 ## Conclusion
-The warrantless search was unreasonable; suppression was affirmed. The Warrant Clause draws the line at the point where seized property comes under the exclusive dominion of police authority and no exigency is shown.
+The warrantless search was unreasonable; suppression was affirmed. The Warrant Clause draws the line at the point where seized property comes under the exclusive dominion of police authority and no [[Exigent Circumstances and Hot Pursuit|exigency]] is shown.
 
 ## Treatment & subsequent history
 - **Status:** limited *(as of 2026-06-30)* — **Binding — SCOTUS**.
-- **Limited by** [[California v. Acevedo]] — Acevedo collapsed the *Chadwick*/*Arkansas v. Sanders* container distinction **in the automobile context**, holding that police with probable cause may search a container located in a vehicle without a warrant. *Chadwick*'s core teaching — that luggage and other personal effects reduced to exclusive police control with no exigency require a warrant — remains the rule outside that auto-container setting.
+- **Limited by** [[California v. Acevedo]] — Acevedo collapsed the *Chadwick*/*Arkansas v. Sanders* container distinction **in the automobile context**, holding that police with probable cause may search a container located in a vehicle without a warrant. *Chadwick*'s core teaching — that luggage and other personal effects reduced to exclusive police control with no [[Exigent Circumstances and Hot Pursuit|exigency]] require a warrant — remains the rule outside that auto-container setting.
 
 ## Appears on
 - [[Automobile Exception]] — *Key — Limiting / Historical*

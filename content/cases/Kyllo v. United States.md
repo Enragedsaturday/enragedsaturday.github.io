@@ -66,7 +66,7 @@ It therefore held: "Where, as here, the Government uses a device that is not in 
 The agent used a thermal imager — a device not in general public use — to learn about the relative warmth of areas inside Kyllo's home, information that could not have been obtained without physically entering. That the device measured only heat radiating from exterior surfaces did not save it, any more than the eavesdropping in *Katz* was permissible because it captured only sound at the booth's exterior; and because the target was a home, the relative warmth of its rooms counted as an intimate detail. The thermal scan was thus a search, and being warrantless it was presumptively unreasonable.
 
 ## Conclusion
-The thermal imaging was an unlawful warrantless search; the case was remanded to determine whether, without the thermal evidence, the warrant was supported by probable cause. *Kyllo* anchors the rule that technological surveillance revealing a home's interior is a Fourth Amendment search.
+The thermal imaging was an unlawful warrantless search; the case was [[Reading and Citing Cases#on-remand|remanded]] to determine whether, without the thermal evidence, the warrant was supported by probable cause. *Kyllo* anchors the rule that technological surveillance revealing a home's interior is a Fourth Amendment search.
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.

@@ -47,7 +47,7 @@ lake:
 A West Memphis officer stopped Donald Rickard's car for a broken headlight. When asked to step out, Rickard sped off and led police on a chase exceeding 100 mph for over five minutes, passing more than two dozen cars. After colliding with cruisers and spinning into a parking lot, Rickard kept maneuvering to escape — bumper flush against a police car, accelerator down, wheels spinning. Officers fired 15 shots, killing Rickard and his passenger, Kelly Allen. Rickard's daughter sued the officers under § 1983 for excessive force.
 
 ## Issue
-Whether the officers' use of deadly force to end the chase (and the firing of 15 shots) violated the Fourth Amendment, and if so whether the officers were entitled to qualified immunity.
+Whether the officers' use of deadly force to end the chase (and the firing of 15 shots) violated the Fourth Amendment, and if so whether the officers were entitled to [[Qualified Immunity|qualified immunity]].
 
 ## Rule
 The deadly force was reasonable. "it is beyond serious dispute that Rickard's flight posed a grave public safety risk, and here, as in *Scott*, the police acted reasonably in using deadly force to end that risk." — 572 U.S. at 777. ^pin-777
@@ -57,10 +57,10 @@ And the number of shots was not excessive: "if police officers are justified in 
 Alternatively, the officers had qualified immunity: "We have held that petitioners' conduct did not violate the Fourth Amendment, but even if that were not the case, petitioners would still be entitled to summary judgment based on qualified immunity." — *Id.* at 778. ^pin-778
 
 ## Application
-Judged from the perspective of a reasonable officer at the moment force was used, Rickard's continued effort to flee — engine revving, wheels spinning against a cruiser — showed he was intent on resuming a chase that had already endangered many motorists, so deadly force to stop him was reasonable as in [[Scott v. Harris]]. Because Rickard never gave up during the roughly ten-second span of fire and in fact drove off afterward, the 15 shots did not make the force excessive. The passenger Kelly Allen's presence did not enhance Rickard's own Fourth Amendment rights. And even assuming a violation, no clearly established law (per *Brosseau v. Haugen*) precluded the officers' conduct, so qualified immunity applied.
+Judged from the perspective of a reasonable officer at the moment force was used, Rickard's continued effort to flee — engine revving, wheels spinning against a cruiser — showed he was intent on resuming a chase that had already endangered many motorists, so deadly force to stop him was reasonable as in [[Scott v. Harris]]. Because Rickard never gave up during the roughly ten-second span of fire and in fact drove off afterward, the 15 shots did not make the force excessive. The passenger Kelly Allen's presence did not enhance Rickard's own Fourth Amendment rights. And even assuming a violation, no clearly established law (per *Brosseau v. Haugen*) precluded the officers' conduct, so [[Qualified Immunity|qualified immunity]] applied.
 
 ## Conclusion
-Reversed. The use of deadly force to end the chase was reasonable and the 15 shots were not excessive; in any event the officers were entitled to qualified immunity.
+Reversed. The use of deadly force to end the chase was reasonable and the 15 shots were not excessive; in any event the officers were entitled to [[Qualified Immunity|qualified immunity]].
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.

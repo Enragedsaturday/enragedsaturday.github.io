@@ -60,7 +60,7 @@ Because that immediate, law-enforcement purpose pervaded the policy, it fell out
 The MUSC policy was developed with police and prosecutors, used chain-of-custody protocols, and delivered test results to officers who arrested the patients — so its immediate objective was to produce evidence for criminal enforcement, not a need divorced from ordinary law enforcement. Because the patients had not consented and no warrant authorized the testing, the suspicionless searches were unreasonable on these facts.
 
 ## Conclusion
-The nonconsensual drug-testing policy was an unreasonable search; the judgment upholding it was reversed and the case remanded.
+The nonconsensual drug-testing policy was an unreasonable search; the judgment upholding it was reversed and the case [[Reading and Citing Cases#on-remand|remanded]].
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.

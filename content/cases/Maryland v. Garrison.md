@@ -62,7 +62,7 @@ Affirmed: a warrant valid when issued is not retroactively invalidated by a late
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.
-- *Garrison* applies the reasonable-mistake logic of [[Hill v. California]] to warrant execution and remains good law on warrant particularity and objectively reasonable execution; compare the facial-particularity failure in [[Groh v. Ramirez]].
+- *Garrison* applies the reasonable-mistake logic of [[Hill v. California]] to warrant execution and remains good law on warrant [[Particularity|particularity]] and objectively reasonable execution; compare the facial-[[Particularity|particularity]] failure in [[Groh v. Ramirez]].
 
 ## Appears on
 - [[Particularity]] — *Key — Progeny / Refinement*

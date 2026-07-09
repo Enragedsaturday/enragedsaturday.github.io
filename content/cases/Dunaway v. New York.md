@@ -48,7 +48,7 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-Investigating a killing during an attempted robbery, Rochester police picked up Dunaway, drove him to the station, and questioned him after Miranda warnings; he made incriminating statements and drew sketches implicating himself. He was never told he was under arrest, but he was not free to leave and would have been physically restrained had he tried. The State conceded the police lacked probable cause to arrest him. He moved to suppress the statements and sketches.
+Investigating a killing during an attempted robbery, Rochester police picked up Dunaway, drove him to the station, and questioned him after [[Miranda and Custodial Interrogation|Miranda warnings]]; he made incriminating statements and drew sketches implicating himself. He was never told he was under arrest, but he was not free to leave and would have been physically restrained had he tried. The State conceded the police lacked probable cause to arrest him. He moved to suppress the statements and sketches.
 
 ## Issue
 Whether police may seize a suspect on less than probable cause, transport him to the station, and detain him for custodial interrogation consistent with the Fourth Amendment — and, if not, whether the resulting confession must be suppressed.
@@ -63,14 +63,14 @@ Voluntariness is only the "threshold requirement"; the court must then weigh "[t
 ## Application
 The case was "virtually a replica" of *Brown*. Dunaway "was also admittedly seized without probable cause in the hope that something might turn up, and confessed without any intervening event of significance." — *Id.* at 218. ^pin-218b
 
-Less than the requisite attenuation existed: the confession followed promptly on the illegal detention, no significant intervening circumstance broke the chain, and the seizure-for-interrogation had a purposeful, investigatory quality. That the police were courteous and gave Miranda warnings did not cure the Fourth Amendment violation, because Fifth Amendment voluntariness is merely the threshold of the attenuation inquiry.
+Less than the requisite [[Fruits and Attenuation|attenuation]] existed: the confession followed promptly on the illegal detention, no significant intervening circumstance broke the chain, and the seizure-for-interrogation had a purposeful, investigatory quality. That the police were courteous and gave [[Miranda and Custodial Interrogation|Miranda warnings]] did not cure the Fourth Amendment violation, because Fifth Amendment voluntariness is merely the threshold of the [[Fruits and Attenuation|attenuation]] inquiry.
 
 ## Conclusion
-The seizure was unconstitutional and the confession was its unattenuated fruit; the statements and sketches should have been suppressed, and the judgment was reversed and remanded.
+The seizure was unconstitutional and the confession was its unattenuated fruit; the statements and sketches should have been suppressed, and the judgment was reversed and [[Reading and Citing Cases#on-remand|remanded]].
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.
-- No negative treatment. *Dunaway* is the anchor for the rule that a custodial transport for interrogation requires probable cause, applied per curiam in [[Kaupp v. Texas]], and it adopts the [[Brown v. Illinois]] attenuation factors built on [[Wong Sun v. United States]]. It distinguishes the brief, limited intrusion permitted under [[Terry v. Ohio]].
+- No negative treatment. *Dunaway* is the anchor for the rule that a custodial transport for interrogation requires probable cause, applied [[Common Legal Terms#per-curiam|per curiam]] in [[Kaupp v. Texas]], and it adopts the [[Brown v. Illinois]] [[Fruits and Attenuation|attenuation]] factors built on [[Wong Sun v. United States]]. It distinguishes the brief, limited intrusion permitted under [[Terry v. Ohio]].
 
 ## Appears on
 - [[Seizure of the Person]] — *Key — Progeny*

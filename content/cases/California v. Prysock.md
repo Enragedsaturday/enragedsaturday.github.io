@@ -44,10 +44,10 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-Randall Prysock, a juvenile murder suspect, was given Miranda warnings before questioning. He was told he had the right to a lawyer before and during questioning and the right to have a lawyer appointed at no cost if he could not afford one. The California Court of Appeal held the warnings defective because the appointed-counsel advice was not expressly tied to a point *before* questioning, and suppressed his statements.
+Randall Prysock, a juvenile murder suspect, was given [[Miranda and Custodial Interrogation|Miranda warnings]] before questioning. He was told he had the right to a lawyer before and during questioning and the right to have a lawyer appointed at no cost if he could not afford one. The California Court of Appeal held the warnings defective because the appointed-counsel advice was not expressly tied to a point *before* questioning, and suppressed his statements.
 
 ## Issue
-Whether Miranda warnings are inadequate simply because the advice about the right to appointed counsel was not given in the precise language or sequence used in *Miranda* itself.
+Whether [[Miranda and Custodial Interrogation|Miranda warnings]] are inadequate simply because the advice about the right to appointed counsel was not given in the precise language or sequence used in *Miranda* itself.
 
 ## Rule
 No. Miranda warnings need not track an exact script; a warning that reasonably conveys the rights suffices. "This Court has never indicated that the 'rigidity' of *Miranda* extends to the precise formulation of the warnings given a criminal defendant." — 451 U.S. at 359. ^pin-359
@@ -60,7 +60,7 @@ Reviewing courts examine the warnings actually given to determine whether they r
 The warnings given Prysock told him he had the right to a lawyer before and during questioning and the right to have a lawyer appointed without cost. Nothing in those warnings linked the appointment of counsel to a future time *after* interrogation (the defect that had invalidated warnings in cases like *People v. Bolinski*). Read as a whole, the warnings conveyed that Prysock could have appointed counsel present prior to and during questioning, so they satisfied *Miranda*.
 
 ## Conclusion
-The warnings were adequate. The judgment of the California Court of Appeal was reversed and the case remanded. Miranda compliance turns on whether the warnings reasonably convey the rights, not on verbatim recital.
+The warnings were adequate. The judgment of the California Court of Appeal was reversed and the case [[Reading and Citing Cases#on-remand|remanded]]. Miranda compliance turns on whether the warnings reasonably convey the rights, not on verbatim recital.
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.

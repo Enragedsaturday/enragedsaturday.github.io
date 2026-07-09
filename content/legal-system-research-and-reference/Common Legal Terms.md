@@ -83,6 +83,26 @@ The deadline by which a charge or claim must be brought; once it runs, the case 
 A standard that weighs *all* the facts together, in context, rather than applying a rigid checklist or letting any single factor decide. It is the default lens for judging probable cause, reasonable suspicion, consent, and the voluntariness of a statement.
 *Example:* No one fact was enough, but the late hour, the high-crime block, the suspect's flight, and the bulge at his waistband — taken together, under the totality of the circumstances — added up to reasonable suspicion.
 
+### Preponderance of the evidence
+The **more-likely-than-not** standard of proof (greater than a 50% likelihood); the burden a party ordinarily carries in civil cases and on many pre-trial sub-issues, such as whether a consent to search was voluntary. It sits above reasonable suspicion and probable cause on the certainty scale but below *clear and convincing evidence*, and far below *beyond a reasonable doubt*.
+*Example:* At a suppression hearing the government must show by a preponderance of the evidence — more likely than not — that the defendant freely consented to the search.
+
+### Clear and convincing evidence
+An **intermediate** standard of proof — more demanding than a preponderance, less demanding than beyond a reasonable doubt — requiring the factfinder to reach a **firm belief** that a contested fact is highly probable. It governs a handful of heightened findings.
+*Example:* Where a jurisdiction requires clear and convincing evidence for a particular finding, a bare more-likely-than-not showing is not enough; the proof must leave a firm conviction that the fact is true.
+
+### Beyond a reasonable doubt
+The **highest** standard of proof in the law, required to convict a defendant at a criminal trial: the evidence must leave a fair-minded factfinder with no reasonable doubt of guilt. It is far more demanding than the preponderance and clear-and-convincing standards used at earlier or civil stages.
+*Example:* An officer may have probable cause to arrest and a prosecutor may have enough to charge, yet the same facts can still fall short of proof beyond a reasonable doubt at trial.
+
+### Affirmative defense
+A defense on which the **defendant carries the burden**: even if the prosecution proves every element of the offense, the defendant can still prevail by raising and proving the defense. It differs from simply negating an element, which remains the prosecution's burden to establish.
+*Example:* Because entrapment is an affirmative defense, the defendant must come forward with evidence of government inducement and a lack of predisposition, rather than merely poking holes in the state's case.
+
+### Bright-line rule
+A **categorical rule** with a clear, mechanical trigger, adopted for predictability and ease of application rather than case-by-case nuance — the opposite of a *totality-of-the-circumstances* test. Once the trigger is met, the rule applies without further weighing of the particular facts.
+*Example:* A rule that any lawful custodial arrest automatically permits a search of the arrestee's person is a bright-line rule; a rule asking whether, on all the facts, a search was reasonable is not.
+
 ## Opinions & precedent
 
 ### Holding

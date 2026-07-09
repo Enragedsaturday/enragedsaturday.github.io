@@ -55,7 +55,7 @@ No. "The Court has consistently held that a search 'can be incident to an arrest
 A home is not searchable as incident to an arrest made outside it: "the Constitution has never been construed by this Court to allow the police, in the absence of an emergency, to arrest a person *outside* his home and then take him inside for the purpose of conducting a warrantless search. . . . [I]t has always been assumed that one's house cannot lawfully be searched without a search warrant, except as an incident to a lawful arrest *therein*." — *Id.* at 820 (quoting *Agnello*, 269 U.S. at 32). ^pin-820
 
 ## Application
-Shipley was arrested outside, by his car, not inside his home. Under *Chimel v. California* (decided the same day), the search of the house plainly exceeded the limits on searches incident to arrest; and even apart from *Chimel*, no precedent justified it, because the search "extended without reasonable justification beyond the place in which he was arrested." There was no emergency, and the officers never obtained a warrant for the home.
+Shipley was arrested outside, by his car, not inside his home. Under *Chimel v. California* (decided the same day), the search of the house plainly exceeded the limits on [[Search Incident to Arrest|searches incident to arrest]]; and even apart from *Chimel*, no precedent justified it, because the search "extended without reasonable justification beyond the place in which he was arrested." There was no emergency, and the officers never obtained a warrant for the home.
 
 ## Conclusion
 Reversed (per curiam). A warrantless search of the home, incident to an arrest made outside it, cannot be sustained under the Fourth and Fourteenth Amendments.

@@ -44,10 +44,10 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-Georgia sheriff M. Claude Screws and two other officers arrested Robert Hall, a young Black man, and beat him to death with their fists and a blackjack. They were convicted under the criminal civil-rights statute (now 18 U.S.C. § 242) of willfully depriving Hall, under color of law, of rights secured by the Constitution. They argued the statute was unconstitutionally vague.
+Georgia sheriff M. Claude Screws and two other officers arrested Robert Hall, a young Black man, and beat him to death with their fists and a blackjack. They were convicted under the criminal civil-rights statute (now 18 U.S.C. § 242) of willfully depriving Hall, [[Section 1983 Liability and Qualified Immunity|under color of law]], of rights secured by the Constitution. They argued the statute was unconstitutionally vague.
 
 ## Issue
-Whether § 242's prohibition on willfully depriving a person of constitutional rights under color of law is void for vagueness, and what mental state "willfully" requires.
+Whether § 242's prohibition on willfully depriving a person of constitutional rights [[Section 1983 Liability and Qualified Immunity|under color of law]] is void for vagueness, and what mental state "willfully" requires.
 
 ## Rule
 The statute is saved from vagueness by reading "willfully" to require specific intent. "We do say that a requirement of a specific intent to deprive a person of a federal right made definite by decision or other rule of law saves the Act from any charge of unconstitutionality on the grounds of vagueness." — 325 U.S. at 103. ^pin-103
@@ -55,10 +55,10 @@ The statute is saved from vagueness by reading "willfully" to require specific i
 The Court also reaffirmed that action "under color of" state law includes the misuse of authority an officer possesses only because he is clothed with his official position.
 
 ## Application
-Because the trial court had not instructed the jury that the defendants must have acted with the specific intent to deprive Hall of a federal constitutional right, the convictions could not stand under the proper construction of "willfully," and the Court reversed and remanded for a new trial under that standard.
+Because the trial court had not instructed the jury that the defendants must have acted with the specific intent to deprive Hall of a federal constitutional right, the convictions could not stand under the proper construction of "willfully," and the Court reversed and [[Reading and Citing Cases#on-remand|remanded]] for a new trial under that standard.
 
 ## Conclusion
-Section 242 is not void for vagueness when read to require a willful—specific-intent—deprivation; the convictions were reversed for the faulty jury instruction and the case remanded.
+Section 242 is not void for vagueness when read to require a willful—specific-intent—deprivation; the convictions were reversed for the faulty jury instruction and the case [[Reading and Citing Cases#on-remand|remanded]].
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS** (plurality; Douglas, J., announced the judgment).

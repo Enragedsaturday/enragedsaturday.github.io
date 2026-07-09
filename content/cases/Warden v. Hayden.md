@@ -58,11 +58,11 @@ The scope follows the emergency: "The Fourth Amendment does not require police o
 On these facts the police acted within minutes of an armed robbery on information that the armed suspect had just entered the house. Speed was essential: only a prompt, thorough search for persons and weapons could ensure that Hayden was the only man present and that officers controlled any weapons that could be used against them or to effect an escape. The warrantless entry and the search for the robber and his weapons were therefore reasonable, and the items found in the course of that search were admissible.
 
 ## Conclusion
-The warrantless entry and search in hot pursuit were reasonable; the seizure of the weapons and clothing was valid. The Court also rejected the "mere evidence" limitation, holding that evidentiary items (not just contraband, fruits, or instrumentalities) may be seized.
+The warrantless entry and search in [[Exigent Circumstances and Hot Pursuit|hot pursuit]] were reasonable; the seizure of the weapons and clothing was valid. The Court also rejected the "mere evidence" limitation, holding that evidentiary items (not just contraband, fruits, or instrumentalities) may be seized.
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.
-- No negative treatment. *Hayden* anchors the hot-pursuit branch of the exigency doctrine, applied to a suspect fleeing into her own home in [[United States v. Santana]] and framed within the exigency framework reaffirmed in [[Kentucky v. King]]; the gravity-of-offense limit on home-entry exigencies is drawn in [[Welsh v. Wisconsin]]. Its separate holding abolishing the "mere evidence" rule remains good law.
+- No negative treatment. *Hayden* anchors the hot-pursuit branch of the [[Exigent Circumstances and Hot Pursuit|exigency]] doctrine, applied to a suspect fleeing into her own home in [[United States v. Santana]] and framed within the [[Exigent Circumstances and Hot Pursuit|exigency]] framework reaffirmed in [[Kentucky v. King]]; the gravity-of-offense limit on home-entry [[Exigent Circumstances and Hot Pursuit|exigencies]] is drawn in [[Welsh v. Wisconsin]]. Its separate holding abolishing the "mere evidence" rule remains good law.
 
 ## Appears on
 - [[Exigent Circumstances and Hot Pursuit]] — *Key — Anchor*

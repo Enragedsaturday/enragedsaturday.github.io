@@ -60,7 +60,7 @@ Scope is fixed by the object sought, not by the kind of container: "The scope of
 The detectives had probable cause to believe Ross's car contained narcotics. That probable cause reached anywhere in the vehicle the drugs might be hidden, including the closed brown paper bag and the leather pouch found in the trunk. Because a magistrate could have issued a warrant to search those containers for the drugs, the officers could open them without one; the warrantless opening of the containers was therefore lawful.
 
 ## Conclusion
-The warrantless search of the containers found in the trunk was valid under the automobile exception; the Supreme Court reversed the en banc Court of Appeals and remanded.
+The warrantless search of the containers found in the trunk was valid under the automobile exception; the Supreme Court reversed the [[Reading and Citing Cases#en-banc|en banc]] Court of Appeals and [[Reading and Citing Cases#on-remand|remanded]].
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.

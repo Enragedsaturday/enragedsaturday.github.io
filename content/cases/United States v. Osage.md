@@ -60,7 +60,7 @@ The court therefore held: "before an officer may actually destroy or render comp
 Assuming Osage's consent was valid, opening the sealed can exceeded the scope of that consent because doing so destroyed the can — "rendering it useless and incapable of performing its designated function," which the court found "more like breaking open a locked briefcase than opening the folds of a paper bag." Because the government never claimed independent suspicion or probable cause to detain or open the cans, and obtained no explicit authorization to destroy them, the destruction of the can fell outside the consent and could not be justified on any other ground.
 
 ## Conclusion
-The search exceeded the scope of consent; the Tenth Circuit reversed the denial of suppression of the methamphetamine and remanded.
+The search exceeded the scope of consent; the Tenth Circuit reversed the denial of suppression of the methamphetamine and [[Reading and Citing Cases#on-remand|remanded]].
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding in-circuit — 10th Cir.**

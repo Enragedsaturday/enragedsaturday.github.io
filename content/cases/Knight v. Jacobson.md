@@ -56,7 +56,7 @@ holding: "Payton's warrant requirement for in-home arrests is not violated when 
 <!-- header line; TreatmentBadge + weight render from frontmatter, degrading to the text above. Born under_review (⚪): identity cluster 778847 → opinion 778847 (300 F.3d 1272, decided 2002-09-18); Rule quote string-matched to the CL opinion text 2026-07-07. S9 promotes. -->
 
 ## Background
-Miami Officer Dennis Jacobson, investigating a report from Arthur Knight's ex-girlfriend, went to Knight's home. Knight came to the door in response to a knock; Jacobson, standing outside, told him to step outside. Knight complied, stepped out, and was arrested without a warrant. Knight sued under § 1983, contending the warrantless arrest violated *Payton v. New York*. The district court denied the officer summary judgment on qualified immunity, and Jacobson appealed.
+Miami Officer Dennis Jacobson, investigating a report from Arthur Knight's ex-girlfriend, went to Knight's home. Knight came to the door in response to a knock; Jacobson, standing outside, told him to step outside. Knight complied, stepped out, and was arrested without a warrant. Knight sued under § 1983, contending the warrantless arrest violated *Payton v. New York*. The district court denied the officer summary judgment on [[Qualified Immunity|qualified immunity]], and Jacobson appealed.
 
 ## Issue
 Whether *Payton*'s prohibition on warrantless in-home arrests is violated when an officer outside the home directs a suspect to step outside and then arrests him without a warrant.
@@ -65,10 +65,10 @@ Whether *Payton*'s prohibition on warrantless in-home arrests is violated when a
 The Eleventh Circuit reversed, answering "no." *[[Payton v. New York|Payton]]* draws "a firm line at the entrance to the house" that officers may not cross without a warrant absent exigency — but the arrest here happened outside that line. "*Payton* keeps the officer's body outside the threshold, not his voice. It does not prevent a law enforcement officer from telling a suspect to step outside his home and then arresting him without a warrant." — 300 F.3d at 1277.
 
 ## Application
-Because Officer Jacobson never crossed the threshold and Knight was arrested just outside his door after voluntarily stepping out at the officer's request, no in-home arrest occurred. The public-place arrest was governed by the ordinary rule permitting warrantless arrests on probable cause, not by *Payton*'s in-home warrant requirement, so the officer was entitled to qualified immunity.
+Because Officer Jacobson never crossed the threshold and Knight was arrested just outside his door after voluntarily stepping out at the officer's request, no in-home arrest occurred. The public-place arrest was governed by the ordinary rule permitting warrantless arrests on probable cause, not by *Payton*'s in-home warrant requirement, so the officer was entitled to [[Qualified Immunity|qualified immunity]].
 
 ## Conclusion
-The denial of summary judgment was **reversed**; Officer Jacobson was entitled to qualified immunity.
+The denial of summary judgment was **reversed**; Officer Jacobson was entitled to [[Qualified Immunity|qualified immunity]].
 
 ## Treatment & subsequent history
 **Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub and renders under the ⚪ banner until S9 promotion. *Knight v. Jacobson* marks the boundary of the *[[Payton v. New York|Payton]]* rule: the constitutional protection attaches to physical entry across the threshold, so an officer's summons to a suspect to come outside — followed by a warrantless arrest supported by probable cause under *[[United States v. Watson]]* — does not offend the Fourth Amendment.

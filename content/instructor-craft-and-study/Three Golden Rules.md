@@ -29,9 +29,9 @@ Three teaching maxims for building **articulation**: habits of thought, not lega
 |---|---|---|
 | *[[Graham v. Connor]]*, 490 U.S. 386 (1989) | Seizure reasonableness is judged by an **objective** standard from the officer's on-scene perspective, with the **severity of the crime** an express factor. | [opinion](https://www.courtlistener.com/opinion/112257/graham-v-connor/) |
 | *[[Brinegar v. United States]]*, 338 U.S. 160 (1949) | Probable cause deals in **probabilities**, the practical considerations of everyday life on which reasonable and prudent people act, not technical certainty. | [opinion](https://www.courtlistener.com/opinion/104716/brinegar-v-united-states/) |
-| *[[Illinois v. Gates]]*, 462 U.S. 213 (1983) | Probable cause is a **fluid** judgment on the **totality of the circumstances**, turning on **probabilities** in a particular factual context. | [opinion](https://www.courtlistener.com/opinion/110959/illinois-v-gates/) |
-| *[[Maryland v. Buie]]*, 494 U.S. 325 (1990) | A **protective sweep** requires **articulable facts** warranting a reasonable belief a dangerous person may be present; it is **not automatic**. | [opinion](https://www.courtlistener.com/opinion/112384/maryland-v-buie/) |
-| *[[Gaetjens v. Winnebago County]]*, 4 F.4th 487 (7th Cir. 2021) | **Emergency-aid** exigency: a warrantless home entry is lawful on an **objectively reasonable basis** to believe someone inside needs immediate help. | [opinion](https://www.courtlistener.com/opinion/4899427/sally-gaetjens-v-winnebago-county-illinois/) |
+| *[[Illinois v. Gates]]*, 462 U.S. 213 (1983) | Probable cause is a **fluid** judgment on the **[[Common Legal Terms#totality-of-the-circumstances\|totality of the circumstances]]**, turning on **probabilities** in a particular factual context. | [opinion](https://www.courtlistener.com/opinion/110959/illinois-v-gates/) |
+| *[[Maryland v. Buie]]*, 494 U.S. 325 (1990) | A **[[Securing the Scene\|protective sweep]]** requires **articulable facts** warranting a reasonable belief a dangerous person may be present; it is **not automatic**. | [opinion](https://www.courtlistener.com/opinion/112384/maryland-v-buie/) |
+| *[[Gaetjens v. Winnebago County]]*, 4 F.4th 487 (7th Cir. 2021) | **Emergency-aid** [[Exigent Circumstances and Hot Pursuit\|exigency]]: a warrantless home entry is lawful on an **objectively reasonable basis** to believe someone inside needs immediate help. | [opinion](https://www.courtlistener.com/opinion/4899427/sally-gaetjens-v-winnebago-county-illinois/) |
 
 ## Nuances & limits
 
@@ -51,7 +51,7 @@ Three teaching maxims for building **articulation**: habits of thought, not lega
 - **Letting "serious crime" do all the work.** Severity is *a* factor (*Graham*), not a warrant exception. A grave offense does not by itself authorize a sweep, an entry, or prolonged detention without the facts that the specific exception requires.
 - **Routine protective sweeps.** A sweep "as a matter of course" is unlawful: *Buie* requires articulable facts of danger and is "not 'automati[c].'" 494 U.S. at 336. The scope is "a cursory inspection of those spaces where a person may be found" and lasts no longer than needed to dispel the danger. *Buie*, 494 U.S. at 335–36.
 - **Confusing possibility with probability.** "Someone *could* be inside," "drugs *might* be there": that is the language of *possibility*. The Fourth Amendment runs on **probability** (*Brinegar*; *Gates*). Push every justification onto the burden ladder and name the rung.
-- **Exceeding the scope of an exigency.** An emergency justifies entry **for the emergency**, and no further. Stay inside the nexus and purpose that justified going in; evidence gathered after the protective/aid purpose is satisfied risks suppression as exceeding the exception's scope.
+- **Exceeding the scope of an [[Exigent Circumstances and Hot Pursuit|exigency]].** An emergency justifies entry **for the emergency**, and no further. Stay inside the nexus and purpose that justified going in; evidence gathered after the protective/aid purpose is satisfied risks suppression as exceeding the exception's scope.
 
 ## Visual
 

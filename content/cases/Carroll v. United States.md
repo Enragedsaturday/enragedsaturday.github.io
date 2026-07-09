@@ -62,7 +62,7 @@ The warrantless search of the moving automobile on probable cause was lawful; th
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.
-- No negative treatment. *Carroll*'s rule has been repeatedly reaffirmed and elaborated — extended to delayed station-house searches in [[Chambers v. Maroney]], grounded in ready mobility and pervasive regulation in [[California v. Carney]], and unified for containers in [[California v. Acevedo]]; its reach was bounded at the home's curtilage in [[Collins v. Virginia]].
+- No negative treatment. *Carroll*'s rule has been repeatedly reaffirmed and elaborated — extended to delayed station-house searches in [[Chambers v. Maroney]], grounded in ready mobility and pervasive regulation in [[California v. Carney]], and unified for containers in [[California v. Acevedo]]; its reach was bounded at the home's [[Curtilage|curtilage]] in [[Collins v. Virginia]].
 
 ## Appears on
 - [[Automobile Exception]] — *Key — Anchor*

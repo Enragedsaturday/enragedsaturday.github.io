@@ -57,7 +57,7 @@ And "the police may seize any evidence that is in plain view during the course o
 But any such warrantless search must be strictly circumscribed by the emergency that justifies it.
 
 ## Application
-The shooting victims were promptly attended to, so the extended four-day search of Mincey's apartment was not justified by any ongoing emergency, and the seriousness of the homicide did not by itself supply exigent circumstances. Because the search far exceeded anything a genuine emergency could justify and was conducted without a warrant, it violated the Fourth Amendment.
+The shooting victims were promptly attended to, so the extended four-day search of Mincey's apartment was not justified by any ongoing emergency, and the seriousness of the homicide did not by itself supply [[Exigent Circumstances and Hot Pursuit|exigent circumstances]]. Because the search far exceeded anything a genuine emergency could justify and was conducted without a warrant, it violated the Fourth Amendment.
 
 ## Conclusion
 Reversed in relevant part; the warrantless four-day "murder scene" search was unconstitutional.

@@ -62,7 +62,7 @@ It expressly reserved the question whether a *suspicionless* search would be rea
 On these facts the apartment search was reasonable. Knights's probation order "significantly diminished" his expectation of privacy, while the State's heightened interest in apprehending probationer-recidivists justified a lesser-than-probable-cause standard. The investigatory purpose did not matter, because the Court rested its holding on "ordinary Fourth Amendment analysis," under which "[s]ubjective intentions play no role." Since the District Court found — and Knights conceded — that the search was supported by reasonable suspicion, and the probation condition authorized it, the warrantless search of his apartment satisfied the Fourth Amendment. The Court did not decide whether the same search would have been reasonable with no individualized suspicion at all.
 
 ## Conclusion
-A probation-condition search of Knights's home, supported by reasonable suspicion, was reasonable under the Fourth Amendment regardless of the officer's investigatory motive; the Ninth Circuit's judgment was reversed and remanded.
+A probation-condition search of Knights's home, supported by reasonable suspicion, was reasonable under the Fourth Amendment regardless of the officer's investigatory motive; the Ninth Circuit's judgment was reversed and [[Reading and Citing Cases#on-remand|remanded]].
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.

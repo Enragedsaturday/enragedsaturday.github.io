@@ -47,7 +47,7 @@ lake:
 Gary Cone was convicted of the 1980 murders of an elderly Memphis couple and sentenced to death. His defense was that chronic amphetamine addiction — which he traced to combat service in Vietnam — left him impaired or insane. Years later, after gaining access to the prosecutor's file, Cone discovered witness statements and documents the State had suppressed that corroborated his drug impairment around the time of the crimes. The Tennessee courts treated his *Brady* claim as "previously determined," and the federal courts found it defaulted and, in any event, not material to guilt.
 
 ## Issue
-Whether Cone's *Brady* claim was procedurally barred from federal habeas review, and whether the suppressed evidence — even if not material to guilt — had to be assessed for materiality to his death sentence.
+Whether Cone's *Brady* claim was procedurally barred from federal [[Common Legal Terms#habeas-corpus|habeas]] review, and whether the suppressed evidence — even if not material to guilt — had to be assessed for materiality to his death sentence.
 
 ## Rule
 *Brady* reaches evidence material to punishment. "[W]hen the State withholds from a criminal defendant evidence that is material to his guilt or punishment, it violates his right to due process of law in violation of the Fourteenth Amendment." — 556 U.S. at 469. ^pin-469
@@ -62,7 +62,7 @@ A mistaken state procedural ruling does not bar review. Because Cone "properly p
 The Court held the *Brady* claim was not procedurally defaulted: Cone raised it in state court, and the state courts' "previously determined" disposition rested on a mistaken premise, so it did not bar federal review. On the merits, the suppressed witnesses' statements and documents all "strengthen[ed] the inference that Cone was impaired by his use of drugs." While that evidence was not material to whether Cone committed murder with the requisite mental state, the District Court and Court of Appeals never separately assessed whether the same evidence was material to his *sentence* — i.e., whether it might have led at least one juror to choose life over death. Because the suppressed evidence "may well have been material to the jury's assessment of the proper punishment," a full review was required.
 
 ## Conclusion
-Vacated and remanded. The *Brady* claim was not defaulted, and the lower courts had to determine in the first instance whether there was a reasonable probability the withheld evidence would have altered at least one juror's sentencing decision — *Brady* materiality is assessed as to punishment, not only guilt.
+[[Reading and Citing Cases#vacated|Vacated]] and [[Reading and Citing Cases#on-remand|remanded]]. The *Brady* claim was not defaulted, and the lower courts had to determine in the first instance whether there was a reasonable probability the withheld evidence would have altered at least one juror's sentencing decision — *Brady* materiality is assessed as to punishment, not only guilt.
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS** (Stevens, J.; Roberts, C.J., concurring in part; Thomas, J., joined in part by Alito, J., dissenting).

@@ -69,7 +69,7 @@ Acquiring geofence Location History is a **search** under *[[Carpenter v. United
 The geofence returns exposed the private movements of everyone near the Lake Cormorant post office, not just the eventual defendants — the inverted, dragnet character the panel found indistinguishable from a general warrant. But the inspectors had consulted prosecutors, obtained a magistrate's authorization, and navigated a genuinely novel technology with no controlling precedent; on those facts the court applied *[[United States v. Leon|Leon]]* good faith rather than the exclusionary rule.
 
 ## Conclusion
-Convictions **affirmed**: the geofence warrant was unconstitutional, but suppression was unwarranted under the good-faith exception. King, J., wrote for the panel (King, Ho, Engelhardt, JJ.).
+Convictions **affirmed**: the geofence warrant was unconstitutional, but suppression was unwarranted under the [[The Good-Faith Exception|good-faith exception]]. King, J., wrote for the panel (King, Ho, Engelhardt, JJ.).
 
 ## Treatment & subsequent history
 
@@ -78,9 +78,9 @@ Convictions **affirmed**: the geofence warrant was unconstitutional, but suppres
 | Point of law | Status | Controlling authority |
 |---|---|---|
 | Acquiring geofence Location History is a Fourth Amendment search | **Good law** | Confirmed by *[[Chatrie v. United States]]*, 609 U.S. ___ (2026) — SCOTUS reached the same result, applying and extending *Carpenter* |
-| Geofence warrants are categorically unconstitutional general warrants | **Caution** | *[[Chatrie v. United States|Chatrie]]* expressly declined to adopt the categorical rule; the probable-cause/particularity question is live on *Chatrie*'s remand. Binding in the Fifth Circuit; the persuasive minority position elsewhere |
+| Geofence warrants are categorically unconstitutional general warrants | **Caution** | *[[Chatrie v. United States|Chatrie]]* expressly declined to adopt the categorical rule; the probable-cause/[[Particularity\|particularity]] question is live on *Chatrie*'s remand. Binding in the Fifth Circuit; the persuasive minority position elsewhere |
 
-The Supreme Court's 2026 *Chatrie* decision resolved the circuit split *Smith* anchored: acquiring geofence Location History **is** a search, as *Smith* held (and the Fourth Circuit's en banc *Chatrie* had fractured over). But the Court stopped at the threshold — it did not decide whether any geofence warrant can satisfy probable cause and particularity, so *Smith*'s stronger point remains the minority answer to a question SCOTUS left open.
+The Supreme Court's 2026 *Chatrie* decision resolved the circuit split *Smith* anchored: acquiring geofence Location History **is** a search, as *Smith* held (and the Fourth Circuit's [[Reading and Citing Cases#en-banc|en banc]] *Chatrie* had fractured over). But the Court stopped at the threshold — it did not decide whether any geofence warrant can satisfy probable cause and [[Particularity|particularity]], so *Smith*'s stronger point remains the minority answer to a question SCOTUS left open.
 
 ## Appears on
 - [[Reverse-Keyword and Geofence Warrants]] — *Key — Circuit anchor (geofence)*

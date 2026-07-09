@@ -44,10 +44,10 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-After Beheler and several acquaintances tried to steal hashish from a dealer, his stepbrother shot and killed her. Beheler called the police, told them his stepbrother was the killer, and consented to a search of his yard, where the gun was found. That evening he voluntarily accompanied police to the station, having been told he was not under arrest. He talked to police about the murder for under 30 minutes without receiving Miranda warnings, and was then allowed to return home. Five days later he was arrested, given Miranda warnings, and gave a second, taped confession. The California Court of Appeal held the first, un-warned interview was custodial and reversed his conviction.
+After Beheler and several acquaintances tried to steal hashish from a dealer, his stepbrother shot and killed her. Beheler called the police, told them his stepbrother was the killer, and consented to a search of his yard, where the gun was found. That evening he voluntarily accompanied police to the station, having been told he was not under arrest. He talked to police about the murder for under 30 minutes without receiving [[Miranda and Custodial Interrogation|Miranda warnings]], and was then allowed to return home. Five days later he was arrested, given [[Miranda and Custodial Interrogation|Miranda warnings]], and gave a second, taped confession. The California Court of Appeal held the first, un-warned interview was custodial and reversed his conviction.
 
 ## Issue
-Whether Miranda warnings are required when a suspect, not placed under arrest, voluntarily comes to the police station and is allowed to leave unhindered after a brief interview.
+Whether [[Miranda and Custodial Interrogation|Miranda warnings]] are required when a suspect, not placed under arrest, voluntarily comes to the police station and is allowed to leave unhindered after a brief interview.
 
 ## Rule
 No. The question "has already been settled clearly by past decisions of this Court." — 463 U.S. at 1121. Beheler "was neither taken into custody nor significantly deprived of his freedom of action. Indeed, Beheler's freedom was not restricted in any way whatsoever." — *Id.* at 1123. ^pin-1123
@@ -55,10 +55,10 @@ No. The question "has already been settled clearly by past decisions of this Cou
 The custody test is restraint equivalent to arrest: "Although the circumstances of each case must certainly influence a determination of whether a suspect is 'in custody' . . . , the ultimate inquiry is simply whether there is a 'formal arrest or restraint on freedom of movement' of the degree associated with a formal arrest." — *Id.* at 1125 (quoting *Oregon v. Mathiason*, 429 U.S. 492, 495 (1977)). Miranda warnings are not required "simply because the questioning takes place in the station house, or because the questioned person is one whom the police suspect." — *Id.* (quoting *Mathiason*). ^pin-1125
 
 ## Application
-The factors the California court emphasized — that the interview occurred at the station and that Beheler was already a suspect because he had spoken to police earlier — do not, by themselves, establish custody. Beheler came voluntarily, was told he was not under arrest, and left to go home afterward; his freedom of movement was never restrained to the degree of a formal arrest. That the police knew more about Beheler than the officers knew in *Mathiason*, and the time elapsed since the crime, were irrelevant. He was therefore not in custody, and no Miranda warnings were required before the first interview.
+The factors the California court emphasized — that the interview occurred at the station and that Beheler was already a suspect because he had spoken to police earlier — do not, by themselves, establish custody. Beheler came voluntarily, was told he was not under arrest, and left to go home afterward; his freedom of movement was never restrained to the degree of a formal arrest. That the police knew more about Beheler than the officers knew in *Mathiason*, and the time elapsed since the crime, were irrelevant. He was therefore not in custody, and no [[Miranda and Custodial Interrogation|Miranda warnings]] were required before the first interview.
 
 ## Conclusion
-A voluntary, non-arrest, free-to-leave station-house interview is not custodial; no Miranda warnings were required. The judgment of the California Court of Appeal was reversed and the case remanded.
+A voluntary, non-arrest, free-to-leave station-house interview is not custodial; no [[Miranda and Custodial Interrogation|Miranda warnings]] were required. The judgment of the California Court of Appeal was reversed and the case [[Reading and Citing Cases#on-remand|remanded]].
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS** (per curiam).

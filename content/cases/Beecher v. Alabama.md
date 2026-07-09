@@ -58,7 +58,7 @@ The two confessions were a single coercive episode: from the gunpoint confession
 The uncontradicted facts compelled the conclusion of involuntariness even accepting the State's version of the hospital encounter. Beecher, "already wounded by the police, was ordered at gunpoint to speak his guilt or be killed"; the second set of statements followed without any break while he was feverish, in intense pain, and under morphine at the mercy of his custodians. Because his death sentence rested on confessions so obtained, the conviction could not stand.
 
 ## Conclusion
-The confessions were the product of gross coercion and involuntary; certiorari was granted and the judgment reversed. (Justice Black concurred in the reversal on Fifth-Amendment self-incrimination grounds under [[Malloy v. Hogan]].)
+The confessions were the product of gross coercion and involuntary; [[Reading and Citing Cases#certiorari-cert|certiorari]] was granted and the judgment reversed. (Justice Black concurred in the reversal on Fifth-Amendment self-incrimination grounds under [[Malloy v. Hogan]].)
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS** (per curiam).

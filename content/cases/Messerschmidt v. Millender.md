@@ -49,7 +49,7 @@ lake:
 After Jerry Bowen assaulted his former girlfriend with "a black sawed-off shotgun with a pistol grip" and fired at her as she fled, Detective Messerschmidt prepared a warrant to search Augusta Millender's home — where Bowen was thought to live — for **all firearms** and **all gang-related material**. The warrant was reviewed and approved by a supervisor, a deputy district attorney, and a magistrate before execution. The Millenders sued the officers under § 1983, alleging the warrant was unconstitutionally overbroad.
 
 ## Issue
-Whether officers are entitled to qualified immunity from a § 1983 damages suit for obtaining and executing a warrant later alleged to be overbroad, where a neutral magistrate approved the warrant.
+Whether officers are entitled to [[Qualified Immunity|qualified immunity]] from a § 1983 damages suit for obtaining and executing a warrant later alleged to be overbroad, where a neutral magistrate approved the warrant.
 
 ## Rule
 Officers are immune unless the warrant was so obviously deficient that no reasonable officer could have relied on it. A magistrate's approval is strong evidence of objective reasonableness, but it does not end the inquiry: "the fact that a neutral magistrate has issued a warrant authorizing the allegedly unconstitutional search or seizure does not end the inquiry into objective reasonableness." — 565 U.S. at 547. ^pin-547
@@ -60,7 +60,7 @@ The exception, drawn from [[Malley v. Briggs]] and [[United States v. Leon]], ap
 The warrant's authorization to seize all firearms and gang material was at least arguably supported: Bowen had used a firearm in the assault and was a known gang member, so an officer could reasonably believe the broad categories were tied to evidence of the crime and of Bowen's dangerousness and gang ties. Even if the warrant was in fact overbroad, the question was only whether reliance on it was objectively reasonable — and the additional review by a supervisor, a prosecutor, and the magistrate confirmed that this was not the rare case where every reasonable officer would have known the warrant should not issue.
 
 ## Conclusion
-Reversed. The officers were entitled to qualified immunity; their reliance on the approved warrant was not objectively unreasonable, so the *Malley* exception did not strip their immunity.
+Reversed. The officers were entitled to [[Qualified Immunity|qualified immunity]]; their reliance on the approved warrant was not objectively unreasonable, so the *Malley* exception did not strip their immunity.
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.

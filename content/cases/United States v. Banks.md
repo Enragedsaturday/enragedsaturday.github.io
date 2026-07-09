@@ -64,7 +64,7 @@ The 15-to-20-second wait and forcible entry were reasonable under the Fourth Ame
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.
-- *Banks* remains the controlling treatment of how long officers must wait after knock-and-announce before forcing entry, applying a fact-specific exigency analysis. It builds on [[Richards v. Wisconsin]] and [[Wilson v. Arkansas]] and pairs with [[United States v. Ramirez]] on property damage during forced entry. No negative treatment.
+- *Banks* remains the controlling treatment of how long officers must wait after [[Knock-and-Announce|knock-and-announce]] before forcing entry, applying a fact-specific [[Exigent Circumstances and Hot Pursuit|exigency]] analysis. It builds on [[Richards v. Wisconsin]] and [[Wilson v. Arkansas]] and pairs with [[United States v. Ramirez]] on property damage during forced entry. No negative treatment.
 
 ## Appears on
 - [[Knock-and-Announce]] — *Progeny*

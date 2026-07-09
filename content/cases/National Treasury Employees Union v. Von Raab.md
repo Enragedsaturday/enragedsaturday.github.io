@@ -55,10 +55,10 @@ Where a search serves a special governmental need beyond ordinary law enforcemen
 Employees in such sensitive roles have a reduced privacy interest: "Customs employees who are directly involved in the interdiction of illegal drugs or who are required to carry firearms in the line of duty likewise have a diminished expectation of privacy in respect to the intrusions occasioned by a urine test." — *Id.* at 672. ^pin-672
 
 ## Application
-The Customs program was not designed to serve ordinary law enforcement, and its results could not be used in a criminal prosecution without the employee's consent. Balancing the Government's compelling interest in the integrity of the borders and in keeping firearms out of the hands of drug users against the diminished privacy of employees who seek those specific positions, the testing of applicants for drug-interdiction and firearm-carrying positions was reasonable. The Court remanded as to the classified-materials category for clarification of which positions it actually covered.
+The Customs program was not designed to serve ordinary law enforcement, and its results could not be used in a criminal prosecution without the employee's consent. Balancing the Government's compelling interest in the integrity of the borders and in keeping firearms out of the hands of drug users against the diminished privacy of employees who seek those specific positions, the testing of applicants for drug-interdiction and firearm-carrying positions was reasonable. The Court [[Reading and Citing Cases#on-remand|remanded]] as to the classified-materials category for clarification of which positions it actually covered.
 
 ## Conclusion
-Suspicionless testing of applicants for drug-interdiction and firearms positions was upheld as reasonable; the case was remanded for further consideration of the classified-materials category.
+Suspicionless testing of applicants for drug-interdiction and firearms positions was upheld as reasonable; the case was [[Reading and Citing Cases#on-remand|remanded]] for further consideration of the classified-materials category.
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.

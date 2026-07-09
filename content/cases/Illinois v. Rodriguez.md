@@ -55,10 +55,10 @@ The validity of an entry on apparent authority is measured by objective reasonab
 "If not, then warrantless entry without further inquiry is unlawful unless authority actually exists. But if so, the search is valid." — *Id.* at 188–189. ^pin-188a
 
 ## Application
-Fischer let the officers in with her own key and referred to the apartment as hers, but she had in fact moved out and lacked actual common authority. The lower courts had ruled that a mistaken belief could never validate the entry; that was error, because the entry is valid if the officers reasonably believed Fischer had common authority. The Court therefore remanded for a determination whether the officers' belief in her authority was objectively reasonable.
+Fischer let the officers in with her own key and referred to the apartment as hers, but she had in fact moved out and lacked actual common authority. The lower courts had ruled that a mistaken belief could never validate the entry; that was error, because the entry is valid if the officers reasonably believed Fischer had common authority. The Court therefore [[Reading and Citing Cases#on-remand|remanded]] for a determination whether the officers' belief in her authority was objectively reasonable.
 
 ## Conclusion
-A reasonable, even if mistaken, belief in a third party's common authority can validate a warrantless entry; the case was reversed and remanded to apply that apparent-authority standard.
+A reasonable, even if mistaken, belief in a third party's common authority can validate a warrantless entry; the case was reversed and [[Reading and Citing Cases#on-remand|remanded]] to apply that apparent-authority standard.
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.

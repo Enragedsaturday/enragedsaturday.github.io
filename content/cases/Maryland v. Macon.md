@@ -57,7 +57,7 @@ Whether an undercover officer's entry into a store open to the public and purcha
 **No seizure.** "Nor was the subsequent purchase a seizure within the meaning of the Fourth Amendment. . . . Here, respondent voluntarily transferred any possessory interest he may have had in the magazines to the purchaser upon the receipt of the funds." — *Id.* ^pin-469a
 
 ## Application
-The detectives entered a store open to the public and examined magazines deliberately displayed for sale — conduct that invaded no reasonable expectation of privacy. The over-the-counter sale transferred the seller's possessory interest in the magazines in exchange for the money, so the officer "interfered" with nothing the Fourth Amendment protects. Judged objectively, the transaction was an ordinary retail sale; the officer's subjective plan to later retrieve the marked bill did not retroactively transform the purchase into a seizure.
+The detectives entered a store open to the public and examined magazines deliberately displayed for sale — conduct that invaded no [[Reasonable Expectation of Privacy|reasonable expectation of privacy]]. The over-the-counter sale transferred the seller's possessory interest in the magazines in exchange for the money, so the officer "interfered" with nothing the Fourth Amendment protects. Judged objectively, the transaction was an ordinary retail sale; the officer's subjective plan to later retrieve the marked bill did not retroactively transform the purchase into a seizure.
 
 ## Conclusion
 The undercover purchase was neither a search nor a seizure; the magazines were properly admitted. Acquiring evidence by a routine public purchase, like an invited undercover entry, does not trigger the Fourth Amendment.

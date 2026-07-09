@@ -44,7 +44,7 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-During custodial interrogation Smith was advised of his Miranda rights. When told he had the right to a lawyer, Smith responded, "Uh, yeah. I'd like to do that." Rather than stopping, the officers finished the warnings and continued questioning; Smith then made some equivocal remarks and ultimately confessed. The Illinois courts used Smith's later equivocal statements to conclude that his initial request for counsel had not been a clear invocation.
+During custodial interrogation Smith was advised of his [[Miranda and Custodial Interrogation|Miranda rights]]. When told he had the right to a lawyer, Smith responded, "Uh, yeah. I'd like to do that." Rather than stopping, the officers finished the warnings and continued questioning; Smith then made some equivocal remarks and ultimately confessed. The Illinois courts used Smith's later equivocal statements to conclude that his initial request for counsel had not been a clear invocation.
 
 ## Issue
 Whether an accused's responses to *continued* interrogation, given after he has requested counsel, may be used to determine that the initial request for counsel was ambiguous.
@@ -58,7 +58,7 @@ No. Under *Edwards v. Arizona*, once an accused invokes the right to counsel all
 Smith's statement — "Uh, yeah. I'd like to do that" — was, in context, a request for counsel, and questioning should have stopped. The state courts erred by mining his *later* equivocal answers (made only because interrogation wrongly continued) to recharacterize the initial request as ambiguous. Those later answers could bear only on whether Smith waived a right he had already invoked, not on whether he invoked it.
 
 ## Conclusion
-Postrequest responses cannot be used to make an otherwise clear invocation ambiguous. The judgment of the Illinois Supreme Court was reversed and the case remanded. (The Court expressly left open how to treat a request that is ambiguous from the outset — later answered in *Davis v. United States*.)
+Postrequest responses cannot be used to make an otherwise clear invocation ambiguous. The judgment of the Illinois Supreme Court was reversed and the case [[Reading and Citing Cases#on-remand|remanded]]. (The Court expressly left open how to treat a request that is ambiguous from the outset — later answered in *Davis v. United States*.)
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.

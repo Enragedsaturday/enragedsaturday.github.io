@@ -55,10 +55,10 @@ Yes. The Fourth Amendment itself supports a damages remedy against federal offic
 "Having concluded that petitioner's complaint states a cause of action under the Fourth Amendment . . . we hold that petitioner is entitled to recover money damages for any injuries he has suffered as a result of the agents' violation of the Amendment." — *Id.* at 397. ^pin-397
 
 ## Application
-Because federal agents had allegedly conducted a warrantless, suspicionless entry, arrest, and search, Bivens had stated a Fourth Amendment claim; the absence of a statute did not bar relief, since damages are the ordinary remedy for an invasion of personal liberty and the agents could not claim that their conduct, if unconstitutional, was authorized by any valid grant of federal authority. The Court remanded for further proceedings, including the agents' immunity defenses.
+Because federal agents had allegedly conducted a warrantless, suspicionless entry, arrest, and search, Bivens had stated a Fourth Amendment claim; the absence of a statute did not bar relief, since damages are the ordinary remedy for an invasion of personal liberty and the agents could not claim that their conduct, if unconstitutional, was authorized by any valid grant of federal authority. The Court [[Reading and Citing Cases#on-remand|remanded]] for further proceedings, including the agents' immunity defenses.
 
 ## Conclusion
-Reversed and remanded. A damages action lies directly under the Fourth Amendment against federal officers who conduct an unconstitutional search and seizure — establishing the federal-officer counterpart to a § 1983 suit against state actors.
+Reversed and [[Reading and Citing Cases#on-remand|remanded]]. A damages action lies directly under the Fourth Amendment against federal officers who conduct an unconstitutional search and seizure — establishing the federal-officer counterpart to a § 1983 suit against state actors.
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.

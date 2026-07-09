@@ -55,14 +55,14 @@ There is no such freestanding exception: "The First Circuit's 'community caretak
 *Cady* does not support extending caretaking to the home: "Neither the holding nor logic of *Cady* justified that approach. True, *Cady* also involved a warrantless search for a firearm. But the location of that search was an impounded vehicle — not a home — 'a constitutional difference' that the opinion repeatedly stressed." — *Id.* (slip op., at 4). ^pin-op4
 
 ## Application
-The officers entered Caniglia's home and seized his firearms with no warrant, no consent, and — as the case came up — no recognized exigency, relying solely on a freestanding caretaking theory. Because *Cady* concerned an impounded vehicle rather than a home, its caretaking rationale did not authorize this warrantless entry into Caniglia's house.
+The officers entered Caniglia's home and seized his firearms with no warrant, no consent, and — as the case came up — no recognized [[Exigent Circumstances and Hot Pursuit|exigency]], relying solely on a freestanding caretaking theory. Because *Cady* concerned an impounded vehicle rather than a home, its caretaking rationale did not authorize this warrantless entry into Caniglia's house.
 
 ## Conclusion
-There is no standalone community-caretaking exception for the home; the judgment was vacated and the case remanded.
+There is no standalone community-caretaking exception for the home; the judgment was [[Reading and Citing Cases#vacated|vacated]] and the case [[Reading and Citing Cases#on-remand|remanded]].
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.
-- No negative treatment. *Caniglia* **cabins** [[Cady v. Dombrowski]] to the vehicle context and leaves intact the home-entry exceptions of emergency aid and exigency ([[Brigham City v. Stuart]]; [[Kentucky v. King]]).
+- No negative treatment. *Caniglia* **cabins** [[Cady v. Dombrowski]] to the vehicle context and leaves intact the home-entry exceptions of [[Emergency Aid|emergency aid]] and [[Exigent Circumstances and Hot Pursuit|exigency]] ([[Brigham City v. Stuart]]; [[Kentucky v. King]]).
 
 ## Appears on
 - [[Emergency Aid]] — *Key — Progeny / Refinement*

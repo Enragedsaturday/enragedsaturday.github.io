@@ -55,10 +55,10 @@ Custody is an objective inquiry. "We hold, not for the first time, that an offic
 "[T]he initial determination of custody depends on the objective circumstances of the interrogation, not on the subjective views harbored by either the interrogating officers or the person being questioned." — *Id.* at 323. ^pin-323
 
 ## Application
-Because the state court had relied on whether the officers subjectively regarded Stansbury as a suspect, it applied the wrong standard. The Court vacated and remanded so that the custody question could be decided on the objective circumstances of the interrogation—whether a reasonable person would have felt restraint of the degree associated with a formal arrest—not on the officers' undisclosed suspicions.
+Because the state court had relied on whether the officers subjectively regarded Stansbury as a suspect, it applied the wrong standard. The Court [[Reading and Citing Cases#vacated|vacated]] and [[Reading and Citing Cases#on-remand|remanded]] so that the custody question could be decided on the objective circumstances of the interrogation—whether a reasonable person would have felt restraint of the degree associated with a formal arrest—not on the officers' undisclosed suspicions.
 
 ## Conclusion
-An officer's subjective, undisclosed suspicion is irrelevant to custody; the judgment was vacated and remanded.
+An officer's subjective, undisclosed suspicion is irrelevant to custody; the judgment was [[Reading and Citing Cases#vacated|vacated]] and [[Reading and Citing Cases#on-remand|remanded]].
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS** (per curiam).

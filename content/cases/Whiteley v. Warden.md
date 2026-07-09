@@ -44,7 +44,7 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-After a county-building break-in in Wyoming, a county sheriff acting on an informer's tip filed a bare, conclusory complaint and obtained an arrest warrant for Whiteley and Daley, then issued a statewide police radio bulletin describing the men and their car. Laramie police, relying on the bulletin, stopped the car, arrested the two men, and searched the vehicle, recovering tools and other evidence of the burglary. Whiteley sought habeas relief, arguing the arrest lacked probable cause.
+After a county-building break-in in Wyoming, a county sheriff acting on an informer's tip filed a bare, conclusory complaint and obtained an arrest warrant for Whiteley and Daley, then issued a statewide police radio bulletin describing the men and their car. Laramie police, relying on the bulletin, stopped the car, arrested the two men, and searched the vehicle, recovering tools and other evidence of the burglary. Whiteley sought [[Common Legal Terms#habeas-corpus|habeas]] relief, arguing the arrest lacked probable cause.
 
 ## Issue
 Whether an arrest made by officers relying on a police bulletin is lawful when the officer who issued the bulletin (and obtained the underlying warrant) did not himself have probable cause.
@@ -58,7 +58,7 @@ When the originating officer lacked probable cause, the arrest is unlawful and i
 On these facts the arresting officers were entitled to rely on the bulletin, but the chain failed at its source. The complaint underlying the warrant stated only the complainant's conclusion and omitted the informer's tip and every operative fact, so it could not support a magistrate's probable-cause finding. The arresting officers, in turn, knew only what the bulletin told them plus the matching car and description — nothing corroborating the tip that these men committed the burglary. Because no one in the chain actually possessed probable cause, the arrest violated the Fourth Amendment, and the evidence seized incident to it should have been excluded.
 
 ## Conclusion
-The arrest was unconstitutional and the evidence inadmissible; the writ of habeas corpus should issue. Good-faith reliance on a fellow officer's bulletin cannot supply probable cause the originating officer never had.
+The arrest was unconstitutional and the evidence inadmissible; the writ of [[Common Legal Terms#habeas-corpus|habeas corpus]] should issue. Good-faith reliance on a fellow officer's bulletin cannot supply probable cause the originating officer never had.
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.

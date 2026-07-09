@@ -44,7 +44,7 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-Officers investigating a rape went to the home where the suspect, Bumper, lived with his grandmother, Mrs. Leath. They told her they had a search warrant, and she replied "Go ahead" and let them in. They found a rifle later admitted at trial to convict Bumper. At the suppression hearing the prosecution did not rely on — or even produce — any warrant; it sought to justify the search solely as consensual.
+Officers investigating a rape went to the home where the suspect, Bumper, lived with his grandmother, Mrs. Leath. They told her they had a search warrant, and she replied "Go ahead" and let them in. They found a rifle later admitted at trial to convict Bumper. At the [[Common Legal Terms#suppression-hearing|suppression hearing]] the prosecution did not rely on — or even produce — any warrant; it sought to justify the search solely as consensual.
 
 ## Issue
 Whether a homeowner's permission to search, given after officers assert that they have a search warrant, constitutes valid voluntary consent under the Fourth Amendment when the warrant's validity is not established.
@@ -58,7 +58,7 @@ A claimed-warrant entry is inherently coercive: "When a law enforcement officer 
 Mrs. Leath let the officers in only because they announced they had a warrant — a claim the State never substantiated and did not rely on at the hearing. Her "Go ahead" was therefore mere acquiescence to a claim of lawful authority, not free and voluntary consent. The State could not discharge its burden of proving voluntariness, so the search could not be justified as consensual and the rifle should have been suppressed.
 
 ## Conclusion
-There was no valid consent; admitting the rifle was constitutional error. The judgment was reversed and remanded.
+There was no valid consent; admitting the rifle was constitutional error. The judgment was reversed and [[Reading and Citing Cases#on-remand|remanded]].
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.

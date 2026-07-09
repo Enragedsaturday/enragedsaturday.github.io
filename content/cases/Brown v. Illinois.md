@@ -44,10 +44,10 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-Officers arrested Brown without probable cause or a warrant, broke into and waited in his apartment, then took him to the station, gave Miranda warnings, and obtained two inculpatory statements within about two hours. The Illinois courts treated the Miranda warnings as automatically dissipating the taint of the unlawful arrest.
+Officers arrested Brown without probable cause or a warrant, broke into and waited in his apartment, then took him to the station, gave [[Miranda and Custodial Interrogation|Miranda warnings]], and obtained two inculpatory statements within about two hours. The Illinois courts treated the [[Miranda and Custodial Interrogation|Miranda warnings]] as automatically dissipating the taint of the unlawful arrest.
 
 ## Issue
-Whether Miranda warnings, by themselves, break the causal chain between an illegal arrest and a subsequent confession so as to make the confession admissible under the Fourth Amendment.
+Whether [[Miranda and Custodial Interrogation|Miranda warnings]], by themselves, break the causal chain between an illegal arrest and a subsequent confession so as to make the confession admissible under the Fourth Amendment.
 
 ## Rule
 Miranda warnings do not automatically purge the taint: "The Miranda warnings are an important factor, to be sure, in determining whether the confession is obtained by exploitation of an illegal arrest. But they are not the only factor to be considered." — 422 U.S. at 603. ^pin-603
@@ -55,14 +55,14 @@ Miranda warnings do not automatically purge the taint: "The Miranda warnings are
 Voluntariness aside, attenuation turns on a multi-factor inquiry: "The temporal proximity of the arrest and the confession, the presence of intervening circumstances, . . . and, particularly, the purpose and flagrancy of the official misconduct . . . are all relevant." — *Id.* at 603-604. ^pin-604
 
 ## Application
-Brown's first statement came less than two hours after the illegal arrest, with no significant intervening event, and the arrest had a purposeful, investigatory quality. Weighing those factors, the State failed to show the statements were sufficiently attenuated from the unlawful arrest, so the Miranda warnings alone did not make them admissible.
+Brown's first statement came less than two hours after the illegal arrest, with no significant intervening event, and the arrest had a purposeful, investigatory quality. Weighing those factors, the State failed to show the statements were sufficiently attenuated from the unlawful arrest, so the [[Miranda and Custodial Interrogation|Miranda warnings]] alone did not make them admissible.
 
 ## Conclusion
-Miranda warnings do not per se purge the taint of an illegal arrest; the statements should have been suppressed, and the judgment was reversed.
+[[Miranda and Custodial Interrogation|Miranda warnings]] do not [[Common Legal Terms#per-se|per se]] purge the taint of an illegal arrest; the statements should have been suppressed, and the judgment was reversed.
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.
-- No negative treatment. The *Brown* attenuation factors remain the governing framework and were applied in [[Utah v. Strieff]].
+- No negative treatment. The *Brown* [[Fruits and Attenuation|attenuation]] factors remain the governing framework and were applied in [[Utah v. Strieff]].
 
 ## Appears on
 - [[The Exclusionary Rule]] — *Key — Progeny / Refinement*

@@ -55,10 +55,10 @@ A post-indictment lineup is a critical stage at which the accused is entitled to
 The remedy is not automatic exclusion of the in-court identification; the in-court identification is admissible only if it has a source independent of the tainted lineup. The Court vacated the conviction "pending a hearing to determine whether the in-court identifications had an independent source." — 388 U.S. at 242. ^pin-242
 
 ## Application
-Wade had been indicted and had counsel when the FBI conducted the lineup without notifying his lawyer; the lineup was therefore an uncounseled critical stage, violating Wade's Sixth Amendment right. Because the two bank employees' in-court identifications might have been tainted by that lineup, the proper course was to vacate the conviction and remand so the District Court could determine whether those identifications rested on an independent source (or whether their admission was harmless).
+Wade had been indicted and had counsel when the FBI conducted the lineup without notifying his lawyer; the lineup was therefore an uncounseled critical stage, violating Wade's Sixth Amendment right. Because the two bank employees' in-court identifications might have been tainted by that lineup, the proper course was to vacate the conviction and remand so the District Court could determine whether those identifications rested on an [[Inevitable Discovery and Independent Source|independent source]] (or whether their admission was harmless).
 
 ## Conclusion
-The post-indictment lineup was a critical stage requiring counsel; the judgment of the Court of Appeals was vacated and the case remanded to determine whether the in-court identifications had an independent source.
+The post-indictment lineup was a critical stage requiring counsel; the judgment of the Court of Appeals was [[Reading and Citing Cases#vacated|vacated]] and the case [[Reading and Citing Cases#on-remand|remanded]] to determine whether the in-court identifications had an [[Inevitable Discovery and Independent Source|independent source]].
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.

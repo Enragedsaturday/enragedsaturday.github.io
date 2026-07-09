@@ -70,7 +70,7 @@ Hay's argument that sixty-eight days of continuous recording "painted an intimat
 **Affirmed.** Judge Tymkovich wrote for the panel (Tymkovich, Murphy, and Carson, JJ.).
 
 ## Treatment & subsequent history
-**Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub and renders under the ⚪ banner until S9 promotion. *Hay* is a leading data point on the **unsettled pole-camera question**: the Tenth Circuit (like the Fifth, Sixth, and Seventh) declines to extend *Carpenter*'s mosaic theory to fixed exterior camera surveillance of a home, while a First Circuit en banc court deadlocked and the Fourth Circuit found aerial city-wide tracking a search. Teach it as circuit-split / unsettled authority — never as a settled nationwide rule that pole cameras are categorically permissible.
+**Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub and renders under the ⚪ banner until S9 promotion. *Hay* is a leading data point on the **unsettled pole-camera question**: the Tenth Circuit (like the Fifth, Sixth, and Seventh) declines to extend *Carpenter*'s mosaic theory to fixed exterior camera surveillance of a home, while a First Circuit [[Reading and Citing Cases#en-banc|en banc]] court deadlocked and the Fourth Circuit found aerial city-wide tracking a search. Teach it as circuit-split / unsettled authority — never as a settled nationwide rule that pole cameras are categorically permissible.
 
 ## Appears on
 - [[Third-Party Doctrine & CSLI]] — *Lower-court development (pole cameras)*

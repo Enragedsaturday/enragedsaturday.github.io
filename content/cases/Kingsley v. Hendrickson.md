@@ -55,10 +55,10 @@ Only objective unreasonableness need be shown. "we agree with the dissenting app
 The use of force must be deliberate (purposeful or knowing, not accidental), but its reasonableness is judged from the perspective of a reasonable officer on the scene, on a non-exhaustive set of factors — not on the officer's subjective intent. This differs from the Eighth Amendment standard for convicted prisoners, which asks whether force was applied maliciously and sadistically.
 
 ## Application
-Because the jury had been told to apply a subjective standard, asking whether the officers were aware their force was unreasonable, the instructions were erroneous: Kingsley needed to prove only that the deliberate force used against him was objectively unreasonable in light of the facts the officers confronted (the need for force, the threat reasonably perceived, his resistance, the injury, and efforts to temper the response). The Court vacated and remanded for consideration under the correct objective standard.
+Because the jury had been told to apply a subjective standard, asking whether the officers were aware their force was unreasonable, the instructions were erroneous: Kingsley needed to prove only that the deliberate force used against him was objectively unreasonable in light of the facts the officers confronted (the need for force, the threat reasonably perceived, his resistance, the injury, and efforts to temper the response). The Court [[Reading and Citing Cases#vacated|vacated]] and [[Reading and Citing Cases#on-remand|remanded]] for consideration under the correct objective standard.
 
 ## Conclusion
-Vacated and remanded. A pretrial detainee's Fourteenth Amendment excessive-force claim is governed by an objective-reasonableness standard, with no requirement to prove the officers' subjective intent to punish or awareness of unreasonableness.
+[[Reading and Citing Cases#vacated|Vacated]] and [[Reading and Citing Cases#on-remand|remanded]]. A pretrial detainee's Fourteenth Amendment excessive-force claim is governed by an objective-reasonableness standard, with no requirement to prove the officers' subjective intent to punish or awareness of unreasonableness.
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.

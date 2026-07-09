@@ -44,10 +44,10 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-An Ohio state trooper stopped McCarty for weaving on the highway, had him perform a field sobriety test (which he failed), and asked whether he had been using intoxicants — McCarty admitted to beer and marijuana. He was then formally arrested for a misdemeanor DUI, taken to jail, and made further incriminating statements. He received no Miranda warnings at any point, and moved to suppress both the roadside statements and the jailhouse statements.
+An Ohio state trooper stopped McCarty for weaving on the highway, had him perform a field sobriety test (which he failed), and asked whether he had been using intoxicants — McCarty admitted to beer and marijuana. He was then formally arrested for a misdemeanor DUI, taken to jail, and made further incriminating statements. He received no [[Miranda and Custodial Interrogation|Miranda warnings]] at any point, and moved to suppress both the roadside statements and the jailhouse statements.
 
 ## Issue
-(1) Whether Miranda's safeguards apply to custodial interrogation for a misdemeanor offense; and (2) whether roadside questioning of a motorist detained during an ordinary traffic stop is "custodial interrogation" requiring Miranda warnings.
+(1) Whether Miranda's safeguards apply to custodial interrogation for a misdemeanor offense; and (2) whether roadside questioning of a motorist detained during an ordinary traffic stop is "custodial interrogation" requiring [[Miranda and Custodial Interrogation|Miranda warnings]].
 
 ## Rule
 Miranda applies to custodial interrogation no matter how minor the offense: "We hold therefore that a person subjected to custodial interrogation is entitled to the benefit of the procedural safeguards enunciated in *Miranda*, regardless of the nature or severity of the offense of which he is suspected or for which he was arrested." — 468 U.S. at 434. ^pin-434

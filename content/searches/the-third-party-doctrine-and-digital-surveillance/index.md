@@ -26,7 +26,7 @@ This sub-umbrella collects the Fourth Amendment doctrine that governs **informat
 
 - [[Third-Party Doctrine & CSLI]] — the **anchor**. The *Smith*/*Miller* third-party rule and the *Carpenter* CSLI carve-out; the two-track test every other page applies. Start here.
 - [[Cell-Site Simulators]] — StingRay / IMSI-catcher deployment: a device that impersonates a tower to locate a phone, often inside a home. No SCOTUS rule; warrant-requiring by analogy and by policy.
-- [[Reverse-Keyword and Geofence Warrants]] — reverse-location and reverse-search demands. *Chatrie* settled that geofence acquisition is a search; the particularity of the warrants is the open frontier.
+- [[Reverse-Keyword and Geofence Warrants]] — reverse-location and reverse-search demands. *Chatrie* settled that geofence acquisition is a search; the [[Particularity|particularity]] of the warrants is the open frontier.
 - [[Real-Time Tracking]] — beepers, GPS, and real-time CSLI: *Knotts*/*Karo*/*Jones* and the reserved real-time-location question.
 - [[Investigative Genetic Genealogy]] — matching crime-scene DNA against consumer genealogy databases; no controlling precedent, taught as unsettled.
 

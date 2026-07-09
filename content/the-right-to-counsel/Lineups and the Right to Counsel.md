@@ -46,7 +46,7 @@ related:
 **Common pitfalls.**
 - **Assuming counsel attaches at every identification.** The right reaches only **post-charge corporeal** confrontations. It does **not** attach at a **pre-charge** showup or lineup (*[[Kirby v. Illinois|Kirby]]*) or at a **photo array** (*[[United States v. Ash|Ash]]*).
 - **Confusing this counsel rule with the reliability screen.** A properly counseled lineup can still be **unnecessarily suggestive** and challenged under **due process**, and an uncounseled photo array escapes this rule but remains subject to the suggestiveness/reliability screen ([[Eyewitness Identification]]).
-- **Forgetting the independent source.** *[[Gilbert v. California|Gilbert]]* excludes the **lineup** identification outright, but an **in-court** identification still comes in if the prosecution proves a source independent of the tainted procedure (*[[United States v. Wade|Wade]]*).
+- **Forgetting the [[Inevitable Discovery and Independent Source|independent source]].** *[[Gilbert v. California|Gilbert]]* excludes the **lineup** identification outright, but an **in-court** identification still comes in if the prosecution proves a source independent of the tainted procedure (*[[United States v. Wade|Wade]]*).
 - **Overlooking offense-specificity.** A post-charge lineup on an **uncharged** offense triggers no counsel right (*[[Texas v. Cobb|Cobb]]*).
 
 ## Lower-court developments
@@ -57,8 +57,8 @@ Circuit and state developments only; no SCOTUS. The controlling Supreme Court au
 
 | Case | Holding | Opinion |
 |---|---|---|
-| *[[United States v. Wade]]*, 388 U.S. 218 (1967) | **Anchor.** A **post-indictment corporeal lineup** is a **critical stage** with a Sixth Amendment right to counsel; an uncounseled lineup may taint a later in-court identification absent a proven **independent source**. | [opinion](https://www.courtlistener.com/opinion/107486/united-states-v-wade/) |
-| *[[Gilbert v. California]]*, 388 U.S. 263 (1967) | **Anchor (remedy).** Testimony that a witness identified the accused **at** an uncounseled post-charge lineup is excluded **per se**, with no reliability or harmless-error cure. | [opinion](https://www.courtlistener.com/opinion/107487/gilbert-v-california/) |
+| *[[United States v. Wade]]*, 388 U.S. 218 (1967) | **Anchor.** A **post-indictment corporeal lineup** is a **critical stage** with a Sixth Amendment right to counsel; an uncounseled lineup may taint a later in-court identification absent a proven **[[Inevitable Discovery and Independent Source\|independent source]]**. | [opinion](https://www.courtlistener.com/opinion/107486/united-states-v-wade/) |
+| *[[Gilbert v. California]]*, 388 U.S. 263 (1967) | **Anchor (remedy).** Testimony that a witness identified the accused **at** an uncounseled post-charge lineup is excluded **[[Common Legal Terms#per-se\|per se]]**, with no reliability or harmless-error cure. | [opinion](https://www.courtlistener.com/opinion/107487/gilbert-v-california/) |
 | *[[Kirby v. Illinois]]*, 406 U.S. 682 (1972) (plurality) | **Limit.** The right attaches only **at or after** the initiation of adversary judicial proceedings; a **pre-charge** identification is not a critical stage. | [opinion](https://www.courtlistener.com/opinion/108554/kirby-v-illinois/) |
 | *[[United States v. Ash]]*, 413 U.S. 300 (1973) | **Limit.** **No** right to counsel at a **photographic array**, even after indictment, because it is not a trial-like confrontation of the accused. | [opinion](https://www.courtlistener.com/opinion/108846/united-states-v-ash/) |
 | *[[Moore v. Illinois]]*, 434 U.S. 220 (1977) | **Application.** *Wade/Gilbert* reaches a post-charge corporeal identification of the accused **at a preliminary hearing**; conducting it without counsel violated the Sixth Amendment. | [opinion](https://www.courtlistener.com/opinion/109757/moore-v-illinois/) |

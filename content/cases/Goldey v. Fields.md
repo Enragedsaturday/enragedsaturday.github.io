@@ -63,7 +63,7 @@ Recognizing a cause of action under *Bivens* is "a disfavored judicial activity,
 A federal prisoner's Eighth Amendment excessive-force claim is a new *Bivens* context — none of the three recognized contexts involved such a claim — and special factors foreclose an implied remedy. Congress has legislated extensively in the area of prisoner litigation (including the Prison Litigation Reform Act) yet has never created a statutory damages action for such claims; extending *Bivens* could have negative consequences for prison operations; and federal prisoners already have alternative remedial procedures, such as the Bureau of Prisons' administrative-remedy program. Those considerations counsel leaving any new damages remedy to Congress rather than the courts.
 
 ## Conclusion
-The judgment of the Fourth Circuit was **reversed** and the case **remanded**. The opinion was **per curiam**.
+The judgment of the Fourth Circuit was **reversed** and the case **[[Reading and Citing Cases#on-remand|remanded]]**. The opinion was **[[Common Legal Terms#per-curiam|per curiam]]**.
 
 ## Treatment & subsequent history
 **Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub; its citator and progeny history have not completed the two-key verification, so it renders under the ⚪ banner until S9 promotion. *Goldey* continues the Court's post-*Ziglar v. Abbasi* / *Egbert v. Boule* trajectory of confining *Bivens* to its three recognized contexts and refusing new implied damages remedies against federal officers — here, foreclosing Eighth Amendment excessive-force claims by federal prisoners.

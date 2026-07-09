@@ -52,21 +52,21 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-Officers pursuing a suspected drug dealer into an apartment breezeway smelled burnt marijuana coming from one apartment. They banged on that door and announced "police." They then heard noises they believed indicated the destruction of evidence, kicked in the door, and found drugs. King argued the officers had impermissibly "created" the exigency by knocking and announcing.
+Officers pursuing a suspected drug dealer into an apartment breezeway smelled burnt marijuana coming from one apartment. They banged on that door and announced "police." They then heard noises they believed indicated the destruction of evidence, kicked in the door, and found drugs. King argued the officers had impermissibly "created" the [[Exigent Circumstances and Hot Pursuit|exigency]] by knocking and announcing.
 
 ## Issue
-Whether the exigent-circumstances exception is forfeited under the "police-created exigency" doctrine when it is the officers' own knock-and-announce that prompts the occupants to begin destroying evidence.
+Whether the exigent-circumstances exception is forfeited under the "police-created exigency" doctrine when it is the officers' own [[Knock-and-Announce|knock-and-announce]] that prompts the occupants to begin destroying evidence.
 
 ## Rule
 The test keys on whether the police acted lawfully before the exigency arose: "a warrantless entry based on exigent circumstances is reasonable when the police did not create the exigency by engaging or threatening to engage in conduct violating the Fourth Amendment." — 563 U.S. at ___ (slip op., at 8). ^pin-op8
 
-Conduct such as knocking on a door and announcing one's presence — which any private citizen may do — does not violate or threaten to violate the Fourth Amendment, and so does not impermissibly manufacture the exigency.
+Conduct such as knocking on a door and announcing one's presence — which any private citizen may do — does not violate or threaten to violate the Fourth Amendment, and so does not impermissibly manufacture the [[Exigent Circumstances and Hot Pursuit|exigency]].
 
 ## Application
-The officers' decision to knock loudly on the apartment door and announce "police" was lawful conduct that any occupant was free to ignore; the officers did not demand entry or otherwise threaten a Fourth Amendment violation before the sounds of evidence destruction began. Because the police thus did not create the exigency by unlawful or threatened-unlawful conduct, their reliance on the destruction-of-evidence exigency was permissible (the Court remanded for the state courts to determine whether an exigency in fact existed).
+The officers' decision to knock loudly on the apartment door and announce "police" was lawful conduct that any occupant was free to ignore; the officers did not demand entry or otherwise threaten a Fourth Amendment violation before the sounds of evidence destruction began. Because the police thus did not create the [[Exigent Circumstances and Hot Pursuit|exigency]] by unlawful or threatened-unlawful conduct, their reliance on the destruction-of-evidence [[Exigent Circumstances and Hot Pursuit|exigency]] was permissible (the Court [[Reading and Citing Cases#on-remand|remanded]] for the state courts to determine whether an [[Exigent Circumstances and Hot Pursuit|exigency]] in fact existed).
 
 ## Conclusion
-The judgment suppressing the evidence was reversed and the case remanded; lawful police conduct that prompts an occupant to destroy evidence does not forfeit the exigent-circumstances exception.
+The judgment suppressing the evidence was reversed and the case [[Reading and Citing Cases#on-remand|remanded]]; lawful police conduct that prompts an occupant to destroy evidence does not forfeit the exigent-circumstances exception.
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.

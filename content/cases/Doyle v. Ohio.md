@@ -44,10 +44,10 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-Doyle and a codefendant were arrested for selling marijuana and given Miranda warnings. They said nothing at arrest. At trial each testified to an exculpatory story (that they had been framed). On cross-examination the prosecutor impeached them by asking why, if their story were true, they had not told it to the arresting officer at the time of arrest.
+Doyle and a codefendant were arrested for selling marijuana and given [[Miranda and Custodial Interrogation|Miranda warnings]]. They said nothing at arrest. At trial each testified to an [[Brady and Giglio|exculpatory]] story (that they had been framed). On cross-examination the prosecutor impeached them by asking why, if their story were true, they had not told it to the arresting officer at the time of arrest.
 
 ## Issue
-Whether a state prosecutor may use a defendant's silence at the time of arrest, after Miranda warnings were given, to impeach an exculpatory account the defendant offers for the first time at trial.
+Whether a state prosecutor may use a defendant's silence at the time of arrest, after [[Miranda and Custodial Interrogation|Miranda warnings]] were given, to impeach an [[Brady and Giglio|exculpatory]] account the defendant offers for the first time at trial.
 
 ## Rule
 No. Using post-arrest, post-*Miranda* silence to impeach violates due process. Post-arrest silence following Miranda warnings is "insolubly ambiguous" because it may be nothing more than the arrestee's exercise of his *Miranda* rights. — 426 U.S. at 617. ^pin-617
@@ -55,14 +55,14 @@ No. Using post-arrest, post-*Miranda* silence to impeach violates due process. P
 "[W]hile it is true that the *Miranda* warnings contain no express assurance that silence will carry no penalty, such assurance is implicit to any person who receives the warnings. In such circumstances, it would be fundamentally unfair and a deprivation of due process to allow the arrested person's silence to be used to impeach an explanation subsequently offered at trial." — *Id.* at 618. ^pin-618
 
 ## Application
-Doyle and his codefendant were given Miranda warnings and then stayed silent at arrest. The State used that silence on cross-examination to suggest their trial testimony was a recent fabrication. Because the warnings implicitly assured them that silence carried no penalty, using that silence against them was fundamentally unfair and violated the Fourteenth Amendment's Due Process Clause.
+Doyle and his codefendant were given [[Miranda and Custodial Interrogation|Miranda warnings]] and then stayed silent at arrest. The State used that silence on cross-examination to suggest their trial testimony was a recent fabrication. Because the warnings implicitly assured them that silence carried no penalty, using that silence against them was fundamentally unfair and violated the Fourteenth Amendment's Due Process Clause.
 
 ## Conclusion
 The impeachment use of post-arrest, post-*Miranda* silence violated due process; the convictions were reversed.
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.
-- *Doyle* is cabined to silence after Miranda warnings: impeachment with **pre-arrest** silence (Jenkins v. Anderson) and with **post-arrest but pre-Miranda** silence (Fletcher v. Weir) does not offend *Doyle*; see also [[Salinas v. Texas]] (pre-custody silence). The core *Doyle* rule remains good law.
+- *Doyle* is cabined to silence after [[Miranda and Custodial Interrogation|Miranda warnings]]: impeachment with **pre-arrest** silence (Jenkins v. Anderson) and with **post-arrest but pre-Miranda** silence (Fletcher v. Weir) does not offend *Doyle*; see also [[Salinas v. Texas]] (pre-custody silence). The core *Doyle* rule remains good law.
 - Contrast [[Harris v. New York]]: a voluntary statement taken in violation of Miranda may impeach, but *Doyle* bars impeachment by the silence itself.
 
 ## Appears on

@@ -44,7 +44,7 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-Strickler was convicted of capital murder. The prosecution had not disclosed police notes and letters showing that a key eyewitness, Anne Stoltzfus, had initially been unable to recall the events she later described with confidence at trial. Strickler raised a *Brady* claim in federal habeas.
+Strickler was convicted of capital murder. The prosecution had not disclosed police notes and letters showing that a key eyewitness, Anne Stoltzfus, had initially been unable to recall the events she later described with confidence at trial. Strickler raised a *Brady* claim in federal [[Common Legal Terms#habeas-corpus|habeas]].
 
 ## Issue
 What a defendant must establish to prove a *Brady* violation.

@@ -62,7 +62,7 @@ The conviction, resting on unconstitutionally seized evidence, was reversed. The
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.
-- *Mapp* extended the [[Weeks v. United States]] exclusionary rule to the States and overruled the contrary portion of [[Wolf v. Colorado]]. The exclusionary rule remains good law, though later cases have narrowed its **scope** through the good-faith exception ([[United States v. Leon]]) and a culpability requirement for deterrence ([[Herring v. United States]]) — refinements of the remedy, not abrogations of *Mapp*.
+- *Mapp* extended the [[Weeks v. United States]] exclusionary rule to the States and overruled the contrary portion of [[Wolf v. Colorado]]. The exclusionary rule remains good law, though later cases have narrowed its **scope** through the [[The Good-Faith Exception|good-faith exception]] ([[United States v. Leon]]) and a culpability requirement for deterrence ([[Herring v. United States]]) — refinements of the remedy, not abrogations of *Mapp*.
 
 ## Appears on
 - [[The Exclusionary Rule]] — *Key — Anchor*

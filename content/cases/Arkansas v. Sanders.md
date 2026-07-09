@@ -57,13 +57,13 @@ holding: "The Fourth Amendment's warrant requirement applies to personal luggage
 Acting on an informant's tip, Little Rock police watched Sanders retrieve a green suitcase from airport baggage claim, hand it to a companion, and drive off in a taxi with the suitcase in the trunk. Officers stopped the taxi, opened the unlocked suitcase without a warrant, and found marihuana. The Arkansas Supreme Court held the warrantless search unlawful and reversed Sanders's conviction; the State sought review, arguing that the automobile exception justified the search because the luggage came from a lawfully stopped car.
 
 ## Issue
-Whether, absent exigent circumstances, police must obtain a warrant before searching luggage they have seized from a lawfully stopped automobile.
+Whether, absent [[Exigent Circumstances and Hot Pursuit|exigent circumstances]], police must obtain a warrant before searching luggage they have seized from a lawfully stopped automobile.
 
 ## Rule
 Extending *[[United States v. Chadwick|Chadwick]]*, the Court held that the automobile exception does not reach personal luggage merely because it was taken from a car. Once officers have seized a suitcase and reduced it to their exclusive control, the vehicle's mobility no longer supplies an exigency, and luggage carries the same expectation of privacy wherever it is found: "In sum, we hold that the warrant requirement of the Fourth Amendment applies to personal luggage taken from an automobile to the same degree it applies to such luggage in other locations." — 442 U.S. at 766. ^pin-766
 
 ## Application
-The Arkansas Supreme Court had found ample probable cause to believe the suitcase held contraband, but no exigency: with the police in control of the taxi and its occupants, there was no risk the suitcase would disappear before a warrant could issue. Because the luggage was already secured, the reasons that excuse a warrant for a moving vehicle did not apply, and the officers should have taken the suitcase to the station and obtained a warrant.
+The Arkansas Supreme Court had found ample probable cause to believe the suitcase held contraband, but no [[Exigent Circumstances and Hot Pursuit|exigency]]: with the police in control of the taxi and its occupants, there was no risk the suitcase would disappear before a warrant could issue. Because the luggage was already secured, the reasons that excuse a warrant for a moving vehicle did not apply, and the officers should have taken the suitcase to the station and obtained a warrant.
 
 ## Conclusion
 The judgment of the Supreme Court of Arkansas — suppressing the evidence — was **affirmed**. Powell, J., delivered the opinion of the Court.

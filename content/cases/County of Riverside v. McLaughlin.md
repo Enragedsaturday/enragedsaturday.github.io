@@ -59,10 +59,10 @@ But timeliness within 48 hours is not automatically sufficient: "This is not to 
 Past 48 hours, the burden flips: "Where an arrested individual does not receive a probable cause determination within 48 hours, the calculus changes. . . . [T]he burden shifts to the government to demonstrate the existence of a bona fide emergency or other extraordinary circumstance. . . . Nor, for that matter, do intervening weekends [qualify as such a circumstance]." — *Id.* at 57. ^pin-57
 
 ## Application
-Riverside's practice — combined probable-cause/arraignment proceedings within two days but excluding Saturdays, Sundays, and holidays — meant a Thursday arrestee might wait until Monday, exceeding the 48-hour period the Court deemed presumptively permissible. Because its regular practice ran past 48 hours, the County was not immune from a systemic (class-action) challenge. The Court left to the lower courts on remand whether the County's habit of holding arraignments on "the last day" possible reflected legitimate reasons or impermissible "delay for delay's sake."
+Riverside's practice — combined probable-cause/arraignment proceedings within two days but excluding Saturdays, Sundays, and holidays — meant a Thursday arrestee might wait until Monday, exceeding the 48-hour period the Court deemed presumptively permissible. Because its regular practice ran past 48 hours, the County was not immune from a systemic (class-action) challenge. The Court left to the lower courts [[Reading and Citing Cases#on-remand|on remand]] whether the County's habit of holding arraignments on "the last day" possible reflected legitimate reasons or impermissible "delay for delay's sake."
 
 ## Conclusion
-A judicial probable-cause determination within 48 hours of a warrantless arrest is presumptively prompt under *Gerstein*; delay beyond that shifts the burden to the government, and weekends and holidays do not excuse it. Riverside's schedule exceeded the window, so the judgment was vacated and the case remanded.
+A judicial probable-cause determination within 48 hours of a warrantless arrest is presumptively prompt under *Gerstein*; delay beyond that shifts the burden to the government, and weekends and holidays do not excuse it. Riverside's schedule exceeded the window, so the judgment was [[Reading and Citing Cases#vacated|vacated]] and the case [[Reading and Citing Cases#on-remand|remanded]].
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.

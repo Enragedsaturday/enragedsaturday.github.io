@@ -47,7 +47,7 @@ lake:
 An undercover officer, Glover, bought heroin from a seller he viewed for a few minutes at an apartment door. He described the seller to another officer, who left a single police photograph of Brathwaite on Glover's desk; Glover identified it days later, and again identified Brathwaite at trial. Brathwaite argued the single-photo procedure was impermissibly suggestive and required exclusion of the identification.
 
 ## Issue
-Whether due process requires a per se rule excluding identification evidence derived from an unnecessarily suggestive procedure, or whether admissibility turns on the reliability of the identification under the totality of the circumstances.
+Whether due process requires a [[Common Legal Terms#per-se|per se]] rule excluding identification evidence derived from an unnecessarily suggestive procedure, or whether admissibility turns on the reliability of the identification under the [[Common Legal Terms#totality-of-the-circumstances|totality of the circumstances]].
 
 ## Rule
 No per se exclusion; reliability governs. "reliability is the linchpin in determining the admissibility of identification testimony for both pre- and post-*Stovall* confrontations." — 432 U.S. at 114. ^pin-114
@@ -58,7 +58,7 @@ The reliability factors, drawn from *Neil v. Biggers*, are "the opportunity of t
 Even assuming the single-photograph display was suggestive, Glover's identification was reliable under the *Biggers* factors: as a trained officer he had a good, close opportunity to view the seller in daylight, paid careful attention, gave an accurate description, was certain in identifying the photograph, and made the identification only days after the crime. Weighed against the limited corrupting effect of the procedure, those indicia of reliability made the identification admissible.
 
 ## Conclusion
-Reversed in favor of admissibility: identification evidence from a suggestive procedure is admitted when, under the totality of the circumstances, it is nonetheless reliable.
+Reversed in favor of admissibility: identification evidence from a suggestive procedure is admitted when, under the [[Common Legal Terms#totality-of-the-circumstances|totality of the circumstances]], it is nonetheless reliable.
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.

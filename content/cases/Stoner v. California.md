@@ -67,7 +67,7 @@ The hotel clerk could not consent to the search of Stoner's room; the search was
 - No negative treatment. The later apparent-authority rule of [[Illinois v. Rodriguez]] (1990) validates a search where officers reasonably (if mistakenly) believe the consenter has authority — but a hotel clerk has neither actual nor reasonably-apparent authority over a current guest's room, so *Stoner* remains good law and is taught alongside [[Chapman v. United States (1961)]] (landlord) as the core third-party-consent limit.
 
 ## Appears on
-- [[Consent Searches]] — *Progeny (third-party consent / apparent authority)*
+- [[Consent Searches]] — *Progeny ([[Consent Searches|third-party consent]] / [[Consent Searches|apparent authority]])*
 
 ## Sources
 - *Stoner v. California*, 376 U.S. 483 (1964) — https://www.courtlistener.com/opinion/106777/stoner-v-california/ — pinpoints: 488, 489, 490.

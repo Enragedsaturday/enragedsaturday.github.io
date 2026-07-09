@@ -55,7 +55,7 @@ aliases:
 <!-- header line; TreatmentBadge + weight render from frontmatter, degrading to the text above. Born under_review (⚪) — identity cluster 110885 → combined opinion 110885 (Stevens, J.; 460 U.S. 325, decided Mar. 7, 1983). Rule quote string-matched to the CL opinion text 2026-07-07 (reporter star `*336` follows the quoted sentence, placing it at 335). S9 promotes. -->
 
 ## Background
-Several convicted defendants brought § 1983 damages suits against police officers who had testified against them at their criminal trials, alleging that the officers gave perjured testimony that helped secure the convictions. The Federal Magistrate and District Court dismissed the suits, and the Seventh Circuit affirmed on the ground that all witnesses — police officers as well as lay witnesses — are absolutely immune from civil liability for their testimony in judicial proceedings. Because the courts of appeals had divided on the question, the Supreme Court granted certiorari.
+Several convicted defendants brought § 1983 damages suits against police officers who had testified against them at their criminal trials, alleging that the officers gave perjured testimony that helped secure the convictions. The Federal Magistrate and District Court dismissed the suits, and the Seventh Circuit affirmed on the ground that all witnesses — police officers as well as lay witnesses — are absolutely immune from civil liability for their testimony in judicial proceedings. Because the courts of appeals had divided on the question, the Supreme Court granted [[Reading and Citing Cases#certiorari-cert|certiorari]].
 
 ## Issue
 Whether a police officer who allegedly gives perjured testimony at a criminal trial may be sued for damages under § 1983 by the person convicted.

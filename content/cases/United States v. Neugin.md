@@ -62,7 +62,7 @@ Opening the camper was an unconstitutional search that neither the community-car
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding in-circuit — 10th Cir.**
-- No negative treatment. *Neugin* is an illustrative application in which inevitable discovery **failed**: a speculative chain (arrest → impoundment → inventory) cannot establish that evidence would inevitably have been found.
+- No negative treatment. *Neugin* is an illustrative application in which [[Inevitable Discovery and Independent Source|inevitable discovery]] **failed**: a speculative chain (arrest → impoundment → inventory) cannot establish that evidence would inevitably have been found.
 
 ## Appears on
 - [[The Exclusionary Rule]] — *Recent development (role-based)*

@@ -47,7 +47,7 @@ lake:
 Police suspected Olson of being the getaway driver in a robbery-murder and believed he was staying as an overnight guest in the home of two women. Without a warrant, they entered the home and arrested him. He sought to suppress a statement as the fruit of an unlawful warrantless entry.
 
 ## Issue
-Whether an overnight guest has a reasonable expectation of privacy in his host's home sufficient to challenge a warrantless entry.
+Whether an overnight guest has a [[Reasonable Expectation of Privacy|reasonable expectation of privacy]] in his host's home sufficient to challenge a warrantless entry.
 
 ## Rule
 Yes. "we think that society recognizes that a houseguest has a legitimate expectation of privacy in his host's home." — 495 U.S. at 98. ^pin-98
@@ -55,10 +55,10 @@ Yes. "we think that society recognizes that a houseguest has a legitimate expect
 An overnight guest's status is alone enough to establish an expectation of privacy in the host's home that society is prepared to recognize as reasonable.
 
 ## Application
-Olson was staying as an overnight guest in the women's home when police entered without a warrant to arrest him. Because his status as an overnight guest gave him a legitimate expectation of privacy in that home, he could challenge the warrantless entry, which — absent consent or exigent circumstances — was unlawful.
+Olson was staying as an overnight guest in the women's home when police entered without a warrant to arrest him. Because his status as an overnight guest gave him a legitimate expectation of privacy in that home, he could challenge the warrantless entry, which — absent consent or [[Exigent Circumstances and Hot Pursuit|exigent circumstances]] — was unlawful.
 
 ## Conclusion
-Affirmed; Olson had standing to challenge the entry, and the warrantless arrest in the home was unconstitutional.
+Affirmed; Olson had [[Standing to Challenge a Search|standing to challenge]] the entry, and the warrantless arrest in the home was unconstitutional.
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.

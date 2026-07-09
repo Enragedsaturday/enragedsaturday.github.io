@@ -44,10 +44,10 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-Terrence Byrd drove a car that a companion had rented; he was not listed as an authorized driver on the rental agreement. Troopers stopped him, learned he was not on the agreement, searched the car, and found body armor and heroin in the trunk. The lower courts held Byrd lacked any reasonable expectation of privacy because he was not an authorized renter.
+Terrence Byrd drove a car that a companion had rented; he was not listed as an authorized driver on the rental agreement. Troopers stopped him, learned he was not on the agreement, searched the car, and found body armor and heroin in the trunk. The lower courts held Byrd lacked any [[Reasonable Expectation of Privacy|reasonable expectation of privacy]] because he was not an authorized renter.
 
 ## Issue
-Whether a driver in otherwise lawful possession and control of a rental car has a reasonable expectation of privacy in it when he is not listed on the rental agreement.
+Whether a driver in otherwise lawful possession and control of a rental car has a [[Reasonable Expectation of Privacy|reasonable expectation of privacy]] in it when he is not listed on the rental agreement.
 
 ## Rule
 "The Court now holds that, as a general rule, someone in otherwise lawful possession and control of a rental car has a reasonable expectation of privacy in it even if the rental agreement does not list him or her as an authorized driver." — *Byrd v. United States*, 584 U.S. 395 (2018) (slip op., at 2). ^pin-op2
@@ -56,7 +56,7 @@ Whether a driver in otherwise lawful possession and control of a rental car has 
 Byrd was the sole occupant in possession and control of the rental car, a situation the Court likened to one who is lent an apartment and can exclude others; not being listed on the agreement did not, by itself, defeat his expectation of privacy. The Court did not finally resolve his case, remanding to address the Government's argument that he was no better than a car thief — who would lack any legitimate expectation of privacy — and whether probable cause justified the search in any event.
 
 ## Conclusion
-An unlisted but lawful driver generally has a reasonable expectation of privacy in a rental car; the judgment was vacated and the case remanded.
+An unlisted but lawful driver generally has a [[Reasonable Expectation of Privacy|reasonable expectation of privacy]] in a rental car; the judgment was [[Reading and Citing Cases#vacated|vacated]] and the case [[Reading and Citing Cases#on-remand|remanded]].
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.

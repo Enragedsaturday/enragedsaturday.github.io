@@ -12,7 +12,7 @@ related: ["[[SIA Persons]]", "[[Exigent Circumstances and Hot Pursuit]]", "[[Con
 
 # SIA — Alcohol Tests
 
-*This page states the search-incident rule for chemical testing on a drunk-driving arrest. The dissipating-alcohol exigency that fills the gap for blood is developed at [[Exigent Circumstances and Hot Pursuit]].*
+*This page states the search-incident rule for chemical testing on a drunk-driving arrest. The dissipating-alcohol [[Exigent Circumstances and Hot Pursuit|exigency]] that fills the gap for blood is developed at [[Exigent Circumstances and Hot Pursuit]].*
 
 > [!rule] Black-letter rule
 > "[A] breath test, but not a blood test, may be administered as a search incident to a lawful arrest for drunk driving." *[[Birchfield v. North Dakota#^pin-2185|Birchfield v. North Dakota]]*, 579 U.S. 438, 474 (2016). A warrantless **breath** test rides the arrest; a warrantless **blood** draw does not — it needs a **warrant**, valid **consent**, or a genuine **exigency** (the dissipating-BAC line of *[[Schmerber v. California#^pin-770|Schmerber]]* / *[[Missouri v. McNeely|McNeely]]* / *[[Mitchell v. Wisconsin#^pin-2539|Mitchell]]*).
@@ -20,7 +20,7 @@ related: ["[[SIA Persons]]", "[[Exigent Circumstances and Hot Pursuit]]", "[[Con
 
 ## The Brief
 
-**Field-decisive question: I arrested a driver for DUI — can I test breath or blood without a warrant?** Breath, yes, on the arrest alone; blood, no, unless a warrant, consent, or exigency supplies the authority. The government bears the burden of justifying any warrantless test; the remedy for an unjustified blood draw is suppression under [[The Exclusionary Rule]].
+**Field-decisive question: I arrested a driver for DUI — can I test breath or blood without a warrant?** Breath, yes, on the arrest alone; blood, no, unless a warrant, consent, or [[Exigent Circumstances and Hot Pursuit|exigency]] supplies the authority. The government bears the burden of justifying any warrantless test; the remedy for an unjustified blood draw is suppression under [[The Exclusionary Rule]].
 
 **The two tests are treated differently because the intrusions differ.** *Birchfield* weighed the privacy intrusion against the state's interest and split the difference: a **breath** test is minimally intrusive (no piercing of the skin, no lingering biological sample) and "may be administered as a search incident to a lawful arrest for drunk driving." *[[Birchfield v. North Dakota#^pin-2185|Birchfield]]*, 579 U.S. at 474. A **blood** draw pierces the body and yields a sample the government retains, so it is **not** covered by the search-incident exception and needs its own justification.
 
@@ -30,15 +30,15 @@ related: ["[[SIA Persons]]", "[[Exigent Circumstances and Hot Pursuit]]", "[[Con
 
 **Apply it.**
 1. On a lawful **custodial DUI arrest**, a warrantless **breath** test is valid incident to the arrest (*Birchfield*).
-2. For **blood**, get a **warrant** unless consent or a genuine exigency applies (*Birchfield*).
-3. If you rely on **exigency** for blood, articulate the totality — dissipation alone is not automatic (*McNeely*); an **unconscious** driver who cannot blow will "almost always" support it (*Mitchell*).
+2. For **blood**, get a **warrant** unless consent or a genuine [[Exigent Circumstances and Hot Pursuit|exigency]] applies (*Birchfield*).
+3. If you rely on **[[Exigent Circumstances and Hot Pursuit|exigency]]** for blood, articulate the totality — dissipation alone is not automatic (*McNeely*); an **unconscious** driver who cannot blow will "almost always" support it (*Mitchell*).
 4. Do not threaten a **crime** for refusing a **blood** test; that penalty is unconstitutional (*Birchfield*). Breath-test-refusal penalties are permissible.
 
 **Common pitfalls.**
-- **Treating blood like breath.** Only the **breath** test rides the arrest; blood needs a warrant, consent, or exigency (*Birchfield*).
-- **Assuming BAC dissipation is an automatic exigency.** *McNeely* rejects a per-se rule; judge the totality.
+- **Treating blood like breath.** Only the **breath** test rides the arrest; blood needs a warrant, consent, or [[Exigent Circumstances and Hot Pursuit|exigency]] (*Birchfield*).
+- **Assuming BAC dissipation is an automatic [[Exigent Circumstances and Hot Pursuit|exigency]].** *McNeely* rejects a per-se rule; judge the totality.
 - **Criminalizing refusal of a blood test.** Unconstitutional under *Birchfield* (civil license consequences are separate).
-- **Calling the blood draw a "search incident to arrest."** It is not; the theory is exigency (*Schmerber* line).
+- **Calling the blood draw a "search incident to arrest."** It is not; the theory is [[Exigent Circumstances and Hot Pursuit|exigency]] (*Schmerber* line).
 
 ## Lower-court developments
 
@@ -56,9 +56,9 @@ These cases are treated in full elsewhere but frame the chemical-testing rule he
 
 | Case | Relevance here | Primary home | Opinion |
 |---|---|---|---|
-| *[[Schmerber v. California]]*, 384 U.S. 757 (1966) | ***Exigency baseline.*** A warrantless **blood** draw on probable cause is reasonable where dissipating BAC leaves no time for a warrant; the theory that fills the gap *Birchfield* leaves for blood. | [[Exigent Circumstances and Hot Pursuit]] | [opinion](https://www.courtlistener.com/opinion/107262/schmerber-v-california/) |
-| *[[Missouri v. McNeely]]*, 569 U.S. 141 (2013) | ***No per-se exigency.*** The natural dissipation of blood alcohol does not create a categorical exigency; the question is judged on the totality of the circumstances. | [[Exigent Circumstances and Hot Pursuit]] | [opinion](https://www.courtlistener.com/opinion/882802/missouri-v-mcneely/) |
-| *[[Mitchell v. Wisconsin]]*, 588 U.S. 840 (2019) | ***Unconscious driver.*** When a DUI suspect is unconscious and cannot take a breath test, exigency will "almost always" permit a warrantless blood draw. | [[Exigent Circumstances and Hot Pursuit]] | [opinion](https://www.courtlistener.com/opinion/4218101/mitchell-v-wisconsin/) |
+| *[[Schmerber v. California]]*, 384 U.S. 757 (1966) | ***[[Exigent Circumstances and Hot Pursuit\|Exigency]] baseline.*** A warrantless **blood** draw on probable cause is reasonable where dissipating BAC leaves no time for a warrant; the theory that fills the gap *Birchfield* leaves for blood. | [[Exigent Circumstances and Hot Pursuit]] | [opinion](https://www.courtlistener.com/opinion/107262/schmerber-v-california/) |
+| *[[Missouri v. McNeely]]*, 569 U.S. 141 (2013) | ***No per-se [[Exigent Circumstances and Hot Pursuit\|exigency]].*** The natural dissipation of blood alcohol does not create a categorical [[Exigent Circumstances and Hot Pursuit\|exigency]]; the question is judged on the [[Common Legal Terms#totality-of-the-circumstances\|totality of the circumstances]]. | [[Exigent Circumstances and Hot Pursuit]] | [opinion](https://www.courtlistener.com/opinion/882802/missouri-v-mcneely/) |
+| *[[Mitchell v. Wisconsin]]*, 588 U.S. 840 (2019) | ***Unconscious driver.*** When a DUI suspect is unconscious and cannot take a breath test, [[Exigent Circumstances and Hot Pursuit\|exigency]] will "almost always" permit a warrantless blood draw. | [[Exigent Circumstances and Hot Pursuit]] | [opinion](https://www.courtlistener.com/opinion/4218101/mitchell-v-wisconsin/) |
 
 ## Visual
 

@@ -57,10 +57,10 @@ No; standing to suppress is personal. "The established principle is that suppres
 Deterrence does not eliminate that predicate: "There is no necessity to exclude evidence against one defendant in order to protect the rights of another. No rights of the victim of an illegal search are at stake when the evidence is offered against some other party." — *Id.* at 174. ^pin-174b
 
 ## Application
-Each petitioner could move to suppress only the fruits of surveillance that invaded his own Fourth Amendment interests — conversations to which he was a party or surveillance of premises he owned — not surveillance aimed at someone else. The Court rejected the petitioners' claim of an "independent constitutional right of their own to exclude relevant and probative evidence because it was seized from another." On the disclosure question, it ordered the Government to turn over to a defendant the surveillance records of his own conversations or those overheard on his premises, for an adversary suppression hearing.
+Each petitioner could move to suppress only the fruits of surveillance that invaded his own Fourth Amendment interests — conversations to which he was a party or surveillance of premises he owned — not surveillance aimed at someone else. The Court rejected the petitioners' claim of an "independent constitutional right of their own to exclude relevant and probative evidence because it was seized from another." On the disclosure question, it ordered the Government to turn over to a defendant the surveillance records of his own conversations or those overheard on his premises, for an adversary [[Common Legal Terms#suppression-hearing|suppression hearing]].
 
 ## Conclusion
-Standing to suppress is personal and may not be vicariously asserted; the cases were remanded for suppression hearings limited to each petitioner's own conversations and premises, with disclosure of the pertinent surveillance records.
+Standing to suppress is personal and may not be vicariously asserted; the cases were [[Reading and Citing Cases#on-remand|remanded]] for suppression hearings limited to each petitioner's own conversations and premises, with disclosure of the pertinent surveillance records.
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.

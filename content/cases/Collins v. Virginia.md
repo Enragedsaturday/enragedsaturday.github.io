@@ -47,22 +47,22 @@ lake:
 An officer investigating a distinctive orange-and-black motorcycle suspected of eluding police walked up the driveway of Collins's house to a parking patio partly enclosed by the home, pulled back a tarp covering the motorcycle, ran the plates, and confirmed it was stolen — all without a warrant. Collins moved to suppress, and the Virginia Supreme Court upheld the search under the automobile exception.
 
 ## Issue
-Whether the automobile exception permits an officer, without a warrant, to enter the curtilage of a home to search a vehicle parked there.
+Whether the automobile exception permits an officer, without a warrant, to enter the [[Curtilage|curtilage]] of a home to search a vehicle parked there.
 
 ## Rule
 No. "For the foregoing reasons, we conclude that the automobile exception does not permit an officer without a warrant to enter a home or its curtilage in order to search a vehicle therein." — *Collins v. Virginia*, 584 U.S. 586 (2018) (slip op., at 14). ^pin-op14
 
-The automobile exception is a warrant exception for the vehicle; it does not independently justify the separate trespass of entering constitutionally protected curtilage to reach the vehicle.
+The automobile exception is a warrant exception for the vehicle; it does not independently justify the separate trespass of entering constitutionally protected [[Curtilage|curtilage]] to reach the vehicle.
 
 ## Application
-The motorcycle was parked on the curtilage — a partly enclosed section of the driveway adjacent to and intimately tied to the home. The officer physically entered that curtilage and pulled off the tarp to search the motorcycle without a warrant. Because the automobile exception did not authorize entering the curtilage, the warrantless intrusion was unlawful on these facts; whether it might be justified on another ground, such as exigency, was left for remand.
+The motorcycle was parked on the [[Curtilage|curtilage]] — a partly enclosed section of the driveway adjacent to and intimately tied to the home. The officer physically entered that [[Curtilage|curtilage]] and pulled off the tarp to search the motorcycle without a warrant. Because the automobile exception did not authorize entering the [[Curtilage|curtilage]], the warrantless intrusion was unlawful on these facts; whether it might be justified on another ground, such as [[Exigent Circumstances and Hot Pursuit|exigency]], was left for remand.
 
 ## Conclusion
-The automobile exception did not authorize the warrantless curtilage entry; the judgment was reversed and the case remanded.
+The automobile exception did not authorize the warrantless [[Curtilage|curtilage]] entry; the judgment was reversed and the case [[Reading and Citing Cases#on-remand|remanded]].
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.
-- No negative treatment. *Collins* bounds the [[Carroll v. United States]] / [[California v. Carney]] automobile exception at the home's curtilage, applying the curtilage protection recognized in [[Florida v. Jardines]].
+- No negative treatment. *Collins* bounds the [[Carroll v. United States]] / [[California v. Carney]] automobile exception at the home's [[Curtilage|curtilage]], applying the [[Curtilage|curtilage]] protection recognized in [[Florida v. Jardines]].
 
 ## Appears on
 - [[Automobile Exception]] — *Key — Progeny / Refinement*

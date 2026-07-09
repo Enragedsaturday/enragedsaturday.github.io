@@ -64,7 +64,7 @@ Reversed. The warrantless seizure of a car from a public place, on probable caus
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.
-- No negative treatment. *White* extends the *Carroll* line — drawn on in [[Carroll v. United States]], [[California v. Carney]], and the forfeiture/custody holding of [[Cooper v. California]] — from searching for contraband to seizing the contraband vehicle itself. The concurrence cautions the holding is not a blanket license to seize anything a legislature labels "contraband."
+- No negative treatment. *White* extends the *Carroll* line — drawn on in [[Carroll v. United States]], [[California v. Carney]], and the forfeiture/custody holding of [[Cooper v. California]] — from searching for contraband to seizing the contraband vehicle itself. The [[Common Legal Terms#concurring-opinion|concurrence]] cautions the holding is not a blanket license to seize anything a legislature labels "contraband."
 
 ## Appears on
 - [[Automobile Exception]] — *Related (cross-doctrine)*

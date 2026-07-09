@@ -60,7 +60,7 @@ The exclusionary rule rests on deterrence: "The rule is calculated to prevent, n
 Because the items used against Elkins had been seized by state officers in a manner that would have violated the Fourth Amendment had federal officers done it, they could not be admitted in his federal prosecution. The Court added that a federal court must make an independent inquiry into the lawfulness of the state seizure under federal standards, regardless of any state-court ruling.
 
 ## Conclusion
-The silver-platter doctrine was rejected; the unconstitutionally state-seized evidence was inadmissible in federal court, and the judgment was reversed and remanded.
+The silver-platter doctrine was rejected; the unconstitutionally state-seized evidence was inadmissible in federal court, and the judgment was reversed and [[Reading and Citing Cases#on-remand|remanded]].
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.

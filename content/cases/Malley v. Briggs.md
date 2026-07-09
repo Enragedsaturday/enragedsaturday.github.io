@@ -49,7 +49,7 @@ lake:
 Rhode Island state trooper Malley, relying on court-authorized wiretap intercepts, drew up felony complaints and supporting affidavits charging James and Louise Briggs with a marijuana offense. A state judge signed the arrest warrants and the Briggses were arrested, but the grand jury did not indict and the charges were dropped. The Briggses sued Malley under § 1983, alleging the affidavit did not establish probable cause. Malley claimed he was absolutely immune because a judge had issued the warrant.
 
 ## Issue
-Whether an officer who applies for and obtains an arrest warrant is entitled to absolute immunity from a § 1983 damages suit, or only to qualified immunity — and if the latter, what the standard is.
+Whether an officer who applies for and obtains an arrest warrant is entitled to absolute immunity from a § 1983 damages suit, or only to [[Qualified Immunity|qualified immunity]] — and if the latter, what the standard is.
 
 ## Rule
 The officer gets **qualified**, not absolute, immunity, judged by the objective-reasonableness standard of *Harlow* and *Leon*. "Defendants will not be immune if, on an objective basis, it is obvious that no reasonably competent officer would have concluded that a warrant should issue; but if officers of reasonable competence could disagree on this issue, immunity should be recognized." — 475 U.S. at 341. ^pin-341
@@ -59,10 +59,10 @@ The magistrate's approval does not automatically immunize the officer: the quest
 Qualified immunity thus protects "all but the plainly incompetent or those who knowingly violate the law." — *Id.* at 341.
 
 ## Application
-Malley argued that by presenting the affidavit to a judge he passed responsibility to the magistrate and earned absolute immunity. The Court rejected that: an officer who submits an affidavit that no reasonably competent officer would think establishes probable cause "created the unnecessary danger of an unlawful arrest" and cannot hide behind the magistrate's signature. Whether Malley's affidavit met that standard was a question for trial, so the Court remanded for application of the objective-reasonableness test.
+Malley argued that by presenting the affidavit to a judge he passed responsibility to the magistrate and earned absolute immunity. The Court rejected that: an officer who submits an affidavit that no reasonably competent officer would think establishes probable cause "created the unnecessary danger of an unlawful arrest" and cannot hide behind the magistrate's signature. Whether Malley's affidavit met that standard was a question for trial, so the Court [[Reading and Citing Cases#on-remand|remanded]] for application of the objective-reasonableness test.
 
 ## Conclusion
-Affirmed in part and remanded. Officers who apply for warrants enjoy only qualified immunity; immunity is lost where no reasonably competent officer would have concluded the warrant should issue.
+Affirmed in part and [[Reading and Citing Cases#on-remand|remanded]]. Officers who apply for warrants enjoy only [[Qualified Immunity|qualified immunity]]; immunity is lost where no reasonably competent officer would have concluded the warrant should issue.
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.

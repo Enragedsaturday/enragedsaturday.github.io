@@ -47,7 +47,7 @@ lake:
 Officers had a warrant to search Richards's motel room for drugs (the magistrate had deleted no-knock authorization). An officer posing as a maintenance man knocked; Richards opened the door, saw a uniformed officer, and quickly closed it. The officers then forced entry without further announcement and found drugs and cash. The Wisconsin Supreme Court upheld the entry under a blanket rule that police need never knock and announce when executing a warrant in a felony drug investigation.
 
 ## Issue
-Whether the Fourth Amendment permits a blanket exception to the knock-and-announce requirement for an entire category of crime — all felony drug investigations.
+Whether the Fourth Amendment permits a blanket exception to the [[Knock-and-Announce|knock-and-announce]] requirement for an entire category of crime — all felony drug investigations.
 
 ## Rule
 No blanket exception. "[T]he fact that felony drug investigations may frequently present circumstances warranting a no-knock entry cannot remove from the neutral scrutiny of a reviewing court the reasonableness of the police decision not to knock and announce in a particular case." — 520 U.S. at 394. ^pin-394
@@ -58,10 +58,10 @@ No blanket exception. "[T]he fact that felony drug investigations may frequently
 Rejecting Wisconsin's blanket rule, the Court nonetheless held the no-knock entry into Richards's room was reasonable on these facts: once Richards opened the door, recognized the police, and slammed it, the officers had reasonable suspicion that he would destroy the easily disposable drugs if they paused to announce. The magistrate's deletion of no-knock authority did not control, because reasonableness is judged as of the moment of entry.
 
 ## Conclusion
-There is no blanket knock-and-announce exception for drug cases; case-specific reasonable suspicion is required, and it was present here, so the entry was upheld and the judgment affirmed.
+There is no blanket [[Knock-and-Announce|knock-and-announce]] exception for drug cases; case-specific reasonable suspicion is required, and it was present here, so the entry was upheld and the judgment affirmed.
 
 ## Treatment & subsequent history
-- **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**. *Richards* refines the knock-and-announce rule of [[Wilson v. Arkansas]]; suppression for a knock-and-announce violation was later denied in [[Hudson v. Michigan]].
+- **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**. *Richards* refines the [[Knock-and-Announce|knock-and-announce]] rule of [[Wilson v. Arkansas]]; suppression for a [[Knock-and-Announce|knock-and-announce]] violation was later denied in [[Hudson v. Michigan]].
 
 ## Appears on
 - [[Knock-and-Announce]] — *Key — Progeny / Refinement*

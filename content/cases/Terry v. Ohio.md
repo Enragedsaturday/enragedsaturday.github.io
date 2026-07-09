@@ -68,7 +68,7 @@ The stop and protective frisk were reasonable under the Fourth Amendment; Terry'
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.
-- The reasonable-suspicion standard was elaborated in [[United States v. Cortez]] ("particularized and objective basis"; "whole picture") and [[United States v. Arvizu]] (totality of the circumstances; no "divide-and-conquer"), and applied to flight in [[Illinois v. Wardlow]] and anonymous tips in [[Florida v. J.L.]].
+- The reasonable-suspicion standard was elaborated in [[United States v. Cortez]] ("particularized and objective basis"; "whole picture") and [[United States v. Arvizu]] ([[Common Legal Terms#totality-of-the-circumstances|totality of the circumstances]]; no "divide-and-conquer"), and applied to flight in [[Illinois v. Wardlow]] and anonymous tips in [[Florida v. J.L.]].
 
 ## Appears on
 - [[Reasonable Suspicion]] — *Key — Anchor*

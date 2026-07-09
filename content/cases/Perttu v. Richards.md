@@ -61,7 +61,7 @@ PLRA exhaustion is an ordinary affirmative defense, and the PLRA is silent on wh
 Whether Perttu destroyed Richards's grievances decided both the exhaustion defense and the First Amendment retaliation claim — a legal claim triable to a jury. Because those questions were intertwined, the district court could not resolve the shared fact at a bench hearing and then dismiss for non-exhaustion; the intertwined factual dispute had to be tried to a jury. The Court construed the PLRA to require that result and so did not reach whether the Seventh Amendment would independently compel it.
 
 ## Conclusion
-The judgment of the Sixth Circuit was **affirmed**. Roberts, C.J., delivered the opinion of the Court, joined by Sotomayor, Kagan, Gorsuch, and Jackson, JJ.; Barrett, J., filed a dissenting opinion, joined by Thomas, Alito, and Kavanaugh, JJ.
+The judgment of the Sixth Circuit was **affirmed**. Roberts, C.J., delivered the opinion of the Court, joined by Sotomayor, Kagan, Gorsuch, and Jackson, JJ.; Barrett, J., filed a [[Common Legal Terms#dissenting-opinion|dissenting opinion]], joined by Thomas, Alito, and Kavanaugh, JJ.
 
 ## Treatment & subsequent history
 **Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub; its citator and progeny history have not completed the two-key verification, so it renders under the ⚪ banner until S9 promotion. *Perttu* is a procedural decision at the § 1983 prisoner-litigation gate: it keeps a jury, not the judge, as the factfinder when a PLRA exhaustion dispute and a jury-triable constitutional claim rise or fall on the same disputed fact.

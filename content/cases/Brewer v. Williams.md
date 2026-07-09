@@ -58,11 +58,11 @@ And it was violated by deliberate elicitation: "There can be no serious doubt, e
 Judicial proceedings had begun against Williams (a warrant, an arraignment, and commitment to jail), so the Sixth Amendment right had attached. The detective's "Christian burial speech" was a deliberate effort to draw out incriminating disclosures while Williams was isolated from his lawyers, and the State did not carry its burden of proving Williams knowingly and intelligently relinquished his right. The statements and the resulting evidence were obtained in violation of the right to counsel.
 
 ## Conclusion
-The Sixth Amendment right to counsel was violated; the grant of habeas relief was affirmed.
+The Sixth Amendment right to counsel was violated; the grant of [[Common Legal Terms#habeas-corpus|habeas]] relief was affirmed.
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.
-- No negative treatment of the Sixth Amendment holding. On remand the same evidence was later held admissible under the inevitable-discovery exception in [[Nix v. Williams]] (Williams II) — a ruling about the *exclusionary remedy*, not about *Brewer*'s right-to-counsel rule.
+- No negative treatment of the Sixth Amendment holding. [[Reading and Citing Cases#on-remand|On remand]] the same evidence was later held admissible under the inevitable-discovery exception in [[Nix v. Williams]] (Williams II) — a ruling about the *exclusionary remedy*, not about *Brewer*'s right-to-counsel rule.
 
 ## Appears on
 - [[Sixth Amendment Right to Counsel]] — *Key — Progeny / Refinement*

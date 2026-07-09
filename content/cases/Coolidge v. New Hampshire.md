@@ -57,7 +57,7 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-Investigating a murder, police seized Coolidge's car from his driveway under a warrant issued by the state attorney general (who was leading the prosecution) and later searched it, vacuuming up incriminating particles. The Court invalidated the warrant because it was not issued by a neutral and detached magistrate, then addressed whether the seizure could be sustained under the plain-view doctrine.
+Investigating a murder, police seized Coolidge's car from his driveway under a warrant issued by the state attorney general (who was leading the prosecution) and later searched it, vacuuming up incriminating particles. The Court invalidated the warrant because it was not issued by a neutral and detached magistrate, then addressed whether the seizure could be sustained under the [[Plain View Doctrine|plain-view doctrine]].
 
 ## Issue
 What conditions justify a warrantless seizure of evidence under the "plain view" doctrine.
@@ -70,7 +70,7 @@ Plain view supplements a prior justified intrusion; it does not authorize a plan
 *(The plurality's inadvertence requirement was later abandoned by [[Horton v. California]]; the prior-justification and immediately-apparent requirements remain.)*
 
 ## Application
-The police knew about Coolidge's car well in advance and seized it from the driveway pursuant to an invalid warrant — a planned seizure of a known, anticipated object, not an inadvertent discovery during a lawful intrusion. Because the seizure was neither inadvertent nor supported by a valid warrant, the plain-view doctrine did not save it on these facts.
+The police knew about Coolidge's car well in advance and seized it from the driveway pursuant to an invalid warrant — a planned seizure of a known, anticipated object, not an inadvertent discovery during a lawful intrusion. Because the seizure was neither inadvertent nor supported by a valid warrant, the [[Plain View Doctrine|plain-view doctrine]] did not save it on these facts.
 
 ## Conclusion
 The warrantless seizure of the car could not be justified as plain view; the evidence should have been suppressed. *Coolidge* states the modern plain-view framework (Stewart plurality).

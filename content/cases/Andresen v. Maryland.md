@@ -60,7 +60,7 @@ The warrant was sufficiently particular when its catch-all phrase is read in con
 On these facts the seized records had been voluntarily committed to paper before officers arrived, Andresen was never required to say or do anything, and the documents were authenticated at trial by a handwriting expert rather than by him — so there was no compulsion and no Fifth Amendment violation. And the contested "other fruits" clause appeared at the end of a long sentence listing particular Lot-13T documents; read in that context it reached only evidence of the false-pretenses crime concerning Lot 13T, so the warrant was not a forbidden general warrant.
 
 ## Conclusion
-Neither the Fifth Amendment nor the particularity requirement was violated; the judgment of the Maryland Court of Special Appeals was affirmed.
+Neither the Fifth Amendment nor the [[Particularity|particularity]] requirement was violated; the judgment of the Maryland Court of Special Appeals was affirmed.
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.

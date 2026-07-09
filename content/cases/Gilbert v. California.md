@@ -53,10 +53,10 @@ What relief is required when the State introduces (1) in-court identifications b
 The two categories are treated differently. In-court identifications require a [[United States v. Wade]] hearing to determine whether they rest on an independent source untainted by the illegal lineup. But testimony that a witness identified the accused at the uncounseled lineup is the direct product of the constitutional violation and is subject to automatic exclusion: "Only a per se exclusionary rule as to such testimony can be an effective sanction to assure that law enforcement authorities will respect the accused's constitutional right to the presence of his counsel at the critical lineup." — 388 U.S. at 273. ^pin-273
 
 ## Application
-The lineup occurred after Gilbert's indictment and the appointment of counsel, yet counsel received no notice — a Sixth Amendment violation under *Wade*. The in-court identifications therefore had to be remanded for an independent-source determination, but the testimony that the apartment manager and the eight penalty-stage witnesses had identified Gilbert at that very lineup was the direct result of the illegal lineup, so its admission was error subject to per se exclusion rather than an independent-source inquiry.
+The lineup occurred after Gilbert's indictment and the appointment of counsel, yet counsel received no notice — a Sixth Amendment violation under *Wade*. The in-court identifications therefore had to be [[Reading and Citing Cases#on-remand|remanded]] for an independent-source determination, but the testimony that the apartment manager and the eight penalty-stage witnesses had identified Gilbert at that very lineup was the direct result of the illegal lineup, so its admission was error subject to [[Common Legal Terms#per-se|per se]] exclusion rather than an independent-source inquiry.
 
 ## Conclusion
-Admission of the witnesses' testimony about their uncounseled-lineup identifications was constitutional error requiring reversal under a per se exclusionary rule; the in-court identifications were remanded for a *Wade* independent-source hearing.
+Admission of the witnesses' testimony about their uncounseled-lineup identifications was constitutional error requiring reversal under a [[Common Legal Terms#per-se|per se]] exclusionary rule; the in-court identifications were [[Reading and Citing Cases#on-remand|remanded]] for a *Wade* independent-source hearing.
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.

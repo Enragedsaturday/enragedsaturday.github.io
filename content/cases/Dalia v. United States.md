@@ -62,7 +62,7 @@ The covert entry to install the bug was constitutional and authorized by the Tit
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.
-- No negative treatment. *Dalia*'s constitutional holdings — that covert entry to install lawful surveillance equipment is not per se unreasonable, and that a warrant need not specify the manner of its execution — remain good law and govern surveillance-installation and analogous warrant-execution questions.
+- No negative treatment. *Dalia*'s constitutional holdings — that covert entry to install lawful surveillance equipment is not [[Common Legal Terms#per-se|per se]] unreasonable, and that a warrant need not specify the manner of its execution — remain good law and govern surveillance-installation and analogous warrant-execution questions.
 
 ## Appears on
 - [[Scope Manner and Related Issues]] — *Progeny (manner of execution / covert entry)*

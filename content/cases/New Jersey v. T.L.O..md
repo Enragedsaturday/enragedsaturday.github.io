@@ -64,7 +64,7 @@ The search was reasonable; the evidence was admissible, and the New Jersey Supre
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.
-- No negative treatment. *T.L.O.* established the reasonableness standard for school searches (and the "special needs" rationale articulated in Justice Blackmun's concurrence), later applied to student drug testing ([[Vernonia School District 47J v. Acton]]) and to the scope of an intrusive school search ([[Safford Unified School District v. Redding]]).
+- No negative treatment. *T.L.O.* established the reasonableness standard for school searches (and the "special needs" rationale articulated in Justice Blackmun's [[Common Legal Terms#concurring-opinion|concurrence]]), later applied to student drug testing ([[Vernonia School District 47J v. Acton]]) and to the scope of an intrusive school search ([[Safford Unified School District v. Redding]]).
 
 ## Appears on
 - [[Special Needs and Administrative Searches]] — *Key — Anchor*

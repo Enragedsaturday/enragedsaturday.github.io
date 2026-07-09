@@ -61,18 +61,18 @@ The basis is physical intrusion on a constitutionally protected "effect": "The G
 The trespass test survives alongside *Katz*: "the *Katz* reasonable-expectation-of-privacy test has been *added to*, not *substituted for*, the common-law trespassory test." — *Id.* at 409. ^pin-409
 
 ## Application
-On these facts the GPS surveillance was a search. The agents physically attached the device to the Jeep — an "effect" — and did so "for the purpose of obtaining information" about its movements; that trespassory intrusion onto a protected area to gather information was itself a search, without regard to whether Jones had a reasonable expectation of privacy in his movements on public roads. The Court did not need to reach the *Katz* expectation-of-privacy question (or the *Knotts* beeper line, which involved no trespass), because the common-law trespass theory independently resolved the case: installing and monitoring the device on Jones's vehicle was a Fourth Amendment search.
+On these facts the GPS surveillance was a search. The agents physically attached the device to the Jeep — an "effect" — and did so "for the purpose of obtaining information" about its movements; that trespassory intrusion onto a protected area to gather information was itself a search, without regard to whether Jones had a [[Reasonable Expectation of Privacy|reasonable expectation of privacy]] in his movements on public roads. The Court did not need to reach the *Katz* expectation-of-privacy question (or the *Knotts* beeper line, which involved no trespass), because the common-law trespass theory independently resolved the case: installing and monitoring the device on Jones's vehicle was a Fourth Amendment search.
 
 ## Conclusion
 Attaching and using the GPS device was a search; the D.C. Circuit's judgment reversing the conviction was affirmed. The Court left the reasonableness (warrant/exception) question for remand.
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.
-- No negative subsequent treatment identified. *Jones* revives the common-law trespass test as one of the "two definitions of search" alongside the [[Katz v. United States]] privacy test; it anchors the property-based line later applied to the curtilage in [[Florida v. Jardines]] and informs the digital-privacy analysis of [[Carpenter v. United States]].
+- No negative subsequent treatment identified. *Jones* revives the common-law trespass test as one of the "two definitions of search" alongside the [[Katz v. United States]] privacy test; it anchors the property-based line later applied to the [[Curtilage|curtilage]] in [[Florida v. Jardines]] and informs the digital-privacy analysis of [[Carpenter v. United States]].
 
 ## Appears on
 - [[Trespass]] — *Key — Anchor*
-- [[Real-Time Tracking]] — *Key — cross-ref (GPS trespass; mosaic concurrences)*
+- [[Real-Time Tracking]] — *Key — cross-ref (GPS trespass; mosaic [[Common Legal Terms#concurring-opinion|concurrences]])*
 - [[Third-Party Doctrine & CSLI]] — *Related (cross-ref — mosaic seed for Carpenter)*
 
 ## Sources

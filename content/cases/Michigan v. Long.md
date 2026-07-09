@@ -58,7 +58,7 @@ Contraband discovered in the course of such a lawful protective search need not 
 The late hour, the rural setting, Long's erratic driving and apparent intoxication, his unresponsiveness, and the hunting knife in plain view gave the officers a reasonable belief that he was dangerous and could gain immediate control of a weapon if allowed back into the car. The protective search of the passenger compartment was therefore permissible, and the marijuana found in the process was lawfully seized.
 
 ## Conclusion
-The protective vehicle search was valid; reversed and remanded.
+The protective vehicle search was valid; reversed and [[Reading and Citing Cases#on-remand|remanded]].
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.

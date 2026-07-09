@@ -60,7 +60,7 @@ But "[w]here the officer has probable cause to believe that the suspect poses a 
 Hymon shot Garner although he was reasonably sure Garner was unarmed and posed no immediate threat; a nighttime burglary alone did not make Garner dangerous. Seizing the unarmed, non-dangerous Garner by deadly force was therefore unreasonable, and the Tennessee statute was unconstitutional insofar as it authorized deadly force against such fleeing suspects.
 
 ## Conclusion
-The use of deadly force against the unarmed, non-dangerous Garner was an unreasonable seizure; the statute was unconstitutional as applied, and the case was remanded.
+The use of deadly force against the unarmed, non-dangerous Garner was an unreasonable seizure; the statute was unconstitutional as applied, and the case was [[Reading and Citing Cases#on-remand|remanded]].
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.

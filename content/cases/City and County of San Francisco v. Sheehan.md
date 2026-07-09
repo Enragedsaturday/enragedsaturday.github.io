@@ -47,7 +47,7 @@ lake:
 Teresa Sheehan, who suffered from a schizoaffective disorder, lived in a San Francisco group home. After she threatened a social worker with a knife, Sergeant Kimberly Reynolds and Officer Kathrine Holder came to take her for psychiatric evaluation. They entered her room; Sheehan grabbed a knife and threatened to kill them, so they withdrew and closed the door. Fearing she might escape or gather more weapons, they reopened the door (a "second entry") rather than waiting; when Sheehan again advanced with the knife, they used pepper spray and then shot her several times (she survived). She sued under the Americans with Disabilities Act and under § 1983 for excessive force.
 
 ## Issue
-Whether the officers were entitled to qualified immunity for the force used after re-entering Sheehan's room (and whether the ADA's accommodation requirement applies to arrests).
+Whether the officers were entitled to [[Qualified Immunity|qualified immunity]] for the force used after re-entering Sheehan's room (and whether the ADA's accommodation requirement applies to arrests).
 
 ## Rule
 The Court declined to resolve the ADA question and held the officers immune. "we dismiss the first question as improvidently granted. We decide the second question and hold that the officers are entitled to qualified immunity because they did not violate any clearly established Fourth Amendment rights." — 575 U.S. at 600. ^pin-600
@@ -58,7 +58,7 @@ Even assuming the second entry could be found unreasonable, "no precedent clearl
 The Ninth Circuit had relied on general circuit precedent to deny immunity, but no decision clearly established that reopening the door of an armed, violent, mentally ill suspect — to keep her from escaping or arming herself further — was unlawful. That the officers may have departed from their training in handling the mentally ill did not negate immunity, because an expert's view that a confrontation could have been handled differently cannot defeat immunity where a reasonable officer could have believed the conduct justified. The ADA question, whether accommodation duties apply when officers arrest an armed and dangerous suspect, was left unresolved as improvidently granted.
 
 ## Conclusion
-Reversed in part; the first (ADA) question dismissed as improvidently granted. The officers were entitled to qualified immunity on the Fourth Amendment claim because they violated no clearly established law.
+Reversed in part; the first (ADA) question dismissed as improvidently granted. The officers were entitled to [[Qualified Immunity|qualified immunity]] on the Fourth Amendment claim because they violated no clearly established law.
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.

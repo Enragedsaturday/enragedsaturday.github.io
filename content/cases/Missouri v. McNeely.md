@@ -46,25 +46,25 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-McNeely was stopped for speeding, showed signs of intoxication, and refused a breath test. Without seeking a warrant, the officer took him to a hospital and directed a blood draw over his objection. Missouri defended the warrantless draw on the theory that the body's natural elimination of alcohol always creates an exigency.
+McNeely was stopped for speeding, showed signs of intoxication, and refused a breath test. Without seeking a warrant, the officer took him to a hospital and directed a blood draw over his objection. Missouri defended the warrantless draw on the theory that the body's natural elimination of alcohol always creates an [[Exigent Circumstances and Hot Pursuit|exigency]].
 
 ## Issue
-Whether the natural metabolization of alcohol in the bloodstream categorically creates an exigency that justifies a warrantless blood draw in every drunk-driving case.
+Whether the natural metabolization of alcohol in the bloodstream categorically creates an [[Exigent Circumstances and Hot Pursuit|exigency]] that justifies a warrantless blood draw in every drunk-driving case.
 
 ## Rule
 No. "We hold that in drunk-driving investigations, the natural dissipation of alcohol in the bloodstream does not constitute an exigency in every case sufficient to justify conducting a blood test without a warrant." — 569 U.S. at 156. ^pin-156
 
-Whether a warrantless blood draw is justified by exigency must instead be determined case by case on the totality of the circumstances.
+Whether a warrantless blood draw is justified by [[Exigent Circumstances and Hot Pursuit|exigency]] must instead be determined case by case on the [[Common Legal Terms#totality-of-the-circumstances|totality of the circumstances]].
 
 ## Application
-Missouri relied solely on the per se theory that dissipating alcohol always creates an exigency; it did not show that obtaining a warrant in McNeely's case was impractical or that any other emergency was present. Because metabolization alone did not categorically justify the warrantless draw, and no case-specific exigency was established, the blood draw was unreasonable.
+Missouri relied solely on the [[Common Legal Terms#per-se|per se]] theory that dissipating alcohol always creates an [[Exigent Circumstances and Hot Pursuit|exigency]]; it did not show that obtaining a warrant in McNeely's case was impractical or that any other emergency was present. Because metabolization alone did not categorically justify the warrantless draw, and no case-specific [[Exigent Circumstances and Hot Pursuit|exigency]] was established, the blood draw was unreasonable.
 
 ## Conclusion
-Affirmed; on these facts the warrantless blood draw was not justified by a per se exigency.
+Affirmed; on these facts the warrantless blood draw was not justified by a [[Common Legal Terms#per-se|per se]] [[Exigent Circumstances and Hot Pursuit|exigency]].
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.
-- No negative treatment. *McNeely* rejects a per se exigency rule and was later **refined by** [[Mitchell v. Wisconsin]], which addressed the distinct unconscious-driver scenario.
+- No negative treatment. *McNeely* rejects a [[Common Legal Terms#per-se|per se]] [[Exigent Circumstances and Hot Pursuit|exigency]] rule and was later **refined by** [[Mitchell v. Wisconsin]], which addressed the distinct unconscious-driver scenario.
 
 ## Appears on
 - [[Exigent Circumstances and Hot Pursuit]] — *Key — Progeny / Refinement*

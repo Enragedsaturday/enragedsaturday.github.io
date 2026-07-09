@@ -60,7 +60,7 @@ A dog sniff is not an ordinary incident of a traffic stop, and an officer may no
 Struble had completed the traffic mission — he issued the written warning and returned the documents — before detaining Rodriguez for the dog sniff. Because a dog sniff is aimed at detecting ordinary criminal wrongdoing rather than the traffic violation, the added seven-to-eight minutes prolonged the seizure beyond its mission, and Struble lacked reasonable suspicion to justify the extension. Extending the completed stop for the sniff therefore violated the Fourth Amendment.
 
 ## Conclusion
-A traffic stop may not be prolonged beyond the time needed to complete its mission to conduct a dog sniff without reasonable suspicion; the judgment was vacated and remanded (for the lower courts to address whether reasonable suspicion independently justified the detention).
+A traffic stop may not be prolonged beyond the time needed to complete its mission to conduct a dog sniff without reasonable suspicion; the judgment was [[Reading and Citing Cases#vacated|vacated]] and [[Reading and Citing Cases#on-remand|remanded]] (for the lower courts to address whether reasonable suspicion independently justified the detention).
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**. *Rodriguez* is the controlling rule on permissible traffic-stop duration.

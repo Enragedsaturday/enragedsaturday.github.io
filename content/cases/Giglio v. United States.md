@@ -58,7 +58,7 @@ Because the prosecutor's office speaks as one for the Government, a promise made
 Taliento was the Government's essential witness, so his reliability could well determine guilt or innocence. The undisclosed promise not to prosecute him gave him a powerful motive to testify favorably, and the jury was entitled to know of it. That one prosecutor made the promise while the trial prosecutor was unaware did not excuse the nondisclosure, and on this record the evidence was material — so Giglio was entitled to a new trial.
 
 ## Conclusion
-The failure to disclose the leniency promise to a key witness required a new trial; the conviction was reversed and remanded.
+The failure to disclose the leniency promise to a key witness required a new trial; the conviction was reversed and [[Reading and Citing Cases#on-remand|remanded]].
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.

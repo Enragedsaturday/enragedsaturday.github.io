@@ -55,10 +55,10 @@ Public employees are not stripped of Fourth Amendment protection at work, though
 Work-related employer searches are judged by reasonableness, not warrant or probable cause: "We hold, therefore, that public employer intrusions on the constitutionally protected privacy interests of government employees for noninvestigatory, work-related purposes, as well as for investigations of work-related misconduct, should be judged by the standard of reasonableness under all the circumstances. Under this reasonableness standard, both the inception and the scope of the intrusion must be reasonable." — *Id.* at 725–726. ^pin-725
 
 ## Application
-Because Dr. Ortega did not share his office and kept personal materials in his desk and files, he had a reasonable expectation of privacy there. But the warrant and probable-cause requirements would be unworkable for the routine, work-related searches public employers must make, so the intrusion was instead measured by reasonableness — assessed at both inception and scope. The Court did not itself resolve whether this particular search was reasonable; it remanded for that fact-bound determination.
+Because Dr. Ortega did not share his office and kept personal materials in his desk and files, he had a [[Reasonable Expectation of Privacy|reasonable expectation of privacy]] there. But the warrant and probable-cause requirements would be unworkable for the routine, work-related searches public employers must make, so the intrusion was instead measured by reasonableness — assessed at both inception and scope. The Court did not itself resolve whether this particular search was reasonable; it [[Reading and Citing Cases#on-remand|remanded]] for that fact-bound determination.
 
 ## Conclusion
-Ortega had a Fourth Amendment privacy interest in his office, but the employer's work-related search is governed by reasonableness rather than warrant/probable cause; the case was remanded to apply that standard.
+Ortega had a Fourth Amendment privacy interest in his office, but the employer's work-related search is governed by reasonableness rather than warrant/probable cause; the case was [[Reading and Citing Cases#on-remand|remanded]] to apply that standard.
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS** (plurality; Scalia, J., concurring in the judgment, provided the controlling fifth vote for the reasonableness standard).

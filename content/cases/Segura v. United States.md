@@ -55,14 +55,14 @@ Evidence obtained under a genuinely independent warrant is not tainted by a prio
 Resting on that independent-source ground, the Court did not decide whether securing the premises was itself reasonable.
 
 ## Application
-None of the information supporting the warrant derived from the entry; it came from sources wholly unconnected with the entry and known to the agents well before it. The warranted search the following day was therefore a genuinely independent source, and the drugs, cash, and records seized under the warrant were admissible despite the assumed-illegal initial entry and 19-hour occupation.
+None of the information supporting the warrant derived from the entry; it came from sources wholly unconnected with the entry and known to the agents well before it. The warranted search the following day was therefore a genuinely [[Inevitable Discovery and Independent Source|independent source]], and the drugs, cash, and records seized under the warrant were admissible despite the assumed-illegal initial entry and 19-hour occupation.
 
 ## Conclusion
 The evidence seized under the independent warrant was admissible and should not have been suppressed; the judgment below was reversed in relevant part.
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.
-- The independent-source doctrine was elaborated four years later in [[Murray v. United States]]; *Segura* sits alongside [[Nix v. Williams]] (inevitable discovery) and [[Illinois v. McArthur]] (securing premises pending a warrant), and applies the "fruit"/taint framework of [[Wong Sun v. United States]].
+- The independent-source doctrine was elaborated four years later in [[Murray v. United States]]; *Segura* sits alongside [[Nix v. Williams]] ([[Inevitable Discovery and Independent Source|inevitable discovery]]) and [[Illinois v. McArthur]] (securing premises pending a warrant), and applies the "fruit"/taint framework of [[Wong Sun v. United States]].
 
 ## Appears on
 - [[Securing the Scene]] — *Key — Anchor*

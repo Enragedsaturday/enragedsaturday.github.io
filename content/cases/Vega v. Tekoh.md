@@ -46,10 +46,10 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-Deputy Vega questioned Terence Tekoh at his workplace about a reported sexual assault without giving Miranda warnings; Tekoh wrote an apologetic statement that was admitted at his criminal trial. The jury acquitted. Tekoh then sued Vega under 42 U.S.C. § 1983, claiming the admission of his un-Mirandized statement violated his Fifth Amendment rights. The Ninth Circuit held that using an un-Mirandized statement at a criminal trial can support a § 1983 claim.
+Deputy Vega questioned Terence Tekoh at his workplace about a reported sexual assault without giving [[Miranda and Custodial Interrogation|Miranda warnings]]; Tekoh wrote an apologetic statement that was admitted at his criminal trial. The jury acquitted. Tekoh then sued Vega under 42 U.S.C. § 1983, claiming the admission of his un-Mirandized statement violated his Fifth Amendment rights. The Ninth Circuit held that using an un-Mirandized statement at a criminal trial can support a § 1983 claim.
 
 ## Issue
-Whether a plaintiff may sue a police officer under § 1983 based on the admission at a criminal trial of a statement obtained without Miranda warnings — i.e., whether a *Miranda* violation is a deprivation of a right "secured by the Constitution and laws" for § 1983 purposes.
+Whether a plaintiff may sue a police officer under § 1983 based on the admission at a criminal trial of a statement obtained without [[Miranda and Custodial Interrogation|Miranda warnings]] — i.e., whether a *Miranda* violation is a deprivation of a right "secured by the Constitution and laws" for § 1983 purposes.
 
 ## Rule
 No. "A violation of the *Miranda* rules does not provide a basis for a § 1983 claim." — 597 U.S. at 134 (Held). ^pin-134
@@ -62,7 +62,7 @@ Concluding: "Because a violation of *Miranda* is not itself a violation of the F
 Tekoh's § 1983 theory rested entirely on the admission of his un-Mirandized statement. Because a *Miranda* violation is not equivalent to a Fifth Amendment violation, that admission — even assuming it was error — did not deprive Tekoh of a right secured by the Constitution and laws within the meaning of § 1983. The proper remedy for a *Miranda* violation is suppression of the statement in the criminal case, not a § 1983 damages action against the interrogating officer.
 
 ## Conclusion
-A *Miranda* violation is not itself a constitutional violation and cannot ground a § 1983 suit. The Ninth Circuit's judgment was reversed and the case remanded.
+A *Miranda* violation is not itself a constitutional violation and cannot ground a § 1983 suit. The Ninth Circuit's judgment was reversed and the case [[Reading and Citing Cases#on-remand|remanded]].
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.

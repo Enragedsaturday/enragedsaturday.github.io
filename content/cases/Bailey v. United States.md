@@ -60,7 +60,7 @@ The interests *Summers* serves (officer safety, orderly completion of the search
 Bailey was stopped about a mile from the apartment, well outside its immediate vicinity, after he had already left (apparently unaware of the impending search). Because he was not within the immediate vicinity, the *Summers* rule did not authorize his detention; absent that categorical authority, the officers would have needed probable cause to arrest or reasonable suspicion to make a *Terry* stop.
 
 ## Conclusion
-The detention was not authorized by *Summers*; the judgment was reversed and the case remanded to consider whether the stop could be justified on other grounds (e.g., *Terry*).
+The detention was not authorized by *Summers*; the judgment was reversed and the case [[Reading and Citing Cases#on-remand|remanded]] to consider whether the stop could be justified on other grounds (e.g., *Terry*).
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.

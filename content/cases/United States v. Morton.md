@@ -44,10 +44,10 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-Investigating Morton, officers obtained warrants to search his cell phones in a drug case. While executing the warrants on the phones' photographs, they found images that appeared to be child pornography. Morton moved to suppress the images, arguing the affidavits did not establish probable cause to search his photographs. Sitting en banc, the Fifth Circuit resolved the case on the good-faith exception to the exclusionary rule.
+Investigating Morton, officers obtained warrants to search his cell phones in a drug case. While executing the warrants on the phones' photographs, they found images that appeared to be child pornography. Morton moved to suppress the images, arguing the affidavits did not establish probable cause to search his photographs. Sitting [[Reading and Citing Cases#en-banc|en banc]], the Fifth Circuit resolved the case on the [[The Good-Faith Exception|good-faith exception]] to the exclusionary rule.
 
 ## Issue
-Whether the images recovered from Morton's phones must be suppressed, or whether the officers' good-faith reliance on the issuing judge's warrants brought the evidence within the good-faith exception.
+Whether the images recovered from Morton's phones must be suppressed, or whether the officers' good-faith reliance on the issuing judge's warrants brought the evidence within the [[The Good-Faith Exception|good-faith exception]].
 
 ## Rule
 The en banc court resolved the case on good faith and expressly declined to reach the underlying Fourth Amendment question: "We do not decide if the state judge should have authorized full searches of the phones based on these affidavits. We decide only that the officers acted in good faith when relying on the judge's decision to issue the warrants." — *United States v. Morton*, 46 F.4th 331 (5th Cir. 2022) (en banc) (slip op., at 13). ^pin-op13
@@ -55,14 +55,14 @@ The en banc court resolved the case on good faith and expressly declined to reac
 Judges concurring in the judgment wrote separately to flag the unresolved digital-search problem the majority left open — that the plain-view doctrine may need adaptation for data outside a warrant's scope: it "would be unsurprising if the Court, again acknowledging the need to adapt rules constructed for the physical world to the reality of the digital world, recognized an exception to another longstanding Fourth Amendment doctrine, this time plain view." — *Id.* (slip op., at 16) (opinion concurring in the judgment). ^pin-op16
 
 ## Application
-The en banc court concluded that the warrant affidavits were borderline rather than bare bones, so the officers' reliance on the judge's warrants was objectively reasonable and the good-faith exception applied. The court therefore affirmed admission of the images without deciding whether the warrants in fact established probable cause to search Morton's photographs. The separate opinion concurring in the judgment used the case to identify — but not resolve — whether the plain-view doctrine should be limited for nonresponsive digital data, the reason this decision is tracked on the plain-view page.
+The [[Reading and Citing Cases#en-banc|en banc]] court concluded that the warrant affidavits were borderline rather than bare bones, so the officers' reliance on the judge's warrants was objectively reasonable and the [[The Good-Faith Exception|good-faith exception]] applied. The court therefore affirmed admission of the images without deciding whether the warrants in fact established probable cause to search Morton's photographs. The separate opinion concurring in the judgment used the case to identify — but not resolve — whether the [[Plain View Doctrine|plain-view doctrine]] should be limited for nonresponsive digital data, the reason this decision is tracked on the plain-view page.
 
 ## Conclusion
-Sitting en banc, the Fifth Circuit held the good-faith exception applied and affirmed the denial of suppression; it expressly declined to decide whether the warrants were overbroad as to the phones' photographs.
+Sitting [[Reading and Citing Cases#en-banc|en banc]], the Fifth Circuit held the [[The Good-Faith Exception|good-faith exception]] applied and affirmed the denial of suppression; it expressly declined to decide whether the warrants were overbroad as to the phones' photographs.
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding in-circuit — 5th Cir.** (en banc).
-- No negative treatment. *Morton*'s holding rests on the good-faith exception ([[United States v. Leon]]); its relevance to the plain-view doctrine lies in the separate opinion flagging the open digital-search question after [[Riley v. California]] and [[Carpenter v. United States]].
+- No negative treatment. *Morton*'s holding rests on the [[The Good-Faith Exception|good-faith exception]] ([[United States v. Leon]]); its relevance to the [[Plain View Doctrine|plain-view doctrine]] lies in the separate opinion flagging the open digital-search question after [[Riley v. California]] and [[Carpenter v. United States]].
 
 ## Appears on
 - [[Plain View Doctrine]] — *Recent development (role-based)*

@@ -47,7 +47,7 @@ lake:
 While lawfully in Ceccolini's flower shop on an unrelated matter, a police officer (Biro) idly picked up an envelope and found gambling policy slips inside; he then learned from the shop employee, Lois Hennessey, that the slips belonged to Ceccolini. Months later, FBI agents — without mentioning the slips — interviewed Hennessey, who later testified against Ceccolini at his perjury trial. He moved to suppress her testimony as the fruit of the illegal search of the envelope.
 
 ## Issue
-Whether the testimony of a live witness whose identity or willingness to testify is discovered through an illegal search must be suppressed as a fruit of the poisonous tree under the same standard applied to inanimate evidence.
+Whether the testimony of a live witness whose identity or willingness to testify is discovered through an illegal search must be suppressed as a [[Common Legal Terms#fruit-of-the-poisonous-tree|fruit of the poisonous tree]] under the same standard applied to inanimate evidence.
 
 ## Rule
 No — exclusion of live-witness testimony demands a closer connection to the illegality than suppression of an object. "[T]he exclusionary rule should be invoked with much greater reluctance where the claim is based on a causal relationship between a constitutional violation and the discovery of a live witness than when a similar claim is advanced to support suppression of an inanimate object." — 435 U.S. at 280. ^pin-280
@@ -60,14 +60,14 @@ On these facts the connection was sufficiently attenuated. "The evidence indicat
 The slips themselves were not used in questioning Hennessey; substantial time elapsed between the search, the first contact, and the trial testimony; her identity and relationship to Ceccolini were already well known to investigators; and Biro had no intent to find evidence or a witness when he picked up the envelope. "The cost of permanently silencing Hennessey is too great for an evenhanded system of law enforcement to bear in order to secure such a speculative and very likely negligible deterrent effect." — *Id.* at 280. ^pin-280b
 
 ## Conclusion
-The degree of attenuation was sufficient to dissipate the connection between the illegal search and Hennessey's testimony; the Court of Appeals erred, and its suppression was reversed.
+The degree of [[Fruits and Attenuation|attenuation]] was sufficient to dissipate the connection between the illegal search and Hennessey's testimony; the Court of Appeals erred, and its suppression was reversed.
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.
-- No negative treatment. *Ceccolini* builds on the attenuation principle of [[Nardone v. United States]] and [[Wong Sun v. United States]], holding that live-witness testimony is suppressed as a fruit only with "much greater reluctance"; the [[Brown v. Illinois]] attenuation factors govern the closely related confession context.
+- No negative treatment. *Ceccolini* builds on the [[Fruits and Attenuation|attenuation]] principle of [[Nardone v. United States]] and [[Wong Sun v. United States]], holding that live-witness testimony is suppressed as a fruit only with "much greater reluctance"; the [[Brown v. Illinois]] [[Fruits and Attenuation|attenuation]] factors govern the closely related confession context.
 
 ## Appears on
-- [[The Exclusionary Rule]] — *Key — Progeny (attenuation)*
+- [[The Exclusionary Rule]] — *Key — Progeny ([[Fruits and Attenuation|attenuation]])*
 
 ## Sources
 - *United States v. Ceccolini*, 435 U.S. 268 (1978) — https://www.courtlistener.com/opinion/109816/united-states-v-ceccolini/ — pinpoints: 279–280, 280.

@@ -63,10 +63,10 @@ Because the stop must be "justified at its inception," "the presence of addition
 ## Application
 On these stipulated facts the inference held. "From these three facts, Deputy Mehrer drew the commonsense inference that Glover was likely the driver of the vehicle, which provided more than reasonable suspicion to initiate the stop." — *Id.* at 1188. ^pin-1188
 
-The deputy knew the plate was linked to a truck matching the one he observed and that the registered owner's license was revoked, and he possessed no exculpatory information rebutting the inference that the owner was driving. Because nothing in the record dispelled the inference, the stop was reasonable at its inception.
+The deputy knew the plate was linked to a truck matching the one he observed and that the registered owner's license was revoked, and he possessed no [[Brady and Giglio|exculpatory]] information rebutting the inference that the owner was driving. Because nothing in the record dispelled the inference, the stop was reasonable at its inception.
 
 ## Conclusion
-The traffic stop was supported by reasonable suspicion; the Kansas Supreme Court's contrary judgment was reversed and the case remanded. An officer may stop a vehicle on the commonsense inference that its revoked-license owner is driving — unless the officer has information dispelling that inference.
+The traffic stop was supported by reasonable suspicion; the Kansas Supreme Court's contrary judgment was reversed and the case [[Reading and Citing Cases#on-remand|remanded]]. An officer may stop a vehicle on the commonsense inference that its revoked-license owner is driving — unless the officer has information dispelling that inference.
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.

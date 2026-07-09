@@ -47,7 +47,7 @@ lake:
 Acting on a tip, an officer looked through a gap in a closed apartment-window blind and saw Carter and a companion bagging cocaine. The two did not live in the apartment; they had come from another city and were present only a few hours, packaging drugs in exchange for some of the cocaine. They moved to suppress the officer's observations.
 
 ## Issue
-Whether a temporary visitor present in another's home for a commercial transaction has a reasonable expectation of privacy entitling him to challenge a search of that home.
+Whether a temporary visitor present in another's home for a commercial transaction has a [[Reasonable Expectation of Privacy|reasonable expectation of privacy]] entitling him to challenge a search of that home.
 
 ## Rule
 No. "Thus, an overnight guest in a home may claim the protection of the Fourth Amendment, but one who is merely present with the consent of the householder may not." — 525 U.S. at 90. ^pin-90
@@ -58,7 +58,7 @@ Whether a visitor has a legitimate expectation of privacy turns on factors such 
 Carter was not an overnight guest; he was present essentially for a business transaction — bagging cocaine — for only a matter of hours, with no prior relationship to the householder. Given the purely commercial purpose, the brief stay, and the lack of any connection to the home, he had no legitimate expectation of privacy there and could not challenge the officer's observation.
 
 ## Conclusion
-Reversed; Carter lacked a reasonable expectation of privacy and so could not contest the search.
+Reversed; Carter lacked a [[Reasonable Expectation of Privacy|reasonable expectation of privacy]] and so could not contest the search.
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.

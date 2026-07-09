@@ -64,7 +64,7 @@ The warrantless seizure and examination of Edwards' clothing were valid; the Cou
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.
-- *Edwards* remains the controlling authority that a search incident to arrest may extend in time — effects subject to search at arrest may be seized and examined at the place of detention after a reasonable delay. It builds on [[United States v. Robinson]] and [[Chimel v. California]] and is paired with station-house cases like [[Illinois v. Lafayette]]. No negative treatment.
+- *Edwards* remains the controlling authority that a [[Search Incident to Arrest|search incident to arrest]] may extend in time — effects subject to search at arrest may be seized and examined at the place of detention after a reasonable delay. It builds on [[United States v. Robinson]] and [[Chimel v. California]] and is paired with station-house cases like [[Illinois v. Lafayette]]. No negative treatment.
 
 ## Appears on
 - [[SIA Persons]] — *Progeny*

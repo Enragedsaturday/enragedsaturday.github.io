@@ -47,7 +47,7 @@ lake:
 A prohibition agent saw cases marked "whiskey" being unloaded at a building at 611 W. 46th Street and confirmed there was no permit to store liquor there. A warrant issued to search the building — described as a garage used for business purposes — and any rooms, basement, or sub-cellar connected with the garage, for "cases of whiskey." Executing it, agents seized large quantities of liquor across multiple floors. Steele sought return of the property, arguing the warrant failed to describe the place to be searched with sufficient particularity.
 
 ## Issue
-Did the warrant's description of the place to be searched satisfy the Fourth Amendment's particularity requirement?
+Did the warrant's description of the place to be searched satisfy the Fourth Amendment's [[Particularity|particularity]] requirement?
 
 ## Rule
 Yes. "It is enough if the description is such that the officer with a search warrant can with reasonable effort ascertain and identify the place intended." — 267 U.S. at 503. ^pin-503
@@ -62,7 +62,7 @@ The warrant complied with the Fourth Amendment; the liquor was lawfully seized a
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.
-- *Steele* remains the canonical statement of the particularity-of-place standard — reasonable-effort identification of the premises — and is regularly cited in the line that includes [[Maryland v. Garrison]] and [[Groh v. Ramirez]]. No negative treatment.
+- *Steele* remains the canonical statement of the [[Particularity|particularity]]-of-place standard — reasonable-effort identification of the premises — and is regularly cited in the line that includes [[Maryland v. Garrison]] and [[Groh v. Ramirez]]. No negative treatment.
 
 ## Appears on
 - [[Particularity]] — *Progeny*

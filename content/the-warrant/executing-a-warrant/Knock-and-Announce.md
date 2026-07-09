@@ -27,7 +27,7 @@ related:
 
 ## The Brief
 
-**Field-decisive question: must I announce before I force this entry, and what happens if I do not?** The default at the threshold of a home is announcement, but the rule flexes for real exigencies, and a violation does not suppress the evidence (the part officers most often get wrong).
+**Field-decisive question: must I announce before I force this entry, and what happens if I do not?** The default at the threshold of a home is announcement, but the rule flexes for real [[Exigent Circumstances and Hot Pursuit|exigencies]], and a violation does not suppress the evidence (the part officers most often get wrong).
 
 **The rule and its source.** The common-law requirement that officers announce before entering "forms a part of the reasonableness inquiry under the Fourth Amendment," so "in some circumstances an officer's unannounced entry into a home might be unreasonable." *[[Wilson v. Arkansas|Wilson v. Arkansas]]*, 514 U.S. 927, 929, 934 (1995). But the requirement is "flexible," not "a rigid rule of announcement that ignores countervailing law enforcement interests." *Id.* at 934.
 

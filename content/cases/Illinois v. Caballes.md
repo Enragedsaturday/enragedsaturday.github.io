@@ -66,7 +66,7 @@ A dog sniff during an unprolonged, lawful traffic stop is not a Fourth Amendment
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.
-- Applies the dog-sniff reasoning of [[United States v. Place]] and contrasts the home-interior technology case [[Kyllo v. United States]]. The no-prolongation limit is enforced by [[Rodriguez v. United States]]; the home-curtilage boundary is set by [[Florida v. Jardines]]; dog-reliability/probable-cause questions are addressed in [[Florida v. Harris]].
+- Applies the dog-sniff reasoning of [[United States v. Place]] and contrasts the home-interior technology case [[Kyllo v. United States]]. The no-prolongation limit is enforced by [[Rodriguez v. United States]]; the home-[[Curtilage|curtilage]] boundary is set by [[Florida v. Jardines]]; dog-reliability/probable-cause questions are addressed in [[Florida v. Harris]].
 
 ## Appears on
 - [[Traffic Stops]] — *Key — Anchor*

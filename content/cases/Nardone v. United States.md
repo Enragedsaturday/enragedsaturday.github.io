@@ -59,17 +59,17 @@ A defendant may attack derivative evidence as tainted: once he proves the illega
 But the taint can dissipate: "As a matter of good sense … such connection may have become so attenuated as to dissipate the taint." — *Id.* ^pin-341b
 
 ## Application
-Reading § 605 to exclude only the exact intercepted words while permitting full derivative use "would largely stultify" *Nardone I* and invite the very practices condemned there. The defendants had plainly established the unlawful wiretapping, so they were entitled to inquire whether parts of the Government's case derived from it; the trial judge's refusal to allow that inquiry was error. The Court placed the initial burden on the accused to prove the illegality and to make a solid (not fishing) taint claim, leaving the Government free to show an independent source.
+Reading § 605 to exclude only the exact intercepted words while permitting full derivative use "would largely stultify" *Nardone I* and invite the very practices condemned there. The defendants had plainly established the unlawful wiretapping, so they were entitled to inquire whether parts of the Government's case derived from it; the trial judge's refusal to allow that inquiry was error. The Court placed the initial burden on the accused to prove the illegality and to make a solid (not fishing) taint claim, leaving the Government free to show an [[Inevitable Discovery and Independent Source|independent source]].
 
 ## Conclusion
-The defendants were entitled to test whether the Government's proof was a fruit of the unlawful wiretap; the judgment was reversed and remanded.
+The defendants were entitled to test whether the Government's proof was a fruit of the unlawful wiretap; the judgment was reversed and [[Reading and Citing Cases#on-remand|remanded]].
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.
-- No negative treatment. *Nardone* coined the phrase **"fruit of the poisonous tree"** and recognized the **attenuation** limit, building directly on [[Silverthorne Lumber Co. v. United States]]. Though decided under the wiretap statute, its doctrine became the framework for Fourth Amendment derivative-evidence analysis in [[Wong Sun v. United States]] and the attenuation factors of [[Brown v. Illinois]].
+- No negative treatment. *Nardone* coined the phrase **"fruit of the poisonous tree"** and recognized the **[[Fruits and Attenuation|attenuation]]** limit, building directly on [[Silverthorne Lumber Co. v. United States]]. Though decided under the wiretap statute, its doctrine became the framework for Fourth Amendment derivative-evidence analysis in [[Wong Sun v. United States]] and the [[Fruits and Attenuation|attenuation]] factors of [[Brown v. Illinois]].
 
 ## Appears on
-- [[The Exclusionary Rule]] — *Anchor (attenuation; 'fruit of the poisonous tree')*
+- [[The Exclusionary Rule]] — *Anchor ([[Fruits and Attenuation|attenuation]]; '[[Common Legal Terms#fruit-of-the-poisonous-tree|fruit of the poisonous tree]]')*
 
 ## Sources
 - *Nardone v. United States*, 308 U.S. 338 (1939) — https://www.courtlistener.com/opinion/103259/nardone-v-united-states/ — pinpoints: 340–341.

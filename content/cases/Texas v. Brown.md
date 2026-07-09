@@ -47,7 +47,7 @@ lake:
 At a routine driver's-license checkpoint an officer asked Brown for his license and, at the same time, shined a flashlight into the car. He saw Brown withdraw his hand from his pocket holding an opaque, knotted green party balloon — a packaging he knew from experience to be used for narcotics — and saw plastic vials, loose white powder, and an open bag of balloons in the glove compartment. The balloon held heroin.
 
 ## Issue
-Whether seizure of the balloon was justified under the plain-view doctrine — in particular, what "immediately apparent" requires — and whether using a flashlight to look into the car's interior was itself a search.
+Whether seizure of the balloon was justified under the [[Plain View Doctrine|plain-view doctrine]] — in particular, what "immediately apparent" requires — and whether using a flashlight to look into the car's interior was itself a search.
 
 ## Rule
 Illuminating a car's interior is not a search: the officer's "action in shining his flashlight to illuminate the interior of Brown's car trenched upon no right secured to the latter by the Fourth Amendment." — 460 U.S. at 739–40. ^pin-739
@@ -57,7 +57,7 @@ Illuminating a car's interior is not a search: the officer's "action in shining 
 The standard is probable cause: the doctrine "does not demand any showing that such a belief be correct or more likely true than false. A 'practical, nontechnical' probability that incriminating evidence is involved is all that is required." — *Id.* at 742. ^pin-742
 
 ## Application
-On these facts the officer had a lawful vantage point at the lawful checkpoint, used a flashlight (no search) to see into the car, and — drawing on his experience that knotted party balloons are used to carry narcotics, reinforced by the vials, powder, and bag of balloons in plain view — had probable cause to believe the balloon contained contraband. That practical probability satisfied "immediately apparent," so the warrantless seizure of the balloon was justified under the plain-view doctrine.
+On these facts the officer had a lawful vantage point at the lawful checkpoint, used a flashlight (no search) to see into the car, and — drawing on his experience that knotted party balloons are used to carry narcotics, reinforced by the vials, powder, and bag of balloons in plain view — had probable cause to believe the balloon contained contraband. That practical probability satisfied "immediately apparent," so the warrantless seizure of the balloon was justified under the [[Plain View Doctrine|plain-view doctrine]].
 
 ## Conclusion
 The seizure of the balloon was lawful; the Texas court's suppression was reversed. The "immediately apparent" element of plain view requires only probable cause, and shining a flashlight into a car is not a search.

@@ -60,7 +60,7 @@ Using reasonable force such as handcuffs to effectuate a *Summers* detention is 
 Mena's detention in handcuffs for the duration of the search was permissible under *Michigan v. Summers* because the warrant authorized a search for weapons and evidence of a violent gang — circumstances posing special dangers that justified both the detention and the use of handcuffs. The questioning about her immigration status required no separate reasonable suspicion because it did not extend the time she was already lawfully detained.
 
 ## Conclusion
-The detention and the questioning were reasonable under the Fourth Amendment; the Ninth Circuit's judgment was vacated and the case remanded.
+The detention and the questioning were reasonable under the Fourth Amendment; the Ninth Circuit's judgment was [[Reading and Citing Cases#vacated|vacated]] and the case [[Reading and Citing Cases#on-remand|remanded]].
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.

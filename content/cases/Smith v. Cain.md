@@ -58,7 +58,7 @@ But here "Boatner's undisclosed statements were plainly material." — *Id.* (sl
 Boatner's testimony was the only evidence linking Smith to the crime, and his undisclosed statements—that he "could not ID anyone because [he] couldn't see faces"—directly contradicted his confident trial identification. Because that impeachment was material and the State failed to disclose it, the nondisclosure violated *Brady*, and the conviction was reversed.
 
 ## Conclusion
-The undisclosed impeachment of the sole eyewitness was material; the conviction was reversed and remanded.
+The undisclosed impeachment of the sole eyewitness was material; the conviction was reversed and [[Reading and Citing Cases#on-remand|remanded]].
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.

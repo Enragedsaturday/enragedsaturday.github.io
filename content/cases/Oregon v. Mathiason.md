@@ -44,7 +44,7 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-A parolee, Mathiason, came voluntarily to a state police office after an officer left a note asking him to call. The officer told him he was not under arrest, falsely said that his fingerprints had been found at a burglary scene, and questioned him behind a closed door. Mathiason confessed and then left the office freely. (Per curiam.)
+A parolee, Mathiason, came voluntarily to a state police office after an officer left a note asking him to call. The officer told him he was not under arrest, falsely said that his fingerprints had been found at a burglary scene, and questioned him behind a closed door. Mathiason confessed and then left the office freely. ([[Common Legal Terms#per-curiam|Per curiam]].)
 
 ## Issue
 Whether a suspect questioned at a police station — who came voluntarily, was told he was not under arrest, and was free to leave — is "in custody" for *Miranda* purposes.
@@ -58,7 +58,7 @@ Whether a suspect questioned at a police station — who came voluntarily, was t
 Mathiason came to the station voluntarily, was told he was not under arrest, was questioned briefly, and left without hindrance; he was therefore not in custody. The officer's false statement that fingerprints had been found did not convert the noncustodial interview into custodial interrogation. Because Mathiason was not in custody, no *Miranda* warnings were required and his confession was admissible.
 
 ## Conclusion
-Mathiason was not in custody; *Miranda* did not apply and the confession was admissible. The Oregon Supreme Court's judgment was reversed. *(Per curiam.)*
+Mathiason was not in custody; *Miranda* did not apply and the confession was admissible. The Oregon Supreme Court's judgment was reversed. *([[Common Legal Terms#per-curiam|Per curiam]].)*
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.

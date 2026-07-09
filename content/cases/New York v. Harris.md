@@ -48,7 +48,7 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-Police had probable cause to believe Bernard Harris had murdered Thelma Staton. Without an arrest warrant and without consent or exigent circumstances, three officers entered Harris's home, read him his *Miranda* rights, and obtained an admission inside the home (a *Payton* violation; that in-home statement was suppressed, which the State conceded). They then took Harris to the station house, again administered *Miranda* warnings, and Harris signed a written inculpatory statement. New York's courts suppressed the station-house statement as the fruit of the unlawful in-home arrest.
+Police had probable cause to believe Bernard Harris had murdered Thelma Staton. Without an arrest warrant and without consent or [[Exigent Circumstances and Hot Pursuit|exigent circumstances]], three officers entered Harris's home, read him his *Miranda* rights, and obtained an admission inside the home (a *Payton* violation; that in-home statement was suppressed, which the State conceded). They then took Harris to the station house, again administered *Miranda* warnings, and Harris signed a written inculpatory statement. New York's courts suppressed the station-house statement as the fruit of the unlawful in-home arrest.
 
 ## Issue
 Whether the exclusionary rule requires suppression of a statement a defendant makes at the police station, after a warrantless in-home arrest that violated *Payton*, when the police had probable cause to arrest him.
@@ -68,7 +68,7 @@ With probable cause to arrest, a *Payton* violation does not require suppression
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.
-- No negative treatment. *New York v. Harris* limits the exclusionary consequences of [[Payton v. New York]] (reaffirmed in [[Kirk v. Louisiana]]) and turns on the presence of probable cause — contrast [[Brown v. Illinois]] (confession suppressed where the arrest lacked probable cause) and the attenuation framework of [[Wong Sun v. United States]].
+- No negative treatment. *New York v. Harris* limits the exclusionary consequences of [[Payton v. New York]] (reaffirmed in [[Kirk v. Louisiana]]) and turns on the presence of probable cause — contrast [[Brown v. Illinois]] (confession suppressed where the arrest lacked probable cause) and the [[Fruits and Attenuation|attenuation]] framework of [[Wong Sun v. United States]].
 - *Disambiguation:* distinct from the reversed-party case *Harris v. New York*, 401 U.S. 222 (1971) (statements taken in violation of *Miranda* may impeach a testifying defendant).
 
 ## Appears on

@@ -68,7 +68,7 @@ The judgment of conviction was affirmed. Discarded containers were abandoned, an
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.
-- No negative treatment. The open-fields doctrine originating here was reaffirmed and elaborated in [[Oliver v. United States]] and [[United States v. Dunn]] (distinguishing the protected curtilage from unprotected open fields).
+- No negative treatment. The open-fields doctrine originating here was reaffirmed and elaborated in [[Oliver v. United States]] and [[United States v. Dunn]] (distinguishing the protected [[Curtilage|curtilage]] from unprotected open fields).
 
 ## Appears on
 - [[Open Fields]] — *Key — Anchor*

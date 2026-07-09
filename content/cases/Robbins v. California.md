@@ -63,10 +63,10 @@ Whether police who are lawfully searching an automobile may open a closed, opaqu
 The plurality (Stewart, J.) extended *[[United States v. Chadwick|Chadwick]]* and *[[Arkansas v. Sanders|Sanders]]* to any closed container: a piece of luggage or wrapped package found in a car is protected to the same degree as one found anywhere else, and the automobile exception does not reach it. "We reaffirm today that such a container may not be opened without a warrant, even if it is found during the course of the lawful search of an automobile." — 453 U.S. at 428. ^pin-428
 
 ## Application
-The plurality announced a bright-line rule: absent a recognized exception, a closed, opaque container's contents are shielded from a warrantless search regardless of the container's size or shape. Because no exception applied, the officers should have secured the packages and obtained a warrant; opening them on the roadside violated the Fourth and Fourteenth Amendments.
+The plurality announced a [[Common Legal Terms#bright-line-rule|bright-line rule]]: absent a recognized exception, a closed, opaque container's contents are shielded from a warrantless search regardless of the container's size or shape. Because no exception applied, the officers should have secured the packages and obtained a warrant; opening them on the roadside violated the Fourth and Fourteenth Amendments.
 
 ## Conclusion
-The judgment of the California Court of Appeal was **reversed**. Stewart, J., announced the judgment of the Court in a plurality opinion.
+The judgment of the California Court of Appeal was **reversed**. Stewart, J., announced the judgment of the Court in a [[Common Legal Terms#plurality-opinion|plurality opinion]].
 
 ## Treatment & subsequent history
 **Overruled by [[United States v. Ross]] (1982).** *Robbins*'s bright-line container rule survived barely a year. In *Ross* the Court held that when police have probable cause to search a lawfully stopped vehicle, that authority extends to every part of the car and any container within it that might conceal the object of the search — rejecting *Robbins*. *[[California v. Acevedo]]* (1991) then completed the shift, unifying the container rule and overruling *[[Arkansas v. Sanders]]* as well.

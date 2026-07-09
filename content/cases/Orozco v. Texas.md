@@ -44,10 +44,10 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-At about 4 a.m., four police officers entered Orozco's boardinghouse bedroom while he slept and questioned him about a fatal shooting. From the moment he gave his name, an officer testified, Orozco "was not free to go where he pleased but was 'under arrest.'" Without any Miranda warnings, the officers questioned him; he admitted owning a pistol and said it was in a washing machine, where it was found and matched by ballistics to the fatal shot.
+At about 4 a.m., four police officers entered Orozco's boardinghouse bedroom while he slept and questioned him about a fatal shooting. From the moment he gave his name, an officer testified, Orozco "was not free to go where he pleased but was 'under arrest.'" Without any [[Miranda and Custodial Interrogation|Miranda warnings]], the officers questioned him; he admitted owning a pistol and said it was in a washing machine, where it was found and matched by ballistics to the fatal shot.
 
 ## Issue
-Whether Miranda warnings were required before custodial questioning that occurred in the suspect's own bedroom rather than at a police station.
+Whether [[Miranda and Custodial Interrogation|Miranda warnings]] were required before custodial questioning that occurred in the suspect's own bedroom rather than at a police station.
 
 ## Rule
 Yes. "We disagree and hold that the use of these admissions obtained in the absence of the required warnings was a flat violation of the Self-Incrimination Clause of the Fifth Amendment as construed in *Miranda*." — 394 U.S. at 326. ^pin-326

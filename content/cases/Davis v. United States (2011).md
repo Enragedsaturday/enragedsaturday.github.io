@@ -62,7 +62,7 @@ The Eleventh Circuit's refusal to suppress was affirmed.
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.
-- No negative treatment. *Davis* extends the good-faith exception of [[United States v. Leon]], [[Illinois v. Krull]], and [[Herring v. United States]] to reliance on binding appellate precedent, applying it to a search valid under [[New York v. Belton]] but unlawful after [[Arizona v. Gant]].
+- No negative treatment. *Davis* extends the [[The Good-Faith Exception|good-faith exception]] of [[United States v. Leon]], [[Illinois v. Krull]], and [[Herring v. United States]] to reliance on binding appellate precedent, applying it to a search valid under [[New York v. Belton]] but unlawful after [[Arizona v. Gant]].
 - **Disambiguation:** this is the **2011 good-faith** decision; the bare wikilink [[Davis v. United States]] resolves to the distinct **1994** Miranda ambiguous-invocation case.
 
 ## Appears on

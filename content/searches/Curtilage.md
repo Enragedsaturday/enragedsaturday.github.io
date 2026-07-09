@@ -59,7 +59,7 @@ related:
 **Apply it.**
 1. **Fix the line first.** Before anything else, decide whether the ground is curtilage or open fields; run the four *[[United States v. Dunn|Dunn]]* factors against the actual layout, and remember no single factor controls.
 2. **Treat porch, path, driveway top, and adjacent yard as the home.** Proximity plus the home-life connection, not a fence, makes them curtilage (*[[Florida v. Jardines|Jardines]]*; *[[Collins v. Virginia|Collins]]*).
-3. **Stay inside the knock-and-talk license if you approach.** Front path, knock, brief wait, leave. A dog, a peer through a window, or lingering to snoop converts the approach into a search (*[[Florida v. Jardines|Jardines]]*; [[Knock and Talk]]).
+3. **Stay inside the [[Knock and Talk|knock-and-talk]] license if you approach.** Front path, knock, brief wait, leave. A dog, a peer through a window, or lingering to snoop converts the approach into a search (*[[Florida v. Jardines|Jardines]]*; [[Knock and Talk]]).
 4. **Do not borrow a car exception to enter curtilage.** Probable cause to search the vehicle is not authority to cross onto the curtilage to reach it (*[[Collins v. Virginia|Collins]]*).
 5. **Look, do not enter, from a lawful vantage.** Observing curtilage from a place you may lawfully be is not a search; walking onto it, or aiming sense-enhancing gear at the interior, is a different question ([[Aerial and Enhanced Surveillance]]).
 
@@ -67,7 +67,7 @@ related:
 - **Treating a driveway, porch, or attached carport as fair game.** Proximity plus the home-life connection, not the absence of a fence, controls (*[[Collins v. Virginia|Collins]]*; *[[Florida v. Jardines|Jardines]]*).
 - **Reading "you may look from outside" as "you may enter."** A lawful vantage permits observation, never physical entry of the curtilage (*[[Collins v. Virginia|Collins]]*), and never sense-enhancing technology aimed at the interior ([[Aerial and Enhanced Surveillance]]).
 - **Thinking a fence or "No Trespassing" sign creates protected space out of open fields.** It does not; the curtilage line, not signage, decides ([[Open Fields]]).
-- **Forgetting the knock-and-talk license is scope-limited.** Overstaying, or bringing investigative tools onto the porch, turns a lawful approach into a search (*[[Florida v. Jardines|Jardines]]*).
+- **Forgetting the [[Knock and Talk|knock-and-talk]] license is scope-limited.** Overstaying, or bringing investigative tools onto the porch, turns a lawful approach into a search (*[[Florida v. Jardines|Jardines]]*).
 
 ## Lower-court developments
 
@@ -98,7 +98,7 @@ These are treated in full on other doctrine pages but bear on the curtilage line
 
 | Case | Relevance here | Primary home | Opinion |
 |---|---|---|---|
-| *[[Kentucky v. King]]*, 563 U.S. 452 (2011) | ***Enters.*** Officers may approach and knock where any private citizen could; the implied-license entry onto curtilage (porch, path) is lawful, and police do not "create" an exigency merely by knocking within that license. | [[Exigent Circumstances and Hot Pursuit]] | [opinion](https://www.courtlistener.com/opinion/216733/kentucky-v-king/) |
+| *[[Kentucky v. King]]*, 563 U.S. 452 (2011) | ***Enters.*** Officers may approach and knock where any private citizen could; the implied-license entry onto curtilage (porch, path) is lawful, and police do not "create" an [[Exigent Circumstances and Hot Pursuit\|exigency]] merely by knocking within that license. | [[Exigent Circumstances and Hot Pursuit]] | [opinion](https://www.courtlistener.com/opinion/216733/kentucky-v-king/) |
 | *[[French v. Merrill]]*, 15 F.4th 116 (1st Cir. 2021) | ***Exceeds.*** Officers who overstayed the implied social license (repeated returns capped by a nighttime intrusion) committed a *[[Florida v. Jardines\|Jardines]]* trespassory search of the curtilage. | [[Knock and Talk]] | [opinion](https://www.courtlistener.com/opinion/5273192/french-v-merrill/) |
 | *[[United States v. Santana]]*, 427 U.S. 38 (1976) | ***Boundary.*** A suspect in her own open doorway is in a "public" place, the line where the home's curtilage protection gives way; she cannot retreat indoors to defeat a public-place arrest. *(Hot-pursuit reach limited by [[Lange v. California]].)* | [[Arrest in the Home]] | [opinion](https://www.courtlistener.com/opinion/109504/united-states-v-santana/) |
 | *[[See v. City of Seattle]]*, 387 U.S. 541 (1967) | ***Commercial.*** Commercial premises have Fourth Amendment protection against warrantless administrative entry, so "no curtilage" does not mean "no privacy" for a business interior. | [[Special Needs and Administrative Searches]] | [opinion](https://www.courtlistener.com/opinion/107474/see-v-city-of-seattle/) |

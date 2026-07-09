@@ -58,7 +58,7 @@ The label does not matter: "The values assigned to the competing interests do no
 However egregious the IRS conduct, Payner was not the victim of the unlawful search — it invaded the banker's rights, not his — so he had no standing, and the same deterrence-versus-cost balance the standing rule already strikes governed. The District Court's contrary weighing "amounts to a substitution of individual judgment for the controlling decisions of this Court." To let a court suppress on that basis "would confer on the judiciary discretionary power to disregard the considered limitations of the law it is charged with enforcing." — *Id.* at 737. ^pin-737
 
 ## Conclusion
-The supervisory power "does not extend so far"; the suppression order was reversed. A defendant who lacks Fourth Amendment standing cannot obtain exclusion through the supervisory power.
+The supervisory power "does not extend so far"; the suppression order was reversed. A defendant who lacks [[Standing to Challenge a Search|Fourth Amendment standing]] cannot obtain exclusion through the supervisory power.
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.

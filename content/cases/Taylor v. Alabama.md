@@ -46,10 +46,10 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-Taylor was arrested without a warrant or probable cause for a grocery-store robbery, on an uncorroborated, second-hand tip. Held at the station, he was given Miranda warnings, questioned on several occasions over about six hours, fingerprinted, and put in a lineup. While he was in custody police matched his prints to prints from the scene and filed an arrest warrant *ex parte*. After a brief visit with his girlfriend, he signed a confession. He moved to suppress it as the fruit of his illegal arrest. The confession was conceded "voluntary" for Fifth Amendment purposes.
+Taylor was arrested without a warrant or probable cause for a grocery-store robbery, on an uncorroborated, second-hand tip. Held at the station, he was given [[Miranda and Custodial Interrogation|Miranda warnings]], questioned on several occasions over about six hours, fingerprinted, and put in a lineup. While he was in custody police matched his prints to prints from the scene and filed an arrest warrant *[[Common Legal Terms#ex-parte|ex parte]]*. After a brief visit with his girlfriend, he signed a confession. He moved to suppress it as the fruit of his illegal arrest. The confession was conceded "voluntary" for Fifth Amendment purposes.
 
 ## Issue
-Whether a confession obtained after an arrest made without probable cause must be suppressed as a fruit of the illegal arrest, or whether Miranda warnings, the lapse of several hours, a visitor, and a later-filed warrant sufficiently attenuated the taint.
+Whether a confession obtained after an arrest made without probable cause must be suppressed as a fruit of the illegal arrest, or whether [[Miranda and Custodial Interrogation|Miranda warnings]], the lapse of several hours, a visitor, and a later-filed warrant sufficiently attenuated the taint.
 
 ## Rule
 The confession must be suppressed unless the taint is purged. "[A] confession obtained through custodial interrogation after an illegal arrest should be excluded unless intervening events break the causal connection between the illegal arrest and the confession so that the confession is 'sufficiently an act of free will to purge the primary taint.'" — 457 U.S. at 690 (quoting *Brown v. Illinois*, 422 U.S. 590, 602). ^pin-690
@@ -59,17 +59,17 @@ A Fifth Amendment finding of voluntariness is "merely a threshold requirement fo
 ## Application
 The case was "a virtual replica of both *Brown* and *Dunaway*." "Petitioner was arrested without probable cause in the hope that something would turn up, and he confessed shortly thereafter without any meaningful intervening event." — *Id.* at 691. ^pin-691
 
-The roughly six-hour interval was not significant where Taylor remained in custody, unrepresented, repeatedly questioned, fingerprinted, and placed in a lineup; the three Miranda warnings did not break the chain; and the brief, emotionally fraught visit with his girlfriend did not free his will. The *ex parte* arrest warrant filed mid-interrogation rested on fingerprints that "were themselves the fruit of petitioner's illegal arrest," so it could not supply attenuation. The State failed to carry its burden of showing admissibility.
+The roughly six-hour interval was not significant where Taylor remained in custody, unrepresented, repeatedly questioned, fingerprinted, and placed in a lineup; the three [[Miranda and Custodial Interrogation|Miranda warnings]] did not break the chain; and the brief, emotionally fraught visit with his girlfriend did not free his will. The *[[Common Legal Terms#ex-parte|ex parte]]* arrest warrant filed mid-interrogation rested on fingerprints that "were themselves the fruit of petitioner's illegal arrest," so it could not supply [[Fruits and Attenuation|attenuation]]. The State failed to carry its burden of showing admissibility.
 
 ## Conclusion
-The confession was the unattenuated fruit of the illegal arrest and should have been suppressed; the judgment of the Alabama Supreme Court was reversed and the case remanded.
+The confession was the unattenuated fruit of the illegal arrest and should have been suppressed; the judgment of the Alabama Supreme Court was reversed and the case [[Reading and Citing Cases#on-remand|remanded]].
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.
-- No negative treatment. *Taylor* applies the [[Brown v. Illinois]] attenuation factors and follows [[Dunaway v. New York]], reaffirming that a Fifth Amendment–voluntary confession can still be a suppressible Fourth Amendment fruit; the tainted fingerprints trace to [[Davis v. Mississippi]]. [[Kaupp v. Texas]] later applied the same analysis per curiam.
+- No negative treatment. *Taylor* applies the [[Brown v. Illinois]] [[Fruits and Attenuation|attenuation]] factors and follows [[Dunaway v. New York]], reaffirming that a Fifth Amendment–voluntary confession can still be a suppressible Fourth Amendment fruit; the tainted fingerprints trace to [[Davis v. Mississippi]]. [[Kaupp v. Texas]] later applied the same analysis [[Common Legal Terms#per-curiam|per curiam]].
 
 ## Appears on
-- [[The Exclusionary Rule]] — *Key — Progeny (attenuation)*
+- [[The Exclusionary Rule]] — *Key — Progeny ([[Fruits and Attenuation|attenuation]])*
 - [[Seizure of the Person]] — *Related (cross-doctrine)*
 
 ## Sources

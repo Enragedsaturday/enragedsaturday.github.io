@@ -55,10 +55,10 @@ No. Just as the Court has not required a detailed warning before an ordinary con
 "The Fourth Amendment test for a valid consent to search is that the consent be voluntary, and '[v]oluntariness is a question of fact to be determined from all the circumstances.'" — *Id.* at 40. ^pin-40
 
 ## Application
-The absence of a "free to go" advisory did not by itself render Robinette's consent involuntary; whether his consent was voluntary had to be determined from all the circumstances of the encounter. The Court rejected the Ohio Supreme Court's per se rule and remanded for application of the totality-of-the-circumstances standard.
+The absence of a "free to go" advisory did not by itself render Robinette's consent involuntary; whether his consent was voluntary had to be determined from all the circumstances of the encounter. The Court rejected the Ohio Supreme Court's [[Common Legal Terms#per-se|per se]] rule and [[Reading and Citing Cases#on-remand|remanded]] for application of the totality-of-the-circumstances standard.
 
 ## Conclusion
-No "free to go" warning is constitutionally required; the per se rule was reversed and the case remanded.
+No "free to go" warning is constitutionally required; the [[Common Legal Terms#per-se|per se]] rule was reversed and the case [[Reading and Citing Cases#on-remand|remanded]].
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.

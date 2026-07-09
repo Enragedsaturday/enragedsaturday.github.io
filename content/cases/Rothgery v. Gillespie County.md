@@ -56,7 +56,7 @@ Attachment occurs at the initial appearance and does not require a prosecutor's 
 Rothgery's article 15.17 hearing — where he learned the charge and his liberty was restricted by commitment to jail in lieu of bail — marked the initiation of adversary judicial proceedings, so his Sixth Amendment right to counsel attached at that point regardless of whether any prosecutor was aware of or involved in the case. The Fifth Circuit erred in holding that a prosecutor's involvement was required for attachment. (The Court's holding was narrow and did not decide whether the six-month delay caused a remediable violation.)
 
 ## Conclusion
-The right to counsel attached at Rothgery's initial appearance; the Fifth Circuit's judgment was vacated and the case remanded.
+The right to counsel attached at Rothgery's initial appearance; the Fifth Circuit's judgment was [[Reading and Citing Cases#vacated|vacated]] and the case [[Reading and Citing Cases#on-remand|remanded]].
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**. *Rothgery* reaffirms the attachment rule of [[Brewer v. Williams]]/[[Kirby v. Illinois]] and fixes attachment at the initial appearance.

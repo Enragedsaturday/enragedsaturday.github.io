@@ -72,8 +72,8 @@ The genuine split is **where the approach may begin and who may stand where**: t
 
 | Case | Holding | Opinion |
 |---|---|---|
-| *[[Florida v. Jardines]]*, 569 U.S. 1 (2013) | The implied license bounds the approach in **area and purpose**, judged objectively: bringing a drug dog onto the porch to gather evidence was a trespassory search of curtilage. | [opinion](https://www.courtlistener.com/opinion/856347/florida-v-jardines/) |
-| *[[Kentucky v. King]]*, 563 U.S. 452 (2011) | A lawful knock is conduct "any private citizen might do": it neither obligates the occupant to answer nor manufactures an exigency; entry is forfeited only by an actual or threatened Fourth Amendment violation. | [opinion](https://www.courtlistener.com/opinion/216733/kentucky-v-king/) |
+| *[[Florida v. Jardines]]*, 569 U.S. 1 (2013) | The implied license bounds the approach in **area and purpose**, judged objectively: bringing a drug dog onto the porch to gather evidence was a trespassory search of [[Curtilage\|curtilage]]. | [opinion](https://www.courtlistener.com/opinion/856347/florida-v-jardines/) |
+| *[[Kentucky v. King]]*, 563 U.S. 452 (2011) | A lawful knock is conduct "any private citizen might do": it neither obligates the occupant to answer nor manufactures an [[Exigent Circumstances and Hot Pursuit\|exigency]]; entry is forfeited only by an actual or threatened Fourth Amendment violation. | [opinion](https://www.courtlistener.com/opinion/216733/kentucky-v-king/) |
 
 ## Related cases across doctrines
 
@@ -81,7 +81,7 @@ The genuine split is **where the approach may begin and who may stand where**: t
 |---|---|---|---|
 | *[[Florida v. Bostick]]*, 501 U.S. 429 (1991) | ***Boundary.*** The stays-consensual test: the encounter is a seizure only if a reasonable person would not feel free to decline or terminate it. | [[Seizure of the Person]] | [opinion](https://www.courtlistener.com/opinion/112631/florida-v-bostick/) |
 | *[[United States v. Drayton]]*, 536 U.S. 194 (2002) | ***Extends.*** Door-step consent can be voluntary though officers never advise of the right to refuse. | [[Seizure of the Person]] | [opinion](https://www.courtlistener.com/opinion/121153/united-states-v-drayton/) |
-| *[[Collins v. Virginia]]*, 584 U.S. 586 (2018) | ***Limits.*** No warrant exception licenses the trespass: officers may not enter home or curtilage to search a vehicle there. | [[Automobile Exception]] | [opinion](https://www.courtlistener.com/opinion/4501697/collins-v-virginia/) |
+| *[[Collins v. Virginia]]*, 584 U.S. 586 (2018) | ***Limits.*** No warrant exception licenses the trespass: officers may not enter home or [[Curtilage\|curtilage]] to search a vehicle there. | [[Automobile Exception]] | [opinion](https://www.courtlistener.com/opinion/4501697/collins-v-virginia/) |
 | *[[Payton v. New York]]*, 445 U.S. 573 (1980) | ***Boundary.*** The license ends at the threshold: warrantless, nonconsensual in-home arrest is presumptively unreasonable. | [[Arrest in the Home]] | [opinion](https://www.courtlistener.com/opinion/110235/payton-v-new-york/) |
 | *[[Caniglia v. Strom]]*, 593 U.S. 194 (2021) | ***Boundary.*** No standalone community-caretaking power supports a warrantless home entry after the knock. | [[Emergency Aid]] | [opinion](https://www.courtlistener.com/opinion/4883694/caniglia-v-strom/) |
 

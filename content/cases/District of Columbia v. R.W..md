@@ -69,10 +69,10 @@ Reasonable suspicion is assessed under the "totality of the circumstances," a st
 The District of Columbia Court of Appeals committed the very error the totality standard forbids: it "excised" the dispatch call and the two companions' unprovoked flight from the analysis, then found the residue — the late hour and the car's movement — insufficient. Taken together, however, the pre-dawn hour, a suspicious-vehicle report, occupants fleeing the moment a marked cruiser appeared, and a car backing out with a door hanging open gave Vanterpool a particularized and objective basis to suspect wrongdoing. The Court found the presence of reasonable suspicion clear on the combined facts.
 
 ## Conclusion
-**Reversed.** Per curiam. Because the court below departed from those principles and Officer Vanterpool clearly had reasonable suspicion to stop R.W., the Supreme Court summarily reversed the suppression ruling.
+**Reversed.** [[Common Legal Terms#per-curiam|Per curiam]]. Because the court below departed from those principles and Officer Vanterpool clearly had reasonable suspicion to stop R.W., the Supreme Court summarily reversed the suppression ruling.
 
 ## Treatment & subsequent history
-**Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub; its citator and progeny history have not completed the two-key verification, so it renders under the ⚪ banner until S9 promotion. *R.W.* is a recent, error-correcting per curiam reaffirming that the reasonable-suspicion inquiry is holistic — a rebuke of "divide-and-conquer" review that recurs whenever a lower court discounts individually innocent factors (compare *[[Kansas v. Glover]]* and the totality method of *[[Terry v. Ohio|Terry]]*).
+**Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub; its citator and progeny history have not completed the two-key verification, so it renders under the ⚪ banner until S9 promotion. *R.W.* is a recent, error-correcting [[Common Legal Terms#per-curiam|per curiam]] reaffirming that the reasonable-suspicion inquiry is holistic — a rebuke of "divide-and-conquer" review that recurs whenever a lower court discounts individually innocent factors (compare *[[Kansas v. Glover]]* and the totality method of *[[Terry v. Ohio|Terry]]*).
 
 ## Appears on
 - [[Terry Stops and Reasonable Suspicion]] — *Recent development*

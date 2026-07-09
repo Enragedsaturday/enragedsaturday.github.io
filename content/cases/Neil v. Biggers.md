@@ -47,7 +47,7 @@ lake:
 A rape victim identified Biggers at a station-house showup seven months after the crime, after viewing him and hearing him repeat words spoken by her attacker. During the crime she had had a prolonged opportunity to observe the assailant under light from the moon and a kitchen light. Biggers challenged the identification as the product of an unnecessarily suggestive showup.
 
 ## Issue
-Whether an identification produced by an unnecessarily suggestive procedure must be excluded, or whether it may be admitted if it is reliable under the totality of the circumstances.
+Whether an identification produced by an unnecessarily suggestive procedure must be excluded, or whether it may be admitted if it is reliable under the [[Common Legal Terms#totality-of-the-circumstances|totality of the circumstances]].
 
 ## Rule
 Reliability, not suggestiveness alone, controls admissibility. "[T]he central question [is] whether under the 'totality of the circumstances' the identification was reliable even though the confrontation procedure was suggestive." — 409 U.S. at 199. ^pin-199
@@ -55,7 +55,7 @@ Reliability, not suggestiveness alone, controls admissibility. "[T]he central qu
 "[T]he factors to be considered in evaluating the likelihood of misidentification include the opportunity of the witness to view the criminal at the time of the crime, the witness' degree of attention, the accuracy of the witness' prior description of the criminal, the level of certainty demonstrated by the witness at the confrontation, and the length of time between the crime and the confrontation." — *Id.* at 199–200. ^pin-199b
 
 ## Application
-Applying those factors, the victim had had an extended opportunity to view her assailant, had paid close attention, had given an accurate prior description, and was certain in her identification; although seven months had passed, she had made no prior misidentification. Under the totality of the circumstances, her identification was sufficiently reliable to be admitted despite the suggestive showup.
+Applying those factors, the victim had had an extended opportunity to view her assailant, had paid close attention, had given an accurate prior description, and was certain in her identification; although seven months had passed, she had made no prior misidentification. Under the [[Common Legal Terms#totality-of-the-circumstances|totality of the circumstances]], her identification was sufficiently reliable to be admitted despite the suggestive showup.
 
 ## Conclusion
 The identification was reliable and admissible; the judgment granting relief on the identification claim was reversed.

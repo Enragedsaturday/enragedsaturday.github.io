@@ -54,10 +54,10 @@ aliases:
 <!-- header line; TreatmentBadge + weight render from frontmatter, degrading to the text above. Born under_review (⚪) — identity cluster 109387 → combined opinion 109387 (Powell, J.; 424 U.S. 409, decided Mar. 2, 1976). Rule quote string-matched to the CL opinion text 2026-07-07 (reporter star `*431`). S9 promotes. -->
 
 ## Background
-Paul Imbler was convicted of murder in a prosecution handled by deputy district attorney Richard Pachtman. Imbler was later released on federal habeas after evidence emerged that the State's case had rested in part on testimony the prosecutor allegedly knew to be false and on the suppression of exculpatory material. Imbler then sued Pachtman under § 1983 for damages. The lower courts held the prosecutor absolutely immune from such a suit, and the Supreme Court granted certiorari.
+Paul Imbler was convicted of murder in a prosecution handled by deputy district attorney Richard Pachtman. Imbler was later released on federal [[Common Legal Terms#habeas-corpus|habeas]] after evidence emerged that the State's case had rested in part on testimony the prosecutor allegedly knew to be false and on the suppression of [[Brady and Giglio|exculpatory]] material. Imbler then sued Pachtman under § 1983 for damages. The lower courts held the prosecutor absolutely immune from such a suit, and the Supreme Court granted [[Reading and Citing Cases#certiorari-cert|certiorari]].
 
 ## Issue
-Whether a state prosecutor may be held liable in damages under § 1983 for allegedly knowingly using false testimony and suppressing exculpatory evidence in securing a conviction.
+Whether a state prosecutor may be held liable in damages under § 1983 for allegedly knowingly using false testimony and suppressing [[Brady and Giglio|exculpatory]] evidence in securing a conviction.
 
 ## Rule
 Drawing on the common-law immunity of prosecutors and the policy reasons behind it, the Court confined its holding to the prosecutor's advocacy role but held that role absolutely immune: "We hold only that in initiating a prosecution and in presenting the State's case, the prosecutor is immune from a civil suit for damages under § 1983." — 424 U.S. at 431. ^pin-431

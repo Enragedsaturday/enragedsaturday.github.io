@@ -47,7 +47,7 @@ lake:
 In a first-degree murder investigation, police obtained a warrant to search Volle's cell phone. The warrant authorized creating a complete forensic image of the phone but limited the seizure to data related to the murder or identifying the phone's owner. Volle argued the warrant was unconstitutionally overbroad as to digital evidence.
 
 ## Issue
-How the Fourth Amendment's particularity requirement applies to a warrant to search a digital device—specifically, whether the warrant must prescribe the search method and how it must limit what may be seized.
+How the Fourth Amendment's [[Particularity|particularity]] requirement applies to a warrant to search a digital device—specifically, whether the warrant must prescribe the search method and how it must limit what may be seized.
 
 ## Rule
 A digital warrant need not dictate the search method, but must limit the seizure. "Because relevant information may be stored anywhere on such a device, it is ordinarily impractical—and sometimes impossible—for a warrant to prescribe in advance how officers must locate that data." — 580 P.3d 1223 (Kan. 2025) (slip op., at 13). ^pin-13
@@ -55,14 +55,14 @@ A digital warrant need not dictate the search method, but must limit the seizure
 As to what may be seized, "even though investigators may need to review broad portions of a device's contents to locate relevant material, the warrant must still include a meaningful limiting principle tying the authorized seizure to evidence of a specified offense." — *Id.* ^pin-13a
 
 ## Application
-The warrant satisfied both aspects of particularity: it authorized a full forensic image of the phone—a breadth recognized as practically necessary for digital searches—while expressly limiting the authorized seizure to data related to first-degree murder or identifying the phone's owner. That limiting principle kept the search anchored to the probable-cause showing and prevented the kind of exploratory rummaging the Fourth Amendment forbids, so Volle's overbreadth challenge failed.
+The warrant satisfied both aspects of [[Particularity|particularity]]: it authorized a full forensic image of the phone—a breadth recognized as practically necessary for digital searches—while expressly limiting the authorized seizure to data related to first-degree murder or identifying the phone's owner. That limiting principle kept the search anchored to the probable-cause showing and prevented the kind of exploratory rummaging the Fourth Amendment forbids, so Volle's overbreadth challenge failed.
 
 ## Conclusion
 The digital warrant was sufficiently particular; the district court properly rejected Volle's overbreadth claim.
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Persuasive — state, illustrative**.
-- A recent state development on digital-warrant particularity, coherent with the digital-privacy concerns of [[Riley v. California]] and [[Carpenter v. United States]] and the search-scope analysis of [[State v. Mansor]].
+- A recent state development on digital-warrant [[Particularity|particularity]], coherent with the digital-privacy concerns of [[Riley v. California]] and [[Carpenter v. United States]] and the search-scope analysis of [[State v. Mansor]].
 
 ## Appears on
 - [[Plain View Doctrine]] — *Recent development (role-based)*

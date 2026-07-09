@@ -57,7 +57,7 @@ The bar is not absolute, however: "Of course this does not mean that the facts t
 To allow the subpoena would "reduce[] the Fourth Amendment to a form of words." — *Id.* ^pin-392c
 
 ## Application
-The Government conceded the seizure was unlawful but argued it could study and copy the papers, then subpoena the originals "in a more regular form." The Court rejected the idea that the Constitution protects only physical possession and not the advantages gained by the forbidden act. Because the subpoenas rested entirely on knowledge derived from the illegal seizure — not from any independent source — they could not be enforced, and the contempt could not stand.
+The Government conceded the seizure was unlawful but argued it could study and copy the papers, then subpoena the originals "in a more regular form." The Court rejected the idea that the Constitution protects only physical possession and not the advantages gained by the forbidden act. Because the subpoenas rested entirely on knowledge derived from the illegal seizure — not from any [[Inevitable Discovery and Independent Source|independent source]] — they could not be enforced, and the contempt could not stand.
 
 ## Conclusion
 The Government could not exploit its unlawful seizure to compel production of the documents; the contempt judgment was reversed.
@@ -67,7 +67,7 @@ The Government could not exploit its unlawful seizure to compel production of th
 - No negative treatment. *Silverthorne* is the origin of the **fruit-of-the-poisonous-tree** doctrine and, in the same breath, the **independent-source** exception. Both principles run forward through [[Nardone v. United States]] (which coined the "fruit" label), *Wong Sun v. United States*, and *Murray v. United States*, and remain foundational good law.
 
 ## Appears on
-- [[The Exclusionary Rule]] — *Anchor (fruit of the poisonous tree origin; independent source)*
+- [[The Exclusionary Rule]] — *Anchor ([[Common Legal Terms#fruit-of-the-poisonous-tree|fruit of the poisonous tree]] origin; [[Inevitable Discovery and Independent Source|independent source]])*
 
 ## Sources
 - *Silverthorne Lumber Co. v. United States*, 251 U.S. 385 (1920) — https://www.courtlistener.com/opinion/99506/silverthorne-lumber-co-v-united-states/ — pinpoint: 392.

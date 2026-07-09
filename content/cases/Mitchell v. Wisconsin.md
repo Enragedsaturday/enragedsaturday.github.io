@@ -55,14 +55,14 @@ Whether police may conduct a warrantless blood draw on an unconscious drunk-driv
 Generally yes (plurality). "When police have probable cause to believe a person has committed a drunk-driving offense and the driver's unconsciousness or stupor requires him to be taken to the hospital or similar facility before police have a reasonable opportunity to administer a standard evidentiary breath test, they may almost always order a warrantless blood test to measure the driver's BAC without offending the Fourth Amendment." — 139 S. Ct. at 2539 (plurality opinion). ^pin-2539
 
 ## Application
-Mitchell was unconscious and so could not take a breath test, and his condition required hospitalization; the officers had probable cause to believe he had driven drunk. Under the plurality's rule, the exigencies attending an unconscious driver almost always justify a warrantless blood draw. Because Mitchell had not had a chance to show that his was the unusual case in which a warrant would not have interfered with other pressing duties, the Court remanded for that purpose.
+Mitchell was unconscious and so could not take a breath test, and his condition required hospitalization; the officers had probable cause to believe he had driven drunk. Under the plurality's rule, the [[Exigent Circumstances and Hot Pursuit|exigencies]] attending an unconscious driver almost always justify a warrantless blood draw. Because Mitchell had not had a chance to show that his was the unusual case in which a warrant would not have interfered with other pressing duties, the Court [[Reading and Citing Cases#on-remand|remanded]] for that purpose.
 
 ## Conclusion
-Vacated and remanded; the warrantless blood draw was generally permissible, subject to Mitchell's opportunity to show that his was an unusual case.
+[[Reading and Citing Cases#vacated|Vacated]] and [[Reading and Citing Cases#on-remand|remanded]]; the warrantless blood draw was generally permissible, subject to Mitchell's opportunity to show that his was an unusual case.
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS** (Alito plurality; Thomas, J., concurring in the judgment).
-- No negative treatment. *Mitchell* builds on the exigency analysis of [[Missouri v. McNeely]] and [[Schmerber v. California]] for the unconscious-driver context.
+- No negative treatment. *Mitchell* builds on the [[Exigent Circumstances and Hot Pursuit|exigency]] analysis of [[Missouri v. McNeely]] and [[Schmerber v. California]] for the unconscious-driver context.
 
 ## Appears on
 - [[Exigent Circumstances and Hot Pursuit]] — *Key — Progeny / Refinement*

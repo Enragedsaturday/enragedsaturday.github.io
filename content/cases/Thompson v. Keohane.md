@@ -44,7 +44,7 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-Thompson, suspected in the death of his former wife, was questioned by Alaska state troopers at their headquarters; he came voluntarily and was told he was free to leave and not under arrest. After a roughly two-hour interview in which the troopers confronted him with evidence, he made incriminating statements and was then arrested. The Alaska courts found he had not been "in custody" and admitted the statements. On federal habeas review, the courts below treated the state court's no-custody finding as a factual determination entitled to a presumption of correctness under 28 U.S.C. §2254(d).
+Thompson, suspected in the death of his former wife, was questioned by Alaska state troopers at their headquarters; he came voluntarily and was told he was free to leave and not under arrest. After a roughly two-hour interview in which the troopers confronted him with evidence, he made incriminating statements and was then arrested. The Alaska courts found he had not been "in custody" and admitted the statements. On federal [[Common Legal Terms#habeas-corpus|habeas]] review, the courts below treated the state court's no-custody finding as a factual determination entitled to a presumption of correctness under 28 U.S.C. §2254(d).
 
 ## Issue
 Whether a state court's "in custody" determination for Miranda purposes is a factual finding entitled to the §2254(d) presumption of correctness, or a mixed question of law and fact subject to independent federal review — and what the custody inquiry requires.
@@ -55,10 +55,10 @@ The custody inquiry is objective and two-part. "Two discrete inquiries are essen
 The first inquiry is factual and presumed correct under §2254(d), but the ultimate custody determination is legal: "This ultimate determination, we hold, presents a 'mixed question of law and fact' qualifying for independent review." — *Id.* at 112–113. ^pin-113
 
 ## Application
-The "scene-setting" facts of Thompson's interrogation — where it occurred, what was said and done — are factual findings entitled to deference. But whether those circumstances amounted to custody turns on applying the objective reasonable-person standard, a task on which the state court is not "in an appreciably better position than the federal habeas court." Because the courts below had deferred to the state custody finding rather than reviewing it independently, the Court reversed and remanded for that independent determination.
+The "scene-setting" facts of Thompson's interrogation — where it occurred, what was said and done — are factual findings entitled to deference. But whether those circumstances amounted to custody turns on applying the objective reasonable-person standard, a task on which the state court is not "in an appreciably better position than the federal habeas court." Because the courts below had deferred to the state custody finding rather than reviewing it independently, the Court reversed and [[Reading and Citing Cases#on-remand|remanded]] for that independent determination.
 
 ## Conclusion
-The Miranda custody determination is an objective, mixed question of law and fact warranting independent federal review; the judgment was reversed and the case remanded.
+The Miranda custody determination is an objective, mixed question of law and fact warranting independent federal review; the judgment was reversed and the case [[Reading and Citing Cases#on-remand|remanded]].
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.

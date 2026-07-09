@@ -44,10 +44,10 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-Spring was arrested by federal agents on firearms charges. After Miranda warnings, he waived his rights and answered questions; the agents also asked him about an unrelated Colorado murder, which he eventually admitted. Spring argued his waiver was invalid because the agents had not told him in advance that they intended to question him about the homicide.
+Spring was arrested by federal agents on firearms charges. After [[Miranda and Custodial Interrogation|Miranda warnings]], he waived his rights and answered questions; the agents also asked him about an unrelated Colorado murder, which he eventually admitted. Spring argued his waiver was invalid because the agents had not told him in advance that they intended to question him about the homicide.
 
 ## Issue
-Whether a suspect's waiver of his Miranda rights is rendered invalid (not knowing and intelligent) because the police did not inform him beforehand of all the subjects or offenses the interrogation would cover.
+Whether a suspect's waiver of his [[Miranda and Custodial Interrogation|Miranda rights]] is rendered invalid (not knowing and intelligent) because the police did not inform him beforehand of all the subjects or offenses the interrogation would cover.
 
 ## Rule
 No. A valid waiver requires that it be voluntary and that it be made with full awareness of the *nature* of the right abandoned and the consequences of doing so — not awareness of every tactical detail. "[A] suspect's awareness of all the possible subjects of questioning in advance of interrogation is not relevant to determining whether the suspect voluntarily, knowingly, and intelligently waived his Fifth Amendment privilege." — 479 U.S. at 577. ^pin-577
@@ -58,7 +58,7 @@ The *Miranda* warnings themselves convey the nature of the privilege and the con
 Spring received and understood the *Miranda* warnings and voluntarily waived his rights. The agents' failure to forewarn him that they would also ask about the Colorado murder did not affect the knowing-and-intelligent character of that waiver: he knew he could remain silent and that anything he said could be used against him. His admissions were therefore the product of a valid waiver.
 
 ## Conclusion
-The waiver was knowing and intelligent despite the suspect's ignorance of all the topics to be covered. The judgment of the Colorado Supreme Court was reversed and the case remanded.
+The waiver was knowing and intelligent despite the suspect's ignorance of all the topics to be covered. The judgment of the Colorado Supreme Court was reversed and the case [[Reading and Citing Cases#on-remand|remanded]].
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.

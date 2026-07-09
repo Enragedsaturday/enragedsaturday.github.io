@@ -46,7 +46,7 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-In two consolidated cases, police searched the digital contents of arrestees' cell phones without a warrant, as searches incident to arrest. After arresting Riley on weapons charges, an officer searched his smart phone and found photos, videos, and contacts linking him to a gang shooting. In the companion *Wurie* case, officers searched a flip phone's call log.
+In two consolidated cases, police searched the digital contents of arrestees' cell phones without a warrant, as [[Search Incident to Arrest|searches incident to arrest]]. After arresting Riley on weapons charges, an officer searched his smart phone and found photos, videos, and contacts linking him to a gang shooting. In the companion *Wurie* case, officers searched a flip phone's call log.
 
 ## Issue
 Whether police may, without a warrant, search the digital contents of a cell phone seized from an individual incident to arrest.
@@ -57,13 +57,13 @@ A warrant is generally required. "Our answer to the question of what police must
 The categorical search-incident-to-arrest authority of *United States v. Robinson* does not extend to the vast store of digital data on a modern cell phone: the officer-safety and evidence-preservation rationales of *Chimel* do not justify searching data, and cell phones implicate privacy interests far greater than any physical item.
 
 ## Application
-The data on Riley's smart phone and on Wurie's flip phone was searched without a warrant as a search incident to arrest. Because digital data cannot harm an arresting officer, and any risk of remote wiping or encryption can be addressed by other means (such as turning the phone off or removing its battery), the *Chimel* justifications were absent; and the immense quantity and sensitivity of the information on a phone made the intrusion incomparable to inspecting physical items. The warrantless searches of the phones' contents therefore could not be justified as searches incident to arrest.
+The data on Riley's smart phone and on Wurie's flip phone was searched without a warrant as a [[Search Incident to Arrest|search incident to arrest]]. Because digital data cannot harm an arresting officer, and any risk of remote wiping or encryption can be addressed by other means (such as turning the phone off or removing its battery), the *Chimel* justifications were absent; and the immense quantity and sensitivity of the information on a phone made the intrusion incomparable to inspecting physical items. The warrantless searches of the phones' contents therefore could not be justified as [[Search Incident to Arrest|searches incident to arrest]].
 
 ## Conclusion
 Officers must generally obtain a warrant before searching a cell phone seized incident to arrest; the Court reversed in *Riley* and affirmed the suppression in *Wurie*.
 
 ## Treatment & subsequent history
-- **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**. *Riley* cabins the bright-line rule of [[United States v. Robinson]] for digital data and anchors the digital-privacy reasoning later extended in [[Carpenter v. United States]].
+- **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**. *Riley* cabins the [[Common Legal Terms#bright-line-rule|bright-line rule]] of [[United States v. Robinson]] for digital data and anchors the digital-privacy reasoning later extended in [[Carpenter v. United States]].
 
 ## Appears on
 - [[SIA Cell Phones]] — *Key — Anchor*

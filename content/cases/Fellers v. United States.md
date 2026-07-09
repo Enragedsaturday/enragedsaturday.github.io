@@ -44,7 +44,7 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-After a grand jury indicted Fellers, officers went to his home to arrest him and told him they were there to discuss his involvement in methamphetamine distribution and his charged co-conspirators. Fellers made inculpatory statements at home, without Miranda warnings and without counsel. He was then taken to jail, given Miranda warnings, waived, and repeated the admissions. The Eighth Circuit held there was no Sixth Amendment problem because the officers "did not interrogate" him at home.
+After a grand jury indicted Fellers, officers went to his home to arrest him and told him they were there to discuss his involvement in methamphetamine distribution and his charged co-conspirators. Fellers made inculpatory statements at home, without [[Miranda and Custodial Interrogation|Miranda warnings]] and without counsel. He was then taken to jail, given [[Miranda and Custodial Interrogation|Miranda warnings]], waived, and repeated the admissions. The Eighth Circuit held there was no Sixth Amendment problem because the officers "did not interrogate" him at home.
 
 ## Issue
 Whether the Sixth Amendment is violated when, after indictment, officers deliberately elicit incriminating statements from a defendant outside counsel's presence even though there was no Miranda-style "interrogation."
@@ -57,10 +57,10 @@ Yes — the Sixth Amendment standard is *deliberate elicitation*, not interrogat
 Because the deliberate-elicitation test does not require an "interrogation," the absence of interrogation does not defeat a Sixth Amendment claim.
 
 ## Application
-"[T]here is no question that the officers in this case 'deliberately elicited' information from petitioner" — they came to his home specifically to discuss the charged conduct. Because that discussion occurred after indictment, outside counsel's presence, and without a waiver, the officers violated Fellers's Sixth Amendment rights, and the Eighth Circuit erred in treating the lack of interrogation as fatal. The Court did not itself decide whether the later jailhouse statements had to be suppressed as fruits; it remanded that Sixth Amendment fruits question (including whether *Oregon v. Elstad*'s Fifth Amendment analysis applies) to the Court of Appeals.
+"[T]here is no question that the officers in this case 'deliberately elicited' information from petitioner" — they came to his home specifically to discuss the charged conduct. Because that discussion occurred after indictment, outside counsel's presence, and without a waiver, the officers violated Fellers's Sixth Amendment rights, and the Eighth Circuit erred in treating the lack of interrogation as fatal. The Court did not itself decide whether the later jailhouse statements had to be suppressed as fruits; it [[Reading and Citing Cases#on-remand|remanded]] that Sixth Amendment fruits question (including whether *Oregon v. Elstad*'s Fifth Amendment analysis applies) to the Court of Appeals.
 
 ## Conclusion
-The home statements were obtained in violation of the Sixth Amendment (deliberate elicitation post-indictment). The Eighth Circuit was reversed and the case remanded to address suppression of the jailhouse statements under the Sixth Amendment.
+The home statements were obtained in violation of the Sixth Amendment (deliberate elicitation post-indictment). The Eighth Circuit was reversed and the case [[Reading and Citing Cases#on-remand|remanded]] to address suppression of the jailhouse statements under the Sixth Amendment.
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.

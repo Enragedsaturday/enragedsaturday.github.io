@@ -46,10 +46,10 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-Federal agents, investigating a drug-manufacturing operation, crossed perimeter fences onto Dunn's ranch and approached a barn standing about 50 yards beyond the fence surrounding the ranch house. Without entering the barn, agents stood outside it, smelled chemicals associated with drug manufacture, and shined a flashlight inside to observe a suspected drug lab. That observation supported a warrant; Dunn moved to suppress, arguing the barn was within the home's curtilage and thus protected.
+Federal agents, investigating a drug-manufacturing operation, crossed perimeter fences onto Dunn's ranch and approached a barn standing about 50 yards beyond the fence surrounding the ranch house. Without entering the barn, agents stood outside it, smelled chemicals associated with drug manufacture, and shined a flashlight inside to observe a suspected drug lab. That observation supported a warrant; Dunn moved to suppress, arguing the barn was within the home's [[Curtilage|curtilage]] and thus protected.
 
 ## Issue
-Whether the area near the barn — located approximately 50 yards from the fence surrounding the ranch house — was within the curtilage of the house for Fourth Amendment purposes, such that the agents' warrantless observation invaded a protected area.
+Whether the area near the barn — located approximately 50 yards from the fence surrounding the ranch house — was within the [[Curtilage|curtilage]] of the house for Fourth Amendment purposes, such that the agents' warrantless observation invaded a protected area.
 
 ## Rule
 Curtilage is determined by reference to four factors: "curtilage questions should be resolved with particular reference to four factors: the proximity of the area claimed to be curtilage to the home, whether the area is included within an enclosure surrounding the home, the nature of the uses to which the area is put, and the steps taken by the resident to protect the area from observation by people passing by." — 480 U.S. at 301. ^pin-301
@@ -57,14 +57,14 @@ Curtilage is determined by reference to four factors: "curtilage questions shoul
 The factors are not a rigid formula but tools serving one question: "these factors are useful analytical tools only to the degree that, in any given case, they bear upon the centrally relevant consideration — whether the area in question is so intimately tied to the home itself that it should be placed under the home's 'umbrella' of Fourth Amendment protection." — *Id.* ^pin-301a
 
 ## Application
-Applying the four factors to Dunn's barn: it sat 50 yards from the fence enclosing the house (not in close proximity); it stood outside that fence, so it was not within the enclosure surrounding the home; the agents had objective indications the barn was used to manufacture drugs rather than for intimate activities of the home; and Dunn had done little to shield the barn's interior from observation by anyone standing in the open fields. Together these showed the barn was not so intimately tied to the home as to fall within its curtilage. Because the barn lay in the open fields, the agents' observation from outside it was not a Fourth Amendment search.
+Applying the four factors to Dunn's barn: it sat 50 yards from the fence enclosing the house (not in close proximity); it stood outside that fence, so it was not within the enclosure surrounding the home; the agents had objective indications the barn was used to manufacture drugs rather than for intimate activities of the home; and Dunn had done little to shield the barn's interior from observation by anyone standing in the open fields. Together these showed the barn was not so intimately tied to the home as to fall within its [[Curtilage|curtilage]]. Because the barn lay in the open fields, the agents' observation from outside it was not a Fourth Amendment search.
 
 ## Conclusion
-The barn and its surrounding area lay outside the curtilage of the ranch house, so the warrantless observation did not violate the Fourth Amendment; the Fifth Circuit was reversed. *Dunn* supplies the controlling four-factor curtilage test.
+The barn and its surrounding area lay outside the [[Curtilage|curtilage]] of the ranch house, so the warrantless observation did not violate the Fourth Amendment; the Fifth Circuit was reversed. *Dunn* supplies the controlling four-factor [[Curtilage|curtilage]] test.
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.
-- *Dunn*'s four-factor test remains the governing curtilage analysis and is applied in later home-privacy cases, including [[Florida v. Jardines]] (front-porch curtilage) and [[Collins v. Virginia]] (driveway/curtilage and the automobile exception).
+- *Dunn*'s four-factor test remains the governing [[Curtilage|curtilage]] analysis and is applied in later home-privacy cases, including [[Florida v. Jardines]] (front-porch [[Curtilage|curtilage]]) and [[Collins v. Virginia]] (driveway/[[Curtilage|curtilage]] and the automobile exception).
 
 ## Appears on
 - [[Curtilage]] — *Key — Anchor*

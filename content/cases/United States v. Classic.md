@@ -58,7 +58,7 @@ The Court also held that the constitutionally protected right to choose a Repres
 The commissioners' acts — altering and falsely certifying the ballot count — were done "in the course of their performance of duties under the Louisiana statute requiring them to count the ballots, to record the result of the count, and to certify the result of the election." Because they could commit the fraud only because they were clothed with the authority of state election law, their misuse of that authority was action "under color of" state law, and it deprived the voters of a right secured by the Constitution.
 
 ## Conclusion
-Reversed in relevant part. Misuse of state-conferred power is action under color of state law, and the indictment stated an offense; the color-of-law definition announced here became the foundational test for state action under the civil-rights statutes.
+Reversed in relevant part. Misuse of state-conferred power is action under [[Section 1983 Liability and Qualified Immunity|color of state law]], and the indictment stated an offense; the color-of-law definition announced here became the foundational test for state action under the civil-rights statutes.
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.

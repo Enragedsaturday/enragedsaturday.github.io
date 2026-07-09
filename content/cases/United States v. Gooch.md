@@ -44,10 +44,10 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-Responding to a 3:50 a.m. report that a man had fired a shot at a state campground, Stevens County officers located Kenneth Gooch — who had been living in a closed tent there for several days with no other residence — asleep in his tent. Without an arrest warrant, they ordered him out, arrested and handcuffed him, locked him in a patrol car 20 yards away, removed the other occupant, and then, still without a warrant, searched the tent and found a loaded handgun under his air mattress. A post-trial suppression hearing held the firearm should have been suppressed; the government appealed.
+Responding to a 3:50 a.m. report that a man had fired a shot at a state campground, Stevens County officers located Kenneth Gooch — who had been living in a closed tent there for several days with no other residence — asleep in his tent. Without an arrest warrant, they ordered him out, arrested and handcuffed him, locked him in a patrol car 20 yards away, removed the other occupant, and then, still without a warrant, searched the tent and found a loaded handgun under his air mattress. A post-trial [[Common Legal Terms#suppression-hearing|suppression hearing]] held the firearm should have been suppressed; the government appealed.
 
 ## Issue
-Whether a person has a Fourth Amendment reasonable expectation of privacy in a closed tent pitched on a public campground, such that a warrantless search of the tent violates the Fourth Amendment.
+Whether a person has a Fourth Amendment [[Reasonable Expectation of Privacy|reasonable expectation of privacy]] in a closed tent pitched on a public campground, such that a warrantless search of the tent violates the Fourth Amendment.
 
 ## Rule
 Yes. A tent is treated as a dwelling for Fourth Amendment purposes, not as a vehicle. Occupancy of a tent requires "both a subjective and an objectively reasonable expectation of privacy in the tent." — 6 F.3d at 677 (citing [[Katz v. United States]]). ^pin-677
@@ -57,14 +57,14 @@ That expectation survives pitching the tent on public ground: "This reasonable e
 The court rejected any vehicle analogy and held: "The district court did not err in concluding a tent is more like a house than a car. We hold that Gooch had a reasonable expectation of privacy such that the warrantless search of his tent violated the Fourth Amendment." — *Id.* ^pin-677b
 
 ## Application
-On these facts the warrantless tent search was unlawful. Gooch had lived in the closed tent for days with no other residence, establishing a subjective expectation of privacy that the district court's finding (not clearly erroneous) supported; the government's argument that a lawbreaker expecting police response can have no such expectation would, the court noted, deny privacy to anyone because "the expectation of arrest is always imminent." The expectation was also objectively reasonable: although a tent is movable, "[t]he fact that a tent may be moved, alone, is not enough to remove the Fourth Amendment protections," and a tent is more analogous to a movable closed container — or a house — than to a car to which the automobile exception of [[California v. Carney]] would apply. With Gooch secured in the patrol car and no exigency, the warrantless search of the tent violated the Fourth Amendment.
+On these facts the warrantless tent search was unlawful. Gooch had lived in the closed tent for days with no other residence, establishing a subjective expectation of privacy that the district court's finding (not [[Common Legal Terms#clear-error|clearly erroneous]]) supported; the government's argument that a lawbreaker expecting police response can have no such expectation would, the court noted, deny privacy to anyone because "the expectation of arrest is always imminent." The expectation was also objectively reasonable: although a tent is movable, "[t]he fact that a tent may be moved, alone, is not enough to remove the Fourth Amendment protections," and a tent is more analogous to a movable closed container — or a house — than to a car to which the automobile exception of [[California v. Carney]] would apply. With Gooch secured in the patrol car and no [[Exigent Circumstances and Hot Pursuit|exigency]], the warrantless search of the tent violated the Fourth Amendment.
 
 ## Conclusion
-Gooch had a Fourth Amendment reasonable expectation of privacy in his tent; the warrantless search violated the Fourth Amendment, and the suppression of the firearm was affirmed.
+Gooch had a Fourth Amendment [[Reasonable Expectation of Privacy|reasonable expectation of privacy]] in his tent; the warrantless search violated the Fourth Amendment, and the suppression of the firearm was affirmed.
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding in-circuit — 9th Cir.**
-- No negative subsequent treatment identified. *Gooch* remains the Ninth Circuit's leading statement that a tent occupied as a dwelling carries a reasonable expectation of privacy ("more like a house than a car"), distinguishing the vehicle rule of [[California v. Carney]].
+- No negative subsequent treatment identified. *Gooch* remains the Ninth Circuit's leading statement that a tent occupied as a dwelling carries a [[Reasonable Expectation of Privacy|reasonable expectation of privacy]] ("more like a house than a car"), distinguishing the vehicle rule of [[California v. Carney]].
 
 ## Appears on
 - [[Tents]] — *Key — Anchor*

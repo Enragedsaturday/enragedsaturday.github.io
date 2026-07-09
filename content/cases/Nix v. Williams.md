@@ -58,11 +58,11 @@ The prosecution need not also prove the absence of police bad faith.
 The volunteer search party was conducting an organized, systematic search and, in the normal course, would have discovered the body in essentially the same condition; the State proved by a preponderance that the body and related evidence would inevitably have been found by lawful means. The evidence was therefore admissible despite the antecedent right-to-counsel violation.
 
 ## Conclusion
-The body-related evidence was admissible under the inevitable-discovery doctrine; the grant of habeas relief was reversed.
+The body-related evidence was admissible under the inevitable-discovery doctrine; the grant of [[Common Legal Terms#habeas-corpus|habeas]] relief was reversed.
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.
-- No negative treatment. *Nix* establishes inevitable discovery as a sibling of the independent-source doctrine ([[Murray v. United States]]), both grounded in restoring the police to the position they would have occupied absent the illegality.
+- No negative treatment. *Nix* establishes [[Inevitable Discovery and Independent Source|inevitable discovery]] as a sibling of the independent-source doctrine ([[Murray v. United States]]), both grounded in restoring the police to the position they would have occupied absent the illegality.
 
 ## Appears on
 - [[The Exclusionary Rule]] — *Key — Progeny / Refinement*

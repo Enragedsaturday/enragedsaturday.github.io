@@ -55,10 +55,10 @@ No. Restating *Chambers v. Maroney*: "when police officers have probable cause t
 And no separate exigency need be shown: "It is thus clear that the justification to conduct such a warrantless search does not vanish once the car has been immobilized; nor does it depend upon a reviewing court's assessment of the likelihood in each particular case that the car would have been driven away, or that its contents would have been tampered with, during the period required for the police to obtain a warrant." — *Id.* ^pin-261a
 
 ## Application
-The inventory of the glove compartment lawfully turned up marijuana, which the State contended gave probable cause to believe contraband was hidden elsewhere in the car. The Court of Appeals did not refute that probable cause; it held only that, absent exigent circumstances, a warrant was required. That holding was "plainly inconsistent" with *Chambers* and *Texas v. White*: with probable cause established, the officers could search the immobilized car without a warrant and without proving any further exigency.
+The inventory of the glove compartment lawfully turned up marijuana, which the State contended gave probable cause to believe contraband was hidden elsewhere in the car. The Court of Appeals did not refute that probable cause; it held only that, absent [[Exigent Circumstances and Hot Pursuit|exigent circumstances]], a warrant was required. That holding was "plainly inconsistent" with *Chambers* and *Texas v. White*: with probable cause established, the officers could search the immobilized car without a warrant and without proving any further [[Exigent Circumstances and Hot Pursuit|exigency]].
 
 ## Conclusion
-Reversed. Probable cause supports a warrantless search of an impounded car under the automobile exception; the lack of separate exigent circumstances does not defeat it.
+Reversed. Probable cause supports a warrantless search of an impounded car under the automobile exception; the lack of separate [[Exigent Circumstances and Hot Pursuit|exigent circumstances]] does not defeat it.
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS** (per curiam).

@@ -48,7 +48,7 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-Investigating a 14-year-old girl's murder, detectives suspected the 17-year-old Kaupp but lacked probable cause. About 3 a.m., at least three officers went to his home, were let in by his father, woke him with "we need to go and talk," handcuffed him, and took him — shoeless and in his underwear in January — to a patrol car, then to the crime scene and the sheriff's office. After Miranda warnings and confrontation with a co-suspect's statement, he admitted some involvement. The Texas courts treated the encounter as consensual and admitted the confession.
+Investigating a 14-year-old girl's murder, detectives suspected the 17-year-old Kaupp but lacked probable cause. About 3 a.m., at least three officers went to his home, were let in by his father, woke him with "we need to go and talk," handcuffed him, and took him — shoeless and in his underwear in January — to a patrol car, then to the crime scene and the sheriff's office. After [[Miranda and Custodial Interrogation|Miranda warnings]] and confrontation with a co-suspect's statement, he admitted some involvement. The Texas courts treated the encounter as consensual and admitted the confession.
 
 ## Issue
 Whether removing a suspect from his home and transporting him to the station for interrogation, without probable cause, was an arrest requiring probable cause — and, if so, whether his confession must be suppressed as the fruit of that illegal arrest.
@@ -61,14 +61,14 @@ Once the arrest is unlawful for want of probable cause, "well-established preced
 ## Application
 The facts pointed to arrest "even more starkly than the facts in *Dunaway*." "A 17-year-old boy was awakened in his bedroom at three in the morning by at least three police officers, one of whom stated 'we need to go and talk.' He was taken out in handcuffs, without shoes, dressed only in his underwear in January, placed in a patrol car, driven to the scene of a crime and then to the sheriff's offices, where he was taken into an interrogation room and questioned." — *Id.* at 631. ^pin-631
 
-Kaupp's "'Okay'" was "no showing of consent" but "a mere submission to a claim of lawful authority"; the test is objective, so the officers' safety rationale and Kaupp's lack of resistance did not convert the seizure into a consensual encounter. Because he was arrested without probable cause, the confession had to be suppressed unless the State demonstrated purgation of the taint — an inquiry the state courts never reached, and which Miranda warnings alone would not satisfy.
+Kaupp's "'Okay'" was "no showing of consent" but "a mere submission to a claim of lawful authority"; the test is objective, so the officers' safety rationale and Kaupp's lack of resistance did not convert the seizure into a consensual encounter. Because he was arrested without probable cause, the confession had to be suppressed unless the State demonstrated purgation of the taint — an inquiry the state courts never reached, and which [[Miranda and Custodial Interrogation|Miranda warnings]] alone would not satisfy.
 
 ## Conclusion
-Per curiam: Kaupp was arrested within the meaning of the Fourth Amendment without probable cause; the consent finding was error. The judgment was reversed and the case remanded for the *Brown* attenuation determination.
+[[Common Legal Terms#per-curiam|Per curiam]]: Kaupp was arrested within the meaning of the Fourth Amendment without probable cause; the consent finding was error. The judgment was reversed and the case [[Reading and Citing Cases#on-remand|remanded]] for the *Brown* [[Fruits and Attenuation|attenuation]] determination.
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.
-- No negative treatment. *Kaupp* is a per curiam application of [[Dunaway v. New York]] and the [[Brown v. Illinois]] / [[Wong Sun v. United States]] attenuation line, mirroring [[Taylor v. Alabama]], and it relies on [[Hayes v. Florida]] for the "sufficiently like arrest" standard.
+- No negative treatment. *Kaupp* is a [[Common Legal Terms#per-curiam|per curiam]] application of [[Dunaway v. New York]] and the [[Brown v. Illinois]] / [[Wong Sun v. United States]] [[Fruits and Attenuation|attenuation]] line, mirroring [[Taylor v. Alabama]], and it relies on [[Hayes v. Florida]] for the "sufficiently like arrest" standard.
 
 ## Appears on
 - [[Seizure of the Person]] — *Key — Progeny*

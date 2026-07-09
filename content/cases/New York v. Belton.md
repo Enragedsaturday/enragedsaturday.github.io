@@ -67,13 +67,13 @@ The Court adopted a bright-line rule: "when a policeman has made a lawful custod
 
 "It follows from this conclusion that the police may also examine the contents of any containers found within the passenger compartment." — *Id.* ^pin-460b
 
-**This bright-line authority was later limited by [[Arizona v. Gant]]** as applied to vehicle searches incident to arrest (see Treatment).
+**This bright-line authority was later limited by [[Arizona v. Gant]]** as applied to vehicle [[Search Incident to Arrest|searches incident to arrest]] (see Treatment).
 
 ## Application
-Because the officer had made lawful custodial arrests of the car's occupants, he was entitled to search the passenger compartment as a contemporaneous incident of those arrests, including the zipped pocket of the jacket on the back seat. On these facts the cocaine was the product of a lawful search incident to arrest.
+Because the officer had made lawful custodial arrests of the car's occupants, he was entitled to search the passenger compartment as a contemporaneous incident of those arrests, including the zipped pocket of the jacket on the back seat. On these facts the cocaine was the product of a lawful [[Search Incident to Arrest|search incident to arrest]].
 
 ## Conclusion
-The search of the jacket was a lawful search incident to arrest; the New York Court of Appeals' suppression order was reversed.
+The search of the jacket was a lawful [[Search Incident to Arrest|search incident to arrest]]; the New York Court of Appeals' suppression order was reversed.
 
 ## Treatment & subsequent history
 
@@ -84,7 +84,7 @@ The search of the jacket was a lawful search incident to arrest; the New York Co
 | Vehicle search incident to a recent occupant's arrest | **Superseded** | *[[Arizona v. Gant]]*, 556 U.S. 332 (2009) — the automatic passenger-compartment rule is replaced by *Gant*'s two-justification test |
 | Containers within the passenger compartment (within a lawful search) | **Good law** | *Belton*'s container rule survives inside *Gant*'s narrowed framework |
 
-*Gant* rejected the broad reading of *Belton* that authorized an automatic passenger-compartment search whenever an occupant was arrested. After *Gant*, a vehicle search incident to arrest is permissible only if the arrestee is within reaching distance of the passenger compartment at the time of the search, or it is reasonable to believe the vehicle contains evidence of the offense of arrest. Officers' reasonable pre-*Gant* reliance on *Belton* was addressed in [[Davis v. United States]].
+*Gant* rejected the broad reading of *Belton* that authorized an automatic passenger-compartment search whenever an occupant was arrested. After *Gant*, a vehicle [[Search Incident to Arrest|search incident to arrest]] is permissible only if the arrestee is within reaching distance of the passenger compartment at the time of the search, or it is reasonable to believe the vehicle contains evidence of the offense of arrest. Officers' reasonable pre-*Gant* reliance on *Belton* was addressed in [[Davis v. United States]].
 
 ## Appears on
 - [[SIA Vehicles]] — *Key — Progeny / Refinement*

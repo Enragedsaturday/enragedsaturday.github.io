@@ -53,22 +53,22 @@ holding: "'No Trespassing' signs posted near an unobstructed driveway do not, by
 <!-- header line; TreatmentBadge + weight render from frontmatter, degrading to the text above. Born under_review (⚪): identity cluster 4381703 → lead opinion 4158956 (517 S.W.3d 60, decided 2017-04-07); Rule quote string-matched to the CL opinion text 2026-07-07. CL text is slip-paginated (no S.W.3d star pagination), so the pin is slip-style per S2 A3. S9 promotes. -->
 
 ## Background
-Acting on a tip that Christensen was operating a methamphetamine lab, investigators drove up his long rural driveway — past several "No Trespassing" signs — to his home to conduct a knock-and-talk. They detected evidence of a meth lab and ultimately obtained a warrant. Christensen moved to suppress, arguing that his posted signs revoked any implied license for officers to enter his property, making the knock-and-talk an unlawful curtilage intrusion under *Florida v. Jardines*.
+Acting on a tip that Christensen was operating a methamphetamine lab, investigators drove up his long rural driveway — past several "No Trespassing" signs — to his home to conduct a [[Knock and Talk|knock-and-talk]]. They detected evidence of a meth lab and ultimately obtained a warrant. Christensen moved to suppress, arguing that his posted signs revoked any implied license for officers to enter his property, making the [[Knock and Talk|knock-and-talk]] an unlawful [[Curtilage|curtilage]] intrusion under *Florida v. Jardines*.
 
 ## Issue
-Whether "No Trespassing" signs posted along an otherwise unobstructed driveway revoke the implied license that allows a police officer to approach a residence to conduct a knock-and-talk.
+Whether "No Trespassing" signs posted along an otherwise unobstructed driveway revoke the implied license that allows a police officer to approach a residence to conduct a [[Knock and Talk|knock-and-talk]].
 
 ## Rule
-The Tennessee Supreme Court held they do not. A knock-and-talk within constitutional bounds is a legitimate reason to enter curtilage, and ambiguous signage does not withdraw the customary invitation that *[[Florida v. Jardines|Jardines]]* recognized visitors enjoy: "we hold that, under the totality of the circumstances, the Defendant's 'No Trespassing' signs posted near his unobstructed driveway were not sufficient to revoke the implied license referred to in *Jardines*." — slip op. at 18. Only a physical barrier such as "a fence and a closed gate" — not "mere ambiguous signage and unkemptness" — may revoke that license.
+The Tennessee Supreme Court held they do not. A [[Knock and Talk|knock-and-talk]] within constitutional bounds is a legitimate reason to enter [[Curtilage|curtilage]], and ambiguous signage does not withdraw the customary invitation that *[[Florida v. Jardines|Jardines]]* recognized visitors enjoy: "we hold that, under the totality of the circumstances, the Defendant's 'No Trespassing' signs posted near his unobstructed driveway were not sufficient to revoke the implied license referred to in *Jardines*." — slip op. at 18. Only a physical barrier such as "a fence and a closed gate" — not "mere ambiguous signage and unkemptness" — may revoke that license.
 
 ## Application
-The court reasoned that a "No Trespassing" sign merely makes explicit the ordinary rule that entrants need a legitimate reason to be on the land; a lawful knock-and-talk supplies exactly such a reason. The defendant's added factors — overgrown vegetation, debris, and the length of the driveway — did not transform the approach into a trespass, because they would not have deterred a reasonably respectful visitor from approaching the home. (The court separately applied the reasonable-expectation-of-privacy test of *[[Katz v. United States|Katz]]* and reached the same result.)
+The court reasoned that a "No Trespassing" sign merely makes explicit the ordinary rule that entrants need a legitimate reason to be on the land; a lawful [[Knock and Talk|knock-and-talk]] supplies exactly such a reason. The defendant's added factors — overgrown vegetation, debris, and the length of the driveway — did not transform the approach into a trespass, because they would not have deterred a reasonably respectful visitor from approaching the home. (The court separately applied the reasonable-expectation-of-privacy test of *[[Katz v. United States|Katz]]* and reached the same result.)
 
 ## Conclusion
-The defendant was **not entitled to relief** on the implied-license theory; the knock-and-talk did not violate the Fourth Amendment.
+The defendant was **not entitled to relief** on the implied-license theory; the [[Knock and Talk|knock-and-talk]] did not violate the Fourth Amendment.
 
 ## Treatment & subsequent history
-**Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub and renders under the ⚪ banner until S9 promotion. *Christensen* is a leading state-high-court application of *[[Florida v. Jardines]]*'s implied-license framework to the recurring "No Trespassing" problem, holding that ordinary signage does not, by itself, defeat the customary license underlying the knock-and-talk.
+**Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub and renders under the ⚪ banner until S9 promotion. *Christensen* is a leading state-high-court application of *[[Florida v. Jardines]]*'s implied-license framework to the recurring "No Trespassing" problem, holding that ordinary signage does not, by itself, defeat the customary license underlying the [[Knock and Talk|knock-and-talk]].
 
 ## Appears on
 - [[Knock and Talk]] — *Key*

@@ -44,10 +44,10 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-Police executing a valid search warrant at Hudson's home announced their presence but waited only a short time — about three to five seconds — before entering. They found drugs and a firearm. Hudson moved to suppress, arguing the premature entry violated the Fourth Amendment's knock-and-announce requirement.
+Police executing a valid search warrant at Hudson's home announced their presence but waited only a short time — about three to five seconds — before entering. They found drugs and a firearm. Hudson moved to suppress, arguing the premature entry violated the Fourth Amendment's [[Knock-and-Announce|knock-and-announce]] requirement.
 
 ## Issue
-Whether a violation of the knock-and-announce rule requires suppression of the evidence found in the ensuing search.
+Whether a violation of the [[Knock-and-Announce|knock-and-announce]] rule requires suppression of the evidence found in the ensuing search.
 
 ## Rule
 No. The interests protected by the knock-and-announce rule are not the interests served by suppression. "What the knock-and-announce rule has never protected, however, is one's interest in preventing the government from seeing or taking evidence described in a warrant." — 547 U.S. at 594. ^pin-594
@@ -55,14 +55,14 @@ No. The interests protected by the knock-and-announce rule are not the interests
 "Since the interests that were violated in this case have nothing to do with the seizure of the evidence, the exclusionary rule is inapplicable." — *Id.* ^pin-594a
 
 ## Application
-The police had a valid warrant and would have discovered and seized the drugs and firearm regardless of how long they waited at the door; the knock-and-announce violation protected only interests in privacy, dignity, and avoiding property damage — not Hudson's interest in keeping the police from finding the described evidence. Because suppression would not vindicate the interests the rule protects and its deterrence benefits did not outweigh its substantial social costs, the evidence was not suppressed.
+The police had a valid warrant and would have discovered and seized the drugs and firearm regardless of how long they waited at the door; the [[Knock-and-Announce|knock-and-announce]] violation protected only interests in privacy, dignity, and avoiding property damage — not Hudson's interest in keeping the police from finding the described evidence. Because suppression would not vindicate the interests the rule protects and its deterrence benefits did not outweigh its substantial social costs, the evidence was not suppressed.
 
 ## Conclusion
-A knock-and-announce violation does not trigger the exclusionary rule; the denial of suppression was affirmed.
+A [[Knock-and-Announce|knock-and-announce]] violation does not trigger the exclusionary rule; the denial of suppression was affirmed.
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.
-- No negative treatment. *Hudson* leaves the knock-and-announce requirement of [[Wilson v. Arkansas]] and [[Richards v. Wisconsin]] intact but withholds the exclusionary remedy for its violation, applying the cost-benefit, deterrence-focused approach of the modern exclusionary-rule cases.
+- No negative treatment. *Hudson* leaves the [[Knock-and-Announce|knock-and-announce]] requirement of [[Wilson v. Arkansas]] and [[Richards v. Wisconsin]] intact but withholds the exclusionary remedy for its violation, applying the cost-benefit, deterrence-focused approach of the modern exclusionary-rule cases.
 
 ## Appears on
 - [[Knock-and-Announce]] — *Key — Progeny / Refinement*

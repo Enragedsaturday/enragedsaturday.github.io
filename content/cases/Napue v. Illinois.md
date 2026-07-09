@@ -57,10 +57,10 @@ That principle "does not cease to apply merely because the false testimony goes 
 The duty applies as well when the State, though it did not solicit the false testimony, allows it to go uncorrected when it appears.
 
 ## Application
-The accomplice's false denial of any deal went only to his credibility, but because the jury's assessment of his truthfulness could be determinative and the prosecutor knowingly allowed the false testimony to stand uncorrected, the conviction could not stand on these facts. The judgment was reversed and the case remanded.
+The accomplice's false denial of any deal went only to his credibility, but because the jury's assessment of his truthfulness could be determinative and the prosecutor knowingly allowed the false testimony to stand uncorrected, the conviction could not stand on these facts. The judgment was reversed and the case [[Reading and Citing Cases#on-remand|remanded]].
 
 ## Conclusion
-Reversed and remanded: the prosecution's knowing use of the uncorrected false testimony violated due process.
+Reversed and [[Reading and Citing Cases#on-remand|remanded]]: the prosecution's knowing use of the uncorrected false testimony violated due process.
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.

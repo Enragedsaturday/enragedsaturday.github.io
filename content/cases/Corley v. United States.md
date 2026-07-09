@@ -60,7 +60,7 @@ Section 3501 modified, but did not supplant, McNabb-Mallory. The Court restated 
 Corley's oral confession came roughly 9.5 hours after his arrest, before he was presented to a magistrate. Because that placed the statement potentially outside §3501(c)'s six-hour window, the courts below had to determine whether the confession should be treated as made within six hours and, if not, whether the additional delay was unreasonable or unnecessary under McNabb-Mallory — and to make the same inquiry as to the written confession. The Third Circuit had instead held that §3501 abrogated McNabb-Mallory altogether and so never made those findings; that was error.
 
 ## Conclusion
-Section 3501 modified McNabb-Mallory without supplanting it. The judgment of the Court of Appeals was vacated and the case remanded to determine whether Corley's confessions fell within the six-hour safe harbor and, if not, whether the presentment delay was unreasonable or unnecessary.
+Section 3501 modified McNabb-Mallory without supplanting it. The judgment of the Court of Appeals was [[Reading and Citing Cases#vacated|vacated]] and the case [[Reading and Citing Cases#on-remand|remanded]] to determine whether Corley's confessions fell within the six-hour safe harbor and, if not, whether the presentment delay was unreasonable or unnecessary.
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.

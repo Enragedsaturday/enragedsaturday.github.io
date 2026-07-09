@@ -92,7 +92,7 @@ This distinction drives **how much weight** an opinion carries; tie it to [[The 
 
 - **Published** opinions are designated for the bound reporters (`F.4th`, `F. Supp. 3d`) and are **precedential**: they bind that court and the courts below it within the jurisdiction.
 - **Unpublished** dispositions (often in `F. App'x`, the Federal Appendix, or marked "not for publication") are typically **Persuasive only — non-precedential**. Circuits vary on whether and how they may be cited; Federal Rule of Appellate Procedure 32.1 permits *citing* federal unpublished opinions issued on or after Jan. 1, 2007, but permission to cite is not the same as binding force.
-- **Per curiam** ("by the court") opinions are issued in the name of the whole court rather than a single authoring judge. They can be fully precedential (many SCOTUS per curiams are) or summary and non-precedential; judge the weight by the court and whether it's published, not by the "per curiam" label alone.
+- **[[Common Legal Terms#per-curiam|Per curiam]]** ("by the court") opinions are issued in the name of the whole court rather than a single authoring judge. They can be fully precedential (many SCOTUS per curiams are) or summary and non-precedential; judge the weight by the court and whether it's published, not by the "per curiam" label alone.
 - **For teaching:** before you lean on a case, confirm it is *published* (or otherwise binding in your jurisdiction). An unpublished circuit case is a teaching illustration, not a rule you can hang a search on.
 
 ## State citations
@@ -137,7 +137,7 @@ The **first, official version** of a decision the court releases on decision day
 
 ### On remand
 The posture of a case **sent back to a lower court** for further proceedings after a higher court's decision. The lower court must act consistently with the higher court's instructions.
-*Example:* An appeals court reverses and remands; **on remand**, the district court holds a new suppression hearing under the standard the appellate court set.
+*Example:* An appeals court reverses and remands; **on remand**, the district court holds a new [[Common Legal Terms#suppression-hearing|suppression hearing]] under the standard the appellate court set.
 
 ### Vacated
 A ruling that has been **set aside and deprived of legal effect** by a higher court (or the same court). A vacated decision is no longer good law and cannot be relied on: a critical good-law flag when you check a case's treatment (see [[Verifying Good Law]]).

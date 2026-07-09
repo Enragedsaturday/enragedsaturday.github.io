@@ -57,7 +57,7 @@ First, the warrantless arrest was lawful — a warrantless felony arrest in publ
 Nor is the suspect's ignorance of the right to refuse controlling — the absence of such proof "may be a factor in the overall judgment," but "is not to be given controlling significance." — *Id.* ^pin-424a
 
 ## Application
-Because Watson's arrest was valid, his consent was not tainted by any illegality. There was no overt act or threat of force, no promises, and no subtle coercion; Watson consented on a public street rather than at the station house. That he was under arrest, and any lack of proof that he knew he could refuse, did not by themselves overbear his will. Under the totality of the circumstances his consent was his own free choice, and the stolen credit cards found in the car were admissible.
+Because Watson's arrest was valid, his consent was not tainted by any illegality. There was no overt act or threat of force, no promises, and no subtle coercion; Watson consented on a public street rather than at the station house. That he was under arrest, and any lack of proof that he knew he could refuse, did not by themselves overbear his will. Under the [[Common Legal Terms#totality-of-the-circumstances|totality of the circumstances]] his consent was his own free choice, and the stolen credit cards found in the car were admissible.
 
 ## Conclusion
 The warrantless public arrest was lawful and Watson's consent to the search was voluntary; the Supreme Court reversed the Court of Appeals.

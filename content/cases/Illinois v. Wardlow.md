@@ -64,7 +64,7 @@ The stop was supported by reasonable suspicion; the judgment suppressing the han
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.
-- No negative treatment. *Wardlow* applies the reasonable-suspicion standard of [[Terry v. Ohio]], treating unprovoked flight in a high-crime area as supplying reasonable suspicion under the totality of the circumstances.
+- No negative treatment. *Wardlow* applies the reasonable-suspicion standard of [[Terry v. Ohio]], treating unprovoked flight in a high-crime area as supplying reasonable suspicion under the [[Common Legal Terms#totality-of-the-circumstances|totality of the circumstances]].
 
 ## Appears on
 - [[Reasonable Suspicion]] — *Key — Progeny / Refinement*

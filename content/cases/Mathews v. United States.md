@@ -58,7 +58,7 @@ Denying the offense and requesting an entrapment instruction are not mutually ex
 The trial court refused to instruct on entrapment solely because Mathews would not admit the intent element of accepting the loan. Because a defendant may both deny an element and obtain an entrapment instruction where the evidence supports it, that refusal was error; the trial court's observation that the entrapment evidence was "shaky at best" went to what the jury could find, not to the availability of the instruction.
 
 ## Conclusion
-Reversed and remanded; a defendant's refusal to admit the elements of the crime does not by itself bar an entrapment instruction.
+Reversed and [[Reading and Citing Cases#on-remand|remanded]]; a defendant's refusal to admit the elements of the crime does not by itself bar an entrapment instruction.
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.

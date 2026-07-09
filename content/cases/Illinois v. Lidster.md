@@ -57,7 +57,7 @@ Reasonableness is judged "on the basis of the individual circumstances." — *Id
 Applying the gravity of the public concern, the degree to which the stop advances it, and the severity of the interference with liberty, the Court held: "We hold that the stop was constitutional." — *Id.* at 427. ^pin-427
 
 ## Application
-The checkpoint served a grave public concern — investigating a fatal hit-and-run — and was tailored to advance it, set up about a week later at the same place and time to reach motorists who might have witnessed the accident. The stops interfered only minimally with liberty: a brief wait, a few seconds of contact, a request for information and a flyer, applied systematically to all cars. Because the *Edmond* per se rule did not apply and the balance favored the stop, the checkpoint was reasonable.
+The checkpoint served a grave public concern — investigating a fatal hit-and-run — and was tailored to advance it, set up about a week later at the same place and time to reach motorists who might have witnessed the accident. The stops interfered only minimally with liberty: a brief wait, a few seconds of contact, a request for information and a flyer, applied systematically to all cars. Because the *Edmond* [[Common Legal Terms#per-se|per se]] rule did not apply and the balance favored the stop, the checkpoint was reasonable.
 
 ## Conclusion
 The information-seeking checkpoint was constitutional; the judgment suppressing the evidence was reversed.

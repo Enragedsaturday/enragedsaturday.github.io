@@ -47,7 +47,7 @@ lake:
 A state agent conducted a warrantless inspection of Krull's wrecking yard, examining records under an Illinois statute that authorized warrantless inspection of licensed auto-parts dealers. The inspection turned up stolen vehicles. The day after the search, a federal court held the statutory inspection scheme unconstitutional because it vested officers with too much discretion. Krull moved to suppress the evidence found in reliance on the statute.
 
 ## Issue
-Whether the good-faith exception to the exclusionary rule applies to evidence obtained by an officer who acted in objectively reasonable reliance on a statute later held to be unconstitutional.
+Whether the [[The Good-Faith Exception|good-faith exception]] to the exclusionary rule applies to evidence obtained by an officer who acted in objectively reasonable reliance on a statute later held to be unconstitutional.
 
 ## Rule
 Yes. The Court extended the good-faith exception of *Leon* to reasonable reliance on a statute: "The application of the exclusionary rule to suppress evidence obtained by an officer acting in objectively reasonable reliance on a statute would have as little deterrent effect on the officer's actions as would the exclusion of evidence when an officer acts in objectively reasonable reliance on a warrant." — 480 U.S. at 349. ^pin-349
@@ -55,14 +55,14 @@ Yes. The Court extended the good-faith exception of *Leon* to reasonable relianc
 "Unless a statute is clearly unconstitutional, an officer cannot be expected to question the judgment of the legislature that passed the law." — *Id.* at 349–350. ^pin-349a
 
 ## Application
-The agent inspected Krull's records in reliance on an Illinois statute that was presumptively valid and not clearly unconstitutional when he acted; the statute was struck down only the next day. Because suppressing evidence gathered in objectively reasonable reliance on the then-valid statute would not meaningfully deter police misconduct, the good-faith exception applied and the evidence was admissible.
+The agent inspected Krull's records in reliance on an Illinois statute that was presumptively valid and not clearly unconstitutional when he acted; the statute was struck down only the next day. Because suppressing evidence gathered in objectively reasonable reliance on the then-valid statute would not meaningfully deter police misconduct, the [[The Good-Faith Exception|good-faith exception]] applied and the evidence was admissible.
 
 ## Conclusion
-The evidence was admissible under the good-faith exception; the suppression was reversed. Reasonable reliance on a not-yet-invalidated statute does not trigger exclusion.
+The evidence was admissible under the [[The Good-Faith Exception|good-faith exception]]; the suppression was reversed. Reasonable reliance on a not-yet-invalidated statute does not trigger exclusion.
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.
-- No negative treatment. *Krull* extends the good-faith exception of [[United States v. Leon]] and [[Massachusetts v. Sheppard]] from reasonable reliance on a warrant to reasonable reliance on a statute later declared unconstitutional.
+- No negative treatment. *Krull* extends the [[The Good-Faith Exception|good-faith exception]] of [[United States v. Leon]] and [[Massachusetts v. Sheppard]] from reasonable reliance on a warrant to reasonable reliance on a statute later declared unconstitutional.
 
 ## Appears on
 - [[The Exclusionary Rule]] — *Key — Progeny / Refinement*

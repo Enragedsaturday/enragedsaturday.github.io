@@ -58,7 +58,7 @@ Yes. For impeachment, "we see no difference of constitutional magnitude between 
 Havens's direct testimony — denying that he had "ever engage[d] in that kind of activity with Mr. McLeroth" — could reasonably be understood as denying any connection with the T-shirt and contradicting McLeroth. The Government's cross-examination about sewing the cotton swatches "grow[ing] out of Havens' direct testimony" was therefore proper, and the suppressed T-shirt could be used to impeach his false denial — though not as substantive evidence of guilt. The Fifth Circuit's narrower rule (impeachment only of statements made on direct) was rejected.
 
 ## Conclusion
-Because the impeachment followed proper cross-examination reasonably suggested by the direct, it did not violate Havens's constitutional rights; the judgment was reversed and remanded.
+Because the impeachment followed proper cross-examination reasonably suggested by the direct, it did not violate Havens's constitutional rights; the judgment was reversed and [[Reading and Citing Cases#on-remand|remanded]].
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.

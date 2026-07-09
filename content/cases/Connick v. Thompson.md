@@ -46,7 +46,7 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-John Thompson was convicted of armed robbery and murder in New Orleans and spent years on death row before it emerged that prosecutors in District Attorney Harry Connick's office had suppressed a crime-lab report (blood-type evidence) favorable to him, in violation of [[Brady v. Maryland]]. His convictions were vacated and he was acquitted on retrial. He sued the District Attorney's Office under § 1983, claiming Connick had been deliberately indifferent in failing to train prosecutors on their *Brady* obligations. A jury awarded him $14 million.
+John Thompson was convicted of armed robbery and murder in New Orleans and spent years on death row before it emerged that prosecutors in District Attorney Harry Connick's office had suppressed a crime-lab report (blood-type evidence) favorable to him, in violation of [[Brady v. Maryland]]. His convictions were [[Reading and Citing Cases#vacated|vacated]] and he was acquitted on retrial. He sued the District Attorney's Office under § 1983, claiming Connick had been deliberately indifferent in failing to train prosecutors on their *Brady* obligations. A jury awarded him $14 million.
 
 ## Issue
 Whether a district attorney's office may be held liable under § 1983 for failure to train its prosecutors on *Brady* based on a single violation, absent a pattern of similar violations.
@@ -60,7 +60,7 @@ A pattern of violations is ordinarily required. "A pattern of similar constituti
 Thompson did not prove a pattern of similar *Brady* violations: the four earlier reversals in Connick's office involved different kinds of suppressed evidence and could not have put the office on notice that training on this type of *Brady* violation was deficient. Nor did the single-incident theory apply: unlike the untrained-officer-with-a-gun hypothetical in *Canton*, prosecutors are trained lawyers who are expected to know and apply *Brady*, so the need to train them on it is not the kind of "patently obvious" need that supports liability without a pattern.
 
 ## Conclusion
-Reversed. A single *Brady* violation, without a pattern of similar violations, is insufficient to establish the deliberate indifference required for municipal failure-to-train liability; the $14 million judgment could not stand.
+Reversed. A single *Brady* violation, without a pattern of similar violations, is insufficient to establish the [[Section 1983 Liability and Qualified Immunity|deliberate indifference]] required for municipal failure-to-train liability; the $14 million judgment could not stand.
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.

@@ -12,7 +12,7 @@ How the federal system works and how to read, cite, research, and verify the law
 
 - [[The Federal Court System]] — the three-tier hierarchy, binding versus persuasive authority, and how a circuit split works.
 - [[Reading and Citing Cases]] — how to read a citation and the federal and state conventions behind it.
-- [[State Citations and Conventions|State Citations & Conventions]] — the reporter systems, neutral cites, and naming conventions specific to state courts.
+- [[State Citations and Conventions|State Citations & Conventions]] — the [[Reading and Citing Cases#reporter|reporter]] systems, neutral cites, and naming conventions specific to state courts.
 - [[Legal Research Tools]] — how to research case law for free, from CourtListener outward.
 - [[Verifying Good Law]] — how to confirm by hand that a case is still good law before teaching from it.
 - [[Common Legal Terms]] — the working glossary of Latin and procedural terms an instructor needs.

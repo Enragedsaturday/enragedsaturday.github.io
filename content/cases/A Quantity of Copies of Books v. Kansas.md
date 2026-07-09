@@ -53,7 +53,7 @@ holding: "Seizing every copy of allegedly obscene books under a warrant issued o
 <!-- header line; TreatmentBadge + weight render from frontmatter, degrading to the text above. Born under_review (⚪): the lake stub carries field_i=unverified, so the treatment framing below is authored orientation, not machine-certified. Identity cluster 106878 → 378 U.S. 205, decided 1964-06-22; Rule quote string-matched to the CL opinion text 2026-07-07. -->
 
 ## Background
-A Kansas prosecutor presented a judge with seven allegedly obscene novels. On that ex parte showing, the judge issued a warrant, and the sheriff seized 1,715 copies of 31 titles from a wholesale distributor (P-K News Service) — all before any hearing on whether the books were in fact obscene. The distributor moved to quash and return the books, arguing that the mass seizure of presumptively protected expression, without a prior adversary hearing, was unconstitutional.
+A Kansas prosecutor presented a judge with seven allegedly obscene novels. On that [[Common Legal Terms#ex-parte|ex parte]] showing, the judge issued a warrant, and the sheriff seized 1,715 copies of 31 titles from a wholesale distributor (P-K News Service) — all before any hearing on whether the books were in fact obscene. The distributor moved to quash and return the books, arguing that the mass seizure of presumptively protected expression, without a prior adversary hearing, was unconstitutional.
 
 ## Issue
 Whether a warrant authorizing the seizure of all copies of books, issued without a prior adversary hearing on the question of obscenity, satisfies the constitutional constraints on searches and seizures of expressive material.
@@ -62,10 +62,10 @@ Whether a warrant authorizing the seizure of all copies of books, issued without
 Building on *Marcus v. Search Warrant of Property* (1961), the plurality (Brennan, J.) held that expressive material demands a warrant procedure sensitive to First Amendment values: the judge may not authorize a wholesale seizure that functions as a prior restraint without first affording the party an adversary hearing on obscenity. "We therefore conclude that in not first affording P-K an adversary hearing, the procedure leading to the seizure order was constitutionally deficient." — 378 U.S. at 211. ^pin-211
 
 ## Application
-The vice was procedural: the seizure took a large inventory of books out of circulation on nothing more than a judge's ex parte look at a handful of them, suppressing the distribution of material that had not been — and might never be — adjudicated obscene. Ordinary probable cause to believe an item is contraband is not enough when the item is a book; the Constitution requires a hearing before, not after, the expression is seized en masse.
+The vice was procedural: the seizure took a large inventory of books out of circulation on nothing more than a judge's [[Common Legal Terms#ex-parte|ex parte]] look at a handful of them, suppressing the distribution of material that had not been — and might never be — adjudicated obscene. Ordinary probable cause to believe an item is contraband is not enough when the item is a book; the Constitution requires a hearing before, not after, the expression is seized en masse.
 
 ## Conclusion
-The judgment of the Supreme Court of Kansas was **reversed**; the seizure procedure was constitutionally deficient. Brennan, J., announced the judgment of the Court in a plurality opinion.
+The judgment of the Supreme Court of Kansas was **reversed**; the seizure procedure was constitutionally deficient. Brennan, J., announced the judgment of the Court in a [[Common Legal Terms#plurality-opinion|plurality opinion]].
 
 ## Treatment & subsequent history
 **Historical — a foundational origin, not overruled.** *A Quantity of Books* is an early anchor of the rule that seizing expressive material requires a warrant procedure more protective than the ordinary probable-cause showing — a prior adversary hearing or prompt judicial superintendence rather than a discretionary sweep. The doctrine it helped originate was refined the same decade and after in the *Marcus*–*[[Stanford v. Texas|Stanford]]*–*[[Heller v. New York|Heller]]*–*Roaden* line, which governs today. It is rendered here as **history** — a doctrinal antecedent — because its treatment has not been machine-verified.

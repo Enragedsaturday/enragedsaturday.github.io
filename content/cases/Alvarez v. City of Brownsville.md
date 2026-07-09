@@ -53,10 +53,10 @@ holding: "Brady is a trial right: a defendant who pleads guilty has no clearly e
 <!-- header line; TreatmentBadge + weight render from frontmatter, degrading to the text above. Born under_review (⚪): identity cluster 4536189 → lead opinion 4313442 (904 F.3d 382, en banc, decided 2018-09-18); Rule quote string-matched to the CL opinion text 2026-07-07. S9 promotes. -->
 
 ## Background
-George Alvarez pleaded guilty to assaulting a public servant based on a booking-area altercation. Years later, after surveillance video of the incident surfaced, Texas courts declared him "actually innocent" and vacated the conviction. Alvarez sued the City of Brownsville under § 1983, alleging that the police department's practice of not disclosing exculpatory video violated *Brady*. A jury awarded him $2.3 million; a panel reversed, and the Fifth Circuit reheard the case en banc.
+George Alvarez pleaded guilty to assaulting a public servant based on a booking-area altercation. Years later, after surveillance video of the incident surfaced, Texas courts declared him "actually innocent" and [[Reading and Citing Cases#vacated|vacated]] the conviction. Alvarez sued the City of Brownsville under § 1983, alleging that the police department's practice of not disclosing [[Brady and Giglio|exculpatory]] video violated *Brady*. A jury awarded him $2.3 million; a panel reversed, and the Fifth Circuit reheard the case [[Reading and Citing Cases#en-banc|en banc]].
 
 ## Issue
-Whether a criminal defendant has a constitutional right, enforceable under § 1983, to the disclosure of material exculpatory evidence before entering a guilty plea.
+Whether a criminal defendant has a constitutional right, enforceable under § 1983, to the disclosure of material [[Brady and Giglio|exculpatory]] evidence before entering a guilty plea.
 
 ## Rule
 The en banc court held that Alvarez's *Brady* claim failed and reaffirmed circuit precedent (*United States v. Conroy*) that there is no such pre-plea right: "This court also declines the invitation to disturb its precedent concerning a defendant's constitutional right to *Brady* material prior to entering a guilty plea." — 904 F.3d at 389. Because *Brady* is grounded in the right to a fair *trial*, its disclosure obligation does not attach to the plea-bargaining process.
@@ -68,7 +68,7 @@ Without an underlying constitutional violation, there could be no municipal liab
 The Fifth Circuit **reversed** and rendered judgment of dismissal for the City of Brownsville.
 
 ## Treatment & subsequent history
-**Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub and renders under the ⚪ banner until S9 promotion. *Alvarez* anchors the Fifth Circuit's position that *[[Brady v. Maryland|Brady]]* is a trial right that does not guarantee exculpatory disclosure before a guilty plea — a question on which the Supreme Court (in *United States v. Ruiz*, on impeachment evidence) and the circuits remain divided.
+**Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub and renders under the ⚪ banner until S9 promotion. *Alvarez* anchors the Fifth Circuit's position that *[[Brady v. Maryland|Brady]]* is a trial right that does not guarantee [[Brady and Giglio|exculpatory]] disclosure before a guilty plea — a question on which the Supreme Court (in *United States v. Ruiz*, on impeachment evidence) and the circuits remain divided.
 
 ## Appears on
 - [[Brady and Giglio]] — *Key*

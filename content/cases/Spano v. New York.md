@@ -56,7 +56,7 @@ Voluntariness is judged on the totality of the circumstances, and a confession p
 The combination of persistent overnight questioning, the repeated denial of Spano's requests to consult his lawyer, and the calculated use of Bruno's feigned distress overbore Spano's will. On those facts the confession was involuntary, and its admission violated due process, so the conviction was reversed.
 
 ## Conclusion
-The confession was involuntary under the totality of the circumstances; the conviction was reversed.
+The confession was involuntary under the [[Common Legal Terms#totality-of-the-circumstances|totality of the circumstances]]; the conviction was reversed.
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.

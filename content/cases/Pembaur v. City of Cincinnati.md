@@ -58,7 +58,7 @@ Liability attaches only when the decision is made by an official who possesses *
 The County Prosecutor was the official to whom the deputies were directed to turn for instruction, and on these facts he was treated as the final policymaker on how to execute the capiases. His specific direction to force entry was therefore a "deliberate choice" by a policymaking official, and the resulting entry was an act of official county policy — sufficient to support municipal liability for that single decision, without proof of any broader pattern or custom.
 
 ## Conclusion
-Reversed and remanded. A municipality can be liable under § 1983 for a single act of an official with final policymaking authority for the relevant subject matter; the lower court erred in requiring a repeated practice or general policy.
+Reversed and [[Reading and Citing Cases#on-remand|remanded]]. A municipality can be liable under § 1983 for a single act of an official with final policymaking authority for the relevant subject matter; the lower court erred in requiring a repeated practice or general policy.
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.

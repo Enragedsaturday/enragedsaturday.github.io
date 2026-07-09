@@ -39,7 +39,7 @@ related:
 
 **Apply it.**
 1. **Classify the surveillance.** Interception of communication **contents** is a search under *Katz*; a request for non-content records is a third-party-doctrine problem, not Title III.
-2. **Demand the super-warrant elements.** For a Title III wiretap, check probable cause, particularity, necessity, minimization, and proper high-level authorization; a defect in authorization or minimization is the litigable event.
+2. **Demand the super-warrant elements.** For a Title III wiretap, check probable cause, [[Particularity|particularity]], necessity, minimization, and proper high-level authorization; a defect in authorization or minimization is the litigable event.
 3. **Separate domestic from foreign.** Domestic-security surveillance needs a warrant (*Keith*); foreign-intelligence surveillance runs under FISA, and §702 raises distinct incidental-collection questions.
 4. **Watch for a concealed source.** If a lead's origin is obscured, consider whether parallel construction has hidden §702 or other intelligence collection from discovery.
 
@@ -54,13 +54,13 @@ related:
 - **State-secrets bar on FISA challenges.** *[[FBI v. Fazaga]]* (2022) held that FISA § 1806(f) neither displaces nor substitutes for the state-secrets privilege, so surveillance-targets' civil and suppression challenges can be foreclosed by the privilege even where FISA supplies a review procedure — a structural reason electronic-surveillance legality is under-litigated.
 - **Statutory-remedy calibration.** *[[United States v. Giordano]]*, *[[United States v. Donovan]]*, and *[[Scott v. United States]]* map how strictly Title III's authorization, identification, and minimization commands are enforced: an authorization defect voids the intercept (*Giordano*), while identification and minimization defects are tested functionally, with suppression turning on the provision's role in the statutory scheme.
 
-The synthesis: content interception is a search (*Katz*), it demands exacting particularity (*Berger*), Title III supplies a statutory super-warrant enforced with varying strictness, and the foreign-intelligence and §702 side remains largely insulated from ordinary suppression review.
+The synthesis: content interception is a search (*Katz*), it demands exacting [[Particularity|particularity]] (*Berger*), Title III supplies a statutory super-warrant enforced with varying strictness, and the foreign-intelligence and §702 side remains largely insulated from ordinary suppression review.
 
 ## Key cases
 
 | Case | Holding | Opinion |
 |---|---|---|
-| *[[Berger v. New York]]*, 388 U.S. 41 (1967) | **Anchor.** A permissive eavesdropping statute is unconstitutional for lack of particularity and safeguards; sets the Fourth Amendment standards for electronic-surveillance warrants. | [opinion](https://www.courtlistener.com/opinion/107483/berger-v-new-york/) |
+| *[[Berger v. New York]]*, 388 U.S. 41 (1967) | **Anchor.** A permissive eavesdropping statute is unconstitutional for lack of [[Particularity\|particularity]] and safeguards; sets the Fourth Amendment standards for electronic-surveillance warrants. | [opinion](https://www.courtlistener.com/opinion/107483/berger-v-new-york/) |
 | *[[Katz v. United States]]*, 389 U.S. 347 (1967) | Electronic eavesdropping that invades a justified expectation of privacy is a search even with no trespass; overruled *Olmstead*. *(Primary home [[Reasonable Expectation of Privacy]].)* | [opinion](https://www.courtlistener.com/opinion/107564/katz-v-united-states/) |
 | *[[United States v. United States District Court (Keith)]]*, 407 U.S. 297 (1972) | Domestic-security electronic surveillance requires prior judicial approval; the President's national-security power does not exempt it. Foreign intelligence reserved. | [opinion](https://www.courtlistener.com/opinion/108581/united-states-v-united-states-district-court-for-the-eastern-district-of/) |
 | *[[United States v. Giordano]]*, 416 U.S. 505 (1974) | Only the Attorney General or a specially designated Assistant Attorney General may authorize a Title III application; an authorization by the wrong official requires suppression. | [opinion](https://www.courtlistener.com/opinion/109020/united-states-v-giordano/) |

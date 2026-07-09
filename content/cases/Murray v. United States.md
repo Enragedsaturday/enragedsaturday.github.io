@@ -55,10 +55,10 @@ Yes — so long as the later acquisition is genuinely independent of the unlawfu
 The later seizure is **not** genuinely independent if "the agents' decision to seek the warrant was prompted by what they had seen during the initial entry, . . . or if information obtained during that entry was presented to the Magistrate and affected his decision to issue the warrant." — *Id.* ^pin-542b
 
 ## Application
-The marijuana would be admissible only if the agents' decision to seek the warrant had not been prompted by what they saw during the illegal entry and if no information from that entry had been presented to the magistrate. Because the lower courts had not made an explicit finding on whether the warrant application was truly independent of the illegal entry, the Court vacated and remanded for that determination.
+The marijuana would be admissible only if the agents' decision to seek the warrant had not been prompted by what they saw during the illegal entry and if no information from that entry had been presented to the magistrate. Because the lower courts had not made an explicit finding on whether the warrant application was truly independent of the illegal entry, the Court [[Reading and Citing Cases#vacated|vacated]] and [[Reading and Citing Cases#on-remand|remanded]] for that determination.
 
 ## Conclusion
-Vacated and remanded for a finding on whether the warrant was a genuinely independent source of the seized evidence.
+[[Reading and Citing Cases#vacated|Vacated]] and [[Reading and Citing Cases#on-remand|remanded]] for a finding on whether the warrant was a genuinely [[Inevitable Discovery and Independent Source|independent source]] of the seized evidence.
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.

@@ -64,7 +64,7 @@ The dog sniff was not a search, but the 90-minute seizure of the luggage exceede
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.
-- Dog-sniff holding applied to vehicles in [[Illinois v. Caballes]]; bounded at the home's curtilage by [[Florida v. Jardines]]. Duration analysis developed by [[United States v. Sharpe]] (no rigid time limit; diligence test) and [[Rodriguez v. United States]] (a stop may not be prolonged even briefly for a sniff absent reasonable suspicion).
+- Dog-sniff holding applied to vehicles in [[Illinois v. Caballes]]; bounded at the home's [[Curtilage|curtilage]] by [[Florida v. Jardines]]. Duration analysis developed by [[United States v. Sharpe]] (no rigid time limit; diligence test) and [[Rodriguez v. United States]] (a stop may not be prolonged even briefly for a sniff absent reasonable suspicion).
 
 ## Appears on
 - [[Reasonable Expectation of Privacy]] — *Key — boundary*

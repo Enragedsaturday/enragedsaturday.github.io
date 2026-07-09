@@ -46,10 +46,10 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-Police investigated a report that a high-school student, Vincent Huff, was rumored to have threatened to "shoot up" his school. At the Huff home, no one answered the door or the family's phones. The mother eventually stepped outside; when an officer asked whether there were any guns in the house, she immediately turned and ran back inside. Concerned for their safety and that of others, officers entered behind her. The Huffs sued under § 1983 for an unlawful warrantless entry. The District Court found the entry reasonable (and the officers protected by qualified immunity); a divided Ninth Circuit panel reversed, holding the officers were not entitled to qualified immunity.
+Police investigated a report that a high-school student, Vincent Huff, was rumored to have threatened to "shoot up" his school. At the Huff home, no one answered the door or the family's phones. The mother eventually stepped outside; when an officer asked whether there were any guns in the house, she immediately turned and ran back inside. Concerned for their safety and that of others, officers entered behind her. The Huffs sued under § 1983 for an unlawful warrantless entry. The District Court found the entry reasonable (and the officers protected by [[Qualified Immunity|qualified immunity]]); a divided Ninth Circuit panel reversed, holding the officers were not entitled to [[Qualified Immunity|qualified immunity]].
 
 ## Issue
-Whether officers who reasonably believe, on the scene, that violence is imminent may make a warrantless entry into a home, and whether the officers here were entitled to qualified immunity.
+Whether officers who reasonably believe, on the scene, that violence is imminent may make a warrantless entry into a home, and whether the officers here were entitled to [[Qualified Immunity|qualified immunity]].
 
 ## Rule
 Yes. "A reasonable police officer could read these decisions to mean that the Fourth Amendment permits an officer to enter a residence if the officer has a reasonable basis for concluding that there is an imminent threat of violence." — 565 U.S. at 476. ^pin-476
@@ -64,7 +64,7 @@ Reversed and remanded for entry of judgment for the officers (per curiam). A war
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS** (per curiam).
-- No negative treatment. *Ryburn* applies the emergency-aid/exigency line of [[Brigham City v. Stuart]] and [[Michigan v. Fisher]] and the qualified-immunity "reasonable officer on the scene" standard of [[Graham v. Connor]]; it is consistent with the later home-entry caretaking limit of [[Caniglia v. Strom]] (welfare entries must route through emergency aid / exigency).
+- No negative treatment. *Ryburn* applies the emergency-aid/[[Exigent Circumstances and Hot Pursuit|exigency]] line of [[Brigham City v. Stuart]] and [[Michigan v. Fisher]] and the qualified-immunity "reasonable officer on the scene" standard of [[Graham v. Connor]]; it is consistent with the later home-entry caretaking limit of [[Caniglia v. Strom]] (welfare entries must route through [[Emergency Aid|emergency aid]] / [[Exigent Circumstances and Hot Pursuit|exigency]]).
 
 ## Appears on
 - [[Emergency Aid]] — *Key — Progeny / Refinement*

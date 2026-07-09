@@ -44,10 +44,10 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-Michael C., a 16-year-old on probation, was taken into custody on suspicion of murder and given Miranda warnings. He asked to see his probation officer. Police did not produce the officer and continued questioning; Michael then waived his rights and made incriminating statements and sketches. The California Supreme Court held that his request for his probation officer was a per se invocation of his Fifth Amendment rights, equivalent to a request for counsel, requiring that questioning stop.
+Michael C., a 16-year-old on probation, was taken into custody on suspicion of murder and given [[Miranda and Custodial Interrogation|Miranda warnings]]. He asked to see his probation officer. Police did not produce the officer and continued questioning; Michael then waived his rights and made incriminating statements and sketches. The California Supreme Court held that his request for his probation officer was a [[Common Legal Terms#per-se|per se]] invocation of his Fifth Amendment rights, equivalent to a request for counsel, requiring that questioning stop.
 
 ## Issue
-Whether a juvenile's request to speak with his probation officer is a per se invocation of the Fifth Amendment right to counsel (or to silence), and by what standard a juvenile's waiver of Miranda rights is measured.
+Whether a juvenile's request to speak with his probation officer is a [[Common Legal Terms#per-se|per se]] invocation of the Fifth Amendment right to counsel (or to silence), and by what standard a juvenile's waiver of [[Miranda and Custodial Interrogation|Miranda rights]] is measured.
 
 ## Rule
 A request for a probation officer is not a per se invocation. The per se rule for a request for *counsel* rests on the lawyer's unique role: "A probation officer simply is not necessary, in the way an attorney is, for the protection of the legal rights of the accused, juvenile or adult." Accordingly, "[n]or do we believe that a request by a juvenile to speak with his probation officer constitutes a *per se* request to remain silent. ... we decline to find that the request for the probation officer is tantamount to the request for an attorney." — 442 U.S. at 724. ^pin-724
@@ -60,7 +60,7 @@ The inquiry weighs the juvenile's age, experience, education, background, and in
 Michael's request for his probation officer was not, by itself, an invocation of counsel or silence that required questioning to cease; courts could instead consider that request as one factor in the totality. Looking to all the circumstances — his age, his prior experience with the justice system, the warnings he received and acknowledged, and his decision to talk after asking for the officer — the record supported a finding that he knowingly and voluntarily waived his Fifth Amendment rights, so his statements were admissible.
 
 ## Conclusion
-A probation-officer request is not a per se invocation; juvenile waivers are assessed under the totality of the circumstances. The California Supreme Court's per se rule was rejected and its judgment reversed.
+A probation-officer request is not a [[Common Legal Terms#per-se|per se]] invocation; juvenile waivers are assessed under the [[Common Legal Terms#totality-of-the-circumstances|totality of the circumstances]]. The California Supreme Court's [[Common Legal Terms#per-se|per se]] rule was rejected and its judgment reversed.
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.

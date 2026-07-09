@@ -12,7 +12,7 @@ The first threshold question in any Fourth Amendment problem: did the government
 
 - **Two Definitions of Search** — the two independent theories that make conduct a search, trespass and privacy, and the child pages that develop each.
 - [[Curtilage]] — the protected area immediately around the home, and how courts decide where that protection ends.
-- [[Open Fields]] — why land beyond the curtilage carries no Fourth Amendment protection.
+- [[Open Fields]] — why land beyond the [[Curtilage|curtilage]] carries no Fourth Amendment protection.
 - [[Aerial and Enhanced Surveillance|Aerial & Enhanced Surveillance]] — observation from aircraft and drones, and sense-enhancing equipment aimed at protected space.
 - **The Third-Party Doctrine and Digital Surveillance** — information handed to phone companies, banks, and platforms, and the digital-age limits on obtaining it.
 - [[Electronic Surveillance and Title III|Electronic Surveillance & Title III]] — the statutory wiretap regime that governs intercepting communications.

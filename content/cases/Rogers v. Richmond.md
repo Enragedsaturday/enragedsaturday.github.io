@@ -44,7 +44,7 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-Rogers was convicted of first-degree murder in Connecticut, his conviction resting in significant part on confessions obtained during sustained police interrogation — questioning during which officers told Rogers they were about to bring his wife in for questioning. In ruling the confessions admissible, the state trial judge (affirmed by the Supreme Court of Errors) applied a voluntariness standard that took into account the probable truth or falsity — the reliability — of the confessions. Rogers sought federal habeas corpus.
+Rogers was convicted of first-degree murder in Connecticut, his conviction resting in significant part on confessions obtained during sustained police interrogation — questioning during which officers told Rogers they were about to bring his wife in for questioning. In ruling the confessions admissible, the state trial judge (affirmed by the Supreme Court of Errors) applied a voluntariness standard that took into account the probable truth or falsity — the reliability — of the confessions. Rogers sought federal [[Common Legal Terms#habeas-corpus|habeas corpus]].
 
 ## Issue
 Whether a confession's admissibility under the Due Process Clause may be judged by a standard that takes into account the probable truth or reliability of the confession.
@@ -58,7 +58,7 @@ The inquiry must therefore disregard the confession's truth entirely: "The atten
 The Connecticut courts had answered the admissibility question "by reference to a legal standard which took into account the circumstance of probable truth or falsity." Because that standard injected reliability into an inquiry that the Due Process Clause confines to whether coercion overbore Rogers's will, the standard was constitutionally invalid, and the conviction obtained under it could not stand. The Court did not itself decide whether Rogers's confessions were in fact voluntary; the error was the use of the wrong standard.
 
 ## Conclusion
-A voluntariness standard that takes the confession's reliability into account is invalid under the Fourteenth Amendment. The judgment was reversed and the case remanded for application of the correct, coercion-only standard.
+A voluntariness standard that takes the confession's reliability into account is invalid under the Fourteenth Amendment. The judgment was reversed and the case [[Reading and Citing Cases#on-remand|remanded]] for application of the correct, coercion-only standard.
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.

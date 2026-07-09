@@ -44,10 +44,10 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-Tom Mooney, convicted in California in connection with the 1916 San Francisco Preparedness Day bombing, sought leave to file an original petition for a writ of habeas corpus in the Supreme Court. He alleged that the State had knowingly used perjured testimony to obtain his conviction and had deliberately suppressed evidence that would have impeached that testimony, in violation of the Fourteenth Amendment.
+Tom Mooney, convicted in California in connection with the 1916 San Francisco Preparedness Day bombing, sought leave to file an original petition for a writ of [[Common Legal Terms#habeas-corpus|habeas corpus]] in the Supreme Court. He alleged that the State had knowingly used perjured testimony to obtain his conviction and had deliberately suppressed evidence that would have impeached that testimony, in violation of the Fourteenth Amendment.
 
 ## Issue
-Whether the knowing use of perjured testimony (and suppression of impeaching evidence) by state prosecutors to procure a conviction violates due process — and whether the petitioner could pursue that claim by an original habeas petition in the Supreme Court without first exhausting state remedies.
+Whether the knowing use of perjured testimony (and suppression of impeaching evidence) by state prosecutors to procure a conviction violates due process — and whether the petitioner could pursue that claim by an original [[Common Legal Terms#habeas-corpus|habeas]] petition in the Supreme Court without first exhausting state remedies.
 
 ## Rule
 Knowing use of perjured testimony violates due process. The Fourteenth Amendment "is a requirement that cannot be deemed to be satisfied by mere notice and hearing if a State has contrived a conviction through the pretense of a trial which in truth is but used as a means of depriving a defendant of liberty through a deliberate deception of court and jury by the presentation of testimony known to be perjured. Such a contrivance by a State to procure the conviction and imprisonment of a defendant is as inconsistent with the rudimentary demands of justice as is the obtaining of a like result by intimidation." — 294 U.S. at 112. ^pin-112
@@ -55,10 +55,10 @@ Knowing use of perjured testimony violates due process. The Fourteenth Amendment
 The Court also confirmed that prosecutorial conduct counts as state action: "the action of prosecuting officers on behalf of the State … may constitute state action within the purview of the Fourteenth Amendment." — *Id.*
 
 ## Application
-The Court accepted that the alleged conduct — if proven — would violate due process, articulating the principle that a conviction obtained through testimony the State knows to be perjured cannot stand. But it did not reach the truth of Mooney's allegations. Because relief by habeas corpus appeared to be available in the California courts and Mooney had not shown that the State afforded no corrective judicial process, the Court held it should not entertain an original petition; leave to file was denied without prejudice to an application to the state courts.
+The Court accepted that the alleged conduct — if proven — would violate due process, articulating the principle that a conviction obtained through testimony the State knows to be perjured cannot stand. But it did not reach the truth of Mooney's allegations. Because relief by [[Common Legal Terms#habeas-corpus|habeas corpus]] appeared to be available in the California courts and Mooney had not shown that the State afforded no corrective judicial process, the Court held it should not entertain an original petition; leave to file was denied without prejudice to an application to the state courts.
 
 ## Conclusion
-Leave to file the original habeas petition was denied for failure to exhaust available state remedies. The decision is foundational not for its procedural disposition but for its due-process holding: a state may not knowingly use perjured testimony to obtain a conviction.
+Leave to file the original [[Common Legal Terms#habeas-corpus|habeas]] petition was denied for failure to exhaust available state remedies. The decision is foundational not for its procedural disposition but for its due-process holding: a state may not knowingly use perjured testimony to obtain a conviction.
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS** (per curiam).

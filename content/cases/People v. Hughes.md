@@ -55,10 +55,10 @@ A warrant to search digital data authorizes review only to the extent reasonably
 Officers must "reasonably limit the scope of their searches to evidence related to the criminal activity alleged in the warrant and not employ that authorization as a basis for seizing and searching digital data in the manner of a general warrant in search of evidence of any and all criminal activity." — *Id.* (slip op., at 35–36). ^pin-35
 
 ## Application
-The warrant authorized searching Hughes's phone data only for evidence of drug trafficking. The later search — run for the robbery victims' names and phone numbers — was reasonably directed at the armed-robbery investigation, not the drug-trafficking activity alleged in the warrant, and so exceeded the warrant's scope and was a search presumptively invalid. The Court reversed the Court of Appeals and remanded (leaving the exclusionary-rule and ineffective-assistance questions to be developed below).
+The warrant authorized searching Hughes's phone data only for evidence of drug trafficking. The later search — run for the robbery victims' names and phone numbers — was reasonably directed at the armed-robbery investigation, not the drug-trafficking activity alleged in the warrant, and so exceeded the warrant's scope and was a search presumptively invalid. The Court reversed the Court of Appeals and [[Reading and Citing Cases#on-remand|remanded]] (leaving the exclusionary-rule and ineffective-assistance questions to be developed below).
 
 ## Conclusion
-Searching the seized cell-phone data for evidence of a crime outside the warrant's scope exceeded the warrant; the Court of Appeals was reversed and the case remanded.
+Searching the seized cell-phone data for evidence of a crime outside the warrant's scope exceeded the warrant; the Court of Appeals was reversed and the case [[Reading and Citing Cases#on-remand|remanded]].
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Persuasive — state, illustrative** (Michigan Supreme Court, unanimous). A leading state application of [[Riley v. California]] to the scope of warranted cell-phone-data searches.

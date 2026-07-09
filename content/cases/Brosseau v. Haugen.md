@@ -49,7 +49,7 @@ lake:
 Officer Rochelle Brosseau of the Puyallup, Washington, police responded to a report of a fight at Kenneth Haugen's mother's house; Haugen had a felony no-bail warrant. After a foot search, Haugen jumped into his Jeep, locked the door, and ignored Brosseau's commands to get out. Brosseau broke the driver's window with her handgun and struck him, but Haugen started the Jeep. As it began to move — with another officer on foot, occupied vehicles nearby, and a girlfriend and child in a car in the driveway — Brosseau fired one shot through the rear window, hitting Haugen in the back. He survived, pleaded guilty to felony "eluding," and sued under § 1983 for excessive force.
 
 ## Issue
-Whether Officer Brosseau was entitled to qualified immunity on the excessive-force claim — i.e., whether it was clearly established that shooting a fleeing suspect in these circumstances violated the Fourth Amendment.
+Whether Officer Brosseau was entitled to [[Qualified Immunity|qualified immunity]] on the excessive-force claim — i.e., whether it was clearly established that shooting a fleeing suspect in these circumstances violated the Fourth Amendment.
 
 ## Rule
 Qualified immunity protects an officer who reasonably misjudges an unsettled legal question. "Qualified immunity shields an officer from suit when she makes a decision that, even if constitutionally deficient, reasonably misapprehends the law governing the circumstances she confronted." — 543 U.S. at 198. ^pin-198
@@ -63,14 +63,14 @@ The fact-specific precedent did not place the question beyond debate. The releva
 Accordingly, "[t]he cases by no means 'clearly establish' that Brosseau's conduct violated the Fourth Amendment." — *Id.* ^pin-201b
 
 ## Application
-The Court took the facts in the light most favorable to Haugen and expressed no view on whether the shooting actually violated the Fourth Amendment; it resolved the case on the second, qualified-immunity step alone. Measured at the proper level of specificity — whether to shoot "a disturbed felon, set on avoiding capture through vehicular flight, when persons in the immediate area are at risk from that flight" — only a "handful" of lower-court decisions spoke to the situation, and they pointed in different directions (*Cole v. Bone* and *Smith v. Freland* finding no violation; *Estate of Starks v. Enyart* finding a jury question). Because that body of law did not give Brosseau fair notice that her single shot was unlawful, her conduct fell in the hazy border the doctrine protects, and she was entitled to qualified immunity.
+The Court took the facts in the light most favorable to Haugen and expressed no view on whether the shooting actually violated the Fourth Amendment; it resolved the case on the second, qualified-immunity step alone. Measured at the proper level of specificity — whether to shoot "a disturbed felon, set on avoiding capture through vehicular flight, when persons in the immediate area are at risk from that flight" — only a "handful" of lower-court decisions spoke to the situation, and they pointed in different directions (*Cole v. Bone* and *Smith v. Freland* finding no violation; *Estate of Starks v. Enyart* finding a jury question). Because that body of law did not give Brosseau fair notice that her single shot was unlawful, her conduct fell in the hazy border the doctrine protects, and she was entitled to [[Qualified Immunity|qualified immunity]].
 
 ## Conclusion
-Reversed. The Ninth Circuit erred on qualified immunity; Brosseau was entitled to it because the law did not clearly establish that her shooting of the fleeing Haugen violated the Fourth Amendment.
+Reversed. The Ninth Circuit erred on [[Qualified Immunity|qualified immunity]]; Brosseau was entitled to it because the law did not clearly establish that her shooting of the fleeing Haugen violated the Fourth Amendment.
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS** (per curiam).
-- *Brosseau* is the foundational reminder that excessive-force qualified immunity is judged at a high level of specificity: the general reasonableness tests of [[Graham v. Connor]] and [[Tennessee v. Garner]] rarely "clearly establish" the answer in a particular shooting. The Court has reaffirmed and applied it repeatedly — [[Mullenix v. Luna]] and [[Kisela v. Hughes]] both rely on *Brosseau*, and [[Plumhoff v. Rickard]] cited it for the proposition that no clearly established law forbade the officers' conduct. No negative treatment.
+- *Brosseau* is the foundational reminder that excessive-force [[Qualified Immunity|qualified immunity]] is judged at a high level of specificity: the general reasonableness tests of [[Graham v. Connor]] and [[Tennessee v. Garner]] rarely "clearly establish" the answer in a particular shooting. The Court has reaffirmed and applied it repeatedly — [[Mullenix v. Luna]] and [[Kisela v. Hughes]] both rely on *Brosseau*, and [[Plumhoff v. Rickard]] cited it for the proposition that no clearly established law forbade the officers' conduct. No negative treatment.
 
 ## Appears on
 - [[Use of Force]] — *Key — Progeny / Refinement*

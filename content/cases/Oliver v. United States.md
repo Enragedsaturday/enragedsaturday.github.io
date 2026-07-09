@@ -59,14 +59,14 @@ Fencing and posting do not change that: "It is not generally true that fences or
 The common law "distinguished 'open fields' from the 'curtilage,' the land immediately surrounding and associated with the home," and "[t]he distinction implies that only the curtilage, not the neighboring open fields, warrants the Fourth Amendment protections that attach to the home." — *Id.* at 180. ^pin-180
 
 ## Application
-The marijuana field, located more than a mile from Oliver's house and outside the curtilage, was an open field. The locked gate and "No Trespassing" sign did not give it Fourth Amendment protection, so the officers' entry onto the land and observation of the crop were not a "search." The evidence was not subject to suppression on Fourth Amendment grounds.
+The marijuana field, located more than a mile from Oliver's house and outside the [[Curtilage|curtilage]], was an open field. The locked gate and "No Trespassing" sign did not give it Fourth Amendment protection, so the officers' entry onto the land and observation of the crop were not a "search." The evidence was not subject to suppression on Fourth Amendment grounds.
 
 ## Conclusion
-Because the field was an open field outside the curtilage, no Fourth Amendment search occurred; the open-fields doctrine controlled.
+Because the field was an open field outside the [[Curtilage|curtilage]], no Fourth Amendment search occurred; the open-fields doctrine controlled.
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.
-- No negative treatment. *Oliver* reaffirms the open-fields rule of [[Hester v. United States]] and frames the open-fields/curtilage line later refined by the four-factor test of [[United States v. Dunn]]; curtilage's protection at the home's entrance was reinforced in [[Florida v. Jardines]].
+- No negative treatment. *Oliver* reaffirms the open-fields rule of [[Hester v. United States]] and frames the open-fields/[[Curtilage|curtilage]] line later refined by the four-factor test of [[United States v. Dunn]]; [[Curtilage|curtilage]]'s protection at the home's entrance was reinforced in [[Florida v. Jardines]].
 
 ## Appears on
 - [[Curtilage]] — *Key — Progeny / Refinement*

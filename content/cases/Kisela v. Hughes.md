@@ -49,7 +49,7 @@ lake:
 Tucson officer Andrew Kisela and two others responded to a 911 report of a woman hacking a tree with a kitchen knife and acting erratically. Within about a minute of arriving they saw Amy Hughes emerge from a house carrying a large knife and walk to within six feet of another woman, Sharon Chadwick. A chain-link fence separated the officers from the two women. The officers drew their guns and ordered Hughes at least twice to drop the knife; she appeared calm but did not comply. Kisela dropped to the ground and fired four shots through the fence, wounding Hughes (non-life-threatening). It later emerged the women were roommates and Chadwick said she never felt endangered. Hughes sued Kisela under § 1983 for excessive force.
 
 ## Issue
-Whether Officer Kisela was entitled to qualified immunity — i.e., whether his use of deadly force against Hughes violated clearly established law.
+Whether Officer Kisela was entitled to [[Qualified Immunity|qualified immunity]] — i.e., whether his use of deadly force against Hughes violated clearly established law.
 
 ## Rule
 The Court assumed without deciding that the shooting may have violated the Fourth Amendment and resolved the case on qualified immunity. "Qualified immunity attaches when an official's conduct does not violate clearly established statutory or constitutional rights of which a reasonable person would have known." — 138 S. Ct. at 1152 (quoting *White v. Pauly*). ^pin-1152
@@ -61,14 +61,14 @@ Force law demands particularity. "Use of excessive force is an area of the law '
 The general rules of [[Tennessee v. Garner]] and [[Graham v. Connor]] "do not by themselves create clearly established law outside an 'obvious case.'" — *Id.*
 
 ## Application
-On these facts the case was "far from an obvious case in which any competent officer would have known that shooting Hughes to protect Chadwick would violate the Fourth Amendment": Kisela had only seconds to assess the threat, faced a woman who had just been reported hacking a tree with a large knife, who had moved within a few feet of Chadwick, and who ignored at least two audible commands to drop the weapon. Nor did circuit precedent place the question beyond debate — the most analogous Ninth Circuit case (*Blanford v. Sacramento County*) favored Kisela, while the decisions the Court of Appeals relied on (*Deorle*, *Glenn*, *Harris v. Roderick*) were materially different, involving unarmed or compliant suspects. Because no clearly established law squarely governed the situation Kisela confronted, he was entitled to qualified immunity.
+On these facts the case was "far from an obvious case in which any competent officer would have known that shooting Hughes to protect Chadwick would violate the Fourth Amendment": Kisela had only seconds to assess the threat, faced a woman who had just been reported hacking a tree with a large knife, who had moved within a few feet of Chadwick, and who ignored at least two audible commands to drop the weapon. Nor did circuit precedent place the question beyond debate — the most analogous Ninth Circuit case (*Blanford v. Sacramento County*) favored Kisela, while the decisions the Court of Appeals relied on (*Deorle*, *Glenn*, *Harris v. Roderick*) were materially different, involving unarmed or compliant suspects. Because no clearly established law squarely governed the situation Kisela confronted, he was entitled to [[Qualified Immunity|qualified immunity]].
 
 ## Conclusion
-Reversed. Kisela was entitled to qualified immunity because clearly established law, defined at the proper level of specificity, did not put it beyond debate that his use of force was unconstitutional.
+Reversed. Kisela was entitled to [[Qualified Immunity|qualified immunity]] because clearly established law, defined at the proper level of specificity, did not put it beyond debate that his use of force was unconstitutional.
 
 ## Treatment & subsequent history
-- **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS** (per curiam; Sotomayor, J., joined by Ginsburg, J., dissenting).
-- *Kisela* applies the specificity principle of [[Brosseau v. Haugen]] and [[Mullenix v. Luna]] and the "beyond debate" standard of [[White v. Pauly]] and [[City and County of San Francisco v. Sheehan]] to excessive-force qualified immunity. It is frequently cited for the rule that officers get immunity "unless existing precedent 'squarely governs' the specific facts." No negative treatment.
+- **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS** ([[Common Legal Terms#per-curiam|per curiam]]; Sotomayor, J., joined by Ginsburg, J., dissenting).
+- *Kisela* applies the specificity principle of [[Brosseau v. Haugen]] and [[Mullenix v. Luna]] and the "beyond debate" standard of [[White v. Pauly]] and [[City and County of San Francisco v. Sheehan]] to excessive-force [[Qualified Immunity|qualified immunity]]. It is frequently cited for the rule that officers get immunity "unless existing precedent 'squarely governs' the specific facts." No negative treatment.
 
 ## Appears on
 - [[Use of Force]] — *Key — Progeny / Refinement*

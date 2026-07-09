@@ -44,10 +44,10 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-Officers responded to a 911 call from a crying 12-year-old reporting that she, her mother, and her sister had locked themselves in a room because the mother's boyfriend, Cortesluna, was trying to hurt them and had a chainsaw. Officers ordered Cortesluna out and onto the ground and saw a knife in his left pocket. While removing the knife and handcuffing him, Officer Rivas-Villegas briefly placed his knee on the left side of Cortesluna's back for no more than eight seconds. Cortesluna sued under § 1983 for excessive force; the Ninth Circuit denied qualified immunity, relying on its precedent *LaLonde v. County of Riverside*.
+Officers responded to a 911 call from a crying 12-year-old reporting that she, her mother, and her sister had locked themselves in a room because the mother's boyfriend, Cortesluna, was trying to hurt them and had a chainsaw. Officers ordered Cortesluna out and onto the ground and saw a knife in his left pocket. While removing the knife and handcuffing him, Officer Rivas-Villegas briefly placed his knee on the left side of Cortesluna's back for no more than eight seconds. Cortesluna sued under § 1983 for excessive force; the Ninth Circuit denied [[Qualified Immunity|qualified immunity]], relying on its precedent *LaLonde v. County of Riverside*.
 
 ## Issue
-Whether Rivas-Villegas was entitled to qualified immunity because he did not violate clearly established law.
+Whether Rivas-Villegas was entitled to [[Qualified Immunity|qualified immunity]] because he did not violate clearly established law.
 
 ## Rule
 Clearly established law must be particularized to the case. The "clearly established" inquiry "must be undertaken in light of the specific context of the case, not as a broad general proposition." — 595 U.S. 1 (slip op., at 4) (quoting *Brosseau v. Haugen*). ^pin-op4
@@ -58,10 +58,10 @@ Clearly established law must be particularized to the case. The "clearly establi
 Cortesluna identified no Supreme Court case addressing facts like these, and the Ninth Circuit relied solely on *LaLonde*, which is materially distinguishable: *LaLonde* involved a mere noise complaint and an unarmed suspect on whose back an officer "deliberately dug his knee" causing lasting injury, whereas here officers responded to a serious domestic-violence call possibly involving a chainsaw, Cortesluna had a knife in his pocket he had appeared to reach for, and Rivas-Villegas placed his knee on Cortesluna's back for no more than eight seconds beside the knife being retrieved. *LaLonde* therefore did not give fair notice that Rivas-Villegas's conduct was unlawful.
 
 ## Conclusion
-Because no precedent clearly established that Rivas-Villegas's specific conduct was unlawful, he was entitled to qualified immunity; the Ninth Circuit was reversed.
+Because no precedent clearly established that Rivas-Villegas's specific conduct was unlawful, he was entitled to [[Qualified Immunity|qualified immunity]]; the Ninth Circuit was reversed.
 
 ## Treatment & subsequent history
-- **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**. Decided the same day as the companion qualified-immunity per curiam [[City of Tahlequah v. Bond]], reinforcing that "clearly established" law must be defined with specificity.
+- **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**. Decided the same day as the companion qualified-immunity [[Common Legal Terms#per-curiam|per curiam]] [[City of Tahlequah v. Bond]], reinforcing that "clearly established" law must be defined with specificity.
 
 ## Appears on
 - [[Section 1983 Liability and Qualified Immunity]] — *Key — Progeny / Refinement*
