@@ -31,7 +31,7 @@ related: ["[[Traffic Stops]]", "[[SIA Vehicles]]", "[[Inventory Searches]]", "[[
 
 **Two rationales, both load-bearing.** Modern doctrine rests on a pair of justifications, and an officer should be able to articulate both:
 
-> "First, the vehicle is obviously readily mobile by the turn of an ignition key, if not actually moving. Second, there is a reduced expectation of privacy stemming from its use as a licensed motor vehicle subject to a range of police regulation inapplicable to a fixed dwelling." — *[[California v. Carney|Carney]]*, 471 U.S. 386, [393](https://www.courtlistener.com/opinion/111423/california-v-carney/) (1985).
+![[cases/California v. Carney#^pin-393]]
 
 *[[California v. Carney|Carney]]* confirms the exception covers a **motor home** in use as a vehicle, not just an ordinary car. The reduced-privacy rationale also explains why merely examining a car's **exterior** on probable cause (paint scrapings, a tire-tread cast) invades no protected interest at all. *[[Cardwell v. Lewis|Cardwell]]*, 417 U.S. 583 (1974).
 

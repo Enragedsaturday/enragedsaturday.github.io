@@ -23,7 +23,12 @@ related: ["[[Entry to Arrest]]", "[[Seizure of the Person]]", "[[Exigent Circums
 
 **Field-decisive question: may I enter this home to arrest, and what do I need?** A home arrest is a full seizure of the person that requires probable cause, and the home adds a second requirement on top: authority to cross the threshold. The home receives the Fourth Amendment's highest protection, so absent consent or exigency police may not cross the entrance to arrest without a warrant, and "[a] routine felony arrest" does not by itself justify crossing that line. *[[Payton v. New York#^pin-590|Payton v. New York]]*, 445 U.S. 573, [590](https://www.courtlistener.com/opinion/110235/payton-v-new-york/#:~:text=In%20terms%20that%20apply%20equally) (1980).
 
-**The suspect's own home: an arrest warrant plus reason to believe he is within.** For the suspect's **own** dwelling *[[Payton v. New York|Payton]]* supplies the operative rule: "[a]n arrest warrant founded on probable cause implicitly carries with it the limited authority to enter a dwelling in which the suspect lives when there is reason to believe the suspect is within." 445 U.S. at 603. Two predicates ride on that one sentence: the suspect **lives** there and there is **reason to believe** he is **present now**. So the field answer for the suspect's own home is an **arrest warrant plus reason to believe the suspect is within** (or consent, or a true exigency).
+**The suspect's own home: an arrest warrant plus reason to believe he is within.** For the suspect's **own** dwelling *[[Payton v. New York|Payton]]* supplies the operative rule:
+
+> [!rule] Black-letter rule — stated on [[Entry to Arrest]]
+> ![[warrant-exceptions/home-entry-and-search/Entry to Arrest#^rule-entry-to-arrest]]
+
+Two predicates ride on that one sentence: the suspect **lives** there and there is **reason to believe** he is **present now**. So the field answer for the suspect's own home is an **arrest warrant plus reason to believe the suspect is within** (or consent, or a true exigency).
 
 **The warrant requirement flips inside someone else's home.** An arrest warrant protects the suspect, not the homeowner, so to enter a **third party's** home to arrest the suspect police need a **search warrant** absent exigency or consent: a "search warrant must be obtained absent exigent circumstances or consent." *[[Steagald v. United States#^pin-205|Steagald v. United States]]*, 451 U.S. 204, [205–06](https://www.courtlistener.com/opinion/110464/steagald-v-united-states/) (1981). In the third-party scenario two protected interests are in play at once: the homeowner's (*[[Steagald v. United States|Steagald]]*) and, when the arrestee is an overnight guest, his own (*[[Minnesota v. Olson]]*, below).
 
