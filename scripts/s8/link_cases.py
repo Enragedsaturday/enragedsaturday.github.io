@@ -1,0 +1,689 @@
+#!/usr/bin/env python3
+"""
+S8 case-mention auto-linker (spec S8 R1-R3 · R12 · work order Deliverable 2).
+
+Wraps every reader-facing case mention — full caption or italic short name — in
+a wikilink to its case page, at EVERY occurrence, outside the R2 exemption zones,
+following the fail-closed resolution ladder. Consumes the frozen zone contract
+(`scripts/s8/zones.py`, imported — never re-implemented) and the caption index
+(`scripts/s8/caption_index.py` -> `_run/o2-execute/s8-caption-index.json`).
+
+Byte conventions (from the Knock-and-Talk density exhibit):
+    *Florida v. Jardines*   -> *[[Florida v. Jardines]]*        (italics OUTSIDE)
+    Florida v. Jardines     -> [[Florida v. Jardines]]
+    *Jardines*              -> *[[Florida v. Jardines|Jardines]]*
+    *Terry*'s               -> *[[Terry v. Ohio|Terry]]*'s      (apostrophe outside)
+
+Never touched: existing wikilinks / markdown links (masked first), R2 zones,
+`id.`/`Id.` (R4 lane owns id.-chains), register eponym phrases (Terry stop, …).
+
+Masking layers (all offset-preserving, newlines kept):
+    1. `zones.mask`  — the R2 catalog (heading/code/quote/citation/sources/
+                       frontmatter/comment/selfpage/casecell).
+    2. existing links — `[[...]]`, `![[...]]`, `[text](url)`  (idempotency +
+                        "never touch existing links"; pre-existing pin deep-links
+                        `[[Case#^pin-N|…]]` fall in here and are preserved).
+
+Resolution:
+  * Full caption -> `link_captions` (page) / `plain_captions` (ledger non-page
+    terminal = keep PLAIN) / `ambiguous_captions` (year-sibling) / unknown.
+  * Italic short name -> the R3 fail-closed ladder, stop at first UNIQUE hit:
+      1 page-scope binding (an earlier same-page full mention binds the short);
+      2 page-roster (unique match among the page's wikilinked case set);
+      3 corpus caption index (unique page; the collision map fail-closes rung 3).
+    Ambiguous at every rung -> NO edit, adjudication-queue row.
+
+Emits (R12): per-occurrence ledger rows (JSONL) + an adjudication queue (JSONL).
+Default DRY-RUN; `--write` applies edits; idempotent. `--self-test` runs the
+fixtures under `scripts/s8/fixtures/mentions/`.
+
+Python 3 stdlib only. COMMIT NOTHING (orchestrator commits per batch review).
+"""
+
+from __future__ import annotations
+
+import json
+import os
+import re
+import sys
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import zones as zonemod  # the FROZEN R2 contract — imported, never re-implemented
+
+ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+INDEX_PATH = os.path.join(ROOT, "_run", "o2-execute", "s8-caption-index.json")
+LEDGER_OUT = os.path.join(ROOT, "_run", "o2-execute", "s8-link-ledger.rows.jsonl")
+QUEUE_OUT = os.path.join(ROOT, "_run", "o2-execute", "s8-adjudication-queue.jsonl")
+
+LANE = "o2-opus-xhigh"
+MODEL = "claude-opus-4-8"
+
+# Register eponym phrases (work-order seed list; used until the R7 register
+# columns land). A case name inside one of these is a TERM (R7), not a mention.
+# NB: only ITALIC short names / " v. " full captions are ever candidates, so a
+# NON-italic eponym head (a "Terry stop") is structurally never linked; this
+# list additionally guards a fully-italicised eponym phrase (`*Terry stop*`).
+EPONYM_PHRASES = [
+    "Terry stop", "Terry frisk", "Miranda warning", "Miranda warnings",
+    "Miranda rights", "Miranda waiver", "Miranda card", "Katz test",
+    "Brady material", "Brady violation", "Franks hearing", "Batson challenge",
+    "Garrity warning", "Garrity statement", "Kastigar hearing",
+    "Daubert standard", "Monell claim", "Monell liability", "Bivens action",
+    "Bivens claim", "Chimel rule", "Belton rule", "Gant rule",
+    "Rodriguez moment", "Montejo rule", "Massiah rule", "Edwards rule",
+    "Salinas rule",
+]
+_EPONYM_RE = re.compile(
+    r"\b(" + "|".join(re.escape(e) for e in EPONYM_PHRASES) + r")\b")
+
+# short-name near-misses never treated as case mentions
+SHORT_SKIP = {"id", "ibid", "supra", "infra", "e.g", "i.e", "see", "cf",
+              "cf.", "ante", "post", "accord", "contra", "compare"}
+
+
+def _norm(s):
+    return re.sub(r"\s+", " ", (s or "").strip()).casefold().rstrip(".")
+
+
+# --------------------------------------------------------------------------
+# Index
+# --------------------------------------------------------------------------
+
+class Index:
+    def __init__(self, doc):
+        self.link = doc["link_captions"]            # display -> stem
+        self.plain = doc["plain_captions"]          # display -> terminal
+        self.short = doc["short_names"]             # nshort -> {pages, plain}
+        self.collision = doc["collision_map"]       # nkey -> {type, pages}
+        self.ambiguous = doc["ambiguous_captions"]  # ncap -> {display, pages}
+
+        self.link_norm = {_norm(k): v for k, v in self.link.items()}
+        self.plain_norm = {_norm(k): (v, k) for k, v in self.plain.items()}
+
+        # reverse: caption/stem -> set(nshort)  (for rung-1 binding)
+        self.stem_shorts = {}
+        self.cap_shorts = {}
+        for ns, meta in self.short.items():
+            for stem in meta.get("pages", []):
+                self.stem_shorts.setdefault(stem, set()).add(ns)
+            for cap in meta.get("plain", []):
+                self.cap_shorts.setdefault(cap, set()).add(ns)
+
+        # detection alternation (full captions), longest first.
+        # Exclude strings ending in a parenthetical disambiguator
+        # ("People v. Frederick (Mich. 2017)", "… (2011)") from PROSE detection:
+        # the bare stem catches the name and the "(court year)" stays OUTSIDE the
+        # wikilink, matching the exhibit convention (`[[People v. Frederick]]
+        # (Mich. 2017)`). The full form remains a valid alias in `self.link`.
+        strings = set(self.link) | set(self.plain)
+        strings |= {m["display"] for m in self.ambiguous.values()}
+        strings = {s for s in strings if not re.search(r"\([^)]*\)\s*$", s)}
+        ordered = sorted(strings, key=lambda s: (-len(s), s))
+        self.known_re = re.compile(
+            r"(?<![A-Za-z0-9])(?:"
+            + "|".join(re.escape(s) for s in ordered)
+            + r")(?![A-Za-z0-9])")
+
+    @classmethod
+    def load(cls, path=INDEX_PATH):
+        with open(path, encoding="utf-8") as fh:
+            return cls(json.load(fh))
+
+
+# masks / patterns -----------------------------------------------------------
+
+_LINK_SPAN_RE = re.compile(r"!?\[\[[^\]\n]*\]\]|\[[^\]\n]*\]\([^)\n]*\)")
+_ITALIC_RE = re.compile(r"(?<!\*)\*([^*\n]+?)\*(?!\*)")
+_WIKILINK_TARGET_RE = re.compile(r"!?\[\[([^\]\|\n#]+)")
+# generic caption shape (unknown-caption net); parties are Capitalised chunks
+_PARTY = (r"[A-Z][A-Za-z.'’&\-]*"
+          r"(?:\s+(?:of|the|for|and|ex|rel\.?|&|"
+          r"[A-Z][A-Za-z.'’&\-]*|[A-Z]\.))*")
+_GENERIC_RE = re.compile(r"(?<![A-Za-z0-9])(" + _PARTY + r")\s+v\.\s+("
+                         + _PARTY + r")")
+
+
+def _mask_spans(masked, spans, fill=" "):
+    buf = list(masked)
+    for s, e in spans:
+        for i in range(s, min(e, len(buf))):
+            if buf[i] != "\n":
+                buf[i] = fill
+    return "".join(buf)
+
+
+def _line_of(text, off):
+    return text.count("\n", 0, off) + 1
+
+
+def _overlaps(a0, a1, spans):
+    for s, e in spans:
+        if a0 < e and s < a1:
+            return True
+    return False
+
+
+def _covering_zone(zlist, off):
+    for z in zlist:
+        if z["start"] <= off < z["end"]:
+            return z["kind"]
+    return None
+
+
+# --------------------------------------------------------------------------
+# Core analysis (single file's text)
+# --------------------------------------------------------------------------
+
+def analyze(text, page_stem, idx):
+    zlist = zonemod.compute_zones(text, page_stem=page_stem)
+    masked_z = zonemod.mask(text, zlist)
+    link_spans = [(m.start(), m.end()) for m in _LINK_SPAN_RE.finditer(masked_z)]
+    masked = _mask_spans(masked_z, link_spans)
+
+    # page roster (rung-2): case stems wikilinked anywhere on the page
+    roster = set()
+    for m in _WIKILINK_TARGET_RE.finditer(text):
+        tgt = m.group(1).strip()
+        st = idx.link.get(tgt) or idx.link_norm.get(_norm(tgt))
+        if st:
+            roster.add(st)
+
+    edits = []       # (start, end, replacement)
+    rows = []        # R12 ledger rows
+    queue = []       # adjudication rows
+    counts = {"mentions_full": 0, "mentions_short": 0}
+    actions = {}
+    rungs = {}
+    zoneexempt = {}
+    npage = self_page_stem = page_stem
+
+    def bump(d, k):
+        d[k] = d.get(k, 0) + 1
+
+    def row(off, matched, cap, target, method, action, rationale=None):
+        r = {"file": None, "line": _line_of(text, off), "matched_text": matched,
+             "caption_key": cap,
+             "resolution": {"target": target, "method": method},
+             "action": action, "lane": LANE, "model": MODEL}
+        if rationale:
+            r["resolution"]["rationale"] = rationale
+        rows.append(r)
+        bump(actions, action)
+
+    def qrow(off, matched, candidates, reason):
+        queue.append({"file": None, "line": _line_of(text, off),
+                      "matched_text": matched, "candidates": candidates,
+                      "reason": reason, "lane": LANE, "model": MODEL})
+
+    # ---- Full-caption occurrences on UNMASKED text (region-classified) ----
+    page_bindings = {}   # nshort -> set of ("link",stem) | ("plain",cap,term)
+    live_events = []     # (start, end, "full", matched)
+
+    def bind_full(cap_display, target_tuple):
+        if target_tuple[0] == "link":
+            shorts = idx.stem_shorts.get(target_tuple[1], set())
+        else:
+            shorts = idx.cap_shorts.get(cap_display, set())
+        for ns in shorts:
+            page_bindings.setdefault(ns, set()).add(target_tuple)
+
+    for m in idx.known_re.finditer(text):
+        s, e = m.start(), m.end()
+        matched = text[s:e]
+        counts["mentions_full"] += 1
+        zk = _covering_zone(zlist, s)
+        if zk:
+            row(s, matched, None, None, "zone", "exempt:" + zk)
+            bump(zoneexempt, zk)
+            continue
+        if _overlaps(s, e, link_spans):
+            # a mention already inside a wikilink / md-link (pre-existing)
+            n = _norm(matched)
+            stem = idx.link.get(matched) or idx.link_norm.get(n)
+            row(s, matched, stem or matched, stem, "pre-existing",
+                "linked", "already inside a link")
+            if stem:
+                bind_full(matched, ("link", stem))
+            continue
+        live_events.append((s, e, "full", matched))
+
+    # ---- Italic short-name candidates on MASKED text ----
+    for m in _ITALIC_RE.finditer(masked):
+        inner = m.group(1)
+        istart, iend = m.start(1), m.end(1)
+        raw = text[istart:iend]
+        n = _norm(raw)
+        if not n or n in SHORT_SKIP:
+            continue
+        # eponym guard: a fully-italicised register eponym phrase (`*Terry
+        # stop*`) is a TERM (R7), not a case mention. The bare italic name
+        # (`*Terry*`) IS a mention and is NOT skipped (work order R3).
+        if _EPONYM_RE.fullmatch(raw.strip()):
+            continue
+        if n in idx.short:
+            live_events.append((istart, iend, "short", raw))
+
+    # ---- Generic unknown-caption net on MASKED text ----
+    for m in _GENERIC_RE.finditer(masked):
+        s, e = m.start(), m.end()
+        if _overlaps(s, e, [(x[0], x[1]) for x in live_events
+                            if x[2] == "full"]):
+            continue
+        n = _norm(text[s:e])
+        if n in idx.link_norm or n in idx.plain_norm or n in idx.ambiguous:
+            continue
+        live_events.append((s, e, "generic", text[s:e]))
+
+    # ---- Process live events in document order (rung-1 bindings accrue) ----
+    live_events.sort(key=lambda ev: (ev[0], -(ev[1] - ev[0])))
+    claimed = []   # spans already consumed (full > short > generic)
+
+    for s, e, kind, matched in live_events:
+        if _overlaps(s, e, claimed):
+            continue
+
+        if kind == "full":
+            n = _norm(matched)
+            if n in idx.ambiguous:
+                claimed.append((s, e))
+                qrow(s, matched, idx.ambiguous[n]["pages"],
+                     "ambiguous-caption (year-sibling pages)")
+                bump(actions, "queue:ambiguous-caption")
+                bump(rungs, "adjudicated")
+                continue
+            if matched in idx.plain or n in idx.plain_norm:
+                term = idx.plain.get(matched) or idx.plain_norm[n][0]
+                claimed.append((s, e))
+                row(s, matched, matched, None, "caption",
+                    "plain:no-page", "ledger terminal: " + term)
+                bump(rungs, "caption")
+                bind_full(matched, ("plain", matched, term))
+                continue
+            stem = idx.link.get(matched) or idx.link_norm.get(n)
+            if stem:
+                claimed.append((s, e))
+                bump(rungs, "caption")
+                if page_stem and stem == self_page_stem:
+                    row(s, matched, stem, stem, "caption", "exempt:selfpage")
+                    bind_full(matched, ("link", stem))
+                    continue
+                repl = ("[[%s]]" % matched if matched == stem
+                        else "[[%s|%s]]" % (stem, matched))
+                edits.append((s, e, repl))
+                row(s, matched, stem, stem, "caption", "linked")
+                bind_full(matched, ("link", stem))
+                continue
+            # KNOWN_RE only fires on indexed strings; unreachable, but fail safe
+            claimed.append((s, e))
+            qrow(s, matched, [], "unknown-caption (unindexed full caption)")
+            bump(actions, "queue:unknown-caption")
+            continue
+
+        if kind == "short":
+            counts["mentions_short"] += 1
+            n = _norm(matched)
+            meta = idx.short.get(n, {"pages": [], "plain": []})
+            res = _resolve_short(n, meta, idx, page_bindings, roster)
+            method, target = res["method"], res["target"]
+            if method is None:
+                claimed.append((s, e))
+                qrow(s, matched, res["candidates"], res["reason"])
+                bump(actions, "queue:ambiguous-short-name")
+                bump(rungs, "adjudicated")
+                continue
+            bump(rungs, method)
+            if target[0] == "link":
+                stem = target[1]
+                claimed.append((s, e))
+                if page_stem and stem == self_page_stem:
+                    row(s, matched, stem, stem, method, "exempt:selfpage")
+                    continue
+                edits.append((s, e, "[[%s|%s]]" % (stem, matched)))
+                row(s, matched, stem, stem, method, "linked")
+            else:  # plain caption
+                cap, term = target[1], target[2]
+                claimed.append((s, e))
+                row(s, matched, cap, None, method,
+                    "plain:no-page", "ledger terminal: " + term)
+            continue
+
+        if kind == "generic":
+            claimed.append((s, e))
+            qrow(s, matched, [], "unknown-caption (not in lake/pages/ledger)")
+            bump(actions, "queue:unknown-caption")
+            counts["mentions_full"] += 1
+            continue
+
+    counts["actions"] = actions
+    counts["rungs"] = rungs
+    counts["zone_exempt"] = zoneexempt
+    return {"edits": edits, "rows": rows, "queue": queue, "counts": counts}
+
+
+def _resolve_short(n, meta, idx, page_bindings, roster):
+    """R3 fail-closed ladder. Returns {method,target,candidates,reason}."""
+    pages = list(meta.get("pages", []))
+    plain = list(meta.get("plain", []))
+
+    # rung 1 — page-scope binding. A UNIQUE on-page binding resolves; but if the
+    # page has bound the short form to TWO distinct captions (e.g. the folded
+    # twin *Carman v. Carroll* AND the survivor *Carroll v. Carman*), the page
+    # itself uses the short ambiguously -> fail-closed to the queue, never fall
+    # through to a rung-3 corpus guess (the wrong-authority scar R3 guards).
+    bound = page_bindings.get(n)
+    if bound:
+        targets = {(t[0], t[1]) for t in bound}
+        if len(targets) == 1:
+            (t,) = tuple(bound)
+            return {"method": "page-scope", "target": t,
+                    "candidates": [], "reason": None}
+        cands = sorted({t[1] for t in bound})
+        return {"method": None, "target": None, "candidates": cands,
+                "reason": "ambiguous-short-name (page binds >1 caption)"}
+
+    # rung 2 — page roster (pages only)
+    in_roster = [st for st in pages if st in roster]
+    if len(in_roster) == 1:
+        return {"method": "roster", "target": ("link", in_roster[0]),
+                "candidates": [], "reason": None}
+
+    # rung 3 — corpus caption index (collision map fail-closes)
+    if n not in idx.collision:
+        if len(pages) == 1:
+            return {"method": "corpus", "target": ("link", pages[0]),
+                    "candidates": [], "reason": None}
+        if len(pages) == 0 and len(plain) == 1:
+            term = idx.plain.get(plain[0]) or idx.plain_norm.get(
+                _norm(plain[0]), (None,))[0]
+            return {"method": "corpus", "target": ("plain", plain[0], term),
+                    "candidates": [], "reason": None}
+
+    return {"method": None, "target": None,
+            "candidates": sorted(set(pages) | set(plain)),
+            "reason": "ambiguous-short-name (no unique rung-1/2/3 resolution)"}
+
+
+# --------------------------------------------------------------------------
+# File driver
+# --------------------------------------------------------------------------
+
+def _page_stem_for(path):
+    return os.path.basename(path)[:-3] if path.endswith(".md") else None
+
+
+def apply_edits(text, edits):
+    for s, e, repl in sorted(edits, key=lambda x: -x[0]):
+        text = text[:s] + repl + text[e:]
+    return text
+
+
+def iter_md(paths):
+    for p in paths:
+        if os.path.isfile(p) and p.endswith(".md"):
+            yield p
+        elif os.path.isdir(p):
+            for dp, _dn, fn in os.walk(p):
+                for f in sorted(fn):
+                    if f.endswith(".md"):
+                        yield os.path.join(dp, f)
+
+
+def run(paths, idx, write=False, ledger_out=None, queue_out=None):
+    agg = {"files": 0, "files_changed": 0, "edits": 0,
+           "mentions_full": 0, "mentions_short": 0,
+           "actions": {}, "rungs": {}, "zone_exempt": {}}
+    all_rows, all_queue, samples = [], [], []
+    for path in sorted(iter_md(paths)):
+        text = open(path, encoding="utf-8").read()
+        res = analyze(text, _page_stem_for(path), idx)
+        rel = os.path.relpath(path, ROOT)
+        for r in res["rows"]:
+            r["file"] = rel
+        for q in res["queue"]:
+            q["file"] = rel
+        agg["files"] += 1
+        agg["edits"] += len(res["edits"])
+        agg["mentions_full"] += res["counts"]["mentions_full"]
+        agg["mentions_short"] += res["counts"]["mentions_short"]
+        for d in ("actions", "rungs", "zone_exempt"):
+            for k, v in res["counts"][d].items():
+                agg[d][k] = agg[d].get(k, 0) + v
+        all_rows.extend(res["rows"])
+        all_queue.extend(res["queue"])
+        if res["edits"]:
+            agg["files_changed"] += 1
+            new = apply_edits(text, res["edits"])
+            for (s, e, repl) in sorted(res["edits"], key=lambda x: x[0]):
+                samples.append({"file": rel, "line": _line_of(text, s),
+                                "before": text[max(0, s - 30):e + 20],
+                                "matched": text[s:e], "replacement": repl})
+            if write:
+                with open(path, "w", encoding="utf-8") as fh:
+                    fh.write(new)
+    if ledger_out:
+        with open(ledger_out, "w", encoding="utf-8") as fh:
+            for r in all_rows:
+                fh.write(json.dumps(r, ensure_ascii=False) + "\n")
+    if queue_out:
+        with open(queue_out, "w", encoding="utf-8") as fh:
+            for q in all_queue:
+                fh.write(json.dumps(q, ensure_ascii=False) + "\n")
+    return agg, all_rows, all_queue, samples
+
+
+# --------------------------------------------------------------------------
+# Self-test
+# --------------------------------------------------------------------------
+
+_FIX = os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                    "fixtures", "mentions")
+
+
+def _fixture_index():
+    """A small, deterministic index exercising every rule."""
+    doc = {
+        "link_captions": {
+            "Terry v. Ohio": "Terry v. Ohio",
+            "Florida v. Jardines": "Florida v. Jardines",
+            "Kentucky v. King": "Kentucky v. King",
+            "United States v. Walker": "United States v. Walker",
+            "Maryland v. King": "Maryland v. King",
+            "Katz v. United States": "Katz v. United States",
+            "Curtilage v. Nowhere": "Curtilage v. Nowhere",
+        },
+        "plain_captions": {
+            "Morgan v. Fairfield County": "brief-mention",
+            "Carman v. Carroll": "folded-alias",
+        },
+        "short_names": {
+            "terry": {"pages": ["Terry v. Ohio"], "plain": []},
+            "jardines": {"pages": ["Florida v. Jardines"], "plain": []},
+            "walker": {"pages": ["United States v. Walker"], "plain": []},
+            "king": {"pages": ["Kentucky v. King", "Maryland v. King"],
+                     "plain": []},
+            "katz": {"pages": ["Katz v. United States"], "plain": []},
+            "morgan": {"pages": [], "plain": ["Morgan v. Fairfield County"]},
+        },
+        "collision_map": {
+            "king": {"type": "short-name",
+                     "pages": ["Kentucky v. King", "Maryland v. King"]},
+        },
+        "ambiguous_captions": {},
+    }
+    return Index(doc)
+
+
+def _self_test():
+    idx = _fixture_index()
+    failures = []
+
+    def check(cond, msg):
+        if not cond:
+            failures.append(msg)
+
+    def analyze_fixture(name, stem=None):
+        t = open(os.path.join(_FIX, name), encoding="utf-8").read()
+        return t, analyze(t, stem, idx)
+
+    def result_text(t, res):
+        return apply_edits(t, res["edits"])
+
+    def has_action(res, action):
+        return res["counts"]["actions"].get(action, 0) > 0
+
+    # ladder rung 1 — page-scope binding
+    t, res = analyze_fixture("rung1_pagescope.md")
+    out = result_text(t, res)
+    check("*[[United States v. Walker|Walker]]*" in out,
+          "rung1: short *Walker* not bound by earlier full mention")
+    check(any(r["resolution"]["method"] == "page-scope" for r in res["rows"]),
+          "rung1: no page-scope method row")
+
+    # ladder rung 2 — page roster
+    t, res = analyze_fixture("rung2_roster.md")
+    out = result_text(t, res)
+    check("*[[Kentucky v. King|King]]*" in out,
+          "rung2: *King* not disambiguated by roster")
+    check(any(r["resolution"]["method"] == "roster" for r in res["rows"]),
+          "rung2: no roster method row")
+
+    # ladder rung 3 — unique corpus
+    t, res = analyze_fixture("rung3_corpus.md")
+    out = result_text(t, res)
+    check("*[[Florida v. Jardines|Jardines]]*" in out,
+          "rung3: unique corpus short *Jardines* not linked")
+
+    # ambiguity queue — *King* with no binding/roster
+    t, res = analyze_fixture("ambiguous_short.md")
+    check(len(res["queue"]) >= 1 and res["queue"][0]["reason"].startswith(
+        "ambiguous-short-name"), "ambiguity: *King* should queue")
+    check("[[Kentucky v. King|King]]" not in result_text(t, res),
+          "ambiguity: *King* must NOT auto-link")
+
+    # eponym guard — non-italic 'Terry stop' untouched; italic *Terry* linked
+    t, res = analyze_fixture("eponym.md")
+    out = result_text(t, res)
+    check("a Terry stop" in out, "eponym: non-italic 'Terry stop' was edited")
+    check("*[[Terry v. Ohio|Terry]]*" in out,
+          "eponym: italic *Terry* should still link")
+
+    # ledger-plain rule — brief-mention full caption stays plain
+    t, res = analyze_fixture("ledger_plain.md")
+    out = result_text(t, res)
+    check("Morgan v. Fairfield County" in out
+          and "[[Morgan" not in out,
+          "ledger-plain: brief-mention caption must stay plain")
+    check(has_action(res, "plain:no-page"),
+          "ledger-plain: no plain:no-page action emitted")
+
+    # unknown caption — not in any index -> queue, no edit
+    t, res = analyze_fixture("unknown_caption.md")
+    check(any(q["reason"].startswith("unknown-caption") for q in res["queue"]),
+          "unknown: Foo v. Bar should queue unknown-caption")
+    check("[[Foo" not in result_text(t, res), "unknown: must not link Foo v. Bar")
+
+    # self-page — own caption stays plain on its own page
+    t, res = analyze_fixture("selfpage.md", stem="Terry v. Ohio")
+    out = result_text(t, res)
+    check("[[Terry v. Ohio]]" not in out and "[[Terry v. Ohio|Terry]]" not in out,
+          "selfpage: own caption/short must not self-link")
+    check(has_action(res, "exempt:selfpage"),
+          "selfpage: no exempt:selfpage action")
+
+    # italic + possessive forms
+    t, res = analyze_fixture("forms.md")
+    out = result_text(t, res)
+    check("*[[Florida v. Jardines]]*" in out, "forms: italic full caption")
+    check("[[Florida v. Jardines]]" in out, "forms: bare full caption")
+    check("*[[Terry v. Ohio|Terry]]*'s" in out,
+          "forms: possessive short (apostrophe outside)")
+
+    # zone exemptions — one occurrence per zone kind stays untouched
+    t, res = analyze_fixture("zones_exempt.md", stem="Curtilage")
+    out = result_text(t, res)
+    check(out == t, "zones: no edit may occur inside any R2 zone")
+    for zk in ("heading", "code", "quote", "citation", "sources",
+               "frontmatter", "comment", "casecell"):
+        check(res["counts"]["zone_exempt"].get(zk, 0) >= 1,
+              "zones: no exempt row for zone kind %r" % zk)
+
+    # idempotency — re-analyze the linked output -> zero new edits
+    t, res = analyze_fixture("forms.md")
+    once = result_text(t, res)
+    res2 = analyze(once, None, idx)
+    check(len(res2["edits"]) == 0, "idempotency: second pass produced edits")
+
+    if failures:
+        print("link_cases.py --self-test: FAIL")
+        for f in failures:
+            print("  - " + f)
+        return 1
+    print("link_cases.py --self-test: PASS "
+          "(ladder rungs 1-3, ambiguity queue, eponym guard, ledger-plain, "
+          "unknown-caption, self-page, italic/possessive, 8 zone kinds, "
+          "idempotent)")
+    return 0
+
+
+# --------------------------------------------------------------------------
+# CLI
+# --------------------------------------------------------------------------
+
+def _print_report(agg, queue):
+    print("== S8 link_cases report ==")
+    print("files: %d | files_with_edits: %d | edits(new links): %d"
+          % (agg["files"], agg["files_changed"], agg["edits"]))
+    print("mentions found — full-caption: %d | short-name(italic): %d"
+          % (agg["mentions_full"], agg["mentions_short"]))
+    print("resolutions by ladder rung:", json.dumps(agg["rungs"]))
+    print("actions:", json.dumps(agg["actions"]))
+    print("zone-exempt by kind:", json.dumps(agg["zone_exempt"]))
+    print("adjudication-queue rows: %d" % len(queue))
+
+
+def main(argv):
+    if "--self-test" in argv:
+        return _self_test()
+
+    paths = []
+    write = "--write" in argv
+    index_path = INDEX_PATH
+    ledger_out = LEDGER_OUT
+    queue_out = QUEUE_OUT
+    report_json = None
+    i = 0
+    while i < len(argv):
+        a = argv[i]
+        if a == "--paths":
+            i += 1
+            while i < len(argv) and not argv[i].startswith("--"):
+                paths.append(argv[i]); i += 1
+            continue
+        if a == "--index":
+            index_path = argv[i + 1]; i += 2; continue
+        if a == "--ledger-out":
+            ledger_out = argv[i + 1]; i += 2; continue
+        if a == "--queue-out":
+            queue_out = argv[i + 1]; i += 2; continue
+        if a == "--report-json":
+            report_json = argv[i + 1]; i += 2; continue
+        i += 1
+    if not paths:
+        paths = [os.path.join(ROOT, "content")]
+
+    idx = Index.load(index_path)
+    agg, rows, queue, samples = run(paths, idx, write=write,
+                                    ledger_out=ledger_out, queue_out=queue_out)
+    _print_report(agg, queue)
+    print("mode:", "WRITE" if write else "DRY-RUN",
+          "| ledger rows:", len(rows), "->", os.path.relpath(ledger_out, ROOT),
+          "| queue ->", os.path.relpath(queue_out, ROOT))
+    if report_json:
+        with open(report_json, "w", encoding="utf-8") as fh:
+            json.dump({"agg": agg, "queue": queue, "samples": samples},
+                      fh, ensure_ascii=False, indent=1)
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main(sys.argv[1:]))

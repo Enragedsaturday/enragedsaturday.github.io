@@ -5377,6 +5377,134 @@ def rekey_cluster_panel(paths, manifest, journal, client, precedence, record_ref
 
 
 # ---------------------------------------------------------------------------
+# S8 § A14 — sanctioned offline fragment write-back (`--apply-fragments`).
+# scripts/s8/fragments.py generates + validates external text-fragments (the
+# WICG `#:~:text=` string) from each pin's G3-`matched` quote against S2's CACHED
+# opinion text (zero live CL). The lake is single-writer, so a validated fragment
+# reaches the pinpoint record ONLY through this surface. Mirrors the repair-lane
+# pattern: fail-closed phase-1 batch validation, journaled, idempotent. There is
+# no CL client — this is a pure file op over s8-fragments.jsonl + the lake, so the
+# max_calls=0 invariant holds trivially (no client is ever constructed).
+# Registered: S8 R5/A14; the schema's optional pinpoint.fragment/.fragment_validated_at
+# rode in at S7 close (A14 additive fields).
+# ---------------------------------------------------------------------------
+APPLY_FRAGMENTS_STEP = "s8.apply-fragments"
+APPLY_FRAGMENTS_LANE = "s8-fragments"
+APPLY_FRAGMENTS_MODEL = "claude-opus-4-8"
+
+
+def _journal_apply_fragment(journal, **row):
+    row.setdefault("lane", APPLY_FRAGMENTS_LANE)
+    row.setdefault("model", APPLY_FRAGMENTS_MODEL)
+    journal.append(step=APPLY_FRAGMENTS_STEP, **row)
+
+
+def _load_fragment_rows(path):
+    if not os.path.exists(path):
+        raise SystemExit("--apply-fragments file not found: %s" % path)
+    rows = []
+    with open(path, encoding="utf-8") as fh:
+        for i, line in enumerate(fh, 1):
+            line = line.strip()
+            if not line:
+                continue
+            try:
+                rows.append(json.loads(line))
+            except json.JSONDecodeError as exc:
+                raise SystemExit("--apply-fragments malformed jsonl at line %d: %s" % (i, exc))
+    return rows
+
+
+def _find_pinpoint(record, pin_id):
+    for p in record.get("pinpoints") or []:
+        if p.get("id") == pin_id:
+            return p
+    return None
+
+
+def apply_fragments(paths, manifest, journal, fragments_path):
+    """Consume an s8-fragments.jsonl and write each VALIDATED row's `#:~:text=`
+    string onto pinpoints[].fragment (+ fragment_validated_at). Unvalidatable rows
+    are skipped (they stay plain-external downstream). Fail-closed + idempotent."""
+    rows = _load_fragment_rows(fragments_path)
+
+    # Phase 1 — validate the whole batch of VALIDATED rows before any write (fail
+    # closed): a row that names a missing record/pin, or a pin whose quote_fidelity
+    # is not `matched`, aborts BEFORE any earlier pin is written.
+    targets = []
+    skipped_unvalidatable = 0
+    seen = set()
+    for row in rows:
+        if not row.get("validated"):
+            skipped_unvalidatable += 1
+            continue
+        record_id = row.get("record_id")
+        pin_id = row.get("pin_id")
+        fragment = row.get("fragment")
+        if not record_id or not pin_id or not fragment:
+            raise SystemExit("--apply-fragments malformed validated row: %r" % row)
+        if (record_id, pin_id) in seen:
+            raise SystemExit("--apply-fragments duplicate validated row for %s/%s" % (record_id, pin_id))
+        seen.add((record_id, pin_id))
+        if not isinstance(fragment, str) or not fragment.startswith("#:~:text="):
+            raise SystemExit("--apply-fragments row %s/%s fragment is not a #:~:text= string: %r"
+                             % (record_id, pin_id, fragment))
+        if record_id not in manifest.by_record_id:
+            raise SystemExit("--apply-fragments record not in manifest: %s" % record_id)
+        record = load_case_record(paths, record_id)
+        if record is None:
+            raise SystemExit("--apply-fragments lake record missing on disk: %s" % record_id)
+        pin = _find_pinpoint(record, pin_id)
+        if pin is None:
+            raise SystemExit("--apply-fragments pin %s not found on record %s" % (pin_id, record_id))
+        if pin.get("quote_fidelity") != "matched":
+            raise SystemExit(
+                "--apply-fragments refuses %s/%s: quote_fidelity=%r "
+                "(fragments derive only from G3-matched quotes)"
+                % (record_id, pin_id, pin.get("quote_fidelity")))
+        targets.append((record_id, pin_id, fragment, row.get("date")))
+
+    # Phase 2 — per-record write + journal, idempotent. Group by record so a file
+    # carrying several fragment pins is written once.
+    applied = []
+    updated = []
+    noop = []
+    by_record = {}
+    for record_id, pin_id, fragment, date in targets:
+        by_record.setdefault(record_id, []).append((pin_id, fragment, date))
+    for record_id in sorted(by_record):
+        record = load_case_record(paths, record_id)
+        dirty = False
+        for pin_id, fragment, date in by_record[record_id]:
+            pin = _find_pinpoint(record, pin_id)
+            stamp = date or iso_now()
+            prev = pin.get("fragment")
+            if prev == fragment and pin.get("fragment_validated_at"):
+                _journal_apply_fragment(journal, record_id=record_id, pin_id=pin_id,
+                                        status="already-applied", fragment=fragment)
+                noop.append((record_id, pin_id))
+                continue
+            pin["fragment"] = fragment
+            pin["fragment_validated_at"] = stamp
+            dirty = True
+            if prev and prev != fragment:
+                _journal_apply_fragment(journal, record_id=record_id, pin_id=pin_id,
+                                        status="updated", fragment=fragment, previous=prev,
+                                        fragment_validated_at=stamp)
+                updated.append((record_id, pin_id))
+            else:
+                _journal_apply_fragment(journal, record_id=record_id, pin_id=pin_id,
+                                        status="applied", fragment=fragment,
+                                        fragment_validated_at=stamp)
+                applied.append((record_id, pin_id))
+        if dirty:
+            write_case_record(paths, record)
+    return {"applied": applied, "updated": updated, "noop": noop,
+            "skipped_unvalidatable": skipped_unvalidatable,
+            "records_written": len({r for r, _ in applied} | {r for r, _ in updated})}
+
+
+# ---------------------------------------------------------------------------
 # R8 addendum #2 — coa/state (+ district) court_level repair. Sibling of
 # --repair-identity-from-cache for the 54 verified_identity residue rows whose
 # court_level is None/"other" (they project authority_weight "Historical" — a
@@ -6706,6 +6834,7 @@ def run_ingest(args):
             or args.repair_coa_state_from_cache
             or args.rekey_lead_opinion_from_cache
             or args.rekey_cluster_panel
+            or args.apply_fragments
         ):
             raise SystemExit("--add-candidates cannot be combined with other action/filter options")
         journal, journal_fallback = writable_repair_journal(paths, journal)
@@ -6732,6 +6861,25 @@ def run_ingest(args):
         raise SystemExit(
             "--rekey-cluster-target/--rekey-cluster-expect-cite/--rekey-cluster-evidence "
             "require --rekey-cluster-panel")
+    if args.apply_fragments:
+        if (
+            args.apply_web_keys or args.apply_alias_folds or args.enrich_citations
+            or args.apply_web_cites or args.repair_migration_refs or args.repair_identity_from_cache
+            or args.repair_coa_state_from_cache or args.rekey_lead_opinion_from_cache
+            or args.rekey_cluster_panel or args.repair_failclosed_treatment or args.flip_verified
+            or args.elevate_off_cl or args.adjudication or args.readjudicate or args.readjudicate_file
+            or args.rerun_lane or args.records or args.smoke or args.add_candidates
+        ):
+            raise SystemExit("--apply-fragments cannot be combined with other action/filter options")
+        # Pure file op over s8-fragments.jsonl + the lake: no CL client is
+        # constructed, so no token is read and no live call is possible.
+        result = apply_fragments(paths, manifest, journal, args.apply_fragments)
+        print("journal: %s" % journal_path)
+        print("fragments applied: %d | updated: %d | already-applied: %d | skipped-unvalidatable: %d | records written: %d"
+              % (len(result["applied"]), len(result["updated"]), len(result["noop"]),
+                 result["skipped_unvalidatable"], result["records_written"]))
+        print("content wiring is scripts/s8/link_pincites.py (pinpoints[].fragment is lake-only data)")
+        return
     if args.apply_web_cites:
         if (
             args.apply_web_keys or args.apply_alias_folds or args.enrich_citations
@@ -11699,6 +11847,123 @@ def self_test_rekey_cluster_panel():
         shutil.rmtree(tmp)
 
 
+def self_test_apply_fragments():
+    tmp = tempfile.mkdtemp(prefix="s2-apply-fragments-selftest-")
+    try:
+        paths = LakePaths(tmp, os.path.join(tmp, "pool"))
+        paths.ensure()
+
+        def rec(rid, pins):
+            return {"schema_version": "s2.v1", "record_id": rid, "status": "verified",
+                    "pinpoints": pins,
+                    "provenance": {"date_created": iso_now(), "date_modified": iso_now()}}
+
+        def pin(pid, fidelity="matched"):
+            return {"id": pid, "page": None, "quote": "q " + pid,
+                    "quote_fidelity": fidelity, "pinpoint_status": "star-verified"}
+
+        write_case_record(paths, rec("case-a", [pin("pin-1"), pin("pin-2")]))
+        write_case_record(paths, rec("case-b", [pin("pin-9", fidelity="mismatch")]))
+        write_case_record(paths, rec("case-c", [pin("pin-3")]))
+
+        manifest_data = {"schema_version": "s2.manifest.v1", "generated_at": iso_now(), "records": [
+            {"record_id": "case-a", "record_id_status": "resolved", "source": "S6-SEED",
+             "caption": "case-a", "status": "verified", "lane_status": default_lane_status(), "counts": {}},
+            {"record_id": "case-b", "record_id_status": "resolved", "source": "S6-SEED",
+             "caption": "case-b", "status": "verified", "lane_status": default_lane_status(), "counts": {}},
+            {"record_id": "case-c", "record_id_status": "resolved", "source": "S6-SEED",
+             "caption": "case-c", "status": "verified", "lane_status": default_lane_status(), "counts": {}},
+        ]}
+        write_json(paths.manifest, manifest_data)
+        manifest = ManifestStore(paths.manifest)
+        journal = Journal(os.path.join(tmp, "journal.jsonl"), "selftest")
+
+        fpath = os.path.join(tmp, "frags.jsonl")
+
+        def frows(rows):
+            with open(fpath, "w", encoding="utf-8") as fh:
+                for r in rows:
+                    fh.write(json.dumps(r) + "\n")
+
+        # happy path: two validated rows land on case-a; the unvalidatable case-c
+        # row is skipped (plain-external downstream), leaving that pin untouched.
+        frows([
+            {"record_id": "case-a", "pin_id": "pin-1", "opinion_id": 1, "fragment": "#:~:text=alpha",
+             "validated": True, "matches": 1, "date": "2026-07-09T00:00:00Z"},
+            {"record_id": "case-a", "pin_id": "pin-2", "opinion_id": 1, "fragment": "#:~:text=beta",
+             "validated": True, "matches": 1, "date": "2026-07-09T00:00:00Z"},
+            {"record_id": "case-c", "pin_id": "pin-3", "opinion_id": 3, "fragment": None,
+             "validated": False, "matches": 0, "date": "2026-07-09T00:00:00Z", "reason": "no_match"},
+        ])
+        res = apply_fragments(paths, manifest, journal, fpath)
+        assert set(res["applied"]) == {("case-a", "pin-1"), ("case-a", "pin-2")}, res
+        assert res["skipped_unvalidatable"] == 1 and res["records_written"] == 1, res
+        a = load_case_record(paths, "case-a")
+        assert _find_pinpoint(a, "pin-1")["fragment"] == "#:~:text=alpha"
+        assert _find_pinpoint(a, "pin-1")["fragment_validated_at"] == "2026-07-09T00:00:00Z"
+        assert "fragment" not in _find_pinpoint(load_case_record(paths, "case-c"), "pin-3")
+
+        # idempotent: a second identical run is a clean no-op
+        again = apply_fragments(paths, manifest, journal, fpath)
+        assert not again["applied"] and set(again["noop"]) == {("case-a", "pin-1"), ("case-a", "pin-2")}, again
+
+        # a changed fragment string re-writes as 'updated'
+        frows([{"record_id": "case-a", "pin_id": "pin-1", "opinion_id": 1, "fragment": "#:~:text=gamma",
+                "validated": True, "matches": 1, "date": "2026-07-09T01:00:00Z"}])
+        up = apply_fragments(paths, manifest, journal, fpath)
+        assert up["updated"] == [("case-a", "pin-1")], up
+        assert _find_pinpoint(load_case_record(paths, "case-a"), "pin-1")["fragment"] == "#:~:text=gamma"
+
+        # fail-closed: a fragment aimed at a non-matched pin aborts, no write
+        frows([{"record_id": "case-b", "pin_id": "pin-9", "opinion_id": 9, "fragment": "#:~:text=x",
+                "validated": True, "matches": 1, "date": "2026-07-09T00:00:00Z"}])
+        try:
+            apply_fragments(paths, manifest, journal, fpath)
+        except SystemExit:
+            pass
+        else:
+            raise AssertionError("apply_fragments wrote onto a non-matched pin")
+        assert "fragment" not in _find_pinpoint(load_case_record(paths, "case-b"), "pin-9")
+
+        # fail-closed: a missing pin id aborts
+        frows([{"record_id": "case-a", "pin_id": "pin-404", "opinion_id": 1, "fragment": "#:~:text=x",
+                "validated": True, "matches": 1, "date": "2026-07-09T00:00:00Z"}])
+        try:
+            apply_fragments(paths, manifest, journal, fpath)
+        except SystemExit:
+            pass
+        else:
+            raise AssertionError("apply_fragments accepted a missing pin id")
+
+        # fail-closed: a missing record aborts
+        frows([{"record_id": "case-z", "pin_id": "pin-1", "opinion_id": 1, "fragment": "#:~:text=x",
+                "validated": True, "matches": 1, "date": "2026-07-09T00:00:00Z"}])
+        try:
+            apply_fragments(paths, manifest, journal, fpath)
+        except SystemExit:
+            pass
+        else:
+            raise AssertionError("apply_fragments accepted a missing record")
+
+        # fail-closed: a fragment that is not a #:~:text= string aborts (no arbitrary
+        # string reaches the lake through this surface)
+        frows([{"record_id": "case-a", "pin_id": "pin-2", "opinion_id": 1, "fragment": "javascript:alert(1)",
+                "validated": True, "matches": 1, "date": "2026-07-09T00:00:00Z"}])
+        try:
+            apply_fragments(paths, manifest, journal, fpath)
+        except SystemExit:
+            pass
+        else:
+            raise AssertionError("apply_fragments accepted a non-text-fragment string")
+
+        # every write is journaled with the S8 lane+model tag
+        jr = [r for r in journal.rows()
+              if r.get("step") == APPLY_FRAGMENTS_STEP and r.get("status") == "applied"]
+        assert jr and jr[0]["lane"] == APPLY_FRAGMENTS_LANE and jr[0]["model"] == APPLY_FRAGMENTS_MODEL
+    finally:
+        shutil.rmtree(tmp)
+
+
 def run_self_tests():
     self_test_record_ids()
     self_test_precedence()
@@ -11740,6 +12005,7 @@ def run_self_tests():
     self_test_repair_coa_state_from_cache()
     self_test_rekey_lead_opinion_from_cache()
     self_test_rekey_cluster_panel()
+    self_test_apply_fragments()
     print("self-test passed")
 
 
@@ -11772,6 +12038,7 @@ def parse_args(argv):
     parser.add_argument("--rekey-cluster-target", help="target cluster id for --rekey-cluster-panel")
     parser.add_argument("--rekey-cluster-expect-cite", help="official cite that MUST appear in the cached target cluster's citations for --rekey-cluster-panel (fail-closed trap guard)")
     parser.add_argument("--rekey-cluster-evidence", help="panel evidence pointer recorded on the --rekey-cluster-panel journal line (e.g. 'batch-11 catch #5; phase-a cache verification')")
+    parser.add_argument("--apply-fragments", help="offline (S8 R5/A14): write validated external text-fragments from an s8-fragments.jsonl onto matching pinpoints[].fragment; fail-closed (record/pin must exist, pin quote_fidelity must be matched), journaled, idempotent; no CL client")
     parser.add_argument("--elevate-off-cl", help="elevate a terminal not_found record using an orchestrator-prepared off-CL adjudication file")
     parser.add_argument("--adjudication", help="JSON adjudication file required by --elevate-off-cl")
     parser.add_argument("--token-path", default=TOKEN_PATH, help="CourtListener token path")
