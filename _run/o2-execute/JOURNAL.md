@@ -1671,3 +1671,16 @@ a mechanical generator+regen fix in P3, clearing the LINT-16 621-HIGH class); (4
 (TEACH-02b pipeline-vocab) = missing script, S9 R8 build item, next lane batch.
 NEXT: commit P0 → P1 fan-out (panel + Thread-N; manifests; Claude serial identity slice +
 COH-27 marker polls).
+
+**⚠ LANE OUTAGE — pause #8 elevation (2026-07-09).** The claude.ai CourtListener MCP token is
+HARD-EXPIRED (first call 3× unauthorized + explicit "requires re-authorization (token expired)").
+Interactive re-auth = user-only; per the register the CL-dependent workflow HALTS and elevates;
+independent work continues. **Halted:** the COH-17 identity slice — checkpointed resumable at
+index 0 (`_run/s9/identity-slice-sample.json`, 74 deterministic rows incl the 7-record risk set;
+`identity-slice.jsonl` header STOPPED_AUTH_FAILURE). The COH-27 marker poll COMPLETED before
+expiry (12/12 UNCHANGED, 18 calls; caveat: CL cannot evidence cert denials — P4 web sweep
+supplements). **Pre-flight finding (offline, no CL needed) → R4 machine:**
+`illinois-v-fisher--5141053.json` carries identity.case_name "In re Mirsky" (DC bar matter) under
+input "Illinois v. Fisher" — reason_code caption_mismatch_accepted_by_docket_number, status
+verified_identity: a builder acceptance of the WRONG CASE on a docket-number coincidence. Push
+notification fired. Continuing: P1-H harness+pilot (Codex lanes healthy), all cache-fed work.
