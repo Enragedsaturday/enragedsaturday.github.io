@@ -48,7 +48,7 @@ The Supreme Court supplies the probable-cause framework; the circuits apply the 
 | Case | Holding | Opinion |
 |---|---|---|
 | *[[Nieves v. Bartlett]]*, 587 U.S. 391 (2019) | **Anchor.** The presence of **probable cause generally defeats** a First Amendment retaliatory-arrest claim; a **narrow exception** applies where the plaintiff shows he was arrested when otherwise similarly situated non-speakers were not. | [opinion](https://www.courtlistener.com/opinion/9231236/nieves-v-bartlett/) |
-| *[[Gonzalez v. Trevino]]*, 602 U.S. 653 (2024) | **Refinement.** Clarified the *[[Nieves v. Bartlett|Nieves]]* exception in the plaintiff's favor: no need to produce a perfectly identical comparator, and the exception is not limited to split-second arrests. | [opinion](https://www.courtlistener.com/opinion/10600071/gonzalez-v-trevino/) |
+| *[[Gonzalez v. Trevino]]*, 602 U.S. 653 (2024) | **Refinement.** Clarified the *[[Nieves v. Bartlett\|Nieves]]* exception in the plaintiff's favor: no need to produce a perfectly identical comparator, and the exception is not limited to split-second arrests. | [opinion](https://www.courtlistener.com/opinion/10600071/gonzalez-v-trevino/) |
 | *[[Lozman v. City of Riviera Beach]]*, 585 U.S. 87 (2018) | **Carve-out.** Where a retaliatory arrest is made pursuant to an **official municipal policy** of retaliation, probable cause does not automatically defeat the claim. | [opinion](https://www.courtlistener.com/opinion/4508137/lozman-v-riviera-beach/) |
 
 ## Sources

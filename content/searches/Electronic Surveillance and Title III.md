@@ -47,7 +47,7 @@ related:
 - **Thinking a warrant alone suffices for a wiretap.** Title III adds necessity, minimization, high-level authorization, notice, and a statutory suppression remedy beyond the ordinary warrant.
 - **Citing *[[Olmstead v. United States|Olmstead]]* as good law.** Its trespass-only holding was overruled by *[[Katz v. United States|Katz]]*; content interception is a search.
 - **Assuming §702 collection is freely usable and reviewable.** Incidental U.S.-person collection is contested, and parallel construction often keeps the true source out of the record.
-- **Conflating contents with metadata.** Title III governs contents; dialing, addressing, and location metadata run through *Smith*/*[[Carpenter v. United States|Carpenter]]*, not this page.
+- **Conflating contents with metadata.** Title III governs contents; dialing, addressing, and location metadata run through *[[Smith v. Maryland|Smith]]*/*[[Carpenter v. United States|Carpenter]]*, not this page.
 
 ## Lower-court developments
 
@@ -61,11 +61,11 @@ The synthesis: content interception is a search (*[[Katz v. United States|Katz]]
 | Case | Holding | Opinion |
 |---|---|---|
 | *[[Berger v. New York]]*, 388 U.S. 41 (1967) | **Anchor.** A permissive eavesdropping statute is unconstitutional for lack of [[Particularity\|particularity]] and safeguards; sets the Fourth Amendment standards for electronic-surveillance warrants. | [opinion](https://www.courtlistener.com/opinion/107483/berger-v-new-york/) |
-| *[[Katz v. United States]]*, 389 U.S. 347 (1967) | Electronic eavesdropping that invades a justified expectation of privacy is a search even with no trespass; overruled *[[Olmstead v. United States|Olmstead]]*. *(Primary home [[Reasonable Expectation of Privacy]].)* | [opinion](https://www.courtlistener.com/opinion/107564/katz-v-united-states/) |
+| *[[Katz v. United States]]*, 389 U.S. 347 (1967) | Electronic eavesdropping that invades a justified expectation of privacy is a search even with no trespass; overruled *[[Olmstead v. United States\|Olmstead]]*. *(Primary home [[Reasonable Expectation of Privacy]].)* | [opinion](https://www.courtlistener.com/opinion/107564/katz-v-united-states/) |
 | *[[United States v. United States District Court (Keith)]]*, 407 U.S. 297 (1972) | Domestic-security electronic surveillance requires prior judicial approval; the President's national-security power does not exempt it. Foreign intelligence reserved. | [opinion](https://www.courtlistener.com/opinion/108581/united-states-v-united-states-district-court-for-the-eastern-district-of/) |
 | *[[United States v. Giordano]]*, 416 U.S. 505 (1974) | Only the Attorney General or a specially designated Assistant Attorney General may authorize a Title III application; an authorization by the wrong official requires suppression. | [opinion](https://www.courtlistener.com/opinion/109020/united-states-v-giordano/) |
 | *[[Scott v. United States]]*, 436 U.S. 128 (1978) | Title III minimization is judged by the objective reasonableness of the interceptions, not the agents' subjective intent. | [opinion](https://www.courtlistener.com/opinion/109860/scott-v-united-states/) |
-| *[[Olmstead v. United States]]*, 277 U.S. 438 (1928) | **Overruled.** Wiretapping without physical entry was no search under a trespass-only theory; superseded by *[[Katz v. United States|Katz]]*. *(Primary home [[Trespass]].)* | [opinion](https://www.courtlistener.com/opinion/101320/olmstead-v-united-states/) |
+| *[[Olmstead v. United States]]*, 277 U.S. 438 (1928) | **Overruled.** Wiretapping without physical entry was no search under a trespass-only theory; superseded by *[[Katz v. United States\|Katz]]*. *(Primary home [[Trespass]].)* | [opinion](https://www.courtlistener.com/opinion/101320/olmstead-v-united-states/) |
 
 <!-- Owed home_rows discharged here (S6 ledger → Electronic Surveillance and Title III): FBI v. Fazaga (LCD), Scott v. United States (Key), United States v. Donovan (LCD), United States v. Giordano (Key), United States v. United States District Court (Keith) (Key). Berger/Olmstead primary moves executed via case-page homes[]. GAP-03c §702/parallel-construction authored as the signed brief section; one-line Third-Party cross-ref present. Statutory regime (18 U.S.C. §§ 2510–2522; FISA; §702/FISA Amendments Act 2008) cited to the U.S. Code, not to a party-v-party caption. -->
 

@@ -53,7 +53,7 @@ The 48-hour framework is settled at the Supreme Court; the recurring questions b
 | Case | Holding | Opinion |
 |---|---|---|
 | *[[Gerstein v. Pugh]]*, 420 U.S. 103 (1975) | **Anchor.** A person arrested without a warrant is entitled to a prompt judicial probable-cause determination before extended pretrial detention; the determination need not be an adversary hearing. | [opinion](https://www.courtlistener.com/opinion/109186/gerstein-v-pugh/) |
-| *[[County of Riverside v. McLaughlin]]*, 500 U.S. 44 (1991) | A probable-cause determination within 48 hours of a warrantless arrest is presumptively prompt under *[[Gerstein v. Pugh|Gerstein]]*; past 48 hours the government must show a bona fide emergency, and intervening weekends do not qualify. | [opinion](https://www.courtlistener.com/opinion/112585/county-of-riverside-v-mclaughlin/) |
+| *[[County of Riverside v. McLaughlin]]*, 500 U.S. 44 (1991) | A probable-cause determination within 48 hours of a warrantless arrest is presumptively prompt under *[[Gerstein v. Pugh\|Gerstein]]*; past 48 hours the government must show a bona fide emergency, and intervening weekends do not qualify. | [opinion](https://www.courtlistener.com/opinion/112585/county-of-riverside-v-mclaughlin/) |
 
 ## Related cases across doctrines
 
@@ -62,7 +62,7 @@ These cases are treated in full elsewhere but frame the prompt-determination rul
 | Case | Relevance here | Primary home | Opinion |
 |---|---|---|---|
 | *[[United States v. Watson]]*, 423 U.S. 411 (1976) | ***Front-end rule.*** A warrantless public arrest on probable cause is valid, so the neutral check moves to the prompt post-arrest determination. | [[Arrest and Arrest Warrants]] | [opinion](https://www.courtlistener.com/opinion/109352/united-states-v-watson/) |
-| *[[Payton v. New York]]*, 445 U.S. 573 (1980) | ***Distinct rule.*** *[[Payton v. New York|Payton]]* governs warrant authority to **enter a home** to arrest, not the post-arrest detention timing fixed here. | [[Arrest in the Home]] | [opinion](https://www.courtlistener.com/opinion/110235/payton-v-new-york/) |
+| *[[Payton v. New York]]*, 445 U.S. 573 (1980) | ***Distinct rule.*** *[[Payton v. New York\|Payton]]* governs warrant authority to **enter a home** to arrest, not the post-arrest detention timing fixed here. | [[Arrest in the Home]] | [opinion](https://www.courtlistener.com/opinion/110235/payton-v-new-york/) |
 
 ## Visual
 

@@ -65,7 +65,7 @@ These are treated in full on their own pages but bear directly on the threshold 
 | Case | Relevance here | Primary home | Opinion |
 |---|---|---|---|
 | *[[United States v. Jacobsen]]*, 466 U.S. 109 (1984) | ***Definition.*** Source of the controlling formula, a seizure of property is meaningful interference with an individual's possessory interests; a field test that destroyed powder made a temporary deprivation permanent. | [[Private and Foreign Searches]] | [opinion](https://www.courtlistener.com/opinion/111143/united-states-v-jacobsen/) |
-| *[[United States v. Place]]*, 462 U.S. 696 (1983) | ***Duration.*** A 90-minute investigative detention of luggage on less than probable cause exceeded the permissible limits of a *[[Terry v. Ohio|Terry]]* stop; length alone defeated reasonableness. | [[Terry Stops and Reasonable Suspicion]] | [opinion](https://www.courtlistener.com/opinion/110979/united-states-v-place/) |
+| *[[United States v. Place]]*, 462 U.S. 696 (1983) | ***Duration.*** A 90-minute investigative detention of luggage on less than probable cause exceeded the permissible limits of a *[[Terry v. Ohio\|Terry]]* stop; length alone defeated reasonableness. | [[Terry Stops and Reasonable Suspicion]] | [opinion](https://www.courtlistener.com/opinion/110979/united-states-v-place/) |
 | *[[United States v. Karo]]*, 468 U.S. 705 (1984) | ***No interference, no seizure.*** Transfer of a beeper-laden can conveyed no then-existing possessory interest and was not a seizure; the later monitoring inside a home was the search. | [[Real-Time Tracking]] | [opinion](https://www.courtlistener.com/opinion/111257/united-states-v-karo/) |
 
 ## Visual

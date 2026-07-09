@@ -61,10 +61,10 @@ These cases are treated in full elsewhere but bear on the *[[Franks v. Delaware|
 
 | Case | Relevance here | Primary home | Opinion |
 |---|---|---|---|
-| *[[United States v. Leon]]*, 468 U.S. 897 (1984) | ***Good-faith floor.*** A *[[Franks v. Delaware|Franks]]* falsehood is the first of *[[United States v. Leon|Leon]]*'s own exceptions: reliance on a warrant the affiant knew or recklessly should have known was false is not objectively reasonable. | [[The Exclusionary Rule]] | [opinion](https://www.courtlistener.com/opinion/111262/united-states-v-leon/) |
+| *[[United States v. Leon]]*, 468 U.S. 897 (1984) | ***Good-faith floor.*** A *[[Franks v. Delaware\|Franks]]* falsehood is the first of *[[United States v. Leon\|Leon]]*'s own exceptions: reliance on a warrant the affiant knew or recklessly should have known was false is not objectively reasonable. | [[The Exclusionary Rule]] | [opinion](https://www.courtlistener.com/opinion/111262/united-states-v-leon/) |
 | *[[Massachusetts v. Sheppard]]*, 468 U.S. 981 (1984) | ***Good-faith companion.*** By contrast, an officer misled by a judge's assurance that a mis-worded warrant was valid may still be in good faith; the affiant's honesty is what separates the cases. | [[The Exclusionary Rule]] | [opinion](https://www.courtlistener.com/opinion/111263/massachusetts-v-sheppard/) |
 | *[[Malley v. Briggs]]*, 475 U.S. 335 (1986) | ***Civil mirror.*** An officer who applies on an affidavit no reasonably competent officer would present loses [[Qualified Immunity\|qualified immunity]], the outer bound of reasonable reliance. | [[Section 1983 Liability and Qualified Immunity]] | [opinion](https://www.courtlistener.com/opinion/111611/malley-v-briggs/) |
-| *[[Messerschmidt v. Millender]]*, 565 U.S. 535 (2012) | ***High threshold.*** Reasonable reliance on a magistrate's approval of even an overbroad warrant usually keeps [[Qualified Immunity\|qualified immunity]]; *[[Malley v. Briggs|Malley]]* liability is the exception. | [[Section 1983 Liability and Qualified Immunity]] | [opinion](https://www.courtlistener.com/opinion/623242/messerschmidt-v-millender/) |
+| *[[Messerschmidt v. Millender]]*, 565 U.S. 535 (2012) | ***High threshold.*** Reasonable reliance on a magistrate's approval of even an overbroad warrant usually keeps [[Qualified Immunity\|qualified immunity]]; *[[Malley v. Briggs\|Malley]]* liability is the exception. | [[Section 1983 Liability and Qualified Immunity]] | [opinion](https://www.courtlistener.com/opinion/623242/messerschmidt-v-millender/) |
 
 ## Visual
 

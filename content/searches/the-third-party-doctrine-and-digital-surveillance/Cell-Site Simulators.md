@@ -43,7 +43,7 @@ related:
 4. **Flag the bystander sweep.** Note that the device collected data from other phones; the treatment of that incidental collection is unsettled.
 
 **Common pitfalls.**
-- **Treating cell-site-simulator use as ordinary third-party CSLI.** It is direct government interception in the field, not a request for a carrier's business records; *Smith*/*[[United States v. Miller|Miller]]* do not govern it.
+- **Treating cell-site-simulator use as ordinary third-party CSLI.** It is direct government interception in the field, not a request for a carrier's business records; *[[Smith v. Maryland|Smith]]*/*[[United States v. Miller|Miller]]* do not govern it.
 - **Assuming there is a Supreme Court rule.** There is none; the rule is built from *[[United States v. Karo|Karo]]*, *[[Kyllo v. United States|Kyllo]]*, and *[[Carpenter v. United States|Carpenter]]* plus policy and lower-court law.
 - **Overlooking the interior move.** The strongest warrant argument is *[[United States v. Karo|Karo]]*'s: the device revealed the phone's location inside a protected space.
 

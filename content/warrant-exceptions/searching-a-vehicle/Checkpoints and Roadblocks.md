@@ -62,7 +62,7 @@ The Supreme Court framework (*[[Michigan Dept. of State Police v. Sitz|Sitz]]* /
 |---|---|---|
 | *[[Michigan Dept. of State Police v. Sitz]]*, 496 U.S. 444 (1990) | **Valid pole.** A suspicionless DUI sobriety checkpoint is reasonable; the State's interest in combating drunk driving outweighs the brief, minimal intrusion. | [opinion](https://www.courtlistener.com/opinion/112459/michigan-department-of-state-police-v-sitz/) |
 | *[[City of Indianapolis v. Edmond]]*, 531 U.S. 32 (2000) | **Purpose gate.** A checkpoint whose primary purpose is ordinary crime control (drug interdiction) is unconstitutional, however brief or orderly. | [opinion](https://www.courtlistener.com/opinion/118391/city-of-indianapolis-v-edmond/) |
-| *[[Illinois v. Lidster]]*, 540 U.S. 419 (2004) | **Information-seeking.** A checkpoint that stops motorists to ask for help about a crime committed by someone else is valid under the *[[Brown v. Texas|Brown]]* balance. | [opinion](https://www.courtlistener.com/opinion/131154/illinois-v-lidster/) |
+| *[[Illinois v. Lidster]]*, 540 U.S. 419 (2004) | **Information-seeking.** A checkpoint that stops motorists to ask for help about a crime committed by someone else is valid under the *[[Brown v. Texas\|Brown]]* balance. | [opinion](https://www.courtlistener.com/opinion/131154/illinois-v-lidster/) |
 
 ## Related cases across doctrines
 

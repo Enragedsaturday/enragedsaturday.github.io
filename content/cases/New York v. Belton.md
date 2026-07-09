@@ -81,8 +81,8 @@ The search of the jacket was a lawful [[Search Incident to Arrest|search inciden
 
 | Point of law | Status | Controlling authority |
 |---|---|---|
-| Vehicle search incident to a recent occupant's arrest | **Superseded** | *[[Arizona v. Gant]]*, 556 U.S. 332 (2009) — the automatic passenger-compartment rule is replaced by *[[Arizona v. Gant|Gant]]*'s two-justification test |
-| Containers within the passenger compartment (within a lawful search) | **Good law** | *Belton*'s container rule survives inside *[[Arizona v. Gant|Gant]]*'s narrowed framework |
+| Vehicle search incident to a recent occupant's arrest | **Superseded** | *[[Arizona v. Gant]]*, 556 U.S. 332 (2009) — the automatic passenger-compartment rule is replaced by *[[Arizona v. Gant\|Gant]]*'s two-justification test |
+| Containers within the passenger compartment (within a lawful search) | **Good law** | *Belton*'s container rule survives inside *[[Arizona v. Gant\|Gant]]*'s narrowed framework |
 
 *[[Arizona v. Gant|Gant]]* rejected the broad reading of *Belton* that authorized an automatic passenger-compartment search whenever an occupant was arrested. After *[[Arizona v. Gant|Gant]]*, a vehicle [[Search Incident to Arrest|search incident to arrest]] is permissible only if the arrestee is within reaching distance of the passenger compartment at the time of the search, or it is reasonable to believe the vehicle contains evidence of the offense of arrest. Officers' reasonable pre-*[[Arizona v. Gant|Gant]]* reliance on *Belton* was addressed in [[Davis v. United States]].
 

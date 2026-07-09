@@ -152,6 +152,10 @@ class Index:
 
         self.link_norm = {_norm(k): v for k, v in self.link.items()}
         self.plain_norm = {_norm(k): (v, k) for k, v in self.plain.items()}
+        # every real case-page stem (incl. the year-sibling bare/ambiguous ones
+        # scrubbed from `link` for AUTO-detection but valid ADJUDICATED targets)
+        self.page_stems = {e["page_stem"] for e in doc.get("entries", {}).values()
+                           if e.get("page_stem")}
 
         # reverse: caption/stem -> set(nshort)  (for rung-1 binding)
         self.stem_shorts = {}
@@ -470,6 +474,153 @@ def apply_edits(text, edits):
     return text
 
 
+# --------------------------------------------------------------------------
+# Adjudicated-resolution application (--apply-resolutions)
+# --------------------------------------------------------------------------
+
+def _reanchor(text, masked, mt, line, window, claimed):
+    """Nearest LIVE (non-zone, non-link) occurrence of `mt` to `line`.
+
+    Offsets drift when sibling lanes edit (pincites/embeds); we re-anchor by
+    matched_text + recorded line, never by stored offset. Returns (start,end)
+    in `text` coords, or None if no live occurrence within `window` lines.
+    Occurrences already `claimed` (by a sibling resolution in the same file)
+    are skipped so two rows never wrap the same span.
+    """
+    rx = re.compile(r"(?<![A-Za-z0-9])" + re.escape(mt) + r"(?![A-Za-z0-9])")
+    best = None
+    for m in rx.finditer(masked):     # masked blanks zones+links -> live only
+        s, e = m.start(), m.end()
+        if (s, e) in claimed:
+            continue
+        d = abs(_line_of(text, s) - line)
+        if d <= window and (best is None or d < best[0]):
+            best = (d, s, e)
+    return (best[1], best[2]) if best else None
+
+
+def _find_literal(text, needle, line, window, claimed):
+    """Nearest UNCLAIMED literal occurrence of `needle` to `line` (text coords)."""
+    best = None
+    i = text.find(needle)
+    while i != -1:
+        span = (i, i + len(needle))
+        if span not in claimed:
+            d = abs(_line_of(text, i) - line)
+            if d <= window and (best is None or d < best[0]):
+                best = (d, span)
+        i = text.find(needle, i + 1)
+    return best[1] if best else None
+
+
+def _wrap_for(mt, stem):
+    if " v. " in mt or mt == stem:
+        return "[[%s]]" % mt if mt == stem else "[[%s|%s]]" % (stem, mt)
+    return "[[%s|%s]]" % (stem, mt)
+
+
+def apply_resolutions(res_path, idx, page_stems, write=False,
+                      ledger_out=LEDGER_OUT, window=60):
+    from collections import defaultdict
+    R = [json.loads(l) for l in open(res_path, encoding="utf-8") if l.strip()]
+    by_file = defaultdict(list)
+    for r in R:
+        by_file[r["file"]].append(r)
+
+    adj_rows, samples = [], []
+    applied, plain_done, already, stale, bad_target = [], [], [], [], []
+
+    def mkrow(fpath, ln, mt, stem, action, rationale):
+        adj_rows.append({
+            "file": fpath, "line": ln, "matched_text": mt,
+            "caption_key": stem,
+            "resolution": {"target": stem, "method": "adjudicated",
+                           "rationale": rationale},
+            "action": action, "lane": LANE, "model": MODEL})
+
+    for fpath, rows in sorted(by_file.items()):
+        abspath = fpath if os.path.isabs(fpath) else os.path.join(ROOT, fpath)
+        text = open(abspath, encoding="utf-8").read()
+        stem_self = _page_stem_for(abspath)
+        zl = zonemod.compute_zones(text, page_stem=stem_self)
+        mz = zonemod.mask(text, zl)
+        link_spans = [(m.start(), m.end()) for m in _LINK_SPAN_RE.finditer(mz)]
+        masked = _mask_spans(mz, link_spans)
+
+        edits, claimed = [], set()
+        for r in sorted(rows, key=lambda x: x["line"]):
+            mt = r["matched_text"]
+            tgt = r["resolution"]["target"]
+            line = r["line"]
+            rationale = r["resolution"].get("rationale", "")
+
+            if tgt == "plain":
+                loc = _reanchor(text, masked, mt, line, window, claimed)
+                ln = _line_of(text, loc[0]) if loc else line
+                mkrow(fpath, ln, mt, None, "plain:adjudicated", rationale)
+                plain_done.append(r)
+                continue
+
+            # link target — validate it is a real case page
+            stem = tgt if tgt in page_stems else (
+                idx.link.get(tgt) or idx.link_norm.get(_norm(tgt)))
+            if not stem or stem not in page_stems:
+                bad_target.append((fpath, line, mt, tgt))
+                continue
+            repl = _wrap_for(mt, stem)
+
+            # 1) idempotent: the EXACT wrapped form already sits near the line
+            #    (re-run, or a prior sibling resolution). Claim its span so a
+            #    twin bare occurrence is never re-wrapped.
+            already_span = _find_literal(text, repl, line, window, claimed)
+            if already_span is not None:
+                claimed.add(already_span)
+                mkrow(fpath, _line_of(text, already_span[0]), mt, stem,
+                      "linked", rationale)
+                already.append(r)
+                continue
+
+            # 2) wrap the nearest live bare occurrence
+            loc = _reanchor(text, masked, mt, line, window, claimed)
+            if loc is None:
+                stale.append((fpath, line, mt, tgt))
+                continue
+            s, e = loc
+            claimed.add((s, e))
+            edits.append((s, e, repl))
+            ln = _line_of(text, s)
+            mkrow(fpath, ln, mt, stem, "linked", rationale)
+            applied.append(r)
+            if len(samples) < 12:
+                samples.append({"file": fpath, "line": ln, "matched": mt,
+                                "before": text[max(0, s - 32):e + 18],
+                                "replacement": repl})
+
+        if edits and write:
+            with open(abspath, "w", encoding="utf-8") as fh:
+                fh.write(apply_edits(text, edits))
+
+    # rewrite the ledger: keep non-adjudicated base rows, replace adjudicated
+    base = []
+    if ledger_out and os.path.exists(ledger_out):
+        for l in open(ledger_out, encoding="utf-8"):
+            if not l.strip():
+                continue
+            row = json.loads(l)
+            if row.get("resolution", {}).get("method") != "adjudicated":
+                base.append(row)
+    out_rows = base + adj_rows
+    if ledger_out and write:
+        with open(ledger_out, "w", encoding="utf-8") as fh:
+            for row in out_rows:
+                fh.write(json.dumps(row, ensure_ascii=False) + "\n")
+
+    return {"applied": applied, "plain": plain_done, "already": already,
+            "stale": stale, "bad_target": bad_target, "adj_rows": adj_rows,
+            "samples": samples, "base_rows": len(base),
+            "ledger_total": len(out_rows)}
+
+
 def _excluded(path):
     return os.path.relpath(path, ROOT) in EXCLUDE_RELPATHS
 
@@ -700,6 +851,21 @@ def _print_report(agg, queue):
     print("adjudication-queue rows: %d" % len(queue))
 
 
+def _print_resolution_report(res):
+    print("== S8 apply-resolutions report ==")
+    print("applied (link edits): %d | already-linked (idempotent): %d"
+          % (len(res["applied"]), len(res["already"])))
+    print("plain:adjudicated (no edit): %d" % len(res["plain"]))
+    print("stale-rows (matched_text gone near line): %d" % len(res["stale"]))
+    print("bad-target (not a case page): %d" % len(res["bad_target"]))
+    for f, l, mt, tgt in res["stale"]:
+        print("  STALE  %s L%d %r -> %s" % (f.split("/")[-1], l, mt, tgt))
+    for f, l, mt, tgt in res["bad_target"]:
+        print("  BADTGT %s L%d %r -> %s" % (f.split("/")[-1], l, mt, tgt))
+    print("ledger: base(non-adjudicated) %d + adjudicated %d = %d rows"
+          % (res["base_rows"], len(res["adj_rows"]), res["ledger_total"]))
+
+
 def main(argv):
     if "--self-test" in argv:
         return _self_test()
@@ -711,6 +877,7 @@ def main(argv):
     ledger_out = LEDGER_OUT
     queue_out = QUEUE_OUT
     report_json = None
+    apply_res = None
     i = 0
     while i < len(argv):
         a = argv[i]
@@ -727,7 +894,26 @@ def main(argv):
             queue_out = argv[i + 1]; i += 2; continue
         if a == "--report-json":
             report_json = argv[i + 1]; i += 2; continue
+        if a == "--apply-resolutions":
+            apply_res = argv[i + 1]; i += 2; continue
         i += 1
+
+    if apply_res:
+        idx = Index.load(index_path)
+        res = apply_resolutions(apply_res, idx, idx.page_stems, write=write,
+                                ledger_out=ledger_out)
+        _print_resolution_report(res)
+        print("mode:", "WRITE" if write else "DRY-RUN",
+              "| ledger ->", os.path.relpath(ledger_out, ROOT))
+        if report_json:
+            with open(report_json, "w", encoding="utf-8") as fh:
+                json.dump({k: (v if isinstance(v, (int, list)) else v)
+                           for k, v in res.items()
+                           if k in ("samples", "stale", "bad_target",
+                                    "base_rows", "ledger_total")},
+                          fh, ensure_ascii=False, indent=1)
+        return 0
+
     if not paths:
         paths = [os.path.join(ROOT, "content")]
 

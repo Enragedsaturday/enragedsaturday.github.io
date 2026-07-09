@@ -56,7 +56,7 @@ related:
 
 | Case | Holding | Opinion |
 |---|---|---|
-| *[[Hiibel v. Sixth Judicial Dist. Court]]*, 542 U.S. 177 (2004) | **Anchor.** A state stop-and-identify statute compelling a suspect to disclose his name during a valid *[[Terry v. Ohio|Terry]]* stop is consistent with the Fourth Amendment (request reasonably related to the stop) and the Fifth Amendment (unless the name itself would incriminate). | [opinion](https://www.courtlistener.com/opinion/136990/hiibel-v-sixth-judicial-dist-court-of-nev-humboldt-cty/) |
+| *[[Hiibel v. Sixth Judicial Dist. Court]]*, 542 U.S. 177 (2004) | **Anchor.** A state stop-and-identify statute compelling a suspect to disclose his name during a valid *[[Terry v. Ohio\|Terry]]* stop is consistent with the Fourth Amendment (request reasonably related to the stop) and the Fifth Amendment (unless the name itself would incriminate). | [opinion](https://www.courtlistener.com/opinion/136990/hiibel-v-sixth-judicial-dist-court-of-nev-humboldt-cty/) |
 | *[[Kolender v. Lawson]]*, 461 U.S. 352 (1983) | A stop-and-identify statute requiring "credible and reliable" identification is void for vagueness; it hands police standardless discretion to decide what satisfies it. | [opinion](https://www.courtlistener.com/opinion/110926/kolender-v-lawson/) |
 
 ## Related cases across doctrines
@@ -66,7 +66,7 @@ These are treated in full on their own pages but frame the stop-and-identify pow
 | Case | Relevance here | Primary home | Opinion |
 |---|---|---|---|
 | *[[Brown v. Texas]]*, 443 U.S. 47 (1979) | ***No suspicion, no demand.*** Police may not stop a person and demand identification without reasonable suspicion; the stop-and-identify power presupposes a lawful stop. | [[Terry Stops and Reasonable Suspicion]] | [opinion](https://www.courtlistener.com/opinion/110128/brown-v-texas/) |
-| *[[Berkemer v. McCarty]]*, 468 U.S. 420 (1984) | ***May ask.*** An officer may ask a lawfully stopped suspect to identify himself; a *[[Terry v. Ohio|Terry]]* stop is ordinarily non-custodial, the [[Common Legal Terms#dicta\|dicta]] *[[Hiibel v. Sixth Judicial Dist. Court|Hiibel]]* later built on. | [[Miranda and Custodial Interrogation]] | [opinion](https://www.courtlistener.com/opinion/111249/berkemer-v-mccarty/) |
+| *[[Berkemer v. McCarty]]*, 468 U.S. 420 (1984) | ***May ask.*** An officer may ask a lawfully stopped suspect to identify himself; a *[[Terry v. Ohio\|Terry]]* stop is ordinarily non-custodial, the [[Common Legal Terms#dicta\|dicta]] *[[Hiibel v. Sixth Judicial Dist. Court\|Hiibel]]* later built on. | [[Miranda and Custodial Interrogation]] | [opinion](https://www.courtlistener.com/opinion/111249/berkemer-v-mccarty/) |
 
 ## Sources
 

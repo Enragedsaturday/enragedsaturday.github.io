@@ -30,8 +30,8 @@ related: ["[[Automobile Exception]]", "[[SIA Persons]]", "[[Traffic Stops]]", "[
 
 | Point of law | Status | Controlling authority |
 |---|---|---|
-| Automatic passenger-compartment search on any occupant's arrest | **Superseded** | *[[Arizona v. Gant]]*, 556 U.S. 332 (2009); the automatic trigger is replaced by *[[Arizona v. Gant|Gant]]*'s two-justification test |
-| Scope, once a *[[Arizona v. Gant|Gant]]* prong is met (passenger compartment + containers in it) | **Good law** | *[[New York v. Belton]]*, 453 U.S. 454, [460](https://www.courtlistener.com/opinion/110559/new-york-v-belton/) (1981); the container rule survives inside *[[Arizona v. Gant|Gant]]*'s framework |
+| Automatic passenger-compartment search on any occupant's arrest | **Superseded** | *[[Arizona v. Gant]]*, 556 U.S. 332 (2009); the automatic trigger is replaced by *[[Arizona v. Gant\|Gant]]*'s two-justification test |
+| Scope, once a *[[Arizona v. Gant\|Gant]]* prong is met (passenger compartment + containers in it) | **Good law** | *[[New York v. Belton]]*, 453 U.S. 454, [460](https://www.courtlistener.com/opinion/110559/new-york-v-belton/) (1981); the container rule survives inside *[[Arizona v. Gant\|Gant]]*'s framework |
 
 So *[[New York v. Belton|Belton]]*'s **scope** holding still tells you *where* you may search; *[[Arizona v. Gant|Gant]]* now tells you *whether* you may search at all. (On *[[New York v. Belton|Belton]]*'s own case page the composite reads **Caution — varies by point**, with the vehicle-trigger point flagged superseded and the container point good law.)
 
@@ -66,7 +66,7 @@ The SCOTUS framework (*[[New York v. Belton|Belton]]* / *[[Thornton v. United St
 |---|---|---|
 | *[[Arizona v. Gant]]*, 556 U.S. 332 (2009) | **Anchor.** Vehicle [[Search Incident to Arrest\|search incident to arrest]] is lawful **only** if the arrestee is unsecured and within reaching distance of the passenger compartment, **or** it is reasonable to believe the car holds evidence of the offense of arrest. | [opinion](https://www.courtlistener.com/opinion/145887/arizona-v-gant/) |
 | *[[New York v. Belton]]*, 453 U.S. 454 (1981) | **Scope.** Fixes the searchable area as the passenger compartment and containers in it; its automatic-trigger reading is **superseded by *Gant***, while the container/scope rule survives. | [opinion](https://www.courtlistener.com/opinion/110559/new-york-v-belton/) |
-| *[[Thornton v. United States]]*, 541 U.S. 615 (2004) | **Recent occupant.** *[[New York v. Belton|Belton]]* reaches a "recent occupant" who has stepped out; Scalia's [[Common Legal Terms#concurring-opinion\|concurrence]] floats the evidence-of-offense rationale *[[Arizona v. Gant|Gant]]* later adopts. Trigger now **limited by *Gant***. | [opinion](https://www.courtlistener.com/opinion/134746/thornton-v-united-states/) |
+| *[[Thornton v. United States]]*, 541 U.S. 615 (2004) | **Recent occupant.** *[[New York v. Belton\|Belton]]* reaches a "recent occupant" who has stepped out; Scalia's [[Common Legal Terms#concurring-opinion\|concurrence]] floats the evidence-of-offense rationale *[[Arizona v. Gant\|Gant]]* later adopts. Trigger now **limited by *Gant***. | [opinion](https://www.courtlistener.com/opinion/134746/thornton-v-united-states/) |
 
 ## Related cases across doctrines
 
@@ -74,8 +74,8 @@ These cases are treated in full elsewhere but bear on the vehicle incident searc
 
 | Case | Relevance here | Primary home | Opinion |
 |---|---|---|---|
-| *[[United States v. Chadwick]]*, 433 U.S. 1 (1977) | ***Exclusive-control limit.*** Luggage in exclusive police control with no [[Exigent Circumstances and Hot Pursuit\|exigency]] may not be searched as incident to arrest; the container aspect is limited by *[[California v. Acevedo|Acevedo]]* inside a vehicle. | [[Automobile Exception]] | [opinion](https://www.courtlistener.com/opinion/109714/united-states-v-chadwick/) |
-| *[[United States v. Vinton]]*, 594 F.3d 14 (D.C. Cir. 2010) | ***Distinct theory.*** *[[Arizona v. Gant|Gant]]*'s "secured arrestee" limit does not shrink a separate *[[Michigan v. Long]]* protective vehicle search on reasonable suspicion. | [[Traffic Stops]] | [opinion](https://www.courtlistener.com/opinion/187527/united-states-v-vinton/) |
+| *[[United States v. Chadwick]]*, 433 U.S. 1 (1977) | ***Exclusive-control limit.*** Luggage in exclusive police control with no [[Exigent Circumstances and Hot Pursuit\|exigency]] may not be searched as incident to arrest; the container aspect is limited by *[[California v. Acevedo\|Acevedo]]* inside a vehicle. | [[Automobile Exception]] | [opinion](https://www.courtlistener.com/opinion/109714/united-states-v-chadwick/) |
+| *[[United States v. Vinton]]*, 594 F.3d 14 (D.C. Cir. 2010) | ***Distinct theory.*** *[[Arizona v. Gant\|Gant]]*'s "secured arrestee" limit does not shrink a separate *[[Michigan v. Long]]* protective vehicle search on reasonable suspicion. | [[Traffic Stops]] | [opinion](https://www.courtlistener.com/opinion/187527/united-states-v-vinton/) |
 | *[[United States v. Anchondo]]*, 156 F.3d 1043 (10th Cir. 1998) | ***Person, not vehicle.*** Drugs found on the arrestee's body were the fruit of a lawful search of the **person** incident to arrest; that theory stands apart from any vehicle rule. | [[Automobile Exception]] | [opinion](https://www.courtlistener.com/opinion/758111/united-states-v-erick-anchondo/) |
 
 ## Visual
