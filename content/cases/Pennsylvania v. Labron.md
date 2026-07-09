@@ -50,7 +50,9 @@ In two consolidated cases, the Supreme Court of Pennsylvania suppressed evidence
 Whether the automobile exception requires a separate showing of exigent circumstances beyond the vehicle's ready mobility and probable cause to believe it contains contraband.
 
 ## Rule
-No separate exigency is required. "If a car is readily mobile and probable cause exists to believe it contains contraband, the Fourth Amendment thus permits police to search the vehicle without more." — 518 U.S. at 940. ^pin-940 A vehicle's "ready mobility" is itself "an exigency sufficient to excuse failure to obtain a search warrant once probable cause to conduct the search is clear." — *Id.* ^pin-940a
+No separate exigency is required. "If a car is readily mobile and probable cause exists to believe it contains contraband, the Fourth Amendment thus permits police to search the vehicle without more." — 518 U.S. at 940. ^pin-940
+
+A vehicle's "ready mobility" is itself "an exigency sufficient to excuse failure to obtain a search warrant once probable cause to conduct the search is clear." — *Id.* ^pin-940a
 
 ## Application
 Police had seen Labron place drugs in the trunk of the car they searched — supplying probable cause — and the car was readily mobile. Because ready mobility plus probable cause is all the automobile exception requires, the warrantless search of the trunk did not violate the Fourth Amendment, and the Pennsylvania Supreme Court's contrary rule (demanding separate exigent circumstances) rested on an incorrect reading of the exception.

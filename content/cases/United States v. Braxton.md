@@ -50,7 +50,9 @@ Officers arrested Braxton on a public sidewalk and, without a warrant, searched 
 Whether evidence from a backpack search that was not a valid search incident to arrest is nonetheless admissible under the inevitable-discovery exception, on the theory that officers would have lawfully impounded the backpack (community caretaking) and discovered the gun in an inventory search.
 
 ## Rule
-The search-incident-to-arrest point was conceded: "the government concedes that the warrantless search of the backpack was not justified by the warrant exception for searches incident to arrest." — slip op., at 7. ^pin-op7 To salvage the evidence by inevitable discovery, the government bore the burden of proving lawful impoundment and inventory would have occurred. The court held it had not: "the inevitable-discovery exception to the exclusionary rule does not apply, and the gun discovered during the illegal search of the backpack must be suppressed." — *Id.* at 17. ^pin-op17
+The search-incident-to-arrest point was conceded: "the government concedes that the warrantless search of the backpack was not justified by the warrant exception for searches incident to arrest." — slip op., at 7. ^pin-op7
+
+To salvage the evidence by inevitable discovery, the government bore the burden of proving lawful impoundment and inventory would have occurred. The court held it had not: "the inevitable-discovery exception to the exclusionary rule does not apply, and the gun discovered during the illegal search of the backpack must be suppressed." — *Id.* at 17. ^pin-op17
 
 ## Application
 Because Braxton was under arrest and could not access the backpack at the time of the search, the search was not a valid search incident to arrest — a point the government conceded under *Knapp*. The government then failed to prove by a preponderance that officers would have lawfully impounded the backpack as a matter of community caretaking and inventoried it; the record left the impoundment speculative and suggested any on-scene inventory would itself have been improper. Inevitable discovery therefore did not apply, and the gun was suppressed.

@@ -52,7 +52,13 @@ A federal tax investigator obtained a warrant to search Harris's premises for no
 May an informant's tip support probable cause for a warrant where it is corroborated by the affiant's knowledge of the suspect's reputation and by the informant's own admission — against his penal interest — of buying illicit whiskey at the premises?
 
 ## Rule
-Yes. The informant's statements "were against the informant's penal interest, for he thereby admitted major elements of an offense." Because "[p]eople do not lightly admit a crime and place critical evidence in the hands of the police in the form of their own admissions," such "[a]dmissions of crime, like admissions against proprietary interests, carry their own indicia of credibility — sufficient at least to support a finding of probable cause to search." — 403 U.S. at 583. ^pin-583 "That the informant may be paid or promised a 'break' does not eliminate the residual risk and opprobrium of having admitted criminal conduct." — *Id.* at 584. ^pin-584 The admission of long-running illicit purchases "itself and without more, implicated that property and furnished probable cause to search." — *Id.* ^pin-584b A magistrate may likewise rely on an officer's knowledge of a suspect's reputation as a "practical consideration of everyday life." — *Id.* at 583. ^pin-583b
+Yes. The informant's statements "were against the informant's penal interest, for he thereby admitted major elements of an offense." Because "[p]eople do not lightly admit a crime and place critical evidence in the hands of the police in the form of their own admissions," such "[a]dmissions of crime, like admissions against proprietary interests, carry their own indicia of credibility — sufficient at least to support a finding of probable cause to search." — 403 U.S. at 583. ^pin-583
+
+"That the informant may be paid or promised a 'break' does not eliminate the residual risk and opprobrium of having admitted criminal conduct." — *Id.* at 584. ^pin-584
+
+The admission of long-running illicit purchases "itself and without more, implicated that property and furnished probable cause to search." — *Id.* ^pin-584b
+
+A magistrate may likewise rely on an officer's knowledge of a suspect's reputation as a "practical consideration of everyday life." — *Id.* at 583. ^pin-583b
 
 ## Application
 The informant admitted repeatedly buying unstamped whiskey from Harris — major elements of a federal offense — so his tip carried its own credibility, undiminished by any payment or promised leniency, and standing alone furnished probable cause to search the premises. The affiant's knowledge of Harris's reputation as a bootlegger added further support. Read commonsensically rather than under a rigid two-pronged formula, the affidavit established probable cause.

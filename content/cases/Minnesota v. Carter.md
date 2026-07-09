@@ -50,7 +50,9 @@ Acting on a tip, an officer looked through a gap in a closed apartment-window bl
 Whether a temporary visitor present in another's home for a commercial transaction has a reasonable expectation of privacy entitling him to challenge a search of that home.
 
 ## Rule
-No. "Thus, an overnight guest in a home may claim the protection of the Fourth Amendment, but one who is merely present with the consent of the householder may not." — 525 U.S. at 90. ^pin-90 Whether a visitor has a legitimate expectation of privacy turns on factors such as the purely commercial nature of the visit, its short duration, and the absence of any prior connection to the home.
+No. "Thus, an overnight guest in a home may claim the protection of the Fourth Amendment, but one who is merely present with the consent of the householder may not." — 525 U.S. at 90. ^pin-90
+
+Whether a visitor has a legitimate expectation of privacy turns on factors such as the purely commercial nature of the visit, its short duration, and the absence of any prior connection to the home.
 
 ## Application
 Carter was not an overnight guest; he was present essentially for a business transaction — bagging cocaine — for only a matter of hours, with no prior relationship to the householder. Given the purely commercial purpose, the brief stay, and the lack of any connection to the home, he had no legitimate expectation of privacy there and could not challenge the officer's observation.

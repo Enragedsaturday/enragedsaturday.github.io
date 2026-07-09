@@ -52,7 +52,11 @@ Acting on a tip, officers went onto Oliver's farm, drove past his house, went ar
 Whether the open-fields doctrine applies even to fields that are fenced, posted with "No Trespassing" signs, and secluded.
 
 ## Rule
-Yes. "[O]pen fields do not provide the setting for those intimate activities that the Amendment is intended to shelter from government interference or surveillance." — 466 U.S. at 179. ^pin-179 Fencing and posting do not change that: "It is not generally true that fences or 'No Trespassing' signs effectively bar the public from viewing open fields." — *Id.* ^pin-179b The common law "distinguished 'open fields' from the 'curtilage,' the land immediately surrounding and associated with the home," and "[t]he distinction implies that only the curtilage, not the neighboring open fields, warrants the Fourth Amendment protections that attach to the home." — *Id.* at 180. ^pin-180
+Yes. "[O]pen fields do not provide the setting for those intimate activities that the Amendment is intended to shelter from government interference or surveillance." — 466 U.S. at 179. ^pin-179
+
+Fencing and posting do not change that: "It is not generally true that fences or 'No Trespassing' signs effectively bar the public from viewing open fields." — *Id.* ^pin-179b
+
+The common law "distinguished 'open fields' from the 'curtilage,' the land immediately surrounding and associated with the home," and "[t]he distinction implies that only the curtilage, not the neighboring open fields, warrants the Fourth Amendment protections that attach to the home." — *Id.* at 180. ^pin-180
 
 ## Application
 The marijuana field, located more than a mile from Oliver's house and outside the curtilage, was an open field. The locked gate and "No Trespassing" sign did not give it Fourth Amendment protection, so the officers' entry onto the land and observation of the crop were not a "search." The evidence was not subject to suppression on Fourth Amendment grounds.

@@ -52,7 +52,9 @@ After a suspect invokes the right to counsel, what does it mean for the suspect 
 ## Rule
 *Edwards* bars further interrogation after an invocation of counsel unless the accused himself "initiates" further communication. A routine inquiry does not count: "There are some inquiries, such as a request for a drink of water or a request to use a telephone, that are so routine that they cannot be fairly said to represent a desire on the part of an accused to open up a more generalized discussion relating directly or indirectly to the investigation." — 462 U.S. at 1045 (plurality opinion). ^pin-1045
 
-Initiation requires a statement that "evinced a willingness and a desire for a generalized discussion about the investigation." — *Id.* at 1045–46. ^pin-1046 Initiation is only the **first** step: the second is whether, under the totality of the circumstances, the accused then knowingly and intelligently waived the right to counsel he had previously invoked.
+Initiation requires a statement that "evinced a willingness and a desire for a generalized discussion about the investigation." — *Id.* at 1045–46. ^pin-1046
+
+Initiation is only the **first** step: the second is whether, under the totality of the circumstances, the accused then knowingly and intelligently waived the right to counsel he had previously invoked.
 
 ## Application
 Bradshaw's question — "Well, what is going to happen to me now?" — was not a routine request about the mechanics of custody; it evinced a desire to discuss the investigation, so it "initiated" further communication. With that step satisfied, the plurality concluded that on the totality of the circumstances Bradshaw thereafter validly waived his right to counsel, so the later statements were admissible.

@@ -52,7 +52,9 @@ Florence was a passenger in a car stopped by a state trooper; he was arrested on
 May jail officials, consistent with the Fourth Amendment, conduct a close visual strip search of every arrestee being admitted to the general population without reasonable suspicion, regardless of the minor nature of the offense of arrest?
 
 ## Rule
-Yes. Maintaining institutional safety requires deference to correctional officials, and "a regulation impinging on an inmate's constitutional rights must be upheld 'if it is reasonably related to legitimate penological interests.'" — 566 U.S. at 326 (quoting *Turner v. Safley*). ^pin-326 There is a "substantial interest in preventing any new inmate, either of his own will or as a result of coercion, from putting all who live or work at these institutions at even greater risk when he is admitted to the general population." — *Id.* (Part IV). ^pin-iv
+Yes. Maintaining institutional safety requires deference to correctional officials, and "a regulation impinging on an inmate's constitutional rights must be upheld 'if it is reasonably related to legitimate penological interests.'" — 566 U.S. at 326 (quoting *Turner v. Safley*). ^pin-326
+
+There is a "substantial interest in preventing any new inmate, either of his own will or as a result of coercion, from putting all who live or work at these institutions at even greater risk when he is admitted to the general population." — *Id.* (Part IV). ^pin-iv
 
 Weighing those interests, the intake "search procedures . . . struck a reasonable balance between inmate privacy and the needs of the institutions[;] [t]he Fourth and Fourteenth Amendments do not require adoption of the framework of rules petitioner proposes." — *Id.* at 339. ^pin-339
 

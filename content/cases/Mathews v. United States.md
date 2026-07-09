@@ -50,7 +50,9 @@ Mathews, an employee of the Small Business Administration, was charged with acce
 Whether a defendant who denies one or more elements of the charged crime may nonetheless obtain a jury instruction on entrapment where the evidence would support it.
 
 ## Rule
-Yes. "We hold that even if the defendant denies one or more elements of the crime, he is entitled to an entrapment instruction whenever there is sufficient evidence from which a reasonable jury could find entrapment." — 485 U.S. at 62. ^pin-62 Denying the offense and requesting an entrapment instruction are not mutually exclusive; the instruction follows from the evidence, not from any concession of guilt.
+Yes. "We hold that even if the defendant denies one or more elements of the crime, he is entitled to an entrapment instruction whenever there is sufficient evidence from which a reasonable jury could find entrapment." — 485 U.S. at 62. ^pin-62
+
+Denying the offense and requesting an entrapment instruction are not mutually exclusive; the instruction follows from the evidence, not from any concession of guilt.
 
 ## Application
 The trial court refused to instruct on entrapment solely because Mathews would not admit the intent element of accepting the loan. Because a defendant may both deny an element and obtain an entrapment instruction where the evidence supports it, that refusal was error; the trial court's observation that the entrapment evidence was "shaky at best" went to what the jury could find, not to the availability of the instruction.

@@ -52,7 +52,9 @@ A deputy investigating a reported domestic assault found Hiibel standing by a tr
 Whether a state stop-and-identify law that compels a suspect to disclose his name during a valid *Terry* stop is consistent with the Fourth Amendment.
 
 ## Rule
-Yes. "Obtaining a suspect's name in the course of a Terry stop serves important government interests." — 542 U.S. at 186. ^pin-186 The Court held that "[t]he principles of Terry permit a State to require a suspect to disclose his name in the course of a Terry stop." — *Id.* at 187. ^pin-187
+Yes. "Obtaining a suspect's name in the course of a Terry stop serves important government interests." — 542 U.S. at 186. ^pin-186
+
+The Court held that "[t]he principles of Terry permit a State to require a suspect to disclose his name in the course of a Terry stop." — *Id.* at 187. ^pin-187
 
 Because the request for identity bears an immediate relation to the purpose and demands of the stop, "[a] state law requiring a suspect to disclose his name in the course of a valid Terry stop is consistent with Fourth Amendment prohibitions against unreasonable searches and seizures." — *Id.* at 188. ^pin-188
 

@@ -50,7 +50,11 @@ Memphis officer Elton Hymon shot 15-year-old Edward Garner in the back of the he
 Whether the Fourth Amendment permits the use of deadly force to prevent the escape of an apparently unarmed, non-dangerous fleeing felon.
 
 ## Rule
-Deadly force to seize a fleeing suspect is constitutionally constrained. "We conclude that such force may not be used unless it is necessary to prevent the escape and the officer has probable cause to believe that the suspect poses a significant threat of death or serious physical injury to the officer or others." — 471 U.S. at 3. ^pin-3 Thus "[a] police officer may not seize an unarmed, nondangerous suspect by shooting him dead." — *Id.* at 11. ^pin-11 But "[w]here the officer has probable cause to believe that the suspect poses a threat of serious physical harm, either to the officer or to others, it is not constitutionally unreasonable to prevent escape by using deadly force." — *Id.* ^pin-11a
+Deadly force to seize a fleeing suspect is constitutionally constrained. "We conclude that such force may not be used unless it is necessary to prevent the escape and the officer has probable cause to believe that the suspect poses a significant threat of death or serious physical injury to the officer or others." — 471 U.S. at 3. ^pin-3
+
+Thus "[a] police officer may not seize an unarmed, nondangerous suspect by shooting him dead." — *Id.* at 11. ^pin-11
+
+But "[w]here the officer has probable cause to believe that the suspect poses a threat of serious physical harm, either to the officer or to others, it is not constitutionally unreasonable to prevent escape by using deadly force." — *Id.* ^pin-11a
 
 ## Application
 Hymon shot Garner although he was reasonably sure Garner was unarmed and posed no immediate threat; a nighttime burglary alone did not make Garner dangerous. Seizing the unarmed, non-dangerous Garner by deadly force was therefore unreasonable, and the Tennessee statute was unconstitutional insofar as it authorized deadly force against such fleeing suspects.

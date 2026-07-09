@@ -50,13 +50,17 @@ James was tried for murder. Eyewitnesses described the shooter as having slicked
 Whether the impeachment exception to the exclusionary rule permits the prosecution to use illegally obtained evidence to impeach the testimony of defense witnesses other than the defendant himself.
 
 ## Rule
-No. "[E]xpanding the class of impeachable witnesses from the defendant alone to all defense witnesses would create different incentives affecting the behavior of both defendants and law enforcement officers. As a result, this expansion would not promote the truth-seeking function to the same extent as did creation of the original exception, and yet it would significantly undermine the deterrent effect of the general exclusionary rule." — 493 U.S. at 313–314. ^pin-313 Defendants "ought not be able to 'pervert' the exclusion of illegally obtained evidence into a shield for perjury, but it seems no more appropriate for the State to brandish such evidence as a sword with which to dissuade defendants from presenting a meaningful defense through other witnesses." — *Id.* at 317. ^pin-317
+No. "[E]xpanding the class of impeachable witnesses from the defendant alone to all defense witnesses would create different incentives affecting the behavior of both defendants and law enforcement officers. As a result, this expansion would not promote the truth-seeking function to the same extent as did creation of the original exception, and yet it would significantly undermine the deterrent effect of the general exclusionary rule." — 493 U.S. at 313–314. ^pin-313
+
+Defendants "ought not be able to 'pervert' the exclusion of illegally obtained evidence into a shield for perjury, but it seems no more appropriate for the State to brandish such evidence as a sword with which to dissuade defendants from presenting a meaningful defense through other witnesses." — *Id.* at 317. ^pin-317
 
 ## Application
 The illegally obtained statements were used to impeach Henderson, a defense witness, not James himself. Extending the exception that far would chill defendants from calling witnesses (who cannot be perfectly controlled) and would sharply increase the prosecution's incentive to gather evidence illegally, since defense witnesses far outnumber testifying defendants — making police misconduct "far more than a 'speculative possibility.'" The truth-seeking rationale of *Walder* "does not apply to other witnesses with equal force," so the exclusionary rule's deterrent purpose required keeping the exception narrow.
 
 ## Conclusion
-"[W]e adhere to the line drawn in our previous cases. Accordingly, we hold that the Illinois Supreme Court erred in affirming James' convictions despite the prosecutor's use of illegally obtained statements to impeach a defense witness' testimony." — *Id.* at 320. ^pin-320 The judgment was reversed and remanded.
+"[W]e adhere to the line drawn in our previous cases. Accordingly, we hold that the Illinois Supreme Court erred in affirming James' convictions despite the prosecutor's use of illegally obtained statements to impeach a defense witness' testimony." — *Id.* at 320. ^pin-320
+
+The judgment was reversed and remanded.
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.

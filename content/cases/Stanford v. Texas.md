@@ -50,10 +50,16 @@ Investigating violations of the Texas Communist Control Law, state officers obta
 Does a warrant authorizing seizure of all books and papers "concerning the Communist Party of Texas" satisfy the Fourth Amendment's particularity requirement when the items seized are expressive materials taken for the ideas they contain?
 
 ## Rule
-No. "[T]he constitutional requirement that warrants must particularly describe the 'things to be seized' is to be accorded the most scrupulous exactitude when the 'things' are books, and the basis for their seizure is the ideas which they contain." — 379 U.S. at 485. ^pin-485 Particularity exists precisely so that, "[a]s to what is to be taken, nothing is left to the discretion of the officer executing the warrant." — *Id.* at 485–86 (quoting *Marron v. United States*). ^pin-485b A warrant whose sweep delegates that choice to the officer is the general warrant the Fourth Amendment forbids.
+No. "[T]he constitutional requirement that warrants must particularly describe the 'things to be seized' is to be accorded the most scrupulous exactitude when the 'things' are books, and the basis for their seizure is the ideas which they contain." — 379 U.S. at 485. ^pin-485
+
+Particularity exists precisely so that, "[a]s to what is to be taken, nothing is left to the discretion of the officer executing the warrant." — *Id.* at 485–86 (quoting *Marron v. United States*). ^pin-485b
+
+A warrant whose sweep delegates that choice to the officer is the general warrant the Fourth Amendment forbids.
 
 ## Application
-The warrant authorized the seizure not of contraband but of "literary material" — "book[s], records, pamphlets, cards, receipts, lists, memoranda, pictures, recordings and other written instruments concerning the Communist Party of Texas." That "indiscriminate sweep of that language is constitutionally intolerable" because it left the selection of expressive materials, seized for their ideas, to the discretion of the executing officers. — *Id.* at 486. ^pin-486 The Fourth and Fourteenth Amendments guarantee that no official "shall ransack [Stanford's] home and seize his books and papers under the unbridled authority of a general warrant — no less than the law 200 years ago shielded John Entick from the messengers of the King." — *Id.* ^pin-486b
+The warrant authorized the seizure not of contraband but of "literary material" — "book[s], records, pamphlets, cards, receipts, lists, memoranda, pictures, recordings and other written instruments concerning the Communist Party of Texas." That "indiscriminate sweep of that language is constitutionally intolerable" because it left the selection of expressive materials, seized for their ideas, to the discretion of the executing officers. — *Id.* at 486. ^pin-486
+
+The Fourth and Fourteenth Amendments guarantee that no official "shall ransack [Stanford's] home and seize his books and papers under the unbridled authority of a general warrant — no less than the law 200 years ago shielded John Entick from the messengers of the King." — *Id.* ^pin-486b
 
 ## Conclusion
 The warrant was an unconstitutional general warrant; the order was vacated and the cause remanded.

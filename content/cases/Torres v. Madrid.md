@@ -50,7 +50,9 @@ New Mexico State Police officers approached Torres in an apartment-complex parki
 Whether the application of physical force to a person with intent to restrain is a Fourth Amendment seizure when the force does not succeed in subduing the person and she temporarily eludes capture.
 
 ## Rule
-Yes. Adopting the common-law rule that the slightest application of force to effect an arrest is an arrest, the Court held: "The application of physical force to the body of a person with intent to restrain is a seizure, even if the force does not succeed in subduing the person." — slip op., at 1. ^pin-op1 A seizure by force is complete at the moment force is applied with intent to restrain; submission is not required. The Court cautioned that such a seizure is only the first step in the analysis — only unreasonable seizures violate the Fourth Amendment.
+Yes. Adopting the common-law rule that the slightest application of force to effect an arrest is an arrest, the Court held: "The application of physical force to the body of a person with intent to restrain is a seizure, even if the force does not succeed in subduing the person." — slip op., at 1. ^pin-op1
+
+A seizure by force is complete at the moment force is applied with intent to restrain; submission is not required. The Court cautioned that such a seizure is only the first step in the analysis — only unreasonable seizures violate the Fourth Amendment.
 
 ## Application
 Because the officers shot Torres with the intent to restrain her, the bullets that struck her effected a seizure at the moment of impact — notwithstanding that she managed to drive away and was not subdued or apprehended until the next day. The shooting was therefore a seizure of her person, and the lower court erred in holding that her escape defeated any seizure; whether that seizure was reasonable remained for remand.

@@ -50,7 +50,9 @@ A.C. Jackson reported a stolen firearm to a Wayne County, Missouri deputy; inves
 Whether the *Leon* good-faith exception to the exclusionary rule allows admission of evidence seized under a search warrant that the district court found was not supported by probable cause, where the officer's reliance on the warrant was objectively reasonable.
 
 ## Rule
-Yes. The exclusionary rule "does not apply 'when an officer acting with objective good faith has obtained a search warrant from a judge or magistrate and acted within its scope.'" — 784 F.3d at 1231 (quoting [[United States v. Leon]], 468 U.S. at 921). ^pin-1231 The dispositive question is whether the officer's reliance on the warrant was objectively reasonable, not whether the warrant was in fact supported by probable cause.
+Yes. The exclusionary rule "does not apply 'when an officer acting with objective good faith has obtained a search warrant from a judge or magistrate and acted within its scope.'" — 784 F.3d at 1231 (quoting [[United States v. Leon]], 468 U.S. at 921). ^pin-1231
+
+The dispositive question is whether the officer's reliance on the warrant was objectively reasonable, not whether the warrant was in fact supported by probable cause.
 
 Applying that standard, the court held: "We find the actions of the deputy in executing the search warrant were taken in objectively reasonable good faith considering the deputy's knowledge and actions, the review and approval of the warrant application by the prosecutor, and the issuance of the warrant by Judge Shuller after the deputy responded to his specific questions." — *Id.* at 1232. ^pin-1232
 

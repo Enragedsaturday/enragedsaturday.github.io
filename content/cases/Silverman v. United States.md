@@ -50,7 +50,11 @@ To overhear conversations of Silverman and others suspected of a gambling operat
 Whether using a spike mike that physically penetrates a wall to listen to conversations inside a home is a Fourth Amendment search.
 
 ## Rule
-A physical intrusion into the home to eavesdrop is a search. "[T]he eavesdropping was accomplished by means of an unauthorized physical penetration into the premises occupied by the petitioners." — 365 U.S. at 509. ^pin-509 The Court distinguished its earlier electronic-surveillance decisions because there the eavesdropping "had not been accomplished by means of an unauthorized physical encroachment within a constitutionally protected area." — *Id.* at 510. ^pin-510 And the result did not depend on property-law technicalities: "In these circumstances we need not pause to consider whether or not there was a technical trespass under the local property law .... Inherent Fourth Amendment rights are not inevitably measurable in terms of ancient niceties of tort or real property law." — *Id.* at 511. ^pin-511
+A physical intrusion into the home to eavesdrop is a search. "[T]he eavesdropping was accomplished by means of an unauthorized physical penetration into the premises occupied by the petitioners." — 365 U.S. at 509. ^pin-509
+
+The Court distinguished its earlier electronic-surveillance decisions because there the eavesdropping "had not been accomplished by means of an unauthorized physical encroachment within a constitutionally protected area." — *Id.* at 510. ^pin-510
+
+And the result did not depend on property-law technicalities: "In these circumstances we need not pause to consider whether or not there was a technical trespass under the local property law .... Inherent Fourth Amendment rights are not inevitably measurable in terms of ancient niceties of tort or real property law." — *Id.* at 511. ^pin-511
 
 ## Application
 The officers heard the petitioners' conversations only by usurping part of the home's heating system—a physical intrusion into the house itself—so the surveillance was a search regardless of whether it amounted to a technical trespass. The evidence should have been suppressed, and the convictions were reversed.

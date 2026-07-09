@@ -52,7 +52,9 @@ Whether prison inmates have a Sixth Amendment right to appointed counsel while h
 ## Rule
 No. "[O]ur cases have long recognized that the right to counsel attaches only at or after the initiation of adversary judicial proceedings against the defendant." — 467 U.S. at 187. ^pin-187
 
-Adopting the *Kirby* formulation, the Court explained that the recognized points of attachment "have involved points of time at or after the initiation of adversary judicial criminal proceedings — whether by way of formal charge, preliminary hearing, indictment, information, or arraignment." — 467 U.S. at 188 (quoting *Kirby v. Illinois*, 406 U.S. at 689). ^pin-188 The right is tied to the defendant's status as an "accused" facing the prosecutorial forces of the State, which arises only when the government has committed itself to prosecute.
+Adopting the *Kirby* formulation, the Court explained that the recognized points of attachment "have involved points of time at or after the initiation of adversary judicial criminal proceedings — whether by way of formal charge, preliminary hearing, indictment, information, or arraignment." — 467 U.S. at 188 (quoting *Kirby v. Illinois*, 406 U.S. at 689). ^pin-188
+
+The right is tied to the defendant's status as an "accused" facing the prosecutorial forces of the State, which arises only when the government has committed itself to prosecute.
 
 ## Application
 During their preindictment administrative segregation the inmates were not yet "accused" within the meaning of the Sixth Amendment — no formal charge, indictment, or other adversary judicial proceeding had been initiated. The segregation served institutional security and investigative purposes, not the commencement of prosecution. They therefore had no Sixth Amendment right to counsel for that period, and the loss of any investigative advantage was not a Sixth Amendment injury.

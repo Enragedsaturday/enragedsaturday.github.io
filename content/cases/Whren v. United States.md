@@ -52,7 +52,9 @@ Whether a traffic stop supported by probable cause of a traffic violation violat
 ## Rule
 A stop is reasonable when there is probable cause of a traffic violation: "As a general matter, the decision to stop an automobile is reasonable where the police have probable cause to believe that a traffic violation has occurred." — 517 U.S. at 810. ^pin-810
 
-The officer's real motive does not matter: "Subjective intentions play no role in ordinary, probable-cause Fourth Amendment analysis." — *Id.* at 813. ^pin-813 Claims of racially selective enforcement are governed by the Equal Protection Clause, not the Fourth Amendment.
+The officer's real motive does not matter: "Subjective intentions play no role in ordinary, probable-cause Fourth Amendment analysis." — *Id.* at 813. ^pin-813
+
+Claims of racially selective enforcement are governed by the Equal Protection Clause, not the Fourth Amendment.
 
 ## Application
 On these facts the petitioners conceded that Officer Soto had probable cause to believe several D.C. traffic provisions had been violated — driving without full attention, turning without signaling, and traveling at an unreasonable speed. Because that probable cause existed, the stop was reasonable, and it made no difference that the officers' true interest was possible drug activity or that a reasonable officer arguably would not have made the stop for the traffic violations alone. The crack cocaine the officer then saw in plain view was lawfully observed.

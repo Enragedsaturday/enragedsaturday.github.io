@@ -52,7 +52,9 @@ A California highway patrol officer began following Lange, who was playing loud 
 Whether the pursuit of a fleeing misdemeanor suspect categorically (always) qualifies as an exigent circumstance justifying a warrantless entry into the home.
 
 ## Rule
-No — there is no categorical rule; exigency is judged case by case. "The question presented here is whether the pursuit of a fleeing misdemeanor suspect always — or more legally put, categorically — qualifies as an exigent circumstance. We hold it does not." — *Lange v. California*, 594 U.S. 295 (2021) (slip op., at 1). ^pin-op1 "A great many misdemeanor pursuits involve exigencies allowing warrantless entry. But whether a given one does so turns on the particular facts of the case." — *Id.* (slip op., at 1). ^pin-op1a
+No — there is no categorical rule; exigency is judged case by case. "The question presented here is whether the pursuit of a fleeing misdemeanor suspect always — or more legally put, categorically — qualifies as an exigent circumstance. We hold it does not." — *Lange v. California*, 594 U.S. 295 (2021) (slip op., at 1). ^pin-op1
+
+"A great many misdemeanor pursuits involve exigencies allowing warrantless entry. But whether a given one does so turns on the particular facts of the case." — *Id.* (slip op., at 1). ^pin-op1a
 
 ## Application
 The California Court of Appeal had upheld the entry on the theory that pursuit of a suspected misdemeanant is always permissible under the exigent-circumstances exception. Because that categorical approach was wrong — flight for a misdemeanor does not automatically create an exigency — the officer's warrantless entry into Lange's garage could not be sustained on a categorical basis. The judgment was vacated and remanded so the lower court could decide, on the totality of these particular circumstances, whether an exigency (such as imminent harm or destruction of evidence) actually justified the entry.

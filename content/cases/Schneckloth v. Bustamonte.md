@@ -50,7 +50,9 @@ A police officer stopped a car for burned-out lights. When the driver could not 
 Whether, to establish that consent to a search was voluntary, the State must prove that the person consenting knew he had a right to refuse.
 
 ## Rule
-Voluntariness is judged on the totality of the circumstances, and knowledge of the right to refuse is not required. "[T]he question whether a consent to a search was in fact 'voluntary' or was the product of duress or coercion, express or implied, is a question of fact to be determined from the totality of all the circumstances." — 412 U.S. at 227. ^pin-227 "While knowledge of the right to refuse consent is one factor to be taken into account, the government need not establish such knowledge as the *sine qua non* of an effective consent." — *Id.* ^pin-227a
+Voluntariness is judged on the totality of the circumstances, and knowledge of the right to refuse is not required. "[T]he question whether a consent to a search was in fact 'voluntary' or was the product of duress or coercion, express or implied, is a question of fact to be determined from the totality of all the circumstances." — 412 U.S. at 227. ^pin-227
+
+"While knowledge of the right to refuse consent is one factor to be taken into account, the government need not establish such knowledge as the *sine qua non* of an effective consent." — *Id.* ^pin-227a
 
 ## Application
 The consent to search the car was given by Alcala after a routine traffic stop, with several officers present but no evidence of coercion. Because voluntariness turns on the totality of the circumstances and the State need not prove that Alcala knew he could refuse, his consent was voluntary on these facts, and the stolen checks discovered in the trunk were admissible.

@@ -52,7 +52,11 @@ Malloy, on probation for a state gambling misdemeanor, was called before a state
 Whether the Fifth Amendment privilege against self-incrimination is safeguarded against state action by the Fourteenth Amendment, and by what standard.
 
 ## Rule
-The privilege is incorporated against the States. "We hold today that the Fifth Amendment's exception from compulsory self-incrimination is also protected by the Fourteenth Amendment against abridgment by the States." — 378 U.S. at 6. ^pin-6 "The Fourteenth Amendment secures against state invasion the same privilege that the Fifth Amendment guarantees against federal infringement—the right of a person to remain silent unless he chooses to speak in the unfettered exercise of his own will, and to suffer no penalty . . . for such silence." — *Id.* at 8. ^pin-8 The same standard governs in both forums: the Fourteenth Amendment does not apply to the States merely "a 'watered-down, subjective version of the individual guarantees of the Bill of Rights.'" — *Id.* at 10–11. ^pin-10
+The privilege is incorporated against the States. "We hold today that the Fifth Amendment's exception from compulsory self-incrimination is also protected by the Fourteenth Amendment against abridgment by the States." — 378 U.S. at 6. ^pin-6
+
+"The Fourteenth Amendment secures against state invasion the same privilege that the Fifth Amendment guarantees against federal infringement—the right of a person to remain silent unless he chooses to speak in the unfettered exercise of his own will, and to suffer no penalty . . . for such silence." — *Id.* at 8. ^pin-8
+
+The same standard governs in both forums: the Fourteenth Amendment does not apply to the States merely "a 'watered-down, subjective version of the individual guarantees of the Bill of Rights.'" — *Id.* at 10–11. ^pin-10
 
 ## Application
 Because the privilege binds the States by the same standard as the Federal Government, Connecticut could not imprison Malloy for contempt for declining to answer questions that might incriminate him, and its courts erred in measuring his claim against a less stringent, "watered-down" standard. Applying the federal test, his refusal was justified because truthful answers could have furnished a link in a chain of evidence connecting him to crime; the state inquiry could not compel him on pain of imprisonment.

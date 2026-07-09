@@ -50,7 +50,9 @@ A Detroit ordinance made it a crime for a person to refuse to identify himself t
 Whether evidence seized in a search incident to an arrest under a presumptively valid ordinance must be suppressed once the ordinance is later declared unconstitutional.
 
 ## Rule
-No. "The subsequently determined invalidity of the Detroit ordinance on vagueness grounds does not undermine the validity of the arrest made for violation of that ordinance, and the evidence discovered in the search of respondent should not have been suppressed." — 443 U.S. at 40. ^pin-40 At the time of the arrest the officers had probable cause to believe DeFillippo was violating a presumptively valid ordinance; police are charged to enforce ordinances until they are judicially declared invalid.
+No. "The subsequently determined invalidity of the Detroit ordinance on vagueness grounds does not undermine the validity of the arrest made for violation of that ordinance, and the evidence discovered in the search of respondent should not have been suppressed." — 443 U.S. at 40. ^pin-40
+
+At the time of the arrest the officers had probable cause to believe DeFillippo was violating a presumptively valid ordinance; police are charged to enforce ordinances until they are judicially declared invalid.
 
 ## Application
 When the officers arrested DeFillippo, the identification ordinance had not yet been declared unconstitutional, so his refusal to identify himself gave them probable cause to arrest under a presumptively valid law. The search that produced the drugs was incident to that lawful arrest, and the ordinance's later invalidation did not retroactively render the arrest or search unlawful; the evidence should not have been suppressed.

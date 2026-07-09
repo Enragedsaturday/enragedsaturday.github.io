@@ -52,7 +52,9 @@ Whether seizure of the balloon was justified under the plain-view doctrine — i
 ## Rule
 Illuminating a car's interior is not a search: the officer's "action in shining his flashlight to illuminate the interior of Brown's car trenched upon no right secured to the latter by the Fourth Amendment." — 460 U.S. at 739–40. ^pin-739
 
-"Immediately apparent" does not mean certainty. The plurality explained that "the use of the phrase 'immediately apparent' was very likely an unhappy choice of words, since it can be taken to imply that an unduly high degree of certainty as to the incriminatory character of evidence is necessary for an application of the 'plain view' doctrine." — *Id.* at 741. ^pin-741 The standard is probable cause: the doctrine "does not demand any showing that such a belief be correct or more likely true than false. A 'practical, nontechnical' probability that incriminating evidence is involved is all that is required." — *Id.* at 742. ^pin-742
+"Immediately apparent" does not mean certainty. The plurality explained that "the use of the phrase 'immediately apparent' was very likely an unhappy choice of words, since it can be taken to imply that an unduly high degree of certainty as to the incriminatory character of evidence is necessary for an application of the 'plain view' doctrine." — *Id.* at 741. ^pin-741
+
+The standard is probable cause: the doctrine "does not demand any showing that such a belief be correct or more likely true than false. A 'practical, nontechnical' probability that incriminating evidence is involved is all that is required." — *Id.* at 742. ^pin-742
 
 ## Application
 On these facts the officer had a lawful vantage point at the lawful checkpoint, used a flashlight (no search) to see into the car, and — drawing on his experience that knotted party balloons are used to carry narcotics, reinforced by the vials, powder, and bag of balloons in plain view — had probable cause to believe the balloon contained contraband. That practical probability satisfied "immediately apparent," so the warrantless seizure of the balloon was justified under the plain-view doctrine.

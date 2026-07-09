@@ -50,7 +50,9 @@ A fleeing, reportedly intoxicated suspect, Israel Leija, led police on a high-sp
 Whether Mullenix was entitled to qualified immunity — that is, whether the unlawfulness of his use of deadly force was clearly established at the time he acted.
 
 ## Rule
-Qualified immunity shields an official unless his conduct violated clearly established law, and that law must be identified with specificity, not at a high level of generality. "We have repeatedly told courts . . . not to define clearly established law at a high level of generality." — 577 U.S. at 12 (quoting *al-Kidd*). ^pin-12 "The dispositive question is 'whether the violative nature of particular conduct is clearly established.'" — *Id.* The inquiry must be undertaken in light of the specific context of the case, and existing precedent must place the conclusion that the officer acted unlawfully "beyond debate." — *Id.* at 11.
+Qualified immunity shields an official unless his conduct violated clearly established law, and that law must be identified with specificity, not at a high level of generality. "We have repeatedly told courts . . . not to define clearly established law at a high level of generality." — 577 U.S. at 12 (quoting *al-Kidd*). ^pin-12
+
+"The dispositive question is 'whether the violative nature of particular conduct is clearly established.'" — *Id.* The inquiry must be undertaken in light of the specific context of the case, and existing precedent must place the conclusion that the officer acted unlawfully "beyond debate." — *Id.* at 11.
 
 ## Application
 The relevant question was not whether deadly force against a fleeing felon is generally permissible, but whether it was clearly established that Mullenix acted unreasonably in the specific situation he confronted — a reportedly intoxicated fugitive who had twice threatened to shoot officers and was fleeing at high speed toward an officer's position. Because existing precedent did not place the unreasonableness of his conduct "beyond debate" in that situation, Mullenix was entitled to qualified immunity.

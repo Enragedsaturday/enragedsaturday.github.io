@@ -52,7 +52,9 @@ Whether Miranda warnings are inadequate simply because the advice about the righ
 ## Rule
 No. Miranda warnings need not track an exact script; a warning that reasonably conveys the rights suffices. "This Court has never indicated that the 'rigidity' of *Miranda* extends to the precise formulation of the warnings given a criminal defendant." — 451 U.S. at 359. ^pin-359
 
-"*Miranda* itself indicated that no talismanic incantation was required to satisfy its strictures." — *Id.* ^pin-359a Reviewing courts examine the warnings actually given to determine whether they reasonably conveyed the right to appointed counsel, rather than demanding "a verbatim recital of the words of the *Miranda* opinion." — *Id.*
+"*Miranda* itself indicated that no talismanic incantation was required to satisfy its strictures." — *Id.* ^pin-359a
+
+Reviewing courts examine the warnings actually given to determine whether they reasonably conveyed the right to appointed counsel, rather than demanding "a verbatim recital of the words of the *Miranda* opinion." — *Id.*
 
 ## Application
 The warnings given Prysock told him he had the right to a lawyer before and during questioning and the right to have a lawyer appointed without cost. Nothing in those warnings linked the appointment of counsel to a future time *after* interrogation (the defect that had invalidated warnings in cases like *People v. Bolinski*). Read as a whole, the warnings conveyed that Prysock could have appointed counsel present prior to and during questioning, so they satisfied *Miranda*.

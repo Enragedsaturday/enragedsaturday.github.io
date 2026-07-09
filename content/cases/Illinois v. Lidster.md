@@ -52,7 +52,9 @@ Whether a highway checkpoint whose purpose is to ask motorists, as members of th
 ## Rule
 No; such information-seeking stops are not per se unconstitutional and are judged by a balancing test. "The checkpoint stop here differs significantly from that in Edmond. The stop's primary law enforcement purpose was not to determine whether a vehicle's occupants were committing a crime, but to ask vehicle occupants, as members of the public, for their help in providing information about a crime in all likelihood committed by others." — 540 U.S. at 423. ^pin-423
 
-Reasonableness is judged "on the basis of the individual circumstances." — *Id.* at 426. ^pin-426 Applying the gravity of the public concern, the degree to which the stop advances it, and the severity of the interference with liberty, the Court held: "We hold that the stop was constitutional." — *Id.* at 427. ^pin-427
+Reasonableness is judged "on the basis of the individual circumstances." — *Id.* at 426. ^pin-426
+
+Applying the gravity of the public concern, the degree to which the stop advances it, and the severity of the interference with liberty, the Court held: "We hold that the stop was constitutional." — *Id.* at 427. ^pin-427
 
 ## Application
 The checkpoint served a grave public concern — investigating a fatal hit-and-run — and was tailored to advance it, set up about a week later at the same place and time to reach motorists who might have witnessed the accident. The stops interfered only minimally with liberty: a brief wait, a few seconds of contact, a request for information and a flyer, applied systematically to all cars. Because the *Edmond* per se rule did not apply and the balance favored the stop, the checkpoint was reasonable.

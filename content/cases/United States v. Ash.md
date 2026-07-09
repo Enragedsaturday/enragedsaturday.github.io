@@ -50,7 +50,9 @@ After Ash was indicted for a bank robbery, the prosecutor, preparing for trial, 
 Whether a defendant has a Sixth Amendment right to have counsel present when the government conducts a post-indictment photographic display of the accused to witnesses for identification purposes.
 
 ## Rule
-No. The Court held that "the Sixth Amendment does not grant the right to counsel at photographic displays conducted by the Government for the purpose of allowing a witness to attempt an identification of the offender." — 413 U.S. at 321. ^pin-321 A photographic display is not a trial-like confrontation: the accused is not present and need not confront witnesses or the prosecution, so the presence of counsel is not required to preserve a fair trial.
+No. The Court held that "the Sixth Amendment does not grant the right to counsel at photographic displays conducted by the Government for the purpose of allowing a witness to attempt an identification of the offender." — 413 U.S. at 321. ^pin-321
+
+A photographic display is not a trial-like confrontation: the accused is not present and need not confront witnesses or the prosecution, so the presence of counsel is not required to preserve a fair trial.
 
 ## Application
 Because Ash was not present when the prosecutor showed the photo array to witnesses, the display was not a trial-like confrontation triggering the right to counsel. The risks of suggestive photographic identification could be exposed through ordinary trial tools — cross-examination of the witnesses and the officers — rather than by counsel's attendance at the display. The absence of defense counsel from the photo identification therefore did not violate the Sixth Amendment.

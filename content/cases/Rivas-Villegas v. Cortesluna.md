@@ -50,7 +50,9 @@ Officers responded to a 911 call from a crying 12-year-old reporting that she, h
 Whether Rivas-Villegas was entitled to qualified immunity because he did not violate clearly established law.
 
 ## Rule
-Clearly established law must be particularized to the case. The "clearly established" inquiry "must be undertaken in light of the specific context of the case, not as a broad general proposition." — 595 U.S. 1 (slip op., at 4) (quoting *Brosseau v. Haugen*). ^pin-op4 "[T]o show a violation of clearly established law, Cortesluna must identify a case that put Rivas-Villegas on notice that his specific conduct was unlawful." — *Id.* (slip op., at 5). ^pin-op5
+Clearly established law must be particularized to the case. The "clearly established" inquiry "must be undertaken in light of the specific context of the case, not as a broad general proposition." — 595 U.S. 1 (slip op., at 4) (quoting *Brosseau v. Haugen*). ^pin-op4
+
+"[T]o show a violation of clearly established law, Cortesluna must identify a case that put Rivas-Villegas on notice that his specific conduct was unlawful." — *Id.* (slip op., at 5). ^pin-op5
 
 ## Application
 Cortesluna identified no Supreme Court case addressing facts like these, and the Ninth Circuit relied solely on *LaLonde*, which is materially distinguishable: *LaLonde* involved a mere noise complaint and an unarmed suspect on whose back an officer "deliberately dug his knee" causing lasting injury, whereas here officers responded to a serious domestic-violence call possibly involving a chainsaw, Cortesluna had a knife in his pocket he had appeared to reach for, and Rivas-Villegas placed his knee on Cortesluna's back for no more than eight seconds beside the knife being retrieved. *LaLonde* therefore did not give fair notice that Rivas-Villegas's conduct was unlawful.

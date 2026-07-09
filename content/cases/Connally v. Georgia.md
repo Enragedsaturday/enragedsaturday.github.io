@@ -50,7 +50,11 @@ A Georgia justice of the peace issued a search warrant for Connally's premises. 
 Is a search warrant valid under the Fourth Amendment when issued by a magistrate who is compensated for issuing the warrant but receives nothing for denying it?
 
 ## Rule
-No. Applying the principle of *Tumey* and *Ward*, the justice's "financial welfare . . . is enhanced by positive action and is not enhanced by negative action" — a system offering "'a possible temptation to the average man as a judge . . . [that] might lead him not to hold the balance nice, clear and true between the State and the accused.'" — 429 U.S. at 250. ^pin-250 The defendant is thus "subjected to what surely is judicial action by an officer of a court who has 'a direct, personal, substantial, pecuniary interest' in his conclusion to issue or to deny the warrant." — *Id.* ^pin-250b The Court therefore "h[e]ld that the issuance of the search warrant by the justice of the peace in Connally's case effected a violation of the protections afforded him by the Fourth and Fourteenth Amendments." — *Id.* at 251. ^pin-251
+No. Applying the principle of *Tumey* and *Ward*, the justice's "financial welfare . . . is enhanced by positive action and is not enhanced by negative action" — a system offering "'a possible temptation to the average man as a judge . . . [that] might lead him not to hold the balance nice, clear and true between the State and the accused.'" — 429 U.S. at 250. ^pin-250
+
+The defendant is thus "subjected to what surely is judicial action by an officer of a court who has 'a direct, personal, substantial, pecuniary interest' in his conclusion to issue or to deny the warrant." — *Id.* ^pin-250b
+
+The Court therefore "h[e]ld that the issuance of the search warrant by the justice of the peace in Connally's case effected a violation of the protections afforded him by the Fourth and Fourteenth Amendments." — *Id.* at 251. ^pin-251
 
 ## Application
 The Georgia justice of the peace earned $5 only when he issued a warrant and nothing when he denied one, so his compensation rose with issuance — the precise pecuniary temptation the neutral-magistrate requirement forbids, and one he candidly admitted entered his mind. The fee was not *de minimis*. Because the issuing official had a personal financial stake in granting the warrant, he was not the neutral and detached magistrate the Fourth Amendment demands, and the warrant was invalid.

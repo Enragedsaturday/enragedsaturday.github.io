@@ -61,7 +61,9 @@ Thirteen Chicago police officers, without a warrant, broke into the Monroe famil
 Whether officers who abuse their authority act "under color of" state law for purposes of § 1983, and whether the federal remedy requires first exhausting state remedies.
 
 ## Rule
-"Under color of" state law reaches the misuse of authority. The Court reaffirmed that "Misuse of power, possessed by virtue of state law and made possible only because the wrongdoer is clothed with the authority of state law, is action taken 'under color of' state law." — 365 U.S. at 184 (quoting *United States v. Classic*). ^pin-184 The Court further held that the § 1983 federal remedy is supplementary to any state remedy and need not be sought and refused before the federal action is brought.
+"Under color of" state law reaches the misuse of authority. The Court reaffirmed that "Misuse of power, possessed by virtue of state law and made possible only because the wrongdoer is clothed with the authority of state law, is action taken 'under color of' state law." — 365 U.S. at 184 (quoting *United States v. Classic*). ^pin-184
+
+The Court further held that the § 1983 federal remedy is supplementary to any state remedy and need not be sought and refused before the federal action is brought.
 
 ## Application
 The Chicago officers acted under color of state law when they used their police authority to break into and ransack the Monroes' home and detain Mr. Monroe, even though their conduct also violated state law. The Monroes could therefore sue the officers under § 1983 without first pursuing a state remedy. (The Court also held that the City of Chicago was not a suable "person" under § 1983 — a holding later overruled by *Monell*.)

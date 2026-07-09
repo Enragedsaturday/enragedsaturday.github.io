@@ -50,7 +50,11 @@ Geraldine Harris was arrested and brought to the Canton, Ohio police station, wh
 Whether, and on what fault standard, a municipality can be held liable under § 1983 for a constitutional injury caused by its failure to adequately train its police officers.
 
 ## Rule
-Failure-to-train liability requires deliberate indifference. "We hold today that the inadequacy of police training may serve as the basis for § 1983 liability only where the failure to train amounts to deliberate indifference to the rights of persons with whom the police come into contact." — 489 U.S. at 388. ^pin-388 That high standard is met where "the need for more or different training is so obvious, and the inadequacy so likely to result in the violation of constitutional rights, that the policymakers of the city can reasonably be said to have been deliberately indifferent to the need." — *Id.* at 390. ^pin-390 Only then does the training failure represent a municipal "policy" for which the city is responsible under *Monell*.
+Failure-to-train liability requires deliberate indifference. "We hold today that the inadequacy of police training may serve as the basis for § 1983 liability only where the failure to train amounts to deliberate indifference to the rights of persons with whom the police come into contact." — 489 U.S. at 388. ^pin-388
+
+That high standard is met where "the need for more or different training is so obvious, and the inadequacy so likely to result in the violation of constitutional rights, that the policymakers of the city can reasonably be said to have been deliberately indifferent to the need." — *Id.* at 390. ^pin-390
+
+Only then does the training failure represent a municipal "policy" for which the city is responsible under *Monell*.
 
 ## Application
 Because the trial court's instructions had permitted liability on a theory closer to respondeat superior than deliberate indifference, the Court could not sustain the verdict and remanded. The plaintiff would have to show that the city's failure to train reflected a deliberate or conscious choice — a policy of inaction in the face of an obvious need — and that the identified training deficiency actually caused her injury, not merely that an officer was unsatisfactorily trained or that better training could have avoided the harm.

@@ -50,7 +50,9 @@ Georgia sheriff M. Claude Screws and two other officers arrested Robert Hall, a 
 Whether § 242's prohibition on willfully depriving a person of constitutional rights under color of law is void for vagueness, and what mental state "willfully" requires.
 
 ## Rule
-The statute is saved from vagueness by reading "willfully" to require specific intent. "We do say that a requirement of a specific intent to deprive a person of a federal right made definite by decision or other rule of law saves the Act from any charge of unconstitutionality on the grounds of vagueness." — 325 U.S. at 103. ^pin-103 The Court also reaffirmed that action "under color of" state law includes the misuse of authority an officer possesses only because he is clothed with his official position.
+The statute is saved from vagueness by reading "willfully" to require specific intent. "We do say that a requirement of a specific intent to deprive a person of a federal right made definite by decision or other rule of law saves the Act from any charge of unconstitutionality on the grounds of vagueness." — 325 U.S. at 103. ^pin-103
+
+The Court also reaffirmed that action "under color of" state law includes the misuse of authority an officer possesses only because he is clothed with his official position.
 
 ## Application
 Because the trial court had not instructed the jury that the defendants must have acted with the specific intent to deprive Hall of a federal constitutional right, the convictions could not stand under the proper construction of "willfully," and the Court reversed and remanded for a new trial under that standard.

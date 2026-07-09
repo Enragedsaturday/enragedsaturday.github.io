@@ -50,7 +50,9 @@ A roving Border Patrol unit near the California-Mexico border stopped Brignoni-P
 Whether a roving Border Patrol may stop a vehicle near the border and question its occupants about immigration status based only on the occupants' apparent Mexican ancestry, or whether the stop requires reasonable suspicion.
 
 ## Rule
-A roving-patrol stop requires reasonable suspicion built on articulable facts: "Except at the border and its functional equivalents, officers on roving patrol may stop vehicles only if they are aware of specific articulable facts, together with rational inferences from those facts, that reasonably warrant suspicion that the vehicles contain aliens who may be illegally in the country." — 422 U.S. at 884. ^pin-884 Apparent ancestry alone is not enough: "The likelihood that any given person of Mexican ancestry is an alien is high enough to make Mexican appearance a relevant factor, but standing alone it does not justify stopping all Mexican-Americans to ask if they are aliens." — *Id.* at 886–87. ^pin-886
+A roving-patrol stop requires reasonable suspicion built on articulable facts: "Except at the border and its functional equivalents, officers on roving patrol may stop vehicles only if they are aware of specific articulable facts, together with rational inferences from those facts, that reasonably warrant suspicion that the vehicles contain aliens who may be illegally in the country." — 422 U.S. at 884. ^pin-884
+
+Apparent ancestry alone is not enough: "The likelihood that any given person of Mexican ancestry is an alien is high enough to make Mexican appearance a relevant factor, but standing alone it does not justify stopping all Mexican-Americans to ask if they are aliens." — *Id.* at 886–87. ^pin-886
 
 ## Application
 Because the officers relied on a single factor — the occupants' apparent Mexican ancestry — they lacked the specific, articulable facts needed to warrant a reasonable suspicion that the car carried persons illegally in the country. That sole ground could not justify the roving-patrol stop, so the stop violated the Fourth Amendment and the evidence of the passengers' status had to be suppressed.

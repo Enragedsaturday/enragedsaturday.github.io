@@ -50,7 +50,9 @@ After his arrest for the murder of a 10-year-old girl, Williams was subjected to
 Whether evidence obtained as the fruit of a constitutional violation is nevertheless admissible if it would inevitably have been discovered by lawful means.
 
 ## Rule
-Yes. "If the prosecution can establish by a preponderance of the evidence that the information ultimately or inevitably would have been discovered by lawful means . . . then the deterrence rationale has so little basis that the evidence should be received." — 467 U.S. at 444. ^pin-444 The prosecution need not also prove the absence of police bad faith.
+Yes. "If the prosecution can establish by a preponderance of the evidence that the information ultimately or inevitably would have been discovered by lawful means . . . then the deterrence rationale has so little basis that the evidence should be received." — 467 U.S. at 444. ^pin-444
+
+The prosecution need not also prove the absence of police bad faith.
 
 ## Application
 The volunteer search party was conducting an organized, systematic search and, in the normal course, would have discovered the body in essentially the same condition; the State proved by a preponderance that the body and related evidence would inevitably have been found by lawful means. The evidence was therefore admissible despite the antecedent right-to-counsel violation.

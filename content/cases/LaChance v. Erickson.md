@@ -52,7 +52,9 @@ Whether the Due Process Clause or the Civil Service Reform Act precludes a feder
 ## Rule
 No. There is no right to lie, even within a right to be heard. Quoting *Bryson*: "A citizen may decline to answer the question, or answer it honestly, but he cannot with impunity knowingly and willfully answer with a falsehood." — 522 U.S. at 265. ^pin-265
 
-The privilege protects silence, not falsehood: "If answering an agency's investigatory question could expose an employee to a criminal prosecution, he may exercise his Fifth Amendment right to remain silent." — *Id.* at 267. ^pin-267 The Court therefore held: "[W]e hold that a Government agency may take adverse action against an employee because the employee made false statements in response to an underlying charge of misconduct." — *Id.* at 268. ^pin-268
+The privilege protects silence, not falsehood: "If answering an agency's investigatory question could expose an employee to a criminal prosecution, he may exercise his Fifth Amendment right to remain silent." — *Id.* at 267. ^pin-267
+
+The Court therefore held: "[W]e hold that a Government agency may take adverse action against an employee because the employee made false statements in response to an underlying charge of misconduct." — *Id.* at 268. ^pin-268
 
 ## Application
 The respondent employees did not stay silent or answer truthfully; they lied to investigators about the conduct with which they were charged. A "meaningful opportunity to be heard" does not include a right to make false statements, and the absence of an oath was immaterial because the charge was making false statements, not perjury. Because each employee could have declined to answer — invoking the Fifth Amendment if answering risked criminal exposure — rather than lying, the agencies were free to sanction the false statements made in response to the underlying charges.

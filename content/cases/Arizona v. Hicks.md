@@ -52,7 +52,9 @@ Police entered Hicks's apartment without a warrant under exigent circumstances �
 Whether moving stereo equipment to read its serial numbers — done on reasonable suspicion during an exigent-circumstances entry — was a "search," and if so whether the plain-view doctrine required probable cause rather than mere reasonable suspicion.
 
 ## Rule
-Moving the equipment to expose hidden information was a new search beyond the entry's justification: the moving of the components "did constitute a 'search' separate and apart from the search for ... the shooter, victims, and weapons that was the lawful objective of his entry into the apartment." — 480 U.S. at 324. ^pin-324 "A search is a search, even if it happens to disclose nothing but the bottom of a turntable." — *Id.* at 325. ^pin-325
+Moving the equipment to expose hidden information was a new search beyond the entry's justification: the moving of the components "did constitute a 'search' separate and apart from the search for ... the shooter, victims, and weapons that was the lawful objective of his entry into the apartment." — 480 U.S. at 324. ^pin-324
+
+"A search is a search, even if it happens to disclose nothing but the bottom of a turntable." — *Id.* at 325. ^pin-325
 
 The plain-view doctrine requires probable cause: "We now hold that probable cause is required. To say otherwise would be to cut the 'plain view' doctrine loose from its theoretical and practical moorings." — *Id.* at 326. ^pin-326
 

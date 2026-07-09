@@ -65,7 +65,9 @@ Whether *Belton*'s rule — allowing a search of a vehicle's passenger compartme
 ## Rule
 Yes. "[W]e . . . conclude that *Belton* governs even when an officer does not make contact until the person arrested has left the vehicle." — 541 U.S. at 617. ^pin-617
 
-A "recent occupant" does not lose that status by having exited first: "[W]hile an arrestee's status as a 'recent occupant' may turn on his temporal or spatial relationship to the car at the time of the arrest and search, it certainly does not turn on whether he was inside or outside the car at the moment that the officer first initiated contact with him." — *Id.* at 622. ^pin-622 Thus: "So long as an arrestee is the sort of 'recent occupant' of a vehicle such as petitioner was here, officers may search that vehicle incident to the arrest." — *Id.* at 623–624. ^pin-623
+A "recent occupant" does not lose that status by having exited first: "[W]hile an arrestee's status as a 'recent occupant' may turn on his temporal or spatial relationship to the car at the time of the arrest and search, it certainly does not turn on whether he was inside or outside the car at the moment that the officer first initiated contact with him." — *Id.* at 622. ^pin-622
+
+Thus: "So long as an arrestee is the sort of 'recent occupant' of a vehicle such as petitioner was here, officers may search that vehicle incident to the arrest." — *Id.* at 623–624. ^pin-623
 
 ## Application
 Thornton had just driven and parked the car, stepping out only moments before Officer Nichols approached him, so he was a "recent occupant." The officer-safety and evidence-preservation concerns underlying *Belton* were no less present because Thornton exited before contact — the situation was equally volatile. A "contact initiation" rule turning on whether the suspect was in or out of the car when the officer first signaled would invite exactly the ad hoc, fact-specific inquiries *Belton* sought to avoid. The warrantless search of the passenger compartment incident to Thornton's arrest was therefore permissible, and the handgun was admissible.

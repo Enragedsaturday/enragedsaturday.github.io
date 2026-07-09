@@ -50,7 +50,9 @@ A deputy stopped Robinette for speeding, ran his license, returned it, and told 
 Whether the Fourth Amendment requires officers to tell a lawfully detained motorist that he is "free to go" before a consent to search obtained during the encounter can be voluntary.
 
 ## Rule
-No. Just as the Court has not required a detailed warning before an ordinary consent search, "so too would it be unrealistic to require police officers to always inform detainees that they are free to go before a consent to search may be deemed voluntary." — 519 U.S. at 39–40. ^pin-39 "The Fourth Amendment test for a valid consent to search is that the consent be voluntary, and '[v]oluntariness is a question of fact to be determined from all the circumstances.'" — *Id.* at 40. ^pin-40
+No. Just as the Court has not required a detailed warning before an ordinary consent search, "so too would it be unrealistic to require police officers to always inform detainees that they are free to go before a consent to search may be deemed voluntary." — 519 U.S. at 39–40. ^pin-39
+
+"The Fourth Amendment test for a valid consent to search is that the consent be voluntary, and '[v]oluntariness is a question of fact to be determined from all the circumstances.'" — *Id.* at 40. ^pin-40
 
 ## Application
 The absence of a "free to go" advisory did not by itself render Robinette's consent involuntary; whether his consent was voluntary had to be determined from all the circumstances of the encounter. The Court rejected the Ohio Supreme Court's per se rule and remanded for application of the totality-of-the-circumstances standard.

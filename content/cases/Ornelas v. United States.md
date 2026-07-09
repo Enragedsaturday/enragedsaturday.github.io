@@ -52,7 +52,9 @@ What standard of review applies on appeal to a trial court's determinations of r
 ## Rule
 The ultimate determinations are reviewed de novo. "We hold that the ultimate questions of reasonable suspicion and probable cause to make a warrantless search should be reviewed *de novo*." — 517 U.S. at 691. ^pin-691
 
-"We therefore hold that as a general matter determinations of reasonable suspicion and probable cause should be reviewed *de novo* on appeal." — 517 U.S. at 699. ^pin-699 At the same time, "a reviewing court should take care both to review findings of historical fact only for clear error and to give due weight to inferences drawn from those facts by resident judges and local law enforcement officers." — *Id.* at 699–700. ^pin-699a
+"We therefore hold that as a general matter determinations of reasonable suspicion and probable cause should be reviewed *de novo* on appeal." — 517 U.S. at 699. ^pin-699
+
+At the same time, "a reviewing court should take care both to review findings of historical fact only for clear error and to give due weight to inferences drawn from those facts by resident judges and local law enforcement officers." — *Id.* at 699–700. ^pin-699a
 
 ## Application
 The Seventh Circuit had reviewed the reasonable-suspicion and probable-cause rulings only for clear error. Because the ultimate mixed questions of reasonable suspicion and probable cause must instead be reviewed de novo — while the historical facts (here, the officer's observations and the loose panel) are reviewed for clear error with due weight to his experience-based inferences — the Court vacated the judgment and remanded for the Court of Appeals to review those determinations de novo.

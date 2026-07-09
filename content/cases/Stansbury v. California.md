@@ -50,7 +50,9 @@ Police questioned Robert Stansbury about a child's murder, treating him initiall
 Whether a person is "in custody" for *Miranda* purposes turns on the interrogating officer's subjective, undisclosed view that the person is a suspect.
 
 ## Rule
-Custody is an objective inquiry. "We hold, not for the first time, that an officer's subjective and undisclosed view concerning whether the person being interrogated is a suspect is irrelevant to the assessment whether the person is in custody." — 511 U.S. at 318. ^pin-318 "[T]he initial determination of custody depends on the objective circumstances of the interrogation, not on the subjective views harbored by either the interrogating officers or the person being questioned." — *Id.* at 323. ^pin-323
+Custody is an objective inquiry. "We hold, not for the first time, that an officer's subjective and undisclosed view concerning whether the person being interrogated is a suspect is irrelevant to the assessment whether the person is in custody." — 511 U.S. at 318. ^pin-318
+
+"[T]he initial determination of custody depends on the objective circumstances of the interrogation, not on the subjective views harbored by either the interrogating officers or the person being questioned." — *Id.* at 323. ^pin-323
 
 ## Application
 Because the state court had relied on whether the officers subjectively regarded Stansbury as a suspect, it applied the wrong standard. The Court vacated and remanded so that the custody question could be decided on the objective circumstances of the interrogation—whether a reasonable person would have felt restraint of the degree associated with a formal arrest—not on the officers' undisclosed suspicions.

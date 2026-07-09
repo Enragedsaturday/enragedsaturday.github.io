@@ -52,7 +52,9 @@ Whether permitting a suspect who has invoked his Miranda rights to speak with hi
 ## Rule
 No. "We think it is clear under both *Miranda* and *Innis* that Mauro was not interrogated. . . . There is no evidence that the officers sent Mrs. Mauro in to see her husband for the purpose of eliciting incriminating statements." — 481 U.S. at 527–528. ^pin-528
 
-Merely creating an opportunity is not interrogation: "Officers do not interrogate a suspect simply by hoping that he will incriminate himself." — *Id.* at 529. ^pin-529 Because "Mauro was not subjected to compelling influences, psychological ploys, or direct questioning[,] . . . his volunteered statements cannot properly be considered the result of police interrogation." — *Id.*
+Merely creating an opportunity is not interrogation: "Officers do not interrogate a suspect simply by hoping that he will incriminate himself." — *Id.* at 529. ^pin-529
+
+Because "Mauro was not subjected to compelling influences, psychological ploys, or direct questioning[,] . . . his volunteered statements cannot properly be considered the result of police interrogation." — *Id.*
 
 ## Application
 The tape showed the detective asked Mauro no questions about the crime, and nothing suggested the officers used the meeting as a psychological ploy — they had discouraged the wife and "yielded to her insistent demands," and the officer's presence served legitimate, security-related reasons. Viewed from Mauro's perspective, a suspect told his wife may speak with him would not feel coerced to incriminate himself. The conduct was "far less questionable than the 'subtle compulsion'" held not to be interrogation in *Innis*, and did not implicate Miranda's purpose of preventing the coercive use of confinement to extract confessions. The officers therefore "acted reasonably and lawfully," and the Constitution did not bar the statements.

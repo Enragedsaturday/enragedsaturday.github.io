@@ -50,7 +50,11 @@ In four consolidated cases, suspects were questioned in police custody without b
 What safeguards the prosecution must show were used before statements obtained from custodial interrogation may be admitted against a defendant.
 
 ## Rule
-"the prosecution may not use statements, whether exculpatory or inculpatory, stemming from custodial interrogation of the defendant unless it demonstrates the use of procedural safeguards effective to secure the privilege against self-incrimination." — 384 U.S. at 444. ^pin-444 "By custodial interrogation, we mean questioning initiated by law enforcement officers after a person has been taken into custody or otherwise deprived of his freedom of action in any significant way." — *Id.* ^pin-444a Absent other effective safeguards, before any custodial questioning the person must be warned that he has the right to remain silent, that anything he says may be used against him, and that he has the right to retained or appointed counsel.
+"the prosecution may not use statements, whether exculpatory or inculpatory, stemming from custodial interrogation of the defendant unless it demonstrates the use of procedural safeguards effective to secure the privilege against self-incrimination." — 384 U.S. at 444. ^pin-444
+
+"By custodial interrogation, we mean questioning initiated by law enforcement officers after a person has been taken into custody or otherwise deprived of his freedom of action in any significant way." — *Id.* ^pin-444a
+
+Absent other effective safeguards, before any custodial questioning the person must be warned that he has the right to remain silent, that anything he says may be used against him, and that he has the right to retained or appointed counsel.
 
 ## Application
 Miranda was interrogated in police custody and signed a confession without being advised of his right to remain silent or to counsel. Because the prosecution could not show that the required procedural safeguards were used to protect his privilege against self-incrimination, his confession was inadmissible against him.

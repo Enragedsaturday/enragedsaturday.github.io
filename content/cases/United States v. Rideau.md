@@ -50,9 +50,13 @@ Around 10:30 p.m. in a high-crime area of Beaumont, Texas, Officer Ellison saw a
 Whether an officer acted reasonably under the Fourth Amendment in stopping an apparently intoxicated man standing in a roadway at night to check on his condition, and then conducting a limited protective patdown when the man backed away.
 
 ## Rule
-Police actions in caring for an impaired person on the public streets serve a recognized public-welfare/community-caretaking function. "Police have long served the public welfare by removing intoxicated people from the public streets, where they pose a hazard to themselves and others." — 969 F.2d at 1574 (citing *Powell v. Texas* and *Cady v. Dombrowski*'s "community caretaking functions"). ^pin-1574 Accordingly, "Officer Ellison was warranted in stopping to investigate the situation and check on the man's condition." — *Id.* ^pin-1574a
+Police actions in caring for an impaired person on the public streets serve a recognized public-welfare/community-caretaking function. "Police have long served the public welfare by removing intoxicated people from the public streets, where they pose a hazard to themselves and others." — 969 F.2d at 1574 (citing *Powell v. Texas* and *Cady v. Dombrowski*'s "community caretaking functions"). ^pin-1574
 
-A lawful detention is not a license to frisk, but the protective patdown here was supported by specific and articulable facts: "A reasonably prudent man in Ellison's situation could have believed that his safety and that of his partner was in danger." — *Id.* ^pin-1574b The court added that "police officers must have specific and articulable facts indicating that their safety is in danger to justify a patdown." — 969 F.2d at 1576. ^pin-1576
+Accordingly, "Officer Ellison was warranted in stopping to investigate the situation and check on the man's condition." — *Id.* ^pin-1574a
+
+A lawful detention is not a license to frisk, but the protective patdown here was supported by specific and articulable facts: "A reasonably prudent man in Ellison's situation could have believed that his safety and that of his partner was in danger." — *Id.* ^pin-1574b
+
+The court added that "police officers must have specific and articulable facts indicating that their safety is in danger to justify a patdown." — 969 F.2d at 1576. ^pin-1576
 
 ## Application
 Ellison was justified in stopping because Rideau, apparently intoxicated and standing in the roadway at night, presented both a possible public-intoxication offense and a public-welfare concern that warranted checking on his condition. The subsequent patdown was supported by specific and articulable facts: after the lawful detention, in a high-crime area where weapons were common, Rideau backed away when asked his name — conduct a reasonably prudent officer could read as gaining room to draw a weapon. The single, spontaneous touch of the front pants pocket was a limited and tailored response to that safety concern.

@@ -50,7 +50,9 @@ Officers responding to a disturbance found a household in chaos: a smashed picku
 Whether the emergency-aid exception justified the warrantless entry where officers had an objectively reasonable basis to believe a violent situation requiring aid was underway.
 
 ## Rule
-Yes. Applying [[Brigham City v. Stuart]]: "Officers do not need ironclad proof of 'a likely serious, life-threatening' injury to invoke the emergency aid exception." — 558 U.S. at 48. ^pin-48 Law enforcement officers may enter a home without a warrant to render emergency assistance or to protect an occupant from imminent injury when they have an objectively reasonable basis for believing aid is needed, judged from the circumstances confronting them.
+Yes. Applying [[Brigham City v. Stuart]]: "Officers do not need ironclad proof of 'a likely serious, life-threatening' injury to invoke the emergency aid exception." — 558 U.S. at 48. ^pin-48
+
+Law enforcement officers may enter a home without a warrant to render emergency assistance or to protect an occupant from imminent injury when they have an objectively reasonable basis for believing aid is needed, judged from the circumstances confronting them.
 
 ## Application
 The officers confronted a residence in chaos — a wrecked truck, broken windows, fresh blood, and a man visibly injured, screaming, and hurling objects. Those circumstances gave an objectively reasonable basis to believe someone inside was injured or in danger. That the blood was only "mere drops," or that Fisher seemed able to tend to himself, did not negate that reasonable basis, so the warrantless entry was justified on these facts.

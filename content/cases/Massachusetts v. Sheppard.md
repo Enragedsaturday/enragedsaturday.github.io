@@ -50,7 +50,9 @@ A detective prepared an affidavit establishing probable cause for a murder inves
 Whether the exclusionary rule bars evidence seized under a warrant that was technically defective in form, where the officers reasonably relied on the issuing judge's assurance that the warrant authorized the requested search.
 
 ## Rule
-The good-faith exception applies; suppression is not required. "we refuse to rule that an officer is required to disbelieve a judge who has just advised him, by word and by action, that the warrant he possesses authorizes him to conduct the search he has requested." — 468 U.S. at 989–990. ^pin-989 Where the only defect is the judge's failure to make the clerical corrections he assured the officer he would make, the officers' reliance on the warrant was objectively reasonable.
+The good-faith exception applies; suppression is not required. "we refuse to rule that an officer is required to disbelieve a judge who has just advised him, by word and by action, that the warrant he possesses authorizes him to conduct the search he has requested." — 468 U.S. at 989–990. ^pin-989
+
+Where the only defect is the judge's failure to make the clerical corrections he assured the officer he would make, the officers' reliance on the warrant was objectively reasonable.
 
 ## Application
 The detective did everything that could be expected: he established probable cause, brought the form's defect to the judge's attention, and was assured by word and action that the judge would make the warrant conform to the requested search. The sole error — the judge's failure to amend the form's description — was the judge's, not the officers'. Because a reasonable officer would have concluded the warrant authorized the search, the officers' reliance was objectively reasonable, and excluding the evidence would not serve the deterrent purpose of the rule.

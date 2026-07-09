@@ -54,7 +54,9 @@ Investigating Antoine Jones for drug trafficking, agents installed a GPS trackin
 Whether the government's attachment of a GPS tracking device to a vehicle, and its use of that device to monitor the vehicle's movements on public roads, constitutes a "search" within the meaning of the Fourth Amendment.
 
 ## Rule
-Yes — under a trespass-based theory of the Fourth Amendment. "We hold that the Government's installation of a GPS device on a target's vehicle, and its use of that device to monitor the vehicle's movements, constitutes a 'search.'" — 565 U.S. at 404. ^pin-404 The basis is physical intrusion on a constitutionally protected "effect": "The Government physically occupied private property for the purpose of obtaining information. We have no doubt that such a physical intrusion would have been considered a 'search' within the meaning of the Fourth Amendment when it was adopted." — *Id.* at 404–05. ^pin-404a
+Yes — under a trespass-based theory of the Fourth Amendment. "We hold that the Government's installation of a GPS device on a target's vehicle, and its use of that device to monitor the vehicle's movements, constitutes a 'search.'" — 565 U.S. at 404. ^pin-404
+
+The basis is physical intrusion on a constitutionally protected "effect": "The Government physically occupied private property for the purpose of obtaining information. We have no doubt that such a physical intrusion would have been considered a 'search' within the meaning of the Fourth Amendment when it was adopted." — *Id.* at 404–05. ^pin-404a
 
 The trespass test survives alongside *Katz*: "the *Katz* reasonable-expectation-of-privacy test has been *added to*, not *substituted for*, the common-law trespassory test." — *Id.* at 409. ^pin-409
 

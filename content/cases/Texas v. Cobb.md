@@ -50,7 +50,9 @@ Cobb was indicted for burglary of a home and was appointed counsel on that charg
 Whether the Sixth Amendment right to counsel, once it has attached to a charged offense, also extends to other uncharged offenses that are factually related to the charged one.
 
 ## Rule
-The right to counsel is charge-specific: "the Sixth Amendment right is 'offense specific.'" — 532 U.S. at 164. ^pin-164 It therefore does not automatically reach other, uncharged offenses merely because they are factually intertwined with the charged crime. The scope of an "offense" is fixed by the *Blockburger* same-elements test: "where the same act or transaction constitutes a violation of two distinct statutory provisions, the test to be applied to determine whether there are two offenses or only one, is whether each provision requires proof of a fact which the other does not." — *Id.* at 173. ^pin-173
+The right to counsel is charge-specific: "the Sixth Amendment right is 'offense specific.'" — 532 U.S. at 164. ^pin-164
+
+It therefore does not automatically reach other, uncharged offenses merely because they are factually intertwined with the charged crime. The scope of an "offense" is fixed by the *Blockburger* same-elements test: "where the same act or transaction constitutes a violation of two distinct statutory provisions, the test to be applied to determine whether there are two offenses or only one, is whether each provision requires proof of a fact which the other does not." — *Id.* at 173. ^pin-173
 
 ## Application
 Because Cobb had been charged only with burglary, his Sixth Amendment right had attached to that offense alone. Capital murder and burglary each require proof of an element the other does not, so under *Blockburger* they are separate offenses; the murder was not the "same offense" as the charged burglary. The right to counsel on the burglary therefore did not bar police from questioning Cobb about the uncharged murders, and his Miranda-waived confession was admissible.

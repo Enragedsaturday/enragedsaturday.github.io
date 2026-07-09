@@ -50,7 +50,9 @@ DEA agents, suspecting Segura and Colon of cocaine trafficking, arrested Segura 
 Whether evidence discovered during a later search under a valid warrant—issued on information wholly independent of an earlier illegal entry—must be suppressed as fruit of that entry.
 
 ## Rule
-Evidence obtained under a genuinely independent warrant is not tainted by a prior illegal entry. "Whether the initial entry was illegal or not is irrelevant to the admissibility of the challenged evidence because there was an independent source for the warrant under which that evidence was seized." — 468 U.S. at 814. ^pin-814 Resting on that independent-source ground, the Court did not decide whether securing the premises was itself reasonable.
+Evidence obtained under a genuinely independent warrant is not tainted by a prior illegal entry. "Whether the initial entry was illegal or not is irrelevant to the admissibility of the challenged evidence because there was an independent source for the warrant under which that evidence was seized." — 468 U.S. at 814. ^pin-814
+
+Resting on that independent-source ground, the Court did not decide whether securing the premises was itself reasonable.
 
 ## Application
 None of the information supporting the warrant derived from the entry; it came from sources wholly unconnected with the entry and known to the agents well before it. The warranted search the following day was therefore a genuinely independent source, and the drugs, cash, and records seized under the warrant were admissible despite the assumed-illegal initial entry and 19-hour occupation.

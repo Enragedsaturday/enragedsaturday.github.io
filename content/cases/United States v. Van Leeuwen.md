@@ -54,7 +54,9 @@ Van Leeuwen mailed two 12-pound insured first-class packages — declared to con
 Did the warrantless detention of first-class mail packages — on reasonable suspicion, while officers diligently pursued a search warrant — violate the Fourth Amendment?
 
 ## Rule
-No. While first-class mail may be opened only under a warrant, the suspicious circumstances "certainly justified detention, without a warrant, while an investigation was made." — 397 U.S. at 252. ^pin-252 Mere detention invaded no protected interest: "No interest protected by the Fourth Amendment was invaded by forwarding the packages the following day rather than the day when they were deposited. The significant Fourth Amendment interest was in the privacy of this first-class mail; and that privacy was not disturbed or invaded until the approval of the magistrate was obtained." — *Id.* at 253. ^pin-253
+No. While first-class mail may be opened only under a warrant, the suspicious circumstances "certainly justified detention, without a warrant, while an investigation was made." — 397 U.S. at 252. ^pin-252
+
+Mere detention invaded no protected interest: "No interest protected by the Fourth Amendment was invaded by forwarding the packages the following day rather than the day when they were deposited. The significant Fourth Amendment interest was in the privacy of this first-class mail; and that privacy was not disturbed or invaded until the approval of the magistrate was obtained." — *Id.* at 253. ^pin-253
 
 The Court cautioned that the rule "is not that first-class mail can be detained 29 hours . . . to obtain the search warrant"; rather, "on the facts of this case — the nature of the mailings, their suspicious character, the fact that there were two packages going to separate destinations, the unavoidable delay in contacting the more distant of the two destinations . . . — a 29-hour delay between the mailings and the service of the warrant cannot be said to be 'unreasonable.'" — *Id.* ^pin-253b
 

@@ -50,7 +50,9 @@ Police suspected Olson of being the getaway driver in a robbery-murder and belie
 Whether an overnight guest has a reasonable expectation of privacy in his host's home sufficient to challenge a warrantless entry.
 
 ## Rule
-Yes. "we think that society recognizes that a houseguest has a legitimate expectation of privacy in his host's home." — 495 U.S. at 98. ^pin-98 An overnight guest's status is alone enough to establish an expectation of privacy in the host's home that society is prepared to recognize as reasonable.
+Yes. "we think that society recognizes that a houseguest has a legitimate expectation of privacy in his host's home." — 495 U.S. at 98. ^pin-98
+
+An overnight guest's status is alone enough to establish an expectation of privacy in the host's home that society is prepared to recognize as reasonable.
 
 ## Application
 Olson was staying as an overnight guest in the women's home when police entered without a warrant to arrest him. Because his status as an overnight guest gave him a legitimate expectation of privacy in that home, he could challenge the warrantless entry, which — absent consent or exigent circumstances — was unlawful.

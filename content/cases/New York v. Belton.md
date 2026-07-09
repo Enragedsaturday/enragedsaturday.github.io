@@ -63,7 +63,11 @@ A police officer stopped a speeding car with four occupants, smelled marijuana, 
 What is the permissible scope of a search of an automobile's passenger compartment incident to the lawful custodial arrest of an occupant.
 
 ## Rule
-The Court adopted a bright-line rule: "when a policeman has made a lawful custodial arrest of the occupant of an automobile, he may, as a contemporaneous incident of that arrest, search the passenger compartment of that automobile." — 453 U.S. at 460. ^pin-460 "It follows from this conclusion that the police may also examine the contents of any containers found within the passenger compartment." — *Id.* ^pin-460b **This bright-line authority was later limited by [[Arizona v. Gant]]** as applied to vehicle searches incident to arrest (see Treatment).
+The Court adopted a bright-line rule: "when a policeman has made a lawful custodial arrest of the occupant of an automobile, he may, as a contemporaneous incident of that arrest, search the passenger compartment of that automobile." — 453 U.S. at 460. ^pin-460
+
+"It follows from this conclusion that the police may also examine the contents of any containers found within the passenger compartment." — *Id.* ^pin-460b
+
+**This bright-line authority was later limited by [[Arizona v. Gant]]** as applied to vehicle searches incident to arrest (see Treatment).
 
 ## Application
 Because the officer had made lawful custodial arrests of the car's occupants, he was entitled to search the passenger compartment as a contemporaneous incident of those arrests, including the zipped pocket of the jacket on the back seat. On these facts the cocaine was the product of a lawful search incident to arrest.

@@ -50,7 +50,9 @@ Stovall was brought, handcuffed, to the hospital room of a stabbing victim (Mrs.
 Whether an unnecessarily suggestive identification procedure can violate due process, and how that claim is judged.
 
 ## Rule
-Suggestive identification procedures are tested for due-process fairness under the totality of the circumstances. The claim asks whether "the confrontation conducted in this case was so unnecessarily suggestive and conducive to irreparable mistaken identification that he was denied due process of law. This is a recognized ground of attack upon a conviction independent of any right to counsel claim." — 388 U.S. at 302. ^pin-302 And "a claimed violation of due process of law in the conduct of a confrontation depends on the totality of the circumstances surrounding it." — *Id.* ^pin-302a
+Suggestive identification procedures are tested for due-process fairness under the totality of the circumstances. The claim asks whether "the confrontation conducted in this case was so unnecessarily suggestive and conducive to irreparable mistaken identification that he was denied due process of law. This is a recognized ground of attack upon a conviction independent of any right to counsel claim." — 388 U.S. at 302. ^pin-302
+
+And "a claimed violation of due process of law in the conduct of a confrontation depends on the totality of the circumstances surrounding it." — *Id.* ^pin-302a
 
 ## Application
 Although showing a suspect singly has been widely condemned, the totality here justified it: Mrs. Behrendt was the only person who could identify or exonerate Stovall, no one knew how long she would live, and she could not come to a station-house lineup. On those facts the immediate hospital showup was imperative and did not deny Stovall due process.

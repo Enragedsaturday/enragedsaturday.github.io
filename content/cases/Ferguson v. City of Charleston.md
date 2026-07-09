@@ -52,7 +52,9 @@ Whether a state hospital's nonconsensual, suspicionless drug testing of maternit
 ## Rule
 No. Where the immediate objective of a search program is to generate evidence for law enforcement, the special-needs exception does not apply, and the search is governed by the ordinary warrant/consent rule. The Court framed the narrow question as whether the State's interest could "justify a departure from the general rule that an official nonconsensual search is unconstitutional if not authorized by a valid warrant." — 532 U.S. at 70. ^pin-70
 
-Although the program's ultimate goal may have been to get the women into treatment, "the immediate objective of the searches was to generate evidence *for law enforcement purposes* in order to reach that goal." — *Id.* at 83. ^pin-83 Because that immediate, law-enforcement purpose pervaded the policy, it fell outside the closely guarded category of permissible suspicionless searches.
+Although the program's ultimate goal may have been to get the women into treatment, "the immediate objective of the searches was to generate evidence *for law enforcement purposes* in order to reach that goal." — *Id.* at 83. ^pin-83
+
+Because that immediate, law-enforcement purpose pervaded the policy, it fell outside the closely guarded category of permissible suspicionless searches.
 
 ## Application
 The MUSC policy was developed with police and prosecutors, used chain-of-custody protocols, and delivered test results to officers who arrested the patients — so its immediate objective was to produce evidence for criminal enforcement, not a need divorced from ordinary law enforcement. Because the patients had not consented and no warrant authorized the testing, the suspicionless searches were unreasonable on these facts.

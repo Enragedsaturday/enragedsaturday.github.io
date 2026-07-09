@@ -52,7 +52,9 @@ Whether a traffic stop is valid under the Fourth Amendment when it is based on a
 ## Rule
 Yes. Reasonable suspicion can rest on a reasonable mistake of law, as well as a reasonable mistake of fact, because the Fourth Amendment demands reasonableness, not perfection. "The question here is whether reasonable suspicion can rest on a mistaken understanding of the scope of a legal prohibition. We hold that it can." — 574 U.S. at 60 (135 S. Ct. at 536). ^pin-60
 
-"To be reasonable is not to be perfect, and so the Fourth Amendment allows for some mistakes on the part of government officials, giving them 'fair leeway for enforcing the law in the community's protection.'" — *Id.* ^pin-60a The mistake, however, must itself be objectively reasonable.
+"To be reasonable is not to be perfect, and so the Fourth Amendment allows for some mistakes on the part of government officials, giving them 'fair leeway for enforcing the law in the community's protection.'" — *Id.* ^pin-60a
+
+The mistake, however, must itself be objectively reasonable.
 
 ## Application
 North Carolina's vehicle code was genuinely ambiguous about whether a car needed two working brake lights — a nearby provision required that "all originally equipped rear lamps" be functional — so Sergeant Darisse's belief that one broken brake light violated the law was objectively reasonable even though the statute did not in fact require it. Because that reasonable mistake of law supplied reasonable suspicion, the stop, and the consent search that followed, were valid.

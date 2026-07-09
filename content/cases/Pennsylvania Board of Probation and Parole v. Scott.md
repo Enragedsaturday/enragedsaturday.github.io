@@ -58,7 +58,9 @@ No; the exclusionary rule is a prudential deterrent, not a personal constitution
 As in the grand-jury (*Calandra*), civil-tax (*Janis*), and civil-deportation (*Lopez-Mendoza*) contexts, the Court declined to extend the rule. Applying it at parole-revocation hearings "would both hinder the functioning of state parole systems and alter the traditionally flexible, administrative nature of parole revocation proceedings," while adding "only minimal deterrence benefits" because the criminal-trial exclusionary rule already deters unconstitutional searches. The social costs of excluding reliable evidence — letting violators escape revocation — outweighed those marginal benefits.
 
 ## Conclusion
-"We therefore hold that the federal exclusionary rule does not bar the introduction at parole revocation hearings of evidence seized in violation of parolees' Fourth Amendment rights." — 524 U.S. at 364. ^pin-364 The judgment of the Pennsylvania Supreme Court was reversed.
+"We therefore hold that the federal exclusionary rule does not bar the introduction at parole revocation hearings of evidence seized in violation of parolees' Fourth Amendment rights." — 524 U.S. at 364. ^pin-364
+
+The judgment of the Pennsylvania Supreme Court was reversed.
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.

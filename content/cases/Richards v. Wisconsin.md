@@ -50,7 +50,9 @@ Officers had a warrant to search Richards's motel room for drugs (the magistrate
 Whether the Fourth Amendment permits a blanket exception to the knock-and-announce requirement for an entire category of crime — all felony drug investigations.
 
 ## Rule
-No blanket exception. "[T]he fact that felony drug investigations may frequently present circumstances warranting a no-knock entry cannot remove from the neutral scrutiny of a reviewing court the reasonableness of the police decision not to knock and announce in a particular case." — 520 U.S. at 394. ^pin-394 "In order to justify a 'no-knock' entry, the police must have a reasonable suspicion that knocking and announcing their presence, under the particular circumstances, would be dangerous or futile, or that it would inhibit the effective investigation of the crime by, for example, allowing the destruction of evidence." — 520 U.S. at 394. ^pin-394a
+No blanket exception. "[T]he fact that felony drug investigations may frequently present circumstances warranting a no-knock entry cannot remove from the neutral scrutiny of a reviewing court the reasonableness of the police decision not to knock and announce in a particular case." — 520 U.S. at 394. ^pin-394
+
+"In order to justify a 'no-knock' entry, the police must have a reasonable suspicion that knocking and announcing their presence, under the particular circumstances, would be dangerous or futile, or that it would inhibit the effective investigation of the crime by, for example, allowing the destruction of evidence." — 520 U.S. at 394. ^pin-394a
 
 ## Application
 Rejecting Wisconsin's blanket rule, the Court nonetheless held the no-knock entry into Richards's room was reasonable on these facts: once Richards opened the door, recognized the police, and slammed it, the officers had reasonable suspicion that he would destroy the easily disposable drugs if they paused to announce. The magistrate's deletion of no-knock authority did not control, because reasonableness is judged as of the moment of entry.

@@ -52,7 +52,9 @@ Whether, when officers have probable cause to search a car for contraband, the a
 ## Rule
 Where founding-era history is inconclusive, reasonableness is assessed by balancing: the Court must "evaluate the search or seizure under traditional standards of reasonableness by assessing, on the one hand, the degree to which it intrudes upon an individual's privacy and, on the other, the degree to which it is needed for the promotion of legitimate governmental interests." — 526 U.S. at 300. ^pin-300
 
-Applying that balance, the Court announced a bright-line rule: "We hold that police officers with probable cause to search a car may inspect passengers' belongings found in the car that are capable of concealing the object of the search." — *Id.* at 307. ^pin-307 The rule reaches containers and belongings in the car, not a search of the passenger's person.
+Applying that balance, the Court announced a bright-line rule: "We hold that police officers with probable cause to search a car may inspect passengers' belongings found in the car that are capable of concealing the object of the search." — *Id.* at 307. ^pin-307
+
+The rule reaches containers and belongings in the car, not a search of the passenger's person.
 
 ## Application
 On these facts the syringe in the driver's pocket and his admission gave the officer probable cause to search the car for drugs, and under the container rule that probable cause extended to any container in the car capable of holding the drugs. Houghton's purse on the back seat was such a container, and the fact that it belonged to a passenger rather than the driver did not place it off limits: contraband can be concealed in a passenger's belongings as readily as the driver's, a passenger's privacy interest in property left in a car is reduced, and the governmental interest in effective vehicle searches is substantial. The search of the purse was therefore lawful.

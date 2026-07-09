@@ -50,7 +50,9 @@ Massiah was indicted on federal narcotics charges, retained counsel, and was rel
 Whether the government may use against a defendant at trial his own incriminating statements, deliberately elicited by government agents after indictment and outside the presence of his counsel.
 
 ## Rule
-No — such deliberate post-indictment elicitation violates the Sixth Amendment. "We hold that the petitioner was denied the basic protections of that guarantee when there was used against him at his trial evidence of his own incriminating words, which federal agents had deliberately elicited from him after he had been indicted and in the absence of his counsel." — 377 U.S. at 206. ^pin-206 The rule reaches indirect and surreptitious interrogations, not just questioning in a police station.
+No — such deliberate post-indictment elicitation violates the Sixth Amendment. "We hold that the petitioner was denied the basic protections of that guarantee when there was used against him at his trial evidence of his own incriminating words, which federal agents had deliberately elicited from him after he had been indicted and in the absence of his counsel." — 377 U.S. at 206. ^pin-206
+
+The rule reaches indirect and surreptitious interrogations, not just questioning in a police station.
 
 ## Application
 By the time of the recorded conversation, Massiah had been indicted and had retained counsel, so his Sixth Amendment right had attached. The federal agents, acting through the cooperating codefendant and the hidden transmitter, deliberately elicited incriminating statements from him without counsel present — indeed, without his even knowing he was being interrogated. Using those statements against him at trial denied him the assistance of counsel the Sixth Amendment guarantees.

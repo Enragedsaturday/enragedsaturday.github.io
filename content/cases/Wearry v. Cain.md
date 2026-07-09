@@ -52,10 +52,14 @@ Whether the State's suppression of evidence impeaching its key witnesses was mat
 ## Rule
 Suppressed favorable evidence violates due process when it is material, and materiality is measured generously: "Evidence qualifies as material when there is "'any reasonable likelihood'" it could have "'affected the judgment of the jury.'"" — 136 S. Ct. at 1006. ^pin-1006
 
-The defendant's burden is confidence-based, not preponderance-based: "He must show only that the new evidence is sufficient to 'undermine confidence' in the verdict." — *Id.* ^pin-1006a And materiality must be assessed collectively — the court must conduct a "cumulative evaluation" of the suppressed evidence rather than gauge each piece "in isolation." — *Id.* at 1007. ^pin-1007
+The defendant's burden is confidence-based, not preponderance-based: "He must show only that the new evidence is sufficient to 'undermine confidence' in the verdict." — *Id.* ^pin-1006a
+
+And materiality must be assessed collectively — the court must conduct a "cumulative evaluation" of the suppressed evidence rather than gauge each piece "in isolation." — *Id.* at 1007. ^pin-1007
 
 ## Application
-On these facts the prosecution's case "resemble[d] a house of cards, built on the jury crediting Scott's account rather than Wearry's alibi." — 136 S. Ct. at 1006. ^pin-1006b The withheld evidence went directly to the credibility of the only witnesses tying Wearry to the murder: it would have shown Scott coached a false story and had a motive to lie, that the role he assigned a confederate may have been physically impossible, and that Brown was angling for a sentence reduction. The state court compounded its error by weighing each item separately. Considered cumulatively, that evidence was enough to undermine confidence in the verdict, establishing a *Brady* violation.
+On these facts the prosecution's case "resemble[d] a house of cards, built on the jury crediting Scott's account rather than Wearry's alibi." — 136 S. Ct. at 1006. ^pin-1006b
+
+The withheld evidence went directly to the credibility of the only witnesses tying Wearry to the murder: it would have shown Scott coached a false story and had a motive to lie, that the role he assigned a confederate may have been physically impossible, and that Brown was angling for a sentence reduction. The state court compounded its error by weighing each item separately. Considered cumulatively, that evidence was enough to undermine confidence in the verdict, establishing a *Brady* violation.
 
 ## Conclusion
 The suppressed impeachment evidence was material; its cumulative weight undermined confidence in the verdict. The Court reversed and remanded for a new trial without reaching Wearry's ineffective-assistance claim.

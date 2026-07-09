@@ -52,7 +52,9 @@ Whether the Fourth Amendment permits warrantless inspections of mines under a co
 ## Rule
 Yes. Commercial premises in a pervasively regulated business enjoy reduced privacy. "The greater latitude to conduct warrantless inspections of commercial property reflects the fact that the expectation of privacy that the owner of commercial property enjoys in such property differs significantly from the sanctity accorded an individual's home, and that this privacy interest may, in certain circumstances, be adequately protected by regulatory schemes authorizing warrantless inspections." — 452 U.S. at 598–599. ^pin-598
 
-"Applying this analysis … we conclude that the warrantless inspections required by the Mine Safety and Health Act do not offend the Fourth Amendment." — *Id.* at 602. ^pin-602 "[T]he only real issue before us is whether the statute's inspection program, in terms of the certainty and regularity of its application, provides a constitutionally adequate substitute for a warrant. We believe that it does." — *Id.* at 603. ^pin-603
+"Applying this analysis … we conclude that the warrantless inspections required by the Mine Safety and Health Act do not offend the Fourth Amendment." — *Id.* at 602. ^pin-602
+
+"[T]he only real issue before us is whether the statute's inspection program, in terms of the certainty and regularity of its application, provides a constitutionally adequate substitute for a warrant. We believe that it does." — *Id.* at 603. ^pin-603
 
 ## Application
 Mining is "among the most hazardous" industries, giving Congress a substantial interest in unannounced inspections that a warrant requirement could frustrate. The Act supplied a constitutionally adequate warrant substitute: it mandates inspection of all mines at defined frequencies (surface mines at least twice yearly, underground at least four times), sets the standards in statute and regulation, and constrains inspector discretion — so the operator "is not left to wonder about the purposes of the inspector or the limits of his task." The certainty and regularity of the scheme made the warrantless inspections reasonable.

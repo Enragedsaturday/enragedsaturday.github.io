@@ -52,7 +52,9 @@ Police had probable cause to arrest Hill for robbery and had his address and a v
 Whether an arrest is valid — and a search incident to it lawful — when police have probable cause to arrest one person but, reasonably and in good faith, arrest a different person whom they mistake for the suspect.
 
 ## Rule
-Yes. The Court adopted the rule that "[w]hen the police have probable cause to arrest one party, and when they reasonably mistake a second party for the first party, then the arrest of the second party is a valid arrest." — 401 U.S. at 802. ^pin-802 Good faith alone is not enough; the test is objective reasonableness: "sufficient probability, not certainty, is the touchstone of reasonableness under the Fourth Amendment and on the record before us the officers' mistake was understandable and the arrest a reasonable response to the situation facing them at the time." — *Id.* at 804. ^pin-804
+Yes. The Court adopted the rule that "[w]hen the police have probable cause to arrest one party, and when they reasonably mistake a second party for the first party, then the arrest of the second party is a valid arrest." — 401 U.S. at 802. ^pin-802
+
+Good faith alone is not enough; the test is objective reasonableness: "sufficient probability, not certainty, is the touchstone of reasonableness under the Fourth Amendment and on the record before us the officers' mistake was understandable and the arrest a reasonable response to the situation facing them at the time." — *Id.* at 804. ^pin-804
 
 A valid arrest of the mistaken person supports a search incident to it: "the police were entitled to do what the law would have allowed them to do if Miller had in fact been Hill, that is, to search incident to arrest and to seize evidence of the crime the police had probable cause to believe Hill had committed." — *Id.* at 804–805. ^pin-804b
 

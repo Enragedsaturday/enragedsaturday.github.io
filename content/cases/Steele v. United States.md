@@ -50,10 +50,12 @@ A prohibition agent saw cases marked "whiskey" being unloaded at a building at 6
 Did the warrant's description of the place to be searched satisfy the Fourth Amendment's particularity requirement?
 
 ## Rule
-Yes. "It is enough if the description is such that the officer with a search warrant can with reasonable effort ascertain and identify the place intended." — 267 U.S. at 503. ^pin-503 A description identifying the building by its address and character, reaching the rooms and spaces connected with it, suffices.
+Yes. "It is enough if the description is such that the officer with a search warrant can with reasonable effort ascertain and identify the place intended." — 267 U.S. at 503. ^pin-503
+
+A description identifying the building by its address and character, reaching the rooms and spaces connected with it, suffices.
 
 ## Application
-The warrant described the building at 611 W. 46th Street as a garage for business purposes and reached the rooms and basement connected with it. "The description of the building as a garage and for business purposes at 611 W. 46th Street clearly indicated the whole building as the place intended to be searched," — *Id.* ^pin-503b — and the garage's elevator connected it with every floor. An officer could, with reasonable effort, identify the premises. The search did not exceed the warrant, the description "cases of whiskey" was specific enough, and probable cause supported issuance. The warrant therefore satisfied constitutional requirements.
+The warrant described the building at 611 W. 46th Street as a garage for business purposes and reached the rooms and basement connected with it. "The description of the building as a garage and for business purposes at 611 W. 46th Street clearly indicated the whole building as the place intended to be searched," — *Id.* — and the garage's elevator connected it with every floor. An officer could, with reasonable effort, identify the premises. The search did not exceed the warrant, the description "cases of whiskey" was specific enough, and probable cause supported issuance. The warrant therefore satisfied constitutional requirements. ^pin-503b
 
 ## Conclusion
 The warrant complied with the Fourth Amendment; the liquor was lawfully seized and need not be returned. The decree was affirmed.

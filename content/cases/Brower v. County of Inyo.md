@@ -52,7 +52,9 @@ After Brower stole a car and led police on a roughly 20-mile chase, officers set
 Whether a Fourth Amendment "seizure" occurs when police stop a fleeing motorist by means of a roadblock into which he crashes — i.e., what governmental conduct counts as a seizure of the person.
 
 ## Rule
-A seizure requires that the government stop the person by the means it intended. "[A] Fourth Amendment seizure does not occur whenever there is a governmentally caused termination of an individual's freedom of movement (the innocent passerby), nor even whenever there is a governmentally caused and governmentally *desired* termination of an individual's freedom of movement (the fleeing felon), but only when there is a governmental termination of freedom of movement *through means intentionally applied*." — 489 U.S. at 596–597. ^pin-596 The Amendment "addresses 'misuse of power,' . . . not the accidental effects of otherwise lawful government conduct." — *Id.* at 596. ^pin-596b
+A seizure requires that the government stop the person by the means it intended. "[A] Fourth Amendment seizure does not occur whenever there is a governmentally caused termination of an individual's freedom of movement (the innocent passerby), nor even whenever there is a governmentally caused and governmentally *desired* termination of an individual's freedom of movement (the fleeing felon), but only when there is a governmental termination of freedom of movement *through means intentionally applied*." — 489 U.S. at 596–597. ^pin-596
+
+The Amendment "addresses 'misuse of power,' . . . not the accidental effects of otherwise lawful government conduct." — *Id.* at 596. ^pin-596b
 
 It is therefore "enough for a seizure that a person be stopped by the very instrumentality set in motion or put in place in order to achieve that result." — *Id.* at 599. ^pin-599
 

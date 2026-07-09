@@ -54,9 +54,13 @@ Whether Officer Brosseau was entitled to qualified immunity on the excessive-for
 ## Rule
 Qualified immunity protects an officer who reasonably misjudges an unsettled legal question. "Qualified immunity shields an officer from suit when she makes a decision that, even if constitutionally deficient, reasonably misapprehends the law governing the circumstances she confronted." — 543 U.S. at 198. ^pin-198
 
-The clearly-established inquiry must be particularized, not abstract. "*Graham* and *Garner*, following the lead of the Fourth Amendment's text, are cast at a high level of generality." — 543 U.S. at 199. ^pin-199 Those general standards "clearly establish" the answer only "in an obvious case … even without a body of relevant case law." — *Id.*
+The clearly-established inquiry must be particularized, not abstract. "*Graham* and *Garner*, following the lead of the Fourth Amendment's text, are cast at a high level of generality." — 543 U.S. at 199. ^pin-199
 
-The fact-specific precedent did not place the question beyond debate. The relevant cases "taken together undoubtedly show that this area is one in which the result depends very much on the facts of each case. None of them squarely governs the case here; they do suggest that Brosseau's actions fell in the '"hazy border between excessive and acceptable force."'" — 543 U.S. at 201. ^pin-201 Accordingly, "[t]he cases by no means 'clearly establish' that Brosseau's conduct violated the Fourth Amendment." — *Id.* ^pin-201b
+Those general standards "clearly establish" the answer only "in an obvious case … even without a body of relevant case law." — *Id.*
+
+The fact-specific precedent did not place the question beyond debate. The relevant cases "taken together undoubtedly show that this area is one in which the result depends very much on the facts of each case. None of them squarely governs the case here; they do suggest that Brosseau's actions fell in the '"hazy border between excessive and acceptable force."'" — 543 U.S. at 201. ^pin-201
+
+Accordingly, "[t]he cases by no means 'clearly establish' that Brosseau's conduct violated the Fourth Amendment." — *Id.* ^pin-201b
 
 ## Application
 The Court took the facts in the light most favorable to Haugen and expressed no view on whether the shooting actually violated the Fourth Amendment; it resolved the case on the second, qualified-immunity step alone. Measured at the proper level of specificity — whether to shoot "a disturbed felon, set on avoiding capture through vehicular flight, when persons in the immediate area are at risk from that flight" — only a "handful" of lower-court decisions spoke to the situation, and they pointed in different directions (*Cole v. Bone* and *Smith v. Freland* finding no violation; *Estate of Starks v. Enyart* finding a jury question). Because that body of law did not give Brosseau fair notice that her single shot was unlawful, her conduct fell in the hazy border the doctrine protects, and she was entitled to qualified immunity.

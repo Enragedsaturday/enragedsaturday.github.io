@@ -52,7 +52,9 @@ Whether the Fifth Amendment bars the prosecution from using, as evidence of guil
 ## Rule
 No — absent an express invocation, the silence is not protected. The privilege is generally not self-executing: a witness who wants its protection ordinarily must claim it. "A witness does not expressly invoke the privilege by standing mute." — 133 S. Ct. at 2179 (plurality opinion). ^pin-2179
 
-The plurality held that Salinas's "Fifth Amendment claim fails because he did not expressly invoke the privilege against self-incrimination" in response to the officer's question. — 133 S. Ct. at 2178 (plurality opinion). ^pin-2178 The express-invocation requirement applies even when the questioner has reason to suspect the answer would be incriminating; the recognized exceptions (a criminal defendant's silence at his own trial under *Griffin*, and silence in the face of official compulsion) did not reach Salinas's voluntary, noncustodial silence.
+The plurality held that Salinas's "Fifth Amendment claim fails because he did not expressly invoke the privilege against self-incrimination" in response to the officer's question. — 133 S. Ct. at 2178 (plurality opinion). ^pin-2178
+
+The express-invocation requirement applies even when the questioner has reason to suspect the answer would be incriminating; the recognized exceptions (a criminal defendant's silence at his own trial under *Griffin*, and silence in the face of official compulsion) did not reach Salinas's voluntary, noncustodial silence.
 
 ## Application
 Salinas was free to leave and was not subjected to the compulsion that excuses an express claim of the privilege. He simply went quiet when asked about the shells, never telling officers he was relying on the Fifth Amendment. Because he did not invoke the privilege when he could have, his silence fell outside the *Griffin* no-comment rule, and the State could use it against him. (Justices Thomas and Scalia concurred in the judgment on the broader ground that comment on precustodial silence does not compel self-incrimination at all.)

@@ -50,7 +50,9 @@ A Prohibition agent, posing as a fellow World War I veteran, visited Sorrells's 
 Whether entrapment is a valid defense, and on what basis, when government agents induce an otherwise law-abiding person to commit a crime.
 
 ## Rule
-Government inducement of an otherwise innocent person can defeat conviction. "Entrapment is the conception and planning of an offense by an officer, and his procurement of its commission by one who would not have perpetrated it except for the trickery, persuasion, or fraud of the officer." — 287 U.S. at 454. ^pin-454 The Court grounded the defense in statutory construction: Congress is not presumed to have intended its penal statutes to reach a person whose criminal design originated with the government rather than with himself.
+Government inducement of an otherwise innocent person can defeat conviction. "Entrapment is the conception and planning of an offense by an officer, and his procurement of its commission by one who would not have perpetrated it except for the trickery, persuasion, or fraud of the officer." — 287 U.S. at 454. ^pin-454
+
+The Court grounded the defense in statutory construction: Congress is not presumed to have intended its penal statutes to reach a person whose criminal design originated with the government rather than with himself.
 
 ## Application
 The agent exploited a shared-veteran rapport and persistent entreaties to overcome Sorrells's repeated refusals; because the evidence permitted a finding that the criminal design originated with the government and that Sorrells was not otherwise disposed to the offense, the entrapment issue should have gone to the jury, and the Court reversed.

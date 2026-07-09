@@ -55,7 +55,11 @@ Whether a crime victim's in-court identification of the accused must be suppress
 No, where the identification's components have an independent source that antedates the illegality. "A victim's in-court identification of the accused has three distinct elements" — the victim's presence to testify, her ability to reconstruct the crime and identify the defendant, and the defendant's own physical presence in the courtroom — and on these facts "none of these three elements 'has been come at by exploitation' of the violation of the defendant's Fourth Amendment rights." — 445 U.S. at 471 (quoting *Wong Sun v. United States*, 371 U.S. 471, 488). ^pin-471
 
 ## Application
-Each element traced to a source independent of the illegal arrest. The victim's presence was "not traceable to any Fourth Amendment violation," because "the victim's identity was known long before there was any official misconduct." — *Id.* at 472. ^pin-472 Her capacity to identify rested on an independent recollection of the crime itself, uninfluenced by the suppressible pretrial procedures: "the victim's capacity to identify her assailant in court neither resulted from nor was biased by the unlawful police conduct committed long after she had developed that capacity." — *Id.* at 473. ^pin-473 As to the third element, the defendant could not "claim immunity from prosecution simply because his appearance in court was precipitated by an unlawful arrest." — *Id.* at 474. ^pin-474
+Each element traced to a source independent of the illegal arrest. The victim's presence was "not traceable to any Fourth Amendment violation," because "the victim's identity was known long before there was any official misconduct." — *Id.* at 472. ^pin-472
+
+Her capacity to identify rested on an independent recollection of the crime itself, uninfluenced by the suppressible pretrial procedures: "the victim's capacity to identify her assailant in court neither resulted from nor was biased by the unlawful police conduct committed long after she had developed that capacity." — *Id.* at 473. ^pin-473
+
+As to the third element, the defendant could not "claim immunity from prosecution simply because his appearance in court was precipitated by an unlawful arrest." — *Id.* at 474. ^pin-474
 
 ## Conclusion
 Because the in-court identification was not the product of the Fourth Amendment violation, it was not a suppressible fruit; the District of Columbia Court of Appeals was reversed.

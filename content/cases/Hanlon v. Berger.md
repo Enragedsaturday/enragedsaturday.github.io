@@ -50,7 +50,9 @@ Paul and Erma Berger lived on a 75,000-acre ranch near Jordan, Montana. In 1993 
 Whether the media's accompaniment during execution of the warrant stated a Fourth Amendment violation, and whether the officers were entitled to qualified immunity.
 
 ## Rule
-The case is governed by its same-day companion, [[Wilson v. Layne]]. The Court treated the allegations as stating a Fourth Amendment violation under *Wilson* — "respondents alleged a Fourth Amendment violation under our decision today in *Wilson v. Layne.*" — 526 U.S. at 810. ^pin-810 But the officers were entitled to qualified immunity: "Petitioners maintain that even though they may have violated the Fourth Amendment rights of respondents, they are entitled to the defense of qualified immunity. We agree. Our holding in *Wilson* makes clear that this right was not clearly established in 1992." — *Id.* ^pin-810b
+The case is governed by its same-day companion, [[Wilson v. Layne]]. The Court treated the allegations as stating a Fourth Amendment violation under *Wilson* — "respondents alleged a Fourth Amendment violation under our decision today in *Wilson v. Layne.*" — 526 U.S. at 810. ^pin-810
+
+But the officers were entitled to qualified immunity: "Petitioners maintain that even though they may have violated the Fourth Amendment rights of respondents, they are entitled to the defense of qualified immunity. We agree. Our holding in *Wilson* makes clear that this right was not clearly established in 1992." — *Id.* ^pin-810b
 
 ## Application
 *Wilson* held that letting the media into a home during a warrant's execution violates the Fourth Amendment, and that the right was not clearly established before that 1999 decision. Because the 1993 ranch search here predated *Wilson* and no intervening decision had made the law any clearer, the agents could not have known their conduct was unlawful and were entitled to qualified immunity, just as in *Wilson*.

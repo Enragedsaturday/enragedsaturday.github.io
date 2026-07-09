@@ -50,7 +50,9 @@ Lafayette was arrested for disturbing the peace and taken to the police station.
 Whether, consistent with the Fourth Amendment, police may search the personal effects of a person under lawful arrest as part of the routine administrative procedure incident to booking and jailing the suspect.
 
 ## Rule
-Yes. As part of the routine stationhouse booking process, police may search and inventory an arrestee's effects without a warrant or probable cause: "we hold that it is not 'unreasonable' for police, as part of the routine procedure incident to incarcerating an arrested person, to search any container or article in his possession, in accordance with established inventory procedures." — 462 U.S. at 648. ^pin-648 The justification for such a search does not rest on probable cause, so the absence of a warrant is immaterial to its reasonableness.
+Yes. As part of the routine stationhouse booking process, police may search and inventory an arrestee's effects without a warrant or probable cause: "we hold that it is not 'unreasonable' for police, as part of the routine procedure incident to incarcerating an arrested person, to search any container or article in his possession, in accordance with established inventory procedures." — 462 U.S. at 648. ^pin-648
+
+The justification for such a search does not rest on probable cause, so the absence of a warrant is immaterial to its reasonableness.
 
 ## Application
 Lafayette's shoulder bag was searched at the station as part of the routine procedure for booking and jailing him after a lawful arrest. Because such a stationhouse inventory of an arrestee's possessions is reasonable to protect property, deter false claims, and keep weapons and contraband out of the jail, the officer needed neither a warrant nor probable cause, and the amphetamine pills were lawfully discovered.

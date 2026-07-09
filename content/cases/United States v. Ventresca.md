@@ -52,9 +52,13 @@ Federal investigators suspected Ventresca of operating an illegal still. An inve
 Did a detailed search-warrant affidavit — combining the affiant's own observations with corroborating reports of fellow officers — establish probable cause when read in a commonsense manner?
 
 ## Rule
-Yes. "[A]ffidavits for search warrants . . . must be tested and interpreted by magistrates and courts in a commonsense and realistic fashion. They are normally drafted by nonlawyers in the midst and haste of a criminal investigation. Technical requirements of elaborate specificity once exacted under common law pleadings have no proper place in this area." — 380 U.S. at 108. ^pin-108 The limited exceptions to the warrant requirement "underscore[] the preference accorded police action taken under a warrant." — *Id.* at 106–07. ^pin-106
+Yes. "[A]ffidavits for search warrants . . . must be tested and interpreted by magistrates and courts in a commonsense and realistic fashion. They are normally drafted by nonlawyers in the midst and haste of a criminal investigation. Technical requirements of elaborate specificity once exacted under common law pleadings have no proper place in this area." — 380 U.S. at 108. ^pin-108
 
-An affidavit may not be "purely conclusory," but "where these circumstances are detailed, where reason for crediting the source of the information is given, and when a magistrate has found probable cause, the courts should not invalidate the warrant by interpreting the affidavit in a hypertechnical, rather than a commonsense, manner." — *Id.* at 108–09. ^pin-109a And "the resolution of doubtful or marginal cases in this area should be largely determined by the preference to be accorded to warrants." — *Id.* at 109. ^pin-109b
+The limited exceptions to the warrant requirement "underscore[] the preference accorded police action taken under a warrant." — *Id.* at 106–07. ^pin-106
+
+An affidavit may not be "purely conclusory," but "where these circumstances are detailed, where reason for crediting the source of the information is given, and when a magistrate has found probable cause, the courts should not invalidate the warrant by interpreting the affidavit in a hypertechnical, rather than a commonsense, manner." — *Id.* at 108–09. ^pin-109a
+
+And "the resolution of doubtful or marginal cases in this area should be largely determined by the preference to be accorded to warrants." — *Id.* at 109. ^pin-109b
 
 ## Application
 The affidavit was detailed and specific, setting forth "a good many" of the underlying circumstances — the affiant's and fellow investigators' mutually corroborating observations of still activity. Read commonsensically rather than technically, it amply established probable cause. The Court of Appeals' insistence that the affidavit label each fact as hearsay or firsthand was exactly the hypertechnical reading the Fourth Amendment does not require; the corroborated observations supplied a substantial basis for the Commissioner's probable-cause finding.

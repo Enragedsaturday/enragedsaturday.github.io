@@ -52,7 +52,11 @@ After customs agents arrested William Jones at the border with cocaine, Jones im
 Does opening a closed but unlocked door to enter and arrest, without first announcing authority and purpose, constitute a "breaking" subject to the announcement requirement of § 3109 (codifying the common-law knock-and-announce rule)?
 
 ## Rule
-Yes. "An unannounced intrusion into a dwelling — what § 3109 basically proscribes — is no less an unannounced intrusion whether officers break down a door, force open a chain lock on a partially open door, open a locked door by use of a passkey, or, as here, open a closed but unlocked door." — 391 U.S. at 590. ^pin-590 The statute's protections must be "governed by something more than the fortuitous circumstance of an unlocked door." — *Id.* (quoting *Keiningham v. United States*). ^pin-590b The Court accordingly "h[e]ld that the method of entry vitiated the arrest and therefore that evidence seized in the subsequent search incident thereto should not have been admitted." — *Id.* at 585–86. ^pin-585
+Yes. "An unannounced intrusion into a dwelling — what § 3109 basically proscribes — is no less an unannounced intrusion whether officers break down a door, force open a chain lock on a partially open door, open a locked door by use of a passkey, or, as here, open a closed but unlocked door." — 391 U.S. at 590. ^pin-590
+
+The statute's protections must be "governed by something more than the fortuitous circumstance of an unlocked door." — *Id.* (quoting *Keiningham v. United States*). ^pin-590b
+
+The Court accordingly "h[e]ld that the method of entry vitiated the arrest and therefore that evidence seized in the subsequent search incident thereto should not have been admitted." — *Id.* at 585–86. ^pin-585
 
 ## Application
 The agents knocked, waited only seconds, and then opened the closed but unlocked door without announcing their identity and purpose, entering with weapons drawn. That was an unannounced intrusion within § 3109 — the manner of entry, not the lock, controls. No exception to the announcement rule (such as a demonstrated danger to the informant or officers) was established on this record. Because the entry violated the announcement requirement, the arrest was unlawful and the cocaine found in the search incident to it was inadmissible.

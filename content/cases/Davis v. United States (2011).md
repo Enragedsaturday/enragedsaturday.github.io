@@ -56,7 +56,9 @@ No. The exclusionary rule is a deterrent sanction, and it is unjustified where t
 The officers searched Davis's car in strict compliance with the Eleventh Circuit precedent that governed at the time; they "act[ed] as a reasonable officer would and should act." Their conduct was not deliberate, reckless, or grossly negligent — the culpability that alone makes exclusion worth its costs under the *Leon* / *Herring* line. Suppressing the revolver would deter no misconduct and would only penalize an officer for following the law, while exacting the high social cost of releasing a felon caught with a firearm. That *Gant* later changed the rule did not retroactively make the officers' reliance unreasonable.
 
 ## Conclusion
-"We therefore hold that when the police conduct a search in objectively reasonable reliance on binding appellate precedent, the exclusionary rule does not apply." — *Id.* at 249–250. ^pin-249 The Eleventh Circuit's refusal to suppress was affirmed.
+"We therefore hold that when the police conduct a search in objectively reasonable reliance on binding appellate precedent, the exclusionary rule does not apply." — *Id.* at 249–250. ^pin-249
+
+The Eleventh Circuit's refusal to suppress was affirmed.
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.

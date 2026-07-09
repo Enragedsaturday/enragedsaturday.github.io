@@ -50,7 +50,9 @@ Cleveland officers forced their way into Dollree Mapp's home without a valid war
 Whether evidence obtained by a search and seizure that violates the Fourth Amendment is inadmissible in a state criminal prosecution.
 
 ## Rule
-Yes. "We hold that all evidence obtained by searches and seizures in violation of the Constitution is, by that same authority, inadmissible in a state court." — 367 U.S. at 655. ^pin-655 Because the Fourth Amendment's right of privacy is enforceable against the States through the Due Process Clause of the Fourteenth Amendment, it is enforceable against them by the same sanction of exclusion used against the Federal Government.
+Yes. "We hold that all evidence obtained by searches and seizures in violation of the Constitution is, by that same authority, inadmissible in a state court." — 367 U.S. at 655. ^pin-655
+
+Because the Fourth Amendment's right of privacy is enforceable against the States through the Due Process Clause of the Fourteenth Amendment, it is enforceable against them by the same sanction of exclusion used against the Federal Government.
 
 ## Application
 The evidence used to convict Mapp was obtained in a warrantless, forcible entry and search of her home in violation of the Fourth Amendment. Under the rule announced here, that unlawfully seized evidence was inadmissible in the Ohio courts, so its admission could not stand. The Court overruled the contrary holding of *Wolf v. Colorado* to the extent it had left the States free to admit such evidence.

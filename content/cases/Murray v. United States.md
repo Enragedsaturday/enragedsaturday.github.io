@@ -50,7 +50,9 @@ Federal agents, suspecting drug trafficking, illegally entered a warehouse witho
 Whether the independent-source doctrine permits admission of evidence that was first observed during an unlawful entry but later seized under a warrant obtained from genuinely independent information.
 
 ## Rule
-Yes — so long as the later acquisition is genuinely independent of the unlawful entry. "The ultimate question, therefore, is whether the search pursuant to warrant was in fact a genuinely independent source of the information and tangible evidence at issue here." — 487 U.S. at 542. ^pin-542 The later seizure is **not** genuinely independent if "the agents' decision to seek the warrant was prompted by what they had seen during the initial entry, . . . or if information obtained during that entry was presented to the Magistrate and affected his decision to issue the warrant." — *Id.* ^pin-542b
+Yes — so long as the later acquisition is genuinely independent of the unlawful entry. "The ultimate question, therefore, is whether the search pursuant to warrant was in fact a genuinely independent source of the information and tangible evidence at issue here." — 487 U.S. at 542. ^pin-542
+
+The later seizure is **not** genuinely independent if "the agents' decision to seek the warrant was prompted by what they had seen during the initial entry, . . . or if information obtained during that entry was presented to the Magistrate and affected his decision to issue the warrant." — *Id.* ^pin-542b
 
 ## Application
 The marijuana would be admissible only if the agents' decision to seek the warrant had not been prompted by what they saw during the illegal entry and if no information from that entry had been presented to the magistrate. Because the lower courts had not made an explicit finding on whether the warrant application was truly independent of the illegal entry, the Court vacated and remanded for that determination.

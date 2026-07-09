@@ -52,7 +52,9 @@ Riverside County, California, combined the *Gerstein* probable-cause determinati
 What time period satisfies *Gerstein*'s requirement that a warrantless arrestee receive a "prompt" judicial determination of probable cause — and whether Riverside County's weekend- and holiday-excluding schedule met it.
 
 ## Rule
-A 48-hour window is presumptively prompt. "[A] jurisdiction that provides judicial determinations of probable cause within 48 hours of arrest will, as a general matter, comply with the promptness requirement of *Gerstein*." — 500 U.S. at 56. ^pin-56 But timeliness within 48 hours is not automatically sufficient: "This is not to say that the probable cause determination in a particular case passes constitutional muster simply because it is provided within 48 hours. Such a hearing may nonetheless violate *Gerstein* if the arrested individual can prove that his or her probable cause determination was delayed unreasonably." — *Id.* ^pin-56b
+A 48-hour window is presumptively prompt. "[A] jurisdiction that provides judicial determinations of probable cause within 48 hours of arrest will, as a general matter, comply with the promptness requirement of *Gerstein*." — 500 U.S. at 56. ^pin-56
+
+But timeliness within 48 hours is not automatically sufficient: "This is not to say that the probable cause determination in a particular case passes constitutional muster simply because it is provided within 48 hours. Such a hearing may nonetheless violate *Gerstein* if the arrested individual can prove that his or her probable cause determination was delayed unreasonably." — *Id.* ^pin-56b
 
 Past 48 hours, the burden flips: "Where an arrested individual does not receive a probable cause determination within 48 hours, the calculus changes. . . . [T]he burden shifts to the government to demonstrate the existence of a bona fide emergency or other extraordinary circumstance. . . . Nor, for that matter, do intervening weekends [qualify as such a circumstance]." — *Id.* at 57. ^pin-57
 

@@ -50,7 +50,9 @@ Edwards was lawfully arrested shortly after 11 p.m. for attempting to break into
 Does the Fourth Amendment bar the warrantless seizure of an arrestee's clothing at the jail roughly 10 hours after his arrest, once the administrative mechanics of arrest are complete and the prisoner is incarcerated?
 
 ## Rule
-No. Searches and seizures "that could be made on the spot at the time of arrest may legally be conducted later when the accused arrives at the place of detention." — 415 U.S. at 803. ^pin-803 More broadly, "once the accused is lawfully arrested and is in custody, the effects in his possession at the place of detention that were subject to search at the time and place of his arrest may lawfully be searched and seized without a warrant even though a substantial period of time has elapsed between the arrest and subsequent administrative processing . . . and the taking of the property for use as evidence." — *Id.* at 807. ^pin-807
+No. Searches and seizures "that could be made on the spot at the time of arrest may legally be conducted later when the accused arrives at the place of detention." — 415 U.S. at 803. ^pin-803
+
+More broadly, "once the accused is lawfully arrested and is in custody, the effects in his possession at the place of detention that were subject to search at the time and place of his arrest may lawfully be searched and seized without a warrant even though a substantial period of time has elapsed between the arrest and subsequent administrative processing . . . and the taking of the property for use as evidence." — *Id.* at 807. ^pin-807
 
 The legal arrest "does — for at least a reasonable time and to a reasonable extent — take [the arrestee's] own privacy out of the realm of protection from police interest in weapons, means of escape, and evidence." — *Id.* at 808–09 (quoting *United States v. DeLeo*). ^pin-808
 

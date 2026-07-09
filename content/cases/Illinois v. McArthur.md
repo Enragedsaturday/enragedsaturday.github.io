@@ -50,7 +50,9 @@ While police helped Tera McArthur remove her belongings from the trailer she sha
 Whether police with probable cause may temporarily prevent a resident from entering his home unaccompanied, to avoid the destruction of evidence, while they diligently obtain a search warrant.
 
 ## Rule
-Yes, on these combined circumstances. "We conclude that the restriction at issue was reasonable, and hence lawful, in light of the following circumstances, which we consider in combination." — 531 U.S. at 331. ^pin-331 The Court considered: probable cause to believe the home held contraband; good reason to fear the evidence would be destroyed; police efforts to reconcile law-enforcement needs with privacy by imposing only a restraint rather than searching; and a limited duration.
+Yes, on these combined circumstances. "We conclude that the restriction at issue was reasonable, and hence lawful, in light of the following circumstances, which we consider in combination." — 531 U.S. at 331. ^pin-331
+
+The Court considered: probable cause to believe the home held contraband; good reason to fear the evidence would be destroyed; police efforts to reconcile law-enforcement needs with privacy by imposing only a restraint rather than searching; and a limited duration.
 
 "We have found no case in which this Court has held unlawful a temporary seizure that was supported by probable cause and was designed to prevent the loss of evidence while the police diligently obtained a warrant in a reasonable period of time." — *Id.* at 334. ^pin-334
 

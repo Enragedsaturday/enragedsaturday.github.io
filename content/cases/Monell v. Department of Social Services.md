@@ -50,7 +50,9 @@ New York City employees challenged an official policy that compelled pregnant em
 Whether local governments are "persons" subject to suit under § 1983, and on what basis they may be held liable.
 
 ## Rule
-Local governments are suable "persons" under § 1983, but only for their own official policies or customs — not vicariously. "the touchstone of the § 1983 action against a government body is an allegation that official policy is responsible for a deprivation of rights protected by the Constitution"; "local governments, like every other § 1983 'person,' by the very terms of the statute, may be sued for constitutional deprivations visited pursuant to governmental 'custom' even though such a custom has not received formal approval through the body's official decisionmaking channels." — 436 U.S. at 690-691. ^pin-690 At the same time, "a municipality cannot be held liable ... under § 1983 on a *respondeat superior* theory." — *Id.* at 691. ^pin-691
+Local governments are suable "persons" under § 1983, but only for their own official policies or customs — not vicariously. "the touchstone of the § 1983 action against a government body is an allegation that official policy is responsible for a deprivation of rights protected by the Constitution"; "local governments, like every other § 1983 'person,' by the very terms of the statute, may be sued for constitutional deprivations visited pursuant to governmental 'custom' even though such a custom has not received formal approval through the body's official decisionmaking channels." — 436 U.S. at 690-691. ^pin-690
+
+At the same time, "a municipality cannot be held liable ... under § 1983 on a *respondeat superior* theory." — *Id.* at 691. ^pin-691
 
 ## Application
 The challenged compulsory-leave rule was an official municipal policy "officially adopted and promulgated by that body's officers," not merely the act of an individual employee. Because the constitutional injury was inflicted through execution of the city's own policy, the city was a suable "person" under § 1983 and could be held liable for that policy — though not for an employee's tort on a vicarious-liability theory.

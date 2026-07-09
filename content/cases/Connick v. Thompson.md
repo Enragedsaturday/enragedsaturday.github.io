@@ -52,7 +52,9 @@ John Thompson was convicted of armed robbery and murder in New Orleans and spent
 Whether a district attorney's office may be held liable under § 1983 for failure to train its prosecutors on *Brady* based on a single violation, absent a pattern of similar violations.
 
 ## Rule
-A pattern of violations is ordinarily required. "A pattern of similar constitutional violations by untrained employees is 'ordinarily necessary' to demonstrate deliberate indifference for purposes of failure to train." — 563 U.S. at 62. ^pin-62 *Canton* recognized a "narrow range" of single-incident liability where the need for training is so obvious and the violation so predictable that a pattern is unnecessary — but that exception is confined. "Failure to train prosecutors in their *Brady* obligations does not fall within the narrow range of *Canton's* hypothesized single-incident liability." — *Id.* at 64. ^pin-64
+A pattern of violations is ordinarily required. "A pattern of similar constitutional violations by untrained employees is 'ordinarily necessary' to demonstrate deliberate indifference for purposes of failure to train." — 563 U.S. at 62. ^pin-62
+
+*Canton* recognized a "narrow range" of single-incident liability where the need for training is so obvious and the violation so predictable that a pattern is unnecessary — but that exception is confined. "Failure to train prosecutors in their *Brady* obligations does not fall within the narrow range of *Canton's* hypothesized single-incident liability." — *Id.* at 64. ^pin-64
 
 ## Application
 Thompson did not prove a pattern of similar *Brady* violations: the four earlier reversals in Connick's office involved different kinds of suppressed evidence and could not have put the office on notice that training on this type of *Brady* violation was deficient. Nor did the single-incident theory apply: unlike the untrained-officer-with-a-gun hypothetical in *Canton*, prosecutors are trained lawyers who are expected to know and apply *Brady*, so the need to train them on it is not the kind of "patently obvious" need that supports liability without a pattern.

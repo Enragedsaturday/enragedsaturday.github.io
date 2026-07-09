@@ -52,7 +52,9 @@ Whether marijuana found inside a locked suitcase during an inventory search is a
 ## Rule
 No. An inventory search is valid only when conducted under standardized criteria or an established routine, so that it does not become a pretext for an investigatory search: "[A]n inventory search must not be a ruse for a general rummaging in order to discover incriminating evidence." — 495 U.S. at 4. ^pin-4
 
-"The policy or practice governing inventory searches should be designed to produce an inventory." — *Id.* ^pin-4a Officers need not proceed in a "totally mechanical 'all or nothing' fashion," but they may not be left with uncanalized discretion over whether to open containers.
+"The policy or practice governing inventory searches should be designed to produce an inventory." — *Id.* ^pin-4a
+
+Officers need not proceed in a "totally mechanical 'all or nothing' fashion," but they may not be left with uncanalized discretion over whether to open containers.
 
 ## Application
 The Florida Highway Patrol had no policy at all governing the opening of closed containers in an inventory search, so the trooper's decision to force open Wells's locked suitcase rested on uncanalized discretion rather than a standardized inventory routine. With nothing channeling that discretion, opening the suitcase was not a valid inventory search, and the marijuana was properly suppressed.

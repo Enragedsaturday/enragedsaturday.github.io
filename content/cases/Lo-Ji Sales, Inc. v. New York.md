@@ -52,7 +52,9 @@ A Town Justice issued a warrant to search an adult bookstore based on two films 
 Whether a search conducted under an open-ended warrant is valid where the issuing magistrate abandons his neutral and detached role by joining and directing the search.
 
 ## Rule
-A warrant-issuing magistrate must remain neutral and detached and may not become part of the search. "The Town Justice did not manifest that neutrality and detachment demanded of a judicial officer when presented with a warrant application for a search and seizure." — 442 U.S. at 326. ^pin-326 Here "He allowed himself to become a member, if not the leader, of the search party which was essentially a police operation. . . . he was not acting as a judicial officer but as an adjunct law enforcement officer." — *Id.* at 327. ^pin-327
+A warrant-issuing magistrate must remain neutral and detached and may not become part of the search. "The Town Justice did not manifest that neutrality and detachment demanded of a judicial officer when presented with a warrant application for a search and seizure." — 442 U.S. at 326. ^pin-326
+
+Here "He allowed himself to become a member, if not the leader, of the search party which was essentially a police operation. . . . he was not acting as a judicial officer but as an adjunct law enforcement officer." — *Id.* at 327. ^pin-327
 
 ## Application
 The warrant the Town Justice issued was a forbidden open-ended (general) warrant as to most items, and rather than standing apart from its execution he went to the store and personally conducted a generalized search — viewing materials, deciding what was obscene, and directing the seizures. By making himself a leader of what was essentially a police operation, he forfeited the neutral and detached posture the Fourth Amendment requires of the issuing officer, so the search and seizures were invalid.

@@ -50,7 +50,9 @@ Matlock was arrested in the front yard of a house where he lived with Mrs. Gayle
 Whether a third party's voluntary consent to search shared premises is valid against an absent, nonconsenting co-occupant, and what the Government must show about that party's authority over the premises.
 
 ## Rule
-A co-occupant with common authority may consent for the absent one. "The consent of one who possesses common authority over premises or effects is valid as against the absent, nonconsenting person with whom that authority is shared." — 415 U.S. at 170. ^pin-170 The prosecution "may show that permission to search was obtained from a third party who possessed common authority over or other sufficient relationship to the premises or effects sought to be inspected." — *Id.* at 171. ^pin-171
+A co-occupant with common authority may consent for the absent one. "The consent of one who possesses common authority over premises or effects is valid as against the absent, nonconsenting person with whom that authority is shared." — 415 U.S. at 170. ^pin-170
+
+The prosecution "may show that permission to search was obtained from a third party who possessed common authority over or other sufficient relationship to the premises or effects sought to be inspected." — *Id.* at 171. ^pin-171
 
 Common authority is not a property concept; it rests on shared use: it "rests rather on mutual use of the property by persons generally having joint access or control for most purposes, so that it is reasonable to recognize that any of the co-inhabitants has the right to permit the inspection in his own right and that the others have assumed the risk that one of their number might permit the common area to be searched." — *Id.* at 171 n.7. ^pin-171a
 

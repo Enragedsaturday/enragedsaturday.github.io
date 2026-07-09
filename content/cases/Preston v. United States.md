@@ -52,7 +52,11 @@ Police received a 3 a.m. complaint about three suspicious men who had been sitti
 May a warrantless search of a car at a garage — conducted after the arrestees were in custody at the station and the car had been towed — be justified as a search incident to the arrest?
 
 ## Rule
-No. A search incident to arrest must be contemporaneous, and "[o]nce an accused is under arrest and in custody, then a search made at another place, without a warrant, is simply not incident to the arrest." — 376 U.S. at 367. ^pin-367 The officer-safety and evidence-preservation "justifications are absent where a search is remote in time or place from the arrest." — *Id.* ^pin-367b On these facts, "the search was too remote in time or place to have been made as incidental to the arrest . . . , [so] the search of the car without a warrant failed to meet the test of reasonableness under the Fourth Amendment, rendering the evidence obtained . . . inadmissible." — *Id.* at 368. ^pin-368
+No. A search incident to arrest must be contemporaneous, and "[o]nce an accused is under arrest and in custody, then a search made at another place, without a warrant, is simply not incident to the arrest." — 376 U.S. at 367. ^pin-367
+
+The officer-safety and evidence-preservation "justifications are absent where a search is remote in time or place from the arrest." — *Id.* ^pin-367b
+
+On these facts, "the search was too remote in time or place to have been made as incidental to the arrest . . . , [so] the search of the car without a warrant failed to meet the test of reasonableness under the Fourth Amendment, rendering the evidence obtained . . . inadmissible." — *Id.* at 368. ^pin-368
 
 ## Application
 The car was not searched until the men had been arrested, booked, and taken into custody at the station, and the car had been towed to a garage. At that point none of the arrestees could have reached a weapon in the car or destroyed evidence, and there was no danger the car would be moved out of the locality. The search was therefore too remote in time and place from the arrest to qualify as incident to it, and no warrant had been obtained.

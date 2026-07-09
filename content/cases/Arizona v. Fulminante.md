@@ -52,7 +52,9 @@ Fulminante was suspected of murdering his stepdaughter. While later incarcerated
 ## Rule
 A credible threat of violence can render a confession involuntary — coercion may be mental, not only physical: "Our cases have made clear that a finding of coercion need not depend upon actual violence by a government agent; a credible threat is sufficient." — 499 U.S. at 287. ^pin-287
 
-The Court then overruled the prior automatic-reversal rule for coerced confessions: "The Court today properly concludes that the admission of an 'involuntary' confession at trial is subject to harmless-error analysis." — *Id.* at 303. ^pin-303 A coerced confession is a "trial error," not a structural defect: "The admission of an involuntary confession—a classic 'trial error'—is markedly different from the other two constitutional violations referred to in the *Chapman* footnote as not being subject to harmless-error analysis." — *Id.* at 309. ^pin-309
+The Court then overruled the prior automatic-reversal rule for coerced confessions: "The Court today properly concludes that the admission of an 'involuntary' confession at trial is subject to harmless-error analysis." — *Id.* at 303. ^pin-303
+
+A coerced confession is a "trial error," not a structural defect: "The admission of an involuntary confession—a classic 'trial error'—is markedly different from the other two constitutional violations referred to in the *Chapman* footnote as not being subject to harmless-error analysis." — *Id.* at 309. ^pin-309
 
 ## Application
 On these facts the Court accepted the finding that Fulminante confessed out of fear of physical violence from other inmates — violence Sarivola, a government agent, offered to prevent only if Fulminante confessed — a credible threat that overbore his will and made the confession coerced. And although harmless-error review now applies to such confessions, the Court held that admitting *this* confession was not harmless beyond a reasonable doubt, because the State could not show the jury would have convicted without it.

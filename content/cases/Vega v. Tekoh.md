@@ -52,7 +52,9 @@ Deputy Vega questioned Terence Tekoh at his workplace about a reported sexual as
 Whether a plaintiff may sue a police officer under § 1983 based on the admission at a criminal trial of a statement obtained without Miranda warnings — i.e., whether a *Miranda* violation is a deprivation of a right "secured by the Constitution and laws" for § 1983 purposes.
 
 ## Rule
-No. "A violation of the *Miranda* rules does not provide a basis for a § 1983 claim." — 597 U.S. at 134 (Held). ^pin-134 *Miranda* imposed a set of *prophylactic* rules to protect the Fifth Amendment privilege; those rules are not themselves the constitutional right, so their breach is not, by itself, a constitutional deprivation. The Court declined to treat the *Miranda* rules as federal "law" creating a § 1983 cause of action because the benefits would be slight and the costs substantial, and "*Miranda* and its progeny provide sufficient protection for the Fifth Amendment right against compelled self-incrimination."
+No. "A violation of the *Miranda* rules does not provide a basis for a § 1983 claim." — 597 U.S. at 134 (Held). ^pin-134
+
+*Miranda* imposed a set of *prophylactic* rules to protect the Fifth Amendment privilege; those rules are not themselves the constitutional right, so their breach is not, by itself, a constitutional deprivation. The Court declined to treat the *Miranda* rules as federal "law" creating a § 1983 cause of action because the benefits would be slight and the costs substantial, and "*Miranda* and its progeny provide sufficient protection for the Fifth Amendment right against compelled self-incrimination."
 
 Concluding: "Because a violation of *Miranda* is not itself a violation of the Fifth Amendment, and because we see no justification for expanding *Miranda* to confer a right to sue under § 1983, the judgment of the Court of Appeals is reversed." — *Id.* (Alito, J., for the Court) (concluding paragraph). ^pin-134a
 

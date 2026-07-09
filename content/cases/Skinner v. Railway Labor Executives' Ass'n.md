@@ -50,7 +50,9 @@ Federal Railroad Administration regulations required blood and urine testing of 
 Whether suspicionless drug and alcohol testing of railroad employees following accidents is reasonable under the Fourth Amendment as a special-needs search.
 
 ## Rule
-Where special needs make individualized suspicion impracticable, a search may be reasonable without it. "In limited circumstances, where the privacy interests implicated by the search are minimal, and where an important governmental interest furthered by the intrusion would be placed in jeopardy by a requirement of individualized suspicion, a search may be reasonable despite the absence of such suspicion." — 489 U.S. at 624. ^pin-624 The Court treated railroad-safety regulation as presenting "special needs, beyond the normal need for law enforcement," that justified departing from the warrant and probable-cause requirements.
+Where special needs make individualized suspicion impracticable, a search may be reasonable without it. "In limited circumstances, where the privacy interests implicated by the search are minimal, and where an important governmental interest furthered by the intrusion would be placed in jeopardy by a requirement of individualized suspicion, a search may be reasonable despite the absence of such suspicion." — 489 U.S. at 624. ^pin-624
+
+The Court treated railroad-safety regulation as presenting "special needs, beyond the normal need for law enforcement," that justified departing from the warrant and probable-cause requirements.
 
 ## Application
 The Court found the intrusion of blood and breath tests minimal and the urine-collection procedures regulated to limit intrusiveness, while the government's interest in railroad safety—where an impaired employee's momentary lapse could be catastrophic—was compelling. On that balance, the suspicionless post-accident testing was reasonable without a warrant or individualized suspicion.

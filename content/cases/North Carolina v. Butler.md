@@ -50,7 +50,9 @@ After his arrest, Butler was advised of his *Miranda* rights and given a waiver 
 Whether an explicit (signed or spoken) statement of waiver is necessary for a valid *Miranda* waiver, or whether waiver may be inferred from the suspect's words and conduct.
 
 ## Rule
-An express waiver is not required. "An express written or oral statement of waiver of the right to remain silent or of the right to counsel is usually strong proof of the validity of that waiver, but is not inevitably either necessary or sufficient to establish waiver." — 441 U.S. at 373. ^pin-373 "The courts must presume that a defendant did not waive his rights; the prosecution's burden is great; but in at least some cases waiver can be clearly inferred from the actions and words of the person interrogated." — *Id.* ^pin-373b
+An express waiver is not required. "An express written or oral statement of waiver of the right to remain silent or of the right to counsel is usually strong proof of the validity of that waiver, but is not inevitably either necessary or sufficient to establish waiver." — 441 U.S. at 373. ^pin-373
+
+"The courts must presume that a defendant did not waive his rights; the prosecution's burden is great; but in at least some cases waiver can be clearly inferred from the actions and words of the person interrogated." — *Id.* ^pin-373b
 
 ## Application
 Butler's refusal to sign the waiver form did not, by itself, defeat waiver. His statement that he would talk — made after he acknowledged understanding his rights and without invoking counsel — could support a finding that he waived his rights through his words and conduct. The Court rejected the North Carolina Supreme Court's per se rule requiring an explicit waiver and remanded for a determination under the proper standard.

@@ -50,7 +50,9 @@ Four police officers positioned themselves at the door of a motel room and knock
 Whether police obtain lawful, consensual access to a motel room when an occupant opens the door in submission to a police demand made under color of authority, rather than voluntarily.
 
 ## Rule
-A door opened in submission to authority is not consent: "an unconstitutional search occurs when officers gain visual or physical access to a motel room after an occupant opens the door not voluntarily, but in response to a demand under color of authority." — 127 F.3d at 666. ^pin-666 Whether the door-opening was voluntary or coerced is judged by how the encounter would appear to a reasonable person; a coercive, badge-backed demand to open the door is a Fourth Amendment intrusion, not a consensual entry.
+A door opened in submission to authority is not consent: "an unconstitutional search occurs when officers gain visual or physical access to a motel room after an occupant opens the door not voluntarily, but in response to a demand under color of authority." — 127 F.3d at 666. ^pin-666
+
+Whether the door-opening was voluntary or coerced is judged by how the encounter would appear to a reasonable person; a coercive, badge-backed demand to open the door is a Fourth Amendment intrusion, not a consensual entry.
 
 ## Application
 On these facts the record amply supported that the officers acted under color of authority: four of them massed at the door and knocked far more forcefully and persistently than a private citizen would, in a manner calculated to compel a response. The occupant's opening of the door was therefore submission to that authority, not voluntary consent. Because the officers gained access by coercion rather than consent, their entry was an unconstitutional search.

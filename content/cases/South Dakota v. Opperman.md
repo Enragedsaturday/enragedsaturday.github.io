@@ -50,7 +50,9 @@ Opperman's car was impounded for repeated overnight parking violations. Followin
 Whether a routine inventory search of a lawfully impounded vehicle, conducted under standard police procedures, is reasonable under the Fourth Amendment.
 
 ## Rule
-Routine inventories under standardized procedures are reasonable. The Court emphasized that "there is no suggestion whatever that this standard procedure, essentially like that followed throughout the country, was a pretext concealing an investigatory police motive." — 428 U.S. at 376. ^pin-376 "On this record we conclude that in following standard police procedures, prevailing throughout the country and approved by the overwhelming majority of courts, the conduct of the police was not 'unreasonable' under the Fourth Amendment." — *Id.* ^pin-376a
+Routine inventories under standardized procedures are reasonable. The Court emphasized that "there is no suggestion whatever that this standard procedure, essentially like that followed throughout the country, was a pretext concealing an investigatory police motive." — 428 U.S. at 376. ^pin-376
+
+"On this record we conclude that in following standard police procedures, prevailing throughout the country and approved by the overwhelming majority of courts, the conduct of the police was not 'unreasonable' under the Fourth Amendment." — *Id.* ^pin-376a
 
 ## Application
 The car was lawfully impounded; the inventory followed standard procedure and was prompted by valuables in plain view, with no indication it was a pretext for an investigatory search. On those facts, opening the glove compartment and inventorying the contents was reasonable, and the marijuana was admissible.

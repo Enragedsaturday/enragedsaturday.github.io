@@ -50,7 +50,11 @@ Around 5:00 p.m., South Salt Lake City police received a report that a man had b
 Whether an officer exercising a community-caretaking function may detain a person without reasonable suspicion of a crime, and what standards govern such a caretaking detention of a person.
 
 ## Rule
-A police officer exercising community-caretaking functions "may ... properly detain a person," subject to a three-part test. **First (articulable need):** "such a community caretaking detention must be based upon 'specific and articulable facts which ... reasonably warrant [an] intrusion' into the individual's liberty." — 416 F.3d at 1213. ^pin-1213 **Second (interest-balancing):** "the government's interest must outweigh the individual's interest in being free from arbitrary governmental interference." — *Id.* ^pin-1213a **Third (tailoring):** "the detention must last no longer than is necessary to effectuate its purpose, and its scope must be carefully tailored to its underlying justification." — *Id.* ^pin-1213b
+A police officer exercising community-caretaking functions "may ... properly detain a person," subject to a three-part test. **First (articulable need):** "such a community caretaking detention must be based upon 'specific and articulable facts which ... reasonably warrant [an] intrusion' into the individual's liberty." — 416 F.3d at 1213. ^pin-1213
+
+**Second (interest-balancing):** "the government's interest must outweigh the individual's interest in being free from arbitrary governmental interference." — *Id.* ^pin-1213a
+
+**Third (tailoring):** "the detention must last no longer than is necessary to effectuate its purpose, and its scope must be carefully tailored to its underlying justification." — *Id.* ^pin-1213b
 
 Once the caretaking purpose is satisfied, any further detention needs an independent justification: "Once the officer has completed the inquiry necessary to satisfy the purpose of the initial detention, he or she must allow the person to proceed unless the officer has a reasonable suspicion of criminal conduct." — *Id.* ^pin-1213c
 

@@ -52,7 +52,9 @@ Border Patrol officers studied evidence of an alien-smuggling operation: footpri
 What quantum and kind of basis the Fourth Amendment requires for an investigatory vehicle stop — i.e., how reasonable suspicion is assessed.
 
 ## Rule
-Reasonable suspicion is a particularized, objective judgment drawn from the totality of the circumstances: "the totality of the circumstances—the whole picture—must be taken into account. Based upon that whole picture the detaining officers must have a particularized and objective basis for suspecting the particular person stopped of criminal activity." — 449 U.S. at 417–18. ^pin-417 The assessment permits officers to draw on their experience and to make commonsense inferences and deductions about the cumulative information available to them.
+Reasonable suspicion is a particularized, objective judgment drawn from the totality of the circumstances: "the totality of the circumstances—the whole picture—must be taken into account. Based upon that whole picture the detaining officers must have a particularized and objective basis for suspecting the particular person stopped of criminal activity." — 449 U.S. at 417–18. ^pin-417
+
+The assessment permits officers to draw on their experience and to make commonsense inferences and deductions about the cumulative information available to them.
 
 ## Application
 The officers' chain of inferences — reconstructing the smuggler's method, route, likely night, and the time window from the physical clues, and reasoning that a vehicle would be needed at a predictable point — gave them a particularized and objective basis to suspect that the specific truck they stopped was carrying illegal aliens. Viewed as a whole rather than as isolated facts, that picture supported reasonable suspicion, so the investigatory stop was valid.

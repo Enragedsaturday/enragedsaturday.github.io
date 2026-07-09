@@ -50,7 +50,9 @@ Responding to a 3:50 a.m. report that a man had fired a shot at a state campgrou
 Whether a person has a Fourth Amendment reasonable expectation of privacy in a closed tent pitched on a public campground, such that a warrantless search of the tent violates the Fourth Amendment.
 
 ## Rule
-Yes. A tent is treated as a dwelling for Fourth Amendment purposes, not as a vehicle. Occupancy of a tent requires "both a subjective and an objectively reasonable expectation of privacy in the tent." — 6 F.3d at 677 (citing [[Katz v. United States]]). ^pin-677 That expectation survives pitching the tent on public ground: "This reasonable expectation is not destroyed when a person's tent is pitched instead on a public campground where one is legally permitted to camp." — *Id.* ^pin-677a
+Yes. A tent is treated as a dwelling for Fourth Amendment purposes, not as a vehicle. Occupancy of a tent requires "both a subjective and an objectively reasonable expectation of privacy in the tent." — 6 F.3d at 677 (citing [[Katz v. United States]]). ^pin-677
+
+That expectation survives pitching the tent on public ground: "This reasonable expectation is not destroyed when a person's tent is pitched instead on a public campground where one is legally permitted to camp." — *Id.* ^pin-677a
 
 The court rejected any vehicle analogy and held: "The district court did not err in concluding a tent is more like a house than a car. We hold that Gooch had a reasonable expectation of privacy such that the warrantless search of his tent violated the Fourth Amendment." — *Id.* ^pin-677b
 

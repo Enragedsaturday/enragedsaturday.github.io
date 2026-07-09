@@ -52,7 +52,9 @@ Whether the Government, having unlawfully seized and copied a party's documents,
 ## Rule
 No. Illegally obtained evidence may not be used even indirectly. "The essence of a provision forbidding the acquisition of evidence in a certain way is that not merely evidence so acquired shall not be used before the Court but that it shall not be used at all." — 251 U.S. at 392. ^pin-392
 
-The bar is not absolute, however: "Of course this does not mean that the facts thus obtained become sacred and inaccessible. If knowledge of them is gained from an independent source they may be proved like any others, but the knowledge gained by the Government's own wrong cannot be used by it in the way proposed." — *Id.* ^pin-392b To allow the subpoena would "reduce[] the Fourth Amendment to a form of words." — *Id.* ^pin-392c
+The bar is not absolute, however: "Of course this does not mean that the facts thus obtained become sacred and inaccessible. If knowledge of them is gained from an independent source they may be proved like any others, but the knowledge gained by the Government's own wrong cannot be used by it in the way proposed." — *Id.* ^pin-392b
+
+To allow the subpoena would "reduce[] the Fourth Amendment to a form of words." — *Id.* ^pin-392c
 
 ## Application
 The Government conceded the seizure was unlawful but argued it could study and copy the papers, then subpoena the originals "in a more regular form." The Court rejected the idea that the Constitution protects only physical possession and not the advantages gained by the forbidden act. Because the subpoenas rested entirely on knowledge derived from the illegal seizure — not from any independent source — they could not be enforced, and the contempt could not stand.

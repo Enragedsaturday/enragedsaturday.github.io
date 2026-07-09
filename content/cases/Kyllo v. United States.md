@@ -58,7 +58,9 @@ Whether the use of a thermal-imaging device aimed at a private home from a publi
 ## Rule
 Yes. "We think that obtaining by sense-enhancing technology any information regarding the interior of the home that could not otherwise have been obtained without physical 'intrusion into a constitutionally protected area' . . . constitutes a search — at least where (as here) the technology in question is not in general public use." — 533 U.S. at 34. ^pin-34
 
-The Court declined to limit the rule to "intimate" details, because "[i]n the home, our cases show, *all* details are intimate details, because the entire area is held safe from prying government eyes." — *Id.* at 37. ^pin-37 It therefore held: "Where, as here, the Government uses a device that is not in general public use, to explore details of the home that would previously have been unknowable without physical intrusion, the surveillance is a 'search' and is presumptively unreasonable without a warrant." — *Id.* at 40. ^pin-40
+The Court declined to limit the rule to "intimate" details, because "[i]n the home, our cases show, *all* details are intimate details, because the entire area is held safe from prying government eyes." — *Id.* at 37. ^pin-37
+
+It therefore held: "Where, as here, the Government uses a device that is not in general public use, to explore details of the home that would previously have been unknowable without physical intrusion, the surveillance is a 'search' and is presumptively unreasonable without a warrant." — *Id.* at 40. ^pin-40
 
 ## Application
 The agent used a thermal imager — a device not in general public use — to learn about the relative warmth of areas inside Kyllo's home, information that could not have been obtained without physically entering. That the device measured only heat radiating from exterior surfaces did not save it, any more than the eavesdropping in *Katz* was permissible because it captured only sound at the booth's exterior; and because the target was a home, the relative warmth of its rooms counted as an intimate detail. The thermal scan was thus a search, and being warrantless it was presumptively unreasonable.

@@ -50,7 +50,9 @@ Officer Taylor stopped Kenneth Sullivan for speeding and arrested him for traffi
 Whether an arrest supported by probable cause violates the Fourth Amendment because the arresting officer had a pretextual or improper subjective motivation, and whether a state may interpret the Federal Constitution to forbid such pretextual arrests.
 
 ## Rule
-No to both. The officer's subjective motive is irrelevant to an objectively justified, probable-cause arrest: the Court "held unanimously that '[s]ubjective intentions play no role in ordinary, probable-cause Fourth Amendment analysis.'" — 532 U.S. at 772 (quoting *Whren v. United States*). ^pin-772 The Arkansas court's contrary view — that a probable-cause arrest can nevertheless be invalid because of improper motive — "cannot be squared with our decision in *Whren*, in which we noted our 'unwilling[ness] to entertain Fourth Amendment challenges based on the actual motivations of individual officers.'" — *Id.* ^pin-772b
+No to both. The officer's subjective motive is irrelevant to an objectively justified, probable-cause arrest: the Court "held unanimously that '[s]ubjective intentions play no role in ordinary, probable-cause Fourth Amendment analysis.'" — 532 U.S. at 772 (quoting *Whren v. United States*). ^pin-772
+
+The Arkansas court's contrary view — that a probable-cause arrest can nevertheless be invalid because of improper motive — "cannot be squared with our decision in *Whren*, in which we noted our 'unwilling[ness] to entertain Fourth Amendment challenges based on the actual motivations of individual officers.'" — *Id.* ^pin-772b
 
 A state also may not use the *federal* Constitution to impose greater restrictions than this Court requires: while a State is free "as a matter of its own law to impose greater restrictions on police activity," it "may not impose such greater restrictions as a matter of *federal constitutional law* when this Court specifically refrains from imposing them." — *Id.* at 772 (quoting *Oregon v. Hass*). ^pin-772c
 

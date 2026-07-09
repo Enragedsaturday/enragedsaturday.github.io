@@ -50,7 +50,9 @@ Seven defendants were convicted of the 1984 group assault, robbery, and murder o
 Whether the withheld evidence was "material" under *Brady v. Maryland*, such that its suppression deprived the defendants of a fair trial.
 
 ## Rule
-The materiality test is demanding and is judged against the whole record: "[E]vidence is 'material' within the meaning of *Brady* when there is a reasonable probability that, had the evidence been disclosed, the result of the proceeding would have been different." — 582 U.S. 313, 137 S. Ct. 1885, 1893 (2017) (quoting *Cone v. Bell*). ^pin-1893 Reviewing the suppressed evidence against the entire record, the Court concluded "it is too little, too weak, or too distant from the main evidentiary points to meet *Brady*'s standards." — *Id.* at 1894. ^pin-1894
+The materiality test is demanding and is judged against the whole record: "[E]vidence is 'material' within the meaning of *Brady* when there is a reasonable probability that, had the evidence been disclosed, the result of the proceeding would have been different." — 582 U.S. 313, 137 S. Ct. 1885, 1893 (2017) (quoting *Cone v. Bell*). ^pin-1893
+
+Reviewing the suppressed evidence against the entire record, the Court concluded "it is too little, too weak, or too distant from the main evidentiary points to meet *Brady*'s standards." — *Id.* at 1894. ^pin-1894
 
 ## Application
 On this record the withheld evidence would have supported only an alternative "single attacker" theory, but a group attack was the cornerstone of the government's case and was confirmed by the consistent testimony of numerous eyewitnesses, several of whom admitted participating. Set against that body of evidence, the undisclosed items were too marginal to establish a reasonable probability of a different outcome. Because the suppressed evidence was immaterial, there was no *Brady* violation.

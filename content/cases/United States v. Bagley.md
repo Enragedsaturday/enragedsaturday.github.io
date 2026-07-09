@@ -50,7 +50,9 @@ Bagley was convicted of federal narcotics and firearms charges largely on the te
 What standard of materiality governs a *Brady* claim, and whether a single materiality standard applies regardless of whether the defense made no request, a general request, or a specific request for the evidence.
 
 ## Rule
-The Court adopted one unified materiality standard for all *Brady* claims, including suppressed impeachment evidence: "The evidence is material only if there is a reasonable probability that, had the evidence been disclosed to the defense, the result of the proceeding would have been different. A 'reasonable probability' is a probability sufficient to undermine confidence in the outcome." — 473 U.S. at 682. ^pin-682 Impeachment evidence, like exculpatory evidence, falls within the *Brady* rule, and the same reasonable-probability test measures materiality whether or not the defense requested the evidence.
+The Court adopted one unified materiality standard for all *Brady* claims, including suppressed impeachment evidence: "The evidence is material only if there is a reasonable probability that, had the evidence been disclosed to the defense, the result of the proceeding would have been different. A 'reasonable probability' is a probability sufficient to undermine confidence in the outcome." — 473 U.S. at 682. ^pin-682
+
+Impeachment evidence, like exculpatory evidence, falls within the *Brady* rule, and the same reasonable-probability test measures materiality whether or not the defense requested the evidence.
 
 ## Application
 Because the undisclosed contingent-payment contracts bore on the credibility of the government's two key informant witnesses, they were favorable impeachment evidence within *Brady*'s reach. The proper question was therefore whether there was a reasonable probability that disclosure would have produced a different result — a determination the Court remanded for the lower courts to make under the newly clarified, single materiality standard rather than under any automatic-reversal or request-specific rule.

@@ -52,7 +52,9 @@ Whether a suspect's general consent to search his car for narcotics authorizes a
 ## Rule
 Yes — the scope of consent is measured objectively. "The standard for measuring the scope of a suspect's consent under the Fourth Amendment is that of 'objective' reasonableness—what would the typical reasonable person have understood by the exchange between the officer and the suspect?" — 500 U.S. at 251. ^pin-251
 
-And "[t]he scope of a search is generally defined by its expressed object." — *Id.* ^pin-251a A general consent to search a car for drugs therefore reasonably extends to containers inside the car that could hold drugs.
+And "[t]he scope of a search is generally defined by its expressed object." — *Id.* ^pin-251a
+
+A general consent to search a car for drugs therefore reasonably extends to containers inside the car that could hold drugs.
 
 ## Application
 Jimeno gave a general, unlimited consent to search the car after the officer told him he was looking for narcotics. A typical reasonable person would understand that authorization to include a paper bag on the floorboard where drugs might be carried — so it was objectively reasonable for the officer to open the bag, and the search did not exceed the consent given.

@@ -50,7 +50,9 @@ A Border Patrol agent on a remote Arizona back road stopped a minivan after a se
 Whether reasonable suspicion is assessed by examining each factor in isolation and discarding those susceptible to innocent explanation, or by evaluating the totality of the circumstances.
 
 ## Rule
-Reasonable suspicion is judged on the whole picture, not factor-by-factor: reviewing courts "must look at the 'totality of the circumstances' of each case to see whether the detaining officer has a 'particularized and objective basis' for suspecting legal wrongdoing." — 534 U.S. at 273. ^pin-273 The Court rejected the appellate court's approach of evaluating each factor in isolation: "*Terry*, however, precludes this sort of divide-and-conquer analysis." — *Id.* at 274. ^pin-274
+Reasonable suspicion is judged on the whole picture, not factor-by-factor: reviewing courts "must look at the 'totality of the circumstances' of each case to see whether the detaining officer has a 'particularized and objective basis' for suspecting legal wrongdoing." — 534 U.S. at 273. ^pin-273
+
+The Court rejected the appellate court's approach of evaluating each factor in isolation: "*Terry*, however, precludes this sort of divide-and-conquer analysis." — *Id.* at 274. ^pin-274
 
 ## Application
 Viewing the agent's observations together — and giving due weight to his specialized training and experience with the area's smuggling patterns — the combination of the avoided checkpoint, the suspicious timing, the driver's stiff demeanor, and the children's choreographed waving with their feet propped on the cargo supplied a particularized and objective basis to suspect criminal activity. The Ninth Circuit erred by dismissing factors individually; assessed as a whole, the stop was supported by reasonable suspicion.

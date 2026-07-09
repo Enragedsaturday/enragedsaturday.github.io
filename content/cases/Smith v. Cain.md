@@ -50,7 +50,9 @@ Juan Smith was convicted of five murders based solely on the testimony of a sing
 Whether the State's failure to disclose the eyewitness's contradictory statements was a material *Brady* violation.
 
 ## Rule
-Suppressed impeachment evidence is material when it could reasonably undermine confidence in the verdict. "[E]vidence impeaching an eyewitness may not be material if the State's other evidence is strong enough to sustain confidence in the verdict." — 565 U.S. 73 (2012) (slip op., at 2). ^pin-2 But here "Boatner's undisclosed statements were plainly material." — *Id.* (slip op., at 3). ^pin-3
+Suppressed impeachment evidence is material when it could reasonably undermine confidence in the verdict. "[E]vidence impeaching an eyewitness may not be material if the State's other evidence is strong enough to sustain confidence in the verdict." — 565 U.S. 73 (2012) (slip op., at 2). ^pin-2
+
+But here "Boatner's undisclosed statements were plainly material." — *Id.* (slip op., at 3). ^pin-3
 
 ## Application
 Boatner's testimony was the only evidence linking Smith to the crime, and his undisclosed statements—that he "could not ID anyone because [he] couldn't see faces"—directly contradicted his confident trial identification. Because that impeachment was material and the State failed to disclose it, the nondisclosure violated *Brady*, and the conviction was reversed.

@@ -50,7 +50,11 @@ Acting on a tip, Detective Baker went at night to a closed, sealed building on T
 Whether a person retains a reasonable expectation of privacy in a sealed building's interior despite small cracks in its wall, such that an officer's probing observation through them is a search.
 
 ## Rule
-Small gaps do not by themselves defeat a reasonable expectation of privacy. "This expectation was not unreasonable even though there were small cracks between the boards in the building's back wall. The presence of tiny cracks near the floor on the interior wall of a second-floor porch is not the kind of exposure which serves to eliminate a reasonable expectation of privacy." — 368 S.E.2d at 591. ^pin-591 "Nothing in the Supreme Court's *Dunn* decision suggests that an expectation of privacy is eliminated by quarter-inch cracks in the back wall of an otherwise sealed building." — *Id.* at 591–592. ^pin-591a And because "the cracks near the porch floor required him to make a probing examination in order to see inside[,] ... defendant's reasonable expectation of privacy remained intact." — *Id.* at 592. ^pin-592
+Small gaps do not by themselves defeat a reasonable expectation of privacy. "This expectation was not unreasonable even though there were small cracks between the boards in the building's back wall. The presence of tiny cracks near the floor on the interior wall of a second-floor porch is not the kind of exposure which serves to eliminate a reasonable expectation of privacy." — 368 S.E.2d at 591. ^pin-591
+
+"Nothing in the Supreme Court's *Dunn* decision suggests that an expectation of privacy is eliminated by quarter-inch cracks in the back wall of an otherwise sealed building." — *Id.* at 591–592. ^pin-591a
+
+And because "the cracks near the porch floor required him to make a probing examination in order to see inside[,] ... defendant's reasonable expectation of privacy remained intact." — *Id.* at 592. ^pin-592
 
 ## Application
 Tarantino had sealed the building—padlocked front door, nailed back doors, boarded windows—so he retained a reasonable expectation of privacy in its interior. Because Detective Baker had to bend down and make a probing examination through tiny floor-level cracks, rather than view the interior from an ordinary vantage point, his observation was a warrantless search, and the trial court properly suppressed it.

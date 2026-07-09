@@ -50,7 +50,11 @@ At Napue's murder trial, the State's key witness — an accomplice already convi
 Whether the knowing use of false testimony violates due process even when the falsehood goes only to the witness's credibility rather than directly to the defendant's guilt.
 
 ## Rule
-Yes. "[I]t is established that a conviction obtained through use of false evidence, known to be such by representatives of the State, must fall under the Fourteenth Amendment." — 360 U.S. at 269. ^pin-269 That principle "does not cease to apply merely because the false testimony goes only to the credibility of the witness," because the jury's estimate of a witness's truthfulness may be determinative of guilt or innocence. — *Id.* ^pin-269b The duty applies as well when the State, though it did not solicit the false testimony, allows it to go uncorrected when it appears.
+Yes. "[I]t is established that a conviction obtained through use of false evidence, known to be such by representatives of the State, must fall under the Fourteenth Amendment." — 360 U.S. at 269. ^pin-269
+
+That principle "does not cease to apply merely because the false testimony goes only to the credibility of the witness," because the jury's estimate of a witness's truthfulness may be determinative of guilt or innocence. — *Id.* ^pin-269b
+
+The duty applies as well when the State, though it did not solicit the false testimony, allows it to go uncorrected when it appears.
 
 ## Application
 The accomplice's false denial of any deal went only to his credibility, but because the jury's assessment of his truthfulness could be determinative and the prosecutor knowingly allowed the false testimony to stand uncorrected, the conviction could not stand on these facts. The judgment was reversed and the case remanded.

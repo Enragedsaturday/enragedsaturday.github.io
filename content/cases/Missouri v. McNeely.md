@@ -52,7 +52,9 @@ McNeely was stopped for speeding, showed signs of intoxication, and refused a br
 Whether the natural metabolization of alcohol in the bloodstream categorically creates an exigency that justifies a warrantless blood draw in every drunk-driving case.
 
 ## Rule
-No. "We hold that in drunk-driving investigations, the natural dissipation of alcohol in the bloodstream does not constitute an exigency in every case sufficient to justify conducting a blood test without a warrant." — 569 U.S. at 156. ^pin-156 Whether a warrantless blood draw is justified by exigency must instead be determined case by case on the totality of the circumstances.
+No. "We hold that in drunk-driving investigations, the natural dissipation of alcohol in the bloodstream does not constitute an exigency in every case sufficient to justify conducting a blood test without a warrant." — 569 U.S. at 156. ^pin-156
+
+Whether a warrantless blood draw is justified by exigency must instead be determined case by case on the totality of the circumstances.
 
 ## Application
 Missouri relied solely on the per se theory that dissipating alcohol always creates an exigency; it did not show that obtaining a warrant in McNeely's case was impractical or that any other emergency was present. Because metabolization alone did not categorically justify the warrantless draw, and no case-specific exigency was established, the blood draw was unreasonable.

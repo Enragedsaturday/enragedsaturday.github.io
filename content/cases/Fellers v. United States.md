@@ -52,7 +52,9 @@ Whether the Sixth Amendment is violated when, after indictment, officers deliber
 ## Rule
 Yes — the Sixth Amendment standard is *deliberate elicitation*, not interrogation. Under *Massiah*, an accused is denied the Sixth Amendment's protection when the government uses against him "evidence of his own incriminating words, which federal agents ... deliberately elicited from him after he had been indicted and in the absence of his counsel." — *Massiah v. United States*, 377 U.S. at 206 (quoted).
 
-"We have consistently applied the deliberate-elicitation standard in subsequent Sixth Amendment cases ... and we have expressly distinguished this standard from the Fifth Amendment custodial-interrogation standard." — 540 U.S. at 524. ^pin-524 Because the deliberate-elicitation test does not require an "interrogation," the absence of interrogation does not defeat a Sixth Amendment claim.
+"We have consistently applied the deliberate-elicitation standard in subsequent Sixth Amendment cases ... and we have expressly distinguished this standard from the Fifth Amendment custodial-interrogation standard." — 540 U.S. at 524. ^pin-524
+
+Because the deliberate-elicitation test does not require an "interrogation," the absence of interrogation does not defeat a Sixth Amendment claim.
 
 ## Application
 "[T]here is no question that the officers in this case 'deliberately elicited' information from petitioner" — they came to his home specifically to discuss the charged conduct. Because that discussion occurred after indictment, outside counsel's presence, and without a waiver, the officers violated Fellers's Sixth Amendment rights, and the Eighth Circuit erred in treating the lack of interrogation as fatal. The Court did not itself decide whether the later jailhouse statements had to be suppressed as fruits; it remanded that Sixth Amendment fruits question (including whether *Oregon v. Elstad*'s Fifth Amendment analysis applies) to the Court of Appeals.

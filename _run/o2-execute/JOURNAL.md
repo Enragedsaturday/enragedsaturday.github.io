@@ -1545,3 +1545,47 @@ treatment derivations Maez/Konan/Landor, Cook 3-step, quote-fidelity items, lint
 refinements, the born-draft 89-unit corpus for the panel] · lake state 668 records · honest
 gaps). **S7 IS CLOSED. NEXT: S8 opens with its own read of the handoff; the S9 panel
 inherits the draft corpus. Run brief served.**
+
+---
+
+# S8 — Legal-Term & Case Linking + Glossary (opened 2026-07-09)
+
+**S8 OPEN (2026-07-09).** Orchestrator (Fable) read: S8 spec (signed 2026-07-04) · S7-TO-S8-HANDOFF ·
+S7-ACCEPTANCE-SWEEP + OWED-ROWS pointers · RUNBOOK §0–§5 + §4-S8 · EXECUTE wrapper. The 5 normative
+mockup commits (981b286/51e1f4b/baa1e17/5b48d85/5d747f9) confirmed ANCESTORS of HEAD — the R10
+landing-highlight mechanism + density exhibits are on-branch. **PHASE-0 INVENTORY (fresh, seed-not-gospel;
+scratchpad scans, to be re-derived by the real S8 tooling):**
+- **Mid-line `^pin-N` defs: 242 across 208 files** (audit seed 299/233 — drift confirmed, S7 rewrites).
+  End-of-line pin defs 601 across 423 files (line-level heuristic; R6 tool does block-level).
+- **Broken `[[Case#^pin-N]]` deep links: 0** by exact-stem match (spec measured 128 on 2026-07-04;
+  consistent with S7 rule-B stripping broken deep-links — handoff §4.2). 239 live pin refs found.
+- **Unescaped wikilink pipes in table lines: 32 across 15 files** (audit seed 18/69 → 19/58 → now 32/15).
+- **Bare full-caption mentions: 472 distinct lake captions / 523 occurrences** (NUM-04 seed 388 —
+  corpus grew 262→724 files since; short-name mentions not yet counted, they ride the R3 resolver).
+- **Fragment eligibility (R5):** lake pinpoints 968 total — `quote_fidelity: matched` **184**
+  (the operational G3-pass: whitespace-collapsed string match vs cached source, `harvest_pinpoints`
+  ingest.py:2500); star-verified 158 / slip-only 810. Cached text pool located:
+  `/Users/johngalt/cssi-lake/cache/text` (7,413 opinion texts; `CSSI_LAKE_ROOT` default).
+- Coverage ledger loaded: 252 rows, `terminal` enum (authored/brief-mention/excluded-remit/…);
+  corpus_mention_baseline 57. Lake 668 records. Term register `scripts/lint/term-register.yml`
+  (term-register.v1, 141 lines) — routing columns NOT yet present (R7 extends).
+**Execution order (spec §5 + EXECUTE wrapper):** zones (R2) → pin remediation (R6, one mechanical
+commit) → case-mention pass (R1–R3, category batches) → split-pincite+fragments (R4–R5) → terms (R7)
+→ glossary (R8) → embeds (R9) → pipes (R11) → ledger+lints (R12–R13) → acceptance + CodeRabbit gate +
+handoff. Fleet: `o2-opus-xhigh` builds tooling/batches; orchestrator adjudicates + commits (workers
+COMMIT NOTHING). Zero CL from S8 lanes (fragment validation = cached text only).
+
+**R2+R6 COMPLETE (2026-07-09).** Lane o2-opus-xhigh built `scripts/s8/zones.py` (frozen API:
+compute_zones/mask/is_exempt/iter_blocks; 9 zone kinds; fixtures + self-test PASS) and
+`scripts/s8/remediate_pins.py` (block-level; dry-run/--write/--verify/--self-test). **298 mid-block
+pin defs found (block-level truth; the line-level 242 undercounted multi-pin blocks) → 297
+split-para edits across 232 files + 1 fail-closed queue row.** Orchestrator verification
+(writer≠checker): re-ran both self-tests PASS; independent non-whitespace byte-equality proof vs
+HEAD — 232 files, 0 mismatches; --verify PASS (271/271 pin refs resolve, count unchanged; the 396
+seed was pre-S7-rule-B, seed-not-gospel). Queue disposition: Steele `^pin-503b` mid-sentence pin —
+orchestrator moved the anchor to end-of-block (spec R6 sanctioned branch), LINT-9 HIGH 1→0.
+GATES: run_all TOTAL 6370 / HIGH **3315** (S7 close: 6828/3781 — the splits cured 466 LINT-10
+block-density HIGHs as a side effect; zero-new-HIGH holds), LINT-9 0, build 724/2873 green.
+Artifacts: S8-PIN-REMEDIATION.jsonl (297 rows), S8-PIN-REVIEW-QUEUE.md (dispositioned EMPTY).
+R6 acceptance state: mid-line pins 0 · broken pin anchors 0 · pre-existing refs intact. NEXT:
+R1/R3 mention pass (workorder staged).

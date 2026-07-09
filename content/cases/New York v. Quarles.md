@@ -50,7 +50,9 @@ A woman told officers she had just been raped by an armed man who had entered a 
 Whether there is an exception to *Miranda* for questions reasonably prompted by a concern for public safety.
 
 ## Rule
-Yes. "We hold that on these facts there is a 'public safety' exception to the requirement that *Miranda* warnings be given before a suspect's answers may be admitted into evidence, . . . and that the availability of that exception does not depend upon the motivation of the individual officers involved." — 467 U.S. at 655–56. ^pin-655 "We conclude that the need for answers to questions in a situation posing a threat to the public safety outweighs the need for the prophylactic rule protecting the Fifth Amendment's privilege against self-incrimination." — *Id.* at 657. ^pin-657
+Yes. "We hold that on these facts there is a 'public safety' exception to the requirement that *Miranda* warnings be given before a suspect's answers may be admitted into evidence, . . . and that the availability of that exception does not depend upon the motivation of the individual officers involved." — 467 U.S. at 655–56. ^pin-655
+
+"We conclude that the need for answers to questions in a situation posing a threat to the public safety outweighs the need for the prophylactic rule protecting the Fifth Amendment's privilege against self-incrimination." — *Id.* at 657. ^pin-657
 
 ## Application
 The unholstered, hidden gun in a public supermarket posed an immediate danger to the public and police, so the officer's question about its location fell within the public-safety exception. Both the statement "the gun is over there" and the gun itself were admissible despite the absence of *Miranda* warnings, and the officer's actual motivation for asking was irrelevant.

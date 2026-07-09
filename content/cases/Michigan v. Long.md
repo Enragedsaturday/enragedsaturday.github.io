@@ -50,7 +50,9 @@ Late at night in a rural area, officers saw Long's car swerve into a ditch. Long
 Whether *Terry*'s protective-search rationale permits an officer to search the passenger compartment of a vehicle for weapons during an investigative stop.
 
 ## Rule
-Yes. "the search of the passenger compartment of an automobile, limited to those areas in which a weapon may be placed or hidden, is permissible if the police officer possesses a reasonable belief based on 'specific and articulable facts which, taken together with the rational inferences from those facts, reasonably warrant' the officer in believing that the suspect is dangerous and the suspect may gain immediate control of weapons." — 463 U.S. at 1049. ^pin-1049 Contraband discovered in the course of such a lawful protective search need not be suppressed.
+Yes. "the search of the passenger compartment of an automobile, limited to those areas in which a weapon may be placed or hidden, is permissible if the police officer possesses a reasonable belief based on 'specific and articulable facts which, taken together with the rational inferences from those facts, reasonably warrant' the officer in believing that the suspect is dangerous and the suspect may gain immediate control of weapons." — 463 U.S. at 1049. ^pin-1049
+
+Contraband discovered in the course of such a lawful protective search need not be suppressed.
 
 ## Application
 The late hour, the rural setting, Long's erratic driving and apparent intoxication, his unresponsiveness, and the hunting knife in plain view gave the officers a reasonable belief that he was dangerous and could gain immediate control of a weapon if allowed back into the car. The protective search of the passenger compartment was therefore permissible, and the marijuana found in the process was lawfully seized.

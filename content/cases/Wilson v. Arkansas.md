@@ -50,9 +50,13 @@ Sharlene Wilson sold narcotics to a police informant; at one buy she waved a sem
 Whether the common-law "knock and announce" principle — that officers ordinarily must announce their presence and authority before entering a dwelling — forms part of the Fourth Amendment reasonableness inquiry.
 
 ## Rule
-Yes. "[W]e hold that this common-law 'knock and announce' principle forms a part of the reasonableness inquiry under the Fourth Amendment." — 514 U.S. at 929. ^pin-929 Accordingly, "in some circumstances an officer's unannounced entry into a home might be unreasonable under the Fourth Amendment." — *Id.* at 934. ^pin-934
+Yes. "[W]e hold that this common-law 'knock and announce' principle forms a part of the reasonableness inquiry under the Fourth Amendment." — 514 U.S. at 929. ^pin-929
 
-The requirement is flexible, not absolute: "This is not to say, of course, that every entry must be preceded by an announcement. The Fourth Amendment's flexible requirement of reasonableness should not be read to mandate a rigid rule of announcement that ignores countervailing law enforcement interests." — *Id.* ^pin-934a Threats of violence, risk of escape, or likely destruction of evidence may make an unannounced entry reasonable.
+Accordingly, "in some circumstances an officer's unannounced entry into a home might be unreasonable under the Fourth Amendment." — *Id.* at 934. ^pin-934
+
+The requirement is flexible, not absolute: "This is not to say, of course, that every entry must be preceded by an announcement. The Fourth Amendment's flexible requirement of reasonableness should not be read to mandate a rigid rule of announcement that ignores countervailing law enforcement interests." — *Id.* ^pin-934a
+
+Threats of violence, risk of escape, or likely destruction of evidence may make an unannounced entry reasonable.
 
 ## Application
 On these facts the Court announced that knock-and-announce is part of the reasonableness inquiry but did not itself decide whether the officers' entry was reasonable; it reversed and remanded because the state courts had wrongly held the principle irrelevant and so never weighed the countervailing circumstances. The Court flagged the facts the lower courts should consider — that Wilson had brandished a pistol and threatened to kill the informant, and that her cohabitant had a record of arson and firebombing — as potentially supporting law-enforcement interests in an unannounced entry.

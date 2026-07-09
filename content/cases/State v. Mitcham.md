@@ -50,7 +50,11 @@ Investigating a 2015 cold-case murder (victim Allison Feldman), police obtained 
 Whether DNA evidence obtained through an unlawful search must be suppressed, or whether an exception to the exclusionary rule permits its use.
 
 ## Rule
-The Court distinguished and applied the exclusionary-rule exceptions. "The 'independent source' exception permits the admission of evidence discovered during or because of an unlawful search if the evidence was also obtained independently from activities that were tainted by the illegality." — 258 Ariz. 435, ¶ 34 (2024). ^pin-34 The two exceptions differ in that the distinction "rests on whether the evidence was discovered through an independent, untainted source ..., or whether the evidence would have been discovered through an independent, untainted source despite the illegal search ...." — *Id.* ¶ 36. ^pin-36 Applying inevitable discovery, the Court held the State "would have inevitably obtained Mitcham's DNA profile from an independent, untainted source despite the warrantless search of the second vial of blood ...." — *Id.* ¶ 37. ^pin-37
+The Court distinguished and applied the exclusionary-rule exceptions. "The 'independent source' exception permits the admission of evidence discovered during or because of an unlawful search if the evidence was also obtained independently from activities that were tainted by the illegality." — 258 Ariz. 435, ¶ 34 (2024). ^pin-34
+
+The two exceptions differ in that the distinction "rests on whether the evidence was discovered through an independent, untainted source ..., or whether the evidence would have been discovered through an independent, untainted source despite the illegal search ...." — *Id.* ¶ 36. ^pin-36
+
+Applying inevitable discovery, the Court held the State "would have inevitably obtained Mitcham's DNA profile from an independent, untainted source despite the warrantless search of the second vial of blood ...." — *Id.* ¶ 37. ^pin-37
 
 ## Application
 Mitcham's unrelated 2022 felony convictions and prison sentence triggered Arizona's statutory requirement (A.R.S. § 13-610) that the Department of Corrections collect his DNA for profiling. That lawful, untainted process would inevitably have produced the same DNA profile independent of the illegal 2018 search; the only reason it did not was that police already held a sample from the illegal search. Suppression would put the prosecution in a worse position than if the violation had never occurred, so the inevitable-discovery exception applied.

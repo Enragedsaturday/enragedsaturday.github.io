@@ -59,7 +59,9 @@ No search occurs. "[W]hen … the home is converted into a commercial center to 
 The rule has a limit: it "does not mean that, whenever entry is obtained by invitation and the locus is characterized as a place of business, an agent is authorized to conduct a general search for incriminating materials" — the agent may not exceed the scope of the invitation. — *Id.* (citing *Gouled*). ^pin-211b
 
 ## Application
-"During neither of his visits to petitioner's home did the agent see, hear, or take anything that was not contemplated, and in fact intended, by petitioner as a necessary part of his illegal business." — 385 U.S. at 210. ^pin-210 Lewis chose the location and willingly admitted the agent to make the sale he sought, so there was no governmental intrusion on protected privacy and nothing was taken beyond the marihuana voluntarily transferred. The agent did no more than buy the wares offered, so no Fourth Amendment search occurred.
+"During neither of his visits to petitioner's home did the agent see, hear, or take anything that was not contemplated, and in fact intended, by petitioner as a necessary part of his illegal business." — 385 U.S. at 210. ^pin-210
+
+Lewis chose the location and willingly admitted the agent to make the sale he sought, so there was no governmental intrusion on protected privacy and nothing was taken beyond the marihuana voluntarily transferred. The agent did no more than buy the wares offered, so no Fourth Amendment search occurred.
 
 ## Conclusion
 The undercover purchase in the home was not a Fourth Amendment search; the conviction was affirmed.

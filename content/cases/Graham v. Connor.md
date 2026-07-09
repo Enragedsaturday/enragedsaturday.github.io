@@ -52,7 +52,9 @@ What constitutional standard governs a § 1983 claim that law enforcement office
 ## Rule
 Such claims are governed by the Fourth Amendment's objective-reasonableness standard, not substantive due process. "[A]ll claims that law enforcement officers have used excessive force — deadly or not — in the course of an arrest, investigatory stop, or other 'seizure' of a free citizen should be analyzed under the Fourth Amendment and its 'reasonableness' standard, rather than under a 'substantive due process' approach." — 490 U.S. at 395. ^pin-395
 
-Reasonableness is judged objectively and from the officer's on-scene vantage: "The 'reasonableness' of a particular use of force must be judged from the perspective of a reasonable officer on the scene, rather than with the 20/20 vision of hindsight." — *Id.* at 396. ^pin-396 The inquiry weighs the facts of each case, "including the severity of the crime at issue, whether the suspect poses an immediate threat to the safety of the officers or others, and whether he is actively resisting arrest or attempting to evade arrest by flight." — *Id.* ^pin-396a
+Reasonableness is judged objectively and from the officer's on-scene vantage: "The 'reasonableness' of a particular use of force must be judged from the perspective of a reasonable officer on the scene, rather than with the 20/20 vision of hindsight." — *Id.* at 396. ^pin-396
+
+The inquiry weighs the facts of each case, "including the severity of the crime at issue, whether the suspect poses an immediate threat to the safety of the officers or others, and whether he is actively resisting arrest or attempting to evade arrest by flight." — *Id.* ^pin-396a
 
 ## Application
 Graham's claim arose from an investigatory stop and the force used during it — a Fourth Amendment "seizure" — so it had to be assessed under the objective-reasonableness standard rather than the *Johnson v. Glick* due-process test the Court of Appeals applied. Because the lower courts used a standard turning on the officers' subjective good or bad faith, the case was remanded for analysis under the proper Fourth Amendment framework.

@@ -50,7 +50,11 @@ During an undercover narcotics buy, an officer was shot and killed inside Mincey
 Whether there is a "murder scene" exception permitting a warrantless search of the scene of a homicide, and what warrantless activity the Fourth Amendment does permit in emergencies.
 
 ## Rule
-There is no murder-scene exception, and the seriousness of the offense does not by itself create exigent circumstances. The Fourth Amendment does, however, permit warrantless action to render aid: "the Fourth Amendment does not bar police officers from making warrantless entries and searches when they reasonably believe that a person within is in need of immediate aid." — 437 U.S. at 392. ^pin-392 And "the police may seize any evidence that is in plain view during the course of their legitimate emergency activities." — *Id.* at 393. ^pin-393 But any such warrantless search must be strictly circumscribed by the emergency that justifies it.
+There is no murder-scene exception, and the seriousness of the offense does not by itself create exigent circumstances. The Fourth Amendment does, however, permit warrantless action to render aid: "the Fourth Amendment does not bar police officers from making warrantless entries and searches when they reasonably believe that a person within is in need of immediate aid." — 437 U.S. at 392. ^pin-392
+
+And "the police may seize any evidence that is in plain view during the course of their legitimate emergency activities." — *Id.* at 393. ^pin-393
+
+But any such warrantless search must be strictly circumscribed by the emergency that justifies it.
 
 ## Application
 The shooting victims were promptly attended to, so the extended four-day search of Mincey's apartment was not justified by any ongoing emergency, and the seriousness of the homicide did not by itself supply exigent circumstances. Because the search far exceeded anything a genuine emergency could justify and was conducted without a warrant, it violated the Fourth Amendment.

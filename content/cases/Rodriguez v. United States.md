@@ -50,7 +50,11 @@ Officer Struble, a K-9 officer, stopped Rodriguez for driving on the highway sho
 Whether a traffic stop, otherwise completed, may be extended — even briefly — to conduct a dog sniff without independent reasonable suspicion.
 
 ## Rule
-No. "We hold that a police stop exceeding the time needed to handle the matter for which the stop was made violates the Constitution's shield against unreasonable seizures." — *Rodriguez v. United States*, 575 U.S. 348 (slip op., at 1). ^pin-op1 The stop's "mission" — addressing the traffic violation and related safety concerns, plus ordinary inquiries like license, warrant, registration, and insurance checks — defines its permissible length: "Authority for the seizure thus ends when tasks tied to the traffic infraction are — or reasonably should have been — completed." — *Id.* (slip op., at 5). ^pin-op5 A dog sniff is not an ordinary incident of a traffic stop, and an officer may not prolong the stop to conduct one absent reasonable suspicion.
+No. "We hold that a police stop exceeding the time needed to handle the matter for which the stop was made violates the Constitution's shield against unreasonable seizures." — *Rodriguez v. United States*, 575 U.S. 348 (slip op., at 1). ^pin-op1
+
+The stop's "mission" — addressing the traffic violation and related safety concerns, plus ordinary inquiries like license, warrant, registration, and insurance checks — defines its permissible length: "Authority for the seizure thus ends when tasks tied to the traffic infraction are — or reasonably should have been — completed." — *Id.* (slip op., at 5). ^pin-op5
+
+A dog sniff is not an ordinary incident of a traffic stop, and an officer may not prolong the stop to conduct one absent reasonable suspicion.
 
 ## Application
 Struble had completed the traffic mission — he issued the written warning and returned the documents — before detaining Rodriguez for the dog sniff. Because a dog sniff is aimed at detecting ordinary criminal wrongdoing rather than the traffic violation, the added seven-to-eight minutes prolonged the seizure beyond its mission, and Struble lacked reasonable suspicion to justify the extension. Extending the completed stop for the sniff therefore violated the Fourth Amendment.

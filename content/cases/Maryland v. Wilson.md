@@ -50,7 +50,9 @@ A Maryland trooper stopped a speeding car with three occupants. While the driver
 Whether the rule of *Pennsylvania v. Mimms* — that an officer may order the driver out of a lawfully stopped vehicle — extends to passengers.
 
 ## Rule
-Yes. "We therefore hold that an officer making a traffic stop may order passengers to get out of the car pending completion of the stop." — 519 U.S. at 415. ^pin-415 The danger to an officer is likely greater when there are passengers as well as a driver, and while the justification for ordering passengers out is not identical to that for the driver, the additional intrusion on a passenger already stopped is minimal.
+Yes. "We therefore hold that an officer making a traffic stop may order passengers to get out of the car pending completion of the stop." — 519 U.S. at 415. ^pin-415
+
+The danger to an officer is likely greater when there are passengers as well as a driver, and while the justification for ordering passengers out is not identical to that for the driver, the additional intrusion on a passenger already stopped is minimal.
 
 ## Application
 The trooper had lawfully stopped the car for speeding, so Wilson was already lawfully detained by the stop. Ordering him, as a passenger, to step out pending completion of the stop was at most a minimal additional intrusion, justified by the heightened officer-safety concerns that the presence of passengers creates. The order to exit was therefore reasonable, and the cocaine Wilson dropped was lawfully obtained.

@@ -50,7 +50,13 @@ Officers had a warrant connected to the search for Alan Shelby, a violent prison
 Does the Fourth Amendment (or 18 U.S.C. § 3109) hold officers to a higher standard for a no-knock entry when the entry results in the destruction of property?
 
 ## Rule
-No. "[W]hether the Fourth Amendment holds officers to a higher standard . . . when a 'no-knock' entry results in the destruction of property[,] [w]e hold that it does not." — 523 U.S. at 68. ^pin-68 "Under *Richards*, a no-knock entry is justified if police have a 'reasonable suspicion' that knocking and announcing would be dangerous, futile, or destructive to the purposes of the investigation. Whether such a 'reasonable suspicion' exists depends in no way on whether police must destroy property in order to enter." — *Id.* at 71. ^pin-71 The manner of entry is still constrained by reasonableness: "Excessive or unnecessary destruction of property in the course of a search may violate the Fourth Amendment, even though the entry itself is lawful and the fruits of the search are not subject to suppression." — *Id.* ^pin-71b Section 3109 codifies the common-law exceptions and imposes no greater requirement.
+No. "[W]hether the Fourth Amendment holds officers to a higher standard . . . when a 'no-knock' entry results in the destruction of property[,] [w]e hold that it does not." — 523 U.S. at 68. ^pin-68
+
+"Under *Richards*, a no-knock entry is justified if police have a 'reasonable suspicion' that knocking and announcing would be dangerous, futile, or destructive to the purposes of the investigation. Whether such a 'reasonable suspicion' exists depends in no way on whether police must destroy property in order to enter." — *Id.* at 71. ^pin-71
+
+The manner of entry is still constrained by reasonableness: "Excessive or unnecessary destruction of property in the course of a search may violate the Fourth Amendment, even though the entry itself is lawful and the fruits of the search are not subject to suppression." — *Id.* ^pin-71b
+
+Section 3109 codifies the common-law exceptions and imposes no greater requirement.
 
 ## Application
 The police had reasonable suspicion that knocking and announcing would be dangerous: Shelby was a violent escapee, reportedly armed, who had vowed not to do federal time. Breaking a single garage window to deter a rush to weapons was a reasonable, limited method of entry, not excessive or unnecessary destruction. Because the *Richards* standard was satisfied and the property damage was reasonable, neither the Fourth Amendment nor § 3109 was violated.

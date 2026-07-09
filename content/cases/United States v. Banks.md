@@ -50,7 +50,11 @@ With a warrant to search Banks's two-bedroom apartment for cocaine, North Las Ve
 In executing a felony drug warrant, was the officers' 15-to-20-second wait after knocking and announcing, before forcibly entering, reasonable under the Fourth Amendment?
 
 ## Rule
-Yes. Reasonableness depends on the totality of the circumstances and the particular exigency claimed. Where the exigency is the imminent destruction of easily disposable drugs, "we think that after 15 or 20 seconds without a response, police could fairly suspect that cocaine would be gone if they were reticent any longer." — 540 U.S. at 38. ^pin-38 "[W]hen circumstances are exigent because a pusher may be near the point of putting his drugs beyond reach, it is imminent disposal, not travel time to the entrance, that governs when the police may reasonably enter." — *Id.* at 40. ^pin-40 "Once the exigency had matured . . . the officers were not bound to learn anything more or wait any longer before going in, even though their entry entailed some harm to the building." — *Id.* ^pin-40b
+Yes. Reasonableness depends on the totality of the circumstances and the particular exigency claimed. Where the exigency is the imminent destruction of easily disposable drugs, "we think that after 15 or 20 seconds without a response, police could fairly suspect that cocaine would be gone if they were reticent any longer." — 540 U.S. at 38. ^pin-38
+
+"[W]hen circumstances are exigent because a pusher may be near the point of putting his drugs beyond reach, it is imminent disposal, not travel time to the entrance, that governs when the police may reasonably enter." — *Id.* at 40. ^pin-40
+
+"Once the exigency had matured . . . the officers were not bound to learn anything more or wait any longer before going in, even though their entry entailed some harm to the building." — *Id.* ^pin-40b
 
 ## Application
 The police arrived in the afternoon, when occupants would likely be up and about, announced loudly, and waited 15 to 20 seconds — long enough for someone to begin flushing cocaine down a drain. The relevant question was the risk of imminent disposal, not whether Banks (who was actually in the shower and unheard-from) had time to reach the door; reasonableness is judged on the facts known to the officers. Because that disposal risk had matured by the end of the wait, the forcible entry was reasonable, and the resulting damage to the door did not change the analysis.

@@ -50,7 +50,9 @@ Following a deliberate department protocol, officers interrogated Seibert withou
 Whether a confession repeated after *Miranda* warnings is admissible when officers deliberately used a two-step "question-first, warn-later" interrogation technique.
 
 ## Rule
-No (plurality). "Because this midstream recitation of warnings after interrogation and unwarned confession could not effectively comply with *Miranda*'s constitutional requirement, we hold that a statement repeated after a warning in such circumstances is inadmissible." — 542 U.S. at 604 (plurality opinion). ^pin-604 Justice Kennedy, concurring in the judgment on the narrower ground generally treated as controlling, would suppress the postwarning statement where a two-step interrogation was used deliberately to undermine *Miranda*, unless curative measures were taken.
+No (plurality). "Because this midstream recitation of warnings after interrogation and unwarned confession could not effectively comply with *Miranda*'s constitutional requirement, we hold that a statement repeated after a warning in such circumstances is inadmissible." — 542 U.S. at 604 (plurality opinion). ^pin-604
+
+Justice Kennedy, concurring in the judgment on the narrower ground generally treated as controlling, would suppress the postwarning statement where a two-step interrogation was used deliberately to undermine *Miranda*, unless curative measures were taken.
 
 ## Application
 The officers here followed a deliberate protocol of questioning Seibert until she confessed and only then administering the warnings before having her repeat the confession. Because the midstream warnings came only after she had already confessed under unwarned interrogation, they could not function effectively, and her repeated, postwarning confession was inadmissible.

@@ -50,7 +50,9 @@ Maryland investigators probing a real-estate false-pretenses scheme involving th
 (1) Whether seizing an individual's own business records under a search warrant, and introducing them at his trial, violates the Fifth Amendment privilege against self-incrimination; and (2) whether a warrant's catch-all phrase — "together with other fruits, instrumentalities and evidence of crime at this [time] unknown" — rendered it an impermissibly general warrant.
 
 ## Rule
-No Fifth Amendment violation: records voluntarily created before the search are not compelled testimony. "[P]etitioner was not asked to say or to do anything. The records seized contained statements that petitioner had voluntarily committed to writing." — 427 U.S. at 473. ^pin-473 The Court therefore held: "we hold that the search of an individual's office for business records, their seizure, and subsequent introduction into evidence do not offend the Fifth Amendment's proscription that '[n]o person . . . shall be compelled in any criminal case to be a witness against himself.'" — *Id.* at 477. ^pin-477
+No Fifth Amendment violation: records voluntarily created before the search are not compelled testimony. "[P]etitioner was not asked to say or to do anything. The records seized contained statements that petitioner had voluntarily committed to writing." — 427 U.S. at 473. ^pin-473
+
+The Court therefore held: "we hold that the search of an individual's office for business records, their seizure, and subsequent introduction into evidence do not offend the Fifth Amendment's proscription that '[n]o person . . . shall be compelled in any criminal case to be a witness against himself.'" — *Id.* at 477. ^pin-477
 
 The warrant was sufficiently particular when its catch-all phrase is read in context: "the challenged phrase must be read as authorizing only the search for and seizure of evidence relating to 'the crime of false pretenses with respect to Lot 13T.'" — *Id.* at 480. ^pin-480
 

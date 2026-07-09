@@ -52,12 +52,18 @@ A Kansas deputy ran the license plate of a pickup truck and learned that the reg
 Whether a police officer has reasonable suspicion to initiate an investigative traffic stop where he knows the vehicle's registered owner has a revoked license and lacks any information indicating that the owner is not the one driving.
 
 ## Rule
-Yes. "We hold that when the officer lacks information negating an inference that the owner is the driver of the vehicle, the stop is reasonable." — 140 S. Ct. at 1186. ^pin-1186 Reasonable suspicion is a "less demanding" standard that lets officers make "commonsense judgments and inferences about human behavior," so the everyday inference that a vehicle's registered owner is its driver — combined with the fact that the owner's license is revoked — supplies reasonable suspicion to stop.
+Yes. "We hold that when the officer lacks information negating an inference that the owner is the driver of the vehicle, the stop is reasonable." — 140 S. Ct. at 1186. ^pin-1186
 
-The Court cabined the rule. "We emphasize the narrow scope of our holding." — *Id.* at 1191. ^pin-1191 Because the stop must be "justified at its inception," "the presence of additional facts might dispel reasonable suspicion" — for example, if the officer knows the registered owner is in his mid-sixties but observes that the driver is in her mid-twenties, the inference dissolves. — *Id.* ^pin-1191b
+Reasonable suspicion is a "less demanding" standard that lets officers make "commonsense judgments and inferences about human behavior," so the everyday inference that a vehicle's registered owner is its driver — combined with the fact that the owner's license is revoked — supplies reasonable suspicion to stop.
+
+The Court cabined the rule. "We emphasize the narrow scope of our holding." — *Id.* at 1191. ^pin-1191
+
+Because the stop must be "justified at its inception," "the presence of additional facts might dispel reasonable suspicion" — for example, if the officer knows the registered owner is in his mid-sixties but observes that the driver is in her mid-twenties, the inference dissolves. — *Id.* ^pin-1191b
 
 ## Application
-On these stipulated facts the inference held. "From these three facts, Deputy Mehrer drew the commonsense inference that Glover was likely the driver of the vehicle, which provided more than reasonable suspicion to initiate the stop." — *Id.* at 1188. ^pin-1188 The deputy knew the plate was linked to a truck matching the one he observed and that the registered owner's license was revoked, and he possessed no exculpatory information rebutting the inference that the owner was driving. Because nothing in the record dispelled the inference, the stop was reasonable at its inception.
+On these stipulated facts the inference held. "From these three facts, Deputy Mehrer drew the commonsense inference that Glover was likely the driver of the vehicle, which provided more than reasonable suspicion to initiate the stop." — *Id.* at 1188. ^pin-1188
+
+The deputy knew the plate was linked to a truck matching the one he observed and that the registered owner's license was revoked, and he possessed no exculpatory information rebutting the inference that the owner was driving. Because nothing in the record dispelled the inference, the stop was reasonable at its inception.
 
 ## Conclusion
 The traffic stop was supported by reasonable suspicion; the Kansas Supreme Court's contrary judgment was reversed and the case remanded. An officer may stop a vehicle on the commonsense inference that its revoked-license owner is driving — unless the officer has information dispelling that inference.

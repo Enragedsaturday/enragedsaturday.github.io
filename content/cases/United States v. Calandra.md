@@ -50,7 +50,9 @@ During a search under a warrant for evidence of a bookmaking operation, agents a
 Whether a grand jury witness may refuse to answer questions on the ground that the questions are based on evidence obtained through an unlawful search and seizure — i.e., whether the exclusionary rule applies in grand jury proceedings.
 
 ## Rule
-The exclusionary rule is a judicial deterrent, not a personal right of the aggrieved party: "the rule is a judicially created remedy designed to safeguard Fourth Amendment rights generally through its deterrent effect, rather than a personal constitutional right of the party aggrieved." — 414 U.S. at 348. ^pin-348 Because applying the rule to grand jury questioning would achieve little additional deterrence while unduly impeding the grand jury's investigative role, the Court declined to extend it there; a grand jury witness may not refuse to answer questions merely because they are based on illegally obtained evidence.
+The exclusionary rule is a judicial deterrent, not a personal right of the aggrieved party: "the rule is a judicially created remedy designed to safeguard Fourth Amendment rights generally through its deterrent effect, rather than a personal constitutional right of the party aggrieved." — 414 U.S. at 348. ^pin-348
+
+Because applying the rule to grand jury questioning would achieve little additional deterrence while unduly impeding the grand jury's investigative role, the Court declined to extend it there; a grand jury witness may not refuse to answer questions merely because they are based on illegally obtained evidence.
 
 ## Application
 The Fourth Amendment wrong against Calandra — the unlawful seizure — was already complete; grand jury questions drawing on that evidence inflicted no fresh invasion of his person, house, papers, or effects. Suppressing such questions would extend the exclusionary rule's costs to the grand jury for only speculative incremental deterrence. The Court therefore held Calandra could not refuse to answer, and reversed the order suppressing the grand jury questions.

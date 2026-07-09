@@ -50,7 +50,9 @@ Rosa Elvira Montoya de Hernandez arrived at Los Angeles International Airport on
 What level of suspicion justifies detaining an incoming international traveler at the border, beyond a routine customs search, on suspicion of alimentary-canal smuggling — and whether the prolonged detention here was reasonable.
 
 ## Rule
-Reasonable suspicion governs such nonroutine border detentions of persons. "We hold that the detention of a traveler at the border, beyond the scope of a routine customs search and inspection, is justified at its inception if customs agents, considering all the facts surrounding the traveler and her trip, reasonably suspect that the traveler is smuggling contraband in her alimentary canal." — 473 U.S. at 541. ^pin-541 Officials must have a "particularized and objective basis for suspecting the particular person" of such smuggling, not an "inchoate and unparticularized suspicion or 'hunch.'"
+Reasonable suspicion governs such nonroutine border detentions of persons. "We hold that the detention of a traveler at the border, beyond the scope of a routine customs search and inspection, is justified at its inception if customs agents, considering all the facts surrounding the traveler and her trip, reasonably suspect that the traveler is smuggling contraband in her alimentary canal." — 473 U.S. at 541. ^pin-541
+
+Officials must have a "particularized and objective basis for suspecting the particular person" of such smuggling, not an "inchoate and unparticularized suspicion or 'hunch.'"
 
 The detention may last as long as is reasonably necessary to confirm or dispel the suspicion: "in the presence of articulable suspicion of smuggling in her alimentary canal, the customs officers were not required by the Fourth Amendment to pass respondent and her 88 cocaine-filled balloons into the interior. Her detention for the period of time necessary to either verify or dispel the suspicion was not unreasonable." — *Id.* at 544. ^pin-544
 

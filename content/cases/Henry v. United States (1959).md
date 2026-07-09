@@ -52,10 +52,16 @@ At what point was Henry arrested, and whether the facts known to the agents at t
 ## Rule
 Probable cause is measured at the moment of the seizure by the facts then known. "Probable cause exists if the facts and circumstances known to the officer warrant a prudent man in believing that the offense has been committed." — 361 U.S. at 102. ^pin-102
 
-The arrest occurred when the car was stopped, and probable cause is judged as of that moment — not by what the later search turned up: "When the officers interrupted the two men and restricted their liberty of movement, the arrest, for purposes of this case, was complete. It is, therefore, necessary to determine whether at or before that time they had reasonable cause to believe that a crime had been committed." — *Id.* at 103. ^pin-103 "[A]n arrest is not justified by what the subsequent search discloses. Under our system suspicion is not enough for an officer to lay hands on a citizen." — *Id.* at 104. ^pin-104
+The arrest occurred when the car was stopped, and probable cause is judged as of that moment — not by what the later search turned up: "When the officers interrupted the two men and restricted their liberty of movement, the arrest, for purposes of this case, was complete. It is, therefore, necessary to determine whether at or before that time they had reasonable cause to believe that a crime had been committed." — *Id.* at 103. ^pin-103
+
+"[A]n arrest is not justified by what the subsequent search discloses. Under our system suspicion is not enough for an officer to lay hands on a citizen." — *Id.* at 104. ^pin-104
 
 ## Application
-Measured at the moment the car was stopped, the agents had only outwardly innocent conduct to go on: "Riding in the car, stopping in an alley, picking up packages, driving away — these were all acts that were outwardly innocent." — *Id.* at 103. ^pin-103b The tip about Pierotti was too vague to support even a warrant, Henry had not previously been suspected, and the cartons gave no outward sign of containing contraband — "The fact that packages have been stolen does not make every man who carries a package subject to arrest nor the package subject to seizure." — *Id.* at 104. ^pin-104b Because contraband was identified only after the arrest, it could not supply the probable cause the arrest required, and the evidence had to be suppressed.
+Measured at the moment the car was stopped, the agents had only outwardly innocent conduct to go on: "Riding in the car, stopping in an alley, picking up packages, driving away — these were all acts that were outwardly innocent." — *Id.* at 103. ^pin-103b
+
+The tip about Pierotti was too vague to support even a warrant, Henry had not previously been suspected, and the cartons gave no outward sign of containing contraband — "The fact that packages have been stolen does not make every man who carries a package subject to arrest nor the package subject to seizure." — *Id.* at 104. ^pin-104b
+
+Because contraband was identified only after the arrest, it could not supply the probable cause the arrest required, and the evidence had to be suppressed.
 
 ## Conclusion
 The arrest was complete when the car was stopped, probable cause did not exist at that moment, and the seized cartons were the fruit of an unlawful arrest. The conviction was reversed. Probable cause must precede the seizure and rest on more than outwardly innocent activity.

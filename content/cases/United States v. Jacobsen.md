@@ -50,7 +50,9 @@ Federal Express employees, following company policy after a forklift damaged a p
 Whether a government agent's reexamination of a package — and a field chemical test of its contents — after a private party had already opened it and exposed the contents, constitutes a "search" or "seizure" within the meaning of the Fourth Amendment.
 
 ## Rule
-The Fourth Amendment "protects two types of expectations, one involving 'searches,' the other 'seizures.'" — 466 U.S. at 113. "A 'search' occurs when an expectation of privacy that society is prepared to consider reasonable is infringed. A 'seizure' of property occurs when there is some meaningful interference with an individual's possessory interests in that property." — *Id.* ^pin-113 The Amendment reaches only government action; it is "wholly inapplicable 'to a search or seizure, even an unreasonable one, effected by a private individual not acting as an agent of the Government.'" — *Id.* ^pin-113a
+The Fourth Amendment "protects two types of expectations, one involving 'searches,' the other 'seizures.'" — 466 U.S. at 113. "A 'search' occurs when an expectation of privacy that society is prepared to consider reasonable is infringed. A 'seizure' of property occurs when there is some meaningful interference with an individual's possessory interests in that property." — *Id.* ^pin-113
+
+The Amendment reaches only government action; it is "wholly inapplicable 'to a search or seizure, even an unreasonable one, effected by a private individual not acting as an agent of the Government.'" — *Id.* ^pin-113a
 
 Where a private search has already occurred, the government's later conduct is measured against it: "The additional invasions of respondents' privacy by the Government agent must be tested by the degree to which they exceeded the scope of the private search." — *Id.* at 115. ^pin-115
 

@@ -50,9 +50,13 @@ An OSHA inspector arrived at Barlow's, Inc., an electrical and plumbing business
 Whether OSHA may constitutionally authorize warrantless inspections of the nonpublic areas of an employer's premises over the employer's objection.
 
 ## Rule
-No. "The Warrant Clause of the Fourth Amendment protects commercial buildings as well as private homes." — 436 U.S. at 311. ^pin-311 Following *Camara* and [[See v. City of Seattle]], "unless some recognized exception to the warrant requirement applies, *See v. Seattle* would require a warrant to conduct the inspection sought in this case." — *Id.* at 313. ^pin-313
+No. "The Warrant Clause of the Fourth Amendment protects commercial buildings as well as private homes." — 436 U.S. at 311. ^pin-311
 
-The Secretary's enforcement concerns "do not suffice to justify warrantless inspections under OSHA or vitiate the general constitutional requirement that for a search to be reasonable a warrant must be obtained." — *Id.* at 324. ^pin-324 "We hold that Barlow's was entitled to a declaratory judgment that the Act is unconstitutional insofar as it purports to authorize inspections without warrant or its equivalent." — *Id.* at 325. ^pin-325
+Following *Camara* and [[See v. City of Seattle]], "unless some recognized exception to the warrant requirement applies, *See v. Seattle* would require a warrant to conduct the inspection sought in this case." — *Id.* at 313. ^pin-313
+
+The Secretary's enforcement concerns "do not suffice to justify warrantless inspections under OSHA or vitiate the general constitutional requirement that for a search to be reasonable a warrant must be obtained." — *Id.* at 324. ^pin-324
+
+"We hold that Barlow's was entitled to a declaratory judgment that the Act is unconstitutional insofar as it purports to authorize inspections without warrant or its equivalent." — *Id.* at 325. ^pin-325
 
 ## Application
 Barlow's was an ordinary electrical and plumbing business, not a member of a pervasively regulated industry of the *Colonnade*/[[United States v. Biswell]] kind, so no warrant exception applied. The Court rejected the Secretary's claim that warrantless inspections were essential to OSHA enforcement, noting an inspection warrant need not rest on traditional criminal probable cause — a showing of specific evidence of a violation **or** reasonable administrative/legislative standards for selecting the premises would support it. Because § 8(a) dispensed with even that, the warrantless-inspection scheme was unconstitutional and the injunction was proper.

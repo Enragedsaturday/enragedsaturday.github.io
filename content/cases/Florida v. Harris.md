@@ -52,7 +52,9 @@ Whether a trained drug-detection dog's alert establishes probable cause to searc
 ## Rule
 Whether a dog's alert supplies probable cause is a totality-of-the-circumstances question, not a rigid checklist: "The question—similar to every inquiry into probable cause—is whether all the facts surrounding a dog's alert, viewed through the lens of common sense, would make a reasonably prudent person think that a search would reveal contraband or evidence of a crime. A sniff is up to snuff when it meets that test." — 568 U.S. at 248. ^pin-248
 
-Training and certification, rather than field-performance records, are the better measure of reliability: "evidence of a dog's satisfactory performance in a certification or training program can itself provide sufficient reason to trust his alert." — *Id.* at 247. ^pin-247 A defendant must, however, have the opportunity to contest that evidence.
+Training and certification, rather than field-performance records, are the better measure of reliability: "evidence of a dog's satisfactory performance in a certification or training program can itself provide sufficient reason to trust his alert." — *Id.* at 247. ^pin-247
+
+A defendant must, however, have the opportunity to contest that evidence.
 
 ## Application
 Aldo had completed two recent narcotics-detection courses and maintained his proficiency through weekly training, and Harris did not contest that training in the trial court. On the totality of those circumstances, Aldo's alert gave the deputy probable cause to search the truck; the Florida Supreme Court's inflexible evidentiary checklist was the wrong standard.

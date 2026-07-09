@@ -50,7 +50,9 @@ Webster Bivens alleged that agents of the Federal Bureau of Narcotics, acting wi
 Whether a victim of an unconstitutional search and seizure by federal officers may sue them for money damages directly under the Fourth Amendment, even though no statute creates the cause of action.
 
 ## Rule
-Yes. The Fourth Amendment itself supports a damages remedy against federal officers who violate it. Invoking *Bell v. Hood*, the Court reasoned that "where federally protected rights have been invaded, it has been the rule from the beginning that courts will be alert to adjust their remedies so as to grant the necessary relief." — 403 U.S. at 392. ^pin-392 "Having concluded that petitioner's complaint states a cause of action under the Fourth Amendment . . . we hold that petitioner is entitled to recover money damages for any injuries he has suffered as a result of the agents' violation of the Amendment." — *Id.* at 397. ^pin-397
+Yes. The Fourth Amendment itself supports a damages remedy against federal officers who violate it. Invoking *Bell v. Hood*, the Court reasoned that "where federally protected rights have been invaded, it has been the rule from the beginning that courts will be alert to adjust their remedies so as to grant the necessary relief." — 403 U.S. at 392. ^pin-392
+
+"Having concluded that petitioner's complaint states a cause of action under the Fourth Amendment . . . we hold that petitioner is entitled to recover money damages for any injuries he has suffered as a result of the agents' violation of the Amendment." — *Id.* at 397. ^pin-397
 
 ## Application
 Because federal agents had allegedly conducted a warrantless, suspicionless entry, arrest, and search, Bivens had stated a Fourth Amendment claim; the absence of a statute did not bar relief, since damages are the ordinary remedy for an invasion of personal liberty and the agents could not claim that their conduct, if unconstitutional, was authorized by any valid grant of federal authority. The Court remanded for further proceedings, including the agents' immunity defenses.

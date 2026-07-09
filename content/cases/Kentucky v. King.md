@@ -58,7 +58,9 @@ Officers pursuing a suspected drug dealer into an apartment breezeway smelled bu
 Whether the exigent-circumstances exception is forfeited under the "police-created exigency" doctrine when it is the officers' own knock-and-announce that prompts the occupants to begin destroying evidence.
 
 ## Rule
-The test keys on whether the police acted lawfully before the exigency arose: "a warrantless entry based on exigent circumstances is reasonable when the police did not create the exigency by engaging or threatening to engage in conduct violating the Fourth Amendment." — 563 U.S. at ___ (slip op., at 8). ^pin-op8 Conduct such as knocking on a door and announcing one's presence — which any private citizen may do — does not violate or threaten to violate the Fourth Amendment, and so does not impermissibly manufacture the exigency.
+The test keys on whether the police acted lawfully before the exigency arose: "a warrantless entry based on exigent circumstances is reasonable when the police did not create the exigency by engaging or threatening to engage in conduct violating the Fourth Amendment." — 563 U.S. at ___ (slip op., at 8). ^pin-op8
+
+Conduct such as knocking on a door and announcing one's presence — which any private citizen may do — does not violate or threaten to violate the Fourth Amendment, and so does not impermissibly manufacture the exigency.
 
 ## Application
 The officers' decision to knock loudly on the apartment door and announce "police" was lawful conduct that any occupant was free to ignore; the officers did not demand entry or otherwise threaten a Fourth Amendment violation before the sounds of evidence destruction began. Because the police thus did not create the exigency by unlawful or threatened-unlawful conduct, their reliance on the destruction-of-evidence exigency was permissible (the Court remanded for the state courts to determine whether an exigency in fact existed).

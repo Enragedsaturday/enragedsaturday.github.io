@@ -52,9 +52,15 @@ Byars was convicted in federal court of possessing counterfeit whiskey strip sta
 May evidence seized during a state search in which a federal officer actively participated — under a state warrant resting on a conclusory affidavit — be used against the defendant in a federal prosecution?
 
 ## Rule
-No. The supporting affidavit was wholly conclusory, so "[t]he warrant clearly is bad if tested by the Fourth Amendment and the laws of the United States." — 273 U.S. at 29. ^pin-29 And "[a] search prosecuted in violation of the Constitution is not made lawful by what it brings to light." — *Id.* ^pin-29b
+No. The supporting affidavit was wholly conclusory, so "[t]he warrant clearly is bad if tested by the Fourth Amendment and the laws of the United States." — 273 U.S. at 29. ^pin-29
 
-While "the mere participation in a state search of one who is a federal officer does not render it a federal undertaking, the court must be vigilant to scrutinize the attendant facts with an eye to detect and a hand to prevent violations of the Constitution by circuitous and indirect methods." — *Id.* at 32. ^pin-32 Where the federal officer participates under color of his office, "the search in substance and effect [is] a joint operation of the local and federal officers," treated as a federal search bound by federal standards. — *Id.* at 33. ^pin-33 The Government may use evidence "improperly seized by state officers operating entirely upon their own account[,]" "[b]ut the rule is otherwise when the federal government itself, through its agents acting as such, participates . . . in the wrongful search and seizure." — *Id.* at 33–34. ^pin-33b
+And "[a] search prosecuted in violation of the Constitution is not made lawful by what it brings to light." — *Id.* ^pin-29b
+
+While "the mere participation in a state search of one who is a federal officer does not render it a federal undertaking, the court must be vigilant to scrutinize the attendant facts with an eye to detect and a hand to prevent violations of the Constitution by circuitous and indirect methods." — *Id.* at 32. ^pin-32
+
+Where the federal officer participates under color of his office, "the search in substance and effect [is] a joint operation of the local and federal officers," treated as a federal search bound by federal standards. — *Id.* at 33. ^pin-33
+
+The Government may use evidence "improperly seized by state officers operating entirely upon their own account[,]" "[b]ut the rule is otherwise when the federal government itself, through its agents acting as such, participates . . . in the wrongful search and seizure." — *Id.* at 33–34. ^pin-33b
 
 ## Application
 The affidavit alleged only belief, with no facts, so the warrant failed Fourth Amendment standards. The federal agent had been specifically requested, participated as a federal officer, and took and kept the stamps — which bore no relation to any state offense — for the federal government, a practical concession that he acted in his federal character. The search was therefore in substance a federal operation; its fruits could not be admitted in the federal prosecution, and the unlawful search was not redeemed by the incriminating stamps it produced.

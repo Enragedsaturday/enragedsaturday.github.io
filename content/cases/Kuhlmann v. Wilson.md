@@ -50,7 +50,9 @@ After Wilson was arraigned and jailed, police placed him in a cell with an infor
 Whether a defendant's Sixth Amendment right to counsel is violated merely because a jailhouse informant, placed in his cell, reports his incriminating statements to the police — or whether more is required.
 
 ## Rule
-Passive listening is not enough; the State must have taken affirmative steps to draw out statements. "the Sixth Amendment is not violated whenever — by luck or happenstance — the State obtains incriminating statements from the accused after the right to counsel has attached." — 477 U.S. at 459. ^pin-459 Accordingly, "the defendant must demonstrate that the police and their informant took some action, beyond merely listening, that was designed deliberately to elicit incriminating remarks." — *Id.* ^pin-459a
+Passive listening is not enough; the State must have taken affirmative steps to draw out statements. "the Sixth Amendment is not violated whenever — by luck or happenstance — the State obtains incriminating statements from the accused after the right to counsel has attached." — 477 U.S. at 459. ^pin-459
+
+Accordingly, "the defendant must demonstrate that the police and their informant took some action, beyond merely listening, that was designed deliberately to elicit incriminating remarks." — *Id.* ^pin-459a
 
 ## Application
 Here the state courts found that Lee was instructed only to listen, asked Wilson no questions about the pending charges, and merely heard Wilson's spontaneous and unsolicited statements. Because Lee took no action beyond listening that was designed to elicit incriminating remarks, the informant functioned as a passive "listening post," and Wilson failed to make out a Sixth Amendment violation under the *Massiah* deliberate-elicitation standard.

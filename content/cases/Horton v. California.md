@@ -52,7 +52,11 @@ Whether the warrantless seizure of evidence in plain view is barred by the Fourt
 ## Rule
 No. The Court rejected inadvertence as a requirement: "even though inadvertence is a characteristic of most legitimate 'plain-view' seizures, it is not a necessary condition." — 496 U.S. at 130. ^pin-130
 
-A lawful plain-view seizure requires a lawful vantage plus two further conditions. "It is, of course, an essential predicate to any valid warrantless seizure of incriminating evidence that the officer did not violate the Fourth Amendment in arriving at the place from which the evidence could be plainly viewed." — *Id.* at 136. ^pin-136 "First, not only must the item be in plain view; its incriminating character must also be 'immediately apparent.'" — *Id.* ^pin-136a "Second, not only must the officer be lawfully located in a place from which the object can be plainly seen, but he or she must also have a lawful right of access to the object itself." — *Id.* at 137. ^pin-137
+A lawful plain-view seizure requires a lawful vantage plus two further conditions. "It is, of course, an essential predicate to any valid warrantless seizure of incriminating evidence that the officer did not violate the Fourth Amendment in arriving at the place from which the evidence could be plainly viewed." — *Id.* at 136. ^pin-136
+
+"First, not only must the item be in plain view; its incriminating character must also be 'immediately apparent.'" — *Id.* ^pin-136a
+
+"Second, not only must the officer be lawfully located in a place from which the object can be plainly seen, but he or she must also have a lawful right of access to the object itself." — *Id.* at 137. ^pin-137
 
 ## Application
 The officer was lawfully in Horton's home executing a valid warrant; the weapons were in plain view, their incriminating character was immediately apparent, and the officer had lawful access to them. That the officer expected — and thus did not inadvertently discover — the weapons did not invalidate the seizure, because inadvertence is not a condition of a lawful plain-view seizure. The seizure was therefore constitutional.

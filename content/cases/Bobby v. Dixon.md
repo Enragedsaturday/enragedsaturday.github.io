@@ -52,7 +52,9 @@ Whether, on AEDPA review, the state court unreasonably applied clearly establish
 ## Rule
 No — admission was reasonable; *Seibert*'s concern was absent and *Elstad* governs. "[U]nlike in *Seibert*, there is no concern here that police gave Dixon *Miranda* warnings and then led him to repeat an earlier murder confession, because there was no earlier confession to repeat." — 565 U.S. at 31. ^pin-31
 
-There was "simply 'no nexus' between Dixon's unwarned admission to forgery and his later, warned confession to murder," and a four-hour break separated the two interrogations, so the warned confession was not the tainted product of the earlier questioning. — *Id.* ^pin-31a Under *Oregon v. Elstad*, where the earlier *Miranda* lapse "involved no actual compulsion," a subsequent properly warned and voluntary confession is admissible.
+There was "simply 'no nexus' between Dixon's unwarned admission to forgery and his later, warned confession to murder," and a four-hour break separated the two interrogations, so the warned confession was not the tainted product of the earlier questioning. — *Id.* ^pin-31a
+
+Under *Oregon v. Elstad*, where the earlier *Miranda* lapse "involved no actual compulsion," a subsequent properly warned and voluntary confession is admissible.
 
 ## Application
 Dixon's first interrogation produced only denials, not a confession to repeat, and he himself initiated the second session by declaring he wanted to tell police what happened — so police did not use the unwarned statement to soften him up. The two-step *Seibert* dynamic (a single "continuum" that drained the midstream warnings of meaning) was therefore not present, and the Ohio Supreme Court reasonably found the warned murder confession admissible. The Sixth Circuit's grant of habeas was an unreasonable application of clearly established law.

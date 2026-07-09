@@ -52,7 +52,9 @@ Whether a hotel desk clerk's consent can authorize a warrantless police search o
 ## Rule
 No. A hotel guest enjoys full Fourth Amendment protection in the room. "No less than a tenant of a house, or the occupant of a room in a boarding house, … a guest in a hotel room is entitled to constitutional protection against unreasonable searches and seizures. That protection would disappear if it were left to depend upon the unfettered discretion of an employee of the hotel." — 376 U.S. at 490. ^pin-490
 
-That protection is the guest's alone to waive, and cannot be conjured from agency law: "the rights protected by the Fourth Amendment are not to be eroded by strained applications of the law of agency or by unrealistic doctrines of 'apparent authority.'" — *Id.* at 488. ^pin-488 The right "only the petitioner could waive by word or deed, either directly or through an agent," and there was "nothing in the record to indicate that the police had any basis whatsoever to believe that the night clerk had been authorized by the petitioner" to permit a search. — *Id.* at 489. ^pin-489
+That protection is the guest's alone to waive, and cannot be conjured from agency law: "the rights protected by the Fourth Amendment are not to be eroded by strained applications of the law of agency or by unrealistic doctrines of 'apparent authority.'" — *Id.* at 488. ^pin-488
+
+The right "only the petitioner could waive by word or deed, either directly or through an agent," and there was "nothing in the record to indicate that the police had any basis whatsoever to believe that the night clerk had been authorized by the petitioner" to permit a search. — *Id.* at 489. ^pin-489
 
 ## Application
 The clerk "clearly and unambiguously consented," but the consent was legally irrelevant: the constitutional right was Stoner's, not the clerk's or the hotel's. A guest impliedly permits maids or repairmen to enter for their duties, but not police to conduct a criminal search; and the police had no basis to think the clerk was the guest's authorized agent. The warrantless search therefore violated the Fourth Amendment.

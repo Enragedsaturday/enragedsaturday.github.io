@@ -52,9 +52,13 @@ An Iowa officer stopped Knowles for driving 43 mph in a 25 mph zone and issued h
 Does the Fourth Amendment permit an officer to conduct a full search of a vehicle incident to the issuance of a traffic citation, where the driver has not been placed under custodial arrest?
 
 ## Rule
-No. The question "is whether such a procedure authorizes the officer, consistently with the Fourth Amendment, to conduct a full search of the car. We answer this question 'no.' " — 525 U.S. at 113. ^pin-113 The two rationales for the search-incident exception — officer safety and the preservation of evidence — do not support the search: "neither of these underlying rationales for the search incident to arrest exception is sufficient to justify the search in the present case." — *Id.* at 116–17. ^pin-116
+No. The question "is whether such a procedure authorizes the officer, consistently with the Fourth Amendment, to conduct a full search of the car. We answer this question 'no.' " — 525 U.S. at 113. ^pin-113
 
-A traffic stop's officer-safety concern is lower than a custodial arrest's and is met by lesser measures (ordering occupants out, a *Terry* frisk on reasonable suspicion, a *Michigan v. Long* protective search). And as to evidence, "[o]nce Knowles was stopped for speeding and issued a citation, all the evidence necessary to prosecute that offense had been obtained." — *Id.* at 118. ^pin-118 The Court refused to extend *Robinson*'s bright-line full-search rule "to a situation where the concern for officer safety is not present to the same extent and the concern for destruction or loss of evidence is not present at all. We decline to do so." — *Id.* at 118–19. ^pin-119
+The two rationales for the search-incident exception — officer safety and the preservation of evidence — do not support the search: "neither of these underlying rationales for the search incident to arrest exception is sufficient to justify the search in the present case." — *Id.* at 116–17. ^pin-116
+
+A traffic stop's officer-safety concern is lower than a custodial arrest's and is met by lesser measures (ordering occupants out, a *Terry* frisk on reasonable suspicion, a *Michigan v. Long* protective search). And as to evidence, "[o]nce Knowles was stopped for speeding and issued a citation, all the evidence necessary to prosecute that offense had been obtained." — *Id.* at 118. ^pin-118
+
+The Court refused to extend *Robinson*'s bright-line full-search rule "to a situation where the concern for officer safety is not present to the same extent and the concern for destruction or loss of evidence is not present at all. We decline to do so." — *Id.* at 118–19. ^pin-119
 
 ## Application
 Knowles was cited, not arrested, and the officer had neither consent nor probable cause. Because a brief traffic stop poses a lesser safety risk — addressable by ordering the driver out, a frisk on reasonable suspicion, or a protective vehicle search — and because issuing the speeding citation had already secured all evidence of that offense, neither search-incident rationale applied. The "search incident to citation" had no constitutional basis.

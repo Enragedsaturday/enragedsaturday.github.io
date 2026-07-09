@@ -54,7 +54,9 @@ Whether a statement that is inadmissible in the prosecution's case-in-chief for 
 ## Rule
 Yes. "Having voluntarily taken the stand, petitioner was under an obligation to speak truthfully and accurately, and the prosecution here did no more than utilize the traditional truth-testing devices of the adversary process." — 401 U.S. at 225. ^pin-225
 
-"The shield provided by *Miranda* cannot be perverted into a license to use perjury by way of a defense, free from the risk of confrontation with prior inconsistent utterances. We hold, therefore, that petitioner's credibility was appropriately impeached by use of his earlier conflicting statements." — *Id.* at 226. ^pin-226 The exception applies only where the statement is otherwise voluntary and trustworthy; a coerced statement could not be used even to impeach.
+"The shield provided by *Miranda* cannot be perverted into a license to use perjury by way of a defense, free from the risk of confrontation with prior inconsistent utterances. We hold, therefore, that petitioner's credibility was appropriately impeached by use of his earlier conflicting statements." — *Id.* at 226. ^pin-226
+
+The exception applies only where the statement is otherwise voluntary and trustworthy; a coerced statement could not be used even to impeach.
 
 ## Application
 Harris's statements were voluntary; their only defect was the Miranda warning lapse. When he testified to a contrary account, the State could confront him with the prior inconsistent statements to test his credibility before the jury. *Miranda*'s exclusionary protection guards against using such statements as affirmative proof of guilt, but it does not license a defendant to take the stand and testify falsely immune from impeachment.

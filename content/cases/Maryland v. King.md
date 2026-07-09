@@ -52,7 +52,9 @@ King was arrested in Maryland on assault charges and, under the Maryland DNA Col
 Whether, under the Fourth Amendment, police may take and analyze a cheek swab of the DNA of a person arrested for a serious offense as part of routine booking.
 
 ## Rule
-Yes. "When officers make an arrest supported by probable cause to hold for a serious offense and they bring the suspect to the station to be detained in custody, taking and analyzing a cheek swab of the arrestee's DNA is, like fingerprinting and photographing, a legitimate police booking procedure that is reasonable under the Fourth Amendment." — 569 U.S. at 465–466. ^pin-465 In the context of a valid arrest supported by probable cause, the arrestee's expectations of privacy are diminished and the brief cheek swab is a minimal intrusion outweighed by the State's substantial interest in identifying those in its custody.
+Yes. "When officers make an arrest supported by probable cause to hold for a serious offense and they bring the suspect to the station to be detained in custody, taking and analyzing a cheek swab of the arrestee's DNA is, like fingerprinting and photographing, a legitimate police booking procedure that is reasonable under the Fourth Amendment." — 569 U.S. at 465–466. ^pin-465
+
+In the context of a valid arrest supported by probable cause, the arrestee's expectations of privacy are diminished and the brief cheek swab is a minimal intrusion outweighed by the State's substantial interest in identifying those in its custody.
 
 ## Application
 King had been arrested on probable cause for a serious offense (assault) and was in custody at the station when the swab was taken. Weighed against his diminished privacy interest as an arrestee, the minor intrusion of a quick cheek swab was reasonable given the State's interest in accurately identifying him and informing decisions about his pretrial custody. Taking and analyzing his DNA was therefore a legitimate booking procedure, and the resulting match was admissible.

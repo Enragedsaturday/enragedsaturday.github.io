@@ -52,7 +52,9 @@ Police stopped a car suspected of being the getaway vehicle in a robbery. Rakas 
 Whether passengers who assert no property or possessory interest in the automobile or in the seized items, and who claim no legitimate expectation of privacy in the areas searched, may challenge the search.
 
 ## Rule
-No. Fourth Amendment rights are personal: "Fourth Amendment rights are personal rights which, like some other constitutional rights, may not be vicariously asserted." — 439 U.S. at 133–134 (quoting *Alderman v. United States*). ^pin-133 The standing question is subsumed into the substantive inquiry: "capacity to claim the protection of the Fourth Amendment depends not upon a property right in the invaded place but upon whether the person who claims the protection of the Amendment has a legitimate expectation of privacy in the invaded place." — 439 U.S. at 143. ^pin-143
+No. Fourth Amendment rights are personal: "Fourth Amendment rights are personal rights which, like some other constitutional rights, may not be vicariously asserted." — 439 U.S. at 133–134 (quoting *Alderman v. United States*). ^pin-133
+
+The standing question is subsumed into the substantive inquiry: "capacity to claim the protection of the Fourth Amendment depends not upon a property right in the invaded place but upon whether the person who claims the protection of the Amendment has a legitimate expectation of privacy in the invaded place." — 439 U.S. at 143. ^pin-143
 
 ## Application
 Rakas and his co-passengers asserted neither ownership of the car nor of the rifle and shells, and they showed no legitimate expectation of privacy in the glove compartment or the area under the seat — places in which a mere passenger would not normally have such an expectation. Because the Fourth Amendment right is personal and they had no privacy interest in the areas searched, they could not contest the search, and suppression was properly denied.

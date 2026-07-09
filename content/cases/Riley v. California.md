@@ -52,7 +52,9 @@ In two consolidated cases, police searched the digital contents of arrestees' ce
 Whether police may, without a warrant, search the digital contents of a cell phone seized from an individual incident to arrest.
 
 ## Rule
-A warrant is generally required. "Our answer to the question of what police must do before searching a cell phone seized incident to an arrest is accordingly simple — get a warrant." — *Riley v. California*, 573 U.S. at 403. ^pin-403 The categorical search-incident-to-arrest authority of *United States v. Robinson* does not extend to the vast store of digital data on a modern cell phone: the officer-safety and evidence-preservation rationales of *Chimel* do not justify searching data, and cell phones implicate privacy interests far greater than any physical item.
+A warrant is generally required. "Our answer to the question of what police must do before searching a cell phone seized incident to an arrest is accordingly simple — get a warrant." — *Riley v. California*, 573 U.S. at 403. ^pin-403
+
+The categorical search-incident-to-arrest authority of *United States v. Robinson* does not extend to the vast store of digital data on a modern cell phone: the officer-safety and evidence-preservation rationales of *Chimel* do not justify searching data, and cell phones implicate privacy interests far greater than any physical item.
 
 ## Application
 The data on Riley's smart phone and on Wurie's flip phone was searched without a warrant as a search incident to arrest. Because digital data cannot harm an arresting officer, and any risk of remote wiping or encryption can be addressed by other means (such as turning the phone off or removing its battery), the *Chimel* justifications were absent; and the immense quantity and sensitivity of the information on a phone made the intrusion incomparable to inspecting physical items. The warrantless searches of the phones' contents therefore could not be justified as searches incident to arrest.

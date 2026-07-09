@@ -50,7 +50,9 @@ On an Amtrak train passing through Albuquerque, Officer Salazar asked David Blak
 Whether a suspect's general consent to search his luggage authorized the officer to cut open — and thereby destroy — a sealed can found inside.
 
 ## Rule
-The scope of a consent search is bounded by the consent given, "measured by objective reasonableness: 'what would the typical reasonable person have understood by the exchange between the officer and the suspect?'" — 235 F.3d at 520 (quoting *Florida v. Jimeno*, 500 U.S. 248, 251 (1991)). ^pin-520 General consent to search an area reaches containers within it that could hold contraband — but it does not reach destroying them: "We acknowledge that the Supreme Court and this court have previously stated that a general consent to search a particular area is reasonably understood to extend to a search of containers within that area that could contain contraband . . . . However, we do not read that authority to permit the destruction of such containers." — *Id.* at 521. ^pin-521
+The scope of a consent search is bounded by the consent given, "measured by objective reasonableness: 'what would the typical reasonable person have understood by the exchange between the officer and the suspect?'" — 235 F.3d at 520 (quoting *Florida v. Jimeno*, 500 U.S. 248, 251 (1991)). ^pin-520
+
+General consent to search an area reaches containers within it that could hold contraband — but it does not reach destroying them: "We acknowledge that the Supreme Court and this court have previously stated that a general consent to search a particular area is reasonably understood to extend to a search of containers within that area that could contain contraband . . . . However, we do not read that authority to permit the destruction of such containers." — *Id.* at 521. ^pin-521
 
 The court therefore held: "before an officer may actually destroy or render completely useless a container which would otherwise be within the scope of a permissive search, the officer must obtain explicit authorization, or have some other, lawful, basis upon which to proceed." — 235 F.3d at 522. ^pin-522
 
