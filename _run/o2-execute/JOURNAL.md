@@ -1607,3 +1607,25 @@ dev server (ENOTEMPTY on public/seizures) and the pipe masked the exit code — 
 claim in d4c87b4's message was premature at commit time. Server killed; clean rebuild verified:
 724 in / 2873 emitted, exit 0. Content state unaffected (public/ is gitignored; the race was
 emit-side only). Honest-record note per reporting discipline.
+
+---
+
+**S8 CLOSED (2026-07-09).** The linking/glossary spec is complete. CLOSE RECORD:
+**Acceptance:** 9/9 spec-§7 criteria PASS machine-evidenced (S8-ACCEPTANCE-SWEEP.md; R10
+PASS-WITH-NOTE — tint machine-verified both paths, centering re-sampled at S9 R15 foregrounded
+dogfood). **The web is wired:** 6,058 case-mention links (0 bare page-backed captions), 2,429
+term links + 42-anchor glossary, 730 external pincites (225 fragment-deep, validated vs cached
+text, zero live CL), 287/287 pin deep-links resolve, 4 embeds (adjudicated boundary now LINT-29
+law), COH-15 join CLEAN A/B/C/D=0 w/ E-empty-universe fail-closed guard (NUM-04 re-derived 644 vs
+388 seed). **Judgment surfaces for S9:** 187 adjudicated resolutions (100% review mandatory),
+16 r2 deep upgrades, 49-caption coverage inbox, sanctioned-quote class (123), LINT-7 carve-out
+question (30). **CodeRabbit gate:** S8-coderabbit-f244451.md (base 4c47b72 after payload-too-large
+vs main; self-resolved per pause-#8 discipline) — 23 findings: 22 UPHELD→FIXED same session w/
+extended self-tests (2 criticals: dry-run ledger clobber + --limit ledger leak, both in
+link_pincites _emit path) + 1 REFUTED w/ live evidence (parenthetical-caption exhibit convention);
+S8-coderabbit-adjudication.md. **FINAL GATES:** run_all 4176 / HIGH 3381 zero-new (new kit;
+composition attributed: LINT-10 3171 S6-backlog · LINT-7 49 · LINT-12 160 · LINT-4 1), join clean
+exit 0, build 724/2873 exit 0, self-tests 11/11. **Commit-hygiene notes:** d4c87b4 swept the
+mentions lane's 42 links w/ the R11 sweep (concurrent tree); its build claim corrected a60dd12.
+**HANDOFF:** S8-TO-S9-HANDOFF.md delivered. S8 IS CLOSED. NEXT: S9 verification (wave 4) —
+the panel inherits the born-draft corpus + the S8 register.

@@ -295,6 +295,11 @@ def _text_dir(lake_root):
 def load_matched_pinpoints(cases_dir=LAKE_CASES):
     """[(record_id, pin_id, lead_opinion_id, star_marker, quote)] over the whole
     lake, matched-fidelity only, in stable (record, pin) order."""
+    # CR-S8-11: fail loud on a missing source dir (bad --cases-dir / misconfigured
+    # $CSSI_LAKE_ROOT). glob.glob returns [] with no error, so an empty run would
+    # otherwise be indistinguishable from "genuinely zero matched pinpoints".
+    if not os.path.isdir(cases_dir):
+        raise FileNotFoundError("cases_dir not found: %s" % cases_dir)
     out = []
     for path in sorted(glob.glob(os.path.join(cases_dir, "*.json"))):
         with open(path, encoding="utf-8") as fh:
@@ -355,10 +360,17 @@ def run(out_path=DEFAULT_OUT, lake_root=None, cases_dir=LAKE_CASES):
                    "date": date, "reason": res["reason"]}
         rows.append(row)
 
-    os.makedirs(os.path.dirname(out_path), exist_ok=True)
-    with open(out_path, "w", encoding="utf-8") as fh:
+    # CR-S8-10: write atomically (temp + os.replace) so a killed/errored run never
+    # leaves a truncated s8-fragments.jsonl that a downstream consumer could treat
+    # as a complete, verified artifact.
+    out_dir = os.path.dirname(out_path)
+    if out_dir:
+        os.makedirs(out_dir, exist_ok=True)
+    tmp_path = out_path + ".tmp"
+    with open(tmp_path, "w", encoding="utf-8") as fh:
         for r in rows:
             fh.write(json.dumps(r, sort_keys=True) + "\n")
+    os.replace(tmp_path, out_path)
 
     return {"total": len(rows), "validated": validated,
             "unvalidatable": len(rows) - validated,
@@ -454,6 +466,30 @@ def _self_test():
     enc = encode_term("well-settled A & B")
     check("%2D" in enc and "%26" in enc and "-" not in enc.replace("%2D", "") and "&" not in enc,
           "encode_term: - / & not escaped: %r" % enc)
+
+    # CR-S8-11: a missing lake dir fails loud (never a silent empty run)
+    import tempfile
+    import shutil
+    _missing = os.path.join(tempfile.gettempdir(), "cssi-no-such-lake-xyz")
+    try:
+        load_matched_pinpoints(cases_dir=_missing)
+        check(False, "CR-S8-11: missing cases_dir must raise FileNotFoundError")
+    except FileNotFoundError:
+        pass
+
+    # CR-S8-10: run() writes the ledger atomically -> output present, no .tmp left
+    _tmp = tempfile.mkdtemp()
+    _lc = os.path.join(_tmp, "cases")
+    os.makedirs(_lc)
+    with open(os.path.join(_lc, "rec.json"), "w", encoding="utf-8") as fh:
+        json.dump({"record_id": "r1", "identity": {"lead_opinion_id": None},
+                   "pinpoints": [{"id": "pin-1", "quote_fidelity": "matched",
+                                  "quote": "q"}]}, fh)
+    _out = os.path.join(_tmp, "sub", "s8-fragments.jsonl")
+    run(out_path=_out, lake_root=_tmp, cases_dir=_lc)
+    check(os.path.exists(_out), "CR-S8-10: fragments output not written")
+    check(not os.path.exists(_out + ".tmp"), "CR-S8-10: temp file left behind")
+    shutil.rmtree(_tmp, ignore_errors=True)
 
     if failures:
         print("fragments.py --self-test: FAIL")

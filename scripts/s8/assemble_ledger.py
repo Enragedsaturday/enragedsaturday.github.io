@@ -263,6 +263,14 @@ def assemble(src=None, content_root=None, scanned_head=None):
     embed_rows = _load_jsonl(src["embeds"])   # None if not landed yet
 
     gaps = []
+    if not auto:
+        # CR-S8-3: an absent/empty mentions row set reaches join() as an empty
+        # in-scope universe. Record the gap here (mirroring the embeds guard);
+        # join() then fails closed on it (E-empty-universe), never certifying
+        # R1 clean over nothing.
+        gaps.append("s8-link-ledger.rows.mentions.jsonl absent/empty at assembly — "
+                    "the COH-15 caption universe is empty; the join fails closed on "
+                    "it (E-empty-universe), never a clean R1 proof over zero mentions.")
     if embed_rows is None:
         gaps.append("s8-embed-rows.jsonl absent at assembly — embeds[] is the "
                     "authoritative fresh corpus scan with no provenance overlay; "
@@ -395,6 +403,16 @@ def join(ledger, s6_ledger, caption_index):
 
     violations = []
 
+    # CR-S8-2: fail closed on an empty in-scope universe. If mentions is absent/
+    # empty, or schema drift stripped caption_key from every row, `universe` is
+    # empty and A/B/C/D all count 0 — a join that then reports clean:True would
+    # certify R1 over ZERO verified captions. An empty universe is never a proof.
+    if not universe:
+        violations.append({
+            "check": "E-empty-universe",
+            "detail": "no in-scope caption mentions in the ledger; refusing to "
+                      "certify R1 clean (missing/empty mentions or absent caption_key)"})
+
     # R1 Check A — a page-backed caption may not have a plain mention.
     for cap, acts in sorted(universe.items()):
         if page_backed(cap):
@@ -480,6 +498,7 @@ def join(ledger, s6_ledger, caption_index):
             "B_plain_uncited": sum(1 for v in violations if v["check"] == "B-plain-uncited"),
             "C_resurrected": sum(1 for v in violations if v["check"] == "C-resurrected"),
             "D_dangling": sum(1 for v in violations if v["check"] == "D-dangling"),
+            "E_empty_universe": sum(1 for v in violations if v["check"] == "E-empty-universe"),
         },
         "clean": not violations,
         "violations": violations,
@@ -591,14 +610,34 @@ def _self_test():
         check(res_bad["checks"][want] >= 1,
               "join fail-path did not fire check %s (%s)" % (want, res_bad["checks"]))
 
+    # --- join: EMPTY-UNIVERSE fail-closed (CR-S8-2) ---
+    res_empty = join({"scanned_head": "TEST", "mentions": []}, bad_s6, bad_ci)
+    check(res_empty["clean"] is False,
+          "empty-universe join must fail closed, got clean=%s" % res_empty["clean"])
+    check(res_empty["checks"]["E_empty_universe"] >= 1,
+          "empty-universe: E_empty_universe check did not fire (%s)" % res_empty["checks"])
+    # a mentions set carrying only caption_key-less rows is also an empty universe
+    res_nocap = join({"scanned_head": "TEST",
+                      "mentions": [{"file": "f", "line": 1, "matched_text": "x",
+                                    "caption_key": None, "action": "linked",
+                                    "resolution": {}}]}, bad_s6, bad_ci)
+    check(res_nocap["clean"] is False and res_nocap["checks"]["E_empty_universe"] >= 1,
+          "caption_key-less mentions must fail closed (E-empty-universe)")
+
+    # --- assemble: absent mentions rows record a gap (CR-S8-3) ---
+    src_nom = dict(src, mentions=os.path.join(_FIX, "does-not-exist.jsonl"))
+    led_nm = assemble(src=src_nom, content_root=content_root, scanned_head="TEST")
+    check(any("mentions" in g and "empty" in g for g in led_nm["gaps"]),
+          "absent-mentions: no gap recorded (%s)" % led_nm["gaps"])
+
     if failures:
         print("assemble_ledger.py --self-test: FAIL")
         for f in failures:
             print("  - " + f)
         return 1
     print("assemble_ledger.py --self-test: PASS "
-          "(assemble: mentions/adjudicated join/embeds-scan+provenance/terms/pincites; "
-          "join: clean + A/B/C/D fail-paths)")
+          "(assemble: mentions/adjudicated join/embeds-scan+provenance/terms/pincites/"
+          "absent-mentions-gap; join: clean + A/B/C/D/E-empty-universe fail-paths)")
     return 0
 
 

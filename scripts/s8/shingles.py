@@ -391,7 +391,9 @@ _REPORT_FIELDS = ("file", "line", "overlap_tokens", "source_page",
 
 
 def write_report(hits, stats, out_path):
-    os.makedirs(os.path.dirname(out_path), exist_ok=True)
+    out_dir = os.path.dirname(out_path)
+    if out_dir:                       # CR-S8-6: makedirs("") raises even w/ exist_ok
+        os.makedirs(out_dir, exist_ok=True)
     with open(out_path, "w", encoding="utf-8") as fh:
         for h in hits:
             fh.write(json.dumps({k: h[k] for k in _REPORT_FIELDS},
@@ -456,6 +458,31 @@ def _self_test():
     check(stats["rule_sources"] == 2, f"expected 2 rule sources, got {stats['rule_sources']}")
     check(stats["pin_sources"] == 1, f"expected 1 pin source, got {stats['pin_sources']}")
 
+    # CR-S8-6: write_report with a bare filename (no directory component) must not
+    # crash — os.makedirs("") raises FileNotFoundError even with exist_ok=True.
+    import tempfile
+    _tmp = tempfile.mkdtemp()
+    _cwd = os.getcwd()
+    try:
+        os.chdir(_tmp)
+        write_report([], {"_x": 1}, "bare_report.jsonl")   # bare name -> dirname ""
+        check(os.path.exists(os.path.join(_tmp, "bare_report.jsonl")),
+              "write_report: bare-filename --out did not write")
+    finally:
+        os.chdir(_cwd)
+
+    # CR-S8-5: an unreadable file is captured in read_errors, and main() fails
+    # closed (exit 1) rather than reporting a clean success over a partial sweep.
+    _h, _st = sweep(_tmp, files=[os.path.join(_tmp, "does-not-exist.md")])
+    check(len(_st["read_errors"]) == 1,
+          "sweep: unreadable file not captured in read_errors")
+    _torn = os.path.join(_tmp, "torn.md")
+    os.symlink(os.path.join(_tmp, "no-such-target"), _torn)  # broken symlink -> read fails
+    _rc = main(["--content", _tmp, "--out", os.path.join(_tmp, "rep.jsonl")])
+    check(_rc == 1, "main: read_errors present must exit 1, got %r" % _rc)
+    import shutil
+    shutil.rmtree(_tmp, ignore_errors=True)
+
     if failures:
         print("shingles.py --self-test: FAIL")
         for f in failures:
@@ -487,7 +514,12 @@ def main(argv):
     print(json.dumps({"report": out_path, "summary": {
         k: v for k, v in stats.items() if k != "read_errors"}}, ensure_ascii=False))
     if stats["read_errors"]:
-        print("read_errors: " + json.dumps(stats["read_errors"], ensure_ascii=False))
+        # CR-S8-5: a file the detector could not read is silently excluded from
+        # both source and prose detection — fail closed rather than reporting a
+        # clean success over an incomplete sweep.
+        print("read_errors: " + json.dumps(stats["read_errors"], ensure_ascii=False),
+              file=sys.stderr)
+        return 1
     return 0
 
 

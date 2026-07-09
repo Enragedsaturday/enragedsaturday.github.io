@@ -207,7 +207,13 @@ def build_page_index(content_root=CONTENT):
         stem = os.path.splitext(os.path.basename(path))[0]
         try:
             text = c.read_text(path)
-        except OSError:
+        except OSError as exc:
+            # CR-S8-9: a transient/permission read failure must not vanish silently
+            # — downstream validate_register would then report this term's target
+            # as "does not resolve", indistinguishable from a genuinely missing
+            # page. Warn loudly, then skip.
+            print("WARN: could not read %s for term index: %s" % (rel, exc),
+                  file=sys.stderr)
             continue
         fm, body, _ = c.split_frontmatter(text)
         names = [stem]
@@ -398,6 +404,17 @@ def apply_edits(text, edits):
     return text
 
 
+def _atomic_write(path, text):
+    """CR-S8-8: all-or-nothing content write. A killed/crashed mid-write (OOM,
+    signal, disk full) must never leave a content page truncated — a partial write
+    on any single page corrupts this verified legal-authority corpus. Write to a
+    sibling temp file, then os.replace() into place (atomic on POSIX)."""
+    tmp = path + ".tmp"
+    with open(tmp, "w", encoding="utf-8") as fh:
+        fh.write(text)
+    os.replace(tmp, path)
+
+
 # --------------------------------------------------------------------------
 # skip_phrases un-link pass — revert an already-written wrong-sense link to
 # plain text (idempotent partner of the ADD-path suppression: after this,
@@ -470,8 +487,7 @@ def run_unlink(write=False):
         for r in reverted:
             rows.append((rel, _line_no(text, r["start"]), r["term"], r["phrase"]))
         if write and new != text:
-            with open(path, "w", encoding="utf-8") as fh:
-                fh.write(new)
+            _atomic_write(path, new)   # CR-S8-8
     print("=== S8 skip_phrases un-link (%s) ===" % ("WRITE" if write else "DRY-RUN"))
     print("wrong-sense links reverted: %d" % total)
     for rel, ln, term, phrase in sorted(rows):
@@ -548,8 +564,7 @@ def run(write=False, sample=10, protect_pincite_lines=True):
             files_touched += 1
             new_text = apply_edits(text, edits)
             if write:
-                with open(path, "w", encoding="utf-8") as fh:
-                    fh.write(new_text)
+                _atomic_write(path, new_text)   # CR-S8-8
             if len(samples) < sample and links:
                 samples.append((rel, links[0], text))
 
@@ -791,6 +806,36 @@ def _self_test():
     right_after, rev2 = unlink_skip_phrases(right, terms)
     check(right_after == right and len(rev2) == 0,
           "unlink: correct-sense link must be preserved")
+
+    # 10) CR-S8-8: _atomic_write writes correct content, leaves no .tmp behind
+    import io
+    import tempfile
+    import contextlib
+    import shutil
+    _td = tempfile.mkdtemp()
+    try:
+        _p = os.path.join(_td, "page.md")
+        _atomic_write(_p, "hello world\n")
+        with open(_p, encoding="utf-8") as fh:
+            check(fh.read() == "hello world\n", "atomic_write: wrong content")
+        check(not os.path.exists(_p + ".tmp"), "atomic_write: temp file left behind")
+
+        # 11) CR-S8-9: build_page_index WARNs on an unreadable path instead of
+        #     dropping it silently (a dir named `*.md` -> IsADirectoryError).
+        _c = os.path.join(_td, "content")
+        os.makedirs(_c)
+        with open(os.path.join(_c, "Good.md"), "w", encoding="utf-8") as fh:
+            fh.write("---\n---\nbody\n")
+        os.makedirs(os.path.join(_c, "Bad.md"))       # a directory named *.md
+        _buf = io.StringIO()
+        with contextlib.redirect_stderr(_buf):
+            _pidx = build_page_index(content_root=_c)
+        check("Bad.md" in _buf.getvalue() and "could not read" in _buf.getvalue(),
+              "build_page_index: no WARN for unreadable page")
+        check(_pidx.resolve_paths("Good") == {"Good.md"},
+              "build_page_index: good page not indexed")
+    finally:
+        shutil.rmtree(_td, ignore_errors=True)
 
     if failures:
         print("link_terms.py --self-test: FAIL")

@@ -145,7 +145,7 @@ def _frontmatter(text: str):
     return text[: end + 4]
 
 
-def parse_aliases(text: str):
+def parse_aliases(text: str, source=None):
     fm = _frontmatter(text)
     if not fm:
         return []
@@ -154,8 +154,13 @@ def parse_aliases(text: str):
         try:
             arr = json.loads(m.group(1))
             return [str(a) for a in arr if str(a).strip()]
-        except Exception:
-            pass
+        except Exception as exc:
+            # CR-S8-12: a page with a real but MALFORMED inline `aliases: [...]`
+            # must not read as "no aliases" — case pages are the WIKILINK TRUTH,
+            # so silently dropping their aliases weakens resolution without a
+            # trace. Warn, then fall through to the block form.
+            print("WARN: malformed inline aliases in %s: %s"
+                  % (source or "<case page>", exc), file=sys.stderr)
     # block form:  aliases:\n  - "a"\n  - b
     out = []
     lines = fm.splitlines()
@@ -192,7 +197,10 @@ def _is_short_token(s: str) -> bool:
 # Build
 # --------------------------------------------------------------------------
 
-def build():
+def build(cases_dir=None, lake_dir=None, ledger_path=None):
+    cases_dir = cases_dir or CASES_DIR
+    lake_dir = lake_dir or LAKE_DIR
+    ledger_path = ledger_path or LEDGER
     entries = {}          # caption_key -> entry dict
     norm2key = {}         # normalized string -> caption_key (identity join)
 
@@ -219,22 +227,27 @@ def build():
 
     # ---- Pass A: case pages (the wikilink truth) ----
     page_files = sorted(
-        f for f in os.listdir(CASES_DIR) if f.endswith(".md")
+        f for f in os.listdir(cases_dir) if f.endswith(".md")
     )
     n_pages = 0
     n_alias = 0
     for fn in page_files:
         stem = fn[:-3]
         n_pages += 1
-        text = open(os.path.join(CASES_DIR, fn), encoding="utf-8").read()
+        text = open(os.path.join(cases_dir, fn), encoding="utf-8").read()
         e = get_entry(stem)
         e["page_stem"] = stem
         add_source(e, "page")
-        # a stem carrying a parenthetical year is itself a variant of the bare form
+        # a stem carrying a parenthetical year -> register the BARE form as a
+        # variant (CR-S8-13). The bare caption ("Davis v. United States") is what
+        # prose uses when only the "X (YYYY)" page exists; adding `stem` to its OWN
+        # variant set was a no-op (it is already a stem norm, skipped downstream).
+        # A genuine bare/year page pair is still fail-closed by the year-sibling
+        # guard below, which routes the bare form to the ambiguity queue.
         m = re.match(r"^(.*\S)\s*\(\d{4}\)$", stem)
         if m:
-            e["variants"].add(stem)
-        for a in parse_aliases(text):
+            e["variants"].add(m.group(1))
+        for a in parse_aliases(text, source=fn):
             n_alias += 1
             if _is_short_token(a):
                 e["short_names"].add(a)
@@ -244,14 +257,22 @@ def build():
 
     # ---- Pass B: lake identity ----
     lake_files = sorted(
-        f for f in os.listdir(LAKE_DIR) if f.endswith(".json")
+        f for f in os.listdir(lake_dir) if f.endswith(".json")
     )
     n_lake = 0
     n_lake_skipped = 0
+    n_lake_errors = 0
     for fn in lake_files:
         try:
-            d = json.load(open(os.path.join(LAKE_DIR, fn), encoding="utf-8"))
-        except Exception:
+            d = json.load(open(os.path.join(lake_dir, fn), encoding="utf-8"))
+        except Exception as exc:
+            # CR-S8-14: a corrupt/unreadable lake identity file for a real case
+            # must not vanish with zero signal — this index feeds the R1-R3 linker
+            # as resolution truth. Count + warn (unlike the tracked captionless
+            # skip a broken record is a defect, not an expected placeholder).
+            n_lake_errors += 1
+            print("WARN: failed to parse lake record %s: %s" % (fn, exc),
+                  file=sys.stderr)
             continue
         n_lake += 1
         idn = d.get("identity", {}) or {}
@@ -294,7 +315,7 @@ def build():
     # fail-closed "keep PLAIN, never resurrect" set: they win over any page
     # variant that happens to spell the same string (the folded-alias trap —
     # e.g. "Carman v. Carroll" must NOT link to the survivor "Carroll v. Carman").
-    led = json.load(open(LEDGER, encoding="utf-8"))
+    led = json.load(open(ledger_path, encoding="utf-8"))
     n_led = 0
     # ledger_nonpage: norm string -> {"display": caption, "terminal": t}
     ledger_nonpage = {}
@@ -439,6 +460,7 @@ def build():
         "sources": {
             "lake_records": n_lake,
             "lake_skipped_captionless": n_lake_skipped,
+            "lake_parse_errors": n_lake_errors,
             "case_pages": n_pages,
             "case_page_aliases": n_alias,
             "ledger_captions": n_led,
@@ -475,7 +497,104 @@ def build():
     return doc
 
 
+# --------------------------------------------------------------------------
+# self-test (hermetic — temp corpus, no live lake/pages)
+# --------------------------------------------------------------------------
+
+def _self_test():
+    import io
+    import tempfile
+    import contextlib
+    failures = []
+
+    def check(cond, msg):
+        if not cond:
+            failures.append(msg)
+
+    # ---- unit: parse_aliases warns + returns [] on malformed inline (CR-S8-12) ----
+    buf = io.StringIO()
+    with contextlib.redirect_stderr(buf):
+        got = parse_aliases('---\ntitle: X\naliases: [not valid json]\n---\nbody\n',
+                            source="X.md")
+    check(got == [], "CR-S8-12: malformed inline aliases should yield [], got %r" % got)
+    check("malformed inline aliases in X.md" in buf.getvalue(),
+          "CR-S8-12: no WARN emitted for malformed inline aliases")
+    # a WELL-FORMED inline alias still parses (no regression)
+    check(parse_aliases('---\naliases: ["Whren", "Whren v. US"]\n---\n') ==
+          ["Whren", "Whren v. US"], "parse_aliases: well-formed inline broke")
+
+    # ---- hermetic build() over a temp corpus (CR-S8-13, CR-S8-14) ----
+    tmp = tempfile.mkdtemp()
+    cases = os.path.join(tmp, "cases")
+    lake = os.path.join(tmp, "lake")
+    os.makedirs(cases)
+    os.makedirs(lake)
+
+    def page(stem, body="---\n---\nbody\n"):
+        with open(os.path.join(cases, stem + ".md"), "w", encoding="utf-8") as fh:
+            fh.write(body)
+
+    # a YEAR-STEM page with NO bare sibling -> its bare form must auto-link
+    page("Zeta v. State (2011)")
+    # a genuine bare/year SIBLING pair -> the bare form must be fail-closed ambiguous
+    page("Alpha v. State")
+    page("Alpha v. State (2011)")
+    # a corrupt lake record (CR-S8-14) + one good one
+    with open(os.path.join(lake, "good.json"), "w", encoding="utf-8") as fh:
+        json.dump({"record_id": "r1", "identity": {"case_name": "Zeta v. State"},
+                   "status": "ok"}, fh)
+    with open(os.path.join(lake, "broken.json"), "w", encoding="utf-8") as fh:
+        fh.write("{ this is not valid json")
+    ledger_p = os.path.join(tmp, "s6.json")
+    with open(ledger_p, "w", encoding="utf-8") as fh:
+        json.dump({"rows": []}, fh)
+
+    buf = io.StringIO()
+    with contextlib.redirect_stderr(buf):
+        doc = build(cases_dir=cases, lake_dir=lake, ledger_path=ledger_p)
+    lc = doc["link_captions"]
+    amb = doc["ambiguous_captions"]
+
+    # CR-S8-13: bare form of a lone year-stem page is an auto-linkable caption
+    check("Zeta v. State" in lc and lc["Zeta v. State"] == "Zeta v. State (2011)",
+          "CR-S8-13: bare form of a lone year-stem page not registered -> %s"
+          % [k for k in lc if "Zeta" in k])
+    # the OLD no-op behaviour (adding the stem to its own variants) never produced
+    # this; assert the bare form was NOT wrongly left out
+    check(_norm("Zeta v. State") in {_norm(k) for k in lc},
+          "CR-S8-13: bare year-stem caption missing from link_captions")
+    # year-sibling pair stays fail-closed (bare form ambiguous, not auto-linked)
+    check(_norm("Alpha v. State") in amb,
+          "CR-S8-13: genuine bare/year sibling not routed to ambiguity")
+    check("Alpha v. State" not in lc,
+          "CR-S8-13: ambiguous bare/year sibling must NOT be auto-linkable")
+
+    # CR-S8-14: the broken lake record is counted + surfaced, not silently dropped
+    check(doc["sources"]["lake_parse_errors"] == 1,
+          "CR-S8-14: broken lake record not counted (%s)"
+          % doc["sources"]["lake_parse_errors"])
+    check("failed to parse lake record broken.json" in buf.getvalue(),
+          "CR-S8-14: no WARN emitted for the broken lake record")
+    check(doc["sources"]["lake_records"] == 1,
+          "CR-S8-14: good lake record miscounted (%s)" % doc["sources"]["lake_records"])
+
+    import shutil
+    shutil.rmtree(tmp, ignore_errors=True)
+
+    if failures:
+        print("caption_index.py --self-test: FAIL")
+        for f in failures:
+            print("  - " + f)
+        return 1
+    print("caption_index.py --self-test: PASS "
+          "(alias-parse-warn / year-stem bare variant / year-sibling fail-closed / "
+          "lake parse-error counter+warn)")
+    return 0
+
+
 def main(argv):
+    if "--self-test" in argv:
+        return _self_test()
     out = OUT
     if "--out" in argv:
         out = argv[argv.index("--out") + 1]

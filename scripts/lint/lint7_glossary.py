@@ -70,6 +70,16 @@ def _bound_rx(surfaces):
     return re.compile(r"(?<![\w-])(?:%s)(?![\w-])" % body, re.IGNORECASE)
 
 
+def _skip_phrase_rx(phrase):
+    """Word/hyphen-bounded matcher for a wrong-SENSE literal phrase (register
+    `skip_phrases`). The inter-word separator tolerates whitespace AND emphasis
+    markers (`*`/`_`) so 'Washington Post reporter' still spans the italic
+    '*Washington Post* reporter' (mirrors link_terms._skip_phrase_regex)."""
+    words = [re.escape(w) for w in phrase.split()]
+    body = r"[\s*_]+".join(words) if words else re.escape(phrase)
+    return re.compile(r"(?<![\w-])(?:%s)(?![\w-])" % body, re.IGNORECASE)
+
+
 def load_register(path=REGISTER_PATH):
     """Return (banned, routed, error).
 
@@ -122,12 +132,24 @@ def load_register(path=REGISTER_PATH):
                 surfaces += [m for m in match if isinstance(m, str) and m.strip()]
             rx = _bound_rx(surfaces)
             if rx is not None:
+                # CR-S8-18: carry the register's skip_phrases (wrong-SENSE literal
+                # phrases the linker suppresses, e.g. 'vacated the room') so the
+                # coverage scan does not flag an occurrence the register documents
+                # as a defect if linked.
+                sp = term.get("skip_phrases")
+                if isinstance(sp, str):
+                    sp = [sp]
+                skip_phrases = [s.strip() for s in sp
+                                if isinstance(s, str) and s.strip()] \
+                    if isinstance(sp, list) else []
                 routed.append({
                     "canonical": canonical,
                     "route": route,
                     "target": term.get("target"),
                     "surfaces": surfaces,
                     "surface_rx": rx,
+                    "skip_phrases": skip_phrases,
+                    "skip_rx": [_skip_phrase_rx(p) for p in skip_phrases],
                 })
     return banned, routed, None
 
@@ -253,7 +275,15 @@ def check_file(path, idx, banned, routed, this_stem=None):
     for rt in routed:
         if _is_own_home(rt, this_stem, idx):
             continue
+        # CR-S8-18: gather wrong-sense suppression spans (register skip_phrases);
+        # a coverage match contained in one is correctly unlinked, not a gap.
+        suppress = []
+        for srx in rt.get("skip_rx", ()):
+            for sm in srx.finditer(cov_masked):
+                suppress.append((sm.start(), sm.end()))
         for m in rt["surface_rx"].finditer(cov_masked):
+            if suppress and any(a <= m.start() and m.end() <= b for (a, b) in suppress):
+                continue
             out.append(c.make_violation(
                 LINT, path, line_of(m.start()), c.MEDIUM,
                 "routed term '%s' (route:%s) left unlinked — link per D1 "
@@ -379,6 +409,24 @@ def self_test():
     ])
     check("dead-target-HIGH-count",
           sum(1 for v in dead if v["severity"] == c.HIGH), 2)
+
+    # CR-S8-18: register skip_phrases suppress wrong-sense coverage flags. The
+    # linked 'vacated' is masked (no flag); the wrong-sense 'vacated the room' is
+    # suppressed by the skip_phrase; so WITH skip_phrases -> 0 MEDIUM, WITHOUT -> 1.
+    routed_sp = [{"canonical": "vacated", "route": "citing",
+                  "target": "Reading and Citing Cases#vacated",
+                  "surfaces": ["vacated"], "surface_rx": _bound_rx(["vacated"]),
+                  "skip_phrases": ["vacated the room"],
+                  "skip_rx": [_skip_phrase_rx("vacated the room")]}]
+    vs = check_file(os.path.join(FIXTURE, "lint-7-skipphrase.md"), idx, [], routed_sp,
+                    this_stem="Doctrine")
+    check("skipphrase-suppresses-wrong-sense",
+          sum(1 for v in vs if v["severity"] == c.MEDIUM), 0)
+    routed_nosp = [dict(routed_sp[0], skip_phrases=[], skip_rx=[])]
+    vn = check_file(os.path.join(FIXTURE, "lint-7-skipphrase.md"), idx, [], routed_nosp,
+                    this_stem="Doctrine")
+    check("skipphrase-absent-flags-wrong-sense",
+          sum(1 for v in vn if v["severity"] == c.MEDIUM), 1)
 
     # register loads clean from the real file (no fail-closed error)
     _b, _r, e = load_register()

@@ -391,11 +391,31 @@ def wire_doctrine_page(text, page2rid, lake, forms=("rule1", "rule2", "rule3")):
                 journ.append(_j(rid, None, "rule2-ambiguous-quote-left-plain"))
             queue(lm, pm, url_base, "linked-external", rid, None, 3, False)
 
-    # apply reverse, non-overlap
+    # apply reverse, non-overlap (audit-complete: overlap-skips are journaled)
+    text = _apply_doctrine_edits(text, edits, ledger, journ)
+    return text, ledger, journ
+
+
+def _apply_doctrine_edits(text, edits, ledger, journ):
+    """Splice the queued doctrine page-number edits right-to-left, skipping any that
+    overlap an already-applied edit.
+
+    CR-S8-21: a skipped edit is JOURNALED (`plain:overlap-skip`) into both the
+    ledger and the journal, mirroring the case-page apply loop. The doctrine loop
+    previously dropped it with a bare `continue` — the computed edit vanished with
+    no audit row, breaking the trail this verified pipeline otherwise maintains.
+    """
     edits.sort(key=lambda e: -e[0])
     last = None
     for p_s, p_e, repl, rid, pin_id, action, before, rule, fragment in edits:
         if last is not None and p_e > last:
+            row = _l(rid, pin_id, "plain:overlap-skip", None, before=before)
+            row["rule"] = rule
+            row["fragment"] = fragment
+            ledger.append(row)
+            jr = _j(rid, pin_id, "plain:overlap-skip", before=before)
+            jr["rule"] = rule
+            journ.append(jr)
             continue
         text = text[:p_s] + repl + text[p_e:]
         last = p_s
@@ -406,7 +426,7 @@ def wire_doctrine_page(text, page2rid, lake, forms=("rule1", "rule2", "rule3")):
         jr = _j(rid, pin_id, action, before=before, after=repl)
         jr["rule"] = rule
         journ.append(jr)
-    return text, ledger, journ
+    return text
 
 
 def _sentence_around(text, pos):
@@ -492,18 +512,30 @@ def run_cases(forms=ALL_FORMS, write=False, limit=None, cases_dir=CONTENT_CASES,
         for row in journ:
             row["file"] = rel
             row["scope"] = "cases"
-        all_ledger.extend(ledger)
-        all_journ.extend(journ)
         if new_text != text:
             changed_files += 1
+            within_limit = (limit is None) or (changed_files <= limit)
+            if write and within_limit:
+                with open(f, "w", encoding="utf-8") as fh:
+                    fh.write(new_text)
+            elif write and not within_limit:
+                # CR-S8-22: --limit reached this run — the file is NOT written, so
+                # its computed rows must NOT claim the pincite is wired. Downgrade
+                # them before they reach the canonical ledger; otherwise the ledger
+                # falsely certifies citations linked in files never touched on disk.
+                for row in ledger:
+                    if row["action"].startswith("linked"):
+                        row["action"] = "plain:limit-skipped"
+                for row in journ:
+                    if row["action"].startswith("linked"):
+                        row["action"] = "plain:limit-skipped"
             for row in ledger:
                 if row["action"].startswith("linked") and len(diffs) < 10000:
                     diffs.append({"file": rel, "pin_id": row["pin_id"],
                                   "form": row.get("form"), "before": row.get("before"),
                                   "after": row.get("after")})
-            if write and (limit is None or changed_files <= limit):
-                with open(f, "w", encoding="utf-8") as fh:
-                    fh.write(new_text)
+        all_ledger.extend(ledger)
+        all_journ.extend(journ)
     _emit(all_ledger, all_journ, write, scope="cases")
     return {"ledger": all_ledger, "journal": all_journ, "diffs": diffs,
             "changed_files": changed_files, "write": write}
@@ -567,7 +599,13 @@ def _emit(ledger, journ, write, scope):
     {lane, model, scope}. A NO-OP re-run (0 rows for this scope — everything is
     already wired, e.g. the doctrine pass which has no preexisting-detection)
     PRESERVES the prior run's rows for the scope rather than blanking the R12
-    record. Idempotent per scope."""
+    record. Idempotent per scope.
+
+    CR-S8-23: DRY-RUN IS READ-ONLY. The canonical R12 ledger is (re)written only
+    under --write, so a preview can never overwrite the rows assemble_ledger.py
+    later consumes to prove R1."""
+    if not write:
+        return
     os.makedirs(os.path.dirname(LEDGER_OUT), exist_ok=True)
     existing = _read_jsonl(LEDGER_OUT)
     kept = [r for r in existing if r.get("scope") and r.get("scope") != scope]
@@ -576,10 +614,9 @@ def _emit(ledger, journ, write, scope):
     with open(LEDGER_OUT, "w", encoding="utf-8") as fh:
         for r in kept + ledger:
             fh.write(json.dumps(r, sort_keys=True) + "\n")
-    if write:
-        with open(JOURNAL_OUT, "a", encoding="utf-8") as fh:
-            for r in journ:
-                fh.write(json.dumps(r, sort_keys=True) + "\n")
+    with open(JOURNAL_OUT, "a", encoding="utf-8") as fh:
+        for r in journ:
+            fh.write(json.dumps(r, sort_keys=True) + "\n")
 
 
 def summarize(result):
@@ -662,12 +699,76 @@ def _self_test():
     dnew2, _, _ = wire_doctrine_page(dnew, page2rid, lake)
     check(dnew2 == dnew, "doctrine wiring is not idempotent")
 
+    # CR-S8-21: a doctrine edit dropped for overlap is journaled to BOTH the
+    # ledger and the journal (audit-trail completeness), never silently dropped.
+    _led, _jr = [], []
+    _ov_edits = [
+        [10, 15, "[X](u)", "rid", "pin-1", "linked-external", "ABCD", 1, True],
+        [5, 12, "[Y](u)", "rid", "pin-2", "linked-external", "5678", 2, True],  # overlaps
+    ]
+    _out = _apply_doctrine_edits("0123456789ABCDEF", _ov_edits, _led, _jr)
+    check(any(r["action"] == "plain:overlap-skip" for r in _led),
+          "CR-S8-21: overlap-skip missing from ledger")
+    check(any(r["action"] == "plain:overlap-skip" for r in _jr),
+          "CR-S8-21: overlap-skip missing from journal")
+    check(sum(1 for r in _led if r["action"] == "linked-external") == 1,
+          "CR-S8-21: expected exactly one applied edit")
+
+    # CR-S8-22 / CR-S8-23: --limit gates the LEDGER (not just the file write), and a
+    # dry-run never writes the canonical ledger. Exercised via run_cases over a
+    # hermetic temp corpus with the ledger/journal globals redirected to temp.
+    import tempfile
+    import shutil
+    global LEDGER_OUT, JOURNAL_OUT
+    _save_l, _save_j = LEDGER_OUT, JOURNAL_OUT
+    _td = tempfile.mkdtemp()
+    try:
+        _cases = os.path.join(_td, "cases")
+        _lake = os.path.join(_td, "lake")
+        os.makedirs(_cases)
+        os.makedirs(_lake)
+        for i, stem in enumerate(("Alpha v. State", "Beta v. State")):
+            rid = "rec-%d" % i
+            page = 6 + i
+            with open(os.path.join(_cases, stem + ".md"), "w", encoding="utf-8") as fh:
+                fh.write("---\nrecord_id: %s\n---\n\nA point. — 1 U.S. at %d. ^pin-%d\n"
+                         % (rid, page, page))
+            with open(os.path.join(_lake, stem + ".json"), "w", encoding="utf-8") as fh:
+                json.dump({"record_id": rid,
+                           "identity": {"absolute_url": "/opinion/%d/x/" % i},
+                           "pinpoints": [{"id": "pin-%d" % page, "quote_fidelity": "matched",
+                                          "fragment": "#:~:text=q%d" % page, "quote": "q"}]}, fh)
+        LEDGER_OUT = os.path.join(_td, "ledger.jsonl")
+        JOURNAL_OUT = os.path.join(_td, "journal.jsonl")
+
+        # (a) DRY-RUN must not write the canonical ledger (CR-S8-23)
+        run_cases(write=False, cases_dir=_cases, lake_dir=_lake)
+        check(not os.path.exists(LEDGER_OUT),
+              "CR-S8-23: dry-run wrote the canonical ledger")
+
+        # (b) WRITE --limit=1 wires exactly one file; the over-limit file's rows are
+        #     downgraded (never claimed linked), and only one file is mutated (CR-S8-22)
+        res = run_cases(write=True, limit=1, cases_dir=_cases, lake_dir=_lake)
+        _on_disk = sum(1 for fn in os.listdir(_cases)
+                       if "#:~:text=" in open(os.path.join(_cases, fn), encoding="utf-8").read())
+        check(_on_disk == 1, "CR-S8-22: --limit=1 should write exactly 1 file, wrote %d" % _on_disk)
+        _acts = [r["action"] for r in res["ledger"]]
+        check("linked-external" in _acts, "CR-S8-22: written file's row missing")
+        check("plain:limit-skipped" in _acts,
+              "CR-S8-22: over-limit file's rows NOT downgraded -> %s" % _acts)
+        check(os.path.exists(LEDGER_OUT), "CR-S8-22: --write did not emit the ledger")
+    finally:
+        LEDGER_OUT, JOURNAL_OUT = _save_l, _save_j
+        shutil.rmtree(_td, ignore_errors=True)
+
     if failures:
         print("link_pincites.py --self-test: FAIL")
         for f in failures:
             print("  - " + f)
         return 1
-    print("link_pincites.py --self-test: PASS (case forms clean/id-nopage/slip-paren + host guard + doctrine rules 1/2/3 + zone guard + idempotency)")
+    print("link_pincites.py --self-test: PASS (case forms clean/id-nopage/slip-paren + "
+          "host guard + doctrine rules 1/2/3 + zone guard + idempotency + "
+          "doctrine overlap-journal + --limit ledger-gate + dry-run read-only)")
     return 0
 
 

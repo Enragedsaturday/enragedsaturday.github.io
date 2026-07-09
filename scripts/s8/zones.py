@@ -284,6 +284,23 @@ def _normalize(zones):
     return out
 
 
+def _row_pipe_positions(row):
+    """Offsets of the `|` column delimiters in a table row.
+
+    A delimiter pipe is one that is NOT escaped (`\\|`) AND does NOT sit inside a
+    `[[...]]` wikilink. An aliased wikilink in a cell (`[[Terry v. Ohio|Terry]]`)
+    carries a DISPLAY pipe that is a caption alias, never a column boundary; the
+    R11 sweep escapes it (`\\|`) but a raw one must not truncate the cell either
+    (CR-S8-4). Wikilink-internal pipes are blanked before the delimiter scan.
+    """
+    buf = list(row)
+    for m in re.finditer(r"\[\[.*?\]\]", row):
+        for i in range(m.start(), m.end()):
+            if buf[i] == "|":
+                buf[i] = "\x00"
+    return [m.start() for m in re.finditer(r"(?<!\\)\|", "".join(buf))]
+
+
 def _first_cell_spans_of_case_table(text, block):
     """Yield (start, end) char spans of first-column data cells of a case table."""
     seg = text[block["start"]:block["end"]]
@@ -291,8 +308,15 @@ def _first_cell_spans_of_case_table(text, block):
     if len(rel_lines) < 2:
         return
     header = seg[rel_lines[0][0]:rel_lines[0][1]]
-    # split header on unescaped pipes; drop empty edges from leading/trailing pipe
-    cells = [c.strip() for c in re.split(r"(?<!\\)\|", header)]
+    # split header on delimiter pipes (unescaped, outside wikilinks); drop empty
+    # edges from a leading/trailing pipe
+    hpipes = _row_pipe_positions(header)
+    hcells = []
+    prev = 0
+    for pp in hpipes + [len(header)]:
+        hcells.append(header[prev:pp])
+        prev = pp + 1
+    cells = [c.strip() for c in hcells]
     trimmed = [c for c in cells if c != ""]
     if not trimmed or trimmed[0].lower() != "case":
         return
@@ -302,8 +326,9 @@ def _first_cell_spans_of_case_table(text, block):
         row = seg[rs:re_]
         if "|" not in row:
             continue
-        # locate unescaped pipe positions within the row
-        pipes = [m.start() for m in re.finditer(r"(?<!\\)\|", row)]
+        # locate column-delimiter pipe positions within the row (unescaped, and
+        # NOT the display pipe of an aliased wikilink in the cell — CR-S8-4)
+        pipes = _row_pipe_positions(row)
         if not pipes:
             continue
         # first cell = between the leading pipe (if any) and the next pipe
@@ -506,6 +531,16 @@ def _self_test():
     exempt_as(t, "Terry v. Ohio", "casecell", occ=0)         # first col of a case table
     not_exempt(t, "Katz v. United States")                   # Holding column links
     not_exempt(t, "de novo")                                 # a NON-case table's first col
+
+    # (h') casecell w/ ALIASED wikilink in the first cell (CR-S8-4): the display
+    # pipe inside `[[Target|alias]]` is NOT a column boundary, so the TAIL after
+    # the alias stays inside casecell (was truncated at the inner `|`). Both the
+    # raw display pipe and the R11-escaped `\|` form must span the whole cell.
+    t = _load("casecell_aliased.md")
+    exempt_as(t, "progeny", "casecell", occ=0)               # tail after raw `|` alias
+    exempt_as(t, "Katz", "casecell", occ=0)                  # alias text itself
+    exempt_as(t, "line", "casecell", occ=0)                  # tail after escaped `\|`
+    not_exempt(t, "reasonable expectation of privacy")       # Holding column stays live
 
     # mixed
     t = _load("mixed.md")

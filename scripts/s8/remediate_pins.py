@@ -80,7 +80,14 @@ def _begins_new_sentence(tail: str) -> bool:
     if c.isupper():
         return True
     if c in _OPEN_QUOTES:
-        return True
+        # CR-S8-16: an opening quote alone is NOT a sentence boundary — a
+        # mid-sentence quoted phrase (`^pin "reasonable" under the circumstances`)
+        # opens with a lowercase word. Require the quoted text to itself begin a
+        # sentence (uppercase, past any leading emphasis markers) or fail closed.
+        j = i + 1
+        while j < n and s[j] in "*_`":
+            j += 1
+        return j < n and s[j].isupper()
     return False
 
 
@@ -310,19 +317,28 @@ def _read_queue():
 
 
 def _read_jsonl_header():
+    """Return (header_or_None, corrupt_bool). CR-S8-15: an EXISTING-but-unparsable
+    header (a crashed mid-write run) must be distinguished from a genuinely absent
+    artifact (no prior --write). The former fails VERIFY rather than silently
+    downgrading the count-invariant check to "no baseline"."""
     if not os.path.exists(JSONL):
-        return None
+        return None, False
     with open(JSONL, encoding="utf-8") as fh:
         first = fh.readline()
     try:
-        return json.loads(first)
+        return json.loads(first), False
     except Exception:
-        return None
+        return None, True   # existed but unparsable — never treat as "no baseline"
+
+
+def _verify_ok(n_unqueued, n_unresolved, header_corrupt, baseline, pin_refs_now):
+    return (n_unqueued == 0 and n_unresolved == 0 and not header_corrupt and
+            (baseline is None or pin_refs_now == baseline))
 
 
 def verify():
     queued = _read_queue()
-    header = _read_jsonl_header()
+    header, header_corrupt = _read_jsonl_header()
 
     # Build stem -> path index and per-file end-of-block def sets.
     stem_index = {}
@@ -405,14 +421,15 @@ def verify():
     for r, l, t, p, why in unresolved[:20]:
         print(f"      ! {r}:{l} -> [[{t}#{p}]] : {why}")
     print(f"(3) pin references now            : {pin_refs_now}")
-    if baseline is not None:
+    if header_corrupt:
+        print("    baseline                      : (jsonl header CORRUPT — VERIFY FAIL)")
+    elif baseline is not None:
         print(f"    baseline (jsonl header)       : {baseline}")
         print(f"    unchanged                     : {pin_refs_now == baseline}")
     else:
         print("    baseline                      : (no jsonl header; run --write first)")
 
-    ok = (len(unqueued) == 0 and len(unresolved) == 0 and
-          (baseline is None or pin_refs_now == baseline))
+    ok = _verify_ok(len(unqueued), len(unresolved), header_corrupt, baseline, pin_refs_now)
     print(f"\nVERIFY: {'PASS' if ok else 'FAIL'}")
     return 0 if ok else 1
 
@@ -481,12 +498,62 @@ def _self_test():
     check(len(q) == 1 and "blockquote" in q[0]["reason"],
           f"blockquote: expected 1 blockquote queue row, got {q}")
 
+    # 6) opening quote that STARTS a sentence (uppercase past emphasis) -> split (CR-S8-16)
+    t = _load("quote_split.md")
+    edits, q = find_defects(t)
+    check(len(edits) == 1 and edits[0]["action"] == "split-para",
+          f"quote_split: expected 1 split-para, got {[(e['pin'], e['action']) for e in edits]} q={q}")
+
+    # 7) opening quote CONTINUING mid-sentence (lowercase) -> queue, never split (CR-S8-16)
+    t = _load("quote_lowercase.md")
+    edits, q = find_defects(t)
+    check(len(edits) == 0, f"quote_lowercase: expected 0 edits, got {[e['pin'] for e in edits]}")
+    check(len(q) == 1 and "mid-sentence" in q[0]["reason"],
+          f"quote_lowercase: expected 1 mid-sentence queue row, got {q}")
+
+    # unit: the tightened opening-quote heuristic (CR-S8-16)
+    check(_begins_new_sentence(' "The rule applies"'), "bns: uppercase-after-quote -> True")
+    check(not _begins_new_sentence(' "reasonable" under'), "bns: lowercase-after-quote -> False")
+    check(_begins_new_sentence(' "*The* rule"'), "bns: emphasis+uppercase-after-quote -> True")
+    check(_begins_new_sentence(' It held'), "bns: plain uppercase -> True")
+    check(not _begins_new_sentence(' and then'), "bns: plain lowercase -> False")
+
+    # CR-S8-15: absent vs corrupt jsonl header (corrupt must fail VERIFY)
+    import tempfile
+    import shutil
+    global JSONL
+    _save_jsonl = JSONL
+    _td = tempfile.mkdtemp()
+    try:
+        JSONL = os.path.join(_td, "missing.jsonl")
+        check(_read_jsonl_header() == (None, False),
+              "header: missing must be (None, False)")
+        JSONL = os.path.join(_td, "corrupt.jsonl")
+        with open(JSONL, "w", encoding="utf-8") as fh:
+            fh.write("{ this is not json\n")
+        _h, _corrupt = _read_jsonl_header()
+        check(_h is None and _corrupt is True, "header: corrupt must be (None, True)")
+        JSONL = os.path.join(_td, "ok.jsonl")
+        with open(JSONL, "w", encoding="utf-8") as fh:
+            fh.write(json.dumps({"counts": {"pin_refs_before": 5}}) + "\n")
+        _h, _corrupt = _read_jsonl_header()
+        check(_h is not None and _corrupt is False, "header: valid must be (dict, False)")
+    finally:
+        JSONL = _save_jsonl
+        shutil.rmtree(_td, ignore_errors=True)
+    check(_verify_ok(0, 0, False, None, 5) is True, "verify_ok: clean -> PASS")
+    check(_verify_ok(0, 0, True, None, 5) is False, "verify_ok: corrupt header -> FAIL")
+    check(_verify_ok(0, 0, False, 10, 5) is False, "verify_ok: baseline mismatch -> FAIL")
+    check(_verify_ok(1, 0, False, None, 5) is False, "verify_ok: unqueued -> FAIL")
+
     if failures:
         print("remediate_pins.py --self-test: FAIL")
         for f in failures:
             print("  - " + f)
         return 1
-    print("remediate_pins.py --self-test: PASS (midpara / listitem / clean / mid-sentence / blockquote)")
+    print("remediate_pins.py --self-test: PASS (midpara / listitem / clean / "
+          "mid-sentence / blockquote / quote-split / quote-lowercase-queue / "
+          "begins-sentence unit / jsonl-header absent-vs-corrupt)")
     return 0
 
 

@@ -192,10 +192,15 @@ class Index:
 _LINK_SPAN_RE = re.compile(r"!?\[\[[^\]\n]*\]\]|\[[^\]\n]*\]\([^)\n]*\)")
 _ITALIC_RE = re.compile(r"(?<!\*)\*([^*\n]+?)\*(?!\*)")
 _WIKILINK_TARGET_RE = re.compile(r"!?\[\[([^\]\|\n#]+)")
-# generic caption shape (unknown-caption net); parties are Capitalised chunks
+# generic caption shape (unknown-caption net); parties are Capitalised chunks.
+# CR-S8-20: the trailing `[A-Z]\.` alternative was REDUNDANT — the earlier greedy
+# `[A-Z][A-Za-z.'’&\-]*` (the `.` is in its class) already matches every "S."-style
+# initial and, being tried first, subsumes it; the dead alt gave two derivations
+# per initial token, which on a long capitalised run WITHOUT a `v.` blows up into
+# catastrophic backtracking. Removing it is language-preserving and linear.
 _PARTY = (r"[A-Z][A-Za-z.'’&\-]*"
           r"(?:\s+(?:of|the|for|and|ex|rel\.?|&|"
-          r"[A-Z][A-Za-z.'’&\-]*|[A-Z]\.))*")
+          r"[A-Z][A-Za-z.'’&\-]*))*")
 _GENERIC_RE = re.compile(r"(?<![A-Za-z0-9])(" + _PARTY + r")\s+v\.\s+("
                          + _PARTY + r")")
 
@@ -621,6 +626,16 @@ def apply_resolutions(res_path, idx, page_stems, write=False,
             "ledger_total": len(out_rows)}
 
 
+def _apply_exit_code(res):
+    """CR-S8-17: a resolution that FAILED to apply is a real error a CI/orchestrator
+    gate must see. `bad_target` (invalid/typo'd stem in the resolution file) and
+    `stale` (matched text no longer found near the recorded line) both mean a
+    human-adjudicated link was silently dropped — exit non-zero so the gate fails
+    rather than reporting success. (Queued ambiguity in the default run() branch is
+    an expected outcome, not an application failure, and is not gated here.)"""
+    return 1 if (res["bad_target"] or res["stale"]) else 0
+
+
 def _excluded(path):
     return os.path.relpath(path, ROOT) in EXCLUDE_RELPATHS
 
@@ -823,6 +838,55 @@ def _self_test():
     res2 = analyze(once, None, idx)
     check(len(res2["edits"]) == 0, "idempotency: second pass produced edits")
 
+    # CR-S8-20: the generic caption net stays linear (no catastrophic backtracking)
+    # AND keeps its match semantics after dropping the redundant `[A-Z]\.` alt.
+    import time
+    _pathological = " ".join(["A."] * 40) + " Z"     # long initial run, no `v.`
+    _t0 = time.time()
+    _ = list(_GENERIC_RE.finditer(_pathological))
+    check(time.time() - _t0 < 1.0,
+          "CR-S8-20: _GENERIC_RE backtracking is not linear on an initial run")
+    check(_GENERIC_RE.search("Foo v. Bar") is not None, "generic: 'Foo v. Bar' broke")
+    check(_GENERIC_RE.search("United States v. Smith") is not None,
+          "generic: 'United States v. Smith' broke")
+    _mi = _GENERIC_RE.search("said in J. D. B. v. North Carolina that")
+    check(_mi is not None and _mi.group(1).strip() == "J. D. B.",
+          "generic: initials party 'J. D. B.' broke -> %r" % (_mi and _mi.group(0)))
+
+    # CR-S8-17: apply-resolutions exit code is non-zero when a resolution fails
+    check(_apply_exit_code({"bad_target": [("f", 1, "x", "y")], "stale": []}) == 1,
+          "apply-exit: bad_target must exit 1")
+    check(_apply_exit_code({"bad_target": [], "stale": [("f", 1, "x", "y")]}) == 1,
+          "apply-exit: stale must exit 1")
+    check(_apply_exit_code({"bad_target": [], "stale": []}) == 0,
+          "apply-exit: clean must exit 0")
+    # integration: a resolution whose target is not a real case page surfaces as
+    # bad_target (and would fail the gate); a `plain` resolution applies cleanly.
+    import tempfile
+    import shutil
+    _td = tempfile.mkdtemp()
+    try:
+        _md = os.path.join(_td, "Doc.md")
+        with open(_md, "w", encoding="utf-8") as fh:
+            fh.write("Text mentions Foo v. Bar in prose here.\n")
+        _res = os.path.join(_td, "res.jsonl")
+        with open(_res, "w", encoding="utf-8") as fh:
+            fh.write(json.dumps({"file": _md, "line": 1, "matched_text": "Foo v. Bar",
+                                 "resolution": {"target": "Nonexistent Page",
+                                                "rationale": "x"}}) + "\n")
+        _r = apply_resolutions(_res, idx, idx.page_stems, write=False, ledger_out=None)
+        check(len(_r["bad_target"]) == 1 and _apply_exit_code(_r) == 1,
+              "apply-res: unresolvable target must surface as bad_target + exit 1")
+        with open(_res, "w", encoding="utf-8") as fh:
+            fh.write(json.dumps({"file": _md, "line": 1, "matched_text": "Foo v. Bar",
+                                 "resolution": {"target": "plain",
+                                                "rationale": "keep plain"}}) + "\n")
+        _r2 = apply_resolutions(_res, idx, idx.page_stems, write=False, ledger_out=None)
+        check(_apply_exit_code(_r2) == 0 and len(_r2["plain"]) == 1,
+              "apply-res: clean plain resolution must exit 0")
+    finally:
+        shutil.rmtree(_td, ignore_errors=True)
+
     if failures:
         print("link_cases.py --self-test: FAIL")
         for f in failures:
@@ -912,7 +976,7 @@ def main(argv):
                            if k in ("samples", "stale", "bad_target",
                                     "base_rows", "ledger_total")},
                           fh, ensure_ascii=False, indent=1)
-        return 0
+        return _apply_exit_code(res)
 
     if not paths:
         paths = [os.path.join(ROOT, "content")]

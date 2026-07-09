@@ -12,7 +12,7 @@ He remarked, "Terry v. Ohio is the seminal stop-and-frisk case."
 
 <!-- Terry v. Ohio drafting note -->
 
-```
+```text
 Terry v. Ohio
 ```
 

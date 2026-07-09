@@ -39,14 +39,20 @@ import _common as c  # noqa: E402
 LINT = "LINT-28"
 
 # CL + S2 R14 (+A16/A17) whitelist host suffixes.
+# CR-S8-7: NARROW, not the bare parent domains. `_host_ok` accepts any host that
+# `endswith("." + s)`, so a bare `google.com`/`cornell.edu`/`uchicago.edu` would
+# admit ANY subdomain (drive.google.com, admissions.cornell.edu) and make the
+# narrow Scholar/LII/press-pubs entries dead — silently widening the verified-
+# authority trust boundary past the docstring's Scholar / Cornell LII / Founders'
+# Constitution sources.
 ALLOWED_HOST_SUFFIXES = (
     "courtlistener.com",
     "justia.com",
-    "scholar.google.com", "google.com",
-    "law.cornell.edu", "cornell.edu",
+    "scholar.google.com",
+    "law.cornell.edu",
     "supremecourt.gov",
     "bailii.org", "commonlii.org",
-    "press-pubs.uchicago.edu", "uchicago.edu",
+    "press-pubs.uchicago.edu",
 )
 
 # a URL bearing a text fragment (stops at markdown/quote/space delimiters)
@@ -170,7 +176,13 @@ def self_test():
     # unit: host
     check("host-cl-ok", _host_ok(CL + "#:~:text=a"), True)
     check("host-cornell-ok", _host_ok("https://www.law.cornell.edu/x#:~:text=a"), True)
+    check("host-scholar-ok", _host_ok("https://scholar.google.com/x#:~:text=a"), True)
     check("host-bad", _host_ok("https://evil.example.com/x#:~:text=a"), False)
+    # CR-S8-7: bare parent domains must NOT admit arbitrary subdomains
+    check("host-drive-google-bad", _host_ok("https://drive.google.com/x#:~:text=a"), False)
+    check("host-admissions-cornell-bad",
+          _host_ok("https://admissions.cornell.edu/x#:~:text=a"), False)
+    check("host-uchicago-bare-bad", _host_ok("https://www.uchicago.edu/x#:~:text=a"), False)
     # unit: value grammar + encoding
     check("value-start-only-ok", _validate_text_value("rests%20rather%20on"), None)
     check("value-start-end-ok",
