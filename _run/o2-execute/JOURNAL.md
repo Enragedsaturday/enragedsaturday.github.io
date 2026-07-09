@@ -1354,3 +1354,33 @@ GATES: run_all 7434→7269 (HIGH 4242, -152 zero-new), LINT-19 0, LINT-15/16 0/0
 0, survey em 9.8/1k slip 31 leaks 16, build 722/2834, Case Index idempotent. SCOREBOARD:
 CATS 2-7 COMPLETE = 60 units born draft. NEXT: cat-8 Confessions batch; BIVENS/§242
 CONSULTATION surfaced to user in parallel (cat-11 gate).
+
+**USER DECISION — CAT-11 BIVENS/§242 SHAPE (2026-07-09): FULLER BUILD-OUT.** The deferred A5
+R6 decision (TAX-02b residual) is RESOLVED by user selection from the three-option
+consultation (evidence = the taxonomy sweep + S6 homing data): cat-11 gains TWO new placed
+nodes beyond the signed §1983/QI split — (1) "Suing Federal Officers — Bivens & the FTCA"
+(Tier B; absorbs Hernandez/Ziglar/Egbert/Fazaga + Brownback/Martin/Konan + Tanzin/Landor —
+the honest home for the non-§1983 federal-officer suits) and (2) "Absolute Immunity" (Tier
+C/B; Imbler/Buckley/Briscoe/Rehberg functional-approach line). Monell stays within "§1983 &
+Municipal Liability". TWO S3 Decision-Log entries owed at the cat-11 batch (the A5-mandated
+logging); R6 justifications: distinct black-letter rules w/ their own dockets; depth ≤3
+holds (cat-11 → node). CAF tier bump C→B rides the same batch as a logged R2 amendment
+(orchestrator call per the R2 machinery, evidence = 8 Keys / 3 sub-doctrines).
+
+**BATCH 16 CLOSED — CAT-8 CONFESSIONS (2026-07-09) — CATEGORY 8 COMPLETE:** 4 born-again
+rewrites (no splits): Due-Process Voluntariness (B) · Miranda & Custodial (A, TEACH-04c
+"two C's" CUT per SD8 — rephrased as the two unnamed triggers, LINT-8 0, escalation path
+stays journaled) · Miranda Waiver & Invocation (A, Seibert/Edwards/Shatzer spine, Bobby v.
+Dixon Related→Key self-home fix RATIFIED) · Garrity (B, instructor-critical: the
+Kastigar/Uniformed-Sanitation/Lefkowitz/Portash immunity family named via frozen ledger
+brief-mention terminals w/ exact canonical captions, 4 owed rows discharged; NASA v. FLRA
+kept statutory w/ anti-conflation pitfall). TEACH-04e stale-premise RECONCILED: dispatch's
+"1 ff hit" per page was a Phase-0-era artifact already cleared — canonical survey 0, no
+conversion owed (CONFIRMED not-missed). Mode lake-grounded 0 CL. Owed rows 5/5 (Chapman
+excluded-remit by presence). R3 flips: 4x verified→draft. Rule-B: 5 mid-line deep-links
+demoted (-5 LINT-5 HIGH), targets → anchor-cleanup register. Cat-8 em 22.8-28.3 → 2.1-4.7/1k.
+GATES: run_all 7269→7204 (HIGH 4169, -73 zero-new; +8 MED = the immunity-family page-less
+class), LINT-15/16 0/0 x4, LINT-17 0, LINT-8 0, LINT-20/25 0, survey em 8.5/1k leaks 14,
+build 722/2834 byte-stable. SCOREBOARD: CATS 2-8 COMPLETE = 64 units born draft. NEXT:
+batch 17 cat-9+10 (6A RtC A + Lineups B new + Eyewitness B + Brady B + Entrapment B); then
+cat-1, cat-12/13, cat-11 (NOW UNBLOCKED per user decision), consolidated repair lane, close.
