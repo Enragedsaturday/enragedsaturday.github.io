@@ -1707,3 +1707,12 @@ coherent class, identity itself live-confirmed), both Davis records are stubs (8
 Flippo = likely regex FP. Riley nuance: lead text is 82KB (pilot read it) vs doctrine lanes'
 motions-order claim — P2 reconciles. S2 builder work order staged
 (S9-S2-CACHE-REPAIR-WORKORDER.md, ~15 REST calls). Findings 6 filed, LINT-30 holding open.
+
+**Doctrine-N D-3/D-8 in (8/10 lanes).** D-8's Carman cluster-collision claim REFUTED by direct
+record evidence: survivor Carroll v. Carman = cluster 2750102, folded-alias carman-v-carroll =
+8693292 — distinct clusters, the alias design working; dismissed with evidence, not filed
+(R4 inv-4 FP-log discipline). D-8 P2 items: Barnes v. Felix (2025) resolved moment-of-threat —
+verify the UoF page reflects it; retaliatory-arrest anchors (Nieves line) reported absent from
+lake — reconcile vs page/ledger state at P2. D-3: Riley motions-order claim now from a THIRD
+lane (vs the 82KB pool file — P2 must read the file head and settle it); Chatrie lead text
+missing (already in cache-repair order); LaDuke + chatrie-4th fabrication_suspected stubs noted.
