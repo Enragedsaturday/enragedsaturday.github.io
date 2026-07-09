@@ -53,13 +53,13 @@ holding: "On remand from Carpenter v. United States, the Sixth Circuit held that
 <!-- header line; TreatmentBadge + weight render from frontmatter, degrading to the text above. Born under_review (⚪) — identity cluster 4628336 → opinion 4405589; quote string-matched to the CL opinion text 2026-07-07. CAPTION TRAP: this is the Sixth Circuit's 2019 good-faith remand (926 F.3d 313), distinct from the Supreme Court's *Carpenter v. United States*, 585 U.S. 296 (2018). S9 promotes. -->
 
 ## Background
-FBI agents obtained Timothy Carpenter's historical cell-site location information (CSLI) without a warrant, using court orders issued under the Stored Communications Act (SCA), 18 U.S.C. § 2703(d). The Sixth Circuit initially held that acquiring CSLI was not a Fourth Amendment search. In *Carpenter v. United States* (2018), the Supreme Court reversed, holding that the warrantless acquisition of the records was a search, and remanded. On remand, the question was whether the CSLI evidence had to be suppressed.
+FBI agents obtained Timothy Carpenter's historical cell-site location information (CSLI) without a warrant, using court orders issued under the Stored Communications Act (SCA), 18 U.S.C. § 2703(d). The Sixth Circuit initially held that acquiring CSLI was not a Fourth Amendment search. In *[[Carpenter v. United States]]* (2018), the Supreme Court reversed, holding that the warrantless acquisition of the records was a search, and remanded. On remand, the question was whether the CSLI evidence had to be suppressed.
 
 ## Issue
-Whether the [[The Good-Faith Exception|good-faith exception]] to the exclusionary rule permits admission of CSLI obtained without a warrant in reliance on the Stored Communications Act, after *Carpenter* held such acquisition unconstitutional.
+Whether the [[The Good-Faith Exception|good-faith exception]] to the exclusionary rule permits admission of CSLI obtained without a warrant in reliance on the Stored Communications Act, after *[[Carpenter v. United States|Carpenter]]* held such acquisition unconstitutional.
 
 ## Rule
-Evidence obtained in objectively reasonable, good-faith reliance on a statute later held not to authorize the search is not subject to exclusion, because suppression would not deter police who simply followed a duly enacted law (*Leon*; *Illinois v. Krull*). Applying that rule, the panel held: "Because these agents reasonably relied on the Stored Communications Act (SCA), we AFFIRM the judgment of the district court." — 926 F.3d at 313. ^pin-313
+Evidence obtained in objectively reasonable, good-faith reliance on a statute later held not to authorize the search is not subject to exclusion, because suppression would not deter police who simply followed a duly enacted law (*[[United States v. Leon|Leon]]*; *[[Illinois v. Krull]]*). Applying that rule, the panel held: "Because these agents reasonably relied on the Stored Communications Act (SCA), we AFFIRM the judgment of the district court." — 926 F.3d at 313. ^pin-313
 
 ## Application
 The unconstitutionality of the CSLI acquisition was not clear until after the Supreme Court reversed the panel's own prior decision; the agents had followed the SCA's § 2703(d) procedure, and nothing in the record suggested intentional misconduct. Because suppression would serve no deterrent purpose where officers relied in good faith on the statute then governing CSLI acquisition, the exclusionary rule did not apply, and the panel affirmed the denial of suppression.
@@ -68,7 +68,7 @@ The unconstitutionality of the CSLI acquisition was not clear until after the Su
 The judgment of the district court denying suppression was **affirmed**. The Sixth Circuit panel affirmed.
 
 ## Treatment & subsequent history
-**Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub; its citator and progeny history have not completed the two-key verification, so it renders under the ⚪ banner until S9 promotion. The remand is a leading application of the *Leon*/*Krull* good-faith exception at the digital-surveillance frontier: even after *[[Carpenter v. United States|Carpenter]]* made the CSLI acquisition a search, statute-reliance good faith defeated suppression. **Caption note:** distinct from the Supreme Court's *Carpenter v. United States*, 585 U.S. 296 (2018) — both pages exist deliberately.
+**Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub; its citator and progeny history have not completed the two-key verification, so it renders under the ⚪ banner until S9 promotion. The remand is a leading application of the *[[United States v. Leon|Leon]]*/*[[Illinois v. Krull|Krull]]* good-faith exception at the digital-surveillance frontier: even after *[[Carpenter v. United States|Carpenter]]* made the CSLI acquisition a search, statute-reliance good faith defeated suppression. **Caption note:** distinct from the Supreme Court's *[[Carpenter v. United States]]*, 585 U.S. 296 (2018) — both pages exist deliberately.
 
 ## Appears on
 - [[The Exclusionary Rule]] — *Key*

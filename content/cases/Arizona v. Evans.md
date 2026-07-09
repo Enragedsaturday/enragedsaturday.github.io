@@ -50,7 +50,7 @@ Phoenix police stopped Evans for a traffic violation; the patrol-car computer sh
 Whether the exclusionary rule requires suppression of evidence seized incident to an arrest that resulted from inaccurate computer records attributable to the clerical error of a *court* employee rather than the police.
 
 ## Rule
-No. Under the *Leon* cost-benefit framework, suppression is unwarranted because it would not deter the kind of error at issue: "the exclusionary rule was historically designed as a means of deterring police misconduct, not mistakes by court employees." — 514 U.S. at 14. ^pin-14
+No. Under the *[[United States v. Leon|Leon]]* cost-benefit framework, suppression is unwarranted because it would not deter the kind of error at issue: "the exclusionary rule was historically designed as a means of deterring police misconduct, not mistakes by court employees." — 514 U.S. at 14. ^pin-14
 
 Court clerks "are not adjuncts to the law enforcement team engaged in the often competitive enterprise of ferreting out crime," so excluding evidence would not deter their recordkeeping errors. Accordingly, "[a]pplication of the *Leon* framework supports a categorical exception to the exclusionary rule for clerical errors of court employees." — *Id.* at 16. ^pin-16
 

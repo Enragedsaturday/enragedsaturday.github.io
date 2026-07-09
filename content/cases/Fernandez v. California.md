@@ -50,19 +50,19 @@ Officers investigating a robbery followed a suspect to an apartment and heard so
 Whether the rule of [[Georgia v. Randolph]] — that a physically present co-occupant's express objection defeats another occupant's consent — bars a search later consented to by the remaining occupant after the objecting occupant has been lawfully removed from the premises by arrest.
 
 ## Rule
-No. *Randolph*'s objecting-occupant rule operates only while the objector is physically present; once he has been lawfully removed, the consent of the remaining occupant controls. "We therefore hold that an occupant who is absent due to a lawful detention or arrest stands in the same shoes as an occupant who is absent for any other reason." — 571 U.S. at 303. ^pin-303
+No. *[[Georgia v. Randolph|Randolph]]*'s objecting-occupant rule operates only while the objector is physically present; once he has been lawfully removed, the consent of the remaining occupant controls. "We therefore hold that an occupant who is absent due to a lawful detention or arrest stands in the same shoes as an occupant who is absent for any other reason." — 571 U.S. at 303. ^pin-303
 
-Read on its own terms, the *Randolph* "holding unequivocally requires the presence of the objecting occupant in every situation other than the one mentioned in the dictum discussed above." — *Id.* ^pin-303a
+Read on its own terms, the *[[Georgia v. Randolph|Randolph]]* "holding unequivocally requires the presence of the objecting occupant in every situation other than the one mentioned in the dictum discussed above." — *Id.* ^pin-303a
 
 ## Application
 Fernandez was not present to object when Rojas consented, because the police had lawfully arrested him for assaulting her and removed him from the apartment. Because his earlier objection did not survive his lawful, objectively justified removal, Rojas's voluntary consent as a co-occupant authorized the search on these facts.
 
 ## Conclusion
-The warrantless search was reasonable; with the objecting occupant lawfully removed before the remaining occupant consented, *Randolph* did not bar the search, and the conviction was affirmed.
+The warrantless search was reasonable; with the objecting occupant lawfully removed before the remaining occupant consented, *[[Georgia v. Randolph|Randolph]]* did not bar the search, and the conviction was affirmed.
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.
-- *Fernandez* confines [[Georgia v. Randolph]] to a **physically present** objector — it limits *Randolph*'s reach but does not disturb its core rule that a present, objecting co-occupant defeats a co-tenant's consent.
+- *Fernandez* confines [[Georgia v. Randolph]] to a **physically present** objector — it limits *[[Georgia v. Randolph|Randolph]]*'s reach but does not disturb its core rule that a present, objecting co-occupant defeats a co-tenant's consent.
 
 ## Appears on
 - [[Consent Searches]] — *Key — Progeny / Refinement*

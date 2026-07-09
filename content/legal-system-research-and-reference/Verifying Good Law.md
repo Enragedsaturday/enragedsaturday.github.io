@@ -66,7 +66,7 @@ And when the circuits **disagree**, **flag the split**: say the governing rule d
 
 Record each verified case the way this wiki itself does, so it can be re-found and re-checked instantly:
 
-- **Consistent Bluebook cite**: *Terry v. Ohio*, 392 U.S. 1 (1968).
+- **Consistent Bluebook cite**: *[[Terry v. Ohio]]*, 392 U.S. 1 (1968).
 - **CourtListener permalink**: the stable opinion URL, so anyone can open the exact text you read.
 - **Pinpoint**: the page your point lives on, captured *when* you read it (`392 U.S. at 30`).
 - A one-line note on the **holding**, its **weight** (in the six-tier lexicon), and its **good-law status as of** the date you checked.

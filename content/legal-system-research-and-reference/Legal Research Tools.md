@@ -58,7 +58,7 @@ These are **not** part of the taught path. Reach for them only if the free backb
 How you search depends on what you already know:
 
 1. **By citation**: you have `392 U.S. 1`. Drop it straight into CourtListener's citation lookup or Google Scholar. Fastest path to the *exact* opinion.
-2. **By party name**: you remember *Terry v. Ohio*. Search the case name; watch for same-named but different cases (multiple *United States v. Jones*).
+2. **By party name**: you remember *[[Terry v. Ohio]]*. Search the case name; watch for same-named but different cases (multiple *[[United States v. Jones]]*).
 3. **By proposition / full text**: you only know the *idea* ("frisk for weapons, reasonable suspicion"). Full-text search the phrase, then read down to the controlling case. This is where CourtListener and Google Scholar shine.
 
 Once you've found it, don't stop; confirm it's still good law on [[Verifying Good Law]].

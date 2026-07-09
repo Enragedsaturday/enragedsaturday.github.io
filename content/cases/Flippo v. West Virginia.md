@@ -52,10 +52,10 @@ Whether police who have secured a homicide crime scene may conduct a warrantless
 ## Rule
 No. "A warrantless search by the police is invalid unless it falls within one of the narrow and well-delineated exceptions to the warrant requirement, . . . none of which the trial court invoked here." — 528 U.S. at 13–14. ^pin-13
 
-The crime-scene rationale conflicts with *Mincey*: "This position squarely conflicts with *Mincey* v. *Arizona*, . . . where we rejected the contention that there is a 'murder scene exception' to the Warrant Clause of the Fourth Amendment. . . . [W]e rejected any general 'murder scene exception' as 'inconsistent with the Fourth and Fourteenth Amendments.' . . . *Mincey* controls here." — *Id.* at 14. ^pin-14
+The crime-scene rationale conflicts with *[[Mincey v. Arizona|Mincey]]*: "This position squarely conflicts with *Mincey* v. *Arizona*, . . . where we rejected the contention that there is a 'murder scene exception' to the Warrant Clause of the Fourth Amendment. . . . [W]e rejected any general 'murder scene exception' as 'inconsistent with the Fourth and Fourteenth Amendments.' . . . *Mincey* controls here." — *Id.* at 14. ^pin-14
 
 ## Application
-The trial court upheld the search solely as a permissible search of a secured "homicide crime scene," invoking no recognized warrant exception. That is exactly the "crime-scene exception" *Mincey* and *Thompson* rejected. Police could have made a warrantless entry to render aid and a prompt search for other victims or a killer, but the prolonged general search of the cabin and the opening of a closed briefcase were not justified on that basis. The Court left open, for remand, whether consent or some other recognized exception might apply.
+The trial court upheld the search solely as a permissible search of a secured "homicide crime scene," invoking no recognized warrant exception. That is exactly the "crime-scene exception" *[[Mincey v. Arizona|Mincey]]* and *[[Thompson v. Louisiana|Thompson]]* rejected. Police could have made a warrantless entry to render aid and a prompt search for other victims or a killer, but the prolonged general search of the cabin and the opening of a closed briefcase were not justified on that basis. The Court left open, for remand, whether consent or some other recognized exception might apply.
 
 ## Conclusion
 Reversed and remanded (per curiam). There is no general crime-scene exception; the warrantless processing of the secured homicide scene required a recognized exception, which the trial court never identified.

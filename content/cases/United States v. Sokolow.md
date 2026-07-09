@@ -49,7 +49,7 @@ lake:
 DEA agents stopped Andrew Sokolow at Honolulu International Airport. He had paid $2,100 in cash for two airline tickets from a roll of $20 bills containing roughly twice that amount, appeared to be traveling under a name that did not match his telephone listing, flew to Miami (a source city) and stayed only 48 hours despite a 20-hour round-trip flight, and checked no luggage. After the stop, a trained dog alerted to his bags, a warrant issued, and cocaine was found. He moved to suppress, and the Ninth Circuit held the stop was not supported by reasonable suspicion.
 
 ## Issue
-Whether a set of factors, each individually consistent with innocent travel, can together furnish the reasonable suspicion needed for an investigative *Terry* stop.
+Whether a set of factors, each individually consistent with innocent travel, can together furnish the reasonable suspicion needed for an investigative *[[Terry v. Ohio|Terry]]* stop.
 
 ## Rule
 Reasonable suspicion is judged by the whole picture, not a divide-and-conquer of innocent explanations: "In evaluating the validity of a stop such as this, we must consider 'the totality of the circumstances — the whole picture.'" — 490 U.S. at 8. ^pin-8

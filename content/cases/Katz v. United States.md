@@ -66,7 +66,7 @@ The warrantless electronic eavesdropping violated the Fourth Amendment; the conv
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.
-- *Katz* displaced the trespass-based rule of *Olmstead* and *Goldman*. Its reasonable-expectation-of-privacy test remains the central search standard and is the conceptual anchor for modern standing analysis ([[Rakas v. Illinois]]: standing turns on the defendant's **own** legitimate expectation of privacy).
+- *Katz* displaced the trespass-based rule of *[[Olmstead v. United States|Olmstead]]* and *Goldman*. Its reasonable-expectation-of-privacy test remains the central search standard and is the conceptual anchor for modern standing analysis ([[Rakas v. Illinois]]: standing turns on the defendant's **own** legitimate expectation of privacy).
 - The property/trespass approach was later **revived as an additional, alternative basis** (not a replacement) in [[United States v. Jones]] (2012) and [[Carpenter v. United States]] (2018), leaving *Katz* intact.
 
 ## Appears on

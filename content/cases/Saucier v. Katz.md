@@ -55,7 +55,7 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-Saucier, a military police officer providing security at a base where Vice President Gore was speaking, removed Katz — an animal-rights protester who tried to display a banner — and allegedly shoved him roughly while putting him into a van. Katz sued under *Bivens* for excessive force. Saucier asserted [[Qualified Immunity|qualified immunity]]; the Ninth Circuit denied it, treating the qualified-immunity inquiry as identical to the Fourth Amendment excessive-force merits.
+Saucier, a military police officer providing security at a base where Vice President Gore was speaking, removed Katz — an animal-rights protester who tried to display a banner — and allegedly shoved him roughly while putting him into a van. Katz sued under *[[Bivens v. Six Unknown Named Agents|Bivens]]* for excessive force. Saucier asserted [[Qualified Immunity|qualified immunity]]; the Ninth Circuit denied it, treating the qualified-immunity inquiry as identical to the Fourth Amendment excessive-force merits.
 
 ## Issue
 How a court must analyze [[Qualified Immunity|qualified immunity]] in an excessive-force case, and whether that inquiry collapses into the Fourth Amendment merits.

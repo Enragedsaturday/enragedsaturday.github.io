@@ -71,7 +71,7 @@ Because the agents' continued examination of Loera's CDs and devices remained di
 **Affirmed** — the denial of suppression stands. Judge Ebel wrote for the court.
 
 ## Treatment & subsequent history
-**Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub and renders under the ⚪ banner until S9 promotion. *Loera* is an important digital-search-scope authority for the **plain-view / anti-exploratory-search** frontier: an officer who lawfully searches a device for one crime's evidence may keep going when other-crime evidence surfaces, so long as the search stays tethered to the warrant's targets — but to search *for* the newly discovered offense, a fresh warrant is required. Pair it with *[[United States v. Ganias|Ganias]]* on digital over-seizure and *Coolidge*'s bar on using plain view to run a general exploratory search from one object to another.
+**Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub and renders under the ⚪ banner until S9 promotion. *Loera* is an important digital-search-scope authority for the **plain-view / anti-exploratory-search** frontier: an officer who lawfully searches a device for one crime's evidence may keep going when other-crime evidence surfaces, so long as the search stays tethered to the warrant's targets — but to search *for* the newly discovered offense, a fresh warrant is required. Pair it with *[[United States v. Ganias|Ganias]]* on digital over-seizure and *[[Coolidge v. New Hampshire|Coolidge]]*'s bar on using plain view to run a general exploratory search from one object to another.
 
 ## Appears on
 - [[Plain View Doctrine]] — *Key*

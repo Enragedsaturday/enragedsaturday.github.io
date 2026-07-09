@@ -64,7 +64,7 @@ The facts pointed to arrest "even more starkly than the facts in *Dunaway*." "A 
 Kaupp's "'Okay'" was "no showing of consent" but "a mere submission to a claim of lawful authority"; the test is objective, so the officers' safety rationale and Kaupp's lack of resistance did not convert the seizure into a consensual encounter. Because he was arrested without probable cause, the confession had to be suppressed unless the State demonstrated purgation of the taint — an inquiry the state courts never reached, and which [[Miranda and Custodial Interrogation|Miranda warnings]] alone would not satisfy.
 
 ## Conclusion
-[[Common Legal Terms#per-curiam|Per curiam]]: Kaupp was arrested within the meaning of the Fourth Amendment without probable cause; the consent finding was error. The judgment was reversed and the case [[Reading and Citing Cases#on-remand|remanded]] for the *Brown* [[Fruits and Attenuation|attenuation]] determination.
+[[Common Legal Terms#per-curiam|Per curiam]]: Kaupp was arrested within the meaning of the Fourth Amendment without probable cause; the consent finding was error. The judgment was reversed and the case [[Reading and Citing Cases#on-remand|remanded]] for the *[[Brown v. Illinois|Brown]]* [[Fruits and Attenuation|attenuation]] determination.
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.

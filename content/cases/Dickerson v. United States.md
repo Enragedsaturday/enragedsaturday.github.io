@@ -44,25 +44,25 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-Dickerson, charged with bank robbery, moved to suppress a statement made without complete *Miranda* warnings. The Government invoked 18 U.S.C. § 3501, a statute enacted after *Miranda* that made the admissibility of confessions turn solely on voluntariness. The Fourth Circuit held § 3501 governed and displaced *Miranda*; the Supreme Court took the case to decide whether Congress could do so.
+Dickerson, charged with bank robbery, moved to suppress a statement made without complete *[[Miranda v. Arizona|Miranda]]* warnings. The Government invoked 18 U.S.C. § 3501, a statute enacted after *[[Miranda v. Arizona|Miranda]]* that made the admissibility of confessions turn solely on voluntariness. The Fourth Circuit held § 3501 governed and displaced *[[Miranda v. Arizona|Miranda]]*; the Supreme Court took the case to decide whether Congress could do so.
 
 ## Issue
-Whether Congress may legislatively supersede *Miranda v. Arizona* and replace its warning requirement with a pure voluntariness test under § 3501.
+Whether Congress may legislatively supersede *[[Miranda v. Arizona]]* and replace its warning requirement with a pure voluntariness test under § 3501.
 
 ## Rule
-No; *Miranda* is a constitutional rule beyond Congress's power to overrule by statute. "[W]e conclude that *Miranda* announced a constitutional rule that Congress may not supersede legislatively. Following the rule of *stare decisis*, we decline to overrule *Miranda* ourselves." — 530 U.S. 428, 444. ^pin-444
+No; *[[Miranda v. Arizona|Miranda]]* is a constitutional rule beyond Congress's power to overrule by statute. "[W]e conclude that *Miranda* announced a constitutional rule that Congress may not supersede legislatively. Following the rule of *stare decisis*, we decline to overrule *Miranda* ourselves." — 530 U.S. 428, 444. ^pin-444
 
-Because § 3501 sought to reinstate a voluntariness-only standard in place of *Miranda*'s warnings, it could not govern the admissibility of statements obtained in custodial interrogation.
+Because § 3501 sought to reinstate a voluntariness-only standard in place of *[[Miranda v. Arizona|Miranda]]*'s warnings, it could not govern the admissibility of statements obtained in custodial interrogation.
 
 ## Application
-Section 3501 was Congress's attempt to substitute a voluntariness test for *Miranda*'s warning requirement. Because *Miranda* is constitutionally based, that statute could not displace it, and *Miranda* — not § 3501 — governed the admissibility of Dickerson's statement; the Fourth Circuit's contrary holding was reversed.
+Section 3501 was Congress's attempt to substitute a voluntariness test for *[[Miranda v. Arizona|Miranda]]*'s warning requirement. Because *[[Miranda v. Arizona|Miranda]]* is constitutionally based, that statute could not displace it, and *[[Miranda v. Arizona|Miranda]]* — not § 3501 — governed the admissibility of Dickerson's statement; the Fourth Circuit's contrary holding was reversed.
 
 ## Conclusion
-*Miranda* is a constitutional decision that Congress cannot legislatively overrule; § 3501 could not displace it. The judgment was reversed.
+*[[Miranda v. Arizona|Miranda]]* is a constitutional decision that Congress cannot legislatively overrule; § 3501 could not displace it. The judgment was reversed.
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.
-- No negative treatment. *Dickerson* reaffirms the constitutional status of [[Miranda v. Arizona]]; later cases such as [[Berghuis v. Thompkins]] continue to apply the *Miranda* framework it preserved.
+- No negative treatment. *Dickerson* reaffirms the constitutional status of [[Miranda v. Arizona]]; later cases such as [[Berghuis v. Thompkins]] continue to apply the *[[Miranda v. Arizona|Miranda]]* framework it preserved.
 
 ## Appears on
 - [[Miranda and Custodial Interrogation]] — *Key — Progeny / Refinement*

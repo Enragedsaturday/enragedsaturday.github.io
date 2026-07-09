@@ -64,7 +64,7 @@ The Government could not exploit its unlawful seizure to compel production of th
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.
-- No negative treatment. *Silverthorne* is the origin of the **fruit-of-the-poisonous-tree** doctrine and, in the same breath, the **independent-source** exception. Both principles run forward through [[Nardone v. United States]] (which coined the "fruit" label), *Wong Sun v. United States*, and *Murray v. United States*, and remain foundational good law.
+- No negative treatment. *Silverthorne* is the origin of the **fruit-of-the-poisonous-tree** doctrine and, in the same breath, the **independent-source** exception. Both principles run forward through [[Nardone v. United States]] (which coined the "fruit" label), *[[Wong Sun v. United States]]*, and *[[Murray v. United States]]*, and remain foundational good law.
 
 ## Appears on
 - [[The Exclusionary Rule]] — *Anchor ([[Common Legal Terms#fruit-of-the-poisonous-tree|fruit of the poisonous tree]] origin; [[Inevitable Discovery and Independent Source|independent source]])*

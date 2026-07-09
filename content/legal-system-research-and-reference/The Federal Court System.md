@@ -60,7 +60,7 @@ From those two rules, four operational facts follow:
 
 > "It is emphatically the province and duty of the judicial department to say what the law is. Those who apply the rule to particular cases, must of necessity expound and interpret that rule. If two laws conflict with each other, the courts must decide on the operation of each."
 >
-> — *Marbury*, 5 U.S. (1 Cranch) at 177.
+> — *[[Marbury v. Madison|Marbury]]*, 5 U.S. (1 Cranch) at 177.
 
 When SCOTUS interprets the Fourth Amendment, that interpretation is the binding federal floor, the spine of every doctrine page here.
 

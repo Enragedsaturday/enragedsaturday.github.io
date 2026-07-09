@@ -50,7 +50,7 @@ Jeff Quon, a police sergeant on the Ontario, California, SWAT team, was issued a
 Whether a public employer's warrantless review of the contents of an employee's text messages sent on an employer-provided pager was an unreasonable search under the Fourth Amendment.
 
 ## Rule
-The search is judged by reasonableness under *O'Connor v. Ortega*. Assuming arguendo that Quon had a privacy expectation and that the review was a search, the audit was reasonable: "Because the search was motivated by a legitimate work-related purpose, and because it was not excessive in scope, the search was reasonable under the approach of the *O'Connor* plurality." — 560 U.S. at 761. ^pin-761
+The search is judged by reasonableness under *[[O'Connor v. Ortega]]*. Assuming arguendo that Quon had a privacy expectation and that the review was a search, the audit was reasonable: "Because the search was motivated by a legitimate work-related purpose, and because it was not excessive in scope, the search was reasonable under the approach of the *O'Connor* plurality." — 560 U.S. at 761. ^pin-761
 
 The Court declined to announce broad rules about digital privacy: "The Court must proceed with care when considering the whole concept of privacy expectations in communications made on electronic equipment owned by a government employer. The judiciary risks error by elaborating too fully on the Fourth Amendment implications of emerging technology before its role in society has become clear." — *Id.* at 759. ^pin-759
 
@@ -62,7 +62,7 @@ The review of Quon's pager messages was a reasonable, constitutional search; the
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.
-- No negative treatment. *Quon* extends the [[O'Connor v. Ortega]] reasonableness framework to electronic workplace communications while expressly declining to fix broad digital-privacy rules — the same caution about emerging technology the Court later voiced in *Riley v. California* and *Carpenter v. United States*.
+- No negative treatment. *Quon* extends the [[O'Connor v. Ortega]] reasonableness framework to electronic workplace communications while expressly declining to fix broad digital-privacy rules — the same caution about emerging technology the Court later voiced in *[[Riley v. California]]* and *[[Carpenter v. United States]]*.
 
 ## Appears on
 - [[Special Needs and Administrative Searches]] — *Progeny (digital workplace REP)*

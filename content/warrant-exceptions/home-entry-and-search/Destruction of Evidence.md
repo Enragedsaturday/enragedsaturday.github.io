@@ -36,7 +36,7 @@ related:
 
 **The dissipation branch reaches the person, not just the home.** It is not limited to blood in the veins. *[[Cupp v. Murphy|Cupp v. Murphy]]* upheld the "very limited search necessary to preserve . . . highly evanescent evidence" (fingernail scrapings taken over the suspect's objection) on probable cause even without a formal arrest, on a narrowed *[[Chimel v. California|Chimel]]* rationale, while expressly declining to authorize a full search. *[[Cupp v. Murphy#^pin-296|Cupp v. Murphy]]*, 412 U.S. 291, 296 (1973). The point is transferable: where evidence on or about the person is genuinely about to vanish, a **narrow** preservation seizure on probable cause can be reasonable, but the scope stays tied to the evanescent thing.
 
-**Cross-doctrine wrinkle: after *[[Birchfield v. North Dakota|Birchfield]]*, a warrantless blood draw must rest on exigency or a warrant.** A warrantless **blood** draw can no longer be justified as a search incident to a DUI arrest; only a **breath** test can. *[[Birchfield v. North Dakota|Birchfield v. North Dakota]]*, 579 U.S. 438 (2016). So post-*Birchfield*, a warrantless blood draw must rest on this **destruction/dissipation exigency** (the *Schmerber* / *McNeely* / *Mitchell* line) or a warrant. The search-incident theory is developed on [[SIA Alcohol Tests]].
+**Cross-doctrine wrinkle: after *[[Birchfield v. North Dakota|Birchfield]]*, a warrantless blood draw must rest on exigency or a warrant.** A warrantless **blood** draw can no longer be justified as a search incident to a DUI arrest; only a **breath** test can. *[[Birchfield v. North Dakota|Birchfield v. North Dakota]]*, 579 U.S. 438 (2016). So post-*[[Birchfield v. North Dakota|Birchfield]]*, a warrantless blood draw must rest on this **destruction/dissipation exigency** (the *[[Schmerber v. California|Schmerber]]* / *[[Missouri v. McNeely|McNeely]]* / *[[Mitchell v. Wisconsin|Mitchell]]* line) or a warrant. The search-incident theory is developed on [[SIA Alcohol Tests]].
 
 **The measured alternative: freeze and get a warrant.** Where the need is only to **preserve** evidence rather than search now, the reasonable response is the **less-intrusive freeze**. With probable cause a home holds contraband and a genuine risk of destruction, officers may temporarily restrain a resident from re-entering, or secure the premises from within, while they diligently obtain a warrant. *[[Illinois v. McArthur|Illinois v. McArthur]]*, 531 U.S. 326 (2001); *[[Segura v. United States|Segura v. United States]]*, 468 U.S. 796 (1984). This is a temporary seizure, not a search, and it is developed on [[Securing the Scene]].
 
@@ -44,16 +44,16 @@ related:
 
 **Apply it.**
 1. Confirm **probable cause** and a **genuine, imminent** risk of destruction; do not treat mere possibility as [[Exigent Circumstances and Hot Pursuit|exigency]].
-2. For dissipating-substance cases, build the **totality** (*McNeely*); confine the near-automatic rule to *Mitchell*'s unconscious-driver facts.
-3. Ask whether your own conduct **created** the [[Exigent Circumstances and Hot Pursuit|exigency]] by threatening a Fourth Amendment violation; a lawful [[Knock-and-Announce|knock-and-announce]] does not forfeit the exception (*King*).
-4. Keep the **scope** tied to the evanescent evidence (*Cupp*); do not convert a preservation seizure into a general search.
-5. If you only need to **preserve**, prefer the **freeze**: restrain re-entry and get a warrant (*McArthur* · *Segura*; [[Securing the Scene]]).
+2. For dissipating-substance cases, build the **totality** (*[[Missouri v. McNeely|McNeely]]*); confine the near-automatic rule to *[[Mitchell v. Wisconsin|Mitchell]]*'s unconscious-driver facts.
+3. Ask whether your own conduct **created** the [[Exigent Circumstances and Hot Pursuit|exigency]] by threatening a Fourth Amendment violation; a lawful [[Knock-and-Announce|knock-and-announce]] does not forfeit the exception (*[[Kentucky v. King|King]]*).
+4. Keep the **scope** tied to the evanescent evidence (*[[Cupp v. Murphy|Cupp]]*); do not convert a preservation seizure into a general search.
+5. If you only need to **preserve**, prefer the **freeze**: restrain re-entry and get a warrant (*[[Illinois v. McArthur|McArthur]]* · *[[Segura v. United States|Segura]]*; [[Securing the Scene]]).
 
 **Common pitfalls.**
 - **Assuming dissipation alone is exigent.** *[[Missouri v. McNeely|McNeely]]* forecloses a reflexive assumption that dissipating alcohol alone always justifies a warrantless draw.
 - **Manufacturing the [[Exigent Circumstances and Hot Pursuit|exigency]].** An [[Exigent Circumstances and Hot Pursuit|exigency]] created by threatening to breach the Fourth Amendment cannot justify the entry; lawful [[Knock-and-Announce|knock-and-announce]] can (*[[Kentucky v. King|King]]*).
-- **Justifying a warrantless blood draw as a [[Search Incident to Arrest|search incident to arrest]].** Post-*Birchfield* that theory reaches breath, not blood; a blood draw needs a warrant or a real [[Exigent Circumstances and Hot Pursuit|exigency]] (*[[Birchfield v. North Dakota|Birchfield]]*; [[SIA Alcohol Tests]]).
-- **Searching when you only needed to preserve.** The proportionate move is the *McArthur* freeze plus a warrant, not a full warrantless search.
+- **Justifying a warrantless blood draw as a [[Search Incident to Arrest|search incident to arrest]].** Post-*[[Birchfield v. North Dakota|Birchfield]]* that theory reaches breath, not blood; a blood draw needs a warrant or a real [[Exigent Circumstances and Hot Pursuit|exigency]] (*[[Birchfield v. North Dakota|Birchfield]]*; [[SIA Alcohol Tests]]).
+- **Searching when you only needed to preserve.** The proportionate move is the *[[Illinois v. McArthur|McArthur]]* freeze plus a warrant, not a full warrantless search.
 
 ## Lower-court developments
 
@@ -77,7 +77,7 @@ These cases are treated in full elsewhere but bear on the destruction-of-evidenc
 
 | Case | Relevance here | Primary home | Opinion |
 |---|---|---|---|
-| *[[Birchfield v. North Dakota]]*, 579 U.S. 438 (2016) | ***Blood needs [[Exigent Circumstances and Hot Pursuit\|exigency]] or a warrant.*** After *Birchfield* a warrantless blood draw is not a search incident to a DUI arrest (a breath test is), so it must rest on this dissipation [[Exigent Circumstances and Hot Pursuit\|exigency]] or a warrant. | [[SIA Alcohol Tests]] | [opinion](https://www.courtlistener.com/opinion/3216497/birchfield-v-north-dakota/) |
+| *[[Birchfield v. North Dakota]]*, 579 U.S. 438 (2016) | ***Blood needs [[Exigent Circumstances and Hot Pursuit\|exigency]] or a warrant.*** After *[[Birchfield v. North Dakota|Birchfield]]* a warrantless blood draw is not a search incident to a DUI arrest (a breath test is), so it must rest on this dissipation [[Exigent Circumstances and Hot Pursuit\|exigency]] or a warrant. | [[SIA Alcohol Tests]] | [opinion](https://www.courtlistener.com/opinion/3216497/birchfield-v-north-dakota/) |
 | *[[Illinois v. McArthur]]*, 531 U.S. 326 (2001) | ***Freeze, not search.*** With probable cause and a risk of destruction, officers may temporarily restrain a resident from re-entering while they obtain a warrant, the proportionate response to the destruction [[Exigent Circumstances and Hot Pursuit\|exigency]]. | [[Securing the Scene]] | [opinion](https://www.courtlistener.com/opinion/118405/illinois-v-mcarthur/) |
 | *[[Segura v. United States]]*, 468 U.S. 796 (1984) | ***Secure premises pending a warrant.*** Officers may secure premises from within where evidence may be destroyed or removed, justifying a temporary freeze rather than an immediate full search. | [[Securing the Scene]] | [opinion](https://www.courtlistener.com/opinion/111259/segura-v-united-states/) |
 | *[[Mincey v. Arizona]]*, 437 U.S. 385 (1978) | ***Scope stays tied to the emergency.*** No "seriousness" exception: warrantless activity is strictly circumscribed by the emergency, and a general evidentiary search needs a warrant. | [[Emergency Aid]] | [opinion](https://www.courtlistener.com/opinion/109905/mincey-v-arizona/) |

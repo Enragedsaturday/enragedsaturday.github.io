@@ -54,7 +54,7 @@ Failure-to-train liability requires deliberate indifference. "We hold today that
 
 That high standard is met where "the need for more or different training is so obvious, and the inadequacy so likely to result in the violation of constitutional rights, that the policymakers of the city can reasonably be said to have been deliberately indifferent to the need." — *Id.* at 390. ^pin-390
 
-Only then does the training failure represent a municipal "policy" for which the city is responsible under *Monell*.
+Only then does the training failure represent a municipal "policy" for which the city is responsible under *[[Monell v. Department of Social Services|Monell]]*.
 
 ## Application
 Because the trial court's instructions had permitted liability on a theory closer to [[Common Legal Terms#respondeat-superior|respondeat superior]] than [[Section 1983 Liability and Qualified Immunity|deliberate indifference]], the Court could not sustain the verdict and [[Reading and Citing Cases#on-remand|remanded]]. The plaintiff would have to show that the city's failure to train reflected a deliberate or conscious choice — a policy of inaction in the face of an obvious need — and that the identified training deficiency actually caused her injury, not merely that an officer was unsatisfactorily trained or that better training could have avoided the harm.

@@ -44,10 +44,10 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-Burbine was arrested for a burglary; police then connected him to a murder. While he was in custody, his sister obtained a public defender, who telephoned the station and was told Burbine would not be questioned until the next day. Unaware of the call and never told of it, Burbine was given *Miranda* warnings, waived his rights, and confessed to the murder.
+Burbine was arrested for a burglary; police then connected him to a murder. While he was in custody, his sister obtained a public defender, who telephoned the station and was told Burbine would not be questioned until the next day. Unaware of the call and never told of it, Burbine was given *[[Miranda v. Arizona|Miranda]]* warnings, waived his rights, and confessed to the murder.
 
 ## Issue
-Whether a *Miranda* waiver is invalid because police failed to inform the suspect that an attorney was trying to reach him, or because police misled the attorney about whether questioning would occur.
+Whether a *[[Miranda v. Arizona|Miranda]]* waiver is invalid because police failed to inform the suspect that an attorney was trying to reach him, or because police misled the attorney about whether questioning would occur.
 
 ## Rule
 No. A waiver is valid if it is voluntary, knowing, and intelligent, judged by a two-part inquiry: "First, the relinquishment of the right must have been voluntary in the sense that it was the product of a free and deliberate choice rather than intimidation, coercion, or deception. Second, the waiver must have been made with a full awareness of both the nature of the right being abandoned and the consequences of the decision to abandon it." — 475 U.S. at 421. ^pin-421
@@ -62,7 +62,7 @@ The waiver was valid and the confession admissible; the First Circuit's grant of
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.
-- No negative treatment. *Moran* supplies the canonical two-dimensional (voluntary + knowing/intelligent) standard for a valid *Miranda* waiver, applied in cases such as [[North Carolina v. Butler]].
+- No negative treatment. *Moran* supplies the canonical two-dimensional (voluntary + knowing/intelligent) standard for a valid *[[Miranda v. Arizona|Miranda]]* waiver, applied in cases such as [[North Carolina v. Butler]].
 
 ## Appears on
 - [[Miranda Waiver and Invocation]] — *Key — Progeny / Refinement*

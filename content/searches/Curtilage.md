@@ -31,7 +31,7 @@ related:
 
 **What curtilage is, and what it is not.** Curtilage is the home's protected extension: the ground close enough to the dwelling, and connected enough to the intimate activity of home life, that the law treats it as the home itself. *[[Florida v. Jardines#^pin-6|Jardines]]*, 569 U.S. at 6. Because it is part of the home, entering it to gather evidence is a search, and the ordinary warrant preference applies. It is **not** a privacy-magnitude question and **not** a fence question; the whole exercise is drawing one line, curtilage on the protected side and open fields on the unprotected side ([[Open Fields]]). Get the line right and everything else follows.
 
-**The test up front: the four *Dunn* factors.** Whether a given spot is curtilage is "resolved with particular reference to four factors":
+**The test up front: the four *[[United States v. Dunn|Dunn]]* factors.** Whether a given spot is curtilage is "resolved with particular reference to four factors":
 
 1. **Proximity** of the area claimed to be curtilage to the home;
 2. **Enclosure** — whether the area sits within an enclosure surrounding the home;

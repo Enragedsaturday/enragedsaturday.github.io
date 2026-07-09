@@ -44,10 +44,10 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-Juan Smith was convicted of five murders based solely on the testimony of a single eyewitness, Larry Boatner, who told the jury he had "[n]o doubt" Smith was the gunman. The prosecution had not disclosed police notes recording that, on the night of the crime and days later, Boatner said he could not identify anyone. Smith sought relief under *Brady*.
+Juan Smith was convicted of five murders based solely on the testimony of a single eyewitness, Larry Boatner, who told the jury he had "[n]o doubt" Smith was the gunman. The prosecution had not disclosed police notes recording that, on the night of the crime and days later, Boatner said he could not identify anyone. Smith sought relief under *[[Brady v. Maryland|Brady]]*.
 
 ## Issue
-Whether the State's failure to disclose the eyewitness's contradictory statements was a material *Brady* violation.
+Whether the State's failure to disclose the eyewitness's contradictory statements was a material *[[Brady v. Maryland|Brady]]* violation.
 
 ## Rule
 Suppressed impeachment evidence is material when it could reasonably undermine confidence in the verdict. "[E]vidence impeaching an eyewitness may not be material if the State's other evidence is strong enough to sustain confidence in the verdict." — 565 U.S. 73 (2012) (slip op., at 2). ^pin-2
@@ -55,7 +55,7 @@ Suppressed impeachment evidence is material when it could reasonably undermine c
 But here "Boatner's undisclosed statements were plainly material." — *Id.* (slip op., at 3). ^pin-3
 
 ## Application
-Boatner's testimony was the only evidence linking Smith to the crime, and his undisclosed statements—that he "could not ID anyone because [he] couldn't see faces"—directly contradicted his confident trial identification. Because that impeachment was material and the State failed to disclose it, the nondisclosure violated *Brady*, and the conviction was reversed.
+Boatner's testimony was the only evidence linking Smith to the crime, and his undisclosed statements—that he "could not ID anyone because [he] couldn't see faces"—directly contradicted his confident trial identification. Because that impeachment was material and the State failed to disclose it, the nondisclosure violated *[[Brady v. Maryland|Brady]]*, and the conviction was reversed.
 
 ## Conclusion
 The undisclosed impeachment of the sole eyewitness was material; the conviction was reversed and [[Reading and Citing Cases#on-remand|remanded]].

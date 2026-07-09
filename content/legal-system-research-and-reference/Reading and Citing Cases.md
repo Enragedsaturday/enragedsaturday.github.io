@@ -27,7 +27,7 @@ Take a neutral running example:
 
 Read left to right, every standard cite has the same parts:
 
-- **Case name (the parties)**: *Terry v. Ohio*. Italicized; the *v.* separates the two sides. By convention the first-named party is the appellant/petitioner on review, so the same dispute can flip names on appeal. Cite by the short name everyone uses (*Terry*).
+- **Case name (the parties)**: *[[Terry v. Ohio]]*. Italicized; the *v.* separates the two sides. By convention the first-named party is the appellant/petitioner on review, so the same dispute can flip names on appeal. Cite by the short name everyone uses (*[[Terry v. Ohio|Terry]]*).
 - **Volume number**: `392`. Which physical volume of the reporter the case sits in.
 - **Reporter abbreviation**: `U.S.` Tells you *which set of books* (and therefore which court). See the reporter table below.
 - **First page**: `1`. The page where the opinion *starts*.
@@ -69,7 +69,7 @@ The reporter abbreviation is the fastest way to tell a case's level, and therefo
 
 The *same* SCOTUS opinion appears in three reporters at once, so you'll see all three strung together:
 
-> *Terry v. Ohio*, 392 U.S. 1, 88 S. Ct. 1868, 20 L. Ed. 2d 889 (1968).
+> *[[Terry v. Ohio]]*, 392 U.S. 1, 88 S. Ct. 1868, 20 L. Ed. 2d 889 (1968).
 
 These are **parallel citations**: the same case in three sets of books. For federal work, citing the official `U.S.` reporter alone is standard; the parallels matter mainly for older cases or some state-court practice. Don't mistake parallels for three different cases.
 
@@ -82,7 +82,7 @@ These are **parallel citations**: the same case in three sets of books. For fede
   - **Cf.**: supports an *analogous* point; worth a parenthetical explaining why.
   - **E.g.**: one example among many that say the same thing.
   - **But see** / **Contra**: authority that cuts the *other* way (cite these honestly).
-- **Short forms**: after a case is cited in full once, refer to it by the short name (*Terry*) or a short cite (`392 U.S. at 30`).
+- **Short forms**: after a case is cited in full once, refer to it by the short name (*[[Terry v. Ohio|Terry]]*) or a short cite (`392 U.S. at 30`).
 - **`Id.`**: "the immediately preceding authority." `Id. at 30` = same source, new page. Use only when the cite right before it is the same source.
 - **`Supra`**: points back to a source cited earlier but *not* immediately above (used mainly for books, articles, and the like, and generally **not** for cases under Bluebook).
 

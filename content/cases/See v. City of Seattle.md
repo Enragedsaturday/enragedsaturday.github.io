@@ -46,7 +46,7 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-A Seattle fire inspector sought to enter See's locked commercial warehouse as part of a routine, area-wide fire-code inspection. See refused to permit the entry because the inspector had no warrant, and he was convicted of violating a city ordinance making it unlawful to refuse a lawful inspection. Decided the same day as *Camara v. Municipal Court* (residences), *See* extended the question to commercial premises.
+A Seattle fire inspector sought to enter See's locked commercial warehouse as part of a routine, area-wide fire-code inspection. See refused to permit the entry because the inspector had no warrant, and he was convicted of violating a city ordinance making it unlawful to refuse a lawful inspection. Decided the same day as *[[Camara v. Municipal Court]]* (residences), *See* extended the question to commercial premises.
 
 ## Issue
 Whether the Fourth Amendment permits a municipality to punish a businessman for refusing to consent to a warrantless administrative inspection of the nonpublic portions of his commercial premises.
@@ -64,7 +64,7 @@ See could not be convicted for refusing the warrantless inspection; his convicti
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.
-- No negative treatment. *See* is the commercial-premises companion to [[Camara v. Municipal Court]]. Later decisions carved a **pervasively-regulated-industry exception** that dispenses with the warrant for certain heavily regulated businesses (e.g., [[Marshall v. Barlow's Inc.]], *Donovan v. Dewey*, *United States v. Biswell*, *New York v. Burger*), but *See*'s default warrant rule for ordinary commercial inspections remains good law.
+- No negative treatment. *See* is the commercial-premises companion to [[Camara v. Municipal Court]]. Later decisions carved a **pervasively-regulated-industry exception** that dispenses with the warrant for certain heavily regulated businesses (e.g., [[Marshall v. Barlow's Inc.]], *[[Donovan v. Dewey]]*, *[[United States v. Biswell]]*, *[[New York v. Burger]]*), but *See*'s default warrant rule for ordinary commercial inspections remains good law.
 
 ## Appears on
 - [[Special Needs and Administrative Searches]] — *Anchor (commercial inspections)*

@@ -62,7 +62,7 @@ Applied to a home: "we hold that the Cliffords retained reasonable privacy inter
 Although the home was fire-damaged and uninhabitable, the exterior and some upstairs rooms were largely intact, personal belongings remained, and the Cliffords had secured the house against intrusion — so, given the strong privacy expectations in a home, reasonable privacy interests survived. The blaze was long out, officials had left, and the State claimed no [[Exigent Circumstances and Hot Pursuit|exigency]], so the later warrantless basement and upstairs searches were subject to the warrant requirement; because they were conducted without a warrant or consent, they were unconstitutional.
 
 ## Conclusion
-The post-fire warrantless searches violated the Fourth Amendment. *Clifford* refines *Tyler*: once the fire is out and the scene is no longer an emergency, further investigation of premises in which privacy interests remain requires a warrant — administrative for cause-and-origin, criminal (on probable cause) for evidence of arson.
+The post-fire warrantless searches violated the Fourth Amendment. *Clifford* refines *[[Michigan v. Tyler|Tyler]]*: once the fire is out and the scene is no longer an emergency, further investigation of premises in which privacy interests remain requires a warrant — administrative for cause-and-origin, criminal (on probable cause) for evidence of arson.
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS** (plurality; Stevens, J., concurred in the judgment).

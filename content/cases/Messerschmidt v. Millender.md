@@ -60,7 +60,7 @@ The exception, drawn from [[Malley v. Briggs]] and [[United States v. Leon]], ap
 The warrant's authorization to seize all firearms and gang material was at least arguably supported: Bowen had used a firearm in the assault and was a known gang member, so an officer could reasonably believe the broad categories were tied to evidence of the crime and of Bowen's dangerousness and gang ties. Even if the warrant was in fact overbroad, the question was only whether reliance on it was objectively reasonable — and the additional review by a supervisor, a prosecutor, and the magistrate confirmed that this was not the rare case where every reasonable officer would have known the warrant should not issue.
 
 ## Conclusion
-Reversed. The officers were entitled to [[Qualified Immunity|qualified immunity]]; their reliance on the approved warrant was not objectively unreasonable, so the *Malley* exception did not strip their immunity.
+Reversed. The officers were entitled to [[Qualified Immunity|qualified immunity]]; their reliance on the approved warrant was not objectively unreasonable, so the *[[Malley v. Briggs|Malley]]* exception did not strip their immunity.
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.

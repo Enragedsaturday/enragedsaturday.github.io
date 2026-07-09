@@ -57,7 +57,7 @@ The knock-and-talk exception is bounded by the implied social license, which is 
 Officers who exceed that purpose through intrusive, repeated entries fall outside the license: "The officers in this case, like the officers in Jardines, in the absence of any license to do so, 'physically intrud[ed]' on a suspect's property repeatedly and engaged in intrusive conduct that no reasonable visitor could have understood as impliedly authorized by a resident." — *Id.* (slip op., at 39). ^pin-op39a
 
 ## Application
-The officers came onto French's [[Curtilage|curtilage]] repeatedly and, on the final pre-dawn entry, knocked on his bedroom window, peered through a drawn covering, and shined a light inside — conduct no homeowner would understand a private visitor at 5:00 a.m. to be impliedly licensed to undertake. Because that conduct exceeded the purpose-limited implied license, it was a Fourth Amendment intrusion, and *Jardines* had clearly established as much.
+The officers came onto French's [[Curtilage|curtilage]] repeatedly and, on the final pre-dawn entry, knocked on his bedroom window, peered through a drawn covering, and shined a light inside — conduct no homeowner would understand a private visitor at 5:00 a.m. to be impliedly licensed to undertake. Because that conduct exceeded the purpose-limited implied license, it was a Fourth Amendment intrusion, and *[[Florida v. Jardines|Jardines]]* had clearly established as much.
 
 ## Conclusion
 The officers' repeated, intrusive entries exceeded the implied social license and violated French's clearly established Fourth Amendment rights; the officers were not entitled to [[Qualified Immunity|qualified immunity]].

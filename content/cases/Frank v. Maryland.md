@@ -67,7 +67,7 @@ Because the inspector could not force entry and the only consequence of refusal 
 The conviction was **affirmed** by a 5–4 vote. Frankfurter, J., delivered the opinion of the Court.
 
 ## Treatment & subsequent history
-**Overruled by [[Camara v. Municipal Court]] (1967).** *Frank* held that administrative inspections of the home fall outside the warrant requirement. Eight years later *Camara* rejected that view, holding that administrative searches are significant Fourth Amendment intrusions and generally require a warrant — though one issued on area-based "administrative probable cause" rather than individualized suspicion. Its companion case, *[[See v. City of Seattle]]*, applied the same rule to commercial premises.
+**Overruled by [[Camara v. Municipal Court]] (1967).** *Frank* held that administrative inspections of the home fall outside the warrant requirement. Eight years later *[[Camara v. Municipal Court|Camara]]* rejected that view, holding that administrative searches are significant Fourth Amendment intrusions and generally require a warrant — though one issued on area-based "administrative probable cause" rather than individualized suspicion. Its companion case, *[[See v. City of Seattle]]*, applied the same rule to commercial premises.
 
 *Status note (⚪):* authored from a CourtListener-verified identity stub; the overruled treatment above is well-settled but has not completed the project's two-key certification, so the page renders under the ⚪ banner until S9 promotion. Preserved as **history**, never as live law.
 

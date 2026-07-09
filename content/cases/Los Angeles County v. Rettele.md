@@ -63,14 +63,14 @@ The governing principle: "When officers execute a valid warrant and act in a rea
 And because "respondents' constitutional rights were not violated, 'there is no necessity for further inquiries concerning qualified immunity.'" — *Id.* at 1994. ^pin-1994b
 
 ## Application
-The deputies reasonably believed armed suspects might be inside, so ordering the occupants out of bed and briefly holding them while securing the room was a reasonable safety measure. That the occupants turned out to be innocent, of a different race than the suspects, and unclothed did not make the brief detention unreasonable: valid warrants issue on probable cause, not certainty, and innocent residents sometimes bear the cost. The occupants were unclothed for only about two minutes and the whole episode lasted under 15 minutes — far shorter and less restrictive than the two-to-three-hour handcuff detention upheld in *Muehler v. Mena*. No constitutional violation occurred.
+The deputies reasonably believed armed suspects might be inside, so ordering the occupants out of bed and briefly holding them while securing the room was a reasonable safety measure. That the occupants turned out to be innocent, of a different race than the suspects, and unclothed did not make the brief detention unreasonable: valid warrants issue on probable cause, not certainty, and innocent residents sometimes bear the cost. The occupants were unclothed for only about two minutes and the whole episode lasted under 15 minutes — far shorter and less restrictive than the two-to-three-hour handcuff detention upheld in *[[Muehler v. Mena]]*. No constitutional violation occurred.
 
 ## Conclusion
 The deputies' conduct in executing the valid warrant did not violate the Fourth Amendment; the judgment of the Ninth Circuit was reversed and the case [[Reading and Citing Cases#on-remand|remanded]]. (Justice Stevens, joined by Justice Ginsburg, would have reversed solely on qualified-immunity grounds.)
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.
-- *Rettele* remains controlling on the authority to detain occupants and secure the scene while executing a warrant, applying [[Michigan v. Summers]] and situating the intrusion below the detention upheld in [[Muehler v. Mena]]. The scope of *Summers* detention authority was later cabined geographically in [[Bailey v. United States]]. No negative treatment.
+- *Rettele* remains controlling on the authority to detain occupants and secure the scene while executing a warrant, applying [[Michigan v. Summers]] and situating the intrusion below the detention upheld in [[Muehler v. Mena]]. The scope of *[[Michigan v. Summers|Summers]]* detention authority was later cabined geographically in [[Bailey v. United States]]. No negative treatment.
 
 ## Appears on
 - [[Securing the Scene]] — *Progeny*

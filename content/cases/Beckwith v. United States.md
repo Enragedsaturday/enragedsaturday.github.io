@@ -50,14 +50,14 @@ Two special agents of the IRS Intelligence Division — the unit assigned only w
 Whether a noncustodial interview by IRS special agents investigating potential criminal tax violations requires [[Miranda and Custodial Interrogation|Miranda warnings]] because the taxpayer is the "focus" of the investigation.
 
 ## Rule
-No — Miranda turns on custody, not investigative focus. In its decisions after *Miranda* "the Court specifically stressed that it was the *custodial* nature of the interrogation which triggered the necessity for adherence to the specific requirements of its *Miranda* holding." — 425 U.S. at 346 (citing [[Orozco v. Texas]] and [[Mathis v. United States (1968)]]). ^pin-346
+No — Miranda turns on custody, not investigative focus. In its decisions after *[[Miranda v. Arizona|Miranda]]* "the Court specifically stressed that it was the *custodial* nature of the interrogation which triggered the necessity for adherence to the specific requirements of its *Miranda* holding." — 425 U.S. at 346 (citing [[Orozco v. Texas]] and [[Mathis v. United States (1968)]]). ^pin-346
 
 "'It was the compulsive aspect of custodial interrogation, and not the strength or content of the government's suspicions at the time the questioning was conducted, which led the court to impose the *Miranda* requirements with regard to custodial questioning.'" — *Id.* at 346–347 (quoting *United States v. Caiello*, 420 F.2d 471, 473 (CA2 1969)). ^pin-347
 
-*Miranda* "implicitly defined 'focus' . . . as 'questioning initiated by law enforcement officers *after* a person has been taken into custody or otherwise deprived of his freedom of action in any significant way.'" — *Id.* at 347 (quoting *Miranda*, 384 U.S. at 444).
+*[[Miranda v. Arizona|Miranda]]* "implicitly defined 'focus' . . . as 'questioning initiated by law enforcement officers *after* a person has been taken into custody or otherwise deprived of his freedom of action in any significant way.'" — *Id.* at 347 (quoting *Miranda*, 384 U.S. at 444).
 
 ## Application
-"Although the 'focus' of an investigation may indeed have been on Beckwith at the time of the interview in the sense that it was his tax liability which was under scrutiny, he hardly found himself in the custodial situation described by the *Miranda* Court as the basis for its holding." The friendly, noncustodial home interview lacked the inherently coercive, police-dominated elements that *Miranda* addressed; that the interview may have been the "starting point" for prosecution did not convert it into custody. No full [[Miranda and Custodial Interrogation|Miranda warnings]] were required, and the statements were admissible.
+"Although the 'focus' of an investigation may indeed have been on Beckwith at the time of the interview in the sense that it was his tax liability which was under scrutiny, he hardly found himself in the custodial situation described by the *Miranda* Court as the basis for its holding." The friendly, noncustodial home interview lacked the inherently coercive, police-dominated elements that *[[Miranda v. Arizona|Miranda]]* addressed; that the interview may have been the "starting point" for prosecution did not convert it into custody. No full [[Miranda and Custodial Interrogation|Miranda warnings]] were required, and the statements were admissible.
 
 ## Conclusion
 A noncustodial interview does not require [[Miranda and Custodial Interrogation|Miranda warnings]] merely because the suspect is the focus of a criminal investigation; the judgment of conviction was affirmed.

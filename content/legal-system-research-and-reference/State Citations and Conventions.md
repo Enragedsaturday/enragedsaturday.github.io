@@ -26,7 +26,7 @@ Criminal captions put the **government first**. Which name the government uses d
 - **People v. ___**: California, New York, Illinois, Michigan, Colorado.
 - **Commonwealth v. ___**: Pennsylvania, Massachusetts, Virginia, Kentucky.
 
-**Bluebook short-form rule.** When the deciding court sits **in** that sovereign, shorten the government party to *State*, *People*, or *Commonwealth* alone (*State v. Smith*). When a court **outside** that sovereign decides the case (say, the U.S. Supreme Court reviewing a Florida conviction), keep the **state's name** so the reader isn't left guessing *which* state: *Stern v. Florida*, not *Stern v. State*. That is the same reason SCOTUS opinions read *Georgia v. Randolph*, not *State v. Randolph*.
+**Bluebook short-form rule.** When the deciding court sits **in** that sovereign, shorten the government party to *State*, *People*, or *Commonwealth* alone (*State v. Smith*). When a court **outside** that sovereign decides the case (say, the U.S. Supreme Court reviewing a Florida conviction), keep the **state's name** so the reader isn't left guessing *which* state: *Stern v. Florida*, not *Stern v. State*. That is the same reason SCOTUS opinions read *[[Georgia v. Randolph]]*, not *State v. Randolph*.
 
 ## The caption as a civil-vs-criminal signal (not a rule)
 

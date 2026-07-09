@@ -62,7 +62,7 @@ Manual border phone searches need no suspicion and forensic ones require reasona
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding in-circuit — 9th Cir.**
-- *Cano* clarifies [[United States v. Cotterman]] (reasonable suspicion means suspicion of digital contraband) and reflects the digital-privacy concerns of [[Riley v. California]] and [[Carpenter v. United States]]. It deepens a circuit split — the Eleventh Circuit (*United States v. Touset*) requires no suspicion even for forensic border device searches.
+- *Cano* clarifies [[United States v. Cotterman]] (reasonable suspicion means suspicion of digital contraband) and reflects the digital-privacy concerns of [[Riley v. California]] and [[Carpenter v. United States]]. It deepens a circuit split — the Eleventh Circuit (*[[United States v. Touset]]*) requires no suspicion even for forensic border device searches.
 
 ## Appears on
 - [[Border Searches]] — *Illustrates a circuit split*

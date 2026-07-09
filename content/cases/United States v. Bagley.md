@@ -44,21 +44,21 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-Bagley was convicted of federal narcotics and firearms charges largely on the testimony of two government informants. Although the defense had specifically requested any deals or inducements, the government did not disclose that the informants had signed contracts promising payment contingent on their assistance. Bagley later discovered the arrangements and sought relief, arguing the suppressed impeachment evidence violated *Brady*.
+Bagley was convicted of federal narcotics and firearms charges largely on the testimony of two government informants. Although the defense had specifically requested any deals or inducements, the government did not disclose that the informants had signed contracts promising payment contingent on their assistance. Bagley later discovered the arrangements and sought relief, arguing the suppressed impeachment evidence violated *[[Brady v. Maryland|Brady]]*.
 
 ## Issue
-What standard of materiality governs a *Brady* claim, and whether a single materiality standard applies regardless of whether the defense made no request, a general request, or a specific request for the evidence.
+What standard of materiality governs a *[[Brady v. Maryland|Brady]]* claim, and whether a single materiality standard applies regardless of whether the defense made no request, a general request, or a specific request for the evidence.
 
 ## Rule
-The Court adopted one unified materiality standard for all *Brady* claims, including suppressed impeachment evidence: "The evidence is material only if there is a reasonable probability that, had the evidence been disclosed to the defense, the result of the proceeding would have been different. A 'reasonable probability' is a probability sufficient to undermine confidence in the outcome." — 473 U.S. at 682. ^pin-682
+The Court adopted one unified materiality standard for all *[[Brady v. Maryland|Brady]]* claims, including suppressed impeachment evidence: "The evidence is material only if there is a reasonable probability that, had the evidence been disclosed to the defense, the result of the proceeding would have been different. A 'reasonable probability' is a probability sufficient to undermine confidence in the outcome." — 473 U.S. at 682. ^pin-682
 
-Impeachment evidence, like [[Brady and Giglio|exculpatory]] evidence, falls within the *Brady* rule, and the same reasonable-probability test measures materiality whether or not the defense requested the evidence.
+Impeachment evidence, like [[Brady and Giglio|exculpatory]] evidence, falls within the *[[Brady v. Maryland|Brady]]* rule, and the same reasonable-probability test measures materiality whether or not the defense requested the evidence.
 
 ## Application
-Because the undisclosed contingent-payment contracts bore on the credibility of the government's two key informant witnesses, they were favorable impeachment evidence within *Brady*'s reach. The proper question was therefore whether there was a reasonable probability that disclosure would have produced a different result — a determination the Court [[Reading and Citing Cases#on-remand|remanded]] for the lower courts to make under the newly clarified, single materiality standard rather than under any automatic-reversal or request-specific rule.
+Because the undisclosed contingent-payment contracts bore on the credibility of the government's two key informant witnesses, they were favorable impeachment evidence within *[[Brady v. Maryland|Brady]]*'s reach. The proper question was therefore whether there was a reasonable probability that disclosure would have produced a different result — a determination the Court [[Reading and Citing Cases#on-remand|remanded]] for the lower courts to make under the newly clarified, single materiality standard rather than under any automatic-reversal or request-specific rule.
 
 ## Conclusion
-A uniform reasonable-probability materiality standard governs *Brady* claims, and it reaches impeachment evidence; the case was [[Reading and Citing Cases#on-remand|remanded]] for application of that standard. Suppressed impeachment evidence is material only where its disclosure would create a reasonable probability of a different outcome.
+A uniform reasonable-probability materiality standard governs *[[Brady v. Maryland|Brady]]* claims, and it reaches impeachment evidence; the case was [[Reading and Citing Cases#on-remand|remanded]] for application of that standard. Suppressed impeachment evidence is material only where its disclosure would create a reasonable probability of a different outcome.
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.

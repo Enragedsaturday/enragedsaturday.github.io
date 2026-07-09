@@ -66,7 +66,7 @@ The warrant was an unconstitutional general warrant; the order was [[Reading and
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.
-- *Stanford* remains the controlling statement that warrants reaching expressive materials demand heightened, "scrupulous" [[Particularity|particularity]], drawing directly on the general-warrant history of *Entick v. Carrington*. It sits within the [[Particularity|particularity]] line alongside [[Maryland v. Garrison]], [[Groh v. Ramirez]], and [[Andresen v. Maryland]]. No negative treatment.
+- *Stanford* remains the controlling statement that warrants reaching expressive materials demand heightened, "scrupulous" [[Particularity|particularity]], drawing directly on the general-warrant history of *[[Entick v. Carrington]]*. It sits within the [[Particularity|particularity]] line alongside [[Maryland v. Garrison]], [[Groh v. Ramirez]], and [[Andresen v. Maryland]]. No negative treatment.
 
 ## Appears on
 - [[Particularity]] — *Progeny*

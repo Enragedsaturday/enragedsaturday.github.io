@@ -58,7 +58,7 @@ But he can be compelled to answer under a sufficient warning: "[A] governmental 
 Throughout the interviews Kalkines faced a concurrent criminal bribery investigation, so the protection against criminal use of his answers was critical. On none of the four occasions was he adequately advised both that refusal would subject him to discharge and that his answers (and their fruits) could not be used against him criminally — the agent's most explicit statement omitted the "fruits" protection and never properly brought home that he would have immunity. Because the required warning was not given, Kalkines's refusals did not violate the duty-to-answer regulations, and his discharge on that ground was invalid.
 
 ## Conclusion
-Kalkines's removal could not stand, because he was discharged for refusing to answer without first receiving the constitutionally adequate assurance of immunity. The decision establishes the federal "Kalkines warning" implementing *Garrity* and *Gardner* for federal employees.
+Kalkines's removal could not stand, because he was discharged for refusing to answer without first receiving the constitutionally adequate assurance of immunity. The decision establishes the federal "Kalkines warning" implementing *[[Garrity v. New Jersey|Garrity]]* and *[[Gardner v. Broderick|Gardner]]* for federal employees.
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding in-circuit — Fed. Cir.**

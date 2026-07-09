@@ -44,13 +44,13 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-After being arrested and given [[Miranda and Custodial Interrogation|Miranda warnings]], Bradshaw invoked his right to counsel and questioning stopped. Sometime later, while being transferred, he asked an officer, "Well, what is going to happen to me now?" The officer reminded him he need not talk, and a conversation followed; Bradshaw later took a polygraph and made incriminating statements. The issue was whether *Bradshaw* — not the police — had reopened communication under *Edwards v. Arizona*.
+After being arrested and given [[Miranda and Custodial Interrogation|Miranda warnings]], Bradshaw invoked his right to counsel and questioning stopped. Sometime later, while being transferred, he asked an officer, "Well, what is going to happen to me now?" The officer reminded him he need not talk, and a conversation followed; Bradshaw later took a polygraph and made incriminating statements. The issue was whether *Bradshaw* — not the police — had reopened communication under *[[Edwards v. Arizona]]*.
 
 ## Issue
 After a suspect invokes the right to counsel, what does it mean for the suspect to "initiate" further communication so that interrogation may resume — and what else must the State show before the resulting statements are admissible?
 
 ## Rule
-*Edwards* bars further interrogation after an invocation of counsel unless the accused himself "initiates" further communication. A routine inquiry does not count: "There are some inquiries, such as a request for a drink of water or a request to use a telephone, that are so routine that they cannot be fairly said to represent a desire on the part of an accused to open up a more generalized discussion relating directly or indirectly to the investigation." — 462 U.S. at 1045 (plurality opinion). ^pin-1045
+*[[Edwards v. Arizona|Edwards]]* bars further interrogation after an invocation of counsel unless the accused himself "initiates" further communication. A routine inquiry does not count: "There are some inquiries, such as a request for a drink of water or a request to use a telephone, that are so routine that they cannot be fairly said to represent a desire on the part of an accused to open up a more generalized discussion relating directly or indirectly to the investigation." — 462 U.S. at 1045 (plurality opinion). ^pin-1045
 
 Initiation requires a statement that "evinced a willingness and a desire for a generalized discussion about the investigation." — *Id.* at 1045–46. ^pin-1046
 
@@ -60,7 +60,7 @@ Initiation is only the **first** step: the second is whether, under the [[Common
 Bradshaw's question — "Well, what is going to happen to me now?" — was not a routine request about the mechanics of custody; it evinced a desire to discuss the investigation, so it "initiated" further communication. With that step satisfied, the plurality concluded that on the [[Common Legal Terms#totality-of-the-circumstances|totality of the circumstances]] Bradshaw thereafter validly waived his right to counsel, so the later statements were admissible.
 
 ## Conclusion
-Bradshaw initiated the renewed dialogue and validly waived counsel; the statements were admissible. The Oregon Court of Appeals' suppression was reversed. *Bradshaw* fixes the two-step *Edwards* analysis: (1) did the accused initiate? (2) was there a valid waiver under the totality?
+Bradshaw initiated the renewed dialogue and validly waived counsel; the statements were admissible. The Oregon Court of Appeals' suppression was reversed. *Bradshaw* fixes the two-step *[[Edwards v. Arizona|Edwards]]* analysis: (1) did the accused initiate? (2) was there a valid waiver under the totality?
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.

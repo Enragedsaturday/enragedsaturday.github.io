@@ -62,7 +62,7 @@ Reversed and [[Reading and Citing Cases#on-remand|remanded]]. A damages action l
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.
-- *Bivens* remains the foundational federal-officer damages remedy and the analog to the state-actor remedy recognized in [[Monroe v. Pape]]; it was the vehicle for the *Bivens* claim in [[Hanlon v. Berger]], and federal officers sued under it raise the same qualified-immunity defense framed in [[Harlow v. Fitzgerald]]. The Court has not overruled *Bivens*, but in recent decades it has sharply **limited** the remedy by declining to extend it to new contexts (e.g., *Ziglar v. Abbasi* (2017); *Egbert v. Boule* (2022)) — the implied cause of action is essentially confined to contexts like the one in *Bivens* itself.
+- *Bivens* remains the foundational federal-officer damages remedy and the analog to the state-actor remedy recognized in [[Monroe v. Pape]]; it was the vehicle for the *Bivens* claim in [[Hanlon v. Berger]], and federal officers sued under it raise the same qualified-immunity defense framed in [[Harlow v. Fitzgerald]]. The Court has not overruled *Bivens*, but in recent decades it has sharply **limited** the remedy by declining to extend it to new contexts (e.g., *[[Ziglar v. Abbasi]]* (2017); *[[Egbert v. Boule]]* (2022)) — the implied cause of action is essentially confined to contexts like the one in *Bivens* itself.
 
 ## Appears on
 - [[Section 1983 Liability and Qualified Immunity]] — *Key — Anchor*

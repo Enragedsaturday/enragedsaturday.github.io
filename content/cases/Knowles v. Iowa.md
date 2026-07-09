@@ -56,9 +56,9 @@ No. The question "is whether such a procedure authorizes the officer, consistent
 
 The two rationales for the search-incident exception — officer safety and the preservation of evidence — do not support the search: "neither of these underlying rationales for the search incident to arrest exception is sufficient to justify the search in the present case." — *Id.* at 116–17. ^pin-116
 
-A traffic stop's officer-safety concern is lower than a custodial arrest's and is met by lesser measures (ordering occupants out, a *Terry* frisk on reasonable suspicion, a *Michigan v. Long* protective search). And as to evidence, "[o]nce Knowles was stopped for speeding and issued a citation, all the evidence necessary to prosecute that offense had been obtained." — *Id.* at 118. ^pin-118
+A traffic stop's officer-safety concern is lower than a custodial arrest's and is met by lesser measures (ordering occupants out, a *[[Terry v. Ohio|Terry]]* frisk on reasonable suspicion, a *[[Michigan v. Long]]* protective search). And as to evidence, "[o]nce Knowles was stopped for speeding and issued a citation, all the evidence necessary to prosecute that offense had been obtained." — *Id.* at 118. ^pin-118
 
-The Court refused to extend *Robinson*'s bright-line full-search rule "to a situation where the concern for officer safety is not present to the same extent and the concern for destruction or loss of evidence is not present at all. We decline to do so." — *Id.* at 118–19. ^pin-119
+The Court refused to extend *[[United States v. Robinson|Robinson]]*'s bright-line full-search rule "to a situation where the concern for officer safety is not present to the same extent and the concern for destruction or loss of evidence is not present at all. We decline to do so." — *Id.* at 118–19. ^pin-119
 
 ## Application
 Knowles was cited, not arrested, and the officer had neither consent nor probable cause. Because a brief traffic stop poses a lesser safety risk — addressable by ordering the driver out, a frisk on reasonable suspicion, or a protective vehicle search — and because issuing the speeding citation had already secured all evidence of that offense, neither search-incident rationale applied. The "search incident to citation" had no constitutional basis.

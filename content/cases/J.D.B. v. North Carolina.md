@@ -44,10 +44,10 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-J.D.B., a 13-year-old seventh-grader, was removed from his classroom by a uniformed officer, taken to a closed conference room, and questioned by police and school officials for thirty to forty-five minutes about neighborhood break-ins. He was not given *Miranda* warnings, was not told he could leave or call a guardian, and ultimately confessed. The North Carolina courts held his age was irrelevant to whether he was in custody.
+J.D.B., a 13-year-old seventh-grader, was removed from his classroom by a uniformed officer, taken to a closed conference room, and questioned by police and school officials for thirty to forty-five minutes about neighborhood break-ins. He was not given *[[Miranda v. Arizona|Miranda]]* warnings, was not told he could leave or call a guardian, and ultimately confessed. The North Carolina courts held his age was irrelevant to whether he was in custody.
 
 ## Issue
-Whether a child's age is relevant to the *Miranda* custody analysis when that age is known to, or objectively apparent to, the officer who questions the child.
+Whether a child's age is relevant to the *[[Miranda v. Arizona|Miranda]]* custody analysis when that age is known to, or objectively apparent to, the officer who questions the child.
 
 ## Rule
 Yes. "It is beyond dispute that children will often feel bound to submit to police questioning when an adult in the same circumstances would feel free to leave. Seeing no reason for police officers or courts to blind themselves to that commonsense reality, we hold that a child's age properly informs the Miranda custody analysis." — *J.D.B. v. North Carolina*, 564 U.S. 261 (2011) (slip op., at 1). ^pin-op1
@@ -58,7 +58,7 @@ Including age keeps the analysis objective: "So long as the child's age was know
 J.D.B.'s age — 13 — was known to the officers, who questioned him at his school; because age is an objective fact bearing on how a reasonable child in his position would have understood the situation, the state courts erred in excluding it from the custody inquiry. The Court did not itself decide whether J.D.B. was in custody; it [[Reading and Citing Cases#on-remand|remanded]] for the state courts to address custody taking account of all the circumstances, including his age.
 
 ## Conclusion
-A child's age, when known or objectively apparent, must be considered in the *Miranda* custody analysis; the judgment was reversed and [[Reading and Citing Cases#on-remand|remanded]].
+A child's age, when known or objectively apparent, must be considered in the *[[Miranda v. Arizona|Miranda]]* custody analysis; the judgment was reversed and [[Reading and Citing Cases#on-remand|remanded]].
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.

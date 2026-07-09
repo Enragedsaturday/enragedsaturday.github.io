@@ -66,7 +66,7 @@ Affirmed (the judgment, though not all the reasoning, of the Montana Supreme Cou
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS** (Kagan, J., unanimous; Sotomayor, J., and Gorsuch, J., concurring).
-- *Case* reaffirms and clarifies [[Brigham City v. Stuart]], rejecting both a *Terry*-style reasonable-suspicion gloss and a probable-cause gloss on the emergency-aid standard. It is consistent with [[Caniglia v. Strom]] (no freestanding community-caretaking home entry — welfare entries must route through [[Emergency Aid|emergency aid]]) and applies the totality-of-the-circumstances approach reaffirmed in [[Ohio v. Robinette]].
+- *Case* reaffirms and clarifies [[Brigham City v. Stuart]], rejecting both a *[[Terry v. Ohio|Terry]]*-style reasonable-suspicion gloss and a probable-cause gloss on the emergency-aid standard. It is consistent with [[Caniglia v. Strom]] (no freestanding community-caretaking home entry — welfare entries must route through [[Emergency Aid|emergency aid]]) and applies the totality-of-the-circumstances approach reaffirmed in [[Ohio v. Robinette]].
 
 ## Appears on
 - [[Emergency Aid]] — *Key — Progeny / Refinement*

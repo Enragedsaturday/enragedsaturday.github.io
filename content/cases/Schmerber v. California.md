@@ -65,7 +65,7 @@ Neither the Fifth nor the Fourth Amendment was violated; the conviction was affi
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.
 - [[Missouri v. McNeely]] (2013) **clarified** that the natural dissipation of alcohol does **not** create a per se exigency justifying a warrantless DUI blood draw; exigency is judged case-by-case on the totality — consistent with *Schmerber*'s own fact-bound analysis.
-- [[Birchfield v. North Dakota]] (2016) held a warrantless **blood** test is **not** justified as a search incident to a DUI arrest (a **breath** test is), so post-*Birchfield* a warrantless blood draw rests on exigency or another exception, not SITA.
+- [[Birchfield v. North Dakota]] (2016) held a warrantless **blood** test is **not** justified as a search incident to a DUI arrest (a **breath** test is), so post-*[[Birchfield v. North Dakota|Birchfield]]* a warrantless blood draw rests on exigency or another exception, not SITA.
 
 ## Appears on
 - [[Exigent Circumstances and Hot Pursuit]] — *Key — Anchor*

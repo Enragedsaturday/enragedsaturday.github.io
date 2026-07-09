@@ -50,7 +50,7 @@ Doyle and a codefendant were arrested for selling marijuana and given [[Miranda 
 Whether a state prosecutor may use a defendant's silence at the time of arrest, after [[Miranda and Custodial Interrogation|Miranda warnings]] were given, to impeach an [[Brady and Giglio|exculpatory]] account the defendant offers for the first time at trial.
 
 ## Rule
-No. Using post-arrest, post-*Miranda* silence to impeach violates due process. Post-arrest silence following Miranda warnings is "insolubly ambiguous" because it may be nothing more than the arrestee's exercise of his *Miranda* rights. — 426 U.S. at 617. ^pin-617
+No. Using post-arrest, post-*[[Miranda v. Arizona|Miranda]]* silence to impeach violates due process. Post-arrest silence following Miranda warnings is "insolubly ambiguous" because it may be nothing more than the arrestee's exercise of his *[[Miranda v. Arizona|Miranda]]* rights. — 426 U.S. at 617. ^pin-617
 
 "[W]hile it is true that the *Miranda* warnings contain no express assurance that silence will carry no penalty, such assurance is implicit to any person who receives the warnings. In such circumstances, it would be fundamentally unfair and a deprivation of due process to allow the arrested person's silence to be used to impeach an explanation subsequently offered at trial." — *Id.* at 618. ^pin-618
 
@@ -58,7 +58,7 @@ No. Using post-arrest, post-*Miranda* silence to impeach violates due process. P
 Doyle and his codefendant were given [[Miranda and Custodial Interrogation|Miranda warnings]] and then stayed silent at arrest. The State used that silence on cross-examination to suggest their trial testimony was a recent fabrication. Because the warnings implicitly assured them that silence carried no penalty, using that silence against them was fundamentally unfair and violated the Fourteenth Amendment's Due Process Clause.
 
 ## Conclusion
-The impeachment use of post-arrest, post-*Miranda* silence violated due process; the convictions were reversed.
+The impeachment use of post-arrest, post-*[[Miranda v. Arizona|Miranda]]* silence violated due process; the convictions were reversed.
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.

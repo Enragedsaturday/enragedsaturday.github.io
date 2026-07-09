@@ -46,10 +46,10 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-Riverside County, California, combined the *Gerstein* probable-cause determination for warrantless arrestees with its arraignment proceedings, which were provided within two days of arrest but excluding weekends and holidays. As a result, a person arrested late in the week (for example, on a Thursday) could be held until the following Monday — longer with an intervening holiday — before any judicial probable-cause determination. McLaughlin and others brought a class action challenging the practice as a violation of the promptness requirement of *Gerstein v. Pugh*.
+Riverside County, California, combined the *[[Gerstein v. Pugh|Gerstein]]* probable-cause determination for warrantless arrestees with its arraignment proceedings, which were provided within two days of arrest but excluding weekends and holidays. As a result, a person arrested late in the week (for example, on a Thursday) could be held until the following Monday — longer with an intervening holiday — before any judicial probable-cause determination. McLaughlin and others brought a class action challenging the practice as a violation of the promptness requirement of *[[Gerstein v. Pugh]]*.
 
 ## Issue
-What time period satisfies *Gerstein*'s requirement that a warrantless arrestee receive a "prompt" judicial determination of probable cause — and whether Riverside County's weekend- and holiday-excluding schedule met it.
+What time period satisfies *[[Gerstein v. Pugh|Gerstein]]*'s requirement that a warrantless arrestee receive a "prompt" judicial determination of probable cause — and whether Riverside County's weekend- and holiday-excluding schedule met it.
 
 ## Rule
 A 48-hour window is presumptively prompt. "[A] jurisdiction that provides judicial determinations of probable cause within 48 hours of arrest will, as a general matter, comply with the promptness requirement of *Gerstein*." — 500 U.S. at 56. ^pin-56
@@ -62,7 +62,7 @@ Past 48 hours, the burden flips: "Where an arrested individual does not receive 
 Riverside's practice — combined probable-cause/arraignment proceedings within two days but excluding Saturdays, Sundays, and holidays — meant a Thursday arrestee might wait until Monday, exceeding the 48-hour period the Court deemed presumptively permissible. Because its regular practice ran past 48 hours, the County was not immune from a systemic (class-action) challenge. The Court left to the lower courts [[Reading and Citing Cases#on-remand|on remand]] whether the County's habit of holding arraignments on "the last day" possible reflected legitimate reasons or impermissible "delay for delay's sake."
 
 ## Conclusion
-A judicial probable-cause determination within 48 hours of a warrantless arrest is presumptively prompt under *Gerstein*; delay beyond that shifts the burden to the government, and weekends and holidays do not excuse it. Riverside's schedule exceeded the window, so the judgment was [[Reading and Citing Cases#vacated|vacated]] and the case [[Reading and Citing Cases#on-remand|remanded]].
+A judicial probable-cause determination within 48 hours of a warrantless arrest is presumptively prompt under *[[Gerstein v. Pugh|Gerstein]]*; delay beyond that shifts the burden to the government, and weekends and holidays do not excuse it. Riverside's schedule exceeded the window, so the judgment was [[Reading and Citing Cases#vacated|vacated]] and the case [[Reading and Citing Cases#on-remand|remanded]].
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.

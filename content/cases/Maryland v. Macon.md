@@ -64,7 +64,7 @@ The undercover purchase was neither a search nor a seizure; the magazines were p
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.
-- Applies the seizure definition of [[United States v. Jacobsen]] and the misplaced-trust/invited-entry reasoning of *Lewis v. United States* (1966); distinguishes the unconstitutional wholesale magistrate-led seizure in [[Lo-Ji Sales, Inc. v. New York]].
+- Applies the seizure definition of [[United States v. Jacobsen]] and the misplaced-trust/invited-entry reasoning of *[[Lewis v. United States (1966)|Lewis v. United States]]* (1966); distinguishes the unconstitutional wholesale magistrate-led seizure in [[Lo-Ji Sales, Inc. v. New York]].
 
 ## Appears on
 - [[Reasonable Expectation of Privacy]] — *Related (cross-doctrine)*

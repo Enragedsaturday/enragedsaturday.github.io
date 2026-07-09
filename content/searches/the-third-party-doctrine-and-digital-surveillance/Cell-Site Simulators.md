@@ -30,7 +30,7 @@ related:
 
 **What the device does, and why it is different.** A cell-site simulator broadcasts a signal stronger than the surrounding towers, so every phone in range connects to it instead. That lets officers identify a target phone's unique subscriber number and pinpoint its location in real time, often to a specific unit in an apartment building, and in doing so it sweeps in every other phone nearby. Unlike a request to a carrier, this is direct government interception of signals the phone emits, deployed by officers in the field.
 
-**No SCOTUS holding; the rule is built from analogy.** No Supreme Court case addresses cell-site simulators. The doctrine is assembled from three anchors. *Karo* supplies the decisive move for the common use — locating a phone **inside a residence**: a technique that reveals an interior fact "the Government could not have otherwise obtained without a warrant" is a search. *[[United States v. Karo#^pin-715|Karo]]*, 468 U.S. at 715. *Kyllo* adds that using a device "not in general public use" to learn what is happening inside a home is a search, whatever the device. And *Carpenter*'s concern with pinpoint location over time reinforces that real-time location of a person's phone is constitutionally weighty. Together they make cell-site-simulator use to find a phone in a protected space a search requiring a warrant.
+**No SCOTUS holding; the rule is built from analogy.** No Supreme Court case addresses cell-site simulators. The doctrine is assembled from three anchors. *[[United States v. Karo|Karo]]* supplies the decisive move for the common use — locating a phone **inside a residence**: a technique that reveals an interior fact "the Government could not have otherwise obtained without a warrant" is a search. *[[United States v. Karo#^pin-715|Karo]]*, 468 U.S. at 715. *[[Kyllo v. United States|Kyllo]]* adds that using a device "not in general public use" to learn what is happening inside a home is a search, whatever the device. And *[[Carpenter v. United States|Carpenter]]*'s concern with pinpoint location over time reinforces that real-time location of a person's phone is constitutionally weighty. Together they make cell-site-simulator use to find a phone in a protected space a search requiring a warrant.
 
 **Policy has run ahead of case law.** Since 2015, Department of Justice and Department of Homeland Security policy has required a **search warrant** based on probable cause before federal agents deploy a cell-site simulator, except in genuine [[Exigent Circumstances and Hot Pursuit|exigencies]], and requires deletion of incidentally collected third-party data. Several states have enacted equivalent statutory warrant requirements. These policies are not constitutional holdings, but they are the operative rule in practice and reflect the consensus that the device's power demands a warrant.
 
@@ -38,21 +38,21 @@ related:
 
 **Apply it.**
 1. **Identify the technique.** If officers used a device that impersonates a tower to locate a phone (not a records request to a carrier), this is the cell-site-simulator rule, not ordinary CSLI.
-2. **Locate the phone.** If the device was used to find the phone inside a home or other protected space, *Karo* and *Kyllo* make it a search requiring a warrant.
+2. **Locate the phone.** If the device was used to find the phone inside a home or other protected space, *[[United States v. Karo|Karo]]* and *[[Kyllo v. United States|Kyllo]]* make it a search requiring a warrant.
 3. **Check for a warrant and policy compliance.** Absent [[Exigent Circumstances and Hot Pursuit|exigency]], DOJ/DHS policy and the leading state authority require a probable-cause warrant; a warrantless deployment is the litigable event.
 4. **Flag the bystander sweep.** Note that the device collected data from other phones; the treatment of that incidental collection is unsettled.
 
 **Common pitfalls.**
-- **Treating cell-site-simulator use as ordinary third-party CSLI.** It is direct government interception in the field, not a request for a carrier's business records; *Smith*/*Miller* do not govern it.
-- **Assuming there is a Supreme Court rule.** There is none; the rule is built from *Karo*, *Kyllo*, and *Carpenter* plus policy and lower-court law.
-- **Overlooking the interior move.** The strongest warrant argument is *Karo*'s: the device revealed the phone's location inside a protected space.
+- **Treating cell-site-simulator use as ordinary third-party CSLI.** It is direct government interception in the field, not a request for a carrier's business records; *Smith*/*[[United States v. Miller|Miller]]* do not govern it.
+- **Assuming there is a Supreme Court rule.** There is none; the rule is built from *[[United States v. Karo|Karo]]*, *[[Kyllo v. United States|Kyllo]]*, and *[[Carpenter v. United States|Carpenter]]* plus policy and lower-court law.
+- **Overlooking the interior move.** The strongest warrant argument is *[[United States v. Karo|Karo]]*'s: the device revealed the phone's location inside a protected space.
 
 ## Lower-court developments
 
 - **Leading state decision — warrant required.** *State v. Andrews* (Md. Ct. Spec. App. 2016) held that real-time use of a cell-site simulator to locate a suspect's phone was a Fourth Amendment search requiring a warrant, and that the State's failure to disclose the technique to the issuing court could not be cured. It remains the most-cited judicial statement that cell-site-simulator deployment needs a warrant.
 - **Federal and state policy.** DOJ (Sept. 2015) and DHS (Oct. 2015) policies require a probable-cause search warrant for cell-site-simulator use absent [[Exigent Circumstances and Hot Pursuit|exigent circumstances]], plus prompt deletion of non-target data; a number of states have codified parallel warrant requirements. These are the operative constraints most agencies work under.
 
-The picture: no Supreme Court rule, a strong analogical case for a warrant (*Karo*/*Kyllo*), executive policy that already requires one, and an unresolved question about the bystander phones the device sweeps in.
+The picture: no Supreme Court rule, a strong analogical case for a warrant (*[[United States v. Karo|Karo]]*/*[[Kyllo v. United States|Kyllo]]*), executive policy that already requires one, and an unresolved question about the bystander phones the device sweeps in.
 
 ## Key cases
 

@@ -41,7 +41,7 @@ related:
 
 **Common pitfalls.**
 - **Thinking a warrant is needed for an ordinary public arrest.** It is not; probable cause suffices, even with time to get a warrant. *[[United States v. Watson]]*.
-- **Assuming a petty offense cannot support a custodial arrest.** *Atwater* holds it can, on probable cause, without balancing. *[[Atwater v. City of Lago Vista]]*.
+- **Assuming a petty offense cannot support a custodial arrest.** *[[Atwater v. City of Lago Vista|Atwater]]* holds it can, on probable cause, without balancing. *[[Atwater v. City of Lago Vista]]*.
 - **Testing the arrest against the offense the officer named.** The question is whether the known facts give probable cause for **any** offense; the stated charge and the officer's motive do not control. *[[Devenpeck v. Alford]]*.
 - **Treating a state-law arrest violation as a Fourth Amendment violation.** It is not, and it triggers no exclusion. *[[Virginia v. Moore]]*.
 - **Forgetting the home line.** The public-arrest rule stops at the threshold; a home arrest needs a warrant or [[Exigent Circumstances and Hot Pursuit|exigency]]. *[[Entry to Arrest]]*.

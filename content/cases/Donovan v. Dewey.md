@@ -44,7 +44,7 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-Under § 103(a) of the Federal Mine Safety and Health Act of 1977, a federal inspector sought to inspect a stone quarry operated by Dewey without a warrant. The Act authorizes mandatory, unannounced inspections of all mines at specified frequencies. Dewey refused entry and challenged the warrantless-inspection scheme under the Fourth Amendment; the District Court held it unconstitutional under *Marshall v. Barlow's, Inc.*
+Under § 103(a) of the Federal Mine Safety and Health Act of 1977, a federal inspector sought to inspect a stone quarry operated by Dewey without a warrant. The Act authorizes mandatory, unannounced inspections of all mines at specified frequencies. Dewey refused entry and challenged the warrantless-inspection scheme under the Fourth Amendment; the District Court held it unconstitutional under *[[Marshall v. Barlow's Inc|Marshall v. Barlow's, Inc.]]*
 
 ## Issue
 Whether the Fourth Amendment permits warrantless inspections of mines under a comprehensive federal regulatory scheme that does not require a warrant.
@@ -64,7 +64,7 @@ The warrantless mine inspections under the Act were constitutional; the judgment
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.
-- No negative treatment. *Donovan v. Dewey* applies and extends the *Colonnade-Biswell* pervasively-regulated-industry exception preserved in [[Marshall v. Barlow's Inc.]]; the line was later organized into a three-part test in *New York v. Burger* (1987). It remains good law.
+- No negative treatment. *Donovan v. Dewey* applies and extends the *Colonnade-Biswell* pervasively-regulated-industry exception preserved in [[Marshall v. Barlow's Inc.]]; the line was later organized into a three-part test in *[[New York v. Burger]]* (1987). It remains good law.
 
 ## Appears on
 - [[Special Needs and Administrative Searches]] — *Progeny (pervasively-regulated industry)*

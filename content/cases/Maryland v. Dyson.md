@@ -52,10 +52,10 @@ Whether the automobile exception requires a separate finding of [[Exigent Circum
 ## Rule
 No. "[U]nder our established precedent, the 'automobile exception' has no separate exigency requirement." — 527 U.S. at 466. ^pin-466
 
-Quoting *Pennsylvania v. Labron*: "If a car is readily mobile and probable cause exists to believe it contains contraband, the Fourth Amendment . . . permits police to search the vehicle without more." — *Id.* at 467 (quoting 518 U.S. at 940). ^pin-467
+Quoting *[[Pennsylvania v. Labron]]*: "If a car is readily mobile and probable cause exists to believe it contains contraband, the Fourth Amendment . . . permits police to search the vehicle without more." — *Id.* at 467 (quoting 518 U.S. at 940). ^pin-467
 
 ## Application
-The state court itself found "abundant probable cause" that the car contained contraband. That finding alone satisfied the automobile exception, exactly as the trial court had concluded. Requiring a separate showing of [[Exigent Circumstances and Hot Pursuit|exigency]] — and faulting the police for not getting a warrant when there was time — was "squarely contrary" to *Ross* and *Labron*. The warrantless search of the readily mobile car was therefore valid.
+The state court itself found "abundant probable cause" that the car contained contraband. That finding alone satisfied the automobile exception, exactly as the trial court had concluded. Requiring a separate showing of [[Exigent Circumstances and Hot Pursuit|exigency]] — and faulting the police for not getting a warrant when there was time — was "squarely contrary" to *[[United States v. Ross|Ross]]* and *[[Pennsylvania v. Labron|Labron]]*. The warrantless search of the readily mobile car was therefore valid.
 
 ## Conclusion
 Reversed (per curiam). Probable cause that a readily mobile vehicle contains contraband is enough; the automobile exception carries no independent exigency requirement.

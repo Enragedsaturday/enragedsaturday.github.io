@@ -64,7 +64,7 @@ The warrantless search authorized only by the landlord's consent violated the Fo
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.
-- No negative treatment. *Chapman*'s rule that a landlord cannot consent to a search of the tenant's occupied premises remains good law and is consistent with the later common-authority consent doctrine (*United States v. Matlock*) and reaffirmed in principle by [[Stoner v. California]] (hotel clerk) and *Georgia v. Randolph*.
+- No negative treatment. *Chapman*'s rule that a landlord cannot consent to a search of the tenant's occupied premises remains good law and is consistent with the later common-authority consent doctrine (*[[United States v. Matlock]]*) and reaffirmed in principle by [[Stoner v. California]] (hotel clerk) and *[[Georgia v. Randolph]]*.
 
 ## Appears on
 - [[Consent Searches]] — *Progeny ([[Consent Searches|third-party consent]])*

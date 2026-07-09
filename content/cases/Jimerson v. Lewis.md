@@ -67,7 +67,7 @@ The court accepted that Lewis's identification of the house was objectively defi
 The denial of [[Qualified Immunity|qualified immunity]] was **reversed** and the case **[[Reading and Citing Cases#on-remand|remanded]] for dismissal**. Southwick, J., wrote for the majority; Dennis, J., dissented.
 
 ## Treatment & subsequent history
-**Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub and renders under the ⚪ banner until S9 promotion. *Jimerson* is a recent, sharply divided illustration of [[Qualified Immunity|qualified immunity]]'s "clearly established law" prong operating in the wrong-house-raid context: even a deficient effort to identify the place to be searched (*Garrison*) does not defeat immunity without precedent squarely on point.
+**Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub and renders under the ⚪ banner until S9 promotion. *Jimerson* is a recent, sharply divided illustration of [[Qualified Immunity|qualified immunity]]'s "clearly established law" prong operating in the wrong-house-raid context: even a deficient effort to identify the place to be searched (*[[Maryland v. Garrison|Garrison]]*) does not defeat immunity without precedent squarely on point.
 
 ## Appears on
 - [[Section 1983 Liability and Qualified Immunity]] — *Key*

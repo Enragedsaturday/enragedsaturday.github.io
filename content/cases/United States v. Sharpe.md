@@ -44,13 +44,13 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-A DEA agent and a state patrolman, suspecting drug trafficking, tried to stop a Pontiac and an overloaded pickup traveling in tandem. The pickup's driver, Savage, evaded the patrolman and was stopped about half a mile ahead. The agent stayed with Sharpe (the Pontiac) and then drove to Savage's truck; Savage was detained roughly 20 minutes while the agent coordinated with the patrolman, after which the agent smelled marijuana and discovered bales in the truck. The Court of Appeals held the 20-minute detention too long to be a *Terry* stop.
+A DEA agent and a state patrolman, suspecting drug trafficking, tried to stop a Pontiac and an overloaded pickup traveling in tandem. The pickup's driver, Savage, evaded the patrolman and was stopped about half a mile ahead. The agent stayed with Sharpe (the Pontiac) and then drove to Savage's truck; Savage was detained roughly 20 minutes while the agent coordinated with the patrolman, after which the agent smelled marijuana and discovered bales in the truck. The Court of Appeals held the 20-minute detention too long to be a *[[Terry v. Ohio|Terry]]* stop.
 
 ## Issue
-Whether a roughly 20-minute investigative detention exceeded the permissible bounds of a *Terry* stop and became a [[Common Legal Terms#de-facto|de facto]] arrest requiring probable cause.
+Whether a roughly 20-minute investigative detention exceeded the permissible bounds of a *[[Terry v. Ohio|Terry]]* stop and became a [[Common Legal Terms#de-facto|de facto]] arrest requiring probable cause.
 
 ## Rule
-There is no fixed durational ceiling on a *Terry* stop: "But our cases impose no rigid time limitation on *Terry* stops." — 470 U.S. at 685. ^pin-685
+There is no fixed durational ceiling on a *[[Terry v. Ohio|Terry]]* stop: "But our cases impose no rigid time limitation on *Terry* stops." — 470 U.S. at 685. ^pin-685
 
 The test is diligence, not the clock: "In assessing whether a detention is too long in duration to be justified as an investigative stop, we consider it appropriate to examine whether the police diligently pursued a means of investigation that was likely to confirm or dispel their suspicions quickly, during which time it was necessary to detain the defendant." — *Id.* at 686. ^pin-686
 
@@ -58,7 +58,7 @@ The test is diligence, not the clock: "In assessing whether a detention is too l
 The agent pursued his investigation diligently: during most of Savage's 20-minute detention he was attempting to reach the patrolman, and once they joined he proceeded expeditiously — checking documents, requesting consent, confirming the truck was overloaded, and detecting marijuana. Critically, much of the delay was attributable to Savage's own evasive driving, not to any dilatoriness by police. Because the officers acted reasonably and did not unnecessarily prolong the stop, the 20-minute detention was a valid investigative stop, not a [[Common Legal Terms#de-facto|de facto]] arrest; a *[[Common Legal Terms#per-se|per se]]* 20-minute rule would be at odds with the Court's flexible approach.
 
 ## Conclusion
-The 20-minute detention was reasonable; the Court of Appeals erred in adopting an effective *[[Common Legal Terms#per-se|per se]]* time limit. *Sharpe* governs the duration of *Terry* stops through a diligence-and-necessity inquiry rather than a bright-line clock.
+The 20-minute detention was reasonable; the Court of Appeals erred in adopting an effective *[[Common Legal Terms#per-se|per se]]* time limit. *Sharpe* governs the duration of *[[Terry v. Ohio|Terry]]* stops through a diligence-and-necessity inquiry rather than a bright-line clock.
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.

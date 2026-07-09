@@ -46,7 +46,7 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-A federal tax investigator obtained a warrant to search Harris's premises for nontaxpaid liquor. The affidavit recited the affiant's knowledge of Harris's longstanding reputation as a trafficker in illicit whiskey and a tip from a confidential informant — who feared for his safety — stating that he had repeatedly, and recently, purchased illicit whiskey at the premises over the past two years. The Court of Appeals held the affidavit insufficient under *Aguilar v. Texas* and *Spinelli v. United States*.
+A federal tax investigator obtained a warrant to search Harris's premises for nontaxpaid liquor. The affidavit recited the affiant's knowledge of Harris's longstanding reputation as a trafficker in illicit whiskey and a tip from a confidential informant — who feared for his safety — stating that he had repeatedly, and recently, purchased illicit whiskey at the premises over the past two years. The Court of Appeals held the affidavit insufficient under *[[Aguilar v. Texas]]* and *[[Spinelli v. United States]]*.
 
 ## Issue
 May an informant's tip support probable cause for a warrant where it is corroborated by the affiant's knowledge of the suspect's reputation and by the informant's own admission — against his penal interest — of buying illicit whiskey at the premises?
@@ -68,7 +68,7 @@ The affidavit established probable cause and the warrant was valid; the judgment
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.
-- The penal-interest reliability principle remains valid and is a recognized factor in assessing an informant's credibility. The *Aguilar*–*Spinelli* two-pronged test that this plurality was already eroding was later abandoned for a totality-of-the-circumstances inquiry in [[Illinois v. Gates]] (1983), within which *Harris*'s penal-interest insight survives. No negative treatment of *Harris* itself.
+- The penal-interest reliability principle remains valid and is a recognized factor in assessing an informant's credibility. The *[[Aguilar v. Texas|Aguilar]]*–*[[Spinelli v. United States|Spinelli]]* two-pronged test that this plurality was already eroding was later abandoned for a totality-of-the-circumstances inquiry in [[Illinois v. Gates]] (1983), within which *Harris*'s penal-interest insight survives. No negative treatment of *Harris* itself.
 
 ## Appears on
 - [[Probable Cause]] — *Progeny*

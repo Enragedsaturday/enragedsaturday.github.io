@@ -69,7 +69,7 @@ The arrest was complete when the car was stopped, probable cause did not exist a
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.
 - No negative treatment. *Henry*'s moment-of-arrest, facts-then-known rule for probable cause remains foundational and is applied in the totality-of-circumstances analyses of [[Brinegar v. United States]], [[Draper v. United States]], and later cases such as [[Maryland v. Pringle]] and [[Devenpeck v. Alford]].
-- *Disambiguation:* distinct from the reversed-party case *United States v. Henry*, 447 U.S. 264 (1980) (Sixth Amendment, deliberate elicitation by a jailhouse informant); bare `[[Henry v. United States]]` resolves here via alias.
+- *Disambiguation:* distinct from the reversed-party case *[[United States v. Henry]]*, 447 U.S. 264 (1980) (Sixth Amendment, deliberate elicitation by a jailhouse informant); bare `[[Henry v. United States]]` resolves here via alias.
 
 ## Appears on
 - [[Probable Cause]] — *Anchor*

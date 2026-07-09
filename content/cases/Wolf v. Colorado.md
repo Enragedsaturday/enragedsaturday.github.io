@@ -44,15 +44,15 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-Wolf was convicted in a Colorado court of conspiracy to commit abortion on evidence (including an appointment book) obtained by a sheriff without a warrant. He argued that the Fourteenth Amendment required a state court to exclude evidence obtained by an unreasonable search and seizure, just as *Weeks v. United States* required exclusion in federal prosecutions.
+Wolf was convicted in a Colorado court of conspiracy to commit abortion on evidence (including an appointment book) obtained by a sheriff without a warrant. He argued that the Fourteenth Amendment required a state court to exclude evidence obtained by an unreasonable search and seizure, just as *[[Weeks v. United States]]* required exclusion in federal prosecutions.
 
 ## Issue
-Whether the Due Process Clause of the Fourteenth Amendment requires a state court to exclude evidence obtained by an unreasonable search and seizure, as the *Weeks* rule requires in federal court.
+Whether the Due Process Clause of the Fourteenth Amendment requires a state court to exclude evidence obtained by an unreasonable search and seizure, as the *[[Weeks v. United States|Weeks]]* rule requires in federal court.
 
 ## Rule
 The Fourth Amendment's core is binding on the States, but its federal exclusionary remedy is not. "The security of one's privacy against arbitrary intrusion by the police—which is at the core of the Fourth Amendment—is basic to a free society. It is therefore implicit in 'the concept of ordered liberty' and as such enforceable against the States through the Due Process Clause." — 338 U.S. at 27–28. ^pin-27
 
-But the *Weeks* exclusionary rule was a judicially implied remedy, not a constitutional command on the States: "in a prosecution in a State court for a State crime the Fourteenth Amendment does not forbid the admission of evidence obtained by an unreasonable search and seizure." — *Id.* at 33. ^pin-33
+But the *[[Weeks v. United States|Weeks]]* exclusionary rule was a judicially implied remedy, not a constitutional command on the States: "in a prosecution in a State court for a State crime the Fourteenth Amendment does not forbid the admission of evidence obtained by an unreasonable search and seizure." — *Id.* at 33. ^pin-33
 
 **This remedy holding was overruled by [[Mapp v. Ohio]] (1961).**
 
@@ -64,7 +64,7 @@ The conviction was affirmed: the Fourteenth Amendment incorporated the substance
 
 ## Treatment & subsequent history
 - **Status:** overruled *(as of 2026-06-30)* — **Historical** (tier 6). **Overruled on the remedy holding by [[Mapp v. Ohio]], 367 U.S. 643 (1961)**, which held the exclusionary rule applicable to the States.
-- *Wolf*'s incorporation holding — that the Fourth Amendment's core binds the States through the Fourteenth — **survived** and was reaffirmed in *Mapp*. *Wolf* is taught as the foil for the modern rule: it is the case instructors name to explain how *Mapp* came to require state exclusion. Compare [[Elkins v. United States]] (abolishing the silver-platter doctrine the year before *Mapp*).
+- *Wolf*'s incorporation holding — that the Fourth Amendment's core binds the States through the Fourteenth — **survived** and was reaffirmed in *[[Mapp v. Ohio|Mapp]]*. *Wolf* is taught as the foil for the modern rule: it is the case instructors name to explain how *[[Mapp v. Ohio|Mapp]]* came to require state exclusion. Compare [[Elkins v. United States]] (abolishing the silver-platter doctrine the year before *[[Mapp v. Ohio|Mapp]]*).
 
 ## Appears on
 - [[The Exclusionary Rule]] — *Key — Historical (overruled by Mapp on remedy)*

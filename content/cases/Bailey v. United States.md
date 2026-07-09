@@ -49,18 +49,18 @@ lake:
 Officers had a warrant to search a basement apartment for a handgun. Before executing it, surveillance officers saw Bailey and another man leave the apartment by car. Officers followed and stopped them roughly a mile away, detained Bailey, patted him down, and drove him back to the apartment. The search turned up a gun and drugs, and a key in Bailey's possession opened the apartment door. The detention was justified below under [[Michigan v. Summers]], which allows detaining occupants while a search warrant is executed.
 
 ## Issue
-Whether the *Summers* authority to detain occupants incident to the execution of a search warrant extends to a former occupant who has already left and is stopped away from the immediate vicinity of the premises.
+Whether the *[[Michigan v. Summers|Summers]]* authority to detain occupants incident to the execution of a search warrant extends to a former occupant who has already left and is stopped away from the immediate vicinity of the premises.
 
 ## Rule
-No — the *Summers* detention authority is spatially limited. "A spatial constraint defined by the immediate vicinity of the premises to be searched is therefore required for detentions incident to the execution of a search warrant." — 568 U.S. at 201 (slip op., at 13). ^pin-201
+No — the *[[Michigan v. Summers|Summers]]* detention authority is spatially limited. "A spatial constraint defined by the immediate vicinity of the premises to be searched is therefore required for detentions incident to the execution of a search warrant." — 568 U.S. at 201 (slip op., at 13). ^pin-201
 
-The interests *Summers* serves (officer safety, orderly completion of the search, preventing flight) do not reach a former occupant who has departed: that flight-prevention interest "does not independently justify detention of an occupant beyond the immediate vicinity of the premises to be searched." — *Id.* at 199 (slip op., at 11). ^pin-199
+The interests *[[Michigan v. Summers|Summers]]* serves (officer safety, orderly completion of the search, preventing flight) do not reach a former occupant who has departed: that flight-prevention interest "does not independently justify detention of an occupant beyond the immediate vicinity of the premises to be searched." — *Id.* at 199 (slip op., at 11). ^pin-199
 
 ## Application
-Bailey was stopped about a mile from the apartment, well outside its immediate vicinity, after he had already left (apparently unaware of the impending search). Because he was not within the immediate vicinity, the *Summers* rule did not authorize his detention; absent that categorical authority, the officers would have needed probable cause to arrest or reasonable suspicion to make a *Terry* stop.
+Bailey was stopped about a mile from the apartment, well outside its immediate vicinity, after he had already left (apparently unaware of the impending search). Because he was not within the immediate vicinity, the *[[Michigan v. Summers|Summers]]* rule did not authorize his detention; absent that categorical authority, the officers would have needed probable cause to arrest or reasonable suspicion to make a *[[Terry v. Ohio|Terry]]* stop.
 
 ## Conclusion
-The detention was not authorized by *Summers*; the judgment was reversed and the case [[Reading and Citing Cases#on-remand|remanded]] to consider whether the stop could be justified on other grounds (e.g., *Terry*).
+The detention was not authorized by *[[Michigan v. Summers|Summers]]*; the judgment was reversed and the case [[Reading and Citing Cases#on-remand|remanded]] to consider whether the stop could be justified on other grounds (e.g., *[[Terry v. Ohio|Terry]]*).
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.

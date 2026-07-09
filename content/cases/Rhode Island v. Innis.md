@@ -44,10 +44,10 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-Innis was arrested for a shotgun murder, given *Miranda* warnings, and invoked his right to counsel. While transporting him, two officers conversed between themselves, expressing concern that the missing shotgun might be found by children from a nearby school for the handicapped. Innis interrupted and directed the officers to the gun. He sought to suppress the gun and his statements, arguing the conversation was interrogation conducted after he invoked counsel.
+Innis was arrested for a shotgun murder, given *[[Miranda v. Arizona|Miranda]]* warnings, and invoked his right to counsel. While transporting him, two officers conversed between themselves, expressing concern that the missing shotgun might be found by children from a nearby school for the handicapped. Innis interrupted and directed the officers to the gun. He sought to suppress the gun and his statements, arguing the conversation was interrogation conducted after he invoked counsel.
 
 ## Issue
-Whether the officers' conversation constituted "interrogation" under *Miranda*, such that it was barred after Innis invoked his right to counsel.
+Whether the officers' conversation constituted "interrogation" under *[[Miranda v. Arizona|Miranda]]*, such that it was barred after Innis invoked his right to counsel.
 
 ## Rule
 "Interrogation" includes its functional equivalent. "We conclude that the *Miranda* safeguards come into play whenever a person in custody is subjected to either express questioning or its functional equivalent. That is to say, the term 'interrogation' under *Miranda* refers not only to express questioning, but also to any words or actions on the part of the police (other than those normally attendant to arrest and custody) that the police should know are reasonably likely to elicit an incriminating response from the suspect." — 446 U.S. at 300–301. ^pin-301
@@ -58,10 +58,10 @@ Whether the officers' conversation constituted "interrogation" under *Miranda*, 
 The officers' brief exchange was addressed to each other, not to Innis, and consisted of a few offhand remarks. Nothing showed the officers should have known their conversation was reasonably likely to elicit an incriminating response: there was no indication Innis was peculiarly susceptible to an appeal about the handicapped children, and the remarks were not designed to elicit a response. Because the exchange was not the functional equivalent of express questioning, Innis was not "interrogated," and suppression was not required.
 
 ## Conclusion
-The officers' conversation was not interrogation under *Miranda*; the Rhode Island Supreme Court's suppression order was [[Reading and Citing Cases#vacated|vacated]] and the case [[Reading and Citing Cases#on-remand|remanded]].
+The officers' conversation was not interrogation under *[[Miranda v. Arizona|Miranda]]*; the Rhode Island Supreme Court's suppression order was [[Reading and Citing Cases#vacated|vacated]] and the case [[Reading and Citing Cases#on-remand|remanded]].
 
 ## Treatment & subsequent history
-- **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**. *Innis* supplies the controlling definition of "interrogation" (express questioning or its functional equivalent) for *Miranda* purposes.
+- **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**. *Innis* supplies the controlling definition of "interrogation" (express questioning or its functional equivalent) for *[[Miranda v. Arizona|Miranda]]* purposes.
 
 ## Appears on
 - [[Miranda and Custodial Interrogation]] — *Key — Anchor*

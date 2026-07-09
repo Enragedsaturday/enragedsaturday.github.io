@@ -52,7 +52,7 @@ Whether OSHA may constitutionally authorize warrantless inspections of the nonpu
 ## Rule
 No. "The Warrant Clause of the Fourth Amendment protects commercial buildings as well as private homes." — 436 U.S. at 311. ^pin-311
 
-Following *Camara* and [[See v. City of Seattle]], "unless some recognized exception to the warrant requirement applies, *See v. Seattle* would require a warrant to conduct the inspection sought in this case." — *Id.* at 313. ^pin-313
+Following *[[Camara v. Municipal Court|Camara]]* and [[See v. City of Seattle]], "unless some recognized exception to the warrant requirement applies, *See v. Seattle* would require a warrant to conduct the inspection sought in this case." — *Id.* at 313. ^pin-313
 
 The Secretary's enforcement concerns "do not suffice to justify warrantless inspections under OSHA or vitiate the general constitutional requirement that for a search to be reasonable a warrant must be obtained." — *Id.* at 324. ^pin-324
 
@@ -66,7 +66,7 @@ OSHA's warrantless-inspection provision was unconstitutional; the declaratory ju
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.
-- No negative treatment. *Barlow's* confirms that ordinary workplaces enjoy the *Camara*/*See* administrative-warrant rule, while expressly preserving the **pervasively-regulated-industry exception** later applied in [[Donovan v. Dewey]] (mines), [[United States v. Biswell]] (firearms), and *New York v. Burger* (auto dismantlers).
+- No negative treatment. *Barlow's* confirms that ordinary workplaces enjoy the *[[Camara v. Municipal Court|Camara]]*/*See* administrative-warrant rule, while expressly preserving the **pervasively-regulated-industry exception** later applied in [[Donovan v. Dewey]] (mines), [[United States v. Biswell]] (firearms), and *[[New York v. Burger]]* (auto dismantlers).
 
 ## Appears on
 - [[Special Needs and Administrative Searches]] — *Progeny (workplace inspections)*

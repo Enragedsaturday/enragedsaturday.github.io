@@ -60,7 +60,7 @@ lake:
 Officer Nichols, in an unmarked car, noticed Marcus Thornton slow down to avoid driving next to him, and a license check showed the tags did not match the vehicle. Before Nichols could pull him over, Thornton parked and got out of his car. Nichols stopped him, obtained consent to a patdown, and found drugs in Thornton's pockets. Nichols arrested Thornton, handcuffed him, placed him in the patrol car, and then searched the passenger compartment of Thornton's vehicle, finding a handgun under the driver's seat. Thornton argued [[New York v. Belton]] did not apply because he was already outside the car when the officer first made contact.
 
 ## Issue
-Whether *Belton*'s rule — allowing a search of a vehicle's passenger compartment incident to the lawful custodial arrest of an occupant — applies when the officer does not initiate contact until after the arrestee has stepped out of the vehicle (a "recent occupant").
+Whether *[[New York v. Belton|Belton]]*'s rule — allowing a search of a vehicle's passenger compartment incident to the lawful custodial arrest of an occupant — applies when the officer does not initiate contact until after the arrestee has stepped out of the vehicle (a "recent occupant").
 
 ## Rule
 Yes. "[W]e . . . conclude that *Belton* governs even when an officer does not make contact until the person arrested has left the vehicle." — 541 U.S. at 617. ^pin-617
@@ -70,14 +70,14 @@ A "recent occupant" does not lose that status by having exited first: "[W]hile a
 Thus: "So long as an arrestee is the sort of 'recent occupant' of a vehicle such as petitioner was here, officers may search that vehicle incident to the arrest." — *Id.* at 623–624. ^pin-623
 
 ## Application
-Thornton had just driven and parked the car, stepping out only moments before Officer Nichols approached him, so he was a "recent occupant." The officer-safety and evidence-preservation concerns underlying *Belton* were no less present because Thornton exited before contact — the situation was equally volatile. A "contact initiation" rule turning on whether the suspect was in or out of the car when the officer first signaled would invite exactly the ad hoc, fact-specific inquiries *Belton* sought to avoid. The warrantless search of the passenger compartment incident to Thornton's arrest was therefore permissible, and the handgun was admissible.
+Thornton had just driven and parked the car, stepping out only moments before Officer Nichols approached him, so he was a "recent occupant." The officer-safety and evidence-preservation concerns underlying *[[New York v. Belton|Belton]]* were no less present because Thornton exited before contact — the situation was equally volatile. A "contact initiation" rule turning on whether the suspect was in or out of the car when the officer first signaled would invite exactly the ad hoc, fact-specific inquiries *[[New York v. Belton|Belton]]* sought to avoid. The warrantless search of the passenger compartment incident to Thornton's arrest was therefore permissible, and the handgun was admissible.
 
 ## Conclusion
-*Belton* applies to recent occupants; the vehicle search incident to Thornton's arrest was valid, and the judgment was affirmed.
+*[[New York v. Belton|Belton]]* applies to recent occupants; the vehicle search incident to Thornton's arrest was valid, and the judgment was affirmed.
 
 ## Treatment & subsequent history
 - **Status:** limited *(as of 2026-06-30)* — **Binding — SCOTUS**.
-- **Limited by [[Arizona v. Gant]] (2009):** *Gant* cabined the broad, automatic vehicle-search rule of *Belton* and *Thornton*. After *Gant*, a vehicle search incident to a recent occupant's arrest is permitted only when (1) the arrestee is unsecured and within reaching distance of the passenger compartment at the time of the search, or (2) it is reasonable to believe the vehicle contains evidence of the offense of arrest. On *Thornton*'s own facts the search would fail *Gant*'s first prong (Thornton was handcuffed in the patrol car) but could be analyzed under the second.
+- **Limited by [[Arizona v. Gant]] (2009):** *[[Arizona v. Gant|Gant]]* cabined the broad, automatic vehicle-search rule of *[[New York v. Belton|Belton]]* and *Thornton*. After *[[Arizona v. Gant|Gant]]*, a vehicle search incident to a recent occupant's arrest is permitted only when (1) the arrestee is unsecured and within reaching distance of the passenger compartment at the time of the search, or (2) it is reasonable to believe the vehicle contains evidence of the offense of arrest. On *Thornton*'s own facts the search would fail *[[Arizona v. Gant|Gant]]*'s first prong (Thornton was handcuffed in the patrol car) but could be analyzed under the second.
 
 ## Appears on
 - [[SIA Vehicles]] — *Key — Progeny / Refinement*

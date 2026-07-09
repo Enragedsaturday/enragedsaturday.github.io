@@ -50,7 +50,7 @@ The only eyewitness to a Western Union armed robbery, manager Joseph David, view
 Whether a pretrial identification procedure can be so unnecessarily suggestive and conducive to mistaken identification that admitting the resulting identification denies the defendant due process of law.
 
 ## Rule
-Yes. Even apart from the right-to-counsel rule of *Wade*/*Gilbert* (inapplicable to pre-1967 lineups), "the conduct of identification procedures may be 'so unnecessarily suggestive and conducive to irreparable mistaken identification' as to be a denial of due process of law." — 394 U.S. at 442. ^pin-442
+Yes. Even apart from the right-to-counsel rule of *[[United States v. Wade|Wade]]*/*[[Gilbert v. California|Gilbert]]* (inapplicable to pre-1967 lineups), "the conduct of identification procedures may be 'so unnecessarily suggestive and conducive to irreparable mistaken identification' as to be a denial of due process of law." — 394 U.S. at 442. ^pin-442
 
 Applying that standard: "The suggestive elements in this identification procedure made it all but inevitable that David would identify petitioner whether or not he was in fact 'the man.' In effect, the police repeatedly said to the witness, 'This is the man.' ... This procedure so undermined the reliability of the eyewitness identification as to violate due process." — *Id.* at 443. ^pin-443
 

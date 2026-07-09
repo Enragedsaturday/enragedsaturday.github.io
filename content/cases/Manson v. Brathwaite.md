@@ -52,7 +52,7 @@ Whether due process requires a [[Common Legal Terms#per-se|per se]] rule excludi
 ## Rule
 No per se exclusion; reliability governs. "reliability is the linchpin in determining the admissibility of identification testimony for both pre- and post-*Stovall* confrontations." — 432 U.S. at 114. ^pin-114
 
-The reliability factors, drawn from *Neil v. Biggers*, are "the opportunity of the witness to view the criminal at the time of the crime, the witness' degree of attention, the accuracy of his prior description of the criminal, the level of certainty demonstrated at the confrontation, and the time between the crime and the confrontation. Against these factors is to be weighed the corrupting effect of the suggestive identification itself." — *Id.* ^pin-114a
+The reliability factors, drawn from *[[Neil v. Biggers]]*, are "the opportunity of the witness to view the criminal at the time of the crime, the witness' degree of attention, the accuracy of his prior description of the criminal, the level of certainty demonstrated at the confrontation, and the time between the crime and the confrontation. Against these factors is to be weighed the corrupting effect of the suggestive identification itself." — *Id.* ^pin-114a
 
 ## Application
 Even assuming the single-photograph display was suggestive, Glover's identification was reliable under the *Biggers* factors: as a trained officer he had a good, close opportunity to view the seller in daylight, paid careful attention, gave an accurate description, was certain in identifying the photograph, and made the identification only days after the crime. Weighed against the limited corrupting effect of the procedure, those indicia of reliability made the identification admissible.

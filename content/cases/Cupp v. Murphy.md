@@ -50,7 +50,7 @@ Murphy voluntarily came to the police station after his estranged wife was found
 Whether police with probable cause, but who have not made a formal arrest, may take a very limited, warrantless sample of readily destructible evidence (fingernail scrapings) from a suspect.
 
 ## Rule
-Yes, on a narrowed *Chimel* rationale. The taking of the scrapings "went beyond mere 'physical characteristics . . . constantly exposed to the public'" and was a search subject to the Fourth Amendment, but: "The rationale of *Chimel*, in these circumstances, justified the police in subjecting him to the very limited search necessary to preserve the highly evanescent evidence they found under his fingernails." — 412 U.S. at 296. ^pin-296
+Yes, on a narrowed *[[Chimel v. California|Chimel]]* rationale. The taking of the scrapings "went beyond mere 'physical characteristics . . . constantly exposed to the public'" and was a search subject to the Fourth Amendment, but: "The rationale of *Chimel*, in these circumstances, justified the police in subjecting him to the very limited search necessary to preserve the highly evanescent evidence they found under his fingernails." — 412 U.S. at 296. ^pin-296
 
 The Court expressly did **not** authorize a full search: "we do not hold that a full *Chimel* search would have been justified in this case without a formal arrest and without a warrant." — *Id.* ^pin-296b
 

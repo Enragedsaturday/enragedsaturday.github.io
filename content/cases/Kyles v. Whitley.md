@@ -47,7 +47,7 @@ lake:
 Kyles was convicted of murder and sentenced to death after a trial at which the State withheld several pieces of favorable evidence — inconsistent eyewitness statements, the changing accounts of a key informant, and other impeachment and [[Brady and Giglio|exculpatory]] material, some of which was known only to the police. On [[Common Legal Terms#habeas-corpus|habeas]] review he argued the cumulative effect of the suppressed evidence undermined confidence in the verdict.
 
 ## Issue
-Whether *Brady* materiality is assessed item-by-item or by the cumulative effect of all suppressed favorable evidence, and whether the prosecutor's disclosure duty extends to favorable evidence known only to the police.
+Whether *[[Brady v. Maryland|Brady]]* materiality is assessed item-by-item or by the cumulative effect of all suppressed favorable evidence, and whether the prosecutor's disclosure duty extends to favorable evidence known only to the police.
 
 ## Rule
 Materiality is cumulative, and the prosecutor's duty reaches the police: the State's "obligation under *Brady* v. *Maryland* . . . to disclose evidence favorable to the defense, turns on the cumulative effect of all such evidence suppressed by the government, and we hold that the prosecutor remains responsible for gauging that effect regardless of any failure by the police to bring favorable evidence to the prosecutor's attention." — 514 U.S. at 421. ^pin-421
@@ -58,7 +58,7 @@ The materiality standard is confidence-based, not a sufficiency or more-likely-t
 The favorable evidence the State withheld in Kyles's case — the inconsistent and evolving statements of the eyewitnesses and the informant, and impeachment material some of which was known only to the investigating police — had to be considered collectively, with the prosecutor charged with knowledge of what the police knew. Viewed cumulatively, the suppressed evidence put the whole case in such a different light as to undermine confidence in the verdict, so its nondisclosure was material and Kyles was entitled to a new trial.
 
 ## Conclusion
-The suppression of the cumulative favorable evidence violated *Brady*; the conviction and death sentence were reversed and the case [[Reading and Citing Cases#on-remand|remanded]] for a new trial.
+The suppression of the cumulative favorable evidence violated *[[Brady v. Maryland|Brady]]*; the conviction and death sentence were reversed and the case [[Reading and Citing Cases#on-remand|remanded]] for a new trial.
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.

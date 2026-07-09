@@ -44,7 +44,7 @@ related:
 **Common pitfalls.**
 - **Confusing the two with each other or with [[Fruits and Attenuation|attenuation]].** Independent source = actually obtained cleanly; inevitable discovery = would have been; [[Fruits and Attenuation|attenuation]] = the taint faded.
 - **Accepting a speculative "we could have gotten a warrant."** The lawful route must be genuine, not a hypothetical the police never pursued.
-- **Missing the *Murray* prompting limit.** If the illegal entry prompted the warrant application, independent source fails.
+- **Missing the *[[Murray v. United States|Murray]]* prompting limit.** If the illegal entry prompted the warrant application, independent source fails.
 
 ## Lower-court developments
 
@@ -52,7 +52,7 @@ The core SCOTUS rules are settled; the live circuit question is **how much of a 
 
 - **Inevitable discovery applied — *[[United States v. Soto-Peguero|United States v. Soto-Peguero]]* (1st Cir. 2020).** Admission affirmed because the agent would have sought and obtained a warrant regardless of the illegality. 978 F.3d 13, 21. **Binding in-circuit — 1st Cir.**
 - **Inevitable discovery failed — *[[United States v. Neugin|United States v. Neugin]]* (10th Cir. 2020).** Reversed a denial of suppression: the chain to discovery (arrest, then impound, then inventory) was too speculative; inevitable discovery demands a real lawful route, not a hypothetical one. 958 F.3d 924, 933–34. **Binding in-circuit — 10th Cir.**
-- **Independent source, state illustration — *[[State v. Mitcham|State v. Mitcham]]* (Ariz. 2024).** Treats the independent-source exception as admitting evidence also obtained independently of the illegality; a persuasive illustration of the federal *Murray* principle, not the rule itself. 559 P.3d 1099, ¶ 34. **Persuasive — state, illustrative.**
+- **Independent source, state illustration — *[[State v. Mitcham|State v. Mitcham]]* (Ariz. 2024).** Treats the independent-source exception as admitting evidence also obtained independently of the illegality; a persuasive illustration of the federal *[[Murray v. United States|Murray]]* principle, not the rule itself. 559 P.3d 1099, ¶ 34. **Persuasive — state, illustrative.**
 
 **The active-pursuit split (whether an independent investigation must already be underway).** The circuits divide over whether inevitable discovery requires that the police were *already actively pursuing* a lawful line of investigation when the illegality occurred, or whether it is enough that the evidence *would* inevitably have been found by lawful means.
 

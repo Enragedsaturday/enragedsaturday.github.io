@@ -54,7 +54,7 @@ Whether the Government's acquisition of historical cell-site records that chroni
 ## Rule
 Yes. "Whether the Government employs its own surveillance technology as in *Jones* or leverages the technology of a wireless carrier, we hold that an individual maintains a legitimate expectation of privacy in the record of his physical movements as captured through CSLI." — *Carpenter v. United States*, 585 U.S. 296 (2018) (slip op., at 11). ^pin-op11
 
-Because that acquisition is a search, the Government must generally obtain a warrant supported by probable cause before acquiring such records. The Court declined to extend the third-party doctrine of *Smith v. Maryland* and *United States v. Miller* to the "qualitatively different category of cell-site records."
+Because that acquisition is a search, the Government must generally obtain a warrant supported by probable cause before acquiring such records. The Court declined to extend the third-party doctrine of *[[Smith v. Maryland]]* and *[[United States v. Miller]]* to the "qualitatively different category of cell-site records."
 
 ## Application
 The Government accessed 127 days of Carpenter's CSLI without a warrant, relying instead on a court order issued on less than probable cause. Because that data provided an all-encompassing, retrospective record of his whereabouts — "an intimate window into a person's life" — its acquisition invaded a legitimate expectation of privacy and was a search; on these facts the warrantless acquisition could not be justified by the third-party doctrine.

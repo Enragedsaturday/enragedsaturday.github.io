@@ -44,7 +44,7 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-Graham, a diabetic, asked a friend to drive him to a store for orange juice to counter an insulin reaction. Seeing Graham hurry in and out, Officer Connor made an investigative stop. During the encounter officers handcuffed Graham, disregarded explanations about his diabetic condition, and used force that caused injuries. Graham sued under § 1983 for excessive force. The lower courts analyzed the claim under a substantive-due-process "good faith / malicious and sadistic" test drawn from *Johnson v. Glick*.
+Graham, a diabetic, asked a friend to drive him to a store for orange juice to counter an insulin reaction. Seeing Graham hurry in and out, Officer Connor made an investigative stop. During the encounter officers handcuffed Graham, disregarded explanations about his diabetic condition, and used force that caused injuries. Graham sued under § 1983 for excessive force. The lower courts analyzed the claim under a substantive-due-process "good faith / malicious and sadistic" test drawn from *[[Johnson v. Glick]]*.
 
 ## Issue
 What constitutional standard governs a § 1983 claim that law enforcement officers used excessive force in the course of an arrest, investigatory stop, or other seizure.
@@ -57,7 +57,7 @@ Reasonableness is judged objectively and from the officer's on-scene vantage: "T
 The inquiry weighs the facts of each case, "including the severity of the crime at issue, whether the suspect poses an immediate threat to the safety of the officers or others, and whether he is actively resisting arrest or attempting to evade arrest by flight." — *Id.* ^pin-396a
 
 ## Application
-Graham's claim arose from an investigatory stop and the force used during it — a Fourth Amendment "seizure" — so it had to be assessed under the objective-reasonableness standard rather than the *Johnson v. Glick* due-process test the Court of Appeals applied. Because the lower courts used a standard turning on the officers' subjective good or bad faith, the case was [[Reading and Citing Cases#on-remand|remanded]] for analysis under the proper Fourth Amendment framework.
+Graham's claim arose from an investigatory stop and the force used during it — a Fourth Amendment "seizure" — so it had to be assessed under the objective-reasonableness standard rather than the *[[Johnson v. Glick]]* due-process test the Court of Appeals applied. Because the lower courts used a standard turning on the officers' subjective good or bad faith, the case was [[Reading and Citing Cases#on-remand|remanded]] for analysis under the proper Fourth Amendment framework.
 
 ## Conclusion
 Excessive-force claims arising from a seizure are governed by Fourth Amendment objective reasonableness; the judgment applying a substantive-due-process test was [[Reading and Citing Cases#vacated|vacated]] and [[Reading and Citing Cases#on-remand|remanded]].

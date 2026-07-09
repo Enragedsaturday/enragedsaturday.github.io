@@ -66,7 +66,7 @@ Whether officers who abuse their authority act "under color of" state law for pu
 The Court further held that the § 1983 federal remedy is supplementary to any state remedy and need not be sought and refused before the federal action is brought.
 
 ## Application
-The Chicago officers acted under [[Section 1983 Liability and Qualified Immunity|color of state law]] when they used their police authority to break into and ransack the Monroes' home and detain Mr. Monroe, even though their conduct also violated state law. The Monroes could therefore sue the officers under § 1983 without first pursuing a state remedy. (The Court also held that the City of Chicago was not a suable "person" under § 1983 — a holding later overruled by *Monell*.)
+The Chicago officers acted under [[Section 1983 Liability and Qualified Immunity|color of state law]] when they used their police authority to break into and ransack the Monroes' home and detain Mr. Monroe, even though their conduct also violated state law. The Monroes could therefore sue the officers under § 1983 without first pursuing a state remedy. (The Court also held that the City of Chicago was not a suable "person" under § 1983 — a holding later overruled by *[[Monell v. Department of Social Services|Monell]]*.)
 
 ## Conclusion
 Reversed as to the individual officers; § 1983 reached their misuse of authority under [[Section 1983 Liability and Qualified Immunity|color of state law]].

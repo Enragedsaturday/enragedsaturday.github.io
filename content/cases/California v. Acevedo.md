@@ -62,7 +62,7 @@ The warrantless search of the container was permissible; the judgment suppressin
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.
-- No negative treatment of *Acevedo*. It **overruled** *Arkansas v. Sanders* and replaced the prior container/vehicle distinction with one rule, building on [[Carroll v. United States]] and [[United States v. Ross]].
+- No negative treatment of *Acevedo*. It **overruled** *[[Arkansas v. Sanders]]* and replaced the prior container/vehicle distinction with one rule, building on [[Carroll v. United States]] and [[United States v. Ross]].
 
 ## Appears on
 - [[Automobile Exception]] — *Key — Progeny / Refinement*

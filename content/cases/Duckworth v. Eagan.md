@@ -47,15 +47,15 @@ lake:
 Before questioning Eagan about a stabbing, Indiana police read him a Miranda waiver form that advised him of his right to remain silent, his right to a lawyer before and during questioning, and that a lawyer would be appointed for him "if and when you go to court." Eagan waived and made incriminating statements. The Seventh Circuit held the "if and when you go to court" language rendered the warnings constitutionally deficient.
 
 ## Issue
-Whether [[Miranda and Custodial Interrogation|Miranda warnings]] that inform a suspect a lawyer will be appointed "if and when you go to court" are inadequate under *Miranda v. Arizona*.
+Whether [[Miranda and Custodial Interrogation|Miranda warnings]] that inform a suspect a lawyer will be appointed "if and when you go to court" are inadequate under *[[Miranda v. Arizona]]*.
 
 ## Rule
-No. Warnings are measured for whether they reasonably convey the *Miranda* rights, not for verbatim precision. "Reviewing courts therefore need not examine *Miranda* warnings as if construing a will or defining the terms of an easement. The inquiry is simply whether the warnings reasonably 'conve[y] to [a suspect] his rights as required by *Miranda*.'" — 492 U.S. at 203. ^pin-203
+No. Warnings are measured for whether they reasonably convey the *[[Miranda v. Arizona|Miranda]]* rights, not for verbatim precision. "Reviewing courts therefore need not examine *Miranda* warnings as if construing a will or defining the terms of an easement. The inquiry is simply whether the warnings reasonably 'conve[y] to [a suspect] his rights as required by *Miranda*.'" — 492 U.S. at 203. ^pin-203
 
-*Miranda* "does not require that attorneys be producible on call," only that the suspect be told he has the right to counsel before and during questioning and that counsel will be appointed if he cannot afford one. — *Id.* at 204. ^pin-204
+*[[Miranda v. Arizona|Miranda]]* "does not require that attorneys be producible on call," only that the suspect be told he has the right to counsel before and during questioning and that counsel will be appointed if he cannot afford one. — *Id.* at 204. ^pin-204
 
 ## Application
-Read in their totality, the warnings given Eagan touched all the bases *Miranda* requires: they told him of the right to counsel "before [the police] ask[ed] [him] questions" and the right to "stop answering at any time until [he] talk[ed] to a lawyer." The "if and when you go to court" advice accurately described Indiana's procedure for appointing counsel and merely anticipated a suspect's natural question about *when* counsel would be provided; it did not (as in the hypothetical condemned in *Prysock*) tie the right to counsel to a point *after* interrogation. "We hold that the initial warnings given to respondent, in their totality, satisfied *Miranda*." — *Id.* at 205. ^pin-205
+Read in their totality, the warnings given Eagan touched all the bases *[[Miranda v. Arizona|Miranda]]* requires: they told him of the right to counsel "before [the police] ask[ed] [him] questions" and the right to "stop answering at any time until [he] talk[ed] to a lawyer." The "if and when you go to court" advice accurately described Indiana's procedure for appointing counsel and merely anticipated a suspect's natural question about *when* counsel would be provided; it did not (as in the hypothetical condemned in *[[California v. Prysock|Prysock]]*) tie the right to counsel to a point *after* interrogation. "We hold that the initial warnings given to respondent, in their totality, satisfied *Miranda*." — *Id.* at 205. ^pin-205
 
 ## Conclusion
 The warnings were adequate and the statements properly admitted. The Seventh Circuit's grant of [[Common Legal Terms#habeas-corpus|habeas]] relief was reversed.

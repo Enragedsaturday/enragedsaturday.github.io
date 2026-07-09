@@ -57,14 +57,14 @@ The custody test is objective and had not incorporated age: "Our opinions applyi
 "[T]he custody inquiry states an objective rule designed to give clear guidance to the police, while consideration of a suspect's individual characteristics — including his age — could be viewed as creating a subjective inquiry." — *Id.* at 668. ^pin-668
 
 ## Application
-The objective facts cut both ways — Alvarado came to a voluntary, eventually-released interview (like *Mathiason*), but it was two hours long, at the station, and he was brought by his guardians and not told he was free to leave. Given those "differing indications," the state court's no-custody conclusion fit within the Court's prior decisions and was not objectively unreasonable. The Ninth Circuit erred by treating the omission of Alvarado's age and inexperience as an unreasonable failure to extend clearly established law, when the Court's cases had never made those individual traits part of the objective custody test.
+The objective facts cut both ways — Alvarado came to a voluntary, eventually-released interview (like *[[Oregon v. Mathiason|Mathiason]]*), but it was two hours long, at the station, and he was brought by his guardians and not told he was free to leave. Given those "differing indications," the state court's no-custody conclusion fit within the Court's prior decisions and was not objectively unreasonable. The Ninth Circuit erred by treating the omission of Alvarado's age and inexperience as an unreasonable failure to extend clearly established law, when the Court's cases had never made those individual traits part of the objective custody test.
 
 ## Conclusion
 The state court reasonably applied clearly established law; AEDPA barred relief. The judgment of the Court of Appeals was reversed.
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.
-- **Juvenile qualifier (field-relevant):** [[J.D.B. v. North Carolina]], 564 U.S. 261 (2011), held that a child's age **is** part of the Miranda custody analysis when it was known to the officer or objectively apparent. *J.D.B.* **distinguished** *Alvarado* as a deferential AEDPA holding that did not decide, on de novo review, whether age is categorically irrelevant. *Alvarado*'s objective-custody rule still governs adults; for juveniles, *J.D.B.* now requires accounting for age.
+- **Juvenile qualifier (field-relevant):** [[J.D.B. v. North Carolina]], 564 U.S. 261 (2011), held that a child's age **is** part of the Miranda custody analysis when it was known to the officer or objectively apparent. *[[J.D.B. v. North Carolina|J.D.B.]]* **distinguished** *Alvarado* as a deferential AEDPA holding that did not decide, on de novo review, whether age is categorically irrelevant. *Alvarado*'s objective-custody rule still governs adults; for juveniles, *[[J.D.B. v. North Carolina|J.D.B.]]* now requires accounting for age.
 - The objective custody framework appears in [[California v. Beheler]] and [[Thompson v. Keohane]], in the [[Miranda v. Arizona]] line.
 
 ## Appears on

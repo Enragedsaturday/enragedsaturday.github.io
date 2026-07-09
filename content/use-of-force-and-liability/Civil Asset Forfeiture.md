@@ -38,7 +38,7 @@ related:
 
 ### The innocent owner
 
-**The Constitution does not require an innocent-owner defense.** An owner's **lack of knowledge** that her property was used for crime does **not**, by itself, bar forfeiture. *[[Bennis v. Michigan|Bennis v. Michigan]]*, 516 U.S. 442 (1996) (forfeiting a wife's interest in a car her husband used to solicit prostitution). Many forfeiture statutes now **provide** an innocent-owner defense (federal forfeiture does, by statute), but *Bennis* holds that the **Constitution** does not compel one. The teaching point: the protection an innocent owner enjoys usually comes from the **statute**, and its scope is a statutory question, not a constitutional guarantee.
+**The Constitution does not require an innocent-owner defense.** An owner's **lack of knowledge** that her property was used for crime does **not**, by itself, bar forfeiture. *[[Bennis v. Michigan|Bennis v. Michigan]]*, 516 U.S. 442 (1996) (forfeiting a wife's interest in a car her husband used to solicit prostitution). Many forfeiture statutes now **provide** an innocent-owner defense (federal forfeiture does, by statute), but *[[Bennis v. Michigan|Bennis]]* holds that the **Constitution** does not compel one. The teaching point: the protection an innocent owner enjoys usually comes from the **statute**, and its scope is a statutory question, not a constitutional guarantee.
 
 **Common pitfalls.**
 - **Assuming a conviction is required.** Civil in rem forfeiture proceeds against the **property** and needs no conviction of the owner.

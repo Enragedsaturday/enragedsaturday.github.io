@@ -28,9 +28,9 @@ The Amendment secures "[t]he right of the people to be secure in their persons, 
 1. **Was there government action?** The Amendment restrains the government, not private parties. A private search becomes a Fourth Amendment event only when officials instigate, direct, or join it. That threshold, with the private-search and foreign-search limits, is on [[Private and Foreign Searches]].
 2. **Was a protected interest involved, and did a search or a seizure occur?** A **search** is either a physical intrusion on a protected area to gather information or an invasion of a [[Reasonable Expectation of Privacy|reasonable expectation of privacy]] ([[Two Definitions of Search]]); the home's [[Curtilage]] is protected, while [[Abandonment|abandoned property and open fields]] are not. A **seizure of property** is a meaningful interference with possession ([[Seizure of Property]]); a **seizure of the person** is a restraint on movement by physical force or submission to a show of authority ([[Seizure of the Person]]). If neither occurred, the analysis ends here.
 3. **Does this claimant have standing?** Fourth Amendment rights are personal: a claimant may challenge only an invasion of *their own* protected interest, never a third party's. See [[Standing to Challenge a Search]].
-4. **Was the government's action reasonable?** Reasonableness is the touchstone, and it is a balance of the government's need against the intrusion the action entails. *Camara v. Municipal Court*, 387 U.S. 523, 536–37 (1967); *Terry v. Ohio*, 392 U.S. 1 (1968). Operationally it is satisfied through **C.R.E.W.**: **C**onsent, a **R**ecognized **E**xception, or a **W**arrant. See [[CREW]] and the warrant-exceptions pages.
+4. **Was the government's action reasonable?** Reasonableness is the touchstone, and it is a balance of the government's need against the intrusion the action entails. *[[Camara v. Municipal Court]]*, 387 U.S. 523, 536–37 (1967); *[[Terry v. Ohio]]*, 392 U.S. 1 (1968). Operationally it is satisfied through **C.R.E.W.**: **C**onsent, a **R**ecognized **E**xception, or a **W**arrant. See [[CREW]] and the warrant-exceptions pages.
 
-Even a slight further intrusion can be its own search: in *Arizona v. Hicks*, moving stereo equipment a few inches to read a serial number was a new search that required probable cause. *Arizona v. Hicks*, 480 U.S. 321, 325 (1987). When an unreasonable search or seizure yields evidence, the remedy is suppression under [[The Exclusionary Rule]], and only a claimant with standing can invoke it.
+Even a slight further intrusion can be its own search: in *[[Arizona v. Hicks]]*, moving stereo equipment a few inches to read a serial number was a new search that required probable cause. *[[Arizona v. Hicks]]*, 480 U.S. 321, 325 (1987). When an unreasonable search or seizure yields evidence, the remedy is suppression under [[The Exclusionary Rule]], and only a claimant with standing can invoke it.
 
 **The steps at a glance.**
 
@@ -49,7 +49,7 @@ The same threshold questions are being re-litigated at the digital frontier, whe
 - **Skipping the threshold.** If no search or seizure occurred, there is nothing to justify and no suppression remedy. Work the sequence in order.
 - **Asserting a third party's rights.** "The search was illegal" is not the same as "*this* claimant can suppress." Standing requires the claimant's own protected interest to have been invaded.
 - **Treating private-party evidence as automatically clean.** It is clean only if the actor was genuinely private; government instigation, direction, or participation makes the private party a state actor ([[Private and Foreign Searches]]).
-- **Forgetting that small intrusions count.** Moving an object a few inches to read a serial number is a search (*Arizona v. Hicks*).
+- **Forgetting that small intrusions count.** Moving an object a few inches to read a serial number is a search (*[[Arizona v. Hicks]]*).
 
 ## Visual
 

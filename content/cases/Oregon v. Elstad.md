@@ -55,7 +55,7 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-Officers came to Elstad's home with a warrant for his arrest in a burglary. Before any *Miranda* warnings, an officer said he believed Elstad was involved, and Elstad admitted, "Yes, I was there." About an hour later at the station, he was given full *Miranda* warnings, waived his rights, and gave a complete written confession.
+Officers came to Elstad's home with a warrant for his arrest in a burglary. Before any *[[Miranda v. Arizona|Miranda]]* warnings, an officer said he believed Elstad was involved, and Elstad admitted, "Yes, I was there." About an hour later at the station, he was given full *[[Miranda v. Arizona|Miranda]]* warnings, waived his rights, and gave a complete written confession.
 
 ## Issue
 Whether an initial, voluntary but un-Mirandized admission taints a later, properly warned confession.
@@ -68,14 +68,14 @@ No, absent coercion. "[A]bsent deliberately coercive or improper tactics in obta
 **As applied to deliberate "question-first" two-step interrogations, this rule was later limited by [[Missouri v. Seibert]]** (see Treatment).
 
 ## Application
-Elstad's initial "Yes, I was there" was voluntary and not the product of coercive tactics, so it did not create a presumption that his later station-house confession was compelled. Once he received and waived his *Miranda* rights, his subsequent written confession was admissible. The Court reversed the suppression of the second statement.
+Elstad's initial "Yes, I was there" was voluntary and not the product of coercive tactics, so it did not create a presumption that his later station-house confession was compelled. Once he received and waived his *[[Miranda v. Arizona|Miranda]]* rights, his subsequent written confession was admissible. The Court reversed the suppression of the second statement.
 
 ## Conclusion
 The properly warned confession was admissible despite the earlier unwarned admission; the Oregon Court of Appeals' suppression order was reversed.
 
 ## Treatment & subsequent history
 - **Status:** limited *(as of 2026-06-30)* — **Binding — SCOTUS**.
-- **Limited as applied by [[Missouri v. Seibert]] (2004)**: where officers deliberately use a "question-first, warn-later" two-step technique to undermine *Miranda*, the midstream warnings may be ineffective and the second statement inadmissible. *Elstad* continues to govern the ordinary case of an inadvertent or good-faith failure to warn followed by a properly warned statement. *Elstad* also relies on [[Miranda v. Arizona]] as a prophylactic, not constitutional, rule — a characterization later qualified by [[Dickerson v. United States]].
+- **Limited as applied by [[Missouri v. Seibert]] (2004)**: where officers deliberately use a "question-first, warn-later" two-step technique to undermine *[[Miranda v. Arizona|Miranda]]*, the midstream warnings may be ineffective and the second statement inadmissible. *Elstad* continues to govern the ordinary case of an inadvertent or good-faith failure to warn followed by a properly warned statement. *Elstad* also relies on [[Miranda v. Arizona]] as a prophylactic, not constitutional, rule — a characterization later qualified by [[Dickerson v. United States]].
 
 ## Appears on
 - [[Miranda Waiver and Invocation]] — *Key — Progeny / Refinement*

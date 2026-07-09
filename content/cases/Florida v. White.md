@@ -43,7 +43,7 @@ lake:
 *526 U.S. 559 (1999)* · U.S. Supreme Court · **Binding — SCOTUS** · Treatment: **good** *(as of 2026-06-30)*
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
-> **Identity note:** distinct stem from *Alabama v. White*, 496 U.S. 325 (1990), and from the page-less, UNVERIFIABLE "United States v. White" stolen-vehicle caption (S4 collisions ledger, Tier C). No year-suffix needed; `[[Florida v. White]]` resolves here.
+> **Identity note:** distinct stem from *[[Alabama v. White]]*, 496 U.S. 325 (1990), and from the page-less, UNVERIFIABLE "United States v. White" stolen-vehicle caption (S4 collisions ledger, Tier C). No year-suffix needed; `[[Florida v. White]]` resolves here.
 
 ## Background
 Police developed probable cause that Tyvessel White was using his car to deliver cocaine, making the car subject to forfeiture under the Florida Contraband Forfeiture Act. Months later, after arresting White at work on an unrelated charge and obtaining his keys, officers seized the car from his employer's parking lot without a warrant. An inventory search of the seized car turned up cocaine. The Florida Supreme Court held the warrantless seizure invalid.
@@ -57,14 +57,14 @@ No. Probable cause that the vehicle itself is forfeitable contraband supports a 
 Because the car was seized from a public area, no privacy was invaded: "Based on the relevant history and our prior precedent, we therefore conclude that the Fourth Amendment did not require a warrant to seize respondent's automobile in these circumstances." — *Id.* at 566. ^pin-566
 
 ## Application
-Although police lacked probable cause to believe the car *contained* contraband at the time of seizure, they had probable cause to believe the car *itself* was contraband under the forfeiture statute, drawn from White's earlier use of it to deliver narcotics. The seizure took place in a public place — the employer's parking lot — so, like the warrantless arrest in *Watson* and the seizure in *G. M. Leasing Corp.*, it involved no invasion of privacy and required no warrant.
+Although police lacked probable cause to believe the car *contained* contraband at the time of seizure, they had probable cause to believe the car *itself* was contraband under the forfeiture statute, drawn from White's earlier use of it to deliver narcotics. The seizure took place in a public place — the employer's parking lot — so, like the warrantless arrest in *[[United States v. Watson|Watson]]* and the seizure in *G. M. Leasing Corp.*, it involved no invasion of privacy and required no warrant.
 
 ## Conclusion
 Reversed. The warrantless seizure of a car from a public place, on probable cause that the car is forfeitable contraband, did not violate the Fourth Amendment.
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.
-- No negative treatment. *White* extends the *Carroll* line — drawn on in [[Carroll v. United States]], [[California v. Carney]], and the forfeiture/custody holding of [[Cooper v. California]] — from searching for contraband to seizing the contraband vehicle itself. The [[Common Legal Terms#concurring-opinion|concurrence]] cautions the holding is not a blanket license to seize anything a legislature labels "contraband."
+- No negative treatment. *[[Alabama v. White|White]]* extends the *[[Carroll v. United States|Carroll]]* line — drawn on in [[Carroll v. United States]], [[California v. Carney]], and the forfeiture/custody holding of [[Cooper v. California]] — from searching for contraband to seizing the contraband vehicle itself. The [[Common Legal Terms#concurring-opinion|concurrence]] cautions the holding is not a blanket license to seize anything a legislature labels "contraband."
 
 ## Appears on
 - [[Automobile Exception]] — *Related (cross-doctrine)*

@@ -44,7 +44,7 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-A. Ernest Fitzgerald, a former Air Force management analyst, sued senior aides to President Nixon, claiming he had been unlawfully discharged in retaliation for his whistleblowing testimony to Congress. The aides asserted [[Qualified Immunity|qualified immunity]]. (The suit was a *Bivens* action against federal officials, but the immunity standard the Court announced governs § 1983 suits against state officials as well.) The Court used the case to re-examine the standard for [[Qualified Immunity|qualified immunity]].
+A. Ernest Fitzgerald, a former Air Force management analyst, sued senior aides to President Nixon, claiming he had been unlawfully discharged in retaliation for his whistleblowing testimony to Congress. The aides asserted [[Qualified Immunity|qualified immunity]]. (The suit was a *[[Bivens v. Six Unknown Named Agents|Bivens]]* action against federal officials, but the immunity standard the Court announced governs § 1983 suits against state officials as well.) The Court used the case to re-examine the standard for [[Qualified Immunity|qualified immunity]].
 
 ## Issue
 What standard governs the [[Qualified Immunity|qualified immunity]] of government officials performing discretionary functions when they are sued for civil damages.

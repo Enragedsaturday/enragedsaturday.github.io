@@ -44,21 +44,21 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-A detective tried to question Shatzer, then a prison inmate, about allegations he had abused his son; Shatzer invoked his *Miranda* right to counsel, and the interview ended. Shatzer remained in the general prison population. Nearly three years later, a different detective reopened the investigation, gave fresh *Miranda* warnings, obtained a waiver, and Shatzer made incriminating statements. He argued *Edwards v. Arizona* barred the later interrogation.
+A detective tried to question Shatzer, then a prison inmate, about allegations he had abused his son; Shatzer invoked his *[[Miranda v. Arizona|Miranda]]* right to counsel, and the interview ended. Shatzer remained in the general prison population. Nearly three years later, a different detective reopened the investigation, gave fresh *[[Miranda v. Arizona|Miranda]]* warnings, obtained a waiver, and Shatzer made incriminating statements. He argued *[[Edwards v. Arizona]]* barred the later interrogation.
 
 ## Issue
-Whether the *Edwards* prohibition on police-initiated reinterrogation after a suspect invokes counsel ends when there is a break in *Miranda* custody, and if so, how long the break must be — and whether release back into the general prison population counts as such a break.
+Whether the *[[Edwards v. Arizona|Edwards]]* prohibition on police-initiated reinterrogation after a suspect invokes counsel ends when there is a break in *[[Miranda v. Arizona|Miranda]]* custody, and if so, how long the break must be — and whether release back into the general prison population counts as such a break.
 
 ## Rule
-The *Edwards* presumption is not eternal; a sufficient break in custody ends it, and the Court fixed the period at 14 days: "It seems to us that period is 14 days. That provides plenty of time for the suspect to get reacclimated to his normal life, to consult with friends and counsel, and to shake off any residual coercive effects of his prior custody." — *Maryland v. Shatzer*, 559 U.S. 98 (2010) (slip op., at 11). ^pin-op11
+The *[[Edwards v. Arizona|Edwards]]* presumption is not eternal; a sufficient break in custody ends it, and the Court fixed the period at 14 days: "It seems to us that period is 14 days. That provides plenty of time for the suspect to get reacclimated to his normal life, to consult with friends and counsel, and to shake off any residual coercive effects of his prior custody." — *Maryland v. Shatzer*, 559 U.S. 98 (2010) (slip op., at 11). ^pin-op11
 
-The Court further held that release back into the general prison population constitutes a break in *Miranda* custody, because lawful imprisonment on a conviction does not impose the coercive pressures of investigative custody that justify *Edwards*.
+The Court further held that release back into the general prison population constitutes a break in *[[Miranda v. Arizona|Miranda]]* custody, because lawful imprisonment on a conviction does not impose the coercive pressures of investigative custody that justify *[[Edwards v. Arizona|Edwards]]*.
 
 ## Application
-After Shatzer invoked counsel, he was returned to the general prison population — his accustomed surroundings and routine — which the Court treated as a break in *Miranda* custody that dissipated the coercive pressures *Edwards* guards against. Because far more than 14 days (about two and a half years) elapsed before the second, separately *Mirandized* interrogation, the *Edwards* presumption no longer applied, and Shatzer's later waiver and statements were admissible.
+After Shatzer invoked counsel, he was returned to the general prison population — his accustomed surroundings and routine — which the Court treated as a break in *[[Miranda v. Arizona|Miranda]]* custody that dissipated the coercive pressures *[[Edwards v. Arizona|Edwards]]* guards against. Because far more than 14 days (about two and a half years) elapsed before the second, separately *Mirandized* interrogation, the *[[Edwards v. Arizona|Edwards]]* presumption no longer applied, and Shatzer's later waiver and statements were admissible.
 
 ## Conclusion
-Reversed: a 14-day break in *Miranda* custody ends the *Edwards* bar, and return to the general prison population is such a break; Shatzer's statements were not subject to suppression under *Edwards*.
+Reversed: a 14-day break in *[[Miranda v. Arizona|Miranda]]* custody ends the *[[Edwards v. Arizona|Edwards]]* bar, and return to the general prison population is such a break; Shatzer's statements were not subject to suppression under *[[Edwards v. Arizona|Edwards]]*.
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.

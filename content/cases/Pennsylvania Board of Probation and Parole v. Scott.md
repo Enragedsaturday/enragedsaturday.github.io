@@ -55,7 +55,7 @@ Whether the Fourth Amendment exclusionary rule applies to — and bars the intro
 No; the exclusionary rule is a prudential deterrent, not a personal constitutional right. "[A] Fourth Amendment violation is 'fully accomplished' by the illegal search or seizure, and no exclusion of evidence from a judicial or administrative proceeding can 'cure the invasion of the defendant's rights which he has already suffered.'" — 524 U.S. at 363 (quoting *United States v. Leon*, 468 U.S. 897, 906). The rule therefore "applies only in contexts 'where its remedial objectives are thought most efficaciously served,'" and the Court has "repeatedly declined to extend the exclusionary rule to proceedings other than criminal trials." — *Id.* at 363.
 
 ## Application
-As in the grand-jury (*Calandra*), civil-tax (*Janis*), and civil-deportation (*Lopez-Mendoza*) contexts, the Court declined to extend the rule. Applying it at parole-revocation hearings "would both hinder the functioning of state parole systems and alter the traditionally flexible, administrative nature of parole revocation proceedings," while adding "only minimal deterrence benefits" because the criminal-trial exclusionary rule already deters unconstitutional searches. The social costs of excluding reliable evidence — letting violators escape revocation — outweighed those marginal benefits.
+As in the grand-jury (*[[United States v. Calandra|Calandra]]*), civil-tax (*[[United States v. Janis|Janis]]*), and civil-deportation (*[[Immigration & Naturalization Service v. Lopez-Mendoza|Lopez-Mendoza]]*) contexts, the Court declined to extend the rule. Applying it at parole-revocation hearings "would both hinder the functioning of state parole systems and alter the traditionally flexible, administrative nature of parole revocation proceedings," while adding "only minimal deterrence benefits" because the criminal-trial exclusionary rule already deters unconstitutional searches. The social costs of excluding reliable evidence — letting violators escape revocation — outweighed those marginal benefits.
 
 ## Conclusion
 "We therefore hold that the federal exclusionary rule does not bar the introduction at parole revocation hearings of evidence seized in violation of parolees' Fourth Amendment rights." — 524 U.S. at 364. ^pin-364
@@ -64,7 +64,7 @@ The judgment of the Pennsylvania Supreme Court was reversed.
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.
-- No negative treatment. *Scott* extends the cost-benefit limit on the exclusionary rule of [[United States v. Calandra]] and [[United States v. Janis]] (and *INS v. Lopez-Mendoza*) to parole-revocation hearings, applying the deterrence framework of [[United States v. Leon]]. It complements the reduced-privacy supervision cases [[Griffin v. Wisconsin]] and [[Samson v. California]].
+- No negative treatment. *Scott* extends the cost-benefit limit on the exclusionary rule of [[United States v. Calandra]] and [[United States v. Janis]] (and *[[Immigration & Naturalization Service v. Lopez-Mendoza|INS v. Lopez-Mendoza]]*) to parole-revocation hearings, applying the deterrence framework of [[United States v. Leon]]. It complements the reduced-privacy supervision cases [[Griffin v. Wisconsin]] and [[Samson v. California]].
 
 ## Appears on
 - [[The Exclusionary Rule]] — *Key — Limiting*

@@ -47,7 +47,7 @@ lake:
 Michael Wearry was convicted of capital murder and sentenced to death almost entirely on the testimony of two witnesses, Scott (a prison informant) and Brown. On collateral review it emerged that the State had failed to disclose evidence impeaching both: that Scott had coached another inmate to lie about the murder, that a third man (Hutchinson) may have been physically unable to perform the role Scott described, that Scott may have implicated Wearry to settle a personal score, that Brown had twice sought a deal to reduce his own sentence, and medical records casting doubt on a witness's account of Wearry's running. The state postconviction court denied relief, finding no prejudice.
 
 ## Issue
-Whether the State's suppression of evidence impeaching its key witnesses was material under *Brady v. Maryland*, requiring a new trial, where the evidence must be assessed cumulatively rather than item by item.
+Whether the State's suppression of evidence impeaching its key witnesses was material under *[[Brady v. Maryland]]*, requiring a new trial, where the evidence must be assessed cumulatively rather than item by item.
 
 ## Rule
 Suppressed favorable evidence violates due process when it is material, and materiality is measured generously: "Evidence qualifies as material when there is "'any reasonable likelihood'" it could have "'affected the judgment of the jury.'"" — 136 S. Ct. at 1006. ^pin-1006
@@ -59,7 +59,7 @@ And materiality must be assessed collectively — the court must conduct a "cumu
 ## Application
 On these facts the prosecution's case "resemble[d] a house of cards, built on the jury crediting Scott's account rather than Wearry's alibi." — 136 S. Ct. at 1006. ^pin-1006b
 
-The withheld evidence went directly to the credibility of the only witnesses tying Wearry to the murder: it would have shown Scott coached a false story and had a motive to lie, that the role he assigned a confederate may have been physically impossible, and that Brown was angling for a sentence reduction. The state court compounded its error by weighing each item separately. Considered cumulatively, that evidence was enough to undermine confidence in the verdict, establishing a *Brady* violation.
+The withheld evidence went directly to the credibility of the only witnesses tying Wearry to the murder: it would have shown Scott coached a false story and had a motive to lie, that the role he assigned a confederate may have been physically impossible, and that Brown was angling for a sentence reduction. The state court compounded its error by weighing each item separately. Considered cumulatively, that evidence was enough to undermine confidence in the verdict, establishing a *[[Brady v. Maryland|Brady]]* violation.
 
 ## Conclusion
 The suppressed impeachment evidence was material; its cumulative weight undermined confidence in the verdict. The Court reversed and [[Reading and Citing Cases#on-remand|remanded]] for a new trial without reaching Wearry's ineffective-assistance claim.

@@ -47,15 +47,15 @@ lake:
 Deputy Timothy Scott ended a high-speed chase of Victor Harris—who had fled a traffic stop and reached roughly 85 m.p.h. on two-lane roads—by ramming the rear of Harris's car, causing a crash that left Harris a quadriplegic. A police video captured the pursuit. Harris sued under 42 U.S.C. § 1983 for excessive force; the lower courts denied Scott [[Qualified Immunity|qualified immunity]].
 
 ## Issue
-Whether an officer's ramming of a fleeing motorist's vehicle to terminate a dangerous high-speed chase is an unreasonable seizure under the Fourth Amendment, and whether the deadly-force preconditions of *Tennessee v. Garner* rigidly control that question.
+Whether an officer's ramming of a fleeing motorist's vehicle to terminate a dangerous high-speed chase is an unreasonable seizure under the Fourth Amendment, and whether the deadly-force preconditions of *[[Tennessee v. Garner]]* rigidly control that question.
 
 ## Rule
-The reasonableness of force is judged under the Fourth Amendment's objective-reasonableness standard, and *Garner* does not impose rigid preconditions. "*Garner* did not establish a magical on/off switch that triggers rigid preconditions whenever an officer's actions constitute 'deadly force.'" — 127 S. Ct. 1769, 1777. ^pin-1777
+The reasonableness of force is judged under the Fourth Amendment's objective-reasonableness standard, and *[[Tennessee v. Garner|Garner]]* does not impose rigid preconditions. "*Garner* did not establish a magical on/off switch that triggers rigid preconditions whenever an officer's actions constitute 'deadly force.'" — 127 S. Ct. 1769, 1777. ^pin-1777
 
-*Garner* "was simply an application of the Fourth Amendment's 'reasonableness' test ... to the use of a particular type of force in a particular situation." — *Id.* The Court then announced the operative rule: "A police officer's attempt to terminate a dangerous high-speed car chase that threatens the lives of innocent bystanders does not violate the Fourth Amendment, even when it places the fleeing motorist at risk of serious injury or death." — *Id.* at 1779. ^pin-1779
+*[[Tennessee v. Garner|Garner]]* "was simply an application of the Fourth Amendment's 'reasonableness' test ... to the use of a particular type of force in a particular situation." — *Id.* The Court then announced the operative rule: "A police officer's attempt to terminate a dangerous high-speed car chase that threatens the lives of innocent bystanders does not violate the Fourth Amendment, even when it places the fleeing motorist at risk of serious injury or death." — *Id.* at 1779. ^pin-1779
 
 ## Application
-On the videotaped facts, Harris's chase posed a substantial and immediate risk of serious physical injury to bystanders—he swerved through traffic, crossed double-yellow lines, and ran red lights—so no reasonable jury could find otherwise. Scott's ramming was a seizure, but because it was an objectively reasonable response to that danger, *Garner*'s preconditions did not render it [[Common Legal Terms#per-se|per se]] unreasonable. Scott was therefore entitled to summary judgment.
+On the videotaped facts, Harris's chase posed a substantial and immediate risk of serious physical injury to bystanders—he swerved through traffic, crossed double-yellow lines, and ran red lights—so no reasonable jury could find otherwise. Scott's ramming was a seizure, but because it was an objectively reasonable response to that danger, *[[Tennessee v. Garner|Garner]]*'s preconditions did not render it [[Common Legal Terms#per-se|per se]] unreasonable. Scott was therefore entitled to summary judgment.
 
 ## Conclusion
 Scott's attempt to end the chase by forcing Harris off the road was reasonable; Scott was entitled to summary judgment, and the Eleventh Circuit was reversed.

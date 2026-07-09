@@ -44,10 +44,10 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-Officers conducting a *Terry* stop frisked Dickerson. The officer felt a small lump in his jacket pocket and, after squeezing, sliding, and otherwise manipulating it, concluded it was crack cocaine and seized it. He had already satisfied himself that the object was not a weapon before manipulating it.
+Officers conducting a *[[Terry v. Ohio|Terry]]* stop frisked Dickerson. The officer felt a small lump in his jacket pocket and, after squeezing, sliding, and otherwise manipulating it, concluded it was crack cocaine and seized it. He had already satisfied himself that the object was not a weapon before manipulating it.
 
 ## Issue
-Whether contraband detected through the sense of touch during a lawful *Terry* frisk may be seized without a warrant.
+Whether contraband detected through the sense of touch during a lawful *[[Terry v. Ohio|Terry]]* frisk may be seized without a warrant.
 
 ## Rule
 Yes, within limits — a "plain-feel" corollary to the plain-view doctrine: "If a police officer lawfully pats down a suspect's outer clothing and feels an object whose contour or mass makes its identity immediately apparent, there has been no invasion of the suspect's privacy beyond that already authorized by the officer's search for weapons; if the object is contraband, its warrantless seizure would be justified by the same practical considerations that inhere in the plain-view context." — 508 U.S. at 375-376. ^pin-375
@@ -56,7 +56,7 @@ Yes, within limits — a "plain-feel" corollary to the plain-view doctrine: "If 
 Here the incriminating character of the lump was not immediately apparent: the officer determined it was contraband only after squeezing, sliding, and otherwise manipulating the pocket's contents — continued exploration after he already knew the object was not a weapon. Because that manipulation went beyond the scope of a lawful protective frisk, the seizure was not justified by the plain-feel rule.
 
 ## Conclusion
-Affirmed; the seizure was invalid because the officer exceeded the bounds of a *Terry* frisk.
+Affirmed; the seizure was invalid because the officer exceeded the bounds of a *[[Terry v. Ohio|Terry]]* frisk.
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.

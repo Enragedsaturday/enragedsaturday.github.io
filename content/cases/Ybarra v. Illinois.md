@@ -51,7 +51,7 @@ lake:
 Officers obtained a warrant to search the Aurora Tap Tavern and its bartender, "Greg," for heroin, based on an informant who reported seeing heroin on Greg and in a drawer behind the bar. Executing the warrant, officers patted down every patron present, including Ybarra, a customer about whom they knew nothing. The first patdown detected a cigarette pack; an officer later retrieved it and found heroin inside. Ybarra moved to suppress.
 
 ## Issue
-Whether a warrant authorizing the search of a tavern and its bartender permits officers to search a patron who merely happens to be present, and whether the patdown of that patron was a valid *Terry* frisk.
+Whether a warrant authorizing the search of a tavern and its bartender permits officers to search a patron who merely happens to be present, and whether the patdown of that patron was a valid *[[Terry v. Ohio|Terry]]* frisk.
 
 ## Rule
 No. A premises warrant does not reach the persons of those merely present; cause must be individualized. "[A] person's mere propinquity to others independently suspected of criminal activity does not, without more, give rise to probable cause to search that person." — 444 U.S. at 91. ^pin-91

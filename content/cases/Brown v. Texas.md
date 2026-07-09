@@ -66,7 +66,7 @@ Because the stop was not supported by reasonable suspicion, applying the statute
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.
-- No negative treatment. The *Brown* three-factor balancing test governs suspicionless seizures and is applied in the checkpoint cases ([[Michigan Dept. of State Police v. Sitz]], [[City of Indianapolis v. Edmond]], [[Illinois v. Lidster]]). The Court expressly reserved whether an individual may be required to identify himself during a *lawful* investigatory stop; [[Hiibel v. Sixth Judicial Dist. Court]] (2004) answered yes, upholding a stop-and-identify statute applied during a *Terry* stop supported by reasonable suspicion — distinguishing, not overruling, *Brown*.
+- No negative treatment. The *Brown* three-factor balancing test governs suspicionless seizures and is applied in the checkpoint cases ([[Michigan Dept. of State Police v. Sitz]], [[City of Indianapolis v. Edmond]], [[Illinois v. Lidster]]). The Court expressly reserved whether an individual may be required to identify himself during a *lawful* investigatory stop; [[Hiibel v. Sixth Judicial Dist. Court]] (2004) answered yes, upholding a stop-and-identify statute applied during a *[[Terry v. Ohio|Terry]]* stop supported by reasonable suspicion — distinguishing, not overruling, *Brown*.
 
 ## Appears on
 - [[Terry Stops and Reasonable Suspicion]] — *Anchor*

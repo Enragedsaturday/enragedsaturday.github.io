@@ -65,7 +65,7 @@ The clandestine taking and the use of the evidentiary papers violated Gouled's F
 ## Treatment & subsequent history
 - **Status:** overruled (in part) *(as of 2026-06-30)* — **Historical**.
 - **Mere-evidence rule overruled/abandoned by** [[Warden v. Hayden]] (1967): the Fourth Amendment draws no distinction between "mere evidence" and contraband/fruits/instrumentalities, so evidentiary items may be seized on probable cause. This changes field application — officers may seize evidentiary materials, not only contraband, fruits, and instrumentalities.
-- **Surviving principle:** the holding that entry obtained by stealth, ruse, or social pretext can render the ensuing search unreasonable remains good law and is cited in the consent/undercover line (cf. *Lewis v. United States* (1966), distinguishing a legitimate undercover business visit).
+- **Surviving principle:** the holding that entry obtained by stealth, ruse, or social pretext can render the ensuing search unreasonable remains good law and is cited in the consent/undercover line (cf. *[[Lewis v. United States (1966)|Lewis v. United States]]* (1966), distinguishing a legitimate undercover business visit).
 
 ## Appears on
 - [[Trespass]] — *Historical (foil)*

@@ -62,7 +62,7 @@ A warrant was required for the administrative inspection; Camara's conviction fo
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.
-- *Camara* **overruled** *Frank v. Maryland*, was extended to commercial premises in [[See v. City of Seattle]], and its pre-compliance-review principle was applied in [[City of Los Angeles v. Patel]].
+- *Camara* **overruled** *[[Frank v. Maryland]]*, was extended to commercial premises in [[See v. City of Seattle]], and its pre-compliance-review principle was applied in [[City of Los Angeles v. Patel]].
 
 ## Appears on
 - [[Special Needs and Administrative Searches]] — *Key — Anchor*

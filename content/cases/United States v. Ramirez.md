@@ -59,7 +59,7 @@ The manner of entry is still constrained by reasonableness: "Excessive or unnece
 Section 3109 codifies the common-law exceptions and imposes no greater requirement.
 
 ## Application
-The police had reasonable suspicion that knocking and announcing would be dangerous: Shelby was a violent escapee, reportedly armed, who had vowed not to do federal time. Breaking a single garage window to deter a rush to weapons was a reasonable, limited method of entry, not excessive or unnecessary destruction. Because the *Richards* standard was satisfied and the property damage was reasonable, neither the Fourth Amendment nor § 3109 was violated.
+The police had reasonable suspicion that knocking and announcing would be dangerous: Shelby was a violent escapee, reportedly armed, who had vowed not to do federal time. Breaking a single garage window to deter a rush to weapons was a reasonable, limited method of entry, not excessive or unnecessary destruction. Because the *[[Richards v. Wisconsin|Richards]]* standard was satisfied and the property damage was reasonable, neither the Fourth Amendment nor § 3109 was violated.
 
 ## Conclusion
 No Fourth Amendment or § 3109 violation occurred; the judgment suppressing the evidence was reversed.

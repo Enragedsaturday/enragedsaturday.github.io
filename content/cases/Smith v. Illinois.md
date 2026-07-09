@@ -50,7 +50,7 @@ During custodial interrogation Smith was advised of his [[Miranda and Custodial 
 Whether an accused's responses to *continued* interrogation, given after he has requested counsel, may be used to determine that the initial request for counsel was ambiguous.
 
 ## Rule
-No. Under *Edwards v. Arizona*, once an accused invokes the right to counsel all interrogation must cease until counsel is provided or the accused himself reinitiates and validly waives. The clarity of an invocation is judged on the request and the circumstances leading up to it — not on what the suspect says afterward in response to officers who improperly kept questioning.
+No. Under *[[Edwards v. Arizona]]*, once an accused invokes the right to counsel all interrogation must cease until counsel is provided or the accused himself reinitiates and validly waives. The clarity of an invocation is judged on the request and the circumstances leading up to it — not on what the suspect says afterward in response to officers who improperly kept questioning.
 
 "We hold only that, under the clear logical force of settled precedent, an accused's *postrequest* responses to further interrogation may not be used to cast retrospective doubt on the clarity of the initial request itself. Such subsequent statements are relevant only to the distinct question of waiver." — 469 U.S. at 100. ^pin-100
 

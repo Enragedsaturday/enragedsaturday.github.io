@@ -64,7 +64,7 @@ Affirmed: there is no Sixth Amendment right to counsel at an identification cond
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.
-- Although announced in a plurality opinion, *Kirby*'s attachment rule was adopted by a majority of the Court (e.g., *Moore v. Illinois*) and **reaffirmed in [[Rothgery v. Gillespie County]]** (2008). It cabins the right-to-counsel-at-lineups rule of [[United States v. Wade]] and [[Gilbert v. California]] to **post-attachment** confrontations.
+- Although announced in a plurality opinion, *Kirby*'s attachment rule was adopted by a majority of the Court (e.g., *[[Moore v. Illinois]]*) and **reaffirmed in [[Rothgery v. Gillespie County]]** (2008). It cabins the right-to-counsel-at-lineups rule of [[United States v. Wade]] and [[Gilbert v. California]] to **post-attachment** confrontations.
 
 ## Appears on
 - [[Sixth Amendment Right to Counsel]] — *Key — Anchor*

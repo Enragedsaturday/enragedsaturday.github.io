@@ -48,14 +48,14 @@ On a night in January 2008, two uniformed officers patrolling South Central Los 
 Whether officers who surround a suspect's home with an overwhelming show of force and summon him out over a public-address system effect a warrantless arrest "in violation of *Payton v. New York*," and whether any [[Exigent Circumstances and Hot Pursuit|exigency]] excused the failure to obtain an arrest warrant.
 
 ## Rule
-*Payton* supplies the baseline: "The Court held in *Payton* that the Fourth Amendment forbids arresting a suspect inside his home unless the police first obtain an arrest warrant or an exception to the warrant requirement applies." 765 F.3d at 1054 (citing *Payton v. New York*, 445 U.S. 573, 590 (1980)). ^pin-1054
+*[[Payton v. New York|Payton]]* supplies the baseline: "The Court held in *Payton* that the Fourth Amendment forbids arresting a suspect inside his home unless the police first obtain an arrest warrant or an exception to the warrant requirement applies." 765 F.3d at 1054 (citing *Payton v. New York*, 445 U.S. 573, 590 (1980)). ^pin-1054
 
 A suspect summoned out of a surrounded home is treated as arrested inside it unless he voluntarily exposed himself; the government must then justify the warrantless in-home arrest by an exception such as [[Exigent Circumstances and Hot Pursuit|exigent circumstances]]. <!-- pin-1054 star-page CONFIRMED at orchestrator finalization 2026-07-08: quote at doc position 15602, between star markers *1054 (pos 14213) and *1055 (pos 22131) — MCP search_document, opinion 2722177. -->
 
-The perimeter itself defeats the flight-and-danger exigency the government invoked. The court found no basis to believe anyone else was endangered, and "[n]or had Nora given any other indication that he was in 'an agitated and violent state,'" *United States v. Al-Azzawy*, 784 F.2d 890, 894 (9th Cir. 1986); "[f]inally, the officers had no reason to believe Nora might pose a danger to the public by attempting to flee, since they had the house completely surrounded and could monitor all exit points." — 765 F.3d at 1055. ^pin-1055
+The perimeter itself defeats the flight-and-danger exigency the government invoked. The court found no basis to believe anyone else was endangered, and "[n]or had Nora given any other indication that he was in 'an agitated and violent state,'" *[[United States v. Al-Azzawy]]*, 784 F.2d 890, 894 (9th Cir. 1986); "[f]inally, the officers had no reason to believe Nora might pose a danger to the public by attempting to flee, since they had the house completely surrounded and could monitor all exit points." — 765 F.3d at 1055. ^pin-1055
 
 ## Application
-Because the officers had probable cause but no warrant, and because a complete perimeter with monitored exits eliminated any risk of flight or escape, no exigency excused the warrant requirement. The surround-and-summon tactic was therefore a warrantless arrest that *Payton* forbids: the officers "could monitor all exit points," so the very containment the government offered as justification is what negated the claimed exigency. 765 F.3d at 1055. ^pin-1055b
+Because the officers had probable cause but no warrant, and because a complete perimeter with monitored exits eliminated any risk of flight or escape, no exigency excused the warrant requirement. The surround-and-summon tactic was therefore a warrantless arrest that *[[Payton v. New York|Payton]]* forbids: the officers "could monitor all exit points," so the very containment the government offered as justification is what negated the claimed exigency. 765 F.3d at 1055. ^pin-1055b
 
 The evidence derived from the ensuing search was fruit of the unlawful arrest and should have been suppressed.
 
@@ -64,7 +64,7 @@ The Ninth Circuit reversed the denial of suppression and [[Reading and Citing Ca
 
 ## Treatment & subsequent history
 - **Status:** ⚪ unverified (frontier stub) — **Binding in-circuit — 9th Cir.** Treatment/progeny not machine-certified until S9 promotion.
-- *Nora* is the modern Ninth-Circuit spine of the surround-and-call-out (SACO) line: it applies the containment-vs-exit-command rule of *[[United States v. Al-Azzawy]]* (coerced emergence from a surrounded home is an in-home arrest) and marks the outer boundary of the flight-exigency exception (perimeter defeats flight). It contrasts with the voluntary-exposure holding of *United States v. Vaneaton*, 49 F.3d 1423 (9th Cir. 1995), and with the armed-standoff exigency of *Fisher v. City of San Jose*, 558 F.3d 1069 (9th Cir. 2009) (en banc).
+- *Nora* is the modern Ninth-Circuit spine of the surround-and-call-out (SACO) line: it applies the containment-vs-exit-command rule of *[[United States v. Al-Azzawy]]* (coerced emergence from a surrounded home is an in-home arrest) and marks the outer boundary of the flight-exigency exception (perimeter defeats flight). It contrasts with the voluntary-exposure holding of *[[United States v. Vaneaton]]*, 49 F.3d 1423 (9th Cir. 1995), and with the armed-standoff exigency of *Fisher v. City of San Jose*, 558 F.3d 1069 (9th Cir. 2009) (en banc).
 
 *Status note (⚪):* authored from a CourtListener-verified identity stub (two-key: cluster 2722177 + 765 F.3d 1049); renders under the ⚪ banner until S9 promotion.
 

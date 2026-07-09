@@ -47,7 +47,7 @@ lake:
 Henry was indicted for armed robbery and held in jail awaiting trial. Government agents had a paid informant, Nichols — a fellow inmate in Henry's cellblock — report on Henry, instructing him not to question Henry but to be alert to statements. Nichols engaged Henry in conversation, and Henry made incriminating remarks about the robbery that were used at trial. Nichols was paid on a contingent-fee basis for producing useful information.
 
 ## Issue
-Whether the government "deliberately elicited" incriminating statements from an indicted, incarcerated defendant, in violation of his Sixth Amendment right to counsel under *Massiah*, when it used a paid jailhouse informant posing as a fellow inmate.
+Whether the government "deliberately elicited" incriminating statements from an indicted, incarcerated defendant, in violation of his Sixth Amendment right to counsel under *[[Massiah v. United States|Massiah]]*, when it used a paid jailhouse informant posing as a fellow inmate.
 
 ## Rule
 Yes. The Sixth Amendment, as construed in [[Massiah v. United States]], bars the government from "deliberately elicit[ing]" incriminating statements from an indicted defendant in the absence of counsel. Whether elicitation was deliberate turns on the circumstances: "Three factors are important. First, Nichols was acting under instructions as a paid informant for the Government; second, Nichols was ostensibly no more than a fellow inmate of Henry; and third, Henry was in custody and under indictment at the time he was engaged in conversation by Nichols." — 447 U.S. at 270. ^pin-270
@@ -62,7 +62,7 @@ The use of the paid jailhouse informant violated Henry's Sixth Amendment right t
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.
-- **Cabined by** [[Kuhlmann v. Wilson]] — a jailhouse informant who acts as a mere passive "listening post," taking no action beyond listening to deliberately elicit statements, does not violate the Sixth Amendment. *Kuhlmann* clarifies the line *Henry* draws (deliberate elicitation vs. passive receipt); it does not disturb *Henry*'s holding.
+- **Cabined by** [[Kuhlmann v. Wilson]] — a jailhouse informant who acts as a mere passive "listening post," taking no action beyond listening to deliberately elicit statements, does not violate the Sixth Amendment. *[[Kuhlmann v. Wilson|Kuhlmann]]* clarifies the line *Henry* draws (deliberate elicitation vs. passive receipt); it does not disturb *Henry*'s holding.
 - Part of the [[Massiah v. United States]] / [[Brewer v. Williams]] / [[Maine v. Moulton]] line on the post-attachment Sixth Amendment right to counsel.
 
 ## Appears on

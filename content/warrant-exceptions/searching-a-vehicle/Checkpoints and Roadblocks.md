@@ -32,7 +32,7 @@ related: ["[[Traffic Stops]]", "[[Border Searches]]", "[[Special Needs and Admin
 
 **The valid poles.** Two purposes have been sustained:
 - **Highway safety (sobriety).** *[[Michigan Dept. of State Police v. Sitz|Sitz]]* upheld a DUI sobriety checkpoint: balancing the State's interest in stopping drunk driving, the programme's effectiveness, and the brief intrusion, the Court held it "consistent with the Fourth Amendment." 496 U.S. at 455.
-- **Information-seeking about someone else's crime.** *[[Illinois v. Lidster|Lidster]]* upheld a checkpoint that stopped motorists to ask for help solving a hit-and-run: its "primary law enforcement purpose was not to determine whether a vehicle's occupants were committing a crime, but to ask . . . for their help in providing information about a crime in all likelihood committed by others." 540 U.S. 419, 423, 427 (2004). *Lidster* applies the *[[Brown v. Texas|Brown]]* factors case by case rather than presuming validity.
+- **Information-seeking about someone else's crime.** *[[Illinois v. Lidster|Lidster]]* upheld a checkpoint that stopped motorists to ask for help solving a hit-and-run: its "primary law enforcement purpose was not to determine whether a vehicle's occupants were committing a crime, but to ask . . . for their help in providing information about a crime in all likelihood committed by others." 540 U.S. 419, 423, 427 (2004). *[[Illinois v. Lidster|Lidster]]* applies the *[[Brown v. Texas|Brown]]* factors case by case rather than presuming validity.
 
 **The immigration and random-stop lines.** Two neighboring rules bound this doctrine and are treated in full elsewhere. Fixed **interior immigration checkpoints** are the doctrinal ancestor: brief suspicionless stops for questioning at a permanent checkpoint are constitutional "in the absence of any individualized suspicion." *[[United States v. Martinez-Fuerte|Martinez-Fuerte]]*, 428 U.S. 543, 566 (1976); that immigration line is developed on [[Border Searches]]. At the other end, **random, discretionary** roving stops are barred: an officer may not stop a car to check license and registration on a whim, because that leaves "standardless and unconstrained discretion" with the officer, though the Court expressly left room for "questioning of all oncoming traffic at roadblock-type stops." *[[Delaware v. Prouse|Prouse]]*, 440 U.S. 648, 663 (1979); the individualized-stop rules live on [[Traffic Stops]].
 
@@ -48,13 +48,13 @@ related: ["[[Traffic Stops]]", "[[Border Searches]]", "[[Special Needs and Admin
 
 **Common pitfalls.**
 - **Treating any orderly checkpoint as valid.** *[[City of Indianapolis v. Edmond|Edmond]]* makes the programme's **primary purpose dispositive**; procedure cannot cure a crime-control purpose.
-- **Bootstrapping crime control onto a safety checkpoint.** Adding a narcotics-detection objective to a sobriety checkpoint risks converting the whole programme into an *Edmond* violation.
+- **Bootstrapping crime control onto a safety checkpoint.** Adding a narcotics-detection objective to a sobriety checkpoint risks converting the whole programme into an *[[City of Indianapolis v. Edmond|Edmond]]* violation.
 - **Confusing a checkpoint with an individualized stop.** A [[Traffic Stops|traffic stop]] needs reasonable suspicion; a checkpoint substitutes a neutral programme for suspicion. Do not mix the justifications.
 - **Confusing an immigration checkpoint with a search.** *[[United States v. Martinez-Fuerte|Martinez-Fuerte]]* authorizes a suspicionless *stop*, not a suspicionless *search* away from the border.
 
 ## Lower-court developments
 
-The Supreme Court framework (*Sitz* / *Edmond* / *Lidster* / *Martinez-Fuerte* / *Prouse*) is stable and controlling; the recurring work in the lower courts is applying the **primary-purpose** test to mixed-motive checkpoints (safety plus incidental drug detection), to "ruse" checkpoints (a sign advertising a nonexistent drug checkpoint, catching drivers who exit or discard contraband), and to license-and-registration or immigration-status roadblocks. Those applications are circuit- and state-specific and turn on the *Edmond* purpose inquiry and the *Brown* balance; the individualized-stop developments are catalogued on [[Traffic Stops]].
+The Supreme Court framework (*[[Michigan Dept. of State Police v. Sitz|Sitz]]* / *[[City of Indianapolis v. Edmond|Edmond]]* / *[[Illinois v. Lidster|Lidster]]* / *[[United States v. Martinez-Fuerte|Martinez-Fuerte]]* / *[[Delaware v. Prouse|Prouse]]*) is stable and controlling; the recurring work in the lower courts is applying the **primary-purpose** test to mixed-motive checkpoints (safety plus incidental drug detection), to "ruse" checkpoints (a sign advertising a nonexistent drug checkpoint, catching drivers who exit or discard contraband), and to license-and-registration or immigration-status roadblocks. Those applications are circuit- and state-specific and turn on the *[[City of Indianapolis v. Edmond|Edmond]]* purpose inquiry and the *[[Brown v. Texas|Brown]]* balance; the individualized-stop developments are catalogued on [[Traffic Stops]].
 
 ## Key cases
 
@@ -62,7 +62,7 @@ The Supreme Court framework (*Sitz* / *Edmond* / *Lidster* / *Martinez-Fuerte* /
 |---|---|---|
 | *[[Michigan Dept. of State Police v. Sitz]]*, 496 U.S. 444 (1990) | **Valid pole.** A suspicionless DUI sobriety checkpoint is reasonable; the State's interest in combating drunk driving outweighs the brief, minimal intrusion. | [opinion](https://www.courtlistener.com/opinion/112459/michigan-department-of-state-police-v-sitz/) |
 | *[[City of Indianapolis v. Edmond]]*, 531 U.S. 32 (2000) | **Purpose gate.** A checkpoint whose primary purpose is ordinary crime control (drug interdiction) is unconstitutional, however brief or orderly. | [opinion](https://www.courtlistener.com/opinion/118391/city-of-indianapolis-v-edmond/) |
-| *[[Illinois v. Lidster]]*, 540 U.S. 419 (2004) | **Information-seeking.** A checkpoint that stops motorists to ask for help about a crime committed by someone else is valid under the *Brown* balance. | [opinion](https://www.courtlistener.com/opinion/131154/illinois-v-lidster/) |
+| *[[Illinois v. Lidster]]*, 540 U.S. 419 (2004) | **Information-seeking.** A checkpoint that stops motorists to ask for help about a crime committed by someone else is valid under the *[[Brown v. Texas|Brown]]* balance. | [opinion](https://www.courtlistener.com/opinion/131154/illinois-v-lidster/) |
 
 ## Related cases across doctrines
 

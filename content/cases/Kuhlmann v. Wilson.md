@@ -55,7 +55,7 @@ Passive listening is not enough; the State must have taken affirmative steps to 
 Accordingly, "the defendant must demonstrate that the police and their informant took some action, beyond merely listening, that was designed deliberately to elicit incriminating remarks." — *Id.* ^pin-459a
 
 ## Application
-Here the state courts found that Lee was instructed only to listen, asked Wilson no questions about the pending charges, and merely heard Wilson's spontaneous and unsolicited statements. Because Lee took no action beyond listening that was designed to elicit incriminating remarks, the informant functioned as a passive "listening post," and Wilson failed to make out a Sixth Amendment violation under the *Massiah* deliberate-elicitation standard.
+Here the state courts found that Lee was instructed only to listen, asked Wilson no questions about the pending charges, and merely heard Wilson's spontaneous and unsolicited statements. Because Lee took no action beyond listening that was designed to elicit incriminating remarks, the informant functioned as a passive "listening post," and Wilson failed to make out a Sixth Amendment violation under the *[[Massiah v. United States|Massiah]]* deliberate-elicitation standard.
 
 ## Conclusion
 The Court of Appeals erred in finding a Sixth Amendment violation; absent deliberate elicitation beyond mere listening, no right-to-counsel violation occurred. (Judgment reversed.)

@@ -45,7 +45,7 @@ homes:
 Police were summoned to a trailer park after a neighbor reported that Riad Al-Azzawy had threatened to shoot him, to blow up the trailer park, and to burn his trailer, and that Al-Azzawy possessed hand grenades and automatic weapons. Officers "then surrounded appellee's trailer with their guns drawn, and ordered appellee to come outside." When Al-Azzawy appeared he was ordered to his knees, frisked, and questioned; he admitted having firearms inside. The district court suppressed the resulting evidence as the fruit of a warrantless in-home arrest and search; the government appealed.
 
 ## Issue
-Where officers surround a suspect's dwelling with weapons drawn and order him out over a bullhorn, whether the ensuing arrest occurs "inside" the home for *Payton* purposes even though the suspect physically emerges before being seized.
+Where officers surround a suspect's dwelling with weapons drawn and order him out over a bullhorn, whether the ensuing arrest occurs "inside" the home for *[[Payton v. New York|Payton]]* purposes even though the suspect physically emerges before being seized.
 
 ## Rule
 The location of the arrest is fixed by the suspect's position at the moment his freedom is overborne, not by where he happens to be standing when handcuffed. "In the case at bar, the police had completely surrounded appellee's trailer with their weapons drawn and ordered him through a bullhorn to leave the trailer and drop to his knees. Appellee was not free to leave, his freedom of movement was totally restricted, and the officers' show of force and authority was overwhelming." 784 F.2d at 894. ^pin-894
@@ -62,7 +62,7 @@ Reversed. A suspect who emerges from his surrounded home only under overwhelming
 
 ## Treatment & subsequent history
 - **Status:** ⚪ unverified (frontier stub) — **Binding in-circuit — 9th Cir.** Treatment/progeny not machine-certified until S9 promotion.
-- *Al-Azzawy* is the coerced-emergence pole of the Ninth-Circuit surround-and-call-out line. It is the anchor *[[United States v. Nora]]* distinguishes at 894 (Nora had no comparable "agitated and violent state," and the perimeter defeated any flight exigency), and the coercion counterpoint to the voluntary-exposure holding of *United States v. Vaneaton*, 49 F.3d 1423 (9th Cir. 1995).
+- *Al-Azzawy* is the coerced-emergence pole of the Ninth-Circuit surround-and-call-out line. It is the anchor *[[United States v. Nora]]* distinguishes at 894 (Nora had no comparable "agitated and violent state," and the perimeter defeated any flight exigency), and the coercion counterpoint to the voluntary-exposure holding of *[[United States v. Vaneaton]]*, 49 F.3d 1423 (9th Cir. 1995).
 
 *Status note (⚪):* authored from a CourtListener-verified identity stub (two-key: cluster 465254 + 784 F.2d 890); renders under the ⚪ banner until S9 promotion.
 

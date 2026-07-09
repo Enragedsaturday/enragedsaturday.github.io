@@ -52,7 +52,7 @@ Whether prison inmates have a Sixth Amendment right to appointed counsel while h
 ## Rule
 No. "[O]ur cases have long recognized that the right to counsel attaches only at or after the initiation of adversary judicial proceedings against the defendant." — 467 U.S. at 187. ^pin-187
 
-Adopting the *Kirby* formulation, the Court explained that the recognized points of attachment "have involved points of time at or after the initiation of adversary judicial criminal proceedings — whether by way of formal charge, preliminary hearing, indictment, information, or arraignment." — 467 U.S. at 188 (quoting *Kirby v. Illinois*, 406 U.S. at 689). ^pin-188
+Adopting the *[[Kirby v. Illinois|Kirby]]* formulation, the Court explained that the recognized points of attachment "have involved points of time at or after the initiation of adversary judicial criminal proceedings — whether by way of formal charge, preliminary hearing, indictment, information, or arraignment." — 467 U.S. at 188 (quoting *Kirby v. Illinois*, 406 U.S. at 689). ^pin-188
 
 The right is tied to the defendant's status as an "accused" facing the prosecutorial forces of the State, which arises only when the government has committed itself to prosecute.
 
@@ -64,7 +64,7 @@ The Sixth Amendment right to counsel had not attached during preindictment segre
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.
-- The attachment rule stated here is settled and was reaffirmed in *Rothgery v. Gillespie County* (2008). It marks the dividing line between the Fifth Amendment *Miranda* world (custody) and the Sixth Amendment world (post-charge), and confines the pre-charge attachment suggested by [[Escobedo v. Illinois]].
+- The attachment rule stated here is settled and was reaffirmed in *[[Rothgery v. Gillespie County]]* (2008). It marks the dividing line between the Fifth Amendment *[[Miranda v. Arizona|Miranda]]* world (custody) and the Sixth Amendment world (post-charge), and confines the pre-charge attachment suggested by [[Escobedo v. Illinois]].
 
 ## Appears on
 - [[Sixth Amendment Right to Counsel]] — *Key — Progeny*

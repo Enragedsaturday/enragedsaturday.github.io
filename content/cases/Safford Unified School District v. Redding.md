@@ -49,10 +49,10 @@ lake:
 A 13-year-old student, Savana Redding, was strip-searched at Safford Middle School after another student, caught with pills, said Savana had given them to her. The pills were prescription-strength ibuprofen (400 mg) and over-the-counter naproxen — both banned under school rules without permission. The assistant principal had Savana's backpack and outer clothing searched (nothing found), then directed female staff to have her pull out and shake her bra and underwear, partially exposing her breasts and pelvic area. Nothing was found. Savana sued under § 1983.
 
 ## Issue
-Whether the strip search of a student for common pain-relief pills was reasonable under the Fourth Amendment school-search standard of *New Jersey v. T.L.O.*, and whether the officials who conducted it were entitled to [[Qualified Immunity|qualified immunity]].
+Whether the strip search of a student for common pain-relief pills was reasonable under the Fourth Amendment school-search standard of *[[New Jersey v. T.L.O.]]*, and whether the officials who conducted it were entitled to [[Qualified Immunity|qualified immunity]].
 
 ## Rule
-A school search must be reasonable in scope as well as inception: "the search as actually conducted [be] reasonably related in scope to the circumstances which justified the interference in the first place." — *New Jersey v. T.L.O.*, 469 U.S. at 341 (applied in *Safford*). A strip search is "categorically distinct," and its degree of intrusion must be matched by the suspicion supporting it.
+A school search must be reasonable in scope as well as inception: "the search as actually conducted [be] reasonably related in scope to the circumstances which justified the interference in the first place." — *[[New Jersey v. T.L.O.]]*, 469 U.S. at 341 (applied in *Safford*). A strip search is "categorically distinct," and its degree of intrusion must be matched by the suspicion supporting it.
 
 "[W]hat was missing from the suspected facts that pointed to Savana was any indication of danger to the students from the power of the drugs or their quantity, and any reason to suppose that Savana was carrying pills in her underwear. We think that the combination of these deficiencies was fatal to finding the search reasonable." — 557 U.S. at 376–377. ^pin-376
 

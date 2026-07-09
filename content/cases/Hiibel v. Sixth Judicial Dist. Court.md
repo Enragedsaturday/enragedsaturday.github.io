@@ -46,10 +46,10 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-A deputy investigating a reported domestic assault found Hiibel standing by a truck and, during a valid *Terry* stop, asked him eleven times to identify himself. Hiibel refused each time and was arrested and convicted under a Nevada "stop and identify" statute requiring a person detained on reasonable suspicion to disclose his name.
+A deputy investigating a reported domestic assault found Hiibel standing by a truck and, during a valid *[[Terry v. Ohio|Terry]]* stop, asked him eleven times to identify himself. Hiibel refused each time and was arrested and convicted under a Nevada "stop and identify" statute requiring a person detained on reasonable suspicion to disclose his name.
 
 ## Issue
-Whether a state stop-and-identify law that compels a suspect to disclose his name during a valid *Terry* stop is consistent with the Fourth Amendment.
+Whether a state stop-and-identify law that compels a suspect to disclose his name during a valid *[[Terry v. Ohio|Terry]]* stop is consistent with the Fourth Amendment.
 
 ## Rule
 Yes. "Obtaining a suspect's name in the course of a Terry stop serves important government interests." — 542 U.S. at 186. ^pin-186
@@ -59,14 +59,14 @@ The Court held that "[t]he principles of Terry permit a State to require a suspe
 Because the request for identity bears an immediate relation to the purpose and demands of the stop, "[a] state law requiring a suspect to disclose his name in the course of a valid Terry stop is consistent with Fourth Amendment prohibitions against unreasonable searches and seizures." — *Id.* at 188. ^pin-188
 
 ## Application
-The deputy's request for Hiibel's name during a *Terry* stop based on reasonable suspicion of a domestic assault was a commonsense inquiry reasonably related to the circumstances justifying the stop — investigating the dispute and assessing safety. The Nevada statute did not change the stop's duration or location, so requiring Hiibel to give his name, on pain of arrest, did not contravene the Fourth Amendment.
+The deputy's request for Hiibel's name during a *[[Terry v. Ohio|Terry]]* stop based on reasonable suspicion of a domestic assault was a commonsense inquiry reasonably related to the circumstances justifying the stop — investigating the dispute and assessing safety. The Nevada statute did not change the stop's duration or location, so requiring Hiibel to give his name, on pain of arrest, did not contravene the Fourth Amendment.
 
 ## Conclusion
-Hiibel's conviction did not violate the Fourth Amendment; the judgment was affirmed. A state may require disclosure of one's name during a valid *Terry* stop.
+Hiibel's conviction did not violate the Fourth Amendment; the judgment was affirmed. A state may require disclosure of one's name during a valid *[[Terry v. Ohio|Terry]]* stop.
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.
-- No negative treatment. *Hiibel* builds on [[Terry v. Ohio]], confirming that identity questions are a routine and permissible part of a *Terry* stop and that a state may attach a criminal sanction to a refusal, so long as the request is reasonably related to the circumstances justifying the stop.
+- No negative treatment. *Hiibel* builds on [[Terry v. Ohio]], confirming that identity questions are a routine and permissible part of a *[[Terry v. Ohio|Terry]]* stop and that a state may attach a criminal sanction to a refusal, so long as the request is reasonably related to the circumstances justifying the stop.
 
 ## Appears on
 - [[Terry Stops and Reasonable Suspicion]] — *Key — Progeny / Refinement*

@@ -55,7 +55,7 @@ Miranda applies to custodial interrogation no matter how minor the offense: "We 
 But an ordinary traffic stop is not Miranda custody: "The similarly noncoercive aspect of ordinary traffic stops prompts us to hold that persons temporarily detained pursuant to such stops are not 'in custody' for the purposes of *Miranda*." — *Id.* at 440. ^pin-440
 
 ## Application
-On these facts McCarty's jailhouse statements should have been suppressed: he was indisputably "in custody" once formally arrested and placed in the police car, yet was never warned, and the misdemeanor character of the DUI offense did not exempt that custodial interrogation from Miranda. His pre-arrest roadside statements, however, were admissible: the ordinary traffic stop was a brief, comparatively nonthreatening *Terry*-like detention rather than custody, so no warnings were required before the roadside questions.
+On these facts McCarty's jailhouse statements should have been suppressed: he was indisputably "in custody" once formally arrested and placed in the police car, yet was never warned, and the misdemeanor character of the DUI offense did not exempt that custodial interrogation from Miranda. His pre-arrest roadside statements, however, were admissible: the ordinary traffic stop was a brief, comparatively nonthreatening *[[Terry v. Ohio|Terry]]*-like detention rather than custody, so no warnings were required before the roadside questions.
 
 ## Conclusion
 Miranda governs custodial interrogation regardless of offense severity, so the post-arrest jailhouse statements were inadmissible; but the roadside detention was not custody, so the pre-arrest statements were admissible. The judgment was resolved accordingly on these two grounds.

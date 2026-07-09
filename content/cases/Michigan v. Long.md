@@ -47,7 +47,7 @@ lake:
 Late at night in a rural area, officers saw Long's car swerve into a ditch. Long, who appeared intoxicated, met them at the rear of the car and was unresponsive to questions. The officers saw a hunting knife on the floorboard, and when Long began moving toward the car's interior they conducted a protective search of the passenger compartment, finding marijuana.
 
 ## Issue
-Whether *Terry*'s protective-search rationale permits an officer to search the passenger compartment of a vehicle for weapons during an investigative stop.
+Whether *[[Terry v. Ohio|Terry]]*'s protective-search rationale permits an officer to search the passenger compartment of a vehicle for weapons during an investigative stop.
 
 ## Rule
 Yes. "the search of the passenger compartment of an automobile, limited to those areas in which a weapon may be placed or hidden, is permissible if the police officer possesses a reasonable belief based on 'specific and articulable facts which, taken together with the rational inferences from those facts, reasonably warrant' the officer in believing that the suspect is dangerous and the suspect may gain immediate control of weapons." — 463 U.S. at 1049. ^pin-1049
@@ -62,7 +62,7 @@ The protective vehicle search was valid; reversed and [[Reading and Citing Cases
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.
-- No negative treatment. *Long* extends the *Terry* protective-frisk rationale ([[Terry v. Ohio]]) from the person to the passenger compartment of a vehicle.
+- No negative treatment. *Long* extends the *[[Terry v. Ohio|Terry]]* protective-frisk rationale ([[Terry v. Ohio]]) from the person to the passenger compartment of a vehicle.
 
 ## Appears on
 - [[Traffic Stops]] — *Key — Progeny / Refinement*

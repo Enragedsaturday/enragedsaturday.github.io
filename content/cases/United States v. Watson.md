@@ -46,13 +46,13 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-Acting on a reliable informant's tip — corroborated when the informant showed the inspector stolen credit cards Watson had supplied — a postal inspector arrested Watson without a warrant in a restaurant. After the arrest and *Miranda* warnings, the inspector asked to search Watson's nearby car; Watson said "Go ahead," and stolen credit cards were found inside. Watson moved to suppress. The Ninth Circuit held the warrantless arrest invalid and the consent therefore tainted.
+Acting on a reliable informant's tip — corroborated when the informant showed the inspector stolen credit cards Watson had supplied — a postal inspector arrested Watson without a warrant in a restaurant. After the arrest and *[[Miranda v. Arizona|Miranda]]* warnings, the inspector asked to search Watson's nearby car; Watson said "Go ahead," and stolen credit cards were found inside. Watson moved to suppress. The Ninth Circuit held the warrantless arrest invalid and the consent therefore tainted.
 
 ## Issue
 Whether Watson's consent to search, given after a custodial arrest, was voluntary — and whether the fact of being in custody renders consent involuntary.
 
 ## Rule
-First, the warrantless arrest was lawful — a warrantless felony arrest in public on probable cause does not violate the Fourth Amendment — so the consent was not the product of an illegal arrest. Second, consent given in custody is judged by the *Schneckloth* totality of the circumstances, and custody alone does not make it involuntary: "He had been arrested and was in custody, but his consent was given while on a public street, not in the confines of the police station. Moreover, the fact of custody alone has never been enough in itself to demonstrate a coerced confession or consent to search." — 423 U.S. at 424. ^pin-424
+First, the warrantless arrest was lawful — a warrantless felony arrest in public on probable cause does not violate the Fourth Amendment — so the consent was not the product of an illegal arrest. Second, consent given in custody is judged by the *[[Schneckloth v. Bustamonte|Schneckloth]]* totality of the circumstances, and custody alone does not make it involuntary: "He had been arrested and was in custody, but his consent was given while on a public street, not in the confines of the police station. Moreover, the fact of custody alone has never been enough in itself to demonstrate a coerced confession or consent to search." — 423 U.S. at 424. ^pin-424
 
 Nor is the suspect's ignorance of the right to refuse controlling — the absence of such proof "may be a factor in the overall judgment," but "is not to be given controlling significance." — *Id.* ^pin-424a
 

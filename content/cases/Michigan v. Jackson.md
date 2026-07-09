@@ -60,7 +60,7 @@ Affirmed; the suppression of the confessions was upheld under the now-overruled 
 
 ## Treatment & subsequent history
 - **Status:** overruled *(as of 2026-06-30)* — **Historical**.
-- **Overruled by** [[Montejo v. Louisiana]], 556 U.S. 778 (2009). *Montejo* abandoned *Jackson*'s prophylactic presumption, holding that a defendant may validly waive the Sixth Amendment right to counsel during police-initiated interrogation even after counsel has attached or been requested, with the *Miranda*/*Edwards* framework providing the protection instead. *Jackson* survives only as history; its rule is no longer good law.
+- **Overruled by** [[Montejo v. Louisiana]], 556 U.S. 778 (2009). *[[Montejo v. Louisiana|Montejo]]* abandoned *Jackson*'s prophylactic presumption, holding that a defendant may validly waive the Sixth Amendment right to counsel during police-initiated interrogation even after counsel has attached or been requested, with the *[[Miranda v. Arizona|Miranda]]*/*[[Edwards v. Arizona|Edwards]]* framework providing the protection instead. *Jackson* survives only as history; its rule is no longer good law.
 
 ## Appears on
 - [[Sixth Amendment Right to Counsel]] — *Historical / origin*

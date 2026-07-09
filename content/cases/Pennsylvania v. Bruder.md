@@ -55,7 +55,7 @@ No. The decision was "contrary to [[Berkemer v. McCarty]]," which held that the 
 "*Berkemer*'s rule, that ordinary traffic stops do not involve custody for purposes of *Miranda*, governs this case." — *Id.* at 11. ^pin-11
 
 ## Application
-The uncontested facts showed "the same noncoercive aspects as the *Berkemer* detention: 'a single police officer ask[ing] respondent a modest number of questions and request[ing] him to perform a simple balancing test at a location visible to passing motorists.'" Because the stop was the ordinary, brief, public sort that *Berkemer* deemed non-custodial, Bruder was not "in custody" during the roadside questioning and no [[Miranda and Custodial Interrogation|Miranda warnings]] were required; his roadside statements were therefore admissible.
+The uncontested facts showed "the same noncoercive aspects as the *Berkemer* detention: 'a single police officer ask[ing] respondent a modest number of questions and request[ing] him to perform a simple balancing test at a location visible to passing motorists.'" Because the stop was the ordinary, brief, public sort that *[[Berkemer v. McCarty|Berkemer]]* deemed non-custodial, Bruder was not "in custody" during the roadside questioning and no [[Miranda and Custodial Interrogation|Miranda warnings]] were required; his roadside statements were therefore admissible.
 
 ## Conclusion
 Ordinary traffic stops are non-custodial for Miranda purposes; Bruder's pre-arrest roadside statements were admissible. The judgment of the Pennsylvania Superior Court was reversed.

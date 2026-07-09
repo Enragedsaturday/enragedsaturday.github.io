@@ -69,7 +69,7 @@ The Arkansas Supreme Court had found ample probable cause to believe the suitcas
 The judgment of the Supreme Court of Arkansas — suppressing the evidence — was **affirmed**. Powell, J., delivered the opinion of the Court.
 
 ## Treatment & subsequent history
-**Overruled by [[California v. Acevedo]] (1991).** *Sanders* drew a line between the car (searchable on probable cause) and closed containers within it (protected). The Court abandoned that line: *[[United States v. Ross]]* (1982) held that probable cause to search a vehicle extends to containers inside that might hold the object of the search, and *Acevedo* then unified the rule, expressly overruling *Sanders* so that police with probable cause may search a container found in a car without a warrant.
+**Overruled by [[California v. Acevedo]] (1991).** *Sanders* drew a line between the car (searchable on probable cause) and closed containers within it (protected). The Court abandoned that line: *[[United States v. Ross]]* (1982) held that probable cause to search a vehicle extends to containers inside that might hold the object of the search, and *[[California v. Acevedo|Acevedo]]* then unified the rule, expressly overruling *Sanders* so that police with probable cause may search a container found in a car without a warrant.
 
 *Status note (⚪):* this page was authored from a CourtListener-verified identity stub; the overruled treatment above is well-settled but has not yet completed the project's two-key certification, so the page renders under the ⚪ banner until S9 promotion. It is preserved as **history**, never as live law.
 

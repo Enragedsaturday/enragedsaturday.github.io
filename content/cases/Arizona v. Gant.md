@@ -57,7 +57,7 @@ A vehicle search incident to a recent occupant's arrest is allowed only on one o
 Absent those justifications, "a search of an arrestee's vehicle will be unreasonable unless police obtain a warrant or show that another exception to the warrant requirement applies." — *Id.* This reading cabins the broad understanding of [[New York v. Belton]] that had been taken to authorize a vehicle search whenever an occupant was arrested.
 
 ## Application
-On these facts both justifications were absent. Gant had been handcuffed and locked in a patrol car before the search, so he was not within reaching distance of the passenger compartment; and he was arrested for driving on a suspended license — an offense for which the car would hold no evidence. Because neither the officer-safety/evidence-preservation rationale of *Chimel* nor the evidence-of-the-offense rationale applied, the [[Search Incident to Arrest|search incident to arrest]] was unreasonable.
+On these facts both justifications were absent. Gant had been handcuffed and locked in a patrol car before the search, so he was not within reaching distance of the passenger compartment; and he was arrested for driving on a suspended license — an offense for which the car would hold no evidence. Because neither the officer-safety/evidence-preservation rationale of *[[Chimel v. California|Chimel]]* nor the evidence-of-the-offense rationale applied, the [[Search Incident to Arrest|search incident to arrest]] was unreasonable.
 
 ## Conclusion
 The vehicle search was unconstitutional; the judgment of the Arizona Supreme Court suppressing the evidence was affirmed.

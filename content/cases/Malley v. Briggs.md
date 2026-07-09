@@ -52,7 +52,7 @@ Rhode Island state trooper Malley, relying on court-authorized wiretap intercept
 Whether an officer who applies for and obtains an arrest warrant is entitled to absolute immunity from a § 1983 damages suit, or only to [[Qualified Immunity|qualified immunity]] — and if the latter, what the standard is.
 
 ## Rule
-The officer gets **qualified**, not absolute, immunity, judged by the objective-reasonableness standard of *Harlow* and *Leon*. "Defendants will not be immune if, on an objective basis, it is obvious that no reasonably competent officer would have concluded that a warrant should issue; but if officers of reasonable competence could disagree on this issue, immunity should be recognized." — 475 U.S. at 341. ^pin-341
+The officer gets **qualified**, not absolute, immunity, judged by the objective-reasonableness standard of *[[Harlow v. Fitzgerald|Harlow]]* and *[[United States v. Leon|Leon]]*. "Defendants will not be immune if, on an objective basis, it is obvious that no reasonably competent officer would have concluded that a warrant should issue; but if officers of reasonable competence could disagree on this issue, immunity should be recognized." — 475 U.S. at 341. ^pin-341
 
 The magistrate's approval does not automatically immunize the officer: the question is "whether a reasonably well-trained officer in petitioner's position would have known that his affidavit failed to establish probable cause and that he should not have applied for the warrant." — *Id.* at 345. ^pin-345
 

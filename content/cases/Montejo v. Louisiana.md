@@ -44,23 +44,23 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-Montejo was arrested for murder. At a preliminary "72-hour hearing," the court ordered the appointment of counsel. Before Montejo met his appointed lawyer, detectives read him his *Miranda* rights; he agreed to accompany them to locate the murder weapon and, during the trip, wrote an inculpatory letter of apology to the victim's widow. He sought to suppress the letter under *Michigan v. Jackson* because police had initiated interrogation after counsel was appointed.
+Montejo was arrested for murder. At a preliminary "72-hour hearing," the court ordered the appointment of counsel. Before Montejo met his appointed lawyer, detectives read him his *[[Miranda v. Arizona|Miranda]]* rights; he agreed to accompany them to locate the murder weapon and, during the trip, wrote an inculpatory letter of apology to the victim's widow. He sought to suppress the letter under *[[Michigan v. Jackson]]* because police had initiated interrogation after counsel was appointed.
 
 ## Issue
-Whether, once the Sixth Amendment right to counsel has attached and counsel has been appointed, a waiver of counsel during police-initiated interrogation is presumed invalid under *Michigan v. Jackson*.
+Whether, once the Sixth Amendment right to counsel has attached and counsel has been appointed, a waiver of counsel during police-initiated interrogation is presumed invalid under *[[Michigan v. Jackson]]*.
 
 ## Rule
-No — police are not categorically barred from initiating interrogation. The Court overruled the *Michigan v. Jackson* presumption and held that a defendant may waive the Sixth Amendment right to counsel during police-initiated interrogation even after counsel has been requested or appointed, provided the waiver is voluntary, knowing, and intelligent. A standard set of *Miranda* warnings and waiver ordinarily suffices to relinquish the Sixth Amendment right, because the *Miranda–Edwards–Minnick* line already protects a defendant who does not wish to be questioned without counsel. "Michigan v. Jackson should be and now is overruled." — 556 U.S. at 797. ^pin-797
+No — police are not categorically barred from initiating interrogation. The Court overruled the *[[Michigan v. Jackson]]* presumption and held that a defendant may waive the Sixth Amendment right to counsel during police-initiated interrogation even after counsel has been requested or appointed, provided the waiver is voluntary, knowing, and intelligent. A standard set of *[[Miranda v. Arizona|Miranda]]* warnings and waiver ordinarily suffices to relinquish the Sixth Amendment right, because the *Miranda–Edwards–Minnick* line already protects a defendant who does not wish to be questioned without counsel. "Michigan v. Jackson should be and now is overruled." — 556 U.S. at 797. ^pin-797
 
 ## Application
-Because the *Jackson* presumption no longer applies, the fact that counsel had been appointed at Montejo's 72-hour hearing did not by itself render his later waiver invalid. The Court did not decide admissibility itself; it [[Reading and Citing Cases#vacated|vacated]] and [[Reading and Citing Cases#on-remand|remanded]] so that Montejo could argue — under *Edwards v. Arizona*, a theory he had not raised below — that he had earlier invoked his right to counsel and that his letter of apology should therefore be suppressed.
+Because the *[[Michigan v. Jackson|Jackson]]* presumption no longer applies, the fact that counsel had been appointed at Montejo's 72-hour hearing did not by itself render his later waiver invalid. The Court did not decide admissibility itself; it [[Reading and Citing Cases#vacated|vacated]] and [[Reading and Citing Cases#on-remand|remanded]] so that Montejo could argue — under *[[Edwards v. Arizona]]*, a theory he had not raised below — that he had earlier invoked his right to counsel and that his letter of apology should therefore be suppressed.
 
 ## Conclusion
-The Louisiana Supreme Court correctly rejected Montejo's *Jackson* claim, but the judgment was [[Reading and Citing Cases#vacated|vacated]] and the case [[Reading and Citing Cases#on-remand|remanded]] to allow Montejo to pursue an *Edwards*-based suppression argument.
+The Louisiana Supreme Court correctly rejected Montejo's *[[Michigan v. Jackson|Jackson]]* claim, but the judgment was [[Reading and Citing Cases#vacated|vacated]] and the case [[Reading and Citing Cases#on-remand|remanded]] to allow Montejo to pursue an *[[Edwards v. Arizona|Edwards]]*-based suppression argument.
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.
-- Montejo **overruled** [[Michigan v. Jackson]], eliminating the Sixth Amendment presumption against police-initiated interrogation after the right to counsel attaches; a defendant who does not wish to be questioned without counsel is now protected through the Fifth Amendment *Edwards*/*Miranda* regime.
+- Montejo **overruled** [[Michigan v. Jackson]], eliminating the Sixth Amendment presumption against police-initiated interrogation after the right to counsel attaches; a defendant who does not wish to be questioned without counsel is now protected through the Fifth Amendment *[[Edwards v. Arizona|Edwards]]*/*[[Miranda v. Arizona|Miranda]]* regime.
 
 ## Appears on
 - [[Sixth Amendment Right to Counsel]] — *Key — Progeny / Refinement*

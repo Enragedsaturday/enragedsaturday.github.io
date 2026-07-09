@@ -44,7 +44,7 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-Investigating a series of burglary-rapes, officers without probable cause or a warrant went to Hayes's home, and — when he balked — effectively told him he would be arrested if he did not accompany them. They transported him to the station and fingerprinted him; the prints matched those at a crime scene and were used to convict him. Hayes moved to suppress, relying on *Davis v. Mississippi*.
+Investigating a series of burglary-rapes, officers without probable cause or a warrant went to Hayes's home, and — when he balked — effectively told him he would be arrested if he did not accompany them. They transported him to the station and fingerprinted him; the prints matched those at a crime scene and were used to convict him. Hayes moved to suppress, relying on *[[Davis v. Mississippi]]*.
 
 ## Issue
 Whether the Fourth Amendment permits police, without probable cause or judicial authorization, to transport a suspect from his home to the station and detain him there for fingerprinting.
@@ -62,7 +62,7 @@ The warrantless station-house fingerprinting detention was an arrest without pro
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.
-- Reaffirms and applies [[Davis v. Mississippi]]; consistent with the de-facto-arrest analysis of [[Florida v. Royer]] and the *Terry*-stop reach discussed in [[United States v. Hensley]] and [[Terry v. Ohio]].
+- Reaffirms and applies [[Davis v. Mississippi]]; consistent with the de-facto-arrest analysis of [[Florida v. Royer]] and the *[[Terry v. Ohio|Terry]]*-stop reach discussed in [[United States v. Hensley]] and [[Terry v. Ohio]].
 
 ## Appears on
 - [[Seizure of the Person]] — *Limiting*

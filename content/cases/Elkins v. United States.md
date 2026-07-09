@@ -64,7 +64,7 @@ The silver-platter doctrine was rejected; the unconstitutionally state-seized ev
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.
-- No negative treatment. *Elkins* was decided the term before *Mapp v. Ohio* (1961), which made the exclusionary rule binding on the states and so largely mooted the silver-platter problem. *Elkins*'s articulation of the exclusionary rule's **deterrence purpose** remains foundational and is repeatedly invoked in later good-faith and cost-benefit cases.
+- No negative treatment. *Elkins* was decided the term before *[[Mapp v. Ohio]]* (1961), which made the exclusionary rule binding on the states and so largely mooted the silver-platter problem. *Elkins*'s articulation of the exclusionary rule's **deterrence purpose** remains foundational and is repeatedly invoked in later good-faith and cost-benefit cases.
 
 ## Appears on
 - [[The Exclusionary Rule]] — *Anchor (silver-platter abolition; deterrence rationale)*

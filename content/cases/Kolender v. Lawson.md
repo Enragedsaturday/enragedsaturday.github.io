@@ -46,7 +46,7 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-Edward Lawson was detained or arrested about fifteen times under California Penal Code § 647(e), which made it a crime for a person who loiters or wanders the streets to refuse to provide "credible and reliable" identification and to account for his presence when asked by an officer who had reasonable suspicion sufficient to justify a *Terry* stop. As construed by the state courts, "credible and reliable" identification meant identification carrying reasonable assurance of authenticity and providing a means of later contacting the person. Lawson sued for a declaration that the statute was unconstitutional; the Ninth Circuit held it invalid, and the State appealed.
+Edward Lawson was detained or arrested about fifteen times under California Penal Code § 647(e), which made it a crime for a person who loiters or wanders the streets to refuse to provide "credible and reliable" identification and to account for his presence when asked by an officer who had reasonable suspicion sufficient to justify a *[[Terry v. Ohio|Terry]]* stop. As construed by the state courts, "credible and reliable" identification meant identification carrying reasonable assurance of authenticity and providing a means of later contacting the person. Lawson sued for a declaration that the statute was unconstitutional; the Ninth Circuit held it invalid, and the State appealed.
 
 ## Issue
 Whether a stop-and-identify statute that requires a lawfully detained suspect to provide "credible and reliable" identification is unconstitutionally vague under the Due Process Clause.

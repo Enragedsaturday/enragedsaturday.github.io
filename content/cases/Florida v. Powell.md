@@ -52,7 +52,7 @@ Whether [[Miranda and Custodial Interrogation|Miranda warnings]] that advise of 
 ## Rule
 Yes — warnings need not track any precise script. "The four warnings *Miranda* requires are invariable, but this Court has not dictated the words in which the essential information must be conveyed." — 559 U.S. at 60. ^pin-60
 
-In assessing warnings, "reviewing courts are not required to examine the words employed 'as if construing a will or defining the terms of an easement. The inquiry is simply whether the warnings reasonably "conve[y] to [a suspect] his rights as required by *Miranda*."'" — *Id.* (quoting *Duckworth v. Eagan*, 492 U.S. 195, 203 (1989), in turn quoting *California v. Prysock*, 453 U.S. 355, 361 (1981)).
+In assessing warnings, "reviewing courts are not required to examine the words employed 'as if construing a will or defining the terms of an easement. The inquiry is simply whether the warnings reasonably "conve[y] to [a suspect] his rights as required by *[[Miranda v. Arizona|Miranda]]*."'" — *Id.* (quoting *Duckworth v. Eagan*, 492 U.S. 195, 203 (1989), in turn quoting *[[California v. Prysock]]*, 453 U.S. 355, 361 (1981)).
 
 ## Application
 Reading the two statements together, the warning passed the test. "The first statement communicated that Powell could consult with a lawyer before answering any particular question, and the second statement confirmed that he could exercise that right while the interrogation was underway. In combination, the two warnings reasonably conveyed Powell's right to have an attorney present, not only at the outset of interrogation, but at all times." — 559 U.S. at 62. ^pin-62
@@ -64,7 +64,7 @@ The warnings reasonably conveyed Powell's right to counsel and satisfied Miranda
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.
-- No negative treatment. *Powell* applies the warning-adequacy principle of *California v. Prysock* (1981) and *Duckworth v. Eagan* (1989) to the right-to-counsel advisement, in the [[Miranda v. Arizona]] line. The Court noted that the FBI's fuller standard warnings are "exemplary" but declined to make any precise formulation mandatory. Related custody/interrogation doctrine appears in [[Rhode Island v. Innis]] and [[Berghuis v. Thompkins]]; Miranda's constitutional status was reaffirmed in [[Dickerson v. United States]].
+- No negative treatment. *Powell* applies the warning-adequacy principle of *[[California v. Prysock]]* (1981) and *[[Duckworth v. Eagan]]* (1989) to the right-to-counsel advisement, in the [[Miranda v. Arizona]] line. The Court noted that the FBI's fuller standard warnings are "exemplary" but declined to make any precise formulation mandatory. Related custody/interrogation doctrine appears in [[Rhode Island v. Innis]] and [[Berghuis v. Thompkins]]; Miranda's constitutional status was reaffirmed in [[Dickerson v. United States]].
 
 ## Appears on
 - [[Miranda and Custodial Interrogation]] — *Key — Progeny / Refinement*

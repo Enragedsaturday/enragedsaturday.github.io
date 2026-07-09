@@ -64,7 +64,7 @@ The warrantless inspection and seizure were reasonable under the Fourth Amendmen
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.
-- No negative treatment. *Biswell*, with *Colonnade Catering Corp. v. United States* (liquor), is a foundational pervasively-regulated-industry case; its reasoning was preserved in [[Marshall v. Barlow's Inc.]], applied to mines in [[Donovan v. Dewey]], and organized into the three-part test of *New York v. Burger* (1987). It remains good law.
+- No negative treatment. *Biswell*, with *[[Colonnade Catering Corp. v. United States]]* (liquor), is a foundational pervasively-regulated-industry case; its reasoning was preserved in [[Marshall v. Barlow's Inc.]], applied to mines in [[Donovan v. Dewey]], and organized into the three-part test of *[[New York v. Burger]]* (1987). It remains good law.
 
 ## Appears on
 - [[Special Needs and Administrative Searches]] — *Progeny (pervasively-regulated industry)*

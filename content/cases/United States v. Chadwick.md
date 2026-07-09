@@ -79,7 +79,7 @@ The warrantless search was unreasonable; suppression was affirmed. The Warrant C
 
 ## Treatment & subsequent history
 - **Status:** limited *(as of 2026-06-30)* — **Binding — SCOTUS**.
-- **Limited by** [[California v. Acevedo]] — Acevedo collapsed the *Chadwick*/*Arkansas v. Sanders* container distinction **in the automobile context**, holding that police with probable cause may search a container located in a vehicle without a warrant. *Chadwick*'s core teaching — that luggage and other personal effects reduced to exclusive police control with no [[Exigent Circumstances and Hot Pursuit|exigency]] require a warrant — remains the rule outside that auto-container setting.
+- **Limited by** [[California v. Acevedo]] — Acevedo collapsed the *Chadwick*/*[[Arkansas v. Sanders]]* container distinction **in the automobile context**, holding that police with probable cause may search a container located in a vehicle without a warrant. *Chadwick*'s core teaching — that luggage and other personal effects reduced to exclusive police control with no [[Exigent Circumstances and Hot Pursuit|exigency]] require a warrant — remains the rule outside that auto-container setting.
 
 ## Appears on
 - [[Automobile Exception]] — *Key — Limiting / Historical*

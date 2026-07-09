@@ -44,7 +44,7 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-Mosley was arrested for robberies and given *Miranda* warnings; when he said he did not want to talk about the robberies, the detective immediately stopped questioning. More than two hours later, a different detective in another location gave fresh *Miranda* warnings and questioned Mosley about an unrelated holdup murder, and Mosley made incriminating statements.
+Mosley was arrested for robberies and given *[[Miranda v. Arizona|Miranda]]* warnings; when he said he did not want to talk about the robberies, the detective immediately stopped questioning. More than two hours later, a different detective in another location gave fresh *[[Miranda v. Arizona|Miranda]]* warnings and questioned Mosley about an unrelated holdup murder, and Mosley made incriminating statements.
 
 ## Issue
 Whether, after a suspect in custody invokes his right to remain silent, the police may later resume questioning on a different offense.
@@ -53,7 +53,7 @@ Whether, after a suspect in custody invokes his right to remain silent, the poli
 The answer turns on whether the invocation was honored: "We therefore conclude that the admissibility of statements obtained after the person in custody has decided to remain silent depends under *Miranda* on whether his 'right to cut off questioning' was 'scrupulously honored.'" — 423 U.S. at 104. ^pin-104
 
 ## Application
-When Mosley said he did not want to discuss the robberies, the first detective immediately ceased questioning and made no effort to wear down his resistance. After a significant interval, a different officer gave fresh *Miranda* warnings and questioned Mosley about an unrelated murder. Because his original invocation of silence was scrupulously honored, the later statements were admissible.
+When Mosley said he did not want to discuss the robberies, the first detective immediately ceased questioning and made no effort to wear down his resistance. After a significant interval, a different officer gave fresh *[[Miranda v. Arizona|Miranda]]* warnings and questioned Mosley about an unrelated murder. Because his original invocation of silence was scrupulously honored, the later statements were admissible.
 
 ## Conclusion
 Reversed; the statements obtained at the second interrogation were admissible.

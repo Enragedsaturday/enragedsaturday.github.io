@@ -70,7 +70,7 @@ The conviction rested on unconstitutionally seized evidence; the judgment was re
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.
-- *Byars* has not been overruled. Its Fourth Amendment principles — that a bare, conclusory affidavit cannot support a warrant, and that an unconstitutional search is not legitimized by its fruits — remain sound. The federal/state framework it applied (federal participation triggers federal standards; evidence from a state-only search could still be used — the "silver-platter" doctrine) was later overtaken: *Elkins v. United States* (1960) abolished the silver-platter doctrine, and [[Mapp v. Ohio]] (1961) applied the exclusionary rule to the States, so the federal-participation distinction is now of historical interest only.
+- *Byars* has not been overruled. Its Fourth Amendment principles — that a bare, conclusory affidavit cannot support a warrant, and that an unconstitutional search is not legitimized by its fruits — remain sound. The federal/state framework it applied (federal participation triggers federal standards; evidence from a state-only search could still be used — the "silver-platter" doctrine) was later overtaken: *[[Elkins v. United States]]* (1960) abolished the silver-platter doctrine, and [[Mapp v. Ohio]] (1961) applied the exclusionary rule to the States, so the federal-participation distinction is now of historical interest only.
 
 ## Appears on
 - [[Probable Cause in the Affidavit]] — *Historical*

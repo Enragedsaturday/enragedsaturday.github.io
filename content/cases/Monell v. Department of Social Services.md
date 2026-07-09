@@ -44,7 +44,7 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-New York City employees challenged an official policy that compelled pregnant employees to take unpaid leave before it was medically necessary, suing the city and its officials under § 1983. The lower courts held the municipal defendants immune under *Monroe v. Pape*.
+New York City employees challenged an official policy that compelled pregnant employees to take unpaid leave before it was medically necessary, suing the city and its officials under § 1983. The lower courts held the municipal defendants immune under *[[Monroe v. Pape]]*.
 
 ## Issue
 Whether local governments are "persons" subject to suit under § 1983, and on what basis they may be held liable.
@@ -58,7 +58,7 @@ At the same time, "a municipality cannot be held liable ... under § 1983 on a *
 The challenged compulsory-leave rule was an official municipal policy "officially adopted and promulgated by that body's officers," not merely the act of an individual employee. Because the constitutional injury was inflicted through execution of the city's own policy, the city was a suable "person" under § 1983 and could be held liable for that policy — though not for an employee's tort on a vicarious-liability theory.
 
 ## Conclusion
-Reversed in relevant part; municipalities are § 1983 "persons" liable for their official policies or customs, and *Monroe v. Pape* was overruled insofar as it held otherwise.
+Reversed in relevant part; municipalities are § 1983 "persons" liable for their official policies or customs, and *[[Monroe v. Pape]]* was overruled insofar as it held otherwise.
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.

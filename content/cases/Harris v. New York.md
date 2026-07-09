@@ -59,10 +59,10 @@ Yes. "Having voluntarily taken the stand, petitioner was under an obligation to 
 The exception applies only where the statement is otherwise voluntary and trustworthy; a coerced statement could not be used even to impeach.
 
 ## Application
-Harris's statements were voluntary; their only defect was the [[Miranda and Custodial Interrogation|Miranda warning]] lapse. When he testified to a contrary account, the State could confront him with the prior inconsistent statements to test his credibility before the jury. *Miranda*'s exclusionary protection guards against using such statements as affirmative proof of guilt, but it does not license a defendant to take the stand and testify falsely immune from impeachment.
+Harris's statements were voluntary; their only defect was the [[Miranda and Custodial Interrogation|Miranda warning]] lapse. When he testified to a contrary account, the State could confront him with the prior inconsistent statements to test his credibility before the jury. *[[Miranda v. Arizona|Miranda]]*'s exclusionary protection guards against using such statements as affirmative proof of guilt, but it does not license a defendant to take the stand and testify falsely immune from impeachment.
 
 ## Conclusion
-The impeachment use of the un-Mirandized but voluntary statements was proper; the conviction was affirmed. This established the **impeachment exception** to *Miranda*'s exclusionary rule.
+The impeachment use of the un-Mirandized but voluntary statements was proper; the conviction was affirmed. This established the **impeachment exception** to *[[Miranda v. Arizona|Miranda]]*'s exclusionary rule.
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.

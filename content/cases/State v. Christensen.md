@@ -53,7 +53,7 @@ holding: "'No Trespassing' signs posted near an unobstructed driveway do not, by
 <!-- header line; TreatmentBadge + weight render from frontmatter, degrading to the text above. Born under_review (⚪): identity cluster 4381703 → lead opinion 4158956 (517 S.W.3d 60, decided 2017-04-07); Rule quote string-matched to the CL opinion text 2026-07-07. CL text is slip-paginated (no S.W.3d star pagination), so the pin is slip-style per S2 A3. S9 promotes. -->
 
 ## Background
-Acting on a tip that Christensen was operating a methamphetamine lab, investigators drove up his long rural driveway — past several "No Trespassing" signs — to his home to conduct a [[Knock and Talk|knock-and-talk]]. They detected evidence of a meth lab and ultimately obtained a warrant. Christensen moved to suppress, arguing that his posted signs revoked any implied license for officers to enter his property, making the [[Knock and Talk|knock-and-talk]] an unlawful [[Curtilage|curtilage]] intrusion under *Florida v. Jardines*.
+Acting on a tip that Christensen was operating a methamphetamine lab, investigators drove up his long rural driveway — past several "No Trespassing" signs — to his home to conduct a [[Knock and Talk|knock-and-talk]]. They detected evidence of a meth lab and ultimately obtained a warrant. Christensen moved to suppress, arguing that his posted signs revoked any implied license for officers to enter his property, making the [[Knock and Talk|knock-and-talk]] an unlawful [[Curtilage|curtilage]] intrusion under *[[Florida v. Jardines]]*.
 
 ## Issue
 Whether "No Trespassing" signs posted along an otherwise unobstructed driveway revoke the implied license that allows a police officer to approach a residence to conduct a [[Knock and Talk|knock-and-talk]].

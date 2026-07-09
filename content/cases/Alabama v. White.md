@@ -47,7 +47,7 @@ lake:
 Police received an anonymous telephone tip that Vanessa White would leave a particular apartment at a stated time in a described car (a brown Plymouth station wagon with a broken right taillight), drive to Dobey's Motel, and be carrying about an ounce of cocaine in a brown attaché case. Officers watched White leave the building, enter the matching car, and drive the route toward Dobey's Motel, then stopped her; a consented search of the attaché case and her purse turned up marijuana and cocaine.
 
 ## Issue
-Whether an anonymous tip, corroborated by police observation of the suspect's predicted movements, can furnish the reasonable suspicion needed for an investigatory (*Terry*) stop.
+Whether an anonymous tip, corroborated by police observation of the suspect's predicted movements, can furnish the reasonable suspicion needed for an investigatory (*[[Terry v. Ohio|Terry]]*) stop.
 
 ## Rule
 Yes. Reasonable suspicion is a lower standard than probable cause and may rest on less reliable information: "Reasonable suspicion is a less demanding standard than probable cause not only in the sense that reasonable suspicion can be established with information that is different in quantity or content than that required to establish probable cause, but also in the sense that reasonable suspicion can arise from information that is less reliable than that required to show probable cause." — 496 U.S. at 330. ^pin-330

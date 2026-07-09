@@ -44,7 +44,7 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-After his arrest for the murder of a 10-year-old girl, Williams was subjected to the "Christian burial speech" that led him to direct police to the body — interrogation later held to have violated his right to counsel (*Brewer v. Williams*). At the same time, a large organized volunteer search party was systematically searching the area and was within a few miles of the body. At Williams's retrial, the body-related evidence was admitted on an inevitable-discovery theory.
+After his arrest for the murder of a 10-year-old girl, Williams was subjected to the "Christian burial speech" that led him to direct police to the body — interrogation later held to have violated his right to counsel (*[[Brewer v. Williams]]*). At the same time, a large organized volunteer search party was systematically searching the area and was within a few miles of the body. At Williams's retrial, the body-related evidence was admitted on an inevitable-discovery theory.
 
 ## Issue
 Whether evidence obtained as the fruit of a constitutional violation is nevertheless admissible if it would inevitably have been discovered by lawful means.

@@ -64,7 +64,7 @@ On these facts the validity of the consent turned on whether Mrs. Graff had comm
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.
-- No negative subsequent treatment identified. *Matlock* is the anchor for [[Consent Searches|third-party consent]]: [[Illinois v. Rodriguez]] extends it to officers' reasonable mistakes about *apparent* authority; [[Georgia v. Randolph]] carves out the *physically present, expressly objecting* co-occupant; and [[Fernandez v. California]] limits *Randolph* to a present objector.
+- No negative subsequent treatment identified. *Matlock* is the anchor for [[Consent Searches|third-party consent]]: [[Illinois v. Rodriguez]] extends it to officers' reasonable mistakes about *apparent* authority; [[Georgia v. Randolph]] carves out the *physically present, expressly objecting* co-occupant; and [[Fernandez v. California]] limits *[[Georgia v. Randolph|Randolph]]* to a present objector.
 
 ## Appears on
 - [[Consent Searches]] — *Key — Anchor*

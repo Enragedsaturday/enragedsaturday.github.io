@@ -44,7 +44,7 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-After being given *Miranda* warnings, Edwards invoked his right to counsel and questioning stopped. The next morning, before counsel was made available, different officers came to the jail, re-advised him, and obtained an incriminating statement. The Arizona courts held he had waived his right to counsel by talking; the Supreme Court granted review.
+After being given *[[Miranda v. Arizona|Miranda]]* warnings, Edwards invoked his right to counsel and questioning stopped. The next morning, before counsel was made available, different officers came to the jail, re-advised him, and obtained an incriminating statement. The Arizona courts held he had waived his right to counsel by talking; the Supreme Court granted review.
 
 ## Issue
 Whether, once a suspect has invoked the right to counsel, a valid waiver can be shown merely because he later responds to further police-initiated interrogation.

@@ -44,7 +44,7 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-Salvucci and Zackular were charged with possessing stolen mail (12 checks), seized by police from an apartment rented by Zackular's mother during a search conducted under a warrant. They moved to suppress the checks, arguing the warrant affidavit failed to establish probable cause. The government responded that they lacked standing to challenge the search. Relying on *Jones v. United States* (1960), the First Circuit held that, because they were charged with possessory crimes, they had "automatic standing" to challenge the search without showing any privacy interest in the apartment.
+Salvucci and Zackular were charged with possessing stolen mail (12 checks), seized by police from an apartment rented by Zackular's mother during a search conducted under a warrant. They moved to suppress the checks, arguing the warrant affidavit failed to establish probable cause. The government responded that they lacked standing to challenge the search. Relying on *[[Jones v. United States]]* (1960), the First Circuit held that, because they were charged with possessory crimes, they had "automatic standing" to challenge the search without showing any privacy interest in the apartment.
 
 ## Issue
 Whether a defendant charged with a possessory offense has "automatic standing" to challenge the search that produced the evidence, without showing that his own Fourth Amendment rights were violated.
@@ -52,7 +52,7 @@ Whether a defendant charged with a possessory offense has "automatic standing" t
 ## Rule
 No. "Today we hold that defendants charged with crimes of possession may only claim the benefits of the exclusionary rule if their own Fourth Amendment rights have in fact been violated. The automatic standing rule of *Jones v. United States*, supra, is therefore overruled." — 448 U.S. at 85. ^pin-85
 
-Consistent with *Rakas v. Illinois*, the dispositive question is whether the defendant had a legitimate expectation of privacy in the area searched — not whether he possessed the item seized.
+Consistent with *[[Rakas v. Illinois]]*, the dispositive question is whether the defendant had a legitimate expectation of privacy in the area searched — not whether he possessed the item seized.
 
 ## Application
 Because Salvucci and Zackular were charged with possessing the stolen checks, they could no longer rely on automatic standing. To suppress the checks, they had to establish that their own legitimate expectation of privacy in the searched apartment had been violated. The Court reversed and [[Reading and Citing Cases#on-remand|remanded]] so that question could be addressed.
@@ -62,7 +62,7 @@ Automatic standing is overruled; a defendant charged with a possessory crime mus
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.
-- No negative treatment. *Salvucci* — decided the same day as *Rawlings v. Kentucky* — completes the absorption of "standing" into substantive Fourth Amendment analysis begun in [[Rakas v. Illinois]]: possession of the seized goods alone no longer confers standing. It **overrules** the automatic-standing rule of [[Jones v. United States]] (1960).
+- No negative treatment. *Salvucci* — decided the same day as *[[Rawlings v. Kentucky]]* — completes the absorption of "standing" into substantive Fourth Amendment analysis begun in [[Rakas v. Illinois]]: possession of the seized goods alone no longer confers standing. It **overrules** the automatic-standing rule of [[Jones v. United States]] (1960).
 
 ## Appears on
 - [[Standing to Challenge a Search]] — *Key — Progeny / Refinement*

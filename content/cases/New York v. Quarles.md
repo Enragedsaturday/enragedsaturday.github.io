@@ -44,10 +44,10 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-A woman told officers she had just been raped by an armed man who had entered a supermarket. An officer chased and apprehended Quarles inside the store, found he was wearing an empty shoulder holster, handcuffed him, and — before giving *Miranda* warnings — asked where the gun was. Quarles nodded toward some cartons and said "the gun is over there"; the officer retrieved a loaded revolver.
+A woman told officers she had just been raped by an armed man who had entered a supermarket. An officer chased and apprehended Quarles inside the store, found he was wearing an empty shoulder holster, handcuffed him, and — before giving *[[Miranda v. Arizona|Miranda]]* warnings — asked where the gun was. Quarles nodded toward some cartons and said "the gun is over there"; the officer retrieved a loaded revolver.
 
 ## Issue
-Whether there is an exception to *Miranda* for questions reasonably prompted by a concern for public safety.
+Whether there is an exception to *[[Miranda v. Arizona|Miranda]]* for questions reasonably prompted by a concern for public safety.
 
 ## Rule
 Yes. "We hold that on these facts there is a 'public safety' exception to the requirement that *Miranda* warnings be given before a suspect's answers may be admitted into evidence, . . . and that the availability of that exception does not depend upon the motivation of the individual officers involved." — 467 U.S. at 655–56. ^pin-655
@@ -55,7 +55,7 @@ Yes. "We hold that on these facts there is a 'public safety' exception to the re
 "We conclude that the need for answers to questions in a situation posing a threat to the public safety outweighs the need for the prophylactic rule protecting the Fifth Amendment's privilege against self-incrimination." — *Id.* at 657. ^pin-657
 
 ## Application
-The unholstered, hidden gun in a public supermarket posed an immediate danger to the public and police, so the officer's question about its location fell within the public-safety exception. Both the statement "the gun is over there" and the gun itself were admissible despite the absence of *Miranda* warnings, and the officer's actual motivation for asking was irrelevant.
+The unholstered, hidden gun in a public supermarket posed an immediate danger to the public and police, so the officer's question about its location fell within the public-safety exception. Both the statement "the gun is over there" and the gun itself were admissible despite the absence of *[[Miranda v. Arizona|Miranda]]* warnings, and the officer's actual motivation for asking was irrelevant.
 
 ## Conclusion
 The statement and the gun were admissible under the public-safety exception; the New York Court of Appeals' suppression order was reversed.

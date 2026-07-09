@@ -62,7 +62,7 @@ The search warrant was invalid for want of probable cause; the judgment resting 
 
 ## Treatment & subsequent history
 - **Status:** abrogated *(as of 2026-06-30)* — **Historical** (tier 6).
-- The rigid two-prong "basis of knowledge" + "veracity" framework of *Aguilar* (with [[Spinelli v. United States]]) was **abandoned by [[Illinois v. Gates]]** (1983) in favor of a **totality-of-the-circumstances** test. Under *Gates*, the informant's basis of knowledge and veracity remain relevant considerations but are no longer independent, dispositive requirements.
+- The rigid two-prong "basis of knowledge" + "veracity" framework of *Aguilar* (with [[Spinelli v. United States]]) was **abandoned by [[Illinois v. Gates]]** (1983) in favor of a **totality-of-the-circumstances** test. Under *[[Illinois v. Gates|Gates]]*, the informant's basis of knowledge and veracity remain relevant considerations but are no longer independent, dispositive requirements.
 
 ## Appears on
 - [[Probable Cause]] — *Key — Anchor*

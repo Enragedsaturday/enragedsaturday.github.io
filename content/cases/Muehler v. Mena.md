@@ -54,10 +54,10 @@ Whether handcuffing and detaining an occupant for the entire duration of a searc
 ## Rule
 The detention authority is categorical, and incidental questioning needs no separate justification. "An officer's authority to detain incident to a search is categorical; it does not depend on the 'quantum of proof justifying detention or the extent of the intrusion to be imposed by the seizure.'" — 544 U.S. at 98. ^pin-98
 
-Using reasonable force such as handcuffs to effectuate a *Summers* detention is permissible where justified by officer-safety and orderly-completion interests. Because mere questioning that does not prolong a detention is not a separate seizure, "the officers did not need reasonable suspicion to ask Mena for her name, date and place of birth, or immigration status." — *Id.* at 101. ^pin-101
+Using reasonable force such as handcuffs to effectuate a *[[Michigan v. Summers|Summers]]* detention is permissible where justified by officer-safety and orderly-completion interests. Because mere questioning that does not prolong a detention is not a separate seizure, "the officers did not need reasonable suspicion to ask Mena for her name, date and place of birth, or immigration status." — *Id.* at 101. ^pin-101
 
 ## Application
-Mena's detention in handcuffs for the duration of the search was permissible under *Michigan v. Summers* because the warrant authorized a search for weapons and evidence of a violent gang — circumstances posing special dangers that justified both the detention and the use of handcuffs. The questioning about her immigration status required no separate reasonable suspicion because it did not extend the time she was already lawfully detained.
+Mena's detention in handcuffs for the duration of the search was permissible under *[[Michigan v. Summers]]* because the warrant authorized a search for weapons and evidence of a violent gang — circumstances posing special dangers that justified both the detention and the use of handcuffs. The questioning about her immigration status required no separate reasonable suspicion because it did not extend the time she was already lawfully detained.
 
 ## Conclusion
 The detention and the questioning were reasonable under the Fourth Amendment; the Ninth Circuit's judgment was [[Reading and Citing Cases#vacated|vacated]] and the case [[Reading and Citing Cases#on-remand|remanded]].

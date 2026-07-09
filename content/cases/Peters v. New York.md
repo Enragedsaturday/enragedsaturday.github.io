@@ -46,10 +46,10 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-Off-duty New York City officer Lasky, at home, heard noises at his apartment door that led him to believe someone was trying to force entry. Looking through the peephole, he saw two men — strangers he had never seen in his twelve years in the building — tiptoeing furtively in the hallway. He telephoned the police, dressed, and entered the hall with his service revolver; the men immediately fled down the stairs. Lasky caught Peters between the fourth and fifth floors, patted down his clothing, and felt a hard object in an opaque envelope, which proved to be burglar's tools. Peters was convicted of possessing burglar's tools and moved to suppress them. The case was decided in the same opinion as *Sibron v. New York*.
+Off-duty New York City officer Lasky, at home, heard noises at his apartment door that led him to believe someone was trying to force entry. Looking through the peephole, he saw two men — strangers he had never seen in his twelve years in the building — tiptoeing furtively in the hallway. He telephoned the police, dressed, and entered the hall with his service revolver; the men immediately fled down the stairs. Lasky caught Peters between the fourth and fifth floors, patted down his clothing, and felt a hard object in an opaque envelope, which proved to be burglar's tools. Peters was convicted of possessing burglar's tools and moved to suppress them. The case was decided in the same opinion as *[[Sibron v. New York]]*.
 
 ## Issue
-Whether the burglar's tools were lawfully seized — specifically, whether Officer Lasky had probable cause to arrest Peters, so that the search was valid as incident to a lawful arrest rather than as a *Terry* frisk.
+Whether the burglar's tools were lawfully seized — specifically, whether Officer Lasky had probable cause to arrest Peters, so that the search was valid as incident to a lawful arrest rather than as a *[[Terry v. Ohio|Terry]]* frisk.
 
 ## Rule
 Yes. The search was justified as incident to a lawful arrest supported by probable cause. "We think, however, that for purposes of the Fourth Amendment the search was properly incident to a lawful arrest. By the time Officer Lasky caught up with Peters on the stairway between the fourth and fifth floors of the apartment building, he had probable cause to arrest him for attempted burglary." — 392 U.S. at 66. ^pin-66
@@ -62,7 +62,7 @@ When the arrest is complete on probable cause, the officer may search: "When the
 Lasky's observations — strange noises at his door, two strangers tiptoeing furtively about the hallway, their continued maneuvers, and their flight the moment he entered — supplied probable cause to arrest for attempted burglary; the Court observed it was "difficult to conceive of stronger grounds for an arrest, short of actual eyewitness observation of criminal activity." When Lasky grabbed Peters by the collar, the arrest was, for constitutional purposes, already complete on probable cause, so the ensuing search — reasonably limited and conducted primarily for weapons — was a lawful search incident to that arrest, and the burglar's tools were admissible.
 
 ## Conclusion
-The search was valid as incident to a lawful arrest founded on probable cause, and the conviction was affirmed. *Peters* marks the other side of the line drawn in [[Sibron v. New York]]: where probable cause to arrest has developed, a full [[Search Incident to Arrest|search incident to arrest]] is permissible — unlike the unjustified pocket search condemned in *Sibron*.
+The search was valid as incident to a lawful arrest founded on probable cause, and the conviction was affirmed. *Peters* marks the other side of the line drawn in [[Sibron v. New York]]: where probable cause to arrest has developed, a full [[Search Incident to Arrest|search incident to arrest]] is permissible — unlike the unjustified pocket search condemned in *[[Sibron v. New York|Sibron]]*.
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.

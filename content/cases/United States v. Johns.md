@@ -50,7 +50,7 @@ Customs officers investigating a smuggling operation watched two pickup trucks r
 Whether the automobile exception permits a warrantless search of packages that officers had probable cause to search and lawfully removed from vehicles, when the search occurs three days after the packages were removed.
 
 ## Rule
-Yes. Where officers had probable cause and the authority to search the vehicles and their containers under the [[Carroll v. United States]] / *Ross* automobile-exception line, a later search of the removed packages is not made unreasonable by delay. The Court framed the question as "whether the subsequent warrantless search was unreasonable merely because it occurred three days after the packages were unloaded from the pickup trucks." — 469 U.S. at 482. ^pin-482
+Yes. Where officers had probable cause and the authority to search the vehicles and their containers under the [[Carroll v. United States]] / *[[United States v. Ross|Ross]]* automobile-exception line, a later search of the removed packages is not made unreasonable by delay. The Court framed the question as "whether the subsequent warrantless search was unreasonable merely because it occurred three days after the packages were unloaded from the pickup trucks." — 469 U.S. at 482. ^pin-482
 
 It answered no: "Inasmuch as the Government was entitled to seize the packages and could have searched them immediately without a warrant, we conclude that the warrantless search three days after the packages were placed in the DEA warehouse was reasonable and consistent with our precedent involving searches of impounded vehicles." — *Id.* at 487. ^pin-487
 
@@ -64,7 +64,7 @@ The warrantless search of the packages three days after their removal from the t
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.
-- No negative subsequent treatment identified. *Johns* extends the [[Carroll v. United States]] / *Ross* automobile-exception rule (later unified for containers in [[California v. Acevedo]]) to delayed container searches, and is relied on by lower courts rejecting any "temporal limit" on the exception (e.g., [[United States v. Gastiaburo]]).
+- No negative subsequent treatment identified. *Johns* extends the [[Carroll v. United States]] / *[[United States v. Ross|Ross]]* automobile-exception rule (later unified for containers in [[California v. Acevedo]]) to delayed container searches, and is relied on by lower courts rejecting any "temporal limit" on the exception (e.g., [[United States v. Gastiaburo]]).
 
 ## Appears on
 - [[Automobile Exception]] — *Key — Progeny / Refinement*

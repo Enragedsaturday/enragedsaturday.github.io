@@ -44,15 +44,15 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-Following a deliberate department protocol, officers interrogated Seibert without *Miranda* warnings until she confessed to involvement in a fire that killed a man, then gave her the warnings and led her to repeat the same confession. Both statements were obtained in a single, continuous interrogation.
+Following a deliberate department protocol, officers interrogated Seibert without *[[Miranda v. Arizona|Miranda]]* warnings until she confessed to involvement in a fire that killed a man, then gave her the warnings and led her to repeat the same confession. Both statements were obtained in a single, continuous interrogation.
 
 ## Issue
-Whether a confession repeated after *Miranda* warnings is admissible when officers deliberately used a two-step "question-first, warn-later" interrogation technique.
+Whether a confession repeated after *[[Miranda v. Arizona|Miranda]]* warnings is admissible when officers deliberately used a two-step "question-first, warn-later" interrogation technique.
 
 ## Rule
 No (plurality). "Because this midstream recitation of warnings after interrogation and unwarned confession could not effectively comply with *Miranda*'s constitutional requirement, we hold that a statement repeated after a warning in such circumstances is inadmissible." — 542 U.S. at 604 (plurality opinion). ^pin-604
 
-Justice Kennedy, concurring in the judgment on the narrower ground generally treated as controlling, would suppress the postwarning statement where a two-step interrogation was used deliberately to undermine *Miranda*, unless curative measures were taken.
+Justice Kennedy, concurring in the judgment on the narrower ground generally treated as controlling, would suppress the postwarning statement where a two-step interrogation was used deliberately to undermine *[[Miranda v. Arizona|Miranda]]*, unless curative measures were taken.
 
 ## Application
 The officers here followed a deliberate protocol of questioning Seibert until she confessed and only then administering the warnings before having her repeat the confession. Because the midstream warnings came only after she had already confessed under unwarned interrogation, they could not function effectively, and her repeated, postwarning confession was inadmissible.

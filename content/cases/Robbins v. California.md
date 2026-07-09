@@ -69,7 +69,7 @@ The plurality announced a [[Common Legal Terms#bright-line-rule|bright-line rule
 The judgment of the California Court of Appeal was **reversed**. Stewart, J., announced the judgment of the Court in a [[Common Legal Terms#plurality-opinion|plurality opinion]].
 
 ## Treatment & subsequent history
-**Overruled by [[United States v. Ross]] (1982).** *Robbins*'s bright-line container rule survived barely a year. In *Ross* the Court held that when police have probable cause to search a lawfully stopped vehicle, that authority extends to every part of the car and any container within it that might conceal the object of the search — rejecting *Robbins*. *[[California v. Acevedo]]* (1991) then completed the shift, unifying the container rule and overruling *[[Arkansas v. Sanders]]* as well.
+**Overruled by [[United States v. Ross]] (1982).** *Robbins*'s bright-line container rule survived barely a year. In *[[United States v. Ross|Ross]]* the Court held that when police have probable cause to search a lawfully stopped vehicle, that authority extends to every part of the car and any container within it that might conceal the object of the search — rejecting *Robbins*. *[[California v. Acevedo]]* (1991) then completed the shift, unifying the container rule and overruling *[[Arkansas v. Sanders]]* as well.
 
 *Status note (⚪):* authored from a CourtListener-verified identity stub; the overruled treatment above is well-settled but has not completed the project's two-key certification, so the page renders under the ⚪ banner until S9 promotion. Preserved as **history**, never as live law.
 

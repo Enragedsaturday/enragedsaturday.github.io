@@ -68,7 +68,7 @@ The undercover purchase in the home was not a Fourth Amendment search; the convi
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.
-- No negative treatment. *Lewis* is a settled member of the misplaced-trust / false-friend line — a person who deals with someone who turns out to be an undercover agent assumes the risk of that misplaced trust — alongside *Hoffa v. United States*, *Lopez v. United States*, and later affirmed in *United States v. White*. Its limit (no general search beyond the invitation) traces to [[Gouled v. United States]].
+- No negative treatment. *Lewis* is a settled member of the misplaced-trust / false-friend line — a person who deals with someone who turns out to be an undercover agent assumes the risk of that misplaced trust — alongside *[[Hoffa v. United States]]*, *Lopez v. United States*, and later affirmed in *United States v. White*. Its limit (no general search beyond the invitation) traces to [[Gouled v. United States]].
 
 ## Appears on
 - [[Reasonable Expectation of Privacy]] — *Related (undercover entry / misplaced trust)*

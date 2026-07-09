@@ -58,17 +58,17 @@ lake:
 In a federal customs forfeiture proceeding, the government invoked a statute to compel Boyd to produce private business invoices for use against him. Boyd objected that the compelled production was both an unreasonable search and seizure and a form of compelled self-incrimination. To decide what the Fourth Amendment forbids, the Court turned to the English origins of the constitutional guarantee.
 
 ## Issue
-What the Framers of the Fourth Amendment understood "unreasonable searches and seizures" to mean — and, in answering, whether *Entick v. Carrington* states the foundational principle the Amendment embodies.
+What the Framers of the Fourth Amendment understood "unreasonable searches and seizures" to mean — and, in answering, whether *[[Entick v. Carrington]]* states the foundational principle the Amendment embodies.
 
 ## Rule
-The Court adopted Lord Camden's judgment in *Entick v. Carrington* as the constitutional touchstone. Every American statesman of the founding era "considered it as the true and ultimate expression of constitutional law". — 116 U.S. at 626. ^pin-626
+The Court adopted Lord Camden's judgment in *[[Entick v. Carrington]]* as the constitutional touchstone. Every American statesman of the founding era "considered it as the true and ultimate expression of constitutional law". — 116 U.S. at 626. ^pin-626
 
-Accordingly, *Entick*'s "propositions were in the minds of those who framed the Fourth Amendment to the Constitution, and were considered as sufficiently explanatory of what was meant by unreasonable searches and seizures." — *Id.* at 626-627. ^pin-627
+Accordingly, *[[Entick v. Carrington|Entick]]*'s "propositions were in the minds of those who framed the Fourth Amendment to the Constitution, and were considered as sufficiently explanatory of what was meant by unreasonable searches and seizures." — *Id.* at 626-627. ^pin-627
 
 *(Note: the broader Boyd holding equating compelled production of papers with an unreasonable search and self-incrimination has since been limited — see Treatment below. The Entick/historical proposition stated here is undisturbed.)*
 
 ## Application
-Reading the Fourth Amendment through *Entick*, the Court held that the statutory compulsion of Boyd's private papers, for use against him in the forfeiture, fell within the constitutional prohibition on unreasonable searches and ran together with the Fifth Amendment privilege; the judgment against Boyd was reversed.
+Reading the Fourth Amendment through *[[Entick v. Carrington|Entick]]*, the Court held that the statutory compulsion of Boyd's private papers, for use against him in the forfeiture, fell within the constitutional prohibition on unreasonable searches and ran together with the Fifth Amendment privilege; the judgment against Boyd was reversed.
 
 ## Conclusion
 The compelled production violated the Fourth and Fifth Amendments. As a matter of doctrine the decision survives chiefly for its founding-era account of the Amendment's origins; its papers-production holding has not endured (see Treatment).

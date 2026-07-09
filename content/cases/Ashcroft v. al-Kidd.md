@@ -46,7 +46,7 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-Abdullah al-Kidd, a U.S. citizen, was arrested in 2003 on a federal material-witness warrant — ostensibly to secure his testimony in a terrorism prosecution — but was never called to testify. He sued former Attorney General John Ashcroft under *Bivens*, alleging that Ashcroft had adopted a policy of using the material-witness statute as a **pretext** to detain terrorism suspects whom the government lacked probable cause to charge, in violation of the Fourth Amendment. Ashcroft asserted [[Qualified Immunity|qualified immunity]].
+Abdullah al-Kidd, a U.S. citizen, was arrested in 2003 on a federal material-witness warrant — ostensibly to secure his testimony in a terrorism prosecution — but was never called to testify. He sued former Attorney General John Ashcroft under *[[Bivens v. Six Unknown Named Agents|Bivens]]*, alleging that Ashcroft had adopted a policy of using the material-witness statute as a **pretext** to detain terrorism suspects whom the government lacked probable cause to charge, in violation of the Fourth Amendment. Ashcroft asserted [[Qualified Immunity|qualified immunity]].
 
 ## Issue
 Whether an arrest made on a valid material-witness warrant can be challenged as unconstitutional based on the officer's alleged improper subjective motive — and, if the theory is doubtful, whether Ashcroft violated clearly established law.

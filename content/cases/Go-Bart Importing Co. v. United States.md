@@ -62,7 +62,7 @@ Reversed. The general search of the office was unreasonable; the papers had to b
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.
-- The general-exploratory-search limit survives and was given its modern structure in [[Chimel v. California]] (SITA confined to the arrestee's person and the area within immediate control); it is companion to [[Agnello v. United States]]. (The Court's contemporaneous "mere evidence" assumptions, drawn from *Gouled*, were later changed by *Warden v. Hayden* — but that does not disturb *Go-Bart*'s search-incident-to-arrest holding.)
+- The general-exploratory-search limit survives and was given its modern structure in [[Chimel v. California]] (SITA confined to the arrestee's person and the area within immediate control); it is companion to [[Agnello v. United States]]. (The Court's contemporaneous "mere evidence" assumptions, drawn from *[[Gouled v. United States|Gouled]]*, were later changed by *[[Warden v. Hayden]]* — but that does not disturb *Go-Bart*'s search-incident-to-arrest holding.)
 
 ## Appears on
 - [[SIA Persons]] — *Key — Historical / Foundational*

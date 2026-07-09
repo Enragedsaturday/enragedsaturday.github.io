@@ -48,28 +48,28 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-Police had probable cause to believe Bernard Harris had murdered Thelma Staton. Without an arrest warrant and without consent or [[Exigent Circumstances and Hot Pursuit|exigent circumstances]], three officers entered Harris's home, read him his *Miranda* rights, and obtained an admission inside the home (a *Payton* violation; that in-home statement was suppressed, which the State conceded). They then took Harris to the station house, again administered *Miranda* warnings, and Harris signed a written inculpatory statement. New York's courts suppressed the station-house statement as the fruit of the unlawful in-home arrest.
+Police had probable cause to believe Bernard Harris had murdered Thelma Staton. Without an arrest warrant and without consent or [[Exigent Circumstances and Hot Pursuit|exigent circumstances]], three officers entered Harris's home, read him his *[[Miranda v. Arizona|Miranda]]* rights, and obtained an admission inside the home (a *[[Payton v. New York|Payton]]* violation; that in-home statement was suppressed, which the State conceded). They then took Harris to the station house, again administered *[[Miranda v. Arizona|Miranda]]* warnings, and Harris signed a written inculpatory statement. New York's courts suppressed the station-house statement as the fruit of the unlawful in-home arrest.
 
 ## Issue
-Whether the exclusionary rule requires suppression of a statement a defendant makes at the police station, after a warrantless in-home arrest that violated *Payton*, when the police had probable cause to arrest him.
+Whether the exclusionary rule requires suppression of a statement a defendant makes at the police station, after a warrantless in-home arrest that violated *[[Payton v. New York|Payton]]*, when the police had probable cause to arrest him.
 
 ## Rule
 No. "We hold that, where the police have probable cause to arrest a suspect, the exclusionary rule does not bar the State's use of a statement made by the defendant outside of his home, even though the statement is taken after an arrest made in the home in violation of *Payton*." — 495 U.S. at 21. ^pin-21
 
-*Payton*'s remedy is tied to its purpose — protecting the home: "*Payton* was designed to protect the physical integrity of the home; it was not intended to grant criminal suspects, like Harris, protection for statements made outside their premises where the police have probable cause to arrest the suspect for committing a crime." — *Id.* at 17. ^pin-17
+*[[Payton v. New York|Payton]]*'s remedy is tied to its purpose — protecting the home: "*Payton* was designed to protect the physical integrity of the home; it was not intended to grant criminal suspects, like Harris, protection for statements made outside their premises where the police have probable cause to arrest the suspect for committing a crime." — *Id.* at 17. ^pin-17
 
 The station-house statement therefore was not suppressible: "Harris' statement taken at the police station was not the product of being in unlawful custody. Neither was it the fruit of having been arrested in the home rather than someplace else." — *Id.* at 19. ^pin-19
 
 ## Application
-Because the officers had probable cause, Harris was in *lawful* custody once removed from the house, properly Mirandized, and allowed to talk; the warrantless entry's only unlawful product — what the police gained by arresting him *inside* the home (the in-home statement) — was already suppressed, vindicating *Payton*'s purpose. The station-house statement was neither the product of unlawful custody nor the fruit of the in-home location of the arrest. This distinguishes *Brown v. Illinois*, *Dunaway*, and *Taylor*, where confessions were suppressed because the police lacked probable cause and the detention itself was illegal.
+Because the officers had probable cause, Harris was in *lawful* custody once removed from the house, properly Mirandized, and allowed to talk; the warrantless entry's only unlawful product — what the police gained by arresting him *inside* the home (the in-home statement) — was already suppressed, vindicating *[[Payton v. New York|Payton]]*'s purpose. The station-house statement was neither the product of unlawful custody nor the fruit of the in-home location of the arrest. This distinguishes *[[Brown v. Illinois]]*, *[[Dunaway v. New York|Dunaway]]*, and *Taylor*, where confessions were suppressed because the police lacked probable cause and the detention itself was illegal.
 
 ## Conclusion
-With probable cause to arrest, a *Payton* violation does not require suppression of a statement made outside the home; the New York suppression of the station-house statement was reversed. The exclusionary remedy for a *Payton* violation reaches only the evidence obtained from the in-home arrest itself.
+With probable cause to arrest, a *[[Payton v. New York|Payton]]* violation does not require suppression of a statement made outside the home; the New York suppression of the station-house statement was reversed. The exclusionary remedy for a *[[Payton v. New York|Payton]]* violation reaches only the evidence obtained from the in-home arrest itself.
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.
 - No negative treatment. *New York v. Harris* limits the exclusionary consequences of [[Payton v. New York]] (reaffirmed in [[Kirk v. Louisiana]]) and turns on the presence of probable cause — contrast [[Brown v. Illinois]] (confession suppressed where the arrest lacked probable cause) and the [[Fruits and Attenuation|attenuation]] framework of [[Wong Sun v. United States]].
-- *Disambiguation:* distinct from the reversed-party case *Harris v. New York*, 401 U.S. 222 (1971) (statements taken in violation of *Miranda* may impeach a testifying defendant).
+- *Disambiguation:* distinct from the reversed-party case *[[Harris v. New York]]*, 401 U.S. 222 (1971) (statements taken in violation of *[[Miranda v. Arizona|Miranda]]* may impeach a testifying defendant).
 
 ## Appears on
 - [[Arrest in the Home]] — *Limiting*

@@ -47,7 +47,7 @@ lake:
 Police questioned Robert Stansbury about a child's murder, treating him initially as a potential witness rather than a suspect; during the questioning he made incriminating statements. The California Supreme Court had treated the officers' subjective view of whether Stansbury was a suspect as bearing on whether he was in custody.
 
 ## Issue
-Whether a person is "in custody" for *Miranda* purposes turns on the interrogating officer's subjective, undisclosed view that the person is a suspect.
+Whether a person is "in custody" for *[[Miranda v. Arizona|Miranda]]* purposes turns on the interrogating officer's subjective, undisclosed view that the person is a suspect.
 
 ## Rule
 Custody is an objective inquiry. "We hold, not for the first time, that an officer's subjective and undisclosed view concerning whether the person being interrogated is a suspect is irrelevant to the assessment whether the person is in custody." — 511 U.S. at 318. ^pin-318

@@ -44,10 +44,10 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-A Maryland trooper stopped a speeding car with three occupants. While the driver produced his license, the front-seat passenger, Wilson, was sweating and nervous; when ordered out of the car, he dropped a quantity of crack cocaine. Wilson argued the order to exit was an unreasonable seizure because, unlike the driver in *Pennsylvania v. Mimms*, he was a mere passenger.
+A Maryland trooper stopped a speeding car with three occupants. While the driver produced his license, the front-seat passenger, Wilson, was sweating and nervous; when ordered out of the car, he dropped a quantity of crack cocaine. Wilson argued the order to exit was an unreasonable seizure because, unlike the driver in *[[Pennsylvania v. Mimms]]*, he was a mere passenger.
 
 ## Issue
-Whether the rule of *Pennsylvania v. Mimms* — that an officer may order the driver out of a lawfully stopped vehicle — extends to passengers.
+Whether the rule of *[[Pennsylvania v. Mimms]]* — that an officer may order the driver out of a lawfully stopped vehicle — extends to passengers.
 
 ## Rule
 Yes. "We therefore hold that an officer making a traffic stop may order passengers to get out of the car pending completion of the stop." — 519 U.S. at 415. ^pin-415

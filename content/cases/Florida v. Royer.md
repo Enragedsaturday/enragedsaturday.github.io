@@ -49,7 +49,7 @@ lake:
 Detectives at Miami International Airport, suspecting Royer of carrying narcotics based on a "drug courier profile," approached him, asked for and kept his airline ticket and driver's license, told him he was suspected of transporting drugs, and asked him to accompany them to a small room. Without his consent they retrieved his checked luggage. Royer then produced a key and the agents found marijuana. He moved to suppress, arguing his consent was the product of an illegal detention.
 
 ## Issue
-Whether a consensual airport encounter and permissible *Terry* stop escalated into a detention tantamount to arrest — requiring probable cause — such that Royer's later consent to search his luggage was tainted.
+Whether a consensual airport encounter and permissible *[[Terry v. Ohio|Terry]]* stop escalated into a detention tantamount to arrest — requiring probable cause — such that Royer's later consent to search his luggage was tainted.
 
 ## Rule
 Investigative detentions must be limited and minimally intrusive: "an investigative detention must be temporary and last no longer than is necessary to effectuate the purpose of the stop. Similarly, the investigative methods employed should be the least intrusive means reasonably available to verify or dispel the officer's suspicion in a short period of time." — 460 U.S. at 500 (plurality opinion). ^pin-500
@@ -60,7 +60,7 @@ On these facts the encounter became an arrest: "What had begun as a consensual i
 Although the officers had reasonable suspicion to detain Royer briefly, by the time he produced his key the detention had exceeded what suspicion alone allows: the agents had identified themselves as narcotics officers, retained his ticket and identification, retrieved his luggage without consent, confined him in a small room, and never told him he was free to leave. That combination amounted, as a practical matter, to an arrest unsupported by probable cause. The officers could have used less intrusive means — returning his documents and telling him he was free to go — but did not. Because the detention was illegal, Royer's ensuing consent to the luggage search was tainted, and the marijuana was suppressed.
 
 ## Conclusion
-The detention ripened into an arrest without probable cause, and the tainted consent could not justify the search; suppression was affirmed. *Royer* supplies the least-intrusive-means principle and the markers (holding ID/ticket, confinement, no notice of freedom to leave) that turn a *Terry* stop into a [[Common Legal Terms#de-facto|de facto]] arrest.
+The detention ripened into an arrest without probable cause, and the tainted consent could not justify the search; suppression was affirmed. *Royer* supplies the least-intrusive-means principle and the markers (holding ID/ticket, confinement, no notice of freedom to leave) that turn a *[[Terry v. Ohio|Terry]]* stop into a [[Common Legal Terms#de-facto|de facto]] arrest.
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS** (controlling plurality).

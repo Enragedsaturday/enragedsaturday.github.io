@@ -52,16 +52,16 @@ holding: "The Louisiana Supreme Court denied review of a suppression ruling; in 
 <!-- header line; TreatmentBadge + weight render from frontmatter, degrading to the text above. Born under_review (⚪): identity cluster 5035127 → per curiam writ denial (opinion 4848796) + Crichton, J., concurrence (opinion 4848797); 228 So. 3d 1206, decided 2017-10-27. Quote string-matched to the CL opinion text 2026-07-07. NOTE: this is a writ denial + single-justice concurrence, not a merits holding — see Rule/Treatment. S9 promotes. -->
 
 ## Background
-Warren Demesme was interviewed twice about alleged sexual misconduct with minors. Both times detectives gave *Miranda* warnings, which he acknowledged and waived. During the second interview he made an equivocal remark, embedded in a longer sentence, that referenced wanting a lawyer — the request the courts would go on to scrutinize. The trial court declined to suppress his statements, and Demesme sought review in the Louisiana Supreme Court, arguing that he had invoked his right to counsel.
+Warren Demesme was interviewed twice about alleged sexual misconduct with minors. Both times detectives gave *[[Miranda v. Arizona|Miranda]]* warnings, which he acknowledged and waived. During the second interview he made an equivocal remark, embedded in a longer sentence, that referenced wanting a lawyer — the request the courts would go on to scrutinize. The trial court declined to suppress his statements, and Demesme sought review in the Louisiana Supreme Court, arguing that he had invoked his right to counsel.
 
 ## Issue
-Whether a suspect's ambiguous or equivocal reference to counsel during a *Miranda* interview obligates officers to cease questioning.
+Whether a suspect's ambiguous or equivocal reference to counsel during a *[[Miranda v. Arizona|Miranda]]* interview obligates officers to cease questioning.
 
 ## Rule
 The Louisiana Supreme Court **denied the writ application** without a merits opinion. Justice Crichton concurred, writing separately to explain his view under the governing federal standard. Applying the rule of *Davis v. United States* — that questioning need not cease when a suspect's reference to counsel is so ambiguous or equivocal that a reasonable officer would understand only that he *might* be invoking the right — he concluded: "In my view, the defendant's ambiguous and equivocal reference to a 'lawyer dog' does not constitute an invocation of counsel." — 228 So. 3d at 1206 (Crichton, J., concurring). ^pin-crichton
 
 ## Application
-On the [[Common Legal Terms#concurring-opinion|concurrence]]'s reasoning, Demesme's earlier valid *Miranda* waivers remained in effect, and his later reference to a "lawyer dog," embedded in an equivocal sentence, would not have communicated to a reasonable officer a clear, present demand for counsel under the *Davis* clear-articulation rule. Because the request was not unambiguous, *[[Edwards v. Arizona|Edwards]]*'s bar on continued interrogation was not triggered.
+On the [[Common Legal Terms#concurring-opinion|concurrence]]'s reasoning, Demesme's earlier valid *[[Miranda v. Arizona|Miranda]]* waivers remained in effect, and his later reference to a "lawyer dog," embedded in an equivocal sentence, would not have communicated to a reasonable officer a clear, present demand for counsel under the *Davis* clear-articulation rule. Because the request was not unambiguous, *[[Edwards v. Arizona|Edwards]]*'s bar on continued interrogation was not triggered.
 
 ## Conclusion
 The writ application was **denied**; the suppression ruling was left undisturbed. Justice Crichton concurred; no [[Common Legal Terms#majority-opinion|majority opinion]] issued.

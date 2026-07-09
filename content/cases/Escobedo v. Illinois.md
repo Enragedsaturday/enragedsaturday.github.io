@@ -81,7 +81,7 @@ The statements were inadmissible; the conviction was reversed. *Escobedo* was th
 
 ## Treatment & subsequent history
 - **Status:** limited *(as of 2026-06-30)* — **Binding — SCOTUS** (result intact; rationale superseded).
-- Two years later [[Miranda v. Arizona]] recast the concern as a **Fifth Amendment** matter, and [[Kirby v. Illinois]] (and *Moran v. Burbine*) confined *Escobedo* "to its own facts." The modern rule is that the **Sixth Amendment** right to counsel attaches only at the initiation of adversary judicial proceedings ([[United States v. Gouveia]]), while custodial interrogation is governed by *Miranda*. *Escobedo* is taught as the historical precursor, not as a freestanding test.
+- Two years later [[Miranda v. Arizona]] recast the concern as a **Fifth Amendment** matter, and [[Kirby v. Illinois]] (and *[[Moran v. Burbine]]*) confined *Escobedo* "to its own facts." The modern rule is that the **Sixth Amendment** right to counsel attaches only at the initiation of adversary judicial proceedings ([[United States v. Gouveia]]), while custodial interrogation is governed by *[[Miranda v. Arizona|Miranda]]*. *Escobedo* is taught as the historical precursor, not as a freestanding test.
 
 ## Appears on
 - [[Sixth Amendment Right to Counsel]] — *Key — Historical*

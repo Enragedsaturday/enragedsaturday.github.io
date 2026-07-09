@@ -44,7 +44,7 @@ lake:
 <!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
 
 ## Background
-Cleveland officers forced their way into Dollree Mapp's home without a valid warrant, searched it while looking for a bombing suspect and gambling materials, and found allegedly obscene materials, for which she was convicted. The Ohio courts admitted the unlawfully seized evidence, relying on *Wolf v. Colorado*, which had held the Fourth Amendment's exclusionary remedy was not binding on the States.
+Cleveland officers forced their way into Dollree Mapp's home without a valid warrant, searched it while looking for a bombing suspect and gambling materials, and found allegedly obscene materials, for which she was convicted. The Ohio courts admitted the unlawfully seized evidence, relying on *[[Wolf v. Colorado]]*, which had held the Fourth Amendment's exclusionary remedy was not binding on the States.
 
 ## Issue
 Whether evidence obtained by a search and seizure that violates the Fourth Amendment is inadmissible in a state criminal prosecution.
@@ -55,10 +55,10 @@ Yes. "We hold that all evidence obtained by searches and seizures in violation o
 Because the Fourth Amendment's right of privacy is enforceable against the States through the Due Process Clause of the Fourteenth Amendment, it is enforceable against them by the same sanction of exclusion used against the Federal Government.
 
 ## Application
-The evidence used to convict Mapp was obtained in a warrantless, forcible entry and search of her home in violation of the Fourth Amendment. Under the rule announced here, that unlawfully seized evidence was inadmissible in the Ohio courts, so its admission could not stand. The Court overruled the contrary holding of *Wolf v. Colorado* to the extent it had left the States free to admit such evidence.
+The evidence used to convict Mapp was obtained in a warrantless, forcible entry and search of her home in violation of the Fourth Amendment. Under the rule announced here, that unlawfully seized evidence was inadmissible in the Ohio courts, so its admission could not stand. The Court overruled the contrary holding of *[[Wolf v. Colorado]]* to the extent it had left the States free to admit such evidence.
 
 ## Conclusion
-The conviction, resting on unconstitutionally seized evidence, was reversed. The federal exclusionary rule of *Weeks* applies to the States through the Fourteenth Amendment.
+The conviction, resting on unconstitutionally seized evidence, was reversed. The federal exclusionary rule of *[[Weeks v. United States|Weeks]]* applies to the States through the Fourteenth Amendment.
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.

@@ -52,17 +52,17 @@ Whether a suspect's waiver of his [[Miranda and Custodial Interrogation|Miranda 
 ## Rule
 No. A valid waiver requires that it be voluntary and that it be made with full awareness of the *nature* of the right abandoned and the consequences of doing so — not awareness of every tactical detail. "[A] suspect's awareness of all the possible subjects of questioning in advance of interrogation is not relevant to determining whether the suspect voluntarily, knowingly, and intelligently waived his Fifth Amendment privilege." — 479 U.S. at 577. ^pin-577
 
-The *Miranda* warnings themselves convey the nature of the privilege and the consequences of abandoning it (anything he says may be used against him), so a suspect need not also be told *which* crimes will be discussed. Mere police silence about the subject matter of the interrogation is not the kind of trickery or deception that would invalidate an otherwise valid waiver.
+The *[[Miranda v. Arizona|Miranda]]* warnings themselves convey the nature of the privilege and the consequences of abandoning it (anything he says may be used against him), so a suspect need not also be told *which* crimes will be discussed. Mere police silence about the subject matter of the interrogation is not the kind of trickery or deception that would invalidate an otherwise valid waiver.
 
 ## Application
-Spring received and understood the *Miranda* warnings and voluntarily waived his rights. The agents' failure to forewarn him that they would also ask about the Colorado murder did not affect the knowing-and-intelligent character of that waiver: he knew he could remain silent and that anything he said could be used against him. His admissions were therefore the product of a valid waiver.
+Spring received and understood the *[[Miranda v. Arizona|Miranda]]* warnings and voluntarily waived his rights. The agents' failure to forewarn him that they would also ask about the Colorado murder did not affect the knowing-and-intelligent character of that waiver: he knew he could remain silent and that anything he said could be used against him. His admissions were therefore the product of a valid waiver.
 
 ## Conclusion
 The waiver was knowing and intelligent despite the suspect's ignorance of all the topics to be covered. The judgment of the Colorado Supreme Court was reversed and the case [[Reading and Citing Cases#on-remand|remanded]].
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.
-- Consistent with [[Moran v. Burbine]] (a waiver is not invalidated by the police withholding information — there, that an attorney was trying to reach the suspect): the validity of a *Miranda* waiver turns on the suspect's understanding of the right itself, not on full information about the investigation.
+- Consistent with [[Moran v. Burbine]] (a waiver is not invalidated by the police withholding information — there, that an attorney was trying to reach the suspect): the validity of a *[[Miranda v. Arizona|Miranda]]* waiver turns on the suspect's understanding of the right itself, not on full information about the investigation.
 
 ## Appears on
 - [[Miranda Waiver and Invocation]] — *Key — Progeny*

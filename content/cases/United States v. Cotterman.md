@@ -62,7 +62,7 @@ Forensic examination of a device seized at the border requires reasonable suspic
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding in-circuit — 9th Cir.** Clarified by [[United States v. Cano]], which held that the "reasonable suspicion" *Cotterman* requires means suspicion that the device contains digital contraband and confined such searches to that purpose.
-- *Cotterman* reflects the digital-privacy concerns later voiced by SCOTUS in [[Riley v. California]] and [[Carpenter v. United States]]; it anchors a circuit split — the Eleventh Circuit (*United States v. Touset*) requires no suspicion even for forensic border device searches.
+- *Cotterman* reflects the digital-privacy concerns later voiced by SCOTUS in [[Riley v. California]] and [[Carpenter v. United States]]; it anchors a circuit split — the Eleventh Circuit (*[[United States v. Touset]]*) requires no suspicion even for forensic border device searches.
 
 ## Appears on
 - [[Border Searches]] — *Illustrates a circuit split*

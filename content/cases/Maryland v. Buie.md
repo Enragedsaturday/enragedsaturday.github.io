@@ -62,7 +62,7 @@ The officers had arrest warrants and arrested Buie in his home for an armed robb
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.
-- *Buie* imports the [[Terry v. Ohio]] / [[Michigan v. Long]] reasonable-suspicion balance into the in-home arrest setting and remains the controlling protective-sweep authority; it is distinct from the *Chimel* search-incident rationale of [[Chimel v. California]].
+- *Buie* imports the [[Terry v. Ohio]] / [[Michigan v. Long]] reasonable-suspicion balance into the in-home arrest setting and remains the controlling protective-sweep authority; it is distinct from the *[[Chimel v. California|Chimel]]* search-incident rationale of [[Chimel v. California]].
 
 ## Appears on
 - [[Securing the Scene]] — *Key — Anchor*

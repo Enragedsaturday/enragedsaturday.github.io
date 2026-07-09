@@ -54,17 +54,17 @@ No — absent an express invocation, the silence is not protected. The privilege
 
 The plurality held that Salinas's "Fifth Amendment claim fails because he did not expressly invoke the privilege against self-incrimination" in response to the officer's question. — 133 S. Ct. at 2178 (plurality opinion). ^pin-2178
 
-The express-invocation requirement applies even when the questioner has reason to suspect the answer would be incriminating; the recognized exceptions (a criminal defendant's silence at his own trial under *Griffin*, and silence in the face of official compulsion) did not reach Salinas's voluntary, noncustodial silence.
+The express-invocation requirement applies even when the questioner has reason to suspect the answer would be incriminating; the recognized exceptions (a criminal defendant's silence at his own trial under *[[Griffin v. Wisconsin|Griffin]]*, and silence in the face of official compulsion) did not reach Salinas's voluntary, noncustodial silence.
 
 ## Application
-Salinas was free to leave and was not subjected to the compulsion that excuses an express claim of the privilege. He simply went quiet when asked about the shells, never telling officers he was relying on the Fifth Amendment. Because he did not invoke the privilege when he could have, his silence fell outside the *Griffin* no-comment rule, and the State could use it against him. (Justices Thomas and Scalia concurred in the judgment on the broader ground that comment on precustodial silence does not compel self-incrimination at all.)
+Salinas was free to leave and was not subjected to the compulsion that excuses an express claim of the privilege. He simply went quiet when asked about the shells, never telling officers he was relying on the Fifth Amendment. Because he did not invoke the privilege when he could have, his silence fell outside the *[[Griffin v. Wisconsin|Griffin]]* no-comment rule, and the State could use it against him. (Justices Thomas and Scalia concurred in the judgment on the broader ground that comment on precustodial silence does not compel self-incrimination at all.)
 
 ## Conclusion
-A suspect must expressly invoke the Fifth Amendment to keep his precustodial, pre-*Miranda* silence out of evidence; Salinas did not, so the conviction stood. The Texas court's judgment was affirmed.
+A suspect must expressly invoke the Fifth Amendment to keep his precustodial, pre-*[[Miranda v. Arizona|Miranda]]* silence out of evidence; Salinas did not, so the conviction stood. The Texas court's judgment was affirmed.
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.
-- Consistent with [[Berghuis v. Thompkins]] (a suspect must unambiguously invoke even the right to remain silent). Distinguish [[Doyle v. Ohio]], which protects **post**-arrest, **post**-*Miranda* silence; *Salinas* concerns **pre**-custody silence with no invocation.
+- Consistent with [[Berghuis v. Thompkins]] (a suspect must unambiguously invoke even the right to remain silent). Distinguish [[Doyle v. Ohio]], which protects **post**-arrest, **post**-*[[Miranda v. Arizona|Miranda]]* silence; *Salinas* concerns **pre**-custody silence with no invocation.
 
 ## Appears on
 - [[Miranda Waiver and Invocation]] — *Key — Progeny*

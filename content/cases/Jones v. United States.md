@@ -62,7 +62,7 @@ Jones had standing to contest the search; the lower courts erred in denying it. 
 
 ## Treatment & subsequent history
 - **Status:** overruled *(as of 2026-06-30)* — **Historical** (tier 6).
-- The "automatic standing" rule was **overruled by [[United States v. Salvucci]]** (1980) after *Simmons v. United States* removed the self-incrimination dilemma it was designed to cure.
+- The "automatic standing" rule was **overruled by [[United States v. Salvucci]]** (1980) after *[[Simmons v. United States]]* removed the self-incrimination dilemma it was designed to cure.
 - The "legitimately on premises" standing test was **disavowed by [[Rakas v. Illinois]]** (1978), which held that Fourth Amendment rights are personal and that standing turns on whether the defendant's **own** legitimate expectation of privacy was violated — not on mere lawful presence.
 
 ## Appears on

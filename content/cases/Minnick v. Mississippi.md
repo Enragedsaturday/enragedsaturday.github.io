@@ -47,20 +47,20 @@ lake:
 After his arrest, Minnick invoked his right to counsel during FBI questioning, and the interview stopped. He then consulted with appointed counsel. Days later, a state officer returned and, without counsel present, questioned him again; Minnick made incriminating statements.
 
 ## Issue
-Whether the *Edwards* bar on police-initiated interrogation after a request for counsel ends once the suspect has consulted with an attorney.
+Whether the *[[Edwards v. Arizona|Edwards]]* bar on police-initiated interrogation after a request for counsel ends once the suspect has consulted with an attorney.
 
 ## Rule
 No. "we now hold that when counsel is requested, interrogation must cease, and officials may not reinitiate interrogation without counsel present, whether or not the accused has consulted with his attorney." — 498 U.S. at 153. ^pin-153
 
 ## Application
-Minnick invoked counsel during the FBI interview, so police could not reinitiate interrogation without counsel present. His intervening consultation with appointed counsel did not lift that protection; the later police-initiated questioning, conducted without counsel present, therefore violated the *Edwards* rule, and his statements were inadmissible.
+Minnick invoked counsel during the FBI interview, so police could not reinitiate interrogation without counsel present. His intervening consultation with appointed counsel did not lift that protection; the later police-initiated questioning, conducted without counsel present, therefore violated the *[[Edwards v. Arizona|Edwards]]* rule, and his statements were inadmissible.
 
 ## Conclusion
-Reversed; the statements were obtained in violation of *Edwards* and could not be used.
+Reversed; the statements were obtained in violation of *[[Edwards v. Arizona|Edwards]]* and could not be used.
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.
-- No negative treatment. *Minnick* strengthens [[Edwards v. Arizona]] by holding that mere consultation with counsel does not end the bar; [[Maryland v. Shatzer]] later supplied a break-in-custody endpoint to the *Edwards* protection.
+- No negative treatment. *Minnick* strengthens [[Edwards v. Arizona]] by holding that mere consultation with counsel does not end the bar; [[Maryland v. Shatzer]] later supplied a break-in-custody endpoint to the *[[Edwards v. Arizona|Edwards]]* protection.
 
 ## Appears on
 - [[Miranda Waiver and Invocation]] — *Key — Progeny / Refinement*
