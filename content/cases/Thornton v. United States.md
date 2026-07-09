@@ -34,7 +34,7 @@ treatment:
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/134746/thornton-v-united-states/"
   cluster_id: 134746
-  opinion_id: 134746
+  opinion_id: 9434613
   identity_checked: true
 homes:
   - page: "[[SIA Vehicles]]"
@@ -48,7 +48,7 @@ holding: "New York v. Belton's rule permitting a vehicle search incident to an o
 lake:
   record_id: Thornton v. United States
   status: verified
-  projected_at: 2026-07-06
+  projected_at: 2026-07-09
 ---
 
 # Thornton v. United States

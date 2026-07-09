@@ -23,12 +23,12 @@ treatment:
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/4899427/sally-gaetjens-v-winnebago-county-illinois/"
   cluster_id: 4899427
-  opinion_id: null
+  opinion_id: 4703206
   identity_checked: true
 lake:
   record_id: Gaetjens v. Winnebago County
   status: under_review
-  projected_at: 2026-07-07
+  projected_at: 2026-07-09
 homes:
   - page: "[[Emergency Aid]]"
     role: "Recent development — expands/illustrates (Binding in-circuit — 7th Cir.)"

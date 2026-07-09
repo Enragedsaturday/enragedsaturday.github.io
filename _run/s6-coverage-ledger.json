@@ -14,10 +14,10 @@
  ],
  "note": "One row per distinct caption in the S6 candidate universe. Assembled programmatically from the signed disposition artifacts + the S2 lake manifest (build_coverage_ledger.py). NUM-04's 388-mention reconciliation is a LEDGER PROPERTY: rows carry page_backed + pointer so S8 links every mention whose caption has a page and applies opinion-link/plain to the rest. The 388-caption bare-mention universe is a MEASURED S8 input (NUM-04); it is not present as a machine artifact in the repo trees, so it is not re-derived here (no fabricated reconciliation).",
  "counts": {
-  "total_rows": 251,
+  "total_rows": 252,
   "by_terminal": {
    "authored": 151,
-   "brief-mention": 60,
+   "brief-mention": 61,
    "excluded-remit": 26,
    "folded-alias": 8,
    "removed": 2,
@@ -46,7 +46,7 @@
    "note": "LINT-17 frozen allowlist tail: page-less bare-mention captions outside the S6 candidate universe. NOT the NUM-04 388 (a measured S8 input absent as a machine artifact) — this is LINT-17's own corpus scan of the CURRENT prose."
   }
  },
- "partition_arithmetic": "authored 151 + brief-mention 60 + excluded-remit 26 + folded-alias 8 + removed 2 + unverifiable 1 + watch 3 = 251 distinct captions",
+ "partition_arithmetic": "authored 151 + brief-mention 61 + excluded-remit 26 + folded-alias 8 + removed 2 + unverifiable 1 + watch 3 = 252 distinct captions",
  "conflicts": [],
  "rows": [
   {
@@ -3746,7 +3746,7 @@
    "gate": {
     "verdict": "INGEST",
     "prong": null,
-    "rationale": "Mention (w1): collective-knowledge application; no split/omitted question."
+    "rationale": "Mention (w1): collective-knowledge application; no split/omitted question. IDENTITY CAVEAT (S7 repair lane, do not consume this row for the Cook-Balser reservation): the doctrinally-operative pooling Cook is DONALD Cook, 277 F.3d 82, 86 (1st Cir. 2002), cluster 776186 (panel-verified, S7-L1-POOLING-DISPOSITIONS.jsonl); this row's cluster 3165557 = Oshan Cook 2015. The re-key is S2-lane work: (1) live-fetch cluster 776186 into the lake cache; (2) ingest.py --rekey-cluster-panel united-states-v-cook--3165557 --rekey-cluster-target 776186 --rekey-cluster-expect-cite '277 F.3d 82' --rekey-cluster-evidence 'S7-L1 catch'; (3) update this row's record_id/cluster/cite + build_coverage_ledger.py --write. Page prose already cites the correct Donald Cook."
    },
    "keys": {
     "cl": "cluster 3165557 (verified_identity shell)",
@@ -3909,6 +3909,26 @@
    "pointer": "seizures/Traffic Stops.md",
    "page_backed": false,
    "source": "R8-NONPAGE-LEDGER:mentions_and_bullets"
+  },
+  {
+   "caption": "United States v. Morgan",
+   "canonical": "United States v. Jaron Howard Morgan",
+   "cluster_id": 9409483,
+   "leg": "S7 D5 persons-seizure roster (function-cabining) — repair-lane identity resolution",
+   "gate": {
+    "verdict": "INGEST",
+    "prong": null,
+    "rationale": "The spec's D5 unit names 'Morgan (6th Cir. 2023) function-cabining'. Batch 12 failed closed: the lake's only Morgan record (morgan-v-fairfield-county--u2812be2f) is not_found and is the DIFFERENT 2018 §1983 knock-and-talk case. Repair-lane resolution: the intended case is United States v. Jaron Howard Morgan, 71 F.4th 540 (6th Cir. 2023-06-26), docket 22-1445 (Sutton, J.) — reversing denial of suppression where an officer opened a car door on a sleeping driver: community-caretaking actions are 'permitted when reasonable but only when reasonable' and 'the intrusion must reasonably match the problem at hand' — the function-cabining holding D5 teaches."
+   },
+   "keys": {
+    "cl": "cluster 9409483 / lead opinion 9404959 via sub_opinions (CL MCP: search + clusters endpoint + document read; cluster-vs-opinion trap avoided — the URL id 9409483 returned 0 hits as an opinion id, real lead resolved from sub_opinions)",
+    "independent": "opinion text confirms verbatim at positions 25338/26065: 'the intrusion must reasonably match the problem at hand'; 'Community-caretaking actions, in short, are permitted when reasonable but only when reasonable.'"
+   },
+   "terminal": "brief-mention",
+   "pointer": "warrant-exceptions/home-entry-and-search/Community Caretaking.md",
+   "page_backed": false,
+   "source": "S7-RL-DISPOSITIONS.jsonl",
+   "note": "The pre-existing not_found record morgan-v-fairfield-county stays honest and untouched (a different case)."
   },
   {
    "caption": "United States v. Morrison",

@@ -23,12 +23,12 @@ treatment:
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/10799651/postal-service-v-konan/"
   cluster_id: 10799651
-  opinion_id: null
+  opinion_id: 11266325
   identity_checked: false
 lake:
   record_id: Postal Service v. Konan
   status: under_review
-  projected_at: 2026-07-07
+  projected_at: 2026-07-09
 homes:
   - page: "[[Suing Federal Officers]]"
     role: Recent development

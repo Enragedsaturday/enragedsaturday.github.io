@@ -380,6 +380,27 @@ def main():
                   note=e.get("note"),
                   source="S7-L2-SACO-DISPOSITIONS.jsonl")
 
+    # ---- 6c-3) S7 repair-lane dispositions (orchestrator token legs) ---------
+    # Identity resolutions the batches failed closed on (e.g. the D5 Morgan:
+    # the spec names 'Morgan (6th Cir. 2023)' but the lake's only Morgan record
+    # is the different 2018 Fairfield County case). Rows are panel-verified via
+    # the orchestrator's interactive CL MCP lane; same contract as 6c/6c-2.
+    s7rl = os.path.join(O2, "S7-RL-DISPOSITIONS.jsonl")
+    if os.path.isfile(s7rl):
+        for e in load_jsonl(s7rl):
+            if e.get("assemble") is False:
+                continue
+            if not e.get("caption"):
+                continue  # metadata header row (queue/rows/note), same tolerance as the s6 candidate queue
+            L.add(e["caption"], e.get("canonical") or e["caption"], e["terminal"],
+                  cluster_id=e.get("cluster_id"), leg=e.get("leg"),
+                  verdict=e.get("verdict"), prong=e.get("prong"),
+                  rationale=e.get("rationale"),
+                  cl=e.get("cl"), independent=e.get("independent"),
+                  pointer=e.get("pointer"), aliases=e.get("aliases"),
+                  note=e.get("note"),
+                  source="S7-RL-DISPOSITIONS.jsonl")
+
     # ---- 6b) any remaining page_path=None manifest stub not yet placed ------
     # (verified_identity brief-mention shells whose caption did not text-match a
     # non-page-ledger record_id — belt-and-braces: place by manifest status.)

@@ -23,12 +23,12 @@ treatment:
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/10845431/district-of-columbia-v-rw/"
   cluster_id: 10845431
-  opinion_id: null
+  opinion_id: 11312795
   identity_checked: false
 lake:
   record_id: District of Columbia v. R.W.
   status: under_review
-  projected_at: 2026-07-07
+  projected_at: 2026-07-09
 homes:
   - page: "[[Terry Stops and Reasonable Suspicion]]"
     role: Recent development

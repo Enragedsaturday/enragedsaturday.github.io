@@ -23,12 +23,12 @@ treatment:
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/10878535/landor-v-louisiana-dept-of-corrections-and-public-safety/"
   cluster_id: 10878535
-  opinion_id: null
+  opinion_id: 11346052
   identity_checked: false
 lake:
   record_id: Landor v. Louisiana Dept. of Corrections
   status: under_review
-  projected_at: 2026-07-07
+  projected_at: 2026-07-09
 homes:
   - page: "[[Suing Federal Officers]]"
     role: Recent development

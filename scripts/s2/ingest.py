@@ -5047,6 +5047,293 @@ def _journal_identity_repair(journal, **row):
 
 
 # ---------------------------------------------------------------------------
+# R8 addendum #3 — cache-served lead-opinion re-key (S7 consolidated repair
+# lane). The cluster-vs-opinion trap: a pre-harmonization opinion id EQUAL to
+# the cluster id (`lead_opinion_id == cluster_id`) was carried as the lead
+# instead of the harmonized lead opinion. CourtListener re-ingested those old
+# clusters with fresh opinion ids and lists them lead-first in
+# `cluster.sub_opinions`, keeping the legacy self-referential id LAST. This
+# surface sets `identity.lead_opinion_id` to the harmonized lead read from the
+# CACHED cluster (zero live CL; a cache miss fails closed and is queued for the
+# lane), scoped to records whose current lead is PROVABLY WRONG (the legacy
+# trap id, None, or a stale non-member of the cluster's opinions).
+#
+# Ambiguity rule (documented per the work order): the harmonized lead is the
+# HEAD of `sub_opinions` AFTER dropping the single legacy self-referential id
+# (== cluster_id). This is unambiguous by CourtListener's canonical lead-first
+# ordering, and we never attempt to distinguish majority-vs-plurality among the
+# real opinions. As a hard guard we only WRITE when the current lead is provably
+# wrong; a record whose lead is already a legitimate non-trap member is REFUSED
+# (needs a panel adjudication, not this cache surface — never silently overwrite
+# a plausible lead). A cluster with no non-legacy sub_opinion in cache is queued
+# for the lane, never guessed. The case-page `courtlistener` block is owned by
+# the projector: re-project affected pages with `project.py --write` after.
+# Registered defect: batch-11 catches #5/#6 (Riley/Thornton), batch-12 catch #7
+# (King) — the cluster-vs-opinion trap.
+# ---------------------------------------------------------------------------
+REKEY_LEAD_STEP = "r8.rekey-lead-opinion"
+REKEY_LEAD_ALLOW_STATUSES = ("verified_identity", "verified", "under_review")
+
+
+def _journal_rekey_lead(journal, **row):
+    row.setdefault("lane", WEB_CITES_LANE)
+    row.setdefault("model", WEB_CITES_MODEL)
+    journal.append(step=REKEY_LEAD_STEP, **row)
+
+
+def harmonized_lead_from_cluster(cluster, cluster_id):
+    """(harmonized_lead_id, subs) from a CACHED cluster object.
+
+    `subs` = the ordered `sub_opinions` opinion ids. The harmonized lead is the
+    HEAD of `subs` after dropping the legacy self-referential id (== cluster_id),
+    which CourtListener lists LAST on re-ingested multi-opinion clusters (the
+    trap). CRITICAL single-opinion carve-out: a cluster whose ONLY opinion's id
+    coincides with the cluster id (a legacy single-opinion cluster — e.g. the
+    Riley merits cluster 2680439, whose sole opinion is also 2680439) is
+    LEGITIMATE; the coincident id IS the lead and must not be dropped. So the
+    cluster-id-equal opinion is treated as the droppable legacy consolidated stub
+    ONLY when more than one opinion is present. Returns (None, []) only when the
+    cached cluster carries no sub_opinion at all.
+    """
+    subs = []
+    for item in cluster.get("sub_opinions") or []:
+        try:
+            oid = extract_opinion_id(item, "cluster.sub_opinions[]")
+        except ValueError:
+            continue
+        if oid:
+            subs.append(int(oid))
+    if not subs:
+        return None, []
+    real_subs = [s for s in subs if s != int(cluster_id)]
+    if real_subs:
+        return real_subs[0], subs
+    # sole opinion coincides with the cluster id -> it is the legitimate lead
+    return subs[0], subs
+
+
+def rekey_lead_opinion_from_cache(paths, manifest, journal, client, record_ids,
+                                  allow_statuses=REKEY_LEAD_ALLOW_STATUSES):
+    allow_statuses = tuple(allow_statuses)
+    # Phase 1 — validate the whole batch before any write (fail closed), mirroring
+    # repair_identity_from_cache: an out-of-scope, missing, or cluster-less record
+    # aborts BEFORE any earlier row is re-keyed.
+    targets = []
+    seen = set()
+    for raw_id in unique_preserve_order(record_ids):
+        record_id = manifest.resolve_record_id(raw_id) or raw_id
+        if record_id in seen:
+            continue
+        seen.add(record_id)
+        row = manifest.by_record_id.get(record_id)
+        if not row:
+            raise SystemExit("--rekey-lead-opinion-from-cache record not found in manifest: %s" % raw_id)
+        if row.get("status") not in allow_statuses:
+            raise SystemExit("--rekey-lead-opinion-from-cache refuses row %s (status=%s); permitted: %s"
+                             % (record_id, row.get("status"), ", ".join(allow_statuses)))
+        record = load_case_record(paths, record_id)
+        if record is None:
+            raise SystemExit("--rekey-lead-opinion-from-cache lake record missing on disk: %s" % record_id)
+        cluster_id = (record.get("identity") or {}).get("cluster_id")
+        if not cluster_id:
+            raise SystemExit("--rekey-lead-opinion-from-cache row %s has no identity.cluster_id" % record_id)
+        targets.append((record_id, row, record, int(cluster_id)))
+
+    # Phase 2 — per-row cache fetch + write, journaled + resumable-by-outcome.
+    rekeyed = []
+    queued = []
+    noop = []
+    refused = []
+    for record_id, row, record, cluster_id in targets:
+        identity = record.get("identity") or {}
+        current_lead = identity.get("lead_opinion_id")
+        current_lead = int(current_lead) if current_lead is not None else None
+        try:
+            cluster = client.get_cluster(cluster_id, record_id=record_id, step=REKEY_LEAD_STEP + ".cluster")
+        except (IngestInterrupted, FetchFailed) as exc:
+            # not cached: budget-exhausted (--max-calls 0) or fetch failure — do
+            # NOT touch the CL lane; journal + queue for the lane grant.
+            _journal_rekey_lead(journal, record_id=record_id, status="queued-for-lane",
+                                reason=getattr(exc, "reason", None) or "not_cached", cluster_id=cluster_id)
+            queued.append(record_id)
+            continue
+        harmonized, subs = harmonized_lead_from_cluster(cluster, cluster_id)
+        if harmonized is None:
+            _journal_rekey_lead(journal, record_id=record_id, status="queued-for-lane",
+                                reason="cached cluster carries no sub_opinion",
+                                cluster_id=cluster_id, sub_opinions=subs)
+            queued.append(record_id)
+            continue
+        if current_lead == harmonized:
+            # idempotent clean no-op: already carries the harmonized lead.
+            _journal_rekey_lead(journal, record_id=record_id, status="already-harmonized",
+                                before=current_lead, after=current_lead, cluster_id=cluster_id)
+            noop.append(record_id)
+            continue
+        # Scope guard: only re-key a PROVABLY-WRONG lead — missing, the legacy
+        # self-referential trap id, or a stale non-member. A current lead that is
+        # already a legitimate non-trap member needs a panel, not this surface.
+        provably_wrong = (current_lead is None
+                          or current_lead == cluster_id
+                          or current_lead not in subs)
+        if not provably_wrong:
+            _journal_rekey_lead(journal, record_id=record_id, status="refused-needs-panel",
+                                before=current_lead, after=harmonized, cluster_id=cluster_id,
+                                sub_opinions=subs,
+                                reason="current lead is a legitimate non-trap member; ambiguous re-key")
+            refused.append(record_id)
+            continue
+        identity["lead_opinion_id"] = harmonized
+        record["identity"] = identity
+        record.setdefault("provenance", {})["date_modified"] = iso_now()
+        write_case_record(paths, record)
+        row["lead_opinion_id"] = harmonized
+        row["last_record_write"] = iso_now()
+        _journal_rekey_lead(journal, record_id=record_id, status="rekeyed",
+                            before=current_lead, after=harmonized, cluster_id=cluster_id,
+                            sub_opinions=subs, source="cluster-cache-served")
+        rekeyed.append(record_id)
+    return {"rekeyed": rekeyed, "queued": queued, "noop": noop, "refused": refused}
+
+
+# ---------------------------------------------------------------------------
+# R8 addendum #4 — panel-verified cluster re-key (S7 consolidated repair lane,
+# the Riley class). A record keyed to the WRONG cluster (Riley: cluster 8416508
+# = the Solicitor-General motion-order stub, cite 572 U.S. 1055, opinion 8386852
+# = a 184-char order) must be re-pointed to the merits cluster (2680439). This
+# is NOT a cache-derivable correction — the wrong cluster is internally
+# consistent — so the target cluster is supplied EXPLICITLY by an
+# orchestrator/panel adjudication, and the surface FAIL-CLOSES unless the CACHED
+# target cluster's citations contain the panel-supplied expected official cite
+# (the exact trap guard: e.g. `134 S. Ct. 2473` is present in cluster 2680439
+# but NOT in the SG-order cluster 8416508, which carries only `572 U.S. 1055`).
+# On pass it re-keys `identity.cluster_id` + `lead_opinion_id` (harmonized from
+# the target's sub_opinions) + `absolute_url` + date/year, and refreshes the
+# citations block from the target cluster via the SIGNED official-selection
+# serializer (`classify_citations`). The canonical `case_name` is preserved. The
+# panel evidence pointer is recorded on the journal line. Zero live CL (the
+# target cluster MUST be cached); the case-page `courtlistener` block is
+# refreshed by `project.py --write`.
+# Registered defect: batch-11 catch #5 (Riley), phase-a cache verification.
+# ---------------------------------------------------------------------------
+REKEY_CLUSTER_STEP = "r8.rekey-cluster-panel"
+REKEY_CLUSTER_ALLOW_STATUSES = ("verified_identity", "verified", "under_review")
+
+
+def _journal_rekey_cluster(journal, **row):
+    row.setdefault("lane", WEB_CITES_LANE)
+    row.setdefault("model", WEB_CITES_MODEL)
+    journal.append(step=REKEY_CLUSTER_STEP, **row)
+
+
+def rekey_cluster_panel(paths, manifest, journal, client, precedence, record_ref,
+                        target_cluster_id, expect_cite, evidence,
+                        allow_statuses=REKEY_CLUSTER_ALLOW_STATUSES):
+    allow_statuses = tuple(allow_statuses)
+    # Phase 1 — validate before any write (fail closed). The panel arguments are
+    # all mandatory: target cluster, the expected official cite (the trap guard),
+    # and the register evidence pointer (panel discipline).
+    if not record_ref:
+        raise SystemExit("--rekey-cluster-panel requires a record")
+    if target_cluster_id is None:
+        raise SystemExit("--rekey-cluster-panel requires --rekey-cluster-target <cluster_id>")
+    try:
+        target_cluster_id = int(target_cluster_id)
+    except (TypeError, ValueError):
+        raise SystemExit("--rekey-cluster-target must be an integer cluster id: %r" % (target_cluster_id,))
+    expect_cite = clean_s6_candidate_value(expect_cite)
+    if not expect_cite:
+        raise SystemExit("--rekey-cluster-panel requires --rekey-cluster-expect-cite \"<official cite>\"")
+    evidence = clean_s6_candidate_value(evidence)
+    if not evidence:
+        raise SystemExit("--rekey-cluster-panel requires --rekey-cluster-evidence \"<register pointer>\" (panel discipline)")
+    record_id = manifest.resolve_record_id(record_ref) or record_ref
+    row = manifest.by_record_id.get(record_id)
+    if not row:
+        raise SystemExit("--rekey-cluster-panel record not found in manifest: %s" % record_ref)
+    if row.get("status") not in allow_statuses:
+        raise SystemExit("--rekey-cluster-panel refuses row %s (status=%s); permitted: %s"
+                         % (record_id, row.get("status"), ", ".join(allow_statuses)))
+    record = load_case_record(paths, record_id)
+    if record is None:
+        raise SystemExit("--rekey-cluster-panel lake record missing on disk: %s" % record_id)
+    identity = record.get("identity") or {}
+    from_cluster = identity.get("cluster_id")
+    if from_cluster is not None and int(from_cluster) == target_cluster_id:
+        raise SystemExit("--rekey-cluster-panel row %s already keyed to target cluster %s (no-op)"
+                         % (record_id, target_cluster_id))
+
+    # Fetch the TARGET cluster CACHE-ONLY. A miss aborts (the panel must have
+    # verified the target from the same cache); never touch the live lane.
+    try:
+        cluster = client.get_cluster(target_cluster_id, record_id=record_id, step=REKEY_CLUSTER_STEP + ".cluster")
+    except (IngestInterrupted, FetchFailed) as exc:
+        raise SystemExit("--rekey-cluster-panel target cluster %s not cached (%s); stage it for the CL lane first"
+                         % (target_cluster_id, getattr(exc, "reason", None) or "not_cached"))
+
+    # Trap guard: the target cluster's citations MUST contain the panel-supplied
+    # expected cite. This is what proves the target is the merits cluster and not
+    # another SG-order/cert/companion stub. Fail closed otherwise (no write).
+    court_class, court_class_source = derive_enrich_court_class(identity, cluster)
+    block = classify_citations(cluster.get("citations") or [], court_class, precedence)
+    cluster_cite_keys = {citation_compare_key(c.get("cite")) for c in block["all"]}
+    if citation_compare_key(expect_cite) not in cluster_cite_keys:
+        raise SystemExit(
+            "--rekey-cluster-panel refuses row %s: expected cite %r absent from cached target cluster %s citations %s"
+            % (record_id, expect_cite, target_cluster_id, sorted(cluster_cite_keys))
+        )
+
+    harmonized, subs = harmonized_lead_from_cluster(cluster, target_cluster_id)
+    if harmonized is None:
+        raise SystemExit("--rekey-cluster-panel target cluster %s carries no sub_opinion in cache"
+                         % target_cluster_id)
+
+    date_filed = cluster.get("date_filed")
+    year = int(str(date_filed)[:4]) if date_filed and re.match(r"^\d{4}", str(date_filed)) else identity.get("year")
+    before = {
+        "cluster_id": identity.get("cluster_id"),
+        "lead_opinion_id": identity.get("lead_opinion_id"),
+        "absolute_url": identity.get("absolute_url"),
+        "display": (record.get("citations") or {}).get("display"),
+        "date_decided": identity.get("date_decided"),
+        "year": identity.get("year"),
+    }
+    identity["cluster_id"] = target_cluster_id
+    identity["lead_opinion_id"] = harmonized
+    identity["absolute_url"] = cluster.get("absolute_url") or identity.get("absolute_url")
+    identity["sibling_ids"] = sorted(set(subs) | {harmonized})
+    if date_filed:
+        identity["date_decided"] = date_filed
+    if year is not None:
+        identity["year"] = year
+    identity["expected_citation_found"] = True
+    identity["identity_method"] = "panel-cluster-rekey"
+    record["identity"] = identity
+    record["citations"] = block
+    record.setdefault("provenance", {})["date_modified"] = iso_now()
+    append_warning(record, "panel cluster re-key -> cluster %s (evidence: %s)" % (target_cluster_id, evidence))
+    write_case_record(paths, record)
+
+    row["cluster_id"] = target_cluster_id
+    row["lead_opinion_id"] = harmonized
+    if block.get("display"):
+        row["official_cite"] = block["display"]
+    row["last_record_write"] = iso_now()
+    after = {
+        "cluster_id": target_cluster_id, "lead_opinion_id": harmonized,
+        "absolute_url": identity["absolute_url"], "display": block.get("display"),
+        "date_decided": identity.get("date_decided"), "year": identity.get("year"),
+    }
+    _journal_rekey_cluster(journal, record_id=record_id, status="rekeyed",
+                           before=before, after=after, from_cluster=before["cluster_id"],
+                           to_cluster=target_cluster_id, expect_cite=expect_cite,
+                           court_class=court_class, court_class_source=court_class_source,
+                           evidence=evidence, source="panel-cluster-cache-served")
+    return {"record_id": record_id, "from_cluster": before["cluster_id"], "to_cluster": target_cluster_id,
+            "lead_opinion_id": harmonized, "display": block.get("display")}
+
+
+# ---------------------------------------------------------------------------
 # R8 addendum #2 — coa/state (+ district) court_level repair. Sibling of
 # --repair-identity-from-cache for the 54 verified_identity residue rows whose
 # court_level is None/"other" (they project authority_weight "Historical" — a
@@ -6374,6 +6661,8 @@ def run_ingest(args):
             or args.apply_web_cites
             or args.repair_identity_from_cache
             or args.repair_coa_state_from_cache
+            or args.rekey_lead_opinion_from_cache
+            or args.rekey_cluster_panel
         ):
             raise SystemExit("--add-candidates cannot be combined with other action/filter options")
         journal, journal_fallback = writable_repair_journal(paths, journal)
@@ -6398,6 +6687,7 @@ def run_ingest(args):
             or args.repair_failclosed_treatment or args.flip_verified or args.elevate_off_cl
             or args.adjudication or args.readjudicate or args.readjudicate_file
             or args.rerun_lane or args.records or args.smoke or args.add_candidates
+            or args.rekey_lead_opinion_from_cache or args.rekey_cluster_panel
         ):
             raise SystemExit("--apply-web-cites cannot be combined with other action/filter options")
         result = apply_web_cites(paths, manifest, journal, args.apply_web_cites)
@@ -6413,6 +6703,7 @@ def run_ingest(args):
             or args.repair_failclosed_treatment or args.flip_verified or args.elevate_off_cl
             or args.adjudication or args.readjudicate or args.readjudicate_file
             or args.rerun_lane or args.records or args.smoke or args.add_candidates
+            or args.rekey_lead_opinion_from_cache or args.rekey_cluster_panel
         ):
             raise SystemExit("--repair-identity-from-cache cannot be combined with other action/filter options")
         token = read_token(args.token_path)
@@ -6439,6 +6730,7 @@ def run_ingest(args):
             or args.repair_failclosed_treatment or args.flip_verified or args.elevate_off_cl
             or args.adjudication or args.readjudicate or args.readjudicate_file
             or args.rerun_lane or args.records or args.smoke or args.add_candidates
+            or args.rekey_lead_opinion_from_cache or args.rekey_cluster_panel
         ):
             raise SystemExit("--repair-coa-state-from-cache cannot be combined with other action/filter options")
         token = read_token(args.token_path)
@@ -6467,6 +6759,68 @@ def run_ingest(args):
               % (len(result["repaired"]), len(result["confirmed"]), len(result["queued"]), len(result["escalated"])))
         for esc in result["escalated"]:
             print("  ESCALATE %s: %s" % (esc["record_id"], esc["reason"]))
+        return
+    if args.rekey_lead_opinion_from_cache:
+        if (
+            args.apply_web_keys or args.apply_alias_folds or args.enrich_citations
+            or args.apply_web_cites or args.repair_migration_refs or args.repair_identity_from_cache
+            or args.repair_coa_state_from_cache or args.rekey_cluster_panel
+            or args.repair_failclosed_treatment or args.flip_verified or args.elevate_off_cl
+            or args.adjudication or args.readjudicate or args.readjudicate_file
+            or args.rerun_lane or args.records or args.smoke or args.add_candidates
+        ):
+            raise SystemExit("--rekey-lead-opinion-from-cache cannot be combined with other action/filter options")
+        token = read_token(args.token_path)
+        # cache-served by construction: max_calls=0 blocks any live CL call (a
+        # cache miss raises IngestInterrupted -> queued-for-lane), so this never
+        # touches the serial CL lane owned elsewhere.
+        budget = CallBudget(max_calls=0)
+        client = CourtListenerClient(
+            paths=paths, token=token, token_fingerprint=sha256_text(token)[:12],
+            journal=journal, budget=budget,
+            rate=TokenBucket(rate_per_minute=args.rate_per_minute, capacity=1),
+            hourly=HourlyGuard(max_per_hour=args.hourly_limit), run_id=run_id,
+        )
+        result = rekey_lead_opinion_from_cache(paths, manifest, journal, client, args.rekey_lead_opinion_from_cache)
+        manifest.regenerate_counts()
+        manifest.save()
+        print("journal: %s" % journal_path)
+        print("lead-opinion re-keyed (cache-served): %s | queued-for-lane: %s | already-harmonized: %s | refused-needs-panel: %s"
+              % (len(result["rekeyed"]), len(result["queued"]), len(result["noop"]), len(result["refused"])))
+        if result["rekeyed"]:
+            print("re-project affected pages (projector owns the courtlistener block): python3 scripts/s2/project.py --write")
+        return
+    if args.rekey_cluster_panel:
+        if (
+            args.apply_web_keys or args.apply_alias_folds or args.enrich_citations
+            or args.apply_web_cites or args.repair_migration_refs or args.repair_identity_from_cache
+            or args.repair_coa_state_from_cache or args.rekey_lead_opinion_from_cache
+            or args.repair_failclosed_treatment or args.flip_verified or args.elevate_off_cl
+            or args.adjudication or args.readjudicate or args.readjudicate_file
+            or args.rerun_lane or args.records or args.smoke or args.add_candidates
+        ):
+            raise SystemExit("--rekey-cluster-panel cannot be combined with other action/filter options")
+        token = read_token(args.token_path)
+        # cache-only: the panel-supplied target cluster MUST already be cached
+        # (a miss aborts); max_calls=0 never touches the serial CL lane.
+        budget = CallBudget(max_calls=0)
+        client = CourtListenerClient(
+            paths=paths, token=token, token_fingerprint=sha256_text(token)[:12],
+            journal=journal, budget=budget,
+            rate=TokenBucket(rate_per_minute=args.rate_per_minute, capacity=1),
+            hourly=HourlyGuard(max_per_hour=args.hourly_limit), run_id=run_id,
+        )
+        precedence = read_json(paths.precedence)
+        result = rekey_cluster_panel(paths, manifest, journal, client, precedence,
+                                     args.rekey_cluster_panel, args.rekey_cluster_target,
+                                     args.rekey_cluster_expect_cite, args.rekey_cluster_evidence)
+        manifest.regenerate_counts()
+        manifest.save()
+        print("journal: %s" % journal_path)
+        print("cluster re-keyed: %s  (cluster %s -> %s, lead %s, cite %s)"
+              % (result["record_id"], result["from_cluster"], result["to_cluster"],
+                 result["lead_opinion_id"], result["display"]))
+        print("re-project affected page (projector owns the courtlistener block): python3 scripts/s2/project.py --write")
         return
     if args.enrich_citations:
         if (
@@ -10964,6 +11318,269 @@ def self_test_repair_coa_state_from_cache():
         shutil.rmtree(tmp)
 
 
+def self_test_rekey_lead_opinion_from_cache():
+    tmp = tempfile.mkdtemp(prefix="s2-rekey-lead-selftest-")
+    try:
+        paths = LakePaths(tmp, os.path.join(tmp, "pool"))
+        paths.ensure()
+
+        def stub_row(rid, status="verified", cluster_id=None, lead_opinion_id=None):
+            return {"record_id": rid, "record_id_status": "resolved", "source": "S6-SEED",
+                    "stub": True, "caption": rid, "status": status,
+                    "lane_status": frontier_stub_lane_status(), "counts": {},
+                    "cluster_id": cluster_id, "lead_opinion_id": lead_opinion_id}
+        manifest_data = {"schema_version": "s2.manifest.v1", "generated_at": iso_now(), "records": [
+            stub_row("king-like--216733", status="verified", cluster_id=216733, lead_opinion_id=216733),
+            stub_row("frontier-fill--900", status="under_review", cluster_id=900, lead_opinion_id=None),
+            stub_row("already--700", status="verified", cluster_id=700, lead_opinion_id=7001),
+            stub_row("legit-lead--800", status="verified", cluster_id=800, lead_opinion_id=8002),
+            stub_row("single-self--500", status="under_review", cluster_id=500, lead_opinion_id=None),
+            stub_row("empty-cluster--600", status="verified", cluster_id=600, lead_opinion_id=None),
+            stub_row("uncached--333", status="verified", cluster_id=333, lead_opinion_id=333),
+        ]}
+        write_json(paths.manifest, manifest_data)
+        manifest = ManifestStore(paths.manifest)
+        journal = Journal(os.path.join(tmp, "journal.jsonl"), "selftest")
+
+        def seed(rid, cluster_id, lead):
+            rec = empty_record_shell(rid, manifest.by_record_id[rid], "selftest")
+            rec["status"] = manifest.by_record_id[rid]["status"]
+            rec["identity"]["cluster_id"] = cluster_id
+            rec["identity"]["lead_opinion_id"] = lead
+            write_case_record(paths, rec)
+        seed("king-like--216733", 216733, 216733)   # legacy trap: lead == cluster, multi-opinion
+        seed("frontier-fill--900", 900, None)        # frontier fill: lead None, single real sub
+        seed("already--700", 700, 7001)              # already harmonized
+        seed("legit-lead--800", 800, 8002)           # current lead is a legit non-head member
+        seed("single-self--500", 500, None)          # legit legacy single-opinion cluster (opinion == cluster)
+        seed("empty-cluster--600", 600, None)        # cluster with zero sub_opinions -> queue
+        seed("uncached--333", 333, 333)              # cluster not cached
+
+        def sub(oid):
+            return "https://www.courtlistener.com/api/rest/v4/opinions/%s/" % oid
+        clusters = {
+            216733: {"id": 216733, "sub_opinions": [sub(9441559), sub(9441560), sub(216733)]},
+            900: {"id": 900, "sub_opinions": [sub(4703206)]},
+            700: {"id": 700, "sub_opinions": [sub(7001), sub(700)]},
+            800: {"id": 800, "sub_opinions": [sub(8001), sub(8002), sub(800)]},
+            500: {"id": 500, "sub_opinions": [sub(500)]},  # sole opinion == cluster (legitimate lead)
+            600: {"id": 600, "sub_opinions": []},
+        }
+
+        class CacheClient:
+            def __init__(self):
+                self.budget = CallBudget(max_calls=0)
+
+            def get_cluster(self, cluster_id, record_id=None, step=None):
+                cid = int(cluster_id)
+                if cid not in clusters:
+                    raise IngestInterrupted("not_cached", record_id=record_id, step=step)
+                return clusters[cid]
+
+        result = rekey_lead_opinion_from_cache(
+            paths, manifest, journal, CacheClient(),
+            ["king-like--216733", "frontier-fill--900", "already--700", "legit-lead--800",
+             "single-self--500", "empty-cluster--600", "uncached--333"])
+        assert set(result["rekeyed"]) == {"king-like--216733", "frontier-fill--900", "single-self--500"}, result
+        assert result["noop"] == ["already--700"], result
+        assert result["refused"] == ["legit-lead--800"], result
+        assert set(result["queued"]) == {"empty-cluster--600", "uncached--333"}, result
+
+        assert load_case_record(paths, "king-like--216733")["identity"]["lead_opinion_id"] == 9441559
+        assert load_case_record(paths, "frontier-fill--900")["identity"]["lead_opinion_id"] == 4703206
+        # legacy single-opinion cluster: the coincident id is the legitimate lead
+        assert load_case_record(paths, "single-self--500")["identity"]["lead_opinion_id"] == 500
+        assert manifest.by_record_id["king-like--216733"]["lead_opinion_id"] == 9441559
+        # refused / queued / already-harmonized rows keep their existing lead
+        assert load_case_record(paths, "legit-lead--800")["identity"]["lead_opinion_id"] == 8002
+        assert load_case_record(paths, "empty-cluster--600")["identity"]["lead_opinion_id"] is None
+        assert load_case_record(paths, "already--700")["identity"]["lead_opinion_id"] == 7001
+
+        rrows = {r["record_id"]: r for r in journal.rows() if r.get("step") == REKEY_LEAD_STEP}
+        assert rrows["king-like--216733"]["status"] == "rekeyed"
+        assert rrows["frontier-fill--900"]["status"] == "rekeyed"
+        assert rrows["single-self--500"]["status"] == "rekeyed"
+        assert rrows["already--700"]["status"] == "already-harmonized"
+        assert rrows["legit-lead--800"]["status"] == "refused-needs-panel"
+        assert rrows["empty-cluster--600"]["status"] == "queued-for-lane"
+        assert rrows["uncached--333"]["status"] == "queued-for-lane"
+        assert rrows["king-like--216733"]["lane"] == WEB_CITES_LANE
+        assert rrows["king-like--216733"]["model"] == WEB_CITES_MODEL
+
+        # idempotent: re-running the rekeyed rows is a clean no-op
+        again = rekey_lead_opinion_from_cache(paths, manifest, journal, CacheClient(), ["king-like--216733"])
+        assert again["noop"] == ["king-like--216733"] and not again["rekeyed"], again
+
+        # out-of-scope status fails closed on the whole batch (pre-validation)
+        manifest.by_record_id["frontier-fill--900"]["status"] = "not_found"
+        try:
+            rekey_lead_opinion_from_cache(paths, manifest, journal, CacheClient(),
+                                          ["king-like--216733", "frontier-fill--900"])
+        except SystemExit:
+            pass
+        else:
+            raise AssertionError("rekey_lead accepted a not_found row")
+        manifest.by_record_id["frontier-fill--900"]["status"] = "under_review"
+
+        # missing cluster_id fails closed
+        rec = load_case_record(paths, "uncached--333")
+        rec["identity"]["cluster_id"] = None
+        write_case_record(paths, rec)
+        try:
+            rekey_lead_opinion_from_cache(paths, manifest, journal, CacheClient(), ["uncached--333"])
+        except SystemExit:
+            pass
+        else:
+            raise AssertionError("rekey_lead accepted a cluster-less row")
+    finally:
+        shutil.rmtree(tmp)
+
+
+def self_test_rekey_cluster_panel():
+    tmp = tempfile.mkdtemp(prefix="s2-rekey-cluster-selftest-")
+    try:
+        paths = LakePaths(tmp, os.path.join(tmp, "pool"))
+        paths.ensure()
+        precedence = {
+            "court_classes": {
+                "scotus": {"reporters": {"U.S.": 1, "S. Ct.": 2, "L. Ed. 2d": 3}},
+                "coa": {"reporters": {"F.3d": 1}},
+                "state": {"reporter_classes": {"official": 1, "regional": 2, "other": 3},
+                          "regional_reporters": {}},
+            }
+        }
+
+        def stub_row(rid, status="under_review", cluster_id=None):
+            return {"record_id": rid, "record_id_status": "resolved", "source": "S6-SEED",
+                    "stub": True, "caption": rid, "status": status, "court": "U.S. Supreme Court",
+                    "court_level": "scotus", "lane_status": frontier_stub_lane_status(), "counts": {},
+                    "cluster_id": cluster_id}
+        manifest_data = {"schema_version": "s2.manifest.v1", "generated_at": iso_now(), "records": [
+            stub_row("riley-like--wrong", cluster_id=8416508),
+            stub_row("outofscope--x", status="not_found", cluster_id=8416508),
+        ]}
+        write_json(paths.manifest, manifest_data)
+        manifest = ManifestStore(paths.manifest)
+        journal = Journal(os.path.join(tmp, "journal.jsonl"), "selftest")
+
+        def seed(rid, cluster_id, lead, display):
+            rec = empty_record_shell(rid, manifest.by_record_id[rid], "selftest")
+            rec["status"] = manifest.by_record_id[rid]["status"]
+            rec["identity"].update({"cluster_id": cluster_id, "lead_opinion_id": lead,
+                                    "court": "U.S. Supreme Court", "court_level": "scotus",
+                                    "case_name": "Riley v. California",
+                                    "absolute_url": "/opinion/8416508/riley-v-california/",
+                                    "date_decided": "2014-04-18", "year": 2014})
+            official = {"cite": display, "type": 1, "selected_official": True, "source": "cluster.citations[]"}
+            rec["citations"].update({"official": official, "all": [official], "display": display})
+            write_case_record(paths, rec)
+        seed("riley-like--wrong", 8416508, 8386852, "572 U.S. 1055")
+        seed("outofscope--x", 8416508, 8386852, "572 U.S. 1055")
+
+        def sub(oid):
+            return "https://www.courtlistener.com/api/rest/v4/opinions/%s/" % oid
+        clusters = {
+            # the merits cluster carries the S. Ct. cite; harmonized lead 2680439
+            2680439: {"id": 2680439, "date_filed": "2014-06-25",
+                      "absolute_url": "/opinion/2680439/riley-v-cal-united-states/",
+                      "sub_opinions": [sub(2680439)],
+                      "citations": [{"volume": "134", "reporter": "S. Ct.", "page": "2473", "type": 1},
+                                    {"volume": "189", "reporter": "L. Ed. 2d", "page": "430", "type": 1}]},
+            # a decoy cluster WITHOUT the expected cite -> the trap guard must reject it
+            9999999: {"id": 9999999, "date_filed": "2014-04-18", "absolute_url": "/opinion/9999999/decoy/",
+                      "sub_opinions": [sub(9999999)],
+                      "citations": [{"volume": "572", "reporter": "U.S.", "page": "1055", "type": 1}]},
+        }
+
+        class CacheClient:
+            def __init__(self):
+                self.budget = CallBudget(max_calls=0)
+
+            def get_cluster(self, cluster_id, record_id=None, step=None):
+                cid = int(cluster_id)
+                if cid not in clusters:
+                    raise IngestInterrupted("not_cached", record_id=record_id, step=step)
+                return clusters[cid]
+
+        # happy path: re-key to the merits cluster, guarded by the S. Ct. cite
+        result = rekey_cluster_panel(paths, manifest, journal, CacheClient(), precedence,
+                                     "riley-like--wrong", "2680439", "134 S. Ct. 2473",
+                                     "batch-11 catch #5; phase-a cache verification")
+        assert result["to_cluster"] == 2680439 and result["lead_opinion_id"] == 2680439, result
+        fixed = load_case_record(paths, "riley-like--wrong")
+        assert fixed["identity"]["cluster_id"] == 2680439
+        assert fixed["identity"]["lead_opinion_id"] == 2680439
+        assert fixed["identity"]["absolute_url"] == "/opinion/2680439/riley-v-cal-united-states/"
+        assert fixed["identity"]["date_decided"] == "2014-06-25"
+        assert fixed["identity"]["case_name"] == "Riley v. California"  # canonical name preserved
+        assert fixed["identity"]["expected_citation_found"] is True
+        assert fixed["citations"]["display"] == "134 S. Ct. 2473"
+        assert manifest.by_record_id["riley-like--wrong"]["cluster_id"] == 2680439
+        jr = [r for r in journal.rows() if r.get("step") == REKEY_CLUSTER_STEP]
+        assert jr and jr[-1]["status"] == "rekeyed"
+        assert jr[-1]["evidence"] == "batch-11 catch #5; phase-a cache verification"
+        assert jr[-1]["lane"] == WEB_CITES_LANE and jr[-1]["model"] == WEB_CITES_MODEL
+
+        # trap guard: expected cite absent from the (decoy) target -> fail closed, no write
+        seed("riley-like--wrong", 8416508, 8386852, "572 U.S. 1055")
+        try:
+            rekey_cluster_panel(paths, manifest, journal, CacheClient(), precedence,
+                                "riley-like--wrong", "9999999", "134 S. Ct. 2473", "ev")
+        except SystemExit:
+            pass
+        else:
+            raise AssertionError("rekey_cluster accepted a target missing the expected cite")
+        assert load_case_record(paths, "riley-like--wrong")["identity"]["cluster_id"] == 8416508
+
+        # target not cached -> fail closed
+        try:
+            rekey_cluster_panel(paths, manifest, journal, CacheClient(), precedence,
+                                "riley-like--wrong", "424242", "134 S. Ct. 2473", "ev")
+        except SystemExit:
+            pass
+        else:
+            raise AssertionError("rekey_cluster accepted an uncached target")
+
+        # missing evidence pointer -> fail closed (panel discipline)
+        try:
+            rekey_cluster_panel(paths, manifest, journal, CacheClient(), precedence,
+                                "riley-like--wrong", "2680439", "134 S. Ct. 2473", None)
+        except SystemExit:
+            pass
+        else:
+            raise AssertionError("rekey_cluster accepted a missing evidence pointer")
+
+        # missing expect-cite -> fail closed
+        try:
+            rekey_cluster_panel(paths, manifest, journal, CacheClient(), precedence,
+                                "riley-like--wrong", "2680439", None, "ev")
+        except SystemExit:
+            pass
+        else:
+            raise AssertionError("rekey_cluster accepted a missing expect-cite")
+
+        # out-of-scope status -> fail closed
+        try:
+            rekey_cluster_panel(paths, manifest, journal, CacheClient(), precedence,
+                                "outofscope--x", "2680439", "134 S. Ct. 2473", "ev")
+        except SystemExit:
+            pass
+        else:
+            raise AssertionError("rekey_cluster accepted a not_found row")
+
+        # already-on-target -> fail closed (no-op refusal)
+        seed("riley-like--wrong", 2680439, 2680439, "134 S. Ct. 2473")
+        try:
+            rekey_cluster_panel(paths, manifest, journal, CacheClient(), precedence,
+                                "riley-like--wrong", "2680439", "134 S. Ct. 2473", "ev")
+        except SystemExit:
+            pass
+        else:
+            raise AssertionError("rekey_cluster accepted an already-on-target re-key")
+    finally:
+        shutil.rmtree(tmp)
+
+
 def run_self_tests():
     self_test_record_ids()
     self_test_precedence()
@@ -11003,6 +11620,8 @@ def run_self_tests():
     self_test_apply_web_cites()
     self_test_repair_identity_from_cache()
     self_test_repair_coa_state_from_cache()
+    self_test_rekey_lead_opinion_from_cache()
+    self_test_rekey_cluster_panel()
     print("self-test passed")
 
 
@@ -11030,6 +11649,11 @@ def parse_args(argv):
     parser.add_argument("--repair-identity-from-cache", action="append", default=[], help="cache-served (R8 addendum): re-derive court/date/year for a verified_identity row from its cached cluster; a cache miss is queued for the CL lane; repeatable")
     parser.add_argument("--repair-coa-state-from-cache", action="append", default=[], help="R8 addendum #2: re-derive court_level (+circuit/state/year/docket) for a coa/state residue verified_identity row; cache-only by default; repeatable")
     parser.add_argument("--repair-coa-state-allow-docket-fetch", action="store_true", help="opt-in gate for --repair-coa-state-from-cache: permit the paced serial CL lane to fetch the docket + court object for an authoritative court_id/jurisdiction derivation (cache-first)")
+    parser.add_argument("--rekey-lead-opinion-from-cache", action="append", default=[], help="cache-served (R8 addendum #3): re-key identity.lead_opinion_id to the harmonized lead sub_opinion of the CACHED cluster (the cluster-vs-opinion legacy trap, lead==cluster_id); only re-keys a provably-wrong lead; a cache miss is queued for the CL lane; repeatable")
+    parser.add_argument("--rekey-cluster-panel", help="panel-verified (R8 addendum #4): re-key a record to an explicitly-supplied merits cluster (the Riley wrong-cluster class); requires --rekey-cluster-target + --rekey-cluster-expect-cite + --rekey-cluster-evidence; cache-only, fail-closed unless the target cluster's citations contain the expected cite")
+    parser.add_argument("--rekey-cluster-target", help="target cluster id for --rekey-cluster-panel")
+    parser.add_argument("--rekey-cluster-expect-cite", help="official cite that MUST appear in the cached target cluster's citations for --rekey-cluster-panel (fail-closed trap guard)")
+    parser.add_argument("--rekey-cluster-evidence", help="panel evidence pointer recorded on the --rekey-cluster-panel journal line (e.g. 'batch-11 catch #5; phase-a cache verification')")
     parser.add_argument("--elevate-off-cl", help="elevate a terminal not_found record using an orchestrator-prepared off-CL adjudication file")
     parser.add_argument("--adjudication", help="JSON adjudication file required by --elevate-off-cl")
     parser.add_argument("--token-path", default=TOKEN_PATH, help="CourtListener token path")

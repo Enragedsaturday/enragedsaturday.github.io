@@ -1,14 +1,14 @@
 ---
 title: "Riley v. California"
 type: case
-citation: "572 U.S. 1055 (2014)"
-parallel_cite: "134 S. Ct. 1870; 188 L. Ed. 2d 774; 82 U.S.L.W. 3608"
-neutral_cite: "2014 WL 1499818; 2014 U.S. LEXIS 2544"
+citation: "134 S. Ct. 2473 (2014)"
+parallel_cite: "189 L. Ed. 2d 430; 82 U.S.L.W. 4558"
+neutral_cite: 2014 U.S. LEXIS 4497
 court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 2014
-date_decided: 2014-04-18
+date_decided: 2014-06-25
 docket: 13-132
 authority_weight: "Binding — SCOTUS"
 treatment:
@@ -21,10 +21,10 @@ treatment:
   scope_note: "Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade."
   point_overrides: []
 courtlistener:
-  opinion_url: "https://www.courtlistener.com/opinion/8416508/riley-v-california/"
-  cluster_id: 8416508
-  opinion_id: 8386852
-  identity_checked: false
+  opinion_url: "https://www.courtlistener.com/opinion/2680439/riley-v-cal-united-states/"
+  cluster_id: 2680439
+  opinion_id: 2680439
+  identity_checked: true
 homes:
   - page: "[[SIA Cell Phones]]"
     role: "Key — Anchor"
@@ -37,7 +37,7 @@ holding: "The Robinson bright-line search-incident rule does NOT extend to the d
 lake:
   record_id: Riley v. California
   status: under_review
-  projected_at: 2026-07-06
+  projected_at: 2026-07-09
 ---
 
 # Riley v. California

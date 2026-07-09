@@ -23,7 +23,7 @@ treatment:
 courtlistener:
   opinion_url: "https://www.courtlistener.com/opinion/216733/kentucky-v-king/"
   cluster_id: 216733
-  opinion_id: 216733
+  opinion_id: 9441559
   identity_checked: true
 homes:
   - page: "[[Destruction of Evidence]]"
@@ -43,7 +43,7 @@ holding: "The exigent-circumstances rule applies even where police 'created' the
 lake:
   record_id: Kentucky v. King
   status: verified
-  projected_at: 2026-07-06
+  projected_at: 2026-07-09
 ---
 
 # Kentucky v. King

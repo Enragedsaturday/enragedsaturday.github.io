@@ -1487,3 +1487,31 @@ pre-verified), LINT-20/25 0, survey 89 pages em 4.9/1k ff 0, build 724/2873 (+2 
 **PHASE 2 COMPLETE: 89 units born draft across all 13 categories + 3 S7-minted case pages.
 HIGH 5212→3782 since S7 open (-1430). NEXT: consolidated repair lane (the register), then
 S7 close (acceptance greps, dispositions, run brief, S7→S8 handoff).**
+
+**REPAIR LANE CLOSED — phases (b1)+(b2) (2026-07-09):** (b1) TWO SANCTIONED SURFACES built in
+ingest.py mirroring --repair-identity-from-cache (fail-closed, journaled, max_calls=0,
+self-tests green): --rekey-lead-opinion-from-cache (harmonized lead = head(sub_opinions)
+dropping the legacy cluster-id-equal entry ONLY when >1 opinion — the single-self carve-out
+discovered via the Riley merits fixture; refused-needs-panel guard on plausible leads) +
+--rekey-cluster-panel (explicit target + EXPECT-CITE GUARD — the exact Riley-trap check —
++ evidence pointer journaled). (b2) ORCHESTRATOR TOKEN LEGS RUN: Surface-1 batch 6/6 rekeyed
+cache-served (King 216733→9441559 · Thornton 134746→9434613 · Gaetjens None→4703206 · R.W.
+None→11312795 [batch-8 flip DISCHARGED] · Konan None→11266325 · Landor None→11346052
+[metadata only, holdings stay S9]); Surface-2 Riley PANEL RE-KEY (cluster 8416508→2680439,
+cite 572-U.S.-1055→134-S.Ct.-2473, expect-cite guard passed; U.S.-display 573 U.S. 373 =
+optional --apply-web-cites follow-up); project.py --write re-projected 7 case pages
+(projector owns the courtlistener block). MORGAN RESOLVED on the orchestrator MCP lane:
+United States v. Jaron Howard Morgan, 71 F.4th 540 (6th Cir. 2023-06-26, Sutton, J., docket
+22-1445), cluster 9409483 / lead 9404959 — I hit the cluster-vs-opinion trap MYSELF (URL id
+as opinion id → 0 hits) and resolved via sub_opinions, then confirmed the function-cabining
+holding verbatim; disposition artifact S7-RL-DISPOSITIONS.jsonl + 6c-3 loader (header-tolerant)
+→ ledger 252 rows PASS; D5 ROSTER COMPLETED: Morgan LCD bullet + Sources on Community
+Caretaking (plain-italic, terminal-backed); the not_found morgan-v-fairfield-county record
+stays honest (different case). COOK ADJUDICATED HONEST-RESIDUE: proper cure = panel re-key of
+the manifest stub, but target cluster 776186 is a CACHE MISS (fail-closed guard held when my
+first artifact-edit attempt minted a slug-captioned duplicate — REVERTED); 3-step S2 work
+order documented AT SOURCE in the R8-NONPAGE row note; page prose already cites the correct
+Donald Cook. GATES: run_all 6829 (HIGH 3781 zero-new), LINT-17 0, LINT-13 0, ledger 252
+PASS, ingest self-test PASS, build 724/2873. REGISTER DISPOSITION: repaired 7 ids + Morgan +
+Neville + 6 pointers + 8 index dupes; honest residue = Cook 3-step + Maez/Konan/Landor
+treatments + optional 8th-Cir hunt (all S9/S2-registered). NEXT: S7 CLOSE.
