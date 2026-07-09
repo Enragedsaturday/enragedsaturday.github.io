@@ -26,7 +26,7 @@ courtlistener:
   opinion_id: 110760
   identity_checked: true
 homes:
-  - page: "[[The Exclusionary Rule]]"
+  - page: "[[Fruits & Attenuation]]"
     role: "Key — Progeny (attenuation)"
   - page: "[[Seizure of the Person]]"
     role: "Related (cross-doctrine)"

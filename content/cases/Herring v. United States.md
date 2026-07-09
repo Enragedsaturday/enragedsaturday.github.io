@@ -26,8 +26,10 @@ courtlistener:
   opinion_id: 145922
   identity_checked: true
 homes:
-  - page: "[[The Exclusionary Rule]]"
+  - page: "[[The Good-Faith Exception]]"
     role: "Key — Progeny / Refinement"
+  - page: "[[Collective Knowledge and the Fellow-Officer Rule]]"
+    role: "Key (non-exclusive; imputation limit)"
 related: ["[[United States v. Leon]]", "[[Arizona v. Evans]]", "[[Mapp v. Ohio]]"]
 aliases: []
 tags: ["case", "fourth-amendment", "exclusionary-rule", "good-faith", "deterrence"]

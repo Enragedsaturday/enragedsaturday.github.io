@@ -28,7 +28,7 @@ courtlistener:
 homes:
   - page: "[[Miranda Waiver and Invocation]]"
     role: "Key — Limiting"
-  - page: "[[The Exclusionary Rule]]"
+  - page: "[[Fruits & Attenuation]]"
     role: "Related (cross-doctrine)"
 related: ["[[James v. Illinois]]", "[[United States v. Havens]]", "[[Doyle v. Ohio]]", "[[Miranda v. Arizona]]"]
 aliases: []

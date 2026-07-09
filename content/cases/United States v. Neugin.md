@@ -26,7 +26,7 @@ courtlistener:
   opinion_id: 4530911
   identity_checked: true
 homes:
-  - page: "[[The Exclusionary Rule]]"
+  - page: "[[Inevitable Discovery & Independent Source]]"
     role: "Recent development (role-based)"
 related: ["[[Nix v. Williams]]", "[[Brigham City v. Stuart]]", "[[Horton v. California]]"]
 aliases: ["United States v. Neugin (10th Cir. 2020)"]

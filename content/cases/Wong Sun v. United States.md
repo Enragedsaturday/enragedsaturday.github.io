@@ -26,7 +26,7 @@ courtlistener:
   opinion_id: 106515
   identity_checked: true
 homes:
-  - page: "[[The Exclusionary Rule]]"
+  - page: "[[Fruits & Attenuation]]"
     role: "Key — Anchor"
 related: ["[[Brown v. Illinois]]", "[[Utah v. Strieff]]", "[[Nix v. Williams]]"]
 aliases: ["Wong Sun"]

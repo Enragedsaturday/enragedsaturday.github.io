@@ -26,7 +26,7 @@ courtlistener:
   opinion_id: 105188
   identity_checked: true
 homes:
-  - page: "[[The Exclusionary Rule]]"
+  - page: "[[Fruits & Attenuation]]"
     role: "Key — Anchor (impeachment exception)"
 related: ["[[Weeks v. United States]]", "[[Agnello v. United States]]", "[[United States v. Havens]]", "[[James v. Illinois]]"]
 aliases: []

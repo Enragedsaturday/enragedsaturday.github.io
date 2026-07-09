@@ -26,7 +26,7 @@ courtlistener:
   opinion_id: 9427838
   identity_checked: true
 homes:
-  - page: "[[The Exclusionary Rule]]"
+  - page: "[[Inevitable Discovery & Independent Source]]"
     role: "Key — Progeny (independent source)"
   - page: "[[Eyewitness Identification]]"
     role: "Related (cross-doctrine)"

@@ -26,7 +26,7 @@ courtlistener:
   opinion_id: 99506
   identity_checked: true
 homes:
-  - page: "[[The Exclusionary Rule]]"
+  - page: "[[Fruits & Attenuation]]"
     role: "Anchor (fruit of the poisonous tree origin; independent source)"
 related: ["[[Weeks v. United States]]", "[[Nardone v. United States]]"]
 aliases: ["Silverthorne Lumber Co v United States"]

@@ -26,7 +26,7 @@ courtlistener:
   opinion_id: 109304
   identity_checked: true
 homes:
-  - page: "[[The Exclusionary Rule]]"
+  - page: "[[Fruits & Attenuation]]"
     role: "Key — Progeny / Refinement"
 related: ["[[Wong Sun v. United States]]", "[[Utah v. Strieff]]", "[[Dunaway v. New York]]"]
 aliases: []

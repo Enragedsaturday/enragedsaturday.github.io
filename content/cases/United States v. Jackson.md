@@ -26,7 +26,7 @@ courtlistener:
   opinion_id: 2798587
   identity_checked: true
 homes:
-  - page: "[[The Exclusionary Rule]]"
+  - page: "[[The Good-Faith Exception]]"
     role: "Key — Progeny / Refinement"
 related: ["[[United States v. Leon]]", "[[Massachusetts v. Sheppard]]", "[[Herring v. United States]]"]
 aliases: ["United States v. A.C. Jackson", "United States v. Jackson (8th Cir. 2015)"]

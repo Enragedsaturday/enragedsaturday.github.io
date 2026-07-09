@@ -26,7 +26,7 @@ courtlistener:
   opinion_id: 9422064
   identity_checked: true
 homes:
-  - page: "[[The Exclusionary Rule]]"
+  - page: "[[Fruits & Attenuation]]"
     role: "Anchor (silver-platter abolition; deterrence rationale)"
 related: ["[[Weeks v. United States]]", "[[Mapp v. Ohio]]"]
 aliases: []

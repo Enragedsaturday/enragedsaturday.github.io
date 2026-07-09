@@ -26,7 +26,7 @@ courtlistener:
   opinion_id: 4578375
   identity_checked: true
 homes:
-  - page: "[[The Exclusionary Rule]]"
+  - page: "[[Inevitable Discovery & Independent Source]]"
     role: "Recent development (role-based)"
 related: ["[[Nix v. Williams]]", "[[United States v. Neugin]]", "[[Murray v. United States]]"]
 aliases: ["United States v. Soto-Peguero (1st Cir. 2020)"]

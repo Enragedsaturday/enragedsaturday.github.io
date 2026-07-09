@@ -26,7 +26,7 @@ courtlistener:
   opinion_id: 109539
   identity_checked: true
 homes:
-  - page: "[[The Exclusionary Rule]]"
+  - page: "[[The Good-Faith Exception]]"
     role: "Key — Limiting"
 related: ["[[United States v. Calandra]]", "[[United States v. Leon]]", "[[Elkins v. United States]]", "[[Pennsylvania Board of Probation and Parole v. Scott]]", "[[Mapp v. Ohio]]"]
 aliases: []

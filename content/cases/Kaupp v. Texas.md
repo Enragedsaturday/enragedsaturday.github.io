@@ -28,7 +28,7 @@ courtlistener:
 homes:
   - page: "[[Seizure of the Person]]"
     role: "Key — Progeny"
-  - page: "[[The Exclusionary Rule]]"
+  - page: "[[Fruits & Attenuation]]"
     role: "Related (cross-doctrine)"
   - page: "[[Miranda and Custodial Interrogation]]"
     role: "Related (cross-doctrine)"

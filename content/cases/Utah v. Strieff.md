@@ -26,7 +26,7 @@ courtlistener:
   opinion_id: 8137990
   identity_checked: true
 homes:
-  - page: "[[The Exclusionary Rule]]"
+  - page: "[[Fruits & Attenuation]]"
     role: "Key — Progeny / Refinement"
 related: ["[[Brown v. Illinois]]", "[[Segura v. United States]]", "[[Herring v. United States]]"]
 aliases: []

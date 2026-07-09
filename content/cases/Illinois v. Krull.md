@@ -26,7 +26,7 @@ courtlistener:
   opinion_id: 111835
   identity_checked: true
 homes:
-  - page: "[[The Exclusionary Rule]]"
+  - page: "[[The Good-Faith Exception]]"
     role: "Key — Progeny / Refinement"
 related: ["[[United States v. Leon]]", "[[Massachusetts v. Sheppard]]", "[[Arizona v. Evans]]"]
 aliases: []

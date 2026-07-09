@@ -28,7 +28,7 @@ courtlistener:
 homes:
   - page: "[[The Neutral and Detached Magistrate]]"
     role: "Key — Progeny / Refinement"
-  - page: "[[The Exclusionary Rule]]"
+  - page: "[[The Good-Faith Exception]]"
     role: "Related (cross-doctrine)"
 related: ["[[Coolidge v. New Hampshire]]", "[[Groh v. Ramirez]]", "[[United States v. Leon]]"]
 aliases: ["Lo-Ji Sales", "Lo-Ji"]

@@ -26,7 +26,7 @@ courtlistener:
   opinion_id: 104709
   identity_checked: true
 homes:
-  - page: "[[The Exclusionary Rule]]"
+  - page: "[[Fruits & Attenuation]]"
     role: "Key — Historical (overruled by Mapp on remedy)"
 related: ["[[Mapp v. Ohio]]", "[[Weeks v. United States]]", "[[Elkins v. United States]]"]
 aliases: []

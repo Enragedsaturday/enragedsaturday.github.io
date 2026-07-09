@@ -1332,3 +1332,25 @@ family (A4 severance: ER index [the pre-existing LINT-19 4-HIGH holder] → Frui
 Attenuation A + Good-Faith A + Inevitable Discovery & Independent Source B; Standing A
 born-again w/ TEACH-01 Chatrie relocation; 44 homed cases re-point; the inevitable-discovery
 active-pursuit split-block placement lands).
+
+**BATCH 15 CLOSED — CAT-7 ER FAMILY (2026-07-09) — CATEGORY 7 COMPLETE:** the A4 severance
+delivered: ER index (mega-page heir, 49 homed cases — precise count vs 44 estimate) → R2
+overview (LINT-19 4→0 CURED, the register's last pre-existing holder) + Fruits & Attenuation
+(A: Wong Sun/Brown/Strieff + origin Weeks/Wolf/Mapp + impeachment line + DOMINOES mnemonic) +
+Good-Faith (A: Leon line + deterrence-boundary Calandra/Janis/Scott + Herring DUAL-HOME
+preserving batch-8 Collective-Knowledge Key-on) + Inevitable/Independent (B: Nix/Murray/
+Crews + THE OWED SPLIT-BLOCK LANDED — Satterfield ★846 required-side page vs Kennedy ★500 /
+Cunningham not-required terminals, MCP-verified). IDENTITY CATCH #8: R8 note's required-side
+"Conner (8th)" = the CONSENT Conner (127 F.3d 663, ★666, Securing home) NOT inevitable-
+discovery — REFUSED fail-closed, Satterfield carries alone, intended 8th-Cir case → S2
+register. Standing born-again (A: TEACH-01 Chatrie OUT of all LCDs w/ digital cross-refs,
+slip 4→0 incl. Byrd T3 [CL slip-only, upgradeable], Rakas ★143, App-B Brendlin/Katz
+presentation verified, callout+Apply-it added, em 104→10). 49-case arithmetic: 18 Fruits +
+17 Good-Faith + 7 Inevitable + 7 retained-on-overview = 49 zero-drop; boundary trio
+(Stone/Blue/Caceres) retained on persisting overview ADJUDICATED-ACCEPTED. Worker
+self-caught its 3 re-introduced meta-intro leaks at survey regen. Deck: NO successor needed
+(index persists; 3 decks resolve, LINT-25 0). Owed rows 12/12 by presence. 7 MCP 0 REST.
+GATES: run_all 7434→7269 (HIGH 4242, -152 zero-new), LINT-19 0, LINT-15/16 0/0 x5, LINT-17
+0, survey em 9.8/1k slip 31 leaks 16, build 722/2834, Case Index idempotent. SCOREBOARD:
+CATS 2-7 COMPLETE = 60 units born draft. NEXT: cat-8 Confessions batch; BIVENS/§242
+CONSULTATION surfaced to user in parallel (cat-11 gate).

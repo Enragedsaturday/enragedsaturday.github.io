@@ -26,7 +26,7 @@ courtlistener:
   opinion_id: 9427937
   identity_checked: true
 homes:
-  - page: "[[The Exclusionary Rule]]"
+  - page: "[[Fruits & Attenuation]]"
     role: "Key — Progeny (impeachment exception)"
 related: ["[[Walder v. United States]]", "[[Agnello v. United States]]", "[[James v. Illinois]]", "[[Weeks v. United States]]"]
 aliases: []

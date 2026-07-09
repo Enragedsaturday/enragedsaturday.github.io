@@ -26,7 +26,7 @@ courtlistener:
   opinion_id: 7268220
   identity_checked: false
 homes:
-  - page: "[[The Exclusionary Rule]]"
+  - page: "[[The Good-Faith Exception]]"
     role: "Key — Progeny (good faith)"
 related: ["[[United States v. Leon]]", "[[Herring v. United States]]", "[[Illinois v. Krull]]", "[[Arizona v. Gant]]", "[[New York v. Belton]]"]
 aliases: []

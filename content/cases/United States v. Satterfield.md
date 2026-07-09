@@ -30,7 +30,7 @@ lake:
   status: under_review
   projected_at: 2026-07-07
 homes:
-  - page: "[[The Exclusionary Rule]]"
+  - page: "[[Inevitable Discovery & Independent Source]]"
     role: Illustrates a circuit split
 related:
   - "[[The Exclusionary Rule]]"

@@ -26,7 +26,7 @@ courtlistener:
   opinion_id: 2736649
   identity_checked: true
 homes:
-  - page: "[[The Exclusionary Rule]]"
+  - page: "[[The Good-Faith Exception]]"
     role: "Key — Progeny / Refinement"
 related: ["[[United States v. Leon]]", "[[Massachusetts v. Sheppard]]", "[[United States v. Jackson]]", "[[Riley v. California]]"]
 aliases: ["United States v. Mathis (11th Cir. 2014)", "United States v. Arnold Maurice Mathis"]

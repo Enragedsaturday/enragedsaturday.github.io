@@ -26,7 +26,7 @@ courtlistener:
   opinion_id: 10760195
   identity_checked: false
 homes:
-  - page: "[[The Exclusionary Rule]]"
+  - page: "[[Inevitable Discovery & Independent Source]]"
     role: "Recent development (role-based)"
 related: ["[[Nix v. Williams]]", "[[Murray v. United States]]", "[[Segura v. United States]]", "[[Herring v. United States]]", "[[Utah v. Strieff]]"]
 aliases: ["State of Arizona v. Ian Mitcham"]

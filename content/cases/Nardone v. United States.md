@@ -26,7 +26,7 @@ courtlistener:
   opinion_id: 103259
   identity_checked: true
 homes:
-  - page: "[[The Exclusionary Rule]]"
+  - page: "[[Fruits & Attenuation]]"
     role: "Anchor (attenuation; 'fruit of the poisonous tree')"
 related: ["[[Silverthorne Lumber Co. v. United States]]", "[[Wong Sun v. United States]]", "[[Brown v. Illinois]]"]
 aliases: ["Nardone v. United States (1939)"]

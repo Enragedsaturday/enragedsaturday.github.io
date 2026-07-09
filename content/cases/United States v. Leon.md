@@ -26,7 +26,7 @@ courtlistener:
   opinion_id: 9429766
   identity_checked: true
 homes:
-  - page: "[[The Exclusionary Rule]]"
+  - page: "[[The Good-Faith Exception]]"
     role: "Key — Anchor"
   - page: "[[Franks Challenges]]"
     role: "Related (cross-doctrine)"

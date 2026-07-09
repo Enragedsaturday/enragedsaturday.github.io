@@ -26,7 +26,7 @@ courtlistener:
   opinion_id: 109816
   identity_checked: true
 homes:
-  - page: "[[The Exclusionary Rule]]"
+  - page: "[[Fruits & Attenuation]]"
     role: "Key — Progeny (attenuation)"
 related: ["[[Wong Sun v. United States]]", "[[Brown v. Illinois]]", "[[Nardone v. United States]]", "[[United States v. Crews]]"]
 aliases: []

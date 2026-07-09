@@ -26,7 +26,7 @@ courtlistener:
   opinion_id: 106285
   identity_checked: true
 homes:
-  - page: "[[The Exclusionary Rule]]"
+  - page: "[[Fruits & Attenuation]]"
     role: "Key — Anchor"
 related: ["[[Weeks v. United States]]", "[[Wolf v. Colorado]]", "[[United States v. Leon]]", "[[Herring v. United States]]"]
 aliases: []

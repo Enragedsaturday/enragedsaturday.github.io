@@ -26,7 +26,7 @@ courtlistener:
   opinion_id: 112350
   identity_checked: true
 homes:
-  - page: "[[The Exclusionary Rule]]"
+  - page: "[[Fruits & Attenuation]]"
     role: "Key — Limiting (impeachment exception)"
 related: ["[[Walder v. United States]]", "[[United States v. Havens]]", "[[Elkins v. United States]]"]
 aliases: []

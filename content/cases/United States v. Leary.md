@@ -26,7 +26,7 @@ courtlistener:
   opinion_id: 505922
   identity_checked: true
 homes:
-  - page: "[[The Exclusionary Rule]]"
+  - page: "[[The Good-Faith Exception]]"
     role: "Key — Progeny / Refinement"
 related: ["[[United States v. Leon]]", "[[Massachusetts v. Sheppard]]", "[[Coolidge v. New Hampshire]]", "[[Groh v. Ramirez]]"]
 aliases: ["United States v. Leary (10th Cir. 1988)", "United States v. Richard J. Leary"]

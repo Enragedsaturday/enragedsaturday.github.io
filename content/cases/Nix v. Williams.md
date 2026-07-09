@@ -26,7 +26,7 @@ courtlistener:
   opinion_id: 9429647
   identity_checked: true
 homes:
-  - page: "[[The Exclusionary Rule]]"
+  - page: "[[Inevitable Discovery & Independent Source]]"
     role: "Key — Progeny / Refinement"
 related: ["[[Murray v. United States]]", "[[Brewer v. Williams]]", "[[Segura v. United States]]", "[[Wong Sun v. United States]]"]
 aliases: []

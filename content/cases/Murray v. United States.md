@@ -26,7 +26,7 @@ courtlistener:
   opinion_id: 9431434
   identity_checked: true
 homes:
-  - page: "[[The Exclusionary Rule]]"
+  - page: "[[Inevitable Discovery & Independent Source]]"
     role: "Key — Progeny / Refinement"
 related: ["[[Nix v. Williams]]", "[[Silverthorne Lumber Co. v. United States]]", "[[Segura v. United States]]", "[[Wong Sun v. United States]]"]
 aliases: []

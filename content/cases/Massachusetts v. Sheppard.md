@@ -26,7 +26,7 @@ courtlistener:
   opinion_id: 111263
   identity_checked: true
 homes:
-  - page: "[[The Exclusionary Rule]]"
+  - page: "[[The Good-Faith Exception]]"
     role: "Key — Progeny / Refinement"
 related: ["[[United States v. Leon]]", "[[Illinois v. Krull]]", "[[Herring v. United States]]", "[[Davis v. United States]]"]
 aliases: []

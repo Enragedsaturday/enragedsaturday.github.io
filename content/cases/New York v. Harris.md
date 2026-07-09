@@ -30,7 +30,7 @@ homes:
     role: "Limiting"
   - page: "[[Entry to Arrest]]"
     role: "Limiting"
-  - page: "[[The Exclusionary Rule]]"
+  - page: "[[Fruits & Attenuation]]"
     role: "Related (cross-doctrine)"
 related: ["[[Payton v. New York]]", "[[Brown v. Illinois]]", "[[Wong Sun v. United States]]", "[[Kirk v. Louisiana]]"]
 aliases: ["New York v. Harris (1990)"]

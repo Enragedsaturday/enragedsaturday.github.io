@@ -28,7 +28,7 @@ courtlistener:
 homes:
   - page: "[[Franks Challenges]]"
     role: "Key — Anchor"
-  - page: "[[The Exclusionary Rule]]"
+  - page: "[[The Good-Faith Exception]]"
     role: "Related (cross-doctrine)"
 related: ["[[Illinois v. Gates]]", "[[United States v. Leon]]", "[[Groh v. Ramirez]]"]
 aliases: []
