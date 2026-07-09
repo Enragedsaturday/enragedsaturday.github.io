@@ -20,3 +20,11 @@ the mechanical mis-key sweep (_run/s9/miskey-sweep.jsonl). Execute on the Codex 
 6. FLIPPO: verify 1854815 text is the legit per curiam (ancillary-pattern regex hit, likely
    false positive).
 After: re-run fragments.py for affected records; re-run affected Thread-N reads; journal.
+
+7. (D-7 additions) TEXT BACKFILL for registry-anchor records with lake identity but no cached
+   text: Rehberg v. Paulk · Thompson v. Clark · Chiaverini v. City of Napoleon · Timbs v.
+   Indiana · Austin v. United States · Culley v. Marshall · Calero-Toledo (CAF topic is
+   3-of-8 grounded — thinnest in the corpus). ~7 more calls; batch with the above.
+8. Zorn v. Linton: degenerate identity (court="2026", no year/opinion ids) — the KNOWN S6
+   watch item (corrupt Strike-3 cluster; off-CL decision owed). Do NOT fetch; S9 adjudicates
+   the off-CL path per the S6 register.
