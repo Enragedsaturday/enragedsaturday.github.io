@@ -1629,3 +1629,21 @@ exit 0, build 724/2873 exit 0, self-tests 11/11. **Commit-hygiene notes:** d4c87
 mentions lane's 42 links w/ the R11 sweep (concurrent tree); its build claim corrected a60dd12.
 **HANDOFF:** S8-TO-S9-HANDOFF.md delivered. S8 IS CLOSED. NEXT: S9 verification (wave 4) —
 the panel inherits the born-draft corpus + the S8 register.
+
+---
+
+# S9 — Verification Pipeline & Release Gate (opened 2026-07-09)
+
+**S9 OPEN (2026-07-09).** Orchestrator (Fable) read: S9 spec in full (R1–R15, method P0–P6,
+acceptance, decision log) · S8-TO-S9-HANDOFF · LEDGER-SCHEMA pointer. **Codex lane health probe
+PASS** (codex-cli 0.142.4; `codex exec -s read-only` returned LANE-OK — the 2-Codex panel lanes,
+case-grain Thread-N reads, and dual-model discovery are GO; pause-#8 not triggered). S8 close
+brief served (2026-07-09-cssi-s8-close.html). **P0 LAUNCHED** — three parallel build lanes per
+S9-P0-WORKORDERS.md: P0-A assertion inventory (R2, `_run/s9/assertion-inventory.json`) · P0-B
+Thread-P freeze (R5, deterministic extraction + sha256, frozen BEFORE any Thread-N manifest) ·
+P0-C lint roster codification (R8: S3-set renumber →18–25, S4→26, LINT-3 rebuilt lake-driven
+w/ committed acceptance fixture, TEACH-11 target checks, LINT-30 = the R4 invariant script
+validated against F-DEMO-001). O1's `_run/` S9 artifacts preserved as historical; O2-S9 lives
+under `_run/s9/`. Next after P0 review+commit: P1 fan-out (panel review + Thread-N blind reads,
+Codex case-grain / Claude doctrine-grain; manifests journaled; Claude serial lane starts the
+≥1-in-10 identity slice + COH-27 pending-marker polls).
