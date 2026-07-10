@@ -924,10 +924,41 @@ def main():
     ap.add_argument("--run-id", default="p1-h")
     ap.add_argument("--timeout", type=int, default=DEFAULT_TIMEOUT_S)
     ap.add_argument("--ledger-dir", default=RUN_DIR)
+    # --- R1 sighted panel-review modes (lazy-dispatched to panel_review.py so the
+    #     ONE invocation path stays here without a bloated/circular import) ---
+    ap.add_argument("--panel-review", metavar="GROUP_ID",
+                    help="run ONE Codex lens over one panel-review group")
+    ap.add_argument("--panel-review-opus", metavar="GROUP_IDS",
+                    help="generate the Opus prompt-pack for comma-separated groups")
+    ap.add_argument("--batch-id", default="opus-batch-1")
+    ap.add_argument("--out-dir", default=None)
+    ap.add_argument("--cap", type=int, default=INVOCATION_CAP)
+    ap.add_argument("--self-test-panel", action="store_true")
     args = ap.parse_args()
 
     if args.self_test:
         sys.exit(self_test())
+
+    if args.self_test_panel or args.panel_review or args.panel_review_opus:
+        import panel_review  # lazy: panel_review imports us -> avoid import cycle
+        if args.self_test_panel:
+            sys.exit(panel_review.self_test_panel())
+        if args.panel_review_opus:
+            gids = [g.strip() for g in args.panel_review_opus.split(",") if g.strip()]
+            out = panel_review.generate_opus_pack(gids, args.batch_id,
+                                                  out_dir=args.out_dir)
+            sys.stdout.write(json.dumps(out, ensure_ascii=False, indent=2) + "\n")
+            sys.exit(0)
+        try:
+            summary = panel_review.run_panel_review(
+                args.panel_review, args.lens, args.run_id,
+                InvocationBudget(cap=args.cap), ledger_dir=args.ledger_dir,
+                timeout_s=args.timeout)
+        except AuthError as e:
+            sys.stderr.write("AUTH-CLASS CODEX FAILURE (pause-#8 surface):\n%s\n" % e)
+            sys.exit(3)
+        sys.stdout.write(json.dumps(summary, ensure_ascii=False, indent=2) + "\n")
+        sys.exit(0)
 
     if args.case_read:
         rows = _load_worklist_rows({args.case_read})
