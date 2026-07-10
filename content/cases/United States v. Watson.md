@@ -8,7 +8,7 @@ court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1976
-date_decided: 1975-10-06
+date_decided: 1976-01-26
 docket: ""
 authority_weight: "Binding — SCOTUS"
 treatment:
@@ -37,7 +37,7 @@ holding: "Custody alone does not render consent involuntary. The fact of being u
 lake:
   record_id: United States v. Watson
   status: verified
-  projected_at: 2026-07-09
+  projected_at: 2026-07-10
 ---
 
 # United States v. Watson

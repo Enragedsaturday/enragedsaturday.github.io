@@ -8,7 +8,7 @@ court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1978
-date_decided: 1979-01-15
+date_decided: 1978-12-05
 docket: 77-5781
 authority_weight: "Binding — SCOTUS"
 treatment:
@@ -37,7 +37,7 @@ holding: "Fourth Amendment rights are personal; a defendant must show his own le
 lake:
   record_id: Rakas v. Illinois
   status: verified
-  projected_at: 2026-07-09
+  projected_at: 2026-07-10
 ---
 
 # Rakas v. Illinois

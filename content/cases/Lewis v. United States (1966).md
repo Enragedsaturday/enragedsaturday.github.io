@@ -8,7 +8,7 @@ court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1966
-date_decided: 1967-01-09
+date_decided: 1966-12-12
 docket: 36
 authority_weight: "Binding — SCOTUS"
 treatment:
@@ -37,7 +37,7 @@ holding: "When an occupant converts his home into a commercial center and invite
 lake:
   record_id: "Lewis v. United States (1966)"
   status: verified
-  projected_at: 2026-07-09
+  projected_at: 2026-07-10
 ---
 
 # Lewis v. United States (1966)

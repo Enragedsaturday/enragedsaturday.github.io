@@ -4944,6 +4944,123 @@ def apply_web_cites(paths, manifest, journal, cites_path, allow_statuses=WEB_CIT
 
 
 # ---------------------------------------------------------------------------
+# S9 date_decided repair (finding F-S9-IDS-002, orchestrator-sanctioned
+# 2026-07-09). A mechanical class of verified SCOTUS rows carries an
+# identity.date_decided polluted by the CL cluster's date_filed (rehearing-denial
+# or argument dates) while identity.year (the reporter parenthetical) is correct.
+# This offline, pure-file surface lands a web-dual-leg-verified U.S. Reports
+# decision date onto identity.date_decided. GUARDS (fail-closed; the whole batch
+# is validated before any write): the record exists on disk; the new date's year
+# MUST equal identity.year (the reporter-anchored invariant); identity.year is
+# never touched. No CL client is constructed, so no token is read and a live call
+# is impossible (max_calls=0 by construction). Before/after is journaled with the
+# web-evidence refs (via the optional --repair-date-decided-evidence sidecar).
+# The manifest's denormalized date_decided copy is kept in sync (apply_web_cites
+# precedent) so the repair introduces no manifest/lake divergence.
+# ---------------------------------------------------------------------------
+REPAIR_DATE_DECIDED_STEP = "s9.repair-date-decided"
+REPAIR_DATE_DECIDED_SOURCE = "s9-web-dual-leg"
+REPAIR_DATE_DECIDED_FINDING = "F-S9-IDS-002"
+REPAIR_DATE_DECIDED_ALLOW_STATUSES = ("verified", "verified_identity", "verified_off_cl")
+_REPAIR_DATE_DECIDED_RE = re.compile(r"^(?P<record_id>.+):(?P<date>\d{4}-\d{2}-\d{2})$")
+
+
+def parse_repair_date_decided_spec(spec):
+    match = _REPAIR_DATE_DECIDED_RE.match((spec or "").strip())
+    if not match:
+        raise SystemExit("--repair-date-decided expects <record_id>:<YYYY-MM-DD>, got %r" % spec)
+    record_id = match.group("record_id").strip()
+    date = match.group("date")
+    if not record_id:
+        raise SystemExit("--repair-date-decided empty record_id in %r" % spec)
+    try:
+        parsed = dt.datetime.strptime(date, "%Y-%m-%d").date()
+    except ValueError:
+        raise SystemExit("--repair-date-decided invalid calendar date %r for %s" % (date, record_id))
+    return record_id, date, parsed.year
+
+
+def read_repair_date_decided_evidence(path):
+    if not path:
+        return {}
+    out = {}
+    for entry in read_packet_a_jsonl(path):
+        rid = entry.get("record_id")
+        if not rid:
+            raise SystemExit("--repair-date-decided-evidence row missing record_id: %r" % entry)
+        legs = entry.get("legs")
+        if not isinstance(legs, list) or len(legs) < 2:
+            raise SystemExit("--repair-date-decided-evidence row %s needs >=2 evidence legs" % rid)
+        out[rid] = legs
+    return out
+
+
+def repair_date_decided(paths, manifest, journal, specs, evidence_path=None,
+                        allow_statuses=REPAIR_DATE_DECIDED_ALLOW_STATUSES):
+    allow_statuses = tuple(allow_statuses)
+    evidence = read_repair_date_decided_evidence(evidence_path)
+    # Phase 1 — validate the whole batch before any write (fail-closed).
+    plans = []
+    seen = set()
+    for spec in specs:
+        raw_id, new_date, new_year = parse_repair_date_decided_spec(spec)
+        record_id = manifest.resolve_record_id(raw_id) or raw_id
+        if record_id in seen:
+            raise SystemExit("--repair-date-decided duplicate record_id: %s" % record_id)
+        seen.add(record_id)
+        record = load_case_record(paths, record_id)
+        if record is None:
+            raise SystemExit("--repair-date-decided lake record missing on disk: %s" % raw_id)
+        identity = record.get("identity") or {}
+        year = identity.get("year")
+        if year is None:
+            raise SystemExit(
+                "--repair-date-decided refuses %s: identity.year is null (no reporter anchor)" % record_id)
+        if int(new_year) != int(year):
+            raise SystemExit(
+                "--repair-date-decided refuses %s: new date %s (year %s) != identity.year %s "
+                "(reporter-anchored invariant)" % (record_id, new_date, new_year, year))
+        row = manifest.by_record_id.get(record_id)
+        status = (row or {}).get("status") or record.get("status")
+        if status not in allow_statuses:
+            raise SystemExit(
+                "--repair-date-decided refuses out-of-scope row %s (status=%s); permitted: %s"
+                % (record_id, status, ", ".join(allow_statuses)))
+        legs = evidence.get(record_id)
+        if evidence and legs is None:
+            raise SystemExit(
+                "--repair-date-decided-evidence has no legs for repaired record %s" % record_id)
+        plans.append((record_id, record, row, identity, new_date, year, legs))
+
+    # Phase 2 — apply per row, journaled with the web-evidence refs.
+    applied = []
+    noop = []
+    for record_id, record, row, identity, new_date, year, legs in plans:
+        before = identity.get("date_decided")
+        manifest_before = row.get("date_decided") if row else None
+        if before == new_date and manifest_before == new_date:
+            journal.append(
+                step=REPAIR_DATE_DECIDED_STEP, record_id=record_id, status="noop",
+                before=before, after=new_date, year=year,
+                finding_id=REPAIR_DATE_DECIDED_FINDING, source=REPAIR_DATE_DECIDED_SOURCE, evidence=legs)
+            noop.append(record_id)
+            continue
+        # identity.year is deliberately never touched; only date_decided moves.
+        identity["date_decided"] = new_date
+        record["identity"] = identity
+        write_case_record(paths, record)
+        if row is not None:
+            row["date_decided"] = new_date
+            row["last_record_write"] = iso_now()
+        journal.append(
+            step=REPAIR_DATE_DECIDED_STEP, record_id=record_id, status="applied",
+            before=before, after=new_date, manifest_before=manifest_before, year=year,
+            finding_id=REPAIR_DATE_DECIDED_FINDING, source=REPAIR_DATE_DECIDED_SOURCE, evidence=legs)
+        applied.append(record_id)
+    return {"applied": applied, "noop": noop}
+
+
+# ---------------------------------------------------------------------------
 # R8 addendum — cache-served identity-field repair (coordinator 2026-07-07).
 # SD10 residue leaves some verified_identity rows with a corrupt identity block
 # (court a bare year, court_level null/"other", year/date null) that projects a
@@ -6972,6 +7089,7 @@ def run_ingest(args):
             or args.rekey_cluster_panel
             or args.apply_fragments
             or args.repair_caption_from_cache
+            or args.repair_date_decided
         ):
             raise SystemExit("--add-candidates cannot be combined with other action/filter options")
         journal, journal_fallback = writable_repair_journal(paths, journal)
@@ -6998,6 +7116,32 @@ def run_ingest(args):
         raise SystemExit(
             "--rekey-cluster-target/--rekey-cluster-expect-cite/--rekey-cluster-evidence "
             "require --rekey-cluster-panel")
+    if args.repair_date_decided_evidence and not args.repair_date_decided:
+        # Fail closed: the evidence sidecar is meaningless (and silently ignored)
+        # without the repair action it annotates.
+        raise SystemExit("--repair-date-decided-evidence requires --repair-date-decided")
+    if args.repair_date_decided:
+        if (
+            args.apply_web_keys or args.apply_alias_folds or args.enrich_citations
+            or args.apply_web_cites or args.repair_identity_from_cache or args.repair_coa_state_from_cache
+            or args.rekey_lead_opinion_from_cache or args.rekey_cluster_panel or args.apply_fragments
+            or args.repair_caption_from_cache or args.repair_migration_refs or args.repair_failclosed_treatment
+            or args.flip_verified or args.elevate_off_cl or args.adjudication or args.readjudicate
+            or args.readjudicate_file or args.rerun_lane or args.records or args.smoke or args.add_candidates
+        ):
+            raise SystemExit("--repair-date-decided cannot be combined with other action/filter options")
+        # Pure file op over the lake + manifest: no CL client is constructed, so no
+        # token is read and no live call is possible (max_calls=0 by construction).
+        result = repair_date_decided(paths, manifest, journal, args.repair_date_decided,
+                                     evidence_path=args.repair_date_decided_evidence)
+        manifest.regenerate_counts()
+        manifest.save()
+        print("journal: %s" % journal_path)
+        print("date_decided repaired: %s | already-correct (noop): %s"
+              % (len(result["applied"]), len(result["noop"])))
+        if result["applied"]:
+            print("re-project affected pages (projector owns identity.date_decided): python3 scripts/s2/project.py --write")
+        return
     if args.apply_fragments:
         if (
             args.apply_web_keys or args.apply_alias_folds or args.enrich_citations
@@ -11393,6 +11537,105 @@ def self_test_apply_web_cites():
         shutil.rmtree(tmp)
 
 
+def self_test_repair_date_decided():
+    tmp = tempfile.mkdtemp(prefix="s2-datedecided-selftest-")
+    try:
+        paths = LakePaths(tmp, os.path.join(tmp, "pool"))
+        paths.ensure()
+
+        def stub_row(rid, year, date_decided, status="verified"):
+            return {"record_id": rid, "record_id_status": "resolved", "source": "content/cases",
+                    "stub": False, "title": rid, "status": status,
+                    "lane_status": frontier_stub_lane_status(), "counts": {},
+                    "year": year, "date_decided": date_decided}
+        manifest_data = {"schema_version": "s2.manifest.v1", "generated_at": iso_now(), "records": [
+            # polluted lake date_decided (year(date) == identity.year); manifest copy correct
+            stub_row("polluted--1", 1966, "1966-12-12"),
+            # polluted lake AND manifest (the Thompson shape) — manifest must be re-synced
+            stub_row("polluted-both--2", 1984, "1985-01-21"),
+            # already-correct everywhere (noop)
+            stub_row("already-ok--3", 1979, "1979-11-28"),
+            # a null-year row to exercise the reporter-anchor guard
+            stub_row("nullyear--4", None, None),
+        ]}
+        write_json(paths.manifest, manifest_data)
+        manifest = ManifestStore(paths.manifest)
+        journal = Journal(os.path.join(tmp, "journal.jsonl"), "selftest")
+
+        def seed(rid, year, date_decided, status="verified"):
+            rec = empty_record_shell(rid, manifest.by_record_id[rid], "selftest")
+            rec["status"] = status
+            rec["identity"]["year"] = year
+            rec["identity"]["date_decided"] = date_decided
+            write_case_record(paths, rec)
+        seed("polluted--1", 1966, "1967-01-09")
+        seed("polluted-both--2", 1984, "1985-01-21")
+        seed("already-ok--3", 1979, "1979-11-28")
+        seed("nullyear--4", None, None)
+
+        def ev(entries):
+            p = os.path.join(tmp, "ev-%d.jsonl" % random.randint(0, 1_000_000))
+            with open(p, "w", encoding="utf-8") as f:
+                for e in entries:
+                    f.write(json.dumps(e) + "\n")
+            return p
+
+        legs = [{"source": "codex-web_search", "url": "https://supreme.justia.com/x", "date": "1966-12-12"},
+                {"source": "model-knowledge", "cite": "385 U.S. 206"}]
+
+        # Happy path + manifest re-sync + noop, all journaled.
+        evidence = ev([
+            {"record_id": "polluted--1", "legs": legs},
+            {"record_id": "polluted-both--2", "legs": legs},
+            {"record_id": "already-ok--3", "legs": legs},
+        ])
+        result = repair_date_decided(
+            paths, manifest,
+            journal,
+            ["polluted--1:1966-12-12", "polluted-both--2:1984-11-26", "already-ok--3:1979-11-28"],
+            evidence_path=evidence)
+        assert set(result["applied"]) == {"polluted--1", "polluted-both--2"}, result
+        assert result["noop"] == ["already-ok--3"], result
+        # date_decided moved; identity.year untouched
+        r1 = load_case_record(paths, "polluted--1")
+        assert r1["identity"]["date_decided"] == "1966-12-12" and r1["identity"]["year"] == 1966
+        r2 = load_case_record(paths, "polluted-both--2")
+        assert r2["identity"]["date_decided"] == "1984-11-26" and r2["identity"]["year"] == 1984
+        # manifest denormalized copy kept in sync (Thompson-shape drift corrected)
+        assert manifest.by_record_id["polluted-both--2"]["date_decided"] == "1984-11-26"
+        assert manifest.by_record_id["polluted--1"]["date_decided"] == "1966-12-12"
+        # journal carries before/after + evidence refs
+        jrows = [r for r in journal.rows()
+                 if r.get("step") == REPAIR_DATE_DECIDED_STEP and r.get("record_id") == "polluted--1"]
+        assert jrows and jrows[-1]["before"] == "1967-01-09" and jrows[-1]["after"] == "1966-12-12"
+        assert jrows[-1]["finding_id"] == REPAIR_DATE_DECIDED_FINDING and jrows[-1]["evidence"] == legs
+
+        def refuses(specs, evidence_path=None):
+            try:
+                repair_date_decided(paths, manifest, journal, specs, evidence_path=evidence_path)
+            except SystemExit:
+                return True
+            return False
+
+        # GUARD 1 — record must exist on disk (fail-closed).
+        assert refuses(["ghost--404:1966-12-12"])
+        # GUARD 2 — new date's year MUST equal identity.year (reporter anchor). No write.
+        before = load_case_record(paths, "polluted--1")["identity"]["date_decided"]
+        assert refuses(["polluted--1:1970-01-01"])
+        assert load_case_record(paths, "polluted--1")["identity"]["date_decided"] == before
+        # reporter-anchor guard also refuses a null identity.year row.
+        assert refuses(["nullyear--4:1979-11-28"])
+        # malformed token + non-calendar date fail closed.
+        assert refuses(["missing-date-part"])
+        assert refuses(["polluted--1:1966-13-40"])
+        # evidence sidecar present but missing legs for a repaired record fails closed.
+        assert refuses(["polluted--1:1966-12-12"], evidence_path=ev([{"record_id": "someone-else--9", "legs": legs}]))
+        # duplicate record_id in one batch fails closed.
+        assert refuses(["polluted--1:1966-12-12", "polluted--1:1966-12-12"])
+    finally:
+        shutil.rmtree(tmp)
+
+
 def self_test_repair_identity_from_cache():
     tmp = tempfile.mkdtemp(prefix="s2-idrepair-selftest-")
     try:
@@ -12279,6 +12522,7 @@ def run_self_tests():
     self_test_packet_a_alias_fold()
     self_test_enrich_citations()
     self_test_apply_web_cites()
+    self_test_repair_date_decided()
     self_test_repair_identity_from_cache()
     self_test_repair_caption_from_cache()
     self_test_repair_coa_state_from_cache()
@@ -12309,6 +12553,8 @@ def parse_args(argv):
     parser.add_argument("--apply-alias-folds", help="offline: retire caption-duplicate stubs into a surviving litigation row as folded-alias (packet A step 3)")
     parser.add_argument("--enrich-citations", help="bounded: populate citations.display on identity-only R8-WORKLIST stubs from their verified cluster.citations[] (E4); one paced cluster fetch/row, resumable, status untouched")
     parser.add_argument("--apply-web-cites", help="offline (R8 R3): land dual-leg web-recovered official cites (source web-dual-leg + web_legs trail) or journal slip-only terminals onto citations-empty verified_identity rows")
+    parser.add_argument("--repair-date-decided", action="append", default=[], help="offline (S9 F-S9-IDS-002): land a web-dual-leg-verified U.S. Reports decision date onto identity.date_decided as <record_id>:<YYYY-MM-DD>; fail-closed (record must exist; new date's year MUST equal identity.year — the reporter-anchored invariant; identity.year untouched); pure file op, no CL client; repeatable")
+    parser.add_argument("--repair-date-decided-evidence", help="offline: JSONL/JSON sidecar of {record_id, legs:[{source,url,...}, ...]} carrying the dual-leg web evidence refs journaled by --repair-date-decided (each repaired record must have >=2 legs)")
     parser.add_argument("--repair-identity-from-cache", action="append", default=[], help="cache-served (R8 addendum): re-derive court/date/year for a verified_identity row from its cached cluster; a cache miss is queued for the CL lane; repeatable")
     parser.add_argument("--repair-coa-state-from-cache", action="append", default=[], help="R8 addendum #2: re-derive court_level (+circuit/state/year/docket) for a coa/state residue verified_identity row; cache-only by default; repeatable")
     parser.add_argument("--repair-coa-state-allow-docket-fetch", action="store_true", help="opt-in gate for --repair-coa-state-from-cache: permit the paced serial CL lane to fetch the docket + court object for an authoritative court_id/jurisdiction derivation (cache-first)")

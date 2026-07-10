@@ -8,7 +8,7 @@ court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1979
-date_decided: 1980-01-21
+date_decided: 1979-11-28
 docket: 78-5937
 authority_weight: "Binding — SCOTUS"
 treatment:
@@ -39,7 +39,7 @@ holding: "A warrant to search premises does not authorize searching persons who 
 lake:
   record_id: Ybarra v. Illinois
   status: verified
-  projected_at: 2026-07-09
+  projected_at: 2026-07-10
 ---
 
 # Ybarra v. Illinois

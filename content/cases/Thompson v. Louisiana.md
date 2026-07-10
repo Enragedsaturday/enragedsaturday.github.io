@@ -8,7 +8,7 @@ court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1984
-date_decided: 1985-01-21
+date_decided: 1984-11-26
 docket: 83-6775
 authority_weight: "Binding — SCOTUS"
 treatment:
@@ -35,7 +35,7 @@ holding: "There is no 'murder-scene exception' to the warrant requirement; a war
 lake:
   record_id: Thompson v. Louisiana
   status: verified
-  projected_at: 2026-07-06
+  projected_at: 2026-07-10
 ---
 
 # Thompson v. Louisiana

@@ -8,7 +8,7 @@ court: U.S. Supreme Court
 court_level: scotus
 circuit: ""
 year: 1998
-date_decided: 1999-02-23
+date_decided: 1998-12-01
 docket: ""
 authority_weight: "Binding — SCOTUS"
 treatment:
@@ -35,7 +35,7 @@ holding: "A short-term visitor present in another's home for a purely commercial
 lake:
   record_id: Minnesota v. Carter
   status: verified
-  projected_at: 2026-07-06
+  projected_at: 2026-07-10
 ---
 
 # Minnesota v. Carter
