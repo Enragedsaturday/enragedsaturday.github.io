@@ -411,6 +411,27 @@ def _json_candidates(text):
 # 5. Row emission (append-safe JSONL under _run/s9/)
 # ==========================================================================
 
+def locked_append(path, line):
+    """Append one line under an exclusive advisory lock (fcntl.flock) so many
+    concurrent panel-grind PROCESSES can append to the same findings/votes JSONL
+    without interleaving a large row. Falls back to a plain append where flock is
+    unavailable. The whole line (incl. trailing newline) is written in one buffer
+    while the lock is held."""
+    os.makedirs(os.path.dirname(path), exist_ok=True)
+    with open(path, "a", encoding="utf-8") as f:
+        try:
+            import fcntl
+            fcntl.flock(f.fileno(), fcntl.LOCK_EX)
+            try:
+                f.write(line)
+                f.flush()
+            finally:
+                fcntl.flock(f.fileno(), fcntl.LOCK_UN)
+        except (ImportError, OSError):
+            f.write(line)
+    return path
+
+
 def emit_row(row, ledger_dir=RUN_DIR):
     schema = row.get("schema")
     fname = LEDGER_FILES.get(schema)
@@ -418,9 +439,7 @@ def emit_row(row, ledger_dir=RUN_DIR):
         raise ValueError("unknown row schema %r" % schema)
     os.makedirs(ledger_dir, exist_ok=True)
     p = os.path.join(ledger_dir, fname)
-    with open(p, "a", encoding="utf-8") as f:
-        f.write(json.dumps(row, ensure_ascii=False, sort_keys=True) + "\n")
-    return p
+    return locked_append(p, json.dumps(row, ensure_ascii=False, sort_keys=True) + "\n")
 
 
 # ==========================================================================
@@ -933,6 +952,8 @@ def main():
     ap.add_argument("--batch-id", default="opus-batch-1")
     ap.add_argument("--out-dir", default=None)
     ap.add_argument("--cap", type=int, default=INVOCATION_CAP)
+    ap.add_argument("--panel-worklist", default=None,
+                    help="panel worklist path (default: v2 if built, else v1)")
     ap.add_argument("--self-test-panel", action="store_true")
     args = ap.parse_args()
 
@@ -953,7 +974,7 @@ def main():
             summary = panel_review.run_panel_review(
                 args.panel_review, args.lens, args.run_id,
                 InvocationBudget(cap=args.cap), ledger_dir=args.ledger_dir,
-                timeout_s=args.timeout)
+                timeout_s=args.timeout, worklist_path=args.panel_worklist)
         except AuthError as e:
             sys.stderr.write("AUTH-CLASS CODEX FAILURE (pause-#8 surface):\n%s\n" % e)
             sys.exit(3)

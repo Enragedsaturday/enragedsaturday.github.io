@@ -68,7 +68,19 @@ POOL_TEXT_DIR = lr.TEXT_DIR
 
 INVENTORY_PATH = os.path.join(RUN_DIR, "assertion-inventory.json")
 PANEL_WORKLIST = os.path.join(RUN_DIR, "worklists", "panel-review.jsonl")
+PANEL_WORKLIST_V2 = os.path.join(RUN_DIR, "worklists", "panel-review.v2.jsonl")
 LAKE_CASES_DIR = os.path.join(REPO_ROOT, "_overhaul2", "lake", "cases")
+
+# coordinator scope rulings (ratified commit e010136):
+#  (a) the ledger-row 964-pincite singleton EXITS the Codex panel (-> the
+#      orchestrator's R9(b) Claude-lane >=1-in-10 sample). Excluded from v2.
+#  (b) reference/craft groups whose existence rows carry substantive holding
+#      text get PROMOTED to text-dependent disclosure (cited-case texts shown).
+#  (c) the 80-black_letter registry singleton -> 3 shards of ~27.
+LEDGER_ROW_OBJECT = os.path.join("_run", "s8-link-ledger.json")
+REGISTRY_OBJECT = os.path.join("_overhaul2", "points", "registry.yaml")
+REGISTRY_SHARD_COUNT = 3
+TEXT_PROMOTE_CAP = 12   # max cited-case texts to disclose for a promoted group
 
 CODEX_MODEL = lr.CODEX_MODEL          # gpt-5.5
 OPUS_MODEL = "claude-opus-4-8"        # the model-diversity panel lane
@@ -147,6 +159,124 @@ def load_worklist_index(path=PANEL_WORKLIST):
     return idx
 
 
+def _has_holding_cells(row, inv_by_id):
+    for aid in row.get("dimensions", {}).get("existence", []):
+        pay = (inv_by_id.get(aid) or {}).get("payload") or {}
+        if isinstance(pay.get("cells"), list) and len(pay["cells"]) >= 2:
+            return True
+    return False
+
+
+def _should_text_promote(row, inv_by_id):
+    """(b): reference/craft groups whose existence rows carry substantive holding
+    text (a Case|Holding|Opinion table cell)."""
+    if row.get("object_class") == "reference":
+        return _has_holding_cells(row, inv_by_id)
+    if "/instructor-craft-and-study/" in (row.get("object") or ""):
+        return _has_holding_cells(row, inv_by_id)
+    return False
+
+
+def _tier_map():
+    """{caption/record_id -> tier_rank} from the thread-n case worklist (R5
+    tiering: recency=0, negatives=1, rule-bearing=2, high-profile=3, rest=4)."""
+    m = {}
+    p = os.path.join(RUN_DIR, "worklists", "thread-n-cases.jsonl")
+    if os.path.exists(p):
+        with open(p, encoding="utf-8") as f:
+            for line in f:
+                line = line.strip()
+                if not line:
+                    continue
+                try:
+                    r = json.loads(line)
+                except ValueError:
+                    continue
+                tr = r.get("tier_rank", 4)
+                for k in (r.get("caption"), r.get("record_id")):
+                    if k:
+                        m[k] = tr
+    return m
+
+
+def _group_tier_rank(row, tmap):
+    oc = row.get("object_class")
+    base = os.path.splitext(os.path.basename((row.get("object") or "").split("#")[0]))[0]
+    if oc in ("case", "lake-record"):
+        return tmap.get(base, 4)
+    if oc == "registry":
+        return 1   # black-letter rules: high value + the >=2-approval gate
+    if oc in ("doctrine", "reference"):
+        return 2   # rule-bearing / craft pages
+    return 4
+
+
+def revise_panel_worklist(src=PANEL_WORKLIST, dst=PANEL_WORKLIST_V2,
+                          inv_by_id=None, shard_count=REGISTRY_SHARD_COUNT):
+    """Apply the ratified scope rulings and write panel-review.v2.jsonl:
+      (a) DROP the ledger-row 964-pincite singleton (-> R9(b) Claude lane).
+      (b) TAG reference/craft holding-table groups with text_promote=true.
+      (c) SHARD the 80-black_letter registry singleton into `shard_count` shards
+          (object = 'registry.yaml#shard-<n>', black_letter ids sliced evenly).
+    Returns a summary dict."""
+    inv_by_id = inv_by_id if inv_by_id is not None else load_inventory_index()
+    rows_out, dropped, promoted, shards = [], 0, 0, 0
+    with open(src, encoding="utf-8") as f:
+        for line in f:
+            line = line.strip()
+            if not line:
+                continue
+            r = json.loads(line)
+            oc = r.get("object_class")
+            if oc == "ledger-row" and r.get("object") == LEDGER_ROW_OBJECT:
+                dropped += 1
+                continue    # (a) exits the Codex panel
+            if oc == "registry" and r.get("object") == REGISTRY_OBJECT:
+                bl = list(r["dimensions"].get("black_letter", []))
+                n = len(bl)
+                size = (n + shard_count - 1) // shard_count
+                for i in range(shard_count):
+                    chunk = bl[i * size:(i + 1) * size]
+                    if not chunk:
+                        continue
+                    shards += 1
+                    sr = {
+                        "schema": "s9.worklist.panel.v1",
+                        "object": "%s#shard-%d" % (REGISTRY_OBJECT, i + 1),
+                        "object_class": "registry",
+                        "page_batch": r.get("page_batch", 0),
+                        "page_ordinal": r.get("page_ordinal", 0),
+                        "dimensions": {d: [] for d in PANEL_DIMS},
+                        "counts": {d: 0 for d in PANEL_DIMS},
+                        "total": len(chunk),
+                        "black_letter_needs_2_approvals": True,
+                        "shard_of": REGISTRY_OBJECT,
+                        "shard_index": i + 1, "shard_count": shard_count,
+                    }
+                    sr["dimensions"]["black_letter"] = chunk
+                    sr["counts"]["black_letter"] = len(chunk)
+                    rows_out.append(sr)
+                continue    # (c) replaced by shards
+            if _should_text_promote(r, inv_by_id):
+                r = dict(r, text_promote=True)
+                promoted += 1
+            rows_out.append(r)
+    # (ordering) sort by R5 tier so recency/negatives lead, then renumber
+    # page_ordinal/page_batch so the driver's file-order pass is tier-ordered.
+    tmap = _tier_map()
+    rows_out.sort(key=lambda r: (_group_tier_rank(r, tmap), r.get("object") or ""))
+    for i, r in enumerate(rows_out):
+        r["tier_rank"] = _group_tier_rank(r, tmap)
+        r["page_ordinal"] = i
+        r["page_batch"] = i // 12
+    os.makedirs(os.path.dirname(dst), exist_ok=True)
+    with open(dst, "w", encoding="utf-8") as f:
+        for r in rows_out:
+            f.write(json.dumps(r, ensure_ascii=False, sort_keys=True) + "\n")
+    return {"dst": dst, "groups": len(rows_out), "dropped_ledger_row": dropped,
+            "text_promoted": promoted, "registry_shards": shards}
+
+
 # ==========================================================================
 # 2. Group resolution — object -> disclosure set (content / lake / texts / rows)
 # ==========================================================================
@@ -166,7 +296,9 @@ def _lake_path_for(case_name):
 def resolve_content_page(obj, object_class):
     """The object's content page. case/doctrine/reference -> the object itself;
     lake-record -> the sibling content/cases page; registry/ledger-row -> the
-    object file (its own content). Returns (abs_path_or_None, note)."""
+    object file (its own content). A '#shard-N' suffix is stripped to the real
+    file. Returns (abs_path_or_None, note)."""
+    obj = obj.split("#", 1)[0]   # strip a shard suffix (registry shards)
     if object_class in ("case", "doctrine", "reference", "registry",
                         "ledger-row"):
         p = os.path.join(REPO_ROOT, obj)
@@ -192,6 +324,7 @@ def resolve_group(group_id, worklist_idx=None, inv_by_id=None, text_dir=None):
     obj = wl["object"]
     oc = wl["object_class"]
 
+    text_promote = bool(wl.get("text_promote"))   # (b) ruling
     # the group's inventory rows, by dimension
     rows = []
     dims_present = set()
@@ -208,8 +341,14 @@ def resolve_group(group_id, worklist_idx=None, inv_by_id=None, text_dir=None):
             rows.append(row)
             dims_present.add(dim)
             cn = _case_name_of(it)
-            if cn and dim in TEXT_DEPENDENT_DIMS:
+            # text-dependent by dimension, OR promoted existence rows carrying
+            # substantive holding text (ruling (b)) -> disclose the opinion text
+            if cn and (dim in TEXT_DEPENDENT_DIMS or text_promote):
                 text_dep_cases.add(cn)
+    if text_promote and len(text_dep_cases) > TEXT_PROMOTE_CAP:
+        # bound the disclosure (record which were held back to lake-only)
+        keep = sorted(text_dep_cases)[:TEXT_PROMOTE_CAP]
+        text_dep_cases = set(keep)
 
     # cases named across the group (+ the object's own case for case/lake-record)
     named = set()
@@ -539,9 +678,7 @@ def _existing_finding_ids(ledger_dir):
 def _emit_attestation(row, ledger_dir):
     os.makedirs(ledger_dir, exist_ok=True)
     p = os.path.join(ledger_dir, "panel-attestations.jsonl")
-    with open(p, "a", encoding="utf-8") as f:
-        f.write(json.dumps(row, ensure_ascii=False, sort_keys=True) + "\n")
-    return p
+    return lr.locked_append(p, json.dumps(row, ensure_ascii=False, sort_keys=True) + "\n")
 
 
 def _persist_result(ledger_dir, lane_id, payload):
@@ -600,7 +737,13 @@ def emit_lens_result(resolved, lens, model, run_id, lane_id, obj_json,
         # verdict lives only in verdict_map for orchestrator backfill.
 
     reviewed_ids = [iv.get("assertion_id") for iv in reviewed if iv.get("assertion_id")]
-    clean = (len(findings_emitted) == 0)
+    # A clean attestation may ONLY be emitted when the lane ACTUALLY PARSED and
+    # raised no defect. A no_review/lane_error/manifest_refused reply parses to
+    # zero findings too, but that is a lane FAILURE, not a clean bill of health —
+    # emitting an attestation there would be fail-OPEN (falsely certifying the
+    # group). Fail-closed: no attestation unless parse_status is parsed/repaired.
+    parsed_ok = result.get("parse_status") in ("parsed", "repaired")
+    clean = parsed_ok and (len(findings_emitted) == 0)
     attestation_ref = None
     if clean:
         att = build_attestation_row(resolved, lens, model, run_id, manifest_ref,
@@ -685,12 +828,20 @@ def _review_with_repair(prompt, sandbox, timeout_s, budget, mock):
     return r2, obj2
 
 
+def _default_worklist():
+    """Prefer the ratified v2 worklist (ledger-row dropped, registry sharded,
+    reference/craft promoted); fall back to v1 only if v2 was never built."""
+    return PANEL_WORKLIST_V2 if os.path.exists(PANEL_WORKLIST_V2) else PANEL_WORKLIST
+
+
 def run_panel_review(group_id, lens, run_id, budget, ledger_dir=RUN_DIR,
                      timeout_s=lr.DEFAULT_TIMEOUT_S, mock=None,
-                     worklist_idx=None, inv_by_id=None):
+                     worklist_idx=None, inv_by_id=None, worklist_path=None):
     """One panel-review lens over one group. Emits s9.finding.v1 (defects only) +
     s9.vote.v1 (findings it reviews) + a per-group clean attestation, per R1.
     Returns a summary dict."""
+    if worklist_idx is None:
+        worklist_idx = load_worklist_index(worklist_path or _default_worklist())
     resolved = resolve_group(group_id, worklist_idx=worklist_idx,
                              inv_by_id=inv_by_id)
     lane_id = "codex-%s-panel-%s-%s" % (lens, run_id, lr._short(group_id))
@@ -810,7 +961,7 @@ def generate_opus_pack(group_ids, batch_id, out_dir=None, text_cap=120000,
     Returns {md_path, manifest_path, groups, total_assertions}."""
     out_dir = out_dir or os.path.join(RUN_DIR, "opus-packs")
     os.makedirs(out_dir, exist_ok=True)
-    worklist_idx = worklist_idx or load_worklist_index()
+    worklist_idx = worklist_idx or load_worklist_index(_default_worklist())
     inv_by_id = inv_by_id if inv_by_id is not None else load_inventory_index()
 
     md = [OPUS_PACK_FRAMING, _PANEL_OUTPUT_CONTRACT, "\n---\n"]

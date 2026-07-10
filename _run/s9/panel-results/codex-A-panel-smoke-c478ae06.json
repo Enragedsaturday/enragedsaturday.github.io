@@ -1,0 +1,148 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Barnes v. Felix.json",
+    "lens": "A",
+    "notes": "Reviewed all four assertion_id rows in group_inventory.jsonl exactly once under Lens A.",
+    "reviewed": [
+      {
+        "assertion_id": "5a07a5ee4209c02f",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity is verified for Barnes v. Felix, U.S. Supreme Court, docket 23-1239, decided 2025-05-15.",
+          "Lake official citation is 605 U.S. 73, matching the page citation 605 U.S. 73 (2025)."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "96c441ba7a83030c",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Today, we reject that approach as improperly narrowing the requisite Fourth Amendment analysis.",
+          "locator_note": "pin-73; content_page.md Rule section; opinion text at official page 76/slip-op opening section.",
+          "needs_cl": false,
+          "problem": "The stored pinpoint quote for pin-73 is not a verbatim opinion quote; it splices the content page's Issue/Rule prose and Markdown heading text into the quote field.",
+          "proposed_fix": "Replace the pin-73 stored quote with the actual quoted opinion passage beginning with the Court's rejection of the approach, or remove the editorial Issue/Rule prose from the pinpoint quote.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The lake pinpoint itself marks pin-73 quote_fidelity as mismatch.",
+          "The disclosed opinion text contains the Court's actual quoted passage, not the harvested string containing '## Rule No'.",
+          "The harvested string includes page structure/editorial material that is not in the opinion."
+        ],
+        "residual_risks": [
+          "The cached opinion text has OCR/ligature artifacts such as 'offcer', so final character-perfect text may require normalization against a clean official source."
+        ],
+        "suggested_tightening": "Store only the Court's quoted sentence for pin-73 and keep the surrounding rule summary outside the quote field.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "b00833b82290e9b4",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The quoted sentence appears in the disclosed opinion text at the end of the Court's discussion rejecting the moment-of-threat rule.",
+          "The content-page quote matches the lake pinpoints[].quote for pin-73b."
+        ],
+        "residual_risks": [
+          "The raw cached text line-wraps the word 'review', but the disclosed text supports the quoted sentence when read across the line break."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "3e5ae8df7456f9db",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment is outside Lens A's merits charter, so no treatment/currency finding is raised.",
+          "The payload's good_law field, dates, varies_by_point value, and scope note match the disclosed lake treatment fields and page frontmatter."
+        ],
+        "residual_risks": [
+          "Treatment currency is reserved for Lens B and was not independently tested here."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Barnes v. Felix.json\",\"reviewed\":[{\"assertion_id\":\"5a07a5ee4209c02f\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity is verified for Barnes v. Felix, U.S. Supreme Court, docket 23-1239, decided 2025-05-15.\",\"Lake official citation is 605 U.S. 73, matching the page citation 605 U.S. 73 (2025).\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"96c441ba7a83030c\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The stored pinpoint quote for pin-73 is not a verbatim opinion quote; it splices the content page's Issue/Rule prose and Markdown heading text into the quote field.\",\"severity\":\"high\",\"proposed_fix\":\"Replace the pin-73 stored quote with the actual quoted opinion passage beginning with the Court's rejection of the approach, or remove the editorial Issue/Rule prose from the pinpoint quote.\",\"evidence_quote\":\"Today, we reject that approach as improperly narrowing the requisite Fourth Amendment analysis.\",\"needs_cl\":false,\"locator_note\":\"pin-73; content_page.md Rule section; opinion text at official page 76/slip-op opening section.\"},\"reasons\":[\"The lake pinpoint itself marks pin-73 quote_fidelity as mismatch.\",\"The disclosed opinion text contains the Court's actual quoted passage, not the harvested string containing '## Rule No'.\",\"The harvested string includes page structure/editorial material that is not in the opinion.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The cached opinion text has OCR/ligature artifacts such as 'offcer', so final character-perfect text may require normalization against a clean official source.\"],\"suggested_tightening\":\"Store only the Court's quoted sentence for pin-73 and keep the surrounding rule summary outside the quote field.\"},{\"assertion_id\":\"b00833b82290e9b4\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The quoted sentence appears in the disclosed opinion text at the end of the Court's discussion rejecting the moment-of-threat rule.\",\"The content-page quote matches the lake pinpoints[].quote for pin-73b.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The raw cached text line-wraps the word 'review', but the disclosed text supports the quoted sentence when read across the line break.\"],\"suggested_tightening\":null},{\"assertion_id\":\"3e5ae8df7456f9db\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment is outside Lens A's merits charter, so no treatment/currency finding is raised.\",\"The payload's good_law field, dates, varies_by_point value, and scope note match the disclosed lake treatment fields and page frontmatter.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment currency is reserved for Lens B and was not independently tested here.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed all four assertion_id rows in group_inventory.jsonl exactly once under Lens A.\"}",
+  "summary": {
+    "at": "2026-07-09T21:06:05-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-3f4f619f28"
+    ],
+    "group_id": "_overhaul2/lake/cases/Barnes v. Felix.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "codex-A",
+    "lane_id": "codex-A-panel-smoke-c478ae06",
+    "lens": "A",
+    "manifest_ref": "_run/s9/manifests/codex-A-panel-smoke-c478ae06.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "smoke",
+    "text_disclosed_cases": [
+      "Barnes v. Felix"
+    ],
+    "tokens": {
+      "input": 233963,
+      "output": 6773,
+      "source": "codex-events",
+      "total": 240736
+    },
+    "verdict_map": {
+      "3e5ae8df7456f9db": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "5a07a5ee4209c02f": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "96c441ba7a83030c": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "b00833b82290e9b4": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-3f4f619f28",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 141.0
+  }
+}

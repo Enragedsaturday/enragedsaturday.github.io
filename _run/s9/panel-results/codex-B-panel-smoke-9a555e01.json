@@ -1,0 +1,105 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Alasaad v. Wolf.json",
+    "lens": "B",
+    "notes": "Reviewed all 2 inventory rows. No disclosed authority record overrules, abrogates, supersedes, or limits Alasaad, but disclosed treatment remains unverified.",
+    "reviewed": [
+      {
+        "assertion_id": "2486696e7b4ed51a",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "\"field_i_validity\": \"unverified\"",
+          "locator_note": "lake/Alasaad v. Wolf__9d40f3.json treatment/progeny fields",
+          "needs_cl": true,
+          "problem": "The citation/existence of Alasaad is verified, but the lens-B currency question cannot be verified from the disclosed record because treatment is expressly unverified and progeny/treatment derivation is absent.",
+          "proposed_fix": "Limit this assertion to citation existence only, or supply verified treatment/progeny fields with an as-of date before treating the authority as live law.",
+          "severity": "medium"
+        },
+        "dimension": "existence",
+        "reasons": [
+          "Lake verifies the case citation as 988 F.3d 8, but treatment.field_i_validity is unverified.",
+          "The lake record has treatment edges as an empty derived set and progeny enumeration/count fields null, so disclosed evidence does not establish current live-law status."
+        ],
+        "residual_risks": [
+          "The case may still be good law, but that cannot be confirmed from the disclosed files under the default-to-refuted rule."
+        ],
+        "suggested_tightening": "Separate citation existence from live-law currency, and keep the unverified-treatment caveat attached until treatment is actually derived.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": false
+      },
+      {
+        "assertion_id": "3a2a5e266557343a",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The inventory treatment payload matches the lake record: field_i_validity unverified, as_of_content null, as_of_treatment null, varies_by_point false, and no point overrides.",
+          "The content page also labels treatment as Unverified and states subsequent treatment is not yet machine-verified, so it does not falsely claim verified good-law status."
+        ],
+        "residual_risks": [
+          "Unverified treatment cannot support an affirmative good-law conclusion until treatment/progeny derivation is completed."
+        ],
+        "suggested_tightening": "Add a verified as_of_treatment date and derived treatment edges before promoting the page beyond the unverified banner.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/Alasaad v. Wolf.json\",\"reviewed\":[{\"assertion_id\":\"2486696e7b4ed51a\",\"dimension\":\"existence\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":false,\"defect\":{\"problem\":\"The citation/existence of Alasaad is verified, but the lens-B currency question cannot be verified from the disclosed record because treatment is expressly unverified and progeny/treatment derivation is absent.\",\"severity\":\"medium\",\"proposed_fix\":\"Limit this assertion to citation existence only, or supply verified treatment/progeny fields with an as-of date before treating the authority as live law.\",\"evidence_quote\":\"\\\"field_i_validity\\\": \\\"unverified\\\"\",\"needs_cl\":true,\"locator_note\":\"lake/Alasaad v. Wolf__9d40f3.json treatment/progeny fields\"},\"reasons\":[\"Lake verifies the case citation as 988 F.3d 8, but treatment.field_i_validity is unverified.\",\"The lake record has treatment edges as an empty derived set and progeny enumeration/count fields null, so disclosed evidence does not establish current live-law status.\"],\"breaks_true_positives\":true,\"residual_risks\":[\"The case may still be good law, but that cannot be confirmed from the disclosed files under the default-to-refuted rule.\"],\"suggested_tightening\":\"Separate citation existence from live-law currency, and keep the unverified-treatment caveat attached until treatment is actually derived.\"},{\"assertion_id\":\"3a2a5e266557343a\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The inventory treatment payload matches the lake record: field_i_validity unverified, as_of_content null, as_of_treatment null, varies_by_point false, and no point overrides.\",\"The content page also labels treatment as Unverified and states subsequent treatment is not yet machine-verified, so it does not falsely claim verified good-law status.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Unverified treatment cannot support an affirmative good-law conclusion until treatment/progeny derivation is completed.\"],\"suggested_tightening\":\"Add a verified as_of_treatment date and derived treatment edges before promoting the page beyond the unverified banner.\"}],\"notes\":\"Reviewed all 2 inventory rows. No disclosed authority record overrules, abrogates, supersedes, or limits Alasaad, but disclosed treatment remains unverified.\"}",
+  "summary": {
+    "at": "2026-07-09T21:05:20-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-a55ed96bc6"
+    ],
+    "group_id": "_overhaul2/lake/cases/Alasaad v. Wolf.json",
+    "group_total_assertions": 2,
+    "lake_only_cases": [
+      "Alasaad v. Wolf"
+    ],
+    "lane": "codex-B",
+    "lane_id": "codex-B-panel-smoke-9a555e01",
+    "lens": "B",
+    "manifest_ref": "_run/s9/manifests/codex-B-panel-smoke-9a555e01.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [
+      "case 'Alasaad v. Wolf' has no lead_opinion_id (text undisclosed)"
+    ],
+    "reviewed_count": 2,
+    "run": "smoke",
+    "text_disclosed_cases": [],
+    "tokens": {
+      "input": 110376,
+      "output": 6633,
+      "source": "codex-events",
+      "total": 117009
+    },
+    "verdict_map": {
+      "2486696e7b4ed51a": {
+        "dimension": "existence",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": false
+      },
+      "3a2a5e266557343a": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-a55ed96bc6",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 132.8
+  }
+}
