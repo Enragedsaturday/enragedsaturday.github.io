@@ -1,0 +1,104 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Chatrie v. United States.json",
+    "lens": "A",
+    "notes": "Reviewed all 2 rows in group_inventory.jsonl using only disclosed workspace files.",
+    "reviewed": [
+      {
+        "assertion_id": "81f9b6abe369c0df",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "An individual has a reasonable expectation of privacy in records about his cell phone’s location",
+          "locator_note": "pin-op has page:null and position:null; the stored quote begins with content-page prose, not the slip-op passage.",
+          "needs_cl": false,
+          "problem": "The pin-op quote is not character-faithful to the opinion text. It appears to splice the content page's Issue/Rule prose and markdown rather than quote the Court. The lake record itself marks this pinpoint quote_fidelity as mismatch.",
+          "proposed_fix": "Replace pin-op with the actual opinion passage being quoted, using exact characters from text/Chatrie v. United States__8b34c5.txt, or remove the pinpoint if it is only a page-prose marker.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload quote contains markdown headers and page language: '## Rule Yes. Acquiring...' which does not appear as an opinion quotation.",
+          "The cached opinion text contains the Court's actual sentence beginning 'An individual has a reasonable expectation...' rather than the harvested pin-op text.",
+          "The disclosed lake pinpoint records quote_fidelity as 'mismatch' for pin-op."
+        ],
+        "residual_risks": [
+          "The substantive rule may still be supportable, but this specific quote/pinpoint cannot stand as a faithful quotation."
+        ],
+        "suggested_tightening": "Use the exact Court sentence from the opinion text, including the curly apostrophe in 'phone’s', and attach the pin to that passage.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "66af6b12105f0489",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The treatment payload matches the disclosed lake treatment fields: good_law, as_of_content 2026-06-29, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note.",
+          "Under Lens A, treatment/currency merits are not independently attacked; no support or quote-fidelity defect is raised for this treatment row."
+        ],
+        "residual_risks": [
+          "Treatment/currency review is reserved for Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Chatrie v. United States.json\",\"reviewed\":[{\"assertion_id\":\"81f9b6abe369c0df\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The pin-op quote is not character-faithful to the opinion text. It appears to splice the content page's Issue/Rule prose and markdown rather than quote the Court. The lake record itself marks this pinpoint quote_fidelity as mismatch.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-op with the actual opinion passage being quoted, using exact characters from text/Chatrie v. United States__8b34c5.txt, or remove the pinpoint if it is only a page-prose marker.\",\"evidence_quote\":\"An individual has a reasonable expectation of privacy in records about his cell phone’s location\",\"needs_cl\":false,\"locator_note\":\"pin-op has page:null and position:null; the stored quote begins with content-page prose, not the slip-op passage.\"},\"reasons\":[\"The payload quote contains markdown headers and page language: '## Rule Yes. Acquiring...' which does not appear as an opinion quotation.\",\"The cached opinion text contains the Court's actual sentence beginning 'An individual has a reasonable expectation...' rather than the harvested pin-op text.\",\"The disclosed lake pinpoint records quote_fidelity as 'mismatch' for pin-op.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The substantive rule may still be supportable, but this specific quote/pinpoint cannot stand as a faithful quotation.\"],\"suggested_tightening\":\"Use the exact Court sentence from the opinion text, including the curly apostrophe in 'phone’s', and attach the pin to that passage.\"},{\"assertion_id\":\"66af6b12105f0489\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The treatment payload matches the disclosed lake treatment fields: good_law, as_of_content 2026-06-29, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note.\",\"Under Lens A, treatment/currency merits are not independently attacked; no support or quote-fidelity defect is raised for this treatment row.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment/currency review is reserved for Lens B.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed all 2 rows in group_inventory.jsonl using only disclosed workspace files.\"}",
+  "summary": {
+    "at": "2026-07-09T21:19:45-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-3dbe7a686e"
+    ],
+    "group_id": "_overhaul2/lake/cases/Chatrie v. United States.json",
+    "group_total_assertions": 2,
+    "lake_only_cases": [],
+    "lane": "codex-A",
+    "lane_id": "codex-A-panel-prod-de821d82",
+    "lens": "A",
+    "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-de821d82.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 2,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Chatrie v. United States"
+    ],
+    "tokens": {
+      "input": 205360,
+      "output": 4688,
+      "source": "codex-events",
+      "total": 210048
+    },
+    "verdict_map": {
+      "66af6b12105f0489": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "81f9b6abe369c0df": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-3dbe7a686e",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 101.1
+  }
+}

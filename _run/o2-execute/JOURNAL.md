@@ -1733,3 +1733,16 @@ DN-002 fix row booked. IN FLIGHT: DN-004 independent confirmation vote + IDS-002
 web-evidence fix (diagnosis INVERTED at adjudication: date_decided carries CL date_filed
 artifacts — rehearing/argument dates; year is reporter-correct). LINT-11's 397 HIGH = new
 backlog class for P3 adjudication-first (FP-rate unknown).
+
+**VOTE-SEMANTICS RULING + NORMALIZATION (2026-07-09, mid-grind).** The panel machine emitted
+vote rows carrying per-ASSERTION verdicts while the checker + signed demo read vote verdicts as
+about THE FINDING — inverse semantics on findings. RULING: vote.verdict refers to the FINDING
+(canonical per check_ledger inv-2 + F-DEMO-001). build_vote_row now maps assertion→finding
+(refuted→stands, stands→refuted); cutover recorded (vote-semantics-cutover.json); 32 pre-cutover
+panel rows normalized in place w/ provenance stamps; grind picks the fix up per-invocation
+(fresh import each lane). Panel self-test PASS post-patch. ADJUDICATIONS: 4 pilot findings
+DISMISSED (disclosure-induced FPs — Opus verbatim-proved every quote once the ratified
+text-promotion disclosed the opinions); geofence-threshold refusal DISMISSED w/ pool evidence
+(SCOTUS Chatrie 2026 verbatim holds acquisition IS a search; 11349205.txt) — the callout's
+≥2-approvals promotion restored via evidence-cited adjudication. Registry shard-1: 26 approved
++ 1 adjudication-restored = 27/27.

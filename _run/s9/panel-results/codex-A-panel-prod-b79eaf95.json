@@ -1,0 +1,159 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Caniglia v. Strom.json",
+    "lens": "A",
+    "notes": "Lens A refutes only the quote-fidelity pinpoints; existence stands, and treatment is recorded without an independent treatment/currency finding per the instructions.",
+    "reviewed": [
+      {
+        "assertion_id": "5ad08ba2a1dddf5b",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record exists for Caniglia v. Strom and identifies the court as U.S. Supreme Court, date decided 2021-05-17, year 2021, docket 20-157.",
+          "The lake official citation is 593 U.S. 194, with parallel citations 209 L. Ed. 2d 604 and 141 S. Ct. 1596, matching the payload and content page."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "3a0b456f2405eba8",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "The First Circuit’s “community caretaking” rule, how-\never, goes beyond anything this Court has recognized.",
+          "locator_note": "The supporting opinion text appears at slip op. 3 in text/Caniglia v. Strom__951468.txt; lake pin-op3 has page null and quote_fidelity 'mismatch'.",
+          "needs_cl": false,
+          "problem": "The pin-op3 payload is not a character-faithful verbatim quote from the opinion. It splices page prose and Markdown headings, and the lake record itself marks the pinpoint quote_fidelity as mismatch.",
+          "proposed_fix": "Replace pin-op3 with the actual slip-opinion passage supporting the rule, or remove quotation treatment from the current text.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The inventory quote begins with page prose, 'exception drawn from *Cady v. Dombrowski*,' then includes '## Issue' and '## Rule' headings, none of which is the opinion passage at slip op. 3.",
+          "The disclosed opinion supports the rule with a different sentence: the First Circuit's community-caretaking rule went beyond anything the Court had recognized."
+        ],
+        "residual_risks": [
+          "The content-page quote also normalizes typography, so the corpus should clarify whether quote marks and line-break hyphenation may be normalized."
+        ],
+        "suggested_tightening": "Use the exact opinion sentence for pin-op3 and keep surrounding page prose outside the quoted pinpoint.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "5efdcbbb748ab7e2",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "Neither the holding nor logic of Cady justified that ap-\nproach. True, Cady also involved a warrantless search for\na firearm. But the location of that search was an im-\npounded vehicle—not a home—“ ‘a constitutional differ-\nence’ ” that the opinion repeatedly stressed.",
+          "locator_note": "The supporting opinion text appears at slip op. 4 in text/Caniglia v. Strom__951468.txt; lake pin-op4 has page null and quote_fidelity 'mismatch'.",
+          "needs_cl": false,
+          "problem": "The pin-op4 quote is substantively close but not character-faithful to the disclosed opinion text: it adds Markdown italics, changes dash spacing, and replaces the opinion's nested curly quotation punctuation with straight quotes.",
+          "proposed_fix": "Replace the quoted text with the exact opinion text, or mark it as a normalized quotation/paraphrase rather than a character-faithful quote.",
+          "severity": "medium"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The opinion text says 'Cady' without Markdown italics, while the payload quotes '*Cady*'.",
+          "The opinion uses 'vehicle—not a home—“ ‘a constitutional difference’ ”' with no spaces around em dashes and nested quotation marks, while the payload uses spaced dashes and straight single quotes."
+        ],
+        "residual_risks": [
+          "The legal proposition is supported, but the verbatim-quote assertion fails under a character-fidelity standard."
+        ],
+        "suggested_tightening": "Keep the proposition but correct the quotation typography and remove Markdown from inside the quoted material.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "c25d009a536217eb",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A's attack charter, so no treatment finding is raised.",
+          "The payload mirrors the lake treatment fields: field_i_validity good_law, as_of_content 2021-05-17, as_of_treatment 2026-06-30, and varies_by_point false."
+        ],
+        "residual_risks": [
+          "Treatment accuracy and the content-page 'No negative treatment' statement remain for Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Caniglia v. Strom.json\",\"reviewed\":[{\"assertion_id\":\"5ad08ba2a1dddf5b\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake identity record exists for Caniglia v. Strom and identifies the court as U.S. Supreme Court, date decided 2021-05-17, year 2021, docket 20-157.\",\"The lake official citation is 593 U.S. 194, with parallel citations 209 L. Ed. 2d 604 and 141 S. Ct. 1596, matching the payload and content page.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"3a0b456f2405eba8\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The pin-op3 payload is not a character-faithful verbatim quote from the opinion. It splices page prose and Markdown headings, and the lake record itself marks the pinpoint quote_fidelity as mismatch.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-op3 with the actual slip-opinion passage supporting the rule, or remove quotation treatment from the current text.\",\"evidence_quote\":\"The First Circuit’s “community caretaking” rule, how-\\never, goes beyond anything this Court has recognized.\",\"needs_cl\":false,\"locator_note\":\"The supporting opinion text appears at slip op. 3 in text/Caniglia v. Strom__951468.txt; lake pin-op3 has page null and quote_fidelity 'mismatch'.\"},\"reasons\":[\"The inventory quote begins with page prose, 'exception drawn from *Cady v. Dombrowski*,' then includes '## Issue' and '## Rule' headings, none of which is the opinion passage at slip op. 3.\",\"The disclosed opinion supports the rule with a different sentence: the First Circuit's community-caretaking rule went beyond anything the Court had recognized.\"],\"breaks_true_positives\":true,\"residual_risks\":[\"The content-page quote also normalizes typography, so the corpus should clarify whether quote marks and line-break hyphenation may be normalized.\"],\"suggested_tightening\":\"Use the exact opinion sentence for pin-op3 and keep surrounding page prose outside the quoted pinpoint.\"},{\"assertion_id\":\"5efdcbbb748ab7e2\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The pin-op4 quote is substantively close but not character-faithful to the disclosed opinion text: it adds Markdown italics, changes dash spacing, and replaces the opinion's nested curly quotation punctuation with straight quotes.\",\"severity\":\"medium\",\"proposed_fix\":\"Replace the quoted text with the exact opinion text, or mark it as a normalized quotation/paraphrase rather than a character-faithful quote.\",\"evidence_quote\":\"Neither the holding nor logic of Cady justified that ap-\\nproach. True, Cady also involved a warrantless search for\\na firearm. But the location of that search was an im-\\npounded vehicle—not a home—“ ‘a constitutional differ-\\nence’ ” that the opinion repeatedly stressed.\",\"needs_cl\":false,\"locator_note\":\"The supporting opinion text appears at slip op. 4 in text/Caniglia v. Strom__951468.txt; lake pin-op4 has page null and quote_fidelity 'mismatch'.\"},\"reasons\":[\"The opinion text says 'Cady' without Markdown italics, while the payload quotes '*Cady*'.\",\"The opinion uses 'vehicle—not a home—“ ‘a constitutional difference’ ”' with no spaces around em dashes and nested quotation marks, while the payload uses spaced dashes and straight single quotes.\"],\"breaks_true_positives\":true,\"residual_risks\":[\"The legal proposition is supported, but the verbatim-quote assertion fails under a character-fidelity standard.\"],\"suggested_tightening\":\"Keep the proposition but correct the quotation typography and remove Markdown from inside the quoted material.\"},{\"assertion_id\":\"c25d009a536217eb\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside Lens A's attack charter, so no treatment finding is raised.\",\"The payload mirrors the lake treatment fields: field_i_validity good_law, as_of_content 2021-05-17, as_of_treatment 2026-06-30, and varies_by_point false.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment accuracy and the content-page 'No negative treatment' statement remain for Lens B.\"],\"suggested_tightening\":null}],\"notes\":\"Lens A refutes only the quote-fidelity pinpoints; existence stands, and treatment is recorded without an independent treatment/currency finding per the instructions.\"}",
+  "summary": {
+    "at": "2026-07-09T21:13:28-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-813c12ee45",
+      "F-S9-PR-9a70385bed"
+    ],
+    "group_id": "_overhaul2/lake/cases/Caniglia v. Strom.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "codex-A",
+    "lane_id": "codex-A-panel-prod-b79eaf95",
+    "lens": "A",
+    "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-b79eaf95.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Caniglia v. Strom"
+    ],
+    "tokens": {
+      "input": 131807,
+      "output": 6636,
+      "source": "codex-events",
+      "total": 138443
+    },
+    "verdict_map": {
+      "3a0b456f2405eba8": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "5ad08ba2a1dddf5b": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "5efdcbbb748ab7e2": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "c25d009a536217eb": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-813c12ee45",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-9a70385bed",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 218.6
+  }
+}

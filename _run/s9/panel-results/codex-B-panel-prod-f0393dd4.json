@@ -1,0 +1,93 @@
+{
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/FBI v. Fikre.json",
+    "lens": "B",
+    "notes": "Reviewed every inventory row under Lens B only; no support or quote-fidelity defects assessed.",
+    "reviewed": [
+      {
+        "assertion_id": "daa67e8f2b231c54",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record identifies record_id as \"FBI v. Fikre\" and identity.case_name as \"FBI v. Fikre\".",
+          "The disclosed citation fields verify the cited authority: citations.official.cite is \"601 U.S. 234\", citations.display is \"601 U.S. 234\", and identity.expected_citation_found is true.",
+          "No disclosed treatment field, treatment edge, or progeny edge reports overruling, abrogation, supersession, vacatur, or limitation; the disclosed record only marks treatment as unverified."
+        ],
+        "residual_risks": [
+          "The disclosed record intentionally lacks derived treatment/progeny, so external current citator status is not independently verified."
+        ],
+        "suggested_tightening": "Do not let the existence/citation assertion imply verified good-law status; keep it paired with the Unverified treatment banner.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "a15ec89d35efd264",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The treatment assertion matches the lake record: treatment.field_i_validity is \"unverified\", composite_basis is \"unverified\", as_of_content and as_of_treatment are null, and varies_by_point is false.",
+          "The lake scope_note states: \"Frontier stub: treatment/progeny intentionally not derived until S6 promotion.\"",
+          "The disclosed treatment.edges array is empty and progeny.rows_cached is 0, which is consistent with the page's Unverified treatment status rather than a verified good-law claim."
+        ],
+        "residual_risks": [
+          "Any assertion stronger than Unverified would require completed treatment/progeny derivation or citator evidence not present in the disclosed record."
+        ],
+        "suggested_tightening": "Maintain the explicit Unverified status until treatment/progeny derivation is completed.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/FBI v. Fikre.json\",\"reviewed\":[{\"assertion_id\":\"daa67e8f2b231c54\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record identifies record_id as \\\"FBI v. Fikre\\\" and identity.case_name as \\\"FBI v. Fikre\\\".\",\"The disclosed citation fields verify the cited authority: citations.official.cite is \\\"601 U.S. 234\\\", citations.display is \\\"601 U.S. 234\\\", and identity.expected_citation_found is true.\",\"No disclosed treatment field, treatment edge, or progeny edge reports overruling, abrogation, supersession, vacatur, or limitation; the disclosed record only marks treatment as unverified.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The disclosed record intentionally lacks derived treatment/progeny, so external current citator status is not independently verified.\"],\"suggested_tightening\":\"Do not let the existence/citation assertion imply verified good-law status; keep it paired with the Unverified treatment banner.\"},{\"assertion_id\":\"a15ec89d35efd264\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The treatment assertion matches the lake record: treatment.field_i_validity is \\\"unverified\\\", composite_basis is \\\"unverified\\\", as_of_content and as_of_treatment are null, and varies_by_point is false.\",\"The lake scope_note states: \\\"Frontier stub: treatment/progeny intentionally not derived until S6 promotion.\\\"\",\"The disclosed treatment.edges array is empty and progeny.rows_cached is 0, which is consistent with the page's Unverified treatment status rather than a verified good-law claim.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Any assertion stronger than Unverified would require completed treatment/progeny derivation or citator evidence not present in the disclosed record.\"],\"suggested_tightening\":\"Maintain the explicit Unverified status until treatment/progeny derivation is completed.\"}],\"notes\":\"Reviewed every inventory row under Lens B only; no support or quote-fidelity defects assessed.\"}",
+  "summary": {
+    "at": "2026-07-09T21:31:50-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
+    "defense_votes": [],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/FBI v. Fikre.json",
+    "group_total_assertions": 2,
+    "lake_only_cases": [
+      "FBI v. Fikre"
+    ],
+    "lane": "codex-B",
+    "lane_id": "codex-B-panel-prod-f0393dd4",
+    "lens": "B",
+    "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-f0393dd4.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [
+      "case 'FBI v. Fikre' has no lead_opinion_id (text undisclosed)"
+    ],
+    "reviewed_count": 2,
+    "run": "prod",
+    "text_disclosed_cases": [],
+    "tokens": {
+      "input": 59161,
+      "output": 3082,
+      "source": "codex-events",
+      "total": 62243
+    },
+    "verdict_map": {
+      "a15ec89d35efd264": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "daa67e8f2b231c54": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [],
+    "wall_clock_s": 68.4
+  }
+}

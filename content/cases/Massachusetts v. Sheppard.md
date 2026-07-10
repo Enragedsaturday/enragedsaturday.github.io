@@ -28,7 +28,7 @@ courtlistener:
 homes:
   - page: "[[The Good-Faith Exception]]"
     role: "Key — Progeny / Refinement"
-related: ["[[United States v. Leon]]", "[[Illinois v. Krull]]", "[[Herring v. United States]]", "[[Davis v. United States]]"]
+related: ["[[United States v. Leon]]", "[[Illinois v. Krull]]", "[[Herring v. United States]]", "[[Davis v. United States (2011)|Davis v. United States]]"]
 aliases: []
 tags: ["case", "fourth-amendment", "exclusionary-rule", "good-faith", "warrant-defect", "leon"]
 holding: "Companion to Leon: where a warrant was technically/clerically defective in form (wrong pre-printed form) but officers reasonably relied…"
@@ -62,7 +62,7 @@ The evidence was admissible under the [[The Good-Faith Exception|good-faith exce
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.
-- *Sheppard* is the companion to [[United States v. Leon]], applying the [[The Good-Faith Exception|good-faith exception]] where the warrant defect is the issuing judge's clerical error. It belongs with the line extending good faith to reliance on a statute ([[Illinois v. Krull]]), on negligent recordkeeping ([[Herring v. United States]]), and on binding precedent ([[Davis v. United States]]).
+- *Sheppard* is the companion to [[United States v. Leon]], applying the [[The Good-Faith Exception|good-faith exception]] where the warrant defect is the issuing judge's clerical error. It belongs with the line extending good faith to reliance on a statute ([[Illinois v. Krull]]), on negligent recordkeeping ([[Herring v. United States]]), and on binding precedent ([[Davis v. United States (2011)|Davis v. United States]]).
 
 ## Appears on
 - [[The Exclusionary Rule]] — *Key — Progeny / Refinement*

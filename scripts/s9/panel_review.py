@@ -610,10 +610,26 @@ def build_finding_row(resolved, item_verdict, lens, run_id, manifest_ref):
     }
 
 
+# ORCHESTRATOR RULING (2026-07-09, journaled): a vote row's `verdict` refers to
+# THE FINDING (per check_ledger inv-2 and the signed F-DEMO-001 instance), while
+# the lens's per-assertion verdict refers to THE CORPUS ASSERTION. The two are
+# inverses on findings: assertion-refuted == the defect is real == the finding
+# STANDS; assertion-stands == the sibling's finding is wrong == the finding is
+# REFUTED. stands-modified carries through. Vote rows written before this
+# mapping landed carry assertion-semantics and are normalized by the cutover
+# script (_run/s9/vote-semantics-cutover.json records the boundary).
+_ASSERTION_TO_FINDING_VERDICT = {
+    "refuted": "stands",
+    "stands": "refuted",
+    "stands-modified": "stands-modified",
+}
+
+
 def build_vote_row(finding_id, item_verdict, lens, model, manifest_ref,
                    lane=None):
     lane = lane or "codex-%s" % lens
-    verdict = item_verdict["verdict"]
+    verdict = _ASSERTION_TO_FINDING_VERDICT.get(
+        item_verdict["verdict"], item_verdict["verdict"])
     row = lr.make_vote_row(
         finding_id, verdict, item_verdict.get("reasons") or [],
         lane=lane, model=model,

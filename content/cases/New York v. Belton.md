@@ -45,7 +45,7 @@ homes:
     role: "Key — Progeny / Refinement"
   - page: "[[Traffic Stops]]"
     role: "Related (cross-doctrine)"
-related: ["[[Arizona v. Gant]]", "[[Chimel v. California]]", "[[Thornton v. United States]]", "[[Davis v. United States]]"]
+related: ["[[Arizona v. Gant]]", "[[Chimel v. California]]", "[[Thornton v. United States]]", "[[Davis v. United States (2011)|Davis v. United States]]"]
 aliases: []
 tags: ["case", "fourth-amendment", "search-incident-to-arrest", "automobile", "vehicle-search"]
 holding: "Defines the SCOPE of a vehicle search incident to arrest: on a lawful custodial arrest of a vehicle occupant, police may search the…"
@@ -84,7 +84,7 @@ The search of the jacket was a lawful [[Search Incident to Arrest|search inciden
 | Vehicle search incident to a recent occupant's arrest | **Superseded** | *[[Arizona v. Gant]]*, 556 U.S. 332 (2009) — the automatic passenger-compartment rule is replaced by *[[Arizona v. Gant\|Gant]]*'s two-justification test |
 | Containers within the passenger compartment (within a lawful search) | **Good law** | *Belton*'s container rule survives inside *[[Arizona v. Gant\|Gant]]*'s narrowed framework |
 
-*[[Arizona v. Gant|Gant]]* rejected the broad reading of *Belton* that authorized an automatic passenger-compartment search whenever an occupant was arrested. After *[[Arizona v. Gant|Gant]]*, a vehicle [[Search Incident to Arrest|search incident to arrest]] is permissible only if the arrestee is within reaching distance of the passenger compartment at the time of the search, or it is reasonable to believe the vehicle contains evidence of the offense of arrest. Officers' reasonable pre-*[[Arizona v. Gant|Gant]]* reliance on *Belton* was addressed in [[Davis v. United States]].
+*[[Arizona v. Gant|Gant]]* rejected the broad reading of *Belton* that authorized an automatic passenger-compartment search whenever an occupant was arrested. After *[[Arizona v. Gant|Gant]]*, a vehicle [[Search Incident to Arrest|search incident to arrest]] is permissible only if the arrestee is within reaching distance of the passenger compartment at the time of the search, or it is reasonable to believe the vehicle contains evidence of the offense of arrest. Officers' reasonable pre-*[[Arizona v. Gant|Gant]]* reliance on *Belton* was addressed in [[Davis v. United States (2011)|Davis v. United States]].
 
 ## Appears on
 - [[SIA Vehicles]] — *Key — Progeny / Refinement*

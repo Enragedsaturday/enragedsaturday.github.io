@@ -1,0 +1,149 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/City of Tahlequah v. Bond.json",
+    "lens": "A",
+    "notes": "Treatment was reviewed only for consistency with disclosed fields; no Lens B treatment analysis was performed.",
+    "reviewed": [
+      {
+        "assertion_id": "995a3707d2c53783",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record names City of Tahlequah v. Bond, U.S. Supreme Court, decided 2021-10-18.",
+          "The lake citation record selects official citation 595 U.S. 9, matching the content page citation 595 U.S. 9 (2021)."
+        ],
+        "residual_risks": [
+          "The cached opinion text is a slip opinion and does not itself show final U.S. page 9; the official page is verified from the lake citation record."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "1884711c7ad5cae9",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "We have repeatedly told courts not to define clearly es-\ntablished law at too high a level of generality.",
+          "locator_note": "pin-op3; slip op. 3",
+          "needs_cl": false,
+          "problem": "The pin-op3 payload quote is not opinion text; it splices content-page summary text and markdown headings, and the lake record itself marks this pinpoint as quote_fidelity=mismatch.",
+          "proposed_fix": "Replace the pin-op3 quote with the actual slip-opinion sentence: We have repeatedly told courts not to define clearly established law at too high a level of generality.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The disclosed opinion text contains the quoted high-generality rule on slip page 3.",
+          "The payload quote includes '## Issue' and '## Rule', which are content-page headings, not language from the opinion."
+        ],
+        "residual_risks": [
+          "The underlying rule on the page appears supportable if the pin quote is corrected."
+        ],
+        "suggested_tightening": "Bind pin-op3 to the actual quoted sentence at slip op. 3, not to surrounding content-page prose.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "529cf268b39f5c0d",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload quote exactly matches lake.pinpoints[id=pin-op3a].quote.",
+          "The same phrase appears in the cached opinion text on slip page 3, with only PDF line-break hyphenation in 'incompe-tent'."
+        ],
+        "residual_risks": [
+          "The text cache hyphenates the line break as incompe-/tent; the clean quote depends on the lake-normalized pinpoint quote, which is disclosed evidence."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "81de6225172ff474",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The content and inventory treatment fields match the disclosed lake treatment fields: good_law, as_of_content 2021-10-18, as_of_treatment 2026-06-30, varies_by_point false.",
+          "No treatment or currency finding is raised under Lens A."
+        ],
+        "residual_risks": [
+          "Treatment currency is outside this lens and left unreviewed."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"A\",\n  \"group_id\": \"_overhaul2/lake/cases/City of Tahlequah v. Bond.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"995a3707d2c53783\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake identity record names City of Tahlequah v. Bond, U.S. Supreme Court, decided 2021-10-18.\",\n        \"The lake citation record selects official citation 595 U.S. 9, matching the content page citation 595 U.S. 9 (2021).\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The cached opinion text is a slip opinion and does not itself show final U.S. page 9; the official page is verified from the lake citation record.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"1884711c7ad5cae9\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The pin-op3 payload quote is not opinion text; it splices content-page summary text and markdown headings, and the lake record itself marks this pinpoint as quote_fidelity=mismatch.\",\n        \"severity\": \"high\",\n        \"proposed_fix\": \"Replace the pin-op3 quote with the actual slip-opinion sentence: We have repeatedly told courts not to define clearly established law at too high a level of generality.\",\n        \"evidence_quote\": \"We have repeatedly told courts not to define clearly es-\\ntablished law at too high a level of generality.\",\n        \"needs_cl\": false,\n        \"locator_note\": \"pin-op3; slip op. 3\"\n      },\n      \"reasons\": [\n        \"The disclosed opinion text contains the quoted high-generality rule on slip page 3.\",\n        \"The payload quote includes '## Issue' and '## Rule', which are content-page headings, not language from the opinion.\"\n      ],\n      \"breaks_true_positives\": true,\n      \"residual_risks\": [\n        \"The underlying rule on the page appears supportable if the pin quote is corrected.\"\n      ],\n      \"suggested_tightening\": \"Bind pin-op3 to the actual quoted sentence at slip op. 3, not to surrounding content-page prose.\"\n    },\n    {\n      \"assertion_id\": \"529cf268b39f5c0d\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The payload quote exactly matches lake.pinpoints[id=pin-op3a].quote.\",\n        \"The same phrase appears in the cached opinion text on slip page 3, with only PDF line-break hyphenation in 'incompe-tent'.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The text cache hyphenates the line break as incompe-/tent; the clean quote depends on the lake-normalized pinpoint quote, which is disclosed evidence.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"81de6225172ff474\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The content and inventory treatment fields match the disclosed lake treatment fields: good_law, as_of_content 2021-10-18, as_of_treatment 2026-06-30, varies_by_point false.\",\n        \"No treatment or currency finding is raised under Lens A.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Treatment currency is outside this lens and left unreviewed.\"\n      ],\n      \"suggested_tightening\": null\n    }\n  ],\n  \"notes\": \"Treatment was reviewed only for consistency with disclosed fields; no Lens B treatment analysis was performed.\"\n}",
+  "summary": {
+    "at": "2026-07-09T21:23:46-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-e54352e499"
+    ],
+    "group_id": "_overhaul2/lake/cases/City of Tahlequah v. Bond.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "codex-A",
+    "lane_id": "codex-A-panel-prod-17c31b91",
+    "lens": "A",
+    "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-17c31b91.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "City of Tahlequah v. Bond"
+    ],
+    "tokens": {
+      "input": 191985,
+      "output": 9262,
+      "source": "codex-events",
+      "total": 201247
+    },
+    "verdict_map": {
+      "1884711c7ad5cae9": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "529cf268b39f5c0d": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "81de6225172ff474": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "995a3707d2c53783": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-e54352e499",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 182.6
+  }
+}

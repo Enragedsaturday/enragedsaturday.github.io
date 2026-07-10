@@ -30,7 +30,7 @@ homes:
     role: "Key — Anchor"
   - page: "[[Franks Challenges]]"
     role: "Related (cross-doctrine)"
-related: ["[[Massachusetts v. Sheppard]]", "[[Herring v. United States]]", "[[Davis v. United States]]", "[[Franks v. Delaware]]", "[[Illinois v. Gates]]"]
+related: ["[[Massachusetts v. Sheppard]]", "[[Herring v. United States]]", "[[Davis v. United States (2011)|Davis v. United States]]", "[[Franks v. Delaware]]", "[[Illinois v. Gates]]"]
 aliases: []
 tags: ["case", "fourth-amendment", "exclusionary-rule", "good-faith-exception", "search-warrant", "deterrence"]
 holding: "Good-faith exception: evidence obtained by officers in objectively reasonable reliance on a search warrant later found unsupported by…"
@@ -64,7 +64,7 @@ Evidence seized in objectively reasonable reliance on a later-invalidated warran
 
 ## Treatment & subsequent history
 - **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.
-- No negative subsequent treatment identified. *Leon* establishes the [[The Good-Faith Exception|good-faith exception]], extended the same day to a [[Particularity|particularity]] defect in [[Massachusetts v. Sheppard]], to a statute later held unconstitutional in [[Illinois v. Krull]], and to police recordkeeping errors in [[Herring v. United States]] and binding-precedent reliance in [[Davis v. United States]]; its limits track the four enumerated exceptions.
+- No negative subsequent treatment identified. *Leon* establishes the [[The Good-Faith Exception|good-faith exception]], extended the same day to a [[Particularity|particularity]] defect in [[Massachusetts v. Sheppard]], to a statute later held unconstitutional in [[Illinois v. Krull]], and to police recordkeeping errors in [[Herring v. United States]] and binding-precedent reliance in [[Davis v. United States (2011)|Davis v. United States]]; its limits track the four enumerated exceptions.
 
 ## Appears on
 - [[The Exclusionary Rule]] — *Key — Anchor*

@@ -1,0 +1,91 @@
+{
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Culley v. Marshall.json",
+    "lens": "B",
+    "notes": "Lens B only; no support or quote-fidelity findings raised.",
+    "reviewed": [
+      {
+        "assertion_id": "2bf7baf240adf627",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record is Culley v. Marshall with court_level scotus, docket 22-585, year 2024, cluster_id 10600097, and expected_citation_found true.",
+          "The lake citation fields select 601 U.S. 377 as the official citation, and the cached opinion text states Cite as: 601 U. S. 377 (2024).",
+          "No disclosed treatment edge, progeny edge, or status field says the authority has been overruled, superseded, abrogated, or limited; treatment is separately marked unverified."
+        ],
+        "residual_risks": [
+          "The disclosed citator/progeny record is a frontier stub with no derived subsequent-treatment enumeration, so later negative treatment cannot be excluded from these files alone."
+        ],
+        "suggested_tightening": "Keep the existence/citation assertion separate from any live-law assertion until a dated treatment record is promoted.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "de4417a1b2520f20",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The group payload's treatment call is unverified with null as_of_content and as_of_treatment, matching the content page treatment banner and frontmatter.",
+          "The lake treatment fields match the asserted call: field_i_validity unverified, composite_basis unverified, varies_by_point false, point_overrides empty, edges empty, and derivation empty.",
+          "The lake progeny fields show no completed query, no citation count, no enumeration, and rows_cached 0, which is consistent with the page's statement that subsequent treatment has not been machine-verified."
+        ],
+        "residual_risks": [
+          "The files verify only that the treatment status is accurately labeled unverified; they do not independently verify that Culley remains good law."
+        ],
+        "suggested_tightening": "Preserve the Unverified treatment banner and avoid adding a good-law label until citator/progeny verification is complete.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/Culley v. Marshall.json\",\"reviewed\":[{\"assertion_id\":\"2bf7baf240adf627\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake identity record is Culley v. Marshall with court_level scotus, docket 22-585, year 2024, cluster_id 10600097, and expected_citation_found true.\",\"The lake citation fields select 601 U.S. 377 as the official citation, and the cached opinion text states Cite as: 601 U. S. 377 (2024).\",\"No disclosed treatment edge, progeny edge, or status field says the authority has been overruled, superseded, abrogated, or limited; treatment is separately marked unverified.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The disclosed citator/progeny record is a frontier stub with no derived subsequent-treatment enumeration, so later negative treatment cannot be excluded from these files alone.\"],\"suggested_tightening\":\"Keep the existence/citation assertion separate from any live-law assertion until a dated treatment record is promoted.\"},{\"assertion_id\":\"de4417a1b2520f20\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The group payload's treatment call is unverified with null as_of_content and as_of_treatment, matching the content page treatment banner and frontmatter.\",\"The lake treatment fields match the asserted call: field_i_validity unverified, composite_basis unverified, varies_by_point false, point_overrides empty, edges empty, and derivation empty.\",\"The lake progeny fields show no completed query, no citation count, no enumeration, and rows_cached 0, which is consistent with the page's statement that subsequent treatment has not been machine-verified.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The files verify only that the treatment status is accurately labeled unverified; they do not independently verify that Culley remains good law.\"],\"suggested_tightening\":\"Preserve the Unverified treatment banner and avoid adding a good-law label until citator/progeny verification is complete.\"}],\"notes\":\"Lens B only; no support or quote-fidelity findings raised.\"}",
+  "summary": {
+    "at": "2026-07-09T21:27:15-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
+    "defense_votes": [],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Culley v. Marshall.json",
+    "group_total_assertions": 2,
+    "lake_only_cases": [],
+    "lane": "codex-B",
+    "lane_id": "codex-B-panel-prod-7a1a8753",
+    "lens": "B",
+    "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-7a1a8753.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 2,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Culley v. Marshall"
+    ],
+    "tokens": {
+      "input": 123191,
+      "output": 4097,
+      "source": "codex-events",
+      "total": 127288
+    },
+    "verdict_map": {
+      "2bf7baf240adf627": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "de4417a1b2520f20": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [],
+    "wall_clock_s": 85.1
+  }
+}
