@@ -208,14 +208,19 @@ def check_ledger(dirpath, completeness=False):
                 % a.get("finding_id"))
 
     # ---- invariant 2: paneled -> 3 lane votes; >=2 refute -> not plain UPHELD
+    # R14.2 confirmation votes (lane suffix "-confirm") are adjudication
+    # re-checks, not panel tallies: a finding whose votes are ALL confirmations
+    # is not "paneled" and the 3-lane quorum does not apply. Any non-confirm
+    # vote marks the finding paneled and the full quorum binds.
     for fid, vs in votes_by_fid.items():
         lanes = [x.get("lane") for x in vs]
         if len(lanes) != len(set(lanes)):
             add("[inv2] paneled finding %s has duplicate lane votes %s"
                 % (fid, lanes))
-        if len(set(lanes)) < 3:
+        panel_lanes = {l for l in lanes if l and not l.endswith("-confirm")}
+        if panel_lanes and len(panel_lanes) < 3:
             add("[inv2] paneled finding %s has %d distinct lane votes (want 3)"
-                % (fid, len(set(lanes))))
+                % (fid, len(panel_lanes)))
         for x in vs:
             if x.get("recorded_before_other_votes_read") is False:
                 add("[inv2] vote by %s on %s recorded AFTER seeing sibling votes "
