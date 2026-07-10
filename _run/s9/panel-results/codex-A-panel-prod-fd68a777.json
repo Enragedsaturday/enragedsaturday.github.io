@@ -1,22 +1,147 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Boyd v. United States.json",
+    "lens": "A",
+    "notes": "Reviewed all 4 rows in group_inventory.jsonl under Lens A only.",
+    "reviewed": [
+      {
+        "assertion_id": "05f85601f0b05d3f",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record identifies the case as Boyd v. United States, U.S. Supreme Court, decided 1886-02-01.",
+          "The official citation 116 U.S. 616 and listed parallel/vendor citations match the lake citations."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "3ee5e0e6ae73f8f3",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "As every American statesmen, during our revolutionary and formative period as a nation, was undoubtedly familiar with this monument of English freedom, and considered it as the true and ultimate expression of constitutional law",
+          "locator_note": "text/Boyd v. United States__c42741.txt, paragraph spanning star page *626 before *627",
+          "needs_cl": false,
+          "problem": "The pin-626 stored quote is not opinion text; it is corrupted page prose from the built content page and headings, not a character-faithful quote from Boyd.",
+          "proposed_fix": "Replace pin-626 with the actual quoted opinion language at 116 U.S. 626, such as: \"considered it as the true and ultimate expression of constitutional law\"; remove the copied Issue/Rule page prose from the pinpoint quote.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload quote begins with built-page language: \"to mean — and, in answering\" and includes \"## Rule\"; that language is not in the opinion text.",
+          "The actual opinion passage at page 626 supports the short quotation used on the content page, but not the lake pin-626 quote as framed."
+        ],
+        "residual_risks": [
+          "The content-page displayed quotation itself appears supportable; the defect is the corrupted pin-626 quote record."
+        ],
+        "suggested_tightening": "Use only the exact opinion phrase for pin-626 and set a real page/star locator if the schema permits.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "7148a86dca275da1",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The quoted proposition appears in the opinion text across the *627 pagination marker.",
+          "The content-page pincite to 116 U.S. 626-627 lands on the cited passage."
+        ],
+        "residual_risks": [
+          "Literal matching requires ignoring the embedded HTML star-pagination marker between \"minds\" and \"of\"."
+        ],
+        "suggested_tightening": "Record the pinpoint as spanning 626-627 rather than slip-only/page null.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "83dcccbd91c75b2d",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The treatment payload matches the disclosed lake treatment fields.",
+          "Lens A does not assess treatment or currency merits."
+        ],
+        "residual_risks": [
+          "Treatment/currency is reserved for Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Boyd v. United States.json\",\"reviewed\":[{\"assertion_id\":\"05f85601f0b05d3f\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record identifies the case as Boyd v. United States, U.S. Supreme Court, decided 1886-02-01.\",\"The official citation 116 U.S. 616 and listed parallel/vendor citations match the lake citations.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"3ee5e0e6ae73f8f3\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The pin-626 stored quote is not opinion text; it is corrupted page prose from the built content page and headings, not a character-faithful quote from Boyd.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-626 with the actual quoted opinion language at 116 U.S. 626, such as: \\\"considered it as the true and ultimate expression of constitutional law\\\"; remove the copied Issue/Rule page prose from the pinpoint quote.\",\"evidence_quote\":\"As every American statesmen, during our revolutionary and formative period as a nation, was undoubtedly familiar with this monument of English freedom, and considered it as the true and ultimate expression of constitutional law\",\"needs_cl\":false,\"locator_note\":\"text/Boyd v. United States__c42741.txt, paragraph spanning star page *626 before *627\"},\"reasons\":[\"The payload quote begins with built-page language: \\\"to mean — and, in answering\\\" and includes \\\"## Rule\\\"; that language is not in the opinion text.\",\"The actual opinion passage at page 626 supports the short quotation used on the content page, but not the lake pin-626 quote as framed.\"],\"breaks_true_positives\":true,\"residual_risks\":[\"The content-page displayed quotation itself appears supportable; the defect is the corrupted pin-626 quote record.\"],\"suggested_tightening\":\"Use only the exact opinion phrase for pin-626 and set a real page/star locator if the schema permits.\"},{\"assertion_id\":\"7148a86dca275da1\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The quoted proposition appears in the opinion text across the *627 pagination marker.\",\"The content-page pincite to 116 U.S. 626-627 lands on the cited passage.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Literal matching requires ignoring the embedded HTML star-pagination marker between \\\"minds\\\" and \\\"of\\\".\"],\"suggested_tightening\":\"Record the pinpoint as spanning 626-627 rather than slip-only/page null.\"},{\"assertion_id\":\"83dcccbd91c75b2d\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The treatment payload matches the disclosed lake treatment fields.\",\"Lens A does not assess treatment or currency merits.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment/currency is reserved for Lens B.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed all 4 rows in group_inventory.jsonl under Lens A only.\"}",
   "summary": {
-    "at": "2026-07-09T23:14:47-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-10T17:21:45-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-d12f7dc906"
+    ],
     "group_id": "_overhaul2/lake/cases/Boyd v. United States.json",
     "group_total_assertions": 4,
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-fd68a777",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-fd68a777.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "Reading additional input from stdin...\n\u001b[2m2026-07-10T03:14:46.241738Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T03:14:46.729945Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Boyd v. United States"
+    ],
+    "tokens": {
+      "input": 206732,
+      "output": 5202,
+      "source": "codex-events",
+      "total": 211934
+    },
+    "verdict_map": {
+      "05f85601f0b05d3f": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "3ee5e0e6ae73f8f3": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "7148a86dca275da1": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "83dcccbd91c75b2d": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-d12f7dc906",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 107.2
   }
 }

@@ -1,13 +1,100 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Brown v. Mississippi.json",
+    "lens": "B",
+    "notes": "Lens B only; support, quote fidelity, and pinpoint accuracy are not adjudicated.",
+    "reviewed": [
+      {
+        "assertion_id": "a35626a0646ba530",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record confirms Brown v. Mississippi, U.S. Supreme Court, decided 1936-02-17, cluster_id 102604.",
+          "The lake citation record selects 297 U.S. 278 as the official citation and lists the same parallel/vendor citations in the inventory.",
+          "The lake treatment field marks the authority good_law as of 2026-06-30, so the disclosed record does not show the cited authority is dead law."
+        ],
+        "residual_risks": [
+          "Treatment derivation contains proposed negative signals requiring audit, but no validated invalidating treatment appears in the disclosed record."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "1e7df5ad23edb301",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote-fidelity is outside Lens B; no support or quote-fidelity finding is made.",
+          "This row asserts no independent treatment/currency claim beyond the Brown record already reviewed under the treatment assertion."
+        ],
+        "residual_risks": [
+          "Lens A must decide quote fidelity and pinpoint support."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "a05549d3353a8136",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote-fidelity is outside Lens B; no support or quote-fidelity finding is made.",
+          "The embedded treatment text is duplicative of the treatment assertion and is reviewed there, not as a quote-fidelity defect."
+        ],
+        "residual_risks": [
+          "Lens A must decide whether the malformed harvested quote/pinpoint is acceptable."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "1d820cab93c550ec",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "\"audit_marker\": \"R15 treatment audit required\"",
+          "locator_note": "content_page.md Treatment & subsequent history; lake/Brown v. Mississippi__89e7f5.json treatment.derivation and treatment.edges",
+          "needs_cl": false,
+          "problem": "The core good_law treatment call is supported by the lake judgment field, but the page's unqualified 'No negative treatment' prose is too absolute because the lake record contains proposed negative progeny signals and explicit treatment-audit markers. The disclosed record supports 'no validated negative treatment or point override,' not categorical absence of negative treatment signals.",
+          "proposed_fix": "Keep field_i_validity=good_law, Binding SCOTUS, as_of_treatment=2026-06-30, and varies_by_point=false; revise the subsequent-history prose to say no validated negative treatment or point override appears in the disclosed record, while proposed negative progeny signals remain audit-pending.",
+          "severity": "low"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "Lake treatment.field_i_validity is good_law as of 2026-06-30 and scope_note says 'Foundational due-process voluntariness case; good law.'",
+          "Lake point_overrides is empty and varies_by_point is false, supporting the structured treatment payload.",
+          "All listed negative-looking treatment edges are marked proposed=true and field_iii='mentioned', so they do not override the canonical good_law field on this disclosed record.",
+          "However, treatment.derivation reports audit_needed=true and proposed_negative_events in lane1_negative and lane2_top_cited, so the page should not state 'No negative treatment' without qualification."
+        ],
+        "residual_risks": [
+          "The proposed negative edges are not resolved by full citing-opinion text in the disclosed files; a later treatment audit could alter the status."
+        ],
+        "suggested_tightening": "Use 'No validated negative treatment or point override in this record' instead of 'No negative treatment.'",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/Brown v. Mississippi.json\",\"reviewed\":[{\"assertion_id\":\"a35626a0646ba530\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake identity record confirms Brown v. Mississippi, U.S. Supreme Court, decided 1936-02-17, cluster_id 102604.\",\"The lake citation record selects 297 U.S. 278 as the official citation and lists the same parallel/vendor citations in the inventory.\",\"The lake treatment field marks the authority good_law as of 2026-06-30, so the disclosed record does not show the cited authority is dead law.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment derivation contains proposed negative signals requiring audit, but no validated invalidating treatment appears in the disclosed record.\"],\"suggested_tightening\":null},{\"assertion_id\":\"1e7df5ad23edb301\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Quote-fidelity is outside Lens B; no support or quote-fidelity finding is made.\",\"This row asserts no independent treatment/currency claim beyond the Brown record already reviewed under the treatment assertion.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Lens A must decide quote fidelity and pinpoint support.\"],\"suggested_tightening\":null},{\"assertion_id\":\"a05549d3353a8136\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Quote-fidelity is outside Lens B; no support or quote-fidelity finding is made.\",\"The embedded treatment text is duplicative of the treatment assertion and is reviewed there, not as a quote-fidelity defect.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Lens A must decide whether the malformed harvested quote/pinpoint is acceptable.\"],\"suggested_tightening\":null},{\"assertion_id\":\"1d820cab93c550ec\",\"dimension\":\"treatment\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The core good_law treatment call is supported by the lake judgment field, but the page's unqualified 'No negative treatment' prose is too absolute because the lake record contains proposed negative progeny signals and explicit treatment-audit markers. The disclosed record supports 'no validated negative treatment or point override,' not categorical absence of negative treatment signals.\",\"severity\":\"low\",\"proposed_fix\":\"Keep field_i_validity=good_law, Binding SCOTUS, as_of_treatment=2026-06-30, and varies_by_point=false; revise the subsequent-history prose to say no validated negative treatment or point override appears in the disclosed record, while proposed negative progeny signals remain audit-pending.\",\"evidence_quote\":\"\\\"audit_marker\\\": \\\"R15 treatment audit required\\\"\",\"needs_cl\":false,\"locator_note\":\"content_page.md Treatment & subsequent history; lake/Brown v. Mississippi__89e7f5.json treatment.derivation and treatment.edges\"},\"reasons\":[\"Lake treatment.field_i_validity is good_law as of 2026-06-30 and scope_note says 'Foundational due-process voluntariness case; good law.'\",\"Lake point_overrides is empty and varies_by_point is false, supporting the structured treatment payload.\",\"All listed negative-looking treatment edges are marked proposed=true and field_iii='mentioned', so they do not override the canonical good_law field on this disclosed record.\",\"However, treatment.derivation reports audit_needed=true and proposed_negative_events in lane1_negative and lane2_top_cited, so the page should not state 'No negative treatment' without qualification.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The proposed negative edges are not resolved by full citing-opinion text in the disclosed files; a later treatment audit could alter the status.\"],\"suggested_tightening\":\"Use 'No validated negative treatment or point override in this record' instead of 'No negative treatment.'\"}],\"notes\":\"Lens B only; support, quote fidelity, and pinpoint accuracy are not adjudicated.\"}",
   "summary": {
-    "at": "2026-07-09T23:17:37-04:00",
-    "attempts": 2,
+    "at": "2026-07-10T17:46:54-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "defense_votes": [],
-    "findings_emitted": [],
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-013cf8fcfa",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-55160b426f"
+    ],
     "group_id": "_overhaul2/lake/cases/Brown v. Mississippi.json",
     "group_total_assertions": 4,
     "lake_only_cases": [],
@@ -16,21 +103,59 @@
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-3171beb3.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 4,
     "run": "prod",
     "text_disclosed_cases": [
       "Brown v. Mississippi"
     ],
     "tokens": {
-      "input": 754,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 754
+      "input": 217932,
+      "output": 8005,
+      "source": "codex-events",
+      "total": 225937
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 2.9
+    "verdict_map": {
+      "1d820cab93c550ec": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "1e7df5ad23edb301": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "a05549d3353a8136": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "a35626a0646ba530": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-013cf8fcfa",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-55160b426f",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 155.1
   }
 }

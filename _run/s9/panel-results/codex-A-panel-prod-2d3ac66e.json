@@ -1,22 +1,156 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Ashcraft v. Tennessee.json",
+    "lens": "A",
+    "notes": "Reviewed all 4 rows in group_inventory.jsonl using only disclosed files; no external search used.",
+    "reviewed": [
+      {
+        "assertion_id": "3f87471a4fa454f3",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity verifies Ashcraft v. Tennessee, U.S. Supreme Court, decided 1944-05-01.",
+          "Official citation is 322 U.S. 143; parallel/vendor citations in the payload match the lake record."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "1394a4920eef9766",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The quoted sentence matches lake pin-155 exactly.",
+          "The cached opinion text places the quoted sentence immediately after star pagination *155, matching the cited pinpoint."
+        ],
+        "residual_risks": [
+          "Raw cached opinion text includes HTML footnote markup after the sentence; the quote itself matches the substantive sentence."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "2c2ec2cf7c0c98c6",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "We think a situation such as that here shown by uncontradicted evidence is so inherently coercive",
+          "locator_note": "lake pin-154 has quote_fidelity=mismatch, pinpoint_status=slip-only, and star_marker=null; text line 32 contains the real *154 passage.",
+          "needs_cl": false,
+          "problem": "pin-154's stored quote is not the Ashcraft opinion passage at 322 U.S. 154; it captures generated content-page Markdown/background text and has no star marker.",
+          "proposed_fix": "Replace pin-154 with the actual opinion passage beginning at the *154 discussion, especially the sentence used on the page, and set star_marker to 154 after validation.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload quote begins with page-generated Markdown rather than opinion text.",
+          "The actual content_page visible quote for pin-154 is supported by the cached opinion, but the lake pinpoint record attached to pin-154 is not."
+        ],
+        "residual_risks": [
+          "Do not delete the visible 'We think...' quote from the page; the defect is the bad lake pinpoint metadata for pin-154."
+        ],
+        "suggested_tightening": "Regenerate pin-154 from the cached opinion text at *154 and store only the opinion sentence actually quoted on the page.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "e26eea949cd5ea6c",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The treatment payload values match the disclosed lake treatment fields and content_page front matter.",
+          "Treatment/currency merits are outside lens A, so no treatment finding is raised."
+        ],
+        "residual_risks": [
+          "Treatment merits remain for lens B review."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Ashcraft v. Tennessee.json\",\"reviewed\":[{\"assertion_id\":\"3f87471a4fa454f3\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity verifies Ashcraft v. Tennessee, U.S. Supreme Court, decided 1944-05-01.\",\"Official citation is 322 U.S. 143; parallel/vendor citations in the payload match the lake record.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"1394a4920eef9766\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The quoted sentence matches lake pin-155 exactly.\",\"The cached opinion text places the quoted sentence immediately after star pagination *155, matching the cited pinpoint.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Raw cached opinion text includes HTML footnote markup after the sentence; the quote itself matches the substantive sentence.\"],\"suggested_tightening\":null},{\"assertion_id\":\"2c2ec2cf7c0c98c6\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"pin-154's stored quote is not the Ashcraft opinion passage at 322 U.S. 154; it captures generated content-page Markdown/background text and has no star marker.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-154 with the actual opinion passage beginning at the *154 discussion, especially the sentence used on the page, and set star_marker to 154 after validation.\",\"evidence_quote\":\"We think a situation such as that here shown by uncontradicted evidence is so inherently coercive\",\"needs_cl\":false,\"locator_note\":\"lake pin-154 has quote_fidelity=mismatch, pinpoint_status=slip-only, and star_marker=null; text line 32 contains the real *154 passage.\"},\"reasons\":[\"The payload quote begins with page-generated Markdown rather than opinion text.\",\"The actual content_page visible quote for pin-154 is supported by the cached opinion, but the lake pinpoint record attached to pin-154 is not.\"],\"breaks_true_positives\":true,\"residual_risks\":[\"Do not delete the visible 'We think...' quote from the page; the defect is the bad lake pinpoint metadata for pin-154.\"],\"suggested_tightening\":\"Regenerate pin-154 from the cached opinion text at *154 and store only the opinion sentence actually quoted on the page.\"},{\"assertion_id\":\"e26eea949cd5ea6c\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The treatment payload values match the disclosed lake treatment fields and content_page front matter.\",\"Treatment/currency merits are outside lens A, so no treatment finding is raised.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment merits remain for lens B review.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed all 4 rows in group_inventory.jsonl using only disclosed files; no external search used.\"}",
   "summary": {
-    "at": "2026-07-09T23:17:08-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-10T17:41:25-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-dfdafa9c97",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-57089e034c"
+    ],
     "group_id": "_overhaul2/lake/cases/Ashcraft v. Tennessee.json",
     "group_total_assertions": 4,
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-2d3ac66e",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-2d3ac66e.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "d to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T03:17:00.588829Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T03:17:01.479602Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T03:17:02.759167Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T03:17:04.791674Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T03:17:08.299191Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Ashcraft v. Tennessee"
+    ],
+    "tokens": {
+      "input": 281274,
+      "output": 7104,
+      "source": "codex-events",
+      "total": 288378
+    },
+    "verdict_map": {
+      "1394a4920eef9766": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "2c2ec2cf7c0c98c6": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "3f87471a4fa454f3": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "e26eea949cd5ea6c": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-57089e034c",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-dfdafa9c97",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": 149.0
   }
 }

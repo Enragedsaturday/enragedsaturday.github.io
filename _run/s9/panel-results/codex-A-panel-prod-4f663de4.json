@@ -1,38 +1,88 @@
 {
-  "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/County of Los Angeles v. Mendez.json",
+    "lens": "A",
+    "notes": "Reviewed every assertion_id in group_inventory.jsonl exactly once under Lens A.",
+    "reviewed": [
+      {
+        "assertion_id": "b83d9defa108f4cf",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The disclosed lake record identifies the case as County of Los Angeles v. Mendez, U.S. Supreme Court, decided 2017-05-30, docket No. 16-369.",
+          "The official citation in the lake record is exactly 581 U.S. 420, with matching volume 581, reporter U.S., and page 420.",
+          "The listed parallel and vendor citations in the assertion match the lake record's citations arrays."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "1855cb9805152add",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A's attack charter, so I raise no treatment finding.",
+          "The asserted treatment fields match the disclosed lake treatment record: field_i_validity is unverified, as_of_content and as_of_treatment are null, varies_by_point is false, and the scope note states that treatment/progeny were intentionally not derived until S6 promotion."
+        ],
+        "residual_risks": [
+          "Lens A did not independently assess treatment or current good-law status."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/County of Los Angeles v. Mendez.json\",\"reviewed\":[{\"assertion_id\":\"b83d9defa108f4cf\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The disclosed lake record identifies the case as County of Los Angeles v. Mendez, U.S. Supreme Court, decided 2017-05-30, docket No. 16-369.\",\"The official citation in the lake record is exactly 581 U.S. 420, with matching volume 581, reporter U.S., and page 420.\",\"The listed parallel and vendor citations in the assertion match the lake record's citations arrays.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"1855cb9805152add\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside Lens A's attack charter, so I raise no treatment finding.\",\"The asserted treatment fields match the disclosed lake treatment record: field_i_validity is unverified, as_of_content and as_of_treatment are null, varies_by_point is false, and the scope note states that treatment/progeny were intentionally not derived until S6 promotion.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Lens A did not independently assess treatment or current good-law status.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed every assertion_id in group_inventory.jsonl exactly once under Lens A.\"}",
   "summary": {
-    "at": "2026-07-09T23:18:18-04:00",
-    "attempts": 2,
-    "clean_attestation": false,
+    "at": "2026-07-10T17:48:51-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
     "defense_votes": [],
     "findings_emitted": [],
     "group_id": "_overhaul2/lake/cases/County of Los Angeles v. Mendez.json",
     "group_total_assertions": 2,
-    "lake_only_cases": [
-      "County of Los Angeles v. Mendez"
-    ],
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-4f663de4",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-4f663de4.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
-    "resolution_notes": [
-      "case 'County of Los Angeles v. Mendez' has no lead_opinion_id (text undisclosed)"
-    ],
-    "reviewed_count": 0,
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 2,
     "run": "prod",
-    "text_disclosed_cases": [],
+    "text_disclosed_cases": [
+      "County of Los Angeles v. Mendez"
+    ],
     "tokens": {
-      "input": 829,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 829
+      "input": 82428,
+      "output": 1834,
+      "source": "codex-events",
+      "total": 84262
     },
-    "verdict_map": {},
+    "verdict_map": {
+      "1855cb9805152add": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "b83d9defa108f4cf": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
     "votes_emitted": [],
-    "wall_clock_s": 3.2
+    "wall_clock_s": 43.1
   }
 }

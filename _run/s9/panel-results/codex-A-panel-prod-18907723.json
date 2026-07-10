@@ -1,36 +1,22 @@
 {
-  "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Thornton v. United States.json\",\"reviewed\":[{\"assertion_id\":\"fb4016cf5296c0a9\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity confirms record_id Thornton v. United States, U.S. Supreme Court, decided 2004-05-24.\",\"Lake citations confirm official cite 541 U.S. 615 and parallels 124 S. Ct. 2127, 158 L. Ed. 2d 905, and 2004 U.S. LEXIS 3681.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"083ba4d930bb82e9\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The phrase \\\"recent occupant\\\" appears in the cached opinion text and the lake marks pin-622 quote_fidelity as matched.\",\"The broader proposition on the content page is supported by the page-622 paragraph stating that recent-occupant status may turn on temporal or spatial relationship, not whether the arrestee was inside or outside the car when contact began.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The stored lake quote is only a short phrase, and its star_marker is 620 even though the content page cites the broader quoted sentence at 622.\"],\"suggested_tightening\":\"Store the full page-622 sentence for pin-622 rather than only the generic phrase \\\"recent occupant\\\".\"},{\"assertion_id\":\"c61a5c5253e3b215\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The pin-623 quote is not character-faithful to the cached text and the lake itself marks quote_fidelity as mismatch with no star marker.\",\"severity\":\"medium\",\"proposed_fix\":\"Reverify pin-623 against the opinion text and store a character-faithful or explicitly normalized page-spanning quote for 623-624.\",\"evidence_quote\":\"So long as an arrestee is the sort of “re<page-number citation-index=\\\"1\\\" label=\\\"624\\\">*624</page-number>cent occupant” of a vehicle such as petitioner was here, officers may search that vehicle incident to the arrest.\",\"needs_cl\":false,\"locator_note\":\"pin-623 / content page cites Id. at 623-624\"},\"reasons\":[\"The lake pinpoint for pin-623 has quote_fidelity \\\"mismatch\\\" and pinpoint_status \\\"slip-only\\\".\",\"The cached text contains the sentence across the 623-624 page break with different quotation characters and embedded page markup.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":\"Use a normalized-quote policy for page-break splits, or avoid verbatim quotation here and paraphrase the holding.\"},{\"assertion_id\":\"d2bba71a82b64004\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The stored pin-617 quote is garbage text and does not match the cited page-617 holding sentence.\",\"severity\":\"high\",\"proposed_fix\":\"Replace the pin-617 quote with the actual page-617 sentence from the cached opinion, or reharvest the quote from content_page.md and reverify it.\",\"evidence_quote\":\"We now reach that question and conclude that <em>Bel-ton </em>governs even when an officer does not make contact until the person arrested has left the vehicle.\",\"needs_cl\":false,\"locator_note\":\"pin-617 / 541 U.S. at 617\"},\"reasons\":[\"Lake pin-617 stores the quote as \\\"). ## Rule Yes.\\\" and marks quote_fidelity \\\"mismatch\\\".\",\"The cached opinion text at page 617 contains the relevant conclusion sentence, not the stored quote fragment.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":\"Fix the quote harvester so section headings do not contaminate pinpoint quotes.\"},{\"assertion_id\":\"d4b09487edf00ce0\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside lens A, so no treatment finding is raised.\",\"The payload matches the lake treatment fields: field_i_validity caution, as_of_treatment 2026-06-30, varies_by_point true, and the same scope note.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment merits and current-law characterization are reserved for lens B.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed all five assertion_ids in group_inventory.jsonl. No black_letter rows were present.\"}",
   "summary": {
-    "at": "2026-07-09T23:15:25-04:00",
-    "attempts": 2,
+    "at": "2026-07-10T17:27:55-04:00",
+    "auth_flagged": true,
     "clean_attestation": false,
-    "defense_votes": [],
     "findings_emitted": [],
+    "genuine_auth_stop": false,
     "group_id": "_overhaul2/lake/cases/Thornton v. United States.json",
     "group_total_assertions": 5,
-    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-18907723",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-18907723.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
-    "resolution_notes": [],
+    "note": "auth-flagged codex failure; transient/ambiguous -> re-dispatchable lane_error",
+    "parse_status": "lane_error",
     "reviewed_count": 0,
-    "run": "prod",
-    "text_disclosed_cases": [
-      "Thornton v. United States"
-    ],
-    "tokens": {
-      "input": 828,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 828
-    },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 3.0
+    "stderr_tail": "Reading additional input from stdin...\n",
+    "votes_emitted": []
   }
 }

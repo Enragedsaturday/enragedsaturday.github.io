@@ -1,11 +1,51 @@
 {
-  "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Uzuegbunam v. Preczewski.json",
+    "lens": "B",
+    "notes": "Lens B reviewed only currency/treatment. No support or quote-fidelity finding is made.",
+    "reviewed": [
+      {
+        "assertion_id": "a4e374ea543c1cb3",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record identifies record_id \"Uzuegbunam v. Preczewski\" with court_level \"scotus\", year 2021, docket \"19-968\", and cluster_id 4861817.",
+          "The lake citations field confirms official citation \"592 U.S. 279\" and parallel citations \"141 S. Ct. 792\" and \"209 L. Ed. 2d 94\" matching the inventory payload.",
+          "No disclosed treatment edge states that the authority was vacated, overruled, superseded, or otherwise displaced."
+        ],
+        "residual_risks": [
+          "The disclosed record has no completed citator or progeny enumeration, so this existence review should not be read as an affirmative good-law validation."
+        ],
+        "suggested_tightening": "Keep the page's unverified-treatment warning adjacent to any display of the case citation.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "b90a65fbab54d011",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The inventory treatment payload exactly matches the lake treatment fields: field_i_validity \"unverified\", as_of_content null, as_of_treatment null, varies_by_point false.",
+          "The lake scope_note states: \"Frontier stub: treatment/progeny intentionally not derived until S6 promotion.\"",
+          "The progeny section shows no completed query, no indexed citing opinions, rows_cached 0, and no outbound opinion edges, so an unverified treatment label is the correct disclosed-record treatment call."
+        ],
+        "residual_risks": [
+          "Because treatment is expressly unverified, the disclosed record cannot support any stronger current-good-law claim."
+        ],
+        "suggested_tightening": "Do not render this authority as good law beyond \"Treatment: Unverified\" until citator/progeny verification is completed.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/Uzuegbunam v. Preczewski.json\",\"reviewed\":[{\"assertion_id\":\"a4e374ea543c1cb3\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record identifies record_id \\\"Uzuegbunam v. Preczewski\\\" with court_level \\\"scotus\\\", year 2021, docket \\\"19-968\\\", and cluster_id 4861817.\",\"The lake citations field confirms official citation \\\"592 U.S. 279\\\" and parallel citations \\\"141 S. Ct. 792\\\" and \\\"209 L. Ed. 2d 94\\\" matching the inventory payload.\",\"No disclosed treatment edge states that the authority was vacated, overruled, superseded, or otherwise displaced.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The disclosed record has no completed citator or progeny enumeration, so this existence review should not be read as an affirmative good-law validation.\"],\"suggested_tightening\":\"Keep the page's unverified-treatment warning adjacent to any display of the case citation.\"},{\"assertion_id\":\"b90a65fbab54d011\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The inventory treatment payload exactly matches the lake treatment fields: field_i_validity \\\"unverified\\\", as_of_content null, as_of_treatment null, varies_by_point false.\",\"The lake scope_note states: \\\"Frontier stub: treatment/progeny intentionally not derived until S6 promotion.\\\"\",\"The progeny section shows no completed query, no indexed citing opinions, rows_cached 0, and no outbound opinion edges, so an unverified treatment label is the correct disclosed-record treatment call.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Because treatment is expressly unverified, the disclosed record cannot support any stronger current-good-law claim.\"],\"suggested_tightening\":\"Do not render this authority as good law beyond \\\"Treatment: Unverified\\\" until citator/progeny verification is completed.\"}],\"notes\":\"Lens B reviewed only currency/treatment. No support or quote-fidelity finding is made.\"}",
   "summary": {
-    "at": "2026-07-09T23:09:21-04:00",
-    "attempts": 2,
-    "clean_attestation": false,
+    "at": "2026-07-10T16:51:23-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
     "defense_votes": [],
     "findings_emitted": [],
     "group_id": "_overhaul2/lake/cases/Uzuegbunam v. Preczewski.json",
@@ -18,21 +58,36 @@
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-0c3ecc8c.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [
       "case 'Uzuegbunam v. Preczewski' has no lead_opinion_id (text undisclosed)"
     ],
-    "reviewed_count": 0,
+    "reviewed_count": 2,
     "run": "prod",
     "text_disclosed_cases": [],
     "tokens": {
-      "input": 755,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 755
+      "input": 85071,
+      "output": 2232,
+      "source": "codex-events",
+      "total": 87303
     },
-    "verdict_map": {},
+    "verdict_map": {
+      "a4e374ea543c1cb3": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "b90a65fbab54d011": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
     "votes_emitted": [],
-    "wall_clock_s": 2.8
+    "wall_clock_s": 49.8
   }
 }

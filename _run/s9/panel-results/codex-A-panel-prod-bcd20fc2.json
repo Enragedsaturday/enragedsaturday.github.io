@@ -1,38 +1,180 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "content/cases/FBI v. Fikre.md",
+    "lens": "A",
+    "notes": "Reviewed every assertion in group_inventory.jsonl under Lens A using only disclosed files.",
+    "reviewed": [
+      {
+        "assertion_id": "8798192bbe3af798",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity gives case_name \"FBI v. Fikre\", court \"scotus\", year 2024, docket 22-1178, and official citation \"601 U.S. 234\".",
+          "Opinion text caption and preliminary print identify the Supreme Court case decided March 19, 2024, with pages beginning at 234."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "600e2a88489f9004",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Mr. Fikre “will not be placed on the No Fly List in the future based on the currently available information.”",
+          "locator_note": "text/FBI v. Fikre__df20c8.txt, page 240/242 passages",
+          "needs_cl": false,
+          "problem": "The holding is substantively supported, but the embedded quoted phrase omits the word \"the\" from the opinion's wording.",
+          "proposed_fix": "Change the quoted phrase to \"based on the currently available information\" or remove quotation marks around the shortened paraphrase.",
+          "severity": "low"
+        },
+        "dimension": "support",
+        "reasons": [
+          "The opinion states that voluntary cessation moots a case only if the defendant shows the practice cannot reasonably be expected to recur, and describes that as a formidable burden.",
+          "The opinion holds that the government's sparse declaration and delisting did not satisfy that standard and that the case was not moot on the record before the Court."
+        ],
+        "residual_risks": [
+          "The opinion emphasizes the judgment was provisional and tied to the preliminary posture; a tighter holding should preserve that limit."
+        ],
+        "suggested_tightening": "Add \"at this preliminary posture\" or \"on the record before the Court\" to avoid implying the government could never later show mootness.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "90bd808116e54384",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "The only question we are asked to decide is whether the government's action suffces to render Mr. Fikre's claims moot.",
+          "locator_note": "The only occurrences of \"Section 1983\" or \"Qualified Immunity\" in disclosed files are the page's own home/related metadata, not the lake record or opinion text.",
+          "needs_cl": false,
+          "problem": "The disclosed evidence does not support placing this case under \"Section 1983 Liability and Qualified Immunity\" as a recent development. The opinion frames the case as an Article III mootness/voluntary-cessation decision involving federal No Fly List conduct, not Section 1983 or qualified immunity.",
+          "proposed_fix": "Remove this home_role or rehome the case under mootness, Article III, voluntary cessation, No Fly List, or civil-rights remedies. If it remains on a civil-rights page, label it as a mootness/voluntary-cessation procedural development, not a Section 1983/qualified-immunity development.",
+          "severity": "medium"
+        },
+        "dimension": "support",
+        "reasons": [
+          "The opinion text contains no Section 1983 or qualified-immunity discussion.",
+          "The merits issue decided was mootness after voluntary cessation, not liability or immunity."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Use a home tied to voluntary cessation or Article III mootness.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "0f6f82495b1b918a",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A, but the weight label is consistent with the disclosed lake identity showing court \"scotus\" and official citation \"601 U.S. 234\".",
+          "The content page displays the same SCOTUS identity and citation."
+        ],
+        "residual_risks": [
+          "No treatment/currency analysis performed under Lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "5e661cdf8175f423",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A, but the content treatment fields match the lake treatment fields: field_i_validity unverified, null as_of fields, composite_basis unverified, varies_by_point false, and the same scope note.",
+          "The page transparently labels treatment as unverified."
+        ],
+        "residual_risks": [
+          "No treatment/currency analysis performed under Lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"content/cases/FBI v. Fikre.md\",\"reviewed\":[{\"assertion_id\":\"8798192bbe3af798\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity gives case_name \\\"FBI v. Fikre\\\", court \\\"scotus\\\", year 2024, docket 22-1178, and official citation \\\"601 U.S. 234\\\".\",\"Opinion text caption and preliminary print identify the Supreme Court case decided March 19, 2024, with pages beginning at 234.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"600e2a88489f9004\",\"dimension\":\"support\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The holding is substantively supported, but the embedded quoted phrase omits the word \\\"the\\\" from the opinion's wording.\",\"severity\":\"low\",\"proposed_fix\":\"Change the quoted phrase to \\\"based on the currently available information\\\" or remove quotation marks around the shortened paraphrase.\",\"evidence_quote\":\"Mr. Fikre “will not be placed on the No Fly List in the future based on the currently available information.”\",\"needs_cl\":false,\"locator_note\":\"text/FBI v. Fikre__df20c8.txt, page 240/242 passages\"},\"reasons\":[\"The opinion states that voluntary cessation moots a case only if the defendant shows the practice cannot reasonably be expected to recur, and describes that as a formidable burden.\",\"The opinion holds that the government's sparse declaration and delisting did not satisfy that standard and that the case was not moot on the record before the Court.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The opinion emphasizes the judgment was provisional and tied to the preliminary posture; a tighter holding should preserve that limit.\"],\"suggested_tightening\":\"Add \\\"at this preliminary posture\\\" or \\\"on the record before the Court\\\" to avoid implying the government could never later show mootness.\"},{\"assertion_id\":\"90bd808116e54384\",\"dimension\":\"support\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The disclosed evidence does not support placing this case under \\\"Section 1983 Liability and Qualified Immunity\\\" as a recent development. The opinion frames the case as an Article III mootness/voluntary-cessation decision involving federal No Fly List conduct, not Section 1983 or qualified immunity.\",\"severity\":\"medium\",\"proposed_fix\":\"Remove this home_role or rehome the case under mootness, Article III, voluntary cessation, No Fly List, or civil-rights remedies. If it remains on a civil-rights page, label it as a mootness/voluntary-cessation procedural development, not a Section 1983/qualified-immunity development.\",\"evidence_quote\":\"The only question we are asked to decide is whether the government's action suffces to render Mr. Fikre's claims moot.\",\"needs_cl\":false,\"locator_note\":\"The only occurrences of \\\"Section 1983\\\" or \\\"Qualified Immunity\\\" in disclosed files are the page's own home/related metadata, not the lake record or opinion text.\"},\"reasons\":[\"The opinion text contains no Section 1983 or qualified-immunity discussion.\",\"The merits issue decided was mootness after voluntary cessation, not liability or immunity.\"],\"breaks_true_positives\":true,\"residual_risks\":[],\"suggested_tightening\":\"Use a home tied to voluntary cessation or Article III mootness.\"},{\"assertion_id\":\"0f6f82495b1b918a\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside Lens A, but the weight label is consistent with the disclosed lake identity showing court \\\"scotus\\\" and official citation \\\"601 U.S. 234\\\".\",\"The content page displays the same SCOTUS identity and citation.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"No treatment/currency analysis performed under Lens A.\"],\"suggested_tightening\":null},{\"assertion_id\":\"5e661cdf8175f423\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside Lens A, but the content treatment fields match the lake treatment fields: field_i_validity unverified, null as_of fields, composite_basis unverified, varies_by_point false, and the same scope note.\",\"The page transparently labels treatment as unverified.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"No treatment/currency analysis performed under Lens A.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed every assertion in group_inventory.jsonl under Lens A using only disclosed files.\"}",
   "summary": {
-    "at": "2026-07-09T23:10:36-04:00",
-    "attempts": 2,
+    "at": "2026-07-10T16:58:43-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-f48e57ad11",
+      "F-S9-PR-d21c009f2d"
+    ],
     "group_id": "content/cases/FBI v. Fikre.md",
     "group_total_assertions": 5,
-    "lake_only_cases": [
-      "FBI v. Fikre"
-    ],
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-bcd20fc2",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-bcd20fc2.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
-    "resolution_notes": [
-      "case 'FBI v. Fikre' has no lead_opinion_id (text undisclosed)"
-    ],
-    "reviewed_count": 0,
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
     "run": "prod",
-    "text_disclosed_cases": [],
+    "text_disclosed_cases": [
+      "FBI v. Fikre"
+    ],
     "tokens": {
-      "input": 822,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 822
+      "input": 219000,
+      "output": 6434,
+      "source": "codex-events",
+      "total": 225434
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 3.5
+    "verdict_map": {
+      "0f6f82495b1b918a": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "5e661cdf8175f423": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "600e2a88489f9004": {
+        "dimension": "support",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "8798192bbe3af798": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "90bd808116e54384": {
+        "dimension": "support",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-f48e57ad11",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-d21c009f2d",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 160.1
   }
 }

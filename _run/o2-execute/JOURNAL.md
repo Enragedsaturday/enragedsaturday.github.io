@@ -1746,3 +1746,13 @@ text-promotion disclosed the opinions); geofence-threshold refusal DISMISSED w/ 
 (SCOTUS Chatrie 2026 verbatim holds acquisition IS a search; 11349205.txt) — the callout's
 ≥2-approvals promotion restored via evidence-cited adjudication. Registry shard-1: 26 approved
 + 1 adjudication-restored = 27/27.
+
+**FLEET PAUSE #9 (2026-07-10 18:35).** Codex usage window closed again (403 wss, pause-#8
+surface) after ~1h50m of combined conc-18 grinding — same signature as the overnight collapse
+(23:13→~03:12). Both drivers KILLED cleanly at checkpoint: panel 3690 cumulative ok (of 2714
+lanes incl re-dispatches; ledger-truth recomputed at relaunch), thread-N sweep mid-pass
+(1070/1218 pairs done, 148 to run incl 4 permanent Entick/Wilkes off-CL placeholders).
+Probe loop armed (15-min cadence, cheap PROBE-OK exec); fleets relaunch on window-open.
+Thread-N unblock arc completed earlier this session: 187 sanctioned lead writes, 154 worklist
+rows cured, re-reads REAL (verified). Stub-text triage filed to P2 queue (chapman-v-california
+likely mis-key; Demesme concurrence gap; O'Brien correct-as-is).

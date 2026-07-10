@@ -1,13 +1,62 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/United States v. Payne.json",
+    "lens": "B",
+    "notes": "",
+    "reviewed": [
+      {
+        "assertion_id": "7e7c4710b2ae5eec",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Frontier stub: treatment/progeny intentionally not derived until S6 promotion.",
+          "locator_note": "record_id: United States v. Payne; citation display: 99 F.4th 495",
+          "needs_cl": true,
+          "problem": "The disclosed record verifies the case identity and citation, but it does not verify current live-law status. Treatment and progeny are expressly unverified, so the authority cannot be treated as confirmed-current under the currency lens.",
+          "proposed_fix": "Retain the citation only as an under-review authority and do not imply current/live-law status until citator and progeny verification are completed.",
+          "severity": "medium"
+        },
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity supports that the record exists and has citation 99 F.4th 495, but currency is not established.",
+          "Lake treatment.field_i_validity is unverified, treatment edges are empty, and progeny rows_cached is 0 with citation_count null.",
+          "Under the instruction to default to refuted on uncertainty, live-law existence cannot be verified from the disclosed files."
+        ],
+        "residual_risks": [
+          "The citation itself appears disclosed and matched; the unresolved risk is current-law status, not identity."
+        ],
+        "suggested_tightening": "Separate citation-existence language from live-law currency and keep the under_review/Unverified warning wherever the case is surfaced.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": false
+      },
+      {
+        "assertion_id": "28278bc60338c485",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The treatment assertion matches the lake record: field_i_validity is unverified, as_of_content and as_of_treatment are null, and varies_by_point is false.",
+          "The content page also renders Treatment: Unverified and states that subsequent treatment has not yet been machine-verified.",
+          "Because the assertion is an unverified-status disclosure rather than a positive good-law claim, it is consistent with the disclosed treatment fields."
+        ],
+        "residual_risks": [
+          "No positive good-law conclusion can be drawn until citator/progeny verification is completed."
+        ],
+        "suggested_tightening": "Keep the unverified treatment banner and avoid adding any affirmative good-law status until S9/citator verification is complete.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/United States v. Payne.json\",\"reviewed\":[{\"assertion_id\":\"7e7c4710b2ae5eec\",\"dimension\":\"existence\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":false,\"defect\":{\"problem\":\"The disclosed record verifies the case identity and citation, but it does not verify current live-law status. Treatment and progeny are expressly unverified, so the authority cannot be treated as confirmed-current under the currency lens.\",\"severity\":\"medium\",\"proposed_fix\":\"Retain the citation only as an under-review authority and do not imply current/live-law status until citator and progeny verification are completed.\",\"evidence_quote\":\"Frontier stub: treatment/progeny intentionally not derived until S6 promotion.\",\"needs_cl\":true,\"locator_note\":\"record_id: United States v. Payne; citation display: 99 F.4th 495\"},\"reasons\":[\"Lake identity supports that the record exists and has citation 99 F.4th 495, but currency is not established.\",\"Lake treatment.field_i_validity is unverified, treatment edges are empty, and progeny rows_cached is 0 with citation_count null.\",\"Under the instruction to default to refuted on uncertainty, live-law existence cannot be verified from the disclosed files.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The citation itself appears disclosed and matched; the unresolved risk is current-law status, not identity.\"],\"suggested_tightening\":\"Separate citation-existence language from live-law currency and keep the under_review/Unverified warning wherever the case is surfaced.\"},{\"assertion_id\":\"28278bc60338c485\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The treatment assertion matches the lake record: field_i_validity is unverified, as_of_content and as_of_treatment are null, and varies_by_point is false.\",\"The content page also renders Treatment: Unverified and states that subsequent treatment has not yet been machine-verified.\",\"Because the assertion is an unverified-status disclosure rather than a positive good-law claim, it is consistent with the disclosed treatment fields.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"No positive good-law conclusion can be drawn until citator/progeny verification is completed.\"],\"suggested_tightening\":\"Keep the unverified treatment banner and avoid adding any affirmative good-law status until S9/citator verification is complete.\"}],\"notes\":\"\"}",
   "summary": {
-    "at": "2026-07-09T23:06:42-04:00",
-    "attempts": 2,
+    "at": "2026-07-10T16:49:29-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-a4d97550d7"
+    ],
     "group_id": "_overhaul2/lake/cases/United States v. Payne.json",
     "group_total_assertions": 2,
     "lake_only_cases": [
@@ -18,21 +67,41 @@
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-317aea21.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [
       "case 'United States v. Payne' has no lead_opinion_id (text undisclosed)"
     ],
-    "reviewed_count": 0,
+    "reviewed_count": 2,
     "run": "prod",
     "text_disclosed_cases": [],
     "tokens": {
-      "input": 755,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 755
+      "input": 85249,
+      "output": 3642,
+      "source": "codex-events",
+      "total": 88891
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 2.9
+    "verdict_map": {
+      "28278bc60338c485": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "7e7c4710b2ae5eec": {
+        "dimension": "existence",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": false
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-a4d97550d7",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 75.2
   }
 }

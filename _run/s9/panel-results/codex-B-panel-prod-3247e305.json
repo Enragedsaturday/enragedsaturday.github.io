@@ -1,38 +1,172 @@
 {
-  "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "group_id": "content/cases/United States v. Porter.md",
+    "lens": "B",
+    "notes": "Lens B only; support and quote-fidelity merits were not adjudicated.",
+    "reviewed": [
+      {
+        "assertion_id": "0e9fb4703e4cdd65",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "citations[] empty (live-verified 2026-07-07); no F.4th cite assigned yet.",
+          "locator_note": "citation metadata",
+          "needs_cl": false,
+          "problem": "The authority exists as a published Fifth Circuit slip opinion, but the payload overstates citation status with official_citation_present=true. The lake record shows no official reporter citation and marks the case slip-only.",
+          "proposed_fix": "Retain the slip citation, but mark the official citation as absent or label this explicitly as slip-only/no reporter citation.",
+          "severity": "low"
+        },
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity confirms United States v. Porter, No. 25-60163, Fifth Circuit, decided 2026-03-17.",
+          "Cached opinion text confirms No. 25-60163 and filed March 17, 2026.",
+          "Lake citations show official:null and slip_only:true, so only the official-citation flag needs correction."
+        ],
+        "residual_risks": [
+          "Treatment remains unverified; this is not a full current-law citator certification."
+        ],
+        "suggested_tightening": "Use slip_only:true / official_citation_present:false for this record.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "2d66a61b2921604d",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "Under lens B, this home-role assertion does not make a good-law or citator-treatment claim.",
+          "The disclosed lake record contains no adverse treatment edge contradicting the ALPR lower-court-development label."
+        ],
+        "residual_risks": [
+          "Support placement itself is lens A territory; treatment/progeny are expressly unverified."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "c048b6dd5c903979",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "Under lens B, no disclosed treatment edge supersedes, overrules, abrogates, or limits the stated holding.",
+          "The page separately labels treatment as unverified, so the holding is not presented as citator-verified good law."
+        ],
+        "residual_risks": [
+          "Holding support and quote fidelity are not reviewed under lens B.",
+          "No complete progeny/citator query is disclosed."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "8294679477e1aee4",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The content treatment fields match the lake record: field_i_validity unverified, null as-of dates, composite_basis unverified, varies_by_point false.",
+          "The lake record states treatment/progeny are frontier-stub fields with no derived treatment edges."
+        ],
+        "residual_risks": [
+          "Because the asserted treatment is unverified, it gives no affirmative live-law assurance."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "e02ee312d83e3f4f",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Lake identity places the case in the Fifth Circuit, and slip-only provenance describes it as a PUBLISHED Fifth Circuit slip opinion.",
+          "No disclosed treatment edge undercuts the in-circuit binding-weight label, and the separate treatment field warns that citator status is unverified."
+        ],
+        "residual_risks": [
+          "The binding-weight label should be refreshed if later treatment or reporter/publication metadata is added."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"content/cases/United States v. Porter.md\",\"reviewed\":[{\"assertion_id\":\"0e9fb4703e4cdd65\",\"dimension\":\"existence\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The authority exists as a published Fifth Circuit slip opinion, but the payload overstates citation status with official_citation_present=true. The lake record shows no official reporter citation and marks the case slip-only.\",\"severity\":\"low\",\"proposed_fix\":\"Retain the slip citation, but mark the official citation as absent or label this explicitly as slip-only/no reporter citation.\",\"evidence_quote\":\"citations[] empty (live-verified 2026-07-07); no F.4th cite assigned yet.\",\"needs_cl\":false,\"locator_note\":\"citation metadata\"},\"reasons\":[\"Lake identity confirms United States v. Porter, No. 25-60163, Fifth Circuit, decided 2026-03-17.\",\"Cached opinion text confirms No. 25-60163 and filed March 17, 2026.\",\"Lake citations show official:null and slip_only:true, so only the official-citation flag needs correction.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment remains unverified; this is not a full current-law citator certification.\"],\"suggested_tightening\":\"Use slip_only:true / official_citation_present:false for this record.\"},{\"assertion_id\":\"2d66a61b2921604d\",\"dimension\":\"support\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Under lens B, this home-role assertion does not make a good-law or citator-treatment claim.\",\"The disclosed lake record contains no adverse treatment edge contradicting the ALPR lower-court-development label.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Support placement itself is lens A territory; treatment/progeny are expressly unverified.\"],\"suggested_tightening\":null},{\"assertion_id\":\"c048b6dd5c903979\",\"dimension\":\"support\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Under lens B, no disclosed treatment edge supersedes, overrules, abrogates, or limits the stated holding.\",\"The page separately labels treatment as unverified, so the holding is not presented as citator-verified good law.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Holding support and quote fidelity are not reviewed under lens B.\",\"No complete progeny/citator query is disclosed.\"],\"suggested_tightening\":null},{\"assertion_id\":\"8294679477e1aee4\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The content treatment fields match the lake record: field_i_validity unverified, null as-of dates, composite_basis unverified, varies_by_point false.\",\"The lake record states treatment/progeny are frontier-stub fields with no derived treatment edges.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Because the asserted treatment is unverified, it gives no affirmative live-law assurance.\"],\"suggested_tightening\":null},{\"assertion_id\":\"e02ee312d83e3f4f\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity places the case in the Fifth Circuit, and slip-only provenance describes it as a PUBLISHED Fifth Circuit slip opinion.\",\"No disclosed treatment edge undercuts the in-circuit binding-weight label, and the separate treatment field warns that citator status is unverified.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The binding-weight label should be refreshed if later treatment or reporter/publication metadata is added.\"],\"suggested_tightening\":null}],\"notes\":\"Lens B only; support and quote-fidelity merits were not adjudicated.\"}",
   "summary": {
-    "at": "2026-07-09T23:14:16-04:00",
-    "attempts": 2,
-    "clean_attestation": false,
+    "at": "2026-07-10T17:18:36-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
     "defense_votes": [],
     "findings_emitted": [],
     "group_id": "content/cases/United States v. Porter.md",
     "group_total_assertions": 5,
-    "lake_only_cases": [
-      "United States v. Porter"
-    ],
+    "lake_only_cases": [],
     "lane": "codex-B",
     "lane_id": "codex-B-panel-prod-3247e305",
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-3247e305.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
-    "resolution_notes": [
-      "case 'United States v. Porter' has no lead_opinion_id (text undisclosed)"
-    ],
-    "reviewed_count": 0,
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
     "run": "prod",
-    "text_disclosed_cases": [],
+    "text_disclosed_cases": [
+      "United States v. Porter"
+    ],
     "tokens": {
-      "input": 753,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 753
+      "input": 117271,
+      "output": 7630,
+      "source": "codex-events",
+      "total": 124901
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 3.3
+    "verdict_map": {
+      "0e9fb4703e4cdd65": {
+        "dimension": "existence",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "2d66a61b2921604d": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "8294679477e1aee4": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "c048b6dd5c903979": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "e02ee312d83e3f4f": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-ab2d347d66",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 144.3
   }
 }

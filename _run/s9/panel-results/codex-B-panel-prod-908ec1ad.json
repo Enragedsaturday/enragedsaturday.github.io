@@ -1,13 +1,101 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/City of Indianapolis v. Edmond.json",
+    "lens": "B",
+    "notes": "Lens B only; quote/support defects intentionally not raised.",
+    "reviewed": [
+      {
+        "assertion_id": "387fd7c8b12c7e0f",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake record is verified and identifies City of Indianapolis v. Edmond as a U.S. Supreme Court case decided 2000-11-28 with cluster_id 118391.",
+          "The cited authorities in the assertion match lake.citations.all.",
+          "For the currency angle, lake.treatment.field_i_validity is good_law as of 2026-06-30."
+        ],
+        "residual_risks": [
+          "Official citation selection is null, but that is a citation-normalization issue rather than a Lens B live-law defect.",
+          "Disclosed treatment currency only reaches the stated as_of_treatment date, 2026-06-30."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "281de380a721c06b",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "This is a quote-fidelity row; Lens B does not assess quote support or quote fidelity.",
+          "No independent treatment/currency claim in this row is contradicted by the disclosed lake treatment fields."
+        ],
+        "residual_risks": [
+          "Quote accuracy and pinpoint fidelity remain for Lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "8140fa2678c738ef",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "This is a quote-fidelity row; Lens B does not assess quote support or quote fidelity.",
+          "No independent treatment/currency claim in this row is contradicted by the disclosed lake treatment fields."
+        ],
+        "residual_risks": [
+          "Quote accuracy and pinpoint fidelity remain for Lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "8b18dc8707f447e3",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "\"audit_needed\": true, \"proposed_negative_events\": 14, \"audit_marker\": \"R15 treatment audit required\"",
+          "locator_note": "content_page.md Treatment & subsequent history; lake treatment.derivation lane1_negative and lane2_top_cited",
+          "needs_cl": true,
+          "problem": "The good_law and Binding-SCOTUS labels are supported, but the visible statement 'No negative treatment' is too absolute because the same lake record marks treatment derivation as migration-seeded and flags proposed negative events requiring audit.",
+          "proposed_fix": "Keep the status as good_law as of 2026-06-30, but replace 'No negative treatment' with a narrower statement such as: 'No confirmed negative treatment in the lake judgment fields; automated proposed negative-treatment signals remain audit-needed.'",
+          "severity": "medium"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "Lake.treatment.field_i_validity is good_law, as_of_treatment is 2026-06-30, varies_by_point is false, and point_overrides is empty.",
+          "Authority weight is supported by identity.court_level/court_id as scotus.",
+          "But treatment.composite_basis is migration-seed, the scope note says 'Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade.', and derivation lanes show audit_needed with proposed negative events."
+        ],
+        "residual_risks": [
+          "Because all listed negative edges are proposed and field_iii is only mentioned, the disclosed record does not prove Edmond is bad law.",
+          "The disclosed record also does not let me verify the stronger 'No negative treatment' sentence without an audited treatment pass."
+        ],
+        "suggested_tightening": "Expose the migration-seed/audit-needed caveat in the visible treatment section, not only in frontmatter.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/City of Indianapolis v. Edmond.json\",\"reviewed\":[{\"assertion_id\":\"387fd7c8b12c7e0f\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake record is verified and identifies City of Indianapolis v. Edmond as a U.S. Supreme Court case decided 2000-11-28 with cluster_id 118391.\",\"The cited authorities in the assertion match lake.citations.all.\",\"For the currency angle, lake.treatment.field_i_validity is good_law as of 2026-06-30.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Official citation selection is null, but that is a citation-normalization issue rather than a Lens B live-law defect.\",\"Disclosed treatment currency only reaches the stated as_of_treatment date, 2026-06-30.\"],\"suggested_tightening\":null},{\"assertion_id\":\"281de380a721c06b\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"This is a quote-fidelity row; Lens B does not assess quote support or quote fidelity.\",\"No independent treatment/currency claim in this row is contradicted by the disclosed lake treatment fields.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Quote accuracy and pinpoint fidelity remain for Lens A.\"],\"suggested_tightening\":null},{\"assertion_id\":\"8140fa2678c738ef\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"This is a quote-fidelity row; Lens B does not assess quote support or quote fidelity.\",\"No independent treatment/currency claim in this row is contradicted by the disclosed lake treatment fields.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Quote accuracy and pinpoint fidelity remain for Lens A.\"],\"suggested_tightening\":null},{\"assertion_id\":\"8b18dc8707f447e3\",\"dimension\":\"treatment\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The good_law and Binding-SCOTUS labels are supported, but the visible statement 'No negative treatment' is too absolute because the same lake record marks treatment derivation as migration-seeded and flags proposed negative events requiring audit.\",\"severity\":\"medium\",\"proposed_fix\":\"Keep the status as good_law as of 2026-06-30, but replace 'No negative treatment' with a narrower statement such as: 'No confirmed negative treatment in the lake judgment fields; automated proposed negative-treatment signals remain audit-needed.'\",\"evidence_quote\":\"\\\"audit_needed\\\": true, \\\"proposed_negative_events\\\": 14, \\\"audit_marker\\\": \\\"R15 treatment audit required\\\"\",\"needs_cl\":true,\"locator_note\":\"content_page.md Treatment & subsequent history; lake treatment.derivation lane1_negative and lane2_top_cited\"},\"reasons\":[\"Lake.treatment.field_i_validity is good_law, as_of_treatment is 2026-06-30, varies_by_point is false, and point_overrides is empty.\",\"Authority weight is supported by identity.court_level/court_id as scotus.\",\"But treatment.composite_basis is migration-seed, the scope note says 'Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade.', and derivation lanes show audit_needed with proposed negative events.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Because all listed negative edges are proposed and field_iii is only mentioned, the disclosed record does not prove Edmond is bad law.\",\"The disclosed record also does not let me verify the stronger 'No negative treatment' sentence without an audited treatment pass.\"],\"suggested_tightening\":\"Expose the migration-seed/audit-needed caveat in the visible treatment section, not only in frontmatter.\"}],\"notes\":\"Lens B only; quote/support defects intentionally not raised.\"}",
   "summary": {
-    "at": "2026-07-09T23:18:16-04:00",
-    "attempts": 2,
+    "at": "2026-07-10T17:49:51-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "defense_votes": [],
-    "findings_emitted": [],
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-b621eb1c51",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-2d1afb7b6b"
+    ],
     "group_id": "_overhaul2/lake/cases/City of Indianapolis v. Edmond.json",
     "group_total_assertions": 4,
     "lake_only_cases": [],
@@ -16,21 +104,59 @@
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-908ec1ad.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 4,
     "run": "prod",
     "text_disclosed_cases": [
       "City of Indianapolis v. Edmond"
     ],
     "tokens": {
-      "input": 757,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 757
+      "input": 184293,
+      "output": 6431,
+      "source": "codex-events",
+      "total": 190724
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 2.8
+    "verdict_map": {
+      "281de380a721c06b": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "387fd7c8b12c7e0f": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "8140fa2678c738ef": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "8b18dc8707f447e3": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-b621eb1c51",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-2d1afb7b6b",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 125.9
   }
 }

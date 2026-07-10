@@ -1,0 +1,184 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "content/cases/Buckley v. Fitzsimmons.md",
+    "lens": "A",
+    "notes": "No text/<case>.txt file was present. The lake record's pinpoints array is empty and it contains no holding field, so Lens A support assertions could not be verified from disclosed evidence.",
+    "reviewed": [
+      {
+        "assertion_id": "451ccd8e8a0d15db",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record lists case_name as Buckley v. Fitzsimmons, court as U.S. Supreme Court, date_decided as 1993-06-24, and year as 1993.",
+          "The lake citations record lists official cite 509 U.S. 259, parallel cites 113 S. Ct. 2606 and 125 L. Ed. 2d 209, and vendor-neutral cite 1993 U.S. LEXIS 4400."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "58004fb5a47e7248",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "\"pinpoints\": []",
+          "locator_note": "home: Absolute Immunity",
+          "needs_cl": true,
+          "problem": "The disclosed evidence does not verify that Buckley v. Fitzsimmons should be an Anchor case for Absolute Immunity. The lake record contains identity, citation, and unverified treatment metadata, but no holding, no home-role judgment, and no pinpoints; no text opinion file is present.",
+          "proposed_fix": "Do not classify the case as an Anchor for Absolute Immunity unless the record supplies a verified holding/pinpoint or the cached opinion text supporting that home role.",
+          "severity": "medium"
+        },
+        "dimension": "support",
+        "reasons": [
+          "Support review requires the home-role to follow from opinion text or a lake holding.",
+          "No text/<case>.txt file is disclosed, and the lake record has no holding field or home-role field."
+        ],
+        "residual_risks": [
+          "The role may be correct in reality, but it cannot be verified from the disclosed files."
+        ],
+        "suggested_tightening": "Add a verified lake holding and pinpoint showing the prosecutorial-immunity rule before using Anchor.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": false
+      },
+      {
+        "assertion_id": "e918ece32bc0bbae",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "\"pinpoints\": []",
+          "locator_note": "field: holding",
+          "needs_cl": true,
+          "problem": "The holding is not verifiable from the disclosed evidence. The lake record has no holding text and no pinpoints, and no cached opinion text is present to confirm the stated breadth about fabrication before probable cause, press statements, and qualified immunity.",
+          "proposed_fix": "Provide the cached opinion text or lake pinpoints/holding that directly support each clause of the holding, or narrow the holding to only what the disclosed source can verify.",
+          "severity": "high"
+        },
+        "dimension": "support",
+        "reasons": [
+          "The asserted holding contains multiple substantive propositions that require opinion-text verification.",
+          "The only disclosed lake record is a frontier identity/treatment stub with empty pinpoints and no holding field."
+        ],
+        "residual_risks": [
+          "The proposition may be substantively accurate, but under the review rules unsupported assertions default to refuted."
+        ],
+        "suggested_tightening": "Split the holding into separately pinned propositions for advocate-function immunity, investigative fabrication, probable-cause timing, and press statements.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": false
+      },
+      {
+        "assertion_id": "3e3fe9a7b8e27918",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Lens A does not review treatment/currency.",
+          "The authority-weight label is consistent with the disclosed lake identity fields: court is U.S. Supreme Court and court_level is scotus."
+        ],
+        "residual_risks": [
+          "No Lens B treatment/currency conclusion is made."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "88f11861354c631b",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Lens A does not review treatment/currency.",
+          "The content treatment fields match the lake treatment fields, including field_i_validity unverified, null as_of fields, composite_basis unverified, varies_by_point false, and the frontier-stub scope note."
+        ],
+        "residual_risks": [
+          "No Lens B treatment/currency conclusion is made."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"A\",\n  \"group_id\": \"content/cases/Buckley v. Fitzsimmons.md\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"451ccd8e8a0d15db\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake identity record lists case_name as Buckley v. Fitzsimmons, court as U.S. Supreme Court, date_decided as 1993-06-24, and year as 1993.\",\n        \"The lake citations record lists official cite 509 U.S. 259, parallel cites 113 S. Ct. 2606 and 125 L. Ed. 2d 209, and vendor-neutral cite 1993 U.S. LEXIS 4400.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"58004fb5a47e7248\",\n      \"dimension\": \"support\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": false,\n      \"defect\": {\n        \"problem\": \"The disclosed evidence does not verify that Buckley v. Fitzsimmons should be an Anchor case for Absolute Immunity. The lake record contains identity, citation, and unverified treatment metadata, but no holding, no home-role judgment, and no pinpoints; no text opinion file is present.\",\n        \"severity\": \"medium\",\n        \"proposed_fix\": \"Do not classify the case as an Anchor for Absolute Immunity unless the record supplies a verified holding/pinpoint or the cached opinion text supporting that home role.\",\n        \"evidence_quote\": \"\\\"pinpoints\\\": []\",\n        \"needs_cl\": true,\n        \"locator_note\": \"home: Absolute Immunity\"\n      },\n      \"reasons\": [\n        \"Support review requires the home-role to follow from opinion text or a lake holding.\",\n        \"No text/<case>.txt file is disclosed, and the lake record has no holding field or home-role field.\"\n      ],\n      \"breaks_true_positives\": true,\n      \"residual_risks\": [\n        \"The role may be correct in reality, but it cannot be verified from the disclosed files.\"\n      ],\n      \"suggested_tightening\": \"Add a verified lake holding and pinpoint showing the prosecutorial-immunity rule before using Anchor.\"\n    },\n    {\n      \"assertion_id\": \"e918ece32bc0bbae\",\n      \"dimension\": \"support\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": false,\n      \"defect\": {\n        \"problem\": \"The holding is not verifiable from the disclosed evidence. The lake record has no holding text and no pinpoints, and no cached opinion text is present to confirm the stated breadth about fabrication before probable cause, press statements, and qualified immunity.\",\n        \"severity\": \"high\",\n        \"proposed_fix\": \"Provide the cached opinion text or lake pinpoints/holding that directly support each clause of the holding, or narrow the holding to only what the disclosed source can verify.\",\n        \"evidence_quote\": \"\\\"pinpoints\\\": []\",\n        \"needs_cl\": true,\n        \"locator_note\": \"field: holding\"\n      },\n      \"reasons\": [\n        \"The asserted holding contains multiple substantive propositions that require opinion-text verification.\",\n        \"The only disclosed lake record is a frontier identity/treatment stub with empty pinpoints and no holding field.\"\n      ],\n      \"breaks_true_positives\": true,\n      \"residual_risks\": [\n        \"The proposition may be substantively accurate, but under the review rules unsupported assertions default to refuted.\"\n      ],\n      \"suggested_tightening\": \"Split the holding into separately pinned propositions for advocate-function immunity, investigative fabrication, probable-cause timing, and press statements.\"\n    },\n    {\n      \"assertion_id\": \"3e3fe9a7b8e27918\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Lens A does not review treatment/currency.\",\n        \"The authority-weight label is consistent with the disclosed lake identity fields: court is U.S. Supreme Court and court_level is scotus.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"No Lens B treatment/currency conclusion is made.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"88f11861354c631b\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Lens A does not review treatment/currency.\",\n        \"The content treatment fields match the lake treatment fields, including field_i_validity unverified, null as_of fields, composite_basis unverified, varies_by_point false, and the frontier-stub scope note.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"No Lens B treatment/currency conclusion is made.\"\n      ],\n      \"suggested_tightening\": null\n    }\n  ],\n  \"notes\": \"No text/<case>.txt file was present. The lake record's pinpoints array is empty and it contains no holding field, so Lens A support assertions could not be verified from disclosed evidence.\"\n}",
+  "summary": {
+    "at": "2026-07-10T00:10:04-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-0b0abfa317",
+      "F-S9-PR-f6c5062b20"
+    ],
+    "group_id": "content/cases/Buckley v. Fitzsimmons.md",
+    "group_total_assertions": 5,
+    "lake_only_cases": [
+      "Buckley v. Fitzsimmons"
+    ],
+    "lane": "codex-A",
+    "lane_id": "codex-A-panel-prod-ebd839f7",
+    "lens": "A",
+    "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-ebd839f7.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [
+      "case 'Buckley v. Fitzsimmons' has no lead_opinion_id (text undisclosed)"
+    ],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [],
+    "tokens": {
+      "input": 50741,
+      "output": 3906,
+      "source": "codex-events",
+      "total": 54647
+    },
+    "verdict_map": {
+      "3e3fe9a7b8e27918": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "451ccd8e8a0d15db": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "58004fb5a47e7248": {
+        "dimension": "support",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": false
+      },
+      "88f11861354c631b": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "e918ece32bc0bbae": {
+        "dimension": "support",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": false
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-0b0abfa317",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-f6c5062b20",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 93.5
+  }
+}

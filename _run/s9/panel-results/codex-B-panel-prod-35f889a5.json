@@ -1,0 +1,150 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Arizona v. Roberson.json",
+    "lens": "B",
+    "notes": "Lens B only; quote and support defects intentionally not raised.",
+    "reviewed": [
+      {
+        "assertion_id": "ae22d491e13a15c8",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record is verified, identifies Arizona v. Roberson as a U.S. Supreme Court decision decided 1988-06-15, and selects 486 U.S. 675 as the official citation.",
+          "The lake treatment field marks the authority good_law as of 2026-06-30, so the cited authority is live under the disclosed judgment fields."
+        ],
+        "residual_risks": [
+          "Treatment derivation has audit_needed flags, but no disclosed final field downgrades the case's live-law status."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "609fd7544cbb0ce5",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote fidelity is outside Lens B; I identify no treatment or currency defect in this assertion.",
+          "The pin record is disclosed in the lake, but any mismatch finding belongs to Lens A."
+        ],
+        "residual_risks": [
+          "No Lens B review of quote accuracy or pinpoint support performed."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "db790b9d975d673a",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote fidelity is outside Lens B; I identify no independent treatment or currency defect for this quote-fidelity row.",
+          "The embedded treatment language is separately addressed in the treatment assertion."
+        ],
+        "residual_risks": [
+          "No Lens B review of quote accuracy or pinpoint support performed."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "4ee8a793e87ddb2f",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "\"audit_marker\": \"R15 treatment audit required\"",
+          "locator_note": "content_page.md Treatment & subsequent history; lake/Arizona v. Roberson__c6eac8.json treatment.derivation and treatment.edges",
+          "needs_cl": true,
+          "problem": "The good_law status itself matches the lake judgment field, but the content page's categorical 'No negative treatment' language is too strong because the disclosed lake treatment record contains proposed negative/critical treatment edges and audit_needed markers.",
+          "proposed_fix": "Keep good_law as the headline status, but replace 'No negative treatment' with a qualified statement such as: 'No confirmed downgrade in the current lake treatment field; treatment derivation contains proposed negative/critical edges requiring audit, and Maryland v. Shatzer is noted as a later refinement.'",
+          "severity": "medium"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "Lake treatment.field_i_validity is good_law as of 2026-06-30, so the basic status survives.",
+          "The lake also reports proposed negative events, cap_hit true, and audit_needed true for lane1_negative and lane2_top_cited; treatment.edges include overruled, abrogated, questioned, superseded_by_statute, and criticized proposed edges.",
+          "Because those edges are proposed rather than final and point_overrides is empty, they do not refute good_law outright, but they do defeat the unqualified 'No negative treatment' wording."
+        ],
+        "residual_risks": [
+          "Resolving whether the proposed edges should become confirmed negative treatment would require a treatment audit beyond the disclosed files."
+        ],
+        "suggested_tightening": "Say 'No confirmed downgrade in the current lake record' rather than 'No negative treatment.'",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/Arizona v. Roberson.json\",\"reviewed\":[{\"assertion_id\":\"ae22d491e13a15c8\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record is verified, identifies Arizona v. Roberson as a U.S. Supreme Court decision decided 1988-06-15, and selects 486 U.S. 675 as the official citation.\",\"The lake treatment field marks the authority good_law as of 2026-06-30, so the cited authority is live under the disclosed judgment fields.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment derivation has audit_needed flags, but no disclosed final field downgrades the case's live-law status.\"],\"suggested_tightening\":null},{\"assertion_id\":\"609fd7544cbb0ce5\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Quote fidelity is outside Lens B; I identify no treatment or currency defect in this assertion.\",\"The pin record is disclosed in the lake, but any mismatch finding belongs to Lens A.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"No Lens B review of quote accuracy or pinpoint support performed.\"],\"suggested_tightening\":null},{\"assertion_id\":\"db790b9d975d673a\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Quote fidelity is outside Lens B; I identify no independent treatment or currency defect for this quote-fidelity row.\",\"The embedded treatment language is separately addressed in the treatment assertion.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"No Lens B review of quote accuracy or pinpoint support performed.\"],\"suggested_tightening\":null},{\"assertion_id\":\"4ee8a793e87ddb2f\",\"dimension\":\"treatment\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The good_law status itself matches the lake judgment field, but the content page's categorical 'No negative treatment' language is too strong because the disclosed lake treatment record contains proposed negative/critical treatment edges and audit_needed markers.\",\"severity\":\"medium\",\"proposed_fix\":\"Keep good_law as the headline status, but replace 'No negative treatment' with a qualified statement such as: 'No confirmed downgrade in the current lake treatment field; treatment derivation contains proposed negative/critical edges requiring audit, and Maryland v. Shatzer is noted as a later refinement.'\",\"evidence_quote\":\"\\\"audit_marker\\\": \\\"R15 treatment audit required\\\"\",\"needs_cl\":true,\"locator_note\":\"content_page.md Treatment & subsequent history; lake/Arizona v. Roberson__c6eac8.json treatment.derivation and treatment.edges\"},\"reasons\":[\"Lake treatment.field_i_validity is good_law as of 2026-06-30, so the basic status survives.\",\"The lake also reports proposed negative events, cap_hit true, and audit_needed true for lane1_negative and lane2_top_cited; treatment.edges include overruled, abrogated, questioned, superseded_by_statute, and criticized proposed edges.\",\"Because those edges are proposed rather than final and point_overrides is empty, they do not refute good_law outright, but they do defeat the unqualified 'No negative treatment' wording.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Resolving whether the proposed edges should become confirmed negative treatment would require a treatment audit beyond the disclosed files.\"],\"suggested_tightening\":\"Say 'No confirmed downgrade in the current lake record' rather than 'No negative treatment.'\"}],\"notes\":\"Lens B only; quote and support defects intentionally not raised.\"}",
+  "summary": {
+    "at": "2026-07-10T18:22:27-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-5a79835d2c"
+    ],
+    "group_id": "_overhaul2/lake/cases/Arizona v. Roberson.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "codex-B",
+    "lane_id": "codex-B-panel-prod-35f889a5",
+    "lens": "B",
+    "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-35f889a5.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Arizona v. Roberson"
+    ],
+    "tokens": {
+      "input": 185117,
+      "output": 6387,
+      "source": "codex-events",
+      "total": 191504
+    },
+    "verdict_map": {
+      "4ee8a793e87ddb2f": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "609fd7544cbb0ce5": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "ae22d491e13a15c8": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "db790b9d975d673a": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-5a79835d2c",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 123.6
+  }
+}

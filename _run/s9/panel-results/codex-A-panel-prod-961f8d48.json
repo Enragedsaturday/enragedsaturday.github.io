@@ -1,0 +1,184 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "content/cases/Hafer v. Melo.md",
+    "lens": "A",
+    "notes": "No text/<case>.txt file was disclosed for Hafer, and the lake pinpoints array is empty. Under the instruction to default to refuted on uncertainty, substantive support assertions fail Lens A verification.",
+    "reviewed": [
+      {
+        "assertion_id": "337ad8ef1f1c81b9",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity records case_name as Hafer v. Melo, court as U.S. Supreme Court, and year as 1991.",
+          "The lake citations record official cite 502 U.S. 21, vendor-neutral cite 1991 U.S. LEXIS 6502, and the same three parallel citations listed in the assertion."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "6f4121f67685ab5e",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "\"pinpoints\": []",
+          "locator_note": "holding",
+          "needs_cl": true,
+          "problem": "The holding proposition cannot be verified from the disclosed evidence. The lake record has no holding field, no pinpoint quote supporting the rule, and no text/<case>.txt opinion file is present.",
+          "proposed_fix": "Add the cached full opinion text or populate lake.pinpoints[].quote/holding with the verified passage before asserting this holding.",
+          "severity": "high"
+        },
+        "dimension": "support",
+        "reasons": [
+          "Support review requires the proposition to follow from opinion text or a lake holding/pinpoint.",
+          "The disclosed lake record is an identity/frontier record with empty pinpoints, and the working directory discloses no text file for Hafer."
+        ],
+        "residual_risks": [
+          "The proposition may be correct, but Lens A cannot verify it from the disclosed corpus evidence."
+        ],
+        "suggested_tightening": "Do not publish the holding as verified until the exact opinion passage and pin are disclosed.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": false
+      },
+      {
+        "assertion_id": "fbaf44fe96eafe82",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "\"src\": \"frontier stub, no pinpoints\"",
+          "locator_note": "home: Section 1983 Liability and Qualified Immunity",
+          "needs_cl": true,
+          "problem": "The Anchor home-role is not independently supported by the disclosed authority record. Without opinion text, a lake holding, or supporting pinpoints, the case cannot be verified as an anchor for Section 1983 Liability and Qualified Immunity.",
+          "proposed_fix": "Downgrade or mark the home-role unverified until the authority record includes a verified holding or pinpoint tying Hafer to the home topic at anchor strength.",
+          "severity": "medium"
+        },
+        "dimension": "support",
+        "reasons": [
+          "The built page labels the home role, but the built page is the assertion under review, not independent support.",
+          "The lake record supplies identity/citation/treatment metadata but no substantive holding or pinpoint that supports the Anchor role."
+        ],
+        "residual_risks": [
+          "The Anchor role may be substantively right, but it is not verifiable from the disclosed files."
+        ],
+        "suggested_tightening": "Use a weaker role or require a verified substantive passage before assigning Anchor.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": false
+      },
+      {
+        "assertion_id": "81adcd57361eefe1",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Lens A does not assess treatment or currency.",
+          "As a weight label only, Binding — SCOTUS is consistent with the disclosed lake identity fields court U.S. Supreme Court and court_level scotus."
+        ],
+        "residual_risks": [
+          "Treatment/currency remains for Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "d58c1918bafd0674",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Lens A does not assess treatment or currency.",
+          "The asserted unverified/null treatment fields match the lake treatment fields, including field_i_validity unverified, null as_of fields, composite_basis unverified, varies_by_point false, and the same scope note."
+        ],
+        "residual_risks": [
+          "No good-law or subsequent-treatment conclusion is made under this lens."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"A\",\n  \"group_id\": \"content/cases/Hafer v. Melo.md\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"337ad8ef1f1c81b9\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake identity records case_name as Hafer v. Melo, court as U.S. Supreme Court, and year as 1991.\",\n        \"The lake citations record official cite 502 U.S. 21, vendor-neutral cite 1991 U.S. LEXIS 6502, and the same three parallel citations listed in the assertion.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"6f4121f67685ab5e\",\n      \"dimension\": \"support\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": false,\n      \"defect\": {\n        \"problem\": \"The holding proposition cannot be verified from the disclosed evidence. The lake record has no holding field, no pinpoint quote supporting the rule, and no text/<case>.txt opinion file is present.\",\n        \"severity\": \"high\",\n        \"proposed_fix\": \"Add the cached full opinion text or populate lake.pinpoints[].quote/holding with the verified passage before asserting this holding.\",\n        \"evidence_quote\": \"\\\"pinpoints\\\": []\",\n        \"needs_cl\": true,\n        \"locator_note\": \"holding\"\n      },\n      \"reasons\": [\n        \"Support review requires the proposition to follow from opinion text or a lake holding/pinpoint.\",\n        \"The disclosed lake record is an identity/frontier record with empty pinpoints, and the working directory discloses no text file for Hafer.\"\n      ],\n      \"breaks_true_positives\": true,\n      \"residual_risks\": [\n        \"The proposition may be correct, but Lens A cannot verify it from the disclosed corpus evidence.\"\n      ],\n      \"suggested_tightening\": \"Do not publish the holding as verified until the exact opinion passage and pin are disclosed.\"\n    },\n    {\n      \"assertion_id\": \"fbaf44fe96eafe82\",\n      \"dimension\": \"support\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": false,\n      \"defect\": {\n        \"problem\": \"The Anchor home-role is not independently supported by the disclosed authority record. Without opinion text, a lake holding, or supporting pinpoints, the case cannot be verified as an anchor for Section 1983 Liability and Qualified Immunity.\",\n        \"severity\": \"medium\",\n        \"proposed_fix\": \"Downgrade or mark the home-role unverified until the authority record includes a verified holding or pinpoint tying Hafer to the home topic at anchor strength.\",\n        \"evidence_quote\": \"\\\"src\\\": \\\"frontier stub, no pinpoints\\\"\",\n        \"needs_cl\": true,\n        \"locator_note\": \"home: Section 1983 Liability and Qualified Immunity\"\n      },\n      \"reasons\": [\n        \"The built page labels the home role, but the built page is the assertion under review, not independent support.\",\n        \"The lake record supplies identity/citation/treatment metadata but no substantive holding or pinpoint that supports the Anchor role.\"\n      ],\n      \"breaks_true_positives\": true,\n      \"residual_risks\": [\n        \"The Anchor role may be substantively right, but it is not verifiable from the disclosed files.\"\n      ],\n      \"suggested_tightening\": \"Use a weaker role or require a verified substantive passage before assigning Anchor.\"\n    },\n    {\n      \"assertion_id\": \"81adcd57361eefe1\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Lens A does not assess treatment or currency.\",\n        \"As a weight label only, Binding — SCOTUS is consistent with the disclosed lake identity fields court U.S. Supreme Court and court_level scotus.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Treatment/currency remains for Lens B.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"d58c1918bafd0674\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Lens A does not assess treatment or currency.\",\n        \"The asserted unverified/null treatment fields match the lake treatment fields, including field_i_validity unverified, null as_of fields, composite_basis unverified, varies_by_point false, and the same scope note.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"No good-law or subsequent-treatment conclusion is made under this lens.\"\n      ],\n      \"suggested_tightening\": null\n    }\n  ],\n  \"notes\": \"No text/<case>.txt file was disclosed for Hafer, and the lake pinpoints array is empty. Under the instruction to default to refuted on uncertainty, substantive support assertions fail Lens A verification.\"\n}",
+  "summary": {
+    "at": "2026-07-10T00:19:08-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-2eba8f6992",
+      "F-S9-PR-62a7f5db26"
+    ],
+    "group_id": "content/cases/Hafer v. Melo.md",
+    "group_total_assertions": 5,
+    "lake_only_cases": [
+      "Hafer v. Melo"
+    ],
+    "lane": "codex-A",
+    "lane_id": "codex-A-panel-prod-961f8d48",
+    "lens": "A",
+    "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-961f8d48.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [
+      "case 'Hafer v. Melo' has no lead_opinion_id (text undisclosed)"
+    ],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [],
+    "tokens": {
+      "input": 80619,
+      "output": 4930,
+      "source": "codex-events",
+      "total": 85549
+    },
+    "verdict_map": {
+      "337ad8ef1f1c81b9": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "6f4121f67685ab5e": {
+        "dimension": "support",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": false
+      },
+      "81adcd57361eefe1": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "d58c1918bafd0674": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "fbaf44fe96eafe82": {
+        "dimension": "support",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": false
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-2eba8f6992",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-62a7f5db26",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 96.5
+  }
+}

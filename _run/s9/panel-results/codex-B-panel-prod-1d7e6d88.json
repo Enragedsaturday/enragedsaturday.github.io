@@ -1,11 +1,51 @@
 {
-  "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/United States v. Oliveras.json",
+    "lens": "B",
+    "notes": "Reviewed every assertion in group_inventory.jsonl under Lens B using only disclosed workspace files.",
+    "reviewed": [
+      {
+        "assertion_id": "0045bd22a5b21e2c",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record verifies the authority identity as United States v. Oliveras, with expected_citation_found true, docket 21-2954, court ca2, and decision date 2024-03-15.",
+          "The asserted reporter citation matches the lake citation fields: display 96 F.4th 298 and official cite 96 F.4th 298.",
+          "No disclosed treatment or progeny edge says the authority has been overruled, superseded, abrogated, or limited."
+        ],
+        "residual_risks": [
+          "The disclosed treatment record is explicitly unverified and progeny was not derived, so this review cannot affirm ultimate live-law currency beyond the absence of negative disclosed edges."
+        ],
+        "suggested_tightening": "Keep the page's Treatment: Unverified warning visible wherever this citation is used as authority.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "de21483445b1a924",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The content page's treatment fields match the lake record: field_i_validity is unverified, as_of_content and as_of_treatment are null, varies_by_point is false, and the same frontier-stub scope note is present.",
+          "The lake treatment record has no derived treatment edges and the progeny section reports rows_cached 0, consistent with the page's warning that subsequent treatment has not been machine-verified.",
+          "The page does not claim verified good-law status; it labels treatment as Unverified."
+        ],
+        "residual_risks": [
+          "Because treatment and progeny are frontier stubs, the disclosed evidence would be insufficient to support any stronger good-law label."
+        ],
+        "suggested_tightening": "Do not promote this record to a positive good-law status until treatment/progeny derivation is completed.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/United States v. Oliveras.json\",\"reviewed\":[{\"assertion_id\":\"0045bd22a5b21e2c\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record verifies the authority identity as United States v. Oliveras, with expected_citation_found true, docket 21-2954, court ca2, and decision date 2024-03-15.\",\"The asserted reporter citation matches the lake citation fields: display 96 F.4th 298 and official cite 96 F.4th 298.\",\"No disclosed treatment or progeny edge says the authority has been overruled, superseded, abrogated, or limited.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The disclosed treatment record is explicitly unverified and progeny was not derived, so this review cannot affirm ultimate live-law currency beyond the absence of negative disclosed edges.\"],\"suggested_tightening\":\"Keep the page's Treatment: Unverified warning visible wherever this citation is used as authority.\"},{\"assertion_id\":\"de21483445b1a924\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The content page's treatment fields match the lake record: field_i_validity is unverified, as_of_content and as_of_treatment are null, varies_by_point is false, and the same frontier-stub scope note is present.\",\"The lake treatment record has no derived treatment edges and the progeny section reports rows_cached 0, consistent with the page's warning that subsequent treatment has not been machine-verified.\",\"The page does not claim verified good-law status; it labels treatment as Unverified.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Because treatment and progeny are frontier stubs, the disclosed evidence would be insufficient to support any stronger good-law label.\"],\"suggested_tightening\":\"Do not promote this record to a positive good-law status until treatment/progeny derivation is completed.\"}],\"notes\":\"Reviewed every assertion in group_inventory.jsonl under Lens B using only disclosed workspace files.\"}",
   "summary": {
-    "at": "2026-07-09T23:06:30-04:00",
+    "at": "2026-07-10T02:34:09-04:00",
     "attempts": 2,
-    "clean_attestation": false,
+    "clean_attestation": true,
     "defense_votes": [],
     "findings_emitted": [],
     "group_id": "_overhaul2/lake/cases/United States v. Oliveras.json",
@@ -18,21 +58,36 @@
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-1d7e6d88.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "repaired",
     "resolution_notes": [
       "case 'United States v. Oliveras' has no lead_opinion_id (text undisclosed)"
     ],
-    "reviewed_count": 0,
+    "reviewed_count": 2,
     "run": "prod",
     "text_disclosed_cases": [],
     "tokens": {
-      "input": 756,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 756
+      "input": 87824,
+      "output": 3945,
+      "source": "codex-events",
+      "total": 91769
     },
-    "verdict_map": {},
+    "verdict_map": {
+      "0045bd22a5b21e2c": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "de21483445b1a924": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
     "votes_emitted": [],
-    "wall_clock_s": 2.7
+    "wall_clock_s": 81.6
   }
 }

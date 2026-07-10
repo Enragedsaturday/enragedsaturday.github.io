@@ -1,22 +1,170 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Atwater v. City of Lago Vista.json",
+    "lens": "A",
+    "notes": "Reviewed all 4 rows in group_inventory.jsonl exactly once. Quote-fidelity defects are confined to malformed stored pinpoints, not to the existence of Atwater or the support for its core rule.",
+    "reviewed": [
+      {
+        "assertion_id": "a2f25d9c4edd410a",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity confirms record_id and case name as Atwater v. City of Lago Vista, U.S. Supreme Court, decided 2001-04-24.",
+          "The content page's case citation set matches the lake citation set: 532 U.S. 318; 121 S. Ct. 1536; 149 L. Ed. 2d 549; the listed vendor/parallel citations; court and year are consistent with the text header."
+        ],
+        "residual_risks": [
+          "Lake official_selection.selected is null, but the existence/citation assertion as inventoried matches the lake record."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "03061ed34a3c9367",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Atwater's arrest satisfied constitutional requirements. There is no dispute that Officer Turek had probable cause to believe that Atwater had committed a crime in his presence.",
+          "locator_note": "pin-355; opinion text around the *354-*355 star pagination, not the captured content-page Application heading.",
+          "needs_cl": false,
+          "problem": "pin-355 is not a character-faithful opinion quote. The stored quote is a content-page fragment with markdown heading text and the lake itself marks quote_fidelity as mismatch.",
+          "proposed_fix": "Replace pin-355 with the actual opinion passage on the application/ordinary-arrest point, and set the pin to the opinion location around 532 U.S. 354-355.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload begins '(quoting *Whren v. United States*). ## Application ...', which is not text from the opinion.",
+          "The opinion's relevant passage begins with Atwater's arrest satisfying constitutional requirements and then separately states the ordinary-booking conclusion at *355."
+        ],
+        "residual_risks": [
+          "The underlying Atwater proposition appears supported; only the quote/pin fidelity assertion is refuted."
+        ],
+        "suggested_tightening": "Regenerate pinpoints from text/Atwater v. City of Lago Vista__6ef739.txt rather than from content_page.md.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "77fbd374ff210c4b",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Accordingly, we confirm today what our prior cases have intimated: the standard of probable cause \"applie[s] to all arrests, without the need to `balance' the interests and circumstances involved in particular situations.\"",
+          "locator_note": "pin-354; opinion text at the *354 star pagination.",
+          "needs_cl": false,
+          "problem": "pin-354 is not a character-faithful opinion quote. It captured the built page header/background/rule text instead of the Supreme Court opinion passage; the lake marks quote_fidelity as mismatch.",
+          "proposed_fix": "Replace pin-354 with the opinion passage beginning 'Accordingly, we confirm today...' and anchor it to the *354 star pagination.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload starts with content-page markdown ('--- # Atwater v. City of Lago Vista') rather than the opinion text.",
+          "The actual opinion rule at *354 is present in the cached text and differs from the stored pin quote."
+        ],
+        "residual_risks": [
+          "The legal rule itself is supported by the opinion; the defect is the stored quote/pin fidelity."
+        ],
+        "suggested_tightening": "Regenerate pinpoints from the cached opinion text and preserve original punctuation for quoted material.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "a72dfe1c5d84893f",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Lens A does not independently assess treatment/currency.",
+          "The treatment payload matches lake.treatment: field_i_validity good_law, as_of_content 2001-04-24, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note."
+        ],
+        "residual_risks": [
+          "Treatment/currency is reserved for Lens B; no Lens A treatment finding is made."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Atwater v. City of Lago Vista.json\",\"reviewed\":[{\"assertion_id\":\"a2f25d9c4edd410a\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity confirms record_id and case name as Atwater v. City of Lago Vista, U.S. Supreme Court, decided 2001-04-24.\",\"The content page's case citation set matches the lake citation set: 532 U.S. 318; 121 S. Ct. 1536; 149 L. Ed. 2d 549; the listed vendor/parallel citations; court and year are consistent with the text header.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Lake official_selection.selected is null, but the existence/citation assertion as inventoried matches the lake record.\"],\"suggested_tightening\":null},{\"assertion_id\":\"03061ed34a3c9367\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"pin-355 is not a character-faithful opinion quote. The stored quote is a content-page fragment with markdown heading text and the lake itself marks quote_fidelity as mismatch.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-355 with the actual opinion passage on the application/ordinary-arrest point, and set the pin to the opinion location around 532 U.S. 354-355.\",\"evidence_quote\":\"Atwater's arrest satisfied constitutional requirements. There is no dispute that Officer Turek had probable cause to believe that Atwater had committed a crime in his presence.\",\"needs_cl\":false,\"locator_note\":\"pin-355; opinion text around the *354-*355 star pagination, not the captured content-page Application heading.\"},\"reasons\":[\"The payload begins '(quoting *Whren v. United States*). ## Application ...', which is not text from the opinion.\",\"The opinion's relevant passage begins with Atwater's arrest satisfying constitutional requirements and then separately states the ordinary-booking conclusion at *355.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The underlying Atwater proposition appears supported; only the quote/pin fidelity assertion is refuted.\"],\"suggested_tightening\":\"Regenerate pinpoints from text/Atwater v. City of Lago Vista__6ef739.txt rather than from content_page.md.\"},{\"assertion_id\":\"77fbd374ff210c4b\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"pin-354 is not a character-faithful opinion quote. It captured the built page header/background/rule text instead of the Supreme Court opinion passage; the lake marks quote_fidelity as mismatch.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-354 with the opinion passage beginning 'Accordingly, we confirm today...' and anchor it to the *354 star pagination.\",\"evidence_quote\":\"Accordingly, we confirm today what our prior cases have intimated: the standard of probable cause \\\"applie[s] to all arrests, without the need to `balance' the interests and circumstances involved in particular situations.\\\"\",\"needs_cl\":false,\"locator_note\":\"pin-354; opinion text at the *354 star pagination.\"},\"reasons\":[\"The payload starts with content-page markdown ('--- # Atwater v. City of Lago Vista') rather than the opinion text.\",\"The actual opinion rule at *354 is present in the cached text and differs from the stored pin quote.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The legal rule itself is supported by the opinion; the defect is the stored quote/pin fidelity.\"],\"suggested_tightening\":\"Regenerate pinpoints from the cached opinion text and preserve original punctuation for quoted material.\"},{\"assertion_id\":\"a72dfe1c5d84893f\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lens A does not independently assess treatment/currency.\",\"The treatment payload matches lake.treatment: field_i_validity good_law, as_of_content 2001-04-24, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment/currency is reserved for Lens B; no Lens A treatment finding is made.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed all 4 rows in group_inventory.jsonl exactly once. Quote-fidelity defects are confined to malformed stored pinpoints, not to the existence of Atwater or the support for its core rule.\"}",
   "summary": {
-    "at": "2026-07-09T23:17:10-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-10T17:42:12-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-5452f795be",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-1cac0d5d43",
+      "F-S9-PR-24b588ae12"
+    ],
     "group_id": "_overhaul2/lake/cases/Atwater v. City of Lago Vista.json",
     "group_total_assertions": 4,
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-cb16c999",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-cb16c999.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "Reading additional input from stdin...\n\u001b[2m2026-07-10T03:17:04.936426Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T03:17:05.422302Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T03:17:05.997711Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T03:17:06.832366Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T03:17:08.119533Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Atwater v. City of Lago Vista"
+    ],
+    "tokens": {
+      "input": 257070,
+      "output": 8248,
+      "source": "codex-events",
+      "total": 265318
+    },
+    "verdict_map": {
+      "03061ed34a3c9367": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "77fbd374ff210c4b": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "a2f25d9c4edd410a": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "a72dfe1c5d84893f": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-1cac0d5d43",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-24b588ae12",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-5452f795be",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": 179.0
   }
 }

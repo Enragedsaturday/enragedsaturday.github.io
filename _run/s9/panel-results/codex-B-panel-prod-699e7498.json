@@ -1,13 +1,121 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "content/cases/Wolf v. Colorado.md",
+    "lens": "B",
+    "notes": "Reviewed all 5 assertion_ids under lens B using only disclosed workspace files.",
+    "reviewed": [
+      {
+        "assertion_id": "d26d6adc9e81c67a",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity is verified and matches Wolf v. Colorado, U.S. Supreme Court, decided 1949-06-27, with official citation 338 U.S. 25.",
+          "Currency caveat is disclosed separately: the lake treatment marks the case superseded/overruled on the remedy point, not nonexistent."
+        ],
+        "residual_risks": [
+          "Do not cite Wolf as current law for state exclusionary-rule nonapplication."
+        ],
+        "suggested_tightening": "Pair bare citation displays with the treatment badge when used in current-law contexts.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "0645b50885266746",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "Lens B only: the role's currency language, Historical and overruled by Mapp on remedy, is consistent with the lake scope_note and Mapp overruled edge.",
+          "Support/key placement is outside this lens."
+        ],
+        "residual_risks": [
+          "Lens A owns any challenge to whether the home role is substantively supported."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "ec7609e28ec74cdd",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "Lens B only: the proposition's currency qualifier says the remedy holding was later overruled by Mapp, matching the lake treatment scope_note and Mapp overruled edge.",
+          "The proposition also preserves the incorporation holding, matching the lake statement that that separate holding survived."
+        ],
+        "residual_risks": [
+          "Lens A owns any non-currency challenge to holding support or wording."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "8628b4591158c951",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Wolf's holding that the Fourteenth Amendment does not require the exclusionary rule of the States was overruled on that remedy point by Mapp v. Ohio (1961). Wolf's separate holding incorporating the Fourth Amendment's core against the States survived and was reaffirmed in Mapp.",
+          "locator_note": "treatment.varies_by_point",
+          "needs_cl": false,
+          "problem": "The overall treatment call is directionally right, but varies_by_point=false is too blunt because the disclosed scope_note itself separates an overruled remedy holding from a surviving incorporation holding.",
+          "proposed_fix": "Set varies_by_point=true and add point-level treatment: remedy/exclusionary-rule holding superseded or overruled by Mapp; incorporation/core Fourth Amendment holding survived/reaffirmed.",
+          "severity": "medium"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "Lake field_i_validity=superseded and Mapp edges support adverse treatment on the remedy holding.",
+          "The same lake scope_note says a separate incorporation holding survived, so a no-point-variation flag risks overstating the uniformity of the treatment."
+        ],
+        "residual_risks": [
+          "Downstream consumers may treat all Wolf propositions as equally superseded unless point treatment is encoded."
+        ],
+        "suggested_tightening": "Use point overrides for remedy versus incorporation.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "ee6d891113d62f65",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Wolf's holding that the Fourteenth Amendment does not require the exclusionary rule of the States was overruled on that remedy point by Mapp v. Ohio (1961). Wolf's separate holding incorporating the Fourth Amendment's core against the States survived and was reaffirmed in Mapp.",
+          "locator_note": "authority_weight",
+          "needs_cl": false,
+          "problem": "Binding — SCOTUS is accurate as a court-level weight, but as a standalone current-law label it is overbroad for a case whose remedy holding is superseded/overruled while another point survived.",
+          "proposed_fix": "Keep the SCOTUS weight only with an explicit treatment qualifier, e.g. Binding — SCOTUS as to surviving incorporation holding; Historical/superseded on remedy.",
+          "severity": "low"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "Lake identity confirms U.S. Supreme Court/SCOTUS status.",
+          "Lake treatment prevents an unqualified binding label from being safe across all propositions in the case."
+        ],
+        "residual_risks": [
+          "If the renderer always displays treatment beside authority_weight, user-facing risk is reduced."
+        ],
+        "suggested_tightening": "Render authority weight and treatment as a combined label for mixed-status authorities.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"content/cases/Wolf v. Colorado.md\",\"reviewed\":[{\"assertion_id\":\"d26d6adc9e81c67a\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity is verified and matches Wolf v. Colorado, U.S. Supreme Court, decided 1949-06-27, with official citation 338 U.S. 25.\",\"Currency caveat is disclosed separately: the lake treatment marks the case superseded/overruled on the remedy point, not nonexistent.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Do not cite Wolf as current law for state exclusionary-rule nonapplication.\"],\"suggested_tightening\":\"Pair bare citation displays with the treatment badge when used in current-law contexts.\"},{\"assertion_id\":\"0645b50885266746\",\"dimension\":\"support\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lens B only: the role's currency language, Historical and overruled by Mapp on remedy, is consistent with the lake scope_note and Mapp overruled edge.\",\"Support/key placement is outside this lens.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Lens A owns any challenge to whether the home role is substantively supported.\"],\"suggested_tightening\":null},{\"assertion_id\":\"ec7609e28ec74cdd\",\"dimension\":\"support\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lens B only: the proposition's currency qualifier says the remedy holding was later overruled by Mapp, matching the lake treatment scope_note and Mapp overruled edge.\",\"The proposition also preserves the incorporation holding, matching the lake statement that that separate holding survived.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Lens A owns any non-currency challenge to holding support or wording.\"],\"suggested_tightening\":null},{\"assertion_id\":\"8628b4591158c951\",\"dimension\":\"treatment\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The overall treatment call is directionally right, but varies_by_point=false is too blunt because the disclosed scope_note itself separates an overruled remedy holding from a surviving incorporation holding.\",\"severity\":\"medium\",\"proposed_fix\":\"Set varies_by_point=true and add point-level treatment: remedy/exclusionary-rule holding superseded or overruled by Mapp; incorporation/core Fourth Amendment holding survived/reaffirmed.\",\"evidence_quote\":\"Wolf's holding that the Fourteenth Amendment does not require the exclusionary rule of the States was overruled on that remedy point by Mapp v. Ohio (1961). Wolf's separate holding incorporating the Fourth Amendment's core against the States survived and was reaffirmed in Mapp.\",\"needs_cl\":false,\"locator_note\":\"treatment.varies_by_point\"},\"reasons\":[\"Lake field_i_validity=superseded and Mapp edges support adverse treatment on the remedy holding.\",\"The same lake scope_note says a separate incorporation holding survived, so a no-point-variation flag risks overstating the uniformity of the treatment.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Downstream consumers may treat all Wolf propositions as equally superseded unless point treatment is encoded.\"],\"suggested_tightening\":\"Use point overrides for remedy versus incorporation.\"},{\"assertion_id\":\"ee6d891113d62f65\",\"dimension\":\"treatment\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"Binding — SCOTUS is accurate as a court-level weight, but as a standalone current-law label it is overbroad for a case whose remedy holding is superseded/overruled while another point survived.\",\"severity\":\"low\",\"proposed_fix\":\"Keep the SCOTUS weight only with an explicit treatment qualifier, e.g. Binding — SCOTUS as to surviving incorporation holding; Historical/superseded on remedy.\",\"evidence_quote\":\"Wolf's holding that the Fourteenth Amendment does not require the exclusionary rule of the States was overruled on that remedy point by Mapp v. Ohio (1961). Wolf's separate holding incorporating the Fourth Amendment's core against the States survived and was reaffirmed in Mapp.\",\"needs_cl\":false,\"locator_note\":\"authority_weight\"},\"reasons\":[\"Lake identity confirms U.S. Supreme Court/SCOTUS status.\",\"Lake treatment prevents an unqualified binding label from being safe across all propositions in the case.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"If the renderer always displays treatment beside authority_weight, user-facing risk is reduced.\"],\"suggested_tightening\":\"Render authority weight and treatment as a combined label for mixed-status authorities.\"}],\"notes\":\"Reviewed all 5 assertion_ids under lens B using only disclosed workspace files.\"}",
   "summary": {
-    "at": "2026-07-09T23:16:30-04:00",
-    "attempts": 2,
+    "at": "2026-07-10T17:38:14-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "defense_votes": [],
-    "findings_emitted": [],
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-2d34c9d36f",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-373fde4bd9",
+      "F-S9-PR-0548acd375"
+    ],
     "group_id": "content/cases/Wolf v. Colorado.md",
     "group_total_assertions": 5,
     "lake_only_cases": [],
@@ -16,21 +124,70 @@
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-699e7498.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 5,
     "run": "prod",
     "text_disclosed_cases": [
       "Wolf v. Colorado"
     ],
     "tokens": {
-      "input": 751,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 751
+      "input": 239135,
+      "output": 6704,
+      "source": "codex-events",
+      "total": 245839
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 3.1
+    "verdict_map": {
+      "0645b50885266746": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "8628b4591158c951": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "d26d6adc9e81c67a": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "ec7609e28ec74cdd": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "ee6d891113d62f65": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-2d34c9d36f",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-373fde4bd9",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-0548acd375",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 131.1
   }
 }

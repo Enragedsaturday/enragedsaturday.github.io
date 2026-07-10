@@ -1,13 +1,91 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Spinelli v. United States.json",
+    "lens": "A",
+    "notes": "Reviewed all four inventory rows using only disclosed local files; no external search or treatment-law audit performed.",
+    "reviewed": [
+      {
+        "assertion_id": "eb12f45352084c25",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record names Spinelli v. United States, U.S. Supreme Court, decided 1969, docket 8.",
+          "The lake official citation is 393 U.S. 410 and the parallel/vendor citations match the inventory payload.",
+          "The cached opinion header independently shows SPINELLI v. UNITED STATES and 393 U.S. 410 (1969)."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "2cc1dc60fa3b2f50",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "The informer's report must first be measured against <i><span class=\"citation\" data-id=\"9422845\"><a href=\"/opinion/106865/aguilar-v-texas/\" aria-description=\"Citation for case: Aguilar v. Texas\">Aguilar</a></span></i>'s standards so that its probative value can be assessed.",
+          "locator_note": "text/Spinelli v. United States__eb1114.txt, page marker *415",
+          "needs_cl": false,
+          "problem": "pin-415's lake quote is not a character-faithful opinion quote; it splices built-page background prose and Markdown headings rather than the page-415 opinion passage.",
+          "proposed_fix": "Replace pin-415 with the actual page-415 opinion passage beginning with the informer's-report/Aguilar measurement language and set the pinpoint metadata from the opinion text.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The lake pin-415 quote contains non-opinion artifacts: '## Issue', wiki-link syntax, and built-page rule prose.",
+          "The cached opinion at *415 instead contains the Aguilar-measurement passage quoted on content_page.md.",
+          "Because the payload quote is not in the cached opinion and is marked mismatch in the lake record, the quote assertion fails."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Store the actual opinion quote in lake.pinpoints[] and avoid deriving pinpoint quotes from rendered page sections.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "8a423aad1513180f",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The content-page quote for pin-418 matches the lake pinpoints[].quote exactly.",
+          "The cached opinion contains the same sentence at the *418 page marker, though the cached HTML uses mojibake dash characters and spacing around the dash.",
+          "The pin lands on the paragraph concluding that the corroborated informant tip was insufficient for probable cause."
+        ],
+        "residual_risks": [
+          "Strict raw-text character comparison against text/ alone would flag the dash encoding/spacing difference; the quote stands because it is character-faithful to the disclosed lake pinpoint quote."
+        ],
+        "suggested_tightening": "Normalize CourtListener dash encoding before setting quote_fidelity, or store the raw extracted text form alongside the normalized display quote.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "3fcd1c6814289930",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside lens A, so no treatment finding is raised.",
+          "The treatment payload matches the disclosed lake fields: field_i_validity superseded, as_of_content 1969-01-27, as_of_treatment 2026-06-30, and the Gates scope note."
+        ],
+        "residual_risks": [
+          "Treatment merits were not audited under this support/quote-fidelity lens."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Spinelli v. United States.json\",\"reviewed\":[{\"assertion_id\":\"eb12f45352084c25\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake identity record names Spinelli v. United States, U.S. Supreme Court, decided 1969, docket 8.\",\"The lake official citation is 393 U.S. 410 and the parallel/vendor citations match the inventory payload.\",\"The cached opinion header independently shows SPINELLI v. UNITED STATES and 393 U.S. 410 (1969).\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"2cc1dc60fa3b2f50\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"pin-415's lake quote is not a character-faithful opinion quote; it splices built-page background prose and Markdown headings rather than the page-415 opinion passage.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-415 with the actual page-415 opinion passage beginning with the informer's-report/Aguilar measurement language and set the pinpoint metadata from the opinion text.\",\"evidence_quote\":\"The informer's report must first be measured against <i><span class=\\\"citation\\\" data-id=\\\"9422845\\\"><a href=\\\"/opinion/106865/aguilar-v-texas/\\\" aria-description=\\\"Citation for case: Aguilar v. Texas\\\">Aguilar</a></span></i>'s standards so that its probative value can be assessed.\",\"needs_cl\":false,\"locator_note\":\"text/Spinelli v. United States__eb1114.txt, page marker *415\"},\"reasons\":[\"The lake pin-415 quote contains non-opinion artifacts: '## Issue', wiki-link syntax, and built-page rule prose.\",\"The cached opinion at *415 instead contains the Aguilar-measurement passage quoted on content_page.md.\",\"Because the payload quote is not in the cached opinion and is marked mismatch in the lake record, the quote assertion fails.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":\"Store the actual opinion quote in lake.pinpoints[] and avoid deriving pinpoint quotes from rendered page sections.\"},{\"assertion_id\":\"8a423aad1513180f\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The content-page quote for pin-418 matches the lake pinpoints[].quote exactly.\",\"The cached opinion contains the same sentence at the *418 page marker, though the cached HTML uses mojibake dash characters and spacing around the dash.\",\"The pin lands on the paragraph concluding that the corroborated informant tip was insufficient for probable cause.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Strict raw-text character comparison against text/ alone would flag the dash encoding/spacing difference; the quote stands because it is character-faithful to the disclosed lake pinpoint quote.\"],\"suggested_tightening\":\"Normalize CourtListener dash encoding before setting quote_fidelity, or store the raw extracted text form alongside the normalized display quote.\"},{\"assertion_id\":\"3fcd1c6814289930\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside lens A, so no treatment finding is raised.\",\"The treatment payload matches the disclosed lake fields: field_i_validity superseded, as_of_content 1969-01-27, as_of_treatment 2026-06-30, and the Gates scope note.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment merits were not audited under this support/quote-fidelity lens.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed all four inventory rows using only disclosed local files; no external search or treatment-law audit performed.\"}",
   "summary": {
-    "at": "2026-07-09T23:15:23-04:00",
-    "attempts": 2,
+    "at": "2026-07-10T17:27:31-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-b465cea650"
+    ],
     "group_id": "_overhaul2/lake/cases/Spinelli v. United States.json",
     "group_total_assertions": 4,
     "lake_only_cases": [],
@@ -16,21 +94,55 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-19d5e39c.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 4,
     "run": "prod",
     "text_disclosed_cases": [
       "Spinelli v. United States"
     ],
     "tokens": {
-      "input": 828,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 828
+      "input": 228775,
+      "output": 9078,
+      "source": "codex-events",
+      "total": 237853
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 2.8
+    "verdict_map": {
+      "2cc1dc60fa3b2f50": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "3fcd1c6814289930": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "8a423aad1513180f": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "eb12f45352084c25": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-b465cea650",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 171.5
   }
 }

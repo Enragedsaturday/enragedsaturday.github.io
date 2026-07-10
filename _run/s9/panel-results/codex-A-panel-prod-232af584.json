@@ -1,13 +1,98 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Camara v. Municipal Court.json",
+    "lens": "A",
+    "notes": "Reviewed all 4 assertion_ids in group_inventory.jsonl exactly once using only disclosed files.",
+    "reviewed": [
+      {
+        "assertion_id": "2f38a10b7ceb9d84",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity record exists for Camara v. Municipal Court of City and County of San Francisco, decided 1967-06-05 by the U.S. Supreme Court.",
+          "Content citation 387 U.S. 523 (1967), parallel cites, court, docket, and year match the lake identity/citation fields."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "f63f308b2738abb4",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "In summary, we hold that administrative searches of the kind at issue here are significant intrusions upon the interests protected by the Fourth Amendment, that such searches when authorized and conducted without a warrant procedure lack the traditional safeguards which the Fourth Amendment guarantees to the individual,",
+          "locator_note": "text/Camara v. Municipal Court__da85ad.txt at star page *534; lake pinpoints[] currently has quote_fidelity=mismatch.",
+          "needs_cl": false,
+          "problem": "The asserted pin-534 quote is not opinion text; it appears to splice page prose/markdown heading text rather than the passage at 387 U.S. 534.",
+          "proposed_fix": "Replace the pin-534 quote with the actual page-534 holding language beginning with \"In summary, we hold...\" or with the visible content-page quote if that is the intended quote.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Payload quote is \"such a warrant may issue. ## Rule Administrative inspections require a warrant procedure:\", which is not the page-534 opinion passage.",
+          "The disclosed opinion text at *534 contains the Court's holding beginning \"In summary, we hold...\"."
+        ],
+        "residual_risks": [
+          "The visible content_page Rule quote for pin-534 appears to track the opinion separately; this refutation is directed at the assertion payload/lake pinpoint quote."
+        ],
+        "suggested_tightening": "Use the exact *534 holding sentence and avoid harvesting text across content-page headings.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "fd111b2f54df4f87",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Having concluded that the area inspection is a “reasonable” search of private property within the meaning of the Fourth Amendment, it is obvious that “probable cause” to issue a warrant to inspect must exist if reasonable legislative or administrative standards for conducting an area inspection are satisfied with respect to a particular dwelling.",
+          "locator_note": "text/Camara v. Municipal Court__da85ad.txt at star page *538.",
+          "needs_cl": false,
+          "problem": "The quote is substantively the correct page-538 passage, but it is not character-faithful because the source uses curly double quotation marks around “probable cause,” while the payload uses straight single quotes.",
+          "proposed_fix": "Change the quote opening to use the opinion's exact typography: “probable cause” to issue a warrant to inspect must exist if reasonable legislative or administrative standards...",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The quoted sentence appears at *538 and supports the page's probable-cause proposition.",
+          "Strict character fidelity fails only on the quotation marks around probable cause."
+        ],
+        "residual_risks": [
+          "No support defect found for the proposition or page pin; this is a typographic quote-fidelity correction."
+        ],
+        "suggested_tightening": "Preserve the source's curly double quotation marks around “probable cause” in the quoted text.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "b71eb672fd223069",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A, so no substantive treatment finding is raised.",
+          "The payload matches the disclosed lake treatment fields: field_i_validity=good_law, as_of_content=1967-06-05, as_of_treatment=2026-06-30, varies_by_point=false, and the same scope note."
+        ],
+        "residual_risks": [
+          "Treatment was not audited under Lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Camara v. Municipal Court.json\",\"reviewed\":[{\"assertion_id\":\"2f38a10b7ceb9d84\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity record exists for Camara v. Municipal Court of City and County of San Francisco, decided 1967-06-05 by the U.S. Supreme Court.\",\"Content citation 387 U.S. 523 (1967), parallel cites, court, docket, and year match the lake identity/citation fields.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"f63f308b2738abb4\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The asserted pin-534 quote is not opinion text; it appears to splice page prose/markdown heading text rather than the passage at 387 U.S. 534.\",\"severity\":\"high\",\"proposed_fix\":\"Replace the pin-534 quote with the actual page-534 holding language beginning with \\\"In summary, we hold...\\\" or with the visible content-page quote if that is the intended quote.\",\"evidence_quote\":\"In summary, we hold that administrative searches of the kind at issue here are significant intrusions upon the interests protected by the Fourth Amendment, that such searches when authorized and conducted without a warrant procedure lack the traditional safeguards which the Fourth Amendment guarantees to the individual,\",\"needs_cl\":false,\"locator_note\":\"text/Camara v. Municipal Court__da85ad.txt at star page *534; lake pinpoints[] currently has quote_fidelity=mismatch.\"},\"reasons\":[\"Payload quote is \\\"such a warrant may issue. ## Rule Administrative inspections require a warrant procedure:\\\", which is not the page-534 opinion passage.\",\"The disclosed opinion text at *534 contains the Court's holding beginning \\\"In summary, we hold...\\\".\"],\"breaks_true_positives\":true,\"residual_risks\":[\"The visible content_page Rule quote for pin-534 appears to track the opinion separately; this refutation is directed at the assertion payload/lake pinpoint quote.\"],\"suggested_tightening\":\"Use the exact *534 holding sentence and avoid harvesting text across content-page headings.\"},{\"assertion_id\":\"fd111b2f54df4f87\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The quote is substantively the correct page-538 passage, but it is not character-faithful because the source uses curly double quotation marks around “probable cause,” while the payload uses straight single quotes.\",\"severity\":\"low\",\"proposed_fix\":\"Change the quote opening to use the opinion's exact typography: “probable cause” to issue a warrant to inspect must exist if reasonable legislative or administrative standards...\",\"evidence_quote\":\"Having concluded that the area inspection is a “reasonable” search of private property within the meaning of the Fourth Amendment, it is obvious that “probable cause” to issue a warrant to inspect must exist if reasonable legislative or administrative standards for conducting an area inspection are satisfied with respect to a particular dwelling.\",\"needs_cl\":false,\"locator_note\":\"text/Camara v. Municipal Court__da85ad.txt at star page *538.\"},\"reasons\":[\"The quoted sentence appears at *538 and supports the page's probable-cause proposition.\",\"Strict character fidelity fails only on the quotation marks around probable cause.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"No support defect found for the proposition or page pin; this is a typographic quote-fidelity correction.\"],\"suggested_tightening\":\"Preserve the source's curly double quotation marks around “probable cause” in the quoted text.\"},{\"assertion_id\":\"b71eb672fd223069\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside Lens A, so no substantive treatment finding is raised.\",\"The payload matches the disclosed lake treatment fields: field_i_validity=good_law, as_of_content=1967-06-05, as_of_treatment=2026-06-30, varies_by_point=false, and the same scope note.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment was not audited under Lens A.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed all 4 assertion_ids in group_inventory.jsonl exactly once using only disclosed files.\"}",
   "summary": {
-    "at": "2026-07-09T23:18:14-04:00",
-    "attempts": 2,
+    "at": "2026-07-10T17:49:07-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-19bf574c52",
+      "F-S9-PR-cf8d1313c7"
+    ],
     "group_id": "_overhaul2/lake/cases/Camara v. Municipal Court.json",
     "group_total_assertions": 4,
     "lake_only_cases": [],
@@ -16,21 +101,59 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-232af584.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 4,
     "run": "prod",
     "text_disclosed_cases": [
       "Camara v. Municipal Court"
     ],
     "tokens": {
-      "input": 828,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 828
+      "input": 239206,
+      "output": 7376,
+      "source": "codex-events",
+      "total": 246582
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 2.6
+    "verdict_map": {
+      "2f38a10b7ceb9d84": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "b71eb672fd223069": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "f63f308b2738abb4": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "fd111b2f54df4f87": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-19bf574c52",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-cf8d1313c7",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 143.5
   }
 }

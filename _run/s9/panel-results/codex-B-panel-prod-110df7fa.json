@@ -1,38 +1,172 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "content/cases/United States v. Young.md",
+    "lens": "B",
+    "notes": "Reviewed all 5 inventory rows under lens B only, using only disclosed workspace files.",
+    "reviewed": [
+      {
+        "assertion_id": "aa37a6f65e00395a",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Frontier stub: treatment/progeny intentionally not derived until S6 promotion.",
+          "locator_note": "lake.treatment.scope_note; lake.treatment.as_of_treatment=null; lake.progeny.rows_cached=0",
+          "needs_cl": true,
+          "problem": "The disclosed record verifies the case identity and citation, but not the currency/liveness of the authority under lens B. Treatment and progeny are expressly unverified.",
+          "proposed_fix": "Treat the cite as identity-verified only, or complete citator/progeny verification before relying on it as live law.",
+          "severity": "medium"
+        },
+        "dimension": "existence",
+        "reasons": [
+          "Lake confirms United States v. Young, 964 F.3d 938, Tenth Circuit, decided 2020-07-07.",
+          "Lake treatment has field_i_validity='unverified' and no as-of treatment date, so continued live-law status is not verifiable from disclosed evidence."
+        ],
+        "residual_risks": [
+          "The case may remain good law, but that cannot be confirmed from this record."
+        ],
+        "suggested_tightening": "Separate identity verification from live-law verification in the existence assertion.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": false
+      },
+      {
+        "assertion_id": "3a78222e08939da4",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "Support/home-role merits are outside lens B.",
+          "No disclosed treatment field contradicts the page's explicit unverified-treatment status."
+        ],
+        "residual_risks": [
+          "Lens B did not test whether the case deserves the 'Key' home role."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "3de061167f1e6f68",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "Support/holding accuracy is outside lens B.",
+          "The page does not claim verified positive treatment for this holding; it separately marks treatment as unverified."
+        ],
+        "residual_risks": [
+          "Lens B did not test support or quote fidelity for the holding."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "9407d93cdc42d6b6",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The content treatment fields match the lake treatment judgment: field_i_validity and composite_basis are unverified, as-of fields are null, and varies_by_point is false.",
+          "Lake treatment edges are empty and progeny rows_cached is 0, consistent with the page's disclaimer that subsequent treatment has not been machine-verified."
+        ],
+        "residual_risks": [
+          "Because treatment is unverified, this record does not prove absence of negative subsequent treatment."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "bd8e54a6a59014cc",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The opinion text is marked 'PUBLISH'.",
+          "Lake identifies the court as the U.S. Court of Appeals, 10th Cir., circuit ca10, and the citation as 964 F.3d 938, supporting the in-circuit binding-weight label at issuance."
+        ],
+        "residual_risks": [
+          "The weight label does not resolve later negative treatment; treatment remains unverified."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"content/cases/United States v. Young.md\",\"reviewed\":[{\"assertion_id\":\"aa37a6f65e00395a\",\"dimension\":\"existence\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":false,\"defect\":{\"problem\":\"The disclosed record verifies the case identity and citation, but not the currency/liveness of the authority under lens B. Treatment and progeny are expressly unverified.\",\"severity\":\"medium\",\"proposed_fix\":\"Treat the cite as identity-verified only, or complete citator/progeny verification before relying on it as live law.\",\"evidence_quote\":\"Frontier stub: treatment/progeny intentionally not derived until S6 promotion.\",\"needs_cl\":true,\"locator_note\":\"lake.treatment.scope_note; lake.treatment.as_of_treatment=null; lake.progeny.rows_cached=0\"},\"reasons\":[\"Lake confirms United States v. Young, 964 F.3d 938, Tenth Circuit, decided 2020-07-07.\",\"Lake treatment has field_i_validity='unverified' and no as-of treatment date, so continued live-law status is not verifiable from disclosed evidence.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The case may remain good law, but that cannot be confirmed from this record.\"],\"suggested_tightening\":\"Separate identity verification from live-law verification in the existence assertion.\"},{\"assertion_id\":\"3a78222e08939da4\",\"dimension\":\"support\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Support/home-role merits are outside lens B.\",\"No disclosed treatment field contradicts the page's explicit unverified-treatment status.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Lens B did not test whether the case deserves the 'Key' home role.\"],\"suggested_tightening\":null},{\"assertion_id\":\"3de061167f1e6f68\",\"dimension\":\"support\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Support/holding accuracy is outside lens B.\",\"The page does not claim verified positive treatment for this holding; it separately marks treatment as unverified.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Lens B did not test support or quote fidelity for the holding.\"],\"suggested_tightening\":null},{\"assertion_id\":\"9407d93cdc42d6b6\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The content treatment fields match the lake treatment judgment: field_i_validity and composite_basis are unverified, as-of fields are null, and varies_by_point is false.\",\"Lake treatment edges are empty and progeny rows_cached is 0, consistent with the page's disclaimer that subsequent treatment has not been machine-verified.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Because treatment is unverified, this record does not prove absence of negative subsequent treatment.\"],\"suggested_tightening\":null},{\"assertion_id\":\"bd8e54a6a59014cc\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The opinion text is marked 'PUBLISH'.\",\"Lake identifies the court as the U.S. Court of Appeals, 10th Cir., circuit ca10, and the citation as 964 F.3d 938, supporting the in-circuit binding-weight label at issuance.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The weight label does not resolve later negative treatment; treatment remains unverified.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed all 5 inventory rows under lens B only, using only disclosed workspace files.\"}",
   "summary": {
-    "at": "2026-07-09T23:14:28-04:00",
-    "attempts": 2,
+    "at": "2026-07-10T17:21:24-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-ab6938ef51"
+    ],
     "group_id": "content/cases/United States v. Young.md",
     "group_total_assertions": 5,
-    "lake_only_cases": [
-      "United States v. Young"
-    ],
+    "lake_only_cases": [],
     "lane": "codex-B",
     "lane_id": "codex-B-panel-prod-110df7fa",
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-110df7fa.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
-    "resolution_notes": [
-      "case 'United States v. Young' has no lead_opinion_id (text undisclosed)"
-    ],
-    "reviewed_count": 0,
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
     "run": "prod",
-    "text_disclosed_cases": [],
+    "text_disclosed_cases": [
+      "United States v. Young"
+    ],
     "tokens": {
-      "input": 752,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 752
+      "input": 126238,
+      "output": 6784,
+      "source": "codex-events",
+      "total": 133022
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 3.1
+    "verdict_map": {
+      "3a78222e08939da4": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "3de061167f1e6f68": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "9407d93cdc42d6b6": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "aa37a6f65e00395a": {
+        "dimension": "existence",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": false
+      },
+      "bd8e54a6a59014cc": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-ab6938ef51",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 131.2
   }
 }

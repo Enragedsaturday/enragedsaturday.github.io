@@ -1,13 +1,98 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Brigham City v. Stuart.json",
+    "lens": "A",
+    "notes": "Reviewed every group_inventory.jsonl row exactly once under Lens A using only disclosed files.",
+    "reviewed": [
+      {
+        "assertion_id": "b2011975b1fc0656",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record is verified for Brigham City v. Stuart, U.S. Supreme Court, decided 2006-05-22, docket 05-502.",
+          "The official citation in the lake is 547 U.S. 398, and the parallel/vendor citations match the inventory payload: 126 S. Ct. 1943; 164 L. Ed. 2d 650; 2006 U.S. LEXIS 4155."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "9f814fda7fa33a44",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "In this case we consider whether police may enter a home without a warrant when they have an objectively reasonable basis for believing that an occupant is seriously injured or imminently threatened with such injury. We conclude that they may.",
+          "locator_note": "pin-400; lake page is null and pinpoint_status is slip-only.",
+          "needs_cl": true,
+          "problem": "pin-400's stored pinpoint quote is not an opinion quote; it is page markdown/header/background text and the lake itself marks quote_fidelity as mismatch with page null/slip-only status.",
+          "proposed_fix": "Replace pin-400 with the actual opinion passage supporting the rule, or remove the verbatim quote/pincite until the pinpoint quote and official page can be validated.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The inventory/lake quote for pin-400 begins with page markdown ('--- # Brigham City v. Stuart ...') rather than text from the opinion.",
+          "The same legal proposition is supported by the cached opinion text, but not by the stored pin-400 quote as framed."
+        ],
+        "residual_risks": [
+          "The official page 400 pincite is not independently verifiable from the disclosed slip-text page markers because the lake pin has page null."
+        ],
+        "suggested_tightening": "Use the exact opinion sentence beginning 'In this case we consider whether police may enter...' and validate the official-page pin separately.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "a608fc0595312b27",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "An action is “reasonable” under the Fourth Amendment, regardless of the individual officer’s state of mind, “as long as the circumstances, viewed objectively, justify [the] action.” Scott v. United States, 436 U. S. 128, 138 (1978) (emphasis added). The officer’s subjective motivation is irrelevant.",
+          "locator_note": "pin-404; lake page is null and pinpoint_status is slip-only.",
+          "needs_cl": false,
+          "problem": "The pin-404 quote is not character-faithful to the cached opinion text: it normalizes curly quotation marks/apostrophes to straight marks and omits the intervening citation/parenthetical with an ellipsis; the lake also marks quote_fidelity as mismatch.",
+          "proposed_fix": "Either quote the passage with the exact characters from the cached text and a clear ellipsis/citation omission, or paraphrase it instead of presenting it as a verbatim quotation.",
+          "severity": "medium"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The substantive words are supported by the opinion text, but the displayed/store quote is not character-faithful under the strict quote-fidelity lens.",
+          "The lake pinpoint itself records quote_fidelity as mismatch."
+        ],
+        "residual_risks": [
+          "The official page 404 pincite is not separately verified by the disclosed slip-only text/lake page-null metadata."
+        ],
+        "suggested_tightening": "Preserve the opinion's typographic quotation marks and apostrophes, or convert the sentence to a non-quoted paraphrase.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "2c4be1373a3ace6d",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A; no support or quote-fidelity defect is raised.",
+          "The treatment payload matches the disclosed lake treatment fields: field_i_validity good_law, as_of_content 2006-05-22, as_of_treatment 2026-06-30, varies_by_point false, and the same scope_note."
+        ],
+        "residual_risks": [
+          "Treatment/currency should be evaluated by Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Brigham City v. Stuart.json\",\"reviewed\":[{\"assertion_id\":\"b2011975b1fc0656\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake identity record is verified for Brigham City v. Stuart, U.S. Supreme Court, decided 2006-05-22, docket 05-502.\",\"The official citation in the lake is 547 U.S. 398, and the parallel/vendor citations match the inventory payload: 126 S. Ct. 1943; 164 L. Ed. 2d 650; 2006 U.S. LEXIS 4155.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"9f814fda7fa33a44\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"pin-400's stored pinpoint quote is not an opinion quote; it is page markdown/header/background text and the lake itself marks quote_fidelity as mismatch with page null/slip-only status.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-400 with the actual opinion passage supporting the rule, or remove the verbatim quote/pincite until the pinpoint quote and official page can be validated.\",\"evidence_quote\":\"In this case we consider whether police may enter a home without a warrant when they have an objectively reasonable basis for believing that an occupant is seriously injured or imminently threatened with such injury. We conclude that they may.\",\"needs_cl\":true,\"locator_note\":\"pin-400; lake page is null and pinpoint_status is slip-only.\"},\"reasons\":[\"The inventory/lake quote for pin-400 begins with page markdown ('--- # Brigham City v. Stuart ...') rather than text from the opinion.\",\"The same legal proposition is supported by the cached opinion text, but not by the stored pin-400 quote as framed.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The official page 400 pincite is not independently verifiable from the disclosed slip-text page markers because the lake pin has page null.\"],\"suggested_tightening\":\"Use the exact opinion sentence beginning 'In this case we consider whether police may enter...' and validate the official-page pin separately.\"},{\"assertion_id\":\"a608fc0595312b27\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The pin-404 quote is not character-faithful to the cached opinion text: it normalizes curly quotation marks/apostrophes to straight marks and omits the intervening citation/parenthetical with an ellipsis; the lake also marks quote_fidelity as mismatch.\",\"severity\":\"medium\",\"proposed_fix\":\"Either quote the passage with the exact characters from the cached text and a clear ellipsis/citation omission, or paraphrase it instead of presenting it as a verbatim quotation.\",\"evidence_quote\":\"An action is “reasonable” under the Fourth Amendment, regardless of the individual officer’s state of mind, “as long as the circumstances, viewed objectively, justify [the] action.” Scott v. United States, 436 U. S. 128, 138 (1978) (emphasis added). The officer’s subjective motivation is irrelevant.\",\"needs_cl\":false,\"locator_note\":\"pin-404; lake page is null and pinpoint_status is slip-only.\"},\"reasons\":[\"The substantive words are supported by the opinion text, but the displayed/store quote is not character-faithful under the strict quote-fidelity lens.\",\"The lake pinpoint itself records quote_fidelity as mismatch.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The official page 404 pincite is not separately verified by the disclosed slip-only text/lake page-null metadata.\"],\"suggested_tightening\":\"Preserve the opinion's typographic quotation marks and apostrophes, or convert the sentence to a non-quoted paraphrase.\"},{\"assertion_id\":\"2c4be1373a3ace6d\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside Lens A; no support or quote-fidelity defect is raised.\",\"The treatment payload matches the disclosed lake treatment fields: field_i_validity good_law, as_of_content 2006-05-22, as_of_treatment 2026-06-30, varies_by_point false, and the same scope_note.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment/currency should be evaluated by Lens B.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed every group_inventory.jsonl row exactly once under Lens A using only disclosed files.\"}",
   "summary": {
-    "at": "2026-07-09T23:17:25-04:00",
-    "attempts": 2,
+    "at": "2026-07-10T17:45:40-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-e3685a3f5c",
+      "F-S9-PR-bcff4bee20"
+    ],
     "group_id": "_overhaul2/lake/cases/Brigham City v. Stuart.json",
     "group_total_assertions": 4,
     "lake_only_cases": [],
@@ -16,21 +101,59 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-2b0871b6.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 4,
     "run": "prod",
     "text_disclosed_cases": [
       "Brigham City v. Stuart"
     ],
     "tokens": {
-      "input": 827,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 827
+      "input": 224497,
+      "output": 7159,
+      "source": "codex-events",
+      "total": 231656
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 2.8
+    "verdict_map": {
+      "2c4be1373a3ace6d": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "9f814fda7fa33a44": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "a608fc0595312b27": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "b2011975b1fc0656": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-e3685a3f5c",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-bcff4bee20",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 181.3
   }
 }

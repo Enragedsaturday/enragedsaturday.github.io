@@ -1,11 +1,51 @@
 {
-  "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/United States v. Wilson.json",
+    "lens": "B",
+    "notes": "Lens B only; no support or quote-fidelity findings made.",
+    "reviewed": [
+      {
+        "assertion_id": "7c7c37c439f31331",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record identifies the case as United States v. Luke Wilson, decided 2021-09-21 by the 9th Cir., docket 18-50440.",
+          "The disclosed citation fields match the asserted display and official citation: 13 F.4th 961.",
+          "No disclosed treatment edge or progeny edge says the authority has been overruled, superseded, abrogated, or limited."
+        ],
+        "residual_risks": [
+          "Live-law status is not affirmatively verified because treatment is marked unverified and progeny was not derived."
+        ],
+        "suggested_tightening": "Keep the citation existence claim separate from any live-law claim unless citator/progeny verification is completed.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "438f18cf14a4f2ba",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The asserted treatment status is unverified, which exactly matches the lake treatment.field_i_validity and composite_basis fields.",
+          "The asserted scope note matches the lake record: Frontier stub: treatment/progeny intentionally not derived until S6 promotion.",
+          "The lake record has no treatment edges and no cached progeny rows, so the page's unverified treatment label is the correct disclosed treatment posture."
+        ],
+        "residual_risks": [
+          "Because progeny.complete_query is null and rows_cached is 0, the disclosed record cannot establish current good-law status beyond the unverified label."
+        ],
+        "suggested_tightening": "Do not upgrade this page beyond Treatment: Unverified until citator/progeny verification is completed.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"B\",\n  \"group_id\": \"_overhaul2/lake/cases/United States v. Wilson.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"7c7c37c439f31331\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake record identifies the case as United States v. Luke Wilson, decided 2021-09-21 by the 9th Cir., docket 18-50440.\",\n        \"The disclosed citation fields match the asserted display and official citation: 13 F.4th 961.\",\n        \"No disclosed treatment edge or progeny edge says the authority has been overruled, superseded, abrogated, or limited.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Live-law status is not affirmatively verified because treatment is marked unverified and progeny was not derived.\"\n      ],\n      \"suggested_tightening\": \"Keep the citation existence claim separate from any live-law claim unless citator/progeny verification is completed.\"\n    },\n    {\n      \"assertion_id\": \"438f18cf14a4f2ba\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The asserted treatment status is unverified, which exactly matches the lake treatment.field_i_validity and composite_basis fields.\",\n        \"The asserted scope note matches the lake record: Frontier stub: treatment/progeny intentionally not derived until S6 promotion.\",\n        \"The lake record has no treatment edges and no cached progeny rows, so the page's unverified treatment label is the correct disclosed treatment posture.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Because progeny.complete_query is null and rows_cached is 0, the disclosed record cannot establish current good-law status beyond the unverified label.\"\n      ],\n      \"suggested_tightening\": \"Do not upgrade this page beyond Treatment: Unverified until citator/progeny verification is completed.\"\n    }\n  ],\n  \"notes\": \"Lens B only; no support or quote-fidelity findings made.\"\n}",
   "summary": {
-    "at": "2026-07-09T23:08:29-04:00",
-    "attempts": 2,
-    "clean_attestation": false,
+    "at": "2026-07-10T16:51:09-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
     "defense_votes": [],
     "findings_emitted": [],
     "group_id": "_overhaul2/lake/cases/United States v. Wilson.json",
@@ -18,21 +58,36 @@
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-19cf8083.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [
       "case 'United States v. Wilson' has no lead_opinion_id (text undisclosed)"
     ],
-    "reviewed_count": 0,
+    "reviewed_count": 2,
     "run": "prod",
     "text_disclosed_cases": [],
     "tokens": {
-      "input": 755,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 755
+      "input": 84021,
+      "output": 4927,
+      "source": "codex-events",
+      "total": 88948
     },
-    "verdict_map": {},
+    "verdict_map": {
+      "438f18cf14a4f2ba": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "7c7c37c439f31331": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
     "votes_emitted": [],
-    "wall_clock_s": 3.0
+    "wall_clock_s": 96.7
   }
 }

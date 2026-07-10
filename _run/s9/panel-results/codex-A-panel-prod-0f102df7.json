@@ -1,0 +1,127 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Rothgery v. Gillespie County.json",
+    "lens": "A",
+    "notes": "Reviewed all 3 rows in group_inventory.jsonl exactly once. No support, pincite, or black_letter rows were present for this group.",
+    "reviewed": [
+      {
+        "assertion_id": "a09b5cdaf1195b40",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record verifies Rothgery v. Gillespie County as a U.S. Supreme Court case decided 2008-06-23.",
+          "The cited reporters in the inventory match lake.citations.all, including 554 U.S. 191, 128 S. Ct. 2578, 171 L. Ed. 2d 366, 2008 U.S. LEXIS 5057, 21 Fla. L. Weekly Fed. S 429, and 76 U.S.L.W. 4520."
+        ],
+        "residual_risks": [
+          "Lake official_selection.selected is null, but the existence/citation assertion matches the disclosed lake record."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "a60e4c24a488b741",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "marks the start of adversary judicial proceedings that trigger attachment of the Sixth Amendment right to counsel",
+          "locator_note": "pin-213",
+          "needs_cl": false,
+          "problem": "The pin-213 quote payload is not the opinion quote cited on the page; it is a harvested page-content fragment spanning Background, Issue, and Rule text, and the lake itself marks quote_fidelity as mismatch.",
+          "proposed_fix": "Replace pin-213's quote with the actual opinion sentence supporting the rule, preserving source typography or explicitly normalizing it, and re-check the official page 213 pinpoint or mark it as slip-only if official pagination is unavailable.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The disclosed text contains the rule sentence near the end of the Court's opinion, but the lake pin quote instead contains markdown-section content from content_page.md.",
+          "The payload quote includes non-opinion markers such as Issue and Rule section text, so it cannot be character-faithful to text/Rothgery v. Gillespie County__79dbc7.txt.",
+          "The lake pin has page null and pinpoint_status slip-only, so the page's official 554 U.S. at 213 pin is not independently confirmed by the disclosed pin metadata."
+        ],
+        "residual_risks": [
+          "The substantive rule appears supported, but the quote-pin metadata is not reliable as framed."
+        ],
+        "suggested_tightening": "Keep the Rule quote tied to the actual opinion sentence and do not use generated page prose as a pinpoint quote.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "5a5fa419e365d784",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment is outside lens A's support/quote-fidelity charter.",
+          "The content page treatment fields match the disclosed lake treatment fields: field_i_validity good_law, as_of_content 2008-06-23, as_of_treatment 2026-06-30, and varies_by_point false."
+        ],
+        "residual_risks": [
+          "Treatment/currency was not substantively reviewed under lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"A\",\n  \"group_id\": \"_overhaul2/lake/cases/Rothgery v. Gillespie County.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"a09b5cdaf1195b40\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake identity record verifies Rothgery v. Gillespie County as a U.S. Supreme Court case decided 2008-06-23.\",\n        \"The cited reporters in the inventory match lake.citations.all, including 554 U.S. 191, 128 S. Ct. 2578, 171 L. Ed. 2d 366, 2008 U.S. LEXIS 5057, 21 Fla. L. Weekly Fed. S 429, and 76 U.S.L.W. 4520.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Lake official_selection.selected is null, but the existence/citation assertion matches the disclosed lake record.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"a60e4c24a488b741\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The pin-213 quote payload is not the opinion quote cited on the page; it is a harvested page-content fragment spanning Background, Issue, and Rule text, and the lake itself marks quote_fidelity as mismatch.\",\n        \"severity\": \"high\",\n        \"proposed_fix\": \"Replace pin-213's quote with the actual opinion sentence supporting the rule, preserving source typography or explicitly normalizing it, and re-check the official page 213 pinpoint or mark it as slip-only if official pagination is unavailable.\",\n        \"evidence_quote\": \"marks the start of adversary judicial proceedings that trigger attachment of the Sixth Amendment right to counsel\",\n        \"needs_cl\": false,\n        \"locator_note\": \"pin-213\"\n      },\n      \"reasons\": [\n        \"The disclosed text contains the rule sentence near the end of the Court's opinion, but the lake pin quote instead contains markdown-section content from content_page.md.\",\n        \"The payload quote includes non-opinion markers such as Issue and Rule section text, so it cannot be character-faithful to text/Rothgery v. Gillespie County__79dbc7.txt.\",\n        \"The lake pin has page null and pinpoint_status slip-only, so the page's official 554 U.S. at 213 pin is not independently confirmed by the disclosed pin metadata.\"\n      ],\n      \"breaks_true_positives\": true,\n      \"residual_risks\": [\n        \"The substantive rule appears supported, but the quote-pin metadata is not reliable as framed.\"\n      ],\n      \"suggested_tightening\": \"Keep the Rule quote tied to the actual opinion sentence and do not use generated page prose as a pinpoint quote.\"\n    },\n    {\n      \"assertion_id\": \"5a5fa419e365d784\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Treatment is outside lens A's support/quote-fidelity charter.\",\n        \"The content page treatment fields match the disclosed lake treatment fields: field_i_validity good_law, as_of_content 2008-06-23, as_of_treatment 2026-06-30, and varies_by_point false.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Treatment/currency was not substantively reviewed under lens A.\"\n      ],\n      \"suggested_tightening\": null\n    }\n  ],\n  \"notes\": \"Reviewed all 3 rows in group_inventory.jsonl exactly once. No support, pincite, or black_letter rows were present for this group.\"\n}",
+  "summary": {
+    "at": "2026-07-10T02:29:51-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-e3153c6f5c"
+    ],
+    "group_id": "_overhaul2/lake/cases/Rothgery v. Gillespie County.json",
+    "group_total_assertions": 3,
+    "lake_only_cases": [],
+    "lane": "codex-A",
+    "lane_id": "codex-A-panel-prod-0f102df7",
+    "lens": "A",
+    "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-0f102df7.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 3,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Rothgery v. Gillespie County"
+    ],
+    "tokens": {
+      "input": 225389,
+      "output": 6421,
+      "source": "codex-events",
+      "total": 231810
+    },
+    "verdict_map": {
+      "5a5fa419e365d784": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "a09b5cdaf1195b40": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "a60e4c24a488b741": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-e3153c6f5c",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 161.1
+  }
+}

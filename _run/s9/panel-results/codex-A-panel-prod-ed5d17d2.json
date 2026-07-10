@@ -1,0 +1,145 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/New York v. Class.json",
+    "lens": "A",
+    "notes": "Reviewed every assertion_id in group_inventory.jsonl exactly once under Lens A.",
+    "reviewed": [
+      {
+        "assertion_id": "5f9b872173d5b1f7",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record is verified for New York v. Class, U.S. Supreme Court, decided 1986-02-25.",
+          "The official citation 475 U.S. 106 and listed parallel/vendor citations match the lake citation fields."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "1c85cb4ffc5aa7e9",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "In sum, because of the important role played by the VIN",
+          "locator_note": "text/New York v. Class__13e66f.txt contains the relevant passage at the page-number label *114; lake pin-114 has star_marker null and quote_fidelity mismatch.",
+          "needs_cl": false,
+          "problem": "The pin-114 stored/inventoried quote is not an opinion quote; it captures content-page header/background text and omits the actual quoted passage tied to 475 U.S. at 114.",
+          "proposed_fix": "Replace pin-114 with the actual opinion sentence used on the content page, beginning after 'In sum,' and ending with 'no reasonable expectation of privacy in the VIN.'",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The disclosed text contains the actual page-114 passage supporting the VIN privacy quote.",
+          "The lake/inventory pin-114 quote instead begins with the markdown frontmatter/page heading and background material, which is not the cited opinion text."
+        ],
+        "residual_risks": [
+          "The displayed quote in content_page.md appears faithful; the defect is in the lake/inventory pinpoint quote field."
+        ],
+        "suggested_tightening": "Set pin-114 to the exact opinion quote and, if supported by the schema, record page/star marker 114 rather than slip-only/null.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "a3d380ca14ea7f66",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The pin-119 quote appears verbatim in the cached opinion text.",
+          "The quote is located at the page-number label *119 and matches the lake pinpoint text."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "67a66bd17d89c4db",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A; no treatment finding is raised.",
+          "The treatment payload matches the lake treatment fields: good_law, as_of_content 1986-02-25, as_of_treatment 2026-06-30, varies_by_point false."
+        ],
+        "residual_risks": [
+          "Treatment merits are reserved for Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/New York v. Class.json\",\"reviewed\":[{\"assertion_id\":\"5f9b872173d5b1f7\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake identity record is verified for New York v. Class, U.S. Supreme Court, decided 1986-02-25.\",\"The official citation 475 U.S. 106 and listed parallel/vendor citations match the lake citation fields.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"1c85cb4ffc5aa7e9\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The pin-114 stored/inventoried quote is not an opinion quote; it captures content-page header/background text and omits the actual quoted passage tied to 475 U.S. at 114.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-114 with the actual opinion sentence used on the content page, beginning after 'In sum,' and ending with 'no reasonable expectation of privacy in the VIN.'\",\"evidence_quote\":\"In sum, because of the important role played by the VIN\",\"needs_cl\":false,\"locator_note\":\"text/New York v. Class__13e66f.txt contains the relevant passage at the page-number label *114; lake pin-114 has star_marker null and quote_fidelity mismatch.\"},\"reasons\":[\"The disclosed text contains the actual page-114 passage supporting the VIN privacy quote.\",\"The lake/inventory pin-114 quote instead begins with the markdown frontmatter/page heading and background material, which is not the cited opinion text.\"],\"breaks_true_positives\":true,\"residual_risks\":[\"The displayed quote in content_page.md appears faithful; the defect is in the lake/inventory pinpoint quote field.\"],\"suggested_tightening\":\"Set pin-114 to the exact opinion quote and, if supported by the schema, record page/star marker 114 rather than slip-only/null.\"},{\"assertion_id\":\"a3d380ca14ea7f66\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The pin-119 quote appears verbatim in the cached opinion text.\",\"The quote is located at the page-number label *119 and matches the lake pinpoint text.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"67a66bd17d89c4db\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside Lens A; no treatment finding is raised.\",\"The treatment payload matches the lake treatment fields: good_law, as_of_content 1986-02-25, as_of_treatment 2026-06-30, varies_by_point false.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment merits are reserved for Lens B.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed every assertion_id in group_inventory.jsonl exactly once under Lens A.\"}",
+  "summary": {
+    "at": "2026-07-10T18:11:24-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-93b40e4051"
+    ],
+    "group_id": "_overhaul2/lake/cases/New York v. Class.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "codex-A",
+    "lane_id": "codex-A-panel-prod-ed5d17d2",
+    "lens": "A",
+    "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-ed5d17d2.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "New York v. Class"
+    ],
+    "tokens": {
+      "input": 162712,
+      "output": 4800,
+      "source": "codex-events",
+      "total": 167512
+    },
+    "verdict_map": {
+      "1c85cb4ffc5aa7e9": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "5f9b872173d5b1f7": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "67a66bd17d89c4db": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "a3d380ca14ea7f66": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-93b40e4051",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 97.6
+  }
+}

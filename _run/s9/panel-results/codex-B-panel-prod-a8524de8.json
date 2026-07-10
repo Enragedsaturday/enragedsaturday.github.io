@@ -1,0 +1,105 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/A Quantity of Copies of Books v. Kansas.json",
+    "lens": "B",
+    "notes": "Support and quote-fidelity were not reviewed under lens B.",
+    "reviewed": [
+      {
+        "assertion_id": "8e82c6d2728ed716",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record identifies the case as A Quantity of Copies of Books v. Kansas with court_level scotus, date_decided 1964-06-22, cluster_id 106878, canonical_name_match true, and expected_citation_found true.",
+          "The official citation field selects 378 U.S. 205, matching the inventory display.",
+          "The disclosed treatment/progeny fields contain no overruled, superseded, abrogated, or limited edge; they are simply unverified."
+        ],
+        "residual_risks": [
+          "The frontier-stub treatment/progeny record does not independently certify current good-law status."
+        ],
+        "suggested_tightening": "Keep live-law claims separate from citation-existence assertions until treatment is promoted.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "db26fed4b64b7242",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "Frontier stub: treatment/progeny intentionally not derived until S6 promotion.",
+          "locator_note": "content_page.md Treatment & subsequent history; lake treatment.scope_note, treatment.edges [], progeny.rows_cached 0",
+          "needs_cl": true,
+          "problem": "The page makes affirmative current-treatment claims that the case is 'not overruled' and that the doctrine 'governs today,' but the disclosed lake record expressly says treatment/progeny were not derived.",
+          "proposed_fix": "Remove 'not overruled' and 'governs today' unless verified treatment/progeny fields are supplied; otherwise state only that treatment is unverified pending promotion.",
+          "severity": "medium"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "The inventory and lake treatment payloads list field_i_validity as unverified, with as_of_content null and as_of_treatment null.",
+          "The lake treatment edges array is empty, and progeny.rows_cached is 0, so the disclosed record gives no basis for a negative-treatment conclusion.",
+          "Under the default-to-refuted rule, the affirmative 'not overruled' and 'governs today' framing cannot stand on an unverified stub."
+        ],
+        "residual_risks": [
+          "A later treatment promotion may validate the current-law framing, but this disclosed record does not."
+        ],
+        "suggested_tightening": "Render this as an unverified historical/origin stub until populated treatment fields support a current-law label.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": false
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/A Quantity of Copies of Books v. Kansas.json\",\"reviewed\":[{\"assertion_id\":\"8e82c6d2728ed716\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record identifies the case as A Quantity of Copies of Books v. Kansas with court_level scotus, date_decided 1964-06-22, cluster_id 106878, canonical_name_match true, and expected_citation_found true.\",\"The official citation field selects 378 U.S. 205, matching the inventory display.\",\"The disclosed treatment/progeny fields contain no overruled, superseded, abrogated, or limited edge; they are simply unverified.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The frontier-stub treatment/progeny record does not independently certify current good-law status.\"],\"suggested_tightening\":\"Keep live-law claims separate from citation-existence assertions until treatment is promoted.\"},{\"assertion_id\":\"db26fed4b64b7242\",\"dimension\":\"treatment\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":false,\"defect\":{\"problem\":\"The page makes affirmative current-treatment claims that the case is 'not overruled' and that the doctrine 'governs today,' but the disclosed lake record expressly says treatment/progeny were not derived.\",\"severity\":\"medium\",\"proposed_fix\":\"Remove 'not overruled' and 'governs today' unless verified treatment/progeny fields are supplied; otherwise state only that treatment is unverified pending promotion.\",\"evidence_quote\":\"Frontier stub: treatment/progeny intentionally not derived until S6 promotion.\",\"needs_cl\":true,\"locator_note\":\"content_page.md Treatment & subsequent history; lake treatment.scope_note, treatment.edges [], progeny.rows_cached 0\"},\"reasons\":[\"The inventory and lake treatment payloads list field_i_validity as unverified, with as_of_content null and as_of_treatment null.\",\"The lake treatment edges array is empty, and progeny.rows_cached is 0, so the disclosed record gives no basis for a negative-treatment conclusion.\",\"Under the default-to-refuted rule, the affirmative 'not overruled' and 'governs today' framing cannot stand on an unverified stub.\"],\"breaks_true_positives\":true,\"residual_risks\":[\"A later treatment promotion may validate the current-law framing, but this disclosed record does not.\"],\"suggested_tightening\":\"Render this as an unverified historical/origin stub until populated treatment fields support a current-law label.\"}],\"notes\":\"Support and quote-fidelity were not reviewed under lens B.\"}",
+  "summary": {
+    "at": "2026-07-10T18:19:49-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-f4850166ff"
+    ],
+    "group_id": "_overhaul2/lake/cases/A Quantity of Copies of Books v. Kansas.json",
+    "group_total_assertions": 2,
+    "lake_only_cases": [],
+    "lane": "codex-B",
+    "lane_id": "codex-B-panel-prod-a8524de8",
+    "lens": "B",
+    "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-a8524de8.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 2,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "A Quantity of Copies of Books v. Kansas"
+    ],
+    "tokens": {
+      "input": 106213,
+      "output": 5865,
+      "source": "codex-events",
+      "total": 112078
+    },
+    "verdict_map": {
+      "8e82c6d2728ed716": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "db26fed4b64b7242": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": false
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-f4850166ff",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 114.0
+  }
+}

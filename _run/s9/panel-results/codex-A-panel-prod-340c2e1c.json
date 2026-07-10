@@ -1,22 +1,170 @@
 {
-  "raw_reply": "",
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "group_id": "content/cases/Robinson v. Commonwealth.md",
+    "lens": "A",
+    "notes": "No quote_fidelity, pincite, or black_letter rows appear in group_inventory.jsonl. If the visible Rule quote is later inventoried, it needs separate quote-fidelity review: the page normalizes dash spacing, changes the quotation marks around “a comprehensive chronicle,” and omits the intervening Carpenter citation without an ellipsis.",
+    "reviewed": [
+      {
+        "assertion_id": "300afa3f803dc101",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "\"official\": null,\n    \"parallel\": [],\n    \"vendor_neutral\": [],\n    \"all\": [],\n    \"display\": null,\n    \"official_selection\": {\n      \"court_class\": \"state\",\n      \"selected\": null,\n      \"reason\": \"no_official_class_citation\"\n    },\n    \"slip_only\": true",
+          "locator_note": "lake/Robinson v. Commonwealth__8d937b.json identity.court, identity.docket, citations.official, citations.display, citations.slip_only; content_page.md frontmatter citation.",
+          "needs_cl": false,
+          "problem": "The case exists, but the citation metadata is not exact to the lake record: the page uses '(Virginia 2026)' rather than the disclosed court 'Va. Ct. App.', and the inventory marks official_citation_present=true even though the lake record says there is no official/display citation and this is slip-only.",
+          "proposed_fix": "Use 'No. 1912-24-1, slip op. (Va. Ct. App. 2026)' or the fuller 'Record No. 1912-24-1, slip op. (Va. Ct. App. Apr. 7, 2026)', and set official_citation_present=false.",
+          "severity": "medium"
+        },
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity gives court as \"Va. Ct. App.\", docket \"1912-24-1\", year 2026, and date_decided \"2026-04-07\".",
+          "Lake citations disclose no official, neutral, parallel, or display citation and mark the record slip_only=true."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Keep the slip-only/no-reporter-cite note, but make the short citation parenthetical match Va. Ct. App.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "fa400fdbe228c726",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "The opinion is a state appellate application of Fourth Amendment doctrine to a Flock ALPR camera system: \"the City of Norfolk installed a system of 172 cameras at intersections on public roadways throughout Norfolk.\"",
+          "The court expressly analyzes Carpenter and distinguishes CSLI/dragnet surveillance from this Flock ALPR record, so the home role \"Lower-court development (ALPR network)\" is supported."
+        ],
+        "residual_risks": [
+          "The role is a corpus taxonomy label, not a holding stated verbatim by the court."
+        ],
+        "suggested_tightening": "Use \"fixed Flock ALPR network\" if the home page distinguishes fixed ALPR from mobile ALPR.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "faf7c5390d8fc920",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "The facts match the holding: the cameras captured still images of cars and plates, stored license plate and vehicle-feature data for 30 days, and generally could not track a vehicle in real time.",
+          "The court states: \"we therefore hold that the use of the Flock system in this case did not constitute a search that violated the Fourth Amendment.\"",
+          "The warrant point is supported by the conclusion: \"the police were not required under the Fourth Amendment to obtain a search warrant in order to access the Flock system.\"",
+          "The Carpenter limitation is supported because the opinion says the cameras did not continuously monitor all travels, did not create an intimate window, and were not a detailed chronicle of a person's physical presence."
+        ],
+        "residual_risks": [
+          "The opinion is strongly fact-bound; any reuse should preserve \"on this record\" and the current Norfolk configuration limits."
+        ],
+        "suggested_tightening": "Keep the limits: current Norfolk system, public thoroughfares, still vehicle images, 30-day retention, and no real-time tracking.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "456a7657c7878f4c",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Lake identity lists court_level as \"state\" and court as \"Va. Ct. App.\", which supports a nonbinding persuasive-state label in a federal search-and-seizure corpus.",
+          "Lens A does not audit treatment/currency; no treatment defect is raised."
+        ],
+        "residual_risks": [
+          "Good-law and citator treatment remain for Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "8da96345d903b349",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The treatment payload matches the lake treatment fields: field_i_validity \"unverified\", as_of_content null, as_of_treatment null, composite_basis \"unverified\", varies_by_point false, and the same frontier-stub scope note.",
+          "Lens A records the treatment assertion only and raises no treatment/currency finding."
+        ],
+        "residual_risks": [
+          "Good-law and progeny verification are outside Lens A and remain for Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"content/cases/Robinson v. Commonwealth.md\",\"reviewed\":[{\"assertion_id\":\"300afa3f803dc101\",\"dimension\":\"existence\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The case exists, but the citation metadata is not exact to the lake record: the page uses '(Virginia 2026)' rather than the disclosed court 'Va. Ct. App.', and the inventory marks official_citation_present=true even though the lake record says there is no official/display citation and this is slip-only.\",\"severity\":\"medium\",\"proposed_fix\":\"Use 'No. 1912-24-1, slip op. (Va. Ct. App. 2026)' or the fuller 'Record No. 1912-24-1, slip op. (Va. Ct. App. Apr. 7, 2026)', and set official_citation_present=false.\",\"evidence_quote\":\"\\\"official\\\": null,\\n    \\\"parallel\\\": [],\\n    \\\"vendor_neutral\\\": [],\\n    \\\"all\\\": [],\\n    \\\"display\\\": null,\\n    \\\"official_selection\\\": {\\n      \\\"court_class\\\": \\\"state\\\",\\n      \\\"selected\\\": null,\\n      \\\"reason\\\": \\\"no_official_class_citation\\\"\\n    },\\n    \\\"slip_only\\\": true\",\"needs_cl\":false,\"locator_note\":\"lake/Robinson v. Commonwealth__8d937b.json identity.court, identity.docket, citations.official, citations.display, citations.slip_only; content_page.md frontmatter citation.\"},\"reasons\":[\"Lake identity gives court as \\\"Va. Ct. App.\\\", docket \\\"1912-24-1\\\", year 2026, and date_decided \\\"2026-04-07\\\".\",\"Lake citations disclose no official, neutral, parallel, or display citation and mark the record slip_only=true.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":\"Keep the slip-only/no-reporter-cite note, but make the short citation parenthetical match Va. Ct. App.\"},{\"assertion_id\":\"fa400fdbe228c726\",\"dimension\":\"support\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The opinion is a state appellate application of Fourth Amendment doctrine to a Flock ALPR camera system: \\\"the City of Norfolk installed a system of 172 cameras at intersections on public roadways throughout Norfolk.\\\"\",\"The court expressly analyzes Carpenter and distinguishes CSLI/dragnet surveillance from this Flock ALPR record, so the home role \\\"Lower-court development (ALPR network)\\\" is supported.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The role is a corpus taxonomy label, not a holding stated verbatim by the court.\"],\"suggested_tightening\":\"Use \\\"fixed Flock ALPR network\\\" if the home page distinguishes fixed ALPR from mobile ALPR.\"},{\"assertion_id\":\"faf7c5390d8fc920\",\"dimension\":\"support\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The facts match the holding: the cameras captured still images of cars and plates, stored license plate and vehicle-feature data for 30 days, and generally could not track a vehicle in real time.\",\"The court states: \\\"we therefore hold that the use of the Flock system in this case did not constitute a search that violated the Fourth Amendment.\\\"\",\"The warrant point is supported by the conclusion: \\\"the police were not required under the Fourth Amendment to obtain a search warrant in order to access the Flock system.\\\"\",\"The Carpenter limitation is supported because the opinion says the cameras did not continuously monitor all travels, did not create an intimate window, and were not a detailed chronicle of a person's physical presence.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The opinion is strongly fact-bound; any reuse should preserve \\\"on this record\\\" and the current Norfolk configuration limits.\"],\"suggested_tightening\":\"Keep the limits: current Norfolk system, public thoroughfares, still vehicle images, 30-day retention, and no real-time tracking.\"},{\"assertion_id\":\"456a7657c7878f4c\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity lists court_level as \\\"state\\\" and court as \\\"Va. Ct. App.\\\", which supports a nonbinding persuasive-state label in a federal search-and-seizure corpus.\",\"Lens A does not audit treatment/currency; no treatment defect is raised.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Good-law and citator treatment remain for Lens B.\"],\"suggested_tightening\":null},{\"assertion_id\":\"8da96345d903b349\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The treatment payload matches the lake treatment fields: field_i_validity \\\"unverified\\\", as_of_content null, as_of_treatment null, composite_basis \\\"unverified\\\", varies_by_point false, and the same frontier-stub scope note.\",\"Lens A records the treatment assertion only and raises no treatment/currency finding.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Good-law and progeny verification are outside Lens A and remain for Lens B.\"],\"suggested_tightening\":null}],\"notes\":\"No quote_fidelity, pincite, or black_letter rows appear in group_inventory.jsonl. If the visible Rule quote is later inventoried, it needs separate quote-fidelity review: the page normalizes dash spacing, changes the quotation marks around “a comprehensive chronicle,” and omits the intervening Carpenter citation without an ellipsis.\"}",
   "summary": {
-    "at": "2026-07-09T23:12:05-04:00",
-    "auth_flagged": true,
-    "clean_attestation": false,
+    "at": "2026-07-10T17:06:23-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
+    "defense_votes": [],
     "findings_emitted": [],
-    "genuine_auth_stop": true,
     "group_id": "content/cases/Robinson v. Commonwealth.md",
     "group_total_assertions": 5,
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-340c2e1c",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-340c2e1c.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "d to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T03:11:57.330497Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T03:11:58.113489Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T03:11:59.376161Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T03:12:01.489173Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T03:12:05.436266Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Robinson v. Commonwealth"
+    ],
+    "tokens": {
+      "input": 129149,
+      "output": 8453,
+      "source": "codex-events",
+      "total": 137602
+    },
+    "verdict_map": {
+      "300afa3f803dc101": {
+        "dimension": "existence",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "456a7657c7878f4c": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "8da96345d903b349": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "fa400fdbe228c726": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "faf7c5390d8fc920": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-e8068468d5",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 163.9
   }
 }

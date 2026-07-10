@@ -1,13 +1,99 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Oregon v. Elstad.json",
+    "lens": "A",
+    "notes": "Treatment reviewed only to the limited extent permitted by Lens A; no treatment/currency defect is asserted.",
+    "reviewed": [
+      {
+        "assertion_id": "675def41a6215ef5",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record names Oregon v. Elstad, U.S. Supreme Court, decided 1985-03-04.",
+          "The official citation in the lake record is 470 U.S. 298, with the same parallel and vendor citations listed in the inventory payload."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "0434bb6141c32af6",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "We hold today that a suspect who has once responded to unwarned yet uncoercive questioning is not thereby disabled from waiving his rights and confessing after he has been given the requisite *Miranda* warnings.",
+          "locator_note": "pin-318; the text file contains the same sentence in the paragraph with page-number label=\"318\".",
+          "needs_cl": false,
+          "problem": "The quoted sentence is supported by the disclosed opinion text at page 318, but the lake record labels the pinpoint quote_fidelity as mismatch and leaves page null. The quote should not remain flagged as a mismatch once HTML italics and Markdown emphasis are normalized.",
+          "proposed_fix": "Normalize HTML italics/Markdown emphasis, set quote_fidelity to match for this quote, and populate the page as 318.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The sentence appears in the disclosed full opinion text in the paragraph carrying the 318 page marker.",
+          "The content-page quote and lake pinpoint quote are the same except for source HTML versus Markdown styling of Miranda."
+        ],
+        "residual_risks": [
+          "Automated character-level checking may keep flagging this unless markup normalization is explicit."
+        ],
+        "suggested_tightening": "Store a canonical plain-text quote plus a rendered/Markdown version so quote-fidelity checks do not confuse styling with text.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "76ef3c5bba6437db",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "We must conclude that, absent deliberately coercive or improper tactics in obtaining the initial statement, the mere fact that a suspect has made an unwarned admission does not warrant a presumption of compulsion.",
+          "locator_note": "pin-314; text file line with page-number label=\"314\" contains the controlling rule passage, while the lake pinpoint quote includes page headings such as ## Issue and ## Rule.",
+          "needs_cl": false,
+          "problem": "pin-314's stored quote is not a verbatim opinion passage. It concatenates built-page Background/Issue/Rule prose and omits the actual page-314 rule language from the opinion.",
+          "proposed_fix": "Replace pin-314 with the actual 470 U.S. 314 passage beginning with the Court's rule language, set page to 314, and rerun quote-fidelity after markup normalization.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The lake pinpoint itself marks pin-314 quote_fidelity as mismatch.",
+          "The payload quote includes built-page section headings, which are not opinion text.",
+          "The disclosed opinion text at page 314 contains the actual rule passage supporting the content page, but that is not what the lake pin-314 quote stores."
+        ],
+        "residual_risks": [
+          "The visible content-page rule quote appears supportable at 470 U.S. 314 if the broken lake pinpoint is replaced."
+        ],
+        "suggested_tightening": "Pin extraction should target the quoted legal passage, not surrounding page prose or Markdown headings.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "53496184a22c5743",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A, so no treatment finding is raised.",
+          "The inventory treatment fields are present in lake.treatment and mirrored in the content-page frontmatter."
+        ],
+        "residual_risks": [
+          "Lens B must assess treatment and currency."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Oregon v. Elstad.json\",\"reviewed\":[{\"assertion_id\":\"675def41a6215ef5\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake identity record names Oregon v. Elstad, U.S. Supreme Court, decided 1985-03-04.\",\"The official citation in the lake record is 470 U.S. 298, with the same parallel and vendor citations listed in the inventory payload.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"0434bb6141c32af6\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The quoted sentence is supported by the disclosed opinion text at page 318, but the lake record labels the pinpoint quote_fidelity as mismatch and leaves page null. The quote should not remain flagged as a mismatch once HTML italics and Markdown emphasis are normalized.\",\"severity\":\"low\",\"proposed_fix\":\"Normalize HTML italics/Markdown emphasis, set quote_fidelity to match for this quote, and populate the page as 318.\",\"evidence_quote\":\"We hold today that a suspect who has once responded to unwarned yet uncoercive questioning is not thereby disabled from waiving his rights and confessing after he has been given the requisite *Miranda* warnings.\",\"needs_cl\":false,\"locator_note\":\"pin-318; the text file contains the same sentence in the paragraph with page-number label=\\\"318\\\".\"},\"reasons\":[\"The sentence appears in the disclosed full opinion text in the paragraph carrying the 318 page marker.\",\"The content-page quote and lake pinpoint quote are the same except for source HTML versus Markdown styling of Miranda.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Automated character-level checking may keep flagging this unless markup normalization is explicit.\"],\"suggested_tightening\":\"Store a canonical plain-text quote plus a rendered/Markdown version so quote-fidelity checks do not confuse styling with text.\"},{\"assertion_id\":\"76ef3c5bba6437db\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"pin-314's stored quote is not a verbatim opinion passage. It concatenates built-page Background/Issue/Rule prose and omits the actual page-314 rule language from the opinion.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-314 with the actual 470 U.S. 314 passage beginning with the Court's rule language, set page to 314, and rerun quote-fidelity after markup normalization.\",\"evidence_quote\":\"We must conclude that, absent deliberately coercive or improper tactics in obtaining the initial statement, the mere fact that a suspect has made an unwarned admission does not warrant a presumption of compulsion.\",\"needs_cl\":false,\"locator_note\":\"pin-314; text file line with page-number label=\\\"314\\\" contains the controlling rule passage, while the lake pinpoint quote includes page headings such as ## Issue and ## Rule.\"},\"reasons\":[\"The lake pinpoint itself marks pin-314 quote_fidelity as mismatch.\",\"The payload quote includes built-page section headings, which are not opinion text.\",\"The disclosed opinion text at page 314 contains the actual rule passage supporting the content page, but that is not what the lake pin-314 quote stores.\"],\"breaks_true_positives\":true,\"residual_risks\":[\"The visible content-page rule quote appears supportable at 470 U.S. 314 if the broken lake pinpoint is replaced.\"],\"suggested_tightening\":\"Pin extraction should target the quoted legal passage, not surrounding page prose or Markdown headings.\"},{\"assertion_id\":\"53496184a22c5743\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside Lens A, so no treatment finding is raised.\",\"The inventory treatment fields are present in lake.treatment and mirrored in the content-page frontmatter.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Lens B must assess treatment and currency.\"],\"suggested_tightening\":null}],\"notes\":\"Treatment reviewed only to the limited extent permitted by Lens A; no treatment/currency defect is asserted.\"}",
   "summary": {
-    "at": "2026-07-09T23:15:24-04:00",
-    "attempts": 2,
+    "at": "2026-07-10T17:27:30-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-a33146160e",
+      "F-S9-PR-c2f8c781c4"
+    ],
     "group_id": "_overhaul2/lake/cases/Oregon v. Elstad.json",
     "group_total_assertions": 4,
     "lake_only_cases": [],
@@ -16,21 +102,59 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-fc18deff.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 4,
     "run": "prod",
     "text_disclosed_cases": [
       "Oregon v. Elstad"
     ],
     "tokens": {
-      "input": 825,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 825
+      "input": 222496,
+      "output": 10413,
+      "source": "codex-events",
+      "total": 232909
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 6.4
+    "verdict_map": {
+      "0434bb6141c32af6": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "53496184a22c5743": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "675def41a6215ef5": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "76ef3c5bba6437db": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-a33146160e",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-c2f8c781c4",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 196.8
   }
 }

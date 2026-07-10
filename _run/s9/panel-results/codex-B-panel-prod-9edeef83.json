@@ -1,22 +1,160 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Jones v. United States.json",
+    "lens": "B",
+    "notes": "Lens B only; support and quote-fidelity were not adjudicated.",
+    "reviewed": [
+      {
+        "assertion_id": "1ae9995d3fa05ccd",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record is verified for Jones v. United States, U.S. Supreme Court, decided 1960-03-28, with cluster_id and lead_opinion_id 106022.",
+          "The lake official citation is 362 U.S. 257 and the disclosed citation set matches the inventory payload.",
+          "The disclosed treatment record limits current-law use of Jones but does not undermine the existence or identity of the cited authority."
+        ],
+        "residual_risks": [
+          "This existence verdict does not mean Jones remains current positive law on the standing rules."
+        ],
+        "suggested_tightening": "Keep the Historical/superseded treatment attached whenever this cite is used for a standing proposition.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "1687c708552524c7",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "This is a quote_fidelity row; under lens B, quote support and pin accuracy are reserved to lens A.",
+          "No independent currency or treatment assertion in this row creates a treatment defect beyond the separate treatment row reviewed below."
+        ],
+        "residual_risks": [
+          "Quote-fidelity defects, if any, are not adjudicated under this lens."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "98d065211961c525",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "This is a quote_fidelity row; under lens B, quote support and pin accuracy are reserved to lens A.",
+          "The row does not assert that the quoted Jones rule remains current positive law."
+        ],
+        "residual_risks": [
+          "Quote-fidelity defects, if any, are not adjudicated under this lens."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "2b60daf32b09a23f",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Treatment: **overruled** *(as of 2026-06-30)*",
+          "locator_note": "content_page.md rendered header and Treatment section versus lake treatment.field_i_validity and group_inventory payload.",
+          "needs_cl": false,
+          "problem": "The canonical treatment assertion survives, but the built page's rendered treatment label says overruled while the inventory and lake canonical field_i_validity say superseded. That is a label-consistency defect rather than a contrary good-law result.",
+          "proposed_fix": "Render the primary badge/status as superseded or superseded/historical, and reserve overruled/disavowed language for the scope note describing Rakas and Salvucci.",
+          "severity": "low"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "The inventory payload and lake treatment both set field_i_validity to superseded as of 2026-06-30.",
+          "The disclosed scope note says automatic standing was overruled by United States v. Salvucci and the broad legitimately-on-premises test was disavowed by Rakas v. Illinois.",
+          "The lake treatment edges include Rakas v. Illinois and United States v. Salvucci with field_ii overruled, and no disclosed point_override restores either standing rule."
+        ],
+        "residual_risks": [
+          "The lake derivation shows audit_needed/cap_hit for some progeny lanes, so this review relies on the disclosed canonical treatment fields rather than undisclosed external research."
+        ],
+        "suggested_tightening": "Use a single canonical label: superseded/historical, with a narrower note that the two Jones standing grounds were overruled or disavowed by Rakas and Salvucci.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/Jones v. United States.json\",\"reviewed\":[{\"assertion_id\":\"1ae9995d3fa05ccd\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake identity record is verified for Jones v. United States, U.S. Supreme Court, decided 1960-03-28, with cluster_id and lead_opinion_id 106022.\",\"The lake official citation is 362 U.S. 257 and the disclosed citation set matches the inventory payload.\",\"The disclosed treatment record limits current-law use of Jones but does not undermine the existence or identity of the cited authority.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"This existence verdict does not mean Jones remains current positive law on the standing rules.\"],\"suggested_tightening\":\"Keep the Historical/superseded treatment attached whenever this cite is used for a standing proposition.\"},{\"assertion_id\":\"1687c708552524c7\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"This is a quote_fidelity row; under lens B, quote support and pin accuracy are reserved to lens A.\",\"No independent currency or treatment assertion in this row creates a treatment defect beyond the separate treatment row reviewed below.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Quote-fidelity defects, if any, are not adjudicated under this lens.\"],\"suggested_tightening\":null},{\"assertion_id\":\"98d065211961c525\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"This is a quote_fidelity row; under lens B, quote support and pin accuracy are reserved to lens A.\",\"The row does not assert that the quoted Jones rule remains current positive law.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Quote-fidelity defects, if any, are not adjudicated under this lens.\"],\"suggested_tightening\":null},{\"assertion_id\":\"2b60daf32b09a23f\",\"dimension\":\"treatment\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The canonical treatment assertion survives, but the built page's rendered treatment label says overruled while the inventory and lake canonical field_i_validity say superseded. That is a label-consistency defect rather than a contrary good-law result.\",\"severity\":\"low\",\"proposed_fix\":\"Render the primary badge/status as superseded or superseded/historical, and reserve overruled/disavowed language for the scope note describing Rakas and Salvucci.\",\"evidence_quote\":\"Treatment: **overruled** *(as of 2026-06-30)*\",\"needs_cl\":false,\"locator_note\":\"content_page.md rendered header and Treatment section versus lake treatment.field_i_validity and group_inventory payload.\"},\"reasons\":[\"The inventory payload and lake treatment both set field_i_validity to superseded as of 2026-06-30.\",\"The disclosed scope note says automatic standing was overruled by United States v. Salvucci and the broad legitimately-on-premises test was disavowed by Rakas v. Illinois.\",\"The lake treatment edges include Rakas v. Illinois and United States v. Salvucci with field_ii overruled, and no disclosed point_override restores either standing rule.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The lake derivation shows audit_needed/cap_hit for some progeny lanes, so this review relies on the disclosed canonical treatment fields rather than undisclosed external research.\"],\"suggested_tightening\":\"Use a single canonical label: superseded/historical, with a narrower note that the two Jones standing grounds were overruled or disavowed by Rakas and Salvucci.\"}],\"notes\":\"Lens B only; support and quote-fidelity were not adjudicated.\"}",
   "summary": {
-    "at": "2026-07-09T23:15:09-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-10T17:24:13-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-7d1a0fb784",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-e52ebea924"
+    ],
     "group_id": "_overhaul2/lake/cases/Jones v. United States.json",
     "group_total_assertions": 4,
+    "lake_only_cases": [],
     "lane": "codex-B",
     "lane_id": "codex-B-panel-prod-9edeef83",
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-9edeef83.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "Reading additional input from stdin...\n\u001b[2m2026-07-10T03:15:07.549452Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T03:15:08.011006Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T03:15:08.581086Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Jones v. United States"
+    ],
+    "tokens": {
+      "input": 278665,
+      "output": 7600,
+      "source": "codex-events",
+      "total": 286265
+    },
+    "verdict_map": {
+      "1687c708552524c7": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "1ae9995d3fa05ccd": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "2b60daf32b09a23f": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "98d065211961c525": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-7d1a0fb784",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-e52ebea924",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 148.2
   }
 }

@@ -1,0 +1,168 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Ybarra v. Illinois.json",
+    "lens": "A",
+    "notes": "Support and quote-fidelity review found one real pin quote defect: pin-91's stored quote is not opinion text. No treatment finding is raised under Lens A.",
+    "reviewed": [
+      {
+        "assertion_id": "f4e0fd88bdc0058f",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record is for Ybarra v. Illinois, U.S. Supreme Court, decided 1979-11-28, docket 78-5937.",
+          "The official citation 444 U.S. 85 and parallel citations 100 S. Ct. 338, 62 L. Ed. 2d 238, and 1979 U.S. LEXIS 151 match the lake citation fields and the built page metadata."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "26937c5cc617b170",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The quoted sentence appears in the opinion text on the page marked *91.",
+          "The lake pinpoints entry for pin-91a contains the same quote, marks star_marker 91, and records quote_fidelity as matched."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "2d5b3187af4c7435",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The quoted sentence appears in the opinion text, crossing from the page marked *92 to the page marked *93.",
+          "The quote is substantively and textually faithful after ignoring the embedded page-number tag in the cached HTML text."
+        ],
+        "residual_risks": [
+          "The lake metadata still says quote_fidelity='mismatch' and pinpoint_status='slip-only', apparently because the raw HTML page marker interrupts the sentence."
+        ],
+        "suggested_tightening": "Upgrade the pin metadata to a verified normalized-text match and retain the 92-93 pincite.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "fcc55928d301c96c",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "But, a person’s mere propinquity to others independently suspected of criminal activity does not, without more, give rise to probable cause to search that person.",
+          "locator_note": "text/Ybarra v. Illinois__77da4f.txt line 17; lake pinpoints entry pin-91 also marks quote_fidelity='mismatch'.",
+          "needs_cl": false,
+          "problem": "The pin-91 payload quote is not an opinion quote. It is a generated page/prose scrape spanning Background, Issue, and Rule text, so it cannot support a verbatim quote pinpoint to Ybarra.",
+          "proposed_fix": "Replace pin-91 with the actual page-91 opinion passage, or remove this pinpoint if pin-91a already carries the needed probable-cause quotation.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The asserted pin-91 quote begins with built-page background prose, not language from the Supreme Court opinion.",
+          "The opinion text at page 91 supports the legal rule, but not the payload quote as framed."
+        ],
+        "residual_risks": [
+          "The built page's displayed pin-91 quote uses an editorial bracket and straight apostrophe; strict character fidelity would favor quoting the opinion text exactly or clearly marking editorial changes."
+        ],
+        "suggested_tightening": "Use the actual page-91 sentence beginning 'But, a person’s mere propinquity...' and set a real star/page marker.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "d224a13d7f021668",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Lens A does not audit treatment or currency.",
+          "The treatment payload matches the lake treatment fields: field_i_validity good_law, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note."
+        ],
+        "residual_risks": [
+          "Treatment merits and currency remain for Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Ybarra v. Illinois.json\",\"reviewed\":[{\"assertion_id\":\"f4e0fd88bdc0058f\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake identity record is for Ybarra v. Illinois, U.S. Supreme Court, decided 1979-11-28, docket 78-5937.\",\"The official citation 444 U.S. 85 and parallel citations 100 S. Ct. 338, 62 L. Ed. 2d 238, and 1979 U.S. LEXIS 151 match the lake citation fields and the built page metadata.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"26937c5cc617b170\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The quoted sentence appears in the opinion text on the page marked *91.\",\"The lake pinpoints entry for pin-91a contains the same quote, marks star_marker 91, and records quote_fidelity as matched.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"2d5b3187af4c7435\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The quoted sentence appears in the opinion text, crossing from the page marked *92 to the page marked *93.\",\"The quote is substantively and textually faithful after ignoring the embedded page-number tag in the cached HTML text.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The lake metadata still says quote_fidelity='mismatch' and pinpoint_status='slip-only', apparently because the raw HTML page marker interrupts the sentence.\"],\"suggested_tightening\":\"Upgrade the pin metadata to a verified normalized-text match and retain the 92-93 pincite.\"},{\"assertion_id\":\"fcc55928d301c96c\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The pin-91 payload quote is not an opinion quote. It is a generated page/prose scrape spanning Background, Issue, and Rule text, so it cannot support a verbatim quote pinpoint to Ybarra.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-91 with the actual page-91 opinion passage, or remove this pinpoint if pin-91a already carries the needed probable-cause quotation.\",\"evidence_quote\":\"But, a person’s mere propinquity to others independently suspected of criminal activity does not, without more, give rise to probable cause to search that person.\",\"needs_cl\":false,\"locator_note\":\"text/Ybarra v. Illinois__77da4f.txt line 17; lake pinpoints entry pin-91 also marks quote_fidelity='mismatch'.\"},\"reasons\":[\"The asserted pin-91 quote begins with built-page background prose, not language from the Supreme Court opinion.\",\"The opinion text at page 91 supports the legal rule, but not the payload quote as framed.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The built page's displayed pin-91 quote uses an editorial bracket and straight apostrophe; strict character fidelity would favor quoting the opinion text exactly or clearly marking editorial changes.\"],\"suggested_tightening\":\"Use the actual page-91 sentence beginning 'But, a person’s mere propinquity...' and set a real star/page marker.\"},{\"assertion_id\":\"d224a13d7f021668\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lens A does not audit treatment or currency.\",\"The treatment payload matches the lake treatment fields: field_i_validity good_law, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment merits and currency remain for Lens B.\"],\"suggested_tightening\":null}],\"notes\":\"Support and quote-fidelity review found one real pin quote defect: pin-91's stored quote is not opinion text. No treatment finding is raised under Lens A.\"}",
+  "summary": {
+    "at": "2026-07-10T18:14:15-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-30bbbb0347"
+    ],
+    "group_id": "_overhaul2/lake/cases/Ybarra v. Illinois.json",
+    "group_total_assertions": 5,
+    "lake_only_cases": [],
+    "lane": "codex-A",
+    "lane_id": "codex-A-panel-prod-214be091",
+    "lens": "A",
+    "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-214be091.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Ybarra v. Illinois"
+    ],
+    "tokens": {
+      "input": 186082,
+      "output": 7695,
+      "source": "codex-events",
+      "total": 193777
+    },
+    "verdict_map": {
+      "26937c5cc617b170": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "2d5b3187af4c7435": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "d224a13d7f021668": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "f4e0fd88bdc0058f": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "fcc55928d301c96c": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-30bbbb0347",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 153.9
+  }
+}

@@ -1,13 +1,75 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/United States v. Smith (2024).json",
+    "lens": "A",
+    "notes": "",
+    "reviewed": [
+      {
+        "assertion_id": "29dfcadbb182454c",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record exists for United States v. Smith with court U.S. Court of Appeals for the Fifth Circuit, date_decided 2024-08-09, docket 23-60321.",
+          "The lake official citation is exactly 110 F.4th 817, matching the assertion payload and the page display."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "0778d72697459adf",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "law enforcement’s reasonable conduct in this case in light of the novelty of",
+          "locator_note": "content_page.md Rule paragraph at ^pin-838; lake pinpoints[0] id pin-838; text/United States v. Smith (2024)__0d27cb.txt lines 1613-1617.",
+          "needs_cl": false,
+          "problem": "The pin-838 quote record is not character-faithful to the opinion passage it claims to support: the lake pinpoint quote contains harvested page prose ending before the actual quoted holding, and the built page's displayed quotation changes source typography by using straight apostrophes where the opinion has curly apostrophes.",
+          "proposed_fix": "Replace pin-838 with the actual page-38 holding quote from the opinion text and preserve source characters, including law enforcement’s and district court’s; then re-run quote matching.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The lake record itself marks pin-838 quote_fidelity as mismatch.",
+          "The actual opinion conclusion begins: We hold that geofence warrants are modern-day general warrants and are unconstitutional under the Fourth Amendment.",
+          "The content page quote uses law enforcement's and district court's, while the opinion text uses law enforcement’s and district court’s."
+        ],
+        "residual_risks": [
+          "The substantive holding appears supported, but this assertion fails as a character-fidelity/pinpoint assertion."
+        ],
+        "suggested_tightening": "Store only the actual quoted holding in pinpoints[].quote, not surrounding generated page prose.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "a4d07ad2599378b0",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside lens A, so I raise no treatment finding.",
+          "As a disclosed-record consistency check only, the payload matches the lake treatment fields: field_i_validity good_law, as_of_treatment 2026-07-03, varies_by_point true, and the same scope note."
+        ],
+        "residual_risks": [
+          "Substantive treatment review is reserved to lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"A\",\n  \"group_id\": \"_overhaul2/lake/cases/United States v. Smith (2024).json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"29dfcadbb182454c\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake record exists for United States v. Smith with court U.S. Court of Appeals for the Fifth Circuit, date_decided 2024-08-09, docket 23-60321.\",\n        \"The lake official citation is exactly 110 F.4th 817, matching the assertion payload and the page display.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"0778d72697459adf\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The pin-838 quote record is not character-faithful to the opinion passage it claims to support: the lake pinpoint quote contains harvested page prose ending before the actual quoted holding, and the built page's displayed quotation changes source typography by using straight apostrophes where the opinion has curly apostrophes.\",\n        \"severity\": \"high\",\n        \"proposed_fix\": \"Replace pin-838 with the actual page-38 holding quote from the opinion text and preserve source characters, including law enforcement’s and district court’s; then re-run quote matching.\",\n        \"evidence_quote\": \"law enforcement’s reasonable conduct in this case in light of the novelty of\",\n        \"needs_cl\": false,\n        \"locator_note\": \"content_page.md Rule paragraph at ^pin-838; lake pinpoints[0] id pin-838; text/United States v. Smith (2024)__0d27cb.txt lines 1613-1617.\"\n      },\n      \"reasons\": [\n        \"The lake record itself marks pin-838 quote_fidelity as mismatch.\",\n        \"The actual opinion conclusion begins: We hold that geofence warrants are modern-day general warrants and are unconstitutional under the Fourth Amendment.\",\n        \"The content page quote uses law enforcement's and district court's, while the opinion text uses law enforcement’s and district court’s.\"\n      ],\n      \"breaks_true_positives\": true,\n      \"residual_risks\": [\n        \"The substantive holding appears supported, but this assertion fails as a character-fidelity/pinpoint assertion.\"\n      ],\n      \"suggested_tightening\": \"Store only the actual quoted holding in pinpoints[].quote, not surrounding generated page prose.\"\n    },\n    {\n      \"assertion_id\": \"a4d07ad2599378b0\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Treatment/currency is outside lens A, so I raise no treatment finding.\",\n        \"As a disclosed-record consistency check only, the payload matches the lake treatment fields: field_i_validity good_law, as_of_treatment 2026-07-03, varies_by_point true, and the same scope note.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Substantive treatment review is reserved to lens B.\"\n      ],\n      \"suggested_tightening\": null\n    }\n  ],\n  \"notes\": \"\"\n}",
   "summary": {
-    "at": "2026-07-09T23:07:25-04:00",
-    "attempts": 2,
+    "at": "2026-07-10T16:50:56-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-5a332ca2ee"
+    ],
     "group_id": "_overhaul2/lake/cases/United States v. Smith (2024).json",
     "group_total_assertions": 3,
     "lake_only_cases": [],
@@ -16,21 +78,48 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-535993a9.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 3,
     "run": "prod",
     "text_disclosed_cases": [
       "United States v. Smith (2024)"
     ],
     "tokens": {
-      "input": 829,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 829
+      "input": 204287,
+      "output": 5948,
+      "source": "codex-events",
+      "total": 210235
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 2.8
+    "verdict_map": {
+      "0778d72697459adf": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "29dfcadbb182454c": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "a4d07ad2599378b0": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-5a332ca2ee",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 123.1
   }
 }

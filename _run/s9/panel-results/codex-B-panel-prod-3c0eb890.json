@@ -1,11 +1,51 @@
 {
-  "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/United States v. Perez.json",
+    "lens": "B",
+    "notes": "Lens B only; no support, quote-fidelity, or pincite merits finding made.",
+    "reviewed": [
+      {
+        "assertion_id": "29337d6ee4b04327",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record identifies United States v. Perez, docket 22-1121, decided 2023-12-28 by the 1st Cir., with cluster_id 9456060.",
+          "The disclosed citations record selects 89 F.4th 247 as the display/official citation and marks expected_citation_found true.",
+          "No disclosed treatment edge or progeny record reports that the authority has been overruled, abrogated, superseded, vacated, or otherwise displaced; the disclosed status is unverified, not negative."
+        ],
+        "residual_risks": [
+          "The treatment/progeny fields are an intentional frontier stub, so disclosed evidence does not independently establish current good-law status beyond the absence of a negative disclosed record."
+        ],
+        "suggested_tightening": "Do not imply verified current good-law status from the existence citation; keep the Unverified treatment banner until citator/progeny promotion.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "b536a6299b87318a",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The asserted treatment payload matches the lake treatment fields: field_i_validity unverified, as_of_content null, as_of_treatment null, varies_by_point false, and the same frontier-stub scope note.",
+          "The lake treatment section has no derived negative or positive treatment, no point overrides, and no treatment edges; the progeny section has no completed query or cached rows.",
+          "The content page renders Treatment: Unverified and states that subsequent treatment has not yet been machine-verified, which is consistent with the disclosed lake record."
+        ],
+        "residual_risks": [
+          "Because progeny.complete_query is null and rows_cached is 0, this verifies only the unverified treatment label, not that Perez remains good law as of any treatment date."
+        ],
+        "suggested_tightening": "Keep any substantive good-law language subordinate to the unverified status until the record receives completed citator/progeny treatment.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/United States v. Perez.json\",\"reviewed\":[{\"assertion_id\":\"29337d6ee4b04327\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake identity record identifies United States v. Perez, docket 22-1121, decided 2023-12-28 by the 1st Cir., with cluster_id 9456060.\",\"The disclosed citations record selects 89 F.4th 247 as the display/official citation and marks expected_citation_found true.\",\"No disclosed treatment edge or progeny record reports that the authority has been overruled, abrogated, superseded, vacated, or otherwise displaced; the disclosed status is unverified, not negative.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The treatment/progeny fields are an intentional frontier stub, so disclosed evidence does not independently establish current good-law status beyond the absence of a negative disclosed record.\"],\"suggested_tightening\":\"Do not imply verified current good-law status from the existence citation; keep the Unverified treatment banner until citator/progeny promotion.\"},{\"assertion_id\":\"b536a6299b87318a\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The asserted treatment payload matches the lake treatment fields: field_i_validity unverified, as_of_content null, as_of_treatment null, varies_by_point false, and the same frontier-stub scope note.\",\"The lake treatment section has no derived negative or positive treatment, no point overrides, and no treatment edges; the progeny section has no completed query or cached rows.\",\"The content page renders Treatment: Unverified and states that subsequent treatment has not yet been machine-verified, which is consistent with the disclosed lake record.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Because progeny.complete_query is null and rows_cached is 0, this verifies only the unverified treatment label, not that Perez remains good law as of any treatment date.\"],\"suggested_tightening\":\"Keep any substantive good-law language subordinate to the unverified status until the record receives completed citator/progeny treatment.\"}],\"notes\":\"Lens B only; no support, quote-fidelity, or pincite merits finding made.\"}",
   "summary": {
-    "at": "2026-07-09T23:07:14-04:00",
+    "at": "2026-07-10T02:34:56-04:00",
     "attempts": 2,
-    "clean_attestation": false,
+    "clean_attestation": true,
     "defense_votes": [],
     "findings_emitted": [],
     "group_id": "_overhaul2/lake/cases/United States v. Perez.json",
@@ -18,21 +58,36 @@
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-3c0eb890.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "repaired",
     "resolution_notes": [
       "case 'United States v. Perez' has no lead_opinion_id (text undisclosed)"
     ],
-    "reviewed_count": 0,
+    "reviewed_count": 2,
     "run": "prod",
     "text_disclosed_cases": [],
     "tokens": {
-      "input": 755,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 755
+      "input": 87250,
+      "output": 4689,
+      "source": "codex-events",
+      "total": 91939
     },
-    "verdict_map": {},
+    "verdict_map": {
+      "29337d6ee4b04327": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "b536a6299b87318a": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
     "votes_emitted": [],
-    "wall_clock_s": 2.9
+    "wall_clock_s": 96.4
   }
 }

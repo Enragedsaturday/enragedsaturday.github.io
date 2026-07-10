@@ -1,0 +1,172 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "content/cases/Segura v. United States.md",
+    "lens": "A",
+    "notes": "No black_letter, quote_fidelity, or pincite assertion rows were present in group_inventory.jsonl; treatment rows were checked only for disclosed-record consistency under Lens A.",
+    "reviewed": [
+      {
+        "assertion_id": "a9c976df8570bb72",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record lists case_name as Segura v. United States, court as U.S. Supreme Court, and year/date_decided as 1984/1984-07-05.",
+          "The lake citation record lists official cite 468 U.S. 796, vendor-neutral 1984 U.S. LEXIS 150, and the same parallel cites: 104 S. Ct. 3380, 82 L. Ed. 2d 599, and 52 U.S.L.W. 5128."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "834173871cd7262f",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "The only issue here is whether drugs and the other items not observed during the initial entry and first discovered by the agents the day after the entry, under an admittedly valid search warrant, should have been suppressed.",
+          "locator_note": "content_page.md frontmatter holding / group_inventory holding payload",
+          "needs_cl": false,
+          "problem": "The holding field is incomplete and overbroad as written. Segura supports admissibility only for evidence not observed during the initial illegal entry and first discovered under the later valid warrant, where the warrant was based wholly on information known before and unrelated to the entry.",
+          "proposed_fix": "Evidence not observed during the initial entry and first discovered under a later valid warrant was admissible because the warrant was based wholly on information known before, and unrelated to, the entry.",
+          "severity": "medium"
+        },
+        "dimension": "support",
+        "reasons": [
+          "The opinion states the valid-warrant evidence was admissible because the warrant and supporting information were unrelated to the entry and constituted an independent source.",
+          "The opinion expressly excludes from the Supreme Court issue the items observed during the initial entry; those plain-view items had been treated separately.",
+          "The payload ends with an ellipsis after 'supported wholly by...' and does not include the necessary independent-source and first-discovered limitations."
+        ],
+        "residual_risks": [
+          "The corrected holding should avoid implying that all evidence later seized under the warrant, including items observed during the initial illegal entry, was held admissible."
+        ],
+        "suggested_tightening": "Add the 'not observed during initial entry / first discovered under the warrant' limitation.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "8380f1ae2750b974",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "The opinion frames one question as whether the entry and internal securing of the premises constituted an impermissible seizure.",
+          "The opinion states: 'We hold, therefore, that securing a dwelling, on the basis of probable cause, to prevent the destruction or removal of evidence while a search warrant is being sought is not itself an unreasonable seizure of either the dwelling or its contents.'",
+          "The facts involved agents securing the apartment for roughly 19 hours while awaiting the warrant, so the case fits the Securing the Scene home role."
+        ],
+        "residual_risks": [
+          "The role label is a corpus taxonomy judgment, but the disclosed opinion gives direct support for anchor status."
+        ],
+        "suggested_tightening": "Limit any securing-the-scene use to probable cause, preserving the status quo, a warrant being sought in good faith, and the duration involved in the case.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "762ebeb80e50cce8",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Lens A does not make a treatment/currency finding.",
+          "The disclosed lake identity record confirms U.S. Supreme Court / scotus, matching the content-page authority-weight label 'Binding — SCOTUS'."
+        ],
+        "residual_risks": [
+          "Treatment/currency remains for Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "e63c0abc90294a1f",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Lens A does not make a treatment/currency finding.",
+          "The payload matches the lake treatment fields: field_i_validity good_law, as_of_content 1984-07-05, as_of_treatment 2026-06-30, composite_basis migration-seed, composite_basis_ref Segura v. United States, varies_by_point false, and the same scope note."
+        ],
+        "residual_risks": [
+          "Treatment/currency remains for Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"content/cases/Segura v. United States.md\",\"reviewed\":[{\"assertion_id\":\"a9c976df8570bb72\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake identity record lists case_name as Segura v. United States, court as U.S. Supreme Court, and year/date_decided as 1984/1984-07-05.\",\"The lake citation record lists official cite 468 U.S. 796, vendor-neutral 1984 U.S. LEXIS 150, and the same parallel cites: 104 S. Ct. 3380, 82 L. Ed. 2d 599, and 52 U.S.L.W. 5128.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"834173871cd7262f\",\"dimension\":\"support\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The holding field is incomplete and overbroad as written. Segura supports admissibility only for evidence not observed during the initial illegal entry and first discovered under the later valid warrant, where the warrant was based wholly on information known before and unrelated to the entry.\",\"severity\":\"medium\",\"proposed_fix\":\"Evidence not observed during the initial entry and first discovered under a later valid warrant was admissible because the warrant was based wholly on information known before, and unrelated to, the entry.\",\"evidence_quote\":\"The only issue here is whether drugs and the other items not observed during the initial entry and first discovered by the agents the day after the entry, under an admittedly valid search warrant, should have been suppressed.\",\"needs_cl\":false,\"locator_note\":\"content_page.md frontmatter holding / group_inventory holding payload\"},\"reasons\":[\"The opinion states the valid-warrant evidence was admissible because the warrant and supporting information were unrelated to the entry and constituted an independent source.\",\"The opinion expressly excludes from the Supreme Court issue the items observed during the initial entry; those plain-view items had been treated separately.\",\"The payload ends with an ellipsis after 'supported wholly by...' and does not include the necessary independent-source and first-discovered limitations.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The corrected holding should avoid implying that all evidence later seized under the warrant, including items observed during the initial illegal entry, was held admissible.\"],\"suggested_tightening\":\"Add the 'not observed during initial entry / first discovered under the warrant' limitation.\"},{\"assertion_id\":\"8380f1ae2750b974\",\"dimension\":\"support\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The opinion frames one question as whether the entry and internal securing of the premises constituted an impermissible seizure.\",\"The opinion states: 'We hold, therefore, that securing a dwelling, on the basis of probable cause, to prevent the destruction or removal of evidence while a search warrant is being sought is not itself an unreasonable seizure of either the dwelling or its contents.'\",\"The facts involved agents securing the apartment for roughly 19 hours while awaiting the warrant, so the case fits the Securing the Scene home role.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The role label is a corpus taxonomy judgment, but the disclosed opinion gives direct support for anchor status.\"],\"suggested_tightening\":\"Limit any securing-the-scene use to probable cause, preserving the status quo, a warrant being sought in good faith, and the duration involved in the case.\"},{\"assertion_id\":\"762ebeb80e50cce8\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lens A does not make a treatment/currency finding.\",\"The disclosed lake identity record confirms U.S. Supreme Court / scotus, matching the content-page authority-weight label 'Binding — SCOTUS'.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment/currency remains for Lens B.\"],\"suggested_tightening\":null},{\"assertion_id\":\"e63c0abc90294a1f\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lens A does not make a treatment/currency finding.\",\"The payload matches the lake treatment fields: field_i_validity good_law, as_of_content 1984-07-05, as_of_treatment 2026-06-30, composite_basis migration-seed, composite_basis_ref Segura v. United States, varies_by_point false, and the same scope note.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment/currency remains for Lens B.\"],\"suggested_tightening\":null}],\"notes\":\"No black_letter, quote_fidelity, or pincite assertion rows were present in group_inventory.jsonl; treatment rows were checked only for disclosed-record consistency under Lens A.\"}",
+  "summary": {
+    "at": "2026-07-10T00:40:00-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-75c4d35d0c"
+    ],
+    "group_id": "content/cases/Segura v. United States.md",
+    "group_total_assertions": 5,
+    "lake_only_cases": [],
+    "lane": "codex-A",
+    "lane_id": "codex-A-panel-prod-7a532a8c",
+    "lens": "A",
+    "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-7a532a8c.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Segura v. United States"
+    ],
+    "tokens": {
+      "input": 235290,
+      "output": 9538,
+      "source": "codex-events",
+      "total": 244828
+    },
+    "verdict_map": {
+      "762ebeb80e50cce8": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "834173871cd7262f": {
+        "dimension": "support",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "8380f1ae2750b974": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "a9c976df8570bb72": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "e63c0abc90294a1f": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-75c4d35d0c",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 187.9
+  }
+}

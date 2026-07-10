@@ -1,13 +1,105 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Brinegar v. United States.json",
+    "lens": "A",
+    "notes": "Uninventoryed identity fields show a disclosed inconsistency: content/lake date_decided and docket differ from the cached opinion text's Decided June 27, 1949 and No. 12. No separate assertion_id was provided for those fields.",
+    "reviewed": [
+      {
+        "assertion_id": "1fb740f5ee67c842",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record identifies Brinegar v. United States as a verified U.S. Supreme Court case with year 1949.",
+          "The asserted display citation 338 U.S. 160 and listed parallel/vendor citations match the lake record's citations fields."
+        ],
+        "residual_risks": [
+          "This verdict is limited to the citation/court/year assertion in the inventory."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "381eb55746dfeba4",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "In dealing with probable cause, however, as the very name implies, we deal with probabilities.",
+          "locator_note": "text/Brinegar v. United States__d4fe2a.txt line 53; lake pinpoints[0]",
+          "needs_cl": false,
+          "problem": "The disclosed pin-175 quote is not the Brinegar opinion text at page 175; it is harvested page prose from the built page's background/issue/rule area.",
+          "proposed_fix": "Replace pin-175 with the actual quoted rule sentence from star page 175.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The lake pinpoint itself marks pin-175 as quote_fidelity mismatch and slip-only with no page/star marker.",
+          "The cached opinion at star page *175 contains the probable-cause probabilities sentence, not the inventory quote beginning 'state. They stopped...'."
+        ],
+        "residual_risks": [
+          "The visible content_page rule quote for ^pin-175 is supported; the defect is the lake/inventory pinpoint quote."
+        ],
+        "suggested_tightening": "Populate pin-175 with the exact page-175 opinion quote and a star/page locator.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "c886a2db17a729ed",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Probable cause exists where \"the facts and circumstances within their [the officers'] knowledge",
+          "locator_note": "text/Brinegar v. United States__d4fe2a.txt line 54; star pagination crosses *175 to *176",
+          "needs_cl": false,
+          "problem": "The quote is substantively present at pages 175-176, but the inventory/lake text changes the opinion's internal double quotation marks to single quotation marks, so it is not strictly character-faithful.",
+          "proposed_fix": "Use the opinion's original internal quotation marks: where \"the facts and circumstances ... belief that\" an offense has been or is being committed.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The cached opinion supports the quoted probable-cause formulation and shows it crossing star pages *175-*176.",
+          "The only fidelity defect found is quote-mark substitution in the embedded Carroll quotation."
+        ],
+        "residual_risks": [
+          "If the corpus permits legal-style nested-quote normalization, this could stand without modification; under the stated character-faithful lens, correction is required."
+        ],
+        "suggested_tightening": "Restore the original internal double quotation marks or document quote-mark normalization policy.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "777d03c1c6fd167f",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside lens A, so no treatment finding is raised.",
+          "The treatment payload matches the lake treatment fields for field_i_validity, as_of dates, varies_by_point, and scope_note."
+        ],
+        "residual_risks": [
+          "Lens B owns whether the good-law treatment and no-negative-treatment phrasing are current and complete."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"A\",\n  \"group_id\": \"_overhaul2/lake/cases/Brinegar v. United States.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"1fb740f5ee67c842\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake record identifies Brinegar v. United States as a verified U.S. Supreme Court case with year 1949.\",\n        \"The asserted display citation 338 U.S. 160 and listed parallel/vendor citations match the lake record's citations fields.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"This verdict is limited to the citation/court/year assertion in the inventory.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"381eb55746dfeba4\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The disclosed pin-175 quote is not the Brinegar opinion text at page 175; it is harvested page prose from the built page's background/issue/rule area.\",\n        \"severity\": \"high\",\n        \"proposed_fix\": \"Replace pin-175 with the actual quoted rule sentence from star page 175.\",\n        \"evidence_quote\": \"In dealing with probable cause, however, as the very name implies, we deal with probabilities.\",\n        \"needs_cl\": false,\n        \"locator_note\": \"text/Brinegar v. United States__d4fe2a.txt line 53; lake pinpoints[0]\"\n      },\n      \"reasons\": [\n        \"The lake pinpoint itself marks pin-175 as quote_fidelity mismatch and slip-only with no page/star marker.\",\n        \"The cached opinion at star page *175 contains the probable-cause probabilities sentence, not the inventory quote beginning 'state. They stopped...'.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The visible content_page rule quote for ^pin-175 is supported; the defect is the lake/inventory pinpoint quote.\"\n      ],\n      \"suggested_tightening\": \"Populate pin-175 with the exact page-175 opinion quote and a star/page locator.\"\n    },\n    {\n      \"assertion_id\": \"c886a2db17a729ed\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands-modified\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The quote is substantively present at pages 175-176, but the inventory/lake text changes the opinion's internal double quotation marks to single quotation marks, so it is not strictly character-faithful.\",\n        \"severity\": \"low\",\n        \"proposed_fix\": \"Use the opinion's original internal quotation marks: where \\\"the facts and circumstances ... belief that\\\" an offense has been or is being committed.\",\n        \"evidence_quote\": \"Probable cause exists where \\\"the facts and circumstances within their [the officers'] knowledge\",\n        \"needs_cl\": false,\n        \"locator_note\": \"text/Brinegar v. United States__d4fe2a.txt line 54; star pagination crosses *175 to *176\"\n      },\n      \"reasons\": [\n        \"The cached opinion supports the quoted probable-cause formulation and shows it crossing star pages *175-*176.\",\n        \"The only fidelity defect found is quote-mark substitution in the embedded Carroll quotation.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"If the corpus permits legal-style nested-quote normalization, this could stand without modification; under the stated character-faithful lens, correction is required.\"\n      ],\n      \"suggested_tightening\": \"Restore the original internal double quotation marks or document quote-mark normalization policy.\"\n    },\n    {\n      \"assertion_id\": \"777d03c1c6fd167f\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Treatment/currency is outside lens A, so no treatment finding is raised.\",\n        \"The treatment payload matches the lake treatment fields for field_i_validity, as_of dates, varies_by_point, and scope_note.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Lens B owns whether the good-law treatment and no-negative-treatment phrasing are current and complete.\"\n      ],\n      \"suggested_tightening\": null\n    }\n  ],\n  \"notes\": \"Uninventoryed identity fields show a disclosed inconsistency: content/lake date_decided and docket differ from the cached opinion text's Decided June 27, 1949 and No. 12. No separate assertion_id was provided for those fields.\"\n}",
   "summary": {
-    "at": "2026-07-09T23:17:29-04:00",
-    "attempts": 2,
+    "at": "2026-07-10T17:45:56-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "defense_votes": [],
-    "findings_emitted": [],
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-eb1dce5dc5",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-a9a4e365f7",
+      "F-S9-PR-f4a91c443a"
+    ],
     "group_id": "_overhaul2/lake/cases/Brinegar v. United States.json",
     "group_total_assertions": 4,
     "lake_only_cases": [],
@@ -16,21 +108,63 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-30689111.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 4,
     "run": "prod",
     "text_disclosed_cases": [
       "Brinegar v. United States"
     ],
     "tokens": {
-      "input": 828,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 828
+      "input": 239458,
+      "output": 8403,
+      "source": "codex-events",
+      "total": 247861
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 2.9
+    "verdict_map": {
+      "1fb740f5ee67c842": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "381eb55746dfeba4": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "777d03c1c6fd167f": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "c886a2db17a729ed": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-a9a4e365f7",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-f4a91c443a",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-eb1dce5dc5",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": 163.9
   }
 }

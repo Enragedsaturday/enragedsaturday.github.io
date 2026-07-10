@@ -1,13 +1,75 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Michigan v. Jackson.json",
+    "lens": "A",
+    "notes": "Lens A reviewed the disclosed files only. No black-letter assertion was present in group_inventory.jsonl.",
+    "reviewed": [
+      {
+        "assertion_id": "d42c68324bca3f7d",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record is verified for Michigan v. Jackson, identifies the court as U.S. Supreme Court, the decision date as 1986-04-01, and the year as 1986.",
+          "The official citation in the lake record is 475 U.S. 625, matching the built page citation; the parallel/vendor citations in the inventory match the lake citation list."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "5eab94c5550f5587",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "We thus hold that, if police initiate interrogation after a defendant’s assertion, at an arraignment or similar proceeding, of his right to counsel, any waiver of the defendant’s right to counsel for that police-initiated interrogation is invalid.",
+          "locator_note": "Correct passage appears in text/Michigan v. Jackson__e1cf9f.txt at the paragraph following the *636 page marker; lake/Michigan v. Jackson__e1cf9f.json stores a different quote for pin-636 and marks quote_fidelity as mismatch.",
+          "needs_cl": false,
+          "problem": "The pin-636 quote record is not quote-faithful: the lake/inventory quote is copied from the built page header/background/rule preamble rather than the U.S. 636 holding passage, and the lake itself flags quote_fidelity as mismatch. The displayed content quote is substantively the right sentence, but it uses straight apostrophes where the disclosed opinion text uses curly apostrophes, so it is not character-faithful as framed.",
+          "proposed_fix": "Replace pin-636 with the exact holding sentence from the opinion text, preserving the curly apostrophes, and set the locator/page to the 636 paragraph.",
+          "severity": "medium"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The disclosed opinion text contains the holding sentence at the 636 marker, so the substantive quote can be repaired from disclosed evidence.",
+          "The inventory payload for pin-636 does not contain that holding sentence and instead stops before it after the page’s Rule lead-in.",
+          "Character-level fidelity fails because content_page.md uses defendant's while the opinion text uses defendant’s."
+        ],
+        "residual_risks": [
+          "After regenerating the pin, recheck that the renderer preserves typographic punctuation from the opinion text."
+        ],
+        "suggested_tightening": "Use the exact opinion-text quote for pin-636 and avoid deriving quote pinpoints from rendered page prose.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "fc4616a29ef23e89",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A; no Lens A support or quote-fidelity defect is raised.",
+          "The treatment fields in the inventory mirror the disclosed lake treatment fields for field_i_validity, dates, scope note, and varies_by_point."
+        ],
+        "residual_risks": [
+          "Treatment/currency merits are reserved for Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Michigan v. Jackson.json\",\"reviewed\":[{\"assertion_id\":\"d42c68324bca3f7d\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record is verified for Michigan v. Jackson, identifies the court as U.S. Supreme Court, the decision date as 1986-04-01, and the year as 1986.\",\"The official citation in the lake record is 475 U.S. 625, matching the built page citation; the parallel/vendor citations in the inventory match the lake citation list.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"5eab94c5550f5587\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The pin-636 quote record is not quote-faithful: the lake/inventory quote is copied from the built page header/background/rule preamble rather than the U.S. 636 holding passage, and the lake itself flags quote_fidelity as mismatch. The displayed content quote is substantively the right sentence, but it uses straight apostrophes where the disclosed opinion text uses curly apostrophes, so it is not character-faithful as framed.\",\"severity\":\"medium\",\"proposed_fix\":\"Replace pin-636 with the exact holding sentence from the opinion text, preserving the curly apostrophes, and set the locator/page to the 636 paragraph.\",\"evidence_quote\":\"We thus hold that, if police initiate interrogation after a defendant’s assertion, at an arraignment or similar proceeding, of his right to counsel, any waiver of the defendant’s right to counsel for that police-initiated interrogation is invalid.\",\"needs_cl\":false,\"locator_note\":\"Correct passage appears in text/Michigan v. Jackson__e1cf9f.txt at the paragraph following the *636 page marker; lake/Michigan v. Jackson__e1cf9f.json stores a different quote for pin-636 and marks quote_fidelity as mismatch.\"},\"reasons\":[\"The disclosed opinion text contains the holding sentence at the 636 marker, so the substantive quote can be repaired from disclosed evidence.\",\"The inventory payload for pin-636 does not contain that holding sentence and instead stops before it after the page’s Rule lead-in.\",\"Character-level fidelity fails because content_page.md uses defendant's while the opinion text uses defendant’s.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"After regenerating the pin, recheck that the renderer preserves typographic punctuation from the opinion text.\"],\"suggested_tightening\":\"Use the exact opinion-text quote for pin-636 and avoid deriving quote pinpoints from rendered page prose.\"},{\"assertion_id\":\"fc4616a29ef23e89\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside Lens A; no Lens A support or quote-fidelity defect is raised.\",\"The treatment fields in the inventory mirror the disclosed lake treatment fields for field_i_validity, dates, scope note, and varies_by_point.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment/currency merits are reserved for Lens B.\"],\"suggested_tightening\":null}],\"notes\":\"Lens A reviewed the disclosed files only. No black-letter assertion was present in group_inventory.jsonl.\"}",
   "summary": {
-    "at": "2026-07-09T23:15:19-04:00",
-    "attempts": 2,
+    "at": "2026-07-10T17:24:46-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-1c8d6e9a59"
+    ],
     "group_id": "_overhaul2/lake/cases/Michigan v. Jackson.json",
     "group_total_assertions": 3,
     "lake_only_cases": [],
@@ -16,21 +78,48 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-5a9d2dde.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 3,
     "run": "prod",
     "text_disclosed_cases": [
       "Michigan v. Jackson"
     ],
     "tokens": {
-      "input": 826,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 826
+      "input": 111596,
+      "output": 5701,
+      "source": "codex-events",
+      "total": 117297
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 3.2
+    "verdict_map": {
+      "5eab94c5550f5587": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "d42c68324bca3f7d": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "fc4616a29ef23e89": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-1c8d6e9a59",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 111.4
   }
 }

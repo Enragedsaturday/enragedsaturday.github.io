@@ -1,13 +1,75 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Monroe v. Pape.json",
+    "lens": "A",
+    "notes": "Reviewed all 3 group_inventory rows using only disclosed files.",
+    "reviewed": [
+      {
+        "assertion_id": "b23009ef0fb635b0",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity record is verified for Monroe v. Pape, U.S. Supreme Court, decided 1961-02-20.",
+          "Official citation in the lake record is 365 U.S. 167, and the listed parallel/vendor citations match the assertion payload."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "2d53b1e63104df71",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Misuse of power, possessed by virtue of state law",
+          "locator_note": "pin-184; lake pinpoints[0]; text/Monroe v. Pape__f67c85.txt line containing star-pagination *184",
+          "needs_cl": false,
+          "problem": "pin-184's stored quote is not the opinion passage at 365 U.S. 184; it is content-page prose spanning the Issue/Rule boundary and is already marked quote_fidelity=mismatch in the lake record.",
+          "proposed_fix": "Regenerate pin-184 from the actual star-page *184 passage, or attach the pin to the content page's Classic quotation and preserve the cached opinion typography exactly.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload quote begins with content-page Issue/Rule text, not opinion text.",
+          "The cached opinion text places the relevant Classic quotation on star page *184, while the lake pin has page=null and star_marker=null.",
+          "The content page's quoted phrase also modernizes the cached quote's internal `under color of' typography, so strict character fidelity is not satisfied."
+        ],
+        "residual_risks": [
+          "The underlying rule proposition appears supported by the cached opinion; the defect is the quoted/pinpoint text fidelity."
+        ],
+        "suggested_tightening": "Keep the legal rule, but regenerate the pinpoint quote from the actual *184 passage and make the displayed quote character-faithful.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "ed07484a8ddae794",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment merits are outside lens A, so no treatment/currency defect is raised.",
+          "The asserted treatment fields match the lake treatment record: field_i_validity caution, as_of_treatment 2026-06-30, varies_by_point true, and the same scope note."
+        ],
+        "residual_risks": [
+          "Treatment/currency review remains for lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Monroe v. Pape.json\",\"reviewed\":[{\"assertion_id\":\"b23009ef0fb635b0\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity record is verified for Monroe v. Pape, U.S. Supreme Court, decided 1961-02-20.\",\"Official citation in the lake record is 365 U.S. 167, and the listed parallel/vendor citations match the assertion payload.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"2d53b1e63104df71\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"pin-184's stored quote is not the opinion passage at 365 U.S. 184; it is content-page prose spanning the Issue/Rule boundary and is already marked quote_fidelity=mismatch in the lake record.\",\"severity\":\"high\",\"proposed_fix\":\"Regenerate pin-184 from the actual star-page *184 passage, or attach the pin to the content page's Classic quotation and preserve the cached opinion typography exactly.\",\"evidence_quote\":\"Misuse of power, possessed by virtue of state law\",\"needs_cl\":false,\"locator_note\":\"pin-184; lake pinpoints[0]; text/Monroe v. Pape__f67c85.txt line containing star-pagination *184\"},\"reasons\":[\"The payload quote begins with content-page Issue/Rule text, not opinion text.\",\"The cached opinion text places the relevant Classic quotation on star page *184, while the lake pin has page=null and star_marker=null.\",\"The content page's quoted phrase also modernizes the cached quote's internal `under color of' typography, so strict character fidelity is not satisfied.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The underlying rule proposition appears supported by the cached opinion; the defect is the quoted/pinpoint text fidelity.\"],\"suggested_tightening\":\"Keep the legal rule, but regenerate the pinpoint quote from the actual *184 passage and make the displayed quote character-faithful.\"},{\"assertion_id\":\"ed07484a8ddae794\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment merits are outside lens A, so no treatment/currency defect is raised.\",\"The asserted treatment fields match the lake treatment record: field_i_validity caution, as_of_treatment 2026-06-30, varies_by_point true, and the same scope note.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment/currency review remains for lens B.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed all 3 group_inventory rows using only disclosed files.\"}",
   "summary": {
-    "at": "2026-07-09T23:15:16-04:00",
-    "attempts": 2,
+    "at": "2026-07-10T17:25:23-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-25243e8121"
+    ],
     "group_id": "_overhaul2/lake/cases/Monroe v. Pape.json",
     "group_total_assertions": 3,
     "lake_only_cases": [],
@@ -16,21 +78,48 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-494dab23.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 3,
     "run": "prod",
     "text_disclosed_cases": [
       "Monroe v. Pape"
     ],
     "tokens": {
-      "input": 825,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 825
+      "input": 274259,
+      "output": 6862,
+      "source": "codex-events",
+      "total": 281121
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 3.0
+    "verdict_map": {
+      "2d53b1e63104df71": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "b23009ef0fb635b0": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "ed07484a8ddae794": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-25243e8121",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 136.3
   }
 }

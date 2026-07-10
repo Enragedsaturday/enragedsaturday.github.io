@@ -1,0 +1,194 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Alabama v. White.json",
+    "lens": "A",
+    "notes": "Reviewed all five inventory rows exactly once. No black_letter or support-dimension rows were present in group_inventory.jsonl.",
+    "reviewed": [
+      {
+        "assertion_id": "e15763ffcdc2ba64",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record is Alabama v. White, U.S. Supreme Court, decided 1990-06-11, year 1990.",
+          "The lake citation fields list official citation 496 U.S. 325 and parallel/vendor citations 110 S. Ct. 2412, 110 L. Ed. 2d 301, and 1990 U.S. LEXIS 3053; the content page displays the same official citation."
+        ],
+        "residual_risks": [
+          "No outside lookup performed by instruction; this relies only on the disclosed lake identity/citation record."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "cb8e54e59633ffeb",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "What was important was the caller’s ability to predict respondent’s <em>future behavior, </em>because it demonstrated inside information—a special familiarity with respondent’s affairs.",
+          "locator_note": "text/Alabama v. White__4fd2b4.txt line 15, page marker 332; lake pin-332 also has quote_fidelity=mismatch.",
+          "needs_cl": false,
+          "problem": "The quoted string is not character-faithful to the cached opinion text: the opinion uses curly apostrophes, italic markup around future behavior, and no spaces around the em dash in inside information—a; the asserted quote uses straight apostrophes and a spaced em dash.",
+          "proposed_fix": "Replace the quote with the exact opinion text and preserve the source punctuation: What was important was the caller’s ability to predict respondent’s future behavior, because it demonstrated inside information—a special familiarity with respondent’s affairs.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The substance and page location are present at 496 U.S. 332, but the displayed/stored verbatim quote is not an exact character match.",
+          "The disclosed lake judgment field independently flags pin-332 as quote_fidelity=mismatch."
+        ],
+        "residual_risks": [
+          "If the corpus intentionally normalizes apostrophes and dash spacing, this is a normalization-policy issue; under the stated character-fidelity lens, it fails."
+        ],
+        "suggested_tightening": "Use exact opinion punctuation and preserve the italicized future behavior if the renderer supports it.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "e4e49a232bbab1a2",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Reasonable suspicion is a less demanding standard than probable cause not only in the sense that reasonable suspicion can be established with information that is different in quantity or content than that required to establish probable cause, but also in the sense that reasonable suspicion can arise from information that is less reliable than that required to show probable cause.",
+          "locator_note": "lake pin-330 contains content_page material; text/Alabama v. White__4fd2b4.txt line 12 contains the actual page-330 passage, and content_page.md line 53 displays that actual sentence.",
+          "needs_cl": false,
+          "problem": "The pin-330 stored quote is not an opinion quote; it concatenates content-page header/background/issue/rule material and stops before the actual quoted legal sentence. It is therefore not character-faithful to the opinion text.",
+          "proposed_fix": "Replace pin-330 with the actual opinion passage beginning Reasonable suspicion is a less demanding standard than probable cause and keep the 496 U.S. at 330 pin.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The disclosed lake pinpoint for pin-330 is marked quote_fidelity=mismatch.",
+          "The cached opinion text contains the correct page-330 sentence, while the asserted pin quote is page summary/frontmatter content rather than the opinion."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Regenerate pin-330 from the cached opinion text rather than from the built page.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "f3c5ffb592dabc00",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Although it is a close case, we conclude that under the totality of the circumstances the anonymous tip, as corroborated, exhibited sufficient indicia of reliability to justify the investigatory stop of respondent’s car.",
+          "locator_note": "text/Alabama v. White__4fd2b4.txt line 16, page 332; lake pin-332a also has quote_fidelity=mismatch.",
+          "needs_cl": false,
+          "problem": "The quote is substantively present at page 332 but is not character-faithful: the cached opinion has respondent’s with a curly apostrophe, while the asserted quote has respondent's with a straight apostrophe.",
+          "proposed_fix": "Replace respondent's with respondent’s in the quote, or adopt and disclose a normalization rule for verbatim quotes.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The passage supports the proposition and appears at the cited page, but exact quote fidelity fails on source punctuation.",
+          "The disclosed lake judgment field marks pin-332a as quote_fidelity=mismatch."
+        ],
+        "residual_risks": [
+          "Only typographic fidelity is at issue; the legal substance is supported by the disclosed opinion text."
+        ],
+        "suggested_tightening": "Use exact source punctuation for verbatim quote fields.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "84761d0e602e58a3",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The treatment payload matches the lake treatment fields: field_i_validity=good_law, as_of_content=1990-06-11, as_of_treatment=2026-06-30, varies_by_point=false, and the same scope_note.",
+          "Treatment/currency merits are outside lens A, so no treatment finding is raised."
+        ],
+        "residual_risks": [
+          "Treatment merits are reserved for lens B and were not substantively audited here."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Alabama v. White.json\",\"reviewed\":[{\"assertion_id\":\"e15763ffcdc2ba64\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake identity record is Alabama v. White, U.S. Supreme Court, decided 1990-06-11, year 1990.\",\"The lake citation fields list official citation 496 U.S. 325 and parallel/vendor citations 110 S. Ct. 2412, 110 L. Ed. 2d 301, and 1990 U.S. LEXIS 3053; the content page displays the same official citation.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"No outside lookup performed by instruction; this relies only on the disclosed lake identity/citation record.\"],\"suggested_tightening\":null},{\"assertion_id\":\"cb8e54e59633ffeb\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The quoted string is not character-faithful to the cached opinion text: the opinion uses curly apostrophes, italic markup around future behavior, and no spaces around the em dash in inside information—a; the asserted quote uses straight apostrophes and a spaced em dash.\",\"severity\":\"low\",\"proposed_fix\":\"Replace the quote with the exact opinion text and preserve the source punctuation: What was important was the caller’s ability to predict respondent’s future behavior, because it demonstrated inside information—a special familiarity with respondent’s affairs.\",\"evidence_quote\":\"What was important was the caller’s ability to predict respondent’s <em>future behavior, </em>because it demonstrated inside information—a special familiarity with respondent’s affairs.\",\"needs_cl\":false,\"locator_note\":\"text/Alabama v. White__4fd2b4.txt line 15, page marker 332; lake pin-332 also has quote_fidelity=mismatch.\"},\"reasons\":[\"The substance and page location are present at 496 U.S. 332, but the displayed/stored verbatim quote is not an exact character match.\",\"The disclosed lake judgment field independently flags pin-332 as quote_fidelity=mismatch.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"If the corpus intentionally normalizes apostrophes and dash spacing, this is a normalization-policy issue; under the stated character-fidelity lens, it fails.\"],\"suggested_tightening\":\"Use exact opinion punctuation and preserve the italicized future behavior if the renderer supports it.\"},{\"assertion_id\":\"e4e49a232bbab1a2\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The pin-330 stored quote is not an opinion quote; it concatenates content-page header/background/issue/rule material and stops before the actual quoted legal sentence. It is therefore not character-faithful to the opinion text.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-330 with the actual opinion passage beginning Reasonable suspicion is a less demanding standard than probable cause and keep the 496 U.S. at 330 pin.\",\"evidence_quote\":\"Reasonable suspicion is a less demanding standard than probable cause not only in the sense that reasonable suspicion can be established with information that is different in quantity or content than that required to establish probable cause, but also in the sense that reasonable suspicion can arise from information that is less reliable than that required to show probable cause.\",\"needs_cl\":false,\"locator_note\":\"lake pin-330 contains content_page material; text/Alabama v. White__4fd2b4.txt line 12 contains the actual page-330 passage, and content_page.md line 53 displays that actual sentence.\"},\"reasons\":[\"The disclosed lake pinpoint for pin-330 is marked quote_fidelity=mismatch.\",\"The cached opinion text contains the correct page-330 sentence, while the asserted pin quote is page summary/frontmatter content rather than the opinion.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":\"Regenerate pin-330 from the cached opinion text rather than from the built page.\"},{\"assertion_id\":\"f3c5ffb592dabc00\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The quote is substantively present at page 332 but is not character-faithful: the cached opinion has respondent’s with a curly apostrophe, while the asserted quote has respondent's with a straight apostrophe.\",\"severity\":\"low\",\"proposed_fix\":\"Replace respondent's with respondent’s in the quote, or adopt and disclose a normalization rule for verbatim quotes.\",\"evidence_quote\":\"Although it is a close case, we conclude that under the totality of the circumstances the anonymous tip, as corroborated, exhibited sufficient indicia of reliability to justify the investigatory stop of respondent’s car.\",\"needs_cl\":false,\"locator_note\":\"text/Alabama v. White__4fd2b4.txt line 16, page 332; lake pin-332a also has quote_fidelity=mismatch.\"},\"reasons\":[\"The passage supports the proposition and appears at the cited page, but exact quote fidelity fails on source punctuation.\",\"The disclosed lake judgment field marks pin-332a as quote_fidelity=mismatch.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Only typographic fidelity is at issue; the legal substance is supported by the disclosed opinion text.\"],\"suggested_tightening\":\"Use exact source punctuation for verbatim quote fields.\"},{\"assertion_id\":\"84761d0e602e58a3\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The treatment payload matches the lake treatment fields: field_i_validity=good_law, as_of_content=1990-06-11, as_of_treatment=2026-06-30, varies_by_point=false, and the same scope_note.\",\"Treatment/currency merits are outside lens A, so no treatment finding is raised.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment merits are reserved for lens B and were not substantively audited here.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed all five inventory rows exactly once. No black_letter or support-dimension rows were present in group_inventory.jsonl.\"}",
+  "summary": {
+    "at": "2026-07-10T18:10:18-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-bc8918088b",
+      "F-S9-PR-2c1bb97aa1",
+      "F-S9-PR-9cc9f05f0d"
+    ],
+    "group_id": "_overhaul2/lake/cases/Alabama v. White.json",
+    "group_total_assertions": 5,
+    "lake_only_cases": [],
+    "lane": "codex-A",
+    "lane_id": "codex-A-panel-prod-e0cd8f78",
+    "lens": "A",
+    "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-e0cd8f78.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Alabama v. White"
+    ],
+    "tokens": {
+      "input": 198975,
+      "output": 8175,
+      "source": "codex-events",
+      "total": 207150
+    },
+    "verdict_map": {
+      "84761d0e602e58a3": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "cb8e54e59633ffeb": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "e15763ffcdc2ba64": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "e4e49a232bbab1a2": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "f3c5ffb592dabc00": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-bc8918088b",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-2c1bb97aa1",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-9cc9f05f0d",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 162.1
+  }
+}

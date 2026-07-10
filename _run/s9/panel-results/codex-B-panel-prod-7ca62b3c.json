@@ -1,13 +1,111 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "content/cases/Michigan v. Jackson.md",
+    "lens": "B",
+    "notes": "Lens B only; no support or quote-fidelity findings were raised.",
+    "reviewed": [
+      {
+        "assertion_id": "0dbeb58aea6efa02",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity is verified for Michigan v. Jackson, U.S. Supreme Court, decided 1986-04-01.",
+          "Lake citations include official cite 475 U.S. 625, the listed parallel cites, and vendor-neutral cite 1986 U.S. LEXIS 91.",
+          "The disclosed treatment record says the rule is overruled/superseded, but that does not defeat existence of the cited authority."
+        ],
+        "residual_risks": [
+          "The authority is not live substantive law; it survives only historically."
+        ],
+        "suggested_tightening": "Carry the historical/overruled treatment wherever this citation is reused.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "420bdd9b778df061",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "Lens B does not assess support merits, but the role label 'Historical / origin' is treatment-consistent.",
+          "Lake treatment scope says Jackson was overruled by Montejo and 'survives only as history.'"
+        ],
+        "residual_risks": [
+          "No Lens A support check performed."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "554828db1b78b7f1",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "Lens B does not assess holding support, but the holding's treatment language matches the lake scope note.",
+          "Lake treatment edge identifies Montejo v. Louisiana, 556 U.S. 778, with field_ii 'overruled.'"
+        ],
+        "residual_risks": [
+          "No Lens A holding-support or quote-fidelity check performed."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "9c8413ebd5d4aa60",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "Overruled by Montejo v. Louisiana, 556 U.S. 778 (2009); survives only as history.",
+          "locator_note": "field: authority_weight",
+          "needs_cl": false,
+          "problem": "The standalone weight label 'Binding — SCOTUS' overstates current legal weight because the disclosed treatment says Jackson has been overruled/superseded and survives only as history.",
+          "proposed_fix": "Replace with 'Historical — SCOTUS' or 'Overruled SCOTUS (formerly binding)' when displayed as current authority weight; if the field only records issuing-court rank, rename or separate it from current-validity labeling.",
+          "severity": "medium"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "The SCOTUS component is supported by lake identity court_level 'scotus.'",
+          "The 'Binding' component is not treatment-safe as a current label because lake treatment has field_i_validity 'superseded' and a Montejo overruling edge.",
+          "The content page itself renders the case as Historical, confirming the safer current label."
+        ],
+        "residual_risks": [
+          "If authority_weight is intended only as court hierarchy, the defect is display/schema ambiguity rather than court identity."
+        ],
+        "suggested_tightening": "Separate court-rank metadata from current-validity/treatment badges.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "ebc830289605a030",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The payload matches the lake treatment judgment: field_i_validity 'superseded,' as_of_treatment 2026-06-30, and the Montejo scope note.",
+          "Lake treatment edges include Montejo v. Louisiana, 556 U.S. 778, marked field_ii 'overruled.'",
+          "No disclosed treatment field or progeny edge revives Jackson as current live law."
+        ],
+        "residual_risks": [
+          "Treatment derivation flags some capped/audit-needed searches, but the disclosed judgment fields and Montejo edge are sufficient for this Lens B review."
+        ],
+        "suggested_tightening": "Clarify that 'superseded' is the normalized validity field while 'overruled by Montejo' is the specific treatment event.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"content/cases/Michigan v. Jackson.md\",\"reviewed\":[{\"assertion_id\":\"0dbeb58aea6efa02\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity is verified for Michigan v. Jackson, U.S. Supreme Court, decided 1986-04-01.\",\"Lake citations include official cite 475 U.S. 625, the listed parallel cites, and vendor-neutral cite 1986 U.S. LEXIS 91.\",\"The disclosed treatment record says the rule is overruled/superseded, but that does not defeat existence of the cited authority.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The authority is not live substantive law; it survives only historically.\"],\"suggested_tightening\":\"Carry the historical/overruled treatment wherever this citation is reused.\"},{\"assertion_id\":\"420bdd9b778df061\",\"dimension\":\"support\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lens B does not assess support merits, but the role label 'Historical / origin' is treatment-consistent.\",\"Lake treatment scope says Jackson was overruled by Montejo and 'survives only as history.'\"],\"breaks_true_positives\":false,\"residual_risks\":[\"No Lens A support check performed.\"],\"suggested_tightening\":null},{\"assertion_id\":\"554828db1b78b7f1\",\"dimension\":\"support\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lens B does not assess holding support, but the holding's treatment language matches the lake scope note.\",\"Lake treatment edge identifies Montejo v. Louisiana, 556 U.S. 778, with field_ii 'overruled.'\"],\"breaks_true_positives\":false,\"residual_risks\":[\"No Lens A holding-support or quote-fidelity check performed.\"],\"suggested_tightening\":null},{\"assertion_id\":\"9c8413ebd5d4aa60\",\"dimension\":\"treatment\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The standalone weight label 'Binding — SCOTUS' overstates current legal weight because the disclosed treatment says Jackson has been overruled/superseded and survives only as history.\",\"severity\":\"medium\",\"proposed_fix\":\"Replace with 'Historical — SCOTUS' or 'Overruled SCOTUS (formerly binding)' when displayed as current authority weight; if the field only records issuing-court rank, rename or separate it from current-validity labeling.\",\"evidence_quote\":\"Overruled by Montejo v. Louisiana, 556 U.S. 778 (2009); survives only as history.\",\"needs_cl\":false,\"locator_note\":\"field: authority_weight\"},\"reasons\":[\"The SCOTUS component is supported by lake identity court_level 'scotus.'\",\"The 'Binding' component is not treatment-safe as a current label because lake treatment has field_i_validity 'superseded' and a Montejo overruling edge.\",\"The content page itself renders the case as Historical, confirming the safer current label.\"],\"breaks_true_positives\":true,\"residual_risks\":[\"If authority_weight is intended only as court hierarchy, the defect is display/schema ambiguity rather than court identity.\"],\"suggested_tightening\":\"Separate court-rank metadata from current-validity/treatment badges.\"},{\"assertion_id\":\"ebc830289605a030\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The payload matches the lake treatment judgment: field_i_validity 'superseded,' as_of_treatment 2026-06-30, and the Montejo scope note.\",\"Lake treatment edges include Montejo v. Louisiana, 556 U.S. 778, marked field_ii 'overruled.'\",\"No disclosed treatment field or progeny edge revives Jackson as current live law.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment derivation flags some capped/audit-needed searches, but the disclosed judgment fields and Montejo edge are sufficient for this Lens B review.\"],\"suggested_tightening\":\"Clarify that 'superseded' is the normalized validity field while 'overruled by Montejo' is the specific treatment event.\"}],\"notes\":\"Lens B only; no support or quote-fidelity findings were raised.\"}",
   "summary": {
-    "at": "2026-07-09T23:16:17-04:00",
-    "attempts": 2,
+    "at": "2026-07-10T17:34:01-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-557c940d18"
+    ],
     "group_id": "content/cases/Michigan v. Jackson.md",
     "group_total_assertions": 5,
     "lake_only_cases": [],
@@ -16,21 +114,62 @@
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-7ca62b3c.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 5,
     "run": "prod",
     "text_disclosed_cases": [
       "Michigan v. Jackson"
     ],
     "tokens": {
-      "input": 752,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 752
+      "input": 129658,
+      "output": 5511,
+      "source": "codex-events",
+      "total": 135169
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 2.8
+    "verdict_map": {
+      "0dbeb58aea6efa02": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "420bdd9b778df061": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "554828db1b78b7f1": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "9c8413ebd5d4aa60": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "ebc830289605a030": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-557c940d18",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 112.4
   }
 }

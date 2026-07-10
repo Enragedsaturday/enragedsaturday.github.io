@@ -1,13 +1,74 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Brady v. Maryland.json",
+    "lens": "A",
+    "notes": "Reviewed all 3 assertion rows disclosed in group_inventory.jsonl.",
+    "reviewed": [
+      {
+        "assertion_id": "665339bf5dadebd9",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record identifies Brady v. Maryland as a U.S. Supreme Court case decided 1963-05-13 with docket 490.",
+          "The lake citations record lists official citation 373 U.S. 83 and parallel/vendor citations 83 S. Ct. 1194, 10 L. Ed. 2d 215, and 1963 U.S. LEXIS 1615, matching the asserted citation payload."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "7cc164fcef6de80e",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "We now hold that the suppression by the prosecution of evidence favorable to an accused upon request violates due process where the evidence is material either to guilt or to punishment, irrespective of the good faith or bad faith of the prosecution.",
+          "locator_note": "pin-87; compare lake pinpoints[].quote to text/Brady v. Maryland__e24b81.txt at star page *87",
+          "needs_cl": false,
+          "problem": "The pin-87 stored quote is not the opinion passage at 373 U.S. 87. It is a block of generated content-page header/background/issue text ending at '## Rule', while the opinion text at *87 contains the actual Brady rule sentence.",
+          "proposed_fix": "Replace pin-87's quote with the actual page-*87 opinion sentence beginning 'We now hold...' and set the pinpoint metadata to land on that passage, not on generated page prose.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The lake pinpoint itself flags quote_fidelity as 'mismatch'.",
+          "The cached opinion text contains the actual page-*87 holding sentence, not the long generated content-page block stored in the pinpoint quote."
+        ],
+        "residual_risks": [
+          "The content page's displayed Rule quote appears faithful to the opinion text, but the lake pinpoint quote backing pin-87 is defective."
+        ],
+        "suggested_tightening": "Store only the court's page-*87 holding sentence in pin-87 and avoid using generated page markdown as a legal quote source.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "feacb14c9eb05127",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The asserted treatment fields match the disclosed lake treatment fields: field_i_validity good_law, as_of_content 1963-05-13, as_of_treatment 2026-06-30, varies_by_point false, and the stated scope note.",
+          "Treatment/currency merits are outside Lens A, so no treatment finding is raised."
+        ],
+        "residual_risks": [
+          "Treatment merits and currency remain for Lens B review."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Brady v. Maryland.json\",\"reviewed\":[{\"assertion_id\":\"665339bf5dadebd9\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake identity record identifies Brady v. Maryland as a U.S. Supreme Court case decided 1963-05-13 with docket 490.\",\"The lake citations record lists official citation 373 U.S. 83 and parallel/vendor citations 83 S. Ct. 1194, 10 L. Ed. 2d 215, and 1963 U.S. LEXIS 1615, matching the asserted citation payload.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"7cc164fcef6de80e\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The pin-87 stored quote is not the opinion passage at 373 U.S. 87. It is a block of generated content-page header/background/issue text ending at '## Rule', while the opinion text at *87 contains the actual Brady rule sentence.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-87's quote with the actual page-*87 opinion sentence beginning 'We now hold...' and set the pinpoint metadata to land on that passage, not on generated page prose.\",\"evidence_quote\":\"We now hold that the suppression by the prosecution of evidence favorable to an accused upon request violates due process where the evidence is material either to guilt or to punishment, irrespective of the good faith or bad faith of the prosecution.\",\"needs_cl\":false,\"locator_note\":\"pin-87; compare lake pinpoints[].quote to text/Brady v. Maryland__e24b81.txt at star page *87\"},\"reasons\":[\"The lake pinpoint itself flags quote_fidelity as 'mismatch'.\",\"The cached opinion text contains the actual page-*87 holding sentence, not the long generated content-page block stored in the pinpoint quote.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The content page's displayed Rule quote appears faithful to the opinion text, but the lake pinpoint quote backing pin-87 is defective.\"],\"suggested_tightening\":\"Store only the court's page-*87 holding sentence in pin-87 and avoid using generated page markdown as a legal quote source.\"},{\"assertion_id\":\"feacb14c9eb05127\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The asserted treatment fields match the disclosed lake treatment fields: field_i_validity good_law, as_of_content 1963-05-13, as_of_treatment 2026-06-30, varies_by_point false, and the stated scope note.\",\"Treatment/currency merits are outside Lens A, so no treatment finding is raised.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment merits and currency remain for Lens B review.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed all 3 assertion rows disclosed in group_inventory.jsonl.\"}",
   "summary": {
-    "at": "2026-07-09T23:17:23-04:00",
-    "attempts": 2,
+    "at": "2026-07-10T17:43:29-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-6d3ad9afe7"
+    ],
     "group_id": "_overhaul2/lake/cases/Brady v. Maryland.json",
     "group_total_assertions": 3,
     "lake_only_cases": [],
@@ -16,21 +77,48 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-6c9d18e4.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 3,
     "run": "prod",
     "text_disclosed_cases": [
       "Brady v. Maryland"
     ],
     "tokens": {
-      "input": 826,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 826
+      "input": 107970,
+      "output": 3693,
+      "source": "codex-events",
+      "total": 111663
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 2.9
+    "verdict_map": {
+      "665339bf5dadebd9": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "7cc164fcef6de80e": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "feacb14c9eb05127": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-6d3ad9afe7",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 75.9
   }
 }

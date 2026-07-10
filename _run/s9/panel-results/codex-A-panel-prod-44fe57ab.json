@@ -1,13 +1,106 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "content/cases/Commonwealth v. Herlth.md",
+    "lens": "A",
+    "notes": "No separate quote_fidelity or pincite assertion row was supplied in group_inventory.jsonl. Lake pin-26 is internally marked quote_fidelity=mismatch, but it was not a reviewed assertion_id in this group inventory.",
+    "reviewed": [
+      {
+        "assertion_id": "fd66f1d72f53f51c",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake record is verified and identifies the input case name as Commonwealth v. Herlth with canonical_name_match true.",
+          "Lake official/display citation is 2026 Pa. Super. 114, court is Pennsylvania Superior Court, and year is 2026; no parallel citation is listed."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "2efd4fda539b4c03",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "small hole in a closed container inside an individual’s residence does not defeat his reasonable expectation of privacy in the container. Thus, shining a flashlight into the hole, as Trooper Adams did here, constitutes a search.",
+          "locator_note": "content_page.md frontmatter holding",
+          "needs_cl": false,
+          "problem": "The substantive holding is supported, but the holding field is truncated after \"a trooper…\" and uses \"opaque\" as shorthand rather than the opinion's own formulation of a closed container whose contents were not visible to the naked eye.",
+          "proposed_fix": "Replace with a complete holding: \"A small hole in a closed container inside a residence does not defeat the occupant's reasonable expectation of privacy; shining a flashlight through the hole is a search and was not justified by plain view or community caretaking on these facts.\"",
+          "severity": "medium"
+        },
+        "dimension": "support",
+        "reasons": [
+          "The opinion states that Appellant had a reasonable expectation of privacy in the shoebox contents and that shining a flashlight into the small hole constituted a search.",
+          "The court also held the search improper under the community-caretaking and plain-view exceptions."
+        ],
+        "residual_risks": [
+          "The displayed holding should not remain ellipsized in a reference corpus."
+        ],
+        "suggested_tightening": "Use the opinion's narrower terms: closed container, contents not visible to the naked eye, flashlight-aided search.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "894fad99baf3e76d",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "The opinion's issue and analysis directly concern whether plain view permitted the trooper to illuminate and view the interior of the closed shoebox.",
+          "The opinion holds the plain-view doctrine did not justify the flashlight search because the shoebox was not immediately incriminating and the trooper lacked lawful access to the pills inside."
+        ],
+        "residual_risks": [
+          "The word \"Key\" is editorial; the disclosed files support importance to the page topic but do not provide a corpus-wide ranking metric."
+        ],
+        "suggested_tightening": "If \"Progeny\" could imply later cases citing Herlth, consider \"Key — Refinement / Application\" because lake.progeny lists zero indexed citing opinions.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "ae0f48428dbecdfd",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Lake treatment fields match the payload: field_i_validity good_law, as_of_content 2026-06-05, as_of_treatment 2026-06-30, composite_basis migration-seed, and varies_by_point false.",
+          "Treatment/currency is outside Lens A; this records consistency with the disclosed lake judgment only."
+        ],
+        "residual_risks": [
+          "Lens B owns any current-treatment audit."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "fb5d05eec5860568",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The disclosed records identify the court as Pennsylvania Superior Court and court_level as state, matching the state portion of the weight label.",
+          "In this federal search-and-seizure corpus, the persuasive-state label is consistent with the disclosed state appellate court metadata; Lens A does not audit treatment weight currency."
+        ],
+        "residual_risks": [
+          "No separate authority-weight rubric appears in the disclosed files; \"illustrative\" remains an editorial classification."
+        ],
+        "suggested_tightening": "Add authority_weight or a weight-rubric reference to the lake record if future reviewers must verify the label mechanically.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"content/cases/Commonwealth v. Herlth.md\",\"reviewed\":[{\"assertion_id\":\"fd66f1d72f53f51c\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake record is verified and identifies the input case name as Commonwealth v. Herlth with canonical_name_match true.\",\"Lake official/display citation is 2026 Pa. Super. 114, court is Pennsylvania Superior Court, and year is 2026; no parallel citation is listed.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"2efd4fda539b4c03\",\"dimension\":\"support\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The substantive holding is supported, but the holding field is truncated after \\\"a trooper…\\\" and uses \\\"opaque\\\" as shorthand rather than the opinion's own formulation of a closed container whose contents were not visible to the naked eye.\",\"severity\":\"medium\",\"proposed_fix\":\"Replace with a complete holding: \\\"A small hole in a closed container inside a residence does not defeat the occupant's reasonable expectation of privacy; shining a flashlight through the hole is a search and was not justified by plain view or community caretaking on these facts.\\\"\",\"evidence_quote\":\"small hole in a closed container inside an individual’s residence does not defeat his reasonable expectation of privacy in the container. Thus, shining a flashlight into the hole, as Trooper Adams did here, constitutes a search.\",\"needs_cl\":false,\"locator_note\":\"content_page.md frontmatter holding\"},\"reasons\":[\"The opinion states that Appellant had a reasonable expectation of privacy in the shoebox contents and that shining a flashlight into the small hole constituted a search.\",\"The court also held the search improper under the community-caretaking and plain-view exceptions.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The displayed holding should not remain ellipsized in a reference corpus.\"],\"suggested_tightening\":\"Use the opinion's narrower terms: closed container, contents not visible to the naked eye, flashlight-aided search.\"},{\"assertion_id\":\"894fad99baf3e76d\",\"dimension\":\"support\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The opinion's issue and analysis directly concern whether plain view permitted the trooper to illuminate and view the interior of the closed shoebox.\",\"The opinion holds the plain-view doctrine did not justify the flashlight search because the shoebox was not immediately incriminating and the trooper lacked lawful access to the pills inside.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The word \\\"Key\\\" is editorial; the disclosed files support importance to the page topic but do not provide a corpus-wide ranking metric.\"],\"suggested_tightening\":\"If \\\"Progeny\\\" could imply later cases citing Herlth, consider \\\"Key \\u2014 Refinement / Application\\\" because lake.progeny lists zero indexed citing opinions.\"},{\"assertion_id\":\"ae0f48428dbecdfd\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake treatment fields match the payload: field_i_validity good_law, as_of_content 2026-06-05, as_of_treatment 2026-06-30, composite_basis migration-seed, and varies_by_point false.\",\"Treatment/currency is outside Lens A; this records consistency with the disclosed lake judgment only.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Lens B owns any current-treatment audit.\"],\"suggested_tightening\":null},{\"assertion_id\":\"fb5d05eec5860568\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The disclosed records identify the court as Pennsylvania Superior Court and court_level as state, matching the state portion of the weight label.\",\"In this federal search-and-seizure corpus, the persuasive-state label is consistent with the disclosed state appellate court metadata; Lens A does not audit treatment weight currency.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"No separate authority-weight rubric appears in the disclosed files; \\\"illustrative\\\" remains an editorial classification.\"],\"suggested_tightening\":\"Add authority_weight or a weight-rubric reference to the lake record if future reviewers must verify the label mechanically.\"}],\"notes\":\"No separate quote_fidelity or pincite assertion row was supplied in group_inventory.jsonl. Lake pin-26 is internally marked quote_fidelity=mismatch, but it was not a reviewed assertion_id in this group inventory.\"}",
   "summary": {
-    "at": "2026-07-09T23:10:28-04:00",
-    "attempts": 2,
+    "at": "2026-07-10T16:57:11-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-56576e4037"
+    ],
     "group_id": "content/cases/Commonwealth v. Herlth.md",
     "group_total_assertions": 5,
     "lake_only_cases": [],
@@ -16,21 +109,62 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-44fe57ab.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 5,
     "run": "prod",
     "text_disclosed_cases": [
       "Commonwealth v. Herlth"
     ],
     "tokens": {
-      "input": 824,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 824
+      "input": 240677,
+      "output": 9728,
+      "source": "codex-events",
+      "total": 250405
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 3.2
+    "verdict_map": {
+      "2efd4fda539b4c03": {
+        "dimension": "support",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "894fad99baf3e76d": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "ae0f48428dbecdfd": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "fb5d05eec5860568": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "fd66f1d72f53f51c": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-56576e4037",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 189.8
   }
 }

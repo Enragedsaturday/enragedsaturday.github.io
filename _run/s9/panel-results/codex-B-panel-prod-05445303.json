@@ -1,13 +1,110 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "content/cases/United States v. Soto-Peguero.md",
+    "lens": "B",
+    "notes": "Reviewed all five group_inventory assertion_id values exactly once under Lens B only.",
+    "reviewed": [
+      {
+        "assertion_id": "925295885649d41e",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity record is verified, with canonical_name_match true and expected_citation_found true.",
+          "Lake citation fields list 978 F.3d 13 as the selected official citation and identity year/date as 2020-10-19.",
+          "Lake treatment field_i_validity is good_law as of 2026-06-30, so the disclosed record does not show the authority is no longer live law."
+        ],
+        "residual_risks": [
+          "Currency is verified only through the lake as_of_treatment date of 2026-06-30."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "a057c2f34dbdeb79",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "Lens B does not adjudicate holding/support fidelity.",
+          "No disclosed treatment judgment shows the case has been overruled, abrogated, or superseded; lake field_i_validity remains good_law as of 2026-06-30."
+        ],
+        "residual_risks": [
+          "Support merits and quote fidelity are left to Lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "f4bd1307beb89f1b",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "Lens B does not adjudicate home-role support.",
+          "The disclosed treatment judgment leaves Soto-Peguero as good_law as of 2026-06-30, so no currency defect defeats the role label under this lens."
+        ],
+        "residual_risks": [
+          "Whether the role is substantively well chosen is a support/home-role question for Lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "bacf6476c9fde07c",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "\"proposed_negative_events\": 4",
+          "locator_note": "content_page.md treatment section; lake treatment.edges and derivation.lane2_top_cited",
+          "needs_cl": false,
+          "problem": "The core good_law treatment call survives, but the page's categorical 'No negative treatment' wording is too absolute against the disclosed lake record, which contains proposed treatment edges carrying negative field_ii labels even though the controlling field_i judgment was not downgraded.",
+          "proposed_fix": "Keep field_i_validity: good_law as of 2026-06-30, but change 'No negative treatment' to 'No confirmed negative treatment in the lake treatment judgment; proposed/mentioned progeny edges did not downgrade the case.'",
+          "severity": "low"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "Lake treatment.field_i_validity is good_law with as_of_treatment 2026-06-30 and no point_overrides.",
+          "Lake lane1_negative reports proposed_negative_events 0, supporting the good-law judgment for controlling negative treatment.",
+          "Lake also reports lane2_top_cited proposed_negative_events 4 and treatment edges with field_ii labels including criticized, questioned, and overruled, so 'No negative treatment' should be narrowed."
+        ],
+        "residual_risks": [
+          "The negative-looking lane2 edges are marked proposed and field_iii mentioned, so they do not refute the good_law call on the disclosed record."
+        ],
+        "suggested_tightening": "Distinguish confirmed treatment judgment from proposed/automated progeny-edge labels.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "d7ad14cbbd9793f3",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Lake identity places the case in the U.S. Court of Appeals, First Circuit, with court_id ca1 and circuit 1st.",
+          "The content label is limited to binding in-circuit status, and the disclosed treatment record does not show a controlling downgrade that would defeat that weight label."
+        ],
+        "residual_risks": [
+          "Weight is assessed only from the disclosed court/circuit and treatment fields."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"content/cases/United States v. Soto-Peguero.md\",\"reviewed\":[{\"assertion_id\":\"925295885649d41e\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity record is verified, with canonical_name_match true and expected_citation_found true.\",\"Lake citation fields list 978 F.3d 13 as the selected official citation and identity year/date as 2020-10-19.\",\"Lake treatment field_i_validity is good_law as of 2026-06-30, so the disclosed record does not show the authority is no longer live law.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Currency is verified only through the lake as_of_treatment date of 2026-06-30.\"],\"suggested_tightening\":null},{\"assertion_id\":\"a057c2f34dbdeb79\",\"dimension\":\"support\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lens B does not adjudicate holding/support fidelity.\",\"No disclosed treatment judgment shows the case has been overruled, abrogated, or superseded; lake field_i_validity remains good_law as of 2026-06-30.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Support merits and quote fidelity are left to Lens A.\"],\"suggested_tightening\":null},{\"assertion_id\":\"f4bd1307beb89f1b\",\"dimension\":\"support\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lens B does not adjudicate home-role support.\",\"The disclosed treatment judgment leaves Soto-Peguero as good_law as of 2026-06-30, so no currency defect defeats the role label under this lens.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Whether the role is substantively well chosen is a support/home-role question for Lens A.\"],\"suggested_tightening\":null},{\"assertion_id\":\"bacf6476c9fde07c\",\"dimension\":\"treatment\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The core good_law treatment call survives, but the page's categorical 'No negative treatment' wording is too absolute against the disclosed lake record, which contains proposed treatment edges carrying negative field_ii labels even though the controlling field_i judgment was not downgraded.\",\"severity\":\"low\",\"proposed_fix\":\"Keep field_i_validity: good_law as of 2026-06-30, but change 'No negative treatment' to 'No confirmed negative treatment in the lake treatment judgment; proposed/mentioned progeny edges did not downgrade the case.'\",\"evidence_quote\":\"\\\"proposed_negative_events\\\": 4\",\"needs_cl\":false,\"locator_note\":\"content_page.md treatment section; lake treatment.edges and derivation.lane2_top_cited\"},\"reasons\":[\"Lake treatment.field_i_validity is good_law with as_of_treatment 2026-06-30 and no point_overrides.\",\"Lake lane1_negative reports proposed_negative_events 0, supporting the good-law judgment for controlling negative treatment.\",\"Lake also reports lane2_top_cited proposed_negative_events 4 and treatment edges with field_ii labels including criticized, questioned, and overruled, so 'No negative treatment' should be narrowed.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The negative-looking lane2 edges are marked proposed and field_iii mentioned, so they do not refute the good_law call on the disclosed record.\"],\"suggested_tightening\":\"Distinguish confirmed treatment judgment from proposed/automated progeny-edge labels.\"},{\"assertion_id\":\"d7ad14cbbd9793f3\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity places the case in the U.S. Court of Appeals, First Circuit, with court_id ca1 and circuit 1st.\",\"The content label is limited to binding in-circuit status, and the disclosed treatment record does not show a controlling downgrade that would defeat that weight label.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Weight is assessed only from the disclosed court/circuit and treatment fields.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed all five group_inventory assertion_id values exactly once under Lens B only.\"}",
   "summary": {
-    "at": "2026-07-09T23:14:21-04:00",
-    "attempts": 2,
+    "at": "2026-07-10T17:18:52-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-6b609522ae"
+    ],
     "group_id": "content/cases/United States v. Soto-Peguero.md",
     "group_total_assertions": 5,
     "lake_only_cases": [],
@@ -16,21 +113,62 @@
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-05445303.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 5,
     "run": "prod",
     "text_disclosed_cases": [
       "United States v. Soto-Peguero"
     ],
     "tokens": {
-      "input": 754,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 754
+      "input": 106638,
+      "output": 6264,
+      "source": "codex-events",
+      "total": 112902
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 3.0
+    "verdict_map": {
+      "925295885649d41e": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "a057c2f34dbdeb79": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "bacf6476c9fde07c": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "d7ad14cbbd9793f3": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "f4bd1307beb89f1b": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-6b609522ae",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 130.8
   }
 }

@@ -1,0 +1,159 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Virginia v. Moore.json",
+    "lens": "A",
+    "notes": "Reviewed all four rows in group_inventory.jsonl. No black_letter rows were present.",
+    "reviewed": [
+      {
+        "assertion_id": "395b14108f9bce9e",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity record verifies Virginia v. Moore, U.S. Supreme Court, decided 2008-04-23, docket 06-1082.",
+          "Official citation 553 U.S. 164 and parallel/vendor citations 128 S. Ct. 1598, 170 L. Ed. 2d 559, and 2008 U.S. LEXIS 3674 match the lake citation fields and the content page."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "3aeabe33a5f369e8",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "   We conclude that warrantless arrests for crimes com-\nmitted in the presence of an arresting officer are reason-\nable under the Constitution, and that while States are free\nto regulate such arrests however they desire, state restric-\ntions do not alter the Fourth Amendment’s protections.",
+          "locator_note": "pin-1607; lake page, star_marker, and position are null; pinpoint_status is slip-only; quote_fidelity is mismatch.",
+          "needs_cl": false,
+          "problem": "The disclosed pin-1607 quote is not an opinion quote; it is a harvested chunk of the built page/frontmatter/background ending at '## Rule No.' The lake itself marks quote_fidelity as mismatch, and the actual opinion passage is different.",
+          "proposed_fix": "Replace pin-1607 with the actual opinion passage supporting the rule, or remove the pin until an exact quote and page pin can be harvested. Also avoid typographic changes inside quotation marks unless normalized by policy.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The inventory/lake quote for pin-1607 reproduces content-page material rather than text from the Moore opinion.",
+          "The opinion text supports the general rule, but not the stored pin quote as a character-faithful quotation."
+        ],
+        "residual_risks": [
+          "The S. Ct. page pin 1607 cannot be independently validated from the disclosed slip-text file because the lake has no page/star position."
+        ],
+        "suggested_tightening": "Store a short exact opinion quote for the rule and separate quote fidelity from official-reporter page validation.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "71d7026c673ea1ec",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "We have recognized, however, that officers may perform\nsearches incident to constitutionally permissible arrests in\n\f12                   VIRGINIA v. MOORE\n\n                      Opinion of the Court\n\norder to ensure their safety and safeguard evidence.",
+          "locator_note": "pin-1608; lake page, star_marker, and position are null; pinpoint_status is slip-only; quote_fidelity is mismatch.",
+          "needs_cl": false,
+          "problem": "The quoted words are substantively present in the opinion, but the stored quote is not character-verifiable as an exact contiguous string in the disclosed text because a page break/header interrupts 'in order'; the lake also marks it as quote_fidelity mismatch and provides no position.",
+          "proposed_fix": "Retain the proposition, but repair the pin record by storing a normalized/reflowed source quote with an auditable position, or quote a passage that is exact in the cached text. Add separate pins for the other direct quotes bundled under the same content-page pin.",
+          "severity": "medium"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The opinion contains the quoted phrase in order, but the disclosed text interrupts the exact string with pagination material.",
+          "The content page attaches pin-1608 to multiple quoted propositions, while the lake quote captures only the first quote fragment."
+        ],
+        "residual_risks": [
+          "The S. Ct. page pin 1608 cannot be independently validated from the disclosed slip-text file because the lake has no page/star position."
+        ],
+        "suggested_tightening": "Use one pin per quoted passage and preserve a normalized source-text span so future quote checks can distinguish pagination artifacts from real mismatches.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "22acbb76118ba14a",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The treatment payload matches the lake judgment fields: field_i_validity good_law, as_of_content 2008-04-23, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note.",
+          "Treatment/currency merits are outside lens A, so no treatment finding is raised."
+        ],
+        "residual_risks": [
+          "Treatment/currency and negative-treatment edges were not audited under this lens."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Virginia v. Moore.json\",\"reviewed\":[{\"assertion_id\":\"395b14108f9bce9e\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity record verifies Virginia v. Moore, U.S. Supreme Court, decided 2008-04-23, docket 06-1082.\",\"Official citation 553 U.S. 164 and parallel/vendor citations 128 S. Ct. 1598, 170 L. Ed. 2d 559, and 2008 U.S. LEXIS 3674 match the lake citation fields and the content page.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"3aeabe33a5f369e8\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The disclosed pin-1607 quote is not an opinion quote; it is a harvested chunk of the built page/frontmatter/background ending at '## Rule No.' The lake itself marks quote_fidelity as mismatch, and the actual opinion passage is different.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-1607 with the actual opinion passage supporting the rule, or remove the pin until an exact quote and page pin can be harvested. Also avoid typographic changes inside quotation marks unless normalized by policy.\",\"evidence_quote\":\"   We conclude that warrantless arrests for crimes com-\\nmitted in the presence of an arresting officer are reason-\\nable under the Constitution, and that while States are free\\nto regulate such arrests however they desire, state restric-\\ntions do not alter the Fourth Amendment’s protections.\",\"needs_cl\":false,\"locator_note\":\"pin-1607; lake page, star_marker, and position are null; pinpoint_status is slip-only; quote_fidelity is mismatch.\"},\"reasons\":[\"The inventory/lake quote for pin-1607 reproduces content-page material rather than text from the Moore opinion.\",\"The opinion text supports the general rule, but not the stored pin quote as a character-faithful quotation.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The S. Ct. page pin 1607 cannot be independently validated from the disclosed slip-text file because the lake has no page/star position.\"],\"suggested_tightening\":\"Store a short exact opinion quote for the rule and separate quote fidelity from official-reporter page validation.\"},{\"assertion_id\":\"71d7026c673ea1ec\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The quoted words are substantively present in the opinion, but the stored quote is not character-verifiable as an exact contiguous string in the disclosed text because a page break/header interrupts 'in order'; the lake also marks it as quote_fidelity mismatch and provides no position.\",\"severity\":\"medium\",\"proposed_fix\":\"Retain the proposition, but repair the pin record by storing a normalized/reflowed source quote with an auditable position, or quote a passage that is exact in the cached text. Add separate pins for the other direct quotes bundled under the same content-page pin.\",\"evidence_quote\":\"We have recognized, however, that officers may perform\\nsearches incident to constitutionally permissible arrests in\\n\\f12                   VIRGINIA v. MOORE\\n\\n                      Opinion of the Court\\n\\norder to ensure their safety and safeguard evidence.\",\"needs_cl\":false,\"locator_note\":\"pin-1608; lake page, star_marker, and position are null; pinpoint_status is slip-only; quote_fidelity is mismatch.\"},\"reasons\":[\"The opinion contains the quoted phrase in order, but the disclosed text interrupts the exact string with pagination material.\",\"The content page attaches pin-1608 to multiple quoted propositions, while the lake quote captures only the first quote fragment.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The S. Ct. page pin 1608 cannot be independently validated from the disclosed slip-text file because the lake has no page/star position.\"],\"suggested_tightening\":\"Use one pin per quoted passage and preserve a normalized source-text span so future quote checks can distinguish pagination artifacts from real mismatches.\"},{\"assertion_id\":\"22acbb76118ba14a\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The treatment payload matches the lake judgment fields: field_i_validity good_law, as_of_content 2008-04-23, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note.\",\"Treatment/currency merits are outside lens A, so no treatment finding is raised.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment/currency and negative-treatment edges were not audited under this lens.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed all four rows in group_inventory.jsonl. No black_letter rows were present.\"}",
+  "summary": {
+    "at": "2026-07-10T18:14:41-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-16290b714a",
+      "F-S9-PR-9ec6d7de54"
+    ],
+    "group_id": "_overhaul2/lake/cases/Virginia v. Moore.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "codex-A",
+    "lane_id": "codex-A-panel-prod-145b40fe",
+    "lens": "A",
+    "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-145b40fe.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Virginia v. Moore"
+    ],
+    "tokens": {
+      "input": 301339,
+      "output": 10193,
+      "source": "codex-events",
+      "total": 311532
+    },
+    "verdict_map": {
+      "22acbb76118ba14a": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "395b14108f9bce9e": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "3aeabe33a5f369e8": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "71d7026c673ea1ec": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-16290b714a",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-9ec6d7de54",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 194.9
+  }
+}

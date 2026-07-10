@@ -1,22 +1,145 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Jones v. United States.json",
+    "lens": "A",
+    "notes": "Reviewed all 4 inventory rows using only disclosed workspace files.",
+    "reviewed": [
+      {
+        "assertion_id": "1ae9995d3fa05ccd",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record identifies Jones v. United States as a verified U.S. Supreme Court case decided 1960-03-28.",
+          "The lake official citation is 362 U.S. 257, matching the content-page citation and display citation."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "1687c708552524c7",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "In cases where the indictment itself charges possession, the defendant in a very real sense is revealed as a “person aggrieved by an unlawful search and seizure” upon a motion to suppress evidence prior to trial.",
+          "locator_note": "text/Jones v. United States__7d2de1.txt contains the quoted sentence after the *264 marker; lake pin-264 instead contains content-page markdown beginning '--- # Jones v. United States...'.",
+          "needs_cl": false,
+          "problem": "pin-264 is not a character-faithful opinion quote. The lake pinpoint captures generated markdown/page summary text, has star_marker null, and is marked quote_fidelity='mismatch'. The actual automatic-standing sentence appears in the opinion text at star page 264, but the content-page quotation also changes the opinion's curly double quotation marks around 'person aggrieved' into single quotes.",
+          "proposed_fix": "Replace pin-264 with the actual opinion sentence and set the pinpoint to star page 264; preserve the opinion's quotation marks exactly.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The disclosed lake record itself marks pin-264 as quote_fidelity='mismatch' and pinpoint_status='slip-only'.",
+          "The disclosed opinion text supplies the correct sentence at the cited page, which differs from both the lake pin text and the content-page punctuation."
+        ],
+        "residual_risks": [
+          "The underlying automatic-standing proposition is supported, but the verbatim quote/pin metadata is not reliable as framed."
+        ],
+        "suggested_tightening": "Reject pinpoint quotes that contain page front matter or markdown headings, and require exact character matching against cached opinion text before projection.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "98d065211961c525",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The quoted text appears verbatim in text/Jones v. United States__7d2de1.txt.",
+          "The lake record marks pin-267 as quote_fidelity='matched', star_marker='267', and pinpoint_status='star-verified'."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "2b60daf32b09a23f",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside lens A, so no treatment defect is raised.",
+          "The treatment payload matches the disclosed lake treatment fields for field_i_validity, dates, varies_by_point, and scope_note."
+        ],
+        "residual_risks": [
+          "No independent treatment audit was performed under lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Jones v. United States.json\",\"reviewed\":[{\"assertion_id\":\"1ae9995d3fa05ccd\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record identifies Jones v. United States as a verified U.S. Supreme Court case decided 1960-03-28.\",\"The lake official citation is 362 U.S. 257, matching the content-page citation and display citation.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"1687c708552524c7\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"pin-264 is not a character-faithful opinion quote. The lake pinpoint captures generated markdown/page summary text, has star_marker null, and is marked quote_fidelity='mismatch'. The actual automatic-standing sentence appears in the opinion text at star page 264, but the content-page quotation also changes the opinion's curly double quotation marks around 'person aggrieved' into single quotes.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-264 with the actual opinion sentence and set the pinpoint to star page 264; preserve the opinion's quotation marks exactly.\",\"evidence_quote\":\"In cases where the indictment itself charges possession, the defendant in a very real sense is revealed as a “person aggrieved by an unlawful search and seizure” upon a motion to suppress evidence prior to trial.\",\"needs_cl\":false,\"locator_note\":\"text/Jones v. United States__7d2de1.txt contains the quoted sentence after the *264 marker; lake pin-264 instead contains content-page markdown beginning '--- # Jones v. United States...'.\"},\"reasons\":[\"The disclosed lake record itself marks pin-264 as quote_fidelity='mismatch' and pinpoint_status='slip-only'.\",\"The disclosed opinion text supplies the correct sentence at the cited page, which differs from both the lake pin text and the content-page punctuation.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The underlying automatic-standing proposition is supported, but the verbatim quote/pin metadata is not reliable as framed.\"],\"suggested_tightening\":\"Reject pinpoint quotes that contain page front matter or markdown headings, and require exact character matching against cached opinion text before projection.\"},{\"assertion_id\":\"98d065211961c525\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The quoted text appears verbatim in text/Jones v. United States__7d2de1.txt.\",\"The lake record marks pin-267 as quote_fidelity='matched', star_marker='267', and pinpoint_status='star-verified'.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"2b60daf32b09a23f\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside lens A, so no treatment defect is raised.\",\"The treatment payload matches the disclosed lake treatment fields for field_i_validity, dates, varies_by_point, and scope_note.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"No independent treatment audit was performed under lens A.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed all 4 inventory rows using only disclosed workspace files.\"}",
   "summary": {
-    "at": "2026-07-09T23:15:10-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-10T17:23:28-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-7d1a0fb784"
+    ],
     "group_id": "_overhaul2/lake/cases/Jones v. United States.json",
     "group_total_assertions": 4,
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-9edeef83",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-9edeef83.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "Reading additional input from stdin...\n\u001b[2m2026-07-10T03:15:06.944366Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T03:15:07.425749Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T03:15:08.015138Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T03:15:08.879538Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Jones v. United States"
+    ],
+    "tokens": {
+      "input": 244979,
+      "output": 5291,
+      "source": "codex-events",
+      "total": 250270
+    },
+    "verdict_map": {
+      "1687c708552524c7": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "1ae9995d3fa05ccd": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "2b60daf32b09a23f": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "98d065211961c525": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-7d1a0fb784",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 116.2
   }
 }

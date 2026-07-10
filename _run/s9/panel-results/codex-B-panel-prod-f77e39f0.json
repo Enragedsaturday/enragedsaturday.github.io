@@ -1,11 +1,52 @@
 {
-  "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Lombardo v. City of St. Louis.json",
+    "lens": "B",
+    "notes": "",
+    "reviewed": [
+      {
+        "assertion_id": "c59c9ef0a930fedd",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record verifies the case identity for record_id Lombardo v. City of St. Louis, with court scotus, year 2021, docket 20-391, and cluster_id 4895266.",
+          "The citation payload matches the lake citation fields: official citation 594 U.S. 464 and parallel citations 210 L. Ed. 2d 609 and 141 S. Ct. 2239.",
+          "No disclosed treatment or progeny edge marks the authority overruled, superseded, abrogated, or limited."
+        ],
+        "residual_risks": [
+          "The disclosed record does not positively verify current good-law status; treatment is expressly unverified and progeny is not populated."
+        ],
+        "suggested_tightening": "Keep this assertion limited to case existence/citation identity unless citator treatment is later verified.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "acc09be79dcd6404",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The treatment assertion exactly matches the lake treatment field_i_validity of unverified.",
+          "The lake treatment fields have as_of_content null, as_of_treatment null, varies_by_point false, point_overrides empty, and edges empty.",
+          "The scope note in the assertion matches the lake scope note that treatment/progeny were intentionally not derived until S6 promotion.",
+          "The content page consistently renders Treatment: Unverified and states that subsequent treatment has not yet been machine-verified."
+        ],
+        "residual_risks": [
+          "Because treatment is unverified and progeny rows_cached is 0, this record cannot be used to establish affirmative good-law currency from the disclosed evidence alone."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/Lombardo v. City of St. Louis.json\",\"reviewed\":[{\"assertion_id\":\"c59c9ef0a930fedd\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record verifies the case identity for record_id Lombardo v. City of St. Louis, with court scotus, year 2021, docket 20-391, and cluster_id 4895266.\",\"The citation payload matches the lake citation fields: official citation 594 U.S. 464 and parallel citations 210 L. Ed. 2d 609 and 141 S. Ct. 2239.\",\"No disclosed treatment or progeny edge marks the authority overruled, superseded, abrogated, or limited.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The disclosed record does not positively verify current good-law status; treatment is expressly unverified and progeny is not populated.\"],\"suggested_tightening\":\"Keep this assertion limited to case existence/citation identity unless citator treatment is later verified.\"},{\"assertion_id\":\"acc09be79dcd6404\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The treatment assertion exactly matches the lake treatment field_i_validity of unverified.\",\"The lake treatment fields have as_of_content null, as_of_treatment null, varies_by_point false, point_overrides empty, and edges empty.\",\"The scope note in the assertion matches the lake scope note that treatment/progeny were intentionally not derived until S6 promotion.\",\"The content page consistently renders Treatment: Unverified and states that subsequent treatment has not yet been machine-verified.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Because treatment is unverified and progeny rows_cached is 0, this record cannot be used to establish affirmative good-law currency from the disclosed evidence alone.\"],\"suggested_tightening\":null}],\"notes\":\"\"}",
   "summary": {
-    "at": "2026-07-09T22:14:09-04:00",
-    "attempts": 2,
-    "clean_attestation": false,
+    "at": "2026-07-10T16:49:31-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
     "defense_votes": [],
     "findings_emitted": [],
     "group_id": "_overhaul2/lake/cases/Lombardo v. City of St. Louis.json",
@@ -18,21 +59,36 @@
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-f77e39f0.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [
       "case 'Lombardo v. City of St. Louis' has no lead_opinion_id (text undisclosed)"
     ],
-    "reviewed_count": 0,
+    "reviewed_count": 2,
     "run": "prod",
     "text_disclosed_cases": [],
     "tokens": {
-      "input": 757,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 757
+      "input": 113367,
+      "output": 3666,
+      "source": "codex-events",
+      "total": 117033
     },
-    "verdict_map": {},
+    "verdict_map": {
+      "acc09be79dcd6404": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "c59c9ef0a930fedd": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
     "votes_emitted": [],
-    "wall_clock_s": 900.0
+    "wall_clock_s": 77.1
   }
 }

@@ -1,13 +1,99 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Olmstead v. United States.json",
+    "lens": "B",
+    "notes": "",
+    "reviewed": [
+      {
+        "assertion_id": "8f0014cec35d894f",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record is verified for Olmstead v. United States, with canonical name match, expected citation found, and official citation 277 U.S. 438 selected.",
+          "The disclosed treatment record makes clear the authority is historical/not current law, so the citation is not being treated as live Fourth Amendment wiretap law."
+        ],
+        "residual_risks": [
+          "The page frontmatter also contains authority_weight \"Binding — SCOTUS\"; if reused without the historical/overruled treatment badge, it could mislead."
+        ],
+        "suggested_tightening": "Always pair this citation with the Historical/overruled treatment label when surfaced outside the case page.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "7b49e527492026b3",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote-fidelity is outside lens B; I do not raise a support or quote-fidelity finding.",
+          "The embedded currency statement that the holding has been overruled is consistent with the lake scope note and Katz overruled edge."
+        ],
+        "residual_risks": [
+          "The disclosed pin itself is marked quote_fidelity \"mismatch\" and pinpoint_status \"slip-only\", but that is for lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "a9f4933be830080d",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote-fidelity is outside lens B; I do not raise a support or quote-fidelity finding.",
+          "No disclosed treatment edge revives Olmstead's wiretap-no-search holding; the page context labels the rule historical/overruled."
+        ],
+        "residual_risks": [
+          "If this quote is extracted alone, it needs the historical/overruled treatment context carried with it."
+        ],
+        "suggested_tightening": "Attach a short historical/overruled qualifier to standalone uses of this quote.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "dae9a04461320ed6",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Overruled on the privacy point by Katz v. United States (1967); survives only as history.",
+          "locator_note": "lake treatment.field_i_validity/scope_note/edges and content_page frontmatter/header treatment labels",
+          "needs_cl": false,
+          "problem": "The negative treatment call survives, but the labels are internally loose: field_i_validity is \"superseded\" while the disclosed basis and rendered page status say Katz overruled the privacy/wiretap holding; frontmatter also says authority_weight \"Binding — SCOTUS\", which needs treatment qualification for an overruled holding.",
+          "proposed_fix": "Use a unified display such as \"Historical — overruled by Katz\" and qualify the SCOTUS weight as historical/origin only. If \"superseded\" is an internal umbrella value, expose the more precise public status \"overruled\" from the Katz edge/scope note.",
+          "severity": "medium"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "The lake treatment edge for Katz v. United States has field_ii \"overruled\", and the scope note says Olmstead survives only as history.",
+          "The page itself renders Treatment: overruled, while the structured field_i_validity says superseded; that mismatch should be normalized or explained.",
+          "The disclosed Jones note only partially revives property-trespass reasoning as an alternative test; it does not make Olmstead's wiretap-is-not-a-search holding live again."
+        ],
+        "residual_risks": [
+          "The treatment derivation shows audit_needed/cap_hit in some lanes, but the disclosed judgment fields are enough to verify the negative treatment call for this review.",
+          "If the corpus distinguishes propositions, the Katz/Jones nuance may deserve point-specific overrides."
+        ],
+        "suggested_tightening": "Consider a point override separating the overruled wiretap/no-search holding from the later Jones revival of property trespass as an alternative Fourth Amendment test.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/Olmstead v. United States.json\",\"reviewed\":[{\"assertion_id\":\"8f0014cec35d894f\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake identity record is verified for Olmstead v. United States, with canonical name match, expected citation found, and official citation 277 U.S. 438 selected.\",\"The disclosed treatment record makes clear the authority is historical/not current law, so the citation is not being treated as live Fourth Amendment wiretap law.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The page frontmatter also contains authority_weight \\\"Binding — SCOTUS\\\"; if reused without the historical/overruled treatment badge, it could mislead.\"],\"suggested_tightening\":\"Always pair this citation with the Historical/overruled treatment label when surfaced outside the case page.\"},{\"assertion_id\":\"7b49e527492026b3\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Quote-fidelity is outside lens B; I do not raise a support or quote-fidelity finding.\",\"The embedded currency statement that the holding has been overruled is consistent with the lake scope note and Katz overruled edge.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The disclosed pin itself is marked quote_fidelity \\\"mismatch\\\" and pinpoint_status \\\"slip-only\\\", but that is for lens A.\"],\"suggested_tightening\":null},{\"assertion_id\":\"a9f4933be830080d\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Quote-fidelity is outside lens B; I do not raise a support or quote-fidelity finding.\",\"No disclosed treatment edge revives Olmstead's wiretap-no-search holding; the page context labels the rule historical/overruled.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"If this quote is extracted alone, it needs the historical/overruled treatment context carried with it.\"],\"suggested_tightening\":\"Attach a short historical/overruled qualifier to standalone uses of this quote.\"},{\"assertion_id\":\"dae9a04461320ed6\",\"dimension\":\"treatment\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The negative treatment call survives, but the labels are internally loose: field_i_validity is \\\"superseded\\\" while the disclosed basis and rendered page status say Katz overruled the privacy/wiretap holding; frontmatter also says authority_weight \\\"Binding — SCOTUS\\\", which needs treatment qualification for an overruled holding.\",\"severity\":\"medium\",\"proposed_fix\":\"Use a unified display such as \\\"Historical — overruled by Katz\\\" and qualify the SCOTUS weight as historical/origin only. If \\\"superseded\\\" is an internal umbrella value, expose the more precise public status \\\"overruled\\\" from the Katz edge/scope note.\",\"evidence_quote\":\"Overruled on the privacy point by Katz v. United States (1967); survives only as history.\",\"needs_cl\":false,\"locator_note\":\"lake treatment.field_i_validity/scope_note/edges and content_page frontmatter/header treatment labels\"},\"reasons\":[\"The lake treatment edge for Katz v. United States has field_ii \\\"overruled\\\", and the scope note says Olmstead survives only as history.\",\"The page itself renders Treatment: overruled, while the structured field_i_validity says superseded; that mismatch should be normalized or explained.\",\"The disclosed Jones note only partially revives property-trespass reasoning as an alternative test; it does not make Olmstead's wiretap-is-not-a-search holding live again.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The treatment derivation shows audit_needed/cap_hit in some lanes, but the disclosed judgment fields are enough to verify the negative treatment call for this review.\",\"If the corpus distinguishes propositions, the Katz/Jones nuance may deserve point-specific overrides.\"],\"suggested_tightening\":\"Consider a point override separating the overruled wiretap/no-search holding from the later Jones revival of property trespass as an alternative Fourth Amendment test.\"}],\"notes\":\"\"}",
   "summary": {
-    "at": "2026-07-09T23:15:22-04:00",
-    "attempts": 2,
+    "at": "2026-07-10T17:26:40-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "defense_votes": [],
-    "findings_emitted": [],
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-694cea7c77",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-682a0ae242"
+    ],
     "group_id": "_overhaul2/lake/cases/Olmstead v. United States.json",
     "group_total_assertions": 4,
     "lake_only_cases": [],
@@ -16,21 +102,59 @@
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-3a80abc7.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 4,
     "run": "prod",
     "text_disclosed_cases": [
       "Olmstead v. United States"
     ],
     "tokens": {
-      "input": 756,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 756
+      "input": 317997,
+      "output": 7613,
+      "source": "codex-events",
+      "total": 325610
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 2.8
+    "verdict_map": {
+      "7b49e527492026b3": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "8f0014cec35d894f": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "a9f4933be830080d": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "dae9a04461320ed6": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-694cea7c77",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-682a0ae242",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 148.5
   }
 }

@@ -1,13 +1,93 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Wolf v. Colorado.json",
+    "lens": "A",
+    "notes": "Reviewed every assertion_id in group_inventory.jsonl exactly once using only disclosed workspace files.",
+    "reviewed": [
+      {
+        "assertion_id": "6df33aea3c9e3644",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record identifies Wolf v. Colorado as a U.S. Supreme Court case decided 1949-06-27 with official citation 338 U.S. 25.",
+          "The content page citation, court, year, docket, and listed parallel/vendor citations match the disclosed lake citation fields."
+        ],
+        "residual_risks": [
+          "No external reporter validation was performed because the review universe is limited to disclosed files."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "8f8e97341488af46",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The quoted language appears verbatim in text/Wolf v. Colorado__a8b65b.txt in the Court's holding paragraph on star page 33.",
+          "The lake pinpoint for pin-33 is marked quote_fidelity=matched, pinpoint_status=star-verified, and star_marker=33."
+        ],
+        "residual_risks": [
+          "The quote begins mid-sentence after 'We hold, therefore, that', but the quoted substring itself is character-faithful."
+        ],
+        "suggested_tightening": "Consider including the lead-in 'We hold, therefore, that' or marking the omission with an ellipsis.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "d258a00b10f0ee45",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "The security of one's privacy against arbitrary intrusion by the policewhich is at the core of the Fourth Amendmentis basic to a free society. It is therefore implicit in \"the concept of ordered liberty\" and as such enforceable against the States through the Due Process <span class=\"star-pagination\">*28</span> Clause.",
+          "locator_note": "lake pin-27 has quote_fidelity=mismatch, pinpoint_status=slip-only, star_marker=null, and position=null; content cites this as 338 U.S. at 27-28.",
+          "needs_cl": false,
+          "problem": "pin-27 is not a verified authority quote. The lake quote is generated page/header/background prose, not the quoted Wolf passage, and the lake itself marks the pinpoint as a mismatch with no star marker or position.",
+          "proposed_fix": "Replace pin-27 with the actual opinion sentence from text/Wolf v. Colorado__a8b65b.txt at star pages 27-28, preserving the opinion text's quotation marks and pagination, then reverify the fragment/star marker before marking it matched.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload quote for pin-27 begins with '--- # Wolf v. Colorado' and includes page prose, not opinion text.",
+          "The disclosed text contains the real passage at the page 27 to 28 break, but the recorded pin does not capture it.",
+          "The content page's displayed quotation also changes the opinion's double quotation marks around 'the concept of ordered liberty' to single quotation marks, so it is not character-faithful as displayed."
+        ],
+        "residual_risks": [
+          "The underlying legal proposition is supported by the opinion; the defect is the quote/pin record and displayed quote fidelity, not the existence of support."
+        ],
+        "suggested_tightening": "Keep the rule proposition, but correct the quotation and pin metadata rather than relying on the current pin-27 record.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "8196867a9a012434",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A's charter, so no substantive treatment finding is raised.",
+          "The payload treatment fields match the disclosed lake treatment fields: field_i_validity=superseded, as_of_content=1949-06-27, as_of_treatment=2026-06-30, and the same scope note."
+        ],
+        "residual_risks": [
+          "Treatment was not independently audited under Lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Wolf v. Colorado.json\",\"reviewed\":[{\"assertion_id\":\"6df33aea3c9e3644\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record identifies Wolf v. Colorado as a U.S. Supreme Court case decided 1949-06-27 with official citation 338 U.S. 25.\",\"The content page citation, court, year, docket, and listed parallel/vendor citations match the disclosed lake citation fields.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"No external reporter validation was performed because the review universe is limited to disclosed files.\"],\"suggested_tightening\":null},{\"assertion_id\":\"8f8e97341488af46\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The quoted language appears verbatim in text/Wolf v. Colorado__a8b65b.txt in the Court's holding paragraph on star page 33.\",\"The lake pinpoint for pin-33 is marked quote_fidelity=matched, pinpoint_status=star-verified, and star_marker=33.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The quote begins mid-sentence after 'We hold, therefore, that', but the quoted substring itself is character-faithful.\"],\"suggested_tightening\":\"Consider including the lead-in 'We hold, therefore, that' or marking the omission with an ellipsis.\"},{\"assertion_id\":\"d258a00b10f0ee45\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"pin-27 is not a verified authority quote. The lake quote is generated page/header/background prose, not the quoted Wolf passage, and the lake itself marks the pinpoint as a mismatch with no star marker or position.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-27 with the actual opinion sentence from text/Wolf v. Colorado__a8b65b.txt at star pages 27-28, preserving the opinion text's quotation marks and pagination, then reverify the fragment/star marker before marking it matched.\",\"evidence_quote\":\"The security of one's privacy against arbitrary intrusion by the police\\u0097which is at the core of the Fourth Amendment\\u0097is basic to a free society. It is therefore implicit in \\\"the concept of ordered liberty\\\" and as such enforceable against the States through the Due Process <span class=\\\"star-pagination\\\">*28</span> Clause.\",\"needs_cl\":false,\"locator_note\":\"lake pin-27 has quote_fidelity=mismatch, pinpoint_status=slip-only, star_marker=null, and position=null; content cites this as 338 U.S. at 27-28.\"},\"reasons\":[\"The payload quote for pin-27 begins with '--- # Wolf v. Colorado' and includes page prose, not opinion text.\",\"The disclosed text contains the real passage at the page 27 to 28 break, but the recorded pin does not capture it.\",\"The content page's displayed quotation also changes the opinion's double quotation marks around 'the concept of ordered liberty' to single quotation marks, so it is not character-faithful as displayed.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The underlying legal proposition is supported by the opinion; the defect is the quote/pin record and displayed quote fidelity, not the existence of support.\"],\"suggested_tightening\":\"Keep the rule proposition, but correct the quotation and pin metadata rather than relying on the current pin-27 record.\"},{\"assertion_id\":\"8196867a9a012434\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside Lens A's charter, so no substantive treatment finding is raised.\",\"The payload treatment fields match the disclosed lake treatment fields: field_i_validity=superseded, as_of_content=1949-06-27, as_of_treatment=2026-06-30, and the same scope note.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment was not independently audited under Lens A.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed every assertion_id in group_inventory.jsonl exactly once using only disclosed workspace files.\"}",
   "summary": {
-    "at": "2026-07-09T23:15:32-04:00",
-    "attempts": 2,
+    "at": "2026-07-10T17:29:09-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-3305e629bc"
+    ],
     "group_id": "_overhaul2/lake/cases/Wolf v. Colorado.json",
     "group_total_assertions": 4,
     "lake_only_cases": [],
@@ -16,21 +96,55 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-45d6eba1.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 4,
     "run": "prod",
     "text_disclosed_cases": [
       "Wolf v. Colorado"
     ],
     "tokens": {
-      "input": 825,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 825
+      "input": 496132,
+      "output": 7272,
+      "source": "codex-events",
+      "total": 503404
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 5.2
+    "verdict_map": {
+      "6df33aea3c9e3644": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "8196867a9a012434": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "8f8e97341488af46": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "d258a00b10f0ee45": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-3305e629bc",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 149.2
   }
 }

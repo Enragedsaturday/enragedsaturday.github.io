@@ -1,0 +1,203 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Andresen v. Maryland.json",
+    "lens": "A",
+    "notes": "Reviewed all 5 rows in group_inventory.jsonl using only disclosed files; no external sources used.",
+    "reviewed": [
+      {
+        "assertion_id": "59edb912afa15736",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity is verified for Andresen v. Maryland, U.S. Supreme Court, decided 1976-06-29, year 1976.",
+          "Inventory citation set matches the lake record: official 427 U.S. 463, parallels 96 S. Ct. 2737 and 49 L. Ed. 2d 627, and vendor cite 1976 U.S. LEXIS 78."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "1035ce1de370f3de",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "petitioner was not asked to say or to do anything.",
+          "locator_note": "text/Andresen v. Maryland__d0193e.txt line 33 after star-pagination *473; lake pin-473 has quote_fidelity=mismatch and page/star_marker=null.",
+          "needs_cl": false,
+          "problem": "The pin-473 payload/lake quote is not an opinion quote; it splices content-page Issue/Rule prose and does not appear as the cited passage in the cached opinion text.",
+          "proposed_fix": "Replace pin-473 with the actual source passage on page *473, or with the content-page quote normalized to exact source wording; set page/star metadata to 473/*473.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The disclosed text at *473 contains the no-compulsion/voluntary-writing passage, not the payload string beginning with an em dash.",
+          "The same bad payload appears in lake pinpoints as quote_fidelity=mismatch; the built page’s visible pin-473 quote is different from the lake/inventory quote."
+        ],
+        "residual_risks": [
+          "The underlying Rule proposition is supported; the defect is the harvested quote/pin record."
+        ],
+        "suggested_tightening": "Anchor pin-473 directly to the opinion text and prevent quote harvesting from crossing Markdown headings or page prose.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "be9349f42212c1c3",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "that \"[n]o person . . . shall be compelled",
+          "locator_note": "text/Andresen v. Maryland__d0193e.txt line 41, after the *477 pagination marker on line 39.",
+          "needs_cl": false,
+          "problem": "The passage is the right holding and lands on page *477, but the verbatim quote changes the opinion’s internal double quotation marks around the Fifth Amendment text to single quotation marks.",
+          "proposed_fix": "Use the source punctuation: replace the embedded single-quoted constitutional text with double quotation marks, e.g. that \"[n]o person ... himself.\"",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The opinion contains the quoted holding sentence at page *477.",
+          "The pin lands on the correct passage, but strict quote fidelity fails because the inventory/lake quote alters quotation marks."
+        ],
+        "residual_risks": [
+          "Lake still records quote_fidelity=mismatch and lacks page/star marker metadata."
+        ],
+        "suggested_tightening": "Keep the quote but restore exact source punctuation; optionally include the leading word 'Accordingly,' if the quote should start at the sentence beginning.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "c3a74c101496e14b",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "relating to \"the crime of false pretenses with respect to Lot 13T.\"",
+          "locator_note": "text/Andresen v. Maryland__d0193e.txt line 48, after the *480 pagination marker on line 46.",
+          "needs_cl": false,
+          "problem": "The passage is the right particularity holding and lands on page *480, but the verbatim quote changes the opinion’s internal double quotation marks around the state-court phrase to single quotation marks.",
+          "proposed_fix": "Use the source punctuation: replace the embedded single-quoted Lot 13T phrase with double quotation marks.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The opinion contains the quoted phrase at page *480 and supports the contextual limitation of the catch-all clause.",
+          "The pin lands on the correct passage, but strict quote fidelity fails because the inventory/lake quote alters quotation marks."
+        ],
+        "residual_risks": [
+          "Lake still records quote_fidelity=mismatch and lacks page/star marker metadata."
+        ],
+        "suggested_tightening": "Keep the pinpoint but restore exact double quotation marks from the opinion text.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "086341120640a967",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The treatment payload matches the lake treatment fields and the content page frontmatter for field_i_validity=good_law, as_of_content=1976-06-29, as_of_treatment=2026-06-30, and varies_by_point=false.",
+          "Treatment/currency is outside lens A, so this records field consistency only and raises no treatment finding."
+        ],
+        "residual_risks": [
+          "Treatment currency was not evaluated under lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Andresen v. Maryland.json\",\"reviewed\":[{\"assertion_id\":\"59edb912afa15736\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity is verified for Andresen v. Maryland, U.S. Supreme Court, decided 1976-06-29, year 1976.\",\"Inventory citation set matches the lake record: official 427 U.S. 463, parallels 96 S. Ct. 2737 and 49 L. Ed. 2d 627, and vendor cite 1976 U.S. LEXIS 78.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"1035ce1de370f3de\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The pin-473 payload/lake quote is not an opinion quote; it splices content-page Issue/Rule prose and does not appear as the cited passage in the cached opinion text.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-473 with the actual source passage on page *473, or with the content-page quote normalized to exact source wording; set page/star metadata to 473/*473.\",\"evidence_quote\":\"petitioner was not asked to say or to do anything.\",\"needs_cl\":false,\"locator_note\":\"text/Andresen v. Maryland__d0193e.txt line 33 after star-pagination *473; lake pin-473 has quote_fidelity=mismatch and page/star_marker=null.\"},\"reasons\":[\"The disclosed text at *473 contains the no-compulsion/voluntary-writing passage, not the payload string beginning with an em dash.\",\"The same bad payload appears in lake pinpoints as quote_fidelity=mismatch; the built page’s visible pin-473 quote is different from the lake/inventory quote.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The underlying Rule proposition is supported; the defect is the harvested quote/pin record.\"],\"suggested_tightening\":\"Anchor pin-473 directly to the opinion text and prevent quote harvesting from crossing Markdown headings or page prose.\"},{\"assertion_id\":\"be9349f42212c1c3\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The passage is the right holding and lands on page *477, but the verbatim quote changes the opinion’s internal double quotation marks around the Fifth Amendment text to single quotation marks.\",\"severity\":\"low\",\"proposed_fix\":\"Use the source punctuation: replace the embedded single-quoted constitutional text with double quotation marks, e.g. that \\\"[n]o person ... himself.\\\"\",\"evidence_quote\":\"that \\\"[n]o person . . . shall be compelled\",\"needs_cl\":false,\"locator_note\":\"text/Andresen v. Maryland__d0193e.txt line 41, after the *477 pagination marker on line 39.\"},\"reasons\":[\"The opinion contains the quoted holding sentence at page *477.\",\"The pin lands on the correct passage, but strict quote fidelity fails because the inventory/lake quote alters quotation marks.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Lake still records quote_fidelity=mismatch and lacks page/star marker metadata.\"],\"suggested_tightening\":\"Keep the quote but restore exact source punctuation; optionally include the leading word 'Accordingly,' if the quote should start at the sentence beginning.\"},{\"assertion_id\":\"c3a74c101496e14b\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The passage is the right particularity holding and lands on page *480, but the verbatim quote changes the opinion’s internal double quotation marks around the state-court phrase to single quotation marks.\",\"severity\":\"low\",\"proposed_fix\":\"Use the source punctuation: replace the embedded single-quoted Lot 13T phrase with double quotation marks.\",\"evidence_quote\":\"relating to \\\"the crime of false pretenses with respect to Lot 13T.\\\"\",\"needs_cl\":false,\"locator_note\":\"text/Andresen v. Maryland__d0193e.txt line 48, after the *480 pagination marker on line 46.\"},\"reasons\":[\"The opinion contains the quoted phrase at page *480 and supports the contextual limitation of the catch-all clause.\",\"The pin lands on the correct passage, but strict quote fidelity fails because the inventory/lake quote alters quotation marks.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Lake still records quote_fidelity=mismatch and lacks page/star marker metadata.\"],\"suggested_tightening\":\"Keep the pinpoint but restore exact double quotation marks from the opinion text.\"},{\"assertion_id\":\"086341120640a967\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The treatment payload matches the lake treatment fields and the content page frontmatter for field_i_validity=good_law, as_of_content=1976-06-29, as_of_treatment=2026-06-30, and varies_by_point=false.\",\"Treatment/currency is outside lens A, so this records field consistency only and raises no treatment finding.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment currency was not evaluated under lens A.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed all 5 rows in group_inventory.jsonl using only disclosed files; no external sources used.\"}",
+  "summary": {
+    "at": "2026-07-10T18:21:56-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-375ea5c2af",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-5e35503662",
+      "F-S9-PR-8ad3b07d2e",
+      "F-S9-PR-8409a25fe6"
+    ],
+    "group_id": "_overhaul2/lake/cases/Andresen v. Maryland.json",
+    "group_total_assertions": 5,
+    "lake_only_cases": [],
+    "lane": "codex-A",
+    "lane_id": "codex-A-panel-prod-1131c639",
+    "lens": "A",
+    "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-1131c639.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Andresen v. Maryland"
+    ],
+    "tokens": {
+      "input": 297983,
+      "output": 10012,
+      "source": "codex-events",
+      "total": 307995
+    },
+    "verdict_map": {
+      "086341120640a967": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "1035ce1de370f3de": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "59edb912afa15736": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "be9349f42212c1c3": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "c3a74c101496e14b": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-5e35503662",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-8ad3b07d2e",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-8409a25fe6",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-375ea5c2af",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": 191.6
+  }
+}

@@ -1,13 +1,62 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/United States v. Perez-Rodriguez.json",
+    "lens": "B",
+    "notes": "Lens B only; no support, quote-fidelity, holding, or pincite defects assessed.",
+    "reviewed": [
+      {
+        "assertion_id": "eb7d716ea4bdaa59",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "\"field_i_validity\": \"unverified\"",
+          "locator_note": "lake/United States v. Perez-Rodriguez__900fba.json treatment fields; content page Treatment section",
+          "needs_cl": true,
+          "problem": "The disclosed record verifies the case identity and citation, but it does not verify current live-law status because treatment/progeny are expressly unverified.",
+          "proposed_fix": "Keep the citation/existence assertion, but do not imply current good-law/live-law status until treatment/progeny verification is completed.",
+          "severity": "medium"
+        },
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record confirms case_name 'United States v. Perez-Rodriguez', court '1st Cir. 2021', date_decided '2021-09-02', docket '19-1538P', cluster_id 5067201.",
+          "The lake citations record confirms display and official citation '13 F.4th 1'.",
+          "For lens B, current live-law status is not established because treatment is marked unverified and progeny rows_cached is 0."
+        ],
+        "residual_risks": [
+          "No disclosed citator/progeny enumeration confirms whether later authority limited, abrogated, or overruled this case."
+        ],
+        "suggested_tightening": "Separate citation existence from live-law currency: cite exists, but current treatment remains unverified.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "07ecdaea13e97d5e",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The inventory treatment payload matches the lake treatment fields: field_i_validity 'unverified', as_of_content null, as_of_treatment null, varies_by_point false.",
+          "The content page accurately renders Treatment: Unverified and states that subsequent treatment has not completed verification.",
+          "The disclosed progeny/treatment fields contain no affirmative overruling, abrogation, supersession, or limitation edge."
+        ],
+        "residual_risks": [
+          "Because treatment/progeny were intentionally not derived, this is only a correct unverified-status call, not a current good-law validation."
+        ],
+        "suggested_tightening": "Add that no affirmative good-law status is being asserted until S6/S9 treatment verification is complete.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"B\",\n  \"group_id\": \"_overhaul2/lake/cases/United States v. Perez-Rodriguez.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"eb7d716ea4bdaa59\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands-modified\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The disclosed record verifies the case identity and citation, but it does not verify current live-law status because treatment/progeny are expressly unverified.\",\n        \"severity\": \"medium\",\n        \"proposed_fix\": \"Keep the citation/existence assertion, but do not imply current good-law/live-law status until treatment/progeny verification is completed.\",\n        \"evidence_quote\": \"\\\"field_i_validity\\\": \\\"unverified\\\"\",\n        \"needs_cl\": true,\n        \"locator_note\": \"lake/United States v. Perez-Rodriguez__900fba.json treatment fields; content page Treatment section\"\n      },\n      \"reasons\": [\n        \"The lake identity record confirms case_name 'United States v. Perez-Rodriguez', court '1st Cir. 2021', date_decided '2021-09-02', docket '19-1538P', cluster_id 5067201.\",\n        \"The lake citations record confirms display and official citation '13 F.4th 1'.\",\n        \"For lens B, current live-law status is not established because treatment is marked unverified and progeny rows_cached is 0.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"No disclosed citator/progeny enumeration confirms whether later authority limited, abrogated, or overruled this case.\"\n      ],\n      \"suggested_tightening\": \"Separate citation existence from live-law currency: cite exists, but current treatment remains unverified.\"\n    },\n    {\n      \"assertion_id\": \"07ecdaea13e97d5e\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The inventory treatment payload matches the lake treatment fields: field_i_validity 'unverified', as_of_content null, as_of_treatment null, varies_by_point false.\",\n        \"The content page accurately renders Treatment: Unverified and states that subsequent treatment has not completed verification.\",\n        \"The disclosed progeny/treatment fields contain no affirmative overruling, abrogation, supersession, or limitation edge.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Because treatment/progeny were intentionally not derived, this is only a correct unverified-status call, not a current good-law validation.\"\n      ],\n      \"suggested_tightening\": \"Add that no affirmative good-law status is being asserted until S6/S9 treatment verification is complete.\"\n    }\n  ],\n  \"notes\": \"Lens B only; no support, quote-fidelity, holding, or pincite defects assessed.\"\n}",
   "summary": {
-    "at": "2026-07-09T23:07:04-04:00",
-    "attempts": 2,
+    "at": "2026-07-10T16:49:32-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-26c9db1fb6"
+    ],
     "group_id": "_overhaul2/lake/cases/United States v. Perez-Rodriguez.json",
     "group_total_assertions": 2,
     "lake_only_cases": [
@@ -18,21 +67,41 @@
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-cab86e2b.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [
       "case 'United States v. Perez-Rodriguez' has no lead_opinion_id (text undisclosed)"
     ],
-    "reviewed_count": 0,
+    "reviewed_count": 2,
     "run": "prod",
     "text_disclosed_cases": [],
     "tokens": {
-      "input": 757,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 757
+      "input": 84724,
+      "output": 3695,
+      "source": "codex-events",
+      "total": 88419
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 9.6
+    "verdict_map": {
+      "07ecdaea13e97d5e": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "eb7d716ea4bdaa59": {
+        "dimension": "existence",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-26c9db1fb6",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 77.6
   }
 }

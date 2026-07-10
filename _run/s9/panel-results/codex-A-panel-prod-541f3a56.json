@@ -1,13 +1,104 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Saucier v. Katz.json",
+    "lens": "A",
+    "notes": "",
+    "reviewed": [
+      {
+        "assertion_id": "83631ee1cc631d73",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record verifies Saucier v. Katz as a U.S. Supreme Court case decided 2001-06-18, docket 99-1977.",
+          "The lake citation fields list official citation 533 U.S. 194 and the same parallel/vendor citations carried in the inventory payload.",
+          "The content page mirrors the official citation as 533 U.S. 194 (2001)."
+        ],
+        "residual_risks": [
+          "The cached opinion text begins with a stray Cedric Kushner citation line, but the lake identity/citation fields and Saucier caption/date text verify the record."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "66c014958782c29b",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "not as a broad general proposition; and it too",
+          "locator_note": "text/Saucier v. Katz__076ebc.txt paragraph p10; content_page.md line 66; lake pinpoint pin-201a.",
+          "needs_cl": false,
+          "problem": "The quote is traceable to the opinion text, but it is not strictly character-faithful at the ending: the source has a semicolon after 'proposition' and continues with another clause, while the page quote ends with a period and no trailing ellipsis.",
+          "proposed_fix": "End the shortened quote with 'not as a broad general proposition; . . .' or quote the full source sentence.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The first quoted sentence appears in the cached opinion text after the omitted lead-in 'On the other hand,'.",
+          "The later phrase 'in light of the specific context of the case' also appears in the same paragraph.",
+          "The substantive proposition is supported; the defect is strict punctuation/ellipsis fidelity."
+        ],
+        "residual_risks": [
+          "The cached text is unpaginated/slip-only, so the exact U.S. Reports page pinpoint cannot be independently page-checked from the text file."
+        ],
+        "suggested_tightening": "Use the full sentence from paragraph p10 to avoid compounded ellipsis edits.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "f07e33e8de730fb3",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "A court required to rule upon the qualified immunity issue must consider",
+          "locator_note": "text/Saucier v. Katz__076ebc.txt paragraph p9; content_page.md line 64; lake pinpoint pin-201.",
+          "needs_cl": false,
+          "problem": "The payload/lake pin-201 quote is page frontmatter and summary prose, not a verbatim opinion passage. As framed, it is not character-faithful to the cached Saucier opinion text.",
+          "proposed_fix": "Replace the pin-201 stored quote with the actual opinion passage beginning 'A court required to rule upon the qualified immunity issue...' and ending 'This must be the initial inquiry.'",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The inventory payload for pin-201 begins with the content page header, background, issue, and rule prose rather than the opinion text.",
+          "The cached opinion text contains the true pin-201 quotation in paragraph p9.",
+          "The lake record itself marks pin-201 quote_fidelity as mismatch."
+        ],
+        "residual_risks": [
+          "The visible content_page.md quote at ^pin-201 is independently faithful to the cached opinion text; the defect is the stored/inventory pinpoint quote as framed."
+        ],
+        "suggested_tightening": "Regenerate the pin-201 quote harvest from the visible quoted passage, not from the start of the content page.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "c352bf6a25283c15",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A, so I record a verdict without raising a treatment finding.",
+          "The payload matches the disclosed lake treatment fields: field_i_validity caution, as_of_content 2001-06-18, as_of_treatment 2026-06-30, varies_by_point true, and the Pearson scope note.",
+          "The content page frontmatter carries the same treatment values and scope note."
+        ],
+        "residual_risks": [
+          "Treatment merits and current-good-law currency were not audited under Lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"A\",\n  \"group_id\": \"_overhaul2/lake/cases/Saucier v. Katz.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"83631ee1cc631d73\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake identity record verifies Saucier v. Katz as a U.S. Supreme Court case decided 2001-06-18, docket 99-1977.\",\n        \"The lake citation fields list official citation 533 U.S. 194 and the same parallel/vendor citations carried in the inventory payload.\",\n        \"The content page mirrors the official citation as 533 U.S. 194 (2001).\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The cached opinion text begins with a stray Cedric Kushner citation line, but the lake identity/citation fields and Saucier caption/date text verify the record.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"66c014958782c29b\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands-modified\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The quote is traceable to the opinion text, but it is not strictly character-faithful at the ending: the source has a semicolon after 'proposition' and continues with another clause, while the page quote ends with a period and no trailing ellipsis.\",\n        \"severity\": \"low\",\n        \"proposed_fix\": \"End the shortened quote with 'not as a broad general proposition; . . .' or quote the full source sentence.\",\n        \"evidence_quote\": \"not as a broad general proposition; and it too\",\n        \"needs_cl\": false,\n        \"locator_note\": \"text/Saucier v. Katz__076ebc.txt paragraph p10; content_page.md line 66; lake pinpoint pin-201a.\"\n      },\n      \"reasons\": [\n        \"The first quoted sentence appears in the cached opinion text after the omitted lead-in 'On the other hand,'.\",\n        \"The later phrase 'in light of the specific context of the case' also appears in the same paragraph.\",\n        \"The substantive proposition is supported; the defect is strict punctuation/ellipsis fidelity.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The cached text is unpaginated/slip-only, so the exact U.S. Reports page pinpoint cannot be independently page-checked from the text file.\"\n      ],\n      \"suggested_tightening\": \"Use the full sentence from paragraph p10 to avoid compounded ellipsis edits.\"\n    },\n    {\n      \"assertion_id\": \"f07e33e8de730fb3\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The payload/lake pin-201 quote is page frontmatter and summary prose, not a verbatim opinion passage. As framed, it is not character-faithful to the cached Saucier opinion text.\",\n        \"severity\": \"high\",\n        \"proposed_fix\": \"Replace the pin-201 stored quote with the actual opinion passage beginning 'A court required to rule upon the qualified immunity issue...' and ending 'This must be the initial inquiry.'\",\n        \"evidence_quote\": \"A court required to rule upon the qualified immunity issue must consider\",\n        \"needs_cl\": false,\n        \"locator_note\": \"text/Saucier v. Katz__076ebc.txt paragraph p9; content_page.md line 64; lake pinpoint pin-201.\"\n      },\n      \"reasons\": [\n        \"The inventory payload for pin-201 begins with the content page header, background, issue, and rule prose rather than the opinion text.\",\n        \"The cached opinion text contains the true pin-201 quotation in paragraph p9.\",\n        \"The lake record itself marks pin-201 quote_fidelity as mismatch.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The visible content_page.md quote at ^pin-201 is independently faithful to the cached opinion text; the defect is the stored/inventory pinpoint quote as framed.\"\n      ],\n      \"suggested_tightening\": \"Regenerate the pin-201 quote harvest from the visible quoted passage, not from the start of the content page.\"\n    },\n    {\n      \"assertion_id\": \"c352bf6a25283c15\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Treatment/currency is outside Lens A, so I record a verdict without raising a treatment finding.\",\n        \"The payload matches the disclosed lake treatment fields: field_i_validity caution, as_of_content 2001-06-18, as_of_treatment 2026-06-30, varies_by_point true, and the Pearson scope note.\",\n        \"The content page frontmatter carries the same treatment values and scope note.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Treatment merits and current-good-law currency were not audited under Lens A.\"\n      ],\n      \"suggested_tightening\": null\n    }\n  ],\n  \"notes\": \"\"\n}",
   "summary": {
-    "at": "2026-07-09T23:15:22-04:00",
-    "attempts": 2,
+    "at": "2026-07-10T17:27:25-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-3189959b27",
+      "F-S9-PR-05ac1932d2"
+    ],
     "group_id": "_overhaul2/lake/cases/Saucier v. Katz.json",
     "group_total_assertions": 4,
     "lake_only_cases": [],
@@ -16,21 +107,59 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-541f3a56.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 4,
     "run": "prod",
     "text_disclosed_cases": [
       "Saucier v. Katz"
     ],
     "tokens": {
-      "input": 825,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 825
+      "input": 415995,
+      "output": 8719,
+      "source": "codex-events",
+      "total": 424714
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 2.8
+    "verdict_map": {
+      "66c014958782c29b": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "83631ee1cc631d73": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "c352bf6a25283c15": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "f07e33e8de730fb3": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-3189959b27",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-05ac1932d2",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 174.6
   }
 }

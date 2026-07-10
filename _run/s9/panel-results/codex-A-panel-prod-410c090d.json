@@ -1,0 +1,168 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/United States v. Ceccolini.json",
+    "lens": "A",
+    "notes": "Reviewed all 5 rows in group_inventory.jsonl under lens A only.",
+    "reviewed": [
+      {
+        "assertion_id": "f84dc65d9c9f9d5d",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The case exists in the disclosed opinion text as United States v. Ceccolini.",
+          "The official citation 435 U.S. 268, court U.S. Supreme Court, and year 1978 are confirmed by the opinion text and lake citation fields."
+        ],
+        "residual_risks": [
+          "The disclosed text says Decided March 21, 1978 while the lake/content date_decided field says 1978-12-05; that date field is outside this case-cite payload."
+        ],
+        "suggested_tightening": "If date metadata is in scope elsewhere, correct date_decided to 1978-03-21.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "2ed695a4b365276b",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The quoted sentence appears verbatim in text/United States v. Ceccolini__71b672.txt.",
+          "The lake pinpoint for pin-279 marks quote_fidelity as matched, pinpoint_status as star-verified, and star_marker as 279."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "de967a0daf797c93",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The quoted sentence appears verbatim in the opinion text after the *280 star pagination marker.",
+          "The lake pinpoint for pin-280b marks quote_fidelity as matched, pinpoint_status as star-verified, and star_marker as 280."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "e010112b1208d439",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "the exclusionary rule should be invoked with much greater reluctance where the claim is based on a causal relationship between a constitutional violation and the discovery of a live witness than when a similar claim is advanced to support suppression of an inanimate object.",
+          "locator_note": "lake pinpoints[id=pin-280] has star_marker null, quote_fidelity mismatch, and pinpoint_status slip-only; the actual quoted rule appears in text/United States v. Ceccolini__71b672.txt on the paragraph following the *280 marker.",
+          "needs_cl": false,
+          "problem": "pin-280's stored quote is not an opinion quote; it is built-page markdown/frontmatter prose and the lake itself marks it quote_fidelity=mismatch and pinpoint_status=slip-only. The actual rule sentence at page *280 exists in the opinion text but is not the stored pin-280 quote.",
+          "proposed_fix": "Replace pin-280 with the actual page-*280 sentence from the opinion text. For strict quote fidelity, start the quoted fragment with lowercase 'the' rather than '[T]he', or avoid beginning the sentence with the quote.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload quote begins with built-page material ('--- # United States v. Ceccolini') rather than language from the opinion.",
+          "The disclosed opinion text contains the intended page-*280 rule sentence, so the support exists, but the recorded pinpoint quote is wrong as framed."
+        ],
+        "residual_risks": [
+          "The underlying rule quotation is supportable after fixing the pin and exact quote text."
+        ],
+        "suggested_tightening": "Regenerate pin-280 from the opinion text at page *280 and align the displayed quote exactly to the text.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "9a12643c93bed5ea",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside lens A, so no treatment finding is raised.",
+          "As a record-copy assertion, the payload matches the disclosed lake treatment fields: field_i_validity good_law, as_of_content 1978-03-21, as_of_treatment 2026-06-30, varies_by_point false, and the same scope_note."
+        ],
+        "residual_risks": [
+          "No independent treatment or currency analysis was performed under lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/United States v. Ceccolini.json\",\"reviewed\":[{\"assertion_id\":\"f84dc65d9c9f9d5d\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The case exists in the disclosed opinion text as United States v. Ceccolini.\",\"The official citation 435 U.S. 268, court U.S. Supreme Court, and year 1978 are confirmed by the opinion text and lake citation fields.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The disclosed text says Decided March 21, 1978 while the lake/content date_decided field says 1978-12-05; that date field is outside this case-cite payload.\"],\"suggested_tightening\":\"If date metadata is in scope elsewhere, correct date_decided to 1978-03-21.\"},{\"assertion_id\":\"2ed695a4b365276b\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The quoted sentence appears verbatim in text/United States v. Ceccolini__71b672.txt.\",\"The lake pinpoint for pin-279 marks quote_fidelity as matched, pinpoint_status as star-verified, and star_marker as 279.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"de967a0daf797c93\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The quoted sentence appears verbatim in the opinion text after the *280 star pagination marker.\",\"The lake pinpoint for pin-280b marks quote_fidelity as matched, pinpoint_status as star-verified, and star_marker as 280.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"e010112b1208d439\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"pin-280's stored quote is not an opinion quote; it is built-page markdown/frontmatter prose and the lake itself marks it quote_fidelity=mismatch and pinpoint_status=slip-only. The actual rule sentence at page *280 exists in the opinion text but is not the stored pin-280 quote.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-280 with the actual page-*280 sentence from the opinion text. For strict quote fidelity, start the quoted fragment with lowercase 'the' rather than '[T]he', or avoid beginning the sentence with the quote.\",\"evidence_quote\":\"the exclusionary rule should be invoked with much greater reluctance where the claim is based on a causal relationship between a constitutional violation and the discovery of a live witness than when a similar claim is advanced to support suppression of an inanimate object.\",\"needs_cl\":false,\"locator_note\":\"lake pinpoints[id=pin-280] has star_marker null, quote_fidelity mismatch, and pinpoint_status slip-only; the actual quoted rule appears in text/United States v. Ceccolini__71b672.txt on the paragraph following the *280 marker.\"},\"reasons\":[\"The payload quote begins with built-page material ('--- # United States v. Ceccolini') rather than language from the opinion.\",\"The disclosed opinion text contains the intended page-*280 rule sentence, so the support exists, but the recorded pinpoint quote is wrong as framed.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The underlying rule quotation is supportable after fixing the pin and exact quote text.\"],\"suggested_tightening\":\"Regenerate pin-280 from the opinion text at page *280 and align the displayed quote exactly to the text.\"},{\"assertion_id\":\"9a12643c93bed5ea\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside lens A, so no treatment finding is raised.\",\"As a record-copy assertion, the payload matches the disclosed lake treatment fields: field_i_validity good_law, as_of_content 1978-03-21, as_of_treatment 2026-06-30, varies_by_point false, and the same scope_note.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"No independent treatment or currency analysis was performed under lens A.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed all 5 rows in group_inventory.jsonl under lens A only.\"}",
+  "summary": {
+    "at": "2026-07-10T02:33:17-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-66558cc11c"
+    ],
+    "group_id": "_overhaul2/lake/cases/United States v. Ceccolini.json",
+    "group_total_assertions": 5,
+    "lake_only_cases": [],
+    "lane": "codex-A",
+    "lane_id": "codex-A-panel-prod-410c090d",
+    "lens": "A",
+    "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-410c090d.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "United States v. Ceccolini"
+    ],
+    "tokens": {
+      "input": 275202,
+      "output": 7403,
+      "source": "codex-events",
+      "total": 282605
+    },
+    "verdict_map": {
+      "2ed695a4b365276b": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "9a12643c93bed5ea": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "de967a0daf797c93": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "e010112b1208d439": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "f84dc65d9c9f9d5d": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-66558cc11c",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 152.8
+  }
+}

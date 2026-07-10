@@ -1,22 +1,157 @@
 {
-  "raw_reply": "{\n  \"lens\": \"A\",\n  \"group_id\": \"_overhaul2/lake/cases/Whiteley v. Warden.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"6e1c832caf8a4a8b\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Lake identity confirms Whiteley v. Warden, Wyoming State Penitentiary, U.S. Supreme Court, decided 1971-03-29.\",\n        \"Lake citations confirm the displayed official citation 401 U.S. 560 and the parallel/vendor citations in the payload.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"3809eb2ac921e3c3\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The reviewed pin-568 payload/lake pinpoint quote is not opinion text; it is harvested page scaffolding and page prose beginning with the content-page title/header. The actual page-568 judicial passage is different.\",\n        \"severity\": \"high\",\n        \"proposed_fix\": \"Replace pin-568's lake/payload quote with the actual page-568 opinion passage used in content_page.md, preferably beginning with 'Certainly police officers called upon...' or the displayed substring beginning 'police officers called upon...'.\",\n        \"evidence_quote\": \"Certainly police officers called upon to aid other officers in executing arrest warrants are entitled to assume that the officers requesting aid offered the magistrate the information requisite to support an independent judicial assessment of probable cause.\",\n        \"needs_cl\": false,\n        \"locator_note\": \"pin-568; lake pinpoints[0].quote versus text paragraph b652-5 and content_page.md Rule paragraph.\"\n      },\n      \"reasons\": [\n        \"The payload quote starts with the case page header and background/rule prose, not the Supreme Court opinion text.\",\n        \"The disclosed opinion text at page 568 contains the fellow-officer passage beginning 'Certainly police officers called upon...', which is the passage the content page appears to intend.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The content_page's displayed pin-568 quote itself appears supportable from the opinion text; the defect is the reviewed pinpoint payload/lake quote.\"\n      ],\n      \"suggested_tightening\": \"Keep the legal rule, but re-anchor the pinpoint record to the actual opinion quote and page 568.\"\n    },\n    {\n      \"assertion_id\": \"88428e34457f510a\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The pin-569 payload quote matches the lake pinpoints[1].quote and the content_page quote.\",\n        \"The same sentence is supported by the disclosed opinion text at the page 568-569 break, where the page-number tag splits the word 'violated'.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Raw text matching must normalize the embedded page-number tag inside 'violated'.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"8ab34922f7ae09f7\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Lens A does not substantively audit treatment or currency.\",\n        \"The treatment payload matches the disclosed lake/content treatment fields.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Treatment and currency are left to Lens B.\"\n      ],\n      \"suggested_tightening\": null\n    }\n  ],\n  \"notes\": \"Reviewed all 4 group_inventory rows. No treatment/currency finding is made under Lens A.\"\n}",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Whiteley v. Warden.json",
+    "lens": "A",
+    "notes": "Lens A review only; treatment/currency merits were not independently attacked.",
+    "reviewed": [
+      {
+        "assertion_id": "6e1c832caf8a4a8b",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record identifies the case as Whiteley v. Warden, Wyoming State Penitentiary, decided by the U.S. Supreme Court on 1971-03-29.",
+          "The official citation in the lake record is 401 U.S. 560, and the parallel/vendor citations listed in the assertion match the lake citations."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "3809eb2ac921e3c3",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Certainly police officers called upon to aid other officers in executing arrest warrants are entitled to assume that the officers requesting aid offered the magistrate the information requisite to support an independent judicial assessment of probable cause.",
+          "locator_note": "text/Whiteley v. Warden__97f5d0.txt, paragraph b652-5, page 568",
+          "needs_cl": false,
+          "problem": "The pin-568 payload quote is not an opinion quote; it is generated page/front-matter prose ending before the actual quoted passage. It is not character-faithful to the cached opinion text at page 568.",
+          "proposed_fix": "Replace pin-568 with the actual page-568 opinion passage beginning with the fellow-officer rule language.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The cached opinion text at page 568 contains the fellow-officer passage; the payload instead contains content-page header/background/rule prose.",
+          "The lake pinpoint itself flags quote_fidelity as mismatch."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Use only the opinion text quoted at 401 U.S. 568 for pin-568.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "88428e34457f510a",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Therefore, petitioner’s arrest vio<page-number citation-index=\"1\" label=\"569\">*569</page-number>lated his constitutional rights under the Fourth and Fourteenth Amendments; the evidence secured as an incident thereto should have been excluded from his trial.",
+          "locator_note": "text/Whiteley v. Warden__97f5d0.txt, paragraph b652-6, pages 568-569",
+          "needs_cl": false,
+          "problem": "The quoted language is substantively the opinion’s holding at 568-569, but it is not fully character-faithful to the cached text because the cached opinion uses a curly apostrophe in petitioner’s and a page-number tag splits violated.",
+          "proposed_fix": "Render or normalize the page break, and use petitioner’s with the curly apostrophe if strict character fidelity is required.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The quoted sentence appears at the asserted 568-569 location.",
+          "The text file’s characters do not exactly match the payload’s straight apostrophe form."
+        ],
+        "residual_risks": [
+          "Exact matching depends on whether the corpus normalizes CourtListener page-number tags before quote comparison."
+        ],
+        "suggested_tightening": "Normalize rendered opinion text before quote-fidelity checks, or store the rendered quote with typographic punctuation preserved.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "8ab34922f7ae09f7",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside lens A, so no treatment finding is raised.",
+          "The assertion’s treatment fields mirror the disclosed lake treatment fields: field_i_validity good_law, as_of_content 1971-03-29, as_of_treatment 2026-06-30, varies_by_point false."
+        ],
+        "residual_risks": [
+          "No independent treatment review performed under lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Whiteley v. Warden.json\",\"reviewed\":[{\"assertion_id\":\"6e1c832caf8a4a8b\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record identifies the case as Whiteley v. Warden, Wyoming State Penitentiary, decided by the U.S. Supreme Court on 1971-03-29.\",\"The official citation in the lake record is 401 U.S. 560, and the parallel/vendor citations listed in the assertion match the lake citations.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"3809eb2ac921e3c3\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The pin-568 payload quote is not an opinion quote; it is generated page/front-matter prose ending before the actual quoted passage. It is not character-faithful to the cached opinion text at page 568.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-568 with the actual page-568 opinion passage beginning with the fellow-officer rule language.\",\"evidence_quote\":\"Certainly police officers called upon to aid other officers in executing arrest warrants are entitled to assume that the officers requesting aid offered the magistrate the information requisite to support an independent judicial assessment of probable cause.\",\"needs_cl\":false,\"locator_note\":\"text/Whiteley v. Warden__97f5d0.txt, paragraph b652-5, page 568\"},\"reasons\":[\"The cached opinion text at page 568 contains the fellow-officer passage; the payload instead contains content-page header/background/rule prose.\",\"The lake pinpoint itself flags quote_fidelity as mismatch.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":\"Use only the opinion text quoted at 401 U.S. 568 for pin-568.\"},{\"assertion_id\":\"88428e34457f510a\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The quoted language is substantively the opinion’s holding at 568-569, but it is not fully character-faithful to the cached text because the cached opinion uses a curly apostrophe in petitioner’s and a page-number tag splits violated.\",\"severity\":\"low\",\"proposed_fix\":\"Render or normalize the page break, and use petitioner’s with the curly apostrophe if strict character fidelity is required.\",\"evidence_quote\":\"Therefore, petitioner’s arrest vio<page-number citation-index=\\\"1\\\" label=\\\"569\\\">*569</page-number>lated his constitutional rights under the Fourth and Fourteenth Amendments; the evidence secured as an incident thereto should have been excluded from his trial.\",\"needs_cl\":false,\"locator_note\":\"text/Whiteley v. Warden__97f5d0.txt, paragraph b652-6, pages 568-569\"},\"reasons\":[\"The quoted sentence appears at the asserted 568-569 location.\",\"The text file’s characters do not exactly match the payload’s straight apostrophe form.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Exact matching depends on whether the corpus normalizes CourtListener page-number tags before quote comparison.\"],\"suggested_tightening\":\"Normalize rendered opinion text before quote-fidelity checks, or store the rendered quote with typographic punctuation preserved.\"},{\"assertion_id\":\"8ab34922f7ae09f7\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside lens A, so no treatment finding is raised.\",\"The assertion’s treatment fields mirror the disclosed lake treatment fields: field_i_validity good_law, as_of_content 1971-03-29, as_of_treatment 2026-06-30, varies_by_point false.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"No independent treatment review performed under lens A.\"],\"suggested_tightening\":null}],\"notes\":\"Lens A review only; treatment/currency merits were not independently attacked.\"}",
   "summary": {
-    "at": "2026-07-10T00:00:08-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-10T17:51:24-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": false,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-2a8f69728f",
+      "F-S9-PR-7631043677"
+    ],
     "group_id": "_overhaul2/lake/cases/Whiteley v. Warden.json",
     "group_total_assertions": 4,
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-07a36708",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-07a36708.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; transient/ambiguous -> re-dispatchable lane_error",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "Reading additional input from stdin...\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Whiteley v. Warden"
+    ],
+    "tokens": {
+      "input": 104745,
+      "output": 7079,
+      "source": "codex-events",
+      "total": 111824
+    },
+    "verdict_map": {
+      "3809eb2ac921e3c3": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "6e1c832caf8a4a8b": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "88428e34457f510a": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "8ab34922f7ae09f7": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-2a8f69728f",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-7631043677",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 136.4
   }
 }

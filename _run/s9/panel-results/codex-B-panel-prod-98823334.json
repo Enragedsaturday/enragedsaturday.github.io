@@ -1,38 +1,91 @@
 {
-  "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Briscoe v. LaHue.json",
+    "lens": "B",
+    "notes": "Support and quote fidelity were not assessed under lens B.",
+    "reviewed": [
+      {
+        "assertion_id": "40c1b8c9a5edb6a9",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record names Briscoe v. LaHue as a U.S. Supreme Court case decided 1983-03-07 with cluster_id 110885.",
+          "The lake citations record selects 460 U.S. 325 as the official citation and lists the same parallel/vendor citations shown in the payload.",
+          "No disclosed treatment field or progeny edge states that the authority has been overruled, superseded, abrogated, or otherwise made non-live; currency is separately marked unverified."
+        ],
+        "residual_risks": [
+          "The disclosed treatment record is explicitly unverified and progeny enumeration is empty, so this review cannot positively confirm current good-law status beyond the absence of disclosed negative treatment."
+        ],
+        "suggested_tightening": "Keep the citation/existence assertion separate from any live-law implication unless citator treatment is promoted from unverified.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "99024949c9ce43fe",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The content page treatment fields match the lake treatment fields: field_i_validity is unverified, as_of_content and as_of_treatment are null, varies_by_point is false, and the scope note says treatment/progeny were intentionally not derived until S6 promotion.",
+          "The lake treatment record has edges: [] and derivation: {}, and the progeny record has rows_cached: 0 with outbound_opinion_edges: [], supporting the page's unverified-treatment banner rather than any affirmative good-law call.",
+          "No disclosed record supplies a superseding, overruling, abrogating, or limiting edge inconsistent with the unverified treatment status."
+        ],
+        "residual_risks": [
+          "Because treatment is a frontier stub with no citator/progeny derivation, the disclosed evidence does not establish a final good-law judgment."
+        ],
+        "suggested_tightening": "Avoid any wording that implies machine-verified current validity until treatment/progeny are derived and dated.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/Briscoe v. LaHue.json\",\"reviewed\":[{\"assertion_id\":\"40c1b8c9a5edb6a9\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake identity record names Briscoe v. LaHue as a U.S. Supreme Court case decided 1983-03-07 with cluster_id 110885.\",\"The lake citations record selects 460 U.S. 325 as the official citation and lists the same parallel/vendor citations shown in the payload.\",\"No disclosed treatment field or progeny edge states that the authority has been overruled, superseded, abrogated, or otherwise made non-live; currency is separately marked unverified.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The disclosed treatment record is explicitly unverified and progeny enumeration is empty, so this review cannot positively confirm current good-law status beyond the absence of disclosed negative treatment.\"],\"suggested_tightening\":\"Keep the citation/existence assertion separate from any live-law implication unless citator treatment is promoted from unverified.\"},{\"assertion_id\":\"99024949c9ce43fe\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The content page treatment fields match the lake treatment fields: field_i_validity is unverified, as_of_content and as_of_treatment are null, varies_by_point is false, and the scope note says treatment/progeny were intentionally not derived until S6 promotion.\",\"The lake treatment record has edges: [] and derivation: {}, and the progeny record has rows_cached: 0 with outbound_opinion_edges: [], supporting the page's unverified-treatment banner rather than any affirmative good-law call.\",\"No disclosed record supplies a superseding, overruling, abrogating, or limiting edge inconsistent with the unverified treatment status.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Because treatment is a frontier stub with no citator/progeny derivation, the disclosed evidence does not establish a final good-law judgment.\"],\"suggested_tightening\":\"Avoid any wording that implies machine-verified current validity until treatment/progeny are derived and dated.\"}],\"notes\":\"Support and quote fidelity were not assessed under lens B.\"}",
   "summary": {
-    "at": "2026-07-09T23:17:31-04:00",
-    "attempts": 2,
-    "clean_attestation": false,
+    "at": "2026-07-10T17:44:53-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
     "defense_votes": [],
     "findings_emitted": [],
     "group_id": "_overhaul2/lake/cases/Briscoe v. LaHue.json",
     "group_total_assertions": 2,
-    "lake_only_cases": [
-      "Briscoe v. LaHue"
-    ],
+    "lake_only_cases": [],
     "lane": "codex-B",
     "lane_id": "codex-B-panel-prod-98823334",
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-98823334.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
-    "resolution_notes": [
-      "case 'Briscoe v. LaHue' has no lead_opinion_id (text undisclosed)"
-    ],
-    "reviewed_count": 0,
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 2,
     "run": "prod",
-    "text_disclosed_cases": [],
+    "text_disclosed_cases": [
+      "Briscoe v. LaHue"
+    ],
     "tokens": {
-      "input": 753,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 753
+      "input": 120134,
+      "output": 3926,
+      "source": "codex-events",
+      "total": 124060
     },
-    "verdict_map": {},
+    "verdict_map": {
+      "40c1b8c9a5edb6a9": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "99024949c9ce43fe": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
     "votes_emitted": [],
-    "wall_clock_s": 3.1
+    "wall_clock_s": 84.3
   }
 }

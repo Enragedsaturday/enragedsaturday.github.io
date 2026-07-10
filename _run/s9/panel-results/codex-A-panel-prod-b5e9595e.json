@@ -1,0 +1,208 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Dunaway v. New York.json",
+    "lens": "A",
+    "notes": "Reviewed all 6 inventory rows using only disclosed workspace files. Lens A raises quote/pincite findings only; treatment merits left to Lens B.",
+    "reviewed": [
+      {
+        "assertion_id": "9e56127b879a1714",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record identifies Dunaway v. New York as a U.S. Supreme Court case decided 1979-06-05 with official citation 442 U.S. 200.",
+          "The content page citation, court, year, docket, and parallel citations align with the lake identity and citation fields."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "7386512662feeff5",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The quoted sentence appears in the opinion text at star page 217.",
+          "The displayed quote matches the lake pinpoint quote; the only formatting difference in the raw opinion is HTML/citation markup around Miranda."
+        ],
+        "residual_risks": [
+          "The lake metadata labels this pinpoint slip-only/mismatch, but the disclosed opinion text verifies the quoted sentence at *217."
+        ],
+        "suggested_tightening": "Update the pinpoint metadata to star_marker 217 and matched if the corpus normalizes HTML italics to Markdown italics.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "955eb519bb4be2a2",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "this type of \"voluntariness\" is merely a \"threshold requirement\" for Fourth Amendment analysis",
+          "locator_note": "pin-218; content_page.md cites Id. at 218, while text shows the phrase after *217 and before *218.",
+          "needs_cl": false,
+          "problem": "The phrase is faithfully quoted, but the content-page citation gives Id. at 218 while the quoted phrase appears before the *218 marker, on star page 217.",
+          "proposed_fix": "Cite the threshold-requirement phrase to Id. at 217, or split/tighten the sentence as Id. at 217-218 because the Brown-factor discussion continues onto *218.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The phrase \"threshold requirement\" appears verbatim in the opinion text and lake pinpoint.",
+          "The star marker in the lake record is 217, confirming the page mismatch in the content citation."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Change the pinpoint citation for the quoted phrase to 217 or use 217-218 for the combined threshold/factors sentence.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "ad3c144d8b6c23fd",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The phrase \"virtually a replica\" appears verbatim in the opinion text at star page 218.",
+          "The lake pinpoint is star-verified at 218 and matches the content-page quote."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "afc55cd64e62f35e",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "We accordingly hold that the Rochester police violated the Fourth and Fourteenth Amendments when, without probable cause, they seized petitioner and transported him to the police station for interrogation.",
+          "locator_note": "pin-216 in lake/Dunaway v. New York__113360.json; actual holding language appears in text/Dunaway v. New York__113360.txt at the *216 passage.",
+          "needs_cl": false,
+          "problem": "The pin-216 payload quote is not the opinion passage; it is a harvested block from the built content page and ends before the actual displayed holding quote.",
+          "proposed_fix": "Replace the pin-216 lake quote with the actual *216 opinion holding passage used on the content page, and mark the pinpoint at star page 216 after verification.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload quote begins with the content-page frontmatter/body text, not the Supreme Court opinion text.",
+          "The opinion text at *216 contains the relevant holding language, which is absent from the payload quote."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Re-harvest pin-216 from the opinion text rather than from content_page.md.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "4e5ffeb589c4ced5",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Recorded for Lens A only: the treatment payload matches the lake treatment fields and content-page treatment frontmatter.",
+          "Treatment/currency merits are outside Lens A, so no treatment finding is raised."
+        ],
+        "residual_risks": [
+          "No independent treatment/currency review performed under Lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Dunaway v. New York.json\",\"reviewed\":[{\"assertion_id\":\"9e56127b879a1714\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record identifies Dunaway v. New York as a U.S. Supreme Court case decided 1979-06-05 with official citation 442 U.S. 200.\",\"The content page citation, court, year, docket, and parallel citations align with the lake identity and citation fields.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"7386512662feeff5\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The quoted sentence appears in the opinion text at star page 217.\",\"The displayed quote matches the lake pinpoint quote; the only formatting difference in the raw opinion is HTML/citation markup around Miranda.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The lake metadata labels this pinpoint slip-only/mismatch, but the disclosed opinion text verifies the quoted sentence at *217.\"],\"suggested_tightening\":\"Update the pinpoint metadata to star_marker 217 and matched if the corpus normalizes HTML italics to Markdown italics.\"},{\"assertion_id\":\"955eb519bb4be2a2\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The phrase is faithfully quoted, but the content-page citation gives Id. at 218 while the quoted phrase appears before the *218 marker, on star page 217.\",\"severity\":\"low\",\"proposed_fix\":\"Cite the threshold-requirement phrase to Id. at 217, or split/tighten the sentence as Id. at 217-218 because the Brown-factor discussion continues onto *218.\",\"evidence_quote\":\"this type of \\\"voluntariness\\\" is merely a \\\"threshold requirement\\\" for Fourth Amendment analysis\",\"needs_cl\":false,\"locator_note\":\"pin-218; content_page.md cites Id. at 218, while text shows the phrase after *217 and before *218.\"},\"reasons\":[\"The phrase \\\"threshold requirement\\\" appears verbatim in the opinion text and lake pinpoint.\",\"The star marker in the lake record is 217, confirming the page mismatch in the content citation.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":\"Change the pinpoint citation for the quoted phrase to 217 or use 217-218 for the combined threshold/factors sentence.\"},{\"assertion_id\":\"ad3c144d8b6c23fd\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The phrase \\\"virtually a replica\\\" appears verbatim in the opinion text at star page 218.\",\"The lake pinpoint is star-verified at 218 and matches the content-page quote.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"afc55cd64e62f35e\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The pin-216 payload quote is not the opinion passage; it is a harvested block from the built content page and ends before the actual displayed holding quote.\",\"severity\":\"high\",\"proposed_fix\":\"Replace the pin-216 lake quote with the actual *216 opinion holding passage used on the content page, and mark the pinpoint at star page 216 after verification.\",\"evidence_quote\":\"We accordingly hold that the Rochester police violated the Fourth and Fourteenth Amendments when, without probable cause, they seized petitioner and transported him to the police station for interrogation.\",\"needs_cl\":false,\"locator_note\":\"pin-216 in lake/Dunaway v. New York__113360.json; actual holding language appears in text/Dunaway v. New York__113360.txt at the *216 passage.\"},\"reasons\":[\"The payload quote begins with the content-page frontmatter/body text, not the Supreme Court opinion text.\",\"The opinion text at *216 contains the relevant holding language, which is absent from the payload quote.\"],\"breaks_true_positives\":true,\"residual_risks\":[],\"suggested_tightening\":\"Re-harvest pin-216 from the opinion text rather than from content_page.md.\"},{\"assertion_id\":\"4e5ffeb589c4ced5\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Recorded for Lens A only: the treatment payload matches the lake treatment fields and content-page treatment frontmatter.\",\"Treatment/currency merits are outside Lens A, so no treatment finding is raised.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"No independent treatment/currency review performed under Lens A.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed all 6 inventory rows using only disclosed workspace files. Lens A raises quote/pincite findings only; treatment merits left to Lens B.\"}",
+  "summary": {
+    "at": "2026-07-10T18:11:26-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-082293f559",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-6f6d78e581",
+      "F-S9-PR-840a2a179b"
+    ],
+    "group_id": "_overhaul2/lake/cases/Dunaway v. New York.json",
+    "group_total_assertions": 6,
+    "lake_only_cases": [],
+    "lane": "codex-A",
+    "lane_id": "codex-A-panel-prod-b5e9595e",
+    "lens": "A",
+    "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-b5e9595e.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 6,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Dunaway v. New York"
+    ],
+    "tokens": {
+      "input": 209501,
+      "output": 9686,
+      "source": "codex-events",
+      "total": 219187
+    },
+    "verdict_map": {
+      "4e5ffeb589c4ced5": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "7386512662feeff5": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "955eb519bb4be2a2": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "9e56127b879a1714": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "ad3c144d8b6c23fd": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "afc55cd64e62f35e": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-6f6d78e581",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-840a2a179b",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-082293f559",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": 183.5
+  }
+}

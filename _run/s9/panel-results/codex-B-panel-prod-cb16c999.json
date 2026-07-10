@@ -1,22 +1,150 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Atwater v. City of Lago Vista.json",
+    "lens": "B",
+    "notes": "",
+    "reviewed": [
+      {
+        "assertion_id": "a2f25d9c4edd410a",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake record is verified and identifies Atwater v. City of Lago Vista as a U.S. Supreme Court case decided 2001-04-24.",
+          "Lake treatment judgment lists field_i_validity as good_law as of 2026-06-30, so the cited authority remains live under the disclosed record."
+        ],
+        "residual_risks": [
+          "Official-citation selection is not a Lens B issue; lake warnings show official selection failed closed, but that does not undermine live-law status."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "03061ed34a3c9367",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote fidelity is outside Lens B; no currency or treatment defect is raised for pin-355.",
+          "The same lake record treatment judgment supporting live-law status applies to this pinpoint context."
+        ],
+        "residual_risks": [
+          "Lens A should handle the disclosed quote_fidelity mismatch for pin-355."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "77fbd374ff210c4b",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote fidelity is outside Lens B; no currency or treatment defect is raised for pin-354.",
+          "The pinpoint text includes the page's Binding — SCOTUS and good-treatment labels, which align with the lake identity court_level scotus and treatment field_i_validity good_law."
+        ],
+        "residual_risks": [
+          "Lens A should handle the disclosed quote_fidelity mismatch for pin-354."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "a72dfe1c5d84893f",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "\"audit_needed\": true,\n        \"proposed_negative_events\": 6",
+          "locator_note": "content_page.md Treatment & subsequent history; lake treatment.derivation lane1_negative/lane2_top_cited and treatment.edges",
+          "needs_cl": true,
+          "problem": "The core good-law and Binding — SCOTUS calls are supported by the lake judgment fields, but the page's unqualified 'No negative treatment' language is too strong against disclosed progeny metadata showing proposed negative events and treatment-audit flags.",
+          "proposed_fix": "Keep the good_law status if relying on the lake judgment fields, but replace 'No negative treatment' with a qualified statement such as 'No accepted point override in the lake judgment; proposed negative-treatment edges remain unaudited.'",
+          "severity": "medium"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "Lake treatment judgment states field_i_validity good_law, as_of_treatment 2026-06-30, varies_by_point false, and point_overrides empty.",
+          "Authority weight is supported because the lake identity identifies the court as U.S. Supreme Court with court_level scotus.",
+          "But the lake treatment edges include proposed entries labeled superseded_by_statute, questioned, overruled, criticized, and abrogated, and derivation flags audit_needed for lane1_negative and lane2_top_cited."
+        ],
+        "residual_risks": [
+          "The proposed edges all have proposed true and field_iii mentioned, so they do not by themselves prove Atwater is overruled; they do prevent an unqualified no-negative-treatment statement from being fully clean under Lens B."
+        ],
+        "suggested_tightening": "Qualify the subsequent-history sentence to distinguish accepted treatment judgment from proposed unaudited negative-treatment edges.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/Atwater v. City of Lago Vista.json\",\"reviewed\":[{\"assertion_id\":\"a2f25d9c4edd410a\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake record is verified and identifies Atwater v. City of Lago Vista as a U.S. Supreme Court case decided 2001-04-24.\",\"Lake treatment judgment lists field_i_validity as good_law as of 2026-06-30, so the cited authority remains live under the disclosed record.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Official-citation selection is not a Lens B issue; lake warnings show official selection failed closed, but that does not undermine live-law status.\"],\"suggested_tightening\":null},{\"assertion_id\":\"03061ed34a3c9367\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Quote fidelity is outside Lens B; no currency or treatment defect is raised for pin-355.\",\"The same lake record treatment judgment supporting live-law status applies to this pinpoint context.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Lens A should handle the disclosed quote_fidelity mismatch for pin-355.\"],\"suggested_tightening\":null},{\"assertion_id\":\"77fbd374ff210c4b\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Quote fidelity is outside Lens B; no currency or treatment defect is raised for pin-354.\",\"The pinpoint text includes the page's Binding — SCOTUS and good-treatment labels, which align with the lake identity court_level scotus and treatment field_i_validity good_law.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Lens A should handle the disclosed quote_fidelity mismatch for pin-354.\"],\"suggested_tightening\":null},{\"assertion_id\":\"a72dfe1c5d84893f\",\"dimension\":\"treatment\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The core good-law and Binding — SCOTUS calls are supported by the lake judgment fields, but the page's unqualified 'No negative treatment' language is too strong against disclosed progeny metadata showing proposed negative events and treatment-audit flags.\",\"severity\":\"medium\",\"proposed_fix\":\"Keep the good_law status if relying on the lake judgment fields, but replace 'No negative treatment' with a qualified statement such as 'No accepted point override in the lake judgment; proposed negative-treatment edges remain unaudited.'\",\"evidence_quote\":\"\\\"audit_needed\\\": true,\\n        \\\"proposed_negative_events\\\": 6\",\"needs_cl\":true,\"locator_note\":\"content_page.md Treatment & subsequent history; lake treatment.derivation lane1_negative/lane2_top_cited and treatment.edges\"},\"reasons\":[\"Lake treatment judgment states field_i_validity good_law, as_of_treatment 2026-06-30, varies_by_point false, and point_overrides empty.\",\"Authority weight is supported because the lake identity identifies the court as U.S. Supreme Court with court_level scotus.\",\"But the lake treatment edges include proposed entries labeled superseded_by_statute, questioned, overruled, criticized, and abrogated, and derivation flags audit_needed for lane1_negative and lane2_top_cited.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The proposed edges all have proposed true and field_iii mentioned, so they do not by themselves prove Atwater is overruled; they do prevent an unqualified no-negative-treatment statement from being fully clean under Lens B.\"],\"suggested_tightening\":\"Qualify the subsequent-history sentence to distinguish accepted treatment judgment from proposed unaudited negative-treatment edges.\"}],\"notes\":\"\"}",
   "summary": {
-    "at": "2026-07-09T23:17:10-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-10T17:41:31-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-5452f795be"
+    ],
     "group_id": "_overhaul2/lake/cases/Atwater v. City of Lago Vista.json",
     "group_total_assertions": 4,
+    "lake_only_cases": [],
     "lane": "codex-B",
     "lane_id": "codex-B-panel-prod-cb16c999",
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-cb16c999.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "Reading additional input from stdin...\n\u001b[2m2026-07-10T03:17:07.411360Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T03:17:07.963706Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T03:17:08.544082Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T03:17:09.417308Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Atwater v. City of Lago Vista"
+    ],
+    "tokens": {
+      "input": 359068,
+      "output": 6148,
+      "source": "codex-events",
+      "total": 365216
+    },
+    "verdict_map": {
+      "03061ed34a3c9367": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "77fbd374ff210c4b": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "a2f25d9c4edd410a": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "a72dfe1c5d84893f": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-5452f795be",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 129.6
   }
 }

@@ -1,0 +1,184 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "content/cases/Kansas v. Ventris.md",
+    "lens": "A",
+    "notes": "No external sources were used. Support/home-role assertions default to refuted because the disclosed files lack opinion text, lake holding, or pinpoint quotes.",
+    "reviewed": [
+      {
+        "assertion_id": "48bb6e36a36b14dc",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity gives case_name Kansas v. Ventris, court U.S. Supreme Court, date_decided 2009-04-29, and year 2009.",
+          "Lake citations give official citation 556 U.S. 586, parallel citations 129 S. Ct. 1841 and 173 L. Ed. 2d 801, and vendor-neutral citation 2009 U.S. LEXIS 3299."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "7e1ac528cbb4f8e7",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "\"pinpoints\": []",
+          "locator_note": "holding",
+          "needs_cl": true,
+          "problem": "The holding proposition is not verifiable from the disclosed support evidence. No text/<case>.txt opinion file is present, and the lake record contains no holding text or pinpoint quote supporting the case-in-chief/impeachment rule.",
+          "proposed_fix": "Add cached full opinion text or lake holding/pinpoints that support the proposition at this breadth; otherwise mark the holding unsupported or remove it.",
+          "severity": "high"
+        },
+        "dimension": "support",
+        "reasons": [
+          "The disclosed file set contains only group_inventory.jsonl, content_page.md, task.md, _events.jsonl, and the lake JSON; no opinion text file is present.",
+          "The lake record verifies identity and citations but does not provide a holding or pinpoint quote for the asserted Sixth Amendment impeachment rule."
+        ],
+        "residual_risks": [
+          "The proposition may be correct, but it cannot be accepted under the disclosed-evidence rule without opinion text or lake holding/pinpoints."
+        ],
+        "suggested_tightening": "Tie the holding to a lake pinpoint quote or include text/Kansas v. Ventris.txt for verbatim holding review.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": false
+      },
+      {
+        "assertion_id": "b7cc18a1e75ca39d",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "\"src\": \"frontier stub, no pinpoints\"",
+          "locator_note": "home: Sixth Amendment Right to Counsel",
+          "needs_cl": true,
+          "problem": "The Anchor home-role for Sixth Amendment Right to Counsel is not verifiable from disclosed evidence. The lake record has no homes field, no holding, and no supporting opinion text.",
+          "proposed_fix": "Add an evidence-backed home-role derivation, lake holding/pinpoints, or opinion text showing why this case should anchor the Sixth Amendment Right to Counsel home.",
+          "severity": "medium"
+        },
+        "dimension": "support",
+        "reasons": [
+          "content_page.md lists the home-role, but that is the assertion under review and cannot self-verify support.",
+          "The lake record supplies identity/citation/treatment data only; it does not establish that this case is an Anchor for the stated home."
+        ],
+        "residual_risks": [
+          "The home-role may be appropriate, but it is unsupported in the disclosed evidence package."
+        ],
+        "suggested_tightening": "Store home-role support as a derived field with cited lake pinpoints or disclose the opinion text used to assign Anchor status.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": false
+      },
+      {
+        "assertion_id": "a7a7b7a6c9010d25",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency merits are outside lens A, so no treatment finding is raised.",
+          "As a record-match matter, the payload matches the lake treatment fields: field_i_validity and composite_basis are unverified, as_of fields are null, varies_by_point is false, and the scope_note matches."
+        ],
+        "residual_risks": [
+          "Treatment/currency merits remain for lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "c7a73ca510b894ed",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency merits are outside lens A, so no treatment finding is raised.",
+          "The SCOTUS component is supported by the lake identity fields court U.S. Supreme Court, court_id scotus, and court_level scotus."
+        ],
+        "residual_risks": [
+          "Lens A did not independently review any good-law or currency implication of the authority-weight label."
+        ],
+        "suggested_tightening": "If authority_weight is meant to be independently audited, disclose the corpus rule mapping court_level scotus to Binding — SCOTUS.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"content/cases/Kansas v. Ventris.md\",\"reviewed\":[{\"assertion_id\":\"48bb6e36a36b14dc\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity gives case_name Kansas v. Ventris, court U.S. Supreme Court, date_decided 2009-04-29, and year 2009.\",\"Lake citations give official citation 556 U.S. 586, parallel citations 129 S. Ct. 1841 and 173 L. Ed. 2d 801, and vendor-neutral citation 2009 U.S. LEXIS 3299.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"7e1ac528cbb4f8e7\",\"dimension\":\"support\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":false,\"defect\":{\"problem\":\"The holding proposition is not verifiable from the disclosed support evidence. No text/<case>.txt opinion file is present, and the lake record contains no holding text or pinpoint quote supporting the case-in-chief/impeachment rule.\",\"severity\":\"high\",\"proposed_fix\":\"Add cached full opinion text or lake holding/pinpoints that support the proposition at this breadth; otherwise mark the holding unsupported or remove it.\",\"evidence_quote\":\"\\\"pinpoints\\\": []\",\"needs_cl\":true,\"locator_note\":\"holding\"},\"reasons\":[\"The disclosed file set contains only group_inventory.jsonl, content_page.md, task.md, _events.jsonl, and the lake JSON; no opinion text file is present.\",\"The lake record verifies identity and citations but does not provide a holding or pinpoint quote for the asserted Sixth Amendment impeachment rule.\"],\"breaks_true_positives\":true,\"residual_risks\":[\"The proposition may be correct, but it cannot be accepted under the disclosed-evidence rule without opinion text or lake holding/pinpoints.\"],\"suggested_tightening\":\"Tie the holding to a lake pinpoint quote or include text/Kansas v. Ventris.txt for verbatim holding review.\"},{\"assertion_id\":\"b7cc18a1e75ca39d\",\"dimension\":\"support\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":false,\"defect\":{\"problem\":\"The Anchor home-role for Sixth Amendment Right to Counsel is not verifiable from disclosed evidence. The lake record has no homes field, no holding, and no supporting opinion text.\",\"severity\":\"medium\",\"proposed_fix\":\"Add an evidence-backed home-role derivation, lake holding/pinpoints, or opinion text showing why this case should anchor the Sixth Amendment Right to Counsel home.\",\"evidence_quote\":\"\\\"src\\\": \\\"frontier stub, no pinpoints\\\"\",\"needs_cl\":true,\"locator_note\":\"home: Sixth Amendment Right to Counsel\"},\"reasons\":[\"content_page.md lists the home-role, but that is the assertion under review and cannot self-verify support.\",\"The lake record supplies identity/citation/treatment data only; it does not establish that this case is an Anchor for the stated home.\"],\"breaks_true_positives\":true,\"residual_risks\":[\"The home-role may be appropriate, but it is unsupported in the disclosed evidence package.\"],\"suggested_tightening\":\"Store home-role support as a derived field with cited lake pinpoints or disclose the opinion text used to assign Anchor status.\"},{\"assertion_id\":\"a7a7b7a6c9010d25\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency merits are outside lens A, so no treatment finding is raised.\",\"As a record-match matter, the payload matches the lake treatment fields: field_i_validity and composite_basis are unverified, as_of fields are null, varies_by_point is false, and the scope_note matches.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment/currency merits remain for lens B.\"],\"suggested_tightening\":null},{\"assertion_id\":\"c7a73ca510b894ed\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency merits are outside lens A, so no treatment finding is raised.\",\"The SCOTUS component is supported by the lake identity fields court U.S. Supreme Court, court_id scotus, and court_level scotus.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Lens A did not independently review any good-law or currency implication of the authority-weight label.\"],\"suggested_tightening\":\"If authority_weight is meant to be independently audited, disclose the corpus rule mapping court_level scotus to Binding — SCOTUS.\"}],\"notes\":\"No external sources were used. Support/home-role assertions default to refuted because the disclosed files lack opinion text, lake holding, or pinpoint quotes.\"}",
+  "summary": {
+    "at": "2026-07-10T00:24:46-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-bebfaa62c3",
+      "F-S9-PR-9ba3d594ec"
+    ],
+    "group_id": "content/cases/Kansas v. Ventris.md",
+    "group_total_assertions": 5,
+    "lake_only_cases": [
+      "Kansas v. Ventris"
+    ],
+    "lane": "codex-A",
+    "lane_id": "codex-A-panel-prod-62339c90",
+    "lens": "A",
+    "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-62339c90.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [
+      "case 'Kansas v. Ventris' has no lead_opinion_id (text undisclosed)"
+    ],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [],
+    "tokens": {
+      "input": 130007,
+      "output": 6673,
+      "source": "codex-events",
+      "total": 136680
+    },
+    "verdict_map": {
+      "48bb6e36a36b14dc": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "7e1ac528cbb4f8e7": {
+        "dimension": "support",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": false
+      },
+      "a7a7b7a6c9010d25": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "b7cc18a1e75ca39d": {
+        "dimension": "support",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": false
+      },
+      "c7a73ca510b894ed": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-bebfaa62c3",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-9ba3d594ec",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 131.5
+  }
+}

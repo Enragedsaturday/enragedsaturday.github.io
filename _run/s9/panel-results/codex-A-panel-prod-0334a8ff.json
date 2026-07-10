@@ -1,0 +1,200 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "content/cases/United States v. United States District Court (Keith).md",
+    "lens": "A",
+    "notes": "No quote_fidelity, pincite, or black_letter rows were present in group_inventory.jsonl, so none were added.",
+    "reviewed": [
+      {
+        "assertion_id": "a9c876a6793fe34a",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "input caption does not match CL canonical caption",
+          "locator_note": "citation/title",
+          "needs_cl": false,
+          "problem": "The citation, court, year, parallel cite, and Lexis cite match the lake record, but the asserted title is the input/common caption rather than the lake canonical case name; the lake records a caption-mismatch warning.",
+          "proposed_fix": "Use the lake canonical caption for identity metadata and keep \"United States v. United States District Court (Keith)\" as an alias or common title.",
+          "severity": "low"
+        },
+        "dimension": "existence",
+        "reasons": [
+          "Lake official citation is 407 U.S. 297, court is U.S. Supreme Court, and year is 1972.",
+          "Lake parallel citations are 92 S. Ct. 2125 and 32 L. Ed. 2d 752; vendor-neutral citation is 1972 U.S. LEXIS 38.",
+          "Lake canonical case_name is United States v. United States District Court for the Eastern District of Michigan, while input_case_name is United States v. United States District Court (Keith)."
+        ],
+        "residual_risks": [
+          "The common Keith caption is likely useful for navigation, but it should not be mistaken for the canonical caption."
+        ],
+        "suggested_tightening": "Distinguish canonical caption from alias/common-name fields.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "4453de9301d0e0dd",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "frontier stub, no pinpoints",
+          "locator_note": "homes[0].role",
+          "needs_cl": true,
+          "problem": "The Anchor home-role for Electronic Surveillance and Title III is not independently supportable from the disclosed evidence; the lake record contains no holding, home-role analysis, or supporting pinpoints, and no opinion text file is disclosed.",
+          "proposed_fix": "Provide text/<case>.txt or lake holding/pinpoints supporting the Anchor role, or downgrade the role to an unverified related-case placement.",
+          "severity": "medium"
+        },
+        "dimension": "support",
+        "reasons": [
+          "The content page repeats the Anchor label, but that is the assertion under review and cannot self-verify.",
+          "The lake record supplies identity, citation, and treatment metadata, but no holding or role-support field."
+        ],
+        "residual_risks": [
+          "The role may be correct if the full opinion text or verified lake holding is later disclosed."
+        ],
+        "suggested_tightening": "Add an independently pincited support note tying the case to the Title III/electronic-surveillance home role.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": false
+      },
+      {
+        "assertion_id": "abf8236e114a2bb6",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "frontier stub, no pinpoints",
+          "locator_note": "holding",
+          "needs_cl": true,
+          "problem": "The stated holding cannot be verified at its breadth from the disclosed evidence; the lake record has no holding or pinpoints, and no cached full opinion text is present.",
+          "proposed_fix": "Provide the full opinion text or lake pinpoints/holding validating each component, especially the Section 2511(3) disclaimer, the prior-judicial-approval rule, and the foreign-powers reservation.",
+          "severity": "high"
+        },
+        "dimension": "support",
+        "reasons": [
+          "No text/<case>.txt file is disclosed for holding verification.",
+          "Lake pinpoints are empty and the lake record contains no holding field.",
+          "The content page's own holding and rule discussion cannot self-authenticate under the review rules."
+        ],
+        "residual_risks": [
+          "The proposition may be accurate if later checked against the full opinion, but the disclosed record does not permit that verification."
+        ],
+        "suggested_tightening": "Split the holding into separately supported propositions with separate pinpoints for Section 2511(3), domestic-security warrant approval, and the foreign-intelligence reservation.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": false
+      },
+      {
+        "assertion_id": "c51e93cf49f237f5",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A.",
+          "The payload mirrors the disclosed lake treatment fields: field_i_validity unverified, null as-of fields, composite_basis unverified, and varies_by_point false."
+        ],
+        "residual_risks": [
+          "No treatment or currency judgment is made under this lens."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "f7c22ec4475a064d",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A.",
+          "The lake identity fields disclose court as U.S. Supreme Court and court_level as scotus, supporting the SCOTUS part of the weight label."
+        ],
+        "residual_risks": [
+          "No treatment or currency judgment is made under this lens."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"A\",\n  \"group_id\": \"content/cases/United States v. United States District Court (Keith).md\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"a9c876a6793fe34a\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands-modified\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The citation, court, year, parallel cite, and Lexis cite match the lake record, but the asserted title is the input/common caption rather than the lake canonical case name; the lake records a caption-mismatch warning.\",\n        \"severity\": \"low\",\n        \"proposed_fix\": \"Use the lake canonical caption for identity metadata and keep \\\"United States v. United States District Court (Keith)\\\" as an alias or common title.\",\n        \"evidence_quote\": \"input caption does not match CL canonical caption\",\n        \"needs_cl\": false,\n        \"locator_note\": \"citation/title\"\n      },\n      \"reasons\": [\n        \"Lake official citation is 407 U.S. 297, court is U.S. Supreme Court, and year is 1972.\",\n        \"Lake parallel citations are 92 S. Ct. 2125 and 32 L. Ed. 2d 752; vendor-neutral citation is 1972 U.S. LEXIS 38.\",\n        \"Lake canonical case_name is United States v. United States District Court for the Eastern District of Michigan, while input_case_name is United States v. United States District Court (Keith).\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The common Keith caption is likely useful for navigation, but it should not be mistaken for the canonical caption.\"\n      ],\n      \"suggested_tightening\": \"Distinguish canonical caption from alias/common-name fields.\"\n    },\n    {\n      \"assertion_id\": \"4453de9301d0e0dd\",\n      \"dimension\": \"support\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": false,\n      \"defect\": {\n        \"problem\": \"The Anchor home-role for Electronic Surveillance and Title III is not independently supportable from the disclosed evidence; the lake record contains no holding, home-role analysis, or supporting pinpoints, and no opinion text file is disclosed.\",\n        \"severity\": \"medium\",\n        \"proposed_fix\": \"Provide text/<case>.txt or lake holding/pinpoints supporting the Anchor role, or downgrade the role to an unverified related-case placement.\",\n        \"evidence_quote\": \"frontier stub, no pinpoints\",\n        \"needs_cl\": true,\n        \"locator_note\": \"homes[0].role\"\n      },\n      \"reasons\": [\n        \"The content page repeats the Anchor label, but that is the assertion under review and cannot self-verify.\",\n        \"The lake record supplies identity, citation, and treatment metadata, but no holding or role-support field.\"\n      ],\n      \"breaks_true_positives\": true,\n      \"residual_risks\": [\n        \"The role may be correct if the full opinion text or verified lake holding is later disclosed.\"\n      ],\n      \"suggested_tightening\": \"Add an independently pincited support note tying the case to the Title III/electronic-surveillance home role.\"\n    },\n    {\n      \"assertion_id\": \"abf8236e114a2bb6\",\n      \"dimension\": \"support\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": false,\n      \"defect\": {\n        \"problem\": \"The stated holding cannot be verified at its breadth from the disclosed evidence; the lake record has no holding or pinpoints, and no cached full opinion text is present.\",\n        \"severity\": \"high\",\n        \"proposed_fix\": \"Provide the full opinion text or lake pinpoints/holding validating each component, especially the Section 2511(3) disclaimer, the prior-judicial-approval rule, and the foreign-powers reservation.\",\n        \"evidence_quote\": \"frontier stub, no pinpoints\",\n        \"needs_cl\": true,\n        \"locator_note\": \"holding\"\n      },\n      \"reasons\": [\n        \"No text/<case>.txt file is disclosed for holding verification.\",\n        \"Lake pinpoints are empty and the lake record contains no holding field.\",\n        \"The content page's own holding and rule discussion cannot self-authenticate under the review rules.\"\n      ],\n      \"breaks_true_positives\": true,\n      \"residual_risks\": [\n        \"The proposition may be accurate if later checked against the full opinion, but the disclosed record does not permit that verification.\"\n      ],\n      \"suggested_tightening\": \"Split the holding into separately supported propositions with separate pinpoints for Section 2511(3), domestic-security warrant approval, and the foreign-intelligence reservation.\"\n    },\n    {\n      \"assertion_id\": \"c51e93cf49f237f5\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Treatment/currency is outside Lens A.\",\n        \"The payload mirrors the disclosed lake treatment fields: field_i_validity unverified, null as-of fields, composite_basis unverified, and varies_by_point false.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"No treatment or currency judgment is made under this lens.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"f7c22ec4475a064d\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Treatment/currency is outside Lens A.\",\n        \"The lake identity fields disclose court as U.S. Supreme Court and court_level as scotus, supporting the SCOTUS part of the weight label.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"No treatment or currency judgment is made under this lens.\"\n      ],\n      \"suggested_tightening\": null\n    }\n  ],\n  \"notes\": \"No quote_fidelity, pincite, or black_letter rows were present in group_inventory.jsonl, so none were added.\"\n}",
+  "summary": {
+    "at": "2026-07-10T00:55:20-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-40b9cfbbc5",
+      "F-S9-PR-15bae5d237",
+      "F-S9-PR-a7925dd36d"
+    ],
+    "group_id": "content/cases/United States v. United States District Court (Keith).md",
+    "group_total_assertions": 5,
+    "lake_only_cases": [
+      "United States v. United States District Court (Keith)"
+    ],
+    "lane": "codex-A",
+    "lane_id": "codex-A-panel-prod-0334a8ff",
+    "lens": "A",
+    "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-0334a8ff.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [
+      "case 'United States v. United States District Court (Keith)' has no lead_opinion_id (text undisclosed)"
+    ],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [],
+    "tokens": {
+      "input": 51730,
+      "output": 7004,
+      "source": "codex-events",
+      "total": 58734
+    },
+    "verdict_map": {
+      "4453de9301d0e0dd": {
+        "dimension": "support",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": false
+      },
+      "a9c876a6793fe34a": {
+        "dimension": "existence",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "abf8236e114a2bb6": {
+        "dimension": "support",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": false
+      },
+      "c51e93cf49f237f5": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "f7c22ec4475a064d": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-40b9cfbbc5",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-15bae5d237",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-a7925dd36d",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 137.2
+  }
+}

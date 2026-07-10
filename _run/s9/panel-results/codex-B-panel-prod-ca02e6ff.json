@@ -1,0 +1,178 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "content/cases/United States v. Russell.md",
+    "lens": "B",
+    "notes": "Lens B only; support rows were not reviewed for support or quote fidelity.",
+    "reviewed": [
+      {
+        "assertion_id": "c193b0d746449fa4",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record is verified and identifies United States v. Russell as a U.S. Supreme Court case decided 1973-04-24 with cluster_id 108768.",
+          "The lake citation fields select 411 U.S. 423 as the official citation and include the asserted parallel and vendor-neutral citations.",
+          "The lake treatment field remains good_law with no point_overrides, so no accepted disclosed record makes the authority non-live."
+        ],
+        "residual_risks": [
+          "Treatment derivation contains proposed negative edges and audit_needed markers, but those are reviewed under the treatment assertion and are not accepted existence defects."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "8e4009f49f63ab23",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "Lens B does not review the merits of the home-role support classification.",
+          "No accepted disclosed treatment field makes Russell non-live or nonbinding for currency purposes."
+        ],
+        "residual_risks": [
+          "Support accuracy of the Entrapment home role is reserved for Lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "964c7bd128783685",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "Lens B does not review holding support or quote fidelity.",
+          "The disclosed lake treatment field lists Russell as good_law with no point_overrides, so there is no accepted currency defeat for citing the holding."
+        ],
+        "residual_risks": [
+          "Substantive holding accuracy and quote support are reserved for Lens A.",
+          "The treatment caveat identified for assertion 186bfd520fcc6467 should not be read as a support finding."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "186bfd520fcc6467",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade.",
+          "locator_note": "content_page.md treatment frontmatter and Treatment & subsequent history section; lake/United States v. Russell__06aae7.json treatment.derivation and treatment.edges",
+          "needs_cl": true,
+          "problem": "The good_law treatment field matches the lake judgment, but the page's unqualified 'No negative treatment' presentation is too strong because the disclosed lake record flags proposed negative-treatment edges and an unresolved audit need.",
+          "proposed_fix": "Keep the status only as a qualified lake judgment: 'good_law (migration-seed; no accepted point override in the disclosed lake record). S2 derivation lists proposed negative edges requiring audit.' Remove or soften 'No negative treatment.'",
+          "severity": "medium"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "The content treatment payload matches the lake treatment fields: field_i_validity good_law, as_of_treatment 2026-06-30, varies_by_point false, and point_overrides empty.",
+          "The lake provenance states treatment.field_i_validity came from '_treatment-migration.json + page frontmatter' and warns 'legacy treatment migrated: good -> good_law.'",
+          "The lake derivation reports audit_needed true for lane1_negative and lane2_top_cited, with proposed_negative_events of 15 and 25 respectively, and all 40 treatment.edges are marked proposed true.",
+          "Because the negative edges are proposed and field_iii is only mentioned, the disclosed record does not prove Russell is bad law; it does require a caveat to any no-negative-treatment claim."
+        ],
+        "residual_risks": [
+          "A completed CL/treatment audit could confirm no negative treatment or could downgrade a specific point.",
+          "The as_of_treatment date is asserted from a migrated seed rather than an independently completed audit in the disclosed record."
+        ],
+        "suggested_tightening": "Expose the scope_note/audit status in the rendered treatment text, not only in frontmatter.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "6976c164b8fc65dd",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The lake identity fields list court as U.S. Supreme Court and court_level as scotus.",
+          "The content_page authority_weight 'Binding — SCOTUS' is consistent with that court identity.",
+          "No disclosed treatment field changes the court-level weight label itself."
+        ],
+        "residual_risks": [
+          "If the treatment audit later downgrades a point, the weight label may need to be displayed with a separate treatment limitation, but the SCOTUS weight label remains correct."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"content/cases/United States v. Russell.md\",\"reviewed\":[{\"assertion_id\":\"c193b0d746449fa4\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record is verified and identifies United States v. Russell as a U.S. Supreme Court case decided 1973-04-24 with cluster_id 108768.\",\"The lake citation fields select 411 U.S. 423 as the official citation and include the asserted parallel and vendor-neutral citations.\",\"The lake treatment field remains good_law with no point_overrides, so no accepted disclosed record makes the authority non-live.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment derivation contains proposed negative edges and audit_needed markers, but those are reviewed under the treatment assertion and are not accepted existence defects.\"],\"suggested_tightening\":null},{\"assertion_id\":\"8e4009f49f63ab23\",\"dimension\":\"support\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lens B does not review the merits of the home-role support classification.\",\"No accepted disclosed treatment field makes Russell non-live or nonbinding for currency purposes.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Support accuracy of the Entrapment home role is reserved for Lens A.\"],\"suggested_tightening\":null},{\"assertion_id\":\"964c7bd128783685\",\"dimension\":\"support\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lens B does not review holding support or quote fidelity.\",\"The disclosed lake treatment field lists Russell as good_law with no point_overrides, so there is no accepted currency defeat for citing the holding.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Substantive holding accuracy and quote support are reserved for Lens A.\",\"The treatment caveat identified for assertion 186bfd520fcc6467 should not be read as a support finding.\"],\"suggested_tightening\":null},{\"assertion_id\":\"186bfd520fcc6467\",\"dimension\":\"treatment\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The good_law treatment field matches the lake judgment, but the page's unqualified 'No negative treatment' presentation is too strong because the disclosed lake record flags proposed negative-treatment edges and an unresolved audit need.\",\"severity\":\"medium\",\"proposed_fix\":\"Keep the status only as a qualified lake judgment: 'good_law (migration-seed; no accepted point override in the disclosed lake record). S2 derivation lists proposed negative edges requiring audit.' Remove or soften 'No negative treatment.'\",\"evidence_quote\":\"Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade.\",\"needs_cl\":true,\"locator_note\":\"content_page.md treatment frontmatter and Treatment & subsequent history section; lake/United States v. Russell__06aae7.json treatment.derivation and treatment.edges\"},\"reasons\":[\"The content treatment payload matches the lake treatment fields: field_i_validity good_law, as_of_treatment 2026-06-30, varies_by_point false, and point_overrides empty.\",\"The lake provenance states treatment.field_i_validity came from '_treatment-migration.json + page frontmatter' and warns 'legacy treatment migrated: good -> good_law.'\",\"The lake derivation reports audit_needed true for lane1_negative and lane2_top_cited, with proposed_negative_events of 15 and 25 respectively, and all 40 treatment.edges are marked proposed true.\",\"Because the negative edges are proposed and field_iii is only mentioned, the disclosed record does not prove Russell is bad law; it does require a caveat to any no-negative-treatment claim.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"A completed CL/treatment audit could confirm no negative treatment or could downgrade a specific point.\",\"The as_of_treatment date is asserted from a migrated seed rather than an independently completed audit in the disclosed record.\"],\"suggested_tightening\":\"Expose the scope_note/audit status in the rendered treatment text, not only in frontmatter.\"},{\"assertion_id\":\"6976c164b8fc65dd\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake identity fields list court as U.S. Supreme Court and court_level as scotus.\",\"The content_page authority_weight 'Binding — SCOTUS' is consistent with that court identity.\",\"No disclosed treatment field changes the court-level weight label itself.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"If the treatment audit later downgrades a point, the weight label may need to be displayed with a separate treatment limitation, but the SCOTUS weight label remains correct.\"],\"suggested_tightening\":null}],\"notes\":\"Lens B only; support rows were not reviewed for support or quote fidelity.\"}",
+  "summary": {
+    "at": "2026-07-10T00:54:20-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-eec013bd84"
+    ],
+    "group_id": "content/cases/United States v. Russell.md",
+    "group_total_assertions": 5,
+    "lake_only_cases": [],
+    "lane": "codex-B",
+    "lane_id": "codex-B-panel-prod-ca02e6ff",
+    "lens": "B",
+    "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-ca02e6ff.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "United States v. Russell"
+    ],
+    "tokens": {
+      "input": 116232,
+      "output": 7137,
+      "source": "codex-events",
+      "total": 123369
+    },
+    "verdict_map": {
+      "186bfd520fcc6467": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "6976c164b8fc65dd": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "8e4009f49f63ab23": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "964c7bd128783685": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "c193b0d746449fa4": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-eec013bd84",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 138.3
+  }
+}

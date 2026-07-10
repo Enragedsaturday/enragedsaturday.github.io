@@ -1,38 +1,182 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "content/cases/United States v. Mendoza.md",
+    "lens": "A",
+    "notes": "No external sources used. Treatment rows are recorded without Lens A treatment findings.",
+    "reviewed": [
+      {
+        "assertion_id": "9ee42ce2fb673612",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "\"official\": null",
+          "locator_note": "lake/United States v. Mendoza__87492b.json citations.official and citations.slip_only",
+          "needs_cl": false,
+          "problem": "The case identity, docket, court, and year are supported, but the payload marks an official citation as present even though the lake record is slip-only and has no official citation.",
+          "proposed_fix": "Set official_citation_present to false and treat the display citation as a slip/docket citation, not an official reporter citation.",
+          "severity": "medium"
+        },
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity shows United States v. Ryan Mendoza, docket 25-1154, 3d Cir., decided 2026-01-08.",
+          "Lake citations show no official citation and slip_only true."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Use a slip-only citation label unless and until the lake record gains an official reporter citation.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "2b21e9960d96aeed",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "The opinion frames the issue as whether Mendoza had a legitimate expectation of privacy in the searched hotel room before seeking Fourth Amendment relief.",
+          "The opinion expressly notes that courts often call this a Fourth Amendment standing inquiry."
+        ],
+        "residual_risks": [
+          "The relative editorial rank 'Key' depends on corpus taxonomy, but the disclosed opinion squarely supports the home topic."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "63f4457b8ea999d0",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "\"Does the reasonable expectation of privacy disappear immediately at checkout time, or might there be a “grace period” for stragglers who remain slightly overtime?\"",
+          "locator_note": "text/United States v. Mendoza__87492b.txt, analysis section near page 7",
+          "needs_cl": false,
+          "problem": "The core holding is supported, but the statement should not imply a categorical immediate loss of privacy at checkout or say broadly that Mendoza 'failed to check out' without qualification. The opinion limited the result to five hours after checkout with no late-checkout communication or ambiguity, and it recognizes possible grace-period questions for future cases.",
+          "proposed_fix": "State that, on these facts, five hours after posted checkout, with no late-checkout communication or ambiguity and with the hotel treating the room as vacant/possession reverted, Mendoza lacked an objectively reasonable expectation of privacy and therefore could not challenge the search.",
+          "severity": "medium"
+        },
+        "dimension": "support",
+        "reasons": [
+          "The opinion states: Five hours after checkout time, any expectation of privacy Mendoza had was not objectively reasonable.",
+          "The opinion says the search was not a close question because there were no communications about late checkout and no other ambiguous circumstances.",
+          "The opinion says the hotel allowed walk-out checkout, so 'failed to check out' should be narrowed to failure to go to the front desk or arrange late checkout."
+        ],
+        "residual_risks": [
+          "A future case involving a short overtime stay or hotel grace-period practice is expressly left open by the opinion."
+        ],
+        "suggested_tightening": "Preserve the five-hours-after-checkout/no-ambiguity limitation in the holding.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "a32bb167c3a998ef",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Recorded only under Lens A; no treatment/currency finding is made.",
+          "The disclosed text identifies the opinion as PRECEDENTIAL and the lake/content identify the court as 3d Cir."
+        ],
+        "residual_risks": [
+          "Current citator status is outside Lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "cf958cffe904a719",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Recorded only under Lens A; no treatment/currency finding is made.",
+          "The content page and lake record both mark treatment as unverified with null as_of fields and no point overrides."
+        ],
+        "residual_risks": [
+          "The page intentionally lacks completed treatment/progeny verification; Lens B must assess currency."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"content/cases/United States v. Mendoza.md\",\"reviewed\":[{\"assertion_id\":\"9ee42ce2fb673612\",\"dimension\":\"existence\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The case identity, docket, court, and year are supported, but the payload marks an official citation as present even though the lake record is slip-only and has no official citation.\",\"severity\":\"medium\",\"proposed_fix\":\"Set official_citation_present to false and treat the display citation as a slip/docket citation, not an official reporter citation.\",\"evidence_quote\":\"\\\"official\\\": null\",\"needs_cl\":false,\"locator_note\":\"lake/United States v. Mendoza__87492b.json citations.official and citations.slip_only\"},\"reasons\":[\"Lake identity shows United States v. Ryan Mendoza, docket 25-1154, 3d Cir., decided 2026-01-08.\",\"Lake citations show no official citation and slip_only true.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":\"Use a slip-only citation label unless and until the lake record gains an official reporter citation.\"},{\"assertion_id\":\"2b21e9960d96aeed\",\"dimension\":\"support\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The opinion frames the issue as whether Mendoza had a legitimate expectation of privacy in the searched hotel room before seeking Fourth Amendment relief.\",\"The opinion expressly notes that courts often call this a Fourth Amendment standing inquiry.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The relative editorial rank 'Key' depends on corpus taxonomy, but the disclosed opinion squarely supports the home topic.\"],\"suggested_tightening\":null},{\"assertion_id\":\"63f4457b8ea999d0\",\"dimension\":\"support\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The core holding is supported, but the statement should not imply a categorical immediate loss of privacy at checkout or say broadly that Mendoza 'failed to check out' without qualification. The opinion limited the result to five hours after checkout with no late-checkout communication or ambiguity, and it recognizes possible grace-period questions for future cases.\",\"severity\":\"medium\",\"proposed_fix\":\"State that, on these facts, five hours after posted checkout, with no late-checkout communication or ambiguity and with the hotel treating the room as vacant/possession reverted, Mendoza lacked an objectively reasonable expectation of privacy and therefore could not challenge the search.\",\"evidence_quote\":\"\\\"Does the reasonable expectation of privacy disappear immediately at checkout time, or might there be a “grace period” for stragglers who remain slightly overtime?\\\"\",\"needs_cl\":false,\"locator_note\":\"text/United States v. Mendoza__87492b.txt, analysis section near page 7\"},\"reasons\":[\"The opinion states: Five hours after checkout time, any expectation of privacy Mendoza had was not objectively reasonable.\",\"The opinion says the search was not a close question because there were no communications about late checkout and no other ambiguous circumstances.\",\"The opinion says the hotel allowed walk-out checkout, so 'failed to check out' should be narrowed to failure to go to the front desk or arrange late checkout.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"A future case involving a short overtime stay or hotel grace-period practice is expressly left open by the opinion.\"],\"suggested_tightening\":\"Preserve the five-hours-after-checkout/no-ambiguity limitation in the holding.\"},{\"assertion_id\":\"a32bb167c3a998ef\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Recorded only under Lens A; no treatment/currency finding is made.\",\"The disclosed text identifies the opinion as PRECEDENTIAL and the lake/content identify the court as 3d Cir.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Current citator status is outside Lens A.\"],\"suggested_tightening\":null},{\"assertion_id\":\"cf958cffe904a719\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Recorded only under Lens A; no treatment/currency finding is made.\",\"The content page and lake record both mark treatment as unverified with null as_of fields and no point overrides.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The page intentionally lacks completed treatment/progeny verification; Lens B must assess currency.\"],\"suggested_tightening\":null}],\"notes\":\"No external sources used. Treatment rows are recorded without Lens A treatment findings.\"}",
   "summary": {
-    "at": "2026-07-09T23:13:36-04:00",
-    "attempts": 2,
+    "at": "2026-07-10T17:14:05-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-2bf4032438"
+    ],
     "group_id": "content/cases/United States v. Mendoza.md",
     "group_total_assertions": 5,
-    "lake_only_cases": [
-      "United States v. Mendoza"
-    ],
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-c080f8ac",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-c080f8ac.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
-    "resolution_notes": [
-      "case 'United States v. Mendoza' has no lead_opinion_id (text undisclosed)"
-    ],
-    "reviewed_count": 0,
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
     "run": "prod",
-    "text_disclosed_cases": [],
+    "text_disclosed_cases": [
+      "United States v. Mendoza"
+    ],
     "tokens": {
-      "input": 825,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 825
+      "input": 118609,
+      "output": 7739,
+      "source": "codex-events",
+      "total": 126348
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 3.0
+    "verdict_map": {
+      "2b21e9960d96aeed": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "63f4457b8ea999d0": {
+        "dimension": "support",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "9ee42ce2fb673612": {
+        "dimension": "existence",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "a32bb167c3a998ef": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "cf958cffe904a719": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-3d0d17e0c0",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-2bf4032438",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 159.1
   }
 }

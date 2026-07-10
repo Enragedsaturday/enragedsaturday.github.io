@@ -1,11 +1,48 @@
 {
-  "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/United States v. Perez.json",
+    "lens": "A",
+    "notes": "Reviewed every assertion_id in group_inventory.jsonl exactly once. No support, quote_fidelity, pincite, or black_letter inventory rows were supplied for Lens A review.",
+    "reviewed": [
+      {
+        "assertion_id": "29337d6ee4b04327",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record exists for record_id United States v. Perez.",
+          "The lake record's official citation is 89 F.4th 247, with volume 89, reporter F.4th, and page 247, matching the assertion payload.",
+          "The lake identity fields verify court as 1st Cir. and year as 2023, and content_page.md renders the citation as 89 F.4th 247 (1st Cir. 2023)."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "b536a6299b87318a",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A, so I raise no treatment finding.",
+          "The treatment payload matches the disclosed lake record: field_i_validity is unverified, as_of_content and as_of_treatment are null, varies_by_point is false, and the scope note states that treatment/progeny are intentionally not derived until S6 promotion."
+        ],
+        "residual_risks": [
+          "Substantive treatment currency is reserved for Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/United States v. Perez.json\",\"reviewed\":[{\"assertion_id\":\"29337d6ee4b04327\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record exists for record_id United States v. Perez.\",\"The lake record's official citation is 89 F.4th 247, with volume 89, reporter F.4th, and page 247, matching the assertion payload.\",\"The lake identity fields verify court as 1st Cir. and year as 2023, and content_page.md renders the citation as 89 F.4th 247 (1st Cir. 2023).\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"b536a6299b87318a\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside Lens A, so I raise no treatment finding.\",\"The treatment payload matches the disclosed lake record: field_i_validity is unverified, as_of_content and as_of_treatment are null, varies_by_point is false, and the scope note states that treatment/progeny are intentionally not derived until S6 promotion.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Substantive treatment currency is reserved for Lens B.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed every assertion_id in group_inventory.jsonl exactly once. No support, quote_fidelity, pincite, or black_letter inventory rows were supplied for Lens A review.\"}",
   "summary": {
-    "at": "2026-07-09T23:07:11-04:00",
-    "attempts": 2,
-    "clean_attestation": false,
+    "at": "2026-07-10T16:49:03-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
     "defense_votes": [],
     "findings_emitted": [],
     "group_id": "_overhaul2/lake/cases/United States v. Perez.json",
@@ -18,21 +55,36 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-3c0eb890.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [
       "case 'United States v. Perez' has no lead_opinion_id (text undisclosed)"
     ],
-    "reviewed_count": 0,
+    "reviewed_count": 2,
     "run": "prod",
     "text_disclosed_cases": [],
     "tokens": {
-      "input": 827,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 827
+      "input": 58986,
+      "output": 2212,
+      "source": "codex-events",
+      "total": 61198
     },
-    "verdict_map": {},
+    "verdict_map": {
+      "29337d6ee4b04327": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "b536a6299b87318a": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
     "votes_emitted": [],
-    "wall_clock_s": 3.0
+    "wall_clock_s": 48.3
   }
 }

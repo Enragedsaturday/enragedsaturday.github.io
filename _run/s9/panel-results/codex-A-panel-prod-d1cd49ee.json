@@ -1,11 +1,34 @@
 {
-  "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/United States v. Trent.json",
+    "lens": "A",
+    "notes": "Only one assertion was present in group_inventory.jsonl, and it was reviewed exactly once.",
+    "reviewed": [
+      {
+        "assertion_id": "48d4907cb3ffc036",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The treatment assertion in group_inventory.jsonl matches the lake record: field_i_validity is unverified, as_of_content and as_of_treatment are null, varies_by_point is false, and the scope_note is identical.",
+          "The built page frontmatter also carries the same unverified treatment fields.",
+          "Treatment/currency is outside Lens A's charter, so no treatment merits finding is raised."
+        ],
+        "residual_risks": [
+          "Lens A did not evaluate whether the unverified treatment status is current or substantively correct; that belongs to Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"A\",\n  \"group_id\": \"_overhaul2/lake/cases/United States v. Trent.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"48d4907cb3ffc036\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The treatment assertion in group_inventory.jsonl matches the lake record: field_i_validity is unverified, as_of_content and as_of_treatment are null, varies_by_point is false, and the scope_note is identical.\",\n        \"The built page frontmatter also carries the same unverified treatment fields.\",\n        \"Treatment/currency is outside Lens A's charter, so no treatment merits finding is raised.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Lens A did not evaluate whether the unverified treatment status is current or substantively correct; that belongs to Lens B.\"\n      ],\n      \"suggested_tightening\": null\n    }\n  ],\n  \"notes\": \"Only one assertion was present in group_inventory.jsonl, and it was reviewed exactly once.\"\n}",
   "summary": {
-    "at": "2026-07-09T23:07:42-04:00",
-    "attempts": 2,
-    "clean_attestation": false,
+    "at": "2026-07-10T16:49:36-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
     "defense_votes": [],
     "findings_emitted": [],
     "group_id": "_overhaul2/lake/cases/United States v. Trent.json",
@@ -18,21 +41,29 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-d1cd49ee.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [
       "case 'United States v. Trent' has no lead_opinion_id (text undisclosed)"
     ],
-    "reviewed_count": 0,
+    "reviewed_count": 1,
     "run": "prod",
     "text_disclosed_cases": [],
     "tokens": {
-      "input": 827,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 827
+      "input": 84736,
+      "output": 1543,
+      "source": "codex-events",
+      "total": 86279
     },
-    "verdict_map": {},
+    "verdict_map": {
+      "48d4907cb3ffc036": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
     "votes_emitted": [],
-    "wall_clock_s": 4.0
+    "wall_clock_s": 34.4
   }
 }

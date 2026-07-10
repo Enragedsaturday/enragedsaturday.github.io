@@ -1,0 +1,189 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Adams v. Williams.json",
+    "lens": "A",
+    "notes": "Lens A review found quote-fidelity defects for pin-147 and pin-147b only; no treatment/currency finding is made.",
+    "reviewed": [
+      {
+        "assertion_id": "964ca2e36d385b03",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity is Adams v. Williams / Adams, Warden v. Williams, U.S. Supreme Court, decided 1972-06-12.",
+          "Official citation 407 U.S. 143 and parallel citations 92 S. Ct. 1921, 32 L. Ed. 2d 612, and 1972 U.S. LEXIS 2206 match the lake record."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "1efa6bd3173c006d",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "the information carried enough indicia of reliability to justify the officer's forcible stop of Williams.",
+          "locator_note": "Correct passage appears in text/Adams v. Williams__80ad69.txt at the paragraph containing star page *147.",
+          "needs_cl": false,
+          "problem": "The pin-147 payload/lake quote is not the opinion quote; it captures the content page header/background/rule lead-in and is marked quote_fidelity=mismatch with no verified star marker.",
+          "proposed_fix": "Replace pin-147 with the actual opinion sentence quoted on the page and verify it against star page 147.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The visible page quotation for pin-147 is present in the opinion text, but the assertion payload/lake pin quote is a harvested page-header block instead.",
+          "Lake pinpoints records pin-147 as slip-only and quote_fidelity=mismatch."
+        ],
+        "residual_risks": [
+          "The underlying legal proposition appears supportable; the defect is the pin/quote record as framed."
+        ],
+        "suggested_tightening": "Store only the actual quoted sentence for pin-147 and add star_marker 147.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "ac75836a2634af88",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The pin-148 quote appears verbatim in the opinion text at star page *148.",
+          "Lake pinpoints marks pin-148 as star-verified with quote_fidelity=matched and the fragment targets the quoted passage."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "f323dec337358090",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Some tips, completely lacking in indicia of reliability, would either warrant no police response",
+          "locator_note": "The source passage is in text/Adams v. Williams__80ad69.txt in the paragraph following star page *147.",
+          "needs_cl": false,
+          "problem": "The pin-147b quote is not character-faithful to the disclosed opinion text: it replaces an intervening sentence with an ellipsis and normalizes the dash punctuation, while the lake marks it mismatch/slip-only.",
+          "proposed_fix": "Either quote the passage exactly from the text or mark it as an editorially ellipted quotation and verify the pinpoint at star page 147.",
+          "severity": "medium"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The opinion text contains an intervening sentence beginning with the evidence_quote, which the page quote omits with ellipsis.",
+          "The lake pinpoints record for pin-147b says quote_fidelity=mismatch and has no star_marker."
+        ],
+        "residual_risks": [
+          "The elision does not appear to change the legal thrust, but it fails this lens's character-fidelity standard."
+        ],
+        "suggested_tightening": "Use a verified quote-fragment or make the elision explicit in metadata so it is not treated as a character-faithful quote.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "ddd39a911888ffe3",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A; no treatment defect is raised.",
+          "The payload mirrors the lake treatment fields: field_i_validity=good_law, as_of_treatment=2026-06-30, varies_by_point=false."
+        ],
+        "residual_risks": [
+          "Treatment and currency were not substantively reviewed under Lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Adams v. Williams.json\",\"reviewed\":[{\"assertion_id\":\"964ca2e36d385b03\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity is Adams v. Williams / Adams, Warden v. Williams, U.S. Supreme Court, decided 1972-06-12.\",\"Official citation 407 U.S. 143 and parallel citations 92 S. Ct. 1921, 32 L. Ed. 2d 612, and 1972 U.S. LEXIS 2206 match the lake record.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"1efa6bd3173c006d\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The pin-147 payload/lake quote is not the opinion quote; it captures the content page header/background/rule lead-in and is marked quote_fidelity=mismatch with no verified star marker.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-147 with the actual opinion sentence quoted on the page and verify it against star page 147.\",\"evidence_quote\":\"the information carried enough indicia of reliability to justify the officer's forcible stop of Williams.\",\"needs_cl\":false,\"locator_note\":\"Correct passage appears in text/Adams v. Williams__80ad69.txt at the paragraph containing star page *147.\"},\"reasons\":[\"The visible page quotation for pin-147 is present in the opinion text, but the assertion payload/lake pin quote is a harvested page-header block instead.\",\"Lake pinpoints records pin-147 as slip-only and quote_fidelity=mismatch.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The underlying legal proposition appears supportable; the defect is the pin/quote record as framed.\"],\"suggested_tightening\":\"Store only the actual quoted sentence for pin-147 and add star_marker 147.\"},{\"assertion_id\":\"ac75836a2634af88\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The pin-148 quote appears verbatim in the opinion text at star page *148.\",\"Lake pinpoints marks pin-148 as star-verified with quote_fidelity=matched and the fragment targets the quoted passage.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"f323dec337358090\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The pin-147b quote is not character-faithful to the disclosed opinion text: it replaces an intervening sentence with an ellipsis and normalizes the dash punctuation, while the lake marks it mismatch/slip-only.\",\"severity\":\"medium\",\"proposed_fix\":\"Either quote the passage exactly from the text or mark it as an editorially ellipted quotation and verify the pinpoint at star page 147.\",\"evidence_quote\":\"Some tips, completely lacking in indicia of reliability, would either warrant no police response\",\"needs_cl\":false,\"locator_note\":\"The source passage is in text/Adams v. Williams__80ad69.txt in the paragraph following star page *147.\"},\"reasons\":[\"The opinion text contains an intervening sentence beginning with the evidence_quote, which the page quote omits with ellipsis.\",\"The lake pinpoints record for pin-147b says quote_fidelity=mismatch and has no star_marker.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The elision does not appear to change the legal thrust, but it fails this lens's character-fidelity standard.\"],\"suggested_tightening\":\"Use a verified quote-fragment or make the elision explicit in metadata so it is not treated as a character-faithful quote.\"},{\"assertion_id\":\"ddd39a911888ffe3\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside Lens A; no treatment defect is raised.\",\"The payload mirrors the lake treatment fields: field_i_validity=good_law, as_of_treatment=2026-06-30, varies_by_point=false.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment and currency were not substantively reviewed under Lens A.\"],\"suggested_tightening\":null}],\"notes\":\"Lens A review found quote-fidelity defects for pin-147 and pin-147b only; no treatment/currency finding is made.\"}",
+  "summary": {
+    "at": "2026-07-10T18:09:26-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-9e3f798dd2",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-a91bfaa150",
+      "F-S9-PR-a36f060b59"
+    ],
+    "group_id": "_overhaul2/lake/cases/Adams v. Williams.json",
+    "group_total_assertions": 5,
+    "lake_only_cases": [],
+    "lane": "codex-A",
+    "lane_id": "codex-A-panel-prod-8e1de7dc",
+    "lens": "A",
+    "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-8e1de7dc.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Adams v. Williams"
+    ],
+    "tokens": {
+      "input": 174333,
+      "output": 9370,
+      "source": "codex-events",
+      "total": 183703
+    },
+    "verdict_map": {
+      "1efa6bd3173c006d": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "964ca2e36d385b03": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "ac75836a2634af88": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "ddd39a911888ffe3": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "f323dec337358090": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-a91bfaa150",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-a36f060b59",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-9e3f798dd2",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": 182.6
+  }
+}

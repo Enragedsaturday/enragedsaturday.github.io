@@ -1,0 +1,127 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Patterson v. Illinois.json",
+    "lens": "B",
+    "notes": "Lens B only; support and quote-fidelity merits were not reviewed.",
+    "reviewed": [
+      {
+        "assertion_id": "2a9bb046a129f73f",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record is verified, identifies Patterson v. Illinois as a U.S. Supreme Court case, and supplies the official citation 487 U.S. 285.",
+          "The treatment judgment field marks the authority as good_law as of 2026-06-30, so the cited authority is live under the disclosed record."
+        ],
+        "residual_risks": [
+          "Treatment derivation includes proposed negative edges and audit_needed flags, but no final non-proposed superseding/overruling treatment is disclosed."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "380c532adfa5596d",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote fidelity is outside Lens B; no support or quote-fidelity defect is raised.",
+          "The embedded treatment label in the harvested block is consistent with the lake treatment field_i_validity of good_law as of 2026-06-30."
+        ],
+        "residual_risks": [
+          "Lens A should evaluate the recorded quote_fidelity mismatch."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "e6dcf9084a24973f",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "\"name\": \"Montejo v. Louisiana\"",
+          "locator_note": "content_page.md Treatment & subsequent history; lake treatment.edges Montejo entry",
+          "needs_cl": true,
+          "problem": "The core good-law treatment stands, but the page's Montejo-specific subsequent-history sentence is more specific than the disclosed treatment record verifies. The lake record supports good_law and shows Montejo only as a proposed edge marked mentioned; it does not verify that Montejo relied on Patterson or left Patterson's waiver rule intact.",
+          "proposed_fix": "Keep the good_law status, but remove or qualify the Montejo clause unless a disclosed Montejo authority record or audited treatment note supports it. A disclosed-record-safe version would say that the lake record marks Patterson good_law as of 2026-06-30 with no point overrides.",
+          "severity": "low"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "Lake treatment.field_i_validity is good_law, as_of_treatment is 2026-06-30, varies_by_point is false, and point_overrides is empty.",
+          "All disclosed negative treatment edges are proposed; the record shows no final non-proposed edge overruling, abrogating, or superseding Patterson.",
+          "The lake derivation has audit_needed flags and proposed negative events, so the final status can be reported, but the page should not add unaudited Montejo-specific reasoning from the disclosed record alone."
+        ],
+        "residual_risks": [
+          "Derivation lanes lane1_negative and lane2_top_cited both show audit_needed true and cap_hit true, so later treatment remains a provenance risk even though the judgment field says good_law."
+        ],
+        "suggested_tightening": "Surface the treatment as 'good_law as of 2026-06-30 per lake record; no point overrides disclosed' rather than adding a Montejo reliance explanation.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": false
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/Patterson v. Illinois.json\",\"reviewed\":[{\"assertion_id\":\"2a9bb046a129f73f\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record is verified, identifies Patterson v. Illinois as a U.S. Supreme Court case, and supplies the official citation 487 U.S. 285.\",\"The treatment judgment field marks the authority as good_law as of 2026-06-30, so the cited authority is live under the disclosed record.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment derivation includes proposed negative edges and audit_needed flags, but no final non-proposed superseding/overruling treatment is disclosed.\"],\"suggested_tightening\":null},{\"assertion_id\":\"380c532adfa5596d\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Quote fidelity is outside Lens B; no support or quote-fidelity defect is raised.\",\"The embedded treatment label in the harvested block is consistent with the lake treatment field_i_validity of good_law as of 2026-06-30.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Lens A should evaluate the recorded quote_fidelity mismatch.\"],\"suggested_tightening\":null},{\"assertion_id\":\"e6dcf9084a24973f\",\"dimension\":\"treatment\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":false,\"defect\":{\"problem\":\"The core good-law treatment stands, but the page's Montejo-specific subsequent-history sentence is more specific than the disclosed treatment record verifies. The lake record supports good_law and shows Montejo only as a proposed edge marked mentioned; it does not verify that Montejo relied on Patterson or left Patterson's waiver rule intact.\",\"severity\":\"low\",\"proposed_fix\":\"Keep the good_law status, but remove or qualify the Montejo clause unless a disclosed Montejo authority record or audited treatment note supports it. A disclosed-record-safe version would say that the lake record marks Patterson good_law as of 2026-06-30 with no point overrides.\",\"evidence_quote\":\"\\\"name\\\": \\\"Montejo v. Louisiana\\\"\",\"needs_cl\":true,\"locator_note\":\"content_page.md Treatment & subsequent history; lake treatment.edges Montejo entry\"},\"reasons\":[\"Lake treatment.field_i_validity is good_law, as_of_treatment is 2026-06-30, varies_by_point is false, and point_overrides is empty.\",\"All disclosed negative treatment edges are proposed; the record shows no final non-proposed edge overruling, abrogating, or superseding Patterson.\",\"The lake derivation has audit_needed flags and proposed negative events, so the final status can be reported, but the page should not add unaudited Montejo-specific reasoning from the disclosed record alone.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Derivation lanes lane1_negative and lane2_top_cited both show audit_needed true and cap_hit true, so later treatment remains a provenance risk even though the judgment field says good_law.\"],\"suggested_tightening\":\"Surface the treatment as 'good_law as of 2026-06-30 per lake record; no point overrides disclosed' rather than adding a Montejo reliance explanation.\"}],\"notes\":\"Lens B only; support and quote-fidelity merits were not reviewed.\"}",
+  "summary": {
+    "at": "2026-07-10T01:46:22-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-878ace1110"
+    ],
+    "group_id": "_overhaul2/lake/cases/Patterson v. Illinois.json",
+    "group_total_assertions": 3,
+    "lake_only_cases": [],
+    "lane": "codex-B",
+    "lane_id": "codex-B-panel-prod-9c66ae45",
+    "lens": "B",
+    "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-9c66ae45.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 3,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Patterson v. Illinois"
+    ],
+    "tokens": {
+      "input": 297396,
+      "output": 6530,
+      "source": "codex-events",
+      "total": 303926
+    },
+    "verdict_map": {
+      "2a9bb046a129f73f": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "380c532adfa5596d": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "e6dcf9084a24973f": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": false
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-878ace1110",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 143.0
+  }
+}

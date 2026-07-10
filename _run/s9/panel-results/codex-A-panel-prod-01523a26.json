@@ -1,0 +1,184 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "content/cases/California v. Trombetta.md",
+    "lens": "A",
+    "notes": "Inventory did not include separate quote_fidelity or pincite rows for the page's quoted rule and pin-489; no extra assertion_id was created.",
+    "reviewed": [
+      {
+        "assertion_id": "efa543d44f33d4b9",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity gives case_name \"California v. Trombetta\", court \"U.S. Supreme Court\", date_decided \"1984-06-11\", and year 1984.",
+          "Lake citations list official cite \"467 U.S. 479\", vendor-neutral cite \"1984 U.S. LEXIS 103\", and the same parallel citations."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "912576b3d3cb9b71",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "\"pinpoints\": []",
+          "locator_note": "home=Brady and Giglio",
+          "needs_cl": true,
+          "problem": "The disclosed evidence does not verify the asserted home-role \"Anchor\" for Brady and Giglio. The lake record has no home-role, doctrinal-category, holding, or opinion-text support, and no text file is disclosed.",
+          "proposed_fix": "Do not assert the Anchor home role unless the disclosed record supplies opinion text, a lake holding, or a verified doctrinal-home field showing that Trombetta anchors Brady/Giglio preservation doctrine.",
+          "severity": "medium"
+        },
+        "dimension": "support",
+        "reasons": [
+          "The only disclosed lake record verifies identity/citation/treatment stubs, not the Brady and Giglio home-role assertion.",
+          "No text/<case>.txt file is present to check whether the opinion supports this doctrinal placement."
+        ],
+        "residual_risks": [
+          "The home role may be correct, but it is not verifiable from the disclosed files."
+        ],
+        "suggested_tightening": "Add a disclosed authority field or pinpoint tying Trombetta to the Brady/Giglio preservation-of-evidence topic before labeling it an Anchor.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": false
+      },
+      {
+        "assertion_id": "c1e0ab70a26b6647",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "\"pinpoints\": []",
+          "locator_note": "field=holding",
+          "needs_cl": true,
+          "problem": "The holding proposition cannot be verified from the disclosed evidence. The lake record contains no holding text and no pinpoints, and no cached full opinion text is present.",
+          "proposed_fix": "Provide text/California v. Trombetta.txt or lake pinpoints/holding fields that support each part of the proposition, including the breath-sample result, apparent-exculpatory-value requirement, and comparable-evidence requirement.",
+          "severity": "high"
+        },
+        "dimension": "support",
+        "reasons": [
+          "The proposition is substantive and case-specific, but the disclosed lake record has no opinion text or holding field to verify it.",
+          "Under the default-to-refuted rule, unsupported breadth cannot stand on the page text alone because the page is the assertion under review."
+        ],
+        "residual_risks": [
+          "The statement may match the actual opinion, but that cannot be confirmed from the disclosed files."
+        ],
+        "suggested_tightening": "Attach the relevant opinion passage or a verified lake holding/pinpoint before publishing this as the case holding.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": false
+      },
+      {
+        "assertion_id": "9a244feaac8aae25",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A, so no treatment defect is raised.",
+          "The payload matches the lake treatment stub: field_i_validity and composite_basis are \"unverified\", dates are null, varies_by_point is false, and the scope_note matches."
+        ],
+        "residual_risks": [
+          "Lens A did not audit subsequent treatment or citator currency."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "a5a5fa051f1028f6",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A, so no treatment defect is raised.",
+          "The disclosed identity record lists court \"U.S. Supreme Court\" and court_level \"scotus\", supporting the SCOTUS component of the weight label."
+        ],
+        "residual_risks": [
+          "Lens A did not audit whether the corpus's weight-label taxonomy independently maps every SCOTUS case to \"Binding — SCOTUS\"."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"A\",\n  \"group_id\": \"content/cases/California v. Trombetta.md\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"efa543d44f33d4b9\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Lake identity gives case_name \\\"California v. Trombetta\\\", court \\\"U.S. Supreme Court\\\", date_decided \\\"1984-06-11\\\", and year 1984.\",\n        \"Lake citations list official cite \\\"467 U.S. 479\\\", vendor-neutral cite \\\"1984 U.S. LEXIS 103\\\", and the same parallel citations.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"912576b3d3cb9b71\",\n      \"dimension\": \"support\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": false,\n      \"defect\": {\n        \"problem\": \"The disclosed evidence does not verify the asserted home-role \\\"Anchor\\\" for Brady and Giglio. The lake record has no home-role, doctrinal-category, holding, or opinion-text support, and no text file is disclosed.\",\n        \"severity\": \"medium\",\n        \"proposed_fix\": \"Do not assert the Anchor home role unless the disclosed record supplies opinion text, a lake holding, or a verified doctrinal-home field showing that Trombetta anchors Brady/Giglio preservation doctrine.\",\n        \"evidence_quote\": \"\\\"pinpoints\\\": []\",\n        \"needs_cl\": true,\n        \"locator_note\": \"home=Brady and Giglio\"\n      },\n      \"reasons\": [\n        \"The only disclosed lake record verifies identity/citation/treatment stubs, not the Brady and Giglio home-role assertion.\",\n        \"No text/<case>.txt file is present to check whether the opinion supports this doctrinal placement.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The home role may be correct, but it is not verifiable from the disclosed files.\"\n      ],\n      \"suggested_tightening\": \"Add a disclosed authority field or pinpoint tying Trombetta to the Brady/Giglio preservation-of-evidence topic before labeling it an Anchor.\"\n    },\n    {\n      \"assertion_id\": \"c1e0ab70a26b6647\",\n      \"dimension\": \"support\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": false,\n      \"defect\": {\n        \"problem\": \"The holding proposition cannot be verified from the disclosed evidence. The lake record contains no holding text and no pinpoints, and no cached full opinion text is present.\",\n        \"severity\": \"high\",\n        \"proposed_fix\": \"Provide text/California v. Trombetta.txt or lake pinpoints/holding fields that support each part of the proposition, including the breath-sample result, apparent-exculpatory-value requirement, and comparable-evidence requirement.\",\n        \"evidence_quote\": \"\\\"pinpoints\\\": []\",\n        \"needs_cl\": true,\n        \"locator_note\": \"field=holding\"\n      },\n      \"reasons\": [\n        \"The proposition is substantive and case-specific, but the disclosed lake record has no opinion text or holding field to verify it.\",\n        \"Under the default-to-refuted rule, unsupported breadth cannot stand on the page text alone because the page is the assertion under review.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The statement may match the actual opinion, but that cannot be confirmed from the disclosed files.\"\n      ],\n      \"suggested_tightening\": \"Attach the relevant opinion passage or a verified lake holding/pinpoint before publishing this as the case holding.\"\n    },\n    {\n      \"assertion_id\": \"9a244feaac8aae25\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Treatment/currency is outside Lens A, so no treatment defect is raised.\",\n        \"The payload matches the lake treatment stub: field_i_validity and composite_basis are \\\"unverified\\\", dates are null, varies_by_point is false, and the scope_note matches.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Lens A did not audit subsequent treatment or citator currency.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"a5a5fa051f1028f6\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Treatment/currency is outside Lens A, so no treatment defect is raised.\",\n        \"The disclosed identity record lists court \\\"U.S. Supreme Court\\\" and court_level \\\"scotus\\\", supporting the SCOTUS component of the weight label.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Lens A did not audit whether the corpus's weight-label taxonomy independently maps every SCOTUS case to \\\"Binding — SCOTUS\\\".\"\n      ],\n      \"suggested_tightening\": null\n    }\n  ],\n  \"notes\": \"Inventory did not include separate quote_fidelity or pincite rows for the page's quoted rule and pin-489; no extra assertion_id was created.\"\n}",
+  "summary": {
+    "at": "2026-07-10T00:11:30-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-c93d73919c",
+      "F-S9-PR-6574e3a8df"
+    ],
+    "group_id": "content/cases/California v. Trombetta.md",
+    "group_total_assertions": 5,
+    "lake_only_cases": [
+      "California v. Trombetta"
+    ],
+    "lane": "codex-A",
+    "lane_id": "codex-A-panel-prod-01523a26",
+    "lens": "A",
+    "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-01523a26.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [
+      "case 'California v. Trombetta' has no lead_opinion_id (text undisclosed)"
+    ],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [],
+    "tokens": {
+      "input": 74528,
+      "output": 4066,
+      "source": "codex-events",
+      "total": 78594
+    },
+    "verdict_map": {
+      "912576b3d3cb9b71": {
+        "dimension": "support",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": false
+      },
+      "9a244feaac8aae25": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "a5a5fa051f1028f6": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "c1e0ab70a26b6647": {
+        "dimension": "support",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": false
+      },
+      "efa543d44f33d4b9": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-c93d73919c",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-6574e3a8df",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 81.4
+  }
+}

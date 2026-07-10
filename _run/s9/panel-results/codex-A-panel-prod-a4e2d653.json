@@ -1,13 +1,88 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Aguilar v. Texas.json",
+    "lens": "A",
+    "notes": "",
+    "reviewed": [
+      {
+        "assertion_id": "8ebfada09b7c96d1",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record names Aguilar v. Texas, court U.S. Supreme Court, decided 1964-06-15.",
+          "The official citation in the lake record is 378 U.S. 108, with parallel citations 84 S. Ct. 1509 and 12 L. Ed. 2d 723, matching the content page."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "8534798cbe5fd59b",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "\"quote_fidelity\": \"mismatch\"",
+          "locator_note": "lake pinpoints[] marks pin-114 as slip-only with quote_fidelity mismatch; text/Aguilar v. Texas__475c9f.txt contains the actual 114 passage beginning with \"Although an affidavit may be based on hearsay information\" and does not contain the inserted markdown section headings.",
+          "needs_cl": false,
+          "problem": "Pin pin-114 is not a character-faithful quotation from the opinion; it includes page-summary prose and markdown headings from the built page rather than verbatim opinion text.",
+          "proposed_fix": "Replace pin-114 with a verbatim excerpt from the actual 378 U.S. at 114 passage, or keep the surrounding Background/Issue/Rule language as uncited paraphrase rather than a quote pinpoint.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The disclosed lake record itself flags pin-114 as quote_fidelity mismatch.",
+          "The stored quote contains non-opinion text such as \"## Issue\" and \"## Rule\", which is not present in the cached opinion text."
+        ],
+        "residual_risks": [
+          "The underlying rule proposition is supported by the opinion, but this particular quote pinpoint is not reliable as a verbatim quote."
+        ],
+        "suggested_tightening": "Use the exact sentence beginning \"Although an affidavit may be based on hearsay information\" for the 114 pinpoint.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "f93885eb2cad5a74",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The lake record marks pin-115 as quote_fidelity matched and star-verified at star marker 115.",
+          "The cached opinion text at the 115 passage contains the exact phrase \"by a neutral and detached magistrate,\"."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "9b7a962c648a07fd",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside lens A; no support or quote-fidelity defect is raised.",
+          "The inventory treatment payload matches the disclosed lake treatment fields: field_i_validity superseded, as_of_treatment 2026-06-30, and the Gates scope note."
+        ],
+        "residual_risks": [
+          "Treatment merits are reserved for lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Aguilar v. Texas.json\",\"reviewed\":[{\"assertion_id\":\"8ebfada09b7c96d1\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake identity record names Aguilar v. Texas, court U.S. Supreme Court, decided 1964-06-15.\",\"The official citation in the lake record is 378 U.S. 108, with parallel citations 84 S. Ct. 1509 and 12 L. Ed. 2d 723, matching the content page.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"8534798cbe5fd59b\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"Pin pin-114 is not a character-faithful quotation from the opinion; it includes page-summary prose and markdown headings from the built page rather than verbatim opinion text.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-114 with a verbatim excerpt from the actual 378 U.S. at 114 passage, or keep the surrounding Background/Issue/Rule language as uncited paraphrase rather than a quote pinpoint.\",\"evidence_quote\":\"\\\"quote_fidelity\\\": \\\"mismatch\\\"\",\"needs_cl\":false,\"locator_note\":\"lake pinpoints[] marks pin-114 as slip-only with quote_fidelity mismatch; text/Aguilar v. Texas__475c9f.txt contains the actual 114 passage beginning with \\\"Although an affidavit may be based on hearsay information\\\" and does not contain the inserted markdown section headings.\"},\"reasons\":[\"The disclosed lake record itself flags pin-114 as quote_fidelity mismatch.\",\"The stored quote contains non-opinion text such as \\\"## Issue\\\" and \\\"## Rule\\\", which is not present in the cached opinion text.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The underlying rule proposition is supported by the opinion, but this particular quote pinpoint is not reliable as a verbatim quote.\"],\"suggested_tightening\":\"Use the exact sentence beginning \\\"Although an affidavit may be based on hearsay information\\\" for the 114 pinpoint.\"},{\"assertion_id\":\"f93885eb2cad5a74\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record marks pin-115 as quote_fidelity matched and star-verified at star marker 115.\",\"The cached opinion text at the 115 passage contains the exact phrase \\\"by a neutral and detached magistrate,\\\".\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"9b7a962c648a07fd\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside lens A; no support or quote-fidelity defect is raised.\",\"The inventory treatment payload matches the disclosed lake treatment fields: field_i_validity superseded, as_of_treatment 2026-06-30, and the Gates scope note.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment merits are reserved for lens B.\"],\"suggested_tightening\":null}],\"notes\":\"\"}",
   "summary": {
-    "at": "2026-07-09T23:14:39-04:00",
-    "attempts": 2,
+    "at": "2026-07-10T17:21:17-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-750c145f50"
+    ],
     "group_id": "_overhaul2/lake/cases/Aguilar v. Texas.json",
     "group_total_assertions": 4,
     "lake_only_cases": [],
@@ -16,21 +91,55 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-a4e2d653.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 4,
     "run": "prod",
     "text_disclosed_cases": [
       "Aguilar v. Texas"
     ],
     "tokens": {
-      "input": 825,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 825
+      "input": 191103,
+      "output": 4636,
+      "source": "codex-events",
+      "total": 195739
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 10.4
+    "verdict_map": {
+      "8534798cbe5fd59b": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "8ebfada09b7c96d1": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "9b7a962c648a07fd": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "f93885eb2cad5a74": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-750c145f50",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 93.4
   }
 }

@@ -1,13 +1,118 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Wright v. City of Euclid.json",
+    "lens": "A",
+    "notes": "Lens A found one clean existence assertion, two high-severity harvested-quote failures, one minor character-fidelity quote defect, and no Lens A treatment issue.",
+    "reviewed": [
+      {
+        "assertion_id": "97bcd6eebaf39aa4",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record identifies Lamar Wright v. City of Euclid as a Sixth Circuit case decided 2020-06-18.",
+          "The lake official citation is 962 F.3d 852, matching the content page display of 962 F.3d 852 (6th Cir. 2020)."
+        ],
+        "residual_risks": [
+          "No outside reporter check was performed, per the ground rules."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "9bd5480368c4a375",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "probable cause is a “quintessential example[] of [a] ‘clearly established’ constitutional right.”",
+          "locator_note": "text/Wright v. City of Euclid__4893aa.txt lines 771-775; content_page.md line 55; lake pinpoint pin-op23",
+          "needs_cl": false,
+          "problem": "The pin-op23 stored/payload quote is truncated and not character-faithful to the opinion passage; the opinion continues through the clearly-established-right language and uses different quotation marks.",
+          "proposed_fix": "Replace the pin-op23 quote with the exact sentence from slip page 23, preserving the opinion's quotation marks, or paraphrase without quotation marks.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The lake/payload quote stops at \"[a]\" and omits the rest of the quoted phrase.",
+          "The content page's displayed quote also changes the opinion's nested quotation marks, so it is not character-faithful as a verbatim quote."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Use exact opinion typography for the quoted sentence or convert the rule statement to a paraphrase.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "d7fe79013ddabddf",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "--- # Wright v. City of Euclid",
+          "locator_note": "lake pinpoint pin-op17; correct opinion passage appears in text/Wright v. City of Euclid__4893aa.txt lines 582-585",
+          "needs_cl": false,
+          "problem": "The pin-op17 stored/payload quote is not the cited opinion quotation; it is harvested page boilerplate ending before the actual excessive-force sentence.",
+          "proposed_fix": "Replace pin-op17 with the actual opinion sentence beginning at slip page 17, or re-extract the quote from the cached opinion text.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload quote begins with the content page header, not the Sixth Circuit opinion text.",
+          "The actual cited passage appears in the opinion at slip page 17 and supports the displayed content-page quote, but the stored pinpoint quote itself is wrong."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Repair the quote-harvest boundary for pin-op17 so the pinpoint quote starts at the excessive-force holding sentence.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "d9139b004411eed7",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "City’s custom surrounding use of force",
+          "locator_note": "text/Wright v. City of Euclid__4893aa.txt lines 1134-1137; content_page.md line 57; lake pinpoint pin-op33",
+          "needs_cl": false,
+          "problem": "The quoted municipal-liability sentence is substantively complete and located in the opinion, but it is not character-faithful because the opinion uses curly apostrophes in City’s and Wright’s while the stored/page quote uses straight apostrophes.",
+          "proposed_fix": "Preserve the opinion text's apostrophes in City’s and Wright’s, or mark the quote as normalized rather than verbatim.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The sentence appears at the claimed slip-page location and matches in substance.",
+          "Character fidelity fails on apostrophe typography, which matters under the stated verbatim-quote standard."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Use exact text extraction for pin-op33 rather than ASCII-normalized apostrophes.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "f85584c9ed6e53e8",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A, so I raise no treatment finding.",
+          "The payload mirrors the disclosed lake treatment fields: field_i_validity good_law, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note."
+        ],
+        "residual_risks": [
+          "Treatment substance remains for Lens B review."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Wright v. City of Euclid.json\",\"reviewed\":[{\"assertion_id\":\"97bcd6eebaf39aa4\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake identity record identifies Lamar Wright v. City of Euclid as a Sixth Circuit case decided 2020-06-18.\",\"The lake official citation is 962 F.3d 852, matching the content page display of 962 F.3d 852 (6th Cir. 2020).\"],\"breaks_true_positives\":false,\"residual_risks\":[\"No outside reporter check was performed, per the ground rules.\"],\"suggested_tightening\":null},{\"assertion_id\":\"9bd5480368c4a375\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The pin-op23 stored/payload quote is truncated and not character-faithful to the opinion passage; the opinion continues through the clearly-established-right language and uses different quotation marks.\",\"severity\":\"high\",\"proposed_fix\":\"Replace the pin-op23 quote with the exact sentence from slip page 23, preserving the opinion's quotation marks, or paraphrase without quotation marks.\",\"evidence_quote\":\"probable cause is a “quintessential example[] of [a] ‘clearly established’ constitutional right.”\",\"needs_cl\":false,\"locator_note\":\"text/Wright v. City of Euclid__4893aa.txt lines 771-775; content_page.md line 55; lake pinpoint pin-op23\"},\"reasons\":[\"The lake/payload quote stops at \\\"[a]\\\" and omits the rest of the quoted phrase.\",\"The content page's displayed quote also changes the opinion's nested quotation marks, so it is not character-faithful as a verbatim quote.\"],\"breaks_true_positives\":true,\"residual_risks\":[],\"suggested_tightening\":\"Use exact opinion typography for the quoted sentence or convert the rule statement to a paraphrase.\"},{\"assertion_id\":\"d7fe79013ddabddf\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The pin-op17 stored/payload quote is not the cited opinion quotation; it is harvested page boilerplate ending before the actual excessive-force sentence.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-op17 with the actual opinion sentence beginning at slip page 17, or re-extract the quote from the cached opinion text.\",\"evidence_quote\":\"--- # Wright v. City of Euclid\",\"needs_cl\":false,\"locator_note\":\"lake pinpoint pin-op17; correct opinion passage appears in text/Wright v. City of Euclid__4893aa.txt lines 582-585\"},\"reasons\":[\"The payload quote begins with the content page header, not the Sixth Circuit opinion text.\",\"The actual cited passage appears in the opinion at slip page 17 and supports the displayed content-page quote, but the stored pinpoint quote itself is wrong.\"],\"breaks_true_positives\":true,\"residual_risks\":[],\"suggested_tightening\":\"Repair the quote-harvest boundary for pin-op17 so the pinpoint quote starts at the excessive-force holding sentence.\"},{\"assertion_id\":\"d9139b004411eed7\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The quoted municipal-liability sentence is substantively complete and located in the opinion, but it is not character-faithful because the opinion uses curly apostrophes in City’s and Wright’s while the stored/page quote uses straight apostrophes.\",\"severity\":\"low\",\"proposed_fix\":\"Preserve the opinion text's apostrophes in City’s and Wright’s, or mark the quote as normalized rather than verbatim.\",\"evidence_quote\":\"City’s custom surrounding use of force\",\"needs_cl\":false,\"locator_note\":\"text/Wright v. City of Euclid__4893aa.txt lines 1134-1137; content_page.md line 57; lake pinpoint pin-op33\"},\"reasons\":[\"The sentence appears at the claimed slip-page location and matches in substance.\",\"Character fidelity fails on apostrophe typography, which matters under the stated verbatim-quote standard.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":\"Use exact text extraction for pin-op33 rather than ASCII-normalized apostrophes.\"},{\"assertion_id\":\"f85584c9ed6e53e8\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside Lens A, so I raise no treatment finding.\",\"The payload mirrors the disclosed lake treatment fields: field_i_validity good_law, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment substance remains for Lens B review.\"],\"suggested_tightening\":null}],\"notes\":\"Lens A found one clean existence assertion, two high-severity harvested-quote failures, one minor character-fidelity quote defect, and no Lens A treatment issue.\"}",
   "summary": {
-    "at": "2026-07-09T23:09:31-04:00",
-    "attempts": 2,
+    "at": "2026-07-10T16:54:01-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-8123d93e82",
+      "F-S9-PR-084b660f04",
+      "F-S9-PR-241970fe87"
+    ],
     "group_id": "_overhaul2/lake/cases/Wright v. City of Euclid.json",
     "group_total_assertions": 5,
     "lake_only_cases": [],
@@ -16,21 +121,70 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-4917aff7.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 5,
     "run": "prod",
     "text_disclosed_cases": [
       "Wright v. City of Euclid"
     ],
     "tokens": {
-      "input": 827,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 827
+      "input": 232340,
+      "output": 9768,
+      "source": "codex-events",
+      "total": 242108
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 3.2
+    "verdict_map": {
+      "97bcd6eebaf39aa4": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "9bd5480368c4a375": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "d7fe79013ddabddf": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "d9139b004411eed7": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "f85584c9ed6e53e8": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-8123d93e82",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-084b660f04",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-241970fe87",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 185.0
   }
 }

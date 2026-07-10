@@ -1,22 +1,151 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Ashcraft v. Tennessee.json",
+    "lens": "B",
+    "notes": "Reviewed all 4 assertion_id rows in group_inventory.jsonl under Lens B only.",
+    "reviewed": [
+      {
+        "assertion_id": "3f87471a4fa454f3",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record is verified and identifies Ashcraft v. Tennessee as a U.S. Supreme Court case decided 1944-05-01.",
+          "The disclosed citation set includes the asserted official citation 322 U.S. 143 plus the listed parallel and vendor citations.",
+          "The treatment judgment field marks the authority good_law as of 2026-06-30, so the existence/live-law assertion is not defeated on this record."
+        ],
+        "residual_risks": [
+          "Treatment audit flags in the lake record create residual treatment risk, addressed in the treatment assertion."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "1394a4920eef9766",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Lens B does not attack quote fidelity or support.",
+          "For currency/treatment purposes, this pinpoint row contains no independent negative-treatment claim beyond the case-level treatment metadata."
+        ],
+        "residual_risks": [
+          "Quote fidelity itself is reserved to Lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "2c2ec2cf7c0c98c6",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Lens B does not raise quote-fidelity defects.",
+          "The lake pinpoint metadata already labels pin-154 as mismatch/slip-only; no separate currency or treatment defect is created by this row."
+        ],
+        "residual_risks": [
+          "Quote fidelity itself is reserved to Lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "e26eea949cd5ea6c",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "R15 treatment audit required",
+          "locator_note": "content_page.md Treatment & subsequent history; lake/Ashcraft v. Tennessee__406e29.json treatment.edges and treatment.derivation",
+          "needs_cl": true,
+          "problem": "The asserted good_law treatment field matches the lake judgment, but the built page's unqualified treatment prose says there is no negative treatment even though the disclosed lake treatment record contains proposed negative-treatment edges and audit-needed markers. The good-law call can stand only with that qualification.",
+          "proposed_fix": "Retain Treatment: good only as the current field_i_validity as of 2026-06-30, but qualify the treatment note to say the lake record has no point override or final downgrade while proposed negative-treatment edges/audit-needed markers remain unresolved.",
+          "severity": "medium"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "Lake treatment.field_i_validity is good_law and as_of_treatment is 2026-06-30, matching the asserted core treatment field.",
+          "The same treatment record lists 34 proposed treatment edges, including overruled, abrogated, superseded_by_statute, criticized, and questioned labels.",
+          "The treatment derivation has audit_needed true for lane1_negative and lane2_top_cited, with proposed_negative_events of 9 and 5 respectively."
+        ],
+        "residual_risks": [
+          "The disclosed record does not contain the underlying citing-case text needed to decide whether any proposed negative edge should become a final downgrade."
+        ],
+        "suggested_tightening": "Replace 'No negative treatment' with a qualified statement distinguishing current good_law status from unresolved proposed negative-treatment edges.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/Ashcraft v. Tennessee.json\",\"reviewed\":[{\"assertion_id\":\"3f87471a4fa454f3\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record is verified and identifies Ashcraft v. Tennessee as a U.S. Supreme Court case decided 1944-05-01.\",\"The disclosed citation set includes the asserted official citation 322 U.S. 143 plus the listed parallel and vendor citations.\",\"The treatment judgment field marks the authority good_law as of 2026-06-30, so the existence/live-law assertion is not defeated on this record.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment audit flags in the lake record create residual treatment risk, addressed in the treatment assertion.\"],\"suggested_tightening\":null},{\"assertion_id\":\"1394a4920eef9766\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lens B does not attack quote fidelity or support.\",\"For currency/treatment purposes, this pinpoint row contains no independent negative-treatment claim beyond the case-level treatment metadata.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Quote fidelity itself is reserved to Lens A.\"],\"suggested_tightening\":null},{\"assertion_id\":\"2c2ec2cf7c0c98c6\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lens B does not raise quote-fidelity defects.\",\"The lake pinpoint metadata already labels pin-154 as mismatch/slip-only; no separate currency or treatment defect is created by this row.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Quote fidelity itself is reserved to Lens A.\"],\"suggested_tightening\":null},{\"assertion_id\":\"e26eea949cd5ea6c\",\"dimension\":\"treatment\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The asserted good_law treatment field matches the lake judgment, but the built page's unqualified treatment prose says there is no negative treatment even though the disclosed lake treatment record contains proposed negative-treatment edges and audit-needed markers. The good-law call can stand only with that qualification.\",\"severity\":\"medium\",\"proposed_fix\":\"Retain Treatment: good only as the current field_i_validity as of 2026-06-30, but qualify the treatment note to say the lake record has no point override or final downgrade while proposed negative-treatment edges/audit-needed markers remain unresolved.\",\"evidence_quote\":\"R15 treatment audit required\",\"needs_cl\":true,\"locator_note\":\"content_page.md Treatment & subsequent history; lake/Ashcraft v. Tennessee__406e29.json treatment.edges and treatment.derivation\"},\"reasons\":[\"Lake treatment.field_i_validity is good_law and as_of_treatment is 2026-06-30, matching the asserted core treatment field.\",\"The same treatment record lists 34 proposed treatment edges, including overruled, abrogated, superseded_by_statute, criticized, and questioned labels.\",\"The treatment derivation has audit_needed true for lane1_negative and lane2_top_cited, with proposed_negative_events of 9 and 5 respectively.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The disclosed record does not contain the underlying citing-case text needed to decide whether any proposed negative edge should become a final downgrade.\"],\"suggested_tightening\":\"Replace 'No negative treatment' with a qualified statement distinguishing current good_law status from unresolved proposed negative-treatment edges.\"}],\"notes\":\"Reviewed all 4 assertion_id rows in group_inventory.jsonl under Lens B only.\"}",
   "summary": {
-    "at": "2026-07-09T23:17:10-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-10T17:41:03-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-dfdafa9c97"
+    ],
     "group_id": "_overhaul2/lake/cases/Ashcraft v. Tennessee.json",
     "group_total_assertions": 4,
+    "lake_only_cases": [],
     "lane": "codex-B",
     "lane_id": "codex-B-panel-prod-2d3ac66e",
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-2d3ac66e.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "Reading additional input from stdin...\n\u001b[2m2026-07-10T03:17:08.016259Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T03:17:08.559407Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T03:17:09.264912Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Ashcraft v. Tennessee"
+    ],
+    "tokens": {
+      "input": 263380,
+      "output": 6070,
+      "source": "codex-events",
+      "total": 269450
+    },
+    "verdict_map": {
+      "1394a4920eef9766": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "2c2ec2cf7c0c98c6": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "3f87471a4fa454f3": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "e26eea949cd5ea6c": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-dfdafa9c97",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 121.1
   }
 }

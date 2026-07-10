@@ -1,13 +1,98 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Vega v. Tekoh.json",
+    "lens": "A",
+    "notes": "Reviewed all 4 group_inventory.jsonl rows. Lens A refutes only the two quote-fidelity assertions; treatment was recorded without a Lens A treatment/currency finding.",
+    "reviewed": [
+      {
+        "assertion_id": "ef52ec9b11d9bd71",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record identifies Vega v. Tekoh as a verified U.S. Supreme Court case decided 2022-06-23.",
+          "The lake record's official citation is 597 U.S. 134 and its parallel citations are 213 L. Ed. 2d 479 and 142 S. Ct. 2095, matching the asserted citation set."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "cd69ed6c5d178785",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "  Because a violation of Miranda is not itself a violation of\nthe Fifth Amendment, and because we see no justification\nfor expanding Miranda to confer a right to sue under §1983,\nthe judgment of the Court of Appeals is reversed, and the\ncase is remanded for further proceedings consistent with\nthis opinion.",
+          "locator_note": "text/Vega v. Tekoh__8e4c1f.txt lines 793-798; lake pinpoints mark pin-134a quote_fidelity as mismatch.",
+          "needs_cl": false,
+          "problem": "The pinpoint quote captured for pin-134a is not an opinion quote. The built page's concluding quotation also changes the opinion text by adding Markdown italics, inserting a space in §1983, and ending the sentence at 'reversed.' even though the disclosed opinion continues with ', and the case is remanded...'",
+          "proposed_fix": "Replace the pin quote with the exact concluding paragraph from the opinion text, or paraphrase without quotation marks.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The lake pinpoint for pin-134a is only 'Concluding:' and is marked quote_fidelity='mismatch'.",
+          "The opinion text supplies a longer concluding paragraph than the quoted sentence on the content page."
+        ],
+        "residual_risks": [
+          "The legal proposition is supported, but the verbatim quotation/pin text is not character-faithful."
+        ],
+        "suggested_tightening": "Quote the full concluding sentence through 'this opinion,' preserving §1983 and the continuation after 'reversed,' or convert the sentence to a paraphrase.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "fd27d738408b41c9",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Held: A violation of the Miranda rules does not provide a basis for a\n §1983 claim. Pp. 4–16.",
+          "locator_note": "text/Vega v. Tekoh__8e4c1f.txt lines 36-37; lake pinpoints mark pin-134 quote_fidelity as mismatch.",
+          "needs_cl": false,
+          "problem": "The pinpoint quote for pin-134 is a page-artifact fragment, not a character-faithful quote from the opinion text. The actual disclosed Held passage reads differently and the lake itself marks the pinpoint as a mismatch.",
+          "proposed_fix": "Replace the captured quote with the exact Held passage from the disclosed opinion text, or remove quotation marks and paraphrase.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The asserted pinpoint quote is 'for § 1983 purposes. ## Rule No.', which does not match the disclosed Held passage.",
+          "The content page's quoted rule inserts Markdown italics and a space in §1983 compared with the disclosed text."
+        ],
+        "residual_risks": [
+          "The underlying rule is supported by the opinion, but the captured quote/pinpoint is defective as a verbatim quotation."
+        ],
+        "suggested_tightening": "Use the exact text 'A violation of the Miranda rules does not provide a basis for a §1983 claim' if quoting the syllabus Held line, with any omissions made outside the quotation.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "733126260a2eada7",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A, so no treatment defect is raised.",
+          "The asserted treatment fields match the disclosed lake treatment fields: field_i_validity good_law, as_of_content 2022-06-23, as_of_treatment 2026-06-30, varies_by_point false, and scope_note 'Recent controlling decision; good law.'"
+        ],
+        "residual_risks": [
+          "Treatment merits are reserved for Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Vega v. Tekoh.json\",\"reviewed\":[{\"assertion_id\":\"ef52ec9b11d9bd71\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record identifies Vega v. Tekoh as a verified U.S. Supreme Court case decided 2022-06-23.\",\"The lake record's official citation is 597 U.S. 134 and its parallel citations are 213 L. Ed. 2d 479 and 142 S. Ct. 2095, matching the asserted citation set.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"cd69ed6c5d178785\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The pinpoint quote captured for pin-134a is not an opinion quote. The built page's concluding quotation also changes the opinion text by adding Markdown italics, inserting a space in §1983, and ending the sentence at 'reversed.' even though the disclosed opinion continues with ', and the case is remanded...'\",\"severity\":\"high\",\"proposed_fix\":\"Replace the pin quote with the exact concluding paragraph from the opinion text, or paraphrase without quotation marks.\",\"evidence_quote\":\"  Because a violation of Miranda is not itself a violation of\\nthe Fifth Amendment, and because we see no justification\\nfor expanding Miranda to confer a right to sue under §1983,\\nthe judgment of the Court of Appeals is reversed, and the\\ncase is remanded for further proceedings consistent with\\nthis opinion.\",\"needs_cl\":false,\"locator_note\":\"text/Vega v. Tekoh__8e4c1f.txt lines 793-798; lake pinpoints mark pin-134a quote_fidelity as mismatch.\"},\"reasons\":[\"The lake pinpoint for pin-134a is only 'Concluding:' and is marked quote_fidelity='mismatch'.\",\"The opinion text supplies a longer concluding paragraph than the quoted sentence on the content page.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The legal proposition is supported, but the verbatim quotation/pin text is not character-faithful.\"],\"suggested_tightening\":\"Quote the full concluding sentence through 'this opinion,' preserving §1983 and the continuation after 'reversed,' or convert the sentence to a paraphrase.\"},{\"assertion_id\":\"fd27d738408b41c9\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The pinpoint quote for pin-134 is a page-artifact fragment, not a character-faithful quote from the opinion text. The actual disclosed Held passage reads differently and the lake itself marks the pinpoint as a mismatch.\",\"severity\":\"high\",\"proposed_fix\":\"Replace the captured quote with the exact Held passage from the disclosed opinion text, or remove quotation marks and paraphrase.\",\"evidence_quote\":\"Held: A violation of the Miranda rules does not provide a basis for a\\n §1983 claim. Pp. 4–16.\",\"needs_cl\":false,\"locator_note\":\"text/Vega v. Tekoh__8e4c1f.txt lines 36-37; lake pinpoints mark pin-134 quote_fidelity as mismatch.\"},\"reasons\":[\"The asserted pinpoint quote is 'for § 1983 purposes. ## Rule No.', which does not match the disclosed Held passage.\",\"The content page's quoted rule inserts Markdown italics and a space in §1983 compared with the disclosed text.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The underlying rule is supported by the opinion, but the captured quote/pinpoint is defective as a verbatim quotation.\"],\"suggested_tightening\":\"Use the exact text 'A violation of the Miranda rules does not provide a basis for a §1983 claim' if quoting the syllabus Held line, with any omissions made outside the quotation.\"},{\"assertion_id\":\"733126260a2eada7\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside Lens A, so no treatment defect is raised.\",\"The asserted treatment fields match the disclosed lake treatment fields: field_i_validity good_law, as_of_content 2022-06-23, as_of_treatment 2026-06-30, varies_by_point false, and scope_note 'Recent controlling decision; good law.'\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment merits are reserved for Lens B.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed all 4 group_inventory.jsonl rows. Lens A refutes only the two quote-fidelity assertions; treatment was recorded without a Lens A treatment/currency finding.\"}",
   "summary": {
-    "at": "2026-07-09T23:09:24-04:00",
-    "attempts": 2,
+    "at": "2026-07-10T16:52:50-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-19d4e65a35",
+      "F-S9-PR-a860ab6bc3"
+    ],
     "group_id": "_overhaul2/lake/cases/Vega v. Tekoh.json",
     "group_total_assertions": 4,
     "lake_only_cases": [],
@@ -16,21 +101,59 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-f1f9bb5d.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 4,
     "run": "prod",
     "text_disclosed_cases": [
       "Vega v. Tekoh"
     ],
     "tokens": {
-      "input": 825,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 825
+      "input": 229741,
+      "output": 6348,
+      "source": "codex-events",
+      "total": 236089
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 2.9
+    "verdict_map": {
+      "733126260a2eada7": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "cd69ed6c5d178785": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "ef52ec9b11d9bd71": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "fd27d738408b41c9": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-19d4e65a35",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-a860ab6bc3",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 129.2
   }
 }

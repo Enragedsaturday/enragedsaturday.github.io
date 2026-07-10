@@ -1,38 +1,176 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "content/cases/The GEO Group, Inc. v. Menocal.md",
+    "lens": "B",
+    "notes": "Lens B did not assess support or quote fidelity. The disclosed record supports only an unverified treatment status; no external citator search was used.",
+    "reviewed": [
+      {
+        "assertion_id": "477280eb1de56771",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "\"official\": null, \"parallel\": [], \"vendor_neutral\": [], \"all\": [], \"display\": null",
+          "locator_note": "citation metadata",
+          "needs_cl": false,
+          "problem": "The authority exists as a SCOTUS slip-only decision, but the payload's official_citation_present=true is inconsistent with the lake record, which has no selected official citation and marks the case slip_only.",
+          "proposed_fix": "Set official_citation_present to false and preserve the citation as slip-only unless a later official reporter citation is added to the disclosed record.",
+          "severity": "low"
+        },
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity lists court=scotus, docket=24-758, year=2026, cluster_id=10800194, and lead_opinion_id=11266870.",
+          "Lake citation fields state official=null and slip_only=true; slip-only provenance says no S. Ct. page yet.",
+          "No disclosed treatment or progeny edge supersedes, overrules, abrogates, or limits the authority."
+        ],
+        "residual_risks": [
+          "Treatment/progeny are expressly unverified, so this does not verify current citator status beyond the disclosed record."
+        ],
+        "suggested_tightening": "Add the decision date or 607 U.S. ___ placeholder only if the schema treats it as a placeholder, not as an official citation.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "703788d35447eda6",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "Lens B finds no treatment/currency defect in the Recent development role.",
+          "The disclosed record identifies a 2026 SCOTUS slip decision and no disclosed adverse treatment edge."
+        ],
+        "residual_risks": [
+          "Support and placement fit are not reviewed under Lens B.",
+          "Treatment/progeny remain unverified."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "780ebd162e86dc79",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "Lens B does not attack support fidelity for the holding statement.",
+          "No disclosed treatment/progeny edge undermines the holding as stated, and the page separately labels treatment as unverified."
+        ],
+        "residual_risks": [
+          "Support and quote fidelity are Lens A issues.",
+          "Because treatment/progeny are unverified, this should not be promoted as citator-verified good law."
+        ],
+        "suggested_tightening": "Keep the unverified-treatment caveat visible until treatment/progeny verification is completed.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "7e2d6388775d82d4",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The content treatment fields match the lake treatment record: field_i_validity=unverified, composite_basis=unverified, null as-of fields, varies_by_point=false, and no point overrides.",
+          "Lake treatment edges are empty and progeny rows_cached=0, consistent with the page's unverified-treatment warning."
+        ],
+        "residual_risks": [
+          "This is only a verified match to an unverified-treatment status; it does not establish good-law verification."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "ab59eb743d32e5f0",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The authority_weight label Binding — SCOTUS is consistent with lake identity court=scotus and court_level=scotus.",
+          "The cached opinion text identifies the Supreme Court of the United States as the deciding court.",
+          "No disclosed treatment/progeny edge reduces the authority weight."
+        ],
+        "residual_risks": [
+          "Treatment/progeny are unverified, so the weight label should remain distinct from a verified good-law label."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"content/cases/The GEO Group, Inc. v. Menocal.md\",\"reviewed\":[{\"assertion_id\":\"477280eb1de56771\",\"dimension\":\"existence\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The authority exists as a SCOTUS slip-only decision, but the payload's official_citation_present=true is inconsistent with the lake record, which has no selected official citation and marks the case slip_only.\",\"severity\":\"low\",\"proposed_fix\":\"Set official_citation_present to false and preserve the citation as slip-only unless a later official reporter citation is added to the disclosed record.\",\"evidence_quote\":\"\\\"official\\\": null, \\\"parallel\\\": [], \\\"vendor_neutral\\\": [], \\\"all\\\": [], \\\"display\\\": null\",\"needs_cl\":false,\"locator_note\":\"citation metadata\"},\"reasons\":[\"Lake identity lists court=scotus, docket=24-758, year=2026, cluster_id=10800194, and lead_opinion_id=11266870.\",\"Lake citation fields state official=null and slip_only=true; slip-only provenance says no S. Ct. page yet.\",\"No disclosed treatment or progeny edge supersedes, overrules, abrogates, or limits the authority.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment/progeny are expressly unverified, so this does not verify current citator status beyond the disclosed record.\"],\"suggested_tightening\":\"Add the decision date or 607 U.S. ___ placeholder only if the schema treats it as a placeholder, not as an official citation.\"},{\"assertion_id\":\"703788d35447eda6\",\"dimension\":\"support\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lens B finds no treatment/currency defect in the Recent development role.\",\"The disclosed record identifies a 2026 SCOTUS slip decision and no disclosed adverse treatment edge.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Support and placement fit are not reviewed under Lens B.\",\"Treatment/progeny remain unverified.\"],\"suggested_tightening\":null},{\"assertion_id\":\"780ebd162e86dc79\",\"dimension\":\"support\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lens B does not attack support fidelity for the holding statement.\",\"No disclosed treatment/progeny edge undermines the holding as stated, and the page separately labels treatment as unverified.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Support and quote fidelity are Lens A issues.\",\"Because treatment/progeny are unverified, this should not be promoted as citator-verified good law.\"],\"suggested_tightening\":\"Keep the unverified-treatment caveat visible until treatment/progeny verification is completed.\"},{\"assertion_id\":\"7e2d6388775d82d4\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The content treatment fields match the lake treatment record: field_i_validity=unverified, composite_basis=unverified, null as-of fields, varies_by_point=false, and no point overrides.\",\"Lake treatment edges are empty and progeny rows_cached=0, consistent with the page's unverified-treatment warning.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"This is only a verified match to an unverified-treatment status; it does not establish good-law verification.\"],\"suggested_tightening\":null},{\"assertion_id\":\"ab59eb743d32e5f0\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The authority_weight label Binding — SCOTUS is consistent with lake identity court=scotus and court_level=scotus.\",\"The cached opinion text identifies the Supreme Court of the United States as the deciding court.\",\"No disclosed treatment/progeny edge reduces the authority weight.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment/progeny are unverified, so the weight label should remain distinct from a verified good-law label.\"],\"suggested_tightening\":null}],\"notes\":\"Lens B did not assess support or quote fidelity. The disclosed record supports only an unverified treatment status; no external citator search was used.\"}",
   "summary": {
-    "at": "2026-07-09T23:12:28-04:00",
-    "attempts": 2,
+    "at": "2026-07-10T17:07:59-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-4e77f991c3"
+    ],
     "group_id": "content/cases/The GEO Group, Inc. v. Menocal.md",
     "group_total_assertions": 5,
-    "lake_only_cases": [
-      "The GEO Group, Inc. v. Menocal"
-    ],
+    "lake_only_cases": [],
     "lane": "codex-B",
     "lane_id": "codex-B-panel-prod-5311f986",
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-5311f986.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
-    "resolution_notes": [
-      "case 'The GEO Group, Inc. v. Menocal' has no lead_opinion_id (text undisclosed)"
-    ],
-    "reviewed_count": 0,
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
     "run": "prod",
-    "text_disclosed_cases": [],
+    "text_disclosed_cases": [
+      "The GEO Group, Inc. v. Menocal"
+    ],
     "tokens": {
-      "input": 754,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 754
+      "input": 136761,
+      "output": 6717,
+      "source": "codex-events",
+      "total": 143478
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 6.9
+    "verdict_map": {
+      "477280eb1de56771": {
+        "dimension": "existence",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "703788d35447eda6": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "780ebd162e86dc79": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "7e2d6388775d82d4": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "ab59eb743d32e5f0": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-4e77f991c3",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 131.8
   }
 }

@@ -1,13 +1,81 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/United States v. Soto-Peguero.json",
+    "lens": "B",
+    "notes": "Lens B only; support, quote fidelity, and pincite merits were not assessed.",
+    "reviewed": [
+      {
+        "assertion_id": "3302cf806da29b7d",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record is verified, non-stub, and identifies United States v. Soto-Peguero as a First Circuit decision decided 2020-10-19.",
+          "The lake citation fields select 978 F.3d 13 as the official/display citation, and the treatment field marks the authority good_law as of 2026-06-30."
+        ],
+        "residual_risks": [
+          "Review is limited to disclosed files; no external citator or docket check was performed."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "4b8fadde3c54d7db",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote fidelity is outside Lens B; no support or quote-fidelity finding is raised here.",
+          "No treatment/currency defect specific to this quote-pinpoint row contradicts the lake's good_law/as_of treatment fields."
+        ],
+        "residual_risks": [
+          "Quote fidelity remains for Lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "9cbe66133e39c82f",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "\"proposed_negative_events\": 4",
+          "locator_note": "content_page.md Treatment & subsequent history; lake treatment.edges and treatment.derivation.lane2_top_cited",
+          "needs_cl": true,
+          "problem": "The good_law status itself is supported by the lake treatment field, but the page's unqualified 'No negative treatment' statement overstates the disclosed treatment record because treatment.edges contains proposed lane2 negative edges labelled criticized, questioned, and overruled.",
+          "proposed_fix": "Keep Status: good as of 2026-06-30, but qualify the subsequent-history sentence to say the final lake status is good_law while proposed lane2 negative edges exist and are marked proposed/mentioned, or resolve those proposed edges before saying no negative treatment.",
+          "severity": "medium"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "Lake treatment.field_i_validity is good_law with as_of_treatment 2026-06-30, varies_by_point false, and no point_overrides, so the headline status survives Lens B.",
+          "The same lake treatment record lists four proposed lane2 negative events, including edges from Cruz-Ramos, McKinney, Griffin, and Gonzalez with criticized/questioned/overruled labels, so 'No negative treatment' needs qualification."
+        ],
+        "residual_risks": [
+          "The disclosed files do not include the full citing opinions for the proposed negative edges, so their treatment significance cannot be independently resolved here."
+        ],
+        "suggested_tightening": "Replace 'No negative treatment' with 'Final lake status: good_law as of 2026-06-30; treatment derivation lists proposed lane2 edges marked proposed/mentioned that should be resolved before an unqualified no-negative-treatment statement.'",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/United States v. Soto-Peguero.json\",\"reviewed\":[{\"assertion_id\":\"3302cf806da29b7d\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record is verified, non-stub, and identifies United States v. Soto-Peguero as a First Circuit decision decided 2020-10-19.\",\"The lake citation fields select 978 F.3d 13 as the official/display citation, and the treatment field marks the authority good_law as of 2026-06-30.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Review is limited to disclosed files; no external citator or docket check was performed.\"],\"suggested_tightening\":null},{\"assertion_id\":\"4b8fadde3c54d7db\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Quote fidelity is outside Lens B; no support or quote-fidelity finding is raised here.\",\"No treatment/currency defect specific to this quote-pinpoint row contradicts the lake's good_law/as_of treatment fields.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Quote fidelity remains for Lens A.\"],\"suggested_tightening\":null},{\"assertion_id\":\"9cbe66133e39c82f\",\"dimension\":\"treatment\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The good_law status itself is supported by the lake treatment field, but the page's unqualified 'No negative treatment' statement overstates the disclosed treatment record because treatment.edges contains proposed lane2 negative edges labelled criticized, questioned, and overruled.\",\"severity\":\"medium\",\"proposed_fix\":\"Keep Status: good as of 2026-06-30, but qualify the subsequent-history sentence to say the final lake status is good_law while proposed lane2 negative edges exist and are marked proposed/mentioned, or resolve those proposed edges before saying no negative treatment.\",\"evidence_quote\":\"\\\"proposed_negative_events\\\": 4\",\"needs_cl\":true,\"locator_note\":\"content_page.md Treatment & subsequent history; lake treatment.edges and treatment.derivation.lane2_top_cited\"},\"reasons\":[\"Lake treatment.field_i_validity is good_law with as_of_treatment 2026-06-30, varies_by_point false, and no point_overrides, so the headline status survives Lens B.\",\"The same lake treatment record lists four proposed lane2 negative events, including edges from Cruz-Ramos, McKinney, Griffin, and Gonzalez with criticized/questioned/overruled labels, so 'No negative treatment' needs qualification.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The disclosed files do not include the full citing opinions for the proposed negative edges, so their treatment significance cannot be independently resolved here.\"],\"suggested_tightening\":\"Replace 'No negative treatment' with 'Final lake status: good_law as of 2026-06-30; treatment derivation lists proposed lane2 edges marked proposed/mentioned that should be resolved before an unqualified no-negative-treatment statement.'\"}],\"notes\":\"Lens B only; support, quote fidelity, and pincite merits were not assessed.\"}",
   "summary": {
-    "at": "2026-07-09T23:07:33-04:00",
-    "attempts": 2,
+    "at": "2026-07-10T16:52:01-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "defense_votes": [],
-    "findings_emitted": [],
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-006d5c99a2",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-7ac9f9082a"
+    ],
     "group_id": "_overhaul2/lake/cases/United States v. Soto-Peguero.json",
     "group_total_assertions": 3,
     "lake_only_cases": [],
@@ -16,21 +84,52 @@
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-6ba0d709.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 3,
     "run": "prod",
     "text_disclosed_cases": [
       "United States v. Soto-Peguero"
     ],
     "tokens": {
-      "input": 757,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 757
+      "input": 422620,
+      "output": 8770,
+      "source": "codex-events",
+      "total": 431390
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 2.7
+    "verdict_map": {
+      "3302cf806da29b7d": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "4b8fadde3c54d7db": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "9cbe66133e39c82f": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-006d5c99a2",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-7ac9f9082a",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 180.9
   }
 }

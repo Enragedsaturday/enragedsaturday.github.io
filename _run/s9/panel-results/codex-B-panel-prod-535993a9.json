@@ -1,11 +1,68 @@
 {
-  "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/United States v. Smith (2024).json",
+    "lens": "B",
+    "notes": "Lens B currency/treatment review only; no quote/support finding made.",
+    "reviewed": [
+      {
+        "assertion_id": "29dfcadbb182454c",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake record is verified, not a stub, and identifies United States v. Smith, Fifth Circuit, decided 2024-08-09, docket 23-60321.",
+          "Lake citations select 110 F.4th 817 as the official/display citation and mark expected_citation_found true.",
+          "Currency angle survives: disclosed treatment field_i_validity is good_law as of 2026-07-03, with no controlling SCOTUS/Fifth Circuit negative event in lane1_negative."
+        ],
+        "residual_risks": [
+          "Currency is only verified to the disclosed as_of_treatment date, 2026-07-03."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "0778d72697459adf",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Lens B does not adjudicate quote/support fidelity, so I raise no quote-fidelity defect on this row.",
+          "No treatment/currency defect is embedded in this pinpoint row; the associated case record remains good_law with treatment varying by point."
+        ],
+        "residual_risks": [
+          "Quote accuracy is reserved for lens A; this verdict is only a B-lens currency/treatment verdict."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "a4d07ad2599378b0",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The content treatment fields match the lake treatment fields: field_i_validity good_law, as_of_content 2026-07-03, as_of_treatment 2026-07-03, varies_by_point true.",
+          "The disclosed point_override captures the Chatrie limitation: the categorical geofence-general-warrant point is caution, field_ii limited, while still bound in the Fifth Circuit.",
+          "The progeny derivation shows lane1_negative reviewed controlling SCOTUS/Fifth Circuit negative terms with proposed_negative_events 0; noncontrolling/proposed lane2 edges do not contradict the composite varies-by-point label."
+        ],
+        "residual_risks": [
+          "The Chatrie treatment is verified through the Smith lake judgment fields, not through a separate Chatrie lake record in this workspace.",
+          "Currency is only verified to 2026-07-03."
+        ],
+        "suggested_tightening": "Keep the Chatrie caution attached whenever reusing Smith's categorical geofence-general-warrant holding outside the Fifth Circuit.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/United States v. Smith (2024).json\",\"reviewed\":[{\"assertion_id\":\"29dfcadbb182454c\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake record is verified, not a stub, and identifies United States v. Smith, Fifth Circuit, decided 2024-08-09, docket 23-60321.\",\"Lake citations select 110 F.4th 817 as the official/display citation and mark expected_citation_found true.\",\"Currency angle survives: disclosed treatment field_i_validity is good_law as of 2026-07-03, with no controlling SCOTUS/Fifth Circuit negative event in lane1_negative.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Currency is only verified to the disclosed as_of_treatment date, 2026-07-03.\"],\"suggested_tightening\":null},{\"assertion_id\":\"0778d72697459adf\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lens B does not adjudicate quote/support fidelity, so I raise no quote-fidelity defect on this row.\",\"No treatment/currency defect is embedded in this pinpoint row; the associated case record remains good_law with treatment varying by point.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Quote accuracy is reserved for lens A; this verdict is only a B-lens currency/treatment verdict.\"],\"suggested_tightening\":null},{\"assertion_id\":\"a4d07ad2599378b0\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The content treatment fields match the lake treatment fields: field_i_validity good_law, as_of_content 2026-07-03, as_of_treatment 2026-07-03, varies_by_point true.\",\"The disclosed point_override captures the Chatrie limitation: the categorical geofence-general-warrant point is caution, field_ii limited, while still bound in the Fifth Circuit.\",\"The progeny derivation shows lane1_negative reviewed controlling SCOTUS/Fifth Circuit negative terms with proposed_negative_events 0; noncontrolling/proposed lane2 edges do not contradict the composite varies-by-point label.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The Chatrie treatment is verified through the Smith lake judgment fields, not through a separate Chatrie lake record in this workspace.\",\"Currency is only verified to 2026-07-03.\"],\"suggested_tightening\":\"Keep the Chatrie caution attached whenever reusing Smith's categorical geofence-general-warrant holding outside the Fifth Circuit.\"}],\"notes\":\"Lens B currency/treatment review only; no quote/support finding made.\"}",
   "summary": {
-    "at": "2026-07-09T23:07:28-04:00",
-    "attempts": 2,
-    "clean_attestation": false,
+    "at": "2026-07-10T16:50:40-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
     "defense_votes": [],
     "findings_emitted": [],
     "group_id": "_overhaul2/lake/cases/United States v. Smith (2024).json",
@@ -16,21 +73,43 @@
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-535993a9.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 3,
     "run": "prod",
     "text_disclosed_cases": [
       "United States v. Smith (2024)"
     ],
     "tokens": {
-      "input": 757,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 757
+      "input": 103005,
+      "output": 5424,
+      "source": "codex-events",
+      "total": 108429
     },
-    "verdict_map": {},
+    "verdict_map": {
+      "0778d72697459adf": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "29dfcadbb182454c": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "a4d07ad2599378b0": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
     "votes_emitted": [],
-    "wall_clock_s": 2.9
+    "wall_clock_s": 107.6
   }
 }

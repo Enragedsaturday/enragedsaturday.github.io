@@ -1,11 +1,51 @@
 {
-  "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/United States v. Xiang.json",
+    "lens": "B",
+    "notes": "",
+    "reviewed": [
+      {
+        "assertion_id": "6b96eb682674a068",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record identifies the case as United States v. Haitao Xiang, 8th Cir. 2023, decided 2023-05-05, docket 22-1801.",
+          "The lake citations field lists official/display citation 67 F.4th 895 and marks expected_citation_found true.",
+          "No disclosed treatment or progeny edge states that the authority has been overruled, superseded, abrogated, or vacated."
+        ],
+        "residual_risks": [
+          "The record's treatment/progeny fields are unverified and empty, so this only verifies existence/citation from the disclosed lake record, not a completed citator status."
+        ],
+        "suggested_tightening": "Do not imply completed good-law validation from this existence citation; keep it paired with the Unverified treatment banner.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "0bca214bfdeb2d84",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The content page reports Treatment: Unverified, matching lake treatment.field_i_validity: unverified and composite_basis: unverified.",
+          "The lake treatment fields have as_of_content null, as_of_treatment null, varies_by_point false, point_overrides empty, and edges empty, matching the frontier-stub posture.",
+          "The scope note is consistent across the inventory/page/lake record: treatment/progeny were intentionally not derived until later promotion."
+        ],
+        "residual_risks": [
+          "Because treatment and progeny are intentionally not derived, the disclosed record cannot support any stronger current-good-law claim than Unverified."
+        ],
+        "suggested_tightening": "Keep the status framed as Unverified and avoid any affirmative 'good law' or 'still live law' label until citator/progeny verification is completed.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/United States v. Xiang.json\",\"reviewed\":[{\"assertion_id\":\"6b96eb682674a068\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record identifies the case as United States v. Haitao Xiang, 8th Cir. 2023, decided 2023-05-05, docket 22-1801.\",\"The lake citations field lists official/display citation 67 F.4th 895 and marks expected_citation_found true.\",\"No disclosed treatment or progeny edge states that the authority has been overruled, superseded, abrogated, or vacated.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The record's treatment/progeny fields are unverified and empty, so this only verifies existence/citation from the disclosed lake record, not a completed citator status.\"],\"suggested_tightening\":\"Do not imply completed good-law validation from this existence citation; keep it paired with the Unverified treatment banner.\"},{\"assertion_id\":\"0bca214bfdeb2d84\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The content page reports Treatment: Unverified, matching lake treatment.field_i_validity: unverified and composite_basis: unverified.\",\"The lake treatment fields have as_of_content null, as_of_treatment null, varies_by_point false, point_overrides empty, and edges empty, matching the frontier-stub posture.\",\"The scope note is consistent across the inventory/page/lake record: treatment/progeny were intentionally not derived until later promotion.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Because treatment and progeny are intentionally not derived, the disclosed record cannot support any stronger current-good-law claim than Unverified.\"],\"suggested_tightening\":\"Keep the status framed as Unverified and avoid any affirmative 'good law' or 'still live law' label until citator/progeny verification is completed.\"}],\"notes\":\"\"}",
   "summary": {
-    "at": "2026-07-09T23:08:40-04:00",
-    "attempts": 2,
-    "clean_attestation": false,
+    "at": "2026-07-10T16:50:33-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
     "defense_votes": [],
     "findings_emitted": [],
     "group_id": "_overhaul2/lake/cases/United States v. Xiang.json",
@@ -18,21 +58,36 @@
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-ba187350.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [
       "case 'United States v. Xiang' has no lead_opinion_id (text undisclosed)"
     ],
-    "reviewed_count": 0,
+    "reviewed_count": 2,
     "run": "prod",
     "text_disclosed_cases": [],
     "tokens": {
-      "input": 755,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 755
+      "input": 58212,
+      "output": 2188,
+      "source": "codex-events",
+      "total": 60400
     },
-    "verdict_map": {},
+    "verdict_map": {
+      "0bca214bfdeb2d84": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "6b96eb682674a068": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
     "votes_emitted": [],
-    "wall_clock_s": 3.1
+    "wall_clock_s": 45.7
   }
 }

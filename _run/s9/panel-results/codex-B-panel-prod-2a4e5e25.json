@@ -1,22 +1,115 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Arizona v. Youngblood.json",
+    "lens": "B",
+    "notes": "Reviewed every group_inventory row exactly once under Lens B only; no support or quote-fidelity findings made.",
+    "reviewed": [
+      {
+        "assertion_id": "32c787943618ea0a",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Frontier stub: treatment/progeny intentionally not derived until S6 promotion.",
+          "locator_note": "lake/Arizona v. Youngblood__4a6a11.json treatment.scope_note; progeny rows_cached is 0 and treatment edges are empty.",
+          "needs_cl": true,
+          "problem": "The disclosed record verifies the case identity and citation, but Lens B asks whether the cited authority is still live law. That currency status is not verifiable from the disclosed evidence because treatment and progeny are expressly unverified/stubbed.",
+          "proposed_fix": "Limit this assertion to citation existence only, or withhold any live-law/current-authority inference until treatment and progeny are verified.",
+          "severity": "medium"
+        },
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity/citations support the existence of Arizona v. Youngblood and display cite 488 U.S. 51.",
+          "The same lake record gives field_i_validity as unverified, as_of_treatment as null, no treatment edges, and no cached progeny, so live-law status cannot be confirmed from the disclosed record."
+        ],
+        "residual_risks": [
+          "A completed citator/progeny record could show the authority remains good law, but that evidence is not present here."
+        ],
+        "suggested_tightening": "Separate citation-existence assertions from live-law/current-validity assertions.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": false
+      },
+      {
+        "assertion_id": "42afe60d3899271c",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "*Youngblood* remains the governing rule for lost or destroyed evidence that is only \"potentially useful\": the defendant must prove **bad faith**, a demanding standard the Court has adhered to since (see *Illinois v. Fisher* (2004), applying the bad-faith requirement to evidence a defendant had specifically requested).",
+          "locator_note": "content_page.md Treatment & subsequent history; lake treatment.field_i_validity is unverified, as_of_treatment is null, treatment.edges is empty, and progeny rows_cached is 0.",
+          "needs_cl": true,
+          "problem": "The page correctly labels treatment as unverified in the metadata, but the treatment section then makes an affirmative current-good-law claim that Youngblood remains governing and has been adhered to. The disclosed lake treatment fields do not verify that claim.",
+          "proposed_fix": "Remove or expressly qualify the governing-rule/adhered-to language until a verified treatment record with progeny/citator support is disclosed.",
+          "severity": "high"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "The inventory payload and lake record say field_i_validity is unverified, as_of_treatment is null, and treatment/progeny are not derived.",
+          "No disclosed record for Illinois v. Fisher or other progeny is present to support the statement that the Court has adhered to Youngblood since."
+        ],
+        "residual_risks": [
+          "The underlying rule may in fact remain good law, but that cannot be established from the disclosed files."
+        ],
+        "suggested_tightening": "Keep the unverified banner and replace current-law prose with: subsequent treatment has not yet been verified.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": false
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/Arizona v. Youngblood.json\",\"reviewed\":[{\"assertion_id\":\"32c787943618ea0a\",\"dimension\":\"existence\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":false,\"defect\":{\"problem\":\"The disclosed record verifies the case identity and citation, but Lens B asks whether the cited authority is still live law. That currency status is not verifiable from the disclosed evidence because treatment and progeny are expressly unverified/stubbed.\",\"severity\":\"medium\",\"proposed_fix\":\"Limit this assertion to citation existence only, or withhold any live-law/current-authority inference until treatment and progeny are verified.\",\"evidence_quote\":\"Frontier stub: treatment/progeny intentionally not derived until S6 promotion.\",\"needs_cl\":true,\"locator_note\":\"lake/Arizona v. Youngblood__4a6a11.json treatment.scope_note; progeny rows_cached is 0 and treatment edges are empty.\"},\"reasons\":[\"Lake identity/citations support the existence of Arizona v. Youngblood and display cite 488 U.S. 51.\",\"The same lake record gives field_i_validity as unverified, as_of_treatment as null, no treatment edges, and no cached progeny, so live-law status cannot be confirmed from the disclosed record.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"A completed citator/progeny record could show the authority remains good law, but that evidence is not present here.\"],\"suggested_tightening\":\"Separate citation-existence assertions from live-law/current-validity assertions.\"},{\"assertion_id\":\"42afe60d3899271c\",\"dimension\":\"treatment\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":false,\"defect\":{\"problem\":\"The page correctly labels treatment as unverified in the metadata, but the treatment section then makes an affirmative current-good-law claim that Youngblood remains governing and has been adhered to. The disclosed lake treatment fields do not verify that claim.\",\"severity\":\"high\",\"proposed_fix\":\"Remove or expressly qualify the governing-rule/adhered-to language until a verified treatment record with progeny/citator support is disclosed.\",\"evidence_quote\":\"*Youngblood* remains the governing rule for lost or destroyed evidence that is only \\\"potentially useful\\\": the defendant must prove **bad faith**, a demanding standard the Court has adhered to since (see *Illinois v. Fisher* (2004), applying the bad-faith requirement to evidence a defendant had specifically requested).\",\"needs_cl\":true,\"locator_note\":\"content_page.md Treatment & subsequent history; lake treatment.field_i_validity is unverified, as_of_treatment is null, treatment.edges is empty, and progeny rows_cached is 0.\"},\"reasons\":[\"The inventory payload and lake record say field_i_validity is unverified, as_of_treatment is null, and treatment/progeny are not derived.\",\"No disclosed record for Illinois v. Fisher or other progeny is present to support the statement that the Court has adhered to Youngblood since.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The underlying rule may in fact remain good law, but that cannot be established from the disclosed files.\"],\"suggested_tightening\":\"Keep the unverified banner and replace current-law prose with: subsequent treatment has not yet been verified.\"}],\"notes\":\"Reviewed every group_inventory row exactly once under Lens B only; no support or quote-fidelity findings made.\"}",
   "summary": {
-    "at": "2026-07-09T23:17:06-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-10T17:41:00-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-402d2ca9bb",
+      "F-S9-PR-fca0245992"
+    ],
     "group_id": "_overhaul2/lake/cases/Arizona v. Youngblood.json",
     "group_total_assertions": 2,
+    "lake_only_cases": [],
     "lane": "codex-B",
     "lane_id": "codex-B-panel-prod-2a4e5e25",
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-2a4e5e25.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "d to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T03:16:59.041330Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T03:16:59.817122Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T03:17:01.056821Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T03:17:02.913283Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T03:17:06.290851Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 2,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Arizona v. Youngblood"
+    ],
+    "tokens": {
+      "input": 142116,
+      "output": 6999,
+      "source": "codex-events",
+      "total": 149115
+    },
+    "verdict_map": {
+      "32c787943618ea0a": {
+        "dimension": "existence",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": false
+      },
+      "42afe60d3899271c": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": false
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-402d2ca9bb",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-fca0245992",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 135.5
   }
 }

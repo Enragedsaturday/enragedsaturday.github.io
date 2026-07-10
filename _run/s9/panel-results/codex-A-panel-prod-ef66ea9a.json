@@ -1,22 +1,173 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "content/cases/Jimerson v. Lewis.md",
+    "lens": "A",
+    "notes": "Reviewed all five inventory rows. No standalone quote_fidelity, pincite, or black_letter assertion rows were present.",
+    "reviewed": [
+      {
+        "assertion_id": "afbd2860f848d13f",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record gives case_name as Jimerson v. Lewis, court as 5th Cir. 2024, date_decided as 2024-02-15, and year as 2024.",
+          "The lake citation record selects 94 F.4th 423 as the official citation, matching the page's reporter citation."
+        ],
+        "residual_risks": [
+          "The lake record flags identity_method as frontier-identity and expected_citation_found as false, but its judgment fields still supply the cited identity and official citation."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "330a7e1c0a1a9f0a",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Lewis does not challenge the district court’s analysis of whether defendants violated the plaintiffs’ rights under federal law.",
+          "locator_note": "holding field",
+          "needs_cl": false,
+          "problem": "The holding is substantively supported, but the phrase 'no clearly established law made that failure a Fourth Amendment violation' is imprecise because the majority resolved the clearly-established-law prong and did not decide that Lewis's conduct was not a Fourth Amendment violation.",
+          "proposed_fix": "A SWAT commander whose team executed a no-knock warrant at the wrong house was entitled to qualified immunity because, although his efforts to identify the correct residence were deficient, the plaintiffs cited no authority showing that his particular conduct violated clearly established law.",
+          "severity": "low"
+        },
+        "dimension": "support",
+        "reasons": [
+          "The opinion states: 'We conclude that this officer’s efforts to identify the correct residence, though deficient, did not violate clearly established law.'",
+          "The court reversed denial of summary judgment to Lewis and remanded for dismissal.",
+          "The opinion also states that the plaintiffs had not cited authority demonstrating that Lewis's conduct violated clearly established law."
+        ],
+        "residual_risks": [
+          "The lake record contains no pinpoints, so support was verified from the cached opinion text rather than lake pinpoint quotes."
+        ],
+        "suggested_tightening": "Keep the holding tied to Lewis's particular conduct and the clearly-established-law prong.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "82e51a7c1e225ebe",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "The opinion is centered on qualified immunity: the district court denied qualified immunity to Lewis, and the Fifth Circuit reversed that denial.",
+          "The stated rule and disposition turn on the clearly-established-law prong of qualified immunity."
+        ],
+        "residual_risks": [
+          "'Key' is a corpus salience label rather than a judicial label, but the opinion's issue, analysis, and disposition are qualified-immunity focused."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "090d22cdf9d94d31",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The lake identity record identifies the court as ca5 / 5th Cir. 2024 and the citation as a selected official F.4th citation.",
+          "Within Lens A, I verified the factual court/circuit predicate only; treatment and currency are outside this charter."
+        ],
+        "residual_risks": [
+          "No treatment or currency review was performed under Lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "10bc9c184ec65a43",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The content page treatment fields match the lake treatment fields: field_i_validity is unverified, as_of_content and as_of_treatment are null, composite_basis is unverified, varies_by_point is false, and the scope note matches.",
+          "Lens A records the field match but does not evaluate treatment adequacy or subsequent history."
+        ],
+        "residual_risks": [
+          "Treatment/currency remains for Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"A\",\n  \"group_id\": \"content/cases/Jimerson v. Lewis.md\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"afbd2860f848d13f\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake identity record gives case_name as Jimerson v. Lewis, court as 5th Cir. 2024, date_decided as 2024-02-15, and year as 2024.\",\n        \"The lake citation record selects 94 F.4th 423 as the official citation, matching the page's reporter citation.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The lake record flags identity_method as frontier-identity and expected_citation_found as false, but its judgment fields still supply the cited identity and official citation.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"330a7e1c0a1a9f0a\",\n      \"dimension\": \"support\",\n      \"verdict\": \"stands-modified\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The holding is substantively supported, but the phrase 'no clearly established law made that failure a Fourth Amendment violation' is imprecise because the majority resolved the clearly-established-law prong and did not decide that Lewis's conduct was not a Fourth Amendment violation.\",\n        \"severity\": \"low\",\n        \"proposed_fix\": \"A SWAT commander whose team executed a no-knock warrant at the wrong house was entitled to qualified immunity because, although his efforts to identify the correct residence were deficient, the plaintiffs cited no authority showing that his particular conduct violated clearly established law.\",\n        \"evidence_quote\": \"Lewis does not challenge the district court’s analysis of whether defendants violated the plaintiffs’ rights under federal law.\",\n        \"needs_cl\": false,\n        \"locator_note\": \"holding field\"\n      },\n      \"reasons\": [\n        \"The opinion states: 'We conclude that this officer’s efforts to identify the correct residence, though deficient, did not violate clearly established law.'\",\n        \"The court reversed denial of summary judgment to Lewis and remanded for dismissal.\",\n        \"The opinion also states that the plaintiffs had not cited authority demonstrating that Lewis's conduct violated clearly established law.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The lake record contains no pinpoints, so support was verified from the cached opinion text rather than lake pinpoint quotes.\"\n      ],\n      \"suggested_tightening\": \"Keep the holding tied to Lewis's particular conduct and the clearly-established-law prong.\"\n    },\n    {\n      \"assertion_id\": \"82e51a7c1e225ebe\",\n      \"dimension\": \"support\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The opinion is centered on qualified immunity: the district court denied qualified immunity to Lewis, and the Fifth Circuit reversed that denial.\",\n        \"The stated rule and disposition turn on the clearly-established-law prong of qualified immunity.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"'Key' is a corpus salience label rather than a judicial label, but the opinion's issue, analysis, and disposition are qualified-immunity focused.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"090d22cdf9d94d31\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake identity record identifies the court as ca5 / 5th Cir. 2024 and the citation as a selected official F.4th citation.\",\n        \"Within Lens A, I verified the factual court/circuit predicate only; treatment and currency are outside this charter.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"No treatment or currency review was performed under Lens A.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"10bc9c184ec65a43\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The content page treatment fields match the lake treatment fields: field_i_validity is unverified, as_of_content and as_of_treatment are null, composite_basis is unverified, varies_by_point is false, and the scope note matches.\",\n        \"Lens A records the field match but does not evaluate treatment adequacy or subsequent history.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Treatment/currency remains for Lens B.\"\n      ],\n      \"suggested_tightening\": null\n    }\n  ],\n  \"notes\": \"Reviewed all five inventory rows. No standalone quote_fidelity, pincite, or black_letter assertion rows were present.\"\n}",
   "summary": {
-    "at": "2026-07-09T23:11:07-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-10T17:02:11-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-bb794e0a06"
+    ],
     "group_id": "content/cases/Jimerson v. Lewis.md",
     "group_total_assertions": 5,
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-ef66ea9a",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-ef66ea9a.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "d to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T03:10:55.440385Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T03:10:56.147298Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T03:10:57.085116Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T03:10:58.312282Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T03:11:00.252848Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Jimerson v. Lewis"
+    ],
+    "tokens": {
+      "input": 123315,
+      "output": 8092,
+      "source": "codex-events",
+      "total": 131407
+    },
+    "verdict_map": {
+      "090d22cdf9d94d31": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "10bc9c184ec65a43": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "330a7e1c0a1a9f0a": {
+        "dimension": "support",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "82e51a7c1e225ebe": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "afbd2860f848d13f": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-bb794e0a06",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 160.5
   }
 }

@@ -1,13 +1,113 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/United States v. Chadwick.json",
+    "lens": "A",
+    "notes": "Lens A reviewed only existence, support, quote fidelity, and pincite issues from the disclosed local files; no external sources were used.",
+    "reviewed": [
+      {
+        "assertion_id": "0c38d862e92b4a7b",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record verifies United States v. Chadwick, U.S. Supreme Court, decided 1977-06-21, docket 75-1721.",
+          "The official citation in the lake record is 433 U.S. 1, with parallel citations 97 S. Ct. 2476 and 53 L. Ed. 2d 538, matching the content page citation metadata."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "0c3a77bbab0119ba",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The quoted sentence appears verbatim in the cached opinion text at the page marker for *15.",
+          "The lake pinpoint for pin-15 is marked quote_fidelity=matched, pinpoint_status=star-verified, star_marker=15, and its quote matches the content page quote."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "c08bc0e180bb8c80",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "In sum, a person’s expectations of privacy in personal luggage are substantially greater than in an automobile.",
+          "locator_note": "text/United States v. Chadwick__baa602.txt, paragraph b41-5, after the *13 page marker.",
+          "needs_cl": false,
+          "problem": "The quoted language is substantively supported and appears on page *13, but the content/lake quote uses a straight apostrophe in \"person's\" while the cached opinion text uses the curly apostrophe in \"person’s\".",
+          "proposed_fix": "Change the quoted text to use the source character: \"a person’s expectations of privacy in personal luggage are substantially greater than in an automobile.\"",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The proposition is supported by the opinion text: luggage has greater privacy expectations than automobiles.",
+          "The pincite to Id. at 13 is supportable from the cached text, but exact quote fidelity needs the apostrophe corrected."
+        ],
+        "residual_risks": [
+          "The lake pinpoint is only slip-only and has no star marker or fragment, even though the cached text verifies the page location."
+        ],
+        "suggested_tightening": "Use the exact source typography or treat the passage as a normalized paraphrase rather than a verbatim quote.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "f8ea14631c8c5d2d",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "By placing personal effects inside a double-locked footlocker, respondents manifested an expectation that the contents would remain free from public examination.",
+          "locator_note": "text/United States v. Chadwick__baa602.txt, paragraph b39-5, page *11.",
+          "needs_cl": false,
+          "problem": "The pin-11 payload is not an opinion quote. It is harvested page/frontmatter and content-page prose ending before the actual quoted Chadwick passage, while the cached opinion text contains the real page-11 passage separately.",
+          "proposed_fix": "Replace the pin-11 lake quote with the actual opinion passage quoted on the content page and validate it against the cached opinion text at page *11.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The lake pinpoints entry for pin-11 is marked quote_fidelity=mismatch and pinpoint_status=slip-only.",
+          "The asserted payload begins with content-page material rather than the Supreme Court opinion text.",
+          "The visible rule quote on the content page is supportable from the cached opinion, but the reviewed pin-11 payload itself is not character-faithful opinion text."
+        ],
+        "residual_risks": [
+          "The visible content-page quote should not be discarded; only the corrupted pin-11 pinpoint payload needs repair."
+        ],
+        "suggested_tightening": "Regenerate pin-11 from the opinion text around paragraph b39-5 and keep only the quoted opinion language in the pinpoint record.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "f14e5df1ec12f75e",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A, so no treatment finding is raised.",
+          "The treatment payload fields match the disclosed lake treatment/frontmatter fields: field_i_validity=caution, as_of_content=1977-06-21, as_of_treatment=2026-06-30, varies_by_point=true, and the same scope note."
+        ],
+        "residual_risks": [
+          "Current treatment correctness is reserved for Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/United States v. Chadwick.json\",\"reviewed\":[{\"assertion_id\":\"0c38d862e92b4a7b\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake identity record verifies United States v. Chadwick, U.S. Supreme Court, decided 1977-06-21, docket 75-1721.\",\"The official citation in the lake record is 433 U.S. 1, with parallel citations 97 S. Ct. 2476 and 53 L. Ed. 2d 538, matching the content page citation metadata.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"0c3a77bbab0119ba\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The quoted sentence appears verbatim in the cached opinion text at the page marker for *15.\",\"The lake pinpoint for pin-15 is marked quote_fidelity=matched, pinpoint_status=star-verified, star_marker=15, and its quote matches the content page quote.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"c08bc0e180bb8c80\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The quoted language is substantively supported and appears on page *13, but the content/lake quote uses a straight apostrophe in \\\"person's\\\" while the cached opinion text uses the curly apostrophe in \\\"person’s\\\".\",\"severity\":\"low\",\"proposed_fix\":\"Change the quoted text to use the source character: \\\"a person’s expectations of privacy in personal luggage are substantially greater than in an automobile.\\\"\",\"evidence_quote\":\"In sum, a person’s expectations of privacy in personal luggage are substantially greater than in an automobile.\",\"needs_cl\":false,\"locator_note\":\"text/United States v. Chadwick__baa602.txt, paragraph b41-5, after the *13 page marker.\"},\"reasons\":[\"The proposition is supported by the opinion text: luggage has greater privacy expectations than automobiles.\",\"The pincite to Id. at 13 is supportable from the cached text, but exact quote fidelity needs the apostrophe corrected.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The lake pinpoint is only slip-only and has no star marker or fragment, even though the cached text verifies the page location.\"],\"suggested_tightening\":\"Use the exact source typography or treat the passage as a normalized paraphrase rather than a verbatim quote.\"},{\"assertion_id\":\"f8ea14631c8c5d2d\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The pin-11 payload is not an opinion quote. It is harvested page/frontmatter and content-page prose ending before the actual quoted Chadwick passage, while the cached opinion text contains the real page-11 passage separately.\",\"severity\":\"high\",\"proposed_fix\":\"Replace the pin-11 lake quote with the actual opinion passage quoted on the content page and validate it against the cached opinion text at page *11.\",\"evidence_quote\":\"By placing personal effects inside a double-locked footlocker, respondents manifested an expectation that the contents would remain free from public examination.\",\"needs_cl\":false,\"locator_note\":\"text/United States v. Chadwick__baa602.txt, paragraph b39-5, page *11.\"},\"reasons\":[\"The lake pinpoints entry for pin-11 is marked quote_fidelity=mismatch and pinpoint_status=slip-only.\",\"The asserted payload begins with content-page material rather than the Supreme Court opinion text.\",\"The visible rule quote on the content page is supportable from the cached opinion, but the reviewed pin-11 payload itself is not character-faithful opinion text.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The visible content-page quote should not be discarded; only the corrupted pin-11 pinpoint payload needs repair.\"],\"suggested_tightening\":\"Regenerate pin-11 from the opinion text around paragraph b39-5 and keep only the quoted opinion language in the pinpoint record.\"},{\"assertion_id\":\"f14e5df1ec12f75e\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside Lens A, so no treatment finding is raised.\",\"The treatment payload fields match the disclosed lake treatment/frontmatter fields: field_i_validity=caution, as_of_content=1977-06-21, as_of_treatment=2026-06-30, varies_by_point=true, and the same scope note.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Current treatment correctness is reserved for Lens B.\"],\"suggested_tightening\":null}],\"notes\":\"Lens A reviewed only existence, support, quote fidelity, and pincite issues from the disclosed local files; no external sources were used.\"}",
   "summary": {
-    "at": "2026-07-09T23:15:28-04:00",
-    "attempts": 2,
+    "at": "2026-07-10T17:27:51-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-b091bca494",
+      "F-S9-PR-fef7347dbe"
+    ],
     "group_id": "_overhaul2/lake/cases/United States v. Chadwick.json",
     "group_total_assertions": 5,
     "lake_only_cases": [],
@@ -16,21 +116,66 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-63e6e678.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 5,
     "run": "prod",
     "text_disclosed_cases": [
       "United States v. Chadwick"
     ],
     "tokens": {
-      "input": 828,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 828
+      "input": 122517,
+      "output": 5534,
+      "source": "codex-events",
+      "total": 128051
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 2.7
+    "verdict_map": {
+      "0c38d862e92b4a7b": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "0c3a77bbab0119ba": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "c08bc0e180bb8c80": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "f14e5df1ec12f75e": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "f8ea14631c8c5d2d": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-b091bca494",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-fef7347dbe",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 107.1
   }
 }

@@ -1,0 +1,171 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Arizona v. Roberson.json",
+    "lens": "A",
+    "notes": "Reviewed all 4 assertions in group_inventory.jsonl exactly once. Lens A refutes two quote-fidelity assertions; no treatment/currency finding is raised.",
+    "reviewed": [
+      {
+        "assertion_id": "ae22d491e13a15c8",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record exists for Arizona v. Roberson and is marked verified.",
+          "The lake identity fields list U.S. Supreme Court, decided 1988-06-15, year 1988.",
+          "The official citation in the lake record is 486 U.S. 675, matching the content page citation and display citation."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "609fd7544cbb0ce5",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "That a suspect’s request for counsel should apply to any questions the police wish to pose follows, we think, not only from",
+          "locator_note": "text/Arizona v. Roberson__c6eac8.txt:21; content_page.md:55; lake pinpoints[pin-684].",
+          "needs_cl": false,
+          "problem": "The pin-684 quote is not character-faithful to the disclosed opinion text. The opinion uses a curly apostrophe and continues after 'Miranda,'; the page/lake quote uses a straight apostrophe and an ellipsis after 'Miranda' without the comma. The lake record itself marks this pinpoint quote_fidelity as mismatch.",
+          "proposed_fix": "Replace the quote with an exact excerpt from page 684, preserving the apostrophe and punctuation, or make the ellipsis explicitly faithful to the omitted text.",
+          "severity": "medium"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The cited passage is on page 684, so the pin location is directionally correct.",
+          "The verbatim quote as rendered in the assertion is not exact against the disclosed text.",
+          "The lake pinpoint judgment also reports quote_fidelity='mismatch' and pinpoint_status='slip-only'."
+        ],
+        "residual_risks": [
+          "The legal proposition appears supported, but the verbatim quote should not pass strict quote-fidelity review."
+        ],
+        "suggested_tightening": "Use the exact page-684 language, e.g. include 'Miranda, but also...' rather than placing an ellipsis immediately after 'Miranda'.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "db790b9d975d673a",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "As a matter of law, the presumption raised by a suspect’s request for counsel — that he considers himself unable to deal with the pressures of custodial interrogation without legal assistance — does not disappear simply because the police have approached the suspect, still in custody, still without counsel, about a separate investigation.",
+          "locator_note": "text/Arizona v. Roberson__c6eac8.txt:20; content_page.md:53; lake pinpoints[pin-683].",
+          "needs_cl": false,
+          "problem": "The pin-683 quote is not a judicial quote from Roberson. It is a harvested block of the corpus page itself, beginning with the page header and including Background, Issue, and Rule text. It therefore cannot be a character-faithful quote from the opinion.",
+          "proposed_fix": "Replace pin-683 with the actual page-683 opinion passage beginning with the presumption language, or convert the corpus-authored material to paraphrase with no quote marker.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload quote starts with corpus-authored markdown/page content rather than opinion text.",
+          "The disclosed opinion text at page 683 contains the presumption sentence, not the harvested page block.",
+          "The lake record marks pin-683 quote_fidelity='mismatch' and gives no page for the pinpoint."
+        ],
+        "residual_risks": [
+          "The content page’s displayed legal proposition is broadly supported, but the stored pinpoint quote is unusable as a verbatim authority quote."
+        ],
+        "suggested_tightening": "Re-harvest pin-683 from the opinion text only, and keep corpus summaries outside quoted pinpoint fields.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "4ee8a793e87ddb2f",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Lens A does not evaluate treatment or currency merits.",
+          "The disclosed content page and lake record both show field_i_validity=good_law, as_of_content=1988-06-15, as_of_treatment=2026-06-30, and varies_by_point=false."
+        ],
+        "residual_risks": [
+          "No Lens A finding is made on whether the treatment status is substantively current or correct; Lens B owns that review."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Arizona v. Roberson.json\",\"reviewed\":[{\"assertion_id\":\"ae22d491e13a15c8\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record exists for Arizona v. Roberson and is marked verified.\",\"The lake identity fields list U.S. Supreme Court, decided 1988-06-15, year 1988.\",\"The official citation in the lake record is 486 U.S. 675, matching the content page citation and display citation.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"609fd7544cbb0ce5\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The pin-684 quote is not character-faithful to the disclosed opinion text. The opinion uses a curly apostrophe and continues after 'Miranda,'; the page/lake quote uses a straight apostrophe and an ellipsis after 'Miranda' without the comma. The lake record itself marks this pinpoint quote_fidelity as mismatch.\",\"severity\":\"medium\",\"proposed_fix\":\"Replace the quote with an exact excerpt from page 684, preserving the apostrophe and punctuation, or make the ellipsis explicitly faithful to the omitted text.\",\"evidence_quote\":\"That a suspect’s request for counsel should apply to any questions the police wish to pose follows, we think, not only from\",\"needs_cl\":false,\"locator_note\":\"text/Arizona v. Roberson__c6eac8.txt:21; content_page.md:55; lake pinpoints[pin-684].\"},\"reasons\":[\"The cited passage is on page 684, so the pin location is directionally correct.\",\"The verbatim quote as rendered in the assertion is not exact against the disclosed text.\",\"The lake pinpoint judgment also reports quote_fidelity='mismatch' and pinpoint_status='slip-only'.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The legal proposition appears supported, but the verbatim quote should not pass strict quote-fidelity review.\"],\"suggested_tightening\":\"Use the exact page-684 language, e.g. include 'Miranda, but also...' rather than placing an ellipsis immediately after 'Miranda'.\"},{\"assertion_id\":\"db790b9d975d673a\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The pin-683 quote is not a judicial quote from Roberson. It is a harvested block of the corpus page itself, beginning with the page header and including Background, Issue, and Rule text. It therefore cannot be a character-faithful quote from the opinion.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-683 with the actual page-683 opinion passage beginning with the presumption language, or convert the corpus-authored material to paraphrase with no quote marker.\",\"evidence_quote\":\"As a matter of law, the presumption raised by a suspect’s request for counsel — that he considers himself unable to deal with the pressures of custodial interrogation without legal assistance — does not disappear simply because the police have approached the suspect, still in custody, still without counsel, about a separate investigation.\",\"needs_cl\":false,\"locator_note\":\"text/Arizona v. Roberson__c6eac8.txt:20; content_page.md:53; lake pinpoints[pin-683].\"},\"reasons\":[\"The payload quote starts with corpus-authored markdown/page content rather than opinion text.\",\"The disclosed opinion text at page 683 contains the presumption sentence, not the harvested page block.\",\"The lake record marks pin-683 quote_fidelity='mismatch' and gives no page for the pinpoint.\"],\"breaks_true_positives\":true,\"residual_risks\":[\"The content page’s displayed legal proposition is broadly supported, but the stored pinpoint quote is unusable as a verbatim authority quote.\"],\"suggested_tightening\":\"Re-harvest pin-683 from the opinion text only, and keep corpus summaries outside quoted pinpoint fields.\"},{\"assertion_id\":\"4ee8a793e87ddb2f\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lens A does not evaluate treatment or currency merits.\",\"The disclosed content page and lake record both show field_i_validity=good_law, as_of_content=1988-06-15, as_of_treatment=2026-06-30, and varies_by_point=false.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"No Lens A finding is made on whether the treatment status is substantively current or correct; Lens B owns that review.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed all 4 assertions in group_inventory.jsonl exactly once. Lens A refutes two quote-fidelity assertions; no treatment/currency finding is raised.\"}",
+  "summary": {
+    "at": "2026-07-10T18:23:38-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-5a79835d2c",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-a1e1c919c6",
+      "F-S9-PR-1a6fab6a37"
+    ],
+    "group_id": "_overhaul2/lake/cases/Arizona v. Roberson.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "codex-A",
+    "lane_id": "codex-A-panel-prod-35f889a5",
+    "lens": "A",
+    "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-35f889a5.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Arizona v. Roberson"
+    ],
+    "tokens": {
+      "input": 172271,
+      "output": 8634,
+      "source": "codex-events",
+      "total": 180905
+    },
+    "verdict_map": {
+      "4ee8a793e87ddb2f": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "609fd7544cbb0ce5": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "ae22d491e13a15c8": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "db790b9d975d673a": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-a1e1c919c6",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-1a6fab6a37",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-5a79835d2c",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": 195.5
+  }
+}

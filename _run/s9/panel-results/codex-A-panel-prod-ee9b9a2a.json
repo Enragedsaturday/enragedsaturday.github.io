@@ -1,0 +1,192 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Arizona v. Fulminante.json",
+    "lens": "A",
+    "notes": "Reviewed all five group_inventory rows under lens A only.",
+    "reviewed": [
+      {
+        "assertion_id": "10f5b41e3ac0e033",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity is Arizona v. Fulminante, U.S. Supreme Court, year 1991.",
+          "Lake official citation is 499 U.S. 279 and parallel/vendor citations match the inventory payload."
+        ],
+        "residual_risks": [
+          "The text file states Decided March 26, 1991 while the lake/content date_decided field says 1991-05-20; this inventory row tests citation/court/year only."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "062ff54bfbb437cb",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "The Court today properly concludes that the admission of an \"involuntary\" confession at trial is subject to harmless-error analysis.",
+          "locator_note": "text/Arizona v. Fulminante__dbc78a.txt line 60, page star *303.",
+          "needs_cl": false,
+          "problem": "The quoted sentence is not character-faithful: the content/lake quote uses single quotation marks around involuntary, while the opinion text uses double quotation marks.",
+          "proposed_fix": "Change the quote to use the opinion's exact wording: The Court today properly concludes that the admission of an \"involuntary\" confession at trial is subject to harmless-error analysis.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Inventory payload quote contains an 'involuntary' substitution not found in the opinion text.",
+          "Lake itself marks pin-303 quote_fidelity as mismatch and pinpoint_status as slip-only."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Preserve the internal double quotation marks or paraphrase instead of quoting.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "5ac63eb4bb84ed24",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Our cases have made clear that a finding of coercion need not depend upon actual violence by a government agent;<sup>[4]</sup> a credible threat is sufficient.",
+          "locator_note": "text/Arizona v. Fulminante__dbc78a.txt line 30, page star *287; lake pinpoints[pin-287].quote begins with built-page text.",
+          "needs_cl": false,
+          "problem": "The pin-287 payload quote is not an opinion quote; it is a captured chunk of the built page/front matter and rule text.",
+          "proposed_fix": "Replace pin-287's stored quote with the actual p.287 passage and validate the pinpoint against the opinion text.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload quote begins with '--- # Arizona v. Fulminante' and includes page metadata/background, not the opinion text.",
+          "The actual opinion passage supporting the rule appears at page star *287 and differs from the stored quote."
+        ],
+        "residual_risks": [
+          "The page's displayed quote omits the footnote marker after 'agent;'; exact quote-fidelity handling should either preserve or explicitly omit it."
+        ],
+        "suggested_tightening": "Store only the actual p.287 sentence as the pinpoint quote and avoid page-generated prose in lake pinpoints.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "7afcc461879db5ff",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "The admission of an involuntary confession\\u0097a classic \"trial error\"\\u0097is markedly different from the other two constitutional violations referred to in the Chapman footnote as not being subject to harmless-error analysis.",
+          "locator_note": "content_page.md line 57 cites Id. at 309, but lake pinpoints[pin-309].star_marker is 291 and its fragment targets 'though a \"trial error,' in the p.291 dissent discussion.",
+          "needs_cl": false,
+          "problem": "The pin-309 metadata validates only the fragment 'trial error,' at page *291, not the displayed p.309 quotation; the displayed quotation also changes the opinion's internal double quotation marks around trial error.",
+          "proposed_fix": "Retarget pin-309 to the page *309 passage and store the full exact sentence, preserving the opinion's double quotation marks around \"trial error\".",
+          "severity": "medium"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The inventory payload for pin-309 has star_marker 291, contradicting the page's cited p.309 passage.",
+          "The p.309 opinion sentence uses double quotation marks around \"trial error\"; the content page uses single quotation marks."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Use a text fragment anchored to the full p.309 sentence rather than the unrelated p.291 phrase.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "99c6e71ab76d1438",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside lens A, so I raise no treatment finding.",
+          "The inventory treatment fields match the lake treatment judgment fields: field_i_validity good_law, as_of_treatment 2026-06-30, varies_by_point false."
+        ],
+        "residual_risks": [
+          "Lake treatment contains proposed negative-event edges; lens B should evaluate treatment/currency assertions such as 'No negative treatment.'"
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Arizona v. Fulminante.json\",\"reviewed\":[{\"assertion_id\":\"10f5b41e3ac0e033\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity is Arizona v. Fulminante, U.S. Supreme Court, year 1991.\",\"Lake official citation is 499 U.S. 279 and parallel/vendor citations match the inventory payload.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The text file states Decided March 26, 1991 while the lake/content date_decided field says 1991-05-20; this inventory row tests citation/court/year only.\"],\"suggested_tightening\":null},{\"assertion_id\":\"062ff54bfbb437cb\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The quoted sentence is not character-faithful: the content/lake quote uses single quotation marks around involuntary, while the opinion text uses double quotation marks.\",\"severity\":\"low\",\"proposed_fix\":\"Change the quote to use the opinion's exact wording: The Court today properly concludes that the admission of an \\\"involuntary\\\" confession at trial is subject to harmless-error analysis.\",\"evidence_quote\":\"The Court today properly concludes that the admission of an \\\"involuntary\\\" confession at trial is subject to harmless-error analysis.\",\"needs_cl\":false,\"locator_note\":\"text/Arizona v. Fulminante__dbc78a.txt line 60, page star *303.\"},\"reasons\":[\"Inventory payload quote contains an 'involuntary' substitution not found in the opinion text.\",\"Lake itself marks pin-303 quote_fidelity as mismatch and pinpoint_status as slip-only.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":\"Preserve the internal double quotation marks or paraphrase instead of quoting.\"},{\"assertion_id\":\"5ac63eb4bb84ed24\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The pin-287 payload quote is not an opinion quote; it is a captured chunk of the built page/front matter and rule text.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-287's stored quote with the actual p.287 passage and validate the pinpoint against the opinion text.\",\"evidence_quote\":\"Our cases have made clear that a finding of coercion need not depend upon actual violence by a government agent;<sup>[4]</sup> a credible threat is sufficient.\",\"needs_cl\":false,\"locator_note\":\"text/Arizona v. Fulminante__dbc78a.txt line 30, page star *287; lake pinpoints[pin-287].quote begins with built-page text.\"},\"reasons\":[\"The payload quote begins with '--- # Arizona v. Fulminante' and includes page metadata/background, not the opinion text.\",\"The actual opinion passage supporting the rule appears at page star *287 and differs from the stored quote.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The page's displayed quote omits the footnote marker after 'agent;'; exact quote-fidelity handling should either preserve or explicitly omit it.\"],\"suggested_tightening\":\"Store only the actual p.287 sentence as the pinpoint quote and avoid page-generated prose in lake pinpoints.\"},{\"assertion_id\":\"7afcc461879db5ff\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The pin-309 metadata validates only the fragment 'trial error,' at page *291, not the displayed p.309 quotation; the displayed quotation also changes the opinion's internal double quotation marks around trial error.\",\"severity\":\"medium\",\"proposed_fix\":\"Retarget pin-309 to the page *309 passage and store the full exact sentence, preserving the opinion's double quotation marks around \\\"trial error\\\".\",\"evidence_quote\":\"The admission of an involuntary confession\\\\u0097a classic \\\"trial error\\\"\\\\u0097is markedly different from the other two constitutional violations referred to in the Chapman footnote as not being subject to harmless-error analysis.\",\"needs_cl\":false,\"locator_note\":\"content_page.md line 57 cites Id. at 309, but lake pinpoints[pin-309].star_marker is 291 and its fragment targets 'though a \\\"trial error,' in the p.291 dissent discussion.\"},\"reasons\":[\"The inventory payload for pin-309 has star_marker 291, contradicting the page's cited p.309 passage.\",\"The p.309 opinion sentence uses double quotation marks around \\\"trial error\\\"; the content page uses single quotation marks.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":\"Use a text fragment anchored to the full p.309 sentence rather than the unrelated p.291 phrase.\"},{\"assertion_id\":\"99c6e71ab76d1438\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside lens A, so I raise no treatment finding.\",\"The inventory treatment fields match the lake treatment judgment fields: field_i_validity good_law, as_of_treatment 2026-06-30, varies_by_point false.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Lake treatment contains proposed negative-event edges; lens B should evaluate treatment/currency assertions such as 'No negative treatment.'\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed all five group_inventory rows under lens A only.\"}",
+  "summary": {
+    "at": "2026-07-10T18:22:48-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-97988b2fec",
+      "F-S9-PR-d288683f19",
+      "F-S9-PR-f3505c9ee4"
+    ],
+    "group_id": "_overhaul2/lake/cases/Arizona v. Fulminante.json",
+    "group_total_assertions": 5,
+    "lake_only_cases": [],
+    "lane": "codex-A",
+    "lane_id": "codex-A-panel-prod-ee9b9a2a",
+    "lens": "A",
+    "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-ee9b9a2a.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Arizona v. Fulminante"
+    ],
+    "tokens": {
+      "input": 375388,
+      "output": 9612,
+      "source": "codex-events",
+      "total": 385000
+    },
+    "verdict_map": {
+      "062ff54bfbb437cb": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "10f5b41e3ac0e033": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "5ac63eb4bb84ed24": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "7afcc461879db5ff": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "99c6e71ab76d1438": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-97988b2fec",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-d288683f19",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-f3505c9ee4",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 184.8
+  }
+}

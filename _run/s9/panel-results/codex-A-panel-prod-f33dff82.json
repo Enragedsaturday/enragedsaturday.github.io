@@ -1,38 +1,172 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "content/cases/United States v. Trent.md",
+    "lens": "A",
+    "notes": "Treatment rows were checked only for disclosed field consistency under Lens A; no treatment/currency finding is made.",
+    "reviewed": [
+      {
+        "assertion_id": "25197dd1e95a8b8e",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "\"official\": null",
+          "locator_note": "lake/United States v. Trent__64149b.json citations.official; citations.slip_only",
+          "needs_cl": false,
+          "problem": "The case identity, docket, court, and year are supported, but the payload's official_citation_present=true is not supported by the lake record, which says there is no official citation and the case is slip-only.",
+          "proposed_fix": "Keep the slip citation, but set official_citation_present to false or label the citation explicitly as slip-only/no reporter citation.",
+          "severity": "low"
+        },
+        "dimension": "existence",
+        "reasons": [
+          "The opinion text shows No. 25-5770, Sixth Circuit, filed May 07, 2026.",
+          "The lake identity matches docket 25-5770, court 6th Cir., date_decided 2026-05-07, and year 2026.",
+          "The lake record does not support an official reporter citation."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Use a slip-only citation label rather than treating the citation field as an official citation.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "504cbaac279106ba",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "The opinion's merits analysis expressly applies the collective-knowledge doctrine to impute law-enforcement knowledge to Lieutenant Ford.",
+          "The suppression ruling turns on whether collective knowledge supplied reasonable suspicion to prolong the stop for a dog sniff."
+        ],
+        "residual_risks": [
+          "The record does not define the corpus-specific threshold for a 'Key' home role, but the topic fit is central rather than incidental."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "86e4ae73c375145c",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "The text states that Ford's traffic-stop mission ended around 2:10 a.m. and that reasonable suspicion existed to prolong the stop until the canine unit arrived a minute or two later.",
+          "The text quotes the collective-knowledge doctrine as permitting imputation across law-enforcement agencies even when the responding officer lacks the specific facts establishing reasonable suspicion.",
+          "The opinion lists the methamphetamine-distribution tips, cell pings, turn-and-burn trips, rental vehicle, route change, license-plate cover, prior drug charges, and Ford's vehicle-interior observation before holding that reasonable suspicion supported the dog sniff."
+        ],
+        "residual_risks": [
+          "The one-to-two-minute phrasing is safest if understood as the wait for the canine unit's arrival, not the full interval until the dog alerted."
+        ],
+        "suggested_tightening": "Clarify that the canine unit arrived a minute or two after the mission ended; the exterior sniff and alert occurred later after Trent and Hamilton initially refused to exit.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "80f3d501b82b1ac4",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment and authority-weight review is outside Lens A's support/quote-fidelity charter.",
+          "No Lens A quote-fidelity or merits-support defect is raised for this treatment row."
+        ],
+        "residual_risks": [
+          "Authority-weight correctness should be resolved by Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "ed2ab1579af4a974",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The page treatment fields match the lake treatment fields: field_i_validity unverified, null as_of fields, composite_basis unverified, varies_by_point false, and the same frontier-stub scope note.",
+          "Treatment/currency merits are outside Lens A, so no treatment finding is raised."
+        ],
+        "residual_risks": [
+          "Subsequent-treatment validity remains expressly unverified in the disclosed record."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"content/cases/United States v. Trent.md\",\"reviewed\":[{\"assertion_id\":\"25197dd1e95a8b8e\",\"dimension\":\"existence\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The case identity, docket, court, and year are supported, but the payload's official_citation_present=true is not supported by the lake record, which says there is no official citation and the case is slip-only.\",\"severity\":\"low\",\"proposed_fix\":\"Keep the slip citation, but set official_citation_present to false or label the citation explicitly as slip-only/no reporter citation.\",\"evidence_quote\":\"\\\"official\\\": null\",\"needs_cl\":false,\"locator_note\":\"lake/United States v. Trent__64149b.json citations.official; citations.slip_only\"},\"reasons\":[\"The opinion text shows No. 25-5770, Sixth Circuit, filed May 07, 2026.\",\"The lake identity matches docket 25-5770, court 6th Cir., date_decided 2026-05-07, and year 2026.\",\"The lake record does not support an official reporter citation.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":\"Use a slip-only citation label rather than treating the citation field as an official citation.\"},{\"assertion_id\":\"504cbaac279106ba\",\"dimension\":\"support\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The opinion's merits analysis expressly applies the collective-knowledge doctrine to impute law-enforcement knowledge to Lieutenant Ford.\",\"The suppression ruling turns on whether collective knowledge supplied reasonable suspicion to prolong the stop for a dog sniff.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The record does not define the corpus-specific threshold for a 'Key' home role, but the topic fit is central rather than incidental.\"],\"suggested_tightening\":null},{\"assertion_id\":\"86e4ae73c375145c\",\"dimension\":\"support\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The text states that Ford's traffic-stop mission ended around 2:10 a.m. and that reasonable suspicion existed to prolong the stop until the canine unit arrived a minute or two later.\",\"The text quotes the collective-knowledge doctrine as permitting imputation across law-enforcement agencies even when the responding officer lacks the specific facts establishing reasonable suspicion.\",\"The opinion lists the methamphetamine-distribution tips, cell pings, turn-and-burn trips, rental vehicle, route change, license-plate cover, prior drug charges, and Ford's vehicle-interior observation before holding that reasonable suspicion supported the dog sniff.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The one-to-two-minute phrasing is safest if understood as the wait for the canine unit's arrival, not the full interval until the dog alerted.\"],\"suggested_tightening\":\"Clarify that the canine unit arrived a minute or two after the mission ended; the exterior sniff and alert occurred later after Trent and Hamilton initially refused to exit.\"},{\"assertion_id\":\"80f3d501b82b1ac4\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment and authority-weight review is outside Lens A's support/quote-fidelity charter.\",\"No Lens A quote-fidelity or merits-support defect is raised for this treatment row.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Authority-weight correctness should be resolved by Lens B.\"],\"suggested_tightening\":null},{\"assertion_id\":\"ed2ab1579af4a974\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The page treatment fields match the lake treatment fields: field_i_validity unverified, null as_of fields, composite_basis unverified, varies_by_point false, and the same frontier-stub scope note.\",\"Treatment/currency merits are outside Lens A, so no treatment finding is raised.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Subsequent-treatment validity remains expressly unverified in the disclosed record.\"],\"suggested_tightening\":null}],\"notes\":\"Treatment rows were checked only for disclosed field consistency under Lens A; no treatment/currency finding is made.\"}",
   "summary": {
-    "at": "2026-07-09T23:14:21-04:00",
-    "attempts": 2,
+    "at": "2026-07-10T17:19:24-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-b881e64bdc"
+    ],
     "group_id": "content/cases/United States v. Trent.md",
     "group_total_assertions": 5,
-    "lake_only_cases": [
-      "United States v. Trent"
-    ],
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-f33dff82",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-f33dff82.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
-    "resolution_notes": [
-      "case 'United States v. Trent' has no lead_opinion_id (text undisclosed)"
-    ],
-    "reviewed_count": 0,
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
     "run": "prod",
-    "text_disclosed_cases": [],
+    "text_disclosed_cases": [
+      "United States v. Trent"
+    ],
     "tokens": {
-      "input": 824,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 824
+      "input": 124556,
+      "output": 7338,
+      "source": "codex-events",
+      "total": 131894
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 3.1
+    "verdict_map": {
+      "25197dd1e95a8b8e": {
+        "dimension": "existence",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "504cbaac279106ba": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "80f3d501b82b1ac4": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "86e4ae73c375145c": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "ed2ab1579af4a974": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-b881e64bdc",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 143.0
   }
 }

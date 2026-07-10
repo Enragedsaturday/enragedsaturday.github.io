@@ -1,38 +1,92 @@
 {
-  "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Board of County Commissioners of Bryan County v. Brown.json",
+    "lens": "B",
+    "notes": "Reviewed every assertion in group_inventory.jsonl under lens B only; no support or quote-fidelity findings raised.",
+    "reviewed": [
+      {
+        "assertion_id": "7775f8ac8b31f12e",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record confirms the case as a U.S. Supreme Court decision decided 1997-04-28 with docket 95-1100 and cluster_id 118104.",
+          "The lake citation record confirms the official citation selected as 520 U.S. 397 and the page display uses that citation.",
+          "No disclosed treatment edge or progeny edge marks the authority superseded, overruled, abrogated, or limited."
+        ],
+        "residual_risks": [
+          "The disclosed treatment/progeny record is explicitly unverified, so this review does not independently establish positive good-law status beyond absence of a disclosed negative treatment marker."
+        ],
+        "suggested_tightening": "Keep the existence/citation assertion separate from any affirmative good-law claim until treatment is verified.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "132ca9f3fc740940",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The page treatment call is Unverified, matching lake.treatment.field_i_validity: unverified.",
+          "The lake treatment fields have as_of_content and as_of_treatment set to null, matching the assertion payload.",
+          "The scope note says treatment/progeny were intentionally not derived until S6 promotion, and the disclosed treatment/progeny edge arrays are empty.",
+          "The page does not assert verified good-law status; it expressly cautions that subsequent treatment has not completed verification."
+        ],
+        "residual_risks": [
+          "Because treatment is a frontier stub with no completed progeny enumeration, later negative treatment cannot be ruled out from disclosed evidence."
+        ],
+        "suggested_tightening": "Preserve the Unverified banner and avoid phrasing that implies verified good-law status until citator/progeny verification is complete.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"B\",\n  \"group_id\": \"_overhaul2/lake/cases/Board of County Commissioners of Bryan County v. Brown.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"7775f8ac8b31f12e\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake identity record confirms the case as a U.S. Supreme Court decision decided 1997-04-28 with docket 95-1100 and cluster_id 118104.\",\n        \"The lake citation record confirms the official citation selected as 520 U.S. 397 and the page display uses that citation.\",\n        \"No disclosed treatment edge or progeny edge marks the authority superseded, overruled, abrogated, or limited.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The disclosed treatment/progeny record is explicitly unverified, so this review does not independently establish positive good-law status beyond absence of a disclosed negative treatment marker.\"\n      ],\n      \"suggested_tightening\": \"Keep the existence/citation assertion separate from any affirmative good-law claim until treatment is verified.\"\n    },\n    {\n      \"assertion_id\": \"132ca9f3fc740940\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The page treatment call is Unverified, matching lake.treatment.field_i_validity: unverified.\",\n        \"The lake treatment fields have as_of_content and as_of_treatment set to null, matching the assertion payload.\",\n        \"The scope note says treatment/progeny were intentionally not derived until S6 promotion, and the disclosed treatment/progeny edge arrays are empty.\",\n        \"The page does not assert verified good-law status; it expressly cautions that subsequent treatment has not completed verification.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Because treatment is a frontier stub with no completed progeny enumeration, later negative treatment cannot be ruled out from disclosed evidence.\"\n      ],\n      \"suggested_tightening\": \"Preserve the Unverified banner and avoid phrasing that implies verified good-law status until citator/progeny verification is complete.\"\n    }\n  ],\n  \"notes\": \"Reviewed every assertion in group_inventory.jsonl under lens B only; no support or quote-fidelity findings raised.\"\n}",
   "summary": {
-    "at": "2026-07-09T23:17:23-04:00",
-    "attempts": 2,
-    "clean_attestation": false,
+    "at": "2026-07-10T17:43:30-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
     "defense_votes": [],
     "findings_emitted": [],
     "group_id": "_overhaul2/lake/cases/Board of County Commissioners of Bryan County v. Brown.json",
     "group_total_assertions": 2,
-    "lake_only_cases": [
-      "Board of County Commissioners of Bryan County v. Brown"
-    ],
+    "lake_only_cases": [],
     "lane": "codex-B",
     "lane_id": "codex-B-panel-prod-2567274b",
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-2567274b.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
-    "resolution_notes": [
-      "case 'Board of County Commissioners of Bryan County v. Brown' has no lead_opinion_id (text undisclosed)"
-    ],
-    "reviewed_count": 0,
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 2,
     "run": "prod",
-    "text_disclosed_cases": [],
+    "text_disclosed_cases": [
+      "Board of County Commissioners of Bryan County v. Brown"
+    ],
     "tokens": {
-      "input": 763,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 763
+      "input": 150971,
+      "output": 2993,
+      "source": "codex-events",
+      "total": 153964
     },
-    "verdict_map": {},
+    "verdict_map": {
+      "132ca9f3fc740940": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "7775f8ac8b31f12e": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
     "votes_emitted": [],
-    "wall_clock_s": 2.7
+    "wall_clock_s": 97.8
   }
 }

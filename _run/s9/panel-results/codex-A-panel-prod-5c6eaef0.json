@@ -1,13 +1,110 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/United States v. Neugin.json",
+    "lens": "A",
+    "notes": "Treatment/currency merits were not reviewed under lens A. Non-inventoried support issue noticed: content_page.md calls Julie Parrish Neugin's wife, but the disclosed opinion identifies her as his girlfriend.",
+    "reviewed": [
+      {
+        "assertion_id": "e03503dce5417d03",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record identifies the case as United States v. Neugin, decided by the U.S. Court of Appeals for the Tenth Circuit on 2020-05-01.",
+          "The lake official citation is exactly 958 F.3d 924, matching the assertion payload and the content page display."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "36046261a528e45f",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The quoted sentence appears in the disclosed opinion text in the inevitable-discovery analysis.",
+          "The lake pinpoint pin-op15a marks quote_fidelity as matched and supplies a validated fragment for the same passage."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "8f1e9090fe42bf2e",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "the police would not\n\nhave inevitably discovered the evidence absent the Fourth Amendment violation.\n\nBecause the violation caused the discovery of the ammunition and firearm, that evidence\n\nis fruit of the poisonous tree and should have been suppressed.",
+          "locator_note": "pin-op17",
+          "needs_cl": false,
+          "problem": "The quote is not character-faithful. It splices two conclusion passages with an ellipsis and omits the intervening sentence fragment, while presenting the result as one quoted proposition. The lake record also marks pin-op17 quote_fidelity as mismatch.",
+          "proposed_fix": "Use the full conclusion language or split it into two accurate quotes instead of the current ellipsis splice.",
+          "severity": "medium"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The disclosed text has a full stop after Fourth Amendment violation and then a separate sentence beginning Because the violation caused the discovery of the ammunition and firearm.",
+          "The asserted quote omits that causal clause and uses an ellipsis that is not character-faithful to the disclosed text."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Quote the two conclusion sentences verbatim, or paraphrase the fruit-of-the-poisonous-tree conclusion without quotation marks.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "c5eb508c160b2a86",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "(1984)); accord United States v. Owens, 782 F.2d 146, 153 (10th Cir. 1986) (“[T]he\n\ninevitable discovery exception to the exclusionary rule cannot be invoked because of [a]\n\nhighly speculative assumption of ‘inevitability.’”).",
+          "locator_note": "pin-op15",
+          "needs_cl": false,
+          "problem": "The pin-op15 payload quote is not an opinion passage. It is a harvested excerpt from content_page.md beginning with page chrome and background prose, and the lake record marks quote_fidelity as mismatch.",
+          "proposed_fix": "Replace pin-op15 with the actual opinion passage quoting Owens, and mark it matched only if the displayed quote preserves the bracketed initial and quotation marks accurately.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The disclosed lake pinpoint for pin-op15 contains page header/content-page prose, not text from the Neugin opinion.",
+          "The actual supporting passage is present in the disclosed opinion text, but it is not the payload quote under review."
+        ],
+        "residual_risks": [
+          "The visible content page also changes the source typography around ‘inevitability’; the corrected pin should be rechecked character by character."
+        ],
+        "suggested_tightening": "Prevent quote harvesting from crossing page chrome or markdown section boundaries; anchor this pin to the Owens parenthetical in the opinion text.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "1dc6eecf90642907",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment and currency are outside lens A, so no treatment merits finding is raised.",
+          "The asserted treatment fields match the disclosed lake/content fields: good_law, as_of_content 2020-05-01, as_of_treatment 2026-06-30, and varies_by_point false."
+        ],
+        "residual_risks": [
+          "Good-law status and currency are for lens B, not lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/United States v. Neugin.json\",\"reviewed\":[{\"assertion_id\":\"e03503dce5417d03\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record identifies the case as United States v. Neugin, decided by the U.S. Court of Appeals for the Tenth Circuit on 2020-05-01.\",\"The lake official citation is exactly 958 F.3d 924, matching the assertion payload and the content page display.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"36046261a528e45f\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The quoted sentence appears in the disclosed opinion text in the inevitable-discovery analysis.\",\"The lake pinpoint pin-op15a marks quote_fidelity as matched and supplies a validated fragment for the same passage.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"8f1e9090fe42bf2e\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The quote is not character-faithful. It splices two conclusion passages with an ellipsis and omits the intervening sentence fragment, while presenting the result as one quoted proposition. The lake record also marks pin-op17 quote_fidelity as mismatch.\",\"severity\":\"medium\",\"proposed_fix\":\"Use the full conclusion language or split it into two accurate quotes instead of the current ellipsis splice.\",\"evidence_quote\":\"the police would not\\n\\nhave inevitably discovered the evidence absent the Fourth Amendment violation.\\n\\nBecause the violation caused the discovery of the ammunition and firearm, that evidence\\n\\nis fruit of the poisonous tree and should have been suppressed.\",\"needs_cl\":false,\"locator_note\":\"pin-op17\"},\"reasons\":[\"The disclosed text has a full stop after Fourth Amendment violation and then a separate sentence beginning Because the violation caused the discovery of the ammunition and firearm.\",\"The asserted quote omits that causal clause and uses an ellipsis that is not character-faithful to the disclosed text.\"],\"breaks_true_positives\":true,\"residual_risks\":[],\"suggested_tightening\":\"Quote the two conclusion sentences verbatim, or paraphrase the fruit-of-the-poisonous-tree conclusion without quotation marks.\"},{\"assertion_id\":\"c5eb508c160b2a86\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The pin-op15 payload quote is not an opinion passage. It is a harvested excerpt from content_page.md beginning with page chrome and background prose, and the lake record marks quote_fidelity as mismatch.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-op15 with the actual opinion passage quoting Owens, and mark it matched only if the displayed quote preserves the bracketed initial and quotation marks accurately.\",\"evidence_quote\":\"(1984)); accord United States v. Owens, 782 F.2d 146, 153 (10th Cir. 1986) (“[T]he\\n\\ninevitable discovery exception to the exclusionary rule cannot be invoked because of [a]\\n\\nhighly speculative assumption of ‘inevitability.’”).\",\"needs_cl\":false,\"locator_note\":\"pin-op15\"},\"reasons\":[\"The disclosed lake pinpoint for pin-op15 contains page header/content-page prose, not text from the Neugin opinion.\",\"The actual supporting passage is present in the disclosed opinion text, but it is not the payload quote under review.\"],\"breaks_true_positives\":true,\"residual_risks\":[\"The visible content page also changes the source typography around ‘inevitability’; the corrected pin should be rechecked character by character.\"],\"suggested_tightening\":\"Prevent quote harvesting from crossing page chrome or markdown section boundaries; anchor this pin to the Owens parenthetical in the opinion text.\"},{\"assertion_id\":\"1dc6eecf90642907\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment and currency are outside lens A, so no treatment merits finding is raised.\",\"The asserted treatment fields match the disclosed lake/content fields: good_law, as_of_content 2020-05-01, as_of_treatment 2026-06-30, and varies_by_point false.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Good-law status and currency are for lens B, not lens A.\"],\"suggested_tightening\":null}],\"notes\":\"Treatment/currency merits were not reviewed under lens A. Non-inventoried support issue noticed: content_page.md calls Julie Parrish Neugin's wife, but the disclosed opinion identifies her as his girlfriend.\"}",
   "summary": {
-    "at": "2026-07-09T23:06:09-04:00",
-    "attempts": 2,
+    "at": "2026-07-10T02:35:50-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-0a71103366",
+      "F-S9-PR-85b22daa59"
+    ],
     "group_id": "_overhaul2/lake/cases/United States v. Neugin.json",
     "group_total_assertions": 5,
     "lake_only_cases": [],
@@ -16,21 +113,66 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-5c6eaef0.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 5,
     "run": "prod",
     "text_disclosed_cases": [
       "United States v. Neugin"
     ],
     "tokens": {
-      "input": 827,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 827
+      "input": 207215,
+      "output": 9169,
+      "source": "codex-events",
+      "total": 216384
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 2.8
+    "verdict_map": {
+      "1dc6eecf90642907": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "36046261a528e45f": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "8f1e9090fe42bf2e": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "c5eb508c160b2a86": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "e03503dce5417d03": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-0a71103366",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-85b22daa59",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 189.6
   }
 }

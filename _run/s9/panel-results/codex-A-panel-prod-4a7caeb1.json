@@ -1,13 +1,98 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/New York v. Belton.json",
+    "lens": "A",
+    "notes": "Reviewed all 4 group_inventory rows using only disclosed workspace files.",
+    "reviewed": [
+      {
+        "assertion_id": "9f930906d914185d",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity record is verified for New York v. Belton, U.S. Supreme Court, decided 1981-09-23.",
+          "The content-page display citation 453 U.S. 454 (1981) matches the lake official citation and year; parallel and vendor citations also match the lake record."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "c94712e2e6980829",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Accordingly, we hold that when a policeman has made a lawful custodial arrest",
+          "locator_note": "content_page pin ^pin-460 cites 453 U.S. at 460; text contains the holding paragraph at page marker *460.",
+          "needs_cl": false,
+          "problem": "The inventoried pin-460 quote is not Belton opinion text; it is harvested content-page/front-matter prose and the lake itself marks quote_fidelity as mismatch.",
+          "proposed_fix": "Replace pin-460 with the actual page-460 holding quote from the opinion text and preserve a clear policy for omitted footnote markers.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload quote begins with page/header material rather than the Court's holding.",
+          "The opinion text at page 460 contains the actual rule passage; the payload quote is not character-faithful to it."
+        ],
+        "residual_risks": [
+          "The visible content-page rule quote appears supportable from page 460, but the inventoried/lake pin quote is corrupt."
+        ],
+        "suggested_tightening": "Make quote harvesting capture only text inside quotation marks for the pinned sentence.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "e50d5458b37720dd",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "passenger compartment, for if the passenger compartment is within reach",
+          "locator_note": "pin-460b is the paragraph immediately after the page-460 holding; content_page uses Id.",
+          "needs_cl": false,
+          "problem": "The quoted sentence changes the opinion's punctuation and truncates the sentence: the opinion has a comma after passenger compartment and continues, not a period.",
+          "proposed_fix": "Use the full sentence from the opinion or end the excerpt with a comma plus ellipsis rather than converting it into a complete sentence.",
+          "severity": "medium"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The proposition is supported, but the verbatim quote is not character-faithful.",
+          "The lake also marks this pinpoint's quote_fidelity as mismatch."
+        ],
+        "residual_risks": [
+          "The doctrinal point survives; only exact quotation form fails."
+        ],
+        "suggested_tightening": "Quote the whole sentence or use a bracketed/ellipsized excerpt that preserves the comma.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "acb94106fc91e05c",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The treatment payload matches the lake treatment fields: field_i_validity caution, varies_by_point true, and the same scope note and dates.",
+          "Lens A does not raise treatment/currency findings."
+        ],
+        "residual_risks": [
+          "Treatment and currency were not independently attacked under this lens."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/New York v. Belton.json\",\"reviewed\":[{\"assertion_id\":\"9f930906d914185d\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity record is verified for New York v. Belton, U.S. Supreme Court, decided 1981-09-23.\",\"The content-page display citation 453 U.S. 454 (1981) matches the lake official citation and year; parallel and vendor citations also match the lake record.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"c94712e2e6980829\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The inventoried pin-460 quote is not Belton opinion text; it is harvested content-page/front-matter prose and the lake itself marks quote_fidelity as mismatch.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-460 with the actual page-460 holding quote from the opinion text and preserve a clear policy for omitted footnote markers.\",\"evidence_quote\":\"Accordingly, we hold that when a policeman has made a lawful custodial arrest\",\"needs_cl\":false,\"locator_note\":\"content_page pin ^pin-460 cites 453 U.S. at 460; text contains the holding paragraph at page marker *460.\"},\"reasons\":[\"The payload quote begins with page/header material rather than the Court's holding.\",\"The opinion text at page 460 contains the actual rule passage; the payload quote is not character-faithful to it.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The visible content-page rule quote appears supportable from page 460, but the inventoried/lake pin quote is corrupt.\"],\"suggested_tightening\":\"Make quote harvesting capture only text inside quotation marks for the pinned sentence.\"},{\"assertion_id\":\"e50d5458b37720dd\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The quoted sentence changes the opinion's punctuation and truncates the sentence: the opinion has a comma after passenger compartment and continues, not a period.\",\"severity\":\"medium\",\"proposed_fix\":\"Use the full sentence from the opinion or end the excerpt with a comma plus ellipsis rather than converting it into a complete sentence.\",\"evidence_quote\":\"passenger compartment, for if the passenger compartment is within reach\",\"needs_cl\":false,\"locator_note\":\"pin-460b is the paragraph immediately after the page-460 holding; content_page uses Id.\"},\"reasons\":[\"The proposition is supported, but the verbatim quote is not character-faithful.\",\"The lake also marks this pinpoint's quote_fidelity as mismatch.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The doctrinal point survives; only exact quotation form fails.\"],\"suggested_tightening\":\"Quote the whole sentence or use a bracketed/ellipsized excerpt that preserves the comma.\"},{\"assertion_id\":\"acb94106fc91e05c\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The treatment payload matches the lake treatment fields: field_i_validity caution, varies_by_point true, and the same scope note and dates.\",\"Lens A does not raise treatment/currency findings.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment and currency were not independently attacked under this lens.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed all 4 group_inventory rows using only disclosed workspace files.\"}",
   "summary": {
-    "at": "2026-07-09T23:15:16-04:00",
-    "attempts": 2,
+    "at": "2026-07-10T17:25:39-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-0a3c89abaf",
+      "F-S9-PR-24ecc4524d"
+    ],
     "group_id": "_overhaul2/lake/cases/New York v. Belton.json",
     "group_total_assertions": 4,
     "lake_only_cases": [],
@@ -16,21 +101,59 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-4a7caeb1.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 4,
     "run": "prod",
     "text_disclosed_cases": [
       "New York v. Belton"
     ],
     "tokens": {
-      "input": 826,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 826
+      "input": 323534,
+      "output": 6211,
+      "source": "codex-events",
+      "total": 329745
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 2.9
+    "verdict_map": {
+      "9f930906d914185d": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "acb94106fc91e05c": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "c94712e2e6980829": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "e50d5458b37720dd": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-0a3c89abaf",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-24ecc4524d",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 131.4
   }
 }

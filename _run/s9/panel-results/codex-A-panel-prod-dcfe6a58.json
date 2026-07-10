@@ -1,13 +1,74 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/United States v. Morton.json",
+    "lens": "A",
+    "notes": "Reviewed all 3 group_inventory rows using only disclosed workspace files. Lens A did not conduct a treatment/currency review.",
+    "reviewed": [
+      {
+        "assertion_id": "540ddeae83c244ee",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "We do not decide if the state judge should have authorized full searches of the phones based on these affidavits.",
+          "locator_note": "pin-op13 / lake pinpoints[0] / content ^pin-op13, slip op. page 13",
+          "needs_cl": false,
+          "problem": "The pin-op13 quote payload/lake pinpoint is not the opinion quote at slip page 13; it is a harvested copy of the rendered page header/background/issue text. The lake record itself marks this pinpoint quote_fidelity as mismatch and has no position.",
+          "proposed_fix": "Replace pin-op13 with the actual slip-page-13 opinion excerpt beginning with the court's two-sentence good-faith/non-decision statement, and store a valid position/page/fragment. Preserve character fidelity, including the smart apostrophe in judge’s if strict quote fidelity is required.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The disclosed cached opinion contains the page-13 passage after the court's separator, not the markdown/header/background text carried in the inventory payload.",
+          "The payload quote is page prose ending before the actual quoted sentence, so it cannot serve as a faithful opinion quote or pinpoint excerpt."
+        ],
+        "residual_risks": [
+          "The visible content-page quote uses straight judge's while the cached opinion uses judge’s; correct this too if character-level fidelity is enforced."
+        ],
+        "suggested_tightening": "Ensure pinpoints[].quote is populated only from the opinion text or verified pinpoint quote, not from rendered content-page text.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "ff5d39c2f5186445",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The quoted language appears in the cached opinion on slip page 16 in the concurrence discussing possible plain-view limits for digital searches.",
+          "The lake pinpoint for pin-op16 carries the same quote and marks quote_fidelity as matched with a validated fragment."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "35221def06364d07",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The treatment payload matches the disclosed lake treatment fields and the content-page frontmatter: good_law, as_of_content 2022-08-23, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note.",
+          "Treatment and currency merits are outside Lens A, so no treatment finding is raised."
+        ],
+        "residual_risks": [
+          "Treatment currency was not independently reviewed under Lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/United States v. Morton.json\",\"reviewed\":[{\"assertion_id\":\"540ddeae83c244ee\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The pin-op13 quote payload/lake pinpoint is not the opinion quote at slip page 13; it is a harvested copy of the rendered page header/background/issue text. The lake record itself marks this pinpoint quote_fidelity as mismatch and has no position.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-op13 with the actual slip-page-13 opinion excerpt beginning with the court's two-sentence good-faith/non-decision statement, and store a valid position/page/fragment. Preserve character fidelity, including the smart apostrophe in judge’s if strict quote fidelity is required.\",\"evidence_quote\":\"We do not decide if the state judge should have authorized full searches of the phones based on these affidavits.\",\"needs_cl\":false,\"locator_note\":\"pin-op13 / lake pinpoints[0] / content ^pin-op13, slip op. page 13\"},\"reasons\":[\"The disclosed cached opinion contains the page-13 passage after the court's separator, not the markdown/header/background text carried in the inventory payload.\",\"The payload quote is page prose ending before the actual quoted sentence, so it cannot serve as a faithful opinion quote or pinpoint excerpt.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The visible content-page quote uses straight judge's while the cached opinion uses judge’s; correct this too if character-level fidelity is enforced.\"],\"suggested_tightening\":\"Ensure pinpoints[].quote is populated only from the opinion text or verified pinpoint quote, not from rendered content-page text.\"},{\"assertion_id\":\"ff5d39c2f5186445\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The quoted language appears in the cached opinion on slip page 16 in the concurrence discussing possible plain-view limits for digital searches.\",\"The lake pinpoint for pin-op16 carries the same quote and marks quote_fidelity as matched with a validated fragment.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"35221def06364d07\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The treatment payload matches the disclosed lake treatment fields and the content-page frontmatter: good_law, as_of_content 2022-08-23, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note.\",\"Treatment and currency merits are outside Lens A, so no treatment finding is raised.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment currency was not independently reviewed under Lens A.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed all 3 group_inventory rows using only disclosed workspace files. Lens A did not conduct a treatment/currency review.\"}",
   "summary": {
-    "at": "2026-07-09T23:05:56-04:00",
-    "attempts": 2,
+    "at": "2026-07-10T16:51:35-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-9eeddb4060"
+    ],
     "group_id": "_overhaul2/lake/cases/United States v. Morton.json",
     "group_total_assertions": 3,
     "lake_only_cases": [],
@@ -16,21 +77,48 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-dcfe6a58.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 3,
     "run": "prod",
     "text_disclosed_cases": [
       "United States v. Morton"
     ],
     "tokens": {
-      "input": 827,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 827
+      "input": 282844,
+      "output": 10311,
+      "source": "codex-events",
+      "total": 293155
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 3.0
+    "verdict_map": {
+      "35221def06364d07": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "540ddeae83c244ee": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "ff5d39c2f5186445": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-9eeddb4060",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 201.1
   }
 }

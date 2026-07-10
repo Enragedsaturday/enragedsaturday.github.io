@@ -1,12 +1,95 @@
 {
-  "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Camara v. Municipal Court.json",
+    "lens": "B",
+    "notes": "Reviewed every group_inventory row under Lens B only; support and quote-fidelity merits were not adjudicated.",
+    "reviewed": [
+      {
+        "assertion_id": "2f38a10b7ceb9d84",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity verifies a non-stub U.S. Supreme Court record for Camara with date_decided 1967-06-05, docket 92, cluster_id 107473, lead_opinion_id 107473, and expected_citation_found true.",
+          "Lake citations select 387 U.S. 523 as the official/display citation and list the same parallel and vendor citations as the inventory payload.",
+          "Currency check: lake treatment gives field_i_validity good_law as of 2026-06-30, has no point_overrides, and discloses no final non-proposed edge making the authority no longer live law."
+        ],
+        "residual_risks": [
+          "Treatment derivation lanes 1 and 2 are flagged audit_needed/cap_hit with proposed negative events; this is residual only because the lake's final judgment field remains good_law and the disclosed edges are proposed/mentioned."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "f63f308b2738abb4",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Lens B does not adjudicate quote support or quote fidelity; this row is recorded for coverage only.",
+          "The record-level currency metadata remains good_law as of 2026-06-30 with no point_overrides.",
+          "No disclosed treatment/progeny edge is tied to pin-534 or limits this point."
+        ],
+        "residual_risks": [
+          "The lake/payload marks quote_fidelity as mismatch, but any quote-fidelity defect belongs to Lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "fd111b2f54df4f87",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Lens B does not adjudicate quote support or quote fidelity; this row is recorded for coverage only.",
+          "The record-level currency metadata remains good_law as of 2026-06-30 with no point_overrides.",
+          "No disclosed treatment/progeny edge is tied to pin-538 or limits this point."
+        ],
+        "residual_risks": [
+          "The lake/payload marks quote_fidelity as mismatch, but any quote-fidelity defect belongs to Lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "b71eb672fd223069",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The inventory treatment payload matches lake.treatment: field_i_validity good_law, as_of_content 1967-06-05, as_of_treatment 2026-06-30, varies_by_point false, and the same scope_note.",
+          "The lake has point_overrides [] and the final treatment judgment is good_law; the disclosed negative-looking edges are proposed and carry field_iii mentioned, so the disclosed record does not establish that Camara itself was superseded, overruled, abrogated, or limited.",
+          "The page's Binding — SCOTUS weight is supported by lake identity fields court U.S. Supreme Court, court_id scotus, and court_level scotus."
+        ],
+        "residual_risks": [
+          "Treatment derivation flags lane1_negative and lane2_top_cited as audit_needed and cap_hit; further citator review would reduce risk, but within the disclosed record the final treatment judgment is good_law."
+        ],
+        "suggested_tightening": "Surface the audit-needed/proposed-edge metadata separately from the legal-status badge, or make clear the badge reflects the final lake judgment as of 2026-06-30.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/Camara v. Municipal Court.json\",\"reviewed\":[{\"assertion_id\":\"2f38a10b7ceb9d84\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity verifies a non-stub U.S. Supreme Court record for Camara with date_decided 1967-06-05, docket 92, cluster_id 107473, lead_opinion_id 107473, and expected_citation_found true.\",\"Lake citations select 387 U.S. 523 as the official/display citation and list the same parallel and vendor citations as the inventory payload.\",\"Currency check: lake treatment gives field_i_validity good_law as of 2026-06-30, has no point_overrides, and discloses no final non-proposed edge making the authority no longer live law.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment derivation lanes 1 and 2 are flagged audit_needed/cap_hit with proposed negative events; this is residual only because the lake's final judgment field remains good_law and the disclosed edges are proposed/mentioned.\"],\"suggested_tightening\":null},{\"assertion_id\":\"f63f308b2738abb4\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lens B does not adjudicate quote support or quote fidelity; this row is recorded for coverage only.\",\"The record-level currency metadata remains good_law as of 2026-06-30 with no point_overrides.\",\"No disclosed treatment/progeny edge is tied to pin-534 or limits this point.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The lake/payload marks quote_fidelity as mismatch, but any quote-fidelity defect belongs to Lens A.\"],\"suggested_tightening\":null},{\"assertion_id\":\"fd111b2f54df4f87\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lens B does not adjudicate quote support or quote fidelity; this row is recorded for coverage only.\",\"The record-level currency metadata remains good_law as of 2026-06-30 with no point_overrides.\",\"No disclosed treatment/progeny edge is tied to pin-538 or limits this point.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The lake/payload marks quote_fidelity as mismatch, but any quote-fidelity defect belongs to Lens A.\"],\"suggested_tightening\":null},{\"assertion_id\":\"b71eb672fd223069\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The inventory treatment payload matches lake.treatment: field_i_validity good_law, as_of_content 1967-06-05, as_of_treatment 2026-06-30, varies_by_point false, and the same scope_note.\",\"The lake has point_overrides [] and the final treatment judgment is good_law; the disclosed negative-looking edges are proposed and carry field_iii mentioned, so the disclosed record does not establish that Camara itself was superseded, overruled, abrogated, or limited.\",\"The page's Binding — SCOTUS weight is supported by lake identity fields court U.S. Supreme Court, court_id scotus, and court_level scotus.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment derivation flags lane1_negative and lane2_top_cited as audit_needed and cap_hit; further citator review would reduce risk, but within the disclosed record the final treatment judgment is good_law.\"],\"suggested_tightening\":\"Surface the audit-needed/proposed-edge metadata separately from the legal-status badge, or make clear the badge reflects the final lake judgment as of 2026-06-30.\"}],\"notes\":\"Reviewed every group_inventory row under Lens B only; support and quote-fidelity merits were not adjudicated.\"}",
   "summary": {
-    "at": "2026-07-09T23:18:15-04:00",
-    "attempts": 2,
-    "clean_attestation": false,
-    "defense_votes": [],
+    "at": "2026-07-10T17:49:19-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-19bf574c52",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-cf8d1313c7",
+        "verdict": "stands"
+      }
+    ],
     "findings_emitted": [],
     "group_id": "_overhaul2/lake/cases/Camara v. Municipal Court.json",
     "group_total_assertions": 4,
@@ -16,21 +99,59 @@
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-232af584.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 4,
     "run": "prod",
     "text_disclosed_cases": [
       "Camara v. Municipal Court"
     ],
     "tokens": {
-      "input": 756,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 756
+      "input": 170432,
+      "output": 7860,
+      "source": "codex-events",
+      "total": 178292
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 3.0
+    "verdict_map": {
+      "2f38a10b7ceb9d84": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "b71eb672fd223069": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "f63f308b2738abb4": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "fd111b2f54df4f87": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-19bf574c52",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-cf8d1313c7",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": 153.2
   }
 }

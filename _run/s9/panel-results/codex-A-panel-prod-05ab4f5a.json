@@ -1,0 +1,124 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/United States v. Bagley.json",
+    "lens": "A",
+    "notes": "Reviewed every assertion_id in group_inventory.jsonl exactly once under Lens A.",
+    "reviewed": [
+      {
+        "assertion_id": "09753ceebdc179f9",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record identifies the case as United States v. Bagley, U.S. Supreme Court, decided 1985-07-02.",
+          "The official citation in the lake record is 473 U.S. 667 and the content page displays 473 U.S. 667 (1985)."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "22c4dd28c3716295",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "The evidence is material only if there is a reasonable probability that, had the evidence been disclosed to the defense, the result of the proceeding would have been different. A “reasonable probability” is a probability sufficient to undermine confidence in the outcome.",
+          "locator_note": "pin-682 in lake pinpoints; opinion passage appears in text at the paragraph containing page marker *682*.",
+          "needs_cl": false,
+          "problem": "The stored pin-682 quote is not the opinion passage at 473 U.S. 682; it is a harvested content-page fragment beginning with the page title and background text, and the lake itself marks quote_fidelity as mismatch.",
+          "proposed_fix": "Replace pin-682 with the actual opinion passage at page 682 and make the quoted text character-faithful to text/United States v. Bagley__6c76f5.txt.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The lake pinpoint quote begins with generated page material: \"--- # United States v. Bagley...\", not with opinion text.",
+          "The cached opinion text contains the rule passage at page 682, but the lake pinpoint quote does not match it."
+        ],
+        "residual_risks": [
+          "The underlying rule proposition is supported, but the pinpoint quote record is unusable until replaced."
+        ],
+        "suggested_tightening": "Anchor ^pin-682 only to the actual rule sentence from the opinion and preserve the opinion’s quotation marks around “reasonable probability” if character fidelity is required.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "67faf8c4f8fda7c9",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Lens A does not audit treatment or currency.",
+          "The treatment payload mirrors the disclosed lake treatment fields: field_i_validity good_law, as_of_content 1985-07-02, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note."
+        ],
+        "residual_risks": [
+          "No substantive treatment review performed under Lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/United States v. Bagley.json\",\"reviewed\":[{\"assertion_id\":\"09753ceebdc179f9\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record identifies the case as United States v. Bagley, U.S. Supreme Court, decided 1985-07-02.\",\"The official citation in the lake record is 473 U.S. 667 and the content page displays 473 U.S. 667 (1985).\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"22c4dd28c3716295\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The stored pin-682 quote is not the opinion passage at 473 U.S. 682; it is a harvested content-page fragment beginning with the page title and background text, and the lake itself marks quote_fidelity as mismatch.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-682 with the actual opinion passage at page 682 and make the quoted text character-faithful to text/United States v. Bagley__6c76f5.txt.\",\"evidence_quote\":\"The evidence is material only if there is a reasonable probability that, had the evidence been disclosed to the defense, the result of the proceeding would have been different. A “reasonable probability” is a probability sufficient to undermine confidence in the outcome.\",\"needs_cl\":false,\"locator_note\":\"pin-682 in lake pinpoints; opinion passage appears in text at the paragraph containing page marker *682*.\"},\"reasons\":[\"The lake pinpoint quote begins with generated page material: \\\"--- # United States v. Bagley...\\\", not with opinion text.\",\"The cached opinion text contains the rule passage at page 682, but the lake pinpoint quote does not match it.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The underlying rule proposition is supported, but the pinpoint quote record is unusable until replaced.\"],\"suggested_tightening\":\"Anchor ^pin-682 only to the actual rule sentence from the opinion and preserve the opinion’s quotation marks around “reasonable probability” if character fidelity is required.\"},{\"assertion_id\":\"67faf8c4f8fda7c9\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lens A does not audit treatment or currency.\",\"The treatment payload mirrors the disclosed lake treatment fields: field_i_validity good_law, as_of_content 1985-07-02, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"No substantive treatment review performed under Lens A.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed every assertion_id in group_inventory.jsonl exactly once under Lens A.\"}",
+  "summary": {
+    "at": "2026-07-10T02:31:16-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-fe42ad2c5a"
+    ],
+    "group_id": "_overhaul2/lake/cases/United States v. Bagley.json",
+    "group_total_assertions": 3,
+    "lake_only_cases": [],
+    "lane": "codex-A",
+    "lane_id": "codex-A-panel-prod-05ab4f5a",
+    "lens": "A",
+    "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-05ab4f5a.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 3,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "United States v. Bagley"
+    ],
+    "tokens": {
+      "input": 162667,
+      "output": 4236,
+      "source": "codex-events",
+      "total": 166903
+    },
+    "verdict_map": {
+      "09753ceebdc179f9": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "22c4dd28c3716295": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "67faf8c4f8fda7c9": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-fe42ad2c5a",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 91.8
+  }
+}

@@ -1,13 +1,104 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "content/cases/Torres v. Madrid.md",
+    "lens": "A",
+    "notes": "Reviewed all five group_inventory.jsonl rows exactly once using only disclosed files.",
+    "reviewed": [
+      {
+        "assertion_id": "59f1c8ba5230b5f7",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity gives case_name Torres v. Madrid, court U.S. Supreme Court, date_decided 2021-03-25, and year 2021.",
+          "Lake citations list official citation 592 U.S. 306, parallel citations 141 S. Ct. 989 and 209 L. Ed. 2d 190, and no vendor-neutral citation."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "27961618e9d90f7e",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "The opinion states the case concerns the seizure of a person and whether physical force that hits but fails to stop the person is a seizure.",
+          "The holding refines seizure-of-the-person doctrine by recognizing a separate force-based seizure rule, and the lake record shows substantial progeny: 104 indexed citing opinions and citation_count 380."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "5dcc5254e565ebdd",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "We hold that the application of physical force to the body of a person with intent to restrain is a seizure even if the person does not submit and is not subdued.",
+          "locator_note": "Cached opinion text at slip opinion conclusion, lines 780-782; objective-intent limitation at lines 481-483.",
+          "needs_cl": false,
+          "problem": "The holding is supported in substance, but it is slightly overbroad because it omits the Court's object/target limitation: the force must be applied to the body of a person. The opinion also frames intent through objective manifestation.",
+          "proposed_fix": "Physical force applied to the body of a person, where the officer's conduct objectively manifests intent to restrain, is a seizure when the force is applied, even if the person does not submit and is not subdued.",
+          "severity": "medium"
+        },
+        "dimension": "support",
+        "reasons": [
+          "The cached opinion text directly supports the core proposition and repeats it in the syllabus, opening, and conclusion.",
+          "The page's phrase 'Physical force applied with intent to restrain' should be narrowed to 'to the body of a person' to avoid overclaiming beyond the holding."
+        ],
+        "residual_risks": [
+          "The lake pinpoints entry for pin-op1 is marked quote_fidelity mismatch, but the cached opinion text verifies the quoted rule at slip op. 1."
+        ],
+        "suggested_tightening": "Add 'to the body of a person' and, if space permits, 'objectively manifests intent to restrain.'",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "5d073f27b766feed",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The authority-weight label follows from the disclosed identity fields: court is U.S. Supreme Court and court_level is scotus.",
+          "Lens A did not audit treatment or currency; the weight label is verified only as a SCOTUS authority label."
+        ],
+        "residual_risks": [
+          "Treatment/currency is outside lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "89873e8d85e09c58",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The asserted treatment fields match the lake treatment record: field_i_validity good_law, as_of_content 2021-03-25, as_of_treatment 2026-06-30, composite_basis migration-seed, composite_basis_ref Torres v. Madrid, varies_by_point false, and the same scope_note.",
+          "No support or quote-fidelity defect is presented by these treatment-field mirrors under lens A."
+        ],
+        "residual_risks": [
+          "Treatment/currency is outside lens A and was not independently audited."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"content/cases/Torres v. Madrid.md\",\"reviewed\":[{\"assertion_id\":\"59f1c8ba5230b5f7\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity gives case_name Torres v. Madrid, court U.S. Supreme Court, date_decided 2021-03-25, and year 2021.\",\"Lake citations list official citation 592 U.S. 306, parallel citations 141 S. Ct. 989 and 209 L. Ed. 2d 190, and no vendor-neutral citation.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"27961618e9d90f7e\",\"dimension\":\"support\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The opinion states the case concerns the seizure of a person and whether physical force that hits but fails to stop the person is a seizure.\",\"The holding refines seizure-of-the-person doctrine by recognizing a separate force-based seizure rule, and the lake record shows substantial progeny: 104 indexed citing opinions and citation_count 380.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"5dcc5254e565ebdd\",\"dimension\":\"support\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The holding is supported in substance, but it is slightly overbroad because it omits the Court's object/target limitation: the force must be applied to the body of a person. The opinion also frames intent through objective manifestation.\",\"severity\":\"medium\",\"proposed_fix\":\"Physical force applied to the body of a person, where the officer's conduct objectively manifests intent to restrain, is a seizure when the force is applied, even if the person does not submit and is not subdued.\",\"evidence_quote\":\"We hold that the application of physical force to the body of a person with intent to restrain is a seizure even if the person does not submit and is not subdued.\",\"needs_cl\":false,\"locator_note\":\"Cached opinion text at slip opinion conclusion, lines 780-782; objective-intent limitation at lines 481-483.\"},\"reasons\":[\"The cached opinion text directly supports the core proposition and repeats it in the syllabus, opening, and conclusion.\",\"The page's phrase 'Physical force applied with intent to restrain' should be narrowed to 'to the body of a person' to avoid overclaiming beyond the holding.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The lake pinpoints entry for pin-op1 is marked quote_fidelity mismatch, but the cached opinion text verifies the quoted rule at slip op. 1.\"],\"suggested_tightening\":\"Add 'to the body of a person' and, if space permits, 'objectively manifests intent to restrain.'\"},{\"assertion_id\":\"5d073f27b766feed\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The authority-weight label follows from the disclosed identity fields: court is U.S. Supreme Court and court_level is scotus.\",\"Lens A did not audit treatment or currency; the weight label is verified only as a SCOTUS authority label.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment/currency is outside lens A.\"],\"suggested_tightening\":null},{\"assertion_id\":\"89873e8d85e09c58\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The asserted treatment fields match the lake treatment record: field_i_validity good_law, as_of_content 2021-03-25, as_of_treatment 2026-06-30, composite_basis migration-seed, composite_basis_ref Torres v. Madrid, varies_by_point false, and the same scope_note.\",\"No support or quote-fidelity defect is presented by these treatment-field mirrors under lens A.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment/currency is outside lens A and was not independently audited.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed all five group_inventory.jsonl rows exactly once using only disclosed files.\"}",
   "summary": {
-    "at": "2026-07-09T23:12:28-04:00",
-    "attempts": 2,
+    "at": "2026-07-10T17:08:12-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-67bdd41794"
+    ],
     "group_id": "content/cases/Torres v. Madrid.md",
     "group_total_assertions": 5,
     "lake_only_cases": [],
@@ -16,21 +107,62 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-9170c566.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 5,
     "run": "prod",
     "text_disclosed_cases": [
       "Torres v. Madrid"
     ],
     "tokens": {
-      "input": 823,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 823
+      "input": 165703,
+      "output": 6572,
+      "source": "codex-events",
+      "total": 172275
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 2.6
+    "verdict_map": {
+      "27961618e9d90f7e": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "59f1c8ba5230b5f7": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "5d073f27b766feed": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "5dcc5254e565ebdd": {
+        "dimension": "support",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "89873e8d85e09c58": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-67bdd41794",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 130.9
   }
 }

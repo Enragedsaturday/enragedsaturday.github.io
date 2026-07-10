@@ -1,11 +1,105 @@
 {
-  "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "group_id": "content/cases/District of Columbia v. R.W..md",
+    "lens": "A",
+    "notes": "Treatment rows were recorded against disclosed fields only; no Lens B treatment/currency finding is made.",
+    "reviewed": [
+      {
+        "assertion_id": "fa6fca0632438e2e",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "\"official\": null",
+          "locator_note": "citation field; lake.citations.official/display/slip_only",
+          "needs_cl": false,
+          "problem": "The case identity, docket, court, year, and slip-only posture are supported, but the assertion marks official_citation_present=true even though the lake record has no official/display citation and marks the case slip-only.",
+          "proposed_fix": "Keep the slip-only citation, but set official_citation_present=false until an official citation is assigned.",
+          "severity": "medium"
+        },
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity lists case_name District of Columbia v. R.W., court scotus, year 2026, and docket 25-248.",
+          "The cached opinion caption states SUPREME COURT OF THE UNITED STATES, DISTRICT OF COLUMBIA v. R.W., No. 25–248, Decided April 20, 2026.",
+          "Lake citations show official/display citation absent and slip_only true, so the official-citation flag is not accurate as framed."
+        ],
+        "residual_risks": [
+          "No U.S. Reports page citation is assigned in the disclosed lake record."
+        ],
+        "suggested_tightening": "Use a slip-only label and do not mark an official citation present.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "ca16e86ce8262f27",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "The opinion expressly concerns an investigatory stop and whether Officer Vanterpool had reasonable suspicion before ordering R.W. to put his hands up.",
+          "The opinion states the Fourth Amendment standard for brief investigatory stops and reasonable suspicion, fitting the Terry Stops and Reasonable Suspicion home.",
+          "The opinion was decided April 20, 2026, and the lake/content provenance is from July 2026, supporting the Recent development role within the disclosed corpus."
+        ],
+        "residual_risks": [
+          "Recent is time-relative, but it is supported by the disclosed 2026 decision and 2026 corpus dates."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "dd5acf59ec06c912",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "The text says reasonable suspicion requires looking at the totality of the circumstances and precludes the evaluation and rejection of factors in isolation from each other.",
+          "The stated facts are supported: a suspicious-vehicle dispatch around 2:00 a.m., two people immediately fleeing from the car, and R.W. backing out with the rear door still open.",
+          "The opinion states Officer Vanterpool clearly had reasonable suspicion to stop R.W. and that the judgment of the District of Columbia Court of Appeals is reversed."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "For maximum quote fidelity, replace the paraphrase 'the instant he arrived' with 'immediately' or 'upon his arrival.'",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "80f06051266d4eb5",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Lens A does not assess treatment or currency.",
+          "As an authority-weight label, the SCOTUS component is supported by the lake identity court and court_level fields and the opinion caption."
+        ],
+        "residual_risks": [
+          "No good-law or subsequent-treatment conclusion is made under Lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "cc6367d14bff7fe7",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Lens A records but does not adjudicate treatment/currency.",
+          "The asserted treatment fields match the lake treatment record: field_i_validity unverified, as_of_content null, as_of_treatment null, composite_basis unverified, composite_basis_ref null, varies_by_point false, and the same scope note."
+        ],
+        "residual_risks": [
+          "Treatment/progeny verification remains for Lens B or later corpus promotion."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"content/cases/District of Columbia v. R.W..md\",\"reviewed\":[{\"assertion_id\":\"fa6fca0632438e2e\",\"dimension\":\"existence\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The case identity, docket, court, year, and slip-only posture are supported, but the assertion marks official_citation_present=true even though the lake record has no official/display citation and marks the case slip-only.\",\"severity\":\"medium\",\"proposed_fix\":\"Keep the slip-only citation, but set official_citation_present=false until an official citation is assigned.\",\"evidence_quote\":\"\\\"official\\\": null\",\"needs_cl\":false,\"locator_note\":\"citation field; lake.citations.official/display/slip_only\"},\"reasons\":[\"Lake identity lists case_name District of Columbia v. R.W., court scotus, year 2026, and docket 25-248.\",\"The cached opinion caption states SUPREME COURT OF THE UNITED STATES, DISTRICT OF COLUMBIA v. R.W., No. 25–248, Decided April 20, 2026.\",\"Lake citations show official/display citation absent and slip_only true, so the official-citation flag is not accurate as framed.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"No U.S. Reports page citation is assigned in the disclosed lake record.\"],\"suggested_tightening\":\"Use a slip-only label and do not mark an official citation present.\"},{\"assertion_id\":\"ca16e86ce8262f27\",\"dimension\":\"support\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The opinion expressly concerns an investigatory stop and whether Officer Vanterpool had reasonable suspicion before ordering R.W. to put his hands up.\",\"The opinion states the Fourth Amendment standard for brief investigatory stops and reasonable suspicion, fitting the Terry Stops and Reasonable Suspicion home.\",\"The opinion was decided April 20, 2026, and the lake/content provenance is from July 2026, supporting the Recent development role within the disclosed corpus.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Recent is time-relative, but it is supported by the disclosed 2026 decision and 2026 corpus dates.\"],\"suggested_tightening\":null},{\"assertion_id\":\"dd5acf59ec06c912\",\"dimension\":\"support\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The text says reasonable suspicion requires looking at the totality of the circumstances and precludes the evaluation and rejection of factors in isolation from each other.\",\"The stated facts are supported: a suspicious-vehicle dispatch around 2:00 a.m., two people immediately fleeing from the car, and R.W. backing out with the rear door still open.\",\"The opinion states Officer Vanterpool clearly had reasonable suspicion to stop R.W. and that the judgment of the District of Columbia Court of Appeals is reversed.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":\"For maximum quote fidelity, replace the paraphrase 'the instant he arrived' with 'immediately' or 'upon his arrival.'\"},{\"assertion_id\":\"80f06051266d4eb5\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lens A does not assess treatment or currency.\",\"As an authority-weight label, the SCOTUS component is supported by the lake identity court and court_level fields and the opinion caption.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"No good-law or subsequent-treatment conclusion is made under Lens A.\"],\"suggested_tightening\":null},{\"assertion_id\":\"cc6367d14bff7fe7\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lens A records but does not adjudicate treatment/currency.\",\"The asserted treatment fields match the lake treatment record: field_i_validity unverified, as_of_content null, as_of_treatment null, composite_basis unverified, composite_basis_ref null, varies_by_point false, and the same scope note.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment/progeny verification remains for Lens B or later corpus promotion.\"],\"suggested_tightening\":null}],\"notes\":\"Treatment rows were recorded against disclosed fields only; no Lens B treatment/currency finding is made.\"}",
   "summary": {
-    "at": "2026-07-09T23:10:33-04:00",
-    "attempts": 2,
-    "clean_attestation": false,
+    "at": "2026-07-10T16:57:28-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
     "defense_votes": [],
     "findings_emitted": [],
     "group_id": "content/cases/District of Columbia v. R.W..md",
@@ -16,21 +110,62 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-c7cf58dc.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 5,
     "run": "prod",
     "text_disclosed_cases": [
       "District of Columbia v. R.W."
     ],
     "tokens": {
-      "input": 826,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 826
+      "input": 232822,
+      "output": 8228,
+      "source": "codex-events",
+      "total": 241050
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 4.8
+    "verdict_map": {
+      "80f06051266d4eb5": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "ca16e86ce8262f27": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "cc6367d14bff7fe7": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "dd5acf59ec06c912": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "fa6fca0632438e2e": {
+        "dimension": "existence",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-a6ee1850ad",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 168.0
   }
 }

@@ -1,11 +1,47 @@
 {
-  "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/United States v. Payne.json",
+    "lens": "A",
+    "notes": "group_inventory.jsonl contains only existence and treatment rows; no support, quote_fidelity, pincite, or black_letter rows were present for Lens A review.",
+    "reviewed": [
+      {
+        "assertion_id": "7e7c4710b2ae5eec",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity confirms the record is United States v. Payne / United States v. Jeremy Payne with canonical_name_match=true and expected_citation_found=true.",
+          "Lake citations.official is exactly 99 F.4th 495, and lake identity gives court 9th Cir. 2024 and year 2024."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "28278bc60338c485",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment currency is outside Lens A's charter, so no treatment finding is raised.",
+          "The treatment assertion matches the disclosed lake/content fields: field_i_validity is unverified, as_of_content and as_of_treatment are null, varies_by_point is false, and the scope note says treatment/progeny are intentionally not derived until S6 promotion."
+        ],
+        "residual_risks": [
+          "No treatment/currency merits review performed under Lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/United States v. Payne.json\",\"reviewed\":[{\"assertion_id\":\"7e7c4710b2ae5eec\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity confirms the record is United States v. Payne / United States v. Jeremy Payne with canonical_name_match=true and expected_citation_found=true.\",\"Lake citations.official is exactly 99 F.4th 495, and lake identity gives court 9th Cir. 2024 and year 2024.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"28278bc60338c485\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment currency is outside Lens A's charter, so no treatment finding is raised.\",\"The treatment assertion matches the disclosed lake/content fields: field_i_validity is unverified, as_of_content and as_of_treatment are null, varies_by_point is false, and the scope note says treatment/progeny are intentionally not derived until S6 promotion.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"No treatment/currency merits review performed under Lens A.\"],\"suggested_tightening\":null}],\"notes\":\"group_inventory.jsonl contains only existence and treatment rows; no support, quote_fidelity, pincite, or black_letter rows were present for Lens A review.\"}",
   "summary": {
-    "at": "2026-07-09T23:06:35-04:00",
-    "attempts": 2,
-    "clean_attestation": false,
+    "at": "2026-07-10T16:49:01-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
     "defense_votes": [],
     "findings_emitted": [],
     "group_id": "_overhaul2/lake/cases/United States v. Payne.json",
@@ -18,21 +54,36 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-317aea21.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [
       "case 'United States v. Payne' has no lead_opinion_id (text undisclosed)"
     ],
-    "reviewed_count": 0,
+    "reviewed_count": 2,
     "run": "prod",
     "text_disclosed_cases": [],
     "tokens": {
-      "input": 827,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 827
+      "input": 57818,
+      "output": 2134,
+      "source": "codex-events",
+      "total": 59952
     },
-    "verdict_map": {},
+    "verdict_map": {
+      "28278bc60338c485": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "7e7c4710b2ae5eec": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
     "votes_emitted": [],
-    "wall_clock_s": 2.8
+    "wall_clock_s": 47.1
   }
 }

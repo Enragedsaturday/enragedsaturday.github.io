@@ -1,11 +1,48 @@
 {
-  "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/United States v. Wilson.json",
+    "lens": "A",
+    "notes": "",
+    "reviewed": [
+      {
+        "assertion_id": "7c7c37c439f31331",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record identity is for United States v. Luke Wilson, with input_case_name United States v. Wilson and canonical_name_match true.",
+          "The official citation in the lake record is exactly 13 F.4th 961, with volume 13, reporter F.4th, and page 961.",
+          "The lake identity fields show court 9th Cir. and year 2021, matching the built page metadata."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "438f18cf14a4f2ba",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The asserted treatment fields match the disclosed lake treatment record: field_i_validity is unverified, as_of_content and as_of_treatment are null, varies_by_point is false, and the scope note matches.",
+          "Lens A does not evaluate treatment or currency merits, so no treatment finding is raised."
+        ],
+        "residual_risks": [
+          "Treatment/currency remains outside this lens and should be reviewed by lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"A\",\n  \"group_id\": \"_overhaul2/lake/cases/United States v. Wilson.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"7c7c37c439f31331\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake record identity is for United States v. Luke Wilson, with input_case_name United States v. Wilson and canonical_name_match true.\",\n        \"The official citation in the lake record is exactly 13 F.4th 961, with volume 13, reporter F.4th, and page 961.\",\n        \"The lake identity fields show court 9th Cir. and year 2021, matching the built page metadata.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"438f18cf14a4f2ba\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The asserted treatment fields match the disclosed lake treatment record: field_i_validity is unverified, as_of_content and as_of_treatment are null, varies_by_point is false, and the scope note matches.\",\n        \"Lens A does not evaluate treatment or currency merits, so no treatment finding is raised.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Treatment/currency remains outside this lens and should be reviewed by lens B.\"\n      ],\n      \"suggested_tightening\": null\n    }\n  ],\n  \"notes\": \"\"\n}",
   "summary": {
-    "at": "2026-07-09T23:08:22-04:00",
-    "attempts": 2,
-    "clean_attestation": false,
+    "at": "2026-07-10T16:50:14-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
     "defense_votes": [],
     "findings_emitted": [],
     "group_id": "_overhaul2/lake/cases/United States v. Wilson.json",
@@ -18,21 +55,36 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-19cf8083.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [
       "case 'United States v. Wilson' has no lead_opinion_id (text undisclosed)"
     ],
-    "reviewed_count": 0,
+    "reviewed_count": 2,
     "run": "prod",
     "text_disclosed_cases": [],
     "tokens": {
-      "input": 827,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 827
+      "input": 78315,
+      "output": 1726,
+      "source": "codex-events",
+      "total": 80041
     },
-    "verdict_map": {},
+    "verdict_map": {
+      "438f18cf14a4f2ba": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "7c7c37c439f31331": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
     "votes_emitted": [],
-    "wall_clock_s": 3.2
+    "wall_clock_s": 42.9
   }
 }

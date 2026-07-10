@@ -1,13 +1,98 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Wolf v. Colorado.json",
+    "lens": "B",
+    "notes": "Lens B only; quote-fidelity rows were not substantively evaluated.",
+    "reviewed": [
+      {
+        "assertion_id": "6df33aea3c9e3644",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The disclosed lake record is verified and identifies Wolf v. Colorado with official citation 338 U.S. 25, decided 1949-06-27 by the U.S. Supreme Court.",
+          "The record and page do not present Wolf as fully live current law; the treatment fields separately flag superseded/overruled-on-remedy status."
+        ],
+        "residual_risks": [
+          "Currency is only as strong as the disclosed lake treatment audit dated 2026-06-30."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "8f8e97341488af46",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Lens B does not adjudicate quote fidelity.",
+          "From the currency/treatment angle, the page and lake disclose that the quoted remedy holding was overruled by Mapp v. Ohio rather than treating it as current law."
+        ],
+        "residual_risks": [
+          "Lens A should separately verify quote and pinpoint fidelity."
+        ],
+        "suggested_tightening": "Keep the overruled-by-Mapp treatment note adjacent to this remedy quote.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "d258a00b10f0ee45",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Lens B does not raise support or quote-fidelity findings.",
+          "The quoted harvested material itself includes historical/overruled treatment language, and the lake treatment note distinguishes the overruled remedy holding from the surviving incorporation holding."
+        ],
+        "residual_risks": [
+          "Lens A should separately address the disclosed quote_fidelity mismatch and slip-only status."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "8196867a9a012434",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Wolf's holding that the Fourteenth Amendment does not require the exclusionary rule of the States was overruled on that remedy point by Mapp v. Ohio (1961). Wolf's separate holding incorporating the Fourth Amendment's core against the States survived and was reaffirmed in Mapp.",
+          "locator_note": "lake/Wolf v. Colorado__a8b65b.json treatment.scope_note and treatment.varies_by_point",
+          "needs_cl": false,
+          "problem": "The overall treatment call is directionally right, but the asserted varies_by_point=false is too blunt because the disclosed scope note itself says one Wolf holding was overruled while a separate holding survived.",
+          "proposed_fix": "Set varies_by_point to true and add point-level treatment overrides, or otherwise remove the false implication that Wolf has a single undifferentiated treatment posture.",
+          "severity": "medium"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "The lake treatment field_i_validity is superseded as of 2026-06-30, and the treatment edges include Mapp v. Ohio with field_ii overruled.",
+          "The page's visible treatment also says overruled on the remedy holding by Mapp and explains that the incorporation holding survived.",
+          "The disclosed record therefore supports a point-specific treatment, not varies_by_point=false."
+        ],
+        "residual_risks": [
+          "The disclosed treatment derivation shows capped/audit-needed searches, so this review relies on the lake judgment fields rather than a fresh current-law search."
+        ],
+        "suggested_tightening": "Use a composite label such as historical/overruled-on-remedy, with structured point overrides for remedy and incorporation.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/Wolf v. Colorado.json\",\"reviewed\":[{\"assertion_id\":\"6df33aea3c9e3644\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The disclosed lake record is verified and identifies Wolf v. Colorado with official citation 338 U.S. 25, decided 1949-06-27 by the U.S. Supreme Court.\",\"The record and page do not present Wolf as fully live current law; the treatment fields separately flag superseded/overruled-on-remedy status.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Currency is only as strong as the disclosed lake treatment audit dated 2026-06-30.\"],\"suggested_tightening\":null},{\"assertion_id\":\"8f8e97341488af46\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lens B does not adjudicate quote fidelity.\",\"From the currency/treatment angle, the page and lake disclose that the quoted remedy holding was overruled by Mapp v. Ohio rather than treating it as current law.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Lens A should separately verify quote and pinpoint fidelity.\"],\"suggested_tightening\":\"Keep the overruled-by-Mapp treatment note adjacent to this remedy quote.\"},{\"assertion_id\":\"d258a00b10f0ee45\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lens B does not raise support or quote-fidelity findings.\",\"The quoted harvested material itself includes historical/overruled treatment language, and the lake treatment note distinguishes the overruled remedy holding from the surviving incorporation holding.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Lens A should separately address the disclosed quote_fidelity mismatch and slip-only status.\"],\"suggested_tightening\":null},{\"assertion_id\":\"8196867a9a012434\",\"dimension\":\"treatment\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The overall treatment call is directionally right, but the asserted varies_by_point=false is too blunt because the disclosed scope note itself says one Wolf holding was overruled while a separate holding survived.\",\"severity\":\"medium\",\"proposed_fix\":\"Set varies_by_point to true and add point-level treatment overrides, or otherwise remove the false implication that Wolf has a single undifferentiated treatment posture.\",\"evidence_quote\":\"Wolf's holding that the Fourteenth Amendment does not require the exclusionary rule of the States was overruled on that remedy point by Mapp v. Ohio (1961). Wolf's separate holding incorporating the Fourth Amendment's core against the States survived and was reaffirmed in Mapp.\",\"needs_cl\":false,\"locator_note\":\"lake/Wolf v. Colorado__a8b65b.json treatment.scope_note and treatment.varies_by_point\"},\"reasons\":[\"The lake treatment field_i_validity is superseded as of 2026-06-30, and the treatment edges include Mapp v. Ohio with field_ii overruled.\",\"The page's visible treatment also says overruled on the remedy holding by Mapp and explains that the incorporation holding survived.\",\"The disclosed record therefore supports a point-specific treatment, not varies_by_point=false.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The disclosed treatment derivation shows capped/audit-needed searches, so this review relies on the lake judgment fields rather than a fresh current-law search.\"],\"suggested_tightening\":\"Use a composite label such as historical/overruled-on-remedy, with structured point overrides for remedy and incorporation.\"}],\"notes\":\"Lens B only; quote-fidelity rows were not substantively evaluated.\"}",
   "summary": {
-    "at": "2026-07-09T23:15:30-04:00",
-    "attempts": 2,
+    "at": "2026-07-10T17:29:48-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "defense_votes": [],
-    "findings_emitted": [],
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-3305e629bc",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-d410a3ad72"
+    ],
     "group_id": "_overhaul2/lake/cases/Wolf v. Colorado.json",
     "group_total_assertions": 4,
     "lake_only_cases": [],
@@ -16,21 +101,59 @@
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-45d6eba1.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 4,
     "run": "prod",
     "text_disclosed_cases": [
       "Wolf v. Colorado"
     ],
     "tokens": {
-      "input": 753,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 753
+      "input": 344709,
+      "output": 7152,
+      "source": "codex-events",
+      "total": 351861
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 2.9
+    "verdict_map": {
+      "6df33aea3c9e3644": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "8196867a9a012434": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "8f8e97341488af46": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "d258a00b10f0ee45": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-3305e629bc",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-d410a3ad72",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 142.7
   }
 }

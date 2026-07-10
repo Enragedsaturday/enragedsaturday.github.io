@@ -1,0 +1,149 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Arizona v. Evans.json",
+    "lens": "A",
+    "notes": "No black_letter rows were present in group_inventory.jsonl. No Lens B treatment/currency review was performed.",
+    "reviewed": [
+      {
+        "assertion_id": "3d57f302e0c5522a",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity record is Arizona v. Evans, U.S. Supreme Court, decided 1995-03-01.",
+          "Official citation in lake is 514 U.S. 1 and content page displays 514 U.S. 1 (1995).",
+          "Parallel and vendor citations in the inventory match the lake citation fields."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "94a7b86adf53d3cd",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The quoted phrase appears verbatim in text/Arizona v. Evans__6e81b2.txt.",
+          "Lake pin-16 carries the same quote, quote_fidelity matched, and star_marker 15."
+        ],
+        "residual_risks": [
+          "Content cites Id. at 16 for a sentence containing both a page-15 quote and a page-16 quote; a separate pincite row would be cleaner."
+        ],
+        "suggested_tightening": "Split the page-15 court-clerks quote from the page-16 categorical-exception quote if this pin is used for both passages.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "ae41d4c3ed91c1d7",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "the exclusionary rule was historically designed as a means of deterring police misconduct, not mistakes by court employees.",
+          "locator_note": "text/Arizona v. Evans__6e81b2.txt line 32 contains the intended opinion sentence; lake pin-14 currently contains content_page prose and quote_fidelity=mismatch.",
+          "needs_cl": false,
+          "problem": "pin-14 is not a faithful opinion-text quote; the lake pinpoint quote is generated content-page prose/front matter and is marked mismatch with no star marker.",
+          "proposed_fix": "Replace pin-14 with the actual opinion passage supporting the Rule quote and verify the page/star marker, likely 514 U.S. at 14.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload quote begins with generated page text, not the Supreme Court opinion text.",
+          "Lake pin-14 itself reports quote_fidelity mismatch and pinpoint_status slip-only.",
+          "The actual Rule quote is present in the opinion text, but it is not what pin-14 stores."
+        ],
+        "residual_risks": [
+          "The underlying content-page Rule quote appears supportable; the defect is the broken pinpoint extraction, not necessarily the legal proposition."
+        ],
+        "suggested_tightening": "Regenerate pin-14 from the opinion text, not from content_page.md.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "ec1cf964551d5076",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment payload matches the disclosed lake treatment fields and content front matter.",
+          "Lens A does not assess treatment or currency, so no treatment finding is raised."
+        ],
+        "residual_risks": [
+          "Treatment/currency remains for Lens B, including any implications of progeny edges."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Arizona v. Evans.json\",\"reviewed\":[{\"assertion_id\":\"3d57f302e0c5522a\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity record is Arizona v. Evans, U.S. Supreme Court, decided 1995-03-01.\",\"Official citation in lake is 514 U.S. 1 and content page displays 514 U.S. 1 (1995).\",\"Parallel and vendor citations in the inventory match the lake citation fields.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"94a7b86adf53d3cd\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The quoted phrase appears verbatim in text/Arizona v. Evans__6e81b2.txt.\",\"Lake pin-16 carries the same quote, quote_fidelity matched, and star_marker 15.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Content cites Id. at 16 for a sentence containing both a page-15 quote and a page-16 quote; a separate pincite row would be cleaner.\"],\"suggested_tightening\":\"Split the page-15 court-clerks quote from the page-16 categorical-exception quote if this pin is used for both passages.\"},{\"assertion_id\":\"ae41d4c3ed91c1d7\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"pin-14 is not a faithful opinion-text quote; the lake pinpoint quote is generated content-page prose/front matter and is marked mismatch with no star marker.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-14 with the actual opinion passage supporting the Rule quote and verify the page/star marker, likely 514 U.S. at 14.\",\"evidence_quote\":\"the exclusionary rule was historically designed as a means of deterring police misconduct, not mistakes by court employees.\",\"needs_cl\":false,\"locator_note\":\"text/Arizona v. Evans__6e81b2.txt line 32 contains the intended opinion sentence; lake pin-14 currently contains content_page prose and quote_fidelity=mismatch.\"},\"reasons\":[\"The payload quote begins with generated page text, not the Supreme Court opinion text.\",\"Lake pin-14 itself reports quote_fidelity mismatch and pinpoint_status slip-only.\",\"The actual Rule quote is present in the opinion text, but it is not what pin-14 stores.\"],\"breaks_true_positives\":true,\"residual_risks\":[\"The underlying content-page Rule quote appears supportable; the defect is the broken pinpoint extraction, not necessarily the legal proposition.\"],\"suggested_tightening\":\"Regenerate pin-14 from the opinion text, not from content_page.md.\"},{\"assertion_id\":\"ec1cf964551d5076\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment payload matches the disclosed lake treatment fields and content front matter.\",\"Lens A does not assess treatment or currency, so no treatment finding is raised.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment/currency remains for Lens B, including any implications of progeny edges.\"],\"suggested_tightening\":null}],\"notes\":\"No black_letter rows were present in group_inventory.jsonl. No Lens B treatment/currency review was performed.\"}",
+  "summary": {
+    "at": "2026-07-10T18:21:56-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-4510a2fef5"
+    ],
+    "group_id": "_overhaul2/lake/cases/Arizona v. Evans.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "codex-A",
+    "lane_id": "codex-A-panel-prod-dd11310f",
+    "lens": "A",
+    "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-dd11310f.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Arizona v. Evans"
+    ],
+    "tokens": {
+      "input": 250242,
+      "output": 8320,
+      "source": "codex-events",
+      "total": 258562
+    },
+    "verdict_map": {
+      "3d57f302e0c5522a": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "94a7b86adf53d3cd": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "ae41d4c3ed91c1d7": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "ec1cf964551d5076": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-4510a2fef5",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 164.8
+  }
+}

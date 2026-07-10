@@ -1,12 +1,88 @@
 {
-  "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/United States v. Agurs.json",
+    "lens": "B",
+    "notes": "Reviewed all 4 group_inventory rows under Lens B only; no support or quote-fidelity finding is made.",
+    "reviewed": [
+      {
+        "assertion_id": "84bab3d156b9e980",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record is verified and identifies United States v. Agurs as a U.S. Supreme Court case decided 1976-06-24 with official citation 427 U.S. 97.",
+          "The disclosed treatment fields do not mark the authority as dead law; they mark it caution/limited by point and describe a surviving core duty."
+        ],
+        "residual_risks": [
+          "The treatment derivation flags audit_needed/cap_hit for some negative-edge searches, but the disclosed judgment fields still classify the case as caution rather than overruled."
+        ],
+        "suggested_tightening": "Keep the limited/caution treatment context with any citation to Agurs.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "98e168317d8f568f",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Lens B only: this quote-fidelity row presents no independent treatment/currency defect.",
+          "The page and lake treatment fields identify Agurs as limited/caution as of 2026-06-30, and the page separately states the Bagley limitation on the no-request materiality formula."
+        ],
+        "residual_risks": [
+          "If this quote is reused outside the page, it could overstate current law unless the Bagley limitation travels with it."
+        ],
+        "suggested_tightening": "Where reused, label the quoted formula as the Agurs-era no-request materiality formulation later unified by Bagley.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "fabaedc07c8f6314",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Lens B only: quote-fidelity mismatch/slip-only status is not a treatment/currency defect for this panel.",
+          "The excerpt itself includes Treatment: limited and says the standard was later limited by United States v. Bagley, which matches the lake treatment judgment."
+        ],
+        "residual_risks": [
+          "Quote-fidelity and slip-only issues remain for Lens A, not this currency/treatment review."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "3aab2c1c48a76740",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The payload matches the lake treatment fields: field_i_validity caution, as_of_content 1976-06-24, as_of_treatment 2026-06-30, varies_by_point true, and the same scope note.",
+          "The point override identifies United States v. Bagley, 473 U.S. 667, as limiting Agurs; the page's limited status is consistent with that disclosed treatment judgment.",
+          "Raw progeny edges include stronger proposed labels, but they are point-null/proposed and are not consolidated by the lake judgment fields into overruled, abrogated, or dead-law status."
+        ],
+        "residual_risks": [
+          "The lake derivation reports audit_needed and cap_hit in some lanes; a future treatment audit could change the classification, but the disclosed judgment fields support the current label."
+        ],
+        "suggested_tightening": "Optionally surface the point override's provisional status where the UI distinguishes audited treatment from migration-seed treatment.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/United States v. Agurs.json\",\"reviewed\":[{\"assertion_id\":\"84bab3d156b9e980\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record is verified and identifies United States v. Agurs as a U.S. Supreme Court case decided 1976-06-24 with official citation 427 U.S. 97.\",\"The disclosed treatment fields do not mark the authority as dead law; they mark it caution/limited by point and describe a surviving core duty.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The treatment derivation flags audit_needed/cap_hit for some negative-edge searches, but the disclosed judgment fields still classify the case as caution rather than overruled.\"],\"suggested_tightening\":\"Keep the limited/caution treatment context with any citation to Agurs.\"},{\"assertion_id\":\"98e168317d8f568f\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lens B only: this quote-fidelity row presents no independent treatment/currency defect.\",\"The page and lake treatment fields identify Agurs as limited/caution as of 2026-06-30, and the page separately states the Bagley limitation on the no-request materiality formula.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"If this quote is reused outside the page, it could overstate current law unless the Bagley limitation travels with it.\"],\"suggested_tightening\":\"Where reused, label the quoted formula as the Agurs-era no-request materiality formulation later unified by Bagley.\"},{\"assertion_id\":\"fabaedc07c8f6314\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lens B only: quote-fidelity mismatch/slip-only status is not a treatment/currency defect for this panel.\",\"The excerpt itself includes Treatment: limited and says the standard was later limited by United States v. Bagley, which matches the lake treatment judgment.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Quote-fidelity and slip-only issues remain for Lens A, not this currency/treatment review.\"],\"suggested_tightening\":null},{\"assertion_id\":\"3aab2c1c48a76740\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The payload matches the lake treatment fields: field_i_validity caution, as_of_content 1976-06-24, as_of_treatment 2026-06-30, varies_by_point true, and the same scope note.\",\"The point override identifies United States v. Bagley, 473 U.S. 667, as limiting Agurs; the page's limited status is consistent with that disclosed treatment judgment.\",\"Raw progeny edges include stronger proposed labels, but they are point-null/proposed and are not consolidated by the lake judgment fields into overruled, abrogated, or dead-law status.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The lake derivation reports audit_needed and cap_hit in some lanes; a future treatment audit could change the classification, but the disclosed judgment fields support the current label.\"],\"suggested_tightening\":\"Optionally surface the point override's provisional status where the UI distinguishes audited treatment from migration-seed treatment.\"}],\"notes\":\"Reviewed all 4 group_inventory rows under Lens B only; no support or quote-fidelity finding is made.\"}",
   "summary": {
-    "at": "2026-07-09T23:15:32-04:00",
-    "attempts": 2,
-    "clean_attestation": false,
-    "defense_votes": [],
+    "at": "2026-07-10T17:28:01-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-ff655ddce8",
+        "verdict": "stands"
+      }
+    ],
     "findings_emitted": [],
     "group_id": "_overhaul2/lake/cases/United States v. Agurs.json",
     "group_total_assertions": 4,
@@ -16,21 +92,55 @@
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-91e9b8df.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 4,
     "run": "prod",
     "text_disclosed_cases": [
       "United States v. Agurs"
     ],
     "tokens": {
-      "input": 755,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 755
+      "input": 257585,
+      "output": 7242,
+      "source": "codex-events",
+      "total": 264827
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 6.8
+    "verdict_map": {
+      "3aab2c1c48a76740": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "84bab3d156b9e980": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "98e168317d8f568f": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "fabaedc07c8f6314": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-ff655ddce8",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": 141.6
   }
 }

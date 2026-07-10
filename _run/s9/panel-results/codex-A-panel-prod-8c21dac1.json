@@ -1,0 +1,285 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "content/cases/Hester v. United States.md",
+    "lens": "A",
+    "notes": "No standalone quote_fidelity, pincite, or black_letter assertion rows were present in group_inventory; treatment/currency was not audited under Lens A.",
+    "reviewed": [
+      {
+        "assertion_id": "15fb128b6d39b31c",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity is verified for Hester v. United States, U.S. Supreme Court, decided 1924-05-05.",
+          "Lake citation fields match the payload: official 265 U.S. 57; parallels 44 S. Ct. 445 and 68 L. Ed. 898; vendor citation 1924 U.S. LEXIS 2577."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "27cd21266e6d5829",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "The opinion states that Fourth Amendment protection is not extended to open fields.",
+          "The disclosed lake record shows substantial progeny for the case, supporting a key/anchor role for Open Fields."
+        ],
+        "residual_risks": [
+          "The lake has no separate home_roles field; support is inferred from the opinion text and progeny metadata."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "7a3b4b4e2e86e242",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "the special protection accorded by the Fourth Amendment to the people in their “ persons, houses, papers, and effects,” is not extended to the open fields.",
+          "locator_note": "holding field",
+          "needs_cl": true,
+          "problem": "The substantive open-fields and abandonment rules are supported, but the phrase 'Origin of the open-fields doctrine' is not independently verifiable from the disclosed files.",
+          "proposed_fix": "Remove 'Origin of the open-fields doctrine —' or qualify it as 'Hester states the open-fields rule...' unless broader corpus evidence is supplied.",
+          "severity": "low"
+        },
+        "dimension": "support",
+        "reasons": [
+          "The text supports the open-fields proposition.",
+          "The text supports the abandonment proposition: officers examined the contents after the items had been abandoned.",
+          "No disclosed source establishes first-in-time or origin status across the doctrine."
+        ],
+        "residual_risks": [
+          "The origin label may be true in broader law, but it is not proved by this evidentiary universe."
+        ],
+        "suggested_tightening": "State only the supported holding: Fourth Amendment protection does not extend to open fields, and examination of abandoned containers was not a seizure.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "a70f80e2ccd8bba9",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "The distinction between the latter and the house is as old as the common law.",
+          "locator_note": "home: Curtilage",
+          "needs_cl": true,
+          "problem": "A Key curtilage role is not supported by the disclosed Hester opinion or lake record. The opinion draws a house/open-fields distinction but does not analyze curtilage.",
+          "proposed_fix": "Remove the Curtilage home role or downgrade it to a related/boundary reference unless a disclosed Curtilage authority record supports it.",
+          "severity": "medium"
+        },
+        "dimension": "support",
+        "reasons": [
+          "The cached opinion text does not use or analyze curtilage.",
+          "The supported doctrine in Hester is open fields, not curtilage doctrine."
+        ],
+        "residual_risks": [
+          "Hester may be relevant to curtilage through later cases, but that relationship is not verifiable from the disclosed files."
+        ],
+        "suggested_tightening": "Use Oliver or Dunn for a Key curtilage role if their disclosed records support it; keep Hester as Open Fields.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": false
+      },
+      {
+        "assertion_id": "e2b05a4c94a3dcb5",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "there was no seizure in the sense of the law when the officers examined the contents of each after it had been abandoned.",
+          "locator_note": "home: Abandonment",
+          "needs_cl": false,
+          "problem": "The Abandonment home is supported, but the role label 'Progeny / Refinement' is not. Hester itself states an abandonment rule; no disclosed evidence shows it is merely progeny or a refinement.",
+          "proposed_fix": "Change the role to 'Key' or 'Key — Anchor' for Abandonment, or provide taxonomy evidence for 'Progeny / Refinement'.",
+          "severity": "low"
+        },
+        "dimension": "support",
+        "reasons": [
+          "The opinion directly supports an abandonment proposition.",
+          "The qualifier 'Progeny / Refinement' does not follow from the disclosed opinion or lake fields."
+        ],
+        "residual_risks": [
+          "Role taxonomy is not separately disclosed."
+        ],
+        "suggested_tightening": "Retain one Abandonment entry with a simpler supported role.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "f7697824aea707d1",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "  - page: \"[[Abandonment]]\"\n    role: \"Key — Progeny / Refinement\"\n  - page: \"[[Abandonment]]\"\n    role: \"Key — Progeny / Refinement\"",
+          "locator_note": "second duplicate Abandonment home row",
+          "needs_cl": false,
+          "problem": "This is a duplicate Abandonment home-role assertion. The content frontmatter repeats the same Abandonment role, while the page body lists it once.",
+          "proposed_fix": "Remove the duplicate Abandonment frontmatter entry and retain a single corrected Abandonment role.",
+          "severity": "low"
+        },
+        "dimension": "support",
+        "reasons": [
+          "group_inventory contains two identical Abandonment support rows.",
+          "No disclosed schema or evidence supports duplicating the same home-role assertion."
+        ],
+        "residual_risks": [
+          "If duplicate home entries are intentionally meaningful in the corpus, that schema is not disclosed here."
+        ],
+        "suggested_tightening": "Deduplicate homes before publishing.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "3207a9c1be2ff00b",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Lens A does not audit treatment currency.",
+          "The payload treatment fields match the lake treatment fields: good_law, 1924-05-05, 2026-06-30, migration-seed, Hester v. United States, and varies_by_point false."
+        ],
+        "residual_risks": [
+          "Treatment/currency is left to Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "a5c8debc67647985",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The lake identity court is U.S. Supreme Court with court_level scotus.",
+          "The authority label 'Binding — SCOTUS' is consistent with the disclosed court identity."
+        ],
+        "residual_risks": [
+          "Treatment/currency is left to Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"content/cases/Hester v. United States.md\",\"reviewed\":[{\"assertion_id\":\"15fb128b6d39b31c\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity is verified for Hester v. United States, U.S. Supreme Court, decided 1924-05-05.\",\"Lake citation fields match the payload: official 265 U.S. 57; parallels 44 S. Ct. 445 and 68 L. Ed. 898; vendor citation 1924 U.S. LEXIS 2577.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"27cd21266e6d5829\",\"dimension\":\"support\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The opinion states that Fourth Amendment protection is not extended to open fields.\",\"The disclosed lake record shows substantial progeny for the case, supporting a key/anchor role for Open Fields.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The lake has no separate home_roles field; support is inferred from the opinion text and progeny metadata.\"],\"suggested_tightening\":null},{\"assertion_id\":\"7a3b4b4e2e86e242\",\"dimension\":\"support\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The substantive open-fields and abandonment rules are supported, but the phrase 'Origin of the open-fields doctrine' is not independently verifiable from the disclosed files.\",\"severity\":\"low\",\"proposed_fix\":\"Remove 'Origin of the open-fields doctrine —' or qualify it as 'Hester states the open-fields rule...' unless broader corpus evidence is supplied.\",\"evidence_quote\":\"the special protection accorded by the Fourth Amendment to the people in their “ persons, houses, papers, and effects,” is not extended to the open fields.\",\"needs_cl\":true,\"locator_note\":\"holding field\"},\"reasons\":[\"The text supports the open-fields proposition.\",\"The text supports the abandonment proposition: officers examined the contents after the items had been abandoned.\",\"No disclosed source establishes first-in-time or origin status across the doctrine.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The origin label may be true in broader law, but it is not proved by this evidentiary universe.\"],\"suggested_tightening\":\"State only the supported holding: Fourth Amendment protection does not extend to open fields, and examination of abandoned containers was not a seizure.\"},{\"assertion_id\":\"a70f80e2ccd8bba9\",\"dimension\":\"support\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":false,\"defect\":{\"problem\":\"A Key curtilage role is not supported by the disclosed Hester opinion or lake record. The opinion draws a house/open-fields distinction but does not analyze curtilage.\",\"severity\":\"medium\",\"proposed_fix\":\"Remove the Curtilage home role or downgrade it to a related/boundary reference unless a disclosed Curtilage authority record supports it.\",\"evidence_quote\":\"The distinction between the latter and the house is as old as the common law.\",\"needs_cl\":true,\"locator_note\":\"home: Curtilage\"},\"reasons\":[\"The cached opinion text does not use or analyze curtilage.\",\"The supported doctrine in Hester is open fields, not curtilage doctrine.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Hester may be relevant to curtilage through later cases, but that relationship is not verifiable from the disclosed files.\"],\"suggested_tightening\":\"Use Oliver or Dunn for a Key curtilage role if their disclosed records support it; keep Hester as Open Fields.\"},{\"assertion_id\":\"e2b05a4c94a3dcb5\",\"dimension\":\"support\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The Abandonment home is supported, but the role label 'Progeny / Refinement' is not. Hester itself states an abandonment rule; no disclosed evidence shows it is merely progeny or a refinement.\",\"severity\":\"low\",\"proposed_fix\":\"Change the role to 'Key' or 'Key — Anchor' for Abandonment, or provide taxonomy evidence for 'Progeny / Refinement'.\",\"evidence_quote\":\"there was no seizure in the sense of the law when the officers examined the contents of each after it had been abandoned.\",\"needs_cl\":false,\"locator_note\":\"home: Abandonment\"},\"reasons\":[\"The opinion directly supports an abandonment proposition.\",\"The qualifier 'Progeny / Refinement' does not follow from the disclosed opinion or lake fields.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Role taxonomy is not separately disclosed.\"],\"suggested_tightening\":\"Retain one Abandonment entry with a simpler supported role.\"},{\"assertion_id\":\"f7697824aea707d1\",\"dimension\":\"support\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"This is a duplicate Abandonment home-role assertion. The content frontmatter repeats the same Abandonment role, while the page body lists it once.\",\"severity\":\"low\",\"proposed_fix\":\"Remove the duplicate Abandonment frontmatter entry and retain a single corrected Abandonment role.\",\"evidence_quote\":\"  - page: \\\"[[Abandonment]]\\\"\\n    role: \\\"Key — Progeny / Refinement\\\"\\n  - page: \\\"[[Abandonment]]\\\"\\n    role: \\\"Key — Progeny / Refinement\\\"\",\"needs_cl\":false,\"locator_note\":\"second duplicate Abandonment home row\"},\"reasons\":[\"group_inventory contains two identical Abandonment support rows.\",\"No disclosed schema or evidence supports duplicating the same home-role assertion.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"If duplicate home entries are intentionally meaningful in the corpus, that schema is not disclosed here.\"],\"suggested_tightening\":\"Deduplicate homes before publishing.\"},{\"assertion_id\":\"3207a9c1be2ff00b\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lens A does not audit treatment currency.\",\"The payload treatment fields match the lake treatment fields: good_law, 1924-05-05, 2026-06-30, migration-seed, Hester v. United States, and varies_by_point false.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment/currency is left to Lens B.\"],\"suggested_tightening\":null},{\"assertion_id\":\"a5c8debc67647985\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake identity court is U.S. Supreme Court with court_level scotus.\",\"The authority label 'Binding — SCOTUS' is consistent with the disclosed court identity.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment/currency is left to Lens B.\"],\"suggested_tightening\":null}],\"notes\":\"No standalone quote_fidelity, pincite, or black_letter assertion rows were present in group_inventory; treatment/currency was not audited under Lens A.\"}",
+  "summary": {
+    "at": "2026-07-10T00:22:37-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-e8c0c7f97c",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-f9c30e67df",
+      "F-S9-PR-eb320d1ec5",
+      "F-S9-PR-a237e0c31f",
+      "F-S9-PR-2a6af26eef"
+    ],
+    "group_id": "content/cases/Hester v. United States.md",
+    "group_total_assertions": 8,
+    "lake_only_cases": [],
+    "lane": "codex-A",
+    "lane_id": "codex-A-panel-prod-8c21dac1",
+    "lens": "A",
+    "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-8c21dac1.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 8,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Hester v. United States"
+    ],
+    "tokens": {
+      "input": 172154,
+      "output": 11561,
+      "source": "codex-events",
+      "total": 183715
+    },
+    "verdict_map": {
+      "15fb128b6d39b31c": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "27cd21266e6d5829": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "3207a9c1be2ff00b": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "7a3b4b4e2e86e242": {
+        "dimension": "support",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "a5c8debc67647985": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "a70f80e2ccd8bba9": {
+        "dimension": "support",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": false
+      },
+      "e2b05a4c94a3dcb5": {
+        "dimension": "support",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "f7697824aea707d1": {
+        "dimension": "support",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-f9c30e67df",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-eb320d1ec5",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-a237e0c31f",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-2a6af26eef",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-e8c0c7f97c",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": 219.0
+  }
+}

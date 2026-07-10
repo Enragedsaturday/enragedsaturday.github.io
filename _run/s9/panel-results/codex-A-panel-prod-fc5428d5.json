@@ -1,13 +1,74 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/United States v. Tuggle.json",
+    "lens": "A",
+    "notes": "Reviewed every group_inventory.jsonl row exactly once under Lens A using only disclosed workspace files.",
+    "reviewed": [
+      {
+        "assertion_id": "6c7c1f863b93ac79",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record is verified and identifies United States v. Travis Tuggle, U.S. Court of Appeals for the Seventh Circuit, decided 2021-07-14, docket 20-2352.",
+          "The lake official/display citation is exactly 4 F.4th 505, matching the content page citation 4 F.4th 505 (7th Cir. 2021)."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "b75a39b737a3122f",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "we hold that the extensive pole camera surveillance in this case did not constitute a search under the current understanding of the Fourth Amendment.",
+          "locator_note": "pin-op5; lake pinpoints[0] stores \"under the Fourth Amendment. ## Rule No, under current doctrine:\" and flags quote_fidelity as mismatch.",
+          "needs_cl": false,
+          "problem": "pin-op5's stored quote is not a verbatim opinion quote; it appears to be a harvest artifact crossing the content page Issue/Rule boundary.",
+          "proposed_fix": "Replace pin-op5's stored quote with the actual slip-page-5 passage quoted in the Rule section.",
+          "severity": "medium"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The stored quote includes markdown heading text from content_page.md, not just opinion text.",
+          "The actual supporting sentence appears on slip page 5 in text/United States v. Tuggle__802ae9.txt and matches the visible Rule quote after normalizing PDF line breaks."
+        ],
+        "residual_risks": [
+          "The visible Rule quote itself is supported by the opinion text; the defect is the lake pinpoint quote stored for pin-op5."
+        ],
+        "suggested_tightening": "Regenerate pin-op5 from the visible Rule quotation and keep the slip-opinion page 5 locator.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "7c3482dbac0646a9",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency merits are outside Lens A, so no treatment finding is raised.",
+          "The treatment payload matches the disclosed lake treatment fields: field_i_validity good_law, as_of_content 2021-07-14, as_of_treatment 2026-06-30, varies_by_point false, and the same scope_note."
+        ],
+        "residual_risks": [
+          "Lens B should assess treatment/currency merits."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/United States v. Tuggle.json\",\"reviewed\":[{\"assertion_id\":\"6c7c1f863b93ac79\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record is verified and identifies United States v. Travis Tuggle, U.S. Court of Appeals for the Seventh Circuit, decided 2021-07-14, docket 20-2352.\",\"The lake official/display citation is exactly 4 F.4th 505, matching the content page citation 4 F.4th 505 (7th Cir. 2021).\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"b75a39b737a3122f\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"pin-op5's stored quote is not a verbatim opinion quote; it appears to be a harvest artifact crossing the content page Issue/Rule boundary.\",\"severity\":\"medium\",\"proposed_fix\":\"Replace pin-op5's stored quote with the actual slip-page-5 passage quoted in the Rule section.\",\"evidence_quote\":\"we hold that the extensive pole camera surveillance in this case did not constitute a search under the current understanding of the Fourth Amendment.\",\"needs_cl\":false,\"locator_note\":\"pin-op5; lake pinpoints[0] stores \\\"under the Fourth Amendment. ## Rule No, under current doctrine:\\\" and flags quote_fidelity as mismatch.\"},\"reasons\":[\"The stored quote includes markdown heading text from content_page.md, not just opinion text.\",\"The actual supporting sentence appears on slip page 5 in text/United States v. Tuggle__802ae9.txt and matches the visible Rule quote after normalizing PDF line breaks.\"],\"breaks_true_positives\":true,\"residual_risks\":[\"The visible Rule quote itself is supported by the opinion text; the defect is the lake pinpoint quote stored for pin-op5.\"],\"suggested_tightening\":\"Regenerate pin-op5 from the visible Rule quotation and keep the slip-opinion page 5 locator.\"},{\"assertion_id\":\"7c3482dbac0646a9\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency merits are outside Lens A, so no treatment finding is raised.\",\"The treatment payload matches the disclosed lake treatment fields: field_i_validity good_law, as_of_content 2021-07-14, as_of_treatment 2026-06-30, varies_by_point false, and the same scope_note.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Lens B should assess treatment/currency merits.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed every group_inventory.jsonl row exactly once under Lens A using only disclosed workspace files.\"}",
   "summary": {
-    "at": "2026-07-09T23:07:54-04:00",
-    "attempts": 2,
+    "at": "2026-07-10T16:51:52-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-40612bb7f3"
+    ],
     "group_id": "_overhaul2/lake/cases/United States v. Tuggle.json",
     "group_total_assertions": 3,
     "lake_only_cases": [],
@@ -16,21 +77,48 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-fc5428d5.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 3,
     "run": "prod",
     "text_disclosed_cases": [
       "United States v. Tuggle"
     ],
     "tokens": {
-      "input": 827,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 827
+      "input": 314042,
+      "output": 7385,
+      "source": "codex-events",
+      "total": 321427
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 2.7
+    "verdict_map": {
+      "6c7c1f863b93ac79": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "7c3482dbac0646a9": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "b75a39b737a3122f": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-40612bb7f3",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 151.3
   }
 }

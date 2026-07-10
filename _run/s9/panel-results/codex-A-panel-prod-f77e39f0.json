@@ -1,11 +1,47 @@
 {
-  "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Lombardo v. City of St. Louis.json",
+    "lens": "A",
+    "notes": "Lens A reviewed every assertion_id in group_inventory.jsonl exactly once using only disclosed files.",
+    "reviewed": [
+      {
+        "assertion_id": "c59c9ef0a930fedd",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record exists for record_id 'Lombardo v. City of St. Louis' and identifies the case as a SCOTUS 2021 matter with docket 20-391.",
+          "The official citation in the lake record is exactly '594 U.S. 464'; parallel citations are '210 L. Ed. 2d 609' and '141 S. Ct. 2239', matching the inventory payload and content page."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "acc09be79dcd6404",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A's attack charter, so no treatment defect is raised.",
+          "The asserted treatment fields are directly reflected in the disclosed lake record: field_i_validity is 'unverified', as_of_content and as_of_treatment are null, varies_by_point is false, and the scope note matches the payload."
+        ],
+        "residual_risks": [
+          "No Lens A support, quote-fidelity, or pincite assertion was present in group_inventory.jsonl for this group."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Lombardo v. City of St. Louis.json\",\"reviewed\":[{\"assertion_id\":\"c59c9ef0a930fedd\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record exists for record_id 'Lombardo v. City of St. Louis' and identifies the case as a SCOTUS 2021 matter with docket 20-391.\",\"The official citation in the lake record is exactly '594 U.S. 464'; parallel citations are '210 L. Ed. 2d 609' and '141 S. Ct. 2239', matching the inventory payload and content page.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"acc09be79dcd6404\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside Lens A's attack charter, so no treatment defect is raised.\",\"The asserted treatment fields are directly reflected in the disclosed lake record: field_i_validity is 'unverified', as_of_content and as_of_treatment are null, varies_by_point is false, and the scope note matches the payload.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"No Lens A support, quote-fidelity, or pincite assertion was present in group_inventory.jsonl for this group.\"],\"suggested_tightening\":null}],\"notes\":\"Lens A reviewed every assertion_id in group_inventory.jsonl exactly once using only disclosed files.\"}",
   "summary": {
-    "at": "2026-07-09T22:14:09-04:00",
-    "attempts": 2,
-    "clean_attestation": false,
+    "at": "2026-07-10T16:48:49-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
     "defense_votes": [],
     "findings_emitted": [],
     "group_id": "_overhaul2/lake/cases/Lombardo v. City of St. Louis.json",
@@ -18,21 +54,36 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-f77e39f0.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [
       "case 'Lombardo v. City of St. Louis' has no lead_opinion_id (text undisclosed)"
     ],
-    "reviewed_count": 0,
+    "reviewed_count": 2,
     "run": "prod",
     "text_disclosed_cases": [],
     "tokens": {
-      "input": 829,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 829
+      "input": 58170,
+      "output": 1487,
+      "source": "codex-events",
+      "total": 59657
     },
-    "verdict_map": {},
+    "verdict_map": {
+      "acc09be79dcd6404": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "c59c9ef0a930fedd": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
     "votes_emitted": [],
-    "wall_clock_s": 900.0
+    "wall_clock_s": 35.2
   }
 }

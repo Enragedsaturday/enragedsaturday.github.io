@@ -1,0 +1,150 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/United States v. Janis.json",
+    "lens": "A",
+    "notes": "Unscored because no inventory row asserts it: content_page.md and the lake identity record list date_decided as 1976-10-04, but the cached opinion text says Decided July 6, 1976.",
+    "reviewed": [
+      {
+        "assertion_id": "7703e675fe5d5b25",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record identifies United States v. Janis, U.S. Supreme Court, docket 74-958, year 1976.",
+          "The official citation in the lake record is 428 U.S. 433, with the same parallel and vendor citations listed in the assertion payload.",
+          "The cached opinion text begins with 428 U.S. 433 (1976) and Supreme Court of United States."
+        ],
+        "residual_risks": [
+          "The exact decision date appears separately inconsistent: content_page.md and lake identity say 1976-10-04, while the cached opinion text says Decided July 6, 1976. That field is not the inventory assertion being reviewed here."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "0ca479293ca34f28",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "the additional marginal deterrence provided by forbidding a different sovereign from using the evidence in a civil proceeding",
+          "locator_note": "text/United States v. Janis__dfdfab.txt line 58 contains the actual passage around star page 454; lake pin-454 instead stores content_page prose beginning with the page header.",
+          "needs_cl": false,
+          "problem": "pin-454's stored quote is not an opinion quote. It is built-page/front-matter content and the lake record itself marks quote_fidelity as mismatch with no star marker or validated position.",
+          "proposed_fix": "Replace pin-454's quote metadata with the actual passage from the opinion text supporting the 428 U.S. at 454 rule quote, and set the star marker/position from the opinion text rather than from the built page.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload quote begins with built-page material, not the Janis opinion text.",
+          "The disclosed lake record flags pin-454 as quote_fidelity mismatch, pinpoint_status slip-only, star_marker null, and position null.",
+          "The actual opinion passage at the asserted page is present in the cached text and differs from the pin-454 payload."
+        ],
+        "residual_risks": [
+          "The visible content_page rule quote appears supportable from text line 58, but the pin-454 lake quote metadata is corrupt."
+        ],
+        "suggested_tightening": "Store the raw opinion quote separately from any display-edited legal quotation, especially where the display begins mid-sentence with bracketed capitalization.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "b000885633b228c9",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The pin-454b quote matches the cached opinion text at line 59.",
+          "The lake record marks pin-454b quote_fidelity as matched, pinpoint_status as star-verified, and star_marker as 454.",
+          "The text fragment points to the same sentence beginning In short, and the quote sits before the next star marker, page 455."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "0be1e29849880bfe",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside lens A, so no independent treatment finding is raised.",
+          "The payload treatment fields reproduce the disclosed lake treatment fields: field_i_validity good_law, as_of_content 1976-07-06, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note."
+        ],
+        "residual_risks": [
+          "No treatment or currency review was performed under lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/United States v. Janis.json\",\"reviewed\":[{\"assertion_id\":\"7703e675fe5d5b25\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake identity record identifies United States v. Janis, U.S. Supreme Court, docket 74-958, year 1976.\",\"The official citation in the lake record is 428 U.S. 433, with the same parallel and vendor citations listed in the assertion payload.\",\"The cached opinion text begins with 428 U.S. 433 (1976) and Supreme Court of United States.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The exact decision date appears separately inconsistent: content_page.md and lake identity say 1976-10-04, while the cached opinion text says Decided July 6, 1976. That field is not the inventory assertion being reviewed here.\"],\"suggested_tightening\":null},{\"assertion_id\":\"0ca479293ca34f28\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"pin-454's stored quote is not an opinion quote. It is built-page/front-matter content and the lake record itself marks quote_fidelity as mismatch with no star marker or validated position.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-454's quote metadata with the actual passage from the opinion text supporting the 428 U.S. at 454 rule quote, and set the star marker/position from the opinion text rather than from the built page.\",\"evidence_quote\":\"the additional marginal deterrence provided by forbidding a different sovereign from using the evidence in a civil proceeding\",\"needs_cl\":false,\"locator_note\":\"text/United States v. Janis__dfdfab.txt line 58 contains the actual passage around star page 454; lake pin-454 instead stores content_page prose beginning with the page header.\"},\"reasons\":[\"The payload quote begins with built-page material, not the Janis opinion text.\",\"The disclosed lake record flags pin-454 as quote_fidelity mismatch, pinpoint_status slip-only, star_marker null, and position null.\",\"The actual opinion passage at the asserted page is present in the cached text and differs from the pin-454 payload.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The visible content_page rule quote appears supportable from text line 58, but the pin-454 lake quote metadata is corrupt.\"],\"suggested_tightening\":\"Store the raw opinion quote separately from any display-edited legal quotation, especially where the display begins mid-sentence with bracketed capitalization.\"},{\"assertion_id\":\"b000885633b228c9\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The pin-454b quote matches the cached opinion text at line 59.\",\"The lake record marks pin-454b quote_fidelity as matched, pinpoint_status as star-verified, and star_marker as 454.\",\"The text fragment points to the same sentence beginning In short, and the quote sits before the next star marker, page 455.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"0be1e29849880bfe\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside lens A, so no independent treatment finding is raised.\",\"The payload treatment fields reproduce the disclosed lake treatment fields: field_i_validity good_law, as_of_content 1976-07-06, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"No treatment or currency review was performed under lens A.\"],\"suggested_tightening\":null}],\"notes\":\"Unscored because no inventory row asserts it: content_page.md and the lake identity record list date_decided as 1976-10-04, but the cached opinion text says Decided July 6, 1976.\"}",
+  "summary": {
+    "at": "2026-07-10T02:34:01-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-47517cd876"
+    ],
+    "group_id": "_overhaul2/lake/cases/United States v. Janis.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "codex-A",
+    "lane_id": "codex-A-panel-prod-1e1ab82e",
+    "lens": "A",
+    "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-1e1ab82e.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "United States v. Janis"
+    ],
+    "tokens": {
+      "input": 193356,
+      "output": 7100,
+      "source": "codex-events",
+      "total": 200456
+    },
+    "verdict_map": {
+      "0be1e29849880bfe": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "0ca479293ca34f28": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "7703e675fe5d5b25": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "b000885633b228c9": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-47517cd876",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 142.8
+  }
+}

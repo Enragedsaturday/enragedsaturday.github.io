@@ -1,13 +1,88 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Olmstead v. United States.json",
+    "lens": "A",
+    "notes": "Reviewed all 4 group_inventory rows using only disclosed working-directory files.",
+    "reviewed": [
+      {
+        "assertion_id": "8f0014cec35d894f",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity record verifies Olmstead v. United States as a U.S. Supreme Court case decided 1928-06-04.",
+          "Lake citations identify the official citation as 277 U.S. 438, matching the content page citation and year."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "7b49e527492026b3",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "The Amendment itself shows that the search is to be of material things  the person, the house, his papers or his effects.",
+          "locator_note": "text/Olmstead v. United States__54e456.txt places this sentence after star pagination *464; lake pinpoints[].id pin-464 instead stores 'within the Fourth Amendment. ## Rule ...' and marks quote_fidelity as mismatch.",
+          "needs_cl": false,
+          "problem": "The pin-464 lake pinpoint quote is not a verbatim passage from the opinion; it appears to be harvested page prose/Markdown rather than the quoted page-464 sentence. The content quote also is not backed by the lake pinpoint quote as stored.",
+          "proposed_fix": "Replace pin-464 with the actual opinion sentence at page 464, or regenerate the pinpoint so the stored quote is the page quote rather than surrounding content-page prose.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The disclosed text contains the intended material-things quote at page 464, but the lake pin-464 quote is a different string that includes a Markdown heading and page prose.",
+          "Because quote fidelity requires character-faithful text or a matching lake pinpoint quote, pin-464 fails as framed."
+        ],
+        "residual_risks": [
+          "The underlying legal proposition is supported by nearby opinion text; this refutation targets the quote/pinpoint record as framed."
+        ],
+        "suggested_tightening": "Store the exact page-464 sentence as the pin quote and use a clear normalization policy for the dash character before marking it matched.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "a9f4933be830080d",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The quoted sentence appears verbatim in the cached opinion text: 'There was no searching. There was no seizure. The evidence was secured by the use of the sense of hearing and that only.'",
+          "The sentence appears on page 464 between star-pagination *464 and *465, matching the lake star_marker 464 and the content-page Id. citation."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "dae9a04461320ed6",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A's substantive charter, so no treatment finding is raised.",
+          "The payload fields mirror the disclosed lake treatment fields: field_i_validity superseded, as_of_content 1928-06-04, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note."
+        ],
+        "residual_risks": [
+          "Substantive treatment currency is reserved for Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Olmstead v. United States.json\",\"reviewed\":[{\"assertion_id\":\"8f0014cec35d894f\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity record verifies Olmstead v. United States as a U.S. Supreme Court case decided 1928-06-04.\",\"Lake citations identify the official citation as 277 U.S. 438, matching the content page citation and year.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"7b49e527492026b3\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The pin-464 lake pinpoint quote is not a verbatim passage from the opinion; it appears to be harvested page prose/Markdown rather than the quoted page-464 sentence. The content quote also is not backed by the lake pinpoint quote as stored.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-464 with the actual opinion sentence at page 464, or regenerate the pinpoint so the stored quote is the page quote rather than surrounding content-page prose.\",\"evidence_quote\":\"The Amendment itself shows that the search is to be of material things \\u0097 the person, the house, his papers or his effects.\",\"needs_cl\":false,\"locator_note\":\"text/Olmstead v. United States__54e456.txt places this sentence after star pagination *464; lake pinpoints[].id pin-464 instead stores 'within the Fourth Amendment. ## Rule ...' and marks quote_fidelity as mismatch.\"},\"reasons\":[\"The disclosed text contains the intended material-things quote at page 464, but the lake pin-464 quote is a different string that includes a Markdown heading and page prose.\",\"Because quote fidelity requires character-faithful text or a matching lake pinpoint quote, pin-464 fails as framed.\"],\"breaks_true_positives\":true,\"residual_risks\":[\"The underlying legal proposition is supported by nearby opinion text; this refutation targets the quote/pinpoint record as framed.\"],\"suggested_tightening\":\"Store the exact page-464 sentence as the pin quote and use a clear normalization policy for the dash character before marking it matched.\"},{\"assertion_id\":\"a9f4933be830080d\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The quoted sentence appears verbatim in the cached opinion text: 'There was no searching. There was no seizure. The evidence was secured by the use of the sense of hearing and that only.'\",\"The sentence appears on page 464 between star-pagination *464 and *465, matching the lake star_marker 464 and the content-page Id. citation.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"dae9a04461320ed6\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside Lens A's substantive charter, so no treatment finding is raised.\",\"The payload fields mirror the disclosed lake treatment fields: field_i_validity superseded, as_of_content 1928-06-04, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Substantive treatment currency is reserved for Lens B.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed all 4 group_inventory rows using only disclosed working-directory files.\"}",
   "summary": {
-    "at": "2026-07-09T23:15:17-04:00",
-    "attempts": 2,
+    "at": "2026-07-10T17:26:03-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-694cea7c77"
+    ],
     "group_id": "_overhaul2/lake/cases/Olmstead v. United States.json",
     "group_total_assertions": 4,
     "lake_only_cases": [],
@@ -16,21 +91,55 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-3a80abc7.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 4,
     "run": "prod",
     "text_disclosed_cases": [
       "Olmstead v. United States"
     ],
     "tokens": {
-      "input": 828,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 828
+      "input": 370603,
+      "output": 6543,
+      "source": "codex-events",
+      "total": 377146
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 2.8
+    "verdict_map": {
+      "7b49e527492026b3": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "8f0014cec35d894f": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "a9f4933be830080d": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "dae9a04461320ed6": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-694cea7c77",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 132.5
   }
 }

@@ -1,0 +1,172 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "content/cases/Walder v. United States.md",
+    "lens": "B",
+    "notes": "Lens B only; support and quote-fidelity merits were not adjudicated.",
+    "reviewed": [
+      {
+        "assertion_id": "21392c60975d7379",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record is verified, non-stub, and identifies Walder v. United States as a U.S. Supreme Court decision dated 1954-02-01.",
+          "The official citation, parallel citations, and vendor-neutral citation in the assertion match the lake citation fields.",
+          "The lake treatment field_i_validity is good_law as of 2026-06-30."
+        ],
+        "residual_risks": [
+          "Treatment derivation flags proposed negative events and audit_needed, but the disclosed final judgment field still marks the case good_law."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "4670f640a1c89336",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "Under Lens B, no disclosed treatment or currency field undermines the home role.",
+          "The lake scope note calls Walder the origin of the impeachment exception and marks it good_law as of 2026-06-30."
+        ],
+        "residual_risks": [
+          "Substantive support for the home-role characterization is outside Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "4b4d6f82271e0406",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "Under Lens B, no disclosed treatment or currency field shows the holding has been overruled or abrogated.",
+          "The lake treatment scope note says Walder remains good law, while acknowledging later extensions and cabining."
+        ],
+        "residual_risks": [
+          "Quote fidelity and holding support are outside Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "47910fda341a9928",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The lake identity fields list court as U.S. Supreme Court and court_level as scotus.",
+          "A good-law Supreme Court authority supports the weight label Binding — SCOTUS."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "f84ef2b001b044ca",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Origin of the impeachment exception; remains good law and was extended (Harris v. New York, Havens) and cabined (James v. Illinois).",
+          "locator_note": "content_page.md treatment section and treatment.scope_note",
+          "needs_cl": false,
+          "problem": "The good_law call stands, but the built page's treatment prose says 'No negative treatment' even though the disclosed treatment scope says Walder was later cabined by James v. Illinois. That is overbroad for a treatment section because the attack lens treats later limiting/cabining as relevant negative or limiting treatment.",
+          "proposed_fix": "Replace the unqualified 'No negative treatment' phrasing with: 'No disclosed overruling or abrogation; Walder remains good law, later extended by Harris and Havens and cabined by James.'",
+          "severity": "low"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "The lake field_i_validity, as_of_treatment date, composite_basis, point_overrides, and scope_note match the asserted treatment payload.",
+          "The disclosed final treatment judgment is good_law as of 2026-06-30.",
+          "The same disclosed scope note identifies later cabining by James, so the page should avoid saying there is no negative or limiting treatment at all."
+        ],
+        "residual_risks": [
+          "The lake derivation includes proposed negative events and audit_needed flags; those are not final disclosed treatment judgments, but they make the unqualified 'No negative treatment' wording less defensible."
+        ],
+        "suggested_tightening": "Use 'no disclosed overruling or abrogation' rather than 'No negative treatment.'",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"B\",\n  \"group_id\": \"content/cases/Walder v. United States.md\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"21392c60975d7379\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake record is verified, non-stub, and identifies Walder v. United States as a U.S. Supreme Court decision dated 1954-02-01.\",\n        \"The official citation, parallel citations, and vendor-neutral citation in the assertion match the lake citation fields.\",\n        \"The lake treatment field_i_validity is good_law as of 2026-06-30.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Treatment derivation flags proposed negative events and audit_needed, but the disclosed final judgment field still marks the case good_law.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"4670f640a1c89336\",\n      \"dimension\": \"support\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Under Lens B, no disclosed treatment or currency field undermines the home role.\",\n        \"The lake scope note calls Walder the origin of the impeachment exception and marks it good_law as of 2026-06-30.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Substantive support for the home-role characterization is outside Lens B.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"4b4d6f82271e0406\",\n      \"dimension\": \"support\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Under Lens B, no disclosed treatment or currency field shows the holding has been overruled or abrogated.\",\n        \"The lake treatment scope note says Walder remains good law, while acknowledging later extensions and cabining.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Quote fidelity and holding support are outside Lens B.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"47910fda341a9928\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake identity fields list court as U.S. Supreme Court and court_level as scotus.\",\n        \"A good-law Supreme Court authority supports the weight label Binding — SCOTUS.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"f84ef2b001b044ca\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands-modified\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The good_law call stands, but the built page's treatment prose says 'No negative treatment' even though the disclosed treatment scope says Walder was later cabined by James v. Illinois. That is overbroad for a treatment section because the attack lens treats later limiting/cabining as relevant negative or limiting treatment.\",\n        \"severity\": \"low\",\n        \"proposed_fix\": \"Replace the unqualified 'No negative treatment' phrasing with: 'No disclosed overruling or abrogation; Walder remains good law, later extended by Harris and Havens and cabined by James.'\",\n        \"evidence_quote\": \"Origin of the impeachment exception; remains good law and was extended (Harris v. New York, Havens) and cabined (James v. Illinois).\",\n        \"needs_cl\": false,\n        \"locator_note\": \"content_page.md treatment section and treatment.scope_note\"\n      },\n      \"reasons\": [\n        \"The lake field_i_validity, as_of_treatment date, composite_basis, point_overrides, and scope_note match the asserted treatment payload.\",\n        \"The disclosed final treatment judgment is good_law as of 2026-06-30.\",\n        \"The same disclosed scope note identifies later cabining by James, so the page should avoid saying there is no negative or limiting treatment at all.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The lake derivation includes proposed negative events and audit_needed flags; those are not final disclosed treatment judgments, but they make the unqualified 'No negative treatment' wording less defensible.\"\n      ],\n      \"suggested_tightening\": \"Use 'no disclosed overruling or abrogation' rather than 'No negative treatment.'\"\n    }\n  ],\n  \"notes\": \"Lens B only; support and quote-fidelity merits were not adjudicated.\"\n}",
+  "summary": {
+    "at": "2026-07-10T00:58:15-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-9b779389a4"
+    ],
+    "group_id": "content/cases/Walder v. United States.md",
+    "group_total_assertions": 5,
+    "lake_only_cases": [],
+    "lane": "codex-B",
+    "lane_id": "codex-B-panel-prod-e2fad39b",
+    "lens": "B",
+    "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-e2fad39b.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Walder v. United States"
+    ],
+    "tokens": {
+      "input": 197713,
+      "output": 7559,
+      "source": "codex-events",
+      "total": 205272
+    },
+    "verdict_map": {
+      "21392c60975d7379": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "4670f640a1c89336": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "47910fda341a9928": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "4b4d6f82271e0406": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "f84ef2b001b044ca": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-9b779389a4",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 148.6
+  }
+}

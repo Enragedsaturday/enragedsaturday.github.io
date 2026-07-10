@@ -1,0 +1,240 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Los Angeles County v. Rettele.json",
+    "lens": "A",
+    "notes": "Reviewed every assertion_id in group_inventory.jsonl exactly once under Lens A.",
+    "reviewed": [
+      {
+        "assertion_id": "6265762ea702064f",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record verifies the case as Los Angeles County, California v. Rettele, U.S. Supreme Court, decided 2007-05-21.",
+          "The inventory citations match the lake citations list: 550 U.S. 609, 127 S. Ct. 1989, 167 L. Ed. 2d 974, 2007 U.S. LEXIS 5900, 75 U.S.L.W. 3619, and 20 Fla. L. Weekly Fed. S 281."
+        ],
+        "residual_risks": [
+          "The lake record has official:null, but the existence/citation payload accurately echoes the disclosed lake record."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "5a93193f9093648c",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "--- # Los Angeles County v. Rettele *550 U.S. 609 (2007)*",
+          "locator_note": "lake pinpoints[] id pin-1993; content page Rule paragraph marked ^pin-1993",
+          "needs_cl": false,
+          "problem": "The pin-1993 lake quote is not an opinion quote; it is copied page markdown/background text. It therefore cannot serve as a character-faithful quote pinpoint for the cited rule passage.",
+          "proposed_fix": "Replace pin-1993 with the actual opinion passage beginning 'The deputies needed a moment to secure the room...' and correct the content quote's punctuation so the first sentence ends with a period rather than a quoted comma.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The lake pinpoint text starts with page markdown rather than the Supreme Court opinion text.",
+          "The disclosed opinion text instead says: 'The deputies needed a moment to secure the room and ensure that other persons were not close by or did not present a danger.'"
+        ],
+        "residual_risks": [
+          "The disclosed text is slip-only and does not independently verify the S. Ct. page number."
+        ],
+        "suggested_tightening": "Use exact opinion sentences for pin-1993 and avoid storing generated page prose as a pinpoint quote.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "92bcf225da79b543",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "There is no accusation that the detention here was prolonged. The deputies left the home less than 15 minutes after arriving.",
+          "locator_note": "pin-1993b",
+          "needs_cl": false,
+          "problem": "The quoted proposition is supported, but the stored quote is an edited splice. For character-fidelity review, it should preserve the source wording more cleanly.",
+          "proposed_fix": "Quote the source as: 'There is no accusation that the detention here was prolonged. The deputies left the home less than 15 minutes after arriving.'",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The underlying words are found in the disclosed opinion text.",
+          "The current quote omits 'here' and combines two sentences with bracketed punctuation."
+        ],
+        "residual_risks": [
+          "The disclosed text is slip-only and does not independently verify the S. Ct. page number."
+        ],
+        "suggested_tightening": "Use the exact two-sentence source quote instead of the bracketed splice.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "96da889f210676d6",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "As respondents’ constitutional rights were not violated, “there is no necessity for further inquiries concerning qualified immunity.”",
+          "locator_note": "pin-1994b",
+          "needs_cl": false,
+          "problem": "The quotation is substantively supported, but it omits the source's opening 'As' and normalizes quotation marks/apostrophe, so it is not character-faithful as framed.",
+          "proposed_fix": "Quote the source as: 'As respondents’ constitutional rights were not violated, “there is no necessity for further inquiries concerning qualified immunity.”'",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The disclosed opinion text contains the qualified-immunity sentence.",
+          "The current quote starts at 'respondents'' without marking the omitted opening word 'As'."
+        ],
+        "residual_risks": [
+          "The disclosed text is slip-only and does not independently verify the S. Ct. page number."
+        ],
+        "suggested_tightening": "Use the exact sentence or mark the initial omission explicitly.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "ab2d1f7202e9be14",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "When officers execute a valid warrant and act in a reasonable manner to protect themselves from harm, however, the Fourth Amendment is not violated.",
+          "locator_note": "pin-1994",
+          "needs_cl": false,
+          "problem": "The rule sentence is supported, but the quote omits 'however' with an awkward ellipsis/comma construction rather than reproducing the source sentence exactly.",
+          "proposed_fix": "Quote the source as: 'When officers execute a valid warrant and act in a reasonable manner to protect themselves from harm, however, the Fourth Amendment is not violated.'",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The disclosed opinion text contains the quoted rule sentence.",
+          "The current quote changes the sentence by replacing 'however' with '. . . ,' and should be tightened for character fidelity."
+        ],
+        "residual_risks": [
+          "The disclosed text is slip-only and does not independently verify the S. Ct. page range 1993-94."
+        ],
+        "suggested_tightening": "Use the full exact sentence rather than the ellipsis version.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "1bd1b2db01bae463",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The treatment payload matches the disclosed lake treatment fields: field_i_validity good_law, as_of_content 2007-05-21, as_of_treatment 2026-06-30, and varies_by_point false.",
+          "Treatment/currency is outside Lens A, so no treatment finding is raised."
+        ],
+        "residual_risks": [
+          "No independent treatment/currency review performed under Lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"A\",\n  \"group_id\": \"_overhaul2/lake/cases/Los Angeles County v. Rettele.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"6265762ea702064f\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake identity record verifies the case as Los Angeles County, California v. Rettele, U.S. Supreme Court, decided 2007-05-21.\",\n        \"The inventory citations match the lake citations list: 550 U.S. 609, 127 S. Ct. 1989, 167 L. Ed. 2d 974, 2007 U.S. LEXIS 5900, 75 U.S.L.W. 3619, and 20 Fla. L. Weekly Fed. S 281.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The lake record has official:null, but the existence/citation payload accurately echoes the disclosed lake record.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"5a93193f9093648c\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The pin-1993 lake quote is not an opinion quote; it is copied page markdown/background text. It therefore cannot serve as a character-faithful quote pinpoint for the cited rule passage.\",\n        \"severity\": \"high\",\n        \"proposed_fix\": \"Replace pin-1993 with the actual opinion passage beginning 'The deputies needed a moment to secure the room...' and correct the content quote's punctuation so the first sentence ends with a period rather than a quoted comma.\",\n        \"evidence_quote\": \"--- # Los Angeles County v. Rettele *550 U.S. 609 (2007)*\",\n        \"needs_cl\": false,\n        \"locator_note\": \"lake pinpoints[] id pin-1993; content page Rule paragraph marked ^pin-1993\"\n      },\n      \"reasons\": [\n        \"The lake pinpoint text starts with page markdown rather than the Supreme Court opinion text.\",\n        \"The disclosed opinion text instead says: 'The deputies needed a moment to secure the room and ensure that other persons were not close by or did not present a danger.'\"\n      ],\n      \"breaks_true_positives\": true,\n      \"residual_risks\": [\n        \"The disclosed text is slip-only and does not independently verify the S. Ct. page number.\"\n      ],\n      \"suggested_tightening\": \"Use exact opinion sentences for pin-1993 and avoid storing generated page prose as a pinpoint quote.\"\n    },\n    {\n      \"assertion_id\": \"92bcf225da79b543\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands-modified\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The quoted proposition is supported, but the stored quote is an edited splice. For character-fidelity review, it should preserve the source wording more cleanly.\",\n        \"severity\": \"low\",\n        \"proposed_fix\": \"Quote the source as: 'There is no accusation that the detention here was prolonged. The deputies left the home less than 15 minutes after arriving.'\",\n        \"evidence_quote\": \"There is no accusation that the detention here was prolonged. The deputies left the home less than 15 minutes after arriving.\",\n        \"needs_cl\": false,\n        \"locator_note\": \"pin-1993b\"\n      },\n      \"reasons\": [\n        \"The underlying words are found in the disclosed opinion text.\",\n        \"The current quote omits 'here' and combines two sentences with bracketed punctuation.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The disclosed text is slip-only and does not independently verify the S. Ct. page number.\"\n      ],\n      \"suggested_tightening\": \"Use the exact two-sentence source quote instead of the bracketed splice.\"\n    },\n    {\n      \"assertion_id\": \"96da889f210676d6\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands-modified\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The quotation is substantively supported, but it omits the source's opening 'As' and normalizes quotation marks/apostrophe, so it is not character-faithful as framed.\",\n        \"severity\": \"low\",\n        \"proposed_fix\": \"Quote the source as: 'As respondents’ constitutional rights were not violated, “there is no necessity for further inquiries concerning qualified immunity.”'\",\n        \"evidence_quote\": \"As respondents’ constitutional rights were not violated, “there is no necessity for further inquiries concerning qualified immunity.”\",\n        \"needs_cl\": false,\n        \"locator_note\": \"pin-1994b\"\n      },\n      \"reasons\": [\n        \"The disclosed opinion text contains the qualified-immunity sentence.\",\n        \"The current quote starts at 'respondents'' without marking the omitted opening word 'As'.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The disclosed text is slip-only and does not independently verify the S. Ct. page number.\"\n      ],\n      \"suggested_tightening\": \"Use the exact sentence or mark the initial omission explicitly.\"\n    },\n    {\n      \"assertion_id\": \"ab2d1f7202e9be14\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands-modified\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The rule sentence is supported, but the quote omits 'however' with an awkward ellipsis/comma construction rather than reproducing the source sentence exactly.\",\n        \"severity\": \"low\",\n        \"proposed_fix\": \"Quote the source as: 'When officers execute a valid warrant and act in a reasonable manner to protect themselves from harm, however, the Fourth Amendment is not violated.'\",\n        \"evidence_quote\": \"When officers execute a valid warrant and act in a reasonable manner to protect themselves from harm, however, the Fourth Amendment is not violated.\",\n        \"needs_cl\": false,\n        \"locator_note\": \"pin-1994\"\n      },\n      \"reasons\": [\n        \"The disclosed opinion text contains the quoted rule sentence.\",\n        \"The current quote changes the sentence by replacing 'however' with '. . . ,' and should be tightened for character fidelity.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The disclosed text is slip-only and does not independently verify the S. Ct. page range 1993-94.\"\n      ],\n      \"suggested_tightening\": \"Use the full exact sentence rather than the ellipsis version.\"\n    },\n    {\n      \"assertion_id\": \"1bd1b2db01bae463\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The treatment payload matches the disclosed lake treatment fields: field_i_validity good_law, as_of_content 2007-05-21, as_of_treatment 2026-06-30, and varies_by_point false.\",\n        \"Treatment/currency is outside Lens A, so no treatment finding is raised.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"No independent treatment/currency review performed under Lens A.\"\n      ],\n      \"suggested_tightening\": null\n    }\n  ],\n  \"notes\": \"Reviewed every assertion_id in group_inventory.jsonl exactly once under Lens A.\"\n}",
+  "summary": {
+    "at": "2026-07-10T18:13:06-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-3822e5e430",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-1a5551b93e",
+      "F-S9-PR-84b2e405d5",
+      "F-S9-PR-bea6b3169d",
+      "F-S9-PR-32bf5cff64"
+    ],
+    "group_id": "_overhaul2/lake/cases/Los Angeles County v. Rettele.json",
+    "group_total_assertions": 6,
+    "lake_only_cases": [],
+    "lane": "codex-A",
+    "lane_id": "codex-A-panel-prod-2a058a2d",
+    "lens": "A",
+    "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-2a058a2d.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 6,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Los Angeles County v. Rettele"
+    ],
+    "tokens": {
+      "input": 289702,
+      "output": 10520,
+      "source": "codex-events",
+      "total": 300222
+    },
+    "verdict_map": {
+      "1bd1b2db01bae463": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "5a93193f9093648c": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "6265762ea702064f": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "92bcf225da79b543": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "96da889f210676d6": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "ab2d1f7202e9be14": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-1a5551b93e",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-84b2e405d5",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-bea6b3169d",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-32bf5cff64",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-3822e5e430",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": 207.3
+  }
+}

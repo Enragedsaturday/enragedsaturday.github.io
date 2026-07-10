@@ -1,0 +1,178 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/United States v. Lundin.json",
+    "lens": "A",
+    "notes": "Reviewed all five inventory rows using only the disclosed working-directory files. Lens A did not audit treatment/currency.",
+    "reviewed": [
+      {
+        "assertion_id": "cdb7ba03edf59951",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record verifies United States v. Eric Lundin, U.S. Court of Appeals for the Ninth Circuit, decided 2016-03-22.",
+          "The displayed citation 817 F.3d 1151 and vendor cites 2016 WL 1104851 and 2016 U.S. App. LEXIS 5236 match the lake citations."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "071b3e0efc40cd75",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "exception authorized officers to enter the curtilage and knock on the front door at 4:00 a.m. with the intent to arrest the occupant, where the knock precipitated the noises the officers then used to justify a warrantless search. ## Rule The knock-and-talk exception is",
+          "locator_note": "lake pin-1159; the local opinion text supports the doctrine elsewhere, but this quoted string is not an opinion passage.",
+          "needs_cl": false,
+          "problem": "pin-1159's stored quote is not character-faithful to the opinion text; it appears to be a harvested concatenation of the content page's Issue/Rule text and even includes Markdown heading text.",
+          "proposed_fix": "Replace pin-1159 with actual opinion text for the time-rationale passage, or split the paragraph into separate validated pinpoints for the coterminous-license, two-reasons, and 4:00 a.m. quotes.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The quote string is absent from text/United States v. Lundin__d67350.txt.",
+          "The lake record itself marks pin-1159 quote_fidelity as mismatch."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Use only opinion-text excerpts in the pinpoint quote field; keep content-page issue prose out of quote pinpoints.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "077f643d38e8774d",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "the “knock and talk” exception depends at least in part on an\nofficer’s subjective intent.",
+          "locator_note": "text lines 467-468; content_page.md line 59 and lake pin-1160 use the altered straight-mark/comma form.",
+          "needs_cl": false,
+          "problem": "The substantive clause is in the opinion, but the stored/page quote is not character-faithful: the opinion uses typographic quotation marks/apostrophe and ends the sentence with a period, while the payload uses straight marks and a trailing comma.",
+          "proposed_fix": "Quote the opinion punctuation exactly or paraphrase the clause instead of using quotation marks.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The opinion text contains the same substantive clause and immediately follows with the arrest-intent holding.",
+          "Strict character fidelity fails on punctuation and quote/apostrophe characters."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Use exact opinion typography and terminal punctuation, or remove quotation marks around the integrated clause.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "6f5583953939cf92",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The quote appears in the opinion passage beginning, \"Second, the scope of a license is often limited to a specific purpose,\" before the Jardines citation.",
+          "The lake pinpoint marks pin-1159a quote_fidelity as matched and includes a validated text fragment."
+        ],
+        "residual_risks": [
+          "The inventory row is quote-fidelity only; reporter-page pincite accuracy was not separately adjudicated."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "61547c0e62963171",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A, so no treatment finding is raised.",
+          "The row mirrors the disclosed lake treatment fields: field_i_validity good_law, as_of_treatment 2026-06-30, varies_by_point false, and the same scope_note."
+        ],
+        "residual_risks": [
+          "Treatment and currency remain for Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/United States v. Lundin.json\",\"reviewed\":[{\"assertion_id\":\"cdb7ba03edf59951\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake identity record verifies United States v. Eric Lundin, U.S. Court of Appeals for the Ninth Circuit, decided 2016-03-22.\",\"The displayed citation 817 F.3d 1151 and vendor cites 2016 WL 1104851 and 2016 U.S. App. LEXIS 5236 match the lake citations.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"071b3e0efc40cd75\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"pin-1159's stored quote is not character-faithful to the opinion text; it appears to be a harvested concatenation of the content page's Issue/Rule text and even includes Markdown heading text.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-1159 with actual opinion text for the time-rationale passage, or split the paragraph into separate validated pinpoints for the coterminous-license, two-reasons, and 4:00 a.m. quotes.\",\"evidence_quote\":\"exception authorized officers to enter the curtilage and knock on the front door at 4:00 a.m. with the intent to arrest the occupant, where the knock precipitated the noises the officers then used to justify a warrantless search. ## Rule The knock-and-talk exception is\",\"needs_cl\":false,\"locator_note\":\"lake pin-1159; the local opinion text supports the doctrine elsewhere, but this quoted string is not an opinion passage.\"},\"reasons\":[\"The quote string is absent from text/United States v. Lundin__d67350.txt.\",\"The lake record itself marks pin-1159 quote_fidelity as mismatch.\"],\"breaks_true_positives\":true,\"residual_risks\":[],\"suggested_tightening\":\"Use only opinion-text excerpts in the pinpoint quote field; keep content-page issue prose out of quote pinpoints.\"},{\"assertion_id\":\"077f643d38e8774d\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The substantive clause is in the opinion, but the stored/page quote is not character-faithful: the opinion uses typographic quotation marks/apostrophe and ends the sentence with a period, while the payload uses straight marks and a trailing comma.\",\"severity\":\"low\",\"proposed_fix\":\"Quote the opinion punctuation exactly or paraphrase the clause instead of using quotation marks.\",\"evidence_quote\":\"the \\u201cknock and talk\\u201d exception depends at least in part on an\\nofficer\\u2019s subjective intent.\",\"needs_cl\":false,\"locator_note\":\"text lines 467-468; content_page.md line 59 and lake pin-1160 use the altered straight-mark/comma form.\"},\"reasons\":[\"The opinion text contains the same substantive clause and immediately follows with the arrest-intent holding.\",\"Strict character fidelity fails on punctuation and quote/apostrophe characters.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":\"Use exact opinion typography and terminal punctuation, or remove quotation marks around the integrated clause.\"},{\"assertion_id\":\"6f5583953939cf92\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The quote appears in the opinion passage beginning, \\\"Second, the scope of a license is often limited to a specific purpose,\\\" before the Jardines citation.\",\"The lake pinpoint marks pin-1159a quote_fidelity as matched and includes a validated text fragment.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The inventory row is quote-fidelity only; reporter-page pincite accuracy was not separately adjudicated.\"],\"suggested_tightening\":null},{\"assertion_id\":\"61547c0e62963171\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside Lens A, so no treatment finding is raised.\",\"The row mirrors the disclosed lake treatment fields: field_i_validity good_law, as_of_treatment 2026-06-30, varies_by_point false, and the same scope_note.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment and currency remain for Lens B.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed all five inventory rows using only the disclosed working-directory files. Lens A did not audit treatment/currency.\"}",
+  "summary": {
+    "at": "2026-07-10T02:36:12-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-eeee387109",
+      "F-S9-PR-dedf8f329e"
+    ],
+    "group_id": "_overhaul2/lake/cases/United States v. Lundin.json",
+    "group_total_assertions": 5,
+    "lake_only_cases": [],
+    "lane": "codex-A",
+    "lane_id": "codex-A-panel-prod-c4898015",
+    "lens": "A",
+    "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-c4898015.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "United States v. Lundin"
+    ],
+    "tokens": {
+      "input": 213116,
+      "output": 11647,
+      "source": "codex-events",
+      "total": 224763
+    },
+    "verdict_map": {
+      "071b3e0efc40cd75": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "077f643d38e8774d": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "61547c0e62963171": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "6f5583953939cf92": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "cdb7ba03edf59951": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-eeee387109",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-dedf8f329e",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 256.4
+  }
+}

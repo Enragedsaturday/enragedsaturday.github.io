@@ -1,13 +1,88 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Dow Chemical Co. v. United States.json",
+    "lens": "A",
+    "notes": "Reviewed every group_inventory row exactly once under Lens A.",
+    "reviewed": [
+      {
+        "assertion_id": "0ff1637a5f96b873",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record is verified for Dow Chemical Co. v. United States, with court U.S. Supreme Court and date_decided 1986-05-19.",
+          "The official citation 476 U.S. 227 and the listed parallel/vendor citations match the lake citation fields and the content page."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "036baa06d872068f",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "We conclude that the open areas of an industrial plant complex with numerous plant structures spread over an area of 2,000 acres are not analogous to the “curtilage” of a dwelling for purposes of aerial surveillance;",
+          "locator_note": "pin-239 in lake pinpoints is mismatch/slip-only with no star marker; text page *239 contains different language.",
+          "needs_cl": false,
+          "problem": "The pin-239 quote is not character-faithful opinion text; it stitches content-page prose and a heading into the purported quote. The lake record itself marks this pin quote_fidelity=mismatch, pinpoint_status=slip-only, and star_marker=null.",
+          "proposed_fix": "Regenerate pin-239 from the actual page-239 opinion passage, anchoring either the full 'We conclude...' sentence or the quoted 'such an industrial complex...' clause.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload quote contains '## Rule No.' and content-page wording, not the opinion text.",
+          "The disclosed opinion text at page *239 supports the proposition but not the harvested pin-239 quote as framed."
+        ],
+        "residual_risks": [
+          "The visible content-page quoted clause after the semicolon appears faithful; the defect is the stored pin-239 quote/anchor."
+        ],
+        "suggested_tightening": "Separate the paraphrased rule from the verbatim quote and align ^pin-239 to the exact page-239 language.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "d47be934a0ec2c72",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The quoted sentence appears verbatim in the opinion text at page *239.",
+          "The lake record marks pin-239a as quote_fidelity=matched, pinpoint_status=star-verified, and star_marker=239."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "8deb0e7149b31271",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A; this row is recorded without raising a treatment finding.",
+          "The payload treatment fields match the disclosed lake treatment fields: good_law, as_of_content 1986-05-19, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note."
+        ],
+        "residual_risks": [
+          "Treatment/currency merits are reserved for Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Dow Chemical Co. v. United States.json\",\"reviewed\":[{\"assertion_id\":\"0ff1637a5f96b873\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake identity record is verified for Dow Chemical Co. v. United States, with court U.S. Supreme Court and date_decided 1986-05-19.\",\"The official citation 476 U.S. 227 and the listed parallel/vendor citations match the lake citation fields and the content page.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"036baa06d872068f\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The pin-239 quote is not character-faithful opinion text; it stitches content-page prose and a heading into the purported quote. The lake record itself marks this pin quote_fidelity=mismatch, pinpoint_status=slip-only, and star_marker=null.\",\"severity\":\"high\",\"proposed_fix\":\"Regenerate pin-239 from the actual page-239 opinion passage, anchoring either the full 'We conclude...' sentence or the quoted 'such an industrial complex...' clause.\",\"evidence_quote\":\"We conclude that the open areas of an industrial plant complex with numerous plant structures spread over an area of 2,000 acres are not analogous to the “curtilage” of a dwelling for purposes of aerial surveillance;\",\"needs_cl\":false,\"locator_note\":\"pin-239 in lake pinpoints is mismatch/slip-only with no star marker; text page *239 contains different language.\"},\"reasons\":[\"The payload quote contains '## Rule No.' and content-page wording, not the opinion text.\",\"The disclosed opinion text at page *239 supports the proposition but not the harvested pin-239 quote as framed.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The visible content-page quoted clause after the semicolon appears faithful; the defect is the stored pin-239 quote/anchor.\"],\"suggested_tightening\":\"Separate the paraphrased rule from the verbatim quote and align ^pin-239 to the exact page-239 language.\"},{\"assertion_id\":\"d47be934a0ec2c72\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The quoted sentence appears verbatim in the opinion text at page *239.\",\"The lake record marks pin-239a as quote_fidelity=matched, pinpoint_status=star-verified, and star_marker=239.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"8deb0e7149b31271\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside Lens A; this row is recorded without raising a treatment finding.\",\"The payload treatment fields match the disclosed lake treatment fields: good_law, as_of_content 1986-05-19, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment/currency merits are reserved for Lens B.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed every group_inventory row exactly once under Lens A.\"}",
   "summary": {
-    "at": "2026-07-09T23:18:21-04:00",
-    "attempts": 2,
+    "at": "2026-07-10T17:51:03-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-aeeebcc253"
+    ],
     "group_id": "_overhaul2/lake/cases/Dow Chemical Co. v. United States.json",
     "group_total_assertions": 4,
     "lake_only_cases": [],
@@ -16,21 +91,55 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-a984e10c.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 4,
     "run": "prod",
     "text_disclosed_cases": [
       "Dow Chemical Co. v. United States"
     ],
     "tokens": {
-      "input": 830,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 830
+      "input": 279072,
+      "output": 6736,
+      "source": "codex-events",
+      "total": 285808
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 2.9
+    "verdict_map": {
+      "036baa06d872068f": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "0ff1637a5f96b873": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "8deb0e7149b31271": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "d47be934a0ec2c72": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-aeeebcc253",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 133.9
   }
 }

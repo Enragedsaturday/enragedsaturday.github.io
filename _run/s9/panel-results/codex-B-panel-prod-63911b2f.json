@@ -1,13 +1,112 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Brown v. Texas.json",
+    "lens": "B",
+    "notes": "Reviewed all five inventory assertions under lens B only; no external sources used.",
+    "reviewed": [
+      {
+        "assertion_id": "97a1cd3fc3bad89e",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record is non-stub and identifies Brown v. Texas as a U.S. Supreme Court case decided 1979-06-25 with cluster_id 110128 and lead_opinion_id 110128.",
+          "The official citation in the lake record is 443 U.S. 47, matching the asserted display citation.",
+          "The lake treatment field marks the authority good_law as of 2026-06-30, so the cited authority is live for this lens."
+        ],
+        "residual_risks": [
+          "Lake status is under_review and identity_method is pending, but the disclosed citation and canonical-name fields support existence."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "39902fdf9ea56d1b",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote-fidelity support is outside lens B; no currency or treatment defect is raised for this pin.",
+          "The lake pinpoints entry for pin-51b exists and carries quote_fidelity: mismatch, matching the inventory payload."
+        ],
+        "residual_risks": [
+          "Verbatim quote accuracy was not assessed under lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "5d71cfe3c27c8812",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote-fidelity support is outside lens B; no currency or treatment defect is raised for this pin.",
+          "The lake pinpoints entry for pin-53 exists and carries quote_fidelity: mismatch, matching the inventory payload."
+        ],
+        "residual_risks": [
+          "Verbatim quote accuracy was not assessed under lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "fbcce3d5aaae9344",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote-fidelity support is outside lens B; no currency or treatment defect is raised for this pin.",
+          "The lake pinpoints entry for pin-51 exists and carries quote_fidelity: mismatch, matching the inventory payload."
+        ],
+        "residual_risks": [
+          "Verbatim quote accuracy was not assessed under lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "f190db6d91c4fb4b",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "\"audit_needed\": true,\n      \"proposed_negative_events\": 13,\n      \"audit_marker\": \"R15 treatment audit required\"",
+          "locator_note": "content_page.md Treatment & subsequent history; lake/Brown v. Texas__53a93a.json treatment.edges and treatment.derivation",
+          "needs_cl": true,
+          "problem": "The good_law and Binding-SCOTUS treatment survives, but the built page's unqualified 'No negative treatment' overstates the disclosed record because lake treatment.edges contains proposed negative-treatment signals and derivation flags an R15 treatment audit.",
+          "proposed_fix": "Keep field_i_validity: good_law and the Hiibel caveat, but replace 'No negative treatment' with a narrower statement such as: 'No audited negative treatment changes the good-law status in the lake record; proposed negative-treatment signals remain flagged for audit.'",
+          "severity": "medium"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "The asserted good_law field, as_of_treatment 2026-06-30, varies_by_point false, and scope_note match the lake treatment fields.",
+          "The court_level is scotus, so the Binding-SCOTUS weight label is supported.",
+          "The lake scope_note expressly says Hiibel later upheld identification during a lawful Terry stop and does not disturb Brown; Brown's text also reserves that lawful-stop question.",
+          "However, the disclosed progeny data is not clean enough to support an unqualified 'No negative treatment' sentence."
+        ],
+        "residual_risks": [
+          "The proposed edges are marked proposed and field_iii: mentioned, so they do not refute the good_law status without further audit.",
+          "Lane1 and lane2 derivation entries are cap_hit/audit_needed, so treatment completeness remains an audit risk."
+        ],
+        "suggested_tightening": "Distinguish final treatment status from unaudited proposed negative-treatment signals.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/Brown v. Texas.json\",\"reviewed\":[{\"assertion_id\":\"97a1cd3fc3bad89e\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record is non-stub and identifies Brown v. Texas as a U.S. Supreme Court case decided 1979-06-25 with cluster_id 110128 and lead_opinion_id 110128.\",\"The official citation in the lake record is 443 U.S. 47, matching the asserted display citation.\",\"The lake treatment field marks the authority good_law as of 2026-06-30, so the cited authority is live for this lens.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Lake status is under_review and identity_method is pending, but the disclosed citation and canonical-name fields support existence.\"],\"suggested_tightening\":null},{\"assertion_id\":\"39902fdf9ea56d1b\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Quote-fidelity support is outside lens B; no currency or treatment defect is raised for this pin.\",\"The lake pinpoints entry for pin-51b exists and carries quote_fidelity: mismatch, matching the inventory payload.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Verbatim quote accuracy was not assessed under lens B.\"],\"suggested_tightening\":null},{\"assertion_id\":\"5d71cfe3c27c8812\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Quote-fidelity support is outside lens B; no currency or treatment defect is raised for this pin.\",\"The lake pinpoints entry for pin-53 exists and carries quote_fidelity: mismatch, matching the inventory payload.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Verbatim quote accuracy was not assessed under lens B.\"],\"suggested_tightening\":null},{\"assertion_id\":\"fbcce3d5aaae9344\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Quote-fidelity support is outside lens B; no currency or treatment defect is raised for this pin.\",\"The lake pinpoints entry for pin-51 exists and carries quote_fidelity: mismatch, matching the inventory payload.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Verbatim quote accuracy was not assessed under lens B.\"],\"suggested_tightening\":null},{\"assertion_id\":\"f190db6d91c4fb4b\",\"dimension\":\"treatment\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The good_law and Binding-SCOTUS treatment survives, but the built page's unqualified 'No negative treatment' overstates the disclosed record because lake treatment.edges contains proposed negative-treatment signals and derivation flags an R15 treatment audit.\",\"severity\":\"medium\",\"proposed_fix\":\"Keep field_i_validity: good_law and the Hiibel caveat, but replace 'No negative treatment' with a narrower statement such as: 'No audited negative treatment changes the good-law status in the lake record; proposed negative-treatment signals remain flagged for audit.'\",\"evidence_quote\":\"\\\"audit_needed\\\": true,\\n      \\\"proposed_negative_events\\\": 13,\\n      \\\"audit_marker\\\": \\\"R15 treatment audit required\\\"\",\"needs_cl\":true,\"locator_note\":\"content_page.md Treatment & subsequent history; lake/Brown v. Texas__53a93a.json treatment.edges and treatment.derivation\"},\"reasons\":[\"The asserted good_law field, as_of_treatment 2026-06-30, varies_by_point false, and scope_note match the lake treatment fields.\",\"The court_level is scotus, so the Binding-SCOTUS weight label is supported.\",\"The lake scope_note expressly says Hiibel later upheld identification during a lawful Terry stop and does not disturb Brown; Brown's text also reserves that lawful-stop question.\",\"However, the disclosed progeny data is not clean enough to support an unqualified 'No negative treatment' sentence.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The proposed edges are marked proposed and field_iii: mentioned, so they do not refute the good_law status without further audit.\",\"Lane1 and lane2 derivation entries are cap_hit/audit_needed, so treatment completeness remains an audit risk.\"],\"suggested_tightening\":\"Distinguish final treatment status from unaudited proposed negative-treatment signals.\"}],\"notes\":\"Reviewed all five inventory assertions under lens B only; no external sources used.\"}",
   "summary": {
-    "at": "2026-07-09T23:17:35-04:00",
-    "attempts": 2,
+    "at": "2026-07-10T17:47:10-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-a7113ee053"
+    ],
     "group_id": "_overhaul2/lake/cases/Brown v. Texas.json",
     "group_total_assertions": 5,
     "lake_only_cases": [],
@@ -16,21 +115,62 @@
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-63911b2f.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 5,
     "run": "prod",
     "text_disclosed_cases": [
       "Brown v. Texas"
     ],
     "tokens": {
-      "input": 753,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 753
+      "input": 234040,
+      "output": 6733,
+      "source": "codex-events",
+      "total": 240773
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 2.8
+    "verdict_map": {
+      "39902fdf9ea56d1b": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "5d71cfe3c27c8812": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "97a1cd3fc3bad89e": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "f190db6d91c4fb4b": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "fbcce3d5aaae9344": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-a7113ee053",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 138.1
   }
 }

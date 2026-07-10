@@ -1,13 +1,129 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Brown v. Texas.json",
+    "lens": "A",
+    "notes": "",
+    "reviewed": [
+      {
+        "assertion_id": "97a1cd3fc3bad89e",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity gives case_name Brown v. Texas, court U.S. Supreme Court, date_decided 1979-06-25, and year 1979.",
+          "Lake citations list official citation 443 U.S. 47 and parallel/vendor citations matching the inventory payload."
+        ],
+        "residual_risks": [
+          "Lake identity_method is pending and reason_code is two_key_not_satisfied, but the disclosed record also has expected_citation_found and canonical_name_match true."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "39902fdf9ea56d1b",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "To this end, the Fourth Amendment requires that a seizure must be based on specific, objective facts indicating that society’s legitimate interests require the seizure of the particular individual, or that the seizure must be carried out pursuant to a plan embodying explicit, neutral limitations on the conduct of individual officers.",
+          "locator_note": "text/Brown v. Texas__53a93a.txt, page marker *51 passage",
+          "needs_cl": false,
+          "problem": "The quoted sentence is not character-faithful to the cached opinion text: the opinion uses the curly apostrophe in society’s, while the page/lake quote uses society's.",
+          "proposed_fix": "Change the quote to the exact opinion typography, including society’s, or stop treating typographically normalized text as a verbatim quote.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The substantive passage exists at the claimed page-51 area, but character fidelity fails under the stated standard.",
+          "The lake pinpoint itself is marked quote_fidelity=mismatch, consistent with the text comparison."
+        ],
+        "residual_risks": [
+          "No broader support defect found for this sentence from the disclosed text; the defect is exact-character fidelity."
+        ],
+        "suggested_tightening": "Use exact opinion text for verbatim quotes, especially curly punctuation.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "5d71cfe3c27c8812",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "The application of Tex. Penal Code Ann., Tit. 8, § 38.02 (1974), to detain appellant and require him to identify himself violated the Fourth Amendment because the officers lacked any reasonable suspicion to believe appellant was engaged or had engaged in criminal conduct.",
+          "locator_note": "text/Brown v. Texas__53a93a.txt, page marker *53 passage",
+          "needs_cl": false,
+          "problem": "The pinpoint quote is not an opinion quote; it captures the content page heading/prose instead of the cached opinion text.",
+          "proposed_fix": "Replace pin-53 with the actual page-53 holding quote, or split the factual discussion on page 52 from the holding on page 53.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The asserted quote begins with markdown-style content-page text: ## Application The officers had no such basis.",
+          "The cached opinion instead states the factual analysis at page 52 and the holding at page 53."
+        ],
+        "residual_risks": [
+          "The visible content page's final page-53 holding quote appears supported; the stored pin quote is the defect."
+        ],
+        "suggested_tightening": "Do not let generated section headings or paraphrase enter pinpoints[].quote.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "fbcce3d5aaae9344",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "Consideration of the constitutionality of such seizures involves a weighing of the gravity of the public concerns served by the seizure, the degree to which the seizure advances the public interest, and the severity of the interference with individual liberty.",
+          "locator_note": "text/Brown v. Texas__53a93a.txt, page marker *51 passage",
+          "needs_cl": false,
+          "problem": "The pin-51 quote is not character-faithful to the opinion text and appears to be generated page prose spanning Background, Issue, and Rule rather than the cited page-51 balancing passage.",
+          "proposed_fix": "Replace pin-51 with the actual page-51 balancing-test sentence from the opinion.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The inventory quote contains markdown headings and content-page prose, including ## Issue and ## Rule, which are not in the cached opinion text.",
+          "The actual page-51 passage supports the displayed rule quote, but not the stored pin-51 quote in the inventory/lake record."
+        ],
+        "residual_risks": [
+          "The displayed content-page rule quote itself appears accurate; the metadata quote tied to pin-51 is malformed."
+        ],
+        "suggested_tightening": "Set pin-51 to the exact balancing-test passage and preserve page marker 51.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "f190db6d91c4fb4b",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment merits are outside Lens A, so no treatment/currency finding is raised.",
+          "The inventory treatment fields match the disclosed lake treatment fields: field_i_validity good_law, as_of_content 1979-06-25, as_of_treatment 2026-06-30, varies_by_point false, and the same scope_note."
+        ],
+        "residual_risks": [
+          "Treatment/currency should be reviewed by Lens B, not resolved here."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Brown v. Texas.json\",\"reviewed\":[{\"assertion_id\":\"97a1cd3fc3bad89e\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity gives case_name Brown v. Texas, court U.S. Supreme Court, date_decided 1979-06-25, and year 1979.\",\"Lake citations list official citation 443 U.S. 47 and parallel/vendor citations matching the inventory payload.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Lake identity_method is pending and reason_code is two_key_not_satisfied, but the disclosed record also has expected_citation_found and canonical_name_match true.\"],\"suggested_tightening\":null},{\"assertion_id\":\"39902fdf9ea56d1b\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The quoted sentence is not character-faithful to the cached opinion text: the opinion uses the curly apostrophe in society’s, while the page/lake quote uses society's.\",\"severity\":\"low\",\"proposed_fix\":\"Change the quote to the exact opinion typography, including society’s, or stop treating typographically normalized text as a verbatim quote.\",\"evidence_quote\":\"To this end, the Fourth Amendment requires that a seizure must be based on specific, objective facts indicating that society’s legitimate interests require the seizure of the particular individual, or that the seizure must be carried out pursuant to a plan embodying explicit, neutral limitations on the conduct of individual officers.\",\"needs_cl\":false,\"locator_note\":\"text/Brown v. Texas__53a93a.txt, page marker *51 passage\"},\"reasons\":[\"The substantive passage exists at the claimed page-51 area, but character fidelity fails under the stated standard.\",\"The lake pinpoint itself is marked quote_fidelity=mismatch, consistent with the text comparison.\"],\"breaks_true_positives\":true,\"residual_risks\":[\"No broader support defect found for this sentence from the disclosed text; the defect is exact-character fidelity.\"],\"suggested_tightening\":\"Use exact opinion text for verbatim quotes, especially curly punctuation.\"},{\"assertion_id\":\"5d71cfe3c27c8812\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The pinpoint quote is not an opinion quote; it captures the content page heading/prose instead of the cached opinion text.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-53 with the actual page-53 holding quote, or split the factual discussion on page 52 from the holding on page 53.\",\"evidence_quote\":\"The application of Tex. Penal Code Ann., Tit. 8, § 38.02 (1974), to detain appellant and require him to identify himself violated the Fourth Amendment because the officers lacked any reasonable suspicion to believe appellant was engaged or had engaged in criminal conduct.\",\"needs_cl\":false,\"locator_note\":\"text/Brown v. Texas__53a93a.txt, page marker *53 passage\"},\"reasons\":[\"The asserted quote begins with markdown-style content-page text: ## Application The officers had no such basis.\",\"The cached opinion instead states the factual analysis at page 52 and the holding at page 53.\"],\"breaks_true_positives\":true,\"residual_risks\":[\"The visible content page's final page-53 holding quote appears supported; the stored pin quote is the defect.\"],\"suggested_tightening\":\"Do not let generated section headings or paraphrase enter pinpoints[].quote.\"},{\"assertion_id\":\"fbcce3d5aaae9344\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The pin-51 quote is not character-faithful to the opinion text and appears to be generated page prose spanning Background, Issue, and Rule rather than the cited page-51 balancing passage.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-51 with the actual page-51 balancing-test sentence from the opinion.\",\"evidence_quote\":\"Consideration of the constitutionality of such seizures involves a weighing of the gravity of the public concerns served by the seizure, the degree to which the seizure advances the public interest, and the severity of the interference with individual liberty.\",\"needs_cl\":false,\"locator_note\":\"text/Brown v. Texas__53a93a.txt, page marker *51 passage\"},\"reasons\":[\"The inventory quote contains markdown headings and content-page prose, including ## Issue and ## Rule, which are not in the cached opinion text.\",\"The actual page-51 passage supports the displayed rule quote, but not the stored pin-51 quote in the inventory/lake record.\"],\"breaks_true_positives\":true,\"residual_risks\":[\"The displayed content-page rule quote itself appears accurate; the metadata quote tied to pin-51 is malformed.\"],\"suggested_tightening\":\"Set pin-51 to the exact balancing-test passage and preserve page marker 51.\"},{\"assertion_id\":\"f190db6d91c4fb4b\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment merits are outside Lens A, so no treatment/currency finding is raised.\",\"The inventory treatment fields match the disclosed lake treatment fields: field_i_validity good_law, as_of_content 1979-06-25, as_of_treatment 2026-06-30, varies_by_point false, and the same scope_note.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment/currency should be reviewed by Lens B, not resolved here.\"],\"suggested_tightening\":null}],\"notes\":\"\"}",
   "summary": {
-    "at": "2026-07-09T23:17:35-04:00",
-    "attempts": 2,
+    "at": "2026-07-10T17:47:45-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "defense_votes": [],
-    "findings_emitted": [],
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-a7113ee053",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-574f812936",
+      "F-S9-PR-0bfa9964b7",
+      "F-S9-PR-20623a644c"
+    ],
     "group_id": "_overhaul2/lake/cases/Brown v. Texas.json",
     "group_total_assertions": 5,
     "lake_only_cases": [],
@@ -16,21 +132,74 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-63911b2f.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 5,
     "run": "prod",
     "text_disclosed_cases": [
       "Brown v. Texas"
     ],
     "tokens": {
-      "input": 825,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 825
+      "input": 226948,
+      "output": 8900,
+      "source": "codex-events",
+      "total": 235848
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 2.7
+    "verdict_map": {
+      "39902fdf9ea56d1b": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "5d71cfe3c27c8812": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "97a1cd3fc3bad89e": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "f190db6d91c4fb4b": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "fbcce3d5aaae9344": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-574f812936",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-0bfa9964b7",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-20623a644c",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-a7113ee053",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": 185.1
   }
 }

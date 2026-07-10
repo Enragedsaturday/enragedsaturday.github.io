@@ -1,0 +1,186 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "content/cases/Moore v. Illinois.md",
+    "lens": "A",
+    "notes": "No text/Moore v. Illinois.txt file is disclosed and the lake pinpoints array is empty, so support assertions fail under Lens A's default-to-refuted rule. The content page also contains a quote and pincite, but no quote_fidelity or pincite rows were present in group_inventory.jsonl.",
+    "reviewed": [
+      {
+        "assertion_id": "873d1f643ee3d6a7",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity confirms case_name Moore v. Illinois, court U.S. Supreme Court, and year 1977.",
+          "Lake citations include official 434 U.S. 220, parallels 98 S. Ct. 458 and 54 L. Ed. 2d 424, and 1977 U.S. LEXIS 163; the payload matches those citation strings."
+        ],
+        "residual_risks": [
+          "No cached opinion text is disclosed, but existence and citation metadata are verifiable from the lake record."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "121186784b801b49",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "\"pinpoints\": []",
+          "locator_note": "holding",
+          "needs_cl": true,
+          "problem": "The stated holding is not verifiable from disclosed authority evidence: no text opinion file is present, the lake record has no holding field, and the lake pinpoints array is empty. The content page's own holding cannot support itself.",
+          "proposed_fix": "Provide cached opinion text or lake holding/pinpoints confirming each component of the asserted holding, or narrow/remove the holding until it is supported by disclosed evidence.",
+          "severity": "high"
+        },
+        "dimension": "support",
+        "reasons": [
+          "Support review requires opinion text and lake holding or pinpoints; the disclosed lake record supplies identity, citations, treatment, and progeny metadata only.",
+          "The asserted proposition contains multiple merits claims that cannot be checked from the disclosed files."
+        ],
+        "residual_risks": [
+          "The proposition may be accurate, but it cannot stand under the default-to-refuted rule without disclosed opinion support."
+        ],
+        "suggested_tightening": "Split the holding into separately sourced rule and disposition statements with exact opinion text and page pinpoints.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": false
+      },
+      {
+        "assertion_id": "6e53670b6dd83648",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "\"pinpoints\": []",
+          "locator_note": "home: Lineups and the Right to Counsel",
+          "needs_cl": true,
+          "problem": "The Anchor role for Lineups and the Right to Counsel cannot be verified from disclosed opinion text or lake holding/pinpoints. The page frontmatter lists the role, but that is the assertion under review, not independent support.",
+          "proposed_fix": "Provide opinion text, lake holding/pinpoints, or a supported home-page rule showing Moore is central to lineup right-to-counsel doctrine; otherwise downgrade the role.",
+          "severity": "medium"
+        },
+        "dimension": "support",
+        "reasons": [
+          "Lake identity and citation fields verify the case exists, but do not establish doctrinal anchor status.",
+          "No disclosed text file or lake holding supports the breadth of the home-role assignment."
+        ],
+        "residual_risks": [
+          "The role may be substantively correct, but it is not verifiable from the disclosed evidence."
+        ],
+        "suggested_tightening": "Mark as provisional or downgrade from Anchor unless supported by disclosed opinion text and topic-home criteria.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": false
+      },
+      {
+        "assertion_id": "336b49213c29813d",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Lake identity lists the court as U.S. Supreme Court and court_level as scotus, matching the SCOTUS basis for the weight label.",
+          "Under Lens A, this is only a disclosed-field consistency check, not a treatment or currency finding."
+        ],
+        "residual_risks": [
+          "Treatment and good-law currency are not reviewed under Lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "91cdbfe101d4671f",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The payload treatment values match the disclosed lake treatment stub: field_i_validity and composite_basis are unverified, as_of fields are null, varies_by_point is false, and the scope_note matches.",
+          "Under Lens A, this records field consistency only and raises no treatment/currency finding."
+        ],
+        "residual_risks": [
+          "Treatment and progeny are expressly unverified in the disclosed lake record."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"A\",\n  \"group_id\": \"content/cases/Moore v. Illinois.md\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"873d1f643ee3d6a7\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Lake identity confirms case_name Moore v. Illinois, court U.S. Supreme Court, and year 1977.\",\n        \"Lake citations include official 434 U.S. 220, parallels 98 S. Ct. 458 and 54 L. Ed. 2d 424, and 1977 U.S. LEXIS 163; the payload matches those citation strings.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"No cached opinion text is disclosed, but existence and citation metadata are verifiable from the lake record.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"121186784b801b49\",\n      \"dimension\": \"support\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": false,\n      \"defect\": {\n        \"problem\": \"The stated holding is not verifiable from disclosed authority evidence: no text opinion file is present, the lake record has no holding field, and the lake pinpoints array is empty. The content page's own holding cannot support itself.\",\n        \"severity\": \"high\",\n        \"proposed_fix\": \"Provide cached opinion text or lake holding/pinpoints confirming each component of the asserted holding, or narrow/remove the holding until it is supported by disclosed evidence.\",\n        \"evidence_quote\": \"\\\"pinpoints\\\": []\",\n        \"needs_cl\": true,\n        \"locator_note\": \"holding\"\n      },\n      \"reasons\": [\n        \"Support review requires opinion text and lake holding or pinpoints; the disclosed lake record supplies identity, citations, treatment, and progeny metadata only.\",\n        \"The asserted proposition contains multiple merits claims that cannot be checked from the disclosed files.\"\n      ],\n      \"breaks_true_positives\": true,\n      \"residual_risks\": [\n        \"The proposition may be accurate, but it cannot stand under the default-to-refuted rule without disclosed opinion support.\"\n      ],\n      \"suggested_tightening\": \"Split the holding into separately sourced rule and disposition statements with exact opinion text and page pinpoints.\"\n    },\n    {\n      \"assertion_id\": \"6e53670b6dd83648\",\n      \"dimension\": \"support\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": false,\n      \"defect\": {\n        \"problem\": \"The Anchor role for Lineups and the Right to Counsel cannot be verified from disclosed opinion text or lake holding/pinpoints. The page frontmatter lists the role, but that is the assertion under review, not independent support.\",\n        \"severity\": \"medium\",\n        \"proposed_fix\": \"Provide opinion text, lake holding/pinpoints, or a supported home-page rule showing Moore is central to lineup right-to-counsel doctrine; otherwise downgrade the role.\",\n        \"evidence_quote\": \"\\\"pinpoints\\\": []\",\n        \"needs_cl\": true,\n        \"locator_note\": \"home: Lineups and the Right to Counsel\"\n      },\n      \"reasons\": [\n        \"Lake identity and citation fields verify the case exists, but do not establish doctrinal anchor status.\",\n        \"No disclosed text file or lake holding supports the breadth of the home-role assignment.\"\n      ],\n      \"breaks_true_positives\": true,\n      \"residual_risks\": [\n        \"The role may be substantively correct, but it is not verifiable from the disclosed evidence.\"\n      ],\n      \"suggested_tightening\": \"Mark as provisional or downgrade from Anchor unless supported by disclosed opinion text and topic-home criteria.\"\n    },\n    {\n      \"assertion_id\": \"336b49213c29813d\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Lake identity lists the court as U.S. Supreme Court and court_level as scotus, matching the SCOTUS basis for the weight label.\",\n        \"Under Lens A, this is only a disclosed-field consistency check, not a treatment or currency finding.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Treatment and good-law currency are not reviewed under Lens A.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"91cdbfe101d4671f\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The payload treatment values match the disclosed lake treatment stub: field_i_validity and composite_basis are unverified, as_of fields are null, varies_by_point is false, and the scope_note matches.\",\n        \"Under Lens A, this records field consistency only and raises no treatment/currency finding.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Treatment and progeny are expressly unverified in the disclosed lake record.\"\n      ],\n      \"suggested_tightening\": null\n    }\n  ],\n  \"notes\": \"No text/Moore v. Illinois.txt file is disclosed and the lake pinpoints array is empty, so support assertions fail under Lens A's default-to-refuted rule. The content page also contains a quote and pincite, but no quote_fidelity or pincite rows were present in group_inventory.jsonl.\"\n}",
+  "summary": {
+    "at": "2026-07-10T00:31:59-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-2ab8ccd6e4",
+      "F-S9-PR-d4cbad572e"
+    ],
+    "group_id": "content/cases/Moore v. Illinois.md",
+    "group_total_assertions": 5,
+    "lake_only_cases": [
+      "Moore v. Illinois"
+    ],
+    "lane": "codex-A",
+    "lane_id": "codex-A-panel-prod-f9856044",
+    "lens": "A",
+    "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-f9856044.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [
+      "case 'Moore v. Illinois' has no lead_opinion_id (text undisclosed)"
+    ],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [],
+    "tokens": {
+      "input": 108868,
+      "output": 5896,
+      "source": "codex-events",
+      "total": 114764
+    },
+    "verdict_map": {
+      "121186784b801b49": {
+        "dimension": "support",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": false
+      },
+      "336b49213c29813d": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "6e53670b6dd83648": {
+        "dimension": "support",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": false
+      },
+      "873d1f643ee3d6a7": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "91cdbfe101d4671f": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-2ab8ccd6e4",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-d4cbad572e",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 114.6
+  }
+}

@@ -1,11 +1,82 @@
 {
-  "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Birchfield v. North Dakota.json",
+    "lens": "B",
+    "notes": "Lens B only; no support or quote-fidelity defects were raised.",
+    "reviewed": [
+      {
+        "assertion_id": "06b0bd0f4c416bd8",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record is verified, not a stub, and identifies the case as U.S. Supreme Court with expected_citation_found=true.",
+          "The official citation is selected as 579 U.S. 438, and treatment.field_i_validity is good_law as of 2026-06-30."
+        ],
+        "residual_risks": [
+          "The treatment derivation contains proposed negative edges and an audit_needed flag for one lane, but the disclosed final judgment fields do not show a final overruling, abrogation, or supersession."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "95634e80873e19ea",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Lens B does not decide quote fidelity; no currency or treatment defect is created by this pinpoint row.",
+          "The underlying authority is marked good_law as of 2026-06-30 with no point_overrides."
+        ],
+        "residual_risks": [
+          "Quote accuracy is left to Lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "fbc6d37a54783b5c",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Lens B does not decide quote fidelity; no disclosed currency or treatment field refutes this row.",
+          "The embedded treatment/weight language is consistent with the separate lake treatment field and SCOTUS identity metadata."
+        ],
+        "residual_risks": [
+          "Quote accuracy is left to Lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "b343af200808f394",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The treatment payload matches lake.treatment: good_law, as_of_content=2016-06-23, as_of_treatment=2026-06-30, varies_by_point=false, and the same scope_note.",
+          "The record has no point_overrides; all 31 negative-sounding treatment edges are marked proposed=true and field_iii=mentioned, so they do not amount to final disclosed adverse treatment of Birchfield.",
+          "The Binding-SCOTUS weight is consistent with lake.identity.court_level=scotus and the content page metadata."
+        ],
+        "residual_risks": [
+          "treatment.derivation.lane2_top_cited has audit_needed=true, cap_hit=true, and proposed_negative_events=25; further treatment audit could change the status, but the disclosed final judgment fields still support good_law."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/Birchfield v. North Dakota.json\",\"reviewed\":[{\"assertion_id\":\"06b0bd0f4c416bd8\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record is verified, not a stub, and identifies the case as U.S. Supreme Court with expected_citation_found=true.\",\"The official citation is selected as 579 U.S. 438, and treatment.field_i_validity is good_law as of 2026-06-30.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The treatment derivation contains proposed negative edges and an audit_needed flag for one lane, but the disclosed final judgment fields do not show a final overruling, abrogation, or supersession.\"],\"suggested_tightening\":null},{\"assertion_id\":\"95634e80873e19ea\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lens B does not decide quote fidelity; no currency or treatment defect is created by this pinpoint row.\",\"The underlying authority is marked good_law as of 2026-06-30 with no point_overrides.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Quote accuracy is left to Lens A.\"],\"suggested_tightening\":null},{\"assertion_id\":\"fbc6d37a54783b5c\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lens B does not decide quote fidelity; no disclosed currency or treatment field refutes this row.\",\"The embedded treatment/weight language is consistent with the separate lake treatment field and SCOTUS identity metadata.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Quote accuracy is left to Lens A.\"],\"suggested_tightening\":null},{\"assertion_id\":\"b343af200808f394\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The treatment payload matches lake.treatment: good_law, as_of_content=2016-06-23, as_of_treatment=2026-06-30, varies_by_point=false, and the same scope_note.\",\"The record has no point_overrides; all 31 negative-sounding treatment edges are marked proposed=true and field_iii=mentioned, so they do not amount to final disclosed adverse treatment of Birchfield.\",\"The Binding-SCOTUS weight is consistent with lake.identity.court_level=scotus and the content page metadata.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"treatment.derivation.lane2_top_cited has audit_needed=true, cap_hit=true, and proposed_negative_events=25; further treatment audit could change the status, but the disclosed final judgment fields still support good_law.\"],\"suggested_tightening\":null}],\"notes\":\"Lens B only; no support or quote-fidelity defects were raised.\"}",
   "summary": {
-    "at": "2026-07-09T23:17:30-04:00",
-    "attempts": 2,
-    "clean_attestation": false,
+    "at": "2026-07-10T17:44:09-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
     "defense_votes": [],
     "findings_emitted": [],
     "group_id": "_overhaul2/lake/cases/Birchfield v. North Dakota.json",
@@ -16,21 +87,50 @@
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-1b206736.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 4,
     "run": "prod",
     "text_disclosed_cases": [
       "Birchfield v. North Dakota"
     ],
     "tokens": {
-      "input": 756,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 756
+      "input": 319454,
+      "output": 7781,
+      "source": "codex-events",
+      "total": 327235
     },
-    "verdict_map": {},
+    "verdict_map": {
+      "06b0bd0f4c416bd8": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "95634e80873e19ea": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "b343af200808f394": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "fbc6d37a54783b5c": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
     "votes_emitted": [],
-    "wall_clock_s": 2.7
+    "wall_clock_s": 165.5
   }
 }

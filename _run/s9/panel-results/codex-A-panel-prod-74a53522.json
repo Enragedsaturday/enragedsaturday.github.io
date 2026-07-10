@@ -1,22 +1,126 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Escobedo v. Illinois.json",
+    "lens": "A",
+    "notes": "Lens A reviewed citation existence and quote/pin support only; treatment merits were not attacked.",
+    "reviewed": [
+      {
+        "assertion_id": "2a89e9caf10701b5",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record is verified for Escobedo v. Illinois, U.S. Supreme Court, decided 1964-06-22, docket 615.",
+          "The official citation in the lake record is 378 U.S. 478, and content_page.md displays 378 U.S. 478 (1964).",
+          "The listed parallel and vendor citations match the disclosed lake citation fields."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "aea5a9f8e8d3c597",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "<p>We hold, therefore, that where, as here, the investigation is no longer a general inquiry into an unsolved crime but has begun to focus on a particular suspect, the suspect <span class=\"star-pagination\">*491</span> has been taken into police custody",
+          "locator_note": "content_page.md cites ^pin-490 after the Rule quote; lake pinpoints[0] for pin-490 has page null, pinpoint_status slip-only, and quote_fidelity mismatch.",
+          "needs_cl": false,
+          "problem": "pin-490's stored pinpoint quote is not a quote from the Escobedo opinion passage. It is harvested page markdown/header/background text, while the actual 490-491 passage begins with the Court's holding paragraph.",
+          "proposed_fix": "Replace lake pinpoints[pin-490].quote with the actual holding paragraph from text/Escobedo v. Illinois__a3ccd8.txt at the 490-491 passage, and rebuild the page so the pin points to that source passage.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The disclosed lake pinpoint quote starts with page content, not opinion text: it includes the markdown title/header/background/issue material.",
+          "The cached opinion text contains the claimed holding passage at the 490-491 span, but that is not what lake pinpoints[pin-490].quote stores.",
+          "The content-page Rule quote is broadly supported by the opinion text, so the defect is the stored pin quote/pin metadata rather than the underlying holding."
+        ],
+        "residual_risks": [
+          "Do not delete the Rule proposition as unsupported; correct the pinpoint quote and metadata."
+        ],
+        "suggested_tightening": "Store the verified 490-491 holding paragraph as the pin quote and normalize the displayed quote against that source.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "33ce3edee37a9b35",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The treatment payload matches the disclosed lake treatment fields: field_i_validity caution, as_of_treatment 2026-06-30, varies_by_point true, and the same scope note.",
+          "Lens A records no substantive treatment/currency finding; that review belongs to Lens B."
+        ],
+        "residual_risks": [
+          "Substantive good-law/treatment accuracy was not evaluated under Lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Escobedo v. Illinois.json\",\"reviewed\":[{\"assertion_id\":\"2a89e9caf10701b5\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake identity record is verified for Escobedo v. Illinois, U.S. Supreme Court, decided 1964-06-22, docket 615.\",\"The official citation in the lake record is 378 U.S. 478, and content_page.md displays 378 U.S. 478 (1964).\",\"The listed parallel and vendor citations match the disclosed lake citation fields.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"aea5a9f8e8d3c597\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"pin-490's stored pinpoint quote is not a quote from the Escobedo opinion passage. It is harvested page markdown/header/background text, while the actual 490-491 passage begins with the Court's holding paragraph.\",\"severity\":\"high\",\"proposed_fix\":\"Replace lake pinpoints[pin-490].quote with the actual holding paragraph from text/Escobedo v. Illinois__a3ccd8.txt at the 490-491 passage, and rebuild the page so the pin points to that source passage.\",\"evidence_quote\":\"<p>We hold, therefore, that where, as here, the investigation is no longer a general inquiry into an unsolved crime but has begun to focus on a particular suspect, the suspect <span class=\\\"star-pagination\\\">*491</span> has been taken into police custody\",\"needs_cl\":false,\"locator_note\":\"content_page.md cites ^pin-490 after the Rule quote; lake pinpoints[0] for pin-490 has page null, pinpoint_status slip-only, and quote_fidelity mismatch.\"},\"reasons\":[\"The disclosed lake pinpoint quote starts with page content, not opinion text: it includes the markdown title/header/background/issue material.\",\"The cached opinion text contains the claimed holding passage at the 490-491 span, but that is not what lake pinpoints[pin-490].quote stores.\",\"The content-page Rule quote is broadly supported by the opinion text, so the defect is the stored pin quote/pin metadata rather than the underlying holding.\"],\"breaks_true_positives\":true,\"residual_risks\":[\"Do not delete the Rule proposition as unsupported; correct the pinpoint quote and metadata.\"],\"suggested_tightening\":\"Store the verified 490-491 holding paragraph as the pin quote and normalize the displayed quote against that source.\"},{\"assertion_id\":\"33ce3edee37a9b35\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The treatment payload matches the disclosed lake treatment fields: field_i_validity caution, as_of_treatment 2026-06-30, varies_by_point true, and the same scope note.\",\"Lens A records no substantive treatment/currency finding; that review belongs to Lens B.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Substantive good-law/treatment accuracy was not evaluated under Lens A.\"],\"suggested_tightening\":null}],\"notes\":\"Lens A reviewed citation existence and quote/pin support only; treatment merits were not attacked.\"}",
   "summary": {
-    "at": "2026-07-09T23:15:02-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-10T17:24:15-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-0ca0ae240d"
+    ],
     "group_id": "_overhaul2/lake/cases/Escobedo v. Illinois.json",
     "group_total_assertions": 3,
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-74a53522",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-74a53522.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "d to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T03:14:53.816310Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T03:14:54.700972Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T03:14:55.981916Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T03:14:57.901241Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T03:15:01.631245Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 3,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Escobedo v. Illinois"
+    ],
+    "tokens": {
+      "input": 541858,
+      "output": 9020,
+      "source": "codex-events",
+      "total": 550878
+    },
+    "verdict_map": {
+      "2a89e9caf10701b5": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "33ce3edee37a9b35": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "aea5a9f8e8d3c597": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-0ca0ae240d",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 188.6
   }
 }

@@ -1,0 +1,128 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Montejo v. Louisiana.json",
+    "lens": "A",
+    "notes": "",
+    "reviewed": [
+      {
+        "assertion_id": "df186178762a6203",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record exists with record_id and case name Montejo v. Louisiana.",
+          "The lake identity fields show U.S. Supreme Court, decided 2009-05-26, year 2009.",
+          "The official citation in the lake record is 556 U.S. 778, and the listed parallel/vendor citations match the payload."
+        ],
+        "residual_risks": [
+          "The citations.all metadata has selected_official:false for the official cite while the citations.official object marks it selected_official:true; this does not undermine the displayed citation assertion."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "85d09f01c27766a7",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Michigan v. Jackson should be and now is overruled.",
+          "locator_note": "pin-797; the content page attaches the pin to a direct quote, but the lake pin's stored quote spans non-opinion page prose.",
+          "needs_cl": false,
+          "problem": "pin-797's quote payload is not a character-faithful quotation from the opinion. It is a composite of the page's Background, Issue, and Rule prose, including Markdown headings and summary language; the lake record itself marks quote_fidelity as mismatch.",
+          "proposed_fix": "Replace the pin quote with the exact quoted sentence from the opinion, or remove quote-pin treatment from the composite summary and treat it as paraphrase. The page quote can be tightened to: \"Michigan v. Jackson should be and now is overruled.\"",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The cached opinion contains the exact sentence \"Michigan v. Jackson should be and now is overruled.\"",
+          "The asserted pin quote includes \"## Issue\" and \"## Rule\" plus page-summary language, which is not verbatim opinion text.",
+          "The disclosed lake pinpoint expressly flags quote_fidelity as mismatch."
+        ],
+        "residual_risks": [
+          "The summarized legal proposition is broadly supported by the opinion, but that does not cure the quote-fidelity defect in the pin record."
+        ],
+        "suggested_tightening": "Attach pin-797 only to the exact opinion sentence, and keep the surrounding Background/Issue/Rule material as uncited paraphrase or support it with separate non-quote citations.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "82fade4c5948cb8c",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The treatment payload matches the disclosed lake fields: field_i_validity good_law, as_of_content 2009-05-26, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note.",
+          "Treatment/currency is outside lens A; no support or quote-fidelity defect is raised."
+        ],
+        "residual_risks": [
+          "Independent treatment review is reserved for lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Montejo v. Louisiana.json\",\"reviewed\":[{\"assertion_id\":\"df186178762a6203\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record exists with record_id and case name Montejo v. Louisiana.\",\"The lake identity fields show U.S. Supreme Court, decided 2009-05-26, year 2009.\",\"The official citation in the lake record is 556 U.S. 778, and the listed parallel/vendor citations match the payload.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The citations.all metadata has selected_official:false for the official cite while the citations.official object marks it selected_official:true; this does not undermine the displayed citation assertion.\"],\"suggested_tightening\":null},{\"assertion_id\":\"85d09f01c27766a7\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"pin-797's quote payload is not a character-faithful quotation from the opinion. It is a composite of the page's Background, Issue, and Rule prose, including Markdown headings and summary language; the lake record itself marks quote_fidelity as mismatch.\",\"severity\":\"high\",\"proposed_fix\":\"Replace the pin quote with the exact quoted sentence from the opinion, or remove quote-pin treatment from the composite summary and treat it as paraphrase. The page quote can be tightened to: \\\"Michigan v. Jackson should be and now is overruled.\\\"\",\"evidence_quote\":\"Michigan v. Jackson should be and now is overruled.\",\"needs_cl\":false,\"locator_note\":\"pin-797; the content page attaches the pin to a direct quote, but the lake pin's stored quote spans non-opinion page prose.\"},\"reasons\":[\"The cached opinion contains the exact sentence \\\"Michigan v. Jackson should be and now is overruled.\\\"\",\"The asserted pin quote includes \\\"## Issue\\\" and \\\"## Rule\\\" plus page-summary language, which is not verbatim opinion text.\",\"The disclosed lake pinpoint expressly flags quote_fidelity as mismatch.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The summarized legal proposition is broadly supported by the opinion, but that does not cure the quote-fidelity defect in the pin record.\"],\"suggested_tightening\":\"Attach pin-797 only to the exact opinion sentence, and keep the surrounding Background/Issue/Rule material as uncited paraphrase or support it with separate non-quote citations.\"},{\"assertion_id\":\"82fade4c5948cb8c\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The treatment payload matches the disclosed lake fields: field_i_validity good_law, as_of_content 2009-05-26, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note.\",\"Treatment/currency is outside lens A; no support or quote-fidelity defect is raised.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Independent treatment review is reserved for lens B.\"],\"suggested_tightening\":null}],\"notes\":\"\"}",
+  "summary": {
+    "at": "2026-07-10T01:44:42-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-b6820d6f98"
+    ],
+    "group_id": "_overhaul2/lake/cases/Montejo v. Louisiana.json",
+    "group_total_assertions": 3,
+    "lake_only_cases": [],
+    "lane": "codex-A",
+    "lane_id": "codex-A-panel-prod-3473598d",
+    "lens": "A",
+    "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-3473598d.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 3,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Montejo v. Louisiana"
+    ],
+    "tokens": {
+      "input": 110848,
+      "output": 4516,
+      "source": "codex-events",
+      "total": 115364
+    },
+    "verdict_map": {
+      "82fade4c5948cb8c": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "85d09f01c27766a7": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "df186178762a6203": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-b6820d6f98",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 103.8
+  }
+}

@@ -1,13 +1,103 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Berghuis v. Thompkins.json",
+    "lens": "A",
+    "notes": "Lens A reviewed support and quote fidelity only; no treatment finding is made.",
+    "reviewed": [
+      {
+        "assertion_id": "40500be314ed75a7",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record is verified, non-stub, and identifies Berghuis v. Thompkins as a U.S. Supreme Court case decided in 2010.",
+          "The payload citation list matches the lake citations.all list, including 560 U.S. 370, 130 S. Ct. 2250, 176 L. Ed. 2d 1098, 2010 U.S. LEXIS 4379, 22 Fla. L. Weekly Fed. S 375, and 78 U.S.L.W. 4479."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "307e61508e82a569",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "Had he made either of these simple, unambiguous statements",
+          "locator_note": "pin-382; cached opinion passage at 560 U.S. 382",
+          "needs_cl": false,
+          "problem": "The quote attached to pin-382 is not an opinion quote; it is harvested from the content page's Background/Issue/Rule prose and is absent from the cached opinion at 560 U.S. 382.",
+          "proposed_fix": "Replace pin-382 with the actual opinion passage at 560 U.S. 382, or convert the harvested text to non-quoted summary prose.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload quote contains Markdown headings such as ## Issue and ## Rule, showing it is page prose rather than opinion text.",
+          "The cached opinion at 560 U.S. 382 contains the unambiguous-invocation passage, not the harvested Background/Issue/Rule text."
+        ],
+        "residual_risks": [
+          "The underlying rule appears supportable, but this quoted pinpoint is not."
+        ],
+        "suggested_tightening": "Harvest only the actual quoted opinion text nearest ^pin-382, not surrounding page sections.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "ed0a2a907afffe28",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "In sum,  a suspect who has received and understood",
+          "locator_note": "pin-388; cached opinion text crosses from 560 U.S. 388 to 560 U.S. 389",
+          "needs_cl": false,
+          "problem": "The pin-388 quote is substantively present, but strict raw-character fidelity is imperfect because the cached opinion has HTML italics, a page break, and spacing differences; the complete sentence spans 560 U.S. 388-389.",
+          "proposed_fix": "Keep the quote, but mark it as a normalized-text match and tighten the reporter pincite to 560 U.S. 388-89 if citing the full sentence.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The cached opinion contains the same sentence across the 560 U.S. 388/389 page break.",
+          "The lake/content quote is normalized plain text and matches the legal proposition, but not the raw cached text character-for-character."
+        ],
+        "residual_risks": [
+          "If the corpus requires raw-character equality, the quote_fidelity field should remain mismatch until normalization rules are explicit."
+        ],
+        "suggested_tightening": "Use a normalized quote-fidelity status for HTML-stripped/page-break-spanning opinion text.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "0629d630debe1d4d",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The treatment payload matches the lake treatment fields for field_i_validity, as_of_content, as_of_treatment, varies_by_point, and scope_note.",
+          "Treatment and currency merits are outside lens A."
+        ],
+        "residual_risks": [
+          "Treatment/currency review is reserved for lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"A\",\n  \"group_id\": \"_overhaul2/lake/cases/Berghuis v. Thompkins.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"40500be314ed75a7\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake record is verified, non-stub, and identifies Berghuis v. Thompkins as a U.S. Supreme Court case decided in 2010.\",\n        \"The payload citation list matches the lake citations.all list, including 560 U.S. 370, 130 S. Ct. 2250, 176 L. Ed. 2d 1098, 2010 U.S. LEXIS 4379, 22 Fla. L. Weekly Fed. S 375, and 78 U.S.L.W. 4479.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"307e61508e82a569\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The quote attached to pin-382 is not an opinion quote; it is harvested from the content page's Background/Issue/Rule prose and is absent from the cached opinion at 560 U.S. 382.\",\n        \"severity\": \"high\",\n        \"proposed_fix\": \"Replace pin-382 with the actual opinion passage at 560 U.S. 382, or convert the harvested text to non-quoted summary prose.\",\n        \"evidence_quote\": \"Had he made either of these simple, unambiguous statements\",\n        \"needs_cl\": false,\n        \"locator_note\": \"pin-382; cached opinion passage at 560 U.S. 382\"\n      },\n      \"reasons\": [\n        \"The payload quote contains Markdown headings such as ## Issue and ## Rule, showing it is page prose rather than opinion text.\",\n        \"The cached opinion at 560 U.S. 382 contains the unambiguous-invocation passage, not the harvested Background/Issue/Rule text.\"\n      ],\n      \"breaks_true_positives\": true,\n      \"residual_risks\": [\n        \"The underlying rule appears supportable, but this quoted pinpoint is not.\"\n      ],\n      \"suggested_tightening\": \"Harvest only the actual quoted opinion text nearest ^pin-382, not surrounding page sections.\"\n    },\n    {\n      \"assertion_id\": \"ed0a2a907afffe28\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands-modified\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The pin-388 quote is substantively present, but strict raw-character fidelity is imperfect because the cached opinion has HTML italics, a page break, and spacing differences; the complete sentence spans 560 U.S. 388-389.\",\n        \"severity\": \"low\",\n        \"proposed_fix\": \"Keep the quote, but mark it as a normalized-text match and tighten the reporter pincite to 560 U.S. 388-89 if citing the full sentence.\",\n        \"evidence_quote\": \"In sum,  a suspect who has received and understood\",\n        \"needs_cl\": false,\n        \"locator_note\": \"pin-388; cached opinion text crosses from 560 U.S. 388 to 560 U.S. 389\"\n      },\n      \"reasons\": [\n        \"The cached opinion contains the same sentence across the 560 U.S. 388/389 page break.\",\n        \"The lake/content quote is normalized plain text and matches the legal proposition, but not the raw cached text character-for-character.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"If the corpus requires raw-character equality, the quote_fidelity field should remain mismatch until normalization rules are explicit.\"\n      ],\n      \"suggested_tightening\": \"Use a normalized quote-fidelity status for HTML-stripped/page-break-spanning opinion text.\"\n    },\n    {\n      \"assertion_id\": \"0629d630debe1d4d\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The treatment payload matches the lake treatment fields for field_i_validity, as_of_content, as_of_treatment, varies_by_point, and scope_note.\",\n        \"Treatment and currency merits are outside lens A.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Treatment/currency review is reserved for lens B.\"\n      ],\n      \"suggested_tightening\": null\n    }\n  ],\n  \"notes\": \"Lens A reviewed support and quote fidelity only; no treatment finding is made.\"\n}",
   "summary": {
-    "at": "2026-07-09T23:17:19-04:00",
-    "attempts": 2,
+    "at": "2026-07-10T17:44:19-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "defense_votes": [],
-    "findings_emitted": [],
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-f5d441ab03",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-3420a4eae1",
+      "F-S9-PR-0388c1bd33"
+    ],
     "group_id": "_overhaul2/lake/cases/Berghuis v. Thompkins.json",
     "group_total_assertions": 4,
     "lake_only_cases": [],
@@ -16,21 +106,63 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-43b42663.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 4,
     "run": "prod",
     "text_disclosed_cases": [
       "Berghuis v. Thompkins"
     ],
     "tokens": {
-      "input": 827,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 827
+      "input": 187922,
+      "output": 11875,
+      "source": "codex-events",
+      "total": 199797
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 3.0
+    "verdict_map": {
+      "0629d630debe1d4d": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "307e61508e82a569": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "40500be314ed75a7": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "ed0a2a907afffe28": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-3420a4eae1",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-0388c1bd33",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-f5d441ab03",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": 222.8
   }
 }

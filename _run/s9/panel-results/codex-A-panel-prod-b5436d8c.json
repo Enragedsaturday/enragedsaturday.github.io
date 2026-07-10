@@ -1,0 +1,147 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Chavez v. Martinez.json",
+    "lens": "A",
+    "notes": "Lens A review found one quote-fidelity defect: pin-766 is a malformed harvested quote. No treatment/currency finding is made.",
+    "reviewed": [
+      {
+        "assertion_id": "1ab9b9b413315adf",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity confirms case_name 'Chavez v. Martinez', court 'U.S. Supreme Court', date_decided '2003-05-27', year 2003, and docket '01-1444'.",
+          "Lake citations list official citation '538 U.S. 760' and parallel/vendor citations matching the content page: '123 S. Ct. 1994', '155 L. Ed. 2d 984', and '2003 U.S. LEXIS 4274'.",
+          "Cached opinion text independently shows 'CHAVEZ v. MARTINEZ.', Supreme Court of United States, and Decided May 27, 2003."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "7d6c57ef5718fbcd",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The pin-767 payload quote exactly matches the lake pinpoint quote, which is marked quote_fidelity 'matched'.",
+          "The cached opinion text contains the quoted passage verbatim: 'but it is not until their use in a criminal case that a violation of the Self-Incrimination Clause occurs'."
+        ],
+        "residual_risks": [
+          "The lake marks this as slip-only with no page value, but the quoted words themselves are verified from disclosed text."
+        ],
+        "suggested_tightening": "Keep the slip-only status unless an official page-marker mapping is added.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "e6b9efc43cd29e2a",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "We fail to see how, based on the text of the Fifth Amendment, Martinez can allege a violation of this right, since Martinez was never prosecuted for a crime, let alone compelled to be a witness against himself in a criminal case.",
+          "locator_note": "pin_id pin-766; cached opinion paragraph p22 contains the correct quote.",
+          "needs_cl": false,
+          "problem": "The pin-766 payload quote is not a character-faithful opinion quotation. It is a scraped content-page/frontmatter/background fragment beginning with the page header, and the lake itself marks quote_fidelity as 'mismatch' with position null.",
+          "proposed_fix": "Replace pin-766 with the actual opinion passage supporting 538 U.S. at 766, or remove the malformed pinpoint until it can be harvested and validated from text/Chavez v. Martinez__b4549a.txt.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload quote begins with '--- # Chavez v. Martinez *538 U.S. 760 (2003)*', which is page content, not opinion text.",
+          "Lake pinpoints[] for pin-766 expressly records quote_fidelity 'mismatch' and position null.",
+          "The actual opinion text at the relevant passage contains the 'We fail to see how...' quotation used on the content page."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Regenerate pin-766 directly from the cached opinion text and require quote_fidelity 'matched' before publication.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "904426814925355e",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency merits are outside Lens A, so no treatment defect is raised.",
+          "The treatment payload matches the lake treatment fields and the content page frontmatter: field_i_validity 'good_law', as_of_content '2003-05-27', as_of_treatment '2026-06-30', varies_by_point false, and the same scope_note."
+        ],
+        "residual_risks": [
+          "Treatment merits remain for Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Chavez v. Martinez.json\",\"reviewed\":[{\"assertion_id\":\"1ab9b9b413315adf\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity confirms case_name 'Chavez v. Martinez', court 'U.S. Supreme Court', date_decided '2003-05-27', year 2003, and docket '01-1444'.\",\"Lake citations list official citation '538 U.S. 760' and parallel/vendor citations matching the content page: '123 S. Ct. 1994', '155 L. Ed. 2d 984', and '2003 U.S. LEXIS 4274'.\",\"Cached opinion text independently shows 'CHAVEZ v. MARTINEZ.', Supreme Court of United States, and Decided May 27, 2003.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"7d6c57ef5718fbcd\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The pin-767 payload quote exactly matches the lake pinpoint quote, which is marked quote_fidelity 'matched'.\",\"The cached opinion text contains the quoted passage verbatim: 'but it is not until their use in a criminal case that a violation of the Self-Incrimination Clause occurs'.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The lake marks this as slip-only with no page value, but the quoted words themselves are verified from disclosed text.\"],\"suggested_tightening\":\"Keep the slip-only status unless an official page-marker mapping is added.\"},{\"assertion_id\":\"e6b9efc43cd29e2a\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The pin-766 payload quote is not a character-faithful opinion quotation. It is a scraped content-page/frontmatter/background fragment beginning with the page header, and the lake itself marks quote_fidelity as 'mismatch' with position null.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-766 with the actual opinion passage supporting 538 U.S. at 766, or remove the malformed pinpoint until it can be harvested and validated from text/Chavez v. Martinez__b4549a.txt.\",\"evidence_quote\":\"We fail to see how, based on the text of the Fifth Amendment, Martinez can allege a violation of this right, since Martinez was never prosecuted for a crime, let alone compelled to be a witness against himself in a criminal case.\",\"needs_cl\":false,\"locator_note\":\"pin_id pin-766; cached opinion paragraph p22 contains the correct quote.\"},\"reasons\":[\"The payload quote begins with '--- # Chavez v. Martinez *538 U.S. 760 (2003)*', which is page content, not opinion text.\",\"Lake pinpoints[] for pin-766 expressly records quote_fidelity 'mismatch' and position null.\",\"The actual opinion text at the relevant passage contains the 'We fail to see how...' quotation used on the content page.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":\"Regenerate pin-766 directly from the cached opinion text and require quote_fidelity 'matched' before publication.\"},{\"assertion_id\":\"904426814925355e\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency merits are outside Lens A, so no treatment defect is raised.\",\"The treatment payload matches the lake treatment fields and the content page frontmatter: field_i_validity 'good_law', as_of_content '2003-05-27', as_of_treatment '2026-06-30', varies_by_point false, and the same scope_note.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment merits remain for Lens B.\"],\"suggested_tightening\":null}],\"notes\":\"Lens A review found one quote-fidelity defect: pin-766 is a malformed harvested quote. No treatment/currency finding is made.\"}",
+  "summary": {
+    "at": "2026-07-10T18:09:45-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-bc26c631b2"
+    ],
+    "group_id": "_overhaul2/lake/cases/Chavez v. Martinez.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "codex-A",
+    "lane_id": "codex-A-panel-prod-b5436d8c",
+    "lens": "A",
+    "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-b5436d8c.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Chavez v. Martinez"
+    ],
+    "tokens": {
+      "input": 242577,
+      "output": 4752,
+      "source": "codex-events",
+      "total": 247329
+    },
+    "verdict_map": {
+      "1ab9b9b413315adf": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "7d6c57ef5718fbcd": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "904426814925355e": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "e6b9efc43cd29e2a": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-bc26c631b2",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 105.6
+  }
+}

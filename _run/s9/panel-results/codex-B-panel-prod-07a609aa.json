@@ -1,22 +1,125 @@
 {
-  "raw_reply": "",
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Arizona v. Gant.json",
+    "lens": "B",
+    "notes": "Reviewed all 3 rows in group_inventory.jsonl under lens B only.",
+    "reviewed": [
+      {
+        "assertion_id": "868055f5797209ae",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record is verified and identifies Arizona v. Gant as a U.S. Supreme Court case decided 2009-04-21.",
+          "The official citation in the lake record is 556 U.S. 332, matching the asserted display citation.",
+          "For currency, the lake treatment field marks the authority good_law as of 2026-06-30, with no point overrides."
+        ],
+        "residual_risks": [
+          "Treatment derivation shows audit_needed/cap_hit flags, but the disclosed judgment fields are usable under the task rules."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "77f0c665970ef8f1",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "This is a quote_fidelity row; under lens B I do not make a support or quote-fidelity finding.",
+          "The treatment/weight language embedded in the harvested text is consistent with the lake record: U.S. Supreme Court, court_level scotus, and good_law as of 2026-06-30.",
+          "The disclosed treatment edges do not show negative treatment of Gant itself; every edge has field_iii set to mentioned."
+        ],
+        "residual_risks": [
+          "Quote-fidelity merits are reserved for lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "330abd3fbfa388ad",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The asserted treatment fields match the lake treatment record: field_i_validity good_law, as_of_content 2009-04-21, as_of_treatment 2026-06-30, varies_by_point false, and the same scope_note.",
+          "The lake record has point_overrides as an empty array, supporting the no-variation call.",
+          "Although treatment edges include field_ii labels such as overruled, abrogated, questioned, and superseded_by_statute, every disclosed edge has field_iii set to mentioned and point set to null; no disclosed edge treats Gant itself as overruled, abrogated, superseded, or limited."
+        ],
+        "residual_risks": [
+          "The derivation metadata flags audit_needed for lane1_negative and lane2_top_cited and cap_hit for those lanes, so the disclosed packet supports the judgment field but does not independently prove exhaustive treatment coverage beyond the lake record."
+        ],
+        "suggested_tightening": "If the page keeps 'No negative treatment of Gant,' consider clarifying that this means no disclosed edge treats Gant negatively; negative field_ii labels were classified at field_iii only as mentioned.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/Arizona v. Gant.json\",\"reviewed\":[{\"assertion_id\":\"868055f5797209ae\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record is verified and identifies Arizona v. Gant as a U.S. Supreme Court case decided 2009-04-21.\",\"The official citation in the lake record is 556 U.S. 332, matching the asserted display citation.\",\"For currency, the lake treatment field marks the authority good_law as of 2026-06-30, with no point overrides.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment derivation shows audit_needed/cap_hit flags, but the disclosed judgment fields are usable under the task rules.\"],\"suggested_tightening\":null},{\"assertion_id\":\"77f0c665970ef8f1\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"This is a quote_fidelity row; under lens B I do not make a support or quote-fidelity finding.\",\"The treatment/weight language embedded in the harvested text is consistent with the lake record: U.S. Supreme Court, court_level scotus, and good_law as of 2026-06-30.\",\"The disclosed treatment edges do not show negative treatment of Gant itself; every edge has field_iii set to mentioned.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Quote-fidelity merits are reserved for lens A.\"],\"suggested_tightening\":null},{\"assertion_id\":\"330abd3fbfa388ad\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The asserted treatment fields match the lake treatment record: field_i_validity good_law, as_of_content 2009-04-21, as_of_treatment 2026-06-30, varies_by_point false, and the same scope_note.\",\"The lake record has point_overrides as an empty array, supporting the no-variation call.\",\"Although treatment edges include field_ii labels such as overruled, abrogated, questioned, and superseded_by_statute, every disclosed edge has field_iii set to mentioned and point set to null; no disclosed edge treats Gant itself as overruled, abrogated, superseded, or limited.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The derivation metadata flags audit_needed for lane1_negative and lane2_top_cited and cap_hit for those lanes, so the disclosed packet supports the judgment field but does not independently prove exhaustive treatment coverage beyond the lake record.\"],\"suggested_tightening\":\"If the page keeps 'No negative treatment of Gant,' consider clarifying that this means no disclosed edge treats Gant negatively; negative field_ii labels were classified at field_iii only as mentioned.\"}],\"notes\":\"Reviewed all 3 rows in group_inventory.jsonl under lens B only.\"}",
   "summary": {
-    "at": "2026-07-09T23:16:46-04:00",
-    "auth_flagged": true,
-    "clean_attestation": false,
+    "at": "2026-07-10T17:41:23-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-92d71f95bb",
+        "verdict": "stands"
+      }
+    ],
     "findings_emitted": [],
-    "genuine_auth_stop": true,
     "group_id": "_overhaul2/lake/cases/Arizona v. Gant.json",
     "group_total_assertions": 3,
+    "lake_only_cases": [],
     "lane": "codex-B",
     "lane_id": "codex-B-panel-prod-07a609aa",
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-07a609aa.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "Reading additional input from stdin...\n\u001b[2m2026-07-10T03:16:43.664607Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T03:16:44.254346Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T03:16:44.864064Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 3,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Arizona v. Gant"
+    ],
+    "tokens": {
+      "input": 314152,
+      "output": 7209,
+      "source": "codex-events",
+      "total": 321361
+    },
+    "verdict_map": {
+      "330abd3fbfa388ad": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "77f0c665970ef8f1": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "868055f5797209ae": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-92d71f95bb",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": 207.2
   }
 }

@@ -1,13 +1,90 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/City of Indianapolis v. Edmond.json",
+    "lens": "A",
+    "notes": "Reviewed all 4 assertion_ids in group_inventory.jsonl exactly once using only disclosed files.",
+    "reviewed": [
+      {
+        "assertion_id": "387fd7c8b12c7e0f",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity verifies record_id City of Indianapolis v. Edmond as a U.S. Supreme Court case decided 2000-11-28, year 2000.",
+          "The payload citation list matches lake.citations.all, including 531 U.S. 32 and the listed parallel/vendor citations."
+        ],
+        "residual_risks": [
+          "Lake official citation selection is null, but the listed citations themselves match the disclosed lake record."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "281de380a721c06b",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The quoted sentence matches lake pinpoints[].quote for pin-42 exactly.",
+          "The same sentence is present in text at the page-42 transition; the raw HTML inserts the star-pagination marker between 'the' and 'primary'."
+        ],
+        "residual_risks": [
+          "Raw HTML character matching is interrupted by the disclosed star-pagination tag, although the lake quote and opinion wording support the page quote."
+        ],
+        "suggested_tightening": "Populate page/star_marker for pin-42 to reduce false mismatch flags.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "8140fa2678c738ef",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "We have never approved a checkpoint program whose primary purpose was to detect evidence of ordinary criminal wrongdoing.",
+          "locator_note": "text/City of Indianapolis v. Edmond__d022fb.txt line 39; content_page.md line 57",
+          "needs_cl": false,
+          "problem": "pin-41's stored quote is not an opinion quote; it captured content-page/frontmatter prose instead of the cited Edmond passage.",
+          "proposed_fix": "Replace pin-41 quote with the actual opinion sentence: \"We have never approved a checkpoint program whose primary purpose was to detect evidence of ordinary criminal wrongdoing.\"",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload begins with page markdown/frontmatter text ('--- # City of Indianapolis v. Edmond') that is not opinion text.",
+          "The cited page-41 passage in the cached opinion contains the shorter checkpoint-program sentence, which is also the quote displayed on content_page.md."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Re-harvest pin-41 from the displayed quoted sentence and set a concrete page/star marker if the pipeline supports it.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "8b18dc8707f447e3",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A, so no treatment attack is raised.",
+          "The payload echoes the disclosed lake treatment fields: field_i_validity good_law, as_of_content 2000-11-28, as_of_treatment 2026-06-30, varies_by_point false."
+        ],
+        "residual_risks": [
+          "Currency and negative-treatment evaluation reserved for Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/City of Indianapolis v. Edmond.json\",\"reviewed\":[{\"assertion_id\":\"387fd7c8b12c7e0f\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity verifies record_id City of Indianapolis v. Edmond as a U.S. Supreme Court case decided 2000-11-28, year 2000.\",\"The payload citation list matches lake.citations.all, including 531 U.S. 32 and the listed parallel/vendor citations.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Lake official citation selection is null, but the listed citations themselves match the disclosed lake record.\"],\"suggested_tightening\":null},{\"assertion_id\":\"281de380a721c06b\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The quoted sentence matches lake pinpoints[].quote for pin-42 exactly.\",\"The same sentence is present in text at the page-42 transition; the raw HTML inserts the star-pagination marker between 'the' and 'primary'.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Raw HTML character matching is interrupted by the disclosed star-pagination tag, although the lake quote and opinion wording support the page quote.\"],\"suggested_tightening\":\"Populate page/star_marker for pin-42 to reduce false mismatch flags.\"},{\"assertion_id\":\"8140fa2678c738ef\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"pin-41's stored quote is not an opinion quote; it captured content-page/frontmatter prose instead of the cited Edmond passage.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-41 quote with the actual opinion sentence: \\\"We have never approved a checkpoint program whose primary purpose was to detect evidence of ordinary criminal wrongdoing.\\\"\",\"evidence_quote\":\"We have never approved a checkpoint program whose primary purpose was to detect evidence of ordinary criminal wrongdoing.\",\"needs_cl\":false,\"locator_note\":\"text/City of Indianapolis v. Edmond__d022fb.txt line 39; content_page.md line 57\"},\"reasons\":[\"The payload begins with page markdown/frontmatter text ('--- # City of Indianapolis v. Edmond') that is not opinion text.\",\"The cited page-41 passage in the cached opinion contains the shorter checkpoint-program sentence, which is also the quote displayed on content_page.md.\"],\"breaks_true_positives\":true,\"residual_risks\":[],\"suggested_tightening\":\"Re-harvest pin-41 from the displayed quoted sentence and set a concrete page/star marker if the pipeline supports it.\"},{\"assertion_id\":\"8b18dc8707f447e3\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside Lens A, so no treatment attack is raised.\",\"The payload echoes the disclosed lake treatment fields: field_i_validity good_law, as_of_content 2000-11-28, as_of_treatment 2026-06-30, varies_by_point false.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Currency and negative-treatment evaluation reserved for Lens B.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed all 4 assertion_ids in group_inventory.jsonl exactly once using only disclosed files.\"}",
   "summary": {
-    "at": "2026-07-09T23:18:16-04:00",
-    "attempts": 2,
+    "at": "2026-07-10T17:49:35-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-b621eb1c51"
+    ],
     "group_id": "_overhaul2/lake/cases/City of Indianapolis v. Edmond.json",
     "group_total_assertions": 4,
     "lake_only_cases": [],
@@ -16,21 +93,55 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-908ec1ad.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 4,
     "run": "prod",
     "text_disclosed_cases": [
       "City of Indianapolis v. Edmond"
     ],
     "tokens": {
-      "input": 829,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 829
+      "input": 283494,
+      "output": 6276,
+      "source": "codex-events",
+      "total": 289770
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 2.8
+    "verdict_map": {
+      "281de380a721c06b": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "387fd7c8b12c7e0f": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "8140fa2678c738ef": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "8b18dc8707f447e3": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-b621eb1c51",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 122.7
   }
 }

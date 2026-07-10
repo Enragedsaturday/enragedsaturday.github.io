@@ -1,13 +1,99 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/United States v. Morley.json",
+    "lens": "B",
+    "notes": "Lens B only; no support or quote-fidelity defect is raised.",
+    "reviewed": [
+      {
+        "assertion_id": "aa87aa240b8fb8b1",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record is verified, identifies the case as United States v. Derrick Alfondso Morley, and marks expected_citation_found true.",
+          "The official/display citation in the lake record is 99 F.4th 1328, matching the assertion.",
+          "For lens B, the final lake treatment field lists field_i_validity as good_law as of 2026-06-30, so the cited authority is not shown as dead law in the disclosed judgment fields."
+        ],
+        "residual_risks": [
+          "Treatment review below notes an unresolved proposed negative edge; that is a treatment caveat, not an existence/citation defect."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "9318dcb065a4425a",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote fidelity is outside lens B; no currency or treatment defect is presented by this pinpoint assertion.",
+          "The associated case record remains verified and carries final field_i_validity good_law in the disclosed lake treatment fields."
+        ],
+        "residual_risks": [
+          "No lens A quote-support review performed."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "ac24822611ac43db",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote fidelity is outside lens B, so I do not raise the disclosed mismatch as a support/quote defect.",
+          "The embedded treatment language in the harvested quote points to the same treatment issue reviewed separately under assertion 8f6d822572288570."
+        ],
+        "residual_risks": [
+          "No lens A quote-support review performed."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "8f6d822572288570",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "\"field_ii\": \"overruled\", \"field_iii\": \"mentioned\", \"proposed\": true",
+          "locator_note": "lake/United States v. Morley__4e8574.json treatment.edges[0] and treatment.derivation.lane2_top_cited",
+          "needs_cl": true,
+          "problem": "The good-law status generally matches the lake judgment field, but the page's categorical 'No negative treatment' language is too strong because the disclosed lake treatment record contains a proposed negative edge labeled overruled/mentioned from United States v. Lawrence Alexander and lane2_top_cited reports one proposed negative event.",
+          "proposed_fix": "Keep the status as good_law only if relying on the final judgment field, but replace 'No negative treatment' with a qualified statement such as: 'No confirmed negative treatment in the final lake judgment; one proposed overruled/mentioned progeny edge requires review.'",
+          "severity": "medium"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "The disclosed treatment field itself says field_i_validity is good_law and as_of_treatment is 2026-06-30.",
+          "The treatment basis is weakly described as migration-seed, with the scope note stating that S2 derivation may downgrade.",
+          "The same treatment object includes one proposed negative event and an edge whose field_ii is overruled, so the built page should not state 'No negative treatment' without qualification."
+        ],
+        "residual_risks": [
+          "The disclosed files do not include the United States v. Lawrence Alexander opinion text, so the proposed negative edge cannot be resolved here."
+        ],
+        "suggested_tightening": "Expose unresolved proposed negative treatment separately from confirmed treatment status.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/United States v. Morley.json\",\"reviewed\":[{\"assertion_id\":\"aa87aa240b8fb8b1\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record is verified, identifies the case as United States v. Derrick Alfondso Morley, and marks expected_citation_found true.\",\"The official/display citation in the lake record is 99 F.4th 1328, matching the assertion.\",\"For lens B, the final lake treatment field lists field_i_validity as good_law as of 2026-06-30, so the cited authority is not shown as dead law in the disclosed judgment fields.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment review below notes an unresolved proposed negative edge; that is a treatment caveat, not an existence/citation defect.\"],\"suggested_tightening\":null},{\"assertion_id\":\"9318dcb065a4425a\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Quote fidelity is outside lens B; no currency or treatment defect is presented by this pinpoint assertion.\",\"The associated case record remains verified and carries final field_i_validity good_law in the disclosed lake treatment fields.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"No lens A quote-support review performed.\"],\"suggested_tightening\":null},{\"assertion_id\":\"ac24822611ac43db\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Quote fidelity is outside lens B, so I do not raise the disclosed mismatch as a support/quote defect.\",\"The embedded treatment language in the harvested quote points to the same treatment issue reviewed separately under assertion 8f6d822572288570.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"No lens A quote-support review performed.\"],\"suggested_tightening\":null},{\"assertion_id\":\"8f6d822572288570\",\"dimension\":\"treatment\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The good-law status generally matches the lake judgment field, but the page's categorical 'No negative treatment' language is too strong because the disclosed lake treatment record contains a proposed negative edge labeled overruled/mentioned from United States v. Lawrence Alexander and lane2_top_cited reports one proposed negative event.\",\"severity\":\"medium\",\"proposed_fix\":\"Keep the status as good_law only if relying on the final judgment field, but replace 'No negative treatment' with a qualified statement such as: 'No confirmed negative treatment in the final lake judgment; one proposed overruled/mentioned progeny edge requires review.'\",\"evidence_quote\":\"\\\"field_ii\\\": \\\"overruled\\\", \\\"field_iii\\\": \\\"mentioned\\\", \\\"proposed\\\": true\",\"needs_cl\":true,\"locator_note\":\"lake/United States v. Morley__4e8574.json treatment.edges[0] and treatment.derivation.lane2_top_cited\"},\"reasons\":[\"The disclosed treatment field itself says field_i_validity is good_law and as_of_treatment is 2026-06-30.\",\"The treatment basis is weakly described as migration-seed, with the scope note stating that S2 derivation may downgrade.\",\"The same treatment object includes one proposed negative event and an edge whose field_ii is overruled, so the built page should not state 'No negative treatment' without qualification.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The disclosed files do not include the United States v. Lawrence Alexander opinion text, so the proposed negative edge cannot be resolved here.\"],\"suggested_tightening\":\"Expose unresolved proposed negative treatment separately from confirmed treatment status.\"}],\"notes\":\"Lens B only; no support or quote-fidelity defect is raised.\"}",
   "summary": {
-    "at": "2026-07-09T23:05:49-04:00",
-    "attempts": 2,
+    "at": "2026-07-10T02:34:32-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "defense_votes": [],
-    "findings_emitted": [],
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-dde329d155",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-1acf07d54c"
+    ],
     "group_id": "_overhaul2/lake/cases/United States v. Morley.json",
     "group_total_assertions": 4,
     "lake_only_cases": [],
@@ -16,21 +102,59 @@
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-2b65c047.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 4,
     "run": "prod",
     "text_disclosed_cases": [
       "United States v. Morley"
     ],
     "tokens": {
-      "input": 755,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 755
+      "input": 148198,
+      "output": 5701,
+      "source": "codex-events",
+      "total": 153899
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 3.0
+    "verdict_map": {
+      "8f6d822572288570": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "9318dcb065a4425a": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "aa87aa240b8fb8b1": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "ac24822611ac43db": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-dde329d155",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-1acf07d54c",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 114.4
   }
 }

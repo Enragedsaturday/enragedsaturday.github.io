@@ -1,0 +1,190 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Texas v. Brown.json",
+    "lens": "A",
+    "notes": "Lens A review only; treatment/currency not audited.",
+    "reviewed": [
+      {
+        "assertion_id": "0b82f5672b8d1c2f",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity gives case_name Texas v. Brown, court U.S. Supreme Court, date_decided 1983-04-19, and year 1983.",
+          "Lake citations.official is 460 U.S. 730, and the listed parallel/vendor citations match the payload and content page."
+        ],
+        "residual_risks": [
+          "Lake identity_method is pending, but the disclosed citation fields and cached opinion text support the existence/citation assertion."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "2793ea107116c52e",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "the use of the phrase “immediately apparent” was very likely an unhappy choice of words, since it can be taken to imply that an unduly high degree of certainty as to the incriminatory character of evidence is necessary for an application of the “plain view” doctrine.",
+          "locator_note": "text/Texas v. Brown__53f9aa.txt, page marker 741; content_page.md pin-741",
+          "needs_cl": false,
+          "problem": "The pin quote is not character-faithful as framed: the payload says \"Immediately apparent\" with an initial capital, while the relevant opinion phrase is lower-case, and the content quote substitutes straight quote marks for the opinion's curly quotation marks.",
+          "proposed_fix": "Use the exact lower-case phrase and exact opinion punctuation, or remove quotation marks around the heading-style phrase.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The 741 passage supports the legal proposition, but strict quote fidelity fails on capitalization and quotation-mark characters.",
+          "The lake pinpoint itself flags quote_fidelity as mismatch."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Preserve the proposition, but quote the opinion exactly: “immediately apparent” and “plain view” with the opinion's case and punctuation.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "427d3d834a16d4ed",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "It is likewise beyond dispute that Maples’ action in shining his <page-number citation-index=\"1\" label=\"740\">*740</page-number>flashlight to illuminate the interior of Brown’s car trenched upon no right secured to the latter by the Fourth Amendment.",
+          "locator_note": "text/Texas v. Brown__53f9aa.txt page markers 739-40; lake pinpoints id pin-739",
+          "needs_cl": false,
+          "problem": "The stored/payload pin quote is not an opinion quote; it is a stitched fragment of the built page's Issue/Rule text and even includes the Markdown header text \"## Rule\". It therefore cannot support a character-faithful quote pinpoint.",
+          "proposed_fix": "Replace pin-739 with the exact opinion passage at 739-40, or paraphrase the rule and cite without quotation marks.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload quote begins with page prose about the Issue and Rule sections, not the Supreme Court's opinion text.",
+          "The built page's displayed quote is substantively supported, but strict fidelity still requires the opinion's exact characters such as Brown’s."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Use the exact opinion wording beginning with \"Maples’ action in shining his ... flashlight\" and retain the 739-40 pincite.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "fff45aacfa2dd1b8",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "it does not demand any showing that such a belief be correct or more likely true than false. A “practical, nontechnical” probability that incriminating evidence is involved is all that is required.",
+          "locator_note": "text/Texas v. Brown__53f9aa.txt page marker 742; content_page.md pin-742",
+          "needs_cl": false,
+          "problem": "The quoted words are substantively the right passage, but the quote is not character-faithful: the opinion uses curly double quotation marks around “practical, nontechnical,” while the page/lake quote uses straight single quotes.",
+          "proposed_fix": "Replace the quoted phrase punctuation with the opinion's exact quotation marks, or paraphrase instead of using a direct quote.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The 742 pincite lands on the probable-cause passage and the legal proposition is supported.",
+          "Strict quote fidelity fails because the direct quote changes the opinion's quotation-mark characters."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Use the exact phrase A “practical, nontechnical” probability, with the opinion's quotation marks.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "0011db442f4a4df0",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A, so no treatment defect is raised here.",
+          "The content treatment fields mirror the disclosed lake treatment fields for field_i_validity, as_of dates, varies_by_point, and scope_note."
+        ],
+        "residual_risks": [
+          "Treatment validity is reserved for Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Texas v. Brown.json\",\"reviewed\":[{\"assertion_id\":\"0b82f5672b8d1c2f\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity gives case_name Texas v. Brown, court U.S. Supreme Court, date_decided 1983-04-19, and year 1983.\",\"Lake citations.official is 460 U.S. 730, and the listed parallel/vendor citations match the payload and content page.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Lake identity_method is pending, but the disclosed citation fields and cached opinion text support the existence/citation assertion.\"],\"suggested_tightening\":null},{\"assertion_id\":\"2793ea107116c52e\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The pin quote is not character-faithful as framed: the payload says \\\"Immediately apparent\\\" with an initial capital, while the relevant opinion phrase is lower-case, and the content quote substitutes straight quote marks for the opinion's curly quotation marks.\",\"severity\":\"low\",\"proposed_fix\":\"Use the exact lower-case phrase and exact opinion punctuation, or remove quotation marks around the heading-style phrase.\",\"evidence_quote\":\"the use of the phrase “immediately apparent” was very likely an unhappy choice of words, since it can be taken to imply that an unduly high degree of certainty as to the incriminatory character of evidence is necessary for an application of the “plain view” doctrine.\",\"needs_cl\":false,\"locator_note\":\"text/Texas v. Brown__53f9aa.txt, page marker 741; content_page.md pin-741\"},\"reasons\":[\"The 741 passage supports the legal proposition, but strict quote fidelity fails on capitalization and quotation-mark characters.\",\"The lake pinpoint itself flags quote_fidelity as mismatch.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":\"Preserve the proposition, but quote the opinion exactly: “immediately apparent” and “plain view” with the opinion's case and punctuation.\"},{\"assertion_id\":\"427d3d834a16d4ed\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The stored/payload pin quote is not an opinion quote; it is a stitched fragment of the built page's Issue/Rule text and even includes the Markdown header text \\\"## Rule\\\". It therefore cannot support a character-faithful quote pinpoint.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-739 with the exact opinion passage at 739-40, or paraphrase the rule and cite without quotation marks.\",\"evidence_quote\":\"It is likewise beyond dispute that Maples’ action in shining his <page-number citation-index=\\\"1\\\" label=\\\"740\\\">*740</page-number>flashlight to illuminate the interior of Brown’s car trenched upon no right secured to the latter by the Fourth Amendment.\",\"needs_cl\":false,\"locator_note\":\"text/Texas v. Brown__53f9aa.txt page markers 739-40; lake pinpoints id pin-739\"},\"reasons\":[\"The payload quote begins with page prose about the Issue and Rule sections, not the Supreme Court's opinion text.\",\"The built page's displayed quote is substantively supported, but strict fidelity still requires the opinion's exact characters such as Brown’s.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":\"Use the exact opinion wording beginning with \\\"Maples’ action in shining his ... flashlight\\\" and retain the 739-40 pincite.\"},{\"assertion_id\":\"fff45aacfa2dd1b8\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The quoted words are substantively the right passage, but the quote is not character-faithful: the opinion uses curly double quotation marks around “practical, nontechnical,” while the page/lake quote uses straight single quotes.\",\"severity\":\"low\",\"proposed_fix\":\"Replace the quoted phrase punctuation with the opinion's exact quotation marks, or paraphrase instead of using a direct quote.\",\"evidence_quote\":\"it does not demand any showing that such a belief be correct or more likely true than false. A “practical, nontechnical” probability that incriminating evidence is involved is all that is required.\",\"needs_cl\":false,\"locator_note\":\"text/Texas v. Brown__53f9aa.txt page marker 742; content_page.md pin-742\"},\"reasons\":[\"The 742 pincite lands on the probable-cause passage and the legal proposition is supported.\",\"Strict quote fidelity fails because the direct quote changes the opinion's quotation-mark characters.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":\"Use the exact phrase A “practical, nontechnical” probability, with the opinion's quotation marks.\"},{\"assertion_id\":\"0011db442f4a4df0\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside Lens A, so no treatment defect is raised here.\",\"The content treatment fields mirror the disclosed lake treatment fields for field_i_validity, as_of dates, varies_by_point, and scope_note.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment validity is reserved for Lens B.\"],\"suggested_tightening\":null}],\"notes\":\"Lens A review only; treatment/currency not audited.\"}",
+  "summary": {
+    "at": "2026-07-10T01:49:56-04:00",
+    "attempts": 2,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-ca351e2891",
+      "F-S9-PR-8156ace7d4",
+      "F-S9-PR-536773eded"
+    ],
+    "group_id": "_overhaul2/lake/cases/Texas v. Brown.json",
+    "group_total_assertions": 5,
+    "lake_only_cases": [],
+    "lane": "codex-A",
+    "lane_id": "codex-A-panel-prod-4c87dd48",
+    "lens": "A",
+    "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-4c87dd48.json",
+    "model": "gpt-5.5",
+    "parse_status": "repaired",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Texas v. Brown"
+    ],
+    "tokens": {
+      "input": 238061,
+      "output": 9036,
+      "source": "codex-events",
+      "total": 247097
+    },
+    "verdict_map": {
+      "0011db442f4a4df0": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "0b82f5672b8d1c2f": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "2793ea107116c52e": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "427d3d834a16d4ed": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "fff45aacfa2dd1b8": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-ca351e2891",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-8156ace7d4",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-536773eded",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 182.2
+  }
+}

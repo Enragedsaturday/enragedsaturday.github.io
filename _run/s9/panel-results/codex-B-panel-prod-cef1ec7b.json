@@ -1,13 +1,93 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Abel v. United States.json",
+    "lens": "B",
+    "notes": "Lens B only; support and quote-fidelity merits were not reviewed.",
+    "reviewed": [
+      {
+        "assertion_id": "f7463c9501c4014e",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record is verified and identifies Abel v. United States as a U.S. Supreme Court case decided 1960-03-28 with official citation 362 U.S. 217.",
+          "The disclosed treatment judgment says field_i_validity is good_law as of 2026-06-30, so the cited authority is live law for lens B purposes."
+        ],
+        "residual_risks": [
+          "The progeny enumeration is bounded, but the disclosed judgment field supports live-law status."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "4df9b49082fb96d1",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote fidelity/support is outside lens B by instruction.",
+          "No independent currency or treatment defect appears for this pinpoint because the cited Abel record is verified and marked good_law as of 2026-06-30."
+        ],
+        "residual_risks": [
+          "Quote accuracy not assessed under this lens."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "5155b514086db91d",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote fidelity/support is outside lens B by instruction.",
+          "No independent currency or treatment defect appears for this pinpoint because the cited Abel record is verified and marked good_law as of 2026-06-30."
+        ],
+        "residual_risks": [
+          "Quote accuracy not assessed under this lens."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "161d1db4b3af38d7",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "\"field_ii\": \"overruled\", \"field_iii\": \"mentioned\", \"point\": null, \"proposed\": true",
+          "locator_note": "content_page.md Treatment & subsequent history; lake.treatment.edges",
+          "needs_cl": false,
+          "problem": "The good_law and Binding-SCOTUS treatment call survives, but the page's unqualified statement 'No subsequent negative treatment' is too strong against the disclosed lake record, which lists proposed negative-lane edges. All inspected negative edges are proposed and only 'mentioned,' so they do not defeat good_law, but they should be acknowledged or the no-negative statement should be qualified.",
+          "proposed_fix": "Replace 'No subsequent negative treatment' with 'No finalized negative treatment is recorded in the lake; proposed negative-lane edges are mention-only and do not downgrade the good-law status.'",
+          "severity": "medium"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "The lake treatment field says field_i_validity is good_law, as_of_treatment is 2026-06-30, varies_by_point is false, and point_overrides is empty.",
+          "The authority weight is correct because the lake identity court_level is scotus and the content page labels the case Binding - SCOTUS.",
+          "The lake record contains 216 treatment edges in negative categories, but they are proposed and field_iii is mentioned, so the stronger no-negative-treatment prose needs qualification rather than a full downgrade."
+        ],
+        "residual_risks": [
+          "The treatment provenance says legacy treatment was migrated, so a future full derivation could change the treatment call."
+        ],
+        "suggested_tightening": "Surface the migration/proposed-edge caveat in the visible treatment section.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/Abel v. United States.json\",\"reviewed\":[{\"assertion_id\":\"f7463c9501c4014e\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record is verified and identifies Abel v. United States as a U.S. Supreme Court case decided 1960-03-28 with official citation 362 U.S. 217.\",\"The disclosed treatment judgment says field_i_validity is good_law as of 2026-06-30, so the cited authority is live law for lens B purposes.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The progeny enumeration is bounded, but the disclosed judgment field supports live-law status.\"],\"suggested_tightening\":null},{\"assertion_id\":\"4df9b49082fb96d1\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Quote fidelity/support is outside lens B by instruction.\",\"No independent currency or treatment defect appears for this pinpoint because the cited Abel record is verified and marked good_law as of 2026-06-30.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Quote accuracy not assessed under this lens.\"],\"suggested_tightening\":null},{\"assertion_id\":\"5155b514086db91d\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Quote fidelity/support is outside lens B by instruction.\",\"No independent currency or treatment defect appears for this pinpoint because the cited Abel record is verified and marked good_law as of 2026-06-30.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Quote accuracy not assessed under this lens.\"],\"suggested_tightening\":null},{\"assertion_id\":\"161d1db4b3af38d7\",\"dimension\":\"treatment\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The good_law and Binding-SCOTUS treatment call survives, but the page's unqualified statement 'No subsequent negative treatment' is too strong against the disclosed lake record, which lists proposed negative-lane edges. All inspected negative edges are proposed and only 'mentioned,' so they do not defeat good_law, but they should be acknowledged or the no-negative statement should be qualified.\",\"severity\":\"medium\",\"proposed_fix\":\"Replace 'No subsequent negative treatment' with 'No finalized negative treatment is recorded in the lake; proposed negative-lane edges are mention-only and do not downgrade the good-law status.'\",\"evidence_quote\":\"\\\"field_ii\\\": \\\"overruled\\\", \\\"field_iii\\\": \\\"mentioned\\\", \\\"point\\\": null, \\\"proposed\\\": true\",\"needs_cl\":false,\"locator_note\":\"content_page.md Treatment & subsequent history; lake.treatment.edges\"},\"reasons\":[\"The lake treatment field says field_i_validity is good_law, as_of_treatment is 2026-06-30, varies_by_point is false, and point_overrides is empty.\",\"The authority weight is correct because the lake identity court_level is scotus and the content page labels the case Binding - SCOTUS.\",\"The lake record contains 216 treatment edges in negative categories, but they are proposed and field_iii is mentioned, so the stronger no-negative-treatment prose needs qualification rather than a full downgrade.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The treatment provenance says legacy treatment was migrated, so a future full derivation could change the treatment call.\"],\"suggested_tightening\":\"Surface the migration/proposed-edge caveat in the visible treatment section.\"}],\"notes\":\"Lens B only; support and quote-fidelity merits were not reviewed.\"}",
   "summary": {
-    "at": "2026-07-09T23:16:30-04:00",
-    "attempts": 2,
+    "at": "2026-07-10T17:40:21-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-d954da1d45"
+    ],
     "group_id": "_overhaul2/lake/cases/Abel v. United States.json",
     "group_total_assertions": 4,
     "lake_only_cases": [],
@@ -16,21 +96,55 @@
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-cef1ec7b.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 4,
     "run": "prod",
     "text_disclosed_cases": [
       "Abel v. United States"
     ],
     "tokens": {
-      "input": 755,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 755
+      "input": 401465,
+      "output": 8747,
+      "source": "codex-events",
+      "total": 410212
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 2.9
+    "verdict_map": {
+      "161d1db4b3af38d7": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "4df9b49082fb96d1": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "5155b514086db91d": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "f7463c9501c4014e": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-d954da1d45",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 215.5
   }
 }

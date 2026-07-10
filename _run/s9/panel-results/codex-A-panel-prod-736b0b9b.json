@@ -1,0 +1,198 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/New York v. Harris.json",
+    "lens": "A",
+    "notes": "Reviewed all 5 rows in group_inventory.jsonl.",
+    "reviewed": [
+      {
+        "assertion_id": "2c976326f7875f09",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity record is New York v. Harris, U.S. Supreme Court, decided 1990-04-18.",
+          "Lake official/display citation is 495 U.S. 14, and the listed parallel/vendor citations match the lake citation fields."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "0b1f5c70f9046708",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "because the rule in <em><span class=\"citation\" data-id=\"9427853\"><a href=\"/opinion/110235/payton-v-new-york/\" aria-description=\"Citation for case: Payton v. New York\">Payton</a></span> </em>was designed to protect the physical integrity of the home;",
+          "locator_note": "pin-17; content_page Rule paragraph citing Id. at 17",
+          "needs_cl": false,
+          "problem": "The quoted language is not character-faithful to the opinion text. The opinion says the rule in Payton was designed to protect the home; the page/lake quote drops 'the rule in' and quotes '*Payton* was designed...' as if those were the Court's exact words.",
+          "proposed_fix": "Replace the quote with a faithful excerpt that includes 'the rule in Payton was designed...' or remove quotation marks and paraphrase the point.",
+          "severity": "medium"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Lake pin-17 itself reports quote_fidelity as mismatch.",
+          "The opinion text supports the proposition, but not the exact quoted wording as framed."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Use brackets/ellipsis only where they accurately preserve the Court's wording, or convert this sentence to a paraphrase.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "b89e54dce3381f57",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "Harris’ statement taken at the police station was not the product of being in unlawful custody. Neither was it the fruit of having been arrested in the home rather than someplace else.",
+          "locator_note": "pin-19; content_page Rule paragraph citing Id. at 19",
+          "needs_cl": false,
+          "problem": "The quote is substantively the same passage, but it is not character-faithful: the opinion uses the curly apostrophe in Harris’, while the page/lake quote uses straight Harris'.",
+          "proposed_fix": "Replace Harris' with Harris’ in the quoted sentence, or define and apply an explicit typography-normalization rule before marking it quote-faithful.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Lake pin-19 reports quote_fidelity as mismatch.",
+          "The cached opinion text uses Harris’ rather than Harris'."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "If exact quote fidelity is required, preserve typographic apostrophes from the cached text.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "becbc6c0d08f9602",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "--- # New York v. Harris *495 U.S. 14 (1990)* · U.S. Supreme Court · **Binding — SCOTUS** · Treatment: **good** *(as of 2026-06-30)*",
+          "locator_note": "pin-21; lake pinpoints[0].quote",
+          "needs_cl": false,
+          "problem": "The pin-21 quote in the lake/payload is corrupted: it is a content-page excerpt ending at '## Rule No.', not the Supreme Court holding sentence. The actual opinion text at page 21 contains the holding, but this stored quote is not opinion text.",
+          "proposed_fix": "Replace pin-21 with the actual holding sentence from the opinion at page 21, preserving the opinion's characters such as State’s, and set the pinpoint page to 21.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Lake pin-21 reports quote_fidelity as mismatch.",
+          "The payload quote is visibly harvested from content_page.md rather than from text/New York v. Harris__e96b72.txt.",
+          "The opinion's actual holding begins at page *21 with 'We hold that, where the police have probable cause...'."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Re-harvest pin-21 from the cached opinion text and reject page-content snippets as quote sources.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "7159bfe924d1b409",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The treatment payload mirrors the lake treatment fields: field_i_validity good_law, as_of_content 1990-04-18, as_of_treatment 2026-06-30, varies_by_point false, and the same scope_note.",
+          "Treatment/currency is outside lens A, so no treatment finding is raised."
+        ],
+        "residual_risks": [
+          "Treatment/currency was not audited under lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/New York v. Harris.json\",\"reviewed\":[{\"assertion_id\":\"2c976326f7875f09\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity record is New York v. Harris, U.S. Supreme Court, decided 1990-04-18.\",\"Lake official/display citation is 495 U.S. 14, and the listed parallel/vendor citations match the lake citation fields.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"0b1f5c70f9046708\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The quoted language is not character-faithful to the opinion text. The opinion says the rule in Payton was designed to protect the home; the page/lake quote drops 'the rule in' and quotes '*Payton* was designed...' as if those were the Court's exact words.\",\"severity\":\"medium\",\"proposed_fix\":\"Replace the quote with a faithful excerpt that includes 'the rule in Payton was designed...' or remove quotation marks and paraphrase the point.\",\"evidence_quote\":\"because the rule in <em><span class=\\\"citation\\\" data-id=\\\"9427853\\\"><a href=\\\"/opinion/110235/payton-v-new-york/\\\" aria-description=\\\"Citation for case: Payton v. New York\\\">Payton</a></span> </em>was designed to protect the physical integrity of the home;\",\"needs_cl\":false,\"locator_note\":\"pin-17; content_page Rule paragraph citing Id. at 17\"},\"reasons\":[\"Lake pin-17 itself reports quote_fidelity as mismatch.\",\"The opinion text supports the proposition, but not the exact quoted wording as framed.\"],\"breaks_true_positives\":true,\"residual_risks\":[],\"suggested_tightening\":\"Use brackets/ellipsis only where they accurately preserve the Court's wording, or convert this sentence to a paraphrase.\"},{\"assertion_id\":\"b89e54dce3381f57\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The quote is substantively the same passage, but it is not character-faithful: the opinion uses the curly apostrophe in Harris’, while the page/lake quote uses straight Harris'.\",\"severity\":\"low\",\"proposed_fix\":\"Replace Harris' with Harris’ in the quoted sentence, or define and apply an explicit typography-normalization rule before marking it quote-faithful.\",\"evidence_quote\":\"Harris’ statement taken at the police station was not the product of being in unlawful custody. Neither was it the fruit of having been arrested in the home rather than someplace else.\",\"needs_cl\":false,\"locator_note\":\"pin-19; content_page Rule paragraph citing Id. at 19\"},\"reasons\":[\"Lake pin-19 reports quote_fidelity as mismatch.\",\"The cached opinion text uses Harris’ rather than Harris'.\"],\"breaks_true_positives\":true,\"residual_risks\":[],\"suggested_tightening\":\"If exact quote fidelity is required, preserve typographic apostrophes from the cached text.\"},{\"assertion_id\":\"becbc6c0d08f9602\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The pin-21 quote in the lake/payload is corrupted: it is a content-page excerpt ending at '## Rule No.', not the Supreme Court holding sentence. The actual opinion text at page 21 contains the holding, but this stored quote is not opinion text.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-21 with the actual holding sentence from the opinion at page 21, preserving the opinion's characters such as State’s, and set the pinpoint page to 21.\",\"evidence_quote\":\"--- # New York v. Harris *495 U.S. 14 (1990)* · U.S. Supreme Court · **Binding — SCOTUS** · Treatment: **good** *(as of 2026-06-30)*\",\"needs_cl\":false,\"locator_note\":\"pin-21; lake pinpoints[0].quote\"},\"reasons\":[\"Lake pin-21 reports quote_fidelity as mismatch.\",\"The payload quote is visibly harvested from content_page.md rather than from text/New York v. Harris__e96b72.txt.\",\"The opinion's actual holding begins at page *21 with 'We hold that, where the police have probable cause...'.\"],\"breaks_true_positives\":true,\"residual_risks\":[],\"suggested_tightening\":\"Re-harvest pin-21 from the cached opinion text and reject page-content snippets as quote sources.\"},{\"assertion_id\":\"7159bfe924d1b409\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The treatment payload mirrors the lake treatment fields: field_i_validity good_law, as_of_content 1990-04-18, as_of_treatment 2026-06-30, varies_by_point false, and the same scope_note.\",\"Treatment/currency is outside lens A, so no treatment finding is raised.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment/currency was not audited under lens A.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed all 5 rows in group_inventory.jsonl.\"}",
+  "summary": {
+    "at": "2026-07-10T18:12:51-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-6f84a53ee2",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-4230ebedb4",
+      "F-S9-PR-d1146f2af6",
+      "F-S9-PR-ed39a4bf9f"
+    ],
+    "group_id": "_overhaul2/lake/cases/New York v. Harris.json",
+    "group_total_assertions": 5,
+    "lake_only_cases": [],
+    "lane": "codex-A",
+    "lane_id": "codex-A-panel-prod-736b0b9b",
+    "lens": "A",
+    "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-736b0b9b.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "New York v. Harris"
+    ],
+    "tokens": {
+      "input": 160849,
+      "output": 7975,
+      "source": "codex-events",
+      "total": 168824
+    },
+    "verdict_map": {
+      "0b1f5c70f9046708": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "2c976326f7875f09": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "7159bfe924d1b409": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "b89e54dce3381f57": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "becbc6c0d08f9602": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-4230ebedb4",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-d1146f2af6",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-ed39a4bf9f",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-6f84a53ee2",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": 152.9
+  }
+}

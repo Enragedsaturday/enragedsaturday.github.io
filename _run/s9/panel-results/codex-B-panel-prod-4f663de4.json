@@ -1,38 +1,91 @@
 {
-  "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/County of Los Angeles v. Mendez.json",
+    "lens": "B",
+    "notes": "Reviewed every assertion_id in group_inventory.jsonl exactly once; no support or quote-fidelity findings were raised under Lens B.",
+    "reviewed": [
+      {
+        "assertion_id": "b83d9defa108f4cf",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record identifies County of Los Angeles v. Mendez as a U.S. Supreme Court case, No. 16-369, decided 2017-05-30, with cluster_id 4395246 and lead_opinion_id 4172499.",
+          "The lake citation fields supply the official cite 581 U.S. 420 and the same parallel/vendor citations listed in the assertion and content page.",
+          "For Lens B, the disclosed record contains no treatment or progeny edge showing that the cited authority has been superseded, overruled, abrogated, or limited."
+        ],
+        "residual_risks": [
+          "Current live-law status is not affirmatively verified because the treatment/progeny record is an unverified frontier stub."
+        ],
+        "suggested_tightening": "Keep the citation/existence signal separate from any affirmative live-law signal until treatment/progeny verification is completed.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "1855cb9805152add",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The assertion's treatment fields match the lake record: field_i_validity is unverified, as_of_content and as_of_treatment are null, varies_by_point is false, and the scope note says treatment/progeny were intentionally not derived.",
+          "The content page renders the same treatment posture: Treatment: Unverified and Status: Unverified — subsequent treatment not yet machine-verified.",
+          "The lake treatment edges are empty and progeny rows_cached is 0, so the disclosed record supplies no contrary adverse-treatment correction; the page does not claim verified good law."
+        ],
+        "residual_risks": [
+          "Actual current validity remains unknown until citator/progeny verification is completed."
+        ],
+        "suggested_tightening": "Before promotion, populate as_of_treatment, treatment derivation, and progeny/citator edges or keep the unverified banner.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/County of Los Angeles v. Mendez.json\",\"reviewed\":[{\"assertion_id\":\"b83d9defa108f4cf\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake identity record identifies County of Los Angeles v. Mendez as a U.S. Supreme Court case, No. 16-369, decided 2017-05-30, with cluster_id 4395246 and lead_opinion_id 4172499.\",\"The lake citation fields supply the official cite 581 U.S. 420 and the same parallel/vendor citations listed in the assertion and content page.\",\"For Lens B, the disclosed record contains no treatment or progeny edge showing that the cited authority has been superseded, overruled, abrogated, or limited.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Current live-law status is not affirmatively verified because the treatment/progeny record is an unverified frontier stub.\"],\"suggested_tightening\":\"Keep the citation/existence signal separate from any affirmative live-law signal until treatment/progeny verification is completed.\"},{\"assertion_id\":\"1855cb9805152add\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The assertion's treatment fields match the lake record: field_i_validity is unverified, as_of_content and as_of_treatment are null, varies_by_point is false, and the scope note says treatment/progeny were intentionally not derived.\",\"The content page renders the same treatment posture: Treatment: Unverified and Status: Unverified — subsequent treatment not yet machine-verified.\",\"The lake treatment edges are empty and progeny rows_cached is 0, so the disclosed record supplies no contrary adverse-treatment correction; the page does not claim verified good law.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Actual current validity remains unknown until citator/progeny verification is completed.\"],\"suggested_tightening\":\"Before promotion, populate as_of_treatment, treatment derivation, and progeny/citator edges or keep the unverified banner.\"}],\"notes\":\"Reviewed every assertion_id in group_inventory.jsonl exactly once; no support or quote-fidelity findings were raised under Lens B.\"}",
   "summary": {
-    "at": "2026-07-09T23:18:19-04:00",
-    "attempts": 2,
-    "clean_attestation": false,
+    "at": "2026-07-10T17:50:16-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
     "defense_votes": [],
     "findings_emitted": [],
     "group_id": "_overhaul2/lake/cases/County of Los Angeles v. Mendez.json",
     "group_total_assertions": 2,
-    "lake_only_cases": [
-      "County of Los Angeles v. Mendez"
-    ],
+    "lake_only_cases": [],
     "lane": "codex-B",
     "lane_id": "codex-B-panel-prod-4f663de4",
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-4f663de4.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
-    "resolution_notes": [
-      "case 'County of Los Angeles v. Mendez' has no lead_opinion_id (text undisclosed)"
-    ],
-    "reviewed_count": 0,
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 2,
     "run": "prod",
-    "text_disclosed_cases": [],
+    "text_disclosed_cases": [
+      "County of Los Angeles v. Mendez"
+    ],
     "tokens": {
-      "input": 757,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 757
+      "input": 102264,
+      "output": 6375,
+      "source": "codex-events",
+      "total": 108639
     },
-    "verdict_map": {},
+    "verdict_map": {
+      "1855cb9805152add": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "b83d9defa108f4cf": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
     "votes_emitted": [],
-    "wall_clock_s": 3.4
+    "wall_clock_s": 122.7
   }
 }

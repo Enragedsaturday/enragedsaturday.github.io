@@ -1,0 +1,186 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "content/cases/United States v. Giordano.md",
+    "lens": "A",
+    "notes": "No text/*.txt opinion file is disclosed for this group. Under the default-to-refuted rule, Lens A refutes support assertions that require opinion-text or lake-holding verification.",
+    "reviewed": [
+      {
+        "assertion_id": "f1e20d7721679e2e",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity record matches the case name United States v. Giordano, court U.S., Supreme Court level, date decided 1974-05-13, year 1974, and docket 72-1057.",
+          "Lake citations include official 416 U.S. 505, parallels 94 S. Ct. 1820 and 40 L. Ed. 2d 341, and vendor-neutral 1974 U.S. LEXIS 36."
+        ],
+        "residual_risks": [
+          "No opinion text is disclosed, but existence and citation are verifiable from the lake identity and citation fields."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "74c2c30775609614",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "\"pinpoints\": []",
+          "locator_note": "frontmatter holding",
+          "needs_cl": true,
+          "problem": "The holding cannot be verified from the disclosed evidence. The lake record has no holding field, its pinpoints array is empty, and no text/<case>.txt opinion file is present to verify the statutory authorization rule, suppression holding, later-extension derivation point, or quoted phrase.",
+          "proposed_fix": "Do not state this holding as verified unless the cached opinion text or lake holding/pinpoint evidence is disclosed; otherwise downgrade to an unverified summary.",
+          "severity": "high"
+        },
+        "dimension": "support",
+        "reasons": [
+          "Support review requires the opinion text or a lake holding/pinpoint; the disclosed lake record contains identity, citation, and treatment metadata only.",
+          "The page under review cannot serve as independent proof of its own holding."
+        ],
+        "residual_risks": [
+          "The assertion may be substantively correct, but it is not verifiable from the disclosed corpus."
+        ],
+        "suggested_tightening": "Add opinion text or lake pinpoints supporting each component of the holding, especially the later-extension suppression point.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": false
+      },
+      {
+        "assertion_id": "d734a4bac72ee3d3",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "\"pinpoints\": []",
+          "locator_note": "homes role",
+          "needs_cl": true,
+          "problem": "The Anchor home-role for Electronic Surveillance and Title III is not independently supported by disclosed evidence. The lake record provides no holding, pinpoints, topic-classification judgment, or progeny support from which the anchor role can be verified.",
+          "proposed_fix": "Downgrade the home role or disclose the supporting home-page criteria, verified holding, or other corpus evidence showing why this case is an anchor for Electronic Surveillance and Title III.",
+          "severity": "medium"
+        },
+        "dimension": "support",
+        "reasons": [
+          "The only disclosed source for the Anchor label is the content page under review.",
+          "Lake progeny fields are empty and do not supply independent support for anchor status."
+        ],
+        "residual_risks": [
+          "The role may be appropriate, but Lens A cannot verify it from the disclosed record."
+        ],
+        "suggested_tightening": "Tie the home-role label to a verified Title III holding or a disclosed corpus-level taxonomy rule.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": false
+      },
+      {
+        "assertion_id": "63296ac60aa2a0e0",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Lake identity shows court U.S. and court_level scotus, supporting the SCOTUS component of the authority-weight label.",
+          "Lens A records the label but does not make a treatment/currency finding."
+        ],
+        "residual_risks": [
+          "Substantive treatment and current good-law status remain for Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "d548e867d2ae6c93",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The treatment payload matches the lake treatment fields: field_i_validity unverified, null as-of fields, composite_basis unverified, varies_by_point false, and the same frontier-stub scope note.",
+          "Lens A records this metadata match without assessing treatment correctness."
+        ],
+        "residual_risks": [
+          "Treatment/currency is outside Lens A and remains unverified substantively."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"A\",\n  \"group_id\": \"content/cases/United States v. Giordano.md\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"f1e20d7721679e2e\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Lake identity record matches the case name United States v. Giordano, court U.S., Supreme Court level, date decided 1974-05-13, year 1974, and docket 72-1057.\",\n        \"Lake citations include official 416 U.S. 505, parallels 94 S. Ct. 1820 and 40 L. Ed. 2d 341, and vendor-neutral 1974 U.S. LEXIS 36.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"No opinion text is disclosed, but existence and citation are verifiable from the lake identity and citation fields.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"74c2c30775609614\",\n      \"dimension\": \"support\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": false,\n      \"defect\": {\n        \"problem\": \"The holding cannot be verified from the disclosed evidence. The lake record has no holding field, its pinpoints array is empty, and no text/<case>.txt opinion file is present to verify the statutory authorization rule, suppression holding, later-extension derivation point, or quoted phrase.\",\n        \"severity\": \"high\",\n        \"proposed_fix\": \"Do not state this holding as verified unless the cached opinion text or lake holding/pinpoint evidence is disclosed; otherwise downgrade to an unverified summary.\",\n        \"evidence_quote\": \"\\\"pinpoints\\\": []\",\n        \"needs_cl\": true,\n        \"locator_note\": \"frontmatter holding\"\n      },\n      \"reasons\": [\n        \"Support review requires the opinion text or a lake holding/pinpoint; the disclosed lake record contains identity, citation, and treatment metadata only.\",\n        \"The page under review cannot serve as independent proof of its own holding.\"\n      ],\n      \"breaks_true_positives\": true,\n      \"residual_risks\": [\n        \"The assertion may be substantively correct, but it is not verifiable from the disclosed corpus.\"\n      ],\n      \"suggested_tightening\": \"Add opinion text or lake pinpoints supporting each component of the holding, especially the later-extension suppression point.\"\n    },\n    {\n      \"assertion_id\": \"d734a4bac72ee3d3\",\n      \"dimension\": \"support\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": false,\n      \"defect\": {\n        \"problem\": \"The Anchor home-role for Electronic Surveillance and Title III is not independently supported by disclosed evidence. The lake record provides no holding, pinpoints, topic-classification judgment, or progeny support from which the anchor role can be verified.\",\n        \"severity\": \"medium\",\n        \"proposed_fix\": \"Downgrade the home role or disclose the supporting home-page criteria, verified holding, or other corpus evidence showing why this case is an anchor for Electronic Surveillance and Title III.\",\n        \"evidence_quote\": \"\\\"pinpoints\\\": []\",\n        \"needs_cl\": true,\n        \"locator_note\": \"homes role\"\n      },\n      \"reasons\": [\n        \"The only disclosed source for the Anchor label is the content page under review.\",\n        \"Lake progeny fields are empty and do not supply independent support for anchor status.\"\n      ],\n      \"breaks_true_positives\": true,\n      \"residual_risks\": [\n        \"The role may be appropriate, but Lens A cannot verify it from the disclosed record.\"\n      ],\n      \"suggested_tightening\": \"Tie the home-role label to a verified Title III holding or a disclosed corpus-level taxonomy rule.\"\n    },\n    {\n      \"assertion_id\": \"63296ac60aa2a0e0\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Lake identity shows court U.S. and court_level scotus, supporting the SCOTUS component of the authority-weight label.\",\n        \"Lens A records the label but does not make a treatment/currency finding.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Substantive treatment and current good-law status remain for Lens B.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"d548e867d2ae6c93\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The treatment payload matches the lake treatment fields: field_i_validity unverified, null as-of fields, composite_basis unverified, varies_by_point false, and the same frontier-stub scope note.\",\n        \"Lens A records this metadata match without assessing treatment correctness.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Treatment/currency is outside Lens A and remains unverified substantively.\"\n      ],\n      \"suggested_tightening\": null\n    }\n  ],\n  \"notes\": \"No text/*.txt opinion file is disclosed for this group. Under the default-to-refuted rule, Lens A refutes support assertions that require opinion-text or lake-holding verification.\"\n}",
+  "summary": {
+    "at": "2026-07-10T00:46:51-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-8d24112760",
+      "F-S9-PR-c95a52c4f6"
+    ],
+    "group_id": "content/cases/United States v. Giordano.md",
+    "group_total_assertions": 5,
+    "lake_only_cases": [
+      "United States v. Giordano"
+    ],
+    "lane": "codex-A",
+    "lane_id": "codex-A-panel-prod-2e5fe7ff",
+    "lens": "A",
+    "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-2e5fe7ff.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [
+      "case 'United States v. Giordano' has no lead_opinion_id (text undisclosed)"
+    ],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [],
+    "tokens": {
+      "input": 80554,
+      "output": 5000,
+      "source": "codex-events",
+      "total": 85554
+    },
+    "verdict_map": {
+      "63296ac60aa2a0e0": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "74c2c30775609614": {
+        "dimension": "support",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": false
+      },
+      "d548e867d2ae6c93": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "d734a4bac72ee3d3": {
+        "dimension": "support",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": false
+      },
+      "f1e20d7721679e2e": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-8d24112760",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-c95a52c4f6",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 96.5
+  }
+}

@@ -1,0 +1,203 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Arizona v. Johnson.json",
+    "lens": "A",
+    "notes": "Reviewed all five group_inventory rows using only the disclosed working-directory files. No external search or undisclosed authority was used.",
+    "reviewed": [
+      {
+        "assertion_id": "48342b44a7dac19a",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record identifies Arizona v. Johnson, U.S. Supreme Court, decided 2009-01-26, with official citation 555 U.S. 323.",
+          "The content page uses 555 U.S. 323 (2009), U.S. Supreme Court, and the same parallel/vendor citations disclosed in the lake record."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "21380b1679d852e3",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "For the duration of a traffic stop, we recently confirmed,\na police officer effectively seizes “everyone in the vehicle,”\nthe driver and all passengers.",
+          "locator_note": "text/Arizona v. Johnson__0d687e.txt, opinion page 1",
+          "needs_cl": false,
+          "problem": "The pin-327b quote is not character-faithful to the opinion text: it lowercases/brackets the first word, omits 'we recently confirmed,' with ellipsis, and changes the embedded quotation marks around 'everyone in the vehicle.'",
+          "proposed_fix": "Use the exact opinion wording, or mark this as an altered quotation rather than a character-faithful verbatim quote.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The disclosed text has 'For the duration of a traffic stop, we recently confirmed,' not '[f]or the duration of a traffic stop, . . .'.",
+          "The disclosed text uses curly double quotation marks around 'everyone in the vehicle,' while the assertion uses straight single quotes."
+        ],
+        "residual_risks": [
+          "The substantive proposition is supported, but the exact quote cannot stand as character-faithful."
+        ],
+        "suggested_tightening": "Quote the sentence exactly or remove quotation marks and paraphrase.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "2e8c572896556963",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "The Court upheld\n“stop and frisk” as constitutionally permissible if two\nconditions are met. First, the investigatory stop must be\nlawful.",
+          "locator_note": "text/Arizona v. Johnson__0d687e.txt, opinion page 1",
+          "needs_cl": false,
+          "problem": "The pin-326 payload/lake quote is not an opinion quote at all; it is copied generated page content beginning with the page header and background.",
+          "proposed_fix": "Replace pin-326 with the actual opinion passage beginning 'The Court upheld “stop and frisk”...' and align the content page quote to that passage.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The asserted quote starts with markdown/frontmatter-like page text, not language from the Supreme Court opinion.",
+          "The actual opinion passage supporting Terry's two conditions appears in the cached text and differs from the lake pinpoint quote."
+        ],
+        "residual_risks": [
+          "The visible content-page quote is closer to the opinion than the lake pinpoint, but this row's disclosed pinpoint quote is corrupted."
+        ],
+        "suggested_tightening": "Regenerate pin-326 from the cached opinion text and avoid using generated page prose as pinpoint evidence.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "e6bbfadcb4d5bf86",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "traffic-stop setting, the first Terry condition—a lawful\ninvestigatory stop—is met whenever it is lawful for police\nto detain an automobile",
+          "locator_note": "text/Arizona v. Johnson__0d687e.txt, opinion pages 1-2",
+          "needs_cl": false,
+          "problem": "The pin-327 quote is substantively supported but not character-faithful: it inserts Markdown italics around Terry and changes the tight em-dash construction to spaced em dashes.",
+          "proposed_fix": "Remove Markdown markup and use the opinion's exact dash/wording: 'the first Terry condition—a lawful investigatory stop—is met...'.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The cached opinion text says 'first Terry condition—a lawful investigatory stop—is met' without italics and without spaces around the em dashes.",
+          "The broader rule is supported, but the quote as framed is not exact."
+        ],
+        "residual_risks": [
+          "Official U.S. page pinpoint is not independently verifiable from the slip-only cached text because the lake pinpoint page is null."
+        ],
+        "suggested_tightening": "Use exact opinion text for the quotation; reserve Markdown emphasis for paraphrase outside quotation marks.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "72acb5231045fae3",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside lens A, so no treatment finding is raised.",
+          "The treatment payload matches the lake treatment fields: field_i_validity good_law, as_of_content 2009-01-26, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note."
+        ],
+        "residual_risks": [
+          "Lens B should evaluate treatment/currency and any negative-treatment implications."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Arizona v. Johnson.json\",\"reviewed\":[{\"assertion_id\":\"48342b44a7dac19a\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record identifies Arizona v. Johnson, U.S. Supreme Court, decided 2009-01-26, with official citation 555 U.S. 323.\",\"The content page uses 555 U.S. 323 (2009), U.S. Supreme Court, and the same parallel/vendor citations disclosed in the lake record.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"21380b1679d852e3\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The pin-327b quote is not character-faithful to the opinion text: it lowercases/brackets the first word, omits 'we recently confirmed,' with ellipsis, and changes the embedded quotation marks around 'everyone in the vehicle.'\",\"severity\":\"low\",\"proposed_fix\":\"Use the exact opinion wording, or mark this as an altered quotation rather than a character-faithful verbatim quote.\",\"evidence_quote\":\"For the duration of a traffic stop, we recently confirmed,\\na police officer effectively seizes “everyone in the vehicle,”\\nthe driver and all passengers.\",\"needs_cl\":false,\"locator_note\":\"text/Arizona v. Johnson__0d687e.txt, opinion page 1\"},\"reasons\":[\"The disclosed text has 'For the duration of a traffic stop, we recently confirmed,' not '[f]or the duration of a traffic stop, . . .'.\",\"The disclosed text uses curly double quotation marks around 'everyone in the vehicle,' while the assertion uses straight single quotes.\"],\"breaks_true_positives\":true,\"residual_risks\":[\"The substantive proposition is supported, but the exact quote cannot stand as character-faithful.\"],\"suggested_tightening\":\"Quote the sentence exactly or remove quotation marks and paraphrase.\"},{\"assertion_id\":\"2e8c572896556963\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The pin-326 payload/lake quote is not an opinion quote at all; it is copied generated page content beginning with the page header and background.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-326 with the actual opinion passage beginning 'The Court upheld “stop and frisk”...' and align the content page quote to that passage.\",\"evidence_quote\":\"The Court upheld\\n“stop and frisk” as constitutionally permissible if two\\nconditions are met. First, the investigatory stop must be\\nlawful.\",\"needs_cl\":false,\"locator_note\":\"text/Arizona v. Johnson__0d687e.txt, opinion page 1\"},\"reasons\":[\"The asserted quote starts with markdown/frontmatter-like page text, not language from the Supreme Court opinion.\",\"The actual opinion passage supporting Terry's two conditions appears in the cached text and differs from the lake pinpoint quote.\"],\"breaks_true_positives\":true,\"residual_risks\":[\"The visible content-page quote is closer to the opinion than the lake pinpoint, but this row's disclosed pinpoint quote is corrupted.\"],\"suggested_tightening\":\"Regenerate pin-326 from the cached opinion text and avoid using generated page prose as pinpoint evidence.\"},{\"assertion_id\":\"e6bbfadcb4d5bf86\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The pin-327 quote is substantively supported but not character-faithful: it inserts Markdown italics around Terry and changes the tight em-dash construction to spaced em dashes.\",\"severity\":\"low\",\"proposed_fix\":\"Remove Markdown markup and use the opinion's exact dash/wording: 'the first Terry condition—a lawful investigatory stop—is met...'.\",\"evidence_quote\":\"traffic-stop setting, the first Terry condition—a lawful\\ninvestigatory stop—is met whenever it is lawful for police\\nto detain an automobile\",\"needs_cl\":false,\"locator_note\":\"text/Arizona v. Johnson__0d687e.txt, opinion pages 1-2\"},\"reasons\":[\"The cached opinion text says 'first Terry condition—a lawful investigatory stop—is met' without italics and without spaces around the em dashes.\",\"The broader rule is supported, but the quote as framed is not exact.\"],\"breaks_true_positives\":true,\"residual_risks\":[\"Official U.S. page pinpoint is not independently verifiable from the slip-only cached text because the lake pinpoint page is null.\"],\"suggested_tightening\":\"Use exact opinion text for the quotation; reserve Markdown emphasis for paraphrase outside quotation marks.\"},{\"assertion_id\":\"72acb5231045fae3\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside lens A, so no treatment finding is raised.\",\"The treatment payload matches the lake treatment fields: field_i_validity good_law, as_of_content 2009-01-26, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Lens B should evaluate treatment/currency and any negative-treatment implications.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed all five group_inventory rows using only the disclosed working-directory files. No external search or undisclosed authority was used.\"}",
+  "summary": {
+    "at": "2026-07-10T18:22:51-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-f1173f17ac",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-7de0aebc06",
+      "F-S9-PR-e84103c854",
+      "F-S9-PR-83c1098c49"
+    ],
+    "group_id": "_overhaul2/lake/cases/Arizona v. Johnson.json",
+    "group_total_assertions": 5,
+    "lake_only_cases": [],
+    "lane": "codex-A",
+    "lane_id": "codex-A-panel-prod-4f852127",
+    "lens": "A",
+    "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-4f852127.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Arizona v. Johnson"
+    ],
+    "tokens": {
+      "input": 205099,
+      "output": 9418,
+      "source": "codex-events",
+      "total": 214517
+    },
+    "verdict_map": {
+      "21380b1679d852e3": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "2e8c572896556963": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "48342b44a7dac19a": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "72acb5231045fae3": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "e6bbfadcb4d5bf86": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-7de0aebc06",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-e84103c854",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-83c1098c49",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-f1173f17ac",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": 182.1
+  }
+}

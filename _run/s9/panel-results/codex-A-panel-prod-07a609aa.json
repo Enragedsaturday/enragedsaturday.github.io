@@ -1,22 +1,125 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Arizona v. Gant.json",
+    "lens": "A",
+    "notes": "",
+    "reviewed": [
+      {
+        "assertion_id": "868055f5797209ae",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record identity is Arizona v. Gant, U.S. Supreme Court, decided 2009-04-21, year 2009.",
+          "The lake official citation is 556 U.S. 332 and the asserted parallel/vendor citations match the lake record: 129 S. Ct. 1710, 173 L. Ed. 2d 485, and 2009 U.S. LEXIS 3120."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "77f0c665970ef8f1",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Police may search a vehicle incident to a recent occupant’s arrest only if the arrestee is within reaching distance of the passenger compartment at the time of the search or it is reasonable to believe the vehicle contains evidence of the offense of arrest.",
+          "locator_note": "text/Arizona v. Gant__073012.txt contains the actual page-351 passage; lake pinpoints[0].quote contains content-page material beginning with '--- # Arizona v. Gant'.",
+          "needs_cl": false,
+          "problem": "The pin-351 quote in the lake record is not a character-faithful quotation from the opinion; it is a harvested chunk of the built content page/front matter and headings. The lake record also labels quote_fidelity as mismatch, with page null and slip-only status.",
+          "proposed_fix": "Replace pin-351 with the actual opinion passage at page 351 and preserve the opinion text's characters; set the page/pin metadata to 351 if that is the intended pinpoint.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The asserted pinpoint quote begins with built-page markdown/front matter content, not the Court's opinion text.",
+          "The actual page-351 opinion sentence is present in text/Arizona v. Gant__073012.txt and differs from the pin quote.",
+          "The content page's displayed quote is substantively supported, but the lake pinpoint under review is not quote-faithful."
+        ],
+        "residual_risks": [
+          "The page's visible rule quote should be separately normalized for exact typography if strict character fidelity is required, because the opinion text uses a curly apostrophe in occupant’s."
+        ],
+        "suggested_tightening": "Harvest only the quoted judicial sentence or sentences, not surrounding page prose, and preserve exact punctuation from the opinion text.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "330abd3fbfa388ad",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment is outside Lens A's substantive charter, so no treatment/currency finding is raised.",
+          "The asserted treatment fields match the lake treatment judgment fields: field_i_validity good_law, as_of_content 2009-04-21, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note."
+        ],
+        "residual_risks": [
+          "No independent Lens A audit of treatment currency was performed; Lens B owns that review."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Arizona v. Gant.json\",\"reviewed\":[{\"assertion_id\":\"868055f5797209ae\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record identity is Arizona v. Gant, U.S. Supreme Court, decided 2009-04-21, year 2009.\",\"The lake official citation is 556 U.S. 332 and the asserted parallel/vendor citations match the lake record: 129 S. Ct. 1710, 173 L. Ed. 2d 485, and 2009 U.S. LEXIS 3120.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"77f0c665970ef8f1\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The pin-351 quote in the lake record is not a character-faithful quotation from the opinion; it is a harvested chunk of the built content page/front matter and headings. The lake record also labels quote_fidelity as mismatch, with page null and slip-only status.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-351 with the actual opinion passage at page 351 and preserve the opinion text's characters; set the page/pin metadata to 351 if that is the intended pinpoint.\",\"evidence_quote\":\"Police may search a vehicle incident to a recent occupant’s arrest only if the arrestee is within reaching distance of the passenger compartment at the time of the search or it is reasonable to believe the vehicle contains evidence of the offense of arrest.\",\"needs_cl\":false,\"locator_note\":\"text/Arizona v. Gant__073012.txt contains the actual page-351 passage; lake pinpoints[0].quote contains content-page material beginning with '--- # Arizona v. Gant'.\"},\"reasons\":[\"The asserted pinpoint quote begins with built-page markdown/front matter content, not the Court's opinion text.\",\"The actual page-351 opinion sentence is present in text/Arizona v. Gant__073012.txt and differs from the pin quote.\",\"The content page's displayed quote is substantively supported, but the lake pinpoint under review is not quote-faithful.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The page's visible rule quote should be separately normalized for exact typography if strict character fidelity is required, because the opinion text uses a curly apostrophe in occupant’s.\"],\"suggested_tightening\":\"Harvest only the quoted judicial sentence or sentences, not surrounding page prose, and preserve exact punctuation from the opinion text.\"},{\"assertion_id\":\"330abd3fbfa388ad\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment is outside Lens A's substantive charter, so no treatment/currency finding is raised.\",\"The asserted treatment fields match the lake treatment judgment fields: field_i_validity good_law, as_of_content 2009-04-21, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"No independent Lens A audit of treatment currency was performed; Lens B owns that review.\"],\"suggested_tightening\":null}],\"notes\":\"\"}",
   "summary": {
-    "at": "2026-07-09T23:16:50-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-10T17:38:56-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-92d71f95bb"
+    ],
     "group_id": "_overhaul2/lake/cases/Arizona v. Gant.json",
     "group_total_assertions": 3,
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-07a609aa",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-07a609aa.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "Reading additional input from stdin...\n\u001b[2m2026-07-10T03:16:45.132650Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T03:16:45.598995Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T03:16:46.268580Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T03:16:47.139093Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T03:16:48.340859Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 3,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Arizona v. Gant"
+    ],
+    "tokens": {
+      "input": 215674,
+      "output": 3764,
+      "source": "codex-events",
+      "total": 219438
+    },
+    "verdict_map": {
+      "330abd3fbfa388ad": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "77f0c665970ef8f1": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "868055f5797209ae": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-92d71f95bb",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 82.2
   }
 }

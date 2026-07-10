@@ -1,22 +1,159 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Gouled v. United States.json",
+    "lens": "A",
+    "notes": "Lens A reviewed the disclosed inventory only; no external sources were used.",
+    "reviewed": [
+      {
+        "assertion_id": "837daabd230545e6",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record is verified for Gouled v. United States and identifies the court as U.S. Supreme Court, date decided 1921-02-28, and year 1921.",
+          "The official citation in the lake record is 255 U.S. 298, with matching parallel citations 41 S. Ct. 261 and 65 L. Ed. 647 and vendor citation 1921 U.S. LEXIS 1826."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "73a08eb46a15b767",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "they may not be used as a means of gaming access",
+          "locator_note": "pin-309; content_page.md line 55; text/Gouled v. United States__2fd000.txt line 167",
+          "needs_cl": false,
+          "problem": "The pin-309 quotation is not character-faithful to the cached opinion text and the lake itself marks the pinpoint quote_fidelity as mismatch. The quote uses 'gaining' and ends the quoted sentence at 'it.', while the cached text has different characters and continues the sentence after 'it,'.",
+          "proposed_fix": "Either paraphrase this rule or replace the quotation with a text-faithful excerpt from the cached opinion, preserving the continuation or marking the omission accurately.",
+          "severity": "medium"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The cached opinion text at the page-309 passage differs from the quoted wording.",
+          "The lake pinpoint for pin-309 has quote_fidelity set to mismatch."
+        ],
+        "residual_risks": [
+          "The cached opinion appears OCR-imperfect, so an official reporter image may be needed before publishing a corrected verbatim quote."
+        ],
+        "suggested_tightening": "Use a paraphrase unless the corpus can verify the official reporter wording character-by-character.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "e004d7cc524a811d",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "--- # Gouled v. United States",
+          "locator_note": "pin-306; lake pinpoints[].quote; actual opinion passage appears in text/Gouled v. United States__2fd000.txt lines 95-96",
+          "needs_cl": false,
+          "problem": "The pin-306 lake/inventory quote is not an opinion quote at all; it contains the built page frontmatter and narrative text, ending before the actual page-306 opinion passage. The lake also marks this pinpoint quote_fidelity as mismatch.",
+          "proposed_fix": "Re-harvest pin-306 from the cached opinion at the *306 page marker so the pinpoint quote begins with the actual Gouled passage, not the content page markdown.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The recorded pin-306 quote starts with markdown page content rather than the opinion text.",
+          "The actual page-306 opinion passage begins around the stealth/social-acquaintance search-and-seizure language."
+        ],
+        "residual_risks": [
+          "The content page displays the intended quote, but the supporting lake pinpoint record is corrupted."
+        ],
+        "suggested_tightening": "Add a validation check that pinpoint quotes cannot contain page frontmatter, headings, or corpus-rendered markdown.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "e493537c43edc2f8",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A, so no treatment defect is raised.",
+          "The payload treatment fields match the disclosed lake treatment fields: field_i_validity superseded, as_of_content 1921-02-28, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note."
+        ],
+        "residual_risks": [
+          "Treatment substance should be reviewed by Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Gouled v. United States.json\",\"reviewed\":[{\"assertion_id\":\"837daabd230545e6\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record is verified for Gouled v. United States and identifies the court as U.S. Supreme Court, date decided 1921-02-28, and year 1921.\",\"The official citation in the lake record is 255 U.S. 298, with matching parallel citations 41 S. Ct. 261 and 65 L. Ed. 647 and vendor citation 1921 U.S. LEXIS 1826.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"73a08eb46a15b767\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The pin-309 quotation is not character-faithful to the cached opinion text and the lake itself marks the pinpoint quote_fidelity as mismatch. The quote uses 'gaining' and ends the quoted sentence at 'it.', while the cached text has different characters and continues the sentence after 'it,'.\",\"severity\":\"medium\",\"proposed_fix\":\"Either paraphrase this rule or replace the quotation with a text-faithful excerpt from the cached opinion, preserving the continuation or marking the omission accurately.\",\"evidence_quote\":\"they may not be used as a means of gaming access\",\"needs_cl\":false,\"locator_note\":\"pin-309; content_page.md line 55; text/Gouled v. United States__2fd000.txt line 167\"},\"reasons\":[\"The cached opinion text at the page-309 passage differs from the quoted wording.\",\"The lake pinpoint for pin-309 has quote_fidelity set to mismatch.\"],\"breaks_true_positives\":true,\"residual_risks\":[\"The cached opinion appears OCR-imperfect, so an official reporter image may be needed before publishing a corrected verbatim quote.\"],\"suggested_tightening\":\"Use a paraphrase unless the corpus can verify the official reporter wording character-by-character.\"},{\"assertion_id\":\"e004d7cc524a811d\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The pin-306 lake/inventory quote is not an opinion quote at all; it contains the built page frontmatter and narrative text, ending before the actual page-306 opinion passage. The lake also marks this pinpoint quote_fidelity as mismatch.\",\"severity\":\"high\",\"proposed_fix\":\"Re-harvest pin-306 from the cached opinion at the *306 page marker so the pinpoint quote begins with the actual Gouled passage, not the content page markdown.\",\"evidence_quote\":\"--- # Gouled v. United States\",\"needs_cl\":false,\"locator_note\":\"pin-306; lake pinpoints[].quote; actual opinion passage appears in text/Gouled v. United States__2fd000.txt lines 95-96\"},\"reasons\":[\"The recorded pin-306 quote starts with markdown page content rather than the opinion text.\",\"The actual page-306 opinion passage begins around the stealth/social-acquaintance search-and-seizure language.\"],\"breaks_true_positives\":true,\"residual_risks\":[\"The content page displays the intended quote, but the supporting lake pinpoint record is corrupted.\"],\"suggested_tightening\":\"Add a validation check that pinpoint quotes cannot contain page frontmatter, headings, or corpus-rendered markdown.\"},{\"assertion_id\":\"e493537c43edc2f8\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside Lens A, so no treatment defect is raised.\",\"The payload treatment fields match the disclosed lake treatment fields: field_i_validity superseded, as_of_content 1921-02-28, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment substance should be reviewed by Lens B.\"],\"suggested_tightening\":null}],\"notes\":\"Lens A reviewed the disclosed inventory only; no external sources were used.\"}",
   "summary": {
-    "at": "2026-07-09T23:15:11-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-10T17:23:41-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-4665aef15b",
+      "F-S9-PR-58c61ed244"
+    ],
     "group_id": "_overhaul2/lake/cases/Gouled v. United States.json",
     "group_total_assertions": 4,
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-b243fcaa",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-b243fcaa.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "d to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T03:15:02.675890Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T03:15:03.290259Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T03:15:04.081382Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T03:15:05.351447Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T03:15:07.296850Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Gouled v. United States"
+    ],
+    "tokens": {
+      "input": 158289,
+      "output": 6620,
+      "source": "codex-events",
+      "total": 164909
+    },
+    "verdict_map": {
+      "73a08eb46a15b767": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "837daabd230545e6": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "e004d7cc524a811d": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "e493537c43edc2f8": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-4665aef15b",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-58c61ed244",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 137.0
   }
 }

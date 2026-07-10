@@ -1,13 +1,109 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "content/cases/Landor v. Louisiana Dept. of Corrections.md",
+    "lens": "B",
+    "notes": "Lens B only; support, quote fidelity, and pincite merits were not reviewed.",
+    "reviewed": [
+      {
+        "assertion_id": "9f6267942f1c2774",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "\"official\": null,",
+          "locator_note": "lake/Landor v. Louisiana Dept. of Corrections__e49531.json citations.official and citations.slip_only",
+          "needs_cl": false,
+          "problem": "The authority exists as a SCOTUS slip opinion, but the assertion's official_citation_present flag is wrong. The lake record says there is no official citation and the case is slip-only.",
+          "proposed_fix": "Set official_citation_present to false and treat the citation as slip-only/current-term rather than an official reporter citation.",
+          "severity": "low"
+        },
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity confirms SCOTUS, docket 23-1197, year 2026, cluster_id 10878535, and lead_opinion_id 11346052.",
+          "Lake citations field has official null and slip_only true, so the official-citation flag needs correction."
+        ],
+        "residual_risks": [
+          "Treatment remains unverified, so live-law status beyond existence is not positively citator-verified."
+        ],
+        "suggested_tightening": "Label the citation explicitly as slip-only/no official reporter citation assigned.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "848a607cbd5641d9",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "Lens B does not evaluate holding support or quote fidelity.",
+          "No disclosed treatment edge, progeny edge, or lake judgment field says the Landor holding has been overruled, abrogated, superseded, or limited."
+        ],
+        "residual_risks": [
+          "Lake treatment is unverified, so this is not a positive good-law certification."
+        ],
+        "suggested_tightening": "Keep the holding paired with the page's Treatment: Unverified warning until treatment/progeny verification is complete.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "aea9828edd0e68d8",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "The role label is a support/home-placement assertion, and Lens B does not evaluate home-page fit.",
+          "From a currency angle, the disclosed record supports recency: slip-only provenance states the case was decided 2026-06-23, and the page was projected 2026-07-09."
+        ],
+        "residual_risks": [
+          "Home-role substantive fit is outside Lens B.",
+          "Treatment remains unverified."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "396a145e65c64548",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The content treatment fields match the lake treatment fields: field_i_validity unverified, composite_basis unverified, null as-of dates, varies_by_point false, and the same frontier-stub scope note.",
+          "Lake treatment edges are empty, and progeny fields are not populated; the page correctly avoids a verified good-law claim."
+        ],
+        "residual_risks": [
+          "Because treatment/progeny are intentionally unverified, the page cannot certify that no later limiting or negative treatment exists."
+        ],
+        "suggested_tightening": "Do not promote beyond Unverified until treatment/progeny verification is complete.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "bc60b2c1c3249d4f",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Lake identity lists court and court_level as scotus, supporting the hierarchy label Binding — SCOTUS.",
+          "No disclosed treatment field or edge contradicts the SCOTUS weight label."
+        ],
+        "residual_risks": [
+          "Binding weight is a court-hierarchy label, not a verified good-law status; treatment remains unverified."
+        ],
+        "suggested_tightening": "Keep displaying Binding — SCOTUS separately from Treatment: Unverified so the weight label is not read as a citator conclusion.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"content/cases/Landor v. Louisiana Dept. of Corrections.md\",\"reviewed\":[{\"assertion_id\":\"9f6267942f1c2774\",\"dimension\":\"existence\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The authority exists as a SCOTUS slip opinion, but the assertion's official_citation_present flag is wrong. The lake record says there is no official citation and the case is slip-only.\",\"severity\":\"low\",\"proposed_fix\":\"Set official_citation_present to false and treat the citation as slip-only/current-term rather than an official reporter citation.\",\"evidence_quote\":\"\\\"official\\\": null,\",\"needs_cl\":false,\"locator_note\":\"lake/Landor v. Louisiana Dept. of Corrections__e49531.json citations.official and citations.slip_only\"},\"reasons\":[\"Lake identity confirms SCOTUS, docket 23-1197, year 2026, cluster_id 10878535, and lead_opinion_id 11346052.\",\"Lake citations field has official null and slip_only true, so the official-citation flag needs correction.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment remains unverified, so live-law status beyond existence is not positively citator-verified.\"],\"suggested_tightening\":\"Label the citation explicitly as slip-only/no official reporter citation assigned.\"},{\"assertion_id\":\"848a607cbd5641d9\",\"dimension\":\"support\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lens B does not evaluate holding support or quote fidelity.\",\"No disclosed treatment edge, progeny edge, or lake judgment field says the Landor holding has been overruled, abrogated, superseded, or limited.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Lake treatment is unverified, so this is not a positive good-law certification.\"],\"suggested_tightening\":\"Keep the holding paired with the page's Treatment: Unverified warning until treatment/progeny verification is complete.\"},{\"assertion_id\":\"aea9828edd0e68d8\",\"dimension\":\"support\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The role label is a support/home-placement assertion, and Lens B does not evaluate home-page fit.\",\"From a currency angle, the disclosed record supports recency: slip-only provenance states the case was decided 2026-06-23, and the page was projected 2026-07-09.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Home-role substantive fit is outside Lens B.\",\"Treatment remains unverified.\"],\"suggested_tightening\":null},{\"assertion_id\":\"396a145e65c64548\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The content treatment fields match the lake treatment fields: field_i_validity unverified, composite_basis unverified, null as-of dates, varies_by_point false, and the same frontier-stub scope note.\",\"Lake treatment edges are empty, and progeny fields are not populated; the page correctly avoids a verified good-law claim.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Because treatment/progeny are intentionally unverified, the page cannot certify that no later limiting or negative treatment exists.\"],\"suggested_tightening\":\"Do not promote beyond Unverified until treatment/progeny verification is complete.\"},{\"assertion_id\":\"bc60b2c1c3249d4f\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity lists court and court_level as scotus, supporting the hierarchy label Binding — SCOTUS.\",\"No disclosed treatment field or edge contradicts the SCOTUS weight label.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Binding weight is a court-hierarchy label, not a verified good-law status; treatment remains unverified.\"],\"suggested_tightening\":\"Keep displaying Binding — SCOTUS separately from Treatment: Unverified so the weight label is not read as a citator conclusion.\"}],\"notes\":\"Lens B only; support, quote fidelity, and pincite merits were not reviewed.\"}",
   "summary": {
-    "at": "2026-07-09T23:11:14-04:00",
-    "attempts": 2,
+    "at": "2026-07-10T17:02:10-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-3cdccf1a78"
+    ],
     "group_id": "content/cases/Landor v. Louisiana Dept. of Corrections.md",
     "group_total_assertions": 5,
     "lake_only_cases": [],
@@ -16,21 +112,62 @@
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-f1019e31.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 5,
     "run": "prod",
     "text_disclosed_cases": [
       "Landor v. Louisiana Dept. of Corrections"
     ],
     "tokens": {
-      "input": 757,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 757
+      "input": 90731,
+      "output": 5242,
+      "source": "codex-events",
+      "total": 95973
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 5.1
+    "verdict_map": {
+      "396a145e65c64548": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "848a607cbd5641d9": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "9f6267942f1c2774": {
+        "dimension": "existence",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "aea9828edd0e68d8": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "bc60b2c1c3249d4f": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-3cdccf1a78",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 111.4
   }
 }

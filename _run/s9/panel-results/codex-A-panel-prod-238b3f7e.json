@@ -1,0 +1,159 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Agnello v. United States.json",
+    "lens": "A",
+    "notes": "Reviewed every assertion in group_inventory.jsonl once under Lens A; treatment merits left to Lens B.",
+    "reviewed": [
+      {
+        "assertion_id": "c2eba011975f1476",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record gives case_name \"Agnello v. United States\", court \"U.S. Supreme Court\", date_decided \"1925-10-12\", and year 1925.",
+          "The lake citation record selects official citation \"269 U.S. 20\" and lists the same parallel/vendor citations carried in the payload."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "42ed07ef6d07ad81",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "But the right does not extend to other places. Frank Agnello’s",
+          "locator_note": "pin-30a; cached text places the passage across the *31 star pagination marker.",
+          "needs_cl": false,
+          "problem": "The quoted passage is the right Agnello passage, but it is not character-faithful to the cached opinion text because the payload uses straight apostrophes where the text has typographic apostrophes.",
+          "proposed_fix": "Either mark this as a normalized quote, or update the displayed/lake quote to match the cached text characters for \"Agnello’s\" and \"Alba’s\".",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The substance of the passage appears in text/Agnello v. United States__20e485.txt at the transition from page *30 to *31.",
+          "The lake pinpoints entry itself marks this quote_fidelity as \"mismatch\", and the text uses curly apostrophes rather than the payload's straight apostrophes."
+        ],
+        "residual_risks": [
+          "Only character-level fidelity is attacked here; the passage supports the stated rule."
+        ],
+        "suggested_tightening": "Separate normalized display quotes from verbatim source quotes so punctuation normalization does not masquerade as character fidelity.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "d09ac545bd23db24",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "The right without a search warrant contemporaneously to search persons lawfully arrested while committing crime and to search the place where the arrest is made in order to find and seize things connected with the crime as. its fruits or as the means by which it was committed, as well as weapons and other things to effect an escape from custody, is not to be doubted.",
+          "locator_note": "pin-30; text shows the actual page-30 passage immediately after the *30 marker, while the lake pinpoint quote is page markdown.",
+          "needs_cl": false,
+          "problem": "The pin-30 payload is not a verbatim Agnello opinion quote. It is rendered page/front-matter content beginning with \"--- # Agnello v. United States\" and ending before the actual Supreme Court sentence at page 30.",
+          "proposed_fix": "Replace pin-30 with the actual opinion sentence beginning \"The right without a search warrant contemporaneously...\" and ending \"...is not to be doubted.\"",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The disclosed cached opinion contains the relevant page-30 sentence, but the payload quote contains content_page markdown, headings, and summary prose rather than opinion text.",
+          "The lake pinpoints entry for pin-30 also marks quote_fidelity as \"mismatch\"."
+        ],
+        "residual_risks": [
+          "The cached opinion text appears OCR-derived and contains \"as. its\"; a cleaned official display quote would require a defined normalization policy, but the current payload is plainly not the opinion quote."
+        ],
+        "suggested_tightening": "Regenerate pin-30 from the opinion text source, not from the rendered content page, and preserve a source-position/page marker near *30.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "2e386f188c75b5f6",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment merits are outside Lens A, so no treatment/currency finding is raised.",
+          "The payload fields match the disclosed lake treatment fields: field_i_validity \"good_law\", as_of_content \"1925-10-12\", as_of_treatment \"2026-06-30\", varies_by_point false, and the same scope_note."
+        ],
+        "residual_risks": [
+          "Treatment/currency not audited under this lens."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Agnello v. United States.json\",\"reviewed\":[{\"assertion_id\":\"c2eba011975f1476\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake identity record gives case_name \\\"Agnello v. United States\\\", court \\\"U.S. Supreme Court\\\", date_decided \\\"1925-10-12\\\", and year 1925.\",\"The lake citation record selects official citation \\\"269 U.S. 20\\\" and lists the same parallel/vendor citations carried in the payload.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"42ed07ef6d07ad81\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The quoted passage is the right Agnello passage, but it is not character-faithful to the cached opinion text because the payload uses straight apostrophes where the text has typographic apostrophes.\",\"severity\":\"low\",\"proposed_fix\":\"Either mark this as a normalized quote, or update the displayed/lake quote to match the cached text characters for \\\"Agnello’s\\\" and \\\"Alba’s\\\".\",\"evidence_quote\":\"But the right does not extend to other places. Frank Agnello’s\",\"needs_cl\":false,\"locator_note\":\"pin-30a; cached text places the passage across the *31 star pagination marker.\"},\"reasons\":[\"The substance of the passage appears in text/Agnello v. United States__20e485.txt at the transition from page *30 to *31.\",\"The lake pinpoints entry itself marks this quote_fidelity as \\\"mismatch\\\", and the text uses curly apostrophes rather than the payload's straight apostrophes.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Only character-level fidelity is attacked here; the passage supports the stated rule.\"],\"suggested_tightening\":\"Separate normalized display quotes from verbatim source quotes so punctuation normalization does not masquerade as character fidelity.\"},{\"assertion_id\":\"d09ac545bd23db24\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The pin-30 payload is not a verbatim Agnello opinion quote. It is rendered page/front-matter content beginning with \\\"--- # Agnello v. United States\\\" and ending before the actual Supreme Court sentence at page 30.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-30 with the actual opinion sentence beginning \\\"The right without a search warrant contemporaneously...\\\" and ending \\\"...is not to be doubted.\\\"\",\"evidence_quote\":\"The right without a search warrant contemporaneously to search persons lawfully arrested while committing crime and to search the place where the arrest is made in order to find and seize things connected with the crime as. its fruits or as the means by which it was committed, as well as weapons and other things to effect an escape from custody, is not to be doubted.\",\"needs_cl\":false,\"locator_note\":\"pin-30; text shows the actual page-30 passage immediately after the *30 marker, while the lake pinpoint quote is page markdown.\"},\"reasons\":[\"The disclosed cached opinion contains the relevant page-30 sentence, but the payload quote contains content_page markdown, headings, and summary prose rather than opinion text.\",\"The lake pinpoints entry for pin-30 also marks quote_fidelity as \\\"mismatch\\\".\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The cached opinion text appears OCR-derived and contains \\\"as. its\\\"; a cleaned official display quote would require a defined normalization policy, but the current payload is plainly not the opinion quote.\"],\"suggested_tightening\":\"Regenerate pin-30 from the opinion text source, not from the rendered content page, and preserve a source-position/page marker near *30.\"},{\"assertion_id\":\"2e386f188c75b5f6\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment merits are outside Lens A, so no treatment/currency finding is raised.\",\"The payload fields match the disclosed lake treatment fields: field_i_validity \\\"good_law\\\", as_of_content \\\"1925-10-12\\\", as_of_treatment \\\"2026-06-30\\\", varies_by_point false, and the same scope_note.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment/currency not audited under this lens.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed every assertion in group_inventory.jsonl once under Lens A; treatment merits left to Lens B.\"}",
+  "summary": {
+    "at": "2026-07-10T18:09:38-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-31a08a8516",
+      "F-S9-PR-d794664111"
+    ],
+    "group_id": "_overhaul2/lake/cases/Agnello v. United States.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "codex-A",
+    "lane_id": "codex-A-panel-prod-238b3f7e",
+    "lens": "A",
+    "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-238b3f7e.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Agnello v. United States"
+    ],
+    "tokens": {
+      "input": 266662,
+      "output": 7310,
+      "source": "codex-events",
+      "total": 273972
+    },
+    "verdict_map": {
+      "2e386f188c75b5f6": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "42ed07ef6d07ad81": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "c2eba011975f1476": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "d09ac545bd23db24": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-31a08a8516",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-d794664111",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 143.1
+  }
+}

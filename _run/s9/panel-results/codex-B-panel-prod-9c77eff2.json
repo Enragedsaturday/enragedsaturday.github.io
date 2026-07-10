@@ -1,22 +1,129 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Carroll v. United States.json",
+    "lens": "B",
+    "notes": "Lens B only; support and quote-fidelity merits were not adjudicated.",
+    "reviewed": [
+      {
+        "assertion_id": "b66f974dd047317c",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record is status='verified' and stub=false.",
+          "The disclosed identity fields show expected_citation_found=true and canonical_name_match=true for Carroll v. United States.",
+          "The official citation in the lake record is 267 U.S. 132, matching the reviewed payload.",
+          "The lake's final treatment field is field_i_validity='good_law' as of 2026-06-30, so the disclosed record does not show the authority is no longer live law."
+        ],
+        "residual_risks": [
+          "The lake treatment derivation contains proposed negative/questioned edges and audit_needed markers, so the live-law conclusion depends on the lake's final judgment fields."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "75c911a1883ff6d4",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote fidelity is outside Lens B's currency/treatment charter.",
+          "No independent treatment or currency defect is adjudicated for this quote_fidelity row."
+        ],
+        "residual_risks": [
+          "Lens A should evaluate any quote-fidelity or pinpoint issue."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "8c8befd131e4418c",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "        \"field_ii\": \"overruled\",\n        \"field_iii\": \"mentioned\",\n        \"point\": null,\n        \"proposed\": true,",
+          "locator_note": "content_page.md Treatment & subsequent history; lake/Carroll v. United States__a1736f.json treatment.edges and treatment.derivation",
+          "needs_cl": true,
+          "problem": "The good-law status survives, but the built page's categorical 'No negative treatment' wording overstates the disclosed treatment record because the lake contains proposed overruled/questioned treatment edges and audit_needed markers.",
+          "proposed_fix": "Keep the good_law status, but replace 'No negative treatment' with a narrower statement such as 'No confirmed negative treatment in the lake's final treatment judgment; proposed negative edges were not adopted.'",
+          "severity": "low"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "The lake's final field_i_validity is good_law and the content page reports good treatment as of 2026-06-30.",
+          "The lake scope_note says the automobile-exception rule was repeatedly reaffirmed and refined and remains good law.",
+          "The same lake treatment record also lists proposed overruled/questioned edges, all with field_iii='mentioned', and derivation lanes marked audit_needed, so an absolute no-negative-treatment sentence is too broad from the disclosed record."
+        ],
+        "residual_risks": [
+          "A full CourtListener audit would be needed to preserve an unqualified 'No negative treatment' representation."
+        ],
+        "suggested_tightening": "State 'No confirmed negative treatment in the final lake judgment' rather than 'No negative treatment.'",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"B\",\n  \"group_id\": \"_overhaul2/lake/cases/Carroll v. United States.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"b66f974dd047317c\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake record is status='verified' and stub=false.\",\n        \"The disclosed identity fields show expected_citation_found=true and canonical_name_match=true for Carroll v. United States.\",\n        \"The official citation in the lake record is 267 U.S. 132, matching the reviewed payload.\",\n        \"The lake's final treatment field is field_i_validity='good_law' as of 2026-06-30, so the disclosed record does not show the authority is no longer live law.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The lake treatment derivation contains proposed negative/questioned edges and audit_needed markers, so the live-law conclusion depends on the lake's final judgment fields.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"75c911a1883ff6d4\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Quote fidelity is outside Lens B's currency/treatment charter.\",\n        \"No independent treatment or currency defect is adjudicated for this quote_fidelity row.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Lens A should evaluate any quote-fidelity or pinpoint issue.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"8c8befd131e4418c\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands-modified\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The good-law status survives, but the built page's categorical 'No negative treatment' wording overstates the disclosed treatment record because the lake contains proposed overruled/questioned treatment edges and audit_needed markers.\",\n        \"severity\": \"low\",\n        \"proposed_fix\": \"Keep the good_law status, but replace 'No negative treatment' with a narrower statement such as 'No confirmed negative treatment in the lake's final treatment judgment; proposed negative edges were not adopted.'\",\n        \"evidence_quote\": \"        \\\"field_ii\\\": \\\"overruled\\\",\\n        \\\"field_iii\\\": \\\"mentioned\\\",\\n        \\\"point\\\": null,\\n        \\\"proposed\\\": true,\",\n        \"needs_cl\": true,\n        \"locator_note\": \"content_page.md Treatment & subsequent history; lake/Carroll v. United States__a1736f.json treatment.edges and treatment.derivation\"\n      },\n      \"reasons\": [\n        \"The lake's final field_i_validity is good_law and the content page reports good treatment as of 2026-06-30.\",\n        \"The lake scope_note says the automobile-exception rule was repeatedly reaffirmed and refined and remains good law.\",\n        \"The same lake treatment record also lists proposed overruled/questioned edges, all with field_iii='mentioned', and derivation lanes marked audit_needed, so an absolute no-negative-treatment sentence is too broad from the disclosed record.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"A full CourtListener audit would be needed to preserve an unqualified 'No negative treatment' representation.\"\n      ],\n      \"suggested_tightening\": \"State 'No confirmed negative treatment in the final lake judgment' rather than 'No negative treatment.'\"\n    }\n  ],\n  \"notes\": \"Lens B only; support and quote-fidelity merits were not adjudicated.\"\n}",
   "summary": {
-    "at": "2026-07-09T23:18:10-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-10T17:49:19-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-6f142ca23e"
+    ],
     "group_id": "_overhaul2/lake/cases/Carroll v. United States.json",
     "group_total_assertions": 3,
+    "lake_only_cases": [],
     "lane": "codex-B",
     "lane_id": "codex-B-panel-prod-9c77eff2",
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-9c77eff2.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "Reading additional input from stdin...\n\u001b[2m2026-07-10T03:18:09.242999Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T03:18:09.708013Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 3,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Carroll v. United States"
+    ],
+    "tokens": {
+      "input": 260916,
+      "output": 7258,
+      "source": "codex-events",
+      "total": 268174
+    },
+    "verdict_map": {
+      "75c911a1883ff6d4": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "8c8befd131e4418c": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "b66f974dd047317c": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-6f142ca23e",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 144.5
   }
 }

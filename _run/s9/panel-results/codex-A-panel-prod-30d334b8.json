@@ -1,0 +1,186 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "content/cases/United States v. Bajakajian.md",
+    "lens": "A",
+    "notes": "No web search was used. No text/<case>.txt file or populated lake pinpoints were disclosed for holding or quote-fidelity review.",
+    "reviewed": [
+      {
+        "assertion_id": "49581263feab821c",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity gives case_name as United States v. Bajakajian, court as U.S. Supreme Court, and year as 1998.",
+          "Lake citations list official cite 524 U.S. 321, parallel cites 118 S. Ct. 2028 and 141 L. Ed. 2d 314, and vendor-neutral cite 1998 U.S. LEXIS 4172."
+        ],
+        "residual_risks": [
+          "No full opinion text is disclosed, but the lake record is sufficient for the existence/citation check."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "432b151a7ad65349",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "\"pinpoints\": []",
+          "locator_note": "locator field=holding; lake/United States v. Bajakajian__5a3e3c.json contains empty pinpoints and the workspace discloses no text file.",
+          "needs_cl": true,
+          "problem": "The holding/proposition cannot be verified from the disclosed evidence. The lake record has no holding field, no supporting pinpoint quotes, and no text/<case>.txt opinion text is present.",
+          "proposed_fix": "Add cached opinion text and/or populated lake holding/pinpoints supporting each clause of the holding, then re-review; otherwise mark or remove the holding as unsupported.",
+          "severity": "high"
+        },
+        "dimension": "support",
+        "reasons": [
+          "Lens A requires support from opinion text and lake holding at the stated breadth.",
+          "The disclosed lake record verifies identity and citations, but not the asserted Eighth Amendment holding or proportionality rule."
+        ],
+        "residual_risks": [
+          "The proposition may be accurate in the actual opinion, but it is not verifiable from the disclosed corpus."
+        ],
+        "suggested_tightening": "Attach the exact opinion passage or lake pinpoint quote for the full-forfeiture holding and the gross-disproportionality rule.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": false
+      },
+      {
+        "assertion_id": "d133e357e7a123ab",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": null,
+          "locator_note": "locator home=Civil Asset Forfeiture; the only disclosed support for the role is in content_page.md, which is the page under review.",
+          "needs_cl": false,
+          "problem": "The Civil Asset Forfeiture home-role designation as Anchor is not supported by any disclosed lake field, opinion text, holding, or corpus taxonomy evidence.",
+          "proposed_fix": "Provide a disclosed home-role mapping or verified holding/opinion support showing why this case is an Anchor for Civil Asset Forfeiture; otherwise downgrade or remove the role.",
+          "severity": "medium"
+        },
+        "dimension": "support",
+        "reasons": [
+          "Lake identity/citation data do not contain homes, roles, taxonomy, or a holding establishing anchor status.",
+          "Under the default-to-refuted rule, an unsupported home-role classification cannot stand on the reviewed page's own assertion."
+        ],
+        "residual_risks": [
+          "The role may be substantively appropriate, but the disclosed evidence does not prove it."
+        ],
+        "suggested_tightening": "Store home-role rationale in the authority record or a disclosed taxonomy file rather than relying on page frontmatter alone.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": false
+      },
+      {
+        "assertion_id": "48cce5d8a1cdfed1",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A, so no good-law finding is raised.",
+          "As a transcription check only, the payload matches lake treatment: field_i_validity unverified, composite_basis unverified, null as-of fields, varies_by_point false, and the same frontier-stub scope note."
+        ],
+        "residual_risks": [
+          "No Lens B treatment/currency review has been performed."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "a9a49cc4649ecc50",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A, so no treatment finding is raised.",
+          "The lake identity identifies the court as U.S. Supreme Court with court_level scotus, supporting the SCOTUS portion of the displayed authority label."
+        ],
+        "residual_risks": [
+          "No separate authority-weight mapping file is disclosed; this verdict rests on the lake SCOTUS identity rather than a dedicated weight field."
+        ],
+        "suggested_tightening": "Expose authority_weight or its mapping rule in disclosed evidence for cleaner future review.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"content/cases/United States v. Bajakajian.md\",\"reviewed\":[{\"assertion_id\":\"49581263feab821c\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity gives case_name as United States v. Bajakajian, court as U.S. Supreme Court, and year as 1998.\",\"Lake citations list official cite 524 U.S. 321, parallel cites 118 S. Ct. 2028 and 141 L. Ed. 2d 314, and vendor-neutral cite 1998 U.S. LEXIS 4172.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"No full opinion text is disclosed, but the lake record is sufficient for the existence/citation check.\"],\"suggested_tightening\":null},{\"assertion_id\":\"432b151a7ad65349\",\"dimension\":\"support\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":false,\"defect\":{\"problem\":\"The holding/proposition cannot be verified from the disclosed evidence. The lake record has no holding field, no supporting pinpoint quotes, and no text/<case>.txt opinion text is present.\",\"severity\":\"high\",\"proposed_fix\":\"Add cached opinion text and/or populated lake holding/pinpoints supporting each clause of the holding, then re-review; otherwise mark or remove the holding as unsupported.\",\"evidence_quote\":\"\\\"pinpoints\\\": []\",\"needs_cl\":true,\"locator_note\":\"locator field=holding; lake/United States v. Bajakajian__5a3e3c.json contains empty pinpoints and the workspace discloses no text file.\"},\"reasons\":[\"Lens A requires support from opinion text and lake holding at the stated breadth.\",\"The disclosed lake record verifies identity and citations, but not the asserted Eighth Amendment holding or proportionality rule.\"],\"breaks_true_positives\":true,\"residual_risks\":[\"The proposition may be accurate in the actual opinion, but it is not verifiable from the disclosed corpus.\"],\"suggested_tightening\":\"Attach the exact opinion passage or lake pinpoint quote for the full-forfeiture holding and the gross-disproportionality rule.\"},{\"assertion_id\":\"d133e357e7a123ab\",\"dimension\":\"support\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":false,\"defect\":{\"problem\":\"The Civil Asset Forfeiture home-role designation as Anchor is not supported by any disclosed lake field, opinion text, holding, or corpus taxonomy evidence.\",\"severity\":\"medium\",\"proposed_fix\":\"Provide a disclosed home-role mapping or verified holding/opinion support showing why this case is an Anchor for Civil Asset Forfeiture; otherwise downgrade or remove the role.\",\"evidence_quote\":null,\"needs_cl\":false,\"locator_note\":\"locator home=Civil Asset Forfeiture; the only disclosed support for the role is in content_page.md, which is the page under review.\"},\"reasons\":[\"Lake identity/citation data do not contain homes, roles, taxonomy, or a holding establishing anchor status.\",\"Under the default-to-refuted rule, an unsupported home-role classification cannot stand on the reviewed page's own assertion.\"],\"breaks_true_positives\":true,\"residual_risks\":[\"The role may be substantively appropriate, but the disclosed evidence does not prove it.\"],\"suggested_tightening\":\"Store home-role rationale in the authority record or a disclosed taxonomy file rather than relying on page frontmatter alone.\"},{\"assertion_id\":\"48cce5d8a1cdfed1\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside Lens A, so no good-law finding is raised.\",\"As a transcription check only, the payload matches lake treatment: field_i_validity unverified, composite_basis unverified, null as-of fields, varies_by_point false, and the same frontier-stub scope note.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"No Lens B treatment/currency review has been performed.\"],\"suggested_tightening\":null},{\"assertion_id\":\"a9a49cc4649ecc50\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside Lens A, so no treatment finding is raised.\",\"The lake identity identifies the court as U.S. Supreme Court with court_level scotus, supporting the SCOTUS portion of the displayed authority label.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"No separate authority-weight mapping file is disclosed; this verdict rests on the lake SCOTUS identity rather than a dedicated weight field.\"],\"suggested_tightening\":\"Expose authority_weight or its mapping rule in disclosed evidence for cleaner future review.\"}],\"notes\":\"No web search was used. No text/<case>.txt file or populated lake pinpoints were disclosed for holding or quote-fidelity review.\"}",
+  "summary": {
+    "at": "2026-07-10T00:44:19-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-99d8192965",
+      "F-S9-PR-c338fa5318"
+    ],
+    "group_id": "content/cases/United States v. Bajakajian.md",
+    "group_total_assertions": 5,
+    "lake_only_cases": [
+      "United States v. Bajakajian"
+    ],
+    "lane": "codex-A",
+    "lane_id": "codex-A-panel-prod-30d334b8",
+    "lens": "A",
+    "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-30d334b8.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [
+      "case 'United States v. Bajakajian' has no lead_opinion_id (text undisclosed)"
+    ],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [],
+    "tokens": {
+      "input": 120008,
+      "output": 5432,
+      "source": "codex-events",
+      "total": 125440
+    },
+    "verdict_map": {
+      "432b151a7ad65349": {
+        "dimension": "support",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": false
+      },
+      "48cce5d8a1cdfed1": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "49581263feab821c": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "a9a49cc4649ecc50": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "d133e357e7a123ab": {
+        "dimension": "support",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": false
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-99d8192965",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-c338fa5318",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 106.8
+  }
+}

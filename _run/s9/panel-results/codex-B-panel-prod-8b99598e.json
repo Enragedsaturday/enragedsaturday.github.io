@@ -1,13 +1,103 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Edwards v. Arizona.json",
+    "lens": "B",
+    "notes": "Lens B only; support and quote-fidelity defects are left to lens A.",
+    "reviewed": [
+      {
+        "assertion_id": "c2db4a892fb265f8",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity is verified, not a stub, and identifies Edwards v. Arizona as a U.S. Supreme Court decision dated 1981-06-22.",
+          "Lake citations select 451 U.S. 477 as the official display citation and include the listed parallel and LEXIS citations.",
+          "Currency angle: lake treatment says field_i_validity is good_law as of 2026-06-30, with no point_overrides."
+        ],
+        "residual_risks": [
+          "Treatment derivation contains proposed negative-treatment candidates and audit_needed flags, but no confirmed disclosed downgrade defeats existence/live-law status."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "6253e481421c32bb",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote-fidelity is outside lens B, so no support or quote-fidelity finding is made.",
+          "The embedded treatment/weight text in the harvested pin is consistent with the lake record's good_law treatment as of 2026-06-30 and SCOTUS court level."
+        ],
+        "residual_risks": [
+          "Inventory and lake mark quote_fidelity as mismatch; lens A must decide that issue."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "bf7fdd56c4c2f61f",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote-fidelity is outside lens B, so no support or quote-fidelity finding is made.",
+          "No disclosed point-specific treatment override is attached to pin-484a; the case-level lake treatment remains good_law."
+        ],
+        "residual_risks": [
+          "Inventory and lake mark quote_fidelity as mismatch; lens A must decide that issue."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "fc01f73458af6909",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "\"audit_needed\": true, \"proposed_negative_events\": 6, \"audit_marker\": \"R15 treatment audit required\"",
+          "locator_note": "content_page.md Treatment & subsequent history; lake treatment.derivation and treatment.edges",
+          "needs_cl": true,
+          "problem": "The good-law status and SCOTUS weight survive, but the page's absolute 'No negative treatment' sentence is too broad. The lake treatment derivation contains proposed negative-treatment edges and audit_needed markers, so the disclosed record does not support an unqualified no-negative-treatment claim.",
+          "proposed_fix": "Keep 'good_law' as of 2026-06-30 and Binding SCOTUS, but replace 'No negative treatment' with 'No confirmed downgrade or point override in the lake record; proposed negative-treatment edges require audit.'",
+          "severity": "medium"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "Inventory treatment payload matches lake treatment: field_i_validity good_law, as_of_treatment 2026-06-30, varies_by_point false, and point_overrides empty.",
+          "Lake identity court_level scotus supports the Binding SCOTUS weight label.",
+          "Content_page.md says 'No negative treatment,' but lake treatment.edges list proposed edges with field_ii values including overruled, questioned, criticized, and superseded_by_statute, and derivation flags audit_needed."
+        ],
+        "residual_risks": [
+          "Because the proposed edges are not audited in the disclosed record and external checking is forbidden here, a later audit could either downgrade or clear the flagged treatment candidates."
+        ],
+        "suggested_tightening": "Separate confirmed treatment from pending audit signals: say good_law only per lake judgment fields, and avoid categorical 'No negative treatment' unless the proposed edges are cleared.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/Edwards v. Arizona.json\",\"reviewed\":[{\"assertion_id\":\"c2db4a892fb265f8\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity is verified, not a stub, and identifies Edwards v. Arizona as a U.S. Supreme Court decision dated 1981-06-22.\",\"Lake citations select 451 U.S. 477 as the official display citation and include the listed parallel and LEXIS citations.\",\"Currency angle: lake treatment says field_i_validity is good_law as of 2026-06-30, with no point_overrides.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment derivation contains proposed negative-treatment candidates and audit_needed flags, but no confirmed disclosed downgrade defeats existence/live-law status.\"],\"suggested_tightening\":null},{\"assertion_id\":\"6253e481421c32bb\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Quote-fidelity is outside lens B, so no support or quote-fidelity finding is made.\",\"The embedded treatment/weight text in the harvested pin is consistent with the lake record's good_law treatment as of 2026-06-30 and SCOTUS court level.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Inventory and lake mark quote_fidelity as mismatch; lens A must decide that issue.\"],\"suggested_tightening\":null},{\"assertion_id\":\"bf7fdd56c4c2f61f\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Quote-fidelity is outside lens B, so no support or quote-fidelity finding is made.\",\"No disclosed point-specific treatment override is attached to pin-484a; the case-level lake treatment remains good_law.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Inventory and lake mark quote_fidelity as mismatch; lens A must decide that issue.\"],\"suggested_tightening\":null},{\"assertion_id\":\"fc01f73458af6909\",\"dimension\":\"treatment\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The good-law status and SCOTUS weight survive, but the page's absolute 'No negative treatment' sentence is too broad. The lake treatment derivation contains proposed negative-treatment edges and audit_needed markers, so the disclosed record does not support an unqualified no-negative-treatment claim.\",\"severity\":\"medium\",\"proposed_fix\":\"Keep 'good_law' as of 2026-06-30 and Binding SCOTUS, but replace 'No negative treatment' with 'No confirmed downgrade or point override in the lake record; proposed negative-treatment edges require audit.'\",\"evidence_quote\":\"\\\"audit_needed\\\": true, \\\"proposed_negative_events\\\": 6, \\\"audit_marker\\\": \\\"R15 treatment audit required\\\"\",\"needs_cl\":true,\"locator_note\":\"content_page.md Treatment & subsequent history; lake treatment.derivation and treatment.edges\"},\"reasons\":[\"Inventory treatment payload matches lake treatment: field_i_validity good_law, as_of_treatment 2026-06-30, varies_by_point false, and point_overrides empty.\",\"Lake identity court_level scotus supports the Binding SCOTUS weight label.\",\"Content_page.md says 'No negative treatment,' but lake treatment.edges list proposed edges with field_ii values including overruled, questioned, criticized, and superseded_by_statute, and derivation flags audit_needed.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Because the proposed edges are not audited in the disclosed record and external checking is forbidden here, a later audit could either downgrade or clear the flagged treatment candidates.\"],\"suggested_tightening\":\"Separate confirmed treatment from pending audit signals: say good_law only per lake judgment fields, and avoid categorical 'No negative treatment' unless the proposed edges are cleared.\"}],\"notes\":\"Lens B only; support and quote-fidelity defects are left to lens A.\"}",
   "summary": {
-    "at": "2026-07-09T23:18:23-04:00",
-    "attempts": 2,
+    "at": "2026-07-10T17:51:42-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "defense_votes": [],
-    "findings_emitted": [],
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-6ac7a21e01",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-2c4fd8063e",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-81c93f64dc"
+    ],
     "group_id": "_overhaul2/lake/cases/Edwards v. Arizona.json",
     "group_total_assertions": 4,
     "lake_only_cases": [],
@@ -16,21 +106,63 @@
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-8b99598e.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 4,
     "run": "prod",
     "text_disclosed_cases": [
       "Edwards v. Arizona"
     ],
     "tokens": {
-      "input": 754,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 754
+      "input": 421196,
+      "output": 8120,
+      "source": "codex-events",
+      "total": 429316
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 2.9
+    "verdict_map": {
+      "6253e481421c32bb": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "bf7fdd56c4c2f61f": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "c2db4a892fb265f8": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "fc01f73458af6909": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-6ac7a21e01",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-2c4fd8063e",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-81c93f64dc",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 162.6
   }
 }

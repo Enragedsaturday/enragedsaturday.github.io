@@ -1,0 +1,164 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/United States v. Anchondo.json",
+    "lens": "A",
+    "notes": "Reviewed all 4 assertion rows in group_inventory.jsonl exactly once.",
+    "reviewed": [
+      {
+        "assertion_id": "32878e701b5a987c",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity identifies United States v. Erick Anchondo, U.S. Court of Appeals for the 10th Circuit, decided 1998-09-01.",
+          "The lake official citation is 156 F.3d 1043, and the vendor citations in the payload match the lake record: 1998 U.S. App. LEXIS 21392 and 1998 WL 559355.",
+          "The built page displays 156 F.3d 1043 (10th Cir. 1998), consistent with the lake court, year, and official citation."
+        ],
+        "residual_risks": [
+          "The lake provenance notes a pending/two-key identity warning, but the disclosed lake citation and identity fields support this existence assertion."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "4a3d47f9fead8c04",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "A warrantless search preceding an arrest is a legitimate “search incident to arrest” as long as (1) a legitimate basis for the arrest existed before the search, and (2) the arrest followed shortly after the search.",
+          "locator_note": "text/United States v. Anchondo__a3292d.txt, page marker 1045, rule paragraph",
+          "needs_cl": false,
+          "problem": "The recorded pin-1045 quote is not character-faithful to the opinion. It reproduces built-page header/background material and stops before the actual quoted rule. The visible page quote also changes the opinion's curly double quotation marks around “search incident to arrest” into straight single quotation marks.",
+          "proposed_fix": "Replace the pin-1045 quote payload with the exact opinion sentence and preserve the opinion punctuation.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The lake pinpoints entry for pin-1045 begins with built-page markdown, not the opinion text.",
+          "The disclosed opinion contains the rule sentence at the 1045 page segment, but not in the form recorded in the lake pinpoint quote.",
+          "The pincite is directionally tied to the rule passage, but the quote-fidelity assertion fails."
+        ],
+        "residual_risks": [
+          "If local policy intentionally normalizes smart quotes, the visible page quote may be treated as normalized, but the lake pinpoint quote remains the wrong text."
+        ],
+        "suggested_tightening": "Use the exact opinion sentence as the quote payload and keep the 156 F.3d at 1045 pincite.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "fae1ea5c39bbb874",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Given the above analysis, the discovery of cocaine on the defendant’s person was the result of a lawful search incident to arrest. We AFFIRM.",
+          "locator_note": "text/United States v. Anchondo__a3292d.txt, after page marker 1046, concluding paragraph",
+          "needs_cl": false,
+          "problem": "The pin-1046 quote changes the opinion's possessive “defendant’s” to “defendant's,” so it is not character-faithful under the stated rule.",
+          "proposed_fix": "Use the exact opinion punctuation: “the discovery of cocaine on the defendant’s person was the result of a lawful search incident to arrest.”",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The quoted proposition is substantively present in the disclosed opinion after the 1046 marker.",
+          "The recorded quote is not character-faithful because it substitutes a straight apostrophe for the opinion's curly apostrophe.",
+          "Under the strict quote-fidelity lens, that punctuation change is enough to defeat the assertion as framed."
+        ],
+        "residual_risks": [
+          "If normalized apostrophes are permitted by corpus policy, the substantive quote would stand; under this instruction's character-faithful standard, it does not."
+        ],
+        "suggested_tightening": "Preserve the opinion's apostrophe and consider quoting the full sentence if sentence-boundary fidelity matters.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "c0caad6b5be80414",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A, so no treatment finding is raised.",
+          "The payload mirrors the disclosed lake treatment fields and the built-page treatment fields: good_law, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note."
+        ],
+        "residual_risks": [
+          "Treatment/currency was not audited under Lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/United States v. Anchondo.json\",\"reviewed\":[{\"assertion_id\":\"32878e701b5a987c\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake identity identifies United States v. Erick Anchondo, U.S. Court of Appeals for the 10th Circuit, decided 1998-09-01.\",\"The lake official citation is 156 F.3d 1043, and the vendor citations in the payload match the lake record: 1998 U.S. App. LEXIS 21392 and 1998 WL 559355.\",\"The built page displays 156 F.3d 1043 (10th Cir. 1998), consistent with the lake court, year, and official citation.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The lake provenance notes a pending/two-key identity warning, but the disclosed lake citation and identity fields support this existence assertion.\"],\"suggested_tightening\":null},{\"assertion_id\":\"4a3d47f9fead8c04\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The recorded pin-1045 quote is not character-faithful to the opinion. It reproduces built-page header/background material and stops before the actual quoted rule. The visible page quote also changes the opinion's curly double quotation marks around “search incident to arrest” into straight single quotation marks.\",\"severity\":\"high\",\"proposed_fix\":\"Replace the pin-1045 quote payload with the exact opinion sentence and preserve the opinion punctuation.\",\"evidence_quote\":\"A warrantless search preceding an arrest is a legitimate “search incident to arrest” as long as (1) a legitimate basis for the arrest existed before the search, and (2) the arrest followed shortly after the search.\",\"needs_cl\":false,\"locator_note\":\"text/United States v. Anchondo__a3292d.txt, page marker 1045, rule paragraph\"},\"reasons\":[\"The lake pinpoints entry for pin-1045 begins with built-page markdown, not the opinion text.\",\"The disclosed opinion contains the rule sentence at the 1045 page segment, but not in the form recorded in the lake pinpoint quote.\",\"The pincite is directionally tied to the rule passage, but the quote-fidelity assertion fails.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"If local policy intentionally normalizes smart quotes, the visible page quote may be treated as normalized, but the lake pinpoint quote remains the wrong text.\"],\"suggested_tightening\":\"Use the exact opinion sentence as the quote payload and keep the 156 F.3d at 1045 pincite.\"},{\"assertion_id\":\"fae1ea5c39bbb874\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The pin-1046 quote changes the opinion's possessive “defendant’s” to “defendant's,” so it is not character-faithful under the stated rule.\",\"severity\":\"low\",\"proposed_fix\":\"Use the exact opinion punctuation: “the discovery of cocaine on the defendant’s person was the result of a lawful search incident to arrest.”\",\"evidence_quote\":\"Given the above analysis, the discovery of cocaine on the defendant’s person was the result of a lawful search incident to arrest. We AFFIRM.\",\"needs_cl\":false,\"locator_note\":\"text/United States v. Anchondo__a3292d.txt, after page marker 1046, concluding paragraph\"},\"reasons\":[\"The quoted proposition is substantively present in the disclosed opinion after the 1046 marker.\",\"The recorded quote is not character-faithful because it substitutes a straight apostrophe for the opinion's curly apostrophe.\",\"Under the strict quote-fidelity lens, that punctuation change is enough to defeat the assertion as framed.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"If normalized apostrophes are permitted by corpus policy, the substantive quote would stand; under this instruction's character-faithful standard, it does not.\"],\"suggested_tightening\":\"Preserve the opinion's apostrophe and consider quoting the full sentence if sentence-boundary fidelity matters.\"},{\"assertion_id\":\"c0caad6b5be80414\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside Lens A, so no treatment finding is raised.\",\"The payload mirrors the disclosed lake treatment fields and the built-page treatment fields: good_law, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment/currency was not audited under Lens A.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed all 4 assertion rows in group_inventory.jsonl exactly once.\"}",
+  "summary": {
+    "at": "2026-07-10T01:49:11-04:00",
+    "attempts": 2,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-9edaf343c5",
+      "F-S9-PR-74728c46e5"
+    ],
+    "group_id": "_overhaul2/lake/cases/United States v. Anchondo.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "codex-A",
+    "lane_id": "codex-A-panel-prod-2f5bc657",
+    "lens": "A",
+    "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-2f5bc657.json",
+    "model": "gpt-5.5",
+    "parse_status": "repaired",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "United States v. Anchondo"
+    ],
+    "tokens": {
+      "input": 93286,
+      "output": 6362,
+      "source": "codex-events",
+      "total": 99648
+    },
+    "verdict_map": {
+      "32878e701b5a987c": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "4a3d47f9fead8c04": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "c0caad6b5be80414": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "fae1ea5c39bbb874": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-9edaf343c5",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-74728c46e5",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 124.9
+  }
+}

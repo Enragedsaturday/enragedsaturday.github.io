@@ -1,0 +1,172 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "content/cases/Giglio v. United States.md",
+    "lens": "B",
+    "notes": "",
+    "reviewed": [
+      {
+        "assertion_id": "2a703d06e486940d",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record is verified and identifies Giglio v. United States as a U.S. Supreme Court case decided 1972-02-24.",
+          "The lake citation fields match the asserted official, parallel, and LEXIS citations.",
+          "For currency, the lake treatment field states field_i_validity is good_law as of 2026-06-30."
+        ],
+        "residual_risks": [
+          "Treatment derivation contains proposed negative candidates and audit-needed flags, but no final disclosed override displaces the good_law judgment field."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "3ed3343bbfd1d260",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "Support merits are outside Lens B, so no support or quote-fidelity defect is raised.",
+          "The currency/treatment record does not disclose a final overruling, abrogation, or point override that would make the holding assertion unusable as live law."
+        ],
+        "residual_risks": [
+          "Holding support and quote fidelity remain for Lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "49e2fe8507ec42ec",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "Home-role support is outside Lens B, so no support defect is raised.",
+          "On currency only, the disclosed record treats Giglio as SCOTUS good_law with no point overrides."
+        ],
+        "residual_risks": [
+          "Whether Key — Anchor is the best home-role classification is not reviewed under Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "27d7bde2797602d8",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The lake identity fields list court as U.S. Supreme Court and court_level as scotus.",
+          "The asserted weight label Binding — SCOTUS is consistent with the disclosed court identity."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "559337a43f3a4dbb",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "\"audit_needed\": true, \"proposed_negative_events\": 25",
+          "locator_note": "Treatment & subsequent history narrative and treatment derivation fields.",
+          "needs_cl": true,
+          "problem": "The good_law treatment field itself matches the lake, but the page's categorical 'No negative treatment' wording is too strong because the disclosed treatment derivation contains proposed negative-treatment candidates and audit-needed flags.",
+          "proposed_fix": "Keep good_law as of 2026-06-30, but qualify the narrative as 'No finalized negative treatment or point override in the disclosed lake record; automated derivation contains proposed negative candidates requiring audit.'",
+          "severity": "low"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "The asserted treatment payload matches the lake's field_i_validity, as_of_treatment, composite_basis, varies_by_point, and scope_note fields.",
+          "The lake has point_overrides as an empty array, supporting no finalized point-specific downgrade.",
+          "However, treatment.edges include proposed entries with negative field_ii labels, and derivation lanes flag audit_needed, so an unqualified 'No negative treatment' overstates the disclosed record."
+        ],
+        "residual_risks": [
+          "The disclosed record permits reliance on the good_law judgment field, but the proposed negative edges are not fully audited in the provided evidence."
+        ],
+        "suggested_tightening": "Distinguish finalized treatment from proposed negative-treatment candidates.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"B\",\n  \"group_id\": \"content/cases/Giglio v. United States.md\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"2a703d06e486940d\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake identity record is verified and identifies Giglio v. United States as a U.S. Supreme Court case decided 1972-02-24.\",\n        \"The lake citation fields match the asserted official, parallel, and LEXIS citations.\",\n        \"For currency, the lake treatment field states field_i_validity is good_law as of 2026-06-30.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Treatment derivation contains proposed negative candidates and audit-needed flags, but no final disclosed override displaces the good_law judgment field.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"3ed3343bbfd1d260\",\n      \"dimension\": \"support\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Support merits are outside Lens B, so no support or quote-fidelity defect is raised.\",\n        \"The currency/treatment record does not disclose a final overruling, abrogation, or point override that would make the holding assertion unusable as live law.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Holding support and quote fidelity remain for Lens A.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"49e2fe8507ec42ec\",\n      \"dimension\": \"support\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Home-role support is outside Lens B, so no support defect is raised.\",\n        \"On currency only, the disclosed record treats Giglio as SCOTUS good_law with no point overrides.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Whether Key — Anchor is the best home-role classification is not reviewed under Lens B.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"27d7bde2797602d8\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake identity fields list court as U.S. Supreme Court and court_level as scotus.\",\n        \"The asserted weight label Binding — SCOTUS is consistent with the disclosed court identity.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"559337a43f3a4dbb\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands-modified\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The good_law treatment field itself matches the lake, but the page's categorical 'No negative treatment' wording is too strong because the disclosed treatment derivation contains proposed negative-treatment candidates and audit-needed flags.\",\n        \"severity\": \"low\",\n        \"proposed_fix\": \"Keep good_law as of 2026-06-30, but qualify the narrative as 'No finalized negative treatment or point override in the disclosed lake record; automated derivation contains proposed negative candidates requiring audit.'\",\n        \"evidence_quote\": \"\\\"audit_needed\\\": true, \\\"proposed_negative_events\\\": 25\",\n        \"needs_cl\": true,\n        \"locator_note\": \"Treatment & subsequent history narrative and treatment derivation fields.\"\n      },\n      \"reasons\": [\n        \"The asserted treatment payload matches the lake's field_i_validity, as_of_treatment, composite_basis, varies_by_point, and scope_note fields.\",\n        \"The lake has point_overrides as an empty array, supporting no finalized point-specific downgrade.\",\n        \"However, treatment.edges include proposed entries with negative field_ii labels, and derivation lanes flag audit_needed, so an unqualified 'No negative treatment' overstates the disclosed record.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The disclosed record permits reliance on the good_law judgment field, but the proposed negative edges are not fully audited in the provided evidence.\"\n      ],\n      \"suggested_tightening\": \"Distinguish finalized treatment from proposed negative-treatment candidates.\"\n    }\n  ],\n  \"notes\": \"\"\n}",
+  "summary": {
+    "at": "2026-07-10T00:18:41-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-a32ce7bc76"
+    ],
+    "group_id": "content/cases/Giglio v. United States.md",
+    "group_total_assertions": 5,
+    "lake_only_cases": [],
+    "lane": "codex-B",
+    "lane_id": "codex-B-panel-prod-4b8be5c8",
+    "lens": "B",
+    "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-4b8be5c8.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Giglio v. United States"
+    ],
+    "tokens": {
+      "input": 218496,
+      "output": 5609,
+      "source": "codex-events",
+      "total": 224105
+    },
+    "verdict_map": {
+      "27d7bde2797602d8": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "2a703d06e486940d": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "3ed3343bbfd1d260": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "49e2fe8507ec42ec": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "559337a43f3a4dbb": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-a32ce7bc76",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 118.2
+  }
+}

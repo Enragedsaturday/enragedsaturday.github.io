@@ -1,0 +1,109 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/United States v. Capers.json",
+    "lens": "B",
+    "notes": "Reviewed all 2 group_inventory rows under lens B only; no support or quote-fidelity findings made.",
+    "reviewed": [
+      {
+        "assertion_id": "20e423118ae5695a",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Frontier stub: treatment/progeny intentionally not derived until S6 promotion.",
+          "locator_note": "lake treatment.scope_note; lake progeny has complete_query null, citation_count null, rows_cached 0.",
+          "needs_cl": true,
+          "problem": "The disclosed record verifies the case citation, but not the currency/live-law status required by lens B. Treatment and progeny were not derived, so the authority cannot be verified as still live law from the disclosed evidence.",
+          "proposed_fix": "Keep the citation, but do not treat it as a verified live-law/current authority until treatment/progeny are populated by a completed citator review; otherwise label live-law status as unverified.",
+          "severity": "medium"
+        },
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity and citations confirm the reported case and citation: United States v. Capers, 627 F.3d 470.",
+          "Lake treatment is field_i_validity unverified, with no as_of_treatment date.",
+          "Lake progeny is not enumerated, so no disclosed evidence verifies that the authority remains live law."
+        ],
+        "residual_risks": [
+          "The citation itself appears disclosed and matched; the refutation is limited to live-law currency.",
+          "A completed citator check could later show the case remains good law."
+        ],
+        "suggested_tightening": "Split citation-existence from live-law currency so a verified cite is not implicitly treated as verified current law.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": false
+      },
+      {
+        "assertion_id": "7fa25445735a0a11",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The inventory treatment payload matches the lake treatment fields: field_i_validity unverified, as_of_content null, as_of_treatment null, varies_by_point false.",
+          "The content page also renders Treatment: Unverified and states that subsequent treatment is not yet machine-verified.",
+          "No disclosed treatment edge, progeny edge, or point override supersedes, overrules, abrogates, or limits the case."
+        ],
+        "residual_risks": [
+          "Unverified treatment is not a good-law finding.",
+          "The empty edges do not prove absence of negative treatment because progeny was not completed."
+        ],
+        "suggested_tightening": "Keep the unverified banner prominent and avoid citator-weight language such as leading unless treatment/progeny evidence is added.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"B\",\n  \"group_id\": \"_overhaul2/lake/cases/United States v. Capers.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"20e423118ae5695a\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": false,\n      \"defect\": {\n        \"problem\": \"The disclosed record verifies the case citation, but not the currency/live-law status required by lens B. Treatment and progeny were not derived, so the authority cannot be verified as still live law from the disclosed evidence.\",\n        \"severity\": \"medium\",\n        \"proposed_fix\": \"Keep the citation, but do not treat it as a verified live-law/current authority until treatment/progeny are populated by a completed citator review; otherwise label live-law status as unverified.\",\n        \"evidence_quote\": \"Frontier stub: treatment/progeny intentionally not derived until S6 promotion.\",\n        \"needs_cl\": true,\n        \"locator_note\": \"lake treatment.scope_note; lake progeny has complete_query null, citation_count null, rows_cached 0.\"\n      },\n      \"reasons\": [\n        \"Lake identity and citations confirm the reported case and citation: United States v. Capers, 627 F.3d 470.\",\n        \"Lake treatment is field_i_validity unverified, with no as_of_treatment date.\",\n        \"Lake progeny is not enumerated, so no disclosed evidence verifies that the authority remains live law.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The citation itself appears disclosed and matched; the refutation is limited to live-law currency.\",\n        \"A completed citator check could later show the case remains good law.\"\n      ],\n      \"suggested_tightening\": \"Split citation-existence from live-law currency so a verified cite is not implicitly treated as verified current law.\"\n    },\n    {\n      \"assertion_id\": \"7fa25445735a0a11\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The inventory treatment payload matches the lake treatment fields: field_i_validity unverified, as_of_content null, as_of_treatment null, varies_by_point false.\",\n        \"The content page also renders Treatment: Unverified and states that subsequent treatment is not yet machine-verified.\",\n        \"No disclosed treatment edge, progeny edge, or point override supersedes, overrules, abrogates, or limits the case.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Unverified treatment is not a good-law finding.\",\n        \"The empty edges do not prove absence of negative treatment because progeny was not completed.\"\n      ],\n      \"suggested_tightening\": \"Keep the unverified banner prominent and avoid citator-weight language such as leading unless treatment/progeny evidence is added.\"\n    }\n  ],\n  \"notes\": \"Reviewed all 2 group_inventory rows under lens B only; no support or quote-fidelity findings made.\"\n}",
+  "summary": {
+    "at": "2026-07-10T02:33:01-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-555d2a8dd4"
+    ],
+    "group_id": "_overhaul2/lake/cases/United States v. Capers.json",
+    "group_total_assertions": 2,
+    "lake_only_cases": [
+      "United States v. Capers"
+    ],
+    "lane": "codex-B",
+    "lane_id": "codex-B-panel-prod-4b6c04de",
+    "lens": "B",
+    "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-4b6c04de.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [
+      "case 'United States v. Capers' has no lead_opinion_id (text undisclosed)"
+    ],
+    "reviewed_count": 2,
+    "run": "prod",
+    "text_disclosed_cases": [],
+    "tokens": {
+      "input": 123025,
+      "output": 7374,
+      "source": "codex-events",
+      "total": 130399
+    },
+    "verdict_map": {
+      "20e423118ae5695a": {
+        "dimension": "existence",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": false
+      },
+      "7fa25445735a0a11": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-555d2a8dd4",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 147.8
+  }
+}

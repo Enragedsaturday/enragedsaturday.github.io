@@ -1,0 +1,146 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Arizona v. Mauro.json",
+    "lens": "A",
+    "notes": "Reviewed every row in group_inventory.jsonl under lens A.",
+    "reviewed": [
+      {
+        "assertion_id": "ea8a34da6045d6b4",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record is verified for Arizona v. Mauro, U.S. Supreme Court, decided 1987-06-26, docket 85-2121.",
+          "The asserted official citation 481 U.S. 520 and parallel citations 107 S. Ct. 1931, 95 L. Ed. 2d 458, and 1987 U.S. LEXIS 1933 match the lake citations."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "22948f4647520838",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The exact quoted sentence appears in the cached opinion text at the page-529 marker.",
+          "The lake pinpoint for pin-529 is marked quote_fidelity matched and star-verified with star_marker 529."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "5bcc36189a3d45df",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "There is no evidence that the officers sent Mrs. Mauro in to see her husband for the purpose of eliciting incriminating statements.",
+          "locator_note": "pin-528 in lake/Arizona v. Mauro__135930.json; intended passage spans the cached opinion text around the 527 and 528 page markers.",
+          "needs_cl": false,
+          "problem": "pin-528's stored quote is not a character-faithful excerpt from the Mauro opinion; it is a copied chunk of the built content page/front matter and is itself marked mismatch with no star marker.",
+          "proposed_fix": "Replace pin-528 with the actual opinion passage at 481 U.S. 527-528 supporting the page quote, or remove the pinpoint until it is regenerated from opinion text.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The lake quote for pin-528 begins with page markdown ('--- # Arizona v. Mauro...') rather than opinion text.",
+          "The lake record itself labels pin-528 quote_fidelity as mismatch and pinpoint_status as slip-only.",
+          "The cached opinion text contains the intended 527-528 language, but that is not what the pin-528 payload stores."
+        ],
+        "residual_risks": [
+          "The visible content-page quote may be substantively accurate, but the disclosed pin record backing it is corrupt."
+        ],
+        "suggested_tightening": "Regenerate pin-528 from text/Arizona v. Mauro__135930.txt and include a page/star marker or validated position.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "a823daac3d82812e",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The asserted treatment fields match the lake treatment record: field_i_validity good_law, as_of_content 1987-06-26, as_of_treatment 2026-06-30, varies_by_point false.",
+          "Treatment/currency substance is outside lens A; no treatment finding is raised."
+        ],
+        "residual_risks": [
+          "Substantive treatment and currency review reserved for lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"A\",\n  \"group_id\": \"_overhaul2/lake/cases/Arizona v. Mauro.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"ea8a34da6045d6b4\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake identity record is verified for Arizona v. Mauro, U.S. Supreme Court, decided 1987-06-26, docket 85-2121.\",\n        \"The asserted official citation 481 U.S. 520 and parallel citations 107 S. Ct. 1931, 95 L. Ed. 2d 458, and 1987 U.S. LEXIS 1933 match the lake citations.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"22948f4647520838\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The exact quoted sentence appears in the cached opinion text at the page-529 marker.\",\n        \"The lake pinpoint for pin-529 is marked quote_fidelity matched and star-verified with star_marker 529.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"5bcc36189a3d45df\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"pin-528's stored quote is not a character-faithful excerpt from the Mauro opinion; it is a copied chunk of the built content page/front matter and is itself marked mismatch with no star marker.\",\n        \"severity\": \"high\",\n        \"proposed_fix\": \"Replace pin-528 with the actual opinion passage at 481 U.S. 527-528 supporting the page quote, or remove the pinpoint until it is regenerated from opinion text.\",\n        \"evidence_quote\": \"There is no evidence that the officers sent Mrs. Mauro in to see her husband for the purpose of eliciting incriminating statements.\",\n        \"needs_cl\": false,\n        \"locator_note\": \"pin-528 in lake/Arizona v. Mauro__135930.json; intended passage spans the cached opinion text around the 527 and 528 page markers.\"\n      },\n      \"reasons\": [\n        \"The lake quote for pin-528 begins with page markdown ('--- # Arizona v. Mauro...') rather than opinion text.\",\n        \"The lake record itself labels pin-528 quote_fidelity as mismatch and pinpoint_status as slip-only.\",\n        \"The cached opinion text contains the intended 527-528 language, but that is not what the pin-528 payload stores.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The visible content-page quote may be substantively accurate, but the disclosed pin record backing it is corrupt.\"\n      ],\n      \"suggested_tightening\": \"Regenerate pin-528 from text/Arizona v. Mauro__135930.txt and include a page/star marker or validated position.\"\n    },\n    {\n      \"assertion_id\": \"a823daac3d82812e\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The asserted treatment fields match the lake treatment record: field_i_validity good_law, as_of_content 1987-06-26, as_of_treatment 2026-06-30, varies_by_point false.\",\n        \"Treatment/currency substance is outside lens A; no treatment finding is raised.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Substantive treatment and currency review reserved for lens B.\"\n      ],\n      \"suggested_tightening\": null\n    }\n  ],\n  \"notes\": \"Reviewed every row in group_inventory.jsonl under lens A.\"\n}",
+  "summary": {
+    "at": "2026-07-10T18:21:43-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-8ad425005d"
+    ],
+    "group_id": "_overhaul2/lake/cases/Arizona v. Mauro.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "codex-A",
+    "lane_id": "codex-A-panel-prod-2ed071a6",
+    "lens": "A",
+    "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-2ed071a6.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Arizona v. Mauro"
+    ],
+    "tokens": {
+      "input": 199491,
+      "output": 4703,
+      "source": "codex-events",
+      "total": 204194
+    },
+    "verdict_map": {
+      "22948f4647520838": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "5bcc36189a3d45df": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "a823daac3d82812e": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "ea8a34da6045d6b4": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-8ad425005d",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 95.5
+  }
+}

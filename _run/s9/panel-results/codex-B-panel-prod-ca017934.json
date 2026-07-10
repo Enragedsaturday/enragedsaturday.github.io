@@ -1,13 +1,124 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "content/cases/Olmstead v. United States.md",
+    "lens": "B",
+    "notes": "Support and quote-fidelity rows were reviewed only for lens-B currency/treatment consistency.",
+    "reviewed": [
+      {
+        "assertion_id": "d6966e390d0a60f2",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity is verified for Olmstead v. United States, U.S. Supreme Court, decided 1928-06-04.",
+          "Lake citations list official cite 277 U.S. 438, parallel cites, and vendor-neutral 1928 U.S. LEXIS 694."
+        ],
+        "residual_risks": [
+          "The authority is not live on the privacy/wiretap point, but the page separately discloses the superseded/overruled treatment."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "03bdde9aed40fa58",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "Lens B does not challenge support or quote fidelity.",
+          "The holding's treatment qualifiers match the lake scope note: overruled on the privacy point by Katz and property-trespass later revived as an alternative test in Jones."
+        ],
+        "residual_risks": [
+          "No lens-B defect; support substance is reserved for lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "438875892ec94eb3",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "Lens B does not test home-role support weight except currency treatment.",
+          "The role's historical/overruled-by-Katz qualifier is consistent with lake treatment field_i_validity=superseded and the Katz overruled edge."
+        ],
+        "residual_risks": [
+          "The disclosed evidence supports the treatment qualifier, not independently the importance term Key."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "b2b213e2b42220d2",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "Lens B does not challenge support placement except currency treatment.",
+          "The Historical / origin label is not contradicted by the lake scope note, which says Olmstead survives only as history and that the property-trespass approach was later revived as an alternative test."
+        ],
+        "residual_risks": [
+          "The origin characterization is outside lens B except for treatment currency."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "87f945dbefeadad3",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "Overruled on the privacy point by Katz v. United States (1967); survives only as history. The property-trespass approach was later revived as an alternative test in United States v. Jones (2012).",
+          "locator_note": "content_page.md authority_weight; lake treatment.scope_note",
+          "needs_cl": false,
+          "problem": "The unqualified authority_weight label 'Binding — SCOTUS' is incomplete under lens B because the disclosed treatment says the operative privacy/wiretap holding is superseded/overruled and survives only as history. The SCOTUS source hierarchy is true, but the label needs a current-validity qualifier.",
+          "proposed_fix": "Qualify the displayed weight as source-level only, e.g. 'SCOTUS — historical/overruled as to privacy/wiretap point', or suppress unqualified 'Binding' when field_i_validity is superseded.",
+          "severity": "medium"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "Lake identity confirms the court is SCOTUS, so the source-level part survives.",
+          "Lake treatment field_i_validity is superseded, making an unqualified Binding label potentially misleading for current-law use."
+        ],
+        "residual_risks": [
+          "If authority_weight is defined elsewhere as court hierarchy only, the fix should be display-level rather than changing the stored hierarchy field."
+        ],
+        "suggested_tightening": "Keep SCOTUS hierarchy separate from current validity, and render both together wherever users see the weight.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "a450281457d3bd23",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The treatment payload matches the lake treatment fields: field_i_validity=superseded, as_of_content=1928-06-04, as_of_treatment=2026-06-30, composite_basis=migration-seed, varies_by_point=false.",
+          "Lake treatment edges include Katz v. United States with field_ii=overruled, and the scope note matches the page's Katz/Jones qualification."
+        ],
+        "residual_risks": [
+          "Lake derivation reports capped/audit-needed progeny lanes, but the disclosed judgment fields support the treatment call as stated."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"content/cases/Olmstead v. United States.md\",\"reviewed\":[{\"assertion_id\":\"d6966e390d0a60f2\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity is verified for Olmstead v. United States, U.S. Supreme Court, decided 1928-06-04.\",\"Lake citations list official cite 277 U.S. 438, parallel cites, and vendor-neutral 1928 U.S. LEXIS 694.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The authority is not live on the privacy/wiretap point, but the page separately discloses the superseded/overruled treatment.\"],\"suggested_tightening\":null},{\"assertion_id\":\"03bdde9aed40fa58\",\"dimension\":\"support\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lens B does not challenge support or quote fidelity.\",\"The holding's treatment qualifiers match the lake scope note: overruled on the privacy point by Katz and property-trespass later revived as an alternative test in Jones.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"No lens-B defect; support substance is reserved for lens A.\"],\"suggested_tightening\":null},{\"assertion_id\":\"438875892ec94eb3\",\"dimension\":\"support\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lens B does not test home-role support weight except currency treatment.\",\"The role's historical/overruled-by-Katz qualifier is consistent with lake treatment field_i_validity=superseded and the Katz overruled edge.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The disclosed evidence supports the treatment qualifier, not independently the importance term Key.\"],\"suggested_tightening\":null},{\"assertion_id\":\"b2b213e2b42220d2\",\"dimension\":\"support\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lens B does not challenge support placement except currency treatment.\",\"The Historical / origin label is not contradicted by the lake scope note, which says Olmstead survives only as history and that the property-trespass approach was later revived as an alternative test.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The origin characterization is outside lens B except for treatment currency.\"],\"suggested_tightening\":null},{\"assertion_id\":\"87f945dbefeadad3\",\"dimension\":\"treatment\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The unqualified authority_weight label 'Binding — SCOTUS' is incomplete under lens B because the disclosed treatment says the operative privacy/wiretap holding is superseded/overruled and survives only as history. The SCOTUS source hierarchy is true, but the label needs a current-validity qualifier.\",\"severity\":\"medium\",\"proposed_fix\":\"Qualify the displayed weight as source-level only, e.g. 'SCOTUS — historical/overruled as to privacy/wiretap point', or suppress unqualified 'Binding' when field_i_validity is superseded.\",\"evidence_quote\":\"Overruled on the privacy point by Katz v. United States (1967); survives only as history. The property-trespass approach was later revived as an alternative test in United States v. Jones (2012).\",\"needs_cl\":false,\"locator_note\":\"content_page.md authority_weight; lake treatment.scope_note\"},\"reasons\":[\"Lake identity confirms the court is SCOTUS, so the source-level part survives.\",\"Lake treatment field_i_validity is superseded, making an unqualified Binding label potentially misleading for current-law use.\"],\"breaks_true_positives\":true,\"residual_risks\":[\"If authority_weight is defined elsewhere as court hierarchy only, the fix should be display-level rather than changing the stored hierarchy field.\"],\"suggested_tightening\":\"Keep SCOTUS hierarchy separate from current validity, and render both together wherever users see the weight.\"},{\"assertion_id\":\"a450281457d3bd23\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The treatment payload matches the lake treatment fields: field_i_validity=superseded, as_of_content=1928-06-04, as_of_treatment=2026-06-30, composite_basis=migration-seed, varies_by_point=false.\",\"Lake treatment edges include Katz v. United States with field_ii=overruled, and the scope note matches the page's Katz/Jones qualification.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Lake derivation reports capped/audit-needed progeny lanes, but the disclosed judgment fields support the treatment call as stated.\"],\"suggested_tightening\":null}],\"notes\":\"Support and quote-fidelity rows were reviewed only for lens-B currency/treatment consistency.\"}",
   "summary": {
-    "at": "2026-07-09T23:16:18-04:00",
-    "attempts": 2,
+    "at": "2026-07-10T17:35:21-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-0e69d7f50c"
+    ],
     "group_id": "content/cases/Olmstead v. United States.md",
     "group_total_assertions": 6,
     "lake_only_cases": [],
@@ -16,21 +127,69 @@
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-ca017934.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 6,
     "run": "prod",
     "text_disclosed_cases": [
       "Olmstead v. United States"
     ],
     "tokens": {
-      "input": 753,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 753
+      "input": 216356,
+      "output": 6997,
+      "source": "codex-events",
+      "total": 223353
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 4.8
+    "verdict_map": {
+      "03bdde9aed40fa58": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "438875892ec94eb3": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "87f945dbefeadad3": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "a450281457d3bd23": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "b2b213e2b42220d2": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "d6966e390d0a60f2": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-0e69d7f50c",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 138.7
   }
 }

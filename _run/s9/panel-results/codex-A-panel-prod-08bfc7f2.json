@@ -1,0 +1,155 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Orozco v. Texas.json",
+    "lens": "A",
+    "notes": "Reviewed all 4 assertion rows. Treatment was recorded only, without a Lens A treatment challenge.",
+    "reviewed": [
+      {
+        "assertion_id": "6c2338afd83e4725",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity verifies record_id Orozco v. Texas, U.S. Supreme Court, date_decided 1969-03-25, year 1969, and docket 641.",
+          "The lake citations list official citation 394 U.S. 324 and parallel citations 89 S. Ct. 1095 and 22 L. Ed. 2d 311; content_page uses 394 U.S. 324 (1969)."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "4f01999e7ad9a7e5",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "We disagree and hold that the use of these admissions obtained in the absence of the required warnings was a flat violation of the Self-Incrimination Clause of the Fifth Amendment as construed in *Miranda*.",
+          "locator_note": "pin-326; the opinion text places the holding sentence after the *326 pagination marker.",
+          "needs_cl": false,
+          "problem": "The pin-326 quote in the lake/inventory is not a verbatim opinion quote; it concatenates page prose and markdown headings, and the lake itself marks quote_fidelity as mismatch.",
+          "proposed_fix": "Replace pin-326 with the actual 394 U.S. at 326 holding sentence or remove this stored quote if it is only generated summary prose.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The stored quote begins with 'Without any Miranda warnings' and continues through '## Issue' and '## Rule Yes.', which are not verbatim opinion language.",
+          "The disclosed opinion text instead supports the separate holding sentence quoted on content_page at 394 U.S. at 326."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Store only the actual quoted sentence for pin-326, not generated background/issue/rule text.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "b8b660f14541a35a",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "in custody at the station <i>or otherwise deprived of his freedom of action in any significant way.</i>",
+          "locator_note": "pin-327; the passage appears after the *327 pagination marker.",
+          "needs_cl": false,
+          "problem": "The quoted words are present in the opinion, but the stored markdown emphasis is not character-faithful to the raw disclosed text because the terminal period belongs inside the italicized phrase.",
+          "proposed_fix": "Normalize the stored quote to preserve the opinion's punctuation/emphasis: in custody at the station *or otherwise deprived of his freedom of action in any significant way.*",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The substantive quoted phrase appears in text/Orozco at the 327 passage.",
+          "The payload puts the period outside the markdown italic span, while the raw text has the period inside the italicized phrase."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Move the period inside the emphasized phrase or remove styling from the quote while preserving the exact words and punctuation.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "90c3a110aa7890ed",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A, so no treatment finding is raised.",
+          "The payload fields match the disclosed lake/content treatment fields: field_i_validity good_law, as_of_content 1969-03-25, as_of_treatment 2026-06-30, varies_by_point false."
+        ],
+        "residual_risks": [
+          "Lens A did not audit treatment currency or progeny treatment edges."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"A\",\n  \"group_id\": \"_overhaul2/lake/cases/Orozco v. Texas.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"6c2338afd83e4725\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake identity verifies record_id Orozco v. Texas, U.S. Supreme Court, date_decided 1969-03-25, year 1969, and docket 641.\",\n        \"The lake citations list official citation 394 U.S. 324 and parallel citations 89 S. Ct. 1095 and 22 L. Ed. 2d 311; content_page uses 394 U.S. 324 (1969).\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"4f01999e7ad9a7e5\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The pin-326 quote in the lake/inventory is not a verbatim opinion quote; it concatenates page prose and markdown headings, and the lake itself marks quote_fidelity as mismatch.\",\n        \"severity\": \"high\",\n        \"proposed_fix\": \"Replace pin-326 with the actual 394 U.S. at 326 holding sentence or remove this stored quote if it is only generated summary prose.\",\n        \"evidence_quote\": \"We disagree and hold that the use of these admissions obtained in the absence of the required warnings was a flat violation of the Self-Incrimination Clause of the Fifth Amendment as construed in *Miranda*.\",\n        \"needs_cl\": false,\n        \"locator_note\": \"pin-326; the opinion text places the holding sentence after the *326 pagination marker.\"\n      },\n      \"reasons\": [\n        \"The stored quote begins with 'Without any Miranda warnings' and continues through '## Issue' and '## Rule Yes.', which are not verbatim opinion language.\",\n        \"The disclosed opinion text instead supports the separate holding sentence quoted on content_page at 394 U.S. at 326.\"\n      ],\n      \"breaks_true_positives\": true,\n      \"residual_risks\": [],\n      \"suggested_tightening\": \"Store only the actual quoted sentence for pin-326, not generated background/issue/rule text.\"\n    },\n    {\n      \"assertion_id\": \"b8b660f14541a35a\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands-modified\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The quoted words are present in the opinion, but the stored markdown emphasis is not character-faithful to the raw disclosed text because the terminal period belongs inside the italicized phrase.\",\n        \"severity\": \"low\",\n        \"proposed_fix\": \"Normalize the stored quote to preserve the opinion's punctuation/emphasis: in custody at the station *or otherwise deprived of his freedom of action in any significant way.*\",\n        \"evidence_quote\": \"in custody at the station <i>or otherwise deprived of his freedom of action in any significant way.</i>\",\n        \"needs_cl\": false,\n        \"locator_note\": \"pin-327; the passage appears after the *327 pagination marker.\"\n      },\n      \"reasons\": [\n        \"The substantive quoted phrase appears in text/Orozco at the 327 passage.\",\n        \"The payload puts the period outside the markdown italic span, while the raw text has the period inside the italicized phrase.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": \"Move the period inside the emphasized phrase or remove styling from the quote while preserving the exact words and punctuation.\"\n    },\n    {\n      \"assertion_id\": \"90c3a110aa7890ed\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Treatment/currency is outside Lens A, so no treatment finding is raised.\",\n        \"The payload fields match the disclosed lake/content treatment fields: field_i_validity good_law, as_of_content 1969-03-25, as_of_treatment 2026-06-30, varies_by_point false.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Lens A did not audit treatment currency or progeny treatment edges.\"\n      ],\n      \"suggested_tightening\": null\n    }\n  ],\n  \"notes\": \"Reviewed all 4 assertion rows. Treatment was recorded only, without a Lens A treatment challenge.\"\n}",
+  "summary": {
+    "at": "2026-07-10T01:47:17-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-e08f724d5d",
+      "F-S9-PR-3c507c01cf"
+    ],
+    "group_id": "_overhaul2/lake/cases/Orozco v. Texas.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "codex-A",
+    "lane_id": "codex-A-panel-prod-08bfc7f2",
+    "lens": "A",
+    "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-08bfc7f2.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Orozco v. Texas"
+    ],
+    "tokens": {
+      "input": 195328,
+      "output": 8728,
+      "source": "codex-events",
+      "total": 204056
+    },
+    "verdict_map": {
+      "4f01999e7ad9a7e5": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "6c2338afd83e4725": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "90c3a110aa7890ed": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "b8b660f14541a35a": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-e08f724d5d",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-3c507c01cf",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 199.5
+  }
+}

@@ -1,11 +1,51 @@
 {
-  "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/United States v. Young.json",
+    "lens": "B",
+    "notes": "Reviewed every row in group_inventory.jsonl under Lens B only; no support or quote-fidelity findings were raised.",
+    "reviewed": [
+      {
+        "assertion_id": "7fe85aa9469aba8a",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record matches United States v. Young, decided 2020-07-07, docket 18-6221, cluster_id 4766220.",
+          "The lake citation record lists official cite 964 F.3d 938 and display 964 F.3d 938, matching the content page.",
+          "No disclosed treatment edge, progeny edge, or judgment field says the authority has been overruled, superseded, abrogated, or limited."
+        ],
+        "residual_risks": [
+          "The lake treatment/progeny data is a frontier stub, so the disclosed record does not affirmatively verify current good-law status beyond absence of adverse disclosed edges."
+        ],
+        "suggested_tightening": "Keep the citation/existence claim separate from any affirmative good-law claim while treatment remains unverified.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "48f0100a9df90913",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The content page labels treatment as Unverified.",
+          "The lake treatment field_i_validity is unverified, as_of_content and as_of_treatment are null, varies_by_point is false, and the scope_note says: Frontier stub: treatment/progeny intentionally not derived until S6 promotion.",
+          "The lake treatment edges array and progeny outbound_opinion_edges array are empty, so there is no disclosed adverse treatment contradicting the page's unverified treatment call."
+        ],
+        "residual_risks": [
+          "Because treatment/progeny was intentionally not derived, the disclosed record cannot support any stronger current-validity statement than unverified."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"B\",\n  \"group_id\": \"_overhaul2/lake/cases/United States v. Young.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"7fe85aa9469aba8a\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake identity record matches United States v. Young, decided 2020-07-07, docket 18-6221, cluster_id 4766220.\",\n        \"The lake citation record lists official cite 964 F.3d 938 and display 964 F.3d 938, matching the content page.\",\n        \"No disclosed treatment edge, progeny edge, or judgment field says the authority has been overruled, superseded, abrogated, or limited.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The lake treatment/progeny data is a frontier stub, so the disclosed record does not affirmatively verify current good-law status beyond absence of adverse disclosed edges.\"\n      ],\n      \"suggested_tightening\": \"Keep the citation/existence claim separate from any affirmative good-law claim while treatment remains unverified.\"\n    },\n    {\n      \"assertion_id\": \"48f0100a9df90913\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The content page labels treatment as Unverified.\",\n        \"The lake treatment field_i_validity is unverified, as_of_content and as_of_treatment are null, varies_by_point is false, and the scope_note says: Frontier stub: treatment/progeny intentionally not derived until S6 promotion.\",\n        \"The lake treatment edges array and progeny outbound_opinion_edges array are empty, so there is no disclosed adverse treatment contradicting the page's unverified treatment call.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Because treatment/progeny was intentionally not derived, the disclosed record cannot support any stronger current-validity statement than unverified.\"\n      ],\n      \"suggested_tightening\": null\n    }\n  ],\n  \"notes\": \"Reviewed every row in group_inventory.jsonl under Lens B only; no support or quote-fidelity findings were raised.\"\n}",
   "summary": {
-    "at": "2026-07-09T23:09:47-04:00",
-    "attempts": 2,
-    "clean_attestation": false,
+    "at": "2026-07-10T16:51:25-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
     "defense_votes": [],
     "findings_emitted": [],
     "group_id": "_overhaul2/lake/cases/United States v. Young.json",
@@ -18,21 +58,36 @@
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-c47ed056.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [
       "case 'United States v. Young' has no lead_opinion_id (text undisclosed)"
     ],
-    "reviewed_count": 0,
+    "reviewed_count": 2,
     "run": "prod",
     "text_disclosed_cases": [],
     "tokens": {
-      "input": 755,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 755
+      "input": 85165,
+      "output": 3491,
+      "source": "codex-events",
+      "total": 88656
     },
-    "verdict_map": {},
+    "verdict_map": {
+      "48f0100a9df90913": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "7fe85aa9469aba8a": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
     "votes_emitted": [],
-    "wall_clock_s": 2.8
+    "wall_clock_s": 70.8
   }
 }

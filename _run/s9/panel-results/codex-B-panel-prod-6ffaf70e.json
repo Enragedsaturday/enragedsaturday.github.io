@@ -1,22 +1,105 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Buckley v. Fitzsimmons.json",
+    "lens": "B",
+    "notes": "",
+    "reviewed": [
+      {
+        "assertion_id": "cf6aa9c494c88d69",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Frontier stub: treatment/progeny intentionally not derived until S6 promotion.",
+          "locator_note": "lake/Buckley v. Fitzsimmons__85744d.json treatment/progeny fields; content_page.md Treatment section",
+          "needs_cl": true,
+          "problem": "The disclosed files verify the case identity and citation, but they do not verify the currency/live-law status required by the B-lens existence check. The lake record's treatment and progeny data are explicitly undeveloped.",
+          "proposed_fix": "Limit this assertion to citation existence/identity, or label current-validity/live-law status as unverified until citator/progeny verification is completed.",
+          "severity": "medium"
+        },
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity/citations confirm Buckley v. Fitzsimmons and the displayed official citation 509 U.S. 259.",
+          "But treatment.field_i_validity is unverified, as_of_treatment is null, treatment.edges is empty, progeny.citation_count is null, and rows_cached is 0.",
+          "Under the instruction to default to refuted on uncertainty, live-law status cannot be verified from the disclosed evidence."
+        ],
+        "residual_risks": [
+          "External citator research may show the case remains good law, but that is outside the disclosed evidence."
+        ],
+        "suggested_tightening": "Separate citation-existence verification from current-validity verification.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": false
+      },
+      {
+        "assertion_id": "12e92aa44e9b4abb",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The group payload's treatment call is Unverified, matching the lake record's treatment.field_i_validity and composite_basis.",
+          "The null as_of_content/as_of_treatment fields and scope note match the lake record.",
+          "The page accurately renders Treatment: Unverified and states that subsequent treatment has not completed verification."
+        ],
+        "residual_risks": [
+          "This is not an affirmative good-law validation; the record has no completed progeny/citator data."
+        ],
+        "suggested_tightening": "Keep the unverified treatment banner and avoid any separate current-good-law representation until S6/citator verification completes.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/Buckley v. Fitzsimmons.json\",\"reviewed\":[{\"assertion_id\":\"cf6aa9c494c88d69\",\"dimension\":\"existence\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":false,\"defect\":{\"problem\":\"The disclosed files verify the case identity and citation, but they do not verify the currency/live-law status required by the B-lens existence check. The lake record's treatment and progeny data are explicitly undeveloped.\",\"severity\":\"medium\",\"proposed_fix\":\"Limit this assertion to citation existence/identity, or label current-validity/live-law status as unverified until citator/progeny verification is completed.\",\"evidence_quote\":\"Frontier stub: treatment/progeny intentionally not derived until S6 promotion.\",\"needs_cl\":true,\"locator_note\":\"lake/Buckley v. Fitzsimmons__85744d.json treatment/progeny fields; content_page.md Treatment section\"},\"reasons\":[\"Lake identity/citations confirm Buckley v. Fitzsimmons and the displayed official citation 509 U.S. 259.\",\"But treatment.field_i_validity is unverified, as_of_treatment is null, treatment.edges is empty, progeny.citation_count is null, and rows_cached is 0.\",\"Under the instruction to default to refuted on uncertainty, live-law status cannot be verified from the disclosed evidence.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"External citator research may show the case remains good law, but that is outside the disclosed evidence.\"],\"suggested_tightening\":\"Separate citation-existence verification from current-validity verification.\"},{\"assertion_id\":\"12e92aa44e9b4abb\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The group payload's treatment call is Unverified, matching the lake record's treatment.field_i_validity and composite_basis.\",\"The null as_of_content/as_of_treatment fields and scope note match the lake record.\",\"The page accurately renders Treatment: Unverified and states that subsequent treatment has not completed verification.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"This is not an affirmative good-law validation; the record has no completed progeny/citator data.\"],\"suggested_tightening\":\"Keep the unverified treatment banner and avoid any separate current-good-law representation until S6/citator verification completes.\"}],\"notes\":\"\"}",
   "summary": {
-    "at": "2026-07-09T23:18:03-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-10T17:46:58-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-c620f05de6"
+    ],
     "group_id": "_overhaul2/lake/cases/Buckley v. Fitzsimmons.json",
     "group_total_assertions": 2,
+    "lake_only_cases": [],
     "lane": "codex-B",
     "lane_id": "codex-B-panel-prod-6ffaf70e",
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-6ffaf70e.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "d to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T03:17:54.352324Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T03:17:55.162665Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T03:17:56.439800Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T03:17:58.631771Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T03:18:02.440021Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 2,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Buckley v. Fitzsimmons"
+    ],
+    "tokens": {
+      "input": 178812,
+      "output": 4776,
+      "source": "codex-events",
+      "total": 183588
+    },
+    "verdict_map": {
+      "12e92aa44e9b4abb": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "cf6aa9c494c88d69": {
+        "dimension": "existence",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": false
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-c620f05de6",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 97.4
   }
 }

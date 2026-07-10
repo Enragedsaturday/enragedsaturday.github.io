@@ -1,13 +1,102 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Alderman v. United States.json",
+    "lens": "A",
+    "notes": "Lens A found one support/quote-fidelity defect: pin-171 is a bad harvested quote. No treatment/currency finding is made.",
+    "reviewed": [
+      {
+        "assertion_id": "8c5a41ecdc663f56",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record is for Alderman v. United States, decided by the U.S. Supreme Court on 1969-03-24, year 1969.",
+          "The disclosed lake citations include official citation 394 U.S. 165 and parallel/vendor citations 89 S. Ct. 961, 22 L. Ed. 2d 176, and 1969 U.S. LEXIS 3287."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "3a3e0496911be241",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The quoted sentence appears verbatim in text/Alderman v. United States__1118ed.txt at the *174 page marker.",
+          "The lake pinpoint pin-174 also carries the same quote with quote_fidelity=matched and pinpoint_status=star-verified."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "9f41f93c926be4b6",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The quoted two sentences appear verbatim in text/Alderman v. United States__1118ed.txt on the same paragraph beginning at the *174 page marker.",
+          "The lake pinpoint pin-174b carries the same quote with quote_fidelity=matched and pinpoint_status=star-verified."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "cd2bdf79871b8556",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "The established principle is that suppression of the product of a Fourth Amendment violation can be successfully urged only by those whose rights were violated by the search itself, not by those who are aggrieved solely by the introduction of damaging evidence. Co-conspirators and codefendants have been accorded no special standing.",
+          "locator_note": "text/Alderman v. United States__1118ed.txt, paragraph b245-7, spanning page markers *171-*172.",
+          "needs_cl": false,
+          "problem": "pin-171 is not a faithful case quote. The lake quote is a harvested chunk of the built content page header/background/rule text, not a passage from the Alderman opinion.",
+          "proposed_fix": "Replace pin-171 with the actual opinion passage at 394 U.S. 171-172: \"The established principle is that suppression of the product of a Fourth Amendment violation can be successfully urged only by those whose rights were violated by the search itself, not by those who are aggrieved solely by the introduction of damaging evidence. Co-conspirators and codefendants have been accorded no special standing.\"",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload itself reports quote_fidelity=mismatch and pinpoint_status=slip-only.",
+          "The disclosed opinion text contains the real 171-172 passage, while the lake pin-171 quote begins with markdown/frontmatter-style page content rather than opinion text."
+        ],
+        "residual_risks": [
+          "The replacement quote crosses a page break in the cached text, so the renderer should normalize the split word 'violated' across the *172 marker."
+        ],
+        "suggested_tightening": "Reharvest pin-171 directly from the opinion text and store a star-verified pinpoint for the 171-172 quote.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "5b14455307a97d0e",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A's charter, so no substantive treatment finding is raised.",
+          "The treatment payload matches the disclosed lake treatment fields: field_i_validity=good_law, as_of_content=1969-03-10, as_of_treatment=2026-06-30, varies_by_point=false, and the same scope note."
+        ],
+        "residual_risks": [
+          "Substantive good-law status was not reviewed under Lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Alderman v. United States.json\",\"reviewed\":[{\"assertion_id\":\"8c5a41ecdc663f56\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake identity record is for Alderman v. United States, decided by the U.S. Supreme Court on 1969-03-24, year 1969.\",\"The disclosed lake citations include official citation 394 U.S. 165 and parallel/vendor citations 89 S. Ct. 961, 22 L. Ed. 2d 176, and 1969 U.S. LEXIS 3287.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"3a3e0496911be241\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The quoted sentence appears verbatim in text/Alderman v. United States__1118ed.txt at the *174 page marker.\",\"The lake pinpoint pin-174 also carries the same quote with quote_fidelity=matched and pinpoint_status=star-verified.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"9f41f93c926be4b6\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The quoted two sentences appear verbatim in text/Alderman v. United States__1118ed.txt on the same paragraph beginning at the *174 page marker.\",\"The lake pinpoint pin-174b carries the same quote with quote_fidelity=matched and pinpoint_status=star-verified.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"cd2bdf79871b8556\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"pin-171 is not a faithful case quote. The lake quote is a harvested chunk of the built content page header/background/rule text, not a passage from the Alderman opinion.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-171 with the actual opinion passage at 394 U.S. 171-172: \\\"The established principle is that suppression of the product of a Fourth Amendment violation can be successfully urged only by those whose rights were violated by the search itself, not by those who are aggrieved solely by the introduction of damaging evidence. Co-conspirators and codefendants have been accorded no special standing.\\\"\",\"evidence_quote\":\"The established principle is that suppression of the product of a Fourth Amendment violation can be successfully urged only by those whose rights were violated by the search itself, not by those who are aggrieved solely by the introduction of damaging evidence. Co-conspirators and codefendants have been accorded no special standing.\",\"needs_cl\":false,\"locator_note\":\"text/Alderman v. United States__1118ed.txt, paragraph b245-7, spanning page markers *171-*172.\"},\"reasons\":[\"The payload itself reports quote_fidelity=mismatch and pinpoint_status=slip-only.\",\"The disclosed opinion text contains the real 171-172 passage, while the lake pin-171 quote begins with markdown/frontmatter-style page content rather than opinion text.\"],\"breaks_true_positives\":true,\"residual_risks\":[\"The replacement quote crosses a page break in the cached text, so the renderer should normalize the split word 'violated' across the *172 marker.\"],\"suggested_tightening\":\"Reharvest pin-171 directly from the opinion text and store a star-verified pinpoint for the 171-172 quote.\"},{\"assertion_id\":\"5b14455307a97d0e\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside Lens A's charter, so no substantive treatment finding is raised.\",\"The treatment payload matches the disclosed lake treatment fields: field_i_validity=good_law, as_of_content=1969-03-10, as_of_treatment=2026-06-30, varies_by_point=false, and the same scope note.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Substantive good-law status was not reviewed under Lens A.\"],\"suggested_tightening\":null}],\"notes\":\"Lens A found one support/quote-fidelity defect: pin-171 is a bad harvested quote. No treatment/currency finding is made.\"}",
   "summary": {
-    "at": "2026-07-09T23:16:30-04:00",
-    "attempts": 2,
+    "at": "2026-07-10T17:38:33-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-3994608019"
+    ],
     "group_id": "_overhaul2/lake/cases/Alderman v. United States.json",
     "group_total_assertions": 5,
     "lake_only_cases": [],
@@ -16,21 +105,62 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-7ff87dac.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 5,
     "run": "prod",
     "text_disclosed_cases": [
       "Alderman v. United States"
     ],
     "tokens": {
-      "input": 828,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 828
+      "input": 122435,
+      "output": 3747,
+      "source": "codex-events",
+      "total": 126182
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 2.9
+    "verdict_map": {
+      "3a3e0496911be241": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "5b14455307a97d0e": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "8c5a41ecdc663f56": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "9f41f93c926be4b6": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "cd2bdf79871b8556": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-3994608019",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 106.0
   }
 }

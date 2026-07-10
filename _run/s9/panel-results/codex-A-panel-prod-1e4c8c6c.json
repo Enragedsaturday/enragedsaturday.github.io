@@ -1,13 +1,92 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Chimel v. California.json",
+    "lens": "A",
+    "notes": "Reviewed all 4 rows in group_inventory.jsonl using only disclosed local files.",
+    "reviewed": [
+      {
+        "assertion_id": "70706bb24f3f4dfb",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record is for Chimel v. California, U.S. Supreme Court, decided 1969-06-23.",
+          "The official citation in the lake record is 395 U.S. 752, and the content page renders 395 U.S. 752 (1969).",
+          "The parallel and vendor citations in the inventory match the lake citation fields."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "693bfab0f8e5b5d1",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "There is ample justification, therefore, for a search of the arrestee’s person and the area “within his immediate control” — construing that phrase to mean the area from within which he might gain possession of a weapon or destructible evidence.",
+          "locator_note": "lake pinpoints id pin-763; content_page Rule block ^pin-763.",
+          "needs_cl": false,
+          "problem": "pin-763's stored quote is not a character-faithful opinion quote; it is a scrape of the rendered page header/background/rule text and has no star-page validation.",
+          "proposed_fix": "Replace pin-763 with the actual page-763 opinion passage, preserving the opinion text's punctuation, and set/verify star_marker 763.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The lake record itself marks pin-763 quote_fidelity as mismatch, pinpoint_status as slip-only, and star_marker as null.",
+          "The stored pin-763 quote begins with rendered page material rather than the opinion passage at star page 763.",
+          "The cached opinion text supplies the actual page-763 passage, so the defect is verifiable from disclosed evidence."
+        ],
+        "residual_risks": [
+          "The visible content_page quote is substantively supported, but it normalizes curly apostrophe/quotation marks from the cached opinion text."
+        ],
+        "suggested_tightening": "Regenerate pin-763 from text/Chimel v. California__18a9cb.txt at star page 763 and require exact quote-text matching before rendering the pin.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "f83b5d994fcb2f15",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The pin-763a quote matches the cached opinion text: There is no comparable justification, however, for routinely searching any room other than that in which an arrest occurs — or, for that matter, for searching through all the desk drawers or other closed or concealed areas in that room itself.",
+          "The lake record marks pin-763a as matched, star-verified, with star_marker 763.",
+          "The passage appears immediately after the page-763 marker in the cached opinion text."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "64bc08b2b64c7f4b",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Lens A does not make an independent treatment/currency finding.",
+          "The content page treatment fields match the disclosed lake treatment fields: good_law, as_of_content 1969-06-23, as_of_treatment 2026-06-30, varies_by_point false.",
+          "The scope note on the content page matches the lake treatment scope note."
+        ],
+        "residual_risks": [
+          "Treatment and progeny-edge analysis remain for Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Chimel v. California.json\",\"reviewed\":[{\"assertion_id\":\"70706bb24f3f4dfb\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake identity record is for Chimel v. California, U.S. Supreme Court, decided 1969-06-23.\",\"The official citation in the lake record is 395 U.S. 752, and the content page renders 395 U.S. 752 (1969).\",\"The parallel and vendor citations in the inventory match the lake citation fields.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"693bfab0f8e5b5d1\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"pin-763's stored quote is not a character-faithful opinion quote; it is a scrape of the rendered page header/background/rule text and has no star-page validation.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-763 with the actual page-763 opinion passage, preserving the opinion text's punctuation, and set/verify star_marker 763.\",\"evidence_quote\":\"There is ample justification, therefore, for a search of the arrestee’s person and the area “within his immediate control” — construing that phrase to mean the area from within which he might gain possession of a weapon or destructible evidence.\",\"needs_cl\":false,\"locator_note\":\"lake pinpoints id pin-763; content_page Rule block ^pin-763.\"},\"reasons\":[\"The lake record itself marks pin-763 quote_fidelity as mismatch, pinpoint_status as slip-only, and star_marker as null.\",\"The stored pin-763 quote begins with rendered page material rather than the opinion passage at star page 763.\",\"The cached opinion text supplies the actual page-763 passage, so the defect is verifiable from disclosed evidence.\"],\"breaks_true_positives\":true,\"residual_risks\":[\"The visible content_page quote is substantively supported, but it normalizes curly apostrophe/quotation marks from the cached opinion text.\"],\"suggested_tightening\":\"Regenerate pin-763 from text/Chimel v. California__18a9cb.txt at star page 763 and require exact quote-text matching before rendering the pin.\"},{\"assertion_id\":\"f83b5d994fcb2f15\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The pin-763a quote matches the cached opinion text: There is no comparable justification, however, for routinely searching any room other than that in which an arrest occurs — or, for that matter, for searching through all the desk drawers or other closed or concealed areas in that room itself.\",\"The lake record marks pin-763a as matched, star-verified, with star_marker 763.\",\"The passage appears immediately after the page-763 marker in the cached opinion text.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"64bc08b2b64c7f4b\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lens A does not make an independent treatment/currency finding.\",\"The content page treatment fields match the disclosed lake treatment fields: good_law, as_of_content 1969-06-23, as_of_treatment 2026-06-30, varies_by_point false.\",\"The scope note on the content page matches the lake treatment scope note.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment and progeny-edge analysis remain for Lens B.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed all 4 rows in group_inventory.jsonl using only disclosed local files.\"}",
   "summary": {
-    "at": "2026-07-09T23:18:18-04:00",
-    "attempts": 2,
+    "at": "2026-07-10T17:49:18-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-097705e86e"
+    ],
     "group_id": "_overhaul2/lake/cases/Chimel v. California.json",
     "group_total_assertions": 4,
     "lake_only_cases": [],
@@ -16,21 +95,55 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-1e4c8c6c.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 4,
     "run": "prod",
     "text_disclosed_cases": [
       "Chimel v. California"
     ],
     "tokens": {
-      "input": 826,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 826
+      "input": 199183,
+      "output": 7111,
+      "source": "codex-events",
+      "total": 206294
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 3.2
+    "verdict_map": {
+      "64bc08b2b64c7f4b": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "693bfab0f8e5b5d1": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "70706bb24f3f4dfb": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "f83b5d994fcb2f15": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-097705e86e",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 139.8
   }
 }

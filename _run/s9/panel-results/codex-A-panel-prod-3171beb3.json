@@ -1,22 +1,148 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Brown v. Mississippi.json",
+    "lens": "A",
+    "notes": "No support, pincite, or black_letter rows were present in group_inventory.jsonl; treatment was recorded only for disclosed-field consistency under Lens A.",
+    "reviewed": [
+      {
+        "assertion_id": "a35626a0646ba530",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record names Brown v. Mississippi, U.S. Supreme Court, decided 1936-02-17, docket 301.",
+          "The lake official citation is 297 U.S. 278, and content_page.md displays 297 U.S. 278 (1936).",
+          "The disclosed lake record also contains the parallel citations 56 S. Ct. 461, 80 L. Ed. 682, and 1936 U.S. LEXIS 527."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "1e7df5ad23edb301",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The quoted sentence appears verbatim in text/Brown v. Mississippi__89e7f5.txt after the star pagination marker for *286.",
+          "The lake pinpoint pin-286b stores the same quote, has quote_fidelity matched, and star_marker 286.",
+          "The fragment begins with the same opening words as the verified quote."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "a05549d3353a8136",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "And the trial equally is a mere pretense where the state authorities have contrived a conviction resting solely upon confessions obtained by violence.",
+          "locator_note": "pin-286; text shows the passage on star page *286, while the lake pin currently has star_marker null and quote_fidelity mismatch.",
+          "needs_cl": false,
+          "problem": "The pin-286 payload is not a faithful case quote; it is a harvested page/frontmatter-and-summary block ending at the Rule heading, not text from the Brown opinion. The actual content_page pin-286 rule quote is present in the opinion at page *286, but the lake/group assertion for this pin is defective as framed.",
+          "proposed_fix": "Replace the stored pin-286 quote with the actual rule quote from content_page.md and text/Brown v. Mississippi__89e7f5.txt, and set star_marker to 286 after validation.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The lake pin-286 quote begins with page metadata and background text rather than an opinion passage.",
+          "The disclosed opinion text contains the intended pin-286 sentence on star page *286.",
+          "Because the payload quote is not character-faithful to the opinion text or a valid lake pinpoint quote, the quote_fidelity assertion fails."
+        ],
+        "residual_risks": [
+          "The visible content_page.md rule quote itself appears faithful; the defect is in the pin-286 lake/group assertion payload."
+        ],
+        "suggested_tightening": "Use the exact *286 sentence as the pin quote and avoid harvesting surrounding page markdown as a legal quotation.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "1d820cab93c550ec",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Lens A does not adjudicate treatment/currency defects.",
+          "The treatment payload matches the lake treatment fields: field_i_validity good_law, as_of_content 1936-02-17, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note."
+        ],
+        "residual_risks": [
+          "Treatment/currency substance is reserved for Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Brown v. Mississippi.json\",\"reviewed\":[{\"assertion_id\":\"a35626a0646ba530\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake identity record names Brown v. Mississippi, U.S. Supreme Court, decided 1936-02-17, docket 301.\",\"The lake official citation is 297 U.S. 278, and content_page.md displays 297 U.S. 278 (1936).\",\"The disclosed lake record also contains the parallel citations 56 S. Ct. 461, 80 L. Ed. 682, and 1936 U.S. LEXIS 527.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"1e7df5ad23edb301\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The quoted sentence appears verbatim in text/Brown v. Mississippi__89e7f5.txt after the star pagination marker for *286.\",\"The lake pinpoint pin-286b stores the same quote, has quote_fidelity matched, and star_marker 286.\",\"The fragment begins with the same opening words as the verified quote.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"a05549d3353a8136\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The pin-286 payload is not a faithful case quote; it is a harvested page/frontmatter-and-summary block ending at the Rule heading, not text from the Brown opinion. The actual content_page pin-286 rule quote is present in the opinion at page *286, but the lake/group assertion for this pin is defective as framed.\",\"severity\":\"high\",\"proposed_fix\":\"Replace the stored pin-286 quote with the actual rule quote from content_page.md and text/Brown v. Mississippi__89e7f5.txt, and set star_marker to 286 after validation.\",\"evidence_quote\":\"And the trial equally is a mere pretense where the state authorities have contrived a conviction resting solely upon confessions obtained by violence.\",\"needs_cl\":false,\"locator_note\":\"pin-286; text shows the passage on star page *286, while the lake pin currently has star_marker null and quote_fidelity mismatch.\"},\"reasons\":[\"The lake pin-286 quote begins with page metadata and background text rather than an opinion passage.\",\"The disclosed opinion text contains the intended pin-286 sentence on star page *286.\",\"Because the payload quote is not character-faithful to the opinion text or a valid lake pinpoint quote, the quote_fidelity assertion fails.\"],\"breaks_true_positives\":true,\"residual_risks\":[\"The visible content_page.md rule quote itself appears faithful; the defect is in the pin-286 lake/group assertion payload.\"],\"suggested_tightening\":\"Use the exact *286 sentence as the pin quote and avoid harvesting surrounding page markdown as a legal quotation.\"},{\"assertion_id\":\"1d820cab93c550ec\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lens A does not adjudicate treatment/currency defects.\",\"The treatment payload matches the lake treatment fields: field_i_validity good_law, as_of_content 1936-02-17, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment/currency substance is reserved for Lens B.\"],\"suggested_tightening\":null}],\"notes\":\"No support, pincite, or black_letter rows were present in group_inventory.jsonl; treatment was recorded only for disclosed-field consistency under Lens A.\"}",
   "summary": {
-    "at": "2026-07-09T23:17:56-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-10T17:46:11-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-013cf8fcfa"
+    ],
     "group_id": "_overhaul2/lake/cases/Brown v. Mississippi.json",
     "group_total_assertions": 4,
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-3171beb3",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-3171beb3.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "d to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T03:17:48.736859Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T03:17:49.502295Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T03:17:50.638174Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T03:17:52.571837Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T03:17:56.213936Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Brown v. Mississippi"
+    ],
+    "tokens": {
+      "input": 301364,
+      "output": 5979,
+      "source": "codex-events",
+      "total": 307343
+    },
+    "verdict_map": {
+      "1d820cab93c550ec": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "1e7df5ad23edb301": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "a05549d3353a8136": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "a35626a0646ba530": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-013cf8fcfa",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 121.2
   }
 }

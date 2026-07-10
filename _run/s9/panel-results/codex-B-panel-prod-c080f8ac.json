@@ -1,38 +1,177 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "content/cases/United States v. Mendoza.md",
+    "lens": "B",
+    "notes": "Reviewed all five inventory assertions under lens B only. The only defect found is the official-citation flag on a slip-only citation; no disclosed file shows negative treatment, but treatment is expressly unverified.",
+    "reviewed": [
+      {
+        "assertion_id": "9ee42ce2fb673612",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "\"official\": null",
+          "locator_note": "citation / official_citation_present",
+          "needs_cl": false,
+          "problem": "The authority exists as a precedential Third Circuit slip opinion, but the inventory assertion marks official_citation_present=true even though the lake record says no official citation has been assigned and the case is slip-only.",
+          "proposed_fix": "Retain the slip citation but set official_citation_present=false, or otherwise distinguish docket/slip citation from an official reporter citation.",
+          "severity": "low"
+        },
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record matches United States v. Ryan Mendoza, No. 25-1154, Third Circuit, decided 2026-01-08.",
+          "The text file is headed PRECEDENTIAL and identifies No. 25-1154 in the United States Court of Appeals for the Third Circuit.",
+          "The lake citation fields say slip_only=true and official=null."
+        ],
+        "residual_risks": [
+          "Treatment remains unverified, so the disclosed record does not establish a completed current citator check."
+        ],
+        "suggested_tightening": "Use a slip-only citation flag and avoid calling the slip/docket citation an official citation.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "2b21e9960d96aeed",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "Support merits are outside lens B.",
+          "No disclosed treatment or progeny field shows that the case has been overruled, abrogated, superseded, or limited.",
+          "The page itself labels treatment as unverified rather than claiming verified good law."
+        ],
+        "residual_risks": [
+          "Lens A should assess whether Key is substantively supported for the home page."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "63f4457b8ea999d0",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "Support merits are outside lens B.",
+          "The disclosed treatment record is unverified but contains no negative treatment edge or progeny entry contradicting current use.",
+          "The content page renders the treatment status as Unverified, matching the lake record rather than overclaiming verified validity."
+        ],
+        "residual_risks": [
+          "Lens A should assess holding precision and quote/support fidelity."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "a32bb167c3a998ef",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The text file marks the opinion PRECEDENTIAL in the United States Court of Appeals for the Third Circuit.",
+          "The lake identity fields identify court='3d Cir.', court_level='coa', circuit='ca3', date_decided='2026-01-08'.",
+          "The lake record discloses no negative treatment or progeny edge that would defeat the binding in-circuit weight label."
+        ],
+        "residual_risks": [
+          "The treatment fields are unverified, so a completed citator check could change the current-law assessment."
+        ],
+        "suggested_tightening": "Pair the weight label with the existing Unverified treatment badge wherever displayed.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "cf958cffe904a719",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The content page treatment fields match the lake treatment fields: field_i_validity=unverified, as_of_content=null, as_of_treatment=null, composite_basis=unverified, varies_by_point=false.",
+          "The lake scope note says treatment/progeny were intentionally not derived until promotion, and the page states subsequent treatment has not been machine-verified.",
+          "No disclosed progeny or treatment edge supplies contrary negative treatment."
+        ],
+        "residual_risks": [
+          "Because treatment is intentionally unverified, the page should not be read as a good-law certification."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"content/cases/United States v. Mendoza.md\",\"reviewed\":[{\"assertion_id\":\"9ee42ce2fb673612\",\"dimension\":\"existence\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The authority exists as a precedential Third Circuit slip opinion, but the inventory assertion marks official_citation_present=true even though the lake record says no official citation has been assigned and the case is slip-only.\",\"severity\":\"low\",\"proposed_fix\":\"Retain the slip citation but set official_citation_present=false, or otherwise distinguish docket/slip citation from an official reporter citation.\",\"evidence_quote\":\"\\\"official\\\": null\",\"needs_cl\":false,\"locator_note\":\"citation / official_citation_present\"},\"reasons\":[\"The lake identity record matches United States v. Ryan Mendoza, No. 25-1154, Third Circuit, decided 2026-01-08.\",\"The text file is headed PRECEDENTIAL and identifies No. 25-1154 in the United States Court of Appeals for the Third Circuit.\",\"The lake citation fields say slip_only=true and official=null.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment remains unverified, so the disclosed record does not establish a completed current citator check.\"],\"suggested_tightening\":\"Use a slip-only citation flag and avoid calling the slip/docket citation an official citation.\"},{\"assertion_id\":\"2b21e9960d96aeed\",\"dimension\":\"support\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Support merits are outside lens B.\",\"No disclosed treatment or progeny field shows that the case has been overruled, abrogated, superseded, or limited.\",\"The page itself labels treatment as unverified rather than claiming verified good law.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Lens A should assess whether Key is substantively supported for the home page.\"],\"suggested_tightening\":null},{\"assertion_id\":\"63f4457b8ea999d0\",\"dimension\":\"support\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Support merits are outside lens B.\",\"The disclosed treatment record is unverified but contains no negative treatment edge or progeny entry contradicting current use.\",\"The content page renders the treatment status as Unverified, matching the lake record rather than overclaiming verified validity.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Lens A should assess holding precision and quote/support fidelity.\"],\"suggested_tightening\":null},{\"assertion_id\":\"a32bb167c3a998ef\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The text file marks the opinion PRECEDENTIAL in the United States Court of Appeals for the Third Circuit.\",\"The lake identity fields identify court='3d Cir.', court_level='coa', circuit='ca3', date_decided='2026-01-08'.\",\"The lake record discloses no negative treatment or progeny edge that would defeat the binding in-circuit weight label.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The treatment fields are unverified, so a completed citator check could change the current-law assessment.\"],\"suggested_tightening\":\"Pair the weight label with the existing Unverified treatment badge wherever displayed.\"},{\"assertion_id\":\"cf958cffe904a719\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The content page treatment fields match the lake treatment fields: field_i_validity=unverified, as_of_content=null, as_of_treatment=null, composite_basis=unverified, varies_by_point=false.\",\"The lake scope note says treatment/progeny were intentionally not derived until promotion, and the page states subsequent treatment has not been machine-verified.\",\"No disclosed progeny or treatment edge supplies contrary negative treatment.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Because treatment is intentionally unverified, the page should not be read as a good-law certification.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed all five inventory assertions under lens B only. The only defect found is the official-citation flag on a slip-only citation; no disclosed file shows negative treatment, but treatment is expressly unverified.\"}",
   "summary": {
-    "at": "2026-07-09T23:13:35-04:00",
-    "attempts": 2,
+    "at": "2026-07-10T17:13:23-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-3d0d17e0c0"
+    ],
     "group_id": "content/cases/United States v. Mendoza.md",
     "group_total_assertions": 5,
-    "lake_only_cases": [
-      "United States v. Mendoza"
-    ],
+    "lake_only_cases": [],
     "lane": "codex-B",
     "lane_id": "codex-B-panel-prod-c080f8ac",
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-c080f8ac.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
-    "resolution_notes": [
-      "case 'United States v. Mendoza' has no lead_opinion_id (text undisclosed)"
-    ],
-    "reviewed_count": 0,
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
     "run": "prod",
-    "text_disclosed_cases": [],
+    "text_disclosed_cases": [
+      "United States v. Mendoza"
+    ],
     "tokens": {
-      "input": 753,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 753
+      "input": 120436,
+      "output": 3973,
+      "source": "codex-events",
+      "total": 124409
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 2.6
+    "verdict_map": {
+      "2b21e9960d96aeed": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "63f4457b8ea999d0": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "9ee42ce2fb673612": {
+        "dimension": "existence",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "a32bb167c3a998ef": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "cf958cffe904a719": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-3d0d17e0c0",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 81.1
   }
 }

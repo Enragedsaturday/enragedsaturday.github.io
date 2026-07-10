@@ -1,38 +1,187 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "content/cases/United States v. Trent.md",
+    "lens": "B",
+    "notes": "Lens B only; no support or quote-fidelity findings were made.",
+    "reviewed": [
+      {
+        "assertion_id": "25197dd1e95a8b8e",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "\"official\": null",
+          "locator_note": "citation metadata",
+          "needs_cl": false,
+          "problem": "The case exists as a slip-only unpublished Sixth Circuit disposition, but the payload's official_citation_present=true is not supported by the lake citation record.",
+          "proposed_fix": "Retain the case citation but mark official_citation_present=false and treat the citation as slip-only.",
+          "severity": "low"
+        },
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity confirms United States v. Mark Anthony Trent, 6th Cir., docket 25-5770, decided 2026-05-07.",
+          "Lake citations show no official citation and slip_only=true."
+        ],
+        "residual_risks": [
+          "Subsequent live-law status is not certified because treatment/progeny remain unverified."
+        ],
+        "suggested_tightening": "Display as slip-only/unpublished rather than implying an official citation.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "504cbaac279106ba",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "Lens B found no independent current-treatment defect in the home-role assertion itself.",
+          "The authority-weight defect is addressed separately under assertion 80f3d501b82b1ac4."
+        ],
+        "residual_risks": [
+          "Support/home-role appropriateness is reserved to Lens A.",
+          "If editorial policy treats nonprecedential cases as non-key, this role should be revisited."
+        ],
+        "suggested_tightening": "Consider downgrading the role to illustrative if the home page reserves Key status for precedential authorities.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "86e4ae73c375145c",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "Lens B found no disclosed overruling, abrogation, supersession, or limiting treatment edge undercutting the stated holding.",
+          "The page separately discloses treatment as unverified."
+        ],
+        "residual_risks": [
+          "Support and quote fidelity are outside Lens B.",
+          "Treatment/progeny are not machine-verified, so this should not be promoted as settled good law."
+        ],
+        "suggested_tightening": "When using the holding as authority, flag that it comes from an unpublished, unverified-treatment disposition.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "80f3d501b82b1ac4",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "NOT RECOMMENDED FOR PUBLICATION",
+          "locator_note": "authority_weight",
+          "needs_cl": false,
+          "problem": "The authority_weight label says binding in-circuit, but the disclosed record marks the opinion unpublished/not recommended for publication and the page itself says it is persuasive only.",
+          "proposed_fix": "Replace authority_weight with a nonprecedential/persuasive-only Sixth Circuit label.",
+          "severity": "high"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "The opinion text is marked NOT RECOMMENDED FOR PUBLICATION.",
+          "Lake slip provenance describes the disposition as unpublished with no reporter citation.",
+          "The content page's treatment section states the case is persuasive only notwithstanding the projected in-circuit authority weight."
+        ],
+        "residual_risks": [
+          "A corrected persuasive-only label still leaves treatment/progeny unverified."
+        ],
+        "suggested_tightening": "Use 'Persuasive only - unpublished Sixth Circuit disposition' or equivalent.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "ed2ab1579af4a974",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The content treatment fields match the lake treatment record: field_i_validity unverified, null as-of fields, composite_basis unverified, and no point overrides.",
+          "The lake progeny/treatment sections disclose no completed citator derivation or treatment edges, so the page's unverified status is accurate."
+        ],
+        "residual_risks": [
+          "This is not a good-law certification; it only accurately reports that treatment is unverified.",
+          "Promotion requires completed citator/progeny verification."
+        ],
+        "suggested_tightening": "Keep the unverified treatment banner until treatment and progeny are populated.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"content/cases/United States v. Trent.md\",\"reviewed\":[{\"assertion_id\":\"25197dd1e95a8b8e\",\"dimension\":\"existence\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The case exists as a slip-only unpublished Sixth Circuit disposition, but the payload's official_citation_present=true is not supported by the lake citation record.\",\"severity\":\"low\",\"proposed_fix\":\"Retain the case citation but mark official_citation_present=false and treat the citation as slip-only.\",\"evidence_quote\":\"\\\"official\\\": null\",\"needs_cl\":false,\"locator_note\":\"citation metadata\"},\"reasons\":[\"Lake identity confirms United States v. Mark Anthony Trent, 6th Cir., docket 25-5770, decided 2026-05-07.\",\"Lake citations show no official citation and slip_only=true.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Subsequent live-law status is not certified because treatment/progeny remain unverified.\"],\"suggested_tightening\":\"Display as slip-only/unpublished rather than implying an official citation.\"},{\"assertion_id\":\"504cbaac279106ba\",\"dimension\":\"support\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lens B found no independent current-treatment defect in the home-role assertion itself.\",\"The authority-weight defect is addressed separately under assertion 80f3d501b82b1ac4.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Support/home-role appropriateness is reserved to Lens A.\",\"If editorial policy treats nonprecedential cases as non-key, this role should be revisited.\"],\"suggested_tightening\":\"Consider downgrading the role to illustrative if the home page reserves Key status for precedential authorities.\"},{\"assertion_id\":\"86e4ae73c375145c\",\"dimension\":\"support\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lens B found no disclosed overruling, abrogation, supersession, or limiting treatment edge undercutting the stated holding.\",\"The page separately discloses treatment as unverified.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Support and quote fidelity are outside Lens B.\",\"Treatment/progeny are not machine-verified, so this should not be promoted as settled good law.\"],\"suggested_tightening\":\"When using the holding as authority, flag that it comes from an unpublished, unverified-treatment disposition.\"},{\"assertion_id\":\"80f3d501b82b1ac4\",\"dimension\":\"treatment\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The authority_weight label says binding in-circuit, but the disclosed record marks the opinion unpublished/not recommended for publication and the page itself says it is persuasive only.\",\"severity\":\"high\",\"proposed_fix\":\"Replace authority_weight with a nonprecedential/persuasive-only Sixth Circuit label.\",\"evidence_quote\":\"NOT RECOMMENDED FOR PUBLICATION\",\"needs_cl\":false,\"locator_note\":\"authority_weight\"},\"reasons\":[\"The opinion text is marked NOT RECOMMENDED FOR PUBLICATION.\",\"Lake slip provenance describes the disposition as unpublished with no reporter citation.\",\"The content page's treatment section states the case is persuasive only notwithstanding the projected in-circuit authority weight.\"],\"breaks_true_positives\":true,\"residual_risks\":[\"A corrected persuasive-only label still leaves treatment/progeny unverified.\"],\"suggested_tightening\":\"Use 'Persuasive only - unpublished Sixth Circuit disposition' or equivalent.\"},{\"assertion_id\":\"ed2ab1579af4a974\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The content treatment fields match the lake treatment record: field_i_validity unverified, null as-of fields, composite_basis unverified, and no point overrides.\",\"The lake progeny/treatment sections disclose no completed citator derivation or treatment edges, so the page's unverified status is accurate.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"This is not a good-law certification; it only accurately reports that treatment is unverified.\",\"Promotion requires completed citator/progeny verification.\"],\"suggested_tightening\":\"Keep the unverified treatment banner until treatment and progeny are populated.\"}],\"notes\":\"Lens B only; no support or quote-fidelity findings were made.\"}",
   "summary": {
-    "at": "2026-07-09T23:14:22-04:00",
-    "attempts": 2,
+    "at": "2026-07-10T17:19:58-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-167eb995f3"
+    ],
     "group_id": "content/cases/United States v. Trent.md",
     "group_total_assertions": 5,
-    "lake_only_cases": [
-      "United States v. Trent"
-    ],
+    "lake_only_cases": [],
     "lane": "codex-B",
     "lane_id": "codex-B-panel-prod-f33dff82",
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-f33dff82.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
-    "resolution_notes": [
-      "case 'United States v. Trent' has no lead_opinion_id (text undisclosed)"
-    ],
-    "reviewed_count": 0,
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
     "run": "prod",
-    "text_disclosed_cases": [],
+    "text_disclosed_cases": [
+      "United States v. Trent"
+    ],
     "tokens": {
-      "input": 752,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 752
+      "input": 91368,
+      "output": 8107,
+      "source": "codex-events",
+      "total": 99475
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 3.0
+    "verdict_map": {
+      "25197dd1e95a8b8e": {
+        "dimension": "existence",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "504cbaac279106ba": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "80f3d501b82b1ac4": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "86e4ae73c375145c": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "ed2ab1579af4a974": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-b881e64bdc",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-167eb995f3",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 160.3
   }
 }

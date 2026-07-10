@@ -1,13 +1,115 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "content/cases/Jones v. United States.md",
+    "lens": "B",
+    "notes": "Reviewed all 5 group_inventory rows under Lens B only; no support or quote-fidelity findings were made.",
+    "reviewed": [
+      {
+        "assertion_id": "164442afb28a2290",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake record status is verified and identity matches Jones v. United States, U.S. Supreme Court, date_decided 1960-03-28, cluster_id 106022.",
+          "Lake citations include official 362 U.S. 257, the listed parallel citations, and 1960 U.S. LEXIS 1413.",
+          "The disclosed treatment problem affects current precedential force of the standing rules, not the existence or identity of the authority."
+        ],
+        "residual_risks": [
+          "Live-law use depends on the separate treatment row."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "3c383488569f9ab3",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "No Lens B currency defect: the page frames Jones as Historical and says both standing grounds announced here have since been overruled.",
+          "Lake treatment fields confirm field_i_validity superseded as of 2026-06-30 and identify Salvucci/Rakas in the scope note.",
+          "Support and quote fidelity are outside Lens B and were not used to refute this row."
+        ],
+        "residual_risks": [
+          "Lens B did not test proposition support or quote fidelity.",
+          "The standalone holding should not be reused without the historical/superseded treatment context."
+        ],
+        "suggested_tightening": "Display the holding with the historical/superseded treatment badge wherever reused.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "6585d83978e2d0b4",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "The role Historical / origin is consistent with the page's Historical label and the lake field_i_validity of superseded.",
+          "Lake treatment edges identify Rakas v. Illinois and United States v. Salvucci as overruled events, supporting historical-origin rather than current-rule framing.",
+          "Support accuracy of the home placement is outside Lens B."
+        ],
+        "residual_risks": [
+          "Lens B did not evaluate whether the home page itself uses the case correctly."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "39f99d2979d8be23",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "The 'automatic standing' rule was overruled by United States v. Salvucci (1980); the broad 'legitimately on premises' standing test was disavowed by Rakas v. Illinois (1978), which refocused standing on whether the defendant's own reasonable expectation of privacy was invaded.",
+          "locator_note": "authority_weight",
+          "needs_cl": false,
+          "problem": "The SCOTUS source portion is verified, but the standalone label Binding — SCOTUS is too broad for a case whose disclosed standing rules are superseded/overruled; it should not imply current binding force for the Jones standing rules.",
+          "proposed_fix": "Change the display to SCOTUS — historical/superseded, or ensure any Binding — SCOTUS label is immediately paired with a superseded/overruled caveat.",
+          "severity": "medium"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "Lake identity verifies U.S. Supreme Court/scotus, so the SCOTUS source component is correct.",
+          "Lake treatment field_i_validity is superseded and treatment edges include Rakas v. Illinois and United States v. Salvucci with field_ii overruled.",
+          "Because the page's substantive Jones standing rules are not live, Binding needs explicit treatment qualification."
+        ],
+        "residual_risks": [
+          "If the corpus defines authority_weight as court hierarchy only, this is a display/terminology risk rather than a case-identity defect."
+        ],
+        "suggested_tightening": "Rename hierarchy-only labels to avoid the word Binding when treatment is superseded.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "fde71318d3aa0df7",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Content treatment payload matches the lake judgment fields: field_i_validity superseded, as_of_content 1960-03-28, as_of_treatment 2026-06-30, and varies_by_point false.",
+          "Lake scope note identifies Salvucci and Rakas; edges list Rakas v. Illinois, 439 U.S. 128, and United States v. Salvucci, 448 U.S. 83, with field_ii overruled.",
+          "No disclosed progeny edge reinstates the Jones standing rules; the disclosed record supports superseded/historical status."
+        ],
+        "residual_risks": [
+          "Treatment derivation shows audit_needed/cap_hit in some lanes, but the disclosed judgment fields resolve this review as of 2026-06-30.",
+          "No statement is made about changes after the asserted as_of_treatment date."
+        ],
+        "suggested_tightening": "Align rendered overruled wording with schema superseded if the corpus treats those as distinct statuses.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"content/cases/Jones v. United States.md\",\"reviewed\":[{\"assertion_id\":\"164442afb28a2290\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake record status is verified and identity matches Jones v. United States, U.S. Supreme Court, date_decided 1960-03-28, cluster_id 106022.\",\"Lake citations include official 362 U.S. 257, the listed parallel citations, and 1960 U.S. LEXIS 1413.\",\"The disclosed treatment problem affects current precedential force of the standing rules, not the existence or identity of the authority.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Live-law use depends on the separate treatment row.\"],\"suggested_tightening\":null},{\"assertion_id\":\"3c383488569f9ab3\",\"dimension\":\"support\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"No Lens B currency defect: the page frames Jones as Historical and says both standing grounds announced here have since been overruled.\",\"Lake treatment fields confirm field_i_validity superseded as of 2026-06-30 and identify Salvucci/Rakas in the scope note.\",\"Support and quote fidelity are outside Lens B and were not used to refute this row.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Lens B did not test proposition support or quote fidelity.\",\"The standalone holding should not be reused without the historical/superseded treatment context.\"],\"suggested_tightening\":\"Display the holding with the historical/superseded treatment badge wherever reused.\"},{\"assertion_id\":\"6585d83978e2d0b4\",\"dimension\":\"support\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The role Historical / origin is consistent with the page's Historical label and the lake field_i_validity of superseded.\",\"Lake treatment edges identify Rakas v. Illinois and United States v. Salvucci as overruled events, supporting historical-origin rather than current-rule framing.\",\"Support accuracy of the home placement is outside Lens B.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Lens B did not evaluate whether the home page itself uses the case correctly.\"],\"suggested_tightening\":null},{\"assertion_id\":\"39f99d2979d8be23\",\"dimension\":\"treatment\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The SCOTUS source portion is verified, but the standalone label Binding — SCOTUS is too broad for a case whose disclosed standing rules are superseded/overruled; it should not imply current binding force for the Jones standing rules.\",\"severity\":\"medium\",\"proposed_fix\":\"Change the display to SCOTUS — historical/superseded, or ensure any Binding — SCOTUS label is immediately paired with a superseded/overruled caveat.\",\"evidence_quote\":\"The 'automatic standing' rule was overruled by United States v. Salvucci (1980); the broad 'legitimately on premises' standing test was disavowed by Rakas v. Illinois (1978), which refocused standing on whether the defendant's own reasonable expectation of privacy was invaded.\",\"needs_cl\":false,\"locator_note\":\"authority_weight\"},\"reasons\":[\"Lake identity verifies U.S. Supreme Court/scotus, so the SCOTUS source component is correct.\",\"Lake treatment field_i_validity is superseded and treatment edges include Rakas v. Illinois and United States v. Salvucci with field_ii overruled.\",\"Because the page's substantive Jones standing rules are not live, Binding needs explicit treatment qualification.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"If the corpus defines authority_weight as court hierarchy only, this is a display/terminology risk rather than a case-identity defect.\"],\"suggested_tightening\":\"Rename hierarchy-only labels to avoid the word Binding when treatment is superseded.\"},{\"assertion_id\":\"fde71318d3aa0df7\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Content treatment payload matches the lake judgment fields: field_i_validity superseded, as_of_content 1960-03-28, as_of_treatment 2026-06-30, and varies_by_point false.\",\"Lake scope note identifies Salvucci and Rakas; edges list Rakas v. Illinois, 439 U.S. 128, and United States v. Salvucci, 448 U.S. 83, with field_ii overruled.\",\"No disclosed progeny edge reinstates the Jones standing rules; the disclosed record supports superseded/historical status.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment derivation shows audit_needed/cap_hit in some lanes, but the disclosed judgment fields resolve this review as of 2026-06-30.\",\"No statement is made about changes after the asserted as_of_treatment date.\"],\"suggested_tightening\":\"Align rendered overruled wording with schema superseded if the corpus treats those as distinct statuses.\"}],\"notes\":\"Reviewed all 5 group_inventory rows under Lens B only; no support or quote-fidelity findings were made.\"}",
   "summary": {
-    "at": "2026-07-09T23:16:17-04:00",
-    "attempts": 2,
+    "at": "2026-07-10T17:33:31-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-9dfc947630"
+    ],
     "group_id": "content/cases/Jones v. United States.md",
     "group_total_assertions": 5,
     "lake_only_cases": [],
@@ -16,21 +118,62 @@
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-6de58bb9.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 5,
     "run": "prod",
     "text_disclosed_cases": [
       "Jones v. United States"
     ],
     "tokens": {
-      "input": 752,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 752
+      "input": 220999,
+      "output": 8012,
+      "source": "codex-events",
+      "total": 229011
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 3.8
+    "verdict_map": {
+      "164442afb28a2290": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "39f99d2979d8be23": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "3c383488569f9ab3": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "6585d83978e2d0b4": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "fde71318d3aa0df7": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-9dfc947630",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 155.8
   }
 }

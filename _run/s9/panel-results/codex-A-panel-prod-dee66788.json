@@ -1,13 +1,122 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "content/cases/Wright v. City of Euclid.md",
+    "lens": "A",
+    "notes": "No quote_fidelity, pincite, or black_letter rows were present in group_inventory.jsonl; reviewed the five disclosed assertion_ids exactly once.",
+    "reviewed": [
+      {
+        "assertion_id": "2b23dc3ff023c2ca",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity lists Lamar Wright v. City of Euclid, U.S. Court of Appeals for the Sixth Circuit, date_decided 2020-06-18, docket 19-3452.",
+          "Lake citations identify the official selected citation as 962 F.3d 852, matching the content citation and year."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "0259211247f58c4b",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": null,
+          "locator_note": "home_role payload / frontmatter homes[0].role",
+          "needs_cl": false,
+          "problem": "The opinion supports Qualified Immunity relevance, but the specific role label 'Recent development (role-based)' is not established by the opinion text, lake record, or any disclosed home taxonomy.",
+          "proposed_fix": "Keep the Qualified Immunity home only as a topic placement, and either omit the role or replace it with a verifiable descriptor such as 'qualified-immunity application'; disclose the taxonomy if 'Recent development' is required.",
+          "severity": "low"
+        },
+        "dimension": "support",
+        "reasons": [
+          "The opinion repeatedly analyzes qualified immunity and reverses qualified-immunity rulings, so the topic placement is supported.",
+          "No disclosed file defines or substantiates 'Recent development (role-based)' as the correct role label.",
+          "Under the default-to-refuted-on-uncertainty rule, the home-role assertion cannot stand as framed."
+        ],
+        "residual_risks": [
+          "A separate corpus taxonomy could validate the role, but it is not in the disclosed evidence."
+        ],
+        "suggested_tightening": "Separate topic placement from editorial role labels, or add a disclosed taxonomy source for role-based homes.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": false
+      },
+      {
+        "assertion_id": "029f34eb909a3b4b",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "we REVERSE the district court’s grant of qualified immunity on this count.",
+          "locator_note": "frontmatter holding",
+          "needs_cl": false,
+          "problem": "The holding is directionally supported but garbles the procedural posture by saying 'summary judgment / denial of qualified immunity'; the Sixth Circuit reversed grants of summary judgment/qualified immunity in part, not a denial of qualified immunity.",
+          "proposed_fix": "State that the Sixth Circuit affirmed in part, reversed in part, and remanded, reversing the grant of summary judgment/qualified immunity on the excessive-force, false-arrest, extended-detention, federal malicious-prosecution, and Monell claims while affirming some other rulings.",
+          "severity": "medium"
+        },
+        "dimension": "support",
+        "reasons": [
+          "The opinion supports reversal on multiple Fourth Amendment and § 1983 claims, including excessive force, false arrest, extended detention, federal malicious prosecution, and Monell.",
+          "The opinion also says AFFIRM in part, REVERSE in part, and REMAND, so a clean holding should preserve the partial affirmance.",
+          "The phrase 'denial of qualified immunity' should be corrected to 'grant of qualified immunity' or 'qualified-immunity summary judgment'."
+        ],
+        "residual_risks": [
+          "The inventory payload is truncated with an ellipsis, but content_page.md contains the same ambiguous holding phrasing."
+        ],
+        "suggested_tightening": "Replace the slash phrase with precise appellate posture: 'reversed the grant of summary judgment/qualified immunity in part.'",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "691d3381e9776a26",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside lens A, so no treatment defect is raised.",
+          "The content treatment fields match the lake treatment fields: field_i_validity good_law, as_of_content 2020-06-18, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note."
+        ],
+        "residual_risks": [
+          "No independent treatment/currency review was performed under lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "ac8c0e37818c658d",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The lake identity lists court_level coa, circuit 6th, and court U.S. Court of Appeals, Sixth Circuit.",
+          "The opinion text is marked recommended for publication and the lake selected official citation is F.3d, supporting the binding-in-circuit authority-weight label.",
+          "Treatment/currency beyond the authority-weight label is outside lens A."
+        ],
+        "residual_risks": [
+          "No treatment/currency conclusion is made under lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"content/cases/Wright v. City of Euclid.md\",\"reviewed\":[{\"assertion_id\":\"2b23dc3ff023c2ca\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity lists Lamar Wright v. City of Euclid, U.S. Court of Appeals for the Sixth Circuit, date_decided 2020-06-18, docket 19-3452.\",\"Lake citations identify the official selected citation as 962 F.3d 852, matching the content citation and year.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"0259211247f58c4b\",\"dimension\":\"support\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":false,\"defect\":{\"problem\":\"The opinion supports Qualified Immunity relevance, but the specific role label 'Recent development (role-based)' is not established by the opinion text, lake record, or any disclosed home taxonomy.\",\"severity\":\"low\",\"proposed_fix\":\"Keep the Qualified Immunity home only as a topic placement, and either omit the role or replace it with a verifiable descriptor such as 'qualified-immunity application'; disclose the taxonomy if 'Recent development' is required.\",\"evidence_quote\":null,\"needs_cl\":false,\"locator_note\":\"home_role payload / frontmatter homes[0].role\"},\"reasons\":[\"The opinion repeatedly analyzes qualified immunity and reverses qualified-immunity rulings, so the topic placement is supported.\",\"No disclosed file defines or substantiates 'Recent development (role-based)' as the correct role label.\",\"Under the default-to-refuted-on-uncertainty rule, the home-role assertion cannot stand as framed.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"A separate corpus taxonomy could validate the role, but it is not in the disclosed evidence.\"],\"suggested_tightening\":\"Separate topic placement from editorial role labels, or add a disclosed taxonomy source for role-based homes.\"},{\"assertion_id\":\"029f34eb909a3b4b\",\"dimension\":\"support\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The holding is directionally supported but garbles the procedural posture by saying 'summary judgment / denial of qualified immunity'; the Sixth Circuit reversed grants of summary judgment/qualified immunity in part, not a denial of qualified immunity.\",\"severity\":\"medium\",\"proposed_fix\":\"State that the Sixth Circuit affirmed in part, reversed in part, and remanded, reversing the grant of summary judgment/qualified immunity on the excessive-force, false-arrest, extended-detention, federal malicious-prosecution, and Monell claims while affirming some other rulings.\",\"evidence_quote\":\"we REVERSE the district court’s grant of qualified immunity on this count.\",\"needs_cl\":false,\"locator_note\":\"frontmatter holding\"},\"reasons\":[\"The opinion supports reversal on multiple Fourth Amendment and § 1983 claims, including excessive force, false arrest, extended detention, federal malicious prosecution, and Monell.\",\"The opinion also says AFFIRM in part, REVERSE in part, and REMAND, so a clean holding should preserve the partial affirmance.\",\"The phrase 'denial of qualified immunity' should be corrected to 'grant of qualified immunity' or 'qualified-immunity summary judgment'.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The inventory payload is truncated with an ellipsis, but content_page.md contains the same ambiguous holding phrasing.\"],\"suggested_tightening\":\"Replace the slash phrase with precise appellate posture: 'reversed the grant of summary judgment/qualified immunity in part.'\"},{\"assertion_id\":\"691d3381e9776a26\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside lens A, so no treatment defect is raised.\",\"The content treatment fields match the lake treatment fields: field_i_validity good_law, as_of_content 2020-06-18, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"No independent treatment/currency review was performed under lens A.\"],\"suggested_tightening\":null},{\"assertion_id\":\"ac8c0e37818c658d\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake identity lists court_level coa, circuit 6th, and court U.S. Court of Appeals, Sixth Circuit.\",\"The opinion text is marked recommended for publication and the lake selected official citation is F.3d, supporting the binding-in-circuit authority-weight label.\",\"Treatment/currency beyond the authority-weight label is outside lens A.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"No treatment/currency conclusion is made under lens A.\"],\"suggested_tightening\":null}],\"notes\":\"No quote_fidelity, pincite, or black_letter rows were present in group_inventory.jsonl; reviewed the five disclosed assertion_ids exactly once.\"}",
   "summary": {
-    "at": "2026-07-09T23:14:32-04:00",
-    "attempts": 2,
+    "at": "2026-07-10T17:23:51-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "defense_votes": [],
-    "findings_emitted": [],
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-62b2255e41",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-9d1ebaf6f2",
+      "F-S9-PR-caf62b9386"
+    ],
     "group_id": "content/cases/Wright v. City of Euclid.md",
     "group_total_assertions": 5,
     "lake_only_cases": [],
@@ -16,21 +125,70 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-dee66788.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 5,
     "run": "prod",
     "text_disclosed_cases": [
       "Wright v. City of Euclid"
     ],
     "tokens": {
-      "input": 825,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 825
+      "input": 430119,
+      "output": 13036,
+      "source": "codex-events",
+      "total": 443155
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 2.9
+    "verdict_map": {
+      "0259211247f58c4b": {
+        "dimension": "support",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": false
+      },
+      "029f34eb909a3b4b": {
+        "dimension": "support",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "2b23dc3ff023c2ca": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "691d3381e9776a26": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "ac8c0e37818c658d": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-9d1ebaf6f2",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-caf62b9386",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-62b2255e41",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": 252.9
   }
 }

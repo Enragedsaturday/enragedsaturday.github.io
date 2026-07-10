@@ -1,22 +1,155 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Cady v. Dombrowski.json",
+    "lens": "A",
+    "notes": "Reviewed all four inventory rows using only disclosed files. No black-letter rows were present.",
+    "reviewed": [
+      {
+        "assertion_id": "d50192f66c661a33",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record is verified for Cady v. Dombrowski, decided by the U.S. Supreme Court on 1973-06-21.",
+          "The official citation in the lake record is 413 U.S. 433, with the same parallel citations listed in the assertion payload."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "6ccafb2849b9ee7d",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Local police officers, unlike federal officers, frequently investigate vehicle accidents in which there is no claim of criminal liability and engage in what, for want of a better term, may be described as community caretaking functions, totally divorced from the detection, investigation, or acquisition of evidence relating to the violation of a criminal statute.",
+          "locator_note": "pin-441; text file places this passage on star page *441.",
+          "needs_cl": false,
+          "problem": "The pin-441 payload is not the opinion quotation at 413 U.S. 441; it is page/frontmatter/background markdown harvested from the built page.",
+          "proposed_fix": "Replace the pin-441 quote with the actual opinion passage beginning 'Local police officers, unlike federal officers...' and set the pinpoint to page 441.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The disclosed text file contains the community-caretaking passage on page *441.",
+          "The assertion payload instead quotes the page title, metadata, background, issue, and rule lead-in, so it is not character-faithful to the opinion."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Store only opinion text in pinpoints[].quote; do not allow rendered page markdown to populate authority pinpoints.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "b30bdbb29e73cbd5",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Where, as here, the trunk of an automobile, which the officer reasonably believed to contain a gun, was vulnerable to intrusion by vandals, we hold that the search was not \"unreasonable\" within the meaning of the Fourth and Fourteenth Amendments.",
+          "locator_note": "pin-448; text file places this sentence on star page *448.",
+          "needs_cl": false,
+          "problem": "The quoted sentence exists at page *448, but the payload changes the opinion's double quotation marks around \"unreasonable\" to single quotation marks.",
+          "proposed_fix": "Change 'unreasonable' to \"unreasonable\" inside the quoted sentence.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The substance and page location are supported by the disclosed opinion text.",
+          "Strict verbatim fidelity fails because the internal quotation marks do not match the opinion text."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Use the exact punctuation from the opinion when rendering direct quotations.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "f127a2c997602fb4",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The treatment payload matches the disclosed lake treatment fields and the built page frontmatter.",
+          "Lens A does not audit treatment or currency merits."
+        ],
+        "residual_risks": [
+          "Treatment/currency was not reviewed under this lens."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"A\",\n  \"group_id\": \"_overhaul2/lake/cases/Cady v. Dombrowski.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"d50192f66c661a33\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake identity record is verified for Cady v. Dombrowski, decided by the U.S. Supreme Court on 1973-06-21.\",\n        \"The official citation in the lake record is 413 U.S. 433, with the same parallel citations listed in the assertion payload.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"6ccafb2849b9ee7d\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The pin-441 payload is not the opinion quotation at 413 U.S. 441; it is page/frontmatter/background markdown harvested from the built page.\",\n        \"severity\": \"high\",\n        \"proposed_fix\": \"Replace the pin-441 quote with the actual opinion passage beginning 'Local police officers, unlike federal officers...' and set the pinpoint to page 441.\",\n        \"evidence_quote\": \"Local police officers, unlike federal officers, frequently investigate vehicle accidents in which there is no claim of criminal liability and engage in what, for want of a better term, may be described as community caretaking functions, totally divorced from the detection, investigation, or acquisition of evidence relating to the violation of a criminal statute.\",\n        \"needs_cl\": false,\n        \"locator_note\": \"pin-441; text file places this passage on star page *441.\"\n      },\n      \"reasons\": [\n        \"The disclosed text file contains the community-caretaking passage on page *441.\",\n        \"The assertion payload instead quotes the page title, metadata, background, issue, and rule lead-in, so it is not character-faithful to the opinion.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": \"Store only opinion text in pinpoints[].quote; do not allow rendered page markdown to populate authority pinpoints.\"\n    },\n    {\n      \"assertion_id\": \"b30bdbb29e73cbd5\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands-modified\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The quoted sentence exists at page *448, but the payload changes the opinion's double quotation marks around \\\"unreasonable\\\" to single quotation marks.\",\n        \"severity\": \"low\",\n        \"proposed_fix\": \"Change 'unreasonable' to \\\"unreasonable\\\" inside the quoted sentence.\",\n        \"evidence_quote\": \"Where, as here, the trunk of an automobile, which the officer reasonably believed to contain a gun, was vulnerable to intrusion by vandals, we hold that the search was not \\\"unreasonable\\\" within the meaning of the Fourth and Fourteenth Amendments.\",\n        \"needs_cl\": false,\n        \"locator_note\": \"pin-448; text file places this sentence on star page *448.\"\n      },\n      \"reasons\": [\n        \"The substance and page location are supported by the disclosed opinion text.\",\n        \"Strict verbatim fidelity fails because the internal quotation marks do not match the opinion text.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": \"Use the exact punctuation from the opinion when rendering direct quotations.\"\n    },\n    {\n      \"assertion_id\": \"f127a2c997602fb4\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The treatment payload matches the disclosed lake treatment fields and the built page frontmatter.\",\n        \"Lens A does not audit treatment or currency merits.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Treatment/currency was not reviewed under this lens.\"\n      ],\n      \"suggested_tightening\": null\n    }\n  ],\n  \"notes\": \"Reviewed all four inventory rows using only disclosed files. No black-letter rows were present.\"\n}",
   "summary": {
-    "at": "2026-07-09T23:17:57-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-10T17:48:08-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-20ea3af8e3",
+      "F-S9-PR-8bd3ed4f67"
+    ],
     "group_id": "_overhaul2/lake/cases/Cady v. Dombrowski.json",
     "group_total_assertions": 4,
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-85c5f3fa",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-85c5f3fa.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "d to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T03:17:49.393316Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T03:17:50.154910Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T03:17:51.369745Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T03:17:53.476510Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n\u001b[2m2026-07-10T03:17:56.935977Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mcodex_api::endpoint::responses_websocket\u001b[0m\u001b[2m:\u001b[0m failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Cady v. Dombrowski"
+    ],
+    "tokens": {
+      "input": 152857,
+      "output": 7579,
+      "source": "codex-events",
+      "total": 160436
+    },
+    "verdict_map": {
+      "6ccafb2849b9ee7d": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "b30bdbb29e73cbd5": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "d50192f66c661a33": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "f127a2c997602fb4": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-20ea3af8e3",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-8bd3ed4f67",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 148.1
   }
 }

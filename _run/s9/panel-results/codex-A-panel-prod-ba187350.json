@@ -1,11 +1,49 @@
 {
-  "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/United States v. Xiang.json",
+    "lens": "A",
+    "notes": "Reviewed every assertion_id in group_inventory.jsonl exactly once.",
+    "reviewed": [
+      {
+        "assertion_id": "6b96eb682674a068",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record identifies the case as United States v. Haitao Xiang with input record United States v. Xiang and canonical_name_match=true.",
+          "The asserted citation 67 F.4th 895 exactly matches the lake official citation and display citation; the lake identity fields give court 8th Cir. 2023, date_decided 2023-05-05, and year 2023."
+        ],
+        "residual_risks": [
+          "No full opinion text file is disclosed, but existence and citation are verifiable from the lake identity and citation fields."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "0bca214bfdeb2d84",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A's substantive charter, so no treatment finding is raised.",
+          "The asserted treatment fields match the lake record: field_i_validity=unverified, as_of_content=null, as_of_treatment=null, varies_by_point=false, and the same frontier-stub scope note."
+        ],
+        "residual_risks": [
+          "Lens B must assess any substantive treatment or currency issue."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/United States v. Xiang.json\",\"reviewed\":[{\"assertion_id\":\"6b96eb682674a068\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record identifies the case as United States v. Haitao Xiang with input record United States v. Xiang and canonical_name_match=true.\",\"The asserted citation 67 F.4th 895 exactly matches the lake official citation and display citation; the lake identity fields give court 8th Cir. 2023, date_decided 2023-05-05, and year 2023.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"No full opinion text file is disclosed, but existence and citation are verifiable from the lake identity and citation fields.\"],\"suggested_tightening\":null},{\"assertion_id\":\"0bca214bfdeb2d84\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside Lens A's substantive charter, so no treatment finding is raised.\",\"The asserted treatment fields match the lake record: field_i_validity=unverified, as_of_content=null, as_of_treatment=null, varies_by_point=false, and the same frontier-stub scope note.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Lens B must assess any substantive treatment or currency issue.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed every assertion_id in group_inventory.jsonl exactly once.\"}",
   "summary": {
-    "at": "2026-07-09T23:08:34-04:00",
-    "attempts": 2,
-    "clean_attestation": false,
+    "at": "2026-07-10T16:50:08-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
     "defense_votes": [],
     "findings_emitted": [],
     "group_id": "_overhaul2/lake/cases/United States v. Xiang.json",
@@ -18,21 +56,36 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-ba187350.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [
       "case 'United States v. Xiang' has no lead_opinion_id (text undisclosed)"
     ],
-    "reviewed_count": 0,
+    "reviewed_count": 2,
     "run": "prod",
     "text_disclosed_cases": [],
     "tokens": {
-      "input": 827,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 827
+      "input": 83431,
+      "output": 1428,
+      "source": "codex-events",
+      "total": 84859
     },
-    "verdict_map": {},
+    "verdict_map": {
+      "0bca214bfdeb2d84": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "6b96eb682674a068": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
     "votes_emitted": [],
-    "wall_clock_s": 2.8
+    "wall_clock_s": 32.2
   }
 }

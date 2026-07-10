@@ -1,13 +1,93 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Berghuis v. Thompkins.json",
+    "lens": "B",
+    "notes": "Support and quote-fidelity merits were not reviewed under Lens B.",
+    "reviewed": [
+      {
+        "assertion_id": "40500be314ed75a7",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record is not a stub, has status verified, identifies Berghuis v. Thompkins as a U.S. Supreme Court case decided 2010-06-01, and lists 560 U.S. 370 among its citations.",
+          "For the currency angle, the lake treatment judgment states field_i_validity is good_law as of 2026-06-30, with varies_by_point false and no point overrides."
+        ],
+        "residual_risks": [
+          "The lake treatment derivation contains proposed negative edges and an audit-needed marker; that affects clean treatment wording, but the disclosed top-level judgment still treats the authority as live."
+        ],
+        "suggested_tightening": "Use 560 U.S. 370 as the display citation when presenting this live Supreme Court authority.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "307e61508e82a569",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Lens B does not adjudicate quote fidelity; no treatment or currency defect is raised for this pinpoint.",
+          "The pinpoint is attached to the same verified Supreme Court record whose top-level treatment is good_law as of 2026-06-30, with no point-specific treatment override."
+        ],
+        "residual_risks": [
+          "Quote accuracy and support were not reviewed under Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "ed0a2a907afffe28",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Lens B does not adjudicate quote fidelity; no treatment or currency defect is raised for this pinpoint.",
+          "The pinpoint is attached to the same verified Supreme Court record whose top-level treatment is good_law as of 2026-06-30, with no point-specific treatment override."
+        ],
+        "residual_risks": [
+          "Quote accuracy and support were not reviewed under Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "0629d630debe1d4d",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "\"audit_needed\": true,\n      \"proposed_negative_events\": 24,\n      \"audit_marker\": \"R15 treatment audit required\"",
+          "locator_note": "content_page.md Treatment & subsequent history; lake/Berghuis v. Thompkins__eaddd1.json treatment.derivation.lane2_top_cited and treatment.edges",
+          "needs_cl": true,
+          "problem": "The good_law status is supported by the lake's top-level treatment field, but the built page's clean 'No negative treatment' presentation is too strong because the disclosed treatment record contains proposed negative treatment edges and an audit-needed marker.",
+          "proposed_fix": "Keep field_i_validity: good_law only as the top-level current judgment, but replace 'No negative treatment' with a qualified statement such as 'No confirmed negative treatment in the disclosed lake record; proposed negative treatment edges require audit,' or omit the no-negative sentence until the audit is resolved.",
+          "severity": "medium"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "The lake's top-level treatment fields match the asserted status: field_i_validity is good_law, as_of_treatment is 2026-06-30, varies_by_point is false, and point_overrides is empty.",
+          "The same lake record lists 27 treatment edges with negative field_ii labels marked proposed true, and lane2_top_cited has cap_hit true and audit_needed true.",
+          "Therefore the status survives only as a qualified top-level judgment, not as an unqualified no-negative-treatment statement."
+        ],
+        "residual_risks": [
+          "Whether any proposed negative event actually downgrades Berghuis cannot be resolved from the disclosed files alone because the lake itself marks an audit as required."
+        ],
+        "suggested_tightening": "Expose the treatment provenance: migration-seed good_law, proposed negative events present, audit pending.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/Berghuis v. Thompkins.json\",\"reviewed\":[{\"assertion_id\":\"40500be314ed75a7\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record is not a stub, has status verified, identifies Berghuis v. Thompkins as a U.S. Supreme Court case decided 2010-06-01, and lists 560 U.S. 370 among its citations.\",\"For the currency angle, the lake treatment judgment states field_i_validity is good_law as of 2026-06-30, with varies_by_point false and no point overrides.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The lake treatment derivation contains proposed negative edges and an audit-needed marker; that affects clean treatment wording, but the disclosed top-level judgment still treats the authority as live.\"],\"suggested_tightening\":\"Use 560 U.S. 370 as the display citation when presenting this live Supreme Court authority.\"},{\"assertion_id\":\"307e61508e82a569\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lens B does not adjudicate quote fidelity; no treatment or currency defect is raised for this pinpoint.\",\"The pinpoint is attached to the same verified Supreme Court record whose top-level treatment is good_law as of 2026-06-30, with no point-specific treatment override.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Quote accuracy and support were not reviewed under Lens B.\"],\"suggested_tightening\":null},{\"assertion_id\":\"ed0a2a907afffe28\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lens B does not adjudicate quote fidelity; no treatment or currency defect is raised for this pinpoint.\",\"The pinpoint is attached to the same verified Supreme Court record whose top-level treatment is good_law as of 2026-06-30, with no point-specific treatment override.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Quote accuracy and support were not reviewed under Lens B.\"],\"suggested_tightening\":null},{\"assertion_id\":\"0629d630debe1d4d\",\"dimension\":\"treatment\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The good_law status is supported by the lake's top-level treatment field, but the built page's clean 'No negative treatment' presentation is too strong because the disclosed treatment record contains proposed negative treatment edges and an audit-needed marker.\",\"severity\":\"medium\",\"proposed_fix\":\"Keep field_i_validity: good_law only as the top-level current judgment, but replace 'No negative treatment' with a qualified statement such as 'No confirmed negative treatment in the disclosed lake record; proposed negative treatment edges require audit,' or omit the no-negative sentence until the audit is resolved.\",\"evidence_quote\":\"\\\"audit_needed\\\": true,\\n      \\\"proposed_negative_events\\\": 24,\\n      \\\"audit_marker\\\": \\\"R15 treatment audit required\\\"\",\"needs_cl\":true,\"locator_note\":\"content_page.md Treatment & subsequent history; lake/Berghuis v. Thompkins__eaddd1.json treatment.derivation.lane2_top_cited and treatment.edges\"},\"reasons\":[\"The lake's top-level treatment fields match the asserted status: field_i_validity is good_law, as_of_treatment is 2026-06-30, varies_by_point is false, and point_overrides is empty.\",\"The same lake record lists 27 treatment edges with negative field_ii labels marked proposed true, and lane2_top_cited has cap_hit true and audit_needed true.\",\"Therefore the status survives only as a qualified top-level judgment, not as an unqualified no-negative-treatment statement.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Whether any proposed negative event actually downgrades Berghuis cannot be resolved from the disclosed files alone because the lake itself marks an audit as required.\"],\"suggested_tightening\":\"Expose the treatment provenance: migration-seed good_law, proposed negative events present, audit pending.\"}],\"notes\":\"Support and quote-fidelity merits were not reviewed under Lens B.\"}",
   "summary": {
-    "at": "2026-07-09T23:17:15-04:00",
-    "attempts": 2,
+    "at": "2026-07-10T17:43:27-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-f5d441ab03"
+    ],
     "group_id": "_overhaul2/lake/cases/Berghuis v. Thompkins.json",
     "group_total_assertions": 4,
     "lake_only_cases": [],
@@ -16,21 +96,55 @@
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-43b42663.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 4,
     "run": "prod",
     "text_disclosed_cases": [
       "Berghuis v. Thompkins"
     ],
     "tokens": {
-      "input": 755,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 755
+      "input": 334017,
+      "output": 7165,
+      "source": "codex-events",
+      "total": 341182
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 3.0
+    "verdict_map": {
+      "0629d630debe1d4d": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "307e61508e82a569": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "40500be314ed75a7": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "ed0a2a907afffe28": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-f5d441ab03",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 147.2
   }
 }

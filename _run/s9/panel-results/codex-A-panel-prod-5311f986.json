@@ -1,38 +1,198 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "content/cases/The GEO Group, Inc. v. Menocal.md",
+    "lens": "A",
+    "notes": "Reviewed all 5 rows from group_inventory.jsonl. Lens A did not assess treatment/currency beyond recording a verdict.",
+    "reviewed": [
+      {
+        "assertion_id": "477280eb1de56771",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "No S. Ct. page yet.",
+          "locator_note": "citation field / official_citation_present payload",
+          "needs_cl": false,
+          "problem": "The case identity, docket, court, and year are supported, but the payload treats an official citation as present even though the lake record says this is slip-only with no selected official citation.",
+          "proposed_fix": "Keep the slip-style citation if the corpus permits it, but set official_citation_present to false or otherwise mark the citation as slip-only/unofficial.",
+          "severity": "low"
+        },
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity confirms record_id The GEO Group, Inc. v. Menocal, court scotus, docket 24-758, and year 2026.",
+          "The cached opinion text confirms a Supreme Court case, No. 24-758, decided February 25, 2026.",
+          "Lake citations.official and citations.display are null, citations.all is empty, and citations.slip_only is true."
+        ],
+        "residual_risks": [
+          "Reporter citation status may have changed after the lake as-of date, but external updates are outside the disclosed evidence."
+        ],
+        "suggested_tightening": "Label this as a slip-only citation, not an official citation.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "703788d35447eda6",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Menocal’s complaint alleged that the former policy violated a federal bar on forced labor and that the latter breached Colorado’s prohibition on unjust enrichment.",
+          "locator_note": "homes entry for Section 1983 Liability and Qualified Immunity",
+          "needs_cl": false,
+          "problem": "The disclosed files do not verify this as a Recent development for Section 1983 Liability and Qualified Immunity. The opinion is a Yearsley/collateral-order case involving forced-labor and unjust-enrichment claims; qualified immunity appears only as an analogy.",
+          "proposed_fix": "Move the home role to a Yearsley, federal-contractor, collateral-order, or appellate-jurisdiction home; if kept on the Section 1983/qualified-immunity page, recast it as a related analogy and disclose the placement rationale. Evidence needed: the target home page scope or corpus placement criteria.",
+          "severity": "medium"
+        },
+        "dimension": "support",
+        "reasons": [
+          "No disclosed target-page file or taxonomy verifies the home-role placement.",
+          "The opinion’s claims and holding concern Yearsley protection and interlocutory appealability, not Section 1983 liability.",
+          "Qualified immunity is discussed comparatively, which supports relatedness but not the asserted home role at this breadth."
+        ],
+        "residual_risks": [
+          "The placement might be intentional if the missing target page tracks immunity-from-suit doctrine broadly, but that evidence is not disclosed."
+        ],
+        "suggested_tightening": "Use a narrower home or mark this as a related qualified-immunity analogy rather than a Section 1983 recent development.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": false
+      },
+      {
+        "assertion_id": "780ebd162e86dc79",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "But unlike the Tenth Circuit, we focus on the third Cohen condition",
+          "locator_note": "holding field",
+          "needs_cl": false,
+          "problem": "The core holding is supported, but the assertion overstates the Court’s holding by making the second Cohen condition sound definitively resolved. The Court expressly focused on the third condition and treated the separateness point more cautiously.",
+          "proposed_fix": "Revise to: Because Yearsley provides a merits defense rather than an immunity from suit, denial of Yearsley protection is not immediately appealable because it can be effectively reviewed after final judgment; the Court noted the merits-defense characterization also bears on separateness from the merits.",
+          "severity": "medium"
+        },
+        "dimension": "support",
+        "reasons": [
+          "The syllabus supports the core rule that Yearsley is a potential merits defense, not an immunity from suit, and that denial is not immediately appealable.",
+          "The majority states that a Yearsley denial is not effectively unreviewable after final judgment.",
+          "The majority did not rest its holding on the second Cohen condition; it expressly focused on the third condition."
+        ],
+        "residual_risks": [
+          "No lake pinpoints were available; support was checked against the cached full opinion text."
+        ],
+        "suggested_tightening": "Remove or soften the clause 'it neither resolves an issue separate from the merits' from the holding field.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "7e2d6388775d82d4",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The page treatment fields match the lake treatment record: field_i_validity unverified, null as-of fields, composite_basis unverified, varies_by_point false, and the same frontier-stub scope note.",
+          "Treatment/currency merits are outside Lens A, so no treatment finding is raised."
+        ],
+        "residual_risks": [
+          "Treatment good-law status not assessed under Lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "ab59eb743d32e5f0",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Lake identity lists court and court_level as scotus, and the cached opinion text is from the Supreme Court of the United States.",
+          "The weight label is consistent with the disclosed SCOTUS identity; treatment/currency merits are outside Lens A."
+        ],
+        "residual_risks": [
+          "Good-law currency not assessed under Lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"content/cases/The GEO Group, Inc. v. Menocal.md\",\"reviewed\":[{\"assertion_id\":\"477280eb1de56771\",\"dimension\":\"existence\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The case identity, docket, court, and year are supported, but the payload treats an official citation as present even though the lake record says this is slip-only with no selected official citation.\",\"severity\":\"low\",\"proposed_fix\":\"Keep the slip-style citation if the corpus permits it, but set official_citation_present to false or otherwise mark the citation as slip-only/unofficial.\",\"evidence_quote\":\"No S. Ct. page yet.\",\"needs_cl\":false,\"locator_note\":\"citation field / official_citation_present payload\"},\"reasons\":[\"Lake identity confirms record_id The GEO Group, Inc. v. Menocal, court scotus, docket 24-758, and year 2026.\",\"The cached opinion text confirms a Supreme Court case, No. 24-758, decided February 25, 2026.\",\"Lake citations.official and citations.display are null, citations.all is empty, and citations.slip_only is true.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Reporter citation status may have changed after the lake as-of date, but external updates are outside the disclosed evidence.\"],\"suggested_tightening\":\"Label this as a slip-only citation, not an official citation.\"},{\"assertion_id\":\"703788d35447eda6\",\"dimension\":\"support\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":false,\"defect\":{\"problem\":\"The disclosed files do not verify this as a Recent development for Section 1983 Liability and Qualified Immunity. The opinion is a Yearsley/collateral-order case involving forced-labor and unjust-enrichment claims; qualified immunity appears only as an analogy.\",\"severity\":\"medium\",\"proposed_fix\":\"Move the home role to a Yearsley, federal-contractor, collateral-order, or appellate-jurisdiction home; if kept on the Section 1983/qualified-immunity page, recast it as a related analogy and disclose the placement rationale. Evidence needed: the target home page scope or corpus placement criteria.\",\"evidence_quote\":\"Menocal’s complaint alleged that the former policy violated a federal bar on forced labor and that the latter breached Colorado’s prohibition on unjust enrichment.\",\"needs_cl\":false,\"locator_note\":\"homes entry for Section 1983 Liability and Qualified Immunity\"},\"reasons\":[\"No disclosed target-page file or taxonomy verifies the home-role placement.\",\"The opinion’s claims and holding concern Yearsley protection and interlocutory appealability, not Section 1983 liability.\",\"Qualified immunity is discussed comparatively, which supports relatedness but not the asserted home role at this breadth.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The placement might be intentional if the missing target page tracks immunity-from-suit doctrine broadly, but that evidence is not disclosed.\"],\"suggested_tightening\":\"Use a narrower home or mark this as a related qualified-immunity analogy rather than a Section 1983 recent development.\"},{\"assertion_id\":\"780ebd162e86dc79\",\"dimension\":\"support\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The core holding is supported, but the assertion overstates the Court’s holding by making the second Cohen condition sound definitively resolved. The Court expressly focused on the third condition and treated the separateness point more cautiously.\",\"severity\":\"medium\",\"proposed_fix\":\"Revise to: Because Yearsley provides a merits defense rather than an immunity from suit, denial of Yearsley protection is not immediately appealable because it can be effectively reviewed after final judgment; the Court noted the merits-defense characterization also bears on separateness from the merits.\",\"evidence_quote\":\"But unlike the Tenth Circuit, we focus on the third Cohen condition\",\"needs_cl\":false,\"locator_note\":\"holding field\"},\"reasons\":[\"The syllabus supports the core rule that Yearsley is a potential merits defense, not an immunity from suit, and that denial is not immediately appealable.\",\"The majority states that a Yearsley denial is not effectively unreviewable after final judgment.\",\"The majority did not rest its holding on the second Cohen condition; it expressly focused on the third condition.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"No lake pinpoints were available; support was checked against the cached full opinion text.\"],\"suggested_tightening\":\"Remove or soften the clause 'it neither resolves an issue separate from the merits' from the holding field.\"},{\"assertion_id\":\"7e2d6388775d82d4\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The page treatment fields match the lake treatment record: field_i_validity unverified, null as-of fields, composite_basis unverified, varies_by_point false, and the same frontier-stub scope note.\",\"Treatment/currency merits are outside Lens A, so no treatment finding is raised.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment good-law status not assessed under Lens A.\"],\"suggested_tightening\":null},{\"assertion_id\":\"ab59eb743d32e5f0\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity lists court and court_level as scotus, and the cached opinion text is from the Supreme Court of the United States.\",\"The weight label is consistent with the disclosed SCOTUS identity; treatment/currency merits are outside Lens A.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Good-law currency not assessed under Lens A.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed all 5 rows from group_inventory.jsonl. Lens A did not assess treatment/currency beyond recording a verdict.\"}",
   "summary": {
-    "at": "2026-07-09T23:12:23-04:00",
-    "attempts": 2,
+    "at": "2026-07-10T17:08:30-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-ddeb962e6b",
+      "F-S9-PR-9df7c51f12"
+    ],
     "group_id": "content/cases/The GEO Group, Inc. v. Menocal.md",
     "group_total_assertions": 5,
-    "lake_only_cases": [
-      "The GEO Group, Inc. v. Menocal"
-    ],
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-5311f986",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-5311f986.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
-    "resolution_notes": [
-      "case 'The GEO Group, Inc. v. Menocal' has no lead_opinion_id (text undisclosed)"
-    ],
-    "reviewed_count": 0,
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
     "run": "prod",
-    "text_disclosed_cases": [],
+    "text_disclosed_cases": [
+      "The GEO Group, Inc. v. Menocal"
+    ],
     "tokens": {
-      "input": 826,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 826
+      "input": 173997,
+      "output": 8525,
+      "source": "codex-events",
+      "total": 182522
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 3.4
+    "verdict_map": {
+      "477280eb1de56771": {
+        "dimension": "existence",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "703788d35447eda6": {
+        "dimension": "support",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": false
+      },
+      "780ebd162e86dc79": {
+        "dimension": "support",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "7e2d6388775d82d4": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "ab59eb743d32e5f0": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-4e77f991c3",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-ddeb962e6b",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-9df7c51f12",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 165.4
   }
 }

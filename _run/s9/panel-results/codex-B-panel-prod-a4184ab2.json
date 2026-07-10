@@ -1,0 +1,225 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "content/cases/United States v. Jones.md",
+    "lens": "B",
+    "notes": "Lens B only. Support and quote-fidelity merits were not attacked except for currency/treatment consequences visible in the disclosed files.",
+    "reviewed": [
+      {
+        "assertion_id": "ce0bfc36448f60ed",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake record is verified and identifies the case as United States v. Jones, U.S. Supreme Court, decided 2012-01-23.",
+          "Lake citations include official 565 U.S. 400, parallel 132 S. Ct. 945 and 181 L. Ed. 2d 911, and vendor-neutral 2012 U.S. LEXIS 1063.",
+          "Lake treatment judgment lists field_i_validity as good_law as of 2026-06-30."
+        ],
+        "residual_risks": [
+          "Treatment derivation contains audit-needed proposed negative edges, but the disclosed judgment field still reports good_law."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "3842e7757cf82a53",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "Under Lens B, no support or quote-fidelity defect is raised.",
+          "Currency check does not defeat the role: lake treatment says good_law as of 2026-06-30 and the case is SCOTUS authority."
+        ],
+        "residual_risks": [
+          "Substantive support for the home-role label is outside Lens B.",
+          "Treatment derivation includes proposed negative edges requiring audit before making uncaveated no-negative-treatment statements."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "c6623d8c14949f5e",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "Under Lens B, no support or quote-fidelity defect is raised.",
+          "The Trespass anchor role is not defeated by disclosed treatment: lake field_i_validity remains good_law and the authority is Supreme Court."
+        ],
+        "residual_risks": [
+          "Substantive support for the home-role label is outside Lens B.",
+          "Treatment audit flags remain unresolved in the disclosed lake derivation."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "ee5e95fe0cb2c24a",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "Under Lens B, no support or quote-fidelity defect is raised.",
+          "No disclosed treatment judgment supersedes or abrogates Jones; lake field_i_validity is good_law as of 2026-06-30."
+        ],
+        "residual_risks": [
+          "Substantive support for the CSLI/Carpenter cross-reference is outside Lens B.",
+          "The lake includes a proposed Carpenter edge labeled overruled/mentioned, so uncaveated downstream-treatment statements should be audited."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "f1e427d2cc9eba8b",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "Under Lens B, no holding-support or quote-fidelity defect is raised.",
+          "The currency component of 'controlling' survives because lake identifies Jones as a verified SCOTUS case with good_law treatment as of 2026-06-30."
+        ],
+        "residual_risks": [
+          "Substantive holding accuracy is outside Lens B.",
+          "The treatment derivation's proposed negative events leave residual audit risk for broad claims about no negative treatment."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "88b6b4925ed52e7b",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "\"audit_needed\": true, \"proposed_negative_events\": 9, \"audit_marker\": \"R15 treatment audit required\"",
+          "locator_note": "content_page.md Treatment & subsequent history; inventory locator field:treatment",
+          "needs_cl": true,
+          "problem": "The good_law treatment field matches the lake judgment, but the built page's uncaveated statement that no negative subsequent treatment was identified is too strong because the lake treatment derivation lists proposed negative events and audit-needed flags.",
+          "proposed_fix": "Keep field_i_validity: good_law as of 2026-06-30, but change the prose to say no confirmed negative treatment is reflected in the lake judgment, while proposed negative progeny edges remain audit-pending.",
+          "severity": "medium"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "Lake treatment field_i_validity is good_law as of 2026-06-30, matching the page metadata.",
+          "Lake treatment scope_note warns: Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade.",
+          "Lake derivation lists audit_needed true and proposed_negative_events in lane1_negative and lane2_top_cited, so 'No negative subsequent treatment identified' should be caveated."
+        ],
+        "residual_risks": [
+          "The proposed negative edges are not confirmed in the disclosed record, but they prevent an uncaveated no-negative-treatment claim."
+        ],
+        "suggested_tightening": "Use 'No confirmed negative subsequent treatment in the disclosed lake judgment; proposed negative edges remain audit-pending.'",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "b45a7c4087b20a4c",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Lake identity lists court as U.S. Supreme Court, court_id scotus, and court_level scotus.",
+          "For a federal search-and-seizure corpus, a SCOTUS Fourth Amendment decision supports the label Binding — SCOTUS.",
+          "No disclosed treatment judgment removes Jones from binding SCOTUS status."
+        ],
+        "residual_risks": [
+          "The treatment audit flags affect negative-treatment caveats, not the court-weight label."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"content/cases/United States v. Jones.md\",\"reviewed\":[{\"assertion_id\":\"ce0bfc36448f60ed\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake record is verified and identifies the case as United States v. Jones, U.S. Supreme Court, decided 2012-01-23.\",\"Lake citations include official 565 U.S. 400, parallel 132 S. Ct. 945 and 181 L. Ed. 2d 911, and vendor-neutral 2012 U.S. LEXIS 1063.\",\"Lake treatment judgment lists field_i_validity as good_law as of 2026-06-30.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment derivation contains audit-needed proposed negative edges, but the disclosed judgment field still reports good_law.\"],\"suggested_tightening\":null},{\"assertion_id\":\"3842e7757cf82a53\",\"dimension\":\"support\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Under Lens B, no support or quote-fidelity defect is raised.\",\"Currency check does not defeat the role: lake treatment says good_law as of 2026-06-30 and the case is SCOTUS authority.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Substantive support for the home-role label is outside Lens B.\",\"Treatment derivation includes proposed negative edges requiring audit before making uncaveated no-negative-treatment statements.\"],\"suggested_tightening\":null},{\"assertion_id\":\"c6623d8c14949f5e\",\"dimension\":\"support\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Under Lens B, no support or quote-fidelity defect is raised.\",\"The Trespass anchor role is not defeated by disclosed treatment: lake field_i_validity remains good_law and the authority is Supreme Court.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Substantive support for the home-role label is outside Lens B.\",\"Treatment audit flags remain unresolved in the disclosed lake derivation.\"],\"suggested_tightening\":null},{\"assertion_id\":\"ee5e95fe0cb2c24a\",\"dimension\":\"support\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Under Lens B, no support or quote-fidelity defect is raised.\",\"No disclosed treatment judgment supersedes or abrogates Jones; lake field_i_validity is good_law as of 2026-06-30.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Substantive support for the CSLI/Carpenter cross-reference is outside Lens B.\",\"The lake includes a proposed Carpenter edge labeled overruled/mentioned, so uncaveated downstream-treatment statements should be audited.\"],\"suggested_tightening\":null},{\"assertion_id\":\"f1e427d2cc9eba8b\",\"dimension\":\"support\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Under Lens B, no holding-support or quote-fidelity defect is raised.\",\"The currency component of 'controlling' survives because lake identifies Jones as a verified SCOTUS case with good_law treatment as of 2026-06-30.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Substantive holding accuracy is outside Lens B.\",\"The treatment derivation's proposed negative events leave residual audit risk for broad claims about no negative treatment.\"],\"suggested_tightening\":null},{\"assertion_id\":\"88b6b4925ed52e7b\",\"dimension\":\"treatment\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The good_law treatment field matches the lake judgment, but the built page's uncaveated statement that no negative subsequent treatment was identified is too strong because the lake treatment derivation lists proposed negative events and audit-needed flags.\",\"severity\":\"medium\",\"proposed_fix\":\"Keep field_i_validity: good_law as of 2026-06-30, but change the prose to say no confirmed negative treatment is reflected in the lake judgment, while proposed negative progeny edges remain audit-pending.\",\"evidence_quote\":\"\\\"audit_needed\\\": true, \\\"proposed_negative_events\\\": 9, \\\"audit_marker\\\": \\\"R15 treatment audit required\\\"\",\"needs_cl\":true,\"locator_note\":\"content_page.md Treatment & subsequent history; inventory locator field:treatment\"},\"reasons\":[\"Lake treatment field_i_validity is good_law as of 2026-06-30, matching the page metadata.\",\"Lake treatment scope_note warns: Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade.\",\"Lake derivation lists audit_needed true and proposed_negative_events in lane1_negative and lane2_top_cited, so 'No negative subsequent treatment identified' should be caveated.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The proposed negative edges are not confirmed in the disclosed record, but they prevent an uncaveated no-negative-treatment claim.\"],\"suggested_tightening\":\"Use 'No confirmed negative subsequent treatment in the disclosed lake judgment; proposed negative edges remain audit-pending.'\"},{\"assertion_id\":\"b45a7c4087b20a4c\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity lists court as U.S. Supreme Court, court_id scotus, and court_level scotus.\",\"For a federal search-and-seizure corpus, a SCOTUS Fourth Amendment decision supports the label Binding — SCOTUS.\",\"No disclosed treatment judgment removes Jones from binding SCOTUS status.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The treatment audit flags affect negative-treatment caveats, not the court-weight label.\"],\"suggested_tightening\":null}],\"notes\":\"Lens B only. Support and quote-fidelity merits were not attacked except for currency/treatment consequences visible in the disclosed files.\"}",
+  "summary": {
+    "at": "2026-07-10T00:49:34-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-e23ca05122"
+    ],
+    "group_id": "content/cases/United States v. Jones.md",
+    "group_total_assertions": 7,
+    "lake_only_cases": [],
+    "lane": "codex-B",
+    "lane_id": "codex-B-panel-prod-a4184ab2",
+    "lens": "B",
+    "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-a4184ab2.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 7,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "United States v. Jones"
+    ],
+    "tokens": {
+      "input": 133246,
+      "output": 6879,
+      "source": "codex-events",
+      "total": 140125
+    },
+    "verdict_map": {
+      "3842e7757cf82a53": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "88b6b4925ed52e7b": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "b45a7c4087b20a4c": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "c6623d8c14949f5e": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "ce0bfc36448f60ed": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "ee5e95fe0cb2c24a": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "f1e427d2cc9eba8b": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-e23ca05122",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 132.7
+  }
+}

@@ -1,13 +1,91 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/United States v. Agurs.json",
+    "lens": "A",
+    "notes": "Lens A reviewed existence and quote fidelity/pin support from the disclosed files only; the treatment row is recorded without a Lens A treatment finding.",
+    "reviewed": [
+      {
+        "assertion_id": "84bab3d156b9e980",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity record is verified for United States v. Agurs, U.S. Supreme Court, decided 1976-06-24, docket 75-491.",
+          "Lake citations select 427 U.S. 97 as the official citation and list the same parallel and vendor citations shown in the assertion.",
+          "Cached opinion text header confirms 427 U.S. 97 (1976), Supreme Court of United States, Decided June 24, 1976."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "98e168317d8f568f",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The quoted sentence appears verbatim in text/United States v. Agurs__5e917f.txt at the star-page 112 passage.",
+          "Lake pinpoints[id=pin-112] records quote_fidelity as matched, pinpoint_status as star-verified, and star_marker as 112.",
+          "The content-page link and quoted language correspond to 427 U.S. at 112."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "fabaedc07c8f6314",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "the prosecutor will not have violated his constitutional duty of disclosure unless his omission is of sufficient significance to result in the denial of the defendant's right to a fair trial.",
+          "locator_note": "lake pinpoints[id=pin-108]; content_page.md ^pin-108; text/United States v. Agurs__5e917f.txt star-page *108",
+          "needs_cl": false,
+          "problem": "The lake/inventory quote for pin-108 is not an opinion quote. It is a harvested chunk of the built content page beginning with the page title and background material, while the actual 427 U.S. at 108 quote is a separate sentence in the opinion text.",
+          "proposed_fix": "Replace lake pinpoints[id=pin-108].quote with the actual quoted sentence from the opinion, set star_marker to 108, and mark quote_fidelity matched only after validating against the cached opinion text.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Lake pinpoints[id=pin-108] has quote_fidelity='mismatch', pinpoint_status='slip-only', star_marker=null, and position=null.",
+          "The stored quote starts with built-page markdown rather than the opinion text, so the assertion as framed is not character-faithful to the authority.",
+          "The correct content-page quotation is verifiable at star page *108 in the cached opinion text, but that is not the quote stored in the reviewed pin-108 payload."
+        ],
+        "residual_risks": [
+          "The visible content_page.md quote at ^pin-108 is itself supported by the cached opinion text; the defect is the lake/inventory pinpoint record."
+        ],
+        "suggested_tightening": "Reject quote_pinpoint records whose quote_fidelity is mismatch, whose quote begins with page markdown/frontmatter, or whose cited U.S. page lacks a validated star_marker.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "3aab2c1c48a76740",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A; no substantive treatment finding is raised.",
+          "The assertion payload matches the lake treatment fields: field_i_validity caution, as_of_content 1976-06-24, as_of_treatment 2026-06-30, varies_by_point true, and the same scope_note."
+        ],
+        "residual_risks": [
+          "Substantive treatment and currency review is reserved for Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/United States v. Agurs.json\",\"reviewed\":[{\"assertion_id\":\"84bab3d156b9e980\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity record is verified for United States v. Agurs, U.S. Supreme Court, decided 1976-06-24, docket 75-491.\",\"Lake citations select 427 U.S. 97 as the official citation and list the same parallel and vendor citations shown in the assertion.\",\"Cached opinion text header confirms 427 U.S. 97 (1976), Supreme Court of United States, Decided June 24, 1976.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"98e168317d8f568f\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The quoted sentence appears verbatim in text/United States v. Agurs__5e917f.txt at the star-page 112 passage.\",\"Lake pinpoints[id=pin-112] records quote_fidelity as matched, pinpoint_status as star-verified, and star_marker as 112.\",\"The content-page link and quoted language correspond to 427 U.S. at 112.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"fabaedc07c8f6314\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The lake/inventory quote for pin-108 is not an opinion quote. It is a harvested chunk of the built content page beginning with the page title and background material, while the actual 427 U.S. at 108 quote is a separate sentence in the opinion text.\",\"severity\":\"high\",\"proposed_fix\":\"Replace lake pinpoints[id=pin-108].quote with the actual quoted sentence from the opinion, set star_marker to 108, and mark quote_fidelity matched only after validating against the cached opinion text.\",\"evidence_quote\":\"the prosecutor will not have violated his constitutional duty of disclosure unless his omission is of sufficient significance to result in the denial of the defendant's right to a fair trial.\",\"needs_cl\":false,\"locator_note\":\"lake pinpoints[id=pin-108]; content_page.md ^pin-108; text/United States v. Agurs__5e917f.txt star-page *108\"},\"reasons\":[\"Lake pinpoints[id=pin-108] has quote_fidelity='mismatch', pinpoint_status='slip-only', star_marker=null, and position=null.\",\"The stored quote starts with built-page markdown rather than the opinion text, so the assertion as framed is not character-faithful to the authority.\",\"The correct content-page quotation is verifiable at star page *108 in the cached opinion text, but that is not the quote stored in the reviewed pin-108 payload.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The visible content_page.md quote at ^pin-108 is itself supported by the cached opinion text; the defect is the lake/inventory pinpoint record.\"],\"suggested_tightening\":\"Reject quote_pinpoint records whose quote_fidelity is mismatch, whose quote begins with page markdown/frontmatter, or whose cited U.S. page lacks a validated star_marker.\"},{\"assertion_id\":\"3aab2c1c48a76740\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside Lens A; no substantive treatment finding is raised.\",\"The assertion payload matches the lake treatment fields: field_i_validity caution, as_of_content 1976-06-24, as_of_treatment 2026-06-30, varies_by_point true, and the same scope_note.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Substantive treatment and currency review is reserved for Lens B.\"],\"suggested_tightening\":null}],\"notes\":\"Lens A reviewed existence and quote fidelity/pin support from the disclosed files only; the treatment row is recorded without a Lens A treatment finding.\"}",
   "summary": {
-    "at": "2026-07-09T23:15:31-04:00",
-    "attempts": 2,
+    "at": "2026-07-10T17:27:26-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-ff655ddce8"
+    ],
     "group_id": "_overhaul2/lake/cases/United States v. Agurs.json",
     "group_total_assertions": 4,
     "lake_only_cases": [],
@@ -16,21 +94,55 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-91e9b8df.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 4,
     "run": "prod",
     "text_disclosed_cases": [
       "United States v. Agurs"
     ],
     "tokens": {
-      "input": 827,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 827
+      "input": 415682,
+      "output": 6025,
+      "source": "codex-events",
+      "total": 421707
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 7.1
+    "verdict_map": {
+      "3aab2c1c48a76740": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "84bab3d156b9e980": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "98e168317d8f568f": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "fabaedc07c8f6314": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-ff655ddce8",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 122.5
   }
 }

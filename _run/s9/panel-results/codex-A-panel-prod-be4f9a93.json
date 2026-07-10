@@ -1,11 +1,33 @@
 {
-  "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/United States v. Porter.json",
+    "lens": "A",
+    "notes": "Only one assertion appeared in group_inventory.jsonl, and it was reviewed exactly once.",
+    "reviewed": [
+      {
+        "assertion_id": "7f9c428dfe348b84",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A, so I raise no treatment finding.",
+          "The inventory treatment payload matches the disclosed lake record: field_i_validity is unverified, as_of_content and as_of_treatment are null, varies_by_point is false, and the frontier-stub scope note is the same."
+        ],
+        "residual_risks": [
+          "Lens A did not assess treatment accuracy or citator currency; Lens B owns that review."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/United States v. Porter.json\",\"reviewed\":[{\"assertion_id\":\"7f9c428dfe348b84\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside Lens A, so I raise no treatment finding.\",\"The inventory treatment payload matches the disclosed lake record: field_i_validity is unverified, as_of_content and as_of_treatment are null, varies_by_point is false, and the frontier-stub scope note is the same.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Lens A did not assess treatment accuracy or citator currency; Lens B owns that review.\"],\"suggested_tightening\":null}],\"notes\":\"Only one assertion appeared in group_inventory.jsonl, and it was reviewed exactly once.\"}",
   "summary": {
-    "at": "2026-07-09T23:07:22-04:00",
-    "attempts": 2,
-    "clean_attestation": false,
+    "at": "2026-07-10T16:48:52-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
     "defense_votes": [],
     "findings_emitted": [],
     "group_id": "_overhaul2/lake/cases/United States v. Porter.json",
@@ -18,21 +40,29 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-be4f9a93.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [
       "case 'United States v. Porter' has no lead_opinion_id (text undisclosed)"
     ],
-    "reviewed_count": 0,
+    "reviewed_count": 1,
     "run": "prod",
     "text_disclosed_cases": [],
     "tokens": {
-      "input": 827,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 827
+      "input": 77084,
+      "output": 1658,
+      "source": "codex-events",
+      "total": 78742
     },
-    "verdict_map": {},
+    "verdict_map": {
+      "7f9c428dfe348b84": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
     "votes_emitted": [],
-    "wall_clock_s": 8.1
+    "wall_clock_s": 38.3
   }
 }

@@ -1,13 +1,127 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "content/cases/Carter v. United States.md",
+    "lens": "A",
+    "notes": "No cached opinion text was disclosed and the lake pinpoints are empty, so Lens A support checks defaulted to refuted for the support assertions.",
+    "reviewed": [
+      {
+        "assertion_id": "a6bd65ef3adb11c6",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "\"official\": null",
+          "locator_note": "citation",
+          "needs_cl": false,
+          "problem": "The lake record confirms the case identity, docket, court, and year, but the asserted citation is not exact and the payload says an official citation is present. The lake has no official/display citation and treats the case as slip-only.",
+          "proposed_fix": "Set official_citation_present=false and use a lake-supported slip citation such as No. 23-CF-0388 (D.C. 2025-08-28) or slip No. 23-CF-0388; avoid the lowercase '(dc 2025)' form.",
+          "severity": "medium"
+        },
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity matches title Carter v. United States, docket 23-CF-0388, court D.C. 2025, and year 2025.",
+          "Lake citations.display is null, citations.official is null, and citations.slip_only is true; payload says official_citation_present is true.",
+          "Lake slip-only provenance gives cited legs as No. 23-CF-0388 (D.C. 2025-08-28) and slip No. 23-CF-0388, not No. 23-CF-0388, slip op. (dc 2025)."
+        ],
+        "residual_risks": [
+          "The page header's fuller display citation may be conventional, but the inventory payload is not exactly supported by the lake citation fields."
+        ],
+        "suggested_tightening": "Use the date-specific D.C. slip citation and remove any official-citation flag until an official reporter cite is in the lake record.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "56eef20fc28ed07a",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "\"pinpoints\": []",
+          "locator_note": "home: Seizure of the Person",
+          "needs_cl": true,
+          "problem": "No disclosed opinion text, lake holding, or lake pinpoint supports assigning Carter a Key role under Seizure of the Person.",
+          "proposed_fix": "Add cached opinion text or lake holding/pinpoints showing that Carter materially supports the Seizure of the Person home role, or downgrade/remove the Key role until verified.",
+          "severity": "high"
+        },
+        "dimension": "support",
+        "reasons": [
+          "The row asserts a Key home role, but the lake record has empty pinpoints and no disclosed holding field.",
+          "No text/<case>.txt file is present to verify the opinion's holding or breadth.",
+          "The content page's own statements cannot independently support the assertion under review."
+        ],
+        "residual_risks": [
+          "The missing full opinion may support the role, but that support is not disclosed here."
+        ],
+        "suggested_tightening": "Require a pinpointed role rationale before labeling the case Key.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": false
+      },
+      {
+        "assertion_id": "85dbbecaa76000e8",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "frontier stub, no pinpoints",
+          "locator_note": "holding",
+          "needs_cl": true,
+          "problem": "The broad holding cannot be verified from disclosed evidence because there is no opinion text, lake holding, or pinpoint quote supporting the seizure timing, race-aware objective inquiry, lack of reasonable suspicion, and suppression-fruits conclusions.",
+          "proposed_fix": "Supply text/Carter v. United States.txt or populate lake holding/pinpoints, then restate the holding only at the breadth supported by those materials.",
+          "severity": "high"
+        },
+        "dimension": "support",
+        "reasons": [
+          "The lake record is an identity/frontier stub with empty pinpoints and no holding text.",
+          "No cached full opinion text is disclosed, so the asserted holding and page quote/pincite cannot be checked.",
+          "Defaulting to refuted is required because support is uncertain from the disclosed record."
+        ],
+        "residual_risks": [
+          "The opinion may ultimately support some or all of the stated holding, but the disclosed record does not verify it."
+        ],
+        "suggested_tightening": "Until opinion text is disclosed, replace the holding with an explicitly unverified frontier-stub note or remove the substantive holding.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": false
+      },
+      {
+        "assertion_id": "d57014c85f9ebe41",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A, so no treatment finding is raised.",
+          "The label appears in the content page, and the lake identity records court_level as state."
+        ],
+        "residual_risks": [
+          "Lens B should decide whether the persuasive/illustrative weight label is current and correctly classified.",
+          "The lake record does not contain a dedicated authority_weight field."
+        ],
+        "suggested_tightening": "Add authority_weight provenance to the lake record if this label is meant to be independently verified.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "e27ad88e377fbf66",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A, so no treatment finding is raised.",
+          "The payload treatment fields match lake.treatment: field_i_validity unverified, null as-of dates, composite_basis unverified, varies_by_point false, matching scope_note, and empty point_overrides."
+        ],
+        "residual_risks": [
+          "Lens B owns whether the unverified treatment status is acceptable and current."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"content/cases/Carter v. United States.md\",\"reviewed\":[{\"assertion_id\":\"a6bd65ef3adb11c6\",\"dimension\":\"existence\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The lake record confirms the case identity, docket, court, and year, but the asserted citation is not exact and the payload says an official citation is present. The lake has no official/display citation and treats the case as slip-only.\",\"severity\":\"medium\",\"proposed_fix\":\"Set official_citation_present=false and use a lake-supported slip citation such as No. 23-CF-0388 (D.C. 2025-08-28) or slip No. 23-CF-0388; avoid the lowercase '(dc 2025)' form.\",\"evidence_quote\":\"\\\"official\\\": null\",\"needs_cl\":false,\"locator_note\":\"citation\"},\"reasons\":[\"Lake identity matches title Carter v. United States, docket 23-CF-0388, court D.C. 2025, and year 2025.\",\"Lake citations.display is null, citations.official is null, and citations.slip_only is true; payload says official_citation_present is true.\",\"Lake slip-only provenance gives cited legs as No. 23-CF-0388 (D.C. 2025-08-28) and slip No. 23-CF-0388, not No. 23-CF-0388, slip op. (dc 2025).\"],\"breaks_true_positives\":true,\"residual_risks\":[\"The page header's fuller display citation may be conventional, but the inventory payload is not exactly supported by the lake citation fields.\"],\"suggested_tightening\":\"Use the date-specific D.C. slip citation and remove any official-citation flag until an official reporter cite is in the lake record.\"},{\"assertion_id\":\"56eef20fc28ed07a\",\"dimension\":\"support\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":false,\"defect\":{\"problem\":\"No disclosed opinion text, lake holding, or lake pinpoint supports assigning Carter a Key role under Seizure of the Person.\",\"severity\":\"high\",\"proposed_fix\":\"Add cached opinion text or lake holding/pinpoints showing that Carter materially supports the Seizure of the Person home role, or downgrade/remove the Key role until verified.\",\"evidence_quote\":\"\\\"pinpoints\\\": []\",\"needs_cl\":true,\"locator_note\":\"home: Seizure of the Person\"},\"reasons\":[\"The row asserts a Key home role, but the lake record has empty pinpoints and no disclosed holding field.\",\"No text/<case>.txt file is present to verify the opinion's holding or breadth.\",\"The content page's own statements cannot independently support the assertion under review.\"],\"breaks_true_positives\":true,\"residual_risks\":[\"The missing full opinion may support the role, but that support is not disclosed here.\"],\"suggested_tightening\":\"Require a pinpointed role rationale before labeling the case Key.\"},{\"assertion_id\":\"85dbbecaa76000e8\",\"dimension\":\"support\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":false,\"defect\":{\"problem\":\"The broad holding cannot be verified from disclosed evidence because there is no opinion text, lake holding, or pinpoint quote supporting the seizure timing, race-aware objective inquiry, lack of reasonable suspicion, and suppression-fruits conclusions.\",\"severity\":\"high\",\"proposed_fix\":\"Supply text/Carter v. United States.txt or populate lake holding/pinpoints, then restate the holding only at the breadth supported by those materials.\",\"evidence_quote\":\"frontier stub, no pinpoints\",\"needs_cl\":true,\"locator_note\":\"holding\"},\"reasons\":[\"The lake record is an identity/frontier stub with empty pinpoints and no holding text.\",\"No cached full opinion text is disclosed, so the asserted holding and page quote/pincite cannot be checked.\",\"Defaulting to refuted is required because support is uncertain from the disclosed record.\"],\"breaks_true_positives\":true,\"residual_risks\":[\"The opinion may ultimately support some or all of the stated holding, but the disclosed record does not verify it.\"],\"suggested_tightening\":\"Until opinion text is disclosed, replace the holding with an explicitly unverified frontier-stub note or remove the substantive holding.\"},{\"assertion_id\":\"d57014c85f9ebe41\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside Lens A, so no treatment finding is raised.\",\"The label appears in the content page, and the lake identity records court_level as state.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Lens B should decide whether the persuasive/illustrative weight label is current and correctly classified.\",\"The lake record does not contain a dedicated authority_weight field.\"],\"suggested_tightening\":\"Add authority_weight provenance to the lake record if this label is meant to be independently verified.\"},{\"assertion_id\":\"e27ad88e377fbf66\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside Lens A, so no treatment finding is raised.\",\"The payload treatment fields match lake.treatment: field_i_validity unverified, null as-of dates, composite_basis unverified, varies_by_point false, matching scope_note, and empty point_overrides.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Lens B owns whether the unverified treatment status is acceptable and current.\"],\"suggested_tightening\":null}],\"notes\":\"No cached opinion text was disclosed and the lake pinpoints are empty, so Lens A support checks defaulted to refuted for the support assertions.\"}",
   "summary": {
-    "at": "2026-07-09T23:10:06-04:00",
-    "attempts": 2,
+    "at": "2026-07-10T16:55:18-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-00eacd97a3",
+      "F-S9-PR-8795fcdcb5"
+    ],
     "group_id": "content/cases/Carter v. United States.md",
     "group_total_assertions": 5,
     "lake_only_cases": [
@@ -18,21 +132,70 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-a0e5328b.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [
       "case 'Carter v. United States' has no lead_opinion_id (text undisclosed)"
     ],
-    "reviewed_count": 0,
+    "reviewed_count": 5,
     "run": "prod",
     "text_disclosed_cases": [],
     "tokens": {
-      "input": 825,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 825
+      "input": 90178,
+      "output": 7851,
+      "source": "codex-events",
+      "total": 98029
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 3.6
+    "verdict_map": {
+      "56eef20fc28ed07a": {
+        "dimension": "support",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": false
+      },
+      "85dbbecaa76000e8": {
+        "dimension": "support",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": false
+      },
+      "a6bd65ef3adb11c6": {
+        "dimension": "existence",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "d57014c85f9ebe41": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "e27ad88e377fbf66": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-a596cf2c08",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-00eacd97a3",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-8795fcdcb5",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 148.9
   }
 }

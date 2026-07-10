@@ -1,13 +1,98 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Berger v. New York.json",
+    "lens": "A",
+    "notes": "Treatment row recorded only; Lens A findings are limited to existence and quote fidelity from disclosed files.",
+    "reviewed": [
+      {
+        "assertion_id": "41cb84e01de71f09",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record is Berger v. New York, U.S. Supreme Court, decided 1967-06-12, year 1967.",
+          "The lake official citation is 388 U.S. 41, and the content page displays 388 U.S. 41 (1967) with matching parallel citations."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "1ebfc4296becd9ed",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "We have concluded that the language of New York’s statute is too broad in its sweep resulting in a trespassory intrusion into a constitutionally protected area and is, therefore, violative of the Fourth and Fourteenth Amendments.",
+          "locator_note": "text/Berger v. New York__9b1be2.txt line 4 contains page label 44 and the actual source sentence; content_page.md line 57 displays that sentence, but the inventory/lake pin text does not.",
+          "needs_cl": false,
+          "problem": "The pin-44 payload/lake pinpoint quote is not a character-faithful opinion quote; it appears to splice content-page prose and headings rather than the page-44 source sentence.",
+          "proposed_fix": "Replace pin-44 with the actual page-44 opinion sentence, preserving source punctuation, or remove the quote until it can be regenerated from the opinion text.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload begins with content-page background prose: \"might be obtained, authorizing 60-day installation...\" and includes markdown headings, which are not opinion text.",
+          "The cited source passage at page 44 is the Court's \"We have concluded...\" sentence."
+        ],
+        "residual_risks": [
+          "The visible content-page rule quote is source-supported if corrected to the opinion's punctuation; the stored pinpoint payload is the broken artifact."
+        ],
+        "suggested_tightening": "Regenerate pin-44 directly from the opinion text and store the page label 44 position.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "3bf270bdc7808ebe",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "New York’s statute lacks this particularization. It merely says that a warrant may issue on reasonable",
+          "locator_note": "text/Berger v. New York__9b1be2.txt line 30; the page label 56 appears inside the quote after the word \"reasonable.\"",
+          "needs_cl": false,
+          "problem": "The quoted words track the source passage, but the supposed verbatim quote is not character-faithful: the source uses curly apostrophes and curly quotation marks, while the payload/content quote uses straight punctuation.",
+          "proposed_fix": "Restore the source punctuation and consider citing the quote as 388 U.S. at 55-56 because the quoted sentence begins before the page-56 marker.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The source text uses \"New York’s\" while the payload uses \"New York's.\"",
+          "The source text uses curly quotation marks around \"the place to be searched\" and \"the persons or things to be seized\"; the payload uses straight single quotation marks."
+        ],
+        "residual_risks": [
+          "The pin cites page 56, but the quote starts on the preceding page and crosses into page 56."
+        ],
+        "suggested_tightening": "Use exact source typography and, if the full sentence remains quoted, pin it to 55-56 rather than 56 alone.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "8e6742f88d2fbe6b",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A; no treatment finding is raised here.",
+          "The payload mirrors the disclosed lake treatment fields: field_i_validity good_law, as_of_content 1967-06-12, as_of_treatment 2026-06-30, varies_by_point false."
+        ],
+        "residual_risks": [
+          "No independent treatment/currency audit performed under Lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Berger v. New York.json\",\"reviewed\":[{\"assertion_id\":\"41cb84e01de71f09\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake identity record is Berger v. New York, U.S. Supreme Court, decided 1967-06-12, year 1967.\",\"The lake official citation is 388 U.S. 41, and the content page displays 388 U.S. 41 (1967) with matching parallel citations.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"1ebfc4296becd9ed\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The pin-44 payload/lake pinpoint quote is not a character-faithful opinion quote; it appears to splice content-page prose and headings rather than the page-44 source sentence.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-44 with the actual page-44 opinion sentence, preserving source punctuation, or remove the quote until it can be regenerated from the opinion text.\",\"evidence_quote\":\"We have concluded that the language of New York’s statute is too broad in its sweep resulting in a trespassory intrusion into a constitutionally protected area and is, therefore, violative of the Fourth and Fourteenth Amendments.\",\"needs_cl\":false,\"locator_note\":\"text/Berger v. New York__9b1be2.txt line 4 contains page label 44 and the actual source sentence; content_page.md line 57 displays that sentence, but the inventory/lake pin text does not.\"},\"reasons\":[\"The payload begins with content-page background prose: \\\"might be obtained, authorizing 60-day installation...\\\" and includes markdown headings, which are not opinion text.\",\"The cited source passage at page 44 is the Court's \\\"We have concluded...\\\" sentence.\"],\"breaks_true_positives\":true,\"residual_risks\":[\"The visible content-page rule quote is source-supported if corrected to the opinion's punctuation; the stored pinpoint payload is the broken artifact.\"],\"suggested_tightening\":\"Regenerate pin-44 directly from the opinion text and store the page label 44 position.\"},{\"assertion_id\":\"3bf270bdc7808ebe\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The quoted words track the source passage, but the supposed verbatim quote is not character-faithful: the source uses curly apostrophes and curly quotation marks, while the payload/content quote uses straight punctuation.\",\"severity\":\"low\",\"proposed_fix\":\"Restore the source punctuation and consider citing the quote as 388 U.S. at 55-56 because the quoted sentence begins before the page-56 marker.\",\"evidence_quote\":\"New York’s statute lacks this particularization. It merely says that a warrant may issue on reasonable\",\"needs_cl\":false,\"locator_note\":\"text/Berger v. New York__9b1be2.txt line 30; the page label 56 appears inside the quote after the word \\\"reasonable.\\\"\"},\"reasons\":[\"The source text uses \\\"New York’s\\\" while the payload uses \\\"New York's.\\\"\",\"The source text uses curly quotation marks around \\\"the place to be searched\\\" and \\\"the persons or things to be seized\\\"; the payload uses straight single quotation marks.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The pin cites page 56, but the quote starts on the preceding page and crosses into page 56.\"],\"suggested_tightening\":\"Use exact source typography and, if the full sentence remains quoted, pin it to 55-56 rather than 56 alone.\"},{\"assertion_id\":\"8e6742f88d2fbe6b\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside Lens A; no treatment finding is raised here.\",\"The payload mirrors the disclosed lake treatment fields: field_i_validity good_law, as_of_content 1967-06-12, as_of_treatment 2026-06-30, varies_by_point false.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"No independent treatment/currency audit performed under Lens A.\"],\"suggested_tightening\":null}],\"notes\":\"Treatment row recorded only; Lens A findings are limited to existence and quote fidelity from disclosed files.\"}",
   "summary": {
-    "at": "2026-07-09T23:17:14-04:00",
-    "attempts": 2,
+    "at": "2026-07-10T17:42:49-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-dc1c442576",
+      "F-S9-PR-204293aa1f"
+    ],
     "group_id": "_overhaul2/lake/cases/Berger v. New York.json",
     "group_total_assertions": 4,
     "lake_only_cases": [],
@@ -16,21 +101,59 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-cd7037f2.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 4,
     "run": "prod",
     "text_disclosed_cases": [
       "Berger v. New York"
     ],
     "tokens": {
-      "input": 826,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 826
+      "input": 182572,
+      "output": 7718,
+      "source": "codex-events",
+      "total": 190290
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 3.1
+    "verdict_map": {
+      "1ebfc4296becd9ed": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "3bf270bdc7808ebe": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "41cb84e01de71f09": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "8e6742f88d2fbe6b": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-dc1c442576",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-204293aa1f",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 147.8
   }
 }

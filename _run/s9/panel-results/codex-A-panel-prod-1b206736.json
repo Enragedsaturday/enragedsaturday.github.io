@@ -1,13 +1,95 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Birchfield v. North Dakota.json",
+    "lens": "A",
+    "notes": "Reviewed all 4 rows in group_inventory.jsonl. Lens A did not perform treatment/currency review beyond disclosed-field consistency.",
+    "reviewed": [
+      {
+        "assertion_id": "06b0bd0f4c416bd8",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record is verified and identifies the case as U.S. Supreme Court, decided 2016-06-23, year 2016.",
+          "The official citation in the lake record is 579 U.S. 438, with parallel citations 195 L. Ed. 2d 560 and 136 S. Ct. 2160, matching the content page."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "95634e80873e19ea",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "There must be a limit to the consequences to which motor­\nists may be deemed to have consented by virtue of a deci­\nsion to drive on public roads.",
+          "locator_note": "pin-2185a; cached opinion text around slip page 36",
+          "needs_cl": false,
+          "problem": "The quoted passage is substantively present, and it matches the lake pinpoints[].quote, but it is not strictly character-faithful to the cached text because the text cache contains PDF line breaks and soft-hyphen word breaks.",
+          "proposed_fix": "Either mark this as a normalized quotation and clear the mismatch only under an explicit normalization policy, or store the exact cached-text characters for strict quote fidelity.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The lake quote for pin-2185a matches the payload quote exactly.",
+          "The cached opinion text contains the same passage in the implied-consent section, but with source line wrapping and soft hyphenation."
+        ],
+        "residual_risks": [
+          "The cached text has no independently verifiable S. Ct. page marker for 2185-2186."
+        ],
+        "suggested_tightening": "Add an explicit quote-normalization rule for PDF line breaks and soft hyphens.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "fbc6d37a54783b5c",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "Because breath tests are significantly less intrusive\nthan blood tests and in most cases amply serve law en­\nforcement interests, we conclude that a breath test, but\nnot a blood test, may be administered as a search incident",
+          "locator_note": "pin-2185; cached opinion text around slip page 35",
+          "needs_cl": false,
+          "problem": "The stored quote for pin-2185 is not an opinion quotation. It is page/front-matter and summary prose harvested from the content page, while the actual Birchfield passage begins with the breath-test holding language.",
+          "proposed_fix": "Replace pin-2185's quote with the actual opinion passage beginning 'Because breath tests are significantly less intrusive...' and rerun quote-fidelity validation.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The lake record itself labels pin-2185 quote_fidelity as mismatch.",
+          "The payload quote begins with content-page material ('--- # Birchfield v. North Dakota') rather than the cached opinion text at the claimed holding passage."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Make the quote harvester anchor on the actual quoted span after the caret pin, not on preceding page text.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "b343af200808f394",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside lens A; as a field-consistency check only, the payload matches the lake treatment fields for field_i_validity, as_of dates, varies_by_point, and scope note."
+        ],
+        "residual_risks": [
+          "No treatment/currency merits review was performed under lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Birchfield v. North Dakota.json\",\"reviewed\":[{\"assertion_id\":\"06b0bd0f4c416bd8\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record is verified and identifies the case as U.S. Supreme Court, decided 2016-06-23, year 2016.\",\"The official citation in the lake record is 579 U.S. 438, with parallel citations 195 L. Ed. 2d 560 and 136 S. Ct. 2160, matching the content page.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"95634e80873e19ea\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The quoted passage is substantively present, and it matches the lake pinpoints[].quote, but it is not strictly character-faithful to the cached text because the text cache contains PDF line breaks and soft-hyphen word breaks.\",\"severity\":\"low\",\"proposed_fix\":\"Either mark this as a normalized quotation and clear the mismatch only under an explicit normalization policy, or store the exact cached-text characters for strict quote fidelity.\",\"evidence_quote\":\"There must be a limit to the consequences to which motor­\\nists may be deemed to have consented by virtue of a deci­\\nsion to drive on public roads.\",\"needs_cl\":false,\"locator_note\":\"pin-2185a; cached opinion text around slip page 36\"},\"reasons\":[\"The lake quote for pin-2185a matches the payload quote exactly.\",\"The cached opinion text contains the same passage in the implied-consent section, but with source line wrapping and soft hyphenation.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The cached text has no independently verifiable S. Ct. page marker for 2185-2186.\"],\"suggested_tightening\":\"Add an explicit quote-normalization rule for PDF line breaks and soft hyphens.\"},{\"assertion_id\":\"fbc6d37a54783b5c\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The stored quote for pin-2185 is not an opinion quotation. It is page/front-matter and summary prose harvested from the content page, while the actual Birchfield passage begins with the breath-test holding language.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-2185's quote with the actual opinion passage beginning 'Because breath tests are significantly less intrusive...' and rerun quote-fidelity validation.\",\"evidence_quote\":\"Because breath tests are significantly less intrusive\\nthan blood tests and in most cases amply serve law en­\\nforcement interests, we conclude that a breath test, but\\nnot a blood test, may be administered as a search incident\",\"needs_cl\":false,\"locator_note\":\"pin-2185; cached opinion text around slip page 35\"},\"reasons\":[\"The lake record itself labels pin-2185 quote_fidelity as mismatch.\",\"The payload quote begins with content-page material ('--- # Birchfield v. North Dakota') rather than the cached opinion text at the claimed holding passage.\"],\"breaks_true_positives\":true,\"residual_risks\":[],\"suggested_tightening\":\"Make the quote harvester anchor on the actual quoted span after the caret pin, not on preceding page text.\"},{\"assertion_id\":\"b343af200808f394\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside lens A; as a field-consistency check only, the payload matches the lake treatment fields for field_i_validity, as_of dates, varies_by_point, and scope note.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"No treatment/currency merits review was performed under lens A.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed all 4 rows in group_inventory.jsonl. Lens A did not perform treatment/currency review beyond disclosed-field consistency.\"}",
   "summary": {
-    "at": "2026-07-09T23:17:16-04:00",
-    "attempts": 2,
+    "at": "2026-07-10T17:45:20-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-55cf7a4c82",
+      "F-S9-PR-e8c23f15f3"
+    ],
     "group_id": "_overhaul2/lake/cases/Birchfield v. North Dakota.json",
     "group_total_assertions": 4,
     "lake_only_cases": [],
@@ -16,21 +98,59 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-1b206736.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 4,
     "run": "prod",
     "text_disclosed_cases": [
       "Birchfield v. North Dakota"
     ],
     "tokens": {
-      "input": 828,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 828
+      "input": 390698,
+      "output": 12349,
+      "source": "codex-events",
+      "total": 403047
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 3.1
+    "verdict_map": {
+      "06b0bd0f4c416bd8": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "95634e80873e19ea": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "b343af200808f394": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "fbc6d37a54783b5c": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-55cf7a4c82",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-e8c23f15f3",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 256.7
   }
 }

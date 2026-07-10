@@ -1,13 +1,81 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Carroll v. United States.json",
+    "lens": "A",
+    "notes": "No support, pincite, or black_letter rows were present in group_inventory.jsonl.",
+    "reviewed": [
+      {
+        "assertion_id": "b66f974dd047317c",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record is verified for Carroll v. United States, U.S. Supreme Court, year 1925.",
+          "The official citation in the lake record is 267 U.S. 132, and the asserted display citation is the same.",
+          "The asserted parallel and vendor citations match the lake citations list."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "75c911a1883ff6d4",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "--- # Carroll v. United States *267 U.S. 132 (1925)* · U.S. Supreme Court · **Binding — SCOTUS**",
+          "locator_note": "pin-p37 / text paragraph id p37",
+          "needs_cl": false,
+          "problem": "The pin-p37 quote stored in the lake payload is not opinion text; it is a flattened excerpt of the built content page ending before the actual quoted passage. The displayed page quote is independently present in text paragraph p37, but this quote_pinpoint assertion is corrupted as framed.",
+          "proposed_fix": "Replace lake pinpoints[pin-p37].quote with the actual paragraph 37 opinion text or the exact quoted substring, then rerun quote-fidelity validation.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The lake pinpoint itself has quote_fidelity marked mismatch.",
+          "The lake pinpoint quote begins with the built page header, not the opinion text.",
+          "The opinion text at p37 contains the necessary-difference passage, so the defect is the stored pinpoint quote rather than the quoted legal sentence on the page."
+        ],
+        "residual_risks": [
+          "The source uses CourtListener paragraph numbering without U.S. Reports star pagination at the quoted passage."
+        ],
+        "suggested_tightening": "Store the exact p37 quoted substring beginning with \"a necessary difference\" and keep the locator as paragraph 37 unless star pagination is later supplied.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "8c8befd131e4418c",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment and currency are outside lens A, so no treatment defect is raised.",
+          "As a record check only, the asserted good_law status, as_of_treatment date, scope note, and varies_by_point value match the lake treatment fields."
+        ],
+        "residual_risks": [
+          "Treatment merits and negative-treatment edge interpretation are reserved to lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"A\",\n  \"group_id\": \"_overhaul2/lake/cases/Carroll v. United States.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"b66f974dd047317c\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake identity record is verified for Carroll v. United States, U.S. Supreme Court, year 1925.\",\n        \"The official citation in the lake record is 267 U.S. 132, and the asserted display citation is the same.\",\n        \"The asserted parallel and vendor citations match the lake citations list.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"75c911a1883ff6d4\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The pin-p37 quote stored in the lake payload is not opinion text; it is a flattened excerpt of the built content page ending before the actual quoted passage. The displayed page quote is independently present in text paragraph p37, but this quote_pinpoint assertion is corrupted as framed.\",\n        \"severity\": \"high\",\n        \"proposed_fix\": \"Replace lake pinpoints[pin-p37].quote with the actual paragraph 37 opinion text or the exact quoted substring, then rerun quote-fidelity validation.\",\n        \"evidence_quote\": \"--- # Carroll v. United States *267 U.S. 132 (1925)* · U.S. Supreme Court · **Binding — SCOTUS**\",\n        \"needs_cl\": false,\n        \"locator_note\": \"pin-p37 / text paragraph id p37\"\n      },\n      \"reasons\": [\n        \"The lake pinpoint itself has quote_fidelity marked mismatch.\",\n        \"The lake pinpoint quote begins with the built page header, not the opinion text.\",\n        \"The opinion text at p37 contains the necessary-difference passage, so the defect is the stored pinpoint quote rather than the quoted legal sentence on the page.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The source uses CourtListener paragraph numbering without U.S. Reports star pagination at the quoted passage.\"\n      ],\n      \"suggested_tightening\": \"Store the exact p37 quoted substring beginning with \\\"a necessary difference\\\" and keep the locator as paragraph 37 unless star pagination is later supplied.\"\n    },\n    {\n      \"assertion_id\": \"8c8befd131e4418c\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Treatment and currency are outside lens A, so no treatment defect is raised.\",\n        \"As a record check only, the asserted good_law status, as_of_treatment date, scope note, and varies_by_point value match the lake treatment fields.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Treatment merits and negative-treatment edge interpretation are reserved to lens B.\"\n      ],\n      \"suggested_tightening\": null\n    }\n  ],\n  \"notes\": \"No support, pincite, or black_letter rows were present in group_inventory.jsonl.\"\n}",
   "summary": {
-    "at": "2026-07-09T23:18:17-04:00",
-    "attempts": 2,
+    "at": "2026-07-10T17:49:24-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "defense_votes": [],
-    "findings_emitted": [],
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-6f142ca23e",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-aa8dc28888"
+    ],
     "group_id": "_overhaul2/lake/cases/Carroll v. United States.json",
     "group_total_assertions": 3,
     "lake_only_cases": [],
@@ -16,21 +84,52 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-9c77eff2.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 3,
     "run": "prod",
     "text_disclosed_cases": [
       "Carroll v. United States"
     ],
     "tokens": {
-      "input": 827,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 827
+      "input": 213964,
+      "output": 7991,
+      "source": "codex-events",
+      "total": 221955
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 5.0
+    "verdict_map": {
+      "75c911a1883ff6d4": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "8c8befd131e4418c": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "b66f974dd047317c": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-aa8dc28888",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-6f142ca23e",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": 152.8
   }
 }

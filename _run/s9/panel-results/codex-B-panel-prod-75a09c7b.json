@@ -1,38 +1,177 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "content/cases/United States v. Hunt.md",
+    "lens": "B",
+    "notes": "Reviewed under Lens B only; support and quote fidelity were not attacked except for currency/treatment implications.",
+    "reviewed": [
+      {
+        "assertion_id": "256b135ac04f8cb3",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "\"official\": null ... \"slip_only\": true ... \"No F.4th cite yet.\"",
+          "locator_note": "citation payload / lake.citations",
+          "needs_cl": false,
+          "problem": "The authority exists as a published Ninth Circuit slip opinion, but the assertion payload says official_citation_present=true even though the lake record has no official reporter citation and marks the case slip-only.",
+          "proposed_fix": "Keep the slip citation, but mark the official reporter citation as absent or slip-only/no reporter cite yet.",
+          "severity": "low"
+        },
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity confirms United States v. Hunt, court 9th Cir. 2025, docket 23-2342, date_decided 2025-08-27, cluster_id 10661637, and lead_opinion_id 11128224.",
+          "Cached opinion text confirms a FOR PUBLICATION Ninth Circuit opinion in No. 23-2342, filed August 27, 2025.",
+          "Lake citation fields contradict official_citation_present=true: official is null and slip_only is true."
+        ],
+        "residual_risks": [
+          "Treatment/progeny are unverified, so disclosed evidence does not prove current good-law status beyond the recorded slip-opinion existence."
+        ],
+        "suggested_tightening": "Render the citation as a published slip opinion with no reporter citation yet.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "545664ec9721a46e",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "Lens B does not review topical-role support.",
+          "No disclosed treatment or progeny edge supersedes, overrules, abrogates, or limits Hunt for abandonment; the lake record has empty treatment edges and empty outbound_opinion_edges.",
+          "The content page separately discloses that treatment is unverified."
+        ],
+        "residual_risks": [
+          "Because lake treatment/progeny are unverified, the current-law strength of the Key label is not independently proven."
+        ],
+        "suggested_tightening": "Keep any Key display adjacent to the Treatment: Unverified qualifier.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "c8d6d38c6d07df01",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "support",
+        "reasons": [
+          "Lens B does not raise support or quote-fidelity findings for the holding text.",
+          "No disclosed treatment or progeny edge shows that the holding has been overruled, superseded, abrogated, or limited.",
+          "The page and lake both identify treatment as unverified rather than making a positive good-law call."
+        ],
+        "residual_risks": [
+          "Current good-law status remains unverified because the lake treatment fields are a frontier stub with no progeny enumeration."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "615b42061a273481",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Lake identity identifies the authority as a Ninth Circuit court-of-appeals case in circuit ca9.",
+          "Cached opinion text states FOR PUBLICATION.",
+          "No disclosed treatment/progeny edge contradicts the in-circuit weight label; treatment remains separately marked unverified."
+        ],
+        "residual_risks": [
+          "If later treatment exists outside the disclosed record, the binding-weight display could need revision; the lake record does not verify subsequent history."
+        ],
+        "suggested_tightening": "Do not display the weight label without the adjacent Treatment: Unverified status.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "6837ebe8802d6c56",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The asserted treatment fields match the lake record: field_i_validity is unverified, as_of_content and as_of_treatment are null, composite_basis is unverified, varies_by_point is false, and point_overrides is empty.",
+          "The lake scope_note states that treatment/progeny were intentionally not derived until S6 promotion.",
+          "This is not a positive valid-law claim; it accurately reports unverified treatment."
+        ],
+        "residual_risks": [
+          "No current good-law conclusion can be drawn until treatment/progeny are actually derived."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"content/cases/United States v. Hunt.md\",\"reviewed\":[{\"assertion_id\":\"256b135ac04f8cb3\",\"dimension\":\"existence\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The authority exists as a published Ninth Circuit slip opinion, but the assertion payload says official_citation_present=true even though the lake record has no official reporter citation and marks the case slip-only.\",\"severity\":\"low\",\"proposed_fix\":\"Keep the slip citation, but mark the official reporter citation as absent or slip-only/no reporter cite yet.\",\"evidence_quote\":\"\\\"official\\\": null ... \\\"slip_only\\\": true ... \\\"No F.4th cite yet.\\\"\",\"needs_cl\":false,\"locator_note\":\"citation payload / lake.citations\"},\"reasons\":[\"Lake identity confirms United States v. Hunt, court 9th Cir. 2025, docket 23-2342, date_decided 2025-08-27, cluster_id 10661637, and lead_opinion_id 11128224.\",\"Cached opinion text confirms a FOR PUBLICATION Ninth Circuit opinion in No. 23-2342, filed August 27, 2025.\",\"Lake citation fields contradict official_citation_present=true: official is null and slip_only is true.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment/progeny are unverified, so disclosed evidence does not prove current good-law status beyond the recorded slip-opinion existence.\"],\"suggested_tightening\":\"Render the citation as a published slip opinion with no reporter citation yet.\"},{\"assertion_id\":\"545664ec9721a46e\",\"dimension\":\"support\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lens B does not review topical-role support.\",\"No disclosed treatment or progeny edge supersedes, overrules, abrogates, or limits Hunt for abandonment; the lake record has empty treatment edges and empty outbound_opinion_edges.\",\"The content page separately discloses that treatment is unverified.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Because lake treatment/progeny are unverified, the current-law strength of the Key label is not independently proven.\"],\"suggested_tightening\":\"Keep any Key display adjacent to the Treatment: Unverified qualifier.\"},{\"assertion_id\":\"c8d6d38c6d07df01\",\"dimension\":\"support\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lens B does not raise support or quote-fidelity findings for the holding text.\",\"No disclosed treatment or progeny edge shows that the holding has been overruled, superseded, abrogated, or limited.\",\"The page and lake both identify treatment as unverified rather than making a positive good-law call.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Current good-law status remains unverified because the lake treatment fields are a frontier stub with no progeny enumeration.\"],\"suggested_tightening\":null},{\"assertion_id\":\"615b42061a273481\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity identifies the authority as a Ninth Circuit court-of-appeals case in circuit ca9.\",\"Cached opinion text states FOR PUBLICATION.\",\"No disclosed treatment/progeny edge contradicts the in-circuit weight label; treatment remains separately marked unverified.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"If later treatment exists outside the disclosed record, the binding-weight display could need revision; the lake record does not verify subsequent history.\"],\"suggested_tightening\":\"Do not display the weight label without the adjacent Treatment: Unverified status.\"},{\"assertion_id\":\"6837ebe8802d6c56\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The asserted treatment fields match the lake record: field_i_validity is unverified, as_of_content and as_of_treatment are null, composite_basis is unverified, varies_by_point is false, and point_overrides is empty.\",\"The lake scope_note states that treatment/progeny were intentionally not derived until S6 promotion.\",\"This is not a positive valid-law claim; it accurately reports unverified treatment.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"No current good-law conclusion can be drawn until treatment/progeny are actually derived.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed under Lens B only; support and quote fidelity were not attacked except for currency/treatment implications.\"}",
   "summary": {
-    "at": "2026-07-09T23:13:27-04:00",
-    "attempts": 2,
+    "at": "2026-07-10T17:12:23-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-94b579efe8"
+    ],
     "group_id": "content/cases/United States v. Hunt.md",
     "group_total_assertions": 5,
-    "lake_only_cases": [
-      "United States v. Hunt"
-    ],
+    "lake_only_cases": [],
     "lane": "codex-B",
     "lane_id": "codex-B-panel-prod-75a09c7b",
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-75a09c7b.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
-    "resolution_notes": [
-      "case 'United States v. Hunt' has no lead_opinion_id (text undisclosed)"
-    ],
-    "reviewed_count": 0,
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
     "run": "prod",
-    "text_disclosed_cases": [],
+    "text_disclosed_cases": [
+      "United States v. Hunt"
+    ],
     "tokens": {
-      "input": 752,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 752
+      "input": 88397,
+      "output": 7178,
+      "source": "codex-events",
+      "total": 95575
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 8.2
+    "verdict_map": {
+      "256b135ac04f8cb3": {
+        "dimension": "existence",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "545664ec9721a46e": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "615b42061a273481": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "6837ebe8802d6c56": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "c8d6d38c6d07df01": {
+        "dimension": "support",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-94b579efe8",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 138.0
   }
 }
