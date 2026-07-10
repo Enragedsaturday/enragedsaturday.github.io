@@ -1,0 +1,145 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/United States v. Ross.json",
+    "lens": "A",
+    "notes": "Reviewed all four inventory rows under lens A; treatment merits were not audited.",
+    "reviewed": [
+      {
+        "assertion_id": "400fb8036406d00d",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record is United States v. Ross, U.S. Supreme Court, decided 1982-06-01, year 1982.",
+          "The lake official citation is 456 U.S. 798, matching the content page citation 456 U.S. 798 (1982); the listed parallel and vendor citations also match the lake citation fields."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "327daa9899e95d2d",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "We hold that the scope of the warrantless search authorized by that exception is no broader and no narrower than a magistrate could legitimately authorize by warrant. If probable cause justifies the search of a lawfully stopped vehicle, it justifies the search of every part of the vehicle and its contents that may conceal the object of the search.",
+          "locator_note": "pin-825; lake pinpoints[0]; content_page Rule paragraph",
+          "needs_cl": false,
+          "problem": "The pin-825 payload quote is not a quote from the Ross opinion; it is generated page/header/background/rule material, and the lake record itself marks quote_fidelity as mismatch with no star_marker or position.",
+          "proposed_fix": "Replace pin-825 with the exact opinion passage beginning 'We hold that the scope...' and validate the star/page position or fragment against the cached opinion text.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The disclosed text contains the actual Ross holding passage after the page-825 marker, but the lake pin-825 quote instead begins with generated content-page material: '--- # United States v. Ross'.",
+          "The lake pin-825 fields are quote_fidelity='mismatch', pinpoint_status='slip-only', star_marker=null, and position=null."
+        ],
+        "residual_risks": [
+          "The visible content-page quotation itself is supported by the cached text; the fix should repair the pin record rather than delete the rule."
+        ],
+        "suggested_tightening": "Do not allow generated page prose to populate pinpoints[].quote; require the pinpoint quote to be a substring of text/<case>.txt or an approved lake quote.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "57ad7758424e03df",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The pin-824 quote appears character-faithfully in the cached opinion text at the star-pagination *824 passage.",
+          "The lake pin-824 record marks quote_fidelity='matched', star_marker='824', and pinpoint_status='star-verified'."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "0c455a0cc8b31ac7",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency merits are outside lens A, so no treatment finding is raised.",
+          "The payload treatment fields match the disclosed lake/content fields: field_i_validity=good_law, as_of_content=1982-06-01, as_of_treatment=2026-06-30, varies_by_point=false."
+        ],
+        "residual_risks": [
+          "Treatment/currency review is reserved for lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/United States v. Ross.json\",\"reviewed\":[{\"assertion_id\":\"400fb8036406d00d\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake identity record is United States v. Ross, U.S. Supreme Court, decided 1982-06-01, year 1982.\",\"The lake official citation is 456 U.S. 798, matching the content page citation 456 U.S. 798 (1982); the listed parallel and vendor citations also match the lake citation fields.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"327daa9899e95d2d\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The pin-825 payload quote is not a quote from the Ross opinion; it is generated page/header/background/rule material, and the lake record itself marks quote_fidelity as mismatch with no star_marker or position.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-825 with the exact opinion passage beginning 'We hold that the scope...' and validate the star/page position or fragment against the cached opinion text.\",\"evidence_quote\":\"We hold that the scope of the warrantless search authorized by that exception is no broader and no narrower than a magistrate could legitimately authorize by warrant. If probable cause justifies the search of a lawfully stopped vehicle, it justifies the search of every part of the vehicle and its contents that may conceal the object of the search.\",\"needs_cl\":false,\"locator_note\":\"pin-825; lake pinpoints[0]; content_page Rule paragraph\"},\"reasons\":[\"The disclosed text contains the actual Ross holding passage after the page-825 marker, but the lake pin-825 quote instead begins with generated content-page material: '--- # United States v. Ross'.\",\"The lake pin-825 fields are quote_fidelity='mismatch', pinpoint_status='slip-only', star_marker=null, and position=null.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The visible content-page quotation itself is supported by the cached text; the fix should repair the pin record rather than delete the rule.\"],\"suggested_tightening\":\"Do not allow generated page prose to populate pinpoints[].quote; require the pinpoint quote to be a substring of text/<case>.txt or an approved lake quote.\"},{\"assertion_id\":\"57ad7758424e03df\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The pin-824 quote appears character-faithfully in the cached opinion text at the star-pagination *824 passage.\",\"The lake pin-824 record marks quote_fidelity='matched', star_marker='824', and pinpoint_status='star-verified'.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"0c455a0cc8b31ac7\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency merits are outside lens A, so no treatment finding is raised.\",\"The payload treatment fields match the disclosed lake/content fields: field_i_validity=good_law, as_of_content=1982-06-01, as_of_treatment=2026-06-30, varies_by_point=false.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment/currency review is reserved for lens B.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed all four inventory rows under lens A; treatment merits were not audited.\"}",
+  "summary": {
+    "at": "2026-07-09T23:54:33-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-1fe6565b86"
+    ],
+    "group_id": "_overhaul2/lake/cases/United States v. Ross.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "codex-A",
+    "lane_id": "codex-A-panel-prod-17932d3c",
+    "lens": "A",
+    "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-17932d3c.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "United States v. Ross"
+    ],
+    "tokens": {
+      "input": 379985,
+      "output": 7701,
+      "source": "codex-events",
+      "total": 387686
+    },
+    "verdict_map": {
+      "0c455a0cc8b31ac7": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "327daa9899e95d2d": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "400fb8036406d00d": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "57ad7758424e03df": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-1fe6565b86",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 159.0
+  }
+}

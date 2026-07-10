@@ -1,0 +1,152 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Walder v. United States.json",
+    "lens": "A",
+    "notes": "No external sources used.",
+    "reviewed": [
+      {
+        "assertion_id": "bb1c5c6f0bdff8c7",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record gives case_name Walder v. United States, court U.S. Supreme Court, date_decided 1954-02-01, and year 1954.",
+          "The lake official citation is 347 U.S. 62 and the page display uses 347 U.S. 62 (1954).",
+          "The disclosed parallel and vendor citations in the payload match the lake citation lists."
+        ],
+        "residual_risks": [
+          "No external citation validation was performed by instruction; this stands only against the disclosed lake record."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "15418bf0c618a725",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The quoted fragment appears verbatim in the cached opinion text on the page-65 passage.",
+          "The lake pinpoint for pin-65b marks quote_fidelity as matched, pinpoint_status as star-verified, and star_marker as 65.",
+          "The fragment URL targets the same quoted opening words."
+        ],
+        "residual_risks": [
+          "Only the pin-65b fragment in this inventory row was reviewed; adjacent quoted material on the content page is outside this row."
+        ],
+        "suggested_tightening": "If quoting through the original punctuation, include the comma after 'it'; otherwise the current quoted substring is faithful.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "de12792edb1d1f53",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "It is one thing to say that the Government cannot make an affirmative use of evidence unlawfully obtained.",
+          "locator_note": "text/Walder v. United States__08320a.txt contains the Rule passage at the *65 star page; lake pinpoints[].id == pin-65 instead contains markdown beginning with the page title.",
+          "needs_cl": false,
+          "problem": "The pin-65 pinpoint record is corrupted: its quote is page markdown/frontmatter text, not the opinion passage supporting the Rule quote. The lake itself flags quote_fidelity as mismatch, pinpoint_status as slip-only, and has no star marker.",
+          "proposed_fix": "Regenerate pin-65 from the actual page-65 opinion passage beginning 'It is one thing...' and set the pinpoint to star_marker 65 with a verified quote/fragment.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload quote begins with page markdown and background text, which is not the judicial opinion text for the cited page-65 Rule quote.",
+          "The cached opinion text contains the intended Rule passage at star page 65, but the pin-65 payload does not capture it.",
+          "The lake judgment fields for this pinpoint already report mismatch and slip-only, so the assertion cannot stand as a verified quote pinpoint."
+        ],
+        "residual_risks": [
+          "The substantive Rule quote on the content page appears to have source support, but the disclosed pin-65 record does not verify it and should be regenerated before relying on it."
+        ],
+        "suggested_tightening": "Use a shorter, exact page-65 quote and avoid normalizing source typography in quoted text.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "40a7f55f7d984c52",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency merits are outside lens A.",
+          "The treatment payload matches the disclosed lake treatment fields: field_i_validity good_law, as_of_content 1954-02-01, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note."
+        ],
+        "residual_risks": [
+          "No treatment audit was conducted under this lens."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Walder v. United States.json\",\"reviewed\":[{\"assertion_id\":\"bb1c5c6f0bdff8c7\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake identity record gives case_name Walder v. United States, court U.S. Supreme Court, date_decided 1954-02-01, and year 1954.\",\"The lake official citation is 347 U.S. 62 and the page display uses 347 U.S. 62 (1954).\",\"The disclosed parallel and vendor citations in the payload match the lake citation lists.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"No external citation validation was performed by instruction; this stands only against the disclosed lake record.\"],\"suggested_tightening\":null},{\"assertion_id\":\"15418bf0c618a725\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The quoted fragment appears verbatim in the cached opinion text on the page-65 passage.\",\"The lake pinpoint for pin-65b marks quote_fidelity as matched, pinpoint_status as star-verified, and star_marker as 65.\",\"The fragment URL targets the same quoted opening words.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Only the pin-65b fragment in this inventory row was reviewed; adjacent quoted material on the content page is outside this row.\"],\"suggested_tightening\":\"If quoting through the original punctuation, include the comma after 'it'; otherwise the current quoted substring is faithful.\"},{\"assertion_id\":\"de12792edb1d1f53\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The pin-65 pinpoint record is corrupted: its quote is page markdown/frontmatter text, not the opinion passage supporting the Rule quote. The lake itself flags quote_fidelity as mismatch, pinpoint_status as slip-only, and has no star marker.\",\"severity\":\"high\",\"proposed_fix\":\"Regenerate pin-65 from the actual page-65 opinion passage beginning 'It is one thing...' and set the pinpoint to star_marker 65 with a verified quote/fragment.\",\"evidence_quote\":\"It is one thing to say that the Government cannot make an affirmative use of evidence unlawfully obtained.\",\"needs_cl\":false,\"locator_note\":\"text/Walder v. United States__08320a.txt contains the Rule passage at the *65 star page; lake pinpoints[].id == pin-65 instead contains markdown beginning with the page title.\"},\"reasons\":[\"The payload quote begins with page markdown and background text, which is not the judicial opinion text for the cited page-65 Rule quote.\",\"The cached opinion text contains the intended Rule passage at star page 65, but the pin-65 payload does not capture it.\",\"The lake judgment fields for this pinpoint already report mismatch and slip-only, so the assertion cannot stand as a verified quote pinpoint.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The substantive Rule quote on the content page appears to have source support, but the disclosed pin-65 record does not verify it and should be regenerated before relying on it.\"],\"suggested_tightening\":\"Use a shorter, exact page-65 quote and avoid normalizing source typography in quoted text.\"},{\"assertion_id\":\"40a7f55f7d984c52\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency merits are outside lens A.\",\"The treatment payload matches the disclosed lake treatment fields: field_i_validity good_law, as_of_content 1954-02-01, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"No treatment audit was conducted under this lens.\"],\"suggested_tightening\":null}],\"notes\":\"No external sources used.\"}",
+  "summary": {
+    "at": "2026-07-09T23:57:26-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-682f048b3b"
+    ],
+    "group_id": "_overhaul2/lake/cases/Walder v. United States.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "codex-A",
+    "lane_id": "codex-A-panel-prod-f4ff6259",
+    "lens": "A",
+    "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-f4ff6259.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Walder v. United States"
+    ],
+    "tokens": {
+      "input": 97803,
+      "output": 4637,
+      "source": "codex-events",
+      "total": 102440
+    },
+    "verdict_map": {
+      "15418bf0c618a725": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "40a7f55f7d984c52": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "bb1c5c6f0bdff8c7": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "de12792edb1d1f53": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-682f048b3b",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 93.2
+  }
+}

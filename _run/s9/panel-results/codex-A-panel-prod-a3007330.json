@@ -1,0 +1,147 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/United States v. Leon.json",
+    "lens": "A",
+    "notes": "Reviewed all 4 assertion_id rows in group_inventory.jsonl exactly once.",
+    "reviewed": [
+      {
+        "assertion_id": "e34b5c48810c6979",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity record verifies case_name United States v. Leon, U.S. Supreme Court, date_decided 1984-09-18, year 1984, docket 82-1771.",
+          "Lake citations record verifies official citation 468 U.S. 897 and parallel/vendor citations 104 S. Ct. 3405, 82 L. Ed. 2d 677, and 1984 U.S. LEXIS 153."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "341f1de8eddb4e49",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The quoted fragment appears verbatim in text/United States v. Leon__76766b.txt at the page-923 passage.",
+          "Lake pinpoints[] for pin-923 contains the same quote, marks quote_fidelity matched, star_marker 923, and pinpoint_status star-verified."
+        ],
+        "residual_risks": [
+          "The content paragraph contains additional quoted exception phrases beyond the payload fragment; checked against the same disclosed page-923 passage and no quote-fidelity defect was found."
+        ],
+        "suggested_tightening": "Consider separate pinpoint records for the other quoted exception phrases on page 923.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "fdcdd54e0045d295",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "We conclude that the marginal or nonexistent benefits produced by suppressing evidence obtained in objectively reasonable reliance on a subsequently invalidated search warrant cannot justify the substantial costs of exclusion.",
+          "locator_note": "text/United States v. Leon__76766b.txt line 46 contains the page-922 passage; lake pin-922 has no star_marker and quote_fidelity=mismatch.",
+          "needs_cl": false,
+          "problem": "pin-922's stored quote is not the opinion quote at 468 U.S. 922; it is a chunk of the generated content page/front matter ending before the actual quoted sentence. The lake record itself marks quote_fidelity as mismatch and pinpoint_status as slip-only.",
+          "proposed_fix": "Replace pin-922 quote with the page-922 opinion sentence beginning 'We conclude that the marginal or nonexistent benefits...' and set an appropriate 922 star/pin status after validation.",
+          "severity": "medium"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload quote begins with '--- # United States v. Leon' and reproduces content-page material, not opinion text.",
+          "The disclosed opinion text at page 922 contains the correct Leon sentence quoted in the built page."
+        ],
+        "residual_risks": [
+          "The built page's visible quoted sentence at pin-922 is faithful to the opinion text; the defect is in the stored pinpoint quote metadata."
+        ],
+        "suggested_tightening": "Regenerate pin-922 from the opinion text rather than from rendered page markdown.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "b874911dc347777f",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A; no treatment defect is raised.",
+          "The treatment fields in the payload match the lake treatment record: field_i_validity good_law, as_of_content 1984-07-05, as_of_treatment 2026-06-30, varies_by_point false."
+        ],
+        "residual_risks": [
+          "Substantive treatment/currency was not independently reviewed under this support/quote-fidelity lens."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/United States v. Leon.json\",\"reviewed\":[{\"assertion_id\":\"e34b5c48810c6979\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity record verifies case_name United States v. Leon, U.S. Supreme Court, date_decided 1984-09-18, year 1984, docket 82-1771.\",\"Lake citations record verifies official citation 468 U.S. 897 and parallel/vendor citations 104 S. Ct. 3405, 82 L. Ed. 2d 677, and 1984 U.S. LEXIS 153.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"341f1de8eddb4e49\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The quoted fragment appears verbatim in text/United States v. Leon__76766b.txt at the page-923 passage.\",\"Lake pinpoints[] for pin-923 contains the same quote, marks quote_fidelity matched, star_marker 923, and pinpoint_status star-verified.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The content paragraph contains additional quoted exception phrases beyond the payload fragment; checked against the same disclosed page-923 passage and no quote-fidelity defect was found.\"],\"suggested_tightening\":\"Consider separate pinpoint records for the other quoted exception phrases on page 923.\"},{\"assertion_id\":\"fdcdd54e0045d295\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"pin-922's stored quote is not the opinion quote at 468 U.S. 922; it is a chunk of the generated content page/front matter ending before the actual quoted sentence. The lake record itself marks quote_fidelity as mismatch and pinpoint_status as slip-only.\",\"severity\":\"medium\",\"proposed_fix\":\"Replace pin-922 quote with the page-922 opinion sentence beginning 'We conclude that the marginal or nonexistent benefits...' and set an appropriate 922 star/pin status after validation.\",\"evidence_quote\":\"We conclude that the marginal or nonexistent benefits produced by suppressing evidence obtained in objectively reasonable reliance on a subsequently invalidated search warrant cannot justify the substantial costs of exclusion.\",\"needs_cl\":false,\"locator_note\":\"text/United States v. Leon__76766b.txt line 46 contains the page-922 passage; lake pin-922 has no star_marker and quote_fidelity=mismatch.\"},\"reasons\":[\"The payload quote begins with '--- # United States v. Leon' and reproduces content-page material, not opinion text.\",\"The disclosed opinion text at page 922 contains the correct Leon sentence quoted in the built page.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The built page's visible quoted sentence at pin-922 is faithful to the opinion text; the defect is in the stored pinpoint quote metadata.\"],\"suggested_tightening\":\"Regenerate pin-922 from the opinion text rather than from rendered page markdown.\"},{\"assertion_id\":\"b874911dc347777f\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside Lens A; no treatment defect is raised.\",\"The treatment fields in the payload match the lake treatment record: field_i_validity good_law, as_of_content 1984-07-05, as_of_treatment 2026-06-30, varies_by_point false.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Substantive treatment/currency was not independently reviewed under this support/quote-fidelity lens.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed all 4 assertion_id rows in group_inventory.jsonl exactly once.\"}",
+  "summary": {
+    "at": "2026-07-09T23:51:14-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-329e3fc994"
+    ],
+    "group_id": "_overhaul2/lake/cases/United States v. Leon.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "codex-A",
+    "lane_id": "codex-A-panel-prod-a3007330",
+    "lens": "A",
+    "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-a3007330.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "United States v. Leon"
+    ],
+    "tokens": {
+      "input": 296832,
+      "output": 6850,
+      "source": "codex-events",
+      "total": 303682
+    },
+    "verdict_map": {
+      "341f1de8eddb4e49": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "b874911dc347777f": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "e34b5c48810c6979": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "fdcdd54e0045d295": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-329e3fc994",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 140.5
+  }
+}

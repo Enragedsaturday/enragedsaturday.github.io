@@ -1,0 +1,93 @@
+{
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/United States v. Caceres.json",
+    "lens": "B",
+    "notes": "",
+    "reviewed": [
+      {
+        "assertion_id": "d2f1602f26cd7524",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record verifies the case name as United States v. Caceres, court as U.S. Supreme Court, date_decided as 1979-04-13, cluster_id 110049, expected_citation_found true, and canonical_name_match true.",
+          "The lake citation fields select 440 U.S. 741 as the official citation and list the same parallel/vendor citations carried in the inventory.",
+          "No disclosed treatment edge or progeny edge states that the authority has been overruled, superseded, abrogated, or limited."
+        ],
+        "residual_risks": [
+          "Live-law status is not independently verified because the treatment record is expressly unverified, progeny enumeration is null, and rows_cached is 0."
+        ],
+        "suggested_tightening": "Do not let the existence/SCOTUS citation row imply verified current good-law status; keep the separate Treatment: Unverified banner until citator/progeny review is completed.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "4cd94f7892c8c634",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The inventory treatment payload matches the lake treatment record: field_i_validity is unverified, as_of_content and as_of_treatment are null, varies_by_point is false, and the scope note says treatment/progeny are intentionally not derived until S6 promotion.",
+          "The content page consistently renders Treatment: Unverified and states that subsequent treatment has not yet been machine-verified.",
+          "The disclosed lake record contains no treatment edges, point overrides, or progeny rows showing overruling, supersession, abrogation, or limitation; the page does not claim a positive good-law determination."
+        ],
+        "residual_risks": [
+          "Because the citator/progeny fields are stubs, this does not verify that Caceres remains good law; it only verifies that the page's unverified-treatment label is consistent with the disclosed record."
+        ],
+        "suggested_tightening": "Keep any substantive good-law statement out of the treatment label until S6/S9 promotion supplies verified treatment and progeny data.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/United States v. Caceres.json\",\"reviewed\":[{\"assertion_id\":\"d2f1602f26cd7524\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake identity record verifies the case name as United States v. Caceres, court as U.S. Supreme Court, date_decided as 1979-04-13, cluster_id 110049, expected_citation_found true, and canonical_name_match true.\",\"The lake citation fields select 440 U.S. 741 as the official citation and list the same parallel/vendor citations carried in the inventory.\",\"No disclosed treatment edge or progeny edge states that the authority has been overruled, superseded, abrogated, or limited.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Live-law status is not independently verified because the treatment record is expressly unverified, progeny enumeration is null, and rows_cached is 0.\"],\"suggested_tightening\":\"Do not let the existence/SCOTUS citation row imply verified current good-law status; keep the separate Treatment: Unverified banner until citator/progeny review is completed.\"},{\"assertion_id\":\"4cd94f7892c8c634\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The inventory treatment payload matches the lake treatment record: field_i_validity is unverified, as_of_content and as_of_treatment are null, varies_by_point is false, and the scope note says treatment/progeny are intentionally not derived until S6 promotion.\",\"The content page consistently renders Treatment: Unverified and states that subsequent treatment has not yet been machine-verified.\",\"The disclosed lake record contains no treatment edges, point overrides, or progeny rows showing overruling, supersession, abrogation, or limitation; the page does not claim a positive good-law determination.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Because the citator/progeny fields are stubs, this does not verify that Caceres remains good law; it only verifies that the page's unverified-treatment label is consistent with the disclosed record.\"],\"suggested_tightening\":\"Keep any substantive good-law statement out of the treatment label until S6/S9 promotion supplies verified treatment and progeny data.\"}],\"notes\":\"\"}",
+  "summary": {
+    "at": "2026-07-09T23:45:40-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
+    "defense_votes": [],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/United States v. Caceres.json",
+    "group_total_assertions": 2,
+    "lake_only_cases": [
+      "United States v. Caceres"
+    ],
+    "lane": "codex-B",
+    "lane_id": "codex-B-panel-prod-524a1555",
+    "lens": "B",
+    "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-524a1555.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [
+      "case 'United States v. Caceres' has no lead_opinion_id (text undisclosed)"
+    ],
+    "reviewed_count": 2,
+    "run": "prod",
+    "text_disclosed_cases": [],
+    "tokens": {
+      "input": 79365,
+      "output": 3523,
+      "source": "codex-events",
+      "total": 82888
+    },
+    "verdict_map": {
+      "4cd94f7892c8c634": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "d2f1602f26cd7524": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [],
+    "wall_clock_s": 73.6
+  }
+}

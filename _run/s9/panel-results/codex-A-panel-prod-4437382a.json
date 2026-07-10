@@ -1,0 +1,145 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/See v. City of Seattle.json",
+    "lens": "A",
+    "notes": "No external sources used; review limited to disclosed working-directory files.",
+    "reviewed": [
+      {
+        "assertion_id": "b329f9186827d323",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity verifies record_id See v. City of Seattle, U.S. Supreme Court, decided 1967-06-05.",
+          "The displayed official citation 387 U.S. 541 and parallel/vendor citations match the lake citation fields."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "3d44a0db7ebdabb4",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "The businessman, like the occupant of a residence, has a constitutional right to go about his business free from unreasonable official entries upon his private commercial property.",
+          "locator_note": "pin-543; opinion text contains the quoted sentence after star pagination *543, but the payload quote is a content-page chunk ending before that sentence.",
+          "needs_cl": false,
+          "problem": "The pin-543 payload quote is not an opinion quote; it is a harvested content-page/markdown chunk. The lake itself marks this pinpoint quote_fidelity as mismatch and gives no star_marker.",
+          "proposed_fix": "Replace pin-543's stored quote with the actual page-543 opinion sentence quoted on the content page, or remove the pinpoint until reharvested and star-verified.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The disclosed opinion text supports the content-page sentence at page 543, but not the payload's long markdown/header/background chunk.",
+          "Lake pinpoints[pin-543] records quote_fidelity=mismatch, pinpoint_status=slip-only, and star_marker=null."
+        ],
+        "residual_risks": [
+          "The content page's visible short quote appears accurate; the defect is the stored pinpoint quote for pin-543."
+        ],
+        "suggested_tightening": "Use the exact page-543 sentence as the pin quote and set the marker to 543 after verification.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "9f15c1a7b3399d9a",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The quote appears character-faithful in the opinion text and matches the lake pinpoints[].quote for pin-545.",
+          "The sentence is located on the page span after *545 and before *546, consistent with the star_marker 545 and star-verified status."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "b5d282a79d04379a",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency merits are outside lens A; no treatment defect is raised.",
+          "The payload treatment fields match the disclosed lake treatment fields: good_law, as_of_content 1967-06-05, as_of_treatment 2026-06-30, varies_by_point false, and the same scope_note."
+        ],
+        "residual_risks": [
+          "Treatment merits reserved to lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/See v. City of Seattle.json\",\"reviewed\":[{\"assertion_id\":\"b329f9186827d323\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity verifies record_id See v. City of Seattle, U.S. Supreme Court, decided 1967-06-05.\",\"The displayed official citation 387 U.S. 541 and parallel/vendor citations match the lake citation fields.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"3d44a0db7ebdabb4\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The pin-543 payload quote is not an opinion quote; it is a harvested content-page/markdown chunk. The lake itself marks this pinpoint quote_fidelity as mismatch and gives no star_marker.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-543's stored quote with the actual page-543 opinion sentence quoted on the content page, or remove the pinpoint until reharvested and star-verified.\",\"evidence_quote\":\"The businessman, like the occupant of a residence, has a constitutional right to go about his business free from unreasonable official entries upon his private commercial property.\",\"needs_cl\":false,\"locator_note\":\"pin-543; opinion text contains the quoted sentence after star pagination *543, but the payload quote is a content-page chunk ending before that sentence.\"},\"reasons\":[\"The disclosed opinion text supports the content-page sentence at page 543, but not the payload's long markdown/header/background chunk.\",\"Lake pinpoints[pin-543] records quote_fidelity=mismatch, pinpoint_status=slip-only, and star_marker=null.\"],\"breaks_true_positives\":true,\"residual_risks\":[\"The content page's visible short quote appears accurate; the defect is the stored pinpoint quote for pin-543.\"],\"suggested_tightening\":\"Use the exact page-543 sentence as the pin quote and set the marker to 543 after verification.\"},{\"assertion_id\":\"9f15c1a7b3399d9a\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The quote appears character-faithful in the opinion text and matches the lake pinpoints[].quote for pin-545.\",\"The sentence is located on the page span after *545 and before *546, consistent with the star_marker 545 and star-verified status.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"b5d282a79d04379a\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency merits are outside lens A; no treatment defect is raised.\",\"The payload treatment fields match the disclosed lake treatment fields: good_law, as_of_content 1967-06-05, as_of_treatment 2026-06-30, varies_by_point false, and the same scope_note.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment merits reserved to lens B.\"],\"suggested_tightening\":null}],\"notes\":\"No external sources used; review limited to disclosed working-directory files.\"}",
+  "summary": {
+    "at": "2026-07-09T23:40:13-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-8cb21d7d43"
+    ],
+    "group_id": "_overhaul2/lake/cases/See v. City of Seattle.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "codex-A",
+    "lane_id": "codex-A-panel-prod-4437382a",
+    "lens": "A",
+    "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-4437382a.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "See v. City of Seattle"
+    ],
+    "tokens": {
+      "input": 144095,
+      "output": 4950,
+      "source": "codex-events",
+      "total": 149045
+    },
+    "verdict_map": {
+      "3d44a0db7ebdabb4": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "9f15c1a7b3399d9a": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "b329f9186827d323": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "b5d282a79d04379a": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-8cb21d7d43",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 101.1
+  }
+}

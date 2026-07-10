@@ -1,0 +1,159 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/United States v. Leon.json",
+    "lens": "B",
+    "notes": "Lens B only; quote-fidelity rows were not evaluated for textual accuracy.",
+    "reviewed": [
+      {
+        "assertion_id": "e34b5c48810c6979",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record is verified and identifies United States v. Leon as a U.S. Supreme Court case decided 1984-09-18 with official citation 468 U.S. 897.",
+          "The lake treatment judgment lists field_i_validity as good_law as of 2026-06-30, so the cited authority is live from the disclosed record."
+        ],
+        "residual_risks": [
+          "Treatment derivation separately flags proposed negative events pending audit, but none is confirmed in the disclosed judgment fields as overruling Leon."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "341f1de8eddb4e49",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Lens B does not assess quote fidelity or support.",
+          "This row contains no independent treatment or currency assertion beyond the Leon authority already reviewed."
+        ],
+        "residual_risks": [
+          "Quote accuracy remains for Lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "fdcdd54e0045d295",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Lens B does not assess quote fidelity or support.",
+          "Although the harvested quote text includes page-header treatment language, the currency/treatment issue is addressed in the treatment assertion."
+        ],
+        "residual_risks": [
+          "Quote accuracy remains for Lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "b874911dc347777f",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "\"audit_needed\": true, \"proposed_negative_events\": 25, \"audit_marker\": \"R15 treatment audit required\"",
+          "locator_note": "Treatment & subsequent history section and lake.treatment.derivation",
+          "needs_cl": true,
+          "problem": "The core good_law and Binding-SCOTUS treatment survives on the lake judgment fields, but the page's unqualified 'No negative subsequent treatment identified' overstates the disclosed record because the treatment derivation flags proposed negative events and an audit requirement.",
+          "proposed_fix": "Change the treatment text to: 'No confirmed negative treatment is reflected in the lake judgment fields; proposed negative treatment edges are pending audit and do not currently change the good_law status.'",
+          "severity": "medium"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "lake.treatment.field_i_validity is good_law, as_of_treatment is 2026-06-30, and court_level is scotus, supporting the status and weight label.",
+          "lake.treatment.edges contains 27 proposed negative-style edges, all with field_iii 'mentioned' and proposed true, so they do not themselves prove Leon is overruled or limited.",
+          "The derivation fields nevertheless show audit_needed true and cap_hit true in treatment lanes, making the page's no-negative-treatment wording too categorical."
+        ],
+        "residual_risks": [
+          "A completed treatment audit or the underlying citing opinions would be needed to resolve whether any proposed negative edge is a true negative treatment event."
+        ],
+        "suggested_tightening": "Prefer 'no confirmed negative treatment in the disclosed lake judgment fields' over 'no negative subsequent treatment identified.'",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/United States v. Leon.json\",\"reviewed\":[{\"assertion_id\":\"e34b5c48810c6979\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record is verified and identifies United States v. Leon as a U.S. Supreme Court case decided 1984-09-18 with official citation 468 U.S. 897.\",\"The lake treatment judgment lists field_i_validity as good_law as of 2026-06-30, so the cited authority is live from the disclosed record.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment derivation separately flags proposed negative events pending audit, but none is confirmed in the disclosed judgment fields as overruling Leon.\"],\"suggested_tightening\":null},{\"assertion_id\":\"341f1de8eddb4e49\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lens B does not assess quote fidelity or support.\",\"This row contains no independent treatment or currency assertion beyond the Leon authority already reviewed.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Quote accuracy remains for Lens A.\"],\"suggested_tightening\":null},{\"assertion_id\":\"fdcdd54e0045d295\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lens B does not assess quote fidelity or support.\",\"Although the harvested quote text includes page-header treatment language, the currency/treatment issue is addressed in the treatment assertion.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Quote accuracy remains for Lens A.\"],\"suggested_tightening\":null},{\"assertion_id\":\"b874911dc347777f\",\"dimension\":\"treatment\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The core good_law and Binding-SCOTUS treatment survives on the lake judgment fields, but the page's unqualified 'No negative subsequent treatment identified' overstates the disclosed record because the treatment derivation flags proposed negative events and an audit requirement.\",\"severity\":\"medium\",\"proposed_fix\":\"Change the treatment text to: 'No confirmed negative treatment is reflected in the lake judgment fields; proposed negative treatment edges are pending audit and do not currently change the good_law status.'\",\"evidence_quote\":\"\\\"audit_needed\\\": true, \\\"proposed_negative_events\\\": 25, \\\"audit_marker\\\": \\\"R15 treatment audit required\\\"\",\"needs_cl\":true,\"locator_note\":\"Treatment & subsequent history section and lake.treatment.derivation\"},\"reasons\":[\"lake.treatment.field_i_validity is good_law, as_of_treatment is 2026-06-30, and court_level is scotus, supporting the status and weight label.\",\"lake.treatment.edges contains 27 proposed negative-style edges, all with field_iii 'mentioned' and proposed true, so they do not themselves prove Leon is overruled or limited.\",\"The derivation fields nevertheless show audit_needed true and cap_hit true in treatment lanes, making the page's no-negative-treatment wording too categorical.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"A completed treatment audit or the underlying citing opinions would be needed to resolve whether any proposed negative edge is a true negative treatment event.\"],\"suggested_tightening\":\"Prefer 'no confirmed negative treatment in the disclosed lake judgment fields' over 'no negative subsequent treatment identified.'\"}],\"notes\":\"Lens B only; quote-fidelity rows were not evaluated for textual accuracy.\"}",
+  "summary": {
+    "at": "2026-07-09T23:51:23-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-329e3fc994",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-3c7facd441"
+    ],
+    "group_id": "_overhaul2/lake/cases/United States v. Leon.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "codex-B",
+    "lane_id": "codex-B-panel-prod-a3007330",
+    "lens": "B",
+    "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-a3007330.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "United States v. Leon"
+    ],
+    "tokens": {
+      "input": 163011,
+      "output": 7579,
+      "source": "codex-events",
+      "total": 170590
+    },
+    "verdict_map": {
+      "341f1de8eddb4e49": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "b874911dc347777f": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "e34b5c48810c6979": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "fdcdd54e0045d295": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-329e3fc994",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-3c7facd441",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 145.8
+  }
+}

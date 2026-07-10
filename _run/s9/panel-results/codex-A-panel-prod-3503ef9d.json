@@ -1,0 +1,145 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Payton v. New York.json",
+    "lens": "A",
+    "notes": "",
+    "reviewed": [
+      {
+        "assertion_id": "6f84668d8234047c",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity verifies record_id Payton v. New York, U.S. Supreme Court, decided 1980-04-15, year 1980.",
+          "Lake citations designate official citation 445 U.S. 573, matching the content page citation 445 U.S. 573 (1980)."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "3fc6f1a4c9d2c7e0",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The quoted firm-line language matches lake pinpoints[].quote for pin-590.",
+          "The cached opinion text contains the same sentence after the *590 star pagination marker, so the 445 U.S. at 590 pincite lands on the quoted passage."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "48284b734569de8e",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "--- # Payton v. New York *445 U.S. 573 (1980)*",
+          "locator_note": "lake pinpoints[].id pin-576 has quote_fidelity mismatch, pinpoint_status slip-only, and star_marker null.",
+          "needs_cl": false,
+          "problem": "pin-576's stored quote is not an opinion quote; it is harvested content-page Markdown/frontmatter and page prose. The actual opinion passage at *576 supports the displayed rule quote, but the lake pinpoint quote itself is not quote-faithful.",
+          "proposed_fix": "Replace pin-576's quote with the actual quoted opinion text: \"prohibits the police from making a warrantless and nonconsensual entry into a suspect's home in order to make a routine felony arrest.\" Validate it against the cached opinion and set the star marker to 576.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The lake pin-576 quote begins with content-page material rather than text from the Payton opinion.",
+          "The cached opinion text at *576 contains the actual rule sentence after the Court states, \"We now reverse...\""
+        ],
+        "residual_risks": [
+          "The visible content-page rule quote appears substantively correct, but the underlying pin record is defective."
+        ],
+        "suggested_tightening": "Harvest only the quoted sentence attached to ^pin-576, not the surrounding rendered page content.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "70d0910963298015",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A; no treatment defect is raised.",
+          "The content page treatment fields match the lake treatment fields: field_i_validity good_law, as_of_content 1980-04-15, as_of_treatment 2026-06-30, varies_by_point false."
+        ],
+        "residual_risks": [
+          "Treatment merits reserved for Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"A\",\n  \"group_id\": \"_overhaul2/lake/cases/Payton v. New York.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"6f84668d8234047c\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Lake identity verifies record_id Payton v. New York, U.S. Supreme Court, decided 1980-04-15, year 1980.\",\n        \"Lake citations designate official citation 445 U.S. 573, matching the content page citation 445 U.S. 573 (1980).\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"3fc6f1a4c9d2c7e0\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The quoted firm-line language matches lake pinpoints[].quote for pin-590.\",\n        \"The cached opinion text contains the same sentence after the *590 star pagination marker, so the 445 U.S. at 590 pincite lands on the quoted passage.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"48284b734569de8e\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"pin-576's stored quote is not an opinion quote; it is harvested content-page Markdown/frontmatter and page prose. The actual opinion passage at *576 supports the displayed rule quote, but the lake pinpoint quote itself is not quote-faithful.\",\n        \"severity\": \"high\",\n        \"proposed_fix\": \"Replace pin-576's quote with the actual quoted opinion text: \\\"prohibits the police from making a warrantless and nonconsensual entry into a suspect's home in order to make a routine felony arrest.\\\" Validate it against the cached opinion and set the star marker to 576.\",\n        \"evidence_quote\": \"--- # Payton v. New York *445 U.S. 573 (1980)*\",\n        \"needs_cl\": false,\n        \"locator_note\": \"lake pinpoints[].id pin-576 has quote_fidelity mismatch, pinpoint_status slip-only, and star_marker null.\"\n      },\n      \"reasons\": [\n        \"The lake pin-576 quote begins with content-page material rather than text from the Payton opinion.\",\n        \"The cached opinion text at *576 contains the actual rule sentence after the Court states, \\\"We now reverse...\\\"\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The visible content-page rule quote appears substantively correct, but the underlying pin record is defective.\"\n      ],\n      \"suggested_tightening\": \"Harvest only the quoted sentence attached to ^pin-576, not the surrounding rendered page content.\"\n    },\n    {\n      \"assertion_id\": \"70d0910963298015\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Treatment/currency is outside Lens A; no treatment defect is raised.\",\n        \"The content page treatment fields match the lake treatment fields: field_i_validity good_law, as_of_content 1980-04-15, as_of_treatment 2026-06-30, varies_by_point false.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Treatment merits reserved for Lens B.\"\n      ],\n      \"suggested_tightening\": null\n    }\n  ],\n  \"notes\": \"\"\n}",
+  "summary": {
+    "at": "2026-07-09T23:37:02-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-c1a611f7d6"
+    ],
+    "group_id": "_overhaul2/lake/cases/Payton v. New York.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "codex-A",
+    "lane_id": "codex-A-panel-prod-3503ef9d",
+    "lens": "A",
+    "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-3503ef9d.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Payton v. New York"
+    ],
+    "tokens": {
+      "input": 316412,
+      "output": 5787,
+      "source": "codex-events",
+      "total": 322199
+    },
+    "verdict_map": {
+      "3fc6f1a4c9d2c7e0": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "48284b734569de8e": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "6f84668d8234047c": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "70d0910963298015": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-c1a611f7d6",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 132.8
+  }
+}

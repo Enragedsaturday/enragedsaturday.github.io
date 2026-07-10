@@ -1,0 +1,191 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Vernonia School District 47J v. Acton.json",
+    "lens": "A",
+    "notes": "Reviewed all 5 rows in group_inventory.jsonl. No external sources used.",
+    "reviewed": [
+      {
+        "assertion_id": "458ede4658705d29",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record identifies the case as Vernonia School District 47J v. Acton, U.S. Supreme Court, decided 1995-06-26.",
+          "The disclosed official citation is 515 U.S. 646, with parallel citations 115 S. Ct. 2386 and 132 L. Ed. 2d 564 and vendor citation 1995 U.S. LEXIS 4275."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "2d57045aea3b13da",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The lake pinpoint pin-657 records quote_fidelity as matched and star_marker 653.",
+          "The cached opinion text contains the exact phrase “special needs” at the page-653 passage discussing searches unsupported by probable cause."
+        ],
+        "residual_risks": [
+          "The visible content page also quotes the athlete-privacy sentence at 657; this inventory row verifies only the “special needs” fragment."
+        ],
+        "suggested_tightening": "Add a separate pinpoint for the “Legitimate privacy expectations are even less with regard to student athletes” quote at page 657.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "814e345a347d0512",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Taking into account all the factors we have considered above — the decreased expectation of privacy, the relative unobtrusiveness of the search, and the severity of the need met <page-number citation-index=\"1\" label=\"665\">*665</page-number>by the search — we conclude Vernonia’s Policy is reasonable and hence constitutional.",
+          "locator_note": "The passage spans pages 664-665 in the cached opinion text.",
+          "needs_cl": false,
+          "problem": "The quoted factor list is substantively located in the opinion, but the comma inside the closing quotation is not character-faithful; the opinion has an em dash after “search,” not a comma.",
+          "proposed_fix": "Remove the trailing comma from inside the quotation or quote the full sentence with its em dashes: “Taking into account all the factors we have considered above — ... by the search — we conclude Vernonia’s Policy is reasonable and hence constitutional.”",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The factor-list language appears in the cached opinion at the 664-665 passage.",
+          "The payload quote ends “by the search,” but the disclosed text continues “by the search —”; the punctuation must be corrected."
+        ],
+        "residual_risks": [
+          "The cached HTML page marker interrupts the phrase between “met” and “by,” so regenerated quote matching should normalize page markers consistently."
+        ],
+        "suggested_tightening": "Quote only through “by the search” with no internal trailing comma, or quote the full sentence exactly.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "89c4804b23ef4b00",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "As the text of the Fourth Amendment indicates, the ultimate measure of the constitutionality of a governmental search is “reasonableness.”",
+          "locator_note": "Lake pin-652 has quote_fidelity=mismatch, pinpoint_status=slip-only, no star_marker, and no position.",
+          "needs_cl": false,
+          "problem": "The pin-652 quote is not a character-faithful opinion quotation; it is a generated content-page excerpt beginning with Markdown header material.",
+          "proposed_fix": "Replace pin-652 with exact opinion text from pages 652-653 supporting state-compelled urine testing as a search and the reasonableness-balancing rule.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The lake pin-652 quote starts with “--- # Vernonia School District 47J v. Acton,” which is content-page Markdown, not opinion text.",
+          "The cached opinion’s relevant page-652/653 language is available, but it does not match the stored pin quote."
+        ],
+        "residual_risks": [
+          "The underlying rule proposition is supportable from the opinion, but this quote-fidelity assertion fails as framed."
+        ],
+        "suggested_tightening": "Use separate exact pin quotes for “state-compelled collection and testing of urine ... constitutes a ‘search’” and for the reasonableness-balancing sentence.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "8877da5ead42ddbe",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment and currency are outside Lens A’s charter.",
+          "The payload mirrors the disclosed lake treatment fields: field_i_validity good_law, as_of_content 1995-06-26, as_of_treatment 2026-06-30, varies_by_point false, and the stated scope note."
+        ],
+        "residual_risks": [
+          "No Lens A treatment finding is made; Lens B owns treatment/currency review."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"A\",\n  \"group_id\": \"_overhaul2/lake/cases/Vernonia School District 47J v. Acton.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"458ede4658705d29\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake record identifies the case as Vernonia School District 47J v. Acton, U.S. Supreme Court, decided 1995-06-26.\",\n        \"The disclosed official citation is 515 U.S. 646, with parallel citations 115 S. Ct. 2386 and 132 L. Ed. 2d 564 and vendor citation 1995 U.S. LEXIS 4275.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"2d57045aea3b13da\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake pinpoint pin-657 records quote_fidelity as matched and star_marker 653.\",\n        \"The cached opinion text contains the exact phrase “special needs” at the page-653 passage discussing searches unsupported by probable cause.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The visible content page also quotes the athlete-privacy sentence at 657; this inventory row verifies only the “special needs” fragment.\"\n      ],\n      \"suggested_tightening\": \"Add a separate pinpoint for the “Legitimate privacy expectations are even less with regard to student athletes” quote at page 657.\"\n    },\n    {\n      \"assertion_id\": \"814e345a347d0512\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands-modified\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The quoted factor list is substantively located in the opinion, but the comma inside the closing quotation is not character-faithful; the opinion has an em dash after “search,” not a comma.\",\n        \"severity\": \"low\",\n        \"proposed_fix\": \"Remove the trailing comma from inside the quotation or quote the full sentence with its em dashes: “Taking into account all the factors we have considered above — ... by the search — we conclude Vernonia’s Policy is reasonable and hence constitutional.”\",\n        \"evidence_quote\": \"Taking into account all the factors we have considered above — the decreased expectation of privacy, the relative unobtrusiveness of the search, and the severity of the need met <page-number citation-index=\\\"1\\\" label=\\\"665\\\">*665</page-number>by the search — we conclude Vernonia’s Policy is reasonable and hence constitutional.\",\n        \"needs_cl\": false,\n        \"locator_note\": \"The passage spans pages 664-665 in the cached opinion text.\"\n      },\n      \"reasons\": [\n        \"The factor-list language appears in the cached opinion at the 664-665 passage.\",\n        \"The payload quote ends “by the search,” but the disclosed text continues “by the search —”; the punctuation must be corrected.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The cached HTML page marker interrupts the phrase between “met” and “by,” so regenerated quote matching should normalize page markers consistently.\"\n      ],\n      \"suggested_tightening\": \"Quote only through “by the search” with no internal trailing comma, or quote the full sentence exactly.\"\n    },\n    {\n      \"assertion_id\": \"89c4804b23ef4b00\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The pin-652 quote is not a character-faithful opinion quotation; it is a generated content-page excerpt beginning with Markdown header material.\",\n        \"severity\": \"high\",\n        \"proposed_fix\": \"Replace pin-652 with exact opinion text from pages 652-653 supporting state-compelled urine testing as a search and the reasonableness-balancing rule.\",\n        \"evidence_quote\": \"As the text of the Fourth Amendment indicates, the ultimate measure of the constitutionality of a governmental search is “reasonableness.”\",\n        \"needs_cl\": false,\n        \"locator_note\": \"Lake pin-652 has quote_fidelity=mismatch, pinpoint_status=slip-only, no star_marker, and no position.\"\n      },\n      \"reasons\": [\n        \"The lake pin-652 quote starts with “--- # Vernonia School District 47J v. Acton,” which is content-page Markdown, not opinion text.\",\n        \"The cached opinion’s relevant page-652/653 language is available, but it does not match the stored pin quote.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The underlying rule proposition is supportable from the opinion, but this quote-fidelity assertion fails as framed.\"\n      ],\n      \"suggested_tightening\": \"Use separate exact pin quotes for “state-compelled collection and testing of urine ... constitutes a ‘search’” and for the reasonableness-balancing sentence.\"\n    },\n    {\n      \"assertion_id\": \"8877da5ead42ddbe\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Treatment and currency are outside Lens A’s charter.\",\n        \"The payload mirrors the disclosed lake treatment fields: field_i_validity good_law, as_of_content 1995-06-26, as_of_treatment 2026-06-30, varies_by_point false, and the stated scope note.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"No Lens A treatment finding is made; Lens B owns treatment/currency review.\"\n      ],\n      \"suggested_tightening\": null\n    }\n  ],\n  \"notes\": \"Reviewed all 5 rows in group_inventory.jsonl. No external sources used.\"\n}",
+  "summary": {
+    "at": "2026-07-09T23:57:57-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-430fcc2ef6",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-53c93f1e25",
+      "F-S9-PR-81172d9cc5"
+    ],
+    "group_id": "_overhaul2/lake/cases/Vernonia School District 47J v. Acton.json",
+    "group_total_assertions": 5,
+    "lake_only_cases": [],
+    "lane": "codex-A",
+    "lane_id": "codex-A-panel-prod-23396585",
+    "lens": "A",
+    "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-23396585.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Vernonia School District 47J v. Acton"
+    ],
+    "tokens": {
+      "input": 179130,
+      "output": 8759,
+      "source": "codex-events",
+      "total": 187889
+    },
+    "verdict_map": {
+      "2d57045aea3b13da": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "458ede4658705d29": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "814e345a347d0512": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "8877da5ead42ddbe": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "89c4804b23ef4b00": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-53c93f1e25",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-81172d9cc5",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-430fcc2ef6",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": 169.8
+  }
+}

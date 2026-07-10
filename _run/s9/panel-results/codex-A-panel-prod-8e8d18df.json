@@ -1,0 +1,159 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Pennsylvania v. Mimms.json",
+    "lens": "A",
+    "notes": "No external sources consulted. Inventory contained four assertions and each assertion_id was reviewed exactly once.",
+    "reviewed": [
+      {
+        "assertion_id": "8a4477e8238d66ab",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity verifies case_name_full as Pennsylvania v. Mimms, court as U.S. Supreme Court, date_decided as 1977-12-05, and year as 1977.",
+          "Lake citations.official is 434 U.S. 106, matching the page display citation; the listed parallel/vendor citations also match the lake record."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "202a861ad138e00a",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "--- # Pennsylvania v. Mimms *434 U.S. 106 (1977)* · U.S. Supreme Court",
+          "locator_note": "lake pinpoints[].id=pin-111; text page marker *111 appears in text/Pennsylvania v. Mimms__00432d.txt.",
+          "needs_cl": false,
+          "problem": "pin-111's stored quote is not an opinion quote at 434 U.S. 111; it is a harvested chunk of the built page/frontmatter and the lake itself marks quote_fidelity as mismatch with page null and pinpoint_status slip-only.",
+          "proposed_fix": "Reharvest pin-111 from the opinion text at page *111 and store only the actual quoted passage, or remove the corrupt pinpoint quote.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The reviewed quote begins with Markdown page content rather than the Supreme Court opinion text.",
+          "The actual page *111 text contains the de minimis/additional-intrusion discussion, not the stored page/frontmatter excerpt."
+        ],
+        "residual_risks": [
+          "The legal proposition on the built page is supportable from page *111, but this particular pin record is corrupt."
+        ],
+        "suggested_tightening": "Store the exact page-*111 language and separate any composed ellipsis excerpt from the raw pinpoint quote.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "845b707e94925509",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "We hold only that once a motor vehicle has been lawfully detained for a traffic violation",
+          "locator_note": "text footnote label 6 at page *111; lake pinpoints[].id=pin-111a has quote_fidelity=mismatch.",
+          "needs_cl": false,
+          "problem": "The quote is substantively located in footnote 6 at page *111, but it is not character-faithful to the cached text: the opinion says 'We hold only that once...' and uses the curly apostrophe in 'Amendment’s,' while the page/lake quote starts '[O]nce' and uses a straight apostrophe.",
+          "proposed_fix": "Either quote the exact text beginning 'We hold only that once...' with the opinion punctuation, or define a normalization rule that expressly permits bracketed initial-cap changes and punctuation normalization.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The holding sentence appears in the disclosed opinion text at footnote 6 on page *111.",
+          "Strict quote-fidelity is not satisfied because the stored/page quote alters the opening and punctuation."
+        ],
+        "residual_risks": [
+          "If the corpus intentionally normalizes typographic apostrophes and permits bracketed capitalization, this could be downgraded to stands."
+        ],
+        "suggested_tightening": "Use exact opinion punctuation for verbatim quotes or mark the quote as normalized/edited.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "d5a700aeaa9fd557",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The treatment payload matches the lake treatment fields: field_i_validity good_law, as_of_content 1977-12-05, as_of_treatment 2026-06-30, and varies_by_point false.",
+          "Treatment/currency is outside Lens A, so no independent treatment finding is raised."
+        ],
+        "residual_risks": [
+          "Treatment/currency was not substantively reviewed under Lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Pennsylvania v. Mimms.json\",\"reviewed\":[{\"assertion_id\":\"8a4477e8238d66ab\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity verifies case_name_full as Pennsylvania v. Mimms, court as U.S. Supreme Court, date_decided as 1977-12-05, and year as 1977.\",\"Lake citations.official is 434 U.S. 106, matching the page display citation; the listed parallel/vendor citations also match the lake record.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"202a861ad138e00a\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"pin-111's stored quote is not an opinion quote at 434 U.S. 111; it is a harvested chunk of the built page/frontmatter and the lake itself marks quote_fidelity as mismatch with page null and pinpoint_status slip-only.\",\"severity\":\"high\",\"proposed_fix\":\"Reharvest pin-111 from the opinion text at page *111 and store only the actual quoted passage, or remove the corrupt pinpoint quote.\",\"evidence_quote\":\"--- # Pennsylvania v. Mimms *434 U.S. 106 (1977)* · U.S. Supreme Court\",\"needs_cl\":false,\"locator_note\":\"lake pinpoints[].id=pin-111; text page marker *111 appears in text/Pennsylvania v. Mimms__00432d.txt.\"},\"reasons\":[\"The reviewed quote begins with Markdown page content rather than the Supreme Court opinion text.\",\"The actual page *111 text contains the de minimis/additional-intrusion discussion, not the stored page/frontmatter excerpt.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The legal proposition on the built page is supportable from page *111, but this particular pin record is corrupt.\"],\"suggested_tightening\":\"Store the exact page-*111 language and separate any composed ellipsis excerpt from the raw pinpoint quote.\"},{\"assertion_id\":\"845b707e94925509\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The quote is substantively located in footnote 6 at page *111, but it is not character-faithful to the cached text: the opinion says 'We hold only that once...' and uses the curly apostrophe in 'Amendment’s,' while the page/lake quote starts '[O]nce' and uses a straight apostrophe.\",\"severity\":\"low\",\"proposed_fix\":\"Either quote the exact text beginning 'We hold only that once...' with the opinion punctuation, or define a normalization rule that expressly permits bracketed initial-cap changes and punctuation normalization.\",\"evidence_quote\":\"We hold only that once a motor vehicle has been lawfully detained for a traffic violation\",\"needs_cl\":false,\"locator_note\":\"text footnote label 6 at page *111; lake pinpoints[].id=pin-111a has quote_fidelity=mismatch.\"},\"reasons\":[\"The holding sentence appears in the disclosed opinion text at footnote 6 on page *111.\",\"Strict quote-fidelity is not satisfied because the stored/page quote alters the opening and punctuation.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"If the corpus intentionally normalizes typographic apostrophes and permits bracketed capitalization, this could be downgraded to stands.\"],\"suggested_tightening\":\"Use exact opinion punctuation for verbatim quotes or mark the quote as normalized/edited.\"},{\"assertion_id\":\"d5a700aeaa9fd557\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The treatment payload matches the lake treatment fields: field_i_validity good_law, as_of_content 1977-12-05, as_of_treatment 2026-06-30, and varies_by_point false.\",\"Treatment/currency is outside Lens A, so no independent treatment finding is raised.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment/currency was not substantively reviewed under Lens A.\"],\"suggested_tightening\":null}],\"notes\":\"No external sources consulted. Inventory contained four assertions and each assertion_id was reviewed exactly once.\"}",
+  "summary": {
+    "at": "2026-07-09T23:38:00-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-87166784b3",
+      "F-S9-PR-93050681c4"
+    ],
+    "group_id": "_overhaul2/lake/cases/Pennsylvania v. Mimms.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "codex-A",
+    "lane_id": "codex-A-panel-prod-8e8d18df",
+    "lens": "A",
+    "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-8e8d18df.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Pennsylvania v. Mimms"
+    ],
+    "tokens": {
+      "input": 175096,
+      "output": 7189,
+      "source": "codex-events",
+      "total": 182285
+    },
+    "verdict_map": {
+      "202a861ad138e00a": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "845b707e94925509": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "8a4477e8238d66ab": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "d5a700aeaa9fd557": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-87166784b3",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-93050681c4",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 144.2
+  }
+}

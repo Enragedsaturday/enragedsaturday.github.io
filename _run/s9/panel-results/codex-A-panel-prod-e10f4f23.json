@@ -1,0 +1,159 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Weeks v. United States.json",
+    "lens": "A",
+    "notes": "Reviewed every assertion_id in group_inventory.jsonl exactly once under Lens A. Treatment was recorded only to the extent disclosed by the lake record; no Lens B treatment finding is made.",
+    "reviewed": [
+      {
+        "assertion_id": "3bdeb8b16e0dde9f",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record identifies the case as Weeks v. United States, decided by the U.S. Supreme Court on 1914-02-24, year 1914.",
+          "The official citation in the lake record is 232 U.S. 383, with parallel citations 34 S. Ct. 341 and 58 L. Ed. 652, plus 1914 U.S. LEXIS 1368."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "170351cf9ccb5354",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "If letters and private documents can thus be seized and held and used in evidence against a citizen accused of an offense, the protection of the Fourth Amendment declaring his right to be secure against such searches and seizures, is of no value, and, so far as those thus placed are concerned, might as well be stricken from the Constitution.",
+          "locator_note": "text/Weeks v. United States__fa1101.txt, star page *393; lake pinpoints[].id pin-393 has page null and quote_fidelity mismatch.",
+          "needs_cl": false,
+          "problem": "The pin-393 quote is not a character-faithful opinion quotation. It captures the built page header/background/rule prose and stops before the actual quoted passage that appears at 232 U.S. 393. The lake record also marks this pinpoint quote_fidelity as mismatch.",
+          "proposed_fix": "Replace pin-393 with the actual opinion quotation from the 393 passage, or remove this malformed harvested quote from the pinpoint record.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The disclosed opinion text contains the real quoted sentence at star page *393, not the page markdown beginning '--- # Weeks v. United States'.",
+          "The asserted quote is therefore a malformed page-content harvest, not a faithful legal quote."
+        ],
+        "residual_risks": [
+          "The underlying rule proposition is supported by the opinion, but this quote-fidelity assertion does not stand as framed."
+        ],
+        "suggested_tightening": "Store only the quoted sentence following the Rule section's colon as pin-393, with the page locator 393.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "7100d29d03103b4b",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "and that the court , should have restored these letters to the accused. In holding them and permitting their use upon the trial, we think prejudicial error was committed.",
+          "locator_note": "text/Weeks v. United States__fa1101.txt, star page *398; lake pinpoints[].id pin-398 has quote_fidelity mismatch.",
+          "needs_cl": false,
+          "problem": "The pin-398 quotation is substantively supported but not character-faithful to the disclosed cached opinion text. The cached text reads 'the court , should' with an intervening comma/space, while the asserted quote reads 'the court should'. The lake record also marks this pinpoint quote_fidelity as mismatch.",
+          "proposed_fix": "Either correct the quote to match the disclosed text exactly or replace the cached opinion text with a verified clean text before asserting verbatim quote fidelity.",
+          "severity": "medium"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The asserted quote omits the punctuation artifact present in the disclosed text between 'court' and 'should'.",
+          "Because the charter requires character-faithful verbatim quotes, the quote-fidelity assertion cannot stand from the disclosed evidence."
+        ],
+        "residual_risks": [
+          "The holding is supported; the defect is verbatim fidelity to the disclosed text."
+        ],
+        "suggested_tightening": "Do not mark this quote as faithful unless the source text is normalized and reverified.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "ed03bf23feea28b8",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A, so no treatment defect is raised.",
+          "The payload mirrors the lake treatment fields: field_i_validity good_law, as_of_content 1914-02-24, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note."
+        ],
+        "residual_risks": [
+          "Good-law status was not independently attacked under Lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Weeks v. United States.json\",\"reviewed\":[{\"assertion_id\":\"3bdeb8b16e0dde9f\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record identifies the case as Weeks v. United States, decided by the U.S. Supreme Court on 1914-02-24, year 1914.\",\"The official citation in the lake record is 232 U.S. 383, with parallel citations 34 S. Ct. 341 and 58 L. Ed. 652, plus 1914 U.S. LEXIS 1368.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"170351cf9ccb5354\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The pin-393 quote is not a character-faithful opinion quotation. It captures the built page header/background/rule prose and stops before the actual quoted passage that appears at 232 U.S. 393. The lake record also marks this pinpoint quote_fidelity as mismatch.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-393 with the actual opinion quotation from the 393 passage, or remove this malformed harvested quote from the pinpoint record.\",\"evidence_quote\":\"If letters and private documents can thus be seized and held and used in evidence against a citizen accused of an offense, the protection of the Fourth Amendment declaring his right to be secure against such searches and seizures, is of no value, and, so far as those thus placed are concerned, might as well be stricken from the Constitution.\",\"needs_cl\":false,\"locator_note\":\"text/Weeks v. United States__fa1101.txt, star page *393; lake pinpoints[].id pin-393 has page null and quote_fidelity mismatch.\"},\"reasons\":[\"The disclosed opinion text contains the real quoted sentence at star page *393, not the page markdown beginning '--- # Weeks v. United States'.\",\"The asserted quote is therefore a malformed page-content harvest, not a faithful legal quote.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The underlying rule proposition is supported by the opinion, but this quote-fidelity assertion does not stand as framed.\"],\"suggested_tightening\":\"Store only the quoted sentence following the Rule section's colon as pin-393, with the page locator 393.\"},{\"assertion_id\":\"7100d29d03103b4b\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The pin-398 quotation is substantively supported but not character-faithful to the disclosed cached opinion text. The cached text reads 'the court , should' with an intervening comma/space, while the asserted quote reads 'the court should'. The lake record also marks this pinpoint quote_fidelity as mismatch.\",\"severity\":\"medium\",\"proposed_fix\":\"Either correct the quote to match the disclosed text exactly or replace the cached opinion text with a verified clean text before asserting verbatim quote fidelity.\",\"evidence_quote\":\"and that the court , should have restored these letters to the accused. In holding them and permitting their use upon the trial, we think prejudicial error was committed.\",\"needs_cl\":false,\"locator_note\":\"text/Weeks v. United States__fa1101.txt, star page *398; lake pinpoints[].id pin-398 has quote_fidelity mismatch.\"},\"reasons\":[\"The asserted quote omits the punctuation artifact present in the disclosed text between 'court' and 'should'.\",\"Because the charter requires character-faithful verbatim quotes, the quote-fidelity assertion cannot stand from the disclosed evidence.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The holding is supported; the defect is verbatim fidelity to the disclosed text.\"],\"suggested_tightening\":\"Do not mark this quote as faithful unless the source text is normalized and reverified.\"},{\"assertion_id\":\"ed03bf23feea28b8\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside Lens A, so no treatment defect is raised.\",\"The payload mirrors the lake treatment fields: field_i_validity good_law, as_of_content 1914-02-24, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Good-law status was not independently attacked under Lens A.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed every assertion_id in group_inventory.jsonl exactly once under Lens A. Treatment was recorded only to the extent disclosed by the lake record; no Lens B treatment finding is made.\"}",
+  "summary": {
+    "at": "2026-07-09T23:58:54-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-3f673e5769",
+      "F-S9-PR-0365ee9e40"
+    ],
+    "group_id": "_overhaul2/lake/cases/Weeks v. United States.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "codex-A",
+    "lane_id": "codex-A-panel-prod-e10f4f23",
+    "lens": "A",
+    "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-e10f4f23.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Weeks v. United States"
+    ],
+    "tokens": {
+      "input": 117339,
+      "output": 6002,
+      "source": "codex-events",
+      "total": 123341
+    },
+    "verdict_map": {
+      "170351cf9ccb5354": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "3bdeb8b16e0dde9f": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "7100d29d03103b4b": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "ed03bf23feea28b8": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-3f673e5769",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-0365ee9e40",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 119.9
+  }
+}

@@ -1,0 +1,161 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/United States v. Watson.json",
+    "lens": "B",
+    "notes": "No external search used. Lens B did not raise support or quote-fidelity findings.",
+    "reviewed": [
+      {
+        "assertion_id": "39a71084251bcf5a",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record is non-stub and status is verified.",
+          "The identity fields match United States v. Watson, U.S. Supreme Court, decided 1976-01-26.",
+          "The official citation field selects 423 U.S. 411, and the page displays that citation."
+        ],
+        "residual_risks": [
+          "Currency is only supported through the disclosed treatment as-of date, 2026-06-30."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "247761c91e0b5a81",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Lens B does not adjudicate quote fidelity or support.",
+          "No treatment field or point override in the disclosed lake record creates a currency defect specific to pin-424."
+        ],
+        "residual_risks": [
+          "Actual quote fidelity is left to Lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "c00db297c5db9ec8",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Lens B does not adjudicate quote fidelity or support.",
+          "No treatment field or point override in the disclosed lake record creates a currency defect specific to pin-424a."
+        ],
+        "residual_risks": [
+          "Actual quote fidelity is left to Lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "b1504a4c9757045d",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade.",
+          "locator_note": "content_page.md treatment section; lake.treatment.scope_note; lake.treatment.edges; lake.treatment.derivation",
+          "needs_cl": true,
+          "problem": "The good-law and Binding-SCOTUS treatment survives, but the page's unqualified 'No negative treatment' overstates the disclosed record because the lake contains proposed negative-treatment edges and audit-needed markers.",
+          "proposed_fix": "Retain good_law as of 2026-06-30 and Binding-SCOTUS, but change 'No negative treatment' to 'No confirmed negative treatment in the disclosed lake record; proposed treatment-audit edges exist and no point overrides are recorded.'",
+          "severity": "medium"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "The lake treatment field is good_law, as_of_treatment is 2026-06-30, varies_by_point is false, and point_overrides is empty.",
+          "The SCOTUS court-level identity supports the Binding-SCOTUS authority weight.",
+          "The lake also lists proposed edges labeled questioned, criticized, overruled, and superseded_by_statute, all with field_iii mentioned and proposed true, so the disclosed record supports no confirmed downgrade but not an absolute no-negative-treatment statement."
+        ],
+        "residual_risks": [
+          "The disclosed record does not include the full text of the proposed citing authorities, so their actual treatment effect cannot be finally audited from these files alone.",
+          "The derivation shows treatment audit work remains, including cap-hit/audit-needed markers."
+        ],
+        "suggested_tightening": "Qualify treatment language to distinguish confirmed treatment from proposed audit edges.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"B\",\n  \"group_id\": \"_overhaul2/lake/cases/United States v. Watson.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"39a71084251bcf5a\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake record is non-stub and status is verified.\",\n        \"The identity fields match United States v. Watson, U.S. Supreme Court, decided 1976-01-26.\",\n        \"The official citation field selects 423 U.S. 411, and the page displays that citation.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Currency is only supported through the disclosed treatment as-of date, 2026-06-30.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"247761c91e0b5a81\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Lens B does not adjudicate quote fidelity or support.\",\n        \"No treatment field or point override in the disclosed lake record creates a currency defect specific to pin-424.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Actual quote fidelity is left to Lens A.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"c00db297c5db9ec8\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Lens B does not adjudicate quote fidelity or support.\",\n        \"No treatment field or point override in the disclosed lake record creates a currency defect specific to pin-424a.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Actual quote fidelity is left to Lens A.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"b1504a4c9757045d\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands-modified\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The good-law and Binding-SCOTUS treatment survives, but the page's unqualified 'No negative treatment' overstates the disclosed record because the lake contains proposed negative-treatment edges and audit-needed markers.\",\n        \"severity\": \"medium\",\n        \"proposed_fix\": \"Retain good_law as of 2026-06-30 and Binding-SCOTUS, but change 'No negative treatment' to 'No confirmed negative treatment in the disclosed lake record; proposed treatment-audit edges exist and no point overrides are recorded.'\",\n        \"evidence_quote\": \"Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade.\",\n        \"needs_cl\": true,\n        \"locator_note\": \"content_page.md treatment section; lake.treatment.scope_note; lake.treatment.edges; lake.treatment.derivation\"\n      },\n      \"reasons\": [\n        \"The lake treatment field is good_law, as_of_treatment is 2026-06-30, varies_by_point is false, and point_overrides is empty.\",\n        \"The SCOTUS court-level identity supports the Binding-SCOTUS authority weight.\",\n        \"The lake also lists proposed edges labeled questioned, criticized, overruled, and superseded_by_statute, all with field_iii mentioned and proposed true, so the disclosed record supports no confirmed downgrade but not an absolute no-negative-treatment statement.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The disclosed record does not include the full text of the proposed citing authorities, so their actual treatment effect cannot be finally audited from these files alone.\",\n        \"The derivation shows treatment audit work remains, including cap-hit/audit-needed markers.\"\n      ],\n      \"suggested_tightening\": \"Qualify treatment language to distinguish confirmed treatment from proposed audit edges.\"\n    }\n  ],\n  \"notes\": \"No external search used. Lens B did not raise support or quote-fidelity findings.\"\n}",
+  "summary": {
+    "at": "2026-07-09T23:58:16-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-14043a4b33",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-24d5fde312"
+    ],
+    "group_id": "_overhaul2/lake/cases/United States v. Watson.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "codex-B",
+    "lane_id": "codex-B-panel-prod-c11b0ab6",
+    "lens": "B",
+    "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-c11b0ab6.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "United States v. Watson"
+    ],
+    "tokens": {
+      "input": 518985,
+      "output": 9277,
+      "source": "codex-events",
+      "total": 528262
+    },
+    "verdict_map": {
+      "247761c91e0b5a81": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "39a71084251bcf5a": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "b1504a4c9757045d": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "c00db297c5db9ec8": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-14043a4b33",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-24d5fde312",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 190.3
+  }
+}

@@ -1,0 +1,159 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/United States v. Ross.json",
+    "lens": "B",
+    "notes": "Lens B only; quote-fidelity rows were not substantively attacked for textual accuracy.",
+    "reviewed": [
+      {
+        "assertion_id": "400fb8036406d00d",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity is verified for United States v. Ross, U.S. Supreme Court, decided 1982-06-01, cluster_id 110719.",
+          "The lake selects 456 U.S. 798 as the official citation and carries field_i_validity good_law as of 2026-06-30; the SCOTUS court_level supports the Binding-SCOTUS weight label."
+        ],
+        "residual_risks": [
+          "Treatment derivation contains proposed audit flags, addressed in the treatment assertion."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "327daa9899e95d2d",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Lens B does not attack quote fidelity; the lake pinpoint record for pin-825 itself reports quote_fidelity mismatch and pinpoint_status slip-only.",
+          "No separate currency or treatment assertion in this row is refuted by the disclosed treatment fields."
+        ],
+        "residual_risks": [
+          "Quote accuracy belongs to Lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "57ad7758424e03df",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Lens B does not attack quote fidelity; the lake pinpoint record for pin-824 itself reports quote_fidelity matched and pinpoint_status star-verified.",
+          "No separate currency or treatment assertion in this row is refuted by the disclosed treatment fields."
+        ],
+        "residual_risks": [
+          "Quote accuracy belongs to Lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "0c455a0cc8b31ac7",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade.",
+          "locator_note": "content_page.md Treatment & subsequent history; lake/United States v. Ross__a20a9c.json treatment.derivation and provenance",
+          "needs_cl": true,
+          "problem": "The good_law label is supported by the lake's field_i_validity, but the page's categorical 'No negative treatment' should be softened because the lake treatment is migration-seeded and lists unresolved proposed negative/audit events.",
+          "proposed_fix": "Keep good_law as of 2026-06-30 only as the current lake judgment, but change the treatment note to 'No confirmed negative treatment in the disclosed lake record; proposed treatment-audit edges remain unresolved' or complete the R15 audit before saying 'No negative treatment.'",
+          "severity": "medium"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "Payload matches lake treatment.field_i_validity good_law, as_of_treatment 2026-06-30, and varies_by_point false.",
+          "Lake provenance says treatment.field_i_validity came from _treatment-migration.json plus page frontmatter, with a legacy migration warning.",
+          "The derivation lists proposed_negative_events and R15 treatment audit required for lane1_negative and lane2_top_cited; the edges are proposed and field_iii mentioned, so they do not confirm overruling, but they undercut the stronger page wording 'No negative treatment.'"
+        ],
+        "residual_risks": [
+          "Full citing-case text for the proposed edges is not disclosed; a completed treatment audit could downgrade or confirm the status."
+        ],
+        "suggested_tightening": "Separate confirmed good-law status from unresolved proposed treatment-audit hits; avoid categorical 'No negative treatment' until the audit flags are resolved.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/United States v. Ross.json\",\"reviewed\":[{\"assertion_id\":\"400fb8036406d00d\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity is verified for United States v. Ross, U.S. Supreme Court, decided 1982-06-01, cluster_id 110719.\",\"The lake selects 456 U.S. 798 as the official citation and carries field_i_validity good_law as of 2026-06-30; the SCOTUS court_level supports the Binding-SCOTUS weight label.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment derivation contains proposed audit flags, addressed in the treatment assertion.\"],\"suggested_tightening\":null},{\"assertion_id\":\"327daa9899e95d2d\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lens B does not attack quote fidelity; the lake pinpoint record for pin-825 itself reports quote_fidelity mismatch and pinpoint_status slip-only.\",\"No separate currency or treatment assertion in this row is refuted by the disclosed treatment fields.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Quote accuracy belongs to Lens A.\"],\"suggested_tightening\":null},{\"assertion_id\":\"57ad7758424e03df\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lens B does not attack quote fidelity; the lake pinpoint record for pin-824 itself reports quote_fidelity matched and pinpoint_status star-verified.\",\"No separate currency or treatment assertion in this row is refuted by the disclosed treatment fields.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Quote accuracy belongs to Lens A.\"],\"suggested_tightening\":null},{\"assertion_id\":\"0c455a0cc8b31ac7\",\"dimension\":\"treatment\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The good_law label is supported by the lake's field_i_validity, but the page's categorical 'No negative treatment' should be softened because the lake treatment is migration-seeded and lists unresolved proposed negative/audit events.\",\"severity\":\"medium\",\"proposed_fix\":\"Keep good_law as of 2026-06-30 only as the current lake judgment, but change the treatment note to 'No confirmed negative treatment in the disclosed lake record; proposed treatment-audit edges remain unresolved' or complete the R15 audit before saying 'No negative treatment.'\",\"evidence_quote\":\"Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade.\",\"needs_cl\":true,\"locator_note\":\"content_page.md Treatment & subsequent history; lake/United States v. Ross__a20a9c.json treatment.derivation and provenance\"},\"reasons\":[\"Payload matches lake treatment.field_i_validity good_law, as_of_treatment 2026-06-30, and varies_by_point false.\",\"Lake provenance says treatment.field_i_validity came from _treatment-migration.json plus page frontmatter, with a legacy migration warning.\",\"The derivation lists proposed_negative_events and R15 treatment audit required for lane1_negative and lane2_top_cited; the edges are proposed and field_iii mentioned, so they do not confirm overruling, but they undercut the stronger page wording 'No negative treatment.'\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Full citing-case text for the proposed edges is not disclosed; a completed treatment audit could downgrade or confirm the status.\"],\"suggested_tightening\":\"Separate confirmed good-law status from unresolved proposed treatment-audit hits; avoid categorical 'No negative treatment' until the audit flags are resolved.\"}],\"notes\":\"Lens B only; quote-fidelity rows were not substantively attacked for textual accuracy.\"}",
+  "summary": {
+    "at": "2026-07-09T23:55:05-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-1fe6565b86",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-6cd6524576"
+    ],
+    "group_id": "_overhaul2/lake/cases/United States v. Ross.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "codex-B",
+    "lane_id": "codex-B-panel-prod-17932d3c",
+    "lens": "B",
+    "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-17932d3c.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "United States v. Ross"
+    ],
+    "tokens": {
+      "input": 316575,
+      "output": 7264,
+      "source": "codex-events",
+      "total": 323839
+    },
+    "verdict_map": {
+      "0c455a0cc8b31ac7": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "327daa9899e95d2d": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "400fb8036406d00d": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "57ad7758424e03df": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-1fe6565b86",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-6cd6524576",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 171.2
+  }
+}

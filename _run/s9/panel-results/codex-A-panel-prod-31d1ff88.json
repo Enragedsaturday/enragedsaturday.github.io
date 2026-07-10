@@ -1,0 +1,157 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/United States v. Russell.json",
+    "lens": "A",
+    "notes": "Treatment findings are not raised under Lens A.",
+    "reviewed": [
+      {
+        "assertion_id": "7b255822eb187c3b",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record identifies United States v. Russell, U.S. Supreme Court, decided 1973-04-24.",
+          "The official citation in the lake record is 411 U.S. 423, matching the page display citation."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "67eaedba82cf46a8",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "It is only when the Government's deception actually implants the criminal design in the mind of the defendant that the defense of entrapment comes into play.",
+          "locator_note": "text/United States v. Russell__06aae7.txt, page marker *436",
+          "needs_cl": false,
+          "problem": "The pin-436 payload quote is not an opinion quote; it is page/frontmatter/background/rule text harvested from the built page and does not match the court passage at 411 U.S. 436.",
+          "proposed_fix": "Replace the pin-436 quote with the actual opinion sentence at page 436.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The disclosed opinion text contains the actual quoted sentence at page 436.",
+          "The inventory/lake quote instead begins with the page markdown header and background narrative, which is not a Supreme Court quotation."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Pin only the quoted sentence, not the preceding page prose.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "cad3ed0dcdd8f19c",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "While we may some day be presented with a situation in which the conduct of law enforcement agents is so outrageous that due process principles would absolutely bar the government from invoking judicial processes to obtain a conviction, cf. Rochin v. California, 342 U. S. 165 (1952), the instant case is distinctly not of that breed.",
+          "locator_note": "text/United States v. Russell__06aae7.txt, page markers *431-*432",
+          "needs_cl": false,
+          "problem": "The quoted words are supported, but the displayed quote uses an ellipsis to omit the intervening Rochin citation and surrounding punctuation; strict character-fidelity would be cleaner with the omitted material or clearer punctuation.",
+          "proposed_fix": "Either quote the sentence with the Rochin citation included, or use a clearer ellipsis form showing the omitted citation/punctuation.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The sentence appears across pages 431-432 in the disclosed opinion text.",
+          "The page's quote faithfully captures the substantive quoted words but omits the intervening citation with an ellipsis."
+        ],
+        "residual_risks": [
+          "If the corpus permits ellipses for omitted citations, this is only a style/normalization issue."
+        ],
+        "suggested_tightening": "Preserve the comma before the omitted citation or include the citation in the quotation.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "5405af32c9339812",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A.",
+          "The treatment payload matches the lake fields: field_i_validity good_law, as_of_content 1973-04-24, as_of_treatment 2026-06-30."
+        ],
+        "residual_risks": [
+          "No Lens A treatment/currency assessment performed."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"A\",\n  \"group_id\": \"_overhaul2/lake/cases/United States v. Russell.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"7b255822eb187c3b\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake record identifies United States v. Russell, U.S. Supreme Court, decided 1973-04-24.\",\n        \"The official citation in the lake record is 411 U.S. 423, matching the page display citation.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"67eaedba82cf46a8\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The pin-436 payload quote is not an opinion quote; it is page/frontmatter/background/rule text harvested from the built page and does not match the court passage at 411 U.S. 436.\",\n        \"severity\": \"high\",\n        \"proposed_fix\": \"Replace the pin-436 quote with the actual opinion sentence at page 436.\",\n        \"evidence_quote\": \"It is only when the Government's deception actually implants the criminal design in the mind of the defendant that the defense of entrapment comes into play.\",\n        \"needs_cl\": false,\n        \"locator_note\": \"text/United States v. Russell__06aae7.txt, page marker *436\"\n      },\n      \"reasons\": [\n        \"The disclosed opinion text contains the actual quoted sentence at page 436.\",\n        \"The inventory/lake quote instead begins with the page markdown header and background narrative, which is not a Supreme Court quotation.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": \"Pin only the quoted sentence, not the preceding page prose.\"\n    },\n    {\n      \"assertion_id\": \"cad3ed0dcdd8f19c\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands-modified\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The quoted words are supported, but the displayed quote uses an ellipsis to omit the intervening Rochin citation and surrounding punctuation; strict character-fidelity would be cleaner with the omitted material or clearer punctuation.\",\n        \"severity\": \"low\",\n        \"proposed_fix\": \"Either quote the sentence with the Rochin citation included, or use a clearer ellipsis form showing the omitted citation/punctuation.\",\n        \"evidence_quote\": \"While we may some day be presented with a situation in which the conduct of law enforcement agents is so outrageous that due process principles would absolutely bar the government from invoking judicial processes to obtain a conviction, cf. Rochin v. California, 342 U. S. 165 (1952), the instant case is distinctly not of that breed.\",\n        \"needs_cl\": false,\n        \"locator_note\": \"text/United States v. Russell__06aae7.txt, page markers *431-*432\"\n      },\n      \"reasons\": [\n        \"The sentence appears across pages 431-432 in the disclosed opinion text.\",\n        \"The page's quote faithfully captures the substantive quoted words but omits the intervening citation with an ellipsis.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"If the corpus permits ellipses for omitted citations, this is only a style/normalization issue.\"\n      ],\n      \"suggested_tightening\": \"Preserve the comma before the omitted citation or include the citation in the quotation.\"\n    },\n    {\n      \"assertion_id\": \"5405af32c9339812\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Treatment/currency is outside Lens A.\",\n        \"The treatment payload matches the lake fields: field_i_validity good_law, as_of_content 1973-04-24, as_of_treatment 2026-06-30.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"No Lens A treatment/currency assessment performed.\"\n      ],\n      \"suggested_tightening\": null\n    }\n  ],\n  \"notes\": \"Treatment findings are not raised under Lens A.\"\n}",
+  "summary": {
+    "at": "2026-07-09T23:55:05-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-4558c6f5a4",
+      "F-S9-PR-99ac5e324e"
+    ],
+    "group_id": "_overhaul2/lake/cases/United States v. Russell.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "codex-A",
+    "lane_id": "codex-A-panel-prod-31d1ff88",
+    "lens": "A",
+    "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-31d1ff88.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "United States v. Russell"
+    ],
+    "tokens": {
+      "input": 292121,
+      "output": 6940,
+      "source": "codex-events",
+      "total": 299061
+    },
+    "verdict_map": {
+      "5405af32c9339812": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "67eaedba82cf46a8": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "7b255822eb187c3b": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "cad3ed0dcdd8f19c": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-4558c6f5a4",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-99ac5e324e",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 147.7
+  }
+}

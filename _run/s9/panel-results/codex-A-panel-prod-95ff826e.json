@@ -1,0 +1,124 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/United States v. Robinson.json",
+    "lens": "A",
+    "notes": "Reviewed the three assertion rows supplied in group_inventory.jsonl. Treatment was recorded only under the Lens A charter.",
+    "reviewed": [
+      {
+        "assertion_id": "6a833943ef450ae0",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record identifies the case as United States v. Robinson, U.S. Supreme Court, decided 1973-12-11, year 1973.",
+          "The lake official citation is 414 U.S. 218 and the disclosed parallel/vendor citations match the assertion payload."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "595c7404e13e9aba",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "A custodial arrest of a suspect based on probable cause is a reasonable intrusion under the Fourth Amendment; that intrusion being lawful, a search incident to the arrest requires no additional justification. It is the fact of the lawful arrest which establishes the authority to search, and we hold that in the case of a lawful custodial arrest a full search of the person is not only an exception to the warrant requirement of the Fourth Amendment, but is also a “reasonable” search under that Amendment.",
+          "locator_note": "text/United States v. Robinson__651577.txt contains the quoted passage at the page-number label *235; lake pinpoints[0] for pin-235 has page null, pinpoint_status slip-only, and quote_fidelity mismatch.",
+          "needs_cl": false,
+          "problem": "The pin-235 quote is not a character-faithful opinion quote. The lake pinpoint quote is rendered page/content markup ending at '## Rule Yes.', not the Robinson opinion passage at 414 U.S. 235, and the lake itself flags quote_fidelity as mismatch.",
+          "proposed_fix": "Replace pin-235 with the exact opinion passage at page 235 and set a real page/pin location; update the displayed quote so its punctuation matches the opinion text, including the opinion's “reasonable” quotation marks.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The disclosed opinion text contains the Robinson holding at page *235, but the stored pinpoint quote instead begins with page markup: '--- # United States v. Robinson'.",
+          "The content page's displayed quote uses 'reasonable' while the opinion text uses “reasonable”, so even the visible quotation is not strictly character-faithful."
+        ],
+        "residual_risks": [
+          "The legal proposition is strongly supported by the opinion text, but this assertion is quote-fidelity, and the pinpoint/quote record fails that check."
+        ],
+        "suggested_tightening": "Harvest pin quotes directly from the cached opinion text and include page 235 rather than storing rendered content-page text as the pinpoint quote.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "4a029504203c3615",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Lens A does not assess treatment or currency merits.",
+          "The treatment fields in the assertion payload match the disclosed lake treatment fields and content-page frontmatter: good_law, as_of_content 1973-12-11, as_of_treatment 2026-06-30, varies_by_point false."
+        ],
+        "residual_risks": [
+          "Treatment/currency accuracy is reserved to Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"A\",\n  \"group_id\": \"_overhaul2/lake/cases/United States v. Robinson.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"6a833943ef450ae0\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake record identifies the case as United States v. Robinson, U.S. Supreme Court, decided 1973-12-11, year 1973.\",\n        \"The lake official citation is 414 U.S. 218 and the disclosed parallel/vendor citations match the assertion payload.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"595c7404e13e9aba\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The pin-235 quote is not a character-faithful opinion quote. The lake pinpoint quote is rendered page/content markup ending at '## Rule Yes.', not the Robinson opinion passage at 414 U.S. 235, and the lake itself flags quote_fidelity as mismatch.\",\n        \"severity\": \"high\",\n        \"proposed_fix\": \"Replace pin-235 with the exact opinion passage at page 235 and set a real page/pin location; update the displayed quote so its punctuation matches the opinion text, including the opinion's “reasonable” quotation marks.\",\n        \"evidence_quote\": \"A custodial arrest of a suspect based on probable cause is a reasonable intrusion under the Fourth Amendment; that intrusion being lawful, a search incident to the arrest requires no additional justification. It is the fact of the lawful arrest which establishes the authority to search, and we hold that in the case of a lawful custodial arrest a full search of the person is not only an exception to the warrant requirement of the Fourth Amendment, but is also a “reasonable” search under that Amendment.\",\n        \"needs_cl\": false,\n        \"locator_note\": \"text/United States v. Robinson__651577.txt contains the quoted passage at the page-number label *235; lake pinpoints[0] for pin-235 has page null, pinpoint_status slip-only, and quote_fidelity mismatch.\"\n      },\n      \"reasons\": [\n        \"The disclosed opinion text contains the Robinson holding at page *235, but the stored pinpoint quote instead begins with page markup: '--- # United States v. Robinson'.\",\n        \"The content page's displayed quote uses 'reasonable' while the opinion text uses “reasonable”, so even the visible quotation is not strictly character-faithful.\"\n      ],\n      \"breaks_true_positives\": true,\n      \"residual_risks\": [\n        \"The legal proposition is strongly supported by the opinion text, but this assertion is quote-fidelity, and the pinpoint/quote record fails that check.\"\n      ],\n      \"suggested_tightening\": \"Harvest pin quotes directly from the cached opinion text and include page 235 rather than storing rendered content-page text as the pinpoint quote.\"\n    },\n    {\n      \"assertion_id\": \"4a029504203c3615\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Lens A does not assess treatment or currency merits.\",\n        \"The treatment fields in the assertion payload match the disclosed lake treatment fields and content-page frontmatter: good_law, as_of_content 1973-12-11, as_of_treatment 2026-06-30, varies_by_point false.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Treatment/currency accuracy is reserved to Lens B.\"\n      ],\n      \"suggested_tightening\": null\n    }\n  ],\n  \"notes\": \"Reviewed the three assertion rows supplied in group_inventory.jsonl. Treatment was recorded only under the Lens A charter.\"\n}",
+  "summary": {
+    "at": "2026-07-09T23:53:27-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-81298f875c"
+    ],
+    "group_id": "_overhaul2/lake/cases/United States v. Robinson.json",
+    "group_total_assertions": 3,
+    "lake_only_cases": [],
+    "lane": "codex-A",
+    "lane_id": "codex-A-panel-prod-95ff826e",
+    "lens": "A",
+    "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-95ff826e.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 3,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "United States v. Robinson"
+    ],
+    "tokens": {
+      "input": 185716,
+      "output": 5693,
+      "source": "codex-events",
+      "total": 191409
+    },
+    "verdict_map": {
+      "4a029504203c3615": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "595c7404e13e9aba": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "6a833943ef450ae0": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-81298f875c",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 119.8
+  }
+}

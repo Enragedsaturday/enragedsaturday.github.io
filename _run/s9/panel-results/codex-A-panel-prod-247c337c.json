@@ -1,0 +1,171 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/United States v. Ramsey.json",
+    "lens": "A",
+    "notes": "Reviewed all 4 group_inventory.jsonl rows using only disclosed workspace files.",
+    "reviewed": [
+      {
+        "assertion_id": "d99033e779462d87",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity gives case_name United States v. Ramsey, court U.S. Supreme Court, date_decided 1977-06-06, and year 1977.",
+          "Lake citations identify the official citation as 431 U.S. 606 and parallel/vendor citations as 97 S. Ct. 1972, 52 L. Ed. 2d 617, and 1977 U.S. LEXIS 101.",
+          "The cached opinion header independently shows 431 U.S. 606 (1977), Supreme Court of United States, and Decided June 6, 1977."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "2c37c74cf1b06e11",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "The \"reasonable cause to suspect\" test adopted by the statute is, we think, a practical test which imposes a less stringent <span class=\"star-pagination\">*613</span> requirement than that of \"probable cause\" imposed by the Fourth Amendment as a requirement for the issuance of warrants.",
+          "locator_note": "content_page.md line 55 cites 431 U.S. at 612-613; lake/group_inventory pin-612 reports star_marker 607 and fragment prefix \"with \\\"\".",
+          "needs_cl": false,
+          "problem": "The short harvested quote is faithful, but the pin is cited as 612-613 while the fragment and lake star_marker target the first occurrence at *607; the page's longer quoted sentence also substitutes single quotation marks where the opinion uses double quotation marks.",
+          "proposed_fix": "Retarget pin-612 to the *612-*613 sentence and preserve the opinion's double quotation marks, or limit the displayed quote to the exact short phrase verified by the current fragment.",
+          "severity": "medium"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The phrase \"reasonable cause to suspect\" appears in the disclosed opinion text and in the lake pinpoints quote, so the narrow quote itself is verifiable.",
+          "The disclosed opinion's 612-613 sentence begins with The \"reasonable cause to suspect\" test, not the fragment prefix with \" used by the current URL fragment.",
+          "The content page's full sentence uses 'reasonable cause to suspect' and 'probable cause' where the opinion text uses double quotation marks."
+        ],
+        "residual_risks": [
+          "The legal proposition is supported; the remaining defect is locator and character-level quote fidelity."
+        ],
+        "suggested_tightening": "Use a fragment anchored on The \"reasonable cause to suspect\" test adopted by the statute.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "f731d533aa67d9fe",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "That searches made at the border, pursuant to the longstanding right of the sovereign to protect itself by stopping and examining persons and property crossing into this country, are reasonable simply by virtue of the fact that they occur at the border, should, by now, require no extended demonstration.",
+          "locator_note": "content_page.md line 53 displays this quote at 431 U.S. at 616; text file line 34 contains the matching *616 passage; lake pin-616 stores page-generated text and quote_fidelity mismatch.",
+          "needs_cl": false,
+          "problem": "The pin-616 payload/lake quote is not an opinion quote; it is built-page frontmatter and summary text ending at the Rule section, with no star marker or valid fragment.",
+          "proposed_fix": "Replace pin-616's pinpoint quote with the actual *616 sentence, set star_marker to 616, and attach the pin to the *616 paragraph.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The disclosed opinion text contains the correct *616 sentence quoted on the content page.",
+          "The lake/group_inventory quote for pin-616 begins with --- # United States v. Ramsey and continues through page summary material, which is not in the opinion text.",
+          "Because the stored pin quote is non-opinion material and lacks a star_marker, the quote_fidelity assertion as framed is wrong."
+        ],
+        "residual_risks": [
+          "The displayed page quote appears faithful; the defect is in the harvested/stored pinpoint evidence for the pin."
+        ],
+        "suggested_tightening": "Store only the exact quoted *616 sentence as the pin quote.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "56e54acd32231d67",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The treatment payload matches the disclosed lake treatment fields: field_i_validity good_law, as_of_content 1977-06-06, as_of_treatment 2026-06-30, and varies_by_point false.",
+          "Treatment/currency is outside Lens A, so no treatment defect is raised."
+        ],
+        "residual_risks": [
+          "No Lens B treatment audit performed."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/United States v. Ramsey.json\",\"reviewed\":[{\"assertion_id\":\"d99033e779462d87\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity gives case_name United States v. Ramsey, court U.S. Supreme Court, date_decided 1977-06-06, and year 1977.\",\"Lake citations identify the official citation as 431 U.S. 606 and parallel/vendor citations as 97 S. Ct. 1972, 52 L. Ed. 2d 617, and 1977 U.S. LEXIS 101.\",\"The cached opinion header independently shows 431 U.S. 606 (1977), Supreme Court of United States, and Decided June 6, 1977.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"2c37c74cf1b06e11\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The short harvested quote is faithful, but the pin is cited as 612-613 while the fragment and lake star_marker target the first occurrence at *607; the page's longer quoted sentence also substitutes single quotation marks where the opinion uses double quotation marks.\",\"severity\":\"medium\",\"proposed_fix\":\"Retarget pin-612 to the *612-*613 sentence and preserve the opinion's double quotation marks, or limit the displayed quote to the exact short phrase verified by the current fragment.\",\"evidence_quote\":\"The \\\"reasonable cause to suspect\\\" test adopted by the statute is, we think, a practical test which imposes a less stringent <span class=\\\"star-pagination\\\">*613</span> requirement than that of \\\"probable cause\\\" imposed by the Fourth Amendment as a requirement for the issuance of warrants.\",\"needs_cl\":false,\"locator_note\":\"content_page.md line 55 cites 431 U.S. at 612-613; lake/group_inventory pin-612 reports star_marker 607 and fragment prefix \\\"with \\\\\\\"\\\".\"},\"reasons\":[\"The phrase \\\"reasonable cause to suspect\\\" appears in the disclosed opinion text and in the lake pinpoints quote, so the narrow quote itself is verifiable.\",\"The disclosed opinion's 612-613 sentence begins with The \\\"reasonable cause to suspect\\\" test, not the fragment prefix with \\\" used by the current URL fragment.\",\"The content page's full sentence uses 'reasonable cause to suspect' and 'probable cause' where the opinion text uses double quotation marks.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The legal proposition is supported; the remaining defect is locator and character-level quote fidelity.\"],\"suggested_tightening\":\"Use a fragment anchored on The \\\"reasonable cause to suspect\\\" test adopted by the statute.\"},{\"assertion_id\":\"f731d533aa67d9fe\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The pin-616 payload/lake quote is not an opinion quote; it is built-page frontmatter and summary text ending at the Rule section, with no star marker or valid fragment.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-616's pinpoint quote with the actual *616 sentence, set star_marker to 616, and attach the pin to the *616 paragraph.\",\"evidence_quote\":\"That searches made at the border, pursuant to the longstanding right of the sovereign to protect itself by stopping and examining persons and property crossing into this country, are reasonable simply by virtue of the fact that they occur at the border, should, by now, require no extended demonstration.\",\"needs_cl\":false,\"locator_note\":\"content_page.md line 53 displays this quote at 431 U.S. at 616; text file line 34 contains the matching *616 passage; lake pin-616 stores page-generated text and quote_fidelity mismatch.\"},\"reasons\":[\"The disclosed opinion text contains the correct *616 sentence quoted on the content page.\",\"The lake/group_inventory quote for pin-616 begins with --- # United States v. Ramsey and continues through page summary material, which is not in the opinion text.\",\"Because the stored pin quote is non-opinion material and lacks a star_marker, the quote_fidelity assertion as framed is wrong.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The displayed page quote appears faithful; the defect is in the harvested/stored pinpoint evidence for the pin.\"],\"suggested_tightening\":\"Store only the exact quoted *616 sentence as the pin quote.\"},{\"assertion_id\":\"56e54acd32231d67\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The treatment payload matches the disclosed lake treatment fields: field_i_validity good_law, as_of_content 1977-06-06, as_of_treatment 2026-06-30, and varies_by_point false.\",\"Treatment/currency is outside Lens A, so no treatment defect is raised.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"No Lens B treatment audit performed.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed all 4 group_inventory.jsonl rows using only disclosed workspace files.\"}",
+  "summary": {
+    "at": "2026-07-09T23:54:22-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-b10ce7f97a",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-3a6a4be6af",
+      "F-S9-PR-a8fac3d274"
+    ],
+    "group_id": "_overhaul2/lake/cases/United States v. Ramsey.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "codex-A",
+    "lane_id": "codex-A-panel-prod-247c337c",
+    "lens": "A",
+    "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-247c337c.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "United States v. Ramsey"
+    ],
+    "tokens": {
+      "input": 176757,
+      "output": 9323,
+      "source": "codex-events",
+      "total": 186080
+    },
+    "verdict_map": {
+      "2c37c74cf1b06e11": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "56e54acd32231d67": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "d99033e779462d87": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "f731d533aa67d9fe": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-3a6a4be6af",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-a8fac3d274",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-b10ce7f97a",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": 181.3
+  }
+}

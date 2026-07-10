@@ -1,0 +1,105 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/United States v. Bajakajian.json",
+    "lens": "B",
+    "notes": "Lens B only; support, holding accuracy, quote fidelity, and pincite accuracy were not assessed.",
+    "reviewed": [
+      {
+        "assertion_id": "198243d64c228444",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Frontier stub: treatment/progeny intentionally not derived until S6 promotion.",
+          "locator_note": "lake treatment.scope_note; progeny rows_cached=0, citation_count=null, complete_query=null",
+          "needs_cl": true,
+          "problem": "Under the currency/existence lens, the disclosed record verifies the case identity and citation but does not verify that the authority is still live law. The treatment fields are explicitly unverified and there is no progeny/citator data in the lake record.",
+          "proposed_fix": "Do not treat the citation as establishing current live-law status until treatment/progeny review is completed; keep it as an identity/citation assertion only.",
+          "severity": "medium"
+        },
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity/citation fields support that the SCOTUS case exists at 524 U.S. 321.",
+          "But treatment.field_i_validity is unverified, as_of fields are null, and progeny/citator fields contain no derived current-law evidence."
+        ],
+        "residual_risks": [
+          "The case may in fact remain live law, but that cannot be confirmed from the disclosed files."
+        ],
+        "suggested_tightening": "Separate citation existence from current-law status; do not imply live-law currency from the citation alone.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": false
+      },
+      {
+        "assertion_id": "b6dc8fb091b815ed",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The inventory treatment payload matches the lake record: field_i_validity is unverified, as_of_content and as_of_treatment are null, and varies_by_point is false.",
+          "The lake record contains no adverse treatment edges or progeny records contradicting the unverified treatment label."
+        ],
+        "residual_risks": [
+          "This stands only as an unverified-treatment label, not as confirmation that Bajakajian remains good law."
+        ],
+        "suggested_tightening": "Avoid affirmative current-law wording until a completed treatment/progeny review exists.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/United States v. Bajakajian.json\",\"reviewed\":[{\"assertion_id\":\"198243d64c228444\",\"dimension\":\"existence\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":false,\"defect\":{\"problem\":\"Under the currency/existence lens, the disclosed record verifies the case identity and citation but does not verify that the authority is still live law. The treatment fields are explicitly unverified and there is no progeny/citator data in the lake record.\",\"severity\":\"medium\",\"proposed_fix\":\"Do not treat the citation as establishing current live-law status until treatment/progeny review is completed; keep it as an identity/citation assertion only.\",\"evidence_quote\":\"Frontier stub: treatment/progeny intentionally not derived until S6 promotion.\",\"needs_cl\":true,\"locator_note\":\"lake treatment.scope_note; progeny rows_cached=0, citation_count=null, complete_query=null\"},\"reasons\":[\"Lake identity/citation fields support that the SCOTUS case exists at 524 U.S. 321.\",\"But treatment.field_i_validity is unverified, as_of fields are null, and progeny/citator fields contain no derived current-law evidence.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The case may in fact remain live law, but that cannot be confirmed from the disclosed files.\"],\"suggested_tightening\":\"Separate citation existence from current-law status; do not imply live-law currency from the citation alone.\"},{\"assertion_id\":\"b6dc8fb091b815ed\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The inventory treatment payload matches the lake record: field_i_validity is unverified, as_of_content and as_of_treatment are null, and varies_by_point is false.\",\"The lake record contains no adverse treatment edges or progeny records contradicting the unverified treatment label.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"This stands only as an unverified-treatment label, not as confirmation that Bajakajian remains good law.\"],\"suggested_tightening\":\"Avoid affirmative current-law wording until a completed treatment/progeny review exists.\"}],\"notes\":\"Lens B only; support, holding accuracy, quote fidelity, and pincite accuracy were not assessed.\"}",
+  "summary": {
+    "at": "2026-07-09T23:46:00-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-0c255b0df7"
+    ],
+    "group_id": "_overhaul2/lake/cases/United States v. Bajakajian.json",
+    "group_total_assertions": 2,
+    "lake_only_cases": [
+      "United States v. Bajakajian"
+    ],
+    "lane": "codex-B",
+    "lane_id": "codex-B-panel-prod-29d9fee1",
+    "lens": "B",
+    "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-29d9fee1.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [
+      "case 'United States v. Bajakajian' has no lead_opinion_id (text undisclosed)"
+    ],
+    "reviewed_count": 2,
+    "run": "prod",
+    "text_disclosed_cases": [],
+    "tokens": {
+      "input": 76674,
+      "output": 6627,
+      "source": "codex-events",
+      "total": 83301
+    },
+    "verdict_map": {
+      "198243d64c228444": {
+        "dimension": "existence",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": false
+      },
+      "b6dc8fb091b815ed": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-0c255b0df7",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 127.7
+  }
+}

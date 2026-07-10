@@ -1,0 +1,178 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Terry v. Ohio.json",
+    "lens": "A",
+    "notes": "Reviewed all 5 group_inventory rows using only disclosed workspace files.",
+    "reviewed": [
+      {
+        "assertion_id": "d613feb93d3f0b01",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity record is verified for Terry v. Ohio, U.S. Supreme Court, decided 1968-06-10.",
+          "Official citation 392 U.S. 1 and parallel/vendor citations match the lake citation fields and the content page display."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "96ada73d7fe969d2",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "where nothing in the initial stages of the encounter serves to dispel his reasonable fear for his own or others’ safety",
+          "locator_note": "text/Terry v. Ohio__d9141e.txt line 43, after page label *30",
+          "needs_cl": false,
+          "problem": "The pin-30 quotation is substantively the right passage, but it is not character-faithful to the cached opinion text because the opinion uses a curly apostrophe in “others’ safety” while the content/lake quote uses straight apostrophe “others' safety.”",
+          "proposed_fix": "Replace “others' safety” with “others’ safety” in the pin-30 quote, or normalize quote-comparison rules so typographic apostrophes are not represented as verbatim mismatches.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The quoted holding appears in the opinion at the claimed page-30 passage.",
+          "Lake itself marks pin-30 quote_fidelity as mismatch and has no star_marker/position for this pin."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Use the opinion’s exact typography for the displayed verbatim quote.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "a0de22094a427224",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The pin-27 quote exactly matches the cached opinion text: “the issue is whether a reasonably prudent man in the circumstances would be warranted in the belief that his safety or that of others was in danger.”",
+          "Lake marks pin-27 as quote_fidelity matched, star-verified at marker 27, with a validated fragment."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "eb39b695d50fa35e",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "And in justifying the particular intrusion the police officer must be able to point to specific and articulable facts which, taken together with rational inferences from those facts, reasonably warrant that intrusion.",
+          "locator_note": "text/Terry v. Ohio__d9141e.txt line 28, page label *21",
+          "needs_cl": false,
+          "problem": "The pin-21 payload quote is not a character-faithful opinion quote. It concatenates content-page Background/Issue/Rule prose instead of the actual page-21 Terry passage.",
+          "proposed_fix": "Replace the pin-21 payload quote with the actual opinion passage supporting the rule at 392 U.S. 21.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The lake pinpoints record itself flags pin-21 quote_fidelity as mismatch and gives no star_marker or position.",
+          "The inventory quote includes Markdown headings from content_page.md, which cannot be a verbatim opinion passage."
+        ],
+        "residual_risks": [
+          "The visible content-page quote for pin-21 is independently supported by the opinion; the defect is the harvested pin payload, not the underlying rule."
+        ],
+        "suggested_tightening": "Regenerate pin-21 from the cached opinion text and keep the visible rule quote tied to that corrected pinpoint.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "6b1ec29cf0243927",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment is outside Lens A; no treatment/currency finding is raised.",
+          "The treatment payload matches the disclosed lake treatment fields and content frontmatter: good_law, as_of_content 1968-06-10, as_of_treatment 2026-06-30, varies_by_point false."
+        ],
+        "residual_risks": [
+          "Treatment/currency remains for Lens B review."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Terry v. Ohio.json\",\"reviewed\":[{\"assertion_id\":\"d613feb93d3f0b01\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity record is verified for Terry v. Ohio, U.S. Supreme Court, decided 1968-06-10.\",\"Official citation 392 U.S. 1 and parallel/vendor citations match the lake citation fields and the content page display.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"96ada73d7fe969d2\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The pin-30 quotation is substantively the right passage, but it is not character-faithful to the cached opinion text because the opinion uses a curly apostrophe in “others’ safety” while the content/lake quote uses straight apostrophe “others' safety.”\",\"severity\":\"low\",\"proposed_fix\":\"Replace “others' safety” with “others’ safety” in the pin-30 quote, or normalize quote-comparison rules so typographic apostrophes are not represented as verbatim mismatches.\",\"evidence_quote\":\"where nothing in the initial stages of the encounter serves to dispel his reasonable fear for his own or others’ safety\",\"needs_cl\":false,\"locator_note\":\"text/Terry v. Ohio__d9141e.txt line 43, after page label *30\"},\"reasons\":[\"The quoted holding appears in the opinion at the claimed page-30 passage.\",\"Lake itself marks pin-30 quote_fidelity as mismatch and has no star_marker/position for this pin.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":\"Use the opinion’s exact typography for the displayed verbatim quote.\"},{\"assertion_id\":\"a0de22094a427224\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The pin-27 quote exactly matches the cached opinion text: “the issue is whether a reasonably prudent man in the circumstances would be warranted in the belief that his safety or that of others was in danger.”\",\"Lake marks pin-27 as quote_fidelity matched, star-verified at marker 27, with a validated fragment.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"eb39b695d50fa35e\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The pin-21 payload quote is not a character-faithful opinion quote. It concatenates content-page Background/Issue/Rule prose instead of the actual page-21 Terry passage.\",\"severity\":\"high\",\"proposed_fix\":\"Replace the pin-21 payload quote with the actual opinion passage supporting the rule at 392 U.S. 21.\",\"evidence_quote\":\"And in justifying the particular intrusion the police officer must be able to point to specific and articulable facts which, taken together with rational inferences from those facts, reasonably warrant that intrusion.\",\"needs_cl\":false,\"locator_note\":\"text/Terry v. Ohio__d9141e.txt line 28, page label *21\"},\"reasons\":[\"The lake pinpoints record itself flags pin-21 quote_fidelity as mismatch and gives no star_marker or position.\",\"The inventory quote includes Markdown headings from content_page.md, which cannot be a verbatim opinion passage.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The visible content-page quote for pin-21 is independently supported by the opinion; the defect is the harvested pin payload, not the underlying rule.\"],\"suggested_tightening\":\"Regenerate pin-21 from the cached opinion text and keep the visible rule quote tied to that corrected pinpoint.\"},{\"assertion_id\":\"6b1ec29cf0243927\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment is outside Lens A; no treatment/currency finding is raised.\",\"The treatment payload matches the disclosed lake treatment fields and content frontmatter: good_law, as_of_content 1968-06-10, as_of_treatment 2026-06-30, varies_by_point false.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment/currency remains for Lens B review.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed all 5 group_inventory rows using only disclosed workspace files.\"}",
+  "summary": {
+    "at": "2026-07-09T23:45:50-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-08358524cf",
+      "F-S9-PR-14787fc9af"
+    ],
+    "group_id": "_overhaul2/lake/cases/Terry v. Ohio.json",
+    "group_total_assertions": 5,
+    "lake_only_cases": [],
+    "lane": "codex-A",
+    "lane_id": "codex-A-panel-prod-21ca3e39",
+    "lens": "A",
+    "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-21ca3e39.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Terry v. Ohio"
+    ],
+    "tokens": {
+      "input": 292578,
+      "output": 7396,
+      "source": "codex-events",
+      "total": 299974
+    },
+    "verdict_map": {
+      "6b1ec29cf0243927": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "96ada73d7fe969d2": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "a0de22094a427224": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "d613feb93d3f0b01": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "eb39b695d50fa35e": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-08358524cf",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-14787fc9af",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 178.3
+  }
+}

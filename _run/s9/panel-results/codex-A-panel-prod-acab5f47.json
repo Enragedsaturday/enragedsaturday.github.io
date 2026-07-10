@@ -1,0 +1,149 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Rhode Island v. Innis.json",
+    "lens": "A",
+    "notes": "Lens A reviewed all 4 inventory rows exactly once. No treatment finding is raised beyond confirming disclosed-field consistency.",
+    "reviewed": [
+      {
+        "assertion_id": "fa4045836e3ada3d",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity record is verified for Rhode Island v. Innis, U.S. Supreme Court, decided 1980-05-12, year 1980, docket 78-1076.",
+          "The official, parallel, and vendor citations in the assertion match the lake record: 446 U.S. 291; 100 S. Ct. 1682; 64 L. Ed. 2d 297; 1980 U.S. LEXIS 94.",
+          "The built page's citation, court, and year align with the lake identity and citation fields."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "326f6e73900f2395",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The quoted sentence appears in the cached opinion text on the page-301 passage.",
+          "The lake record marks pin-301a as quote_fidelity matched, star-verified, with star_marker 301 and a validated fragment.",
+          "The content page quote for pin-301a is character-faithful to the disclosed lake quote."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "740a47d6766bfccf",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "under *Miranda*, such that it was barred after Innis invoked his right to counsel. ## Rule",
+          "locator_note": "lake/Rhode Island v. Innis__948feb.json pinpoints[0] / content_page.md ^pin-301",
+          "needs_cl": false,
+          "problem": "pin-301's stored quote is not an opinion quote; it captures content-page issue text plus the Rule heading, and the lake record itself marks the quote as a mismatch with no star marker or position.",
+          "proposed_fix": "Replace pin-301 with a real pinpoint for the rule passage at 446 U.S. 300-301 from the cached opinion text, or remove/disable the pin until the quote and locator are repaired.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload quote appears in the lake as quote_fidelity mismatch and pinpoint_status slip-only.",
+          "The cached opinion text instead contains the rule passage beginning with \"We conclude that the Miranda safeguards come into play\" at the 300-301 page transition.",
+          "Because the asserted pin quote is not character-faithful to the opinion text, the quote-fidelity assertion fails."
+        ],
+        "residual_risks": [
+          "The underlying rule proposition appears supported by the opinion text, but this particular stored quote/pin is defective."
+        ],
+        "suggested_tightening": "Tie ^pin-301 directly to the actual 300-301 rule quote and include star/page metadata.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "712725790b739cd9",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A's substantive charter.",
+          "The treatment payload matches the lake treatment fields for field_i_validity, as_of_content, as_of_treatment, varies_by_point, and scope_note.",
+          "No support or quote-fidelity defect is raised for this treatment row under Lens A."
+        ],
+        "residual_risks": [
+          "Treatment/currency not substantively assessed; defer to Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Rhode Island v. Innis.json\",\"reviewed\":[{\"assertion_id\":\"fa4045836e3ada3d\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity record is verified for Rhode Island v. Innis, U.S. Supreme Court, decided 1980-05-12, year 1980, docket 78-1076.\",\"The official, parallel, and vendor citations in the assertion match the lake record: 446 U.S. 291; 100 S. Ct. 1682; 64 L. Ed. 2d 297; 1980 U.S. LEXIS 94.\",\"The built page's citation, court, and year align with the lake identity and citation fields.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"326f6e73900f2395\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The quoted sentence appears in the cached opinion text on the page-301 passage.\",\"The lake record marks pin-301a as quote_fidelity matched, star-verified, with star_marker 301 and a validated fragment.\",\"The content page quote for pin-301a is character-faithful to the disclosed lake quote.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"740a47d6766bfccf\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"pin-301's stored quote is not an opinion quote; it captures content-page issue text plus the Rule heading, and the lake record itself marks the quote as a mismatch with no star marker or position.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-301 with a real pinpoint for the rule passage at 446 U.S. 300-301 from the cached opinion text, or remove/disable the pin until the quote and locator are repaired.\",\"evidence_quote\":\"under *Miranda*, such that it was barred after Innis invoked his right to counsel. ## Rule\",\"needs_cl\":false,\"locator_note\":\"lake/Rhode Island v. Innis__948feb.json pinpoints[0] / content_page.md ^pin-301\"},\"reasons\":[\"The payload quote appears in the lake as quote_fidelity mismatch and pinpoint_status slip-only.\",\"The cached opinion text instead contains the rule passage beginning with \\\"We conclude that the Miranda safeguards come into play\\\" at the 300-301 page transition.\",\"Because the asserted pin quote is not character-faithful to the opinion text, the quote-fidelity assertion fails.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The underlying rule proposition appears supported by the opinion text, but this particular stored quote/pin is defective.\"],\"suggested_tightening\":\"Tie ^pin-301 directly to the actual 300-301 rule quote and include star/page metadata.\"},{\"assertion_id\":\"712725790b739cd9\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside Lens A's substantive charter.\",\"The treatment payload matches the lake treatment fields for field_i_validity, as_of_content, as_of_treatment, varies_by_point, and scope_note.\",\"No support or quote-fidelity defect is raised for this treatment row under Lens A.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment/currency not substantively assessed; defer to Lens B.\"],\"suggested_tightening\":null}],\"notes\":\"Lens A reviewed all 4 inventory rows exactly once. No treatment finding is raised beyond confirming disclosed-field consistency.\"}",
+  "summary": {
+    "at": "2026-07-09T23:38:31-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-2387a2cba4"
+    ],
+    "group_id": "_overhaul2/lake/cases/Rhode Island v. Innis.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "codex-A",
+    "lane_id": "codex-A-panel-prod-acab5f47",
+    "lens": "A",
+    "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-acab5f47.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Rhode Island v. Innis"
+    ],
+    "tokens": {
+      "input": 144836,
+      "output": 5933,
+      "source": "codex-events",
+      "total": 150769
+    },
+    "verdict_map": {
+      "326f6e73900f2395": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "712725790b739cd9": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "740a47d6766bfccf": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "fa4045836e3ada3d": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-2387a2cba4",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 124.1
+  }
+}

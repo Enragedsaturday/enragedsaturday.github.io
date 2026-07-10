@@ -1,0 +1,152 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/United States v. Ramsey.json",
+    "lens": "B",
+    "notes": "Reviewed all 4 inventory rows exactly once under Lens B only.",
+    "reviewed": [
+      {
+        "assertion_id": "d99033e779462d87",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record is verified and identifies United States v. Ramsey as a U.S. Supreme Court case decided 1977-06-06.",
+          "The disclosed citation fields select 431 U.S. 606 as the official citation.",
+          "For the currency angle, the same lake record lists field_i_validity as good_law as of 2026-06-30."
+        ],
+        "residual_risks": [
+          "The treatment derivation contains audit-needed/proposed-negative metadata addressed under the treatment assertion."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "2c37c74cf1b06e11",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote fidelity is outside Lens B.",
+          "No currency or treatment defect is asserted by this pinpoint row."
+        ],
+        "residual_risks": [
+          "Quote accuracy and pinpoint support are reserved for Lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "f731d533aa67d9fe",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote fidelity is outside Lens B.",
+          "No currency or treatment defect is asserted by this pinpoint row."
+        ],
+        "residual_risks": [
+          "Quote accuracy and pinpoint support are reserved for Lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "56e54acd32231d67",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade.",
+          "locator_note": "lake.treatment.scope_note; lake.treatment.derivation.lane1_negative.audit_marker; lake.treatment.derivation.lane2_top_cited.audit_marker; content_page Treatment & subsequent history",
+          "needs_cl": true,
+          "problem": "The good_law field is present, but the page's unqualified no-negative-treatment framing is too strong because the lake record says the treatment is migration-seeded and its progeny derivation has audit-needed proposed negative events.",
+          "proposed_fix": "State that Ramsey is listed as good_law as of 2026-06-30, but qualify the subsequent-history note as having no confirmed negative treatment in this record while proposed negative-treatment edges remain audit-pending.",
+          "severity": "medium"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "The lake treatment field itself says field_i_validity is good_law as of 2026-06-30.",
+          "But the record also lists 34 proposed treatment edges with negative labels, all marked proposed and mentioned.",
+          "Both lane1_negative and lane2_top_cited derivations have audit_needed true, cap_hit true, and audit_marker R15 treatment audit required.",
+          "Because the negative events are proposed rather than confirmed, the good_law call is not refuted outright, but the page should not say simply No negative treatment."
+        ],
+        "residual_risks": [
+          "The disclosed bundle does not include the citing-case texts needed to confirm or clear the proposed negative-treatment edges."
+        ],
+        "suggested_tightening": "Replace 'No negative treatment' with 'No confirmed negative treatment in the disclosed lake record; treatment audit flags remain for proposed negative progeny edges.'",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"B\",\n  \"group_id\": \"_overhaul2/lake/cases/United States v. Ramsey.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"d99033e779462d87\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake record is verified and identifies United States v. Ramsey as a U.S. Supreme Court case decided 1977-06-06.\",\n        \"The disclosed citation fields select 431 U.S. 606 as the official citation.\",\n        \"For the currency angle, the same lake record lists field_i_validity as good_law as of 2026-06-30.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The treatment derivation contains audit-needed/proposed-negative metadata addressed under the treatment assertion.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"2c37c74cf1b06e11\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Quote fidelity is outside Lens B.\",\n        \"No currency or treatment defect is asserted by this pinpoint row.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Quote accuracy and pinpoint support are reserved for Lens A.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"f731d533aa67d9fe\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Quote fidelity is outside Lens B.\",\n        \"No currency or treatment defect is asserted by this pinpoint row.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Quote accuracy and pinpoint support are reserved for Lens A.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"56e54acd32231d67\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands-modified\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The good_law field is present, but the page's unqualified no-negative-treatment framing is too strong because the lake record says the treatment is migration-seeded and its progeny derivation has audit-needed proposed negative events.\",\n        \"severity\": \"medium\",\n        \"proposed_fix\": \"State that Ramsey is listed as good_law as of 2026-06-30, but qualify the subsequent-history note as having no confirmed negative treatment in this record while proposed negative-treatment edges remain audit-pending.\",\n        \"evidence_quote\": \"Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade.\",\n        \"needs_cl\": true,\n        \"locator_note\": \"lake.treatment.scope_note; lake.treatment.derivation.lane1_negative.audit_marker; lake.treatment.derivation.lane2_top_cited.audit_marker; content_page Treatment & subsequent history\"\n      },\n      \"reasons\": [\n        \"The lake treatment field itself says field_i_validity is good_law as of 2026-06-30.\",\n        \"But the record also lists 34 proposed treatment edges with negative labels, all marked proposed and mentioned.\",\n        \"Both lane1_negative and lane2_top_cited derivations have audit_needed true, cap_hit true, and audit_marker R15 treatment audit required.\",\n        \"Because the negative events are proposed rather than confirmed, the good_law call is not refuted outright, but the page should not say simply No negative treatment.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The disclosed bundle does not include the citing-case texts needed to confirm or clear the proposed negative-treatment edges.\"\n      ],\n      \"suggested_tightening\": \"Replace 'No negative treatment' with 'No confirmed negative treatment in the disclosed lake record; treatment audit flags remain for proposed negative progeny edges.'\"\n    }\n  ],\n  \"notes\": \"Reviewed all 4 inventory rows exactly once under Lens B only.\"\n}",
+  "summary": {
+    "at": "2026-07-09T23:53:56-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-b10ce7f97a"
+    ],
+    "group_id": "_overhaul2/lake/cases/United States v. Ramsey.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "codex-B",
+    "lane_id": "codex-B-panel-prod-247c337c",
+    "lens": "B",
+    "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-247c337c.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "United States v. Ramsey"
+    ],
+    "tokens": {
+      "input": 213258,
+      "output": 7153,
+      "source": "codex-events",
+      "total": 220411
+    },
+    "verdict_map": {
+      "2c37c74cf1b06e11": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "56e54acd32231d67": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "d99033e779462d87": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "f731d533aa67d9fe": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-b10ce7f97a",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 152.9
+  }
+}

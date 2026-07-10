@@ -1,0 +1,127 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/United States v. Classic.json",
+    "lens": "A",
+    "notes": "Reviewed all 3 rows from group_inventory.jsonl using only disclosed workspace files; no external search used.",
+    "reviewed": [
+      {
+        "assertion_id": "16f60372750fc3ed",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity is United States v. Classic, U.S. Supreme Court, year 1941, docket 618, with expected_citation_found, party_name_in_text, and canonical_name_match all true.",
+          "Lake official citation is 313 U.S. 299, and content_page displays 313 U.S. 299 (1941); the parallel and U.S. LEXIS citations in the payload also match the lake record."
+        ],
+        "residual_risks": [
+          "content_page date_decided is 1941-10-13 while the cached opinion text states Decided May 26, 1941 and Rehearing Denied Oct. 13, 1941; that date issue is not part of this citation-existence payload."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "26c71e20eb7ce2f4",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Misuse of power, possessed by virtue of state law and made possible only because the wrongdoer is clothed with the authority of state law, is action taken 'under color of' state law.",
+          "locator_note": "pin-326; content_page line 53; cached opinion div id p30/line 135; lake pinpoints[0].quote is the mismatched Issue/Rule fragment with page:null and pinpoint_status:'slip-only'.",
+          "needs_cl": false,
+          "problem": "The reviewed pin-326 quote is not a verbatim passage from the opinion; it is a stitched excerpt from the page's Issue/Rule prose, and the lake itself marks quote_fidelity as mismatch.",
+          "proposed_fix": "Replace pin-326 quote with the actual opinion sentence: Misuse of power, possessed by virtue of state law and made possible only because the wrongdoer is clothed with the authority of state law, is action taken 'under color of' state law.",
+          "severity": "medium"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload quote begins 'state law for purposes...' and contains '## Rule', which is generated page prose rather than opinion text.",
+          "The cached opinion text contains the actual Classic formulation at div id p30, and the page's displayed quoted sentence matches that text rather than the lake pin quote.",
+          "Lake pinpoints[0].quote_fidelity is 'mismatch', corroborating the defect."
+        ],
+        "residual_risks": [
+          "The disclosed opinion text lacks official star-page markers, so the 313 U.S. at 326 location is not independently confirmed here; that is a pincite issue, not this quote-fidelity verdict."
+        ],
+        "suggested_tightening": "Store only the exact opinion sentence as the pin quote and keep generated page headings/prose out of pinpoint quote extraction.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "39faf92c2c7ed9e5",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A; no treatment defect is raised.",
+          "The payload's field_i_validity, dates, varies_by_point, and scope_note match the disclosed lake treatment block and content_page front matter."
+        ],
+        "residual_risks": [
+          "Lens B owns substantive treatment/currency review."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/United States v. Classic.json\",\"reviewed\":[{\"assertion_id\":\"16f60372750fc3ed\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity is United States v. Classic, U.S. Supreme Court, year 1941, docket 618, with expected_citation_found, party_name_in_text, and canonical_name_match all true.\",\"Lake official citation is 313 U.S. 299, and content_page displays 313 U.S. 299 (1941); the parallel and U.S. LEXIS citations in the payload also match the lake record.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"content_page date_decided is 1941-10-13 while the cached opinion text states Decided May 26, 1941 and Rehearing Denied Oct. 13, 1941; that date issue is not part of this citation-existence payload.\"],\"suggested_tightening\":null},{\"assertion_id\":\"26c71e20eb7ce2f4\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The reviewed pin-326 quote is not a verbatim passage from the opinion; it is a stitched excerpt from the page's Issue/Rule prose, and the lake itself marks quote_fidelity as mismatch.\",\"severity\":\"medium\",\"proposed_fix\":\"Replace pin-326 quote with the actual opinion sentence: Misuse of power, possessed by virtue of state law and made possible only because the wrongdoer is clothed with the authority of state law, is action taken 'under color of' state law.\",\"evidence_quote\":\"Misuse of power, possessed by virtue of state law and made possible only because the wrongdoer is clothed with the authority of state law, is action taken 'under color of' state law.\",\"needs_cl\":false,\"locator_note\":\"pin-326; content_page line 53; cached opinion div id p30/line 135; lake pinpoints[0].quote is the mismatched Issue/Rule fragment with page:null and pinpoint_status:'slip-only'.\"},\"reasons\":[\"The payload quote begins 'state law for purposes...' and contains '## Rule', which is generated page prose rather than opinion text.\",\"The cached opinion text contains the actual Classic formulation at div id p30, and the page's displayed quoted sentence matches that text rather than the lake pin quote.\",\"Lake pinpoints[0].quote_fidelity is 'mismatch', corroborating the defect.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The disclosed opinion text lacks official star-page markers, so the 313 U.S. at 326 location is not independently confirmed here; that is a pincite issue, not this quote-fidelity verdict.\"],\"suggested_tightening\":\"Store only the exact opinion sentence as the pin quote and keep generated page headings/prose out of pinpoint quote extraction.\"},{\"assertion_id\":\"39faf92c2c7ed9e5\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside Lens A; no treatment defect is raised.\",\"The payload's field_i_validity, dates, varies_by_point, and scope_note match the disclosed lake treatment block and content_page front matter.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Lens B owns substantive treatment/currency review.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed all 3 rows from group_inventory.jsonl using only disclosed workspace files; no external search used.\"}",
+  "summary": {
+    "at": "2026-07-09T23:47:28-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-504211673c"
+    ],
+    "group_id": "_overhaul2/lake/cases/United States v. Classic.json",
+    "group_total_assertions": 3,
+    "lake_only_cases": [],
+    "lane": "codex-A",
+    "lane_id": "codex-A-panel-prod-8aa113ae",
+    "lens": "A",
+    "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-8aa113ae.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 3,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "United States v. Classic"
+    ],
+    "tokens": {
+      "input": 309185,
+      "output": 8366,
+      "source": "codex-events",
+      "total": 317551
+    },
+    "verdict_map": {
+      "16f60372750fc3ed": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "26c71e20eb7ce2f4": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "39faf92c2c7ed9e5": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-504211673c",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 169.4
+  }
+}

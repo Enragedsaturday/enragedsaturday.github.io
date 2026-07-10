@@ -1,0 +1,93 @@
+{
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/United States v. $8,850 in Currency.json",
+    "lens": "B",
+    "notes": "Lens B only; no support or quote-fidelity findings made.",
+    "reviewed": [
+      {
+        "assertion_id": "70362db4c085e93a",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The disclosed lake record identifies the case as a U.S. Supreme Court decision with record_id \"United States v. $8,850 in Currency\" and expected_citation_found=true.",
+          "The official citation asserted in the inventory, 461 U.S. 555, matches lake.citations.official and the page display citation.",
+          "No disclosed treatment edge says the authority was overruled, abrogated, superseded, or limited; the record also does not make an affirmative good-law claim beyond unverified treatment."
+        ],
+        "residual_risks": [
+          "Current live-law status is not affirmatively verified because treatment is a frontier stub, edges are empty, and progeny rows_cached is 0."
+        ],
+        "suggested_tightening": "Keep this as citation-existence only; do not infer current validity until treatment/progeny are promoted.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "c02d4d25f9723b81",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The inventory treatment payload matches the lake treatment fields: field_i_validity is \"unverified\", as_of_content and as_of_treatment are null, and varies_by_point is false.",
+          "The disclosed lake scope note states: \"Frontier stub: treatment/progeny intentionally not derived until S6 promotion.\"",
+          "The built page consistently renders Treatment: Unverified and says subsequent treatment has not yet been machine-verified."
+        ],
+        "residual_risks": [
+          "The unverified treatment status provides no affirmative assurance that the case remains good law as of any date."
+        ],
+        "suggested_tightening": "Maintain the unverified banner and avoid any stronger good-law signal until citator/progeny review is completed.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/United States v. $8,850 in Currency.json\",\"reviewed\":[{\"assertion_id\":\"70362db4c085e93a\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The disclosed lake record identifies the case as a U.S. Supreme Court decision with record_id \\\"United States v. $8,850 in Currency\\\" and expected_citation_found=true.\",\"The official citation asserted in the inventory, 461 U.S. 555, matches lake.citations.official and the page display citation.\",\"No disclosed treatment edge says the authority was overruled, abrogated, superseded, or limited; the record also does not make an affirmative good-law claim beyond unverified treatment.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Current live-law status is not affirmatively verified because treatment is a frontier stub, edges are empty, and progeny rows_cached is 0.\"],\"suggested_tightening\":\"Keep this as citation-existence only; do not infer current validity until treatment/progeny are promoted.\"},{\"assertion_id\":\"c02d4d25f9723b81\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The inventory treatment payload matches the lake treatment fields: field_i_validity is \\\"unverified\\\", as_of_content and as_of_treatment are null, and varies_by_point is false.\",\"The disclosed lake scope note states: \\\"Frontier stub: treatment/progeny intentionally not derived until S6 promotion.\\\"\",\"The built page consistently renders Treatment: Unverified and says subsequent treatment has not yet been machine-verified.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The unverified treatment status provides no affirmative assurance that the case remains good law as of any date.\"],\"suggested_tightening\":\"Maintain the unverified banner and avoid any stronger good-law signal until citator/progeny review is completed.\"}],\"notes\":\"Lens B only; no support or quote-fidelity findings made.\"}",
+  "summary": {
+    "at": "2026-07-09T23:45:04-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
+    "defense_votes": [],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/United States v. $8,850 in Currency.json",
+    "group_total_assertions": 2,
+    "lake_only_cases": [
+      "United States v. $8,850 in Currency"
+    ],
+    "lane": "codex-B",
+    "lane_id": "codex-B-panel-prod-4f4ba1ca",
+    "lens": "B",
+    "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-4f4ba1ca.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [
+      "case 'United States v. $8,850 in Currency' has no lead_opinion_id (text undisclosed)"
+    ],
+    "reviewed_count": 2,
+    "run": "prod",
+    "text_disclosed_cases": [],
+    "tokens": {
+      "input": 77262,
+      "output": 4989,
+      "source": "codex-events",
+      "total": 82251
+    },
+    "verdict_map": {
+      "70362db4c085e93a": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "c02d4d25f9723b81": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [],
+    "wall_clock_s": 98.6
+  }
+}

@@ -1,0 +1,124 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Skinner v. Railway Labor Executives' Ass'n.json",
+    "lens": "A",
+    "notes": "Reviewed every assertion in group_inventory.jsonl using only disclosed workspace files.",
+    "reviewed": [
+      {
+        "assertion_id": "0aed2bee852f7122",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The disclosed lake record identifies the case as Skinner v. Railway Labor Executives' Assn., U.S. Supreme Court, decided 1989-03-21, docket 87-1555.",
+          "The official citation 489 U.S. 602 and listed parallel/vendor citations match the lake record and the built page."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "a4b1738cf7b49a21",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "In limited circumstances, where the privacy interests implicated by the search are minimal, and where an important governmental interest furthered by the intrusion would be placed in jeopardy by a requirement of individualized suspicion, a search may be reasonable despite the absence of such suspicion.",
+          "locator_note": "pin-624; text file line containing star-pagination *624 and the following paragraph",
+          "needs_cl": false,
+          "problem": "The stored quote for pin-624 is not a character-faithful opinion quote. It is a harvested Markdown/page fragment beginning with the built page title/background/rule text, and the lake record itself marks quote_fidelity as mismatch. The actual opinion text at star page *624 contains the quoted legal rule, but not the stored pinpoint quote.",
+          "proposed_fix": "Replace pin-624's stored quote with the actual quoted sentence from the opinion and set the pinpoint to page/star 624 if the schema supports it.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload quote begins with built-page Markdown content rather than opinion text.",
+          "The opinion text supports the displayed page quotation at 489 U.S. 624, but the lake pinpoints[].quote value does not match that passage."
+        ],
+        "residual_risks": [
+          "The built page's displayed quotation appears accurate; the defect is in the stored pinpoint quote harvested for pin-624."
+        ],
+        "suggested_tightening": "Store only the exact opinion sentence used on the page for pin-624, not surrounding generated page prose.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "58859da03ca775bd",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside lens A's substantive charter, so no treatment-law finding is raised.",
+          "The treatment fields in the built page mirror the disclosed lake record: field_i_validity good_law, as_of_content 1989-03-21, as_of_treatment 2026-06-30, and varies_by_point false."
+        ],
+        "residual_risks": [
+          "No independent treatment or currency audit was performed under lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Skinner v. Railway Labor Executives' Ass'n.json\",\"reviewed\":[{\"assertion_id\":\"0aed2bee852f7122\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The disclosed lake record identifies the case as Skinner v. Railway Labor Executives' Assn., U.S. Supreme Court, decided 1989-03-21, docket 87-1555.\",\"The official citation 489 U.S. 602 and listed parallel/vendor citations match the lake record and the built page.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"a4b1738cf7b49a21\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The stored quote for pin-624 is not a character-faithful opinion quote. It is a harvested Markdown/page fragment beginning with the built page title/background/rule text, and the lake record itself marks quote_fidelity as mismatch. The actual opinion text at star page *624 contains the quoted legal rule, but not the stored pinpoint quote.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-624's stored quote with the actual quoted sentence from the opinion and set the pinpoint to page/star 624 if the schema supports it.\",\"evidence_quote\":\"In limited circumstances, where the privacy interests implicated by the search are minimal, and where an important governmental interest furthered by the intrusion would be placed in jeopardy by a requirement of individualized suspicion, a search may be reasonable despite the absence of such suspicion.\",\"needs_cl\":false,\"locator_note\":\"pin-624; text file line containing star-pagination *624 and the following paragraph\"},\"reasons\":[\"The payload quote begins with built-page Markdown content rather than opinion text.\",\"The opinion text supports the displayed page quotation at 489 U.S. 624, but the lake pinpoints[].quote value does not match that passage.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The built page's displayed quotation appears accurate; the defect is in the stored pinpoint quote harvested for pin-624.\"],\"suggested_tightening\":\"Store only the exact opinion sentence used on the page for pin-624, not surrounding generated page prose.\"},{\"assertion_id\":\"58859da03ca775bd\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside lens A's substantive charter, so no treatment-law finding is raised.\",\"The treatment fields in the built page mirror the disclosed lake record: field_i_validity good_law, as_of_content 1989-03-21, as_of_treatment 2026-06-30, and varies_by_point false.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"No independent treatment or currency audit was performed under lens A.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed every assertion in group_inventory.jsonl using only disclosed workspace files.\"}",
+  "summary": {
+    "at": "2026-07-09T23:40:53-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-6456b9941b"
+    ],
+    "group_id": "_overhaul2/lake/cases/Skinner v. Railway Labor Executives' Ass'n.json",
+    "group_total_assertions": 3,
+    "lake_only_cases": [],
+    "lane": "codex-A",
+    "lane_id": "codex-A-panel-prod-61f76952",
+    "lens": "A",
+    "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-61f76952.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 3,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Skinner v. Railway Labor Executives' Ass'n"
+    ],
+    "tokens": {
+      "input": 179397,
+      "output": 4021,
+      "source": "codex-events",
+      "total": 183418
+    },
+    "verdict_map": {
+      "0aed2bee852f7122": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "58859da03ca775bd": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "a4b1738cf7b49a21": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-6456b9941b",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 81.5
+  }
+}

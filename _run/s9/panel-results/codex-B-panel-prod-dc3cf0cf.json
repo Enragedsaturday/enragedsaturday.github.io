@@ -1,0 +1,138 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Segura v. United States.json",
+    "lens": "B",
+    "notes": "Lens B only; no support or quote-fidelity finding is made.",
+    "reviewed": [
+      {
+        "assertion_id": "483226c241012da0",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record is non-stub, status verified, and identifies Segura v. United States as a U.S. Supreme Court decision decided 1984-07-05.",
+          "The official citation is recorded as 468 U.S. 796 and the content page uses that citation.",
+          "For currency, the lake treatment field currently records field_i_validity as good_law as of 2026-06-30."
+        ],
+        "residual_risks": [
+          "Treatment derivation has unresolved audit flags; addressed in the treatment assertion."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "f9a49fbf35a7c462",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote fidelity is outside Lens B; no currency or treatment defect is raised for this row.",
+          "The lake pinpoints record pin-814 and quote_fidelity as mismatch, but support/quote review belongs to Lens A."
+        ],
+        "residual_risks": [
+          "No Lens B review of quote accuracy or pinpoint support was performed."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "12f5042f676e2c14",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade.",
+          "locator_note": "lake/Segura v. United States__cba033.json treatment.scope_note and treatment.derivation; content_page.md treatment badge",
+          "needs_cl": true,
+          "problem": "The page displays an unqualified Treatment: good as of 2026-06-30, but the disclosed treatment record is migration-seeded and its own derivation flags unresolved R15 treatment audits with proposed negative progeny edges. The good-law call is therefore not verifiable from the disclosed evidence as framed.",
+          "proposed_fix": "Do not display an unqualified good-law treatment label until the R15 treatment audit is completed, or qualify it as provisional/audit-pending and preserve the scope note.",
+          "severity": "high"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "The content page asserts Treatment: good as of 2026-06-30.",
+          "The lake treatment field says good_law, but composite_basis is migration-seed and the scope note warns that S2 re-derivation may downgrade.",
+          "The disclosed derivation flags R15 treatment audit required for lane1_negative and lane2_top_cited.",
+          "The disclosed edges include proposed overruled, abrogated, superseded_by_statute, criticized, and questioned entries with point null, so the unqualified good-law label cannot be verified from the disclosed record."
+        ],
+        "residual_risks": [
+          "The negative edges are proposed and marked only as mentioned, so a completed audit may confirm Segura remains good law; the problem is the current unqualified label without that audit."
+        ],
+        "suggested_tightening": "Expose the audit-pending caveat next to the treatment badge until the treatment derivation is finalized.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": false
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/Segura v. United States.json\",\"reviewed\":[{\"assertion_id\":\"483226c241012da0\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record is non-stub, status verified, and identifies Segura v. United States as a U.S. Supreme Court decision decided 1984-07-05.\",\"The official citation is recorded as 468 U.S. 796 and the content page uses that citation.\",\"For currency, the lake treatment field currently records field_i_validity as good_law as of 2026-06-30.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment derivation has unresolved audit flags; addressed in the treatment assertion.\"],\"suggested_tightening\":null},{\"assertion_id\":\"f9a49fbf35a7c462\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Quote fidelity is outside Lens B; no currency or treatment defect is raised for this row.\",\"The lake pinpoints record pin-814 and quote_fidelity as mismatch, but support/quote review belongs to Lens A.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"No Lens B review of quote accuracy or pinpoint support was performed.\"],\"suggested_tightening\":null},{\"assertion_id\":\"12f5042f676e2c14\",\"dimension\":\"treatment\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":false,\"defect\":{\"problem\":\"The page displays an unqualified Treatment: good as of 2026-06-30, but the disclosed treatment record is migration-seeded and its own derivation flags unresolved R15 treatment audits with proposed negative progeny edges. The good-law call is therefore not verifiable from the disclosed evidence as framed.\",\"severity\":\"high\",\"proposed_fix\":\"Do not display an unqualified good-law treatment label until the R15 treatment audit is completed, or qualify it as provisional/audit-pending and preserve the scope note.\",\"evidence_quote\":\"Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade.\",\"needs_cl\":true,\"locator_note\":\"lake/Segura v. United States__cba033.json treatment.scope_note and treatment.derivation; content_page.md treatment badge\"},\"reasons\":[\"The content page asserts Treatment: good as of 2026-06-30.\",\"The lake treatment field says good_law, but composite_basis is migration-seed and the scope note warns that S2 re-derivation may downgrade.\",\"The disclosed derivation flags R15 treatment audit required for lane1_negative and lane2_top_cited.\",\"The disclosed edges include proposed overruled, abrogated, superseded_by_statute, criticized, and questioned entries with point null, so the unqualified good-law label cannot be verified from the disclosed record.\"],\"breaks_true_positives\":true,\"residual_risks\":[\"The negative edges are proposed and marked only as mentioned, so a completed audit may confirm Segura remains good law; the problem is the current unqualified label without that audit.\"],\"suggested_tightening\":\"Expose the audit-pending caveat next to the treatment badge until the treatment derivation is finalized.\"}],\"notes\":\"Lens B only; no support or quote-fidelity finding is made.\"}",
+  "summary": {
+    "at": "2026-07-09T23:41:11-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-e374a88558",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-48ec8587a9"
+    ],
+    "group_id": "_overhaul2/lake/cases/Segura v. United States.json",
+    "group_total_assertions": 3,
+    "lake_only_cases": [],
+    "lane": "codex-B",
+    "lane_id": "codex-B-panel-prod-dc3cf0cf",
+    "lens": "B",
+    "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-dc3cf0cf.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 3,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Segura v. United States"
+    ],
+    "tokens": {
+      "input": 302442,
+      "output": 7080,
+      "source": "codex-events",
+      "total": 309522
+    },
+    "verdict_map": {
+      "12f5042f676e2c14": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": false
+      },
+      "483226c241012da0": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "f9a49fbf35a7c462": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-e374a88558",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-48ec8587a9",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 138.8
+  }
+}

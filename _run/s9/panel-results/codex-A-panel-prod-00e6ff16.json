@@ -1,0 +1,147 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Warden v. Hayden.json",
+    "lens": "A",
+    "notes": "Reviewed only against disclosed local files; no external sources used.",
+    "reviewed": [
+      {
+        "assertion_id": "4cf9f3b8858be3eb",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity verifies Warden, Maryland Penitentiary v. Hayden, U.S. Supreme Court, decided 1967-05-29.",
+          "Lake citations identify official citation 387 U.S. 294 and parallel citations 87 S. Ct. 1642, 18 L. Ed. 2d 782, and 1967 U.S. LEXIS 2753."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "13f1c2f9bbac8359",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The quoted sentence matches the lake pinpoints[].quote for pin-299 exactly.",
+          "The cached opinion text contains the same sentence across the 298-299 page break: the raw file only inserts a page-number tag between 'investigation' and 'if'."
+        ],
+        "residual_risks": [
+          "A literal raw-HTML substring matcher may falsely report mismatch because the page-number tag interrupts the sentence."
+        ],
+        "suggested_tightening": "Normalize page-number tags when checking quote fidelity across reporter page breaks.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "721ad54bb36f0836",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "We agree with the Court of Appeals that neither the entry without warrant to search for the robber, nor the search for him without warrant was invalid.",
+          "locator_note": "lake pinpoints[].id == pin-298; content_page cites 387 U.S. at 298.",
+          "needs_cl": false,
+          "problem": "pin-298's stored quote is not the opinion passage at 387 U.S. 298; it is copied from the built page/front matter and narrative text, so the quote_fidelity assertion fails for the lake pinpoint record.",
+          "proposed_fix": "Replace pin-298 with the actual opinion passage beginning 'We agree with the Court of Appeals...' through the exigencies sentence, set the page to 298, and re-run quote fidelity against the cached opinion text.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload quote begins with the content page header and background rather than the Supreme Court opinion text.",
+          "The cached opinion text at page 298 contains the operative entry/search/exigencies passage, not the stored pin-298 quote."
+        ],
+        "residual_risks": [
+          "The displayed page quote also changes the original internal quotation marks around the McDonald quotation to single quotes; strict quote-fidelity cleanup should preserve or avoid altering the original punctuation."
+        ],
+        "suggested_tightening": "Use the actual 298 passage as the pinpoint quote and preserve original quotation punctuation, or use a block quote to avoid nested-quote alterations.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "1970a5d348ed98f1",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A's charter.",
+          "The treatment payload matches the lake treatment fields: field_i_validity good_law, as_of_content 1967-05-29, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note."
+        ],
+        "residual_risks": [
+          "No Lens A treatment conclusion is being made."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Warden v. Hayden.json\",\"reviewed\":[{\"assertion_id\":\"4cf9f3b8858be3eb\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity verifies Warden, Maryland Penitentiary v. Hayden, U.S. Supreme Court, decided 1967-05-29.\",\"Lake citations identify official citation 387 U.S. 294 and parallel citations 87 S. Ct. 1642, 18 L. Ed. 2d 782, and 1967 U.S. LEXIS 2753.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"13f1c2f9bbac8359\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The quoted sentence matches the lake pinpoints[].quote for pin-299 exactly.\",\"The cached opinion text contains the same sentence across the 298-299 page break: the raw file only inserts a page-number tag between 'investigation' and 'if'.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"A literal raw-HTML substring matcher may falsely report mismatch because the page-number tag interrupts the sentence.\"],\"suggested_tightening\":\"Normalize page-number tags when checking quote fidelity across reporter page breaks.\"},{\"assertion_id\":\"721ad54bb36f0836\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"pin-298's stored quote is not the opinion passage at 387 U.S. 298; it is copied from the built page/front matter and narrative text, so the quote_fidelity assertion fails for the lake pinpoint record.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-298 with the actual opinion passage beginning 'We agree with the Court of Appeals...' through the exigencies sentence, set the page to 298, and re-run quote fidelity against the cached opinion text.\",\"evidence_quote\":\"We agree with the Court of Appeals that neither the entry without warrant to search for the robber, nor the search for him without warrant was invalid.\",\"needs_cl\":false,\"locator_note\":\"lake pinpoints[].id == pin-298; content_page cites 387 U.S. at 298.\"},\"reasons\":[\"The payload quote begins with the content page header and background rather than the Supreme Court opinion text.\",\"The cached opinion text at page 298 contains the operative entry/search/exigencies passage, not the stored pin-298 quote.\"],\"breaks_true_positives\":true,\"residual_risks\":[\"The displayed page quote also changes the original internal quotation marks around the McDonald quotation to single quotes; strict quote-fidelity cleanup should preserve or avoid altering the original punctuation.\"],\"suggested_tightening\":\"Use the actual 298 passage as the pinpoint quote and preserve original quotation punctuation, or use a block quote to avoid nested-quote alterations.\"},{\"assertion_id\":\"1970a5d348ed98f1\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside Lens A's charter.\",\"The treatment payload matches the lake treatment fields: field_i_validity good_law, as_of_content 1967-05-29, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"No Lens A treatment conclusion is being made.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed only against disclosed local files; no external sources used.\"}",
+  "summary": {
+    "at": "2026-07-09T23:58:19-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-c89636a808"
+    ],
+    "group_id": "_overhaul2/lake/cases/Warden v. Hayden.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "codex-A",
+    "lane_id": "codex-A-panel-prod-00e6ff16",
+    "lens": "A",
+    "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-00e6ff16.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Warden v. Hayden"
+    ],
+    "tokens": {
+      "input": 139215,
+      "output": 6578,
+      "source": "codex-events",
+      "total": 145793
+    },
+    "verdict_map": {
+      "13f1c2f9bbac8359": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "1970a5d348ed98f1": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "4cf9f3b8858be3eb": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "721ad54bb36f0836": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-c89636a808",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 129.4
+  }
+}

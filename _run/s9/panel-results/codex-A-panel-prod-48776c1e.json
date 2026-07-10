@@ -1,0 +1,187 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/United States v. Hensley.json",
+    "lens": "A",
+    "notes": "No support or black-letter inventory rows were present.",
+    "reviewed": [
+      {
+        "assertion_id": "8a37ae1cea2f1000",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record confirms United States v. Hensley, U.S. Supreme Court, decided 1985-01-08, docket 83-1330.",
+          "The official citation 469 U.S. 221 and listed parallel/vendor citations match the lake citation fields and the content page."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "07138dd159967981",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "issued by another department. ## Rule Yes to both. First, *Terry* stops are not confined to ongoing or imminent crimes:",
+          "locator_note": "lake.pinpoints[id=pin-229]; content_page.md line 53 shows the intended quote.",
+          "needs_cl": false,
+          "problem": "The pin-229 lake quote is not an opinion passage; it is a harvest artifact combining content-page prose, a heading, and paraphrase before the real quote.",
+          "proposed_fix": "Replace pin-229 with the actual page-229 completed-felony Terry passage quoted on the content page and mark the quote after normalized text verification.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The row/lake quote does not appear as a verbatim passage in the cached opinion text.",
+          "The disclosed opinion at page 229 contains the different completed-felony reasonable-suspicion passage used by the content page."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Regenerate this pin from the quoted opinion span, not from surrounding page prose.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "5968e7fc1d62ed96",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Robinson, supra,",
+          "locator_note": "text/United States v. Hensley__3caf7e.txt line 31; content_page.md line 57; lake.pinpoints[id=pin-233].",
+          "needs_cl": false,
+          "problem": "The pin-233 quote omits the intervening citation between 'justifying a stop,' and 'and if' while presenting the sentence as continuous verbatim text.",
+          "proposed_fix": "Include the omitted internal citation or mark the omission explicitly according to corpus style.",
+          "severity": "medium"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The cached opinion includes an internal citation, United States v. Robinson, supra, after 'reasonable suspicion justifying a stop,'.",
+          "The content/lake quote skips directly to 'and if the stop that in fact occurred,' so the verbatim quote is not character-faithful."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "If shortened, use an ellipsis or citation-omitted signal rather than a continuous quotation.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "71f0f1890dac5154",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The quoted sentence appears in the cached opinion text with only a page-number tag inserted between 'other' and 'police'.",
+          "After normalizing the page marker, the content/lake quote preserves the words of the opinion and the passage begins at page 232."
+        ],
+        "residual_risks": [
+          "A raw-string checker that fails to strip page-number markup may keep flagging this quote as a mismatch."
+        ],
+        "suggested_tightening": "Normalize page-number tags before quote-fidelity scoring; consider 232-33 if full-span pincites are required.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "f3020968dfbf790a",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The treatment payload matches the disclosed lake treatment fields and the content page frontmatter.",
+          "Lens A does not evaluate treatment or currency, so no treatment finding is raised."
+        ],
+        "residual_risks": [
+          "Treatment/currency review is reserved for lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"A\",\n  \"group_id\": \"_overhaul2/lake/cases/United States v. Hensley.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"8a37ae1cea2f1000\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake identity record confirms United States v. Hensley, U.S. Supreme Court, decided 1985-01-08, docket 83-1330.\",\n        \"The official citation 469 U.S. 221 and listed parallel/vendor citations match the lake citation fields and the content page.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"07138dd159967981\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The pin-229 lake quote is not an opinion passage; it is a harvest artifact combining content-page prose, a heading, and paraphrase before the real quote.\",\n        \"severity\": \"high\",\n        \"proposed_fix\": \"Replace pin-229 with the actual page-229 completed-felony Terry passage quoted on the content page and mark the quote after normalized text verification.\",\n        \"evidence_quote\": \"issued by another department. ## Rule Yes to both. First, *Terry* stops are not confined to ongoing or imminent crimes:\",\n        \"needs_cl\": false,\n        \"locator_note\": \"lake.pinpoints[id=pin-229]; content_page.md line 53 shows the intended quote.\"\n      },\n      \"reasons\": [\n        \"The row/lake quote does not appear as a verbatim passage in the cached opinion text.\",\n        \"The disclosed opinion at page 229 contains the different completed-felony reasonable-suspicion passage used by the content page.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": \"Regenerate this pin from the quoted opinion span, not from surrounding page prose.\"\n    },\n    {\n      \"assertion_id\": \"5968e7fc1d62ed96\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The pin-233 quote omits the intervening citation between 'justifying a stop,' and 'and if' while presenting the sentence as continuous verbatim text.\",\n        \"severity\": \"medium\",\n        \"proposed_fix\": \"Include the omitted internal citation or mark the omission explicitly according to corpus style.\",\n        \"evidence_quote\": \"Robinson, supra,\",\n        \"needs_cl\": false,\n        \"locator_note\": \"text/United States v. Hensley__3caf7e.txt line 31; content_page.md line 57; lake.pinpoints[id=pin-233].\"\n      },\n      \"reasons\": [\n        \"The cached opinion includes an internal citation, United States v. Robinson, supra, after 'reasonable suspicion justifying a stop,'.\",\n        \"The content/lake quote skips directly to 'and if the stop that in fact occurred,' so the verbatim quote is not character-faithful.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": \"If shortened, use an ellipsis or citation-omitted signal rather than a continuous quotation.\"\n    },\n    {\n      \"assertion_id\": \"71f0f1890dac5154\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The quoted sentence appears in the cached opinion text with only a page-number tag inserted between 'other' and 'police'.\",\n        \"After normalizing the page marker, the content/lake quote preserves the words of the opinion and the passage begins at page 232.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"A raw-string checker that fails to strip page-number markup may keep flagging this quote as a mismatch.\"\n      ],\n      \"suggested_tightening\": \"Normalize page-number tags before quote-fidelity scoring; consider 232-33 if full-span pincites are required.\"\n    },\n    {\n      \"assertion_id\": \"f3020968dfbf790a\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The treatment payload matches the disclosed lake treatment fields and the content page frontmatter.\",\n        \"Lens A does not evaluate treatment or currency, so no treatment finding is raised.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Treatment/currency review is reserved for lens B.\"\n      ],\n      \"suggested_tightening\": null\n    }\n  ],\n  \"notes\": \"No support or black-letter inventory rows were present.\"\n}",
+  "summary": {
+    "at": "2026-07-09T23:51:06-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-235f4114d6",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-2b1f37869e",
+      "F-S9-PR-98a1bfc176"
+    ],
+    "group_id": "_overhaul2/lake/cases/United States v. Hensley.json",
+    "group_total_assertions": 5,
+    "lake_only_cases": [],
+    "lane": "codex-A",
+    "lane_id": "codex-A-panel-prod-48776c1e",
+    "lens": "A",
+    "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-48776c1e.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "United States v. Hensley"
+    ],
+    "tokens": {
+      "input": 138916,
+      "output": 13091,
+      "source": "codex-events",
+      "total": 152007
+    },
+    "verdict_map": {
+      "07138dd159967981": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "5968e7fc1d62ed96": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "71f0f1890dac5154": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "8a37ae1cea2f1000": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "f3020968dfbf790a": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-2b1f37869e",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-98a1bfc176",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-235f4114d6",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": 289.0
+  }
+}

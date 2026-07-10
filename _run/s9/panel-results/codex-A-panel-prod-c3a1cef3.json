@@ -1,0 +1,146 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Rakas v. Illinois.json",
+    "lens": "A",
+    "notes": "Reviewed all 4 assertion rows. Lens A refutation is limited to the bad pin-133 quote/pinpoint metadata.",
+    "reviewed": [
+      {
+        "assertion_id": "9c5899f369444489",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record identifies the case as Rakas v. Illinois, U.S. Supreme Court, decided 1978-12-05, year 1978.",
+          "The lake official citation is 439 U.S. 128 and the parallel/vendor citations listed in the assertion match the lake citations."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "78f2c5777f8d736f",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The quoted sentence appears in the cached opinion text at the portion marked *143.",
+          "The lake pinpoint for pin-143 has star_marker 143, quote_fidelity matched, and the same quote text."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "85d2ef19be365dd3",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "\"Fourth Amendment rights are personal rights which, like some other constitutional rights, may not be vicariously <span class=\"star-pagination\">*134</span> asserted.\"",
+          "locator_note": "The actual supporting sentence straddles the *133 to *134 pagination marker; current lake pin-133 is slip-only and mismatched.",
+          "needs_cl": false,
+          "problem": "pin-133's stored quote is not a character-faithful case quote; it is generated page/content markdown ending at the Rule heading. The lake itself flags quote_fidelity as mismatch and gives no star_marker.",
+          "proposed_fix": "Replace pin-133 with the actual Rakas passage at 439 U.S. 133-134, or remove the bad pinpoint metadata until a verified quote/locator is available.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The asserted quote begins with page front matter and section text, not the opinion text.",
+          "The cached opinion text supplies the real quoted sentence at pages 133-134.",
+          "The lake pinpoint records quote_fidelity=mismatch for pin-133."
+        ],
+        "residual_risks": [
+          "The rendered content page's visible pin-133 quotation appears substantively correct; the defect is in the reviewed pinpoint payload/metadata."
+        ],
+        "suggested_tightening": "Use the verified sentence quoted from Alderman and cite it as 439 U.S. at 133-134.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "b166bb37cfc42452",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A, so no treatment merits finding is raised.",
+          "The asserted treatment fields match the lake record and the content page: good_law, as_of_content 1978-12-05, as_of_treatment 2026-06-30, varies_by_point false."
+        ],
+        "residual_risks": [
+          "No independent Lens B treatment audit performed."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"A\",\n  \"group_id\": \"_overhaul2/lake/cases/Rakas v. Illinois.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"9c5899f369444489\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake record identifies the case as Rakas v. Illinois, U.S. Supreme Court, decided 1978-12-05, year 1978.\",\n        \"The lake official citation is 439 U.S. 128 and the parallel/vendor citations listed in the assertion match the lake citations.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"78f2c5777f8d736f\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The quoted sentence appears in the cached opinion text at the portion marked *143.\",\n        \"The lake pinpoint for pin-143 has star_marker 143, quote_fidelity matched, and the same quote text.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"85d2ef19be365dd3\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"pin-133's stored quote is not a character-faithful case quote; it is generated page/content markdown ending at the Rule heading. The lake itself flags quote_fidelity as mismatch and gives no star_marker.\",\n        \"severity\": \"high\",\n        \"proposed_fix\": \"Replace pin-133 with the actual Rakas passage at 439 U.S. 133-134, or remove the bad pinpoint metadata until a verified quote/locator is available.\",\n        \"evidence_quote\": \"\\\"Fourth Amendment rights are personal rights which, like some other constitutional rights, may not be vicariously <span class=\\\"star-pagination\\\">*134</span> asserted.\\\"\",\n        \"needs_cl\": false,\n        \"locator_note\": \"The actual supporting sentence straddles the *133 to *134 pagination marker; current lake pin-133 is slip-only and mismatched.\"\n      },\n      \"reasons\": [\n        \"The asserted quote begins with page front matter and section text, not the opinion text.\",\n        \"The cached opinion text supplies the real quoted sentence at pages 133-134.\",\n        \"The lake pinpoint records quote_fidelity=mismatch for pin-133.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The rendered content page's visible pin-133 quotation appears substantively correct; the defect is in the reviewed pinpoint payload/metadata.\"\n      ],\n      \"suggested_tightening\": \"Use the verified sentence quoted from Alderman and cite it as 439 U.S. at 133-134.\"\n    },\n    {\n      \"assertion_id\": \"b166bb37cfc42452\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Treatment/currency is outside Lens A, so no treatment merits finding is raised.\",\n        \"The asserted treatment fields match the lake record and the content page: good_law, as_of_content 1978-12-05, as_of_treatment 2026-06-30, varies_by_point false.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"No independent Lens B treatment audit performed.\"\n      ],\n      \"suggested_tightening\": null\n    }\n  ],\n  \"notes\": \"Reviewed all 4 assertion rows. Lens A refutation is limited to the bad pin-133 quote/pinpoint metadata.\"\n}",
+  "summary": {
+    "at": "2026-07-09T23:37:52-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-a915a4e11f"
+    ],
+    "group_id": "_overhaul2/lake/cases/Rakas v. Illinois.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "codex-A",
+    "lane_id": "codex-A-panel-prod-c3a1cef3",
+    "lens": "A",
+    "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-c3a1cef3.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Rakas v. Illinois"
+    ],
+    "tokens": {
+      "input": 283818,
+      "output": 5432,
+      "source": "codex-events",
+      "total": 289250
+    },
+    "verdict_map": {
+      "78f2c5777f8d736f": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "85d2ef19be365dd3": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "9c5899f369444489": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "b166bb37cfc42452": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-a915a4e11f",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 123.9
+  }
+}

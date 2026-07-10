@@ -1,0 +1,94 @@
+{
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/United States v. Nora.json",
+    "lens": "B",
+    "notes": "Reviewed both rows in group_inventory.jsonl under Lens B using only disclosed files.",
+    "reviewed": [
+      {
+        "assertion_id": "715fa8a46445a3dd",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The disclosed lake record identifies the case as United States v. Johnny Casel Nora, docket 12-50485, decided 2014-08-28 by the 9th Cir.",
+          "The lake citation fields list 765 F.3d 1049 as the official/display citation and include the same LEXIS and WL citations shown in the inventory.",
+          "No disclosed treatment edge or progeny record says the authority has been overruled, abrogated, superseded, or vacated."
+        ],
+        "residual_risks": [
+          "The disclosed treatment record is a frontier stub with field_i_validity unverified, so this existence finding should not be read as an affirmative good-law certification."
+        ],
+        "suggested_tightening": "Keep any live-law implication tied to the separate unverified treatment caveat.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "0c82e38eb66c1490",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The treatment payload matches the lake treatment fields: field_i_validity is unverified, as_of_content and as_of_treatment are null, varies_by_point is false, and point_overrides/edges are empty.",
+          "The lake scope note states: Frontier stub: treatment/progeny intentionally not derived until S6 promotion.",
+          "Because the record expressly disclaims derived treatment/progeny, the page's Treatment: Unverified label is consistent with the disclosed evidence."
+        ],
+        "residual_risks": [
+          "There is no disclosed treatment derivation, citation count, progeny enumeration, or as-of date, so no affirmative current-good-law conclusion can be made from this record.",
+          "The content body refers to S9 promotion while the lake scope note refers to S6 promotion; that is a wording consistency risk, not a contradiction of the unverified treatment call itself."
+        ],
+        "suggested_tightening": "Harmonize the S6/S9 promotion wording and avoid pairing Binding in-circuit with any implication that treatment has been machine-certified.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/United States v. Nora.json\",\"reviewed\":[{\"assertion_id\":\"715fa8a46445a3dd\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The disclosed lake record identifies the case as United States v. Johnny Casel Nora, docket 12-50485, decided 2014-08-28 by the 9th Cir.\",\"The lake citation fields list 765 F.3d 1049 as the official/display citation and include the same LEXIS and WL citations shown in the inventory.\",\"No disclosed treatment edge or progeny record says the authority has been overruled, abrogated, superseded, or vacated.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The disclosed treatment record is a frontier stub with field_i_validity unverified, so this existence finding should not be read as an affirmative good-law certification.\"],\"suggested_tightening\":\"Keep any live-law implication tied to the separate unverified treatment caveat.\"},{\"assertion_id\":\"0c82e38eb66c1490\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The treatment payload matches the lake treatment fields: field_i_validity is unverified, as_of_content and as_of_treatment are null, varies_by_point is false, and point_overrides/edges are empty.\",\"The lake scope note states: Frontier stub: treatment/progeny intentionally not derived until S6 promotion.\",\"Because the record expressly disclaims derived treatment/progeny, the page's Treatment: Unverified label is consistent with the disclosed evidence.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"There is no disclosed treatment derivation, citation count, progeny enumeration, or as-of date, so no affirmative current-good-law conclusion can be made from this record.\",\"The content body refers to S9 promotion while the lake scope note refers to S6 promotion; that is a wording consistency risk, not a contradiction of the unverified treatment call itself.\"],\"suggested_tightening\":\"Harmonize the S6/S9 promotion wording and avoid pairing Binding in-circuit with any implication that treatment has been machine-certified.\"}],\"notes\":\"Reviewed both rows in group_inventory.jsonl under Lens B using only disclosed files.\"}",
+  "summary": {
+    "at": "2026-07-09T23:53:23-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
+    "defense_votes": [],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/United States v. Nora.json",
+    "group_total_assertions": 2,
+    "lake_only_cases": [
+      "United States v. Nora"
+    ],
+    "lane": "codex-B",
+    "lane_id": "codex-B-panel-prod-48e8f352",
+    "lens": "B",
+    "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-48e8f352.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [
+      "case 'United States v. Nora' has no lead_opinion_id (text undisclosed)"
+    ],
+    "reviewed_count": 2,
+    "run": "prod",
+    "text_disclosed_cases": [],
+    "tokens": {
+      "input": 104145,
+      "output": 5901,
+      "source": "codex-events",
+      "total": 110046
+    },
+    "verdict_map": {
+      "0c82e38eb66c1490": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "715fa8a46445a3dd": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [],
+    "wall_clock_s": 128.4
+  }
+}

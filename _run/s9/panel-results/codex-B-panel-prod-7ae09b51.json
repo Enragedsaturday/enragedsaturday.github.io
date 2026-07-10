@@ -1,0 +1,94 @@
+{
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/United States v. Blue.json",
+    "lens": "B",
+    "notes": "Reviewed both group_inventory.jsonl assertions under Lens B only; no support or quote-fidelity findings raised.",
+    "reviewed": [
+      {
+        "assertion_id": "1f23e9bf82725157",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record names the case as United States v. Blue, identifies the court as U.S. Supreme Court, date_decided as 1966-05-23, docket No. 531, and cluster_id 107238.",
+          "The lake citation record selects 384 U.S. 251 as the official citation and lists the same parallel/vendor citations carried in the assertion payload.",
+          "No disclosed treatment edge, progeny edge, warning, or override says the cited authority has been overruled, superseded, abrogated, or otherwise made non-live."
+        ],
+        "residual_risks": [
+          "The treatment/progeny record is intentionally unverified, so this existence review does not independently establish current good-law status beyond the disclosed lake fields."
+        ],
+        "suggested_tightening": "Keep the citation paired with the visible Treatment: Unverified label until a full citator/progeny pass is completed.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "10b2704c516fecc9",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The assertion's field_i_validity value is unverified, matching lake.treatment.field_i_validity and content_page treatment frontmatter.",
+          "The assertion's as_of_content and as_of_treatment are null, matching the lake treatment fields.",
+          "The scope note is consistent with the lake record: \"Frontier stub: treatment/progeny intentionally not derived until S6 promotion.\"",
+          "The disclosed treatment edges and point_overrides arrays are empty, and progeny rows_cached is 0, so the disclosed record supports only an unverified treatment call, not a stronger good-law call."
+        ],
+        "residual_risks": [
+          "Because treatment and progeny are not derived, the disclosed record cannot rule out later negative treatment; it only verifies that the page correctly labels treatment as unverified."
+        ],
+        "suggested_tightening": "Do not promote this page from Treatment: Unverified or describe Blue as currently good law until citator/progeny fields are populated.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/United States v. Blue.json\",\"reviewed\":[{\"assertion_id\":\"1f23e9bf82725157\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake identity record names the case as United States v. Blue, identifies the court as U.S. Supreme Court, date_decided as 1966-05-23, docket No. 531, and cluster_id 107238.\",\"The lake citation record selects 384 U.S. 251 as the official citation and lists the same parallel/vendor citations carried in the assertion payload.\",\"No disclosed treatment edge, progeny edge, warning, or override says the cited authority has been overruled, superseded, abrogated, or otherwise made non-live.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The treatment/progeny record is intentionally unverified, so this existence review does not independently establish current good-law status beyond the disclosed lake fields.\"],\"suggested_tightening\":\"Keep the citation paired with the visible Treatment: Unverified label until a full citator/progeny pass is completed.\"},{\"assertion_id\":\"10b2704c516fecc9\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The assertion's field_i_validity value is unverified, matching lake.treatment.field_i_validity and content_page treatment frontmatter.\",\"The assertion's as_of_content and as_of_treatment are null, matching the lake treatment fields.\",\"The scope note is consistent with the lake record: \\\"Frontier stub: treatment/progeny intentionally not derived until S6 promotion.\\\"\",\"The disclosed treatment edges and point_overrides arrays are empty, and progeny rows_cached is 0, so the disclosed record supports only an unverified treatment call, not a stronger good-law call.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Because treatment and progeny are not derived, the disclosed record cannot rule out later negative treatment; it only verifies that the page correctly labels treatment as unverified.\"],\"suggested_tightening\":\"Do not promote this page from Treatment: Unverified or describe Blue as currently good law until citator/progeny fields are populated.\"}],\"notes\":\"Reviewed both group_inventory.jsonl assertions under Lens B only; no support or quote-fidelity findings raised.\"}",
+  "summary": {
+    "at": "2026-07-09T23:44:58-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
+    "defense_votes": [],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/United States v. Blue.json",
+    "group_total_assertions": 2,
+    "lake_only_cases": [
+      "United States v. Blue"
+    ],
+    "lane": "codex-B",
+    "lane_id": "codex-B-panel-prod-7ae09b51",
+    "lens": "B",
+    "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-7ae09b51.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [
+      "case 'United States v. Blue' has no lead_opinion_id (text undisclosed)"
+    ],
+    "reviewed_count": 2,
+    "run": "prod",
+    "text_disclosed_cases": [],
+    "tokens": {
+      "input": 75919,
+      "output": 2478,
+      "source": "codex-events",
+      "total": 78397
+    },
+    "verdict_map": {
+      "10b2704c516fecc9": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "1f23e9bf82725157": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [],
+    "wall_clock_s": 55.3
+  }
+}

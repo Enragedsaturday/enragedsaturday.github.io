@@ -1,0 +1,159 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/South Dakota v. Opperman.json",
+    "lens": "A",
+    "notes": "Reviewed every row in group_inventory.jsonl exactly once. No treatment finding is raised beyond field matching because Lens A is limited to support and quote fidelity.",
+    "reviewed": [
+      {
+        "assertion_id": "3af4288baf269bae",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record is South Dakota v. Opperman, U.S. Supreme Court, decided 1976-07-06, year 1976.",
+          "The official citation in the lake record is 428 U.S. 364, and the parallel/vendor citations in the row match the lake citations."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "49716aae5d5421cc",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "On this record we conclude that in following standard police procedures, prevailing throughout the country and approved by the overwhelming majority of courts, the conduct of the police was not \"unreasonable\" under the Fourth Amendment.",
+          "locator_note": "text/South Dakota v. Opperman__9fc2c5.txt line 47; content_page.md line 55; lake pin-376a also flags quote_fidelity as mismatch.",
+          "needs_cl": false,
+          "problem": "The quote substitutes single quotation marks around unreasonable, but the cached opinion text uses double quotation marks. Under character-faithful quote review, that is a mismatch.",
+          "proposed_fix": "Change the verbatim quote to match the opinion text's internal double quotation marks around \"unreasonable,\" or paraphrase instead of presenting it as verbatim.",
+          "severity": "medium"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The opinion text at the cited passage has not \"unreasonable\" under the Fourth Amendment.",
+          "The content/lake quote has not 'unreasonable' under the Fourth Amendment."
+        ],
+        "residual_risks": [
+          "The page-376 location appears substantively correct, but the quote is not character-faithful."
+        ],
+        "suggested_tightening": "Use exact internal punctuation from the opinion text.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "671d131321840b00",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "there is no suggestion whatever that this standard procedure, essentially like that followed throughout the country, was a pretext concealing an investigatory police motive.",
+          "locator_note": "lake pin-376 contains page markdown beginning '--- # South Dakota v. Opperman'; the actual supporting passage appears in text/South Dakota v. Opperman__9fc2c5.txt line 46 and content_page.md line 53.",
+          "needs_cl": false,
+          "problem": "The stored pin-376 quote is not an Opperman opinion passage; it is a corrupted fragment of the built content page/front matter and ends mid-sentence.",
+          "proposed_fix": "Replace pin-376's quote with the actual opinion passage supporting the pretext sentence at 428 U.S. 376, and regenerate the pinpoint metadata.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The lake pin-376 quote begins with built-page markdown, not with text from the cached opinion.",
+          "The actual opinion text at page 376 contains the quoted pretext sentence, so the displayed content quote is supportable but the pin quote metadata is not."
+        ],
+        "residual_risks": [
+          "The pincite itself appears usable for the actual pretext sentence, but the quote-fidelity assertion as framed fails."
+        ],
+        "suggested_tightening": "Keep the page 376 cite but replace the pin text with the exact sentence from the opinion.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "b0e79b22f58f355b",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The treatment fields in the row match lake.treatment: field_i_validity good_law, as_of_content 1976-07-06, as_of_treatment 2026-06-30, and varies_by_point false.",
+          "Lens A does not evaluate the substantive treatment/currency merits."
+        ],
+        "residual_risks": [
+          "Treatment/currency review is reserved to Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/South Dakota v. Opperman.json\",\"reviewed\":[{\"assertion_id\":\"3af4288baf269bae\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake identity record is South Dakota v. Opperman, U.S. Supreme Court, decided 1976-07-06, year 1976.\",\"The official citation in the lake record is 428 U.S. 364, and the parallel/vendor citations in the row match the lake citations.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"49716aae5d5421cc\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The quote substitutes single quotation marks around unreasonable, but the cached opinion text uses double quotation marks. Under character-faithful quote review, that is a mismatch.\",\"severity\":\"medium\",\"proposed_fix\":\"Change the verbatim quote to match the opinion text's internal double quotation marks around \\\"unreasonable,\\\" or paraphrase instead of presenting it as verbatim.\",\"evidence_quote\":\"On this record we conclude that in following standard police procedures, prevailing throughout the country and approved by the overwhelming majority of courts, the conduct of the police was not \\\"unreasonable\\\" under the Fourth Amendment.\",\"needs_cl\":false,\"locator_note\":\"text/South Dakota v. Opperman__9fc2c5.txt line 47; content_page.md line 55; lake pin-376a also flags quote_fidelity as mismatch.\"},\"reasons\":[\"The opinion text at the cited passage has not \\\"unreasonable\\\" under the Fourth Amendment.\",\"The content/lake quote has not 'unreasonable' under the Fourth Amendment.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The page-376 location appears substantively correct, but the quote is not character-faithful.\"],\"suggested_tightening\":\"Use exact internal punctuation from the opinion text.\"},{\"assertion_id\":\"671d131321840b00\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The stored pin-376 quote is not an Opperman opinion passage; it is a corrupted fragment of the built content page/front matter and ends mid-sentence.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-376's quote with the actual opinion passage supporting the pretext sentence at 428 U.S. 376, and regenerate the pinpoint metadata.\",\"evidence_quote\":\"there is no suggestion whatever that this standard procedure, essentially like that followed throughout the country, was a pretext concealing an investigatory police motive.\",\"needs_cl\":false,\"locator_note\":\"lake pin-376 contains page markdown beginning '--- # South Dakota v. Opperman'; the actual supporting passage appears in text/South Dakota v. Opperman__9fc2c5.txt line 46 and content_page.md line 53.\"},\"reasons\":[\"The lake pin-376 quote begins with built-page markdown, not with text from the cached opinion.\",\"The actual opinion text at page 376 contains the quoted pretext sentence, so the displayed content quote is supportable but the pin quote metadata is not.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The pincite itself appears usable for the actual pretext sentence, but the quote-fidelity assertion as framed fails.\"],\"suggested_tightening\":\"Keep the page 376 cite but replace the pin text with the exact sentence from the opinion.\"},{\"assertion_id\":\"b0e79b22f58f355b\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The treatment fields in the row match lake.treatment: field_i_validity good_law, as_of_content 1976-07-06, as_of_treatment 2026-06-30, and varies_by_point false.\",\"Lens A does not evaluate the substantive treatment/currency merits.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment/currency review is reserved to Lens B.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed every row in group_inventory.jsonl exactly once. No treatment finding is raised beyond field matching because Lens A is limited to support and quote fidelity.\"}",
+  "summary": {
+    "at": "2026-07-09T23:44:07-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-9b9bc494fd",
+      "F-S9-PR-ac1701b508"
+    ],
+    "group_id": "_overhaul2/lake/cases/South Dakota v. Opperman.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "codex-A",
+    "lane_id": "codex-A-panel-prod-902114e0",
+    "lens": "A",
+    "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-902114e0.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "South Dakota v. Opperman"
+    ],
+    "tokens": {
+      "input": 241482,
+      "output": 7400,
+      "source": "codex-events",
+      "total": 248882
+    },
+    "verdict_map": {
+      "3af4288baf269bae": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "49716aae5d5421cc": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "671d131321840b00": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "b0e79b22f58f355b": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-9b9bc494fd",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-ac1701b508",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 143.7
+  }
+}

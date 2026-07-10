@@ -1,0 +1,203 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Silverthorne Lumber Co. v. United States.json",
+    "lens": "A",
+    "notes": "Reviewed all 5 group_inventory rows exactly once. No separate support, pincite, or black_letter rows were present.",
+    "reviewed": [
+      {
+        "assertion_id": "f856ddfdaa08ccaa",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record discloses Silverthorne Lumber Co. v. United States, U.S. Supreme Court, decided 1920-03-01, year 1920.",
+          "The lake citation fields match the payload: official 251 U.S. 385, parallels 40 S. Ct. 182 and 64 L. Ed. 319, and vendor citation 1920 U.S. LEXIS 1685."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "58754aa1dcbe538a",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "It reduces the Fourth Amendment to a form of words.",
+          "locator_note": "text/Silverthorne Lumber Co. v. United States__18d8f9.txt at the star-page 392 passage.",
+          "needs_cl": false,
+          "problem": "The quoted fragment is not character-faithful to the cached opinion text. The opinion says 'It reduces,' not 'reduce[],' and the quoted fragment omits 'It.'",
+          "proposed_fix": "Replace the pinpoint quote with the exact opinion sentence: It reduces the Fourth Amendment to a form of words.",
+          "severity": "medium"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The cached opinion contains the page-392 sentence with 'It reduces the Fourth Amendment to a form of words.'",
+          "The payload quote 'reduce[] the Fourth Amendment to a form of words.' is an edited fragment, not character-faithful verbatim text."
+        ],
+        "residual_risks": [
+          "The passage supports the proposition if re-quoted exactly."
+        ],
+        "suggested_tightening": "Use the full exact sentence rather than a bracket-altered fragment.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "ef2ebf6e7f057039",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "The essence of a provision forbidding the acquisition of evidence in a certain way is that not merely evidence so acquired shall not be used before the Court but that it shall not be used at all.",
+          "locator_note": "content_page.md uses this sentence at ^pin-392, and the same sentence appears in the cached opinion at star page 392.",
+          "needs_cl": false,
+          "problem": "The pin-392 lake/payload quote is not an opinion quote; it is content-page prose spanning the Issue and Rule text, including a markdown heading marker.",
+          "proposed_fix": "Replace the lake pin-392 quote with the actual page-392 opinion sentence quoted on the content page: The essence of a provision forbidding the acquisition of evidence in a certain way is that not merely evidence so acquired shall not be used before the Court but that it shall not be used at all.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload quote contains '## Rule No.', which is page markup/content prose, not language from the opinion.",
+          "The cached opinion at star page 392 contains the 'The essence...' sentence, not the payload's Issue/Rule prose."
+        ],
+        "residual_risks": [
+          "The content page's displayed quote for ^pin-392 is supported; the defect is in the lake/payload pinpoint quote harvested for this assertion."
+        ],
+        "suggested_tightening": "Regenerate or manually correct pin-392 so it stores the actual opinion sentence.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "f9474d83bfdeb2cc",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "If knowledge of them is gained from an independent source they may be proved like any others, but the knowledge gained by the Government’s own wrong cannot bé used by it in the way proposed.",
+          "locator_note": "text/Silverthorne Lumber Co. v. United States__18d8f9.txt at the star-page 392 passage.",
+          "needs_cl": false,
+          "problem": "The quoted passage is substantively the right passage but not character-faithful to the cached opinion text: the text has 'Government’s' and 'bé', while the payload has 'Government's' and 'be'.",
+          "proposed_fix": "Either quote the cached text exactly or mark the passage as normalized rather than verbatim.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The cached opinion uses a curly apostrophe in Government’s and the accented OCR form 'bé'.",
+          "The payload quote uses straight apostrophe and normal 'be', so it is not character-faithful under the strict quote-fidelity rule."
+        ],
+        "residual_risks": [
+          "The disclosed text appears OCR-corrupted at 'bé'; a clean reporter source might justify normalized wording, but it is not disclosed here."
+        ],
+        "suggested_tightening": "Use exact cached-text characters or remove verbatim quotation treatment for the normalized words.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "561f908bdc6a83de",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A, so I make no substantive treatment finding.",
+          "The payload treatment fields match the lake treatment fields disclosed for this record."
+        ],
+        "residual_risks": [
+          "Treatment/currency remains for Lens B review."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Silverthorne Lumber Co. v. United States.json\",\"reviewed\":[{\"assertion_id\":\"f856ddfdaa08ccaa\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake identity record discloses Silverthorne Lumber Co. v. United States, U.S. Supreme Court, decided 1920-03-01, year 1920.\",\"The lake citation fields match the payload: official 251 U.S. 385, parallels 40 S. Ct. 182 and 64 L. Ed. 319, and vendor citation 1920 U.S. LEXIS 1685.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"58754aa1dcbe538a\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The quoted fragment is not character-faithful to the cached opinion text. The opinion says 'It reduces,' not 'reduce[],' and the quoted fragment omits 'It.'\",\"severity\":\"medium\",\"proposed_fix\":\"Replace the pinpoint quote with the exact opinion sentence: It reduces the Fourth Amendment to a form of words.\",\"evidence_quote\":\"It reduces the Fourth Amendment to a form of words.\",\"needs_cl\":false,\"locator_note\":\"text/Silverthorne Lumber Co. v. United States__18d8f9.txt at the star-page 392 passage.\"},\"reasons\":[\"The cached opinion contains the page-392 sentence with 'It reduces the Fourth Amendment to a form of words.'\",\"The payload quote 'reduce[] the Fourth Amendment to a form of words.' is an edited fragment, not character-faithful verbatim text.\"],\"breaks_true_positives\":true,\"residual_risks\":[\"The passage supports the proposition if re-quoted exactly.\"],\"suggested_tightening\":\"Use the full exact sentence rather than a bracket-altered fragment.\"},{\"assertion_id\":\"ef2ebf6e7f057039\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The pin-392 lake/payload quote is not an opinion quote; it is content-page prose spanning the Issue and Rule text, including a markdown heading marker.\",\"severity\":\"high\",\"proposed_fix\":\"Replace the lake pin-392 quote with the actual page-392 opinion sentence quoted on the content page: The essence of a provision forbidding the acquisition of evidence in a certain way is that not merely evidence so acquired shall not be used before the Court but that it shall not be used at all.\",\"evidence_quote\":\"The essence of a provision forbidding the acquisition of evidence in a certain way is that not merely evidence so acquired shall not be used before the Court but that it shall not be used at all.\",\"needs_cl\":false,\"locator_note\":\"content_page.md uses this sentence at ^pin-392, and the same sentence appears in the cached opinion at star page 392.\"},\"reasons\":[\"The payload quote contains '## Rule No.', which is page markup/content prose, not language from the opinion.\",\"The cached opinion at star page 392 contains the 'The essence...' sentence, not the payload's Issue/Rule prose.\"],\"breaks_true_positives\":true,\"residual_risks\":[\"The content page's displayed quote for ^pin-392 is supported; the defect is in the lake/payload pinpoint quote harvested for this assertion.\"],\"suggested_tightening\":\"Regenerate or manually correct pin-392 so it stores the actual opinion sentence.\"},{\"assertion_id\":\"f9474d83bfdeb2cc\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The quoted passage is substantively the right passage but not character-faithful to the cached opinion text: the text has 'Government’s' and 'bé', while the payload has 'Government's' and 'be'.\",\"severity\":\"low\",\"proposed_fix\":\"Either quote the cached text exactly or mark the passage as normalized rather than verbatim.\",\"evidence_quote\":\"If knowledge of them is gained from an independent source they may be proved like any others, but the knowledge gained by the Government’s own wrong cannot bé used by it in the way proposed.\",\"needs_cl\":false,\"locator_note\":\"text/Silverthorne Lumber Co. v. United States__18d8f9.txt at the star-page 392 passage.\"},\"reasons\":[\"The cached opinion uses a curly apostrophe in Government’s and the accented OCR form 'bé'.\",\"The payload quote uses straight apostrophe and normal 'be', so it is not character-faithful under the strict quote-fidelity rule.\"],\"breaks_true_positives\":true,\"residual_risks\":[\"The disclosed text appears OCR-corrupted at 'bé'; a clean reporter source might justify normalized wording, but it is not disclosed here.\"],\"suggested_tightening\":\"Use exact cached-text characters or remove verbatim quotation treatment for the normalized words.\"},{\"assertion_id\":\"561f908bdc6a83de\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside Lens A, so I make no substantive treatment finding.\",\"The payload treatment fields match the lake treatment fields disclosed for this record.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment/currency remains for Lens B review.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed all 5 group_inventory rows exactly once. No separate support, pincite, or black_letter rows were present.\"}",
+  "summary": {
+    "at": "2026-07-09T23:42:52-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-830b654097",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-492ee222f3",
+      "F-S9-PR-a8f7714acf",
+      "F-S9-PR-d3821428cd"
+    ],
+    "group_id": "_overhaul2/lake/cases/Silverthorne Lumber Co. v. United States.json",
+    "group_total_assertions": 5,
+    "lake_only_cases": [],
+    "lane": "codex-A",
+    "lane_id": "codex-A-panel-prod-ad10a677",
+    "lens": "A",
+    "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-ad10a677.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Silverthorne Lumber Co. v. United States"
+    ],
+    "tokens": {
+      "input": 201481,
+      "output": 11434,
+      "source": "codex-events",
+      "total": 212915
+    },
+    "verdict_map": {
+      "561f908bdc6a83de": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "58754aa1dcbe538a": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "ef2ebf6e7f057039": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "f856ddfdaa08ccaa": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "f9474d83bfdeb2cc": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-492ee222f3",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-a8f7714acf",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-d3821428cd",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-830b654097",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": 218.7
+  }
+}

@@ -1,0 +1,154 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Schneckloth v. Bustamonte.json",
+    "lens": "B",
+    "notes": "Applied only currency/treatment lens; quote-fidelity rows were not reviewed for textual accuracy.",
+    "reviewed": [
+      {
+        "assertion_id": "24eae06c73ec711c",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record is non-stub, status verified, and identifies Schneckloth v. Bustamonte as a U.S. Supreme Court decision decided 1973-05-29.",
+          "The official citation selected in the lake is 412 U.S. 218 and the parallel/vendor citations match the inventory payload.",
+          "The disclosed record supports the authority's existence; broader treatment uncertainty is addressed under the treatment assertion."
+        ],
+        "residual_risks": [
+          "Treatment derivation flags unresolved audit risk, but that is not an existence/citation-identity defect."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "6c24b7ed5f9a238b",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "This is a quote-fidelity assertion; lens B does not adjudicate quote accuracy or support.",
+          "No point-specific treatment override is tied to pin-227; lake treatment point_overrides is empty."
+        ],
+        "residual_risks": [
+          "Quote fidelity is left to lens A.",
+          "Global treatment audit uncertainty is addressed under the treatment assertion."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "d6738626789a267a",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "This is a quote-fidelity assertion; lens B does not adjudicate quote accuracy or support.",
+          "No point-specific treatment override is tied to pin-227a; lake treatment point_overrides is empty."
+        ],
+        "residual_risks": [
+          "Quote fidelity is left to lens A.",
+          "Global treatment audit uncertainty is addressed under the treatment assertion."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "f7d781fe8541abf4",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade.",
+          "locator_note": "lake/Schneckloth v. Bustamonte__047623.json treatment.scope_note, treatment.derivation, and treatment.edges",
+          "needs_cl": true,
+          "problem": "The unqualified good_law treatment call is not verified by the disclosed record. Although field_i_validity is set to good_law, the lake basis is migration-seed, the scope note says re-derivation may downgrade, all treatment derivation lanes flag audit_needed, and the edges include unresolved proposed negative treatment signals.",
+          "proposed_fix": "Do not present the status as simply good law as of 2026-06-30 unless the proposed negative events are resolved. Mark it as treatment audit pending or add the migration-seed/audit caveat visibly, then re-state good_law only after re-derivation confirms it.",
+          "severity": "high"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "The treatment field says field_i_validity good_law as of 2026-06-30, but the same record gives composite_basis migration-seed rather than a completed treatment derivation.",
+          "lane1_negative, lane2_top_cited, and lane3_recency each have audit_needed true and audit_marker R15 treatment audit required.",
+          "The disclosed treatment.edges list 28 proposed negative edges, including overruled, questioned, criticized, and superseded_by_statute signals; point is null and field_iii is mentioned, so the record does not resolve whether any edge actually changes Schneckloth's status.",
+          "Under the instruction to default to refuted on uncertainty, the unqualified good-law treatment assertion cannot stand as framed."
+        ],
+        "residual_risks": [
+          "A completed audit may ultimately confirm good-law status, but that confirmation is not present in the disclosed evidence."
+        ],
+        "suggested_tightening": "Expose the status as good_law only with a visible caveat: migration-seed; R15 treatment audit pending; proposed negative edges unresolved.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": false
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/Schneckloth v. Bustamonte.json\",\"reviewed\":[{\"assertion_id\":\"24eae06c73ec711c\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record is non-stub, status verified, and identifies Schneckloth v. Bustamonte as a U.S. Supreme Court decision decided 1973-05-29.\",\"The official citation selected in the lake is 412 U.S. 218 and the parallel/vendor citations match the inventory payload.\",\"The disclosed record supports the authority's existence; broader treatment uncertainty is addressed under the treatment assertion.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment derivation flags unresolved audit risk, but that is not an existence/citation-identity defect.\"],\"suggested_tightening\":null},{\"assertion_id\":\"6c24b7ed5f9a238b\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"This is a quote-fidelity assertion; lens B does not adjudicate quote accuracy or support.\",\"No point-specific treatment override is tied to pin-227; lake treatment point_overrides is empty.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Quote fidelity is left to lens A.\",\"Global treatment audit uncertainty is addressed under the treatment assertion.\"],\"suggested_tightening\":null},{\"assertion_id\":\"d6738626789a267a\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"This is a quote-fidelity assertion; lens B does not adjudicate quote accuracy or support.\",\"No point-specific treatment override is tied to pin-227a; lake treatment point_overrides is empty.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Quote fidelity is left to lens A.\",\"Global treatment audit uncertainty is addressed under the treatment assertion.\"],\"suggested_tightening\":null},{\"assertion_id\":\"f7d781fe8541abf4\",\"dimension\":\"treatment\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":false,\"defect\":{\"problem\":\"The unqualified good_law treatment call is not verified by the disclosed record. Although field_i_validity is set to good_law, the lake basis is migration-seed, the scope note says re-derivation may downgrade, all treatment derivation lanes flag audit_needed, and the edges include unresolved proposed negative treatment signals.\",\"severity\":\"high\",\"proposed_fix\":\"Do not present the status as simply good law as of 2026-06-30 unless the proposed negative events are resolved. Mark it as treatment audit pending or add the migration-seed/audit caveat visibly, then re-state good_law only after re-derivation confirms it.\",\"evidence_quote\":\"Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade.\",\"needs_cl\":true,\"locator_note\":\"lake/Schneckloth v. Bustamonte__047623.json treatment.scope_note, treatment.derivation, and treatment.edges\"},\"reasons\":[\"The treatment field says field_i_validity good_law as of 2026-06-30, but the same record gives composite_basis migration-seed rather than a completed treatment derivation.\",\"lane1_negative, lane2_top_cited, and lane3_recency each have audit_needed true and audit_marker R15 treatment audit required.\",\"The disclosed treatment.edges list 28 proposed negative edges, including overruled, questioned, criticized, and superseded_by_statute signals; point is null and field_iii is mentioned, so the record does not resolve whether any edge actually changes Schneckloth's status.\",\"Under the instruction to default to refuted on uncertainty, the unqualified good-law treatment assertion cannot stand as framed.\"],\"breaks_true_positives\":true,\"residual_risks\":[\"A completed audit may ultimately confirm good-law status, but that confirmation is not present in the disclosed evidence.\"],\"suggested_tightening\":\"Expose the status as good_law only with a visible caveat: migration-seed; R15 treatment audit pending; proposed negative edges unresolved.\"}],\"notes\":\"Applied only currency/treatment lens; quote-fidelity rows were not reviewed for textual accuracy.\"}",
+  "summary": {
+    "at": "2026-07-09T23:40:40-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-fcab061b5a"
+    ],
+    "group_id": "_overhaul2/lake/cases/Schneckloth v. Bustamonte.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "codex-B",
+    "lane_id": "codex-B-panel-prod-4a07357a",
+    "lens": "B",
+    "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-4a07357a.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Schneckloth v. Bustamonte"
+    ],
+    "tokens": {
+      "input": 223936,
+      "output": 7244,
+      "source": "codex-events",
+      "total": 231180
+    },
+    "verdict_map": {
+      "24eae06c73ec711c": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "6c24b7ed5f9a238b": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "d6738626789a267a": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "f7d781fe8541abf4": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": false
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-fcab061b5a",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 151.3
+  }
+}

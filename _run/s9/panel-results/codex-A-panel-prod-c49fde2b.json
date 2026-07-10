@@ -1,0 +1,168 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Stovall v. Denno.json",
+    "lens": "A",
+    "notes": "Reviewed all 4 rows in group_inventory.jsonl under Lens A only.",
+    "reviewed": [
+      {
+        "assertion_id": "5f219475b8dfa030",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record is Stovall v. Denno, U.S. Supreme Court, decided 1967-06-12, year 1967.",
+          "The disclosed lake citations match the payload: official 388 U.S. 293, parallels 87 S. Ct. 1967 and 18 L. Ed. 2d 1199, and vendor cite 1967 U.S. LEXIS 1087.",
+          "The content page frontmatter also states citation 388 U.S. 293 (1967) and court U.S. Supreme Court."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "2250b524addfdeb3",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "the confrontation conducted in this <span class=\"star-pagination\">*302</span> case was so unnecessarily suggestive and conductive to irreparable mistaken identification that he was denied due process of law.",
+          "locator_note": "pin-302; content_page.md Rule paragraph; text/Stovall v. Denno__29c613.txt line 30/page *302",
+          "needs_cl": false,
+          "problem": "pin-302's lake quote is not a judicial-opinion excerpt; it is a harvested chunk of the built page/header and stops before the claimed opinion quotation. The page's displayed pin-302 quotation also is not character-faithful to the cached opinion because it uses 'conducive' where the disclosed opinion text has 'conductive'.",
+          "proposed_fix": "Replace pin-302 with the actual page-*302 opinion passage and align the content-page quotation to the disclosed text, preserving the cached wording or otherwise verifying any normalization from an official source.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload quote begins with built-page material ('--- # Stovall v. Denno') rather than the Supreme Court opinion text.",
+          "The lake record itself marks pin-302 quote_fidelity as mismatch and has page/star_marker null.",
+          "The cached opinion at page *302 contains the relevant passage, but it differs from the content-page quotation at the word 'conductive'/'conducive' under strict quote-fidelity review."
+        ],
+        "residual_risks": [
+          "The disclosed text may contain CourtListener/OCR spelling, but under the ground rules the disclosed cached text controls unless another disclosed source proves otherwise."
+        ],
+        "suggested_tightening": "Use a corrected pin-302 quote tied to page 302 and avoid treating built-page prose as a pinpoint quote.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "bf5a6f26a87aa6bf",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "a claimed violation of due process of law in the conduct of a confrontation depends on the totality of the circumstances surrounding it, and the record in the present case reveals that the showing of Stovall to Mrs. Behrendt in an immediate hospital confrontation was imperative.",
+          "locator_note": "pin-302a; content_page.md Rule paragraph; text/Stovall v. Denno__29c613.txt line 30/page *302",
+          "needs_cl": false,
+          "problem": "The quoted words appear in the cached opinion, but the terminal punctuation is not character-faithful: the source continues with a comma after 'it', while the page/lake quote closes with a period inside the quotation.",
+          "proposed_fix": "Change the quotation to end with 'it,' as a fragment, or quote the full sentence through 'imperative.'",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The phrase after 'However,' is present in the cached opinion text.",
+          "The source punctuation after 'surrounding it' is a comma because the sentence continues; the quoted fragment supplies a period."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Quote the full sentence or use fragment punctuation faithful to the cached opinion.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "9bbaf957a35860b3",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A, so no treatment merits finding is raised.",
+          "The payload treatment fields match the disclosed lake record: field_i_validity good_law, as_of_content 1967-06-12, as_of_treatment 2026-06-30, varies_by_point false, and the same scope_note."
+        ],
+        "residual_risks": [
+          "Treatment and good-law currency remain for Lens B review."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Stovall v. Denno.json\",\"reviewed\":[{\"assertion_id\":\"5f219475b8dfa030\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake identity record is Stovall v. Denno, U.S. Supreme Court, decided 1967-06-12, year 1967.\",\"The disclosed lake citations match the payload: official 388 U.S. 293, parallels 87 S. Ct. 1967 and 18 L. Ed. 2d 1199, and vendor cite 1967 U.S. LEXIS 1087.\",\"The content page frontmatter also states citation 388 U.S. 293 (1967) and court U.S. Supreme Court.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"2250b524addfdeb3\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"pin-302's lake quote is not a judicial-opinion excerpt; it is a harvested chunk of the built page/header and stops before the claimed opinion quotation. The page's displayed pin-302 quotation also is not character-faithful to the cached opinion because it uses 'conducive' where the disclosed opinion text has 'conductive'.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-302 with the actual page-*302 opinion passage and align the content-page quotation to the disclosed text, preserving the cached wording or otherwise verifying any normalization from an official source.\",\"evidence_quote\":\"the confrontation conducted in this <span class=\\\"star-pagination\\\">*302</span> case was so unnecessarily suggestive and conductive to irreparable mistaken identification that he was denied due process of law.\",\"needs_cl\":false,\"locator_note\":\"pin-302; content_page.md Rule paragraph; text/Stovall v. Denno__29c613.txt line 30/page *302\"},\"reasons\":[\"The payload quote begins with built-page material ('--- # Stovall v. Denno') rather than the Supreme Court opinion text.\",\"The lake record itself marks pin-302 quote_fidelity as mismatch and has page/star_marker null.\",\"The cached opinion at page *302 contains the relevant passage, but it differs from the content-page quotation at the word 'conductive'/'conducive' under strict quote-fidelity review.\"],\"breaks_true_positives\":true,\"residual_risks\":[\"The disclosed text may contain CourtListener/OCR spelling, but under the ground rules the disclosed cached text controls unless another disclosed source proves otherwise.\"],\"suggested_tightening\":\"Use a corrected pin-302 quote tied to page 302 and avoid treating built-page prose as a pinpoint quote.\"},{\"assertion_id\":\"bf5a6f26a87aa6bf\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The quoted words appear in the cached opinion, but the terminal punctuation is not character-faithful: the source continues with a comma after 'it', while the page/lake quote closes with a period inside the quotation.\",\"severity\":\"low\",\"proposed_fix\":\"Change the quotation to end with 'it,' as a fragment, or quote the full sentence through 'imperative.'\",\"evidence_quote\":\"a claimed violation of due process of law in the conduct of a confrontation depends on the totality of the circumstances surrounding it, and the record in the present case reveals that the showing of Stovall to Mrs. Behrendt in an immediate hospital confrontation was imperative.\",\"needs_cl\":false,\"locator_note\":\"pin-302a; content_page.md Rule paragraph; text/Stovall v. Denno__29c613.txt line 30/page *302\"},\"reasons\":[\"The phrase after 'However,' is present in the cached opinion text.\",\"The source punctuation after 'surrounding it' is a comma because the sentence continues; the quoted fragment supplies a period.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":\"Quote the full sentence or use fragment punctuation faithful to the cached opinion.\"},{\"assertion_id\":\"9bbaf957a35860b3\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside Lens A, so no treatment merits finding is raised.\",\"The payload treatment fields match the disclosed lake record: field_i_validity good_law, as_of_content 1967-06-12, as_of_treatment 2026-06-30, varies_by_point false, and the same scope_note.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment and good-law currency remain for Lens B review.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed all 4 rows in group_inventory.jsonl under Lens A only.\"}",
+  "summary": {
+    "at": "2026-07-09T23:45:21-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-2d168c68de",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-6f90161a47",
+      "F-S9-PR-6db7016a4e"
+    ],
+    "group_id": "_overhaul2/lake/cases/Stovall v. Denno.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "codex-A",
+    "lane_id": "codex-A-panel-prod-c49fde2b",
+    "lens": "A",
+    "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-c49fde2b.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Stovall v. Denno"
+    ],
+    "tokens": {
+      "input": 162770,
+      "output": 8841,
+      "source": "codex-events",
+      "total": 171611
+    },
+    "verdict_map": {
+      "2250b524addfdeb3": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "5f219475b8dfa030": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "9bbaf957a35860b3": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "bf5a6f26a87aa6bf": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-6f90161a47",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-6db7016a4e",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-2d168c68de",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": 177.3
+  }
+}

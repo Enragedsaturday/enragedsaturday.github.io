@@ -1,0 +1,107 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/United States v. United States District Court (Keith).json",
+    "lens": "B",
+    "notes": "",
+    "reviewed": [
+      {
+        "assertion_id": "9872375a26ca03f4",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "Frontier stub: treatment/progeny intentionally not derived until S6 promotion.",
+          "locator_note": "lake treatment fields and progeny block for record_id United States v. United States District Court (Keith)",
+          "needs_cl": true,
+          "problem": "The citation and SCOTUS identity are present, but the disclosed record does not verify the authority's current live-law status. Treatment is expressly unverified and progeny/citator data are absent.",
+          "proposed_fix": "Do not treat this existence assertion as verified for currency/live-law purposes until treatment and progeny are populated or citator review confirms no overruling, abrogation, supersession, or limiting treatment.",
+          "severity": "medium"
+        },
+        "dimension": "existence",
+        "reasons": [
+          "The lake record verifies the citation identity: official cite is 407 U.S. 297 and court_level is scotus.",
+          "For lens B, existence is attacked as current live-law status; the lake record has field_i_validity unverified, as_of_treatment null, treatment edges empty, and progeny rows_cached 0.",
+          "Because the disclosed evidence contains no completed treatment/progeny derivation, current live-law status cannot be verified from the disclosed universe."
+        ],
+        "residual_risks": [
+          "The authority may in fact remain good law, but that cannot be confirmed from the disclosed files."
+        ],
+        "suggested_tightening": "Separate citation-existence from live-law currency, and keep any current-authority signal behind the existing unverified treatment banner until citator/progeny review is complete.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": false
+      },
+      {
+        "assertion_id": "6ad9bb7ae0a6080e",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The treatment payload matches the lake treatment record: field_i_validity is unverified, as_of_content and as_of_treatment are null, and varies_by_point is false.",
+          "The page accurately renders Treatment: Unverified and states that subsequent treatment has not yet been machine-verified.",
+          "No disclosed treatment edge, point override, or progeny entry contradicts the unverified treatment call."
+        ],
+        "residual_risks": [
+          "This standing verdict confirms only that the unverified treatment label is accurately represented; it does not verify actual good-law status."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"B\",\n  \"group_id\": \"_overhaul2/lake/cases/United States v. United States District Court (Keith).json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"9872375a26ca03f4\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": false,\n      \"defect\": {\n        \"problem\": \"The citation and SCOTUS identity are present, but the disclosed record does not verify the authority's current live-law status. Treatment is expressly unverified and progeny/citator data are absent.\",\n        \"severity\": \"medium\",\n        \"proposed_fix\": \"Do not treat this existence assertion as verified for currency/live-law purposes until treatment and progeny are populated or citator review confirms no overruling, abrogation, supersession, or limiting treatment.\",\n        \"evidence_quote\": \"Frontier stub: treatment/progeny intentionally not derived until S6 promotion.\",\n        \"needs_cl\": true,\n        \"locator_note\": \"lake treatment fields and progeny block for record_id United States v. United States District Court (Keith)\"\n      },\n      \"reasons\": [\n        \"The lake record verifies the citation identity: official cite is 407 U.S. 297 and court_level is scotus.\",\n        \"For lens B, existence is attacked as current live-law status; the lake record has field_i_validity unverified, as_of_treatment null, treatment edges empty, and progeny rows_cached 0.\",\n        \"Because the disclosed evidence contains no completed treatment/progeny derivation, current live-law status cannot be verified from the disclosed universe.\"\n      ],\n      \"breaks_true_positives\": true,\n      \"residual_risks\": [\n        \"The authority may in fact remain good law, but that cannot be confirmed from the disclosed files.\"\n      ],\n      \"suggested_tightening\": \"Separate citation-existence from live-law currency, and keep any current-authority signal behind the existing unverified treatment banner until citator/progeny review is complete.\"\n    },\n    {\n      \"assertion_id\": \"6ad9bb7ae0a6080e\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The treatment payload matches the lake treatment record: field_i_validity is unverified, as_of_content and as_of_treatment are null, and varies_by_point is false.\",\n        \"The page accurately renders Treatment: Unverified and states that subsequent treatment has not yet been machine-verified.\",\n        \"No disclosed treatment edge, point override, or progeny entry contradicts the unverified treatment call.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"This standing verdict confirms only that the unverified treatment label is accurately represented; it does not verify actual good-law status.\"\n      ],\n      \"suggested_tightening\": null\n    }\n  ],\n  \"notes\": \"\"\n}",
+  "summary": {
+    "at": "2026-07-09T23:55:07-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-251c101c05"
+    ],
+    "group_id": "_overhaul2/lake/cases/United States v. United States District Court (Keith).json",
+    "group_total_assertions": 2,
+    "lake_only_cases": [
+      "United States v. United States District Court (Keith)"
+    ],
+    "lane": "codex-B",
+    "lane_id": "codex-B-panel-prod-d8162d39",
+    "lens": "B",
+    "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-d8162d39.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [
+      "case 'United States v. United States District Court (Keith)' has no lead_opinion_id (text undisclosed)"
+    ],
+    "reviewed_count": 2,
+    "run": "prod",
+    "text_disclosed_cases": [],
+    "tokens": {
+      "input": 106885,
+      "output": 3392,
+      "source": "codex-events",
+      "total": 110277
+    },
+    "verdict_map": {
+      "6ad9bb7ae0a6080e": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "9872375a26ca03f4": {
+        "dimension": "existence",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": false
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-251c101c05",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 71.2
+  }
+}

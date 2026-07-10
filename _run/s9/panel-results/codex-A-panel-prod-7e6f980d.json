@@ -1,0 +1,124 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/United States v. Cortez.json",
+    "lens": "A",
+    "notes": "Reviewed all 3 assertions in group_inventory.jsonl exactly once.",
+    "reviewed": [
+      {
+        "assertion_id": "3229adf7972b73e7",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity confirms United States v. Cortez, U.S. Supreme Court, decided 1981-01-21, year 1981.",
+          "Lake citations list 449 U.S. 411 as the official citation, with the same parallel/vendor citations shown in the inventory and page."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "10dbc353addb5dc9",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "Based upon that whole picture the detaining officers must have a particularized and objective basis for suspecting the particular person stopped of criminal <span class=\"star-pagination\">*418</span> activity.",
+          "locator_note": "content_page.md cites ^pin-417 for the quoted rule; lake pin-417 has page null, star_marker null, pinpoint_status slip-only, and quote_fidelity mismatch.",
+          "needs_cl": false,
+          "problem": "pin-417's stored quote is not an opinion quote at the claimed rule passage; it is harvested page prose spanning Background/Issue/Rule, and the lake record itself marks quote_fidelity as mismatch.",
+          "proposed_fix": "Replace pin-417 with the actual 449 U.S. 417-18 opinion passage, preserving the cached text's characters/markup or use a non-verbatim paraphrase.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload quote appears in content_page.md prose, not in text/United States v. Cortez__ce53c9.txt as the cited opinion passage.",
+          "The cached opinion's relevant rule text at 417-18 is different from the pin payload, so the verbatim quote/pin cannot stand as character-faithful."
+        ],
+        "residual_risks": [
+          "A corrected pin should be rechecked for exact dash, spacing, and pagination-marker handling."
+        ],
+        "suggested_tightening": "Regenerate pin-417 directly from the cached opinion text instead of harvesting surrounding Markdown.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "5af87766b3d59d85",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The treatment payload matches lake.treatment: good_law, as_of_content 1981-01-21, as_of_treatment 2026-06-30, varies_by_point false, and the same scope_note.",
+          "No treatment/currency merits finding is raised under Lens A."
+        ],
+        "residual_risks": [
+          "Treatment currency was not independently audited under this lens."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/United States v. Cortez.json\",\"reviewed\":[{\"assertion_id\":\"3229adf7972b73e7\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity confirms United States v. Cortez, U.S. Supreme Court, decided 1981-01-21, year 1981.\",\"Lake citations list 449 U.S. 411 as the official citation, with the same parallel/vendor citations shown in the inventory and page.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"10dbc353addb5dc9\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"pin-417's stored quote is not an opinion quote at the claimed rule passage; it is harvested page prose spanning Background/Issue/Rule, and the lake record itself marks quote_fidelity as mismatch.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-417 with the actual 449 U.S. 417-18 opinion passage, preserving the cached text's characters/markup or use a non-verbatim paraphrase.\",\"evidence_quote\":\"Based upon that whole picture the detaining officers must have a particularized and objective basis for suspecting the particular person stopped of criminal <span class=\\\"star-pagination\\\">*418</span> activity.\",\"needs_cl\":false,\"locator_note\":\"content_page.md cites ^pin-417 for the quoted rule; lake pin-417 has page null, star_marker null, pinpoint_status slip-only, and quote_fidelity mismatch.\"},\"reasons\":[\"The payload quote appears in content_page.md prose, not in text/United States v. Cortez__ce53c9.txt as the cited opinion passage.\",\"The cached opinion's relevant rule text at 417-18 is different from the pin payload, so the verbatim quote/pin cannot stand as character-faithful.\"],\"breaks_true_positives\":true,\"residual_risks\":[\"A corrected pin should be rechecked for exact dash, spacing, and pagination-marker handling.\"],\"suggested_tightening\":\"Regenerate pin-417 directly from the cached opinion text instead of harvesting surrounding Markdown.\"},{\"assertion_id\":\"5af87766b3d59d85\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The treatment payload matches lake.treatment: good_law, as_of_content 1981-01-21, as_of_treatment 2026-06-30, varies_by_point false, and the same scope_note.\",\"No treatment/currency merits finding is raised under Lens A.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment currency was not independently audited under this lens.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed all 3 assertions in group_inventory.jsonl exactly once.\"}",
+  "summary": {
+    "at": "2026-07-09T23:47:23-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-d6187a9879"
+    ],
+    "group_id": "_overhaul2/lake/cases/United States v. Cortez.json",
+    "group_total_assertions": 3,
+    "lake_only_cases": [],
+    "lane": "codex-A",
+    "lane_id": "codex-A-panel-prod-7e6f980d",
+    "lens": "A",
+    "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-7e6f980d.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 3,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "United States v. Cortez"
+    ],
+    "tokens": {
+      "input": 249776,
+      "output": 6800,
+      "source": "codex-events",
+      "total": 256576
+    },
+    "verdict_map": {
+      "10dbc353addb5dc9": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "3229adf7972b73e7": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "5af87766b3d59d85": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-d6187a9879",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 145.2
+  }
+}

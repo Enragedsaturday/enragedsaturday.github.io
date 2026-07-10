@@ -1,0 +1,126 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Riley v. California.json",
+    "lens": "A",
+    "notes": "Reviewed only the disclosed working-directory files and did not search externally.",
+    "reviewed": [
+      {
+        "assertion_id": "ff3188c21ac1d10a",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record identifies Riley v. California, court U.S. Supreme Court, decided 2014-06-25, docket 13-132, cluster_id 2680439.",
+          "The inventory citation payload matches lake.citations: display and selected official citation are 134 S. Ct. 2473; listed parallels are 189 L. Ed. 2d 430, 2014 U.S. LEXIS 4497, and 82 U.S.L.W. 4558."
+        ],
+        "residual_risks": [
+          "The built page body also displays 573 U.S. 373, which is not included in lake.citations.all, but that separate display citation is not the citation payload for this assertion_id."
+        ],
+        "suggested_tightening": "Reconcile the page body/source display citation with the lake citation set or add a supported U.S. Reports citation field if 573 U.S. 373 is intended.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "594a6336b674db17",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "Our answer to\nthe question of what police must do before searching a cell\nphone seized incident to an arrest is accordingly simple—\nget a warrant.",
+          "locator_note": "text/Riley v. California__061592.txt around the closing opinion passage; lake.pinpoints[0] itself marks quote_fidelity as mismatch and page as null/slip-only.",
+          "needs_cl": false,
+          "problem": "pin-403 is not a character-faithful opinion quote. The lake pinpoint quote is harvested page/markdown text, not the opinion passage, and the page's displayed quote differs from the cached opinion at least in dash spacing around 'simple—get a warrant.'",
+          "proposed_fix": "Replace pin-403 with the actual opinion passage and correct the quoted text to use 'simple—get a warrant' with no spaces around the em dash; do not store page markdown/background text as the pinpoint quote.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The asserted pinpoint quote begins with page markdown ('--- # Riley v. California ... ## Background ...'), which is not in the cached opinion text.",
+          "The actual opinion text supports the substance of the short get-a-warrant quote, but not the stored pinpoint quote or the page quote's spaced em dash formatting."
+        ],
+        "residual_risks": [
+          "The cached text is slip-only, so the U.S. Reports page-403 pincite cannot be independently verified from the disclosed text file."
+        ],
+        "suggested_tightening": "Store only the exact quoted sentence from the opinion for pin-403 and keep any page summary text outside pinpoints[].quote.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "1965e891303ceba7",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A; no treatment finding is raised here.",
+          "The treatment payload is internally consistent with the disclosed lake record and content frontmatter: field_i_validity good_law, as_of_treatment 2026-06-30, varies_by_point false."
+        ],
+        "residual_risks": [
+          "This is not an affirmative Lens A current-law review; Lens B owns treatment/currency."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Riley v. California.json\",\"reviewed\":[{\"assertion_id\":\"ff3188c21ac1d10a\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record identifies Riley v. California, court U.S. Supreme Court, decided 2014-06-25, docket 13-132, cluster_id 2680439.\",\"The inventory citation payload matches lake.citations: display and selected official citation are 134 S. Ct. 2473; listed parallels are 189 L. Ed. 2d 430, 2014 U.S. LEXIS 4497, and 82 U.S.L.W. 4558.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The built page body also displays 573 U.S. 373, which is not included in lake.citations.all, but that separate display citation is not the citation payload for this assertion_id.\"],\"suggested_tightening\":\"Reconcile the page body/source display citation with the lake citation set or add a supported U.S. Reports citation field if 573 U.S. 373 is intended.\"},{\"assertion_id\":\"594a6336b674db17\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"pin-403 is not a character-faithful opinion quote. The lake pinpoint quote is harvested page/markdown text, not the opinion passage, and the page's displayed quote differs from the cached opinion at least in dash spacing around 'simple—get a warrant.'\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-403 with the actual opinion passage and correct the quoted text to use 'simple—get a warrant' with no spaces around the em dash; do not store page markdown/background text as the pinpoint quote.\",\"evidence_quote\":\"Our answer to\\nthe question of what police must do before searching a cell\\nphone seized incident to an arrest is accordingly simple—\\nget a warrant.\",\"needs_cl\":false,\"locator_note\":\"text/Riley v. California__061592.txt around the closing opinion passage; lake.pinpoints[0] itself marks quote_fidelity as mismatch and page as null/slip-only.\"},\"reasons\":[\"The asserted pinpoint quote begins with page markdown ('--- # Riley v. California ... ## Background ...'), which is not in the cached opinion text.\",\"The actual opinion text supports the substance of the short get-a-warrant quote, but not the stored pinpoint quote or the page quote's spaced em dash formatting.\"],\"breaks_true_positives\":true,\"residual_risks\":[\"The cached text is slip-only, so the U.S. Reports page-403 pincite cannot be independently verified from the disclosed text file.\"],\"suggested_tightening\":\"Store only the exact quoted sentence from the opinion for pin-403 and keep any page summary text outside pinpoints[].quote.\"},{\"assertion_id\":\"1965e891303ceba7\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside Lens A; no treatment finding is raised here.\",\"The treatment payload is internally consistent with the disclosed lake record and content frontmatter: field_i_validity good_law, as_of_treatment 2026-06-30, varies_by_point false.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"This is not an affirmative Lens A current-law review; Lens B owns treatment/currency.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed only the disclosed working-directory files and did not search externally.\"}",
+  "summary": {
+    "at": "2026-07-09T23:38:37-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-6a28435410"
+    ],
+    "group_id": "_overhaul2/lake/cases/Riley v. California.json",
+    "group_total_assertions": 3,
+    "lake_only_cases": [],
+    "lane": "codex-A",
+    "lane_id": "codex-A-panel-prod-e625d141",
+    "lens": "A",
+    "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-e625d141.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 3,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Riley v. California"
+    ],
+    "tokens": {
+      "input": 145455,
+      "output": 4683,
+      "source": "codex-events",
+      "total": 150138
+    },
+    "verdict_map": {
+      "1965e891303ceba7": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "594a6336b674db17": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "ff3188c21ac1d10a": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-6a28435410",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 119.9
+  }
+}

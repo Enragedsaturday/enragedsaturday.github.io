@@ -1,0 +1,188 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Tennessee v. Garner.json",
+    "lens": "A",
+    "notes": "Lens A reviewed only existence and quote/support fidelity issues; treatment was checked only for consistency with disclosed lake fields.",
+    "reviewed": [
+      {
+        "assertion_id": "75ab20b0deb52ca7",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record lists Tennessee v. Garner, U.S. Supreme Court, decided 1985-03-27, docket 83-1035.",
+          "The lake official citation is 471 U.S. 1 and the listed parallel/vendor citations match the payload."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "143a63ed176cd6da",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "A police officer may not seize an unarmed, nondangerous suspect by shooting him dead.",
+          "locator_note": "text/Tennessee v. Garner__32055c.txt paragraph b81-5; lake pin-11 is marked quote_fidelity mismatch.",
+          "needs_cl": false,
+          "problem": "The quoted sentence is substantively the same but not character-for-character faithful: the source begins with capital A, while the page/lake quote begins with bracketed lowercase [a].",
+          "proposed_fix": "Use the source capitalization by rewriting the lead-in, e.g. The Court stated: \"A police officer may not seize an unarmed, nondangerous suspect by shooting him dead.\"",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The exact sentence appears in the opinion text with initial capital A.",
+          "The lake pinpoint judgment for pin-11 itself says quote_fidelity is mismatch."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Store exact source text for quote fidelity, or explicitly allow bracketed initial-capitalization normalization.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "1da6cf1f7d2637d1",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Where the officer has probable cause to believe that the suspect poses a threat of serious physical harm, either to the officer or to others, it is not constitutionally unreasonable to prevent escape by using deadly force.",
+          "locator_note": "text/Tennessee v. Garner__32055c.txt paragraph b81-6; lake pin-11a is marked quote_fidelity mismatch.",
+          "needs_cl": false,
+          "problem": "The quoted sentence is substantively the same but not character-for-character faithful: the source begins with capital Where, while the page/lake quote begins with bracketed lowercase [w]here.",
+          "proposed_fix": "Use the source capitalization by rewriting the lead-in, e.g. The Court also stated: \"Where the officer has probable cause to believe that the suspect poses a threat of serious physical harm, either to the officer or to others, it is not constitutionally unreasonable to prevent escape by using deadly force.\"",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The exact sentence appears in the opinion text with initial capital Where.",
+          "The lake pinpoint judgment for pin-11a itself says quote_fidelity is mismatch."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Store exact source text for quote fidelity, or explicitly allow bracketed initial-capitalization normalization.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "49140703fd690117",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "We conclude that such force may not be used unless it is necessary to prevent the escape and the officer has probable cause to believe that the suspect poses a significant threat of death or serious physical injury to the officer or others.",
+          "locator_note": "content_page Rule uses the quoted sentence above; lake pin-3 instead stores harvested page prose beginning 'was unarmed—climbed a fence...' and is marked quote_fidelity mismatch.",
+          "needs_cl": false,
+          "problem": "Pin-3's stored quote is page prose and headings, not a character-faithful quotation from the opinion or the displayed Rule quote on the content page.",
+          "proposed_fix": "Replace pin-3 with the actual opinion quotation used in the Rule section.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The opinion text contains the Rule quote beginning 'We conclude...' in paragraph b73-6.",
+          "The lake pin-3 quote does not match that passage and includes markdown headings from the built page."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Bind pin-3 to the actual quoted opinion sentence and rerun quote-harvest validation.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "fd777576ca04c21e",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The treatment payload matches the lake treatment fields: field_i_validity good_law, as_of_content 1985-03-27, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note.",
+          "Treatment currency is outside lens A, so no treatment finding is raised."
+        ],
+        "residual_risks": [
+          "Treatment/currency not independently assessed under this lens."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Tennessee v. Garner.json\",\"reviewed\":[{\"assertion_id\":\"75ab20b0deb52ca7\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake identity record lists Tennessee v. Garner, U.S. Supreme Court, decided 1985-03-27, docket 83-1035.\",\"The lake official citation is 471 U.S. 1 and the listed parallel/vendor citations match the payload.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"143a63ed176cd6da\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The quoted sentence is substantively the same but not character-for-character faithful: the source begins with capital A, while the page/lake quote begins with bracketed lowercase [a].\",\"severity\":\"low\",\"proposed_fix\":\"Use the source capitalization by rewriting the lead-in, e.g. The Court stated: \\\"A police officer may not seize an unarmed, nondangerous suspect by shooting him dead.\\\"\",\"evidence_quote\":\"A police officer may not seize an unarmed, nondangerous suspect by shooting him dead.\",\"needs_cl\":false,\"locator_note\":\"text/Tennessee v. Garner__32055c.txt paragraph b81-5; lake pin-11 is marked quote_fidelity mismatch.\"},\"reasons\":[\"The exact sentence appears in the opinion text with initial capital A.\",\"The lake pinpoint judgment for pin-11 itself says quote_fidelity is mismatch.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":\"Store exact source text for quote fidelity, or explicitly allow bracketed initial-capitalization normalization.\"},{\"assertion_id\":\"1da6cf1f7d2637d1\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The quoted sentence is substantively the same but not character-for-character faithful: the source begins with capital Where, while the page/lake quote begins with bracketed lowercase [w]here.\",\"severity\":\"low\",\"proposed_fix\":\"Use the source capitalization by rewriting the lead-in, e.g. The Court also stated: \\\"Where the officer has probable cause to believe that the suspect poses a threat of serious physical harm, either to the officer or to others, it is not constitutionally unreasonable to prevent escape by using deadly force.\\\"\",\"evidence_quote\":\"Where the officer has probable cause to believe that the suspect poses a threat of serious physical harm, either to the officer or to others, it is not constitutionally unreasonable to prevent escape by using deadly force.\",\"needs_cl\":false,\"locator_note\":\"text/Tennessee v. Garner__32055c.txt paragraph b81-6; lake pin-11a is marked quote_fidelity mismatch.\"},\"reasons\":[\"The exact sentence appears in the opinion text with initial capital Where.\",\"The lake pinpoint judgment for pin-11a itself says quote_fidelity is mismatch.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":\"Store exact source text for quote fidelity, or explicitly allow bracketed initial-capitalization normalization.\"},{\"assertion_id\":\"49140703fd690117\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"Pin-3's stored quote is page prose and headings, not a character-faithful quotation from the opinion or the displayed Rule quote on the content page.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-3 with the actual opinion quotation used in the Rule section.\",\"evidence_quote\":\"We conclude that such force may not be used unless it is necessary to prevent the escape and the officer has probable cause to believe that the suspect poses a significant threat of death or serious physical injury to the officer or others.\",\"needs_cl\":false,\"locator_note\":\"content_page Rule uses the quoted sentence above; lake pin-3 instead stores harvested page prose beginning 'was unarmed—climbed a fence...' and is marked quote_fidelity mismatch.\"},\"reasons\":[\"The opinion text contains the Rule quote beginning 'We conclude...' in paragraph b73-6.\",\"The lake pin-3 quote does not match that passage and includes markdown headings from the built page.\"],\"breaks_true_positives\":true,\"residual_risks\":[],\"suggested_tightening\":\"Bind pin-3 to the actual quoted opinion sentence and rerun quote-harvest validation.\"},{\"assertion_id\":\"fd777576ca04c21e\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The treatment payload matches the lake treatment fields: field_i_validity good_law, as_of_content 1985-03-27, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note.\",\"Treatment currency is outside lens A, so no treatment finding is raised.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment/currency not independently assessed under this lens.\"],\"suggested_tightening\":null}],\"notes\":\"Lens A reviewed only existence and quote/support fidelity issues; treatment was checked only for consistency with disclosed lake fields.\"}",
+  "summary": {
+    "at": "2026-07-09T23:45:21-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-1d19efa786",
+      "F-S9-PR-d6eeaaf77c",
+      "F-S9-PR-e2148741c0"
+    ],
+    "group_id": "_overhaul2/lake/cases/Tennessee v. Garner.json",
+    "group_total_assertions": 5,
+    "lake_only_cases": [],
+    "lane": "codex-A",
+    "lane_id": "codex-A-panel-prod-a6b89b54",
+    "lens": "A",
+    "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-a6b89b54.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Tennessee v. Garner"
+    ],
+    "tokens": {
+      "input": 159474,
+      "output": 7890,
+      "source": "codex-events",
+      "total": 167364
+    },
+    "verdict_map": {
+      "143a63ed176cd6da": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "1da6cf1f7d2637d1": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "49140703fd690117": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "75ab20b0deb52ca7": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "fd777576ca04c21e": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-1d19efa786",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-d6eeaaf77c",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-e2148741c0",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 151.5
+  }
+}

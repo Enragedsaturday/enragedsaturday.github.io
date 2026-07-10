@@ -1,0 +1,136 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Riley v. California.json",
+    "lens": "B",
+    "notes": "",
+    "reviewed": [
+      {
+        "assertion_id": "ff3188c21ac1d10a",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The disclosed lake identity record identifies Riley v. California as a U.S. Supreme Court case decided 2014-06-25 with expected_citation_found=true.",
+          "The lake treatment judgment states field_i_validity=good_law and discloses no negative treatment edges."
+        ],
+        "residual_risks": [
+          "The separate treatment assertion has a provenance/keying risk addressed below, but no disclosed negative treatment event defeats existence/liveness."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "594a6336b674db17",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote fidelity is outside Lens B; this row contains no independent treatment/currency assertion to attack.",
+          "No disclosed negative treatment event is tied to pin-403."
+        ],
+        "residual_risks": [
+          "Quote and pinpoint accuracy remain for Lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "1965e891303ceba7",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "\"complete_query\": \"cites:(8386852)\"",
+          "locator_note": "lake/Riley v. California__061592.json: identity.lead_opinion_id/sibling_ids versus treatment.derivation and progeny.complete_query",
+          "needs_cl": true,
+          "problem": "The unqualified good_law-as-of-2026-06-30 treatment call is not verifiable from the disclosed treatment/progeny record. The identity fields key this Riley record to lead/sibling opinion 2680439, but the treatment derivation and progeny searches are keyed to 8386852 and reviewed zero citing opinions, so the disclosed record does not show a completed current-law check for the identified authority.",
+          "proposed_fix": "Rerun treatment/progeny derivation against the record's actual lead/sibling opinion id(s), reconcile any citing-opinion/negative-treatment edges, then republish field_i_validity and as_of_treatment only if the rerun supports them.",
+          "severity": "high"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "Lake identity lists cluster_id=2680439, lead_opinion_id=2680439, and sibling_ids=[2680439].",
+          "Treatment/progeny instead use cites:(8386852), with lane reviewed counts of 0 and progeny citation_count=0.",
+          "The lake has no negative edges, but the disclosed absence of edges is not enough where the search key does not match the identified authority."
+        ],
+        "residual_risks": [
+          "This is a disclosed-evidence verification defect, not proof that Riley has actually been overruled or abrogated."
+        ],
+        "suggested_tightening": "Avoid displaying an unqualified 'good as of 2026-06-30' badge unless the treatment derivation keys match the identity/progeny keys or the mismatch is explained.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": false
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/Riley v. California.json\",\"reviewed\":[{\"assertion_id\":\"ff3188c21ac1d10a\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The disclosed lake identity record identifies Riley v. California as a U.S. Supreme Court case decided 2014-06-25 with expected_citation_found=true.\",\"The lake treatment judgment states field_i_validity=good_law and discloses no negative treatment edges.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The separate treatment assertion has a provenance/keying risk addressed below, but no disclosed negative treatment event defeats existence/liveness.\"],\"suggested_tightening\":null},{\"assertion_id\":\"594a6336b674db17\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Quote fidelity is outside Lens B; this row contains no independent treatment/currency assertion to attack.\",\"No disclosed negative treatment event is tied to pin-403.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Quote and pinpoint accuracy remain for Lens A.\"],\"suggested_tightening\":null},{\"assertion_id\":\"1965e891303ceba7\",\"dimension\":\"treatment\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":false,\"defect\":{\"problem\":\"The unqualified good_law-as-of-2026-06-30 treatment call is not verifiable from the disclosed treatment/progeny record. The identity fields key this Riley record to lead/sibling opinion 2680439, but the treatment derivation and progeny searches are keyed to 8386852 and reviewed zero citing opinions, so the disclosed record does not show a completed current-law check for the identified authority.\",\"severity\":\"high\",\"proposed_fix\":\"Rerun treatment/progeny derivation against the record's actual lead/sibling opinion id(s), reconcile any citing-opinion/negative-treatment edges, then republish field_i_validity and as_of_treatment only if the rerun supports them.\",\"evidence_quote\":\"\\\"complete_query\\\": \\\"cites:(8386852)\\\"\",\"needs_cl\":true,\"locator_note\":\"lake/Riley v. California__061592.json: identity.lead_opinion_id/sibling_ids versus treatment.derivation and progeny.complete_query\"},\"reasons\":[\"Lake identity lists cluster_id=2680439, lead_opinion_id=2680439, and sibling_ids=[2680439].\",\"Treatment/progeny instead use cites:(8386852), with lane reviewed counts of 0 and progeny citation_count=0.\",\"The lake has no negative edges, but the disclosed absence of edges is not enough where the search key does not match the identified authority.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"This is a disclosed-evidence verification defect, not proof that Riley has actually been overruled or abrogated.\"],\"suggested_tightening\":\"Avoid displaying an unqualified 'good as of 2026-06-30' badge unless the treatment derivation keys match the identity/progeny keys or the mismatch is explained.\"}],\"notes\":\"\"}",
+  "summary": {
+    "at": "2026-07-09T23:39:32-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-6a28435410",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-da95c658fe"
+    ],
+    "group_id": "_overhaul2/lake/cases/Riley v. California.json",
+    "group_total_assertions": 3,
+    "lake_only_cases": [],
+    "lane": "codex-B",
+    "lane_id": "codex-B-panel-prod-e625d141",
+    "lens": "B",
+    "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-e625d141.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 3,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Riley v. California"
+    ],
+    "tokens": {
+      "input": 85125,
+      "output": 6911,
+      "source": "codex-events",
+      "total": 92036
+    },
+    "verdict_map": {
+      "1965e891303ceba7": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": false
+      },
+      "594a6336b674db17": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "ff3188c21ac1d10a": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-6a28435410",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-da95c658fe",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 151.6
+  }
+}

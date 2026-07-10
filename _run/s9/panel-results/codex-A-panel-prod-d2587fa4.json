@@ -1,0 +1,189 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/United States v. Martinez-Fuerte.json",
+    "lens": "A",
+    "notes": "Treatment/currency was recorded only for disclosed-field consistency; no Lens A treatment finding is made.",
+    "reviewed": [
+      {
+        "assertion_id": "e9c2723b52264e3c",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record verifies United States v. Martinez-Fuerte as a U.S. Supreme Court case decided 1976-07-06, docket 74-1560.",
+          "The official citation in the lake record is 428 U.S. 543, with parallel citations 96 S. Ct. 3074 and 49 L. Ed. 2d 1116, matching the content page."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "0d6c70efeaf5e30a",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Thus, even if it be assumed that such referrals are made largely on the basis of apparent Mexican ancestry,<sup>[16]</sup> we perceive no constitutional violation.",
+          "locator_note": "text/United States v. Martinez-Fuerte__a62535.txt line 70, beginning at star pagination *563",
+          "needs_cl": false,
+          "problem": "The quote is supported by the opinion and lands at *563, but it is not a contiguous character-faithful raw quote because the cached text contains an intervening footnote marker after 'ancestry,'.",
+          "proposed_fix": "Store this as a normalized rendered-text quote or include an editorial footnote omission marker; also set star_marker to 563 if the pinpoint system supports it.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The substantive quoted language appears in the opinion at *563.",
+          "The raw cached text inserts <sup>[16]</sup> between 'ancestry,' and 'we perceive,' while the payload omits it."
+        ],
+        "residual_risks": [
+          "If the corpus treats footnote callouts as non-quote text, this is only a metadata-normalization issue."
+        ],
+        "suggested_tightening": "Validate pin-563 against rendered text and record the *563 star marker.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "4e17a951134427fa",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The quoted sentence appears verbatim in the cached opinion text.",
+          "The lake pinpoint records quote_fidelity matched, star_marker 562, and a validated fragment for the same sentence."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "dd1a7b865ebdf937",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "In summary, we hold that stops for brief questioning routinely conducted at permanent checkpoints are consistent with the Fourth Amendment and need not be authorized by warrant.<sup>[19]</sup>",
+          "locator_note": "text/United States v. Martinez-Fuerte__a62535.txt line 80; star pagination *566 begins earlier in the same section before this sentence",
+          "needs_cl": false,
+          "problem": "The payload quote for pin-566 is not an opinion quote; it is copied from the content page header/background/issue/rule text and stops before the actual quoted holding.",
+          "proposed_fix": "Replace the pin-566 payload quote with the actual opinion sentence: 'In summary, we hold that stops for brief questioning routinely conducted at permanent checkpoints are consistent with the Fourth Amendment and need not be authorized by warrant.'",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The disclosed opinion text contains the cited holding sentence near *566, but not the payload's long page-header excerpt.",
+          "The lake pinpoints entry itself marks pin-566 quote_fidelity as mismatch and has no star marker or position."
+        ],
+        "residual_risks": [
+          "The content page's displayed Rule quote for pin-566 is supportable; the defect is the lake/group pinpoint payload, not the legal proposition."
+        ],
+        "suggested_tightening": "Re-harvest pin-566 from the rendered opinion text rather than from content_page.md.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "3a7e783477af7d6f",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment is outside Lens A's support/quote-fidelity charter, so no substantive currency finding is raised.",
+          "The payload treatment fields match the lake record and content frontmatter: good_law, as_of_content 1976-07-06, as_of_treatment 2026-06-30, and varies_by_point false."
+        ],
+        "residual_risks": [
+          "Lens B should evaluate substantive treatment/currency; the lake record contains proposed negative-event edges that Lens A does not adjudicate."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/United States v. Martinez-Fuerte.json\",\"reviewed\":[{\"assertion_id\":\"e9c2723b52264e3c\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake identity record verifies United States v. Martinez-Fuerte as a U.S. Supreme Court case decided 1976-07-06, docket 74-1560.\",\"The official citation in the lake record is 428 U.S. 543, with parallel citations 96 S. Ct. 3074 and 49 L. Ed. 2d 1116, matching the content page.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"0d6c70efeaf5e30a\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The quote is supported by the opinion and lands at *563, but it is not a contiguous character-faithful raw quote because the cached text contains an intervening footnote marker after 'ancestry,'.\",\"severity\":\"low\",\"proposed_fix\":\"Store this as a normalized rendered-text quote or include an editorial footnote omission marker; also set star_marker to 563 if the pinpoint system supports it.\",\"evidence_quote\":\"Thus, even if it be assumed that such referrals are made largely on the basis of apparent Mexican ancestry,<sup>[16]</sup> we perceive no constitutional violation.\",\"needs_cl\":false,\"locator_note\":\"text/United States v. Martinez-Fuerte__a62535.txt line 70, beginning at star pagination *563\"},\"reasons\":[\"The substantive quoted language appears in the opinion at *563.\",\"The raw cached text inserts <sup>[16]</sup> between 'ancestry,' and 'we perceive,' while the payload omits it.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"If the corpus treats footnote callouts as non-quote text, this is only a metadata-normalization issue.\"],\"suggested_tightening\":\"Validate pin-563 against rendered text and record the *563 star marker.\"},{\"assertion_id\":\"4e17a951134427fa\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The quoted sentence appears verbatim in the cached opinion text.\",\"The lake pinpoint records quote_fidelity matched, star_marker 562, and a validated fragment for the same sentence.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"dd1a7b865ebdf937\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The payload quote for pin-566 is not an opinion quote; it is copied from the content page header/background/issue/rule text and stops before the actual quoted holding.\",\"severity\":\"high\",\"proposed_fix\":\"Replace the pin-566 payload quote with the actual opinion sentence: 'In summary, we hold that stops for brief questioning routinely conducted at permanent checkpoints are consistent with the Fourth Amendment and need not be authorized by warrant.'\",\"evidence_quote\":\"In summary, we hold that stops for brief questioning routinely conducted at permanent checkpoints are consistent with the Fourth Amendment and need not be authorized by warrant.<sup>[19]</sup>\",\"needs_cl\":false,\"locator_note\":\"text/United States v. Martinez-Fuerte__a62535.txt line 80; star pagination *566 begins earlier in the same section before this sentence\"},\"reasons\":[\"The disclosed opinion text contains the cited holding sentence near *566, but not the payload's long page-header excerpt.\",\"The lake pinpoints entry itself marks pin-566 quote_fidelity as mismatch and has no star marker or position.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The content page's displayed Rule quote for pin-566 is supportable; the defect is the lake/group pinpoint payload, not the legal proposition.\"],\"suggested_tightening\":\"Re-harvest pin-566 from the rendered opinion text rather than from content_page.md.\"},{\"assertion_id\":\"3a7e783477af7d6f\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment is outside Lens A's support/quote-fidelity charter, so no substantive currency finding is raised.\",\"The payload treatment fields match the lake record and content frontmatter: good_law, as_of_content 1976-07-06, as_of_treatment 2026-06-30, and varies_by_point false.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Lens B should evaluate substantive treatment/currency; the lake record contains proposed negative-event edges that Lens A does not adjudicate.\"],\"suggested_tightening\":null}],\"notes\":\"Treatment/currency was recorded only for disclosed-field consistency; no Lens A treatment finding is made.\"}",
+  "summary": {
+    "at": "2026-07-09T23:52:14-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-cbd174a461",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-4ca9da6743",
+      "F-S9-PR-75ecd64d7b"
+    ],
+    "group_id": "_overhaul2/lake/cases/United States v. Martinez-Fuerte.json",
+    "group_total_assertions": 5,
+    "lake_only_cases": [],
+    "lane": "codex-A",
+    "lane_id": "codex-A-panel-prod-d2587fa4",
+    "lens": "A",
+    "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-d2587fa4.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "United States v. Martinez-Fuerte"
+    ],
+    "tokens": {
+      "input": 500556,
+      "output": 9054,
+      "source": "codex-events",
+      "total": 509610
+    },
+    "verdict_map": {
+      "0d6c70efeaf5e30a": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "3a7e783477af7d6f": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "4e17a951134427fa": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "dd1a7b865ebdf937": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "e9c2723b52264e3c": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-4ca9da6743",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-75ecd64d7b",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-cbd174a461",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": 190.8
+  }
+}

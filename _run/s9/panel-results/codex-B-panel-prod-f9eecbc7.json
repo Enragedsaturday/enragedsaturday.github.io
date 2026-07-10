@@ -1,0 +1,214 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/United States v. Jacobsen.json",
+    "lens": "B",
+    "notes": "Lens B reviewed only currency, treatment, live-law status, and authority weight; no support or quote-fidelity findings are raised.",
+    "reviewed": [
+      {
+        "assertion_id": "ba5df66592e6a62e",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record is verified, identifies United States v. Jacobsen as a U.S. Supreme Court case decided 1984-04-02, and gives the official citation 466 U.S. 109.",
+          "The lake treatment field_i_validity is good_law as of 2026-06-30, so the cited authority remains live law from the disclosed record."
+        ],
+        "residual_risks": [
+          "Treatment derivation flags proposed negative-treatment audit issues; those affect the treatment wording, not the existence of the authority."
+        ],
+        "suggested_tightening": "Keep existence/live-law separate from any categorical no-negative-treatment statement.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "03e5ea89a04e2100",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote fidelity is outside lens B; no support or quote-fidelity finding is raised.",
+          "The disclosed treatment record has no point override tied to pin-113a."
+        ],
+        "residual_risks": [
+          "Quote-fidelity issues, if any, are reserved for lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "25ccc4b07327536a",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote fidelity is outside lens B; no support or quote-fidelity finding is raised.",
+          "The disclosed treatment record has no point override tied to pin-113."
+        ],
+        "residual_risks": [
+          "Quote-fidelity issues, if any, are reserved for lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "3e8e488db840386d",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote fidelity is outside lens B; no support or quote-fidelity finding is raised.",
+          "The disclosed treatment record has no point override tied to pin-115."
+        ],
+        "residual_risks": [
+          "Quote-fidelity issues, if any, are reserved for lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "ea139f0f17c4015e",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote fidelity is outside lens B; no support or quote-fidelity finding is raised.",
+          "The disclosed treatment record has no point override tied to pin-123."
+        ],
+        "residual_risks": [
+          "Quote-fidelity issues, if any, are reserved for lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "7c79f87fb6d948ee",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "\"audit_needed\": true,\n        \"proposed_negative_events\": 24,\n        \"audit_marker\": \"R15 treatment audit required\"",
+          "locator_note": "lake/United States v. Jacobsen__46c28c.json treatment.derivation.lane2_top_cited and treatment.edges; content_page.md Treatment & subsequent history",
+          "needs_cl": true,
+          "problem": "The good_law status itself is supported by lake.treatment.field_i_validity, but the page overstates treatment by saying no negative subsequent treatment was identified. The lake record contains proposed negative-treatment edges and marks treatment audit_needed, so the page should carry an audit/proposed-signals caveat rather than a categorical no-negative statement.",
+          "proposed_fix": "Keep Treatment: good_law as of 2026-06-30 and Binding - SCOTUS, but replace the categorical no-negative-treatment sentence with a caveat that proposed negative-treatment signals exist in the lake record and no finalized downgrade or point override appears in the disclosed record.",
+          "severity": "medium"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "Lake treatment.field_i_validity is good_law as of 2026-06-30, with varies_by_point false and no point_overrides.",
+          "The authority-weight label is supported by the lake identity fields showing court_level scotus and court U.S. Supreme Court.",
+          "However, the lake treatment derivation flags audit_needed and proposed negative events, and treatment.edges include proposed labels such as overruled, abrogated, superseded_by_statute, criticized, and questioned.",
+          "Because those edges are proposed and no finalized point override appears, the disclosed record supports a caveated good_law call, not a downgrade."
+        ],
+        "residual_risks": [
+          "A CourtListener/full-text audit would be needed to resolve the proposed negative edges conclusively."
+        ],
+        "suggested_tightening": "State that Jacobsen is currently carried as good law in the lake record, but that proposed negative-treatment signals are pending audit.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/United States v. Jacobsen.json\",\"reviewed\":[{\"assertion_id\":\"ba5df66592e6a62e\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake identity record is verified, identifies United States v. Jacobsen as a U.S. Supreme Court case decided 1984-04-02, and gives the official citation 466 U.S. 109.\",\"The lake treatment field_i_validity is good_law as of 2026-06-30, so the cited authority remains live law from the disclosed record.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment derivation flags proposed negative-treatment audit issues; those affect the treatment wording, not the existence of the authority.\"],\"suggested_tightening\":\"Keep existence/live-law separate from any categorical no-negative-treatment statement.\"},{\"assertion_id\":\"03e5ea89a04e2100\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Quote fidelity is outside lens B; no support or quote-fidelity finding is raised.\",\"The disclosed treatment record has no point override tied to pin-113a.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Quote-fidelity issues, if any, are reserved for lens A.\"],\"suggested_tightening\":null},{\"assertion_id\":\"25ccc4b07327536a\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Quote fidelity is outside lens B; no support or quote-fidelity finding is raised.\",\"The disclosed treatment record has no point override tied to pin-113.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Quote-fidelity issues, if any, are reserved for lens A.\"],\"suggested_tightening\":null},{\"assertion_id\":\"3e8e488db840386d\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Quote fidelity is outside lens B; no support or quote-fidelity finding is raised.\",\"The disclosed treatment record has no point override tied to pin-115.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Quote-fidelity issues, if any, are reserved for lens A.\"],\"suggested_tightening\":null},{\"assertion_id\":\"ea139f0f17c4015e\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Quote fidelity is outside lens B; no support or quote-fidelity finding is raised.\",\"The disclosed treatment record has no point override tied to pin-123.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Quote-fidelity issues, if any, are reserved for lens A.\"],\"suggested_tightening\":null},{\"assertion_id\":\"7c79f87fb6d948ee\",\"dimension\":\"treatment\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The good_law status itself is supported by lake.treatment.field_i_validity, but the page overstates treatment by saying no negative subsequent treatment was identified. The lake record contains proposed negative-treatment edges and marks treatment audit_needed, so the page should carry an audit/proposed-signals caveat rather than a categorical no-negative statement.\",\"severity\":\"medium\",\"proposed_fix\":\"Keep Treatment: good_law as of 2026-06-30 and Binding - SCOTUS, but replace the categorical no-negative-treatment sentence with a caveat that proposed negative-treatment signals exist in the lake record and no finalized downgrade or point override appears in the disclosed record.\",\"evidence_quote\":\"\\\"audit_needed\\\": true,\\n        \\\"proposed_negative_events\\\": 24,\\n        \\\"audit_marker\\\": \\\"R15 treatment audit required\\\"\",\"needs_cl\":true,\"locator_note\":\"lake/United States v. Jacobsen__46c28c.json treatment.derivation.lane2_top_cited and treatment.edges; content_page.md Treatment & subsequent history\"},\"reasons\":[\"Lake treatment.field_i_validity is good_law as of 2026-06-30, with varies_by_point false and no point_overrides.\",\"The authority-weight label is supported by the lake identity fields showing court_level scotus and court U.S. Supreme Court.\",\"However, the lake treatment derivation flags audit_needed and proposed negative events, and treatment.edges include proposed labels such as overruled, abrogated, superseded_by_statute, criticized, and questioned.\",\"Because those edges are proposed and no finalized point override appears, the disclosed record supports a caveated good_law call, not a downgrade.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"A CourtListener/full-text audit would be needed to resolve the proposed negative edges conclusively.\"],\"suggested_tightening\":\"State that Jacobsen is currently carried as good law in the lake record, but that proposed negative-treatment signals are pending audit.\"}],\"notes\":\"Lens B reviewed only currency, treatment, live-law status, and authority weight; no support or quote-fidelity findings are raised.\"}",
+  "summary": {
+    "at": "2026-07-09T23:49:42-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-a3b00b7f05",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-2d617c4692",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-4ff0feb864"
+    ],
+    "group_id": "_overhaul2/lake/cases/United States v. Jacobsen.json",
+    "group_total_assertions": 6,
+    "lake_only_cases": [],
+    "lane": "codex-B",
+    "lane_id": "codex-B-panel-prod-f9eecbc7",
+    "lens": "B",
+    "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-f9eecbc7.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 6,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "United States v. Jacobsen"
+    ],
+    "tokens": {
+      "input": 225627,
+      "output": 6919,
+      "source": "codex-events",
+      "total": 232546
+    },
+    "verdict_map": {
+      "03e5ea89a04e2100": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "25ccc4b07327536a": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "3e8e488db840386d": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "7c79f87fb6d948ee": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "ba5df66592e6a62e": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "ea139f0f17c4015e": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-a3b00b7f05",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-2d617c4692",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-4ff0feb864",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 139.1
+  }
+}

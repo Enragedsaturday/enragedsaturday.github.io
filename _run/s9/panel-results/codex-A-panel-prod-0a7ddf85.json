@@ -1,0 +1,159 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/United States v. Dunn.json",
+    "lens": "A",
+    "notes": "Reviewed all 4 rows in group_inventory.jsonl under Lens A using only disclosed files.",
+    "reviewed": [
+      {
+        "assertion_id": "c43dd2a08925918e",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record gives case_name United States v. Dunn, court U.S. Supreme Court, date_decided 1987-04-20, and year 1987.",
+          "The lake official citation is 480 U.S. 294 and the listed parallel/vendor citations match the content-page metadata."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "2c999415eaee70ae",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "curtilage questions should be resolved with particular reference to four factors",
+          "locator_note": "text/United States v. Dunn__4b1190.txt contains the relevant passage at page marker *301; lake pinpoints[pin-301].quote does not.",
+          "needs_cl": true,
+          "problem": "The pin-301 payload/lake quote is not the opinion passage at 480 U.S. 301; it is generated page text beginning with the page header and background. The lake record itself flags quote_fidelity as mismatch.",
+          "proposed_fix": "Replace pin-301 with the actual 480 U.S. at 301 curtilage-factors passage or re-extract the pinpoint from the cached opinion text.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The disclosed opinion text at page 301 contains the four-factor curtilage passage, not the header/background text in the payload.",
+          "lake pinpoints[pin-301].quote_fidelity is marked mismatch."
+        ],
+        "residual_risks": [
+          "The visible content-page quote for pin-301 appears to quote the correct passage, so the defect may be in the lake/inventory pinpoint record rather than the displayed prose."
+        ],
+        "suggested_tightening": "Keep the displayed 480 U.S. at 301 quote, but correct the underlying pin-301 quote record so it matches the opinion text.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "9a208099453f56dd",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "home’s “umbrella” of Fourth Amendment protection",
+          "locator_note": "The relevant passage appears in the page-*301 paragraph of the cached opinion text.",
+          "needs_cl": true,
+          "problem": "The quote is substantively the page-301 passage, but it is not character-faithful: the opinion uses a curly possessive and curly double quotation marks around umbrella, while the content/lake quote uses ASCII apostrophe and single quotes.",
+          "proposed_fix": "Change home's 'umbrella' to home’s “umbrella” in the quoted text, or remove quotation marks and paraphrase.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The same sentence appears in the opinion at 480 U.S. 301, so the pinpoint and substance are supported.",
+          "Strict quote fidelity fails on typographic characters in home’s “umbrella”; the lake record also marks pin-301a quote_fidelity as mismatch."
+        ],
+        "residual_risks": [
+          "No broader holding defect identified under Lens A."
+        ],
+        "suggested_tightening": "Use the opinion’s exact punctuation for the verbatim quote.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "53029dbf7bcaf542",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The treatment payload matches the disclosed lake treatment fields: field_i_validity good_law, as_of_treatment 2026-06-30, varies_by_point false, and the same scope_note.",
+          "Treatment/currency is outside Lens A, so no independent treatment finding is raised."
+        ],
+        "residual_risks": [
+          "Lens B should assess treatment and current-validity questions."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/United States v. Dunn.json\",\"reviewed\":[{\"assertion_id\":\"c43dd2a08925918e\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake identity record gives case_name United States v. Dunn, court U.S. Supreme Court, date_decided 1987-04-20, and year 1987.\",\"The lake official citation is 480 U.S. 294 and the listed parallel/vendor citations match the content-page metadata.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"2c999415eaee70ae\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The pin-301 payload/lake quote is not the opinion passage at 480 U.S. 301; it is generated page text beginning with the page header and background. The lake record itself flags quote_fidelity as mismatch.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-301 with the actual 480 U.S. at 301 curtilage-factors passage or re-extract the pinpoint from the cached opinion text.\",\"evidence_quote\":\"curtilage questions should be resolved with particular reference to four factors\",\"needs_cl\":true,\"locator_note\":\"text/United States v. Dunn__4b1190.txt contains the relevant passage at page marker *301; lake pinpoints[pin-301].quote does not.\"},\"reasons\":[\"The disclosed opinion text at page 301 contains the four-factor curtilage passage, not the header/background text in the payload.\",\"lake pinpoints[pin-301].quote_fidelity is marked mismatch.\"],\"breaks_true_positives\":true,\"residual_risks\":[\"The visible content-page quote for pin-301 appears to quote the correct passage, so the defect may be in the lake/inventory pinpoint record rather than the displayed prose.\"],\"suggested_tightening\":\"Keep the displayed 480 U.S. at 301 quote, but correct the underlying pin-301 quote record so it matches the opinion text.\"},{\"assertion_id\":\"9a208099453f56dd\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The quote is substantively the page-301 passage, but it is not character-faithful: the opinion uses a curly possessive and curly double quotation marks around umbrella, while the content/lake quote uses ASCII apostrophe and single quotes.\",\"severity\":\"low\",\"proposed_fix\":\"Change home's 'umbrella' to home’s “umbrella” in the quoted text, or remove quotation marks and paraphrase.\",\"evidence_quote\":\"home’s “umbrella” of Fourth Amendment protection\",\"needs_cl\":true,\"locator_note\":\"The relevant passage appears in the page-*301 paragraph of the cached opinion text.\"},\"reasons\":[\"The same sentence appears in the opinion at 480 U.S. 301, so the pinpoint and substance are supported.\",\"Strict quote fidelity fails on typographic characters in home’s “umbrella”; the lake record also marks pin-301a quote_fidelity as mismatch.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"No broader holding defect identified under Lens A.\"],\"suggested_tightening\":\"Use the opinion’s exact punctuation for the verbatim quote.\"},{\"assertion_id\":\"53029dbf7bcaf542\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The treatment payload matches the disclosed lake treatment fields: field_i_validity good_law, as_of_treatment 2026-06-30, varies_by_point false, and the same scope_note.\",\"Treatment/currency is outside Lens A, so no independent treatment finding is raised.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Lens B should assess treatment and current-validity questions.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed all 4 rows in group_inventory.jsonl under Lens A using only disclosed files.\"}",
+  "summary": {
+    "at": "2026-07-09T23:47:31-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-50df7fadd0",
+      "F-S9-PR-dcc7ede979"
+    ],
+    "group_id": "_overhaul2/lake/cases/United States v. Dunn.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "codex-A",
+    "lane_id": "codex-A-panel-prod-0a7ddf85",
+    "lens": "A",
+    "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-0a7ddf85.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "United States v. Dunn"
+    ],
+    "tokens": {
+      "input": 128265,
+      "output": 6809,
+      "source": "codex-events",
+      "total": 135074
+    },
+    "verdict_map": {
+      "2c999415eaee70ae": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "53029dbf7bcaf542": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "9a208099453f56dd": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "c43dd2a08925918e": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-50df7fadd0",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-dcc7ede979",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 132.8
+  }
+}

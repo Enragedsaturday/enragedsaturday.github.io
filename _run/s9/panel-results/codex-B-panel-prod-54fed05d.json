@@ -1,0 +1,105 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/United States v. Von Neumann.json",
+    "lens": "B",
+    "notes": "Lens B only; no support or quote-fidelity findings raised.",
+    "reviewed": [
+      {
+        "assertion_id": "1deaf9a8c0c9b4ce",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Frontier stub: treatment/progeny intentionally not derived until S6 promotion.",
+          "locator_note": "lake/United States v. Von Neumann__236c79.json treatment/progeny fields",
+          "needs_cl": true,
+          "problem": "The disclosed record verifies the case identity and citations, but it does not verify the authority as still live law under the currency lens. Treatment is explicitly unverified and progeny/citator data has not been derived.",
+          "proposed_fix": "Limit this assertion to citation/identity existence, or obtain completed treatment/progeny verification with an as-of date before treating the authority as live law.",
+          "severity": "medium"
+        },
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity and citation fields verify United States v. Von Neumann and the official cite 474 U.S. 242.",
+          "Currency cannot be verified from disclosed evidence because field_i_validity is unverified, as_of_treatment is null, complete_query is null, and rows_cached is 0."
+        ],
+        "residual_risks": [
+          "The case may in fact remain good law, but that is not confirmable from the disclosed files."
+        ],
+        "suggested_tightening": "Separate citation existence from live-law currency status.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": false
+      },
+      {
+        "assertion_id": "75e0eb1e1fb6251d",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The inventory treatment payload matches the lake treatment fields: field_i_validity is unverified, as_of_content and as_of_treatment are null, varies_by_point is false, and the scope note states treatment/progeny are not derived.",
+          "The content page likewise renders Treatment: Unverified and expressly says subsequent treatment has not completed two-key verification."
+        ],
+        "residual_risks": [
+          "Unverified treatment means no current good-law conclusion is established from this record."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/United States v. Von Neumann.json\",\"reviewed\":[{\"assertion_id\":\"1deaf9a8c0c9b4ce\",\"dimension\":\"existence\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":false,\"defect\":{\"problem\":\"The disclosed record verifies the case identity and citations, but it does not verify the authority as still live law under the currency lens. Treatment is explicitly unverified and progeny/citator data has not been derived.\",\"severity\":\"medium\",\"proposed_fix\":\"Limit this assertion to citation/identity existence, or obtain completed treatment/progeny verification with an as-of date before treating the authority as live law.\",\"evidence_quote\":\"Frontier stub: treatment/progeny intentionally not derived until S6 promotion.\",\"needs_cl\":true,\"locator_note\":\"lake/United States v. Von Neumann__236c79.json treatment/progeny fields\"},\"reasons\":[\"Lake identity and citation fields verify United States v. Von Neumann and the official cite 474 U.S. 242.\",\"Currency cannot be verified from disclosed evidence because field_i_validity is unverified, as_of_treatment is null, complete_query is null, and rows_cached is 0.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The case may in fact remain good law, but that is not confirmable from the disclosed files.\"],\"suggested_tightening\":\"Separate citation existence from live-law currency status.\"},{\"assertion_id\":\"75e0eb1e1fb6251d\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The inventory treatment payload matches the lake treatment fields: field_i_validity is unverified, as_of_content and as_of_treatment are null, varies_by_point is false, and the scope note states treatment/progeny are not derived.\",\"The content page likewise renders Treatment: Unverified and expressly says subsequent treatment has not completed two-key verification.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Unverified treatment means no current good-law conclusion is established from this record.\"],\"suggested_tightening\":null}],\"notes\":\"Lens B only; no support or quote-fidelity findings raised.\"}",
+  "summary": {
+    "at": "2026-07-09T23:56:09-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-1084919b48"
+    ],
+    "group_id": "_overhaul2/lake/cases/United States v. Von Neumann.json",
+    "group_total_assertions": 2,
+    "lake_only_cases": [
+      "United States v. Von Neumann"
+    ],
+    "lane": "codex-B",
+    "lane_id": "codex-B-panel-prod-54fed05d",
+    "lens": "B",
+    "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-54fed05d.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [
+      "case 'United States v. Von Neumann' has no lead_opinion_id (text undisclosed)"
+    ],
+    "reviewed_count": 2,
+    "run": "prod",
+    "text_disclosed_cases": [],
+    "tokens": {
+      "input": 101313,
+      "output": 4521,
+      "source": "codex-events",
+      "total": 105834
+    },
+    "verdict_map": {
+      "1deaf9a8c0c9b4ce": {
+        "dimension": "existence",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": false
+      },
+      "75e0eb1e1fb6251d": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-1084919b48",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 94.9
+  }
+}

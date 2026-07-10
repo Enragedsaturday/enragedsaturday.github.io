@@ -1,0 +1,145 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Schmerber v. California.json",
+    "lens": "A",
+    "notes": "No support, pincite, or black_letter rows were present in group_inventory.jsonl.",
+    "reviewed": [
+      {
+        "assertion_id": "6740d5acbd2935d7",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity is verified for Schmerber v. California, decided by the U.S. Supreme Court on 1966-06-20.",
+          "Official citation 384 U.S. 757, parallel citations 86 S. Ct. 1826 and 16 L. Ed. 2d 908, and vendor citation 1966 U.S. LEXIS 1129 match the lake record and content page."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "abaf2e6bd2afe4eb",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "--- # Schmerber v. California *384 U.S. 757 (1966)*",
+          "locator_note": "lake pinpoints id pin-761; content_page uses ^pin-761 for the Fifth Amendment quote.",
+          "needs_cl": false,
+          "problem": "Stored pinpoint quote for pin-761 is generated page/frontmatter prose, not the opinion passage at page 761.",
+          "proposed_fix": "Replace pin-761's stored quote with the actual page 761 opinion passage supporting the Fifth Amendment rule, and set the locator metadata to the page 761 passage rather than generated content_page prose.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The lake pinpoints[pin-761].quote begins with generated page text, not the Supreme Court opinion text.",
+          "The cached opinion at star page 761 contains the actual majority sentence beginning 'We hold that' supporting the displayed rule, so the stored pinpoint quote is the defective item."
+        ],
+        "residual_risks": [
+          "The visible content_page Fifth Amendment quote appears traceable to the opinion; the defect is the stored pinpoint quote/metadata."
+        ],
+        "suggested_tightening": "Use the opinion passage at page 761 as the pin quote, not rendered page content.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "b026715f949f054a",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The quoted sentence appears verbatim in the cached opinion at the paragraph containing star page 771.",
+          "Lake metadata marks pin-770 as star-verified with star_marker 771, and the fragment begins at the quoted phrase."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Keep the fact-bound limitation when reusing this rule.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "bface561efa1a3f9",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment merits are outside lens A, so no treatment/currency defect is raised.",
+          "The payload matches the lake treatment fields: good_law, as_of_content 1966-06-20, as_of_treatment 2026-06-30, and varies_by_point false."
+        ],
+        "residual_risks": [
+          "Treatment/currency merits reserved for lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Schmerber v. California.json\",\"reviewed\":[{\"assertion_id\":\"6740d5acbd2935d7\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity is verified for Schmerber v. California, decided by the U.S. Supreme Court on 1966-06-20.\",\"Official citation 384 U.S. 757, parallel citations 86 S. Ct. 1826 and 16 L. Ed. 2d 908, and vendor citation 1966 U.S. LEXIS 1129 match the lake record and content page.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"abaf2e6bd2afe4eb\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"Stored pinpoint quote for pin-761 is generated page/frontmatter prose, not the opinion passage at page 761.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-761's stored quote with the actual page 761 opinion passage supporting the Fifth Amendment rule, and set the locator metadata to the page 761 passage rather than generated content_page prose.\",\"evidence_quote\":\"--- # Schmerber v. California *384 U.S. 757 (1966)*\",\"needs_cl\":false,\"locator_note\":\"lake pinpoints id pin-761; content_page uses ^pin-761 for the Fifth Amendment quote.\"},\"reasons\":[\"The lake pinpoints[pin-761].quote begins with generated page text, not the Supreme Court opinion text.\",\"The cached opinion at star page 761 contains the actual majority sentence beginning 'We hold that' supporting the displayed rule, so the stored pinpoint quote is the defective item.\"],\"breaks_true_positives\":true,\"residual_risks\":[\"The visible content_page Fifth Amendment quote appears traceable to the opinion; the defect is the stored pinpoint quote/metadata.\"],\"suggested_tightening\":\"Use the opinion passage at page 761 as the pin quote, not rendered page content.\"},{\"assertion_id\":\"b026715f949f054a\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The quoted sentence appears verbatim in the cached opinion at the paragraph containing star page 771.\",\"Lake metadata marks pin-770 as star-verified with star_marker 771, and the fragment begins at the quoted phrase.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":\"Keep the fact-bound limitation when reusing this rule.\"},{\"assertion_id\":\"bface561efa1a3f9\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment merits are outside lens A, so no treatment/currency defect is raised.\",\"The payload matches the lake treatment fields: good_law, as_of_content 1966-06-20, as_of_treatment 2026-06-30, and varies_by_point false.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment/currency merits reserved for lens B.\"],\"suggested_tightening\":null}],\"notes\":\"No support, pincite, or black_letter rows were present in group_inventory.jsonl.\"}",
+  "summary": {
+    "at": "2026-07-09T23:40:13-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-639ddb9674"
+    ],
+    "group_id": "_overhaul2/lake/cases/Schmerber v. California.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "codex-A",
+    "lane_id": "codex-A-panel-prod-de49f5d8",
+    "lens": "A",
+    "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-de49f5d8.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Schmerber v. California"
+    ],
+    "tokens": {
+      "input": 227694,
+      "output": 6932,
+      "source": "codex-events",
+      "total": 234626
+    },
+    "verdict_map": {
+      "6740d5acbd2935d7": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "abaf2e6bd2afe4eb": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "b026715f949f054a": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "bface561efa1a3f9": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-639ddb9674",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 144.0
+  }
+}

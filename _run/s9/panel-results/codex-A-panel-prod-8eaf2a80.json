@@ -1,0 +1,125 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Sorrells v. United States.json",
+    "lens": "A",
+    "notes": "",
+    "reviewed": [
+      {
+        "assertion_id": "b1fb4701bea21f9e",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The disclosed lake identity record names Sorrells v. United States, U.S. Supreme Court, decided 1932-12-19.",
+          "The lake official citation is exactly 287 U.S. 435, matching the built page display citation and payload official citation."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "1d7e3b197aa62feb",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "Entrapment is the conception and planning of an offense by an officer",
+          "locator_note": "text/Sorrells v. United States__418558.txt at the star-pagination label 454; lake pinpoints[].quote for pin-454 instead begins with page-level markdown/frontmatter content.",
+          "needs_cl": false,
+          "problem": "The pin-454 lake pinpoint quote is not character-faithful to the opinion text; it contains built-page header/background material instead of the page 454 opinion passage.",
+          "proposed_fix": "Replace pin-454 with the actual page 454 opinion passage and set the page/pin metadata to 454. Also attribute the quoted definition to Justice Roberts's separate opinion if using it in the rule section.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The lake record itself marks pin-454 quote_fidelity as mismatch and page as null.",
+          "The actual opinion text at star page 454 contains the entrapment-definition passage, not the lake pinpoint's page header/background excerpt.",
+          "The visible content-page quote lands on page 454, but the stored lake pinpoint text for that pin is corrupted and cannot support quote fidelity as recorded."
+        ],
+        "residual_risks": [
+          "The quoted definition appears in Justice Roberts's separate opinion, not the majority opinion, so support/attribution should be checked if the page presents it as the Court's rule."
+        ],
+        "suggested_tightening": "Use a majority-opinion passage for the Court rule, or explicitly introduce the current quote as Justice Roberts's formulation.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "97025b9a83890ad3",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside lens A, so no treatment finding is raised.",
+          "The payload matches the disclosed lake treatment fields: field_i_validity good_law, as_of_content 1932-12-19, as_of_treatment 2026-06-30, and varies_by_point false."
+        ],
+        "residual_risks": [
+          "Treatment validity is reserved for lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"A\",\n  \"group_id\": \"_overhaul2/lake/cases/Sorrells v. United States.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"b1fb4701bea21f9e\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The disclosed lake identity record names Sorrells v. United States, U.S. Supreme Court, decided 1932-12-19.\",\n        \"The lake official citation is exactly 287 U.S. 435, matching the built page display citation and payload official citation.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"1d7e3b197aa62feb\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The pin-454 lake pinpoint quote is not character-faithful to the opinion text; it contains built-page header/background material instead of the page 454 opinion passage.\",\n        \"severity\": \"high\",\n        \"proposed_fix\": \"Replace pin-454 with the actual page 454 opinion passage and set the page/pin metadata to 454. Also attribute the quoted definition to Justice Roberts's separate opinion if using it in the rule section.\",\n        \"evidence_quote\": \"Entrapment is the conception and planning of an offense by an officer\",\n        \"needs_cl\": false,\n        \"locator_note\": \"text/Sorrells v. United States__418558.txt at the star-pagination label 454; lake pinpoints[].quote for pin-454 instead begins with page-level markdown/frontmatter content.\"\n      },\n      \"reasons\": [\n        \"The lake record itself marks pin-454 quote_fidelity as mismatch and page as null.\",\n        \"The actual opinion text at star page 454 contains the entrapment-definition passage, not the lake pinpoint's page header/background excerpt.\",\n        \"The visible content-page quote lands on page 454, but the stored lake pinpoint text for that pin is corrupted and cannot support quote fidelity as recorded.\"\n      ],\n      \"breaks_true_positives\": true,\n      \"residual_risks\": [\n        \"The quoted definition appears in Justice Roberts's separate opinion, not the majority opinion, so support/attribution should be checked if the page presents it as the Court's rule.\"\n      ],\n      \"suggested_tightening\": \"Use a majority-opinion passage for the Court rule, or explicitly introduce the current quote as Justice Roberts's formulation.\"\n    },\n    {\n      \"assertion_id\": \"97025b9a83890ad3\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Treatment/currency is outside lens A, so no treatment finding is raised.\",\n        \"The payload matches the disclosed lake treatment fields: field_i_validity good_law, as_of_content 1932-12-19, as_of_treatment 2026-06-30, and varies_by_point false.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Treatment validity is reserved for lens B.\"\n      ],\n      \"suggested_tightening\": null\n    }\n  ],\n  \"notes\": \"\"\n}",
+  "summary": {
+    "at": "2026-07-09T23:42:51-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-603fb27714"
+    ],
+    "group_id": "_overhaul2/lake/cases/Sorrells v. United States.json",
+    "group_total_assertions": 3,
+    "lake_only_cases": [],
+    "lane": "codex-A",
+    "lane_id": "codex-A-panel-prod-8eaf2a80",
+    "lens": "A",
+    "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-8eaf2a80.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 3,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Sorrells v. United States"
+    ],
+    "tokens": {
+      "input": 158236,
+      "output": 5345,
+      "source": "codex-events",
+      "total": 163581
+    },
+    "verdict_map": {
+      "1d7e3b197aa62feb": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "97025b9a83890ad3": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "b1fb4701bea21f9e": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-603fb27714",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 117.9
+  }
+}

@@ -1,0 +1,136 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/United States v. Robinson.json",
+    "lens": "B",
+    "notes": "Reviewed all assertion_ids in group_inventory.jsonl under Lens B only; no external sources used.",
+    "reviewed": [
+      {
+        "assertion_id": "6a833943ef450ae0",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record is verified for United States v. Robinson, U.S. Supreme Court, decided 1973-12-11.",
+          "The disclosed official citation is 414 U.S. 218 and the treatment field says field_i_validity is good_law as of 2026-06-30."
+        ],
+        "residual_risks": [
+          "Currency is verified only to the disclosed as_of_treatment date, not beyond it."
+        ],
+        "suggested_tightening": "State live-law status as of 2026-06-30.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "595c7404e13e9aba",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote fidelity is outside Lens B; no support or quote-fidelity finding is raised.",
+          "The embedded treatment wording in the pin text matches the disclosed good_law treatment label as of 2026-06-30."
+        ],
+        "residual_risks": [
+          "The lake pin itself records quote_fidelity as mismatch, but that is for Lens A rather than this treatment/currency review."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "4a029504203c3615",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade.",
+          "locator_note": "content_page.md Treatment & subsequent history; lake.treatment.scope_note and lake.treatment.derivation",
+          "needs_cl": false,
+          "problem": "The good-law treatment call survives, but the page's categorical 'No negative treatment' wording is too absolute because the same disclosed lake record contains proposed negative-treatment signals and audit-needed flags.",
+          "proposed_fix": "Change the treatment note to say there is no verified negative treatment in the lake record, while disclosing that proposed negative signals remain audit-pending.",
+          "severity": "medium"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "Lake treatment.field_i_validity is good_law, varies_by_point is false, and point_overrides is empty.",
+          "However, lake treatment derivation has audit_needed true for lane1_negative and lane2_top_cited, with proposed_negative_events recorded."
+        ],
+        "residual_risks": [
+          "The disclosed negative edges are proposed and field_iii is only mentioned, so they do not by themselves refute Robinson's good-law status.",
+          "A completed treatment audit would be needed before making an unqualified 'No negative treatment' statement."
+        ],
+        "suggested_tightening": "Use 'No verified negative treatment in the disclosed lake record; good_law as of 2026-06-30, subject to audit-pending proposed signals.'",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"B\",\n  \"group_id\": \"_overhaul2/lake/cases/United States v. Robinson.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"6a833943ef450ae0\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake identity record is verified for United States v. Robinson, U.S. Supreme Court, decided 1973-12-11.\",\n        \"The disclosed official citation is 414 U.S. 218 and the treatment field says field_i_validity is good_law as of 2026-06-30.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Currency is verified only to the disclosed as_of_treatment date, not beyond it.\"\n      ],\n      \"suggested_tightening\": \"State live-law status as of 2026-06-30.\"\n    },\n    {\n      \"assertion_id\": \"595c7404e13e9aba\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Quote fidelity is outside Lens B; no support or quote-fidelity finding is raised.\",\n        \"The embedded treatment wording in the pin text matches the disclosed good_law treatment label as of 2026-06-30.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The lake pin itself records quote_fidelity as mismatch, but that is for Lens A rather than this treatment/currency review.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"4a029504203c3615\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands-modified\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The good-law treatment call survives, but the page's categorical 'No negative treatment' wording is too absolute because the same disclosed lake record contains proposed negative-treatment signals and audit-needed flags.\",\n        \"severity\": \"medium\",\n        \"proposed_fix\": \"Change the treatment note to say there is no verified negative treatment in the lake record, while disclosing that proposed negative signals remain audit-pending.\",\n        \"evidence_quote\": \"Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade.\",\n        \"needs_cl\": false,\n        \"locator_note\": \"content_page.md Treatment & subsequent history; lake.treatment.scope_note and lake.treatment.derivation\"\n      },\n      \"reasons\": [\n        \"Lake treatment.field_i_validity is good_law, varies_by_point is false, and point_overrides is empty.\",\n        \"However, lake treatment derivation has audit_needed true for lane1_negative and lane2_top_cited, with proposed_negative_events recorded.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The disclosed negative edges are proposed and field_iii is only mentioned, so they do not by themselves refute Robinson's good-law status.\",\n        \"A completed treatment audit would be needed before making an unqualified 'No negative treatment' statement.\"\n      ],\n      \"suggested_tightening\": \"Use 'No verified negative treatment in the disclosed lake record; good_law as of 2026-06-30, subject to audit-pending proposed signals.'\"\n    }\n  ],\n  \"notes\": \"Reviewed all assertion_ids in group_inventory.jsonl under Lens B only; no external sources used.\"\n}",
+  "summary": {
+    "at": "2026-07-09T23:54:34-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-81298f875c",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-e488fd75b3"
+    ],
+    "group_id": "_overhaul2/lake/cases/United States v. Robinson.json",
+    "group_total_assertions": 3,
+    "lake_only_cases": [],
+    "lane": "codex-B",
+    "lane_id": "codex-B-panel-prod-95ff826e",
+    "lens": "B",
+    "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-95ff826e.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 3,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "United States v. Robinson"
+    ],
+    "tokens": {
+      "input": 281452,
+      "output": 7302,
+      "source": "codex-events",
+      "total": 288754
+    },
+    "verdict_map": {
+      "4a029504203c3615": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "595c7404e13e9aba": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "6a833943ef450ae0": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-81298f875c",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-e488fd75b3",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 161.3
+  }
+}

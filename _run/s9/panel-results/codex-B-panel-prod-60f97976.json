@@ -1,0 +1,105 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/United States v. Verdugo-Urquidez.json",
+    "lens": "B",
+    "notes": "Reviewed both rows in group_inventory.jsonl under lens B using only disclosed workspace files.",
+    "reviewed": [
+      {
+        "assertion_id": "78a8ca28a7087c78",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The disclosed lake record identifies the same case name, docket, court, decision date, and cluster ID for United States v. Verdugo-Urquidez.",
+          "The official citation asserted in the inventory, 494 U.S. 259, matches the lake record's citations.official field and display citation."
+        ],
+        "residual_risks": [
+          "Existence of the authority is verified, but live-law status is not established by this assertion because the disclosed treatment record is expressly unverified."
+        ],
+        "suggested_tightening": "Do not let this existence citation row imply current good-law status; leave that to the treatment field.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "7eaebb8b3c3a291c",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Frontier stub: treatment/progeny intentionally not derived until S6 promotion.",
+          "locator_note": "content_page.md treatment section; lake treatment.field_i_validity, as_of_content, as_of_treatment, edges, and progeny fields",
+          "needs_cl": true,
+          "problem": "The formal treatment payload correctly reports unverified status, but the built page's treatment prose goes beyond the disclosed treatment data by saying the case 'remains the framework anchor' despite null as-of dates, empty treatment edges, and unverified progeny.",
+          "proposed_fix": "Keep the treatment call as Unverified and remove or qualify current-live-law language such as 'remains the framework anchor' until citator/progeny verification is complete.",
+          "severity": "medium"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "Lake treatment.field_i_validity is 'unverified', matching the inventory payload and page badge.",
+          "The lake record has as_of_content null, as_of_treatment null, treatment.edges empty, and progeny rows_cached 0, so disclosed evidence does not verify a current good-law or framework-anchor claim."
+        ],
+        "residual_risks": [
+          "A later citator/progeny pass may confirm the anchor language, but it is not verified from the disclosed files."
+        ],
+        "suggested_tightening": "Render only the unverified treatment status and a warning that subsequent treatment has not been checked.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/United States v. Verdugo-Urquidez.json\",\"reviewed\":[{\"assertion_id\":\"78a8ca28a7087c78\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The disclosed lake record identifies the same case name, docket, court, decision date, and cluster ID for United States v. Verdugo-Urquidez.\",\"The official citation asserted in the inventory, 494 U.S. 259, matches the lake record's citations.official field and display citation.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Existence of the authority is verified, but live-law status is not established by this assertion because the disclosed treatment record is expressly unverified.\"],\"suggested_tightening\":\"Do not let this existence citation row imply current good-law status; leave that to the treatment field.\"},{\"assertion_id\":\"7eaebb8b3c3a291c\",\"dimension\":\"treatment\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The formal treatment payload correctly reports unverified status, but the built page's treatment prose goes beyond the disclosed treatment data by saying the case 'remains the framework anchor' despite null as-of dates, empty treatment edges, and unverified progeny.\",\"severity\":\"medium\",\"proposed_fix\":\"Keep the treatment call as Unverified and remove or qualify current-live-law language such as 'remains the framework anchor' until citator/progeny verification is complete.\",\"evidence_quote\":\"Frontier stub: treatment/progeny intentionally not derived until S6 promotion.\",\"needs_cl\":true,\"locator_note\":\"content_page.md treatment section; lake treatment.field_i_validity, as_of_content, as_of_treatment, edges, and progeny fields\"},\"reasons\":[\"Lake treatment.field_i_validity is 'unverified', matching the inventory payload and page badge.\",\"The lake record has as_of_content null, as_of_treatment null, treatment.edges empty, and progeny rows_cached 0, so disclosed evidence does not verify a current good-law or framework-anchor claim.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"A later citator/progeny pass may confirm the anchor language, but it is not verified from the disclosed files.\"],\"suggested_tightening\":\"Render only the unverified treatment status and a warning that subsequent treatment has not been checked.\"}],\"notes\":\"Reviewed both rows in group_inventory.jsonl under lens B using only disclosed workspace files.\"}",
+  "summary": {
+    "at": "2026-07-09T23:56:07-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-e2739ab897"
+    ],
+    "group_id": "_overhaul2/lake/cases/United States v. Verdugo-Urquidez.json",
+    "group_total_assertions": 2,
+    "lake_only_cases": [
+      "United States v. Verdugo-Urquidez"
+    ],
+    "lane": "codex-B",
+    "lane_id": "codex-B-panel-prod-60f97976",
+    "lens": "B",
+    "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-60f97976.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [
+      "case 'United States v. Verdugo-Urquidez' has no lead_opinion_id (text undisclosed)"
+    ],
+    "reviewed_count": 2,
+    "run": "prod",
+    "text_disclosed_cases": [],
+    "tokens": {
+      "input": 105471,
+      "output": 4841,
+      "source": "codex-events",
+      "total": 110312
+    },
+    "verdict_map": {
+      "78a8ca28a7087c78": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "7eaebb8b3c3a291c": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-e2739ab897",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 104.7
+  }
+}

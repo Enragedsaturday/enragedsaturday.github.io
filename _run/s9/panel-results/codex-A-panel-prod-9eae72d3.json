@@ -1,0 +1,169 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/United States v. Santana.json",
+    "lens": "A",
+    "notes": "Reviewed all 4 group_inventory rows. Treatment/currency was not substantively audited under Lens A.",
+    "reviewed": [
+      {
+        "assertion_id": "b36b4a58496185de",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity is verified for United States v. Santana, U.S. Supreme Court, decided 1976-06-24, docket 75-19.",
+          "Lake citations list official 427 U.S. 38 and parallels 96 S. Ct. 2406, 49 L. Ed. 2d 300, and 1976 U.S. LEXIS 71; content_page uses the same citation/year."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "745af473a8223efb",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "While it may be true that under the common law of property the threshold of one's dwelling is \"private,\" as is the yard surrounding the house, it is nonetheless clear that under the cases interpreting the Fourth Amendment Santana was in a \"public\" place.",
+          "locator_note": "pin-42; lake pinpoint has page=null, star_marker=null, quote_fidelity=mismatch",
+          "needs_cl": false,
+          "problem": "pin-42's stored quote is not a character-faithful opinion quote; it is a harvested content-page fragment spanning Background, Issue, and Rule headings, while the opinion's p.42 passage is the threshold/public-place discussion.",
+          "proposed_fix": "Replace pin-42 with the exact p.42 opinion passage, or make the page quote an explicitly edited quotation with accurate ellipses and original quotation marks.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The disclosed lake/group quote for pin-42 contains page-authored headings such as '## Issue' and '## Rule', not opinion text.",
+          "The actual opinion text at the p.42 passage says the threshold is \"private\" under common law but a \"public\" place under Fourth Amendment cases; it does not contain the harvested fragment.",
+          "The displayed content_page quote also changes the opinion's double quotation marks around \"private\" and \"public\" to single quotation marks."
+        ],
+        "residual_risks": [
+          "The underlying doorway-as-public-place proposition is supported by the opinion; the defect is quote extraction/fidelity."
+        ],
+        "suggested_tightening": "Regenerate pin-42 from the cached opinion page *42 and preserve original quotation marks; do not let page headings enter pinpoint quotes.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "b5412068a6dc4376",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "and is therefore proper under <i><span class=\"citation\" data-id=\"9426247\"><a href=\"/opinion/109352/united-states-v-watson/\" aria-description=\"Citation for case: United States v. Watson\">Watson</a></span>,</i> by the expedient of escaping to a private place.",
+          "locator_note": "pin-43; passage appears on page *43, but lake marks quote_fidelity=mismatch",
+          "needs_cl": false,
+          "problem": "The p.43 sentence is present and supports the page, but the stored/page quote is not strictly character-identical to the cached text because it uses Markdown emphasis '*Watson*' instead of the opinion text's citation/italic markup/rendered 'Watson,'.",
+          "proposed_fix": "Store a normalized plain-text quote or keep opinion/citation formatting out of the quoted characters while recording formatting separately.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The sentence appears in the cached opinion on page *43 and the legal statement follows from the Court's conclusion.",
+          "Strict raw-text fidelity fails only around the formatted Watson citation; the quote otherwise tracks the opinion sentence."
+        ],
+        "residual_risks": [
+          "If the corpus treats rendered Markdown as normalized text, this is only a normalization issue rather than a substantive quote defect."
+        ],
+        "suggested_tightening": "Normalize HTML/Markdown citation italics before quote-fidelity comparison, or quote the plain rendered text without asterisks.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "f68d2c13d5134315",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The payload mirrors lake.treatment: field_i_validity good_law, as_of_content 1976-06-24, as_of_treatment 2026-06-30, varies_by_point false, and the same Lange scope note.",
+          "Treatment/currency is outside Lens A; no treatment finding is raised."
+        ],
+        "residual_risks": [
+          "Treatment/currency issues are reserved for Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/United States v. Santana.json\",\"reviewed\":[{\"assertion_id\":\"b36b4a58496185de\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity is verified for United States v. Santana, U.S. Supreme Court, decided 1976-06-24, docket 75-19.\",\"Lake citations list official 427 U.S. 38 and parallels 96 S. Ct. 2406, 49 L. Ed. 2d 300, and 1976 U.S. LEXIS 71; content_page uses the same citation/year.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"745af473a8223efb\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"pin-42's stored quote is not a character-faithful opinion quote; it is a harvested content-page fragment spanning Background, Issue, and Rule headings, while the opinion's p.42 passage is the threshold/public-place discussion.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-42 with the exact p.42 opinion passage, or make the page quote an explicitly edited quotation with accurate ellipses and original quotation marks.\",\"evidence_quote\":\"While it may be true that under the common law of property the threshold of one's dwelling is \\\"private,\\\" as is the yard surrounding the house, it is nonetheless clear that under the cases interpreting the Fourth Amendment Santana was in a \\\"public\\\" place.\",\"needs_cl\":false,\"locator_note\":\"pin-42; lake pinpoint has page=null, star_marker=null, quote_fidelity=mismatch\"},\"reasons\":[\"The disclosed lake/group quote for pin-42 contains page-authored headings such as '## Issue' and '## Rule', not opinion text.\",\"The actual opinion text at the p.42 passage says the threshold is \\\"private\\\" under common law but a \\\"public\\\" place under Fourth Amendment cases; it does not contain the harvested fragment.\",\"The displayed content_page quote also changes the opinion's double quotation marks around \\\"private\\\" and \\\"public\\\" to single quotation marks.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The underlying doorway-as-public-place proposition is supported by the opinion; the defect is quote extraction/fidelity.\"],\"suggested_tightening\":\"Regenerate pin-42 from the cached opinion page *42 and preserve original quotation marks; do not let page headings enter pinpoint quotes.\"},{\"assertion_id\":\"b5412068a6dc4376\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The p.43 sentence is present and supports the page, but the stored/page quote is not strictly character-identical to the cached text because it uses Markdown emphasis '*Watson*' instead of the opinion text's citation/italic markup/rendered 'Watson,'.\",\"severity\":\"low\",\"proposed_fix\":\"Store a normalized plain-text quote or keep opinion/citation formatting out of the quoted characters while recording formatting separately.\",\"evidence_quote\":\"and is therefore proper under <i><span class=\\\"citation\\\" data-id=\\\"9426247\\\"><a href=\\\"/opinion/109352/united-states-v-watson/\\\" aria-description=\\\"Citation for case: United States v. Watson\\\">Watson</a></span>,</i> by the expedient of escaping to a private place.\",\"needs_cl\":false,\"locator_note\":\"pin-43; passage appears on page *43, but lake marks quote_fidelity=mismatch\"},\"reasons\":[\"The sentence appears in the cached opinion on page *43 and the legal statement follows from the Court's conclusion.\",\"Strict raw-text fidelity fails only around the formatted Watson citation; the quote otherwise tracks the opinion sentence.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"If the corpus treats rendered Markdown as normalized text, this is only a normalization issue rather than a substantive quote defect.\"],\"suggested_tightening\":\"Normalize HTML/Markdown citation italics before quote-fidelity comparison, or quote the plain rendered text without asterisks.\"},{\"assertion_id\":\"f68d2c13d5134315\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The payload mirrors lake.treatment: field_i_validity good_law, as_of_content 1976-06-24, as_of_treatment 2026-06-30, varies_by_point false, and the same Lange scope note.\",\"Treatment/currency is outside Lens A; no treatment finding is raised.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment/currency issues are reserved for Lens B.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed all 4 group_inventory rows. Treatment/currency was not substantively audited under Lens A.\"}",
+  "summary": {
+    "at": "2026-07-09T23:57:13-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-19541939a3",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-d9cd498122",
+      "F-S9-PR-554b832f0a"
+    ],
+    "group_id": "_overhaul2/lake/cases/United States v. Santana.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "codex-A",
+    "lane_id": "codex-A-panel-prod-9eae72d3",
+    "lens": "A",
+    "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-9eae72d3.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "United States v. Santana"
+    ],
+    "tokens": {
+      "input": 321390,
+      "output": 11359,
+      "source": "codex-events",
+      "total": 332749
+    },
+    "verdict_map": {
+      "745af473a8223efb": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "b36b4a58496185de": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "b5412068a6dc4376": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "f68d2c13d5134315": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-d9cd498122",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-554b832f0a",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-19541939a3",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": 230.1
+  }
+}

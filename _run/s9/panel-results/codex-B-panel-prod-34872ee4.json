@@ -1,0 +1,107 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/United States v. Giordano.json",
+    "lens": "B",
+    "notes": "Reviewed all 2 assertion rows in group_inventory.jsonl under Lens B only.",
+    "reviewed": [
+      {
+        "assertion_id": "a2bacffbc563a201",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Frontier stub: treatment/progeny intentionally not derived until S6 promotion.",
+          "locator_note": "lake.treatment.scope_note; lake.treatment.field_i_validity; lake.progeny.rows_cached",
+          "needs_cl": true,
+          "problem": "The citation and identity are disclosed, but the B-lens live-law/currency assertion cannot be verified from this record because treatment and progeny are explicitly unverified and not derived.",
+          "proposed_fix": "Do not treat the existence citation as proving live-law status. Either limit this assertion to citation existence only, or require completed treatment/progeny verification with a non-null as_of_treatment before using it for currency.",
+          "severity": "medium"
+        },
+        "dimension": "existence",
+        "reasons": [
+          "The lake record verifies identity and citations for United States v. Giordano, including official citation 416 U.S. 505.",
+          "The same lake record marks treatment.field_i_validity as unverified, has null as_of_treatment, empty treatment edges, and progeny.rows_cached equal to 0.",
+          "Under the review instructions, uncertainty about live-law status must be refuted rather than inferred from silence."
+        ],
+        "residual_risks": [
+          "An external or later citator check may show the case remains good law, but that is not confirmable from the disclosed files."
+        ],
+        "suggested_tightening": "Separate citation-existence assertions from live-law assertions; require a completed treatment record before treating a case as currently live law.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": false
+      },
+      {
+        "assertion_id": "66f4b6a3a0574911",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The treatment assertion says field_i_validity is unverified, with null as_of_content and null as_of_treatment.",
+          "The lake record matches that treatment call and states treatment/progeny were intentionally not derived until S6 promotion.",
+          "The content page also renders Treatment: Unverified and does not claim verified good-law status."
+        ],
+        "residual_risks": [
+          "The substantive good-law status remains unresolved because the disclosed record has no completed treatment or progeny enumeration."
+        ],
+        "suggested_tightening": "Keep the unverified banner until the record has a non-null treatment as-of date and completed treatment/progeny derivation.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/United States v. Giordano.json\",\"reviewed\":[{\"assertion_id\":\"a2bacffbc563a201\",\"dimension\":\"existence\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":false,\"defect\":{\"problem\":\"The citation and identity are disclosed, but the B-lens live-law/currency assertion cannot be verified from this record because treatment and progeny are explicitly unverified and not derived.\",\"severity\":\"medium\",\"proposed_fix\":\"Do not treat the existence citation as proving live-law status. Either limit this assertion to citation existence only, or require completed treatment/progeny verification with a non-null as_of_treatment before using it for currency.\",\"evidence_quote\":\"Frontier stub: treatment/progeny intentionally not derived until S6 promotion.\",\"needs_cl\":true,\"locator_note\":\"lake.treatment.scope_note; lake.treatment.field_i_validity; lake.progeny.rows_cached\"},\"reasons\":[\"The lake record verifies identity and citations for United States v. Giordano, including official citation 416 U.S. 505.\",\"The same lake record marks treatment.field_i_validity as unverified, has null as_of_treatment, empty treatment edges, and progeny.rows_cached equal to 0.\",\"Under the review instructions, uncertainty about live-law status must be refuted rather than inferred from silence.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"An external or later citator check may show the case remains good law, but that is not confirmable from the disclosed files.\"],\"suggested_tightening\":\"Separate citation-existence assertions from live-law assertions; require a completed treatment record before treating a case as currently live law.\"},{\"assertion_id\":\"66f4b6a3a0574911\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The treatment assertion says field_i_validity is unverified, with null as_of_content and null as_of_treatment.\",\"The lake record matches that treatment call and states treatment/progeny were intentionally not derived until S6 promotion.\",\"The content page also renders Treatment: Unverified and does not claim verified good-law status.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The substantive good-law status remains unresolved because the disclosed record has no completed treatment or progeny enumeration.\"],\"suggested_tightening\":\"Keep the unverified banner until the record has a non-null treatment as-of date and completed treatment/progeny derivation.\"}],\"notes\":\"Reviewed all 2 assertion rows in group_inventory.jsonl under Lens B only.\"}",
+  "summary": {
+    "at": "2026-07-09T23:47:11-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-05f1e05b84"
+    ],
+    "group_id": "_overhaul2/lake/cases/United States v. Giordano.json",
+    "group_total_assertions": 2,
+    "lake_only_cases": [
+      "United States v. Giordano"
+    ],
+    "lane": "codex-B",
+    "lane_id": "codex-B-panel-prod-34872ee4",
+    "lens": "B",
+    "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-34872ee4.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [
+      "case 'United States v. Giordano' has no lead_opinion_id (text undisclosed)"
+    ],
+    "reviewed_count": 2,
+    "run": "prod",
+    "text_disclosed_cases": [],
+    "tokens": {
+      "input": 100850,
+      "output": 3948,
+      "source": "codex-events",
+      "total": 104798
+    },
+    "verdict_map": {
+      "66f4b6a3a0574911": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "a2bacffbc563a201": {
+        "dimension": "existence",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": false
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-05f1e05b84",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 80.9
+  }
+}

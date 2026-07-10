@@ -1,0 +1,151 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Stovall v. Denno.json",
+    "lens": "B",
+    "notes": "Reviewed all 4 group_inventory rows under Lens B only; no Lens A quote/support findings were made.",
+    "reviewed": [
+      {
+        "assertion_id": "5f219475b8dfa030",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record is verified, identifies Stovall v. Denno as a U.S. Supreme Court decision decided 1967-06-12, and marks the expected citation as found.",
+          "The official citation selected in the lake record is 388 U.S. 293, matching the asserted display citation.",
+          "For the currency angle, the lake treatment field says good_law as of 2026-06-30 for the due-process suggestiveness holding."
+        ],
+        "residual_risks": [
+          "Point-specific treatment nuance is reviewed under the treatment assertion."
+        ],
+        "suggested_tightening": "When using Stovall as current law, tie the citation expressly to the due-process identification holding.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "2250b524addfdeb3",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "This row is a quote-fidelity assertion; Lens B does not attack quote/support fidelity.",
+          "No independent currency or treatment defect is established by this quote-fidelity row beyond the separate treatment assertion reviewed below."
+        ],
+        "residual_risks": [
+          "Quote-fidelity issues remain for Lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "bf5a6f26a87aa6bf",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "This row is a quote-fidelity assertion; Lens B does not attack quote/support fidelity.",
+          "The treatment/currency question for Stovall is addressed in the dedicated treatment row."
+        ],
+        "residual_risks": [
+          "Quote-fidelity issues remain for Lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "9bbaf957a35860b3",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Stovall's separate holding that the [[United States v. Wade]] / [[Gilbert v. California]] counsel rules were non-retroactive has been superseded by later retroactivity doctrine, but its due-process identification holding remains good law.",
+          "locator_note": "content_page.md Treatment & subsequent history; lake treatment varies_by_point=false and point_overrides=[]",
+          "needs_cl": false,
+          "problem": "The due-process suggestiveness holding can remain marked good law, but the record-level assertion says varies_by_point=false even though the disclosed page itself treats Stovall as point-specific: the Wade/Gilbert retroactivity holding has been superseded while the due-process identification holding remains good. That internal point variation should not be suppressed.",
+          "proposed_fix": "Keep good_law for the due-process suggestiveness holding, but set varies_by_point=true and add a point override noting that Stovall's Wade/Gilbert non-retroactivity holding has been superseded by later retroactivity doctrine.",
+          "severity": "medium"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "The lake scope note supports current good-law status only for the due-process suggestiveness holding: \"Due-process suggestiveness holding remains good law; reliability framework later developed in Neil v. Biggers / Manson v. Brathwaite.\"",
+          "The disclosed page states a separate Stovall holding has been superseded, which conflicts with the treatment payload's varies_by_point=false.",
+          "The negative progeny edges are proposed/mentioned, so they do not by themselves refute the due-process good-law call, but they reinforce the need for point-specific treatment."
+        ],
+        "residual_risks": [
+          "The disclosed record does not audit every proposed negative edge to final point-level treatment, so the exact override label should stay limited to the retroactivity holding identified in the page."
+        ],
+        "suggested_tightening": "Render the badge as good for the due-process identification rule only, with a visible note that Stovall is not globally good law across all holdings.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/Stovall v. Denno.json\",\"reviewed\":[{\"assertion_id\":\"5f219475b8dfa030\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record is verified, identifies Stovall v. Denno as a U.S. Supreme Court decision decided 1967-06-12, and marks the expected citation as found.\",\"The official citation selected in the lake record is 388 U.S. 293, matching the asserted display citation.\",\"For the currency angle, the lake treatment field says good_law as of 2026-06-30 for the due-process suggestiveness holding.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Point-specific treatment nuance is reviewed under the treatment assertion.\"],\"suggested_tightening\":\"When using Stovall as current law, tie the citation expressly to the due-process identification holding.\"},{\"assertion_id\":\"2250b524addfdeb3\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"This row is a quote-fidelity assertion; Lens B does not attack quote/support fidelity.\",\"No independent currency or treatment defect is established by this quote-fidelity row beyond the separate treatment assertion reviewed below.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Quote-fidelity issues remain for Lens A.\"],\"suggested_tightening\":null},{\"assertion_id\":\"bf5a6f26a87aa6bf\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"This row is a quote-fidelity assertion; Lens B does not attack quote/support fidelity.\",\"The treatment/currency question for Stovall is addressed in the dedicated treatment row.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Quote-fidelity issues remain for Lens A.\"],\"suggested_tightening\":null},{\"assertion_id\":\"9bbaf957a35860b3\",\"dimension\":\"treatment\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The due-process suggestiveness holding can remain marked good law, but the record-level assertion says varies_by_point=false even though the disclosed page itself treats Stovall as point-specific: the Wade/Gilbert retroactivity holding has been superseded while the due-process identification holding remains good. That internal point variation should not be suppressed.\",\"severity\":\"medium\",\"proposed_fix\":\"Keep good_law for the due-process suggestiveness holding, but set varies_by_point=true and add a point override noting that Stovall's Wade/Gilbert non-retroactivity holding has been superseded by later retroactivity doctrine.\",\"evidence_quote\":\"Stovall's separate holding that the [[United States v. Wade]] / [[Gilbert v. California]] counsel rules were non-retroactive has been superseded by later retroactivity doctrine, but its due-process identification holding remains good law.\",\"needs_cl\":false,\"locator_note\":\"content_page.md Treatment & subsequent history; lake treatment varies_by_point=false and point_overrides=[]\"},\"reasons\":[\"The lake scope note supports current good-law status only for the due-process suggestiveness holding: \\\"Due-process suggestiveness holding remains good law; reliability framework later developed in Neil v. Biggers / Manson v. Brathwaite.\\\"\",\"The disclosed page states a separate Stovall holding has been superseded, which conflicts with the treatment payload's varies_by_point=false.\",\"The negative progeny edges are proposed/mentioned, so they do not by themselves refute the due-process good-law call, but they reinforce the need for point-specific treatment.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The disclosed record does not audit every proposed negative edge to final point-level treatment, so the exact override label should stay limited to the retroactivity holding identified in the page.\"],\"suggested_tightening\":\"Render the badge as good for the due-process identification rule only, with a visible note that Stovall is not globally good law across all holdings.\"}],\"notes\":\"Reviewed all 4 group_inventory rows under Lens B only; no Lens A quote/support findings were made.\"}",
+  "summary": {
+    "at": "2026-07-09T23:44:26-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-2d168c68de"
+    ],
+    "group_id": "_overhaul2/lake/cases/Stovall v. Denno.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "codex-B",
+    "lane_id": "codex-B-panel-prod-c49fde2b",
+    "lens": "B",
+    "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-c49fde2b.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Stovall v. Denno"
+    ],
+    "tokens": {
+      "input": 141247,
+      "output": 5284,
+      "source": "codex-events",
+      "total": 146531
+    },
+    "verdict_map": {
+      "2250b524addfdeb3": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "5f219475b8dfa030": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "9bbaf957a35860b3": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "bf5a6f26a87aa6bf": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-2d168c68de",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 106.2
+  }
+}

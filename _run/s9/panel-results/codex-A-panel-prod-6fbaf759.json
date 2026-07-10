@@ -1,0 +1,159 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/United States v. Karo.json",
+    "lens": "A",
+    "notes": "Lens A reviewed only disclosed files and raised no treatment finding.",
+    "reviewed": [
+      {
+        "assertion_id": "17a4cba35606a290",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The disclosed lake record identifies the case as United States v. Karo, U.S. Supreme Court, decided 1984-09-18.",
+          "The official citation in the lake record is 468 U.S. 705, and the parallel/vendor citations match the inventory payload."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "790b0016f2365e4a",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "The case is thus not like Knotts, for there the beeper told the authorities nothing about the interior of Knotts’ cabin.",
+          "locator_note": "The passage appears in the text at official page 715.",
+          "needs_cl": false,
+          "problem": "The quoted passage is substantively the right p. 715 passage, but it is not character-faithful: the opinion text uses a curly apostrophe in Knotts’ cabin and does not contain markdown asterisks around Knotts.",
+          "proposed_fix": "Conform the quote to the opinion text formatting, especially Knotts’ cabin, and keep emphasis markup outside the quoted characters or render it from source styling rather than as literal quote text.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The central quoted words about revealing a critical fact are present in the opinion text at page 715.",
+          "The inventory/lake quote differs in typography/markup from the cached opinion text."
+        ],
+        "residual_risks": [
+          "The markdown asterisks may be renderer markup rather than intended quoted characters, but strict quote-fidelity still requires the stored/verbatim quote to match the source text."
+        ],
+        "suggested_tightening": "Use an exact source quote, or make clear that any italicization is formatting rather than part of the quoted text.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "e2d8c2cda7e5d932",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "This case thus presents the question whether the monitoring of a beeper in a private residence, a location not open to visual surveillance, violates the Fourth Amendment rights of those who have a justifiable interest in the privacy of the residence. Contrary to the submission of the United States, we think that it does.",
+          "locator_note": "The correct passage appears in the cached opinion text immediately after the *714 page marker; the current payload begins with page markdown such as '# United States v. Karo'.",
+          "needs_cl": false,
+          "problem": "The pin-714 quote payload is not an opinion quote at all; it is a harvested block from the built content page/frontmatter and cannot support a verbatim pinpoint to Karo at 714.",
+          "proposed_fix": "Replace pin-714 with the actual opinion passage at page 714 and set the page/pin metadata accordingly.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The disclosed text file contains the actual page-714 sentence, not the built-page markdown block stored in the lake pinpoint.",
+          "The payload ends at '## Rule Yes.' and includes page metadata/content-page prose, showing a quote-harvest failure rather than a Supreme Court quotation."
+        ],
+        "residual_risks": [
+          "The visible content_page rule quote is closer to the actual opinion passage, but this inventory/lake pinpoint payload is defective."
+        ],
+        "suggested_tightening": "Store only the Court's page-714 sentence as the pinpoint quote; avoid harvesting generated page text into authority pinpoints.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "406a24c29dd19675",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A, so no treatment defect is raised.",
+          "The content page and lake record both state field_i_validity good_law with as_of_treatment 2026-06-30."
+        ],
+        "residual_risks": [
+          "Substantive treatment/currency review is reserved for Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/United States v. Karo.json\",\"reviewed\":[{\"assertion_id\":\"17a4cba35606a290\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The disclosed lake record identifies the case as United States v. Karo, U.S. Supreme Court, decided 1984-09-18.\",\"The official citation in the lake record is 468 U.S. 705, and the parallel/vendor citations match the inventory payload.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"790b0016f2365e4a\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The quoted passage is substantively the right p. 715 passage, but it is not character-faithful: the opinion text uses a curly apostrophe in Knotts’ cabin and does not contain markdown asterisks around Knotts.\",\"severity\":\"low\",\"proposed_fix\":\"Conform the quote to the opinion text formatting, especially Knotts’ cabin, and keep emphasis markup outside the quoted characters or render it from source styling rather than as literal quote text.\",\"evidence_quote\":\"The case is thus not like Knotts, for there the beeper told the authorities nothing about the interior of Knotts’ cabin.\",\"needs_cl\":false,\"locator_note\":\"The passage appears in the text at official page 715.\"},\"reasons\":[\"The central quoted words about revealing a critical fact are present in the opinion text at page 715.\",\"The inventory/lake quote differs in typography/markup from the cached opinion text.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The markdown asterisks may be renderer markup rather than intended quoted characters, but strict quote-fidelity still requires the stored/verbatim quote to match the source text.\"],\"suggested_tightening\":\"Use an exact source quote, or make clear that any italicization is formatting rather than part of the quoted text.\"},{\"assertion_id\":\"e2d8c2cda7e5d932\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The pin-714 quote payload is not an opinion quote at all; it is a harvested block from the built content page/frontmatter and cannot support a verbatim pinpoint to Karo at 714.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-714 with the actual opinion passage at page 714 and set the page/pin metadata accordingly.\",\"evidence_quote\":\"This case thus presents the question whether the monitoring of a beeper in a private residence, a location not open to visual surveillance, violates the Fourth Amendment rights of those who have a justifiable interest in the privacy of the residence. Contrary to the submission of the United States, we think that it does.\",\"needs_cl\":false,\"locator_note\":\"The correct passage appears in the cached opinion text immediately after the *714 page marker; the current payload begins with page markdown such as '# United States v. Karo'.\"},\"reasons\":[\"The disclosed text file contains the actual page-714 sentence, not the built-page markdown block stored in the lake pinpoint.\",\"The payload ends at '## Rule Yes.' and includes page metadata/content-page prose, showing a quote-harvest failure rather than a Supreme Court quotation.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The visible content_page rule quote is closer to the actual opinion passage, but this inventory/lake pinpoint payload is defective.\"],\"suggested_tightening\":\"Store only the Court's page-714 sentence as the pinpoint quote; avoid harvesting generated page text into authority pinpoints.\"},{\"assertion_id\":\"406a24c29dd19675\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside Lens A, so no treatment defect is raised.\",\"The content page and lake record both state field_i_validity good_law with as_of_treatment 2026-06-30.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Substantive treatment/currency review is reserved for Lens B.\"],\"suggested_tightening\":null}],\"notes\":\"Lens A reviewed only disclosed files and raised no treatment finding.\"}",
+  "summary": {
+    "at": "2026-07-09T23:50:29-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-837d36a923",
+      "F-S9-PR-1072f4347d"
+    ],
+    "group_id": "_overhaul2/lake/cases/United States v. Karo.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "codex-A",
+    "lane_id": "codex-A-panel-prod-6fbaf759",
+    "lens": "A",
+    "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-6fbaf759.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "United States v. Karo"
+    ],
+    "tokens": {
+      "input": 139497,
+      "output": 6364,
+      "source": "codex-events",
+      "total": 145861
+    },
+    "verdict_map": {
+      "17a4cba35606a290": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "406a24c29dd19675": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "790b0016f2365e4a": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "e2d8c2cda7e5d932": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-837d36a923",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-1072f4347d",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 138.9
+  }
+}

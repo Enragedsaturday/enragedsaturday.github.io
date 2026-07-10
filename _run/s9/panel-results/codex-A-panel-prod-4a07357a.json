@@ -1,0 +1,166 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Schneckloth v. Bustamonte.json",
+    "lens": "A",
+    "notes": "Lens A review used only disclosed workspace files; treatment merits were not assessed.",
+    "reviewed": [
+      {
+        "assertion_id": "24eae06c73ec711c",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity is verified for record_id Schneckloth v. Bustamonte, U.S. Supreme Court, decided 1973-05-29.",
+          "Lake official citation is 412 U.S. 218 and the parallel/vendor citations match the inventory: 93 S. Ct. 2041; 36 L. Ed. 2d 854; 1973 U.S. LEXIS 6."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "6c24b7ed5f9a238b",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Similar considerations lead us to agree with the courts of California that the question whether a consent to a search was in fact \"voluntary\" or was the product of duress or coercion, express or implied, is a question of fact to be determined from the totality of all the circumstances.",
+          "locator_note": "pin-227; content_page cites 412 U.S. at 227, and the cached text places the rule passage after the *227 marker.",
+          "needs_cl": false,
+          "problem": "pin-227's stored quote is not a character-faithful opinion quote. It is content-page prose crossing Background/Issue/Rule headings, includes Markdown '## Issue' and '## Rule', and says checks were found in the trunk even though the opinion says they were under the left rear seat.",
+          "proposed_fix": "Replace pin-227 with the exact opinion passage at page 227, using the cached text's double quotes around \"voluntary\"; correct the background fact to left rear seat if retained outside the quote.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The inventory quote contains content_page markdown headings, not opinion text.",
+          "The factual fragment is contradicted by the cached opinion: stolen checks were 'Wadded up under the left rear seat,' not found in the trunk."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Do not extract pin quotes across Markdown section boundaries; anchor quote pins only to actual quoted authority text.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "d6738626789a267a",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "While knowledge of the right to refuse consent is one factor to be taken into account, the government need not establish such knowledge as the <i>sine qua non</i> of an effective consent.",
+          "locator_note": "pin-227a; same paragraph as pin-227 after the *227 marker.",
+          "needs_cl": false,
+          "problem": "The quoted sentence is supported by the opinion, but it is not raw character-faithful to the cached text because the cache uses HTML italics and the inventory/content quote uses Markdown emphasis.",
+          "proposed_fix": "Store the cached-text form with <i>sine qua non</i>, or define a disclosed normalization that treats HTML italics and Markdown emphasis as equivalent before marking it character-faithful.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The sentence appears in the cached opinion at the claimed passage.",
+          "The disclosed mismatch is markup: cached text has <i>sine qua non</i>, while the stored quote has *sine qua non*."
+        ],
+        "residual_risks": [
+          "A verifier operating on rendered text rather than raw cached HTML may consider this fully faithful."
+        ],
+        "suggested_tightening": "Normalize emphasis markup before quote-fidelity labels, or persist quotes in one canonical plain-text form.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "f7d781fe8541abf4",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The treatment payload matches the lake and content_page fields: field_i_validity good_law, as_of_content 1973-05-29, as_of_treatment 2026-06-30, varies_by_point false.",
+          "Treatment/currency merits are outside Lens A, so no treatment finding is raised."
+        ],
+        "residual_risks": [
+          "Treatment currency and negative-history triage are reserved for Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"A\",\n  \"group_id\": \"_overhaul2/lake/cases/Schneckloth v. Bustamonte.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"24eae06c73ec711c\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Lake identity is verified for record_id Schneckloth v. Bustamonte, U.S. Supreme Court, decided 1973-05-29.\",\n        \"Lake official citation is 412 U.S. 218 and the parallel/vendor citations match the inventory: 93 S. Ct. 2041; 36 L. Ed. 2d 854; 1973 U.S. LEXIS 6.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"6c24b7ed5f9a238b\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"pin-227's stored quote is not a character-faithful opinion quote. It is content-page prose crossing Background/Issue/Rule headings, includes Markdown '## Issue' and '## Rule', and says checks were found in the trunk even though the opinion says they were under the left rear seat.\",\n        \"severity\": \"high\",\n        \"proposed_fix\": \"Replace pin-227 with the exact opinion passage at page 227, using the cached text's double quotes around \\\"voluntary\\\"; correct the background fact to left rear seat if retained outside the quote.\",\n        \"evidence_quote\": \"Similar considerations lead us to agree with the courts of California that the question whether a consent to a search was in fact \\\"voluntary\\\" or was the product of duress or coercion, express or implied, is a question of fact to be determined from the totality of all the circumstances.\",\n        \"needs_cl\": false,\n        \"locator_note\": \"pin-227; content_page cites 412 U.S. at 227, and the cached text places the rule passage after the *227 marker.\"\n      },\n      \"reasons\": [\n        \"The inventory quote contains content_page markdown headings, not opinion text.\",\n        \"The factual fragment is contradicted by the cached opinion: stolen checks were 'Wadded up under the left rear seat,' not found in the trunk.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": \"Do not extract pin quotes across Markdown section boundaries; anchor quote pins only to actual quoted authority text.\"\n    },\n    {\n      \"assertion_id\": \"d6738626789a267a\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands-modified\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The quoted sentence is supported by the opinion, but it is not raw character-faithful to the cached text because the cache uses HTML italics and the inventory/content quote uses Markdown emphasis.\",\n        \"severity\": \"low\",\n        \"proposed_fix\": \"Store the cached-text form with <i>sine qua non</i>, or define a disclosed normalization that treats HTML italics and Markdown emphasis as equivalent before marking it character-faithful.\",\n        \"evidence_quote\": \"While knowledge of the right to refuse consent is one factor to be taken into account, the government need not establish such knowledge as the <i>sine qua non</i> of an effective consent.\",\n        \"needs_cl\": false,\n        \"locator_note\": \"pin-227a; same paragraph as pin-227 after the *227 marker.\"\n      },\n      \"reasons\": [\n        \"The sentence appears in the cached opinion at the claimed passage.\",\n        \"The disclosed mismatch is markup: cached text has <i>sine qua non</i>, while the stored quote has *sine qua non*.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"A verifier operating on rendered text rather than raw cached HTML may consider this fully faithful.\"\n      ],\n      \"suggested_tightening\": \"Normalize emphasis markup before quote-fidelity labels, or persist quotes in one canonical plain-text form.\"\n    },\n    {\n      \"assertion_id\": \"f7d781fe8541abf4\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The treatment payload matches the lake and content_page fields: field_i_validity good_law, as_of_content 1973-05-29, as_of_treatment 2026-06-30, varies_by_point false.\",\n        \"Treatment/currency merits are outside Lens A, so no treatment finding is raised.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Treatment currency and negative-history triage are reserved for Lens B.\"\n      ],\n      \"suggested_tightening\": null\n    }\n  ],\n  \"notes\": \"Lens A review used only disclosed workspace files; treatment merits were not assessed.\"\n}",
+  "summary": {
+    "at": "2026-07-09T23:41:46-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-fcab061b5a",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-8ca7b9832f",
+      "F-S9-PR-676421a7d7"
+    ],
+    "group_id": "_overhaul2/lake/cases/Schneckloth v. Bustamonte.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "codex-A",
+    "lane_id": "codex-A-panel-prod-4a07357a",
+    "lens": "A",
+    "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-4a07357a.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Schneckloth v. Bustamonte"
+    ],
+    "tokens": {
+      "input": 321560,
+      "output": 11336,
+      "source": "codex-events",
+      "total": 332896
+    },
+    "verdict_map": {
+      "24eae06c73ec711c": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "6c24b7ed5f9a238b": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "d6738626789a267a": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "f7d781fe8541abf4": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-8ca7b9832f",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-676421a7d7",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-fcab061b5a",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": 225.8
+  }
+}

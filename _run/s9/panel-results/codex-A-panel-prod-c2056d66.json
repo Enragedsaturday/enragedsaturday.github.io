@@ -1,0 +1,125 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/United States v. Sandoval.json",
+    "lens": "A",
+    "notes": "Treatment row recorded only; lens A findings are limited to existence/support/quote-fidelity/pincite/black-letter issues.",
+    "reviewed": [
+      {
+        "assertion_id": "bd69b2a4fe3ec8cd",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record verifies United States v. Rodrigo Sandoval, U.S. Court of Appeals for the Ninth Circuit, decided 2000-01-24.",
+          "The official citation in the lake record is 200 F.3d 659, matching the asserted display and official citation."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "c68cb0b8fb5aa5c1",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "we do not believe the reasonableness of Sandoval’s expectation of privacy turns on whether he had permission",
+          "locator_note": "text/United States v. Sandoval__33462a.txt, star page 661; lake pinpoints[].id=pin-661",
+          "needs_cl": false,
+          "problem": "The asserted pin-661 quote is not a character-faithful excerpt from the opinion; the lake pinpoint itself is harvested page text ending before the actual quoted passage, and it is marked quote_fidelity=mismatch.",
+          "proposed_fix": "Replace pin-661 with the exact opinion passage at star page 661, preserving opinion punctuation and apostrophes, or remove the verbatim-quote treatment if normalized text is intended.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload quote reproduces the built page narrative and stops before the actual quoted sentence.",
+          "The disclosed opinion text contains the relevant passage at star page 661, but the page quote normalizes at least Sandoval’s apostrophe and the lake pinpoint does not store that passage.",
+          "The lake pinpoint record expressly labels quote_fidelity as mismatch."
+        ],
+        "residual_risks": [
+          "The substantive proposition appears supported, but this row is quote-fidelity only and the verbatim/pinpoint record fails."
+        ],
+        "suggested_tightening": "Store only the exact opinion language for pin-661 and keep any page summary outside the quote field.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "08f7932d10d43663",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The treatment payload matches the lake fields: field_i_validity=good_law, as_of_content=2000-01-24, as_of_treatment=2026-06-30, varies_by_point=false, and the Ruckman circuit-split scope note.",
+          "Treatment/currency is outside lens A, so no independent treatment finding is raised."
+        ],
+        "residual_risks": [
+          "No treatment/currency audit performed under this lens."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/United States v. Sandoval.json\",\"reviewed\":[{\"assertion_id\":\"bd69b2a4fe3ec8cd\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake identity record verifies United States v. Rodrigo Sandoval, U.S. Court of Appeals for the Ninth Circuit, decided 2000-01-24.\",\"The official citation in the lake record is 200 F.3d 659, matching the asserted display and official citation.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"c68cb0b8fb5aa5c1\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The asserted pin-661 quote is not a character-faithful excerpt from the opinion; the lake pinpoint itself is harvested page text ending before the actual quoted passage, and it is marked quote_fidelity=mismatch.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-661 with the exact opinion passage at star page 661, preserving opinion punctuation and apostrophes, or remove the verbatim-quote treatment if normalized text is intended.\",\"evidence_quote\":\"we do not believe the reasonableness of Sandoval’s expectation of privacy turns on whether he had permission\",\"needs_cl\":false,\"locator_note\":\"text/United States v. Sandoval__33462a.txt, star page 661; lake pinpoints[].id=pin-661\"},\"reasons\":[\"The payload quote reproduces the built page narrative and stops before the actual quoted sentence.\",\"The disclosed opinion text contains the relevant passage at star page 661, but the page quote normalizes at least Sandoval’s apostrophe and the lake pinpoint does not store that passage.\",\"The lake pinpoint record expressly labels quote_fidelity as mismatch.\"],\"breaks_true_positives\":true,\"residual_risks\":[\"The substantive proposition appears supported, but this row is quote-fidelity only and the verbatim/pinpoint record fails.\"],\"suggested_tightening\":\"Store only the exact opinion language for pin-661 and keep any page summary outside the quote field.\"},{\"assertion_id\":\"08f7932d10d43663\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The treatment payload matches the lake fields: field_i_validity=good_law, as_of_content=2000-01-24, as_of_treatment=2026-06-30, varies_by_point=false, and the Ruckman circuit-split scope note.\",\"Treatment/currency is outside lens A, so no independent treatment finding is raised.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"No treatment/currency audit performed under this lens.\"],\"suggested_tightening\":null}],\"notes\":\"Treatment row recorded only; lens A findings are limited to existence/support/quote-fidelity/pincite/black-letter issues.\"}",
+  "summary": {
+    "at": "2026-07-09T23:54:36-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-53bb61a66e"
+    ],
+    "group_id": "_overhaul2/lake/cases/United States v. Sandoval.json",
+    "group_total_assertions": 3,
+    "lake_only_cases": [],
+    "lane": "codex-A",
+    "lane_id": "codex-A-panel-prod-c2056d66",
+    "lens": "A",
+    "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-c2056d66.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 3,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "United States v. Sandoval"
+    ],
+    "tokens": {
+      "input": 90218,
+      "output": 4371,
+      "source": "codex-events",
+      "total": 94589
+    },
+    "verdict_map": {
+      "08f7932d10d43663": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "bd69b2a4fe3ec8cd": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "c68cb0b8fb5aa5c1": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-53bb61a66e",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 88.7
+  }
+}

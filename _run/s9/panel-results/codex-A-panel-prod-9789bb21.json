@@ -1,0 +1,159 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Smith v. Maryland.json",
+    "lens": "A",
+    "notes": "Lens A review only; treatment merits were not attacked.",
+    "reviewed": [
+      {
+        "assertion_id": "52587985ce86f6cf",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity confirms Smith v. Maryland, U.S. Supreme Court, decided 1979-06-20, docket 78-5374.",
+          "Lake citations match the page: official 442 U.S. 735, parallels 99 S. Ct. 2577 and 61 L. Ed. 2d 220, vendor citation 1979 U.S. LEXIS 134."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "aeafac42fd206803",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "When he used his phone, petitioner voluntarily conveyed numerical information to the telephone company and \"exposed\" that information to its equipment in the ordinary course of business.",
+          "locator_note": "pin-744 / page 744 passage in text/Smith v. Maryland__6dd881.txt",
+          "needs_cl": false,
+          "problem": "The quoted sentence is substantively the right passage, but it is not character-faithful: the text uses double quotation marks around \"exposed\", while the page/lake quote uses single quotation marks.",
+          "proposed_fix": "Replace 'exposed' with \"exposed\" in the pin-744 quote, then clear the quote_fidelity mismatch if no other character differences remain.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The cached opinion text contains the same passage but with \"exposed\", not 'exposed'.",
+          "Lake pinpoints[].quote_fidelity for pin-744 is already marked mismatch."
+        ],
+        "residual_risks": [
+          "Substantive support remains strong; defect is exact quote fidelity only."
+        ],
+        "suggested_tightening": "Use the opinion's exact punctuation for quoted words.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "e4b534deb249fbcb",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "This Court consistently has held that a person has no legitimate expectation of privacy in information he voluntarily turns over to third parties.",
+          "locator_note": "pin-743 / lake pinpoints[].quote; the cached text has the quoted Court sentence across 743-744, not the payload quote.",
+          "needs_cl": false,
+          "problem": "The pin-743 quote is not an opinion quote. It splices page/editorial text from the built page and does not appear in the cached opinion text as quoted.",
+          "proposed_fix": "Replace pin-743 with the actual opinion sentence quoted on the page, or remove the pinpoint if it is meant to support only the page's paraphrase.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload quote appears only in lake/Smith v. Maryland__6dd881.json, not in the cached opinion text.",
+          "The actual support at 743-744 is the Court's third-party-doctrine sentence, not the payload text beginning 'within the meaning of the Fourth Amendment. ## Rule No.'"
+        ],
+        "residual_risks": [
+          "The visible page's separate Court quote is accurate, but the lake pinpoint quote for this assertion is corrupted."
+        ],
+        "suggested_tightening": "Keep paraphrase and verbatim quotation as separate fields so pin extraction cannot merge Issue/Rule prose with quoted authority.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "f35c04ab66db271d",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A; no treatment merits finding is made.",
+          "For transcription only, the page and payload match the lake treatment fields: good_law, as_of_content 1979-06-20, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note."
+        ],
+        "residual_risks": [
+          "Lens B must assess treatment/currency."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Smith v. Maryland.json\",\"reviewed\":[{\"assertion_id\":\"52587985ce86f6cf\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity confirms Smith v. Maryland, U.S. Supreme Court, decided 1979-06-20, docket 78-5374.\",\"Lake citations match the page: official 442 U.S. 735, parallels 99 S. Ct. 2577 and 61 L. Ed. 2d 220, vendor citation 1979 U.S. LEXIS 134.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"aeafac42fd206803\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The quoted sentence is substantively the right passage, but it is not character-faithful: the text uses double quotation marks around \\\"exposed\\\", while the page/lake quote uses single quotation marks.\",\"severity\":\"low\",\"proposed_fix\":\"Replace 'exposed' with \\\"exposed\\\" in the pin-744 quote, then clear the quote_fidelity mismatch if no other character differences remain.\",\"evidence_quote\":\"When he used his phone, petitioner voluntarily conveyed numerical information to the telephone company and \\\"exposed\\\" that information to its equipment in the ordinary course of business.\",\"needs_cl\":false,\"locator_note\":\"pin-744 / page 744 passage in text/Smith v. Maryland__6dd881.txt\"},\"reasons\":[\"The cached opinion text contains the same passage but with \\\"exposed\\\", not 'exposed'.\",\"Lake pinpoints[].quote_fidelity for pin-744 is already marked mismatch.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Substantive support remains strong; defect is exact quote fidelity only.\"],\"suggested_tightening\":\"Use the opinion's exact punctuation for quoted words.\"},{\"assertion_id\":\"e4b534deb249fbcb\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The pin-743 quote is not an opinion quote. It splices page/editorial text from the built page and does not appear in the cached opinion text as quoted.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-743 with the actual opinion sentence quoted on the page, or remove the pinpoint if it is meant to support only the page's paraphrase.\",\"evidence_quote\":\"This Court consistently has held that a person has no legitimate expectation of privacy in information he voluntarily turns over to third parties.\",\"needs_cl\":false,\"locator_note\":\"pin-743 / lake pinpoints[].quote; the cached text has the quoted Court sentence across 743-744, not the payload quote.\"},\"reasons\":[\"The payload quote appears only in lake/Smith v. Maryland__6dd881.json, not in the cached opinion text.\",\"The actual support at 743-744 is the Court's third-party-doctrine sentence, not the payload text beginning 'within the meaning of the Fourth Amendment. ## Rule No.'\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The visible page's separate Court quote is accurate, but the lake pinpoint quote for this assertion is corrupted.\"],\"suggested_tightening\":\"Keep paraphrase and verbatim quotation as separate fields so pin extraction cannot merge Issue/Rule prose with quoted authority.\"},{\"assertion_id\":\"f35c04ab66db271d\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside Lens A; no treatment merits finding is made.\",\"For transcription only, the page and payload match the lake treatment fields: good_law, as_of_content 1979-06-20, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Lens B must assess treatment/currency.\"],\"suggested_tightening\":null}],\"notes\":\"Lens A review only; treatment merits were not attacked.\"}",
+  "summary": {
+    "at": "2026-07-09T23:42:51-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-735b85571f",
+      "F-S9-PR-64e646513e"
+    ],
+    "group_id": "_overhaul2/lake/cases/Smith v. Maryland.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "codex-A",
+    "lane_id": "codex-A-panel-prod-9789bb21",
+    "lens": "A",
+    "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-9789bb21.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Smith v. Maryland"
+    ],
+    "tokens": {
+      "input": 188761,
+      "output": 7770,
+      "source": "codex-events",
+      "total": 196531
+    },
+    "verdict_map": {
+      "52587985ce86f6cf": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "aeafac42fd206803": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "e4b534deb249fbcb": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "f35c04ab66db271d": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-735b85571f",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-64e646513e",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 158.2
+  }
+}

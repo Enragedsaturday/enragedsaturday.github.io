@@ -1,0 +1,148 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/United States v. Knotts.json",
+    "lens": "A",
+    "notes": "No black-letter rows were present in group_inventory.jsonl. Treatment/currency left to lens B.",
+    "reviewed": [
+      {
+        "assertion_id": "df3d08717aaebcb2",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record names United States v. Knotts, identifies the court as U.S. Supreme Court, and gives date_decided 1983-03-02/year 1983.",
+          "The lake official citation is 460 U.S. 276, matching the content page display citation 460 U.S. 276 (1983).",
+          "The parallel/vendor citations in the inventory match the lake citation fields."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "166aee4028f72fce",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The quoted sentence appears verbatim in text/United States v. Knotts__e82cc6.txt.",
+          "The quote is also the exact quote stored in lake pin-282 with quote_fidelity matched and star_marker 282.",
+          "The passage appears on the page-282 portion of the opinion and supports the beeper-as-sensory-enhancement proposition."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "bf47842b24d55802",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "A person traveling in an automobile on public thoroughfares has no reasonable expectation of privacy in his movements from one place to another.",
+          "locator_note": "The correct passage appears in the cached opinion text after the page-number label 281 and before the page-number label 282; the current lake pin has page null, star_marker null, and position null.",
+          "needs_cl": false,
+          "problem": "The pin-281 payload/lake quote is not the Knotts opinion quotation; it is a scraped content-page header/body fragment ending at '## Rule No.' and has no page/star marker.",
+          "proposed_fix": "Replace lake pin-281.quote with: \"A person traveling in an automobile on public thoroughfares has no reasonable expectation of privacy in his movements from one place to another.\" Record the locator as page/star 281 if the system supports it.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The disclosed text contains the actual page-281 quotation used by the content page.",
+          "The inventory/lake pin-281 quote instead reproduces content-page metadata and introductory prose, not opinion text.",
+          "Because the payload quote is not character-faithful to the opinion, the quote-fidelity assertion as framed fails."
+        ],
+        "residual_risks": [
+          "The content page's displayed pin-281 quotation itself is accurate; the defect is in the inventory/lake pinpoint payload."
+        ],
+        "suggested_tightening": "Keep the displayed rule quote, but repair pin-281 metadata so it points to the opinion sentence rather than the built page.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "4c8e0b40d8da1f28",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside lens A, so no treatment finding is raised.",
+          "The treatment payload matches the lake treatment fields and the content page treatment text."
+        ],
+        "residual_risks": [
+          "No independent treatment audit was performed under lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"A\",\n  \"group_id\": \"_overhaul2/lake/cases/United States v. Knotts.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"df3d08717aaebcb2\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake identity record names United States v. Knotts, identifies the court as U.S. Supreme Court, and gives date_decided 1983-03-02/year 1983.\",\n        \"The lake official citation is 460 U.S. 276, matching the content page display citation 460 U.S. 276 (1983).\",\n        \"The parallel/vendor citations in the inventory match the lake citation fields.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"166aee4028f72fce\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The quoted sentence appears verbatim in text/United States v. Knotts__e82cc6.txt.\",\n        \"The quote is also the exact quote stored in lake pin-282 with quote_fidelity matched and star_marker 282.\",\n        \"The passage appears on the page-282 portion of the opinion and supports the beeper-as-sensory-enhancement proposition.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"bf47842b24d55802\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The pin-281 payload/lake quote is not the Knotts opinion quotation; it is a scraped content-page header/body fragment ending at '## Rule No.' and has no page/star marker.\",\n        \"severity\": \"high\",\n        \"proposed_fix\": \"Replace lake pin-281.quote with: \\\"A person traveling in an automobile on public thoroughfares has no reasonable expectation of privacy in his movements from one place to another.\\\" Record the locator as page/star 281 if the system supports it.\",\n        \"evidence_quote\": \"A person traveling in an automobile on public thoroughfares has no reasonable expectation of privacy in his movements from one place to another.\",\n        \"needs_cl\": false,\n        \"locator_note\": \"The correct passage appears in the cached opinion text after the page-number label 281 and before the page-number label 282; the current lake pin has page null, star_marker null, and position null.\"\n      },\n      \"reasons\": [\n        \"The disclosed text contains the actual page-281 quotation used by the content page.\",\n        \"The inventory/lake pin-281 quote instead reproduces content-page metadata and introductory prose, not opinion text.\",\n        \"Because the payload quote is not character-faithful to the opinion, the quote-fidelity assertion as framed fails.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The content page's displayed pin-281 quotation itself is accurate; the defect is in the inventory/lake pinpoint payload.\"\n      ],\n      \"suggested_tightening\": \"Keep the displayed rule quote, but repair pin-281 metadata so it points to the opinion sentence rather than the built page.\"\n    },\n    {\n      \"assertion_id\": \"4c8e0b40d8da1f28\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Treatment/currency is outside lens A, so no treatment finding is raised.\",\n        \"The treatment payload matches the lake treatment fields and the content page treatment text.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"No independent treatment audit was performed under lens A.\"\n      ],\n      \"suggested_tightening\": null\n    }\n  ],\n  \"notes\": \"No black-letter rows were present in group_inventory.jsonl. Treatment/currency left to lens B.\"\n}",
+  "summary": {
+    "at": "2026-07-09T23:50:14-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-a89e00bf83"
+    ],
+    "group_id": "_overhaul2/lake/cases/United States v. Knotts.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "codex-A",
+    "lane_id": "codex-A-panel-prod-d5650da1",
+    "lens": "A",
+    "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-d5650da1.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "United States v. Knotts"
+    ],
+    "tokens": {
+      "input": 165454,
+      "output": 5263,
+      "source": "codex-events",
+      "total": 170717
+    },
+    "verdict_map": {
+      "166aee4028f72fce": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "4c8e0b40d8da1f28": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "bf47842b24d55802": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "df3d08717aaebcb2": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-a89e00bf83",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 112.7
+  }
+}

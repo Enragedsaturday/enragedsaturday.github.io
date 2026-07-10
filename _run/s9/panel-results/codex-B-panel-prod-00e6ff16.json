@@ -1,0 +1,161 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Warden v. Hayden.json",
+    "lens": "B",
+    "notes": "Lens B only; quote-fidelity rows were not assessed for textual accuracy.",
+    "reviewed": [
+      {
+        "assertion_id": "4cf9f3b8858be3eb",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record is verified, not a stub, and identifies the case as Warden, Maryland Penitentiary v. Hayden decided by the U.S. Supreme Court on 1967-05-29.",
+          "The official citation selected in the lake record is 387 U.S. 294, matching the display citation under review.",
+          "The case-level treatment field is good_law as of 2026-06-30, so the disclosed record does not show that the authority is no longer live law."
+        ],
+        "residual_risks": [
+          "Treatment derivation contains proposed negative edges requiring audit, but no confirmed disclosed overrule or abrogation changes the existence/live-law call."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "13f1c2f9bbac8359",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "This row is quote_fidelity, and Lens B does not assess verbatim support or quote accuracy.",
+          "No separate treatment or currency defect is attached to this pinpoint row beyond the case-level treatment reviewed separately."
+        ],
+        "residual_risks": [
+          "The payload itself flags quote_fidelity as mismatch, but that is reserved for Lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "721ad54bb36f0836",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "This row is quote_fidelity, and Lens B does not raise support or quote-fidelity findings.",
+          "Any embedded treatment text in the captured quote is addressed by the case-level treatment row."
+        ],
+        "residual_risks": [
+          "The payload itself flags quote_fidelity as mismatch, but that is outside this lens."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "1970a5d348ed98f1",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "No negative treatment. / \"audit_needed\": true, \"proposed_negative_events\": 14",
+          "locator_note": "content_page.md Treatment & subsequent history; lake/Warden v. Hayden__c64fba.json treatment.derivation and treatment.edges",
+          "needs_cl": true,
+          "problem": "The good-law status itself is supported by the lake treatment field, but the built page's absolute 'No negative treatment' wording is too strong because the disclosed treatment derivation contains proposed negative events and audit-needed flags.",
+          "proposed_fix": "Keep the status as good_law as of 2026-06-30, but replace 'No negative treatment' with a qualified statement noting that the lake treatment field is good_law while proposed negative/mentioned edges remain pending audit.",
+          "severity": "medium"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "The disclosed treatment judgment says field_i_validity is good_law and the scope_note states Good law.",
+          "The same disclosed record lists proposed edges with labels including overruled, superseded_by_statute, questioned, and criticized, all marked proposed with field_iii mentioned.",
+          "The derivation fields show audit_needed true for lane1_negative and lane2_top_cited, so an unqualified 'No negative treatment' statement is not fully supported by the disclosed treatment record."
+        ],
+        "residual_risks": [
+          "Because the negative edges are proposed and not confirmed, the disclosed record does not justify changing the core good_law status to bad law.",
+          "A CourtListener/audit follow-up would be needed to determine whether any proposed edge actually limits or undermines Hayden."
+        ],
+        "suggested_tightening": "State: 'Status: good_law as of 2026-06-30; disclosed lake treatment includes proposed negative/mentioned edges pending audit, with no confirmed point override.'",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"B\",\n  \"group_id\": \"_overhaul2/lake/cases/Warden v. Hayden.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"4cf9f3b8858be3eb\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake record is verified, not a stub, and identifies the case as Warden, Maryland Penitentiary v. Hayden decided by the U.S. Supreme Court on 1967-05-29.\",\n        \"The official citation selected in the lake record is 387 U.S. 294, matching the display citation under review.\",\n        \"The case-level treatment field is good_law as of 2026-06-30, so the disclosed record does not show that the authority is no longer live law.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Treatment derivation contains proposed negative edges requiring audit, but no confirmed disclosed overrule or abrogation changes the existence/live-law call.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"13f1c2f9bbac8359\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"This row is quote_fidelity, and Lens B does not assess verbatim support or quote accuracy.\",\n        \"No separate treatment or currency defect is attached to this pinpoint row beyond the case-level treatment reviewed separately.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The payload itself flags quote_fidelity as mismatch, but that is reserved for Lens A.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"721ad54bb36f0836\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"This row is quote_fidelity, and Lens B does not raise support or quote-fidelity findings.\",\n        \"Any embedded treatment text in the captured quote is addressed by the case-level treatment row.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The payload itself flags quote_fidelity as mismatch, but that is outside this lens.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"1970a5d348ed98f1\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands-modified\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The good-law status itself is supported by the lake treatment field, but the built page's absolute 'No negative treatment' wording is too strong because the disclosed treatment derivation contains proposed negative events and audit-needed flags.\",\n        \"severity\": \"medium\",\n        \"proposed_fix\": \"Keep the status as good_law as of 2026-06-30, but replace 'No negative treatment' with a qualified statement noting that the lake treatment field is good_law while proposed negative/mentioned edges remain pending audit.\",\n        \"evidence_quote\": \"No negative treatment. / \\\"audit_needed\\\": true, \\\"proposed_negative_events\\\": 14\",\n        \"needs_cl\": true,\n        \"locator_note\": \"content_page.md Treatment & subsequent history; lake/Warden v. Hayden__c64fba.json treatment.derivation and treatment.edges\"\n      },\n      \"reasons\": [\n        \"The disclosed treatment judgment says field_i_validity is good_law and the scope_note states Good law.\",\n        \"The same disclosed record lists proposed edges with labels including overruled, superseded_by_statute, questioned, and criticized, all marked proposed with field_iii mentioned.\",\n        \"The derivation fields show audit_needed true for lane1_negative and lane2_top_cited, so an unqualified 'No negative treatment' statement is not fully supported by the disclosed treatment record.\"\n      ],\n      \"breaks_true_positives\": true,\n      \"residual_risks\": [\n        \"Because the negative edges are proposed and not confirmed, the disclosed record does not justify changing the core good_law status to bad law.\",\n        \"A CourtListener/audit follow-up would be needed to determine whether any proposed edge actually limits or undermines Hayden.\"\n      ],\n      \"suggested_tightening\": \"State: 'Status: good_law as of 2026-06-30; disclosed lake treatment includes proposed negative/mentioned edges pending audit, with no confirmed point override.'\"\n    }\n  ],\n  \"notes\": \"Lens B only; quote-fidelity rows were not assessed for textual accuracy.\"\n}",
+  "summary": {
+    "at": "2026-07-09T23:58:32-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-c89636a808",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-97181a032c"
+    ],
+    "group_id": "_overhaul2/lake/cases/Warden v. Hayden.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "codex-B",
+    "lane_id": "codex-B-panel-prod-00e6ff16",
+    "lens": "B",
+    "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-00e6ff16.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Warden v. Hayden"
+    ],
+    "tokens": {
+      "input": 171656,
+      "output": 7189,
+      "source": "codex-events",
+      "total": 178845
+    },
+    "verdict_map": {
+      "13f1c2f9bbac8359": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "1970a5d348ed98f1": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "4cf9f3b8858be3eb": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "721ad54bb36f0836": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-c89636a808",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-97181a032c",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 140.5
+  }
+}

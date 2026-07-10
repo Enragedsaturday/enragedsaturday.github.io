@@ -1,0 +1,145 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/United States v. Watson.json",
+    "lens": "A",
+    "notes": "Reviewed all 4 group_inventory rows exactly once.",
+    "reviewed": [
+      {
+        "assertion_id": "39a71084251bcf5a",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity confirms United States v. Watson, U.S. Supreme Court, decided 1976.",
+          "Lake citations confirm official citation 423 U.S. 411 and listed parallel/vendor citations."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "247761c91e0b5a81",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "He had been arrested and was in custody, but his consent was given while on a public street, not in the confines of the police station. Moreover, the fact of custody alone has never been enough in itself to demonstrate a coerced confession or consent to search.",
+          "locator_note": "text/United States v. Watson__2ceae7.txt line 40; lake pin-424 is marked quote_fidelity=mismatch and pinpoint_status=slip-only.",
+          "needs_cl": false,
+          "problem": "pin-424's stored/payload quote is not character-faithful opinion text; it is generated page narrative and headings, and the lake itself marks quote_fidelity as mismatch with no star marker.",
+          "proposed_fix": "Replace pin-424's quote with the actual page-424 opinion passage beginning 'He had been arrested and was in custody...' and set a verified star/page locator.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload quote starts with content-page prose: 'and stolen credit cards were found inside. Watson moved to suppress...' and includes markdown headings, not opinion language.",
+          "The actual quoted custody passage appears in the cached opinion text on the page-424 span and supports the displayed rule, but it is not what pin-424 stores."
+        ],
+        "residual_risks": [
+          "The visible content_page quote appears faithful, but the lake/inventory pin metadata for pin-424 is defective."
+        ],
+        "suggested_tightening": "Anchor pin-424 only to the custody-alone quote at 423 U.S. 424, not to surrounding generated summary text.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "c00db297c5db9ec8",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The quoted fragment 'may be a factor in the overall judgment,' appears character-for-character in the cached opinion text.",
+          "Lake pin-424a is marked matched and star-verified at star marker 424."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "b1504a4c9757045d",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The treatment payload matches the lake treatment fields: field_i_validity=good_law, as_of_content=1976-01-26, as_of_treatment=2026-06-30, varies_by_point=false.",
+          "Treatment/currency is outside lens A, so no treatment defect is raised."
+        ],
+        "residual_risks": [
+          "Treatment merits are reserved for lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/United States v. Watson.json\",\"reviewed\":[{\"assertion_id\":\"39a71084251bcf5a\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity confirms United States v. Watson, U.S. Supreme Court, decided 1976.\",\"Lake citations confirm official citation 423 U.S. 411 and listed parallel/vendor citations.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"247761c91e0b5a81\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"pin-424's stored/payload quote is not character-faithful opinion text; it is generated page narrative and headings, and the lake itself marks quote_fidelity as mismatch with no star marker.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-424's quote with the actual page-424 opinion passage beginning 'He had been arrested and was in custody...' and set a verified star/page locator.\",\"evidence_quote\":\"He had been arrested and was in custody, but his consent was given while on a public street, not in the confines of the police station. Moreover, the fact of custody alone has never been enough in itself to demonstrate a coerced confession or consent to search.\",\"needs_cl\":false,\"locator_note\":\"text/United States v. Watson__2ceae7.txt line 40; lake pin-424 is marked quote_fidelity=mismatch and pinpoint_status=slip-only.\"},\"reasons\":[\"The payload quote starts with content-page prose: 'and stolen credit cards were found inside. Watson moved to suppress...' and includes markdown headings, not opinion language.\",\"The actual quoted custody passage appears in the cached opinion text on the page-424 span and supports the displayed rule, but it is not what pin-424 stores.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The visible content_page quote appears faithful, but the lake/inventory pin metadata for pin-424 is defective.\"],\"suggested_tightening\":\"Anchor pin-424 only to the custody-alone quote at 423 U.S. 424, not to surrounding generated summary text.\"},{\"assertion_id\":\"c00db297c5db9ec8\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The quoted fragment 'may be a factor in the overall judgment,' appears character-for-character in the cached opinion text.\",\"Lake pin-424a is marked matched and star-verified at star marker 424.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"b1504a4c9757045d\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The treatment payload matches the lake treatment fields: field_i_validity=good_law, as_of_content=1976-01-26, as_of_treatment=2026-06-30, varies_by_point=false.\",\"Treatment/currency is outside lens A, so no treatment defect is raised.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment merits are reserved for lens B.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed all 4 group_inventory rows exactly once.\"}",
+  "summary": {
+    "at": "2026-07-09T23:56:53-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-14043a4b33"
+    ],
+    "group_id": "_overhaul2/lake/cases/United States v. Watson.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "codex-A",
+    "lane_id": "codex-A-panel-prod-c11b0ab6",
+    "lens": "A",
+    "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-c11b0ab6.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "United States v. Watson"
+    ],
+    "tokens": {
+      "input": 216158,
+      "output": 5132,
+      "source": "codex-events",
+      "total": 221290
+    },
+    "verdict_map": {
+      "247761c91e0b5a81": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "39a71084251bcf5a": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "b1504a4c9757045d": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "c00db297c5db9ec8": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-14043a4b33",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 107.4
+  }
+}

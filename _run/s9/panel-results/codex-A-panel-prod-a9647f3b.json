@@ -1,0 +1,160 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/United States v. Mendenhall.json",
+    "lens": "A",
+    "notes": "Lens A review only; no treatment/currency finding made.",
+    "reviewed": [
+      {
+        "assertion_id": "e40818204df5c7f4",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record exists for United States v. Mendenhall and is marked verified.",
+          "The payload citation 446 U.S. 544 matches lake.citations.official; the parallel and vendor-neutral citations also match the lake record.",
+          "The court and year in the lake identity are U.S. Supreme Court and 1980."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "7d2e5755888dac3e",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "We conclude that a person has been “seized” within the meaning of the Fourth Amendment only if, in view of all of the circumstances surrounding the incident, a reasonable person would have believed that he was not free to leave.<footnotemark>6</footnotemark>",
+          "locator_note": "text/United States v. Mendenhall__fa7753.txt, paragraph id b612-6; lake pinpoints[] marks pin-554 quote_fidelity as mismatch.",
+          "needs_cl": false,
+          "problem": "The pin-554 quote text is not character-faithful to the opinion text; it appears to be a malformed harvest of page prose rather than the cited Mendenhall sentence.",
+          "proposed_fix": "Replace pin-554 with the exact opinion sentence from page 554, preserving the opinion text punctuation or expressly defining a normalization rule.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The disclosed opinion text contains the Mendenhall free-to-leave sentence at the page 554 marker, not the payload string beginning '? ## Rule'.",
+          "The exact payload quote appears in the lake pinpoint field, but the lake itself labels quote_fidelity as mismatch."
+        ],
+        "residual_risks": [
+          "The page's substantive rule is supported by the opinion; the defect is the malformed pinpoint quote object."
+        ],
+        "suggested_tightening": "Use the exact page-554 sentence as the pin text and avoid harvesting surrounding Markdown headings or page prose.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "c4e1e2cb60211526",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Examples of circumstances that might indicate a seizure, even where the person did not attempt to leave, would be the threatening presence of several officers, the display of a weapon by an officer, some physical touching of the person of the citizen, or the use of language or tone of voice indicating that compliance with the officer’s request might be compelled.",
+          "locator_note": "text/United States v. Mendenhall__fa7753.txt, paragraph id b612-6; lake pinpoints[] marks pin-554a quote_fidelity as mismatch.",
+          "needs_cl": false,
+          "problem": "The quotation is substantively the page-554 passage, but it is not character-faithful because the opinion text uses a typographic apostrophe in officer’s while the payload uses officer's.",
+          "proposed_fix": "Change \"officer's request\" to \"officer’s request\" in the pinpoint quote, or document that typography is normalized before quote-fidelity review.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The quoted passage is present in the disclosed opinion text at the page 554 marker.",
+          "The only observed character-fidelity defect is the straight apostrophe substituted for the opinion text's typographic apostrophe."
+        ],
+        "residual_risks": [
+          "If the corpus intentionally normalizes curly punctuation, this should be made explicit; otherwise the current verbatim quote is not exact."
+        ],
+        "suggested_tightening": "Preserve the opinion text's punctuation in verbatim quote fields.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "162e23c078f8c327",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Lens A does not adjudicate treatment or currency defects.",
+          "The treatment payload fields match the disclosed lake treatment fields and the content-page frontmatter."
+        ],
+        "residual_risks": [
+          "Treatment merits are not reviewed under Lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/United States v. Mendenhall.json\",\"reviewed\":[{\"assertion_id\":\"e40818204df5c7f4\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record exists for United States v. Mendenhall and is marked verified.\",\"The payload citation 446 U.S. 544 matches lake.citations.official; the parallel and vendor-neutral citations also match the lake record.\",\"The court and year in the lake identity are U.S. Supreme Court and 1980.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"7d2e5755888dac3e\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The pin-554 quote text is not character-faithful to the opinion text; it appears to be a malformed harvest of page prose rather than the cited Mendenhall sentence.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-554 with the exact opinion sentence from page 554, preserving the opinion text punctuation or expressly defining a normalization rule.\",\"evidence_quote\":\"We conclude that a person has been “seized” within the meaning of the Fourth Amendment only if, in view of all of the circumstances surrounding the incident, a reasonable person would have believed that he was not free to leave.<footnotemark>6</footnotemark>\",\"needs_cl\":false,\"locator_note\":\"text/United States v. Mendenhall__fa7753.txt, paragraph id b612-6; lake pinpoints[] marks pin-554 quote_fidelity as mismatch.\"},\"reasons\":[\"The disclosed opinion text contains the Mendenhall free-to-leave sentence at the page 554 marker, not the payload string beginning '? ## Rule'.\",\"The exact payload quote appears in the lake pinpoint field, but the lake itself labels quote_fidelity as mismatch.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The page's substantive rule is supported by the opinion; the defect is the malformed pinpoint quote object.\"],\"suggested_tightening\":\"Use the exact page-554 sentence as the pin text and avoid harvesting surrounding Markdown headings or page prose.\"},{\"assertion_id\":\"c4e1e2cb60211526\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The quotation is substantively the page-554 passage, but it is not character-faithful because the opinion text uses a typographic apostrophe in officer’s while the payload uses officer's.\",\"severity\":\"low\",\"proposed_fix\":\"Change \\\"officer's request\\\" to \\\"officer’s request\\\" in the pinpoint quote, or document that typography is normalized before quote-fidelity review.\",\"evidence_quote\":\"Examples of circumstances that might indicate a seizure, even where the person did not attempt to leave, would be the threatening presence of several officers, the display of a weapon by an officer, some physical touching of the person of the citizen, or the use of language or tone of voice indicating that compliance with the officer’s request might be compelled.\",\"needs_cl\":false,\"locator_note\":\"text/United States v. Mendenhall__fa7753.txt, paragraph id b612-6; lake pinpoints[] marks pin-554a quote_fidelity as mismatch.\"},\"reasons\":[\"The quoted passage is present in the disclosed opinion text at the page 554 marker.\",\"The only observed character-fidelity defect is the straight apostrophe substituted for the opinion text's typographic apostrophe.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"If the corpus intentionally normalizes curly punctuation, this should be made explicit; otherwise the current verbatim quote is not exact.\"],\"suggested_tightening\":\"Preserve the opinion text's punctuation in verbatim quote fields.\"},{\"assertion_id\":\"162e23c078f8c327\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lens A does not adjudicate treatment or currency defects.\",\"The treatment payload fields match the disclosed lake treatment fields and the content-page frontmatter.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment merits are not reviewed under Lens A.\"],\"suggested_tightening\":null}],\"notes\":\"Lens A review only; no treatment/currency finding made.\"}",
+  "summary": {
+    "at": "2026-07-09T23:52:37-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-d78205a3e2",
+      "F-S9-PR-82599577ba"
+    ],
+    "group_id": "_overhaul2/lake/cases/United States v. Mendenhall.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "codex-A",
+    "lane_id": "codex-A-panel-prod-a9647f3b",
+    "lens": "A",
+    "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-a9647f3b.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "United States v. Mendenhall"
+    ],
+    "tokens": {
+      "input": 342250,
+      "output": 7373,
+      "source": "codex-events",
+      "total": 349623
+    },
+    "verdict_map": {
+      "162e23c078f8c327": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "7d2e5755888dac3e": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "c4e1e2cb60211526": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "e40818204df5c7f4": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-d78205a3e2",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-82599577ba",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 149.7
+  }
+}

@@ -1,0 +1,105 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/South Dakota v. Neville.json",
+    "lens": "B",
+    "notes": "Lens B only; no support or quote-fidelity findings reviewed.",
+    "reviewed": [
+      {
+        "assertion_id": "28f98d65591c64ba",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Frontier stub: treatment/progeny intentionally not derived until S6 promotion.",
+          "locator_note": "lake treatment.scope_note; content_page treatment.scope_note",
+          "needs_cl": true,
+          "problem": "Under the lens-B currency framing, the disclosed record verifies the case identity and citation but does not verify that the authority is still live law; treatment and progeny are expressly unverified/not derived.",
+          "proposed_fix": "Do not use this assertion as a live-law/currency assertion. Limit it to identity/citation existence, or defer any live-law claim until verified treatment/progeny are available.",
+          "severity": "medium"
+        },
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity/citation fields support the existence of South Dakota v. Neville and the official citation 459 U.S. 553.",
+          "Lake treatment has field_i_validity='unverified', as_of_content=null, as_of_treatment=null, edges=[], and progeny rows_cached=0, so liveness cannot be confirmed from disclosed evidence."
+        ],
+        "residual_risks": [
+          "The page's Binding-SCOTUS label should not be read as a verified current-good-law signal while treatment remains unverified."
+        ],
+        "suggested_tightening": "Separate citation-existence from live-law currency, and keep any live-law wording qualified as unverified.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": false
+      },
+      {
+        "assertion_id": "ad8585d109eb73c6",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The group payload matches the lake treatment fields: field_i_validity is unverified, both as-of fields are null, varies_by_point is false, and the scope note says treatment/progeny were not derived.",
+          "The built page consistently renders Treatment: Unverified and states that subsequent treatment has not yet been machine-verified."
+        ],
+        "residual_risks": [
+          "This treatment assertion is only a disclosure of unverified status, not an affirmative good-law determination."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/South Dakota v. Neville.json\",\"reviewed\":[{\"assertion_id\":\"28f98d65591c64ba\",\"dimension\":\"existence\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":false,\"defect\":{\"problem\":\"Under the lens-B currency framing, the disclosed record verifies the case identity and citation but does not verify that the authority is still live law; treatment and progeny are expressly unverified/not derived.\",\"severity\":\"medium\",\"proposed_fix\":\"Do not use this assertion as a live-law/currency assertion. Limit it to identity/citation existence, or defer any live-law claim until verified treatment/progeny are available.\",\"evidence_quote\":\"Frontier stub: treatment/progeny intentionally not derived until S6 promotion.\",\"needs_cl\":true,\"locator_note\":\"lake treatment.scope_note; content_page treatment.scope_note\"},\"reasons\":[\"Lake identity/citation fields support the existence of South Dakota v. Neville and the official citation 459 U.S. 553.\",\"Lake treatment has field_i_validity='unverified', as_of_content=null, as_of_treatment=null, edges=[], and progeny rows_cached=0, so liveness cannot be confirmed from disclosed evidence.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The page's Binding-SCOTUS label should not be read as a verified current-good-law signal while treatment remains unverified.\"],\"suggested_tightening\":\"Separate citation-existence from live-law currency, and keep any live-law wording qualified as unverified.\"},{\"assertion_id\":\"ad8585d109eb73c6\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The group payload matches the lake treatment fields: field_i_validity is unverified, both as-of fields are null, varies_by_point is false, and the scope note says treatment/progeny were not derived.\",\"The built page consistently renders Treatment: Unverified and states that subsequent treatment has not yet been machine-verified.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"This treatment assertion is only a disclosure of unverified status, not an affirmative good-law determination.\"],\"suggested_tightening\":null}],\"notes\":\"Lens B only; no support or quote-fidelity findings reviewed.\"}",
+  "summary": {
+    "at": "2026-07-09T23:43:09-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-751c7179d5"
+    ],
+    "group_id": "_overhaul2/lake/cases/South Dakota v. Neville.json",
+    "group_total_assertions": 2,
+    "lake_only_cases": [
+      "South Dakota v. Neville"
+    ],
+    "lane": "codex-B",
+    "lane_id": "codex-B-panel-prod-e2fae56e",
+    "lens": "B",
+    "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-e2fae56e.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [
+      "case 'South Dakota v. Neville' has no lead_opinion_id (text undisclosed)"
+    ],
+    "reviewed_count": 2,
+    "run": "prod",
+    "text_disclosed_cases": [],
+    "tokens": {
+      "input": 78341,
+      "output": 4471,
+      "source": "codex-events",
+      "total": 82812
+    },
+    "verdict_map": {
+      "28f98d65591c64ba": {
+        "dimension": "existence",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": false
+      },
+      "ad8585d109eb73c6": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-751c7179d5",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 91.3
+  }
+}

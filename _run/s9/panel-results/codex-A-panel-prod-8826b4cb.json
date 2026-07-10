@@ -1,0 +1,211 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/United States v. Garner.json",
+    "lens": "A",
+    "notes": "Reviewed all 6 rows in group_inventory.jsonl. No black_letter, support, or pincite rows were present; treatment was recorded only against the disclosed lake fields because lens A does not own treatment/currency.",
+    "reviewed": [
+      {
+        "assertion_id": "b27773d05741bd36",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity record exists for United States v. Garner, decided 2005-07-27 by the U.S. Court of Appeals, 10th Circuit.",
+          "Lake official citation is 416 F.3d 1208, with vendor-neutral citations 2005 U.S. App. LEXIS 15369 and 2005 WL 1766377; the payload matches those fields."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "0698ddd5be57cd8b",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "the government’s interest must outweigh the individual’s interest in being free from arbitrary governmental interference.",
+          "locator_note": "pin-1213a; slip-only; no validated position or fragment in the lake record.",
+          "needs_cl": false,
+          "problem": "The quoted rule sentence is substantively present, but it is not character-faithful to the cached opinion because the page quote uses straight apostrophes while the opinion uses curly apostrophes; the lake also marks this pin quote_fidelity as mismatch.",
+          "proposed_fix": "Replace with the exact opinion typography or record an explicit normalization rule for typographic apostrophes.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The cached opinion states the same sentence at the rule discussion, but with government’s and individual’s.",
+          "The payload quote uses government's and individual's, so it fails strict character-fidelity even though the rule itself is supported."
+        ],
+        "residual_risks": [
+          "If this corpus treats typographic apostrophes as normalized, the defect is only editorial."
+        ],
+        "suggested_tightening": "Use the exact curly-apostrophe quote from the opinion text.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "851a9fbf80af0eda",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "community caretaking detention must be based upon “‘specific and articulable facts which . . . reasonably warrant [an] intrusion’ into the individual’s liberty.”",
+          "locator_note": "pin-1213; lake marks quote_fidelity mismatch and has no position.",
+          "needs_cl": false,
+          "problem": "The pin-1213 quote in the lake/payload is not an opinion quote; it is a harvested chunk of the built content page beginning with page markup and background text.",
+          "proposed_fix": "Replace pin-1213 with the actual opinion passage supporting the articulable-facts rule.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload quote begins with built-page markup, not the Garner opinion text.",
+          "The cached opinion contains the intended rule passage, but not the payload string."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Anchor this pin to the actual rule sentence at the community-caretaking test discussion.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "b80f2cf6e960de27",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Once the officer has completed the inquiry necessary to satisfy the purpose of the initial detention, he or she must allow the person to proceed unless the officer has a reasonable suspicion of criminal conduct.",
+          "locator_note": "pin-1213c; slip-only; no validated position or fragment in the lake record.",
+          "needs_cl": false,
+          "problem": "The quoted sentence is present in the cached opinion, but the lake marks it mismatch and supplies no validated position; in the cached text the sentence crosses a page break between “Once” and “the officer.”",
+          "proposed_fix": "Revalidate this pin against cleaned opinion text or store a validated position that tolerates pagination artifacts.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The word sequence appears in the cached opinion immediately after the tailoring sentence.",
+          "The lake nevertheless records quote_fidelity mismatch, apparently because the cached text has pagination between “Once” and “the officer.”"
+        ],
+        "residual_risks": [
+          "Strict raw-text character matching may continue to fail unless pagination is normalized."
+        ],
+        "suggested_tightening": "Keep the sentence but refresh the pin validation against pagination-normalized text.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "f76251f44af21119",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The quoted tailoring sentence appears in the cached opinion’s rule discussion.",
+          "The lake marks pin-1213b quote_fidelity as matched and includes a validated fragment and position."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "55be6957b76aca97",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The payload treatment fields exactly match the disclosed lake treatment fields: good_law, as_of_content 2005-07-27, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note.",
+          "No independent treatment/currency finding is made under lens A."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/United States v. Garner.json\",\"reviewed\":[{\"assertion_id\":\"b27773d05741bd36\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity record exists for United States v. Garner, decided 2005-07-27 by the U.S. Court of Appeals, 10th Circuit.\",\"Lake official citation is 416 F.3d 1208, with vendor-neutral citations 2005 U.S. App. LEXIS 15369 and 2005 WL 1766377; the payload matches those fields.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"0698ddd5be57cd8b\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The quoted rule sentence is substantively present, but it is not character-faithful to the cached opinion because the page quote uses straight apostrophes while the opinion uses curly apostrophes; the lake also marks this pin quote_fidelity as mismatch.\",\"severity\":\"low\",\"proposed_fix\":\"Replace with the exact opinion typography or record an explicit normalization rule for typographic apostrophes.\",\"evidence_quote\":\"the government’s interest must outweigh the individual’s interest in being free from arbitrary governmental interference.\",\"needs_cl\":false,\"locator_note\":\"pin-1213a; slip-only; no validated position or fragment in the lake record.\"},\"reasons\":[\"The cached opinion states the same sentence at the rule discussion, but with government’s and individual’s.\",\"The payload quote uses government's and individual's, so it fails strict character-fidelity even though the rule itself is supported.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"If this corpus treats typographic apostrophes as normalized, the defect is only editorial.\"],\"suggested_tightening\":\"Use the exact curly-apostrophe quote from the opinion text.\"},{\"assertion_id\":\"851a9fbf80af0eda\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The pin-1213 quote in the lake/payload is not an opinion quote; it is a harvested chunk of the built content page beginning with page markup and background text.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-1213 with the actual opinion passage supporting the articulable-facts rule.\",\"evidence_quote\":\"community caretaking detention must be based upon “‘specific and articulable facts which . . . reasonably warrant [an] intrusion’ into the individual’s liberty.”\",\"needs_cl\":false,\"locator_note\":\"pin-1213; lake marks quote_fidelity mismatch and has no position.\"},\"reasons\":[\"The payload quote begins with built-page markup, not the Garner opinion text.\",\"The cached opinion contains the intended rule passage, but not the payload string.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":\"Anchor this pin to the actual rule sentence at the community-caretaking test discussion.\"},{\"assertion_id\":\"b80f2cf6e960de27\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The quoted sentence is present in the cached opinion, but the lake marks it mismatch and supplies no validated position; in the cached text the sentence crosses a page break between “Once” and “the officer.”\",\"severity\":\"low\",\"proposed_fix\":\"Revalidate this pin against cleaned opinion text or store a validated position that tolerates pagination artifacts.\",\"evidence_quote\":\"Once the officer has completed the inquiry necessary to satisfy the purpose of the initial detention, he or she must allow the person to proceed unless the officer has a reasonable suspicion of criminal conduct.\",\"needs_cl\":false,\"locator_note\":\"pin-1213c; slip-only; no validated position or fragment in the lake record.\"},\"reasons\":[\"The word sequence appears in the cached opinion immediately after the tailoring sentence.\",\"The lake nevertheless records quote_fidelity mismatch, apparently because the cached text has pagination between “Once” and “the officer.”\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Strict raw-text character matching may continue to fail unless pagination is normalized.\"],\"suggested_tightening\":\"Keep the sentence but refresh the pin validation against pagination-normalized text.\"},{\"assertion_id\":\"f76251f44af21119\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The quoted tailoring sentence appears in the cached opinion’s rule discussion.\",\"The lake marks pin-1213b quote_fidelity as matched and includes a validated fragment and position.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"55be6957b76aca97\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The payload treatment fields exactly match the disclosed lake treatment fields: good_law, as_of_content 2005-07-27, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note.\",\"No independent treatment/currency finding is made under lens A.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null}],\"notes\":\"Reviewed all 6 rows in group_inventory.jsonl. No black_letter, support, or pincite rows were present; treatment was recorded only against the disclosed lake fields because lens A does not own treatment/currency.\"}",
+  "summary": {
+    "at": "2026-07-09T23:49:25-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-867eae941a",
+      "F-S9-PR-5aa46d8604",
+      "F-S9-PR-7acc2d4c79"
+    ],
+    "group_id": "_overhaul2/lake/cases/United States v. Garner.json",
+    "group_total_assertions": 6,
+    "lake_only_cases": [],
+    "lane": "codex-A",
+    "lane_id": "codex-A-panel-prod-8826b4cb",
+    "lens": "A",
+    "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-8826b4cb.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 6,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "United States v. Garner"
+    ],
+    "tokens": {
+      "input": 204038,
+      "output": 9106,
+      "source": "codex-events",
+      "total": 213144
+    },
+    "verdict_map": {
+      "0698ddd5be57cd8b": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "55be6957b76aca97": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "851a9fbf80af0eda": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "b27773d05741bd36": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "b80f2cf6e960de27": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "f76251f44af21119": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-867eae941a",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-5aa46d8604",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-7acc2d4c79",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 244.4
+  }
+}

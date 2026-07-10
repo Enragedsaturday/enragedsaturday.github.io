@@ -1,0 +1,176 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/United States v. Matlock.json",
+    "lens": "A",
+    "notes": "Reviewed all 5 group_inventory rows using only disclosed workspace files. Treatment merits reserved for lens B.",
+    "reviewed": [
+      {
+        "assertion_id": "8bcc9efbff4169c0",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record is verified and identifies United States v. Matlock as a U.S. Supreme Court case decided on 1974-02-20.",
+          "The official citation, parallel citations, vendor citation, court, year, docket, cluster_id, and lead_opinion_id in the built page match the lake identity and citation fields."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "7437f773d186f8b3",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "the consent of one who possesses common authority over premises or effects is valid as against the absent, nonconsenting person with whom that authority is shared.",
+          "locator_note": "lake pinpoints[].id=pin-170 and content_page Rule paragraph ^pin-170",
+          "needs_cl": false,
+          "problem": "pin-170's lake pinpoint quote is not an opinion quote; it is a concatenation of the built page header/background/issue/rule. The lake itself marks the pinpoint as mismatch, slip-only, with no star_marker. The actual page-170 passage is the common-authority sentence, and the rendered page also silently capitalizes the source's initial lower-case word.",
+          "proposed_fix": "Replace pin-170 with the exact opinion text at page 170, set the page/star metadata to 170, and render the quote either lower-case as in the source or with bracketed capitalization.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The disclosed lake record for pin-170 has quote_fidelity=mismatch, pinpoint_status=slip-only, and star_marker=null.",
+          "The cached opinion text contains the actual page-170 common-authority sentence, not the markdown/frontmatter block stored as the pin-170 quote."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Use the cached opinion text as the source of truth for this pinpoint; do not derive pin quotes from the built page.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "a025d7b426c942f9",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "rests rather on mutual use of the property by persons generally having joint access or control for most purposes, so that it is reasonable to recognize that any of the co-inhabitants has the right to permit the inspection in his own right and that the others have assumed the risk that one of their number might permit the common area to be searched.",
+          "locator_note": "pin-171a / footnote 7",
+          "needs_cl": false,
+          "problem": "The quoted words are character-faithful, but the lake payload reports star_marker 170 while the built page cites the passage as 171 n.7 and the cached opinion places footnote 7's call in the page-171 body before page 172.",
+          "proposed_fix": "Keep the quote but correct the pinpoint metadata to 171 n.7 or remove the misleading star_marker 170.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The quoted text appears verbatim in the cached opinion text and matches the lake quote.",
+          "The only A-lens defect is the page-marker metadata inconsistency for the footnote pinpoint."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Normalize footnote pinpoint handling so the citation remains 171 n.7 rather than inheriting a stale nearby page marker.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "e87e3d04275f3c2a",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The quote appears verbatim in the cached opinion text.",
+          "The lake pinpoint is marked matched, star-verified, and tied to star_marker 171, which corresponds to the built page's Id. at 171 citation."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "94995bfa15e8a0f4",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency merits are outside lens A.",
+          "The treatment fields in the inventory and built page match the disclosed lake treatment fields: good_law, as_of_content 1974-02-20, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note."
+        ],
+        "residual_risks": [
+          "No substantive treatment or currency conclusion is made under this lens."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"A\",\n  \"group_id\": \"_overhaul2/lake/cases/United States v. Matlock.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"8bcc9efbff4169c0\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake record is verified and identifies United States v. Matlock as a U.S. Supreme Court case decided on 1974-02-20.\",\n        \"The official citation, parallel citations, vendor citation, court, year, docket, cluster_id, and lead_opinion_id in the built page match the lake identity and citation fields.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"7437f773d186f8b3\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"pin-170's lake pinpoint quote is not an opinion quote; it is a concatenation of the built page header/background/issue/rule. The lake itself marks the pinpoint as mismatch, slip-only, with no star_marker. The actual page-170 passage is the common-authority sentence, and the rendered page also silently capitalizes the source's initial lower-case word.\",\n        \"severity\": \"high\",\n        \"proposed_fix\": \"Replace pin-170 with the exact opinion text at page 170, set the page/star metadata to 170, and render the quote either lower-case as in the source or with bracketed capitalization.\",\n        \"evidence_quote\": \"the consent of one who possesses common authority over premises or effects is valid as against the absent, nonconsenting person with whom that authority is shared.\",\n        \"needs_cl\": false,\n        \"locator_note\": \"lake pinpoints[].id=pin-170 and content_page Rule paragraph ^pin-170\"\n      },\n      \"reasons\": [\n        \"The disclosed lake record for pin-170 has quote_fidelity=mismatch, pinpoint_status=slip-only, and star_marker=null.\",\n        \"The cached opinion text contains the actual page-170 common-authority sentence, not the markdown/frontmatter block stored as the pin-170 quote.\"\n      ],\n      \"breaks_true_positives\": true,\n      \"residual_risks\": [],\n      \"suggested_tightening\": \"Use the cached opinion text as the source of truth for this pinpoint; do not derive pin quotes from the built page.\"\n    },\n    {\n      \"assertion_id\": \"a025d7b426c942f9\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands-modified\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The quoted words are character-faithful, but the lake payload reports star_marker 170 while the built page cites the passage as 171 n.7 and the cached opinion places footnote 7's call in the page-171 body before page 172.\",\n        \"severity\": \"low\",\n        \"proposed_fix\": \"Keep the quote but correct the pinpoint metadata to 171 n.7 or remove the misleading star_marker 170.\",\n        \"evidence_quote\": \"rests rather on mutual use of the property by persons generally having joint access or control for most purposes, so that it is reasonable to recognize that any of the co-inhabitants has the right to permit the inspection in his own right and that the others have assumed the risk that one of their number might permit the common area to be searched.\",\n        \"needs_cl\": false,\n        \"locator_note\": \"pin-171a / footnote 7\"\n      },\n      \"reasons\": [\n        \"The quoted text appears verbatim in the cached opinion text and matches the lake quote.\",\n        \"The only A-lens defect is the page-marker metadata inconsistency for the footnote pinpoint.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": \"Normalize footnote pinpoint handling so the citation remains 171 n.7 rather than inheriting a stale nearby page marker.\"\n    },\n    {\n      \"assertion_id\": \"e87e3d04275f3c2a\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The quote appears verbatim in the cached opinion text.\",\n        \"The lake pinpoint is marked matched, star-verified, and tied to star_marker 171, which corresponds to the built page's Id. at 171 citation.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"94995bfa15e8a0f4\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Treatment/currency merits are outside lens A.\",\n        \"The treatment fields in the inventory and built page match the disclosed lake treatment fields: good_law, as_of_content 1974-02-20, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"No substantive treatment or currency conclusion is made under this lens.\"\n      ],\n      \"suggested_tightening\": null\n    }\n  ],\n  \"notes\": \"Reviewed all 5 group_inventory rows using only disclosed workspace files. Treatment merits reserved for lens B.\"\n}",
+  "summary": {
+    "at": "2026-07-09T23:53:08-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-2dc9ca569d",
+      "F-S9-PR-da563964b8"
+    ],
+    "group_id": "_overhaul2/lake/cases/United States v. Matlock.json",
+    "group_total_assertions": 5,
+    "lake_only_cases": [],
+    "lane": "codex-A",
+    "lane_id": "codex-A-panel-prod-3f96bd35",
+    "lens": "A",
+    "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-3f96bd35.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "United States v. Matlock"
+    ],
+    "tokens": {
+      "input": 317370,
+      "output": 10397,
+      "source": "codex-events",
+      "total": 327767
+    },
+    "verdict_map": {
+      "7437f773d186f8b3": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "8bcc9efbff4169c0": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "94995bfa15e8a0f4": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "a025d7b426c942f9": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "e87e3d04275f3c2a": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-2dc9ca569d",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-da563964b8",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 205.0
+  }
+}

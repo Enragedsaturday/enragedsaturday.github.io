@@ -1,0 +1,174 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/United States v. Martinez-Fuerte.json",
+    "lens": "B",
+    "notes": "Lens B did not adjudicate support or quote-fidelity defects.",
+    "reviewed": [
+      {
+        "assertion_id": "e9c2723b52264e3c",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record is verified and identifies United States v. Martinez-Fuerte as a U.S. Supreme Court case decided 1976-07-06 with official citation 428 U.S. 543.",
+          "The same lake record gives field_i_validity as good_law as of 2026-06-30, so no disclosed currency record makes the authority non-live."
+        ],
+        "residual_risks": [
+          "Treatment derivation flags an audit need, but the disclosed top-level judgment still marks the case good_law."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "0d6c70efeaf5e30a",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote fidelity is outside lens B; no separate currency or treatment defect is attached to this pinpoint assertion.",
+          "The underlying authority remains marked good_law in the disclosed lake treatment field."
+        ],
+        "residual_risks": [
+          "Quote accuracy and pinpoint support are left to lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "4e17a951134427fa",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote fidelity is outside lens B; no separate currency or treatment defect is attached to this pinpoint assertion.",
+          "The underlying authority remains marked good_law in the disclosed lake treatment field."
+        ],
+        "residual_risks": [
+          "Quote accuracy and pinpoint support are left to lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "dd1a7b865ebdf937",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote fidelity is outside lens B; no separate currency or treatment defect is attached to this pinpoint assertion.",
+          "The underlying authority remains marked good_law in the disclosed lake treatment field."
+        ],
+        "residual_risks": [
+          "Quote accuracy and pinpoint support are left to lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "3a7e783477af7d6f",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "\"audit_needed\": true,\n        \"proposed_negative_events\": 11,\n        \"audit_marker\": \"R15 treatment audit required\"",
+          "locator_note": "content_page.md Treatment & subsequent history; lake treatment.derivation lane1_negative and lane2_top_cited",
+          "needs_cl": true,
+          "problem": "The top-level good_law call survives, but the page's unqualified treatment presentation, especially 'No negative subsequent treatment identified,' is too strong. The lake record contains proposed negative-treatment edges and marks treatment audit as required.",
+          "proposed_fix": "Keep good_law only as the current lake judgment, but replace the no-negative language with a caveat that proposed negative-treatment candidates exist and R15 treatment audit is pending, unless an audit resolves them.",
+          "severity": "medium"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "Lake treatment.field_i_validity is good_law and varies_by_point is false, matching the inventory payload.",
+          "But treatment provenance says the validity source is migration plus page frontmatter, and the lake derivation separately flags audit_needed true with proposed_negative_events.",
+          "The treatment.edges list includes proposed negative labels including overruled, abrogated, criticized, questioned, and superseded_by_statute, all with field_iii mentioned; that does not itself prove Martinez-Fuerte is no longer good law, but it refutes the page's certainty that no negative treatment was identified."
+        ],
+        "residual_risks": [
+          "Because the edges are proposed and marked mentioned, disclosed evidence does not prove an actual overruling or abrogation of Martinez-Fuerte.",
+          "A final treatment audit is needed to decide whether any candidate edge should become a real point override or downgrade."
+        ],
+        "suggested_tightening": "Status: good_law per current lake judgment as of 2026-06-30; proposed negative-treatment candidates exist and R15 audit is pending; no confirmed point override in this record.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/United States v. Martinez-Fuerte.json\",\"reviewed\":[{\"assertion_id\":\"e9c2723b52264e3c\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record is verified and identifies United States v. Martinez-Fuerte as a U.S. Supreme Court case decided 1976-07-06 with official citation 428 U.S. 543.\",\"The same lake record gives field_i_validity as good_law as of 2026-06-30, so no disclosed currency record makes the authority non-live.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment derivation flags an audit need, but the disclosed top-level judgment still marks the case good_law.\"],\"suggested_tightening\":null},{\"assertion_id\":\"0d6c70efeaf5e30a\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Quote fidelity is outside lens B; no separate currency or treatment defect is attached to this pinpoint assertion.\",\"The underlying authority remains marked good_law in the disclosed lake treatment field.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Quote accuracy and pinpoint support are left to lens A.\"],\"suggested_tightening\":null},{\"assertion_id\":\"4e17a951134427fa\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Quote fidelity is outside lens B; no separate currency or treatment defect is attached to this pinpoint assertion.\",\"The underlying authority remains marked good_law in the disclosed lake treatment field.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Quote accuracy and pinpoint support are left to lens A.\"],\"suggested_tightening\":null},{\"assertion_id\":\"dd1a7b865ebdf937\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Quote fidelity is outside lens B; no separate currency or treatment defect is attached to this pinpoint assertion.\",\"The underlying authority remains marked good_law in the disclosed lake treatment field.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Quote accuracy and pinpoint support are left to lens A.\"],\"suggested_tightening\":null},{\"assertion_id\":\"3a7e783477af7d6f\",\"dimension\":\"treatment\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The top-level good_law call survives, but the page's unqualified treatment presentation, especially 'No negative subsequent treatment identified,' is too strong. The lake record contains proposed negative-treatment edges and marks treatment audit as required.\",\"severity\":\"medium\",\"proposed_fix\":\"Keep good_law only as the current lake judgment, but replace the no-negative language with a caveat that proposed negative-treatment candidates exist and R15 treatment audit is pending, unless an audit resolves them.\",\"evidence_quote\":\"\\\"audit_needed\\\": true,\\n        \\\"proposed_negative_events\\\": 11,\\n        \\\"audit_marker\\\": \\\"R15 treatment audit required\\\"\",\"needs_cl\":true,\"locator_note\":\"content_page.md Treatment & subsequent history; lake treatment.derivation lane1_negative and lane2_top_cited\"},\"reasons\":[\"Lake treatment.field_i_validity is good_law and varies_by_point is false, matching the inventory payload.\",\"But treatment provenance says the validity source is migration plus page frontmatter, and the lake derivation separately flags audit_needed true with proposed_negative_events.\",\"The treatment.edges list includes proposed negative labels including overruled, abrogated, criticized, questioned, and superseded_by_statute, all with field_iii mentioned; that does not itself prove Martinez-Fuerte is no longer good law, but it refutes the page's certainty that no negative treatment was identified.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Because the edges are proposed and marked mentioned, disclosed evidence does not prove an actual overruling or abrogation of Martinez-Fuerte.\",\"A final treatment audit is needed to decide whether any candidate edge should become a real point override or downgrade.\"],\"suggested_tightening\":\"Status: good_law per current lake judgment as of 2026-06-30; proposed negative-treatment candidates exist and R15 audit is pending; no confirmed point override in this record.\"}],\"notes\":\"Lens B did not adjudicate support or quote-fidelity defects.\"}",
+  "summary": {
+    "at": "2026-07-09T23:51:27-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-cbd174a461"
+    ],
+    "group_id": "_overhaul2/lake/cases/United States v. Martinez-Fuerte.json",
+    "group_total_assertions": 5,
+    "lake_only_cases": [],
+    "lane": "codex-B",
+    "lane_id": "codex-B-panel-prod-d2587fa4",
+    "lens": "B",
+    "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-d2587fa4.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "United States v. Martinez-Fuerte"
+    ],
+    "tokens": {
+      "input": 175485,
+      "output": 5904,
+      "source": "codex-events",
+      "total": 181389
+    },
+    "verdict_map": {
+      "0d6c70efeaf5e30a": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "3a7e783477af7d6f": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "4e17a951134427fa": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "dd1a7b865ebdf937": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "e9c2723b52264e3c": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-cbd174a461",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 121.9
+  }
+}

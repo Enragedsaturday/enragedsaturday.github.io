@@ -1,0 +1,161 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/United States v. Wade.json",
+    "lens": "A",
+    "notes": "Reviewed all 4 group_inventory.jsonl rows under lens A only.",
+    "reviewed": [
+      {
+        "assertion_id": "3f2fb5d19fb2847f",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record names United States v. Wade, U.S. Supreme Court, decided 1967-06-12.",
+          "The official citation in the lake record is 388 U.S. 218, and the content page displays 388 U.S. 218 (1967).",
+          "The parallel and vendor citations in the payload match the lake record: 87 S. Ct. 1926; 18 L. Ed. 2d 1149; 1967 U.S. LEXIS 1085."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "0b6b4ca01d560acf",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "vacate the conviction pending a hearing to determine whether the in-court identifications had an independent source, or whether, in any event, the introduction of the evidence was harmless error",
+          "locator_note": "pin-242; text page marker *242 contains the passage.",
+          "needs_cl": false,
+          "problem": "The quoted sentence fragment changes the source punctuation: the opinion has a comma after 'independent source,' because the sentence continues with harmless-error language, not a period after 'source.'",
+          "proposed_fix": "Either remove the quotation marks and paraphrase, or quote the source exactly: \"vacate the conviction pending a hearing to determine whether the in-court identifications had an independent source, or whether, in any event, the introduction of the evidence was harmless error\".",
+          "severity": "medium"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The pinpoint lands on page 242, but the rendered/lake quote is not character-faithful.",
+          "The lake record itself marks pin-242 quote_fidelity as mismatch."
+        ],
+        "residual_risks": [
+          "The substantive independent-source/remand proposition appears supported; this refutation is limited to quote fidelity."
+        ],
+        "suggested_tightening": "Add the harmless-error alternative when describing the remedy, because the Court allowed reinstatement if the error was harmless.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "a098d7c8725bed3f",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "there can be <page-number citation-index=\"1\" label=\"237\">*237</page-number>little doubt that for Wade the post-indictment lineup was a critical stage of the prosecution at which he was “as much entitled to such aid [of counsel] ... as at the trial itself.”",
+          "locator_note": "pin-237; text line with page marker *237 contains the relevant passage.",
+          "needs_cl": false,
+          "problem": "The pin-237 lake quote is not the Wade opinion passage at all; it is a corrupted block of the generated content page. The rendered quote also differs from the opinion's nested quotation/ellipsis formatting.",
+          "proposed_fix": "Replace pin-237 with the actual page-237 passage and, if quoting verbatim, preserve the opinion text rather than the generated page prose.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload/lake quote begins with generated page frontmatter/content, not the Supreme Court opinion text.",
+          "The actual opinion supports the critical-stage proposition, but the stored quote is not character-faithful.",
+          "The lake record itself marks pin-237 quote_fidelity as mismatch."
+        ],
+        "residual_risks": [
+          "The substantive rule appears supported; the defect is the corrupted/nonfaithful quote record."
+        ],
+        "suggested_tightening": "Use the exact Wade passage at 388 U.S. 237 and avoid converting the opinion's nested quotation and ellipsis if character fidelity is required.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "3a38e10b60bb143f",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside lens A; no treatment finding is raised.",
+          "The treatment fields displayed in content_page.md match the disclosed lake treatment fields, including good_law and as_of_treatment 2026-06-30."
+        ],
+        "residual_risks": [
+          "Treatment merits and currency are reserved for lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/United States v. Wade.json\",\"reviewed\":[{\"assertion_id\":\"3f2fb5d19fb2847f\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake identity record names United States v. Wade, U.S. Supreme Court, decided 1967-06-12.\",\"The official citation in the lake record is 388 U.S. 218, and the content page displays 388 U.S. 218 (1967).\",\"The parallel and vendor citations in the payload match the lake record: 87 S. Ct. 1926; 18 L. Ed. 2d 1149; 1967 U.S. LEXIS 1085.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"0b6b4ca01d560acf\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The quoted sentence fragment changes the source punctuation: the opinion has a comma after 'independent source,' because the sentence continues with harmless-error language, not a period after 'source.'\",\"severity\":\"medium\",\"proposed_fix\":\"Either remove the quotation marks and paraphrase, or quote the source exactly: \\\"vacate the conviction pending a hearing to determine whether the in-court identifications had an independent source, or whether, in any event, the introduction of the evidence was harmless error\\\".\",\"evidence_quote\":\"vacate the conviction pending a hearing to determine whether the in-court identifications had an independent source, or whether, in any event, the introduction of the evidence was harmless error\",\"needs_cl\":false,\"locator_note\":\"pin-242; text page marker *242 contains the passage.\"},\"reasons\":[\"The pinpoint lands on page 242, but the rendered/lake quote is not character-faithful.\",\"The lake record itself marks pin-242 quote_fidelity as mismatch.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The substantive independent-source/remand proposition appears supported; this refutation is limited to quote fidelity.\"],\"suggested_tightening\":\"Add the harmless-error alternative when describing the remedy, because the Court allowed reinstatement if the error was harmless.\"},{\"assertion_id\":\"a098d7c8725bed3f\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The pin-237 lake quote is not the Wade opinion passage at all; it is a corrupted block of the generated content page. The rendered quote also differs from the opinion's nested quotation/ellipsis formatting.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-237 with the actual page-237 passage and, if quoting verbatim, preserve the opinion text rather than the generated page prose.\",\"evidence_quote\":\"there can be <page-number citation-index=\\\"1\\\" label=\\\"237\\\">*237</page-number>little doubt that for Wade the post-indictment lineup was a critical stage of the prosecution at which he was “as much entitled to such aid [of counsel] ... as at the trial itself.”\",\"needs_cl\":false,\"locator_note\":\"pin-237; text line with page marker *237 contains the relevant passage.\"},\"reasons\":[\"The payload/lake quote begins with generated page frontmatter/content, not the Supreme Court opinion text.\",\"The actual opinion supports the critical-stage proposition, but the stored quote is not character-faithful.\",\"The lake record itself marks pin-237 quote_fidelity as mismatch.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The substantive rule appears supported; the defect is the corrupted/nonfaithful quote record.\"],\"suggested_tightening\":\"Use the exact Wade passage at 388 U.S. 237 and avoid converting the opinion's nested quotation and ellipsis if character fidelity is required.\"},{\"assertion_id\":\"3a38e10b60bb143f\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside lens A; no treatment finding is raised.\",\"The treatment fields displayed in content_page.md match the disclosed lake treatment fields, including good_law and as_of_treatment 2026-06-30.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment merits and currency are reserved for lens B.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed all 4 group_inventory.jsonl rows under lens A only.\"}",
+  "summary": {
+    "at": "2026-07-09T23:56:54-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-225ce2619a",
+      "F-S9-PR-86cd475dd1"
+    ],
+    "group_id": "_overhaul2/lake/cases/United States v. Wade.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "codex-A",
+    "lane_id": "codex-A-panel-prod-c80db5c7",
+    "lens": "A",
+    "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-c80db5c7.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "United States v. Wade"
+    ],
+    "tokens": {
+      "input": 146140,
+      "output": 6760,
+      "source": "codex-events",
+      "total": 152900
+    },
+    "verdict_map": {
+      "0b6b4ca01d560acf": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "3a38e10b60bb143f": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "3f2fb5d19fb2847f": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "a098d7c8725bed3f": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-225ce2619a",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-86cd475dd1",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 137.8
+  }
+}
