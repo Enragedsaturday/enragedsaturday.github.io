@@ -1,0 +1,119 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Will v. Michigan Department of State Police.json",
+    "lens": "B",
+    "notes": "Lens B only; no support or quote-fidelity findings made.",
+    "reviewed": [
+      {
+        "assertion_id": "aaa2c56a9c1dacbf",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "\"field_i_validity\": \"unverified\",\n    \"as_of_content\": null,\n    \"as_of_treatment\": null,",
+          "locator_note": "lake treatment/progeny fields for record_id Will v. Michigan Department of State Police",
+          "needs_cl": true,
+          "problem": "The authority identity and official citation are verified, but live-law currency is not verifiable from the disclosed record because treatment is expressly unverified and progeny/citator data are not derived.",
+          "proposed_fix": "Retain the citation/existence assertion, but do not imply current good-law status beyond the existing Treatment: Unverified qualifier until treatment/progeny verification is completed.",
+          "severity": "medium"
+        },
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity and citations verify the case and the selected official citation 491 U.S. 58.",
+          "The disclosed treatment fields do not verify that the authority remains live law as of any date.",
+          "No disclosed negative-treatment edge refutes the case, but under the stated default rule an empty unverified record cannot prove current currency."
+        ],
+        "residual_risks": [
+          "A completed citator/progeny record could reveal limitation, abrogation, or overruling not captured here."
+        ],
+        "suggested_tightening": "Keep the citation but label any current-law use as unverified until the treatment record is promoted.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": false
+      },
+      {
+        "assertion_id": "ae0df58e54b87326",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "\"s6_promotion\": {\n      \"from_record_id\": \"will-v-michigan-department-of-state-police--112293\",\n      \"to_record_id\": \"Will v. Michigan Department of State Police\",\n      \"as_of\": \"2026-07-07\",\n      \"born_status\": \"under_review\"\n    }",
+          "locator_note": "lake.provenance.s6_promotion and treatment.scope_note",
+          "needs_cl": false,
+          "problem": "The unverified treatment call itself matches the lake record, but the scope note says treatment/progeny were not derived until S6 promotion even though the same disclosed record shows an S6 promotion occurred on 2026-07-07.",
+          "proposed_fix": "Update the scope note to the current reason for nonverification, e.g. pending S9/two-key treatment verification, while retaining field_i_validity: unverified.",
+          "severity": "low"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "The content page and payload correctly report field_i_validity as unverified, with null as_of_content and as_of_treatment.",
+          "Treatment edges are empty and progeny are not enumerated, so no disclosed record overrules, abrogates, or limits the case.",
+          "The only currency defect is the stale process note referencing S6 despite disclosed S6 promotion provenance."
+        ],
+        "residual_risks": [
+          "Because treatment is unverified, the disclosed corpus still cannot establish affirmative good-law status."
+        ],
+        "suggested_tightening": "Normalize the treatment scope note to match the page body's S9/two-key verification language.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/Will v. Michigan Department of State Police.json\",\"reviewed\":[{\"assertion_id\":\"aaa2c56a9c1dacbf\",\"dimension\":\"existence\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":false,\"defect\":{\"problem\":\"The authority identity and official citation are verified, but live-law currency is not verifiable from the disclosed record because treatment is expressly unverified and progeny/citator data are not derived.\",\"severity\":\"medium\",\"proposed_fix\":\"Retain the citation/existence assertion, but do not imply current good-law status beyond the existing Treatment: Unverified qualifier until treatment/progeny verification is completed.\",\"evidence_quote\":\"\\\"field_i_validity\\\": \\\"unverified\\\",\\n    \\\"as_of_content\\\": null,\\n    \\\"as_of_treatment\\\": null,\",\"needs_cl\":true,\"locator_note\":\"lake treatment/progeny fields for record_id Will v. Michigan Department of State Police\"},\"reasons\":[\"Lake identity and citations verify the case and the selected official citation 491 U.S. 58.\",\"The disclosed treatment fields do not verify that the authority remains live law as of any date.\",\"No disclosed negative-treatment edge refutes the case, but under the stated default rule an empty unverified record cannot prove current currency.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"A completed citator/progeny record could reveal limitation, abrogation, or overruling not captured here.\"],\"suggested_tightening\":\"Keep the citation but label any current-law use as unverified until the treatment record is promoted.\"},{\"assertion_id\":\"ae0df58e54b87326\",\"dimension\":\"treatment\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The unverified treatment call itself matches the lake record, but the scope note says treatment/progeny were not derived until S6 promotion even though the same disclosed record shows an S6 promotion occurred on 2026-07-07.\",\"severity\":\"low\",\"proposed_fix\":\"Update the scope note to the current reason for nonverification, e.g. pending S9/two-key treatment verification, while retaining field_i_validity: unverified.\",\"evidence_quote\":\"\\\"s6_promotion\\\": {\\n      \\\"from_record_id\\\": \\\"will-v-michigan-department-of-state-police--112293\\\",\\n      \\\"to_record_id\\\": \\\"Will v. Michigan Department of State Police\\\",\\n      \\\"as_of\\\": \\\"2026-07-07\\\",\\n      \\\"born_status\\\": \\\"under_review\\\"\\n    }\",\"needs_cl\":false,\"locator_note\":\"lake.provenance.s6_promotion and treatment.scope_note\"},\"reasons\":[\"The content page and payload correctly report field_i_validity as unverified, with null as_of_content and as_of_treatment.\",\"Treatment edges are empty and progeny are not enumerated, so no disclosed record overrules, abrogates, or limits the case.\",\"The only currency defect is the stale process note referencing S6 despite disclosed S6 promotion provenance.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Because treatment is unverified, the disclosed corpus still cannot establish affirmative good-law status.\"],\"suggested_tightening\":\"Normalize the treatment scope note to match the page body's S9/two-key verification language.\"}],\"notes\":\"Lens B only; no support or quote-fidelity findings made.\"}",
+  "summary": {
+    "at": "2026-07-10T00:00:58-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-0555297e84",
+      "F-S9-PR-24ce3dc962"
+    ],
+    "group_id": "_overhaul2/lake/cases/Will v. Michigan Department of State Police.json",
+    "group_total_assertions": 2,
+    "lake_only_cases": [
+      "Will v. Michigan Department of State Police"
+    ],
+    "lane": "codex-B",
+    "lane_id": "codex-B-panel-prod-c6204cdb",
+    "lens": "B",
+    "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-c6204cdb.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [
+      "case 'Will v. Michigan Department of State Police' has no lead_opinion_id (text undisclosed)"
+    ],
+    "reviewed_count": 2,
+    "run": "prod",
+    "text_disclosed_cases": [],
+    "tokens": {
+      "input": 169901,
+      "output": 8217,
+      "source": "codex-events",
+      "total": 178118
+    },
+    "verdict_map": {
+      "aaa2c56a9c1dacbf": {
+        "dimension": "existence",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": false
+      },
+      "ae0df58e54b87326": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-0555297e84",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-24ce3dc962",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 162.7
+  }
+}

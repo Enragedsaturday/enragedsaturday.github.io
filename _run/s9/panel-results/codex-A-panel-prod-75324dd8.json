@@ -1,0 +1,148 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Whren v. United States.json",
+    "lens": "A",
+    "notes": "Reviewed all 4 group_inventory.jsonl rows under Lens A only.",
+    "reviewed": [
+      {
+        "assertion_id": "d9ef9cec234786f8",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity record verifies Whren v. United States as a U.S. Supreme Court case decided in 1996.",
+          "The official citation in the lake record is 517 U.S. 806 and the content page displays 517 U.S. 806 (1996).",
+          "Parallel and vendor citations in the payload match the lake citation fields."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "089f64a6eab10a9a",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "As a general matter, the decision to stop an automobile is reasonable",
+          "locator_note": "text/Whren v. United States__6197f8.txt contains the relevant page-810 passage; lake pinpoints[].quote for pin-810 does not match that passage.",
+          "needs_cl": false,
+          "problem": "pin-810's stored pinpoint quote is not a character-faithful opinion quote; it is a splice of page summary text and headings, and the lake record itself marks quote_fidelity as mismatch with no star marker.",
+          "proposed_fix": "Replace pin-810's pinpoint quote with the actual quoted sentence from page 810 and validate it against the star marker 810 passage.",
+          "severity": "medium"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload quote begins mid-summary and includes content headings like ## Issue and ## Rule, which are not part of the opinion text.",
+          "The disclosed opinion text at star 810 contains the displayed rule quote, but not the payload's long stored quote.",
+          "The lake record marks pin-810 quote_fidelity as mismatch and pinpoint_status as slip-only."
+        ],
+        "residual_risks": [
+          "The visible content-page quote at 517 U.S. at 810 appears supported; the defect is the registered pinpoint quote metadata."
+        ],
+        "suggested_tightening": "Regenerate pin-810 from the exact page-810 sentence and add a validated star marker or fragment.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "a1bdf1bcc4432ef6",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The quoted sentence appears verbatim in the disclosed opinion text on the page span after star marker 813 and before star marker 814.",
+          "The lake pinpoint for pin-813 carries the same quote, star_marker 813, and quote_fidelity matched.",
+          "The content page uses the same quoted sentence for the motive-irrelevance rule."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "7746a0608d1428ca",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A; no treatment defect is raised here.",
+          "The payload's field_i_validity, dates, scope note, and varies_by_point value match the lake treatment fields and content-page treatment metadata."
+        ],
+        "residual_risks": [
+          "No Lens B treatment/currency audit was performed."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Whren v. United States.json\",\"reviewed\":[{\"assertion_id\":\"d9ef9cec234786f8\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity record verifies Whren v. United States as a U.S. Supreme Court case decided in 1996.\",\"The official citation in the lake record is 517 U.S. 806 and the content page displays 517 U.S. 806 (1996).\",\"Parallel and vendor citations in the payload match the lake citation fields.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"089f64a6eab10a9a\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"pin-810's stored pinpoint quote is not a character-faithful opinion quote; it is a splice of page summary text and headings, and the lake record itself marks quote_fidelity as mismatch with no star marker.\",\"severity\":\"medium\",\"proposed_fix\":\"Replace pin-810's pinpoint quote with the actual quoted sentence from page 810 and validate it against the star marker 810 passage.\",\"evidence_quote\":\"As a general matter, the decision to stop an automobile is reasonable\",\"needs_cl\":false,\"locator_note\":\"text/Whren v. United States__6197f8.txt contains the relevant page-810 passage; lake pinpoints[].quote for pin-810 does not match that passage.\"},\"reasons\":[\"The payload quote begins mid-summary and includes content headings like ## Issue and ## Rule, which are not part of the opinion text.\",\"The disclosed opinion text at star 810 contains the displayed rule quote, but not the payload's long stored quote.\",\"The lake record marks pin-810 quote_fidelity as mismatch and pinpoint_status as slip-only.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The visible content-page quote at 517 U.S. at 810 appears supported; the defect is the registered pinpoint quote metadata.\"],\"suggested_tightening\":\"Regenerate pin-810 from the exact page-810 sentence and add a validated star marker or fragment.\"},{\"assertion_id\":\"a1bdf1bcc4432ef6\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The quoted sentence appears verbatim in the disclosed opinion text on the page span after star marker 813 and before star marker 814.\",\"The lake pinpoint for pin-813 carries the same quote, star_marker 813, and quote_fidelity matched.\",\"The content page uses the same quoted sentence for the motive-irrelevance rule.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"7746a0608d1428ca\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside Lens A; no treatment defect is raised here.\",\"The payload's field_i_validity, dates, scope note, and varies_by_point value match the lake treatment fields and content-page treatment metadata.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"No Lens B treatment/currency audit was performed.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed all 4 group_inventory.jsonl rows under Lens A only.\"}",
+  "summary": {
+    "at": "2026-07-10T00:00:00-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-0fa955013a"
+    ],
+    "group_id": "_overhaul2/lake/cases/Whren v. United States.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "codex-A",
+    "lane_id": "codex-A-panel-prod-75324dd8",
+    "lens": "A",
+    "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-75324dd8.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Whren v. United States"
+    ],
+    "tokens": {
+      "input": 355599,
+      "output": 6549,
+      "source": "codex-events",
+      "total": 362148
+    },
+    "verdict_map": {
+      "089f64a6eab10a9a": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "7746a0608d1428ca": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "a1bdf1bcc4432ef6": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "d9ef9cec234786f8": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-0fa955013a",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 140.0
+  }
+}

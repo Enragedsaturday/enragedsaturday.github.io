@@ -1,0 +1,168 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Wong Sun v. United States.json",
+    "lens": "A",
+    "notes": "",
+    "reviewed": [
+      {
+        "assertion_id": "809f5c187032b9c0",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record exists for Wong Sun v. United States and identifies the case as a U.S. Supreme Court decision dated 1963-01-14.",
+          "The official citation in the lake record is 371 U.S. 471, matching the content page display citation; the listed parallel and vendor citations also match the lake citation fields."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "17257bbb3de904d8",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "the connection between the arrest and the statement had \"become so attenuated as to dissipate the taint.\"",
+          "locator_note": "pin-491 corresponds to the page-*491 passage in text/Wong Sun v. United States__709c2a.txt.",
+          "needs_cl": false,
+          "problem": "The quoted words are substantively present at the cited passage, but the asserted quote is not character-faithful: the opinion text uses double quotation marks around the Nardone phrase, while the assertion uses single quotation marks. The lake pinpoint also marks quote_fidelity as mismatch.",
+          "proposed_fix": "Use the opinion's exact punctuation: the connection between the arrest and the statement had \"become so attenuated as to dissipate the taint.\"",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The phrase appears in the opinion text with inner double quotation marks, not the single quotation marks used in the asserted quote.",
+          "Because this is a quote-fidelity assertion, the punctuation mismatch prevents it from standing as framed."
+        ],
+        "residual_risks": [
+          "The underlying attenuation proposition is supported; only exact quote fidelity is refuted."
+        ],
+        "suggested_tightening": "Either quote the passage with exact internal double quotation marks or paraphrase the point without quotation marks.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "e9abdc45a82e759a",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "the more apt question in such a case is",
+          "locator_note": "pin-488 has page null/slip-only in the lake record and the lake record marks quote_fidelity as mismatch.",
+          "needs_cl": false,
+          "problem": "The asserted quote is not opinion text. It appears to be harvested from the content page across the Issue/Rule boundary, including the markdown heading '## Rule', and is not character-faithful to the case text.",
+          "proposed_fix": "Replace this harvested fragment with the actual 371 U.S. 487-488 passage supporting the rule, or remove the quote assertion for pin-488.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The asserted fragment includes content-page prose and the markdown heading '## Rule', which cannot be a verbatim Supreme Court quote.",
+          "The local opinion text at the relevant passage instead discusses independent source, attenuation, and exploitation of primary illegality."
+        ],
+        "residual_risks": [
+          "The black-letter rule on the page appears broadly supported by the actual 487-488 passage, but this particular quote-fidelity assertion is invalid."
+        ],
+        "suggested_tightening": "Anchor pin-488 to the actual passage beginning with the Court's 'We need not hold...' sentence and the 'more apt question' formulation.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "d98bbfea2668bdc8",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A's charter.",
+          "The content-page treatment fields match the lake treatment judgment fields: field_i_validity good_law, as_of_content 1963-01-14, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note."
+        ],
+        "residual_risks": [
+          "No substantive treatment audit was performed under Lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"A\",\n  \"group_id\": \"_overhaul2/lake/cases/Wong Sun v. United States.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"809f5c187032b9c0\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake identity record exists for Wong Sun v. United States and identifies the case as a U.S. Supreme Court decision dated 1963-01-14.\",\n        \"The official citation in the lake record is 371 U.S. 471, matching the content page display citation; the listed parallel and vendor citations also match the lake citation fields.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"17257bbb3de904d8\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The quoted words are substantively present at the cited passage, but the asserted quote is not character-faithful: the opinion text uses double quotation marks around the Nardone phrase, while the assertion uses single quotation marks. The lake pinpoint also marks quote_fidelity as mismatch.\",\n        \"severity\": \"low\",\n        \"proposed_fix\": \"Use the opinion's exact punctuation: the connection between the arrest and the statement had \\\"become so attenuated as to dissipate the taint.\\\"\",\n        \"evidence_quote\": \"the connection between the arrest and the statement had \\\"become so attenuated as to dissipate the taint.\\\"\",\n        \"needs_cl\": false,\n        \"locator_note\": \"pin-491 corresponds to the page-*491 passage in text/Wong Sun v. United States__709c2a.txt.\"\n      },\n      \"reasons\": [\n        \"The phrase appears in the opinion text with inner double quotation marks, not the single quotation marks used in the asserted quote.\",\n        \"Because this is a quote-fidelity assertion, the punctuation mismatch prevents it from standing as framed.\"\n      ],\n      \"breaks_true_positives\": true,\n      \"residual_risks\": [\n        \"The underlying attenuation proposition is supported; only exact quote fidelity is refuted.\"\n      ],\n      \"suggested_tightening\": \"Either quote the passage with exact internal double quotation marks or paraphrase the point without quotation marks.\"\n    },\n    {\n      \"assertion_id\": \"e9abdc45a82e759a\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The asserted quote is not opinion text. It appears to be harvested from the content page across the Issue/Rule boundary, including the markdown heading '## Rule', and is not character-faithful to the case text.\",\n        \"severity\": \"high\",\n        \"proposed_fix\": \"Replace this harvested fragment with the actual 371 U.S. 487-488 passage supporting the rule, or remove the quote assertion for pin-488.\",\n        \"evidence_quote\": \"the more apt question in such a case is\",\n        \"needs_cl\": false,\n        \"locator_note\": \"pin-488 has page null/slip-only in the lake record and the lake record marks quote_fidelity as mismatch.\"\n      },\n      \"reasons\": [\n        \"The asserted fragment includes content-page prose and the markdown heading '## Rule', which cannot be a verbatim Supreme Court quote.\",\n        \"The local opinion text at the relevant passage instead discusses independent source, attenuation, and exploitation of primary illegality.\"\n      ],\n      \"breaks_true_positives\": true,\n      \"residual_risks\": [\n        \"The black-letter rule on the page appears broadly supported by the actual 487-488 passage, but this particular quote-fidelity assertion is invalid.\"\n      ],\n      \"suggested_tightening\": \"Anchor pin-488 to the actual passage beginning with the Court's 'We need not hold...' sentence and the 'more apt question' formulation.\"\n    },\n    {\n      \"assertion_id\": \"d98bbfea2668bdc8\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Treatment/currency is outside Lens A's charter.\",\n        \"The content-page treatment fields match the lake treatment judgment fields: field_i_validity good_law, as_of_content 1963-01-14, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"No substantive treatment audit was performed under Lens A.\"\n      ],\n      \"suggested_tightening\": null\n    }\n  ],\n  \"notes\": \"\"\n}",
+  "summary": {
+    "at": "2026-07-10T00:01:52-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-3368ec8d84",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-4e5183c014",
+      "F-S9-PR-f7e4ae2e6c"
+    ],
+    "group_id": "_overhaul2/lake/cases/Wong Sun v. United States.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "codex-A",
+    "lane_id": "codex-A-panel-prod-8e393b42",
+    "lens": "A",
+    "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-8e393b42.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Wong Sun v. United States"
+    ],
+    "tokens": {
+      "input": 405126,
+      "output": 7384,
+      "source": "codex-events",
+      "total": 412510
+    },
+    "verdict_map": {
+      "17257bbb3de904d8": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "809f5c187032b9c0": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "d98bbfea2668bdc8": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "e9abdc45a82e759a": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-4e5183c014",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-f7e4ae2e6c",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-3368ec8d84",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": 199.1
+  }
+}

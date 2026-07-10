@@ -1,0 +1,188 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "content/cases/Board of County Commissioners of Bryan County v. Brown.md",
+    "lens": "A",
+    "notes": "No text/<case>.txt file is present, and the lake record has an empty pinpoints array. Substantive support assertions therefore fail under the disclosed-evidence-only rule.",
+    "reviewed": [
+      {
+        "assertion_id": "b53dabc8c909f082",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record matches the asserted case through record_id/input_case_name and confirms court U.S., court_level scotus, date_decided 1997-04-28, year 1997, and docket 95-1100.",
+          "The lake citations record gives official citation 520 U.S. 397 and the asserted parallel and vendor-neutral citations."
+        ],
+        "residual_risks": [
+          "The lake canonical case_name includes 'the' before County Commissioners, but the lake also records the page title as input_case_name and canonical_name_match is true."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "56bcdececef74879",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "\"pinpoints\": []",
+          "locator_note": "locator field holding",
+          "needs_cl": true,
+          "problem": "The asserted holding cannot be verified from the disclosed evidence because there is no cached opinion text and the lake record contains no holding field or pinpoint quotes supporting the proposition.",
+          "proposed_fix": "Add the cached opinion text or populate lake pinpoints/holding fields that support the deliberate-indifference, plainly-obvious-consequence, and specific-injury components of the holding.",
+          "severity": "high"
+        },
+        "dimension": "support",
+        "reasons": [
+          "The page's own holding is the assertion under review and cannot verify itself.",
+          "The lake record verifies identity/citation but not the stated substantive holding.",
+          "Under the ground rules, unsupported uncertainty must be refuted."
+        ],
+        "residual_risks": [
+          "The proposition may be accurate externally, but that cannot be confirmed from the disclosed files."
+        ],
+        "suggested_tightening": "Require a lake holding, populated pinpoints, or text cache before accepting case-holding support assertions.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": false
+      },
+      {
+        "assertion_id": "e807736bae4d67e0",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "\"pinpoints\": []",
+          "locator_note": "locator home Section 1983 Liability and Qualified Immunity",
+          "needs_cl": true,
+          "problem": "The asserted Anchor home-role for Section 1983 Liability and Qualified Immunity does not follow from disclosed opinion text or a lake holding because neither is present.",
+          "proposed_fix": "Provide the relevant section-page criteria plus opinion text or lake holding showing why this case is an Anchor for that home.",
+          "severity": "medium"
+        },
+        "dimension": "support",
+        "reasons": [
+          "The home-role appears in content_page.md, but that is the assertion source under review.",
+          "The lake record contains identity, citations, and treatment stubs, not substantive role support.",
+          "No disclosed section page or opinion text verifies the Anchor classification."
+        ],
+        "residual_risks": [
+          "The Anchor role may be substantively plausible, but it is not verifiable from the disclosed evidence."
+        ],
+        "suggested_tightening": "Require home-role assertions to cite either a section inventory rule or a verified lake holding/pinpoint showing the case's doctrinal role.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": false
+      },
+      {
+        "assertion_id": "b38ce739bfec9cd6",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Lens A does not assess treatment/currency.",
+          "For the weight label only, the lake record confirms U.S. Supreme Court identity through court U.S., court_level scotus, and official U.S. citation, supporting Binding — SCOTUS."
+        ],
+        "residual_risks": [
+          "No treatment or citator currency assessment is made under Lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "e74eabb3fc583996",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Lens A does not assess treatment/currency.",
+          "The asserted treatment fields match the lake treatment stub: field_i_validity unverified, as_of_content null, as_of_treatment null, composite_basis unverified, composite_basis_ref null, varies_by_point false, and the same scope_note."
+        ],
+        "residual_risks": [
+          "No good-law or subsequent-history conclusion is reviewed under Lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"A\",\n  \"group_id\": \"content/cases/Board of County Commissioners of Bryan County v. Brown.md\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"b53dabc8c909f082\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake identity record matches the asserted case through record_id/input_case_name and confirms court U.S., court_level scotus, date_decided 1997-04-28, year 1997, and docket 95-1100.\",\n        \"The lake citations record gives official citation 520 U.S. 397 and the asserted parallel and vendor-neutral citations.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The lake canonical case_name includes 'the' before County Commissioners, but the lake also records the page title as input_case_name and canonical_name_match is true.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"56bcdececef74879\",\n      \"dimension\": \"support\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": false,\n      \"defect\": {\n        \"problem\": \"The asserted holding cannot be verified from the disclosed evidence because there is no cached opinion text and the lake record contains no holding field or pinpoint quotes supporting the proposition.\",\n        \"severity\": \"high\",\n        \"proposed_fix\": \"Add the cached opinion text or populate lake pinpoints/holding fields that support the deliberate-indifference, plainly-obvious-consequence, and specific-injury components of the holding.\",\n        \"evidence_quote\": \"\\\"pinpoints\\\": []\",\n        \"needs_cl\": true,\n        \"locator_note\": \"locator field holding\"\n      },\n      \"reasons\": [\n        \"The page's own holding is the assertion under review and cannot verify itself.\",\n        \"The lake record verifies identity/citation but not the stated substantive holding.\",\n        \"Under the ground rules, unsupported uncertainty must be refuted.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The proposition may be accurate externally, but that cannot be confirmed from the disclosed files.\"\n      ],\n      \"suggested_tightening\": \"Require a lake holding, populated pinpoints, or text cache before accepting case-holding support assertions.\"\n    },\n    {\n      \"assertion_id\": \"e807736bae4d67e0\",\n      \"dimension\": \"support\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": false,\n      \"defect\": {\n        \"problem\": \"The asserted Anchor home-role for Section 1983 Liability and Qualified Immunity does not follow from disclosed opinion text or a lake holding because neither is present.\",\n        \"severity\": \"medium\",\n        \"proposed_fix\": \"Provide the relevant section-page criteria plus opinion text or lake holding showing why this case is an Anchor for that home.\",\n        \"evidence_quote\": \"\\\"pinpoints\\\": []\",\n        \"needs_cl\": true,\n        \"locator_note\": \"locator home Section 1983 Liability and Qualified Immunity\"\n      },\n      \"reasons\": [\n        \"The home-role appears in content_page.md, but that is the assertion source under review.\",\n        \"The lake record contains identity, citations, and treatment stubs, not substantive role support.\",\n        \"No disclosed section page or opinion text verifies the Anchor classification.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The Anchor role may be substantively plausible, but it is not verifiable from the disclosed evidence.\"\n      ],\n      \"suggested_tightening\": \"Require home-role assertions to cite either a section inventory rule or a verified lake holding/pinpoint showing the case's doctrinal role.\"\n    },\n    {\n      \"assertion_id\": \"b38ce739bfec9cd6\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Lens A does not assess treatment/currency.\",\n        \"For the weight label only, the lake record confirms U.S. Supreme Court identity through court U.S., court_level scotus, and official U.S. citation, supporting Binding — SCOTUS.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"No treatment or citator currency assessment is made under Lens A.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"e74eabb3fc583996\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Lens A does not assess treatment/currency.\",\n        \"The asserted treatment fields match the lake treatment stub: field_i_validity unverified, as_of_content null, as_of_treatment null, composite_basis unverified, composite_basis_ref null, varies_by_point false, and the same scope_note.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"No good-law or subsequent-history conclusion is reviewed under Lens A.\"\n      ],\n      \"suggested_tightening\": null\n    }\n  ],\n  \"notes\": \"No text/<case>.txt file is present, and the lake record has an empty pinpoints array. Substantive support assertions therefore fail under the disclosed-evidence-only rule.\"\n}",
+  "summary": {
+    "at": "2026-07-10T00:06:54-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-b53069e9ca",
+      "F-S9-PR-dbc8d35023"
+    ],
+    "group_id": "content/cases/Board of County Commissioners of Bryan County v. Brown.md",
+    "group_total_assertions": 5,
+    "lake_only_cases": [
+      "Board of County Commissioners of Bryan County v. Brown"
+    ],
+    "lane": "codex-A",
+    "lane_id": "codex-A-panel-prod-bc05edbe",
+    "lens": "A",
+    "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-bc05edbe.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [
+      "case 'Board of County Commissioners of Bryan County v. Brown' has no lead_opinion_id (text undisclosed)"
+    ],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [],
+    "tokens": {
+      "input": 104469,
+      "output": 4313,
+      "source": "codex-events",
+      "total": 108782
+    },
+    "verdict_map": {
+      "56bcdececef74879": {
+        "dimension": "support",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": false
+      },
+      "b38ce739bfec9cd6": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "b53dabc8c909f082": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "e74eabb3fc583996": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "e807736bae4d67e0": {
+        "dimension": "support",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": false
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-b53069e9ca",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-dbc8d35023",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 88.0
+  }
+}
