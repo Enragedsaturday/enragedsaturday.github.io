@@ -1,0 +1,127 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Mooney v. Holohan.json",
+    "lens": "A",
+    "notes": "Reviewed only the three assertion_ids present in group_inventory.jsonl under Lens A.",
+    "reviewed": [
+      {
+        "assertion_id": "19586de6086a42dd",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record lists case_name 'Mooney v. Holohan', case_name_full 'Mooney v. Holohan, Warden', court 'U.S. Supreme Court', date_decided '1935-01-21', and year 1935.",
+          "The lake citation fields identify the official citation as 294 U.S. 103 and include the same parallel/vendor citations shown in the payload."
+        ],
+        "residual_risks": [
+          "The lake identity_method is marked pending and party_name_in_text is false, but the disclosed lake citation and identity fields verify the asserted citation."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "e15a04573eaaefc6",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "It is a requirement that cannot be deemed tó be satisfied by mere notice and hearing if a State has contrived a conviction through the pretense of a trial",
+          "locator_note": "pin_id pin-112; lake pinpoints[0]; text opinion around the *112 star pagination passage",
+          "needs_cl": false,
+          "problem": "The pin-112 quote stored in the lake is not a character-faithful excerpt from the opinion; it is a harvested excerpt from the rendered content page beginning with the page header/background, and the lake itself marks quote_fidelity as mismatch.",
+          "proposed_fix": "Replace pin-112 with the exact opinion passage beginning at the page-112 due-process paragraph, and set the page/pin metadata to the actual 294 U.S. page location.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The lake pinpoint quote begins with '--- # Mooney v. Holohan *294 U.S. 103 (1935)*' rather than with the opinion passage quoted on the content page.",
+          "The disclosed opinion text contains the relevant due-process language at the *112 passage, but the stored pin quote does not reproduce that passage.",
+          "The lake pinpoint metadata expressly records quote_fidelity as 'mismatch' and pinpoint_status as 'slip-only'."
+        ],
+        "residual_risks": [
+          "The content-page displayed quote is substantively the intended passage, but strict character fidelity to the disclosed text also requires resolving the OCR form 'tó' versus normalized 'to'."
+        ],
+        "suggested_tightening": "Reharvest pin-112 from text/Mooney v. Holohan__a0d4dc.txt, not from content_page.md.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "5e50c9722df81ae1",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The treatment payload matches the disclosed lake treatment fields, including field_i_validity 'good_law', as_of_content '1935-01-21', as_of_treatment '2026-06-30', varies_by_point false, and the stated scope_note.",
+          "No treatment/currency defect is raised under Lens A."
+        ],
+        "residual_risks": [
+          "Treatment and currency substance are reserved for Lens B and were not independently adjudicated here."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"A\",\n  \"group_id\": \"_overhaul2/lake/cases/Mooney v. Holohan.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"19586de6086a42dd\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake identity record lists case_name 'Mooney v. Holohan', case_name_full 'Mooney v. Holohan, Warden', court 'U.S. Supreme Court', date_decided '1935-01-21', and year 1935.\",\n        \"The lake citation fields identify the official citation as 294 U.S. 103 and include the same parallel/vendor citations shown in the payload.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The lake identity_method is marked pending and party_name_in_text is false, but the disclosed lake citation and identity fields verify the asserted citation.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"e15a04573eaaefc6\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The pin-112 quote stored in the lake is not a character-faithful excerpt from the opinion; it is a harvested excerpt from the rendered content page beginning with the page header/background, and the lake itself marks quote_fidelity as mismatch.\",\n        \"severity\": \"high\",\n        \"proposed_fix\": \"Replace pin-112 with the exact opinion passage beginning at the page-112 due-process paragraph, and set the page/pin metadata to the actual 294 U.S. page location.\",\n        \"evidence_quote\": \"It is a requirement that cannot be deemed tó be satisfied by mere notice and hearing if a State has contrived a conviction through the pretense of a trial\",\n        \"needs_cl\": false,\n        \"locator_note\": \"pin_id pin-112; lake pinpoints[0]; text opinion around the *112 star pagination passage\"\n      },\n      \"reasons\": [\n        \"The lake pinpoint quote begins with '--- # Mooney v. Holohan *294 U.S. 103 (1935)*' rather than with the opinion passage quoted on the content page.\",\n        \"The disclosed opinion text contains the relevant due-process language at the *112 passage, but the stored pin quote does not reproduce that passage.\",\n        \"The lake pinpoint metadata expressly records quote_fidelity as 'mismatch' and pinpoint_status as 'slip-only'.\"\n      ],\n      \"breaks_true_positives\": true,\n      \"residual_risks\": [\n        \"The content-page displayed quote is substantively the intended passage, but strict character fidelity to the disclosed text also requires resolving the OCR form 'tó' versus normalized 'to'.\"\n      ],\n      \"suggested_tightening\": \"Reharvest pin-112 from text/Mooney v. Holohan__a0d4dc.txt, not from content_page.md.\"\n    },\n    {\n      \"assertion_id\": \"5e50c9722df81ae1\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The treatment payload matches the disclosed lake treatment fields, including field_i_validity 'good_law', as_of_content '1935-01-21', as_of_treatment '2026-06-30', varies_by_point false, and the stated scope_note.\",\n        \"No treatment/currency defect is raised under Lens A.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Treatment and currency substance are reserved for Lens B and were not independently adjudicated here.\"\n      ],\n      \"suggested_tightening\": null\n    }\n  ],\n  \"notes\": \"Reviewed only the three assertion_ids present in group_inventory.jsonl under Lens A.\"\n}",
+  "summary": {
+    "at": "2026-07-09T23:34:32-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-924a1a8193"
+    ],
+    "group_id": "_overhaul2/lake/cases/Mooney v. Holohan.json",
+    "group_total_assertions": 3,
+    "lake_only_cases": [],
+    "lane": "codex-A",
+    "lane_id": "codex-A-panel-prod-96e08ade",
+    "lens": "A",
+    "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-96e08ade.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 3,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Mooney v. Holohan"
+    ],
+    "tokens": {
+      "input": 150413,
+      "output": 6047,
+      "source": "codex-events",
+      "total": 156460
+    },
+    "verdict_map": {
+      "19586de6086a42dd": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "5e50c9722df81ae1": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "e15a04573eaaefc6": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-924a1a8193",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 122.4
+  }
+}

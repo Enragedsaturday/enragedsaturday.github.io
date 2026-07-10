@@ -1,0 +1,124 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/United States v. August.json",
+    "lens": "A",
+    "notes": "Reviewed all 3 rows in group_inventory.jsonl using only disclosed local files.",
+    "reviewed": [
+      {
+        "assertion_id": "92aabf18771c7b8d",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record identifies United States v. August, U.S. Court of Appeals for the Fifth Circuit, decided 2025-05-08, docket 24-30457.",
+          "The lake official citation is 136 F.4th 595, matching the content page display and inventory payload."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "918704732f03eacf",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "A protective sweep is lawful if:",
+          "locator_note": "lake pinpoints[0] / content_page Rule ^pin-op5",
+          "needs_cl": false,
+          "problem": "pin-op5's stored quote is not an opinion quote; it is harvested content-page/frontmatter prose ending before the actual quoted rule. The lake record itself marks quote_fidelity as mismatch.",
+          "proposed_fix": "Re-harvest pin-op5 so the stored quote is the actual rule passage from slip opinion page 5 beginning with “A protective sweep is lawful if:” or remove the pinpoint until corrected.",
+          "severity": "medium"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload quote begins with page markup/content-page text: \"--- # United States v. August *136 F.4th 595...\" rather than text from the opinion.",
+          "The opinion text at slip page 5 contains the actual protective-sweep rule quote, while the lake pinpoint quote omits that quoted rule and is marked \"mismatch\"."
+        ],
+        "residual_risks": [
+          "The visible rule quote in content_page.md appears supported by slip page 5 after whitespace normalization; the defect is the stored pinpoint quote attached to pin-op5."
+        ],
+        "suggested_tightening": "Limit pin-op5 to the rule quotation only, and preserve the slip-page locator as slip op. at 5.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "bfbae02e5183bfe8",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside lens A, so no treatment finding is raised.",
+          "The content page treatment fields match the disclosed lake fields: field_i_validity good_law, as_of_content 2025-05-08, as_of_treatment 2026-06-30, varies_by_point false."
+        ],
+        "residual_risks": [
+          "No independent treatment audit was performed under lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/United States v. August.json\",\"reviewed\":[{\"assertion_id\":\"92aabf18771c7b8d\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record identifies United States v. August, U.S. Court of Appeals for the Fifth Circuit, decided 2025-05-08, docket 24-30457.\",\"The lake official citation is 136 F.4th 595, matching the content page display and inventory payload.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"918704732f03eacf\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"pin-op5's stored quote is not an opinion quote; it is harvested content-page/frontmatter prose ending before the actual quoted rule. The lake record itself marks quote_fidelity as mismatch.\",\"severity\":\"medium\",\"proposed_fix\":\"Re-harvest pin-op5 so the stored quote is the actual rule passage from slip opinion page 5 beginning with “A protective sweep is lawful if:” or remove the pinpoint until corrected.\",\"evidence_quote\":\"A protective sweep is lawful if:\",\"needs_cl\":false,\"locator_note\":\"lake pinpoints[0] / content_page Rule ^pin-op5\"},\"reasons\":[\"The payload quote begins with page markup/content-page text: \\\"--- # United States v. August *136 F.4th 595...\\\" rather than text from the opinion.\",\"The opinion text at slip page 5 contains the actual protective-sweep rule quote, while the lake pinpoint quote omits that quoted rule and is marked \\\"mismatch\\\".\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The visible rule quote in content_page.md appears supported by slip page 5 after whitespace normalization; the defect is the stored pinpoint quote attached to pin-op5.\"],\"suggested_tightening\":\"Limit pin-op5 to the rule quotation only, and preserve the slip-page locator as slip op. at 5.\"},{\"assertion_id\":\"bfbae02e5183bfe8\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside lens A, so no treatment finding is raised.\",\"The content page treatment fields match the disclosed lake fields: field_i_validity good_law, as_of_content 2025-05-08, as_of_treatment 2026-06-30, varies_by_point false.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"No independent treatment audit was performed under lens A.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed all 3 rows in group_inventory.jsonl using only disclosed local files.\"}",
+  "summary": {
+    "at": "2026-07-09T22:42:47-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-6dfa696c0d"
+    ],
+    "group_id": "_overhaul2/lake/cases/United States v. August.json",
+    "group_total_assertions": 3,
+    "lake_only_cases": [],
+    "lane": "codex-A",
+    "lane_id": "codex-A-panel-prod-36abd5b3",
+    "lens": "A",
+    "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-36abd5b3.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 3,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "United States v. August"
+    ],
+    "tokens": {
+      "input": 136570,
+      "output": 5607,
+      "source": "codex-events",
+      "total": 142177
+    },
+    "verdict_map": {
+      "918704732f03eacf": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "92aabf18771c7b8d": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "bfbae02e5183bfe8": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-6dfa696c0d",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 109.6
+  }
+}

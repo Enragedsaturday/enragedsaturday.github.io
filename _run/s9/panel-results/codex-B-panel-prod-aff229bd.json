@@ -1,0 +1,107 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Gutierrez v. Saenz.json",
+    "lens": "B",
+    "notes": "Lens B only; no support or quote-fidelity findings made.",
+    "reviewed": [
+      {
+        "assertion_id": "5b3185b500bd8ad8",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Frontier stub: treatment/progeny intentionally not derived until S6 promotion.",
+          "locator_note": "lake/Gutierrez v. Saenz__764c1a.json treatment/progeny; content_page.md Treatment & subsequent history",
+          "needs_cl": true,
+          "problem": "The disclosed record verifies the citation and identity, but does not verify the currency/live-law status required by lens B; treatment is unverified and progeny/citator data are absent.",
+          "proposed_fix": "Do not treat the case-cite row as a live-law/currency positive until treatment/progeny derivation is completed; keep only an identity/citation assertion or add an explicit unverified-currency caveat.",
+          "severity": "medium"
+        },
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity/citations support that Gutierrez v. Saenz is the record and that 606 U.S. 305 is the selected official citation.",
+          "For currency, the same lake record marks field_i_validity as unverified, has no treatment edges, and progeny has rows_cached 0 and citation_count null.",
+          "Under the default-to-refuted rule, the live-law component cannot be verified from the disclosed evidence."
+        ],
+        "residual_risks": [
+          "The official citation may still be correct as an identity assertion; this finding is limited to the currency/live-law angle."
+        ],
+        "suggested_tightening": "Split case-cite existence from live-law currency, or require a verified treatment status before existence rows are treated as current-law positives.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": false
+      },
+      {
+        "assertion_id": "02da7e4a1ddb08f1",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The row asserts field_i_validity unverified, as_of_content null, as_of_treatment null, varies_by_point false, and the frontier-stub scope note; each matches the lake treatment fields and page frontmatter.",
+          "The lake has treatment.edges [] and progeny rows_cached 0/citation_count null, so the unverified treatment call is consistent with the disclosed record.",
+          "No disclosed progeny edge or treatment field says the case has been overruled, abrogated, superseded, or limited."
+        ],
+        "residual_risks": [
+          "No affirmative good-law conclusion is possible from the disclosed materials because the record is under_review and treatment/progeny have not been derived."
+        ],
+        "suggested_tightening": "Keep the unverified treatment banner until citator/progeny verification is completed.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/Gutierrez v. Saenz.json\",\"reviewed\":[{\"assertion_id\":\"5b3185b500bd8ad8\",\"dimension\":\"existence\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":false,\"defect\":{\"problem\":\"The disclosed record verifies the citation and identity, but does not verify the currency/live-law status required by lens B; treatment is unverified and progeny/citator data are absent.\",\"severity\":\"medium\",\"proposed_fix\":\"Do not treat the case-cite row as a live-law/currency positive until treatment/progeny derivation is completed; keep only an identity/citation assertion or add an explicit unverified-currency caveat.\",\"evidence_quote\":\"Frontier stub: treatment/progeny intentionally not derived until S6 promotion.\",\"needs_cl\":true,\"locator_note\":\"lake/Gutierrez v. Saenz__764c1a.json treatment/progeny; content_page.md Treatment & subsequent history\"},\"reasons\":[\"Lake identity/citations support that Gutierrez v. Saenz is the record and that 606 U.S. 305 is the selected official citation.\",\"For currency, the same lake record marks field_i_validity as unverified, has no treatment edges, and progeny has rows_cached 0 and citation_count null.\",\"Under the default-to-refuted rule, the live-law component cannot be verified from the disclosed evidence.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The official citation may still be correct as an identity assertion; this finding is limited to the currency/live-law angle.\"],\"suggested_tightening\":\"Split case-cite existence from live-law currency, or require a verified treatment status before existence rows are treated as current-law positives.\"},{\"assertion_id\":\"02da7e4a1ddb08f1\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The row asserts field_i_validity unverified, as_of_content null, as_of_treatment null, varies_by_point false, and the frontier-stub scope note; each matches the lake treatment fields and page frontmatter.\",\"The lake has treatment.edges [] and progeny rows_cached 0/citation_count null, so the unverified treatment call is consistent with the disclosed record.\",\"No disclosed progeny edge or treatment field says the case has been overruled, abrogated, superseded, or limited.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"No affirmative good-law conclusion is possible from the disclosed materials because the record is under_review and treatment/progeny have not been derived.\"],\"suggested_tightening\":\"Keep the unverified treatment banner until citator/progeny verification is completed.\"}],\"notes\":\"Lens B only; no support or quote-fidelity findings made.\"}",
+  "summary": {
+    "at": "2026-07-09T21:44:50-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-42be356ec5"
+    ],
+    "group_id": "_overhaul2/lake/cases/Gutierrez v. Saenz.json",
+    "group_total_assertions": 2,
+    "lake_only_cases": [
+      "Gutierrez v. Saenz"
+    ],
+    "lane": "codex-B",
+    "lane_id": "codex-B-panel-prod-aff229bd",
+    "lens": "B",
+    "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-aff229bd.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [
+      "case 'Gutierrez v. Saenz' has no lead_opinion_id (text undisclosed)"
+    ],
+    "reviewed_count": 2,
+    "run": "prod",
+    "text_disclosed_cases": [],
+    "tokens": {
+      "input": 116460,
+      "output": 6040,
+      "source": "codex-events",
+      "total": 122500
+    },
+    "verdict_map": {
+      "02da7e4a1ddb08f1": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "5b3185b500bd8ad8": {
+        "dimension": "existence",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": false
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-42be356ec5",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 120.0
+  }
+}

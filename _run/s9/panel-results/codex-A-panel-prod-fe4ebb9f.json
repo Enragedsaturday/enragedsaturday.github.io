@@ -1,0 +1,159 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Johnson v. United States.json",
+    "lens": "A",
+    "notes": "Lens A review only; no external sources used.",
+    "reviewed": [
+      {
+        "assertion_id": "0e54b48b86982a9a",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record is verified for Johnson v. United States, U.S. Supreme Court, decided 1948-02-02.",
+          "The content citation 333 U.S. 10 (1948) matches the lake official citation and year; the listed parallel/vendor citations also match the lake citation fields."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "927d4ccc56e2effe",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "--- # Johnson v. United States *333 U.S. 10 (1948)* · U.S. Supreme Court · **Binding — SCOTUS**",
+          "locator_note": "lake pinpoints[].id=pin-13; text lines around star pages 13-14 contain the actual quoted passage.",
+          "needs_cl": false,
+          "problem": "pin-13's stored quote is not a verbatim opinion passage; it is harvested page/header/background material and omits the cited Fourth Amendment passage.",
+          "proposed_fix": "Replace pin-13 with the actual passage beginning at star page 13 and continuing onto page 14: the sentence beginning 'The point of the Fourth Amendment...' through 'ferreting out crime.'",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The lake pinpoints[] quote for pin-13 begins with page metadata/header text, not the Supreme Court opinion language.",
+          "The cached opinion text contains the relevant passage at the 13-14 page break: 'The point of the Fourth Amendment...' followed by the neutral-and-detached-magistrate sentence."
+        ],
+        "residual_risks": [
+          "The content page's displayed pin-13 quotation appears supportable after normalizing the page break; the refutation is directed at the disclosed pin-13 payload in the lake/inventory."
+        ],
+        "suggested_tightening": "Regenerate pin-13 from text/Johnson v. United States__d5cdf2.txt rather than from the built page.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "d7d8c3a4066f9d7b",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Any assumption that evidence sufficient to support a magistrate’s disinterested determination to issue a search warrant will justify the officers in making a search without a warrant would reduce the Amendment to a nullity and leave the people’s homes secure only in the discretion of police officers.",
+          "locator_note": "text line 75; star page 14.",
+          "needs_cl": false,
+          "problem": "The pin-14 quote lands on the right sentence, but it is not character-faithful because the cached opinion uses curly apostrophes in magistrate’s and people’s while the payload uses straight apostrophes.",
+          "proposed_fix": "Change the quote to use the cached opinion's characters: magistrate’s and people’s.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The sentence appears in the cached opinion at star page 14, so the substantive quote and pin are supported.",
+          "Strict character fidelity fails only on apostrophe characters: text has magistrate’s/people’s; payload has magistrate's/people's."
+        ],
+        "residual_risks": [
+          "If the corpus has an explicit typography-normalization policy, this could be treated as acceptable; under the stated character-faithful rule it needs modification."
+        ],
+        "suggested_tightening": "Use exact cached-opinion punctuation for all verbatim quotes.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "0c6280240a37cee0",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The treatment payload matches the lake treatment fields: field_i_validity good_law, as_of_content 1948-02-02, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note.",
+          "Treatment/currency is outside Lens A; no support or quote-fidelity defect is raised."
+        ],
+        "residual_risks": [
+          "Treatment currency was not independently evaluated under this lens."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Johnson v. United States.json\",\"reviewed\":[{\"assertion_id\":\"0e54b48b86982a9a\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake identity record is verified for Johnson v. United States, U.S. Supreme Court, decided 1948-02-02.\",\"The content citation 333 U.S. 10 (1948) matches the lake official citation and year; the listed parallel/vendor citations also match the lake citation fields.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"927d4ccc56e2effe\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"pin-13's stored quote is not a verbatim opinion passage; it is harvested page/header/background material and omits the cited Fourth Amendment passage.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-13 with the actual passage beginning at star page 13 and continuing onto page 14: the sentence beginning 'The point of the Fourth Amendment...' through 'ferreting out crime.'\",\"evidence_quote\":\"--- # Johnson v. United States *333 U.S. 10 (1948)* · U.S. Supreme Court · **Binding — SCOTUS**\",\"needs_cl\":false,\"locator_note\":\"lake pinpoints[].id=pin-13; text lines around star pages 13-14 contain the actual quoted passage.\"},\"reasons\":[\"The lake pinpoints[] quote for pin-13 begins with page metadata/header text, not the Supreme Court opinion language.\",\"The cached opinion text contains the relevant passage at the 13-14 page break: 'The point of the Fourth Amendment...' followed by the neutral-and-detached-magistrate sentence.\"],\"breaks_true_positives\":true,\"residual_risks\":[\"The content page's displayed pin-13 quotation appears supportable after normalizing the page break; the refutation is directed at the disclosed pin-13 payload in the lake/inventory.\"],\"suggested_tightening\":\"Regenerate pin-13 from text/Johnson v. United States__d5cdf2.txt rather than from the built page.\"},{\"assertion_id\":\"d7d8c3a4066f9d7b\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The pin-14 quote lands on the right sentence, but it is not character-faithful because the cached opinion uses curly apostrophes in magistrate’s and people’s while the payload uses straight apostrophes.\",\"severity\":\"low\",\"proposed_fix\":\"Change the quote to use the cached opinion's characters: magistrate’s and people’s.\",\"evidence_quote\":\"Any assumption that evidence sufficient to support a magistrate’s disinterested determination to issue a search warrant will justify the officers in making a search without a warrant would reduce the Amendment to a nullity and leave the people’s homes secure only in the discretion of police officers.\",\"needs_cl\":false,\"locator_note\":\"text line 75; star page 14.\"},\"reasons\":[\"The sentence appears in the cached opinion at star page 14, so the substantive quote and pin are supported.\",\"Strict character fidelity fails only on apostrophe characters: text has magistrate’s/people’s; payload has magistrate's/people's.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"If the corpus has an explicit typography-normalization policy, this could be treated as acceptable; under the stated character-faithful rule it needs modification.\"],\"suggested_tightening\":\"Use exact cached-opinion punctuation for all verbatim quotes.\"},{\"assertion_id\":\"0c6280240a37cee0\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The treatment payload matches the lake treatment fields: field_i_validity good_law, as_of_content 1948-02-02, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note.\",\"Treatment/currency is outside Lens A; no support or quote-fidelity defect is raised.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment currency was not independently evaluated under this lens.\"],\"suggested_tightening\":null}],\"notes\":\"Lens A review only; no external sources used.\"}",
+  "summary": {
+    "at": "2026-07-09T23:28:33-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-37c8206676",
+      "F-S9-PR-f3a91ced8b"
+    ],
+    "group_id": "_overhaul2/lake/cases/Johnson v. United States.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "codex-A",
+    "lane_id": "codex-A-panel-prod-fe4ebb9f",
+    "lens": "A",
+    "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-fe4ebb9f.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Johnson v. United States"
+    ],
+    "tokens": {
+      "input": 167878,
+      "output": 6756,
+      "source": "codex-events",
+      "total": 174634
+    },
+    "verdict_map": {
+      "0c6280240a37cee0": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "0e54b48b86982a9a": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "927d4ccc56e2effe": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "d7d8c3a4066f9d7b": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-37c8206676",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-f3a91ced8b",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 137.7
+  }
+}

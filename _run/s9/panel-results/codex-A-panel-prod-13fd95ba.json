@@ -1,0 +1,126 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Torres v. Madrid.json",
+    "lens": "A",
+    "notes": "Reviewed all 3 inventory rows. Lens A finding: the only support/quote-fidelity defect is the corrupt pin-op1 stored quote; the visible Torres holding quote on the page is supported by the cached opinion text.",
+    "reviewed": [
+      {
+        "assertion_id": "7d22dd06da1235bc",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record identifies the case as Torres v. Madrid, U.S. Supreme Court, decided 2021-03-25.",
+          "The content page citation 592 U.S. 306 (2021) and parallel citations 141 S. Ct. 989 and 209 L. Ed. 2d 190 match the lake citations."
+        ],
+        "residual_risks": [
+          "The cached slip text itself uses blank slip citation pagination, so the final official reporter cite is verified from the lake record rather than the slip text."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "3c6e52e95614a243",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "The answer is yes: The application of physical force to the\nbody of a person with intent to restrain is a seizure, even if\nthe force does not succeed in subduing the person.",
+          "locator_note": "pin-op1; lake.pinpoints[0]; cached opinion text slip-opinion page 1",
+          "needs_cl": false,
+          "problem": "The reviewed pin-op1 quote/payload is not the Torres opinion quotation; it is a harvested content-page header/background fragment, and the lake record itself marks quote_fidelity as mismatch.",
+          "proposed_fix": "Replace pin-op1.quote with the actual slip-opinion page 1 holding sentence: \"The application of physical force to the body of a person with intent to restrain is a seizure, even if the force does not succeed in subduing the person.\"",
+          "severity": "medium"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The lake pinpoint quote begins with page markdown rather than opinion text: \"--- # Torres v. Madrid *592 U.S. 306 (2021)*\".",
+          "The actual quoted sentence displayed in content_page.md does appear in the cached opinion text on slip-opinion page 1, but the reviewed pin record does not store that quotation."
+        ],
+        "residual_risks": [
+          "The displayed page quote itself is faithful to the cached opinion text; this refutation is limited to the reviewed quote/pinpoint payload and provenance."
+        ],
+        "suggested_tightening": "Keep the page quote, but repair the pin-op1 stored quote and mark quote_fidelity only after matching it to the cached opinion text.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "6e3928120c590f54",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A, so no substantive treatment attack is raised.",
+          "The treatment payload matches the disclosed lake treatment fields: good_law, as_of_content 2021-03-25, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note."
+        ],
+        "residual_risks": [
+          "No Lens B treatment audit was performed."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Torres v. Madrid.json\",\"reviewed\":[{\"assertion_id\":\"7d22dd06da1235bc\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record identifies the case as Torres v. Madrid, U.S. Supreme Court, decided 2021-03-25.\",\"The content page citation 592 U.S. 306 (2021) and parallel citations 141 S. Ct. 989 and 209 L. Ed. 2d 190 match the lake citations.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The cached slip text itself uses blank slip citation pagination, so the final official reporter cite is verified from the lake record rather than the slip text.\"],\"suggested_tightening\":null},{\"assertion_id\":\"3c6e52e95614a243\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The reviewed pin-op1 quote/payload is not the Torres opinion quotation; it is a harvested content-page header/background fragment, and the lake record itself marks quote_fidelity as mismatch.\",\"severity\":\"medium\",\"proposed_fix\":\"Replace pin-op1.quote with the actual slip-opinion page 1 holding sentence: \\\"The application of physical force to the body of a person with intent to restrain is a seizure, even if the force does not succeed in subduing the person.\\\"\",\"evidence_quote\":\"The answer is yes: The application of physical force to the\\nbody of a person with intent to restrain is a seizure, even if\\nthe force does not succeed in subduing the person.\",\"needs_cl\":false,\"locator_note\":\"pin-op1; lake.pinpoints[0]; cached opinion text slip-opinion page 1\"},\"reasons\":[\"The lake pinpoint quote begins with page markdown rather than opinion text: \\\"--- # Torres v. Madrid *592 U.S. 306 (2021)*\\\".\",\"The actual quoted sentence displayed in content_page.md does appear in the cached opinion text on slip-opinion page 1, but the reviewed pin record does not store that quotation.\"],\"breaks_true_positives\":true,\"residual_risks\":[\"The displayed page quote itself is faithful to the cached opinion text; this refutation is limited to the reviewed quote/pinpoint payload and provenance.\"],\"suggested_tightening\":\"Keep the page quote, but repair the pin-op1 stored quote and mark quote_fidelity only after matching it to the cached opinion text.\"},{\"assertion_id\":\"6e3928120c590f54\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside Lens A, so no substantive treatment attack is raised.\",\"The treatment payload matches the disclosed lake treatment fields: good_law, as_of_content 2021-03-25, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"No Lens B treatment audit was performed.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed all 3 inventory rows. Lens A finding: the only support/quote-fidelity defect is the corrupt pin-op1 stored quote; the visible Torres holding quote on the page is supported by the cached opinion text.\"}",
+  "summary": {
+    "at": "2026-07-09T22:38:45-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-7df63e77ee"
+    ],
+    "group_id": "_overhaul2/lake/cases/Torres v. Madrid.json",
+    "group_total_assertions": 3,
+    "lake_only_cases": [],
+    "lane": "codex-A",
+    "lane_id": "codex-A-panel-prod-13fd95ba",
+    "lens": "A",
+    "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-13fd95ba.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 3,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Torres v. Madrid"
+    ],
+    "tokens": {
+      "input": 231090,
+      "output": 6028,
+      "source": "codex-events",
+      "total": 237118
+    },
+    "verdict_map": {
+      "3c6e52e95614a243": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "6e3928120c590f54": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "7d22dd06da1235bc": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-7df63e77ee",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 125.4
+  }
+}

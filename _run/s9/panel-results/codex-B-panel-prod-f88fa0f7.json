@@ -1,0 +1,107 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Hafer v. Melo.json",
+    "lens": "B",
+    "notes": "Lens B only; no support or quote-fidelity finding made.",
+    "reviewed": [
+      {
+        "assertion_id": "616b14e029366811",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "Frontier stub: treatment/progeny intentionally not derived until S6 promotion.",
+          "locator_note": "lake/Hafer v. Melo__5eb4c1.json treatment/progeny fields; group_inventory assertion 616b14e029366811",
+          "needs_cl": true,
+          "problem": "The disclosed files verify the case identity and citation, but they do not verify the currency/live-law status required by Lens B. The lake record's treatment and progeny data are expressly unverified or absent.",
+          "proposed_fix": "Split citation existence from live-law currency: retain the citation only as identity-verified, and do not treat the authority as currently live law until verified treatment/progeny or citator evidence is present.",
+          "severity": "medium"
+        },
+        "dimension": "existence",
+        "reasons": [
+          "The lake record supports identity and citation: record_id Hafer v. Melo, court U.S. Supreme Court, official citation 502 U.S. 21.",
+          "But treatment.field_i_validity and composite_basis are unverified, as_of_content and as_of_treatment are null, and progeny enumeration is null with rows_cached 0.",
+          "Under the instruction to default to refuted on uncertainty, current live-law status cannot be verified from the disclosed files."
+        ],
+        "residual_risks": [
+          "A later verified citator/progeny pass may show the case remains live law, but that evidence is not in the disclosed record."
+        ],
+        "suggested_tightening": "Label this assertion as identity/citation-verified only; avoid any live-law implication until treatment verification is complete.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": false
+      },
+      {
+        "assertion_id": "9ba08273ba7d3fdc",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The treatment assertion matches the lake record: field_i_validity is unverified, as_of_content and as_of_treatment are null, varies_by_point is false, and the scope note is the same frontier-stub language.",
+          "The page also renders Treatment: Unverified and states that subsequent treatment has not completed two-key verification.",
+          "No disclosed treatment edge, progeny edge, or field in the lake record says Hafer has been overruled, abrogated, superseded, or limited; the record simply does not make a good-law claim."
+        ],
+        "residual_risks": [
+          "Substantive good-law status remains unresolved because treatment/progeny were intentionally not derived."
+        ],
+        "suggested_tightening": "Keep the Unverified banner prominent and make clear that Binding - SCOTUS is a court-weight label, not a verified current-validity finding.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/Hafer v. Melo.json\",\"reviewed\":[{\"assertion_id\":\"616b14e029366811\",\"dimension\":\"existence\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":false,\"defect\":{\"problem\":\"The disclosed files verify the case identity and citation, but they do not verify the currency/live-law status required by Lens B. The lake record's treatment and progeny data are expressly unverified or absent.\",\"severity\":\"medium\",\"proposed_fix\":\"Split citation existence from live-law currency: retain the citation only as identity-verified, and do not treat the authority as currently live law until verified treatment/progeny or citator evidence is present.\",\"evidence_quote\":\"Frontier stub: treatment/progeny intentionally not derived until S6 promotion.\",\"needs_cl\":true,\"locator_note\":\"lake/Hafer v. Melo__5eb4c1.json treatment/progeny fields; group_inventory assertion 616b14e029366811\"},\"reasons\":[\"The lake record supports identity and citation: record_id Hafer v. Melo, court U.S. Supreme Court, official citation 502 U.S. 21.\",\"But treatment.field_i_validity and composite_basis are unverified, as_of_content and as_of_treatment are null, and progeny enumeration is null with rows_cached 0.\",\"Under the instruction to default to refuted on uncertainty, current live-law status cannot be verified from the disclosed files.\"],\"breaks_true_positives\":true,\"residual_risks\":[\"A later verified citator/progeny pass may show the case remains live law, but that evidence is not in the disclosed record.\"],\"suggested_tightening\":\"Label this assertion as identity/citation-verified only; avoid any live-law implication until treatment verification is complete.\"},{\"assertion_id\":\"9ba08273ba7d3fdc\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The treatment assertion matches the lake record: field_i_validity is unverified, as_of_content and as_of_treatment are null, varies_by_point is false, and the scope note is the same frontier-stub language.\",\"The page also renders Treatment: Unverified and states that subsequent treatment has not completed two-key verification.\",\"No disclosed treatment edge, progeny edge, or field in the lake record says Hafer has been overruled, abrogated, superseded, or limited; the record simply does not make a good-law claim.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Substantive good-law status remains unresolved because treatment/progeny were intentionally not derived.\"],\"suggested_tightening\":\"Keep the Unverified banner prominent and make clear that Binding - SCOTUS is a court-weight label, not a verified current-validity finding.\"}],\"notes\":\"Lens B only; no support or quote-fidelity finding made.\"}",
+  "summary": {
+    "at": "2026-07-09T23:24:04-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-629075ce98"
+    ],
+    "group_id": "_overhaul2/lake/cases/Hafer v. Melo.json",
+    "group_total_assertions": 2,
+    "lake_only_cases": [
+      "Hafer v. Melo"
+    ],
+    "lane": "codex-B",
+    "lane_id": "codex-B-panel-prod-f88fa0f7",
+    "lens": "B",
+    "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-f88fa0f7.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [
+      "case 'Hafer v. Melo' has no lead_opinion_id (text undisclosed)"
+    ],
+    "reviewed_count": 2,
+    "run": "prod",
+    "text_disclosed_cases": [],
+    "tokens": {
+      "input": 79969,
+      "output": 4216,
+      "source": "codex-events",
+      "total": 84185
+    },
+    "verdict_map": {
+      "616b14e029366811": {
+        "dimension": "existence",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": false
+      },
+      "9ba08273ba7d3fdc": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-629075ce98",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 85.8
+  }
+}

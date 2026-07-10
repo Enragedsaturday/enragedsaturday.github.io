@@ -1,0 +1,201 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Hiibel v. Sixth Judicial Dist. Court.json",
+    "lens": "A",
+    "notes": "Reviewed all five inventory rows exactly once. Lens A findings are limited to existence and quote/support fidelity; treatment currency is left to Lens B.",
+    "reviewed": [
+      {
+        "assertion_id": "5700d94dfa3f4061",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity verifies the case as Hiibel v. Sixth Judicial Dist. Court of Nev., Humboldt Cty., U.S. Supreme Court, decided 2004-06-21.",
+          "The payload citations match lake citations.all, including 542 U.S. 177, 124 S. Ct. 2451, 159 L. Ed. 2d 292, 2004 U.S. LEXIS 4385, 17 Fla. L. Weekly Fed. S 406, and 72 U.S.L.W. 4509."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "078ef690290d2162",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "A state law requiring a suspect to disclose his name in the course of a valid <i><span class=\"citation\" data-id=\"9423752\"><a href=\"/opinion/107729/terry-v-ohio/\" aria-description=\"Citation for case: Terry v. Ohio\">Terry</a></span></i> stop is consistent with Fourth Amendment prohibitions against unreasonable searches and seizures.",
+          "locator_note": "text/Hiibel v. Sixth Judicial Dist. Court__97d465.txt, page marker *188",
+          "needs_cl": false,
+          "problem": "The quoted passage exists and supports the proposition, but the displayed quote is not character-faithful: it begins with bracketed lowercase '[a]' instead of the opinion's 'A' and drops the source italics/markup for Terry.",
+          "proposed_fix": "Use the exact sentence beginning 'A state law...' or remove quotation marks and paraphrase.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The lake pinpoint itself flags pin-188 quote_fidelity as mismatch.",
+          "The source sentence is on the claimed page after the *188 marker, so the defect is quote form, not support."
+        ],
+        "residual_risks": [
+          "Corpus policy may tolerate bracketed case changes, but the task requires character-faithful verbatim quotes."
+        ],
+        "suggested_tightening": "Use exact initial capitalization in quoted material.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "1819278ce4fb0e36",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "The principles of <i><span class=\"citation\" data-id=\"9423752\"><a href=\"/opinion/107729/terry-v-ohio/\" aria-description=\"Citation for case: Terry v. Ohio\">Terry</a></span></i> permit a State to require a suspect to disclose his name in the course of a <i><span class=\"citation\" data-id=\"9423752\"><a href=\"/opinion/107729/terry-v-ohio/\" aria-description=\"Citation for case: Terry v. Ohio\">Terry</a></span></i> stop.",
+          "locator_note": "text/Hiibel v. Sixth Judicial Dist. Court__97d465.txt, immediately before page marker *188",
+          "needs_cl": false,
+          "problem": "The quoted passage exists and supports the proposition, but the displayed quote is not character-faithful: it begins with bracketed lowercase '[t]' instead of the opinion's 'The' and drops the source italics/markup for Terry.",
+          "proposed_fix": "Use the exact sentence beginning 'The principles...' or remove quotation marks and paraphrase.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The lake pinpoint itself flags pin-187 quote_fidelity as mismatch.",
+          "The sentence appears at the claimed location, so support survives with exact quote cleanup."
+        ],
+        "residual_risks": [
+          "Corpus policy may tolerate bracketed case changes, but the task requires character-faithful verbatim quotes."
+        ],
+        "suggested_tightening": "Use exact initial capitalization in quoted material.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "897c364ec6c648ca",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Obtaining a suspect's name in the course of a <i><span class=\"citation\" data-id=\"9423752\"><a href=\"/opinion/107729/terry-v-ohio/\" aria-description=\"Citation for case: Terry v. Ohio\">Terry</a></span></i> stop serves important government interests.",
+          "locator_note": "text/Hiibel v. Sixth Judicial Dist. Court__97d465.txt, page marker *186",
+          "needs_cl": false,
+          "problem": "Pin-186's payload quote is not an opinion passage; it is a harvested page fragment spanning background/issue/rule text, while the actual page-186 opinion quote is different.",
+          "proposed_fix": "Replace pin-186 with the opinion sentence: \"Obtaining a suspect's name in the course of a Terry stop serves important government interests.\"",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The asserted quote contains markdown headings ('## Issue', '## Rule') and does not appear as a character-faithful quote in the opinion text.",
+          "The lake pinpoint flags pin-186 quote_fidelity as mismatch."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Re-harvest pin-186 from the opinion text rather than from adjacent content-page markdown.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "76d3a9daaa40bd70",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A's charter, so no treatment finding is raised.",
+          "The payload mirrors the disclosed lake treatment fields: field_i_validity good_law, as_of_content 2004-06-21, as_of_treatment 2026-06-30, varies_by_point false."
+        ],
+        "residual_risks": [
+          "No Lens A assessment of subsequent-history accuracy."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Hiibel v. Sixth Judicial Dist. Court.json\",\"reviewed\":[{\"assertion_id\":\"5700d94dfa3f4061\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity verifies the case as Hiibel v. Sixth Judicial Dist. Court of Nev., Humboldt Cty., U.S. Supreme Court, decided 2004-06-21.\",\"The payload citations match lake citations.all, including 542 U.S. 177, 124 S. Ct. 2451, 159 L. Ed. 2d 292, 2004 U.S. LEXIS 4385, 17 Fla. L. Weekly Fed. S 406, and 72 U.S.L.W. 4509.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"078ef690290d2162\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The quoted passage exists and supports the proposition, but the displayed quote is not character-faithful: it begins with bracketed lowercase '[a]' instead of the opinion's 'A' and drops the source italics/markup for Terry.\",\"severity\":\"low\",\"proposed_fix\":\"Use the exact sentence beginning 'A state law...' or remove quotation marks and paraphrase.\",\"evidence_quote\":\"A state law requiring a suspect to disclose his name in the course of a valid <i><span class=\\\"citation\\\" data-id=\\\"9423752\\\"><a href=\\\"/opinion/107729/terry-v-ohio/\\\" aria-description=\\\"Citation for case: Terry v. Ohio\\\">Terry</a></span></i> stop is consistent with Fourth Amendment prohibitions against unreasonable searches and seizures.\",\"needs_cl\":false,\"locator_note\":\"text/Hiibel v. Sixth Judicial Dist. Court__97d465.txt, page marker *188\"},\"reasons\":[\"The lake pinpoint itself flags pin-188 quote_fidelity as mismatch.\",\"The source sentence is on the claimed page after the *188 marker, so the defect is quote form, not support.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Corpus policy may tolerate bracketed case changes, but the task requires character-faithful verbatim quotes.\"],\"suggested_tightening\":\"Use exact initial capitalization in quoted material.\"},{\"assertion_id\":\"1819278ce4fb0e36\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The quoted passage exists and supports the proposition, but the displayed quote is not character-faithful: it begins with bracketed lowercase '[t]' instead of the opinion's 'The' and drops the source italics/markup for Terry.\",\"severity\":\"low\",\"proposed_fix\":\"Use the exact sentence beginning 'The principles...' or remove quotation marks and paraphrase.\",\"evidence_quote\":\"The principles of <i><span class=\\\"citation\\\" data-id=\\\"9423752\\\"><a href=\\\"/opinion/107729/terry-v-ohio/\\\" aria-description=\\\"Citation for case: Terry v. Ohio\\\">Terry</a></span></i> permit a State to require a suspect to disclose his name in the course of a <i><span class=\\\"citation\\\" data-id=\\\"9423752\\\"><a href=\\\"/opinion/107729/terry-v-ohio/\\\" aria-description=\\\"Citation for case: Terry v. Ohio\\\">Terry</a></span></i> stop.\",\"needs_cl\":false,\"locator_note\":\"text/Hiibel v. Sixth Judicial Dist. Court__97d465.txt, immediately before page marker *188\"},\"reasons\":[\"The lake pinpoint itself flags pin-187 quote_fidelity as mismatch.\",\"The sentence appears at the claimed location, so support survives with exact quote cleanup.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Corpus policy may tolerate bracketed case changes, but the task requires character-faithful verbatim quotes.\"],\"suggested_tightening\":\"Use exact initial capitalization in quoted material.\"},{\"assertion_id\":\"897c364ec6c648ca\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"Pin-186's payload quote is not an opinion passage; it is a harvested page fragment spanning background/issue/rule text, while the actual page-186 opinion quote is different.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-186 with the opinion sentence: \\\"Obtaining a suspect's name in the course of a Terry stop serves important government interests.\\\"\",\"evidence_quote\":\"Obtaining a suspect's name in the course of a <i><span class=\\\"citation\\\" data-id=\\\"9423752\\\"><a href=\\\"/opinion/107729/terry-v-ohio/\\\" aria-description=\\\"Citation for case: Terry v. Ohio\\\">Terry</a></span></i> stop serves important government interests.\",\"needs_cl\":false,\"locator_note\":\"text/Hiibel v. Sixth Judicial Dist. Court__97d465.txt, page marker *186\"},\"reasons\":[\"The asserted quote contains markdown headings ('## Issue', '## Rule') and does not appear as a character-faithful quote in the opinion text.\",\"The lake pinpoint flags pin-186 quote_fidelity as mismatch.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":\"Re-harvest pin-186 from the opinion text rather than from adjacent content-page markdown.\"},{\"assertion_id\":\"76d3a9daaa40bd70\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside Lens A's charter, so no treatment finding is raised.\",\"The payload mirrors the disclosed lake treatment fields: field_i_validity good_law, as_of_content 2004-06-21, as_of_treatment 2026-06-30, varies_by_point false.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"No Lens A assessment of subsequent-history accuracy.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed all five inventory rows exactly once. Lens A findings are limited to existence and quote/support fidelity; treatment currency is left to Lens B.\"}",
+  "summary": {
+    "at": "2026-07-09T23:26:34-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-68acdc9532",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-de81bcf285",
+      "F-S9-PR-260e826fd9",
+      "F-S9-PR-a7ea230637"
+    ],
+    "group_id": "_overhaul2/lake/cases/Hiibel v. Sixth Judicial Dist. Court.json",
+    "group_total_assertions": 5,
+    "lake_only_cases": [],
+    "lane": "codex-A",
+    "lane_id": "codex-A-panel-prod-e2ed0ef6",
+    "lens": "A",
+    "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-e2ed0ef6.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Hiibel v. Sixth Judicial Dist. Court"
+    ],
+    "tokens": {
+      "input": 207124,
+      "output": 8498,
+      "source": "codex-events",
+      "total": 215622
+    },
+    "verdict_map": {
+      "078ef690290d2162": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "1819278ce4fb0e36": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "5700d94dfa3f4061": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "76d3a9daaa40bd70": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "897c364ec6c648ca": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-de81bcf285",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-260e826fd9",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-a7ea230637",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-68acdc9532",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": 175.0
+  }
+}

@@ -1,0 +1,145 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Illinois v. McArthur.json",
+    "lens": "A",
+    "notes": "Reviewed every group_inventory.jsonl row using only disclosed workspace files.",
+    "reviewed": [
+      {
+        "assertion_id": "95ffc38a427b9d5b",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity verifies Illinois v. McArthur as a U.S. Supreme Court case decided 2001-02-20, year 2001.",
+          "Lake official citation is 531 U.S. 326 and the listed parallel/vendor citations match the payload and content page."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "76f950ed4026aa64",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "We conclude that the restriction at issue was reasonable, and hence lawful, in light of the following circumstances, which we consider in combination.",
+          "locator_note": "lake pinpoints[id=pin-331]; content_page.md Rule ^pin-331; opinion text paragraph beginning at star page *331",
+          "needs_cl": false,
+          "problem": "The pin-331 quote stored in the assertion/lake is not the opinion quotation at 531 U.S. 331; it is harvested page/header/summary text beginning with markdown front matter and is marked mismatch/slip-only with no star marker.",
+          "proposed_fix": "Replace pin-331 with the exact opinion sentence used on the content page and set the locator to star page 331 after verifying against text/Illinois v. McArthur__fe6765.txt.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The disclosed lake record itself flags pin-331 quote_fidelity as mismatch and pinpoint_status as slip-only.",
+          "The payload quote begins with non-opinion content, while the opinion text at page 331 contains the displayed sentence beginning 'We conclude that the restriction...'."
+        ],
+        "residual_risks": [
+          "The visible content_page quote appears faithful, but the reviewed assertion payload/lake pinpoint is defective."
+        ],
+        "suggested_tightening": "Store only the exact quoted sentence for pin-331 and keep page/header/background material out of pinpoints.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "be9a92a927fb9a9b",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The pin-334 quote matches the opinion text verbatim in the disclosed text file.",
+          "Lake marks pin-334 star-verified with star_marker 334 and quote_fidelity matched."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "d40ee315839f0c26",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A; no treatment finding is raised.",
+          "The payload treatment fields match the disclosed lake/content fields: field_i_validity good_law, as_of_content 2001-02-20, as_of_treatment 2026-06-30, varies_by_point false."
+        ],
+        "residual_risks": [
+          "Treatment accuracy and negative-treatment implications are reserved for Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Illinois v. McArthur.json\",\"reviewed\":[{\"assertion_id\":\"95ffc38a427b9d5b\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity verifies Illinois v. McArthur as a U.S. Supreme Court case decided 2001-02-20, year 2001.\",\"Lake official citation is 531 U.S. 326 and the listed parallel/vendor citations match the payload and content page.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"76f950ed4026aa64\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The pin-331 quote stored in the assertion/lake is not the opinion quotation at 531 U.S. 331; it is harvested page/header/summary text beginning with markdown front matter and is marked mismatch/slip-only with no star marker.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-331 with the exact opinion sentence used on the content page and set the locator to star page 331 after verifying against text/Illinois v. McArthur__fe6765.txt.\",\"evidence_quote\":\"We conclude that the restriction at issue was reasonable, and hence lawful, in light of the following circumstances, which we consider in combination.\",\"needs_cl\":false,\"locator_note\":\"lake pinpoints[id=pin-331]; content_page.md Rule ^pin-331; opinion text paragraph beginning at star page *331\"},\"reasons\":[\"The disclosed lake record itself flags pin-331 quote_fidelity as mismatch and pinpoint_status as slip-only.\",\"The payload quote begins with non-opinion content, while the opinion text at page 331 contains the displayed sentence beginning 'We conclude that the restriction...'.\"],\"breaks_true_positives\":true,\"residual_risks\":[\"The visible content_page quote appears faithful, but the reviewed assertion payload/lake pinpoint is defective.\"],\"suggested_tightening\":\"Store only the exact quoted sentence for pin-331 and keep page/header/background material out of pinpoints.\"},{\"assertion_id\":\"be9a92a927fb9a9b\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The pin-334 quote matches the opinion text verbatim in the disclosed text file.\",\"Lake marks pin-334 star-verified with star_marker 334 and quote_fidelity matched.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"d40ee315839f0c26\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside Lens A; no treatment finding is raised.\",\"The payload treatment fields match the disclosed lake/content fields: field_i_validity good_law, as_of_content 2001-02-20, as_of_treatment 2026-06-30, varies_by_point false.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment accuracy and negative-treatment implications are reserved for Lens B.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed every group_inventory.jsonl row using only disclosed workspace files.\"}",
+  "summary": {
+    "at": "2026-07-09T23:27:03-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-3321a1f24a"
+    ],
+    "group_id": "_overhaul2/lake/cases/Illinois v. McArthur.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "codex-A",
+    "lane_id": "codex-A-panel-prod-e8f1cafb",
+    "lens": "A",
+    "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-e8f1cafb.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Illinois v. McArthur"
+    ],
+    "tokens": {
+      "input": 142737,
+      "output": 4567,
+      "source": "codex-events",
+      "total": 147304
+    },
+    "verdict_map": {
+      "76f950ed4026aa64": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "95ffc38a427b9d5b": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "be9a92a927fb9a9b": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "d40ee315839f0c26": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-3321a1f24a",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 98.4
+  }
+}

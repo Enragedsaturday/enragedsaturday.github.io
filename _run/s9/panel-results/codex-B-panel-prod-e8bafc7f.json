@@ -1,0 +1,138 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Giglio v. United States.json",
+    "lens": "B",
+    "notes": "Lens B reviewed currency, treatment, and authority weight only; no support or quote-fidelity finding is made.",
+    "reviewed": [
+      {
+        "assertion_id": "d185bc7b3b882a68",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record verifies Giglio v. United States as a U.S. Supreme Court case decided 1972-02-24 with cluster_id 108471 and lead_opinion_id 108471.",
+          "The official citation 405 U.S. 150 and listed parallel/vendor citations match the lake citations fields.",
+          "For the currency angle, the lake treatment judgment is field_i_validity good_law as of 2026-06-30."
+        ],
+        "residual_risks": [
+          "Treatment derivation contains proposed negative-event edges; that risk is addressed in the treatment assertion."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "ec52d54228d99b0f",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote fidelity is outside Lens B, so no quote/support defect is raised here.",
+          "No independent currency or treatment defect is presented by this quote-fidelity row beyond the treatment status reviewed separately."
+        ],
+        "residual_risks": [
+          "Lens A should evaluate the recorded quote_fidelity mismatch."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "5b18132ede0912d2",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "\"audit_needed\": true, \"proposed_negative_events\": 25, \"audit_marker\": \"R15 treatment audit required\"",
+          "locator_note": "content_page.md Treatment & subsequent history; lake/Giglio v. United States__1cf1da.json treatment.edges and treatment.derivation",
+          "needs_cl": true,
+          "problem": "The good_law status itself matches the lake judgment, but the built page's categorical 'No negative treatment' overstates the disclosed record because the lake has proposed negative-event edges and audit_needed markers. The record supports a qualified no-final-negative-treatment statement, not an unqualified one.",
+          "proposed_fix": "Keep Status: good as of 2026-06-30 and Binding - SCOTUS, but replace 'No negative treatment' with a qualified statement such as: 'Lake marks Giglio good_law as of 2026-06-30; no final point override is recorded, but proposed negative-event edges in the treatment derivation require audit before saying there is no negative treatment.'",
+          "severity": "medium"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "The inventory treatment payload matches the lake top-level treatment fields: field_i_validity good_law, as_of_treatment 2026-06-30, varies_by_point false, and point_overrides is empty.",
+          "The authority-weight label is supported by the lake identity fields showing court_level scotus and court U.S. Supreme Court.",
+          "However, the disclosed lake record lists 28 proposed treatment edges with labels including questioned, criticized, overruled, abrogated, and superseded_by_statute, and derivation lanes marked audit_needed.",
+          "Because those edges are proposed:true and field_iii is mentioned, they do not themselves defeat the top-level good_law judgment; they do require tightening the categorical no-negative-treatment language."
+        ],
+        "residual_risks": [
+          "Underlying progeny texts for the proposed edges are not disclosed here, so their actual treatment effect cannot be audited from this packet alone."
+        ],
+        "suggested_tightening": "Say 'no final negative treatment recorded in this lake record' rather than 'No negative treatment.'",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/Giglio v. United States.json\",\"reviewed\":[{\"assertion_id\":\"d185bc7b3b882a68\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake identity record verifies Giglio v. United States as a U.S. Supreme Court case decided 1972-02-24 with cluster_id 108471 and lead_opinion_id 108471.\",\"The official citation 405 U.S. 150 and listed parallel/vendor citations match the lake citations fields.\",\"For the currency angle, the lake treatment judgment is field_i_validity good_law as of 2026-06-30.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment derivation contains proposed negative-event edges; that risk is addressed in the treatment assertion.\"],\"suggested_tightening\":null},{\"assertion_id\":\"ec52d54228d99b0f\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Quote fidelity is outside Lens B, so no quote/support defect is raised here.\",\"No independent currency or treatment defect is presented by this quote-fidelity row beyond the treatment status reviewed separately.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Lens A should evaluate the recorded quote_fidelity mismatch.\"],\"suggested_tightening\":null},{\"assertion_id\":\"5b18132ede0912d2\",\"dimension\":\"treatment\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The good_law status itself matches the lake judgment, but the built page's categorical 'No negative treatment' overstates the disclosed record because the lake has proposed negative-event edges and audit_needed markers. The record supports a qualified no-final-negative-treatment statement, not an unqualified one.\",\"severity\":\"medium\",\"proposed_fix\":\"Keep Status: good as of 2026-06-30 and Binding - SCOTUS, but replace 'No negative treatment' with a qualified statement such as: 'Lake marks Giglio good_law as of 2026-06-30; no final point override is recorded, but proposed negative-event edges in the treatment derivation require audit before saying there is no negative treatment.'\",\"evidence_quote\":\"\\\"audit_needed\\\": true, \\\"proposed_negative_events\\\": 25, \\\"audit_marker\\\": \\\"R15 treatment audit required\\\"\",\"needs_cl\":true,\"locator_note\":\"content_page.md Treatment & subsequent history; lake/Giglio v. United States__1cf1da.json treatment.edges and treatment.derivation\"},\"reasons\":[\"The inventory treatment payload matches the lake top-level treatment fields: field_i_validity good_law, as_of_treatment 2026-06-30, varies_by_point false, and point_overrides is empty.\",\"The authority-weight label is supported by the lake identity fields showing court_level scotus and court U.S. Supreme Court.\",\"However, the disclosed lake record lists 28 proposed treatment edges with labels including questioned, criticized, overruled, abrogated, and superseded_by_statute, and derivation lanes marked audit_needed.\",\"Because those edges are proposed:true and field_iii is mentioned, they do not themselves defeat the top-level good_law judgment; they do require tightening the categorical no-negative-treatment language.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Underlying progeny texts for the proposed edges are not disclosed here, so their actual treatment effect cannot be audited from this packet alone.\"],\"suggested_tightening\":\"Say 'no final negative treatment recorded in this lake record' rather than 'No negative treatment.'\"}],\"notes\":\"Lens B reviewed currency, treatment, and authority weight only; no support or quote-fidelity finding is made.\"}",
+  "summary": {
+    "at": "2026-07-09T23:23:06-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-74ba17376a",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-08754e00bd"
+    ],
+    "group_id": "_overhaul2/lake/cases/Giglio v. United States.json",
+    "group_total_assertions": 3,
+    "lake_only_cases": [],
+    "lane": "codex-B",
+    "lane_id": "codex-B-panel-prod-e8bafc7f",
+    "lens": "B",
+    "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-e8bafc7f.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 3,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Giglio v. United States"
+    ],
+    "tokens": {
+      "input": 150567,
+      "output": 6491,
+      "source": "codex-events",
+      "total": 157058
+    },
+    "verdict_map": {
+      "5b18132ede0912d2": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "d185bc7b3b882a68": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "ec52d54228d99b0f": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-74ba17376a",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-08754e00bd",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 128.9
+  }
+}

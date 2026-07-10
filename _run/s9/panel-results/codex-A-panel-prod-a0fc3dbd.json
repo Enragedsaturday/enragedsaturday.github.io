@@ -1,0 +1,180 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Illinois v. Caballes.json",
+    "lens": "A",
+    "notes": "Lens A reviewed only existence and quote/support fidelity. No independent treatment finding is raised.",
+    "reviewed": [
+      {
+        "assertion_id": "1e85f615a22e7ac8",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record identifies Illinois v. Caballes as a U.S. Supreme Court case decided on 2005-01-24.",
+          "The official citation in the lake record is 543 U.S. 405, matching the page display and inventory payload."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "8abb71bc53c47c90",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The quoted holding sentence appears in the cached opinion text at the star-410 passage.",
+          "The lake pinpoint for pin-410 marks quote_fidelity as matched and star_marker as 410."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "8f50634be156f56d",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "A seizure that is justified solely by the interest in issuing a warning ticket",
+          "locator_note": "pin-407; lake.pinpoints entry conflicts with content_page.md line 55 and text line containing star *407.",
+          "needs_cl": false,
+          "problem": "The inventory/lake pin-407 quote is not an opinion quote; it is page/header/background material ending before the quoted rule. The lake itself marks this pinpoint as mismatch and slip-only.",
+          "proposed_fix": "Replace the pin-407 quote with the actual page-407 sentence from the opinion and set the star marker to 407.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The cached opinion text contains the actual prolongation rule at star page 407.",
+          "The payload quote beginning with page frontmatter is not character-faithful to the opinion text."
+        ],
+        "residual_risks": [
+          "The visible content_page quote is supportable, but the lake/inventory pinpoint record is corrupt."
+        ],
+        "suggested_tightening": "Repair the pinpoint record so it tracks the displayed rule quote rather than harvested page text.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "eefe1005106791d3",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "\"does not expose noncontraband items that otherwise would remain hidden from public view,\"",
+          "locator_note": "pin-409; content_page.md line 57; corresponding opinion passage is at star *409.",
+          "needs_cl": false,
+          "problem": "The quoted proposition is supported at star page 409, but the displayed/lake quote is not character-faithful: it normalizes punctuation, changes quotation marks, and changes the reporter spacing from the cached opinion text.",
+          "proposed_fix": "Use the opinion text's exact punctuation and citation formatting for the page-409 sentence, or paraphrase instead of presenting it as a verbatim quote.",
+          "severity": "medium"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The substance of the sentence appears in the cached opinion at star page 409.",
+          "The lake pinpoint marks quote_fidelity as mismatch and has no star marker, so the verbatim form should not stand unchanged."
+        ],
+        "residual_risks": [
+          "The legal proposition remains supported after exact-quote cleanup."
+        ],
+        "suggested_tightening": "Either quote the star-409 text exactly or convert the sentence to a paraphrase with citation.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "22e384ccd2d7ec67",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment merits are outside Lens A.",
+          "The treatment payload mirrors the lake treatment fields and page frontmatter, so no support or quote-fidelity defect is recorded under this lens."
+        ],
+        "residual_risks": [
+          "Treatment/currency should be evaluated by Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Illinois v. Caballes.json\",\"reviewed\":[{\"assertion_id\":\"1e85f615a22e7ac8\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake identity record identifies Illinois v. Caballes as a U.S. Supreme Court case decided on 2005-01-24.\",\"The official citation in the lake record is 543 U.S. 405, matching the page display and inventory payload.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"8abb71bc53c47c90\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The quoted holding sentence appears in the cached opinion text at the star-410 passage.\",\"The lake pinpoint for pin-410 marks quote_fidelity as matched and star_marker as 410.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"8f50634be156f56d\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The inventory/lake pin-407 quote is not an opinion quote; it is page/header/background material ending before the quoted rule. The lake itself marks this pinpoint as mismatch and slip-only.\",\"severity\":\"high\",\"proposed_fix\":\"Replace the pin-407 quote with the actual page-407 sentence from the opinion and set the star marker to 407.\",\"evidence_quote\":\"A seizure that is justified solely by the interest in issuing a warning ticket\",\"needs_cl\":false,\"locator_note\":\"pin-407; lake.pinpoints entry conflicts with content_page.md line 55 and text line containing star *407.\"},\"reasons\":[\"The cached opinion text contains the actual prolongation rule at star page 407.\",\"The payload quote beginning with page frontmatter is not character-faithful to the opinion text.\"],\"breaks_true_positives\":true,\"residual_risks\":[\"The visible content_page quote is supportable, but the lake/inventory pinpoint record is corrupt.\"],\"suggested_tightening\":\"Repair the pinpoint record so it tracks the displayed rule quote rather than harvested page text.\"},{\"assertion_id\":\"eefe1005106791d3\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The quoted proposition is supported at star page 409, but the displayed/lake quote is not character-faithful: it normalizes punctuation, changes quotation marks, and changes the reporter spacing from the cached opinion text.\",\"severity\":\"medium\",\"proposed_fix\":\"Use the opinion text's exact punctuation and citation formatting for the page-409 sentence, or paraphrase instead of presenting it as a verbatim quote.\",\"evidence_quote\":\"\\\"does not expose noncontraband items that otherwise would remain hidden from public view,\\\"\",\"needs_cl\":false,\"locator_note\":\"pin-409; content_page.md line 57; corresponding opinion passage is at star *409.\"},\"reasons\":[\"The substance of the sentence appears in the cached opinion at star page 409.\",\"The lake pinpoint marks quote_fidelity as mismatch and has no star marker, so the verbatim form should not stand unchanged.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The legal proposition remains supported after exact-quote cleanup.\"],\"suggested_tightening\":\"Either quote the star-409 text exactly or convert the sentence to a paraphrase with citation.\"},{\"assertion_id\":\"22e384ccd2d7ec67\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment merits are outside Lens A.\",\"The treatment payload mirrors the lake treatment fields and page frontmatter, so no support or quote-fidelity defect is recorded under this lens.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment/currency should be evaluated by Lens B.\"],\"suggested_tightening\":null}],\"notes\":\"Lens A reviewed only existence and quote/support fidelity. No independent treatment finding is raised.\"}",
+  "summary": {
+    "at": "2026-07-09T23:26:48-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-4d4d2a8062",
+      "F-S9-PR-7d219d2a67"
+    ],
+    "group_id": "_overhaul2/lake/cases/Illinois v. Caballes.json",
+    "group_total_assertions": 5,
+    "lake_only_cases": [],
+    "lane": "codex-A",
+    "lane_id": "codex-A-panel-prod-a0fc3dbd",
+    "lens": "A",
+    "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-a0fc3dbd.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Illinois v. Caballes"
+    ],
+    "tokens": {
+      "input": 121201,
+      "output": 7137,
+      "source": "codex-events",
+      "total": 128338
+    },
+    "verdict_map": {
+      "1e85f615a22e7ac8": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "22e384ccd2d7ec67": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "8abb71bc53c47c90": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "8f50634be156f56d": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "eefe1005106791d3": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-4d4d2a8062",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-7d219d2a67",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 138.9
+  }
+}

@@ -1,0 +1,192 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Nardone v. United States.json",
+    "lens": "A",
+    "notes": "Reviewed all 5 rows in group_inventory.jsonl. No support, pincite, or black_letter rows were present; Lens A did not make treatment/currency findings.",
+    "reviewed": [
+      {
+        "assertion_id": "4a142d4956d844f2",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record verifies Nardone v. United States as a U.S. Supreme Court case decided 1939-12-11.",
+          "The lake official citation is 308 U.S. 338, with parallel citations 60 S. Ct. 266 and 84 L. Ed. 307, matching the built page."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "b229c2afb313728f",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "As a matter of good sense, however, such connection may have become so attenuated' as to dissipate the taint.",
+          "locator_note": "pin-341b; text/Nardone v. United States__c72cf8.txt paragraph b405-7",
+          "needs_cl": false,
+          "problem": "The quoted attenuation sentence is not character-faithful to the cached opinion text; it omits 'however,' and the cached text contains different punctuation after 'attenuated'. The lake also flags this pinpoint as quote_fidelity='mismatch'.",
+          "proposed_fix": "Replace the quote with an exact disclosed-text quotation or convert it to a paraphrase. If the corpus intends to correct OCR artifacts, obtain and store a clean authoritative quote before using quotation marks.",
+          "severity": "medium"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload quote reads: 'As a matter of good sense … such connection may have become so attenuated as to dissipate the taint.'",
+          "The disclosed text reads with 'however,' and an apostrophe after 'attenuated', so the verbatim quotation is not character-faithful under Lens A."
+        ],
+        "residual_risks": [
+          "The mismatch may partly reflect OCR noise in the cached text, but the disclosed evidence does not permit silently normalizing it."
+        ],
+        "suggested_tightening": "Use the exact cached text or remove quotation marks around the normalized attenuation proposition.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "cb2925735cf35d8f",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "not merely evidence so acquired shall not be used before the court, but that it shall not be used at all.",
+          "locator_note": "pin-340; text/Nardone v. United States__c72cf8.txt paragraphs b404-7 and b405-6",
+          "needs_cl": false,
+          "problem": "The pin-340 quote is corrupted: it contains built-page/background prose rather than a verbatim passage from the opinion. The lake also flags this pinpoint as quote_fidelity='mismatch'.",
+          "proposed_fix": "Replace pin-340 with the actual 340-341 opinion language supporting derivative-use exclusion, or split the two Silverthorne quotations into separate faithful pinpoints.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload begins mid-page-content with '), which held intercepted wiretap evidence inadmissible...' and continues through headings such as '## Background' and '## Issue'.",
+          "The cached opinion at 340-341 instead contains the Silverthorne quotation and independent-source derivative-use discussion."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Regenerate this pinpoint from opinion text, not from the rendered content page.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "f125e4086cc4bb3c",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "the trial judge must give opportunity, however closely confined, to the accused to prove that a substantial portion of the ease against him was a fruit of the poisonous tree. ' This leaves ample opportunity to the Government to convince the trial court that its proof had an independent origin.",
+          "locator_note": "pin-341; text/Nardone v. United States__c72cf8.txt paragraph b405-7",
+          "needs_cl": false,
+          "problem": "The quoted 'fruit of the poisonous tree' passage is not character-faithful to the cached opinion text; it changes cached text and adds Markdown emphasis inside the quotation. The lake also flags this pinpoint as quote_fidelity='mismatch'.",
+          "proposed_fix": "Quote the cached passage exactly, or paraphrase the rule without quotation marks and reserve quotation marks for exact text.",
+          "severity": "medium"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload quote says 'case' and formats '*fruit of the poisonous tree*'.",
+          "The disclosed cached text says 'ease' and contains no Markdown emphasis, plus a stray apostrophe before 'This leaves'."
+        ],
+        "residual_risks": [
+          "The 'ease' spelling and apostrophe likely may be OCR artifacts, but Lens A cannot correct them without disclosed clean authority."
+        ],
+        "suggested_tightening": "Use a non-quoted sentence for the normalized rule, followed by a faithful shorter quotation such as 'fruit of the poisonous tree' if exact support is needed.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "01db28ac718c7003",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A, so no treatment defect is raised.",
+          "For recordkeeping only, the content treatment fields match the lake treatment fields: field_i_validity='good_law', as_of_content='1939-12-11', as_of_treatment='2026-06-30', varies_by_point=false."
+        ],
+        "residual_risks": [
+          "Lens A did not audit whether 'No negative treatment' is correct; that belongs to Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Nardone v. United States.json\",\"reviewed\":[{\"assertion_id\":\"4a142d4956d844f2\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake identity record verifies Nardone v. United States as a U.S. Supreme Court case decided 1939-12-11.\",\"The lake official citation is 308 U.S. 338, with parallel citations 60 S. Ct. 266 and 84 L. Ed. 307, matching the built page.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"b229c2afb313728f\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The quoted attenuation sentence is not character-faithful to the cached opinion text; it omits 'however,' and the cached text contains different punctuation after 'attenuated'. The lake also flags this pinpoint as quote_fidelity='mismatch'.\",\"severity\":\"medium\",\"proposed_fix\":\"Replace the quote with an exact disclosed-text quotation or convert it to a paraphrase. If the corpus intends to correct OCR artifacts, obtain and store a clean authoritative quote before using quotation marks.\",\"evidence_quote\":\"As a matter of good sense, however, such connection may have become so attenuated' as to dissipate the taint.\",\"needs_cl\":false,\"locator_note\":\"pin-341b; text/Nardone v. United States__c72cf8.txt paragraph b405-7\"},\"reasons\":[\"The payload quote reads: 'As a matter of good sense … such connection may have become so attenuated as to dissipate the taint.'\",\"The disclosed text reads with 'however,' and an apostrophe after 'attenuated', so the verbatim quotation is not character-faithful under Lens A.\"],\"breaks_true_positives\":true,\"residual_risks\":[\"The mismatch may partly reflect OCR noise in the cached text, but the disclosed evidence does not permit silently normalizing it.\"],\"suggested_tightening\":\"Use the exact cached text or remove quotation marks around the normalized attenuation proposition.\"},{\"assertion_id\":\"cb2925735cf35d8f\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The pin-340 quote is corrupted: it contains built-page/background prose rather than a verbatim passage from the opinion. The lake also flags this pinpoint as quote_fidelity='mismatch'.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-340 with the actual 340-341 opinion language supporting derivative-use exclusion, or split the two Silverthorne quotations into separate faithful pinpoints.\",\"evidence_quote\":\"not merely evidence so acquired shall not be used before the court, but that it shall not be used at all.\",\"needs_cl\":false,\"locator_note\":\"pin-340; text/Nardone v. United States__c72cf8.txt paragraphs b404-7 and b405-6\"},\"reasons\":[\"The payload begins mid-page-content with '), which held intercepted wiretap evidence inadmissible...' and continues through headings such as '## Background' and '## Issue'.\",\"The cached opinion at 340-341 instead contains the Silverthorne quotation and independent-source derivative-use discussion.\"],\"breaks_true_positives\":true,\"residual_risks\":[],\"suggested_tightening\":\"Regenerate this pinpoint from opinion text, not from the rendered content page.\"},{\"assertion_id\":\"f125e4086cc4bb3c\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The quoted 'fruit of the poisonous tree' passage is not character-faithful to the cached opinion text; it changes cached text and adds Markdown emphasis inside the quotation. The lake also flags this pinpoint as quote_fidelity='mismatch'.\",\"severity\":\"medium\",\"proposed_fix\":\"Quote the cached passage exactly, or paraphrase the rule without quotation marks and reserve quotation marks for exact text.\",\"evidence_quote\":\"the trial judge must give opportunity, however closely confined, to the accused to prove that a substantial portion of the ease against him was a fruit of the poisonous tree. ' This leaves ample opportunity to the Government to convince the trial court that its proof had an independent origin.\",\"needs_cl\":false,\"locator_note\":\"pin-341; text/Nardone v. United States__c72cf8.txt paragraph b405-7\"},\"reasons\":[\"The payload quote says 'case' and formats '*fruit of the poisonous tree*'.\",\"The disclosed cached text says 'ease' and contains no Markdown emphasis, plus a stray apostrophe before 'This leaves'.\"],\"breaks_true_positives\":true,\"residual_risks\":[\"The 'ease' spelling and apostrophe likely may be OCR artifacts, but Lens A cannot correct them without disclosed clean authority.\"],\"suggested_tightening\":\"Use a non-quoted sentence for the normalized rule, followed by a faithful shorter quotation such as 'fruit of the poisonous tree' if exact support is needed.\"},{\"assertion_id\":\"01db28ac718c7003\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside Lens A, so no treatment defect is raised.\",\"For recordkeeping only, the content treatment fields match the lake treatment fields: field_i_validity='good_law', as_of_content='1939-12-11', as_of_treatment='2026-06-30', varies_by_point=false.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Lens A did not audit whether 'No negative treatment' is correct; that belongs to Lens B.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed all 5 rows in group_inventory.jsonl. No support, pincite, or black_letter rows were present; Lens A did not make treatment/currency findings.\"}",
+  "summary": {
+    "at": "2026-07-09T23:35:48-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-0efbd2ae47",
+      "F-S9-PR-1badbb9322",
+      "F-S9-PR-f0b2fffd9f"
+    ],
+    "group_id": "_overhaul2/lake/cases/Nardone v. United States.json",
+    "group_total_assertions": 5,
+    "lake_only_cases": [],
+    "lane": "codex-A",
+    "lane_id": "codex-A-panel-prod-b9f332e0",
+    "lens": "A",
+    "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-b9f332e0.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Nardone v. United States"
+    ],
+    "tokens": {
+      "input": 233430,
+      "output": 7955,
+      "source": "codex-events",
+      "total": 241385
+    },
+    "verdict_map": {
+      "01db28ac718c7003": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "4a142d4956d844f2": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "b229c2afb313728f": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "cb2925735cf35d8f": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "f125e4086cc4bb3c": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-0efbd2ae47",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-1badbb9322",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-f0b2fffd9f",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 155.7
+  }
+}

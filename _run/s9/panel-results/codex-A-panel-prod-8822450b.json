@@ -1,0 +1,189 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Graham v. Connor.json",
+    "lens": "A",
+    "notes": "Reviewed all 5 group_inventory.jsonl rows exactly once. No support-only or black-letter rows were present in this group.",
+    "reviewed": [
+      {
+        "assertion_id": "34e289300c134906",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity confirms Graham v. Connor, U.S. Supreme Court, decided 1989-05-15, year 1989.",
+          "Lake citations confirm official citation 490 U.S. 386 and the listed parallel/vendor citations match the inventory payload."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "8d33102d2ee42bbb",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "The \"reasonableness\" of a particular use of force must be judged from the perspective of a reasonable officer on the scene, rather than with the 20/20 vision of hindsight.",
+          "locator_note": "text/Graham v. Connor__513325.txt line 26; lake pin-396 also marks quote_fidelity=mismatch and has no star_marker.",
+          "needs_cl": false,
+          "problem": "The quote is substantively located in the cached opinion, but it is not character-faithful: the cached text uses double quotation marks around reasonableness, while the asserted quote uses single quotation marks.",
+          "proposed_fix": "Use the cached text wording: \"The \\\"reasonableness\\\" of a particular use of force must be judged from the perspective of a reasonable officer on the scene, rather than with the 20/20 vision of hindsight.\"",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The sentence appears in the cached opinion after the *396 pagination marker.",
+          "Because this is presented as a verbatim quotation, the single-versus-double quotation mark change is a quote-fidelity defect."
+        ],
+        "residual_risks": [
+          "Pin remains slip-only in the lake record rather than fragment/star verified."
+        ],
+        "suggested_tightening": "Regenerate pin-396 from the cached opinion text and preserve exact punctuation.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "d82c528653841427",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The cached opinion at *396 contains the exact quoted substring beginning \"including the severity of the crime at issue\" and ending \"attempting to evade arrest by flight.\"",
+          "Lake pin-396a marks quote_fidelity=matched, pinpoint_status=star-verified, star_marker=396, with a validated fragment."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "dcda0beea11e9882",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "and hold that <i>all</i> claims that law enforcement officers have used excessive force",
+          "locator_note": "lake pin-395 has no page, star_marker, or position and marks quote_fidelity=mismatch; the inventory quote contains \"## Issue\" and \"## Rule\", which are not opinion text.",
+          "needs_cl": false,
+          "problem": "The asserted pin-395 quote is not a Graham opinion passage; it splices page Markdown and section headings rather than the opinion text at 490 U.S. 395.",
+          "proposed_fix": "Replace pin-395 with the actual page-395 holding passage from the cached opinion, beginning with the Court's statement that it holds all such excessive-force seizure claims are governed by the Fourth Amendment reasonableness standard, or paraphrase without quotation marks.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload quote includes content-page Markdown headings, not text from the Supreme Court opinion.",
+          "The cached opinion at *395 contains the all-claims Fourth Amendment holding, so the pin-395 quote data is attached to the wrong text."
+        ],
+        "residual_risks": [
+          "The replacement quote should be regenerated directly from text/Graham v. Connor__513325.txt to preserve exact punctuation."
+        ],
+        "suggested_tightening": "Treat generated quotes containing page headings such as \"## Issue\" or \"## Rule\" as automatic quote-fidelity failures.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "8fc0f62aa84d4c5f",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Lake treatment fields match the inventory payload: field_i_validity=good_law, as_of_content=1989-05-15, as_of_treatment=2026-06-30, and varies_by_point=false.",
+          "Lens A does not audit treatment/currency, so no treatment finding is raised."
+        ],
+        "residual_risks": [
+          "Treatment currency is outside Lens A and remains for Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"A\",\n  \"group_id\": \"_overhaul2/lake/cases/Graham v. Connor.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"34e289300c134906\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Lake identity confirms Graham v. Connor, U.S. Supreme Court, decided 1989-05-15, year 1989.\",\n        \"Lake citations confirm official citation 490 U.S. 386 and the listed parallel/vendor citations match the inventory payload.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"8d33102d2ee42bbb\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands-modified\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The quote is substantively located in the cached opinion, but it is not character-faithful: the cached text uses double quotation marks around reasonableness, while the asserted quote uses single quotation marks.\",\n        \"severity\": \"low\",\n        \"proposed_fix\": \"Use the cached text wording: \\\"The \\\\\\\"reasonableness\\\\\\\" of a particular use of force must be judged from the perspective of a reasonable officer on the scene, rather than with the 20/20 vision of hindsight.\\\"\",\n        \"evidence_quote\": \"The \\\"reasonableness\\\" of a particular use of force must be judged from the perspective of a reasonable officer on the scene, rather than with the 20/20 vision of hindsight.\",\n        \"needs_cl\": false,\n        \"locator_note\": \"text/Graham v. Connor__513325.txt line 26; lake pin-396 also marks quote_fidelity=mismatch and has no star_marker.\"\n      },\n      \"reasons\": [\n        \"The sentence appears in the cached opinion after the *396 pagination marker.\",\n        \"Because this is presented as a verbatim quotation, the single-versus-double quotation mark change is a quote-fidelity defect.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Pin remains slip-only in the lake record rather than fragment/star verified.\"\n      ],\n      \"suggested_tightening\": \"Regenerate pin-396 from the cached opinion text and preserve exact punctuation.\"\n    },\n    {\n      \"assertion_id\": \"d82c528653841427\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The cached opinion at *396 contains the exact quoted substring beginning \\\"including the severity of the crime at issue\\\" and ending \\\"attempting to evade arrest by flight.\\\"\",\n        \"Lake pin-396a marks quote_fidelity=matched, pinpoint_status=star-verified, star_marker=396, with a validated fragment.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"dcda0beea11e9882\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The asserted pin-395 quote is not a Graham opinion passage; it splices page Markdown and section headings rather than the opinion text at 490 U.S. 395.\",\n        \"severity\": \"high\",\n        \"proposed_fix\": \"Replace pin-395 with the actual page-395 holding passage from the cached opinion, beginning with the Court's statement that it holds all such excessive-force seizure claims are governed by the Fourth Amendment reasonableness standard, or paraphrase without quotation marks.\",\n        \"evidence_quote\": \"and hold that <i>all</i> claims that law enforcement officers have used excessive force\",\n        \"needs_cl\": false,\n        \"locator_note\": \"lake pin-395 has no page, star_marker, or position and marks quote_fidelity=mismatch; the inventory quote contains \\\"## Issue\\\" and \\\"## Rule\\\", which are not opinion text.\"\n      },\n      \"reasons\": [\n        \"The payload quote includes content-page Markdown headings, not text from the Supreme Court opinion.\",\n        \"The cached opinion at *395 contains the all-claims Fourth Amendment holding, so the pin-395 quote data is attached to the wrong text.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The replacement quote should be regenerated directly from text/Graham v. Connor__513325.txt to preserve exact punctuation.\"\n      ],\n      \"suggested_tightening\": \"Treat generated quotes containing page headings such as \\\"## Issue\\\" or \\\"## Rule\\\" as automatic quote-fidelity failures.\"\n    },\n    {\n      \"assertion_id\": \"8fc0f62aa84d4c5f\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Lake treatment fields match the inventory payload: field_i_validity=good_law, as_of_content=1989-05-15, as_of_treatment=2026-06-30, and varies_by_point=false.\",\n        \"Lens A does not audit treatment/currency, so no treatment finding is raised.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Treatment currency is outside Lens A and remains for Lens B.\"\n      ],\n      \"suggested_tightening\": null\n    }\n  ],\n  \"notes\": \"Reviewed all 5 group_inventory.jsonl rows exactly once. No support-only or black-letter rows were present in this group.\"\n}",
+  "summary": {
+    "at": "2026-07-09T23:24:40-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-9dc7814eb8",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-f140739715",
+      "F-S9-PR-3647585329"
+    ],
+    "group_id": "_overhaul2/lake/cases/Graham v. Connor.json",
+    "group_total_assertions": 5,
+    "lake_only_cases": [],
+    "lane": "codex-A",
+    "lane_id": "codex-A-panel-prod-8822450b",
+    "lens": "A",
+    "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-8822450b.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Graham v. Connor"
+    ],
+    "tokens": {
+      "input": 123360,
+      "output": 8903,
+      "source": "codex-events",
+      "total": 132263
+    },
+    "verdict_map": {
+      "34e289300c134906": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "8d33102d2ee42bbb": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "8fc0f62aa84d4c5f": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "d82c528653841427": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "dcda0beea11e9882": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-f140739715",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-3647585329",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-9dc7814eb8",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": 175.8
+  }
+}

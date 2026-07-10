@@ -1,0 +1,156 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Mallory v. United States.json",
+    "lens": "A",
+    "notes": "Reviewed all four group_inventory.jsonl assertion_ids under Lens A only.",
+    "reviewed": [
+      {
+        "assertion_id": "81121a1a4fc58cea",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity record is verified for Mallory v. United States, decided 1957-06-24 by the U.S. Supreme Court.",
+          "Lake citations list official citation 354 U.S. 449 and parallel/vendor citations matching the payload."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "22eec4e980b7e3ab",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "The arrested person may, of course, be “booked” by the police. But he is not to be taken to police headquarters in order to carry out a process of inquiry that lends itself, even if not so designed, to eliciting damaging statements to support the arrest and ultimately his guilt.",
+          "locator_note": "pin-454; opinion text at star page *454, paragraph b494-6.",
+          "needs_cl": false,
+          "problem": "The pin-454 payload is not a character-faithful quote from the opinion; it is a harvested block of the built content page/front matter and page summary text.",
+          "proposed_fix": "Replace pin-454 with the actual *454 opinion passage supporting the page quote, or remove this malformed pinpoint quote.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload begins with built-page markup/text ('--- # Mallory v. United States ... ## Background ... ## Issue ... ## Rule'), not opinion language.",
+          "The lake record itself marks pin-454 quote_fidelity as mismatch and has no page/star marker for the pinpoint."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Use only the exact quoted sentence fragment from the opinion for pin-454.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "ea0969e6dfb8c0a7",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "The duty enjoined upon arresting officers to arraign “without unnecessary delay” indicates that the command does not call for mechanical or automatic obedience. Circumstances may justify a brief delay between arrest and arraignment, as for instance, where the story volunteered by the accused is susceptible of quick verification through third parties. But the delay must not be of a nature to give opportunity for the extraction of a confession.",
+          "locator_note": "pin-455; opinion text at star page *455, paragraph b495-4.",
+          "needs_cl": false,
+          "problem": "The pin-455 quote is substantively from the opinion but is not character-faithful: it changes quotation marks and replaces an intervening clause with an ellipsis while dropping the original comma after 'arraignment'.",
+          "proposed_fix": "Use the exact opinion text, or mark the omission with a properly formed ellipsis while preserving punctuation and quote style required by the corpus standard.",
+          "severity": "medium"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The disclosed opinion uses curly double quotation marks around “without unnecessary delay”; the payload uses straight single quotation marks.",
+          "The disclosed opinion says 'arraignment, as for instance...' before the omitted clause; the payload says 'arraignment . . . .' without the comma.",
+          "The lake record marks pin-455 quote_fidelity as mismatch."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "If the corpus permits ellipses, store this as an ellipsis quote rather than a character-exact quote.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "a3937c1063194f98",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment payload matches the lake treatment fields: field_i_validity good_law, as_of_content 1957-06-24, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note.",
+          "Treatment/currency correctness is outside Lens A, so no treatment finding is raised."
+        ],
+        "residual_risks": [
+          "Treatment/currency merits remain for Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Mallory v. United States.json\",\"reviewed\":[{\"assertion_id\":\"81121a1a4fc58cea\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity record is verified for Mallory v. United States, decided 1957-06-24 by the U.S. Supreme Court.\",\"Lake citations list official citation 354 U.S. 449 and parallel/vendor citations matching the payload.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"22eec4e980b7e3ab\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The pin-454 payload is not a character-faithful quote from the opinion; it is a harvested block of the built content page/front matter and page summary text.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-454 with the actual *454 opinion passage supporting the page quote, or remove this malformed pinpoint quote.\",\"evidence_quote\":\"The arrested person may, of course, be “booked” by the police. But he is not to be taken to police headquarters in order to carry out a process of inquiry that lends itself, even if not so designed, to eliciting damaging statements to support the arrest and ultimately his guilt.\",\"needs_cl\":false,\"locator_note\":\"pin-454; opinion text at star page *454, paragraph b494-6.\"},\"reasons\":[\"The payload begins with built-page markup/text ('--- # Mallory v. United States ... ## Background ... ## Issue ... ## Rule'), not opinion language.\",\"The lake record itself marks pin-454 quote_fidelity as mismatch and has no page/star marker for the pinpoint.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":\"Use only the exact quoted sentence fragment from the opinion for pin-454.\"},{\"assertion_id\":\"ea0969e6dfb8c0a7\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The pin-455 quote is substantively from the opinion but is not character-faithful: it changes quotation marks and replaces an intervening clause with an ellipsis while dropping the original comma after 'arraignment'.\",\"severity\":\"medium\",\"proposed_fix\":\"Use the exact opinion text, or mark the omission with a properly formed ellipsis while preserving punctuation and quote style required by the corpus standard.\",\"evidence_quote\":\"The duty enjoined upon arresting officers to arraign “without unnecessary delay” indicates that the command does not call for mechanical or automatic obedience. Circumstances may justify a brief delay between arrest and arraignment, as for instance, where the story volunteered by the accused is susceptible of quick verification through third parties. But the delay must not be of a nature to give opportunity for the extraction of a confession.\",\"needs_cl\":false,\"locator_note\":\"pin-455; opinion text at star page *455, paragraph b495-4.\"},\"reasons\":[\"The disclosed opinion uses curly double quotation marks around “without unnecessary delay”; the payload uses straight single quotation marks.\",\"The disclosed opinion says 'arraignment, as for instance...' before the omitted clause; the payload says 'arraignment . . . .' without the comma.\",\"The lake record marks pin-455 quote_fidelity as mismatch.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":\"If the corpus permits ellipses, store this as an ellipsis quote rather than a character-exact quote.\"},{\"assertion_id\":\"a3937c1063194f98\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment payload matches the lake treatment fields: field_i_validity good_law, as_of_content 1957-06-24, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note.\",\"Treatment/currency correctness is outside Lens A, so no treatment finding is raised.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment/currency merits remain for Lens B.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed all four group_inventory.jsonl assertion_ids under Lens A only.\"}",
+  "summary": {
+    "at": "2026-07-09T23:30:22-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-061da014f5",
+      "F-S9-PR-4dd30cea40"
+    ],
+    "group_id": "_overhaul2/lake/cases/Mallory v. United States.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "codex-A",
+    "lane_id": "codex-A-panel-prod-b5916672",
+    "lens": "A",
+    "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-b5916672.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Mallory v. United States"
+    ],
+    "tokens": {
+      "input": 167619,
+      "output": 6774,
+      "source": "codex-events",
+      "total": 174393
+    },
+    "verdict_map": {
+      "22eec4e980b7e3ab": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "81121a1a4fc58cea": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "a3937c1063194f98": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "ea0969e6dfb8c0a7": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-061da014f5",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-4dd30cea40",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 136.5
+  }
+}

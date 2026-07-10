@@ -1,0 +1,149 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/McNabb v. United States.json",
+    "lens": "A",
+    "notes": "Reviewed all four group_inventory rows exactly once under Lens A.",
+    "reviewed": [
+      {
+        "assertion_id": "9ffc90742daa8133",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity verifies McNabb v. United States as a U.S. Supreme Court case, year 1943, cluster_id 103791.",
+          "The payload's official citation 318 U.S. 332 and listed parallel/vendor citations match the lake citation fields."
+        ],
+        "residual_risks": [
+          "The cached opinion header says \"Decided March 1, 1943\" and \"Rehearing Denied June 7, 1943\"; the reviewed existence payload does not assert the exact decision date."
+        ],
+        "suggested_tightening": "If date_decided is reviewed elsewhere, reconcile the March 1 decision date against the June 7 rehearing-denial date.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "2746ab1bb511de48",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The pin-347 quote in the payload matches lake pinpoints[id=pin-347].quote.",
+          "The cached opinion text contains the quoted first and second sentences in paragraph p22, with the intervening sentence omitted and signaled by an ellipsis."
+        ],
+        "residual_risks": [
+          "Lake has page null, star_marker null, and pinpoint_status slip-only, so the reporter-page pincite is not independently verified under this quote-fidelity row."
+        ],
+        "suggested_tightening": "Add a page/star marker or paragraph locator for the Id. at 347 citation if pincite precision is later reviewed.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "6a52f0cebeb46368",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "--- # McNabb v. United States *318 U.S. 332 (1943)* · U.S. Supreme Court · **Binding — SCOTUS** · Treatment: **good** *(as of 2026-06-30)*",
+          "locator_note": "lake pinpoints[id=pin-345]; content_page marker ^pin-345 follows the visible Rule quote beginning \"Plainly, a conviction...\"",
+          "needs_cl": false,
+          "problem": "pin-345's stored quote is page Markdown/front matter and case-summary prose, not a verbatim opinion quote and not the Rule quote marked by ^pin-345 on the built page.",
+          "proposed_fix": "Replace pin-345.quote with the actual opinion passage beginning \"Plainly, a conviction resting on evidence secured through such a flagrant disregard...\" and ending with the stultification sentence, preserving the ellipsis/bracketed capitalization used on the built page.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload/lake quote for pin-345 starts with the built page header and includes Background/Issue/Rule prose rather than the court's quoted language.",
+          "The cached opinion text supports the visible content_page quote at paragraph p20, but the lake pinpoint quote does not contain that passage."
+        ],
+        "residual_risks": [
+          "The official page 345 pincite is not separately verifiable from the cached text because the cache exposes paragraph structure rather than reporter page breaks."
+        ],
+        "suggested_tightening": "Constrain quote extraction to the quoted passage immediately associated with the pin marker, not the preceding page header and summary sections.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "e1d948e5afdcc999",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Lens A does not assess treatment currency; the payload mirrors the lake treatment fields for field_i_validity, as_of_content, as_of_treatment, varies_by_point, and scope_note.",
+          "No Lens A citation, support, or quote-fidelity defect is raised for this treatment row."
+        ],
+        "residual_risks": [
+          "Treatment/progeny accuracy is reserved for Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/McNabb v. United States.json\",\"reviewed\":[{\"assertion_id\":\"9ffc90742daa8133\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity verifies McNabb v. United States as a U.S. Supreme Court case, year 1943, cluster_id 103791.\",\"The payload's official citation 318 U.S. 332 and listed parallel/vendor citations match the lake citation fields.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The cached opinion header says \\\"Decided March 1, 1943\\\" and \\\"Rehearing Denied June 7, 1943\\\"; the reviewed existence payload does not assert the exact decision date.\"],\"suggested_tightening\":\"If date_decided is reviewed elsewhere, reconcile the March 1 decision date against the June 7 rehearing-denial date.\"},{\"assertion_id\":\"2746ab1bb511de48\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The pin-347 quote in the payload matches lake pinpoints[id=pin-347].quote.\",\"The cached opinion text contains the quoted first and second sentences in paragraph p22, with the intervening sentence omitted and signaled by an ellipsis.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Lake has page null, star_marker null, and pinpoint_status slip-only, so the reporter-page pincite is not independently verified under this quote-fidelity row.\"],\"suggested_tightening\":\"Add a page/star marker or paragraph locator for the Id. at 347 citation if pincite precision is later reviewed.\"},{\"assertion_id\":\"6a52f0cebeb46368\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"pin-345's stored quote is page Markdown/front matter and case-summary prose, not a verbatim opinion quote and not the Rule quote marked by ^pin-345 on the built page.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-345.quote with the actual opinion passage beginning \\\"Plainly, a conviction resting on evidence secured through such a flagrant disregard...\\\" and ending with the stultification sentence, preserving the ellipsis/bracketed capitalization used on the built page.\",\"evidence_quote\":\"--- # McNabb v. United States *318 U.S. 332 (1943)* · U.S. Supreme Court · **Binding — SCOTUS** · Treatment: **good** *(as of 2026-06-30)*\",\"needs_cl\":false,\"locator_note\":\"lake pinpoints[id=pin-345]; content_page marker ^pin-345 follows the visible Rule quote beginning \\\"Plainly, a conviction...\\\"\"},\"reasons\":[\"The payload/lake quote for pin-345 starts with the built page header and includes Background/Issue/Rule prose rather than the court's quoted language.\",\"The cached opinion text supports the visible content_page quote at paragraph p20, but the lake pinpoint quote does not contain that passage.\"],\"breaks_true_positives\":true,\"residual_risks\":[\"The official page 345 pincite is not separately verifiable from the cached text because the cache exposes paragraph structure rather than reporter page breaks.\"],\"suggested_tightening\":\"Constrain quote extraction to the quoted passage immediately associated with the pin marker, not the preceding page header and summary sections.\"},{\"assertion_id\":\"e1d948e5afdcc999\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lens A does not assess treatment currency; the payload mirrors the lake treatment fields for field_i_validity, as_of_content, as_of_treatment, varies_by_point, and scope_note.\",\"No Lens A citation, support, or quote-fidelity defect is raised for this treatment row.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment/progeny accuracy is reserved for Lens B.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed all four group_inventory rows exactly once under Lens A.\"}",
+  "summary": {
+    "at": "2026-07-09T23:34:49-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-1ebc7ba161"
+    ],
+    "group_id": "_overhaul2/lake/cases/McNabb v. United States.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "codex-A",
+    "lane_id": "codex-A-panel-prod-cb30f8f9",
+    "lens": "A",
+    "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-cb30f8f9.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "McNabb v. United States"
+    ],
+    "tokens": {
+      "input": 318241,
+      "output": 10496,
+      "source": "codex-events",
+      "total": 328737
+    },
+    "verdict_map": {
+      "2746ab1bb511de48": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "6a52f0cebeb46368": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "9ffc90742daa8133": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "e1d948e5afdcc999": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-1ebc7ba161",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 219.2
+  }
+}

@@ -1,0 +1,124 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Mapp v. Ohio.json",
+    "lens": "A",
+    "notes": "Lens A review only; treatment/currency findings reserved for lens B.",
+    "reviewed": [
+      {
+        "assertion_id": "519ff73242972410",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record identifies Mapp v. Ohio, U.S. Supreme Court, year 1961, and official citation 367 U.S. 643.",
+          "The content page display citation and parallels match the lake citations."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "980d25e98dfea5b3",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "We hold that all evidence obtained by searches and seizures in violation of the Constitution is, by that same authority, inadmissible in a state court.",
+          "locator_note": "text/Mapp v. Ohio__546381.txt places this sentence immediately after star pagination *655; lake pinpoints[0].quote instead starts with the content-page header markdown.",
+          "needs_cl": false,
+          "problem": "The stored pin-655 quote in the lake record is not the Mapp opinion passage; it is a harvested chunk of the built markdown page. It does not contain the actual quoted rule at 367 U.S. 655.",
+          "proposed_fix": "Replace pin-655 quote with: \"We hold that all evidence obtained by searches and seizures in violation of the Constitution is, by that same authority, inadmissible in a state court.\" Set page/star metadata to page 655 if supported by the pipeline.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The lake pinpoints record itself marks quote_fidelity as \"mismatch\" and page as null/slip-only.",
+          "The actual opinion text contains the quoted rule at the *655 star-pagination marker, but the lake quote field contains built-page material beginning with \"--- # Mapp v. Ohio\"."
+        ],
+        "residual_risks": [
+          "The content_page displayed quote is faithful to the opinion text; the defect is in the lake pinpoint quote payload."
+        ],
+        "suggested_tightening": "Use the opinion sentence at *655 as the stored quote and bind pin-655 to page 655 rather than to the content-page excerpt.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "05576641b05bb574",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside lens A, so no treatment-law defect is raised.",
+          "The treatment payload matches the disclosed lake treatment fields and content-page treatment fields: good_law, as_of_content 1961-06-19, as_of_treatment 2026-06-30, varies_by_point false."
+        ],
+        "residual_risks": [
+          "No independent lens-B treatment/currency review performed."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Mapp v. Ohio.json\",\"reviewed\":[{\"assertion_id\":\"519ff73242972410\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record identifies Mapp v. Ohio, U.S. Supreme Court, year 1961, and official citation 367 U.S. 643.\",\"The content page display citation and parallels match the lake citations.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"980d25e98dfea5b3\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The stored pin-655 quote in the lake record is not the Mapp opinion passage; it is a harvested chunk of the built markdown page. It does not contain the actual quoted rule at 367 U.S. 655.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-655 quote with: \\\"We hold that all evidence obtained by searches and seizures in violation of the Constitution is, by that same authority, inadmissible in a state court.\\\" Set page/star metadata to page 655 if supported by the pipeline.\",\"evidence_quote\":\"We hold that all evidence obtained by searches and seizures in violation of the Constitution is, by that same authority, inadmissible in a state court.\",\"needs_cl\":false,\"locator_note\":\"text/Mapp v. Ohio__546381.txt places this sentence immediately after star pagination *655; lake pinpoints[0].quote instead starts with the content-page header markdown.\"},\"reasons\":[\"The lake pinpoints record itself marks quote_fidelity as \\\"mismatch\\\" and page as null/slip-only.\",\"The actual opinion text contains the quoted rule at the *655 star-pagination marker, but the lake quote field contains built-page material beginning with \\\"--- # Mapp v. Ohio\\\".\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The content_page displayed quote is faithful to the opinion text; the defect is in the lake pinpoint quote payload.\"],\"suggested_tightening\":\"Use the opinion sentence at *655 as the stored quote and bind pin-655 to page 655 rather than to the content-page excerpt.\"},{\"assertion_id\":\"05576641b05bb574\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside lens A, so no treatment-law defect is raised.\",\"The treatment payload matches the disclosed lake treatment fields and content-page treatment fields: good_law, as_of_content 1961-06-19, as_of_treatment 2026-06-30, varies_by_point false.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"No independent lens-B treatment/currency review performed.\"],\"suggested_tightening\":null}],\"notes\":\"Lens A review only; treatment/currency findings reserved for lens B.\"}",
+  "summary": {
+    "at": "2026-07-09T23:31:27-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-7650be2777"
+    ],
+    "group_id": "_overhaul2/lake/cases/Mapp v. Ohio.json",
+    "group_total_assertions": 3,
+    "lake_only_cases": [],
+    "lane": "codex-A",
+    "lane_id": "codex-A-panel-prod-dea69e1f",
+    "lens": "A",
+    "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-dea69e1f.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 3,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Mapp v. Ohio"
+    ],
+    "tokens": {
+      "input": 189940,
+      "output": 6174,
+      "source": "codex-events",
+      "total": 196114
+    },
+    "verdict_map": {
+      "05576641b05bb574": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "519ff73242972410": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "980d25e98dfea5b3": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-7650be2777",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 124.2
+  }
+}

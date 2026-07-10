@@ -1,0 +1,161 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Berkemer v. McCarty.json",
+    "lens": "A",
+    "notes": "Reviewed all 4 group_inventory rows using only the disclosed files. Lens A did not audit treatment merits.",
+    "reviewed": [
+      {
+        "assertion_id": "92636f2eeaf5e0c2",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity record names Berkemer v. McCarty, court U.S. Supreme Court, docket 83-710, date_decided 1984-07-02, and year 1984.",
+          "Lake citations select 468 U.S. 420 as the official citation; the content page displays 468 U.S. 420 (1984) and the same parallel/vendor citations."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "01d3667402c2cae3",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "We hold therefore that a person subjected to custodial interrogation is entitled to the benefit of the procedural safeguards enunciated in",
+          "locator_note": "text/Berkemer v. McCarty__ad80aa.txt line 31, page-number label 434; lake pinpoints id pin-434.",
+          "needs_cl": false,
+          "problem": "The pin-434 quote assertion is not character-faithful. The stored/payload quote is a harvested page-heading fragment, not the opinion's page-434 holding; the lake pinpoint also labels quote_fidelity as mismatch.",
+          "proposed_fix": "Replace pin-434 with the page-434 holding beginning We hold therefore that a person subjected to custodial interrogation, or regenerate the lake pinpoint from the visible page quote.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload quote says requiring Miranda warnings. ## Rule Miranda applies to custodial interrogation no matter how minor the offense:, which is not the opinion passage at page 434.",
+          "The actual page-434 passage begins with We hold therefore and supports the rule, so the stored quote text is the wrong material.",
+          "The lake record's own pinpoints entry for pin-434 reports quote_fidelity=mismatch and page=null/slip-only."
+        ],
+        "residual_risks": [
+          "The visible content_page rule quote appears substantively supported, but this inventory assertion is the defective stored pinpoint quote."
+        ],
+        "suggested_tightening": "Store the exact page-434 quote or a documented normalized version with footnote/emphasis handling.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "fc73369500344fc4",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "The similarly noncoercive aspect of ordinary traffic stops prompts us to hold that persons temporarily detained pursuant to such stops are not “in custody” for the purposes of",
+          "locator_note": "text/Berkemer v. McCarty__ad80aa.txt line 39, page-number label 440; lake pinpoints id pin-440.",
+          "needs_cl": false,
+          "problem": "The pin-440 quote is substantively the page-440 holding but is not character-faithful to the disclosed text: the source uses curly double quotation marks around “in custody” and HTML emphasis around Miranda, while the payload uses straight single quotes and Markdown asterisks; the lake marks quote_fidelity as mismatch.",
+          "proposed_fix": "Regenerate the quote from the source text or define an approved normalization that converts source HTML emphasis to Markdown while preserving quoted punctuation.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The source passage appears at page 440, so the support substance is present.",
+          "As written, the payload quote does not occur in the cached text because it changes “in custody” to 'in custody' and renders Miranda with Markdown asterisks.",
+          "The lake pinpoint itself reports quote_fidelity=mismatch."
+        ],
+        "residual_risks": [
+          "If the corpus intentionally normalizes HTML italics to Markdown, the remaining source-level defect is punctuation fidelity."
+        ],
+        "suggested_tightening": "Adopt a single quote-normalization policy and re-run quote fidelity after normalization.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "721c443b01003189",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The treatment payload matches lake.treatment: field_i_validity=good_law, as_of_content=1984-07-02, as_of_treatment=2026-06-30, and varies_by_point=false.",
+          "Treatment/currency merits are outside Lens A, so no treatment finding is raised."
+        ],
+        "residual_risks": [
+          "Treatment merits not evaluated under Lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"A\",\n  \"group_id\": \"_overhaul2/lake/cases/Berkemer v. McCarty.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"92636f2eeaf5e0c2\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Lake identity record names Berkemer v. McCarty, court U.S. Supreme Court, docket 83-710, date_decided 1984-07-02, and year 1984.\",\n        \"Lake citations select 468 U.S. 420 as the official citation; the content page displays 468 U.S. 420 (1984) and the same parallel/vendor citations.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"01d3667402c2cae3\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The pin-434 quote assertion is not character-faithful. The stored/payload quote is a harvested page-heading fragment, not the opinion's page-434 holding; the lake pinpoint also labels quote_fidelity as mismatch.\",\n        \"severity\": \"high\",\n        \"proposed_fix\": \"Replace pin-434 with the page-434 holding beginning We hold therefore that a person subjected to custodial interrogation, or regenerate the lake pinpoint from the visible page quote.\",\n        \"evidence_quote\": \"We hold therefore that a person subjected to custodial interrogation is entitled to the benefit of the procedural safeguards enunciated in\",\n        \"needs_cl\": false,\n        \"locator_note\": \"text/Berkemer v. McCarty__ad80aa.txt line 31, page-number label 434; lake pinpoints id pin-434.\"\n      },\n      \"reasons\": [\n        \"The payload quote says requiring Miranda warnings. ## Rule Miranda applies to custodial interrogation no matter how minor the offense:, which is not the opinion passage at page 434.\",\n        \"The actual page-434 passage begins with We hold therefore and supports the rule, so the stored quote text is the wrong material.\",\n        \"The lake record's own pinpoints entry for pin-434 reports quote_fidelity=mismatch and page=null/slip-only.\"\n      ],\n      \"breaks_true_positives\": true,\n      \"residual_risks\": [\n        \"The visible content_page rule quote appears substantively supported, but this inventory assertion is the defective stored pinpoint quote.\"\n      ],\n      \"suggested_tightening\": \"Store the exact page-434 quote or a documented normalized version with footnote/emphasis handling.\"\n    },\n    {\n      \"assertion_id\": \"fc73369500344fc4\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The pin-440 quote is substantively the page-440 holding but is not character-faithful to the disclosed text: the source uses curly double quotation marks around “in custody” and HTML emphasis around Miranda, while the payload uses straight single quotes and Markdown asterisks; the lake marks quote_fidelity as mismatch.\",\n        \"severity\": \"low\",\n        \"proposed_fix\": \"Regenerate the quote from the source text or define an approved normalization that converts source HTML emphasis to Markdown while preserving quoted punctuation.\",\n        \"evidence_quote\": \"The similarly noncoercive aspect of ordinary traffic stops prompts us to hold that persons temporarily detained pursuant to such stops are not “in custody” for the purposes of\",\n        \"needs_cl\": false,\n        \"locator_note\": \"text/Berkemer v. McCarty__ad80aa.txt line 39, page-number label 440; lake pinpoints id pin-440.\"\n      },\n      \"reasons\": [\n        \"The source passage appears at page 440, so the support substance is present.\",\n        \"As written, the payload quote does not occur in the cached text because it changes “in custody” to 'in custody' and renders Miranda with Markdown asterisks.\",\n        \"The lake pinpoint itself reports quote_fidelity=mismatch.\"\n      ],\n      \"breaks_true_positives\": true,\n      \"residual_risks\": [\n        \"If the corpus intentionally normalizes HTML italics to Markdown, the remaining source-level defect is punctuation fidelity.\"\n      ],\n      \"suggested_tightening\": \"Adopt a single quote-normalization policy and re-run quote fidelity after normalization.\"\n    },\n    {\n      \"assertion_id\": \"721c443b01003189\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The treatment payload matches lake.treatment: field_i_validity=good_law, as_of_content=1984-07-02, as_of_treatment=2026-06-30, and varies_by_point=false.\",\n        \"Treatment/currency merits are outside Lens A, so no treatment finding is raised.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Treatment merits not evaluated under Lens A.\"\n      ],\n      \"suggested_tightening\": null\n    }\n  ],\n  \"notes\": \"Reviewed all 4 group_inventory rows using only the disclosed files. Lens A did not audit treatment merits.\"\n}",
+  "summary": {
+    "at": "2026-07-09T23:21:10-04:00",
+    "attempts": 2,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-585ddbc948",
+      "F-S9-PR-a952b43cfd"
+    ],
+    "group_id": "_overhaul2/lake/cases/Berkemer v. McCarty.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "codex-A",
+    "lane_id": "codex-A-panel-prod-53c28e48",
+    "lens": "A",
+    "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-53c28e48.json",
+    "model": "gpt-5.5",
+    "parse_status": "repaired",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Berkemer v. McCarty"
+    ],
+    "tokens": {
+      "input": 427303,
+      "output": 12126,
+      "source": "codex-events",
+      "total": 439429
+    },
+    "verdict_map": {
+      "01d3667402c2cae3": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "721c443b01003189": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "92636f2eeaf5e0c2": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "fc73369500344fc4": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-585ddbc948",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-a952b43cfd",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 237.2
+  }
+}

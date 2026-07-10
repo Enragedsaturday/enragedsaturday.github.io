@@ -1,0 +1,162 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Illinois v. McArthur.json",
+    "lens": "B",
+    "notes": "",
+    "reviewed": [
+      {
+        "assertion_id": "95ffc38a427b9d5b",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record is non-stub, status verified, and identifies Illinois v. McArthur as a U.S. Supreme Court case decided 2001-02-20.",
+          "The official citation in the lake record is 531 U.S. 326, matching the asserted display citation.",
+          "For the currency angle, the lake treatment field lists field_i_validity as good_law."
+        ],
+        "residual_risks": [
+          "Treatment derivation contains proposed negative edges and audit_needed markers, but those do not defeat existence of the cited authority."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "76f950ed4026aa64",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote-fidelity review is outside Lens B; no treatment or currency defect is raised for this row.",
+          "The lake pinpoint record for pin-331 discloses quote_fidelity as mismatch and pinpoint_status as slip-only."
+        ],
+        "residual_risks": [
+          "Lens A should handle whether the pin-331 quote mismatch is independently defective."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "be9a92a927fb9a9b",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote-fidelity review is outside Lens B; no treatment or currency defect is raised for this row.",
+          "The lake pinpoint record for pin-334 discloses quote_fidelity as matched and pinpoint_status as star-verified."
+        ],
+        "residual_risks": [
+          "Lens A should handle verbatim quote and pinpoint fidelity."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "d40ee315839f0c26",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "\"audit_needed\": true,\n      \"proposed_negative_events\": 12,\n      \"audit_marker\": \"R15 treatment audit required\"",
+          "locator_note": "content_page.md Treatment & subsequent history; lake/Illinois v. McArthur__fe6765.json treatment.derivation and treatment.edges",
+          "needs_cl": false,
+          "problem": "The good-law status itself matches the lake field, but the page's categorical 'No negative treatment' language is too strong because the lake record contains proposed negative treatment edges and audit_needed markers.",
+          "proposed_fix": "Keep Status: good as of 2026-06-30, but replace 'No negative treatment' with 'No final negative treatment recorded in field_i; proposed negative citator edges are present and require audit.'",
+          "severity": "medium"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "Lake treatment.field_i_validity is good_law, matching the asserted treatment status.",
+          "Lake treatment.as_of_treatment is 2026-06-30, matching the page and inventory payload.",
+          "However, treatment.derivation reports audit_needed true and proposed_negative_events in lane1_negative and lane2_top_cited.",
+          "The lake treatment edges include proposed entries labeled questioned, criticized, abrogated, superseded_by_statute, and overruled, so 'No negative treatment' should be qualified."
+        ],
+        "residual_risks": [
+          "Because the negative edges are marked proposed and field_iii mentioned, they do not by themselves overrule or abrogate McArthur in the disclosed record.",
+          "The disclosed record's own scope note says S2 derivation may downgrade after re-derivation."
+        ],
+        "suggested_tightening": "Surface the migration-seed/audit caveat in the treatment prose instead of stating 'No negative treatment.'",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"B\",\n  \"group_id\": \"_overhaul2/lake/cases/Illinois v. McArthur.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"95ffc38a427b9d5b\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake record is non-stub, status verified, and identifies Illinois v. McArthur as a U.S. Supreme Court case decided 2001-02-20.\",\n        \"The official citation in the lake record is 531 U.S. 326, matching the asserted display citation.\",\n        \"For the currency angle, the lake treatment field lists field_i_validity as good_law.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Treatment derivation contains proposed negative edges and audit_needed markers, but those do not defeat existence of the cited authority.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"76f950ed4026aa64\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Quote-fidelity review is outside Lens B; no treatment or currency defect is raised for this row.\",\n        \"The lake pinpoint record for pin-331 discloses quote_fidelity as mismatch and pinpoint_status as slip-only.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Lens A should handle whether the pin-331 quote mismatch is independently defective.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"be9a92a927fb9a9b\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Quote-fidelity review is outside Lens B; no treatment or currency defect is raised for this row.\",\n        \"The lake pinpoint record for pin-334 discloses quote_fidelity as matched and pinpoint_status as star-verified.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Lens A should handle verbatim quote and pinpoint fidelity.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"d40ee315839f0c26\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands-modified\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The good-law status itself matches the lake field, but the page's categorical 'No negative treatment' language is too strong because the lake record contains proposed negative treatment edges and audit_needed markers.\",\n        \"severity\": \"medium\",\n        \"proposed_fix\": \"Keep Status: good as of 2026-06-30, but replace 'No negative treatment' with 'No final negative treatment recorded in field_i; proposed negative citator edges are present and require audit.'\",\n        \"evidence_quote\": \"\\\"audit_needed\\\": true,\\n      \\\"proposed_negative_events\\\": 12,\\n      \\\"audit_marker\\\": \\\"R15 treatment audit required\\\"\",\n        \"needs_cl\": false,\n        \"locator_note\": \"content_page.md Treatment & subsequent history; lake/Illinois v. McArthur__fe6765.json treatment.derivation and treatment.edges\"\n      },\n      \"reasons\": [\n        \"Lake treatment.field_i_validity is good_law, matching the asserted treatment status.\",\n        \"Lake treatment.as_of_treatment is 2026-06-30, matching the page and inventory payload.\",\n        \"However, treatment.derivation reports audit_needed true and proposed_negative_events in lane1_negative and lane2_top_cited.\",\n        \"The lake treatment edges include proposed entries labeled questioned, criticized, abrogated, superseded_by_statute, and overruled, so 'No negative treatment' should be qualified.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Because the negative edges are marked proposed and field_iii mentioned, they do not by themselves overrule or abrogate McArthur in the disclosed record.\",\n        \"The disclosed record's own scope note says S2 derivation may downgrade after re-derivation.\"\n      ],\n      \"suggested_tightening\": \"Surface the migration-seed/audit caveat in the treatment prose instead of stating 'No negative treatment.'\"\n    }\n  ],\n  \"notes\": \"\"\n}",
+  "summary": {
+    "at": "2026-07-09T23:27:53-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-3321a1f24a",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-d0be502b2f"
+    ],
+    "group_id": "_overhaul2/lake/cases/Illinois v. McArthur.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "codex-B",
+    "lane_id": "codex-B-panel-prod-e8f1cafb",
+    "lens": "B",
+    "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-e8f1cafb.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Illinois v. McArthur"
+    ],
+    "tokens": {
+      "input": 260614,
+      "output": 5613,
+      "source": "codex-events",
+      "total": 266227
+    },
+    "verdict_map": {
+      "76f950ed4026aa64": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "95ffc38a427b9d5b": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "be9a92a927fb9a9b": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "d40ee315839f0c26": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-3321a1f24a",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-d0be502b2f",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 142.3
+  }
+}

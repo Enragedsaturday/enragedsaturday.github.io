@@ -1,0 +1,145 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Garrity v. New Jersey.json",
+    "lens": "A",
+    "notes": "Reviewed all 4 inventory rows exactly once. Lens A finding is limited to existence, support/quote-fidelity, and pin placement; treatment/currency is left to Lens B.",
+    "reviewed": [
+      {
+        "assertion_id": "154007b25d752e77",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record identifies Garrity v. New Jersey as a verified U.S. Supreme Court case with year 1967 and official citation 385 U.S. 493.",
+          "The asserted parallel and vendor citations match the lake citations: 87 S. Ct. 616, 17 L. Ed. 2d 562, and 1967 U.S. LEXIS 2882."
+        ],
+        "residual_risks": [
+          "Separate non-inventory issue: content_page.md and lake identity list date_decided as 1967-01-23, while the cached opinion header says Decided January 16, 1967."
+        ],
+        "suggested_tightening": "Audit the exact date_decided field separately; the citation/year assertion itself stands.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "481b1976c6f4b88c",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The quoted sentence appears character-faithfully in text/Garrity v. New Jersey__9e7572.txt.",
+          "The passage appears after the star-pagination marker *500, matching the asserted pin and the lake pin's star_marker 500."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "5430e9e74cd939bf",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "The choice given petitioners was either to forfeit their jobs or to incriminate themselves. The option to lose their means of livelihood or to pay the penalty of self-incrimination is the antithesis of free choice to speak out or to remain silent.",
+          "locator_note": "text/Garrity v. New Jersey__9e7572.txt contains this passage immediately after the *497 star-pagination marker; lake pinpoints[0] instead contains page-generated prose and quote_fidelity=mismatch.",
+          "needs_cl": false,
+          "problem": "The asserted pin-497 quote payload is not a character-faithful opinion quote; it is a generated page excerpt beginning with the page title/background/rule, and the lake itself marks the pin quote_fidelity as mismatch with no star marker.",
+          "proposed_fix": "Replace the pin-497 quote with the actual opinion passage at 385 U.S. 497 and set the pinpoint to the *497 star page.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload quote begins with '--- # Garrity v. New Jersey' and includes page metadata, background, issue, and rule prose, none of which is the opinion text at page 497.",
+          "The actual page-visible quote in content_page.md is supported by the cached opinion text, but the inventory/lake pin payload under review is corrupt as framed."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Keep the content-page quote, but repair the lake pin record so the stored quote is the two-sentence opinion passage and the star_marker is 497.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "6678172268a0df95",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The treatment payload fields match the disclosed lake.treatment fields and the treatment block in content_page.md.",
+          "Lens A does not assess treatment or currency; no treatment finding is raised."
+        ],
+        "residual_risks": [
+          "Good-law currency was not independently reviewed under Lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Garrity v. New Jersey.json\",\"reviewed\":[{\"assertion_id\":\"154007b25d752e77\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record identifies Garrity v. New Jersey as a verified U.S. Supreme Court case with year 1967 and official citation 385 U.S. 493.\",\"The asserted parallel and vendor citations match the lake citations: 87 S. Ct. 616, 17 L. Ed. 2d 562, and 1967 U.S. LEXIS 2882.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Separate non-inventory issue: content_page.md and lake identity list date_decided as 1967-01-23, while the cached opinion header says Decided January 16, 1967.\"],\"suggested_tightening\":\"Audit the exact date_decided field separately; the citation/year assertion itself stands.\"},{\"assertion_id\":\"481b1976c6f4b88c\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The quoted sentence appears character-faithfully in text/Garrity v. New Jersey__9e7572.txt.\",\"The passage appears after the star-pagination marker *500, matching the asserted pin and the lake pin's star_marker 500.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"5430e9e74cd939bf\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The asserted pin-497 quote payload is not a character-faithful opinion quote; it is a generated page excerpt beginning with the page title/background/rule, and the lake itself marks the pin quote_fidelity as mismatch with no star marker.\",\"severity\":\"high\",\"proposed_fix\":\"Replace the pin-497 quote with the actual opinion passage at 385 U.S. 497 and set the pinpoint to the *497 star page.\",\"evidence_quote\":\"The choice given petitioners was either to forfeit their jobs or to incriminate themselves. The option to lose their means of livelihood or to pay the penalty of self-incrimination is the antithesis of free choice to speak out or to remain silent.\",\"needs_cl\":false,\"locator_note\":\"text/Garrity v. New Jersey__9e7572.txt contains this passage immediately after the *497 star-pagination marker; lake pinpoints[0] instead contains page-generated prose and quote_fidelity=mismatch.\"},\"reasons\":[\"The payload quote begins with '--- # Garrity v. New Jersey' and includes page metadata, background, issue, and rule prose, none of which is the opinion text at page 497.\",\"The actual page-visible quote in content_page.md is supported by the cached opinion text, but the inventory/lake pin payload under review is corrupt as framed.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":\"Keep the content-page quote, but repair the lake pin record so the stored quote is the two-sentence opinion passage and the star_marker is 497.\"},{\"assertion_id\":\"6678172268a0df95\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The treatment payload fields match the disclosed lake.treatment fields and the treatment block in content_page.md.\",\"Lens A does not assess treatment or currency; no treatment finding is raised.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Good-law currency was not independently reviewed under Lens A.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed all 4 inventory rows exactly once. Lens A finding is limited to existence, support/quote-fidelity, and pin placement; treatment/currency is left to Lens B.\"}",
+  "summary": {
+    "at": "2026-07-09T23:21:28-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-d352e68bdf"
+    ],
+    "group_id": "_overhaul2/lake/cases/Garrity v. New Jersey.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "codex-A",
+    "lane_id": "codex-A-panel-prod-22f97bf9",
+    "lens": "A",
+    "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-22f97bf9.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Garrity v. New Jersey"
+    ],
+    "tokens": {
+      "input": 190165,
+      "output": 6892,
+      "source": "codex-events",
+      "total": 197057
+    },
+    "verdict_map": {
+      "154007b25d752e77": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "481b1976c6f4b88c": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "5430e9e74cd939bf": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "6678172268a0df95": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-d352e68bdf",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 137.7
+  }
+}

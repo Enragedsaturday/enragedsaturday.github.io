@@ -1,0 +1,126 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Gilbert v. California.json",
+    "lens": "A",
+    "notes": "Reviewed all 3 rows in group_inventory.jsonl. No external sources used.",
+    "reviewed": [
+      {
+        "assertion_id": "7693463cdddd3ec6",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record identifies the case as Gilbert v. California, U.S. Supreme Court, decided 1967-06-12.",
+          "The official citation in the lake record is 388 U.S. 263, matching the content page display and front matter.",
+          "The parallel and vendor citations listed in the assertion match the lake citations."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "abb55e50a191274d",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Only a <i>per se</i> exclusionary rule as to such testimony can be an effective sanction to assure that law enforcement authorities will respect the accused's constitutional right to the presence of his counsel at the critical lineup.",
+          "locator_note": "content_page.md:53; text/Gilbert v. California__6faf18.txt:46; lake pinpoints[0].quote_fidelity='mismatch'",
+          "needs_cl": false,
+          "problem": "pin-273's recorded quote is not a character-faithful opinion quotation; it is a harvested content-page excerpt beginning with the page header and ending before the actual quoted sentence. The lake record itself marks quote_fidelity as mismatch.",
+          "proposed_fix": "Replace pin-273 with the actual sentence from the opinion at 388 U.S. 273, preserving or deliberately normalizing the italicized 'per se' markup.",
+          "severity": "medium"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The disclosed opinion text contains the quoted sentence at the *273 passage.",
+          "The lake pinpoint quote instead contains page-authored markdown summary text, not the opinion passage.",
+          "Because the stored pin quote is malformed, the quote-fidelity assertion cannot stand as framed."
+        ],
+        "residual_risks": [
+          "The page's inline quoted sentence is supported by the opinion text; the defect is in the harvested pinpoint quote record."
+        ],
+        "suggested_tightening": "Limit pin-273 to the exact *273 sentence and avoid harvesting surrounding page-summary prose as a quote.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "e589497514fd23b7",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency merits are outside Lens A's charter.",
+          "The asserted treatment fields match the disclosed lake treatment record: field_i_validity good_law, as_of_content 1967-06-12, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note."
+        ],
+        "residual_risks": [
+          "Substantive treatment review is reserved for Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"A\",\n  \"group_id\": \"_overhaul2/lake/cases/Gilbert v. California.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"7693463cdddd3ec6\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake identity record identifies the case as Gilbert v. California, U.S. Supreme Court, decided 1967-06-12.\",\n        \"The official citation in the lake record is 388 U.S. 263, matching the content page display and front matter.\",\n        \"The parallel and vendor citations listed in the assertion match the lake citations.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"abb55e50a191274d\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"pin-273's recorded quote is not a character-faithful opinion quotation; it is a harvested content-page excerpt beginning with the page header and ending before the actual quoted sentence. The lake record itself marks quote_fidelity as mismatch.\",\n        \"severity\": \"medium\",\n        \"proposed_fix\": \"Replace pin-273 with the actual sentence from the opinion at 388 U.S. 273, preserving or deliberately normalizing the italicized 'per se' markup.\",\n        \"evidence_quote\": \"Only a <i>per se</i> exclusionary rule as to such testimony can be an effective sanction to assure that law enforcement authorities will respect the accused's constitutional right to the presence of his counsel at the critical lineup.\",\n        \"needs_cl\": false,\n        \"locator_note\": \"content_page.md:53; text/Gilbert v. California__6faf18.txt:46; lake pinpoints[0].quote_fidelity='mismatch'\"\n      },\n      \"reasons\": [\n        \"The disclosed opinion text contains the quoted sentence at the *273 passage.\",\n        \"The lake pinpoint quote instead contains page-authored markdown summary text, not the opinion passage.\",\n        \"Because the stored pin quote is malformed, the quote-fidelity assertion cannot stand as framed.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The page's inline quoted sentence is supported by the opinion text; the defect is in the harvested pinpoint quote record.\"\n      ],\n      \"suggested_tightening\": \"Limit pin-273 to the exact *273 sentence and avoid harvesting surrounding page-summary prose as a quote.\"\n    },\n    {\n      \"assertion_id\": \"e589497514fd23b7\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Treatment/currency merits are outside Lens A's charter.\",\n        \"The asserted treatment fields match the disclosed lake treatment record: field_i_validity good_law, as_of_content 1967-06-12, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Substantive treatment review is reserved for Lens B.\"\n      ],\n      \"suggested_tightening\": null\n    }\n  ],\n  \"notes\": \"Reviewed all 3 rows in group_inventory.jsonl. No external sources used.\"\n}",
+  "summary": {
+    "at": "2026-07-09T23:23:39-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-ff358f55ba"
+    ],
+    "group_id": "_overhaul2/lake/cases/Gilbert v. California.json",
+    "group_total_assertions": 3,
+    "lake_only_cases": [],
+    "lane": "codex-A",
+    "lane_id": "codex-A-panel-prod-fc7fda38",
+    "lens": "A",
+    "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-fc7fda38.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 3,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Gilbert v. California"
+    ],
+    "tokens": {
+      "input": 202656,
+      "output": 5450,
+      "source": "codex-events",
+      "total": 208106
+    },
+    "verdict_map": {
+      "7693463cdddd3ec6": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "abb55e50a191274d": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "e589497514fd23b7": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-ff358f55ba",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 148.6
+  }
+}

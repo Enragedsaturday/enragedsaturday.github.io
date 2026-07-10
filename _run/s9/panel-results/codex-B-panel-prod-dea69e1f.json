@@ -1,0 +1,137 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Mapp v. Ohio.json",
+    "lens": "B",
+    "notes": "Reviewed all three inventory rows under lens B only; no support or quote-fidelity finding is made.",
+    "reviewed": [
+      {
+        "assertion_id": "519ff73242972410",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record is verified for record_id Mapp v. Ohio and identifies the case as a U.S. Supreme Court decision with cluster_id 106285.",
+          "The disclosed citation fields select 367 U.S. 643 as the official SCOTUS citation and include the parallel/vendor citations in the payload.",
+          "For the currency angle, the lake treatment field marks Mapp as good_law as of 2026-06-30; no accepted disclosed edge shows the authority itself is dead law."
+        ],
+        "residual_risks": [
+          "Treatment provenance is migration-based; the treatment-specific caveat is handled in the treatment row."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "980d25e98dfea5b3",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote fidelity/support is outside lens B, so I raise no quote-fidelity defect here.",
+          "The row does not require a separate current-law conclusion beyond the treatment row."
+        ],
+        "residual_risks": [
+          "Lens A should handle the disclosed quote_fidelity mismatch and slip-only pinpoint status."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "05576641b05bb574",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade.",
+          "locator_note": "content_page.md treatment header and Treatment & subsequent history; lake treatment.scope_note, treatment.derivation, and provenance warnings",
+          "needs_cl": true,
+          "problem": "The good_law call survives the disclosed treatment fields, but the page should not present the 2026-06-30 status as fully audited without the migration/audit caveat. The lake provenance says the treatment is migration-seeded and the derivation lanes mark audit_needed true with cap hits/proposed negative events.",
+          "proposed_fix": "Keep good_law / Binding-SCOTUS, but render an audit-pending qualifier or visible scope note next to the treatment status until the R15 treatment audit is completed.",
+          "severity": "low"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "Lake treatment.field_i_validity is good_law, as_of_treatment is 2026-06-30, varies_by_point is false, and point_overrides is empty.",
+          "All 28 disclosed treatment edges are proposed, and none has field_iii other than mentioned, so the disclosed record does not contain an accepted overrule/abrogation edge against Mapp.",
+          "The same disclosed treatment record flags audit_needed true in lane1_negative and lane2_top_cited and warns that legacy treatment was migrated, so the visible treatment text should carry that caveat."
+        ],
+        "residual_risks": [
+          "The disclosed record does not include full later opinions for the proposed negative events; completing the flagged treatment audit could change the final treatment display."
+        ],
+        "suggested_tightening": "Expose the migration/audit caveat in the visible treatment badge and distinguish accepted treatment from proposed negative edges.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/Mapp v. Ohio.json\",\"reviewed\":[{\"assertion_id\":\"519ff73242972410\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record is verified for record_id Mapp v. Ohio and identifies the case as a U.S. Supreme Court decision with cluster_id 106285.\",\"The disclosed citation fields select 367 U.S. 643 as the official SCOTUS citation and include the parallel/vendor citations in the payload.\",\"For the currency angle, the lake treatment field marks Mapp as good_law as of 2026-06-30; no accepted disclosed edge shows the authority itself is dead law.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment provenance is migration-based; the treatment-specific caveat is handled in the treatment row.\"],\"suggested_tightening\":null},{\"assertion_id\":\"980d25e98dfea5b3\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Quote fidelity/support is outside lens B, so I raise no quote-fidelity defect here.\",\"The row does not require a separate current-law conclusion beyond the treatment row.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Lens A should handle the disclosed quote_fidelity mismatch and slip-only pinpoint status.\"],\"suggested_tightening\":null},{\"assertion_id\":\"05576641b05bb574\",\"dimension\":\"treatment\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The good_law call survives the disclosed treatment fields, but the page should not present the 2026-06-30 status as fully audited without the migration/audit caveat. The lake provenance says the treatment is migration-seeded and the derivation lanes mark audit_needed true with cap hits/proposed negative events.\",\"severity\":\"low\",\"proposed_fix\":\"Keep good_law / Binding-SCOTUS, but render an audit-pending qualifier or visible scope note next to the treatment status until the R15 treatment audit is completed.\",\"evidence_quote\":\"Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade.\",\"needs_cl\":true,\"locator_note\":\"content_page.md treatment header and Treatment & subsequent history; lake treatment.scope_note, treatment.derivation, and provenance warnings\"},\"reasons\":[\"Lake treatment.field_i_validity is good_law, as_of_treatment is 2026-06-30, varies_by_point is false, and point_overrides is empty.\",\"All 28 disclosed treatment edges are proposed, and none has field_iii other than mentioned, so the disclosed record does not contain an accepted overrule/abrogation edge against Mapp.\",\"The same disclosed treatment record flags audit_needed true in lane1_negative and lane2_top_cited and warns that legacy treatment was migrated, so the visible treatment text should carry that caveat.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The disclosed record does not include full later opinions for the proposed negative events; completing the flagged treatment audit could change the final treatment display.\"],\"suggested_tightening\":\"Expose the migration/audit caveat in the visible treatment badge and distinguish accepted treatment from proposed negative edges.\"}],\"notes\":\"Reviewed all three inventory rows under lens B only; no support or quote-fidelity finding is made.\"}",
+  "summary": {
+    "at": "2026-07-09T23:32:30-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-7650be2777",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-1d02743812"
+    ],
+    "group_id": "_overhaul2/lake/cases/Mapp v. Ohio.json",
+    "group_total_assertions": 3,
+    "lake_only_cases": [],
+    "lane": "codex-B",
+    "lane_id": "codex-B-panel-prod-dea69e1f",
+    "lens": "B",
+    "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-dea69e1f.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 3,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Mapp v. Ohio"
+    ],
+    "tokens": {
+      "input": 352798,
+      "output": 9174,
+      "source": "codex-events",
+      "total": 361972
+    },
+    "verdict_map": {
+      "05576641b05bb574": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "519ff73242972410": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "980d25e98dfea5b3": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-7650be2777",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-1d02743812",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 185.4
+  }
+}

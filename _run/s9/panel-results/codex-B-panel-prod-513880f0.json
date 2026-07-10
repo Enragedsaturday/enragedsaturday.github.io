@@ -1,0 +1,104 @@
+{
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/United States v. Castillo.json",
+    "lens": "B",
+    "notes": "Lens B only; support, quote fidelity, pincite, and holding accuracy were not reviewed.",
+    "reviewed": [
+      {
+        "assertion_id": "30d5dff0816ac6b6",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "Frontier stub: treatment/progeny intentionally not derived until S6 promotion.",
+          "locator_note": "lake.treatment.scope_note and lake.progeny fields",
+          "needs_cl": true,
+          "problem": "The disclosed files verify the citation identity, but they do not verify that the authority is currently live law. Treatment is expressly unverified and progeny/citator work was not derived.",
+          "proposed_fix": "Do not treat the case-cite as establishing current live-law status; state only that the citation identity is verified unless citator/progeny review confirms no negative treatment.",
+          "severity": "medium"
+        },
+        "dimension": "existence",
+        "reasons": [
+          "Lake citations confirm the case citation: 70 F.4th 894.",
+          "Currency cannot be verified because field_i_validity is unverified, as_of_treatment is null, complete_query is null, and no citing-opinion enumeration is present."
+        ],
+        "residual_risks": [
+          "The citation may be correct, but the disclosed record does not establish present good-law status."
+        ],
+        "suggested_tightening": "Separate citation-existence verification from live-law or binding-status claims.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": false
+      },
+      {
+        "assertion_id": "b7f47d5f51217b45",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The treatment assertion matches the lake record: field_i_validity is unverified, as_of_content is null, as_of_treatment is null, varies_by_point is false.",
+          "The scope note in the assertion matches the lake treatment scope note.",
+          "The disclosed progeny fields contain no completed query or derived treatment history, which is consistent with an unverified treatment call."
+        ],
+        "residual_risks": [
+          "Unverified treatment is not an affirmative good-law finding; later negative treatment could exist outside the disclosed files."
+        ],
+        "suggested_tightening": "Keep the unverified-treatment warning adjacent to any authority-weight label.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"B\",\n  \"group_id\": \"_overhaul2/lake/cases/United States v. Castillo.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"30d5dff0816ac6b6\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": false,\n      \"defect\": {\n        \"problem\": \"The disclosed files verify the citation identity, but they do not verify that the authority is currently live law. Treatment is expressly unverified and progeny/citator work was not derived.\",\n        \"severity\": \"medium\",\n        \"proposed_fix\": \"Do not treat the case-cite as establishing current live-law status; state only that the citation identity is verified unless citator/progeny review confirms no negative treatment.\",\n        \"evidence_quote\": \"Frontier stub: treatment/progeny intentionally not derived until S6 promotion.\",\n        \"needs_cl\": true,\n        \"locator_note\": \"lake.treatment.scope_note and lake.progeny fields\"\n      },\n      \"reasons\": [\n        \"Lake citations confirm the case citation: 70 F.4th 894.\",\n        \"Currency cannot be verified because field_i_validity is unverified, as_of_treatment is null, complete_query is null, and no citing-opinion enumeration is present.\"\n      ],\n      \"breaks_true_positives\": true,\n      \"residual_risks\": [\n        \"The citation may be correct, but the disclosed record does not establish present good-law status.\"\n      ],\n      \"suggested_tightening\": \"Separate citation-existence verification from live-law or binding-status claims.\"\n    },\n    {\n      \"assertion_id\": \"b7f47d5f51217b45\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The treatment assertion matches the lake record: field_i_validity is unverified, as_of_content is null, as_of_treatment is null, varies_by_point is false.\",\n        \"The scope note in the assertion matches the lake treatment scope note.\",\n        \"The disclosed progeny fields contain no completed query or derived treatment history, which is consistent with an unverified treatment call.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Unverified treatment is not an affirmative good-law finding; later negative treatment could exist outside the disclosed files.\"\n      ],\n      \"suggested_tightening\": \"Keep the unverified-treatment warning adjacent to any authority-weight label.\"\n    }\n  ],\n  \"notes\": \"Lens B only; support, quote fidelity, pincite, and holding accuracy were not reviewed.\"\n}",
+  "summary": {
+    "at": "2026-07-09T22:49:01-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
+    "defense_votes": [],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/United States v. Castillo.json",
+    "group_total_assertions": 2,
+    "lake_only_cases": [
+      "United States v. Castillo"
+    ],
+    "lane": "codex-B",
+    "lane_id": "codex-B-panel-prod-513880f0",
+    "lens": "B",
+    "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-513880f0.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [
+      "case 'United States v. Castillo' has no lead_opinion_id (text undisclosed)"
+    ],
+    "reviewed_count": 2,
+    "run": "prod",
+    "text_disclosed_cases": [],
+    "tokens": {
+      "input": 76900,
+      "output": 6364,
+      "source": "codex-events",
+      "total": 83264
+    },
+    "verdict_map": {
+      "30d5dff0816ac6b6": {
+        "dimension": "existence",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": false
+      },
+      "b7f47d5f51217b45": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-6d1aaf0e17",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 124.6
+  }
+}

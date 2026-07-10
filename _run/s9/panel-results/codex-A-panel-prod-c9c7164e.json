@@ -1,0 +1,180 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/State v. Mitcham.json",
+    "lens": "A",
+    "notes": "No external sources used.",
+    "reviewed": [
+      {
+        "assertion_id": "03a5081424775da2",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record identifies State of Arizona v. Ian Mitcham, Arizona Supreme Court, decided 2024-12-17.",
+          "The asserted citation 559 P.3d 1099 exactly matches lake.citations.official/display."
+        ],
+        "residual_risks": [
+          "The content page also displays 258 Ariz. 435 and docket CR-23-0238-PR; those details are not in this existence payload. The cached opinion text shows No. CR-23-0236-PR."
+        ],
+        "suggested_tightening": "Separately verify or remove the page's 258 Ariz. 435 parallel cite and reconcile the docket number.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "35ee42d1f8e32577",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The non-ellipsed quoted words track paragraph 36 of the cached opinion.",
+          "The omissions correspond to the explanatory parentheticals '(independent source exception)' and '(inevitable discovery exception)'; the ¶36 pin lands on the quoted passage."
+        ],
+        "residual_risks": [
+          "The lake field marks quote_fidelity as mismatch, apparently because the quote is ellipsized rather than an exact contiguous string."
+        ],
+        "suggested_tightening": "Quote the full sentence from ¶36 if the corpus requires exact-string quote matching.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "61cdf5efdd859394",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "¶37            Turning to this case, we agree with the State that the police\nwould have inevitably obtained Mitcham’s DNA profile from an\nindependent, untainted source despite the warrantless search of the second\nvial of blood taken after the 2015 DUI arrest.",
+          "locator_note": "text/State v. Mitcham__f4f8b5.txt ¶37; content_page.md line 57; lake pin-37",
+          "needs_cl": false,
+          "problem": "The quoted fragment is substantively supported, but it is not character-faithful: the opinion uses the curly apostrophe in 'Mitcham’s'. The page also supplies 'the State' as the grammatical subject, while the opinion says 'the police would have inevitably obtained'.",
+          "proposed_fix": "Use the opinion's wording: 'the police would have inevitably obtained Mitcham’s DNA profile from an independent, untainted source despite the warrantless search of the second vial of blood taken after the 2015 DUI arrest.'",
+          "severity": "medium"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Paragraph 37 supports inevitable discovery of Mitcham’s DNA profile from an independent, untainted source.",
+          "The quote needs typographic correction and should not make 'the State' the quoted actor."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Prefer a full exact quote from ¶37 or paraphrase the actor outside quotation marks.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "d6bbdd8469334276",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "¶34             The “independent source” exception permits the admission\nof evidence discovered during or because of an unlawful search if the\nevidence was also obtained independently from activities that were tainted\nby the illegality.",
+          "locator_note": "text/State v. Mitcham__f4f8b5.txt ¶34; lake pin-34 currently contains page text, not opinion text",
+          "needs_cl": false,
+          "problem": "The stored pin-34 quote is not the opinion text at ¶34; it is a harvested chunk of the built content page beginning with front matter and page prose.",
+          "proposed_fix": "Replace pin-34 with the actual ¶34 quote from the cached opinion.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload quote begins '--- # State v. Mitcham' and includes content-page sections, which cannot be a verbatim opinion quotation.",
+          "The actual ¶34 passage is present in the cached opinion and differs from the payload."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Regenerate pin-34 from the cached opinion text and preserve the opinion's quotation marks.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "38698018a982faf1",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The treatment payload matches the lake treatment fields and the content page front matter.",
+          "Lens A records no treatment or currency finding."
+        ],
+        "residual_risks": [
+          "Treatment currency is outside this lens."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"A\",\n  \"group_id\": \"_overhaul2/lake/cases/State v. Mitcham.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"03a5081424775da2\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake record identifies State of Arizona v. Ian Mitcham, Arizona Supreme Court, decided 2024-12-17.\",\n        \"The asserted citation 559 P.3d 1099 exactly matches lake.citations.official/display.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The content page also displays 258 Ariz. 435 and docket CR-23-0238-PR; those details are not in this existence payload. The cached opinion text shows No. CR-23-0236-PR.\"\n      ],\n      \"suggested_tightening\": \"Separately verify or remove the page's 258 Ariz. 435 parallel cite and reconcile the docket number.\"\n    },\n    {\n      \"assertion_id\": \"35ee42d1f8e32577\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The non-ellipsed quoted words track paragraph 36 of the cached opinion.\",\n        \"The omissions correspond to the explanatory parentheticals '(independent source exception)' and '(inevitable discovery exception)'; the ¶36 pin lands on the quoted passage.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The lake field marks quote_fidelity as mismatch, apparently because the quote is ellipsized rather than an exact contiguous string.\"\n      ],\n      \"suggested_tightening\": \"Quote the full sentence from ¶36 if the corpus requires exact-string quote matching.\"\n    },\n    {\n      \"assertion_id\": \"61cdf5efdd859394\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands-modified\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The quoted fragment is substantively supported, but it is not character-faithful: the opinion uses the curly apostrophe in 'Mitcham’s'. The page also supplies 'the State' as the grammatical subject, while the opinion says 'the police would have inevitably obtained'.\",\n        \"severity\": \"medium\",\n        \"proposed_fix\": \"Use the opinion's wording: 'the police would have inevitably obtained Mitcham’s DNA profile from an independent, untainted source despite the warrantless search of the second vial of blood taken after the 2015 DUI arrest.'\",\n        \"evidence_quote\": \"¶37            Turning to this case, we agree with the State that the police\\nwould have inevitably obtained Mitcham’s DNA profile from an\\nindependent, untainted source despite the warrantless search of the second\\nvial of blood taken after the 2015 DUI arrest.\",\n        \"needs_cl\": false,\n        \"locator_note\": \"text/State v. Mitcham__f4f8b5.txt ¶37; content_page.md line 57; lake pin-37\"\n      },\n      \"reasons\": [\n        \"Paragraph 37 supports inevitable discovery of Mitcham’s DNA profile from an independent, untainted source.\",\n        \"The quote needs typographic correction and should not make 'the State' the quoted actor.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": \"Prefer a full exact quote from ¶37 or paraphrase the actor outside quotation marks.\"\n    },\n    {\n      \"assertion_id\": \"d6bbdd8469334276\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The stored pin-34 quote is not the opinion text at ¶34; it is a harvested chunk of the built content page beginning with front matter and page prose.\",\n        \"severity\": \"high\",\n        \"proposed_fix\": \"Replace pin-34 with the actual ¶34 quote from the cached opinion.\",\n        \"evidence_quote\": \"¶34             The “independent source” exception permits the admission\\nof evidence discovered during or because of an unlawful search if the\\nevidence was also obtained independently from activities that were tainted\\nby the illegality.\",\n        \"needs_cl\": false,\n        \"locator_note\": \"text/State v. Mitcham__f4f8b5.txt ¶34; lake pin-34 currently contains page text, not opinion text\"\n      },\n      \"reasons\": [\n        \"The payload quote begins '--- # State v. Mitcham' and includes content-page sections, which cannot be a verbatim opinion quotation.\",\n        \"The actual ¶34 passage is present in the cached opinion and differs from the payload.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": \"Regenerate pin-34 from the cached opinion text and preserve the opinion's quotation marks.\"\n    },\n    {\n      \"assertion_id\": \"38698018a982faf1\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The treatment payload matches the lake treatment fields and the content page front matter.\",\n        \"Lens A records no treatment or currency finding.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Treatment currency is outside this lens.\"\n      ],\n      \"suggested_tightening\": null\n    }\n  ],\n  \"notes\": \"No external sources used.\"\n}",
+  "summary": {
+    "at": "2026-07-09T22:29:31-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-b324b1213a",
+      "F-S9-PR-0df5e15a60"
+    ],
+    "group_id": "_overhaul2/lake/cases/State v. Mitcham.json",
+    "group_total_assertions": 5,
+    "lake_only_cases": [],
+    "lane": "codex-A",
+    "lane_id": "codex-A-panel-prod-c9c7164e",
+    "lens": "A",
+    "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-c9c7164e.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "State v. Mitcham"
+    ],
+    "tokens": {
+      "input": 168785,
+      "output": 10778,
+      "source": "codex-events",
+      "total": 179563
+    },
+    "verdict_map": {
+      "03a5081424775da2": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "35ee42d1f8e32577": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "38698018a982faf1": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "61cdf5efdd859394": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "d6bbdd8469334276": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-b324b1213a",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-0df5e15a60",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 207.1
+  }
+}

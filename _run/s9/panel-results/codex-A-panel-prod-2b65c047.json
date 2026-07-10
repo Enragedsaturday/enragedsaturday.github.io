@@ -1,0 +1,148 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/United States v. Morley.json",
+    "lens": "A",
+    "notes": "Reviewed all 4 assertion_id rows in group_inventory.jsonl exactly once. No external sources were used.",
+    "reviewed": [
+      {
+        "assertion_id": "aa87aa240b8fb8b1",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity verifies United States v. Derrick Alfondso Morley, Eleventh Circuit, decided 2024-04-30, docket 22-12988.",
+          "Lake official citation and display citation are 99 F.4th 1328, matching the payload and content-page citation."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "9318dcb065a4425a",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The quoted sentence appears in the cached opinion on slip-opinion page 15.",
+          "The lake pinpoint pin-op15a records quote_fidelity as matched and provides a validated text fragment."
+        ],
+        "residual_risks": [
+          "Pinpoint is slip-only; no reporter-page pinpoint is disclosed."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "ac24822611ac43db",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "quote_fidelity\": \"mismatch\"",
+          "locator_note": "lake pinpoints[].id=pin-op15; content_page.md uses this pin for the rule quote at slip op. 15.",
+          "needs_cl": false,
+          "problem": "The pin-op15 stored quote is not a character-faithful excerpt from the opinion; it is built-page Markdown/header/background text ending before the actual quoted rule.",
+          "proposed_fix": "Re-harvest pin-op15 from the cached opinion on slip-opinion page 15 and store the actual automobile-exception rule sentence, with a validated position or fragment.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The lake record itself marks pin-op15 quote_fidelity as mismatch and has null position and null fragment.",
+          "The cached opinion page 15 contains the actual automobile-exception rule, while the stored pin quote is content-page prose rather than opinion text.",
+          "The underlying content-page rule quote appears supportable from the opinion; the defect is the harvested pinpoint quote record."
+        ],
+        "residual_risks": [
+          "Do not delete the content-page rule quote solely because this pin record is bad; repair the pin record instead."
+        ],
+        "suggested_tightening": "Keep the rule quote only after replacing pin-op15 with an opinion-text excerpt and validated locator.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "8f6d822572288570",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside lens A; no treatment finding is raised.",
+          "The payload treatment fields match the disclosed lake and content-page fields: good_law, as_of_content 2024-04-30, as_of_treatment 2026-06-30, varies_by_point false."
+        ],
+        "residual_risks": [
+          "Subsequent-history currency was not independently reviewed under this lens."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"A\",\n  \"group_id\": \"_overhaul2/lake/cases/United States v. Morley.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"aa87aa240b8fb8b1\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Lake identity verifies United States v. Derrick Alfondso Morley, Eleventh Circuit, decided 2024-04-30, docket 22-12988.\",\n        \"Lake official citation and display citation are 99 F.4th 1328, matching the payload and content-page citation.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"9318dcb065a4425a\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The quoted sentence appears in the cached opinion on slip-opinion page 15.\",\n        \"The lake pinpoint pin-op15a records quote_fidelity as matched and provides a validated text fragment.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Pinpoint is slip-only; no reporter-page pinpoint is disclosed.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"ac24822611ac43db\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The pin-op15 stored quote is not a character-faithful excerpt from the opinion; it is built-page Markdown/header/background text ending before the actual quoted rule.\",\n        \"severity\": \"high\",\n        \"proposed_fix\": \"Re-harvest pin-op15 from the cached opinion on slip-opinion page 15 and store the actual automobile-exception rule sentence, with a validated position or fragment.\",\n        \"evidence_quote\": \"quote_fidelity\\\": \\\"mismatch\\\"\",\n        \"needs_cl\": false,\n        \"locator_note\": \"lake pinpoints[].id=pin-op15; content_page.md uses this pin for the rule quote at slip op. 15.\"\n      },\n      \"reasons\": [\n        \"The lake record itself marks pin-op15 quote_fidelity as mismatch and has null position and null fragment.\",\n        \"The cached opinion page 15 contains the actual automobile-exception rule, while the stored pin quote is content-page prose rather than opinion text.\",\n        \"The underlying content-page rule quote appears supportable from the opinion; the defect is the harvested pinpoint quote record.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Do not delete the content-page rule quote solely because this pin record is bad; repair the pin record instead.\"\n      ],\n      \"suggested_tightening\": \"Keep the rule quote only after replacing pin-op15 with an opinion-text excerpt and validated locator.\"\n    },\n    {\n      \"assertion_id\": \"8f6d822572288570\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Treatment/currency is outside lens A; no treatment finding is raised.\",\n        \"The payload treatment fields match the disclosed lake and content-page fields: good_law, as_of_content 2024-04-30, as_of_treatment 2026-06-30, varies_by_point false.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Subsequent-history currency was not independently reviewed under this lens.\"\n      ],\n      \"suggested_tightening\": null\n    }\n  ],\n  \"notes\": \"Reviewed all 4 assertion_id rows in group_inventory.jsonl exactly once. No external sources were used.\"\n}",
+  "summary": {
+    "at": "2026-07-09T23:07:08-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-dde329d155"
+    ],
+    "group_id": "_overhaul2/lake/cases/United States v. Morley.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "codex-A",
+    "lane_id": "codex-A-panel-prod-2b65c047",
+    "lens": "A",
+    "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-2b65c047.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "United States v. Morley"
+    ],
+    "tokens": {
+      "input": 174896,
+      "output": 5598,
+      "source": "codex-events",
+      "total": 180494
+    },
+    "verdict_map": {
+      "8f6d822572288570": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "9318dcb065a4425a": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "aa87aa240b8fb8b1": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "ac24822611ac43db": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-dde329d155",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 125.9
+  }
+}

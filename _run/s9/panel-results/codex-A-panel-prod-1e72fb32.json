@@ -1,0 +1,128 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/People v. Hughes.json",
+    "lens": "A",
+    "notes": "Reviewed only the disclosed workspace files and did not search externally.",
+    "reviewed": [
+      {
+        "assertion_id": "4e1fb4aa53b9f704",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The quoted phrase for pin-35 matches the lake pinpoints[].quote exactly.",
+          "The same language appears in the cached opinion conclusion: officers must reasonably limit searches to evidence related to the criminal activity alleged in the warrant and avoid using the warrant as a general warrant for any and all criminal activity.",
+          "The fragment begins on the quoted language and lands on the relevant passage."
+        ],
+        "residual_risks": [
+          "The content page cites slip op. at 35-36, while the quoted language appears on slip page 36; the range still contains the passage."
+        ],
+        "suggested_tightening": "If exact-page precision is required, cite slip op. at 36 for this quote.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "fe962bbfaa4f5583",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "We hold that, as with any other search, an officer must limit a search of digital data from a cell phone in a manner reasonably directed to uncover evidence of the criminal activity alleged in the warrant.",
+          "locator_note": "lake pinpoints id pin-36 / content_page ^pin-36",
+          "needs_cl": false,
+          "problem": "The lake pin-36 quote is a malformed harvest of the built page and not the quoted holding sentence tied to ^pin-36. It includes page header/background/rule text and has quote_fidelity='mismatch', no fragment, and no position.",
+          "proposed_fix": "Replace pin-36's stored quote with the actual holding sentence: We hold that, as with any other search, an officer must limit a search of digital data from a cell phone in a manner reasonably directed to uncover evidence of the criminal activity alleged in the warrant. Keep the slip-op locator at 36-37 and add a validated fragment/position if available.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload quote begins with '--- # People v. Hughes' and continues through built-page background/rule prose, which is not the opinion passage supporting pin-36.",
+          "The cached opinion contains the intended holding sentence across slip pages 36-37.",
+          "The built page's visible ^pin-36 quote is supportable, but the authority record's pin quote is not faithful and should not stand as framed."
+        ],
+        "residual_risks": [
+          "The underlying legal rule appears supported once the pin quote is corrected."
+        ],
+        "suggested_tightening": "After replacing the malformed quote, validate the pin against the cached opinion text and store a fragment or position.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "b6e373bc45c2ed4a",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The treatment payload matches the lake treatment fields: field_i_validity good_law, as_of_content 2020-12-28, as_of_treatment 2026-06-30, varies_by_point false, and the same scope_note.",
+          "Treatment/currency merits are outside Lens A, so no independent treatment defect is raised."
+        ],
+        "residual_risks": [
+          "Lens B should assess treatment currency and derivation."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/People v. Hughes.json\",\"reviewed\":[{\"assertion_id\":\"4e1fb4aa53b9f704\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The quoted phrase for pin-35 matches the lake pinpoints[].quote exactly.\",\"The same language appears in the cached opinion conclusion: officers must reasonably limit searches to evidence related to the criminal activity alleged in the warrant and avoid using the warrant as a general warrant for any and all criminal activity.\",\"The fragment begins on the quoted language and lands on the relevant passage.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The content page cites slip op. at 35-36, while the quoted language appears on slip page 36; the range still contains the passage.\"],\"suggested_tightening\":\"If exact-page precision is required, cite slip op. at 36 for this quote.\"},{\"assertion_id\":\"fe962bbfaa4f5583\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The lake pin-36 quote is a malformed harvest of the built page and not the quoted holding sentence tied to ^pin-36. It includes page header/background/rule text and has quote_fidelity='mismatch', no fragment, and no position.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-36's stored quote with the actual holding sentence: We hold that, as with any other search, an officer must limit a search of digital data from a cell phone in a manner reasonably directed to uncover evidence of the criminal activity alleged in the warrant. Keep the slip-op locator at 36-37 and add a validated fragment/position if available.\",\"evidence_quote\":\"We hold that, as with any other search, an officer must limit a search of digital data from a cell phone in a manner reasonably directed to uncover evidence of the criminal activity alleged in the warrant.\",\"needs_cl\":false,\"locator_note\":\"lake pinpoints id pin-36 / content_page ^pin-36\"},\"reasons\":[\"The payload quote begins with '--- # People v. Hughes' and continues through built-page background/rule prose, which is not the opinion passage supporting pin-36.\",\"The cached opinion contains the intended holding sentence across slip pages 36-37.\",\"The built page's visible ^pin-36 quote is supportable, but the authority record's pin quote is not faithful and should not stand as framed.\"],\"breaks_true_positives\":true,\"residual_risks\":[\"The underlying legal rule appears supported once the pin quote is corrected.\"],\"suggested_tightening\":\"After replacing the malformed quote, validate the pin against the cached opinion text and store a fragment or position.\"},{\"assertion_id\":\"b6e373bc45c2ed4a\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The treatment payload matches the lake treatment fields: field_i_validity good_law, as_of_content 2020-12-28, as_of_treatment 2026-06-30, varies_by_point false, and the same scope_note.\",\"Treatment/currency merits are outside Lens A, so no independent treatment defect is raised.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Lens B should assess treatment currency and derivation.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed only the disclosed workspace files and did not search externally.\"}",
+  "summary": {
+    "at": "2026-07-09T22:22:04-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-c5c14811d7"
+    ],
+    "group_id": "_overhaul2/lake/cases/People v. Hughes.json",
+    "group_total_assertions": 3,
+    "lake_only_cases": [],
+    "lane": "codex-A",
+    "lane_id": "codex-A-panel-prod-1e72fb32",
+    "lens": "A",
+    "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-1e72fb32.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 3,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "People v. Hughes"
+    ],
+    "tokens": {
+      "input": 284990,
+      "output": 8855,
+      "source": "codex-events",
+      "total": 293845
+    },
+    "verdict_map": {
+      "4e1fb4aa53b9f704": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "b6e373bc45c2ed4a": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "fe962bbfaa4f5583": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-c5c14811d7",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 182.4
+  }
+}

@@ -1,0 +1,157 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Florida v. Jardines.json",
+    "lens": "A",
+    "notes": "Reviewed all 4 rows in group_inventory.jsonl using only disclosed workspace files.",
+    "reviewed": [
+      {
+        "assertion_id": "212349f784ec94df",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record verifies Florida v. Jardines as a U.S. Supreme Court case decided 2013-03-26, year 2013.",
+          "The cited reporters in the payload match lake.citations.all, including 569 U.S. 1, 133 S. Ct. 1409, 185 L. Ed. 2d 495, 2013 U.S. LEXIS 2542, and 2013 WL 1196577."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "861f6aaddb45f2e5",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "## Rule Yes. Bringing a drug dog onto the curtilage",
+          "locator_note": "lake pinpoints[pin-6] contains the erroneous extracted quote; text/Florida v. Jardines__827c9d.txt contains the actual supporting passage in Part II.",
+          "needs_cl": false,
+          "problem": "The stored pin-6 quote is not a faithful opinion quote; it stitches the page's Issue/Rule prose, including markdown heading text, rather than the Supreme Court passage supporting the pin.",
+          "proposed_fix": "Replace lake pinpoints[].quote for pin-6 with the actual opinion passage beginning with the officers gathering information in Jardines's curtilage, or treat the current rule sentence as paraphrase rather than quotation.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The challenged pin-6 quote includes markdown text from content_page.md rather than opinion language.",
+          "The cached opinion supports the rule through a different passage about officers gathering information in the curtilage by physically entering and occupying it.",
+          "The legal proposition is supported, but the lake quote metadata for pin-6 is not quote-faithful."
+        ],
+        "residual_risks": [
+          "The paraphrased rule itself appears supported; the defect is confined to quote fidelity for the stored pinpoint."
+        ],
+        "suggested_tightening": "Store synthesized rule text separately from pinpoints[].quote.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "a9431009fbbf3753",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The pin-9 quote appears in the cached opinion passage beginning with the trained police dog exploring the area around the home and ending with no customary invitation to do that.",
+          "Line wrapping and hyphenation in the cached slip text explain the automated mismatch flag; the wording of the displayed quote is faithful."
+        ],
+        "residual_risks": [
+          "Reporter-page accuracy is not resolved here because this is a quote-fidelity row and the lake pinpoint is slip-only."
+        ],
+        "suggested_tightening": "Normalize line-wrapped hyphenation before assigning quote_fidelity mismatch.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "943d3bbacd758e93",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside lens A's charter.",
+          "The asserted treatment fields match the disclosed lake treatment and content-page front matter: good_law, as_of_content 2013-03-26, as_of_treatment 2026-06-30, and varies_by_point false."
+        ],
+        "residual_risks": [
+          "Treatment accuracy and any effect of progeny edges are reserved for lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"A\",\n  \"group_id\": \"_overhaul2/lake/cases/Florida v. Jardines.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"212349f784ec94df\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake identity record verifies Florida v. Jardines as a U.S. Supreme Court case decided 2013-03-26, year 2013.\",\n        \"The cited reporters in the payload match lake.citations.all, including 569 U.S. 1, 133 S. Ct. 1409, 185 L. Ed. 2d 495, 2013 U.S. LEXIS 2542, and 2013 WL 1196577.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"861f6aaddb45f2e5\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The stored pin-6 quote is not a faithful opinion quote; it stitches the page's Issue/Rule prose, including markdown heading text, rather than the Supreme Court passage supporting the pin.\",\n        \"severity\": \"high\",\n        \"proposed_fix\": \"Replace lake pinpoints[].quote for pin-6 with the actual opinion passage beginning with the officers gathering information in Jardines's curtilage, or treat the current rule sentence as paraphrase rather than quotation.\",\n        \"evidence_quote\": \"## Rule Yes. Bringing a drug dog onto the curtilage\",\n        \"needs_cl\": false,\n        \"locator_note\": \"lake pinpoints[pin-6] contains the erroneous extracted quote; text/Florida v. Jardines__827c9d.txt contains the actual supporting passage in Part II.\"\n      },\n      \"reasons\": [\n        \"The challenged pin-6 quote includes markdown text from content_page.md rather than opinion language.\",\n        \"The cached opinion supports the rule through a different passage about officers gathering information in the curtilage by physically entering and occupying it.\",\n        \"The legal proposition is supported, but the lake quote metadata for pin-6 is not quote-faithful.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The paraphrased rule itself appears supported; the defect is confined to quote fidelity for the stored pinpoint.\"\n      ],\n      \"suggested_tightening\": \"Store synthesized rule text separately from pinpoints[].quote.\"\n    },\n    {\n      \"assertion_id\": \"a9431009fbbf3753\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The pin-9 quote appears in the cached opinion passage beginning with the trained police dog exploring the area around the home and ending with no customary invitation to do that.\",\n        \"Line wrapping and hyphenation in the cached slip text explain the automated mismatch flag; the wording of the displayed quote is faithful.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Reporter-page accuracy is not resolved here because this is a quote-fidelity row and the lake pinpoint is slip-only.\"\n      ],\n      \"suggested_tightening\": \"Normalize line-wrapped hyphenation before assigning quote_fidelity mismatch.\"\n    },\n    {\n      \"assertion_id\": \"943d3bbacd758e93\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Treatment/currency is outside lens A's charter.\",\n        \"The asserted treatment fields match the disclosed lake treatment and content-page front matter: good_law, as_of_content 2013-03-26, as_of_treatment 2026-06-30, and varies_by_point false.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Treatment accuracy and any effect of progeny edges are reserved for lens B.\"\n      ],\n      \"suggested_tightening\": null\n    }\n  ],\n  \"notes\": \"Reviewed all 4 rows in group_inventory.jsonl using only disclosed workspace files.\"\n}",
+  "summary": {
+    "at": "2026-07-09T23:21:11-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-5e67cd6725",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-c71e4a2aac"
+    ],
+    "group_id": "_overhaul2/lake/cases/Florida v. Jardines.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "codex-A",
+    "lane_id": "codex-A-panel-prod-51932ecb",
+    "lens": "A",
+    "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-51932ecb.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Florida v. Jardines"
+    ],
+    "tokens": {
+      "input": 264045,
+      "output": 8496,
+      "source": "codex-events",
+      "total": 272541
+    },
+    "verdict_map": {
+      "212349f784ec94df": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "861f6aaddb45f2e5": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "943d3bbacd758e93": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "a9431009fbbf3753": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-c71e4a2aac",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-5e67cd6725",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": 172.0
+  }
+}

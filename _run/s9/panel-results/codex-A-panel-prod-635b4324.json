@@ -1,0 +1,160 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Katz v. United States.json",
+    "lens": "A",
+    "notes": "Reviewed all 4 group_inventory.jsonl rows under Lens A using only disclosed local files.",
+    "reviewed": [
+      {
+        "assertion_id": "9a4bb5e77f53d0b4",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity record verifies Katz v. United States, U.S. Supreme Court, decided 1967-12-18, year 1967.",
+          "Official citation 389 U.S. 347 and the listed parallel/vendor citations match the lake citation fields and content-page citation display."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "7047b52bdd3a3e9f",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": null,
+          "locator_note": "pin-361; lake pinpoints[1]; content_page.md cites Id. at 361 (Harlan, J., concurring), but text file lacks the concurrence/page 361.",
+          "needs_cl": true,
+          "problem": "The pin-361 Harlan-concurrence quote cannot be independently verified from the disclosed opinion text; the cached text contains only the majority opinion through page 359, while the lake pinpoint itself is marked quote_fidelity=mismatch with null page/position.",
+          "proposed_fix": "Add/cache the concurring-opinion text containing page 361 and verify the quote against it, or mark/remove this pinpoint until that evidence is disclosed.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The exact quote appears in content_page.md and lake pinpoints, but not in text/Katz v. United States__e8319d.txt.",
+          "Because the disclosed text does not contain the cited Harlan concurrence, character fidelity to the actual opinion cannot be confirmed from the disclosed evidence."
+        ],
+        "residual_risks": [
+          "The quote may be correct if complete concurrence text is supplied; it cannot stand under the disclosed-evidence-only rule."
+        ],
+        "suggested_tightening": "Require a cached sibling/concurrence text and non-null page/position before accepting Harlan-concurrence pinpoints.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": false
+      },
+      {
+        "assertion_id": "e28814facabbf79a",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "For the Fourth Amendment protects people, not places. What a person knowingly exposes to the public, even in his own home or office, is not a subject of Fourth Amendment protection.",
+          "locator_note": "pin-351; lake pinpoints[0]; disclosed text paragraph b461-5 contains the relevant page-351 passage.",
+          "needs_cl": false,
+          "problem": "The lake pin-351 quote is not character-faithful to the opinion passage and appears to have harvested content-page Issue/Rule prose rather than the cited 389 U.S. at 351 text.",
+          "proposed_fix": "Replace the pin-351 quote with the actual page-351 passage beginning with the Fourth Amendment protects people, not places, or remove the corrupted pinpoint.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload quote includes markdown section text: ## Rule The inquiry is personal, not spatial:, which is not opinion text.",
+          "An exact fixed-string search found the payload quote only in the lake pinpoint, not in the opinion text or content page.",
+          "The lake record itself marks this pinpoint quote_fidelity as mismatch and has null page/position."
+        ],
+        "residual_risks": [
+          "The content-page visible rule quote at 351 is supported by nearby disclosed text; this refutation targets the corrupted lake pinpoint payload."
+        ],
+        "suggested_tightening": "Do not use surrounding markdown prose as a pinpoint quote; store the exact legal-text passage and page anchor.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "1aae1a4faaf169aa",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The treatment payload matches the lake treatment fields for field_i_validity, as_of_content, as_of_treatment, varies_by_point, and scope_note.",
+          "Treatment/currency merits are outside Lens A, so no treatment finding is raised."
+        ],
+        "residual_risks": [
+          "Treatment/currency review remains for Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Katz v. United States.json\",\"reviewed\":[{\"assertion_id\":\"9a4bb5e77f53d0b4\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity record verifies Katz v. United States, U.S. Supreme Court, decided 1967-12-18, year 1967.\",\"Official citation 389 U.S. 347 and the listed parallel/vendor citations match the lake citation fields and content-page citation display.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"7047b52bdd3a3e9f\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":false,\"defect\":{\"problem\":\"The pin-361 Harlan-concurrence quote cannot be independently verified from the disclosed opinion text; the cached text contains only the majority opinion through page 359, while the lake pinpoint itself is marked quote_fidelity=mismatch with null page/position.\",\"severity\":\"high\",\"proposed_fix\":\"Add/cache the concurring-opinion text containing page 361 and verify the quote against it, or mark/remove this pinpoint until that evidence is disclosed.\",\"evidence_quote\":null,\"needs_cl\":true,\"locator_note\":\"pin-361; lake pinpoints[1]; content_page.md cites Id. at 361 (Harlan, J., concurring), but text file lacks the concurrence/page 361.\"},\"reasons\":[\"The exact quote appears in content_page.md and lake pinpoints, but not in text/Katz v. United States__e8319d.txt.\",\"Because the disclosed text does not contain the cited Harlan concurrence, character fidelity to the actual opinion cannot be confirmed from the disclosed evidence.\"],\"breaks_true_positives\":true,\"residual_risks\":[\"The quote may be correct if complete concurrence text is supplied; it cannot stand under the disclosed-evidence-only rule.\"],\"suggested_tightening\":\"Require a cached sibling/concurrence text and non-null page/position before accepting Harlan-concurrence pinpoints.\"},{\"assertion_id\":\"e28814facabbf79a\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The lake pin-351 quote is not character-faithful to the opinion passage and appears to have harvested content-page Issue/Rule prose rather than the cited 389 U.S. at 351 text.\",\"severity\":\"high\",\"proposed_fix\":\"Replace the pin-351 quote with the actual page-351 passage beginning with the Fourth Amendment protects people, not places, or remove the corrupted pinpoint.\",\"evidence_quote\":\"For the Fourth Amendment protects people, not places. What a person knowingly exposes to the public, even in his own home or office, is not a subject of Fourth Amendment protection.\",\"needs_cl\":false,\"locator_note\":\"pin-351; lake pinpoints[0]; disclosed text paragraph b461-5 contains the relevant page-351 passage.\"},\"reasons\":[\"The payload quote includes markdown section text: ## Rule The inquiry is personal, not spatial:, which is not opinion text.\",\"An exact fixed-string search found the payload quote only in the lake pinpoint, not in the opinion text or content page.\",\"The lake record itself marks this pinpoint quote_fidelity as mismatch and has null page/position.\"],\"breaks_true_positives\":true,\"residual_risks\":[\"The content-page visible rule quote at 351 is supported by nearby disclosed text; this refutation targets the corrupted lake pinpoint payload.\"],\"suggested_tightening\":\"Do not use surrounding markdown prose as a pinpoint quote; store the exact legal-text passage and page anchor.\"},{\"assertion_id\":\"1aae1a4faaf169aa\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The treatment payload matches the lake treatment fields for field_i_validity, as_of_content, as_of_treatment, varies_by_point, and scope_note.\",\"Treatment/currency merits are outside Lens A, so no treatment finding is raised.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment/currency review remains for Lens B.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed all 4 group_inventory.jsonl rows under Lens A using only disclosed local files.\"}",
+  "summary": {
+    "at": "2026-07-09T23:31:04-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-f11d96f96f",
+      "F-S9-PR-283f01bdea"
+    ],
+    "group_id": "_overhaul2/lake/cases/Katz v. United States.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "codex-A",
+    "lane_id": "codex-A-panel-prod-635b4324",
+    "lens": "A",
+    "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-635b4324.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Katz v. United States"
+    ],
+    "tokens": {
+      "input": 503721,
+      "output": 11002,
+      "source": "codex-events",
+      "total": 514723
+    },
+    "verdict_map": {
+      "1aae1a4faaf169aa": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "7047b52bdd3a3e9f": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": false
+      },
+      "9a4bb5e77f53d0b4": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "e28814facabbf79a": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-f11d96f96f",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-283f01bdea",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 255.6
+  }
+}

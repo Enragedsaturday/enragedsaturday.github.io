@@ -1,0 +1,192 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/New Jersey v. T.L.O..json",
+    "lens": "B",
+    "notes": "Quote-fidelity rows are marked only for absence of Lens B currency/treatment defects; Lens A owns quote support and fidelity.",
+    "reviewed": [
+      {
+        "assertion_id": "1dcd8b0be8009901",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake record status is verified and identifies New Jersey v. T.L.O. as a U.S. Supreme Court case decided 1985-01-15.",
+          "The official citation in the lake record is selected as 469 U.S. 325.",
+          "Currency angle is supported by treatment.field_i_validity = good_law as of 2026-06-30."
+        ],
+        "residual_risks": [
+          "Disclosed currency evidence runs only through the lake treatment date of 2026-06-30."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "2f7e84f5ecfb9c12",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "This is a quote-pinpoint row, and quote fidelity is outside Lens B.",
+          "No separate treatment or currency assertion in this row is contradicted by the disclosed treatment fields."
+        ],
+        "residual_risks": [
+          "Quote fidelity itself was not reviewed under this lens."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "a938d13adeacca43",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "This is a quote-pinpoint row, and quote fidelity is outside Lens B.",
+          "The embedded treatment/weight language is covered by the treatment row rather than this quote-fidelity row."
+        ],
+        "residual_risks": [
+          "Quote fidelity itself was not reviewed under this lens."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "b7689fdf21a283b2",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "This is a quote-pinpoint row, and quote fidelity is outside Lens B.",
+          "The row does not make a treatment, good-law, or authority-weight claim."
+        ],
+        "residual_risks": [
+          "Quote fidelity itself was not reviewed under this lens."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "2b9fef7159474236",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "No negative treatment.",
+          "locator_note": "content_page.md Treatment & subsequent history; lake treatment.derivation has audit_needed flags and 38 proposed treatment edges.",
+          "needs_cl": true,
+          "problem": "The good-law and Binding-SCOTUS calls survive, but the page's categorical 'No negative treatment' prose is stronger than the disclosed treatment record supports because the lake includes proposed negative-event edges and audit_needed flags.",
+          "proposed_fix": "Keep the status as good law and Binding-SCOTUS, but replace 'No negative treatment' with a narrower statement such as: 'No final point override or completed lake treatment field marks T.L.O. as overruled, abrogated, superseded, or limited; proposed treatment edges remain audit-pending.'",
+          "severity": "medium"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "Lake treatment.field_i_validity is good_law as of 2026-06-30, varies_by_point is false, and point_overrides is empty.",
+          "The court_level is scotus, supporting the Binding-SCOTUS weight label.",
+          "The treatment edge list contains proposed edges labeled questioned, criticized, overruled, abrogated, and superseded_by_statute, all marked proposed and mentioned, so they do not defeat the good-law field but do make 'No negative treatment' too absolute without audit resolution."
+        ],
+        "residual_risks": [
+          "The proposed edges may be false positives, but the disclosed record does not justify an uncaveated no-negative-treatment statement.",
+          "No disclosed treatment evidence updates the case after 2026-06-30."
+        ],
+        "suggested_tightening": "Use the lake scope note as the main treatment prose and caveat any no-negative statement to final, audited treatment fields.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"B\",\n  \"group_id\": \"_overhaul2/lake/cases/New Jersey v. T.L.O..json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"1dcd8b0be8009901\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Lake record status is verified and identifies New Jersey v. T.L.O. as a U.S. Supreme Court case decided 1985-01-15.\",\n        \"The official citation in the lake record is selected as 469 U.S. 325.\",\n        \"Currency angle is supported by treatment.field_i_validity = good_law as of 2026-06-30.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Disclosed currency evidence runs only through the lake treatment date of 2026-06-30.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"2f7e84f5ecfb9c12\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"This is a quote-pinpoint row, and quote fidelity is outside Lens B.\",\n        \"No separate treatment or currency assertion in this row is contradicted by the disclosed treatment fields.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Quote fidelity itself was not reviewed under this lens.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"a938d13adeacca43\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"This is a quote-pinpoint row, and quote fidelity is outside Lens B.\",\n        \"The embedded treatment/weight language is covered by the treatment row rather than this quote-fidelity row.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Quote fidelity itself was not reviewed under this lens.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"b7689fdf21a283b2\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"This is a quote-pinpoint row, and quote fidelity is outside Lens B.\",\n        \"The row does not make a treatment, good-law, or authority-weight claim.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Quote fidelity itself was not reviewed under this lens.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"2b9fef7159474236\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands-modified\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The good-law and Binding-SCOTUS calls survive, but the page's categorical 'No negative treatment' prose is stronger than the disclosed treatment record supports because the lake includes proposed negative-event edges and audit_needed flags.\",\n        \"severity\": \"medium\",\n        \"proposed_fix\": \"Keep the status as good law and Binding-SCOTUS, but replace 'No negative treatment' with a narrower statement such as: 'No final point override or completed lake treatment field marks T.L.O. as overruled, abrogated, superseded, or limited; proposed treatment edges remain audit-pending.'\",\n        \"evidence_quote\": \"No negative treatment.\",\n        \"needs_cl\": true,\n        \"locator_note\": \"content_page.md Treatment & subsequent history; lake treatment.derivation has audit_needed flags and 38 proposed treatment edges.\"\n      },\n      \"reasons\": [\n        \"Lake treatment.field_i_validity is good_law as of 2026-06-30, varies_by_point is false, and point_overrides is empty.\",\n        \"The court_level is scotus, supporting the Binding-SCOTUS weight label.\",\n        \"The treatment edge list contains proposed edges labeled questioned, criticized, overruled, abrogated, and superseded_by_statute, all marked proposed and mentioned, so they do not defeat the good-law field but do make 'No negative treatment' too absolute without audit resolution.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The proposed edges may be false positives, but the disclosed record does not justify an uncaveated no-negative-treatment statement.\",\n        \"No disclosed treatment evidence updates the case after 2026-06-30.\"\n      ],\n      \"suggested_tightening\": \"Use the lake scope note as the main treatment prose and caveat any no-negative statement to final, audited treatment fields.\"\n    }\n  ],\n  \"notes\": \"Quote-fidelity rows are marked only for absence of Lens B currency/treatment defects; Lens A owns quote support and fidelity.\"\n}",
+  "summary": {
+    "at": "2026-07-09T23:36:27-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-03a9bee280",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-917ad56d3a",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-12cc94b654"
+    ],
+    "group_id": "_overhaul2/lake/cases/New Jersey v. T.L.O..json",
+    "group_total_assertions": 5,
+    "lake_only_cases": [],
+    "lane": "codex-B",
+    "lane_id": "codex-B-panel-prod-338b5a69",
+    "lens": "B",
+    "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-338b5a69.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "New Jersey v. T.L.O."
+    ],
+    "tokens": {
+      "input": 293383,
+      "output": 7975,
+      "source": "codex-events",
+      "total": 301358
+    },
+    "verdict_map": {
+      "1dcd8b0be8009901": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "2b9fef7159474236": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "2f7e84f5ecfb9c12": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "a938d13adeacca43": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "b7689fdf21a283b2": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-03a9bee280",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-917ad56d3a",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-12cc94b654",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 160.3
+  }
+}

@@ -1,0 +1,126 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Michigan Dept. of State Police v. Sitz.json",
+    "lens": "A",
+    "notes": "Reviewed every assertion in group_inventory.jsonl under lens A. The only refutation is quote-fidelity/pinpoint integrity for pin-455.",
+    "reviewed": [
+      {
+        "assertion_id": "9472f2ca6ddddb65",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record identifies the case as Michigan Department of State Police v. Sitz, decided by the U.S. Supreme Court on 1990-06-14.",
+          "The official citation in the lake record is 496 U.S. 444, matching the content page citation 496 U.S. 444 (1990).",
+          "The parallel and vendor citations listed in the content page are present in the lake record: 110 S. Ct. 2481, 110 L. Ed. 2d 412, 58 U.S.L.W. 4781, and 1990 U.S. LEXIS 3144."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "781c029356f37aef",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "In sum, the balance of the State’s interest in preventing drunken driving, the extent to which this system can reasonably be said to advance that interest, and the degree of intrusion upon individual motorists who are briefly stopped, weighs in favor of the state program.",
+          "locator_note": "text/Michigan Dept. of State Police v. Sitz__e40282.txt, page label 455; lake pinpoints[0] has quote_fidelity=mismatch, page=null, position=null.",
+          "needs_cl": false,
+          "problem": "The stored pinpoint quote for pin-455 is not the opinion passage at 496 U.S. 455; it is content-page/header text ending before the actual quoted holding. The visible quoted holding also differs character-for-character from the opinion text because the opinion uses a curly apostrophe in State’s, while the content page uses State's.",
+          "proposed_fix": "Replace pin-455 with the actual page-455 opinion passage and make the visible quote character-faithful, including State’s. The correct pin should target the paragraph beginning “In sum, the balance of the State’s interest...” at 496 U.S. 455.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The lake pinpoint quote is a malformed excerpt from the built page, beginning with '--- # Michigan Dept. of State Police v. Sitz', not a quote from the opinion text.",
+          "The lake record itself marks pin-455 quote_fidelity as mismatch and pinpoint_status as slip-only.",
+          "The actual opinion text at page label 455 contains the quoted holding, but the content-page rendering is not character-faithful because it substitutes State's for State’s."
+        ],
+        "residual_risks": [
+          "The legal proposition is supported by the opinion, but this assertion is quote-fidelity/pinpoint metadata and fails as framed."
+        ],
+        "suggested_tightening": "Use the exact opinion text for the quoted sentence and store page 455 as the pinpoint rather than null.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "5ed336b0c37807b8",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside lens A, so no independent treatment finding is raised.",
+          "The content page treatment fields match the disclosed lake judgment fields: field_i_validity=good_law, as_of_content=1990-06-14, as_of_treatment=2026-06-30, varies_by_point=false, and the Edmond scope note is the same."
+        ],
+        "residual_risks": [
+          "Treatment merits were not audited under lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Michigan Dept. of State Police v. Sitz.json\",\"reviewed\":[{\"assertion_id\":\"9472f2ca6ddddb65\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record identifies the case as Michigan Department of State Police v. Sitz, decided by the U.S. Supreme Court on 1990-06-14.\",\"The official citation in the lake record is 496 U.S. 444, matching the content page citation 496 U.S. 444 (1990).\",\"The parallel and vendor citations listed in the content page are present in the lake record: 110 S. Ct. 2481, 110 L. Ed. 2d 412, 58 U.S.L.W. 4781, and 1990 U.S. LEXIS 3144.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"781c029356f37aef\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The stored pinpoint quote for pin-455 is not the opinion passage at 496 U.S. 455; it is content-page/header text ending before the actual quoted holding. The visible quoted holding also differs character-for-character from the opinion text because the opinion uses a curly apostrophe in State’s, while the content page uses State's.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-455 with the actual page-455 opinion passage and make the visible quote character-faithful, including State’s. The correct pin should target the paragraph beginning “In sum, the balance of the State’s interest...” at 496 U.S. 455.\",\"evidence_quote\":\"In sum, the balance of the State’s interest in preventing drunken driving, the extent to which this system can reasonably be said to advance that interest, and the degree of intrusion upon individual motorists who are briefly stopped, weighs in favor of the state program.\",\"needs_cl\":false,\"locator_note\":\"text/Michigan Dept. of State Police v. Sitz__e40282.txt, page label 455; lake pinpoints[0] has quote_fidelity=mismatch, page=null, position=null.\"},\"reasons\":[\"The lake pinpoint quote is a malformed excerpt from the built page, beginning with '--- # Michigan Dept. of State Police v. Sitz', not a quote from the opinion text.\",\"The lake record itself marks pin-455 quote_fidelity as mismatch and pinpoint_status as slip-only.\",\"The actual opinion text at page label 455 contains the quoted holding, but the content-page rendering is not character-faithful because it substitutes State's for State’s.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The legal proposition is supported by the opinion, but this assertion is quote-fidelity/pinpoint metadata and fails as framed.\"],\"suggested_tightening\":\"Use the exact opinion text for the quoted sentence and store page 455 as the pinpoint rather than null.\"},{\"assertion_id\":\"5ed336b0c37807b8\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside lens A, so no independent treatment finding is raised.\",\"The content page treatment fields match the disclosed lake judgment fields: field_i_validity=good_law, as_of_content=1990-06-14, as_of_treatment=2026-06-30, varies_by_point=false, and the Edmond scope note is the same.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment merits were not audited under lens A.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed every assertion in group_inventory.jsonl under lens A. The only refutation is quote-fidelity/pinpoint integrity for pin-455.\"}",
+  "summary": {
+    "at": "2026-07-09T23:32:42-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-26ec16b0b5"
+    ],
+    "group_id": "_overhaul2/lake/cases/Michigan Dept. of State Police v. Sitz.json",
+    "group_total_assertions": 3,
+    "lake_only_cases": [],
+    "lane": "codex-A",
+    "lane_id": "codex-A-panel-prod-ecb3f73b",
+    "lens": "A",
+    "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-ecb3f73b.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 3,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Michigan Dept. of State Police v. Sitz"
+    ],
+    "tokens": {
+      "input": 59397,
+      "output": 3566,
+      "source": "codex-events",
+      "total": 62963
+    },
+    "verdict_map": {
+      "5ed336b0c37807b8": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "781c029356f37aef": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "9472f2ca6ddddb65": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-26ec16b0b5",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 73.7
+  }
+}

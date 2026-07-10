@@ -1,0 +1,199 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Malloy v. Hogan.json",
+    "lens": "A",
+    "notes": "Reviewed all 5 rows in group_inventory.jsonl. No separate support, pincite, or black-letter rows were supplied for this group.",
+    "reviewed": [
+      {
+        "assertion_id": "a0efbd6bf180bf43",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record is verified for Malloy v. Hogan, U.S. Supreme Court, decided 1964-06-15.",
+          "The lake citation fields list official citation 378 U.S. 1 and parallel/vendor citations 84 S. Ct. 1489, 12 L. Ed. 2d 653, and 1964 U.S. LEXIS 993, matching the payload."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "00b52bad7b4c7b2a",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "The Fourteenth Amendment secures against state invasion the same privilege that the Fifth Amendment guarantees against federal infringementthe right of a person to remain silent unless he chooses to speak in the unfettered exercise of his own will, and to suffer no penalty, as held in <i><span class=\"citation\" data-id=\"9418128\"><a href=\"/opinion/96885/twining-v-new-jersey/\" aria-description=\"Citation for case: Twining v. New Jersey\">Twining</a></span>,</i> for such silence.",
+          "locator_note": "text/Malloy v. Hogan__3b9788.txt line 23; the passage is at star page *8.",
+          "needs_cl": false,
+          "problem": "The pin-8 quote is not character-faithful to the opinion text: it replaces the opinion's ', as held in Twining,' with an ellipsis and changes punctuation around 'penalty'.",
+          "proposed_fix": "Use the full opinion wording or convert the sentence to a paraphrase; if retaining an omission, preserve the source punctuation and mark the omission accurately.",
+          "severity": "medium"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The lake record itself flags pin-8 quote_fidelity as mismatch.",
+          "The cited passage supports the rule, but the quoted text is not verbatim under the task's character-fidelity standard."
+        ],
+        "residual_risks": [
+          "If the corpus permits editorial ellipses as quote-faithful, this could be treated as a tightening rather than a full refutation."
+        ],
+        "suggested_tightening": "Replace the quote with the exact sentence including 'as held in Twining' or make the sentence nonverbatim.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "89c9f2c45dd122c5",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "We hold today that the Fifth Amendment's exception from compulsory self-incrimination is also protected by the Fourteenth Amendment against abridgment by the States.",
+          "locator_note": "text/Malloy v. Hogan__3b9788.txt line 21; the content page's visible Rule quote is correct, but the lake pin-6 payload is not.",
+          "needs_cl": false,
+          "problem": "The pin-6 payload quote is page/front-matter prose, not a quotation from the Malloy opinion at the cited point.",
+          "proposed_fix": "Replace pin-6 with the actual opinion sentence quoted on the content page: 'We hold today that the Fifth Amendment's exception from compulsory self-incrimination is also protected by the Fourteenth Amendment against abridgment by the States.'",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The pin-6 payload begins with markdown/front matter and background text from the built page, not the opinion.",
+          "The actual sentence at 378 U.S. 6 is present in the opinion text and differs completely from the stored pin-6 quote."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Regenerate pin-6 from the opinion text rather than from content_page.md.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "f2e15779bc2b5a97",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "The Court thus has rejected the notion that the Fourteenth Amendment applies to the States only a \"watered-down, subjective version of the individual <span class=\"star-pagination\">*11</span> guarantees of the Bill of Rights, \"",
+          "locator_note": "text/Malloy v. Hogan__3b9788.txt line 27, spanning star pages *10-*11.",
+          "needs_cl": false,
+          "problem": "The pin-10 quote is not character-faithful: it inserts single quotation marks and a terminal period and omits the opinion's comma/quotation structure.",
+          "proposed_fix": "Quote the opinion's wording directly, e.g. the Court rejected applying to the States only a \"watered-down, subjective version of the individual guarantees of the Bill of Rights,\" or paraphrase without quotation marks.",
+          "severity": "medium"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The lake record flags pin-10 quote_fidelity as mismatch.",
+          "The proposition that the same standard governs is supported nearby, but the quoted phrase is not verbatim."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Use exact source quotation marks and punctuation or remove the quotation marks around the altered wording.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "20d6f51e86a5952e",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The treatment payload matches the lake treatment fields: field_i_validity good_law, as_of_content 1964-06-15, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note.",
+          "Treatment/currency merits are outside Lens A, so no treatment defect is raised."
+        ],
+        "residual_risks": [
+          "Treatment merits reserved for Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Malloy v. Hogan.json\",\"reviewed\":[{\"assertion_id\":\"a0efbd6bf180bf43\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record is verified for Malloy v. Hogan, U.S. Supreme Court, decided 1964-06-15.\",\"The lake citation fields list official citation 378 U.S. 1 and parallel/vendor citations 84 S. Ct. 1489, 12 L. Ed. 2d 653, and 1964 U.S. LEXIS 993, matching the payload.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"00b52bad7b4c7b2a\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The pin-8 quote is not character-faithful to the opinion text: it replaces the opinion's ', as held in Twining,' with an ellipsis and changes punctuation around 'penalty'.\",\"severity\":\"medium\",\"proposed_fix\":\"Use the full opinion wording or convert the sentence to a paraphrase; if retaining an omission, preserve the source punctuation and mark the omission accurately.\",\"evidence_quote\":\"The Fourteenth Amendment secures against state invasion the same privilege that the Fifth Amendment guarantees against federal infringement\\u0097the right of a person to remain silent unless he chooses to speak in the unfettered exercise of his own will, and to suffer no penalty, as held in <i><span class=\\\"citation\\\" data-id=\\\"9418128\\\"><a href=\\\"/opinion/96885/twining-v-new-jersey/\\\" aria-description=\\\"Citation for case: Twining v. New Jersey\\\">Twining</a></span>,</i> for such silence.\",\"needs_cl\":false,\"locator_note\":\"text/Malloy v. Hogan__3b9788.txt line 23; the passage is at star page *8.\"},\"reasons\":[\"The lake record itself flags pin-8 quote_fidelity as mismatch.\",\"The cited passage supports the rule, but the quoted text is not verbatim under the task's character-fidelity standard.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"If the corpus permits editorial ellipses as quote-faithful, this could be treated as a tightening rather than a full refutation.\"],\"suggested_tightening\":\"Replace the quote with the exact sentence including 'as held in Twining' or make the sentence nonverbatim.\"},{\"assertion_id\":\"89c9f2c45dd122c5\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The pin-6 payload quote is page/front-matter prose, not a quotation from the Malloy opinion at the cited point.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-6 with the actual opinion sentence quoted on the content page: 'We hold today that the Fifth Amendment's exception from compulsory self-incrimination is also protected by the Fourteenth Amendment against abridgment by the States.'\",\"evidence_quote\":\"We hold today that the Fifth Amendment's exception from compulsory self-incrimination is also protected by the Fourteenth Amendment against abridgment by the States.\",\"needs_cl\":false,\"locator_note\":\"text/Malloy v. Hogan__3b9788.txt line 21; the content page's visible Rule quote is correct, but the lake pin-6 payload is not.\"},\"reasons\":[\"The pin-6 payload begins with markdown/front matter and background text from the built page, not the opinion.\",\"The actual sentence at 378 U.S. 6 is present in the opinion text and differs completely from the stored pin-6 quote.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":\"Regenerate pin-6 from the opinion text rather than from content_page.md.\"},{\"assertion_id\":\"f2e15779bc2b5a97\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The pin-10 quote is not character-faithful: it inserts single quotation marks and a terminal period and omits the opinion's comma/quotation structure.\",\"severity\":\"medium\",\"proposed_fix\":\"Quote the opinion's wording directly, e.g. the Court rejected applying to the States only a \\\"watered-down, subjective version of the individual guarantees of the Bill of Rights,\\\" or paraphrase without quotation marks.\",\"evidence_quote\":\"The Court thus has rejected the notion that the Fourteenth Amendment applies to the States only a \\\"watered-down, subjective version of the individual <span class=\\\"star-pagination\\\">*11</span> guarantees of the Bill of Rights, \\\"\",\"needs_cl\":false,\"locator_note\":\"text/Malloy v. Hogan__3b9788.txt line 27, spanning star pages *10-*11.\"},\"reasons\":[\"The lake record flags pin-10 quote_fidelity as mismatch.\",\"The proposition that the same standard governs is supported nearby, but the quoted phrase is not verbatim.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":\"Use exact source quotation marks and punctuation or remove the quotation marks around the altered wording.\"},{\"assertion_id\":\"20d6f51e86a5952e\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The treatment payload matches the lake treatment fields: field_i_validity good_law, as_of_content 1964-06-15, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note.\",\"Treatment/currency merits are outside Lens A, so no treatment defect is raised.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment merits reserved for Lens B.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed all 5 rows in group_inventory.jsonl. No separate support, pincite, or black-letter rows were supplied for this group.\"}",
+  "summary": {
+    "at": "2026-07-09T23:32:04-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-998fdc5d03",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-026236ab8f",
+      "F-S9-PR-33e3e9bf76",
+      "F-S9-PR-bab22ece01"
+    ],
+    "group_id": "_overhaul2/lake/cases/Malloy v. Hogan.json",
+    "group_total_assertions": 5,
+    "lake_only_cases": [],
+    "lane": "codex-A",
+    "lane_id": "codex-A-panel-prod-9bdf7d79",
+    "lens": "A",
+    "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-9bdf7d79.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Malloy v. Hogan"
+    ],
+    "tokens": {
+      "input": 218929,
+      "output": 11241,
+      "source": "codex-events",
+      "total": 230170
+    },
+    "verdict_map": {
+      "00b52bad7b4c7b2a": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "20d6f51e86a5952e": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "89c9f2c45dd122c5": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "a0efbd6bf180bf43": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "f2e15779bc2b5a97": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-026236ab8f",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-33e3e9bf76",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-bab22ece01",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-998fdc5d03",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": 219.0
+  }
+}

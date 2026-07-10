@@ -1,0 +1,124 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/State v. Volle.json",
+    "lens": "A",
+    "notes": "Lens A review only; no external sources used.",
+    "reviewed": [
+      {
+        "assertion_id": "2fb1494b255a5a3d",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "Because relevant information may be stored anywhere on such a device, it is ordinarily impractical—and sometimes impossible—for a warrant to prescribe in advance how officers must locate that data.",
+          "locator_note": "lake pinpoints[].id == pin-13; opinion text slip page 13 contains the actual sentence.",
+          "needs_cl": false,
+          "problem": "The stored pin-13 quote is not a verbatim opinion passage; it is a harvested chunk of the built page/header/prose, while the opinion text at the claimed slip-page passage contains the narrower Burgess sentence about digital-device search methods.",
+          "proposed_fix": "Replace pin-13's stored quote with the actual quoted sentence from the opinion: \"Because relevant information may be stored anywhere on such a device, it is ordinarily impractical—and sometimes impossible—for a warrant to prescribe in advance how officers must locate that data.\"",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The lake quote for pin-13 begins with \"--- # State v. Volle\" and includes content-page sections, not opinion text.",
+          "The disclosed text file contains the actual digital-search-method passage at slip page 13."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Fix the quote harvester so frontmatter and markdown page prose cannot be captured as authority quotes.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "cc967dcfc2f36e5e",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The quoted language appears in the disclosed opinion passage at slip page 13, split only by cached page-break/layout artifacts.",
+          "The quote accurately captures the opinion's limiting-principle language for seizure of digital evidence."
+        ],
+        "residual_risks": [
+          "Automated exact-string checks may flag the cached page number/form-feed between \"may\" and \"need\"."
+        ],
+        "suggested_tightening": "Optionally include the source lead-in \"Thus,\" to avoid any objection that the quote begins mid-sentence.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "b3b8293a3796dfd2",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A.",
+          "The treatment fields in the assertion match the disclosed lake record and content page."
+        ],
+        "residual_risks": [
+          "No Lens A treatment review performed; Lens B owns treatment/currency."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"A\",\n  \"group_id\": \"_overhaul2/lake/cases/State v. Volle.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"2fb1494b255a5a3d\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The stored pin-13 quote is not a verbatim opinion passage; it is a harvested chunk of the built page/header/prose, while the opinion text at the claimed slip-page passage contains the narrower Burgess sentence about digital-device search methods.\",\n        \"severity\": \"high\",\n        \"proposed_fix\": \"Replace pin-13's stored quote with the actual quoted sentence from the opinion: \\\"Because relevant information may be stored anywhere on such a device, it is ordinarily impractical—and sometimes impossible—for a warrant to prescribe in advance how officers must locate that data.\\\"\",\n        \"evidence_quote\": \"Because relevant information may be stored anywhere on such a device, it is ordinarily impractical—and sometimes impossible—for a warrant to prescribe in advance how officers must locate that data.\",\n        \"needs_cl\": false,\n        \"locator_note\": \"lake pinpoints[].id == pin-13; opinion text slip page 13 contains the actual sentence.\"\n      },\n      \"reasons\": [\n        \"The lake quote for pin-13 begins with \\\"--- # State v. Volle\\\" and includes content-page sections, not opinion text.\",\n        \"The disclosed text file contains the actual digital-search-method passage at slip page 13.\"\n      ],\n      \"breaks_true_positives\": true,\n      \"residual_risks\": [],\n      \"suggested_tightening\": \"Fix the quote harvester so frontmatter and markdown page prose cannot be captured as authority quotes.\"\n    },\n    {\n      \"assertion_id\": \"cc967dcfc2f36e5e\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The quoted language appears in the disclosed opinion passage at slip page 13, split only by cached page-break/layout artifacts.\",\n        \"The quote accurately captures the opinion's limiting-principle language for seizure of digital evidence.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Automated exact-string checks may flag the cached page number/form-feed between \\\"may\\\" and \\\"need\\\".\"\n      ],\n      \"suggested_tightening\": \"Optionally include the source lead-in \\\"Thus,\\\" to avoid any objection that the quote begins mid-sentence.\"\n    },\n    {\n      \"assertion_id\": \"b3b8293a3796dfd2\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Treatment/currency is outside Lens A.\",\n        \"The treatment fields in the assertion match the disclosed lake record and content page.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"No Lens A treatment review performed; Lens B owns treatment/currency.\"\n      ],\n      \"suggested_tightening\": null\n    }\n  ],\n  \"notes\": \"Lens A review only; no external sources used.\"\n}",
+  "summary": {
+    "at": "2026-07-09T22:32:17-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-cd16c94050"
+    ],
+    "group_id": "_overhaul2/lake/cases/State v. Volle.json",
+    "group_total_assertions": 3,
+    "lake_only_cases": [],
+    "lane": "codex-A",
+    "lane_id": "codex-A-panel-prod-fa935aa5",
+    "lens": "A",
+    "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-fa935aa5.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 3,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "State v. Volle"
+    ],
+    "tokens": {
+      "input": 256463,
+      "output": 8567,
+      "source": "codex-events",
+      "total": 265030
+    },
+    "verdict_map": {
+      "2fb1494b255a5a3d": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "b3b8293a3796dfd2": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "cc967dcfc2f36e5e": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-cd16c94050",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 182.9
+  }
+}

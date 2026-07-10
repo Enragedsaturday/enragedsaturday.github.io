@@ -1,0 +1,201 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "content/cases/Olivier v. City of Brandon.md",
+    "lens": "A",
+    "notes": "No text opinion file is present, and the lake record has no pinpoints or holding text. Support assertions requiring opinion-level verification default to refuted under the disclosed-evidence rule.",
+    "reviewed": [
+      {
+        "assertion_id": "d4a7151d87b654a5",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "no_official_class_citation",
+          "locator_note": "field=citation",
+          "needs_cl": false,
+          "problem": "The case identity, court, year, and docket are supported, but the assertion marks an official citation as present even though the lake record has no official/display citation and treats the case as slip-only.",
+          "proposed_fix": "Keep the SCOTUS 2026 slip-only docket citation, but set official_citation_present to false and do not imply an official reporter citation unless lake.citations.official or lake.citations.display is populated.",
+          "severity": "medium"
+        },
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity confirms case_name 'Olivier v. City of Brandon', court 'scotus', year 2026, and docket '24-993'.",
+          "Lake citations show official null, display null, all empty, and slip_only true.",
+          "The citation survives only as a slip-only docket citation, not as an official-citation-present assertion."
+        ],
+        "residual_risks": [
+          "A later official reporter citation may exist outside the disclosed files, but it is not in this record."
+        ],
+        "suggested_tightening": "Label the cite expressly as slip-only/no reporter cite.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "a2edacfb5382233c",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "\"pinpoints\": []",
+          "locator_note": "home=Section 1983 Liability and Qualified Immunity",
+          "needs_cl": true,
+          "problem": "The disclosed evidence does not verify that this case belongs on the Section 1983 Liability and Qualified Immunity home as a Recent development. The lake record supplies identity/citation/treatment metadata, but no holding, subject tags, opinion text, or pinpoints supporting the home-role assignment.",
+          "proposed_fix": "Provide a cached opinion text or lake holding/pinpoints showing the case is a Section 1983/qualified-immunity-relevant recent development, or remove/narrow the home-role assertion.",
+          "severity": "medium"
+        },
+        "dimension": "support",
+        "reasons": [
+          "No text opinion file is disclosed.",
+          "Lake pinpoints are empty.",
+          "The 2026 year can support recency, but the Section 1983 home placement is not independently verified from the disclosed authority record."
+        ],
+        "residual_risks": [
+          "The full opinion may support this placement, but it is not in the disclosed evidence."
+        ],
+        "suggested_tightening": "Tie the home-role to a verified holding or pinpoint before publishing.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": false
+      },
+      {
+        "assertion_id": "db7a170b71d09934",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "\"pinpoints\": []",
+          "locator_note": "field=holding",
+          "needs_cl": true,
+          "problem": "The asserted holding about Heck, prospective relief, future enforcement, and Section 1983's heartland cannot be verified from the disclosed files. There is no opinion text and the lake record contains no holding or pinpoint quote.",
+          "proposed_fix": "Add the full cached opinion text or lake pinpoints/holding that support each part of the proposition, then restate the holding only at the breadth supported by that evidence.",
+          "severity": "high"
+        },
+        "dimension": "support",
+        "reasons": [
+          "The proposition is broad and fact-specific.",
+          "The disclosed lake record has an empty pinpoints array and no holding field.",
+          "The built page's own source note cannot self-verify the holding under the disclosed-evidence rule."
+        ],
+        "residual_risks": [
+          "The actual opinion may support this proposition, but that cannot be confirmed from the disclosed corpus."
+        ],
+        "suggested_tightening": "Separate Heck-bar, prospective-relief, and prior-conviction points into pin-supported subpropositions.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": false
+      },
+      {
+        "assertion_id": "070cf5bed98aed08",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Lake identity lists court 'scotus' and court_level 'scotus'.",
+          "Under Lens A, this records the SCOTUS authority label only and does not assess current treatment or currency."
+        ],
+        "residual_risks": [
+          "Current validity and later treatment are reserved for Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "60fdbe088a324040",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The asserted treatment fields match the lake treatment stub: field_i_validity unverified, as_of fields null, composite_basis unverified, varies_by_point false, and the same scope note.",
+          "Under Lens A, this records the disclosed treatment metadata only and does not make a treatment/currency finding."
+        ],
+        "residual_risks": [
+          "Current validity and progeny are reserved for Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"A\",\n  \"group_id\": \"content/cases/Olivier v. City of Brandon.md\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"d4a7151d87b654a5\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands-modified\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The case identity, court, year, and docket are supported, but the assertion marks an official citation as present even though the lake record has no official/display citation and treats the case as slip-only.\",\n        \"severity\": \"medium\",\n        \"proposed_fix\": \"Keep the SCOTUS 2026 slip-only docket citation, but set official_citation_present to false and do not imply an official reporter citation unless lake.citations.official or lake.citations.display is populated.\",\n        \"evidence_quote\": \"no_official_class_citation\",\n        \"needs_cl\": false,\n        \"locator_note\": \"field=citation\"\n      },\n      \"reasons\": [\n        \"Lake identity confirms case_name 'Olivier v. City of Brandon', court 'scotus', year 2026, and docket '24-993'.\",\n        \"Lake citations show official null, display null, all empty, and slip_only true.\",\n        \"The citation survives only as a slip-only docket citation, not as an official-citation-present assertion.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"A later official reporter citation may exist outside the disclosed files, but it is not in this record.\"\n      ],\n      \"suggested_tightening\": \"Label the cite expressly as slip-only/no reporter cite.\"\n    },\n    {\n      \"assertion_id\": \"a2edacfb5382233c\",\n      \"dimension\": \"support\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": false,\n      \"defect\": {\n        \"problem\": \"The disclosed evidence does not verify that this case belongs on the Section 1983 Liability and Qualified Immunity home as a Recent development. The lake record supplies identity/citation/treatment metadata, but no holding, subject tags, opinion text, or pinpoints supporting the home-role assignment.\",\n        \"severity\": \"medium\",\n        \"proposed_fix\": \"Provide a cached opinion text or lake holding/pinpoints showing the case is a Section 1983/qualified-immunity-relevant recent development, or remove/narrow the home-role assertion.\",\n        \"evidence_quote\": \"\\\"pinpoints\\\": []\",\n        \"needs_cl\": true,\n        \"locator_note\": \"home=Section 1983 Liability and Qualified Immunity\"\n      },\n      \"reasons\": [\n        \"No text opinion file is disclosed.\",\n        \"Lake pinpoints are empty.\",\n        \"The 2026 year can support recency, but the Section 1983 home placement is not independently verified from the disclosed authority record.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The full opinion may support this placement, but it is not in the disclosed evidence.\"\n      ],\n      \"suggested_tightening\": \"Tie the home-role to a verified holding or pinpoint before publishing.\"\n    },\n    {\n      \"assertion_id\": \"db7a170b71d09934\",\n      \"dimension\": \"support\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": false,\n      \"defect\": {\n        \"problem\": \"The asserted holding about Heck, prospective relief, future enforcement, and Section 1983's heartland cannot be verified from the disclosed files. There is no opinion text and the lake record contains no holding or pinpoint quote.\",\n        \"severity\": \"high\",\n        \"proposed_fix\": \"Add the full cached opinion text or lake pinpoints/holding that support each part of the proposition, then restate the holding only at the breadth supported by that evidence.\",\n        \"evidence_quote\": \"\\\"pinpoints\\\": []\",\n        \"needs_cl\": true,\n        \"locator_note\": \"field=holding\"\n      },\n      \"reasons\": [\n        \"The proposition is broad and fact-specific.\",\n        \"The disclosed lake record has an empty pinpoints array and no holding field.\",\n        \"The built page's own source note cannot self-verify the holding under the disclosed-evidence rule.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The actual opinion may support this proposition, but that cannot be confirmed from the disclosed corpus.\"\n      ],\n      \"suggested_tightening\": \"Separate Heck-bar, prospective-relief, and prior-conviction points into pin-supported subpropositions.\"\n    },\n    {\n      \"assertion_id\": \"070cf5bed98aed08\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Lake identity lists court 'scotus' and court_level 'scotus'.\",\n        \"Under Lens A, this records the SCOTUS authority label only and does not assess current treatment or currency.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Current validity and later treatment are reserved for Lens B.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"60fdbe088a324040\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The asserted treatment fields match the lake treatment stub: field_i_validity unverified, as_of fields null, composite_basis unverified, varies_by_point false, and the same scope note.\",\n        \"Under Lens A, this records the disclosed treatment metadata only and does not make a treatment/currency finding.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Current validity and progeny are reserved for Lens B.\"\n      ],\n      \"suggested_tightening\": null\n    }\n  ],\n  \"notes\": \"No text opinion file is present, and the lake record has no pinpoints or holding text. Support assertions requiring opinion-level verification default to refuted under the disclosed-evidence rule.\"\n}",
+  "summary": {
+    "at": "2026-07-09T23:13:57-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-a161ba0f1f",
+      "F-S9-PR-212a9a0384",
+      "F-S9-PR-4afa07b137"
+    ],
+    "group_id": "content/cases/Olivier v. City of Brandon.md",
+    "group_total_assertions": 5,
+    "lake_only_cases": [
+      "Olivier v. City of Brandon"
+    ],
+    "lane": "codex-A",
+    "lane_id": "codex-A-panel-prod-1d823dc3",
+    "lens": "A",
+    "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-1d823dc3.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [
+      "case 'Olivier v. City of Brandon' has no lead_opinion_id (text undisclosed)"
+    ],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [],
+    "tokens": {
+      "input": 75835,
+      "output": 8064,
+      "source": "codex-events",
+      "total": 83899
+    },
+    "verdict_map": {
+      "070cf5bed98aed08": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "60fdbe088a324040": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "a2edacfb5382233c": {
+        "dimension": "support",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": false
+      },
+      "d4a7151d87b654a5": {
+        "dimension": "existence",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "db7a170b71d09934": {
+        "dimension": "support",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": false
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-a161ba0f1f",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-212a9a0384",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-4afa07b137",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 160.1
+  }
+}

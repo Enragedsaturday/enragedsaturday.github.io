@@ -1,0 +1,105 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Owen v. City of Independence.json",
+    "lens": "B",
+    "notes": "Reviewed both rows in group_inventory.jsonl under Lens B only; no support or quote-fidelity finding is made.",
+    "reviewed": [
+      {
+        "assertion_id": "dd933871e42ab91a",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Frontier stub: treatment/progeny intentionally not derived until S6 promotion.",
+          "locator_note": "group_inventory existence row for record_id Owen v. City of Independence; lake treatment and progeny fields",
+          "needs_cl": true,
+          "problem": "Under Lens B, the disclosed record verifies the case identity and citation, but does not verify that the cited authority remains live law. The lake record expressly marks treatment as unverified and contains no completed progeny/citator enumeration.",
+          "proposed_fix": "Do not treat the existence/currency assertion as live-law verified; mark current validity as unverified unless a completed treatment/progeny record or citator verification is supplied.",
+          "severity": "medium"
+        },
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity/citation fields support the existence of Owen v. City of Independence and the display citation 445 U.S. 622.",
+          "Currency is not verifiable from the disclosed evidence because treatment.field_i_validity is unverified, as_of_treatment is null, treatment.edges is empty, and progeny.rows_cached is 0."
+        ],
+        "residual_risks": [
+          "A completed citator could confirm that the authority remains live, but that evidence is not present in the disclosed files."
+        ],
+        "suggested_tightening": "Separate citation-existence verification from live-law/currency verification.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": false
+      },
+      {
+        "assertion_id": "3b98577b75c74eb2",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The inventory treatment assertion matches the lake record: field_i_validity is unverified, as_of_content and as_of_treatment are null, varies_by_point is false, and the same frontier-stub scope note appears.",
+          "The disclosed treatment/progeny fields contain no superseding, overruling, abrogating, or limiting edge; the page does not claim a verified good-law status and instead renders Treatment: Unverified."
+        ],
+        "residual_risks": [
+          "Because the record is a frontier stub with no completed progeny enumeration, no affirmative good-law conclusion can be drawn from the disclosed evidence."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/Owen v. City of Independence.json\",\"reviewed\":[{\"assertion_id\":\"dd933871e42ab91a\",\"dimension\":\"existence\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":false,\"defect\":{\"problem\":\"Under Lens B, the disclosed record verifies the case identity and citation, but does not verify that the cited authority remains live law. The lake record expressly marks treatment as unverified and contains no completed progeny/citator enumeration.\",\"severity\":\"medium\",\"proposed_fix\":\"Do not treat the existence/currency assertion as live-law verified; mark current validity as unverified unless a completed treatment/progeny record or citator verification is supplied.\",\"evidence_quote\":\"Frontier stub: treatment/progeny intentionally not derived until S6 promotion.\",\"needs_cl\":true,\"locator_note\":\"group_inventory existence row for record_id Owen v. City of Independence; lake treatment and progeny fields\"},\"reasons\":[\"Lake identity/citation fields support the existence of Owen v. City of Independence and the display citation 445 U.S. 622.\",\"Currency is not verifiable from the disclosed evidence because treatment.field_i_validity is unverified, as_of_treatment is null, treatment.edges is empty, and progeny.rows_cached is 0.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"A completed citator could confirm that the authority remains live, but that evidence is not present in the disclosed files.\"],\"suggested_tightening\":\"Separate citation-existence verification from live-law/currency verification.\"},{\"assertion_id\":\"3b98577b75c74eb2\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The inventory treatment assertion matches the lake record: field_i_validity is unverified, as_of_content and as_of_treatment are null, varies_by_point is false, and the same frontier-stub scope note appears.\",\"The disclosed treatment/progeny fields contain no superseding, overruling, abrogating, or limiting edge; the page does not claim a verified good-law status and instead renders Treatment: Unverified.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Because the record is a frontier stub with no completed progeny enumeration, no affirmative good-law conclusion can be drawn from the disclosed evidence.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed both rows in group_inventory.jsonl under Lens B only; no support or quote-fidelity finding is made.\"}",
+  "summary": {
+    "at": "2026-07-09T23:36:14-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-64d4609fc8"
+    ],
+    "group_id": "_overhaul2/lake/cases/Owen v. City of Independence.json",
+    "group_total_assertions": 2,
+    "lake_only_cases": [
+      "Owen v. City of Independence"
+    ],
+    "lane": "codex-B",
+    "lane_id": "codex-B-panel-prod-4ee2d82a",
+    "lens": "B",
+    "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-4ee2d82a.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [
+      "case 'Owen v. City of Independence' has no lead_opinion_id (text undisclosed)"
+    ],
+    "reviewed_count": 2,
+    "run": "prod",
+    "text_disclosed_cases": [],
+    "tokens": {
+      "input": 75584,
+      "output": 4437,
+      "source": "codex-events",
+      "total": 80021
+    },
+    "verdict_map": {
+      "3b98577b75c74eb2": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "dd933871e42ab91a": {
+        "dimension": "existence",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": false
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-64d4609fc8",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 101.5
+  }
+}

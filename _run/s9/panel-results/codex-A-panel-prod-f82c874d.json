@@ -1,0 +1,234 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Henry v. United States (1959).json",
+    "lens": "A",
+    "notes": "Reviewed all seven inventory rows exactly once under Lens A using only disclosed workspace files.",
+    "reviewed": [
+      {
+        "assertion_id": "3f8f1bc363f4a605",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity confirms Henry v. United States, U.S. Supreme Court, decided 1959-11-23.",
+          "Lake official citation is 361 U.S. 98, matching the content page display citation."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "1d84db4cfd1eada3",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The quoted sentence appears verbatim in the cached opinion text at star page 104.",
+          "Lake marks pin-104b as star-verified with quote_fidelity matched."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "2c642c8da35edc02",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The quoted arrest-completion passage appears verbatim in the cached opinion text at star page 103.",
+          "Lake marks pin-103 as star-verified with quote_fidelity matched."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "390b82467b84f060",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "To repeat, an arrest is not justified by what the subsequent search discloses. Under our system suspicion is not enough for an officer to lay hands on a citizen.",
+          "locator_note": "pin-104 cites Id. at 104; the asserted words are substantively supported but not verbatim as written.",
+          "needs_cl": false,
+          "problem": "The quote is not character-faithful: the cached text at page 104 says \"To repeat, an arrest...\", not \"[A]n arrest...\".",
+          "proposed_fix": "Quote the page-104 sentence exactly as: \"To repeat, an arrest is not justified by what the subsequent search discloses. Under our system suspicion is not enough for an officer to lay hands on a citizen.\"",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The legal proposition is supported by the page-104 passage.",
+          "Strict quote-fidelity fails because of bracketed capitalization and omission of the introductory words."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Use the exact page-104 wording or mark the bracketed version as an editorially altered quotation rather than verbatim.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "8994b96d3617869d",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Probable cause exists if the facts and circumstances known to the officer warrant a prudent man in believing that the offense has been committed.",
+          "locator_note": "pin-102 should land on star page 102 in the cached opinion text; the disclosed lake record itself marks this pin quote_fidelity as mismatch and slip-only.",
+          "needs_cl": false,
+          "problem": "The pin-102 payload is not an opinion quote; it is a corrupted harvest of the content page text and frontmatter-like prose.",
+          "proposed_fix": "Replace the pin-102 quote payload with the actual page-102 opinion sentence supporting the rule.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload begins with generated page content rather than text from Henry.",
+          "The actual page-102 opinion text contains the probable-cause sentence, but not the asserted long payload."
+        ],
+        "residual_risks": [
+          "The content page's visible short quote may be valid, but the disclosed pin record under review is defective."
+        ],
+        "suggested_tightening": "Reharvest pin-102 from the cached opinion text and validate it against star page 102.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "fd258239dc09764c",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Riding in the car, stopping in an alley, picking up packages, driving awaythese were all acts that were outwardly innocent.",
+          "locator_note": "The passage is on star page 103, but the quote text is not character-identical to the cached opinion.",
+          "needs_cl": false,
+          "problem": "The quote normalizes the dash and spacing; the cached text has no spaces around the dash character.",
+          "proposed_fix": "Use the exact cached text form or avoid presenting this as character-faithful verbatim.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The words and proposition are supported by the cached opinion text.",
+          "Strict quote-fidelity fails on punctuation/spacing."
+        ],
+        "residual_risks": [
+          "The odd dash character may be an encoding artifact in the cached source, but the disclosed-evidence standard requires fidelity to the disclosed text."
+        ],
+        "suggested_tightening": "Either quote the cached punctuation exactly or treat the dash change as a normalized paraphrase.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "1f12652be7d39153",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A.",
+          "The lake judgment field states field_i_validity good_law as of 2026-06-30, matching the payload."
+        ],
+        "residual_risks": [
+          "No Lens A treatment finding is made; treatment audit belongs to Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"A\",\n  \"group_id\": \"_overhaul2/lake/cases/Henry v. United States (1959).json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"3f8f1bc363f4a605\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Lake identity confirms Henry v. United States, U.S. Supreme Court, decided 1959-11-23.\",\n        \"Lake official citation is 361 U.S. 98, matching the content page display citation.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"1d84db4cfd1eada3\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The quoted sentence appears verbatim in the cached opinion text at star page 104.\",\n        \"Lake marks pin-104b as star-verified with quote_fidelity matched.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"2c642c8da35edc02\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The quoted arrest-completion passage appears verbatim in the cached opinion text at star page 103.\",\n        \"Lake marks pin-103 as star-verified with quote_fidelity matched.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"390b82467b84f060\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands-modified\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The quote is not character-faithful: the cached text at page 104 says \\\"To repeat, an arrest...\\\", not \\\"[A]n arrest...\\\".\",\n        \"severity\": \"low\",\n        \"proposed_fix\": \"Quote the page-104 sentence exactly as: \\\"To repeat, an arrest is not justified by what the subsequent search discloses. Under our system suspicion is not enough for an officer to lay hands on a citizen.\\\"\",\n        \"evidence_quote\": \"To repeat, an arrest is not justified by what the subsequent search discloses. Under our system suspicion is not enough for an officer to lay hands on a citizen.\",\n        \"needs_cl\": false,\n        \"locator_note\": \"pin-104 cites Id. at 104; the asserted words are substantively supported but not verbatim as written.\"\n      },\n      \"reasons\": [\n        \"The legal proposition is supported by the page-104 passage.\",\n        \"Strict quote-fidelity fails because of bracketed capitalization and omission of the introductory words.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": \"Use the exact page-104 wording or mark the bracketed version as an editorially altered quotation rather than verbatim.\"\n    },\n    {\n      \"assertion_id\": \"8994b96d3617869d\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The pin-102 payload is not an opinion quote; it is a corrupted harvest of the content page text and frontmatter-like prose.\",\n        \"severity\": \"high\",\n        \"proposed_fix\": \"Replace the pin-102 quote payload with the actual page-102 opinion sentence supporting the rule.\",\n        \"evidence_quote\": \"Probable cause exists if the facts and circumstances known to the officer warrant a prudent man in believing that the offense has been committed.\",\n        \"needs_cl\": false,\n        \"locator_note\": \"pin-102 should land on star page 102 in the cached opinion text; the disclosed lake record itself marks this pin quote_fidelity as mismatch and slip-only.\"\n      },\n      \"reasons\": [\n        \"The payload begins with generated page content rather than text from Henry.\",\n        \"The actual page-102 opinion text contains the probable-cause sentence, but not the asserted long payload.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The content page's visible short quote may be valid, but the disclosed pin record under review is defective.\"\n      ],\n      \"suggested_tightening\": \"Reharvest pin-102 from the cached opinion text and validate it against star page 102.\"\n    },\n    {\n      \"assertion_id\": \"fd258239dc09764c\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands-modified\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The quote normalizes the dash and spacing; the cached text has no spaces around the dash character.\",\n        \"severity\": \"low\",\n        \"proposed_fix\": \"Use the exact cached text form or avoid presenting this as character-faithful verbatim.\",\n        \"evidence_quote\": \"Riding in the car, stopping in an alley, picking up packages, driving away\\u0097these were all acts that were outwardly innocent.\",\n        \"needs_cl\": false,\n        \"locator_note\": \"The passage is on star page 103, but the quote text is not character-identical to the cached opinion.\"\n      },\n      \"reasons\": [\n        \"The words and proposition are supported by the cached opinion text.\",\n        \"Strict quote-fidelity fails on punctuation/spacing.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The odd dash character may be an encoding artifact in the cached source, but the disclosed-evidence standard requires fidelity to the disclosed text.\"\n      ],\n      \"suggested_tightening\": \"Either quote the cached punctuation exactly or treat the dash change as a normalized paraphrase.\"\n    },\n    {\n      \"assertion_id\": \"1f12652be7d39153\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Treatment/currency is outside Lens A.\",\n        \"The lake judgment field states field_i_validity good_law as of 2026-06-30, matching the payload.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"No Lens A treatment finding is made; treatment audit belongs to Lens B.\"\n      ],\n      \"suggested_tightening\": null\n    }\n  ],\n  \"notes\": \"Reviewed all seven inventory rows exactly once under Lens A using only disclosed workspace files.\"\n}",
+  "summary": {
+    "at": "2026-07-09T23:25:12-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-812fe3e57c",
+      "F-S9-PR-c02c9dbc3a",
+      "F-S9-PR-12b73f77f0"
+    ],
+    "group_id": "_overhaul2/lake/cases/Henry v. United States (1959).json",
+    "group_total_assertions": 7,
+    "lake_only_cases": [],
+    "lane": "codex-A",
+    "lane_id": "codex-A-panel-prod-f82c874d",
+    "lens": "A",
+    "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-f82c874d.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 7,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Henry v. United States (1959)"
+    ],
+    "tokens": {
+      "input": 104528,
+      "output": 7086,
+      "source": "codex-events",
+      "total": 111614
+    },
+    "verdict_map": {
+      "1d84db4cfd1eada3": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "1f12652be7d39153": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "2c642c8da35edc02": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "390b82467b84f060": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "3f8f1bc363f4a605": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "8994b96d3617869d": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "fd258239dc09764c": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-812fe3e57c",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-c02c9dbc3a",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-12b73f77f0",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 137.6
+  }
+}

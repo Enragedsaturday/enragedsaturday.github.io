@@ -1,0 +1,157 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Franks v. Delaware.json",
+    "lens": "A",
+    "notes": "Reviewed all 4 group_inventory rows under Lens A only.",
+    "reviewed": [
+      {
+        "assertion_id": "6ade265a6226cee0",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity is verified for Franks v. Delaware, U.S. Supreme Court, decided 1978-06-26, year 1978.",
+          "Lake citations list official cite 438 U.S. 154, parallels 98 S. Ct. 2674 and 57 L. Ed. 2d 667, and vendor cite 1978 U.S. LEXIS 127, matching the page/inventory."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "50d80cecea9545bb",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "We reverse, and we hold that, where the defendant makes a substantial preliminary showing that a false statement knowingly and intentionally, or with reckless disregard for the truth, was <span class=\"star-pagination\">*156</span> included by the affiant",
+          "locator_note": "text/Franks v. Delaware__c10fd9.txt line 15; lake pinpoints[].id=pin-155 has quote_fidelity=mismatch, page=null, star_marker=null.",
+          "needs_cl": false,
+          "problem": "pin-155's payload/lake quote is not a verbatim opinion quote; it is harvested content-page metadata/background/rule prose, not the U.S. Reports passage at 155-156.",
+          "proposed_fix": "Reharvest pin-155 from the opinion text and store only the actual holding clause beginning with 'where the defendant makes...' through 'hearing be held at the defendant's request.' If strict character fidelity is required, avoid '[W]here' unless editorial capitalization is expressly allowed.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The asserted quote begins with '--- # Franks v. Delaware' and includes page background/rule text; that is not the opinion's quoted holding passage.",
+          "The disclosed opinion text contains the actual 155-156 holding at line 15, and the lake record itself flags pin-155 as quote_fidelity=mismatch."
+        ],
+        "residual_risks": [
+          "The displayed page quote is substantively present at 155-156, but the stored pinpoint quote is corrupted; bracketed capitalization remains a strict-fidelity issue."
+        ],
+        "suggested_tightening": "Prevent quote harvest from capturing content-page prose and require a non-null page/star marker for U.S. Reports pinpoints.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "a486e35beba2a054",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "the search warrant must be voided and the fruits of the search excluded to the same extent as if probable cause was lacking on the face of the affidavit.",
+          "locator_note": "text/Franks v. Delaware__c10fd9.txt line 15; lake pinpoints[].id=pin-156 also flags quote_fidelity=mismatch.",
+          "needs_cl": false,
+          "problem": "The quote stops after 'fruits of the search excluded' and inserts a period, but the source sentence continues with an additional limiting clause.",
+          "proposed_fix": "Append the omitted source language, 'to the same extent as if probable cause was lacking on the face of the affidavit,' or use an ellipsis with corrected punctuation.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The disclosed opinion text continues after 'excluded'; the payload quote truncates the sentence without ellipsis.",
+          "The lake record's quote_fidelity field for pin-156 is 'mismatch'."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Require quote checks to compare through sentence-ending punctuation, not just substring starts.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "bf2dff5559564b73",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The inventory treatment payload matches the lake treatment fields: field_i_validity=good_law, as_of_content=1978-06-26, as_of_treatment=2026-06-30, varies_by_point=false, and the same scope_note.",
+          "Treatment/currency merits are outside Lens A, so no treatment finding is raised."
+        ],
+        "residual_risks": [
+          "Treatment currency and negative-treatment implications are reserved for Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Franks v. Delaware.json\",\"reviewed\":[{\"assertion_id\":\"6ade265a6226cee0\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity is verified for Franks v. Delaware, U.S. Supreme Court, decided 1978-06-26, year 1978.\",\"Lake citations list official cite 438 U.S. 154, parallels 98 S. Ct. 2674 and 57 L. Ed. 2d 667, and vendor cite 1978 U.S. LEXIS 127, matching the page/inventory.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"50d80cecea9545bb\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"pin-155's payload/lake quote is not a verbatim opinion quote; it is harvested content-page metadata/background/rule prose, not the U.S. Reports passage at 155-156.\",\"severity\":\"high\",\"proposed_fix\":\"Reharvest pin-155 from the opinion text and store only the actual holding clause beginning with 'where the defendant makes...' through 'hearing be held at the defendant's request.' If strict character fidelity is required, avoid '[W]here' unless editorial capitalization is expressly allowed.\",\"evidence_quote\":\"We reverse, and we hold that, where the defendant makes a substantial preliminary showing that a false statement knowingly and intentionally, or with reckless disregard for the truth, was <span class=\\\"star-pagination\\\">*156</span> included by the affiant\",\"needs_cl\":false,\"locator_note\":\"text/Franks v. Delaware__c10fd9.txt line 15; lake pinpoints[].id=pin-155 has quote_fidelity=mismatch, page=null, star_marker=null.\"},\"reasons\":[\"The asserted quote begins with '--- # Franks v. Delaware' and includes page background/rule text; that is not the opinion's quoted holding passage.\",\"The disclosed opinion text contains the actual 155-156 holding at line 15, and the lake record itself flags pin-155 as quote_fidelity=mismatch.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The displayed page quote is substantively present at 155-156, but the stored pinpoint quote is corrupted; bracketed capitalization remains a strict-fidelity issue.\"],\"suggested_tightening\":\"Prevent quote harvest from capturing content-page prose and require a non-null page/star marker for U.S. Reports pinpoints.\"},{\"assertion_id\":\"a486e35beba2a054\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The quote stops after 'fruits of the search excluded' and inserts a period, but the source sentence continues with an additional limiting clause.\",\"severity\":\"high\",\"proposed_fix\":\"Append the omitted source language, 'to the same extent as if probable cause was lacking on the face of the affidavit,' or use an ellipsis with corrected punctuation.\",\"evidence_quote\":\"the search warrant must be voided and the fruits of the search excluded to the same extent as if probable cause was lacking on the face of the affidavit.\",\"needs_cl\":false,\"locator_note\":\"text/Franks v. Delaware__c10fd9.txt line 15; lake pinpoints[].id=pin-156 also flags quote_fidelity=mismatch.\"},\"reasons\":[\"The disclosed opinion text continues after 'excluded'; the payload quote truncates the sentence without ellipsis.\",\"The lake record's quote_fidelity field for pin-156 is 'mismatch'.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":\"Require quote checks to compare through sentence-ending punctuation, not just substring starts.\"},{\"assertion_id\":\"bf2dff5559564b73\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The inventory treatment payload matches the lake treatment fields: field_i_validity=good_law, as_of_content=1978-06-26, as_of_treatment=2026-06-30, varies_by_point=false, and the same scope_note.\",\"Treatment/currency merits are outside Lens A, so no treatment finding is raised.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment currency and negative-treatment implications are reserved for Lens B.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed all 4 group_inventory rows under Lens A only.\"}",
+  "summary": {
+    "at": "2026-07-09T23:20:57-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-cbfa596238",
+      "F-S9-PR-f2de21690f"
+    ],
+    "group_id": "_overhaul2/lake/cases/Franks v. Delaware.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "codex-A",
+    "lane_id": "codex-A-panel-prod-4fe84b4b",
+    "lens": "A",
+    "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-4fe84b4b.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Franks v. Delaware"
+    ],
+    "tokens": {
+      "input": 226672,
+      "output": 7489,
+      "source": "codex-events",
+      "total": 234161
+    },
+    "verdict_map": {
+      "50d80cecea9545bb": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "6ade265a6226cee0": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "a486e35beba2a054": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "bf2dff5559564b73": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-cbfa596238",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-f2de21690f",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 153.6
+  }
+}

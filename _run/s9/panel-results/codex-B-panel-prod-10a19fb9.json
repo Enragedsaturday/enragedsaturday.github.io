@@ -1,0 +1,106 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Grady v. North Carolina.json",
+    "lens": "B",
+    "notes": "Reviewed every assertion in group_inventory.jsonl under Lens B only; no support or quote-fidelity findings were made.",
+    "reviewed": [
+      {
+        "assertion_id": "1f5a0da0ebf52a69",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "Frontier stub: treatment/progeny intentionally not derived until S6 promotion.",
+          "locator_note": "lake/Grady v. North Carolina__0ff746.json treatment/progeny fields; content_page.md treatment frontmatter",
+          "needs_cl": true,
+          "problem": "The disclosed record verifies the case identity and citations, but not the currency/live-law status required by the B-lens existence check. Treatment is explicitly unverified, as-of dates are null, and progeny data are not derived.",
+          "proposed_fix": "Do not treat the citation as live-law verified. Complete treatment/progeny verification with an as-of date, or label the assertion as citation/identity verified only with live-law status unverified.",
+          "severity": "medium"
+        },
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity and citation fields confirm the record and official citation 575 U.S. 306, but that is not enough to verify current good-law status.",
+          "The lake treatment field is unverified, as_of_content and as_of_treatment are null, and progeny rows_cached is 0."
+        ],
+        "residual_risks": [
+          "This refutation is limited to current/live-law verification; it does not dispute that the cited case record exists."
+        ],
+        "suggested_tightening": "Separate identity/citation verification from current-validity verification in the rendered page or inventory payload.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": false
+      },
+      {
+        "assertion_id": "79cd5a71f2509a6c",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The treatment assertion matches the lake record: field_i_validity is unverified, as_of_content and as_of_treatment are null, varies_by_point is false, and the scope note says treatment/progeny were not derived.",
+          "The content page renders Treatment: Unverified and states that subsequent treatment has not yet been machine-verified.",
+          "No disclosed treatment edge or progeny entry shows that Grady has been overruled, superseded, abrogated, or limited; the record also does not claim affirmative good-law status."
+        ],
+        "residual_risks": [
+          "Because treatment and progeny are intentionally unverified, the record cannot support any affirmative current-validity conclusion."
+        ],
+        "suggested_tightening": "Keep the unverified banner until treatment/progeny promotion supplies a dated citator basis and any relevant edges.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/Grady v. North Carolina.json\",\"reviewed\":[{\"assertion_id\":\"1f5a0da0ebf52a69\",\"dimension\":\"existence\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":false,\"defect\":{\"problem\":\"The disclosed record verifies the case identity and citations, but not the currency/live-law status required by the B-lens existence check. Treatment is explicitly unverified, as-of dates are null, and progeny data are not derived.\",\"severity\":\"medium\",\"proposed_fix\":\"Do not treat the citation as live-law verified. Complete treatment/progeny verification with an as-of date, or label the assertion as citation/identity verified only with live-law status unverified.\",\"evidence_quote\":\"Frontier stub: treatment/progeny intentionally not derived until S6 promotion.\",\"needs_cl\":true,\"locator_note\":\"lake/Grady v. North Carolina__0ff746.json treatment/progeny fields; content_page.md treatment frontmatter\"},\"reasons\":[\"Lake identity and citation fields confirm the record and official citation 575 U.S. 306, but that is not enough to verify current good-law status.\",\"The lake treatment field is unverified, as_of_content and as_of_treatment are null, and progeny rows_cached is 0.\"],\"breaks_true_positives\":true,\"residual_risks\":[\"This refutation is limited to current/live-law verification; it does not dispute that the cited case record exists.\"],\"suggested_tightening\":\"Separate identity/citation verification from current-validity verification in the rendered page or inventory payload.\"},{\"assertion_id\":\"79cd5a71f2509a6c\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The treatment assertion matches the lake record: field_i_validity is unverified, as_of_content and as_of_treatment are null, varies_by_point is false, and the scope note says treatment/progeny were not derived.\",\"The content page renders Treatment: Unverified and states that subsequent treatment has not yet been machine-verified.\",\"No disclosed treatment edge or progeny entry shows that Grady has been overruled, superseded, abrogated, or limited; the record also does not claim affirmative good-law status.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Because treatment and progeny are intentionally unverified, the record cannot support any affirmative current-validity conclusion.\"],\"suggested_tightening\":\"Keep the unverified banner until treatment/progeny promotion supplies a dated citator basis and any relevant edges.\"}],\"notes\":\"Reviewed every assertion in group_inventory.jsonl under Lens B only; no support or quote-fidelity findings were made.\"}",
+  "summary": {
+    "at": "2026-07-09T23:23:33-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-f9e662d081"
+    ],
+    "group_id": "_overhaul2/lake/cases/Grady v. North Carolina.json",
+    "group_total_assertions": 2,
+    "lake_only_cases": [
+      "Grady v. North Carolina"
+    ],
+    "lane": "codex-B",
+    "lane_id": "codex-B-panel-prod-10a19fb9",
+    "lens": "B",
+    "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-10a19fb9.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [
+      "case 'Grady v. North Carolina' has no lead_opinion_id (text undisclosed)"
+    ],
+    "reviewed_count": 2,
+    "run": "prod",
+    "text_disclosed_cases": [],
+    "tokens": {
+      "input": 79841,
+      "output": 5945,
+      "source": "codex-events",
+      "total": 85786
+    },
+    "verdict_map": {
+      "1f5a0da0ebf52a69": {
+        "dimension": "existence",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": false
+      },
+      "79cd5a71f2509a6c": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-f9e662d081",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 123.6
+  }
+}

@@ -1,0 +1,150 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Maryland v. Buie.json",
+    "lens": "A",
+    "notes": "Treatment/currency reviewed only for disclosed-field consistency; no Lens A treatment finding raised.",
+    "reviewed": [
+      {
+        "assertion_id": "4ca0f4cce5c3f428",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record identifies Maryland v. Buie as a U.S. Supreme Court case decided in 1990.",
+          "The official citation in the lake record is 494 U.S. 325, matching the content page display citation.",
+          "The parallel and vendor citations in the payload match the lake citations."
+        ],
+        "residual_risks": [
+          "The opinion text displays Decided February 28, 1990 while the lake/content metadata use 1990-03-05, but this inventory row tests citation existence/year, not exact decision date."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "0d7c57e3e3ffe3ad",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "We also hold that as an incident to the arrest the officers could, as a precautionary matter and without probable cause or reasonable suspicion, look in closets and other spaces immediately adjoining the place of arrest from which an attack could be immediately launched.",
+          "locator_note": "lake pin-334 has quote_fidelity=mismatch and no star marker; the disclosed opinion text places the actual rule at star page *334.",
+          "needs_cl": false,
+          "problem": "The quote attached to pin-334 is not a verbatim passage from the opinion; it is a harvested content-page fragment spanning the Issue and Rule headings.",
+          "proposed_fix": "Replace the pin-334 quote with the actual 494 U.S. at 334 passage beginning \"as an incident to the arrest...\" or remove the pin quote.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload quote includes markdown text, \"## Rule\", and page prose that are not in the opinion text.",
+          "The disclosed text at star page *334 contains a different verbatim sentence for the no-suspicion adjoining-spaces rule."
+        ],
+        "residual_risks": [
+          "The visible content_page quote before ^pin-334 appears faithful; the defect is specific to the reviewed harvested/lake pin quote."
+        ],
+        "suggested_tightening": "Anchor pin-334 to the actual *334 rule sentence and set quote_fidelity only after comparing against text/Maryland v. Buie__8ba6ed.txt.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "c53e2fb073530133",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The quoted articulable-facts sentence appears verbatim in the disclosed opinion text.",
+          "The lake pinpoint records quote_fidelity=matched and star_marker=334 for this quote."
+        ],
+        "residual_risks": [
+          "The pin id is pin-335, but the lake star marker for the quoted sentence is 334; this does not undermine quote fidelity."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "8b85e2d37a46ef6d",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A.",
+          "The payload matches the disclosed lake treatment fields: field_i_validity=good_law, as_of_content=1990-03-05, as_of_treatment=2026-06-30, and varies_by_point=false."
+        ],
+        "residual_risks": [
+          "No Lens A treatment audit performed."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"A\",\n  \"group_id\": \"_overhaul2/lake/cases/Maryland v. Buie.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"4ca0f4cce5c3f428\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake identity record identifies Maryland v. Buie as a U.S. Supreme Court case decided in 1990.\",\n        \"The official citation in the lake record is 494 U.S. 325, matching the content page display citation.\",\n        \"The parallel and vendor citations in the payload match the lake citations.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The opinion text displays Decided February 28, 1990 while the lake/content metadata use 1990-03-05, but this inventory row tests citation existence/year, not exact decision date.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"0d7c57e3e3ffe3ad\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The quote attached to pin-334 is not a verbatim passage from the opinion; it is a harvested content-page fragment spanning the Issue and Rule headings.\",\n        \"severity\": \"high\",\n        \"proposed_fix\": \"Replace the pin-334 quote with the actual 494 U.S. at 334 passage beginning \\\"as an incident to the arrest...\\\" or remove the pin quote.\",\n        \"evidence_quote\": \"We also hold that as an incident to the arrest the officers could, as a precautionary matter and without probable cause or reasonable suspicion, look in closets and other spaces immediately adjoining the place of arrest from which an attack could be immediately launched.\",\n        \"needs_cl\": false,\n        \"locator_note\": \"lake pin-334 has quote_fidelity=mismatch and no star marker; the disclosed opinion text places the actual rule at star page *334.\"\n      },\n      \"reasons\": [\n        \"The payload quote includes markdown text, \\\"## Rule\\\", and page prose that are not in the opinion text.\",\n        \"The disclosed text at star page *334 contains a different verbatim sentence for the no-suspicion adjoining-spaces rule.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The visible content_page quote before ^pin-334 appears faithful; the defect is specific to the reviewed harvested/lake pin quote.\"\n      ],\n      \"suggested_tightening\": \"Anchor pin-334 to the actual *334 rule sentence and set quote_fidelity only after comparing against text/Maryland v. Buie__8ba6ed.txt.\"\n    },\n    {\n      \"assertion_id\": \"c53e2fb073530133\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The quoted articulable-facts sentence appears verbatim in the disclosed opinion text.\",\n        \"The lake pinpoint records quote_fidelity=matched and star_marker=334 for this quote.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The pin id is pin-335, but the lake star marker for the quoted sentence is 334; this does not undermine quote fidelity.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"8b85e2d37a46ef6d\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Treatment/currency is outside Lens A.\",\n        \"The payload matches the disclosed lake treatment fields: field_i_validity=good_law, as_of_content=1990-03-05, as_of_treatment=2026-06-30, and varies_by_point=false.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"No Lens A treatment audit performed.\"\n      ],\n      \"suggested_tightening\": null\n    }\n  ],\n  \"notes\": \"Treatment/currency reviewed only for disclosed-field consistency; no Lens A treatment finding raised.\"\n}",
+  "summary": {
+    "at": "2026-07-09T23:32:52-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-3b7372719f"
+    ],
+    "group_id": "_overhaul2/lake/cases/Maryland v. Buie.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "codex-A",
+    "lane_id": "codex-A-panel-prod-3a5adeee",
+    "lens": "A",
+    "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-3a5adeee.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Maryland v. Buie"
+    ],
+    "tokens": {
+      "input": 126689,
+      "output": 6711,
+      "source": "codex-events",
+      "total": 133400
+    },
+    "verdict_map": {
+      "0d7c57e3e3ffe3ad": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "4ca0f4cce5c3f428": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "8b85e2d37a46ef6d": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "c53e2fb073530133": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-3b7372719f",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 131.9
+  }
+}

@@ -1,0 +1,170 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Johnson v. United States.json",
+    "lens": "B",
+    "notes": "Lens B only; quote/support fidelity was not adjudicated.",
+    "reviewed": [
+      {
+        "assertion_id": "0e54b48b86982a9a",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity is verified for Johnson v. United States, U.S. Supreme Court, decided 1948-02-02, cluster_id 104504 and lead_opinion_id 104504.",
+          "Lake citations select 333 U.S. 10 as the official citation.",
+          "For the currency angle, lake.treatment.field_i_validity is good_law as of 2026-06-30."
+        ],
+        "residual_risks": [
+          "The separate treatment assertion has audit caveats and proposed negative edges."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "927d4ccc56e2effe",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote fidelity is outside Lens B.",
+          "Any fidelity mismatch in pin-13 should be handled by Lens A, not raised as a currency or treatment defect here."
+        ],
+        "residual_risks": [
+          "Payload itself flags quote_fidelity as mismatch, but that is outside this lens."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "d7d8c3a4066f9d7b",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote fidelity is outside Lens B.",
+          "No separate currency or treatment defect is presented by this pin row."
+        ],
+        "residual_risks": [
+          "Payload itself flags quote_fidelity as mismatch, but that is outside this lens."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "0c6280240a37cee0",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade.",
+          "locator_note": "content_page.md treatment header and Treatment & subsequent history; lake.treatment.derivation lane1_negative/lane2_top_cited audit_needed; lake.provenance warnings and treatment.field_i_validity provenance",
+          "needs_cl": true,
+          "problem": "The good_law label matches the lake judgment field, but the page's unqualified 'No negative treatment' / clean good-law presentation overstates the disclosed treatment record. The lake shows the good-law value was migration-seeded, warns it may be downgraded, and contains proposed negative-treatment edges with audit_needed markers.",
+          "proposed_fix": "Keep the status as good_law only with a caveat such as: 'Lake currently marks Johnson good_law as of 2026-06-30, but treatment was migration-seeded and proposed negative edges require audit; no confirmed negative treatment is recorded in this lake file.' Remove the unqualified 'No negative treatment' sentence.",
+          "severity": "medium"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "Lake.treatment.field_i_validity is good_law and court identity supports Binding - SCOTUS.",
+          "Lake.provenance warns: legacy treatment migrated: good -> good_law.",
+          "Lake.treatment.derivation reports audit_needed true for lane1_negative and lane2_top_cited, with proposed_negative_events 16 and 25 respectively.",
+          "Treatment edges include proposed entries labeled overruled, abrogated, questioned, criticized, and superseded_by_statute, so the disclosed record does not support an unqualified 'No negative treatment' statement."
+        ],
+        "residual_risks": [
+          "Because the negative edges are marked proposed and field_iii is mentioned, the disclosed file does not prove Johnson is actually overruled or abrogated.",
+          "A completed treatment audit would be needed to convert this caveat into a confirmed downgrade or a clean no-negative-treatment statement."
+        ],
+        "suggested_tightening": "Distinguish confirmed treatment from proposed/audit-needed treatment signals.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"B\",\n  \"group_id\": \"_overhaul2/lake/cases/Johnson v. United States.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"0e54b48b86982a9a\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Lake identity is verified for Johnson v. United States, U.S. Supreme Court, decided 1948-02-02, cluster_id 104504 and lead_opinion_id 104504.\",\n        \"Lake citations select 333 U.S. 10 as the official citation.\",\n        \"For the currency angle, lake.treatment.field_i_validity is good_law as of 2026-06-30.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The separate treatment assertion has audit caveats and proposed negative edges.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"927d4ccc56e2effe\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Quote fidelity is outside Lens B.\",\n        \"Any fidelity mismatch in pin-13 should be handled by Lens A, not raised as a currency or treatment defect here.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Payload itself flags quote_fidelity as mismatch, but that is outside this lens.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"d7d8c3a4066f9d7b\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Quote fidelity is outside Lens B.\",\n        \"No separate currency or treatment defect is presented by this pin row.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Payload itself flags quote_fidelity as mismatch, but that is outside this lens.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"0c6280240a37cee0\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands-modified\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The good_law label matches the lake judgment field, but the page's unqualified 'No negative treatment' / clean good-law presentation overstates the disclosed treatment record. The lake shows the good-law value was migration-seeded, warns it may be downgraded, and contains proposed negative-treatment edges with audit_needed markers.\",\n        \"severity\": \"medium\",\n        \"proposed_fix\": \"Keep the status as good_law only with a caveat such as: 'Lake currently marks Johnson good_law as of 2026-06-30, but treatment was migration-seeded and proposed negative edges require audit; no confirmed negative treatment is recorded in this lake file.' Remove the unqualified 'No negative treatment' sentence.\",\n        \"evidence_quote\": \"Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade.\",\n        \"needs_cl\": true,\n        \"locator_note\": \"content_page.md treatment header and Treatment & subsequent history; lake.treatment.derivation lane1_negative/lane2_top_cited audit_needed; lake.provenance warnings and treatment.field_i_validity provenance\"\n      },\n      \"reasons\": [\n        \"Lake.treatment.field_i_validity is good_law and court identity supports Binding - SCOTUS.\",\n        \"Lake.provenance warns: legacy treatment migrated: good -> good_law.\",\n        \"Lake.treatment.derivation reports audit_needed true for lane1_negative and lane2_top_cited, with proposed_negative_events 16 and 25 respectively.\",\n        \"Treatment edges include proposed entries labeled overruled, abrogated, questioned, criticized, and superseded_by_statute, so the disclosed record does not support an unqualified 'No negative treatment' statement.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Because the negative edges are marked proposed and field_iii is mentioned, the disclosed file does not prove Johnson is actually overruled or abrogated.\",\n        \"A completed treatment audit would be needed to convert this caveat into a confirmed downgrade or a clean no-negative-treatment statement.\"\n      ],\n      \"suggested_tightening\": \"Distinguish confirmed treatment from proposed/audit-needed treatment signals.\"\n    }\n  ],\n  \"notes\": \"Lens B only; quote/support fidelity was not adjudicated.\"\n}",
+  "summary": {
+    "at": "2026-07-09T23:29:03-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-37c8206676",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-f3a91ced8b",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-bcff7f1e04"
+    ],
+    "group_id": "_overhaul2/lake/cases/Johnson v. United States.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "codex-B",
+    "lane_id": "codex-B-panel-prod-fe4ebb9f",
+    "lens": "B",
+    "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-fe4ebb9f.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Johnson v. United States"
+    ],
+    "tokens": {
+      "input": 258139,
+      "output": 7491,
+      "source": "codex-events",
+      "total": 265630
+    },
+    "verdict_map": {
+      "0c6280240a37cee0": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "0e54b48b86982a9a": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "927d4ccc56e2effe": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "d7d8c3a4066f9d7b": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-37c8206676",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-f3a91ced8b",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-bcff7f1e04",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 165.0
+  }
+}

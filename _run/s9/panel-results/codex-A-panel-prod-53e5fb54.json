@@ -1,0 +1,89 @@
+{
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Nance v. Ward.json",
+    "lens": "A",
+    "notes": "Reviewed both rows in group_inventory.jsonl. No support, quote_fidelity, pincite, or black_letter assertions were present in the inventory.",
+    "reviewed": [
+      {
+        "assertion_id": "19cccca39375ba9e",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record identifies the case as Nance v. Ward, court scotus, year 2022, docket 21-439, cluster_id 6480697.",
+          "The official citation in the lake record is 597 U.S. 159, and the parallel citations are 142 S. Ct. 2214 and 213 L. Ed. 2d 499, matching the inventory payload and content page."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "The lake record carries 597 U.S. 159 in citations.all with selected_official=false while also marking it official elsewhere; this does not break the existence assertion but could be normalized to avoid ambiguity.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "a53e806e4504b093",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment is outside lens A, so I raise no treatment/currency finding.",
+          "The treatment payload matches the disclosed lake record and content page: field_i_validity is unverified, as_of_content and as_of_treatment are null, varies_by_point is false, and the scope note states the frontier-stub limitation."
+        ],
+        "residual_risks": [
+          "Current good-law status and subsequent treatment were not assessed under lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Nance v. Ward.json\",\"reviewed\":[{\"assertion_id\":\"19cccca39375ba9e\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record identifies the case as Nance v. Ward, court scotus, year 2022, docket 21-439, cluster_id 6480697.\",\"The official citation in the lake record is 597 U.S. 159, and the parallel citations are 142 S. Ct. 2214 and 213 L. Ed. 2d 499, matching the inventory payload and content page.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":\"The lake record carries 597 U.S. 159 in citations.all with selected_official=false while also marking it official elsewhere; this does not break the existence assertion but could be normalized to avoid ambiguity.\"},{\"assertion_id\":\"a53e806e4504b093\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment is outside lens A, so I raise no treatment/currency finding.\",\"The treatment payload matches the disclosed lake record and content page: field_i_validity is unverified, as_of_content and as_of_treatment are null, varies_by_point is false, and the scope note states the frontier-stub limitation.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Current good-law status and subsequent treatment were not assessed under lens A.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed both rows in group_inventory.jsonl. No support, quote_fidelity, pincite, or black_letter assertions were present in the inventory.\"}",
+  "summary": {
+    "at": "2026-07-09T22:15:44-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
+    "defense_votes": [],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/Nance v. Ward.json",
+    "group_total_assertions": 2,
+    "lake_only_cases": [
+      "Nance v. Ward"
+    ],
+    "lane": "codex-A",
+    "lane_id": "codex-A-panel-prod-53e5fb54",
+    "lens": "A",
+    "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-53e5fb54.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [
+      "case 'Nance v. Ward' has no lead_opinion_id (text undisclosed)"
+    ],
+    "reviewed_count": 2,
+    "run": "prod",
+    "text_disclosed_cases": [],
+    "tokens": {
+      "input": 95272,
+      "output": 2515,
+      "source": "codex-events",
+      "total": 97787
+    },
+    "verdict_map": {
+      "19cccca39375ba9e": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "a53e806e4504b093": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [],
+    "wall_clock_s": 60.6
+  }
+}

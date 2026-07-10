@@ -1,0 +1,153 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Florida v. Jardines.json",
+    "lens": "B",
+    "notes": "Lens B only; quote-fidelity rows were not substantively reviewed for quote accuracy.",
+    "reviewed": [
+      {
+        "assertion_id": "212349f784ec94df",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity is verified for Florida v. Jardines with court U.S. Supreme Court, date_decided 2013-03-26, cluster_id 856347, and lead_opinion_id 856347.",
+          "The disclosed citation set includes 569 U.S. 1 and the other listed parallel/vendor citations.",
+          "The lake treatment field marks the authority good_law, so the cited authority is disclosed as live law for currency purposes."
+        ],
+        "residual_risks": [
+          "The citation official-selection field is null, but that is not a currency/treatment defect under lens B.",
+          "Treatment audit risks are addressed in the treatment assertion."
+        ],
+        "suggested_tightening": "Consider surfacing the treatment audit caveat near the citation if the page uses a live-law signal.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "861f6aaddb45f2e5",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote fidelity is outside lens B; this row does not itself assert a treatment or currentness rule.",
+          "No disclosed treatment fact specific to pin-6 makes the cited authority non-live for currency purposes."
+        ],
+        "residual_risks": [
+          "Quote accuracy and support are reserved for lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "a9431009fbbf3753",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote fidelity is outside lens B; this row does not itself assert a treatment or currentness rule.",
+          "No disclosed treatment fact specific to pin-9 makes the cited authority non-live for currency purposes."
+        ],
+        "residual_risks": [
+          "Quote accuracy and support are reserved for lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "943d3bbacd758e93",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "\"audit_marker\": \"R15 treatment audit required\"",
+          "locator_note": "content_page.md treatment section; lake/Florida v. Jardines__827c9d.json treatment.derivation and treatment.edges",
+          "needs_cl": true,
+          "problem": "The good_law status can survive, but the page's categorical 'No negative treatment' statement is not consistent with the disclosed lake record, which contains proposed negative-treatment edges and flags treatment audit work as required.",
+          "proposed_fix": "Keep the status as good_law/Binding SCOTUS only with a caveat, and replace 'No negative treatment' with language noting proposed negative-treatment signals and pending audit/no confirmed point override in the disclosed lake record.",
+          "severity": "medium"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "Lake final treatment field says field_i_validity is good_law as of 2026-06-30.",
+          "The same lake record says composite_basis is migration-seed and scope_note warns that S2 re-derivation may downgrade.",
+          "Treatment edges include proposed abrogated, overruled, criticized, and questioned entries, and lane1/lane2 derivation flags audit_needed true.",
+          "Because the negative edges are proposed and point is null, the record does not prove Jardines is overruled; it does defeat the page's unqualified 'No negative treatment' phrasing."
+        ],
+        "residual_risks": [
+          "The disclosed files do not include the full citing opinions for the proposed negative edges, so the exact treatment effect cannot be resolved inside this evidentiary universe."
+        ],
+        "suggested_tightening": "Expose the migration-seed basis and audit-required marker; do not claim no negative treatment unless the proposed edge audit is cleared.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"B\",\n  \"group_id\": \"_overhaul2/lake/cases/Florida v. Jardines.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"212349f784ec94df\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Lake identity is verified for Florida v. Jardines with court U.S. Supreme Court, date_decided 2013-03-26, cluster_id 856347, and lead_opinion_id 856347.\",\n        \"The disclosed citation set includes 569 U.S. 1 and the other listed parallel/vendor citations.\",\n        \"The lake treatment field marks the authority good_law, so the cited authority is disclosed as live law for currency purposes.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The citation official-selection field is null, but that is not a currency/treatment defect under lens B.\",\n        \"Treatment audit risks are addressed in the treatment assertion.\"\n      ],\n      \"suggested_tightening\": \"Consider surfacing the treatment audit caveat near the citation if the page uses a live-law signal.\"\n    },\n    {\n      \"assertion_id\": \"861f6aaddb45f2e5\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Quote fidelity is outside lens B; this row does not itself assert a treatment or currentness rule.\",\n        \"No disclosed treatment fact specific to pin-6 makes the cited authority non-live for currency purposes.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Quote accuracy and support are reserved for lens A.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"a9431009fbbf3753\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Quote fidelity is outside lens B; this row does not itself assert a treatment or currentness rule.\",\n        \"No disclosed treatment fact specific to pin-9 makes the cited authority non-live for currency purposes.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Quote accuracy and support are reserved for lens A.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"943d3bbacd758e93\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands-modified\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The good_law status can survive, but the page's categorical 'No negative treatment' statement is not consistent with the disclosed lake record, which contains proposed negative-treatment edges and flags treatment audit work as required.\",\n        \"severity\": \"medium\",\n        \"proposed_fix\": \"Keep the status as good_law/Binding SCOTUS only with a caveat, and replace 'No negative treatment' with language noting proposed negative-treatment signals and pending audit/no confirmed point override in the disclosed lake record.\",\n        \"evidence_quote\": \"\\\"audit_marker\\\": \\\"R15 treatment audit required\\\"\",\n        \"needs_cl\": true,\n        \"locator_note\": \"content_page.md treatment section; lake/Florida v. Jardines__827c9d.json treatment.derivation and treatment.edges\"\n      },\n      \"reasons\": [\n        \"Lake final treatment field says field_i_validity is good_law as of 2026-06-30.\",\n        \"The same lake record says composite_basis is migration-seed and scope_note warns that S2 re-derivation may downgrade.\",\n        \"Treatment edges include proposed abrogated, overruled, criticized, and questioned entries, and lane1/lane2 derivation flags audit_needed true.\",\n        \"Because the negative edges are proposed and point is null, the record does not prove Jardines is overruled; it does defeat the page's unqualified 'No negative treatment' phrasing.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The disclosed files do not include the full citing opinions for the proposed negative edges, so the exact treatment effect cannot be resolved inside this evidentiary universe.\"\n      ],\n      \"suggested_tightening\": \"Expose the migration-seed basis and audit-required marker; do not claim no negative treatment unless the proposed edge audit is cleared.\"\n    }\n  ],\n  \"notes\": \"Lens B only; quote-fidelity rows were not substantively reviewed for quote accuracy.\"\n}",
+  "summary": {
+    "at": "2026-07-09T23:20:39-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-5e67cd6725"
+    ],
+    "group_id": "_overhaul2/lake/cases/Florida v. Jardines.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "codex-B",
+    "lane_id": "codex-B-panel-prod-51932ecb",
+    "lens": "B",
+    "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-51932ecb.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Florida v. Jardines"
+    ],
+    "tokens": {
+      "input": 201094,
+      "output": 6888,
+      "source": "codex-events",
+      "total": 207982
+    },
+    "verdict_map": {
+      "212349f784ec94df": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "861f6aaddb45f2e5": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "943d3bbacd758e93": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "a9431009fbbf3753": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-5e67cd6725",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 137.5
+  }
+}

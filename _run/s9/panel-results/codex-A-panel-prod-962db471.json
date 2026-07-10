@@ -1,0 +1,147 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Marbury v. Madison.json",
+    "lens": "A",
+    "notes": "Reviewed all 4 assertion rows using only the disclosed working-directory files.",
+    "reviewed": [
+      {
+        "assertion_id": "c48eaafcdff4114f",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record identifies Marbury v. Madison as a U.S. Supreme Court case decided 1803-02-24.",
+          "The asserted official cite 5 U.S. 137, parallels 2 L. Ed. 60 and 1 Cranch 137, and vendor cite 1803 U.S. LEXIS 352 match the lake citations."
+        ],
+        "residual_risks": [
+          "Lake identity_method is pending, but the existence/citation assertion is verifiable against the disclosed lake citation fields."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "5abca5619633bc8b",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "It is emphatically the province and duty of the judicial department to say what the law is.",
+          "locator_note": "pin-177 currently points to a slip-only content-page excerpt rather than the opinion passage at star page 177.",
+          "needs_cl": false,
+          "problem": "pin-177's stored quote is not character-faithful case text; it is a generated content-page/header excerpt and the lake record itself marks quote_fidelity as mismatch with no star_marker.",
+          "proposed_fix": "Replace pin-177 with the actual quoted sentence from the opinion and set the star marker to 177: \"It is emphatically the province and duty of the judicial department to say what the law is.\"",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The content page attributes ^pin-177 to the sentence beginning \"It is emphatically,\" but the lake/inventory quote begins \"--- # Marbury v. Madison\" and ends before that quoted sentence.",
+          "The cached opinion contains the correct sentence on the page sequence after the *177 marker and before *178."
+        ],
+        "residual_risks": [
+          "The visible page quote appears supportable; the defect is the stored pinpoint quote/metadata, not the quoted sentence itself."
+        ],
+        "suggested_tightening": "Harvest only the quoted span attached to ^pin-177; do not let the pin consume page frontmatter or surrounding prose.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "cc2e5b4d430ebe43",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The quote \"an act of the legislature, repugnant to the constitution, is void.\" appears exactly in the cached opinion text.",
+          "The lake pinpoint for pin-177a records quote_fidelity matched and star_marker 177, consistent with the passage location before the next star marker."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "fcf3aa5f7fd38438",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A; I did not raise a treatment finding.",
+          "The content treatment fields match the disclosed lake treatment fields: field_i_validity good_law, as_of_content 1803-02-24, as_of_treatment 2026-06-30, varies_by_point false."
+        ],
+        "residual_risks": [
+          "Any treatment/currency audit belongs to Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Marbury v. Madison.json\",\"reviewed\":[{\"assertion_id\":\"c48eaafcdff4114f\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record identifies Marbury v. Madison as a U.S. Supreme Court case decided 1803-02-24.\",\"The asserted official cite 5 U.S. 137, parallels 2 L. Ed. 60 and 1 Cranch 137, and vendor cite 1803 U.S. LEXIS 352 match the lake citations.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Lake identity_method is pending, but the existence/citation assertion is verifiable against the disclosed lake citation fields.\"],\"suggested_tightening\":null},{\"assertion_id\":\"5abca5619633bc8b\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"pin-177's stored quote is not character-faithful case text; it is a generated content-page/header excerpt and the lake record itself marks quote_fidelity as mismatch with no star_marker.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-177 with the actual quoted sentence from the opinion and set the star marker to 177: \\\"It is emphatically the province and duty of the judicial department to say what the law is.\\\"\",\"evidence_quote\":\"It is emphatically the province and duty of the judicial department to say what the law is.\",\"needs_cl\":false,\"locator_note\":\"pin-177 currently points to a slip-only content-page excerpt rather than the opinion passage at star page 177.\"},\"reasons\":[\"The content page attributes ^pin-177 to the sentence beginning \\\"It is emphatically,\\\" but the lake/inventory quote begins \\\"--- # Marbury v. Madison\\\" and ends before that quoted sentence.\",\"The cached opinion contains the correct sentence on the page sequence after the *177 marker and before *178.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The visible page quote appears supportable; the defect is the stored pinpoint quote/metadata, not the quoted sentence itself.\"],\"suggested_tightening\":\"Harvest only the quoted span attached to ^pin-177; do not let the pin consume page frontmatter or surrounding prose.\"},{\"assertion_id\":\"cc2e5b4d430ebe43\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The quote \\\"an act of the legislature, repugnant to the constitution, is void.\\\" appears exactly in the cached opinion text.\",\"The lake pinpoint for pin-177a records quote_fidelity matched and star_marker 177, consistent with the passage location before the next star marker.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"fcf3aa5f7fd38438\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside Lens A; I did not raise a treatment finding.\",\"The content treatment fields match the disclosed lake treatment fields: field_i_validity good_law, as_of_content 1803-02-24, as_of_treatment 2026-06-30, varies_by_point false.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Any treatment/currency audit belongs to Lens B.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed all 4 assertion rows using only the disclosed working-directory files.\"}",
+  "summary": {
+    "at": "2026-07-09T23:32:19-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-cc34010f00"
+    ],
+    "group_id": "_overhaul2/lake/cases/Marbury v. Madison.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "codex-A",
+    "lane_id": "codex-A-panel-prod-962db471",
+    "lens": "A",
+    "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-962db471.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Marbury v. Madison"
+    ],
+    "tokens": {
+      "input": 186143,
+      "output": 7131,
+      "source": "codex-events",
+      "total": 193274
+    },
+    "verdict_map": {
+      "5abca5619633bc8b": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "c48eaafcdff4114f": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "cc2e5b4d430ebe43": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "fcf3aa5f7fd38438": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-cc34010f00",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 145.9
+  }
+}

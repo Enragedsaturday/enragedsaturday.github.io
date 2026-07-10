@@ -1,0 +1,124 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Harlow v. Fitzgerald.json",
+    "lens": "A",
+    "notes": "Reviewed all 3 assertion_ids in group_inventory.jsonl exactly once. Treatment row was recorded without a Lens-A treatment/currency audit.",
+    "reviewed": [
+      {
+        "assertion_id": "3a422119d3cec594",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity verifies Harlow v. Fitzgerald, U.S. Supreme Court, decided 1982-06-24.",
+          "Official citation in the lake record is 457 U.S. 800, with matching parallel and LEXIS citations listed in the assertion payload."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "f9952464d1f2cbc3",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "government officials performing discretionary functions, generally are shielded",
+          "locator_note": "pin-818; actual page marker 818 appears in text/Harlow v. Fitzgerald__d741c2.txt at p id b861-5, while the lake pinpoint has page=null and quote_fidelity=mismatch.",
+          "needs_cl": false,
+          "problem": "pin-818's stored quote is not opinion text; it is built-page/front-matter narrative copied into the lake pinpoint, and the lake itself marks quote_fidelity as mismatch. The visible Rule quote also drops the comma after 'functions,' from the page-818 passage.",
+          "proposed_fix": "Regenerate pin-818 from the actual page-818 opinion passage and preserve character-level punctuation, including the comma after 'functions,'.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The lake pinpoint quote begins with page header material ('--- # Harlow v. Fitzgerald') rather than the opinion passage at 457 U.S. 818.",
+          "The disclosed opinion text at page 818 contains the operative holding sentence, including 'functions, generally', not the stored pinpoint text."
+        ],
+        "residual_risks": [
+          "The substantive qualified-immunity rule appears supported, but the quote/pin must be regenerated before it can stand as a verbatim pinpoint."
+        ],
+        "suggested_tightening": "Use a paraphrase for the rule sentence unless the displayed quote is copied character-for-character from the opinion text.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "6324d1261c707990",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A; no treatment finding is raised.",
+          "The payload fields echo the disclosed lake treatment fields: field_i_validity=good_law, as_of_content=1982-06-24, as_of_treatment=2026-06-30, varies_by_point=false, and the same scope note."
+        ],
+        "residual_risks": [
+          "Treatment substance remains for Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Harlow v. Fitzgerald.json\",\"reviewed\":[{\"assertion_id\":\"3a422119d3cec594\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity verifies Harlow v. Fitzgerald, U.S. Supreme Court, decided 1982-06-24.\",\"Official citation in the lake record is 457 U.S. 800, with matching parallel and LEXIS citations listed in the assertion payload.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"f9952464d1f2cbc3\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"pin-818's stored quote is not opinion text; it is built-page/front-matter narrative copied into the lake pinpoint, and the lake itself marks quote_fidelity as mismatch. The visible Rule quote also drops the comma after 'functions,' from the page-818 passage.\",\"severity\":\"high\",\"proposed_fix\":\"Regenerate pin-818 from the actual page-818 opinion passage and preserve character-level punctuation, including the comma after 'functions,'.\",\"evidence_quote\":\"government officials performing discretionary functions, generally are shielded\",\"needs_cl\":false,\"locator_note\":\"pin-818; actual page marker 818 appears in text/Harlow v. Fitzgerald__d741c2.txt at p id b861-5, while the lake pinpoint has page=null and quote_fidelity=mismatch.\"},\"reasons\":[\"The lake pinpoint quote begins with page header material ('--- # Harlow v. Fitzgerald') rather than the opinion passage at 457 U.S. 818.\",\"The disclosed opinion text at page 818 contains the operative holding sentence, including 'functions, generally', not the stored pinpoint text.\"],\"breaks_true_positives\":true,\"residual_risks\":[\"The substantive qualified-immunity rule appears supported, but the quote/pin must be regenerated before it can stand as a verbatim pinpoint.\"],\"suggested_tightening\":\"Use a paraphrase for the rule sentence unless the displayed quote is copied character-for-character from the opinion text.\"},{\"assertion_id\":\"6324d1261c707990\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside Lens A; no treatment finding is raised.\",\"The payload fields echo the disclosed lake treatment fields: field_i_validity=good_law, as_of_content=1982-06-24, as_of_treatment=2026-06-30, varies_by_point=false, and the same scope note.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment substance remains for Lens B.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed all 3 assertion_ids in group_inventory.jsonl exactly once. Treatment row was recorded without a Lens-A treatment/currency audit.\"}",
+  "summary": {
+    "at": "2026-07-09T23:24:42-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-69c8125e5e"
+    ],
+    "group_id": "_overhaul2/lake/cases/Harlow v. Fitzgerald.json",
+    "group_total_assertions": 3,
+    "lake_only_cases": [],
+    "lane": "codex-A",
+    "lane_id": "codex-A-panel-prod-e95fdde4",
+    "lens": "A",
+    "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-e95fdde4.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 3,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Harlow v. Fitzgerald"
+    ],
+    "tokens": {
+      "input": 223676,
+      "output": 5738,
+      "source": "codex-events",
+      "total": 229414
+    },
+    "verdict_map": {
+      "3a422119d3cec594": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "6324d1261c707990": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "f9952464d1f2cbc3": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-69c8125e5e",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 118.4
+  }
+}

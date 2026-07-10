@@ -1,0 +1,189 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Gerstein v. Pugh.json",
+    "lens": "A",
+    "notes": "Reviewed all 5 inventory rows using only the disclosed content page, lake record, and cached opinion text.",
+    "reviewed": [
+      {
+        "assertion_id": "e76706f94adf2c09",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record is verified for Gerstein v. Pugh, U.S. Supreme Court, decided 1975-02-18.",
+          "The official citation is 420 U.S. 103, and the disclosed parallel/vendor citations match the lake citations list."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "36cb1f8305b40c8a",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload quote matches lake pin-114 exactly.",
+          "Lake pin-114 is marked quote_fidelity matched and star-verified at 114, and the text cache places the sentence on the page-114 passage."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "bbc2a8fbf5f6f621",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "it must provide a fair and reliable determination",
+          "locator_note": "text page marker *125; lake pinpoints[] id pin-125",
+          "needs_cl": false,
+          "problem": "The quoted words are present at the page-125 passage, but the lake/payload metadata still marks the pin as mismatch/slip-only and lacks a star marker or fragment.",
+          "proposed_fix": "Set the pin metadata to a verified page-125 pinpoint if the corpus permits stripping page and footnote markup; otherwise quote with an explicit omission around the footnote marker.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The page-125 text contains the same operative wording after HTML/page and footnote markers are disregarded.",
+          "The displayed citation to Id. at 125 lands on the relevant paragraph, but the disclosed lake judgment field does not yet verify it."
+        ],
+        "residual_risks": [
+          "No validated fragment URL or star_marker is disclosed for pin-125."
+        ],
+        "suggested_tightening": "Add a validated fragment and star_marker 125 for this pin.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "fcb6c8b14eeeff05",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "--- # Gerstein v. Pugh *420 U.S. 103 (1975)*",
+          "locator_note": "lake pinpoints[] id pin-113; content_page.md ^pin-113",
+          "needs_cl": false,
+          "problem": "The stored pin-113 quote is not an opinion quote; it is harvested built-page/header/background text and does not match the cited 113-114 opinion passage.",
+          "proposed_fix": "Replace pin-113's stored quote with the actual opinion passage quoted on the content page, beginning with the officer's on-scene assessment and ending with the neutral-judgment point, and verify it against pages 113-114.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The lake/payload quote begins with built-page markdown, not Supreme Court opinion text.",
+          "The cached opinion text does contain the real 113-114 passage, so the defect is the pin record's harvested quote, not the underlying legal proposition."
+        ],
+        "residual_risks": [
+          "The visible content-page quote for pin-113 appears supportable; only the lake/inventory quote assertion is refuted."
+        ],
+        "suggested_tightening": "Regenerate pin-113 from the opinion text, not from rendered page markdown.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "0f08164b8325ca7d",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The payload treatment fields match the disclosed lake treatment fields: good_law, as_of_content 1975-02-18, as_of_treatment 2026-06-30, and varies_by_point false.",
+          "Treatment and currency correctness are outside Lens A, so no treatment defect is raised."
+        ],
+        "residual_risks": [
+          "Treatment/currency was not independently assessed under this lens."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Gerstein v. Pugh.json\",\"reviewed\":[{\"assertion_id\":\"e76706f94adf2c09\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake identity record is verified for Gerstein v. Pugh, U.S. Supreme Court, decided 1975-02-18.\",\"The official citation is 420 U.S. 103, and the disclosed parallel/vendor citations match the lake citations list.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"36cb1f8305b40c8a\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The payload quote matches lake pin-114 exactly.\",\"Lake pin-114 is marked quote_fidelity matched and star-verified at 114, and the text cache places the sentence on the page-114 passage.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"bbc2a8fbf5f6f621\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The quoted words are present at the page-125 passage, but the lake/payload metadata still marks the pin as mismatch/slip-only and lacks a star marker or fragment.\",\"severity\":\"low\",\"proposed_fix\":\"Set the pin metadata to a verified page-125 pinpoint if the corpus permits stripping page and footnote markup; otherwise quote with an explicit omission around the footnote marker.\",\"evidence_quote\":\"it must provide a fair and reliable determination\",\"needs_cl\":false,\"locator_note\":\"text page marker *125; lake pinpoints[] id pin-125\"},\"reasons\":[\"The page-125 text contains the same operative wording after HTML/page and footnote markers are disregarded.\",\"The displayed citation to Id. at 125 lands on the relevant paragraph, but the disclosed lake judgment field does not yet verify it.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"No validated fragment URL or star_marker is disclosed for pin-125.\"],\"suggested_tightening\":\"Add a validated fragment and star_marker 125 for this pin.\"},{\"assertion_id\":\"fcb6c8b14eeeff05\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The stored pin-113 quote is not an opinion quote; it is harvested built-page/header/background text and does not match the cited 113-114 opinion passage.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-113's stored quote with the actual opinion passage quoted on the content page, beginning with the officer's on-scene assessment and ending with the neutral-judgment point, and verify it against pages 113-114.\",\"evidence_quote\":\"--- # Gerstein v. Pugh *420 U.S. 103 (1975)*\",\"needs_cl\":false,\"locator_note\":\"lake pinpoints[] id pin-113; content_page.md ^pin-113\"},\"reasons\":[\"The lake/payload quote begins with built-page markdown, not Supreme Court opinion text.\",\"The cached opinion text does contain the real 113-114 passage, so the defect is the pin record's harvested quote, not the underlying legal proposition.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The visible content-page quote for pin-113 appears supportable; only the lake/inventory quote assertion is refuted.\"],\"suggested_tightening\":\"Regenerate pin-113 from the opinion text, not from rendered page markdown.\"},{\"assertion_id\":\"0f08164b8325ca7d\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The payload treatment fields match the disclosed lake treatment fields: good_law, as_of_content 1975-02-18, as_of_treatment 2026-06-30, and varies_by_point false.\",\"Treatment and currency correctness are outside Lens A, so no treatment defect is raised.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment/currency was not independently assessed under this lens.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed all 5 inventory rows using only the disclosed content page, lake record, and cached opinion text.\"}",
+  "summary": {
+    "at": "2026-07-09T23:23:45-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-aaea249981",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-81547c3f6b",
+      "F-S9-PR-6e193a389e"
+    ],
+    "group_id": "_overhaul2/lake/cases/Gerstein v. Pugh.json",
+    "group_total_assertions": 5,
+    "lake_only_cases": [],
+    "lane": "codex-A",
+    "lane_id": "codex-A-panel-prod-bfadf409",
+    "lens": "A",
+    "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-bfadf409.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Gerstein v. Pugh"
+    ],
+    "tokens": {
+      "input": 185384,
+      "output": 9480,
+      "source": "codex-events",
+      "total": 194864
+    },
+    "verdict_map": {
+      "0f08164b8325ca7d": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "36cb1f8305b40c8a": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "bbc2a8fbf5f6f621": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "e76706f94adf2c09": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "fcb6c8b14eeeff05": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-81547c3f6b",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-6e193a389e",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-aaea249981",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": 186.4
+  }
+}

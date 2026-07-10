@@ -1,0 +1,125 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Massiah v. United States.json",
+    "lens": "A",
+    "notes": "Reviewed all 3 inventory rows under Lens A.",
+    "reviewed": [
+      {
+        "assertion_id": "e209d54ad852784f",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake record is verified for Massiah v. United States, U.S. Supreme Court, decided 1964-05-18, year 1964.",
+          "Official citation 377 U.S. 201 and parallel/vendor citations match the disclosed lake citation fields and the opinion header."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "dbc72c01ac66feb9",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "We hold that the petitioner was denied the basic protections of that guarantee when there was used against him at his trial evidence of his own incriminating words, which federal agents had deliberately elicited from him after he had been indicted and in the absence of his counsel.",
+          "locator_note": "pin-206 in group_inventory.jsonl and lake/Massiah v. United States__c52915.json; correct passage appears in text/Massiah v. United States__c52915.txt at the *206 marker.",
+          "needs_cl": false,
+          "problem": "The pin-206 lake/inventory quote is not an opinion quote; it is a rendered page/header fragment and the lake itself marks quote_fidelity as mismatch with page and star_marker null.",
+          "proposed_fix": "Replace pin-206 with the actual page-206 Massiah holding sentence used on the content page, and set the pinpoint metadata to page/star marker 206.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The content_page quote is present verbatim in the cached opinion text at the *206 marker.",
+          "The payload quote for pin-206 instead begins with Markdown page material and background text, not with the quoted holding sentence.",
+          "Because the stored pinpoint quote is corrupt/mismatched, the quote-fidelity assertion as framed does not stand."
+        ],
+        "residual_risks": [
+          "The rendered content_page rule quote itself is faithful; the defect is the supporting lake/inventory pinpoint payload."
+        ],
+        "suggested_tightening": "Store only the exact quoted Massiah sentence as pin-206 and preserve page 206 as the pinpoint.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "078a76788f4a6dc9",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A; no treatment finding is raised.",
+          "The content treatment fields match the disclosed lake fields: good_law, as_of_content 1964-05-18, as_of_treatment 2026-06-30, and varies_by_point false."
+        ],
+        "residual_risks": [
+          "Substantive treatment currency remains for Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Massiah v. United States.json\",\"reviewed\":[{\"assertion_id\":\"e209d54ad852784f\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake record is verified for Massiah v. United States, U.S. Supreme Court, decided 1964-05-18, year 1964.\",\"Official citation 377 U.S. 201 and parallel/vendor citations match the disclosed lake citation fields and the opinion header.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"dbc72c01ac66feb9\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The pin-206 lake/inventory quote is not an opinion quote; it is a rendered page/header fragment and the lake itself marks quote_fidelity as mismatch with page and star_marker null.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-206 with the actual page-206 Massiah holding sentence used on the content page, and set the pinpoint metadata to page/star marker 206.\",\"evidence_quote\":\"We hold that the petitioner was denied the basic protections of that guarantee when there was used against him at his trial evidence of his own incriminating words, which federal agents had deliberately elicited from him after he had been indicted and in the absence of his counsel.\",\"needs_cl\":false,\"locator_note\":\"pin-206 in group_inventory.jsonl and lake/Massiah v. United States__c52915.json; correct passage appears in text/Massiah v. United States__c52915.txt at the *206 marker.\"},\"reasons\":[\"The content_page quote is present verbatim in the cached opinion text at the *206 marker.\",\"The payload quote for pin-206 instead begins with Markdown page material and background text, not with the quoted holding sentence.\",\"Because the stored pinpoint quote is corrupt/mismatched, the quote-fidelity assertion as framed does not stand.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The rendered content_page rule quote itself is faithful; the defect is the supporting lake/inventory pinpoint payload.\"],\"suggested_tightening\":\"Store only the exact quoted Massiah sentence as pin-206 and preserve page 206 as the pinpoint.\"},{\"assertion_id\":\"078a76788f4a6dc9\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside Lens A; no treatment finding is raised.\",\"The content treatment fields match the disclosed lake fields: good_law, as_of_content 1964-05-18, as_of_treatment 2026-06-30, and varies_by_point false.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Substantive treatment currency remains for Lens B.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed all 3 inventory rows under Lens A.\"}",
+  "summary": {
+    "at": "2026-07-09T23:33:12-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-feb953efa9"
+    ],
+    "group_id": "_overhaul2/lake/cases/Massiah v. United States.json",
+    "group_total_assertions": 3,
+    "lake_only_cases": [],
+    "lane": "codex-A",
+    "lane_id": "codex-A-panel-prod-b25c4df4",
+    "lens": "A",
+    "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-b25c4df4.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 3,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Massiah v. United States"
+    ],
+    "tokens": {
+      "input": 311641,
+      "output": 6060,
+      "source": "codex-events",
+      "total": 317701
+    },
+    "verdict_map": {
+      "078a76788f4a6dc9": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "dbc72c01ac66feb9": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "e209d54ad852784f": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-feb953efa9",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 130.0
+  }
+}

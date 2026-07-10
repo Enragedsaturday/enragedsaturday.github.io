@@ -1,0 +1,124 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Michigan v. Summers.json",
+    "lens": "A",
+    "notes": "Lens A reviewed support/quote-fidelity/existence only and did not make an independent treatment finding.",
+    "reviewed": [
+      {
+        "assertion_id": "13c10ddf9fea65b1",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record gives case_name Michigan v. Summers, court U.S. Supreme Court, date_decided 1981-06-22, and year 1981.",
+          "The displayed official citation 452 U.S. 692 matches the lake official citation, and the listed parallel/vendor citations match the lake citations."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "32736b8a3c83f224",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "Thus, for Fourth Amendment purposes, we hold that a warrant to search for contraband<footnotemark>20</footnotemark> founded on probable cause implicitly carries with it the limited authority to detain the occupants of the premises while a proper search is conducted.<footnotemark>21</footnotemark>",
+          "locator_note": "content_page.md cites ^pin-705 for the Rule quote; lake pinpoints[0] is id pin-705 and is marked quote_fidelity mismatch with page null/slip-only; text/Michigan v. Summers__b2db31.txt contains the actual page-705 passage.",
+          "needs_cl": false,
+          "problem": "The pin-705 quote in the lake/payload is not a quote from the opinion at 452 U.S. 705; it is a chunk of the built page header/background/issue/rule text. The actual page-705 holding passage in text differs, and the content-page quote also omits the source footnote markers under a strict character-fidelity check.",
+          "proposed_fix": "Regenerate pin-705 from the opinion text at page 705, using the actual holding sentence and either preserving the footnote markers or explicitly normalizing them with an omission convention.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The disclosed lake pinpoint quote begins with the built page marker and header text, not with the opinion's page-705 holding passage.",
+          "The cached opinion text contains the holding sentence at page *705 with footnote markers embedded after contraband and conducted."
+        ],
+        "residual_risks": [
+          "The substantive rule is supported by the opinion, but this specific quote/pinpoint record is not character-faithful as framed."
+        ],
+        "suggested_tightening": "Replace the lake pinpoint quote with the exact page-705 opinion passage and set a concrete page/pin status instead of page null/slip-only.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "1009526a72751bd3",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside lens A; no treatment defect is raised.",
+          "The treatment payload matches the disclosed lake fields: field_i_validity good_law, as_of_content 1981-06-22, as_of_treatment 2026-06-30, varies_by_point false, and the Bailey spatial-limit scope note."
+        ],
+        "residual_risks": [
+          "No independent treatment/currency audit performed under lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Michigan v. Summers.json\",\"reviewed\":[{\"assertion_id\":\"13c10ddf9fea65b1\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake identity record gives case_name Michigan v. Summers, court U.S. Supreme Court, date_decided 1981-06-22, and year 1981.\",\"The displayed official citation 452 U.S. 692 matches the lake official citation, and the listed parallel/vendor citations match the lake citations.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"32736b8a3c83f224\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The pin-705 quote in the lake/payload is not a quote from the opinion at 452 U.S. 705; it is a chunk of the built page header/background/issue/rule text. The actual page-705 holding passage in text differs, and the content-page quote also omits the source footnote markers under a strict character-fidelity check.\",\"severity\":\"high\",\"proposed_fix\":\"Regenerate pin-705 from the opinion text at page 705, using the actual holding sentence and either preserving the footnote markers or explicitly normalizing them with an omission convention.\",\"evidence_quote\":\"Thus, for Fourth Amendment purposes, we hold that a warrant to search for contraband<footnotemark>20</footnotemark> founded on probable cause implicitly carries with it the limited authority to detain the occupants of the premises while a proper search is conducted.<footnotemark>21</footnotemark>\",\"needs_cl\":false,\"locator_note\":\"content_page.md cites ^pin-705 for the Rule quote; lake pinpoints[0] is id pin-705 and is marked quote_fidelity mismatch with page null/slip-only; text/Michigan v. Summers__b2db31.txt contains the actual page-705 passage.\"},\"reasons\":[\"The disclosed lake pinpoint quote begins with the built page marker and header text, not with the opinion's page-705 holding passage.\",\"The cached opinion text contains the holding sentence at page *705 with footnote markers embedded after contraband and conducted.\"],\"breaks_true_positives\":true,\"residual_risks\":[\"The substantive rule is supported by the opinion, but this specific quote/pinpoint record is not character-faithful as framed.\"],\"suggested_tightening\":\"Replace the lake pinpoint quote with the exact page-705 opinion passage and set a concrete page/pin status instead of page null/slip-only.\"},{\"assertion_id\":\"1009526a72751bd3\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside lens A; no treatment defect is raised.\",\"The treatment payload matches the disclosed lake fields: field_i_validity good_law, as_of_content 1981-06-22, as_of_treatment 2026-06-30, varies_by_point false, and the Bailey spatial-limit scope note.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"No independent treatment/currency audit performed under lens A.\"],\"suggested_tightening\":null}],\"notes\":\"Lens A reviewed support/quote-fidelity/existence only and did not make an independent treatment finding.\"}",
+  "summary": {
+    "at": "2026-07-09T23:33:47-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-429eb2bf61"
+    ],
+    "group_id": "_overhaul2/lake/cases/Michigan v. Summers.json",
+    "group_total_assertions": 3,
+    "lake_only_cases": [],
+    "lane": "codex-A",
+    "lane_id": "codex-A-panel-prod-e1d75042",
+    "lens": "A",
+    "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-e1d75042.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 3,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Michigan v. Summers"
+    ],
+    "tokens": {
+      "input": 270544,
+      "output": 4836,
+      "source": "codex-events",
+      "total": 275380
+    },
+    "verdict_map": {
+      "1009526a72751bd3": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "13c10ddf9fea65b1": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "32736b8a3c83f224": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-429eb2bf61",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 102.5
+  }
+}

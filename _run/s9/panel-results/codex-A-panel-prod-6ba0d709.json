@@ -1,0 +1,124 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/United States v. Soto-Peguero.json",
+    "lens": "A",
+    "notes": "",
+    "reviewed": [
+      {
+        "assertion_id": "3302cf806da29b7d",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record is verified for United States v. Soto-Peguero, court U.S. Court of Appeals, First Circuit, decided 2020-10-19.",
+          "The official lake citation is 978 F.3d 13, matching the content page citation and First Circuit 2020 parenthetical."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "4b8fadde3c54d7db",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Because Soto-Peguero has not succeeded in establishing that the United States failed to meet the requirements for applying the inevitable discovery doctrine, we affirm the District Court's denial of his motion to suppress.",
+          "locator_note": "text/United States v. Soto-Peguero__4925ab.txt at slip page 21; content_page.md line 53 contains the correct visible quote, but lake pinpoints[].quote contains the wrong harvested page block.",
+          "needs_cl": false,
+          "problem": "The stored pin-op21 quote is not an opinion-text quote. It is a harvested block of the content page/header ending before the actual quoted sentence, and the lake record itself marks quote_fidelity as mismatch.",
+          "proposed_fix": "Replace pin-op21 quote with the actual disposition sentence from slip-op page 21: \"Because Soto-Peguero has not succeeded in establishing that the United States failed to meet the requirements for applying the inevitable discovery doctrine, we affirm the District Court's denial of his motion to suppress.\"",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload quote begins with page/frontmatter content rather than opinion text and omits the actual sentence quoted on the built page.",
+          "The opinion text contains the quoted sentence at the slip-op page 21 location, so the correct quote is verifiable from disclosed evidence."
+        ],
+        "residual_risks": [
+          "The visible page quote appears substantively faithful; the defect is in the stored pinpoint quote/block harvest."
+        ],
+        "suggested_tightening": "Store only the quoted opinion sentence for pin-op21 and keep the slip-op page 21 locator.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "9cbe66133e39c82f",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A, so no treatment attack is raised.",
+          "The treatment payload matches the disclosed lake treatment fields: field_i_validity good_law, as_of_content 2020-10-19, as_of_treatment 2026-06-30, varies_by_point false."
+        ],
+        "residual_risks": [
+          "Treatment merits remain for Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/United States v. Soto-Peguero.json\",\"reviewed\":[{\"assertion_id\":\"3302cf806da29b7d\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record is verified for United States v. Soto-Peguero, court U.S. Court of Appeals, First Circuit, decided 2020-10-19.\",\"The official lake citation is 978 F.3d 13, matching the content page citation and First Circuit 2020 parenthetical.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"4b8fadde3c54d7db\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The stored pin-op21 quote is not an opinion-text quote. It is a harvested block of the content page/header ending before the actual quoted sentence, and the lake record itself marks quote_fidelity as mismatch.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-op21 quote with the actual disposition sentence from slip-op page 21: \\\"Because Soto-Peguero has not succeeded in establishing that the United States failed to meet the requirements for applying the inevitable discovery doctrine, we affirm the District Court's denial of his motion to suppress.\\\"\",\"evidence_quote\":\"Because Soto-Peguero has not succeeded in establishing that the United States failed to meet the requirements for applying the inevitable discovery doctrine, we affirm the District Court's denial of his motion to suppress.\",\"needs_cl\":false,\"locator_note\":\"text/United States v. Soto-Peguero__4925ab.txt at slip page 21; content_page.md line 53 contains the correct visible quote, but lake pinpoints[].quote contains the wrong harvested page block.\"},\"reasons\":[\"The payload quote begins with page/frontmatter content rather than opinion text and omits the actual sentence quoted on the built page.\",\"The opinion text contains the quoted sentence at the slip-op page 21 location, so the correct quote is verifiable from disclosed evidence.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The visible page quote appears substantively faithful; the defect is in the stored pinpoint quote/block harvest.\"],\"suggested_tightening\":\"Store only the quoted opinion sentence for pin-op21 and keep the slip-op page 21 locator.\"},{\"assertion_id\":\"9cbe66133e39c82f\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside Lens A, so no treatment attack is raised.\",\"The treatment payload matches the disclosed lake treatment fields: field_i_validity good_law, as_of_content 2020-10-19, as_of_treatment 2026-06-30, varies_by_point false.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment merits remain for Lens B.\"],\"suggested_tightening\":null}],\"notes\":\"\"}",
+  "summary": {
+    "at": "2026-07-09T23:09:14-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-006d5c99a2"
+    ],
+    "group_id": "_overhaul2/lake/cases/United States v. Soto-Peguero.json",
+    "group_total_assertions": 3,
+    "lake_only_cases": [],
+    "lane": "codex-A",
+    "lane_id": "codex-A-panel-prod-6ba0d709",
+    "lens": "A",
+    "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-6ba0d709.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 3,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "United States v. Soto-Peguero"
+    ],
+    "tokens": {
+      "input": 144697,
+      "output": 4761,
+      "source": "codex-events",
+      "total": 149458
+    },
+    "verdict_map": {
+      "3302cf806da29b7d": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "4b8fadde3c54d7db": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "9cbe66133e39c82f": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-006d5c99a2",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 108.1
+  }
+}

@@ -1,0 +1,93 @@
+{
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/United States v. Hay.json",
+    "lens": "B",
+    "notes": "Lens B only; support, holding accuracy, quote fidelity, and pincites were not assessed.",
+    "reviewed": [
+      {
+        "assertion_id": "ee8e0fe8ef4ea2b4",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record matches the cited case: case_name is United States v. Hay, court is 10th Cir. 2024, date_decided is 2024-03-19, docket is 22-3276, and cluster_id is 9485331.",
+          "The lake citation fields list official/display citation 95 F.4th 1304, matching the payload and content page.",
+          "No disclosed treatment or progeny edge reports overruling, abrogation, supersession, or limitation of the authority; the separate treatment field is explicitly unverified rather than asserting validated good law."
+        ],
+        "residual_risks": [
+          "The disclosed record does not verify live-law status beyond the absence of adverse treatment in the stub because treatment/progeny are intentionally not derived."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "19ac3dd5d765c910",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The treatment payload exactly matches the lake treatment judgment: field_i_validity is unverified, as_of_content and as_of_treatment are null, varies_by_point is false, and the scope note says treatment/progeny were intentionally not derived until S6 promotion.",
+          "The content page consistently renders Treatment: Unverified and states that subsequent treatment has not yet been machine-verified.",
+          "The lake treatment edges are empty and progeny rows_cached is 0, so the disclosed record contains no contrary adverse-treatment signal."
+        ],
+        "residual_risks": [
+          "Because treatment is a frontier stub with no derivation and no progeny enumeration, the page cannot be used as a verified good-law/current-validity statement."
+        ],
+        "suggested_tightening": "Keep the unverified treatment banner and avoid upgrading the page to a validated good-law status until treatment/progeny derivation is completed.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/United States v. Hay.json\",\"reviewed\":[{\"assertion_id\":\"ee8e0fe8ef4ea2b4\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake identity record matches the cited case: case_name is United States v. Hay, court is 10th Cir. 2024, date_decided is 2024-03-19, docket is 22-3276, and cluster_id is 9485331.\",\"The lake citation fields list official/display citation 95 F.4th 1304, matching the payload and content page.\",\"No disclosed treatment or progeny edge reports overruling, abrogation, supersession, or limitation of the authority; the separate treatment field is explicitly unverified rather than asserting validated good law.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The disclosed record does not verify live-law status beyond the absence of adverse treatment in the stub because treatment/progeny are intentionally not derived.\"],\"suggested_tightening\":null},{\"assertion_id\":\"19ac3dd5d765c910\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The treatment payload exactly matches the lake treatment judgment: field_i_validity is unverified, as_of_content and as_of_treatment are null, varies_by_point is false, and the scope note says treatment/progeny were intentionally not derived until S6 promotion.\",\"The content page consistently renders Treatment: Unverified and states that subsequent treatment has not yet been machine-verified.\",\"The lake treatment edges are empty and progeny rows_cached is 0, so the disclosed record contains no contrary adverse-treatment signal.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Because treatment is a frontier stub with no derivation and no progeny enumeration, the page cannot be used as a verified good-law/current-validity statement.\"],\"suggested_tightening\":\"Keep the unverified treatment banner and avoid upgrading the page to a validated good-law status until treatment/progeny derivation is completed.\"}],\"notes\":\"Lens B only; support, holding accuracy, quote fidelity, and pincites were not assessed.\"}",
+  "summary": {
+    "at": "2026-07-09T22:54:06-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
+    "defense_votes": [],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/United States v. Hay.json",
+    "group_total_assertions": 2,
+    "lake_only_cases": [
+      "United States v. Hay"
+    ],
+    "lane": "codex-B",
+    "lane_id": "codex-B-panel-prod-a097910d",
+    "lens": "B",
+    "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-a097910d.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [
+      "case 'United States v. Hay' has no lead_opinion_id (text undisclosed)"
+    ],
+    "reviewed_count": 2,
+    "run": "prod",
+    "text_disclosed_cases": [],
+    "tokens": {
+      "input": 78908,
+      "output": 3188,
+      "source": "codex-events",
+      "total": 82096
+    },
+    "verdict_map": {
+      "19ac3dd5d765c910": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "ee8e0fe8ef4ea2b4": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [],
+    "wall_clock_s": 74.9
+  }
+}

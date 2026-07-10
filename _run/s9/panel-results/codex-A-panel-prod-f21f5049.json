@@ -1,0 +1,146 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Lange v. California.json",
+    "lens": "A",
+    "notes": "Reviewed all 4 rows in group_inventory.jsonl under Lens A.",
+    "reviewed": [
+      {
+        "assertion_id": "34524a60334f5fcc",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record is for Lange v. California, U.S. Supreme Court, decided 2021-06-23, docket 20-18.",
+          "The lake official citation is 594 U.S. 295, matching the content page citation 594 U.S. 295 (2021)."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "8b8f8add2fc00062",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The quoted sentence matches the lake pinpoints[].quote for pin-op1a, and the lake marks quote_fidelity as matched.",
+          "The cached opinion text contains the same passage at the beginning of the Court's opinion."
+        ],
+        "residual_risks": [
+          "The pinpoint is slip-only with no reporter page, but the disclosed fragment and position support the passage."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "90ff27a56ba35271",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "The question presented here is whether the pursuit\nof a fleeing misdemeanor suspect always—or more legally\nput, categorically—qualifies as an exigent circumstance.\nWe hold it does not.",
+          "locator_note": "pin-op1; compare lake pinpoints[0].quote and content_page.md Rule quote against text/Lange v. California__59e3c3.txt lines around the start of the Court opinion.",
+          "needs_cl": false,
+          "problem": "pin-op1's harvested quote is not the opinion passage it purports to support; it is page/header/background/rule text from the built content page, and the lake itself flags quote_fidelity as mismatch. The visible Rule quote also differs from the cached opinion's em-dash spacing.",
+          "proposed_fix": "Replace pin-op1 with the actual opinion passage: \"The question presented here is whether the pursuit of a fleeing misdemeanor suspect always—or more legally put, categorically—qualifies as an exigent circumstance. We hold it does not.\" Also preserve the no-space em-dash styling from the cached text if treating it as a verbatim quote.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload quote begins with built-page markdown/front matter content, not Supreme Court opinion text.",
+          "The lake record for pin-op1 has quote_fidelity: mismatch and no validated fragment or position.",
+          "The cached opinion text uses \"always—or\" and \"categorically—qualifies\", while the page's visible quote inserts spaces around the em dashes."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Separate quote harvesting from page-rendered prose so pin-op1 captures only the quoted opinion text attached to the citation anchor.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "cc555689b096a5fc",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The content page treatment fields match the lake treatment fields: good_law, as_of_content 2021-06-23, as_of_treatment 2026-06-30, varies_by_point false.",
+          "Treatment currency is outside Lens A, so no treatment merits finding is raised."
+        ],
+        "residual_risks": [
+          "No independent treatment/currency review performed under Lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Lange v. California.json\",\"reviewed\":[{\"assertion_id\":\"34524a60334f5fcc\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake identity record is for Lange v. California, U.S. Supreme Court, decided 2021-06-23, docket 20-18.\",\"The lake official citation is 594 U.S. 295, matching the content page citation 594 U.S. 295 (2021).\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"8b8f8add2fc00062\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The quoted sentence matches the lake pinpoints[].quote for pin-op1a, and the lake marks quote_fidelity as matched.\",\"The cached opinion text contains the same passage at the beginning of the Court's opinion.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The pinpoint is slip-only with no reporter page, but the disclosed fragment and position support the passage.\"],\"suggested_tightening\":null},{\"assertion_id\":\"90ff27a56ba35271\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"pin-op1's harvested quote is not the opinion passage it purports to support; it is page/header/background/rule text from the built content page, and the lake itself flags quote_fidelity as mismatch. The visible Rule quote also differs from the cached opinion's em-dash spacing.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-op1 with the actual opinion passage: \\\"The question presented here is whether the pursuit of a fleeing misdemeanor suspect always—or more legally put, categorically—qualifies as an exigent circumstance. We hold it does not.\\\" Also preserve the no-space em-dash styling from the cached text if treating it as a verbatim quote.\",\"evidence_quote\":\"The question presented here is whether the pursuit\\nof a fleeing misdemeanor suspect always—or more legally\\nput, categorically—qualifies as an exigent circumstance.\\nWe hold it does not.\",\"needs_cl\":false,\"locator_note\":\"pin-op1; compare lake pinpoints[0].quote and content_page.md Rule quote against text/Lange v. California__59e3c3.txt lines around the start of the Court opinion.\"},\"reasons\":[\"The payload quote begins with built-page markdown/front matter content, not Supreme Court opinion text.\",\"The lake record for pin-op1 has quote_fidelity: mismatch and no validated fragment or position.\",\"The cached opinion text uses \\\"always—or\\\" and \\\"categorically—qualifies\\\", while the page's visible quote inserts spaces around the em dashes.\"],\"breaks_true_positives\":true,\"residual_risks\":[],\"suggested_tightening\":\"Separate quote harvesting from page-rendered prose so pin-op1 captures only the quoted opinion text attached to the citation anchor.\"},{\"assertion_id\":\"cc555689b096a5fc\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The content page treatment fields match the lake treatment fields: good_law, as_of_content 2021-06-23, as_of_treatment 2026-06-30, varies_by_point false.\",\"Treatment currency is outside Lens A, so no treatment merits finding is raised.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"No independent treatment/currency review performed under Lens A.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed all 4 rows in group_inventory.jsonl under Lens A.\"}",
+  "summary": {
+    "at": "2026-07-09T21:52:27-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-2dc59ffee4"
+    ],
+    "group_id": "_overhaul2/lake/cases/Lange v. California.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "codex-A",
+    "lane_id": "codex-A-panel-prod-f21f5049",
+    "lens": "A",
+    "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-f21f5049.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Lange v. California"
+    ],
+    "tokens": {
+      "input": 204135,
+      "output": 6224,
+      "source": "codex-events",
+      "total": 210359
+    },
+    "verdict_map": {
+      "34524a60334f5fcc": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "8b8f8add2fc00062": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "90ff27a56ba35271": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "cc555689b096a5fc": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-2dc59ffee4",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 129.8
+  }
+}

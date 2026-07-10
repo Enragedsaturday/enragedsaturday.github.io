@@ -1,0 +1,113 @@
+{
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/People v. Hughes.json",
+    "lens": "B",
+    "notes": "Reviewed all three inventory rows under lens B only; no support or quote-fidelity defect is raised.",
+    "reviewed": [
+      {
+        "assertion_id": "4e1fb4aa53b9f704",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Currency/treatment attack only: the lake record marks People v. Hughes as field_i_validity=good_law with as_of_treatment=2026-06-30.",
+          "The disclosed treatment record has edges=[] and point_overrides=[], and progeny reports indexed_citing_opinions=0/citation_count=0, so no disclosed negative treatment supersedes or limits the authority."
+        ],
+        "residual_risks": [
+          "Quote fidelity itself was not evaluated under lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "fe962bbfaa4f5583",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Currency/treatment attack only: the quote payload's embedded Treatment: good as of 2026-06-30 matches the lake treatment fields.",
+          "The lake record lists no negative treatment edges, no point overrides, and no indexed citing opinions; nothing disclosed shows overruling, abrogation, supersession, or limitation."
+        ],
+        "residual_risks": [
+          "Quote fidelity/support issues, including the lake's quote_fidelity=mismatch flag, are outside lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "b6e373bc45c2ed4a",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The treatment assertion matches the lake record: field_i_validity=good_law, as_of_content=2020-12-28, as_of_treatment=2026-06-30, varies_by_point=false, and the same scope_note appears in content_page.md.",
+          "No disclosed treatment or progeny edge contradicts good-law status: treatment.edges=[]; point_overrides=[]; progeny indexed_citing_opinions=0 and citation_count=0.",
+          "The weight label is consistent with the disclosed identity fields: Michigan Supreme Court, court_level=state, supporting the page's Persuasive - state, illustrative label for a federal corpus."
+        ],
+        "residual_risks": [
+          "The lake treatment is migration-seeded and the derivation lanes show reviewed=0, but the record also reports no indexed citing opinions and no proposed negative events; no contrary disclosed evidence exists."
+        ],
+        "suggested_tightening": "Keep the migration-seed scope note visible with the good-law status so readers see the basis for the treatment field.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/People v. Hughes.json\",\"reviewed\":[{\"assertion_id\":\"4e1fb4aa53b9f704\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Currency/treatment attack only: the lake record marks People v. Hughes as field_i_validity=good_law with as_of_treatment=2026-06-30.\",\"The disclosed treatment record has edges=[] and point_overrides=[], and progeny reports indexed_citing_opinions=0/citation_count=0, so no disclosed negative treatment supersedes or limits the authority.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Quote fidelity itself was not evaluated under lens B.\"],\"suggested_tightening\":null},{\"assertion_id\":\"fe962bbfaa4f5583\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Currency/treatment attack only: the quote payload's embedded Treatment: good as of 2026-06-30 matches the lake treatment fields.\",\"The lake record lists no negative treatment edges, no point overrides, and no indexed citing opinions; nothing disclosed shows overruling, abrogation, supersession, or limitation.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Quote fidelity/support issues, including the lake's quote_fidelity=mismatch flag, are outside lens B.\"],\"suggested_tightening\":null},{\"assertion_id\":\"b6e373bc45c2ed4a\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The treatment assertion matches the lake record: field_i_validity=good_law, as_of_content=2020-12-28, as_of_treatment=2026-06-30, varies_by_point=false, and the same scope_note appears in content_page.md.\",\"No disclosed treatment or progeny edge contradicts good-law status: treatment.edges=[]; point_overrides=[]; progeny indexed_citing_opinions=0 and citation_count=0.\",\"The weight label is consistent with the disclosed identity fields: Michigan Supreme Court, court_level=state, supporting the page's Persuasive - state, illustrative label for a federal corpus.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The lake treatment is migration-seeded and the derivation lanes show reviewed=0, but the record also reports no indexed citing opinions and no proposed negative events; no contrary disclosed evidence exists.\"],\"suggested_tightening\":\"Keep the migration-seed scope note visible with the good-law status so readers see the basis for the treatment field.\"}],\"notes\":\"Reviewed all three inventory rows under lens B only; no support or quote-fidelity defect is raised.\"}",
+  "summary": {
+    "at": "2026-07-09T22:20:42-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
+    "defense_votes": [],
+    "findings_emitted": [],
+    "group_id": "_overhaul2/lake/cases/People v. Hughes.json",
+    "group_total_assertions": 3,
+    "lake_only_cases": [],
+    "lane": "codex-B",
+    "lane_id": "codex-B-panel-prod-1e72fb32",
+    "lens": "B",
+    "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-1e72fb32.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 3,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "People v. Hughes"
+    ],
+    "tokens": {
+      "input": 164232,
+      "output": 4537,
+      "source": "codex-events",
+      "total": 168769
+    },
+    "verdict_map": {
+      "4e1fb4aa53b9f704": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "b6e373bc45c2ed4a": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "fe962bbfaa4f5583": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [],
+    "wall_clock_s": 95.2
+  }
+}

@@ -1,0 +1,159 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Hester v. United States.json",
+    "lens": "A",
+    "notes": "Reviewed all 4 assertion rows in group_inventory.jsonl. No support, pincite, or black_letter rows were present for lens A review.",
+    "reviewed": [
+      {
+        "assertion_id": "2c09c9dca1829584",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record is verified and identifies the case as Hester v. United States, decided by the U.S. Supreme Court on 1924-05-05.",
+          "The official citation in the lake record is 265 U.S. 57, with parallel citations 44 S. Ct. 445 and 68 L. Ed. 898, matching the content page."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "90ebef2ad4f32761",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "there was no seizure in the sense of the law when the officers examined the contents of each after it had been abandoned.",
+          "locator_note": "text/Hester v. United States__581984.txt, paragraph b102-6, after star page 58; lake pinpoints[0] itself marks quote_fidelity as mismatch and has page/star_marker null.",
+          "needs_cl": false,
+          "problem": "The pin-58 quote payload is not a character-faithful quote from the opinion; it overcaptures content-page/front-matter text and stops before the actual quoted passage.",
+          "proposed_fix": "Replace the pin-58 quote payload with the actual opinion sentence: \"there was no seizure in the sense of the law when the officers examined the contents of each after it had been abandoned.\"",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The disclosed opinion text contains the actual no-seizure sentence on page *58.",
+          "The inventory/lake pin-58 quote begins with \"--- # Hester v. United States\" and includes page summary material, not opinion text."
+        ],
+        "residual_risks": [
+          "The visible content_page quote for pin-58 appears supportable; the defect is the associated extracted pinpoint payload."
+        ],
+        "suggested_tightening": "Limit pin extraction to the quoted sentence immediately preceding ^pin-58.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "9ea44ad7ece39b9d",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "persons, houses, papers, and effects,” is not extended to the open fields. The distinction between the latter and the house is as old as the common law.",
+          "locator_note": "text/Hester v. United States__581984.txt, paragraph b102-6 after star page 59; the opening double quote appears in an <em> tag immediately before \"persons\".",
+          "needs_cl": false,
+          "problem": "The pin-59 quote substitutes single quotation marks around the Fourth Amendment phrase, while the disclosed opinion text uses double quotation marks, so the verbatim quote is not character-faithful.",
+          "proposed_fix": "Use the opinion's quotation marks, e.g. \"the special protection accorded by the Fourth Amendment to the people in their “persons, houses, papers, and effects,” is not extended to the open fields. The distinction between the latter and the house is as old as the common law.\"",
+          "severity": "medium"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The content/lake quote reads \"'persons, houses, papers, and effects,'\" with single quotes.",
+          "The disclosed opinion text shows the phrase with double quotation marks, ending \"effects,”\"."
+        ],
+        "residual_risks": [
+          "The legal proposition and page 59 location are supported; the defect is quote-character fidelity."
+        ],
+        "suggested_tightening": "Normalize only whitespace/markup, not quotation-mark characters, when rendering verbatim quotations.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "6b73aec8af104c74",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside lens A, so no treatment finding is raised.",
+          "The treatment payload mirrors the lake record fields: field_i_validity good_law, as_of_content 1924-05-05, as_of_treatment 2026-06-30, varies_by_point false."
+        ],
+        "residual_risks": [
+          "Not reviewed for treatment currency under this lens."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Hester v. United States.json\",\"reviewed\":[{\"assertion_id\":\"2c09c9dca1829584\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record is verified and identifies the case as Hester v. United States, decided by the U.S. Supreme Court on 1924-05-05.\",\"The official citation in the lake record is 265 U.S. 57, with parallel citations 44 S. Ct. 445 and 68 L. Ed. 898, matching the content page.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"90ebef2ad4f32761\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The pin-58 quote payload is not a character-faithful quote from the opinion; it overcaptures content-page/front-matter text and stops before the actual quoted passage.\",\"severity\":\"high\",\"proposed_fix\":\"Replace the pin-58 quote payload with the actual opinion sentence: \\\"there was no seizure in the sense of the law when the officers examined the contents of each after it had been abandoned.\\\"\",\"evidence_quote\":\"there was no seizure in the sense of the law when the officers examined the contents of each after it had been abandoned.\",\"needs_cl\":false,\"locator_note\":\"text/Hester v. United States__581984.txt, paragraph b102-6, after star page 58; lake pinpoints[0] itself marks quote_fidelity as mismatch and has page/star_marker null.\"},\"reasons\":[\"The disclosed opinion text contains the actual no-seizure sentence on page *58.\",\"The inventory/lake pin-58 quote begins with \\\"--- # Hester v. United States\\\" and includes page summary material, not opinion text.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The visible content_page quote for pin-58 appears supportable; the defect is the associated extracted pinpoint payload.\"],\"suggested_tightening\":\"Limit pin extraction to the quoted sentence immediately preceding ^pin-58.\"},{\"assertion_id\":\"9ea44ad7ece39b9d\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The pin-59 quote substitutes single quotation marks around the Fourth Amendment phrase, while the disclosed opinion text uses double quotation marks, so the verbatim quote is not character-faithful.\",\"severity\":\"medium\",\"proposed_fix\":\"Use the opinion's quotation marks, e.g. \\\"the special protection accorded by the Fourth Amendment to the people in their “persons, houses, papers, and effects,” is not extended to the open fields. The distinction between the latter and the house is as old as the common law.\\\"\",\"evidence_quote\":\"persons, houses, papers, and effects,” is not extended to the open fields. The distinction between the latter and the house is as old as the common law.\",\"needs_cl\":false,\"locator_note\":\"text/Hester v. United States__581984.txt, paragraph b102-6 after star page 59; the opening double quote appears in an <em> tag immediately before \\\"persons\\\".\"},\"reasons\":[\"The content/lake quote reads \\\"'persons, houses, papers, and effects,'\\\" with single quotes.\",\"The disclosed opinion text shows the phrase with double quotation marks, ending \\\"effects,”\\\".\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The legal proposition and page 59 location are supported; the defect is quote-character fidelity.\"],\"suggested_tightening\":\"Normalize only whitespace/markup, not quotation-mark characters, when rendering verbatim quotations.\"},{\"assertion_id\":\"6b73aec8af104c74\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside lens A, so no treatment finding is raised.\",\"The treatment payload mirrors the lake record fields: field_i_validity good_law, as_of_content 1924-05-05, as_of_treatment 2026-06-30, varies_by_point false.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Not reviewed for treatment currency under this lens.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed all 4 assertion rows in group_inventory.jsonl. No support, pincite, or black_letter rows were present for lens A review.\"}",
+  "summary": {
+    "at": "2026-07-09T23:25:24-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-19b3f2218f",
+      "F-S9-PR-4a939bae84"
+    ],
+    "group_id": "_overhaul2/lake/cases/Hester v. United States.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "codex-A",
+    "lane_id": "codex-A-panel-prod-d6e0de77",
+    "lens": "A",
+    "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-d6e0de77.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Hester v. United States"
+    ],
+    "tokens": {
+      "input": 226673,
+      "output": 6782,
+      "source": "codex-events",
+      "total": 233455
+    },
+    "verdict_map": {
+      "2c09c9dca1829584": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "6b73aec8af104c74": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "90ebef2ad4f32761": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "9ea44ad7ece39b9d": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-19b3f2218f",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-4a939bae84",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 138.3
+  }
+}

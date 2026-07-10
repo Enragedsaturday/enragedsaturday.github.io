@@ -1,0 +1,162 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/O'Connor v. Ortega.json",
+    "lens": "A",
+    "notes": "Reviewed all 4 rows in group_inventory.jsonl.",
+    "reviewed": [
+      {
+        "assertion_id": "8d223e86caac43f5",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record exists for O'Connor v. Ortega and identifies the court as U.S. Supreme Court, docket 85-530, decided 1987-03-31.",
+          "The official citation in the lake record is 480 U.S. 709, matching the content page display citation 480 U.S. 709 (1987).",
+          "The listed parallel and vendor citations in the payload match the lake citations record."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "7901a2e5313b72cb",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "Individuals do not lose Fourth Amendment rights merely because they work for the government instead of a private employer. The operational realities of the workplace, however, may make <em>some </em>employees’ expectations of privacy unreasonable when an intrusion is by a supervisor rather than a law enforcement official.",
+          "locator_note": "pin-717; content_page.md:53; text/O'Connor v. Ortega__caec30.txt:20",
+          "needs_cl": false,
+          "problem": "The pin-717 quote is not character-faithful to the opinion text; the lake pinpoint text reproduces the built page header/background/rule material rather than the cited opinion passage at 480 U.S. 717.",
+          "proposed_fix": "Replace pin-717 with the actual p.717 opinion passage beginning with 'Individuals do not lose Fourth Amendment rights...' and ensure the rendered quote preserves the disclosed text or is clearly treated as normalized text, not a verbatim quote.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload quote begins with the content page frontmatter/header text, not an opinion excerpt.",
+          "The disclosed opinion text at page 717 contains the public-employee Fourth Amendment passage, not the payload's built-page background and issue sections.",
+          "The rendered content quote also normalizes the disclosed text's emphasis and apostrophe, so it is not strictly character-faithful under the stated standard."
+        ],
+        "residual_risks": [
+          "The underlying legal proposition is supported by the opinion, but the pinpoint quote record is defective as framed."
+        ],
+        "suggested_tightening": "Use the exact p.717 sentence and keep the rule framed as case-by-case because the opinion says workplace realities may make some employees' expectations unreasonable.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "fbad6dca46abde8b",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "under all the circumstances. Under this reasonableness standard, both the inception and the scope of the intrusion must be reasonable:",
+          "locator_note": "pin-725; content_page.md:55; text/O'Connor v. Ortega__caec30.txt:34",
+          "needs_cl": false,
+          "problem": "The quoted rule is substantively supported, but the verbatim quote changes the opinion's final punctuation from a colon to a period.",
+          "proposed_fix": "Change the final punctuation of the quoted passage to a colon and preserve the page span 725-726.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The disclosed opinion contains the quoted reasonableness standard across pages 725-726.",
+          "The content/lake quote ends 'must be reasonable.' but the opinion text ends that sentence with a colon before the following explanatory block quote.",
+          "This is a strict quote-fidelity defect, not a support defect."
+        ],
+        "residual_risks": [
+          "Lake metadata still marks the pinpoint as slip-only with no page value."
+        ],
+        "suggested_tightening": "Render the quote with the opinion's colon and cite it as 480 U.S. at 725-726.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "398be112f6e1bd9b",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The treatment payload matches the disclosed lake treatment fields: field_i_validity good_law, as_of_content 1987-03-31, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note.",
+          "Treatment/currency merits are outside Lens A, so no treatment finding is raised."
+        ],
+        "residual_risks": [
+          "Treatment/currency review is reserved for Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/O'Connor v. Ortega.json\",\"reviewed\":[{\"assertion_id\":\"8d223e86caac43f5\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake identity record exists for O'Connor v. Ortega and identifies the court as U.S. Supreme Court, docket 85-530, decided 1987-03-31.\",\"The official citation in the lake record is 480 U.S. 709, matching the content page display citation 480 U.S. 709 (1987).\",\"The listed parallel and vendor citations in the payload match the lake citations record.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"7901a2e5313b72cb\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The pin-717 quote is not character-faithful to the opinion text; the lake pinpoint text reproduces the built page header/background/rule material rather than the cited opinion passage at 480 U.S. 717.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-717 with the actual p.717 opinion passage beginning with 'Individuals do not lose Fourth Amendment rights...' and ensure the rendered quote preserves the disclosed text or is clearly treated as normalized text, not a verbatim quote.\",\"evidence_quote\":\"Individuals do not lose Fourth Amendment rights merely because they work for the government instead of a private employer. The operational realities of the workplace, however, may make <em>some </em>employees’ expectations of privacy unreasonable when an intrusion is by a supervisor rather than a law enforcement official.\",\"needs_cl\":false,\"locator_note\":\"pin-717; content_page.md:53; text/O'Connor v. Ortega__caec30.txt:20\"},\"reasons\":[\"The payload quote begins with the content page frontmatter/header text, not an opinion excerpt.\",\"The disclosed opinion text at page 717 contains the public-employee Fourth Amendment passage, not the payload's built-page background and issue sections.\",\"The rendered content quote also normalizes the disclosed text's emphasis and apostrophe, so it is not strictly character-faithful under the stated standard.\"],\"breaks_true_positives\":true,\"residual_risks\":[\"The underlying legal proposition is supported by the opinion, but the pinpoint quote record is defective as framed.\"],\"suggested_tightening\":\"Use the exact p.717 sentence and keep the rule framed as case-by-case because the opinion says workplace realities may make some employees' expectations unreasonable.\"},{\"assertion_id\":\"fbad6dca46abde8b\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The quoted rule is substantively supported, but the verbatim quote changes the opinion's final punctuation from a colon to a period.\",\"severity\":\"low\",\"proposed_fix\":\"Change the final punctuation of the quoted passage to a colon and preserve the page span 725-726.\",\"evidence_quote\":\"under all the circumstances. Under this reasonableness standard, both the inception and the scope of the intrusion must be reasonable:\",\"needs_cl\":false,\"locator_note\":\"pin-725; content_page.md:55; text/O'Connor v. Ortega__caec30.txt:34\"},\"reasons\":[\"The disclosed opinion contains the quoted reasonableness standard across pages 725-726.\",\"The content/lake quote ends 'must be reasonable.' but the opinion text ends that sentence with a colon before the following explanatory block quote.\",\"This is a strict quote-fidelity defect, not a support defect.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Lake metadata still marks the pinpoint as slip-only with no page value.\"],\"suggested_tightening\":\"Render the quote with the opinion's colon and cite it as 480 U.S. at 725-726.\"},{\"assertion_id\":\"398be112f6e1bd9b\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The treatment payload matches the disclosed lake treatment fields: field_i_validity good_law, as_of_content 1987-03-31, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note.\",\"Treatment/currency merits are outside Lens A, so no treatment finding is raised.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment/currency review is reserved for Lens B.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed all 4 rows in group_inventory.jsonl.\"}",
+  "summary": {
+    "at": "2026-07-09T23:36:28-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-b152144912",
+      "F-S9-PR-1e73b73e46"
+    ],
+    "group_id": "_overhaul2/lake/cases/O'Connor v. Ortega.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "codex-A",
+    "lane_id": "codex-A-panel-prod-a3c6a50b",
+    "lens": "A",
+    "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-a3c6a50b.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "O'Connor v. Ortega"
+    ],
+    "tokens": {
+      "input": 106235,
+      "output": 7709,
+      "source": "codex-events",
+      "total": 113944
+    },
+    "verdict_map": {
+      "398be112f6e1bd9b": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "7901a2e5313b72cb": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "8d223e86caac43f5": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "fbad6dca46abde8b": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-b152144912",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-1e73b73e46",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 160.4
+  }
+}

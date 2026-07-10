@@ -1,0 +1,159 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Illinois v. Gates.json",
+    "lens": "A",
+    "notes": "Reviewed all 4 rows in group_inventory.jsonl under Lens A using only disclosed files.",
+    "reviewed": [
+      {
+        "assertion_id": "f42ba99a7ae2018d",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity confirms case_name Illinois v. Gates, U.S. Supreme Court, date_decided 1983-06-08, and year 1983.",
+          "Lake citations confirm official citation 462 U.S. 213 and the same parallel/vendor citations listed in the payload."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "0f6f4129eb09b654",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "For all these reasons, we conclude that it is wiser to abandon the “two-pronged test” established by our decisions in",
+          "locator_note": "pin-238; content_page.md cites 462 U.S. at 238, but the lake pin has page null, position null, pinpoint_status slip-only, and quote_fidelity mismatch.",
+          "needs_cl": false,
+          "problem": "The pin-238 quote payload is not the cited Gates opinion passage; it is page/header/background/issue/rule text beginning with the built page title, and the lake pin itself marks quote_fidelity as mismatch.",
+          "proposed_fix": "Replace pin-238 with the exact opinion passage at 462 U.S. 238 beginning with 'For all these reasons...' and ending with 'probable-cause determinations.', preserving the opinion text's quotation marks and punctuation.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The disclosed opinion text contains the relevant 238 passage beginning 'For all these reasons...', not the page-level text supplied in the payload.",
+          "The payload quote begins '--- # Illinois v. Gates' and includes background/issue/rule prose from the built page rather than a verbatim passage from the opinion."
+        ],
+        "residual_risks": [
+          "The built page contains a recognizable Gates quote at pin-238, but the inventory/lake pinpoint text under review is not that quote."
+        ],
+        "suggested_tightening": "Regenerate the pinpoint from the opinion text and store a real page/position if available.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "7f54b7f1f0ffaa97",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "practical, commonsense decision whether, given all the circumstances set forth in the affidavit before him, including the “veracity” and “basis of knowledge”",
+          "locator_note": "pin-238a; the lake pin also marks quote_fidelity as mismatch.",
+          "needs_cl": false,
+          "problem": "The quote is substantively close but not character-faithful to the disclosed opinion text: the opinion says 'commonsense' and uses curly double quotation marks, while the payload says 'common-sense' and uses straight single quotation marks.",
+          "proposed_fix": "Correct the quote to match the opinion text exactly, including 'commonsense' and the opinion's quotation marks around veracity and basis of knowledge.",
+          "severity": "medium"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The disclosed opinion text reads 'practical, commonsense decision'; the payload/content quote reads 'practical, common-sense decision'.",
+          "The disclosed opinion text uses “veracity” and “basis of knowledge”; the payload uses 'veracity' and 'basis of knowledge'."
+        ],
+        "residual_risks": [
+          "The quotation's legal proposition appears supported, but the quote-fidelity assertion fails under character-faithful review."
+        ],
+        "suggested_tightening": "After correcting the exact characters, rerun quote_fidelity so the pin no longer carries mismatch status.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "ee55b8cad2891e32",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Payload treatment fields match the lake treatment fields: field_i_validity good_law, as_of_content 1983-06-08, as_of_treatment 2026-06-30, and varies_by_point false.",
+          "Treatment/currency is outside Lens A's charter, so no treatment finding is raised."
+        ],
+        "residual_risks": [
+          "Treatment/currency remains for Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Illinois v. Gates.json\",\"reviewed\":[{\"assertion_id\":\"f42ba99a7ae2018d\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity confirms case_name Illinois v. Gates, U.S. Supreme Court, date_decided 1983-06-08, and year 1983.\",\"Lake citations confirm official citation 462 U.S. 213 and the same parallel/vendor citations listed in the payload.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"0f6f4129eb09b654\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The pin-238 quote payload is not the cited Gates opinion passage; it is page/header/background/issue/rule text beginning with the built page title, and the lake pin itself marks quote_fidelity as mismatch.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-238 with the exact opinion passage at 462 U.S. 238 beginning with 'For all these reasons...' and ending with 'probable-cause determinations.', preserving the opinion text's quotation marks and punctuation.\",\"evidence_quote\":\"For all these reasons, we conclude that it is wiser to abandon the “two-pronged test” established by our decisions in\",\"needs_cl\":false,\"locator_note\":\"pin-238; content_page.md cites 462 U.S. at 238, but the lake pin has page null, position null, pinpoint_status slip-only, and quote_fidelity mismatch.\"},\"reasons\":[\"The disclosed opinion text contains the relevant 238 passage beginning 'For all these reasons...', not the page-level text supplied in the payload.\",\"The payload quote begins '--- # Illinois v. Gates' and includes background/issue/rule prose from the built page rather than a verbatim passage from the opinion.\"],\"breaks_true_positives\":true,\"residual_risks\":[\"The built page contains a recognizable Gates quote at pin-238, but the inventory/lake pinpoint text under review is not that quote.\"],\"suggested_tightening\":\"Regenerate the pinpoint from the opinion text and store a real page/position if available.\"},{\"assertion_id\":\"7f54b7f1f0ffaa97\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The quote is substantively close but not character-faithful to the disclosed opinion text: the opinion says 'commonsense' and uses curly double quotation marks, while the payload says 'common-sense' and uses straight single quotation marks.\",\"severity\":\"medium\",\"proposed_fix\":\"Correct the quote to match the opinion text exactly, including 'commonsense' and the opinion's quotation marks around veracity and basis of knowledge.\",\"evidence_quote\":\"practical, commonsense decision whether, given all the circumstances set forth in the affidavit before him, including the “veracity” and “basis of knowledge”\",\"needs_cl\":false,\"locator_note\":\"pin-238a; the lake pin also marks quote_fidelity as mismatch.\"},\"reasons\":[\"The disclosed opinion text reads 'practical, commonsense decision'; the payload/content quote reads 'practical, common-sense decision'.\",\"The disclosed opinion text uses “veracity” and “basis of knowledge”; the payload uses 'veracity' and 'basis of knowledge'.\"],\"breaks_true_positives\":true,\"residual_risks\":[\"The quotation's legal proposition appears supported, but the quote-fidelity assertion fails under character-faithful review.\"],\"suggested_tightening\":\"After correcting the exact characters, rerun quote_fidelity so the pin no longer carries mismatch status.\"},{\"assertion_id\":\"ee55b8cad2891e32\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Payload treatment fields match the lake treatment fields: field_i_validity good_law, as_of_content 1983-06-08, as_of_treatment 2026-06-30, and varies_by_point false.\",\"Treatment/currency is outside Lens A's charter, so no treatment finding is raised.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment/currency remains for Lens B.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed all 4 rows in group_inventory.jsonl under Lens A using only disclosed files.\"}",
+  "summary": {
+    "at": "2026-07-09T23:27:37-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-6f47efdb73",
+      "F-S9-PR-e1ec5bd80e"
+    ],
+    "group_id": "_overhaul2/lake/cases/Illinois v. Gates.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "codex-A",
+    "lane_id": "codex-A-panel-prod-71a05016",
+    "lens": "A",
+    "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-71a05016.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Illinois v. Gates"
+    ],
+    "tokens": {
+      "input": 178773,
+      "output": 7633,
+      "source": "codex-events",
+      "total": 186406
+    },
+    "verdict_map": {
+      "0f6f4129eb09b654": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "7f54b7f1f0ffaa97": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "ee55b8cad2891e32": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "f42ba99a7ae2018d": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-6f47efdb73",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-e1ec5bd80e",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 175.0
+  }
+}

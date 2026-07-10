@@ -1,0 +1,155 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Glossip v. Oklahoma.json",
+    "lens": "A",
+    "notes": "Reviewed all 4 rows in group_inventory.jsonl. Lens A refutes only the malformed quote-fidelity pinpoints.",
+    "reviewed": [
+      {
+        "assertion_id": "283b829d7583a3c3",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record is verified for Glossip v. Oklahoma, U.S. Supreme Court, decided 2025-02-25, docket 22-7466.",
+          "The lake official citation is exactly 604 U.S. 226, matching the content page display and the cached opinion text."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "bcd2af82e521c981",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "In Napue v. Illinois, this Court held that a conviction knowingly “obtained through use of false evidence” violates the Fourteenth Amendment's Due Process Clause.",
+          "locator_note": "pin_id=pin-226",
+          "needs_cl": false,
+          "problem": "The pin-226 quote is not an opinion quotation; it is a harvested chunk of the built content page and the lake itself marks quote_fidelity as mismatch.",
+          "proposed_fix": "Replace pin-226 with the exact opinion passage at 604 U.S. 246-247, or remove the malformed pinpoint quote.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The lake pinpoint quote begins with page metadata and content-page prose rather than the Supreme Court opinion text.",
+          "The cached opinion text contains the relevant Napue rule at pages 246-247, not the malformed harvested text in the pinpoint."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Use an official-page pinpoint to 604 U.S. 246-247 instead of a slip-only/null-page harvested quote.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "e03b94ed7a1ec698",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "a new trial is warranted so long as the false testimony “may have had an effect on the outcome of the trial,” id., at 272—",
+          "locator_note": "pin_id=pin-226b",
+          "needs_cl": false,
+          "problem": "The pin-226b quote is truncated and not character-faithful to the cached opinion text; the lake also marks quote_fidelity as mismatch.",
+          "proposed_fix": "Replace the quote with the exact materiality-standard sentence from the opinion, preserving quotation marks and citations, or paraphrase it without quotation marks.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The asserted quote ends mid-quotation after \"if it '\", so it cannot be a faithful verbatim quote.",
+          "The cached opinion text continues with the reasonable-likelihood formulation and embedded citations that the pinpoint omits or alters."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Use the full exact sentence from 604 U.S. 246-247, including the Giglio/Napue parenthetical, or convert the sentence to a supported paraphrase.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "636666aed1ba86c4",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The treatment payload matches the lake and content-page treatment fields.",
+          "No treatment/currency attack is made under Lens A."
+        ],
+        "residual_risks": [
+          "Treatment merits are reserved to Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"A\",\n  \"group_id\": \"_overhaul2/lake/cases/Glossip v. Oklahoma.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"283b829d7583a3c3\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake identity record is verified for Glossip v. Oklahoma, U.S. Supreme Court, decided 2025-02-25, docket 22-7466.\",\n        \"The lake official citation is exactly 604 U.S. 226, matching the content page display and the cached opinion text.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"bcd2af82e521c981\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The pin-226 quote is not an opinion quotation; it is a harvested chunk of the built content page and the lake itself marks quote_fidelity as mismatch.\",\n        \"severity\": \"high\",\n        \"proposed_fix\": \"Replace pin-226 with the exact opinion passage at 604 U.S. 246-247, or remove the malformed pinpoint quote.\",\n        \"evidence_quote\": \"In Napue v. Illinois, this Court held that a conviction knowingly “obtained through use of false evidence” violates the Fourteenth Amendment's Due Process Clause.\",\n        \"needs_cl\": false,\n        \"locator_note\": \"pin_id=pin-226\"\n      },\n      \"reasons\": [\n        \"The lake pinpoint quote begins with page metadata and content-page prose rather than the Supreme Court opinion text.\",\n        \"The cached opinion text contains the relevant Napue rule at pages 246-247, not the malformed harvested text in the pinpoint.\"\n      ],\n      \"breaks_true_positives\": true,\n      \"residual_risks\": [],\n      \"suggested_tightening\": \"Use an official-page pinpoint to 604 U.S. 246-247 instead of a slip-only/null-page harvested quote.\"\n    },\n    {\n      \"assertion_id\": \"e03b94ed7a1ec698\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The pin-226b quote is truncated and not character-faithful to the cached opinion text; the lake also marks quote_fidelity as mismatch.\",\n        \"severity\": \"high\",\n        \"proposed_fix\": \"Replace the quote with the exact materiality-standard sentence from the opinion, preserving quotation marks and citations, or paraphrase it without quotation marks.\",\n        \"evidence_quote\": \"a new trial is warranted so long as the false testimony “may have had an effect on the outcome of the trial,” id., at 272—\",\n        \"needs_cl\": false,\n        \"locator_note\": \"pin_id=pin-226b\"\n      },\n      \"reasons\": [\n        \"The asserted quote ends mid-quotation after \\\"if it '\\\", so it cannot be a faithful verbatim quote.\",\n        \"The cached opinion text continues with the reasonable-likelihood formulation and embedded citations that the pinpoint omits or alters.\"\n      ],\n      \"breaks_true_positives\": true,\n      \"residual_risks\": [],\n      \"suggested_tightening\": \"Use the full exact sentence from 604 U.S. 246-247, including the Giglio/Napue parenthetical, or convert the sentence to a supported paraphrase.\"\n    },\n    {\n      \"assertion_id\": \"636666aed1ba86c4\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The treatment payload matches the lake and content-page treatment fields.\",\n        \"No treatment/currency attack is made under Lens A.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Treatment merits are reserved to Lens B.\"\n      ],\n      \"suggested_tightening\": null\n    }\n  ],\n  \"notes\": \"Reviewed all 4 rows in group_inventory.jsonl. Lens A refutes only the malformed quote-fidelity pinpoints.\"\n}",
+  "summary": {
+    "at": "2026-07-09T21:37:34-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-cd0a451b12",
+      "F-S9-PR-0194d374aa"
+    ],
+    "group_id": "_overhaul2/lake/cases/Glossip v. Oklahoma.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "codex-A",
+    "lane_id": "codex-A-panel-prod-e4741f52",
+    "lens": "A",
+    "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-e4741f52.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Glossip v. Oklahoma"
+    ],
+    "tokens": {
+      "input": 277941,
+      "output": 7046,
+      "source": "codex-events",
+      "total": 284987
+    },
+    "verdict_map": {
+      "283b829d7583a3c3": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "636666aed1ba86c4": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "bcd2af82e521c981": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "e03b94ed7a1ec698": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-cd0a451b12",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-0194d374aa",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 153.7
+  }
+}

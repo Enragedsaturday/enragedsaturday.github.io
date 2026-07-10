@@ -1,0 +1,124 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Georgia v. Randolph.json",
+    "lens": "A",
+    "notes": "Reviewed every row in group_inventory.jsonl exactly once.",
+    "reviewed": [
+      {
+        "assertion_id": "409d9ddd6fc2470b",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity record is verified for Georgia v. Randolph, U.S. Supreme Court, decided 2006-03-22/year 2006.",
+          "Lake citations list official 547 U.S. 103 and the same parallel/vendor citations shown in content_page.md."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "bafaead73dedc487",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "living quarters over a resident’s objection. We therefore\nhold that a warrantless search of a shared dwelling for\nevidence over the express refusal of consent by a physi-\n\f16                    GEORGIA v. RANDOLPH\n\n                         Opinion of the Court\n\ncally present resident cannot be justified as reasonable as\nto him on the basis of consent given to the police by an-\nother resident.8",
+          "locator_note": "lake pinpoints[0] id pin-120 has page:null, pinpoint_status:'slip-only', quote_fidelity:'mismatch', and quote text copied from content_page rather than this opinion passage.",
+          "needs_cl": false,
+          "problem": "The pin-120 quote stored in the lake is not the quoted opinion passage; it is a rendered page fragment beginning with the page header/background/rule, and the lake itself labels quote_fidelity as mismatch. Because content_page.md cites pin-120 for the holding quote, the pinpoint quote cannot verify the verbatim quotation as framed.",
+          "proposed_fix": "Replace pin-120's quote with the actual opinion passage used in the Rule quote, and ensure the pinpoint metadata maps to the official page before using '547 U.S. at 120'.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The disclosed lake pinpoint for pin-120 contains markdown/page-summary material, not the Court's holding sentence quoted at content_page.md line 53.",
+          "The cached opinion text contains the holding passage, but with slip-text line breaks and hyphenation; the lake pinpoint does not contain that passage and has quote_fidelity:'mismatch'."
+        ],
+        "residual_risks": [
+          "The opinion text confirms the holding language, but the disclosed lake does not verify the official page number because pin-120 has page:null and status slip-only."
+        ],
+        "suggested_tightening": "Keep the Rule proposition, but repair the pin so the exact quoted passage, normalized only by an explicit quote-normalization policy, is what pin-120 stores.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "50965a191184c99f",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment is outside lens A; recorded without making a currency finding.",
+          "The content treatment fields match the lake treatment fields: good_law, as_of_content 2006-03-22, as_of_treatment 2026-06-30, varies_by_point false, and the same Fernandez scope note."
+        ],
+        "residual_risks": [
+          "No treatment/currency validation performed under lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Georgia v. Randolph.json\",\"reviewed\":[{\"assertion_id\":\"409d9ddd6fc2470b\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity record is verified for Georgia v. Randolph, U.S. Supreme Court, decided 2006-03-22/year 2006.\",\"Lake citations list official 547 U.S. 103 and the same parallel/vendor citations shown in content_page.md.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"bafaead73dedc487\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The pin-120 quote stored in the lake is not the quoted opinion passage; it is a rendered page fragment beginning with the page header/background/rule, and the lake itself labels quote_fidelity as mismatch. Because content_page.md cites pin-120 for the holding quote, the pinpoint quote cannot verify the verbatim quotation as framed.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-120's quote with the actual opinion passage used in the Rule quote, and ensure the pinpoint metadata maps to the official page before using '547 U.S. at 120'.\",\"evidence_quote\":\"living quarters over a resident’s objection. We therefore\\nhold that a warrantless search of a shared dwelling for\\nevidence over the express refusal of consent by a physi-\\n\\f16                    GEORGIA v. RANDOLPH\\n\\n                         Opinion of the Court\\n\\ncally present resident cannot be justified as reasonable as\\nto him on the basis of consent given to the police by an-\\nother resident.8\",\"needs_cl\":false,\"locator_note\":\"lake pinpoints[0] id pin-120 has page:null, pinpoint_status:'slip-only', quote_fidelity:'mismatch', and quote text copied from content_page rather than this opinion passage.\"},\"reasons\":[\"The disclosed lake pinpoint for pin-120 contains markdown/page-summary material, not the Court's holding sentence quoted at content_page.md line 53.\",\"The cached opinion text contains the holding passage, but with slip-text line breaks and hyphenation; the lake pinpoint does not contain that passage and has quote_fidelity:'mismatch'.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The opinion text confirms the holding language, but the disclosed lake does not verify the official page number because pin-120 has page:null and status slip-only.\"],\"suggested_tightening\":\"Keep the Rule proposition, but repair the pin so the exact quoted passage, normalized only by an explicit quote-normalization policy, is what pin-120 stores.\"},{\"assertion_id\":\"50965a191184c99f\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment is outside lens A; recorded without making a currency finding.\",\"The content treatment fields match the lake treatment fields: good_law, as_of_content 2006-03-22, as_of_treatment 2026-06-30, varies_by_point false, and the same Fernandez scope note.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"No treatment/currency validation performed under lens A.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed every row in group_inventory.jsonl exactly once.\"}",
+  "summary": {
+    "at": "2026-07-09T23:22:55-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-2b095e8d3c"
+    ],
+    "group_id": "_overhaul2/lake/cases/Georgia v. Randolph.json",
+    "group_total_assertions": 3,
+    "lake_only_cases": [],
+    "lane": "codex-A",
+    "lane_id": "codex-A-panel-prod-173d8c77",
+    "lens": "A",
+    "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-173d8c77.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 3,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Georgia v. Randolph"
+    ],
+    "tokens": {
+      "input": 298428,
+      "output": 7655,
+      "source": "codex-events",
+      "total": 306083
+    },
+    "verdict_map": {
+      "409d9ddd6fc2470b": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "50965a191184c99f": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "bafaead73dedc487": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-2b095e8d3c",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 160.0
+  }
+}

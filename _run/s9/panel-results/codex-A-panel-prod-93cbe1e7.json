@@ -1,0 +1,147 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Miranda v. Arizona.json",
+    "lens": "A",
+    "notes": "Reviewed all 4 inventory rows. Lens A made no treatment/currency finding beyond confirming disclosed-field consistency.",
+    "reviewed": [
+      {
+        "assertion_id": "074284d5f7275234",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record is for Miranda v. Arizona, U.S. Supreme Court, decided 1966-06-13, with expected_citation_found and canonical_name_match true.",
+          "The official citation 384 U.S. 436 and the listed parallel/vendor citations match the lake citations record and the content page metadata."
+        ],
+        "residual_risks": [
+          "Review is limited to disclosed lake/content files as instructed."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "71b2f692f9c92026",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The quoted custodial-interrogation definition appears verbatim in text/Miranda v. Arizona__31bb96.txt.",
+          "The same quote appears in lake pinpoints[] for pin-444a with quote_fidelity matched, pinpoint_status star-verified, and star_marker 444."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "d0e00ca210c5a3a8",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "the prosecution may not use statements, whether exculpatory or inculpatory",
+          "locator_note": "lake/Miranda v. Arizona__31bb96.json pinpoints[] id=pin-444; text/Miranda v. Arizona__31bb96.txt contains the actual rule sentence.",
+          "needs_cl": false,
+          "problem": "pin-444's lake pinpoint quote is not an opinion quote; it is page/frontmatter markdown beginning with the content page header, and the lake itself marks quote_fidelity as mismatch and pinpoint_status as slip-only.",
+          "proposed_fix": "Replace pin-444's lake quote with the actual rule passage from the opinion text and validate it against the 384 U.S. 444 span.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload quote starts with content-page markdown, not language from the Miranda opinion.",
+          "The actual first Rule quote displayed in content_page.md is present in the cached opinion text, but the lake pin-444 record did not capture that quote."
+        ],
+        "residual_risks": [
+          "Refutation is limited to the pin-444 lake pinpoint metadata; the displayed content_page.md rule quote is independently present in the opinion text."
+        ],
+        "suggested_tightening": "Make pin-444 mirror the displayed rule quote and carry a verified 444 pinpoint rather than slip-only page text.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "638723eaca16523f",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The treatment payload fields match the lake treatment fields and the content page treatment metadata.",
+          "Lens A does not assess treatment/currency merits; no support or quote-fidelity defect is raised for this row."
+        ],
+        "residual_risks": [
+          "Treatment merits are reserved for Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Miranda v. Arizona.json\",\"reviewed\":[{\"assertion_id\":\"074284d5f7275234\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake identity record is for Miranda v. Arizona, U.S. Supreme Court, decided 1966-06-13, with expected_citation_found and canonical_name_match true.\",\"The official citation 384 U.S. 436 and the listed parallel/vendor citations match the lake citations record and the content page metadata.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Review is limited to disclosed lake/content files as instructed.\"],\"suggested_tightening\":null},{\"assertion_id\":\"71b2f692f9c92026\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The quoted custodial-interrogation definition appears verbatim in text/Miranda v. Arizona__31bb96.txt.\",\"The same quote appears in lake pinpoints[] for pin-444a with quote_fidelity matched, pinpoint_status star-verified, and star_marker 444.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"d0e00ca210c5a3a8\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"pin-444's lake pinpoint quote is not an opinion quote; it is page/frontmatter markdown beginning with the content page header, and the lake itself marks quote_fidelity as mismatch and pinpoint_status as slip-only.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-444's lake quote with the actual rule passage from the opinion text and validate it against the 384 U.S. 444 span.\",\"evidence_quote\":\"the prosecution may not use statements, whether exculpatory or inculpatory\",\"needs_cl\":false,\"locator_note\":\"lake/Miranda v. Arizona__31bb96.json pinpoints[] id=pin-444; text/Miranda v. Arizona__31bb96.txt contains the actual rule sentence.\"},\"reasons\":[\"The payload quote starts with content-page markdown, not language from the Miranda opinion.\",\"The actual first Rule quote displayed in content_page.md is present in the cached opinion text, but the lake pin-444 record did not capture that quote.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Refutation is limited to the pin-444 lake pinpoint metadata; the displayed content_page.md rule quote is independently present in the opinion text.\"],\"suggested_tightening\":\"Make pin-444 mirror the displayed rule quote and carry a verified 444 pinpoint rather than slip-only page text.\"},{\"assertion_id\":\"638723eaca16523f\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The treatment payload fields match the lake treatment fields and the content page treatment metadata.\",\"Lens A does not assess treatment/currency merits; no support or quote-fidelity defect is raised for this row.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment merits are reserved for Lens B.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed all 4 inventory rows. Lens A made no treatment/currency finding beyond confirming disclosed-field consistency.\"}",
+  "summary": {
+    "at": "2026-07-09T23:34:04-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-a33befb16b"
+    ],
+    "group_id": "_overhaul2/lake/cases/Miranda v. Arizona.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "codex-A",
+    "lane_id": "codex-A-panel-prod-93cbe1e7",
+    "lens": "A",
+    "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-93cbe1e7.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Miranda v. Arizona"
+    ],
+    "tokens": {
+      "input": 99673,
+      "output": 5300,
+      "source": "codex-events",
+      "total": 104973
+    },
+    "verdict_map": {
+      "074284d5f7275234": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "638723eaca16523f": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "71b2f692f9c92026": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "d0e00ca210c5a3a8": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-a33befb16b",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 102.8
+  }
+}

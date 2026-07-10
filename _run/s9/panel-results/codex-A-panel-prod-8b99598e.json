@@ -1,0 +1,159 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Edwards v. Arizona.json",
+    "lens": "A",
+    "notes": "Reviewed all 4 inventory rows using only disclosed files. Treatment merits are left to lens B.",
+    "reviewed": [
+      {
+        "assertion_id": "c2db4a892fb265f8",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record is verified and identifies the case as Edwards v. Arizona, U.S. Supreme Court, decided 1981-06-22.",
+          "The official citation in the lake record is 451 U.S. 477, and the listed parallel/vendor citations match the payload."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "6253e481421c32bb",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "when an accused has invoked his right to have counsel present during custodial interrogation, a valid waiver of that right cannot be established by showing only that he responded to further police-initiated custodial interrogation even if he has been advised of his rights.",
+          "locator_note": "lake pinpoints[pin-484] has page:null, position:null, and quote_fidelity:'mismatch'; the disclosed opinion text contains the actual passage in paragraph b550-5 at page *484.",
+          "needs_cl": false,
+          "problem": "pin-484's payload quote is not an opinion quotation; it is page/header/background/rule prose and does not match the cited opinion passage at 451 U.S. 484.",
+          "proposed_fix": "Replace pin-484 with the actual 484 passage beginning with the Court's holding on waiver after police-initiated custodial interrogation, and set the pinpoint to page 484.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The lake record itself marks pin-484 quote_fidelity as 'mismatch'.",
+          "The payload begins with markdown page material ('--- # Edwards v. Arizona...'), not with text from the opinion.",
+          "The disclosed opinion text contains the claimed rule passage separately at page *484."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Store only the actual quoted sentence for pin-484 and keep the 484 pincite.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "bf7fdd56c4c2f61f",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "We further hold that an accused, such as Edwards, having expressed his desire to deal with the police only through counsel, is not subject to further interrogation by the authorities",
+          "locator_note": "text paragraph b550-5 spans pages *484-*485; lake pinpoints[pin-484a] also marks quote_fidelity:'mismatch'.",
+          "needs_cl": false,
+          "problem": "The quoted rule is supported in substance, but the opening '[A]n' is not character-faithful to the disclosed opinion text, which reads 'We further hold that an accused...'.",
+          "proposed_fix": "Quote the exact source text beginning 'an accused...' in lowercase, or include the introductory words 'We further hold that an accused...'.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The sentence appears in substance in the disclosed opinion text at the 484-485 page break.",
+          "The payload's bracketed capital '[A]n' is an editorial alteration, not character-faithful text.",
+          "The defect is minor because the rule and 484-85 location are otherwise supported."
+        ],
+        "residual_risks": [
+          "If the corpus permits conventional bracketed capitalization in quotations, this may be acceptable as a style exception rather than a fidelity defect."
+        ],
+        "suggested_tightening": "Use exact source characters for the quoted opening or define an explicit exception for bracketed capitalization.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "fc01f73458af6909",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside lens A, so I make no treatment finding.",
+          "The treatment payload matches the lake treatment fields for field_i_validity, as_of_content, as_of_treatment, scope_note, and varies_by_point."
+        ],
+        "residual_risks": [
+          "Current good-law status was not evaluated under lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Edwards v. Arizona.json\",\"reviewed\":[{\"assertion_id\":\"c2db4a892fb265f8\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record is verified and identifies the case as Edwards v. Arizona, U.S. Supreme Court, decided 1981-06-22.\",\"The official citation in the lake record is 451 U.S. 477, and the listed parallel/vendor citations match the payload.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"6253e481421c32bb\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"pin-484's payload quote is not an opinion quotation; it is page/header/background/rule prose and does not match the cited opinion passage at 451 U.S. 484.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-484 with the actual 484 passage beginning with the Court's holding on waiver after police-initiated custodial interrogation, and set the pinpoint to page 484.\",\"evidence_quote\":\"when an accused has invoked his right to have counsel present during custodial interrogation, a valid waiver of that right cannot be established by showing only that he responded to further police-initiated custodial interrogation even if he has been advised of his rights.\",\"needs_cl\":false,\"locator_note\":\"lake pinpoints[pin-484] has page:null, position:null, and quote_fidelity:'mismatch'; the disclosed opinion text contains the actual passage in paragraph b550-5 at page *484.\"},\"reasons\":[\"The lake record itself marks pin-484 quote_fidelity as 'mismatch'.\",\"The payload begins with markdown page material ('--- # Edwards v. Arizona...'), not with text from the opinion.\",\"The disclosed opinion text contains the claimed rule passage separately at page *484.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":\"Store only the actual quoted sentence for pin-484 and keep the 484 pincite.\"},{\"assertion_id\":\"bf7fdd56c4c2f61f\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The quoted rule is supported in substance, but the opening '[A]n' is not character-faithful to the disclosed opinion text, which reads 'We further hold that an accused...'.\",\"severity\":\"low\",\"proposed_fix\":\"Quote the exact source text beginning 'an accused...' in lowercase, or include the introductory words 'We further hold that an accused...'.\",\"evidence_quote\":\"We further hold that an accused, such as Edwards, having expressed his desire to deal with the police only through counsel, is not subject to further interrogation by the authorities\",\"needs_cl\":false,\"locator_note\":\"text paragraph b550-5 spans pages *484-*485; lake pinpoints[pin-484a] also marks quote_fidelity:'mismatch'.\"},\"reasons\":[\"The sentence appears in substance in the disclosed opinion text at the 484-485 page break.\",\"The payload's bracketed capital '[A]n' is an editorial alteration, not character-faithful text.\",\"The defect is minor because the rule and 484-85 location are otherwise supported.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"If the corpus permits conventional bracketed capitalization in quotations, this may be acceptable as a style exception rather than a fidelity defect.\"],\"suggested_tightening\":\"Use exact source characters for the quoted opening or define an explicit exception for bracketed capitalization.\"},{\"assertion_id\":\"fc01f73458af6909\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside lens A, so I make no treatment finding.\",\"The treatment payload matches the lake treatment fields for field_i_validity, as_of_content, as_of_treatment, scope_note, and varies_by_point.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Current good-law status was not evaluated under lens A.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed all 4 inventory rows using only disclosed files. Treatment merits are left to lens B.\"}",
+  "summary": {
+    "at": "2026-07-09T23:20:56-04:00",
+    "attempts": 2,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-6ac7a21e01",
+      "F-S9-PR-2c4fd8063e"
+    ],
+    "group_id": "_overhaul2/lake/cases/Edwards v. Arizona.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "codex-A",
+    "lane_id": "codex-A-panel-prod-8b99598e",
+    "lens": "A",
+    "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-8b99598e.json",
+    "model": "gpt-5.5",
+    "parse_status": "repaired",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Edwards v. Arizona"
+    ],
+    "tokens": {
+      "input": 161216,
+      "output": 7858,
+      "source": "codex-events",
+      "total": 169074
+    },
+    "verdict_map": {
+      "6253e481421c32bb": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "bf7fdd56c4c2f61f": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "c2db4a892fb265f8": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "fc01f73458af6909": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-6ac7a21e01",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-2c4fd8063e",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 156.6
+  }
+}

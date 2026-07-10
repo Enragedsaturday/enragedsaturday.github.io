@@ -1,0 +1,147 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/United States v. Braxton.json",
+    "lens": "A",
+    "notes": "No separate support or black-letter assertion rows were present in group_inventory.jsonl for this group.",
+    "reviewed": [
+      {
+        "assertion_id": "7d73c1df78e6e786",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record gives case name United States v. Braxton, U.S. Court of Appeals for the Tenth Circuit, decided 2023-03-07, docket 21-1149.",
+          "The lake official citation is exactly 61 F.4th 830, matching the displayed citation.",
+          "The cached opinion text caption and filed date are consistent with the lake identity record."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "2ddd96ee53713f69",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The quoted sentence matches lake pinpoints[pin-op17], which is marked quote_fidelity=matched and star-verified.",
+          "The cached opinion text contains the same passage on slip page 17: the inevitable-discovery exception does not apply and the gun must be suppressed.",
+          "The content page pincite to Id. at 17 lands on the conclusion passage it claims."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "97acb97817cc8632",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Here, the government concedes that the warrantless search of the backpack was not justified by the warrant exception for searches incident to arrest.",
+          "locator_note": "pin-op7; cached opinion slip page 7",
+          "needs_cl": false,
+          "problem": "The pin-op7 stored quote is not the opinion quotation; it is a malformed harvest of the built page beginning with frontmatter/page text, and the lake itself marks quote_fidelity=mismatch with no position.",
+          "proposed_fix": "Replace pin-op7 quote with the actual opinion fragment: \"the government concedes that the warrantless search of the backpack was not justified by the warrant exception for searches incident to arrest.\"",
+          "severity": "medium"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The disclosed lake record for pin-op7 contains a page-content blob rather than the opinion quote.",
+          "The intended content-page quote is supported by the cached opinion text, but the assertion payload under review is not character-faithful."
+        ],
+        "residual_risks": [
+          "The visible content-page sentence appears salvageable after correcting the stored pinpoint metadata."
+        ],
+        "suggested_tightening": "Regenerate pin-op7 from the cached opinion text and store a real text position or validated slip-page locator.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "15b624b7c962ba32",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A, so no treatment merits finding is raised.",
+          "For Lens A consistency only, the content page mirrors the disclosed lake treatment fields: good_law, as_of_content 2023-03-07, as_of_treatment 2026-06-30, varies_by_point=false, and the same scope note."
+        ],
+        "residual_risks": [
+          "Treatment/currency merits remain for Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"A\",\n  \"group_id\": \"_overhaul2/lake/cases/United States v. Braxton.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"7d73c1df78e6e786\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake identity record gives case name United States v. Braxton, U.S. Court of Appeals for the Tenth Circuit, decided 2023-03-07, docket 21-1149.\",\n        \"The lake official citation is exactly 61 F.4th 830, matching the displayed citation.\",\n        \"The cached opinion text caption and filed date are consistent with the lake identity record.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"2ddd96ee53713f69\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The quoted sentence matches lake pinpoints[pin-op17], which is marked quote_fidelity=matched and star-verified.\",\n        \"The cached opinion text contains the same passage on slip page 17: the inevitable-discovery exception does not apply and the gun must be suppressed.\",\n        \"The content page pincite to Id. at 17 lands on the conclusion passage it claims.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"97acb97817cc8632\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The pin-op7 stored quote is not the opinion quotation; it is a malformed harvest of the built page beginning with frontmatter/page text, and the lake itself marks quote_fidelity=mismatch with no position.\",\n        \"severity\": \"medium\",\n        \"proposed_fix\": \"Replace pin-op7 quote with the actual opinion fragment: \\\"the government concedes that the warrantless search of the backpack was not justified by the warrant exception for searches incident to arrest.\\\"\",\n        \"evidence_quote\": \"Here, the government concedes that the warrantless search of the backpack was not justified by the warrant exception for searches incident to arrest.\",\n        \"needs_cl\": false,\n        \"locator_note\": \"pin-op7; cached opinion slip page 7\"\n      },\n      \"reasons\": [\n        \"The disclosed lake record for pin-op7 contains a page-content blob rather than the opinion quote.\",\n        \"The intended content-page quote is supported by the cached opinion text, but the assertion payload under review is not character-faithful.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The visible content-page sentence appears salvageable after correcting the stored pinpoint metadata.\"\n      ],\n      \"suggested_tightening\": \"Regenerate pin-op7 from the cached opinion text and store a real text position or validated slip-page locator.\"\n    },\n    {\n      \"assertion_id\": \"15b624b7c962ba32\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Treatment/currency is outside Lens A, so no treatment merits finding is raised.\",\n        \"For Lens A consistency only, the content page mirrors the disclosed lake treatment fields: good_law, as_of_content 2023-03-07, as_of_treatment 2026-06-30, varies_by_point=false, and the same scope note.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Treatment/currency merits remain for Lens B.\"\n      ],\n      \"suggested_tightening\": null\n    }\n  ],\n  \"notes\": \"No separate support or black-letter assertion rows were present in group_inventory.jsonl for this group.\"\n}",
+  "summary": {
+    "at": "2026-07-09T22:44:43-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-e77921905e"
+    ],
+    "group_id": "_overhaul2/lake/cases/United States v. Braxton.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "codex-A",
+    "lane_id": "codex-A-panel-prod-7e97fd6a",
+    "lens": "A",
+    "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-7e97fd6a.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "United States v. Braxton"
+    ],
+    "tokens": {
+      "input": 168197,
+      "output": 6943,
+      "source": "codex-events",
+      "total": 175140
+    },
+    "verdict_map": {
+      "15b624b7c962ba32": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "2ddd96ee53713f69": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "7d73c1df78e6e786": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "97acb97817cc8632": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-e77921905e",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 155.7
+  }
+}

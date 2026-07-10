@@ -1,0 +1,201 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Horton v. California.json",
+    "lens": "A",
+    "notes": "Treatment/currency row logged only; lens A did not perform a treatment audit.",
+    "reviewed": [
+      {
+        "assertion_id": "c5acee3ac1d7d160",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity gives case_name 'Horton v. California,' court 'U.S. Supreme Court,' date_decided '1990-06-04,' and year 1990.",
+          "Lake citations match the page display: official '496 U.S. 128' plus parallel cites '110 S. Ct. 2301' and '110 L. Ed. 2d 112.'"
+        ],
+        "residual_risks": [
+          "Lake identity_method is marked pending with a two-key warning, but the citation/court/year fields under review match the disclosed lake record."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "1f3c7aec20092b6b",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "First, not only must the item be in plain view; its incriminating character must also be “immediately apparent.”",
+          "locator_note": "text/Horton v. California__040cbb.txt line 21; lake pin-136a itself marks quote_fidelity as mismatch.",
+          "needs_cl": false,
+          "problem": "The quoted sentence is not character-faithful: the opinion uses double quotation marks around “immediately apparent,” while the page/lake quote uses single quotation marks.",
+          "proposed_fix": "Replace the quote with the opinion text: First, not only must the item be in plain view; its incriminating character must also be “immediately apparent.”",
+          "severity": "medium"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The substantive sentence appears in the disclosed opinion text, but the verbatim punctuation does not match.",
+          "The lake record reports pin-136a with quote_fidelity 'mismatch' and no star_marker."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Use the exact opinion typography and tie the pin to page 136 if the corpus supports that marker.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "8624ca714e2acd09",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "We conclude that even though inadvertence is a characteristic of most legitimate “plain-view” seizures, it is not a necessary condition.",
+          "locator_note": "text/Horton v. California__040cbb.txt line 4; lake pin-130 has quote_fidelity 'mismatch,' pinpoint_status 'slip-only,' star_marker null, and position null.",
+          "needs_cl": false,
+          "problem": "The pin-130 payload is not an opinion quote at all; it is harvested content-page/frontmatter prose. The actual opinion sentence is different and the lake record marks this pin as a mismatch.",
+          "proposed_fix": "Replace pin-130 with the actual opinion sentence and re-check the page pin: We conclude that even though inadvertence is a characteristic of most legitimate “plain-view” seizures, it is not a necessary condition.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The disclosed opinion supports the inadvertence proposition, but not the harvested payload quote.",
+          "The built page quote also changes the opinion's “plain-view” quotation marks to 'plain-view,' so it is not character-faithful as a verbatim quote."
+        ],
+        "residual_risks": [
+          "The disclosed text does not star-verify page 130 for this sentence."
+        ],
+        "suggested_tightening": "Use the exact sentence from the opinion and avoid a page-130 pinpoint unless the page marker can be verified from disclosed pagination.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "87d86fd5bc53da4d",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The quoted 'Second...' sentence matches the disclosed opinion text character-for-character.",
+          "The lake record marks pin-137 as star-verified with star_marker '137.'"
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "d0721f4c986a551b",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The quoted 'It is, of course...' sentence matches the disclosed opinion text.",
+          "The lake record marks pin-136 as star-verified with star_marker '136.'"
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "4480f9a9fb4feb16",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside lens A; no treatment defect is raised.",
+          "The page treatment fields match the disclosed lake treatment fields: field_i_validity 'good_law,' as_of_treatment '2026-06-30,' varies_by_point false."
+        ],
+        "residual_risks": [
+          "Treatment substance not reviewed under support/quote-fidelity lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"A\",\n  \"group_id\": \"_overhaul2/lake/cases/Horton v. California.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"c5acee3ac1d7d160\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Lake identity gives case_name 'Horton v. California,' court 'U.S. Supreme Court,' date_decided '1990-06-04,' and year 1990.\",\n        \"Lake citations match the page display: official '496 U.S. 128' plus parallel cites '110 S. Ct. 2301' and '110 L. Ed. 2d 112.'\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Lake identity_method is marked pending with a two-key warning, but the citation/court/year fields under review match the disclosed lake record.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"1f3c7aec20092b6b\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The quoted sentence is not character-faithful: the opinion uses double quotation marks around “immediately apparent,” while the page/lake quote uses single quotation marks.\",\n        \"severity\": \"medium\",\n        \"proposed_fix\": \"Replace the quote with the opinion text: First, not only must the item be in plain view; its incriminating character must also be “immediately apparent.”\",\n        \"evidence_quote\": \"First, not only must the item be in plain view; its incriminating character must also be “immediately apparent.”\",\n        \"needs_cl\": false,\n        \"locator_note\": \"text/Horton v. California__040cbb.txt line 21; lake pin-136a itself marks quote_fidelity as mismatch.\"\n      },\n      \"reasons\": [\n        \"The substantive sentence appears in the disclosed opinion text, but the verbatim punctuation does not match.\",\n        \"The lake record reports pin-136a with quote_fidelity 'mismatch' and no star_marker.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": \"Use the exact opinion typography and tie the pin to page 136 if the corpus supports that marker.\"\n    },\n    {\n      \"assertion_id\": \"8624ca714e2acd09\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The pin-130 payload is not an opinion quote at all; it is harvested content-page/frontmatter prose. The actual opinion sentence is different and the lake record marks this pin as a mismatch.\",\n        \"severity\": \"high\",\n        \"proposed_fix\": \"Replace pin-130 with the actual opinion sentence and re-check the page pin: We conclude that even though inadvertence is a characteristic of most legitimate “plain-view” seizures, it is not a necessary condition.\",\n        \"evidence_quote\": \"We conclude that even though inadvertence is a characteristic of most legitimate “plain-view” seizures, it is not a necessary condition.\",\n        \"needs_cl\": false,\n        \"locator_note\": \"text/Horton v. California__040cbb.txt line 4; lake pin-130 has quote_fidelity 'mismatch,' pinpoint_status 'slip-only,' star_marker null, and position null.\"\n      },\n      \"reasons\": [\n        \"The disclosed opinion supports the inadvertence proposition, but not the harvested payload quote.\",\n        \"The built page quote also changes the opinion's “plain-view” quotation marks to 'plain-view,' so it is not character-faithful as a verbatim quote.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The disclosed text does not star-verify page 130 for this sentence.\"\n      ],\n      \"suggested_tightening\": \"Use the exact sentence from the opinion and avoid a page-130 pinpoint unless the page marker can be verified from disclosed pagination.\"\n    },\n    {\n      \"assertion_id\": \"87d86fd5bc53da4d\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The quoted 'Second...' sentence matches the disclosed opinion text character-for-character.\",\n        \"The lake record marks pin-137 as star-verified with star_marker '137.'\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"d0721f4c986a551b\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The quoted 'It is, of course...' sentence matches the disclosed opinion text.\",\n        \"The lake record marks pin-136 as star-verified with star_marker '136.'\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"4480f9a9fb4feb16\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Treatment/currency is outside lens A; no treatment defect is raised.\",\n        \"The page treatment fields match the disclosed lake treatment fields: field_i_validity 'good_law,' as_of_treatment '2026-06-30,' varies_by_point false.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Treatment substance not reviewed under support/quote-fidelity lens A.\"\n      ],\n      \"suggested_tightening\": null\n    }\n  ],\n  \"notes\": \"Treatment/currency row logged only; lens A did not perform a treatment audit.\"\n}",
+  "summary": {
+    "at": "2026-07-09T23:27:02-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-1b5ccaf5e2",
+      "F-S9-PR-1586e0f5c5"
+    ],
+    "group_id": "_overhaul2/lake/cases/Horton v. California.json",
+    "group_total_assertions": 6,
+    "lake_only_cases": [],
+    "lane": "codex-A",
+    "lane_id": "codex-A-panel-prod-57f96368",
+    "lens": "A",
+    "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-57f96368.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 6,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Horton v. California"
+    ],
+    "tokens": {
+      "input": 124724,
+      "output": 8116,
+      "source": "codex-events",
+      "total": 132840
+    },
+    "verdict_map": {
+      "1f3c7aec20092b6b": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "4480f9a9fb4feb16": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "8624ca714e2acd09": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "87d86fd5bc53da4d": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "c5acee3ac1d7d160": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "d0721f4c986a551b": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-1b5ccaf5e2",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-1586e0f5c5",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 178.1
+  }
+}

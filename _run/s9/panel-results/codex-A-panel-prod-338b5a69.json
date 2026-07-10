@@ -1,0 +1,182 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/New Jersey v. T.L.O..json",
+    "lens": "A",
+    "notes": "Reviewed all five group_inventory.jsonl rows exactly once. Lens A refutes two quote-fidelity assertions and records the treatment row without raising a treatment finding.",
+    "reviewed": [
+      {
+        "assertion_id": "1dcd8b0be8009901",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record is verified and identifies the case as New Jersey v. T. L. O., U.S. Supreme Court, decided 1985-01-15.",
+          "The official citation 469 U.S. 325 and listed parallel/vendor citations match the lake citations record."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "2f7e84f5ecfb9c12",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "Determining the reasonableness of any search involves a twofold inquiry: first, one must consider “whether the . . . action was justified at its inception,” <em>Terry </em>v. <em>Ohio, </em><span class=\"citation\" data-id=\"9423752\"><a href=\"/opinion/107729/terry-v-ohio/#20\" aria-description=\"Citation for case: Terry v. Ohio\">392 U. S., at 20</a></span>; second,",
+          "locator_note": "pin-341b is marked quote_fidelity=mismatch, pinpoint_status=slip-only, with no page, star_marker, or position.",
+          "needs_cl": false,
+          "problem": "The pin-341b quotation is not character-faithful to the opinion text: it replaces the opinion's quotation marks with single quotes, omits embedded Terry citations using ellipses, and changes the semicolon before 'second' into an ellipsis construction.",
+          "proposed_fix": "Use the opinion's exact wording and punctuation, or convert the passage to a paraphrase rather than a direct quote.",
+          "severity": "medium"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The lake pinpoint itself records quote_fidelity=mismatch.",
+          "The cached opinion text supplies the same twofold-inquiry passage, but not in the exact characters used by the page quote."
+        ],
+        "residual_risks": [
+          "The legal proposition is supported by the opinion; the defect is quote fidelity and pinpoint verification."
+        ],
+        "suggested_tightening": "Pin the full exact sentence at 469 U.S. 341-42 or paraphrase the twofold test without quotation marks.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "a938d13adeacca43",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "Rather, the legality of a search of a student should depend simply on the reasonableness, under all the circumstances, of the search.",
+          "locator_note": "pin-341 has page=null, star_marker=null, position=null, quote_fidelity=mismatch, and pinpoint_status=slip-only.",
+          "needs_cl": false,
+          "problem": "The pin-341 payload is not an opinion quote at all; it is harvested page/frontmatter/background/rule text from the built page, and the lake record marks it as a mismatch.",
+          "proposed_fix": "Replace the pin-341 stored quote with the actual opinion sentence supporting the displayed rule quote.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The reviewed quote begins with built-page markup and narrative, not language from the cached opinion text.",
+          "The correct supporting opinion passage appears in paragraph b483-5, but the reviewed pin payload does not reproduce it."
+        ],
+        "residual_risks": [
+          "The visible content-page quote is closer to the opinion sentence than the malformed lake pinpoint, but the reviewed pin payload itself is not a verified opinion quote."
+        ],
+        "suggested_tightening": "Store the exact source quote separately from any display-level bracketed capitalization such as '[T]he'.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "b7689fdf21a283b2",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The phrase 'justified at its inception' appears verbatim in the cached opinion text.",
+          "The lake record marks pin-342 as quote_fidelity=matched and pinpoint_status=star-verified."
+        ],
+        "residual_risks": [
+          "The quote is only a short phrase; broader rule support depends on the surrounding sentence at 469 U.S. 341-42."
+        ],
+        "suggested_tightening": "For the rule sentence, cite the full surrounding passage at 341-42 rather than relying only on the short phrase.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "2b9fef7159474236",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A's charter.",
+          "The treatment payload matches the lake treatment fields: field_i_validity=good_law, as_of_content=1985-01-15, as_of_treatment=2026-06-30, varies_by_point=false."
+        ],
+        "residual_risks": [
+          "No independent treatment or currency audit was performed under Lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"A\",\n  \"group_id\": \"_overhaul2/lake/cases/New Jersey v. T.L.O..json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"1dcd8b0be8009901\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake record is verified and identifies the case as New Jersey v. T. L. O., U.S. Supreme Court, decided 1985-01-15.\",\n        \"The official citation 469 U.S. 325 and listed parallel/vendor citations match the lake citations record.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"2f7e84f5ecfb9c12\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The pin-341b quotation is not character-faithful to the opinion text: it replaces the opinion's quotation marks with single quotes, omits embedded Terry citations using ellipses, and changes the semicolon before 'second' into an ellipsis construction.\",\n        \"severity\": \"medium\",\n        \"proposed_fix\": \"Use the opinion's exact wording and punctuation, or convert the passage to a paraphrase rather than a direct quote.\",\n        \"evidence_quote\": \"Determining the reasonableness of any search involves a twofold inquiry: first, one must consider “whether the . . . action was justified at its inception,” <em>Terry </em>v. <em>Ohio, </em><span class=\\\"citation\\\" data-id=\\\"9423752\\\"><a href=\\\"/opinion/107729/terry-v-ohio/#20\\\" aria-description=\\\"Citation for case: Terry v. Ohio\\\">392 U. S., at 20</a></span>; second,\",\n        \"needs_cl\": false,\n        \"locator_note\": \"pin-341b is marked quote_fidelity=mismatch, pinpoint_status=slip-only, with no page, star_marker, or position.\"\n      },\n      \"reasons\": [\n        \"The lake pinpoint itself records quote_fidelity=mismatch.\",\n        \"The cached opinion text supplies the same twofold-inquiry passage, but not in the exact characters used by the page quote.\"\n      ],\n      \"breaks_true_positives\": true,\n      \"residual_risks\": [\n        \"The legal proposition is supported by the opinion; the defect is quote fidelity and pinpoint verification.\"\n      ],\n      \"suggested_tightening\": \"Pin the full exact sentence at 469 U.S. 341-42 or paraphrase the twofold test without quotation marks.\"\n    },\n    {\n      \"assertion_id\": \"a938d13adeacca43\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The pin-341 payload is not an opinion quote at all; it is harvested page/frontmatter/background/rule text from the built page, and the lake record marks it as a mismatch.\",\n        \"severity\": \"high\",\n        \"proposed_fix\": \"Replace the pin-341 stored quote with the actual opinion sentence supporting the displayed rule quote.\",\n        \"evidence_quote\": \"Rather, the legality of a search of a student should depend simply on the reasonableness, under all the circumstances, of the search.\",\n        \"needs_cl\": false,\n        \"locator_note\": \"pin-341 has page=null, star_marker=null, position=null, quote_fidelity=mismatch, and pinpoint_status=slip-only.\"\n      },\n      \"reasons\": [\n        \"The reviewed quote begins with built-page markup and narrative, not language from the cached opinion text.\",\n        \"The correct supporting opinion passage appears in paragraph b483-5, but the reviewed pin payload does not reproduce it.\"\n      ],\n      \"breaks_true_positives\": true,\n      \"residual_risks\": [\n        \"The visible content-page quote is closer to the opinion sentence than the malformed lake pinpoint, but the reviewed pin payload itself is not a verified opinion quote.\"\n      ],\n      \"suggested_tightening\": \"Store the exact source quote separately from any display-level bracketed capitalization such as '[T]he'.\"\n    },\n    {\n      \"assertion_id\": \"b7689fdf21a283b2\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The phrase 'justified at its inception' appears verbatim in the cached opinion text.\",\n        \"The lake record marks pin-342 as quote_fidelity=matched and pinpoint_status=star-verified.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The quote is only a short phrase; broader rule support depends on the surrounding sentence at 469 U.S. 341-42.\"\n      ],\n      \"suggested_tightening\": \"For the rule sentence, cite the full surrounding passage at 341-42 rather than relying only on the short phrase.\"\n    },\n    {\n      \"assertion_id\": \"2b9fef7159474236\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Treatment/currency is outside Lens A's charter.\",\n        \"The treatment payload matches the lake treatment fields: field_i_validity=good_law, as_of_content=1985-01-15, as_of_treatment=2026-06-30, varies_by_point=false.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"No independent treatment or currency audit was performed under Lens A.\"\n      ],\n      \"suggested_tightening\": null\n    }\n  ],\n  \"notes\": \"Reviewed all five group_inventory.jsonl rows exactly once. Lens A refutes two quote-fidelity assertions and records the treatment row without raising a treatment finding.\"\n}",
+  "summary": {
+    "at": "2026-07-09T23:36:21-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-03a9bee280",
+      "F-S9-PR-917ad56d3a"
+    ],
+    "group_id": "_overhaul2/lake/cases/New Jersey v. T.L.O..json",
+    "group_total_assertions": 5,
+    "lake_only_cases": [],
+    "lane": "codex-A",
+    "lane_id": "codex-A-panel-prod-338b5a69",
+    "lens": "A",
+    "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-338b5a69.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "New Jersey v. T.L.O."
+    ],
+    "tokens": {
+      "input": 278703,
+      "output": 8474,
+      "source": "codex-events",
+      "total": 287177
+    },
+    "verdict_map": {
+      "1dcd8b0be8009901": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "2b9fef7159474236": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "2f7e84f5ecfb9c12": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "a938d13adeacca43": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "b7689fdf21a283b2": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-03a9bee280",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-917ad56d3a",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 170.2
+  }
+}

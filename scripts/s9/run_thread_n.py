@@ -38,7 +38,11 @@ def done_pairs(ledger_dir):
                 continue
             cid = r.get("case_id") or r.get("record_id")
             lens = r.get("lens")
-            if cid and lens and (r.get("parse_status") in (None, "ok", "repaired")):
+            parse = r.get("parse")
+            status = parse.get("status") if isinstance(parse, dict) else parse
+            # no_cached_text / no_read rows are honest placeholders, NOT done —
+            # they re-run once the pool gains their texts (builder leg C).
+            if cid and lens and status in (None, "ok", "parsed", "repaired"):
                 pairs.add((cid, lens))
     return pairs
 

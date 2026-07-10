@@ -1,0 +1,159 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Taylor v. Riojas.json",
+    "lens": "A",
+    "notes": "Lens A review only; no outside sources used.",
+    "reviewed": [
+      {
+        "assertion_id": "6409bdd91818c081",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity record verifies Taylor v. Riojas as U.S. Supreme Court, decided 2020-11-02, docket 19-1261.",
+          "Official citation 592 U.S. 7 and parallel citations 141 S. Ct. 52 and 208 L. Ed. 2d 164 match the lake citation fields."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "32821e1279f14cd8",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "But no rea-\nsonable correctional officer could have concluded that, un-\nder the extreme circumstances",
+          "locator_note": "text/Taylor v. Riojas__877752.txt lines 56-60; lake pinpoints id pin-7",
+          "needs_cl": false,
+          "problem": "Pin-7's stored quote is not a verbatim opinion passage; it concatenates content-page prose and Markdown headings instead of the slip-opinion text.",
+          "proposed_fix": "Replace pin-7 with the actual slip-opinion sentence beginning with the no-reasonable-officer language, or remove the quote until re-extracted.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload phrase with '## Issue' and '## Rule' appears in the lake/content extraction, not as opinion text.",
+          "The cited slip-opinion page instead contains the Court's no-reasonable-correctional-officer passage."
+        ],
+        "residual_risks": [
+          "The underlying rule appears supportable, but this quote field cannot be used as verbatim support."
+        ],
+        "suggested_tightening": "Prevent page-heading text from being harvested into lake pinpoints.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "5df96b31d7bc36b0",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "“ ‘a general con-\nstitutional rule already identified in the decisional law may\napply with obvious clarity to the specific conduct in ques-\ntion’ ”",
+          "locator_note": "text/Taylor v. Riojas__877752.txt lines 61-64; lake pinpoints id pin-7b",
+          "needs_cl": false,
+          "problem": "The quoted words are present, but the stored/content quote adds a terminal period not present inside the quoted passage in the disclosed opinion text.",
+          "proposed_fix": "Remove the terminal period from the quoted passage, or quote it with the nested quotation marks as shown in the opinion.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The word sequence is verifiable in the opinion text.",
+          "Character fidelity is not exact because the opinion closes the quotation after 'question' without the added period."
+        ],
+        "residual_risks": [
+          "The content pin also cites slip op. at 3 while this Hope quotation appears on slip-opinion page 2; no separate pincite row was provided."
+        ],
+        "suggested_tightening": "Split pin-7b if it is intended to support both the Hope quotation and the separate page-3 application sentence.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "8ce83f7e154",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The treatment payload matches the lake treatment fields: good_law, as_of_content 2020-11-02, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note.",
+          "Treatment and currency are outside Lens A, so no treatment finding is raised."
+        ],
+        "residual_risks": [
+          "Treatment validity was not independently reviewed under this lens."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Taylor v. Riojas.json\",\"reviewed\":[{\"assertion_id\":\"6409bdd91818c081\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity record verifies Taylor v. Riojas as U.S. Supreme Court, decided 2020-11-02, docket 19-1261.\",\"Official citation 592 U.S. 7 and parallel citations 141 S. Ct. 52 and 208 L. Ed. 2d 164 match the lake citation fields.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"32821e1279f14cd8\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"Pin-7's stored quote is not a verbatim opinion passage; it concatenates content-page prose and Markdown headings instead of the slip-opinion text.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-7 with the actual slip-opinion sentence beginning with the no-reasonable-officer language, or remove the quote until re-extracted.\",\"evidence_quote\":\"But no rea-\\nsonable correctional officer could have concluded that, un-\\nder the extreme circumstances\",\"needs_cl\":false,\"locator_note\":\"text/Taylor v. Riojas__877752.txt lines 56-60; lake pinpoints id pin-7\"},\"reasons\":[\"The payload phrase with '## Issue' and '## Rule' appears in the lake/content extraction, not as opinion text.\",\"The cited slip-opinion page instead contains the Court's no-reasonable-correctional-officer passage.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The underlying rule appears supportable, but this quote field cannot be used as verbatim support.\"],\"suggested_tightening\":\"Prevent page-heading text from being harvested into lake pinpoints.\"},{\"assertion_id\":\"5df96b31d7bc36b0\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The quoted words are present, but the stored/content quote adds a terminal period not present inside the quoted passage in the disclosed opinion text.\",\"severity\":\"low\",\"proposed_fix\":\"Remove the terminal period from the quoted passage, or quote it with the nested quotation marks as shown in the opinion.\",\"evidence_quote\":\"“ ‘a general con-\\nstitutional rule already identified in the decisional law may\\napply with obvious clarity to the specific conduct in ques-\\ntion’ ”\",\"needs_cl\":false,\"locator_note\":\"text/Taylor v. Riojas__877752.txt lines 61-64; lake pinpoints id pin-7b\"},\"reasons\":[\"The word sequence is verifiable in the opinion text.\",\"Character fidelity is not exact because the opinion closes the quotation after 'question' without the added period.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The content pin also cites slip op. at 3 while this Hope quotation appears on slip-opinion page 2; no separate pincite row was provided.\"],\"suggested_tightening\":\"Split pin-7b if it is intended to support both the Hope quotation and the separate page-3 application sentence.\"},{\"assertion_id\":\"8ce83f7e154\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The treatment payload matches the lake treatment fields: good_law, as_of_content 2020-11-02, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note.\",\"Treatment and currency are outside Lens A, so no treatment finding is raised.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment validity was not independently reviewed under this lens.\"],\"suggested_tightening\":null}],\"notes\":\"Lens A review only; no outside sources used.\"}",
+  "summary": {
+    "at": "2026-07-09T22:35:36-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-bc77bc302e",
+      "F-S9-PR-0358df29f9"
+    ],
+    "group_id": "_overhaul2/lake/cases/Taylor v. Riojas.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "codex-A",
+    "lane_id": "codex-A-panel-prod-5f4ef993",
+    "lens": "A",
+    "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-5f4ef993.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Taylor v. Riojas"
+    ],
+    "tokens": {
+      "input": 202094,
+      "output": 9910,
+      "source": "codex-events",
+      "total": 212004
+    },
+    "verdict_map": {
+      "32821e1279f14cd8": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "5df96b31d7bc36b0": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "6409bdd91818c081": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "8ce83f7e154": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-bc77bc302e",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-0358df29f9",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 199.2
+  }
+}

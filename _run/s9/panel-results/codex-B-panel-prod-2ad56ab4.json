@@ -1,0 +1,107 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Moore v. Illinois.json",
+    "lens": "B",
+    "notes": "Reviewed all assertion_ids in group_inventory.jsonl under lens B only; no support or quote-fidelity findings made.",
+    "reviewed": [
+      {
+        "assertion_id": "97c1cc0a307be5b6",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record confirms Moore v. Illinois as a U.S. Supreme Court case decided 1977-12-12 with cluster_id 109757.",
+          "The lake citations record lists 434 U.S. 220 as the official citation and includes the same parallel/vendor citations shown in the assertion.",
+          "No disclosed treatment edge or progeny entry marks the authority overruled, superseded, abrogated, or limited."
+        ],
+        "residual_risks": [
+          "The treatment fields are unverified, so this existence review does not certify current good-law status beyond the absence of a disclosed negative treatment entry."
+        ],
+        "suggested_tightening": "Keep any live-law statement tied to the separate unverified treatment banner until citator/progeny verification is populated.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "b9741691ced7e983",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "\"s6_promotion\": {\n            \"from_record_id\": \"moore-v-illinois--109757\",\n            \"to_record_id\": \"Moore v. Illinois\",\n            \"as_of\": \"2026-07-07\",\n            \"born_status\": \"under_review\"\n        }",
+          "locator_note": "lake/Moore v. Illinois__0f128c.json treatment.scope_note and provenance.s6_promotion; content_page.md Treatment & subsequent history",
+          "needs_cl": false,
+          "problem": "The unverified treatment call itself matches the lake record, but the scope note is stale or internally confusing: it says treatment/progeny were not derived until S6 promotion even though the same disclosed lake record contains an s6_promotion entry dated 2026-07-07, and the content page body says the page remains unverified until S9 promotion.",
+          "proposed_fix": "Retain field_i_validity='unverified' and the null as-of fields, but revise the scope note to say that treatment/progeny have not yet completed verification and the page remains under review until S9/two-key promotion.",
+          "severity": "low"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "Lake treatment.field_i_validity is 'unverified', with as_of_content and as_of_treatment null, matching the assertion.",
+          "Lake treatment.edges is empty and progeny rows_cached is 0, so there is no disclosed derived treatment basis to support a stronger good-law label.",
+          "The page correctly renders Treatment: Unverified and states subsequent treatment has not been machine-verified."
+        ],
+        "residual_risks": [
+          "Because treatment derivation and progeny enumeration are empty, the disclosed record cannot establish whether Moore remains good law on every point."
+        ],
+        "suggested_tightening": "Change the scope note from the S6 language to the S9/two-key verification language used in the body.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/Moore v. Illinois.json\",\"reviewed\":[{\"assertion_id\":\"97c1cc0a307be5b6\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake identity record confirms Moore v. Illinois as a U.S. Supreme Court case decided 1977-12-12 with cluster_id 109757.\",\"The lake citations record lists 434 U.S. 220 as the official citation and includes the same parallel/vendor citations shown in the assertion.\",\"No disclosed treatment edge or progeny entry marks the authority overruled, superseded, abrogated, or limited.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The treatment fields are unverified, so this existence review does not certify current good-law status beyond the absence of a disclosed negative treatment entry.\"],\"suggested_tightening\":\"Keep any live-law statement tied to the separate unverified treatment banner until citator/progeny verification is populated.\"},{\"assertion_id\":\"b9741691ced7e983\",\"dimension\":\"treatment\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The unverified treatment call itself matches the lake record, but the scope note is stale or internally confusing: it says treatment/progeny were not derived until S6 promotion even though the same disclosed lake record contains an s6_promotion entry dated 2026-07-07, and the content page body says the page remains unverified until S9 promotion.\",\"severity\":\"low\",\"proposed_fix\":\"Retain field_i_validity='unverified' and the null as-of fields, but revise the scope note to say that treatment/progeny have not yet completed verification and the page remains under review until S9/two-key promotion.\",\"evidence_quote\":\"\\\"s6_promotion\\\": {\\n            \\\"from_record_id\\\": \\\"moore-v-illinois--109757\\\",\\n            \\\"to_record_id\\\": \\\"Moore v. Illinois\\\",\\n            \\\"as_of\\\": \\\"2026-07-07\\\",\\n            \\\"born_status\\\": \\\"under_review\\\"\\n        }\",\"needs_cl\":false,\"locator_note\":\"lake/Moore v. Illinois__0f128c.json treatment.scope_note and provenance.s6_promotion; content_page.md Treatment & subsequent history\"},\"reasons\":[\"Lake treatment.field_i_validity is 'unverified', with as_of_content and as_of_treatment null, matching the assertion.\",\"Lake treatment.edges is empty and progeny rows_cached is 0, so there is no disclosed derived treatment basis to support a stronger good-law label.\",\"The page correctly renders Treatment: Unverified and states subsequent treatment has not been machine-verified.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Because treatment derivation and progeny enumeration are empty, the disclosed record cannot establish whether Moore remains good law on every point.\"],\"suggested_tightening\":\"Change the scope note from the S6 language to the S9/two-key verification language used in the body.\"}],\"notes\":\"Reviewed all assertion_ids in group_inventory.jsonl under lens B only; no support or quote-fidelity findings made.\"}",
+  "summary": {
+    "at": "2026-07-09T23:34:17-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-1b62c61798"
+    ],
+    "group_id": "_overhaul2/lake/cases/Moore v. Illinois.json",
+    "group_total_assertions": 2,
+    "lake_only_cases": [
+      "Moore v. Illinois"
+    ],
+    "lane": "codex-B",
+    "lane_id": "codex-B-panel-prod-2ad56ab4",
+    "lens": "B",
+    "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-2ad56ab4.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [
+      "case 'Moore v. Illinois' has no lead_opinion_id (text undisclosed)"
+    ],
+    "reviewed_count": 2,
+    "run": "prod",
+    "text_disclosed_cases": [],
+    "tokens": {
+      "input": 76214,
+      "output": 3790,
+      "source": "codex-events",
+      "total": 80004
+    },
+    "verdict_map": {
+      "97c1cc0a307be5b6": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "b9741691ced7e983": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-1b62c61798",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 76.7
+  }
+}

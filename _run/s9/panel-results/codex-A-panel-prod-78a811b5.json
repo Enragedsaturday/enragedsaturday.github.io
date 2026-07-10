@@ -1,0 +1,125 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Kentucky v. King.json",
+    "lens": "A",
+    "notes": "Lens A only; treatment merits are left to Lens B.",
+    "reviewed": [
+      {
+        "assertion_id": "824f4b6d171ecfdc",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake record is verified for Kentucky v. King, U.S. Supreme Court, decided 2011-05-16, docket 09-1272.",
+          "Official/display citation 563 U.S. 452 and parallel/vendor citations 131 S. Ct. 1849, 179 L. Ed. 2d 865, and 2011 U.S. LEXIS 3541 match the payload and content page."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "2b2086a890c901c0",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "Where, as here, the police did not create the exigency by engaging or threatening to engage in conduct that violates the Fourth Amendment",
+          "locator_note": "content_page.md:61; lake pinpoints[pin-op8]; text/Kentucky v. King__52d050.txt:32",
+          "needs_cl": false,
+          "problem": "pin-op8 is not quote-faithful. The lake pinpoint itself marks quote_fidelity as mismatch, and the stored quote splices content-page Issue/Rule prose rather than opinion text. The content-page quoted rule is also a non-verbatim paraphrase of the actual opinion language.",
+          "proposed_fix": "Replace the quoted rule with character-faithful opinion text from text line 32, or remove quotation marks and treat it as a paraphrase. Also repair the pinpoint metadata so it targets the actual passage.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The exact content-page quote beginning 'a warrantless entry based on exigent circumstances...' does not appear in the disclosed opinion text.",
+          "The disclosed opinion instead says the rule in different words: police did not create the exigency by engaging or threatening conduct that violates the Fourth Amendment, so warrantless entry to prevent destruction of evidence is reasonable and allowed.",
+          "The pinpoint has page=null and pinpoint_status=slip-only, so the slip-page locator is not independently confirmed from the disclosed pinpoint metadata."
+        ],
+        "residual_risks": [
+          "The substantive proposition is supported by the opinion, but the verbatim quote and pinpoint record are defective."
+        ],
+        "suggested_tightening": "Use the exact 'Where, as here...' sentence from the opinion, or rewrite the page sentence as an unquoted paraphrase with a citation.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "12d4a3ae8ad23ce8",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The treatment payload matches the disclosed lake treatment fields: field_i_validity=good_law, as_of_content=2011-05-16, as_of_treatment=2026-06-30, varies_by_point=false, and the same scope note.",
+          "Treatment merits and currency are outside Lens A; no treatment finding is raised."
+        ],
+        "residual_risks": [
+          "Treatment/currency not assessed under this support and quote-fidelity lens."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Kentucky v. King.json\",\"reviewed\":[{\"assertion_id\":\"824f4b6d171ecfdc\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake record is verified for Kentucky v. King, U.S. Supreme Court, decided 2011-05-16, docket 09-1272.\",\"Official/display citation 563 U.S. 452 and parallel/vendor citations 131 S. Ct. 1849, 179 L. Ed. 2d 865, and 2011 U.S. LEXIS 3541 match the payload and content page.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"2b2086a890c901c0\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"pin-op8 is not quote-faithful. The lake pinpoint itself marks quote_fidelity as mismatch, and the stored quote splices content-page Issue/Rule prose rather than opinion text. The content-page quoted rule is also a non-verbatim paraphrase of the actual opinion language.\",\"severity\":\"high\",\"proposed_fix\":\"Replace the quoted rule with character-faithful opinion text from text line 32, or remove quotation marks and treat it as a paraphrase. Also repair the pinpoint metadata so it targets the actual passage.\",\"evidence_quote\":\"Where, as here, the police did not create the exigency by engaging or threatening to engage in conduct that violates the Fourth Amendment\",\"needs_cl\":false,\"locator_note\":\"content_page.md:61; lake pinpoints[pin-op8]; text/Kentucky v. King__52d050.txt:32\"},\"reasons\":[\"The exact content-page quote beginning 'a warrantless entry based on exigent circumstances...' does not appear in the disclosed opinion text.\",\"The disclosed opinion instead says the rule in different words: police did not create the exigency by engaging or threatening conduct that violates the Fourth Amendment, so warrantless entry to prevent destruction of evidence is reasonable and allowed.\",\"The pinpoint has page=null and pinpoint_status=slip-only, so the slip-page locator is not independently confirmed from the disclosed pinpoint metadata.\"],\"breaks_true_positives\":true,\"residual_risks\":[\"The substantive proposition is supported by the opinion, but the verbatim quote and pinpoint record are defective.\"],\"suggested_tightening\":\"Use the exact 'Where, as here...' sentence from the opinion, or rewrite the page sentence as an unquoted paraphrase with a citation.\"},{\"assertion_id\":\"12d4a3ae8ad23ce8\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The treatment payload matches the disclosed lake treatment fields: field_i_validity=good_law, as_of_content=2011-05-16, as_of_treatment=2026-06-30, varies_by_point=false, and the same scope note.\",\"Treatment merits and currency are outside Lens A; no treatment finding is raised.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment/currency not assessed under this support and quote-fidelity lens.\"],\"suggested_tightening\":null}],\"notes\":\"Lens A only; treatment merits are left to Lens B.\"}",
+  "summary": {
+    "at": "2026-07-09T23:29:04-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-f6aa78bbe3"
+    ],
+    "group_id": "_overhaul2/lake/cases/Kentucky v. King.json",
+    "group_total_assertions": 3,
+    "lake_only_cases": [],
+    "lane": "codex-A",
+    "lane_id": "codex-A-panel-prod-78a811b5",
+    "lens": "A",
+    "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-78a811b5.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 3,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Kentucky v. King"
+    ],
+    "tokens": {
+      "input": 235021,
+      "output": 5800,
+      "source": "codex-events",
+      "total": 240821
+    },
+    "verdict_map": {
+      "12d4a3ae8ad23ce8": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "2b2086a890c901c0": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "824f4b6d171ecfdc": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-f6aa78bbe3",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 120.4
+  }
+}

@@ -1,0 +1,160 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Marbury v. Madison.json",
+    "lens": "B",
+    "notes": "Lens B only; support and quote-fidelity assertions were not substantively adjudicated for quote accuracy.",
+    "reviewed": [
+      {
+        "assertion_id": "c48eaafcdff4114f",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record identifies the case as Marbury v. Madison, U.S. Supreme Court, decided 1803-02-24, with official citation 5 U.S. 137 selected for display.",
+          "For the currency angle, the disclosed treatment field is good_law as of 2026-06-30, with no confirmed adverse treatment edge overriding that status."
+        ],
+        "residual_risks": [
+          "Identity fields are still marked pending/under_review, but that is not a Lens B currency defect."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "5abca5619633bc8b",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote fidelity is outside Lens B; no treatment or live-law defect is created by this row.",
+          "The row itself discloses quote_fidelity as mismatch, but Lens A owns any quote-fidelity finding."
+        ],
+        "residual_risks": [
+          "Quote accuracy not adjudicated under this lens."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "cc2e5b4d430ebe43",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote fidelity is outside Lens B; no treatment or live-law defect is created by this row.",
+          "The row concerns pin-177a and does not assert a distinct adverse-treatment or currency proposition."
+        ],
+        "residual_risks": [
+          "Quote accuracy not adjudicated under this lens."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "fcf3aa5f7fd38438",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade.",
+          "locator_note": "lake/Marbury v. Madison__27b149.json treatment.scope_note and treatment.derivation lanes; content_page.md Treatment & subsequent history",
+          "needs_cl": true,
+          "problem": "The good_law treatment call itself matches the lake judgment fields, but the page's unqualified statement that Marbury 'remains undisturbed' is too strong given the disclosed treatment derivation flags proposed negative events and audit_needed=true across the treatment lanes.",
+          "proposed_fix": "Keep the good_law status as of 2026-06-30, but soften the narrative to say the lake currently rates Marbury good law and has no confirmed adverse point override; do not say 'remains undisturbed' unless the proposed negative edges are audited.",
+          "severity": "low"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "Lake treatment.field_i_validity is good_law, as_of_treatment is 2026-06-30, varies_by_point is false, and point_overrides is empty.",
+          "The authority weight is consistent with the lake identity court_level scotus and the page's Binding - SCOTUS label.",
+          "The edge array contains only proposed edges with field_iii 'mentioned', so the disclosed record does not confirm an overruling, abrogation, or supersession of Marbury.",
+          "The disclosed derivation nevertheless marks audit_needed and proposed negative events, so the stronger prose claim should be qualified."
+        ],
+        "residual_risks": [
+          "A full treatment audit of the proposed progeny edges is not present in the disclosed files."
+        ],
+        "suggested_tightening": "Use: 'The lake currently rates Marbury as good law as of 2026-06-30, with no confirmed point override in this record.'",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/Marbury v. Madison.json\",\"reviewed\":[{\"assertion_id\":\"c48eaafcdff4114f\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record identifies the case as Marbury v. Madison, U.S. Supreme Court, decided 1803-02-24, with official citation 5 U.S. 137 selected for display.\",\"For the currency angle, the disclosed treatment field is good_law as of 2026-06-30, with no confirmed adverse treatment edge overriding that status.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Identity fields are still marked pending/under_review, but that is not a Lens B currency defect.\"],\"suggested_tightening\":null},{\"assertion_id\":\"5abca5619633bc8b\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Quote fidelity is outside Lens B; no treatment or live-law defect is created by this row.\",\"The row itself discloses quote_fidelity as mismatch, but Lens A owns any quote-fidelity finding.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Quote accuracy not adjudicated under this lens.\"],\"suggested_tightening\":null},{\"assertion_id\":\"cc2e5b4d430ebe43\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Quote fidelity is outside Lens B; no treatment or live-law defect is created by this row.\",\"The row concerns pin-177a and does not assert a distinct adverse-treatment or currency proposition.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Quote accuracy not adjudicated under this lens.\"],\"suggested_tightening\":null},{\"assertion_id\":\"fcf3aa5f7fd38438\",\"dimension\":\"treatment\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The good_law treatment call itself matches the lake judgment fields, but the page's unqualified statement that Marbury 'remains undisturbed' is too strong given the disclosed treatment derivation flags proposed negative events and audit_needed=true across the treatment lanes.\",\"severity\":\"low\",\"proposed_fix\":\"Keep the good_law status as of 2026-06-30, but soften the narrative to say the lake currently rates Marbury good law and has no confirmed adverse point override; do not say 'remains undisturbed' unless the proposed negative edges are audited.\",\"evidence_quote\":\"Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade.\",\"needs_cl\":true,\"locator_note\":\"lake/Marbury v. Madison__27b149.json treatment.scope_note and treatment.derivation lanes; content_page.md Treatment & subsequent history\"},\"reasons\":[\"Lake treatment.field_i_validity is good_law, as_of_treatment is 2026-06-30, varies_by_point is false, and point_overrides is empty.\",\"The authority weight is consistent with the lake identity court_level scotus and the page's Binding - SCOTUS label.\",\"The edge array contains only proposed edges with field_iii 'mentioned', so the disclosed record does not confirm an overruling, abrogation, or supersession of Marbury.\",\"The disclosed derivation nevertheless marks audit_needed and proposed negative events, so the stronger prose claim should be qualified.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"A full treatment audit of the proposed progeny edges is not present in the disclosed files.\"],\"suggested_tightening\":\"Use: 'The lake currently rates Marbury as good law as of 2026-06-30, with no confirmed point override in this record.'\"}],\"notes\":\"Lens B only; support and quote-fidelity assertions were not substantively adjudicated for quote accuracy.\"}",
+  "summary": {
+    "at": "2026-07-09T23:32:22-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-cc34010f00",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-1767930c03"
+    ],
+    "group_id": "_overhaul2/lake/cases/Marbury v. Madison.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "codex-B",
+    "lane_id": "codex-B-panel-prod-962db471",
+    "lens": "B",
+    "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-962db471.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Marbury v. Madison"
+    ],
+    "tokens": {
+      "input": 181995,
+      "output": 7209,
+      "source": "codex-events",
+      "total": 189204
+    },
+    "verdict_map": {
+      "5abca5619633bc8b": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "c48eaafcdff4114f": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "cc2e5b4d430ebe43": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "fcf3aa5f7fd38438": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-cc34010f00",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-1767930c03",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 147.0
+  }
+}

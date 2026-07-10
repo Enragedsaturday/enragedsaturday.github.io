@@ -1,0 +1,107 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/United States v. Cooley.json",
+    "lens": "B",
+    "notes": "Reviewed all rows in group_inventory.jsonl under lens B only; no support or quote-fidelity findings made.",
+    "reviewed": [
+      {
+        "assertion_id": "6fb95b76b546ed2b",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record is for United States v. Cooley, with court_level scotus, docket 19-1414, year 2021, and cluster_id 4887958.",
+          "The disclosed citation fields include official cite 593 U.S. 345 and parallel cites 141 S. Ct. 1638 and 210 L. Ed. 2d 1.",
+          "The citation display 593 U.S. 345 matches the lake official_selection selected citation."
+        ],
+        "residual_risks": [
+          "The disclosed treatment/progeny record is unverified, so existence of the citation should not be treated as an independent current-good-law certification."
+        ],
+        "suggested_tightening": "Keep this citation coupled to the page's Treatment: Unverified warning.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "10176e5e34a5afa0",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "\"scope_note\": \"Frontier stub: treatment/progeny intentionally not derived until S6 promotion.\"",
+          "locator_note": "lake treatment.scope_note and provenance.s6_promotion; content_page treatment prose",
+          "needs_cl": false,
+          "problem": "The unverified treatment status itself matches the lake record, but the scope-note stage language is internally stale or ambiguous: it says treatment/progeny are not derived until S6 promotion, while the same disclosed record contains an s6_promotion provenance entry and the content prose says the page awaits S9 promotion.",
+          "proposed_fix": "Preserve field_i_validity: unverified, but reconcile the scope note to a stage-neutral or S9/two-key-verification statement.",
+          "severity": "low"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "The treatment fields in the inventory match the lake treatment fields: field_i_validity unverified, as_of_content null, as_of_treatment null, varies_by_point false, and no point overrides.",
+          "The lake treatment edges array is empty and progeny data are not populated, so the page correctly avoids a positive good-law call.",
+          "The page's Treatment & subsequent history section accurately warns that subsequent treatment has not been machine-verified, but the S6/S9 stage wording should be reconciled."
+        ],
+        "residual_risks": [
+          "Because complete_query, indexed_citing_opinions, citation_count, and enumeration are null, the disclosed evidence cannot establish whether later authority has limited, abrogated, or otherwise affected Cooley."
+        ],
+        "suggested_tightening": "Do not render any positive current-good-law label until citator/progeny verification is complete.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"B\",\n  \"group_id\": \"_overhaul2/lake/cases/United States v. Cooley.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"6fb95b76b546ed2b\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake identity record is for United States v. Cooley, with court_level scotus, docket 19-1414, year 2021, and cluster_id 4887958.\",\n        \"The disclosed citation fields include official cite 593 U.S. 345 and parallel cites 141 S. Ct. 1638 and 210 L. Ed. 2d 1.\",\n        \"The citation display 593 U.S. 345 matches the lake official_selection selected citation.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The disclosed treatment/progeny record is unverified, so existence of the citation should not be treated as an independent current-good-law certification.\"\n      ],\n      \"suggested_tightening\": \"Keep this citation coupled to the page's Treatment: Unverified warning.\"\n    },\n    {\n      \"assertion_id\": \"10176e5e34a5afa0\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands-modified\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The unverified treatment status itself matches the lake record, but the scope-note stage language is internally stale or ambiguous: it says treatment/progeny are not derived until S6 promotion, while the same disclosed record contains an s6_promotion provenance entry and the content prose says the page awaits S9 promotion.\",\n        \"severity\": \"low\",\n        \"proposed_fix\": \"Preserve field_i_validity: unverified, but reconcile the scope note to a stage-neutral or S9/two-key-verification statement.\",\n        \"evidence_quote\": \"\\\"scope_note\\\": \\\"Frontier stub: treatment/progeny intentionally not derived until S6 promotion.\\\"\",\n        \"needs_cl\": false,\n        \"locator_note\": \"lake treatment.scope_note and provenance.s6_promotion; content_page treatment prose\"\n      },\n      \"reasons\": [\n        \"The treatment fields in the inventory match the lake treatment fields: field_i_validity unverified, as_of_content null, as_of_treatment null, varies_by_point false, and no point overrides.\",\n        \"The lake treatment edges array is empty and progeny data are not populated, so the page correctly avoids a positive good-law call.\",\n        \"The page's Treatment & subsequent history section accurately warns that subsequent treatment has not been machine-verified, but the S6/S9 stage wording should be reconciled.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Because complete_query, indexed_citing_opinions, citation_count, and enumeration are null, the disclosed evidence cannot establish whether later authority has limited, abrogated, or otherwise affected Cooley.\"\n      ],\n      \"suggested_tightening\": \"Do not render any positive current-good-law label until citator/progeny verification is complete.\"\n    }\n  ],\n  \"notes\": \"Reviewed all rows in group_inventory.jsonl under lens B only; no support or quote-fidelity findings made.\"\n}",
+  "summary": {
+    "at": "2026-07-09T22:52:12-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-0ea1429fd3"
+    ],
+    "group_id": "_overhaul2/lake/cases/United States v. Cooley.json",
+    "group_total_assertions": 2,
+    "lake_only_cases": [
+      "United States v. Cooley"
+    ],
+    "lane": "codex-B",
+    "lane_id": "codex-B-panel-prod-7e3fc32f",
+    "lens": "B",
+    "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-7e3fc32f.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [
+      "case 'United States v. Cooley' has no lead_opinion_id (text undisclosed)"
+    ],
+    "reviewed_count": 2,
+    "run": "prod",
+    "text_disclosed_cases": [],
+    "tokens": {
+      "input": 77451,
+      "output": 8758,
+      "source": "codex-events",
+      "total": 86209
+    },
+    "verdict_map": {
+      "10176e5e34a5afa0": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "6fb95b76b546ed2b": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-0ea1429fd3",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 164.7
+  }
+}

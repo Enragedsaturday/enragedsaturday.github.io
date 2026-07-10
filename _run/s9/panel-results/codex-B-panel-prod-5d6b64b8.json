@@ -1,0 +1,159 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Florida v. Riley.json",
+    "lens": "B",
+    "notes": "Lens B only; no support or quote-fidelity defects are raised.",
+    "reviewed": [
+      {
+        "assertion_id": "6493a0f000596759",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record is verified and identifies Florida v. Riley as a U.S. Supreme Court case with official citation 488 U.S. 445.",
+          "The lake treatment field marks the authority good_law as of 2026-06-30, and no confirmed progeny edge in the disclosed record overrules or supersedes Riley itself."
+        ],
+        "residual_risks": [
+          "The treatment derivation includes proposed, mentioned-only negative edges and an audit flag for top-cited progeny, but the disclosed judgment fields do not convert those into confirmed negative treatment."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "3b986ff999357939",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote fidelity is outside Lens B.",
+          "No disclosed treatment or currency field shows that the cited Riley point has been overruled, abrogated, superseded, or limited."
+        ],
+        "residual_risks": [
+          "No support or quote-fidelity finding is made under this lens."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "c1124d7d57b6c69b",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote fidelity is outside Lens B.",
+          "The disclosed treatment record continues to mark Riley good_law, with no confirmed point-specific negative treatment override."
+        ],
+        "residual_risks": [
+          "No support or quote-fidelity finding is made under this lens."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "46f8181040551a54",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "the relevant inquiry after Ciraolo is not whether the helicopter was where it had a right to be under FAA regulations.",
+          "locator_note": "text/Florida v. Riley__929d8c.txt, Justice O'Connor concurrence",
+          "needs_cl": false,
+          "problem": "The good_law and Binding-SCOTUS treatment survives, but the scope note overstates the controlling rationale by calling the White opinion a controlling plurality and framing the governing point as naked-eye-from-lawful-public-airspace. The disclosed opinion text shows Justice O'Connor supplied a separate concurrence and rejected FAA lawfulness as conclusive.",
+          "proposed_fix": "Keep field_i_validity=good_law and Binding-SCOTUS, but revise the scope note to state that the judgment remains good law and that the controlling rationale should be framed around public use/regularity at the altitude, not lawful airspace alone.",
+          "severity": "medium"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "Lake treatment expressly says field_i_validity is good_law as of 2026-06-30 and varies_by_point is false.",
+          "All disclosed negative-looking progeny edges are marked proposed=true and field_iii=mentioned, so they do not establish confirmed overruling, abrogation, or supersession of Riley.",
+          "The treatment scope needs narrowing because the disclosed opinion text distinguishes the plurality's FAA-lawfulness rationale from Justice O'Connor's public-use rationale."
+        ],
+        "residual_risks": [
+          "The lake derivation says lane2_top_cited has audit_needed=true and cap_hit=true, so the good-law call rests on the disclosed judgment fields rather than a completed top-cited audit."
+        ],
+        "suggested_tightening": "Add a parenthetical noting that Justice O'Connor's concurrence supplies the narrower public-use/regularity rationale and that lawful altitude alone is not conclusive.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"B\",\n  \"group_id\": \"_overhaul2/lake/cases/Florida v. Riley.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"6493a0f000596759\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake record is verified and identifies Florida v. Riley as a U.S. Supreme Court case with official citation 488 U.S. 445.\",\n        \"The lake treatment field marks the authority good_law as of 2026-06-30, and no confirmed progeny edge in the disclosed record overrules or supersedes Riley itself.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The treatment derivation includes proposed, mentioned-only negative edges and an audit flag for top-cited progeny, but the disclosed judgment fields do not convert those into confirmed negative treatment.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"3b986ff999357939\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Quote fidelity is outside Lens B.\",\n        \"No disclosed treatment or currency field shows that the cited Riley point has been overruled, abrogated, superseded, or limited.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"No support or quote-fidelity finding is made under this lens.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"c1124d7d57b6c69b\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Quote fidelity is outside Lens B.\",\n        \"The disclosed treatment record continues to mark Riley good_law, with no confirmed point-specific negative treatment override.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"No support or quote-fidelity finding is made under this lens.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"46f8181040551a54\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands-modified\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The good_law and Binding-SCOTUS treatment survives, but the scope note overstates the controlling rationale by calling the White opinion a controlling plurality and framing the governing point as naked-eye-from-lawful-public-airspace. The disclosed opinion text shows Justice O'Connor supplied a separate concurrence and rejected FAA lawfulness as conclusive.\",\n        \"severity\": \"medium\",\n        \"proposed_fix\": \"Keep field_i_validity=good_law and Binding-SCOTUS, but revise the scope note to state that the judgment remains good law and that the controlling rationale should be framed around public use/regularity at the altitude, not lawful airspace alone.\",\n        \"evidence_quote\": \"the relevant inquiry after Ciraolo is not whether the helicopter was where it had a right to be under FAA regulations.\",\n        \"needs_cl\": false,\n        \"locator_note\": \"text/Florida v. Riley__929d8c.txt, Justice O'Connor concurrence\"\n      },\n      \"reasons\": [\n        \"Lake treatment expressly says field_i_validity is good_law as of 2026-06-30 and varies_by_point is false.\",\n        \"All disclosed negative-looking progeny edges are marked proposed=true and field_iii=mentioned, so they do not establish confirmed overruling, abrogation, or supersession of Riley.\",\n        \"The treatment scope needs narrowing because the disclosed opinion text distinguishes the plurality's FAA-lawfulness rationale from Justice O'Connor's public-use rationale.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The lake derivation says lane2_top_cited has audit_needed=true and cap_hit=true, so the good-law call rests on the disclosed judgment fields rather than a completed top-cited audit.\"\n      ],\n      \"suggested_tightening\": \"Add a parenthetical noting that Justice O'Connor's concurrence supplies the narrower public-use/regularity rationale and that lawful altitude alone is not conclusive.\"\n    }\n  ],\n  \"notes\": \"Lens B only; no support or quote-fidelity defects are raised.\"\n}",
+  "summary": {
+    "at": "2026-07-09T23:20:41-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-11b6e8a033",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-6b2ece9463"
+    ],
+    "group_id": "_overhaul2/lake/cases/Florida v. Riley.json",
+    "group_total_assertions": 4,
+    "lake_only_cases": [],
+    "lane": "codex-B",
+    "lane_id": "codex-B-panel-prod-5d6b64b8",
+    "lens": "B",
+    "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-5d6b64b8.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Florida v. Riley"
+    ],
+    "tokens": {
+      "input": 167772,
+      "output": 6661,
+      "source": "codex-events",
+      "total": 174433
+    },
+    "verdict_map": {
+      "3b986ff999357939": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "46f8181040551a54": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "6493a0f000596759": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "c1124d7d57b6c69b": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-11b6e8a033",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-6b2ece9463",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 137.9
+  }
+}

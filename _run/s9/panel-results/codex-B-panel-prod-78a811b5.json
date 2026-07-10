@@ -1,0 +1,136 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Kentucky v. King.json",
+    "lens": "B",
+    "notes": "Lens B only; support and quote fidelity were not adjudicated.",
+    "reviewed": [
+      {
+        "assertion_id": "824f4b6d171ecfdc",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record is non-stub and status verified for Kentucky v. King.",
+          "The disclosed citation fields select 563 U.S. 452 as the official citation and identify the court as U.S. Supreme Court.",
+          "The disclosed treatment judgment marks the authority good_law as of 2026-06-30, so the cited authority remains live under lens B."
+        ],
+        "residual_risks": [
+          "Treatment derivation contains audit-needed proposed negative edges, but the disclosed judgment fields do not confirm a downgrade or point override."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "2b2086a890c901c0",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote fidelity is outside lens B; no currency or treatment defect is raised for this row.",
+          "The row does not itself assert a treatment downgrade or currency status distinct from the case-level treatment record."
+        ],
+        "residual_risks": [
+          "Quote/support accuracy not assessed under lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "12d4a3ae8ad23ce8",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "\"audit_marker\": \"R15 treatment audit required\"",
+          "locator_note": "Treatment frontmatter and Treatment & subsequent history section.",
+          "needs_cl": true,
+          "problem": "The good_law and Binding-SCOTUS treatment call survives, but the page's unqualified 'No negative treatment' wording is too strong because the disclosed lake record contains proposed negative-treatment edges and audit-needed flags, with no confirmed point override downgrading King.",
+          "proposed_fix": "Keep good_law as of 2026-06-30 and Binding-SCOTUS, but revise the narrative to say no confirmed negative treatment in the lake record; proposed negative edges are audit-flagged and classified as mentions, with no point override.",
+          "severity": "medium"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "Lake treatment.field_i_validity is good_law, varies_by_point is false, and point_overrides is empty.",
+          "The same treatment record lists multiple proposed negative edges and derivation lanes with audit_needed true, so the categorical narrative 'No negative treatment' is not fully supported as written."
+        ],
+        "residual_risks": [
+          "A completed treatment audit could confirm the current no-negative-treatment narrative, but that confirmation is not present in the disclosed record."
+        ],
+        "suggested_tightening": "Replace 'No negative treatment' with 'No confirmed negative treatment in the disclosed lake record; proposed negative-treatment candidates remain audit-flagged.'",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/Kentucky v. King.json\",\"reviewed\":[{\"assertion_id\":\"824f4b6d171ecfdc\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record is non-stub and status verified for Kentucky v. King.\",\"The disclosed citation fields select 563 U.S. 452 as the official citation and identify the court as U.S. Supreme Court.\",\"The disclosed treatment judgment marks the authority good_law as of 2026-06-30, so the cited authority remains live under lens B.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment derivation contains audit-needed proposed negative edges, but the disclosed judgment fields do not confirm a downgrade or point override.\"],\"suggested_tightening\":null},{\"assertion_id\":\"2b2086a890c901c0\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Quote fidelity is outside lens B; no currency or treatment defect is raised for this row.\",\"The row does not itself assert a treatment downgrade or currency status distinct from the case-level treatment record.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Quote/support accuracy not assessed under lens B.\"],\"suggested_tightening\":null},{\"assertion_id\":\"12d4a3ae8ad23ce8\",\"dimension\":\"treatment\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The good_law and Binding-SCOTUS treatment call survives, but the page's unqualified 'No negative treatment' wording is too strong because the disclosed lake record contains proposed negative-treatment edges and audit-needed flags, with no confirmed point override downgrading King.\",\"severity\":\"medium\",\"proposed_fix\":\"Keep good_law as of 2026-06-30 and Binding-SCOTUS, but revise the narrative to say no confirmed negative treatment in the lake record; proposed negative edges are audit-flagged and classified as mentions, with no point override.\",\"evidence_quote\":\"\\\"audit_marker\\\": \\\"R15 treatment audit required\\\"\",\"needs_cl\":true,\"locator_note\":\"Treatment frontmatter and Treatment & subsequent history section.\"},\"reasons\":[\"Lake treatment.field_i_validity is good_law, varies_by_point is false, and point_overrides is empty.\",\"The same treatment record lists multiple proposed negative edges and derivation lanes with audit_needed true, so the categorical narrative 'No negative treatment' is not fully supported as written.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"A completed treatment audit could confirm the current no-negative-treatment narrative, but that confirmation is not present in the disclosed record.\"],\"suggested_tightening\":\"Replace 'No negative treatment' with 'No confirmed negative treatment in the disclosed lake record; proposed negative-treatment candidates remain audit-flagged.'\"}],\"notes\":\"Lens B only; support and quote fidelity were not adjudicated.\"}",
+  "summary": {
+    "at": "2026-07-09T23:29:23-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-f6aa78bbe3",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-1bb90b777b"
+    ],
+    "group_id": "_overhaul2/lake/cases/Kentucky v. King.json",
+    "group_total_assertions": 3,
+    "lake_only_cases": [],
+    "lane": "codex-B",
+    "lane_id": "codex-B-panel-prod-78a811b5",
+    "lens": "B",
+    "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-78a811b5.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 3,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Kentucky v. King"
+    ],
+    "tokens": {
+      "input": 173071,
+      "output": 6102,
+      "source": "codex-events",
+      "total": 179173
+    },
+    "verdict_map": {
+      "12d4a3ae8ad23ce8": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "2b2086a890c901c0": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "824f4b6d171ecfdc": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-f6aa78bbe3",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-1bb90b777b",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 132.5
+  }
+}

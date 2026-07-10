@@ -1,0 +1,180 @@
+{
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Graham v. Barnette.json",
+    "lens": "A",
+    "notes": "Reviewed all 5 group_inventory.jsonl rows under lens A; no external sources used.",
+    "reviewed": [
+      {
+        "assertion_id": "07fab6a12b3c69e0",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity verifies Teresa Graham v. Shannon Barnette, U.S. Court of Appeals, 8th Circuit, decided 2021-07-16, docket 19-2512.",
+          "Lake citations list official/display citation as 5 F.4th 872, matching the content page citation and header."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "09b25fdf76a96e7a",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "At least nine of our sister circuits have held that the Fourth Amendment requires probable cause that a person is mentally ill and dangerous to herself or others for a seizure for an emergency mental-health evaluation to be reasonable.",
+          "locator_note": "text/Graham v. Barnette__a08634.txt lines 386-388; lake pin-op10b is also marked quote_fidelity=mismatch and slip-only.",
+          "needs_cl": false,
+          "problem": "The quoted passage is substantively present, but it is not character-faithful: the opinion begins the sentence with \"At least,\" not \"[a]t least.\"",
+          "proposed_fix": "Replace \"[a]t least\" with \"At least\" for character-faithful quotation.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The source text supports the quoted proposition.",
+          "The only fidelity defect found is the bracketed lowercase initial character."
+        ],
+        "residual_risks": [
+          "No star marker or position is recorded for this slip-only pinpoint."
+        ],
+        "suggested_tightening": "Use the exact source sentence beginning \"At least nine\".",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "507a92ccda1e39a9",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "Now that Caniglia has made clear that “there is no overarching ‘community caretaking’ doctrine,” 141 S. Ct. at 1600 (Alito, J., concurring), our use of that label seems to be a category error.",
+          "locator_note": "The asserted quote text is found in content_page.md around the Issue/Rule transition, not as a matching passage in the cached opinion; the actual relevant opinion passage is text lines 363-368.",
+          "needs_cl": false,
+          "problem": "The pin-op10 quote is not an opinion quote; it appears to splice content-page Issue/Rule text rather than the cited case text.",
+          "proposed_fix": "Replace the pin-op10 quote with the actual category-error sentence from the opinion, or regenerate the pinpoint against the cached opinion text.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The lake pinpoint itself marks pin-op10 quote_fidelity as mismatch.",
+          "The cached opinion contains the category-error sentence, not the asserted fragment beginning \"framing supports a warrantless seizure\"."
+        ],
+        "residual_risks": [
+          "The page's visible quote for this pin also uses markdown and an ellipsis; if strict character fidelity is required, it should be normalized against the exact opinion text."
+        ],
+        "suggested_tightening": "Quote the exact sentence or a clearly ellipsized, source-faithful excerpt from text lines 365-368.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "7923c7806c5f0eb7",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The quote appears verbatim as a contiguous passage in the cached opinion after the introductory word \"First,\".",
+          "Lake pin-op10a is marked quote_fidelity=matched, star_marker=1, and includes a validated text fragment."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "85bfd2b34453da7d",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The treatment payload matches the lake treatment fields: field_i_validity=good_law, as_of_content=2021-07-16, as_of_treatment=2026-06-30, varies_by_point=false.",
+          "Lens A does not make an independent treatment/currency finding."
+        ],
+        "residual_risks": [
+          "Treatment and currency remain for lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"A\",\n  \"group_id\": \"_overhaul2/lake/cases/Graham v. Barnette.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"07fab6a12b3c69e0\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Lake identity verifies Teresa Graham v. Shannon Barnette, U.S. Court of Appeals, 8th Circuit, decided 2021-07-16, docket 19-2512.\",\n        \"Lake citations list official/display citation as 5 F.4th 872, matching the content page citation and header.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"09b25fdf76a96e7a\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands-modified\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The quoted passage is substantively present, but it is not character-faithful: the opinion begins the sentence with \\\"At least,\\\" not \\\"[a]t least.\\\"\",\n        \"severity\": \"low\",\n        \"proposed_fix\": \"Replace \\\"[a]t least\\\" with \\\"At least\\\" for character-faithful quotation.\",\n        \"evidence_quote\": \"At least nine of our sister circuits have held that the Fourth Amendment requires probable cause that a person is mentally ill and dangerous to herself or others for a seizure for an emergency mental-health evaluation to be reasonable.\",\n        \"needs_cl\": false,\n        \"locator_note\": \"text/Graham v. Barnette__a08634.txt lines 386-388; lake pin-op10b is also marked quote_fidelity=mismatch and slip-only.\"\n      },\n      \"reasons\": [\n        \"The source text supports the quoted proposition.\",\n        \"The only fidelity defect found is the bracketed lowercase initial character.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"No star marker or position is recorded for this slip-only pinpoint.\"\n      ],\n      \"suggested_tightening\": \"Use the exact source sentence beginning \\\"At least nine\\\".\"\n    },\n    {\n      \"assertion_id\": \"507a92ccda1e39a9\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The pin-op10 quote is not an opinion quote; it appears to splice content-page Issue/Rule text rather than the cited case text.\",\n        \"severity\": \"high\",\n        \"proposed_fix\": \"Replace the pin-op10 quote with the actual category-error sentence from the opinion, or regenerate the pinpoint against the cached opinion text.\",\n        \"evidence_quote\": \"Now that Caniglia has made clear that “there is no overarching ‘community caretaking’ doctrine,” 141 S. Ct. at 1600 (Alito, J., concurring), our use of that label seems to be a category error.\",\n        \"needs_cl\": false,\n        \"locator_note\": \"The asserted quote text is found in content_page.md around the Issue/Rule transition, not as a matching passage in the cached opinion; the actual relevant opinion passage is text lines 363-368.\"\n      },\n      \"reasons\": [\n        \"The lake pinpoint itself marks pin-op10 quote_fidelity as mismatch.\",\n        \"The cached opinion contains the category-error sentence, not the asserted fragment beginning \\\"framing supports a warrantless seizure\\\".\"\n      ],\n      \"breaks_true_positives\": true,\n      \"residual_risks\": [\n        \"The page's visible quote for this pin also uses markdown and an ellipsis; if strict character fidelity is required, it should be normalized against the exact opinion text.\"\n      ],\n      \"suggested_tightening\": \"Quote the exact sentence or a clearly ellipsized, source-faithful excerpt from text lines 365-368.\"\n    },\n    {\n      \"assertion_id\": \"7923c7806c5f0eb7\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The quote appears verbatim as a contiguous passage in the cached opinion after the introductory word \\\"First,\\\".\",\n        \"Lake pin-op10a is marked quote_fidelity=matched, star_marker=1, and includes a validated text fragment.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"85bfd2b34453da7d\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The treatment payload matches the lake treatment fields: field_i_validity=good_law, as_of_content=2021-07-16, as_of_treatment=2026-06-30, varies_by_point=false.\",\n        \"Lens A does not make an independent treatment/currency finding.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Treatment and currency remain for lens B.\"\n      ],\n      \"suggested_tightening\": null\n    }\n  ],\n  \"notes\": \"Reviewed all 5 group_inventory.jsonl rows under lens A; no external sources used.\"\n}",
+  "summary": {
+    "at": "2026-07-09T21:42:50-04:00",
+    "attempts": 1,
+    "clean_attestation": false,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-9f2a101be9",
+      "F-S9-PR-132099506f"
+    ],
+    "group_id": "_overhaul2/lake/cases/Graham v. Barnette.json",
+    "group_total_assertions": 5,
+    "lake_only_cases": [],
+    "lane": "codex-A",
+    "lane_id": "codex-A-panel-prod-1960571e",
+    "lens": "A",
+    "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-1960571e.json",
+    "model": "gpt-5.5",
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Graham v. Barnette"
+    ],
+    "tokens": {
+      "input": 212505,
+      "output": 8158,
+      "source": "codex-events",
+      "total": 220663
+    },
+    "verdict_map": {
+      "07fab6a12b3c69e0": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "09b25fdf76a96e7a": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "507a92ccda1e39a9": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "7923c7806c5f0eb7": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "85bfd2b34453da7d": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-9f2a101be9",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-132099506f",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 159.6
+  }
+}
