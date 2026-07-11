@@ -1,0 +1,349 @@
+{
+  "packs": [
+    {
+      "group_id": "_overhaul2/lake/cases/Winston v. Lee.json",
+      "reviewed": [
+        {
+          "assertion_id": "17ee1e6c28569471",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached majority opinion confirms Winston v. Lee, 470 U.S. 753 (1985): caption WINSTON v. LEE, Brennan, J.; star-pagination *755-*767 present, consistent with 470 U.S. 753.",
+            "Official cite 470 U.S. 753 matches lake official_selection (selected_rank_1) and cluster 111380 / lead opinion 9429963; official_selection_present=true."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Parallel cites (105 S. Ct. 1611; 84 L. Ed. 2d 662; 53 U.S.L.W. 4367; 1985 U.S. LEXIS 76) sourced from cluster.citations[]; internally consistent, no reporter/page collisions."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "447f2823d7c6bec9",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Quote 'seeks to intrude upon an area in which our society recognizes a significantly heightened privacy interest, a more substantial justification is required to make the search reasonable.' appears verbatim in the cached opinion Part III at *767 (para AKD).",
+            "Harvest quote_fidelity='mismatch'/pinpoint_status='slip-only' are false positives; the *767 star marker is present in the cached reporter text."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": "Flip harvest flags to matched/star-verified (reporter page 767)."
+        },
+        {
+          "assertion_id": "53a8aeb995174196",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion at *766 (para b822-5): 'the Commonwealth has failed to demonstrate that it would be “reasonable” under the terms of the Fourth Amendment to search for evidence of this crime by means of the contemplated surgery.'",
+            "Content-page quote elides 'under the terms of the Fourth Amendment' with '. . .' — a faithful, properly-marked ellipsis; remainder verbatim."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": "Flip harvest quote_fidelity/slip-only flags (false positive)."
+        },
+        {
+          "assertion_id": "8f40005581672c53",
+          "dimension": "quote_fidelity",
+          "verdict": "stands-modified",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "Harvested payload 'quote' for pin-759 is the content-page front-matter/header blob (YAML + title + Background + Issue + '## Rule Not on these facts.'), not an opinion quotation; it does not appear in the source. This is a first-pin extraction artifact that captured all preceding page chrome. The genuine content-page pin-759 quotation is faithful to the cached opinion at *759.",
+            "severity": "low",
+            "proposed_fix": "Re-harvest pin-759 to the actual quotation ('A compelled surgical intrusion into an individual's body for evidence . . . implicates expectations of privacy and security of such magnitude that the intrusion may be “unreasonable” even if likely to produce evidence of a crime.') at 470 U.S. at 759; drop the front-matter capture.",
+            "evidence_quote": "A compelled surgical intrusion into an individual’s body for evidence, however, implicates expectations of privacy and security of such magnitude that the intrusion may be “unreasonable” even if likely to produce evidence of a crime.",
+            "needs_cl": false,
+            "locator_note": "cached opinion para b815-5, reporter page *759"
+          },
+          "reasons": [
+            "Payload quote is a harvest artifact (page front-matter), not verifiable as an opinion quotation.",
+            "The true content-page pin-759 quotation is verbatim-faithful to the cached opinion at *759 (content-page '. . .' correctly elides 'however,'), so the underlying corpus quotation stands."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Also carries stale slip-only/mismatch harvest flags; the real quote is on reporter page 759."
+          ],
+          "suggested_tightening": "Fix the first-pin harvest off-by-one that captures front-matter instead of the annotated quote."
+        },
+        {
+          "assertion_id": "b0cd20bc142752a1",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Quote 'The reasonableness of surgical intrusions beneath the skin depends on a case-by-case approach, in which the individual's interests in privacy and security are weighed against society's interests in conducting the procedure.' appears verbatim in the cached opinion at *760 (para b816-6)."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": "Flip harvest quote_fidelity/slip-only flags (false positive)."
+        },
+        {
+          "assertion_id": "09fe8ca780b89319",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "scope_note accurately states Winston's holding (a compelled surgical intrusion for evidence may be unreasonable even with probable cause and a court order; reasonableness turns on the Schmerber balance) — matches the cached opinion (search held 'unreasonable'; judgment 'Affirmed').",
+            "field_i_validity good_law: lake carries only proposed:true negative edges (Commonwealth v. Dennis 'superseded_by_statute'; Adrian King), none confirmed; no disclosed evidence Winston itself is overruled/superseded."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Full 2026 currency would need a citator not inlined; nothing disclosed refutes good_law."
+          ],
+          "suggested_tightening": null
+        }
+      ]
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/Wolf v. Colorado.json",
+      "reviewed": [
+        {
+          "assertion_id": "6df33aea3c9e3644",
+          "dimension": "existence",
+          "verdict": "stands-modified",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "Existence at 338 U.S. 25 (1949) is confirmed (cached opinion caption 'WOLF v. COLORADO. ... 338 U.S. 25 (1949)', Frankfurter, J.). But the parallel-cite list is internally inconsistent: it carries BOTH '93 L. Ed. 2d 1782' and '93 L. Ed. 1782' with identical volume 93 and page 1782 across two different reporter series. The same case cannot occupy identical vol/page in two distinct reporters, so the 'L. Ed. 2d' variant is a malformed duplicate.",
+            "severity": "low",
+            "proposed_fix": "Drop the malformed '93 L. Ed. 2d 1782' variant (the correct L. Ed. first-series cite '93 L. Ed. 1782' is already present); reconcile the content-page frontmatter parallel_cite likewise.",
+            "evidence_quote": null,
+            "needs_cl": false,
+            "locator_note": "payload.all[] cites 3 and 5; content-page frontmatter parallel_cite string"
+          },
+          "reasons": [
+            "Existence of Wolf at official cite 338 U.S. 25 confirmed by cached opinion.",
+            "The duplicate/malformed parallel cite is observable from the disclosed payload alone (identical vol 93 / page 1782 in two reporter series)."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": "Dedupe reporter-series variants in the cluster.citations[] projection."
+        },
+        {
+          "assertion_id": "8f8e97341488af46",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Quote 'in a prosecution in a State court for a State crime the Fourteenth Amendment does not forbid the admission of evidence obtained by an unreasonable search and seizure.' appears verbatim immediately after the *33 star marker in the cached opinion ('We hold, therefore, that in a prosecution ...').",
+            "Payload already correctly flags matched/star-verified with fragment_validated_at set; my independent read confirms it."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "d258a00b10f0ee45",
+          "dimension": "quote_fidelity",
+          "verdict": "stands-modified",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "Harvested payload 'quote' for pin-27 is the content-page front-matter/header blob (YAML + title + Background + Issue + '## Rule ...'), not an opinion quotation — a first-pin extraction artifact. The genuine content-page pin-27 quotation is faithful to the cached opinion spanning *27-*28.",
+            "severity": "low",
+            "proposed_fix": "Re-harvest pin-27 to the actual quotation ('The security of one's privacy against arbitrary intrusion by the police—which is at the core of the Fourth Amendment—is basic to a free society. It is therefore implicit in “the concept of ordered liberty” and as such enforceable against the States through the Due Process Clause.') at 338 U.S. 27-28; drop the front-matter capture.",
+            "evidence_quote": "The security of one’s privacy against arbitrary intrusion by the police…is basic to a free society. It is therefore implicit in “the concept of ordered liberty” and as such enforceable against the States through the Due Process … Clause.",
+            "needs_cl": false,
+            "locator_note": "cached opinion paragraph spanning star markers *27 and *28"
+          },
+          "reasons": [
+            "Payload quote is a harvest artifact (front-matter), not an opinion quotation.",
+            "The true content-page pin-27 quotation is faithful to the cached opinion at 27-28; the cached OCR dropped the em-dashes ('policewhich'/'Amendmentis'), but the content page restores them correctly, so the corpus quotation stands."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Cached-opinion OCR loses the em-dashes around 'which is at the core of the Fourth Amendment'; the content page's punctuation is the correct reading."
+          ],
+          "suggested_tightening": "Fix the first-pin harvest off-by-one."
+        },
+        {
+          "assertion_id": "8196867a9a012434",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "scope_note accurately states Wolf's exclusionary-remedy holding was overruled on that point by Mapp v. Ohio (1961) while the incorporation holding survived; the lake treatment.edges include a Mapp v. Ohio (367 U.S. 643) edge with field_ii 'overruled' — disclosed support.",
+            "Content-page badge and Treatment section consistently display 'overruled ... on remedy by Mapp v. Ohio'."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "field_i_validity enum is 'superseded' while the operative Mapp edge and the human-facing display are 'overruled'; the label is a slightly loose rollup, but the substance (overruled-on-remedy by Mapp; incorporation survived) is correct.",
+            "Mapp edge is marked proposed:true, but it is the canonical, well-attested treatment."
+          ],
+          "suggested_tightening": "Consider field_i_validity 'overruled' (or overruled_in_part) to match the Mapp edge's field_ii."
+        }
+      ]
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/Wong Sun v. United States.json",
+      "reviewed": [
+        {
+          "assertion_id": "809f5c187032b9c0",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion confirms Wong Sun v. United States, 371 U.S. 471 (1963); star-pagination *480-*499 present, consistent with 371 U.S. 471.",
+            "Official cite 371 U.S. 471 matches lake / cluster 106515; parallel cites (83 S. Ct. 407; 9 L. Ed. 2d 441; 1963 U.S. LEXIS 2431) internally consistent with no malformed duplicates."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "17257bbb3de904d8",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Quote 'the connection between the arrest and the statement had “become so attenuated as to dissipate the taint.”' appears verbatim in the cached opinion on page *491 (Wong Sun's attenuation holding, quoting Nardone, 308 U.S. at 341).",
+            "Harvest mismatch/slip-only flags are false positives; the *491 star marker precedes this passage in the cached reporter text."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": "Flip harvest quote_fidelity/slip-only flags (false positive; reporter page 491)."
+        },
+        {
+          "assertion_id": "e9abdc45a82e759a",
+          "dimension": "quote_fidelity",
+          "verdict": "stands-modified",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "Harvested payload 'quote' for pin-488 is content-page prose ('...how to determine when the connection to the illegality is too attenuated to require suppression. ## Rule Not every consequence of police illegality is suppressed;') — the tail of the Issue plus the start of the Rule heading, not an opinion quotation. Extraction artifact. The genuine content-page pin-488 quotations are faithful to the cached opinion at *487-*488.",
+            "severity": "low",
+            "proposed_fix": "Re-harvest pin-488 to the two actual quoted sentences (the 'fruit of the poisonous tree ... but for the illegal actions of the police' and the 'more apt question ... come at by exploitation ... purged of the primary taint' passages) at 371 U.S. 487-488; drop the page-prose capture.",
+            "evidence_quote": "the more apt question in such a case is “whether, granting establishment of the primary illegality, the evidence to which instant objection is made has been come at by exploitation of that illegality or instead by means sufficiently distinguishable to be purged of the primary taint.”",
+            "needs_cl": false,
+            "locator_note": "cached opinion paragraph spanning *487-*488 (Maguire, Evidence of Guilt, 221 (1959))"
+          },
+          "reasons": [
+            "Payload quote is a harvest artifact (page Issue/Rule prose), not an opinion quotation.",
+            "The two true content-page pin-488 quotations are verbatim-faithful to the cached opinion at 487-488 (content-page '…' correctly elides 'in such a case'), so the corpus quotation stands."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": "Fix the harvest capture that grabbed page-section prose instead of the quoted material."
+        },
+        {
+          "assertion_id": "d98bbfea2668bdc8",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "scope_note ('Foundational fruit-of-the-poisonous-tree / attenuation case; good law') accurately captures the cached opinion's holding.",
+            "field_i_validity good_law: the lake's negative edges are all proposed:true and facially noisy (e.g., Katz, Terry, United States v. Leon, Illinois v. Gates listed as 'overruled' toward Wong Sun, which is false); none is a confirmed adverse treatment of Wong Sun itself."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Lake carries many spurious proposed negative edges from the lane1_negative sweep; they do not disturb good_law but must not be promoted."
+          ],
+          "suggested_tightening": null
+        }
+      ]
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/Wright v. City of Euclid.json",
+      "reviewed": [
+        {
+          "assertion_id": "97bcd6eebaf39aa4",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached slip opinion (6th Cir., 'RECOMMENDED FOR PUBLICATION', File Name 20a0185p.06, No. 19-3452, caption 'LAMAR WRIGHT v. CITY OF EUCLID, OHIO; KYLE FLAGG; VASHON WILLIAMS') confirms the case.",
+            "Lake identity: expected_citation_found=true, party_name_in_text=true, canonical_name_match=true; official cite 962 F.3d 852, cluster 4762133 -> lead opinion 4542480; no parallel-cite anomalies."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "The slip opinion carries no F.3d page marker, so reporter page 852 rests on cluster metadata (identity_checked=true), not the opinion body."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "9bd5480368c4a375",
+          "dimension": "quote_fidelity",
+          "verdict": "stands-modified",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "Harvested payload 'quote' for pin-op23 is truncated mid-sentence at '...quintessential example[] of [a]' — a harvest artifact cut off before completion. The genuine content-page pin-op23 quotation is faithful to the cached slip opinion at Page 23 (false-arrest holding, citing Jones, 947 F.3d at 915).",
+            "severity": "low",
+            "proposed_fix": "Restore the full quotation (through 'constitutional right.') in the harvested payload; the content page already renders it in full.",
+            "evidence_quote": "the right to be free from arrest without probable cause is a “quintessential example[] of [a] ‘clearly established’ constitutional right.”",
+            "needs_cl": false,
+            "locator_note": "cached slip op. Page 23 (between the 'Page 23' and 'Page 24' running headers)"
+          },
+          "reasons": [
+            "Payload quote is truncated (harvest artifact), not the full attributed quotation.",
+            "The full content-page quotation is verbatim-faithful to slip op. Page 23; the content page's outer-single/inner-double quote nesting is a correct re-quote of the opinion's outer-double/inner-single.",
+            "The phrase also recurs on Page 25 (extended-detention), but the content page cites the false-arrest instance, which is on Page 23 — pincite correct."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": "Fix quote truncation at the nested-bracket boundary in harvest."
+        },
+        {
+          "assertion_id": "d7fe79013ddabddf",
+          "dimension": "quote_fidelity",
+          "verdict": "stands-modified",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "Harvested payload 'quote' for pin-op17 is the content-page front-matter/header blob (YAML + title + Background + Issue + '## Rule ... On excessive force:'), not an opinion quotation — a first-pin extraction artifact. The genuine content-page pin-op17 quotation is verbatim-faithful to the cached slip opinion at Page 17.",
+            "severity": "low",
+            "proposed_fix": "Re-harvest pin-op17 to the actual quotation ('It was clearly established as of November 4, 2016 that drawing a weapon on a suspect who was not fleeing or posing a safety risk and tasering a suspect who was not actively resisting arrest constituted excessive force.') at slip op. 17; drop the front-matter capture.",
+            "evidence_quote": "It was clearly established as of November 4, 2016 that drawing a weapon on a suspect who was not fleeing or posing a safety risk and tasering a suspect who was not actively resisting arrest constituted excessive force.",
+            "needs_cl": false,
+            "locator_note": "cached slip op. Page 17 (between the 'Page 17' and 'Page 18' running headers)"
+          },
+          "reasons": [
+            "Payload quote is a harvest artifact (front-matter), not an opinion quotation.",
+            "The true content-page pin-op17 quotation appears verbatim in the cached slip opinion and sits on Page 17 (correct slip pincite), so the corpus quotation stands."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": "Fix the first-pin harvest off-by-one that captures front-matter."
+        },
+        {
+          "assertion_id": "d9139b004411eed7",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Quote 'Wright has produced enough evidence such that a reasonable jury could find that the City's custom surrounding use of force is so settled so as to have the force of law and that it was the moving force behind violations of Wright's constitutional rights.' appears verbatim in the cached slip opinion on Page 33 (municipal-liability holding).",
+            "Harvest quote_fidelity='mismatch' is a false positive; pinpoint_status='slip-only' is accurate here (the pincite is a slip-opinion page)."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": "Flip harvest quote_fidelity 'mismatch' (false positive)."
+        },
+        {
+          "assertion_id": "f85584c9ed6e53e8",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "scope_note ('Published Sixth Circuit decision; good law') is accurate; the cached opinion is a 'RECOMMENDED FOR PUBLICATION' 6th Cir. 2020 decision.",
+            "field_i_validity good_law: lake negative edges are all proposed:true (Gambrel, Saalim, Chaney-Snell, Raimey, etc.) with noisy field_ii ('questioned'/'abrogated'/'overruled'); none is a confirmed adverse treatment of Wright itself."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "2026 currency is not independently citator-verified in the pack, but nothing disclosed refutes good_law for this 2020 published decision."
+          ],
+          "suggested_tightening": null
+        }
+      ]
+    }
+  ]
+}

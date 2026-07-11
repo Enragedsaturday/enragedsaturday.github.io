@@ -1,0 +1,183 @@
+{
+  "packs": [
+    {
+      "group_id": "_overhaul2/lake/cases/Ziglar v. Abbasi.json",
+      "reviewed": [
+        {
+          "assertion_id": "0db253e9ecec133c",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Inventory payload cites (official 582 U.S. 120; parallels 137 S. Ct. 1843, 198 L. Ed. 2d 290, 26 Fla. L. Weekly Fed. S 655, 85 U.S.L.W. 4360; vendor-neutral 2017 U.S. LEXIS 3874, 2017 WL 2621317) match the inlined lake citations block field-for-field.",
+            "official_selection_present:true with display '582 U.S. 120' and official_selection.reason 'selected_rank_1' is consistent; content-page frontmatter citation/parallel_cite/neutral_cite mirror the same cites.",
+            "Identity confirmed: cluster_id 4403804, lead_opinion_id 4181057, expected_citation_found:true; the inlined cached slip opinion is Ziglar v. Abbasi."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "226a93cfc71184b0",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": false,
+          "defect": null,
+          "reasons": [
+            "Assertion honestly reports an unverified frontier stub (field_i_validity 'unverified', as_of_content/as_of_treatment null, varies_by_point false); it makes no legal proposition to refute.",
+            "Lake treatment block matches exactly (composite_basis 'unverified', edges [], derivation {}); field_provenance src 'frontier stub, no treatment'; content page renders Treatment: Unverified under the (white) banner.",
+            "No substantive treatment/progeny is asserted, so nothing is independently verifiable from the disclosed opinion text — the unverified placeholder is confirmed by the disclosed record itself."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Treatment/progeny intentionally deferred (record still under_review after S6 promotion 2026-07-07); requires two-key verification before any good-law claim."
+          ],
+          "suggested_tightening": null
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/Zurcher v. Stanford Daily.json",
+      "reviewed": [
+        {
+          "assertion_id": "c16a6b3d7b61201a",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Inventory payload cites (official 436 U.S. 547; parallels 98 S. Ct. 1970, 56 L. Ed. 2d 525; vendor-neutral 1978 U.S. LEXIS 98) match the inlined lake citations block exactly; official_selection.reason 'selected_rank_1', display '436 U.S. 547'.",
+            "Identity confirmed: cluster_id 109876, expected_citation_found:true, party_name_in_text:true; the inlined cached opinion is Zurcher v. Stanford Daily; content-page frontmatter mirrors the same cites."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "date_decided '1978-10-02' in identity/frontmatter is inconsistent with treatment.as_of_content '1978-05-31' (Zurcher's decision date); outside this cite assertion's payload but worth reconciling."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "14f4ed8dff480038",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Payload quote 'Where the materials sought to be seized may be protected by the First Amendment, the requirements of the Fourth Amendment must be applied with \\'scrupulous exactitude.\\'' matches the inlined cached lead-opinion text verbatim (only inner single-vs-double quote normalization around 'scrupulous exactitude').",
+            "Pincite 'Id. at 564' confirmed: the passage sits between star-pagination markers *564 and *565 in the cached opinion; the page correctly attributes it to Zurcher quoting Stanford v. Texas.",
+            "The lake quote_fidelity:'mismatch' flag is a false positive here — the text is faithful; the flag is explained by slip-only pinpoint_status (star_marker null) and quote-glyph normalization, not a text divergence."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "pinpoint_status 'slip-only' / star_marker null means the pincite page was not star-confirmed by the harvester, though it is confirmable from the disclosed star pagination."
+          ],
+          "suggested_tightening": "Clear the mismatch flag and record star_marker *564 so the false positive does not propagate."
+        },
+        {
+          "assertion_id": "ac9dc0c540da22d4",
+          "dimension": "quote_fidelity",
+          "verdict": "refuted",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "The recorded pinpoint quote for ^pin-556 is not a discrete quotation but a page-chrome extraction artifact: it spans the markdown file header ('--- # Zurcher v. Stanford Daily *436 U.S. 547 (1978)* ...') through the Background/Issue/Rule sections, ending mid-Rule. It does not correspond to any contiguous passage of the Zurcher opinion.",
+            "severity": "medium",
+            "proposed_fix": "Re-harvest ^pin-556 to the sentence the content page actually quotes at that anchor: 'The critical element in a reasonable search is not that the owner of the property is suspected of crime but that there is reasonable cause to believe that the specific \"things\" to be searched for and seized are located on the property to which entry is sought.' That sentence is verbatim-faithful to the cached lead opinion at 436 U.S. 556 (it opens the paragraph immediately after the *556 star marker) and the 'at 556' pincite is correct.",
+            "evidence_quote": "--- # Zurcher v. Stanford Daily *436 U.S. 547 (1978)* ... ## Rule A warrant may issue to search a non-suspect third party's premises on probable cause that evidence is there.",
+            "needs_cl": false,
+            "locator_note": "pin-556; both the inventory payload.quote and lake pinpoints[0].quote carry the chrome artifact (provenance: 'content page quote harvest + lead opinion text'). The page's rendered ^pin-556 quote is correct — the defect is in the harvest/record, not the page."
+          },
+          "reasons": [
+            "The payload 'quote' is a text-extraction artifact (starts at the file's front-matter delimiter), so as recorded it cannot be a faithful quotation of the source — a genuine quote_fidelity failure in the assertion record.",
+            "Cross-check against the cached opinion shows the intended quote ('The critical element ...') is faithful and its pincite (556) correct, so the fix is a re-harvest rather than a page correction."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "The underlying content-page quote at ^pin-556 is a true positive (verbatim, correct pincite) and must not be disturbed by any fix aimed at the corrupted record."
+          ],
+          "suggested_tightening": "Fix the pin-harvester so anchored quotes are isolated to the quoted sentence, not captured from file start; re-run over all slip-only pins."
+        },
+        {
+          "assertion_id": "c56c88b8cf0d744e",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": false,
+          "defect": null,
+          "reasons": [
+            "Assertion (field_i_validity 'good_law' as of 2026-06-30; Fourth Amendment holding remains good law; PPA of 1980, 42 U.S.C. 2000aa, is a statutory overlay not a constitutional limitation) is legally coherent and self-consistent with the lake treatment block.",
+            "No ADOPTED negative determination exists: every treatment edge is proposed:true from 'lane1_negative'/'lane2_top_cited' harvests, and the negative labels are transparent candidate noise (e.g., Illinois v. Gates, United States v. Leon, Hensley v. Eckerhart carry 'overruled'/'abrogated' — those are citing-case signals, not statements that Zurcher was overruled; lower courts cannot abrogate SCOTUS).",
+            "Currency itself is migration-seeded (field_provenance src '_treatment-migration.json + page frontmatter'; warning 'legacy treatment migrated: good -> good_law') and not present in the disclosed opinion text, so the good-law status cannot be independently confirmed from disclosed evidence — but nothing disclosed contradicts it."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Proposed negative edges (State v. Ghim 'questioned'; United States v. Kenneth Rose 'abrogated'; Al-Kidd, Curtin, Gates, Leon 'overruled') are unadjudicated and should be resolved/pruned before S9 close so the noise does not later be mistaken for real negative treatment."
+          ],
+          "suggested_tightening": "Adjudicate or drop the proposed lane-negative edges and attach a citator-derived basis so good_law is verifiable rather than migration-seeded."
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/addington-v-texas--110067.json",
+      "reviewed": [
+        {
+          "assertion_id": "cf064c0d9f831678",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Inventory payload cites (441 U.S. 418, 99 S. Ct. 1804, 60 L. Ed. 2d 323, 1979 U.S. LEXIS 93) match the inlined lake cluster.citations[] 'all' array exactly; no fabricated cite.",
+            "Identity confirmed: cluster_id 110067, expected_citation_found:true; the inlined cached opinion is Addington v. Texas (Frank O'Neal Addington, Texas civil-commitment, clear-and-convincing-evidence standard, decided 1979-04-30).",
+            "display:null / official:null / official_selection_present:false are reported honestly and mirror the lake record; the payload does not assert any incorrect official cite, so the existence claim survives."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "official_selection failed with reason 'unlisted_reporter:U.S.' and court_class 'other' even though identity.court_level is 'scotus' — a stub-stage selection quirk; 441 U.S. 418 should be selected official at promotion so a display cite renders."
+          ],
+          "suggested_tightening": "Repair official-selection court_class for this SCOTUS stub so the U.S. reporter is chosen as official on promotion."
+        },
+        {
+          "assertion_id": "a1d7c7830aec6354",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": false,
+          "defect": null,
+          "reasons": [
+            "Assertion honestly reports an unverified frontier stub (stub:true, status 'verified_identity'; field_i_validity 'unverified', as_of null, edges []); it advances no legal proposition to refute.",
+            "Lake treatment block and field_provenance ('frontier stub, no treatment') match the assertion; no substantive treatment is derivable from the disclosed record, so the unverified placeholder is confirmed rather than contradicted."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Treatment/progeny deferred until S6 promotion; requires derivation before any good-law claim."
+          ],
+          "suggested_tightening": null
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/alasaad-v-mayorkas--u782a2d04.json",
+      "reviewed": [
+        {
+          "assertion_id": "0578197e1e25e27d",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": false,
+          "defect": null,
+          "reasons": [
+            "Assertion reports field_i_validity 'unverified' (as_of null, scope_note null, varies_by_point false); this is consistent with the disclosed lake record, which is a not_found stub (status 'not_found', identity_method 'not_found', reason_code 'frontier_no_candidate_cluster', empty citations).",
+            "No case identity, citation, pinpoint, or opinion text is disclosed (record not resolved to a CL cluster), so no treatment can be independently verified — the unverified state is the honest and only supportable value, and there is no legal proposition to refute.",
+            "Provenance warning 'frontier not_found requires web/second-source cross-check before fabrication inference' is respected: I neither fabricate a defect nor a clean pass."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "The real-world case Alasaad v. Mayorkas (1st Cir. 2021) exists but was not matched to a CL cluster; identity must be resolved via web/second-source before any promotion, and 'not_found' must never be read as 'fabricated'."
+          ],
+          "suggested_tightening": "Re-run identity resolution / second-source cross-check to attach a cluster before this record advances."
+        }
+      ],
+      "notes": ""
+    }
+  ]
+}
