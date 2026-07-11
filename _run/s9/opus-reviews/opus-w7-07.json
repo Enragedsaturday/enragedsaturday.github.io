@@ -1,0 +1,310 @@
+{
+  "packs": [
+    {
+      "group_id": "_overhaul2/lake/cases/Michigan Dept. of State Police v. Sitz.json",
+      "reviewed": [
+        {
+          "assertion_id": "9472f2ca6ddddb65",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion (Rehnquist, C.J., delivering the opinion of the Court) confirms this is Michigan Dept. of State Police v. Sitz; the official cite 496 U.S. 444 is internally consistent — the majority opinion opens at star page *447 and the holding sits at *455, all within vol. 496.",
+            "Official selection present (496 U.S. 444, selected_rank_1); parallels 110 S. Ct. 2481, 110 L. Ed. 2d 412, 1990 U.S. LEXIS 3144, 58 U.S.L.W. 4781 are standard 1990 SCOTUS companions."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Parallel-reporter page numbers (S. Ct./L. Ed. 2d/LEXIS/U.S.L.W.) are not independently confirmable from the disclosed U.S.-reporter cached text."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "781c029356f37aef",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "The rendered ^pin-455 quote ('In sum, the balance of the State's interest in preventing drunken driving ... weighs in favor of the state program. We therefore hold that it is consistent with the Fourth Amendment.') matches the cached opinion (para b497-5) verbatim.",
+            "The quoted passage follows the *455 star marker (which appears in para b496-6), so the pincite '496 U.S. at 455' is correct.",
+            "The payload quote_fidelity='mismatch' is an extractor artifact: the recorded 'quote' field captured the page front-matter/markdown header (title block through '## Rule'), not the actual quoted sentence."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Stored pinpoint.quote field holds front-matter junk; a consumer reading pinpoint.quote directly rather than the rendered page would see the wrong text."
+          ],
+          "suggested_tightening": "Re-extract pinpoint.quote for pin-455 to the actual quoted sentence so the stored quote and quote_fidelity flag stop reading as a spurious mismatch."
+        },
+        {
+          "assertion_id": "5ed336b0c37807b8",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": false,
+          "defect": null,
+          "reasons": [
+            "Nothing in the disclosed evidence refutes good_law: the cached opinion is Sitz itself, and the lake 'edges' are all proposed:true, unadjudicated candidates — several facially spurious (e.g. 'Harmelin v. Michigan ... overruled'), and the 'superseded_by_statute/questioned/criticized' state-court edges reflect state-constitutional divergence, not federal invalidity of Sitz.",
+            "The scope_note's Edmond-distinguished framing states the well-established relationship (City of Indianapolis v. Edmond limited primary-purpose crime-control checkpoints without overruling Sitz's sobriety-checkpoint holding)."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "good_law currency (as_of_treatment 2026-06-30) rests on composite_basis 'migration-seed', not a fresh treatment pull; the Edmond distinction and 2026 currency are not confirmable from the single 1990 opinion inlined in the pack.",
+            "Unadjudicated proposed negative edges (questioned/criticized/superseded_by_statute/overruled) remain in the record."
+          ],
+          "suggested_tightening": "Confirm good_law via a fresh CL treatment pull and resolve/prune the proposed negative edges, especially the spurious 'overruled' cluster matches."
+        }
+      ]
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/Michigan v. Chesternut.json",
+      "reviewed": [
+        {
+          "assertion_id": "200caa35f7413122",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion (Blackmun, J.) confirms Michigan v. Chesternut; the official cite 486 U.S. 567 is consistent — the opinion opens at *569 and runs through *576, all within vol. 486.",
+            "Official selection present (486 U.S. 567, selected_rank_1); parallels 108 S. Ct. 1975, 100 L. Ed. 2d 565, 1988 U.S. LEXIS 2582, 56 U.S.L.W. 4558 are standard 1988 companions."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Parallel-reporter page numbers not independently confirmable from the disclosed U.S.-reporter text."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "1d8e97d723e51bc5",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Rendered ^pin-573b quote ('The test is necessarily imprecise, because it is designed to assess the coercive effect of police conduct, taken as a whole, rather than to focus on particular details of that conduct in isolation.') matches cached para b631-9 verbatim.",
+            "The sentence sits between the *573 and *574 markers, so the star-verified page 573 is correct."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "1ecd692c3d4da0bc",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Rendered ^pin-575 quote ('the police conduct involved here would not have communicated to the reasonable person an attempt to capture ... control the direction or speed of his movement.') matches cached para b632-7 verbatim; it follows the *575 marker, so 'Id. at 575' is correct.",
+            "quote_fidelity='mismatch' is an extractor artifact: the recorded 'quote' field captured the page lead-in phrase 'that label did not make it a seizure:', not the quoted passage."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Stored pinpoint.quote holds a page lead-in rather than the quotation."
+          ],
+          "suggested_tightening": "Re-extract pinpoint.quote for pin-575 to the actual quoted passage."
+        },
+        {
+          "assertion_id": "6f1855e5752d3f05",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Rendered ^pin-575b quote ('While the very presence of a police car driving parallel to a running pedestrian could be somewhat intimidating, this kind of police presence does not, standing alone, constitute a seizure.') matches cached para b632-7 verbatim.",
+            "The sentence is on page 575 (the *576 marker falls at the following Knotts cf.-cite), so the '575–576' span pincite is defensible."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "c34370d1913634cd",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Rendered ^pin-574 quote ('we conclude that respondent was not seized by the police before he discarded the packets containing the controlled substance.') matches cached para b632-7 verbatim.",
+            "The sentence precedes the *575 marker within b632-7 and follows *574, so page 574 is correct."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "e66a9584cc8b0a13",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Rendered ^pin-573 quote ('The test provides that the police can be said to have seized an individual \"only if, in view of all of the circumstances surrounding the incident, a reasonable person would have believed that he was not free to leave.\"') matches cached para b631-8 verbatim; the parenthetical '(quoting United States v. Mendenhall)' is accurate — the quoted words are Mendenhall's test, cited 'Ibid.' (446 U.S. at 554).",
+            "The sentence is on page 573 (between *573 and *574), so the pincite is correct.",
+            "quote_fidelity='mismatch' is an extractor artifact: the recorded 'quote' field captured page front-matter (the Issue tail through the '## Rule' heading), not the quoted sentence."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Stored pinpoint.quote holds front-matter junk."
+          ],
+          "suggested_tightening": "Re-extract pinpoint.quote for pin-573 to the actual quoted sentence."
+        },
+        {
+          "assertion_id": "a55134edea11a2b3",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": false,
+          "defect": null,
+          "reasons": [
+            "The holding characterization in the scope_note (police pursuit without more is not a seizure; the objective Mendenhall 'free to leave' test governs) is confirmed in substance by the cached opinion.",
+            "No disclosed evidence refutes good_law; the record shows 'No negative treatment'.",
+            "The California v. Hodari D. (1991) show-of-authority/submission refinement is accurate black-letter and consistent with (not contradicting) Chesternut."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "as_of_treatment 2026-06-30 currency and the Hodari D. relationship are not confirmable from the single 1988 opinion in the pack (composite_basis 'migration-seed')."
+          ],
+          "suggested_tightening": "Confirm good_law via a fresh CL treatment pull."
+        }
+      ]
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/Michigan v. Clifford.json",
+      "reviewed": [
+        {
+          "assertion_id": "d3695a425a41704f",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion (Powell, J., announcing the judgment of the Court) confirms Michigan v. Clifford; the official cite 464 U.S. 287 is consistent — the opinion body runs *289 through *299, within vol. 464.",
+            "Official selection present (464 U.S. 287, selected_rank_1); parallels 104 S. Ct. 641, 78 L. Ed. 2d 477, 1984 U.S. LEXIS 14, 52 U.S.L.W. 4056 are standard 1984 companions; docket 82-357."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Parallel-reporter page numbers not independently confirmable from the disclosed text."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "432c5ac310be53bc",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Rendered ^pin-295 quote ('we hold that the Cliffords retained reasonable privacy interests in their fire-damaged residence and that the postfire investigations were subject to the warrant requirement.') matches cached para b407-7 verbatim.",
+            "The sentence sits between the *295 and *296 markers, so the star-verified page 295 is correct."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "b2c0cfb0f7dcdf81",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Both halves of the rendered ^pin-294 quote are verbatim in the cached opinion: 'If the primary object is to determine the cause and origin of a recent fire, an administrative warrant will suffice.' (para b406-5) and 'If the primary object of the search is to gather evidence of criminal activity, a criminal search warrant may be obtained only on a showing of probable cause' (para b406-6); the internal ' . . . ' correctly marks the omitted intervening text, and both sentences are on page 294 (between *294 and *295).",
+            "quote_fidelity='mismatch' is an extractor artifact of a stitched two-paragraph quote joined by an ellipsis, which defeats a naive contiguous-substring match."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "The second sentence is truncated at 'probable cause.' with a terminal period substituting for the original '...probable cause to believe that relevant evidence will be found in the place to be searched.'; the omission is non-material but unflagged."
+          ],
+          "suggested_tightening": "Optionally mark the terminal truncation (e.g. 'probable cause . . . .') for scrupulous Bluebook fidelity, and re-extract the stored quote as two spans so the mismatch flag clears."
+        },
+        {
+          "assertion_id": "f8e710335bc0ce12",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Rendered ^pin-293 quote ('If reasonable privacy interests remain in the fire-damaged property, the warrant requirement applies, and any official entry must be made pursuant to a warrant in the absence of consent or exigent circumstances.') matches cached para b404-6 verbatim; the '(plurality)' tag is correct (Powell + Brennan + White + Marshall).",
+            "The *293 marker falls mid-sentence within this quote, so page 293 is correct.",
+            "quote_fidelity='mismatch' is an extractor artifact: the recorded 'quote' field captured page front-matter (title block through '## Rule'), not the quoted sentence."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Stored pinpoint.quote holds front-matter junk."
+          ],
+          "suggested_tightening": "Re-extract pinpoint.quote for pin-293 to the actual quoted sentence."
+        },
+        {
+          "assertion_id": "c1bdcfc36e85a6ca",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": false,
+          "defect": null,
+          "reasons": [
+            "The plurality composition asserted in the scope_note (Powell, J., joined by Brennan, White, and Marshall) is confirmed verbatim by the cached author/judges lines.",
+            "No disclosed evidence refutes good_law of the administrative-warrant / criminal-warrant post-fire framework, which the scope_note states correctly."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "The scope_note's claim that Stevens, J., concurred in the judgment to supply the fifth vote is NOT in the disclosed cached text (only the Powell plurality is inlined), and 2026-06-30 currency (composite_basis 'migration-seed') is not confirmable from the 1984 opinion."
+          ],
+          "suggested_tightening": "Confirm the Stevens concurrence-in-judgment and good_law currency via CL (fetch the full cluster's separate opinions plus a treatment pull)."
+        }
+      ]
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/Michigan v. DeFillippo.json",
+      "reviewed": [
+        {
+          "assertion_id": "5bb33466756497a0",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion (Burger, C.J.) confirms Michigan v. DeFillippo, No. 77-1680, decided June 25 1979; the official cite 443 U.S. 31 is consistent — the caption reads '443 U.S. 31 (1979)' and the opinion runs *32 through *46.",
+            "Official selection present (443 U.S. 31, selected_rank_1); parallels 99 S. Ct. 2627, 61 L. Ed. 2d 343, 1979 U.S. LEXIS 135 are standard 1979 companions."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Lake identity has opinion_id == cluster_id (110127), which is unusual, but the citation/existence payload under review is unaffected; parallel-reporter pages not independently confirmable from the disclosed text."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "9094fae5afdc4bc4",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Rendered ^pin-40 quote ('The subsequently determined invalidity of the Detroit ordinance on vagueness grounds does not undermine the validity of the arrest made for violation of that ordinance, and the evidence discovered in the search of respondent should not have been suppressed.') matches the cached opinion verbatim; the sentence follows the *40 marker, so '443 U.S. at 40' is correct.",
+            "quote_fidelity='mismatch' is an extractor artifact: the recorded 'quote' field captured page front-matter (title block through '## Rule No.'), not the quoted sentence."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Stored pinpoint.quote holds front-matter junk."
+          ],
+          "suggested_tightening": "Re-extract pinpoint.quote for pin-40 to the actual quoted sentence."
+        },
+        {
+          "assertion_id": "2a7570a0be9bc4f9",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": false,
+          "defect": null,
+          "reasons": [
+            "No disclosed evidence refutes good_law; the cached opinion is DeFillippo itself and the record shows 'No negative treatment'. The holding (an arrest under a presumptively valid ordinance, later invalidated, remains valid; the search incident to it is admissible) is confirmed by the cached text.",
+            "The scope_note candidly flags the currency as provisional ('Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade') — an honest provisional label, not a defect."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "good_law currency (2026-06-30) is a migration-seed rather than a fresh derivation, per the scope_note's own admission, and is not confirmable from the 1979 opinion.",
+            "Page-metadata inconsistency outside the reviewed assertions: front-matter homes points to [[The Good-Faith Exception]] but '## Appears on' lists [[The Exclusionary Rule]]."
+          ],
+          "suggested_tightening": "Run the S2 treatment re-derivation the scope_note anticipates to replace the seeded currency."
+        }
+      ]
+    }
+  ]
+}

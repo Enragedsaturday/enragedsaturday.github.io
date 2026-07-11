@@ -1,0 +1,248 @@
+{
+  "packs": [
+    {
+      "group_id": "_overhaul2/lake/cases/Maryland v. Wilson.json",
+      "reviewed": [
+        {
+          "assertion_id": "9ebd8f5cf5eaccff",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion header confirms official cite '519 U.S. 408' (1997), caption 'MARYLAND v. WILSON', 'United States Supreme Court', decided Feb. 19, 1997.",
+            "Payload official/display '519 U.S. 408' matches the lake citations block and cluster_id 118086 (identity: expected_citation_found=true, canonical_name_match=true)."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Parallel reporter cites (117 S. Ct. 882; 137 L. Ed. 2d 41; 1997 U.S. LEXIS 1271) are internal to the lake record; cached text shows only the U.S. official cite, so parallel page numbers were not independently cross-checked."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "8bdcf9716f7fc70a",
+          "dimension": "quote_fidelity",
+          "verdict": "stands-modified",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "Payload pinpoints[].quote captured the content-page preamble (frontmatter + Background/Issue/Rule-lead 'Yes.') instead of the ^pin-415 block-quoted holding, so the self-reported quote_fidelity:'mismatch' is a harvest false-positive, not a content defect. The actual pincited quote is verbatim-faithful.",
+            "severity": "low",
+            "proposed_fix": "Re-harvest pinpoints[].quote to the ^pin-415 block quote and clear the mismatch flag; rendered quote is verbatim-correct at 519 U.S. 415.",
+            "evidence_quote": "We therefore hold that an officer making a traffic stop may order passengers to get out of the car pending completion of the stop.",
+            "needs_cl": false,
+            "locator_note": "pin-415; content-page Rule line vs cached opinion at star-pagination *415"
+          },
+          "reasons": [
+            "The actual ^pin-415 block quote on the content page ('We therefore hold that an officer making a traffic stop may order passengers to get out of the car pending completion of the stop.') matches the cached opinion verbatim, on page *415, and the pincite '519 U.S. at 415' is correct.",
+            "The mismatch flag reflects a mis-captured harvest span (page markdown), not an infidelity in the rendered quote."
+          ],
+          "breaks_true_positives": true,
+          "residual_risks": [
+            "pinpoint_status='slip-only' although reporter star-pagination (*415) is present in cached text; the slip-only label appears stale."
+          ],
+          "suggested_tightening": "Anchor the fidelity check to the ^pin span and assert against reporter star-pagination rather than the harvested preamble blob."
+        },
+        {
+          "assertion_id": "6eda12838d514d3f",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "field_i_validity='good_law' is consistent with the disclosed record; all 28 treatment edges are proposed:true / field_iii='mentioned' (unadjudicated keyword candidates), none confirmed as adverse to Wilson.",
+            "No disclosed SCOTUS/binding overruling; the 1997 majority holding is present verbatim in the cached opinion."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Proposed negative edges remain unadjudicated (lane1 proposed_negative_events=3, lane2=25; audit_marker 'R15 treatment audit required'); scope_note discloses re-derivation may downgrade the migration-seed."
+          ],
+          "suggested_tightening": "Resolve the R15 treatment audit before certifying currency to the as_of_treatment date."
+        }
+      ],
+      "notes": "Sighted review; cached opinion text fully inlined. Existence + treatment clean; the single quote_pinpoint carries a harvest-artifact mismatch flag while the rendered quote is verbatim-faithful."
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/Massachusetts v. Sheppard.json",
+      "reviewed": [
+        {
+          "assertion_id": "31a803ac25ea472c",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion (Justice White, 'companion to United States v. Leon', warrant controlled-substance-form defect) is unmistakably Massachusetts v. Sheppard; star-pagination *983-*991 sits within volume 468 U.S. beginning at 981.",
+            "Payload official/display '468 U.S. 981' matches the lake citations block and cluster_id 111263."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Parallel cites (104 S. Ct. 3424; 82 L. Ed. 2d 737; 52 U.S.L.W. 5177; 1984 U.S. LEXIS 154) are internal to the record; cached XML shows star-pagination but not the parallel reporter first pages, so they were not independently cross-checked."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "81e0fb6dc19df0e3",
+          "dimension": "quote_fidelity",
+          "verdict": "stands-modified",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "Payload pinpoints[].quote captured the content-page preamble (frontmatter + Background/Issue/Rule-lead) instead of the ^pin-989 block quote, so quote_fidelity:'mismatch' is a harvest false-positive. The actual pincited quote is verbatim-faithful and the 989-990 pincite exactly straddles the page break.",
+            "severity": "low",
+            "proposed_fix": "Re-harvest pinpoints[].quote to the ^pin-989 block quote and clear the mismatch flag; rendered quote is verbatim-correct across 468 U.S. 989-990.",
+            "evidence_quote": "we refuse to rule that an officer is required to disbelieve a judge who has just advised him, by word and by action, that the warrant he possesses authorizes him to conduct the search he has requested.",
+            "needs_cl": false,
+            "locator_note": "pin-989; content-page Rule line vs cached opinion where '*990' falls mid-sentence after 'an officer is required'"
+          },
+          "reasons": [
+            "The actual ^pin-989 block quote matches the cached opinion verbatim; the '*990' star break falls between 'is required' and 'to disbelieve a judge', so the quote genuinely spans pages 989-990 and the pincite '468 U.S. at 989-990' is exactly right.",
+            "The mismatch flag reflects a mis-captured harvest span, not an infidelity in the rendered quote."
+          ],
+          "breaks_true_positives": true,
+          "residual_risks": [
+            "pinpoint_status='slip-only' although reporter star-pagination (*989/*990) is present in cached text; the slip-only label appears stale."
+          ],
+          "suggested_tightening": "Anchor the fidelity check to the ^pin span and assert against reporter star-pagination rather than the harvested preamble blob."
+        },
+        {
+          "assertion_id": "3ee3fbbd5af86582",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "field_i_validity='good_law' is consistent with the disclosed record; all 31 treatment edges are proposed:true / field_iii='mentioned' (unadjudicated keyword candidates), none confirmed adverse to Sheppard.",
+            "No disclosed SCOTUS/binding overruling; the 1984 good-faith companion holding is present in the cached opinion."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Proposed negative edges remain unadjudicated (lane1 proposed_negative_events=7, lane2=24; audit_marker 'R15 treatment audit required'); scope_note discloses re-derivation may downgrade the migration-seed."
+          ],
+          "suggested_tightening": "Resolve the R15 treatment audit before certifying currency to the as_of_treatment date."
+        }
+      ],
+      "notes": "Sighted review; cached opinion text (XML with star-pagination) fully inlined. Quote spans the 989-990 page break exactly as pincited; the mismatch flag is a harvest artifact."
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/Massiah v. United States.json",
+      "reviewed": [
+        {
+          "assertion_id": "e209d54ad852784f",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion header confirms official cite '377 U.S. 201' (1964), caption 'Massiah v. United States', opinion/cluster 106822.",
+            "Payload official/display '377 U.S. 201' matches the lake citations block."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Parallel cites (84 S. Ct. 1199; 12 L. Ed. 2d 246; 1964 U.S. LEXIS 1277) are internal to the record; cached text shows only the U.S. official cite, so parallel first pages were not independently cross-checked."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "dbc72c01ac66feb9",
+          "dimension": "quote_fidelity",
+          "verdict": "stands-modified",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "Payload pinpoints[].quote captured the content-page preamble (frontmatter + Background/Issue/Rule-lead 'No -- ...') instead of the ^pin-206 block quote, so quote_fidelity:'mismatch' is a harvest false-positive. The actual pincited quote is verbatim-faithful.",
+            "severity": "low",
+            "proposed_fix": "Re-harvest pinpoints[].quote to the ^pin-206 block quote and clear the mismatch flag; rendered quote is verbatim-correct at 377 U.S. 206.",
+            "evidence_quote": "We hold that the petitioner was denied the basic protections of that guarantee when there was used against him at his trial evidence of his own incriminating words, which federal agents had deliberately elicited from him after he had been indicted and in the absence of his counsel.",
+            "needs_cl": false,
+            "locator_note": "pin-206; content-page Rule line vs cached opinion where '*206' precedes 'U. S. 458. We hold that the petitioner was denied...'"
+          },
+          "reasons": [
+            "The actual ^pin-206 block quote matches the cached opinion verbatim; the '*206' star marker immediately precedes the 'We hold that the petitioner was denied...' sentence, confirming the pincite '377 U.S. at 206'.",
+            "The mismatch flag reflects a mis-captured harvest span, not an infidelity in the rendered quote."
+          ],
+          "breaks_true_positives": true,
+          "residual_risks": [
+            "pinpoint_status='slip-only' although reporter star-pagination (*206) is present in cached text; the slip-only label appears stale."
+          ],
+          "suggested_tightening": "Anchor the fidelity check to the ^pin span and assert against reporter star-pagination rather than the harvested preamble blob."
+        },
+        {
+          "assertion_id": "078a76788f4a6dc9",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "field_i_validity='good_law' is consistent with the disclosed record; all 36 treatment edges are proposed:true / field_iii='mentioned' (unadjudicated keyword candidates), none confirmed adverse to Massiah.",
+            "No disclosed SCOTUS/binding overruling; the 1964 Sixth Amendment holding is present verbatim in the cached opinion."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Proposed negative edges remain unadjudicated (lane1 proposed_negative_events=12, lane2=24; audit_marker 'R15 treatment audit required'); scope_note discloses re-derivation may downgrade the migration-seed."
+          ],
+          "suggested_tightening": "Resolve the R15 treatment audit before certifying currency to the as_of_treatment date."
+        }
+      ],
+      "notes": "Sighted review; cached opinion text fully inlined. Existence + treatment clean; quote_pinpoint carries a harvest-artifact mismatch flag while the rendered quote is verbatim-faithful at page 206."
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/Mathews v. United States.json",
+      "reviewed": [
+        {
+          "assertion_id": "1c6f589b83eea359",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion header confirms official cite '485 U.S. 58' (1988), caption 'Mathews v. United States', opinion/cluster 112012; body recites the SBA/DeShazer entrapment facts and the Seventh Circuit affirmance.",
+            "Payload official/display '485 U.S. 58' matches the lake citations block."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Parallel cites (108 S. Ct. 883; 99 L. Ed. 2d 54; 1988 U.S. LEXIS 943) are internal to the record; cached text shows only the U.S. official cite, so parallel first pages were not independently cross-checked."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "7a0ca345ad126335",
+          "dimension": "quote_fidelity",
+          "verdict": "stands-modified",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "Payload pinpoints[].quote captured the content-page preamble (frontmatter + Background/Issue/Rule-lead 'Yes.') instead of the ^pin-62 block quote, so quote_fidelity:'mismatch' is a harvest false-positive. The actual pincited quote is verbatim-faithful.",
+            "severity": "low",
+            "proposed_fix": "Re-harvest pinpoints[].quote to the ^pin-62 block quote and clear the mismatch flag; rendered quote is verbatim-correct at 485 U.S. 62.",
+            "evidence_quote": "We hold that even if the defendant denies one or more elements of the crime, he is entitled to an entrapment instruction whenever there is sufficient evidence from which a reasonable jury could find entrapment.",
+            "needs_cl": false,
+            "locator_note": "pin-62; content-page Rule line vs cached opinion where the holding sits between '*62' and the following '*63' marker"
+          },
+          "reasons": [
+            "The actual ^pin-62 block quote matches the cached opinion verbatim; the holding 'We hold that even if the defendant denies one or more elements...' falls after the '*62' star marker and before the '*63' marker, confirming the pincite '485 U.S. at 62'.",
+            "The mismatch flag reflects a mis-captured harvest span, not an infidelity in the rendered quote."
+          ],
+          "breaks_true_positives": true,
+          "residual_risks": [
+            "pinpoint_status='slip-only' although reporter star-pagination (*62/*63) is present in cached text; the slip-only label appears stale."
+          ],
+          "suggested_tightening": "Anchor the fidelity check to the ^pin span and assert against reporter star-pagination rather than the harvested preamble blob."
+        },
+        {
+          "assertion_id": "a9c6b5fc08793648",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "field_i_validity='good_law' is consistent with the disclosed record; all 29 treatment edges are proposed:true / field_iii='mentioned' (unadjudicated keyword candidates), none confirmed adverse to Mathews.",
+            "No disclosed SCOTUS/binding overruling; the 1988 entrapment-instruction holding is present verbatim in the cached opinion."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Proposed negative edges remain unadjudicated (lane1 proposed_negative_events=6, lane2=23; audit_marker 'R15 treatment audit required'); scope_note discloses re-derivation may downgrade the migration-seed."
+          ],
+          "suggested_tightening": "Resolve the R15 treatment audit before certifying currency to the as_of_treatment date."
+        }
+      ],
+      "notes": "Sighted review; cached opinion text fully inlined. Existence + treatment clean; quote_pinpoint carries a harvest-artifact mismatch flag while the rendered quote is verbatim-faithful at page 62."
+    }
+  ]
+}

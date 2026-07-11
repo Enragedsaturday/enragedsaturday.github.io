@@ -1,0 +1,284 @@
+{
+  "packs": [
+    {
+      "group_id": "_overhaul2/lake/cases/Lynumn v. Illinois.json",
+      "reviewed": [
+        {
+          "assertion_id": "17b1a966c228e725",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached majority opinion (Mr. Justice Stewart) carries U.S. Reports star-pagination *529 through *538, placing the opinion's first page at 528 -- matches official cite 372 U.S. 528.",
+            "Case name 'Lynumn v. Illinois', cluster 106558, 1963 SCOTUS provenance all consistent; official_selection_present is true and display cite equals official cite."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Parallel cites (83 S. Ct. 917; 9 L. Ed. 2d 922; 1963 U.S. LEXIS 1907) are not independently confirmable from the slip text, but the controlling official U.S. cite is."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "9b979930b02e69e9",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Opinion at page 534 reads: 'If so, the confession cannot be deemed [the product of a rational intellect and a free will]. Blackburn v. Alabama, 361 U. S. 199, 208.' -- the page's pin-534a quotation is verbatim; only nested-quote glyph style (single vs double) differs.",
+            "Attribution '(quoting Blackburn v. Alabama, 361 U.S. 199, 208 (1960))' is accurate: the opinion cites Blackburn immediately after the quoted phrase; pincite 534 confirmed by the *534 star.",
+            "Payload flag quote_fidelity=mismatch is a false positive from glyph normalization and the editorial lead-in ('If the will was overborne,' framing the opinion's 'If so,'), which sits outside the quotation marks."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": "Normalize curly/nested quote glyphs and strip editorial lead-ins before the fidelity comparator runs, to avoid spurious mismatch flags."
+        },
+        {
+          "assertion_id": "c4a27fcd84fe1536",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "The captured 'quote' string is a mis-extraction: it concatenates the content page's own Background/Issue/Rule narrative and literal markdown headers ('## Issue', '## Rule') that cannot appear in a court opinion -- it is not a quotation the page presents at pin-534.",
+            "The page's ACTUAL pin-534 quotation ('It is thus abundantly clear that the petitioner's oral confession was made only after the police had told her that state financial aid for her infant children would be cut off, and her children taken from her, if she did not cooperate. ... We think it clear that a confession made under such circumstances must be deemed not voluntary, but coerced. That is the teaching of our cases. We have said that the question in [each] case is whether the defendant's will was overborne at the time he confessed.') is verbatim-faithful to opinion page 534, with a marked ellipsis and a bracketed [each] correcting the slip OCR 'epch'.",
+            "Pincite 534 confirmed by the *534 star; the mismatch flag reflects the broken extraction, not any defect in the page's quote fidelity."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Treating this extractor mismatch as a real defect would break a genuine true positive (the faithful pin-534 quotation)."
+          ],
+          "suggested_tightening": "Fix the quote extractor to anchor on the pin's actual quoted span rather than capturing the preceding front-matter/narrative block."
+        },
+        {
+          "assertion_id": "a2816a2c662d543f",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": false,
+          "defect": null,
+          "reasons": [
+            "Scope-note description is faithful to the disclosed opinion: the Court held the confession coerced and involuntary where police threatened loss of welfare (ADC) aid and removal of the children, and reversed -- a totality-of-circumstances coercion holding.",
+            "No disclosed evidence contradicts good_law; composite_basis is 'migration-seed'.",
+            "Currency (good_law as of 2026-06-30, no negative subsequent treatment) cannot be affirmed from the 1963 slip opinion alone -- it requires a citator."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "good_law is a migration-seeded value, not citator-derived; a citator is needed to confirm no subsequent negative treatment."
+          ],
+          "suggested_tightening": "Re-derive treatment from a citator rather than migration-seed before final certification."
+        }
+      ]
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/Maine v. Moulton.json",
+      "reviewed": [
+        {
+          "assertion_id": "e2940a151700e4e1",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached majority opinion (Justice Brennan) carries U.S. Reports star-pagination *162 through *180, consistent with the opinion beginning at 159 -- matches official cite 474 U.S. 159.",
+            "Case name 'Maine v. Moulton', cluster 111546; official_selection_present true and display cite equals official cite."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Parallel cites (106 S. Ct. 477; 88 L. Ed. 2d 481; 1985 U.S. LEXIS 147; 54 U.S.L.W. 4039) not independently confirmable from slip text; the official U.S. cite is."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "57b8c21976b9ca1d",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "The captured 'quote' is a mis-extraction: it is the content page's front matter ('---', '# Maine v. Moulton', the TreatmentBadge HTML comment) plus Background/Issue/Rule narrative -- not a quotation.",
+            "The page's ACTUAL pin-176 quotation ('the Sixth Amendment is not violated whenever -- by luck or happenstance -- the State obtains incriminating statements from the accused after the right to counsel has attached.') is verbatim-faithful to opinion page 176.",
+            "Pincite 176 confirmed by the *176 star; the mismatch flag reflects the broken extraction, not a page defect."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Adopting this extractor mismatch as a defect would break the faithful pin-176 true positive."
+          ],
+          "suggested_tightening": "Anchor quote extraction to the pin's actual span; ignore front-matter and markdown headers."
+        },
+        {
+          "assertion_id": "f61be1bbb5901ee1",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Opinion page 176 reads: 'However, knowing exploitation by the State of an opportunity to confront the accused without counsel being present is as much a breach of the State's obligation not to circumvent the right to the assistance of counsel as is the intentional creation of such an opportunity. Accordingly, the Sixth Amendment is violated when the State obtains incriminating statements by knowingly circumventing the accused's right to have counsel present in a confrontation between the accused and a state agent.'",
+            "The page's pin-176a quotation matches word-for-word; only the leading 'However,' is trimmed (outside the quotation). Attribution 'Id.' resolves to 474 U.S. at 176 and is correct.",
+            "Payload mismatch is a false positive (trimmed lead-in connector plus em-dash/glyph normalization)."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": "Strip leading connectors and normalize glyphs before the fidelity comparison."
+        },
+        {
+          "assertion_id": "8e8abc3ff5bcb0c0",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": false,
+          "defect": null,
+          "reasons": [
+            "Disclosed opinion supports the case's nature: the Sixth Amendment right to counsel was violated by knowing exploitation/deliberate elicitation; the Maine SJC was affirmed, and the State's surveillance-of-other-crimes motive did not cure the charged-offense violation.",
+            "field_i_validity good_law is not contradicted by any disclosed evidence.",
+            "The scope_note is an internal process note ('Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade'); currency as of 2026-06-30 is not verifiable from the 1985 opinion -- it needs a citator."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "scope_note is a process/meta note rather than a substantive scope description; good_law is migration-seeded, not citator-derived."
+          ],
+          "suggested_tightening": "Replace the meta scope_note with a substantive scope description and re-derive currency from a citator."
+        }
+      ]
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/Malley v. Briggs.json",
+      "reviewed": [
+        {
+          "assertion_id": "caf51ab070988bc6",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached majority opinion (Justice White) carries U.S. Reports star-pagination *337 through *346, consistent with the opinion beginning at 335 -- matches official cite 475 U.S. 335.",
+            "Case name 'Malley v. Briggs', cluster 111611; official_selection_present true and display cite equals official cite."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Parallel cites (106 S. Ct. 1092; 89 L. Ed. 2d 271; 1986 U.S. LEXIS 29; 54 U.S.L.W. 4243) not independently confirmable from slip text; the official U.S. cite is."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "a4c45e020a181f58",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "The captured 'quote' is a mis-extraction: front matter ('---', '# Malley v. Briggs', the TreatmentBadge comment) plus Background/Issue/Rule narrative -- not a quotation.",
+            "The page's ACTUAL pin-341 quotation ('Defendants will not be immune if, on an objective basis, it is obvious that no reasonably competent officer would have concluded that a warrant should issue; but if officers of reasonable competence could disagree on this issue, immunity should be recognized.') is verbatim-faithful to opinion page 341.",
+            "Pincite 341 confirmed by the *341 star; the mismatch flag reflects the broken extraction."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Adopting this mismatch as a defect would break the faithful pin-341 true positive; the companion quote 'all but the plainly incompetent or those who knowingly violate the law' at 341 is likewise verbatim in the opinion."
+          ],
+          "suggested_tightening": "Anchor quote extraction to the pin's actual span rather than the preceding narrative/front-matter."
+        },
+        {
+          "assertion_id": "e4d2b570fc9a46f2",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Opinion page 345 reads: 'The analogous question in this case is whether a reasonably well-trained officer in petitioner's position would have known that his affidavit failed to establish probable cause and that he should not have applied for the warrant.'",
+            "The page's pin-345 quotation matches word-for-word; attribution 'Id. at 345' is correct (the *345 star precedes the sentence).",
+            "Payload mismatch is a false positive (glyph/apostrophe normalization)."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": "Normalize glyphs before the fidelity comparison."
+        },
+        {
+          "assertion_id": "c2484938c7b42f46",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": false,
+          "defect": null,
+          "reasons": [
+            "Scope-note description is faithful to the disclosed opinion: officers applying for warrants get qualified, not absolute, immunity, under the objective-reasonableness standard ('no reasonably competent officer would have concluded that a warrant should issue').",
+            "No disclosed evidence contradicts good_law; composite_basis is migration-seed.",
+            "Currency as of 2026-06-30 is not verifiable from the 1986 opinion -- it needs a citator."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "good_law currency is seeded, not citator-derived."
+          ],
+          "suggested_tightening": "Re-derive treatment from a citator before certification."
+        }
+      ]
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/Mallory v. United States.json",
+      "reviewed": [
+        {
+          "assertion_id": "81121a1a4fc58cea",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached majority opinion (Mr. Justice Frankfurter) carries U.S. Reports star-pagination *450 through *456, consistent with the opinion beginning at 449 -- matches official cite 354 U.S. 449.",
+            "Case name 'Mallory v. United States', cluster 105545; official_selection_present true and display cite equals official cite."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Parallel cites (77 S. Ct. 1356; 1 L. Ed. 2d 1479; 1957 U.S. LEXIS 586) not independently confirmable from slip text; the official U.S. cite is."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "22eec4e980b7e3ab",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "The captured 'quote' is a mis-extraction: front matter ('---', '# Mallory v. United States', the TreatmentBadge comment) plus Background/Issue/Rule narrative -- not a quotation.",
+            "The page's ACTUAL pin-454 quotation ('is not to be taken to police headquarters in order to carry out a process of inquiry that lends itself, even if not so designed, to eliciting damaging statements to support the arrest and ultimately his guilt.') is verbatim-faithful to opinion page 454 (opinion: 'But he is not to be taken to police headquarters ...').",
+            "Pincite 454 confirmed by the *454 star; the mismatch flag reflects the broken extraction."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Adopting this mismatch as a defect would break the faithful pin-454 true positive."
+          ],
+          "suggested_tightening": "Anchor quote extraction to the pin's actual span."
+        },
+        {
+          "assertion_id": "ea0969e6dfb8c0a7",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Opinion page 455 reads: 'The duty enjoined upon arresting officers to arraign without unnecessary delay indicates that the command does not call for mechanical or automatic obedience. Circumstances may justify a brief delay between arrest and arraignment, as for instance, where the story volunteered by the accused is susceptible of quick verification through third parties. But the delay must not be of a nature to give opportunity for the extraction of a confession.'",
+            "The page's pin-455 quotation is faithful: the clause 'as for instance ... third parties' is properly elided with a marked ellipsis ( . . . . ); every retained word is verbatim. Attribution 'Id. at 455' correct (the *455 star precedes the passage).",
+            "Payload mismatch is a false positive caused by the author-marked ellipsis omission."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": "Account for author-marked ellipses when scoring quote fidelity."
+        },
+        {
+          "assertion_id": "a3937c1063194f98",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": false,
+          "defect": null,
+          "reasons": [
+            "Disclosed opinion supports the descriptive core: Mallory is the Rule 5(a) prompt-presentment case building on McNabb (the opinion turns entirely on Fed. R. Crim. P. 5(a) 'without unnecessary delay'), a federal-rule holding rather than a constitutional rule binding the States.",
+            "The scope_note's subsequent-history claim ('modified -- not supplanted -- by 18 U.S.C. 3501's six-hour safe harbor, per Corley v. United States') is NOT verifiable from the disclosed 1957 Mallory opinion; Section 3501 (1968) and Corley (2009) are outside the inlined evidence.",
+            "No disclosed evidence contradicts good_law, but currency as of 2026-06-30 needs a citator/external sources."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "The Corley/Section 3501 'modified not supplanted' proposition and good_law currency require external verification not present in the pack."
+          ],
+          "suggested_tightening": "Attach citator/Corley evidence to substantiate the Section 3501-modification statement and confirm good_law currency."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,254 @@
+{
+  "packs": [
+    {
+      "group_id": "_overhaul2/lake/cases/Maryland v. King.json",
+      "reviewed": [
+        {
+          "assertion_id": "c0b2dc8e1b82bb8d",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "All 7 payload cites (569 U.S. 435; 133 S. Ct. 1958; 186 L. Ed. 2d 1; 2013 U.S. LEXIS 4165; 24 Fla. L. Weekly Fed. S 234; 81 U.S.L.W. 4343; 2013 WL 2371466) appear verbatim in lake citations.all[] with matching volume/reporter/page/type.",
+            "payload official=null / display=null / official_selection_present=false matches record official_selection.selected=null (reason 'unlisted_reporter:Fla. L. Weekly Fed. S'); no official over-claimed."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "62452290a6307e27",
+          "dimension": "quote_fidelity",
+          "verdict": "stands-modified",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "The pin-465 pinpoint record's stored `quote` field captured rendered page front-matter/chrome ('--- # Maryland v. King ... ## Rule Yes.') instead of the sentence the content anchors to ^pin-465; the record self-flags quote_fidelity='mismatch'. The reader-facing anchored Rule quote is nonetheless verbatim-faithful to the slip.",
+            "severity": "low",
+            "proposed_fix": "Repair the pinpoint's captured `quote` to the anchored Rule sentence ('When officers make an arrest supported by probable cause to hold for a serious offense and they bring the suspect to the station to be detained in custody, taking and analyzing a cheek swab of the arrestee's DNA is, like fingerprinting and photographing, a legitimate police booking procedure that is reasonable under the Fourth Amendment.') so quote_fidelity resolves to match.",
+            "evidence_quote": "When officers make an arrest supported by probable cause to hold for a serious offense and they bring the suspect to the station to be detained in custody, taking and analyzing a cheek swab of the arrestee's DNA is, like fingerprinting and photographing, a legitimate police booking procedure that is reasonable under the Fourth Amendment.",
+            "needs_cl": false,
+            "locator_note": "King cached slip, Opinion of the Court conclusion (immediately preceding 'The judgment ... is reversed. It is so ordered.'); pincite 569 U.S. at 465-466 correct."
+          },
+          "reasons": [
+            "Content Rule quote anchored at ^pin-465 matches the slip conclusion verbatim (cached text: 'When officers make an arrest ... reasonable under the Fourth Amendment.'), and 569 U.S. 465-466 is the Court's concluding holding page — substantive quote and pincite are sound.",
+            "Only the pinpoint record's stored quote is malformed (page chrome), which is why the automated check reports 'mismatch'; this is a data-hygiene defect, not a substantive misquote."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Full page-precision (465 vs 466) not independently pinned in disclosed slip which lacks reporter star-pagination; corroborated by the sentence being the opinion's final holding."
+          ],
+          "suggested_tightening": "Re-derive slip-only pinpoint captures so the stored quote equals the anchored sentence rather than the block-start chrome."
+        },
+        {
+          "assertion_id": "ce45ff0fc55c3dca",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "field_i_validity='good_law' as of 2026-06-30 is defensible: Maryland v. King is controlling SCOTUS arrestee-DNA authority and no disclosed edge shows a higher-court reversal.",
+            "The proposed negative edges (field_ii overruled/questioned/superseded_by_statute) are all 'proposed':true citator signals from state and lower courts that cannot overrule SCOTUS — classic citator false positives, not adopted treatment.",
+            "Payload treatment fields (as_of_content/as_of_treatment/varies_by_point/scope_note) match the lake treatment block exactly."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "derivation flags audit_needed=true with 'R15 treatment audit required' (lane1=11, lane2=24 proposed_negative_events); good_law is migration-seed and could be re-derived, but lane3_recency shows only 1 unreviewed signal and no confirmed downgrade."
+          ],
+          "suggested_tightening": "Complete the R15 audit to convert proposed negative edges to accept/reject before final treatment lock."
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/Maryland v. Macon.json",
+      "reviewed": [
+        {
+          "assertion_id": "7ea80cd310fa0880",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "All 5 payload cites (472 U.S. 463; 105 S. Ct. 2778; 86 L. Ed. 2d 370; 1985 U.S. LEXIS 110; 53 U.S.L.W. 4783) appear verbatim in lake citations.all[].",
+            "payload official=472 U.S. 463 / display=472 U.S. 463 / official_selection_present=true matches record official_selection.selected='472 U.S. 463' (reason selected_rank_1)."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "828315d2a9c70211",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "pin-469a's stored quote is an ellipsis-joined quotation whose both fragments appear verbatim and in order in the cached slip at 472 U.S. 469: 'Nor was the subsequent purchase a seizure within the meaning of the Fourth Amendment.' and 'Here, respondent voluntarily transferred any possessory interest he may have had in the magazines to the purchaser upon the receipt of the funds.'",
+            "The '. . . .' ellipsis legitimately elides the intervening sentence ('A seizure occurs when ... in the property seized. United States v. Jacobsen, supra, at 113.'); pincite 'Id.' = 472 U.S. 469 is correct."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Record self-flags quote_fidelity='mismatch', but that is an exact-substring-matcher false positive caused by the ellipsis; the quote is faithful, so refuting it would break a true positive."
+          ],
+          "suggested_tightening": "Teach the fidelity checker to split on ellipsis and match fragments so faithful ellipsis quotes stop registering as 'mismatch'."
+        },
+        {
+          "assertion_id": "f15a6f2ebc1c9128",
+          "dimension": "quote_fidelity",
+          "verdict": "stands-modified",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "The pin-469 pinpoint record's stored `quote` field captured page front-matter/chrome ('--- # Maryland v. Macon ... ## Rule **No search.**') instead of the 'No search' sentence the content anchors to ^pin-469; record self-flags quote_fidelity='mismatch'. The reader-facing anchored quote is faithful.",
+            "severity": "low",
+            "proposed_fix": "Repair the stored `quote` to the anchored sentence ('The officer's action in entering the bookstore and examining the wares that were intentionally exposed to all who frequent the place of business did not infringe a legitimate expectation of privacy and hence did not constitute a search within the meaning of the Fourth Amendment.').",
+            "evidence_quote": "The officer's action in entering the bookstore and examining the wares that were intentionally exposed to all who frequent the place of business did not infringe a legitimate, expectation of privacy and hence did not constitute a search within the meaning of the Fourth Amendment.",
+            "needs_cl": false,
+            "locator_note": "Macon cached slip para b479-5, on page *469 (the *469 star-page marker precedes this paragraph); content drops only the OCR stray comma in 'legitimate, expectation'."
+          },
+          "reasons": [
+            "Displayed 'No search' Rule quote anchored at ^pin-469 matches the slip verbatim except the content correctly omits an OCR-inserted comma ('legitimate, expectation' -> 'legitimate expectation'); pincite 472 U.S. 469 confirmed by the *469 page marker.",
+            "Only the pinpoint record's stored quote is malformed (chrome), producing the 'mismatch' flag; substantive quote and pincite are sound."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": "Re-derive slip-only pinpoint captures so stored quote equals the anchored sentence, not block-start chrome."
+        },
+        {
+          "assertion_id": "d735060468023a6f",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "field_i_validity='good_law' is defensible: Maryland v. Macon (1985) is well-settled SCOTUS authority (undercover over-the-counter purchase of publicly exposed wares is neither search nor seizure) with no disclosed higher-court reversal.",
+            "The negative edges (e.g., Al-Kidd v. Ashcroft 'overruled', Arizona v. Hicks 'overruled', Horton v. California 'questioned') are 'proposed':true citator noise from cases that do not overrule Macon; lane3_recency shows 0 negative events.",
+            "Payload treatment fields match the lake treatment block."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "derivation flags audit_needed=true 'R15 treatment audit required' (lane1=6, lane2=25 proposed_negative_events) pending resolution."
+          ],
+          "suggested_tightening": "Complete R15 audit to clear the proposed negative edges before treatment lock."
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/Maryland v. Pringle.json",
+      "reviewed": [
+        {
+          "assertion_id": "e7cdb46ce3d3dba6",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "All 4 payload cites (540 U.S. 366; 124 S. Ct. 795; 157 L. Ed. 2d 769; 2003 U.S. LEXIS 9198) appear verbatim in lake citations.all[].",
+            "payload official=540 U.S. 366 / display=540 U.S. 366 / official_selection_present=true matches record official_selection.selected='540 U.S. 366' (reason selected_rank_1)."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "38a51469ec3551ff",
+          "dimension": "quote_fidelity",
+          "verdict": "stands-modified",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "The pin-372 pinpoint record's stored `quote` field captured page front-matter/chrome ('--- # Maryland v. Pringle ... reasonable inference of common possession.') instead of the sentence the content anchors to ^pin-372; record self-flags quote_fidelity='mismatch'. The reader-facing anchored quote is faithful.",
+            "severity": "low",
+            "proposed_fix": "Repair the stored `quote` to the anchored sentence ('We think it an entirely reasonable inference from these facts that any or all three of the occupants had knowledge of, and exercised dominion and control over, the cocaine. Thus, a reasonable officer could conclude that there was probable cause to believe Pringle committed the crime of possession of cocaine, either solely or jointly.').",
+            "evidence_quote": "We think it an entirely reasonable inference from these facts that any or all three of the occupants had knowledge, of, and exercised dominion and control over, the cocaine. Thus, a reasonable officer could conclude that there was probable cause to believe Pringle committed the crime of possession of cocaine, either solely or jointly.",
+            "needs_cl": false,
+            "locator_note": "Pringle cached slip immediately after the star-pagination label='372' marker (before label='373'); content drops only the OCR stray comma in 'knowledge, of,'."
+          },
+          "reasons": [
+            "Displayed Rule quote anchored at ^pin-372 matches the slip verbatim except the content omits an OCR-inserted comma ('knowledge, of,' -> 'knowledge of,'); pincite 540 U.S. 372 confirmed by the label='372' star-pagination bracketing the sentence.",
+            "Only the pinpoint record's stored quote is malformed (chrome), producing the 'mismatch' flag; substantive quote and pincite are sound."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": "Re-derive slip-only pinpoint captures so stored quote equals the anchored sentence, not block-start chrome."
+        },
+        {
+          "assertion_id": "7998bc08369f0b52",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "field_i_validity='good_law' is defensible: Maryland v. Pringle (2003) is controlling probable-cause (common-enterprise) SCOTUS authority with no disclosed higher-court reversal.",
+            "Proposed negative edges are 'proposed':true citator signals; lane3_recency shows only 1 unreviewed signal; no confirmed downgrade.",
+            "Payload treatment fields match the lake treatment block."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "derivation flags audit_needed=true 'R15 treatment audit required' (lane1=4, lane2=25 proposed_negative_events) pending resolution."
+          ],
+          "suggested_tightening": "Complete R15 audit to clear the proposed negative edges before treatment lock."
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/Maryland v. Shatzer.json",
+      "reviewed": [
+        {
+          "assertion_id": "6bfb09a4964c505b",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "All 4 payload cites (559 U.S. 98; 130 S. Ct. 1213; 175 L. Ed. 2d 1045; 2010 U.S. LEXIS 1899) appear verbatim in lake citations.all[].",
+            "payload official=559 U.S. 98 / display=559 U.S. 98 / official_selection_present=true matches record official_selection.selected='559 U.S. 98' (reason selected_rank_1)."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "1c343debf32bca08",
+          "dimension": "quote_fidelity",
+          "verdict": "stands-modified",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "The pin-op11 pinpoint record's stored `quote` field captured page front-matter/chrome ('--- # Maryland v. Shatzer ... the Court fixed the period at 14 days:') instead of the sentence the content anchors to ^pin-op11; record self-flags quote_fidelity='mismatch'. The reader-facing anchored quote is faithful.",
+            "severity": "low",
+            "proposed_fix": "Repair the stored `quote` to the anchored sentence ('It seems to us that period is 14 days. That provides plenty of time for the suspect to get reacclimated to his normal life, to consult with friends and counsel, and to shake off any residual coercive effects of his prior custody.').",
+            "evidence_quote": "It seems to us that period is 14 days. That provides plenty of time for the suspect to get reacclimated to his normal life, to consult with friends and counsel, and to shake off any residual coercive effects of his prior custody.",
+            "needs_cl": false,
+            "locator_note": "Shatzer cached slip Opinion of the Court, on slip page 11 (the 'MARYLAND v. SHATZER' page-12 header follows this passage; the dissent's 'Ante, at 11' corroborates the slip op. at 11 pincite)."
+          },
+          "reasons": [
+            "Displayed Rule quote anchored at ^pin-op11 matches the slip verbatim (line-wrap hyphenation aside); pincite 'slip op., at 11' confirmed both by the page-12 header immediately after the passage and by the dissent's citation 'Ante, at 11'.",
+            "Only the pinpoint record's stored quote is malformed (chrome), producing the 'mismatch' flag; substantive quote and pincite are sound."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": "Re-derive slip-only pinpoint captures so stored quote equals the anchored sentence, not block-start chrome."
+        },
+        {
+          "assertion_id": "5c126ba11a534cd7",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "field_i_validity='good_law' is defensible: Maryland v. Shatzer (2010) is controlling SCOTUS authority for the 14-day Edwards break-in-custody rule with no disclosed higher-court reversal.",
+            "Proposed negative edges are 'proposed':true citator noise; lane3_recency shows 0 negative events.",
+            "Payload treatment fields match the lake treatment block."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "derivation flags audit_needed=true 'R15 treatment audit required' (lane1=16, lane2=25 proposed_negative_events) pending resolution."
+          ],
+          "suggested_tightening": "Complete R15 audit to clear the proposed negative edges before treatment lock."
+        }
+      ],
+      "notes": ""
+    }
+  ]
+}

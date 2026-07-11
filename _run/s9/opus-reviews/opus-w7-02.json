@@ -1,0 +1,257 @@
+{
+  "packs": [
+    {
+      "group_id": "_overhaul2/lake/cases/Mapp v. Ohio.json",
+      "reviewed": [
+        {
+          "assertion_id": "519ff73242972410",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion header renders '367 U.S. 643 (1961)' and cluster 106285 is the Mapp majority (Clark, J.); official cite selected rank_1 equals display '367 U.S. 643'.",
+            "Identity fields expected_citation_found / party_name_in_text / canonical_name_match all true; status verified."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Parallel cites (81 S. Ct. 1684; 6 L. Ed. 2d 1081; 1961 U.S. LEXIS 812) rest on cluster.citations[] metadata, not independently paginated in cached text."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "980d25e98dfea5b3",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Page quote at ^pin-655 'We hold that all evidence obtained by searches and seizures in violation of the Constitution is, by that same authority, inadmissible in a state court.' appears verbatim in the cached opinion at the close of Part III, immediately after star *655.",
+            "Pincite '367 U.S. at 655' is correct."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "The lake/payload pinpoint.quote stores page preamble (front-matter through '## Rule Yes.') rather than the quoted sentence, producing a spurious quote_fidelity=mismatch / pinpoint_status=slip-only flag; the reader-facing quote is clean."
+          ],
+          "suggested_tightening": "Re-harvest pin-655 quote field to the actual quoted sentence and re-run fidelity to upgrade to star-verified."
+        },
+        {
+          "assertion_id": "05576641b05bb574",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "field_i_validity=good_law is consistent with the disclosed record: every negative edge is proposed=true lane-extraction (e.g., Miranda/Terry/Katz/Leon and state case State v. Rogers all 'overruled' Mapp) — non-credible keyword false positives, no adjudicated negative treatment.",
+            "Page text confirms Mapp was narrowed (Leon good-faith, Herring culpability) but not abrogated."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Proposed negative edges are noisy FPs; scope_note flags S2 re-derivation may adjust."
+          ],
+          "suggested_tightening": null
+        }
+      ]
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/Marbury v. Madison.json",
+      "reviewed": [
+        {
+          "assertion_id": "c48eaafcdff4114f",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion text is unmistakably Marbury v. Madison (Marshall, C.J.; Marbury's commission, mandamus, judicial review; 1 Cranch star pagination *154..*178); 5 U.S. 137 / 1 Cranch 137 is the correct official cite; cluster 84759.",
+            "Display '5 U.S. 137' selected rank_1."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Lake identity flagged status=under_review, identity_method=pending, reason_code two_key_not_satisfied (expected_citation_found and party_name_in_text false) — a process gap, but existence/identity is substantively confirmed from the disclosed cached opinion."
+          ],
+          "suggested_tightening": "Re-run two-key identity so the record promotes out of under_review."
+        },
+        {
+          "assertion_id": "5abca5619633bc8b",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Page quote at ^pin-177 'It is emphatically the province and duty of the judicial department to say what the law is.' appears verbatim in the cached opinion between star *177 and *178, so pincite 177 is correct."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Lake/payload pinpoint.quote stores page preamble, producing a spurious mismatch/slip-only flag; the reader-facing quote is clean."
+          ],
+          "suggested_tightening": "Re-harvest pin-177 quote field and re-verify to star."
+        },
+        {
+          "assertion_id": "cc2e5b4d430ebe43",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Page quote at ^pin-177a 'an act of the legislature, repugnant to the constitution, is void.' appears verbatim on page 177 (after star *177, before *178).",
+            "star_marker 177 and pinpoint_status star-verified / matched are correct."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "fcf3aa5f7fd38438",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "field_i_validity=good_law is consistent with the disclosed edges: all negatives are proposed=true FPs (e.g., state case Savage v. N.C. Dep't of Transp. 'overruled' Marbury — impossible); Marbury is the foundational judicial-review precedent, undisturbed."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Noisy proposed edges pending re-derivation."
+          ],
+          "suggested_tightening": null
+        }
+      ]
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/Marcus v. Search Warrant.json",
+      "reviewed": [
+        {
+          "assertion_id": "2c7522c7877169e0",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion is Marcus v. Search Warrant of Property (Brennan, J.; 367 U.S. 717; star pagination *719..*738; mass seizure of allegedly obscene publications); official cite 367 U.S. 717 selected rank_1; cluster 106287; expected_citation_found=true, canonical_name_match=true.",
+            "case_name_full in record matches the cached opinion's caption."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "party_name_in_text=false and status=under_review (frontier identity), but existence is substantively confirmed from cached text.",
+            "Parallel cites (81 S. Ct. 1708; 6 L. Ed. 2d 1127; 1961 U.S. LEXIS 813) rest on cluster metadata."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "d9f3e68fefc92e4f",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": false,
+          "defect": null,
+          "reasons": [
+            "Record is an intentional frontier stub: field_i_validity='unverified', as_of_content/as_of_treatment null, scope_note states treatment/progeny deliberately not derived until S6 promotion; the page renders under the Unverified banner and asserts NO validity claim.",
+            "There is no treatment proposition to refute; the deferred/unverified label is honest and internally consistent, so nothing is verifiable or falsifiable from the disclosed evidence."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Citator/progeny not machine-verified; good-law status can be neither confirmed nor denied from disclosed evidence."
+          ],
+          "suggested_tightening": "S6/S9 promotion should derive citator/progeny before any validity is asserted."
+        }
+      ]
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/Marshall v. Barlow's Inc.json",
+      "reviewed": [
+        {
+          "assertion_id": "1c1444b7a934b593",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion is Marshall v. Barlow's, Inc. (White, J.; OSHA § 8(a); Barlow's electrical/plumbing business, Pocatello, Idaho; 436 U.S. 307; star pagination *308..*325); official cite 436 U.S. 307 selected rank_1; cluster 109866; identity_checked.",
+            "Display '436 U.S. 307' equals official cite."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Parallel cites (98 S. Ct. 1816; 56 L. Ed. 2d 305; 1978 U.S. LEXIS 26; 8 Envtl. L. Rep. 20434; 6 OSHC (BNA) 1571) rest on cluster metadata."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "8a2daae3f23410ff",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Page quote at ^pin-324 'do not suffice to justify warrantless inspections under OSHA or vitiate the general constitutional requirement that for a search to be reasonable a warrant must be obtained.' appears verbatim after star *324.",
+            "star_marker 324 and pinpoint_status star-verified / matched are correct; the mid-sentence lead-in ('The Secretary's enforcement concerns ...') is grammatically integrated."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "a912a916f966e59b",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Quoted words at ^pin-325 'We hold that Barlow's was entitled to a declaratory judgment that the Act is unconstitutional insofar as it purports to authorize inspections without warrant or its equivalent' appear verbatim under star *325 (Part III).",
+            "The quoted matter forms a grammatically complete sentence, so ending with a period (original continues '... and to an injunction enjoining the Act's enforcement to that extent.') is acceptable and not a fidelity defect; pincite 325 correct."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Lake pinpoint marked slip-only/mismatch although the quote is verbatim-correct."
+          ],
+          "suggested_tightening": "Re-verify pin-325 to star to clear the spurious mismatch flag."
+        },
+        {
+          "assertion_id": "eacd55f28fd00635",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Page quote at ^pin-311 'The Warrant Clause of the Fourth Amendment protects commercial buildings as well as private homes.' appears verbatim under star *311 (section I), before *312; pincite 311 correct."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Lake/payload pinpoint.quote stores page preamble, producing a spurious mismatch/slip-only flag; the reader-facing quote is clean."
+          ],
+          "suggested_tightening": "Re-harvest pin-311 quote field and re-verify to star."
+        },
+        {
+          "assertion_id": "fbc7160e4b560bed",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Page quote at ^pin-313 'unless some recognized exception to the warrant requirement applies, See v. Seattle would require a warrant to conduct the inspection sought in this case.' appears verbatim after star *313; pincite 313 correct (page only adds italics to 'See v. Seattle')."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Lake pinpoint marked slip-only/mismatch although the quote is verbatim-correct."
+          ],
+          "suggested_tightening": "Re-verify pin-313 to star to clear the spurious mismatch flag."
+        },
+        {
+          "assertion_id": "866d4da94dd2c463",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "field_i_validity=good_law: all 31 disclosed edges are proposed=true lane FPs (questioned/overruled/abrogated/criticized), none adjudicated (proposed=false = 0).",
+            "scope_note accurately states OSHA § 8(a)'s warrantless-inspection authorization was held unconstitutional while the administrative-warrant requirement for ordinary workplaces stands, matching the cached holding (Parts II-III)."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Proposed edges noisy pending re-derivation."
+          ],
+          "suggested_tightening": null
+        }
+      ]
+    }
+  ]
+}

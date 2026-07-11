@@ -1,0 +1,272 @@
+{
+  "packs": [
+    {
+      "group_id": "_overhaul2/lake/cases/McDonough v. Smith.json",
+      "reviewed": [
+        {
+          "assertion_id": "3c6c9ffd99d61724",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion text is unmistakably the 2019 McDonough v. Smith decision (Justice Sotomayor for the Court; 42 U.S.C. 1983 fabricated-evidence claim; acquittal-accrual holding; 898 F.3d 259 below) matching the record.",
+            "S. Ct. star-pagination in the cached text (*2153, *2154) is consistent with the parallel cite 139 S. Ct. 2149; official 588 U.S. 109 selected from cluster.citations[] (cluster 9231241, identity_checked=true, canonical_name_match=true).",
+            "Case and its reporter citations exist; identity refutation attempt fails (the alternate cluster 4631414 is not the 2019 SCOTUS opinion the cached text shows)."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Official U.S. Reports page 109 is not present in the disclosed CL text (only S. Ct. star-pagination) - self-disclosed on the content page.",
+            "Frontier under_review stub (identity_method=frontier-identity); pinpoints not derived.",
+            "204 L. Ed. 2d 506 not independently verifiable from disclosed text."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "2c08a4db56780612",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "field_i_validity 'unverified' matches the page's rendered treatment (Unverified badge, circle banner, explicit 'subsequent treatment not yet machine-verified' note) - no currency overclaim.",
+            "scope_note honestly states treatment/progeny intentionally not derived until S6 promotion; treatment.edges/progeny are empty in the lake record, consistent with a frontier stub.",
+            "Nothing to refute: the humblest possible treatment claim, self-consistent with the disclosed record."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Frontier stub: no citator/progeny basis derived, so forward currency is intentionally unstated (correctly)."
+          ],
+          "suggested_tightening": null
+        }
+      ]
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/McNabb v. United States.json",
+      "reviewed": [
+        {
+          "assertion_id": "9ffc90742daa8133",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion header shows case_cite lines '318 U.S. 332', '63 S.Ct. 608', '87 L.Ed. 819', parties 'McNABB et al. v. UNITED STATES', 'No. 25', Mr. Justice FRANKFURTER - matching official 318 U.S. 332 and both parallels.",
+            "Case and citations exist and are correctly identified (cluster 103791, identity_checked=true)."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Cached text says 'Decided March 1, 1943; Rehearing Denied June 7, 1943'; the record's date_decided 1943-06-07 tracks the rehearing-denied date rather than the March 1 decision date (year 1943 is correct; out of scope for the case_cite dimension).",
+            "'1943 U.S. LEXIS 1280' not verifiable from disclosed text."
+          ],
+          "suggested_tightening": "Consider date_decided=1943-03-01 (decision date) rather than 1943-06-07 (rehearing denied)."
+        },
+        {
+          "assertion_id": "2746ab1bb511de48",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "payload.quote equals the page's pin-347 quotation and is verbatim-present in the cached opinion (paragraph beginning 'In holding that the petitioners' admissions were improperly received...').",
+            "The page's ' . . . ' ellipsis correctly omits the intervening sentence 'In so doing, we respect the policy which underlies Congressional legislation.'; both retained clauses ('We hold only that a decent regard...revealed here.' and 'The history of liberty has largely been the history of observance of procedural safeguards.') match exactly. Faithful."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "The payload flag quote_fidelity='mismatch' is an extractor false-positive: the omission spans an intervening sentence, which breaks a contiguous-substring match but not the Bluebook-marked quotation.",
+            "Pincite page 347 not verifiable from disclosed text (cached opinion carries paragraph numbers, no reporter page-labels; pinpoint_status=slip-only)."
+          ],
+          "suggested_tightening": "Recompute the fidelity flag with ellipsis-aware matching so the true match is not reported as 'mismatch'."
+        },
+        {
+          "assertion_id": "6a52f0cebeb46368",
+          "dimension": "quote_fidelity",
+          "verdict": "stands-modified",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "payload.quote captured page chrome (YAML delimiter, title/header line, and the Background/Issue/Rule prose up to the pin anchor) instead of the pin-345 quotation; the quote_fidelity='mismatch' flag reflects that chrome capture, NOT a page-level fidelity defect. The actual pin-345 quotation rendered on the page IS verbatim-faithful to the cached opinion.",
+            "severity": "low",
+            "proposed_fix": "Repoint payload.quote to the actual pin-345 quotation and re-run the fidelity check (it matches with the marked ellipsis).",
+            "evidence_quote": "Plainly, a conviction resting on evidence secured through such a flagrant disregard of the procedure which Congress has commanded cannot be allowed to stand without making the courts themselves accomplices in wilful disobedience of law. . . . [T]o permit such evidence to be made the basis of a conviction in the federal courts would stultify the policy which Congress has enacted into law.",
+            "needs_cl": false,
+            "locator_note": "pin-345; content page line 447 vs cached opinion paragraph 'The circumstances in which the statements admitted in evidence...'"
+          },
+          "reasons": [
+            "The actual pin-345 page quote is verbatim-present in the cached opinion; the page ellipsis ' . . . ' correctly omits 'Congress has not explicitly forbidden the use of evidence so procured. But', and '[T]o' correctly brackets the capitalization of the original lowercase 'to'. Faithful - no reader-facing fidelity issue.",
+            "The reviewed proposition (page faithfully quotes McNabb at 345) survives; only the serialized payload.quote needs modification (it is an extraction artifact of page chrome)."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Pincite page 345 not verifiable from disclosed text (paragraph-numbered cached opinion; pinpoint_status=slip-only)."
+          ],
+          "suggested_tightening": "Fix the extractor so the pin-anchor capture takes the quoted span, not the preceding page chrome."
+        },
+        {
+          "assertion_id": "e1d948e5afdcc999",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "field_i_validity 'good_law' for the McNabb supervisory-power exclusion rule is consistent with the cached opinion (Frankfurter, exclusion resting on the Court's supervisory authority apart from the Constitution).",
+            "The disclosed treatment record contains NO adjudicated negative treatment: every negative edge is proposed=true, journaled to lane1_negative, with derivation audit_needed=true / 'R15 treatment audit required'.",
+            "The scope_note correctly synthesizes Corley as 'modified - not supplanted' by 18 U.S.C. 3501 (Corley did not overrule the McNabb-Mallory rule); refutation via the Corley edge fails."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Currency is composite_basis=migration-seed with 15 proposed negative events pending R15 audit; the 'as of 2026-06-30' good-law is seeded, not freshly adjudicated.",
+            "The proposed Corley edge is raw-flagged field_ii='overruled', contradicting the accurate scope_note 'modified - not supplanted' (raw keyword mislabel).",
+            "Subsequent-history specifics (Corley / 3501) are not independently verifiable from the disclosed 1943 opinion."
+          ],
+          "suggested_tightening": "Relabel the proposed Corley edge from 'overruled' to 'modified/limited-by-statute' to match the composite scope_note."
+        }
+      ]
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/McNeil v. Wisconsin.json",
+      "reviewed": [
+        {
+          "assertion_id": "b3aa22c691725491",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion is McNeil v. Wisconsin (Justice Scalia): the offense-specific Sixth Amendment holding, West Allis/Caledonia facts, affirming the Wisconsin Supreme Court - matching the record.",
+            "U.S. Reports star-pagination in the cached text (*173 through *182) confirms volume-501 pagination for an opinion beginning at 171; internal cites read '501 U. S.'. Official 501 U.S. 171 supported (cluster 112622, identity_checked=true)."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "'1991 U.S. LEXIS 3483' not verifiable from disclosed text.",
+            "Page 171 itself (opinion start) is inferred from the *173+ labels rather than shown."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "722a38a31a3c5954",
+          "dimension": "quote_fidelity",
+          "verdict": "stands-modified",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "payload.quote captured page chrome (YAML delimiter, title/header line, Background/Issue prose, and 'Rule No.') instead of the pin-175 quotation; the quote_fidelity='mismatch' flag reflects that chrome capture, NOT a page-level fidelity defect. The actual pin-175 quotation on the page IS verbatim-faithful to the cached opinion.",
+            "severity": "low",
+            "proposed_fix": "Repoint payload.quote to the actual pin-175 quotation and re-run the fidelity check.",
+            "evidence_quote": "The Sixth Amendment right, however, is offense specific. It cannot be invoked once for all future prosecutions, for it does not attach until a prosecution is commenced.",
+            "needs_cl": false,
+            "locator_note": "pin-175; content page line 1822 vs cached opinion paragraph b245-9 'Sixth Amendment right, however, is offense specific...'"
+          },
+          "reasons": [
+            "The actual pin-175 page quote is verbatim-faithful to the cached opinion; the cached OCR drops the leading 'The' (paragraph starts 'Sixth Amendment right, however...'), which the page correctly restores, and the page ends the quotation at the complete clause '...prosecution is commenced.', omitting the trailing definitional gloss (', that is, ...').",
+            "The *175 page-label immediately precedes the passage, confirming the pincite 501 U.S. at 175. The reviewed proposition survives; only the serialized payload.quote (chrome) needs modification."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "The page ends the quote at 'commenced.' with a period rather than a trailing ellipsis; the omitted ', that is, [initiation-of-adversary-proceedings gloss]' does not distort meaning (trivial Bluebook nicety).",
+            "pinpoint_status='slip-only' is inaccurate here - the cached text DOES carry the *175 U.S. Reports page-label."
+          ],
+          "suggested_tightening": "Fix the extractor so the pin-anchor capture takes the quoted span, not the preceding page chrome; optionally add a terminal ellipsis before the closing quote."
+        },
+        {
+          "assertion_id": "7d72d7020263cbbd",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "field_i_validity 'good_law' for McNeil's offense-specific holding is consistent with the cached opinion (the holding, and its statement that Michigan v. Jackson 'rests upon' the same distinction).",
+            "The disclosed treatment record contains NO adjudicated negative treatment: all overruled/abrogated/questioned/superseded edges are proposed=true (lane1_negative and lane2_top_cited), with derivation audit_needed=true / 'R15 treatment audit required'.",
+            "The page's treatment note correctly explains that Jackson's later overruling (by Montejo) does not disturb McNeil's distinct offense-specificity holding; refutation fails."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Currency is composite_basis=migration-seed; the scope_note candidly warns 'Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade.'",
+            "36 proposed negative events (lane1=10, lane2=25, lane3=1) pending R15 audit could downgrade the composite.",
+            "The Jackson->Montejo subsequent history is not verifiable from the disclosed 1991 opinion."
+          ],
+          "suggested_tightening": null
+        }
+      ]
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/Messerschmidt v. Millender.json",
+      "reviewed": [
+        {
+          "assertion_id": "3427a77c06ed5bb7",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached slip-opinion caption 'MESSERSCHMIDT ET AL. v. MILLENDER, EXECUTOR OF...' (Supreme Court of the United States, October Term 2011) confirms identity; the record's lake identity (cluster 623242, docket 10-704, date_decided 2012-02-22, expected_citation_found=true, canonical_name_match=true, reason_code=null) is consistent.",
+            "Official 565 U.S. 535 with parallels 132 S. Ct. 1235 / 182 L. Ed. 2d 47 supported; case and citations exist."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Cached text is the slip opinion (slip pagination, e.g., '10  MESSERSCHMIDT v. MILLENDER'); U.S. Reports page 535 is not present in disclosed text.",
+            "'2012 U.S. LEXIS 1687' not verifiable from disclosed text.",
+            "Minor internal inconsistency: frontmatter opinion_id=623242 while the Sources line cites 'lead opinion id 9485385' (not part of the case_cite assertion)."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "834dd05db0a40ade",
+          "dimension": "quote_fidelity",
+          "verdict": "stands-modified",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "payload.quote captured page chrome (Background/Issue prose and the 'Rule' lead-in ending 'it does not end the inquiry:') instead of the pin-547 quotation; the quote_fidelity='mismatch' flag reflects that chrome capture, NOT a page-level fidelity defect. The actual pin-547 quotation on the page IS verbatim-faithful to the cached opinion.",
+            "severity": "low",
+            "proposed_fix": "Repoint payload.quote to the actual pin-547 quotation and re-run the fidelity check.",
+            "evidence_quote": "the fact that a neutral magistrate has issued a warrant authorizing the allegedly unconstitutional search or seizure does not end the inquiry into objective reasonableness.",
+            "needs_cl": false,
+            "locator_note": "pin-547; content page line 2917 vs cached slip opinion 'Nonetheless, under our precedents, the fact that a neutral magistrate has issued a warrant authorizing the allegedly unconstitutional search or seizure does not end the inquiry into objective reasonableness.'"
+          },
+          "reasons": [
+            "The actual pin-547 page quote is verbatim-faithful to the cached slip opinion (dehyphenated lines 'the fact that / a neutral magistrate has issued a warrant authorizing the / allegedly unconstitutional search or seizure does not end / the inquiry into objective reasonableness.').",
+            "The reviewed proposition (page faithfully quotes Messerschmidt at 547) survives; only the serialized payload.quote (chrome) needs modification."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Pincite 565 U.S. at 547 not verifiable from the disclosed slip text (slip pagination only; pinpoint_status=slip-only accurate)."
+          ],
+          "suggested_tightening": "Fix the extractor so the pin-anchor capture takes the quoted span, not the preceding page chrome."
+        },
+        {
+          "assertion_id": "a4fd95e2545900f9",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "payload.quote 'so lacking in indicia of probable cause as to render official belief in its existence entirely unreasonable.' is verbatim-present in the cached slip opinion (dehyphenated 'so lacking in indi-/cia of probable cause as to render official belief in its exist-/ence entirely unreasonable.'), correctly attributed as quoting Leon, 468 U. S., at 923.",
+            "The companion page quote 'the threshold for establishing this exception is a high one, and it should be.' also matches verbatim ('the threshold / for establishing this exception is a high one, and it should / be.'). quote_fidelity flag 'matched' is correct."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Pincite is slip-only (no U.S. Reports pagination in disclosed text).",
+            "The text-fragment locator (#:~:text=so lacking in indicia of) targets the correct phrase; nested attribution 'Id. (quoting Leon, 468 U.S. at 923)' is accurate."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "8ef42894b2b66197",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "field_i_validity 'good_law' for Messerschmidt's qualified-immunity / overbroad-warrant holding is consistent with the cached slip opinion (Malley/Leon objective-reasonableness standard for warrant immunity).",
+            "The disclosed treatment record contains NO adjudicated negative treatment: all 28 negative edges are proposed=true; derivation lane1_negative audit_needed=false (3 events) and lane3 audit_needed=false (0 events); only lane2_top_cited has 25 proposed events pending 'R15 treatment audit required'.",
+            "scope_note ('Good law on qualified immunity for executing a magistrate-approved warrant later claimed to be overbroad') is accurate; no disclosed evidence of overruling."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Currency is composite_basis=migration-seed; 'as of 2026-06-30' is seeded, not independently confirmed.",
+            "The page body asserts 'No negative treatment' more definitively than the pending lane2 R15 audit of 25 proposed negatives supports (proposed edges are raw keyword hits, unadjudicated)."
+          ],
+          "suggested_tightening": "Soften the page-body 'No negative treatment' pending completion of the lane2 R15 audit, or complete the audit."
+        }
+      ]
+    }
+  ]
+}

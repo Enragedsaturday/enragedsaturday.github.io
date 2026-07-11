@@ -1,0 +1,300 @@
+{
+  "packs": [
+    {
+      "group_id": "_overhaul2/lake/cases/Malloy v. Hogan.json",
+      "reviewed": [
+        {
+          "assertion_id": "a0efbd6bf180bf43",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion caption confirms '378 U.S. 1 (1964)', 'MALLOY v. HOGAN, SHERIFF', 'No. 110', Supreme Court, decided June 15, 1964 — matching official cite, docket, and date.",
+            "official_selection_present=true with official=378 U.S. 1 (type-1 U.S. reporter); parallels 84 S. Ct. 1489 / 12 L. Ed. 2d 653 are the standard Malloy parallels."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Parallel-reporter page numbers (S. Ct./L. Ed. 2d/LEXIS) are not independently verifiable from the disclosed U.S.-Reports caption, only the official 378 U.S. 1 is."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "00b52bad7b4c7b2a",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Opinion at page *8 reads: 'The Fourteenth Amendment secures against state invasion the same privilege that the Fifth Amendment guarantees against federal infringement[—]the right of a person to remain silent unless he chooses to speak in the unfettered exercise of his own will, and to suffer no penalty, as held in Twining, for such silence.'",
+            "The page quote reproduces every word in order; the ' . . . ' ellipsis properly marks the elision of 'as held in Twining,' and the em-dash matches the original (the cached text merely dropped the dash char in 'infringementthe'). The 'mismatch' flag is a mechanical false-positive.",
+            "Pincite 'Id. at 8' is correct: sentence sits just after the *8 star-marker."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Ellipsis correctly compresses 'as held in Twining,'; a strict verifier that disallows any elision would still flag it."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "89c9f2c45dd122c5",
+          "dimension": "quote_fidelity",
+          "verdict": "refuted",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "pin-6.quote is corrupted: it stores the content page's own preamble markdown (title/header/Background/Issue/Rule lines) rather than any opinion sentence. That text does not occur in the Malloy opinion, so the quote payload fails fidelity (the 'quote_fidelity: mismatch' flag is a true positive here).",
+            "severity": "medium",
+            "proposed_fix": "Repopulate pin-6.quote with the sentence the ^pin-6 marker anchors on the page — 'We hold today that the Fifth Amendment's exception from compulsory self-incrimination is also protected by the Fourteenth Amendment against abridgment by the States.' — which appears verbatim in the opinion on page 6.",
+            "evidence_quote": "We hold today that the Fifth Amendment's exception from compulsory self-incrimination is also protected by the Fourteenth Amendment against abridgment by the States.",
+            "needs_cl": false,
+            "locator_note": "Opinion page *6 (paragraph immediately after the Betts/Gideon discussion); rendered page cites '378 U.S. at 6' at ^pin-6."
+          },
+          "reasons": [
+            "Stored quote begins '--- # Malloy v. Hogan ...' and ends '## Rule The privilege is incorporated against the States.' — this is the page preamble, not opinion text.",
+            "Data-integrity defect only: the sentence the ^pin-6 marker actually renders ('We hold today...') is verbatim in the opinion at page 6, so no reader is misled, but the lake pinpoint record cannot be used to verify the quote."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Reader-facing rendered quote is correct and supported at p.6; defect is confined to the lake pinpoints[].quote field."
+          ],
+          "suggested_tightening": "Rebuild slip-only pinpoint quote fields from the anchored page sentence rather than the page preamble."
+        },
+        {
+          "assertion_id": "f2e15779bc2b5a97",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Opinion at *10–*11 reads: '...applies to the States only a \"watered-down, subjective version of the individual guarantees of the Bill of Rights, \"'. The page quote reproduces 'watered-down, subjective version of the individual guarantees of the Bill of Rights' verbatim.",
+            "Only differences are quote-nesting (double->single, because the page nests it inside its own double quotes) and a terminal period replacing the source comma-then-close where the citation followed — standard normalization, not a misquote. The 'mismatch' flag is a mechanical false-positive.",
+            "Pincite 'Id. at 10-11' is correct: phrase spans the *10->*11 break ('individual *11 guarantees')."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Phrase is itself a quote-within-quote from the Ohio ex rel. Eaton v. Price dissent that Malloy quotes; the page correctly presents it as Malloy's own text at 10-11."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "20d6f51e86a5952e",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "field_i_validity=good_law is unrefuted by disclosed evidence: every negative edge in the lake record is proposed:true (34 proposed, 0 accepted), and the labels are transparently spurious (e.g., Miranda, Chapman, Ramos tagged 'overruled' Malloy — Miranda in fact relied on Malloy).",
+            "scope_note is accurate to the opinion: the Court incorporates the Fifth Amendment privilege against the States and states that decisions since Twining and Adamson departed from the contrary view (overruling them on this point)."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "'good law as of 2026-06-30' currency is not fully verifiable from a 1964 opinion; disclosed citator snapshot shows only unadjudicated candidate negatives, and foundational/relied-upon status makes good_law overwhelmingly likely."
+          ],
+          "suggested_tightening": null
+        }
+      ]
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/Mancusi v. DeForte.json",
+      "reviewed": [
+        {
+          "assertion_id": "e9b1871ad8108be7",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached caption confirms '392 U.S. 364 (1968)', 'MANCUSI, WARDEN v. DeFORTE', 'No. 844', Supreme Court, decided June 17, 1968 — matches official cite, docket, date.",
+            "official_selection_present=true, official=392 U.S. 364; parallels 88 S. Ct. 2120 / 20 L. Ed. 2d 1154 / 68 L.R.R.M. (BNA) 2449 are the standard DeForte parallels."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Parallel-reporter page numbers not independently verifiable from the U.S.-Reports caption."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "23aa56a1faa4574a",
+          "dimension": "quote_fidelity",
+          "verdict": "refuted",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "pin-368.quote is corrupted with the content page's preamble markdown (title/Background/Issue/Rule) instead of an opinion sentence; that text is absent from the DeForte opinion, so the quote payload fails fidelity (the 'mismatch' flag is a true positive).",
+            "severity": "medium",
+            "proposed_fix": "Repopulate pin-368.quote with the sentence anchored at ^pin-368 — 'capacity to claim the protection of the Amendment depends not upon a property right in the invaded place but upon whether the area was one in which there was a reasonable expectation of freedom from governmental intrusion' — verbatim in the opinion at page 368.",
+            "evidence_quote": "capacity to claim the protection of the Amendment depends not upon a property right in the invaded place but upon whether the area was one in which there was a reasonable expectation of freedom from governmental intrusion",
+            "needs_cl": false,
+            "locator_note": "Opinion page *368 (Katz sentence, Part II); rendered page cites '392 U.S. at 368' at ^pin-368 and correctly parentheticals '(citing Katz v. United States, 389 U.S. 347, 352)'."
+          },
+          "reasons": [
+            "Stored quote is the page preamble ('--- # Mancusi v. DeForte ... ## Rule Standing turns on a reasonable expectation of privacy in the area, not on ownership.'), not opinion text.",
+            "The sentence the ^pin-368 marker renders ('[C]apacity to claim the protection...') is verbatim in the opinion at p.368 and the Katz 389 U.S. 347, 352 parenthetical matches the opinion's 'See 389 U. S., at 352.' — so the defect is a lake-field corruption, not a reader-facing misquote."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Rendered quote correct and supported at p.368; defect confined to lake pinpoints[].quote."
+          ],
+          "suggested_tightening": "Rebuild slip-only pinpoint quote fields from the anchored page sentence."
+        },
+        {
+          "assertion_id": "5e76d8b8421a8838",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Opinion (page *369): 'DeForte still could reasonably have expected that only those persons and their personal or business guests would enter the office, and that records would not be touched except with their permission or that of union higher-ups.' — verbatim match to the payload quote.",
+            "payload marks it matched / star-verified (star_marker 369); confirmed against inlined text."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "5eff08cfa22c2d66",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Opinion (page *369): 'We hold that in these circumstances DeForte had Fourth Amendment standing to object to the admission of the papers at his trial.' — verbatim match.",
+            "payload marks it matched / star-verified (star_marker 369); sentence sits immediately after the *369 star-marker."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "c9b771e53b96344f",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "field_i_validity=good_law unrefuted: all lake edges are proposed:true (31 proposed, 0 accepted); 'abrogated'/'overruled' labels are unadjudicated candidates, not accepted treatment.",
+            "scope_note accurately captures the doctrinal history: Rakas v. Illinois (1978) recast 'standing' as a substantive expectation-of-privacy merits question but did not disturb Mancusi's result (an employee can have a REP in a shared workplace)."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "'good law as of 2026-06-30' currency not fully verifiable from a 1968 opinion; some citators tag Mancusi 'abrogated in part' by Rakas on the standing framing, but the scope_note already accounts for that recasting."
+          ],
+          "suggested_tightening": null
+        }
+      ]
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/Manson v. Brathwaite.json",
+      "reviewed": [
+        {
+          "assertion_id": "dd4364d121293fce",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached caption confirms '432 U.S. 98 (1977)', 'MANSON, CORRECTION COMMISSIONER v. BRATHWAITE', 'No. 75-871', Supreme Court, decided June 16, 1977 — matches official cite and date.",
+            "official_selection_present=true, official=432 U.S. 98; parallels 97 S. Ct. 2243 / 53 L. Ed. 2d 140 are the standard Brathwaite parallels."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Content docket field is empty ('') though the opinion shows 'No. 75-871' — a metadata omission, not an existence defect.",
+            "Parallel-reporter page numbers not independently verifiable from the caption."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "4e6d744dc579bd2f",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Opinion (page *114): 'These include the opportunity of the witness to view the criminal at the time of the crime, the witness' degree of attention, the accuracy of his prior description of the criminal, the level of certainty demonstrated at the confrontation, and the time between the crime and the confrontation. Against these factors is to be weighed the corrupting effect of the suggestive identification itself.' — the payload quote reproduces this verbatim from 'the opportunity...' onward.",
+            "payload marks it matched / star-verified (star_marker 114); confirmed against inlined text."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Quote opens mid-sentence after dropping the 'These include ' lead-in, which is standard and non-distorting."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "999c2d91112059fd",
+          "dimension": "quote_fidelity",
+          "verdict": "refuted",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "pin-114.quote is corrupted with the content page's preamble markdown (title/Background/Issue/Rule) instead of an opinion sentence; that text is absent from the Manson opinion, so the quote payload fails fidelity (the 'mismatch' flag is a true positive).",
+            "severity": "medium",
+            "proposed_fix": "Repopulate pin-114.quote with the sentence anchored at ^pin-114 — 'reliability is the linchpin in determining the admissibility of identification testimony for both pre- and post-Stovall confrontations.' — verbatim in the opinion at page 114.",
+            "evidence_quote": "reliability is the linchpin in determining the admissibility of identification testimony for both pre- and post-Stovall confrontations",
+            "needs_cl": false,
+            "locator_note": "Opinion page *114 ('We therefore conclude that reliability is the linchpin...'); rendered page cites '432 U.S. at 114' at ^pin-114."
+          },
+          "reasons": [
+            "Stored quote is the page preamble ('--- # Manson v. Brathwaite ... ## Rule No per se exclusion; reliability governs.'), not opinion text.",
+            "The sentence the ^pin-114 marker renders ('reliability is the linchpin...') is verbatim in the opinion at p.114, so the defect is a lake-field corruption, not a reader-facing misquote."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Rendered quote correct and supported at p.114; defect confined to lake pinpoints[].quote."
+          ],
+          "suggested_tightening": "Rebuild slip-only pinpoint quote fields from the anchored page sentence."
+        },
+        {
+          "assertion_id": "f362b824d2be4338",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "field_i_validity=good_law unrefuted: all lake edges are proposed:true (28 proposed, 0 accepted); labels are unadjudicated candidates.",
+            "scope_note is accurate: Perry v. New Hampshire (2012) confirmed the due-process screen applies only where police arranged the suggestive circumstances, without disturbing the Manson/Biggers reliability factors."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "'good law as of 2026-06-30' currency not fully verifiable from a 1977 opinion; disclosed citator snapshot shows only unadjudicated candidate negatives."
+          ],
+          "suggested_tightening": null
+        }
+      ]
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/Manuel v. City of Joliet.json",
+      "reviewed": [
+        {
+          "assertion_id": "579a5db679d79a1a",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached majority opinion confirms identity: Justice Kagan delivered the opinion; petitioner Elijah Manuel; City of Joliet; 48 days pretrial detention; Section 1983 / Fourth Amendment — this is Manuel v. City of Joliet.",
+            "The CL text carries S. Ct. star-pagination (*915–*922), confirming the parallel 137 S. Ct. 911; official cite 580 U.S. 357 (2017) is the correct U.S.-Reports pairing. official_selection_present=true, official=580 U.S. 357."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "U.S.-Reports page 357 itself is not present in the CL text (only S. Ct. star-pagination is), and the content page/frontmatter disclose this; the 137 S. Ct. 911 parallel is directly confirmed."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "3e2633fd758ce82b",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "field_i_validity='unverified' with as_of_content/as_of_treatment=null is an honest frontier stub: lake status is under_review and the page renders under the explicit Unverified banner, making no positive currency claim to refute.",
+            "scope_note 'Frontier stub: treatment/progeny intentionally not derived until S6 promotion' accurately matches the record state; no accepted negative treatment exists to contradict it."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Because treatment is intentionally not-yet-derived, this abstains from a currency assertion rather than making one; a later S6/S9 promotion should derive and re-verify the citator/progeny."
+          ],
+          "suggested_tightening": null
+        }
+      ]
+    }
+  ]
+}

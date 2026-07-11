@@ -1,0 +1,270 @@
+{
+  "packs": [
+    {
+      "group_id": "_overhaul2/lake/cases/Michigan v. Summers.json",
+      "reviewed": [
+        {
+          "assertion_id": "13c10ddf9fea65b1",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Official cite 452 U.S. 692 confirmed by cached opinion: 'Michigan v. Summers' (Stevens, J.) with star pages *694 through *706, consistent with a case beginning at 692.",
+            "Lake citations.official selected_official=true, official_selection reason 'selected_rank_1'; well-formed U.S. Reports SCOTUS citation."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Parallel/vendor cites (S. Ct., L. Ed. 2d, U.S. LEXIS, U.S.L.W.) are not independently checkable against the U.S.-Reports-only cached text, but all are facially well-formed."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "32736b8a3c83f224",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Content page ^pin-705 quotes 'Thus, for Fourth Amendment purposes, we hold that a warrant to search for contraband founded on probable cause implicitly carries with it the limited authority to detain the occupants of the premises while a proper search is conducted.' — verbatim match to cached opinion at star page *705 (footnote markers 20/21 omitted).",
+            "Pincite 705 is correct: the quoted holding sits between the *705 and *706 star markers.",
+            "The payload 'quote' field is a mis-captured span (frontmatter + Background + Issue ending at '## Rule Yes.'); its quote_fidelity='mismatch'/pinpoint_status='slip-only' are S8 pinpoint-capture artifacts, not a defect in the rendered wiki quote."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Lake pinpoints[].quote for pin-705 stores the corrupted capture span (metadata-hygiene only; the rendered wiki quote and pincite are correct)."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "1009526a72751bd3",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "field_i_validity='good_law' is facially correct for a landmark SCOTUS holding; no disclosed edge shows the subject case overruled by a higher or equal court on point.",
+            "Disclosed negative edges (State v. Tripp 'abrogated'; Riley v. California / Muldrow / Harte 'overruled') are proposed lane1_negative citator candidates with implausible or off-point/lower-court sources that cannot overrule Summers — explained noise.",
+            "composite_basis='migration-seed' — validity was independently seeded, not derived from the noisy edges."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "scope_note (Bailey v. United States spatial limit) post-dates the 1981 opinion and is absent from the cached text; corroborated only by the wiki's own Treatment section — uncontradicted but not independently confirmable from disclosed evidence."
+          ],
+          "suggested_tightening": null
+        }
+      ]
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/Michigan v. Thomas.json",
+      "reviewed": [
+        {
+          "assertion_id": "21997b7150d55291",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Official cite 458 U.S. 259 confirmed: cached opinion 'Michigan v. Thomas' Per Curiam, star pages *260 through *262, consistent with a case start at 259.",
+            "Lake citations.official selected_official=true; well-formed U.S. Reports SCOTUS citation."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Lake identity carries opinion_id==cluster_id (110776); not an existence-cite defect but flagged for hygiene.",
+            "Parallel cites not checkable against cached text; facially well-formed."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "533b580a1ac045ae",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Content page ^pin-261 quotes 'when police officers have probable cause to believe there is contraband inside an automobile that has been stopped on the road, the officers may conduct a warrantless search of the vehicle, even after it has been impounded and is in police custody.' — verbatim match to cached opinion (para b299-5, the per curiam restating Chambers v. Maroney).",
+            "Pincite 261 is correct: the quoted text sits between the *261 and *262 star markers.",
+            "The payload 'quote' ('## Rule No. Restating Chambers v. Maroney:') is a mis-captured lead-in span; mismatch/slip-only are S8 capture artifacts, not a rendered-quote defect."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Lake pinpoints[].quote for pin-261 stores the corrupted lead-in span (metadata-hygiene only)."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "a2fcf36f62ab3e39",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Content page ^pin-261a quote 'It is thus clear that the justification to conduct such a warrantless search does not vanish once the car has been immobilized; nor does it depend upon a reviewing court's assessment of the likelihood in each particular case that the car would have been driven away, or that its contents would have been tampered with, during the period required for the police to obtain a warrant.' matches cached opinion (para b299-5) verbatim.",
+            "'Id.' pincite resolves to 261, where the sentence sits (between *261 and *262).",
+            "The payload quote text is itself verbatim-present in the cached opinion, so quote_fidelity='mismatch'/pinpoint_status='slip-only' are false positives (likely driven by the null-page 'Id.' anchor / normalization), not a real mismatch."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "e94365094dd6feeb",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "good_law is correct; 'Per Curiam' is confirmed by the cached opinion author line; no disclosed edge shows the subject case overruled.",
+            "Disclosed negative edges are proposed lane1_negative citator noise.",
+            "composite_basis='migration-seed' — validity independently seeded."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "scope_note reaffirmation-by-Maryland v. Dyson is not in the 1982 cached opinion (Dyson post-dates); uncontradicted but not independently confirmable from disclosed text."
+          ],
+          "suggested_tightening": null
+        }
+      ]
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/Michigan v. Tucker.json",
+      "reviewed": [
+        {
+          "assertion_id": "b52f13bf0732cb14",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Official cite 417 U.S. 433 confirmed: cached opinion 'Michigan v. Tucker' (Rehnquist, J.), star pages *435 through *453, consistent with a case start at 433 (433-434 syllabus).",
+            "Lake citations.official selected_official=true; well-formed U.S. Reports SCOTUS citation."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Parallel cites (S. Ct., L. Ed. 2d, U.S. LEXIS) not checkable against cached text; facially well-formed."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "781a94e101f354bc",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Content page ^pin-446 quotes '[T]he police conduct at issue here did not abridge respondent's constitutional privilege against compulsory self-incrimination, but departed only from the prophylactic standards later laid down by this Court in Miranda to safeguard that privilege.' — verbatim match to cached opinion (para b509-5); the leading '[T]he' is a proper Bluebook bracket for the mid-sentence 'the'.",
+            "Pincite 446 is correct: the *446 star marker immediately precedes 'police conduct at issue here'.",
+            "The payload 'quote' ('of the Miranda violation. ## Rule No. A failure to give the full Miranda warnings...') is a mis-captured span mixing the Issue tail with the wiki's own paraphrase; mismatch/slip-only are S8 capture artifacts."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Lake pinpoints[].quote for pin-446 stores the corrupted span (metadata-hygiene only)."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "3c02b3f19e72dcf7",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "good_law is correct for the Tucker prophylactic-fruits holding; no disclosed edge shows the subject case overruled.",
+            "Disclosed negative edges are proposed lane1_negative citator noise.",
+            "composite_basis='migration-seed' — validity independently seeded."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "scope_note (Dickerson v. United States 2000 reaffirming Miranda; Tucker fruits applied in United States v. Patane 2004) post-dates the 1974 cached opinion; uncontradicted but not independently confirmable from disclosed text."
+          ],
+          "suggested_tightening": null
+        }
+      ]
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/Michigan v. Tyler.json",
+      "reviewed": [
+        {
+          "assertion_id": "0dd78f500b985ba7",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Official cite 436 U.S. 499 confirmed verbatim in cached opinion header ('436 U.S. 499 (1978)'), 'MICHIGAN v. TYLER ET AL.', No. 76-1608, decided May 31 1978 (Stewart, J.), star pages *501 through *514.",
+            "Lake citations.official selected_official=true; well-formed U.S. Reports SCOTUS citation."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Parallel cites (S. Ct., L. Ed. 2d) not checkable against cached text; facially well-formed."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "1210ace802561319",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Content page ^pin-510 quote 'officials need no warrant to remain in a building for a reasonable time to investigate the cause of a blaze after it has been extinguished.' — verbatim match to cached opinion (paragraph closing at the *510/*511 boundary).",
+            "Pincite 510 is correct: the sentence sits between the *510 and *511 star markers.",
+            "Payload already star-verified/matched with a #:~:text fragment; independently confirmed here."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "da01745c23ca79bf",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Content page ^pin-511 quote 'we hold that an entry to fight a fire requires no warrant, and that once in the building, officials may remain there for a reasonable time to investigate the cause of the blaze. Thereafter, additional entries to investigate the cause of the fire must be made pursuant to the warrant procedures governing administrative searches.' — verbatim match to cached opinion Part V.",
+            "Pincite 511 is correct: the quoted text sits between the *511 and *512 markers (the *512 marker precedes 'Barlow's').",
+            "Payload already star-verified/matched with a #:~:text fragment; independently confirmed here."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "e6b007ae91aeeb3b",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Content page ^pin-509 quote 'A burning building clearly presents an exigency of sufficient proportions to render a warrantless entry \"reasonable.\" . . . And once in a building for this purpose, firefighters may seize evidence of arson that is in plain view.' — both fragments verbatim to cached opinion; the ' . . . ' properly elides the intervening 'Indeed, it would defy reason...' sentence.",
+            "Pincite 509 is correct: both quoted fragments sit between the *509 and *510 star markers.",
+            "The payload 'quote' is a mis-captured page-frontmatter span ending at '## Rule A burning building is an exigency:'; mismatch/slip-only are S8 capture artifacts (no single #:~:text fragment could anchor the two-part ellipsis quote)."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Lake pinpoints[].quote for pin-509 stores the corrupted frontmatter span (metadata-hygiene only; rendered wiki quote and pincite are correct)."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "fd7b9a0f850b930d",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "good_law is correct for the Tyler fire/administrative-search holding; no disclosed edge shows the subject case overruled.",
+            "Disclosed negative edges are proposed lane1_negative citator noise.",
+            "composite_basis='migration-seed' — validity independently seeded."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "scope_note (refined by Michigan v. Clifford) post-dates the 1978 cached opinion; uncontradicted, corroborated by the wiki Treatment section only."
+          ],
+          "suggested_tightening": null
+        }
+      ]
+    }
+  ]
+}

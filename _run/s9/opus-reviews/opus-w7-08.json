@@ -1,0 +1,218 @@
+{
+  "packs": [
+    {
+      "group_id": "_overhaul2/lake/cases/Michigan v. Fisher.json",
+      "reviewed": [
+        {
+          "assertion_id": "657eb07434761de1",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion is the Fisher per curiam; reporter page-number markers run *46 through *50, so the opinion opens at 558 U.S. 45, matching the selected official cite (display '558 U.S. 45').",
+            "official_selection_present=true with the U.S.-Reports cite marked selected_official; parallel S. Ct./L. Ed. 2d/LEXIS cites are standard and uncontradicted by disclosed evidence."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Parallel-reporter pages (130 S. Ct. 546; 175 L. Ed. 2d 410) are not independently shown in the U.S.-Reports cached text."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "35fa5d5fb3ac8831",
+          "dimension": "quote_fidelity",
+          "verdict": "stands-modified",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "Pincite off by one: pin-48 attributes the quote to 558 U.S. at 48, but the cached bound-reporter text places the quoted sentence on page 49 (its paragraph opens with the *49 page-number marker, following the page-48 paragraphs b210-5/b210-6).",
+            "severity": "medium",
+            "proposed_fix": "Repoint to 558 U.S. at 49 (rename ^pin-48 to ^pin-49, fix the '— 558 U.S. at 48.' locator and the Sources note that asserts '558 U.S. 48 / slip op. at 4').",
+            "evidence_quote": "Even a casual review of Brigham City reveals the flaw in this reasoning. Officers do not need ironclad proof of “a likely serious, life-threatening” injury to invoke the emergency aid exception.",
+            "needs_cl": false,
+            "locator_note": "Cached-text paragraph id b211-4 opens with <page-number label=\"49\">*49</page-number>; the preceding paragraphs b210-5 and b210-6 are on page 48."
+          },
+          "reasons": [
+            "The pin-48 quote 'Officers do not need ironclad proof of \"a likely serious, life-threatening\" injury to invoke the emergency aid exception.' matches the cached opinion verbatim; the payload's 'mismatch' flag and garbled quote (the page header/front-matter) are an extractor false positive.",
+            "The quoted sentence sits in the paragraph beginning with the *49 reporter marker, so it is at 558 U.S. 49, not the cited 558 U.S. 48."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "pinpoint_status='slip-only' suggests the reporter page was never verified at authoring; slip-op pagination can differ, but the disclosed bound-reporter markers control and place the passage on 49."
+          ],
+          "suggested_tightening": "Verify reporter pincites against bound-reporter page-number markers before promoting slip-only pins."
+        },
+        {
+          "assertion_id": "bd0de3de441fa860",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "The cached opinion is per curiam and expressly applies Brigham City v. Stuart, matching scope_note 'Per curiam; applies Brigham City v. Stuart.'",
+            "No negative treatment of Fisher appears in the disclosed record; the good_law classification is consistent with all inlined evidence."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Currency to as_of_treatment 2026-06-30 depends on citator data not inlined; disclosed evidence shows nothing to the contrary."
+          ],
+          "suggested_tightening": null
+        }
+      ]
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/Michigan v. Jackson.json",
+      "reviewed": [
+        {
+          "assertion_id": "d42c68324bca3f7d",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached Stevens opinion is Michigan v. Jackson; reporter markers *627 through *636 place the opinion opening at 475 U.S. 625, matching the selected official cite.",
+            "official_selection_present=true; parallel S. Ct./L. Ed. 2d/LEXIS/U.S.L.W. cites are uncontradicted by disclosed evidence."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Parallel-reporter pages are not shown in the U.S.-Reports cached text."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "5eab94c5550f5587",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "The pin-636 quote 'We thus hold that, if police initiate interrogation after a defendant's assertion, at an arraignment or similar proceeding, of his right to counsel, any waiver of the defendant's right to counsel for that police-initiated interrogation is invalid.' matches the cached opinion verbatim.",
+            "The sentence sits in paragraph id A1H1, immediately after the <page-number label=\"636\">*636 marker, confirming the 475 U.S. 636 pincite; the payload 'mismatch' flag and garbled quote are an extractor false positive."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "fc4616a29ef23e89",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": false,
+          "defect": null,
+          "reasons": [
+            "Jackson's own 1986 opinion cannot confirm its later overruling; the Montejo v. Louisiana (2009) opinion asserted in the scope_note is not inlined, so the overruled/superseded currency is not independently verifiable from disclosed evidence.",
+            "No disclosed evidence contradicts the classification, so no defect is fabricated; the record is internally consistent (badge 'overruled', scope_note 'Overruled by Montejo')."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Overruling by Montejo v. Louisiana, 556 U.S. 778 (2009) is unverifiable from the inlined evidence.",
+            "field_i_validity code 'superseded' vs the content-page badge 'overruled' may be a vocabulary-granularity mismatch; the STANDARDS validity vocabulary is not disclosed."
+          ],
+          "suggested_tightening": "If the schema distinguishes 'overruled' (by decision) from 'superseded' (by statute/rule), confirm 'superseded' is the intended umbrella code for a decision-overruled case."
+        }
+      ]
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/Michigan v. Long.json",
+      "reviewed": [
+        {
+          "assertion_id": "2ddb558e4d6f0b53",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached O'Connor opinion is Michigan v. Long; reporter markers *1035 through *1054 place the opening at 463 U.S. 1032, matching the selected official cite.",
+            "official_selection_present=true; parallel S. Ct./L. Ed. 2d/LEXIS/U.S.L.W. cites are uncontradicted by disclosed evidence."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Parallel-reporter pages are not shown in the U.S.-Reports cached text."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "fd90ce8615c532f2",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "The pin-1049 quote 'the search of the passenger compartment of an automobile, limited to those areas in which a weapon may be placed or hidden, is permissible if the police officer possesses a reasonable belief based on \"specific and articulable facts which, taken together with the rational inferences from those facts, reasonably warrant\" the officer in believing that the suspect is dangerous and the suspect may gain immediate control of weapons.' matches the cached opinion verbatim.",
+            "The conclusion sentence (paragraph b1097-5) falls after the *1049 marker and ends before the *1050 marker, confirming 463 U.S. 1049; the payload 'mismatch' flag and garbled quote are an extractor false positive."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "937d9a0596c00ea1",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "The cached opinion extends Terry's protective-search rationale to a vehicle's passenger compartment, matching the page's characterization; no negative treatment of Long appears in disclosed evidence.",
+            "The good_law classification is consistent with all inlined evidence."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Currency to 2026-06-30 rests on citator data not inlined; the scope_note itself flags possible S2 re-derivation/downgrade; nothing negative is disclosed."
+          ],
+          "suggested_tightening": null
+        }
+      ]
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/Michigan v. Mosley.json",
+      "reviewed": [
+        {
+          "assertion_id": "7c5db0aa8c4acf96",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion header reads '423 U.S. 96 (1975)' and star-pagination *97 through *111 confirms the opening at 423 U.S. 96, matching the selected official cite.",
+            "official_selection_present=true; parallel S. Ct./L. Ed. 2d/LEXIS cites are uncontradicted by disclosed evidence."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Lake metadata lists opinion_id 109336 equal to cluster_id 109336 (atypical), but the case_cite existence assertion is unaffected by that metadata oddity."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "4b6cdbfef32335e1",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "The pin-104 quote 'We therefore conclude that the admissibility of statements obtained after the person in custody has decided to remain silent depends under Miranda on whether his \"right to cut off questioning\" was \"scrupulously honored.\"' matches the cached opinion verbatim.",
+            "The sentence follows the *104 star-pagination marker and precedes *105, confirming 423 U.S. 104; the payload 'mismatch' flag and garbled quote are an extractor false positive."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "017aa9bc00b26538",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "The cached opinion announces the 'scrupulously honored' standard for resuming questioning after a silence invocation, matching the page's characterization; no negative treatment of Mosley appears in disclosed evidence.",
+            "The good_law classification is consistent with all inlined evidence."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Currency to 2026-06-30 rests on citator data not inlined; the scope_note flags possible S2 re-derivation/downgrade; nothing negative is disclosed."
+          ],
+          "suggested_tightening": null
+        }
+      ]
+    }
+  ]
+}

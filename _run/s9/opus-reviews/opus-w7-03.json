@@ -1,0 +1,276 @@
+{
+  "packs": [
+    {
+      "group_id": "_overhaul2/lake/cases/Martin v. United States.json",
+      "reviewed": [
+        {
+          "assertion_id": "3ca35bee086c461a",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached preliminary-print header states 'Volume 605 U. S. Part 2, Pages 395-421' and 'OCTOBER TERM, 2024 ... 395', confirming the official cite 605 U.S. 395 (page 395 = first page).",
+            "Header 'No. 24-362. Argued April 29, 2025-Decided June 12, 2025' matches lake docket 24-362 and date_decided 2025-06-12; official_selection selected 605 U.S. 395 (scotus, rank 1).",
+            "Volume=605, reporter=U.S., page=395 are internally consistent across payload official, lake citations.official, and the cached header."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Cite is from a preliminary print ('Page Proof Pending Publication; subject to formal revision before the bound volume is published') - pagination is authoritative but theoretically revisable before the bound volume.",
+            "Frontmatter courtlistener.opinion_id is null while lake lead_opinion_id=11243426 and the page HTML comment says 'opinion 11243426' - an internal opinion_id inconsistency that does not touch the case_cite."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "2682603d10df1b7e",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Assertion is an honest non-derivation: field_i_validity='unverified', as_of_content/as_of_treatment null, varies_by_point false - there is no treatment proposition to refute.",
+            "Lake record corroborates: status 'under_review', treatment.composite_basis 'unverified', edges [], progeny fields null, scope_note 'Frontier stub: treatment/progeny intentionally not derived until S6 promotion.'",
+            "Content page renders 'Treatment: Unverified' under a white-circle banner and states the citator/progeny history 'have not completed the two-key verification' - no over-claim of good law."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Because treatment is intentionally underived, no currency signal exists; downstream must not read the under_review stub as an affirmative good-law representation."
+          ],
+          "suggested_tightening": null
+        }
+      ],
+      "notes": "Both assertions stand. Existence confirmed verbatim in the 605 U.S. preliminary-print header; treatment is an honest under_review frontier stub with no over-claim."
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/Maryland v. Buie.json",
+      "reviewed": [
+        {
+          "assertion_id": "4ca0f4cce5c3f428",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion header reads '494 U.S. 325 (1990)' with caption 'MARYLAND v. BUIE', confirming the payload's selected official cite.",
+            "official_selection selected '494 U.S. 325' (scotus, rank 1); opinion star-pagination (*326 ... *343) is consistent with a page-325 start.",
+            "Case identity (JUSTICE WHITE, protective-sweep two-tier holding) matches the record."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Parallel/vendor cites (110 S. Ct. 1093; 108 L. Ed. 2d 276; 1990 U.S. LEXIS 1176) are not present in the cached opinion text and are not independently verifiable from disclosed evidence (only the official 494 U.S. 325 is confirmed).",
+            "Record-wide date_decided is 1990-03-05, but the cached opinion header states 'Decided February 28, 1990' - a disclosed date discrepancy (does not affect the cite)."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "0d7c57e3e3ffe3ad",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "The payload 'quote' ('- a quick search of a house for dangerous persons - conducted incident to an in-home arrest. ## Rule A two-tier rule. As to spaces right next to the arrest, no suspicion is required:') is the page's Issue/Rule run-up prose plus a Markdown '## Rule' heading - an extractor mis-capture of the text preceding the ^pin-334 anchor, not the actual quotation (hence pinpoint_status 'slip-only', star_marker null).",
+            "The ACTUAL page quote at ^pin-334 - 'as an incident to the arrest the officers could, as a precautionary matter and without probable cause or reasonable suspicion, look in closets and other spaces immediately adjoining the place of arrest from which an attack could be immediately launched.' - matches the cached opinion verbatim ('We also hold that as an incident to the arrest the officers could ... immediately launched.').",
+            "Pincite '494 U.S. at 334' is correct: the quoted holding sits between the *334 and *335 star markers.",
+            "The extractor 'mismatch' flag is therefore a false positive on the underlying content; the page quote is faithful and correctly pincited."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "The stored assertion 'quote' string is garbage run-up prose; a downstream consumer that treats the payload quote as the page's actual quotation would mis-report a mismatch."
+          ],
+          "suggested_tightening": "Extractor should capture the span inside the quotation marks attached to the pin anchor, not the connective prose preceding it, to eliminate slip-only false-mismatches."
+        },
+        {
+          "assertion_id": "c53e2fb073530133",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Payload quote 'there must be articulable facts, which, taken together with the rational inferences from those facts, would warrant a reasonably prudent officer in believing that the area to be swept harbors an individual posing a danger to those on the arrest scene.' matches the cached opinion verbatim ('Beyond that, however, we hold that there must be articulable facts ... arrest scene.').",
+            "quote_fidelity 'matched' and pinpoint_status 'star-verified' (star_marker 334, text-fragment #:~:text=there%20must%20be%20articulable%20facts) are corroborated: the sentence sits on page 334 (before the *335 marker), consistent with the page's '*Id.*' (=494 U.S. 334) attribution.",
+            "The companion quote in the same ^pin-335 span ('is nevertheless not a full search of the premises, but may extend only to a cursory inspection of those spaces where a person may be found.' cited 'at 335') is also verbatim and correctly located after the *335 marker."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "8b85e2d37a46ef6d",
+          "dimension": "treatment",
+          "verdict": "stands-modified",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "Treatment payload as_of_content='1990-03-05' conflicts with the decision date disclosed in the cached opinion header, 'Decided February 28, 1990'. The record-wide date_decided (identity + frontmatter) carries the same 1990-03-05 value.",
+            "severity": "low",
+            "proposed_fix": "Correct as_of_content (and identity.date_decided / frontmatter date_decided) to 1990-02-28 per the official report, or document why 1990-03-05 is used (e.g. an intentional CL cluster date_filed value).",
+            "evidence_quote": "Decided February 28, 1990",
+            "needs_cl": false,
+            "locator_note": "Maryland v. Buie treatment.as_of_content; cross-check identity.date_decided and content frontmatter date_decided (all = 1990-03-05)."
+          },
+          "reasons": [
+            "Core treatment validity 'good_law' survives: Buie is the controlling protective-sweep authority, no negative treatment is disclosed (edges []/progeny empty), and good-law status is uncontradicted by the disclosed evidence.",
+            "However the as_of_content anchor date is factually wrong on the disclosed evidence (opinion header says 'Decided February 28, 1990', record says 1990-03-05) - a minor but verifiable defect in a payload field, hence stands-modified.",
+            "composite_basis 'migration-seed' means the 2026-06-30 currency is seeded, not freshly derived; the scope_note honestly discloses this ('Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade.')."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "as_of_treatment 2026-06-30 is a migration seed, not backed by a disclosed citator derivation; currency-as-of-2026 is asserted without a derived basis (honestly flagged in scope_note)."
+          ],
+          "suggested_tightening": "Reconcile the case's decision date across identity.date_decided, frontmatter, and treatment.as_of_content to the official 1990-02-28."
+        }
+      ],
+      "notes": "3 stand, 1 stands-modified. Both quote pins are verbatim-faithful and correctly pincited; the pin-334 'mismatch' is an extractor run-up-prose mis-capture. Buie treatment good_law stands but as_of_content date (1990-03-05) contradicts the cached header ('Decided February 28, 1990')."
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/Maryland v. Dyson.json",
+      "reviewed": [
+        {
+          "assertion_id": "e002e96285162310",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion carries star page-number labels '*466' and '*467' within a per-curiam opinion reversing the Maryland Court of Special Appeals - consistent with a report beginning at page 465, matching the official cite 527 U.S. 465 (page 465).",
+            "Identity corroborated: Per Curiam, red Toyota / 23 grams crack facts, reversing 122 Md. App. 413 - matches record identity and automobile-exception holding.",
+            "official_selection selected '527 U.S. 465' (scotus, rank 1)."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "The reporter/volume string '527 U.S.' is not literally present in the cached opinion text (only page-number labels 466/467); volume is corroborated by record consistency and the star-page sequence, not independently by the cached header.",
+            "Parallel cites (119 S. Ct. 2013; 144 L. Ed. 2d 442; 1999 U.S. LEXIS 4200) are not verifiable from disclosed evidence."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "58860ccce7e4a691",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Payload quote 'If a car is readily mobile and probable cause exists to believe it contains contraband, the Fourth Amendment . . . permits police to search the vehicle without more.' matches the cached opinion verbatim - Dyson quotes Pennsylvania v. Labron with the same internal ellipsis ('the Fourth Amendment... permits police to search the vehicle without more.').",
+            "Pincite is correct: the page cites '*Id.* at 467 (quoting 518 U.S. at 940)'; the quote appears on Dyson page 467 (after the *467 marker) and the opinion attributes it to Labron '*Id.,* at 940' (Labron = 518 U.S. 938).",
+            "The 'mismatch'/slip-only flag reflects the extractor's inability to star-verify a nested quotation-with-ellipsis, not a content defect."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "This is a quotation-within-quotation (Dyson quoting Labron); the page correctly signals it ('Quoting Pennsylvania v. Labron', 'quoting 518 U.S. at 940'), so the pin correctly attributes to the originating source."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "74de8ac9e461f3cf",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "The payload 'quote' ('but ample time to get a warrant, the warrantless search was invalid. ## Issue Whether the automobile exception requires a separate finding of exigency ... ## Rule No.') is Background/Issue/Rule run-up prose with Markdown headings - an extractor mis-capture of text preceding ^pin-466, not the actual quotation (slip-only, star_marker null).",
+            "The ACTUAL page quote at ^pin-466 - '[U]nder our established precedent, the automobile exception has no separate exigency requirement.' - matches the cached opinion verbatim ('And under our established precedent, the \"automobile exception\" has no separate exigency re[*467]quirement.'), with a proper bracketed capital '[U]' for the dropped leading 'And'.",
+            "Pincite '527 U.S. at 466' is correct: the sentence begins on page 466 (the word 'requirement' is split by the *467 page break).",
+            "The 'mismatch' flag is a false positive on the underlying content."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Stored assertion 'quote' string is run-up prose, not the page's quotation."
+          ],
+          "suggested_tightening": "Capture the quoted span inside the pin's quotation marks, not the preceding connective prose."
+        },
+        {
+          "assertion_id": "26ef089364be15a8",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Treatment 'good_law' is uncontradicted: Dyson is a settled per-curiam restatement of the automobile exception (Carroll/Ross/Labron), with no disclosed negative treatment (edges/progeny empty).",
+            "as_of_content '1999-06-21' is consistent with the case's decision date and is not contradicted by the disclosed evidence (the cached per curiam text states no conflicting date).",
+            "scope_note honestly frames it: 'Per curiam. Settled statement of the automobile exception; no negative treatment.'"
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "composite_basis 'migration-seed': as_of_treatment 2026-06-30 currency is seeded, not backed by a disclosed citator derivation."
+          ],
+          "suggested_tightening": null
+        }
+      ],
+      "notes": "All 4 stand. Existence confirmed via star-page sequence; both quotes verbatim (pin-466 with proper bracketed capitalization spanning the 466/467 page break; pin-467 a correctly-attributed Dyson-quoting-Labron passage). Treatment good_law with correct as_of_content, no disclosed negative treatment."
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/Maryland v. Garrison.json",
+      "reviewed": [
+        {
+          "assertion_id": "7f2c7c09670a78fe",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion (Justice Stevens) carries star page-number labels *81 through *89, consistent with a report whose first page is 79 - matching the official cite 480 U.S. 79 (page 79).",
+            "Identity corroborated: '2036 Park Avenue third floor apartment', McWebb/Garrison, reversing 303 Md. 385 - matches record identity and warrant-particularity holding.",
+            "official_selection selected '480 U.S. 79' (scotus, rank 1)."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Reporter/volume '480 U.S.' is not literally in the cached opinion text (only page labels 81-89); the page-79 start is inferred from the star-page sequence and is uncontradicted.",
+            "Parallel cites (107 S. Ct. 1013; 94 L. Ed. 2d 72; 55 U.S.L.W. 4190; 1987 U.S. LEXIS 559) are not verifiable from disclosed evidence."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "8112497b9fd6270c",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Payload quote 'the validity of the search of respondent's apartment pursuant to a warrant authorizing the search of the entire third floor depends on whether the officers' failure to realize the overbreadth of the warrant was objectively understandable and reasonable.' matches the cached opinion verbatim ('Under the reasoning in Hill, the validity of the search of respondent's apartment ... objectively understandable and reasonable.').",
+            "Pincite '480 U.S. at 88' is correct: the quoted sentence follows the *88 star marker within paragraph b133-7.",
+            "Quote is presented mid-sentence after a lead-in colon (lowercase 'the'), a permissible partial quotation; the 'mismatch'/slip-only flag reflects failed automated star-verification, not a content defect."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "9bb94a110a81cdf0",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "The payload 'quote' ('of a building they reasonably believed contained a single unit on that floor. In fact the third floor held two apartments ... ## Issue ... ## Rule Warrant validity is judged on the information reasonably available when it issued:') is Background/Issue/Rule run-up prose with Markdown headings - an extractor mis-capture of text preceding ^pin-85, not the actual quotation (slip-only).",
+            "The ACTUAL page quote at ^pin-85 - 'The validity of the warrant must be assessed on the basis of the information that the officers disclosed, or had a duty to discover and to disclose, to the issuing Magistrate.' - matches the cached opinion verbatim.",
+            "Pincite '480 U.S. at 85' is correct: the sentence sits between the *85 and *86 star markers.",
+            "The 'mismatch' flag is a false positive on the underlying content."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Stored assertion 'quote' string is run-up prose, not the page's quotation."
+          ],
+          "suggested_tightening": "Capture the quoted span inside the pin's quotation marks, not the preceding connective prose."
+        },
+        {
+          "assertion_id": "fc9cbf389d51b0eb",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Treatment 'good_law' is uncontradicted: Garrison remains controlling on warrant particularity / objectively-reasonable execution (applying Hill v. California), with no disclosed negative treatment (edges/progeny empty).",
+            "as_of_content '1987-02-24' is consistent with the case's decision date and uncontradicted by the disclosed evidence.",
+            "scope_note honestly frames the seed basis: 'Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade.'"
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "composite_basis 'migration-seed': as_of_treatment 2026-06-30 currency is seeded, not backed by a disclosed citator derivation."
+          ],
+          "suggested_tightening": null
+        }
+      ],
+      "notes": "All 4 stand. Existence confirmed via *81-*89 star-page sequence; pin-85 and pin-88 quotes verbatim and correctly pincited (pin-85 payload is run-up-prose mis-capture; pin-88 is faithful but failed automated star-verification). Treatment good_law with correct as_of_content."
+    }
+  ]
+}
