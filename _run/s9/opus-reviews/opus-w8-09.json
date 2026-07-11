@@ -1,0 +1,269 @@
+{
+  "packs": [
+    {
+      "group_id": "_overhaul2/lake/cases/Ohio v. Robinette.json",
+      "reviewed": [
+        {
+          "assertion_id": "f5502b35a49379b0",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion header shows '519 U.S. 33 (1996)', 'No. 95-891', argued Oct. 8 1996, decided Nov. 18 1996 — matches official cite and display '519 U.S. 33'.",
+            "Parallel cites (117 S. Ct. 417; 136 L. Ed. 2d 347) and vendor-neutral (1996 U.S. LEXIS 6971) are the standard Robinette citations; nothing in disclosed evidence contradicts.",
+            "official_selection_present=true, selected_rank_1; display consistent with cluster.citations[]."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "02e6cb4ab7dbb6ef",
+          "dimension": "quote_fidelity",
+          "verdict": "refuted",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "Stored pin-39 quote is a garbled extraction artifact: 'before a consent to search obtained during the encounter can be voluntary. ## Rule No. Just as the Court has not required a detailed warning before an ordinary consent search,' — it splices Issue-section prose and the literal Markdown heading '## Rule', which cannot appear in the Robinette opinion. Self-flagged quote_fidelity 'mismatch'.",
+            "severity": "low",
+            "proposed_fix": "Repair the stored pin-39 quote to the faithful text the page actually displays and which the opinion contains verbatim: 'so too would it be unrealistic to require police officers to always inform detainees that they are free to go before a consent to search may be deemed voluntary.' (519 U.S. 40).",
+            "evidence_quote": "so too would it be unrealistic to require police officers to always inform detainees that they are free to go before a consent to search may be deemed voluntary.",
+            "needs_cl": false,
+            "locator_note": "pin-39; cached opinion paragraph ending at *40 (Schneckloth discussion)."
+          },
+          "reasons": [
+            "Stored quote contains the Markdown token '## Rule' and page Issue-section text — impossible as verbatim opinion text.",
+            "Cached opinion has no such string; the reader-facing rendered quote at ^pin-39 IS faithful, so the defect is confined to the stored pinpoint metadata."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Rendered/displayed quote is faithful; this is a metadata-only extraction defect, not a reader-facing misquote."
+          ],
+          "suggested_tightening": "Re-derive pinpoint quotes from the rendered quotation span, not from raw Markdown surrounding the ^anchor."
+        },
+        {
+          "assertion_id": "e91cb8fa7e3d80de",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Stored quote matches the opinion verbatim (cached text, 519 U.S. 40): 'The Fourth Amendment test for a valid consent to search is that the consent be voluntary, and \"[v]oluntariness is a question of fact to be determined from all the circumstances\"'.",
+            "The only difference is truncation of the trailing citation 'id., at 248-249' and a comma->period at the stopping point — standard, non-substantive; the payload 'mismatch' flag is a false positive (bracket/punctuation normalization)."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Pipeline quote_fidelity 'mismatch' flag on this pin is a false positive; independent check confirms verbatim match."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "0218e380dae0ed5b",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "field_i_validity 'good_law' is correct: Robinette (1996) has not been overruled; its holding (no 'free to go' advisory required for voluntary consent) remains binding, matching the scope_note.",
+            "Every negative treatment edge is proposed:true citator noise flagged audit_needed / 'R15 treatment audit required' (e.g., FLSA case Genesis HealthCare 'questioning', labor case Granite Rock 'overruling', and state courts 'overruling' a SCOTUS holding); none adopted into field_i."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Unaudited proposed negative edges (Rodriguez 2015 'abrogated', McNeely 'questioned', etc.) are facially spurious citator false positives; the pending R15 audit does not disturb good_law."
+          ],
+          "suggested_tightening": null
+        }
+      ]
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/Oliver v. United States.json",
+      "reviewed": [
+        {
+          "assertion_id": "ef22fd2a2b8de626",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion header cites '466 U.S. 170' and Justice Powell's majority runs through star-pages *173-*184; pincite pages *179 and *180 are both present in the text.",
+            "Parallel cites (104 S. Ct. 1735; 80 L. Ed. 2d 214; 52 U.S.L.W. 4425) and vendor-neutral (1984 U.S. LEXIS 55) are the standard Oliver citations; official_selection_present=true."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "9aced01f5fcee6e3",
+          "dimension": "quote_fidelity",
+          "verdict": "stands-modified",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "The pin-179b quotation drops the locative qualifier 'in rural areas' and terminates with a period as though the sentence ends at 'open fields', but the opinion reads '...effectively bar the public from viewing open fields in rural areas.' The shown words are verbatim, yet the silent mid-sentence truncation slightly overstates the generality of the Court's practical observation.",
+            "severity": "low",
+            "proposed_fix": "Restore 'in rural areas' to complete the sentence, or add an ellipsis/bracket to signal the omission.",
+            "evidence_quote": "It is not generally true that fences or \"No Trespassing\" signs effectively bar the public from viewing open fields in rural areas.",
+            "needs_cl": false,
+            "locator_note": "pin-179b; cached opinion at *179 ('In contrast, open fields do not provide the setting...')."
+          },
+          "reasons": [
+            "All words shown are verbatim from the opinion up to 'open fields'.",
+            "The opinion continues 'in rural areas.'; the quote silently drops that qualifier and supplies a terminal period, so it is not a complete-sentence match — a real but minor fidelity issue."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Underlying proposition (fences/'No Trespassing' signs do not effectively bar public viewing of open fields) remains accurate; only the scope qualifier is dropped."
+          ],
+          "suggested_tightening": "Prefer full-sentence quotations or explicit ellipses when truncating before a sentence's grammatical end."
+        },
+        {
+          "assertion_id": "a92326cf2e260130",
+          "dimension": "quote_fidelity",
+          "verdict": "refuted",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "Stored pin-179 quote is a garbled extraction: 'signs, and secluded. ## Rule Yes.' — it is the tail of the page Issue section plus the literal Markdown heading '## Rule' and 'Yes.', not verbatim opinion text. Self-flagged quote_fidelity 'mismatch'.",
+            "severity": "low",
+            "proposed_fix": "Repair the stored pin-179 quote to the faithful text the page displays: '[O]pen fields do not provide the setting for those intimate activities that the Amendment is intended to shelter from government interference or surveillance.' (466 U.S. 179).",
+            "evidence_quote": "open fields do not provide the setting for those intimate activities that the Amendment is intended to shelter from government interference or surveillance.",
+            "needs_cl": false,
+            "locator_note": "pin-179; cached opinion at *179."
+          },
+          "reasons": [
+            "Stored quote contains the Markdown token '## Rule' and page Issue text — cannot be opinion text.",
+            "The reader-facing rendered quote at ^pin-179 is faithful to 466 U.S. 179; the defect is confined to the stored pinpoint metadata."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Rendered quote is faithful; metadata-only extraction defect."
+          ],
+          "suggested_tightening": "Re-derive pinpoint quotes from the rendered quotation span, not raw Markdown around the ^anchor."
+        },
+        {
+          "assertion_id": "e2937de357bc76c4",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Stored/displayed quote matches the opinion verbatim, de-hyphenating the line-break OCR 'curti-lage': 'distinguished \"open fields\" from the \"curtilage,\" the land immediately surrounding and associated with the home' (466 U.S. 180).",
+            "The companion clause '[t]he distinction implies that only the curtilage, not the neighboring open fields, warrants the Fourth Amendment protections that attach to the home' is also verbatim; the 'mismatch' flag is a false positive (hyphen + [t] capitalization bracket)."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Pipeline 'mismatch' flag on this pin is a false positive."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "2df7707c68537eec",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "field_i_validity 'good_law' is correct: the open-fields doctrine reaffirmed in Oliver (1984) — including the curtilage distinction — remains good law; the opinion itself reaffirms Hester.",
+            "All 33 treatment edges in the record are proposed:true citator noise; 0 confirmed negative edges (grep 'proposed: false' -> none)."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Proposed overruled/abrogated/superseded_by_statute edges are unaudited citator false positives and do not disturb good_law."
+          ],
+          "suggested_tightening": null
+        }
+      ]
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/Olivier v. City of Brandon.json",
+      "reviewed": [
+        {
+          "assertion_id": "22a752c0b1cdc7db",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "field_i_validity 'unverified' correctly matches the record's under_review frontier-stub state: treatment/progeny intentionally not derived (identity_checked:false, official cite null, citations.all empty).",
+            "The assertion makes no affirmative legal-validity claim to refute; it is internally consistent with the page's 'Unverified' banner and the scope_note ('Frontier stub: treatment/progeny intentionally not derived until S6 promotion')."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "The page still asserts a holding and a Rule quote while treatment is unverified, but those are outside the scope of this treatment-only assertion."
+          ],
+          "suggested_tightening": null
+        }
+      ]
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/Olmstead v. United States.json",
+      "reviewed": [
+        {
+          "assertion_id": "8f0014cec35d894f",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion header shows '277 U.S. 438 (1928)' — matches official cite and display '277 U.S. 438'.",
+            "Parallel cites (48 S. Ct. 564; 72 L. Ed. 944; 66 A.L.R. 376) and vendor-neutral (1928 U.S. LEXIS 694) are the standard Olmstead citations; case_name_full ('OLMSTEAD Et Al. v. UNITED STATES; ...') is consistent; official_selection_present=true."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "7b49e527492026b3",
+          "dimension": "quote_fidelity",
+          "verdict": "refuted",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "Stored pin-464 quote is a garbled extraction: 'within the Fourth Amendment. ## Rule *(Historical — this holding has been overruled; see Treatment.)* The Court tied Fourth Amendment protection to physical trespass and tangible things:' — it splices Issue-tail text, the Markdown heading '## Rule', the page's own editorial parenthetical, and the page's lead-in prose; none of it is opinion text. Self-flagged quote_fidelity 'mismatch'.",
+            "severity": "low",
+            "proposed_fix": "Repair the stored pin-464 quote to the faithful text the page displays: 'The Amendment itself shows that the search is to be of material things — the person, the house, his papers or his effects.' (277 U.S. 464).",
+            "evidence_quote": "The Amendment itself shows that the search is to be of material things  the person, the house, his papers or his effects.",
+            "needs_cl": false,
+            "locator_note": "pin-464; cached opinion at 277 U.S. 464."
+          },
+          "reasons": [
+            "Stored quote contains the Markdown token '## Rule' and the page's editorial note '(Historical — this holding has been overruled; see Treatment.)' — impossible in a 1928 opinion.",
+            "Cached opinion contains the faithful 'material things' sentence; the reader-facing rendered quote at ^pin-464 is correct, so the defect is confined to the stored pinpoint metadata."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Rendered quote is faithful; metadata-only extraction defect."
+          ],
+          "suggested_tightening": "Re-derive pinpoint quotes from the rendered quotation span, not raw Markdown around the ^anchor."
+        },
+        {
+          "assertion_id": "a9f4933be830080d",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Stored quote 'There was no searching. There was no seizure. The evidence was secured by the use of the sense of hearing and that only.' matches the cached opinion verbatim (277 U.S. 464).",
+            "Payload flags quote_fidelity 'matched' / pinpoint_status 'star-verified' (star_marker 464); independent re-read of the cached text confirms the match."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "dae9a04461320ed6",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Olmstead (1928) is no longer good law: overruled on the privacy point by Katz v. United States (1967), with the property-trespass approach later revived as an alternative test in United States v. Jones (2012) — black-letter Fourth Amendment history that matches the scope_note.",
+            "field_i_validity 'superseded' is used here as the taxonomy's no-longer-good-law bucket (cf. 'good_law'/'unverified' in the sibling records); the specific overruling mechanism is stated in the scope_note and the badge renders 'overruled'."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "field_i label 'superseded' vs scope_note/badge 'overruled' is a terminology nuance ('superseded' can connote by-statute); the substance (overruled by Katz, revived by Jones) is correct."
+          ],
+          "suggested_tightening": "If the field_i enum supports it, use 'overruled' to align with the scope_note/badge and avoid the by-statute connotation of 'superseded'."
+        }
+      ]
+    }
+  ]
+}

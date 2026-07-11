@@ -1,0 +1,267 @@
+{
+  "packs": [
+    {
+      "group_id": "_overhaul2/lake/cases/Nance v. Ward.json",
+      "reviewed": [
+        {
+          "assertion_id": "19cccca39375ba9e",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached slip op confirms Nance v. Ward, No. 21-439, argued Apr 25 / decided June 23, 2022, SCOTUS, 'Cite as: 597 U. S. ____ (2022)' -- volume 597 and year 2022 match official cite '597 U.S. 159'.",
+            "Holding text 'The question presented is whether §1983 is still a proper vehicle. We hold that it is.' matches, corroborating identity."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Slip op is unpaginated ('597 U. S. ____'), so exact U.S.-reporter page 159 is not confirmable from cached text; record already discloses 'U.S.-reporter page equality not asserted per S2 A3', and 159 comes from cluster.citations[].",
+            "Parallel cites 142 S. Ct. 2214 / 213 L. Ed. 2d 499 not independently confirmable from disclosed slip (from cluster.citations[])."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "a53e806e4504b093",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Claim is field_i_validity='unverified' (frontier stub); content page renders 'Treatment: Unverified' with the under-review banner and 'subsequent treatment not yet machine-verified' -- internally consistent, no false good-law claim.",
+            "scope_note honestly states treatment/progeny intentionally not derived until S6 promotion."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Treatment is declared-unverified by design; there is no currency determination to test or break."
+          ],
+          "suggested_tightening": null
+        }
+      ]
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/Napue v. Illinois.json",
+      "reviewed": [
+        {
+          "assertion_id": "ea80528374bd548a",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion confirms Napue v. Illinois, Warren C.J. delivering; first star marker *265 places the opinion start on 360 U.S. 264, matching official cite '360 U.S. 264'.",
+            "Cert grant 358 U. S. 919 and Illinois Supreme Court history (13 Ill. 2d 566; 150 N. E. 2d 613) corroborate identity."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Parallel cites (79 S. Ct. 1173; 3 L. Ed. 2d 1217; 1959 U.S. LEXIS 811) from cluster.citations[], not independently confirmable from disclosed opinion text."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "8c4076543f5084b5",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Rendered page quote '[I]t is established that a conviction obtained through use of false evidence, known to be such by representatives of the State, must fall under the Fourteenth Amendment.' is verbatim to cached text ('First, it is established ... must fall under the Fourteenth Amendment,'), with proper bracketed [I] and terminal period at truncation.",
+            "Text sits after the *269 star marker and before *270, so pincite 360 U.S. 269 is correct."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "S8 payload.quote for this pin is polluted with page-header/frontmatter text (broken extraction), which is why the pre-computed quote_fidelity='mismatch' is a false positive; the page's actual rendered quote is faithful."
+          ],
+          "suggested_tightening": "Re-extract payload.quote for pin-269 from the rendered ## Rule block, not the page header, so the S8 fidelity check is meaningful."
+        },
+        {
+          "assertion_id": "bcd8ca9624beb0fd",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Quoted fragment 'does not cease to apply merely because the false testimony goes only to the credibility of the witness' appears verbatim in cached text ('... does not cease to apply merely because the false testimony goes only to the credibility of the witness.').",
+            "On 360 U.S. 269 (between *269 and *270); comma at truncation replaces the source period -- acceptable, words are exact."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "S8 pre-computed quote_fidelity='mismatch' is a false positive, likely from star-pagination markup / punctuation-at-truncation normalization; the fragment matches verbatim."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "4b1371c869267138",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "field_i_validity='good_law' for a foundational 1959 SCOTUS due-process holding (Mooney-Napue-Giglio line); cached opinion confirms the knowing-false-testimony/credibility rule.",
+            "The only disclosed negative signals are 4 proposed(unaccepted) edges -- Schmitt v. State (Ga., 901 S.E.2d) 'overruled'; Sosa and Grand Jury 'superseded_by_statute'; Robinson 'questioned' -- all facially non-credible against a SCOTUS constitutional holding (a state court cannot overrule SCOTUS; a statute cannot supersede a due-process rule), so field_i_validity correctly resolves to good_law."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "composite_basis is 'migration-seed' (not a live citator run); good-law-as-of-2026-06-30 rests on the seed plus rejection of the non-credible proposed edges -- no independent citator confirmation is inlined.",
+            "Content page's flat 'No negative treatment' understates that proposed negative edges exist in the record (though correctly not promoted)."
+          ],
+          "suggested_tightening": "Consider annotating that the proposed negative edges were evaluated and rejected as N-blindness misattributions rather than stating 'No negative treatment' flat."
+        }
+      ]
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/Nardone v. United States.json",
+      "reviewed": [
+        {
+          "assertion_id": "4a142d4956d844f2",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion confirms Nardone v. United States ('Nardone II'), Frankfurter J., 'called upon for the second time to review'; first star marker *339 places the opinion start on 308 U.S. 338, matching official cite.",
+            "Opinion cites Nardone I at 302 U. S. 379, confirming this is the distinct 1939 derivative-use decision."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Parallel cites (60 S. Ct. 266; 84 L. Ed. 307; 1939 U.S. LEXIS 1132) from cluster.citations[], not independently confirmable from disclosed text."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "b229c2afb313728f",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Page quote 'As a matter of good sense … such connection may have become so attenuated as to dissipate the taint.' matches cached text 'As a matter of good sense, however, such connection may have become so attenuated' as to dissipate the taint.' -- ellipsis properly omits 'however'; OCR apostrophe on 'attenuated' dropped.",
+            "On 308 U.S. 341 (between *341 and *342), matching the Id.-at-341 pincite."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "S8 quote_fidelity='mismatch' is a false positive from the ellipsis omission and OCR artifacts; text is faithful."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "cb2925735cf35d8f",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Rendered page quotes 'shall not be used at all,' and 'the knowledge gained by the Government's own wrong cannot be used by it … simply because it is used derivatively.' are verbatim in cached text ('... but that it shall not be used at all.' and '... cannot be used by it\" simply because it is used derivatively.').",
+            "'shall not be used at all' straddles the *340/*341 break and the derivative-use clause is on 341, so pincite 340-341 is correct."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "S8 payload.quote for pin-340 is polluted with page-background prose (broken extraction) -> its quote_fidelity='mismatch' is a false positive; the page's actual quote is faithful."
+          ],
+          "suggested_tightening": "Re-extract payload.quote for pin-340 from the ## Rule block."
+        },
+        {
+          "assertion_id": "f125e4086cc4bb3c",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Page quote 'the trial judge must give opportunity, however closely confined, to the accused to prove that a substantial portion of the case against him was a fruit of the poisonous tree. This leaves ample opportunity to the Government to convince the trial court that its proof had an independent origin.' matches cached text; page silently corrects OCR 'ease'->'case' and drops a stray OCR apostrophe, italicizes the coined phrase.",
+            "On 308 U.S. 341, matching the Id.-at-341 pincite."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "S8 quote_fidelity='mismatch' is a false positive from OCR-artifact normalization ('ease' vs 'case') and italic markup; substance is verbatim."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "01db28ac718c7003",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "field_i_validity='good_law'; Nardone coined 'fruit of the poisonous tree' and recognized the attenuation limit (both confirmed in cached opinion), carried into Wong Sun and Brown v. Illinois.",
+            "Disclosed negative signals are 4 proposed(unaccepted) edges -- State v. Gilbert (Ohio) and State v. Brunetti x2 (Conn.) 'overruled', plus Wong Sun 'overruled' -- all non-credible (state courts cannot overrule SCOTUS; Wong Sun built on Nardone), so good_law is the defensible resolution."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "composite_basis='migration-seed'; no live citator confirmation inlined.",
+            "Content page 'No negative treatment' understates presence of proposed (correctly-rejected) negative edges."
+          ],
+          "suggested_tightening": null
+        }
+      ]
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/National Treasury Employees Union v. Von Raab.json",
+      "reviewed": [
+        {
+          "assertion_id": "781263432fb6b96c",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion confirms NTEU v. Von Raab, Kennedy J.; page-number markers *660..*679 place the majority opinion in 489 U.S. beginning at 656, matching official cite '489 U.S. 656'.",
+            "Companion reference to Skinner ('decided today') and Fifth Circuit history (816 F. 2d 170) corroborate the 1989 identity."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Numerous parallel/specialty cites (109 S. Ct. 1384; 103 L. Ed. 2d 685; 1989 U.S. LEXIS 6033; CCH OSHD; I.E.R. Cas.; U.S.L.W.; Empl. Prac. Dec.) from cluster.citations[], not independently confirmable from disclosed text."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "1b0319239161fd98",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Page quote 'Customs employees who are directly involved in the interdiction of illegal drugs or who are required to carry firearms in the line of duty likewise have a diminished expectation of privacy in respect to the intrusions occasioned by a urine test.' is verbatim to cached text (dropping only the introductory 'We think').",
+            "Sentence follows the *672 page-number marker, so pincite 672 (star-verified) is correct."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "None material; S8 already marked this 'matched'/'star-verified' and independent read concurs."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "48cda930cd2882cf",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Rendered page quote 'where a Fourth Amendment intrusion serves special governmental needs, beyond the normal need for law enforcement, it is necessary to balance the individual's privacy expectations against the Government's interests to determine whether it is impractical to require a warrant or some level of individualized suspicion in the particular context.' is verbatim to cached text; the *666 page-number break falls mid-quote (after 'warrant or'), so pincite 665-66 is correct."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "S8 payload.quote for pin-665 is polluted with page-header/frontmatter (broken extraction) -> quote_fidelity='mismatch' is a false positive; the page's actual quote is faithful."
+          ],
+          "suggested_tightening": "Re-extract payload.quote for pin-665 from the ## Rule block."
+        },
+        {
+          "assertion_id": "d2226cb199552309",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "field_i_validity='good_law'; Von Raab is a leading special-needs/suspicionless-testing precedent, decided with Skinner and later applied (Vernonia) / distinguished (Chandler).",
+            "The disclosed record's large set of negative edges are all proposed(unaccepted) N-blindness misattributions -- e.g., Landgraf, Harmelin, Employment Div. v. Smith, California v. Acevedo tagged 'overruled', each of which overruled a DIFFERENT case, not Von Raab -- so field_i_validity correctly stays good_law."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "composite_basis='migration-seed'; no live citator confirmation inlined.",
+            "Content page 'No negative treatment' understates the large set of proposed (correctly-rejected) negative edges in the record."
+          ],
+          "suggested_tightening": null
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,239 @@
+{
+  "packs": [
+    {
+      "group_id": "_overhaul2/lake/cases/Milam v. United States.json",
+      "lens": "AB",
+      "reviewed": [
+        {
+          "assertion_id": "51f1cc41945a5299",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached 4th Cir. opinion (Woods, Circuit Judge) carries page-number labels *630/*631/*632, consistent with a case beginning at 296 F. 629; lake identity cluster 8849836 confirms official cite '296 F. 629' (type 1, selected_official).",
+            "Parallel neutral cite '1924 U.S. App. LEXIS 3380' and display '296 F. 629' match the lake citations block; official_selection reason selected_rank_1."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Lake date_decided is empty (noted in the record for recovery); does not affect the existence of the cite."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "1431bf707f4fa962",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "field_i_validity 'unverified' with null as_of_content/as_of_treatment makes no positive currency claim; matches the lake treatment block exactly (frontier stub, status under_review).",
+            "Content page renders 'Treatment: Unverified' under the white banner - there is no reliance proposition to refute."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Treatment/progeny intentionally not derived until S6/S9 promotion; nothing is asserted that could be broken."
+          ],
+          "suggested_tightening": null
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/Mincey v. Arizona.json",
+      "lens": "AB",
+      "reviewed": [
+        {
+          "assertion_id": "c460ecd12fdcb4f1",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion header: '437 U.S. 385 (1978)', 'MINCEY v. ARIZONA', 'Supreme Court of United States', 'Decided June 21, 1978' - matches official cite, court, year, and date_decided.",
+            "Parallel cites 98 S. Ct. 2408 / 57 L. Ed. 2d 290 and neutral 1978 U.S. LEXIS 115 are consistent with the lake citations block; lead opinion 109905."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "0f4fa74acd1f7810",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion at *393: 'And the police may seize any evidence that is in plain view during the course of their legitimate emergency activities.' - the quoted sentence appears verbatim on page 393 (star marker present).",
+            "star_marker '393' and the text-fragment anchor match; pinpoint_status star-verified, quote_fidelity matched - independently confirmed."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "817ed0ece8759726",
+          "dimension": "quote_fidelity",
+          "verdict": "stands-modified",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "Stored pinpoint quote for pin-392 is a slip-extraction: it captured page-markdown from the Issue/Rule sections ('...## Rule There is no murder-scene exception...permit warrantless action to render aid:') rather than an opinion quote, so quote_fidelity self-flags 'mismatch'.",
+            "severity": "low",
+            "proposed_fix": "Re-extract pin-392's stored quote to the actual quoted sentence the page publishes, which is verbatim-supported at 437 U.S. 392.",
+            "evidence_quote": "the Fourth Amendment does not bar police officers from making warrantless entries and searches when they reasonably believe that a person within is in need of immediate aid.",
+            "needs_cl": false,
+            "locator_note": "Cached opinion page 392 (between the *392 and *393 star markers); content page pin-392 anchors the Rule-section sentence cited to '437 U.S. at 392'."
+          },
+          "reasons": [
+            "Rendered page pincite is sound: the actual pin-392 quote ('...in need of immediate aid.' - 437 U.S. at 392) appears verbatim in the cached opinion on page 392, so the legal proposition survives.",
+            "Defect is confined to the lake pinpoint's stored quote field (slip-only extraction artifact), not the published pincite."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "An automated grade of the stored quote string alone reads 'mismatch'; the correction is metadata-only."
+          ],
+          "suggested_tightening": "Persist the block-quoted sentence, not the anchor's preceding page prose."
+        },
+        {
+          "assertion_id": "afa9df3e4ee05106",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "field_i_validity 'good_law' (composite_basis migration-seed) matches the lake record; the cited holding - no murder-scene exception / emergency-aid - is what the page relies on and is stated in the cached opinion (pp. 392-395).",
+            "All negative edges (incl. Arizona v. Fulminante 'overruled') are proposed:true candidate signals not adjudicated into the composite; scope_note states S2 re-derivation re-derives and may downgrade."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Proposed 'overruled' edge from Arizona v. Fulminante (499 U.S. 279) targets Mincey's separate coerced-confession/harmless-error holding, not the cited 4A point; S2 re-derivation may need varies_by_point=true to reflect partial overruling on the non-cited point.",
+            "as_of_treatment 2026-06-30 is a migration seed, not a fresh derivation."
+          ],
+          "suggested_tightening": "On re-derivation, point-scope validity so the 4A emergency-aid point stays good_law while flagging the overruled confession point."
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/Minnesota v. Carter.json",
+      "lens": "AB",
+      "reviewed": [
+        {
+          "assertion_id": "a2d46858925f4726",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion header: '525 U.S. 83 (1998)', 'MINNESOTA v. CARTER', 'United States Supreme Court', 'Decided December 1, 1998' - matches official cite, court, year, and date_decided.",
+            "Parallel 119 S. Ct. 469 / 142 L. Ed. 2d 373 and neutral 1998 U.S. LEXIS 7844 are consistent with the lake citations block; lead opinion 118249."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "cf874d0d898b4fe7",
+          "dimension": "quote_fidelity",
+          "verdict": "stands-modified",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "Stored pin-90 quote is a slip-extraction: it captured the entire page top matter (frontmatter + Background + Issue + Rule markdown, '--- # Minnesota v. Carter ... ## Rule No.') instead of an opinion quote; quote_fidelity self-flags 'mismatch'.",
+            "severity": "low",
+            "proposed_fix": "Re-extract pin-90's stored quote to the actual quoted sentence, verbatim at 525 U.S. 90.",
+            "evidence_quote": "Thus, an overnight guest in a home may claim the protection of the Fourth Amendment, but one who is merely present with the consent of the householder may not.",
+            "needs_cl": false,
+            "locator_note": "Cached opinion page 90 (immediately after the *90 star marker); content page pin-90 anchors the Rule-section sentence cited to '525 U.S. at 90'."
+          },
+          "reasons": [
+            "Rendered page pincite is sound: the actual pin-90 quote appears verbatim in the cached opinion on page 90 (just past the *90 star marker), so the proposition survives.",
+            "Defect is confined to the lake pinpoint's stored quote field (slip-only artifact)."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "An automated grade of the stored quote string alone reads 'mismatch'; the correction is metadata-only."
+          ],
+          "suggested_tightening": "Persist the block-quoted sentence rather than the anchor's preceding page markdown."
+        },
+        {
+          "assertion_id": "6c223527b041f200",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "field_i_validity 'good_law' (migration-seed) matches the lake record; Carter's standing / reasonable-expectation-of-privacy holding is landmark and remains authoritative (refines Rakas; bounds Olson).",
+            "The 32 'overruled' / 32 'questioned' edges are proposed:true candidate signals dominated by state-court entries (e.g., Ohio State v. Howard / Keith / Funk) that cannot overrule SCOTUS - citator/N-blindness noise, not adjudicated into the composite."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "The large volume of proposed negative edges should be adjudicated in S2 re-derivation; from disclosed evidence none is a genuine SCOTUS-level overruling of the cited holding."
+          ],
+          "suggested_tightening": "S2 should filter sub-SCOTUS 'overruled' proposals before they can touch a SCOTUS record's composite validity."
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/Minnesota v. Dickerson.json",
+      "lens": "AB",
+      "reviewed": [
+        {
+          "assertion_id": "7d9b610531cc3d34",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Lake identity confirms cluster 112873, 'Minnesota v. Dickerson', scotus, decided 1993-06-07, official cite '508 U.S. 366' (expected_citation_found, party_name_in_text, canonical_name_match all true).",
+            "Cached majority (Justice White) carries page-number labels *369 and *376, consistent with a case beginning at 508 U.S. 366; content matches (Terry frisk / plain-feel)."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "bbbd99798a4062b0",
+          "dimension": "quote_fidelity",
+          "verdict": "stands-modified",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "Stored pin-375 quote is a slip-extraction capturing the page top matter (frontmatter + Background + Issue + Rule markdown, '--- # Minnesota v. Dickerson ... ## Rule Yes, within limits - a') instead of an opinion quote; quote_fidelity self-flags 'mismatch'.",
+            "severity": "low",
+            "proposed_fix": "Re-extract pin-375's stored quote to the actual quoted sentence, verbatim across 508 U.S. 375-376.",
+            "evidence_quote": "If a police officer lawfully pats down a suspect's outer clothing and feels an object whose contour or mass makes its identity immediately apparent, there has been no invasion of the suspect's privacy beyond that already authorized by the officer's search for weapons; if the object is contraband, its warrantless seizure would be justified by the same practical considerations that inhere in the plain-view context.",
+            "needs_cl": false,
+            "locator_note": "Cached opinion para b423-5; the *376 page-number label falls mid-sentence ('warrantless seizure *376 would be justified'), confirming the 375-376 span; content page pin-375 cited to '508 U.S. at 375-376'."
+          },
+          "reasons": [
+            "Rendered page pincite is sound: the actual pin-375 quote appears verbatim in the cached opinion spanning pages 375-376 (page label 376 falls mid-sentence), so the proposition survives.",
+            "Defect is confined to the lake pinpoint's stored quote field (slip-only artifact)."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "An automated grade of the stored quote string alone reads 'mismatch'; the correction is metadata-only.",
+            "Source uses typographic (curly) apostrophes vs straight in the page - ordinary normalization, not a fidelity defect."
+          ],
+          "suggested_tightening": "Persist the block-quoted sentence rather than the anchor's preceding page markdown."
+        },
+        {
+          "assertion_id": "e328541b263ca3c8",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "field_i_validity 'good_law' (migration-seed) matches the lake record; Dickerson's plain-feel corollary is landmark and remains authoritative (extends Horton / Hicks plain-view logic to tactile discovery).",
+            "The proposed negative edges (22 overruled / 10 abrogated / 26 questioned / 6 superseded / 2 criticized) are proposed:true candidate signals not adjudicated into the composite (composite_basis migration-seed); scope_note states S2 re-derivation may downgrade."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "The high volume of proposed negative edges warrants S2 adjudication; from disclosed evidence none establishes a SCOTUS-level overruling of the cited plain-feel holding."
+          ],
+          "suggested_tightening": "S2 should down-weight sub-SCOTUS and self-referential 'overruled/abrogated' proposals against a SCOTUS record."
+        }
+      ],
+      "notes": ""
+    }
+  ]
+}

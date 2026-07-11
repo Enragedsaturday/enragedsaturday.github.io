@@ -1,0 +1,281 @@
+{
+  "packs": [
+    {
+      "group_id": "_overhaul2/lake/cases/Muehler v. Mena.json",
+      "reviewed": [
+        {
+          "assertion_id": "1dc43cac2cf9f32e",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion caption confirms '544 U.S. 93 (2005)', 'MUEHLER ET AL. v. MENA', No. 03-1423, argued Dec 8 2004, decided March 22 2005 — matches record identity and date_decided.",
+            "Official cite 544 U.S. 93 present and selected_official=true; parallels 125 S. Ct. 1465 and 161 L. Ed. 2d 299 are internally consistent SCOTUS reporter cites."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "a98fdd8f1c6bb0f1",
+          "dimension": "quote_fidelity",
+          "verdict": "stands-modified",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "The pin-98 pinpoint quote field is a mis-extracted wiki-page blob (frontmatter '---' through Background/Issue/Rule preamble), not an opinion passage; it is correctly self-flagged fidelity=mismatch/slip-only. The content page's actual ^pin-98 quotation is a DIFFERENT, verifiable sentence, so the reader is not misled, but the stored quote is corrupt metadata.",
+            "severity": "low",
+            "proposed_fix": "Re-extract the pin-98 quote to the sentence rendered on the page, which verifies verbatim at 544 U.S. 98; keep pincite 98.",
+            "evidence_quote": "An officer's authority to detain incident to a search is categorical; it does not depend on the \"quantum of proof justifying detention or the extent of the intrusion to be imposed by the seizure.\"",
+            "needs_cl": false,
+            "locator_note": "Cached opinion paragraph under the star *98 marker (Rehnquist maj.); *99 marker begins the next paragraph, confirming page 98."
+          },
+          "reasons": [
+            "Stored pin-98 quote is verbatim the page's frontmatter/Background/Issue/Rule text — a slip-only extraction artifact, not an opinion quote (matches lake self-flag mismatch).",
+            "The sentence the page actually cites at ^pin-98 ('An officer's authority to detain incident to a search is categorical...') appears verbatim in the cached opinion at star *98; pincite 544 U.S. 98 is correct."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": "Reconcile the pinpoint quote field with the rendered quotation so fidelity can flip mismatch->matched."
+        },
+        {
+          "assertion_id": "c66d9e20b37112c2",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Quote 'the officers did not need reasonable suspicion to ask Mena for her name, date and place of birth, or immigration status.' appears verbatim in the cached opinion, in the paragraph between the star *101 and *102 markers.",
+            "Pincite 101 and star_marker '101' are correct; fragment/star-verified status corroborated by disclosed text."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "1ccadf21e145c808",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Muehler v. Mena is a 2005 SCOTUS merits decision (vacating/remanding the 9th Cir.); nothing in the disclosed opinion or edges shows any Supreme Court negative treatment. good_law is supported.",
+            "The disclosed negative treatment.edges (State v. Tripp x3, Harte) are all proposed=true lane1_negative keyword hits from state/lower courts, which cannot abrogate a SCOTUS holding — facially false positives, not a basis to disturb good_law."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Comprehensive treatment currency as-of 2026-06-30 (full Shepard/KeyCite) is not independently reproducible from the disclosed set; good_law here rests on SCOTUS status plus FP-only disclosed negatives."
+          ],
+          "suggested_tightening": null
+        }
+      ],
+      "notes": "Model-diversity lane; pin-101 clean, pin-98 stored quote is a benign extraction artifact (real quote verifies), existence and treatment stand."
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/Mullenix v. Luna.json",
+      "reviewed": [
+        {
+          "assertion_id": "8bc9812a32fc6616",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached slip opinion confirms 'CHADRIN LEE MULLENIX v. BEATRICE LUNA...', No. 14-1143, decided November 9, 2015, PER CURIAM, 'Cite as: 577 U. S. ___ (2015)' — matches record identity and date_decided.",
+            "577 U.S. 7 and parallels (136 S. Ct. 305; 193 L. Ed. 2d 255) are present and mutually consistent; the case plainly exists."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "official_selection.selected is null (reason 'unlisted_reporter:Fla. L. Weekly Fed. S'), so no cite is flagged selected_official even though 577 U.S. 7 is present in all[]; a metadata gap, not an existence defect."
+          ],
+          "suggested_tightening": "Whitelist/rank 577 U.S. 7 as selected_official so display is non-null."
+        },
+        {
+          "assertion_id": "69f7f923d4c33fb8",
+          "dimension": "quote_fidelity",
+          "verdict": "stands-modified",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "The pin-12 pinpoint quote field is a mis-extracted wiki-page blob (frontmatter through Background/Issue/Rule preamble), not an opinion passage; correctly self-flagged fidelity=mismatch/slip-only. The page's actual ^pin-12 quotation is a different, verifiable sentence.",
+            "severity": "low",
+            "proposed_fix": "Re-extract the pin-12 quote to the sentence rendered on the page, which verifies verbatim in the cached opinion; the U.S. Reports pincite 12 is slip-only (not star-verifiable in the slip-format cache) but consistent with the official cite.",
+            "evidence_quote": "We have repeatedly told courts . . . not to define clearly established law at a high level of generality.",
+            "needs_cl": false,
+            "locator_note": "Cached slip op.: quote appears verbatim followed by 'al-Kidd, supra, at 742.' — page attribution matches the content page's '(quoting al-Kidd)'."
+          },
+          "reasons": [
+            "Stored pin-12 quote is verbatim the page preamble text, not an opinion quote (matches lake self-flag mismatch).",
+            "The sentence the page actually cites at ^pin-12 verifies verbatim in the cached slip opinion and is correctly attributed as quoting al-Kidd; the companion 'dispositive question... violative nature of particular conduct is clearly established' line also verifies verbatim."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Slip-format cache lacks U.S. Reports star pages, so the 11/12 pincites cannot be star-verified from disclosed text (Sources line already discloses this)."
+          ],
+          "suggested_tightening": "Reconcile the pinpoint quote field with the rendered quotation."
+        },
+        {
+          "assertion_id": "0940d26c4b3e244a",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Mullenix v. Luna is a 2015 per curiam SCOTUS decision reversing the 5th Cir. on qualified immunity; nothing in the disclosed opinion or edges shows SCOTUS negative treatment. good_law is supported.",
+            "The disclosed negative edge 'Nat'l Rifle Ass'n of Am. v. Vullo' field_ii=overruled is proposed=true lane1_negative — a facial keyword false positive (Vullo is a First Amendment decision that does not overrule Mullenix's QI-specificity holding)."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Full treatment currency as-of 2026-06-30 is not independently reproducible from the disclosed set."
+          ],
+          "suggested_tightening": null
+        }
+      ],
+      "notes": "Model-diversity lane; existence stands (official-selection metadata gap noted), pin-12 blob is a benign extraction artifact (real quote verifies), treatment stands with FP-only negatives."
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/Murray v. United States.json",
+      "reviewed": [
+        {
+          "assertion_id": "ed30276eea9bbc7f",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion confirms Justice Scalia's majority in Murray, the independent-source doctrine case (Segura/Nix/Silverthorne lineage), consistent with record identity.",
+            "Official cite 487 U.S. 533 is present and selected_official=true; parallels (108 S. Ct. 2529; 101 L. Ed. 2d 472) are consistent; the 1988 SCOTUS decision plainly exists."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "8305e99c6875d81b",
+          "dimension": "quote_fidelity",
+          "verdict": "stands-modified",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "The pin-542 pinpoint quote field is a mis-extracted wiki-page blob (frontmatter through Background/Issue/Rule preamble), not an opinion passage; correctly self-flagged fidelity=mismatch/slip-only. The page's actual ^pin-542 quotation is a different, verifiable sentence.",
+            "severity": "low",
+            "proposed_fix": "Re-extract the pin-542 quote to the sentence rendered on the page, which verifies verbatim at 487 U.S. 542; keep pincite 542.",
+            "evidence_quote": "The ultimate question, therefore, is whether the search pursuant to warrant was in fact a genuinely independent source of the information and tangible evidence at issue here.",
+            "needs_cl": false,
+            "locator_note": "Cached opinion Part III: sentence sits between the star label '*542' and '*543' page-number markers, confirming page 542."
+          },
+          "reasons": [
+            "Stored pin-542 quote is verbatim the page preamble text, not an opinion quote (matches lake self-flag mismatch).",
+            "The sentence the page cites at ^pin-542 appears verbatim in the cached opinion on page 542; pincite is correct."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": "Reconcile the pinpoint quote field with the rendered quotation."
+        },
+        {
+          "assertion_id": "9b21b13e1d073f02",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Unlike the sibling blob-pins, the stored pin-542b quote is the genuine quotation and is faithful: it matches the cached opinion verbatim, with '. . .' properly standing in for the omitted footnote-3 marker ('...during the initial entry,[fn3] or if information obtained during that entry was presented to the Magistrate and affected his decision to issue the warrant.').",
+            "Quote sits on page 542 (between the *542 and *543 markers); the page's framing that the seizure is 'not genuinely independent if' this occurs faithfully tracks the opinion's 'This would not have been the case if...'."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": "The recorded fidelity 'mismatch' is a strict-matcher false positive (the '. . .' ellipsis substitutes for the footnote-3 call-out); flag can be reconciled to matched."
+        },
+        {
+          "assertion_id": "ad2ca900a3322c31",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Murray v. United States (1988) is a leading SCOTUS independent-source decision; nothing in the disclosed opinion or edges shows SCOTUS negative treatment. good_law is supported.",
+            "All disclosed negative treatment.edges (State v. Serrano 'abrogated', Commonwealth v. Pearson 'overruled', State v. Tardie/Golinveaux/Blake/Cohagan 'questioned', etc.) are proposed=true lane1_negative hits from state/lower courts — facial keyword false positives that cannot overrule/abrogate a SCOTUS holding."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Full treatment currency as-of 2026-06-30 is not independently reproducible from the disclosed set."
+          ],
+          "suggested_tightening": null
+        }
+      ],
+      "notes": "Model-diversity lane; pin-542b is a genuine faithful quote (mismatch flag is an ellipsis-for-footnote FP), pin-542 blob is a benign extraction artifact, existence and treatment stand."
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/NASA v. FLRA.json",
+      "reviewed": [
+        {
+          "assertion_id": "8965e1994a8db32a",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion confirms '527 U.S. 229 (1999)', 'NATIONAL AERONAUTICS AND SPACE ADMINISTRATION et al. v. FEDERAL LABOR RELATIONS AUTHORITY et al.', No. 98-369, argued March 23 1999, decided June 17 1999, Stevens J. — matches record identity, docket 98-369, and date_decided.",
+            "Official cite 527 U.S. 229 present and selected_official=true; parallels (119 S. Ct. 1979; 144 L. Ed. 2d 258) consistent."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Content page Sources line links opinion/9188189 while frontmatter/cluster is 118306 — a cosmetic URL divergence between two CL opinion IDs for the same cluster; case identity is intact."
+          ],
+          "suggested_tightening": "Reconcile the Sources URL to the canonical cluster (118306)."
+        },
+        {
+          "assertion_id": "03b392c16cb9be09",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Stored pin-231 quote 'representative of the agency' (fidelity=matched, star-verified, star_marker 233) appears verbatim in the statutory block quoted in the opinion: '(B) any examination of an employee in the unit by a representative of the agency...', which sits between the star *233 and *234 markers.",
+            "The page's larger ^pin-231 block quotation (the 'question presented... dictates an affirmative answer' passage, pincited 527 U.S. 231) also verifies verbatim in the cached opinion between the *231 and *232 markers, with proper '. . .'/[T] ellipsis-and-bracket editing; 'NASA-OIG' hyphenation is more correct than the cache's OCR-stripped 'NASAOIG'."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": "Minor: the deep-link fragment anchors to 'representative of the agency' (p.233) while the visible block quote is the p.231 question-presented passage; the pincite 231 is nonetheless correct for the quoted block."
+        },
+        {
+          "assertion_id": "1b81dbcbbd82a4f7",
+          "dimension": "quote_fidelity",
+          "verdict": "stands-modified",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "The pin-233 pinpoint quote field is a mis-extracted wiki-page blob (Issue-section text: '...within the meaning of 5 U.S.C. § 7114(a)(2)(B), so that a NASA employee's statutory right... ## Rule The statute grants the representation right at'), not an opinion passage; correctly self-flagged fidelity=mismatch/slip-only. The page's actual ^pin-233 quotation is the statutory text reproduced in the opinion.",
+            "severity": "low",
+            "proposed_fix": "Re-extract the pin-233 quote to the § 7114(a)(2)(B) statutory passage rendered on the page, which the opinion reproduces verbatim at 527 U.S. 233; keep pincite 233.",
+            "evidence_quote": "any examination of an employee in the unit by a representative of the agency in connection with an investigation if",
+            "needs_cl": false,
+            "locator_note": "Cached opinion Part II block quotes of 5 U. S. C. § 7114(a), including the (B), (i), (ii) clauses, sit between the star *233 and *234 markers."
+          },
+          "reasons": [
+            "Stored pin-233 quote is verbatim the page's Issue/Rule preamble, not an opinion quote (matches lake self-flag mismatch).",
+            "The statutory quotation the page cites at ^pin-233 (clauses (B),(i),(ii) joined) matches the opinion's reproduction of § 7114(a)(2) on page 233 word-for-word."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": "Reconcile the pinpoint quote field with the rendered statutory quotation."
+        },
+        {
+          "assertion_id": "5e92a2c4501748b3",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "NASA v. FLRA (1999) is a SCOTUS statutory (FSLMRS) holding enforcing the Authority's order; nothing in the disclosed opinion or edges shows SCOTUS negative treatment. good_law is supported.",
+            "The scope_note is accurate to the disclosed opinion: the holding construes § 7114(a)(2)(B) (a right patterned after private-sector Weingarten/NLRA), expressly NOT a Fifth Amendment ruling, so grouping it with the Garrity line only for the compelled-interview setting is a correct characterization.",
+            "All disclosed negative treatment.edges (Jefferson v. Harris 'overruled', NACA v. HUD 'overruled', City of Round Rock v. Rodriguez 'overruled', NTEU/DOJ v. FLRA 'questioned', TVA/Truckers 'criticized') are proposed=true lane1_negative keyword hits from lower/state courts — facial false positives that cannot overrule a SCOTUS holding."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Full treatment currency as-of 2026-06-30 is not independently reproducible from the disclosed set."
+          ],
+          "suggested_tightening": null
+        }
+      ],
+      "notes": "Model-diversity lane; pin-231 clean (fragment/block both verify), pin-233 blob is a benign extraction artifact (statutory quote verifies), existence and treatment stand."
+    }
+  ]
+}

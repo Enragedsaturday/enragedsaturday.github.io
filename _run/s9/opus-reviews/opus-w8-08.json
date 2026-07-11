@@ -1,0 +1,218 @@
+{
+  "packs": [
+    {
+      "group_id": "_overhaul2/lake/cases/Nieves v. Bartlett.json",
+      "reviewed": [
+        {
+          "assertion_id": "651d221b6213eee2",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Disclosed cached opinion text is Nieves v. Bartlett (Chief Justice Roberts, retaliatory-arrest, § 1983), matching cluster 9231236 / lead opinion 9226038.",
+            "Parallel cite 139 S. Ct. 1715 corroborated by in-text S. Ct. star labels *1720, *1721, *1722, *1723 (case begins 1715).",
+            "Official cite 587 U.S. 391 is well-formed and selected_official=true; official_selection_present=true."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": ["U.S.-reporter page 391 itself is not shown in the S. Ct.-paginated cached text, but case identity and the S. Ct. parallel are directly corroborated."],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "5a805406dde9b36f",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Assertion is an honest non-claim: field_i_validity=unverified, frontier stub, as_of_content/as_of_treatment=null.",
+            "Self-consistent across content page (renders Treatment: Unverified, ⚪ banner, under_review) and lake record treatment block (composite_basis=unverified, edges=[]).",
+            "No affirmative treatment proposition is asserted, so there is nothing to refute."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": ["Body prose narrates Gonzalez v. Trevino (2024) construing the exception, but that is narrative, not a machine treatment claim; field validity remains unverified as asserted."],
+          "suggested_tightening": null
+        }
+      ]
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/North Carolina v. Butler.json",
+      "reviewed": [
+        {
+          "assertion_id": "20da48e440683e20",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Disclosed cached opinion text is North Carolina v. Butler (Justice Stewart, Miranda implied-waiver; cert granted 439 U.S. 1046), cluster 110065.",
+            "Official cite 441 U.S. 369 corroborated by in-text U.S.-reporter page labels *371, *372, *373, *374, *375, *376.",
+            "Parallel/vendor cites (99 S. Ct. 1755, 60 L. Ed. 2d 286, 1979 U.S. LEXIS 91) are well-formed; official_selection_present=true."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "34bf784032895ee3",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Payload quote is verbatim-present in the disclosed opinion text (para b431-7) on page 373: 'The courts must presume that a defendant did not waive his rights; the prosecution's burden is great; but in at least some cases waiver can be clearly inferred from the actions and words of the person interrogated.'",
+            "Falls between page labels *373 and *374, so the pin-373b (Id. = 373) pincite is correct.",
+            "The payload's quote_fidelity=='mismatch' flag is a FALSE POSITIVE (slip-only status blocked confirmation at extraction time); with the cached text disclosed the quote is confirmed faithful."
+          ],
+          "breaks_true_positives": true,
+          "residual_risks": ["Downstream tallies that treat the stored 'mismatch' flag as authoritative would wrongly discard a faithful quote."],
+          "suggested_tightening": "Clear the stale quote_fidelity=mismatch flag on pin-373b to fidelity=match now that cached text confirms verbatim."
+        },
+        {
+          "assertion_id": "91e1454196b37dce",
+          "dimension": "quote_fidelity",
+          "verdict": "refuted",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "The pin-373 stored 'quote' is not a quotation from the opinion at all: it is a corrupted mis-extraction that captured the page's own front-matter/prose ('--- # North Carolina v. Butler ... ## Rule An express waiver is not required.'). No such string appears in the disclosed opinion text.",
+            "severity": "medium",
+            "proposed_fix": "Replace the pin-373 quote field with the actual authored pin-373 quote from the content page Rule section: 'An express written or oral statement of waiver of the right to remain silent or of the right to counsel is usually strong proof of the validity of that waiver, but is not inevitably either necessary or sufficient to establish waiver.' — which is verbatim in the opinion (para b431-7) at 441 U.S. 373.",
+            "evidence_quote": "An express written or oral statement of waiver of the right to remain silent or of the right to counsel is usually strong proof of the validity of that waiver, but is not inevitably either necessary or sufficient to establish waiver.",
+            "needs_cl": false,
+            "locator_note": "Opinion para b431-7, between page labels *373 and *374; content page line 405 (^pin-373)."
+          },
+          "reasons": [
+            "As framed, the assertion's quote is garbled header/prose, not a verbatim opinion passage; quote_fidelity mismatch is genuine here.",
+            "This is a data-integrity artifact in the lake pinpoint record; the RENDERED content page (line 405) shows the correct verbatim quote, so reader-facing content is unaffected.",
+            "The intended quote is verbatim-confirmable in the disclosed text, so the fix is deterministic and does not require CourtListener."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": ["Refuting targets only the corrupted quote field; the page's actual pin-373 quote is faithful and must be preserved by the fix."],
+          "suggested_tightening": "Re-run pinpoint extraction for pin-373 so the quote field captures the Rule-section quotation rather than the page header."
+        },
+        {
+          "assertion_id": "fc45231dffb5b7ed",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "field_i_validity=good_law is not refuted by any disclosed evidence: every negative edge in the derivation is proposed:true with field_iii='mentioned', and the negative field_ii (overruled/superseded_by_statute/questioned) belongs to the CITING case (e.g., Dias v. Boone, 1A Auto), not to Butler.",
+            "No disclosed edge shows Butler itself receiving negative treatment; the implied-waiver holding is confirmed as the opinion's ratio (para b431-6/7).",
+            "Scope_note ('reaffirmed in Berghuis v. Thompkins; good law') is consistent with the asserted good_law status."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": ["The proposed lane1_negative edges are citator noise (citing-case status mis-attributed); they should not be promoted to Butler's own treatment."],
+          "suggested_tightening": "Filter proposed field_iii=mentioned edges whose field_ii reflects the citing case's status before any treatment recomputation."
+        }
+      ]
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/Northrup v. City of Toledo Police Dept.json",
+      "reviewed": [
+        {
+          "assertion_id": "066ea0e436159a8f",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Disclosed cached opinion text is Northrup v. City of Toledo Police Department, No. 14-4050, U.S. Court of Appeals for the Sixth Circuit, decided May 13, 2015 (panel Gilman, Rogers, Sutton).",
+            "File Name 15a0092p.06 corroborates the parallel cite '2015 FED App. 0092P'; docket No. 14-4050 matches the content page.",
+            "Official cite 785 F.3d 1128 is well-formed; official_selection_present=true."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": ["The slip-format cached text carries no F.3d reporter star page, so page 1128 itself is not shown, but case identity, court, docket, and FED App. cite are fully corroborated."],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "7edceee210787167",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Assertion is an honest non-claim: field_i_validity=unverified, frontier stub, as_of fields=null.",
+            "Self-consistent with content page (Treatment: Unverified, ⚪ banner, under_review, taught as a circuit-split entry) and lake record (composite_basis=unverified).",
+            "No affirmative treatment proposition is asserted, so there is nothing to refute."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": ["Content page correctly frames the case as binding only in the 6th Cir. and persuasive elsewhere; the split framing is narrative, not a machine treatment claim."],
+          "suggested_tightening": null
+        }
+      ]
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/O'Connor v. Ortega.json",
+      "reviewed": [
+        {
+          "assertion_id": "8d223e86caac43f5",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Disclosed cached opinion text is O'Connor v. Ortega (Justice O'Connor, announcing the judgment and delivering a plurality opinion joined by the Chief Justice, White, and Powell; workplace Fourth Amendment).",
+            "Official cite 480 U.S. 709 corroborated by in-text U.S.-reporter page labels running *712 through *729.",
+            "Parallel cites (107 S. Ct. 1492, 94 L. Ed. 2d 714, etc.) are well-formed; official_selection_present=true."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "7901a2e5313b72cb",
+          "dimension": "quote_fidelity",
+          "verdict": "refuted",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "The pin-717 stored 'quote' is not a quotation from the opinion: it is a corrupted mis-extraction of the page's own front-matter/prose ('--- # O'Connor v. Ortega ... ## Rule Public employees are not stripped of Fourth Amendment protection at work, though their privacy may be reduced by workplace realities.'). No such string appears in the disclosed opinion text.",
+            "severity": "medium",
+            "proposed_fix": "Replace the pin-717 quote field with the actual authored pin-717 quote from the content page Rule section: 'Individuals do not lose Fourth Amendment rights merely because they work for the government instead of a private employer. The operational realities of the workplace, however, may make some employees' expectations of privacy unreasonable when an intrusion is by a supervisor rather than a law enforcement official.' — which is verbatim in the opinion (para b763-5) at 480 U.S. 717.",
+            "evidence_quote": "Individuals do not lose Fourth Amendment rights merely because they work for the government instead of a private employer. The operational realities of the workplace, however, may make some employees' expectations of privacy unreasonable when an intrusion is by a supervisor rather than a law enforcement official.",
+            "needs_cl": false,
+            "locator_note": "Opinion para b763-5, between page labels *717 and *718; content page line 2204 (^pin-717)."
+          },
+          "reasons": [
+            "As framed, the assertion's quote is garbled header/prose, not a verbatim opinion passage; quote_fidelity mismatch is genuine (same mis-extraction pattern as Butler pin-373).",
+            "Data-integrity artifact in the lake pinpoint record; the RENDERED content page (line 2204) shows the correct verbatim quote, so reader-facing content is unaffected.",
+            "The intended quote is verbatim-confirmable in the disclosed text, so the fix is deterministic and does not require CourtListener."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": ["Refuting targets only the corrupted quote field; the page's actual pin-717 quote is faithful and must be preserved by the fix."],
+          "suggested_tightening": "Re-run pinpoint extraction for pin-717 so the quote field captures the Rule-section quotation rather than the page header."
+        },
+        {
+          "assertion_id": "fbad6dca46abde8b",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Payload quote is verbatim-present in the disclosed opinion text (para b771-6): 'We hold, therefore, that public employer intrusions on the constitutionally protected privacy interests of government employees for noninvestigatory, work-related purposes, as well as for investigations of work-related misconduct, should be judged by the standard of reasonableness under all the circumstances. Under this reasonableness standard, both the inception and the scope of the intrusion must be reasonable'.",
+            "Quote spans the *726 page break (label appears mid-sentence at 'standard of reasonableness [*726] under all the circumstances'), so the pin-725 '725-726' pincite is correct.",
+            "Only difference is the terminal ':' in the source (introducing a following blockquote) rendered as '.' in the truncated quote; the quoted words are identical, so no fidelity defect. The stored quote_fidelity=='mismatch' flag is a FALSE POSITIVE."
+          ],
+          "breaks_true_positives": true,
+          "residual_risks": ["Downstream tallies treating the stale 'mismatch' flag as authoritative would wrongly discard a faithful quote."],
+          "suggested_tightening": "Clear the stale quote_fidelity=mismatch flag on pin-725 to fidelity=match; optionally normalize the terminal colon-vs-period truncation."
+        },
+        {
+          "assertion_id": "398be112f6e1bd9b",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "field_i_validity=good_law is not refuted by disclosed evidence: every negative edge is proposed:true with field_iii='mentioned', and the negative field_ii (questioned/superseded_by_statute/overruled/criticized/abrogated) belongs to the CITING case (e.g., Ashcroft v. al-Kidd, Skinner v. Railway Labor Executives' Assn.), not to O'Connor.",
+            "Scope_note is corroborated by the disclosed opinion header: O'Connor, J., announced the judgment and delivered a four-Justice plurality opinion (Scalia's concurrence in the judgment supplied the controlling fifth vote for the reasonableness standard).",
+            "No disclosed edge shows O'Connor itself receiving negative treatment."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": ["Proposed lane1_negative edges are citator noise (citing-case status mis-attributed) and should not be promoted to O'Connor's own treatment."],
+          "suggested_tightening": "Filter proposed field_iii=mentioned edges whose field_ii reflects the citing case's status before any treatment recomputation."
+        }
+      ]
+    }
+  ]
+}

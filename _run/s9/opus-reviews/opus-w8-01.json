@@ -1,0 +1,224 @@
+{
+  "packs": [
+    {
+      "lens": "opus-diversity",
+      "group_id": "_overhaul2/lake/cases/Minnesota v. Olson.json",
+      "reviewed": [
+        {
+          "assertion_id": "4ee5871c486af17d",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion caption '495 U.S. 91 (1990)' + 'MINNESOTA v. OLSON', 'Decided April 18, 1990' confirms the case and the selected official cite.",
+            "Official '495 U.S. 91' is present in cluster.citations[] with selected_official=true and matches frontmatter/header/Sources; parallel cites (110 S. Ct. 1684; 109 L. Ed. 2d 85; etc.) are internally consistent."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": ["Parallel reporter page numbers not independently re-derived; only the U.S. official cite is corroborated by the cached caption."],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "c8b7d9585128856b",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "payload.quote is a misextracted front-matter/header block (harvest grabbed everything up to '## Rule Yes.'), so the recorded quote_fidelity=='mismatch' is a harvest false positive, not a content defect.",
+            "The actual passage anchored at pin-98 on the content page ('we think that society recognizes that a houseguest has a legitimate expectation of privacy in his host's home.') appears VERBATIM in the cached opinion text.",
+            "That paragraph sits between the *98 and *99 star markers in the cached text, so it is on page 98 — the content-page pincite '495 U.S. at 98' is correct."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": ["Pinpoint harvest captured the page header rather than the quoted span; the 'mismatch' flag is spurious and should be re-anchored so downstream tooling does not treat it as a real defect."],
+          "suggested_tightening": "Re-anchor the pinpoint quote harvest to the passage attached to ^pin-98 rather than the document front-matter."
+        },
+        {
+          "assertion_id": "86783880786b0830",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "field_i_validity=='good_law' for a landmark SCOTUS standing holding; no disclosed edge is confirmed (all treatment.edges carry proposed:true).",
+            "The 9 proposed-negative edges are state-court/circuit keyword-triage hits (overrul*/abrogat* snippet matches) flagged audit_needed (R15); a state or circuit court cannot overrule a SCOTUS decision, so none refutes good_law."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": ["as_of_treatment (2026-06-30) is a migration seed; 9 proposed negatives await R15 audit; full currency re-derivation would need CourtListener."],
+          "suggested_tightening": null
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "lens": "opus-diversity",
+      "group_id": "_overhaul2/lake/cases/Minnick v. Mississippi.json",
+      "reviewed": [
+        {
+          "assertion_id": "7c7606f5a219a4cc",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion caption '498 U.S. 146 (1990)' + 'MINNICK v. MISSISSIPPI', 'Decided December 3, 1990' confirms the case and selected official cite and matches date_decided.",
+            "Official '498 U.S. 146' present in cluster.citations[] with selected_official=true; parallel cites (111 S. Ct. 486; 112 L. Ed. 2d 489) consistent."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": ["Parallel reporter pages not independently re-derived."],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "b9eff4501b9b7fb3",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "payload.quote is a misextracted header block (ends at '## Rule No.'), so quote_fidelity=='mismatch' is a harvest false positive.",
+            "The actual pin-153 passage ('we now hold that when counsel is requested, interrogation must cease, and officials may not reinitiate interrogation without counsel present, whether or not the accused has consulted with his attorney.') is VERBATIM in the cached opinion text.",
+            "It falls between the *153 and *154 star markers -> page 153, so the pincite '498 U.S. at 153' is correct."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": ["Spurious 'mismatch' flag from front-matter harvest."],
+          "suggested_tightening": "Re-anchor pinpoint harvest to the ^pin-153 span."
+        },
+        {
+          "assertion_id": "ae68f64957059513",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "field_i_validity=='good_law' for a SCOTUS Fifth-Amendment/Edwards holding; no confirmed negative edge (all proposed:true, audit_needed).",
+            "Disclosed negative candidates are keyword-triage snippets from lower courts that cannot overrule SCOTUS; nothing disclosed refutes good_law."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": ["as_of_treatment is a migration seed; proposed negatives await R15 audit; currency re-derivation would need CourtListener."],
+          "suggested_tightening": null
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "lens": "opus-diversity",
+      "group_id": "_overhaul2/lake/cases/Miranda v. Arizona.json",
+      "reviewed": [
+        {
+          "assertion_id": "074284d5f7275234",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion is unmistakably Miranda ('Mr. Chief Justice Warren delivered the opinion of the Court'), and internal pincites throughout the disclosed text ('384 U. S., at 470', 'at 474') confirm the 384 U.S. reporter.",
+            "Official '384 U.S. 436' is present in cluster.citations[] with selected_official=true and is the canonical Miranda citation; year 1966 consistent."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": ["Cached HTML omits a centered caption block (different format), but authorship and internal cites establish identity."],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "71b2f692f9c92026",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Quote 'By custodial interrogation, we mean questioning initiated by law enforcement officers after a person has been taken into custody or otherwise deprived of his freedom of action in any significant way.' is VERBATIM in cached para b542-7.",
+            "Paragraph b542-7 begins after the *444 marker (ending line 4807) and the *445 marker appears later within it; the quoted sentence precedes *445 -> page 444, matching star_marker '444' and pincite (Id. = 444). Payload already recorded matched/star-verified."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "d0e00ca210c5a3a8",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "payload.quote is a misextracted header block (ends at '## Rule'), so quote_fidelity=='mismatch' is a harvest false positive.",
+            "The actual pin-444 passage ('the prosecution may not use statements, whether exculpatory or inculpatory, stemming from custodial interrogation of the defendant unless it demonstrates the use of procedural safeguards effective to secure the privilege against self-incrimination.') is VERBATIM in cached para b542-7.",
+            "It precedes the *445 marker within b542-7 (after *444) -> page 444, so the pincite '384 U.S. at 444' is correct."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": ["Spurious 'mismatch' flag from front-matter harvest."],
+          "suggested_tightening": "Re-anchor pinpoint harvest to the ^pin-444 span."
+        },
+        {
+          "assertion_id": "638723eaca16523f",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "field_i_validity=='good_law'; scope_note 'Reaffirmed as a constitutional rule in Dickerson v. United States' is accurate for Miranda.",
+            "No disclosed edge is confirmed (all proposed:true); nothing disclosed refutes good_law."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": ["Currency re-derivation of proposed edges would need CourtListener; status is well-settled."],
+          "suggested_tightening": null
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "lens": "opus-diversity",
+      "group_id": "_overhaul2/lake/cases/Missouri v. McNeely.json",
+      "reviewed": [
+        {
+          "assertion_id": "59388489bc2f6897",
+          "dimension": "existence",
+          "verdict": "stands-modified",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "No official citation was selected for this SCOTUS case: lake citations.official is null, official_selection_present=false, and every entry in citations[] has selected_official=false; the frontmatter 'citation' field is empty (\"\"), even though '569 U.S. 141' (the correct U.S. Reports official cite) is present in the citation list. The rendered header/Sources hard-code '569 U.S. 141 (2013)', so reader-facing text is fine, but the structured citation metadata is defective.",
+            "severity": "low",
+            "proposed_fix": "Run official-citation selection so '569 U.S. 141' is marked selected_official=true (citations.official populated) and populate the frontmatter 'citation' field to '569 U.S. 141 (2013)'.",
+            "evidence_quote": "\"official\": null",
+            "needs_cl": false,
+            "locator_note": "McNeely lake record citations block (\"official\": null) + content_page frontmatter 'citation: \"\"'."
+          },
+          "reasons": [
+            "Case existence is confirmed: cached slip opinion caption 'MISSOURI v. MCNEELY', 'No. 11-1425 ... Decided April 17, 2013', and '569 U.S. 141' is present in cluster.citations[] and matches the header/Sources and date_decided.",
+            "Survives the existence attack (the case and the 569 U.S. 141 cite are real and disclosed), but the citation-selection metadata is missing and should be repaired."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": ["Structured 'official' cite absent; downstream consumers relying on citations.official (rather than the hard-coded header) would get null."],
+          "suggested_tightening": "Have the S2 builder select the U.S. Reports cite as official for SCOTUS records and mirror it into the frontmatter 'citation' field."
+        },
+        {
+          "assertion_id": "92460c55b0b57168",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "payload.quote is a misextracted header block (ends at '## Rule No.'), so quote_fidelity=='mismatch' is a harvest false positive.",
+            "The actual pin-156 passage ('We hold that in drunk-driving investigations, the natural dissipation of alcohol in the bloodstream does not constitute an exigency in every case sufficient to justify conducting a blood test without a warrant.') is VERBATIM in the cached slip opinion (final holding, allowing for slip line-wrap hyphenation: 'natu-ral', 'con-stitute')."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": ["pinpoint_status=='slip-only': the disclosed slip opinion carries NO U.S. Reports star pagination, so the page '156' in '569 U.S. at 156' is NOT independently verifiable from disclosed evidence (transparently disclosed in the Sources note); confirming page 156 would need the U.S. Reports/CourtListener. Quote text fidelity itself is confirmed verbatim.", "Harvest 'mismatch' flag is spurious."],
+          "suggested_tightening": "Re-anchor pinpoint harvest to the ^pin-156 span; carry the slip-only page-attribution caveat forward."
+        },
+        {
+          "assertion_id": "f3f95c39e570438c",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "field_i_validity=='good_law' for a 2013 SCOTUS holding; content correctly frames later authority as 'refined by' Mitchell v. Wisconsin, not overruling.",
+            "No disclosed edge is confirmed (all proposed:true); nothing disclosed refutes good_law."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": ["as_of_treatment is a migration seed; proposed edges await R15 audit; currency re-derivation would need CourtListener."],
+          "suggested_tightening": null
+        }
+      ],
+      "notes": ""
+    }
+  ]
+}
