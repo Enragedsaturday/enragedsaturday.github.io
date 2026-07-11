@@ -1,0 +1,216 @@
+{
+  "packs": [
+    {
+      "group_id": "_overhaul2/lake/cases/Sorrells v. United States.json",
+      "reviewed": [
+        {
+          "assertion_id": "b1fb4701bea21f9e",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached majority opinion (Mr. Chief Justice Hughes) with star-pagination *438-*454 and Prohibition-Act entrapment facts (agent Martin, half-gallon of whiskey, 30th Division veteran) unmistakably identifies Sorrells v. United States.",
+            "Official cite 287 U.S. 435 (selected_official cluster citation) is consistent with the in-opinion star-pagination range (438-454); the pin quote is cited to 454, within range."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Cached excerpt begins at *438 (opinion body); the literal page-435 first-page string is not inlined, but the star-pagination range corroborates 287 U.S. 435."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "1d7e3b197aa62feb",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Actual ^pin-454 quote ('Entrapment is the conception and planning of an offense by an officer, and his procurement of its commission by one who would not have perpetrated it except for the trickery, persuasion, or fraud of the officer.') matches the cached opinion verbatim.",
+            "Quote falls after the *454 star marker and before the next page break, so pincite 287 U.S. at 454 is correct.",
+            "Payload.quote is the document front-matter blob (title/Background/Issue/Rule), a mis-extraction; its 'quote_fidelity: mismatch' flag is an extractor artifact, not a page defect."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Extractor captured the wrong span for this pin; any downstream mismatch flag on this record should be re-derived from the ^pin-454 block."
+          ],
+          "suggested_tightening": "Have the extractor isolate the ^pin-N inline quote span rather than the leading document blob before computing quote_fidelity."
+        },
+        {
+          "assertion_id": "97025b9a83890ad3",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": false,
+          "defect": null,
+          "reasons": [
+            "Current good-law status is a currency question the disclosed opinion text cannot establish or refute; not independently verified here (this is not a clean attestation).",
+            "field_i_validity good_law is honestly caveated (composite_basis migration-seed; scope_note: 'S2 derivation re-derives and may downgrade'); no disclosed evidence contradicts good_law."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "good_law rests on a migration seed, not a derived citator; awaits S2 currency derivation."
+          ],
+          "suggested_tightening": "Defer validity to S2 citator derivation; do not treat migration-seed good_law as verified."
+        }
+      ]
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/South Dakota v. Neville.json",
+      "reviewed": [
+        {
+          "assertion_id": "28f98d65591c64ba",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion (Justice O'Connor, for the Court) with page labels *555-*566 and implied-consent/blood-alcohol-refusal facts identifies South Dakota v. Neville.",
+            "Official cite 459 U.S. 553 (selected_official cluster citation) is consistent with the *555+ star-pagination (case begins at 553)."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Cached excerpt begins at *555; the literal page-553 first-page string is not inlined, but the star-pagination corroborates 459 U.S. 553."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "ad8585d109eb73c6",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Treatment asserts field_i_validity 'unverified' — an honest frontier-stub self-description (scope_note: treatment/progeny intentionally not derived until S6 promotion), so there is no positive validity claim to refute.",
+            "Consistent with lake status under_review and the page's Unverified (white) banner."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        }
+      ]
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/South Dakota v. Opperman.json",
+      "reviewed": [
+        {
+          "assertion_id": "3af4288baf269bae",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached header states '428 U.S. 364 (1976)', 'SOUTH DAKOTA v. OPPERMAN', 'No. 75-76', decided July 6 1976 — matches the record exactly.",
+            "Official cite 428 U.S. 364 (selected_official cluster citation) is confirmed verbatim in the source header."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "49716aae5d5421cc",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "^pin-376a quote matches the cached opinion verbatim; the sole difference is the marks around 'unreasonable' (the page uses single quotes inside its outer double-quote — correct nested-quotation convention; the source uses double quotes).",
+            "The sentence follows the *376 star marker (same page as pin-376), so 'Id.' (= 428 U.S. at 376) is correct.",
+            "The extractor 'quote_fidelity: mismatch' flag is a false positive driven by the single/double inner-quote normalization."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Naive string comparators will keep flagging the inner-quote style; this is not a substantive misquote."
+          ],
+          "suggested_tightening": "Normalize inner quotation marks before computing quote_fidelity."
+        },
+        {
+          "assertion_id": "671d131321840b00",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Actual ^pin-376 quote ('there is no suggestion whatever that this standard procedure, essentially like that followed throughout the country, was a pretext concealing an investigatory police motive.') matches the cached opinion verbatim.",
+            "Quote sits immediately after the mid-paragraph *376 star marker, so pincite 428 U.S. at 376 is correct.",
+            "Payload.quote is the document front-matter blob (title/Background/Issue/Rule), a mis-extraction; its 'mismatch' flag is an extractor artifact."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Same wrong-span extraction pattern as the other pin blobs; re-derive from the ^pin-376 block."
+          ],
+          "suggested_tightening": "Isolate the ^pin-N inline quote span before computing quote_fidelity."
+        },
+        {
+          "assertion_id": "b0e79b22f58f355b",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": false,
+          "defect": null,
+          "reasons": [
+            "Current good-law status is a currency question the disclosed opinion text cannot establish or refute; not independently verified here (not a clean attestation).",
+            "field_i_validity good_law is honestly caveated (composite_basis migration-seed; scope_note: 'S2 derivation re-derives and may downgrade'); no disclosed evidence contradicts good_law."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "good_law rests on a migration seed, not a derived citator; awaits S2 currency derivation."
+          ],
+          "suggested_tightening": "Defer validity to S2 citator derivation; do not treat migration-seed good_law as verified."
+        }
+      ]
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/Spano v. New York.json",
+      "reviewed": [
+        {
+          "assertion_id": "e5a02d9a9fa32bcc",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached header states '360 U.S. 315 (1959)', 'SPANO v. NEW YORK', decided June 22 1959 — the official cite 360 U.S. 315 (selected_official) is confirmed verbatim.",
+            "The case_cite payload carries only citations; the asserted citation itself is correct."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Out-of-scope metadata defect: content/lake docket '326' conflicts with the source header 'No. 582.' ('326' appears in the opinion only as reporter star page *326) — not part of the case_cite payload, but should be corrected."
+          ],
+          "suggested_tightening": "Correct the docket field from '326' (a reporter page-number contamination) to No. 582."
+        },
+        {
+          "assertion_id": "d3d3d52177cb5ff6",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Actual ^pin-323 quote ('We conclude that petitioner's will was overborne by official pressure, fatigue and sympathy falsely aroused, after considering all the facts in their post-indictment setting.') matches the cached opinion verbatim.",
+            "Quote falls after the *323 star marker and before the *324 marker (which appears later in the same paragraph), so pincite 360 U.S. at 323 is correct.",
+            "Payload.quote is the document front-matter blob (title/Background/Issue/Rule), a mis-extraction; its 'mismatch' flag is an extractor artifact."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Same wrong-span extraction pattern; re-derive from the ^pin-323 block."
+          ],
+          "suggested_tightening": "Isolate the ^pin-N inline quote span before computing quote_fidelity."
+        },
+        {
+          "assertion_id": "aec2c90af9fd6210",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": false,
+          "defect": null,
+          "reasons": [
+            "Current good-law status is a currency question the disclosed opinion text cannot establish or refute; not independently verified here (not a clean attestation).",
+            "field_i_validity good_law is honestly caveated (composite_basis migration-seed; scope_note: 'S2 derivation re-derives and may downgrade'); no disclosed evidence contradicts good_law."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "good_law rests on a migration seed, not a derived citator; awaits S2 currency derivation."
+          ],
+          "suggested_tightening": "Defer validity to S2 citator derivation; do not treat migration-seed good_law as verified."
+        }
+      ]
+    }
+  ]
+}

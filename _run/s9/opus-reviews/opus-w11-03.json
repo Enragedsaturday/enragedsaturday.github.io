@@ -1,0 +1,290 @@
+{
+  "packs": [
+    {
+      "group_id": "_overhaul2/lake/cases/Smith v. Cain.json",
+      "reviewed": [
+        {
+          "assertion_id": "679cc0e644127402",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached slip op. header reads 'Cite as: 565 U. S. ____ (2012)' and 'No. 10-8145 ... Decided January 10, 2012', matching official cite 565 U.S. 73 (2012) and docket 10-8145.",
+            "citations.official = 565 U.S. 73 (type 1, U.S., selected_official true; official_selection_present true); parallels 132 S. Ct. 627 / 181 L. Ed. 2d 571 and vendor-neutral 2012 U.S. LEXIS 576 match content-page frontmatter.",
+            "cluster_id 620666 / lead_opinion_id 620666; identity expected_citation_found true."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "8388aa7999bded64",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Page pin-3 quote 'Boatner's undisclosed statements were plainly material.' is verbatim in the cached Opinion of the Court (p.3): 'Boatner's undisclosed statements / were plainly material.'",
+            "Pincite 'slip op., at 3' is correct: the sentence sits between the p.3 running header ('Cite as: 565 U. S. ____ (2012) 3') and the p.4 header ('4  SMITH v. CAIN').",
+            "Lake pinpoints[] flags quote_fidelity 'mismatch', but that is a false positive - the quoted string matches the source exactly."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Lake pin-3 fidelity flag 'mismatch' contradicts the verbatim match; the fidelity checker is unreliable here."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "99e2e7be55a96859",
+          "dimension": "quote_fidelity",
+          "verdict": "stands-modified",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "Pincite off by one: pin-2 is cited 'slip op., at 2' but the quoted sentence is printed on slip op. page 3 (below the p.3 header, above the '4  SMITH v. CAIN' header). Separately, the lake pinpoints[] 'quote' stored for pin-2 is a garbled harvest artifact - it captured the content page's Background/Issue/Rule prose, not the actual quotation, which is what triggered quote_fidelity 'mismatch'.",
+            "severity": "low",
+            "proposed_fix": "Change pin-2 pincite to 'slip op., at 3' (or 'at 2-3' to span the materiality standard); re-harvest the lake pin-2 quote so it stores the actual quoted sentence.",
+            "evidence_quote": "We have observed that evidence impeaching an eyewit-\nness may not be material if the State's other evidence is\nstrong enough to sustain confidence in the verdict.",
+            "needs_cl": false,
+            "locator_note": "Cain slip op. p.3 (cached text): sentence begins under the 'Cite as: 565 U. S. ____ (2012) 3' header; page pin-2 at content_page '## Rule'."
+          },
+          "reasons": [
+            "The page's ACTUAL pin-2 quotation '[E]vidence impeaching an eyewitness may not be material if the State's other evidence is strong enough to sustain confidence in the verdict.' is verbatim-faithful to the opinion body (bracketed '[E]' is a proper mid-sentence capitalization; the page quotes the opinion body, not the syllabus's 'an eyewitness's testimony' variant).",
+            "But the quoted sentence is on slip op. p.3, while the page cites 'at 2' - an off-by-one pincite (sibling pin-3, also on p.3, is correctly cited 'at 3').",
+            "The lake's stored pin-2 quote is page-prose garble, not the real quotation; the 'mismatch' flag reflects that extraction artifact, not a page defect."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "'at 2' is arguably defensible if read as citing where the Brady materiality standard begins (p.2), which spans pp.2-3."
+          ],
+          "suggested_tightening": "Cite 'slip op., at 2-3' or 'at 3' and repair the lake pin-2 harvested quote."
+        },
+        {
+          "assertion_id": "0fc3b3114e37f241",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Content-page/frontmatter treatment (field_i_validity good_law; as_of_content 2012-01-10; as_of_treatment 2026-06-30; varies_by_point false) matches the lake treatment block exactly.",
+            "composite_basis 'migration-seed' with provenance warning 'legacy treatment migrated: good -> good_law'; all treatment edges are proposed:true (lane1_negative / lane2_top_cited), i.e., unratified - none downgrades field_i_validity.",
+            "No ratified negative treatment in the disclosed evidence contradicts good_law."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "good_law is seed-based, not freshly re-derived (scope_note: 'S2 derivation re-derives and may downgrade'); the proposed 'overruled'/'questioned' edges on citing cases (e.g., Wearry v. Cain, Turner v. United States) are facially implausible as overrulings of a SCOTUS case and remain unratified.",
+            "as_of_content 2012-01-10 is the stale decision date seeding as_of_treatment 2026-06-30."
+          ],
+          "suggested_tightening": "Run S2 derivation to confirm/replace the migration-seed good_law and clear the proposed edges."
+        }
+      ],
+      "notes": "Cain group: existence + both quotes verified against cached slip op. pin-3 verbatim/p.3-correct; pin-2 quote faithful but pincite off-by-one (p.3, cited p.2) and lake harvested quote garbled -> stands-modified (low). Treatment good_law seed-based, no ratified downgrade."
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/Smith v. Illinois.json",
+      "reviewed": [
+        {
+          "assertion_id": "b043c6230e8f6e2c",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion is the Per Curiam Smith v. Illinois; first star-page label is '92' (opinion begins at 469 U.S. 91), consistent with official cite 469 U.S. 91.",
+            "citations.official 469 U.S. 91 (type 1, selected_official true; official_selection_present true); parallels 105 S. Ct. 490 / 83 L. Ed. 2d 488 / 53 U.S.L.W. 3430 and vendor-neutral 1984 U.S. LEXIS 167 match frontmatter.",
+            "Sources note '(per curiam)' matches the cached 'Per Curiam.' author."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "42c1c1cce0dffae0",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Page pin-100 quote 'We hold only that, under the clear logical force of settled precedent, an accused's postrequest responses to further interrogation may not be used to cast retrospective doubt on the clarity of the initial request itself. Such subsequent statements are relevant only to the distinct question of waiver.' is verbatim in the cached opinion Part III (only difference is markdown italics on 'postrequest', which the opinion itself italicizes).",
+            "Pincite '469 U.S. at 100' correct: the '*100' label falls mid-paragraph just before this sentence, so 'We hold only that...' is on page 100.",
+            "The lake pinpoints[] pin-100 'quote' is a garbled harvest artifact (page Background/Rule prose); its 'mismatch' flag does not reflect the actual, faithful quotation."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Repair lake pin-100 harvested quote to store the real quotation."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "abf76da250c77df5",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Treatment fields (good_law; as_of_content 1984-12-10; as_of_treatment 2026-06-30; varies_by_point false; scope_note) match the lake treatment block.",
+            "scope_note is substantively sound: Smith v. Illinois (1984) is good law on its narrow postrequest holding, and the reserved ambiguous-invocation threshold was resolved by Davis v. United States (1994) - consistent with the opinion's Part III ('Our decision is a narrow one. We do not decide the circumstances in which an accused's request for counsel may be characterized as ambiguous...').",
+            "All treatment edges proposed:true (unratified); no ratified downgrade."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "good_law is migration-seed (warning 'legacy treatment migrated: good -> good_law'), not freshly re-derived."
+          ],
+          "suggested_tightening": null
+        }
+      ],
+      "notes": "Illinois group: existence confirmed (per curiam, opens 469 U.S. 91); pin-100 verbatim on p.100 (lake harvested quote garbled -> false-positive mismatch); treatment good_law with legally accurate Davis-1994 scope_note, no ratified downgrade."
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/Smith v. Maryland.json",
+      "reviewed": [
+        {
+          "assertion_id": "52587985ce86f6cf",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion header reads '442 U.S. 735 (1979)', 'No. 78-5374', 'Decided June 20, 1979', matching official cite / docket / date.",
+            "citations.official 442 U.S. 735 (type 1, selected_official true; official_selection_present true); parallels 99 S. Ct. 2577 / 61 L. Ed. 2d 220 and vendor-neutral 1979 U.S. LEXIS 134 match frontmatter.",
+            "cluster_id 110118; identity expected_citation_found true."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "aeafac42fd206803",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Page pin-744 quote 'When he used his phone, petitioner voluntarily conveyed numerical information to the telephone company and \"exposed\" that information to its equipment in the ordinary course of business. In so doing, petitioner assumed the risk that the company would reveal to police the numbers he dialed.' is verbatim in the cached opinion (single vs double quotes on 'exposed' is a typographic normalization).",
+            "Pincite 'Id. at 744' correct: the sentence sits between the '*744' and '*745' star-pagination markers.",
+            "Lake flags quote_fidelity 'mismatch' although the stored quote IS the real quotation and matches - false positive (likely quote-mark/whitespace normalization)."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Fidelity checker false-positived 'mismatch' on a verbatim quote."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "e4b534deb249fbcb",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Page pin-743 quotation 'This Court consistently has held that a person has no legitimate expectation of privacy in information he voluntarily turns over to third parties.' is verbatim in the cached opinion (the '*744' marker falls inside this sentence at 'he [*744] voluntarily turns over').",
+            "Pincite '442 U.S. at 743-744' correct: the sentence spans pp.743-744 (begins after '*743'; 'voluntarily' onward on 744).",
+            "The lake pinpoints[] pin-743 'quote' is a garbled harvest artifact (page Issue/Rule prose 'within the meaning of the Fourth Amendment. ## Rule No. A caller has no legitimate expectation...'), which triggered 'mismatch' - not a defect in the page's actual quotation."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Repair lake pin-743 harvested quote to the real quotation."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "f35c04ab66db271d",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Treatment fields (good_law; as_of_content 1979-06-20; as_of_treatment 2026-06-30; varies_by_point false; scope_note) match the lake treatment block.",
+            "scope_note is substantively sound: Smith v. Maryland is the foundational third-party-doctrine/pen-register case and remains good law; Carpenter v. United States (2018) declined to extend the third-party doctrine to CSLI but did not overrule Smith - a correct statement of current law.",
+            "All treatment edges proposed:true (unratified); no ratified downgrade."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "good_law is migration-seed, not freshly re-derived; as_of_content 1979-06-20 is stale."
+          ],
+          "suggested_tightening": null
+        }
+      ],
+      "notes": "Maryland group: existence confirmed (442 U.S. 735 header); pin-744 verbatim p.744 (mismatch flag false-positive) and pin-743 actual quote verbatim pp.743-744 (lake harvested quote garbled); treatment good_law with accurate Carpenter-2018 scope_note, no ratified downgrade."
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/Soldal v. Cook County.json",
+      "reviewed": [
+        {
+          "assertion_id": "406c4ca446d0bb00",
+          "dimension": "existence",
+          "verdict": "stands-modified",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "Official-citation selection failed for this record: citations.official = null, citations.display = null, official_selection.selected = null with reason 'unlisted_reporter:Fla. L. Weekly Fed. S', and the frontmatter 'citation' field is empty ('') - unlike the three sibling records, each of which carries a selected official U.S. cite. The correct SCOTUS official cite (506 U.S. 56, type 1, U.S.) is present in citations.all but was relegated to parallel_cite. The specialty reporter '6 Fla. L. Weekly Fed. S 769' is mis-typed as type 1 and aborted the ranking.",
+            "severity": "medium",
+            "proposed_fix": "Stop treating 'Fla. L. Weekly Fed. S' as a rankable type-1 official reporter; select 506 U.S. 56 as citations.official/display and populate the frontmatter 'citation' field with '506 U.S. 56 (1992)'.",
+            "evidence_quote": "\"official_selection\": {\n      \"court_class\": \"scotus\",\n      \"selected\": null,\n      \"reason\": \"unlisted_reporter:Fla. L. Weekly Fed. S\"",
+            "needs_cl": false,
+            "locator_note": "Soldal lake record citations.official_selection; frontmatter citation:\"\"."
+          },
+          "reasons": [
+            "The case genuinely exists (cluster_id 112795; identity expected_citation_found true) and 506 U.S. 56 is a valid, present U.S. Reports cite; the content-page header and Sources render '506 U.S. 56 (1992)' correctly, so the human-visible citation is right.",
+            "But the structured citation identity is broken: no official was selected (official/display null; official_selection_present false), traced to reason 'unlisted_reporter:Fla. L. Weekly Fed. S', leaving frontmatter 'citation' empty.",
+            "Star-paginations *58-*63 and pins 'at 61'/'at 62' are internally consistent with the case beginning at 506 U.S. 56."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Downstream S2/render logic keyed on citations.official, citations.display, or frontmatter.citation will see empty values for Soldal."
+          ],
+          "suggested_tightening": "Promote 506 U.S. 56 to official/display and populate frontmatter citation; fix reporter typing for 'Fla. L. Weekly Fed. S'."
+        },
+        {
+          "assertion_id": "1be558532729e1f3",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Page pin-61 quotation 'A \"seizure\" of property, we have explained, occurs when \"there is some meaningful interference with an individual's possessory interests in that property.\"' is verbatim in the cached opinion Part II (single vs double quotes normalized).",
+            "Pincite '506 U.S. at 61' correct: the sentence sits just after the '*61' star-page label and before '*62'. The '(quoting United States v. Jacobsen)' attribution is correct - the source sentence cites Jacobsen, 466 U.S. 109, 113.",
+            "Lake pin-61 stored 'quote' is a garbled harvest artifact (page Issue/Rule prose 'under the Fourth Amendment even though no privacy or liberty interest was invaded. ## Rule Yes.'), which triggered the 'mismatch' flag - not a page defect."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Repair lake pin-61 harvested quote."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "b445c6f61bc01237",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Page pin-62 quote 'our cases unmistakably hold that the Amendment protects property as well as privacy.' is verbatim in the cached opinion ('...our cases unmistakably hold that the Amendment protects property as well as privacy.').",
+            "Pincite 'Id. at 62' correct: the sentence sits between the '*62' and '*63' star-page markers. Lake flag quote_fidelity 'matched' / pinpoint_status 'star-verified' is confirmed.",
+            "text-fragment locator (#:~:text=our%20cases%20unmistakably%20hold%20that) matches the quoted opening words."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "62e762593d34c787",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Treatment fields (good_law; as_of_content 1992-12-08; as_of_treatment 2026-06-30; varies_by_point false; scope_note) match the lake treatment block.",
+            "scope_note is substantively sound: Soldal's holding that the Fourth Amendment protects possessory interests independent of privacy/liberty remains controlling (opinion: 'our cases unmistakably hold that the Amendment protects property as well as privacy').",
+            "All treatment edges proposed:true (unratified); no ratified downgrade."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "good_law is migration-seed, not freshly re-derived."
+          ],
+          "suggested_tightening": null
+        }
+      ],
+      "notes": "Soldal group: existence stands-modified - case/cite genuine and rendered correctly, but official-selection failed ('unlisted_reporter:Fla. L. Weekly Fed. S'), leaving official/display/frontmatter-citation empty. Both quotes (pin-61, pin-62) verbatim with correct pincites (pin-61 lake harvested quote garbled; pin-62 star-verified). Treatment good_law, no ratified downgrade."
+    }
+  ]
+}
