@@ -1,0 +1,274 @@
+{
+  "packs": [
+    {
+      "lens": "opus-model-diversity",
+      "group_id": "_overhaul2/lake/cases/Foster v. California.json",
+      "reviewed": [
+        {
+          "assertion_id": "7f34c4b47d4dcead",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion text header reads '394 U.S. 440 (1969)' with caption 'FOSTER v. CALIFORNIA', 'No. 47', 'Supreme Court of United States', 'Decided April 1, 1969' — official display cite 394 U.S. 440 is confirmed.",
+            "Star pagination *441 through *453 in the reporter text is consistent with an opinion beginning at 394 U.S. 440; selected_official=394 U.S. 440 matches.",
+            "Case is real and correctly identified (Fortas, J.; cluster 107890)."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Parallel cites 89 S. Ct. 1127 / 22 L. Ed. 2d 402 and vendor-neutral 1969 U.S. LEXIS 2050 come from cluster.citations[] and are not independently checkable against the disclosed U.S. Reports text, but are standard-form, uncontradicted, and non-load-bearing."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "89eea5c4f74f888b",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Stored pin-443 quote is a verbatim reproduction of the opinion text: cached line reads 'The suggestive elements in this identification procedure made it all but inevitable that David would identify petitioner whether or not he was in fact \"the man.\" In effect, the police repeatedly said to the witness, \"This is the man.\" ... This procedure so undermined the reliability of the eyewitness identification as to violate due process.'",
+            "The ' ... ' ellipsis correctly marks omission of the intervening citation 'See Biggers v. Tennessee, 390 U. S. 404, 407 (dissenting opinion).'; retained words are exact (only italics/quote-mark styling dropped).",
+            "Pincite is correct: the passage falls after the *443 star marker (page 443), matching the ^pin-443 anchor and 'Id. at 443'.",
+            "The lake's own quote_fidelity='mismatch' flag on this pin is a FALSE POSITIVE — sighted read confirms a faithful, correctly-located quotation."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Lake pinpoint_status='slip-only' and quote_fidelity='mismatch' contradict the verified match; the builder flag should be cleared to 'match' on re-derivation."
+          ],
+          "suggested_tightening": "Clear the stale 'mismatch' fidelity flag for pin-443."
+        },
+        {
+          "assertion_id": "9a8254639885e12e",
+          "dimension": "quote_fidelity",
+          "verdict": "refuted",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "Stored pin-442 quote is a content-page harvest artifact — it captured the Markdown headings and authored prose ('## Issue Whether a pretrial identification procedure ... ## Rule Yes. Even apart from the right-to-counsel rule of Wade/Gilbert (inapplicable to pre-1967 lineups),') and truncates immediately before the real quotation. No such string appears anywhere in the Foster opinion; it is not source text.",
+            "severity": "medium",
+            "proposed_fix": "Repoint pin-442's stored quote to the actual page-442 holding language the rendered page already displays: 'the conduct of identification procedures may be \"so unnecessarily suggestive and conducive to irreparable mistaken identification\" as to be a denial of due process of law.'",
+            "evidence_quote": "the conduct of identification procedures may be \"so unnecessarily suggestive and conducive to irreparable mistaken identification\" as to be a denial of due process of law.",
+            "needs_cl": false,
+            "locator_note": "pin-442; cached opinion text paragraph following *442 (Fortas opinion); page-442 location independently confirmed by Black dissent fn [4]: 'Ante, at 442, quoting from Stovall v. Denno, 388 U. S. 293, 302'. Defect is confined to the lake pinpoint.quote field — the rendered content page carries the correct quote — so reader-facing risk is low."
+          },
+          "reasons": [
+            "Stored quote is Markdown page scaffolding ('## Issue ... ## Rule Yes.'), not a verbatim opinion passage; the harvest grabbed the preamble and stopped just before the anchored quotation.",
+            "Lake quote_fidelity='mismatch' is a TRUE POSITIVE here — the stored pinpoint quote genuinely does not match any source text."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Same harvest-artifact failure recurs on the first/preamble-adjacent pin of Franks (pin-155) and Frazier (pin-739) in this pack — likely a systematic extractor span bug."
+          ],
+          "suggested_tightening": "Re-run the pinpoint harvester so pin.quote captures the anchored blockquote, not the page's ## Issue/## Rule scaffolding."
+        },
+        {
+          "assertion_id": "b3ce630ad9fb899d",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "good_law is defensible: the disclosed text is a SCOTUS majority holding (Fortas, J.) that reversed on due-process grounds; nothing in the disclosed record overrules it.",
+            "The scope_note ('rare case in which the Court found a pretrial identification so suggestive as to violate due process') is corroborated by the disclosed majority, which does exactly that.",
+            "The only negative signals in the lake are proposed:true edges from inferior state courts (State v. Dickson, State v. Newman) that cannot overrule a SCOTUS holding and were not adopted into field_i."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "The scope_note's parenthetical attribution '(noted as such in Perry v. New Hampshire)' is not verifiable from disclosed evidence (Perry text not inlined); plausible but should be confirmed against Perry.",
+            "Proposed negative edges (Dickson field_ii='overruled', Newman field_ii='overruled') look like citator false positives (state courts, unadopted) — adjudicator should confirm they remain non-adopted.",
+            "Currency ('good as of 2026-06-30') cannot be fully proven from a single 1969 opinion; supported by disclosed edges but no full citator inlined."
+          ],
+          "suggested_tightening": "Confirm the Perry v. New Hampshire characterization and formally reject the proposed Dickson/Newman negative edges."
+        }
+      ],
+      "notes": "Opus model-diversity lane, refute-framed, both A/B lenses. pin-442 stored quote is a harvest artifact (refuted); pin-443 stored quote is faithful (builder 'mismatch' flag is a false positive)."
+    },
+    {
+      "lens": "opus-model-diversity",
+      "group_id": "_overhaul2/lake/cases/Frank v. Maryland.json",
+      "reviewed": [
+        {
+          "assertion_id": "c0dfb2edec187bf2",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion text is Frankfurter, J. delivering the opinion of the Court in the Baltimore health-inspection / § 120 twenty-dollar-fine case (appellant Frank), decided 1959 — the case is real and correctly identified.",
+            "Star pagination labels 361 through 373 are consistent with an opinion beginning at 359 U.S. 360 (opinion body opens on 361 after the caption/syllabus on 360); official display cite 359 U.S. 360 is supported.",
+            "The pin-373 Rule quote ('In light of the long history of this kind of inspection ...') is confirmed at the *373 paragraph."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Parallel cites 79 S. Ct. 804 / 3 L. Ed. 2d 877 and 1959 U.S. LEXIS 1085 are not independently checkable against the disclosed U.S. Reports text, but are standard-form and uncontradicted.",
+            "Identity block flags party_name_in_text=false and identity_method='frontier-identity'; the opinion uses 'appellant' rather than 'Frank', but code/court/date/quote cross-checks resolve identity."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "a6f9e91e312152c5",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "field_i_validity='unverified' is an honest non-derivation: the record status is under_review, the page renders under the ⚪ unverified banner, and the overruled-by-Camara orientation is explicitly labeled 'authored orientation, not machine-certified'.",
+            "There is no treatment claim to refute — the assertion declares that treatment/progeny were deliberately not derived; that is internally consistent and self-disclosed."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Scope_note says the stub is 'not derived until S6 promotion' while the page prose twice says 'S9' ('pending S9' / 'until S9 promotion') — a minor process-label inconsistency, not a treatment-substance defect."
+          ],
+          "suggested_tightening": "Reconcile the S6-vs-S9 promotion-stage wording between the lake scope_note and the page status note."
+        }
+      ],
+      "notes": "Frontier stub. Existence confirmed from Frankfurter opinion + star pagination; treatment honestly unverified."
+    },
+    {
+      "lens": "opus-model-diversity",
+      "group_id": "_overhaul2/lake/cases/Franks v. Delaware.json",
+      "reviewed": [
+        {
+          "assertion_id": "6ade265a6226cee0",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion header reads '438 U.S. 154 (1978)' with caption 'FRANKS v. DELAWARE', 'No. 77-5176', 'Supreme Court of United States', 'Decided June 26, 1978', 'MR. JUSTICE BLACKMUN delivered the opinion of the Court' — official display cite 438 U.S. 154 confirmed.",
+            "Star pagination *155 through *172 is consistent with an opinion beginning at 438 U.S. 154.",
+            "Case is real and correctly identified (cluster 109925)."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Parallel cites 98 S. Ct. 2674 / 57 L. Ed. 2d 667 and 1978 U.S. LEXIS 127 are not independently checkable against the disclosed U.S. Reports text, but are standard-form and uncontradicted."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "50d80cecea9545bb",
+          "dimension": "quote_fidelity",
+          "verdict": "refuted",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "Stored pin-155 quote is a content-page harvest artifact — it captured the front-matter delimiter, H1, TreatmentBadge HTML comment, and the authored Background/Issue/Rule prose ('--- # Franks v. Delaware *438 U.S. 154 (1978)* ... ## Rule Yes — on a substantial preliminary showing, the defendant is entitled to a veracity hearing, and a proven falsehood essential to probable cause voids the warrant.'). None of this is quoted from the Franks opinion.",
+            "severity": "medium",
+            "proposed_fix": "Repoint pin-155's stored quote to the holding language the rendered page already displays and which appears verbatim spanning 155-156: '[W]here the defendant makes a substantial preliminary showing that a false statement knowingly and intentionally, or with reckless disregard for the truth, was included by the affiant in the warrant affidavit, and if the allegedly false statement is necessary to the finding of probable cause, the Fourth Amendment requires that a hearing be held at the defendant's request.'",
+            "evidence_quote": "where the defendant makes a substantial preliminary showing that a false statement knowingly and intentionally, or with reckless disregard for the truth, was included by the affiant in the warrant affidavit, and if the allegedly false statement is necessary to the finding of probable cause, the Fourth Amendment requires that a hearing be held at the defendant's request.",
+            "needs_cl": false,
+            "locator_note": "pin-155; cached opinion text at *155-*156 (Blackmun, opening holding paragraph). Defect confined to the lake pinpoint.quote field — the rendered content page carries the correct quote — so reader-facing risk is low."
+          },
+          "reasons": [
+            "Stored quote is page scaffolding/authored prose, not verbatim opinion text; harvest grabbed the preamble and stopped before the anchored quotation.",
+            "Lake quote_fidelity='mismatch' is a TRUE POSITIVE — the stored pinpoint quote does not match source text."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Systematic extractor span bug: identical harvest-artifact failure on Foster pin-442 and Frazier pin-739 in this pack."
+          ],
+          "suggested_tightening": "Fix the harvester so pin.quote captures the anchored quotation rather than the page preamble."
+        },
+        {
+          "assertion_id": "a486e35beba2a054",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Stored pin-156 quote reproduces the opinion verbatim: cached text reads 'In the event that at that hearing the allegation of perjury or reckless disregard is established by the defendant by a preponderance of the evidence, and, with the affidavit's false material set to one side, the affidavit's remaining content is insufficient to establish probable cause, the search warrant must be voided and the fruits of the search excluded to the same extent as if probable cause was lacking on the face of the affidavit.'",
+            "Pincite is correct: the sentence falls after the *156 star marker (page 156), matching the 'Id. at 156' attribution.",
+            "The lake's quote_fidelity='mismatch' flag on this pin is a FALSE POSITIVE — the quotation is faithful and correctly located."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "The quote is truncated at '...fruits of the search excluded.' — a complete-thought stop that drops the original trailing qualifier 'to the same extent as if probable cause was lacking on the face of the affidavit' without an ellipsis. Retained words are exact; the omission does not alter the holding, but the truncation is un-signaled."
+          ],
+          "suggested_tightening": "Add an ellipsis after 'excluded' (or restore the trailing clause) to signal the omission, and clear the stale 'mismatch' fidelity flag."
+        },
+        {
+          "assertion_id": "bf2dff5559564b73",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "good_law is well-supported: the disclosed text is the SCOTUS majority (Blackmun, J.) that established the 'Franks hearing'; nothing in the disclosed record overrules or negatively treats it, and the page states 'No negative treatment.'",
+            "scope_note ('Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade') is a provenance note about date seeding, not a substantive treatment claim."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Currency ('good as of 2026-06-30') cannot be exhaustively proven from the single 1978 opinion; no full citator inlined, though disclosed evidence shows no negative treatment."
+          ],
+          "suggested_tightening": null
+        }
+      ],
+      "notes": "pin-155 stored quote is a harvest artifact (refuted); pin-156 stored quote is faithful (builder 'mismatch' flag is a false positive; minor un-signaled trailing truncation)."
+    },
+    {
+      "lens": "opus-model-diversity",
+      "group_id": "_overhaul2/lake/cases/Frazier v. Cupp.json",
+      "reviewed": [
+        {
+          "assertion_id": "ea2b4b530b4168fa",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion text is Marshall, J. delivering the opinion of the Court in petitioner Frazier's Oregon second-degree-murder habeas case (cousin Jerry Lee Rawls; interrogation deception) — the case is real and correctly identified (cluster 107913).",
+            "Star pagination *733 through *739 is consistent with an opinion beginning at 394 U.S. 731; official display cite 394 U.S. 731 supported.",
+            "The pin-739 Rule quote is confirmed at the *739 paragraph (see quote-fidelity assertion below)."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Parallel cites 89 S. Ct. 1420 / 22 L. Ed. 2d 684 and 1969 U.S. LEXIS 1870 are not independently checkable against the disclosed U.S. Reports text, but are standard-form and uncontradicted.",
+            "Minor cross-field date inconsistency elsewhere in the record (frontmatter date_decided=1969-04-23 vs treatment as_of_content=1969-04-22); not part of this existence payload and the decision date is not shown in the disclosed text."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "ee8dfda25c1f606f",
+          "dimension": "quote_fidelity",
+          "verdict": "refuted",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "Stored pin-739 quote is a content-page harvest artifact — it captured the front-matter delimiter, H1, TreatmentBadge HTML comment, and the authored Background/Issue/Rule prose ('--- # Frazier v. Cupp *394 U.S. 731 (1969)* ... ## Rule No. Police deception is one relevant factor, but it does not by itself make an otherwise voluntary confession inadmissible; voluntariness is judged on the totality of the circumstances.'). The actual page-739 quotation is absent from the pinpoint record.",
+            "severity": "medium",
+            "proposed_fix": "Repoint pin-739's stored quote to the page-739 language the rendered page already displays: 'The fact that the police misrepresented the statements that Rawls had made is, while relevant, insufficient in our view to make this otherwise voluntary confession inadmissible. These cases must be decided by viewing the \"totality of the circumstances\" . . . .'",
+            "evidence_quote": "The fact that the police misrepresented the statements that Rawls had made is, while relevant, insufficient in our view to make this otherwise voluntary confession inadmissible. These cases must be decided by viewing the \"totality of the circumstances,\"",
+            "needs_cl": false,
+            "locator_note": "pin-739; cached opinion text at *739 (Marshall opinion, paragraph b813-6). Defect confined to the lake pinpoint.quote field — the rendered content page carries the correct quote — so reader-facing risk is low."
+          },
+          "reasons": [
+            "Stored quote is page scaffolding/authored prose, not verbatim opinion text; harvest grabbed the preamble instead of the anchored quotation.",
+            "Lake quote_fidelity='mismatch' is a TRUE POSITIVE — the stored pinpoint quote does not match source text."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Systematic extractor span bug: identical harvest-artifact failure on Foster pin-442 and Franks pin-155 in this pack."
+          ],
+          "suggested_tightening": "Fix the harvester so pin.quote captures the anchored quotation rather than the page preamble."
+        },
+        {
+          "assertion_id": "6aa66411694a7f94",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "good_law is defensible: the disclosed text is the SCOTUS majority (Marshall, J.) holding that police misrepresentation is only one relevant factor and does not by itself make an otherwise voluntary confession inadmissible; nothing in the disclosed record overrules it, and the page states 'No negative treatment.'",
+            "scope_note ('Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade') is a provenance note, not a substantive treatment claim."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Record status is 'under_review' while treatment is stated as good_law with a full as_of_treatment date, and the page (unlike the Frank stub) shows no ⚪ unverified banner — the good_law claim is substantively sound but not yet machine-certified.",
+            "Currency ('good as of 2026-06-30') cannot be exhaustively proven from the single 1969 opinion; no full citator inlined."
+          ],
+          "suggested_tightening": null
+        }
+      ],
+      "notes": "Single pin-739 stored quote is a harvest artifact (refuted); rendered page carries the correct page-739 quotation. Existence and good_law treatment stand."
+    }
+  ]
+}

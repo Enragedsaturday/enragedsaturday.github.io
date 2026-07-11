@@ -1,0 +1,228 @@
+{
+  "packs": [
+    {
+      "group_id": "_overhaul2/lake/cases/French v. Merrill.json",
+      "reviewed": [
+        {
+          "assertion_id": "9a3eca45c8cae6de",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached slip opinion confirms identity: 'United States Court of Appeals For the First Circuit', No. 20-1650, decided October 1, 2021, Lipez, Circuit Judge, Christopher French v. Daniel Merrill et al.",
+            "Official cite '15 F.4th 116' carried in cluster.citations[] (cluster 5273192, opinion 5100775); identity_checked=true, expected_citation_found=true, canonical_name_match=true."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Reporter page 116 is not self-evident in the slip text; it rests on the disclosed cluster.citations[] metadata, which is consistent with the confirmed 1st Cir. 2021 identity."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "552c797a5124100f",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Content-page quote at ^pin-op39a matches the cached opinion verbatim at slip op. 39: 'The officers in this case, like the officers in Jardines, in the absence of any license to do so, \"physically intrud[ed]\" on a suspect's property repeatedly and engaged in intrusive conduct that no reasonable visitor could have understood as impliedly authorized by a resident.' (cached lines 2736-2744, between slip page markers -39- and -40-).",
+            "Pincite 'slip op., at 39' is correct; the quote sits on slip page 39."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "The record's payload quote_fidelity='mismatch' is a false-positive matcher artifact: the page nests single quotes around 'physically intrud[ed]' where the opinion uses double quotes, and the editorial bracket [ed] defeats naive exact-substring matching; the quote is faithful."
+          ],
+          "suggested_tightening": "Normalize quote-character/bracket handling in the fidelity matcher so faithful nested quotes are not flagged mismatch."
+        },
+        {
+          "assertion_id": "771b0a87660f773f",
+          "dimension": "quote_fidelity",
+          "verdict": "refuted",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "The stored pin-op39 payload.quote is a harvest/span-capture artifact of content-PAGE structure, not opinion text: it reproduces the page's Background-through-Rule prose and even contains the markdown section headers '## Issue' and '## Rule', ending mid-sentence at 'the license's scope'. No such string appears in the French opinion; quote_fidelity='mismatch' is correct here.",
+            "severity": "medium",
+            "proposed_fix": "Re-harvest pin-op39 to the actual quoted span, which IS verbatim in the opinion at slip op. 39: its scope 'is limited not only to a particular area but also to a specific purpose,' both of which are defined by what a homeowner might reasonably expect from a private citizen on the homeowner's curtilage. (cached lines 2712-2718). The rendered ^pin-op39 quote on the content page is already faithful, so only the pinpoint record metadata needs correction; no reader-facing legal claim is affected.",
+            "evidence_quote": "other words, its scope \"is limited not only to a particular area but also to a specific purpose,\" both of which are defined by what a homeowner might reasonably expect from a private citizen on the homeowner's curtilage.   Id. at 9.",
+            "needs_cl": false,
+            "locator_note": "pin-op39; content page line 92 vs stored quote at lake pinpoints[].id=pin-op39"
+          },
+          "reasons": [
+            "The payload quote contains literal markdown headers '## Issue' and '## Rule' — proof it captured content-page structure, not slip-opinion text.",
+            "Grep of the cached opinion for the payload's leading phrase 'During a final visit around 5:00' returns only the content-page Background line, never the opinion body."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Mitigant: the content page's rendered ^pin-op39 quote is a faithful contiguous span of the opinion, so the wiki reader sees a correct quote; the defect is confined to corrupt pinpoint-record metadata."
+          ],
+          "suggested_tightening": "Fix the pinpoint harvester's span selection so the anchor's stored quote is the quoted material, not the preceding page prose."
+        },
+        {
+          "assertion_id": "8a722c96db184746",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "field_i_validity=good_law is defensible from the disclosed derivation: lane1_negative (overrul*/abrogat*/supersed*/vacat*/reversed restricted to court_id scotus OR ca1) reviewed 3 with proposed_negative_events=0; lane3_recency reviewed 10 with 0; no ratified negative event.",
+            "The 12 lane2_top_cited 'proposed_negative_events' are unadjudicated (proposed:true) heuristic labels on DNH district-court cases (e.g., 'Yahtues v. Old Colony' tagged overruled; 'Morgan v. Garland' tagged superseded_by_statute) that cannot overrule a 1st Cir. precedent."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "The 12 lane2 proposed edges carry scary field_ii labels (overruled/superseded_by_statute/criticized) that are almost certainly keyword false positives on unrelated district matters; they remain unadjudicated noise in the record."
+          ],
+          "suggested_tightening": "Triage/suppress the lane2 top-cited proposed negative edges (district-court, unrelated-subject) so they do not masquerade as negative treatment."
+        }
+      ]
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/G. M. Leasing Corp. v. United States.json",
+      "reviewed": [
+        {
+          "assertion_id": "2368edbc4706d2b0",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion confirms identity: 'Mr. Justice Blackmun delivered the opinion of the Court'; SCOTUS Fourth Amendment tax-levy case; cert granted 423 U.S. 1031 (1975) 'limited to the Fourth Amendment issue'; reviewing CA10 (514 F.2d 935).",
+            "Official cite 429 U.S. 338 with standard parallels (97 S. Ct. 619; 50 L. Ed. 2d 530; 1977 U.S. LEXIS 33; 39 A.F.T.R.2d (RIA) 475) from cluster.citations[]; docket 75-235; date_decided 1977-01-12; page labels *341-*357 in cached text are consistent with an opinion beginning at 338."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "opinion_id is inconsistent across disclosed fields (identity.lead_opinion_id=9426638 vs the content-page HTML comment 'lead opinion 109579' vs frontmatter courtlistener.opinion_id=null); this is a metadata-hygiene issue and does not affect the citation-existence claim."
+          ],
+          "suggested_tightening": "Reconcile lead_opinion_id across the lake record, frontmatter, and header comment."
+        },
+        {
+          "assertion_id": "efe0e883b645a619",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "field_i_validity='unverified' is an honest, self-consistent frontier-stub state: status='under_review', composite_basis='unverified', scope_note explicitly says 'treatment/progeny intentionally not derived until S6 promotion'.",
+            "The content page renders the corresponding Unverified banner and makes no good_law claim, so there is nothing to refute; the disclosure matches the record."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "As a frontier stub, no currency signal exists yet; promotion (S9) must actually derive treatment before any good_law claim is asserted."
+          ],
+          "suggested_tightening": null
+        }
+      ]
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/Gaetjens v. Winnebago County.json",
+      "reviewed": [
+        {
+          "assertion_id": "c93255c2b0ed1a31",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion confirms identity: 'United States Court of Appeals For the Seventh Circuit', No. 20-1295, 'ARGUED MAY 27, 2021 - DECIDED JULY 13, 2021', Kanne, Circuit Judge.",
+            "Official cite '4 F.4th 487' from cluster.citations[] (cluster 4899427, opinion 4703206); circuit ca7, docket 20-1295, date_decided 2021-07-13 all match."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "The cached caption reads 'SALLY GAETJENS v. CITY OF LOVES PARK, et al.' while the record/title use 'Gaetjens v. Winnebago County'; Winnebago County is a named defendant (cached '...the City of Loves Park and Winnebago County are liable...'), so the short-form cite is legitimate, not a misidentification."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "fb6184f2ed6f3068",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "field_i_validity='unverified' is an honest frontier-stub state: status='under_review', scope_note='treatment/progeny intentionally not derived until S6 promotion'.",
+            "The content page renders the Unverified banner and makes no currency claim; the disclosure is self-consistent, nothing to refute."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "No treatment/progeny derived yet; a good_law claim must await actual derivation at promotion."
+          ],
+          "suggested_tightening": null
+        }
+      ]
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/Gardner v. Broderick.json",
+      "reviewed": [
+        {
+          "assertion_id": "0db2297c508f481a",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion confirms identity: 'Mr. Justice Fortas delivered the opinion of the Court'; NYC patrolman dismissed for refusing to sign a waiver of immunity before a NY County grand jury; 'We noted probable jurisdiction. 390 U.S. 918 (1968).'",
+            "Official cite 392 U.S. 273 with parallels (88 S. Ct. 1913; 20 L. Ed. 2d 1082; 1968 U.S. LEXIS 1351) from cluster.citations[]; docket 635; date_decided 1968-06-10; star-pagination *275/*276 consistent with an opinion beginning at 273."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "7ef2188c7cf8710d",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Content-page quote at ^pin-278 matches the cached opinion verbatim at page 278: 'If appellant, a policeman, had refused to answer questions specifically, directly, and narrowly relating to the performance of his official duties, ... without being required to waive his immunity with respect to the use of his answers or the fruits thereof in a criminal prosecution of himself, [Garrity v. New Jersey, supra,] the privilege against self-incrimination would not have been a bar to his dismissal.' (cached lines 6628-6640; star-pagination *278 at 6620, *279 at 6662).",
+            "The page's '. . .' ellipsis legitimately replaces the embedded citation 'Garrity v. New Jersey, supra,' and omits footnote markers; pincite 'Id. at 278' is correct."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "The record's payload quote_fidelity='mismatch' is a false positive: the omitted embedded 'Garrity v. New Jersey, supra,' citation and footnote reference markers defeat naive exact-substring matching; the quote is faithful."
+          ],
+          "suggested_tightening": "Teach the fidelity matcher to accept properly-marked ellipses over embedded citations/footnotes."
+        },
+        {
+          "assertion_id": "9d5c7cf111312b14",
+          "dimension": "quote_fidelity",
+          "verdict": "refuted",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "The stored pin-279 payload.quote is a harvest/span-capture artifact of content-PAGE structure, not opinion text: it reproduces the page's Background-through-Rule prose and contains the markdown headers '## Issue' and '## Rule', ending at 'An employee may not be fired merely for asserting the privilege:'. No such string appears in the Gardner opinion; quote_fidelity='mismatch' is correct.",
+            "severity": "medium",
+            "proposed_fix": "Re-harvest pin-279 to the actual quoted span, which IS verbatim in the opinion at page 279: 'the mandate of the great privilege against self-incrimination does not tolerate the attempt, regardless of its ultimate effectiveness, to coerce a waiver of the immunity it confers on penalty of the loss of employment.' (cached line 6665). The rendered ^pin-279 quote on the content page is already faithful; only the pinpoint-record metadata needs correction.",
+            "evidence_quote": "In any event, the mandate of the great privilege against self-incrimination does not tolerate the attempt, regardless of its ultimate effectiveness, to coerce a waiver of the immunity it confers on penalty of the loss of employment.",
+            "needs_cl": false,
+            "locator_note": "pin-279; content page line 386 quote vs stored quote at lake pinpoints[].id=pin-279"
+          },
+          "reasons": [
+            "The payload quote contains literal markdown headers '## Issue' and '## Rule' — proof it captured content-page structure, not slip-opinion text.",
+            "Grep of the cached opinion for the payload's leading phrase 'City Charter provision mandating' returns only the content-page Background line, never the opinion body."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Mitigant: the content page's rendered ^pin-279 quote is verbatim-faithful at page 279, so the reader sees a correct quote; the defect is confined to corrupt pinpoint-record metadata (same class as French pin-op39)."
+          ],
+          "suggested_tightening": "Fix the pinpoint harvester span selection so the stored quote is the quoted material, not the preceding page prose."
+        },
+        {
+          "assertion_id": "cd2110d63c4d3ece",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "field_i_validity=good_law (composite_basis=migration-seed; Garrity companion) is not refuted by any disclosed real negative event. lane1_negative reviewed 200 (cap_hit) with 18 proposed_negative_events, but ALL 18 are proposed:true (unratified) keyword hits from LOWER courts (e.g., State v. Gideon, Spielbauer v. County of Santa Clara, Aguilera v. Baca, Sher v. VA [overruled], In Re Moses [superseded_by_statute], Asherman v. Meachum [abrogated]); none is a SCOTUS decision, and only SCOTUS can overrule a SCOTUS holding.",
+            "lane3_recency reviewed 4 with proposed_negative_events=0. Marking good_law 'refuted' would require asserting a negative event the disclosed evidence does not establish, i.e., fabricating a holding."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Unlike French, Gardner's lane1_negative query is NOT court-restricted and hit its 200 cap with 18 unadjudicated keyword hits (some mislabeled overruled/abrogated/superseded_by_statute); the noise volume + cap_hit warrant an adjudication pass but do not, on the disclosed record, downgrade good_law."
+          ],
+          "suggested_tightening": "Run snippet-triage/adjudication on the Gardner lane1_negative proposals (restrict to court_id scotus for a SCOTUS holding) to clear the keyword false positives and confirm no real negative event."
+        }
+      ]
+    }
+  ]
+}

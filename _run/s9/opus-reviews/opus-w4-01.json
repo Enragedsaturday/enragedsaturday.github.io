@@ -1,0 +1,230 @@
+{
+ "packs": [
+  {
+   "group_id": "_overhaul2/lake/cases/Edwards v. Arizona.json",
+   "reviewed": [
+    {
+     "assertion_id": "c2db4a892fb265f8",
+     "dimension": "existence",
+     "verdict": "stands",
+     "verifiable_from_disclosed": true,
+     "defect": null,
+     "reasons": [
+      "Official cite 451 U.S. 477 (1981) corroborated by the inlined opinion, which is the Edwards holding text (invoked-counsel / police-reinitiated-interrogation) with internal star-pages *485 and *487 straddling the 477 case-start.",
+      "Lake identity consistent: cluster 110475, lead opinion 9428324, decided 1981-06-22, expected_citation_found=true, party_name_in_text=true, canonical_name_match=true; official_selection selected_rank_1.",
+      "Parallels 101 S. Ct. 1880 / 68 L. Ed. 2d 378 and vendor-neutral 1981 U.S. LEXIS 96 match cluster.citations[] as recorded."
+     ],
+     "breaks_true_positives": false,
+     "residual_risks": [
+      "The parallel/vendor-neutral reporters are cross-checked only against the lake cluster.citations[] block, not against the inlined slip text (which carries the U.S.-reporter pagination); the U.S. official cite is fully corroborated."
+     ],
+     "suggested_tightening": null
+    },
+    {
+     "assertion_id": "6253e481421c32bb",
+     "dimension": "quote_fidelity",
+     "verdict": "stands-modified",
+     "verifiable_from_disclosed": true,
+     "defect": {
+      "problem": "The pinpoint record's recorded quote for pin-484 is a mis-extraction: it captured the page preamble (frontmatter/header + Background + Issue + the Rule lead-in 'No; once counsel is invoked...') instead of the actual quotation-marked sentence anchored at ^pin-484, which is why the extractor's quote_fidelity flag reads 'mismatch'. The underlying content-page quote itself is faithful and correctly pincited.",
+      "severity": "low",
+      "proposed_fix": "Re-anchor the extracted quote span to the quotation-marked holding sentence at ^pin-484 and clear the mechanical 'mismatch' flag; no change to the published page is required.",
+      "evidence_quote": "we now hold that when an accused has invoked his right to have counsel present during custodial interrogation, a valid waiver of that right cannot be established by showing only that he responded to further police-initiated custodial interrogation even if he has been advised of his rights.",
+      "needs_cl": false,
+      "locator_note": "content_page line 90 (^pin-484) vs cached opinion text (single body paragraph, page 484 before the *485 marker)"
+     },
+     "reasons": [
+      "The actual ^pin-484 quote on the content page ('[W]hen an accused has invoked his right to have counsel present during custodial interrogation, a valid waiver of that right cannot be established by showing only that he responded to further police-initiated custodial interrogation even if he has been advised of his rights.') is verbatim-faithful to the inlined slip opinion, with only the bracketed '[W]hen' for capitalization.",
+      "Pincite '451 U.S. 477, 484' is correct: the *485 star-page marker falls in the NEXT sentence ('made avail*485able to him'), so the entire pin-484 sentence sits on page 484.",
+      "The recorded payload.quote (the page header/preamble ending at '## Rule No; once counsel is invoked...') is an extraction artifact, not a defect in the content; the 'mismatch' fidelity flag is therefore a mechanical false positive."
+     ],
+     "breaks_true_positives": true,
+     "residual_risks": [
+      "A downstream checker reading only the mis-extracted payload.quote (or the raw 'mismatch' flag) could wrongly conclude the CONTENT quote is unfaithful, when the content quote is in fact verbatim-correct."
+     ],
+     "suggested_tightening": "Repair the extractor's quote-span anchoring for quotation-marked pincites so ^pin markers do not capture the preceding preamble block."
+    },
+    {
+     "assertion_id": "bf7fdd56c4c2f61f",
+     "dimension": "quote_fidelity",
+     "verdict": "stands",
+     "verifiable_from_disclosed": true,
+     "defect": null,
+     "reasons": [
+      "The pin-484a quote ('[A]n accused, such as Edwards, having expressed his desire to deal with the police only through counsel, is not subject to further interrogation by the authorities until counsel has been made available to him, unless the accused himself initiates further communication, exchanges, or conversations with the police.') is verbatim-faithful to the inlined slip opinion ('We further hold that an accused, such as Edwards...'), with only the bracketed '[A]n' for capitalization.",
+      "Pincite 'Id. at 484-85' is correct: the *485 star-page marker splits 'made avail*485able' mid-quote, so the quote straddles pages 484 and 485.",
+      "The recorded quote_fidelity 'mismatch' flag is a mechanical false positive caused by the embedded '*485' page-number token breaking the literal string match on 'available'."
+     ],
+     "breaks_true_positives": false,
+     "residual_risks": [
+      "Fidelity confirmed against the cached slip/reporter text; the page label '*485' being present in the source but absent from the page quote is expected star-paging behavior, not an omission."
+     ],
+     "suggested_tightening": "Strip star-page tokens before fuzzy-matching so embedded page markers stop tripping false 'mismatch' flags."
+    },
+    {
+     "assertion_id": "fc01f73458af6909",
+     "dimension": "treatment",
+     "verdict": "stands",
+     "verifiable_from_disclosed": false,
+     "defect": null,
+     "reasons": [
+      "field_i_validity=good_law is a migration-seed (composite_basis='migration-seed'); the content page and lake treatment block agree on 'good' as of 2026-06-30, varies_by_point=false.",
+      "Every negative edge in the lake record is proposed=true and unadjudicated: the derivation lanes are stamped audit_needed=true / 'R15 treatment audit required', and the field_ii labels attach to the CITING cases' own status (e.g. Dickerson v. United States tagged 'overruled', which is facially a citator artifact since Dickerson ratified Miranda), so none is a disclosed adjudicated overruling of Edwards.",
+      "Nothing in the disclosed evidence refutes good_law; but good_law substance cannot be affirmatively confirmed from the pack because no adjudicated treatment-holding text is inlined and the proposed negatives remain unresolved."
+     ],
+     "breaks_true_positives": false,
+     "residual_risks": [
+      "The as_of_treatment (2026-06-30) is a re-seeded migration date, not a fresh S2 re-derivation; the ~31 proposed negative edges (lane1_negative/lane2_top_cited) still require the R15 audit before good_law is machine-certified.",
+      "I am not asserting a defect: per the stub/unverifiable rule I record verifiable_from_disclosed=false rather than fabricate either a clean confirmation or a negative-treatment finding."
+     ],
+     "suggested_tightening": "Complete the R15 treatment audit of the proposed edges and re-derive as_of_treatment so good_law rests on adjudicated (not migration-seed) evidence."
+    }
+   ],
+   "notes": "Edwards existence + both body quotes are verbatim-verifiable against the inlined slip opinion; the two 'mismatch' fidelity flags are mechanical false positives (one from a mis-extracted payload quote, one from an embedded *485 page token). Treatment good_law is an unaudited migration-seed."
+  },
+  {
+   "group_id": "_overhaul2/lake/cases/Egbert v. Boule.json",
+   "reviewed": [
+    {
+     "assertion_id": "7a07557bca454838",
+     "dimension": "existence",
+     "verdict": "stands",
+     "verifiable_from_disclosed": true,
+     "defect": null,
+     "reasons": [
+      "Official cite 596 U.S. 482 (2022) corroborated by the inlined slip opinion syllabus: 'EGBERT v. BOULE', No. 21-147, 'Argued March 2, 2022-Decided June 8, 2022', certiorari to the Ninth Circuit, Smuggler's Inn / Blaine, Washington facts.",
+      "Lake identity consistent: cluster 6475794, lead opinion 6347905, decided 2022-06-08, frontier-identity with expected_citation_found=true, canonical_name_match=true; official_selection selected_rank_1.",
+      "Parallel 142 S. Ct. 1793 matches cluster.citations[] as recorded."
+     ],
+     "breaks_true_positives": false,
+     "residual_risks": [
+      "The inlined text is a slip opinion (page 1 syllabus onward), so the 596 U.S. 482 reporter page is confirmed via the lake cluster citation rather than star-paging in the slip; identity is otherwise fully corroborated."
+     ],
+     "suggested_tightening": null
+    },
+    {
+     "assertion_id": "7a23caf1025fe07f",
+     "dimension": "treatment",
+     "verdict": "stands",
+     "verifiable_from_disclosed": true,
+     "defect": null,
+     "reasons": [
+      "field_i_validity='unverified' is an honest, deliberate frontier stub: status=under_review, treatment.edges=[], derivation={}, and field_provenance records 'frontier stub, no treatment' with scope_note 'treatment/progeny intentionally not derived until S6 promotion'.",
+      "The content page renders 'Treatment: Unverified' under the explicit under_review banner and asserts no verified subsequent-history proposition, so there is no over-claim to refute.",
+      "The assertion faithfully mirrors the disclosed lake record; no negative (or positive) treatment is claimed or disclosed."
+     ],
+     "breaks_true_positives": false,
+     "residual_risks": [
+      "Because treatment was intentionally not derived, no currency check is possible here; the stub self-labels this, which is the correct posture, not a defect."
+     ],
+     "suggested_tightening": null
+    }
+   ],
+   "notes": "Egbert existence is corroborated by the inlined slip syllabus; treatment is a self-flagged 'unverified' frontier stub with empty edges/derivation - honestly declared, nothing to refute."
+  },
+  {
+   "group_id": "_overhaul2/lake/cases/Entick v. Carrington.json",
+   "reviewed": [
+    {
+     "assertion_id": "37f3b932b7cd90fe",
+     "dimension": "existence",
+     "verdict": "stands",
+     "verifiable_from_disclosed": true,
+     "defect": null,
+     "reasons": [
+      "Off-CL official cite '19 How. St. Tr. 1029' plus parallels '95 Eng. Rep. 807' and '2 Wils. K.B. 275' and neutral '[1765] EWHC KB J98' are corroborated by two disclosed off_cl_links: BAILII confirms '[1765] EWHC KB J98; 95 ER 807; 19 St Tr 1029' and Founders' Constitution confirms '95 Eng. Rep. 807', both dated 1765-11-02.",
+      "identity_method=off_cl, reason_code='outside_cl_corpus_verified_by_off_cl_two_key', expected_citation_found=true, party_name_in_text=true, canonical_name_match=true; official_selection reason='off_cl_adjudication'.",
+      "Court attribution is handled correctly: display shows '(C.P. 1765)' and the record/page flag the BAILII 'King's Bench' tag as a retrospective filing label while the historical deciding court is the Court of Common Pleas (Camden CJ)."
+     ],
+     "breaks_true_positives": false,
+     "residual_risks": [
+      "No opinion text is inlined (English pre-CL case), so the citation is verified via the two off-CL confirmations rather than against a body of star-paged text; the two-key off-CL confirmation covers caption, cite, court and date."
+     ],
+     "suggested_tightening": null
+    },
+    {
+     "assertion_id": "eb61c62b147e4fcd",
+     "dimension": "treatment",
+     "verdict": "stands",
+     "verifiable_from_disclosed": false,
+     "defect": null,
+     "reasons": [
+      "field_i_validity=good_law is an off-CL migration-seed: scope_note states CL citator lanes were intentionally not run, treatment.edges=[], and validity rests on the O1 web-verified page treatment (legacy 'good', as of 2026-06-30) re-seeded post-A17 elevation.",
+      "No disclosed evidence refutes good_law and no negative edge exists; but the disclosed off_cl_links confirm identity/citation only, not treatment status, so the good-law substance (and the scope_note's 'favorably restated by Boyd/Jones/Riley' claim) is not independently verifiable from the pack.",
+      "Per the unverifiable/stub rule I record verifiable_from_disclosed=false rather than fabricate a clean confirmation or a negative finding for a foundational off-CL historical case."
+     ],
+     "breaks_true_positives": false,
+     "residual_risks": [
+      "The good_law seed depends on the (non-inlined) O1 web page treatment and the A4/A17 mapping; there is no machine-run citator basis for an English 1765 case, by design (A16/A17)."
+     ],
+     "suggested_tightening": "Consider inlining the O1 web-treatment excerpt (or the SCOTUS favorable-citation pincites) as evidence so the good_law seed for off-CL records is disclosure-verifiable."
+    }
+   ],
+   "notes": "Entick existence is two-key off-CL verified (BAILII + Founders' Constitution) with the Common Pleas vs KB label correctly disambiguated; treatment good_law is an intentional off-CL migration-seed not independently verifiable from the disclosed pack."
+  },
+  {
+   "group_id": "_overhaul2/lake/cases/Escobedo v. Illinois.json",
+   "reviewed": [
+    {
+     "assertion_id": "2a89e9caf10701b5",
+     "dimension": "existence",
+     "verdict": "stands",
+     "verifiable_from_disclosed": true,
+     "defect": null,
+     "reasons": [
+      "Official cite 378 U.S. 478 (1964) corroborated by the inlined opinion header ('378 U.S. 478 (1964)', 'ESCOBEDO v. ILLINOIS', No. 615, decided June 22, 1964, Goldberg, J.) with internal star-pages *479 through *499.",
+      "Lake identity consistent: cluster 106883, lead opinion 106883, docket 615, decided 1964-06-22, expected_citation_found=true, party_name_in_text=true, canonical_name_match=true; official_selection selected_rank_1.",
+      "Parallels 84 S. Ct. 1758 / 12 L. Ed. 2d 977 / 4 Ohio Misc. 197 / 32 Ohio Op. 2d 31 and vendor-neutral 1964 U.S. LEXIS 827 match cluster.citations[] as recorded."
+     ],
+     "breaks_true_positives": false,
+     "residual_risks": [
+      "The state-reporter parallels (Ohio Misc. / Ohio Op. 2d) and vendor-neutral LEXIS cite are cross-checked against the lake cluster block, not the inlined U.S.-reporter text; the U.S. official cite is fully corroborated."
+     ],
+     "suggested_tightening": null
+    },
+    {
+     "assertion_id": "aea5a9f8e8d3c597",
+     "dimension": "quote_fidelity",
+     "verdict": "stands-modified",
+     "verifiable_from_disclosed": true,
+     "defect": {
+      "problem": "The pinpoint record's recorded quote for pin-490 is a mis-extraction: it captured the page preamble (frontmatter/header + Background + Issue + the Rule lead-in 'Yes.') instead of the quotation-marked holding sentence anchored at ^pin-490, which is why the extractor's quote_fidelity flag reads 'mismatch'. The underlying content-page quote itself is faithful and correctly pincited.",
+      "severity": "low",
+      "proposed_fix": "Re-anchor the extracted quote span to the quotation-marked holding sentence at ^pin-490 and clear the mechanical 'mismatch' flag; no change to the published page is required.",
+      "evidence_quote": "We hold, therefore, that where, as here, the investigation is no longer a general inquiry into an unsolved crime but has begun to focus on a particular suspect, the suspect has been taken into police custody, the police carry out a process of interrogations that lends itself to eliciting incriminating statements, the suspect has requested and been denied an opportunity to consult with his lawyer, and the police have not effectively warned him of his absolute constitutional right to remain silent, the accused has been denied \"the Assistance of Counsel\" in violation of the Sixth Amendment to the Constitution as \"made obligatory upon the States by the Fourteenth Amendment,\" Gideon v. Wainwright, 372 U. S., at 342, and that no statement elicited by the police during the interrogation may be used against him at a criminal trial.",
+      "needs_cl": false,
+      "locator_note": "content_page line 90 area (^pin-490) vs cached opinion body paragraph beginning 'We hold, therefore, that where, as here...' with the *491 marker after 'the suspect'"
+     },
+     "reasons": [
+      "The actual ^pin-490 quote on the content page is verbatim-faithful to the inlined opinion: all retained words match the source exactly, and the two ' ... ' spans are legitimate ellipsis elisions of 'to the Constitution as \"made obligatory upon the States by the Fourteenth Amendment,\" Gideon v. Wainwright, 372 U. S., at 342,' and of the conjunction 'that'.",
+      "Pincite '378 U.S. at 490-491' is correct: the 'We hold, therefore...' sentence begins after the *490 marker and the *491 star-page falls mid-sentence (after 'the suspect'), so the quote straddles 490-491.",
+      "The recorded payload.quote (the page header/preamble ending at '## Rule Yes.') is an extraction artifact, not a content defect; the 'mismatch' flag is therefore a mechanical false positive. Single-vs-double quotation marks around 'the Assistance of Counsel' are typographic normalization, not a fidelity change."
+     ],
+     "breaks_true_positives": true,
+     "residual_risks": [
+      "A downstream checker reading only the mis-extracted payload.quote (or the raw 'mismatch' flag) could wrongly conclude the CONTENT quote is unfaithful, when the content quote is in fact verbatim-correct with proper ellipses."
+     ],
+     "suggested_tightening": "Repair the extractor's quote-span anchoring for quotation-marked pincites so ^pin markers do not capture the preceding preamble block."
+    },
+    {
+     "assertion_id": "33ce3edee37a9b35",
+     "dimension": "treatment",
+     "verdict": "stands",
+     "verifiable_from_disclosed": true,
+     "defect": null,
+     "reasons": [
+      "field_i_validity='caution' with varies_by_point=true is well-substantiated by the disclosed lake record: a point_override 'legacy-limited-escobedo-v-illinois' and migration:limited edges name Miranda v. Arizona (384 U.S. 436), Kirby v. Illinois (406 U.S. 682), and Moran v. Burbine (475 U.S. 412), each field_ii='limited'.",
+      "The content page consistently renders 'limited (result intact; rationale superseded)' and teaches Escobedo as the historical precursor recast by Miranda and confined to its facts by Kirby/Moran - matching the record's scope_note.",
+      "'caution' is a conservative, self-flagging label; the lane1_negative 'overruled'/'questioned' edges (e.g. Tennessee v. Bishop, Commonwealth v. Simon) are proposed=true unaudited citator candidates that do not refute a caution posture (if anything they cut in the same direction)."
+     ],
+     "breaks_true_positives": false,
+     "residual_risks": [
+      "The specific field_ii='limited' labels for Miranda/Kirby/Moran are migration-seeded (composite_basis='migration-seed', s3_binding_status='provisional') rather than confirmed against inlined treatment-holding text; the caution posture is nonetheless internally documented and conservative."
+     ],
+     "suggested_tightening": null
+    }
+   ],
+   "notes": "Escobedo existence and the ^pin-490 body quote are verbatim-verifiable against the inlined opinion (pincite 490-491 correct); the 'mismatch' flag is a mechanical false positive from a mis-extracted payload quote. Treatment 'caution/limited' is well-documented with named limiting cases (Miranda/Kirby/Moran)."
+  }
+ ]
+}

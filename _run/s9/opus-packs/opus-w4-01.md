@@ -1,0 +1,5164 @@
+# S9 R1 panel-review — Opus model-diversity lane (prompt pack)
+
+You are the **Claude/Opus** leg of the S9 three-lane adversarial panel (1 Claude + 2 Codex, R1). The two Codex lanes carry the A (support/quote-fidelity) and B (currency/treatment) attack lenses; **you carry model diversity and MUST vote on every paneled assertion across BOTH lenses' concerns.** You are refute-framed: try hard to break each assertion; **default to REFUTED on uncertainty**; never fabricate a cite, quote, or holding; use ONLY the evidence inlined below (no search, no outside knowledge). You are a SIGHTED reviewer — the FULL lake record (judgment fields included) is inlined.
+
+You are a WRITER lane, not an adjudicator: you FIND and VOTE. You do not tally, adjudicate, or close any row — the orchestrator does.
+
+For EACH group below, return one JSON object with the exact `reviewed[]` shape from the output contract (identical framing to the Codex lenses). Emit a finding object ONLY for a real defect (verdict refuted / stands-modified); a group you find wholly clean returns all-`stands` verdicts (the harness records a clean attestation). Concatenate the per-group JSON objects into a top-level `{"packs": [ ... ]}` array, one entry per group, each carrying its `group_id`.
+
+
+OUTPUT CONTRACT — return ONE JSON object, nothing else:
+{
+  "lens": "A" | "B",
+  "group_id": "<echo the group id>",
+  "reviewed": [
+    {
+      "assertion_id": "<from group_inventory.jsonl>",
+      "dimension": "existence|support|quote_fidelity|pincite|treatment|black_letter",
+      "verdict": "stands" | "refuted" | "stands-modified",
+      "verifiable_from_disclosed": true | false,
+      "defect": null,   // null when verdict=="stands"; else an object:
+      //  {"problem": "...", "severity": "high|medium|low", "proposed_fix": "...", "evidence_quote": "verbatim from disclosed evidence or null", "needs_cl": true|false, "locator_note": "..."}
+      "reasons": ["short evidence-grounded reason", "..."],
+      "breaks_true_positives": true | false,
+      "residual_risks": ["..."],
+      "suggested_tightening": "... or null"
+    }
+  ],
+  "notes": ""
+}
+Rules: verdict=='stands' <=> defect==null (assertion survives your attack). verdict=='refuted' <=> a real defect (the assertion as framed is wrong). verdict=='stands-modified' <=> survives but needs a stated modification (a minor defect). Review EVERY assertion_id in group_inventory.jsonl exactly once. Output ONLY the JSON object.
+---
+
+## GROUP: _overhaul2/lake/cases/Edwards v. Arizona.json  (`lake-record`, 4 assertions)
+
+### content_page
+
+```
+---
+title: "Edwards v. Arizona"
+type: case
+citation: "451 U.S. 477 (1981)"
+parallel_cite: "101 S. Ct. 1880; 68 L. Ed. 2d 378"
+neutral_cite: 1981 U.S. LEXIS 96
+court: U.S. Supreme Court
+court_level: scotus
+circuit: ""
+year: 1981
+date_decided: 1981-06-22
+docket: ""
+authority_weight: "Binding — SCOTUS"
+treatment:
+  field_i_validity: good_law
+  as_of_content: 1981-05-18
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Edwards v. Arizona
+  varies_by_point: false
+  scope_note: "Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade."
+  point_overrides: []
+courtlistener:
+  opinion_url: "https://www.courtlistener.com/opinion/110475/edwards-v-arizona/"
+  cluster_id: 110475
+  opinion_id: 9428324
+  identity_checked: true
+homes:
+  - page: "[[Miranda Waiver and Invocation]]"
+    role: "Key — Anchor"
+related: ["[[Arizona v. Roberson]]", "[[Miranda v. Arizona]]", "[[Davis v. United States]]"]
+aliases: []
+tags: ["case", "fifth-amendment", "miranda", "invocation", "right-to-counsel", "reinitiation", "bright-line-rule"]
+holding: "Once an accused invokes his Fifth Amendment right to counsel, police may not reinitiate interrogation until counsel has been made…"
+lake:
+  record_id: Edwards v. Arizona
+  status: verified
+  projected_at: 2026-07-06
+---
+
+# Edwards v. Arizona
+
+*451 U.S. 477 (1981)* · U.S. Supreme Court · **Binding — SCOTUS** · Treatment: **good** *(as of 2026-06-30)*
+<!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
+
+## Background
+After being given *[[Miranda v. Arizona|Miranda]]* warnings, Edwards invoked his right to counsel and questioning stopped. The next morning, before counsel was made available, different officers came to the jail, re-advised him, and obtained an incriminating statement. The Arizona courts held he had waived his right to counsel by talking; the Supreme Court granted review.
+
+## Issue
+Whether, once a suspect has invoked the right to counsel, a valid waiver can be shown merely because he later responds to further police-initiated interrogation.
+
+## Rule
+No; once counsel is invoked, police may not reinitiate interrogation. "[W]hen an accused has invoked his right to have counsel present during custodial interrogation, a valid waiver of that right cannot be established by showing only that he responded to further police-initiated custodial interrogation even if he has been advised of his rights." — 451 U.S. 477, 484. ^pin-484
+
+"[A]n accused, such as Edwards, having expressed his desire to deal with the police only through counsel, is not subject to further interrogation by the authorities until counsel has been made available to him, unless the accused himself initiates further communication, exchanges, or conversations with the police." — *Id.* at 484–85. ^pin-484a
+
+## Application
+Edwards invoked counsel, yet the police — not Edwards — reopened the interrogation the next morning before any lawyer was provided. Because he had not himself initiated the renewed contact, the statement obtained through that police-initiated interrogation could not rest on a valid waiver and had to be suppressed on these facts.
+
+## Conclusion
+The police-initiated interrogation after Edwards invoked counsel violated his rights; the judgment was reversed. *Edwards* establishes the bright-line bar on reinitiating interrogation after a suspect invokes counsel.
+
+## Treatment & subsequent history
+- **Status:** good *(as of 2026-06-30)* — **Binding — SCOTUS**.
+- No negative treatment. *Edwards* anchors the invocation-of-counsel rule; [[Arizona v. Roberson]] held the bar is not offense-specific, and [[Davis v. United States]] held the initial invocation must be unambiguous.
+
+## Appears on
+- [[Miranda Waiver and Invocation]] — *Key — Anchor*
+
+## Sources
+- *Edwards v. Arizona*, 451 U.S. 477 (1981) — https://www.courtlistener.com/opinion/110475/edwards-v-arizona/ — pinpoints: 484, 485.
+
+```
+
+### group_inventory (assertions under review)
+
+```jsonl
+{"assertion_id": "c2db4a892fb265f8", "dimension": "existence", "kind": "case_cite", "locator": {"record_id": "Edwards v. Arizona"}, "payload": {"all": [{"cite": "451 U.S. 477", "page": "477", "reporter": "U.S.", "selected_official": false, "source": "cluster.citations[]", "type": 1, "volume": "451"}, {"cite": "101 S. Ct. 1880", "page": "1880", "reporter": "S. Ct.", "selected_official": false, "source": "cluster.citations[]", "type": 1, "volume": "101"}, {"cite": "68 L. Ed. 2d 378", "page": "378", "reporter": "L. Ed. 2d", "selected_official": false, "source": "cluster.citations[]", "type": 1, "volume": "68"}, {"cite": "1981 U.S. LEXIS 96", "page": "96", "reporter": "U.S. LEXIS", "selected_official": false, "source": "cluster.citations[]", "type": 6, "volume": "1981"}], "display": "451 U.S. 477", "official": {"cite": "451 U.S. 477", "page": "477", "reporter": "U.S.", "selected_official": true, "source": "cluster.citations[]", "type": 1, "volume": "451"}, "official_selection_present": true, "record_id": "Edwards v. Arizona"}}
+{"assertion_id": "6253e481421c32bb", "dimension": "quote_fidelity", "kind": "quote_pinpoint", "locator": {"pin_id": "pin-484", "record_id": "Edwards v. Arizona"}, "payload": {"fragment": null, "page": null, "pin_id": "pin-484", "pinpoint_status": "slip-only", "quote": "--- # Edwards v. Arizona *451 U.S. 477 (1981)* · U.S. Supreme Court · **Binding — SCOTUS** · Treatment: **good** *(as of 2026-06-30)* <!-- header line; TreatmentBadge + weight render here, degrading to the text above --> ## Background After being given *Miranda* warnings, Edwards invoked his right to counsel and questioning stopped. The next morning, before counsel was made available, different officers came to the jail, re-advised him, and obtained an incriminating statement. The Arizona courts held he had waived his right to counsel by talking; the Supreme Court granted review. ## Issue Whether, once a suspect has invoked the right to counsel, a valid waiver can be shown merely because he later responds to further police-initiated interrogation. ## Rule No; once counsel is invoked, police may not reinitiate interrogation.", "quote_fidelity": "mismatch", "record_id": "Edwards v. Arizona", "star_marker": null}}
+{"assertion_id": "bf7fdd56c4c2f61f", "dimension": "quote_fidelity", "kind": "quote_pinpoint", "locator": {"pin_id": "pin-484a", "record_id": "Edwards v. Arizona"}, "payload": {"fragment": null, "page": null, "pin_id": "pin-484a", "pinpoint_status": "slip-only", "quote": "[A]n accused, such as Edwards, having expressed his desire to deal with the police only through counsel, is not subject to further interrogation by the authorities until counsel has been made available to him, unless the accused himself initiates further communication, exchanges, or conversations with the police.", "quote_fidelity": "mismatch", "record_id": "Edwards v. Arizona", "star_marker": null}}
+{"assertion_id": "fc01f73458af6909", "dimension": "treatment", "kind": "treatment", "locator": {"record_id": "Edwards v. Arizona"}, "payload": {"as_of_content": "1981-05-18", "as_of_treatment": "2026-06-30", "field_i_validity": "good_law", "record_id": "Edwards v. Arizona", "scope_note": "Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade.", "varies_by_point": false}}
+```
+
+### lake record — Edwards v. Arizona
+
+```json
+{
+  "schema_version": "s2.v1",
+  "record_id": "Edwards v. Arizona",
+  "stub": false,
+  "status": "verified",
+  "identity": {
+    "case_name": "Edwards v. Arizona",
+    "case_name_short": "Edwards",
+    "case_name_full": "Edwards v. Arizona",
+    "input_case_name": "Edwards v. Arizona",
+    "court": "U.S. Supreme Court",
+    "court_id": "scotus",
+    "court_level": "scotus",
+    "circuit": null,
+    "state": null,
+    "date_decided": "1981-06-22",
+    "year": 1981,
+    "docket": null,
+    "cluster_id": 110475,
+    "lead_opinion_id": 9428324,
+    "sibling_ids": [
+      110475,
+      9428324,
+      9428325,
+      9428326
+    ],
+    "absolute_url": "/opinion/110475/edwards-v-arizona/",
+    "identity_method": "citation+party-text",
+    "expected_citation_found": true,
+    "party_name_in_text": true,
+    "canonical_name_match": true,
+    "alternates": [
+      {
+        "cluster_id": 9033394,
+        "score": 20,
+        "case_name": "Edwards v. Arizona"
+      }
+    ],
+    "reason_code": null
+  },
+  "citations": {
+    "official": {
+      "cite": "451 U.S. 477",
+      "volume": "451",
+      "reporter": "U.S.",
+      "page": "477",
+      "type": 1,
+      "selected_official": true,
+      "source": "cluster.citations[]"
+    },
+    "parallel": [
+      {
+        "cite": "101 S. Ct. 1880",
+        "volume": "101",
+        "reporter": "S. Ct.",
+        "page": "1880",
+        "type": 1,
+        "selected_official": false,
+        "source": "cluster.citations[]"
+      },
+      {
+        "cite": "68 L. Ed. 2d 378",
+        "volume": "68",
+        "reporter": "L. Ed. 2d",
+        "page": "378",
+        "type": 1,
+        "selected_official": false,
+        "source": "cluster.citations[]"
+      }
+    ],
+    "vendor_neutral": [
+      {
+        "cite": "1981 U.S. LEXIS 96",
+        "volume": "1981",
+        "reporter": "U.S. LEXIS",
+        "page": "96",
+        "type": 6,
+        "selected_official": false,
+        "source": "cluster.citations[]"
+      }
+    ],
+    "all": [
+      {
+        "cite": "451 U.S. 477",
+        "volume": "451",
+        "reporter": "U.S.",
+        "page": "477",
+        "type": 1,
+        "selected_official": false,
+        "source": "cluster.citations[]"
+      },
+      {
+        "cite": "101 S. Ct. 1880",
+        "volume": "101",
+        "reporter": "S. Ct.",
+        "page": "1880",
+        "type": 1,
+        "selected_official": false,
+        "source": "cluster.citations[]"
+      },
+      {
+        "cite": "68 L. Ed. 2d 378",
+        "volume": "68",
+        "reporter": "L. Ed. 2d",
+        "page": "378",
+        "type": 1,
+        "selected_official": false,
+        "source": "cluster.citations[]"
+      },
+      {
+        "cite": "1981 U.S. LEXIS 96",
+        "volume": "1981",
+        "reporter": "U.S. LEXIS",
+        "page": "96",
+        "type": 6,
+        "selected_official": false,
+        "source": "cluster.citations[]"
+      }
+    ],
+    "display": "451 U.S. 477",
+    "official_selection": {
+      "court_class": "scotus",
+      "selected": "451 U.S. 477",
+      "reason": "selected_rank_1"
+    }
+  },
+  "pinpoints": [
+    {
+      "id": "pin-484",
+      "page": null,
+      "quote": "--- # Edwards v. Arizona *451 U.S. 477 (1981)* \u00b7 U.S. Supreme Court \u00b7 **Binding \u2014 SCOTUS** \u00b7 Treatment: **good** *(as of 2026-06-30)* <!-- header line; TreatmentBadge + weight render here, degrading to the text above --> ## Background After being given *Miranda* warnings, Edwards invoked his right to counsel and questioning stopped. The next morning, before counsel was made available, different officers came to the jail, re-advised him, and obtained an incriminating statement. The Arizona courts held he had waived his right to counsel by talking; the Supreme Court granted review. ## Issue Whether, once a suspect has invoked the right to counsel, a valid waiver can be shown merely because he later responds to further police-initiated interrogation. ## Rule No; once counsel is invoked, police may not reinitiate interrogation.",
+      "star_marker": null,
+      "quote_fidelity": "mismatch",
+      "pinpoint_status": "slip-only",
+      "position": null
+    },
+    {
+      "id": "pin-484a",
+      "page": null,
+      "quote": "[A]n accused, such as Edwards, having expressed his desire to deal with the police only through counsel, is not subject to further interrogation by the authorities until counsel has been made available to him, unless the accused himself initiates further communication, exchanges, or conversations with the police.",
+      "star_marker": null,
+      "quote_fidelity": "mismatch",
+      "pinpoint_status": "slip-only",
+      "position": null
+    }
+  ],
+  "treatment": {
+    "field_i_validity": "good_law",
+    "as_of_content": "1981-05-18",
+    "as_of_treatment": "2026-06-30",
+    "composite_basis": "migration-seed",
+    "composite_basis_ref": "Edwards v. Arizona",
+    "varies_by_point": false,
+    "scope_note": "Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade.",
+    "point_overrides": [],
+    "edges": [
+      {
+        "citing_case": {
+          "name": "Commonwealth v. Roberson",
+          "cluster_id": 9481866,
+          "cite": null,
+          "field_ii": "superseded_by_statute"
+        },
+        "field_ii": "superseded_by_statute",
+        "field_iii": "mentioned",
+        "point": null,
+        "proposed": true,
+        "journal_ref": "Edwards v. Arizona:lane1_negative"
+      },
+      {
+        "citing_case": {
+          "name": "Jenkins v. State",
+          "cluster_id": 10680001,
+          "cite": [
+            "894 S.E.2d 566",
+            "317 Ga. 585"
+          ],
+          "field_ii": "criticized"
+        },
+        "field_ii": "criticized",
+        "field_iii": "mentioned",
+        "point": null,
+        "proposed": true,
+        "journal_ref": "Edwards v. Arizona:lane1_negative"
+      },
+      {
+        "citing_case": {
+          "name": "State v. Harvin",
+          "cluster_id": 9352546,
+          "cite": null,
+          "field_ii": "overruled"
+        },
+        "field_ii": "overruled",
+        "field_iii": "mentioned",
+        "point": null,
+        "proposed": true,
+        "journal_ref": "Edwards v. Arizona:lane1_negative"
+      },
+      {
+        "citing_case": {
+          "name": "State v. Harvin",
+          "cluster_id": 9329344,
+          "cite": null,
+          "field_ii": "overruled"
+        },
+        "field_ii": "overruled",
+        "field_iii": "mentioned",
+        "point": null,
+        "proposed": true,
+        "journal_ref": "Edwards v. Arizona:lane1_negative"
+      },
+      {
+        "citing_case": {
+          "name": "State v. Harvin",
+          "cluster_id": 8465498,
+          "cite": null,
+          "field_ii": "overruled"
+        },
+        "field_ii": "overruled",
+        "field_iii": "mentioned",
+        "point": null,
+        "proposed": true,
+        "journal_ref": "Edwards v. Arizona:lane1_negative"
+      },
+      {
+        "citing_case": {
+          "name": "Commonwealth v. Gonzalez",
+          "cluster_id": 4892536,
+          "cite": null,
+          "field_ii": "superseded_by_statute"
+        },
+        "field_ii": "superseded_by_statute",
+        "field_iii": "mentioned",
+        "point": null,
+        "proposed": true,
+        "journal_ref": "Edwards v. Arizona:lane1_negative"
+      },
+      {
+        "citing_case": {
+          "name": "Teague v. Lane",
+          "cluster_id": 112206,
+          "cite": [
+            "103 L. Ed. 2d 334",
+            "109 S. Ct. 1060",
+            "489 U.S. 288",
+            "1989 U.S. LEXIS 1043"
+          ],
+          "field_ii": "overruled"
+        },
+        "field_ii": "overruled",
+        "field_iii": "mentioned",
+        "point": null,
+        "proposed": true,
+        "journal_ref": "Edwards v. Arizona:lane2_top_cited"
+      },
+      {
+        "citing_case": {
+          "name": "Griffith v. Kentucky",
+          "cluster_id": 111785,
+          "cite": [
+            "93 L. Ed. 2d 649",
+            "107 S. Ct. 708",
+            "479 U.S. 314",
+            "1987 U.S. LEXIS 283",
+            "55 U.S.L.W. 4089"
+          ],
+          "field_ii": "overruled"
+        },
+        "field_ii": "overruled",
+        "field_iii": "mentioned",
+        "point": null,
+        "proposed": true,
+        "journal_ref": "Edwards v. Arizona:lane2_top_cited"
+      },
+      {
+        "citing_case": {
+          "name": "Moran v. Burbine",
+          "cluster_id": 111614,
+          "cite": [
+            "89 L. Ed. 2d 410",
+            "106 S. Ct. 1135",
+            "475 U.S. 412",
+            "1986 U.S. LEXIS 32",
+            "54 U.S.L.W. 4265"
+          ],
+          "field_ii": "questioned"
+        },
+        "field_ii": "questioned",
+        "field_iii": "mentioned",
+        "point": null,
+        "proposed": true,
+        "journal_ref": "Edwards v. Arizona:lane2_top_cited"
+      },
+      {
+        "citing_case": {
+          "name": "Oregon v. Elstad",
+          "cluster_id": 111364,
+          "cite": [
+            "84 L. Ed. 2d 222",
+            "105 S. Ct. 1285",
+            "470 U.S. 298",
+            "1985 U.S. LEXIS 60",
+            "53 U.S.L.W. 4244"
+          ],
+          "field_ii": "criticized"
+        },
+        "field_ii": "criticized",
+        "field_iii": "mentioned",
+        "point": null,
+        "proposed": true,
+        "journal_ref": "Edwards v. Arizona:lane2_top_cited"
+      },
+      {
+        "citing_case": {
+          "name": "Davis v. United States",
+          "cluster_id": 117863,
+          "cite": [
+            "129 L. Ed. 2d 362",
+            "114 S. Ct. 2350",
+            "512 U.S. 452",
+            "1994 U.S. LEXIS 4827"
+          ],
+          "field_ii": "questioned"
+        },
+        "field_ii": "questioned",
+        "field_iii": "mentioned",
+        "point": null,
+        "proposed": true,
+        "journal_ref": "Edwards v. Arizona:lane2_top_cited"
+      },
+      {
+        "citing_case": {
+          "name": "Dickerson v. United States",
+          "cluster_id": 118380,
+          "cite": [
+            "147 L. Ed. 2d 405",
+            "120 S. Ct. 2326",
+            "530 U.S. 428",
+            "2000 U.S. LEXIS 4305"
+          ],
+          "field_ii": "overruled"
+        },
+        "field_ii": "overruled",
+        "field_iii": "mentioned",
+        "point": null,
+        "proposed": true,
+        "journal_ref": "Edwards v. Arizona:lane2_top_cited"
+      },
+      {
+        "citing_case": {
+          "name": "McNeil v. Wisconsin",
+          "cluster_id": 112622,
+          "cite": [
+            "115 L. Ed. 2d 158",
+            "111 S. Ct. 2204",
+            "501 U.S. 171",
+            "1991 U.S. LEXIS 3483"
+          ],
+          "field_ii": "questioned"
+        },
+        "field_ii": "questioned",
+        "field_iii": "mentioned",
+        "point": null,
+        "proposed": true,
+        "journal_ref": "Edwards v. Arizona:lane2_top_cited"
+      },
+      {
+        "citing_case": {
+          "name": "Wright v. West",
+          "cluster_id": 112771,
+          "cite": [
+            "120 L. Ed. 2d 225",
+            "112 S. Ct. 2482",
+            "505 U.S. 277",
+            "1992 U.S. LEXIS 3689"
+          ],
+          "field_ii": "overruled"
+        },
+        "field_ii": "overruled",
+        "field_iii": "mentioned",
+        "point": null,
+        "proposed": true,
+        "journal_ref": "Edwards v. Arizona:lane2_top_cited"
+      },
+      {
+        "citing_case": {
+          "name": "Dinkins v. State",
+          "cluster_id": 1688238,
+          "cite": [
+            "894 S.W.2d 330",
+            "1995 Tex. Crim. App. LEXIS 9",
+            "1995 WL 40331"
+          ],
+          "field_ii": "overruled"
+        },
+        "field_ii": "overruled",
+        "field_iii": "mentioned",
+        "point": null,
+        "proposed": true,
+        "journal_ref": "Edwards v. Arizona:lane2_top_cited"
+      },
+      {
+        "citing_case": {
+          "name": "New York v. Quarles",
+          "cluster_id": 111214,
+          "cite": [
+            "81 L. Ed. 2d 550",
+            "104 S. Ct. 2626",
+            "467 U.S. 649",
+            "1984 U.S. LEXIS 111",
+            "52 U.S.L.W. 4790"
+          ],
+          "field_ii": "questioned"
+        },
+        "field_ii": "questioned",
+        "field_iii": "mentioned",
+        "point": null,
+        "proposed": true,
+        "journal_ref": "Edwards v. Arizona:lane2_top_cited"
+      },
+      {
+        "citing_case": {
+          "name": "Michigan v. Jackson",
+          "cluster_id": 111622,
+          "cite": [
+            "89 L. Ed. 2d 631",
+            "106 S. Ct. 1404",
+            "475 U.S. 625",
+            "1986 U.S. LEXIS 91",
+            "54 U.S.L.W. 4334"
+          ],
+          "field_ii": "overruled"
+        },
+        "field_ii": "overruled",
+        "field_iii": "mentioned",
+        "point": null,
+        "proposed": true,
+        "journal_ref": "Edwards v. Arizona:lane2_top_cited"
+      },
+      {
+        "citing_case": {
+          "name": "Oregon v. Bradshaw",
+          "cluster_id": 110987,
+          "cite": [
+            "77 L. Ed. 2d 405",
+            "103 S. Ct. 2830",
+            "462 U.S. 1039",
+            "1983 U.S. LEXIS 82",
+            "51 U.S.L.W. 4940"
+          ],
+          "field_ii": "questioned"
+        },
+        "field_ii": "questioned",
+        "field_iii": "mentioned",
+        "point": null,
+        "proposed": true,
+        "journal_ref": "Edwards v. Arizona:lane2_top_cited"
+      },
+      {
+        "citing_case": {
+          "name": "Green v. State",
+          "cluster_id": 1657475,
+          "cite": [
+            "934 S.W.2d 92",
+            "1996 Tex. Crim. App. LEXIS 185",
+            "1996 WL 512395"
+          ],
+          "field_ii": "overruled"
+        },
+        "field_ii": "overruled",
+        "field_iii": "mentioned",
+        "point": null,
+        "proposed": true,
+        "journal_ref": "Edwards v. Arizona:lane2_top_cited"
+      },
+      {
+        "citing_case": {
+          "name": "Muniz v. State",
+          "cluster_id": 1471480,
+          "cite": [
+            "851 S.W.2d 238",
+            "1993 Tex. Crim. App. LEXIS 5",
+            "1993 WL 871"
+          ],
+          "field_ii": "overruled"
+        },
+        "field_ii": "overruled",
+        "field_iii": "mentioned",
+        "point": null,
+        "proposed": true,
+        "journal_ref": "Edwards v. Arizona:lane2_top_cited"
+      },
+      {
+        "citing_case": {
+          "name": "Smith v. Illinois",
+          "cluster_id": 111288,
+          "cite": [
+            "83 L. Ed. 2d 488",
+            "105 S. Ct. 490",
+            "469 U.S. 91",
+            "1984 U.S. LEXIS 167",
+            "53 U.S.L.W. 3430"
+          ],
+          "field_ii": "criticized"
+        },
+        "field_ii": "criticized",
+        "field_iii": "mentioned",
+        "point": null,
+        "proposed": true,
+        "journal_ref": "Edwards v. Arizona:lane2_top_cited"
+      },
+      {
+        "citing_case": {
+          "name": "People v. Waidla",
+          "cluster_id": 1316339,
+          "cite": [
+            "996 P.2d 46",
+            "94 Cal. Rptr. 2d 396",
+            "22 Cal. 4th 690",
+            "22 Cal. 690",
+            "2000 Daily Journal DAR 3605",
+            "2000 Cal. Daily Op. Serv. 2687",
+            "2000 Cal. LEXIS 2229"
+          ],
+          "field_ii": "overruled"
+        },
+        "field_ii": "overruled",
+        "field_iii": "mentioned",
+        "point": null,
+        "proposed": true,
+        "journal_ref": "Edwards v. Arizona:lane2_top_cited"
+      },
+      {
+        "citing_case": {
+          "name": "Saffle v. Parks",
+          "cluster_id": 112390,
+          "cite": [
+            "108 L. Ed. 2d 415",
+            "110 S. Ct. 1257",
+            "494 U.S. 484",
+            "1990 U.S. LEXIS 1178",
+            "58 U.S.L.W. 4322"
+          ],
+          "field_ii": "overruled"
+        },
+        "field_ii": "overruled",
+        "field_iii": "mentioned",
+        "point": null,
+        "proposed": true,
+        "journal_ref": "Edwards v. Arizona:lane2_top_cited"
+      },
+      {
+        "citing_case": {
+          "name": "People v. Cunningham",
+          "cluster_id": 2587254,
+          "cite": [
+            "25 P.3d 519",
+            "108 Cal. Rptr. 2d 291",
+            "25 Cal. 4th 926"
+          ],
+          "field_ii": "overruled"
+        },
+        "field_ii": "overruled",
+        "field_iii": "mentioned",
+        "point": null,
+        "proposed": true,
+        "journal_ref": "Edwards v. Arizona:lane2_top_cited"
+      },
+      {
+        "citing_case": {
+          "name": "Patterson v. Illinois",
+          "cluster_id": 112127,
+          "cite": [
+            "101 L. Ed. 2d 261",
+            "108 S. Ct. 2389",
+            "487 U.S. 285",
+            "1988 U.S. LEXIS 2876",
+            "56 U.S.L.W. 4733"
+          ],
+          "field_ii": "questioned"
+        },
+        "field_ii": "questioned",
+        "field_iii": "mentioned",
+        "point": null,
+        "proposed": true,
+        "journal_ref": "Edwards v. Arizona:lane2_top_cited"
+      },
+      {
+        "citing_case": {
+          "name": "Arizona v. Roberson",
+          "cluster_id": 112100,
+          "cite": [
+            "100 L. Ed. 2d 704",
+            "108 S. Ct. 2093",
+            "486 U.S. 675",
+            "1988 U.S. LEXIS 2726",
+            "56 U.S.L.W. 4590"
+          ],
+          "field_ii": "questioned"
+        },
+        "field_ii": "questioned",
+        "field_iii": "mentioned",
+        "point": null,
+        "proposed": true,
+        "journal_ref": "Edwards v. Arizona:lane2_top_cited"
+      },
+      {
+        "citing_case": {
+          "name": "Illinois v. Perkins",
+          "cluster_id": 112452,
+          "cite": [
+            "110 L. Ed. 2d 243",
+            "110 S. Ct. 2394",
+            "496 U.S. 292",
+            "1990 U.S. LEXIS 2885"
+          ],
+          "field_ii": "questioned"
+        },
+        "field_ii": "questioned",
+        "field_iii": "mentioned",
+        "point": null,
+        "proposed": true,
+        "journal_ref": "Edwards v. Arizona:lane2_top_cited"
+      },
+      {
+        "citing_case": {
+          "name": "People v. Coffman",
+          "cluster_id": 2623595,
+          "cite": [
+            "96 P.3d 30",
+            "17 Cal. Rptr. 3d 710",
+            "34 Cal. 4th 1"
+          ],
+          "field_ii": "overruled"
+        },
+        "field_ii": "overruled",
+        "field_iii": "mentioned",
+        "point": null,
+        "proposed": true,
+        "journal_ref": "Edwards v. Arizona:lane2_top_cited"
+      },
+      {
+        "citing_case": {
+          "name": "Minnick v. Mississippi",
+          "cluster_id": 112513,
+          "cite": [
+            "112 L. Ed. 2d 489",
+            "111 S. Ct. 486",
+            "498 U.S. 146",
+            "1990 U.S. LEXIS 6118"
+          ],
+          "field_ii": "questioned"
+        },
+        "field_ii": "questioned",
+        "field_iii": "mentioned",
+        "point": null,
+        "proposed": true,
+        "journal_ref": "Edwards v. Arizona:lane2_top_cited"
+      },
+      {
+        "citing_case": {
+          "name": "Leif Taylor v. Thomas M. Maddox, Interim Director George Galaza Cal Terhune",
+          "cluster_id": 786028,
+          "cite": [
+            "366 F.3d 992",
+            "2004 U.S. App. LEXIS 9068",
+            "2004 WL 1043343"
+          ],
+          "field_ii": "superseded_by_statute"
+        },
+        "field_ii": "superseded_by_statute",
+        "field_iii": "mentioned",
+        "point": null,
+        "proposed": true,
+        "journal_ref": "Edwards v. Arizona:lane2_top_cited"
+      },
+      {
+        "citing_case": {
+          "name": "People v. Frye",
+          "cluster_id": 5607916,
+          "cite": [
+            "18 Cal. 4th 894",
+            "98 Cal. Daily Op. Serv. 5949",
+            "959 P.2d 183",
+            "98 Daily Journal DAR 8259",
+            "77 Cal. Rptr. 2d 25",
+            "1998 Cal. LEXIS 4688"
+          ],
+          "field_ii": "overruled"
+        },
+        "field_ii": "overruled",
+        "field_iii": "mentioned",
+        "point": null,
+        "proposed": true,
+        "journal_ref": "Edwards v. Arizona:lane2_top_cited"
+      }
+    ],
+    "derivation": {
+      "lane1_negative": {
+        "query": "cites:(110475 OR 9428324 OR 9428325 OR 9428326) AND (overrul* OR abrogat* OR supersed* OR \"recede from\" OR \"no longer good law\" OR vacat* OR reversed) ",
+        "reviewed": 200,
+        "cap": 200,
+        "cap_hit": true,
+        "final_cursor": "https://www.courtlistener.com/api/rest/v4/search/?cursor=cz0xNTg1MDA4MDAwMDAwJnM9NDczODU5NyZ0PW8mZD0yMDI2LTA3LTA0JnA9MTE%3D&fields=absolute_url%2CcaseName%2CcaseNameFull%2Ccitation%2CciteCount%2Ccluster_id%2Ccourt%2Ccourt_citation_string%2Ccourt_id%2CdateFiled%2Copinions%2Csibling_ids%2Cstatus%2Csyllabus&order_by=dateFiled+desc&page_size=100&q=cites%3A%28110475+OR+9428324+OR+9428325+OR+9428326%29+AND+%28overrul%2A+OR+abrogat%2A+OR+supersed%2A+OR+%22recede+from%22+OR+%22no+longer+good+law%22+OR+vacat%2A+OR+reversed%29+&stat_Published=on&type=o",
+        "audit_needed": true,
+        "proposed_negative_events": 6,
+        "audit_marker": "R15 treatment audit required",
+        "triage_mode": "snippet-first",
+        "snippet_field": "results[].opinions[].snippet",
+        "triage_journaled": 200,
+        "triage_read": 6,
+        "triage_snippet_classified": 194
+      },
+      "lane2_top_cited": {
+        "query": "cites:(110475 OR 9428324 OR 9428325 OR 9428326)",
+        "reviewed": 25,
+        "cap": 25,
+        "cap_hit": true,
+        "final_cursor": "https://www.courtlistener.com/api/rest/v4/search/?cursor=cz01ODQmcz0xMTExMTImdD1vJmQ9MjAyNi0wNy0wNCZwPTM%3D&order_by=citeCount+desc&page_size=25&q=cites%3A%28110475+OR+9428324+OR+9428325+OR+9428326%29&type=o",
+        "audit_needed": true,
+        "proposed_negative_events": 25,
+        "audit_marker": "R15 treatment audit required"
+      },
+      "lane3_recency": {
+        "query": "cites:(110475 OR 9428324 OR 9428325 OR 9428326)",
+        "reviewed": 111,
+        "cap": 200,
+        "cap_hit": false,
+        "final_cursor": null,
+        "audit_needed": false,
+        "proposed_negative_events": 2,
+        "audit_marker": null,
+        "triage_mode": "snippet-first",
+        "snippet_field": "results[].opinions[].snippet",
+        "triage_journaled": 111,
+        "triage_read": 2,
+        "triage_snippet_classified": 109
+      }
+    }
+  },
+  "progeny": {
+    "complete_query": "cites:(110475 OR 9428324 OR 9428325 OR 9428326)",
+    "indexed_citing_opinions": 4273,
+    "count_source": "search",
+    "per_sibling": [
+      {
+        "opinion_id": 110475,
+        "count": 3858,
+        "count_source": "search"
+      },
+      {
+        "opinion_id": 9428324,
+        "count": 496,
+        "count_source": "search"
+      },
+      {
+        "opinion_id": 9428325,
+        "count": 0,
+        "count_source": "search"
+      },
+      {
+        "opinion_id": 9428326,
+        "count": 0,
+        "count_source": "search"
+      }
+    ],
+    "citation_count": 6936,
+    "cache_path": "/Users/johngalt/cssi-lake/cache/progeny/edwards-v-arizona.jsonl",
+    "enumeration": "bounded",
+    "cursor": "https://www.courtlistener.com/api/rest/v4/search/?cursor=cz0xLjk1Njk4MTUmcz0xMDY5MDQ2NyZ0PW8mZD0yMDI2LTA3LTA0JnA9Mg%3D%3D&order_by=score+desc&page_size=100&q=cites%3A%28110475+OR+9428324+OR+9428325+OR+9428326%29&type=o",
+    "rows_cached": 20,
+    "outbound_opinion_edges": [
+      {
+        "source_opinion_id": 110475,
+        "cited_id": 103050,
+        "source": "search.opinions[].cites[]"
+      },
+      {
+        "source_opinion_id": 110475,
+        "cited_id": 106822,
+        "source": "search.opinions[].cites[]"
+      },
+      {
+        "source_opinion_id": 110475,
+        "cited_id": 107252,
+        "source": "search.opinions[].cites[]"
+      },
+      {
+        "source_opinion_id": 110475,
+        "cited_id": 108554,
+        "source": "search.opinions[].cites[]"
+      },
+      {
+        "source_opinion_id": 110475,
+        "cited_id": 108800,
+        "source": "search.opinions[].cites[]"
+      },
+      {
+        "source_opinion_id": 110475,
+        "cited_id": 109063,
+        "source": "search.opinions[].cites[]"
+      },
+      {
+        "source_opinion_id": 110475,
+        "cited_id": 109309,
+        "source": "search.opinions[].cites[]"
+      },
+      {
+        "source_opinion_id": 110475,
+        "cited_id": 109336,
+        "source": "search.opinions[].cites[]"
+      },
+      {
+        "source_opinion_id": 110475,
+        "cited_id": 109624,
+        "source": "search.opinions[].cites[]"
+      },
+      {
+        "source_opinion_id": 110475,
+        "cited_id": 109757,
+        "source": "search.opinions[].cites[]"
+      },
+      {
+        "source_opinion_id": 110475,
+        "cited_id": 110065,
+        "source": "search.opinions[].cites[]"
+      },
+      {
+        "source_opinion_id": 110475,
+        "cited_id": 110117,
+        "source": "search.opinions[].cites[]"
+      },
+      {
+        "source_opinion_id": 110475,
+        "cited_id": 110254,
+        "source": "search.opinions[].cites[]"
+      },
+      {
+        "source_opinion_id": 110475,
+        "cited_id": 284316,
+        "source": "search.opinions[].cites[]"
+      },
+      {
+        "source_opinion_id": 110475,
+        "cited_id": 343144,
+        "source": "search.opinions[].cites[]"
+      },
+      {
+        "source_opinion_id": 110475,
+        "cited_id": 343316,
+        "source": "search.opinions[].cites[]"
+      },
+      {
+        "source_opinion_id": 110475,
+        "cited_id": 352531,
+        "source": "search.opinions[].cites[]"
+      },
+      {
+        "source_opinion_id": 110475,
+        "cited_id": 360916,
+        "source": "search.opinions[].cites[]"
+      },
+      {
+        "source_opinion_id": 110475,
+        "cited_id": 365779,
+        "source": "search.opinions[].cites[]"
+      },
+      {
+        "source_opinion_id": 110475,
+        "cited_id": 368063,
+        "source": "search.opinions[].cites[]"
+      },
+      {
+        "source_opinion_id": 110475,
+        "cited_id": 376877,
+        "source": "search.opinions[].cites[]"
+      },
+      {
+        "source_opinion_id": 110475,
+        "cited_id": 377005,
+        "source": "search.opinions[].cites[]"
+      },
+      {
+        "source_opinion_id": 110475,
+        "cited_id": 1166290,
+        "source": "search.opinions[].cites[]"
+      },
+      {
+        "source_opinion_id": 110475,
+        "cited_id": 1186156,
+        "source": "search.opinions[].cites[]"
+      },
+      {
+        "source_opinion_id": 110475,
+        "cited_id": 1372441,
+        "source": "search.opinions[].cites[]"
+      },
+      {
+        "source_opinion_id": 110475,
+        "cited_id": 1435218,
+        "source": "search.opinions[].cites[]"
+      },
+      {
+        "source_opinion_id": 110475,
+        "cited_id": 2118946,
+        "source": "search.opinions[].cites[]"
+      },
+      {
+        "source_opinion_id": 110475,
+        "cited_id": 2510431,
+        "source": "search.opinions[].cites[]"
+      }
+    ]
+  },
+  "off_cl_links": [],
+  "provenance": {
+    "cl_source": "LRU",
+    "cl_api": "https://www.courtlistener.com/api/rest/v4",
+    "built_by": "S2-BUILDER-AUTHORING",
+    "build_run": "s2-build-96d841cbb12e",
+    "date_created": "2026-07-05T03:04:34Z",
+    "date_modified": "2026-07-06T10:25:11Z",
+    "warnings": [
+      "legacy treatment migrated: good -> good_law"
+    ],
+    "field_provenance": {
+      "identity": {
+        "src": "CourtListener search + clusters + lead opinion text",
+        "at": "2026-07-05T03:04:54Z",
+        "verifier": "S2-BUILDER-AUTHORING"
+      },
+      "treatment.field_i_validity": {
+        "src": "_treatment-migration.json + page frontmatter",
+        "at": "2026-07-05T03:04:54Z",
+        "verifier": "S2-BUILDER-AUTHORING"
+      },
+      "point_overrides": {
+        "src": "S2 treatment derivation proposed only",
+        "at": "2026-07-05T03:11:05Z",
+        "verifier": "S2-BUILDER-AUTHORING"
+      },
+      "pinpoints": {
+        "src": "content page quote harvest + lead opinion text",
+        "at": "2026-07-05T03:04:54Z",
+        "verifier": "S2-BUILDER-AUTHORING"
+      }
+    }
+  }
+}
+
+```
+
+### cached opinion text — Edwards v. Arizona
+
+```
+<opinion type="majority">
+<author id="b544-11">Justice White</author>
+<p id="AIEz">delivered the opinion of the Court.</p>
+<p id="b544-12">We granted certiorari in this case, <span class="citation multiple-matches"><a href="/c/U.%20S./446/950/">446 U. S. 950</a></span> (1980), limited to Question 1 presented in the petition, which in relevant part was “whether the Fifth, Sixth, and Fourteenth Amendments require suppression of a post-arrest confession, which was obtained after Edwards had invoked his right to consult counsel before further interrogation . . .</p>
+<p id="b544-13">I</p>
+<p id="b544-14">On January 19, 1976, a sworn complaint was filed against Edwards in Arizona state court charging him with robbery, burglary, and first-degree murder.<footnotemark>1</footnotemark> An arrest warrant was issued pursuant to the complaint, and Edwards was arrested at his home later that same day. At the police station, he was informed of his rights as required by <em>Miranda </em>v. <em>Arizona, </em><span class="citation" data-id="9423233"><a href="/opinion/107252/miranda-v-arizona/" aria-description="Citation for case: Miranda v. Arizona">384 U. S. 436</a></span> (1966). Petitioner stated that he understood his rights, and was willing to submit to questioning. After <page-number citation-index="1" label="479">*479</page-number>being told that another suspect already in custody had implicated him in the crime, Edwards denied involvement and gave a taped statement presenting an alibi defense. He then sought to “make a deal.” The interrogating officer told him that he wanted a statement, but that he did not have the authority to negotiate a deal. The officer provided Edwards with the telephone number of a county attorney. Petitioner made the call, but hung up after a few moments. Edwards then said: “I want an attorney before making a deal.” At that point, questioning ceased and Edwards was taken to county jail.</p>
+<p id="b545-5">At 9:15 the next morning, two detectives, colleagues of the officer who had interrogated Edwards the previous night, came to the jail and asked to see Edwards. When the detention officer informed Edwards that the detectives wished to speak with him, he replied that he did not want to talk to anyone. The guard told him that “he had” to talk and then took him to meet with the detectives. The officers identified themselves, stated they wanted to talk to him, and informed him of his <em><span class="citation" data-id="9423233"><a href="/opinion/107252/miranda-v-arizona/" aria-description="Citation for case: Miranda v. Arizona">Miranda</a></span> </em>rights. Edwards was willing to talk, but he first wanted to hear the taped statement of the alleged accomplice who had implicated him.<footnotemark>2</footnotemark> After listening to the tape for several minutes, petitioner said that he would make a statement so long as it was not tape-recorded. The detectives informed him that the recording was irrelevant since they could testify in court concerning whatever he said. Edwards replied: “I’ll tell you anything you want to know, but I don’t want it on tape.” He thereupon implicated himself in the crime.</p>
+<p id="b545-6">Prior to trial, Edwards moved to suppress his confession on the ground that his <em><span class="citation" data-id="9423233"><a href="/opinion/107252/miranda-v-arizona/" aria-description="Citation for case: Miranda v. Arizona">Miranda</a></span> </em>rights had been violated when the officers returned to question him after he had invoked his right to counsel. The trial court initially granted <page-number citation-index="1" label="480">*480</page-number>the motion to suppress,<footnotemark>3</footnotemark> but reversed its ruling when presented with a supposedly controlling decision of a higher Arizona court.<footnotemark>4</footnotemark> The court stated without explanation that it found Edwards’ statement to be voluntary. Edwards was tried twice and convicted.<footnotemark>5</footnotemark> Evidence concerning his confession was admitted at both trials.</p>
+<p id="b546-5">On appeal, the Arizona Supreme Court held that Edwards had invoked both his right to remain silent and his right to counsel during the interrogation conducted on the night of January 19.<footnotemark>6</footnotemark> <span class="citation" data-id="9629381"><a href="/opinion/1435218/state-v-edwards/" aria-description="Citation for case: State v. Edwards">122 Ariz. 206</a></span>, <span class="citation" data-id="9629381"><a href="/opinion/1435218/state-v-edwards/" aria-description="Citation for case: State v. Edwards">594 P. 2d 72</a></span>. The court then went on to determine, however, that Edwards had waived both rights during the January 20 meeting when he voluntarily gave his statement to the detectives after again being informed that he need not answer questions and that he need not answer without the advice of counsel: “The trial court’s finding that the waiver and confession were voluntarily and knowingly made is upheld.” <span class="citation" data-id="9629381"><a href="/opinion/1435218/state-v-edwards/#212" aria-description="Citation for case: State v. Edwards"><em>Id., </em>at 212</a></span>, <span class="citation" data-id="9629381"><a href="/opinion/1435218/state-v-edwards/#78" aria-description="Citation for case: State v. Edwards">594 P. 2d, at 78</a></span>.</p>
+<p id="b546-6">Because the use of Edward’s confession against him at his trial violated his rights under the Fifth and Fourteenth Amendments as construed in <em>Miranda </em>v. <em><span class="citation" data-id="9423233"><a href="/opinion/107252/miranda-v-arizona/" aria-description="Citation for case: Miranda v. Arizona">Arizona, supra,</a></span> </em>we reverse the judgment of the Arizona Supreme Court.<footnotemark>7</footnotemark></p>
+<p id="ATtZ"><page-number citation-index="1" label="481">*481</page-number>II</p>
+<p id="Aue">In <em>Miranda </em>v. <em><span class="citation" data-id="9423233"><a href="/opinion/107252/miranda-v-arizona/" aria-description="Citation for case: Miranda v. Arizona">Arizona</a></span>, </em>the Court determined that the Fifth and Fourteenth Amendments’ prohibition against compelled self-incrimination required that custodial interrogation be <page-number citation-index="1" label="482">*482</page-number>preceded by advice to the putative defendant that he has the right to remain silent and also the right to the presence of an attorney. <span class="citation" data-id="9423233"><a href="/opinion/107252/miranda-v-arizona/#479" aria-description="Citation for case: Miranda v. Arizona">384 U. S., at 479</a></span>. The Court also indicated the procedures to be followed subsequent to the warnings. If the accused indicates that he wishes to remain silent, “the interrogation must cease.” If he requests counsel, “the interrogation must cease until an attorney is present.” <span class="citation" data-id="9423233"><a href="/opinion/107252/miranda-v-arizona/#474" aria-description="Citation for case: Miranda v. Arizona"><em>Id., </em>at 474</a></span>.</p>
+<p id="b548-5"><em><span class="citation" data-id="9423233"><a href="/opinion/107252/miranda-v-arizona/" aria-description="Citation for case: Miranda v. Arizona">Miranda</a></span> </em>thus declared that an accused has a Fifth and Fourteenth Amendment right to have counsel present during custodial interrogation. Here, the critical facts as found by the Arizona Supreme Court are that Edwards asserted his right to counsel and his right to remain silent on January 19, but that the police, without furnishing him counsel, returned the next morning to confront him and as a result of the meeting secured incriminating oral admissions. Contrary to the holdings of the state courts, Edwards insists that having exercised his right on the 19th to have counsel present during interrogation, he did not validly waive that right on the 20th. For the following reasons, we agree.</p>
+<p id="b548-6">First, the Arizona Supreme Court .applied an erroneous standard for determining waiver where the accused has specifically invoked his right to counsel. It is reasonably clear under our cases that waivers of counsel must not only be voluntary, but must also constitute a knowing and intelligent relinquishment or abandonment of a known right or privilege, a matter which depends in each case “upon the particular facts and circumstances surrounding that case, including the background, experience, and conduct of the accused.” <em>Johnson </em>v. <em>Zerbst, </em><span class="citation" data-id="103050"><a href="/opinion/103050/johnson-v-zerbst/#464" aria-description="Citation for case: Johnson v. Zerbst">304 U. S. 458, 464</a></span> (1938). See <em>Faretta </em>v. <em>California, </em><span class="citation" data-id="9426191"><a href="/opinion/109309/faretta-v-california/#835" aria-description="Citation for case: Faretta v. California">422 U. S. 806, 835</a></span> (1975); <em>North Carolina </em>v. <em>Butler, </em><span class="citation" data-id="9427547"><a href="/opinion/110065/north-carolina-v-butler/#374" aria-description="Citation for case: North Carolina v. Butler">441 U. S. 369, 374-375</a></span> (1979); <em>Brewer </em>v. <em>Williams, </em><span class="citation" data-id="9426723"><a href="/opinion/109624/brewer-v-williams/#404" aria-description="Citation for case: Brewer v. Williams">430 U. S. <page-number citation-index="1" label="483">*483</page-number>387, 404</a></span> (1977); <em>Fare </em>v. <em>Michael C., </em><span class="citation" data-id="9427635"><a href="/opinion/110117/fare-v-michael-c/#724" aria-description="Citation for case: Fare v. Michael C.">442 U. S. 707, 724-725</a></span> (1979).</p>
+<p id="b549-5">Considering the proceedings in the state courts in the light of this standard, we note that in denying petitioner’s motion to suppress, the trial court found the admission to have been “voluntary,” App. 3, 95, without separately focusing on whether Edwards had knowingly and intelligently relinquished his right to counsel. The Arizona Supreme Court, in a section of its opinion entitled “Voluntariness of Waiver,” stated that in Arizona, confessions are prima facie involuntary and that the State had the burden of showing by a preponderance of the evidence that the confession was freely and voluntarily made. The court stated that the issue of voluntariness should be determined based on the totality of the circumstances as it related to whether an accused’s action was “knowing and intelligent and whether his will [was] overborne.” <span class="citation" data-id="9629381"><a href="/opinion/1435218/state-v-edwards/#212" aria-description="Citation for case: State v. Edwards">122 Ariz., at 212</a></span>, <span class="citation" data-id="9629381"><a href="/opinion/1435218/state-v-edwards/#78" aria-description="Citation for case: State v. Edwards">594 P. 2d, at 78</a></span>. Once the trial court determines that “the confession is voluntary, the finding will not be upset on appeal absent clear and manifest error.” <em><span class="citation" data-id="9629381"><a href="/opinion/1435218/state-v-edwards/" aria-description="Citation for case: State v. Edwards">Ibid.</a></span> </em>The court then upheld the trial court’s finding that the “waiver and confession were voluntarily and knowingly made.” <em><span class="citation" data-id="9629381"><a href="/opinion/1435218/state-v-edwards/" aria-description="Citation for case: State v. Edwards">Ibid.</a></span></em></p>
+<p id="b549-6">In referring to the necessity to find Edwards’ confession knowing and intelligent, the State Supreme Court cited <em>Schneckloth </em>v. Bustamante, <span class="citation" data-id="9425314"><a href="/opinion/108800/schneckloth-v-bustamonte/#226" aria-description="Citation for case: Schneckloth v. Bustamonte">412 U. S. 218, 226</a></span> (1973). Yet, it is clear that <em><span class="citation" data-id="9425314"><a href="/opinion/108800/schneckloth-v-bustamonte/" aria-description="Citation for case: Schneckloth v. Bustamonte">Schneckloth</a></span> </em>does not control the issue presented in this case. The issue in <em><span class="citation" data-id="9425314"><a href="/opinion/108800/schneckloth-v-bustamonte/" aria-description="Citation for case: Schneckloth v. Bustamonte">Schneckloth</a></span> </em>was under what conditions an individual could be found to have consented to a search and thereby waived his Fourth Amendment rights. The Court declined to impose the “intentional relinquishment or abandonment of a known right or privilege” standard and required only that the consent be voluntary under the totality of the circumstances. The Court specifically noted that the right to counsel was a prime example of those rights requiring the special protection of the knowing and intelligent waiver standard, <span class="citation" data-id="9425314"><a href="/opinion/108800/schneckloth-v-bustamonte/#241" aria-description="Citation for case: Schneckloth v. Bustamonte"><em>id., </em>at 241</a></span>, but held that “[t]he considera<page-number citation-index="1" label="484">*484</page-number>tions that informed the Court’s holding in <em><span class="citation" data-id="9423233"><a href="/opinion/107252/miranda-v-arizona/" aria-description="Citation for case: Miranda v. Arizona">Miranda</a></span> </em>are simply inapplicable in the present case.” <em>Id., </em>at 246. <em>Schneck-loth </em>itself thus emphasized that the voluntariness of a consent or an admission on the one hand, and a knowing and intelligent waiver on the other, are discrete inquiries. Here, however sound the conclusion of the state courts as to the voluntariness of Edwards’ admission may be, neither the trial court nor the Arizona Supreme Court undertook to focus on whether Edwards understood his right to counsel and intelligently and knowingly relinquished it. It is thus apparent that the decision below misunderstood the requirement for finding a valid waiver of the right to counsel, once invoked.</p>
+<p id="b550-5">Second, although we have held that after initially being advised of his <em><span class="citation" data-id="9423233"><a href="/opinion/107252/miranda-v-arizona/" aria-description="Citation for case: Miranda v. Arizona">Miranda</a></span> </em>rights, the accused may himself validly waive his rights and respond to interrogation, see <em>North Carolina </em>v. <span class="citation" data-id="9427547"><a href="/opinion/110065/north-carolina-v-butler/#372" aria-description="Citation for case: North Carolina v. Butler"><em>Butler, supra, </em>at 372-376</a></span>, the Court has strongly indicated that additional safeguards are necessary when the accused asks for counsel; and we now hold that when an accused has invoked his right to have counsel present during custodial interrogation, a valid waiver of that right cannot be established by showing only that he responded to further police-initiated custodial interrogation even if he has been advised of his rights.<footnotemark>8</footnotemark> We further hold that an accused, such as Edwards, having expressed his desire to deal with the police only through counsel, is not subject to further interrogation by the authorities until counsel has been made avail<page-number citation-index="1" label="485">*485</page-number>able to him, unless the accused himself initiates further communication, exchanges, or conversations with the police.</p>
+<p id="b551-5"><em><span class="citation" data-id="9423233"><a href="/opinion/107252/miranda-v-arizona/" aria-description="Citation for case: Miranda v. Arizona">Miranda</a></span> </em>itself indicate'd that the assertion of the right to counsel was a significant event and that once exercised by the accused, “the interrogation must cease until an attorney is present.” <span class="citation" data-id="9423233"><a href="/opinion/107252/miranda-v-arizona/#474" aria-description="Citation for case: Miranda v. Arizona">384 U. S., at 474</a></span>. Our later cases have not abandoned that view. In <em>Michigan </em>v. <em>Mosley, </em><span class="citation" data-id="9426230"><a href="/opinion/109336/michigan-v-mosley/" aria-description="Citation for case: Michigan v. Mosley">423 U. S. 96</a></span> (1975), the Court noted that <em><span class="citation" data-id="9423233"><a href="/opinion/107252/miranda-v-arizona/" aria-description="Citation for case: Miranda v. Arizona">Miranda</a></span> </em>had distinguished between the procedural safeguards triggered by a request to remain silent and a request for an attorney and had required that interrogation cease until an attorney was present only if the individual stated that he wanted counsel. <span class="citation" data-id="9426230"><a href="/opinion/109336/michigan-v-mosley/#104" aria-description="Citation for case: Michigan v. Mosley">423 U. S., at 104, n. 10</a></span>; see also <span class="citation" data-id="9426230"><a href="/opinion/109336/michigan-v-mosley/#109" aria-description="Citation for case: Michigan v. Mosley"><em>id., </em>at 109-111</a></span> (White, J., concurring). In <em>Fare </em>v. <em>Michael C., supra, </em>at 719, the Court referred to <em>Miranda’s </em>“rigid rule that an accused’s request for an attorney is <em>per se </em>an invocation of his Fifth Amendment rights, requiring that all interrogation cease.” And just last Term, in a case where a suspect in custody had invoked his <em><span class="citation" data-id="9423233"><a href="/opinion/107252/miranda-v-arizona/" aria-description="Citation for case: Miranda v. Arizona">Miranda</a></span> </em>right to counsel, the Court again referred to the “undisputed right” under <em><span class="citation" data-id="9423233"><a href="/opinion/107252/miranda-v-arizona/" aria-description="Citation for case: Miranda v. Arizona">Miranda</a></span> </em>to remain silent and to be free of interrogation “until he had consulted with a lawyer.” <em>Rhode Island </em>v. <em>Innis, </em><span class="citation" data-id="9427901"><a href="/opinion/110254/rhode-island-v-innis/#298" aria-description="Citation for case: Rhode Island v. Innis">446 U. S. 291, 298</a></span> (1980). We reconfirm these views and, to lend them substance, emphasize that it is inconsistent with <em><span class="citation" data-id="9423233"><a href="/opinion/107252/miranda-v-arizona/" aria-description="Citation for case: Miranda v. Arizona">Miranda</a></span> </em>and its progeny for the authorities, at their instance, to reinterrogate an accused in custody if he has clearly asserted his right to counsel.</p>
+<p id="b551-6">In concluding that the fruits of the interrogation initiated by the police on January 20 could not be used against Edwards, we do not hold or imply that Edwards was powerless to countermand his election or that the authorities could in no event use any incriminating statements made by Edwards prior to his having access to counsel. Had Edwards initiated the meeting on January 20, nothing in the Fifth and Fourteenth Amendments would prohibit the police from merely listening to his voluntary, volunteered statements and using them against him at the trial. The Fifth Amendment right <page-number citation-index="1" label="486">*486</page-number>identified in <em><span class="citation" data-id="9423233"><a href="/opinion/107252/miranda-v-arizona/" aria-description="Citation for case: Miranda v. Arizona">Miranda</a></span> </em>is the right to have counsel present at any custodial interrogation. Absent such interrogation, there would have been no infringement of the right that Edwards invoked and there would be no occasion to determine whether there had been a valid waiver. <em>Rhode Island </em>v. <em><span class="citation" data-id="9427901"><a href="/opinion/110254/rhode-island-v-innis/" aria-description="Citation for case: Rhode Island v. Innis">Innis, supra,</a></span> </em>makes this sufficiently clear. <span class="citation" data-id="9427901"><a href="/opinion/110254/rhode-island-v-innis/#298" aria-description="Citation for case: Rhode Island v. Innis">446 U. S., at 298, n. 2</a></span>.<footnotemark>9</footnotemark></p>
+<p id="b552-5">But this is not what the facts of this case show. Here, the officers conducting the interrogation on the evening of Jan<page-number citation-index="1" label="487">*487</page-number>uary 19 ceased interrogation when Edwards requested counsel as he had been advised he had the right to do. The Arizona Supreme Court was of the opinion that this was a sufficient invocation of his <em><span class="citation" data-id="9423233"><a href="/opinion/107252/miranda-v-arizona/" aria-description="Citation for case: Miranda v. Arizona">Miranda</a></span> </em>rights, and we are in accord. It is also clear that without making counsel available to Edwards, the police returned to him the next day. This was not at his suggestion or request. Indeed, Edwards informed the detention officer that he did not want to talk to anyone. At the meeting, the detectives told Edwards that they wanted to talk to him and again advised him of his <em><span class="citation" data-id="9423233"><a href="/opinion/107252/miranda-v-arizona/" aria-description="Citation for case: Miranda v. Arizona">Miranda</a></span> </em>rights. Edwards stated that he would talk, but what prompted this action does not appear. He listened at his own request to part of the taped statement made by one of his alleged accomplices and then made an incriminating statement, which was used against him at his trial. We think it is clear that Edwards was subjected to custodial interrogation on January 20 within the meaning of <em>Rhode Island </em>v. <em><span class="citation" data-id="9427901"><a href="/opinion/110254/rhode-island-v-innis/" aria-description="Citation for case: Rhode Island v. Innis">Innis, supra,</a></span> </em>and that this occurred at the instance of the authorities. His statement, made without having had access to counsel, did not amount to a valid waiver and hence was inadmissible.<footnotemark>10</footnotemark></p>
+<p id="b553-6">Accordingly, the holding of the Arizona Supreme Court that Edwards had waived his right to counsel was infirm, and the judgment of that court is reversed.</p>
+<p id="APQj">
+<em>go Qr^ereg</em>
+</p>
+<footnote label="1">
+<p id="b544-15"> The facts stated in text are for the most part taken from the opinion of the Supreme Court of Arizona.</p>
+</footnote>
+<footnote label="2">
+<p id="b545-7"> It appears from the record that the detectives had brought the tape-recording with them.</p>
+</footnote>
+<footnote label="3">
+<p id="b546-7"> The trial judge emphasized that the detectives had met with Edwards on January 20, without being requested by Edwards to do so, and concluded that they had ignored his request for counsel made the previous evening. App. 91-93.</p>
+</footnote>
+<footnote label="4">
+<p id="b546-8"><em> </em>The case was <em>State </em>v. <em>Travis, </em><span class="citation" data-id="1186156"><a href="/opinion/1186156/state-v-travis/" aria-description="Citation for case: State v. Travis">26 Ariz. App. 24</a></span>, <span class="citation" data-id="1186156"><a href="/opinion/1186156/state-v-travis/" aria-description="Citation for case: State v. Travis">545 P. 2d 986</a></span> (1976).</p>
+</footnote>
+<footnote label="5">
+<p id="b546-9"> The jury in the first trial was unable to reach a verdict.</p>
+</footnote>
+<footnote label="6">
+<p id="b546-10"> This issue was disputed by the State. The court, while finding that the question was arguable, held that Edwards’ request for an attorney to assist him in negotiating a deal was “sufficiently clear” within the context of the interrogation that it “must be interpreted as a request for counsel and as a request to remain silent until counsel was present.” <span class="citation" data-id="9629381"><a href="/opinion/1435218/state-v-edwards/#211" aria-description="Citation for case: State v. Edwards">122 Ariz., at 211</a></span>, <span class="citation" data-id="9629381"><a href="/opinion/1435218/state-v-edwards/#77" aria-description="Citation for case: State v. Edwards">594 P. 2d, at 77</a></span>.</p>
+</footnote>
+<footnote label="7">
+<p id="pACuR"> We thus need not decide Edwards’ claim that the State deprived him of his right to counsel under the Sixth and Fourteenth Amendments as construed and applied in <em>Massiah </em>v. <em>United States, </em><span class="citation" data-id="9422796"><a href="/opinion/106822/massiah-v-united-states/" aria-description="Citation for case: Massiah v. United States">377 U. S. 201</a></span> (1964). In that ease, the Court held that the Sixth Amendment right to counsel arises whenever an accused has been indicted or adversary criminal proceedings <page-number citation-index="1" label="481">*481</page-number>have otherwise begun and that this right is violated when admissions are subsequently elicited from the accused in the absence of counsel. While initially conceding in its opening brief on the merits that Edwards’ right to counsel under <em><span class="citation" data-id="9422796"><a href="/opinion/106822/massiah-v-united-states/" aria-description="Citation for case: Massiah v. United States">Massiah</a></span> </em>attached immediately after he was formally charged, the State in its supplemental brief and during oral argument took the position that under <em>Kirby </em>v. <em>Illinois, </em><span class="citation" data-id="9424906"><a href="/opinion/108554/kirby-v-illinois/#689" aria-description="Citation for case: Kirby v. Illinois">406 U. S. 682, 689-690</a></span> (1972), and <em>Moore </em>v. <em>Illinois, </em><span class="citation" data-id="9427017"><a href="/opinion/109757/moore-v-illinois/#226" aria-description="Citation for case: Moore v. Illinois">434 U. S. 220, 226-227</a></span> (1977), the filing of the formal complaint did not constitute the “adversary judicial criminal proceedings” necessary to trigger the Sixth Amendment right to counsel. Under the State Constitution, “[n]o person shall be prosecuted criminally in any court of record for felony or misdemeanor, otherwise than by information or indictment; no person shall be prosecuted for felony by information without having had a preliminary examination before a magistrate or having waived such preliminary examination.” Ariz. Const., Art. 2, § 30. The State contends that the Sixth Amendment right to counsel does not attach until either the constitutionally required indictment or information is filed or at least no earlier than the preliminary hearing to which a defendant is entitled if the matter proceeds by complaint. Under Arizona law, a felony prosecution may be commenced by way of a complaint, Ariz. Rule of Criminal Procedure <em>22. </em>The complaint is a “written statement of the essential facts constituting a public offense, made upon oath before a magistrate,” Rule 2.3, upon which the magistrate either issues an arrest warrant or dismisses the complaint. Rule 2.4. Once arrested, the accused must be taken before the magistrate for a hearing. Rule 4.1. At that hearing, the magistrate ascertains the accused’s true name and address, and informs him of the charges against him, his right to counsel, his right to remain silent, and his right to a preliminary hearing if charged via complaint. Rule 4.2. Unless waived, the preliminary hearing must take place no later than 10 days after the defendant is placed in custody. Rule 5.1. The purpose of the hearing is to determine whether probable cause exists to hold the defendant for trial. Rule 5.3. Against this background and in support of its position, the State relies on <em>Moore </em>v. <em>Illinois, supra, </em>where after recognizing that under Illinois law “[t]he prosecution in this case was commenced . . . when the victim’s complaint was filed in court,” we noted that “adversary judicial criminal proceedings” were initiated when the ensuing preliminary hearing occurred. <span class="citation" data-id="9427017"><a href="/opinion/109757/moore-v-illinois/#228" aria-description="Citation for case: Moore v. Illinois"><em>Moore, supra, </em>at 228</a></span>. Cf. <em>United States </em>v. <em>Duvall, </em><span class="citation" data-id="336320"><a href="/opinion/336320/united-states-of-america-appellee-v-thomas-duvall-and-henry-jones/#20" aria-description="Citation for case: UNITED STATES of America, Appellee, v. Thomas DUVALL and...">537 F. 2d 15, 20-22</a></span> (CA2) (the filing of <page-number citation-index="1" label="482">*482</page-number>a complaint and the issuance of an arrest warrant does not trigger the right to counsel under the Sixth Amendment, that right accruing only upon further proceedings), cert, denied, <span class="citation multiple-matches"><a href="/c/U.%20S./426/950/">426 U. S. 950</a></span> (1976). The Arizona Supreme Court did not address the Sixth Amendment question, nor do we.</p>
+</footnote>
+<footnote label="8">
+<p id="b550-6"> In <em>Brewer </em>v. <em>Williams, </em><span class="citation" data-id="9426723"><a href="/opinion/109624/brewer-v-williams/" aria-description="Citation for case: Brewer v. Williams">430 U. S. 387</a></span> (1977), where, as in <em>Massiah </em>v. <em>United States, </em><span class="citation" data-id="9422796"><a href="/opinion/106822/massiah-v-united-states/" aria-description="Citation for case: Massiah v. United States">377 U. S. 201</a></span> (1964), the Sixth Amendment right to- counsel had accrued, the Court held that a valid waiver of counsel rights should not be inferred from the mere response by the accused to overt or more subtle forms of interrogation' or other efforts to elicit incriminating information. In <em><span class="citation" data-id="9422796"><a href="/opinion/106822/massiah-v-united-states/" aria-description="Citation for case: Massiah v. United States">Massiah</a></span> </em>and <em><span class="citation" data-id="9426723"><a href="/opinion/109624/brewer-v-williams/" aria-description="Citation for case: Brewer v. Williams">Brewer</a></span>, </em>counsel had been engaged or appointed and the admissions in question were elicited in his absence. But in <em>McLeod </em>v. <em>Ohio, </em><span class="citation" data-id="107070"><a href="/opinion/107070/mcleod-v-ohio/" aria-description="Citation for case: McLEOD v. OHIO">381 U. S. 356</a></span> (1965), we summarily reversed a decision that the police could elicit information after indictment even though counsel had not yet been appointed.</p>
+</footnote>
+<footnote label="9">
+<p id="b552-6"> If, as frequently would occur in the course of a meeting initiated by the accused, the conversation is not wholly one-sided, it is likely that the officers will say or do something that clearly would be “interrogation.” In that event, the question would be whether a valid waiver of the right to counsel and the right to silence had occurred, that is, whether the purported waiver was knowing and intelligent and found to be so under the totality of the circumstances, including the necessary fact that the accused, not the police, reopened the dialogue with the authorities.</p>
+<p id="b552-7">Various decisions of the Courts of Appeals are to the effect that a valid waiver of an accused’s previously invoked Fifth Amendment right to counsel is possible. See, e. <em>g., White </em>v. <em>Finkbeiner, </em><span class="citation" data-id="9466321"><a href="/opinion/372605/eutues-white-v-fred-finkbeiner/#191" aria-description="Citation for case: Eutues White v. Fred Finkbeiner">611 F. 2d 186, 191</a></span> (CA7 1979) (“in certain instances, for various reasons, a person in custody who has previously requested counsel may knowingly and voluntarily decide that he no longer wishes to be represented by counsel”), cert, pending, No. 79-6601; <em>Kennedy </em>v. <em>Fairman, </em><span class="citation" data-id="376877"><a href="/opinion/376877/james-albert-kennedy-v-jay-fairman-warden-pontiac-correctional-center/" aria-description="Citation for case: James Albert Kennedy v. Jay Fairman, Warden, Pontiac...">618 F. 2d 1242</a></span> (CA7 1980); <em>United States </em>v. <em>Rodriguez-Gastelum, </em><span class="citation" data-id="9464487"><a href="/opinion/352531/united-states-v-guadalupe-rodriguez-gastelum/#486" aria-description="Citation for case: United States v. Guadalupe Rodriguez-Gastelum">569 F. 2d 482, 486</a></span> (CA9) (en banc) (stating that it makes no sense to hold that once an accused has requested counsel, “ [he] may never, until he has actually talked with counsel, change his mind and decide to speak with the police without an attorney being present”), cert, denied, <span class="citation multiple-matches"><a href="/c/U.%20S./436/919/">436 U. S. 919</a></span> (1978). See generally <em>Cobbs </em>v. <span class="citation" data-id="332367"><a href="/opinion/332367/james-l-cobbs-v-carl-robinson-warden-connecticut-state-prison/#1342" aria-description="Citation for case: James L. Cobbs v. Carl Robinson, Warden, Connecticut..."><em>Robinson, 528 </em>F. 2d 1331, 1342</a></span> (CA2 1975); <em>United States </em>v. <em>Grant, </em><span class="citation" data-id="9463510"><a href="/opinion/343144/united-states-v-elijah-ivory-joe-grant-united-states-of-america-v/" aria-description="Citation for case: United States v. Elijah Ivory Joe Grant, United States of...">549 F. 2d 942</a></span> (CA4 1977), vacated on other grounds <em>sub nom. Whitehead </em>v. <em>United States, </em><span class="citation multiple-matches"><a href="/c/U.%20S./435/912/">435 U. S. 912</a></span> (1978); <em>United States </em>v. <em>Hart, </em><span class="citation" data-id="377005"><a href="/opinion/377005/united-states-v-keith-lamont-hart/" aria-description="Citation for case: United States v. Keith Lamont Hart">619 F. 2d 325</a></span> (CA4 1980); <em>United States </em>v. <em>Hauck, </em><span class="citation" data-id="360916"><a href="/opinion/360916/united-states-v-gary-gust-hauck/" aria-description="Citation for case: United States v. Gary Gust Hauck">586 F. 2d 1296</a></span> (CA8 1978). The rule in the Fifth Circuit is that a knowing and intelligent waiver cannot be found once the Fifth Amendment right to counsel has been clearly invoked unless the accused initiates the renewed contact. See, <em>e. g., United States </em>v. <em>Massey, </em><span class="citation" data-id="343316"><a href="/opinion/343316/united-states-v-john-clayton-massey/" aria-description="Citation for case: United States v. John Clayton Massey">550 F. 2d 300</a></span> (1977); <em>United States </em>v. <em>Priest, </em><span class="citation" data-id="284316"><a href="/opinion/284316/united-states-v-cecil-knox-priest/" aria-description="Citation for case: United States v. Cecil Knox Priest">409 F. 2d 491</a></span> (1969). Waiver is possible, however, when the request for counsel is equivocal. <em>Nash </em>v. <em>Estelle, </em><span class="citation" data-id="9465736"><a href="/opinion/365779/ira-nash-jr-v-w-j-estelle-jr-director-texas-department-of/" aria-description="Citation for case: Ira Nash, Jr. v. W. J. Estelle, Jr., Director, Texas...">597 F. 2d 513</a></span> (CA5 1979) (en banc). See <em>Thompson </em>v. <em>Wainwright, </em><span class="citation" data-id="9465905"><a href="/opinion/368063/larry-thompson-v-louie-l-wainwright-secretary-department-of-offender/" aria-description="Citation for case: Larry Thompson v. Louie L. Wainwright, Secretary,...">601 F. 2d 768</a></span> (CA5 1979).</p>
+</footnote>
+<footnote label="10">
+<p id="b553-9"> We need not decide whether there would have been a valid waiver of counsel had the events of January 20 been the first and only interrogation to which Edwards had been subjected. Cf. <em>North Carolina </em>v. <em>Butler, </em><span class="citation" data-id="9427547"><a href="/opinion/110065/north-carolina-v-butler/" aria-description="Citation for case: North Carolina v. Butler">441 U. S. 369</a></span> (1979).</p>
+</footnote>
+</opinion>
+```
+
+---
+
+## GROUP: _overhaul2/lake/cases/Egbert v. Boule.json  (`lake-record`, 2 assertions)
+
+### content_page
+
+```
+---
+title: Egbert v. Boule
+type: case
+citation: "596 U.S. 482 (2022)"
+parallel_cite: 142 S. Ct. 1793
+neutral_cite: ""
+court: U.S. Supreme Court
+court_level: scotus
+circuit: ""
+year: 2022
+date_decided: 2022-06-08
+docket: ""
+authority_weight: "Binding — SCOTUS"
+treatment:
+  field_i_validity: unverified
+  as_of_content: null
+  as_of_treatment: null
+  composite_basis: unverified
+  composite_basis_ref: null
+  varies_by_point: false
+  scope_note: "Frontier stub: treatment/progeny intentionally not derived until S6 promotion."
+  point_overrides: []
+courtlistener:
+  opinion_url: "https://www.courtlistener.com/opinion/6475794/egbert-v-boule/"
+  cluster_id: 6475794
+  opinion_id: null
+  identity_checked: true
+lake:
+  record_id: Egbert v. Boule
+  status: under_review
+  projected_at: 2026-07-07
+homes:
+  - page: "[[Suing Federal Officers]]"
+    role: Recent development
+related:
+  - "[[Section 1983 Liability and Qualified Immunity]]"
+  - "[[Bivens v. Six Unknown Named Agents]]"
+  - "[[Ziglar v. Abbasi]]"
+  - "[[Hernandez v. Mesa]]"
+tags:
+  - case
+  - fourth-amendment
+  - bivens
+  - section-1983
+  - qualified-immunity
+  - damages-remedy
+  - supreme-court
+holding: "The two-step Bivens inquiry — whether a claim arises in a new context and, if so, whether special factors counsel hesitation — often reduces to the single question whether Congress is better positioned than the courts to create a damages remedy; applying that framework, the Court declined to extend Bivens to Boule's Fourth Amendment excessive-force claim against a Border Patrol agent or his First Amendment retaliation claim."
+aliases:
+  - Egbert v. Boule
+  - "Egbert v. Boule (2022)"
+---
+
+# Egbert v. Boule
+
+*596 U.S. 482 (2022)* (No. 21-147) · U.S. Supreme Court · **Binding — SCOTUS** · Treatment: **Unverified**
+<!-- header line; TreatmentBadge + weight render from frontmatter, degrading to the text above. Born under_review (⚪) — identity cluster 6475794 → majority opinion 6347905 (Thomas, J.; 596 U.S. 482, decided June 8, 2022). Rule quote string-matched to the CL slip-opinion syllabus 2026-07-07; slip-style pin (the CL text carries the U.S. slip-opinion pagination, not the 596 U.S. star pages) — S9 verifies the body pincite. -->
+
+## Background
+Robert Boule ran the Smuggler's Inn, a bed-and-breakfast abutting the Canada–U.S. border in Blaine, Washington. Border Patrol Agent Erik Egbert, suspecting a guest had just crossed the border, entered the inn's driveway; on Boule's account, Egbert refused a request to leave, threw Boule against a vehicle and then to the ground, checked the guest's papers, and left. After Boule complained, Egbert allegedly retaliated by reporting Boule's "SMUGLER" license plate and prompting an IRS audit. Boule sued Egbert directly under the Constitution, invoking *[[Bivens v. Six Unknown Named Agents|Bivens]]*, for Fourth Amendment excessive force and First Amendment retaliation. The Ninth Circuit recognized both damages actions.
+
+## Issue
+Whether *[[Bivens v. Six Unknown Named Agents|Bivens]]* supplies an implied damages remedy for a Fourth Amendment excessive-force claim against a Border Patrol agent and for a First Amendment retaliation claim.
+
+## Rule
+Recognizing a *[[Bivens v. Six Unknown Named Agents|Bivens]]* action is "a disfavored judicial activity," and if there is any rational reason to defer to Congress no remedy may be implied. The analysis proceeds in two steps — whether the case presents "a new *Bivens* context" and, if so, whether "special factors" show the Judiciary is "less equipped than Congress" to weigh a damages action's costs and benefits — but the Court held that this inquiry "often resolves to a single question: whether there is any reason to think that Congress might be better equipped to create a damages remedy." — slip op. at 2. ^pin-slip2
+
+## Application
+Both claims flunked the reformulated test. The Fourth Amendment claim arose in a new context — border security — where Congress and the Executive have independent interests and where an alternative remedial structure (the Border Patrol's grievance process) already existed; that Congress might be better suited to weigh the consequences of a damages remedy was reason enough to withhold one. The First Amendment retaliation claim failed for the further reason that the Court has never extended *[[Bivens v. Six Unknown Named Agents|Bivens]]* to First Amendment claims.
+
+## Conclusion
+**Reversed.** The Court held that *[[Bivens v. Six Unknown Named Agents|Bivens]]* does not extend to create causes of action for either the Fourth Amendment excessive-force claim or the First Amendment retaliation claim. Justice Thomas wrote for the Court; Justice Gorsuch concurred in the judgment; Justice Sotomayor concurred in part and dissented in part.
+
+## Treatment & subsequent history
+**Status: Unverified — subsequent treatment not yet machine-verified.** This page was authored from a CourtListener-verified identity stub; its citator and progeny history have not completed the two-key verification, so it renders under the ⚪ banner until S9 promotion. *Egbert* is the modern capstone of the Court's retrenchment of *[[Bivens v. Six Unknown Named Agents|Bivens]]*, collapsing the *[[Ziglar v. Abbasi|Ziglar]]* two-step into a single congressional-deference question and, with *[[Hernandez v. Mesa]]*, leaving the implied constitutional-tort remedy nearly a dead letter outside its original three contexts — a counterpoint to the statutory § 1983 remedy against state officers.
+
+## Appears on
+- [[Section 1983 Liability and Qualified Immunity]] — *Recent development*
+
+## Sources
+- [*Egbert v. Boule*, 596 U.S. 482 (2022)](https://www.courtlistener.com/opinion/6475794/egbert-v-boule/) — pinpoint: slip op. at 2 (the two-step-to-one-question Bivens rule). Rule quote string-matched to the CL slip-opinion syllabus 2026-07-07; parallel cite 142 S. Ct. 1793.
+
+```
+
+### group_inventory (assertions under review)
+
+```jsonl
+{"assertion_id": "7a07557bca454838", "dimension": "existence", "kind": "case_cite", "locator": {"record_id": "Egbert v. Boule"}, "payload": {"all": [{"cite": "596 U.S. 482", "page": "482", "reporter": "U.S.", "selected_official": false, "source": "cluster.citations[]", "type": 1, "volume": "596"}, {"cite": "142 S. Ct. 1793", "page": "1793", "reporter": "S. Ct.", "selected_official": false, "source": "cluster.citations[]", "type": 1, "volume": "142"}], "display": "596 U.S. 482", "official": {"cite": "596 U.S. 482", "page": "482", "reporter": "U.S.", "selected_official": true, "source": "cluster.citations[]", "type": 1, "volume": "596"}, "official_selection_present": true, "record_id": "Egbert v. Boule"}}
+{"assertion_id": "7a23caf1025fe07f", "dimension": "treatment", "kind": "treatment", "locator": {"record_id": "Egbert v. Boule"}, "payload": {"as_of_content": null, "as_of_treatment": null, "field_i_validity": "unverified", "record_id": "Egbert v. Boule", "scope_note": "Frontier stub: treatment/progeny intentionally not derived until S6 promotion.", "varies_by_point": false}}
+```
+
+### lake record — Egbert v. Boule
+
+```json
+{
+  "schema_version": "s2.v1",
+  "record_id": "Egbert v. Boule",
+  "status": "under_review",
+  "identity": {
+    "case_name": "Egbert v. Boule",
+    "case_name_short": "Egbert",
+    "case_name_full": "",
+    "input_case_name": "Egbert v. Boule",
+    "court": "U.S. Supreme Court",
+    "court_id": "scotus",
+    "court_level": "scotus",
+    "circuit": null,
+    "state": null,
+    "date_decided": "2022-06-08",
+    "year": 2022,
+    "docket": null,
+    "cluster_id": 6475794,
+    "lead_opinion_id": 6347905,
+    "sibling_ids": [],
+    "absolute_url": "/opinion/6475794/egbert-v-boule/",
+    "identity_method": "frontier-identity",
+    "expected_citation_found": true,
+    "party_name_in_text": false,
+    "canonical_name_match": true,
+    "alternates": [],
+    "reason_code": null
+  },
+  "citations": {
+    "official": {
+      "cite": "596 U.S. 482",
+      "volume": "596",
+      "reporter": "U.S.",
+      "page": "482",
+      "type": 1,
+      "selected_official": true,
+      "source": "cluster.citations[]"
+    },
+    "parallel": [
+      {
+        "cite": "142 S. Ct. 1793",
+        "volume": "142",
+        "reporter": "S. Ct.",
+        "page": "1793",
+        "type": 1,
+        "selected_official": false,
+        "source": "cluster.citations[]"
+      }
+    ],
+    "vendor_neutral": [],
+    "all": [
+      {
+        "cite": "596 U.S. 482",
+        "volume": "596",
+        "reporter": "U.S.",
+        "page": "482",
+        "type": 1,
+        "selected_official": false,
+        "source": "cluster.citations[]"
+      },
+      {
+        "cite": "142 S. Ct. 1793",
+        "volume": "142",
+        "reporter": "S. Ct.",
+        "page": "1793",
+        "type": 1,
+        "selected_official": false,
+        "source": "cluster.citations[]"
+      }
+    ],
+    "display": "596 U.S. 482",
+    "official_selection": {
+      "court_class": "scotus",
+      "selected": "596 U.S. 482",
+      "reason": "selected_rank_1"
+    }
+  },
+  "pinpoints": [],
+  "treatment": {
+    "field_i_validity": "unverified",
+    "as_of_content": null,
+    "as_of_treatment": null,
+    "composite_basis": "unverified",
+    "composite_basis_ref": null,
+    "varies_by_point": false,
+    "scope_note": "Frontier stub: treatment/progeny intentionally not derived until S6 promotion.",
+    "point_overrides": [],
+    "edges": [],
+    "derivation": {}
+  },
+  "progeny": {
+    "complete_query": null,
+    "indexed_citing_opinions": null,
+    "count_source": null,
+    "per_sibling": [],
+    "citation_count": null,
+    "cache_path": null,
+    "enumeration": null,
+    "cursor": null,
+    "rows_cached": 0,
+    "outbound_opinion_edges": []
+  },
+  "off_cl_links": [],
+  "provenance": {
+    "cl_source": null,
+    "cl_api": "https://www.courtlistener.com/api/rest/v4",
+    "built_by": "S2-BUILDER-AUTHORING",
+    "build_run": "s2-build-96d841cbb12e",
+    "date_created": "2026-07-06T05:45:13Z",
+    "date_modified": "2026-07-10T20:54:54Z",
+    "warnings": [],
+    "field_provenance": {
+      "identity": {
+        "src": "CourtListener frontier identity search",
+        "at": "2026-07-06T05:45:23Z",
+        "verifier": "S2-BUILDER-AUTHORING"
+      },
+      "treatment.field_i_validity": {
+        "src": "frontier stub, no treatment",
+        "at": "2026-07-06T05:45:23Z",
+        "verifier": "S2-BUILDER-AUTHORING"
+      },
+      "point_overrides": {
+        "src": "frontier stub, no treatment",
+        "at": "2026-07-06T05:45:23Z",
+        "verifier": "S2-BUILDER-AUTHORING"
+      },
+      "pinpoints": {
+        "src": "frontier stub, no pinpoints",
+        "at": "2026-07-06T05:45:23Z",
+        "verifier": "S2-BUILDER-AUTHORING"
+      }
+    },
+    "s6_promotion": {
+      "from_record_id": "egbert-v-boule--6475794",
+      "to_record_id": "Egbert v. Boule",
+      "as_of": "2026-07-07",
+      "born_status": "under_review"
+    }
+  }
+}
+
+```
+
+### cached opinion text — Egbert v. Boule
+
+```
+(Slip Opinion)              OCTOBER TERM, 2021                                       1
+
+                                       Syllabus
+
+         NOTE: Where it is feasible, a syllabus (headnote) will be released, as is
+       being done in connection with this case, at the time the opinion is issued.
+       The syllabus constitutes no part of the opinion of the Court but has been
+       prepared by the Reporter of Decisions for the convenience of the reader.
+       See United States v. Detroit Timber & Lumber Co., 200 U. S. 321, 337.
+
+
+SUPREME COURT OF THE UNITED STATES
+
+                                       Syllabus
+
+                            EGBERT v. BOULE
+
+CERTIORARI TO THE UNITED STATES COURT OF APPEALS FOR
+                  THE NINTH CIRCUIT
+
+       No. 21–147.      Argued March 2, 2022—Decided June 8, 2022
+Respondent Robert Boule owns a bed-and-breakfast—the Smuggler’s
+  Inn—in Blaine, Washington. The inn abuts the international border
+  between Canada and the United States. Boule at times helped federal
+  agents identify and apprehend persons engaged in unlawful cross-bor-
+  der activity on or near his property. But Boule also would provide
+  transportation and lodging to illegal border crossers. Often, Boule
+  would agree to help illegal border crossers enter or exit the United
+  States, only to later call federal agents to report the unlawful activity.
+    In 2014, Boule informed petitioner Erik Egbert, a U. S. Border Pa-
+  trol agent, that a Turkish national, arriving in Seattle by way of New
+  York, had scheduled transportation to Smuggler’s Inn. When Agent
+  Egbert observed one of Boule’s vehicles returning to the inn, he sus-
+  pected that the Turkish national was a passenger and followed the ve-
+  hicle to the inn. On Boule’s account, Boule asked Egbert to leave, but
+  Egbert refused, became violent, and threw Boule first against the ve-
+  hicle and then to the ground. Egbert then checked the immigration
+  paperwork for Boule’s guest and left after finding everything in order.
+  The Turkish guest unlawfully entered Canada later that evening.
+    Boule filed a grievance with Agent Egbert’s supervisors and an ad-
+  ministrative claim with Border Patrol pursuant to the Federal Tort
+  Claims Act (FTCA). Egbert allegedly retaliated against Boule by re-
+  porting Boule’s “SMUGLER” license plate to the Washington Depart-
+  ment of Licensing for referencing illegal activity, and by contacting the
+  Internal Revenue Service and prompting an audit of Boule’s tax re-
+  turns. Boule’s FTCA claim was ultimately denied, and Border Patrol
+  took no action against Egbert for his use of force or alleged acts of re-
+  taliation. Boule then sued Egbert in Federal District Court, alleging
+  a Fourth Amendment violation for excessive use of force and a First
+2                          EGBERT v. BOULE
+
+                                 Syllabus
+
+    Amendment violation for unlawful retaliation. Invoking Bivens v. Six
+    Unknown Fed. Narcotics Agents, 403 U. S. 388, Boule asked the Dis-
+    trict Court to recognize a damages action for each alleged constitu-
+    tional violation. The District Court declined to extend Bivens as re-
+    quested, but the Court of Appeals reversed.
+Held: Bivens does not extend to create causes of action for Boule’s Fourth
+ Amendment excessive-force claim and First Amendment retaliation
+ claim. Pp. 5–17.
+    (a) In Bivens, the Court held that it had authority to create a dam-
+ ages action against federal agents for violating the plaintiff’s Fourth
+ Amendment rights. Over the next decade, the Court also fashioned
+ new causes of action under the Fifth Amendment, see Davis v. Pass-
+ man, 442 U. S. 228, and the Eighth Amendment, see Carlson v. Green,
+ 446 U. S. 14. Since then, however, the Court has come “to appreciate
+ more fully the tension between” judicially created causes of action and
+ “the Constitution’s separation of legislative and judicial power,” Her-
+ nández v. Mesa, 589 U. S. ___, ___, and has declined 11 times to imply
+ a similar cause of action for other alleged constitutional violations, see,
+ e.g., Chappell v. Wallace, 462 U. S. 296; Bush v. Lucas, 462 U. S. 367.
+ Rather than dispense with Bivens, the Court now emphasizes that rec-
+ ognizing a Bivens cause of action is “a disfavored judicial activity.”
+ Ziglar v. Abbasi, 582 U. S. ___, ___.
+    The analysis of a proposed Bivens claim proceeds in two steps: A
+ court asks first whether the case presents “a new Bivens context”—i.e.,
+ is it “meaningfully different from the three cases in which the Court
+ has implied a damages action,” Ziglar, 582 U. S., at ___, and, second,
+ even if so, do “special factors” indicate that the Judiciary is at least
+ arguably less equipped than Congress to “weigh the costs and benefits
+ of allowing a damages action to proceed.” Id., at ___. This two-step
+ inquiry often resolves to a single question: whether there is any reason
+ to think that Congress might be better equipped to create a damages
+ remedy. Further, under the Court’s precedents, a court may not fash-
+ ion a Bivens remedy if Congress already has provided, or has author-
+ ized the Executive to provide, “an alternative remedial structure.”
+ Ziglar, 582 U. S., at ___. Pp. 5–8.
+    (b) The Court of Appeals conceded that Boule’s Fourth Amendment
+ claim presented a new Bivens context, but its conclusion that there
+ was no reason to hesitate before recognizing a cause of action against
+ Agent Egbert was incorrect for two independent reasons. Pp. 9–13.
+       (1) First, the “risk of undermining border security provides reason
+ to hesitate before extending Bivens into this field.” Hernández, 589
+ U. S., at ___. In Hernández, the Court declined to create a damages
+ remedy for an excessive-force claim against a Border Patrol agent be-
+ cause “regulating the conduct of agents at the border unquestionably
+                    Cite as: 596 U. S. ____ (2022)                      3
+
+                               Syllabus
+
+has national security implications.” Id., at ___. That reasoning applies
+with full force here. The Court of Appeals disagreed because it viewed
+Boule’s Fourth Amendment claim as akin to a “conventional” exces-
+sive-force claim, as in Bivens, and less like the cross-border shooting
+in Hernández. But that does not bear on the relevant point: Permitting
+suit against a Border Patrol agent presents national security concerns
+that foreclose Bivens relief. Further, the Court of Appeals’ analysis
+betrays the pitfalls of applying the special-factors analysis at too gran-
+ular a level. A court should not inquire whether Bivens relief is appro-
+priate in light of the balance of circumstances in the “particular case.”
+United States v. Stanley, 483 U. S. 669, 683. Rather, it should ask
+“[m]ore broadly” whether there is any reason to think that “judicial
+intrusion” into a given field might be “harmful” or “inappropriate,” id.,
+at 681. The proper inquiry here is whether a court is competent to
+authorize a damages action not just against Agent Egbert, but against
+Border Patrol agents generally. The answer is no. Pp. 9–12.
+      (2) Second, Congress has provided alternative remedies for ag-
+grieved parties in Boule’s position that independently foreclose a
+Bivens action here. By regulation, Border Patrol must investigate
+“[a]lleged violations” and accept grievances from “[a]ny persons.” 8
+CFR §§287.10(a)–(b). Boule claims that this regulatory grievance pro-
+cedure was inadequate, but this Court has never held that a Bivens
+alternative must afford rights such as judicial review of an adverse
+determination. Bivens “is concerned solely with deterring the uncon-
+stitutional acts of individual officers.” Correctional Services Corp. v.
+Malesko, 534 U. S. 61, 71. And, regardless, the question whether a
+given remedy is adequate is a legislative determination. As in Her-
+nández, this Court has no warrant to doubt that the consideration of
+Boule’s grievance secured adequate deterrence and afforded Boule an
+alternative remedy. See 589 U. S., at ___. Pp. 12–13.
+   (c) There is no Bivens cause of action for Boule’s First Amendment
+retaliation claim. That claim presents a new Bivens context, and there
+are many reasons to think that Congress is better suited to authorize
+a damages remedy. Extending Bivens to alleged First Amendment vi-
+olations would pose an acute “risk that fear of personal monetary lia-
+bility and harassing litigation will unduly inhibit officials in the dis-
+charge of their duties.” Anderson v. Creighton, 483 U. S. 635, 638. In
+light of these costs, “Congress is in a better position to decide whether
+or not the public interest would be served” by imposing a damages ac-
+tion. Bush, 462 U. S., at 389. The Court of Appeals’ reasons for ex-
+tending Bivens in this context—that retaliation claims are “well-estab-
+lished” and that Boule alleges that Agent Egbert “was not carrying out
+official duties” when the retaliation occurred—lack merit. Also lacking
+4                           EGBERT v. BOULE
+
+                                  Syllabus
+
+    merit is Boule’s claim that this Court identified a Bivens cause of ac-
+    tion under allegedly similar circumstances in Passman. Even assum-
+    ing factual parallels, Passman carries little weight because it predates
+    the Court’s current approach to implied causes of action. A plaintiff
+    cannot justify a Bivens extension based on “parallel circumstances”
+    with Bivens, Passman, or Carlson—the three cases in which the Court
+    has implied a damages action—unless the plaintiff also satisfies the
+    prevailing “analytic framework” prescribed by the last four decades of
+    intervening case law. Ziglar, 582 U. S., at ___–___. Pp. 13–16.
+998 F. 3d 370, reversed.
+
+  THOMAS, J., delivered the opinion of the Court, in which ROBERTS, C. J.,
+and ALITO, KAVANAUGH, and BARRETT, JJ., joined. GORSUCH, J., filed an
+opinion concurring in the judgment. SOTOMAYOR, J., filed an opinion con-
+curring in the judgment in part and dissenting in part, in which BREYER
+and KAGAN, JJ., joined.
+                        Cite as: 596 U. S. ____ (2022)                                 1
+
+                              Opinion of the Court
+
+     NOTICE: This opinion is subject to formal revision before publication in the
+     preliminary print of the United States Reports. Readers are requested to
+     notify the Reporter of Decisions, Supreme Court of the United States, Wash-
+     ington, D. C. 20543, of any typographical or other formal errors, in order that
+     corrections may be made before the preliminary print goes to press.
+
+
+SUPREME COURT OF THE UNITED STATES
+                                    _________________
+
+                                     No. 21–147
+                                    _________________
+
+
+   ERIK EGBERT, PETITIONER v. ROBERT BOULE
+ ON WRIT OF CERTIORARI TO THE UNITED STATES COURT OF
+            APPEALS FOR THE NINTH CIRCUIT
+                                   [June 8, 2022]
+
+   JUSTICE THOMAS delivered the opinion of the Court.
+   In Bivens v. Six Unknown Fed. Narcotics Agents, 403
+U. S. 388 (1971), this Court authorized a damages action
+against federal officials for alleged violations of the Fourth
+Amendment. Over the past 42 years, however, we have de-
+clined 11 times to imply a similar cause of action for other
+alleged constitutional violations. See Chappell v. Wallace,
+462 U. S. 296 (1983); Bush v. Lucas, 462 U. S. 367 (1983);
+United States v. Stanley, 483 U. S. 669 (1987); Schweiker v.
+Chilicky, 487 U. S. 412 (1988); FDIC v. Meyer, 510 U. S. 471
+(1994); Correctional Services Corp. v. Malesko, 534 U. S. 61
+(2001); Wilkie v. Robbins, 551 U. S. 537 (2007); Hui v. Cas-
+taneda, 559 U. S. 799 (2010); Minneci v. Pollard, 565 U. S.
+118 (2012); Ziglar v. Abbasi, 582 U. S. ___ (2017); Hernán-
+dez v. Mesa, 589 U. S. ___ (2020). Nevertheless, the Court
+of Appeals permitted not one, but two constitutional dam-
+ages actions to proceed against a U. S. Border Patrol agent:
+a Fourth Amendment excessive-force claim and a First
+Amendment retaliation claim. Because our cases have
+made clear that, in all but the most unusual circumstances,
+prescribing a cause of action is a job for Congress, not the
+courts, we reverse.
+2                     EGBERT v. BOULE
+
+                      Opinion of the Court
+
+                              I
+  Blaine, Washington, is the last town in the United States
+along U. S. Interstate Highway 5 before reaching the Cana-
+dian border. Respondent Robert Boule is a longtime Blaine
+resident. The rear of his property abuts the Canadian bor-
+der at “0 Avenue,” a Canadian street. Boule’s property line
+actually extends five feet into Canada. Several years ago,
+Boule placed a line of small stones on his property to mark
+the international boundary. As shown below, any person
+could easily enter the United States or Canada through or
+near Boule’s property. See App. 100.
+
+
+
+
+  Boule markets his home as a bed-and-breakfast aptly
+named “Smuggler’s Inn.” The area surrounding the Inn “is
+a hotspot for cross-border smuggling of people, drugs, illicit
+money, and items of significance to criminal organizations.”
+Id., at 91. “On numerous occasions,” U. S. Border Patrol
+agents “have observed persons come south across the bor-
+der and walk into Smuggler’s Inn through the back door.”
+Id., at 101. Federal agents also have seized from the Inn
+shipments of cocaine, methamphetamine, ecstasy, and
+other narcotics. For a time, Boule served as a confidential
+                     Cite as: 596 U. S. ____ (2022)                    3
+
+                          Opinion of the Court
+
+informant who would help federal agents identify and ap-
+prehend persons engaged in unlawful cross-border activity
+on or near his property. Boule claims that the Government
+has paid him upwards of $60,000 for his services.
+   Ever the entrepreneur, Boule saw his relationship with
+Border Patrol as a business opportunity. Boule would host
+persons who unlawfully entered the United States as
+“guests” at the Inn and offer to drive them to Seattle or else-
+where. He also would pick up Canada-bound guests
+throughout the State and drive them north to his property
+along the border. Either way, Boule would charge $100–
+$150 per hour for his shuttle service and require guests to
+pay for a night of lodging even if they never intended to stay
+at the Inn. Meanwhile, Boule would inform federal law en-
+forcement if he was scheduled to lodge or transport persons
+of interest. In short order, Border Patrol agents would ar-
+rive to arrest the guests, often within a few blocks of the
+Inn. Boule would decline to offer his erstwhile customers a
+refund. In his view, this practice was “nothing any different
+than [the] normal policies of any hotel/motel.” Id., at 120.1
+   In light of Boule’s business model, local Border Patrol
+agents, including petitioner Erik Egbert, were well ac-
+quainted with Smuggler’s Inn and the criminal activity that
+attended it. On March 20, 2014, Boule informed Agent Eg-
+bert that a Turkish national, arriving in Seattle by way of
+New York, had scheduled transportation to Smuggler’s Inn
+later that day. Agent Egbert grew suspicious, as he could
+think of “no legitimate reason a person would travel from
+Turkey to stay at a rundown bed-and-breakfast on the bor-
+der in Blaine.” Id., at 104. The photograph below displays
+the amenities for which Boule’s Turkish guest would have
+——————
+  1 Notwithstanding his defense of the Inn’s policies, Boule was recently
+
+convicted in Canadian court for engaging in human trafficking. In De-
+cember 2021, he pleaded guilty to trafficking 11 Afghanis and Syrians
+into Canada. He billed each foreign national between $200 and $700 for
+the trip. See Regina v. Boule, 2021 BCSC 2561, ¶¶7–11.
+4                    EGBERT v. BOULE
+
+                     Opinion of the Court
+
+traveled more than 7,500 miles. See id., at 102.
+
+
+
+
+   Later that afternoon, Agent Egbert observed one of
+Boule’s vehicles—a black SUV with the license plate
+“SMUGLER”—returning to the Inn. Agent Egbert sus-
+pected that Boule’s Turkish guest was a passenger and fol-
+lowed the SUV into the driveway so he could check the
+guest’s immigration status. On Boule’s account, the situa-
+tion escalated from there. Boule instructed Agent Egbert
+to leave his property, but Agent Egbert declined. Instead,
+Boule claims, Agent Egbert lifted him off the ground and
+threw him against the SUV. After Boule collected himself,
+Agent Egbert allegedly threw him to the ground. Agent Eg-
+bert then checked the guest’s immigration paperwork, con-
+cluded that everything was in order, and left. Later that
+evening, Boule’s Turkish guest unlawfully entered Canada
+from Smuggler’s Inn.
+   Boule lodged a grievance with Agent Egbert’s supervi-
+sors, alleging that Agent Egbert had used excessive force
+and caused him physical injury. Boule also filed an admin-
+istrative claim with Border Patrol pursuant to the Federal
+Tort Claims Act (FTCA). See 28 U. S. C. §2675(a). Accord-
+ing to Boule, Agent Egbert retaliated against him while
+                   Cite as: 596 U. S. ____ (2022)              5
+
+                       Opinion of the Court
+
+those claims were pending by reporting Boule’s
+“SMUGLER” license plate to the Washington Department
+of Licensing for referencing illegal conduct, and by contact-
+ing the Internal Revenue Service and prompting an audit
+of Boule’s tax returns. Ultimately, Boule’s FTCA claim was
+denied and, after a year-long investigation, Border Patrol
+took no action against Agent Egbert for his alleged use of
+force or acts of retaliation. Thereafter, Agent Egbert con-
+tinued to serve as an active-duty Border Patrol agent.
+   In January 2017, Boule sued Agent Egbert in his individ-
+ual capacity in Federal District Court, alleging a Fourth
+Amendment violation for excessive use of force and a First
+Amendment violation for unlawful retaliation. Boule in-
+voked Bivens and asked the District Court to recognize a
+damages action for each alleged constitutional violation.
+The District Court declined to extend a Bivens remedy to
+Boule’s claims and entered judgment for Agent Egbert. The
+Court of Appeals reversed. See 998 F. 3d 370, 385 (CA9
+2021). Twelve judges dissented from the denial of rehear-
+ing en banc. See id., at 373 (Bumatay, J., dissenting); id.,
+at 384 (Owens, J., dissenting); ibid. (Bress, J., dissenting).
+   We granted certiorari. 595 U. S. ___ (2021).
+                               II
+   In Bivens, the Court held that it had authority to create
+“a cause of action under the Fourth Amendment” against
+federal agents who allegedly manacled the plaintiff and
+threatened his family while arresting him for narcotics vio-
+lations. 403 U. S., at 397. Although “the Fourth Amend-
+ment does not in so many words provide for its enforcement
+by an award of money damages,” id., at 396, the Court “held
+that it could authorize a remedy under general principles of
+federal jurisdiction,” Ziglar, 582 U. S., at ___ (slip op., at 7)
+(citing Bivens, 403 U. S., at 392). Over the following decade,
+the Court twice again fashioned new causes of action under
+the Constitution—first, for a former congressional staffer’s
+6                     EGBERT v. BOULE
+
+                      Opinion of the Court
+
+Fifth Amendment sex-discrimination claim, see Davis v.
+Passman, 442 U. S. 228 (1979); and second, for a federal
+prisoner’s inadequate-care claim under the Eighth Amend-
+ment, see Carlson v. Green, 446 U. S. 14 (1980).
+   Since these cases, the Court has not implied additional
+causes of action under the Constitution. Now long past “the
+heady days in which this Court assumed common-law pow-
+ers to create causes of action,” Malesko, 534 U. S., at 75
+(Scalia, J., concurring), we have come “to appreciate more
+fully the tension between” judicially created causes of ac-
+tion and “the Constitution’s separation of legislative and ju-
+dicial power,” Hernández, 589 U. S., at ___ (slip op., at 5).
+At bottom, creating a cause of action is a legislative en-
+deavor. Courts engaged in that unenviable task must eval-
+uate a “range of policy considerations . . . at least as broad
+as the range . . . a legislature would consider.” Bivens, 403
+U. S., at 407 (Harlan, J., concurring in judgment); see also
+post, at 2 (GORSUCH, J., concurring in judgment). Those
+factors include “economic and governmental concerns,” “ad-
+ministrative costs,” and the “impact on governmental oper-
+ations systemwide.” Ziglar, 582 U. S., at ___, ___ (slip op.,
+at 10, 13). Unsurprisingly, Congress is “far more competent
+than the Judiciary” to weigh such policy considerations.
+Schweiker, 487 U. S., at 423. And the Judiciary’s authority
+to do so at all is, at best, uncertain. See, e.g., Hernández,
+589 U. S., at ___ (slip op., at 6).
+   Nonetheless, rather than dispense with Bivens alto-
+gether, we have emphasized that recognizing a cause of ac-
+tion under Bivens is “a disfavored judicial activity.” Ziglar,
+582 U. S., at ___ (slip op., at 11) (internal quotation marks
+omitted); Hernández, 589 U. S., at ___ (slip op., at 7) (inter-
+nal quotation marks omitted). When asked to imply a
+Bivens action, “our watchword is caution.” Id., at ___ (slip
+op., at 6). “[I]f there are sound reasons to think Congress
+might doubt the efficacy or necessity of a damages rem-
+edy[,] the courts must refrain from creating [it].” Ziglar,
+                  Cite as: 596 U. S. ____ (2022)              7
+
+                      Opinion of the Court
+
+582 U. S., at ___ (slip op., at 13). “[E]ven a single sound
+reason to defer to Congress” is enough to require a court to
+refrain from creating such a remedy. Nestlé USA, Inc. v.
+Doe, 593 U. S. ___, ___ (2021) (plurality opinion) (slip op., at
+6). Put another way, “the most important question is who
+should decide whether to provide for a damages remedy,
+Congress or the courts?” Hernández, 589 U. S., at ___–___
+(slip op., at 19–20) (internal quotation marks omitted). If
+there is a rational reason to think that the answer is “Con-
+gress”—as it will be in most every case, see Ziglar, 582
+U. S., at ___ (slip op., at 12)—no Bivens action may lie. Our
+cases instruct that, absent utmost deference to Congress’
+preeminent authority in this area, the courts “arrogat[e]
+legislative power.” Hernández, 589 U. S., at ___ (slip op., at
+5).
+   To inform a court’s analysis of a proposed Bivens claim,
+our cases have framed the inquiry as proceeding in two
+steps. See Hernández, 589 U. S., at ___ (slip op., at 7).
+First, we ask whether the case presents “a new Bivens con-
+text”—i.e., is it “meaningful[ly]” different from the three
+cases in which the Court has implied a damages action.
+Ziglar, 582 U. S., at ___ (slip op., at 16). Second, if a claim
+arises in a new context, a Bivens remedy is unavailable if
+there are “special factors” indicating that the Judiciary is
+at least arguably less equipped than Congress to “weigh the
+costs and benefits of allowing a damages action to proceed.”
+Ziglar, 582 U. S., at ___ (slip op., at 12) (internal quotation
+marks omitted). If there is even a single “reason to pause
+before applying Bivens in a new context,” a court may not
+recognize a Bivens remedy. Hernández, 589 U. S., at ___
+(slip op., at 7).
+   While our cases describe two steps, those steps often re-
+solve to a single question: whether there is any reason to
+think that Congress might be better equipped to create a
+damages remedy. For example, we have explained that a
+new context arises when there are “potential special factors
+8                         EGBERT v. BOULE
+
+                          Opinion of the Court
+
+that previous Bivens cases did not consider.” Ziglar, 582
+U. S., at ___ (slip op., at 16). And we have identified several
+examples of new contexts—e.g., a case that involves a “new
+category of defendants,” Malesko, 534 U. S., at 68; see also
+Ziglar, 582 U. S., at ___ (slip op., at 11)—largely because
+they represent situations in which a court is not undoubt-
+edly better positioned than Congress to create a damages
+action. We have never offered an “exhaustive” accounting
+of such scenarios, however, because no court could forecast
+every factor that might “counse[l] hesitation.” Id., at ___
+(slip op., at 16). Even in a particular case, a court likely
+cannot predict the “systemwide” consequences of recogniz-
+ing a cause of action under Bivens. Ziglar, 582 U. S., at ___
+(slip op., at 13). That uncertainty alone is a special factor
+that forecloses relief. See Hernández v. Mesa, 885 F. 3d
+811, 818 (CA5 2018) (en banc) (“The newness of this ‘new
+context’ should alone require dismissal”).
+   Finally, our cases hold that a court may not fashion a
+Bivens remedy if Congress already has provided, or has au-
+thorized the Executive to provide, “an alternative remedial
+structure.” Ziglar, 582 U. S., at ___ (slip op., at 14); see also
+Schweicker, 487 U. S., at 425. If there are alternative re-
+medial structures in place, “that alone,” like any special fac-
+tor, is reason enough to “limit the power of the Judiciary to
+infer a new Bivens cause of action.” Ziglar, 582 U. S., at ___
+(slip op., at 14).2 Importantly, the relevant question is not
+whether a Bivens action would “disrup[t]” a remedial
+scheme, Schweicker, 487 U. S., at 426, or whether the court
+“should provide for a wrong that would otherwise go unre-
+dressed,” Bush, 462 U. S., at 388. Nor does it matter that
+——————
+  2 Congress also may preclude a claim under Bivens v. Six Unknown
+
+Fed. Narcotics Agents, 403 U. S. 388 (1971), against federal officers if it
+affirmatively forecloses one. “Even in circumstances in which a Bivens
+remedy is generally available, an action under Bivens will be defeated if
+the defendant is immune from suit,” Hui v. Castaneda, 559 U. S. 799,
+807 (2010), and Congress may grant such immunity as it sees fit.
+                  Cite as: 596 U. S. ____ (2022)             9
+
+                      Opinion of the Court
+
+“existing remedies do not provide complete relief.” Ibid.
+Rather, the court must ask only whether it, rather than the
+political branches, is better equipped to decide whether ex-
+isting remedies “should be augmented by the creation of a
+new judicial remedy.” Ibid; see also id., at 380 (“the ques-
+tion [is] who should decide”).
+                           III
+  Applying the foregoing principles, the Court of Appeals
+plainly erred when it created causes of action for Boule’s
+Fourth Amendment excessive-force claim and First Amend-
+ment retaliation claim.
+                              A
+  The Court of Appeals conceded that Boule’s Fourth
+Amendment claim presented a new context for Bivens pur-
+poses, yet it concluded there was no reason to hesitate be-
+fore recognizing a cause of action against Agent Egbert. See
+998 F. 3d, at 387. That conclusion was incorrect for two in-
+dependent reasons: Congress is better positioned to create
+remedies in the border-security context, and the Govern-
+ment already has provided alternative remedies that pro-
+tect plaintiffs like Boule. We address each in turn.
+                                1
+  In Hernández, we declined to create a damages remedy
+for an excessive-force claim against a Border Patrol agent
+who shot and killed a 15-year-old Mexican national across
+the border in Mexico. See 589 U. S., at ___–___ (slip op., at
+1–2). We did not recognize a Bivens action there because
+“regulating the conduct of agents at the border unquestion-
+ably has national security implications,” and the “risk of
+undermining border security provides reason to hesitate be-
+fore extending Bivens into this field.” Hernández, 589 U. S.,
+at ___ (slip op., at 14). This reasoning applies here with full
+force. During the alleged altercation with Boule, Agent Eg-
+10                    EGBERT v. BOULE
+
+                      Opinion of the Court
+
+bert was carrying out Border Patrol’s mandate to “inter-
+dic[t] persons attempting to illegally enter or exit the
+United States or goods being illegally imported into or ex-
+ported from the United States.” 6 U. S. C. §211(e)(3)(A).
+Because “[m]atters intimately related to foreign policy and
+national security are rarely proper subjects for judicial in-
+tervention,” Haig v. Agee, 453 U. S. 280, 292 (1981), we re-
+affirm that a Bivens cause of action may not lie where, as
+here, national security is at issue.
+    The Court of Appeals thought otherwise. In its view,
+Boule’s Fourth Amendment claim is “conventional,” 998
+F. 3d, at 387; see also post, at 8, 12 (SOTOMAYOR, J., concur-
+ring in judgment in part and dissenting in part) (same),
+and, though it arises in a new context, this Court has not
+“ ‘cast doubt’ ” on extending Bivens within the “ ‘common and
+recurrent sphere of law enforcement’ ” in which it arose, 998
+F. 3d, at 389 (quoting Ziglar, 582 U. S., at ___ (slip op., at
+11)). While Bivens and this case do involve similar allega-
+tions of excessive force and thus arguably present “almost
+parallel circumstances” or a similar “mechanism of injury,”
+Ziglar, 582 U. S., at ___ (slip op., at 15), these superficial
+similarities are not enough to support the judicial creation
+of a cause of action. The special-factors inquiry—which
+Bivens never meaningfully undertook, see Stanley, 483
+U. S., at 678—shows here, no less than in Hernández, that
+the Judiciary is not undoubtedly better positioned than
+Congress to authorize a damages action in this national-se-
+curity context. That this case does not involve a cross-bor-
+der shooting, as in Hernández, but rather a more “conven-
+tional” excessive-force claim, as in Bivens, does not bear on
+the relevant point. Either way, the Judiciary is compara-
+tively ill suited to decide whether a damages remedy
+against any Border Patrol agent is appropriate.
+    The Court of Appeals downplayed the national-security
+risk from imposing Bivens liability because Agent Egbert
+was not “literally ‘at the border,’ ” and Boule’s guest already
+                  Cite as: 596 U. S. ____ (2022)            11
+
+                      Opinion of the Court
+
+had cleared customs in New York. 998 F. 3d, at 388; see
+also post, at 11–12, 18 (opinion of SOTOMAYOR, J.) (same).
+The court also found that Boule had a weightier interest in
+Bivens relief than the parents of the deceased Mexican
+teenager in Hernández, because Boule “is a United States
+citizen, complaining of harm suffered on his own property
+in the United States.” 998 F. 3d, at 388; see also post, at 12,
+18 (opinion of SOTOMAYOR, J.) (same). Finding that “any
+costs imposed by allowing a Bivens claim to proceed are out-
+weighed by compelling interests in favor of protecting
+United States citizens on their own property in the United
+States,” the court extended Bivens to Boule’s case. 998
+F. 3d, at 389.
+   This analysis is deeply flawed. The Bivens inquiry does
+not invite federal courts to independently assess the costs
+and benefits of implying a cause of action. A court faces
+only one question: whether there is any rational reason
+(even one) to think that Congress is better suited to “weigh
+the costs and benefits of allowing a damages action to pro-
+ceed.” Ziglar, 582 U. S., at ___ (slip op., at 12). Thus, a
+court should not inquire, as the Court of Appeals did here,
+whether Bivens relief is appropriate in light of the balance
+of circumstances in the “particular case.” Stanley, 483
+U. S., at 683. A court inevitably will “impai[r]” governmen-
+tal interests, and thereby frustrate Congress’ policymaking
+role, if it applies the “ ‘special factors’ analysis” at such a
+narrow “leve[l] of generality.” Id., at 681. Rather, under
+the proper approach, a court must ask “[m]ore broadly” if
+there is any reason to think that “judicial intrusion” into a
+given field might be “harmful” or “inappropriate.” Ibid. If
+so, or even if there is the “potential” for such consequences,
+a court cannot afford a plaintiff a Bivens remedy. Ziglar,
+582 U. S., at ___, ___ (slip op., at 16, 25) (emphasis added).
+As in Hernández, then, we ask here whether a court is com-
+petent to authorize a damages action not just against Agent
+12                    EGBERT v. BOULE
+
+                      Opinion of the Court
+
+Egbert but against Border Patrol agents generally. The an-
+swer, plainly, is no. See Hernández, 589 U. S., at ___ (slip
+op., at 14) (refusing to extend Bivens into the “field” of “bor-
+der security”).
+   The Court of Appeals’ analysis betrays the pitfalls of ap-
+plying the special-factors analysis at too granular a level.
+The court rested on three irrelevant distinctions from Her-
+nández. First, Agent Egbert was several feet from (rather
+than straddling) the border, but cross-border security is ob-
+viously implicated in either event. Second, Boule’s guest
+arrived in Seattle from New York rather than abroad, but
+an alien’s port of entry does not make him less likely to be
+a national-security threat. And third, Agent Egbert inves-
+tigated immigration violations on our side of the border, not
+Canada’s, but immigration investigations in this country
+are perhaps more likely to impact the national security of
+the United States. In short, the Court of Appeals offered no
+plausible basis to permit a Fourth Amendment Bivens
+claim against Agent Egbert to proceed.
+                               2
+   Second, Congress has provided alternative remedies for
+aggrieved parties in Boule’s position that independently
+foreclose a Bivens action here. In Hernández, we declined
+to authorize a Bivens remedy, in part, because the Execu-
+tive Branch already had investigated alleged misconduct by
+the defendant Border Patrol agent. See 589 U. S., at ___–
+___, ___ (slip op., at 9–10, 14). In Malesko, we explained
+that Bivens relief was unavailable because federal prison-
+ers could, among other options, file grievances through an
+“Administrative Remedy Program.” 534 U. S., at 74. Both
+kinds of remedies are available here. The U. S. Border Pa-
+trol is statutorily obligated to “control, direc[t], and super-
+vis[e] . . . all employees.” 8 U. S. C. §1103(a)(2). And, by
+regulation, Border Patrol must investigate “[a]lleged viola-
+tions of the standards for enforcement activities” and accept
+                      Cite as: 596 U. S. ____ (2022)                       13
+
+                           Opinion of the Court
+
+grievances from “[a]ny persons wishing to lodge a com-
+plaint.” 8 CFR §§287.10(a)–(b). As noted, Boule took ad-
+vantage of this grievance procedure, prompting a year-long
+internal investigation into Agent Egbert’s conduct. See su-
+pra, at 4–5.
+   Boule nonetheless contends that Border Patrol’s griev-
+ance process is inadequate because he is not entitled to par-
+ticipate and has no right to judicial review of an adverse
+determination.3 But we have never held that a Bivens al-
+ternative must afford rights to participation or appeal.
+That is so because Bivens “is concerned solely with deter-
+ring the unconstitutional acts of individual officers”—i.e.,
+the focus is whether the Government has put in place safe-
+guards to “preven[t]” constitutional violations “from recur-
+ring.” Malesko, 534 U. S., at 71, 74; see also Meyer, 510
+U. S., at 485. And, again, the question whether a given
+remedy is adequate is a legislative determination that must
+be left to Congress, not the federal courts. So long as Con-
+gress or the Executive has created a remedial process that
+it finds sufficient to secure an adequate level of deterrence,
+the courts cannot second-guess that calibration by superim-
+posing a Bivens remedy. That is true even if a court inde-
+pendently concludes that the Government’s procedures are
+“not as effective as an individual damages remedy.” Bush,
+——————
+   3 Boule also argues that Agent Egbert forfeited any argument about
+
+Border Patrol’s grievance process because he did not raise the issue in
+the Court of Appeals. We disagree. Because recognizing a Bivens cause
+of action “is an extraordinary act that places great stress on the separa-
+tion of powers,” Nestlé USA, Inc. v. Doe, 593 U. S. ___, ___ (2021) (plural-
+ity opinion) (slip op., at 7), we have “a concomitant responsibility” to eval-
+uate any grounds that counsel against Bivens relief, Oliva v. Nivar, 973
+F. 3d 438, 443, n. 2 (CA5 2020); see also Elhady v. Unidentified CBP
+Agents, 18 F. 4th 880, 884 (CA6 2021). And, in any event, Agent Egbert
+has consistently claimed that alternative remedies foreclose applying
+Bivens in this case. Thus, under our precedents, he is “not limited to the
+precise arguments [he] made below.” Yee v. Escondido, 503 U. S. 519,
+534 (1992).
+14                    EGBERT v. BOULE
+
+                      Opinion of the Court
+
+462 U. S., at 372. Thus here, as in Hernández, we have no
+warrant to doubt that the consideration of Boule’s grievance
+against Agent Egbert secured adequate deterrence and af-
+forded Boule an alternative remedy. See 589 U. S., at ___
+(slip op., at 10).
+                               B
+   We also conclude that there is no Bivens cause of action
+for Boule’s First Amendment retaliation claim. While we
+have assumed that such a damages action might be availa-
+ble, see, e.g., Hartman v. Moore, 547 U. S. 250, 252 (2006),
+“[w]e have never held that Bivens extends to First Amend-
+ment claims,” Reichle v. Howards, 566 U. S. 658, 663, n. 4
+(2012). Because a new context arises when there is a new
+“constitutional right at issue,” Ziglar, 582 U. S., at ___ (slip
+op., at 16), the Court of Appeals correctly held that Boule’s
+First Amendment claim presents a new Bivens context. See
+998 F. 3d, at 390. Now presented with the question
+whether to extend Bivens to this context, we hold that there
+is no Bivens action for First Amendment retaliation. There
+are many reasons to think that Congress, not the courts, is
+better suited to authorize such a damages remedy.
+   Recognizing any new Bivens action “entail[s] substantial
+social costs, including the risk that fear of personal mone-
+tary liability and harassing litigation will unduly inhibit of-
+ficials in the discharge of their duties.” Anderson v.
+Creighton, 483 U. S. 635, 638 (1987). Extending Bivens to
+alleged First Amendment violations would pose an acute
+risk of increasing such costs. A plaintiff can turn practically
+any adverse action into grounds for a retaliation claim.
+And, “[b]ecause an official’s state of mind is easy to allege
+and hard to disprove, insubstantial claims that turn on [re-
+taliatory] intent may be less amenable to summary disposi-
+tion.” Crawford-El v. Britton, 523 U. S. 574, 584–585
+(1998) (internal quotation marks omitted). Even a frivolous
+                  Cite as: 596 U. S. ____ (2022)            15
+
+                      Opinion of the Court
+
+retaliation claim “threaten[s] to set off broad-ranging dis-
+covery in which there is often no clear end to the relevant
+evidence.” Nieves v. Bartlett, 587 U. S. ___, ___ (2019) (slip
+op., at 11) (internal quotation marks omitted).
+   “[U]ndoubtedly,” then, the “prospect of personal liability”
+under the First Amendment would lead “to new difficulties
+and expense.” Schweiker, 487 U. S., at 425. Federal em-
+ployees “face[d with] the added risk of personal liability for
+decisions that they believe to be a correct response to im-
+proper [activity] would be deterred from” carrying out their
+duties. Bush, 462 U. S., at 389. We are therefore “con-
+vinced” that, in light of these costs, “Congress is in a better
+position to decide whether or not the public interest would
+be served” by imposing a damages action. Id., at 390.
+   The Court of Appeals nonetheless extended Bivens to the
+First Amendment because, in its view, retaliation claims
+are “well-established,” and Boule alleges that Agent Egbert
+“was not carrying out official duties” when he retaliated
+against him. 998 F. 3d, at 391. Neither rationale has merit.
+First, just because plaintiffs often plead unlawful retalia-
+tion to establish a First Amendment violation is not a rea-
+son to afford them a cause of action to sue federal officers
+for money damages. If anything, that retaliation claims are
+common, and therefore more likely to impose “a significant
+expansion of Government liability,” Meyer, 510 U. S., at
+486, counsels against permitting Bivens relief.
+   Second, the Court of Appeals’ scope-of-duty observation
+does not meaningfully limit the number of potential Bivens
+claims or otherwise undermine the reasons for hesitation
+stated above. It is easy to allege that federal employees
+acted beyond the scope of their authority when claiming a
+constitutional violation. And, regardless, granting Bivens
+relief because a federal agent supposedly did not act pursu-
+ant to his law-enforcement mission “misses the point.” Her-
+nández, 589 U. S., at ___ (slip op., at 14). “The question is
+not whether national security,” or some other governmental
+16                    EGBERT v. BOULE
+
+                      Opinion of the Court
+
+interest, actually “requires [the defendant’s] conduct.” Ibid.
+Instead, we “ask whether the Judiciary should alter the
+framework established by the political branches for ad-
+dressing” any such conduct that allegedly violates the Con-
+stitution. Ibid. With respect to that question, the foregoing
+discussion shows that the Judiciary is ill equipped to alter
+that framework generally, and especially so when it comes
+to First Amendment claims.
+  Boule responds that any hesitation is unwarranted be-
+cause this Court in Passman already identified a Bivens
+cause of action under allegedly similar circumstances.
+There, the Court permitted a congressional staffer to sue a
+congressman for sex discrimination under the Fifth Amend-
+ment. See 442 U. S., at 231. In Boule’s view, Passman, like
+this case, permitted a damages action to proceed even
+though it required the factfinder to probe a federal official’s
+motives for taking an adverse action against the plaintiff.
+  Even assuming the factual parallels are as close as Boule
+claims, Passman carries little weight because it predates
+our current approach to implied causes of action and di-
+verges from the prevailing framework in three important
+ways. First, the Passman Court concluded that a Bivens
+action must be available if there is “no effective means other
+than the judiciary to vindicate” the purported Fifth Amend-
+ment right. 442 U. S., at 243; see also Carlson, 446 U. S.,
+at 18–19 (Congress can foreclose Bivens relief by
+“provid[ing] an alternative remedy which it explicitly de-
+clared to be a substitute for recovery directly under the Con-
+stitution and viewed as equally effective”). Since then, how-
+ever, we have explained that the absence of relief “does not
+by any means necessarily imply that courts should award
+money damages.” Schweiker, 487 U. S., at 421. Second,
+Passman indicated that a damages remedy is appropriate
+unless Congress “explicit[ly]” declares that a claimant “may
+not recover money damages.” 442 U. S., at 246–247 (inter-
+nal quotation marks omitted; emphasis deleted). Now,
+                  Cite as: 596 U. S. ____ (2022)             17
+
+                      Opinion of the Court
+
+though, we defer to “congressional inaction” if “the design
+of a Government program suggests that Congress has pro-
+vided what it considers adequate remedial mechanisms.”
+Schweiker, 487 U. S., at 423; see also Ziglar, 582 U. S., at
+___ (slip op., at 14). Third, when assessing the “special fac-
+tors,” Passman asked whether a court is competent to cal-
+culate damages “without difficult questions of valuation or
+causation.” 442 U. S., at 245. But today, we do not ask
+whether a court can determine a damages amount. Rather,
+we ask whether “there are sound reasons to think Congress
+might doubt the efficacy or necessity of a damages remedy”
+at all. Ziglar, 582 U. S., at ___ (slip op., at 13).
+   In short, as we explained in Ziglar, a plaintiff cannot jus-
+tify a Bivens extension based on “parallel circumstances”
+with Bivens, Passman, or Carlson unless he also satisfies
+the “analytic framework” prescribed by the last four dec-
+ades of intervening case law. 582 U. S., at ___–___ (slip op.,
+at 15–16). Boule has failed to do so.
+                              IV
+   Since it was decided, Bivens has had no shortage of de-
+tractors. See, e.g., Bivens, 403 U. S., at 411 (Burger, C. J.,
+dissenting); id., at 427 (Black, J., dissenting); id., at 430
+(Blackmun, J., dissenting); Carlson, 446 U. S., at 31
+(Rehnquist, J., dissenting); Malesko, 534 U. S., at 75
+(Scalia, J., concurring); Hernández, 589 U. S., at ___
+(THOMAS, J., concurring) (slip op., at 1); post, at 1–3 (opin-
+ion of GORSUCH, J.). And, more recently, we have indicated
+that if we were called to decide Bivens today, we would de-
+cline to discover any implied causes of action in the Consti-
+tution. See Ziglar, 582 U. S., at ___ (slip op., at 11). But, to
+decide the case before us, we need not reconsider Bivens it-
+self. Accordingly, we reverse the judgment of the Court of
+Appeals.
+                                               It is so ordered.
+                 Cite as: 596 U. S. ____ (2022)            1
+
+                   GORSUCH
+              GORSUCH        , J., concurring
+                     , J., concurring  in judgment
+
+SUPREME COURT OF THE UNITED STATES
+                          _________________
+
+                          No. 21–147
+                          _________________
+
+
+   ERIK EGBERT, PETITIONER v. ROBERT BOULE
+ ON WRIT OF CERTIORARI TO THE UNITED STATES COURT OF
+            APPEALS FOR THE NINTH CIRCUIT
+                         [June 8, 2022]
+
+   JUSTICE GORSUCH, concurring in the judgment.
+   Our Constitution’s separation of powers prohibits federal
+courts from assuming legislative authority. As the Court
+today acknowledges, Bivens v. Six Unknown Fed. Narcotics
+Agents, 403 U. S. 388 (1971), crossed that line by
+“impl[ying]” a new set of private rights and liabilities Con-
+gress never ordained. Ante, at 5–6; see also Alexander v.
+Sandoval, 532 U. S. 275, 286 (2001); Nestlé USA, Inc. v.
+Doe, 593 U. S. ___, ___–___ (2021) (GORSUCH, J., concur-
+ring) (slip op., at 4–7).
+   Recognizing its misstep, this Court has struggled for dec-
+ades to find its way back. Initially, the Court told lower
+courts to follow a “two ste[p]” inquiry before applying
+Bivens to any new situation. Ante, at 7. At the first step, a
+court had to ask whether the case before it presented a “new
+context” meaningfully different from Bivens. Ante, at 7. At
+the second, a court had to consider whether “ ‘special fac-
+tors’ ” counseled hesitation before recognizing a new cause
+of action. Ibid. But these tests soon produced their own set
+of questions: What distinguishes the first step from the sec-
+ond? What makes a context “new” or a factor “special”?
+And, most fundamentally, on what authority may courts
+recognize new causes of action even under these standards?
+   Today, the Court helpfully answers some of these linger-
+ing questions. It recognizes that our two-step inquiry really
+boils down to a “single question”: Is there “any reason to
+2                     EGBERT v. BOULE
+
+               GORSUCH, J., concurring in judgment
+
+think Congress might be better equipped” than a court to
+“ ‘weigh the costs and benefits of allowing a damages action
+to proceed’ ”? Ante, at 7–8; see Ziglar v. Abbasi, 582 U. S.
+120, ___–___ (2017) (slip op., at 13–14). But, respectfully,
+resolving that much only serves to highlight the larger re-
+maining question: When might a court ever be “better
+equipped” than the people’s elected representatives to
+weigh the “costs and benefits” of creating a cause of action?
+    It seems to me that to ask the question is to answer it. To
+create a new cause of action is to assign new private rights
+and liabilities—a power that is in every meaningful sense
+an act of legislation. See Sandoval, 532 U. S., at 286–287;
+Nestlé, 593 U. S., at ___ (GORSUCH, J., concurring) (slip op.,
+at 5); Jesner v. Arab Bank, PLC, 584 U. S. ___, ___ (2018)
+(GORSUCH, J., concurring in part and concurring in judg-
+ment) (slip op., at 3). If exercising that sort of authority
+may once have been a “ ‘proper function for common-law
+courts’ ” in England, it is no longer generally appropriate
+“ ‘for federal tribunals’ ” in a republic where the people elect
+representatives to make the rules that govern them. Sand-
+oval, 532 U. S., at 287. Weighing the costs and benefits of
+new laws is the bread and butter of legislative committees.
+It has no place in federal courts charged with deciding cases
+and controversies under existing law.
+    Instead of saying as much explicitly, however, the Court
+proceeds on to conduct a case-specific analysis. And there I
+confess difficulties. The plaintiff is an American citizen
+who argues that a federal law enforcement officer violated
+the Fourth Amendment in searching the curtilage of his
+home. Candidly, I struggle to see how this set of facts dif-
+fers meaningfully from those in Bivens itself. To be sure, as
+the Court emphasizes, the episode here took place near an
+international border and the officer’s search focused on vio-
+lations of the immigration laws. But why does that matter?
+The Court suggests that Fourth Amendment violations
+                  Cite as: 596 U. S. ____ (2022)             3
+
+               GORSUCH, J., concurring in judgment
+
+matter less in this context because of “likely” national-secu-
+rity risks. Ante, at 11–12. So once more, we tote up for
+ourselves the costs and benefits of a private right of action
+in this or that setting and reach a legislative judgment. To
+atone for Bivens, it seems we continue repeating its most
+basic mistake.
+   Of course, the Court’s real messages run deeper than its
+case-specific analysis. If the costs and benefits do not jus-
+tify a new Bivens action on facts so analogous to Bivens it-
+self, it’s hard to see how they ever could. And if the only
+question is whether a court is “better equipped” than Con-
+gress to weigh the value of a new cause of action, surely the
+right answer will always be no. Doubtless, these are the
+lessons the Court seeks to convey. I would only take the
+next step and acknowledge explicitly what the Court leaves
+barely implicit. Sometimes, it seems, “this Court leaves a
+door ajar and holds out the possibility that someone, some-
+day might walk through it” even as it devises a rule that
+ensures “no one . . . ever will.” Edwards v. Vannoy, 593
+U. S. ___, ___ (2021) (GORSUCH, J., concurring) (slip op.,
+at 1). In fairness to future litigants and our lower court col-
+leagues, we should not hold out that kind of false hope, and
+in the process invite still more “protracted litigation des-
+tined to yield nothing.” Nestlé, 593 U. S., at ___ (GORSUCH,
+J., concurring) (slip op., at 7). Instead, we should exercise
+“the truer modesty of ceding an ill-gotten gain,” ibid., and
+forthrightly return the power to create new causes of action
+to the people’s representatives in Congress.
+                 Cite as: 596 U. S. ____ (2022)            1
+
+                   S
+                   Opinion of S, OTOMAYOR
+                    OTOMAYOR     J., dissenting
+                                            , J.
+
+
+
+SUPREME COURT OF THE UNITED STATES
+                          _________________
+
+                           No. 21–147
+                          _________________
+
+
+   ERIK EGBERT, PETITIONER v. ROBERT BOULE
+ ON WRIT OF CERTIORARI TO THE UNITED STATES COURT OF
+            APPEALS FOR THE NINTH CIRCUIT
+                         [June 8, 2022]
+
+   JUSTICE SOTOMAYOR, with whom JUSTICE BREYER and
+JUSTICE KAGAN join, concurring in the judgment in part
+and dissenting in part.
+   Respondent Robert Boule alleges that petitioner Erik Eg-
+bert, a U. S. Customs and Border Patrol agent, violated the
+Fourth Amendment by entering Boule’s property without a
+warrant and assaulting him. Existing precedent permits
+Boule to seek compensation for his injuries in federal court.
+See Bivens v. Six Unknown Fed. Narcotics Agents, 403 U. S.
+388 (1971); Ziglar v. Abbasi, 582 U. S. 120 (2017). The
+Court goes to extraordinary lengths to avoid this result: It
+rewrites a legal standard it established just five years ago,
+stretches national-security concerns beyond recognition,
+and discerns an alternative remedial structure where none
+exists. The Court’s innovations, taken together, enable it
+to close the door to Boule’s claim and, presumably, to others
+that fall squarely within Bivens’ ambit.
+   Today’s decision does not overrule Bivens. It neverthe-
+less contravenes precedent and will strip many more indi-
+viduals who suffer injuries at the hands of other federal of-
+ficers, and whose circumstances are materially
+indistinguishable from those in Bivens, of an important
+remedy. I therefore dissent from the Court’s disposition of
+Boule’s Fourth Amendment claim. I concur in the Court’s
+judgment that Boule’s First Amendment retaliation claim
+2                      EGBERT v. BOULE
+
+                    S
+                    Opinion of S, OTOMAYOR
+                     OTOMAYOR     J., dissenting
+                                             , J.
+
+may not proceed under Bivens, but for reasons grounded in
+precedent rather than this Court’s newly announced test.
+                                I
+   This case comes to the Court following the District
+Court’s grant of summary judgment to Agent Egbert. The
+Court is therefore bound to draw all reasonable factual in-
+ferences in favor of Boule. See Tolan v. Cotton, 572 U. S.
+650, 656–657 (2014) (per curiam). Because the Court fails
+to do so, the factual record is described below in some detail,
+in the light our precedent requires.
+                              A
+  Boule is a U. S. citizen who owns, operates, and lives in a
+small bed-and-breakfast called the Smuggler’s Inn in
+Blaine, Washington. The property line of the land on which
+the inn is located touches the U. S.-Canada border. Shortly
+after purchasing the property in 2000, Boule became aware
+that people used his property to cross the border illegally in
+both directions. Boule began serving as a paid, confidential
+informant for Customs and Border Protection (CBP) in
+2003 and for Immigration and Customs Enforcement (ICE)
+in 2008. At the time of the events at issue in this case,
+Boule was still serving as an informant for ICE. ICE would
+coordinate with CBP and other agencies based on the infor-
+mation Boule provided. Over the years, Boule provided in-
+formation leading to numerous arrests.
+  On the morning of March 20, 2014, petitioner Erik Eg-
+bert, a CBP agent, twice stopped Boule while Boule was
+running errands in town. Agent Egbert knew that Boule
+was a long-time informant for ICE and that he had previ-
+ously worked as an informant for CBP. Agent Egbert asked
+Boule about guests at the inn, and Boule advised him of a
+guest he expected to arrive that day from New York who
+had flown in from Turkey the day before. Boule explained
+that two of his employees were en route to pick the guest up
+                 Cite as: 596 U. S. ____ (2022)           3
+
+                   S
+                   Opinion of S, OTOMAYOR
+                    OTOMAYOR     J., dissenting
+                                            , J.
+
+at the Seattle-Tacoma International Airport. Agent Egbert
+continued patrolling in his CBP vehicle for the rest of the
+morning but stayed near the inn so he would see when the
+car carrying the guest returned. When it arrived, he fol-
+lowed the car into the driveway of the inn, passing a “no
+trespassing” sign. Agent Egbert parked his vehicle behind
+the arriving car in the driveway immediately adjacent to
+the inn.
+  Agent Egbert exited his patrol vehicle and approached
+the car. Boule’s employee also exited the car; the guest re-
+mained inside. From the front porch of his inn, Boule asked
+Agent Egbert to leave. When Agent Egbert refused, Boule
+stepped off the porch, positioned himself between Agent Eg-
+bert and the vehicle, and explained that the person in the
+car was a guest who had come from New York to Seattle
+and who had been through security at the airport. Boule
+again asked Agent Egbert to leave. Agent Egbert grabbed
+Boule by his chest, lifted him up, and shoved him against
+the vehicle and then threw him to the ground. Boule landed
+on his hip and shoulder.
+  Agent Egbert opened the car door and asked the guest
+about his immigration status. Boule called 911 to request
+a supervisor; Agent Egbert relayed the same request over
+his radio. Several minutes later, a supervisor and another
+agent arrived at the inn. After concluding that the guest
+was lawfully in the country (just as Boule had previously
+informed Agent Egbert), the three officers departed. Boule
+later sought medical treatment for his injuries.
+  Boule complained to Agent Egbert’s superiors about the
+incident and filed an administrative claim with CBP, which
+allegedly prompted Agent Egbert to retaliate against Boule.
+Agent Egbert contacted the Internal Revenue Service (IRS),
+the Social Security Administration, the Washington State
+Department of Licensing, and the Whatcom County Asses-
+sor’s Office, asking them to investigate Boule’s business.
+These agencies did so, but none found that Boule had done
+4                      EGBERT v. BOULE
+
+                    S
+                    Opinion of S, OTOMAYOR
+                     OTOMAYOR     J., dissenting
+                                             , J.
+
+anything wrong. Boule paid over $5,000 to his accountant
+to assist him in responding to the IRS’ tax audit. Boule also
+filed claims pursuant to the Federal Tort Claims Act
+(FTCA), which were denied. CBP’s investigation of Agent
+Egbert concluded that he failed to be forthcoming with in-
+vestigators and “demonstrated lack of integrity,” serious of-
+fenses that warranted his removal. Rev. Redacted App.
+184.
+                              B
+  Boule sued Agent Egbert in Federal District Court, seek-
+ing damages under Bivens v. Six Unknown Fed. Narcotics
+Agents, 403 U. S. 388, for violation of Boule’s First and
+Fourth Amendment rights. The District Court granted
+summary judgment to Agent Egbert on both claims. The
+Court of Appeals reversed, concluding that both claims
+were cognizable under Bivens. In the Court of Appeals’
+view, Boule’s Fourth Amendment claim constituted a mod-
+est extension of Bivens. Even so, the court explained, no
+special factors counseled hesitation such that this extension
+should be foreclosed; rather, “Boule’s Fourth Amendment
+excessive force claim is part and parcel of the ‘common and
+recurrent sphere of law enforcement’ ” that remained “a per-
+missible area for Bivens claims.” 998 F. 3d 370, 389 (CA9
+2021) (quoting Ziglar, 582 U. S., at ___ (slip op., at 11)). The
+court separately held that Boule’s First Amendment claim
+could proceed under Bivens.
+  This Court granted certiorari. 595 U. S. ___ (2021).
+                             II
+                             A
+  In Bivens, the plaintiff alleged that Federal Bureau of
+Narcotics agents unlawfully entered his apartment in New
+York City and used constitutionally unreasonable force to
+arrest him. 403 U. S., at 389. This Court observed that an
+“agent acting—albeit unconstitutionally—in the name of
+                      Cite as: 596 U. S. ____ (2022)                      5
+
+                        S
+                        Opinion of S, OTOMAYOR
+                         OTOMAYOR     J., dissenting
+                                                 , J.
+
+the United States possesses a far greater capacity for harm
+than an individual trespasser exercising no authority other
+than his own.” Id., at 392. The Fourth Amendment, the
+Court explained, “guarantees to citizens of the United
+States the absolute right to be free from unreasonable
+searches and seizures carried out by virtue of federal au-
+thority.” Ibid.
+   The Court ultimately held that a “violation of [the Fourth
+Amendment] by a federal agent acting under color of his
+authority gives rise to a cause of action for damages.” Id.,
+at 389. In doing so, the Court observed that existing state-
+law causes of action were no substitute for a federal cause
+of action because “[t]he interests protected by state laws
+regulating trespass and the invasion of privacy” and those
+protected by the Fourth Amendment “may be inconsistent
+or even hostile.” Id., at 394; see also id., at 410 (Harlan, J.,
+concurring in judgment) (“For people in Bivens’ shoes, it is
+damages or nothing”).1 The Court also noted that the case
+before it “involve[d] no special factors counselling hesita-
+tion,” such as a question concerning federal fiscal policy.
+Id., at 396.
+   This Court has twice extended the cause of action first
+articulated in Bivens: first to a Fifth Amendment due pro-
+cess claim for sex discrimination, see Davis v. Passman, 442
+U. S. 228 (1979), and then to an Eighth Amendment delib-
+erate indifference claim for failure to provide proper medi-
+cal attention, see Carlson v. Green, 446 U. S. 14 (1980). In
+Davis, Carlson, and subsequent cases, the Court built on
+
+——————
+  1 For example, an individual “may bar the door against an unwelcome
+
+private intruder, or call the police if he persists in seeking entrance” and
+may seek damages under state law “for any consequent trespass.”
+Bivens, 403 U. S., at 394. By contrast, “[t]he mere invocation of federal
+power by a federal law enforcement official will normally render futile
+any attempt to resist an unlawful entry or arrest by resort to the local
+police; and a claim of authority to enter is likely to unlock the door as
+well.” Ibid.
+6                      EGBERT v. BOULE
+
+                    S
+                    Opinion of S, OTOMAYOR
+                     OTOMAYOR     J., dissenting
+                                             , J.
+
+Bivens’ inquiry to develop a two-step test for determining
+whether a Bivens cause of action may be “defeated.” Carl-
+son, 446 U. S., at 18. First, the Court considered whether,
+under the circumstances of a particular case, special factors
+counseled hesitation in allowing a private right of action to
+proceed. See, e.g., Bivens, 403 U. S., at 396; Davis, 442
+U. S., at 246; Carlson, 446 U. S., at 18; Bush v. Lucas, 462
+U. S. 367, 377–380 (1983). Second, the Court considered
+whether “Congress has provided an alternative remedy
+which it explicitly declared to be a substitute for recovery
+directly under the Constitution and viewed as equally effec-
+tive.” Carlson, 446 U. S., at 18–19; see also, e.g., Davis, 442
+U. S., at 246–247; Bush, 462 U. S., at 377–378; Wilkie v.
+Robbins, 551 U. S. 537, 550 (2007) (describing this two-step
+test). Where, for example, Congress crafted an “elaborate
+remedial system that has been constructed step by step,
+with careful attention to conflicting policy considerations,”
+Bush, 462 U. S., at 388, this Court concluded that “it would
+be inappropriate . . . to supplement that regulatory scheme
+with a new judicial remedy,” id., at 368; accord, Schweiker
+v. Chilicky, 487 U. S. 412, 414 (1988). Applying this two-
+step test, the Court has declined to extend Bivens beyond
+situations like those addressed in Davis, Carlson, and
+Bivens itself. See ante, at 1.
+   In Ziglar v. Abbasi, 582 U. S. 120, the Court not only de-
+clined to extend Bivens but also revised and narrowed its
+two-step analytic framework. The Ziglar Court set forth a
+new inquiry requiring courts considering a Bivens claim
+first to ask whether a case “is different in a meaningful way
+from previous Bivens cases decided by this Court” and
+therefore arises in a “new . . . context.” 582 U. S., at ___
+(slip op., at 16); see also Hernández v. Mesa, 589 U. S. ___,
+___ (2020) (slip op., at 7). The Ziglar Court offered a laun-
+dry list of differences that “might” be meaningful, including
+“the rank of the officers involved; the constitutional right at
+issue; the generality or specificity of the official action; the
+                  Cite as: 596 U. S. ____ (2022)             7
+
+                    S
+                    Opinion of S, OTOMAYOR
+                     OTOMAYOR     J., dissenting
+                                             , J.
+
+extent of judicial guidance as to how an officer should re-
+spond to the problem or emergency to be confronted; the
+statutory or other legal mandate under which the officer
+was operating; the risk of disruptive intrusion by the Judi-
+ciary into the functioning of other branches; or the presence
+of potential special factors that previous Bivens cases did
+not consider.” 582 U. S., at ___ (slip op., at 16). The Court
+recognized, however, that some differences “will be so triv-
+ial that they will not suffice to create a new Bivens context.”
+Id., at ___ (slip op., at 26).
+  If the differences are in fact “meaningful ones,” ibid.,
+“then the context is new,” id., at ___ (slip op., at 16), and a
+court “proceed[s] to the second step” of the analysis, Her-
+nández, 589 U. S., at ___ (slip op., at 7). The second step
+requires courts to consider whether special factors counsel
+hesitation in recognizing a Bivens remedy in a new context.
+Ziglar, 582 U. S., at ___ (slip op., at 12); Hernández, 589
+U. S., at ___ (slip op., at 7).
+  Importantly, even as the Ziglar Court grafted a more de-
+manding new-context inquiry onto the traditional Bivens
+framework, the Court emphasized that its opinion was “not
+intended to cast doubt on the continued force, or even the
+necessity, of Bivens in the search-and-seizure context in
+which it arose.” 582 U. S., at ___ (slip op., at 11). Quite the
+opposite: The Court recognized that Bivens “vindicate[s] the
+Constitution by allowing some redress for injuries” and
+“provides instruction and guidance to federal law enforce-
+ment officers going forward.” 582 U. S., at ___ (slip op., at
+11). Accordingly, the Court explained, there are “powerful
+reasons to retain [Bivens]” in the “common and recurrent
+sphere of law enforcement.” Ibid. The Court further recog-
+nized that “individual instances of discrimination or law en-
+forcement overreach” are, by their nature, “difficult to ad-
+dress except by way of damages actions after the fact.” Id.,
+at ___ (slip op., at 21).
+8                         EGBERT v. BOULE
+
+                       S
+                       Opinion of S, OTOMAYOR
+                        OTOMAYOR     J., dissenting
+                                                , J.
+
+                             B
+   Ziglar and Hernández control here. Applying the two-
+step framework set forth in those cases, the Court of Ap-
+peals’ determination that Boule’s Fourth Amendment claim
+is cognizable under Bivens should be affirmed for two inde-
+pendent reasons. First, Boule’s claim does not present a
+new context. Second, even if it did, no special factors would
+counsel hesitation.
+                              1
+   Boule’s Fourth Amendment claim does not arise in a new
+context. Bivens itself involved a U. S. citizen bringing a
+Fourth Amendment claim against individual, rank-and-file
+federal law enforcement officers who allegedly violated his
+constitutional rights within the United States by entering
+his property without a warrant and using excessive force.
+Those are precisely the facts of Boule’s complaint.
+   The only arguably salient difference in “context” between
+this case and Bivens is that the defendants in Bivens were
+employed at the time by the (now-defunct) Federal Bureau
+of Narcotics, while Agent Egbert was employed by CBP. As
+discussed, however, this Court’s precedent instructs that
+some differences are too “trivial . . . to create a new Bivens
+context.” Ziglar, 582 U. S., at ___ (slip op., at 26).2 That it
+was a CBP agent rather than a Federal Bureau of Narcotics
+agent who unlawfully entered Boule’s property and used
+constitutionally excessive force against him plainly is not
+the sort of “meaningful” distinction that our new-context in-
+quiry is designed to weed out. Ibid.
+——————
+    2 Egbert argues in passing that the fact that he was operating under a
+
+“ ‘statutory . . . mandate’ not invoked in prior cases,” standing alone,
+“dooms [Boule’s] no-new-context argument.” Reply Brief 19 (quoting
+Ziglar, 582 U. S., at ___ (slip op., at 16)). Not so. Egbert fails to show
+that any difference in statutory mandates as between CBP agents and
+other law enforcement officers is “meaningful,” which our precedents re-
+quire him to do. Id., at ___ (slip op., at 16).
+                  Cite as: 596 U. S. ____ (2022)             9
+
+                    S
+                    Opinion of S, OTOMAYOR
+                     OTOMAYOR     J., dissenting
+                                             , J.
+
+   It is of course well established that a Bivens suit involv-
+ing an entirely “ ‘new category of defendants’ ” arises in a
+“ ‘new context.’ ” Ziglar, 582 U. S., at ___ (slip op., at 11);
+see also Hernández, 589 U. S., at ___ (slip op., at 7). The
+Court, however, has never relied on this principle to draw
+artificial distinctions between line-level officers of the 83
+different federal law enforcement agencies with authority
+to make arrests and provide police protection. See Dept. of
+Justice, C. Brooks, Federal Law Enforcement Officers,
+2016—Statistical Tables (NCJ 251922, Oct. 2019),
+https://bjs.ojp.gov/content/pub/pdf/fleo16st.pdf. Indeed, if
+the “new context” inquiry were defined at such a fine level
+of granularity, every case would raise a new context, be-
+cause the Federal Bureau of Narcotics no longer exists. See
+National Archives, Records of the Drug Enforcement Admin-
+istration [DEA] (Aug. 15, 2016), https://www.archives.gov/
+research/guide-fed-records/groups/170.html.
+   Moreover, the “new category of defendants” language
+traces back to a different concern raised in the Court’s de-
+cision in Correctional Services Corp. v. Malesko, 534 U. S.
+61, 68 (2001). That case involved an Eighth Amendment
+claim brought by a federal prisoner against a private corpo-
+ration under contract with the federal Bureau of Prisons.
+The Court observed that “the threat of suit against an indi-
+vidual’s employer,” rather than “the individual directly re-
+sponsible for the alleged injury,” “was not the kind of deter-
+rence contemplated by Bivens.” Id., at 70–71. Applying
+Bivens to a corporate defendant would amount to a “marked
+extension of Bivens . . . to contexts that would not advance
+Bivens’ core purpose of deterring individual officers from
+engaging in unconstitutional wrongdoing.” Malesko, 534
+U. S., at 74; see also FDIC v. Meyer, 510 U. S. 471, 485
+(1994) (declining to allow a Bivens claim to proceed against
+a federal agency for similar reasons). Here, by contrast,
+Boule’s suit against Agent Egbert directly advances that
+core purpose.
+10                      EGBERT v. BOULE
+
+                     S
+                     Opinion of S, OTOMAYOR
+                      OTOMAYOR     J., dissenting
+                                              , J.
+
+  At bottom, Boule’s claim is materially indistinguishable
+from the claim brought in Bivens. His case therefore does
+not present a new context for the purposes of assessing
+whether a Bivens remedy is available.
+                                 2
+   Even assuming that this case presents a new context, no
+special factors warrant foreclosing a Bivens action.
+   The Court “has not defined the phrase ‘special factors
+counselling hesitation,’ ” but it has recognized that the “in-
+quiry must concentrate on whether the Judiciary is well
+suited, absent congressional action or instruction, to con-
+sider and weigh the costs and benefits of allowing a dam-
+ages action to proceed.” Ziglar, 582 U. S., at ___ (slip op.,
+at 12); see also Hernández, 589 U. S., at ___–___ (slip op., at
+7–8). For example, where a claim “would call into question
+the formulation and implementation of a general policy” or
+“require courts to interfere in an intrusive way with sensi-
+tive functions of the Executive Branch,” recognizing a
+Bivens action may be inappropriate. Ziglar, 582 U. S., at
+___–___ (slip op., at 17–18); see also, e.g., Chappell v. Wal-
+lace, 462 U. S. 296, 300 (1983) (declining to extend Bivens
+where military personnel sought damages from superior of-
+ficers, citing concerns about “tamper[ing] with the estab-
+lished relationship between enlisted military personnel and
+their superior officers,” which lies “at the heart of the nec-
+essarily unique structure of the Military Establishment”).
+Precedent thus establishes that “separation-of-powers prin-
+ciples . . . should be central to the [special-factors] analysis.”
+Ziglar, 582 U. S., at ___ (slip op., at 12).
+   Here, the only possible special factor is that Boule’s prop-
+erty abuts an international border. Boule’s case, however,
+is a far cry from others in which the Court declined to ex-
+tend Bivens for reasons of national security or foreign rela-
+tions. In Hernández, for example, a CBP agent shot and
+killed a Mexican child across the U. S.-Mexico border. 589
+                  Cite as: 596 U. S. ____ (2022)            11
+
+                    S
+                    Opinion of S, OTOMAYOR
+                     OTOMAYOR     J., dissenting
+                                             , J.
+
+U. S., at ___ (slip op., at 2). The Mexican Government un-
+successfully sought extradition of the agent to Mexico, and
+after an investigation, the U. S. Department of Justice de-
+clined to bring charges against the agent. Ibid. The par-
+ents of the deceased child attempted to bring a Bivens ac-
+tion against the CBP agent, but this Court held that several
+“warning flags” counseled caution, including a “potential ef-
+fect on foreign relations.” Hernández, 589 U. S., at ___ (slip
+op., at 9). The Court observed that “[a] cross-border shoot-
+ing is by definition an international incident,” and that both
+the United States and Mexico had “legitimate and im-
+portant interests that may be affected by the way in which
+this matter is handled.” Id., at ___, ___ (slip op., at 9, 11).
+The Court concluded that because “regulating the conduct
+of agents at the border unquestionably has national secu-
+rity implications, the risk of undermining border security
+provides reason to hesitate before extending Bivens into
+this field.” Id., at ___ (slip op., at 14).
+   The conduct here took place near an international border
+and involved a CBP agent. That, however, is where the
+similarities with Hernández begin and end. The conduct
+occurred exclusively on U. S. soil, and the injury was to a
+U. S. citizen. This case therefore does not present an “in-
+ternational incident” that might affect diplomatic relations,
+unlike the cross-border killing of a foreign-national child.
+As for national-security concerns, the Court in Hernández
+emphasized that “some [CBP agents] are stationed right at
+the border and have the responsibility of attempting to pre-
+vent illegal entry”; it was “[f]or th[i]s reaso[n],” among oth-
+ers, that their conduct had “a clear and strong connection
+to national security.” Id., at ___ (slip op., at 13). Here, by
+contrast, Agent Egbert was not “attempting to prevent ille-
+gal entry” or otherwise engaged in activities with a “strong
+connection to national security.” Ibid. Agent Egbert was
+aware (because Boule had told him earlier in the day and
+again at the scene) that the foreign national arriving at the
+12                     EGBERT v. BOULE
+
+                    S
+                    Opinion of S, OTOMAYOR
+                     OTOMAYOR     J., dissenting
+                                             , J.
+
+inn had already entered the United States by airplane and
+had been processed by U. S. customs at the airport in New
+York the previous day.
+   Nor does this case present special factors similar to those
+that deterred the Court from recognizing a Bivens action in
+Ziglar. In that case, foreign nationals who had been unlaw-
+fully present in the United States brought a Bivens action
+against three “high executive officers in the Department of
+Justice” and two wardens of the facility where they had
+been held. Ziglar, 582 U. S., at ___ (slip op., at 2). The
+Court reasoned that allowing the plaintiffs’ claims to pro-
+ceed against the executive officers “would call into question
+the formulation and implementation of a general policy,”
+and that the discovery and litigation process would “border
+upon or directly implicate the discussion and deliberations
+that led to the formation of the policy in question,” thereby
+implicating sensitive national-security functions entrusted
+to Congress and the President. Id., at ___–___ (slip op., at
+17–18). If Bivens liability were imposed, the Court ex-
+plained, “high officers who face personal liability for dam-
+ages might refrain from taking urgent and lawful action in
+a time of crisis,” and “the costs and difficulties of later liti-
+gation might intrude upon and interfere with the proper ex-
+ercise of their office.” Ziglar, 582 U. S., at ___ (slip op., at
+22).
+   Here, Boule plainly does not seek to challenge or alter
+“high-level executive policy.” Id., at ___ (slip op., at 16). Al-
+lowing his claim to proceed would not require courts to in-
+trude into “the discussion and deliberations that led to the
+formation” of any policy or national-security decision or in-
+terest. Id., at ___ (slip op., at 18). Agent Egbert, a line of-
+ficer, was engaged in a run-of-the-mill inquiry into the sta-
+tus of a foreign national on U. S. soil who had no actual or
+suggested ties to terrorism, and who recently had been
+through U. S. customs to boot. See id., at ___ (slip op., at
+21) (distinguishing a challenge to “individual instances of
+                   Cite as: 596 U. S. ____ (2022)             13
+
+                    S
+                    Opinion of S, OTOMAYOR
+                     OTOMAYOR     J., dissenting
+                                             , J.
+
+discrimination or law enforcement overreach,” which lends
+itself to a Bivens action, from a challenge to “large-scale pol-
+icy decisions,” which does not). No special factors counsel
+against allowing Boule’s Bivens action to proceed.
+                               C
+   Boule also argues that his First Amendment retaliatory-
+investigation claim is cognizable under Bivens. I concur in
+the Court’s judgment that it is not, but I arrive at that con-
+clusion by following precedent rather than by applying the
+Court’s new, single-step inquiry. Ante, at 7; see infra, at
+15–17.
+   This Court has repeatedly assumed without deciding that
+Bivens extends to First Amendment claims, see Wood v.
+Moss, 572 U. S. 744, 757 (2014), but has never squarely held
+as much, see Reichle v. Howards, 566 U. S. 658, 663, n. 4
+(2012). Accordingly, Boule’s First Amendment retaliation
+presents a new context for the purpose of the Bivens analy-
+sis. See Ziglar, 582 U. S., at ___ (slip op., at 24) (noting that
+a case can present a new context if it implicates a different
+constitutional right than those already recognized as cog-
+nizable under Bivens).
+   Moving to the second step of the Bivens inquiry, unlike
+Boule’s Fourth Amendment claim, there is “reason to
+pause” before extending Bivens to Boule’s First Amendment
+claim. Hernández, 589 U. S., at ___ (slip op., at 7). In par-
+ticular, his First Amendment claim raises line-drawing con-
+cerns similar to those this Court identified in Wilkie, 551
+U. S. 537. In Wilkie, a landowner sought to bring a Bivens
+action against federal officials whom the landowner ac-
+cused of harassment and intimidation meant to extract an
+easement across his property. 551 U. S., at 541. The Court
+observed that “defining a workable cause of action” for such
+a claim was “difficul[t].” Id., at 555; see also id., at 557.
+Recognizing a Bivens action to redress retaliation under
+such circumstances would, in the Court’s view, “invite
+14                     EGBERT v. BOULE
+
+                    S
+                    Opinion of S, OTOMAYOR
+                     OTOMAYOR     J., dissenting
+                                             , J.
+
+claims in every sphere of legitimate governmental action af-
+fecting property interests” and “across this enormous swath
+of potential litigation would hover the difficulty of devising
+a . . . standard that could guide an employee’s conduct and
+a judicial factfinder’s conclusion.” 551 U. S., at 561. Be-
+cause of the “elusiveness of a limiting principle” for claims
+like the landowner’s, id., at 561, n. 11, the Court decided
+that courts were ill equipped to tailor an appropriate rem-
+edy, id., at 562.
+   Boule’s First Amendment retaliation claim raises similar
+concerns. Unlike the constitutional rights this Court has
+recognized as cognizable under Bivens, First Amendment
+retaliation claims could potentially be brought against
+many different federal officers, stretching substantially be-
+yond the “common and recurrent sphere of law enforce-
+ment” to reach virtually all federal employees. Ziglar, 582
+U. S., at ___ (slip op., at 11). Under such circumstances,
+this Court’s precedent holds that “ ‘evaluat[ing] the impact
+of a new species of litigation’ ” on the efficiency of civil ser-
+vice is a task for Congress, not the courts. Wilkie, 551 U. S.,
+at 562; see also Ziglar, 582 U. S., at ___ (slip op., at 13). I
+therefore concur in the judgment as to the Court’s reversal
+of the Court of Appeals’ conclusion that Boule’s First
+Amendment Bivens action may proceed, not for the reasons
+the Court identifies, ante, at 13–16, but because precedent
+requires it.
+                            III
+   If the legal standard the Court articulates to reject
+Boule’s Fourth Amendment claim sounds unfamiliar, that
+is because it is. Just five years after circumscribing the
+standard for allowing Bivens claims to proceed, a restless
+and newly constituted Court sees fit to refashion the stand-
+ard anew to foreclose remedies in yet more cases. The
+measures the Court takes to ensure Boule’s claim is dis-
+missed are inconsistent with governing precedent.
+                  Cite as: 596 U. S. ____ (2022)            15
+
+                    S
+                    Opinion of S, OTOMAYOR
+                     OTOMAYOR     J., dissenting
+                                             , J.
+
+                               A
+   Two Terms ago, this Court reiterated and reaffirmed
+Ziglar’s two-step test for assessing whether a claim may be
+brought as a Bivens action. See Hernández, 589 U. S., at
+___ (slip op., at 7) (“When asked to extend Bivens, we en-
+gage in a two-step inquiry”). Today, however, the Court
+pays lip service to the test set out in our precedents, but
+effectively replaces it with a new single-step inquiry de-
+signed to constrict Bivens. Ante, at 7 (acknowledging this
+Court’s previous “two ste[p]” standard but insisting that
+“those steps often resolve to a single question: whether
+there is any reason to think that Congress might be better
+equipped to create a damages remedy”); ante, at 8 (positing
+that “[t]he newness of [some] ‘new context[s]’ should alone
+require dismissal” (some internal quotation marks omit-
+ted)). The Court goes so far as to announce that “[t]he
+Bivens inquiry does not invite federal courts to inde-
+pendently assess the costs and benefits of implying a cause
+of action,” ante, at 11; instead, courts must “only” decide
+“whether there is any rational reason (even one) to think
+that Congress is better suited to ‘weigh the costs and bene-
+fits of allowing a damages action to proceed,’ ” ibid. (quoting
+Ziglar, 582 U. S., at ___ (slip op., at 12)).
+   That approach contrasts starkly with the standard the
+Court announced in Ziglar and applied in Hernández. This
+Court regularly has considered whether courts are “well
+suited . . . to consider and weigh the costs and benefits of
+allowing a damages action to proceed,” Ziglar, 582 U. S., at
+___ (slip op., at 12), and have never held that such weighing
+is categorically impermissible, contrary to the Court’s anal-
+ysis today. See also Wilkie, 551 U. S., at 554 (noting that
+the Bivens inquiry asks courts to “weig[h] reasons for and
+against the creation of a new cause of action”).
+   The Court justifies its innovations by selectively quoting
+our precedents and presenting its newly announced stand-
+16                     EGBERT v. BOULE
+
+                    S
+                    Opinion of S, OTOMAYOR
+                     OTOMAYOR     J., dissenting
+                                             , J.
+
+ard as if it were always the rule. The Court’s repeated cita-
+tion to United States v. Stanley, 483 U. S. 669 (1987), is just
+one example. The Court cites Stanley for, among other
+things, the proposition that the special-factors analysis
+must be conducted at a very broad level of generality. Ante,
+at 11. Stanley, however, cautioned against a case-specific
+special-factors analysis in the narrow context of “judicial in-
+trusion upon military discipline.” 483 U. S., at 681. As it
+had in previous cases seeking to raise Bivens actions in the
+military context, the Stanley Court emphasized the need to
+be “protective of military concerns,” 483 U. S., at 681, and
+to avoid “call[ing] into question military discipline and de-
+cisionmaking,” id., at 682. The Court therefore determined
+that in the military sphere, the special-factors analysis
+should be applied somewhat more broadly than the re-
+spondent urged. Id., at 681. Stanley, in other words, re-
+flected the Court’s longstanding approach to Bivens cases:
+considering the facts and the substantive context of each
+case and determining whether special factors counseled
+hesitation. Stanley did not purport to articulate a special-
+factors framework that should apply to all Bivens cases go-
+ing forward.
+   The Court further declares that “a plaintiff cannot justify
+a Bivens extension based on ‘parallel circumstances’ ” with
+previous cases that have recognized a Bivens remedy. Ante,
+at 17. To the extent these statements suggest an exacting
+new-context inquiry, they are in serious tension with the
+Court’s longstanding rule that trivial differences alone do
+not create a new Bivens context. See Ziglar, 582 U. S., at
+___ (slip op., at 26); see also ante, at 2 (GORSUCH, J., concur-
+ring in judgment) (“Candidly, I struggle to see how this set
+of facts differs meaningfully from those in Bivens itself ”).
+Indeed, until today, the Court has never so much as hinted
+that courts should refuse to permit a Bivens action in a case
+                     Cite as: 596 U. S. ____ (2022)                    17
+
+                       S
+                       Opinion of S, OTOMAYOR
+                        OTOMAYOR     J., dissenting
+                                                , J.
+
+involving facts substantially identical to those in Bivens it-
+self. Supra, at 8–9.3
+                              B
+   The Court’s application of its new standard to Boule’s
+Fourth Amendment claim underscores just how novel that
+standard is. Even assuming the claim presents a new con-
+text, the Court’s insistence that national-security concerns
+bar the claim directly contravenes Ziglar. Moreover, the
+Court’s holding that a nonbinding administrative investi-
+gation process, internal to the agency and offering no mean-
+ingful protection of the constitutional interests at stake,
+constitutes an alternative remedy that forecloses Bivens re-
+lief blinks reality.
+                               1
+   The Court acknowledges the force of the Court of Appeals’
+conclusion that Bivens and this case present “ ‘almost par-
+allel circumstances,’ ” but it nonetheless concludes that a
+most unlikely special factor counsels hesitation: the
+“national-security context.” Ante, at 10. By the Court’s tell-
+ing, Hernández declined to recognize a Bivens action “be-
+cause ‘regulating the conduct of agents at the border un-
+questionably has national security implications,’ and the
+‘risk of undermining border security provides reason to hes-
+itate before extending Bivens into this field.’ ” Ante, at 9
+——————
+   3 The Court supports its decision not to recognize an action under
+
+Bivens v. Six Unknown Fed. Narcotics Agents, 403 U. S. 388 (1971), by
+observing that we have declined to recognize a Bivens-style cause of ac-
+tion for other constitutional violations. Ante, at 1. What the Court fails
+to acknowledge, however, is that each of those cases presented a mean-
+ingfully new context and/or raised special factors counseling hesitation
+that are not present in this case. See supra, at 6, 9–10, 13–14, 15–16;
+infra, at 21–22. The one exception is Hui v. Castaneda, 559 U. S. 799,
+808 (2010), in which the Court did not have to conduct this analysis be-
+cause it held the FTCA’s comprehensive remedial scheme, which pro-
+vided both a cause of action and an exclusive damages remedy for the
+claim at issue, clearly precluded a Bivens claim.
+18                     EGBERT v. BOULE
+
+                    S
+                    Opinion of S, OTOMAYOR
+                     OTOMAYOR     J., dissenting
+                                             , J.
+
+(quoting Hernández, 589 U. S., at ___ (slip op., at 14)). That
+reasoning, the Court concludes, “applies here with full
+force” because “national security is at issue.” Ante, at 9–10.
+   This is sheer hyperbole. Most obviously, the Court’s con-
+clusion that this case, which involves a physical assault by
+a federal officer against a U. S. citizen on U. S. soil, raises
+“national security” concerns does exactly what this Court
+counseled against just four years ago. Back then, the Court
+advised that “national-security concerns must not become a
+talisman to use to ward off inconvenient claims—a ‘label’
+used to ‘cover a multitude of sins.’ ” Ziglar, 582 U. S., at ___
+(slip op., at 20) (quoting Mitchell v. Forsyth, 472 U. S. 511,
+523 (1985)). It explained that this “danger of abuse is even
+more heightened given the difficulty of defining the security
+interest in domestic cases.” Ziglar, 582 U. S., at ___ (slip
+op., at 20) (internal quotation marks omitted). This case
+does not remotely implicate national security. The Court
+may wish it were otherwise, but on the facts of this case, its
+effort to raise the specter of national security is mere sleight
+of hand.
+   Nor is there any indication that Congress acted to deny a
+Bivens remedy for a case like this, which otherwise might
+counsel hesitation. See Bush, 462 U. S., at 368 (declining
+to “supplement” Congress’ existing scheme “with a new ju-
+dicial remedy”). Congress has not provided that federal law
+enforcement officers may enter private property near a bor-
+der at any time or for any purpose. Quite the contrary: Con-
+gress has determined that immigration officers may enter
+“private lands” within 25 miles of an international border
+without a warrant only “for the purpose of patrolling the
+border to prevent the illegal entry of aliens into the United
+States.” 66 Stat. 233, 8 U. S. C. §1357(a)(3). This allowance
+is itself subject to exceptions: Officers cannot enter a
+“dwellin[g]” for immigration enforcement purposes without
+a warrant. Ibid. Mere proximity to a border, in other
+words, did not give Agent Egbert greater license to enter
+                    Cite as: 596 U. S. ____ (2022)                  19
+
+                      S
+                      Opinion of S, OTOMAYOR
+                       OTOMAYOR     J., dissenting
+                                               , J.
+
+Boule’s property. Nor does it diminish or call into question
+the remedies for constitutional violations that a plaintiff
+may pursue, particularly where, as here, an agent unques-
+tionably was not acting “for the purpose of patrolling the
+border to prevent the illegal entry of aliens into the United
+States.” Ibid.
+   Remarkably, the Court goes beyond invoking its national-
+security talisman in this case alone. In keeping with the
+unprecedented level of generality the Court imports into
+the special-factors analysis, the Court holds that courts are
+not “competent to authorize a damages action . . . against
+Border Patrol agents generally.” Ante, at 11. This extraor-
+dinary and gratuitous conclusion contradicts decades of
+precedent requiring a context-specific determination of
+whether a particular claim presents special factors counsel-
+ing hesitation. See supra, at 6–8.4
+   The consequences of the Court’s drive-by, categorical as-
+sertion will be severe. Absent intervention by Congress,
+CBP agents are now absolutely immunized from liability in
+any Bivens action for damages, no matter how egregious the
+misconduct or resultant injury. That will preclude redress
+under Bivens for injuries resulting from constitutional vio-
+lations by CBP’s nearly 20,000 Border Patrol agents, in-
+cluding those engaged in ordinary law enforcement activi-
+ties, like traffic stops, far removed from the border. U. S.
+Customs and Border Protection, On a Typical Day in
+Fiscal Year 2021, CBP . . . (2022), https://www.cbp.gov/
+newsroom/stats/typical-day-fy2021. This is no hypothet-
+ical: Certain CBP agents exercise broad authority to make
+warrantless arrests and search vehicles up to 100 miles
+away from the border. See 8 U. S. C. §1357(a); 8 CFR
+——————
+  4 Any concerns that a case-specific Bivens inquiry in cases involving
+
+CBP or ICE agents would pose administrability problems is misplaced.
+See Brief for American Civil Liberties Union et al. as Amici Curiae 14–
+18 (citing lower court cases that have applied this approach to suits
+against CBP and ICE agents).
+20                         EGBERT v. BOULE
+
+                        S
+                        Opinion of S, OTOMAYOR
+                         OTOMAYOR     J., dissenting
+                                                 , J.
+
+§287.1(a)(2) (2021). The Court’s choice to foreclose liability
+for constitutional violations that occur in the course of such
+activities, based on even the most tenuous and hypothetical
+connection to the border (and thereby, to the “national-
+security context”), betrays the context-specific nature of
+Bivens and shrinks Bivens in the core Fourth Amendment
+law enforcement sphere where it is needed most. See
+Ziglar, 582 U. S., at ___ (slip op., at 11).5
+                              2
+  The Court further proclaims that Congress has provided
+alternative remedies that “independently foreclose” a
+Bivens action in this case. Ante, at 12. The administrative
+remedy the Court perceives, however, is no remedy whatso-
+ever.
+  The sole “remedy” the Court cites is an administrative
+grievance procedure that does not provide Boule with any
+relief. The statute on which the Court relies provides: The
+“Secretary of Homeland Security . . . shall have control, di-
+rection, and supervision of all employees and of all the files
+and records of [CBP].” 8 U. S. C. §1103(a)(2); see ante, at
+12. Administrative regulations direct CBP to investigate
+alleged violations of its own standards by its own employ-
+ees. See 8 CFR §§287.10(a)–(b).6 The Court sees fit to defer
+——————
+   5 To the extent the Court’s decision may be motivated by fears that al-
+
+lowing this Bivens action to proceed will open the floodgates to countless
+claims in the future, cf. ante, at 15, that concern is overblown. The doc-
+trine of qualified immunity will continue to protect government officials
+from liability for damages unless a plaintiff “ ‘pleads facts showing (1)
+that the official violated a statutory or constitutional right, and (2) that
+the right was “clearly established” at the time of the challenged con-
+duct.’ ” Wood v. Moss, 572 U. S. 744, 757 (2014) (quoting Ashcroft v. al-
+Kidd, 563 U. S. 731, 735 (2011)).
+   6 The regulations require any investigative report regarding excessive
+
+force to “be referred promptly for appropriate action in accordance with
+the policies and procedures of the Department [of Homeland Security].”
+8 CFR §287.10(c). Those policies and procedures, in turn, explicitly es-
+tablish no “right or benefit, substantive or procedural, enforceable at law
+                    Cite as: 596 U. S. ____ (2022)                21
+
+                      S
+                      Opinion of S, OTOMAYOR
+                       OTOMAYOR     J., dissenting
+                                               , J.
+
+to this procedure, even while acknowledging that complain-
+ants in Boule’s position have no right to participate in the
+proceedings or to seek judicial review of any determination.
+Ante, at 12. The Court supports its conclusion that CBP’s
+internal administrative grievance procedure offers an ade-
+quate remedy by insisting that “we have never held that a
+Bivens alternative must afford rights to participation or ap-
+peal.” Ante, at 13. In the Court’s view, “[s]o long as Con-
+gress or the Executive has created a remedial process that
+it finds sufficient to secure an adequate level of deterrence,
+the courts cannot second-guess that calibration by superim-
+posing a Bivens remedy.” Ibid. (emphasis added).
+   This analysis drains the concept of “remedy” of all mean-
+ing. To be sure, the Court has previously deemed Bivens
+claims foreclosed by “substantive” remedies to claimants
+that are in significant part administrative. Bush, 462 U. S.,
+at 385; see also, e.g., Schweiker, 487 U. S., at 424–425. The
+Court also has recognized that existing remedies need not
+“provide complete relief for the plaintiff,” Bush, 462 U. S.,
+at 388, including loss due to emotional distress or mental
+anguish, or attorney’s fees, Schweiker, 487 U. S., at 424–
+425. Until today, however, this Court has never held that
+a threadbare disciplinary review process, expressly confer-
+ring no substantive rights, “secure[s] adequate deterrence
+and afford[s] . . . an alternative remedy.” Ante, at 14. Nor
+has it held that remedies providing no relief to the individ-
+ual whose constitutional rights have been violated are “ad-
+equate” for the purpose of foreclosing a Bivens action. To
+the contrary, each of the alternative remedies the Court has
+recognized has afforded participatory rights, an oppor-
+tunity for judicial review, and the potential to secure at
+least some meaningful relief. See, e.g., Minneci v. Pollard,
+565 U. S. 118, 127 (2012) (state tort law); Ziglar, 582 U. S.,
+——————
+or in equity.” Dept. of Homeland Security, Dept. Policy on the Use of
+Force, §X, Policy Statement 044–05 (Sept. 7, 2018).
+22                        EGBERT v. BOULE
+
+                       S
+                       Opinion of S, OTOMAYOR
+                        OTOMAYOR     J., dissenting
+                                                , J.
+
+at ___ (slip op., at 25) (petition for writ of habeas corpus or
+injunctive relief ); Bush, 462 U. S., at 385.7
+   The Court previously has emphasized that a Bivens ac-
+tion may be inappropriate where “Congress has provided an
+alternative remedy which it explicitly declared to be a sub-
+stitute for recovery directly under the Constitution and
+viewed as equally effective.” Carlson, 446 U. S., at 18–19
+(emphasis deleted). Thus, our cases declining to extend
+Bivens have done so where Congress, sometimes in conjunc-
+tion with the Executive Branch, provided “comprehensive”
+and meaningful remedies. Bush, 462 U. S., at 388; see also
+Schweiker, 487 U. S., at 414, 423, 428 (emphasizing that
+the “design” of the “elaborate remedial scheme” in the So-
+cial Security disability program “suggests that Congress
+has provided what it considers adequate remedial mecha-
+nisms for constitutional violations that may occur in the
+course of its administration”); Malesko, 534 U. S., at 72
+(noting that remedies available to the plaintiff were “at
+least as great, and in many respects greater, than anything
+
+——————
+   7 Aside from CBP’s internal grievance procedure, Agent Egbert con-
+
+tends that the FTCA offers an alternative remedy for claims like Boule’s.
+This Court does not endorse this argument, and for good reason. This
+Court repeatedly has observed that the FTCA does not cover claims
+against Government employees for “violation[s] of the Constitution of the
+United States.” 28 U. S. C. §2679(b)(2)(A); see Wilkie v. Robbins, 551
+U. S. 537, 553 (2007); Carlson v. Green, 446 U. S. 14, 20 (1980) (“Con-
+gress views FTCA and Bivens as parallel, complementary causes of ac-
+tion”); Correctional Services Corp. v. Malesko, 534 U. S. 61, 68 (2001)
+(noting that it was “crystal clear” that “Congress intended the FTCA and
+Bivens to serve as parallel and complementary sources of liability” (in-
+ternal quotation marks omitted)). Just two Terms ago, the Court reaf-
+firmed that by carving out claims “ ‘brought for . . . violation[s] of the
+Constitution’ ” from the FTCA’s “ ‘exclusive remedy for most claims
+against Government employees arising out of their official conduct,’ ”
+“Congress made clear that it was not attempting to abrogate Bivens” and
+instead “simply left Bivens where it found it,” Hernández v. Mesa, 589
+U. S. ___, ___–___,
+               ֪    and n. 9 (2020) (slip op., at 16–17, and n. 9) (quoting
+Hui, 559 U. S., at 806; §2679(b)(2)(A)).
+                     Cite as: 596 U. S. ____ (2022)                  23
+
+                      S
+                      Opinion of S, OTOMAYOR
+                       OTOMAYOR     J., dissenting
+                                               , J.
+
+that could be had under Bivens”); Minneci, 565 U. S., at 120
+(rejecting Bivens action for Eighth Amendment violations
+against employees of a privately operated federal prison be-
+cause “state tort law authorizes adequate alternative dam-
+ages actions—actions that provide both significant deter-
+rence and compensation”). By the Court’s logic, however,
+the existence of any disciplinary framework, even if crafted
+by the Executive Branch rather than Congress, and even if
+wholly nonparticipatory and lacking any judicial review, is
+sufficient to bar a court from recognizing a Bivens remedy.
+That reasoning, as disturbing as it is wrong, marks yet an-
+other erosion of Bivens’ deterrent function in the law en-
+forcement sphere.8
+                                C
+   The Court thinly veils its disapproval of Bivens, ending
+its opinion by citing a string of dissenting opinions and
+single-Member concurrences by various Members of this
+Court expressing criticisms of Bivens. Ante, at 16–17. But
+the Court unmistakably stops short of overruling Bivens
+and its progeny, and appropriately so. Even while declining
+to extend Bivens to new contexts, this Court has reaffirmed
+that it did “not inten[d] to cast doubt on the continued force,
+or even the necessity, of Bivens in the search-and-seizure
+context in which it arose.” Ziglar, 582 U. S., at ___ (slip op.,
+at 11). Although today’s opinion will make it harder for
+plaintiffs to bring a successful Bivens claim, even in the
+Fourth Amendment context, the lower courts should not
+read it to render Bivens a dead letter.
+   That said, the Court plainly modifies the Bivens standard
+in a manner that forecloses Boule’s claims and others like
+them that should be permitted under this Court’s Bivens
+——————
+  8 Even beyond its doctrinal innovations on the merits, the Court also
+
+fashions a brand new, Bivens-specific procedural rule under which it ex-
+cuses Egbert’s forfeiture of his argument that CBP’s administrative pro-
+cess suffices as an alternative remedy. Ante, at 12, n. 3.
+24                     EGBERT v. BOULE
+
+                    S
+                    Opinion of S, OTOMAYOR
+                     OTOMAYOR     J., dissenting
+                                             , J.
+
+precedents. That choice is in tension with the Court’s in-
+sistence that “prescribing a cause of action is a job for Con-
+gress, not the courts.” Ante, at 1; see ante, at 11 (cautioning
+against “frustrat[ing] Congress’s policymaking role” when
+considering whether special factors counsel hesitation).
+Faithful adherence to this logic counsels maintaining
+Bivens in its current scope, but does not support changing
+the status quo to constrict Bivens, as the Court does today.
+Congress, after all, has recognized and relied on the Bivens
+cause of action in creating and amending other remedies,
+including the FTCA. By nevertheless repeatedly amending
+the legal standard that applies to Bivens claims and whit-
+tling down the number of claims that remain viable, the
+Court itself is making a policy choice for Congress. What-
+ever the merits of that choice, the Court’s decision today is
+no exercise in judicial modesty.
+                          *     *    *
+  This Court’s precedents recognize that suits for damages
+play a critical role in deterring unconstitutional conduct by
+federal law enforcement officers and in ensuring that those
+whose constitutional rights have been violated receive
+meaningful redress. The Court’s decision today ignores our
+repeated recognition of the importance of Bivens actions,
+particularly in the Fourth Amendment search-and-seizure
+context, and closes the door to Bivens suits by many who
+will suffer serious constitutional violations at the hands of
+federal agents. I respectfully dissent from the Court’s treat-
+ment of Boule’s Fourth Amendment claim.
+
+```
+
+---
+
+## GROUP: _overhaul2/lake/cases/Entick v. Carrington.json  (`lake-record`, 2 assertions)
+
+### content_page
+
+```
+---
+title: "Entick v. Carrington"
+type: case
+citation: "19 How. St. Tr. 1029 (1765)"
+parallel_cite: "95 Eng. Rep. 807; 2 Wils. K.B. 275"
+neutral_cite: "[1765] EWHC KB J98"
+court: "Court of Common Pleas (England)"
+court_level: other
+circuit: ""
+year: 1765
+date_decided: 1765-11-02
+docket: ""
+authority_weight: Historical
+treatment:
+  field_i_validity: good_law
+  as_of_content: 1765-11-02
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Entick v. Carrington
+  varies_by_point: false
+  scope_note: "Off-CL record (A16/A17): CL citator lanes intentionally not run. Validity rests on the O1 web-verified page treatment (legacy 'good', as of 2026-06-30) re-seeded post-elevation per the S1 A4 mapping; Entick's foundational status is favorably restated by SCOTUS (Boyd, Jones, Riley). Authority weight remains Historical (English origin)."
+  point_overrides: []
+courtlistener:
+  opinion_url: ""
+  cluster_id: null
+  opinion_id: null
+  identity_checked: true
+homes:
+  - page: "[[Common Law Origins]]"
+    role: "Key — Anchor (foundational origin)"
+related: ["[[Wilkes v. Wood]]", "[[Boyd v. United States]]", "[[Katz v. United States]]"]
+aliases: []
+tags: ["case", "historical", "common-law-origins", "general-warrant", "fourth-amendment", "trespass", "english-origins"]
+holding: "A Secretary of State's general warrant to break into a home and seize the owner's books and papers in search of seditious libel is illegal: under the law of England every invasion of private property is a trespass requiring positive legal authority, and no such authority existed for this search and seizure."
+lake:
+  record_id: Entick v. Carrington
+  status: verified_off_cl
+  projected_at: 2026-07-07
+off_cl_links:
+  - source: BAILII
+    url: "https://www.bailii.org/ew/cases/EWHC/KB/1765/J98.html"
+    confirmed:
+      caption: "Entick v Carrington & Ors"
+      cite: "[1765] EWHC KB J98; 95 ER 807; 19 St Tr 1029; [1558-1774] All ER Rep 41"
+      court: "King's Bench (BAILII retrospective filing label; historical court of decision: Court of Common Pleas, Camden CJ)"
+      date: 1765-11-02
+    checked_date: 2026-07-06
+  - source: "Founders' Constitution"
+    url: "https://press-pubs.uchicago.edu/founders/documents/amendIVs6.html"
+    confirmed:
+      caption: Entick v. Carrington
+      cite: 95 Eng. Rep. 807
+      court: "K.B. (Wilson's-Reports reprint label; historical court of decision: Court of Common Pleas)"
+      date: 1765-11-02
+    checked_date: 2026-07-06
+---
+
+# Entick v. Carrington
+
+*19 How. St. Tr. 1029 (C.P. 1765)* · Court of Common Pleas (England) · **Historical** · Treatment: **good** *(as of 2026-06-30)*
+<!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
+
+## Background
+On a general warrant issued by the Earl of Halifax, a Secretary of State, the King's messenger Nathan Carrington and three others broke into the house of the writer John Entick, searched it for several hours, and carried away his books and papers, in search of evidence that Entick had written seditious libels (*The Monitor*). Entick sued the messengers in trespass. The defendants justified their conduct solely by the Secretary of State's warrant.
+
+## Issue
+Whether a Secretary of State's general warrant authorizing officers to break into a private home and seize the owner's papers, in search of seditious libel, was lawful authority for what would otherwise be a trespass.
+
+## Rule
+No. Lord Camden, C.J., grounded the decision in the protection of private property and the requirement of positive legal authority for any intrusion: "By the laws of England, every invasion of private property, be it ever so minute, is a trespass. No man can set his foot upon my ground without my licence, but he is liable to an action, though the damage be nothing …" — 19 How. St. Tr. at 1066; 95 Eng. Rep. at 817. ^pin-817
+
+Because the executive could point to no law authorizing the warrant, it had none: "If it is law, it will be found in our books. If it is not to be found there, it is not law." — *Id.* ^pin-817b
+
+## Application
+The defendants could justify the entry and seizure only if some positive law authorized it. No statute and no precedent authorized a Secretary of State to issue a warrant to break into a private house and carry away the owner's papers in search of evidence of seditious libel. Silence in the law books was decisive: because no authority for the practice could be found, the warrant gave the messengers no legal protection, and their entry and seizure of Entick's papers were a trespass.
+
+## Conclusion
+Judgment for Entick. The general warrant was illegal and afforded the messengers no defense; intrusion upon a person's house and papers requires authority the law actually confers, which here did not exist.
+
+## Treatment & subsequent history
+- **Status:** good *(as of 2026-06-30)* — **Historical** (English origin; Court of Common Pleas).
+- *Entick* is one of the two great English general-warrant cases (with [[Wilkes v. Wood]]) that the Fourth Amendment was written to enshrine. The U.S. Supreme Court has repeatedly treated it as authoritative on the original meaning of the Amendment — most famously in [[Boyd v. United States]], and it continues to be invoked in modern search-and-seizure decisions (e.g. the property-trespass theory revived in *[[United States v. Jones]]* and discussed alongside [[Katz v. United States]]). Its core principle remains good law.
+
+## Appears on
+- [[Common Law Origins]] — *Key — Anchor (foundational origin)*
+
+## Sources
+- *Entick v. Carrington*, 19 How. St. Tr. 1029 (C.P. 1765); 95 Eng. Rep. 807; 2 Wils. K.B. 275 — pinpoints: 19 How. St. Tr. at 1066 (95 Eng. Rep. at 817). No CourtListener record (English King's-era case); identity and quotations confirmed against Howell's State Trials and the English Reports. *(Decided in the Court of Common Pleas, Lord Camden, C.J.; the "Wils. K.B." citation is the Wilson's King's Bench Reports series, not the deciding court.)*
+
+```
+
+### group_inventory (assertions under review)
+
+```jsonl
+{"assertion_id": "37f3b932b7cd90fe", "dimension": "existence", "kind": "case_cite", "locator": {"record_id": "Entick v. Carrington"}, "payload": {"all": [{"cite": "19 How. St. Tr. 1029", "page": 1029, "reporter": "How. St. Tr.", "selected_official": true, "source": "off_cl.adjudication", "type": "official", "volume": 19}, {"cite": "95 Eng. Rep. 807", "page": 807, "reporter": "Eng. Rep.", "selected_official": false, "source": "off_cl.adjudication", "type": "parallel", "volume": 95}, {"cite": "2 Wils. K.B. 275", "page": 275, "reporter": "Wils. K.B.", "selected_official": false, "source": "off_cl.adjudication", "type": "parallel", "volume": 2}, {"cite": "[1765] EWHC KB J98", "page": null, "reporter": null, "selected_official": false, "source": "off_cl.adjudication", "type": "vendor_neutral", "volume": null}], "display": "19 How. St. Tr. 1029 (C.P. 1765)", "official": {"cite": "19 How. St. Tr. 1029", "page": 1029, "reporter": "How. St. Tr.", "selected_official": true, "source": "off_cl.adjudication", "type": "official", "volume": 19}, "official_selection_present": true, "record_id": "Entick v. Carrington"}}
+{"assertion_id": "eb61c62b147e4fcd", "dimension": "treatment", "kind": "treatment", "locator": {"record_id": "Entick v. Carrington"}, "payload": {"as_of_content": "1765-11-02", "as_of_treatment": "2026-06-30", "field_i_validity": "good_law", "record_id": "Entick v. Carrington", "scope_note": "Off-CL record (A16/A17): CL citator lanes intentionally not run. Validity rests on the O1 web-verified page treatment (legacy 'good', as of 2026-06-30) re-seeded post-elevation per the S1 A4 mapping; Entick's foundational status is favorably restated by SCOTUS (Boyd, Jones, Riley). Authority weight remains Historical (English origin).", "varies_by_point": false}}
+```
+
+### lake record — Entick v. Carrington
+
+```json
+{
+  "schema_version": "s2.v1",
+  "record_id": "Entick v. Carrington",
+  "stub": false,
+  "status": "verified_off_cl",
+  "identity": {
+    "case_name": "Entick v. Carrington",
+    "case_name_short": "Entick",
+    "case_name_full": "Entick v Carrington & Ors",
+    "input_case_name": "Entick v. Carrington",
+    "court": "Court of Common Pleas (England)",
+    "court_id": null,
+    "court_level": "other",
+    "circuit": null,
+    "state": null,
+    "date_decided": "1765-11-02",
+    "year": 1765,
+    "docket": null,
+    "cluster_id": null,
+    "lead_opinion_id": null,
+    "sibling_ids": [],
+    "absolute_url": null,
+    "identity_method": "off_cl",
+    "expected_citation_found": true,
+    "party_name_in_text": true,
+    "canonical_name_match": true,
+    "alternates": [],
+    "reason_code": "outside_cl_corpus_verified_by_off_cl_two_key"
+  },
+  "citations": {
+    "official": {
+      "cite": "19 How. St. Tr. 1029",
+      "volume": 19,
+      "reporter": "How. St. Tr.",
+      "page": 1029,
+      "type": "official",
+      "selected_official": true,
+      "source": "off_cl.adjudication"
+    },
+    "parallel": [
+      {
+        "cite": "95 Eng. Rep. 807",
+        "volume": 95,
+        "reporter": "Eng. Rep.",
+        "page": 807,
+        "type": "parallel",
+        "selected_official": false,
+        "source": "off_cl.adjudication"
+      },
+      {
+        "cite": "2 Wils. K.B. 275",
+        "volume": 2,
+        "reporter": "Wils. K.B.",
+        "page": 275,
+        "type": "parallel",
+        "selected_official": false,
+        "source": "off_cl.adjudication"
+      }
+    ],
+    "vendor_neutral": [
+      {
+        "cite": "[1765] EWHC KB J98",
+        "volume": null,
+        "reporter": null,
+        "page": null,
+        "type": "vendor_neutral",
+        "selected_official": false,
+        "source": "off_cl.adjudication"
+      }
+    ],
+    "all": [
+      {
+        "cite": "19 How. St. Tr. 1029",
+        "volume": 19,
+        "reporter": "How. St. Tr.",
+        "page": 1029,
+        "type": "official",
+        "selected_official": true,
+        "source": "off_cl.adjudication"
+      },
+      {
+        "cite": "95 Eng. Rep. 807",
+        "volume": 95,
+        "reporter": "Eng. Rep.",
+        "page": 807,
+        "type": "parallel",
+        "selected_official": false,
+        "source": "off_cl.adjudication"
+      },
+      {
+        "cite": "2 Wils. K.B. 275",
+        "volume": 2,
+        "reporter": "Wils. K.B.",
+        "page": 275,
+        "type": "parallel",
+        "selected_official": false,
+        "source": "off_cl.adjudication"
+      },
+      {
+        "cite": "[1765] EWHC KB J98",
+        "volume": null,
+        "reporter": null,
+        "page": null,
+        "type": "vendor_neutral",
+        "selected_official": false,
+        "source": "off_cl.adjudication"
+      }
+    ],
+    "display": "19 How. St. Tr. 1029 (C.P. 1765)",
+    "official_selection": {
+      "court_class": "english_historical",
+      "selected": "19 How. St. Tr. 1029 (C.P. 1765)",
+      "reason": "off_cl_adjudication"
+    }
+  },
+  "pinpoints": [],
+  "treatment": {
+    "field_i_validity": "good_law",
+    "as_of_content": "1765-11-02",
+    "as_of_treatment": "2026-06-30",
+    "composite_basis": "migration-seed",
+    "composite_basis_ref": "Entick v. Carrington",
+    "varies_by_point": false,
+    "scope_note": "Off-CL record (A16/A17): CL citator lanes intentionally not run. Validity rests on the O1 web-verified page treatment (legacy 'good', as of 2026-06-30) re-seeded post-elevation per the S1 A4 mapping; Entick's foundational status is favorably restated by SCOTUS (Boyd, Jones, Riley). Authority weight remains Historical (English origin).",
+    "point_overrides": [],
+    "edges": [],
+    "derivation": {}
+  },
+  "progeny": {
+    "complete_query": null,
+    "indexed_citing_opinions": null,
+    "count_source": "off_cl_na",
+    "per_sibling": [],
+    "citation_count": null,
+    "cache_path": null,
+    "enumeration": null,
+    "cursor": null,
+    "rows_cached": 0,
+    "outbound_opinion_edges": []
+  },
+  "off_cl_links": [
+    {
+      "source": "BAILII",
+      "url": "https://www.bailii.org/ew/cases/EWHC/KB/1765/J98.html",
+      "confirmed": {
+        "caption": "Entick v Carrington & Ors",
+        "cite": "[1765] EWHC KB J98; 95 ER 807; 19 St Tr 1029; [1558-1774] All ER Rep 41",
+        "court": "King's Bench (BAILII retrospective filing label; historical court of decision: Court of Common Pleas, Camden CJ)",
+        "date": "1765-11-02"
+      },
+      "checked_date": "2026-07-06"
+    },
+    {
+      "source": "Founders' Constitution",
+      "url": "https://press-pubs.uchicago.edu/founders/documents/amendIVs6.html",
+      "confirmed": {
+        "caption": "Entick v. Carrington",
+        "cite": "95 Eng. Rep. 807",
+        "court": "K.B. (Wilson's-Reports reprint label; historical court of decision: Court of Common Pleas)",
+        "date": "1765-11-02"
+      },
+      "checked_date": "2026-07-06"
+    }
+  ],
+  "provenance": {
+    "cl_source": null,
+    "cl_api": "https://www.courtlistener.com/api/rest/v4",
+    "built_by": "S2-BUILDER-AUTHORING",
+    "build_run": "s2-build-96d841cbb12e",
+    "date_created": "2026-07-07T00:53:37Z",
+    "date_modified": "2026-07-07T00:53:37Z",
+    "warnings": [],
+    "field_provenance": {
+      "identity": {
+        "src": "off-CL adjudication file: _run/o2-execute/offcl-entick-adjudication.json",
+        "at": "2026-07-07T00:53:37Z",
+        "verifier": "orchestrator claude-fable-5"
+      },
+      "treatment.field_i_validity": {
+        "src": "_treatment-migration.json ('good' -> good_law) + O1 page frontmatter (as of 2026-06-30); re-seeded after verified_off_cl elevation (A17) — F-S2-31's revert applied only while the record was fail-closed",
+        "at": "2026-07-06T00:00:00Z",
+        "verifier": "orchestrator claude-fable-5 (user R14 Option 1 disposition 2026-07-06)"
+      },
+      "point_overrides": {
+        "src": "verified_off_cl: no CL-derived point overrides",
+        "at": "2026-07-07T00:53:37Z",
+        "verifier": "orchestrator claude-fable-5"
+      },
+      "pinpoints": {
+        "src": "verified_off_cl: no CL lead-opinion pinpoints",
+        "at": "2026-07-07T00:53:37Z",
+        "verifier": "orchestrator claude-fable-5"
+      }
+    }
+  }
+}
+
+```
+
+---
+
+## GROUP: _overhaul2/lake/cases/Escobedo v. Illinois.json  (`lake-record`, 3 assertions)
+
+### content_page
+
+```
+---
+title: "Escobedo v. Illinois"
+type: case
+citation: "378 U.S. 478 (1964)"
+parallel_cite: "84 S. Ct. 1758; 12 L. Ed. 2d 977; 4 Ohio Misc. 197; 32 Ohio Op. 2d 31"
+neutral_cite: 1964 U.S. LEXIS 827
+court: U.S. Supreme Court
+court_level: scotus
+circuit: ""
+year: 1964
+date_decided: 1964-06-22
+docket: 615
+authority_weight: "Binding — SCOTUS"
+treatment:
+  field_i_validity: caution
+  as_of_content: 1964-06-22
+  as_of_treatment: 2026-06-30
+  composite_basis: migration-seed
+  composite_basis_ref: Escobedo v. Illinois
+  varies_by_point: true
+  scope_note: "The result stands, but Escobedo's Sixth-Amendment-during-interrogation theory was recast as a Fifth Amendment matter by Miranda (1966) and confined to its facts by Kirby v. Illinois (1972) and Moran v. Burbine (1986). Taught as the historical precursor to Miranda."
+  point_overrides:
+    - point: legacy-limited-escobedo-v-illinois
+      point_label: Legacy limited treatment point
+      field_i_validity: caution
+      as_of_treatment: 2026-06-30
+      s3_binding_status: provisional
+      by:
+        - name: Miranda v. Arizona
+          cluster_id: 107252
+          cite: 384 U.S. 436
+          field_ii: limited
+        - name: Kirby v. Illinois
+          cluster_id: 108554
+          cite: 406 U.S. 682
+          field_ii: limited
+        - name: Moran v. Burbine
+          cluster_id: 111614
+          cite: 475 U.S. 412
+          field_ii: limited
+      scope_note: "The result stands, but Escobedo's Sixth-Amendment-during-interrogation theory was recast as a Fifth Amendment matter by Miranda (1966) and confined to its facts by Kirby v. Illinois (1972) and Moran v. Burbine (1986). Taught as the historical precursor to Miranda."
+courtlistener:
+  opinion_url: "https://www.courtlistener.com/opinion/106883/escobedo-v-illinois/"
+  cluster_id: 106883
+  opinion_id: 106883
+  identity_checked: true
+homes:
+  - page: "[[Sixth Amendment Right to Counsel]]"
+    role: "Key — Historical"
+  - page: "[[Miranda and Custodial Interrogation]]"
+    role: "Related (cross-doctrine)"
+related: ["[[Miranda v. Arizona]]", "[[Massiah v. United States]]", "[[Kirby v. Illinois]]"]
+aliases: []
+tags: ["case", "sixth-amendment", "fifth-amendment", "right-to-counsel", "interrogation", "historical"]
+holding: "Where an investigation has focused on a suspect in custody, the police are interrogating to elicit incriminating statements, the suspect has requested and been denied the chance to consult his retained lawyer, and he has not been warned of his right to remain silent, he has been denied the Sixth Amendment right to counsel and his statements are inadmissible."
+lake:
+  record_id: Escobedo v. Illinois
+  status: verified
+  projected_at: 2026-07-06
+---
+
+# Escobedo v. Illinois
+
+*378 U.S. 478 (1964)* · U.S. Supreme Court · **Binding — SCOTUS** · Treatment: **limited** *(as of 2026-06-30)*
+<!-- header line; TreatmentBadge + weight render here, degrading to the text above -->
+
+## Background
+Escobedo was arrested for the murder of his brother-in-law. During interrogation he repeatedly asked to speak with his retained lawyer, who had come to the station and was himself trying to see Escobedo; police refused to let them meet and did not warn Escobedo of his right to remain silent. Escobedo made incriminating statements that were used to convict him.
+
+## Issue
+Whether the refusal, during a custodial interrogation that had focused on the suspect, to honor his request to consult his retained counsel — coupled with the failure to warn him of his right to remain silent — denied him the Sixth Amendment right to counsel and rendered his statements inadmissible.
+
+## Rule
+Yes. "We hold, therefore, that where, as here, the investigation is no longer a general inquiry into an unsolved crime but has begun to focus on a particular suspect, the suspect has been taken into police custody, the police carry out a process of interrogations that lends itself to eliciting incriminating statements, the suspect has requested and been denied an opportunity to consult with his lawyer, and the police have not effectively warned him of his absolute constitutional right to remain silent, the accused has been denied 'the Assistance of Counsel' in violation of the Sixth Amendment ... and ... no statement elicited by the police during the interrogation may be used against him at a criminal trial." — 378 U.S. at 490–491. ^pin-490
+
+## Application
+On Escobedo's facts every condition was met: the investigation had focused on him, he was in custody, the questioning was designed to elicit a confession, his repeated requests to consult his lawyer were denied while the lawyer was present and seeking him, and he was never warned of his right to silence. His incriminating statements were therefore obtained in violation of the Constitution and could not be used against him.
+
+## Conclusion
+The statements were inadmissible; the conviction was reversed. *Escobedo* was the bridge between the Sixth Amendment right to counsel and the protection of suspects during interrogation.
+
+## Treatment & subsequent history
+- **Status:** limited *(as of 2026-06-30)* — **Binding — SCOTUS** (result intact; rationale superseded).
+- Two years later [[Miranda v. Arizona]] recast the concern as a **Fifth Amendment** matter, and [[Kirby v. Illinois]] (and *[[Moran v. Burbine]]*) confined *Escobedo* "to its own facts." The modern rule is that the **Sixth Amendment** right to counsel attaches only at the initiation of adversary judicial proceedings ([[United States v. Gouveia]]), while custodial interrogation is governed by *[[Miranda v. Arizona|Miranda]]*. *Escobedo* is taught as the historical precursor, not as a freestanding test.
+
+## Appears on
+- [[Sixth Amendment Right to Counsel]] — *Key — Historical*
+- [[Miranda and Custodial Interrogation]] — *Related (cross-doctrine)*
+
+## Sources
+- *Escobedo v. Illinois*, 378 U.S. 478 (1964) — https://www.courtlistener.com/opinion/106883/escobedo-v-illinois/ — pinpoint: 490–491.
+
+```
+
+### group_inventory (assertions under review)
+
+```jsonl
+{"assertion_id": "2a89e9caf10701b5", "dimension": "existence", "kind": "case_cite", "locator": {"record_id": "Escobedo v. Illinois"}, "payload": {"all": [{"cite": "378 U.S. 478", "page": "478", "reporter": "U.S.", "selected_official": false, "source": "cluster.citations[]", "type": 1, "volume": "378"}, {"cite": "84 S. Ct. 1758", "page": "1758", "reporter": "S. Ct.", "selected_official": false, "source": "cluster.citations[]", "type": 1, "volume": "84"}, {"cite": "12 L. Ed. 2d 977", "page": "977", "reporter": "L. Ed. 2d", "selected_official": false, "source": "cluster.citations[]", "type": 1, "volume": "12"}, {"cite": "1964 U.S. LEXIS 827", "page": "827", "reporter": "U.S. LEXIS", "selected_official": false, "source": "cluster.citations[]", "type": 6, "volume": "1964"}, {"cite": "4 Ohio Misc. 197", "page": "197", "reporter": "Ohio Misc.", "selected_official": false, "source": "cluster.citations[]", "type": 2, "volume": "4"}, {"cite": "32 Ohio Op. 2d 31", "page": "31", "reporter": "Ohio Op. 2d", "selected_official": false, "source": "cluster.citations[]", "type": 2, "volume": "32"}], "display": "378 U.S. 478", "official": {"cite": "378 U.S. 478", "page": "478", "reporter": "U.S.", "selected_official": true, "source": "cluster.citations[]", "type": 1, "volume": "378"}, "official_selection_present": true, "record_id": "Escobedo v. Illinois"}}
+{"assertion_id": "aea5a9f8e8d3c597", "dimension": "quote_fidelity", "kind": "quote_pinpoint", "locator": {"pin_id": "pin-490", "record_id": "Escobedo v. Illinois"}, "payload": {"fragment": null, "page": null, "pin_id": "pin-490", "pinpoint_status": "slip-only", "quote": "--- # Escobedo v. Illinois *378 U.S. 478 (1964)* · U.S. Supreme Court · **Binding — SCOTUS** · Treatment: **limited** *(as of 2026-06-30)* <!-- header line; TreatmentBadge + weight render here, degrading to the text above --> ## Background Escobedo was arrested for the murder of his brother-in-law. During interrogation he repeatedly asked to speak with his retained lawyer, who had come to the station and was himself trying to see Escobedo; police refused to let them meet and did not warn Escobedo of his right to remain silent. Escobedo made incriminating statements that were used to convict him. ## Issue Whether the refusal, during a custodial interrogation that had focused on the suspect, to honor his request to consult his retained counsel — coupled with the failure to warn him of his right to remain silent — denied him the Sixth Amendment right to counsel and rendered his statements inadmissible. ## Rule Yes.", "quote_fidelity": "mismatch", "record_id": "Escobedo v. Illinois", "star_marker": null}}
+{"assertion_id": "33ce3edee37a9b35", "dimension": "treatment", "kind": "treatment", "locator": {"record_id": "Escobedo v. Illinois"}, "payload": {"as_of_content": "1964-06-22", "as_of_treatment": "2026-06-30", "field_i_validity": "caution", "record_id": "Escobedo v. Illinois", "scope_note": "The result stands, but Escobedo's Sixth-Amendment-during-interrogation theory was recast as a Fifth Amendment matter by Miranda (1966) and confined to its facts by Kirby v. Illinois (1972) and Moran v. Burbine (1986). Taught as the historical precursor to Miranda.", "varies_by_point": true}}
+```
+
+### lake record — Escobedo v. Illinois
+
+```json
+{
+  "schema_version": "s2.v1",
+  "record_id": "Escobedo v. Illinois",
+  "stub": false,
+  "status": "verified",
+  "identity": {
+    "case_name": "Escobedo v. Illinois",
+    "case_name_short": "Escobedo",
+    "case_name_full": "Escobedo v. Illinois",
+    "input_case_name": "Escobedo v. Illinois",
+    "court": "U.S. Supreme Court",
+    "court_id": "scotus",
+    "court_level": "scotus",
+    "circuit": null,
+    "state": null,
+    "date_decided": "1964-06-22",
+    "year": 1964,
+    "docket": "615",
+    "cluster_id": 106883,
+    "lead_opinion_id": 106883,
+    "sibling_ids": [
+      106883,
+      9422869,
+      9422870
+    ],
+    "absolute_url": "/opinion/106883/escobedo-v-illinois/",
+    "identity_method": "citation+party-text",
+    "expected_citation_found": true,
+    "party_name_in_text": true,
+    "canonical_name_match": true,
+    "alternates": [],
+    "reason_code": null
+  },
+  "citations": {
+    "official": {
+      "cite": "378 U.S. 478",
+      "volume": "378",
+      "reporter": "U.S.",
+      "page": "478",
+      "type": 1,
+      "selected_official": true,
+      "source": "cluster.citations[]"
+    },
+    "parallel": [
+      {
+        "cite": "84 S. Ct. 1758",
+        "volume": "84",
+        "reporter": "S. Ct.",
+        "page": "1758",
+        "type": 1,
+        "selected_official": false,
+        "source": "cluster.citations[]"
+      },
+      {
+        "cite": "12 L. Ed. 2d 977",
+        "volume": "12",
+        "reporter": "L. Ed. 2d",
+        "page": "977",
+        "type": 1,
+        "selected_official": false,
+        "source": "cluster.citations[]"
+      },
+      {
+        "cite": "4 Ohio Misc. 197",
+        "volume": "4",
+        "reporter": "Ohio Misc.",
+        "page": "197",
+        "type": 2,
+        "selected_official": false,
+        "source": "cluster.citations[]"
+      },
+      {
+        "cite": "32 Ohio Op. 2d 31",
+        "volume": "32",
+        "reporter": "Ohio Op. 2d",
+        "page": "31",
+        "type": 2,
+        "selected_official": false,
+        "source": "cluster.citations[]"
+      }
+    ],
+    "vendor_neutral": [
+      {
+        "cite": "1964 U.S. LEXIS 827",
+        "volume": "1964",
+        "reporter": "U.S. LEXIS",
+        "page": "827",
+        "type": 6,
+        "selected_official": false,
+        "source": "cluster.citations[]"
+      }
+    ],
+    "all": [
+      {
+        "cite": "378 U.S. 478",
+        "volume": "378",
+        "reporter": "U.S.",
+        "page": "478",
+        "type": 1,
+        "selected_official": false,
+        "source": "cluster.citations[]"
+      },
+      {
+        "cite": "84 S. Ct. 1758",
+        "volume": "84",
+        "reporter": "S. Ct.",
+        "page": "1758",
+        "type": 1,
+        "selected_official": false,
+        "source": "cluster.citations[]"
+      },
+      {
+        "cite": "12 L. Ed. 2d 977",
+        "volume": "12",
+        "reporter": "L. Ed. 2d",
+        "page": "977",
+        "type": 1,
+        "selected_official": false,
+        "source": "cluster.citations[]"
+      },
+      {
+        "cite": "1964 U.S. LEXIS 827",
+        "volume": "1964",
+        "reporter": "U.S. LEXIS",
+        "page": "827",
+        "type": 6,
+        "selected_official": false,
+        "source": "cluster.citations[]"
+      },
+      {
+        "cite": "4 Ohio Misc. 197",
+        "volume": "4",
+        "reporter": "Ohio Misc.",
+        "page": "197",
+        "type": 2,
+        "selected_official": false,
+        "source": "cluster.citations[]"
+      },
+      {
+        "cite": "32 Ohio Op. 2d 31",
+        "volume": "32",
+        "reporter": "Ohio Op. 2d",
+        "page": "31",
+        "type": 2,
+        "selected_official": false,
+        "source": "cluster.citations[]"
+      }
+    ],
+    "display": "378 U.S. 478",
+    "official_selection": {
+      "court_class": "scotus",
+      "selected": "378 U.S. 478",
+      "reason": "selected_rank_1"
+    }
+  },
+  "pinpoints": [
+    {
+      "id": "pin-490",
+      "page": null,
+      "quote": "--- # Escobedo v. Illinois *378 U.S. 478 (1964)* \u00b7 U.S. Supreme Court \u00b7 **Binding \u2014 SCOTUS** \u00b7 Treatment: **limited** *(as of 2026-06-30)* <!-- header line; TreatmentBadge + weight render here, degrading to the text above --> ## Background Escobedo was arrested for the murder of his brother-in-law. During interrogation he repeatedly asked to speak with his retained lawyer, who had come to the station and was himself trying to see Escobedo; police refused to let them meet and did not warn Escobedo of his right to remain silent. Escobedo made incriminating statements that were used to convict him. ## Issue Whether the refusal, during a custodial interrogation that had focused on the suspect, to honor his request to consult his retained counsel \u2014 coupled with the failure to warn him of his right to remain silent \u2014 denied him the Sixth Amendment right to counsel and rendered his statements inadmissible. ## Rule Yes.",
+      "star_marker": null,
+      "quote_fidelity": "mismatch",
+      "pinpoint_status": "slip-only",
+      "position": null
+    }
+  ],
+  "treatment": {
+    "field_i_validity": "caution",
+    "as_of_content": "1964-06-22",
+    "as_of_treatment": "2026-06-30",
+    "composite_basis": "migration-seed",
+    "composite_basis_ref": "Escobedo v. Illinois",
+    "varies_by_point": true,
+    "scope_note": "The result stands, but Escobedo's Sixth-Amendment-during-interrogation theory was recast as a Fifth Amendment matter by Miranda (1966) and confined to its facts by Kirby v. Illinois (1972) and Moran v. Burbine (1986). Taught as the historical precursor to Miranda.",
+    "point_overrides": [
+      {
+        "point": "legacy-limited-escobedo-v-illinois",
+        "point_label": "Legacy limited treatment point",
+        "field_i_validity": "caution",
+        "as_of_treatment": "2026-06-30",
+        "s3_binding_status": "provisional",
+        "by": [
+          {
+            "name": "Miranda v. Arizona",
+            "cluster_id": 107252,
+            "cite": "384 U.S. 436",
+            "field_ii": "limited"
+          },
+          {
+            "name": "Kirby v. Illinois",
+            "cluster_id": 108554,
+            "cite": "406 U.S. 682",
+            "field_ii": "limited"
+          },
+          {
+            "name": "Moran v. Burbine",
+            "cluster_id": 111614,
+            "cite": "475 U.S. 412",
+            "field_ii": "limited"
+          }
+        ],
+        "scope_note": "The result stands, but Escobedo's Sixth-Amendment-during-interrogation theory was recast as a Fifth Amendment matter by Miranda (1966) and confined to its facts by Kirby v. Illinois (1972) and Moran v. Burbine (1986). Taught as the historical precursor to Miranda."
+      }
+    ],
+    "edges": [
+      {
+        "citing_case": {
+          "name": "Miranda v. Arizona",
+          "cluster_id": 107252,
+          "cite": "384 U.S. 436",
+          "field_ii": "limited"
+        },
+        "field_ii": "limited",
+        "field_iii": "mentioned",
+        "point": null,
+        "proposed": true,
+        "journal_ref": "migration:limited"
+      },
+      {
+        "citing_case": {
+          "name": "Kirby v. Illinois",
+          "cluster_id": 108554,
+          "cite": "406 U.S. 682",
+          "field_ii": "limited"
+        },
+        "field_ii": "limited",
+        "field_iii": "mentioned",
+        "point": null,
+        "proposed": true,
+        "journal_ref": "migration:limited"
+      },
+      {
+        "citing_case": {
+          "name": "Moran v. Burbine",
+          "cluster_id": 111614,
+          "cite": "475 U.S. 412",
+          "field_ii": "limited"
+        },
+        "field_ii": "limited",
+        "field_iii": "mentioned",
+        "point": null,
+        "proposed": true,
+        "journal_ref": "migration:limited"
+      },
+      {
+        "citing_case": {
+          "name": "State of Tennessee v. Courtney Bishop",
+          "cluster_id": 2655823,
+          "cite": [
+            "431 S.W.3d 22",
+            "2014 WL 888198",
+            "2014 Tenn. LEXIS 189"
+          ],
+          "field_ii": "overruled"
+        },
+        "field_ii": "overruled",
+        "field_iii": "mentioned",
+        "point": null,
+        "proposed": true,
+        "journal_ref": "Escobedo v. Illinois:lane1_negative"
+      },
+      {
+        "citing_case": {
+          "name": "Commonwealth v. Simon",
+          "cluster_id": 2483876,
+          "cite": [
+            "456 Mass. 280",
+            "923 N.E.2d 58",
+            "2010 Mass. LEXIS 89"
+          ],
+          "field_ii": "questioned"
+        },
+        "field_ii": "questioned",
+        "field_iii": "mentioned",
+        "point": null,
+        "proposed": true,
+        "journal_ref": "Escobedo v. Illinois:lane1_negative"
+      },
+      {
+        "citing_case": {
+          "name": "Corley v. United States",
+          "cluster_id": 145888,
+          "cite": [
+            "173 L. Ed. 2d 443",
+            "129 S. Ct. 1558",
+            "556 U.S. 303",
+            "2009 U.S. LEXIS 2512"
+          ],
+          "field_ii": "overruled"
+        },
+        "field_ii": "overruled",
+        "field_iii": "mentioned",
+        "point": null,
+        "proposed": true,
+        "journal_ref": "Escobedo v. Illinois:lane1_negative"
+      },
+      {
+        "citing_case": {
+          "name": "United States v. Sawyer",
+          "cluster_id": 2521466,
+          "cite": [
+            "2004 OK CR 22",
+            "92 P.3d 707",
+            "2004 WL 1244992"
+          ],
+          "field_ii": "overruled"
+        },
+        "field_ii": "overruled",
+        "field_iii": "mentioned",
+        "point": null,
+        "proposed": true,
+        "journal_ref": "Escobedo v. Illinois:lane1_negative"
+      },
+      {
+        "citing_case": {
+          "name": "Mendez v. State",
+          "cluster_id": 1426447,
+          "cite": [
+            "56 S.W.3d 880",
+            "2001 WL 1044612"
+          ],
+          "field_ii": "overruled"
+        },
+        "field_ii": "overruled",
+        "field_iii": "mentioned",
+        "point": null,
+        "proposed": true,
+        "journal_ref": "Escobedo v. Illinois:lane1_negative"
+      },
+      {
+        "citing_case": {
+          "name": "People v. Jones",
+          "cluster_id": 1194882,
+          "cite": [
+            "17 Cal. 4th 279",
+            "949 P.2d 890",
+            "98 Cal. Daily Op. Serv. 789",
+            "98 Daily Journal DAR 1025",
+            "70 Cal. Rptr. 2d 793",
+            "1998 Cal. LEXIS 23"
+          ],
+          "field_ii": "abrogated"
+        },
+        "field_ii": "abrogated",
+        "field_iii": "mentioned",
+        "point": null,
+        "proposed": true,
+        "journal_ref": "Escobedo v. Illinois:lane1_negative"
+      },
+      {
+        "citing_case": {
+          "name": "Larry Winsett v. Odie Washington, Warden of Dixon Correctional Center",
+          "cluster_id": 748614,
+          "cite": [
+            "130 F.3d 269",
+            "1997 U.S. App. LEXIS 32286",
+            "1997 WL 716044"
+          ],
+          "field_ii": "overruled"
+        },
+        "field_ii": "overruled",
+        "field_iii": "mentioned",
+        "point": null,
+        "proposed": true,
+        "journal_ref": "Escobedo v. Illinois:lane1_negative"
+      },
+      {
+        "citing_case": {
+          "name": "Richard Louis Arnold Phillips v. Daniel B. Vasquez, Warden, San Quentin State Prison",
+          "cluster_id": 697343,
+          "cite": [
+            "56 F.3d 1030",
+            "95 Daily Journal DAR 6705",
+            "95 Cal. Daily Op. Serv. 3912",
+            "1995 U.S. App. LEXIS 12695",
+            "1995 WL 319974"
+          ],
+          "field_ii": "questioned"
+        },
+        "field_ii": "questioned",
+        "field_iii": "mentioned",
+        "point": null,
+        "proposed": true,
+        "journal_ref": "Escobedo v. Illinois:lane1_negative"
+      },
+      {
+        "citing_case": {
+          "name": "Miranda v. Arizona",
+          "cluster_id": 107252,
+          "cite": [
+            "16 L. Ed. 2d 694",
+            "86 S. Ct. 1602",
+            "384 U.S. 436",
+            "1966 U.S. LEXIS 2817",
+            "10 Ohio Misc. 9",
+            "36 Ohio Op. 2d 237",
+            "10 A.L.R. 3d 974"
+          ],
+          "field_ii": "overruled"
+        },
+        "field_ii": "overruled",
+        "field_iii": "mentioned",
+        "point": null,
+        "proposed": true,
+        "journal_ref": "Escobedo v. Illinois:lane2_top_cited"
+      },
+      {
+        "citing_case": {
+          "name": "Schneckloth v. Bustamonte",
+          "cluster_id": 108800,
+          "cite": [
+            "36 L. Ed. 2d 854",
+            "93 S. Ct. 2041",
+            "412 U.S. 218",
+            "1973 U.S. LEXIS 6"
+          ],
+          "field_ii": "questioned"
+        },
+        "field_ii": "questioned",
+        "field_iii": "mentioned",
+        "point": null,
+        "proposed": true,
+        "journal_ref": "Escobedo v. Illinois:lane2_top_cited"
+      },
+      {
+        "citing_case": {
+          "name": "United States v. Wade",
+          "cluster_id": 107486,
+          "cite": [
+            "18 L. Ed. 2d 1149",
+            "87 S. Ct. 1926",
+            "388 U.S. 218",
+            "1967 U.S. LEXIS 1085"
+          ],
+          "field_ii": "overruled"
+        },
+        "field_ii": "overruled",
+        "field_iii": "mentioned",
+        "point": null,
+        "proposed": true,
+        "journal_ref": "Escobedo v. Illinois:lane2_top_cited"
+      },
+      {
+        "citing_case": {
+          "name": "Pembaur v. City of Cincinnati",
+          "cluster_id": 111615,
+          "cite": [
+            "89 L. Ed. 2d 452",
+            "106 S. Ct. 1292",
+            "475 U.S. 469",
+            "1986 U.S. LEXIS 33",
+            "54 U.S.L.W. 4289"
+          ],
+          "field_ii": "overruled"
+        },
+        "field_ii": "overruled",
+        "field_iii": "mentioned",
+        "point": null,
+        "proposed": true,
+        "journal_ref": "Escobedo v. Illinois:lane2_top_cited"
+      },
+      {
+        "citing_case": {
+          "name": "Wainwright v. Sykes",
+          "cluster_id": 109717,
+          "cite": [
+            "53 L. Ed. 2d 594",
+            "97 S. Ct. 2497",
+            "433 U.S. 72",
+            "1977 U.S. LEXIS 135"
+          ],
+          "field_ii": "overruled"
+        },
+        "field_ii": "overruled",
+        "field_iii": "mentioned",
+        "point": null,
+        "proposed": true,
+        "journal_ref": "Escobedo v. Illinois:lane2_top_cited"
+      },
+      {
+        "citing_case": {
+          "name": "Schmerber v. California",
+          "cluster_id": 107262,
+          "cite": [
+            "16 L. Ed. 2d 908",
+            "86 S. Ct. 1826",
+            "384 U.S. 757",
+            "1966 U.S. LEXIS 1129"
+          ],
+          "field_ii": "overruled"
+        },
+        "field_ii": "overruled",
+        "field_iii": "mentioned",
+        "point": null,
+        "proposed": true,
+        "journal_ref": "Escobedo v. Illinois:lane2_top_cited"
+      },
+      {
+        "citing_case": {
+          "name": "Rose v. Lundy",
+          "cluster_id": 110662,
+          "cite": [
+            "71 L. Ed. 2d 379",
+            "102 S. Ct. 1198",
+            "455 U.S. 509",
+            "1982 U.S. LEXIS 79"
+          ],
+          "field_ii": "overruled"
+        },
+        "field_ii": "overruled",
+        "field_iii": "mentioned",
+        "point": null,
+        "proposed": true,
+        "journal_ref": "Escobedo v. Illinois:lane2_top_cited"
+      },
+      {
+        "citing_case": {
+          "name": "Clewis v. State",
+          "cluster_id": 2462780,
+          "cite": [
+            "922 S.W.2d 126",
+            "1996 Tex. Crim. App. LEXIS 11",
+            "1996 WL 37908"
+          ],
+          "field_ii": "overruled"
+        },
+        "field_ii": "overruled",
+        "field_iii": "mentioned",
+        "point": null,
+        "proposed": true,
+        "journal_ref": "Escobedo v. Illinois:lane2_top_cited"
+      },
+      {
+        "citing_case": {
+          "name": "Escobedo v. Illinois",
+          "cluster_id": 106883,
+          "cite": [
+            "12 L. Ed. 2d 977",
+            "84 S. Ct. 1758",
+            "378 U.S. 478",
+            "1964 U.S. LEXIS 827",
+            "4 Ohio Misc. 197",
+            "32 Ohio Op. 2d 31"
+          ],
+          "field_ii": "superseded_by_statute"
+        },
+        "field_ii": "superseded_by_statute",
+        "field_iii": "mentioned",
+        "point": null,
+        "proposed": true,
+        "journal_ref": "Escobedo v. Illinois:lane2_top_cited"
+      },
+      {
+        "citing_case": {
+          "name": "Colorado v. Connelly",
+          "cluster_id": 111779,
+          "cite": [
+            "93 L. Ed. 2d 473",
+            "107 S. Ct. 515",
+            "479 U.S. 157",
+            "1986 U.S. LEXIS 23",
+            "55 U.S.L.W. 4043"
+          ],
+          "field_ii": "criticized"
+        },
+        "field_ii": "criticized",
+        "field_iii": "mentioned",
+        "point": null,
+        "proposed": true,
+        "journal_ref": "Escobedo v. Illinois:lane2_top_cited"
+      },
+      {
+        "citing_case": {
+          "name": "Moran v. Burbine",
+          "cluster_id": 111614,
+          "cite": [
+            "89 L. Ed. 2d 410",
+            "106 S. Ct. 1135",
+            "475 U.S. 412",
+            "1986 U.S. LEXIS 32",
+            "54 U.S.L.W. 4265"
+          ],
+          "field_ii": "questioned"
+        },
+        "field_ii": "questioned",
+        "field_iii": "mentioned",
+        "point": null,
+        "proposed": true,
+        "journal_ref": "Escobedo v. Illinois:lane2_top_cited"
+      },
+      {
+        "citing_case": {
+          "name": "Johnson v. New Jersey",
+          "cluster_id": 107260,
+          "cite": [
+            "16 L. Ed. 2d 882",
+            "86 S. Ct. 1772",
+            "384 U.S. 719",
+            "1966 U.S. LEXIS 1127",
+            "36 Ohio Op. 2d 439",
+            "8 Ohio Misc. 324"
+          ],
+          "field_ii": "questioned"
+        },
+        "field_ii": "questioned",
+        "field_iii": "mentioned",
+        "point": null,
+        "proposed": true,
+        "journal_ref": "Escobedo v. Illinois:lane2_top_cited"
+      },
+      {
+        "citing_case": {
+          "name": "Kirby v. Illinois",
+          "cluster_id": 108554,
+          "cite": [
+            "32 L. Ed. 2d 411",
+            "92 S. Ct. 1877",
+            "406 U.S. 682",
+            "1972 U.S. LEXIS 49"
+          ],
+          "field_ii": "questioned"
+        },
+        "field_ii": "questioned",
+        "field_iii": "mentioned",
+        "point": null,
+        "proposed": true,
+        "journal_ref": "Escobedo v. Illinois:lane2_top_cited"
+      },
+      {
+        "citing_case": {
+          "name": "Oregon v. Elstad",
+          "cluster_id": 111364,
+          "cite": [
+            "84 L. Ed. 2d 222",
+            "105 S. Ct. 1285",
+            "470 U.S. 298",
+            "1985 U.S. LEXIS 60",
+            "53 U.S.L.W. 4244"
+          ],
+          "field_ii": "criticized"
+        },
+        "field_ii": "criticized",
+        "field_iii": "mentioned",
+        "point": null,
+        "proposed": true,
+        "journal_ref": "Escobedo v. Illinois:lane2_top_cited"
+      },
+      {
+        "citing_case": {
+          "name": "Davis v. United States",
+          "cluster_id": 117863,
+          "cite": [
+            "129 L. Ed. 2d 362",
+            "114 S. Ct. 2350",
+            "512 U.S. 452",
+            "1994 U.S. LEXIS 4827"
+          ],
+          "field_ii": "questioned"
+        },
+        "field_ii": "questioned",
+        "field_iii": "mentioned",
+        "point": null,
+        "proposed": true,
+        "journal_ref": "Escobedo v. Illinois:lane2_top_cited"
+      },
+      {
+        "citing_case": {
+          "name": "Brewer v. Williams",
+          "cluster_id": 109624,
+          "cite": [
+            "51 L. Ed. 2d 424",
+            "97 S. Ct. 1232",
+            "430 U.S. 387",
+            "1977 U.S. LEXIS 64"
+          ],
+          "field_ii": "overruled"
+        },
+        "field_ii": "overruled",
+        "field_iii": "mentioned",
+        "point": null,
+        "proposed": true,
+        "journal_ref": "Escobedo v. Illinois:lane2_top_cited"
+      },
+      {
+        "citing_case": {
+          "name": "Michigan v. Mosley",
+          "cluster_id": 109336,
+          "cite": [
+            "46 L. Ed. 2d 313",
+            "96 S. Ct. 321",
+            "423 U.S. 96",
+            "1975 U.S. LEXIS 100"
+          ],
+          "field_ii": "overruled"
+        },
+        "field_ii": "overruled",
+        "field_iii": "mentioned",
+        "point": null,
+        "proposed": true,
+        "journal_ref": "Escobedo v. Illinois:lane2_top_cited"
+      },
+      {
+        "citing_case": {
+          "name": "Hoffa v. United States",
+          "cluster_id": 107318,
+          "cite": [
+            "17 L. Ed. 2d 374",
+            "87 S. Ct. 408",
+            "385 U.S. 293",
+            "1966 U.S. LEXIS 2778"
+          ],
+          "field_ii": "criticized"
+        },
+        "field_ii": "criticized",
+        "field_iii": "mentioned",
+        "point": null,
+        "proposed": true,
+        "journal_ref": "Escobedo v. Illinois:lane2_top_cited"
+      },
+      {
+        "citing_case": {
+          "name": "Minnesota v. Murphy",
+          "cluster_id": 111105,
+          "cite": [
+            "79 L. Ed. 2d 409",
+            "104 S. Ct. 1136",
+            "465 U.S. 420",
+            "1984 U.S. LEXIS 33",
+            "52 U.S.L.W. 4246"
+          ],
+          "field_ii": "questioned"
+        },
+        "field_ii": "questioned",
+        "field_iii": "mentioned",
+        "point": null,
+        "proposed": true,
+        "journal_ref": "Escobedo v. Illinois:lane2_top_cited"
+      },
+      {
+        "citing_case": {
+          "name": "Hellard v. State",
+          "cluster_id": 2459031,
+          "cite": [
+            "629 S.W.2d 4",
+            "1982 Tenn. LEXIS 389"
+          ],
+          "field_ii": "questioned"
+        },
+        "field_ii": "questioned",
+        "field_iii": "mentioned",
+        "point": null,
+        "proposed": true,
+        "journal_ref": "Escobedo v. Illinois:lane2_top_cited"
+      },
+      {
+        "citing_case": {
+          "name": "Davis v. United States",
+          "cluster_id": 218926,
+          "cite": [
+            "180 L. Ed. 2d 285",
+            "131 S. Ct. 2419",
+            "564 U.S. 229",
+            "2011 U.S. LEXIS 4560"
+          ],
+          "field_ii": "overruled"
+        },
+        "field_ii": "overruled",
+        "field_iii": "mentioned",
+        "point": null,
+        "proposed": true,
+        "journal_ref": "Escobedo v. Illinois:lane2_top_cited"
+      },
+      {
+        "citing_case": {
+          "name": "Frazier v. Cupp",
+          "cluster_id": 107913,
+          "cite": [
+            "22 L. Ed. 2d 684",
+            "89 S. Ct. 1420",
+            "394 U.S. 731",
+            "1969 U.S. LEXIS 1870"
+          ],
+          "field_ii": "questioned"
+        },
+        "field_ii": "questioned",
+        "field_iii": "mentioned",
+        "point": null,
+        "proposed": true,
+        "journal_ref": "Escobedo v. Illinois:lane2_top_cited"
+      },
+      {
+        "citing_case": {
+          "name": "New York v. Quarles",
+          "cluster_id": 111214,
+          "cite": [
+            "81 L. Ed. 2d 550",
+            "104 S. Ct. 2626",
+            "467 U.S. 649",
+            "1984 U.S. LEXIS 111",
+            "52 U.S.L.W. 4790"
+          ],
+          "field_ii": "questioned"
+        },
+        "field_ii": "questioned",
+        "field_iii": "mentioned",
+        "point": null,
+        "proposed": true,
+        "journal_ref": "Escobedo v. Illinois:lane2_top_cited"
+      },
+      {
+        "citing_case": {
+          "name": "Michigan v. Tucker",
+          "cluster_id": 109063,
+          "cite": [
+            "41 L. Ed. 2d 182",
+            "94 S. Ct. 2357",
+            "417 U.S. 433",
+            "1974 U.S. LEXIS 71"
+          ],
+          "field_ii": "overruled"
+        },
+        "field_ii": "overruled",
+        "field_iii": "mentioned",
+        "point": null,
+        "proposed": true,
+        "journal_ref": "Escobedo v. Illinois:lane2_top_cited"
+      },
+      {
+        "citing_case": {
+          "name": "Maine v. Moulton",
+          "cluster_id": 111546,
+          "cite": [
+            "88 L. Ed. 2d 481",
+            "106 S. Ct. 477",
+            "474 U.S. 159",
+            "1985 U.S. LEXIS 147",
+            "54 U.S.L.W. 4039"
+          ],
+          "field_ii": "questioned"
+        },
+        "field_ii": "questioned",
+        "field_iii": "mentioned",
+        "point": null,
+        "proposed": true,
+        "journal_ref": "Escobedo v. Illinois:lane2_top_cited"
+      }
+    ],
+    "derivation": {
+      "lane1_negative": {
+        "query": "cites:(106883 OR 9422869 OR 9422870) AND (overrul* OR abrogat* OR supersed* OR \"recede from\" OR \"no longer good law\" OR vacat* OR reversed) ",
+        "reviewed": 200,
+        "cap": 200,
+        "cap_hit": true,
+        "final_cursor": "https://www.courtlistener.com/api/rest/v4/search/?cursor=cz03ODc4ODE2MDAwMDAmcz02ODM5JnQ9byZkPTIwMjYtMDctMDQmcD0xMQ%3D%3D&fields=absolute_url%2CcaseName%2CcaseNameFull%2Ccitation%2CciteCount%2Ccluster_id%2Ccourt%2Ccourt_citation_string%2Ccourt_id%2CdateFiled%2Copinions%2Csibling_ids%2Cstatus%2Csyllabus&order_by=dateFiled+desc&page_size=100&q=cites%3A%28106883+OR+9422869+OR+9422870%29+AND+%28overrul%2A+OR+abrogat%2A+OR+supersed%2A+OR+%22recede+from%22+OR+%22no+longer+good+law%22+OR+vacat%2A+OR+reversed%29+&stat_Published=on&type=o",
+        "audit_needed": true,
+        "proposed_negative_events": 8,
+        "audit_marker": "R15 treatment audit required",
+        "triage_mode": "snippet-first",
+        "snippet_field": "results[].opinions[].snippet",
+        "triage_journaled": 200,
+        "triage_read": 9,
+        "triage_snippet_classified": 191
+      },
+      "lane2_top_cited": {
+        "query": "cites:(106883 OR 9422869 OR 9422870)",
+        "reviewed": 25,
+        "cap": 25,
+        "cap_hit": true,
+        "final_cursor": "https://www.courtlistener.com/api/rest/v4/search/?cursor=cz03Mzcmcz01NjgyMDE3JnQ9byZkPTIwMjYtMDctMDQmcD0z&order_by=citeCount+desc&page_size=25&q=cites%3A%28106883+OR+9422869+OR+9422870%29&type=o",
+        "audit_needed": true,
+        "proposed_negative_events": 25,
+        "audit_marker": "R15 treatment audit required"
+      },
+      "lane3_recency": {
+        "query": "cites:(106883 OR 9422869 OR 9422870)",
+        "reviewed": 10,
+        "cap": 200,
+        "cap_hit": false,
+        "final_cursor": null,
+        "audit_needed": false,
+        "proposed_negative_events": 0,
+        "audit_marker": null,
+        "triage_mode": "snippet-first",
+        "snippet_field": "results[].opinions[].snippet",
+        "triage_journaled": 10,
+        "triage_read": 0,
+        "triage_snippet_classified": 10
+      }
+    }
+  },
+  "progeny": {
+    "complete_query": "cites:(106883 OR 9422869 OR 9422870)",
+    "indexed_citing_opinions": 3478,
+    "count_source": "search",
+    "per_sibling": [
+      {
+        "opinion_id": 106883,
+        "count": 3261,
+        "count_source": "search"
+      },
+      {
+        "opinion_id": 9422869,
+        "count": 360,
+        "count_source": "search"
+      },
+      {
+        "opinion_id": 9422870,
+        "count": 0,
+        "count_source": "search"
+      }
+    ],
+    "citation_count": 5250,
+    "cache_path": "/Users/johngalt/cssi-lake/cache/progeny/escobedo-v-illinois.jsonl",
+    "enumeration": "bounded",
+    "cursor": "https://www.courtlistener.com/api/rest/v4/search/?cursor=cz0xLjcwMzcyNDMmcz00ODM1MzUwJnQ9byZkPTIwMjYtMDctMDQmcD0y&order_by=score+desc&page_size=100&q=cites%3A%28106883+OR+9422869+OR+9422870%29&type=o",
+    "rows_cached": 20,
+    "outbound_opinion_edges": [
+      {
+        "source_opinion_id": 106883,
+        "cited_id": 94782,
+        "source": "search.opinions[].cites[]"
+      },
+      {
+        "source_opinion_id": 106883,
+        "cited_id": 103050,
+        "source": "search.opinions[].cites[]"
+      },
+      {
+        "source_opinion_id": 106883,
+        "cited_id": 103702,
+        "source": "search.opinions[].cites[]"
+      },
+      {
+        "source_opinion_id": 106883,
+        "cited_id": 103981,
+        "source": "search.opinions[].cites[]"
+      },
+      {
+        "source_opinion_id": 106883,
+        "cited_id": 104491,
+        "source": "search.opinions[].cites[]"
+      },
+      {
+        "source_opinion_id": 106883,
+        "cited_id": 104710,
+        "source": "search.opinions[].cites[]"
+      },
+      {
+        "source_opinion_id": 106883,
+        "cited_id": 105382,
+        "source": "search.opinions[].cites[]"
+      },
+      {
+        "source_opinion_id": 106883,
+        "cited_id": 105690,
+        "source": "search.opinions[].cites[]"
+      },
+      {
+        "source_opinion_id": 106883,
+        "cited_id": 105745,
+        "source": "search.opinions[].cites[]"
+      },
+      {
+        "source_opinion_id": 106883,
+        "cited_id": 105750,
+        "source": "search.opinions[].cites[]"
+      },
+      {
+        "source_opinion_id": 106883,
+        "cited_id": 105917,
+        "source": "search.opinions[].cites[]"
+      },
+      {
+        "source_opinion_id": 106883,
+        "cited_id": 106300,
+        "source": "search.opinions[].cites[]"
+      },
+      {
+        "source_opinion_id": 106883,
+        "cited_id": 106388,
+        "source": "search.opinions[].cites[]"
+      },
+      {
+        "source_opinion_id": 106883,
+        "cited_id": 106545,
+        "source": "search.opinions[].cites[]"
+      },
+      {
+        "source_opinion_id": 106883,
+        "cited_id": 106546,
+        "source": "search.opinions[].cites[]"
+      },
+      {
+        "source_opinion_id": 106883,
+        "cited_id": 106558,
+        "source": "search.opinions[].cites[]"
+      },
+      {
+        "source_opinion_id": 106883,
+        "cited_id": 106595,
+        "source": "search.opinions[].cites[]"
+      },
+      {
+        "source_opinion_id": 106883,
+        "cited_id": 106625,
+        "source": "search.opinions[].cites[]"
+      },
+      {
+        "source_opinion_id": 106883,
+        "cited_id": 106822,
+        "source": "search.opinions[].cites[]"
+      },
+      {
+        "source_opinion_id": 106883,
+        "cited_id": 106862,
+        "source": "search.opinions[].cites[]"
+      },
+      {
+        "source_opinion_id": 106883,
+        "cited_id": 237373,
+        "source": "search.opinions[].cites[]"
+      },
+      {
+        "source_opinion_id": 106883,
+        "cited_id": 261371,
+        "source": "search.opinions[].cites[]"
+      },
+      {
+        "source_opinion_id": 106883,
+        "cited_id": 1236300,
+        "source": "search.opinions[].cites[]"
+      },
+      {
+        "source_opinion_id": 106883,
+        "cited_id": 1490510,
+        "source": "search.opinions[].cites[]"
+      },
+      {
+        "source_opinion_id": 106883,
+        "cited_id": 1501119,
+        "source": "search.opinions[].cites[]"
+      },
+      {
+        "source_opinion_id": 106883,
+        "cited_id": 1653387,
+        "source": "search.opinions[].cites[]"
+      },
+      {
+        "source_opinion_id": 106883,
+        "cited_id": 1952574,
+        "source": "search.opinions[].cites[]"
+      },
+      {
+        "source_opinion_id": 106883,
+        "cited_id": 2193029,
+        "source": "search.opinions[].cites[]"
+      },
+      {
+        "source_opinion_id": 106883,
+        "cited_id": 5520716,
+        "source": "search.opinions[].cites[]"
+      },
+      {
+        "source_opinion_id": 106883,
+        "cited_id": 9422869,
+        "source": "search.opinions[].cites[]"
+      },
+      {
+        "source_opinion_id": 9422869,
+        "cited_id": 94782,
+        "source": "search.opinions[].cites[]"
+      },
+      {
+        "source_opinion_id": 9422869,
+        "cited_id": 103050,
+        "source": "search.opinions[].cites[]"
+      },
+      {
+        "source_opinion_id": 9422869,
+        "cited_id": 103981,
+        "source": "search.opinions[].cites[]"
+      },
+      {
+        "source_opinion_id": 9422869,
+        "cited_id": 104710,
+        "source": "search.opinions[].cites[]"
+      },
+      {
+        "source_opinion_id": 9422869,
+        "cited_id": 105449,
+        "source": "search.opinions[].cites[]"
+      },
+      {
+        "source_opinion_id": 9422869,
+        "cited_id": 105745,
+        "source": "search.opinions[].cites[]"
+      },
+      {
+        "source_opinion_id": 9422869,
+        "cited_id": 105750,
+        "source": "search.opinions[].cites[]"
+      },
+      {
+        "source_opinion_id": 9422869,
+        "cited_id": 105917,
+        "source": "search.opinions[].cites[]"
+      },
+      {
+        "source_opinion_id": 9422869,
+        "cited_id": 106300,
+        "source": "search.opinions[].cites[]"
+      },
+      {
+        "source_opinion_id": 9422869,
+        "cited_id": 106545,
+        "source": "search.opinions[].cites[]"
+      },
+      {
+        "source_opinion_id": 9422869,
+        "cited_id": 106558,
+        "source": "search.opinions[].cites[]"
+      },
+      {
+        "source_opinion_id": 9422869,
+        "cited_id": 106595,
+        "source": "search.opinions[].cites[]"
+      },
+      {
+        "source_opinion_id": 9422869,
+        "cited_id": 106625,
+        "source": "search.opinions[].cites[]"
+      },
+      {
+        "source_opinion_id": 9422869,
+        "cited_id": 106822,
+        "source": "search.opinions[].cites[]"
+      },
+      {
+        "source_opinion_id": 9422869,
+        "cited_id": 261371,
+        "source": "search.opinions[].cites[]"
+      },
+      {
+        "source_opinion_id": 9422869,
+        "cited_id": 1236300,
+        "source": "search.opinions[].cites[]"
+      },
+      {
+        "source_opinion_id": 9422869,
+        "cited_id": 1653387,
+        "source": "search.opinions[].cites[]"
+      },
+      {
+        "source_opinion_id": 9422869,
+        "cited_id": 2193029,
+        "source": "search.opinions[].cites[]"
+      },
+      {
+        "source_opinion_id": 9422869,
+        "cited_id": 5520716,
+        "source": "search.opinions[].cites[]"
+      },
+      {
+        "source_opinion_id": 9422870,
+        "cited_id": 103702,
+        "source": "search.opinions[].cites[]"
+      },
+      {
+        "source_opinion_id": 9422870,
+        "cited_id": 104491,
+        "source": "search.opinions[].cites[]"
+      },
+      {
+        "source_opinion_id": 9422870,
+        "cited_id": 105382,
+        "source": "search.opinions[].cites[]"
+      },
+      {
+        "source_opinion_id": 9422870,
+        "cited_id": 105690,
+        "source": "search.opinions[].cites[]"
+      },
+      {
+        "source_opinion_id": 9422870,
+        "cited_id": 105750,
+        "source": "search.opinions[].cites[]"
+      },
+      {
+        "source_opinion_id": 9422870,
+        "cited_id": 106300,
+        "source": "search.opinions[].cites[]"
+      },
+      {
+        "source_opinion_id": 9422870,
+        "cited_id": 106388,
+        "source": "search.opinions[].cites[]"
+      },
+      {
+        "source_opinion_id": 9422870,
+        "cited_id": 106545,
+        "source": "search.opinions[].cites[]"
+      },
+      {
+        "source_opinion_id": 9422870,
+        "cited_id": 106546,
+        "source": "search.opinions[].cites[]"
+      },
+      {
+        "source_opinion_id": 9422870,
+        "cited_id": 106595,
+        "source": "search.opinions[].cites[]"
+      },
+      {
+        "source_opinion_id": 9422870,
+        "cited_id": 106822,
+        "source": "search.opinions[].cites[]"
+      },
+      {
+        "source_opinion_id": 9422870,
+        "cited_id": 106862,
+        "source": "search.opinions[].cites[]"
+      },
+      {
+        "source_opinion_id": 9422870,
+        "cited_id": 237373,
+        "source": "search.opinions[].cites[]"
+      },
+      {
+        "source_opinion_id": 9422870,
+        "cited_id": 1490510,
+        "source": "search.opinions[].cites[]"
+      },
+      {
+        "source_opinion_id": 9422870,
+        "cited_id": 1501119,
+        "source": "search.opinions[].cites[]"
+      },
+      {
+        "source_opinion_id": 9422870,
+        "cited_id": 1952574,
+        "source": "search.opinions[].cites[]"
+      }
+    ]
+  },
+  "off_cl_links": [],
+  "provenance": {
+    "cl_source": "LRU",
+    "cl_api": "https://www.courtlistener.com/api/rest/v4",
+    "built_by": "S2-BUILDER-AUTHORING",
+    "build_run": "s2-build-96d841cbb12e",
+    "date_created": "2026-07-05T03:16:35Z",
+    "date_modified": "2026-07-06T10:25:11Z",
+    "warnings": [
+      "legacy treatment migrated: limited -> caution",
+      "F-S2-29 migration reference repair"
+    ],
+    "field_provenance": {
+      "identity": {
+        "src": "CourtListener search + clusters + lead opinion text",
+        "at": "2026-07-05T03:16:50Z",
+        "verifier": "S2-BUILDER-AUTHORING"
+      },
+      "treatment.field_i_validity": {
+        "src": "_treatment-migration.json + page frontmatter",
+        "at": "2026-07-05T03:16:51Z",
+        "verifier": "S2-BUILDER-AUTHORING"
+      },
+      "point_overrides": {
+        "src": "F-S2-29 migration reference repair",
+        "at": "2026-07-06T07:11:31Z",
+        "verifier": "orchestrator claude-fable-5"
+      },
+      "pinpoints": {
+        "src": "content page quote harvest + lead opinion text",
+        "at": "2026-07-05T03:16:51Z",
+        "verifier": "S2-BUILDER-AUTHORING"
+      }
+    }
+  }
+}
+
+```
+
+### cached opinion text — Escobedo v. Illinois
+
+```
+<div>
+<center><b><span class="citation" data-id="9422869"><a href="/opinion/106883/escobedo-v-illinois/" aria-description="Citation for case: Escobedo v. Illinois">378 U.S. 478</a></span> (1964)</b></center>
+<center><h1>ESCOBEDO<br>
+v.<br>
+ILLINOIS.</h1></center>
+<center>No. 615.</center>
+<center><p><b>Supreme Court of United States.</b></p></center>
+<center>Argued April 29, 1964.</center>
+<center>Decided June 22, 1964.</center>
+CERTIORARI TO THE SUPREME COURT OF ILLINOIS.
+<p><i>Barry L. Kroll</i> argued the cause for petitioner. With him on the brief was <i>Donald M. Haskell.</i></p>
+<p><i>James R. Thompson</i> argued the cause for respondent. With him on the brief were <i>Daniel P. Ward</i> and <i>Elmer C. Kissane.</i></p>
+<p><i>Bernard Weisberg</i> argued the cause for the American Civil Liberties Union, as <i>amicus curiae,</i> urging reversal. With him on the brief was <i>Walter T. Fisher.</i></p>
+<p><span class="star-pagination">*479</span> MR. JUSTICE GOLDBERG delivered the opinion of the Court.</p>
+<p>The critical question in this case is whether, under the circumstances, the refusal by the police to honor petitioner's request to consult with his lawyer during the course of an interrogation constitutes a denial of "the Assistance of Counsel" in violation of the Sixth Amendment to the Constitution as "made obligatory upon the States by the Fourteenth Amendment," <i>Gideon</i> v. <i>Wainwright,</i> <span class="citation" data-id="8945501"><a href="/opinion/8954562/gideon-v-wainwright/#342" aria-description="Citation for case: Gideon v. Wainwright">372 U. S. 335, 342</a></span>, and thereby renders inadmissible in a state criminal trial any incriminating statement elicited by the police during the interrogation.</p>
+<p>On the night of January 19, 1960, petitioner's brother-in-law was fatally shot. In the early hours of the next morning, at 2:30 a.m., petitioner was arrested without a warrant and interrogated. Petitioner made no statement to the police and was released at 5 that afternoon pursuant to a state court writ of habeas corpus obtained by Mr. Warren Wolfson, a lawyer who had been retained by petitioner.</p>
+<p>On January 30, Benedict DiGerlando, who was then in police custody and who was later indicted for the murder along with petitioner, told the police that petitioner had fired the fatal shots. Between 8 and 9 that evening, petitioner and his sister, the widow of the deceased, were arrested and taken to police headquarters. En route to the police station, the police "had handcuffed the defendant behind his back," and "one of the arresting officers told defendant that DiGerlando had named him as the one who shot" the deceased. Petitioner testified, without contradiction, that the "detectives said they had us pretty well, up pretty tight, and we might as well admit to this crime," and that he replied, "I am sorry but I would like to have advice from my lawyer." A police officer testified that although petitioner was not formally charged "he was in custody" and "couldn't walk out the door."</p>
+<p><span class="star-pagination">*480</span> Shortly after petitioner reached police headquarters, his retained lawyer arrived. The lawyer described the ensuing events in the following terms:</p>
+<blockquote>"On that day I received a phone call [from "the mother of another defendant"] and pursuant to that phone call I went to the Detective Bureau at 11th and State. The first person I talked to was the Sergeant on duty at the Bureau Desk, Sergeant Pidgeon. I asked Sergeant Pidgeon for permission to speak to my client, Danny Escobedo. . . . Sergeant Pidgeon made a call to the Bureau lockup and informed me that the boy had been taken from the lockup to the Homicide Bureau. This was between 9:30 and 10:00 in the evening. Before I went anywhere, he called the Homicide Bureau and told them there was an attorney waiting to see Escobedo. He told me I could not see him. Then I went upstairs to the Homicide Bureau. There were several Homicide Detectives around and I talked to them. I identified myself as Escobedo's attorney and asked permission to see him. They said I could not. . . . The police officer told me to see Chief Flynn who was on duty. I identified myself to Chief Flynn and asked permission to see my client. He said I could not. . . . I think it was approximately 11:00 o'clock. He said I couldn't see him because they hadn't completed questioning. . . . [F]or a second or two I spotted him in an office in the Homicide Bureau. The door was open and I could see through the office. . . . I waved to him and he waved back and then the door was closed, by one of the officers at Homicide.<sup>[1]</sup> There were four or five officers milling <span class="star-pagination">*481</span> around the Homicide Detail that night. As to whether I talked to Captain Flynn any later that day, I waited around for another hour or two and went back again and renewed by [<i>sic</i>] request to see my client. He again told me I could not. . . . I filed an official complaint with Commissioner Phelan of the Chicago Police Department. I had a conversation with every police officer I could find. I was told at Homicide that I couldn't see him and I would have to get a writ of habeas corpus. I left the Homicide Bureau and from the Detective Bureau at 11th and State at approximately 1:00 A.M. [Sunday morning] I had no opportunity to talk to my client that night. I quoted to Captain Flynn the Section of the Criminal Code which allows an attorney the right to see his client."<sup>[2]</sup></blockquote>
+<p>Petitioner testified that during the course of the interrogation he repeatedly asked to speak to his lawyer and that the police said that his lawyer "didn't want to see" him. The testimony of the police officers confirmed these accounts in substantial detail.</p>
+<p>Notwithstanding repeated requests by each, petitioner and his retained lawyer were afforded no opportunity to consult during the course of the entire interrogation. At one point, as previously noted, petitioner and his attorney came into each other's view for a few moments but the attorney was quickly ushered away. Petitioner testified "that he heard a detective telling the attorney the latter would not be allowed to talk to [him] `until they <span class="star-pagination">*482</span> were done' " and that he heard the attorney being refused permission to remain in the adjoining room. A police officer testified that he had told the lawyer that he could not see petitioner until "we were through interrogating" him.</p>
+<p>There is testimony by the police that during the interrogation, petitioner, a 22-year-old of Mexican extraction with no record of previous experience with the police, "was handcuffed"<sup>[3]</sup> in a standing position and that he "was nervous, he had circles under his eyes and he was upset" and was "agitated" because "he had not slept well in over a week."</p>
+<p>It is undisputed that during the course of the interrogation Officer Montejano, who "grew up" in petitioner's neighborhood, who knew his family, and who uses "Spanish language in [his] police work," conferred alone with petitioner "for about a quarter of an hour. . . ." Petitioner testified that the officer said to him "in Spanish that my sister and I could go home if I pinned it on Benedict DiGerlando," that "he would see to it that we would go home and be held only as witnesses, if anything, if we had made a statement against DiGerlando . . . , that we would be able to go home that night." Petitioner testified that he made the statement in issue because of this assurance. Officer Montejano denied offering any such assurance.</p>
+<p>A police officer testified that during the interrogation the following occurred:</p>
+<blockquote>"I informed him of what DiGerlando told me and when I did, he told me that DiGerlando was [lying] and I said, `Would you care to tell DiGerlando that?' and he said, `Yes, I will.' So, I <span class="star-pagination">*483</span> brought . . . Escobedo in and he confronted DiGerlando and he told him that he was lying and said, `I didn't shoot Manuel, you did it.' "</blockquote>
+<p>In this way, petitioner, for the first time, admitted to some knowledge of the crime. After that he made additional statements further implicating himself in the murder plot. At this point an Assistant State's Attorney, Theodore J. Cooper, was summoned "to take" a statement. Mr. Cooper, an experienced lawyer who was assigned to the Homicide Division to take "statements from some defendants and some prisoners that they had in custody," "took" petitioner's statement by asking carefully framed questions apparently designed to assure the admissibility into evidence of the resulting answers. Mr. Cooper testified that he did not advise petitioner of his constitutional rights, and it is undisputed that no one during the course of the interrogation so advised him.</p>
+<p>Petitioner moved both before and during trial to suppress the incriminating statement, but the motions were denied. Petitioner was convicted of murder and he appealed the conviction.</p>
+<p>The Supreme Court of Illinois, in its original opinion of February 1, 1963, held the statement inadmissible and reversed the conviction. The court said:</p>
+<blockquote>"[I]t seems manifest to us, from the undisputed evidence and the circumstances surrounding defendant at the time of his statement and shortly prior thereto, that the defendant understood he would be permitted to go home if he gave the statement and would be granted an immunity from prosecution."</blockquote>
+<p>Compare <i>Lynumn</i> v. <i>Illinois,</i> <span class="citation" data-id="106558"><a href="/opinion/106558/lynumn-v-illinois/" aria-description="Citation for case: Lynumn v. Illinois">372 U. S. 528</a></span>.</p>
+<p>The State petitioned for, and the court granted, rehearing. The court then affirmed the conviction. It said: "[T]he <span class="star-pagination">*484</span> officer denied making the promise and the trier of fact believed him. We find no reason for disturbing the trial court's finding that the confession was voluntary."<sup>[4]</sup> <span class="citation" data-id="2193029"><a href="/opinion/2193029/the-people-v-escobedo/#45" aria-description="Citation for case: The PEOPLE v. Escobedo">28 Ill. 2d 41, 45-46</a></span>, <span class="citation" data-id="2193029"><a href="/opinion/2193029/the-people-v-escobedo/#827" aria-description="Citation for case: The PEOPLE v. Escobedo">190 N. E. 2d 825, 827</a></span>. The court also held, on the authority of this Court's decisions in <i>Crooker</i> v. <i>California,</i> <span class="citation" data-id="9421688"><a href="/opinion/105745/crooker-v-california/" aria-description="Citation for case: Crooker v. California">357 U. S. 433</a></span>, and <i>Cicenia</i> v. <i>Lagay,</i> <span class="citation" data-id="9421694"><a href="/opinion/105750/cicenia-v-lagay/" aria-description="Citation for case: Cicenia v. Lagay">357 U. S. 504</a></span>, that the confession was admissible even though "it was obtained after he had requested the assistance of counsel, which request was denied." <span class="citation" data-id="2193029"><a href="/opinion/2193029/the-people-v-escobedo/#46" aria-description="Citation for case: The PEOPLE v. Escobedo">28 Ill. 2d, at 46</a></span>, <span class="citation" data-id="2193029"><a href="/opinion/2193029/the-people-v-escobedo/#827" aria-description="Citation for case: The PEOPLE v. Escobedo">190 N. E. 2d, at 827</a></span>. We granted a writ of certiorari to consider whether the petitioner's statement was constitutionally admissible at his trial. <span class="citation multiple-matches"><a href="/c/U.%20S./375/902/">375 U. S. 902</a></span>. We conclude, for the reasons stated below, that it was not and, accordingly, we reverse the judgment of conviction.</p>
+<p>In <i>Massiah</i> v. <i>United States,</i> <span class="citation" data-id="9422796"><a href="/opinion/106822/massiah-v-united-states/" aria-description="Citation for case: Massiah v. United States">377 U. S. 201</a></span>, this Court observed that "a Constitution which guarantees a defendant the aid of counsel at . . . trial could surely vouchsafe no less to an indicted defendant under interrogation by the police in a completely extrajudicial proceeding. Anything less . . . might deny a defendant `effective representation by counsel at the only stage when <span class="star-pagination">*485</span> legal aid and advice would help him.' " <span class="citation" data-id="9422796"><a href="/opinion/106822/massiah-v-united-states/#204" aria-description="Citation for case: Massiah v. United States"><i>Id.,</i> at 204</a></span>, quoting DOUGLAS, J., concurring in <i>Spano</i> v. <i>New York,</i> <span class="citation" data-id="9421842"><a href="/opinion/105917/spano-v-new-york/#326" aria-description="Citation for case: Spano v. New York">360 U. S. 315, 326</a></span>.</p>
+<p>The interrogation here was conducted before petitioner was formally indicted. But in the context of this case, that fact should make no difference. When petitioner requested, and was denied, an opportunity to consult with his lawyer, the investigation had ceased to be a general investigation of "an unsolved crime." <i>Spano</i> v. <i>New York,</i> <span class="citation" data-id="9421842"><a href="/opinion/105917/spano-v-new-york/#327" aria-description="Citation for case: Spano v. New York">360 U. S. 315, 327</a></span> (STEWART, J., concurring). Petitioner had become the accused, and the purpose of the interrogation was to "get him" to confess his guilt despite his constitutional right not to do so. At the time of his arrest and throughout the course of the interrogation, the police told petitioner that they had convincing evidence that he had fired the fatal shots. Without informing him of his absolute right to remain silent in the face of this accusation, the police urged him to make a statement.<sup>[5]</sup> As this Court observed many years ago:</p>
+<blockquote>"It cannot be doubted that, placed in the position in which the accused was when the statement was made to him that the other suspected person had charged him with crime, the result was to produce upon his mind the fear that if he remained silent it would be considered an admission of guilt, and therefore render certain his being committed for trial as the guilty person, and it cannot be conceived that the converse impression would not also have naturally <span class="star-pagination">*486</span> arisen, that by denying there was hope of removing the suspicion from himself." <i>Bram</i> v. <i>United States,</i> <span class="citation" data-id="9417767"><a href="/opinion/94782/bram-v-united-states/#562" aria-description="Citation for case: Bram v. United States">168 U. S. 532, 562</a></span>.</blockquote>
+<p>Petitioner, a layman, was undoubtedly unaware that under Illinois law an admission of "mere" complicity in the murder plot was legally as damaging as an admission of firing of the fatal shots. <i>Illinois</i> v. <i>Escobedo,</i> <span class="citation" data-id="2193029"><a href="/opinion/2193029/the-people-v-escobedo/" aria-description="Citation for case: The PEOPLE v. Escobedo">28 Ill. 2d 41</a></span>, <span class="citation" data-id="2193029"><a href="/opinion/2193029/the-people-v-escobedo/" aria-description="Citation for case: The PEOPLE v. Escobedo">190 N. E. 2d 825</a></span>. The "guiding hand of counsel" was essential to advise petitioner of his rights in this delicate situation. <i>Powell</i> v. <i>Alabama,</i> <span class="citation" data-id="9575538"><a href="/opinion/1236300/powell-v-alabama/#69" aria-description="Citation for case: Powell v. Alabama">287 U. S. 45, 69</a></span>. This was the "stage when legal aid and advice" were most critical to petitioner. <i>Massiah</i> v. <i>United States, supra,</i> at 204. It was a stage surely as critical as was the arraignment in <i>Hamilton</i> v. <i>Alabama,</i> <span class="citation" data-id="106300"><a href="/opinion/106300/hamilton-v-alabama/" aria-description="Citation for case: Hamilton v. Alabama">368 U. S. 52</a></span>, and the preliminary hearing in <i>White</i> v. <i>Maryland,</i> <span class="citation" data-id="106595"><a href="/opinion/106595/white-v-maryland/" aria-description="Citation for case: White v. Maryland">373 U. S. 59</a></span>. What happened at this interrogation could certainly "affect the whole trial," <i>Hamilton</i> v. <i>Alabama, supra,</i> at 54, since rights "may be as irretrievably lost, if not then and there asserted, as they are when an accused represented by counsel waives a right for strategic purposes." <i>Ibid.</i> It would exalt form over substance to make the right to counsel, under these circumstances, depend on whether at the time of the interrogation, the authorities had secured a formal indictment. Petitioner had, for all practical purposes, already been charged with murder.</p>
+<p>The New York Court of Appeals, whose decisions this Court cited with approval in <i>Massiah,</i> <span class="citation" data-id="9422796"><a href="/opinion/106822/massiah-v-united-states/#205" aria-description="Citation for case: Massiah v. United States">377 U. S. 201, at 205</a></span>, has recently recognized that, under circumstances such as those here, no meaningful distinction can be drawn between interrogation of an accused before and after formal indictment. In <i>People</i> v. <i>Donovan,</i> 13 N. Y. 2d 148, <span class="citation" data-id="5520716"><a href="/opinion/5673265/people-v-donovan/" aria-description="Citation for case: People v. Donovan">193 N. E. 2d 628</a></span>, that court, in an opinion by Judge Fuld, held that a "confession taken from a defendant, during a period of detention [prior to indictment], after his attorney had requested and been denied access <span class="star-pagination">*487</span> to him" could not be used against him in a criminal trial.<sup>[6]</sup><i>Id.,</i> at 151, <span class="citation" data-id="5520716"><a href="/opinion/5673265/people-v-donovan/#629" aria-description="Citation for case: People v. Donovan">193 N. E. 2d, at 629</a></span>. The court observed that it "would be highly incongruous if our system of justice permitted the district attorney, the lawyer representing the State, to extract a confession from the accused while his own lawyer, seeking to speak with him, was kept from him by the police." <i>Id.,</i> at 152, <span class="citation" data-id="5520716"><a href="/opinion/5673265/people-v-donovan/#629" aria-description="Citation for case: People v. Donovan">193 N. E. 2d, at 629</a></span>.<sup>[7]</sup></p>
+<p>In <i>Gideon</i> v. <i>Wainwright,</i> <span class="citation" data-id="8945501"><a href="/opinion/8954562/gideon-v-wainwright/" aria-description="Citation for case: Gideon v. Wainwright">372 U. S. 335</a></span>, we held that every person accused of a crime, whether state or federal, is entitled to a lawyer at trial.<sup>[8]</sup> The rule sought by the State here, however, would make the trial no more than an appeal from the interrogation; and the "right to use counsel at the formal trial [would be] a very hollow thing [if], for all practical purposes, the conviction is already assured by pretrial examination." <i>In re Groban,</i> 352 U. S. <span class="star-pagination">*488</span> 330, 344 (BLACK, J., dissenting).<sup>[9]</sup> "One can imagine a cynical prosecutor saying: `Let them have the most illustrious counsel, now. They can't escape the noose. There is nothing that counsel can do for them at the trial.' " <i>Ex parte Sullivan,</i> <span class="citation" data-id="1653387"><a href="/opinion/1653387/ex-parte-sullivan/#517" aria-description="Citation for case: Ex Parte Sullivan">107 F. Supp. 514, 517-518</a></span>.</p>
+<p>It is argued that if the right to counsel is afforded prior to indictment, the number of confessions obtained by the police will diminish significantly, because most confessions are obtained during the period between arrest and indictment,<sup>[10]</sup> and "any lawyer worth his salt will tell the suspect in no uncertain terms to make no statement to police under any circumstances." <i>Watts</i> v. <i>Indiana,</i> <span class="citation" data-id="9420379"><a href="/opinion/104710/watts-v-indiana/#59" aria-description="Citation for case: Watts v. Indiana">338 U. S. 49, 59</a></span> (Jackson, J., concurring in part and dissenting in part). This argument, of course, cuts two ways. The fact that many confessions are obtained during this period points up its critical nature as a "stage when legal aid and advice" are surely needed. <i>Massiah</i> v. <i>United States, supra,</i> at 204; <i>Hamilton</i> v. <i>Alabama, supra</i><i>; </i><i>White</i> v. <i><span class="citation" data-id="106595"><a href="/opinion/106595/white-v-maryland/" aria-description="Citation for case: White v. Maryland">Maryland, supra</a></span></i><i>.</i> The right to counsel would indeed be hollow if it began at a period when few confessions were obtained. There is necessarily a direct relationship between the importance of a stage to the police in their quest for a confession and the criticalness of that stage to the accused in his need for legal advice. Our Constitution, unlike some others, strikes the balance in favor of the right of the accused to be advised by his lawyer of his privilege against self-incrimination. See Note, 73 Yale L. J. 1000, 1048-1051 (1964).</p>
+<p>We have learned the lesson of history, ancient and modern, that a system of criminal law enforcement <span class="star-pagination">*489</span> which comes to depend on the "confession" will, in the long run, be less reliable<sup>[11]</sup> and more subject to abuses<sup>[12]</sup> than a system which depends on extrinsic evidence independently secured through skillful investigation. As Dean Wigmore so wisely said:</p>
+<blockquote>"[<i>A</i>]<i>ny system of administration which permits the prosecution to trust habitually to compulsory self-disclosure as a source of proof must itself suffer morally thereby.</i> The inclination develops to rely mainly upon such evidence, and to be satisfied with an incomplete investigation of the other sources. The exercise of the power to extract answers begets a forgetfulness of the just limitations of that power. The simple and peaceful process of questioning breeds a readiness to resort to bullying and to physical force and torture. If there is a right to an answer, there soon seems to be a right to the expected answer, that is, to a confession of guilt. Thus the legitimate use grows into the unjust abuse; ultimately, the innocent are jeopardized by the encroachments of a bad system. Such seems to have been the course of experience in those legal systems where the privilege was not recognized." 8 Wigmore, Evidence (3d ed. 1940), 309. (Emphasis in original.)</blockquote>
+<p><span class="star-pagination">*490</span> This Court also has recognized that "history amply shows that confessions have often been extorted to save law enforcement officials the trouble and effort of obtaining valid and independent evidence . . . ." <i>Haynes</i> v. <i>Washington,</i> <span class="citation" data-id="9422619"><a href="/opinion/106625/haynes-v-washington/#519" aria-description="Citation for case: Haynes v. Washington">373 U. S. 503, 519</a></span>.</p>
+<p>We have also learned the companion lesson of history that no system of criminal justice can, or should, survive if it comes to depend for its continued effectiveness on the citizens' abdication through unawareness of their constitutional rights. No system worth preserving should have to <i>fear</i> that if an accused is permitted to consult with a lawyer, he will become aware of, and exercise, these rights.<sup>[13]</sup> If the exercise of constitutional rights will thwart the effectiveness of a system of law enforcement, then there is something very wrong with that system.<sup>[14]</sup></p>
+<p>We hold, therefore, that where, as here, the investigation is no longer a general inquiry into an unsolved crime but has begun to focus on a particular suspect, the suspect <span class="star-pagination">*491</span> has been taken into police custody, the police carry out a process of interrogations that lends itself to eliciting incriminating statements, the suspect has requested and been denied an opportunity to consult with his lawyer, and the police have not effectively warned him of his absolute constitutional right to remain silent, the accused has been denied "the Assistance of Counsel" in violation of the Sixth Amendment to the Constitution as "made obligatory upon the States by the Fourteenth Amendment," <i>Gideon</i> v. <i>Wainwright,</i> <span class="citation" data-id="8945501"><a href="/opinion/8954562/gideon-v-wainwright/#342" aria-description="Citation for case: Gideon v. Wainwright">372 U. S., at 342</a></span>, and that no statement elicited by the police during the interrogation may be used against him at a criminal trial.</p>
+<p><i>Crooker</i> v. <i>California,</i> <span class="citation" data-id="9421688"><a href="/opinion/105745/crooker-v-california/" aria-description="Citation for case: Crooker v. California">357 U. S. 433</a></span>, does not compel a contrary result. In that case the Court merely rejected the absolute rule sought by petitioner, that "every state denial of a request to contact counsel [is] an infringement of the constitutional right <i>without regard to the circumstances of the case.</i>" <span class="citation" data-id="9421688"><a href="/opinion/105745/crooker-v-california/#440" aria-description="Citation for case: Crooker v. California"><i>Id.,</i> at 440</a></span>. (Emphasis in original.) In its place, the following rule was announced:</p>
+<blockquote>"[S]tate refusal of a request to engage counsel violates due process not only if the accused is deprived of counsel at trial on the merits, . . . <i>but also if he is deprived of counsel for any part of the pretrial proceedings,</i> provided that he is so prejudiced thereby as to infect his subsequent trial with an absence of `that fundamental fairness essential to the very concept of justice. . . .' The latter determination necessarily depends upon all the circumstances of the case." 357 U. S., at 439-440. (Emphasis added.)</blockquote>
+<p>The Court, applying "these principles" to "the sum total of the circumstances [there] during the time petitioner was without counsel," <i>id.,</i> at 440, concluded that he had not been fundamentally prejudiced by the denial of his request for counsel. Among the critical circumstances which distinguish that case from this one are that the petitioner there, but not here, was explicitly advised by the police of his constitutional right to remain silent and <span class="star-pagination">*492</span> not to "say anything" in response to the questions, <i>id.,</i> at 437, and that petitioner there, but not here, was a well-educated man who had studied criminal law while attending law school for a year. The Court's opinion in <i>Cicenia</i> v. <i>Lagay,</i> <span class="citation" data-id="9421694"><a href="/opinion/105750/cicenia-v-lagay/" aria-description="Citation for case: Cicenia v. Lagay">357 U. S. 504</a></span>, decided the same day, merely said that the "contention that petitioner had a constitutional right to confer with counsel is disposed of by <i>Crooker</i> v. <i><span class="citation" data-id="9421688"><a href="/opinion/105745/crooker-v-california/" aria-description="Citation for case: Crooker v. California">California</a></span></i> . . . ." That case adds nothing, therefore, to <i><span class="citation" data-id="9421688"><a href="/opinion/105745/crooker-v-california/" aria-description="Citation for case: Crooker v. California">Crooker</a></span>.</i> In any event, to the extent that <i><span class="citation" data-id="9421694"><a href="/opinion/105750/cicenia-v-lagay/" aria-description="Citation for case: Cicenia v. Lagay">Cicenia</a></span></i> or <i><span class="citation" data-id="9421688"><a href="/opinion/105745/crooker-v-california/" aria-description="Citation for case: Crooker v. California">Crooker</a></span></i> may be inconsistent with the principles announced today, they are not to be regarded as controlling.<sup>[15]</sup></p>
+<p>Nothing we have said today affects the powers of the police to investigate "an unsolved crime," <i>Spano</i> v. <i>New York,</i> <span class="citation" data-id="9421842"><a href="/opinion/105917/spano-v-new-york/#327" aria-description="Citation for case: Spano v. New York">360 U. S. 315, 327</a></span> (STEWART, J., concurring), by gathering information from witnesses and by other "proper investigative efforts." <i>Haynes</i> v. <i>Washington,</i> <span class="citation" data-id="9422619"><a href="/opinion/106625/haynes-v-washington/#519" aria-description="Citation for case: Haynes v. Washington">373 U. S. 503, 519</a></span>. We hold only that when the process shifts from investigatory to accusatorywhen its focus is on the accused and its purpose is to elicit a confession our adversary system begins to operate, and, under the circumstances here, the accused must be permitted to consult with his lawyer.</p>
+<p>The judgment of the Illinois Supreme Court is reversed and the case remanded for proceedings not inconsistent with this opinion.</p>
+<p><i>Reversed and remanded.</i></p>
+<p>MR. JUSTICE HARLAN, dissenting.</p>
+<p>I would affirm the judgment of the Supreme Court of Illinois on the basis of <i>Cicenia</i> v. <i>Lagay,</i> <span class="citation" data-id="9421694"><a href="/opinion/105750/cicenia-v-lagay/" aria-description="Citation for case: Cicenia v. Lagay">357 U. S. 504</a></span>, <span class="star-pagination">*493</span> decided by this Court only six years ago. Like my Brother WHITE, <i>post,</i> p. 495, I think the rule announced today is most ill-conceived and that it seriously and unjustifiably fetters perfectly legitimate methods of criminal law enforcement.</p>
+<p>MR. JUSTICE STEWART, dissenting.</p>
+<p>I think this case is directly controlled by <i>Cicenia</i> v. <i>Lagay,</i> <span class="citation" data-id="9421694"><a href="/opinion/105750/cicenia-v-lagay/" aria-description="Citation for case: Cicenia v. Lagay">357 U. S. 504</a></span>, and I would therefore affirm the judgment.</p>
+<p><i>Massiah</i> v. <i>United States,</i> <span class="citation" data-id="9422796"><a href="/opinion/106822/massiah-v-united-states/" aria-description="Citation for case: Massiah v. United States">377 U. S. 201</a></span>, is not in point here. In that case a federal grand jury had indicted Massiah. He had retained a lawyer and entered a formal plea of not guilty. Under our system of federal justice an indictment and arraignment are followed by a trial, at which the Sixth Amendment guarantees the defendant the assistance of counsel.<sup>[*]</sup> But Massiah was released on bail, and thereafter agents of the Federal Government deliberately elicited incriminating statements from him in the absence of his lawyer. We held that the use of these statements against him at his trial denied him the basic protections of the Sixth Amendment guarantee. Putting to one side the fact that the case now before us is not a federal case, the vital fact remains that this case does not involve the deliberate interrogation of a defendant after the initiation of judicial proceedings against him. The Court disregards this basic difference between the present case and Massiah's, with the bland assertion that "that fact should make no difference." <i>Ante,</i> p. 485.</p>
+<p>It is "that fact," I submit, which makes all the difference. Under our system of criminal justice the institution of formal, meaningful judicial proceedings, by way of indictment, information, or arraignment, marks the <span class="star-pagination">*494</span> point at which a criminal investigation has ended and adversary proceedings have commenced. It is at this point that the constitutional guarantees attach which pertain to a criminal trial. Among those guarantees are the right to a speedy trial, the right of confrontation, and the right to trial by jury. Another is the guarantee of the assistance of counsel. <i>Gideon</i> v. <i>Wainwright,</i> <span class="citation" data-id="8945501"><a href="/opinion/8954562/gideon-v-wainwright/" aria-description="Citation for case: Gideon v. Wainwright">372 U. S. 335</a></span>; <i>Hamilton</i> v. <i>Alabama,</i> <span class="citation" data-id="106300"><a href="/opinion/106300/hamilton-v-alabama/" aria-description="Citation for case: Hamilton v. Alabama">368 U. S. 52</a></span>; <i>White</i> v. <i>Maryland,</i> <span class="citation" data-id="106595"><a href="/opinion/106595/white-v-maryland/" aria-description="Citation for case: White v. Maryland">373 U. S. 59</a></span>.</p>
+<p>The confession which the Court today holds inadmissible was a voluntary one. It was given during the course of a perfectly legitimate police investigation of an unsolved murder. The Court says that what happened during this investigation "affected" the trial. I had always supposed that the whole purpose of a police investigation of a murder was to "affect" the trial of the murderer, and that it would be only an incompetent, unsuccessful, or corrupt investigation which would not do so. The Court further says that the Illinois police officers did not advise the petitioner of his "constitutional rights" before he confessed to the murder. This Court has never held that the Constitution requires the police to give any "advice" under circumstances such as these.</p>
+<p>Supported by no stronger authority than its own rhetoric, the Court today converts a routine police investigation of an unsolved murder into a distorted analogue of a judicial trial. It imports into this investigation constitutional concepts historically applicable only after the onset of formal prosecutorial proceedings. By doing so, I think the Court perverts those precious constitutional guarantees, and frustrates the vital interests of society in preserving the legitimate and proper function of honest and purposeful police investigation.</p>
+<p>Like my Brother CLARK, I cannot escape the logic of my Brother WHITE's conclusions as to the extraordinary implications which emanate from the Court's opinion in <span class="star-pagination">*495</span> this case, and I share their views as to the untold and highly unfortunate impact today's decision may have upon the fair administration of criminal justice. I can only hope we have completely misunderstood what the Court has said.</p>
+<p>MR. JUSTICE WHITE, with whom MR. JUSTICE CLARK and MR. JUSTICE STEWART join, dissenting.</p>
+<p>In <i>Massiah</i> v. <i>United States,</i> <span class="citation" data-id="9422796"><a href="/opinion/106822/massiah-v-united-states/" aria-description="Citation for case: Massiah v. United States">377 U. S. 201</a></span>, the Court held that as of the date of the indictment the prosecution is disentitled to secure admissions from the accused. The Court now moves that date back to the time when the prosecution begins to "focus" on the accused. Although the opinion purports to be limited to the facts of this case, it would be naive to think that the new constitutional right announced will depend upon whether the accused has retained his own counsel, cf. <i>Gideon</i> v. <i>Wainright,</i> <span class="citation" data-id="8945501"><a href="/opinion/8954562/gideon-v-wainwright/" aria-description="Citation for case: Gideon v. Wainwright">372 U. S. 335</a></span>; <i>Griffin</i> v. <i>Illinois,</i> <span class="citation" data-id="9421263"><a href="/opinion/105382/griffin-v-illinois/" aria-description="Citation for case: Griffin v. Illinois">351 U. S. 12</a></span>; <i>Douglas</i> v. <i>California,</i> <span class="citation" data-id="9422548"><a href="/opinion/106546/douglas-v-california/" aria-description="Citation for case: Douglas v. California">372 U. S. 353</a></span>, or has asked to consult with counsel in the course of interrogation. Cf. <i>Carnley</i> v. <i>Cochran,</i> <span class="citation" data-id="9422395"><a href="/opinion/106388/carnley-v-cochran/" aria-description="Citation for case: Carnley v. Cochran">369 U. S. 506</a></span>. At the very least the Court holds that once the accused becomes a suspect and, presumably, is arrested, any admission made to the police thereafter is inadmissible in evidence unless the accused has waived his right to counsel. The decision is thus another major step in the direction of the goal which the Court seemingly has in mindto bar from evidence all admissions obtained from an individual suspected of crime, whether involuntarily made or not. It does of course put us one step "ahead" of the English judges who have had the good sense to leave the matter a discretionary one with the trial court.<sup>[*]</sup> I reject this step and <span class="star-pagination">*496</span> the invitation to go farther which the Court has now issued.</p>
+<p>By abandoning the voluntary-involuntary test for admissibility of confessions, the Court seems driven by the notion that it is uncivilized law enforcement to use an accused's own admissions against him at his trial. It attempts to find a home for this new and nebulous rule of due process by attaching it to the right to counsel guaranteed in the federal system by the Sixth Amendment and binding upon the States by virtue of the due process guarantee of the Fourteenth Amendment. <i>Gideon</i> v. <i><span class="citation" data-id="8945501"><a href="/opinion/8954562/gideon-v-wainwright/" aria-description="Citation for case: Gideon v. Wainwright">Wainwright, supra</a></span></i><i>.</i> The right to counsel now not only entitles the accused to counsel's advice and aid in preparing for trial but stands as an impenetrable barrier to any interrogation once the accused has become a suspect. From that very moment apparently his right to counsel attaches, a rule wholly unworkable and impossible to administer unless police cars are equipped with public defenders and undercover agents and police informants have defense counsel at their side. I would not abandon the Court's prior cases defining with some care and analysis the circumstances requiring the presence or aid of counsel and substitute the amorphous and wholly unworkable principle that counsel is constitutionally required whenever he would or could be helpful. <i>Hamilton</i> v. <i>Alabama,</i> <span class="citation" data-id="106300"><a href="/opinion/106300/hamilton-v-alabama/" aria-description="Citation for case: Hamilton v. Alabama">368 U. S. 52</a></span>; <i>White</i> v. <i>Maryland,</i> <span class="citation" data-id="106595"><a href="/opinion/106595/white-v-maryland/" aria-description="Citation for case: White v. Maryland">373 U. S. 59</a></span>; <i>Gideon</i> v. <span class="star-pagination">*497</span> <i><span class="citation" data-id="8945501"><a href="/opinion/8954562/gideon-v-wainwright/" aria-description="Citation for case: Gideon v. Wainwright">Wainwright, supra</a></span></i><i>.</i> These cases dealt with the requirement of counsel at proceedings in which definable rights could be won or lost, not with stages where probative evidence might be obtained. Under this new approach one might just as well argue that a potential defendant is constitutionally entitled to a lawyer before, not after, he commits a crime, since it is then that crucial incriminating evidence is put within the reach of the Government by the would-be accused. Until now there simply has been no right guaranteed by the Federal Constitution to be free from the use at trial of a voluntary admission made prior to indictment.</p>
+<p>It is incongruous to assume that the provision for counsel in the Sixth Amendment was meant to amend or supersede the self-incrimination provision of the Fifth Amendment, which is now applicable to the States. <i>Malloy</i> v. <i>Hogan,</i> <span class="citation" data-id="9422839"><a href="/opinion/106862/malloy-v-hogan/" aria-description="Citation for case: Malloy v. Hogan">378 U. S. 1</a></span>. That amendment addresses itself to the very issue of incriminating admissions of an accused and resolves it by proscribing only compelled statements. Neither the Framers, the constitutional language, a century of decisions of this Court nor Professor Wigmore provides an iota of support for the idea that an accused has an absolute constitutional right not to answer even in the absence of compulsionthe constitutional right not to incriminate himself by making voluntary disclosures.</p>
+<p>Today's decision cannot be squared with other provisions of the Constitution which, in my view, define the system of criminal justice this Court is empowered to administer. The Fourth Amendment permits upon probable cause even compulsory searches of the suspect and his possessions and the use of the fruits of the search at trial, all in the absence of counsel. The Fifth Amendment and state constitutional provisions authorize, indeed require, inquisitorial grand jury proceedings at which a potential defendant, in the absence of counsel, <span class="star-pagination">*498</span> is shielded against no more than compulsory incrimination. <i>Mulloney</i> v. <i>United States,</i> <span class="citation" data-id="9641903"><a href="/opinion/1501119/mulloney-v-united-states/#578" aria-description="Citation for case: Mulloney v. United States">79 F. 2d 566, 578</a></span> (C. A. 1st Cir.); <i>United States</i> v. <i>Benjamin,</i> <span class="citation" data-id="1490510"><a href="/opinion/1490510/united-states-v-benjamin/#522" aria-description="Citation for case: United States v. Benjamin">120 F. 2d 521, 522</a></span> (C. A. 2d Cir.); <i>United States</i> v. <i>Scully,</i> <span class="citation" data-id="9444722"><a href="/opinion/237373/united-states-v-patrick-j-scully/#115" aria-description="Citation for case: United States v. Patrick J. Scully">225 F. 2d 113, 115</a></span> (C. A. 2d Cir.); <i>United States</i> v. <i>Gilboy,</i> <span class="citation" data-id="1952574"><a href="/opinion/1952574/united-states-v-gilboy/" aria-description="Citation for case: United States v. Gilboy">160 F. Supp. 442</a></span> (D. C. M. D. Pa.). A grand jury witness, who may be a suspect, is interrogated and his answers, at least until today, are admissible in evidence at trial. And these provisions have been thought of as constitutional safeguards to persons suspected of an offense. Furthermore, until now, the Constitution has permitted the accused to be fingerprinted and to be identified in a line-up or in the courtroom itself.</p>
+<p>The Court chooses to ignore these matters and to rely on the virtues and morality of a system of criminal law enforcement which does not depend on the "confession." No such judgment is to be found in the Constitution. It might be appropriate for a legislature to provide that a suspect should not be consulted during a criminal investigation; that an accused should never be called before a grand jury to answer, even if he wants to, what may well be incriminating questions; and that no person, whether he be a suspect, guilty criminal or innocent bystander, should be put to the ordeal of responding to orderly noncompulsory inquiry by the State. But this is not the system our Constitution requires. The only "inquisitions" the Constitution forbids are those which compel incrimination. Escobedo's statements were not compelled and the Court does not hold that they were.</p>
+<p>This new American judges' rule, which is to be applied in both federal and state courts, is perhaps thought to be a necessary safeguard against the possibility of extorted confessions. To this extent it reflects a deep-seated distrust of law enforcement officers everywhere, unsupported by relevant data or current material based upon our own <span class="star-pagination">*499</span> experience. Obviously law enforcement officers can make mistakes and exceed their authority, as today's decision shows that even judges can do, but I have somewhat more faith than the Court evidently has in the ability and desire of prosecutors and of the power of the appellate courts to discern and correct such violations of the law.</p>
+<p>The Court may be concerned with a narrower matter: the unknowing defendant who responds to police questioning because he mistakenly believes that he must and that his admissions will not be used against him. But this worry hardly calls for the broadside the Court has now fired. The failure to inform an accused that he need not answer and that his answers may be used against him is very relevant indeed to whether the disclosures are compelled. Cases in this Court, to say the least, have never placed a premium on ignorance of constitutional rights. If an accused is told he must answer and does not know better, it would be very doubtful that the resulting admissions could be used against him. When the accused has not been informed of his rights at all the Court characteristically and properly looks very closely at the surrounding circumstances. See <i>Ward</i> v. <i>Texas,</i> <span class="citation" data-id="103702"><a href="/opinion/103702/ward-v-texas/" aria-description="Citation for case: Ward v. Texas">316 U. S. 547</a></span>; <i>Haley</i> v. <i>Ohio,</i> <span class="citation" data-id="9420075"><a href="/opinion/104491/haley-v-ohio/" aria-description="Citation for case: Haley v. Ohio">332 U. S. 596</a></span>; <i>Payne</i> v. <i>Arkansas,</i> <span class="citation" data-id="9421616"><a href="/opinion/105690/payne-v-arkansas/" aria-description="Citation for case: Payne v. Arkansas">356 U. S. 560</a></span>. I would continue to do so. But in this case Danny Escobedo knew full well that he did not have to answer and knew full well that his lawyer had advised him not to answer.</p>
+<p>I do not suggest for a moment that law enforcement will be destroyed by the rule announced today. The need for peace and order is too insistent for that. But it will be crippled and its task made a great deal more difficult, all in my opinion, for unsound, unstated reasons, which can find no home in any of the provisions of the Constitution.</p>
+<h2>NOTES</h2>
+<p>[1]  Petitioner testified that this ambiguous gesture "could have meant most anything," but that he "took it upon [his] own to think that [the lawyer was telling him] not to say anything," and that the lawyer "wanted to talk" to him.</p>
+<p>[2]  The statute then in effect provided in pertinent part that: "All public officers . . . having the custody of any person . . . restrained of his liberty for any alleged cause whatever, shall, except in cases of imminent danger of escape, admit any practicing attorney . . . whom such person . . . may desire to see or consult . . ." Ill. Rev. Stat. (1959), c. 38, § 477. Repealed as of Jan. 1, 1964, by Act approved Aug. 14, 1963, H. B. No. 851.</p>
+<p>[3]  The trial judge justified the handcuffing on the ground that it "is ordinary police procedure."</p>
+<p>[4]  Compare <i>Haynes</i> v. <i>Washington,</i> <span class="citation" data-id="9422619"><a href="/opinion/106625/haynes-v-washington/#515" aria-description="Citation for case: Haynes v. Washington">373 U. S. 503, 515</a></span> (decided on the same day as the decision of the Illinois Supreme Court here), where we said:
+</p>
+<p>"Our conclusion is in no way foreclosed, as the State contends, by the fact that the state trial judge or the jury may have reached a different result on this issue.</p>
+<p>"It is well settled that the duty of constitutional adjudication resting upon this Court requires that the question whether the Due Process Clause of the Fourteenth Amendment has been violated by admission into evidence of a coerced confession be the subject of an <i>independent</i> determination here, see, <i>e. g., </i><i>Ashcraft</i> v. <i>Tennessee,</i> <span class="citation" data-id="9419494"><a href="/opinion/103981/ashcraft-v-tennessee/#147" aria-description="Citation for case: Ashcraft v. Tennessee">322 U. S. 143, 147-148</a></span>; `we cannot escape the responsibility of making our own examination of the record,' <i>Spano</i> v. <i>New York,</i> <span class="citation" data-id="9421842"><a href="/opinion/105917/spano-v-new-york/#316" aria-description="Citation for case: Spano v. New York">360 U. S. 315, 316</a></span>." (Emphasis in original.)</p>
+<p>[5]  Although there is testimony in the record that petitioner and his lawyer had previously discussed what petitioner should do in the event of interrogation, there is no evidence that they discussed what petitioner should, or could, do in the face of a false accusation that he had fired the fatal bullets.</p>
+<p>[6]  The English Judges' Rules also recognize that a functional rather than a formal test must be applied and that, under circumstances such as those here, no special significance should be attached to formal indictment. The applicable Rule does not permit the police to question an accused, except in certain extremely limited situations not relevant here, at any time after the defendant "has been charged <i>or informed that he may be prosecuted.</i>" [1964] Crim. L. Rev. 166-170 (emphasis supplied). Although voluntary statements obtained in violation of these rules are not automatically excluded from evidence the judge may, in the exercise of his discretion, exclude them. "Recent cases suggest that perhaps the judges have been tightening up [and almost] inevitably, the effect of the new Rules will be to stimulate this tendency." <i>Id.,</i> at 182.</p>
+<p>[7]  Canon 9 of the American Bar Association's Canon of Professional Ethics provides that:
+</p>
+<p>"A lawyer should not in any way communicate upon the subject of controversy with a party represented by counsel; much less should he undertake to negotiate or compromise the matter with him, but should deal only with his counsel. It is incumbent upon the lawyer most particularly to avoid everything that may tend to mislead a party not represented by counsel, and he should not undertake to advise him as to the law." See Broeder, Wong Sun v. United States: A Study in Faith and Hope, <span class="citation no-link">42 Neb. L. Rev. 483</span>, 599-604.</p>
+<p>[8]  Twenty-two States including Illinois, urged us so to hold.</p>
+<p>[9]  The Soviet criminal code does not permit a lawyer to be present during the investigation. The Soviet trial has thus been aptly described as "an appeal from the pretrial investigation." Feifer, Justice in Moscow (1964), 86.</p>
+<p>[10]  See Barrett, Police Practices and the LawFrom Arrest to Release or Charge, <span class="citation no-link">50 Cal. L. Rev. 11</span>, 43 (1962).</p>
+<p>[11]  See Committee Print, Subcommittee to Investigate Administration of the Internal Security Act, Senate Committee on the Judiciary, 85th Cong., 1st Sess., reporting and analyzing the proceedings at the XXth Congress of the Communist Party of the Soviet Union, February 25, 1956, exposing the false confessions obtained during the Stalin purges of the 1930's. See also <i>Miller</i> v. <i>United States,</i> <span class="citation" data-id="9449514"><a href="/opinion/261371/lawrence-c-miller-jr-v-united-states/#772" aria-description="Citation for case: Lawrence C. Miller, Jr. v. United States">320 F. 2d 767, 772-773</a></span> (opinion of Chief Judge Bazelon); Lifton, Thought Reform and the Psychology of Totalism (1961); Rogge, Why Men Confess (1959); Schein, Coercive Persuasion (1961).</p>
+<p>[12]  See Stephen, History of the Criminal Law, quoted in 8 Wigmore, Evidence (3d ed. 1940), 312; Report and Recommendations of the Commissioners' Committee on Police Arrests for Investigation, District of Columbia (1962).</p>
+<p>[13]  Cf. Report of Attorney General's Committee on Poverty and the Administration of Federal Criminal Justice (1963), 10-11: "The survival of our system of criminal justice and the values which it advances depends upon a constant, searching, and creative questioning of official decisions and assertions of authority at all stages of the process. . . . Persons [denied access to counsel] are incapable of providing the challenges that are indispensable to satisfactory operation of the system. The loss to the interests of accused individuals, occasioned by these failures, are great and apparent. It is also clear that a situation in which persons are required to contest a serious accusation but are denied access to the tools of contest is offensive to fairness and equity. Beyond these considerations, however, is the fact that [this situation is] detrimental to the proper functioning of the system of justice and that the loss in vitality of the adversary system, thereby occasioned, significantly endangers the basic interests of a free community."</p>
+<p>[14]  The accused may, of course, intelligently and knowingly waive his privilege against self-incrimination and his right to counsel either at a pretrial stage or at the trial. See <i>Johnson</i> v. <i>Zerbst,</i> <span class="citation" data-id="103050"><a href="/opinion/103050/johnson-v-zerbst/" aria-description="Citation for case: Johnson v. Zerbst">304 U. S. 458</a></span>. But no knowing and intelligent waiver of any constitutional right can be said to have occurred under the circumstances of this case.</p>
+<p>[15]  The authority of <i>Cicenia</i> v. <i>Lagay,</i> <span class="citation" data-id="9421694"><a href="/opinion/105750/cicenia-v-lagay/" aria-description="Citation for case: Cicenia v. Lagay">357 U. S. 504</a></span>, and <i>Crooker</i> v. <i>California,</i> <span class="citation" data-id="9421688"><a href="/opinion/105745/crooker-v-california/" aria-description="Citation for case: Crooker v. California">357 U. S. 433</a></span>, was weakened by the subsequent decisions of this Court in <i>Hamilton</i> v. <i>Alabama,</i> <span class="citation" data-id="106300"><a href="/opinion/106300/hamilton-v-alabama/" aria-description="Citation for case: Hamilton v. Alabama">368 U. S. 52</a></span>, <i>White</i> v. <i>Maryland,</i> <span class="citation" data-id="106595"><a href="/opinion/106595/white-v-maryland/" aria-description="Citation for case: White v. Maryland">373 U. S. 59</a></span>, and <i>Massiah</i> v. <i>United States,</i> <span class="citation" data-id="9422796"><a href="/opinion/106822/massiah-v-united-states/" aria-description="Citation for case: Massiah v. United States">377 U. S. 201</a></span> (as the dissenting opinion in the last-cited case recognized).</p>
+<p>[*]  "In all criminal prosecutions, the accused shall enjoy the right . . . to have the Assistance of Counsel for his defence."</p>
+<p>[*]  "[I]t seems from reported cases that the judges have given up enforcing their own rules, for it is no longer the practice to exclude evidence obtained by questioning in custody. . . . A traditional principle of `fairness' to criminals, which has quite possibly lost some of the reason for its existence, is maintained in words while it is disregarded in fact. . . .
+</p>
+<p>"The reader may be expecting at this point a vigorous denunciation of the police and of the judges, and a plea for a return to the Judges' Rules as interpreted in 1930. What has to be considered, however, is whether these Rules are a workable part of the machinery of justice. Perhaps the truth is that the Rules have been abandoned, by tacit consent, just because they are an unreasonable restriction upon the activities of the police in bringing criminals to book." Williams, Questioning by the Police: Some Practical Considerations, [1960] Crim. L. Rev. 325, 331-332. See also [1964] Crim. L. Rev. 161-182.</p>
+
+</div>
+```
+
+---

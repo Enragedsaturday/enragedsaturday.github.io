@@ -1,0 +1,309 @@
+{
+  "packs": [
+    {
+      "group_id": "_overhaul2/lake/cases/Florida v. Jardines.json",
+      "reviewed": [
+        {
+          "assertion_id": "212349f784ec94df",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "All 7 cluster.citations in payload are present verbatim in the lake citations block (133 S. Ct. 1409; 185 L. Ed. 2d 495; 2013 U.S. LEXIS 2542; 569 U.S. 1; 24 Fla. L. Weekly Fed. S 117; 81 U.S.L.W. 4209; 2013 WL 1196577).",
+            "Cached slip op header 'Cite as: 569 U. S. ____ (2013)' and 'Decided March 26, 2013' corroborate 569 U.S. 1 (2013)."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "official=null / official_selection_present=false: no cite tagged selected_official though the U.S. Reports cite 569 U.S. 1 is present; a completeness gap, not an existence defect."
+          ],
+          "suggested_tightening": "Consider tagging 569 U.S. 1 as selected_official for a SCOTUS record."
+        },
+        {
+          "assertion_id": "861f6aaddb45f2e5",
+          "dimension": "quote_fidelity",
+          "verdict": "stands-modified",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "Recorded pinpoint quote is a mis-extraction of adjacent wiki prose ('within the meaning of the Fourth Amendment. ## Rule Yes. Bringing a drug dog onto the curtilage ... and so is a search.'), not the court quote; the quote_fidelity=mismatch / pinpoint_status=slip-only fields reflect this mis-harvest, not a page defect. The actual reader-facing pin-6 blockquote is verbatim-faithful to source.",
+            "severity": "low",
+            "proposed_fix": "Re-harvest pin-6 to the actual content-page blockquote, which matches the cached slip op verbatim.",
+            "evidence_quote": "The officers were gathering information in an area belonging to Jardines and immediately surrounding his house—in the curtilage of the house, which we have held enjoys protection as part of the home itself. And they gathered that information by physically entering and occupying the area to engage in conduct not explicitly or implicitly permitted by the homeowner.",
+            "needs_cl": false,
+            "locator_note": "Cached opinion text lines ~1231-1241 (Opinion of the Court, slip op. 3-4; line-break hyphens removed); content page line 92."
+          },
+          "reasons": [
+            "Content page's actual pin-6 quote matches the cached slip opinion verbatim.",
+            "payload.quote is a preamble mis-extraction (it contains the '## Rule' markdown heading and wiki editorial prose), so it is not a court quote and cannot match source."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "U.S. Reports page 6 is not confirmable from slip-only cached text; pincite accuracy is a separate dimension not under review here."
+          ],
+          "suggested_tightening": "Fix the S8 quote-harvest span so markered pins capture the blockquote, not the preceding paragraph."
+        },
+        {
+          "assertion_id": "a9431009fbbf3753",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "payload.quote matches the cached slip opinion verbatim: 'But introducing a trained police dog to explore the area around the home in hopes of discovering incriminating evidence is something else. There is no customary invitation to do that.' (cached lines ~1364-1367).",
+            "The recorded quote_fidelity=mismatch is a false positive; the quoted text is faithful."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "U.S. Reports page 9 (Id.) is not confirmable from slip-only cached text; the passage appears on slip op. p.7."
+          ],
+          "suggested_tightening": "Clear the false-positive mismatch flag on pin-9."
+        },
+        {
+          "assertion_id": "943d3bbacd758e93",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Case-level field_i_validity=good_law; no disclosed edge overrules/abrogates Jardines.",
+            "The treatment edges are progeny (cases citing Jardines) carrying each citing case's OWN validity status (field_ii overruled/abrogated/questioned attach to the citing_case, journal_ref lane2_top_cited), not negative treatment of Jardines; a lower court cannot overrule this 2013 SCOTUS holding and no negative SCOTUS treatment is disclosed."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "composite_basis=migration-seed: good_law is a provisional seed that S2 derivation may re-derive/downgrade per scope_note."
+          ],
+          "suggested_tightening": null
+        }
+      ],
+      "notes": "All content-page quotes verbatim-faithful to cached slip op; pin-6 mismatch is a harvest artifact (stands-modified), pin-9 mismatch a false positive (stands)."
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/Florida v. Jimeno.json",
+      "reviewed": [
+        {
+          "assertion_id": "d630f3e97b83df43",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "All 4 payload citations present in the lake citations block; official=500 U.S. 248 selected_official=true, display=500 U.S. 248, official_selection_present=true (all match).",
+            "Cached HTML opinion carries the 500 U.S. star pages *250/*251/*252, corroborating 500 U.S. 248 (1991)."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "29b03309673af1b5",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "payload.quote '[t]he scope of a search is generally defined by its expressed object.' matches the cached HTML verbatim ('The scope of a search is generally defined by its expressed object.'); the bracket [t] is a standard sentence-integration alteration.",
+            "Recorded quote_fidelity=mismatch is a false positive; the quoted text is faithful."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Id. resolves to 500 U.S. 251; the sentence sits between the *251 and *252 star markers, consistent with the pincite."
+          ],
+          "suggested_tightening": "Clear the false-positive mismatch flag on pin-251a."
+        },
+        {
+          "assertion_id": "41ecbb48b6b41c5a",
+          "dimension": "quote_fidelity",
+          "verdict": "stands-modified",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "Recorded pinpoint quote is a large mis-extraction of the entire page preamble (front-matter + Background + Issue + 'Rule Yes — the scope of consent is measured objectively.'), not the court quote; quote_fidelity=mismatch reflects the mis-harvest, not a page defect. The actual reader-facing pin-251 quote is verbatim-faithful and star-verifiable.",
+            "severity": "low",
+            "proposed_fix": "Re-harvest pin-251 to the actual content-page blockquote; it matches the cached HTML verbatim and sits after the *251 marker (so 500 U.S. 251 is star-verifiable, not slip-only).",
+            "evidence_quote": "The standard for measuring the scope of a suspect’s consent under the Fourth Amendment is that of “objective” reasonableness—what would the typical reasonable person have understood by the exchange between the officer and the suspect?",
+            "needs_cl": false,
+            "locator_note": "Cached opinion text line ~3127 (para AY7, immediately after <page-number label=\"251\">); content page line 2218."
+          },
+          "reasons": [
+            "Content page's actual pin-251 quote matches the cached HTML opinion verbatim.",
+            "payload.quote is a page-preamble mis-extraction (front-matter, headers, editorial prose), not a court quote; pinpoint_status=slip-only is also wrong (source is star-paginated at *251)."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": "Fix S8 harvest span and set pinpoint_status=star-verified/251."
+        },
+        {
+          "assertion_id": "1598161dfd7c8cad",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Case-level field_i_validity=good_law; edges are progeny carrying the citing cases' own statuses (criticized/overruled/questioned), not negative treatment of Jimeno.",
+            "No disclosed SCOTUS overruling/abrogation of Jimeno (1991)."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "composite_basis=migration-seed (provisional; may re-derive per scope_note)."
+          ],
+          "suggested_tightening": null
+        }
+      ],
+      "notes": "Both quotes verbatim-faithful to the star-paginated HTML source; pin-251a mismatch is a false positive, pin-251 mismatch is a preamble mis-harvest (also mis-set slip-only where source is *251-verifiable)."
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/Florida v. Meyers.json",
+      "reviewed": [
+        {
+          "assertion_id": "0b248313775cce1f",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "All 5 payload citations present in the lake citations block; official=466 U.S. 380 selected_official=true, display=466 U.S. 380, official_selection_present=true (all match).",
+            "Cached HTML opinion carries 466 U.S. star pages *381/*382/*383, corroborating 466 U.S. 380 (1984)."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Alias 'Florida v. Myers' / caption 'Meyers, aka Weyers' is a caption/identity matter (documented on the page), not a citation-existence defect."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "c3a43122b0915745",
+          "dimension": "quote_fidelity",
+          "verdict": "stands-modified",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "Recorded pinpoint quote is a mis-extraction of adjacent wiki prose (caption note + Background + Issue + 'Rule Yes. The automobile exception is not defeated...'), not the court quote; quote_fidelity=mismatch and pinpoint_status=slip-only reflect the mis-harvest. The actual reader-facing pin-382 quote is verbatim-faithful and star-verifiable.",
+            "severity": "low",
+            "proposed_fix": "Re-harvest pin-382 to the actual content-page blockquote; it matches the cached HTML verbatim and appears on *382 (star-verifiable, not slip-only).",
+            "evidence_quote": "In Michigan v. Thomas, 458 U. S. 259 (1982), we upheld a warrantless search of an automobile even though the automobile was in police custody and even though a prior inventory search had already been made. That ruling controls the disposition of this case.",
+            "needs_cl": false,
+            "locator_note": "Cached opinion text line ~4173 (para b442-4, immediately after <page-number label=\"382\">); content page line 3199."
+          },
+          "reasons": [
+            "Content page's actual pin-382 quote matches the cached HTML opinion verbatim (war-rantless line-break hyphen removed).",
+            "payload.quote is a page-preamble mis-extraction; pinpoint_status=slip-only is wrong (source is star-paginated at *382)."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": "Fix S8 harvest span and set pinpoint_status=star-verified/382."
+        },
+        {
+          "assertion_id": "d219a2ca1c10974d",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "payload.quote 'the justification to conduct such a warrantless search does not vanish once the car has been immobilized.' matches the cached HTML verbatim; recorded quote_fidelity=matched, pinpoint_status=star-verified, star_marker=382 all corroborated.",
+            "Content page correctly attributes the internal quote '(quoting 458 U.S. at 261)' — the cited passage carries '458 U. S., at 261'."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "77bcb5ade947d619",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Case-level field_i_validity=good_law; edges are progeny carrying citing cases' own statuses (overruled/questioned/superseded_by_statute), not negative treatment of Meyers.",
+            "Per curiam settled application of the automobile exception; no disclosed SCOTUS overruling/abrogation of Meyers (1984)."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "composite_basis=migration-seed (provisional; may re-derive)."
+          ],
+          "suggested_tightening": null
+        }
+      ],
+      "notes": "pin-382a is clean (matched/star-verified); pin-382 quote is faithful and *382-verifiable despite a preamble mis-harvest recorded as slip-only mismatch."
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/Florida v. Powell.json",
+      "reviewed": [
+        {
+          "assertion_id": "de7cd493a431f809",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "All 4 payload citations present in the lake citations block; official=559 U.S. 50 selected_official=true, display=559 U.S. 50, official_selection_present=true (all match).",
+            "Cached slip op header 'Cite as: 559 U. S. ____ (2010)' corroborates 559 U.S. 50 (2010)."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "5fcea5c2e9bccdb9",
+          "dimension": "quote_fidelity",
+          "verdict": "stands-modified",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "Recorded pinpoint quote is a mis-extraction of adjacent wiki prose (Issue tail '...but do not expressly state a right to have counsel present throughout interrogation, adequately convey the right to counsel. ## Rule Yes — warnings need not track any precise script.'), not the court quote; quote_fidelity=mismatch reflects the mis-harvest. The actual reader-facing pin-60 quote is verbatim-faithful.",
+            "severity": "low",
+            "proposed_fix": "Re-harvest pin-60 to the actual content-page blockquote; it matches the cached slip op verbatim.",
+            "evidence_quote": "The four warnings Miranda requires are invariable, but this Court has not dictated the words in which the essential information must be conveyed.",
+            "needs_cl": false,
+            "locator_note": "Cached opinion text lines ~5654-5656 (Opinion of the Court, before the slip op. p.9 header; essen-tial line-break hyphen removed); content page line 4244."
+          },
+          "reasons": [
+            "Content page's actual pin-60 quote matches the cached slip opinion verbatim.",
+            "payload.quote is an Issue/Rule preamble mis-extraction (contains '## Rule' markdown), not a court quote."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "U.S. Reports page 60 is not confirmable from slip-only cached text (pincite dimension, not reviewed here)."
+          ],
+          "suggested_tightening": "Fix S8 harvest span for markered pins."
+        },
+        {
+          "assertion_id": "ea1cba51f1c05fd0",
+          "dimension": "quote_fidelity",
+          "verdict": "stands-modified",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "Recorded pinpoint quote is a mis-extraction of adjacent wiki prose (tail of the prior unpinned quote's citation parenthetical + '## Application Reading the two statements together, the warning passed the test.'), not the court quote; quote_fidelity=mismatch reflects the mis-harvest. The actual reader-facing pin-62 quote is verbatim-faithful.",
+            "severity": "low",
+            "proposed_fix": "Re-harvest pin-62 to the actual content-page blockquote; it matches the cached slip op verbatim.",
+            "evidence_quote": "The first statement communicated that Powell could consult with a lawyer before answering any particular question, and the second statement confirmed that he could exercise that right while the interrogation was underway. In combination, the two warnings reasonably conveyed Powell’s right to have an attorney present, not only at the outset of interrogation, but at all times.",
+            "needs_cl": false,
+            "locator_note": "Cached opinion text lines ~5725-5732 (Opinion of the Court body; con-firmed/interro-gation line-break hyphens removed) — distinct from the near-identical Syllabus paraphrase at ~5291-5298; content page line 4249."
+          },
+          "reasons": [
+            "Content page's actual pin-62 quote matches the Opinion-of-the-Court body verbatim (not the syllabus paraphrase).",
+            "payload.quote is an Application-preamble mis-extraction (contains '## Application' markdown and a citation tail), not a court quote."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "U.S. Reports page 62 is not confirmable from slip-only cached text (pincite dimension, not reviewed here)."
+          ],
+          "suggested_tightening": "Fix S8 harvest span for markered pins."
+        },
+        {
+          "assertion_id": "baacbabbab05dc8a",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Case-level field_i_validity=good_law; edges (including journal_ref lane1_negative) are lower-court 'questioned'/'mentioned' progeny signals that cannot overrule/abrogate this 2010 SCOTUS Miranda holding.",
+            "No disclosed SCOTUS overruling/abrogation of Powell."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "composite_basis=migration-seed (provisional; may re-derive). lane1_negative citing cases exist but only 'questioned/mentioned', not case-invalidating."
+          ],
+          "suggested_tightening": null
+        }
+      ],
+      "notes": "Both quotes verbatim-faithful to the cached slip op (pin-62 to the Opinion body, distinguished from the near-identical Syllabus paraphrase); both recorded as preamble mis-harvests (stands-modified)."
+    }
+  ]
+}
