@@ -1,0 +1,194 @@
+{
+  "packs": [
+    {
+      "group_id": "_overhaul2/lake/cases/United States v. $8,850 in Currency.json",
+      "reviewed": [
+        {
+          "assertion_id": "70362db4c085e93a",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached CL opinion (cluster 110936) confirms the case identity for 461 U.S. 555 (1983): 'Justice O'Connor delivered the opinion of the Court', Customs seized $8,850 at Los Angeles International Airport, 18-month delay, four-factor Barker v. Wingo test, Ninth Circuit reversed — all matching the display/official cite.",
+            "Star pagination in the opinion runs *557 through *570, consistent with an opinion opening at 555; official U.S. cite selected_rank_1 for a scotus cluster. No basis to refute the display cite '461 U.S. 555'."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Parallel/vendor cites (103 S. Ct. 2005; 76 L. Ed. 2d 143; 51 U.S.L.W. 4587; 1983 U.S. LEXIS 34) are not independently printed in the disclosed slip text; only the official U.S. cite and case identity are corroborated from disclosed evidence."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "c02d4d25f9723b81",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Assertion is an honest frontier-stub declaration: field_i_validity 'unverified', varies_by_point false, scope_note 'Frontier stub: treatment/progeny intentionally not derived until S6 promotion.' — identical to lake record treatment block and content-page ⚪ Unverified banner.",
+            "No affirmative treatment/currency proposition is made, so there is nothing to refute; the record self-discloses non-derivation. Consistent, non-fabricated."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Downstream S6/S9 promotion must actually derive citator/progeny before any treatment claim is asserted; stub status must not be silently upgraded."
+          ],
+          "suggested_tightening": null
+        }
+      ],
+      "notes": "Opus model-diversity lane (claude-opus-4-8); both assertions survive refute-framed attack against disclosed evidence."
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/United States v. Agurs.json",
+      "reviewed": [
+        {
+          "assertion_id": "84bab3d156b9e980",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached CL opinion header verbatim confirms identity for 427 U.S. 97 (1976): '427 U.S. 97 (1976)', 'UNITED STATES v. AGURS.', 'No. 75-491.', 'Supreme Court of United States.', 'Argued April 28, 1976. Decided June 24, 1976.', 'MR. JUSTICE STEVENS delivered the opinion of the Court.'",
+            "Display/official cite '427 U.S. 97' matches the reporter cite printed at the head of the disclosed opinion; no basis to refute."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Parallel cites (96 S. Ct. 2392; 49 L. Ed. 2d 342; 1976 U.S. LEXIS 72) not independently printed in disclosed text; only official U.S. cite is corroborated."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "98e168317d8f568f",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Payload quote 'if the omitted evidence creates a reasonable doubt that did not otherwise exist, constitutional error has been committed. This means that the omission must be evaluated in the context of the entire record.' is a verbatim match to the disclosed opinion ('It necessarily follows that if the omitted evidence creates a reasonable doubt that did not otherwise exist, constitutional error has been committed. This means that the omission must be evaluated in the context of the entire record.').",
+            "star_marker '112' / pinpoint_status 'star-verified' is corroborated: the *112 break precedes the sentence and *113 follows it, and the Marshall dissent independently cites this exact sentence as 'Ante, at 112.' quote_fidelity 'matched' is correct."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "fabaedc07c8f6314",
+          "dimension": "quote_fidelity",
+          "verdict": "stands-modified",
+          "verifiable_from_disclosed": false,
+          "defect": {
+            "problem": "The assertion payload is a corrupted extraction: its 'quote' field contains the content page's own rendered markdown (frontmatter + Background + Issue + Rule prose, truncated at 'The Court rejected any rule that the prosecutor must disclose anything that'), not an opinion quotation; star_marker is null, pinpoint_status is 'slip-only', and quote_fidelity self-reports 'mismatch'. As framed, the payload holds no verifiable quotation to check against the opinion.",
+            "severity": "low",
+            "proposed_fix": "Re-extract the pin-108 quotation from the slip/opinion text; do NOT alter the page. The page's actual pin-108 quote ('the prosecutor will not have violated his constitutional duty of disclosure unless his omission is of sufficient significance to result in the denial of the defendant's right to a fair trial.' — 427 U.S. at 108) is verbatim-correct in the disclosed opinion and sits after the *108 break and before *109, so page 108 is accurate.",
+            "evidence_quote": "But to reiterate a critical point, the prosecutor will not have violated his constitutional duty of disclosure unless his omission is of sufficient significance to result in the denial of the defendant's right to a fair trial.",
+            "needs_cl": false,
+            "locator_note": "pin-108; opinion paragraph beginning 'Nevertheless, there is a significant practical difference...' immediately after the *108 star break."
+          },
+          "reasons": [
+            "Honest stub handling: the delivered payload is a broken extraction (markdown, not a quote), so the assertion is not verifiable as-framed — verifiable_from_disclosed=false.",
+            "Not a page defect: I independently confirmed the page's real pin-108 quotation is a verbatim match to the disclosed opinion at page 108, so no page correction is warranted — refuting would fabricate a defect, attesting clean would ignore the malformed payload; hence stands-modified with re-extraction only."
+          ],
+          "breaks_true_positives": true,
+          "residual_risks": [
+            "If a downstream consumer treats the self-reported 'mismatch' as a page-level quote error, it would break a true positive (the page quote is correct). The fix is confined to the assertion/extraction payload."
+          ],
+          "suggested_tightening": "Extractor should reject a 'quote' payload that string-matches the record's own content-page markdown and emit an explicit re-derivation flag rather than pinpoint_status 'slip-only' + mismatch."
+        },
+        {
+          "assertion_id": "3aab2c1c48a76740",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": false,
+          "defect": null,
+          "reasons": [
+            "The Agurs-internal components of the scope_note are verbatim-verified against the disclosed opinion: the three-situation framework (Mooney/perjury; Brady/specific request; no-request or general request) is laid out expressly, and the no-request 'reasonable doubt that did not otherwise exist' materiality formula is the opinion's stated standard (page 112). field_i_validity 'caution', varies_by_point true, as_of dates are internally consistent with the lake record and point_override.",
+            "The forward-looking currency claim — that United States v. Bagley (1985) superseded that formula with a single 'reasonable probability' standard and collapsed the three-situation framework — is NOT verifiable from the disclosed evidence (Agurs (1976) predates Bagley and no Bagley text is inlined). No disclosed basis to refute it and it is not facially wrong, so I do not fabricate a defect; but I cannot certify it from the pack, hence verifiable_from_disclosed=false."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "The Bagley supersession / 'reasonable probability' unification rests on undisclosed authority (473 U.S. 667, cluster 111514). Confirming the currency of the 'caution/limited' treatment requires reading Bagley — needs_cl to close."
+          ],
+          "suggested_tightening": "Panel should route the Bagley-dependent portion to a lens with the Bagley opinion inlined; the Agurs-grounded portion is already verified."
+        }
+      ],
+      "notes": "Opus model-diversity lane. pin-108 assertion is a corrupted extraction stub (page markdown as 'quote'); page content itself is verbatim-correct at p.108 — flagged stands-modified, re-extraction only. Treatment Bagley-currency claim not confirmable from disclosed pack."
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/United States v. Aigbekaen.json",
+      "reviewed": [
+        {
+          "assertion_id": "b3a182aedb57101b",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached PUBLISHED slip opinion confirms identity for 943 F.3d 713 (4th Cir. 2019): 'UNITED STATES COURT OF APPEALS FOR THE FOURTH CIRCUIT', 'No. 17-4109', 'RAYMOND IDEMUDIA AIGBEKAEN', 'Decided: November 21, 2019', 'DIANA GRIBBON MOTZ, Circuit Judge' with Wynn joining and Richardson concurring — matching docket 17-4109, ca4, date_decided 2019-11-21, and the panel named on the content page.",
+            "Display/official cite '943 F.3d 713' is a well-formed F.3d locator consistent with a Nov-2019 Fourth Circuit published opinion; the slip text carries slip-page numbers rather than F.3d star pagination (as the Sources note states), so the reporter page is not printed, but case existence/identity is unambiguous. No basis to refute."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "The specific '713' F.3d page is not printed in the disclosed slip text; existence rests on identity corroboration.",
+            "Lake official_selection.court_class is 'state' with reason 'selected_rank_3' for a federal COA case — a metadata quirk that does not affect the correctness of the '943 F.3d 713' cite, but worth a downstream normalization."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "763a8d95002ab7b9",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Honest frontier-stub declaration: field_i_validity 'unverified', varies_by_point false, scope_note 'Frontier stub: treatment/progeny intentionally not derived until S6 promotion.' — identical to lake treatment block and content-page ⚪ Unverified banner.",
+            "No affirmative treatment/currency claim is made; nothing to refute; consistent and non-fabricated."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Treatment must be genuinely derived before promotion; stub status must not be silently upgraded."
+          ],
+          "suggested_tightening": null
+        }
+      ],
+      "notes": "Opus model-diversity lane. Existence confirmed from the disclosed slip opinion; treatment is an honest unverified stub."
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/United States v. Al-Azzawy.json",
+      "reviewed": [
+        {
+          "assertion_id": "1f18909e5c314731",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached CL opinion confirms identity for 784 F.2d 890 (9th Cir. 1986): 'BEEZER, Circuit Judge', government appeals a district-court suppression ruling and 'We reverse', Nov. 19, 1984 trailer-park facts, Riad Abed Al-Azzawy, threats/grenades/automatic-weapons — matching Beezer, J., ca9, docket 85-5004 and the content-page background.",
+            "Star pagination *892, *893, *894, *895 in the disclosed opinion is consistent with an opinion opening at page 890, corroborating the display/official cite '784 F.2d 890'; official cite selected_rank_1 for a coa cluster. Content-page disambiguation from the earlier 768 F.2d 1141 (1985, No. 84-5367) is coherent. No basis to refute."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "No parallel reporter cites are asserted (F.2d only), so nothing further to cross-check; the 1986 decided date is not printed in the disclosed excerpt but is consistent with the 1984-85 authorities cited within."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "d225aecac59ee1eb",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Honest frontier-stub declaration: field_i_validity 'unverified', varies_by_point false, scope_note 'Frontier stub: treatment/progeny intentionally not derived until S6 promotion.' — identical to lake treatment block and content-page ⚪ unverified banner.",
+            "No affirmative treatment/currency proposition; nothing to refute; consistent and non-fabricated."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Content page authored-orientation prose (Nora/Vaneaton cross-refs) is expressly non-machine-certified under the ⚪ banner; those progeny claims are outside this treatment assertion and remain to be derived at promotion."
+          ],
+          "suggested_tightening": null
+        }
+      ],
+      "notes": "Opus model-diversity lane. Existence confirmed from disclosed opinion (Beezer, J.; star pagination 892-895 consistent with 784 F.2d 890); treatment is an honest unverified stub. Note: pin-894/pin-895 quote-fidelity pincites are NOT in this group's inventory and were not voted."
+    }
+  ]
+}

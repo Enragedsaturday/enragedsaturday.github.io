@@ -1,0 +1,225 @@
+{"packs": [
+  {
+    "group_id": "_overhaul2/lake/cases/Torres v. Madrid.json",
+    "reviewed": [
+      {
+        "assertion_id": "7d22dd06da1235bc",
+        "dimension": "existence",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true,
+        "defect": null,
+        "reasons": [
+          "Lake official '592 U.S. 306' (selected_official=true) matches the content-page header and frontmatter '592 U.S. 306 (2021)'.",
+          "Cached syllabus caption 'TORRES v. MADRID' and the 2021-03-25 decision date confirm identity; 592 U.S. 306 is the correct U.S. Reports cite."
+        ],
+        "breaks_true_positives": false,
+        "residual_risks": [],
+        "suggested_tightening": null
+      },
+      {
+        "assertion_id": "3c6e52e95614a243",
+        "dimension": "quote_fidelity",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true,
+        "defect": null,
+        "reasons": [
+          "The content-page pin-op1 quotation reproduces the Court's opinion opening verbatim: cached text reads 'The application of physical force to the body of a person with intent to restrain is a seizure, even if the force does not succeed in subduing the person.' (Roberts, C.J.).",
+          "Pincite 'slip op., at 1' is correct: this is the opening statement of the opinion of the Court on page 1.",
+          "Payload quote_fidelity='mismatch' is an extractor artifact -- the captured 'quote' is the front-matter/Background block preceding the ^pin-op1 anchor, not the rendered quotation."
+        ],
+        "breaks_true_positives": false,
+        "residual_risks": [],
+        "suggested_tightening": "Re-anchor the quote harvester to the quotation span; it captured the text preceding ^pin-op1 rather than the quoted sentence."
+      },
+      {
+        "assertion_id": "6e3928120c590f54",
+        "dimension": "treatment",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true,
+        "defect": null,
+        "reasons": [
+          "Scope note 'Recent SCOTUS holding; good law' is consistent with the disclosed 2021 SCOTUS majority opinion; nothing disclosed indicates reversal or abrogation.",
+          "field_i_validity=good_law with coherent dates (as_of_content=decision date 2021-03-25; as_of_treatment=2026-06-30)."
+        ],
+        "breaks_true_positives": false,
+        "residual_risks": [
+          "Currency (good law as of 2026-06-30) rests on absence of contradicting evidence; no citator/subsequent-history is inlined to independently confirm."
+        ],
+        "suggested_tightening": null
+      }
+    ]
+  },
+  {
+    "group_id": "_overhaul2/lake/cases/Townsend v. Sain.json",
+    "reviewed": [
+      {
+        "assertion_id": "7cd9edf1fad5b526",
+        "dimension": "existence",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true,
+        "defect": null,
+        "reasons": [
+          "Lake official '372 U.S. 293' matches content-page '372 U.S. 293 (1963)'.",
+          "Cached opinion star-pagination (*298 through *334) is consistent with a case opening at 293; identity confirmed (Townsend, hyoscine/scopolamine 'truth serum' confession)."
+        ],
+        "breaks_true_positives": false,
+        "residual_risks": [],
+        "suggested_tightening": null
+      },
+      {
+        "assertion_id": "00491e78a97f6d35",
+        "dimension": "quote_fidelity",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true,
+        "defect": null,
+        "reasons": [
+          "pin-307 quotation matches the cached opinion verbatim (the 'will was overborne' / 'rational intellect and a free will' passage through 'Any questioning by police officers which in fact produces a confession which is not the product of a free intellect renders that confession inadmissible.').",
+          "The ' . . . ' ellipsis legitimately omits one intervening sentence ('It is not significant that the drug may have been administered...') without distorting meaning.",
+          "Pincite '372 U.S. at 307-308' is correct: the passage spans the *308 page break. Payload 'mismatch' is an extractor backward-capture of the Issue/Rule lead-in, not the rendered quotation."
+        ],
+        "breaks_true_positives": false,
+        "residual_risks": [],
+        "suggested_tightening": "Re-anchor the extractor: the captured span is text preceding ^pin-307, not the quoted passage."
+      },
+      {
+        "assertion_id": "194c29f3135c9342",
+        "dimension": "quote_fidelity",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true,
+        "defect": null,
+        "reasons": [
+          "pin-308 quotation matches footnote 5 verbatim: 'whether scopolamine produces true confessions or false confessions, if it in fact caused Townsend to make statements, those statements were constitutionally inadmissible.'",
+          "Pincite 'Id. at 308 n.5' is correct -- the [5] reference marker sits on page 308 (before the *309 break). Payload already reports quote_fidelity='matched'."
+        ],
+        "breaks_true_positives": false,
+        "residual_risks": [
+          "Payload star_marker='334' is unrelated to the footnote's page (308); it is metadata-only and does not affect the page's cite."
+        ],
+        "suggested_tightening": null
+      },
+      {
+        "assertion_id": "dc3416435dbaa010",
+        "dimension": "treatment",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true,
+        "defect": null,
+        "reasons": [
+          "The homed voluntariness holding (a drug/'truth serum' confession not the product of a free intellect is inadmissible) is the actual holding in the disclosed opinion and remains good law; field_i=good_law is apt for the homed proposition.",
+          "Scope note transparently discloses that the SEPARATE federal-habeas evidentiary-hearing branch was abrogated by Keeney v. Tamayo-Reyes (1992) and superseded by AEDPA sec. 2254(e)(2); the page homes by the voluntariness ratio, which the treatment section reiterates."
+        ],
+        "breaks_true_positives": false,
+        "residual_risks": [
+          "The Keeney/AEDPA abrogation facts are asserted in the scope note but not independently inlined; citator currency is not verifiable from disclosed evidence."
+        ],
+        "suggested_tightening": "varies_by_point=false is defensible only because the page homes solely the voluntariness point; given the documented point-split, consider varies_by_point=true with point_overrides to make the split machine-legible."
+      }
+    ]
+  },
+  {
+    "group_id": "_overhaul2/lake/cases/Trupiano v. United States.json",
+    "reviewed": [
+      {
+        "assertion_id": "34727629658d7ac9",
+        "dimension": "existence",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true,
+        "defect": null,
+        "reasons": [
+          "Lake official '334 U.S. 699' matches content-page '334 U.S. 699 (1948)'.",
+          "Cached opinion (Murphy, J.; New Jersey still; 'cardinal rule ... search warrants wherever reasonably practicable' at *705; internal pp. 701-710; Reversed) confirms identity and is consistent with a case opening at 699."
+        ],
+        "breaks_true_positives": false,
+        "residual_risks": [
+          "all[] carries an anomalous parallel '92 L. Ed. 2d 1663' for a 1948 case (correct first-series '92 L. Ed. 1663' is also present); the anomaly is in a non-official parallel from cluster data and does not affect the official cite."
+        ],
+        "suggested_tightening": "Drop or repair the spurious '92 L. Ed. 2d 1663' parallel in the cluster citation list."
+      },
+      {
+        "assertion_id": "9d6bfdaab55b0769",
+        "dimension": "treatment",
+        "verdict": "stands",
+        "verifiable_from_disclosed": false,
+        "defect": null,
+        "reasons": [
+          "Honest frontier stub: field_i_validity='unverified', as_of dates null, matching lake status 'under_review'; the record deliberately does not derive treatment until S6 promotion.",
+          "Content page renders the (unverified) banner and labels the subsequent-history (Rabinowitz 1950 rejection; Chimel 1969) as authored orientation, not machine-certified -- consistent with the stub declaration; no fabricated defect or clean pass asserted."
+        ],
+        "breaks_true_positives": false,
+        "residual_risks": [
+          "Treatment substance is intentionally underived; not verifiable from disclosed evidence (stub)."
+        ],
+        "suggested_tightening": null
+      }
+    ]
+  },
+  {
+    "group_id": "_overhaul2/lake/cases/Turner v. United States.json",
+    "reviewed": [
+      {
+        "assertion_id": "72d0d9cf501187eb",
+        "dimension": "existence",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true,
+        "defect": null,
+        "reasons": [
+          "'582 U.S. 313' (the correct U.S. Reports cite for Turner v. United States, 2017) is present in all[] and rendered in the content-page header and parallel_cite.",
+          "Cached syllabus caption 'TURNER ET AL. v. UNITED STATES', No. 15-1503, Decided June 22, 2017 (Catherine Fuller / Brady) confirms identity."
+        ],
+        "breaks_true_positives": false,
+        "residual_risks": [
+          "official and display are null and official_selection_present=false in the payload, and the frontmatter 'citation' field is empty -- a lake metadata gap (no auto-selected official), though the displayed cite is correct."
+        ],
+        "suggested_tightening": "Populate selected_official for 582 U.S. 313 and the frontmatter citation field so the official cite is machine-selected, not only rendered in the header."
+      },
+      {
+        "assertion_id": "7d6377a6dd9208d4",
+        "dimension": "quote_fidelity",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true,
+        "defect": null,
+        "reasons": [
+          "pin-1894 quotation matches the opinion body verbatim: '...we conclude that it is too little, too weak, or too distant from the main evidentiary points to meet Brady's standards.'",
+          "Payload 'mismatch' is a normalization false-positive -- the payload's own captured quote is in fact the correct text."
+        ],
+        "breaks_true_positives": false,
+        "residual_risks": [
+          "Pincite '137 S. Ct. ... 1894' is a reporter-page claim; the disclosed slip opinion carries U.S. Reports internal pagination, not S. Ct. pages, so page 1894 is not independently verifiable from disclosed evidence (content-page Sources discloses this)."
+        ],
+        "suggested_tightening": null
+      },
+      {
+        "assertion_id": "d2a9384b14f15f30",
+        "dimension": "quote_fidelity",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true,
+        "defect": null,
+        "reasons": [
+          "pin-1893 quotation matches the opinion body verbatim: '[E]vidence is material within the meaning of Brady when there is a reasonable probability that, had the evidence been disclosed, the result of the proceeding would have been different.'",
+          "Attribution '(quoting Cone v. Bell)' is accurate -- the opinion places the sentence in quotation marks and cites Cone v. Bell, 556 U.S. 449, 469-470.",
+          "Payload 'mismatch' is an extractor backward-capture of the Issue/Rule lead-in, not the rendered quotation."
+        ],
+        "breaks_true_positives": false,
+        "residual_risks": [
+          "Pincite '137 S. Ct. 1885, 1893' reporter page is not independently verifiable from the disclosed slip text (U.S. Reports pagination only)."
+        ],
+        "suggested_tightening": null
+      },
+      {
+        "assertion_id": "41a3ec45384eeb88",
+        "dimension": "treatment",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true,
+        "defect": null,
+        "reasons": [
+          "Scope note 'applies the Brady/Bagley materiality standard and finds no violation on the record' is directly confirmed by the disclosed opinion (Held: withheld evidence is not material under Brady).",
+          "field_i=good_law is consistent for a 2017 SCOTUS holding; nothing disclosed indicates reversal or abrogation."
+        ],
+        "breaks_true_positives": false,
+        "residual_risks": [
+          "Currency (good law as of 2026-06-30) is not citator-verified from disclosed evidence, but is uncontradicted."
+        ],
+        "suggested_tightening": null
+      }
+    ]
+  }
+]}
