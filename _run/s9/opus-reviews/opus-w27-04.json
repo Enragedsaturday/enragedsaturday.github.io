@@ -1,0 +1,363 @@
+{
+  "packs": [
+    {
+      "group_id": "content/cases/Brewer v. Williams.md",
+      "reviewed": [
+        {
+          "assertion_id": "5dd3443d1a42642f",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached slip header prints '430 U.S. 387 (1977)', 'BREWER, WARDEN v. WILLIAMS', 'No. 74-1263', 'Supreme Court of United States' — official cite, court, docket, and year confirmed.",
+            "Lake citations[] carry 430 U.S. 387 (official), parallels 97 S. Ct. 1232 and 51 L. Ed. 2d 424 (L. Ed. 2d correct for a 1977 case), and vendor-neutral 1977 U.S. LEXIS 64 — all match the payload."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "identity.date_decided 1977-05-16 conflicts with cached slip 'Decided March 23, 1977'; the decision YEAR (1977) is unaffected so existence stands, but the stored decision date is likely wrong (see treatment finding)."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "0029aa6152214226",
+          "dimension": "support",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached text: 'There can be no serious doubt, either, that Detective Leaming deliberately and designedly set out to elicit information from Williams just as surely as ... if he had formally interrogated him.' — directly supports the deliberate-elicitation half of the holding.",
+            "Cached text: 'The state courts clearly proceeded upon the hypothesis that Detective Leaming's \"Christian burial speech\" had been tantamount to interrogation.' plus the Massiah 'constitutionally indistinguishable' passage — supports the equivalent-of-interrogation / Sixth Amendment right-to-counsel holding."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "'functional equivalent of interrogation' is Rhode Island v. Innis (Fifth Amendment) phrasing; Brewer's own words are 'tantamount to interrogation' and Massiah 'deliberately elicited'. Substance is supported; the label imports a sibling doctrine's term."
+          ],
+          "suggested_tightening": "Prefer the opinion's phrasing ('tantamount to interrogation' / 'deliberately elicited') to avoid conflating with Innis."
+        },
+        {
+          "assertion_id": "d42dc620f2cb5c6a",
+          "dimension": "support",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Opinion holds the case 'constitutionally indistinguishable from those presented in Massiah v. United States' and applies the Massiah deliberate-elicitation rule to find a Sixth Amendment right-to-counsel violation — a genuine progeny/refinement, so 'Key — Progeny / Refinement' on the Sixth Amendment Right to Counsel page is supported.",
+            "Frontmatter homes[] lists page '[[Sixth Amendment Right to Counsel]]' role 'Key — Progeny / Refinement', matching the payload."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "12db821c22e7e63c",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached slip: 'Supreme Court of United States', 'MR. JUSTICE STEWART delivered the opinion of the Court' — a SCOTUS majority decision, so authority_weight 'Binding — SCOTUS' is correct.",
+            "Lake identity court_level 'scotus' corroborates."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "e3771b0042819287",
+          "dimension": "treatment",
+          "verdict": "stands-modified",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "as_of_content 1977-05-16 does not match the disclosed decision date. The cached slip reads 'Decided March 23, 1977', and the two sibling records in this pack set as_of_content to the slip's decided-date (Brinegar 1949-06-27 = 'Decided June 27, 1949'; Brigham City 2006-05-22 = 'Decided May 22, 2006'). Brewer's as_of_content (and identity.date_decided) is therefore off by ~2 months.",
+            "severity": "low",
+            "proposed_fix": "Set as_of_content and identity.date_decided to 1977-03-23.",
+            "evidence_quote": "Decided March 23, 1977.",
+            "needs_cl": false,
+            "locator_note": "treatment.as_of_content / identity.date_decided vs cached slip 'Decided ...' line"
+          },
+          "reasons": [
+            "Core treatment claim is sound: field_i_validity 'good_law' is right — Brewer's Sixth Amendment right-to-counsel holding is intact and there is no confirmed negative event (composite_basis is 'migration-seed').",
+            "scope_note is correct: Nix v. Williams concerned inevitable-discovery (the exclusionary remedy), not Brewer's right-to-counsel rule.",
+            "All 'negative' edges are proposed:true keyword-search candidates (e.g., Illinois v. Gates / Franks v. Delaware flagged 'overruled') that are facially non-probative citation-analysis noise, not adjudicated treatments."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "derivation lanes 1 and 2 carry audit_needed=true ('R15 treatment audit required'); the good_law label rests on migration-seed and the proposed negative edges are not yet adjudicated."
+          ],
+          "suggested_tightening": "Fix the decision date only; the good_law disposition itself needs no change."
+        }
+      ]
+    },
+    {
+      "group_id": "content/cases/Brigham City v. Stuart.md",
+      "reviewed": [
+        {
+          "assertion_id": "c581999ee41d3781",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached slip: 'Cite as: 547 U. S. ____ (2006)', 'No. 05-502', 'Argued April 24, 2006—Decided May 22, 2006', 'CERTIORARI TO THE SUPREME COURT OF UTAH' — court, docket, and year confirmed.",
+            "Lake citations[] carry 547 U.S. 398 (official), parallels 126 S. Ct. 1943 and 164 L. Ed. 2d 650, and vendor-neutral 2006 U.S. LEXIS 4155 — all exactly match the payload."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "7f8bb3450bc8c2a1",
+          "dimension": "support",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached slip syllabus and opinion: 'Held: Police may enter a home without a warrant when they have an objectively reasonable basis for believing that an occupant is seriously injured or imminently threatened with such injury.' — verbatim match to the holding proposition (emergency-aid exception)."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "dce64478e935c735",
+          "dimension": "support",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Opinion frames emergency aid as an exigency ('one exigency obviating the requirement is the need to render emergency assistance ...') and distinguishes Welsh/Mincey exigency doctrine — so listing Brigham City as 'Related (cross-doctrine)' on the Exigent Circumstances and Hot Pursuit page is well-founded.",
+            "Frontmatter homes[] lists '[[Exigent Circumstances and Hot Pursuit]]' role 'Related (cross-doctrine)', matching the payload."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "e82e9dedfcd45e5e",
+          "dimension": "support",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "The slip's 'Held' IS the emergency-aid rule, and the opinion is the canonical statement of that exception, so 'Key — Anchor' on the Emergency Aid page is apt.",
+            "Frontmatter homes[] lists '[[Emergency Aid]]' role 'Key — Anchor', matching the payload."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "5a2204039c39645a",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached slip: 'ROBERTS, C. J., delivered the opinion for a unanimous Court' — a unanimous SCOTUS decision, so authority_weight 'Binding — SCOTUS' is correct."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "9c4c9191eb5c3c96",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "field_i_validity 'good_law' is sound; as_of_content 2006-05-22 matches the cached slip decided-date; composite_basis is migration-seed with no confirmed negative event (edges are proposed:true keyword candidates).",
+            "The record's stored decision date is internally consistent here (unlike the Brewer sibling)."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "scope_note is a generic seed caveat ('Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade') — the good_law status is seed-based and could be re-derived downstream."
+          ],
+          "suggested_tightening": null
+        }
+      ]
+    },
+    {
+      "group_id": "content/cases/Brinegar v. United States.md",
+      "reviewed": [
+        {
+          "assertion_id": "196d30012b775079",
+          "dimension": "existence",
+          "verdict": "stands-modified",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "parallel_cite '93 L. Ed. 2d 1879' places a 1949 decision in the SECOND series of the Lawyers' Edition. The L. Ed. 2d series did not begin until the mid-1950s, so a case 'Decided June 27, 1949' (338 U.S. 160) cannot bear an 'L. Ed. 2d' cite; the correct parallel is '93 L. Ed. 1879' (first series). The lake citations[] propagate the identical 'L. Ed. 2d' error.",
+            "severity": "low",
+            "proposed_fix": "Change '93 L. Ed. 2d 1879' to '93 L. Ed. 1879' in frontmatter parallel_cite and in lake citations.parallel/all.",
+            "evidence_quote": "338 U.S. 160 (1949)",
+            "needs_cl": false,
+            "locator_note": "frontmatter parallel_cite (2nd element) / lake citations.parallel[1].reporter"
+          },
+          "reasons": [
+            "Official cite is solid: cached slip header prints '338 U.S. 160 (1949)', 'BRINEGAR v. UNITED STATES', 'Supreme Court of United States', 'Decided June 27, 1949'; lake official 338 U.S. 160 and vendor-neutral 1949 U.S. LEXIS 2084 match.",
+            "The defect is confined to the reporter-series token in the parallel L. Ed. cite; the case is unambiguously identified by 338 U.S. 160."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "The cached slip header does not itself print the L. Ed. citation; the corrected form (93 L. Ed. 1879) is inferred from the disclosed 1949 decision year plus reporter-series conventions.",
+            "Outside this assertion's payload: lake identity.date_decided '1949-10-10' conflicts with slip 'Decided June 27, 1949', and lake header shows 'No. 12' while frontmatter docket is '23' — flag for downstream check."
+          ],
+          "suggested_tightening": "Drop the '2d' series token; official 338 U.S. 160 already identifies the case."
+        },
+        {
+          "assertion_id": "08324bc5b6913907",
+          "dimension": "support",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Opinion articulates the probable-cause quantum-of-proof standard ('less than evidence which would justify condemnation ... more than bare suspicion'), which is exactly the rung a 'Proof Ladder' page anchors, so 'Key — rung anchor' is supported.",
+            "Frontmatter homes[] lists '[[The Proof Ladder]]' role 'Key — rung anchor', matching the payload."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "2019bf7d1e178f80",
+          "dimension": "support",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "The opinion is squarely and centrally about probable cause ('The crucial question is whether there was probable cause ...'; the classic 'reasonable and prudent men' formulation), so 'Key — Anchor' on the Probable Cause page is apt.",
+            "Frontmatter homes[] lists '[[Probable Cause]]' role 'Key — Anchor', matching the payload."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "55170232175bd4b6",
+          "dimension": "support",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached text at *175: 'In dealing with probable cause, however, as the very name implies, we deal with probabilities. These are not technical; they are the factual and practical considerations of everyday life on which reasonable and prudent men, not legal technicians, act.' — verbatim support for the holding proposition (practical, non-technical probabilities on which reasonable people act)."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "17a06268fca287d5",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached slip: 'Supreme Court of United States', 'MR. JUSTICE RUTLEDGE delivered the opinion of the Court' — a SCOTUS majority decision, so authority_weight 'Binding — SCOTUS' is correct."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "e69738708207a8f1",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "field_i_validity 'good_law' is sound: Brinegar's probable-cause formulation is bedrock and the scope_note ('Classic probable-cause standard; bedrock and good law') is accurate; edges[] is empty (no negative events).",
+            "as_of_content 1949-06-27 matches the cached slip decided-date ('Decided June 27, 1949')."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "lake identity.date_decided '1949-10-10' conflicts with the slip decided-date; that field is outside this assertion's payload (as_of_content is correct), but the identity date should be corrected downstream."
+          ],
+          "suggested_tightening": null
+        }
+      ]
+    },
+    {
+      "group_id": "content/cases/Briscoe v. LaHue.md",
+      "reviewed": [
+        {
+          "assertion_id": "02dde2eff4ba96b6",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion (Justice Stevens) carries page-number labels *327 through *346 confirming the 460 U.S. 325 run; header comment records 'Stevens, J.; 460 U.S. 325, decided Mar. 7, 1983'.",
+            "Lake citations[] carry 460 U.S. 325 (official), parallels 103 S. Ct. 1108, 75 L. Ed. 2d 96 (L. Ed. 2d correct for 1983), and 51 U.S.L.W. 4247, plus vendor-neutral 1983 U.S. LEXIS 146 — all match the payload."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "1a1ea2eaf1fdf0f4",
+          "dimension": "support",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Briscoe is a foundational absolute (witness) immunity holding under §1983 — the opinion's core rationale is common-law absolute immunity 'for all persons ... who were integral parts of the judicial process' — so 'Anchor' on the Absolute Immunity page is supported.",
+            "Frontmatter homes[] lists '[[Absolute Immunity]]' role 'Anchor', matching the payload."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "The content page's 'Appears on' section lists '[[Section 1983 Liability and Qualified Immunity]] — Anchor' rather than the reviewed home '[[Absolute Immunity]]' from frontmatter homes[]; a page-rendering inconsistency, not a defect in the reviewed home_role."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "8a7d6c750aa18e4a",
+          "dimension": "support",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion: CA7 'held that ... all witnesses — police officers as well as lay witnesses — are absolutely immune from civil liability based on their testimony in judicial proceedings', and the Court 'agree[s] with that conclusion'.",
+            "Cached opinion: 'the common law provided absolute immunity from subsequent damages liability for all persons — governmental or otherwise — who were integral parts of the judicial process', and '§1983 did not abrogate the absolute immunity existing at common law' — supports the common-law / non-abrogation grounds.",
+            "Perjury allegations were assumed true for decision (fn 3), supporting the 'even if the testimony is alleged to be perjured' clause."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Opinion expressly reserves immunity for pretrial/probable-cause-hearing testimony (fn 5); the holding proposition speaks to trial testimony 'in a judicial proceeding', which is faithful, but the reservation is a teaching boundary."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "0ac68ad2092229b7",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "The assertion declares field_i_validity 'unverified' (frontier stub, all as_of/basis null); the lake record has status 'under_review' with empty edges[] and empty derivation{}, so nothing was derived and the assertion makes no falsifiable legal-validity claim to refute.",
+            "provenance.field_provenance marks treatment.field_i_validity src 'frontier stub, no treatment' — consistent with the declared 'unverified' state."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Briscoe is in fact still good law (its trial-witness immunity was extended to grand-jury testimony in Rehberg v. Paulk, per the page's own Treatment note); the assertion correctly claims only 'unverified', so this does not refute it but the stub still awaits S9 promotion."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "ac5519de69b58717",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion: 'Justice Stevens delivered the opinion of the Court' for a SCOTUS decision (460 U.S. 325); authority_weight 'Binding — SCOTUS' is correct and is a structural fact independent of the unverified treatment status.",
+            "Lake identity court_level 'scotus' corroborates."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        }
+      ]
+    }
+  ]
+}

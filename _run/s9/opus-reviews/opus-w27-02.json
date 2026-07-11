@@ -1,0 +1,334 @@
+{
+  "packs": [
+    {
+      "group_id": "content/cases/Bivens v. Six Unknown Named Agents.md",
+      "reviewed": [
+        {
+          "assertion_id": "06a92e2fd481fd36",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Lake citations.official = '403 U.S. 388' (reporter U.S., type 1, selected_official true), cluster_id 108375, court_id scotus, year 1971 — matches payload citation '403 U.S. 388 (1971)'.",
+            "Cached opinion header renders '403 U.S. 388 (1971)'; parallel (91 S. Ct. 1999; 29 L. Ed. 2d 619) and neutral (1971 U.S. LEXIS 23) cites match payload."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "1b110264148030ea",
+          "dimension": "support",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion text: 'recover money damages for any injuries he has suffered as a result of the agents' violation of the Amendment' and 'Today we hold that ... cause of action' directly support the money-damages-directly-under-4A holding against federal officers.",
+            "'implied federal-officer analog to § 1983' is standard characterization, not a quoted holding; consistent with the opinion's damages-remedy reasoning."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "The § 1983-analog framing is editorial characterization; the opinion predates and does not itself invoke § 1983 by name."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "26586d8abd83582f",
+          "dimension": "support",
+          "verdict": "stands-modified",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "Internal inconsistency: frontmatter homes declares the anchor page as '[[Suing Federal Officers]]' (Key — Anchor), but the page's '## Appears on' section names a different page, '[[Section 1983 Liability and Qualified Immunity]] — Key — Anchor'. The two do not agree on which page Bivens anchors.",
+            "severity": "low",
+            "proposed_fix": "Reconcile the '## Appears on' section with the homes frontmatter so both name the same anchor page (Suing Federal Officers, per homes).",
+            "evidence_quote": "- [[Section 1983 Liability and Qualified Immunity]] — *Key — Anchor*",
+            "needs_cl": false,
+            "locator_note": "frontmatter homes[0].page vs '## Appears on' bullet"
+          },
+          "reasons": [
+            "The home_role assertion (home='Suing Federal Officers', role='Key — Anchor') matches the authoritative frontmatter homes[] block, so the anchor relationship is declared and survives.",
+            "But the rendered '## Appears on' section contradicts it by naming 'Section 1983 Liability and Qualified Immunity' as the Key — Anchor, an internal-consistency defect."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Existence of the '[[Suing Federal Officers]]' page is not verifiable from the disclosed pack (no page list inlined); role appropriateness is editorial, not opinion-verifiable."
+          ],
+          "suggested_tightening": "Regenerate the Appears-on section from the homes frontmatter so placement is single-sourced."
+        },
+        {
+          "assertion_id": "418bdfc476e584fa",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Lake court_level='scotus', court_id='scotus' — a U.S. Supreme Court decision is binding; authority_weight 'Binding — SCOTUS' is correct."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "5b6a3a2e3fd01a78",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Lake treatment.field_i_validity='good_law' (migration-seed); no adjudicated negative treatment of Bivens is disclosed.",
+            "All treatment.edges carry proposed:true and journal_ref lane1_negative/lane2_top_cited (co-citation extractor noise — e.g., Illinois v. Gates, Graham v. Connor, and a state case 'Lennette v. Iowa' cannot 'overrule' a SCOTUS decision); none is an adjudicated negative edge.",
+            "scope_note honestly records the doctrinal narrowing (Ziglar v. Abbasi 2017; Egbert v. Boule 2022) while keeping the core holding good law — consistent with 'not overruled, but limited'."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "20+ proposed negative edges (overruled/questioned/abrogated) remain unadjudicated; if any were genuine they would bear on validity, but on their face they are top-cited/co-citation artifacts."
+          ],
+          "suggested_tightening": null
+        }
+      ]
+    },
+    {
+      "group_id": "content/cases/Board of County Commissioners of Bryan County v. Brown.md",
+      "reviewed": [
+        {
+          "assertion_id": "b53dabc8c909f082",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Lake citations.official = '520 U.S. 397' (reporter U.S., type 1, selected_official true), cluster_id 118104, court_level scotus, date_decided 1997-04-28 — matches payload '520 U.S. 397 (1997)'.",
+            "Cached opinion header renders '520 U.S. 397'; parallel and neutral cites in payload match the lake citations arrays."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "56bcdececef74879",
+          "dimension": "support",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion text (at reporter star *411): 'reflects deliberate indifference to the risk that a violation of a particular constitutional or statutory right will follow the decision' and 'deliberate indifference is a stringent standard of fault' support the 'stringent showing of deliberate indifference' element.",
+            "Cached text: 'plainly obvious consequence of the decision to hire the applicant would be the deprivation of a third party's federally protected right' supports the plaintiff-must-prove-plainly-obvious-consequence element."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "e807736bae4d67e0",
+          "dimension": "support",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Frontmatter homes[0] = '[[Section 1983 Liability and Qualified Immunity]]' role 'Anchor'; the '## Appears on' section matches exactly ('Section 1983 Liability and Qualified Immunity — Anchor')."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Role/placement is editorial and not opinion-verifiable; target-page existence not confirmable from the disclosed pack."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "b38ce739bfec9cd6",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Lake court_level='scotus' (O'Connor, J., for the Court, 520 U.S. 397) — 'Binding — SCOTUS' is correct."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "e74eabb3fc583996",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Lake treatment.field_i_validity='unverified' with edges [] and progeny.rows_cached 0 — an honestly-declared frontier stub (status under_review); the assertion accurately reports that treatment is unverified rather than making any legal claim.",
+            "field_provenance marks treatment/pinpoints as 'frontier stub, no treatment' — self-consistent with the unverified status."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "scope_note says derivation deferred 'until S6 promotion,' but the record already carries an s6_promotion block (born under_review) and the page header says 'S9 promotes' — minor stale wording, does not affect the unverified status itself."
+          ],
+          "suggested_tightening": "Update scope_note to reference S9 promotion, since S6 promotion has already occurred."
+        }
+      ]
+    },
+    {
+      "group_id": "content/cases/Board of Education v. Earls.md",
+      "reviewed": [
+        {
+          "assertion_id": "a4dcbabe876ab6c5",
+          "dimension": "existence",
+          "verdict": "stands-modified",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "Frontmatter citation field is empty and payload official_citation_present=false, yet a U.S. Reports (official-reporter) cite for this SCOTUS case IS available in the disclosed data: '536 U.S. 822' with reporter 'U.S.', type 1, appears in the lake parallel[]/all[] arrays (citations.official is null / selected_official false). The page H1 and Sources already render '536 U.S. 822 (2002)'.",
+            "severity": "low",
+            "proposed_fix": "Populate the citation frontmatter field with '536 U.S. 822 (2002)' and set official_citation_present true by promoting the reporter='U.S.' cite from parallel to official.",
+            "evidence_quote": "\"cite\": \"536 U.S. 822\", \"volume\": \"536\", \"reporter\": \"U.S.\", \"page\": \"822\", \"type\": 1, \"selected_official\": false",
+            "needs_cl": false,
+            "locator_note": "frontmatter 'citation' + lake citations.official (null) vs citations.parallel/all[0]"
+          },
+          "reasons": [
+            "Case existence is fully verified (cluster_id 121171, verified status, party_name_in_text true, canonical_name_match true), so the existence claim itself is not broken.",
+            "But the official-cite-absent framing is contradicted by disclosed evidence: a U.S. Reports cite (the official SCOTUS reporter) is present in parallel/all and rendered on the page, so official_citation_present should be true and the citation field populated."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Whether CL's cluster genuinely lacks a rank-1 official selection (official_selection absent here) is a data-pipeline artifact; the U.S. cite is nonetheless the official reporter."
+          ],
+          "suggested_tightening": "Have S2 official-selection promote a reporter='U.S.' SCOTUS cite to official when citations.official is null."
+        },
+        {
+          "assertion_id": "52d4a05082cbec37",
+          "dimension": "support",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion text: 'In this context, the Fourth Amendment does not require a finding of individualized suspicion' (pin-837) and 'we hold only that Tecumseh's Policy is a reasonable means of furthering the School District's important interest' (pin-838, star-verified) support 'suspicionless drug testing ... is a reasonable special-needs search'.",
+            "Cached text applies the 'special needs' reasonableness balance to students in 'competitive extracurricular activities' and upholds the policy."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "d1a4b58d7249bde4",
+          "dimension": "support",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Frontmatter homes[0] = '[[Special Needs and Administrative Searches]]' role 'Key — Progeny / Refinement'; the '## Appears on' section matches exactly."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Progeny/refinement role is editorial; consistent with content-page statement that Earls 'extends Vernonia'."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "12d3922fb1b92968",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Lake treatment.field_i_validity='good_law'; scope_note 'Extends Vernonia to non-athletes; good law.' is accurate to the holding.",
+            "All treatment.edges carry proposed:true (State v. Grady, Mangino, In re D.H., Ashcroft v. al-Kidd, etc.) — co-citation extractor noise, not adjudicated negative treatment of Earls."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Proposed overruled/questioned/abrogated edges remain unadjudicated but are facially co-citation artifacts."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "9adc9bfb20e50872",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Lake court_level='scotus' — a U.S. Supreme Court decision; 'Binding — SCOTUS' is correct."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        }
+      ]
+    },
+    {
+      "group_id": "content/cases/Bobby v. Dixon.md",
+      "reviewed": [
+        {
+          "assertion_id": "0d193cbd8152a507",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Lake citations.official = '565 U.S. 23' (reporter U.S., type 1, selected_official true), cluster_id 616807, court_level scotus, date_decided 2011-11-07 — matches payload '565 U.S. 23 (2011)'.",
+            "Cached opinion header renders '565 U.S. 23'; parallel (132 S. Ct. 26; 181 L. Ed. 2d 328) and neutral (2011 U.S. LEXIS 7926) match payload."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "32deca338b333fc3",
+          "dimension": "support",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion text: 'unlike in Seibert, there is no concern' ... 'repeat an earlier murder confession, because' ... 'no earlier confession to repeat' supports Elstad governing and Seibert's question-first bar not applying.",
+            "Cached text 'no nexus' supports the no-nexus element; text shows the Court reversing the Sixth Circuit's habeas grant, supporting the unreasonable-application conclusion."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Content-page phrasing attributes 'unreasonably applied clearly established law' to the Sixth Circuit's habeas grant; under AEDPA the 'unreasonable application' standard formally governs the state court's ruling (which SCOTUS found reasonable) — a minor compression, substantively correct."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "c6d41488306afcfd",
+          "dimension": "support",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Frontmatter homes[0] = '[[Miranda Waiver and Invocation]]' role 'Related'; the '## Appears on' section matches exactly ('Miranda Waiver and Invocation — Related')."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Role 'Related' is editorial and not opinion-verifiable; target-page existence not confirmable from the disclosed pack."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "1303b273e56470a8",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Lake treatment.field_i_validity='good_law'; scope_note 'Per curiam AEDPA reversal; good law.' matches the disclosed per curiam SCOTUS disposition.",
+            "All treatment.edges carry proposed:true (co-citation extractor noise) — no adjudicated negative treatment of Bobby v. Dixon disclosed."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Proposed overruled/questioned/abrogated/superseded edges remain unadjudicated but are facially co-citation artifacts."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "94e32258c622e28c",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Lake court_level='scotus'; a per curiam U.S. Supreme Court decision — 'Binding — SCOTUS' is correct."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        }
+      ]
+    }
+  ]
+}
