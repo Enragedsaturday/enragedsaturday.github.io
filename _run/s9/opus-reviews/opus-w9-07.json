@@ -1,0 +1,187 @@
+{
+  "packs": [
+    {
+      "group_id": "_overhaul2/lake/cases/Rivas-Villegas v. Cortesluna.json",
+      "reviewed": [
+        {
+          "assertion_id": "91dbe9e2822c8429",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached slip opinion confirms identity: 'Cite as: 595 U. S. ____ (2021)', 'DANIEL RIVAS-VILLEGAS v. RAMON CORTESLUNA', 'No. 20-1539. Decided October 18, 2021', PER CURIAM.",
+            "Official cite 595 U.S. 1 is consistent with a per curiam opening the volume; the slip's blank page ('595 U. S. ____') is the normal slip-stage placeholder, no contradiction.",
+            "Docket 20-1539, year 2021, and date 2021-10-18 all match the disclosed opinion."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Parallel cites 142 S. Ct. 4 and 211 L. Ed. 2d 164 are not independently present in the disclosed slip text (standard S. Ct./L. Ed. 2d reporter parallels; no disclosed contradiction)."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "1717778d23f8217a",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Content-page pin-op5 quote '[T]o show a violation of clearly established law, Cortesluna must identify a case that put Rivas-Villegas on notice that his specific conduct was unlawful.' matches the opinion verbatim: 'Thus, to show a violation of clearly established law, Cortesluna must identify a case that put Rivas-Ville-gas on notice that his specific conduct was unlawful.'",
+            "The only alterations are a proper Bluebook '[T]o' bracket for the omitted 'Thus, ' and removal of the line-break hyphen in 'Rivas-Ville-gas' - both standard, not fidelity defects.",
+            "Pincite 'slip op. at 5' is correct: the passage falls after the page-5 marker 'Cite as: 595 U. S. ____ (2021) 5'.",
+            "The lake pinpoints[] quote_fidelity=mismatch flag is a false positive (the automated matcher did not credit the bracketed-capital alteration)."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Lake pinpoints[] self-flags this quote as mismatch; that flag is a matcher false positive, not a content defect."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "2c66e36ce590b171",
+          "dimension": "quote_fidelity",
+          "verdict": "refuted",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "pin-op4's stored quote is not an opinion quote at all - it is a slurp of the content page's own markdown (YAML-style header + Background/Issue/Rule headings) that truncates mid-sentence at 'The'; it does not appear anywhere in the opinion. quote_fidelity=mismatch is correct; this is a genuine quote-harvest defect in the lake pinpoints[] datum.",
+            "severity": "low",
+            "proposed_fix": "Re-harvest pin-op4 from the opinion. The intended quote - already correctly rendered on the content page ## Rule block - is: 'must be undertaken in light of the specific context of the case, not as a broad general proposition.' (595 U.S. ___, slip op. at 4) (quoting Brosseau v. Haugen, 543 U.S. 194, 198 (2004)).",
+            "evidence_quote": "This inquiry \"must be undertaken in light of the specific context of the case, not as a broad general proposition.\" Brosseau v. Haugen, 543 U. S. 194, 198 (2004) (per curiam) (internal quotation marks omitted).",
+            "needs_cl": false,
+            "locator_note": "lake pinpoints[].id=pin-op4 quote field; verify against opinion slip op. at 4 (before the page-5 marker)."
+          },
+          "reasons": [
+            "The stored pin-op4 quote string is the content page's own markdown ('--- # Rivas-Villegas v. Cortesluna ... ## Rule Clearly established law must be particularized to the case. The'), not opinion text.",
+            "That string is absent from the cached opinion; the opinion's actual page-4 proposition is 'must be undertaken in light of the specific context of the case, not as a broad general proposition.' (quoting Brosseau).",
+            "The reader-facing content page renders the CORRECT quote and pincite at ^pin-op4; the defect is confined to the corrupt lake pinpoints[] harvest datum."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Defect is confined to the lake pinpoints[] harvest datum; the published content page renders the correct quote, correct 'slip op. at 4' pincite, and correct Brosseau attribution, so no reader-facing legal proposition is affected."
+          ],
+          "suggested_tightening": "Guard the quote-harvester so it cannot capture page frontmatter/markdown as a pin quote when the intended verbatim quote is present in the rendered ## Rule block."
+        },
+        {
+          "assertion_id": "d5ee0d2353dc6a75",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "field_i_validity=good_law is supported by the disclosed derivation: lane1_negative (overrul*/abrogat*/supersed*/'recede from'/vacat*/reversed query over 105 citing opinions) returned proposed_negative_events=0, and lane3_recency returned 0.",
+            "The alarming field_ii labels (overruled/abrogated/questioned/superseded) on lane2_top_cited edges are unaudited top-cited artifacts explicitly marked proposed:true with audit_marker 'R15 treatment audit required' - they are not adjudicated negatives of Rivas-Villegas.",
+            "Opinion is a 2021 SCOTUS per curiam QI decision reversing CA9; nothing in the disclosed record shows subsequent invalidation.",
+            "scope_note honestly discloses the as_of_treatment is a migration-seed subject to S2 re-derivation/downgrade."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "lane2_top_cited attaches proposed field_ii=overruled/abrogated to 25 citing cases pending the flagged R15 audit; disclosed lane1_negative shows 0 real negative events so good_law holds, but the unaudited labels justify the R15 pass before final promotion."
+          ],
+          "suggested_tightening": null
+        }
+      ]
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/Roaden v. Kentucky.json",
+      "reviewed": [
+        {
+          "assertion_id": "3a41296ac50c63c1",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion confirms Roaden v. Kentucky, 'Mr. Chief Justice Burger delivered the opinion of the Court', obscene-film warrantless-seizure holding.",
+            "Reporter star markers *497 through *506 are consistent with official cite 413 U.S. 496 (opinion body opens at *497; caption/syllabus page 496).",
+            "The 'higher hurdle in the evaluation of reasonableness' holding sits at the *504 marker, matching the content page pin at 413 U.S. at 504.",
+            "Docket No. 71-1134 and decided 1973-06-25 are consistent with the disclosed record."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Parallel/neutral cites (93 S. Ct. 2796; 37 L. Ed. 2d 757; 1973 U.S. LEXIS 31) are not independently present in the disclosed opinion text (standard reporter parallels; no contradiction)."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "14870486d4bf0548",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "field_i_validity=unverified accurately reflects a frontier stub: status under_review, empty treatment.edges and derivation, as_of_content/as_of_treatment null, composite_basis unverified.",
+            "The record makes no good-law or negative-treatment claim, so there is no overclaim; the scope_note states treatment is intentionally not derived until S6 promotion.",
+            "Content page renders the ⚪ Unverified banner and discloses the two-key citator/progeny verification is incomplete - internally consistent and honest."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        }
+      ]
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/Robbins v. California.json",
+      "reviewed": [
+        {
+          "assertion_id": "ea37186dbf64d3b6",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion confirms Robbins v. California, 'Justice Stewart announced the judgment of the Court' (plurality; Brennan, White, Marshall joining), closed-opaque-container-in-automobile holding.",
+            "Reporter star markers *422 through *429 are consistent with official cite 453 U.S. 420 (opinion body opens at *422; caption/syllabus page 420).",
+            "The 'We reaffirm today that such a container may not be opened without a warrant, even if it is found during the course of the lawful search of an automobile.' holding sits at the *428 marker, matching the content page pin-428.",
+            "Docket 80-148 and decided 1981-07-01 are consistent with the disclosed record."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Parallel/neutral cites (101 S. Ct. 2841; 69 L. Ed. 2d 744; 1981 U.S. LEXIS 132) are not independently present in the disclosed opinion text."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "59d19066a754387c",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "field_i_validity=unverified accurately reflects a frontier stub: status under_review, empty edges/derivation, as_of nulls, composite_basis unverified.",
+            "The content page's 'Overruled by United States v. Ross (1982)' characterization is authored orientation explicitly flagged ⚪ not-yet-certified; the machine treatment field claims only 'unverified', so there is no machine overclaim.",
+            "The overruling-by-Ross is legally well settled and not contradicted by disclosed text (the disclosed Robbins opinion itself reviews the D.C. Circuit's Ross en banc decision, 655 F.2d 1159 (1981))."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Content-page prose foregrounds 'Overruled' while the machine field is 'unverified'; the page discloses the ⚪ pending status so it is coherent, but S9 promotion should reconcile the authored history with a derived treatment."
+          ],
+          "suggested_tightening": null
+        }
+      ]
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/Robinson v. Commonwealth.json",
+      "reviewed": [
+        {
+          "assertion_id": "e452b8c532a1a61b",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "field_i_validity=unverified accurately reflects a frontier stub for a very recent Va. Ct. App. published opinion (decided 2026-04-07): status under_review, empty edges/derivation, as_of nulls, citations[] empty/slip-only.",
+            "The record makes no good-law or negative-treatment machine claim, so there is no overclaim; content page renders the ⚪ Unverified banner and discloses incomplete two-key verification.",
+            "Cached opinion confirms the case identity and the reserved 'comprehensive chronicle' Flock/Carpenter holding, consistent with the honest frontier-stub treatment."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Outside this treatment assertion's scope (no pincite/quote assertion in this group), but noted as sighted: the disclosed cached-text pagination places the reserved-question Rule quote 'We decline to speculate ... not an unreasonable search' on slip page 10 (between the '- 9 -' footer and the '- 10 -' footer), whereas the content page pincites it 'slip op. at 9'. This may reflect a different official vacourts PDF pagination; a pincite-lane check is warranted but it does not affect the treatment verdict."
+          ],
+          "suggested_tightening": null
+        }
+      ]
+    }
+  ],
+  "notes": "Opus model-diversity lane, refute-framed, sighted; evidence limited to inlined pack. 4 groups / 9 assertions. Counts: stands=8, refuted=1, stands-modified=0. Sole refute: pin-op4 (2c66e36ce590b171) stored quote is a content-page markdown slurp, not opinion text (harvest defect; content page itself renders the correct quote/pincite). All existence cites corroborated by cached opinion text (identity + page markers + pin holdings). All 4 treatment assertions honest: Rivas good_law backed by lane1_negative=0 (lane2 overruled labels are unaudited R15 artifacts); three frontier stubs correctly 'unverified'."
+}

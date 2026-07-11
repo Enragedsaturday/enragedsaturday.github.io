@@ -1,0 +1,280 @@
+{
+  "packs": [
+    {
+      "group_id": "_overhaul2/lake/cases/Postal Service v. Konan.json",
+      "lens": "model-diversity",
+      "reviewed": [
+        {
+          "assertion_id": "5448a4fd7da7c948",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Assertion declares field_i_validity='unverified' (frontier stub, treatment/progeny intentionally not derived); this is an honest non-claim, not a legal proposition that can be a misstatement.",
+            "Lake record corroborates exactly: status='under_review', treatment.edges=[], derivation={}, progeny.rows_cached=0, as_of_content/as_of_treatment=null — fully consistent with 'unverified'.",
+            "Konan is a Feb-24-2026 slip decision (cluster 10799651); no derivable subsequent treatment exists yet, so 'unverified' cannot be refuted by any disclosed evidence."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Treatment is deliberately un-derived; S6/S9 promotion must run the two-key citator/progeny derivation before any good-law claim is asserted for this record."
+          ],
+          "suggested_tightening": null
+        }
+      ],
+      "notes": "Sole assertion is a self-declared frontier-stub treatment; nothing to refute."
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/Preston v. United States.json",
+      "lens": "model-diversity",
+      "reviewed": [
+        {
+          "assertion_id": "d102ae478c242f60",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached majority opinion (Mr. Justice Black; conspiracy to rob a federally insured bank; 3 a.m. vagrancy arrest; car towed to garage and searched) is unmistakably Preston v. United States.",
+            "Star pagination *365/*366/*367/*368 places the opinion's opening page at 364, confirming the official cite 376 U.S. 364.",
+            "official.selected_official=true on 376 U.S. 364 with official_selection_present=true; no disclosed evidence contradicts the cite."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Parallel cites 84 S. Ct. 881 / 11 L. Ed. 2d 777 and 1964 U.S. LEXIS 1578 pin-pages are not independently confirmable from the U.S.-Reports cached text, but are sourced from cluster.citations[] and are uncontradicted."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "8b5467cb9f8bdc03",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Source (p. 368): 'We think that the search was too remote in time or place to have been made as incidental to the arrest and conclude, therefore, that the search of the car without a warrant failed to meet the test of reasonableness under the Fourth Amendment, rendering the evidence obtained as a result of the search inadmissible.'",
+            "Record quote reproduces every retained word verbatim, using an ellipsis for the omitted 'and conclude, therefore, that' with a bracketed '[so]' and an ellipsis for 'as a result of the search' — a faithful Bluebook quotation.",
+            "The *368 star marker precedes this concluding sentence, so pincite '376 U.S. at 368' is correct.",
+            "Payload quote_fidelity='mismatch'/pinpoint_status='slip-only' is a naive literal-substring false positive caused by the ellipses/brackets, not an actual misquote."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": "Fidelity matcher should normalize Bluebook ellipses/brackets before comparison so faithful edited quotations are not flagged 'mismatch'."
+        },
+        {
+          "assertion_id": "8dce0920b2eabcca",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Source (p. 367): 'But these justifications are absent where a search is remote in time or place from the arrest.'",
+            "Record quote 'justifications are absent where a search is remote in time or place from the arrest.' is a verbatim substring (leading 'But these' dropped without ellipsis, permissible as it starts the quoted clause).",
+            "Sentence falls between the *367 and *368 markers, so the star_marker='367' / pincite is correct; matches star-verified='matched' and the text-fragment anchor."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "e5f664f222c7c86b",
+          "dimension": "quote_fidelity",
+          "verdict": "stands-modified",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "The harvested `quote` for pin-367 is a page-dump artifact (rendered-markdown from the page header through '## Rule No. A search incident to arrest must be contemporaneous, and'), not the pinpoint quotation; the build's own quote_fidelity='mismatch' correctly reflects that this string matches no contiguous source passage.",
+            "severity": "low",
+            "proposed_fix": "Re-harvest pin-367 to the actual rendered pinpoint quote, which is verbatim-faithful to the source at 376 U.S. 367.",
+            "evidence_quote": "Once an accused is under arrest and in custody, then a search made at another place, without a warrant, is simply not incident to the arrest.",
+            "needs_cl": false,
+            "locator_note": "376 U.S. at 367; content-page anchor ^pin-367 renders '[o]nce an accused is under arrest and in custody, then a search made at another place, without a warrant, is simply not incident to the arrest.'"
+          },
+          "reasons": [
+            "The ACTUAL content-page pinpoint quote at ^pin-367 ('[o]nce an accused...simply not incident to the arrest.') is verbatim from the source (the sentence precedes the *368 marker, i.e., page 367), with only a bracketed lower-case '[o]' — so the underlying legal quote and its pincite (367) survive.",
+            "Only the harvested representation in the assertion payload is broken (page-dump), a mechanical extraction artifact affecting pins that lack a text-fragment anchor."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "The published quote at ^pin-367 is faithful and must be preserved; only the payload's harvested quote string needs correction — do not delete the pin."
+          ],
+          "suggested_tightening": "Pins without a text-fragment anchor should fall back to a sentence-scoped harvest rather than a page-prefix dump."
+        },
+        {
+          "assertion_id": "c99ed8fdcd0128e0",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "field_i_validity='good_law' is a migration-seed (field_provenance: _treatment-migration.json + page frontmatter); the derivation edges are proposed-only.",
+            "The negative-treatment lanes (lane1_negative 'cites:(106771) AND (overrul*|abrogat*|...)', lane2_top_cited, lane3_recency) returned only 'proposed':true candidates with field_iii='mentioned'; the negative term attaches to the CITING cases, not to Preston — no edge establishes that Preston's search-incident remoteness holding was overruled.",
+            "scope_note correctly characterizes the automobile-exception line ([[Chambers v. Maroney]], [[Michigan v. Thomas]]) as distinguishing/limiting, not overruling, Preston; Preston's SITA remoteness holding remains controlling."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "as_of_treatment 2026-06-30 is seed-based; lane1_negative (14 proposed_negative_events) and lane2 carry audit_needed=true / 'R15 treatment audit required' with triage snippet-classified rather than fully read — none is a confirmed overruling, but the audit is not closed."
+          ],
+          "suggested_tightening": "Complete the R15 audit of the proposed_negative_events before treating as_of_treatment as fully re-derived rather than migration-seeded."
+        }
+      ],
+      "notes": "Existence and both star-verifiable quotes stand; pin-368 is a false-'mismatch' faithful quote; pin-367 payload is a page-dump artifact over a faithful published quote; good_law seed uncontradicted."
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/Rakas v. Illinois.json",
+      "lens": "model-diversity",
+      "reviewed": [
+        {
+          "assertion_id": "9c5899f369444489",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion header reads literally '439 U.S. 128 (1978)', 'RAKAS ET AL. v. ILLINOIS', 'No. 77-5781.', 'Decided December 5, 1978.', MR. JUSTICE REHNQUIST — confirms identity and the official cite 439 U.S. 128.",
+            "official.selected_official=true on 439 U.S. 128; no disclosed evidence contradicts the cite."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Parallel cites 99 S. Ct. 421 / 58 L. Ed. 2d 387 and 1978 U.S. LEXIS 2452 pin-pages not independently confirmable from cached text, but uncontradicted (cluster.citations[])."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "78f2c5777f8d736f",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Source (p. 143, stating the Katz holding): '...the Court in Katz held that capacity to claim the protection of the Fourth Amendment depends not upon a property right in the invaded place but upon whether the person who claims the protection of the Amendment has a legitimate expectation of privacy in the invaded place. 389 U. S., at 353'.",
+            "Record quote is an exact verbatim reproduction of that clause; the sentence sits between the *143 and *144 markers, so pincite '439 U.S. at 143' is correct; matches star-verified='matched' and the text-fragment anchor."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "85d2ef19be365dd3",
+          "dimension": "quote_fidelity",
+          "verdict": "stands-modified",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "The harvested `quote` for pin-133 is a page-dump artifact (rendered-markdown from the header through '## Rule No. Fourth Amendment rights are personal:'), not the pinpoint quotation; the build's own quote_fidelity='mismatch' correctly reflects that this string is not a contiguous source passage.",
+            "severity": "low",
+            "proposed_fix": "Re-harvest pin-133 to the actual rendered pinpoint quote, which is verbatim-faithful to the source at 439 U.S. 133-134.",
+            "evidence_quote": "Fourth Amendment rights are personal rights which, like some other constitutional rights, may not be vicariously asserted.",
+            "needs_cl": false,
+            "locator_note": "439 U.S. at 133-134; source: 'As we stated in Alderman v. United States, 394 U. S. 165, 174 (1969), \"Fourth Amendment rights are personal rights which, like some other constitutional rights, may not be vicariously *134 asserted.\"'"
+          },
+          "reasons": [
+            "The ACTUAL content-page pinpoint quote at ^pin-133 is verbatim from Rakas (the quote spans *133-*134, the word 'asserted' following the *134 marker), and is correctly attributed '(quoting Alderman v. United States)' — Rakas quotes Alderman at 394 U.S. 165, 174.",
+            "Only the harvested payload string is broken (page-dump); the published quote and its pincite (133-134) survive."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Preserve the published ^pin-133 quote; only the harvested quote string needs correction — do not delete the pin."
+          ],
+          "suggested_tightening": "Sentence-scoped fallback harvest for pins lacking a text-fragment anchor."
+        },
+        {
+          "assertion_id": "b166bb37cfc42452",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "field_i_validity='good_law' is a migration-seed; the negative-treatment lanes returned only 'proposed':true / field_iii='mentioned' candidates with no confirmed overruling of Rakas.",
+            "Rakas (merging standing into the substantive legitimate-expectation-of-privacy inquiry) is bedrock Fourth Amendment law; the record's own related links show continued application ([[Rawlings v. Kentucky]], [[Byrd v. United States]]).",
+            "No disclosed evidence contradicts good_law."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "scope_note self-discloses 'Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade'; lanes carry audit_needed=true / 'R15 treatment audit required' — currency is seed-based pending audit, though no overruling is present."
+          ],
+          "suggested_tightening": "Close the R15 negative-treatment audit before treating as_of_treatment as independently re-derived."
+        }
+      ],
+      "notes": "Existence and star-verified pin-143 stand; pin-133 payload is a page-dump over a faithful Alderman quote; good_law seed uncontradicted."
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/Rawlings v. Kentucky.json",
+      "lens": "model-diversity",
+      "reviewed": [
+        {
+          "assertion_id": "231a1e8aedd4dacb",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion header reads literally '448 U.S. 98 (1980)', 'RAWLINGS v. KENTUCKY', 'No. 79-5146.', 'Decided June 25, 1980.', MR. JUSTICE REHNQUIST — confirms identity and the official cite 448 U.S. 98.",
+            "official.selected_official=true on 448 U.S. 98; no disclosed evidence contradicts the cite."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Parallel cites 100 S. Ct. 2556 / 65 L. Ed. 2d 633 and 1980 U.S. LEXIS 142 pin-pages not independently confirmable from cached text, but uncontradicted (cluster.citations[])."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "1203c0948594333a",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Source (p. 105): 'While petitioner's ownership of the drugs is undoubtedly one fact to be considered in this case, Rakas emphatically rejected the notion that \"arcane\" concepts of property law ought to control the ability to claim the protections of the Fourth Amendment.'",
+            "Record quote fragment 'is undoubtedly one fact to be considered,' is verbatim on page 105 (between the *105 and *106 markers); the content page's companion fragment 'emphatically rejected the notion that \\'arcane\\' concepts of property law ought to control the ability to claim the protections of the Fourth Amendment.' is likewise verbatim; pincite '448 U.S. at 105' is correct.",
+            "Payload quote_fidelity='mismatch'/pinpoint_status='slip-only' is a false positive from a partial, non-star-anchored harvest — the captured text is faithful."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Payload captured only the first of the two quoted fragments rendered at ^pin-105 (harvest incompleteness, not a fidelity defect)."
+          ],
+          "suggested_tightening": "Capture all quoted fragments attached to a single pin and normalize the matcher so faithful partial fragments are not flagged 'mismatch'."
+        },
+        {
+          "assertion_id": "7482a82172e7fadd",
+          "dimension": "quote_fidelity",
+          "verdict": "stands-modified",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "The harvested `quote` for pin-106 is a page-dump artifact (rendered-markdown from the header through 'After [[Rakas v. Illinois]],'), not the pinpoint quotation; the build's own quote_fidelity='mismatch' correctly reflects that this string is not a contiguous source passage.",
+            "severity": "low",
+            "proposed_fix": "Re-harvest pin-106 to the actual rendered pinpoint quote, which is verbatim-faithful to the source at 448 U.S. 106.",
+            "evidence_quote": "the two inquiries merge into one: whether governmental officials violated any legitimate expectation of privacy held by petitioner.",
+            "needs_cl": false,
+            "locator_note": "448 U.S. at 106; source (after *106 marker): 'After Rakas, the two inquiries merge into one: whether governmental officials violated any legitimate expectation of privacy held by petitioner.' — corroborated by Blackmun, J., concurring: 'these two inquiries \"merge into one,\" ante, at 106'."
+          },
+          "reasons": [
+            "The ACTUAL content-page pinpoint quote at ^pin-106 is verbatim from the source at page 106 (following the *106 star marker) and correctly pincited; the Blackmun concurrence independently confirms 'ante, at 106'.",
+            "Only the harvested payload string is broken (page-dump); the published quote survives."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Preserve the published ^pin-106 quote; only the harvested quote string needs correction — do not delete the pin."
+          ],
+          "suggested_tightening": "Sentence-scoped fallback harvest for pins lacking a text-fragment anchor."
+        },
+        {
+          "assertion_id": "d4a68ab35a577d2b",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "field_i_validity='good_law' is a migration-seed; the negative-treatment lanes returned only 'proposed':true / field_iii='mentioned' candidates with no confirmed overruling of Rawlings.",
+            "Rawlings' holding — ownership of the seized items does not by itself confer a legitimate expectation of privacy in the place searched — is settled, applying Rakas; the source text (Part II-A, p. 105-106) supports that black-letter statement.",
+            "No disclosed evidence contradicts good_law."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "scope_note self-discloses 'Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade'; lanes carry audit_needed=true / 'R15 treatment audit required' — currency is seed-based pending audit, though no overruling is present."
+          ],
+          "suggested_tightening": "Close the R15 negative-treatment audit before treating as_of_treatment as independently re-derived."
+        }
+      ],
+      "notes": "Existence and pin-105 (faithful partial fragment) stand; pin-106 payload is a page-dump over a faithful, Blackmun-corroborated quote; good_law seed uncontradicted."
+    }
+  ]
+}

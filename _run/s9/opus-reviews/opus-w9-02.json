@@ -1,0 +1,275 @@
+{
+  "packs": [
+    {
+      "group_id": "_overhaul2/lake/cases/Pearson v. Callahan.json",
+      "reviewed": [
+        {
+          "assertion_id": "a60dda296cf9972b",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Official '555 U.S. 223' matches lake citations.official (selected_official=true) and cached slip-op header 'PEARSON ET AL. v. CALLAHAN', No. 07-751, Argued Oct 14 2008-Decided Jan 21 2009, cert to Tenth Circuit.",
+            "Parallels 129 S. Ct. 808 / 172 L. Ed. 2d 565 and vendor-neutral 2009 U.S. LEXIS 591 all present in lake citations.all; identity expected_citation_found/party_name_in_text/canonical_name_match all true."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "58f603d317e03b1c",
+          "dimension": "quote_fidelity",
+          "verdict": "stands-modified",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "Harvested pinpoint payload.quote for pin-236 captured a wrong page-markdown span ('theory). Callahan sued under § 1983 ... ## Rule No.') rather than the actual content-page quotation, and labels quote_fidelity='mismatch'. The real ^pin-236 quote IS verbatim-faithful to the slip opinion (Part III), so the mismatch flag is spurious against the published quote.",
+            "severity": "low",
+            "proposed_fix": "Re-harvest pin-236 to the actual quoted sentence and clear the false mismatch flag; the published quote and pincite need no change.",
+            "evidence_quote": "On reconsidering the procedure required in Saucier, we conclude that, while the sequence set forth there is often appropriate, it should no longer be regarded as manda tory.",
+            "needs_cl": false,
+            "locator_note": "slip op. Part III (cached opinion lines ~1595-1602); content page line 90"
+          },
+          "reasons": [
+            "Content-page ^pin-236 quote matches slip-op Part III verbatim (allowing line-break hyphenation 'manda-tory'/'discre-tion').",
+            "Defect is internal to the harvested record: payload.quote is a page-markdown fragment, not opinion text, yet flagged 'mismatch'."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "pinpoint_status='slip-only' is legitimate: the inlined slip op shows 'Cite as: 555 U. S. ____ (2009)', so bound page 236 cannot be independently confirmed from disclosed text (236 is the canonical pincite for the 'no longer mandatory' holding)."
+          ],
+          "suggested_tightening": "Distinguish 'quote captured wrong' from 'quote does not match source' in the fidelity label so a genuinely faithful published quote is not tagged mismatch."
+        },
+        {
+          "assertion_id": "99c4c46a983db030",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "field_i_validity='good_law' as of 2026-06-30 is internally consistent; Pearson (2009) is the governing QI-sequencing rule and no adopted negative treatment is present.",
+            "All 25 treatment edges are proposed:true / field_iii='mentioned' (lane1_negative & lane2_top_cited), none promoted into field_i."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Proposed 'overruled' edges (Nat'l Rifle Ass'n v. Vullo, Citizens United, Ramos v. Louisiana, Kisor v. Wilkie, Michael Lacey v. Arpaio, etc.) are facially-implausible citation-graph false positives (unrelated subject matter and/or circuit cases that cannot overrule a SCOTUS holding); a future S2 re-derivation must not promote them."
+          ],
+          "suggested_tightening": "Filter lane negative edges by authority (a non-SCOTUS citing case cannot overrule SCOTUS) before surfacing 'overruled'."
+        }
+      ],
+      "notes": "Opus model-diversity lane (both A/B lens concerns). Existence + treatment clean; pin-236 harvest artifact only (published quote faithful)."
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/Pembaur v. City of Cincinnati.json",
+      "reviewed": [
+        {
+          "assertion_id": "31baefddffd057b3",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Official '475 U.S. 469' matches lake citations.official; parallels 106 S. Ct. 1292 / 89 L. Ed. 2d 452 / 54 U.S.L.W. 4289 and vendor-neutral 1986 U.S. LEXIS 33 all present.",
+            "Cached opinion carries page-number labels *482/*483/*484, consistent with the case sitting in 475 U.S. beginning at 469; identity checks all true."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "823a5b1862ff7f75",
+          "dimension": "quote_fidelity",
+          "verdict": "stands-modified",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "Harvested payload.quote for pin-483 captured a wrong page-markdown span (Background/Issue/Rule prose) and labels quote_fidelity='mismatch'/pinpoint_status='slip-only'. The actual ^pin-483 content quote is verbatim-faithful and its pincite 483-484 is independently VERIFIABLE from the inlined page labels, so both the mismatch flag and 'slip-only' status are wrong.",
+            "severity": "low",
+            "proposed_fix": "Re-harvest pin-483 to the real quoted sentence; set fidelity=match and status to reflect the verifiable 483-484 pincite.",
+            "evidence_quote": "We hold that municipal liability under §1983 attaches where — and only where — a deliberate choice to follow a course of action is made from among various alternatives by the official or officials responsible for establishing final policy with respect to the subject matter in ques*484tion.",
+            "needs_cl": false,
+            "locator_note": "cached opinion p id=b563-6 (line ~3182); *483/*484 labels straddle the quoted sentence; content page line 2048"
+          },
+          "reasons": [
+            "Content-page ^pin-483 quote ('municipal liability under § 1983 attaches where — and only where — ...subject matter in question.') matches the opinion verbatim.",
+            "Page-break labels *483 and *484 fall inside the quoted sentence, confirming the 475 U.S. at 483-484 pincite from disclosed evidence."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "pinpoint_status='slip-only' understates what is verifiable: bound-reporter page labels are present in the cached source."
+          ],
+          "suggested_tightening": "Promote star/page-label-verifiable pincites out of 'slip-only' status."
+        },
+        {
+          "assertion_id": "b92930afc7e7b420",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "field_i_validity='good_law' is consistent; Pembaur (1986) single-decision municipal-liability rule remains governing (refined, not displaced, by Praprotnik/McMillian).",
+            "All 36 edges are proposed:true / field_iii='mentioned'; none adopted into field_i."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Proposed negatives (City of Canton, Bryan County, Praprotnik tagged 'questioned/overruled'; Texas/other circuit cases tagged 'overruled'; 'superseded_by_statute' on a constitutional-tort doctrine) are false positives — progeny that refine, or lower courts that cannot overrule SCOTUS."
+          ],
+          "suggested_tightening": "Suppress 'superseded_by_statute' proposals on constitutional §1983 doctrines."
+        }
+      ],
+      "notes": "Existence + treatment clean; pin-483 harvest artifact (published quote faithful, pincite 483-484 star/label-verifiable)."
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/Pennsylvania v. Bruder.json",
+      "reviewed": [
+        {
+          "assertion_id": "43fc3f52de04819e",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion header states '488 U.S. 9 (1988)', 'PENNSYLVANIA v. BRUDER', No. 88-161, Decided October 31, 1988, PER CURIAM, on cert to the Superior Court of Pennsylvania — matches official '488 U.S. 9'.",
+            "Parallels 109 S. Ct. 205 / 102 L. Ed. 2d 172 and vendor-neutral 1988 U.S. LEXIS 4816 match lake citations; identity checks true."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "10e61e7c72e8ee22",
+          "dimension": "quote_fidelity",
+          "verdict": "stands-modified",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "Harvested payload.quote for pin-10 captured a wrong page-markdown span (frontmatter+Background+Issue ending '## Rule No. The decision was') and labels quote_fidelity='mismatch'/pinpoint_status='slip-only'. The actual ^pin-10 compound quote is verbatim-faithful and sits on page 10 (star *10/*11 present), so both labels are wrong.",
+            "severity": "low",
+            "proposed_fix": "Re-harvest pin-10 to the real quoted material; set fidelity=match and status=star-verified(10).",
+            "evidence_quote": "Accordingly, he was not entitled to a recitation of his constitutional rights prior to arrest, and his roadside responses to questioning were admissible.",
+            "needs_cl": false,
+            "locator_note": "cached opinion lines 4132-4134; star *10 (line 4133) precedes and *11 (line 4135) follows the quoted material; content page line 3294"
+          },
+          "reasons": [
+            "Content-page ^pin-10 quote (contrary-to-Berkemer; 'noncoercive aspect of ordinary traffic stops...not “in custody” for the purposes of Miranda'; 'he was not entitled to a recitation...admissible') is verbatim in the opinion.",
+            "Quoted material lies between star *10 and *11, confirming the 488 U.S. at 10 pincite; nested attribution to Berkemer, 468 U.S. 420, 440 is correct."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "'slip-only' understates verifiability — star-pagination *10 is present in the cached source."
+          ],
+          "suggested_tightening": "Same fidelity-vs-capture distinction as pin-236/pin-483."
+        },
+        {
+          "assertion_id": "3cec67497223ed57",
+          "dimension": "quote_fidelity",
+          "verdict": "stands-modified",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "pin-11 harvested payload.quote IS the correct quote and is verbatim-faithful to the opinion at page 11, yet it is still labeled quote_fidelity='mismatch'/pinpoint_status='slip-only'. This is a pure false-positive fidelity flag on a good quote.",
+            "severity": "low",
+            "proposed_fix": "Flip quote_fidelity mismatch->match and pinpoint_status slip-only->star-verified(11); no content change.",
+            "evidence_quote": "Berkemer's rule, that ordinary traffic stops do not involve custody for purposes of Miranda, governs this case.",
+            "needs_cl": false,
+            "locator_note": "cached opinion line 4135 (immediately after star *11); content page line 3296"
+          },
+          "reasons": [
+            "Captured quote '*Berkemer*'s rule, that ordinary traffic stops do not involve custody for purposes of *Miranda*, governs this case.' matches the opinion verbatim (opinion adds only leading 'Accordingly,').",
+            "Sentence follows star *11, confirming the 'Id. at 11' pincite."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": "Investigate why an exact-match quote was tagged 'mismatch' — likely a normalization/anchor bug in the harvester."
+        },
+        {
+          "assertion_id": "38c38c48210498f6",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "field_i_validity='good_law' consistent; Bruder is a per curiam application of Berkemer v. McCarty and remains good law.",
+            "All 28 edges are proposed:true / field_iii='mentioned'; none adopted."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Proposed negatives (Thompson v. Keohane, Stansbury v. California, Pennsylvania v. Muniz tagged 'questioned/overruled'; numerous state cases tagged 'overruled/superseded_by_statute') are false positives — Miranda-custody-line progeny or lower courts that cannot overrule SCOTUS."
+          ],
+          "suggested_tightening": "Filter negative-edge proposals by authority level."
+        }
+      ],
+      "notes": "Existence + treatment clean; pin-10 harvest artifact and pin-11 false-positive mismatch flag (both published quotes verbatim, pincites 10/11 star-verifiable)."
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/Pennsylvania v. Labron.json",
+      "reviewed": [
+        {
+          "assertion_id": "dd32baa0925ff42b",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion header states '518 U.S. 938 (1996)', 'PENNSYLVANIA v. LABRON', No. 95-1691, Decided July 1, 1996, Per Curiam, on cert to the Supreme Court of Pennsylvania — matches official '518 U.S. 938'.",
+            "Parallels 116 S. Ct. 2485 / 135 L. Ed. 2d 1031 and vendor-neutral 1996 U.S. LEXIS 4268 match lake citations; identity checks true."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "125eeea03eb63509",
+          "dimension": "quote_fidelity",
+          "verdict": "stands-modified",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "Harvested payload.quote for pin-940 captured a wrong page-markdown span (frontmatter+Background+Issue ending '## Rule No separate exigency is required.') and labels quote_fidelity='mismatch'/pinpoint_status='slip-only'. The actual ^pin-940 content quote is verbatim-faithful and sits on page 940 (star *940/*941 present).",
+            "severity": "low",
+            "proposed_fix": "Re-harvest pin-940 to the real quoted sentence; set fidelity=match and status=star-verified(940).",
+            "evidence_quote": "If a car isreadily mobile and probable cause exists to believe it contains contraband, the Fourth Amendment thus permits police to search the vehicle without more.",
+            "needs_cl": false,
+            "locator_note": "cached opinion line 5116; star *940 (line 5115) precedes and *941 (line 5117) follows; content page line 4215 (source has spacing artifact 'isreadily' -> 'is readily')"
+          },
+          "reasons": [
+            "Content-page ^pin-940 quote ('If a car is readily mobile and probable cause exists to believe it contains contraband, the Fourth Amendment thus permits police to search the vehicle without more.') matches the opinion verbatim.",
+            "Quoted sentence lies between star *940 and *941, confirming the 518 U.S. at 940 pincite."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "'slip-only' understates verifiability — star *940 is present in the cached source."
+          ],
+          "suggested_tightening": "Same fidelity-vs-capture distinction; and normalize the 'isreadily' spacing artifact when matching."
+        },
+        {
+          "assertion_id": "59064c97d843e010",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Positive assertion: quote_fidelity='matched', pinpoint_status='star-verified', star_marker='940'. Confirmed — fragment 'ready mobility' appears verbatim on page 940 (line 5116).",
+            "The fuller ^pin-940a content quote ('an exigency sufficient to excuse failure to obtain a search warrant once probable cause to conduct the search is clear.') is verbatim Labron text on page 940, so the star-verified match is a genuine true positive."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "1780adf8335d54ae",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "field_i_validity='good_law' consistent; Labron (1996) ready-mobility automobile-exception rule remains good law (reaffirmed by Maryland v. Dyson, 1999).",
+            "All 27 edges are proposed:true / field_iii='mentioned'; none adopted."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Proposed negatives are false positives: Collins v. Virginia (2018) limited the exception at the home's curtilage but did not overrule the ready-mobility rule; Maryland v. Dyson actually reaffirmed Labron yet is tagged 'questioned'; state cases cannot overrule SCOTUS."
+          ],
+          "suggested_tightening": "Treat 'limits/refines' distinctly from 'overruled' in edge proposals."
+        }
+      ],
+      "notes": "Existence + treatment clean; pin-940 harvest artifact (published quote faithful, pincite 940 star-verifiable); pin-940a confirmed true-positive match."
+    }
+  ]
+}

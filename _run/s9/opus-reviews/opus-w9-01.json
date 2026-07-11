@@ -1,0 +1,248 @@
+{
+  "packs": [
+    {
+      "group_id": "_overhaul2/lake/cases/Orozco v. Texas.json",
+      "reviewed": [
+        {
+          "assertion_id": "6c2338afd83e4725",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion header confirms '394 U.S. 324 (1969)', 'OROZCO v. TEXAS', 'No. 641', 'Decided March 25, 1969', 'Supreme Court of United States' — matching official cite, docket 641, court scotus, and date_decided 1969-03-25.",
+            "official_selection_present=true with U.S. reporter ranked first (selected_rank_1); parallel cites 89 S. Ct. 1095 / 22 L. Ed. 2d 311 and vendor-neutral 1969 U.S. LEXIS 2154 are internally consistent."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "4f01999e7ad9a7e5",
+          "dimension": "quote_fidelity",
+          "verdict": "stands-modified",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "The recorded pin-326 quote is a mis-harvested concatenation of the page's Background prose plus the '## Issue'/'## Rule Yes.' section headers — not opinion text — so quote_fidelity='mismatch' is a harvester artifact, not a page misquote. The sentence the page actually renders at ^pin-326 checks out verbatim.",
+            "severity": "low",
+            "proposed_fix": "Re-point the recorded pin-326 quote to the sentence the page actually quotes at ^pin-326 ('We disagree and hold that the use of these admissions ... as construed in Miranda.'), which is verbatim in the opinion on page 326, and clear the false mismatch flag.",
+            "evidence_quote": "We disagree and hold that the use of these admissions obtained in the absence of the required warnings was a flat violation of the Self-Incrimination Clause of the Fifth Amendment as construed in Miranda.",
+            "needs_cl": false,
+            "locator_note": "Cached opinion, paragraph after the '*326' star; content page line ^pin-326."
+          },
+          "reasons": [
+            "The page's rendered ^pin-326 quote ('We disagree and hold ... as construed in Miranda.') matches the cached opinion verbatim and sits after the '*326' star marker, so the pincite '394 U.S. at 326' is correct.",
+            "Only the RECORDED pinpoint-quote string is defective (it captured page markdown headers), producing a false 'mismatch'; the published legal content is faithful."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "If downstream tooling trusts the recorded pin quote verbatim it would surface a spurious misquote; the rendered page itself is clean."
+          ],
+          "suggested_tightening": "Have the harvester anchor on the quoted-sentence span at the ^pin anchor rather than the preceding prose/headers."
+        },
+        {
+          "assertion_id": "b8b660f14541a35a",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Recorded quote 'in custody at the station or otherwise deprived of his freedom of action in any significant way' matches the cached opinion verbatim; it appears after the '*327' star, so pincite '394 U.S. at 327' is correct.",
+            "The page correctly attributes the nested phrase to Miranda (384 U.S. at 477), matching the opinion's own '384 U. S., at 477' citation; quote_fidelity='mismatch' is a false positive from the markdown emphasis asterisks around the phrase."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "'mismatch' flag is a benign false positive caused by the '*...*' emphasis markers, not a fidelity problem."
+          ],
+          "suggested_tightening": "Normalize markdown emphasis before string-matching so faithful emphasized quotes are not flagged 'mismatch'."
+        },
+        {
+          "assertion_id": "90c3a110aa7890ed",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": false,
+          "defect": null,
+          "reasons": [
+            "Treatment fields are internally consistent: as_of_content=1969-03-25 equals the decision date shown in the cached opinion, field_i_validity=good_law, varies_by_point=false; no internal defect.",
+            "Current good-law status cannot be independently confirmed from the disclosed decision-era opinion text; all disclosed negative edges are proposed=true (unadjudicated lane1/lane2 co-citation signals, several facially spurious e.g. Boys Markets/Chimel labelled 'overruled'/'questioned'), so there is no disclosed adjudicated contrary treatment to refute good_law, and refuting would fabricate a defect."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "composite_basis=migration-seed; scope_note itself warns S2 re-derivation 'may downgrade'. The large pile of proposed 'overruled'/'questioned' edges is unadjudicated and mostly reads as citation noise, but S2 derivation should adjudicate it."
+          ],
+          "suggested_tightening": "Run S2 treatment re-derivation to replace the migration-seed with a derived field_i and adjudicate the proposed edges."
+        }
+      ]
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/Owen v. City of Independence.json",
+      "reviewed": [
+        {
+          "assertion_id": "dd933871e42ab91a",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion is the Owen majority (Brennan, J.), reversing the Eighth Circuit's 589 F. 2d 335, 337-338 (1978) grant of municipal qualified immunity, cert granted 444 U.S. 822 (1979) — identity strongly corroborates Owen v. City of Independence, 445 U.S. 622 (1980).",
+            "Star page markers in the cached text run 625-640, i.e. volume 445 U.S., consistent with the official first page 622; docket 78-1779 and date_decided 1980-04-16 match; official_selection_present=true."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "The exact first page '622' is not itself printed in the disclosed excerpt (it starts mid-opinion), but volume/page-range corroboration is strong and uncontradicted."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "3b98577b75c74eb2",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "This is an honestly-declared frontier stub: field_i_validity='unverified', as_of_content/as_of_treatment=null, edges=[] — matching the white 'Unverified' banner and 'subsequent treatment not yet machine-verified' text on the content page. No validity claim is made, so there is nothing to refute.",
+            "Consistent across frontmatter, lake treatment block, and provenance (s6_promotion born_status='under_review'); no fabricated clean/defect."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "scope_note says treatment is 'intentionally not derived until S6 promotion' although the provenance shows S6 promotion already occurred (record now awaits S9 promotion) — cosmetic wording lag, not a treatment defect."
+          ],
+          "suggested_tightening": "Refresh the scope_note wording to reflect that S6 promotion is done and S9 promotion is pending."
+        }
+      ]
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/Patterson v. Illinois.json",
+      "reviewed": [
+        {
+          "assertion_id": "2a9bb046a129f73f",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion is the Patterson majority (White, J.); facts (Vice Lords gang, murder of James Jackson, Illinois Supreme Court applying People v. Thomas), cert granted 484 U.S. 895 (1987), and star markers 288-300 (vol 487 U.S.) corroborate Patterson v. Illinois, 487 U.S. 285 (1988).",
+            "date_decided 1988-06-24, official_selection_present=true; parallel/neutral cites internally consistent."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Exact first page '285' is not printed in the disclosed excerpt (it starts mid-opinion); volume corroboration is strong.",
+            "Frontmatter docket is empty ('') but this does not affect the cite's existence."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "380c532adfa5596d",
+          "dimension": "quote_fidelity",
+          "verdict": "stands-modified",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "Recorded pin-296 quote is a mis-harvested page front-matter/Background/Issue blob ('--- # Patterson ... ## Rule Yes.'), not opinion text, so quote_fidelity='mismatch' is a harvester artifact. The sentence the page actually quotes at ^pin-296 is verbatim in the opinion at page 296.",
+            "severity": "low",
+            "proposed_fix": "Re-point the recorded pin-296 quote to the page's actual ^pin-296 sentence ('As a general matter, then, an accused who is admonished with the warnings prescribed by this Court in Miranda ... a knowing and intelligent one.'), which sits right after the '*296' star; clear the false mismatch flag.",
+            "evidence_quote": "As a general matter, then, an accused who is admonished with the warnings prescribed by this Court in Miranda, 384 U. S., at 479, has been sufficiently apprised of the nature of his Sixth Amendment rights, and of the consequences of abandoning those rights, so that his waiver on this basis will be considered a knowing and intelligent one.",
+            "needs_cl": false,
+            "locator_note": "Cached opinion paragraph b348-4, immediately after the '*296' star; content page ^pin-296."
+          },
+          "reasons": [
+            "The page's ^pin-296 quote matches the opinion verbatim (the page's ' . . . ' correctly elides the internal '384 U. S., at 479' cite) and is on page 296, so pincite '487 U.S. at 296' is correct.",
+            "Only the recorded pinpoint-quote string is defective; the published quotation is faithful."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Verbatim-trusting the recorded pin quote would surface a spurious misquote; the rendered page is clean."
+          ],
+          "suggested_tightening": "Anchor the harvester on the quoted-sentence span rather than the preceding page structure."
+        },
+        {
+          "assertion_id": "e6dcf9084a24973f",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": false,
+          "defect": null,
+          "reasons": [
+            "Internally consistent: as_of_content=1988-06-24 equals the decision date, field_i_validity=good_law, varies_by_point=false.",
+            "Current good-law status is not independently confirmable from the disclosed 1988 opinion; all disclosed negative edges are proposed=true (unadjudicated, several facially spurious e.g. Iowa v. Tovar 'criticized', Kansas v. Ventris 'questioned'), so there is no disclosed adjudicated contrary treatment; refuting good_law would fabricate a defect."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "composite_basis=migration-seed; scope_note warns S2 may downgrade. The content page's narrative that Montejo left Patterson's waiver rule intact is plausible but not verifiable from disclosed evidence."
+          ],
+          "suggested_tightening": "Run S2 treatment re-derivation to adjudicate the proposed edges and replace the seed."
+        }
+      ]
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/Payton v. New York.json",
+      "reviewed": [
+        {
+          "assertion_id": "6f84668d8234047c",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion header confirms '445 U.S. 573 (1980)', 'PAYTON v. NEW YORK', 'No. 78-5420', 'Decided April 15, 1980', 'Supreme Court of United States' — matching official cite, docket 78-5420, and date_decided 1980-04-15.",
+            "official_selection_present=true; parallel cites 100 S. Ct. 1371 / 63 L. Ed. 2d 639 and neutral 1980 U.S. LEXIS 13 internally consistent."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "3fc6f1a4c9d2c7e0",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Recorded quote 'In terms that apply equally to seizures of property and to seizures of persons, the Fourth Amendment has drawn a firm line at the entrance to the house. Absent exigent circumstances, that threshold may not reasonably be crossed without a warrant.' matches the cached opinion verbatim.",
+            "The passage follows the '*590' star marker, confirming pincite '445 U.S. at 590'; payload's quote_fidelity='matched' / pinpoint_status='star-verified' / star_marker='590' independently confirmed."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "48284b734569de8e",
+          "dimension": "quote_fidelity",
+          "verdict": "stands-modified",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "Recorded pin-576 quote is a mis-harvested page front-matter/Background/Issue blob ('--- # Payton ... ## Rule No. The Fourth Amendment'), not opinion text, so quote_fidelity='mismatch' is a harvester artifact. The phrase the page actually quotes at ^pin-576 is verbatim in the opinion at page 576.",
+            "severity": "low",
+            "proposed_fix": "Re-point the recorded pin-576 quote to the page's actual ^pin-576 quotation ('prohibits the police from making a warrantless and nonconsensual entry into a suspect's home in order to make a routine felony arrest.'), which sits right after the '*576' star; clear the false mismatch flag.",
+            "evidence_quote": "prohibits the police from making a warrantless and nonconsensual entry into a suspect's home in order to make a routine felony arrest.",
+            "needs_cl": false,
+            "locator_note": "Cached opinion paragraph after the '*576' star ('We now reverse ... and hold that the Fourth Amendment ... prohibits ...'); content page ^pin-576."
+          },
+          "reasons": [
+            "The page's ^pin-576 quotation matches the opinion verbatim and sits on page 576 (right after the '*576' star), so pincite '445 U.S. at 576' is correct.",
+            "Only the recorded pinpoint-quote string is defective (it captured page markdown up to '## Rule No. The Fourth Amendment'); the published quotation is faithful."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Verbatim-trusting the recorded pin quote would surface a spurious misquote; the rendered page is clean."
+          ],
+          "suggested_tightening": "Anchor the harvester on the quoted-sentence span rather than the preceding page structure."
+        },
+        {
+          "assertion_id": "70d0910963298015",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": false,
+          "defect": null,
+          "reasons": [
+            "Internally consistent: as_of_content=1980-04-15 equals the decision date, field_i_validity=good_law, varies_by_point=false.",
+            "Current good-law status is not independently confirmable from the disclosed 1980 opinion; all 27 disclosed negative edges are proposed=true (unadjudicated), so there is no disclosed adjudicated contrary treatment; refuting good_law would fabricate a defect."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "composite_basis=migration-seed; scope_note warns S2 may downgrade."
+          ],
+          "suggested_tightening": "Run S2 treatment re-derivation to adjudicate the proposed edges and replace the seed."
+        }
+      ]
+    }
+  ]
+}

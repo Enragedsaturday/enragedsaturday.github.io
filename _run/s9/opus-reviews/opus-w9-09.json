@@ -1,0 +1,350 @@
+{
+  "packs": [
+    {
+      "lens": "diversity",
+      "group_id": "_overhaul2/lake/cases/Ryburn v. Huff.json",
+      "reviewed": [
+        {
+          "assertion_id": "44dbf6340da7e16d",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached slip header 'Cite as: 565 U. S. ____ (2012)' and caption 'DARIN RYBURN, ET AL. v. GEORGE R. HUFF, ET AL.', No. 11-208, Decided January 23, 2012 confirm case identity, volume (565 U.S.) and year of the official cite 565 U.S. 469 (2012).",
+            "Official selection present (565 U.S. 469); parallel cites 132 S. Ct. 987 / 181 L. Ed. 2d 966 / 2012 U.S. LEXIS 910 are the standard reporters and internally consistent."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Parallel-reporter page numbers and the exact U.S. page 469 are not independently confirmable from the disclosed single-reporter slip (which shows '565 U. S. ____')."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "05c3bec1d0a06341",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Stored quote matches the cached per curiam verbatim ('In sum, reasonable police officers in petitioners' position could have come to the conclusion that the Fourth Amendment permitted them to enter the Huff residence if there was an objectively reasonable basis for fearing that violence was imminent. And a reasonable officer could have come to such a conclusion based on the facts as found by the District Court.').",
+            "The lake 'mismatch' flag reflects only slip-only pagination (slip shows '565 U. S. ____', not reporter page 477), not a text discrepancy."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Pincite 'Id. at 477' is slip-only; reporter page unconfirmable from the slip, though the paragraph's position (slip pp. 8-9) is consistent with U.S. p. 477."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "dad6a037cbb3048d",
+          "dimension": "quote_fidelity",
+          "verdict": "refuted",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "The pin-476 pinpoint stores a misextracted CONTENT-PAGE fragment (it literally contains the wiki markdown headers '## Issue' and '## Rule' and paraphrased Background prose such as 'The mother eventually stepped outside') rather than an opinion quote; this text does not appear anywhere in the cached opinion, so it fails quote fidelity as a quote_pinpoint.",
+            "severity": "medium",
+            "proposed_fix": "Replace the stored pin-476 quote with the opinion sentence the content page actually renders at ^pin-476: 'A reasonable police officer could read these decisions to mean that the Fourth Amendment permits an officer to enter a residence if the officer has a reasonable basis for concluding that there is an imminent threat of violence.' (565 U.S. at 476).",
+            "evidence_quote": "A reasonable police officer could read these decisions to mean that the Fourth Amendment permits an officer to enter a residence if the officer has a reasonable basis for concluding that there is an imminent threat of violence.",
+            "needs_cl": false,
+            "locator_note": "Cached opinion per curiam para beginning 'A reasonable police officer could read these decisions...'; corrupt stored quote reproduced in group_inventory payload and lake pinpoints[id=pin-476]."
+          },
+          "reasons": [
+            "Stored pin-476 quote contains literal wiki markdown ('## Issue', '## Rule') and does not occur in the cached opinion — a content-page misextraction, not a verbatim quote.",
+            "The genuine 565 U.S. at 476 quote ('A reasonable police officer could read these decisions to mean...') is present verbatim in the cached text and is what the content page renders at ^pin-476."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Reader-facing risk is low: the visible page at ^pin-476 shows the correct verbatim quote; the defect is confined to the pinpoint provenance record, which re-verification/flashcard tooling would surface as garbage."
+          ],
+          "suggested_tightening": "Regenerate pinpoint.quote fields from opinion text rather than from rendered content-page slices; the content-fragment capture pattern recurs (Ryburn pin-476, Sabbath pin-590, Salinas pin-2179)."
+        },
+        {
+          "assertion_id": "8b56ee6d014e867d",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "good_law is appropriate for a 2012 SCOTUS per curiam not overruled by the Court; the cached opinion is a SCOTUS reversal in the officers' favor.",
+            "All disclosed treatment edges are 'proposed': true citator-harvest signals; none is a ratified ('proposed': false) or binding SCOTUS overrule, and the field_ii tags largely describe the citing cases' own status.",
+            "scope_note accurately situates Ryburn in the emergency-aid line (Brigham City, Fisher) and the Graham on-scene qualified-immunity standard."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Full currency depends on citator data beyond the disclosed proposed edges; unreconciled negatives (e.g., McNeely 'questioned', Cole 'overruled') should be human-confirmed as non-negative to Ryburn, though none is disclosed as controlling."
+          ],
+          "suggested_tightening": null
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "lens": "diversity",
+      "group_id": "_overhaul2/lake/cases/Sabbath v. United States.json",
+      "reviewed": [
+        {
+          "assertion_id": "5f814040e3bd6de1",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion (Mr. Justice Marshall, majority) with star pages *587-*591 confirms Sabbath v. United States in 391 U.S. beginning at 585; the 380 F.2d 108 (9th Cir.) history matches.",
+            "Official cite 391 U.S. 585 selected and present; parallel cites 88 S. Ct. 1755 / 20 L. Ed. 2d 828 are standard and internally consistent."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Parallel-reporter pages (S. Ct. 1755, L. Ed. 2d 828) not independently confirmable from the disclosed U.S.-reporter text."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "5cf909d20dd14506",
+          "dimension": "quote_fidelity",
+          "verdict": "refuted",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "pin-590 stores a content-page fragment ('subject to the announcement requirement of § 3109 (codifying the common-law knock-and-announce rule)? ## Rule Yes.') that includes the wiki '## Rule' header and Issue-section text; it is not an opinion quote and does not appear in the cached opinion.",
+            "severity": "medium",
+            "proposed_fix": "Replace with the opinion sentence rendered at ^pin-590: 'An unannounced intrusion into a dwelling — what § 3109 basically proscribes — is no less an unannounced intrusion whether officers break down a door, force open a chain lock on a partially open door, open a locked door by use of a passkey, or, as here, open a closed but unlocked door.' (391 U.S. at 590).",
+            "evidence_quote": "An unannounced intrusion into a dwelling — what § 3109 basically proscribes — is no less an unannounced intrusion whether officers break down a door, force open a chain lock on a partially open door, open a locked door by use of a passkey, or, as here, open a closed but unlocked door.",
+            "needs_cl": false,
+            "locator_note": "Cached opinion para b635-8 at star *590; corrupt stored quote in payload and lake pinpoints[id=pin-590]."
+          },
+          "reasons": [
+            "Stored pin-590 quote carries wiki '## Rule' markdown plus Issue paraphrase; absent from the cached opinion.",
+            "The true 390-590 quote ('An unannounced intrusion into a dwelling...') appears verbatim at star page *590 and is what the content page renders at ^pin-590."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Reader-facing page at ^pin-590 shows the correct verbatim quote; defect limited to the pinpoint provenance record."
+          ],
+          "suggested_tightening": "Regenerate pinpoint.quote fields from opinion text rather than from rendered content-page slices; the content-fragment capture pattern recurs (Ryburn pin-476, Sabbath pin-590, Salinas pin-2179)."
+        },
+        {
+          "assertion_id": "5f39bf28a58b1417",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Stored quote ('h[e]ld that the method of entry vitiated the arrest and therefore that evidence seized in the subsequent search incident thereto should not have been admitted.') matches the cached opinion's opening holding verbatim apart from the disclosed editorial bracket 'h[e]ld' (source 'We hold') and truncation of the trailing 'at petitioner's trial.' — both legitimate Bluebook alterations.",
+            "The holding sentence sits in the first substantive paragraph (before *587), consistent with the pincite 585-86.",
+            "The lake 'mismatch' flag is a false positive of exact-string matching against the bracket / dropped 'We'."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Exact U.S. page (585 vs 586) is slip-only; consistent with the opening paragraph's position."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "bd4a800bf55991ff",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Stored quote ('governed by something more than the fortuitous circumstance of an unlocked door.') appears verbatim at star page *590 of the cached opinion.",
+            "The opinion attributes it to Keiningham v. United States, and the content page correctly flags '(quoting Keiningham v. United States)'; star_marker 590 is verified by the disclosed *590 pagination.",
+            "Lake flags it 'matched'/'star-verified', consistent with my independent read."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "d9632ad60903e311",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "good_law is correct for this 1968 SCOTUS decision; its § 3109 'breaking' definition has not been overruled.",
+            "scope_note accurately notes Hudson v. Michigan (2006) curtailed only the exclusionary REMEDY for knock-and-announce violations, not Sabbath's substantive holding.",
+            "All disclosed edges are 'proposed': true citator noise (incl. a proposed 'Hudson v. Michigan' edge whose field_ii 'overruled' describes harvest status, not a Sabbath overrule)."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Full currency depends on citator data beyond the disclosed proposed edges."
+          ],
+          "suggested_tightening": null
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "lens": "diversity",
+      "group_id": "_overhaul2/lake/cases/Safford Unified School District v. Redding.json",
+      "reviewed": [
+        {
+          "assertion_id": "d66c35dc97d9e386",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion (Justice Souter) with star pages *368-*379 confirms Safford Unified School District #1 v. Redding within 557 U.S.; caption/party names match and 557 U.S. 364 is present in the cite set.",
+            "Parallel cites (129 S. Ct. 2633; 174 L. Ed. 2d 354; 2009 U.S. LEXIS 4735; etc.) are standard and internally consistent."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "official_selection_present is false and 'official'/'display' are null even though 557 U.S. 364 is the correct official cite present in the set (unlike Ryburn/Sabbath, which have an official selected); parallel-reporter pages not independently confirmable from disclosed text."
+          ],
+          "suggested_tightening": "Populate the official-citation selection with 557 U.S. 364 for consistency with the other lake records."
+        },
+        {
+          "assertion_id": "47c811d910653bcc",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Stored quote ('Savana's subjective expectation of privacy … is inherent in her account of it as embarrassing, frightening, and humiliating.') matches the cached opinion verbatim, the ellipsis properly marking omission of 'against such a search' (source: 'Savana's subjective expectation of privacy against such a search is inherent in her account of it as embarrassing, ... frightening, and humiliating.').",
+            "Pincite 374-375 is confirmed by the disclosed star markers (*375 falls between 'embarrassing,' and 'frightening').",
+            "Lake 'mismatch' flag is an exact-matcher artifact of the ellipsis."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "acbf19cce784afd6",
+          "dimension": "quote_fidelity",
+          "verdict": "refuted",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "pin-376 stores 'and its degree of intrusion must be matched by the suspicion supporting it.', which is the wiki's own PARAPHRASE (rendered UNQUOTED on the content page, where only 'categorically distinct' is in quotation marks). It does not appear verbatim in the cached opinion (which says the search is 'categorically distinct, requiring distinct elements of justification'), so it fails quote fidelity as a quote_pinpoint, and it is not even the text ^pin-376 anchors on the page.",
+            "severity": "medium",
+            "proposed_fix": "Store the actual opinion quote the content page renders at ^pin-376: '[W]hat was missing from the suspected facts that pointed to Savana was any indication of danger to the students from the power of the drugs or their quantity, and any reason to suppose that Savana was carrying pills in her underwear. We think that the combination of these deficiencies was fatal to finding the search reasonable.' (557 U.S. at 376-377) — verbatim in the cached text.",
+            "evidence_quote": "In sum, what was missing from the suspected facts that pointed to Savana was any indication of danger to the students from the power of the drugs or their quantity, and any reason to suppose that Savana was carrying pills in her underwear. We think that the combination of these deficiencies was fatal to finding the search reasonable.",
+            "needs_cl": false,
+            "locator_note": "Cached opinion para b424-5 (spanning *376-*377); the stored paraphrase's source is the wiki Rule line 'A strip search is \"categorically distinct,\" and its degree of intrusion must be matched by the suspicion supporting it.'"
+          },
+          "reasons": [
+            "Stored pin-376 quote is a paraphrase not present in the opinion; the content page itself does not present it in quotation marks.",
+            "The verbatim quote ^pin-376 actually anchors ('[W]hat was missing... fatal to finding the search reasonable.') IS in the cached text at 376-377, so the pinpoint record is mis-populated."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Reader-facing page is honest (paraphrase is unquoted; the anchored quote is verbatim); defect is in the pinpoint provenance record."
+          ],
+          "suggested_tightening": "Do not store unquoted paraphrase prose in pinpoint.quote; capture the actual quoted opinion sentence tied to the anchor."
+        },
+        {
+          "assertion_id": "d239e4b05bb07aff",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Stored quote ('because there is reason to question the clarity with which the right was established, the official who ordered the unconstitutional search is entitled to qualified immunity from liability.') matches the cached opinion's opening paragraph verbatim.",
+            "Star page *368 marks Souter's opinion opening; star_marker 368 verified. Lake flags 'matched'/'star-verified', consistent with my read."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "a0603c93112b7b80",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "good_law is correct for this 2009 SCOTUS decision, not overruled.",
+            "scope_note accurately states Safford applies and cabins the T.L.O. school-search standard to strip searches (the cached opinion applies T.L.O., holds the strip search unreasonable, and grants qualified immunity).",
+            "All 29 disclosed edges are 'proposed': true citator noise; none is a ratified/binding overrule."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Full currency depends on citator data beyond the disclosed proposed edges."
+          ],
+          "suggested_tightening": null
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "lens": "diversity",
+      "group_id": "_overhaul2/lake/cases/Salinas v. Texas.json",
+      "reviewed": [
+        {
+          "assertion_id": "9b3797d292055c0a",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached slip 'Cite as: 570 U. S. ____ (2013)', caption 'GENOVEVO SALINAS, PETITIONER v. TEXAS', No. 12-246, Decided June 17, 2013 confirm case identity, volume (570 U.S.) and year; 570 U.S. 178 is present in the cite set.",
+            "S. Ct. cite 133 S. Ct. 2174 and other parallels are standard and internally consistent."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "official_selection_present false and official/display null although 570 U.S. 178 is the correct official cite present; parallel-reporter pages not independently confirmable from the disclosed slip."
+          ],
+          "suggested_tightening": "Populate the official-citation selection with 570 U.S. 178 for consistency with the other lake records."
+        },
+        {
+          "assertion_id": "5ab7fdbad820450c",
+          "dimension": "quote_fidelity",
+          "verdict": "refuted",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "pin-2179 stores a large CONTENT-PAGE chunk (the YAML close '---', the '# Salinas v. Texas' title, the rendered header line, and the entire Background/Issue/Rule sections) instead of an opinion quote; none of it is opinion text, so it fails quote fidelity as a quote_pinpoint.",
+            "severity": "medium",
+            "proposed_fix": "Replace with the opinion sentence the content page renders at ^pin-2179: 'A witness does not expressly invoke the privilege by standing mute.' (Alito plurality; 133 S. Ct. at 2179) — verbatim in the cached text.",
+            "evidence_quote": "A witness does not expressly invoke the privilege by standing mute.",
+            "needs_cl": false,
+            "locator_note": "Cached opinion, Opinion of Alito J. (slip p. 7), sentence 'A witness does not expressly invoke the privilege by standing mute.'; corrupt stored quote in payload and lake pinpoints[id=pin-2179]."
+          },
+          "reasons": [
+            "Stored pin-2179 quote is a verbatim slice of the wiki content page (title, YAML close, header, Background/Issue/Rule), not opinion text; absent from the cached opinion.",
+            "The true anchored quote ('A witness does not expressly invoke the privilege by standing mute.') is verbatim in the Alito plurality."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Reader-facing page at ^pin-2179 shows the correct verbatim quote; defect confined to the pinpoint provenance record."
+          ],
+          "suggested_tightening": "Regenerate pinpoint.quote fields from opinion text rather than from rendered content-page slices; the content-fragment capture pattern recurs (Ryburn pin-476, Sabbath pin-590, Salinas pin-2179)."
+        },
+        {
+          "assertion_id": "844f49df7f05527a",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Stored quote ('Fifth Amendment claim fails because he did not expressly invoke the privilege against self-incrimination') is a verbatim substring of the Alito opinion's opening: 'Petitioner's Fifth Amendment claim fails because he did not expressly invoke the privilege against self-incrimination in response to the officer's question.'; the content page properly quotes the substring and places 'Salinas's' and 'in response to the officer's question' outside the quotation marks.",
+            "Attribution to 'the plurality' is correct (Alito, joined by Roberts C.J. and Kennedy); the opening statement sits at slip p. 1 / 133 S. Ct. 2178.",
+            "Lake 'mismatch' flag is an exact-matcher artifact of the partial quote."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "The syllabus paraphrase omits 'against self-incrimination', but the quoted text tracks the Alito OPINION verbatim, which is the correct source."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "87cf361da4ac1552",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "good_law is correct for this 2013 SCOTUS decision, not overruled.",
+            "scope_note accurately describes the fractured lineup — Alito plurality of three (with Roberts C.J. & Kennedy), Thomas & Scalia concurring in the judgment on the broader Griffin ground, Breyer dissent joined by three — with the express-invocation holding governing (confirmed by the cached syllabus/vote lineup).",
+            "All 30 disclosed edges are 'proposed': true citator noise; none is a ratified/binding overrule."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Full currency depends on citator data beyond the disclosed proposed edges."
+          ],
+          "suggested_tightening": null
+        }
+      ],
+      "notes": ""
+    }
+  ]
+}
