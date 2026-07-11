@@ -1,13 +1,129 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Banks v. Dretke.json",
+    "lens": "A",
+    "notes": "Reviewed all five assertions in group_inventory.jsonl using only the disclosed workspace files. No external search was used.",
+    "reviewed": [
+      {
+        "assertion_id": "62269c5ee5943d58",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record is verified and identifies Banks v. Dretke as a U.S. Supreme Court case decided 2004-02-24, docket 02-8286.",
+          "The opinion text header confirms 540 U.S. 668 (2004), Supreme Court of United States, decided February 24, 2004.",
+          "The payload citation list matches lake.citations.all, including 540 U.S. 668, 124 S. Ct. 1256, 157 L. Ed. 2d 1166, 2004 U.S. LEXIS 1621, 72 U.S.L.W. 4193, and 17 Fla. L. Weekly Fed. S 153."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "If the renderer requires a primary display citation, use 540 U.S. 668, but the assertion matches the disclosed lake record.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "3e156e4d7294a4d8",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Nothing in",
+          "locator_note": "pin-698; text/Banks v. Dretke__222955.txt line 75, page *698",
+          "needs_cl": false,
+          "problem": "The quote is substantively the right page-698 sentence, but it is not character-faithful: the opinion text begins with capitalized \"Nothing,\" while the asserted quote begins \"[n]othing.\" The lake also marks this pinpoint quote_fidelity as mismatch.",
+          "proposed_fix": "Rewrite the lead-in so the quote can begin exactly: \"Nothing in *Roviaro*, or any other decision of this Court, suggests ...\"",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The cited passage is present at star page *698 and supports the proposition about calling an informant while concealing informant status.",
+          "The bracketed lowercase initial is an editorial alteration not present in the disclosed opinion text."
+        ],
+        "residual_risks": [
+          "Support and pincite appear sound; this is a quote-fidelity-only defect."
+        ],
+        "suggested_tightening": "Use an exact-capitalization quote after a colon or sentence break.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "5099dc7ca4dd955f",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "A rule thus declaring \"prosecutor may hide, defendant must seek,\" is not tenable in a system constitutionally bound to accord defendants due process.",
+          "locator_note": "pin-696; text/Banks v. Dretke__222955.txt line 72, page *696",
+          "needs_cl": false,
+          "problem": "The quote changes the opinion's internal double quotation marks around the slogan to single quotation marks. That fails strict character fidelity, although the sentence and pincite are otherwise correct.",
+          "proposed_fix": "Replace the inner single quotation marks with double quotation marks: \"A rule thus declaring \\\"prosecutor may hide, defendant must seek,\\\" is not tenable ...\"",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The opinion text at star page *696 contains the same sentence with double quotation marks.",
+          "The lake pinpoint itself records quote_fidelity as mismatch."
+        ],
+        "residual_risks": [
+          "Support and pincite appear sound; only strict quote punctuation needs correction."
+        ],
+        "suggested_tightening": "Keep the sentence but make the quotation marks character-faithful.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "588c85a3a90fc736",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "The evidence at issue must be favorable to the accused, either because it is exculpatory, or because it is impeaching; that evidence must have been suppressed by the State, either willfully or inadvertently; and prejudice must have ensued.",
+          "locator_note": "pin-691; text/Banks v. Dretke__222955.txt lines 59-60, page *691",
+          "needs_cl": false,
+          "problem": "The asserted pin-691 quote is not an opinion quote at all; it is a pasted fragment of the generated content page header/background/rule text. It does not match the disclosed opinion text for page *691.",
+          "proposed_fix": "Replace pin-691's stored quote with the actual page-691 Brady/Strickler components sentence from the opinion text.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload begins with \"--- # Banks v. Dretke\" and includes page summary material, which is content_page text, not Supreme Court opinion text.",
+          "The actual page-*691 passage in the opinion states the Brady/Strickler three-component test.",
+          "The lake pinpoint for pin-691 has page null, star_marker null, and quote_fidelity mismatch."
+        ],
+        "residual_risks": [
+          "The built page's visible pin-691 quote appears to quote the correct Strickler components sentence; the defect is in the stored lake/inventory pinpoint quote."
+        ],
+        "suggested_tightening": "Regenerate pin-691 from the opinion text rather than from content_page.md.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "a49ee5254cc15e35",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Lens A does not audit treatment currency, and the treatment payload mirrors the disclosed lake treatment fields.",
+          "The scope note's descriptive statements are supported by the opinion text: page *691 reiterates Strickler, pages *696-*698 reject the due-diligence burden, and page *698 addresses the informant-disclosure point."
+        ],
+        "residual_risks": [
+          "Treatment currency and negative-treatment audit are reserved for lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Banks v. Dretke.json\",\"reviewed\":[{\"assertion_id\":\"62269c5ee5943d58\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake identity record is verified and identifies Banks v. Dretke as a U.S. Supreme Court case decided 2004-02-24, docket 02-8286.\",\"The opinion text header confirms 540 U.S. 668 (2004), Supreme Court of United States, decided February 24, 2004.\",\"The payload citation list matches lake.citations.all, including 540 U.S. 668, 124 S. Ct. 1256, 157 L. Ed. 2d 1166, 2004 U.S. LEXIS 1621, 72 U.S.L.W. 4193, and 17 Fla. L. Weekly Fed. S 153.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":\"If the renderer requires a primary display citation, use 540 U.S. 668, but the assertion matches the disclosed lake record.\"},{\"assertion_id\":\"3e156e4d7294a4d8\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The quote is substantively the right page-698 sentence, but it is not character-faithful: the opinion text begins with capitalized \\\"Nothing,\\\" while the asserted quote begins \\\"[n]othing.\\\" The lake also marks this pinpoint quote_fidelity as mismatch.\",\"severity\":\"low\",\"proposed_fix\":\"Rewrite the lead-in so the quote can begin exactly: \\\"Nothing in *Roviaro*, or any other decision of this Court, suggests ...\\\"\",\"evidence_quote\":\"Nothing in\",\"needs_cl\":false,\"locator_note\":\"pin-698; text/Banks v. Dretke__222955.txt line 75, page *698\"},\"reasons\":[\"The cited passage is present at star page *698 and supports the proposition about calling an informant while concealing informant status.\",\"The bracketed lowercase initial is an editorial alteration not present in the disclosed opinion text.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Support and pincite appear sound; this is a quote-fidelity-only defect.\"],\"suggested_tightening\":\"Use an exact-capitalization quote after a colon or sentence break.\"},{\"assertion_id\":\"5099dc7ca4dd955f\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The quote changes the opinion's internal double quotation marks around the slogan to single quotation marks. That fails strict character fidelity, although the sentence and pincite are otherwise correct.\",\"severity\":\"low\",\"proposed_fix\":\"Replace the inner single quotation marks with double quotation marks: \\\"A rule thus declaring \\\\\\\"prosecutor may hide, defendant must seek,\\\\\\\" is not tenable ...\\\"\",\"evidence_quote\":\"A rule thus declaring \\\"prosecutor may hide, defendant must seek,\\\" is not tenable in a system constitutionally bound to accord defendants due process.\",\"needs_cl\":false,\"locator_note\":\"pin-696; text/Banks v. Dretke__222955.txt line 72, page *696\"},\"reasons\":[\"The opinion text at star page *696 contains the same sentence with double quotation marks.\",\"The lake pinpoint itself records quote_fidelity as mismatch.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Support and pincite appear sound; only strict quote punctuation needs correction.\"],\"suggested_tightening\":\"Keep the sentence but make the quotation marks character-faithful.\"},{\"assertion_id\":\"588c85a3a90fc736\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The asserted pin-691 quote is not an opinion quote at all; it is a pasted fragment of the generated content page header/background/rule text. It does not match the disclosed opinion text for page *691.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-691's stored quote with the actual page-691 Brady/Strickler components sentence from the opinion text.\",\"evidence_quote\":\"The evidence at issue must be favorable to the accused, either because it is exculpatory, or because it is impeaching; that evidence must have been suppressed by the State, either willfully or inadvertently; and prejudice must have ensued.\",\"needs_cl\":false,\"locator_note\":\"pin-691; text/Banks v. Dretke__222955.txt lines 59-60, page *691\"},\"reasons\":[\"The payload begins with \\\"--- # Banks v. Dretke\\\" and includes page summary material, which is content_page text, not Supreme Court opinion text.\",\"The actual page-*691 passage in the opinion states the Brady/Strickler three-component test.\",\"The lake pinpoint for pin-691 has page null, star_marker null, and quote_fidelity mismatch.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The built page's visible pin-691 quote appears to quote the correct Strickler components sentence; the defect is in the stored lake/inventory pinpoint quote.\"],\"suggested_tightening\":\"Regenerate pin-691 from the opinion text rather than from content_page.md.\"},{\"assertion_id\":\"a49ee5254cc15e35\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lens A does not audit treatment currency, and the treatment payload mirrors the disclosed lake treatment fields.\",\"The scope note's descriptive statements are supported by the opinion text: page *691 reiterates Strickler, pages *696-*698 reject the due-diligence burden, and page *698 addresses the informant-disclosure point.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment currency and negative-treatment audit are reserved for lens B.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed all five assertions in group_inventory.jsonl using only the disclosed workspace files. No external search was used.\"}",
   "summary": {
-    "at": "2026-07-10T18:22:02-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T01:13:06-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "defense_votes": [],
-    "findings_emitted": [],
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-277ec2889d",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-bbe5b9e775",
+      "F-S9-PR-463d9e9468",
+      "F-S9-PR-4f43472a87"
+    ],
     "group_id": "_overhaul2/lake/cases/Banks v. Dretke.json",
     "group_total_assertions": 5,
     "lake_only_cases": [],
@@ -16,21 +132,74 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-a6231020.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 5,
     "run": "prod",
     "text_disclosed_cases": [
       "Banks v. Dretke"
     ],
     "tokens": {
-      "input": 825,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 825
+      "input": 302825,
+      "output": 12250,
+      "source": "codex-events",
+      "total": 315075
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 2.8
+    "verdict_map": {
+      "3e156e4d7294a4d8": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "5099dc7ca4dd955f": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "588c85a3a90fc736": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "62269c5ee5943d58": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "a49ee5254cc15e35": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-bbe5b9e775",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-463d9e9468",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-4f43472a87",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-277ec2889d",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": 232.1
   }
 }

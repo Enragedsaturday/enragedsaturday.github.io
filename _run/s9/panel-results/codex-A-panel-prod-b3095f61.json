@@ -1,13 +1,124 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Arkansas v. Sullivan.json",
+    "lens": "A",
+    "notes": "Lens A review only; treatment/currency not attacked beyond confirming the payload matches the disclosed lake treatment fields.",
+    "reviewed": [
+      {
+        "assertion_id": "d25ee901edd65210",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record is Arkansas v. Sullivan, U.S. Supreme Court, decided 2001-05-29, year 2001.",
+          "The asserted official citation 532 U.S. 769 and parallel/vendor citations match the lake citations record."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "2ff559b1f1a6f136",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "and held unanimously that “[sjubjective intentions play no role in ordinary, probable-cause Fourth Amendment analysis.”",
+          "locator_note": "pin-772; content_page.md Rule paragraph citing 532 U.S. at 772",
+          "needs_cl": false,
+          "problem": "pin-772 is not character-faithful to the cached opinion text; the payload is page-summary prose spanning Background/Issue/Rule, and the lake record itself marks the pinpoint quote_fidelity as mismatch.",
+          "proposed_fix": "Replace pin-772 with a quote copied from the disclosed opinion text at page 772, or remove the verbatim quote until a faithful source quote is supplied.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload quote is not found verbatim in text/Arkansas v. Sullivan__b808d1.txt.",
+          "The lake pinpoint for pin-772 has quote_fidelity set to mismatch.",
+          "The disclosed opinion text at the cited area contains the Whren subjective-intentions sentence, not the long Background/Issue/Rule prose in the payload."
+        ],
+        "residual_risks": [
+          "The underlying rule appears supported; this defect is limited to verbatim quote/pin fidelity."
+        ],
+        "suggested_tightening": "Anchor the pin to the actual page-772 sentence beginning with the Court's Whren discussion.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "ac5ec3e0a05e438d",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "while “a State is free <em>as a matter of its own law </em>to impose greater restrictions on police activity than those this Court holds to be necessary upon federal constitutional standards,”",
+          "locator_note": "pin-772c; content_page.md Rule paragraph on Oregon v. Hass",
+          "needs_cl": false,
+          "problem": "The quoted fragment is not character-faithful: the disclosed opinion continues after 'activity' with 'than those this Court...' and the comma is not at the asserted location.",
+          "proposed_fix": "Quote the full faithful phrase through 'federal constitutional standards' or paraphrase the state-law point instead of using a truncated verbatim quote.",
+          "severity": "medium"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload quote ends 'police activity,' but the cached opinion text continues 'police activity than those this Court holds...' with the comma later.",
+          "The lake pinpoint for pin-772c has quote_fidelity set to mismatch."
+        ],
+        "residual_risks": [
+          "The substantive state-law/federal-constitution distinction is supported; only the verbatim fragment fails."
+        ],
+        "suggested_tightening": "Do not close the quote at 'activity'; either quote the longer clause or make it a paraphrase.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "b416a33ee31d23d6",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "“vmwilling[ness] to entertain Fourth Amendment challenges based on the actual motivations of individual officers,”",
+          "locator_note": "pin-772b; content_page.md Rule paragraph quoting the Whren discussion",
+          "needs_cl": false,
+          "problem": "The asserted quotation is not character-faithful to the cached opinion text; it normalizes markup and wording, changes the disclosed 'vmwilling[ness]' text to 'unwilling[ness]', and changes the quoted passage's closing punctuation.",
+          "proposed_fix": "Use a non-verbatim paraphrase or update the quote only after verifying a clean source text; do not present the current wording as character-faithful to the disclosed text.",
+          "severity": "medium"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload quote is not found verbatim in the cached opinion text.",
+          "The disclosed text has 'vmwilling[ness]' and a trailing comma, while the asserted quote has 'unwilling[ness]' and a period.",
+          "The lake pinpoint for pin-772b has quote_fidelity set to mismatch."
+        ],
+        "residual_risks": [
+          "The cached text appears to contain OCR artifacts, so a clean official source may support a normalized quote, but that evidence is not disclosed here."
+        ],
+        "suggested_tightening": "Treat the sentence as paraphrase unless the corpus stores a clean, verified quotation.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "3441b4160c545f6d",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A, so no treatment defect is raised.",
+          "The payload mirrors the lake treatment fields: field_i_validity good_law, as_of_content 2001-05-29, as_of_treatment 2026-06-30, varies_by_point false, and the same scope_note."
+        ],
+        "residual_risks": [
+          "Treatment currency and negative-treatment analysis were not independently assessed under Lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Arkansas v. Sullivan.json\",\"reviewed\":[{\"assertion_id\":\"d25ee901edd65210\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake identity record is Arkansas v. Sullivan, U.S. Supreme Court, decided 2001-05-29, year 2001.\",\"The asserted official citation 532 U.S. 769 and parallel/vendor citations match the lake citations record.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"2ff559b1f1a6f136\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"pin-772 is not character-faithful to the cached opinion text; the payload is page-summary prose spanning Background/Issue/Rule, and the lake record itself marks the pinpoint quote_fidelity as mismatch.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-772 with a quote copied from the disclosed opinion text at page 772, or remove the verbatim quote until a faithful source quote is supplied.\",\"evidence_quote\":\"and held unanimously that “[sjubjective intentions play no role in ordinary, probable-cause Fourth Amendment analysis.”\",\"needs_cl\":false,\"locator_note\":\"pin-772; content_page.md Rule paragraph citing 532 U.S. at 772\"},\"reasons\":[\"The payload quote is not found verbatim in text/Arkansas v. Sullivan__b808d1.txt.\",\"The lake pinpoint for pin-772 has quote_fidelity set to mismatch.\",\"The disclosed opinion text at the cited area contains the Whren subjective-intentions sentence, not the long Background/Issue/Rule prose in the payload.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The underlying rule appears supported; this defect is limited to verbatim quote/pin fidelity.\"],\"suggested_tightening\":\"Anchor the pin to the actual page-772 sentence beginning with the Court's Whren discussion.\"},{\"assertion_id\":\"ac5ec3e0a05e438d\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The quoted fragment is not character-faithful: the disclosed opinion continues after 'activity' with 'than those this Court...' and the comma is not at the asserted location.\",\"severity\":\"medium\",\"proposed_fix\":\"Quote the full faithful phrase through 'federal constitutional standards' or paraphrase the state-law point instead of using a truncated verbatim quote.\",\"evidence_quote\":\"while “a State is free <em>as a matter of its own law </em>to impose greater restrictions on police activity than those this Court holds to be necessary upon federal constitutional standards,”\",\"needs_cl\":false,\"locator_note\":\"pin-772c; content_page.md Rule paragraph on Oregon v. Hass\"},\"reasons\":[\"The payload quote ends 'police activity,' but the cached opinion text continues 'police activity than those this Court holds...' with the comma later.\",\"The lake pinpoint for pin-772c has quote_fidelity set to mismatch.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The substantive state-law/federal-constitution distinction is supported; only the verbatim fragment fails.\"],\"suggested_tightening\":\"Do not close the quote at 'activity'; either quote the longer clause or make it a paraphrase.\"},{\"assertion_id\":\"b416a33ee31d23d6\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The asserted quotation is not character-faithful to the cached opinion text; it normalizes markup and wording, changes the disclosed 'vmwilling[ness]' text to 'unwilling[ness]', and changes the quoted passage's closing punctuation.\",\"severity\":\"medium\",\"proposed_fix\":\"Use a non-verbatim paraphrase or update the quote only after verifying a clean source text; do not present the current wording as character-faithful to the disclosed text.\",\"evidence_quote\":\"“vmwilling[ness] to entertain Fourth Amendment challenges based on the actual motivations of individual officers,”\",\"needs_cl\":false,\"locator_note\":\"pin-772b; content_page.md Rule paragraph quoting the Whren discussion\"},\"reasons\":[\"The payload quote is not found verbatim in the cached opinion text.\",\"The disclosed text has 'vmwilling[ness]' and a trailing comma, while the asserted quote has 'unwilling[ness]' and a period.\",\"The lake pinpoint for pin-772b has quote_fidelity set to mismatch.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The cached text appears to contain OCR artifacts, so a clean official source may support a normalized quote, but that evidence is not disclosed here.\"],\"suggested_tightening\":\"Treat the sentence as paraphrase unless the corpus stores a clean, verified quotation.\"},{\"assertion_id\":\"3441b4160c545f6d\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside Lens A, so no treatment defect is raised.\",\"The payload mirrors the lake treatment fields: field_i_validity good_law, as_of_content 2001-05-29, as_of_treatment 2026-06-30, varies_by_point false, and the same scope_note.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment currency and negative-treatment analysis were not independently assessed under Lens A.\"],\"suggested_tightening\":null}],\"notes\":\"Lens A review only; treatment/currency not attacked beyond confirming the payload matches the disclosed lake treatment fields.\"}",
   "summary": {
-    "at": "2026-07-10T18:21:51-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T01:10:53-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-86a0b706df",
+      "F-S9-PR-9a2da6233a",
+      "F-S9-PR-b55ac664d7"
+    ],
     "group_id": "_overhaul2/lake/cases/Arkansas v. Sullivan.json",
     "group_total_assertions": 5,
     "lake_only_cases": [],
@@ -16,21 +127,70 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-b3095f61.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 5,
     "run": "prod",
     "text_disclosed_cases": [
       "Arkansas v. Sullivan"
     ],
     "tokens": {
-      "input": 826,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 826
+      "input": 163391,
+      "output": 9104,
+      "source": "codex-events",
+      "total": 172495
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 4.8
+    "verdict_map": {
+      "2ff559b1f1a6f136": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "3441b4160c545f6d": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "ac5ec3e0a05e438d": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "b416a33ee31d23d6": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "d25ee901edd65210": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-86a0b706df",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-9a2da6233a",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-b55ac664d7",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 204.2
   }
 }

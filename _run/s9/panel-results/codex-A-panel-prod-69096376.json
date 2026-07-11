@@ -1,13 +1,93 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Board of Education v. Earls.json",
+    "lens": "A",
+    "notes": "Reviewed every assertion_id in group_inventory.jsonl exactly once. No support or black_letter rows were present in the disclosed inventory.",
+    "reviewed": [
+      {
+        "assertion_id": "55953a17721bf523",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record verifies the case as Board of Education of Independent School District No. 92 of Pottawatomie County v. Earls, U.S. Supreme Court, decided 2002-06-27, docket 01-332.",
+          "The citation list in the assertion matches lake.citations.all, including 536 U.S. 822, 122 S. Ct. 2559, 153 L. Ed. 2d 735, the LEXIS/Daily Op. Serv. cites, U.S.L.W., Daily Journal DAR, and Fla. L. Weekly Fed. S.",
+          "The opinion text header also identifies 536 U.S. 822 (2002) and the United States Supreme Court."
+        ],
+        "residual_risks": [
+          "The lake record has official citation selection set to null, but that matches the assertion payload and is not an existence defect."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "57872668044bbad2",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "--- # Board of Education v. Earls *536 U.S. 822 (2002)*",
+          "locator_note": "pin-837; content_page cites 536 U.S. at 837, and the opinion text contains the quoted sentence on star page *837.",
+          "needs_cl": false,
+          "problem": "pin-837's stored quote is not an opinion passage; it is harvested content-page markdown ending before the actual quoted sentence. The lake record itself marks this pin as quote_fidelity=mismatch and pinpoint_status=slip-only, with no star marker.",
+          "proposed_fix": "Replace pin-837's stored quote with the actual opinion-text quotation, 'In this context, the Fourth Amendment does not require a finding of individualized suspicion', and assign the star page/pincite to 837.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload quote begins with the built page header rather than the Supreme Court opinion text.",
+          "The opinion text does contain the visible page quote on star page *837, but that is not what lake.pinpoints[pin-837].quote stores.",
+          "Because the stored pin quote is mismatch/slip-only, the assertion as framed fails quote-fidelity review."
+        ],
+        "residual_risks": [
+          "The displayed content_page sentence appears substantively supported; the refutation is directed to the defective pin-837 stored quote/pinpoint record."
+        ],
+        "suggested_tightening": "Keep the rule sentence, but make the pin quote exactly the sentence from the opinion and avoid harvesting surrounding page markdown.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "7a433abbe830aaae",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The quoted text appears verbatim in the opinion: 'we hold only that Tecumseh's Policy is a reasonable means of furthering the School District's important interest in preventing and deterring drug use among its schoolchildren.'",
+          "The quote falls on star page *838, after the *838 marker and before the *839 marker.",
+          "The lake record marks pin-838 as quote_fidelity=matched and pinpoint_status=star-verified."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "f104b55a02e12220",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A's charter, so no treatment finding is raised.",
+          "The content page's treatment statement matches the disclosed lake judgment fields: field_i_validity=good_law, as_of_treatment=2026-06-30, varies_by_point=false, and scope_note='Extends Vernonia to non-athletes; good law.'"
+        ],
+        "residual_risks": [
+          "Negative progeny edges are present as proposed/audit material in the lake record, but Lens A did not independently assess treatment or currency."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Board of Education v. Earls.json\",\"reviewed\":[{\"assertion_id\":\"55953a17721bf523\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake identity record verifies the case as Board of Education of Independent School District No. 92 of Pottawatomie County v. Earls, U.S. Supreme Court, decided 2002-06-27, docket 01-332.\",\"The citation list in the assertion matches lake.citations.all, including 536 U.S. 822, 122 S. Ct. 2559, 153 L. Ed. 2d 735, the LEXIS/Daily Op. Serv. cites, U.S.L.W., Daily Journal DAR, and Fla. L. Weekly Fed. S.\",\"The opinion text header also identifies 536 U.S. 822 (2002) and the United States Supreme Court.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The lake record has official citation selection set to null, but that matches the assertion payload and is not an existence defect.\"],\"suggested_tightening\":null},{\"assertion_id\":\"57872668044bbad2\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"pin-837's stored quote is not an opinion passage; it is harvested content-page markdown ending before the actual quoted sentence. The lake record itself marks this pin as quote_fidelity=mismatch and pinpoint_status=slip-only, with no star marker.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-837's stored quote with the actual opinion-text quotation, 'In this context, the Fourth Amendment does not require a finding of individualized suspicion', and assign the star page/pincite to 837.\",\"evidence_quote\":\"--- # Board of Education v. Earls *536 U.S. 822 (2002)*\",\"needs_cl\":false,\"locator_note\":\"pin-837; content_page cites 536 U.S. at 837, and the opinion text contains the quoted sentence on star page *837.\"},\"reasons\":[\"The payload quote begins with the built page header rather than the Supreme Court opinion text.\",\"The opinion text does contain the visible page quote on star page *837, but that is not what lake.pinpoints[pin-837].quote stores.\",\"Because the stored pin quote is mismatch/slip-only, the assertion as framed fails quote-fidelity review.\"],\"breaks_true_positives\":true,\"residual_risks\":[\"The displayed content_page sentence appears substantively supported; the refutation is directed to the defective pin-837 stored quote/pinpoint record.\"],\"suggested_tightening\":\"Keep the rule sentence, but make the pin quote exactly the sentence from the opinion and avoid harvesting surrounding page markdown.\"},{\"assertion_id\":\"7a433abbe830aaae\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The quoted text appears verbatim in the opinion: 'we hold only that Tecumseh's Policy is a reasonable means of furthering the School District's important interest in preventing and deterring drug use among its schoolchildren.'\",\"The quote falls on star page *838, after the *838 marker and before the *839 marker.\",\"The lake record marks pin-838 as quote_fidelity=matched and pinpoint_status=star-verified.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"f104b55a02e12220\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside Lens A's charter, so no treatment finding is raised.\",\"The content page's treatment statement matches the disclosed lake judgment fields: field_i_validity=good_law, as_of_treatment=2026-06-30, varies_by_point=false, and scope_note='Extends Vernonia to non-athletes; good law.'\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Negative progeny edges are present as proposed/audit material in the lake record, but Lens A did not independently assess treatment or currency.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed every assertion_id in group_inventory.jsonl exactly once. No support or black_letter rows were present in the disclosed inventory.\"}",
   "summary": {
-    "at": "2026-07-10T18:22:20-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T01:14:21-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-422fd0a3ee"
+    ],
     "group_id": "_overhaul2/lake/cases/Board of Education v. Earls.json",
     "group_total_assertions": 4,
     "lake_only_cases": [],
@@ -16,21 +96,55 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-69096376.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 4,
     "run": "prod",
     "text_disclosed_cases": [
       "Board of Education v. Earls"
     ],
     "tokens": {
-      "input": 828,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 828
+      "input": 179049,
+      "output": 7695,
+      "source": "codex-events",
+      "total": 186744
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 2.9
+    "verdict_map": {
+      "55953a17721bf523": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "57872668044bbad2": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "7a433abbe830aaae": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "f104b55a02e12220": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-422fd0a3ee",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 149.7
   }
 }

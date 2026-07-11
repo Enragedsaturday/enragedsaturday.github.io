@@ -1,13 +1,61 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Arkansas v. Sanders.json",
+    "lens": "B",
+    "notes": "Lens B only; no support or quote-fidelity findings made.",
+    "reviewed": [
+      {
+        "assertion_id": "d87debf53b92c6ed",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record confirms Arkansas v. Sanders, U.S. Supreme Court, decided 1979-06-20, docket 77-1497, cluster_id 110119.",
+          "The lake citation record selects 442 U.S. 753 as the official citation and lists the asserted parallel and vendor citations."
+        ],
+        "residual_risks": [
+          "This existence/citation row does not itself establish current precedential force; the lake treatment/progeny fields are unverified and empty."
+        ],
+        "suggested_tightening": "Keep bare case-cite existence separate from any live-law assertion unless a certified treatment record is present.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "ebbcafc13114c972",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Frontier stub: treatment/progeny intentionally not derived until S6 promotion.",
+          "locator_note": "content_page.md Treatment header and subsequent-history section versus lake/Arkansas v. Sanders__e183e2.json treatment.edges=[] and progeny.rows_cached=0.",
+          "needs_cl": true,
+          "problem": "The built page makes a definitive treatment call that Sanders was overruled by California v. Acevedo, but the disclosed lake treatment record is only an unverified frontier stub with no treatment edges or progeny support.",
+          "proposed_fix": "Either reduce the page treatment to unverified/historical-only language, or promote the lake record with a certified overruled-by Acevedo treatment edge, as-of date, and supporting provenance.",
+          "severity": "high"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "Lake treatment.field_i_validity is unverified, as_of_content and as_of_treatment are null, and treatment.edges is empty.",
+          "Lake progeny has no cached rows or outbound opinion edges, so the disclosed record does not verify any overruling or successor-treatment relationship.",
+          "Under the default-to-refuted rule, the overruled-by-Acevedo treatment cannot stand without certified disclosed treatment evidence."
+        ],
+        "residual_risks": [
+          "The overruled treatment may be correct outside the disclosed files, but that cannot be credited under this review record."
+        ],
+        "suggested_tightening": "Avoid displaying a definitive overruled label until the lake treatment fields carry the certified treatment edge and as-of metadata.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": false
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/Arkansas v. Sanders.json\",\"reviewed\":[{\"assertion_id\":\"d87debf53b92c6ed\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake identity record confirms Arkansas v. Sanders, U.S. Supreme Court, decided 1979-06-20, docket 77-1497, cluster_id 110119.\",\"The lake citation record selects 442 U.S. 753 as the official citation and lists the asserted parallel and vendor citations.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"This existence/citation row does not itself establish current precedential force; the lake treatment/progeny fields are unverified and empty.\"],\"suggested_tightening\":\"Keep bare case-cite existence separate from any live-law assertion unless a certified treatment record is present.\"},{\"assertion_id\":\"ebbcafc13114c972\",\"dimension\":\"treatment\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":false,\"defect\":{\"problem\":\"The built page makes a definitive treatment call that Sanders was overruled by California v. Acevedo, but the disclosed lake treatment record is only an unverified frontier stub with no treatment edges or progeny support.\",\"severity\":\"high\",\"proposed_fix\":\"Either reduce the page treatment to unverified/historical-only language, or promote the lake record with a certified overruled-by Acevedo treatment edge, as-of date, and supporting provenance.\",\"evidence_quote\":\"Frontier stub: treatment/progeny intentionally not derived until S6 promotion.\",\"needs_cl\":true,\"locator_note\":\"content_page.md Treatment header and subsequent-history section versus lake/Arkansas v. Sanders__e183e2.json treatment.edges=[] and progeny.rows_cached=0.\"},\"reasons\":[\"Lake treatment.field_i_validity is unverified, as_of_content and as_of_treatment are null, and treatment.edges is empty.\",\"Lake progeny has no cached rows or outbound opinion edges, so the disclosed record does not verify any overruling or successor-treatment relationship.\",\"Under the default-to-refuted rule, the overruled-by-Acevedo treatment cannot stand without certified disclosed treatment evidence.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The overruled treatment may be correct outside the disclosed files, but that cannot be credited under this review record.\"],\"suggested_tightening\":\"Avoid displaying a definitive overruled label until the lake treatment fields carry the certified treatment edge and as-of metadata.\"}],\"notes\":\"Lens B only; no support or quote-fidelity findings made.\"}",
   "summary": {
-    "at": "2026-07-10T18:21:46-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T01:09:14-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-10bc546404"
+    ],
     "group_id": "_overhaul2/lake/cases/Arkansas v. Sanders.json",
     "group_total_assertions": 2,
     "lake_only_cases": [],
@@ -16,21 +64,41 @@
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-d31044c8.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 2,
     "run": "prod",
     "text_disclosed_cases": [
       "Arkansas v. Sanders"
     ],
     "tokens": {
-      "input": 754,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 754
+      "input": 116369,
+      "output": 5810,
+      "source": "codex-events",
+      "total": 122179
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 3.5
+    "verdict_map": {
+      "d87debf53b92c6ed": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "ebbcafc13114c972": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": false
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-10bc546404",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 113.8
   }
 }

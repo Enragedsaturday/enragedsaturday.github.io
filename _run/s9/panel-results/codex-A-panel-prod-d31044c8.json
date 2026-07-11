@@ -1,11 +1,48 @@
 {
-  "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Arkansas v. Sanders.json",
+    "lens": "A",
+    "notes": "Reviewed every assertion_id in group_inventory.jsonl exactly once.",
+    "reviewed": [
+      {
+        "assertion_id": "d87debf53b92c6ed",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record names Arkansas v. Sanders, court U.S., decided 1979-06-20, year 1979, docket 77-1497.",
+          "The official citation in the lake record is 442 U.S. 753, and the parallel/vendor citations listed in the inventory match the lake citations: 99 S. Ct. 2586, 61 L. Ed. 2d 235, and 1979 U.S. LEXIS 6.",
+          "The content page citation line, court, year, date, and docket are consistent with the disclosed lake identity and citation fields."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "ebbcafc13114c972",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside lens A; no support or quote-fidelity defect is raised.",
+          "The inventory treatment payload matches the lake treatment fields: field_i_validity is unverified, as_of_content and as_of_treatment are null, varies_by_point is false, and the scope note states that treatment/progeny were intentionally not derived until S6 promotion."
+        ],
+        "residual_risks": [
+          "Treatment substance and currency were not assessed under lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Arkansas v. Sanders.json\",\"reviewed\":[{\"assertion_id\":\"d87debf53b92c6ed\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake identity record names Arkansas v. Sanders, court U.S., decided 1979-06-20, year 1979, docket 77-1497.\",\"The official citation in the lake record is 442 U.S. 753, and the parallel/vendor citations listed in the inventory match the lake citations: 99 S. Ct. 2586, 61 L. Ed. 2d 235, and 1979 U.S. LEXIS 6.\",\"The content page citation line, court, year, date, and docket are consistent with the disclosed lake identity and citation fields.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"ebbcafc13114c972\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside lens A; no support or quote-fidelity defect is raised.\",\"The inventory treatment payload matches the lake treatment fields: field_i_validity is unverified, as_of_content and as_of_treatment are null, varies_by_point is false, and the scope note states that treatment/progeny were intentionally not derived until S6 promotion.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment substance and currency were not assessed under lens A.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed every assertion_id in group_inventory.jsonl exactly once.\"}",
   "summary": {
-    "at": "2026-07-10T18:21:39-04:00",
-    "attempts": 2,
-    "clean_attestation": false,
+    "at": "2026-07-11T01:08:28-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
     "defense_votes": [],
     "findings_emitted": [],
     "group_id": "_overhaul2/lake/cases/Arkansas v. Sanders.json",
@@ -16,21 +53,36 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-d31044c8.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 2,
     "run": "prod",
     "text_disclosed_cases": [
       "Arkansas v. Sanders"
     ],
     "tokens": {
-      "input": 826,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 826
+      "input": 68283,
+      "output": 2043,
+      "source": "codex-events",
+      "total": 70326
     },
-    "verdict_map": {},
+    "verdict_map": {
+      "d87debf53b92c6ed": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "ebbcafc13114c972": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
     "votes_emitted": [],
-    "wall_clock_s": 2.9
+    "wall_clock_s": 73.3
   }
 }

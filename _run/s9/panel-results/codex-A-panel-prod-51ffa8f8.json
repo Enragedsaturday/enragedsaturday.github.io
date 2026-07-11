@@ -1,11 +1,47 @@
 {
-  "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Bell v. Wolfish.json",
+    "lens": "A",
+    "notes": "Reviewed all 2 rows in group_inventory.jsonl. No support, quote_fidelity, pincite, or black_letter assertion rows were present for Lens A review.",
+    "reviewed": [
+      {
+        "assertion_id": "1d5ba373c5344b19",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record identifies the case as Bell v. Wolfish, U.S. Supreme Court, docket 77-1829, decided 1979-05-14, year 1979.",
+          "The lake official citation is 441 U.S. 520, with parallel citations 99 S. Ct. 1861 and 60 L. Ed. 2d 447, matching the content page and inventory payload."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "af3437e58a5e97e7",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Lens A does not audit treatment or currency merits.",
+          "The treatment payload matches the disclosed lake record: field_i_validity is unverified, as_of_content and as_of_treatment are null, varies_by_point is false, and the scope note states that treatment/progeny were intentionally not derived until S6 promotion."
+        ],
+        "residual_risks": [
+          "No Lens A conclusion is made about whether Bell remains good law or how later cases treat it."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Bell v. Wolfish.json\",\"reviewed\":[{\"assertion_id\":\"1d5ba373c5344b19\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record identifies the case as Bell v. Wolfish, U.S. Supreme Court, docket 77-1829, decided 1979-05-14, year 1979.\",\"The lake official citation is 441 U.S. 520, with parallel citations 99 S. Ct. 1861 and 60 L. Ed. 2d 447, matching the content page and inventory payload.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"af3437e58a5e97e7\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lens A does not audit treatment or currency merits.\",\"The treatment payload matches the disclosed lake record: field_i_validity is unverified, as_of_content and as_of_treatment are null, varies_by_point is false, and the scope note states that treatment/progeny were intentionally not derived until S6 promotion.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"No Lens A conclusion is made about whether Bell remains good law or how later cases treat it.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed all 2 rows in group_inventory.jsonl. No support, quote_fidelity, pincite, or black_letter assertion rows were present for Lens A review.\"}",
   "summary": {
-    "at": "2026-07-10T18:22:23-04:00",
-    "attempts": 2,
-    "clean_attestation": false,
+    "at": "2026-07-11T01:11:49-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
     "defense_votes": [],
     "findings_emitted": [],
     "group_id": "_overhaul2/lake/cases/Bell v. Wolfish.json",
@@ -16,21 +52,36 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-51ffa8f8.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 2,
     "run": "prod",
     "text_disclosed_cases": [
       "Bell v. Wolfish"
     ],
     "tokens": {
-      "input": 825,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 825
+      "input": 103663,
+      "output": 2922,
+      "source": "codex-events",
+      "total": 106585
     },
-    "verdict_map": {},
+    "verdict_map": {
+      "1d5ba373c5344b19": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "af3437e58a5e97e7": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
     "votes_emitted": [],
-    "wall_clock_s": 16.1
+    "wall_clock_s": 63.3
   }
 }

@@ -1756,3 +1756,17 @@ Probe loop armed (15-min cadence, cheap PROBE-OK exec); fleets relaunch on windo
 Thread-N unblock arc completed earlier this session: 187 sanctioned lead writes, 154 worklist
 rows cured, re-reads REAL (verified). Stub-text triage filed to P2 queue (chapman-v-california
 likely mis-key; Demesme concurrence gap; O'Brien correct-as-is).
+
+**RESUME 2026-07-11 00:16 (orchestrator re-seat, procedures re-read).** Re-grounded on
+S9 spec + EXECUTE.wrapper + RUNBOOK §3 (CL protocol) before acting. Operating model confirmed:
+thin orchestrator (ledger/specs/statuses only), all substantive work in fresh sub-agents,
+find→adjudicate→fix HARD-SEPARATED (reviewers never edit; legal verdicts cite CL via single
+serial lane L4; loop cap 3 -> _review-needed/), checkpoint every sub-phase.
+POSITION FIX: P1 panel review 1230/2714 lanes done (1488 residual); P1b thread-N 1070/1218
+pairs (148 to run incl 4 permanent Entick/Wilkes off-CL placeholders). Codex window REOPENED
+after ~5.5h rest (PROBE-OK 00:14). ROOT-CAUSE POSTURE on pause-8/9: 403-after-~1h50m-at-conc-18
++ ~5h recovery = ChatGPT-codex ROLLING USAGE CAP, not a per-minute 429. OPERATING DECISION:
+never re-run the combined-conc-18 config that burned twice. Sequence = thread-N finishes SOLO
+(conc-6, running pid 93042) -> then panel SOLO conc-12 (steady-state 12 < 18 burn peak).
+Multi-window grind accepted: pause clean on 403 cascade, resume on probe-detected reopen,
+drain across windows. Reconciler (P2) runs the moment thread-N drains, in parallel with panel.

@@ -1,13 +1,106 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Ashcroft v. al-Kidd.json",
+    "lens": "A",
+    "notes": "Reviewed all 4 rows in group_inventory.jsonl. No black_letter rows were present; treatment was checked only for disclosed-field consistency under Lens A.",
+    "reviewed": [
+      {
+        "assertion_id": "b89f609569ade2ca",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity confirms Ashcroft v. al-Kidd, U.S. Supreme Court, decided 2011-05-31, docket 10-98.",
+          "The asserted citation set exactly matches lake.citations.all, including 563 U.S. 731, 131 S. Ct. 2074, 179 L. Ed. 2d 1149, 2011 U.S. LEXIS 4021, 79 U.S.L.W. 4393, and 22 Fla. L. Weekly Fed. S 1057."
+        ],
+        "residual_risks": [
+          "Lake has no selected official citation, so this verdict is limited to existence and exact citation-set matching."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "7d1c3945c0ee2c33",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "--- # Ashcroft v. al-Kidd *563 U.S. 731 (2011)*",
+          "locator_note": "lake pinpoints[pin-736]; content_page Rule paragraph; cached opinion paragraph b1253-15 at 563 U.S. 736.",
+          "needs_cl": false,
+          "problem": "pin-736's stored quote is not the opinion passage or the displayed p. 736 quotation; it is harvested content-page Markdown/background text, and the lake itself marks quote_fidelity as mismatch.",
+          "proposed_fix": "Replace pin-736 with the actual 563 U.S. at 736 objective-inquiry passage from the cached opinion, preserving quotation characters or not presenting it as verbatim.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Lake pin-736 has quote_fidelity=mismatch, pinpoint_status=slip-only, no page, and no star marker.",
+          "The cached opinion at 563 U.S. 736 contains the objective-inquiry passage; it does not contain the content-page header/background string stored as the pin quote."
+        ],
+        "residual_risks": [
+          "The underlying objective-reasonableness rule is supported by the opinion text; the defect is the pinpoint quote record and verbatim fidelity."
+        ],
+        "suggested_tightening": "Use the cached opinion passage beginning \"Fourth Amendment reasonableness\" as the pin quote and align the displayed quote punctuation to the opinion text.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "8e3a6291bb8d32d6",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "[<span class=\"citation no-link\">563 U.S. 744</span>]",
+          "locator_note": "content_page quote tied to ^pin-743; cached opinion paragraphs b1259-4 and b1259-5.",
+          "needs_cl": false,
+          "problem": "The quoted sentence is character-faithful, but the content page's displayed official pincite says Id. at 743 while the cached text places the holding paragraph after the 563 U.S. 744 marker; the lake verifies only the L. Ed. star page 1161.",
+          "proposed_fix": "Change the displayed cite to 563 U.S. at 744 or cite the verified 179 L. Ed. 2d at 1161 unless another disclosed source verifies page 743.",
+          "severity": "medium"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The asserted sentence appears verbatim in the cached opinion and matches lake pinpoints[pin-743].quote.",
+          "Lake marks pin-743 quote_fidelity=matched, pinpoint_status=star-verified, and star_marker=1161.",
+          "The disclosed cached text inserts the 563 U.S. 744 marker before the holding sentence, so the page's Id. at 743 pincite is not supported by disclosed evidence."
+        ],
+        "residual_risks": [
+          "If an external official reporter layout placed the sentence on page 743, that evidence is not disclosed here."
+        ],
+        "suggested_tightening": "Keep the quote, but align the pincite to the disclosed page marker or to the verified L. Ed. star page.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "7530a97a8a4ce4fd",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The treatment payload matches lake.treatment: field_i_validity=good_law, as_of_content=2011-05-31, as_of_treatment=2026-06-30, varies_by_point=false, and the same scope_note.",
+          "Under Lens A, no treatment/currency merits finding is made beyond consistency with disclosed lake fields."
+        ],
+        "residual_risks": [
+          "Treatment/currency review is reserved for Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Ashcroft v. al-Kidd.json\",\"reviewed\":[{\"assertion_id\":\"b89f609569ade2ca\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity confirms Ashcroft v. al-Kidd, U.S. Supreme Court, decided 2011-05-31, docket 10-98.\",\"The asserted citation set exactly matches lake.citations.all, including 563 U.S. 731, 131 S. Ct. 2074, 179 L. Ed. 2d 1149, 2011 U.S. LEXIS 4021, 79 U.S.L.W. 4393, and 22 Fla. L. Weekly Fed. S 1057.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Lake has no selected official citation, so this verdict is limited to existence and exact citation-set matching.\"],\"suggested_tightening\":null},{\"assertion_id\":\"7d1c3945c0ee2c33\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"pin-736's stored quote is not the opinion passage or the displayed p. 736 quotation; it is harvested content-page Markdown/background text, and the lake itself marks quote_fidelity as mismatch.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-736 with the actual 563 U.S. at 736 objective-inquiry passage from the cached opinion, preserving quotation characters or not presenting it as verbatim.\",\"evidence_quote\":\"--- # Ashcroft v. al-Kidd *563 U.S. 731 (2011)*\",\"needs_cl\":false,\"locator_note\":\"lake pinpoints[pin-736]; content_page Rule paragraph; cached opinion paragraph b1253-15 at 563 U.S. 736.\"},\"reasons\":[\"Lake pin-736 has quote_fidelity=mismatch, pinpoint_status=slip-only, no page, and no star marker.\",\"The cached opinion at 563 U.S. 736 contains the objective-inquiry passage; it does not contain the content-page header/background string stored as the pin quote.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The underlying objective-reasonableness rule is supported by the opinion text; the defect is the pinpoint quote record and verbatim fidelity.\"],\"suggested_tightening\":\"Use the cached opinion passage beginning \\\"Fourth Amendment reasonableness\\\" as the pin quote and align the displayed quote punctuation to the opinion text.\"},{\"assertion_id\":\"8e3a6291bb8d32d6\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The quoted sentence is character-faithful, but the content page's displayed official pincite says Id. at 743 while the cached text places the holding paragraph after the 563 U.S. 744 marker; the lake verifies only the L. Ed. star page 1161.\",\"severity\":\"medium\",\"proposed_fix\":\"Change the displayed cite to 563 U.S. at 744 or cite the verified 179 L. Ed. 2d at 1161 unless another disclosed source verifies page 743.\",\"evidence_quote\":\"[<span class=\\\"citation no-link\\\">563 U.S. 744</span>]\",\"needs_cl\":false,\"locator_note\":\"content_page quote tied to ^pin-743; cached opinion paragraphs b1259-4 and b1259-5.\"},\"reasons\":[\"The asserted sentence appears verbatim in the cached opinion and matches lake pinpoints[pin-743].quote.\",\"Lake marks pin-743 quote_fidelity=matched, pinpoint_status=star-verified, and star_marker=1161.\",\"The disclosed cached text inserts the 563 U.S. 744 marker before the holding sentence, so the page's Id. at 743 pincite is not supported by disclosed evidence.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"If an external official reporter layout placed the sentence on page 743, that evidence is not disclosed here.\"],\"suggested_tightening\":\"Keep the quote, but align the pincite to the disclosed page marker or to the verified L. Ed. star page.\"},{\"assertion_id\":\"7530a97a8a4ce4fd\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The treatment payload matches lake.treatment: field_i_validity=good_law, as_of_content=2011-05-31, as_of_treatment=2026-06-30, varies_by_point=false, and the same scope_note.\",\"Under Lens A, no treatment/currency merits finding is made beyond consistency with disclosed lake fields.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment/currency review is reserved for Lens B.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed all 4 rows in group_inventory.jsonl. No black_letter rows were present; treatment was checked only for disclosed-field consistency under Lens A.\"}",
   "summary": {
-    "at": "2026-07-10T18:21:56-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T01:11:52-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "defense_votes": [],
-    "findings_emitted": [],
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-97d94a9abc",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-274a6bd342",
+      "F-S9-PR-7031763b18"
+    ],
     "group_id": "_overhaul2/lake/cases/Ashcroft v. al-Kidd.json",
     "group_total_assertions": 4,
     "lake_only_cases": [],
@@ -16,21 +109,63 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-53d067c7.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 4,
     "run": "prod",
     "text_disclosed_cases": [
       "Ashcroft v. al-Kidd"
     ],
     "tokens": {
-      "input": 826,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 826
+      "input": 231298,
+      "output": 10530,
+      "source": "codex-events",
+      "total": 241828
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 2.6
+    "verdict_map": {
+      "7530a97a8a4ce4fd": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "7d1c3945c0ee2c33": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "8e3a6291bb8d32d6": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "b89f609569ade2ca": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-274a6bd342",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-7031763b18",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-97d94a9abc",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": 204.4
   }
 }

@@ -1,13 +1,98 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Benn v. Lambert.json",
+    "lens": "A",
+    "notes": "Reviewed all 4 assertion rows in group_inventory.jsonl under Lens A only.",
+    "reviewed": [
+      {
+        "assertion_id": "070672164e172c0f",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record exists for Benn v. Lambert and identifies the court as the U.S. Court of Appeals, Ninth Circuit, decided 2002-02-26.",
+          "The lake official citation is 283 F.3d 1040, matching the display citation under review."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "1bf1b7ce2acf9093",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Because we hold that the state court’s decision that there was no",
+          "locator_note": "pin-p1",
+          "needs_cl": false,
+          "problem": "The inventoried pin-p1 quote is not a verbatim opinion quote; it is page/header/background/rule text ending before the actual quoted holding. The lake pinpoint also flags quote_fidelity as mismatch.",
+          "proposed_fix": "Replace pin-p1 with the actual opinion sentence beginning 'Because we hold...' from text/Benn v. Lambert__797ab8.txt, preserving exact characters or applying a documented non-verbatim normalization.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload quote begins with page markup and summary prose, not with the opinion text at the cited opening paragraph.",
+          "The disclosed opinion text contains the actual holding sentence at the beginning of the opinion, while the lake pin-p1 quote contains built-page material."
+        ],
+        "residual_risks": [
+          "The visible content-page quote after the colon appears substantively supported, but that is not the inventoried quote string under review."
+        ],
+        "suggested_tightening": "Regenerate the pinpoint extraction for pin-p1 so the stored quote is the court's sentence, not surrounding page prose.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "f0b583e3f108f876",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Patrick’s criminal misconduct and repeated lies to the police, while acting as an informant, is, standing alone, sufficiently prejudicial",
+          "locator_note": "pin-p58",
+          "needs_cl": false,
+          "problem": "The quoted proposition is supported and lands on the right passage, but it is not character-faithful as a verbatim quote: the opinion text uses the typographic apostrophe in Patrick’s and contains HTML/citation markup around Brady. The lake pinpoint also flags quote_fidelity as mismatch.",
+          "proposed_fix": "Use the exact rendered opinion text with Patrick’s, or mark the quote as normalized rather than verbatim.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The disclosed opinion text contains the same sentence at the claimed passage.",
+          "The stored/content quote uses Patrick's rather than the opinion's Patrick’s, so strict character fidelity fails even though the substance survives."
+        ],
+        "residual_risks": [
+          "If the corpus permits documented quote normalization from HTML to Markdown, this should be classified under that normalization rule."
+        ],
+        "suggested_tightening": "Add an explicit normalization policy for CourtListener HTML quotes; otherwise preserve exact characters inside quotation marks.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "51c124d035c09d89",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A, so no treatment finding is raised.",
+          "The treatment payload matches the disclosed lake treatment fields: field_i_validity good_law, as_of_content 2002-02-26, as_of_treatment 2026-06-30, varies_by_point false."
+        ],
+        "residual_risks": [
+          "Currency and negative-treatment significance are reserved for Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"A\",\n  \"group_id\": \"_overhaul2/lake/cases/Benn v. Lambert.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"070672164e172c0f\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake identity record exists for Benn v. Lambert and identifies the court as the U.S. Court of Appeals, Ninth Circuit, decided 2002-02-26.\",\n        \"The lake official citation is 283 F.3d 1040, matching the display citation under review.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"1bf1b7ce2acf9093\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The inventoried pin-p1 quote is not a verbatim opinion quote; it is page/header/background/rule text ending before the actual quoted holding. The lake pinpoint also flags quote_fidelity as mismatch.\",\n        \"severity\": \"high\",\n        \"proposed_fix\": \"Replace pin-p1 with the actual opinion sentence beginning 'Because we hold...' from text/Benn v. Lambert__797ab8.txt, preserving exact characters or applying a documented non-verbatim normalization.\",\n        \"evidence_quote\": \"Because we hold that the state court’s decision that there was no\",\n        \"needs_cl\": false,\n        \"locator_note\": \"pin-p1\"\n      },\n      \"reasons\": [\n        \"The payload quote begins with page markup and summary prose, not with the opinion text at the cited opening paragraph.\",\n        \"The disclosed opinion text contains the actual holding sentence at the beginning of the opinion, while the lake pin-p1 quote contains built-page material.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The visible content-page quote after the colon appears substantively supported, but that is not the inventoried quote string under review.\"\n      ],\n      \"suggested_tightening\": \"Regenerate the pinpoint extraction for pin-p1 so the stored quote is the court's sentence, not surrounding page prose.\"\n    },\n    {\n      \"assertion_id\": \"f0b583e3f108f876\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands-modified\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The quoted proposition is supported and lands on the right passage, but it is not character-faithful as a verbatim quote: the opinion text uses the typographic apostrophe in Patrick’s and contains HTML/citation markup around Brady. The lake pinpoint also flags quote_fidelity as mismatch.\",\n        \"severity\": \"low\",\n        \"proposed_fix\": \"Use the exact rendered opinion text with Patrick’s, or mark the quote as normalized rather than verbatim.\",\n        \"evidence_quote\": \"Patrick’s criminal misconduct and repeated lies to the police, while acting as an informant, is, standing alone, sufficiently prejudicial\",\n        \"needs_cl\": false,\n        \"locator_note\": \"pin-p58\"\n      },\n      \"reasons\": [\n        \"The disclosed opinion text contains the same sentence at the claimed passage.\",\n        \"The stored/content quote uses Patrick's rather than the opinion's Patrick’s, so strict character fidelity fails even though the substance survives.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"If the corpus permits documented quote normalization from HTML to Markdown, this should be classified under that normalization rule.\"\n      ],\n      \"suggested_tightening\": \"Add an explicit normalization policy for CourtListener HTML quotes; otherwise preserve exact characters inside quotation marks.\"\n    },\n    {\n      \"assertion_id\": \"51c124d035c09d89\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Treatment/currency is outside Lens A, so no treatment finding is raised.\",\n        \"The treatment payload matches the disclosed lake treatment fields: field_i_validity good_law, as_of_content 2002-02-26, as_of_treatment 2026-06-30, varies_by_point false.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Currency and negative-treatment significance are reserved for Lens B.\"\n      ],\n      \"suggested_tightening\": null\n    }\n  ],\n  \"notes\": \"Reviewed all 4 assertion rows in group_inventory.jsonl under Lens A only.\"\n}",
   "summary": {
-    "at": "2026-07-10T18:22:14-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T01:13:18-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-34846625ad",
+      "F-S9-PR-867b44e473"
+    ],
     "group_id": "_overhaul2/lake/cases/Benn v. Lambert.json",
     "group_total_assertions": 4,
     "lake_only_cases": [],
@@ -16,21 +101,59 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-c0ab49f8.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 4,
     "run": "prod",
     "text_disclosed_cases": [
       "Benn v. Lambert"
     ],
     "tokens": {
-      "input": 825,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 825
+      "input": 184786,
+      "output": 7019,
+      "source": "codex-events",
+      "total": 191805
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 3.2
+    "verdict_map": {
+      "070672164e172c0f": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "1bf1b7ce2acf9093": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "51c124d035c09d89": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "f0b583e3f108f876": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-34846625ad",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-867b44e473",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 140.5
   }
 }

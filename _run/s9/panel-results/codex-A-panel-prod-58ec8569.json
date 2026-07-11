@@ -1,11 +1,48 @@
 {
-  "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Bennis v. Michigan.json",
+    "lens": "A",
+    "notes": "Reviewed every assertion_id in group_inventory.jsonl exactly once.",
+    "reviewed": [
+      {
+        "assertion_id": "0b1adf60f9f43e50",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record identifies the case as Bennis v. Michigan, decided 1996-03-04, court U.S., docket 94-8729.",
+          "The official citation in the lake record is 516 U.S. 442, matching the content page citation 516 U.S. 442 (1996).",
+          "The parallel and vendor citations in the assertion match the lake record: 116 S. Ct. 994, 134 L. Ed. 2d 68, and 1996 U.S. LEXIS 1565."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "82e397d5aa0c212a",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A, so no treatment merits finding is made.",
+          "The asserted treatment metadata is internally consistent with the lake record and content page: field_i_validity is unverified, as_of_content and as_of_treatment are null, varies_by_point is false, and the scope note states that treatment/progeny were intentionally not derived until S6 promotion."
+        ],
+        "residual_risks": [
+          "Lens A did not evaluate whether the unverified treatment status is substantively current or complete."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Bennis v. Michigan.json\",\"reviewed\":[{\"assertion_id\":\"0b1adf60f9f43e50\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record identifies the case as Bennis v. Michigan, decided 1996-03-04, court U.S., docket 94-8729.\",\"The official citation in the lake record is 516 U.S. 442, matching the content page citation 516 U.S. 442 (1996).\",\"The parallel and vendor citations in the assertion match the lake record: 116 S. Ct. 994, 134 L. Ed. 2d 68, and 1996 U.S. LEXIS 1565.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"82e397d5aa0c212a\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside Lens A, so no treatment merits finding is made.\",\"The asserted treatment metadata is internally consistent with the lake record and content page: field_i_validity is unverified, as_of_content and as_of_treatment are null, varies_by_point is false, and the scope note states that treatment/progeny were intentionally not derived until S6 promotion.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Lens A did not evaluate whether the unverified treatment status is substantively current or complete.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed every assertion_id in group_inventory.jsonl exactly once.\"}",
   "summary": {
-    "at": "2026-07-10T18:22:14-04:00",
-    "attempts": 2,
-    "clean_attestation": false,
+    "at": "2026-07-11T01:11:54-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
     "defense_votes": [],
     "findings_emitted": [],
     "group_id": "_overhaul2/lake/cases/Bennis v. Michigan.json",
@@ -16,21 +53,36 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-58ec8569.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 2,
     "run": "prod",
     "text_disclosed_cases": [
       "Bennis v. Michigan"
     ],
     "tokens": {
-      "input": 826,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 826
+      "input": 69291,
+      "output": 1587,
+      "source": "codex-events",
+      "total": 70878
     },
-    "verdict_map": {},
+    "verdict_map": {
+      "0b1adf60f9f43e50": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "82e397d5aa0c212a": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
     "votes_emitted": [],
-    "wall_clock_s": 2.7
+    "wall_clock_s": 34.9
   }
 }

@@ -1,13 +1,63 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Bennis v. Michigan.json",
+    "lens": "B",
+    "notes": "Lens B only; no support or quote-fidelity findings.",
+    "reviewed": [
+      {
+        "assertion_id": "0b1adf60f9f43e50",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record is for Bennis v. Michigan, U.S., decided 1996-03-04, docket 94-8729, cluster 118005.",
+          "The lake citation fields select 516 U.S. 442 as the official citation, matching the content page display.",
+          "No disclosed treatment or progeny edge says the cited authority has been overruled, vacated, superseded, or otherwise made non-live; current-law uncertainty is handled in the treatment row."
+        ],
+        "residual_risks": [
+          "The lake treatment/progeny fields are unverified, so this stands only for citation/existence and source hierarchy, not for a verified current good-law judgment."
+        ],
+        "suggested_tightening": "Keep citation/existence separate from any current good-law representation until treatment/progeny verification is complete.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "82e397d5aa0c212a",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "Frontier stub: treatment/progeny intentionally not derived until S6 promotion.",
+          "locator_note": "content_page.md Treatment & subsequent history; lake/Bennis v. Michigan__d37d5b.json treatment/progeny",
+          "needs_cl": true,
+          "problem": "The page makes an affirmative current-treatment claim that Bennis remains the controlling answer, but the lake treatment record is expressly unverified, has no as-of date, and has no completed progeny/citator basis. From the disclosed evidence, that live-law/control claim cannot be verified.",
+          "proposed_fix": "Retain only the Unverified treatment status and remove or qualify the controlling-answer/general-square-holding language until treatment/progeny verification is completed with an as-of date and citator basis.",
+          "severity": "high"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "Lake treatment.field_i_validity is unverified, as_of_content and as_of_treatment are null, and composite_basis is unverified.",
+          "Lake progeny has citation_count null, enumeration null, rows_cached 0, and outbound_opinion_edges empty.",
+          "The content page nonetheless states that Bennis remains the controlling answer, which is a current good-law claim unsupported by the disclosed treatment record."
+        ],
+        "residual_risks": [
+          "The SCOTUS identity and official citation still appear valid; this refutation is limited to current treatment/live-law verification.",
+          "A later completed citator/progeny review might substantiate the control claim, but that evidence is absent here."
+        ],
+        "suggested_tightening": "Replace affirmative treatment prose with a warning that treatment is unverified and should not be relied on for current good-law status until citator/progeny verification is complete.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": false
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/Bennis v. Michigan.json\",\"reviewed\":[{\"assertion_id\":\"0b1adf60f9f43e50\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake identity record is for Bennis v. Michigan, U.S., decided 1996-03-04, docket 94-8729, cluster 118005.\",\"The lake citation fields select 516 U.S. 442 as the official citation, matching the content page display.\",\"No disclosed treatment or progeny edge says the cited authority has been overruled, vacated, superseded, or otherwise made non-live; current-law uncertainty is handled in the treatment row.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The lake treatment/progeny fields are unverified, so this stands only for citation/existence and source hierarchy, not for a verified current good-law judgment.\"],\"suggested_tightening\":\"Keep citation/existence separate from any current good-law representation until treatment/progeny verification is complete.\"},{\"assertion_id\":\"82e397d5aa0c212a\",\"dimension\":\"treatment\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":false,\"defect\":{\"problem\":\"The page makes an affirmative current-treatment claim that Bennis remains the controlling answer, but the lake treatment record is expressly unverified, has no as-of date, and has no completed progeny/citator basis. From the disclosed evidence, that live-law/control claim cannot be verified.\",\"severity\":\"high\",\"proposed_fix\":\"Retain only the Unverified treatment status and remove or qualify the controlling-answer/general-square-holding language until treatment/progeny verification is completed with an as-of date and citator basis.\",\"evidence_quote\":\"Frontier stub: treatment/progeny intentionally not derived until S6 promotion.\",\"needs_cl\":true,\"locator_note\":\"content_page.md Treatment & subsequent history; lake/Bennis v. Michigan__d37d5b.json treatment/progeny\"},\"reasons\":[\"Lake treatment.field_i_validity is unverified, as_of_content and as_of_treatment are null, and composite_basis is unverified.\",\"Lake progeny has citation_count null, enumeration null, rows_cached 0, and outbound_opinion_edges empty.\",\"The content page nonetheless states that Bennis remains the controlling answer, which is a current good-law claim unsupported by the disclosed treatment record.\"],\"breaks_true_positives\":true,\"residual_risks\":[\"The SCOTUS identity and official citation still appear valid; this refutation is limited to current treatment/live-law verification.\",\"A later completed citator/progeny review might substantiate the control claim, but that evidence is absent here.\"],\"suggested_tightening\":\"Replace affirmative treatment prose with a warning that treatment is unverified and should not be relied on for current good-law status until citator/progeny verification is complete.\"}],\"notes\":\"Lens B only; no support or quote-fidelity findings.\"}",
   "summary": {
-    "at": "2026-07-10T18:22:16-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T01:14:09-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-72c7b20a86"
+    ],
     "group_id": "_overhaul2/lake/cases/Bennis v. Michigan.json",
     "group_total_assertions": 2,
     "lake_only_cases": [],
@@ -16,21 +66,41 @@
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-58ec8569.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 2,
     "run": "prod",
     "text_disclosed_cases": [
       "Bennis v. Michigan"
     ],
     "tokens": {
-      "input": 754,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 754
+      "input": 90058,
+      "output": 7206,
+      "source": "codex-events",
+      "total": 97264
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 2.8
+    "verdict_map": {
+      "0b1adf60f9f43e50": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "82e397d5aa0c212a": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": false
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-72c7b20a86",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 139.4
   }
 }

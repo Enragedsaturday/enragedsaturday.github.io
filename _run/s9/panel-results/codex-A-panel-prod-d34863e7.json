@@ -1,13 +1,102 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Beecher v. Alabama.json",
+    "lens": "A",
+    "notes": "Lens A review only: citation identity stands; pin-38 is a failed quote harvest; pin-38a survives with exact quote-mark correction; treatment merits are deferred to Lens B.",
+    "reviewed": [
+      {
+        "assertion_id": "3de55cb0f67466a4",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record exists for Beecher v. Alabama and identifies the court as U.S. Supreme Court, decided 1967-10-23, year 1967.",
+          "The asserted official citation 389 U.S. 35 and parallel/vendor citations 88 S. Ct. 189, 19 L. Ed. 2d 35, and 1967 U.S. LEXIS 435 match the lake citations."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "a62f5c2f98c34400",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "A realistic appraisal of the circumstances of this case compels the conclusion that this petitioner’s confessions were the product of gross coercion.",
+          "locator_note": "pin-38; the actual supporting passage appears in text/Beecher v. Alabama__4e3d20.txt at the page-38 paragraph.",
+          "needs_cl": false,
+          "problem": "pin-38's harvested quote is not a verbatim passage from the opinion; it stitches content-page narrative and headings instead of the actual page-38 holding quote.",
+          "proposed_fix": "Replace pin-38 with the exact page-38 holding quote and set the page/pin to 38; also preserve the opinion's curly apostrophe in petitioner’s if character-fidelity is required.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload quote contains content-page material such as '## Issue' and '## Rule', which does not appear in the opinion text.",
+          "The opinion's page-38 passage instead begins 'A realistic appraisal of the circumstances of this case...' and supplies the rule quoted on the built page.",
+          "The lake pinpoint itself marks pin-38 quote_fidelity as mismatch."
+        ],
+        "residual_risks": [
+          "The visible built-page quote is substantively supported, but its raw Markdown uses petitioner's while the opinion text has petitioner’s."
+        ],
+        "suggested_tightening": "Keep the page narrative and the authority quote separate so the pinpoint quote is harvested only from the actual quoted passage.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "c85f88b833e50490",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "From that time until he was directed five days later to tell Alabama investigators “what they wanted to know,” there was “no break in the stream of events,”",
+          "locator_note": "pin-38a; text/Beecher v. Alabama__4e3d20.txt page-38 paragraph beginning 'The petitioner, already wounded...'.",
+          "needs_cl": false,
+          "problem": "The quoted language is the correct page-38 passage, but it is not character-faithful because the payload/content converts the opinion's curly double quotation marks to straight single quotation marks around the embedded phrases.",
+          "proposed_fix": "Use the exact wording and quotation marks from the opinion, e.g. 'From that time until he was directed five days later to tell Alabama investigators “what they wanted to know,” there was “no break in the stream of events,”'.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The words and proposition are supported by the page-38 paragraph tying the gunpoint confession to the hospital statements with 'no break in the stream of events'.",
+          "The defect is quote typography, not substantive support: the opinion uses curly double quotation marks, while the asserted quote uses straight single quotation marks."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Quote the sentence beginning 'From that time...' directly, rather than splicing the excerpt into a surrounding paraphrase.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "734858326c98c4a1",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The payload treatment fields match lake.treatment: good_law, as_of_content 1967-10-23, as_of_treatment 2026-06-30, varies_by_point false, and the same scope_note.",
+          "Treatment and currency merits are outside Lens A; no support or quote-fidelity defect is raised for this treatment row."
+        ],
+        "residual_risks": [
+          "Treatment/currency was not audited under Lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Beecher v. Alabama.json\",\"reviewed\":[{\"assertion_id\":\"3de55cb0f67466a4\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record exists for Beecher v. Alabama and identifies the court as U.S. Supreme Court, decided 1967-10-23, year 1967.\",\"The asserted official citation 389 U.S. 35 and parallel/vendor citations 88 S. Ct. 189, 19 L. Ed. 2d 35, and 1967 U.S. LEXIS 435 match the lake citations.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"a62f5c2f98c34400\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"pin-38's harvested quote is not a verbatim passage from the opinion; it stitches content-page narrative and headings instead of the actual page-38 holding quote.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-38 with the exact page-38 holding quote and set the page/pin to 38; also preserve the opinion's curly apostrophe in petitioner’s if character-fidelity is required.\",\"evidence_quote\":\"A realistic appraisal of the circumstances of this case compels the conclusion that this petitioner’s confessions were the product of gross coercion.\",\"needs_cl\":false,\"locator_note\":\"pin-38; the actual supporting passage appears in text/Beecher v. Alabama__4e3d20.txt at the page-38 paragraph.\"},\"reasons\":[\"The payload quote contains content-page material such as '## Issue' and '## Rule', which does not appear in the opinion text.\",\"The opinion's page-38 passage instead begins 'A realistic appraisal of the circumstances of this case...' and supplies the rule quoted on the built page.\",\"The lake pinpoint itself marks pin-38 quote_fidelity as mismatch.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The visible built-page quote is substantively supported, but its raw Markdown uses petitioner's while the opinion text has petitioner’s.\"],\"suggested_tightening\":\"Keep the page narrative and the authority quote separate so the pinpoint quote is harvested only from the actual quoted passage.\"},{\"assertion_id\":\"c85f88b833e50490\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The quoted language is the correct page-38 passage, but it is not character-faithful because the payload/content converts the opinion's curly double quotation marks to straight single quotation marks around the embedded phrases.\",\"severity\":\"low\",\"proposed_fix\":\"Use the exact wording and quotation marks from the opinion, e.g. 'From that time until he was directed five days later to tell Alabama investigators “what they wanted to know,” there was “no break in the stream of events,”'.\",\"evidence_quote\":\"From that time until he was directed five days later to tell Alabama investigators “what they wanted to know,” there was “no break in the stream of events,”\",\"needs_cl\":false,\"locator_note\":\"pin-38a; text/Beecher v. Alabama__4e3d20.txt page-38 paragraph beginning 'The petitioner, already wounded...'.\"},\"reasons\":[\"The words and proposition are supported by the page-38 paragraph tying the gunpoint confession to the hospital statements with 'no break in the stream of events'.\",\"The defect is quote typography, not substantive support: the opinion uses curly double quotation marks, while the asserted quote uses straight single quotation marks.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":\"Quote the sentence beginning 'From that time...' directly, rather than splicing the excerpt into a surrounding paraphrase.\"},{\"assertion_id\":\"734858326c98c4a1\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The payload treatment fields match lake.treatment: good_law, as_of_content 1967-10-23, as_of_treatment 2026-06-30, varies_by_point false, and the same scope_note.\",\"Treatment and currency merits are outside Lens A; no support or quote-fidelity defect is raised for this treatment row.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment/currency was not audited under Lens A.\"],\"suggested_tightening\":null}],\"notes\":\"Lens A review only: citation identity stands; pin-38 is a failed quote harvest; pin-38a survives with exact quote-mark correction; treatment merits are deferred to Lens B.\"}",
   "summary": {
-    "at": "2026-07-10T18:22:08-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T01:13:38-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "defense_votes": [],
-    "findings_emitted": [],
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-a1fce20e35",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-f11bf58c83",
+      "F-S9-PR-19e9052c37"
+    ],
     "group_id": "_overhaul2/lake/cases/Beecher v. Alabama.json",
     "group_total_assertions": 4,
     "lake_only_cases": [],
@@ -16,21 +105,63 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-d34863e7.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 4,
     "run": "prod",
     "text_disclosed_cases": [
       "Beecher v. Alabama"
     ],
     "tokens": {
-      "input": 826,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 826
+      "input": 259236,
+      "output": 8617,
+      "source": "codex-events",
+      "total": 267853
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 3.0
+    "verdict_map": {
+      "3de55cb0f67466a4": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "734858326c98c4a1": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "a62f5c2f98c34400": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "c85f88b833e50490": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-f11bf58c83",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-19e9052c37",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-a1fce20e35",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": 183.9
   }
 }

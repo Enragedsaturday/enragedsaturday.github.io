@@ -1,13 +1,98 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Beckwith v. United States.json",
+    "lens": "A",
+    "notes": "Reviewed all 4 rows in group_inventory.jsonl. Lens A records the treatment row only and raises no treatment/currency finding.",
+    "reviewed": [
+      {
+        "assertion_id": "f4cd7b0e2e54610b",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record names Beckwith v. United States, U.S. Supreme Court, decided 1976-04-21, docket 74-1243.",
+          "The official citation is 425 U.S. 341, and the listed parallel/vendor citations match the lake citations."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "479252e358afea98",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "“ Tt was the compulsive aspect of custodial interrogation, and not the strength or content of the government’s suspicions",
+          "locator_note": "content_page cites Id. at 346-347; cached text places the quoted block across the *347 page marker, but the characters do not match.",
+          "needs_cl": false,
+          "problem": "The pin-347 verbatim quotation is not character-faithful to the cached opinion text; the disclosed text begins with “ Tt ...” and uses “government’s,” while the asserted quote begins with \"'It ...\" and uses \"government's.\"",
+          "proposed_fix": "Use the exact cached text or recast this as a paraphrase; if a corrected reporter/OCR source is intended, add that disclosed evidence before retaining the normalized quotation.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The page/payload quote normalizes the first word to 'It' and changes the possessive punctuation, so it is not character-faithful to text/Beckwith v. United States__5b29f7.txt.",
+          "The lake pinpoints record itself labels pin-347 quote_fidelity as mismatch."
+        ],
+        "residual_risks": [
+          "The cached text appears OCR-corrupted; a clean reporter source could support a corrected quotation, but it is not disclosed."
+        ],
+        "suggested_tightening": "Paraphrase the Caiello point unless the quotation is rechecked against a clean disclosed source.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "92ab48c4b51d4192",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "In subsequent decisions, the Court specifically stressed that it was the <em>custodial </em>nature of the interrogation",
+          "locator_note": "pin-346 is slip-only/page null in the lake record; content_page cites 425 U.S. at 346, but the stored pin quote does not identify that passage.",
+          "needs_cl": false,
+          "problem": "The pin-346 payload quote is not an opinion quote; it contains built-page Markdown text spanning an issue/rule boundary.",
+          "proposed_fix": "Replace pin-346 with the actual page-346 opinion language supporting the rule, or remove the verbatim-quote treatment for this pin.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The asserted quote begins 'of the investigation. ## Rule No — ...', which appears to be content_page Markdown, not language from the cached opinion text.",
+          "The actual page-346 support is the subsequent-decisions sentence, and the lake pinpoints record labels pin-346 quote_fidelity as mismatch."
+        ],
+        "residual_risks": [
+          "The underlying custody-not-focus rule is supported, but this stored quote/pinpoint entry is corrupted."
+        ],
+        "suggested_tightening": "Anchor pin-346 to the page-346 sentence beginning 'In subsequent decisions...' and store a clean plain-text quote from the opinion.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "b358a23d5fd309bb",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The treatment payload matches the lake treatment fields: field_i_validity good_law, as_of_content 1976-04-21, as_of_treatment 2026-06-30, and varies_by_point false.",
+          "Treatment/currency merits are outside lens A; no treatment finding is raised."
+        ],
+        "residual_risks": [
+          "Treatment/currency remains for lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Beckwith v. United States.json\",\"reviewed\":[{\"assertion_id\":\"f4cd7b0e2e54610b\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake identity record names Beckwith v. United States, U.S. Supreme Court, decided 1976-04-21, docket 74-1243.\",\"The official citation is 425 U.S. 341, and the listed parallel/vendor citations match the lake citations.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"479252e358afea98\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The pin-347 verbatim quotation is not character-faithful to the cached opinion text; the disclosed text begins with “ Tt ...” and uses “government’s,” while the asserted quote begins with \\\"'It ...\\\" and uses \\\"government's.\\\"\",\"severity\":\"high\",\"proposed_fix\":\"Use the exact cached text or recast this as a paraphrase; if a corrected reporter/OCR source is intended, add that disclosed evidence before retaining the normalized quotation.\",\"evidence_quote\":\"“ Tt was the compulsive aspect of custodial interrogation, and not the strength or content of the government’s suspicions\",\"needs_cl\":false,\"locator_note\":\"content_page cites Id. at 346-347; cached text places the quoted block across the *347 page marker, but the characters do not match.\"},\"reasons\":[\"The page/payload quote normalizes the first word to 'It' and changes the possessive punctuation, so it is not character-faithful to text/Beckwith v. United States__5b29f7.txt.\",\"The lake pinpoints record itself labels pin-347 quote_fidelity as mismatch.\"],\"breaks_true_positives\":true,\"residual_risks\":[\"The cached text appears OCR-corrupted; a clean reporter source could support a corrected quotation, but it is not disclosed.\"],\"suggested_tightening\":\"Paraphrase the Caiello point unless the quotation is rechecked against a clean disclosed source.\"},{\"assertion_id\":\"92ab48c4b51d4192\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The pin-346 payload quote is not an opinion quote; it contains built-page Markdown text spanning an issue/rule boundary.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-346 with the actual page-346 opinion language supporting the rule, or remove the verbatim-quote treatment for this pin.\",\"evidence_quote\":\"In subsequent decisions, the Court specifically stressed that it was the <em>custodial </em>nature of the interrogation\",\"needs_cl\":false,\"locator_note\":\"pin-346 is slip-only/page null in the lake record; content_page cites 425 U.S. at 346, but the stored pin quote does not identify that passage.\"},\"reasons\":[\"The asserted quote begins 'of the investigation. ## Rule No — ...', which appears to be content_page Markdown, not language from the cached opinion text.\",\"The actual page-346 support is the subsequent-decisions sentence, and the lake pinpoints record labels pin-346 quote_fidelity as mismatch.\"],\"breaks_true_positives\":true,\"residual_risks\":[\"The underlying custody-not-focus rule is supported, but this stored quote/pinpoint entry is corrupted.\"],\"suggested_tightening\":\"Anchor pin-346 to the page-346 sentence beginning 'In subsequent decisions...' and store a clean plain-text quote from the opinion.\"},{\"assertion_id\":\"b358a23d5fd309bb\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The treatment payload matches the lake treatment fields: field_i_validity good_law, as_of_content 1976-04-21, as_of_treatment 2026-06-30, and varies_by_point false.\",\"Treatment/currency merits are outside lens A; no treatment finding is raised.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment/currency remains for lens B.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed all 4 rows in group_inventory.jsonl. Lens A records the treatment row only and raises no treatment/currency finding.\"}",
   "summary": {
-    "at": "2026-07-10T18:22:05-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T01:12:33-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-1a1b1b474f",
+      "F-S9-PR-8e4f05d35e"
+    ],
     "group_id": "_overhaul2/lake/cases/Beckwith v. United States.json",
     "group_total_assertions": 4,
     "lake_only_cases": [],
@@ -16,21 +101,59 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-c48168d8.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 4,
     "run": "prod",
     "text_disclosed_cases": [
       "Beckwith v. United States"
     ],
     "tokens": {
-      "input": 828,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 828
+      "input": 203653,
+      "output": 9297,
+      "source": "codex-events",
+      "total": 212950
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 2.7
+    "verdict_map": {
+      "479252e358afea98": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "92ab48c4b51d4192": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "b358a23d5fd309bb": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "f4cd7b0e2e54610b": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-1a1b1b474f",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-8e4f05d35e",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 183.6
   }
 }

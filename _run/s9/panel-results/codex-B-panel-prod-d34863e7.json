@@ -1,13 +1,96 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Beecher v. Alabama.json",
+    "lens": "B",
+    "notes": "Lens B only; support and quote-fidelity issues were not reviewed.",
+    "reviewed": [
+      {
+        "assertion_id": "3de55cb0f67466a4",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity confirms Beecher v. Alabama, U.S. Supreme Court, decided 1967-10-23, docket 92 Misc., cluster_id 107526.",
+          "Lake citations identify 389 U.S. 35 as the official citation and mark expected_citation_found true.",
+          "Currency angle survives because lake treatment.field_i_validity is good_law as of 2026-06-30."
+        ],
+        "residual_risks": [
+          "Case-level treatment has unresolved proposed negative-treatment audit flags, addressed under the treatment assertion."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "a62f5c2f98c34400",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Lens B does not evaluate quote fidelity or support.",
+          "No independent currentness or treatment defect is attached to this pinpoint apart from the case-level treatment issue reviewed separately."
+        ],
+        "residual_risks": [
+          "Quote-fidelity questions remain for Lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "c85f88b833e50490",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Lens B does not evaluate quote fidelity or support.",
+          "No independent currentness or treatment defect is attached to this pinpoint apart from the case-level treatment issue reviewed separately."
+        ],
+        "residual_risks": [
+          "Quote-fidelity questions remain for Lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "734858326c98c4a1",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "\"audit_needed\": true, \"proposed_negative_events\": 24, \"audit_marker\": \"R15 treatment audit required\"",
+          "locator_note": "content_page.md Treatment & subsequent history; lake treatment.derivation.lane2_top_cited and treatment.edges",
+          "needs_cl": true,
+          "problem": "The good-law and SCOTUS-weight call survives, but the page's categorical 'No negative treatment' statement is too strong given disclosed proposed negative-treatment edges and an unresolved audit flag.",
+          "proposed_fix": "Keep field_i_validity=good_law and Binding-SCOTUS, but replace 'No negative treatment' with a qualified note that proposed negative-treatment edges remain unresolved pending audit.",
+          "severity": "medium"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "Lake treatment.field_i_validity is good_law as of 2026-06-30, varies_by_point is false, and point_overrides is empty.",
+          "Authority weight stands because the lake identity marks the court_level as scotus.",
+          "The disclosed treatment.edges contain 32 proposed negative-category entries, including overruled, questioned, criticized, and superseded_by_statute labels, though all are field_iii=mentioned and proposed=true.",
+          "Because lane2_top_cited is cap_hit true and audit_needed true, disclosed evidence does not support the unqualified page statement 'No negative treatment.'"
+        ],
+        "residual_risks": [
+          "The proposed edges may be false positives because they are all marked mentioned and proposed=true.",
+          "A completed treatment audit is needed before restoring a categorical no-negative-treatment statement."
+        ],
+        "suggested_tightening": "Status: good_law as of 2026-06-30; Binding-SCOTUS. Avoid 'No negative treatment' unless the R15 audit clears the proposed edges.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"B\",\n  \"group_id\": \"_overhaul2/lake/cases/Beecher v. Alabama.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"3de55cb0f67466a4\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Lake identity confirms Beecher v. Alabama, U.S. Supreme Court, decided 1967-10-23, docket 92 Misc., cluster_id 107526.\",\n        \"Lake citations identify 389 U.S. 35 as the official citation and mark expected_citation_found true.\",\n        \"Currency angle survives because lake treatment.field_i_validity is good_law as of 2026-06-30.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Case-level treatment has unresolved proposed negative-treatment audit flags, addressed under the treatment assertion.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"a62f5c2f98c34400\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Lens B does not evaluate quote fidelity or support.\",\n        \"No independent currentness or treatment defect is attached to this pinpoint apart from the case-level treatment issue reviewed separately.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Quote-fidelity questions remain for Lens A.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"c85f88b833e50490\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Lens B does not evaluate quote fidelity or support.\",\n        \"No independent currentness or treatment defect is attached to this pinpoint apart from the case-level treatment issue reviewed separately.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Quote-fidelity questions remain for Lens A.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"734858326c98c4a1\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands-modified\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The good-law and SCOTUS-weight call survives, but the page's categorical 'No negative treatment' statement is too strong given disclosed proposed negative-treatment edges and an unresolved audit flag.\",\n        \"severity\": \"medium\",\n        \"proposed_fix\": \"Keep field_i_validity=good_law and Binding-SCOTUS, but replace 'No negative treatment' with a qualified note that proposed negative-treatment edges remain unresolved pending audit.\",\n        \"evidence_quote\": \"\\\"audit_needed\\\": true, \\\"proposed_negative_events\\\": 24, \\\"audit_marker\\\": \\\"R15 treatment audit required\\\"\",\n        \"needs_cl\": true,\n        \"locator_note\": \"content_page.md Treatment & subsequent history; lake treatment.derivation.lane2_top_cited and treatment.edges\"\n      },\n      \"reasons\": [\n        \"Lake treatment.field_i_validity is good_law as of 2026-06-30, varies_by_point is false, and point_overrides is empty.\",\n        \"Authority weight stands because the lake identity marks the court_level as scotus.\",\n        \"The disclosed treatment.edges contain 32 proposed negative-category entries, including overruled, questioned, criticized, and superseded_by_statute labels, though all are field_iii=mentioned and proposed=true.\",\n        \"Because lane2_top_cited is cap_hit true and audit_needed true, disclosed evidence does not support the unqualified page statement 'No negative treatment.'\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The proposed edges may be false positives because they are all marked mentioned and proposed=true.\",\n        \"A completed treatment audit is needed before restoring a categorical no-negative-treatment statement.\"\n      ],\n      \"suggested_tightening\": \"Status: good_law as of 2026-06-30; Binding-SCOTUS. Avoid 'No negative treatment' unless the R15 audit clears the proposed edges.\"\n    }\n  ],\n  \"notes\": \"Lens B only; support and quote-fidelity issues were not reviewed.\"\n}",
   "summary": {
-    "at": "2026-07-10T18:22:08-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T01:12:51-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-a1fce20e35"
+    ],
     "group_id": "_overhaul2/lake/cases/Beecher v. Alabama.json",
     "group_total_assertions": 4,
     "lake_only_cases": [],
@@ -16,21 +99,55 @@
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-d34863e7.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 4,
     "run": "prod",
     "text_disclosed_cases": [
       "Beecher v. Alabama"
     ],
     "tokens": {
-      "input": 754,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 754
+      "input": 213294,
+      "output": 6816,
+      "source": "codex-events",
+      "total": 220110
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 3.0
+    "verdict_map": {
+      "3de55cb0f67466a4": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "734858326c98c4a1": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "a62f5c2f98c34400": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "c85f88b833e50490": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-a1fce20e35",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 134.0
   }
 }
