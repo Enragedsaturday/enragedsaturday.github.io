@@ -1,0 +1,272 @@
+{
+  "packs": [
+    {
+      "group_id": "_overhaul2/lake/cases/United States v. Place.json",
+      "reviewed": [
+        {
+          "assertion_id": "54dbcb1329eb0f7c",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached slip is the O'Connor majority in 'United States v. Place' with official-reporter star pagination *698 through *710, consistent with the case beginning at 462 U.S. 696.",
+            "Official cite '462 U.S. 696 (1983)' matches the record's selected_official; parallel S. Ct./L. Ed. 2d/U.S.L.W./LEXIS cites are internally consistent."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "2673595d7860bc5f",
+          "dimension": "quote_fidelity",
+          "verdict": "refuted",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "Stored pin-707 quote is content-page scaffolding, not opinion text: '(2) Whether the 90-minute seizure ... ## Rule **Dog sniff.** A canine sniff of luggage is unique and not a search:'. It contains markdown ('## Rule', '**Dog sniff.**') and the page Issue line, none of which can appear in a judicial slip. The record's quote_fidelity='mismatch' flag is correct.",
+            "severity": "medium",
+            "proposed_fix": "Replace the stored pin-707 quote with the opinion passage the content page actually renders and anchors at 707 (the 'sui generis' passage), which is verbatim in the cached slip at page 707.",
+            "evidence_quote": "In these respects, the canine sniff is sui generis. We are aware of no other investigative procedure that is so limited both in the manner in which the information is obtained and in the content of the information revealed by the procedure. Therefore, we conclude that the particular course of investigation that the agents intended to pursue here — exposure of respondent's luggage, which was located in a public place, to a trained canine — did not constitute a “search” within the meaning of the Fourth Amendment.",
+            "needs_cl": false,
+            "locator_note": "pinpoints[] pin-707 .quote"
+          },
+          "reasons": [
+            "Stored quote embeds markdown headers/bold ('## Rule', '**Dog sniff.**') and the page's Issue-2 line — impossible in an opinion, so it fails quote fidelity outright.",
+            "The cached slip at p.707 contains the 'sui generis' passage that the content page renders correctly, so the 707 pincite and reader-facing quote are sound; only the record's stored quote string is defective."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "The page-rendered quote and the 707 pincite are faithful; the defect is confined to the record's stored quote field, not the published page."
+          ],
+          "suggested_tightening": "Re-point the pinpoint.quote extractor to capture the anchored blockquote instead of the preceding lead-in scaffolding."
+        },
+        {
+          "assertion_id": "9fa151628f405b70",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "The cached slip contains the quote verbatim spanning two consecutive paragraphs on p.709: 'Under this standard, it is clear that the police conduct here exceeded the permissible limits of a Terry-type investigative stop.' then 'The length of the detention of respondent's luggage alone precludes the conclusion that the seizure was reasonable in the absence of probable cause.'",
+            "Both sentences fall after the *709 marker, matching the ^pin-709 cite; the record's 'mismatch' flag is contradicted by the cached text (only trivial italic/apostrophe normalization differs)."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Record self-flag 'mismatch'/'slip-only' appears spurious (likely the two-paragraph span or quote normalization)."
+          ],
+          "suggested_tightening": "Clear the stale 'mismatch' flag on pin-709 after re-verification against the reporter text."
+        },
+        {
+          "assertion_id": "428b0088e10121b0",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "No disclosed evidence overrules Place; every treatment.edge is 'proposed:true' unadjudicated citator output, several facially impossible (e.g., 'Scott v. Harris'/'United States v. Sharpe' tagged 'overruled' Place).",
+            "The scope_note account (Caballes applied it; Jardines bounded it at curtilage; Sharpe/Rodriguez refined duration) is coherent and consistent with the cached slip's own footnote 10 declining 'any outside time limitation for a permissible Terry stop.'"
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Definitive currency as of 2026-06-30 ultimately needs citator confirmation; the proposed negative edges are unadjudicated candidates, not confirmed treatment."
+          ],
+          "suggested_tightening": null
+        }
+      ],
+      "notes": "1 refuted (pin-707 garbled stored quote); pin-709 record 'mismatch' flag disproven by cached slip."
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/United States v. Porter.json",
+      "reviewed": [
+        {
+          "assertion_id": "7f9c428dfe348b84",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Record status is 'under_review', treatment.field_i_validity is 'unverified', edges are empty, and composite_basis is 'unverified' — an honest non-claim that asserts no legal/currency proposition and therefore cannot be refuted on the merits.",
+            "The assertion scope_note ('Frontier stub: treatment/progeny intentionally not derived until S6 promotion') matches the lake record verbatim."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "scope_note says 'not derived until S6 promotion' but provenance.s6_promotion shows the record is already S6-promoted and (per the content-page comment) awaiting S9 — trivial staleness in a non-load-bearing stub note, not affecting the correct 'unverified' status."
+          ],
+          "suggested_tightening": "Update the stub scope_note to name S9 (not S6) as the pending promotion gate."
+        }
+      ],
+      "notes": "Single assertion; honestly-labeled unverified frontier stub."
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/United States v. Ramirez.json",
+      "reviewed": [
+        {
+          "assertion_id": "3792d21edf81aef0",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached slip is the Rehnquist majority in 'United States v. Ramirez' with star pagination *68 through *74, consistent with the case beginning at 523 U.S. 65.",
+            "Official cite '523 U.S. 65 (1998)' matches the record; parallel S. Ct./L. Ed. 2d/LEXIS cites are internally consistent."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "3f38399d27a0329f",
+          "dimension": "quote_fidelity",
+          "verdict": "refuted",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "Stored pin-68 quote is content-page scaffolding, not opinion text: '--- # United States v. Ramirez ... ## Background ... ## Issue ... ## Rule No.'. It contains markdown ('---', '#', '## Background/Issue/Rule') that cannot appear in a slip. The record's quote_fidelity='mismatch' flag is correct.",
+            "severity": "medium",
+            "proposed_fix": "Replace the stored pin-68 quote with the opinion passage the page renders (bracket-elided) at 68: 'whether the Fourth Amendment holds officers to a higher standard ... when a no-knock entry results in the destruction of property. We hold that it does not.'",
+            "evidence_quote": "In this ease, we must decide whether the Fourth Amendment holds officers to a higher standard than this when a “no-knoek” entry results in the destruction of property. We hold that it does not.",
+            "needs_cl": false,
+            "locator_note": "pinpoints[] pin-68 .quote"
+          },
+          "reasons": [
+            "Stored quote is markdown page chrome ('---', '#', '## Background/Issue/Rule'), impossible in an opinion, so it fails quote fidelity outright.",
+            "The cached slip p.68 contains 'whether the Fourth Amendment holds officers to a higher standard ... when a no-knock entry results in the destruction of property. We hold that it does not.', which the content page renders correctly — the 68 pincite and reader-facing quote are sound; only the stored quote string is defective."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "The page-rendered quote and 68 pincite are faithful; the defect is confined to the record's stored quote field."
+          ],
+          "suggested_tightening": "Re-point the pinpoint.quote extractor to capture the anchored blockquote rather than the page header/Background/Issue scaffolding."
+        },
+        {
+          "assertion_id": "4a537eb2727d5ee8",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "The cached slip p.71 contains verbatim: 'Under Richards, a no-knoek entry is justified if police have a \"reasonable suspicion\" that knocking and announcing would be dangerous, futile, or destructive to the purposes of the investigation. Whether such a \"reasonable suspicion\" exists depends in no way on whether police must destroy property in order to enter.'",
+            "This matches the pin-71 quote (OCR 'no-knoek' is 'no-knock'; double-to-single quote nesting is standard normalization); the record's 'mismatch' flag is contradicted by the cached text."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "'mismatch' flag likely stems from the OCR artifact ('no-knoek') or quote-nesting normalization."
+          ],
+          "suggested_tightening": "Clear the stale 'mismatch' flag on pin-71."
+        },
+        {
+          "assertion_id": "75decc6b5087c68d",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "The cached slip (paragraph A2r, page 71) contains verbatim: 'Excessive or unnecessary destruction of property in the course of a search may violate the Fourth Amendment, even though the entry itself is lawful and the fruits of the search are not subject to suppression.'",
+            "quote_fidelity='matched' and star_marker='71' are confirmed against the cached text; the text-fragment anchor targets this passage correctly."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "a8b09fca86ea6143",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "The cached slip supports the scope_note precisely: no heightened standard applies to a property-damaging no-knock entry (judged by the Richards reasonable-suspicion test), while 'Excessive or unnecessary destruction of property ... may violate the Fourth Amendment.'",
+            "Negative edges (Southerland 'overruled'; Cortez-Rocha 'criticized') are 'proposed:true' unadjudicated citator FPs — a D.C.-Circuit or Ninth-Circuit case cannot overrule this SCOTUS holding."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Definitive currency as of 2026-06-30 ultimately needs citator confirmation; proposed edges are unadjudicated."
+          ],
+          "suggested_tightening": null
+        }
+      ],
+      "notes": "1 refuted (pin-68 garbled stored quote); pin-71 record 'mismatch' flag disproven by cached slip."
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/United States v. Ramsey.json",
+      "reviewed": [
+        {
+          "assertion_id": "d99033e779462d87",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion header is 'UNITED STATES v. RAMSEY ET AL.', 431 U.S. 606 (1977), No. 76-167, Rehnquist, argued Mar. 30 / decided June 6, 1977, with star pagination *607 through *632.",
+            "Official cite '431 U.S. 606 (1977)' matches the record; parallel S. Ct./L. Ed. 2d/LEXIS cites are internally consistent."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "2c37c74cf1b06e11",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "The phrase 'reasonable cause to suspect' appears verbatim in the opinion; the fragment 'with %22-,reasonable cause to suspect' targets the page-607 occurrence 'Customs officials, acting with \"reasonable cause to suspect\" a violation of customs laws', consistent with star_marker='607'.",
+            "quote_fidelity='matched' is therefore correct for the stored phrase."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "The deep-link fragment lands on the p.607 occurrence, while the content page cites this pin ('pin-612') at 431 U.S. 612-613 for the fuller sentence 'The \"reasonable cause to suspect\" test adopted by the statute is ... a less stringent requirement than that of \"probable cause\"' (verbatim at *612-*613 in the cached text). The quote-fidelity claim itself holds; the anchor-to-pincite pairing is loose."
+          ],
+          "suggested_tightening": "Aim the pin-612 text fragment at the 612-613 sentence it cites rather than the first (p.607) occurrence of the phrase."
+        },
+        {
+          "assertion_id": "f731d533aa67d9fe",
+          "dimension": "quote_fidelity",
+          "verdict": "refuted",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "Stored pin-616 quote is content-page scaffolding, not opinion text: '--- # United States v. Ramsey ... ## Background ... ## Issue ... ## Rule Border searches are reasonable simply because they occur at the border.'. It contains markdown ('---', '#', '## Background/Issue/Rule') that cannot appear in a slip. The record's quote_fidelity='mismatch' flag is correct.",
+            "severity": "medium",
+            "proposed_fix": "Replace the stored pin-616 quote with the opinion passage the page renders at 616: the 'That searches made at the border ... require no extended demonstration' sentence, which is verbatim in the cached opinion after the *616 marker.",
+            "evidence_quote": "That searches made at the border, pursuant to the longstanding right of the sovereign to protect itself by stopping and examining persons and property crossing into this country, are reasonable simply by virtue of the fact that they occur at the border, should, by now, require no extended demonstration.",
+            "needs_cl": false,
+            "locator_note": "pinpoints[] pin-616 .quote"
+          },
+          "reasons": [
+            "Stored quote is markdown page chrome ('---', '#', '## Background/Issue/Rule'), impossible in an opinion, so it fails quote fidelity outright.",
+            "The cached opinion contains the 'That searches made at the border ... require no extended demonstration' passage on page 616 (after the *616 marker), which the content page renders correctly — the 616 pincite and reader-facing quote are sound; only the stored quote string is defective."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "The defect is confined to the record's stored quote field; the page-rendered quote and 616 pincite are faithful."
+          ],
+          "suggested_tightening": "Re-point the pinpoint.quote extractor to capture the anchored Rule blockquote instead of the page header/Background/Issue scaffolding."
+        },
+        {
+          "assertion_id": "56e54acd32231d67",
+          "dimension": "treatment",
+          "verdict": "stands-modified",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "The treatment scope_note is a leaked migration/pipeline placeholder ('Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade') rather than a substantive scope description; it also concedes that as_of_treatment (2026-06-30) is seeded from as_of_content and 'may downgrade' on re-derivation. The good_law status itself is correct and unrefuted.",
+            "severity": "low",
+            "proposed_fix": "Populate scope_note with the substantive treatment description already carried on the content page ('Ramsey anchors the border-search exception ... no negative treatment') and re-derive as_of_treatment through the S2 citator rather than seeding it from as_of_content.",
+            "evidence_quote": "Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade.",
+            "needs_cl": true,
+            "locator_note": "treatment.scope_note / treatment.as_of_treatment for 'United States v. Ramsey'"
+          },
+          "reasons": [
+            "good_law is correct on the merits: Ramsey is the border-search anchor, and all treatment.edges are 'proposed:true' unadjudicated citator FPs (Caballero/Ezeiruaku 'overruled', Cotterman 'abrogated', Irving 'superseded_by_statute' — district/circuit courts cannot overrule this SCOTUS holding).",
+            "But the record's scope_note is a pipeline TODO placeholder that itself flags the currency as seeded and possibly subject to downgrade, so the treatment record is under-derived even though the label survives."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "as_of_treatment 2026-06-30 is seeded from as_of_content, not independently derived; the proposed negative edges are unadjudicated candidates."
+          ],
+          "suggested_tightening": "Replace the seed placeholder with a real scope note and confirm currency via citator re-derivation."
+        }
+      ],
+      "notes": "1 refuted (pin-616 garbled stored quote); 1 stands-modified (treatment scope_note is a leaked pipeline placeholder, though good_law is correct)."
+    }
+  ]
+}
