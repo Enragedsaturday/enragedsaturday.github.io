@@ -1,0 +1,289 @@
+{
+  "packs": [
+    {
+      "group_id": "_overhaul2/lake/cases/Stoner v. California.json",
+      "lens": "diversity",
+      "reviewed": [
+        {
+          "assertion_id": "0fd854acd6bd9c0d",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached slip header confirms '376 U.S. 483 (1964)' STONER v. CALIFORNIA at /opinion/106777/ — official cite and case identity match the record's display and official selection.",
+            "Parallels (84 S.Ct. 889; 11 L.Ed.2d 856; 1964 U.S. LEXIS 1579) are cluster.citations[] metadata not present in the disclosed U.S.-reporter text, but the controlling official cite is verbatim-confirmed."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Parallel/neutral cites not independently confirmable from the disclosed opinion text (cluster metadata only)."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "7653d1cedde46ad1",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Quote 'only the petitioner could waive by word or deed, either directly or through an agent,' appears verbatim at 376 U.S. 489 (source: 'It was a right, therefore, which only the petitioner could waive by word or deed, either directly or through an agent.').",
+            "Passage sits after the *489 star-pagination, so the pin-489 pincite is correct.",
+            "Payload 'quote_fidelity: mismatch' is a false positive (only a trailing comma vs. sentence period at the fragment boundary)."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "8be466d66eff8ca4",
+          "dimension": "quote_fidelity",
+          "verdict": "stands-modified",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "Inventory payload 'quote' for pin-490 is an extraction artifact: it captured the content page's preceding section prose ('...Officers searched the room and seized eyeglasses, a jacket, and a pistol... ## Issue ... ## Rule No. A hotel guest enjoys full Fourth Amendment protection in the room.') rather than the opinion passage actually anchored at ^pin-490.",
+            "severity": "low",
+            "proposed_fix": "Re-anchor the inventory quote to the genuine pin-490 passage ('No less than a tenant of a house... That protection would disappear if it were left to depend upon the unfettered discretion of an employee of the hotel.'), which is verbatim-faithful to 376 U.S. at 490 (page uses an ellipsis to elide the McDonald cite and elides the Johnson cite between sentences).",
+            "evidence_quote": "No less than a tenant of a house, or the occupant of a room in a boarding house, McDonald v. United States, 335 U. S. 451, a guest in a hotel room is entitled to constitutional protection against unreasonable searches and seizures. Johnson v. United States, 333 U. S. 10. That protection would disappear if it were left to depend upon the unfettered discretion of an employee of the hotel.",
+            "needs_cl": false,
+            "locator_note": "Cached opinion *490 star (source paragraph); content page line ^pin-490."
+          },
+          "reasons": [
+            "The genuine content-page quote at ^pin-490 is verbatim-faithful to 376 U.S. at 490 and correctly pincited; the defect is confined to the inventory's captured quote string, not the wiki page.",
+            "Page assertion survives; only the assertion record needs modification."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "If the payload quote is taken literally it will not match the opinion — re-anchor before any automated fidelity gate."
+          ],
+          "suggested_tightening": "Fix the extractor window so quote_pinpoint payloads capture the quoted passage at the anchor, not the preceding page prose."
+        },
+        {
+          "assertion_id": "df89b1bc64fe04d7",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Quote 'the rights protected by the Fourth Amendment are not to be eroded by strained applications of the law of agency or by unrealistic doctrines of \"apparent authority.\"' appears verbatim at 376 U.S. 488 (source: 'Our decisions make clear that the rights protected by the Fourth Amendment are not to be eroded by strained applications of the law of agency or by unrealistic doctrines of \"apparent authority.\"').",
+            "Passage follows the *488 star-pagination — pincite 488 correct.",
+            "Payload 'mismatch' is a false positive from the nested single-quote adaptation of \"apparent authority\"."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "56fd72bd97861b58",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": false,
+          "defect": null,
+          "reasons": [
+            "Disclosed evidence is only the 1964 opinion; it confirms the substantive holding (a hotel clerk cannot consent to a current guest's room) but carries no citator/subsequent-treatment data, so 'good law as of 2026-06-30' cannot be affirmatively certified from disclosed evidence.",
+            "Nothing in the disclosed opinion contradicts good-law status; the scope-note's Illinois v. Rodriguez apparent-authority distinction is forward-looking and not verifiable here. Not refuted (no fabricated defect), not certified (currency uncheckable)."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Treatment currency (2026) rests on citator data not inlined in this pack."
+          ],
+          "suggested_tightening": null
+        }
+      ],
+      "notes": "5/5 reviewed. Existence + 2 quotes stand; pin-490 payload is an extractor artifact (page quote itself faithful) -> stands-modified; treatment good-law currency not verifiable from opinion-only evidence."
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/Stovall v. Denno.json",
+      "lens": "diversity",
+      "reviewed": [
+        {
+          "assertion_id": "5f219475b8dfa030",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached header confirms '388 U.S. 293 (1967)' STOVALL v. DENNO, WARDEN at /opinion/107488/ — official cite and identity match.",
+            "Parallels (87 S.Ct. 1967; 18 L.Ed.2d 1199; 1967 U.S. LEXIS 1087) are cluster metadata, not present in the disclosed U.S.-reporter text."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Parallel/neutral cites not confirmable from disclosed text."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "2250b524addfdeb3",
+          "dimension": "quote_fidelity",
+          "verdict": "stands-modified",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "Inventory payload 'quote' for pin-302 is an extraction artifact: it captured the page front-matter/Background/Issue/Rule prose up to 'The claim asks whether', not the opinion passage anchored at ^pin-302.",
+            "severity": "low",
+            "proposed_fix": "Re-anchor to the genuine pin-302 quote ('...the confrontation conducted in this case was so unnecessarily suggestive and conducive to irreparable mistaken identification that he was denied due process of law. This is a recognized ground of attack upon a conviction independent of any right to counsel claim.'), which is faithful to 388 U.S. at 302.",
+            "evidence_quote": "the confrontation conducted in this *302 case was so unnecessarily suggestive and conductive to irreparable mistaken identification that he was denied due process of law. This is a recognized ground of attack upon a conviction independent of any right to counsel claim.",
+            "needs_cl": false,
+            "locator_note": "Cached opinion *302 star (Part II); content page ^pin-302."
+          },
+          "reasons": [
+            "Genuine page quote at ^pin-302 is faithful to 388 U.S. at 302 and correctly pincited; the defect is confined to the inventory payload string, not the page."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Cached CL source reads 'conductive' where the page (correctly) reads 'conducive' — an obvious source-side OCR variant; the page's 'conducive' is the canonical reporter word, so this is not a page defect but should be whitelisted before any strict char-level fidelity gate."
+          ],
+          "suggested_tightening": "Fix the extractor anchor window; when char-diffing, whitelist obvious source-side OCR variants such as conductive/conducive."
+        },
+        {
+          "assertion_id": "bf5a6f26a87aa6bf",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Quote 'a claimed violation of due process of law in the conduct of a confrontation depends on the totality of the circumstances surrounding it.' appears verbatim at 388 U.S. 302 (source: 'However, a claimed violation of due process of law in the conduct of a confrontation depends on the totality of the circumstances surrounding it, and the record in the present case reveals...').",
+            "Passage is on page 302 (before the *303 star) — 'Id.' pincite to 302 correct.",
+            "Payload 'mismatch' is a false positive (fragment ends with a period where the source continues with a comma)."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "9bbaf957a35860b3",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": false,
+          "defect": null,
+          "reasons": [
+            "Disclosed 1967 opinion confirms the due-process suggestiveness holding exists (388 U.S. 302) but carries no citator/subsequent-treatment data, so 2026 good-law currency cannot be affirmatively certified from disclosed evidence.",
+            "Nothing disclosed contradicts good-law; the scope-note's Biggers/Manson reliability development is forward-looking and not verifiable here. Not refuted, not certified."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Currency (2026) rests on citator data not inlined; the page notes the Wade/Gilbert non-retroactivity holding was superseded while the DP identification holding remains — coherent but uncheckable here."
+          ],
+          "suggested_tightening": null
+        }
+      ],
+      "notes": "4/4 reviewed. Existence + pin-302a stand; pin-302 payload is an extractor artifact (page quote faithful, source-side 'conductive/conducive' OCR noted) -> stands-modified; treatment currency not verifiable from opinion-only evidence."
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/Strickler v. Greene.json",
+      "lens": "diversity",
+      "reviewed": [
+        {
+          "assertion_id": "4203f09e3acfdaf2",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached header confirms '527 U.S. 263 (1999)' STRICKLER v. GREENE, WARDEN, No. 98-5864, decided June 17, 1999, at /opinion/118307/ — official cite and identity match.",
+            "Parallels (119 S.Ct. 1936; 144 L.Ed.2d 286; 1999 U.S. LEXIS 4191) are cluster metadata."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Parallel/neutral cites not confirmable from disclosed text."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "147a3c5b45c85383",
+          "dimension": "quote_fidelity",
+          "verdict": "stands-modified",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "Inventory payload 'quote' for pin-281 is an extraction artifact: it captured the page front-matter/Background/Issue/Rule prose ('...## Rule The Court set out the elements of a Brady violation.'), not the opinion passage anchored at ^pin-281.",
+            "severity": "low",
+            "proposed_fix": "Re-anchor to the genuine pin-281 quote ('There are three components of a true Brady violation: The evidence at issue must be favorable to the accused, either because it is exculpatory, or because it is impeaching; that evidence must have been suppressed by the State, either willfully or inadvertently; and prejudice must have ensued.'), which is verbatim-faithful and spans 527 U.S. 281-282.",
+            "evidence_quote": "There are three components of a true Brady  violation: The evidence at issue must be favorable to the accused, *282 either because it is exculpatory, or because it is impeaching; that evidence must have been suppressed by the State, either willfully or inadvertently; and prejudice must have ensued.",
+            "needs_cl": false,
+            "locator_note": "Cached opinion crosses the *282 star mid-sentence (after 'favorable to the accused,'); content page ^pin-281, pincite '281-282'."
+          },
+          "reasons": [
+            "Genuine page quote at ^pin-281 is verbatim-faithful; the *282 star falls after 'favorable to the accused,' so the 281-282 span pincite is correct.",
+            "Defect confined to the inventory payload, not the page."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Payload quote will not match the opinion if taken literally; re-anchor before any fidelity gate."
+          ],
+          "suggested_tightening": "Fix the extractor anchor window so quote payloads capture the pinned passage."
+        },
+        {
+          "assertion_id": "3600816a74599fb6",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Quote 'strictly speaking, there is never a real \"Brady violation\" unless the nondisclosure was so serious that there is a reasonable probability that the suppressed evidence would have produced a different verdict.' appears verbatim at 527 U.S. 281 (source paragraph beginning 'This special status explains...', before the *282 star).",
+            "'Id. at 281' pincite correct.",
+            "Payload 'mismatch' is a false positive from the single-quote/italic markup adaptation of 'Brady violation'."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "4dd0281d0128c6cd",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": false,
+          "defect": null,
+          "reasons": [
+            "Disclosed 1999 opinion confirms the three-component Brady framework exists (527 U.S. 281-282) but carries no citator data, so 2026 good-law currency cannot be affirmatively certified from disclosed evidence.",
+            "scope_note is migration boilerplate ('Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade') and makes no substantive treatment claim to refute; nothing disclosed contradicts good-law. Not refuted, not certified."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Currency (2026) rests on citator data not inlined; the scope-note itself flags a possible future downgrade."
+          ],
+          "suggested_tightening": null
+        }
+      ],
+      "notes": "4/4 reviewed. Existence + pin-281a stand; pin-281 payload is an extractor artifact (page quote faithful, 281-282 span correct) -> stands-modified; treatment currency not verifiable from opinion-only evidence."
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/Tanzin v. Tanvir.json",
+      "lens": "diversity",
+      "reviewed": [
+        {
+          "assertion_id": "75cc5ab65f300b4f",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached slip opinion confirms the case exists: 'TANZIN ET AL. v. TANVIR ET AL.', No. 19-71, Argued October 6, 2020 - Decided December 10, 2020, RFRA, certiorari to the Second Circuit — identity matches the record.",
+            "Volume/term (592 U.S., OCTOBER TERM 2020) are consistent; the record transparently flags slip-only status and does not assert U.S.-reporter page equality (per S2 A3)."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Bound-reporter page '43' is not confirmable from the disclosed slip text (slip cite is '592 U. S. ____'); 592 U.S. 43 / 141 S.Ct. 486 / 208 L.Ed.2d 295 come from cluster.citations[] metadata, not the inlined slip.",
+            "Header comment names opinion 4641442 while frontmatter opinion_id is null — cosmetic provenance mismatch, not an existence defect."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "f64d9d8b7eb49946",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Assertion correctly self-declares field_i_validity='unverified' with null as_of dates — it makes NO affirmative treatment claim, consistent with the page's Unverified banner and the record's lake.status 'under_review'.",
+            "A frontier stub that intentionally defers treatment/progeny derivation until S6 promotion is the honest handling; there is no treatment proposition to refute."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "By design, no citator/progeny verification has run; S9 promotion must complete two-key verification before any good-law claim."
+          ],
+          "suggested_tightening": null
+        }
+      ],
+      "notes": "2/2 reviewed. Existence stands (identity confirmed from slip; bound page 43 slip-only, disclosed). Treatment 'unverified' stub correctly makes no claim -> stands."
+    }
+  ]
+}

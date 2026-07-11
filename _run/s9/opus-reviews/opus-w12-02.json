@@ -1,0 +1,312 @@
+{
+  "packs": [
+    {
+      "group_id": "_overhaul2/lake/cases/State v. Mitcham.json",
+      "reviewed": [
+        {
+          "assertion_id": "03a5081424775da2",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached slip opinion confirms the case is real: 'SUPREME COURT OF THE STATE OF ARIZONA / STATE OF ARIZONA v. IAN MITCHAM ... Filed December 17, 2024' (Timmer, C.J.), matching record name/court/date.",
+            "The reporter cite '559 P.3d 1099' is carried in the disclosed cluster.citations[] and is consistent with a Dec-2024 Arizona Supreme Court opinion; parallel 258 Ariz. 435 appears in the page header.",
+            "Nothing in disclosed evidence refutes existence of the case or the cite."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Slip opinion text does not print the 559 P.3d 1099 reporter pagination, so the exact P.3d page is not independently confirmable from the inlined text (only from cluster.citations metadata).",
+            "Docket discrepancy: record identity.docket = 'CR-23-0238-PR' but the cached slip op caption reads 'No. CR-23-0236-PR' (0238 vs 0236) — almost certainly a single-digit typo since name+court+date match, but worth correction."
+          ],
+          "suggested_tightening": "Reconcile the docket field (0238 vs 0236) against the slip op caption."
+        },
+        {
+          "assertion_id": "35ee42d1f8e32577",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Opinion ¶36 reads: 'the distinction ... rests on whether the evidence was discovered through an independent, untainted source (independent source exception), or whether the evidence would have been discovered through an independent, untainted source despite the illegal search (inevitable discovery exception).'",
+            "The page quote reproduces those words verbatim, eliding only the two parenthetical labels with '...' and '....' — a faithful, properly-marked ellipsis quotation.",
+            "The lake's 'mismatch'/'slip-only' flag is a false negative from the elided parentheticals; the quote is accurate."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Pincite is to Arizona paragraph numbering (¶36), which the cached opinion confirms; no reporter page verification available (expected for a slip opinion)."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "61cdf5efdd859394",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Opinion ¶37 reads: 'the police would have inevitably obtained Mitcham's DNA profile from an independent, untainted source despite the warrantless search of the second vial of blood taken after the 2015 DUI arrest.'",
+            "The page quote reproduces those words verbatim, eliding only the tail 'taken after the 2015 DUI arrest.' with '....' — faithful ellipsis quotation.",
+            "The lake 'mismatch' flag is a false negative; quote fidelity is intact."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Paragraph pincite (¶37) confirmed in cached text; no S.E./P.3d page to cross-check (slip-only)."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "d6bbdd8469334276",
+          "dimension": "quote_fidelity",
+          "verdict": "stands-modified",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "The stored pin-34 quote is the wiki page's own header/preamble ('--- # State v. Mitcham *258 Ariz. 435 ...* ... ## Rule The Court distinguished ...'), a quote-harvest artifact — this text is NOT in the opinion. The reader-facing quote actually anchored at ^pin-34, however, is verbatim-correct.",
+            "severity": "low",
+            "proposed_fix": "Replace the stored pin-34 quote string with the actual quoted sentence ('The \"independent source\" exception permits the admission of evidence discovered during or because of an unlawful search if the evidence was also obtained independently from activities that were tainted by the illegality.'), which matches opinion ¶34 verbatim; do NOT alter the reader-facing quote.",
+            "evidence_quote": "The “independent source” exception permits the admission of evidence discovered during or because of an unlawful search if the evidence was also obtained independently from activities that were tainted by the illegality.",
+            "needs_cl": false,
+            "locator_note": "Opinion ¶34 (cached text); harvest artifact affects only the lake pinpoint record, not the published page."
+          },
+          "reasons": [
+            "The payload quote for pin-34 is page-header boilerplate (same systematic first-block harvest bug seen across the pack), which does not appear in the opinion.",
+            "The genuine ^pin-34 quote on the content page ('The \"independent source\" exception permits ...') is a verbatim match to opinion ¶34.",
+            "So the pincite is sound and the reader-facing quote is faithful; only the stored harvest string is defective."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "A naive 'delete the quote' remediation would break a genuinely correct reader-facing quotation — the fix must be a replacement of the stored string only."
+          ],
+          "suggested_tightening": "Fix the S2 quote-harvester so the first block-reference pinpoint on a page stops capturing the page preamble."
+        },
+        {
+          "assertion_id": "38698018a982faf1",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": false,
+          "defect": null,
+          "reasons": [
+            "field_i_validity good_law is a migration-seed (composite_basis 'migration-seed'); all three derivation lanes show reviewed:0 and proposed_negative_events:0, and edges are empty.",
+            "No negative treatment is disclosed for this Dec-2024 case (citation_count 2), so good_law is not refuted by any inlined evidence; for a very recent case good_law is the sound default.",
+            "Currency cannot be independently derived from disclosed data (no scan was run), so I do not fabricate either a defect or a positive currency confirmation."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "as_of_treatment 2026-06-30 is nominal: it is seeded from the old as_of, not earned by an actual treatment scan (lanes reviewed:0). The scope_note transparently discloses this ('S2 derivation re-derives and may downgrade')."
+          ],
+          "suggested_tightening": "Run the S2 treatment re-derivation (or mark as_of_treatment provisional) before certifying the 'good' badge as current."
+        }
+      ]
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/State v. Tarantino.json",
+      "reviewed": [
+        {
+          "assertion_id": "08bc03f591384b4f",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion confirms the case is real: 'EXUM, Chief Justice' majority, State v. Tarantino, North Carolina Supreme Court, affirming the Court of Appeals in light of United States v. Dunn.",
+            "All three disclosed cites (368 S.E.2d 588; 322 N.C. 386; 1988 N.C. LEXIS 373) are consistent with a 1988 N.C. Supreme Court decision; the reader-facing header shows '322 N.C. 386, 368 S.E.2d 588 (1988)' correctly.",
+            "Existence of the case and cites is not refutable from disclosed evidence."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "official_selection_present:false and official/display are null — no structured primary cite is designated (frontmatter citation is empty; all three cites sit in parallel). Reader-facing citation is nonetheless correct. Natural primary would be 322 N.C. 386 (state reporter).",
+            "The cached opinion star-paginates N.C. Reports (labels 388-393); S.E.2d page numbers used in pincites cannot be cross-checked against those N.C. labels."
+          ],
+          "suggested_tightening": "Populate an official-cite selection (322 N.C. 386 as primary, 368 S.E.2d 588 parallel)."
+        },
+        {
+          "assertion_id": "23d2485cfc0ce8e8",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Opinion reads: '... the cracks near the porch floor required him to make a probing examination in order to see inside. Under these circumstances defendant's reasonable expectation of privacy remained intact.'",
+            "The page quote reproduces those words verbatim; the '[,]' bracket signals the editorial change of the period to a comma and '...' elides 'Under these circumstances' — proper editorial quotation.",
+            "The lake 'mismatch' flag is a false negative (from the bracketed edit/ellipsis); fidelity is intact."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Pincite '592' is to S.E.2d pagination; the quoted passage sits on N.C. Reports page 391 in the cached text (before the *392 marker), so the S.E.2d page 592 cannot be independently confirmed from the disclosed N.C. star markers."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "59ecba9ad35b6f03",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Opinion reads verbatim: 'Nothing in the Supreme Court's Dunn decision suggests that an expectation of privacy is eliminated by quarter-inch cracks in the back wall of an otherwise sealed building.'",
+            "The page quote matches exactly (the *Dunn* markdown italics correspond to the opinion's <em>Dunn</em>).",
+            "The lake 'mismatch' flag is a false negative (italics/citation-span markup); fidelity is intact."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Pincite '591–592' is S.E.2d; the sentence sits on N.C. page 391 in the cached text, so the exact S.E.2d span is not cross-checkable from disclosed N.C. star markers."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "cf7056138e6b2692",
+          "dimension": "quote_fidelity",
+          "verdict": "stands-modified",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "The stored pin-591 quote is the wiki page header/preamble ('--- # State v. Tarantino ... ## Rule Small gaps do not by themselves defeat ...'), a harvest artifact absent from the opinion. The reader-facing quote actually anchored at ^pin-591 is verbatim-correct.",
+            "severity": "low",
+            "proposed_fix": "Replace the stored pin-591 quote string with the real quoted sentences ('This expectation was not unreasonable even though there were small cracks between the boards in the building's back wall. The presence of tiny cracks near the floor on the interior wall of a second-floor porch is not the kind of exposure which serves to eliminate a reasonable expectation of privacy.'), which match the opinion verbatim; do not alter the reader-facing quote.",
+            "evidence_quote": "This expectation was not unreasonable even though there were small cracks between the boards in the building’s back wall. The presence of tiny cracks near the floor on the interior wall of a second-floor porch is not the kind of exposure which serves to eliminate a reasonable expectation of privacy.",
+            "needs_cl": false,
+            "locator_note": "Cached opinion paragraph b434-8 (N.C. page 390); artifact affects only the lake pinpoint record."
+          },
+          "reasons": [
+            "Payload quote for pin-591 is page-header boilerplate (same systematic first-block harvest bug), not opinion text.",
+            "The genuine ^pin-591 quote on the content page is a verbatim match to the opinion (b434-8).",
+            "Pincite and reader-facing quote are sound; only the stored harvest string is defective."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Remediation must replace, not delete, the stored string, to preserve the correct reader-facing quotation."
+          ],
+          "suggested_tightening": "Fix the first-block-reference quote-harvest bug (recurs across this pack)."
+        },
+        {
+          "assertion_id": "eb34802a610f7f9b",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "The targeted negative lane (lane1_negative, restricted to SCOTUS/NC/NC-App with overrul*/abrogat*/vacat* terms) reviewed 3 and found proposed_negative_events:0 — no negative treatment in the controlling jurisdiction; lane3_recency also 0.",
+            "good_law for a 1988 N.C. Supreme Court decision cited 17 times, with a clean in-jurisdiction negative lane, is well supported and not refuted.",
+            "The lane2 'overruled' edge (People v. Hagestedt, 2025 IL 130286) is facially impossible as negative treatment — an Illinois decision cannot overrule a North Carolina Supreme Court case — so it is a cross-jurisdictional extraction false positive, not a downgrade."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "7 un-adjudicated proposed lane2 negative edges exist (all proposed:true): one cross-jurisdiction 'overruled' FP (Hagestedt 2025 IL) plus several persuasive-only 'questioned' signals (WA, IL, PA, and two N.C. App. cases). These are candidate signals, not adopted; they do not unseat NC good law but should be dispositioned.",
+            "field_i_validity is still a migration-seed rather than a derived value."
+          ],
+          "suggested_tightening": "S2 should adjudicate the proposed lane2 edges and explicitly clear the Hagestedt 'overruled' cross-jurisdictional false positive before it could ever be adopted."
+        }
+      ]
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/State v. Volle.json",
+      "reviewed": [
+        {
+          "assertion_id": "2fb1494b255a5a3d",
+          "dimension": "quote_fidelity",
+          "verdict": "stands-modified",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "The stored pin-13 quote is the wiki page header/preamble ('--- # State v. Volle ... ## Rule A digital warrant need not dictate the search method ...'), a harvest artifact absent from the opinion. The reader-facing quote anchored at ^pin-13 is verbatim-correct and correctly attributed to Volle's own prose on slip op. 13.",
+            "severity": "low",
+            "proposed_fix": "Replace the stored pin-13 quote string with the real sentence ('Because relevant information may be stored anywhere on such a device, it is ordinarily impractical—and sometimes impossible—for a warrant to prescribe in advance how officers must locate that data.'), which matches the opinion verbatim; do not alter the reader-facing quote.",
+            "evidence_quote": "Because relevant information may be stored anywhere on such a device, it is ordinarily impractical—and sometimes impossible—for a warrant to prescribe in advance how officers must locate that data.",
+            "needs_cl": false,
+            "locator_note": "Cached opinion slip op. page 13; the sentence is Volle's own restatement of Burgess ('576 F.3d at 1094' is a trailing support cite, not a quotation attribution), so quoting it to Volle slip op. 13 is correct."
+          },
+          "reasons": [
+            "Payload quote for pin-13 is page-header boilerplate (same systematic first-block harvest bug), not opinion text.",
+            "The genuine ^pin-13 quote matches the opinion verbatim and appears on slip op. page 13 as Volle's own words (the opinion does not put it in quotation marks; it cites Burgess as support afterward).",
+            "Pincite ('slip op., at 13') and reader-facing quote are sound; only the stored harvest string is defective."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "The underlying proposition originates with United States v. Burgess, 576 F.3d 1078, 1094 (10th Cir. 2009); Volle states it in its own words and cites Burgess. Attribution to Volle is accurate, but a purist citation could add '(citing Burgess)'.",
+            "Fix must replace, not delete, the stored string."
+          ],
+          "suggested_tightening": "Fix the first-block-reference quote-harvest bug (recurs across this pack)."
+        },
+        {
+          "assertion_id": "cc967dcfc2f36e5e",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Opinion (slip op. 13–14) reads: 'Thus, even though investigators may need to review broad portions of a device's contents to locate relevant material, the warrant must still include a meaningful limiting principle tying the authorized seizure to evidence of a specified offense. See United States v. Palms ...'",
+            "The page quote reproduces those words verbatim (dropping only the leading 'Thus,'); it is Volle's own statement (a 'See' support cite follows), correctly attributed via 'Id.' to slip op. 13.",
+            "The lake 'mismatch' flag is a false negative (the mid-sentence page-break '13' and the 'Thus,' prefix); fidelity is intact."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "The sentence spans the slip op. 13→14 page break in the cached text; 'Id.' (slip op. 13) is correct for its start."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "b3b8293a3796dfd2",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": false,
+          "defect": null,
+          "reasons": [
+            "field_i_validity good_law is a migration-seed; all derivation lanes show reviewed:0, edges are empty, and progeny citation_count is 0.",
+            "This is a brand-new decision (Kan. Sup. Ct., 2025-12-12) with no citing opinions, so good_law is the only sensible status and nothing in disclosed evidence refutes it.",
+            "Currency cannot be independently derived from disclosed data (no scan, no progeny), so I do not fabricate a defect or a positive currency confirmation."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "as_of_treatment 2026-06-30 is a seed for a ~6-month-old case with zero indexed progeny; re-derivation is expected once progeny accrues (scope_note discloses this).",
+            "Record status is 'under_review' and identity_checked:false."
+          ],
+          "suggested_tightening": "Re-derive treatment once citing opinions appear; keep as_of_treatment marked provisional until then."
+        }
+      ]
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/State v. Weaver.json",
+      "reviewed": [
+        {
+          "assertion_id": "771b8f55c10a8942",
+          "dimension": "existence",
+          "verdict": "stands-modified",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "Existence is confirmed, but the official/display citation is mis-selected: the record picks the neutral cite '2011 Tex. Crim. App. LEXIS 1320' as selected_official/display (and the frontmatter 'citation' field carries the LEXIS cite), whereas the correct Texas primary is the S.W.3d reporter, 349 S.W.3d 521.",
+            "severity": "low",
+            "proposed_fix": "Select 349 S.W.3d 521 as the official/display cite (S.W.3d reporter primary), with 2011 Tex. Crim. App. LEXIS 1320 and 2011 WL 4715178 as parallels; update the frontmatter 'citation' field accordingly.",
+            "evidence_quote": "lake selected the neutral cite 2011 Tex. Crim. App. LEXIS 1320 as official — flagged for S2 re-selection (S.W.3d reporter is the correct primary). S9 promotes.",
+            "needs_cl": false,
+            "locator_note": "Self-disclosed in the content-page header comment; the reader-facing header and Sources already display 349 S.W.3d 521 correctly, so only the structured official-selection/frontmatter citation is wrong."
+          },
+          "reasons": [
+            "Cached opinion confirms the case is real: 'COCHRAN, J., delivered the opinion of the Court in which MEYERS, PRICE, WOMACK, JOHNSON and ALCALA, JJ., joined,' Court of Criminal Appeals of Texas; the ^pin-523 holding sentence appears verbatim in the cached text.",
+            "All three disclosed cites (349 S.W.3d 521; 2011 Tex. Crim. App. LEXIS 1320; 2011 WL 4715178) identify this same real 2011 decision.",
+            "Existence is sound; the only defect is the wrong primary-cite selection, which the record itself flags for S2 re-selection."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "docket PD-1635-10 is not printed in the cached opinion excerpt, but identity (name/court/judges/year/SPA PDR posture) is otherwise fully confirmed."
+          ],
+          "suggested_tightening": "Complete the S2 official-cite re-selection to make 349 S.W.3d 521 primary."
+        },
+        {
+          "assertion_id": "14ebbd28c8f35346",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "field_i_validity is 'unverified' with as_of_content/as_of_treatment null and composite_basis 'unverified' — the record makes no currency claim to refute.",
+            "scope_note honestly discloses this is a 'Frontier stub: treatment/progeny intentionally not derived until S6 promotion,' and the page renders under the ⚪ Unverified banner.",
+            "An accurate, self-disclosed 'unverified' status is internally consistent and cannot be refuted for over-claiming currency."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Treatment/progeny remain intentionally underived; a real treatment derivation is owed at S6 promotion before any 'good' badge could be asserted."
+          ],
+          "suggested_tightening": "Derive treatment at S6 promotion and replace the Unverified banner with a derived status."
+        }
+      ]
+    }
+  ]
+}
