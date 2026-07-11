@@ -1,0 +1,253 @@
+{
+  "packs": [
+    {
+      "group_id": "_overhaul2/lake/cases/United States v. Kolsuz.json",
+      "reviewed": [
+        {
+          "assertion_id": "68ab4d1d4b4a1714",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached slip opinion confirms the case exists: No. 16-4687, 4th Cir., 'HAMZA KOLSUZ', Harris J. (Motz joining; Wilkinson concurring), Decided May 9, 2018 / Amended May 18, 2018 — matching identity (cluster 4499413, date_decided 2018-05-18, docket 16-4687).",
+            "Official cite '890 F.3d 133' (vol 890 / F.3d / p.133, type 1) is well-formed and corroborated by two disclosed web_legs (Google Scholar and FindLaw, both '890 F.3d 133', checked 2026-07-07); official_selection_present=true."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Slip opinion itself does not print the F.3d reporter page; the reporter cite rests on the disclosed dual web-leg corroboration rather than the opinion text."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "a264e562ab0e45c1",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "field_i_validity='unverified' is an honest null-claim: an under_review frontier stub that asserts no positive treatment/currency proposition, so there is nothing to refute.",
+            "Consistent with the disclosed record (status under_review, composite_basis 'unverified', no derivation edges) and the page's explicit '⚪ Unverified — subsequent treatment not yet machine-verified' banner."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Prose 'Treatment & subsequent history' makes doctrinal framing claims (Aigbekaen border-nexus; 9th/4th vs 11th split) that remain outside the machine-verified treatment field until S9 promotion."
+          ],
+          "suggested_tightening": null
+        }
+      ]
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/United States v. Leary.json",
+      "reviewed": [
+        {
+          "assertion_id": "5908f017c89cb709",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion confirms the case: 'United States v. Leary', 10th Cir., Stephen H. Anderson C.J., F.L. Kleinberg & Co., Export Administration Act warrant-overbreadth suppression — matching identity (cluster 505922, identity_checked, party_name_in_text=true).",
+            "Official cite '846 F.2d 592' (type 1) plus parallel '1988 U.S. App. LEXIS 5755' and '1988 WL 39811' are well-formed; star-pagination in the cached text (595-610) is consistent with a reporter case beginning at 592."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Benign serialization quirk: the 846 F.2d 592 entry in citations.all[] carries selected_official=false while the official object carries selected_official=true; display and official_selection are correct."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "2914c83409640b97",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Page quote at pin-610 matches the opinion verbatim: cached text reads 'Accordingly, we hold that the \"good faith\" exception is inapplicable in these circumstances and affirm the district court's decision to suppress all of the evidence from the Kleinberg warrant.' (only curly- vs straight-quote glyph difference).",
+            "Quote falls after the *610 star marker, so the 'Id. at 610' pincite is correct; the payload 'mismatch'/'slip-only' flag is a false positive from quote-glyph / slip-vs-star pagination status, not a substantive misquote."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": "Reconcile the extractor's slip-only 'mismatch' flag against the star-paginated CL text so verbatim quotes are not flagged."
+        },
+        {
+          "assertion_id": "3ba308a3cb38de4c",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Page quote at pin-609a matches the opinion verbatim: cached text reads 'We find the warrant so facially deficient in its description of the items to be seized that the executing officers could not reasonably rely on it.'",
+            "Located between the *609 and *610 star markers, confirming the 'Id. at 609' pincite; payload already flags matched / star-verified (star_marker 609, fragment validated)."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "4a16c86c4b1d51c5",
+          "dimension": "quote_fidelity",
+          "verdict": "stands-modified",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "The stored pin-600 quote captured page markdown scaffolding ('...particularity requirement; and (2) whether the [[United States v. Leon]] good-faith exception ... ## Rule No to both. The particularity requirement bars general, exploratory rummaging: it') rather than the actual quoted clause, so it does not string-match the opinion (hence the 'mismatch' flag). The page's rendered quotation is itself faithful and correctly pincited.",
+            "severity": "low",
+            "proposed_fix": "Re-extract the stored pin-600 quote to the actually-quoted clause 'ensures that a search is confined in scope to particularly described evidence relating to a specific crime for which there is demonstrated probable cause' (attributed on-page to Voss v. Bergsgaard); no change to the rendered page text or the 'at 600' pincite is needed.",
+            "evidence_quote": "The particularity requirement [also] ensures that a search is confined in scope to particularly described evidence relating to a specific crime for which there is demonstrated probable cause.",
+            "needs_cl": false,
+            "locator_note": "cached opinion, between *600 and *601 star markers; quoting Voss v. Bergsgaard, 774 F.2d 402, 404"
+          },
+          "reasons": [
+            "Reader-facing page quotation is verbatim-faithful to the opinion at star page 600 and correctly attributed to Voss v. Bergsgaard, so the quote proposition survives.",
+            "Only the internal stored-quote field is malformed (page scaffolding, not opinion text); this is a mechanical extraction artifact, not a fabrication or misquote."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "If a downstream consumer trusts the stored quote field rather than the rendered page, the garbled string would surface."
+          ],
+          "suggested_tightening": "Guard the quote extractor against ingesting markdown headings/wikilinks/frontmatter into pinpoint quote fields."
+        },
+        {
+          "assertion_id": "a90b29935ae806ff",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Page quote at pin-609 matches the opinion verbatim: cached text reads 'A warrant that directs an officer to seize records \"relating to\" violations of the federal export laws offers no such guidelines. The officers were left to their own discretion.' (only curly- vs straight-quote glyph difference).",
+            "Located between the *609 and *610 star markers, confirming the 'Id. at 609' pincite; the payload 'mismatch'/'slip-only' flag is a false positive (quote-glyph / slip-vs-star status), not a real misquote."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "a59b2d7cf5e3c503",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "field_i_validity='good_law' is supported by the disclosed derivation: lane1_negative (targeted overrule/abrogate/supersede/vacate/reverse query restricted to scotus OR ca10) reviewed 23 and returned proposed_negative_events=0 — no negative signal in binding courts.",
+            "The only adverse signals are lane2_top_cited 'proposed'=true edges (e.g. a SCOTUS cert-denial 'McMonagle' tagged 'questioned') carrying an explicit 'R15 treatment audit required' marker — unconfirmed automated top-cited keyword classifications, not confirmed negative treatment; composite_basis='migration-seed' with an honest re-derivation caveat."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "R15 treatment audit is still pending for the 25 proposed lane2 negative edges (including proposed 'overruled'/'abrogated'/'superseded_by_statute' labels on Dahlman, Galpin, Cooper, etc.); if any are confirmed on read, good_law could downgrade."
+          ],
+          "suggested_tightening": "Complete the R15 audit of the 25 proposed lane2 edges before certifying good_law beyond a migration-seed."
+        }
+      ]
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/United States v. Lee.json",
+      "reviewed": [
+        {
+          "assertion_id": "6f036bb79ee4560b",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion confirms the case: 'United States v. Lee', Mr. Justice Brandeis for the Court, Coast Guard / Rum Row seizure of Lee's motor boat, Tariff Act of 1922 & National Prohibition Act, C.A. decision at 14 F.(2d) 400, cert at 273 U.S. 686 — matching identity (cluster 101118, scotus, 1927-05-31, docket 540).",
+            "Official cite '274 U.S. 559' (type 1) plus parallels '47 S. Ct. 746', '71 L. Ed. 1202', '1927 U.S. LEXIS 52' are well-formed; star-pagination *561/*562/*563 in the cached text is consistent with a U.S. Reports case beginning at 559."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Frontmatter carries an anomalous 'circuit: ca6' for a SCOTUS record, but this is not part of the citation assertion (court_level=scotus, cite is a U.S. Reports cite)."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "a17e1ba14c727542",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "field_i_validity='unverified' is an honest null-claim: an under_review frontier stub asserting no positive treatment/currency proposition, so nothing to refute.",
+            "Consistent with the disclosed record (status under_review, composite_basis 'unverified', no derivation) and the page's explicit '⚪ Unverified' banner."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Prose links Lee's sense-enhancement/open-view holding forward to Kyllo; that doctrinal framing is outside the machine-verified treatment field until S9 promotion."
+          ],
+          "suggested_tightening": null
+        }
+      ]
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/United States v. Leon.json",
+      "reviewed": [
+        {
+          "assertion_id": "e34b5c48810c6979",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion confirms the case: 'United States v. Leon', Justice White for the Court, Burbank PD confidential-informant warrant, good-faith exception — matching identity (cluster 111262, lead opinion 9429766, scotus, 1984, docket 82-1771, party_name_in_text=true).",
+            "Official cite '468 U.S. 897' (type 1) plus parallels '104 S. Ct. 3405', '82 L. Ed. 2d 677', '1984 U.S. LEXIS 153' are well-formed; cached text carries the *900/*901/*923 star pagination consistent with a case beginning at 897."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "341f1de8eddb4e49",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Page quote at pin-923 matches the opinion verbatim: cached text reads 'Suppression therefore remains an appropriate remedy if the magistrate or judge in issuing a warrant was misled by information in an affidavit that the affiant knew was false or would have known was false except for his reckless disregard of the truth.' — the stored fragment is a verbatim substring.",
+            "The other three enumerated exceptions the page quotes ('wholly abandoned his judicial role', 'so lacking in indicia of probable cause as to render official belief in its existence entirely unreasonable', 'that the executing officers cannot reasonably presume it to be valid') all appear verbatim in the same paragraph, which follows the *923 marker — confirming the 'Id. at 923' pincite; payload flags matched / star-verified."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "fdcdd54e0045d295",
+          "dimension": "quote_fidelity",
+          "verdict": "stands-modified",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "The stored pin-922 quote captured the entire page markdown header + Background/Issue/Rule scaffolding ('--- # United States v. Leon *468 U.S. 897 (1984)* ... the Court held:') rather than the quoted holding, so it does not string-match the opinion (hence the 'mismatch' flag). The page's rendered quotation is itself faithful and correctly pincited.",
+            "severity": "low",
+            "proposed_fix": "Re-extract the stored pin-922 quote to the actually-quoted holding 'We conclude that the marginal or nonexistent benefits produced by suppressing evidence obtained in objectively reasonable reliance on a subsequently invalidated search warrant cannot justify the substantial costs of exclusion'; no change to the rendered page text or the '468 U.S. at 922' pincite is needed.",
+            "evidence_quote": "We conclude that the marginal or nonexistent benefits produced by suppressing evidence obtained in objectively reasonable reliance on a subsequently invalidated search warrant cannot justify the substantial costs of exclusion.",
+            "needs_cl": false,
+            "locator_note": "cached opinion, para b964-5, immediately before the *923 star marker (i.e., on page 922)"
+          },
+          "reasons": [
+            "Reader-facing page quotation is verbatim-faithful to the opinion on page 922 (the quote precedes the *923 marker), so the quote proposition survives.",
+            "Only the internal stored-quote field is malformed (page scaffolding, not opinion text); mechanical extraction artifact, not a fabrication or misquote."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "A downstream consumer trusting the stored quote field rather than the rendered page would surface the garbled string."
+          ],
+          "suggested_tightening": "Guard the quote extractor against ingesting markdown headings/frontmatter into pinpoint quote fields (same class as Leary pin-600)."
+        },
+        {
+          "assertion_id": "b874911dc347777f",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "field_i_validity='good_law' is well-supported: Leon is the foundational SCOTUS good-faith-exception anchor (9241 citations; 5262 citing opinions), and the disclosed derivation surfaces no confirmed negative treatment — lane1_negative returned only 2 'proposed' (unaudited) snippet hits and lane2/lane3 carry an explicit 'R15 treatment audit required' marker on 'proposed'=true edges.",
+            "composite_basis='migration-seed' with an honest re-derivation caveat; displayed treatment currency is as_of_treatment 2026-06-30."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "R15 treatment audit pending on the proposed lane1/lane2/lane3 negative edges (unaudited snippet keyword hits among thousands of citing opinions).",
+            "Internal inconsistency: treatment.as_of_content='1984-07-05' predates the record's date_decided='1984-09-18'; cannot be resolved from disclosed evidence (cached header shows no decision date) and does not affect the good_law currency claim."
+          ],
+          "suggested_tightening": "Reconcile the as_of_content seed date against date_decided and complete the R15 audit before certifying good_law beyond a migration-seed."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,267 @@
+{
+  "packs": [
+    {
+      "group_id": "_overhaul2/lake/cases/United States v. Lundin.json",
+      "reviewed": [
+        {
+          "assertion_id": "cdb7ba03edf59951",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion (FOR PUBLICATION, Ninth Circuit, filed March 22, 2016, Opinion by Judge W. Fletcher) confirms United States v. Lundin exists and matches identity (cluster 3187682, lead opinion 3187625).",
+            "Official cite '817 F.3d 1151' is internally consistent (F.3d vol 817, 2016, 9th Cir.) and drawn from cluster.citations[]; not fabricated."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Vendor-neutral cites '2016 WL 1104851' and '2016 U.S. App. LEXIS 5236' cannot be independently confirmed from the cached slip text, but they are cluster metadata and not an existence defect."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "071b3e0efc40cd75",
+          "dimension": "quote_fidelity",
+          "verdict": "refuted",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "Stored pin-1159 quote is a content-page harvest artifact, not verbatim opinion text: it splices the wiki-authored Issue paraphrase ('exception authorized officers to enter the curtilage and knock on the front door at 4:00 a.m. ... to justify a warrantless search.') into the Markdown heading '## Rule The knock-and-talk exception is'. No such passage exists in the opinion; the '## Rule' Markdown token is dispositive.",
+            "severity": "low",
+            "proposed_fix": "Repoint pin-1159.quote to the verbatim opinion sentence the content page already renders at ^pin-1159, e.g. 'unexpected visitors are customarily expected to knock on the front door of a home only during normal waking hours' (817 F.3d at 1159), or drop the stale quote.",
+            "evidence_quote": "First, unexpected visitors are customarily expected to knock on the front door of a home only during normal waking hours.",
+            "needs_cl": false,
+            "locator_note": "lake pinpoints[].id=pin-1159; cached opinion slip pp.12-13 (817 F.3d 1159)"
+          },
+          "reasons": [
+            "Stored quote contains the literal Markdown token '## Rule' — impossible in opinion text.",
+            "The wording is the wiki Issue-section paraphrase; the opinion says 'encroach upon the curtilage of a home with the intent to arrest the occupant', not 'enter the curtilage and knock on the front door at 4:00 a.m.'.",
+            "Record self-flags quote_fidelity='mismatch', corroborating the defect.",
+            "Content page renders correct verbatim quotes at ^pin-1159, so no reader-facing error; defect is confined to the stored lake pinpoint quote."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Same header/paraphrase harvest bug likely recurs on other migration-seed pinpoints (cf. MF pin-566)."
+          ],
+          "suggested_tightening": "Re-run the pinpoint harvester to store the verbatim court sentence rather than the content-page splice."
+        },
+        {
+          "assertion_id": "077f643d38e8774d",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion (817 F.3d at 1160) reads 'the “knock and talk” exception depends at least in part on an officer’s subjective intent.' — the stored quote reproduces these words verbatim.",
+            "The record's quote_fidelity='mismatch' flag is a false positive from smart-quote/apostrophe normalization (opinion uses curly “ ’, stored uses straight) plus a terminal comma-for-period editorial splice on the content page."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "The content page changes the opinion's terminal period to a comma to splice the next clause; standard editorial practice, substance unchanged."
+          ],
+          "suggested_tightening": "Re-normalize the harvest flag to 'matched' (mismatch is a smart-quote false positive)."
+        },
+        {
+          "assertion_id": "6f5583953939cf92",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion reads 'Second, the scope of a license is often limited to a specific purpose, Jardines...' — the stored quote 'the scope of a license is often limited to a specific purpose,' (with trailing comma) is a verbatim substring.",
+            "Record flag quote_fidelity='matched' and the validated text-fragment are consistent with the cached text."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "61547c0e62963171",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "scope_note substance is verified against the cached opinion: the court holds the knock-and-talk implied license is bounded by time and purpose and that intent to arrest defeats the exception ('The “knock and talk” exception ... does not apply when officers encroach upon the curtilage of a home with the intent to arrest the occupant.').",
+            "Authoritative negative lane (lane1_negative, scotus/ca9) reviewed 5, proposed_negative_events 0, audit_needed false — no disclosed evidence contradicts good_law.",
+            "The lane2_top_cited field_ii='overruled'/'abrogated' labels (Staggers, Holmes, Esqueda, Hylton, Murchison) are proposed:true top-cited auto-artifacts, not adjudicated overrulings; French v. Merrill (1st Cir.) 'questioned' cannot overrule a 9th Cir. decision."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "The proposed lane2 negative-treatment labels are unadjudicated; a full currency confirmation of the sister-circuit 'questioned' edges would need CL, but none establishes a downgrade from disclosed evidence."
+          ],
+          "suggested_tightening": "Clear or adjudicate the proposed:true lane2 field_ii labels so they cannot be mistaken for confirmed negative treatment."
+        }
+      ]
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/United States v. Lyle.json",
+      "reviewed": [
+        {
+          "assertion_id": "c4abece525453afd",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached majority opinion (Chin, Circuit Judge; SDNY; Lyle and Van Praagh; December 11, 2013 inventory search of a rental car) confirms the case exists and matches identity (cluster 8443943).",
+            "Star page-labels 722 and 729 in the cached text are consistent with the F.3d reporter (first page 716); official cite '919 F.3d 716' (2d Cir. 2019) not fabricated."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "57d0d4ed79c01ffc",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "field_i_validity='unverified' is an honest frontier stub (status under_review, edges [], derivation {}); it makes no currency claim to refute.",
+            "scope_note 'Frontier stub: treatment/progeny intentionally not derived until S6 promotion' is consistent with the record's provenance (frontier-identity, no treatment)."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "scope_note says 'not derived until S6 promotion' though the record has already been S6-promoted (born_status under_review) and awaits S9 promotion per the content page; a wording nuance, not a treatment defect."
+          ],
+          "suggested_tightening": null
+        }
+      ]
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/United States v. Maez.json",
+      "reviewed": [
+        {
+          "assertion_id": "a8431b114f94af20",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached majority opinion (HOLLOWAY, Chief Judge; armed bank robbery; SWAT team surrounded the mobile home and over loudspeakers asked the occupants out; 'We hold that a violation and unlawful arrest occurred ... we reverse.') confirms United States v. Maez exists and matches identity (cluster 521939).",
+            "Official cite '872 F.2d 1444' (10th Cir. 1989) is internally consistent and drawn from cluster.citations[]."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "lead_opinion_id in the lake JSON (9478941) differs from the content-page comment's 'majority opinion 521939'; an identity-metadata nuance, not an existence-cite defect.",
+            "The cached text is paragraph-numbered (b1538-*), so the first-page 1444 and pincite 1451 are not star-verifiable from disclosed text; not an existence defect."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "6a3b970108fb4eb8",
+          "dimension": "treatment",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "field_i_validity='unverified' is an honest frontier stub (status under_review, edges [], derivation {}); no currency claim is asserted to refute.",
+            "scope_note matches the provenance (frontier stub, no treatment)."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Same 'not derived until S6 promotion' wording nuance as Lyle; the record is already S6-promoted and awaits S9."
+          ],
+          "suggested_tightening": null
+        }
+      ]
+    },
+    {
+      "group_id": "_overhaul2/lake/cases/United States v. Martinez-Fuerte.json",
+      "reviewed": [
+        {
+          "assertion_id": "e9c2723b52264e3c",
+          "dimension": "existence",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached SCOTUS opinion (United States v. Martinez-Fuerte; San Clemente checkpoint; 'we affirm the judgment of the Court of Appeals for the Fifth Circuit ... reverse the judgment of the Court of Appeals for the Ninth Circuit') plus Brennan dissent confirm the case exists (cluster 109541).",
+            "Official cite '428 U.S. 543' appears in cached text and is the standard 1976 reporter citation; not fabricated."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Parallel cites '96 S. Ct. 3074' / '49 L. Ed. 2d 1116' and the LEXIS cite are cluster metadata, not independently confirmable from the cached U.S.-reporter text; not an existence defect."
+          ],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "0d6c70efeaf5e30a",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion at star *563 reads verbatim: 'We further believe that it is constitutional to refer motorists selectively to the secondary inspection area at the San Clemente checkpoint on the basis of criteria that would not sustain a roving-patrol stop. Thus, even if it be assumed that such referrals are made largely on the basis of apparent Mexican ancestry,[16] we perceive no constitutional violation.'",
+            "The stored quote matches word-for-word; the only difference is the omitted footnote call number '[16]', which is standard in quotation. The quote_fidelity='mismatch' flag is a false positive triggered by that embedded footnote marker."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": "Re-normalize the harvest flag to 'matched' (mismatch is a footnote-marker false positive); the pincite sits on p.563 (star-verified in cached text)."
+        },
+        {
+          "assertion_id": "4e17a951134427fa",
+          "dimension": "quote_fidelity",
+          "verdict": "stands",
+          "verifiable_from_disclosed": true,
+          "defect": null,
+          "reasons": [
+            "Cached opinion (after star *562) reads verbatim: 'Accordingly, we hold that the stops and questioning at issue may be made in the absence of any individualized suspicion at reasonably located checkpoints.'",
+            "quote_fidelity='matched', pinpoint_status='star-verified', star_marker '562' all confirmed against the cached star-pagination."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [],
+          "suggested_tightening": null
+        },
+        {
+          "assertion_id": "dd1a7b865ebdf937",
+          "dimension": "quote_fidelity",
+          "verdict": "refuted",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "Stored pin-566 quote is the content-page frontmatter/header block (Markdown '---', '#', '##', an HTML comment, Background/Issue boilerplate, ending '## Rule Yes.'), not opinion text. It is a harvest artifact that captured the page header instead of the court's holding.",
+            "severity": "low",
+            "proposed_fix": "Repoint pin-566.quote to the verbatim holding the content page renders at ^pin-566: 'In summary, we hold that stops for brief questioning routinely conducted at permanent checkpoints are consistent with the Fourth Amendment and need not be authorized by warrant.' (428 U.S. at 566, section VI).",
+            "evidence_quote": "In summary, we hold that stops for brief questioning routinely conducted at permanent checkpoints are consistent with the Fourth Amendment and need not be authorized by warrant.",
+            "needs_cl": false,
+            "locator_note": "lake pinpoints[].id=pin-566; cached opinion section VI, between star *566 and *567"
+          },
+          "reasons": [
+            "Stored quote is Markdown/HTML page-header boilerplate ('--- # United States v. Martinez-Fuerte ... ## Rule Yes.'), impossible in opinion text.",
+            "Record self-flags quote_fidelity='mismatch', corroborating the defect.",
+            "The genuine 428 U.S. at 566 holding IS present in cached text (section VI) and is what the content page renders, so there is no reader-facing error; the defect is confined to the stored lake pinpoint quote."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "Identical header-harvest artifact pattern as Lundin pin-1159 — a systemic migration-seed pinpoint-harvest bug."
+          ],
+          "suggested_tightening": "Fix the harvester to exclude frontmatter/heading/HTML-comment lines before storing the quote."
+        },
+        {
+          "assertion_id": "3a7e783477af7d6f",
+          "dimension": "treatment",
+          "verdict": "stands-modified",
+          "verifiable_from_disclosed": true,
+          "defect": {
+            "problem": "field_i_validity='good_law' with as_of_treatment 2026-06-30 is an unreconciled migration-seed (composite_basis: migration-seed). The authoritative negative lane (lane1_negative) hit its cap (cap_hit=true) with audit_needed=true, proposed_negative_events=11, and audit_marker 'R15 treatment audit required' still open; lane2_top_cited likewise carries audit_needed=true. The content page's flat 'No negative subsequent treatment identified' overstates this audit-pending state.",
+            "severity": "medium",
+            "proposed_fix": "Complete the open R15 treatment audit of the 11 proposed negative events before certifying good_law as of 2026-06-30, and soften the content-page treatment line to reflect audit-pending status rather than 'No negative subsequent treatment identified'.",
+            "evidence_quote": "\"audit_needed\": true, \"proposed_negative_events\": 11, \"audit_marker\": \"R15 treatment audit required\"",
+            "needs_cl": true,
+            "locator_note": "lake treatment.derivation.lane1_negative; content page 'Treatment & subsequent history'"
+          },
+          "reasons": [
+            "No disclosed evidence contradicts good_law: cached text is the intact 1976 opinion plus Brennan dissent, and the lane2 field_ii='overruled'/'abrogated'/'superseded_by_statute' labels are attached to citing cases like Whren, Prouse, Garner, Rakas, T.L.O. — canonical progeny, not overrulings — so those top-cited labels are non-credible auto-artifacts.",
+            "But currency is not settled: lane1_negative audit_needed=true, proposed_negative_events=11, R15 audit marker open; scope_note itself concedes 'S2 derivation re-derives and may downgrade'.",
+            "Content page's 'No negative subsequent treatment identified' overstates the audit-pending derivation state."
+          ],
+          "breaks_true_positives": false,
+          "residual_risks": [
+            "The 11 proposed negative events are unaudited keyword-triage candidates; a genuine point-scoped narrowing could require a treatment override — needs CL adjudication (R15)."
+          ],
+          "suggested_tightening": "Carry an explicit audit-pending marker until R15 clears; do not present 2026-06-30 as a verified currency date on migration-seed alone."
+        }
+      ]
+    }
+  ]
+}
