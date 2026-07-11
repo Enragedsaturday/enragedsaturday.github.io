@@ -1,13 +1,102 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Illinois v. Rodriguez.json",
+    "lens": "A",
+    "notes": "Reviewed only the disclosed working-directory files; no external sources used. Treatment/currency was not analyzed beyond field consistency because Lens A does not own that issue.",
+    "reviewed": [
+      {
+        "assertion_id": "240f75f4a62bfe89",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record is verified for Illinois v. Rodriguez, U.S. Supreme Court, decided 1990-06-21, year 1990.",
+          "The official citation 497 U.S. 177 and listed parallel/vendor citations match the lake citations record."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "724cc0119ca8bd1b",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "If not, then warrantless <span class=\"star-pagination\">*189</span> entry without further inquiry is unlawful unless authority actually exists. But if so, the search is valid.",
+          "locator_note": "text/Illinois v. Rodriguez__a36c59.txt:55; lake pin-188a",
+          "needs_cl": false,
+          "problem": "The quoted words are substantively faithful, but the pin metadata flags quote_fidelity as mismatch and does not record the page-split marker where the cached text inserts *189 between 'warrantless' and 'entry'.",
+          "proposed_fix": "Keep the quote text, but mark the quote as verified under pagination-normalized comparison and record the *189 split or page range 188-189.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The content quote matches lake pinpoints[].quote exactly.",
+          "The same words appear in the cached opinion text, interrupted only by the star-pagination span."
+        ],
+        "residual_risks": [
+          "If raw-HTML contiguity is required with no pagination normalization, the mismatch flag is technically explainable."
+        ],
+        "suggested_tightening": "Normalize CourtListener star-pagination markup before quote-fidelity classification.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "c10810dcf5e25480",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "determination of consent to enter must \"be judged against an objective standard: would the facts available to the officer at the moment. . . `warrant a man of reasonable caution in the belief'\"",
+          "locator_note": "content_page.md:53; text/Illinois v. Rodriguez__a36c59.txt:55; lake pin-188",
+          "needs_cl": false,
+          "problem": "The pin-188 quote is a malformed harvest of content-page prose and headings, not a verbatim quote from the opinion. The visible page quote also differs from the cached opinion punctuation around 'moment. . .'.",
+          "proposed_fix": "Replace pin-188 with the actual *188 quotation and align punctuation with the cached opinion text.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload quote contains Markdown headings such as '## Issue' and '## Rule', which are not opinion text.",
+          "The payload quote is found in the lake JSON but not in the cached opinion text.",
+          "The cached opinion’s actual quoted passage at the pin is the objective-standard language on page *188."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Store only the precise quoted clause for pin-188; keep surrounding explanatory prose outside the quote field.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "5c8ce41b80f59b8a",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The treatment payload matches the disclosed lake treatment fields: field_i_validity good_law, as_of_content 1990-06-21, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note.",
+          "Treatment and currency merits are outside Lens A, so no treatment finding is raised."
+        ],
+        "residual_risks": [
+          "Treatment/currency remains for Lens B review."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Illinois v. Rodriguez.json\",\"reviewed\":[{\"assertion_id\":\"240f75f4a62bfe89\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake identity record is verified for Illinois v. Rodriguez, U.S. Supreme Court, decided 1990-06-21, year 1990.\",\"The official citation 497 U.S. 177 and listed parallel/vendor citations match the lake citations record.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"724cc0119ca8bd1b\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The quoted words are substantively faithful, but the pin metadata flags quote_fidelity as mismatch and does not record the page-split marker where the cached text inserts *189 between 'warrantless' and 'entry'.\",\"severity\":\"low\",\"proposed_fix\":\"Keep the quote text, but mark the quote as verified under pagination-normalized comparison and record the *189 split or page range 188-189.\",\"evidence_quote\":\"If not, then warrantless <span class=\\\"star-pagination\\\">*189</span> entry without further inquiry is unlawful unless authority actually exists. But if so, the search is valid.\",\"needs_cl\":false,\"locator_note\":\"text/Illinois v. Rodriguez__a36c59.txt:55; lake pin-188a\"},\"reasons\":[\"The content quote matches lake pinpoints[].quote exactly.\",\"The same words appear in the cached opinion text, interrupted only by the star-pagination span.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"If raw-HTML contiguity is required with no pagination normalization, the mismatch flag is technically explainable.\"],\"suggested_tightening\":\"Normalize CourtListener star-pagination markup before quote-fidelity classification.\"},{\"assertion_id\":\"c10810dcf5e25480\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The pin-188 quote is a malformed harvest of content-page prose and headings, not a verbatim quote from the opinion. The visible page quote also differs from the cached opinion punctuation around 'moment. . .'.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-188 with the actual *188 quotation and align punctuation with the cached opinion text.\",\"evidence_quote\":\"determination of consent to enter must \\\"be judged against an objective standard: would the facts available to the officer at the moment. . . `warrant a man of reasonable caution in the belief'\\\"\",\"needs_cl\":false,\"locator_note\":\"content_page.md:53; text/Illinois v. Rodriguez__a36c59.txt:55; lake pin-188\"},\"reasons\":[\"The payload quote contains Markdown headings such as '## Issue' and '## Rule', which are not opinion text.\",\"The payload quote is found in the lake JSON but not in the cached opinion text.\",\"The cached opinion’s actual quoted passage at the pin is the objective-standard language on page *188.\"],\"breaks_true_positives\":true,\"residual_risks\":[],\"suggested_tightening\":\"Store only the precise quoted clause for pin-188; keep surrounding explanatory prose outside the quote field.\"},{\"assertion_id\":\"5c8ce41b80f59b8a\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The treatment payload matches the disclosed lake treatment fields: field_i_validity good_law, as_of_content 1990-06-21, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note.\",\"Treatment and currency merits are outside Lens A, so no treatment finding is raised.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment/currency remains for Lens B review.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed only the disclosed working-directory files; no external sources used. Treatment/currency was not analyzed beyond field consistency because Lens A does not own that issue.\"}",
   "summary": {
-    "at": "2026-07-10T18:28:07-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T01:55:19-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "defense_votes": [],
-    "findings_emitted": [],
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-f0146d4816",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-5e43e012da",
+      "F-S9-PR-e3345f6fbe"
+    ],
     "group_id": "_overhaul2/lake/cases/Illinois v. Rodriguez.json",
     "group_total_assertions": 4,
     "lake_only_cases": [],
@@ -16,21 +105,63 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-3528ccdb.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 4,
     "run": "prod",
     "text_disclosed_cases": [
       "Illinois v. Rodriguez"
     ],
     "tokens": {
-      "input": 827,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 827
+      "input": 316618,
+      "output": 9889,
+      "source": "codex-events",
+      "total": 326507
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 3.3
+    "verdict_map": {
+      "240f75f4a62bfe89": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "5c8ce41b80f59b8a": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "724cc0119ca8bd1b": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "c10810dcf5e25480": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-5e43e012da",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-e3345f6fbe",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-f0146d4816",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": 193.8
   }
 }

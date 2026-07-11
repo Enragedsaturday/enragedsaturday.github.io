@@ -1,13 +1,98 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Hayes v. Florida.json",
+    "lens": "A",
+    "notes": "Reviewed all 4 rows in group_inventory.jsonl using only disclosed workspace files.",
+    "reviewed": [
+      {
+        "assertion_id": "2d9d4f6fd5d0f3e3",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record identifies Hayes v. Florida as a verified U.S. Supreme Court case decided 1985-03-20.",
+          "The official citation in the lake record is exactly 470 U.S. 811, with the same parallel/vendor citations reflected in the assertion payload."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "a4a3e32184f7da69",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "fingerprinting will establish or negate the suspect’s connection with that crime",
+          "locator_note": "text/Hayes v. Florida__844bd2.txt, page marker *817; lake pin-817 itself is marked quote_fidelity mismatch.",
+          "needs_cl": false,
+          "problem": "The pin-817 quote is not character-faithful to the cached opinion text: it changes the typographic apostrophe in “suspect’s” to ASCII “suspect's”.",
+          "proposed_fix": "Replace “suspect's connection” with “suspect’s connection” in the pin-817 quote.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The disclosed opinion text at the 817 page marker uses “suspect’s connection”.",
+          "The content/lake quote uses “suspect's connection”; exact quote fidelity fails even though the substance otherwise tracks the passage."
+        ],
+        "residual_risks": [
+          "Only the character-level quote fidelity defect is assessed here."
+        ],
+        "suggested_tightening": "Use the opinion-text punctuation exactly and keep the surrounding wording as an open/reserved field-fingerprinting discussion.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "c707e64724e797d9",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "And our view continues to be that the line is crossed when the police, without probable cause or a warrant, forcibly remove a person from his home or other place in which he is entitled to be and transport him to the police station",
+          "locator_note": "lake pin-816 quote begins with “--- # Hayes v. Florida...” and is marked quote_fidelity mismatch; the cached opinion text contains the real 816 passage.",
+          "needs_cl": false,
+          "problem": "The pin-816 lake/payload quote is corrupted: it contains generated page/header/background text rather than the Supreme Court passage at 470 U.S. 816.",
+          "proposed_fix": "Replace pin-816’s stored quote with the actual 816 passage beginning “the line is crossed when the police...” and ending with the probable-cause sentence used on the content page.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The asserted pin-816 quote is not opinion text; it is page-rendered corpus text through the Rule heading.",
+          "The cached opinion text at page 816 supports the visible content-page rule quote, but not the corrupted lake/payload quote under review."
+        ],
+        "residual_risks": [
+          "The visible content_page.md quote at ^pin-816 appears supported; this defect targets the reviewed pin payload/lake quote."
+        ],
+        "suggested_tightening": "Repair the lake pinpoint so the stored quote matches the opinion passage already quoted on the page.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "e99712aef1e65026",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The treatment assertion mirrors the lake treatment fields: field_i_validity good_law, as_of_content 1985-03-20, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note.",
+          "Treatment/currency is outside Lens A, so no independent treatment finding is raised."
+        ],
+        "residual_risks": [
+          "Treatment currency was not independently reviewed under this lens."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Hayes v. Florida.json\",\"reviewed\":[{\"assertion_id\":\"2d9d4f6fd5d0f3e3\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record identifies Hayes v. Florida as a verified U.S. Supreme Court case decided 1985-03-20.\",\"The official citation in the lake record is exactly 470 U.S. 811, with the same parallel/vendor citations reflected in the assertion payload.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"a4a3e32184f7da69\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The pin-817 quote is not character-faithful to the cached opinion text: it changes the typographic apostrophe in “suspect’s” to ASCII “suspect's”.\",\"severity\":\"low\",\"proposed_fix\":\"Replace “suspect's connection” with “suspect’s connection” in the pin-817 quote.\",\"evidence_quote\":\"fingerprinting will establish or negate the suspect’s connection with that crime\",\"needs_cl\":false,\"locator_note\":\"text/Hayes v. Florida__844bd2.txt, page marker *817; lake pin-817 itself is marked quote_fidelity mismatch.\"},\"reasons\":[\"The disclosed opinion text at the 817 page marker uses “suspect’s connection”.\",\"The content/lake quote uses “suspect's connection”; exact quote fidelity fails even though the substance otherwise tracks the passage.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Only the character-level quote fidelity defect is assessed here.\"],\"suggested_tightening\":\"Use the opinion-text punctuation exactly and keep the surrounding wording as an open/reserved field-fingerprinting discussion.\"},{\"assertion_id\":\"c707e64724e797d9\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The pin-816 lake/payload quote is corrupted: it contains generated page/header/background text rather than the Supreme Court passage at 470 U.S. 816.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-816’s stored quote with the actual 816 passage beginning “the line is crossed when the police...” and ending with the probable-cause sentence used on the content page.\",\"evidence_quote\":\"And our view continues to be that the line is crossed when the police, without probable cause or a warrant, forcibly remove a person from his home or other place in which he is entitled to be and transport him to the police station\",\"needs_cl\":false,\"locator_note\":\"lake pin-816 quote begins with “--- # Hayes v. Florida...” and is marked quote_fidelity mismatch; the cached opinion text contains the real 816 passage.\"},\"reasons\":[\"The asserted pin-816 quote is not opinion text; it is page-rendered corpus text through the Rule heading.\",\"The cached opinion text at page 816 supports the visible content-page rule quote, but not the corrupted lake/payload quote under review.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The visible content_page.md quote at ^pin-816 appears supported; this defect targets the reviewed pin payload/lake quote.\"],\"suggested_tightening\":\"Repair the lake pinpoint so the stored quote matches the opinion passage already quoted on the page.\"},{\"assertion_id\":\"e99712aef1e65026\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The treatment assertion mirrors the lake treatment fields: field_i_validity good_law, as_of_content 1985-03-20, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note.\",\"Treatment/currency is outside Lens A, so no independent treatment finding is raised.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment currency was not independently reviewed under this lens.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed all 4 rows in group_inventory.jsonl using only disclosed workspace files.\"}",
   "summary": {
-    "at": "2026-07-10T18:27:07-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T01:47:48-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-0347a76564",
+      "F-S9-PR-366283f91e"
+    ],
     "group_id": "_overhaul2/lake/cases/Hayes v. Florida.json",
     "group_total_assertions": 4,
     "lake_only_cases": [],
@@ -16,21 +101,59 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-7f7b76c8.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 4,
     "run": "prod",
     "text_disclosed_cases": [
       "Hayes v. Florida"
     ],
     "tokens": {
-      "input": 825,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 825
+      "input": 174195,
+      "output": 7302,
+      "source": "codex-events",
+      "total": 181497
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 3.8
+    "verdict_map": {
+      "2d9d4f6fd5d0f3e3": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "a4a3e32184f7da69": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "c707e64724e797d9": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "e99712aef1e65026": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-0347a76564",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-366283f91e",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 145.4
   }
 }

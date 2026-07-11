@@ -1,22 +1,148 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Harris v. New York.json",
+    "lens": "A",
+    "notes": "Reviewed all 4 assertion rows from group_inventory.jsonl exactly once under Lens A.",
+    "reviewed": [
+      {
+        "assertion_id": "9d73764907ebbe04",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record names Harris v. New York, court U.S. Supreme Court, date_decided 1971-02-24, year 1971, docket 206.",
+          "The lake official citation is 401 U.S. 222 and the disclosed parallel/vendor citations match the payload: 91 S. Ct. 643, 28 L. Ed. 2d 1, and 1971 U.S. LEXIS 75.",
+          "The opinion text header also shows 401 U.S. 222 (1971) and Supreme Court of United States."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "0ada526c55077e9d",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The pin-226 quote matches the lake pinpoints[].quote for pin-226 exactly.",
+          "The same wording appears in the cached opinion text at the holding paragraph; the only visible difference is source HTML/citation markup around Miranda versus markdown italics in the built page quote.",
+          "The passage is on page 226 because it follows the star-pagination marker *226 before the next page break."
+        ],
+        "residual_risks": [
+          "The lake judgment field labels pin-226 quote_fidelity as mismatch, apparently because of HTML/markdown markup normalization rather than a substantive word mismatch."
+        ],
+        "suggested_tightening": "Normalize citation/italic markup before quote-fidelity scoring, or store a plain-text canonical quote beside the display-markdown quote.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "0ceed0a6a24f0a37",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Having voluntarily taken the stand, petitioner was under an obligation to speak truthfully and accurately, and the prosecution here did no more than utilize the traditional truth-testing devices of the adversary process.",
+          "locator_note": "content_page.md line 55 and text/Harris v. New York__dfe1f4.txt line 26 contain the intended pin-225 passage; lake pin-225 instead contains page metadata/background text.",
+          "needs_cl": false,
+          "problem": "pin-225's stored quote is a corrupted capture of the page header/background/issue text, not the actual quoted passage tied to 401 U.S. at 225.",
+          "proposed_fix": "Replace pin-225's quote with the actual page-225 sentence beginning 'Having voluntarily taken the stand...' and keep the pin at 401 U.S. 225.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload quote for pin-225 begins with '--- # Harris v. New York' and continues through Background, Issue, and Rule text; that is not a verbatim opinion quote.",
+          "The cached opinion text at the relevant page-225 passage contains the 'Having voluntarily taken the stand...' sentence, matching the built page's visible pin-225 quote, not the lake payload.",
+          "The lake pinpoints[].quote_fidelity field for pin-225 is already marked mismatch."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Regenerate pin-225 from the cached opinion text rather than from rendered page markdown.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "3a70d6ce2c8d2558",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment merits are outside Lens A, so no treatment/currency finding is raised.",
+          "As a metadata consistency check only, the payload matches the lake treatment fields and content frontmatter: field_i_validity good_law, as_of_content 1971-02-24, as_of_treatment 2026-06-30, varies_by_point false, and the same scope_note."
+        ],
+        "residual_risks": [
+          "Treatment/currency remains for Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Harris v. New York.json\",\"reviewed\":[{\"assertion_id\":\"9d73764907ebbe04\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake identity record names Harris v. New York, court U.S. Supreme Court, date_decided 1971-02-24, year 1971, docket 206.\",\"The lake official citation is 401 U.S. 222 and the disclosed parallel/vendor citations match the payload: 91 S. Ct. 643, 28 L. Ed. 2d 1, and 1971 U.S. LEXIS 75.\",\"The opinion text header also shows 401 U.S. 222 (1971) and Supreme Court of United States.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"0ada526c55077e9d\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The pin-226 quote matches the lake pinpoints[].quote for pin-226 exactly.\",\"The same wording appears in the cached opinion text at the holding paragraph; the only visible difference is source HTML/citation markup around Miranda versus markdown italics in the built page quote.\",\"The passage is on page 226 because it follows the star-pagination marker *226 before the next page break.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The lake judgment field labels pin-226 quote_fidelity as mismatch, apparently because of HTML/markdown markup normalization rather than a substantive word mismatch.\"],\"suggested_tightening\":\"Normalize citation/italic markup before quote-fidelity scoring, or store a plain-text canonical quote beside the display-markdown quote.\"},{\"assertion_id\":\"0ceed0a6a24f0a37\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"pin-225's stored quote is a corrupted capture of the page header/background/issue text, not the actual quoted passage tied to 401 U.S. at 225.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-225's quote with the actual page-225 sentence beginning 'Having voluntarily taken the stand...' and keep the pin at 401 U.S. 225.\",\"evidence_quote\":\"Having voluntarily taken the stand, petitioner was under an obligation to speak truthfully and accurately, and the prosecution here did no more than utilize the traditional truth-testing devices of the adversary process.\",\"needs_cl\":false,\"locator_note\":\"content_page.md line 55 and text/Harris v. New York__dfe1f4.txt line 26 contain the intended pin-225 passage; lake pin-225 instead contains page metadata/background text.\"},\"reasons\":[\"The payload quote for pin-225 begins with '--- # Harris v. New York' and continues through Background, Issue, and Rule text; that is not a verbatim opinion quote.\",\"The cached opinion text at the relevant page-225 passage contains the 'Having voluntarily taken the stand...' sentence, matching the built page's visible pin-225 quote, not the lake payload.\",\"The lake pinpoints[].quote_fidelity field for pin-225 is already marked mismatch.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":\"Regenerate pin-225 from the cached opinion text rather than from rendered page markdown.\"},{\"assertion_id\":\"3a70d6ce2c8d2558\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment merits are outside Lens A, so no treatment/currency finding is raised.\",\"As a metadata consistency check only, the payload matches the lake treatment fields and content frontmatter: field_i_validity good_law, as_of_content 1971-02-24, as_of_treatment 2026-06-30, varies_by_point false, and the same scope_note.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment/currency remains for Lens B.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed all 4 assertion rows from group_inventory.jsonl exactly once under Lens A.\"}",
   "summary": {
-    "at": "2026-07-10T18:27:04-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T01:46:45-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-c197a11fc8"
+    ],
     "group_id": "_overhaul2/lake/cases/Harris v. New York.json",
     "group_total_assertions": 4,
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-ab29d48b",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-ab29d48b.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "ast status: 429 Too Many Requests, request id: b28b7b27-52a1-44a5-beac-a3540de01d74\n2026-07-10T22:26:54.981183Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:26:55.487386Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:26:56.079760Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:26:57.020673Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:26:58.296407Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:27:00.215606Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Harris v. New York"
+    ],
+    "tokens": {
+      "input": 175602,
+      "output": 5640,
+      "source": "codex-events",
+      "total": 181242
+    },
+    "verdict_map": {
+      "0ada526c55077e9d": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "0ceed0a6a24f0a37": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "3a70d6ce2c8d2558": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "9d73764907ebbe04": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-c197a11fc8",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 116.3
   }
 }

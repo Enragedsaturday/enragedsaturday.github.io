@@ -1,22 +1,159 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Flippo v. West Virginia.json",
+    "lens": "A",
+    "notes": "Lens A review only; no external sources used.",
+    "reviewed": [
+      {
+        "assertion_id": "f7443dff50608e02",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record names Flippo v. West Virginia, U.S. Supreme Court, decided 1999-10-18, docket 98-8770.",
+          "The lake citation fields support the displayed official citation 528 U.S. 11 and the listed parallel/vendor citations."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "b16e0d31b064bef6",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "to the warrant requirement. ## Rule No.",
+          "locator_note": "pin-13",
+          "needs_cl": false,
+          "problem": "The pin-13 quote stored in the assertion/lake record is corrupt page-content bleed, not a character-faithful excerpt from the opinion.",
+          "proposed_fix": "Replace pin-13 with the actual opinion passage beginning 'A warrantless search by the police is invalid...' and ending 'none of which the trial court invoked here,' with the proper 13-14 pinpoint.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The disclosed lake pinpoint itself marks quote_fidelity as mismatch.",
+          "The cached opinion text contains the warrant-exception sentence at the asserted location, but not the stored quote text."
+        ],
+        "residual_risks": [
+          "The visible rule on content_page.md appears supportable, but the reviewed pinpoint metadata is not faithful."
+        ],
+        "suggested_tightening": "Fix the pin-13 quote metadata rather than relying on the corrupted harvested string.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "c84c8cc6f6f1f0b2",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "but we rejected any general “murder scene exception” as “inconsistent with the Fourth and Fourteenth Amendments— ... the warrantless search of Mincey’s apartment was not constitutionally permissible simply because a homicide had recently occurred there.”",
+          "locator_note": "pin-14",
+          "needs_cl": false,
+          "problem": "The quoted passage is a compressed and punctuated paraphrase, not a character-faithful quotation from the opinion text.",
+          "proposed_fix": "Either quote the exact source language with lawful ellipses and source punctuation, or remove quotation marks around the compressed paraphrase.",
+          "severity": "medium"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The content/lake quote changes the nested quotation to end after 'Amendments.' even though the opinion has 'Amendments— ... the warrantless search...'.",
+          "The assertion/lake record marks this pinpoint quote_fidelity as mismatch."
+        ],
+        "residual_risks": [
+          "The broader no-murder-scene-exception proposition is supported, but the verbatim quote as framed fails strict quote fidelity."
+        ],
+        "suggested_tightening": "Use exact source punctuation and typography for the Mincey quotation, or convert the sentence to a paraphrase with a cite.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "113cfa4d05aa4bf8",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A; no treatment defect is raised.",
+          "The disclosed lake treatment field states field_i_validity=good_law and scope_note='Per curiam. Reaffirms Mincey v. Arizona and Thompson v. Louisiana; no negative treatment.'"
+        ],
+        "residual_risks": [
+          "Treatment/currency not independently reviewed under Lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"A\",\n  \"group_id\": \"_overhaul2/lake/cases/Flippo v. West Virginia.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"f7443dff50608e02\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake identity record names Flippo v. West Virginia, U.S. Supreme Court, decided 1999-10-18, docket 98-8770.\",\n        \"The lake citation fields support the displayed official citation 528 U.S. 11 and the listed parallel/vendor citations.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"b16e0d31b064bef6\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The pin-13 quote stored in the assertion/lake record is corrupt page-content bleed, not a character-faithful excerpt from the opinion.\",\n        \"severity\": \"high\",\n        \"proposed_fix\": \"Replace pin-13 with the actual opinion passage beginning 'A warrantless search by the police is invalid...' and ending 'none of which the trial court invoked here,' with the proper 13-14 pinpoint.\",\n        \"evidence_quote\": \"to the warrant requirement. ## Rule No.\",\n        \"needs_cl\": false,\n        \"locator_note\": \"pin-13\"\n      },\n      \"reasons\": [\n        \"The disclosed lake pinpoint itself marks quote_fidelity as mismatch.\",\n        \"The cached opinion text contains the warrant-exception sentence at the asserted location, but not the stored quote text.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The visible rule on content_page.md appears supportable, but the reviewed pinpoint metadata is not faithful.\"\n      ],\n      \"suggested_tightening\": \"Fix the pin-13 quote metadata rather than relying on the corrupted harvested string.\"\n    },\n    {\n      \"assertion_id\": \"c84c8cc6f6f1f0b2\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The quoted passage is a compressed and punctuated paraphrase, not a character-faithful quotation from the opinion text.\",\n        \"severity\": \"medium\",\n        \"proposed_fix\": \"Either quote the exact source language with lawful ellipses and source punctuation, or remove quotation marks around the compressed paraphrase.\",\n        \"evidence_quote\": \"but we rejected any general “murder scene exception” as “inconsistent with the Fourth and Fourteenth Amendments— ... the warrantless search of Mincey’s apartment was not constitutionally permissible simply because a homicide had recently occurred there.”\",\n        \"needs_cl\": false,\n        \"locator_note\": \"pin-14\"\n      },\n      \"reasons\": [\n        \"The content/lake quote changes the nested quotation to end after 'Amendments.' even though the opinion has 'Amendments— ... the warrantless search...'.\",\n        \"The assertion/lake record marks this pinpoint quote_fidelity as mismatch.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The broader no-murder-scene-exception proposition is supported, but the verbatim quote as framed fails strict quote fidelity.\"\n      ],\n      \"suggested_tightening\": \"Use exact source punctuation and typography for the Mincey quotation, or convert the sentence to a paraphrase with a cite.\"\n    },\n    {\n      \"assertion_id\": \"113cfa4d05aa4bf8\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Treatment/currency is outside Lens A; no treatment defect is raised.\",\n        \"The disclosed lake treatment field states field_i_validity=good_law and scope_note='Per curiam. Reaffirms Mincey v. Arizona and Thompson v. Louisiana; no negative treatment.'\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Treatment/currency not independently reviewed under Lens A.\"\n      ],\n      \"suggested_tightening\": null\n    }\n  ],\n  \"notes\": \"Lens A review only; no external sources used.\"\n}",
   "summary": {
-    "at": "2026-07-10T18:26:02-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T01:37:50-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-598df48149",
+      "F-S9-PR-8eba43c3b2"
+    ],
     "group_id": "_overhaul2/lake/cases/Flippo v. West Virginia.json",
     "group_total_assertions": 4,
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-291e1691",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-291e1691.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "cket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:25:53.590098Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:25:54.311554Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:25:55.212244Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:25:56.575813Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:25:58.508339Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:26:01.849584Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Flippo v. West Virginia"
+    ],
+    "tokens": {
+      "input": 265005,
+      "output": 7345,
+      "source": "codex-events",
+      "total": 272350
+    },
+    "verdict_map": {
+      "113cfa4d05aa4bf8": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "b16e0d31b064bef6": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "c84c8cc6f6f1f0b2": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "f7443dff50608e02": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-598df48149",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-8eba43c3b2",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 149.1
   }
 }

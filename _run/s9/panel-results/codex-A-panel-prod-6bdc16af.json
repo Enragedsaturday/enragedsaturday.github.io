@@ -1,22 +1,170 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Groh v. Ramirez.json",
+    "lens": "A",
+    "notes": "Lens A review only; treatment row recorded without making a treatment/currency finding.",
+    "reviewed": [
+      {
+        "assertion_id": "b26aeb0afa43ed72",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity is Groh v. Ramirez, U.S. Supreme Court, decided 2004-02-24.",
+          "Lake citations.official selects 540 U.S. 551, and the opinion text header displays 540 U.S. 551 (2004).",
+          "Parallel and vendor citations in the payload match the lake citation arrays."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "38ee66f7f3f998f9",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "The fact that the <i>application</i> adequately described the \"things to be seized\" does not save the <i>warrant</i> from its facial invalidity.",
+          "locator_note": "text/Groh v. Ramirez__baec3e.txt line 29; lake pin-557 line 143.",
+          "needs_cl": false,
+          "problem": "Lake pin-557 is not an opinion quotation. It is page prose spanning Background, Issue, and Rule text, begins mid-sentence, and does not match the 557 passage in the opinion text.",
+          "proposed_fix": "Replace pin-557 with the exact 557 opinion passage, preserving original quotation marks and formatting, or mark the page language as paraphrase instead of a quote.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The pin quote begins with '), not the weapons' and includes '## Issue' and '## Rule', which are content-page headings, not opinion text.",
+          "The disclosed opinion text at page 557 contains the application/warrant particularity passage instead.",
+          "Lake itself marks pin-557 quote_fidelity as mismatch with page and star_marker null."
+        ],
+        "residual_risks": [
+          "The visible content_page quote at ^pin-557 appears tied to the right passage, but the lake pinpoint payload under review is not faithful."
+        ],
+        "suggested_tightening": "Regenerate pin-557 from the opinion text at star page 557 rather than harvesting surrounding markdown prose.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "65765c5f88ae0f8c",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "the warrant did not describe the items to be seized <i>at all.</i>",
+          "locator_note": "text/Groh v. Ramirez__baec3e.txt line 31; content_page.md line 55; lake pin-558 line 152.",
+          "needs_cl": false,
+          "problem": "The pin-558 fragment is substantively from the 558 passage, but it is not character-faithful because the source has a period after 'all', not a comma inside the quotation.",
+          "proposed_fix": "Use the fragment without making the comma part of the quote, or quote the exact source punctuation ending 'at all.'.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The lake payload quote 'did not describe the items to be seized at all,' is not found character-for-character in the opinion text.",
+          "The page 558 passage supports the substance, but strict quote fidelity requires fixing punctuation and fragment boundaries."
+        ],
+        "residual_risks": [
+          "If HTML italics are normalized away, the remaining defect is the comma-versus-period punctuation."
+        ],
+        "suggested_tightening": "Move the comma outside the quotation or rewrite the sentence so the quoted fragment ends before punctuation.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "d5b3499a280500dc",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment and currency are outside Lens A, so no treatment finding is raised.",
+          "The disclosed lake treatment payload matches the content front matter: good_law, as_of_content 2004-02-24, as_of_treatment 2026-06-30, varies_by_point false."
+        ],
+        "residual_risks": [
+          "Treatment/currency should be assessed by Lens B, not Lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Groh v. Ramirez.json\",\"reviewed\":[{\"assertion_id\":\"b26aeb0afa43ed72\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity is Groh v. Ramirez, U.S. Supreme Court, decided 2004-02-24.\",\"Lake citations.official selects 540 U.S. 551, and the opinion text header displays 540 U.S. 551 (2004).\",\"Parallel and vendor citations in the payload match the lake citation arrays.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"38ee66f7f3f998f9\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"Lake pin-557 is not an opinion quotation. It is page prose spanning Background, Issue, and Rule text, begins mid-sentence, and does not match the 557 passage in the opinion text.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-557 with the exact 557 opinion passage, preserving original quotation marks and formatting, or mark the page language as paraphrase instead of a quote.\",\"evidence_quote\":\"The fact that the <i>application</i> adequately described the \\\"things to be seized\\\" does not save the <i>warrant</i> from its facial invalidity.\",\"needs_cl\":false,\"locator_note\":\"text/Groh v. Ramirez__baec3e.txt line 29; lake pin-557 line 143.\"},\"reasons\":[\"The pin quote begins with '), not the weapons' and includes '## Issue' and '## Rule', which are content-page headings, not opinion text.\",\"The disclosed opinion text at page 557 contains the application/warrant particularity passage instead.\",\"Lake itself marks pin-557 quote_fidelity as mismatch with page and star_marker null.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The visible content_page quote at ^pin-557 appears tied to the right passage, but the lake pinpoint payload under review is not faithful.\"],\"suggested_tightening\":\"Regenerate pin-557 from the opinion text at star page 557 rather than harvesting surrounding markdown prose.\"},{\"assertion_id\":\"65765c5f88ae0f8c\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The pin-558 fragment is substantively from the 558 passage, but it is not character-faithful because the source has a period after 'all', not a comma inside the quotation.\",\"severity\":\"low\",\"proposed_fix\":\"Use the fragment without making the comma part of the quote, or quote the exact source punctuation ending 'at all.'.\",\"evidence_quote\":\"the warrant did not describe the items to be seized <i>at all.</i>\",\"needs_cl\":false,\"locator_note\":\"text/Groh v. Ramirez__baec3e.txt line 31; content_page.md line 55; lake pin-558 line 152.\"},\"reasons\":[\"The lake payload quote 'did not describe the items to be seized at all,' is not found character-for-character in the opinion text.\",\"The page 558 passage supports the substance, but strict quote fidelity requires fixing punctuation and fragment boundaries.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"If HTML italics are normalized away, the remaining defect is the comma-versus-period punctuation.\"],\"suggested_tightening\":\"Move the comma outside the quotation or rewrite the sentence so the quoted fragment ends before punctuation.\"},{\"assertion_id\":\"d5b3499a280500dc\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment and currency are outside Lens A, so no treatment finding is raised.\",\"The disclosed lake treatment payload matches the content front matter: good_law, as_of_content 2004-02-24, as_of_treatment 2026-06-30, varies_by_point false.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment/currency should be assessed by Lens B, not Lens A.\"],\"suggested_tightening\":null}],\"notes\":\"Lens A review only; treatment row recorded without making a treatment/currency finding.\"}",
   "summary": {
-    "at": "2026-07-10T18:27:01-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T01:46:27-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-b2f3648379",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-c16d0250f5",
+      "F-S9-PR-3be2c87cea"
+    ],
     "group_id": "_overhaul2/lake/cases/Groh v. Ramirez.json",
     "group_total_assertions": 4,
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-6bdc16af",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-6bdc16af.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "cket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:26:52.203827Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:26:52.915031Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:26:53.948604Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:26:55.235337Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:26:57.301407Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:27:00.834651Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Groh v. Ramirez"
+    ],
+    "tokens": {
+      "input": 348941,
+      "output": 10112,
+      "source": "codex-events",
+      "total": 359053
+    },
+    "verdict_map": {
+      "38ee66f7f3f998f9": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "65765c5f88ae0f8c": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "b26aeb0afa43ed72": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "d5b3499a280500dc": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-c16d0250f5",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-3be2c87cea",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-b2f3648379",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": 198.3
   }
 }

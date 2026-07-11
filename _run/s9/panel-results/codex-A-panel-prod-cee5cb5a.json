@@ -1,22 +1,159 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Florida v. White.json",
+    "lens": "A",
+    "notes": "Reviewed all four rows in group_inventory.jsonl using only disclosed workspace files.",
+    "reviewed": [
+      {
+        "assertion_id": "908890c91bb990b8",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity is verified for Florida v. White, U.S. Supreme Court, decided 1999-05-17, year 1999.",
+          "Lake citations match the content-page citation set: official 526 U.S. 559, parallels 119 S. Ct. 1555 and 143 L. Ed. 2d 748, and vendor citation 1999 U.S. LEXIS 3172."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "84e128d999f91b08",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Based on the relevant history and our prior precedent, we therefore conclude that the Fourth Amendment did not require a warrant to seize respondent’s automobile in these circumstances.",
+          "locator_note": "text/Florida v. White__bf2359.txt line 14; page marker *566 appears earlier in the same paragraph.",
+          "needs_cl": false,
+          "problem": "The pin-566 quote lands on the right passage, but it is not character-faithful to the cached text because the content/lake quote uses straight apostrophe in respondent's while the opinion text has respondent’s; the lake also marks quote_fidelity as mismatch.",
+          "proposed_fix": "Replace respondent's with respondent’s in the quoted passage, or explicitly treat punctuation as normalized rather than verbatim.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The substantive sentence appears in the cached opinion at page *566.",
+          "The only identified fidelity defect is typographic, but the review standard is character-faithfulness for verbatim quotations."
+        ],
+        "residual_risks": [
+          "The legal proposition survives; only exact quotation form needs correction."
+        ],
+        "suggested_tightening": "Use the exact cached-text typography for pin-566.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "a5e0745fba7f2e2f",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "they certainly had probable cause to believe that the vehicle <em>itself </em>was contraband under Florida law.<footnotemark>3</footnotemark>",
+          "locator_note": "pin-565; text/Florida v. White__bf2359.txt line 13 contains the page *565 passage.",
+          "needs_cl": false,
+          "problem": "The pin-565 quote payload is not a verbatim opinion passage; it is a quote-harvest spillover from the content page beginning with the identity/background text. The lake itself marks this quote_fidelity as mismatch.",
+          "proposed_fix": "Regenerate pin-565 from the opinion text at page *565, preferably as separate verbatim quote fragments for the probable-cause sentence and the movable-contraband sentence.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload quote begins \"stolen-vehicle caption...\" and continues through content-page background/issue/rule material, which is not opinion text.",
+          "The cached opinion’s page *565 passage contains the actual probable-cause and movable-contraband language; it does not contain the payload quote as framed."
+        ],
+        "residual_risks": [
+          "The page 565 legal proposition is supportable, but the stored quote/pin record is not reliable as a verbatim quote."
+        ],
+        "suggested_tightening": "Replace the corrupted pin quote with exact text from page *565 and avoid mixing page prose into quote-harvest fields.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "60ae00bd31f5e9ac",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A; no treatment finding is raised.",
+          "The payload mirrors the disclosed lake treatment fields: field_i_validity good_law, as_of_content 1999-05-17, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note."
+        ],
+        "residual_risks": [
+          "Treatment/currency should be assessed by Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Florida v. White.json\",\"reviewed\":[{\"assertion_id\":\"908890c91bb990b8\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity is verified for Florida v. White, U.S. Supreme Court, decided 1999-05-17, year 1999.\",\"Lake citations match the content-page citation set: official 526 U.S. 559, parallels 119 S. Ct. 1555 and 143 L. Ed. 2d 748, and vendor citation 1999 U.S. LEXIS 3172.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"84e128d999f91b08\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The pin-566 quote lands on the right passage, but it is not character-faithful to the cached text because the content/lake quote uses straight apostrophe in respondent's while the opinion text has respondent’s; the lake also marks quote_fidelity as mismatch.\",\"severity\":\"low\",\"proposed_fix\":\"Replace respondent's with respondent’s in the quoted passage, or explicitly treat punctuation as normalized rather than verbatim.\",\"evidence_quote\":\"Based on the relevant history and our prior precedent, we therefore conclude that the Fourth Amendment did not require a warrant to seize respondent’s automobile in these circumstances.\",\"needs_cl\":false,\"locator_note\":\"text/Florida v. White__bf2359.txt line 14; page marker *566 appears earlier in the same paragraph.\"},\"reasons\":[\"The substantive sentence appears in the cached opinion at page *566.\",\"The only identified fidelity defect is typographic, but the review standard is character-faithfulness for verbatim quotations.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The legal proposition survives; only exact quotation form needs correction.\"],\"suggested_tightening\":\"Use the exact cached-text typography for pin-566.\"},{\"assertion_id\":\"a5e0745fba7f2e2f\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The pin-565 quote payload is not a verbatim opinion passage; it is a quote-harvest spillover from the content page beginning with the identity/background text. The lake itself marks this quote_fidelity as mismatch.\",\"severity\":\"high\",\"proposed_fix\":\"Regenerate pin-565 from the opinion text at page *565, preferably as separate verbatim quote fragments for the probable-cause sentence and the movable-contraband sentence.\",\"evidence_quote\":\"they certainly had probable cause to believe that the vehicle <em>itself </em>was contraband under Florida law.<footnotemark>3</footnotemark>\",\"needs_cl\":false,\"locator_note\":\"pin-565; text/Florida v. White__bf2359.txt line 13 contains the page *565 passage.\"},\"reasons\":[\"The payload quote begins \\\"stolen-vehicle caption...\\\" and continues through content-page background/issue/rule material, which is not opinion text.\",\"The cached opinion’s page *565 passage contains the actual probable-cause and movable-contraband language; it does not contain the payload quote as framed.\"],\"breaks_true_positives\":true,\"residual_risks\":[\"The page 565 legal proposition is supportable, but the stored quote/pin record is not reliable as a verbatim quote.\"],\"suggested_tightening\":\"Replace the corrupted pin quote with exact text from page *565 and avoid mixing page prose into quote-harvest fields.\"},{\"assertion_id\":\"60ae00bd31f5e9ac\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside Lens A; no treatment finding is raised.\",\"The payload mirrors the disclosed lake treatment fields: field_i_validity good_law, as_of_content 1999-05-17, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment/currency should be assessed by Lens B.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed all four rows in group_inventory.jsonl using only disclosed workspace files.\"}",
   "summary": {
-    "at": "2026-07-10T18:26:36-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T01:42:24-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-457d7d1679",
+      "F-S9-PR-6597125447"
+    ],
     "group_id": "_overhaul2/lake/cases/Florida v. White.json",
     "group_total_assertions": 4,
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-cee5cb5a",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-cee5cb5a.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "cket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:26:27.628853Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:26:28.233288Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:26:29.046386Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:26:30.246445Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:26:32.241491Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:26:35.951006Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Florida v. White"
+    ],
+    "tokens": {
+      "input": 232910,
+      "output": 7337,
+      "source": "codex-events",
+      "total": 240247
+    },
+    "verdict_map": {
+      "60ae00bd31f5e9ac": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "84e128d999f91b08": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "908890c91bb990b8": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "a5e0745fba7f2e2f": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-457d7d1679",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-6597125447",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 144.5
   }
 }

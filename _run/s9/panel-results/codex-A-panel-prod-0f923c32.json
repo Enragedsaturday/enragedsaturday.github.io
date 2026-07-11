@@ -1,13 +1,88 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Florida v. Meyers.json",
+    "lens": "A",
+    "notes": "Reviewed all 4 assertion_ids in group_inventory.jsonl exactly once.",
+    "reviewed": [
+      {
+        "assertion_id": "0b248313775cce1f",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity verifies Florida v. Meyers as a U.S. Supreme Court case decided 1984-04-23 with official citation 466 U.S. 380.",
+          "The asserted parallel and vendor citations match the lake citations list: 104 S. Ct. 1852, 80 L. Ed. 2d 381, 1984 U.S. LEXIS 66, and 52 U.S.L.W. 3774."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "c3a43122b0915745",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "In Michigan v. Thomas, 458 U. S. 259 (1982), we upheld a war-rantless search of an automobile",
+          "locator_note": "lake pinpoints[].id=pin-382; content_page marker ^pin-382 after the Rule quote.",
+          "needs_cl": false,
+          "problem": "pin-382's stored quote is not a character-faithful opinion quote; it is harvested page/editorial material beginning with the alias note and running through the page's Rule lead-in. The lake itself marks quote_fidelity as mismatch, and the cached opinion text at *382 contains different court language.",
+          "proposed_fix": "Replace pin-382 with the actual quoted court passage supporting 466 U.S. at 382, or delete this faulty pinpoint and regenerate the quote harvest. Verify the page/star marker after replacement.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The asserted pin quote begins: \"is carried as an `alias` so bare `[[Florida v. Myers]]` links resolve here\", which is not judicial opinion text.",
+          "The cached opinion text at page *382 instead contains the Michigan v. Thomas passage and the statement that the ruling controls this case."
+        ],
+        "residual_risks": [
+          "The cached opinion text hyphenates \"war-rantless\" as an OCR/line-break artifact; any corrected quote should document normalization if it uses \"warrantless\"."
+        ],
+        "suggested_tightening": "Store the exact court quote tied to pin-382 and avoid harvesting prose across headings or caption notes.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "d219a2ca1c10974d",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The quote \"the justification to conduct such a warrantless search does not vanish once the car has been immobilized.\" appears verbatim in the cached opinion text at page *382.",
+          "The lake pinpoint for pin-382a stores the same quote, star_marker 382, and quote_fidelity matched."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "77bcb5ade947d619",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A, so I did not audit the correctness of good-law status.",
+          "The asserted treatment fields match the disclosed lake/content fields: field_i_validity good_law, as_of_content 1984-04-23, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note."
+        ],
+        "residual_risks": [
+          "Treatment correctness remains for Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Florida v. Meyers.json\",\"reviewed\":[{\"assertion_id\":\"0b248313775cce1f\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity verifies Florida v. Meyers as a U.S. Supreme Court case decided 1984-04-23 with official citation 466 U.S. 380.\",\"The asserted parallel and vendor citations match the lake citations list: 104 S. Ct. 1852, 80 L. Ed. 2d 381, 1984 U.S. LEXIS 66, and 52 U.S.L.W. 3774.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"c3a43122b0915745\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"pin-382's stored quote is not a character-faithful opinion quote; it is harvested page/editorial material beginning with the alias note and running through the page's Rule lead-in. The lake itself marks quote_fidelity as mismatch, and the cached opinion text at *382 contains different court language.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-382 with the actual quoted court passage supporting 466 U.S. at 382, or delete this faulty pinpoint and regenerate the quote harvest. Verify the page/star marker after replacement.\",\"evidence_quote\":\"In Michigan v. Thomas, 458 U. S. 259 (1982), we upheld a war-rantless search of an automobile\",\"needs_cl\":false,\"locator_note\":\"lake pinpoints[].id=pin-382; content_page marker ^pin-382 after the Rule quote.\"},\"reasons\":[\"The asserted pin quote begins: \\\"is carried as an `alias` so bare `[[Florida v. Myers]]` links resolve here\\\", which is not judicial opinion text.\",\"The cached opinion text at page *382 instead contains the Michigan v. Thomas passage and the statement that the ruling controls this case.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The cached opinion text hyphenates \\\"war-rantless\\\" as an OCR/line-break artifact; any corrected quote should document normalization if it uses \\\"warrantless\\\".\"],\"suggested_tightening\":\"Store the exact court quote tied to pin-382 and avoid harvesting prose across headings or caption notes.\"},{\"assertion_id\":\"d219a2ca1c10974d\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The quote \\\"the justification to conduct such a warrantless search does not vanish once the car has been immobilized.\\\" appears verbatim in the cached opinion text at page *382.\",\"The lake pinpoint for pin-382a stores the same quote, star_marker 382, and quote_fidelity matched.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"77bcb5ade947d619\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside Lens A, so I did not audit the correctness of good-law status.\",\"The asserted treatment fields match the disclosed lake/content fields: field_i_validity good_law, as_of_content 1984-04-23, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment correctness remains for Lens B.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed all 4 assertion_ids in group_inventory.jsonl exactly once.\"}",
   "summary": {
-    "at": "2026-07-10T18:26:11-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T01:40:32-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-6ec527744a"
+    ],
     "group_id": "_overhaul2/lake/cases/Florida v. Meyers.json",
     "group_total_assertions": 4,
     "lake_only_cases": [],
@@ -16,21 +91,55 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-0f923c32.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 4,
     "run": "prod",
     "text_disclosed_cases": [
       "Florida v. Meyers"
     ],
     "tokens": {
-      "input": 826,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 826
+      "input": 244041,
+      "output": 6555,
+      "source": "codex-events",
+      "total": 250596
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 3.3
+    "verdict_map": {
+      "0b248313775cce1f": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "77bcb5ade947d619": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "c3a43122b0915745": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "d219a2ca1c10974d": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-6ec527744a",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 132.3
   }
 }

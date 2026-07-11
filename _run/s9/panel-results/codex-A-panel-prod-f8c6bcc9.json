@@ -1,22 +1,175 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Hill v. California.json",
+    "lens": "A",
+    "notes": "Reviewed all 5 group_inventory.jsonl rows. Treatment/currency was not audited under Lens A.",
+    "reviewed": [
+      {
+        "assertion_id": "43ecc7fb9f8d0828",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record identifies Hill v. California as a U.S. Supreme Court case decided 1971-04-05.",
+          "The official citation in the lake record is 401 U.S. 797, matching the content page citation."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "38ea6b2791f22c97",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "[w]hen the police have probable cause to arrest one party, and when they reasonably mistake a second party for the first party, then the arrest of the second party is a valid arrest.",
+          "locator_note": "lake pinpoints[id=pin-802]; text/Hill v. California__df1a76.txt at star page 802",
+          "needs_cl": false,
+          "problem": "The reviewed pin-802 payload is not a verbatim Hill opinion passage; it is a harvested content-page fragment and the lake record itself marks the pinpoint quote_fidelity as mismatch with no star marker.",
+          "proposed_fix": "Replace pin-802's stored quote with the actual opinion passage at star page 802 and set the star marker to 802.",
+          "severity": "medium"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The lake quote begins with page markdown text, not opinion text.",
+          "The actual quoted rule appears in the cached opinion text at star page 802."
+        ],
+        "residual_risks": [
+          "The visible content-page quote appears faithful; the defect is the malformed lake pinpoint payload."
+        ],
+        "suggested_tightening": "Use the actual quoted sentence as the pin-802 quote.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "41dd552e076989ad",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The quoted text appears character-faithfully in the cached opinion text.",
+          "The lake record marks pin-804 as matched and star-verified at 804."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "9c21a818115624bf",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The quoted search-incident sentence appears character-faithfully in the cached opinion text.",
+          "The lake record marks pin-804b as matched and star-verified at 804."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "The page citation could be narrowed to 804 because the quoted sentence is located before the star-page 805 marker.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "982a918fa9dd53fe",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The treatment payload matches the lake record fields: field_i_validity good_law, as_of_content 1971-04-05, as_of_treatment 2026-06-30, varies_by_point false.",
+          "Lens A records this treatment assertion without making an independent treatment or currency finding."
+        ],
+        "residual_risks": [
+          "Treatment and currency are reserved for Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"A\",\n  \"group_id\": \"_overhaul2/lake/cases/Hill v. California.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"43ecc7fb9f8d0828\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake record identifies Hill v. California as a U.S. Supreme Court case decided 1971-04-05.\",\n        \"The official citation in the lake record is 401 U.S. 797, matching the content page citation.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"38ea6b2791f22c97\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The reviewed pin-802 payload is not a verbatim Hill opinion passage; it is a harvested content-page fragment and the lake record itself marks the pinpoint quote_fidelity as mismatch with no star marker.\",\n        \"severity\": \"medium\",\n        \"proposed_fix\": \"Replace pin-802's stored quote with the actual opinion passage at star page 802 and set the star marker to 802.\",\n        \"evidence_quote\": \"[w]hen the police have probable cause to arrest one party, and when they reasonably mistake a second party for the first party, then the arrest of the second party is a valid arrest.\",\n        \"needs_cl\": false,\n        \"locator_note\": \"lake pinpoints[id=pin-802]; text/Hill v. California__df1a76.txt at star page 802\"\n      },\n      \"reasons\": [\n        \"The lake quote begins with page markdown text, not opinion text.\",\n        \"The actual quoted rule appears in the cached opinion text at star page 802.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The visible content-page quote appears faithful; the defect is the malformed lake pinpoint payload.\"\n      ],\n      \"suggested_tightening\": \"Use the actual quoted sentence as the pin-802 quote.\"\n    },\n    {\n      \"assertion_id\": \"41dd552e076989ad\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The quoted text appears character-faithfully in the cached opinion text.\",\n        \"The lake record marks pin-804 as matched and star-verified at 804.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"9c21a818115624bf\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The quoted search-incident sentence appears character-faithfully in the cached opinion text.\",\n        \"The lake record marks pin-804b as matched and star-verified at 804.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": \"The page citation could be narrowed to 804 because the quoted sentence is located before the star-page 805 marker.\"\n    },\n    {\n      \"assertion_id\": \"982a918fa9dd53fe\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The treatment payload matches the lake record fields: field_i_validity good_law, as_of_content 1971-04-05, as_of_treatment 2026-06-30, varies_by_point false.\",\n        \"Lens A records this treatment assertion without making an independent treatment or currency finding.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Treatment and currency are reserved for Lens B.\"\n      ],\n      \"suggested_tightening\": null\n    }\n  ],\n  \"notes\": \"Reviewed all 5 group_inventory.jsonl rows. Treatment/currency was not audited under Lens A.\"\n}",
   "summary": {
-    "at": "2026-07-10T18:27:38-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T01:50:38-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-11fdc87574",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-eac5c00fda"
+    ],
     "group_id": "_overhaul2/lake/cases/Hill v. California.json",
     "group_total_assertions": 5,
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-f8c6bcc9",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-f8c6bcc9.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "cket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:27:29.862709Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:27:30.455527Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:27:31.267011Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:27:32.448367Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:27:34.393078Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:27:38.061026Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Hill v. California"
+    ],
+    "tokens": {
+      "input": 276163,
+      "output": 8407,
+      "source": "codex-events",
+      "total": 284570
+    },
+    "verdict_map": {
+      "38ea6b2791f22c97": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "41dd552e076989ad": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "43ecc7fb9f8d0828": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "982a918fa9dd53fe": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "9c21a818115624bf": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-eac5c00fda",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-11fdc87574",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": 170.8
   }
 }

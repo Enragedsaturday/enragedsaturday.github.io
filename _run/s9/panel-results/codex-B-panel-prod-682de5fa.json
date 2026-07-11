@@ -1,13 +1,98 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Florida v. Wells.json",
+    "lens": "B",
+    "notes": "",
+    "reviewed": [
+      {
+        "assertion_id": "61e5d4bcf8f9af2e",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record is verified and identifies Florida v. Wells as a U.S. Supreme Court decision decided 1990-04-18.",
+          "The disclosed official citation is 495 U.S. 1, matching the page display, and the treatment field marks the case good_law."
+        ],
+        "residual_risks": [
+          "Treatment derivation is migration-seeded and has audit flags, but the disclosed record contains no finalized negative relationship against Wells."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "9d9941a74f4a5b87",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Lens B does not review quote fidelity or support.",
+          "No currency or treatment defect is created by this quote-fidelity assertion."
+        ],
+        "residual_risks": [
+          "Quote fidelity is not assessed under Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "c5cc5b8c60e86289",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Lens B does not review quote fidelity or support.",
+          "Any quote-fidelity issue belongs to Lens A; this row presents no independent currency/treatment defect for Lens B."
+        ],
+        "residual_risks": [
+          "Quote fidelity is not assessed under Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "97ab852faa620452",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade.",
+          "locator_note": "content_page.md treatment header and Treatment & subsequent history; lake treatment.scope_note and treatment.derivation audit flags",
+          "needs_cl": false,
+          "problem": "The good_law status is consistent with the lake judgment fields, but the page's categorical 'No negative treatment' language is too strong without disclosing that the treatment status is migration-seeded and the derivation still has audit-needed proposed negative events.",
+          "proposed_fix": "Change the treatment note to: 'Status: good_law as of 2026-06-30 in the disclosed lake record; no finalized negative treatment edge is recorded, but treatment is migration-seeded and R15 audit flags remain.'",
+          "severity": "medium"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "Lake treatment.field_i_validity is good_law, as_of_treatment is 2026-06-30, and varies_by_point is false.",
+          "All 37 disclosed treatment edges have field_iii='mentioned' and proposed=true; no disclosed finalized edge says Wells itself was overruled, abrogated, superseded, or limited.",
+          "The same lake record warns that the status came from a migration seed and that derivation may downgrade after audit."
+        ],
+        "residual_risks": [
+          "The disclosed derivation has audit_needed=true and cap_hit=true for negative/top-cited lanes, so a completed treatment audit could change the status."
+        ],
+        "suggested_tightening": "Avoid 'No negative treatment' unless limited to finalized disclosed edges; disclose the migration-seed/audit status.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"B\",\n  \"group_id\": \"_overhaul2/lake/cases/Florida v. Wells.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"61e5d4bcf8f9af2e\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake record is verified and identifies Florida v. Wells as a U.S. Supreme Court decision decided 1990-04-18.\",\n        \"The disclosed official citation is 495 U.S. 1, matching the page display, and the treatment field marks the case good_law.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Treatment derivation is migration-seeded and has audit flags, but the disclosed record contains no finalized negative relationship against Wells.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"9d9941a74f4a5b87\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Lens B does not review quote fidelity or support.\",\n        \"No currency or treatment defect is created by this quote-fidelity assertion.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Quote fidelity is not assessed under Lens B.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"c5cc5b8c60e86289\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Lens B does not review quote fidelity or support.\",\n        \"Any quote-fidelity issue belongs to Lens A; this row presents no independent currency/treatment defect for Lens B.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Quote fidelity is not assessed under Lens B.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"97ab852faa620452\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands-modified\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The good_law status is consistent with the lake judgment fields, but the page's categorical 'No negative treatment' language is too strong without disclosing that the treatment status is migration-seeded and the derivation still has audit-needed proposed negative events.\",\n        \"severity\": \"medium\",\n        \"proposed_fix\": \"Change the treatment note to: 'Status: good_law as of 2026-06-30 in the disclosed lake record; no finalized negative treatment edge is recorded, but treatment is migration-seeded and R15 audit flags remain.'\",\n        \"evidence_quote\": \"Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade.\",\n        \"needs_cl\": false,\n        \"locator_note\": \"content_page.md treatment header and Treatment & subsequent history; lake treatment.scope_note and treatment.derivation audit flags\"\n      },\n      \"reasons\": [\n        \"Lake treatment.field_i_validity is good_law, as_of_treatment is 2026-06-30, and varies_by_point is false.\",\n        \"All 37 disclosed treatment edges have field_iii='mentioned' and proposed=true; no disclosed finalized edge says Wells itself was overruled, abrogated, superseded, or limited.\",\n        \"The same lake record warns that the status came from a migration seed and that derivation may downgrade after audit.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The disclosed derivation has audit_needed=true and cap_hit=true for negative/top-cited lanes, so a completed treatment audit could change the status.\"\n      ],\n      \"suggested_tightening\": \"Avoid 'No negative treatment' unless limited to finalized disclosed edges; disclose the migration-seed/audit status.\"\n    }\n  ],\n  \"notes\": \"\"\n}",
   "summary": {
-    "at": "2026-07-10T18:26:14-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T01:41:57-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "defense_votes": [],
-    "findings_emitted": [],
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-b1cb1702d0",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-a2fd7487ea"
+    ],
     "group_id": "_overhaul2/lake/cases/Florida v. Wells.json",
     "group_total_assertions": 4,
     "lake_only_cases": [],
@@ -16,21 +101,59 @@
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-682de5fa.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 4,
     "run": "prod",
     "text_disclosed_cases": [
       "Florida v. Wells"
     ],
     "tokens": {
-      "input": 753,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 753
+      "input": 197292,
+      "output": 6200,
+      "source": "codex-events",
+      "total": 203492
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 3.7
+    "verdict_map": {
+      "61e5d4bcf8f9af2e": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "97ab852faa620452": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "9d9941a74f4a5b87": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "c5cc5b8c60e86289": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-b1cb1702d0",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-a2fd7487ea",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 120.7
   }
 }

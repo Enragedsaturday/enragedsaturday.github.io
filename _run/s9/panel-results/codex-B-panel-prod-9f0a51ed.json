@@ -1,22 +1,200 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Florence v. County of Burlington.json",
+    "lens": "B",
+    "notes": "Lens B only. Quote-fidelity/support assertions were recorded but not adjudicated for textual accuracy.",
+    "reviewed": [
+      {
+        "assertion_id": "ab354214aec0d7e4",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record is status=verified and identifies the case as Florence v. Board of Chosen Freeholders of County of Burlington, U.S. Supreme Court, decided 2012-04-02, docket 10-945.",
+          "The disclosed citation fields select 566 U.S. 318 as the official citation and list the same parallel/vendor citations shown in the page.",
+          "For currency, the lake treatment field says field_i_validity=good_law as of 2026-06-30; no disclosed verified edge says Florence itself was overruled, abrogated, superseded, or vacated."
+        ],
+        "residual_risks": [
+          "The lake derivation has a top-cited audit_needed flag, but that is a treatment-audit risk rather than an existence defect."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "1d0127b05ae760e3",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Lens B found no independent currency/treatment defect tied to this pinpoint; the cited Florence record remains good_law in the lake as of 2026-06-30.",
+          "Quote fidelity and support defects are outside this review lens and are not adjudicated here."
+        ],
+        "residual_risks": [
+          "Lens A should handle any quote-fidelity problem for this pinpoint."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "9342f6dea3c38f42",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Lens B found no independent currency/treatment defect tied to this pinpoint; the cited Florence record remains good_law in the lake as of 2026-06-30.",
+          "The page-level weight label Binding — SCOTUS is consistent with the lake identity fields showing court_level=scotus."
+        ],
+        "residual_risks": [
+          "Lens A should handle quote fidelity, pinpoint, and any Part-label issue for this pinpoint."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "eed6f4bd81b891f6",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Lens B found no independent currency/treatment defect tied to this pinpoint; the cited Florence record remains good_law in the lake as of 2026-06-30.",
+          "Quote fidelity and support defects are outside this review lens and are not adjudicated here."
+        ],
+        "residual_risks": [
+          "Lens A should handle any quote-fidelity problem for this pinpoint."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "f76e41fd24bbb0d9",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "\"audit_marker\": \"R15 treatment audit required\"",
+          "locator_note": "content_page.md Treatment & subsequent history; lake treatment.derivation.lane2_top_cited and treatment.edges",
+          "needs_cl": true,
+          "problem": "The good_law and Binding — SCOTUS calls survive, but the page's unqualified 'No negative treatment' wording is too absolute against the disclosed lake record: the treatment derivation flags an unaudited top-cited lane and the edges include only proposed, mention-level negative-treatment candidates.",
+          "proposed_fix": "Keep field_i_validity=good_law, Binding — SCOTUS, and the current scope note, but change 'No negative treatment' to 'No verified negative treatment in the disclosed lake record; proposed mention-level candidates remain audit flagged.'",
+          "severity": "medium"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "The primary lake judgment field supports the call: field_i_validity is good_law, as_of_treatment is 2026-06-30, varies_by_point is false, and point_overrides is empty.",
+          "The disclosed treatment edges do not contain a verified adverse treatment of Florence: every listed edge is proposed=true and field_iii=mentioned, with point=null.",
+          "The scope note's general-population limitation is consistent with the disclosed opinion text and the Roberts/Alito concurrences, so the controlling holding is already cabined."
+        ],
+        "residual_risks": [
+          "The top-cited lane is capped and audit_needed=true, so a full CourtListener audit would be needed to remove the qualifier entirely.",
+          "Because the negative-looking edges are proposed and mention-level, they do not by themselves refute good_law status."
+        ],
+        "suggested_tightening": "Use 'No verified negative treatment in the disclosed lake record' rather than 'No negative treatment.'",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"B\",\n  \"group_id\": \"_overhaul2/lake/cases/Florence v. County of Burlington.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"ab354214aec0d7e4\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake record is status=verified and identifies the case as Florence v. Board of Chosen Freeholders of County of Burlington, U.S. Supreme Court, decided 2012-04-02, docket 10-945.\",\n        \"The disclosed citation fields select 566 U.S. 318 as the official citation and list the same parallel/vendor citations shown in the page.\",\n        \"For currency, the lake treatment field says field_i_validity=good_law as of 2026-06-30; no disclosed verified edge says Florence itself was overruled, abrogated, superseded, or vacated.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The lake derivation has a top-cited audit_needed flag, but that is a treatment-audit risk rather than an existence defect.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"1d0127b05ae760e3\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Lens B found no independent currency/treatment defect tied to this pinpoint; the cited Florence record remains good_law in the lake as of 2026-06-30.\",\n        \"Quote fidelity and support defects are outside this review lens and are not adjudicated here.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Lens A should handle any quote-fidelity problem for this pinpoint.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"9342f6dea3c38f42\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Lens B found no independent currency/treatment defect tied to this pinpoint; the cited Florence record remains good_law in the lake as of 2026-06-30.\",\n        \"The page-level weight label Binding — SCOTUS is consistent with the lake identity fields showing court_level=scotus.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Lens A should handle quote fidelity, pinpoint, and any Part-label issue for this pinpoint.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"eed6f4bd81b891f6\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Lens B found no independent currency/treatment defect tied to this pinpoint; the cited Florence record remains good_law in the lake as of 2026-06-30.\",\n        \"Quote fidelity and support defects are outside this review lens and are not adjudicated here.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Lens A should handle any quote-fidelity problem for this pinpoint.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"f76e41fd24bbb0d9\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands-modified\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The good_law and Binding — SCOTUS calls survive, but the page's unqualified 'No negative treatment' wording is too absolute against the disclosed lake record: the treatment derivation flags an unaudited top-cited lane and the edges include only proposed, mention-level negative-treatment candidates.\",\n        \"severity\": \"medium\",\n        \"proposed_fix\": \"Keep field_i_validity=good_law, Binding — SCOTUS, and the current scope note, but change 'No negative treatment' to 'No verified negative treatment in the disclosed lake record; proposed mention-level candidates remain audit flagged.'\",\n        \"evidence_quote\": \"\\\"audit_marker\\\": \\\"R15 treatment audit required\\\"\",\n        \"needs_cl\": true,\n        \"locator_note\": \"content_page.md Treatment & subsequent history; lake treatment.derivation.lane2_top_cited and treatment.edges\"\n      },\n      \"reasons\": [\n        \"The primary lake judgment field supports the call: field_i_validity is good_law, as_of_treatment is 2026-06-30, varies_by_point is false, and point_overrides is empty.\",\n        \"The disclosed treatment edges do not contain a verified adverse treatment of Florence: every listed edge is proposed=true and field_iii=mentioned, with point=null.\",\n        \"The scope note's general-population limitation is consistent with the disclosed opinion text and the Roberts/Alito concurrences, so the controlling holding is already cabined.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The top-cited lane is capped and audit_needed=true, so a full CourtListener audit would be needed to remove the qualifier entirely.\",\n        \"Because the negative-looking edges are proposed and mention-level, they do not by themselves refute good_law status.\"\n      ],\n      \"suggested_tightening\": \"Use 'No verified negative treatment in the disclosed lake record' rather than 'No negative treatment.'\"\n    }\n  ],\n  \"notes\": \"Lens B only. Quote-fidelity/support assertions were recorded but not adjudicated for textual accuracy.\"\n}",
   "summary": {
-    "at": "2026-07-10T18:26:03-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T01:39:59-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-9794c5d085",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-62168c6b26",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-4b03d3db90",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-65922495fb"
+    ],
     "group_id": "_overhaul2/lake/cases/Florence v. County of Burlington.json",
     "group_total_assertions": 5,
+    "lake_only_cases": [],
     "lane": "codex-B",
     "lane_id": "codex-B-panel-prod-9f0a51ed",
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-9f0a51ed.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "ast status: 429 Too Many Requests, request id: 89fe068b-c778-4cb2-a260-9b349aa09bd0\n2026-07-10T22:25:54.071218Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:25:54.528998Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:25:55.232792Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:25:56.236281Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:25:57.478669Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:25:59.485144Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Florence v. County of Burlington"
+    ],
+    "tokens": {
+      "input": 544784,
+      "output": 10888,
+      "source": "codex-events",
+      "total": 555672
+    },
+    "verdict_map": {
+      "1d0127b05ae760e3": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "9342f6dea3c38f42": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "ab354214aec0d7e4": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "eed6f4bd81b891f6": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "f76e41fd24bbb0d9": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-9794c5d085",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-62168c6b26",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-4b03d3db90",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-65922495fb",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 218.0
   }
 }

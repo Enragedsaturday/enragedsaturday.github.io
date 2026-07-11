@@ -1,22 +1,147 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Go-Bart Importing Co. v. United States.json",
+    "lens": "A",
+    "notes": "Reviewed all 4 rows in group_inventory.jsonl exactly once.",
+    "reviewed": [
+      {
+        "assertion_id": "09a126fa30699b95",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record is for Go-Bart Importing Co. v. United States, U.S. Supreme Court, decided 1931-01-05.",
+          "The content-page citation 282 U.S. 344 (1931), parallel cites, neutral cite, court, year, and docket match the lake citation and identity fields."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "40dc549b795e452f",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The quoted pin-358 language matches the lake pinpoints[].quote for pin-358.",
+          "The same passage is located in the cached opinion text after the *358 star marker; the text cache has an OCR comma artifact in the phrase around the desk and safe, but the lake pinpoint supplies the quoted language."
+        ],
+        "residual_risks": [
+          "The lake record still labels this pinpoint quote_fidelity as mismatch and has no stored page/star marker, even though the passage is locatable at 282 U.S. 358."
+        ],
+        "suggested_tightening": "Populate the page/star marker for pin-358 and clear or re-audit the mismatch flag if the lake quote is intended to be the normalized source.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "f1db8d6e64c82ff1",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "There is no formula for the determination of reasonableness. Each case is to be decided on its own facts and circumstances.",
+          "locator_note": "pin-357; cached opinion paragraph b421-4 after the *357 star marker",
+          "needs_cl": false,
+          "problem": "The asserted pin-357 quote is a malformed scrape of the content page/frontmatter, not the opinion passage at 282 U.S. 357.",
+          "proposed_fix": "Replace the pin-357 lake/payload quote with the actual opinion sentence quoted on the content page and anchor it to 282 U.S. 357.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload quote begins with page markdown/header material rather than opinion text.",
+          "The cached opinion text at the cited passage contains the short reasonableness sentence, which is also the visible quote on the content page."
+        ],
+        "residual_risks": [
+          "The visible content-page quote at ^pin-357 is supported; the defect is in the stored/inventory pinpoint quote."
+        ],
+        "suggested_tightening": "Set pin-357 quote to the exact reasonableness sentence and remove harvested content-page prose from the pinpoint record.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "92a6efbf7a608f4e",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The treatment payload matches the lake treatment fields for field_i_validity, as_of_content, as_of_treatment, varies_by_point, and scope_note.",
+          "Treatment and currency are outside Lens A; no treatment finding is raised."
+        ],
+        "residual_risks": [
+          "Treatment/currency was not audited under this support and quote-fidelity lens."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Go-Bart Importing Co. v. United States.json\",\"reviewed\":[{\"assertion_id\":\"09a126fa30699b95\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake identity record is for Go-Bart Importing Co. v. United States, U.S. Supreme Court, decided 1931-01-05.\",\"The content-page citation 282 U.S. 344 (1931), parallel cites, neutral cite, court, year, and docket match the lake citation and identity fields.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"40dc549b795e452f\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The quoted pin-358 language matches the lake pinpoints[].quote for pin-358.\",\"The same passage is located in the cached opinion text after the *358 star marker; the text cache has an OCR comma artifact in the phrase around the desk and safe, but the lake pinpoint supplies the quoted language.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The lake record still labels this pinpoint quote_fidelity as mismatch and has no stored page/star marker, even though the passage is locatable at 282 U.S. 358.\"],\"suggested_tightening\":\"Populate the page/star marker for pin-358 and clear or re-audit the mismatch flag if the lake quote is intended to be the normalized source.\"},{\"assertion_id\":\"f1db8d6e64c82ff1\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The asserted pin-357 quote is a malformed scrape of the content page/frontmatter, not the opinion passage at 282 U.S. 357.\",\"severity\":\"high\",\"proposed_fix\":\"Replace the pin-357 lake/payload quote with the actual opinion sentence quoted on the content page and anchor it to 282 U.S. 357.\",\"evidence_quote\":\"There is no formula for the determination of reasonableness. Each case is to be decided on its own facts and circumstances.\",\"needs_cl\":false,\"locator_note\":\"pin-357; cached opinion paragraph b421-4 after the *357 star marker\"},\"reasons\":[\"The payload quote begins with page markdown/header material rather than opinion text.\",\"The cached opinion text at the cited passage contains the short reasonableness sentence, which is also the visible quote on the content page.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The visible content-page quote at ^pin-357 is supported; the defect is in the stored/inventory pinpoint quote.\"],\"suggested_tightening\":\"Set pin-357 quote to the exact reasonableness sentence and remove harvested content-page prose from the pinpoint record.\"},{\"assertion_id\":\"92a6efbf7a608f4e\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The treatment payload matches the lake treatment fields for field_i_validity, as_of_content, as_of_treatment, varies_by_point, and scope_note.\",\"Treatment and currency are outside Lens A; no treatment finding is raised.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment/currency was not audited under this support and quote-fidelity lens.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed all 4 rows in group_inventory.jsonl exactly once.\"}",
   "summary": {
-    "at": "2026-07-10T18:26:39-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T01:44:56-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-f339ea45e1"
+    ],
     "group_id": "_overhaul2/lake/cases/Go-Bart Importing Co. v. United States.json",
     "group_total_assertions": 4,
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-b697e6ef",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-b697e6ef.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "cket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:26:30.027486Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:26:30.617193Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:26:31.499813Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:26:32.734773Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:26:34.888603Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:26:38.451538Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Go-Bart Importing Co. v. United States"
+    ],
+    "tokens": {
+      "input": 162972,
+      "output": 8597,
+      "source": "codex-events",
+      "total": 171569
+    },
+    "verdict_map": {
+      "09a126fa30699b95": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "40dc549b795e452f": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "92a6efbf7a608f4e": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "f1db8d6e64c82ff1": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-f339ea45e1",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 162.0
   }
 }

@@ -1,13 +1,111 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Illinois v. Wardlow.json",
+    "lens": "A",
+    "notes": "Support/quote-fidelity review only; treatment merits left to Lens B per charter.",
+    "reviewed": [
+      {
+        "assertion_id": "b5b96b492f971b4c",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record is Illinois v. Wardlow, U.S. Supreme Court, decided 2000-01-19, year 2000.",
+          "The lake citation record lists official citation 528 U.S. 119 and parallel/vendor citations 120 S. Ct. 673, 145 L. Ed. 2d 570, and 2000 U.S. LEXIS 504, matching the content page."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "4036ab833e871c80",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Our cases have also recognized that nervous, evasive behavior is a pertinent factor in determining reasonable suspicion.",
+          "locator_note": "pin-124; text opinion page marker 124 contains the correct rule sentence, but the lake pinpoints[].quote contains page Markdown instead.",
+          "needs_cl": false,
+          "problem": "The pin-124 quote payload is not a verbatim opinion passage; it is a harvested Markdown/content-page excerpt beginning with the page title and background, while the visible pinned rule quote on the page is a different sentence from the opinion.",
+          "proposed_fix": "Replace pin-124's quote payload with the actual opinion sentence pinned on the page: \"Our cases have also recognized that nervous, evasive behavior is a pertinent factor in determining reasonable suspicion.\"",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The lake record itself marks pin-124 quote_fidelity as mismatch and pinpoint_status as slip-only.",
+          "The payload quote begins \"--- # Illinois v. Wardlow\" and includes content headings, not opinion text."
+        ],
+        "residual_risks": [
+          "The content page's displayed pin-124 quote appears supportable; the defect is the authority-record quote payload for that pin."
+        ],
+        "suggested_tightening": "Regenerate pin-124 from the actual quoted sentence rather than the page header/body harvest.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "965c3de5f94b9152",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "An individual’s presence in an area of expected criminal activity, standing alone, is not enough to support a reasonable, particularized suspicion that the person is committing a crime. <em>Brown </em>v. <em>Texas, </em>",
+          "locator_note": "pin-124b; text opinion page 124 separates the first sentence from the second with a Brown v. Texas citation.",
+          "needs_cl": false,
+          "problem": "The pin-124b quote is not character-faithful as framed: it changes the opinion's curly apostrophe to a straight apostrophe and joins two sentences while omitting the intervening Brown v. Texas citation without any ellipsis or citation-omitted signal.",
+          "proposed_fix": "Use the opinion's punctuation and either include the intervening citation or mark the omission, e.g. split the quote or insert an ellipsis/citation-omitted notation between the two sentences.",
+          "severity": "medium"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The lake record marks pin-124b quote_fidelity as mismatch and pinpoint_status as slip-only.",
+          "The content/lake quote says \"individual's\" but the disclosed opinion text says \"individual’s\".",
+          "The quote presents two opinion sentences as contiguous, but the disclosed text has an intervening Brown v. Texas citation."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Treat pin-124b as a paraphrase unless the citation omission and punctuation are corrected.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "a29d80fb7444499f",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The quoted sentence appears verbatim in the disclosed opinion text.",
+          "The lake record marks pin-124a as quote_fidelity matched, star-verified, with star_marker 124."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "dcb47c34c2c3a5bd",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment merits are outside Lens A; no treatment defect is raised.",
+          "The payload fields field_i_validity=good_law, as_of_content=2000-01-12, as_of_treatment=2026-06-30, and varies_by_point=false match the disclosed lake treatment fields and content frontmatter."
+        ],
+        "residual_risks": [
+          "Treatment/currency was not substantively assessed under this Lens A review."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Illinois v. Wardlow.json\",\"reviewed\":[{\"assertion_id\":\"b5b96b492f971b4c\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake identity record is Illinois v. Wardlow, U.S. Supreme Court, decided 2000-01-19, year 2000.\",\"The lake citation record lists official citation 528 U.S. 119 and parallel/vendor citations 120 S. Ct. 673, 145 L. Ed. 2d 570, and 2000 U.S. LEXIS 504, matching the content page.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"4036ab833e871c80\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The pin-124 quote payload is not a verbatim opinion passage; it is a harvested Markdown/content-page excerpt beginning with the page title and background, while the visible pinned rule quote on the page is a different sentence from the opinion.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-124's quote payload with the actual opinion sentence pinned on the page: \\\"Our cases have also recognized that nervous, evasive behavior is a pertinent factor in determining reasonable suspicion.\\\"\",\"evidence_quote\":\"Our cases have also recognized that nervous, evasive behavior is a pertinent factor in determining reasonable suspicion.\",\"needs_cl\":false,\"locator_note\":\"pin-124; text opinion page marker 124 contains the correct rule sentence, but the lake pinpoints[].quote contains page Markdown instead.\"},\"reasons\":[\"The lake record itself marks pin-124 quote_fidelity as mismatch and pinpoint_status as slip-only.\",\"The payload quote begins \\\"--- # Illinois v. Wardlow\\\" and includes content headings, not opinion text.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The content page's displayed pin-124 quote appears supportable; the defect is the authority-record quote payload for that pin.\"],\"suggested_tightening\":\"Regenerate pin-124 from the actual quoted sentence rather than the page header/body harvest.\"},{\"assertion_id\":\"965c3de5f94b9152\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The pin-124b quote is not character-faithful as framed: it changes the opinion's curly apostrophe to a straight apostrophe and joins two sentences while omitting the intervening Brown v. Texas citation without any ellipsis or citation-omitted signal.\",\"severity\":\"medium\",\"proposed_fix\":\"Use the opinion's punctuation and either include the intervening citation or mark the omission, e.g. split the quote or insert an ellipsis/citation-omitted notation between the two sentences.\",\"evidence_quote\":\"An individual’s presence in an area of expected criminal activity, standing alone, is not enough to support a reasonable, particularized suspicion that the person is committing a crime. <em>Brown </em>v. <em>Texas, </em>\",\"needs_cl\":false,\"locator_note\":\"pin-124b; text opinion page 124 separates the first sentence from the second with a Brown v. Texas citation.\"},\"reasons\":[\"The lake record marks pin-124b quote_fidelity as mismatch and pinpoint_status as slip-only.\",\"The content/lake quote says \\\"individual's\\\" but the disclosed opinion text says \\\"individual’s\\\".\",\"The quote presents two opinion sentences as contiguous, but the disclosed text has an intervening Brown v. Texas citation.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":\"Treat pin-124b as a paraphrase unless the citation omission and punctuation are corrected.\"},{\"assertion_id\":\"a29d80fb7444499f\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The quoted sentence appears verbatim in the disclosed opinion text.\",\"The lake record marks pin-124a as quote_fidelity matched, star-verified, with star_marker 124.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"dcb47c34c2c3a5bd\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment merits are outside Lens A; no treatment defect is raised.\",\"The payload fields field_i_validity=good_law, as_of_content=2000-01-12, as_of_treatment=2026-06-30, and varies_by_point=false match the disclosed lake treatment fields and content frontmatter.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment/currency was not substantively assessed under this Lens A review.\"],\"suggested_tightening\":null}],\"notes\":\"Support/quote-fidelity review only; treatment merits left to Lens B per charter.\"}",
   "summary": {
-    "at": "2026-07-10T18:28:10-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T01:54:36-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-4808993ffa",
+      "F-S9-PR-1c188b3e42"
+    ],
     "group_id": "_overhaul2/lake/cases/Illinois v. Wardlow.json",
     "group_total_assertions": 5,
     "lake_only_cases": [],
@@ -16,21 +114,66 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-b2324b92.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 5,
     "run": "prod",
     "text_disclosed_cases": [
       "Illinois v. Wardlow"
     ],
     "tokens": {
-      "input": 826,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 826
+      "input": 147829,
+      "output": 7535,
+      "source": "codex-events",
+      "total": 155364
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 3.2
+    "verdict_map": {
+      "4036ab833e871c80": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "965c3de5f94b9152": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "a29d80fb7444499f": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "b5b96b492f971b4c": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "dcb47c34c2c3a5bd": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-4808993ffa",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-1c188b3e42",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 144.5
   }
 }

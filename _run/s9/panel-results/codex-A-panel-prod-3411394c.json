@@ -1,13 +1,98 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Immigration & Naturalization Service v. Lopez-Mendoza.json",
+    "lens": "A",
+    "notes": "Lens A review only. No external sources searched or used.",
+    "reviewed": [
+      {
+        "assertion_id": "efadeaacd6ae4350",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record is verified for Immigration & Naturalization Service v. Lopez-Mendoza, decided by the U.S. Supreme Court on 1984-07-05.",
+          "The official citation in the lake record is 468 U.S. 1032, matching the content page display citation."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "d08eb481b4618d84",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "the <em>Jams </em>balance between costs and benefits",
+          "locator_note": "pin-1050; text page marker *1050",
+          "needs_cl": true,
+          "problem": "The quoted 1050 sentence is not character-faithful to the cached full opinion text: the content/lake quote says 'Janis' but the disclosed opinion text reads 'Jams'. The lake record also flags quote_fidelity as mismatch.",
+          "proposed_fix": "Verify against an official/corrected source and either repair the cached text or mark this as a corrected quotation rather than a character-faithful extraction from the disclosed text.",
+          "severity": "medium"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The pinpoint lands on the 1050 passage, but character fidelity fails against text/<case>.txt.",
+          "The disclosed lake pinpoint repeats the content quote but marks quote_fidelity as mismatch."
+        ],
+        "residual_risks": [
+          "The discrepancy may be an OCR error because the opinion elsewhere repeatedly references United States v. Janis, but Lens A cannot correct verbatim text from inference alone."
+        ],
+        "suggested_tightening": "Avoid presenting the 1050 sentence as a verbatim quote until the source text is corrected or independently verified.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "f1ce0f926f56c062",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "The “body” or identity of a defendant or respondent",
+          "locator_note": "pin-1039; text page marker *1039",
+          "needs_cl": false,
+          "problem": "The lake pinpoint for pin-1039 is not the opinion quotation; it is harvested content-page boilerplate ending before the asserted identity quote.",
+          "proposed_fix": "Replace pin-1039's harvested boilerplate with the actual opinion sentence beginning 'The “body” or identity...' and keep the pinpoint at 468 U.S. at 1039.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The cached opinion contains the identity sentence at the 1039 page marker.",
+          "The lake pinpoints[].quote for pin-1039 instead contains the page header/background/rule prose from content_page.md and omits the quoted sentence."
+        ],
+        "residual_risks": [
+          "The underlying identity proposition is supported by the opinion text, but the lake quote record is not usable as a verbatim pinpoint."
+        ],
+        "suggested_tightening": "Use the exact typographic quotation marks from the opinion text or stop styling the normalized version as a verbatim quote.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "de63481ec684172d",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The treatment payload matches the disclosed lake treatment fields: field_i_validity good_law, as_of_content 1984-07-05, as_of_treatment 2026-06-30, varies_by_point false.",
+          "Treatment and currency are outside Lens A; no treatment finding is raised."
+        ],
+        "residual_risks": [
+          "Treatment was not substantively audited under this lens."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"A\",\n  \"group_id\": \"_overhaul2/lake/cases/Immigration & Naturalization Service v. Lopez-Mendoza.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"efadeaacd6ae4350\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake identity record is verified for Immigration & Naturalization Service v. Lopez-Mendoza, decided by the U.S. Supreme Court on 1984-07-05.\",\n        \"The official citation in the lake record is 468 U.S. 1032, matching the content page display citation.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"d08eb481b4618d84\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The quoted 1050 sentence is not character-faithful to the cached full opinion text: the content/lake quote says 'Janis' but the disclosed opinion text reads 'Jams'. The lake record also flags quote_fidelity as mismatch.\",\n        \"severity\": \"medium\",\n        \"proposed_fix\": \"Verify against an official/corrected source and either repair the cached text or mark this as a corrected quotation rather than a character-faithful extraction from the disclosed text.\",\n        \"evidence_quote\": \"the <em>Jams </em>balance between costs and benefits\",\n        \"needs_cl\": true,\n        \"locator_note\": \"pin-1050; text page marker *1050\"\n      },\n      \"reasons\": [\n        \"The pinpoint lands on the 1050 passage, but character fidelity fails against text/<case>.txt.\",\n        \"The disclosed lake pinpoint repeats the content quote but marks quote_fidelity as mismatch.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The discrepancy may be an OCR error because the opinion elsewhere repeatedly references United States v. Janis, but Lens A cannot correct verbatim text from inference alone.\"\n      ],\n      \"suggested_tightening\": \"Avoid presenting the 1050 sentence as a verbatim quote until the source text is corrected or independently verified.\"\n    },\n    {\n      \"assertion_id\": \"f1ce0f926f56c062\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The lake pinpoint for pin-1039 is not the opinion quotation; it is harvested content-page boilerplate ending before the asserted identity quote.\",\n        \"severity\": \"high\",\n        \"proposed_fix\": \"Replace pin-1039's harvested boilerplate with the actual opinion sentence beginning 'The “body” or identity...' and keep the pinpoint at 468 U.S. at 1039.\",\n        \"evidence_quote\": \"The “body” or identity of a defendant or respondent\",\n        \"needs_cl\": false,\n        \"locator_note\": \"pin-1039; text page marker *1039\"\n      },\n      \"reasons\": [\n        \"The cached opinion contains the identity sentence at the 1039 page marker.\",\n        \"The lake pinpoints[].quote for pin-1039 instead contains the page header/background/rule prose from content_page.md and omits the quoted sentence.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The underlying identity proposition is supported by the opinion text, but the lake quote record is not usable as a verbatim pinpoint.\"\n      ],\n      \"suggested_tightening\": \"Use the exact typographic quotation marks from the opinion text or stop styling the normalized version as a verbatim quote.\"\n    },\n    {\n      \"assertion_id\": \"de63481ec684172d\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The treatment payload matches the disclosed lake treatment fields: field_i_validity good_law, as_of_content 1984-07-05, as_of_treatment 2026-06-30, varies_by_point false.\",\n        \"Treatment and currency are outside Lens A; no treatment finding is raised.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Treatment was not substantively audited under this lens.\"\n      ],\n      \"suggested_tightening\": null\n    }\n  ],\n  \"notes\": \"Lens A review only. No external sources searched or used.\"\n}",
   "summary": {
-    "at": "2026-07-10T18:28:08-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T01:55:00-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-927dbab20e",
+      "F-S9-PR-5838fac703"
+    ],
     "group_id": "_overhaul2/lake/cases/Immigration & Naturalization Service v. Lopez-Mendoza.json",
     "group_total_assertions": 4,
     "lake_only_cases": [],
@@ -16,21 +101,59 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-3411394c.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 4,
     "run": "prod",
     "text_disclosed_cases": [
       "Immigration & Naturalization Service v. Lopez-Mendoza"
     ],
     "tokens": {
-      "input": 835,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 835
+      "input": 127272,
+      "output": 7559,
+      "source": "codex-events",
+      "total": 134831
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 3.0
+    "verdict_map": {
+      "d08eb481b4618d84": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "de63481ec684172d": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "efadeaacd6ae4350": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "f1ce0f926f56c062": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-927dbab20e",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-5838fac703",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 145.8
   }
 }

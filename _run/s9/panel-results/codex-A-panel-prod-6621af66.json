@@ -1,11 +1,51 @@
 {
-  "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Heller v. New York.json",
+    "lens": "A",
+    "notes": "Reviewed every assertion in group_inventory.jsonl under lens A only.",
+    "reviewed": [
+      {
+        "assertion_id": "f60c76ff9cd45987",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record identity is case_name_full \"Heller v. New York,\" court \"U.S. Supreme Court,\" date_decided \"1973-06-25,\" and year 1973.",
+          "The lake record official citation is exactly \"413 U.S. 483\" and the listed parallel/vendor citations match the assertion: \"93 S. Ct. 2789,\" \"37 L. Ed. 2d 745,\" and \"1973 U.S. LEXIS 30.\"",
+          "The content page caption and frontmatter use \"Heller v. New York\" and \"413 U.S. 483 (1973),\" consistent with the lake identity and citation fields."
+        ],
+        "residual_risks": [
+          "Lake status is under_review and pinpoints are empty, but that does not undermine the identity/citation assertion reviewed here."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "1cbc26fe67ba53c8",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside lens A; no treatment-good-law finding is made here.",
+          "The assertion accurately reports the disclosed lake treatment fields: field_i_validity \"unverified,\" as_of_content null, as_of_treatment null, varies_by_point false, and the frontier-stub scope note.",
+          "The content page likewise renders Treatment as \"Unverified\" and states that subsequent treatment has not completed verification."
+        ],
+        "residual_risks": [
+          "Actual treatment/currency remains unreviewed under this lens and belongs to lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Heller v. New York.json\",\"reviewed\":[{\"assertion_id\":\"f60c76ff9cd45987\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record identity is case_name_full \\\"Heller v. New York,\\\" court \\\"U.S. Supreme Court,\\\" date_decided \\\"1973-06-25,\\\" and year 1973.\",\"The lake record official citation is exactly \\\"413 U.S. 483\\\" and the listed parallel/vendor citations match the assertion: \\\"93 S. Ct. 2789,\\\" \\\"37 L. Ed. 2d 745,\\\" and \\\"1973 U.S. LEXIS 30.\\\"\",\"The content page caption and frontmatter use \\\"Heller v. New York\\\" and \\\"413 U.S. 483 (1973),\\\" consistent with the lake identity and citation fields.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Lake status is under_review and pinpoints are empty, but that does not undermine the identity/citation assertion reviewed here.\"],\"suggested_tightening\":null},{\"assertion_id\":\"1cbc26fe67ba53c8\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside lens A; no treatment-good-law finding is made here.\",\"The assertion accurately reports the disclosed lake treatment fields: field_i_validity \\\"unverified,\\\" as_of_content null, as_of_treatment null, varies_by_point false, and the frontier-stub scope note.\",\"The content page likewise renders Treatment as \\\"Unverified\\\" and states that subsequent treatment has not completed verification.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Actual treatment/currency remains unreviewed under this lens and belongs to lens B.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed every assertion in group_inventory.jsonl under lens A only.\"}",
   "summary": {
-    "at": "2026-07-10T18:27:11-04:00",
-    "attempts": 2,
-    "clean_attestation": false,
+    "at": "2026-07-11T01:47:58-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
     "defense_votes": [],
     "findings_emitted": [],
     "group_id": "_overhaul2/lake/cases/Heller v. New York.json",
@@ -16,21 +56,36 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-6621af66.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 2,
     "run": "prod",
     "text_disclosed_cases": [
       "Heller v. New York"
     ],
     "tokens": {
-      "input": 826,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 826
+      "input": 88945,
+      "output": 1766,
+      "source": "codex-events",
+      "total": 90711
     },
-    "verdict_map": {},
+    "verdict_map": {
+      "1cbc26fe67ba53c8": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "f60c76ff9cd45987": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
     "votes_emitted": [],
-    "wall_clock_s": 3.0
+    "wall_clock_s": 47.0
   }
 }

@@ -1,22 +1,160 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Hanlon v. Berger.json",
+    "lens": "B",
+    "notes": "Lens B only; support and quote-fidelity merits are left to Lens A.",
+    "reviewed": [
+      {
+        "assertion_id": "3738cb1e95f5a4f6",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake record is verified and non-stub for Hanlon v. Berger.",
+          "Official citation 526 U.S. 808 is present and selected; identity fields show expected citation and party-name match.",
+          "For currency, the lake treatment field says good_law as of 2026-06-30."
+        ],
+        "residual_risks": [
+          "No post-2026-06-30 currency check is possible from the disclosed files."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "7953f6e6c34cd729",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote fidelity is outside Lens B; no currency or treatment defect is raised for this row.",
+          "The treatment text embedded in the harvested quote is consistent with the lake's good_law field as of 2026-06-30."
+        ],
+        "residual_risks": [
+          "Quote/support accuracy was not assessed under Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "a2795e0b7f6bb696",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote fidelity is outside Lens B; no currency or treatment defect is raised for this row.",
+          "Nothing in this quote-fidelity row asserts later treatment beyond the qualified-immunity holding."
+        ],
+        "residual_risks": [
+          "Quote/support accuracy was not assessed under Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "41aca81b96bd966b",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "\"field_ii\": \"overruled\"",
+          "locator_note": "content_page.md Treatment & subsequent history; lake treatment.edges and derivation proposed_negative_events.",
+          "needs_cl": true,
+          "problem": "The core good-law label is supported by the lake field_i judgment, but the content page's absolute 'No negative treatment' wording is too broad because the disclosed progeny edges include proposed negative labels such as questioned, overruled, and abrogated.",
+          "proposed_fix": "Keep the good_law status, but qualify or remove the blanket 'No negative treatment' sentence unless the proposed negative progeny edges are audited. A safer formulation is: 'No final negative treatment is reflected in the field_i status; proposed progeny edges warrant audit before a categorical no-negative-treatment statement.'",
+          "severity": "medium"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "Lake treatment.field_i_validity is good_law as of 2026-06-30, with varies_by_point false and no point_overrides.",
+          "The same lake record lists proposed progeny edges with field_ii labels including questioned, overruled, and abrogated.",
+          "No disclosed final field actually changes Hanlon from good_law, so the defect is the categorical no-negative-treatment phrasing, not the good-law label itself."
+        ],
+        "residual_risks": [
+          "The disclosed files do not include the full citing-opinion texts for the proposed negative progeny edges."
+        ],
+        "suggested_tightening": "Qualify treatment prose to distinguish final good-law status from unaudited proposed negative progeny edges.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/Hanlon v. Berger.json\",\"reviewed\":[{\"assertion_id\":\"3738cb1e95f5a4f6\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake record is verified and non-stub for Hanlon v. Berger.\",\"Official citation 526 U.S. 808 is present and selected; identity fields show expected citation and party-name match.\",\"For currency, the lake treatment field says good_law as of 2026-06-30.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"No post-2026-06-30 currency check is possible from the disclosed files.\"],\"suggested_tightening\":null},{\"assertion_id\":\"7953f6e6c34cd729\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Quote fidelity is outside Lens B; no currency or treatment defect is raised for this row.\",\"The treatment text embedded in the harvested quote is consistent with the lake's good_law field as of 2026-06-30.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Quote/support accuracy was not assessed under Lens B.\"],\"suggested_tightening\":null},{\"assertion_id\":\"a2795e0b7f6bb696\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Quote fidelity is outside Lens B; no currency or treatment defect is raised for this row.\",\"Nothing in this quote-fidelity row asserts later treatment beyond the qualified-immunity holding.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Quote/support accuracy was not assessed under Lens B.\"],\"suggested_tightening\":null},{\"assertion_id\":\"41aca81b96bd966b\",\"dimension\":\"treatment\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The core good-law label is supported by the lake field_i judgment, but the content page's absolute 'No negative treatment' wording is too broad because the disclosed progeny edges include proposed negative labels such as questioned, overruled, and abrogated.\",\"severity\":\"medium\",\"proposed_fix\":\"Keep the good_law status, but qualify or remove the blanket 'No negative treatment' sentence unless the proposed negative progeny edges are audited. A safer formulation is: 'No final negative treatment is reflected in the field_i status; proposed progeny edges warrant audit before a categorical no-negative-treatment statement.'\",\"evidence_quote\":\"\\\"field_ii\\\": \\\"overruled\\\"\",\"needs_cl\":true,\"locator_note\":\"content_page.md Treatment & subsequent history; lake treatment.edges and derivation proposed_negative_events.\"},\"reasons\":[\"Lake treatment.field_i_validity is good_law as of 2026-06-30, with varies_by_point false and no point_overrides.\",\"The same lake record lists proposed progeny edges with field_ii labels including questioned, overruled, and abrogated.\",\"No disclosed final field actually changes Hanlon from good_law, so the defect is the categorical no-negative-treatment phrasing, not the good-law label itself.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The disclosed files do not include the full citing-opinion texts for the proposed negative progeny edges.\"],\"suggested_tightening\":\"Qualify treatment prose to distinguish final good-law status from unaudited proposed negative progeny edges.\"}],\"notes\":\"Lens B only; support and quote-fidelity merits are left to Lens A.\"}",
   "summary": {
-    "at": "2026-07-10T18:27:04-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T01:47:31-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-983e9e1652",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-eb557f5951"
+    ],
     "group_id": "_overhaul2/lake/cases/Hanlon v. Berger.json",
     "group_total_assertions": 4,
+    "lake_only_cases": [],
     "lane": "codex-B",
     "lane_id": "codex-B-panel-prod-79f960cb",
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-79f960cb.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "ast status: 429 Too Many Requests, request id: 34e9cb9e-6f31-4fdc-97f4-54b9f5666f4f\n2026-07-10T22:26:54.947175Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:26:55.474145Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:26:56.052227Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:26:57.009895Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:26:58.261540Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:27:00.397667Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Hanlon v. Berger"
+    ],
+    "tokens": {
+      "input": 145857,
+      "output": 8968,
+      "source": "codex-events",
+      "total": 154825
+    },
+    "verdict_map": {
+      "3738cb1e95f5a4f6": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "41aca81b96bd966b": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "7953f6e6c34cd729": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "a2795e0b7f6bb696": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-983e9e1652",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-eb557f5951",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 170.1
   }
 }

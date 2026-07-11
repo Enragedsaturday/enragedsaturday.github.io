@@ -1,22 +1,161 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Illinois v. Krull.json",
+    "lens": "B",
+    "notes": "Lens B only; quote-fidelity rows were reviewed only for currency/treatment defects.",
+    "reviewed": [
+      {
+        "assertion_id": "3ccd753f69e1167b",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record is verified and identifies Illinois v. Krull as a U.S. Supreme Court case decided 1987-03-09.",
+          "The lake official citation is 480 U.S. 340, matching the content page display.",
+          "The lake treatment field lists field_i_validity as good_law as of 2026-06-30, so no final disclosed currency defect defeats existence/live-law use."
+        ],
+        "residual_risks": [
+          "Treatment derivation contains unresolved proposed negative edges; that risk is addressed in the treatment assertion."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "4efdfa0cef624b2c",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Lens B reviews currency and treatment only; quote fidelity is outside this lens.",
+          "No separate final negative treatment is tied specifically to pin-349 in the disclosed record."
+        ],
+        "residual_risks": [
+          "Quote fidelity itself is not endorsed by this Lens B review."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "fa8a6f3cb7b8b15b",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Lens B reviews currency and treatment only; quote fidelity is outside this lens.",
+          "The pinpoint has no independent treatment or live-law assertion beyond the case-level treatment record."
+        ],
+        "residual_risks": [
+          "Quote fidelity itself is not endorsed by this Lens B review."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "56621b27e529155b",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "\"audit_marker\": \"R15 treatment audit required\"",
+          "locator_note": "content_page.md Treatment & subsequent history; lake treatment.edges and treatment.derivation",
+          "needs_cl": true,
+          "problem": "The good_law field can be retained as the lake judgment field, but the built page overstates treatment by saying 'No negative treatment' despite disclosed proposed negative treatment edges and audit-needed derivation lanes.",
+          "proposed_fix": "Retain the good_law status only with the migration/audit caveat, and replace 'No negative treatment' with a qualified statement that proposed negative edges require audit before a no-negative-treatment claim is made.",
+          "severity": "medium"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "The lake treatment field lists field_i_validity as good_law as of 2026-06-30.",
+          "The built page states 'No negative treatment,' but treatment.edges contains proposed negative labels including overruled, questioned, criticized, and superseded_by_statute.",
+          "The disclosed derivation marks lane1_negative and lane2_top_cited as audit_needed, and the provenance says treatment.field_i_validity came from migration plus page frontmatter."
+        ],
+        "residual_risks": [
+          "The proposed edges may be false positives because they are marked proposed and field_iii is mentioned, so a completed audit may still preserve good_law.",
+          "Until that audit is resolved, the absolute 'No negative treatment' sentence is not supported by the disclosed record."
+        ],
+        "suggested_tightening": "Render treatment as: good_law as of 2026-06-30, migration-seed, proposed negative treatment edges require audit; omit 'No negative treatment' until resolved.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"B\",\n  \"group_id\": \"_overhaul2/lake/cases/Illinois v. Krull.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"3ccd753f69e1167b\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake record is verified and identifies Illinois v. Krull as a U.S. Supreme Court case decided 1987-03-09.\",\n        \"The lake official citation is 480 U.S. 340, matching the content page display.\",\n        \"The lake treatment field lists field_i_validity as good_law as of 2026-06-30, so no final disclosed currency defect defeats existence/live-law use.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Treatment derivation contains unresolved proposed negative edges; that risk is addressed in the treatment assertion.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"4efdfa0cef624b2c\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Lens B reviews currency and treatment only; quote fidelity is outside this lens.\",\n        \"No separate final negative treatment is tied specifically to pin-349 in the disclosed record.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Quote fidelity itself is not endorsed by this Lens B review.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"fa8a6f3cb7b8b15b\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Lens B reviews currency and treatment only; quote fidelity is outside this lens.\",\n        \"The pinpoint has no independent treatment or live-law assertion beyond the case-level treatment record.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Quote fidelity itself is not endorsed by this Lens B review.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"56621b27e529155b\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands-modified\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The good_law field can be retained as the lake judgment field, but the built page overstates treatment by saying 'No negative treatment' despite disclosed proposed negative treatment edges and audit-needed derivation lanes.\",\n        \"severity\": \"medium\",\n        \"proposed_fix\": \"Retain the good_law status only with the migration/audit caveat, and replace 'No negative treatment' with a qualified statement that proposed negative edges require audit before a no-negative-treatment claim is made.\",\n        \"evidence_quote\": \"\\\"audit_marker\\\": \\\"R15 treatment audit required\\\"\",\n        \"needs_cl\": true,\n        \"locator_note\": \"content_page.md Treatment & subsequent history; lake treatment.edges and treatment.derivation\"\n      },\n      \"reasons\": [\n        \"The lake treatment field lists field_i_validity as good_law as of 2026-06-30.\",\n        \"The built page states 'No negative treatment,' but treatment.edges contains proposed negative labels including overruled, questioned, criticized, and superseded_by_statute.\",\n        \"The disclosed derivation marks lane1_negative and lane2_top_cited as audit_needed, and the provenance says treatment.field_i_validity came from migration plus page frontmatter.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The proposed edges may be false positives because they are marked proposed and field_iii is mentioned, so a completed audit may still preserve good_law.\",\n        \"Until that audit is resolved, the absolute 'No negative treatment' sentence is not supported by the disclosed record.\"\n      ],\n      \"suggested_tightening\": \"Render treatment as: good_law as of 2026-06-30, migration-seed, proposed negative treatment edges require audit; omit 'No negative treatment' until resolved.\"\n    }\n  ],\n  \"notes\": \"Lens B only; quote-fidelity rows were reviewed only for currency/treatment defects.\"\n}",
   "summary": {
-    "at": "2026-07-10T18:28:02-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T01:53:33-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-a1520f182e",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-28a15c88f4"
+    ],
     "group_id": "_overhaul2/lake/cases/Illinois v. Krull.json",
     "group_total_assertions": 4,
+    "lake_only_cases": [],
     "lane": "codex-B",
     "lane_id": "codex-B-panel-prod-d8ee0675",
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-d8ee0675.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "cket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:27:52.881992Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:27:53.814546Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:27:54.763851Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:27:55.981918Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:27:58.055030Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:28:01.538578Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Illinois v. Krull"
+    ],
+    "tokens": {
+      "input": 273012,
+      "output": 9432,
+      "source": "codex-events",
+      "total": 282444
+    },
+    "verdict_map": {
+      "3ccd753f69e1167b": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "4efdfa0cef624b2c": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "56621b27e529155b": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "fa8a6f3cb7b8b15b": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-a1520f182e",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-28a15c88f4",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 182.8
   }
 }

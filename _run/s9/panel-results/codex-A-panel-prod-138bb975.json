@@ -1,22 +1,166 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Illinois v. Lidster.json",
+    "lens": "A",
+    "notes": "Reviewed all 5 rows in group_inventory.jsonl exactly once under Lens A. No support or black-letter inventory rows were present.",
+    "reviewed": [
+      {
+        "assertion_id": "6f4990b4b86e380a",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record is verified and identifies the case as Illinois v. Lidster, U.S. Supreme Court, decided 2004-01-13.",
+          "The official citation, parallel citations, and vendor-neutral citation in the payload match the lake citation fields: 540 U.S. 419; 124 S. Ct. 885; 157 L. Ed. 2d 843; 2004 U.S. LEXIS 656."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "57e4000156607297",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "The checkpoint stop here differs significantly from that in Edmond. The stop's primary law enforcement purpose was not to determine whether a vehicle's occupants were committing a crime, but to ask vehicle occupants, as members of the public, for their help in providing information about a crime in all likelihood committed by others.",
+          "locator_note": "pin-423; content_page.md line 53 contains the intended quote; text/Illinois v. Lidster__1bd218.txt line 28 contains the matching opinion passage.",
+          "needs_cl": false,
+          "problem": "The pin-423 payload quote is not the opinion passage at 540 U.S. 423; it is harvested page/header/background/rule prose. The lake record itself marks this pinpoint quote_fidelity as mismatch, with null star_marker and slip-only status.",
+          "proposed_fix": "Replace pin-423 with the actual quoted passage from the opinion and validate it against star page 423.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload quote begins with the built page header, not with the quoted Supreme Court language.",
+          "The disclosed opinion text supplies the correct page-423 passage, so the defect is verifiable without outside evidence."
+        ],
+        "residual_risks": [
+          "The visible content-page quote appears supportable; the defect is in the stored pin-423 quote/pinpoint metadata as framed in the inventory."
+        ],
+        "suggested_tightening": "Store only the quoted sentence from the opinion for pin-423 and set star_marker to 423 after validation.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "92cca1e947fbcffa",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The quoted sentence appears verbatim in the disclosed opinion text: We hold that the stop was constitutional.",
+          "The lake pinpoint for pin-427 is marked matched and star-verified at star_marker 427, and the passage appears after the *427 marker before *428."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "c762054ec4a744ed",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The quoted phrase appears verbatim in the disclosed opinion text: on the basis of the individual circumstances.",
+          "The lake pinpoint for pin-426 is marked matched and star-verified at star_marker 426, and the phrase appears in the paragraph after the *426 marker."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "7fc1a0fa643a7ac5",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Lens A does not review treatment/currency defects.",
+          "The treatment payload matches the disclosed lake treatment fields: field_i_validity good_law, as_of_content 2004-01-13, as_of_treatment 2026-06-30, varies_by_point false."
+        ],
+        "residual_risks": [
+          "Treatment and currency require Lens B review."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Illinois v. Lidster.json\",\"reviewed\":[{\"assertion_id\":\"6f4990b4b86e380a\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record is verified and identifies the case as Illinois v. Lidster, U.S. Supreme Court, decided 2004-01-13.\",\"The official citation, parallel citations, and vendor-neutral citation in the payload match the lake citation fields: 540 U.S. 419; 124 S. Ct. 885; 157 L. Ed. 2d 843; 2004 U.S. LEXIS 656.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"57e4000156607297\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The pin-423 payload quote is not the opinion passage at 540 U.S. 423; it is harvested page/header/background/rule prose. The lake record itself marks this pinpoint quote_fidelity as mismatch, with null star_marker and slip-only status.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-423 with the actual quoted passage from the opinion and validate it against star page 423.\",\"evidence_quote\":\"The checkpoint stop here differs significantly from that in Edmond. The stop's primary law enforcement purpose was not to determine whether a vehicle's occupants were committing a crime, but to ask vehicle occupants, as members of the public, for their help in providing information about a crime in all likelihood committed by others.\",\"needs_cl\":false,\"locator_note\":\"pin-423; content_page.md line 53 contains the intended quote; text/Illinois v. Lidster__1bd218.txt line 28 contains the matching opinion passage.\"},\"reasons\":[\"The payload quote begins with the built page header, not with the quoted Supreme Court language.\",\"The disclosed opinion text supplies the correct page-423 passage, so the defect is verifiable without outside evidence.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The visible content-page quote appears supportable; the defect is in the stored pin-423 quote/pinpoint metadata as framed in the inventory.\"],\"suggested_tightening\":\"Store only the quoted sentence from the opinion for pin-423 and set star_marker to 423 after validation.\"},{\"assertion_id\":\"92cca1e947fbcffa\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The quoted sentence appears verbatim in the disclosed opinion text: We hold that the stop was constitutional.\",\"The lake pinpoint for pin-427 is marked matched and star-verified at star_marker 427, and the passage appears after the *427 marker before *428.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"c762054ec4a744ed\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The quoted phrase appears verbatim in the disclosed opinion text: on the basis of the individual circumstances.\",\"The lake pinpoint for pin-426 is marked matched and star-verified at star_marker 426, and the phrase appears in the paragraph after the *426 marker.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"7fc1a0fa643a7ac5\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lens A does not review treatment/currency defects.\",\"The treatment payload matches the disclosed lake treatment fields: field_i_validity good_law, as_of_content 2004-01-13, as_of_treatment 2026-06-30, varies_by_point false.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment and currency require Lens B review.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed all 5 rows in group_inventory.jsonl exactly once under Lens A. No support or black-letter inventory rows were present.\"}",
   "summary": {
-    "at": "2026-07-10T18:28:03-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T01:53:27-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-b6e3848455"
+    ],
     "group_id": "_overhaul2/lake/cases/Illinois v. Lidster.json",
     "group_total_assertions": 5,
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-138bb975",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-138bb975.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "ast status: 429 Too Many Requests, request id: aa8a6531-90e4-4fa3-b6eb-2db55b6f956c\n2026-07-10T22:27:53.777108Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:27:54.420018Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:27:55.111514Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:27:55.940214Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:27:57.204432Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:27:59.246749Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Illinois v. Lidster"
+    ],
+    "tokens": {
+      "input": 285263,
+      "output": 8032,
+      "source": "codex-events",
+      "total": 293295
+    },
+    "verdict_map": {
+      "57e4000156607297": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "6f4990b4b86e380a": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "7fc1a0fa643a7ac5": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "92cca1e947fbcffa": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "c762054ec4a744ed": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-b6e3848455",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 156.6
   }
 }

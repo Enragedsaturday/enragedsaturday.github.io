@@ -1,22 +1,145 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Hope v. Pelzer.json",
+    "lens": "A",
+    "notes": "Reviewed all 4 group_inventory rows using only disclosed workspace files.",
+    "reviewed": [
+      {
+        "assertion_id": "6a36a85bd13279f4",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record is verified for Hope v. Pelzer, U.S. Supreme Court, decided 2002-06-27, year 2002.",
+          "The lake citation fields match the asserted official citation 536 U.S. 730 and the listed parallel/vendor citations 122 S. Ct. 2508, 153 L. Ed. 2d 666, and 2002 U.S. LEXIS 4884."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "98848fcc626429aa",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The quoted sentence appears verbatim in text/Hope v. Pelzer__f996d5.txt in the page-*741 passage.",
+          "The lake pinpoint for pin-741a marks quote_fidelity as matched, pinpoint_status as star-verified, and star_marker as 741."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "c2bb0ff3b96b700a",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "Our opinion in Lanier thus makes clear that officials can still be on notice that their conduct violates established law even in novel factual circumstances.",
+          "locator_note": "pin-741 in the lake has pinpoint_status slip-only, quote_fidelity mismatch, star_marker null; the supporting passage appears in text paragraph b791-5 at the *741 marker.",
+          "needs_cl": false,
+          "problem": "The pin-741 payload quote is not a character-faithful opinion quote; it is harvested page prose spanning the Issue/Rule text and a markdown heading, and the lake itself marks quote_fidelity as mismatch with no star marker.",
+          "proposed_fix": "Replace pin-741's stored quote with the actual page-*741 opinion passage supporting the rendered quote, or remove the quote pinpoint if the sentence is only page synthesis. The likely corrected opinion quote is: officials can still be on notice that their conduct violates established law even in novel factual circumstances.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The asserted payload quote does not appear as a continuous passage in the disclosed opinion text.",
+          "The disclosed opinion text supports the visible page quote, but not the lake payload quote attached to pin-741."
+        ],
+        "residual_risks": [
+          "The underlying rule may still be supportable from the *741 passage; the defect is the stored quote/pinpoint fidelity, not necessarily the legal proposition."
+        ],
+        "suggested_tightening": "Use the exact lower-case opinion text for the stored quote and treat the rendered [O] capitalization as an editorial alteration.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "bf611fb2b4a1a327",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment merits are outside Lens A; no treatment/currency finding is raised.",
+          "The asserted treatment fields match the lake treatment fields: field_i_validity good_law, as_of_content 2002-06-27, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note."
+        ],
+        "residual_risks": [
+          "Treatment/currency was not audited under this lens."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Hope v. Pelzer.json\",\"reviewed\":[{\"assertion_id\":\"6a36a85bd13279f4\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake identity record is verified for Hope v. Pelzer, U.S. Supreme Court, decided 2002-06-27, year 2002.\",\"The lake citation fields match the asserted official citation 536 U.S. 730 and the listed parallel/vendor citations 122 S. Ct. 2508, 153 L. Ed. 2d 666, and 2002 U.S. LEXIS 4884.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"98848fcc626429aa\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The quoted sentence appears verbatim in text/Hope v. Pelzer__f996d5.txt in the page-*741 passage.\",\"The lake pinpoint for pin-741a marks quote_fidelity as matched, pinpoint_status as star-verified, and star_marker as 741.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"c2bb0ff3b96b700a\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The pin-741 payload quote is not a character-faithful opinion quote; it is harvested page prose spanning the Issue/Rule text and a markdown heading, and the lake itself marks quote_fidelity as mismatch with no star marker.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-741's stored quote with the actual page-*741 opinion passage supporting the rendered quote, or remove the quote pinpoint if the sentence is only page synthesis. The likely corrected opinion quote is: officials can still be on notice that their conduct violates established law even in novel factual circumstances.\",\"evidence_quote\":\"Our opinion in Lanier thus makes clear that officials can still be on notice that their conduct violates established law even in novel factual circumstances.\",\"needs_cl\":false,\"locator_note\":\"pin-741 in the lake has pinpoint_status slip-only, quote_fidelity mismatch, star_marker null; the supporting passage appears in text paragraph b791-5 at the *741 marker.\"},\"reasons\":[\"The asserted payload quote does not appear as a continuous passage in the disclosed opinion text.\",\"The disclosed opinion text supports the visible page quote, but not the lake payload quote attached to pin-741.\"],\"breaks_true_positives\":true,\"residual_risks\":[\"The underlying rule may still be supportable from the *741 passage; the defect is the stored quote/pinpoint fidelity, not necessarily the legal proposition.\"],\"suggested_tightening\":\"Use the exact lower-case opinion text for the stored quote and treat the rendered [O] capitalization as an editorial alteration.\"},{\"assertion_id\":\"bf611fb2b4a1a327\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment merits are outside Lens A; no treatment/currency finding is raised.\",\"The asserted treatment fields match the lake treatment fields: field_i_validity good_law, as_of_content 2002-06-27, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment/currency was not audited under this lens.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed all 4 group_inventory rows using only disclosed workspace files.\"}",
   "summary": {
-    "at": "2026-07-10T18:27:47-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T01:50:14-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-25242d5204"
+    ],
     "group_id": "_overhaul2/lake/cases/Hope v. Pelzer.json",
     "group_total_assertions": 4,
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-eb8c478b",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-eb8c478b.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "cket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:27:38.181705Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:27:38.942448Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:27:39.842417Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:27:41.310745Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:27:43.475918Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:27:47.006116Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Hope v. Pelzer"
+    ],
+    "tokens": {
+      "input": 193965,
+      "output": 6746,
+      "source": "codex-events",
+      "total": 200711
+    },
+    "verdict_map": {
+      "6a36a85bd13279f4": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "98848fcc626429aa": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "bf611fb2b4a1a327": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "c2bb0ff3b96b700a": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-25242d5204",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 128.9
   }
 }

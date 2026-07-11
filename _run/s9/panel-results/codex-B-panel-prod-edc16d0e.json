@@ -1,22 +1,151 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Herring v. United States.json",
+    "lens": "B",
+    "notes": "Lens B only; quote-fidelity and support defects were not assessed.",
+    "reviewed": [
+      {
+        "assertion_id": "4b06bbdc88b4fdf8",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake record is non-stub, status verified, and identifies Herring v. United States as a U.S. Supreme Court decision dated 2009-01-14.",
+          "The official citation is 555 U.S. 135 and the lake treatment field says good_law as of 2026-06-30, so the cited authority remains live on the disclosed record."
+        ],
+        "residual_risks": [
+          "Treatment derivation flags audit_needed/cap_hit in later-citation lanes, but the disclosed final validity field remains good_law."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "ad986bbec0334708",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Lens B does not assess quote fidelity or support mismatch.",
+          "The currency labels embedded in the harvested block, Binding — SCOTUS and Treatment: good as of 2026-06-30, match the lake court_level scotus and treatment.field_i_validity good_law/as_of_treatment fields."
+        ],
+        "residual_risks": [
+          "Quote fidelity and support remain for Lens A, not reviewed here."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "b19f9d16aa103d01",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Lens B does not assess quote fidelity or support mismatch.",
+          "This quote-fidelity assertion contains no subsequent-treatment or live-law statement to attack under the currency lens."
+        ],
+        "residual_risks": [
+          "Quote fidelity and support remain for Lens A, not reviewed here."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "9be630675e36dabd",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "\"audit_needed\": true, \"proposed_negative_events\": 25, \"audit_marker\": \"R15 treatment audit required\"",
+          "locator_note": "content_page.md treatment section; lake.treatment.edges and lake.treatment.derivation",
+          "needs_cl": true,
+          "problem": "The good_law and Binding-SCOTUS treatment call survives, but the page's unqualified 'No negative treatment' statement is too broad because the disclosed lake record contains proposed negative-treatment edges and audit-needed derivation lanes.",
+          "proposed_fix": "Keep good_law as of 2026-06-30, but replace 'No negative treatment' with 'No confirmed negative treatment in the lake; proposed negative mentions require audit.'",
+          "severity": "medium"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "Lake treatment.field_i_validity is good_law as of 2026-06-30, with varies_by_point false and no point_overrides.",
+          "Lake treatment.edges contains 28 proposed edges, all field_iii 'mentioned', with negative field_ii labels including overruled, questioned, criticized, abrogated, and superseded_by_statute.",
+          "Derivation lanes lane1_negative and lane2_top_cited are cap_hit and audit_needed, so the disclosed record supports a qualified no-confirmed-negative statement, not an unqualified no-negative-treatment statement."
+        ],
+        "residual_risks": [
+          "Because the edges are proposed and only 'mentioned,' the disclosed record does not prove Herring has been overruled or abrogated.",
+          "A current citator audit would be needed to convert this caveat into a final negative-treatment call."
+        ],
+        "suggested_tightening": "Use 'good_law as of 2026-06-30; no confirmed negative treatment in the lake; automated proposed negative mentions require audit.'",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/Herring v. United States.json\",\"reviewed\":[{\"assertion_id\":\"4b06bbdc88b4fdf8\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake record is non-stub, status verified, and identifies Herring v. United States as a U.S. Supreme Court decision dated 2009-01-14.\",\"The official citation is 555 U.S. 135 and the lake treatment field says good_law as of 2026-06-30, so the cited authority remains live on the disclosed record.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment derivation flags audit_needed/cap_hit in later-citation lanes, but the disclosed final validity field remains good_law.\"],\"suggested_tightening\":null},{\"assertion_id\":\"ad986bbec0334708\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lens B does not assess quote fidelity or support mismatch.\",\"The currency labels embedded in the harvested block, Binding — SCOTUS and Treatment: good as of 2026-06-30, match the lake court_level scotus and treatment.field_i_validity good_law/as_of_treatment fields.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Quote fidelity and support remain for Lens A, not reviewed here.\"],\"suggested_tightening\":null},{\"assertion_id\":\"b19f9d16aa103d01\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lens B does not assess quote fidelity or support mismatch.\",\"This quote-fidelity assertion contains no subsequent-treatment or live-law statement to attack under the currency lens.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Quote fidelity and support remain for Lens A, not reviewed here.\"],\"suggested_tightening\":null},{\"assertion_id\":\"9be630675e36dabd\",\"dimension\":\"treatment\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The good_law and Binding-SCOTUS treatment call survives, but the page's unqualified 'No negative treatment' statement is too broad because the disclosed lake record contains proposed negative-treatment edges and audit-needed derivation lanes.\",\"severity\":\"medium\",\"proposed_fix\":\"Keep good_law as of 2026-06-30, but replace 'No negative treatment' with 'No confirmed negative treatment in the lake; proposed negative mentions require audit.'\",\"evidence_quote\":\"\\\"audit_needed\\\": true, \\\"proposed_negative_events\\\": 25, \\\"audit_marker\\\": \\\"R15 treatment audit required\\\"\",\"needs_cl\":true,\"locator_note\":\"content_page.md treatment section; lake.treatment.edges and lake.treatment.derivation\"},\"reasons\":[\"Lake treatment.field_i_validity is good_law as of 2026-06-30, with varies_by_point false and no point_overrides.\",\"Lake treatment.edges contains 28 proposed edges, all field_iii 'mentioned', with negative field_ii labels including overruled, questioned, criticized, abrogated, and superseded_by_statute.\",\"Derivation lanes lane1_negative and lane2_top_cited are cap_hit and audit_needed, so the disclosed record supports a qualified no-confirmed-negative statement, not an unqualified no-negative-treatment statement.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Because the edges are proposed and only 'mentioned,' the disclosed record does not prove Herring has been overruled or abrogated.\",\"A current citator audit would be needed to convert this caveat into a final negative-treatment call.\"],\"suggested_tightening\":\"Use 'good_law as of 2026-06-30; no confirmed negative treatment in the lake; automated proposed negative mentions require audit.'\"}],\"notes\":\"Lens B only; quote-fidelity and support defects were not assessed.\"}",
   "summary": {
-    "at": "2026-07-10T18:27:35-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T01:50:19-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-bd3fcf5341"
+    ],
     "group_id": "_overhaul2/lake/cases/Herring v. United States.json",
     "group_total_assertions": 4,
+    "lake_only_cases": [],
     "lane": "codex-B",
     "lane_id": "codex-B-panel-prod-edc16d0e",
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-edc16d0e.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "cket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:27:25.713788Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:27:26.485423Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:27:27.346878Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:27:28.791115Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:27:30.858725Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:27:34.785954Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Herring v. United States"
+    ],
+    "tokens": {
+      "input": 212771,
+      "output": 8433,
+      "source": "codex-events",
+      "total": 221204
+    },
+    "verdict_map": {
+      "4b06bbdc88b4fdf8": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "9be630675e36dabd": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "ad986bbec0334708": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "b19f9d16aa103d01": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-bd3fcf5341",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 168.1
   }
 }

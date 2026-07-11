@@ -1,22 +1,147 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Hanlon v. Berger.json",
+    "lens": "A",
+    "notes": "Reviewed all four group_inventory assertions under lens A only.",
+    "reviewed": [
+      {
+        "assertion_id": "3738cb1e95f5a4f6",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record identifies Hanlon v. Berger as a U.S. Supreme Court case decided 1999-05-24 with docket 97-1927.",
+          "The lake citation fields support the displayed official citation 526 U.S. 808 and the listed parallel/vendor citations."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "7953f6e6c34cd729",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "<p>Review of the complaint's much more detailed allegations to the same effect satisfies us that respondents alleged a Fourth Amendment violation under our decision today in <span class=\"star-pagination\">*810</span> <i>Wilson</i> v. <i>Layne, ante,</i> p. 603. There we hold that police violate the Fourth Amendment rights of homeowners when they allow members of the media to accompany them during the execution of a warrant in their home. We also hold there that because the law on this question before today's decision was not clearly established, the police in that case were entitled to the defense of qualified immunity. <i>Ante,</i>  at 605-606.</p>",
+          "locator_note": "content_page.md Rule paragraph ^pin-810; lake pinpoints[0]; text/Hanlon v. Berger__bc91de.txt line with star-pagination *810",
+          "needs_cl": false,
+          "problem": "pin-810 is not character-faithful. The stored pinpoint quote is generated page material rather than an opinion excerpt, and the displayed quoted sentence omits the opinion's ', ante, p. 603' language while moving the period into the case name.",
+          "proposed_fix": "Replace pin-810 with the actual opinion sentence ending 'Wilson v. Layne, ante, p. 603.' and update the page quote to include the omitted language or convert it to a paraphrase.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The lake pinpoint itself marks quote_fidelity as mismatch.",
+          "The actual opinion text contains 'Wilson v. Layne, ante, p. 603,' not the page's quoted 'Wilson v. Layne.' formulation."
+        ],
+        "residual_risks": [
+          "The underlying legal proposition is supported by the opinion; the refutation is limited to verbatim quote fidelity."
+        ],
+        "suggested_tightening": "Use the exact opinion sentence or remove quotation marks and present the sentence as a paraphrase.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "a2795e0b7f6bb696",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The quoted qualified-immunity passage matches the lake pinpoint quote for pin-810b.",
+          "The same passage appears in the cached opinion text, with only italic markup for Wilson differing between HTML and Markdown rendering."
+        ],
+        "residual_risks": [
+          "Raw HTML exact matching differs around italic tags, but the disclosed lake pinpoint and rendered opinion text support the quote."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "41aca81b96bd966b",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside lens A, so no treatment defect is raised.",
+          "The payload matches the lake treatment fields: field_i_validity good_law, as_of_content 1999-05-24, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note."
+        ],
+        "residual_risks": [
+          "Treatment/currency remains for lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Hanlon v. Berger.json\",\"reviewed\":[{\"assertion_id\":\"3738cb1e95f5a4f6\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake identity record identifies Hanlon v. Berger as a U.S. Supreme Court case decided 1999-05-24 with docket 97-1927.\",\"The lake citation fields support the displayed official citation 526 U.S. 808 and the listed parallel/vendor citations.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"7953f6e6c34cd729\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"pin-810 is not character-faithful. The stored pinpoint quote is generated page material rather than an opinion excerpt, and the displayed quoted sentence omits the opinion's ', ante, p. 603' language while moving the period into the case name.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-810 with the actual opinion sentence ending 'Wilson v. Layne, ante, p. 603.' and update the page quote to include the omitted language or convert it to a paraphrase.\",\"evidence_quote\":\"<p>Review of the complaint's much more detailed allegations to the same effect satisfies us that respondents alleged a Fourth Amendment violation under our decision today in <span class=\\\"star-pagination\\\">*810</span> <i>Wilson</i> v. <i>Layne, ante,</i> p. 603. There we hold that police violate the Fourth Amendment rights of homeowners when they allow members of the media to accompany them during the execution of a warrant in their home. We also hold there that because the law on this question before today's decision was not clearly established, the police in that case were entitled to the defense of qualified immunity. <i>Ante,</i>  at 605-606.</p>\",\"needs_cl\":false,\"locator_note\":\"content_page.md Rule paragraph ^pin-810; lake pinpoints[0]; text/Hanlon v. Berger__bc91de.txt line with star-pagination *810\"},\"reasons\":[\"The lake pinpoint itself marks quote_fidelity as mismatch.\",\"The actual opinion text contains 'Wilson v. Layne, ante, p. 603,' not the page's quoted 'Wilson v. Layne.' formulation.\"],\"breaks_true_positives\":true,\"residual_risks\":[\"The underlying legal proposition is supported by the opinion; the refutation is limited to verbatim quote fidelity.\"],\"suggested_tightening\":\"Use the exact opinion sentence or remove quotation marks and present the sentence as a paraphrase.\"},{\"assertion_id\":\"a2795e0b7f6bb696\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The quoted qualified-immunity passage matches the lake pinpoint quote for pin-810b.\",\"The same passage appears in the cached opinion text, with only italic markup for Wilson differing between HTML and Markdown rendering.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Raw HTML exact matching differs around italic tags, but the disclosed lake pinpoint and rendered opinion text support the quote.\"],\"suggested_tightening\":null},{\"assertion_id\":\"41aca81b96bd966b\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside lens A, so no treatment defect is raised.\",\"The payload matches the lake treatment fields: field_i_validity good_law, as_of_content 1999-05-24, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment/currency remains for lens B.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed all four group_inventory assertions under lens A only.\"}",
   "summary": {
-    "at": "2026-07-10T18:27:03-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T01:47:03-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-983e9e1652"
+    ],
     "group_id": "_overhaul2/lake/cases/Hanlon v. Berger.json",
     "group_total_assertions": 4,
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-79f960cb",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-79f960cb.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "ast status: 429 Too Many Requests, request id: a9e9bf74-0db0-440d-876d-35c9522370ae\n2026-07-10T22:26:54.262213Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:26:54.999097Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:26:55.763528Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:26:56.523533Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:26:57.695893Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:26:59.737436Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Hanlon v. Berger"
+    ],
+    "tokens": {
+      "input": 180067,
+      "output": 7564,
+      "source": "codex-events",
+      "total": 187631
+    },
+    "verdict_map": {
+      "3738cb1e95f5a4f6": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "41aca81b96bd966b": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "7953f6e6c34cd729": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "a2795e0b7f6bb696": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-983e9e1652",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 147.2
   }
 }

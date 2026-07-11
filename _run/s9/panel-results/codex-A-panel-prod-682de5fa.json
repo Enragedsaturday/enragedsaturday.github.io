@@ -1,13 +1,88 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Florida v. Wells.json",
+    "lens": "A",
+    "notes": "Lens A found one quote-fidelity defect in pin-4; no treatment/currency finding was made.",
+    "reviewed": [
+      {
+        "assertion_id": "61e5d4bcf8f9af2e",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record identifies Florida v. Wells as a verified U.S. Supreme Court case decided 1990-04-18, year 1990.",
+          "The official citation in the lake record is 495 U.S. 1 and the parallel/vendor citations match the inventory payload."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "9d9941a74f4a5b87",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The quoted sentence appears verbatim in text/Florida v. Wells__4f860a.txt: \"The policy or practice governing inventory searches should be designed to produce an inventory.\"",
+          "The lake pinpoint pin-4a carries the same quote, star_marker 4, and quote_fidelity matched."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "c5cc5b8c60e86289",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "an inventory search must not be a ruse for a general rummaging in order to discover incriminating evidence.",
+          "locator_note": "pin-4; lake quote_fidelity=mismatch; pinpoint_status=slip-only; star_marker=null",
+          "needs_cl": false,
+          "problem": "Pin pin-4's stored quote is not a source quotation from the Wells opinion; it is copied page/front-matter and page prose, and the lake record itself marks quote_fidelity as mismatch with no star marker or validated fragment.",
+          "proposed_fix": "Replace pin-4 with the actual page-4 opinion passage supporting the displayed rule, e.g. the source text beginning with lowercase \"an inventory search must not be a ruse...\", and give it a validated page/star marker or fragment.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload quote begins with built-page material, not opinion text: \"--- # Florida v. Wells *495 U.S. 1 (1990)*...\".",
+          "The actual opinion text supports the rule on page *4, but pin-4 does not faithfully quote that source passage."
+        ],
+        "residual_risks": [
+          "The visible page's quoted rule appears supported by the opinion text, but the stored pin payload is not a valid source quote."
+        ],
+        "suggested_tightening": "Use the exact source wording in the pin record and reserve bracketed capitalization, if any, for display-only editorial formatting.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "97ab852faa620452",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Lens A does not audit treatment or currency.",
+          "The treatment fields in the inventory payload match the lake treatment judgment fields: field_i_validity good_law, as_of_content 1990-04-18, as_of_treatment 2026-06-30, varies_by_point false."
+        ],
+        "residual_risks": [
+          "No independent Lens A treatment finding is made; treatment/currency remains for Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Florida v. Wells.json\",\"reviewed\":[{\"assertion_id\":\"61e5d4bcf8f9af2e\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record identifies Florida v. Wells as a verified U.S. Supreme Court case decided 1990-04-18, year 1990.\",\"The official citation in the lake record is 495 U.S. 1 and the parallel/vendor citations match the inventory payload.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"9d9941a74f4a5b87\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The quoted sentence appears verbatim in text/Florida v. Wells__4f860a.txt: \\\"The policy or practice governing inventory searches should be designed to produce an inventory.\\\"\",\"The lake pinpoint pin-4a carries the same quote, star_marker 4, and quote_fidelity matched.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"c5cc5b8c60e86289\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"Pin pin-4's stored quote is not a source quotation from the Wells opinion; it is copied page/front-matter and page prose, and the lake record itself marks quote_fidelity as mismatch with no star marker or validated fragment.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-4 with the actual page-4 opinion passage supporting the displayed rule, e.g. the source text beginning with lowercase \\\"an inventory search must not be a ruse...\\\", and give it a validated page/star marker or fragment.\",\"evidence_quote\":\"an inventory search must not be a ruse for a general rummaging in order to discover incriminating evidence.\",\"needs_cl\":false,\"locator_note\":\"pin-4; lake quote_fidelity=mismatch; pinpoint_status=slip-only; star_marker=null\"},\"reasons\":[\"The payload quote begins with built-page material, not opinion text: \\\"--- # Florida v. Wells *495 U.S. 1 (1990)*...\\\".\",\"The actual opinion text supports the rule on page *4, but pin-4 does not faithfully quote that source passage.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The visible page's quoted rule appears supported by the opinion text, but the stored pin payload is not a valid source quote.\"],\"suggested_tightening\":\"Use the exact source wording in the pin record and reserve bracketed capitalization, if any, for display-only editorial formatting.\"},{\"assertion_id\":\"97ab852faa620452\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lens A does not audit treatment or currency.\",\"The treatment fields in the inventory payload match the lake treatment judgment fields: field_i_validity good_law, as_of_content 1990-04-18, as_of_treatment 2026-06-30, varies_by_point false.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"No independent Lens A treatment finding is made; treatment/currency remains for Lens B.\"],\"suggested_tightening\":null}],\"notes\":\"Lens A found one quote-fidelity defect in pin-4; no treatment/currency finding was made.\"}",
   "summary": {
-    "at": "2026-07-10T18:26:13-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T01:41:38-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-b1cb1702d0"
+    ],
     "group_id": "_overhaul2/lake/cases/Florida v. Wells.json",
     "group_total_assertions": 4,
     "lake_only_cases": [],
@@ -16,21 +91,55 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-682de5fa.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 4,
     "run": "prod",
     "text_disclosed_cases": [
       "Florida v. Wells"
     ],
     "tokens": {
-      "input": 825,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 825
+      "input": 98026,
+      "output": 5602,
+      "source": "codex-events",
+      "total": 103628
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 3.5
+    "verdict_map": {
+      "61e5d4bcf8f9af2e": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "97ab852faa620452": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "9d9941a74f4a5b87": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "c5cc5b8c60e86289": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-b1cb1702d0",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 109.2
   }
 }

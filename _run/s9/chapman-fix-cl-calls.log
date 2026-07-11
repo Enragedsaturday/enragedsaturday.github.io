@@ -1,0 +1,35 @@
+# F-S9-P2-CHAPMANCAL — serial-CL re-key fixer — CL call log
+# epoch · endpoint · ok|throttled|SKIPPED-lane-prohibition
+# ---------------------------------------------------------------------------
+# TIER PROBE: NOT RUN. Zero CourtListener calls made this task.
+# Rationale: this lane's standing rule bars CL entirely ("Never call CourtListener:
+#   the REST token belongs to the S2 builder lane; the Claude MCP lane is not yours.
+#   Read from the lake / cached text under the pool root.") The correct target was
+#   resolved WITHOUT any CL call from lake evidence + cached opinion text (see below),
+#   so no tier probe was needed and none was performed.
+#
+# Resolution provenance (all cache/lake reads, 0 CL):
+#   - cluster_id 107359 <- 6 independent CL-derived lake treatment-edges
+#       (_overhaul2/lake/cases/{Marbury v. Madison,Haynes v. Washington,Spano v. New York,
+#        Lynumn v. Illinois,Malloy v. Hogan,McNabb v. United States}.json ->
+#        citing_case {name "Chapman v. California", cluster_id 107359,
+#        cite [17 L. Ed. 2d 705, 87 S. Ct. 824, 386 U.S. 18, 1967 U.S. LEXIS 2198]})
+#   - merits opinion text cached: /Users/johngalt/cssi-lake/cache/text/107359.txt (95,655 B)
+#       -> "/opinion/107359/chapman-v-california/", "386 U.S. 18 (1967)", "No. 95",
+#          "MR. JUSTICE BLACK delivered the opinion", "Ruth Elizabeth Chapman" x17,
+#          "Thomas LeRoy Teale", sub-opinion data-id 9423348, harmless x70.
+#
+# BLOCKER: the sanctioned re-key surface (ingest.py --rekey-cluster-panel) is CACHE-ONLY
+#   (max_calls=0) and requires the TARGET CLUSTER OBJECT clusters/107359/ to be cached.
+#   It is NOT cached (verified: no http-cache file under sha1 of the clusters/107359/ URL;
+#   no cached http object with id==107359). Priming it needs one live CL GET clusters/107359/,
+#   which this lane may not issue. -> ESCALATE (one-call handoff to the REST-token builder lane).
+
+# ===== COMPLETION (coordinator AUTHORIZED, lane-block lifted for this single op, 2026-07-11) =====
+# 1 live CL call via sanctioned S2-builder REST-token path (ingest.CourtListenerClient, consumer=S2-BUILDER-AUTHORING):
+#   GET https://www.courtlistener.com/api/rest/v4/clusters/107359/  -> ok, 1.83s, no throttle (new tier)
+#   cached cluster 107359: case_name "Chapman v. California"; date_filed 1967-03-27;
+#   citations [386 U.S. 18, 87 S. Ct. 824, 17 L. Ed. 2d 705, 1967 U.S. LEXIS 2198];
+#   sub_opinions [9423348, 9423349, 9423350, 107359] -> harmonized lead 9423348.
+#   HARD-STOP checks all PASS (id/name/year1967/386U.S.18/87S.Ct.824) -> no contradiction, re-key authorized.
+# Then cache-only --rekey-cluster-panel applied. TOTAL CL CALLS THIS TASK: 1.

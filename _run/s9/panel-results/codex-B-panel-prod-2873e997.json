@@ -1,13 +1,119 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Haynes v. Washington.json",
+    "lens": "B",
+    "notes": "Lens B only; no support, quote-fidelity, or pincite defects were raised.",
+    "reviewed": [
+      {
+        "assertion_id": "df973a1725f08e59",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity is verified: record_id Haynes v. Washington, court U.S. Supreme Court, date_decided 1963-05-27, docket 147.",
+          "The official citation in the lake record is 373 U.S. 503 and the cited parallels match the inventory.",
+          "Currency angle survives because the disclosed treatment judgment is field_i_validity good_law as of 2026-06-30."
+        ],
+        "residual_risks": [
+          "Treatment derivation contains proposed negative-event lanes marked audit_needed, but no confirmed point override or final negative validity appears in the disclosed record."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "269c69ffa982b5b7",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote/support fidelity is outside lens B, so no quote-fidelity defect is raised.",
+          "The cited authority remains treated as good_law in the lake record, with no point_overrides and no disclosed confirmed supersession of the quoted point."
+        ],
+        "residual_risks": [
+          "Proposed treatment edges remain audit-needed; lens B cannot convert them into confirmed negative treatment from the disclosed record alone."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "7452cf6aefcb0d72",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote/support fidelity is outside lens B, so the lake's mismatch/slip-only status is not used as a lens B defect.",
+          "The lake treatment judgment remains good_law, varies_by_point is false, and point_overrides is empty."
+        ],
+        "residual_risks": [
+          "The treatment derivation flags proposed negative events, but all listed treatment edges are proposed and field_iii is mentioned."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "b5bf5642c4ffa48a",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote/support fidelity is outside lens B, so no quote-harvest defect is raised here.",
+          "The treatment and weight embedded in the harvested text are consistent with disclosed fields: U.S. Supreme Court, court_level scotus, and field_i_validity good_law."
+        ],
+        "residual_risks": [
+          "The harvested quote itself contains page header material, but that is a lens A issue, not a treatment/currency issue."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "25eae1fb25a322c1",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "\"audit_needed\": true,\n        \"proposed_negative_events\": 7,\n        \"audit_marker\": \"R15 treatment audit required\"",
+          "locator_note": "content_page.md Treatment & subsequent history; lake treatment.derivation.lane1_negative and lane2_top_cited",
+          "needs_cl": true,
+          "problem": "The core good_law treatment call matches the lake judgment, but the built page's categorical 'No negative treatment' wording is stronger than the disclosed treatment audit record supports. The lake lists proposed negative/currency edges and marks treatment lanes audit_needed, so the page should distinguish no confirmed negative treatment from no possible negative signals.",
+          "proposed_fix": "Keep Status: good as of 2026-06-30 - Binding - SCOTUS, but replace 'No negative treatment' with 'No confirmed negative treatment in the lake record; proposed negative-treatment signals are audit-needed, all currently classified as mentioned with no point overrides.'",
+          "severity": "medium"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "Lake treatment field_i_validity is good_law, as_of_treatment is 2026-06-30, varies_by_point is false, and point_overrides is empty.",
+          "All 31 listed treatment edges are proposed and have field_iii mentioned, so the disclosed record does not show a confirmed overruling, abrogation, supersession, or limitation.",
+          "However, lane1_negative and lane2_top_cited are both audit_needed with proposed_negative_events, making the unqualified page statement 'No negative treatment' too absolute."
+        ],
+        "residual_risks": [
+          "A completed treatment audit could confirm or clear the proposed negative events; the disclosed files do not contain that completed audit."
+        ],
+        "suggested_tightening": "Use 'no confirmed negative treatment' rather than 'No negative treatment' unless the audit-needed lanes are resolved.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/Haynes v. Washington.json\",\"reviewed\":[{\"assertion_id\":\"df973a1725f08e59\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity is verified: record_id Haynes v. Washington, court U.S. Supreme Court, date_decided 1963-05-27, docket 147.\",\"The official citation in the lake record is 373 U.S. 503 and the cited parallels match the inventory.\",\"Currency angle survives because the disclosed treatment judgment is field_i_validity good_law as of 2026-06-30.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment derivation contains proposed negative-event lanes marked audit_needed, but no confirmed point override or final negative validity appears in the disclosed record.\"],\"suggested_tightening\":null},{\"assertion_id\":\"269c69ffa982b5b7\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Quote/support fidelity is outside lens B, so no quote-fidelity defect is raised.\",\"The cited authority remains treated as good_law in the lake record, with no point_overrides and no disclosed confirmed supersession of the quoted point.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Proposed treatment edges remain audit-needed; lens B cannot convert them into confirmed negative treatment from the disclosed record alone.\"],\"suggested_tightening\":null},{\"assertion_id\":\"7452cf6aefcb0d72\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Quote/support fidelity is outside lens B, so the lake's mismatch/slip-only status is not used as a lens B defect.\",\"The lake treatment judgment remains good_law, varies_by_point is false, and point_overrides is empty.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The treatment derivation flags proposed negative events, but all listed treatment edges are proposed and field_iii is mentioned.\"],\"suggested_tightening\":null},{\"assertion_id\":\"b5bf5642c4ffa48a\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Quote/support fidelity is outside lens B, so no quote-harvest defect is raised here.\",\"The treatment and weight embedded in the harvested text are consistent with disclosed fields: U.S. Supreme Court, court_level scotus, and field_i_validity good_law.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The harvested quote itself contains page header material, but that is a lens A issue, not a treatment/currency issue.\"],\"suggested_tightening\":null},{\"assertion_id\":\"25eae1fb25a322c1\",\"dimension\":\"treatment\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The core good_law treatment call matches the lake judgment, but the built page's categorical 'No negative treatment' wording is stronger than the disclosed treatment audit record supports. The lake lists proposed negative/currency edges and marks treatment lanes audit_needed, so the page should distinguish no confirmed negative treatment from no possible negative signals.\",\"severity\":\"medium\",\"proposed_fix\":\"Keep Status: good as of 2026-06-30 - Binding - SCOTUS, but replace 'No negative treatment' with 'No confirmed negative treatment in the lake record; proposed negative-treatment signals are audit-needed, all currently classified as mentioned with no point overrides.'\",\"evidence_quote\":\"\\\"audit_needed\\\": true,\\n        \\\"proposed_negative_events\\\": 7,\\n        \\\"audit_marker\\\": \\\"R15 treatment audit required\\\"\",\"needs_cl\":true,\"locator_note\":\"content_page.md Treatment & subsequent history; lake treatment.derivation.lane1_negative and lane2_top_cited\"},\"reasons\":[\"Lake treatment field_i_validity is good_law, as_of_treatment is 2026-06-30, varies_by_point is false, and point_overrides is empty.\",\"All 31 listed treatment edges are proposed and have field_iii mentioned, so the disclosed record does not show a confirmed overruling, abrogation, supersession, or limitation.\",\"However, lane1_negative and lane2_top_cited are both audit_needed with proposed_negative_events, making the unqualified page statement 'No negative treatment' too absolute.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"A completed treatment audit could confirm or clear the proposed negative events; the disclosed files do not contain that completed audit.\"],\"suggested_tightening\":\"Use 'no confirmed negative treatment' rather than 'No negative treatment' unless the audit-needed lanes are resolved.\"}],\"notes\":\"Lens B only; no support, quote-fidelity, or pincite defects were raised.\"}",
   "summary": {
-    "at": "2026-07-10T18:27:12-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T01:48:29-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "defense_votes": [],
-    "findings_emitted": [],
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-b7281f0a74",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-43505ecf71",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-ae96643a46"
+    ],
     "group_id": "_overhaul2/lake/cases/Haynes v. Washington.json",
     "group_total_assertions": 5,
     "lake_only_cases": [],
@@ -16,21 +122,70 @@
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-2873e997.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 5,
     "run": "prod",
     "text_disclosed_cases": [
       "Haynes v. Washington"
     ],
     "tokens": {
-      "input": 754,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 754
+      "input": 232525,
+      "output": 7682,
+      "source": "codex-events",
+      "total": 240207
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 4.8
+    "verdict_map": {
+      "25eae1fb25a322c1": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "269c69ffa982b5b7": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "7452cf6aefcb0d72": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "b5bf5642c4ffa48a": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "df973a1725f08e59": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-b7281f0a74",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-43505ecf71",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-ae96643a46",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 156.1
   }
 }

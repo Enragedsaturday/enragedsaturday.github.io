@@ -1,22 +1,157 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Illinois v. Perkins.json",
+    "lens": "A",
+    "notes": "Reviewed 4/4 inventory rows. Treatment row recorded only as a field-match; no Lens A treatment finding.",
+    "reviewed": [
+      {
+        "assertion_id": "ea7efac5c6776799",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record is Illinois v. Perkins, U.S. Supreme Court, decided 1990-06-04, year 1990.",
+          "The lake citations list official 496 U.S. 292 plus 110 S. Ct. 2394, 110 L. Ed. 2d 243, and 1990 U.S. LEXIS 2885, matching the assertion and content page."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "9e3138f8b8da4296",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "The essential ingredients of a “police-dominated atmosphere” and compulsion are not present when an incarcerated person speaks freely to someone whom he believes to be a fellow inmate.",
+          "locator_note": "text/Illinois v. Perkins__fd0180.txt contains the relevant passage at the page-296 section; lake pinpoints[pin-296] has page null and quote_fidelity mismatch.",
+          "needs_cl": false,
+          "problem": "pin-296's stored/asserted quote is not the page-296 opinion passage; it is a malformed harvest from the content page background/issue/rule text, and the lake itself flags quote_fidelity as mismatch.",
+          "proposed_fix": "Replace pin-296 with the actual page-296 rule passage beginning \"Conversations between suspects and undercover agents do not implicate the concerns underlying Miranda.\"",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload quote begins \"), and an informant...\" and then runs through Background/Issue/Rule material; that is not a page-296 opinion quote.",
+          "The opinion text at page 296 contains the cited rule passage beginning \"Conversations between suspects and undercover agents...\" and the second sentence quoted in evidence_quote.",
+          "content_page.md displays the correct rule quote at ^pin-296, but the lake pinpoint attached to the assertion does not."
+        ],
+        "residual_risks": [
+          "The displayed content_page quote changes the opinion's curly double quotation marks around “police-dominated atmosphere” to straight single quotation marks; exact-quote policy may require preserving or normalizing that punctuation."
+        ],
+        "suggested_tightening": "Store the exact visible opinion passage for pin-296 and add a page value of 296 if the schema supports it.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "ebc3c19b250e8763",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The ^pin-300 content_page quote is identical to the lake pinpoints[].quote.",
+          "The opinion text at page 300 contains the same holding sentence as visible text; the only raw-text difference is inline HTML markup around italic Miranda."
+        ],
+        "residual_risks": [
+          "The lake quote_fidelity field says mismatch, apparently because the cached opinion contains inline citation/italic markup; no substantive quote defect is visible from the disclosed text."
+        ],
+        "suggested_tightening": "Re-run quote normalization to clear the false mismatch flag or retain markup-aware canonical quote text.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "8b117b8dc67ac545",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The row matches the disclosed lake treatment fields: field_i_validity good_law, as_of_content 1990-06-04, as_of_treatment 2026-06-30, varies_by_point false, and the same scope_note.",
+          "Treatment/currency is outside Lens A, so this is only a disclosed-field consistency check."
+        ],
+        "residual_risks": [
+          "No treatment/currency review performed under Lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Illinois v. Perkins.json\",\"reviewed\":[{\"assertion_id\":\"ea7efac5c6776799\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake identity record is Illinois v. Perkins, U.S. Supreme Court, decided 1990-06-04, year 1990.\",\"The lake citations list official 496 U.S. 292 plus 110 S. Ct. 2394, 110 L. Ed. 2d 243, and 1990 U.S. LEXIS 2885, matching the assertion and content page.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"9e3138f8b8da4296\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"pin-296's stored/asserted quote is not the page-296 opinion passage; it is a malformed harvest from the content page background/issue/rule text, and the lake itself flags quote_fidelity as mismatch.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-296 with the actual page-296 rule passage beginning \\\"Conversations between suspects and undercover agents do not implicate the concerns underlying Miranda.\\\"\",\"evidence_quote\":\"The essential ingredients of a “police-dominated atmosphere” and compulsion are not present when an incarcerated person speaks freely to someone whom he believes to be a fellow inmate.\",\"needs_cl\":false,\"locator_note\":\"text/Illinois v. Perkins__fd0180.txt contains the relevant passage at the page-296 section; lake pinpoints[pin-296] has page null and quote_fidelity mismatch.\"},\"reasons\":[\"The payload quote begins \\\"), and an informant...\\\" and then runs through Background/Issue/Rule material; that is not a page-296 opinion quote.\",\"The opinion text at page 296 contains the cited rule passage beginning \\\"Conversations between suspects and undercover agents...\\\" and the second sentence quoted in evidence_quote.\",\"content_page.md displays the correct rule quote at ^pin-296, but the lake pinpoint attached to the assertion does not.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The displayed content_page quote changes the opinion's curly double quotation marks around “police-dominated atmosphere” to straight single quotation marks; exact-quote policy may require preserving or normalizing that punctuation.\"],\"suggested_tightening\":\"Store the exact visible opinion passage for pin-296 and add a page value of 296 if the schema supports it.\"},{\"assertion_id\":\"ebc3c19b250e8763\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The ^pin-300 content_page quote is identical to the lake pinpoints[].quote.\",\"The opinion text at page 300 contains the same holding sentence as visible text; the only raw-text difference is inline HTML markup around italic Miranda.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The lake quote_fidelity field says mismatch, apparently because the cached opinion contains inline citation/italic markup; no substantive quote defect is visible from the disclosed text.\"],\"suggested_tightening\":\"Re-run quote normalization to clear the false mismatch flag or retain markup-aware canonical quote text.\"},{\"assertion_id\":\"8b117b8dc67ac545\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The row matches the disclosed lake treatment fields: field_i_validity good_law, as_of_content 1990-06-04, as_of_treatment 2026-06-30, varies_by_point false, and the same scope_note.\",\"Treatment/currency is outside Lens A, so this is only a disclosed-field consistency check.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"No treatment/currency review performed under Lens A.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed 4/4 inventory rows. Treatment row recorded only as a field-match; no Lens A treatment finding.\"}",
   "summary": {
-    "at": "2026-07-10T18:28:03-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T01:54:20-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-51c870bd38",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-d579ae9ac9"
+    ],
     "group_id": "_overhaul2/lake/cases/Illinois v. Perkins.json",
     "group_total_assertions": 4,
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-2f0212fb",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-2f0212fb.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "ast status: 429 Too Many Requests, request id: 88af9d5d-639a-4230-ad28-751a6d6573b8\n2026-07-10T22:27:53.899723Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:27:54.674157Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:27:55.304425Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:27:56.098540Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:27:57.243479Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:27:59.216735Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Illinois v. Perkins"
+    ],
+    "tokens": {
+      "input": 294457,
+      "output": 7311,
+      "source": "codex-events",
+      "total": 301768
+    },
+    "verdict_map": {
+      "8b117b8dc67ac545": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "9e3138f8b8da4296": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "ea7efac5c6776799": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "ebc3c19b250e8763": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-d579ae9ac9",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-51c870bd38",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": 146.4
   }
 }

@@ -1,13 +1,82 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Heck v. Humphrey.json",
+    "lens": "B",
+    "notes": "Lens B only; support and quote-fidelity merits were not reviewed.",
+    "reviewed": [
+      {
+        "assertion_id": "0a1ae49783eae7f5",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record is verified and identifies Heck v. Humphrey as a U.S. Supreme Court case decided 1994-06-24 with official citation 512 U.S. 477.",
+          "The disclosed treatment field lists field_i_validity as good_law as of 2026-06-30, so the cited authority is live for Lens B purposes."
+        ],
+        "residual_risks": [
+          "Lake derivation shows audit_needed and proposed negative-signal edges, but no final disclosed treatment field removes live-law status."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "bbe17a37cb22d29d",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "This is a quote-fidelity row, and Lens B does not evaluate support or quote fidelity.",
+          "No independent current-law or treatment assertion in this row is contradicted by the disclosed treatment fields."
+        ],
+        "residual_risks": [
+          "Quote fidelity and pinpoint accuracy remain for Lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "0052c75cc3bccb81",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "No negative treatment.",
+          "locator_note": "content_page.md Treatment & subsequent history; lake treatment.edges",
+          "needs_cl": false,
+          "problem": "The scoped good-law call survives, but the page overstates the treatment narrative by saying there is no negative treatment despite lake treatment.edges containing proposed negative-signal labels including questioned, criticized, overruled, abrogated, and superseded_by_statute. Those edges are all field_iii: mentioned and proposed: true, so they do not defeat good_law, but they do defeat the unqualified 'No negative treatment' prose.",
+          "proposed_fix": "Keep field_i_validity: good_law for the stated scope, but revise the prose to say the disclosed lake record contains proposed negative-signal progeny edges classified only as mentioned, with no point override or final non-good-law treatment.",
+          "severity": "medium"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "Lake treatment.field_i_validity is good_law and the scope_note is limited to the favorable-termination rule for § 1983 damages claims that would imply conviction invalidity.",
+          "Lake treatment has no point_overrides and all disclosed edges are field_iii: mentioned, so no disclosed final edge overrules or abrogates the scoped rule.",
+          "The disclosed edges nevertheless include proposed negative-signal field_ii values, so the page should not say 'No negative treatment' without qualification."
+        ],
+        "residual_risks": [
+          "The treatment derivation reports audit_needed and cap_hit in negative-signal lanes, so a fuller treatment audit could still affect future wording."
+        ],
+        "suggested_tightening": "Replace 'No negative treatment' with 'No finalized negative treatment in the disclosed lake record; proposed negative-signal edges are classified as mentioned.'",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"B\",\n  \"group_id\": \"_overhaul2/lake/cases/Heck v. Humphrey.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"0a1ae49783eae7f5\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake record is verified and identifies Heck v. Humphrey as a U.S. Supreme Court case decided 1994-06-24 with official citation 512 U.S. 477.\",\n        \"The disclosed treatment field lists field_i_validity as good_law as of 2026-06-30, so the cited authority is live for Lens B purposes.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Lake derivation shows audit_needed and proposed negative-signal edges, but no final disclosed treatment field removes live-law status.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"bbe17a37cb22d29d\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"This is a quote-fidelity row, and Lens B does not evaluate support or quote fidelity.\",\n        \"No independent current-law or treatment assertion in this row is contradicted by the disclosed treatment fields.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Quote fidelity and pinpoint accuracy remain for Lens A.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"0052c75cc3bccb81\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands-modified\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The scoped good-law call survives, but the page overstates the treatment narrative by saying there is no negative treatment despite lake treatment.edges containing proposed negative-signal labels including questioned, criticized, overruled, abrogated, and superseded_by_statute. Those edges are all field_iii: mentioned and proposed: true, so they do not defeat good_law, but they do defeat the unqualified 'No negative treatment' prose.\",\n        \"severity\": \"medium\",\n        \"proposed_fix\": \"Keep field_i_validity: good_law for the stated scope, but revise the prose to say the disclosed lake record contains proposed negative-signal progeny edges classified only as mentioned, with no point override or final non-good-law treatment.\",\n        \"evidence_quote\": \"No negative treatment.\",\n        \"needs_cl\": false,\n        \"locator_note\": \"content_page.md Treatment & subsequent history; lake treatment.edges\"\n      },\n      \"reasons\": [\n        \"Lake treatment.field_i_validity is good_law and the scope_note is limited to the favorable-termination rule for § 1983 damages claims that would imply conviction invalidity.\",\n        \"Lake treatment has no point_overrides and all disclosed edges are field_iii: mentioned, so no disclosed final edge overrules or abrogates the scoped rule.\",\n        \"The disclosed edges nevertheless include proposed negative-signal field_ii values, so the page should not say 'No negative treatment' without qualification.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The treatment derivation reports audit_needed and cap_hit in negative-signal lanes, so a fuller treatment audit could still affect future wording.\"\n      ],\n      \"suggested_tightening\": \"Replace 'No negative treatment' with 'No finalized negative treatment in the disclosed lake record; proposed negative-signal edges are classified as mentioned.'\"\n    }\n  ],\n  \"notes\": \"Lens B only; support and quote-fidelity merits were not reviewed.\"\n}",
   "summary": {
-    "at": "2026-07-10T18:27:10-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T01:48:51-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "defense_votes": [],
-    "findings_emitted": [],
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-b19018a3a0",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-5081e3d8e2"
+    ],
     "group_id": "_overhaul2/lake/cases/Heck v. Humphrey.json",
     "group_total_assertions": 3,
     "lake_only_cases": [],
@@ -16,21 +85,52 @@
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-2465fc9d.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 3,
     "run": "prod",
     "text_disclosed_cases": [
       "Heck v. Humphrey"
     ],
     "tokens": {
-      "input": 753,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 753
+      "input": 262002,
+      "output": 6324,
+      "source": "codex-events",
+      "total": 268326
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 3.2
+    "verdict_map": {
+      "0052c75cc3bccb81": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "0a1ae49783eae7f5": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "bbe17a37cb22d29d": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-b19018a3a0",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-5081e3d8e2",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 126.6
   }
 }

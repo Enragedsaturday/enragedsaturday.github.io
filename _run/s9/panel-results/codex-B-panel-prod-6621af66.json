@@ -1,11 +1,51 @@
 {
-  "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Heller v. New York.json",
+    "lens": "B",
+    "notes": "Reviewed all rows in group_inventory.jsonl under lens B using only disclosed files.",
+    "reviewed": [
+      {
+        "assertion_id": "f60c76ff9cd45987",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record matches Heller v. New York, U.S. Supreme Court, decided 1973-06-25, docket No. 71-1043, cluster_id 108853.",
+          "The lake citations record lists the asserted official citation 413 U.S. 483 and the asserted parallel/vendor citations.",
+          "No disclosed treatment field or progeny edge says this authority was overruled, superseded, abrogated, or limited."
+        ],
+        "residual_risks": [
+          "Current good-law status is not affirmatively verified because treatment.field_i_validity is unverified and progeny rows are not cached."
+        ],
+        "suggested_tightening": "Keep existence/citation separate from any live-law implication; pair it with the visible Treatment: Unverified banner.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "1cbc26fe67ba53c8",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The asserted treatment payload exactly tracks the lake treatment fields: field_i_validity is unverified, as_of_content and as_of_treatment are null, varies_by_point is false, and the scope note says treatment/progeny were intentionally not derived until S6 promotion.",
+          "The page renders the same treatment status as Unverified and states that subsequent treatment has not yet been machine-verified.",
+          "The disclosed progeny/treatment record contains no adverse edge; it also contains no affirmative good-law call, so the unverified treatment label is the correct conservative call."
+        ],
+        "residual_risks": [
+          "Because edges are empty and citation_count is null, disclosed evidence cannot prove the case remains current good law; it only verifies that the page does not claim verified good-law status."
+        ],
+        "suggested_tightening": "Avoid letting the authority_weight label Binding — SCOTUS be read as a verified current-validity signal; keep it visually subordinate to Treatment: Unverified.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/Heller v. New York.json\",\"reviewed\":[{\"assertion_id\":\"f60c76ff9cd45987\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake identity record matches Heller v. New York, U.S. Supreme Court, decided 1973-06-25, docket No. 71-1043, cluster_id 108853.\",\"The lake citations record lists the asserted official citation 413 U.S. 483 and the asserted parallel/vendor citations.\",\"No disclosed treatment field or progeny edge says this authority was overruled, superseded, abrogated, or limited.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Current good-law status is not affirmatively verified because treatment.field_i_validity is unverified and progeny rows are not cached.\"],\"suggested_tightening\":\"Keep existence/citation separate from any live-law implication; pair it with the visible Treatment: Unverified banner.\"},{\"assertion_id\":\"1cbc26fe67ba53c8\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The asserted treatment payload exactly tracks the lake treatment fields: field_i_validity is unverified, as_of_content and as_of_treatment are null, varies_by_point is false, and the scope note says treatment/progeny were intentionally not derived until S6 promotion.\",\"The page renders the same treatment status as Unverified and states that subsequent treatment has not yet been machine-verified.\",\"The disclosed progeny/treatment record contains no adverse edge; it also contains no affirmative good-law call, so the unverified treatment label is the correct conservative call.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Because edges are empty and citation_count is null, disclosed evidence cannot prove the case remains current good law; it only verifies that the page does not claim verified good-law status.\"],\"suggested_tightening\":\"Avoid letting the authority_weight label Binding — SCOTUS be read as a verified current-validity signal; keep it visually subordinate to Treatment: Unverified.\"}],\"notes\":\"Reviewed all rows in group_inventory.jsonl under lens B using only disclosed files.\"}",
   "summary": {
-    "at": "2026-07-10T18:27:13-04:00",
-    "attempts": 2,
-    "clean_attestation": false,
+    "at": "2026-07-11T01:48:05-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
     "defense_votes": [],
     "findings_emitted": [],
     "group_id": "_overhaul2/lake/cases/Heller v. New York.json",
@@ -16,21 +56,36 @@
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-6621af66.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 2,
     "run": "prod",
     "text_disclosed_cases": [
       "Heller v. New York"
     ],
     "tokens": {
-      "input": 754,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 754
+      "input": 108441,
+      "output": 2532,
+      "source": "codex-events",
+      "total": 110973
     },
-    "verdict_map": {},
+    "verdict_map": {
+      "1cbc26fe67ba53c8": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "f60c76ff9cd45987": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
     "votes_emitted": [],
-    "wall_clock_s": 3.1
+    "wall_clock_s": 51.8
   }
 }

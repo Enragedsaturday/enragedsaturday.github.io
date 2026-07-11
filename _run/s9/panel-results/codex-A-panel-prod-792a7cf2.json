@@ -1,13 +1,98 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Florida v. Royer.json",
+    "lens": "A",
+    "notes": "Lens A reviewed only existence and quote fidelity/support-adjacent issues; treatment row was checked only for consistency with the disclosed lake record.",
+    "reviewed": [
+      {
+        "assertion_id": "bbbcb3639ffa7f7a",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity record is verified for Florida v. Royer, U.S. Supreme Court, decided 1983-03-23.",
+          "The lake official citation is 460 U.S. 491, and the listed parallel/vendor citations match the inventory payload."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "78328327098ca42d",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "an investigative detention must be temporary and last no longer than is necessary to effectuate the purpose of the stop. Similarly, the investigative methods employed should be the least intrusive means reasonably available to verify or dispel the officer’s suspicion in a short period of time.",
+          "locator_note": "pin-500; text paragraph b562-5, page label 500. Lake pinpoints[] also flags quote_fidelity as mismatch and has page null.",
+          "needs_cl": false,
+          "problem": "The pin-500 quote payload is not a character-faithful opinion quote. It appears to harvest content-page Background/Issue/Rule text, including markdown headings, rather than the Supreme Court passage at page 500.",
+          "proposed_fix": "Replace pin-500 with the actual page-500 rule passage from the opinion text and set the pinpoint metadata to page 500.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The disclosed opinion text contains the page-500 rule passage, not the inventory quote containing '## Issue' and '## Rule'.",
+          "The lake pinpoint for pin-500 is itself marked quote_fidelity='mismatch'."
+        ],
+        "residual_risks": [
+          "The underlying rule statement is supported by the opinion; the defect is the harvested quote/pinpoint fidelity."
+        ],
+        "suggested_tightening": "Use the exact page-500 passage with the source punctuation, including the curly apostrophe in 'officer’s'.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "e976908985380747",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "What had begun as a consensual inquiry in a public place had escalated into an investigatory procedure in a police interrogation room, where the police, unsatisfied with previous explanations, sought to confirm their suspicions.",
+          "locator_note": "pin-503; text paragraph b564-6, page label 503. Lake pinpoints[] also flags quote_fidelity as mismatch.",
+          "needs_cl": false,
+          "problem": "The pin-503 quote is a stitched quotation with altered punctuation. The opinion says 'room, where...' and contains several intervening sentences before 'As a practical matter, Royer was under arrest.'",
+          "proposed_fix": "Use separate exact quotations or quote the relevant page-503 passage without altering punctuation around the omission.",
+          "severity": "medium"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The quoted words are drawn from page 503, but the displayed quote replaces the comma after 'room' and a substantial intervening passage with '. . . .'.",
+          "The exact later sentence 'As a practical matter, Royer was under arrest.' appears after multiple intervening sentences."
+        ],
+        "residual_risks": [
+          "The legal proposition is supported; the defect is strict quote fidelity."
+        ],
+        "suggested_tightening": "Quote the first sentence through 'suspicions' and then quote 'As a practical matter, Royer was under arrest.' as a separate sentence.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "00b18a7407ea2665",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The treatment payload matches the lake treatment fields: field_i_validity good_law, as_of_content 1983-03-23, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note.",
+          "Treatment/currency is outside Lens A, so no treatment finding is raised."
+        ],
+        "residual_risks": [
+          "Treatment/currency should be reviewed by Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"A\",\n  \"group_id\": \"_overhaul2/lake/cases/Florida v. Royer.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"bbbcb3639ffa7f7a\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Lake identity record is verified for Florida v. Royer, U.S. Supreme Court, decided 1983-03-23.\",\n        \"The lake official citation is 460 U.S. 491, and the listed parallel/vendor citations match the inventory payload.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"78328327098ca42d\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The pin-500 quote payload is not a character-faithful opinion quote. It appears to harvest content-page Background/Issue/Rule text, including markdown headings, rather than the Supreme Court passage at page 500.\",\n        \"severity\": \"high\",\n        \"proposed_fix\": \"Replace pin-500 with the actual page-500 rule passage from the opinion text and set the pinpoint metadata to page 500.\",\n        \"evidence_quote\": \"an investigative detention must be temporary and last no longer than is necessary to effectuate the purpose of the stop. Similarly, the investigative methods employed should be the least intrusive means reasonably available to verify or dispel the officer’s suspicion in a short period of time.\",\n        \"needs_cl\": false,\n        \"locator_note\": \"pin-500; text paragraph b562-5, page label 500. Lake pinpoints[] also flags quote_fidelity as mismatch and has page null.\"\n      },\n      \"reasons\": [\n        \"The disclosed opinion text contains the page-500 rule passage, not the inventory quote containing '## Issue' and '## Rule'.\",\n        \"The lake pinpoint for pin-500 is itself marked quote_fidelity='mismatch'.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The underlying rule statement is supported by the opinion; the defect is the harvested quote/pinpoint fidelity.\"\n      ],\n      \"suggested_tightening\": \"Use the exact page-500 passage with the source punctuation, including the curly apostrophe in 'officer’s'.\"\n    },\n    {\n      \"assertion_id\": \"e976908985380747\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The pin-503 quote is a stitched quotation with altered punctuation. The opinion says 'room, where...' and contains several intervening sentences before 'As a practical matter, Royer was under arrest.'\",\n        \"severity\": \"medium\",\n        \"proposed_fix\": \"Use separate exact quotations or quote the relevant page-503 passage without altering punctuation around the omission.\",\n        \"evidence_quote\": \"What had begun as a consensual inquiry in a public place had escalated into an investigatory procedure in a police interrogation room, where the police, unsatisfied with previous explanations, sought to confirm their suspicions.\",\n        \"needs_cl\": false,\n        \"locator_note\": \"pin-503; text paragraph b564-6, page label 503. Lake pinpoints[] also flags quote_fidelity as mismatch.\"\n      },\n      \"reasons\": [\n        \"The quoted words are drawn from page 503, but the displayed quote replaces the comma after 'room' and a substantial intervening passage with '. . . .'.\",\n        \"The exact later sentence 'As a practical matter, Royer was under arrest.' appears after multiple intervening sentences.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The legal proposition is supported; the defect is strict quote fidelity.\"\n      ],\n      \"suggested_tightening\": \"Quote the first sentence through 'suspicions' and then quote 'As a practical matter, Royer was under arrest.' as a separate sentence.\"\n    },\n    {\n      \"assertion_id\": \"00b18a7407ea2665\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The treatment payload matches the lake treatment fields: field_i_validity good_law, as_of_content 1983-03-23, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note.\",\n        \"Treatment/currency is outside Lens A, so no treatment finding is raised.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Treatment/currency should be reviewed by Lens B.\"\n      ],\n      \"suggested_tightening\": null\n    }\n  ],\n  \"notes\": \"Lens A reviewed only existence and quote fidelity/support-adjacent issues; treatment row was checked only for consistency with the disclosed lake record.\"\n}",
   "summary": {
-    "at": "2026-07-10T18:26:11-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T01:42:13-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-2e58765bc1",
+      "F-S9-PR-0a8ff87d4a"
+    ],
     "group_id": "_overhaul2/lake/cases/Florida v. Royer.json",
     "group_total_assertions": 4,
     "lake_only_cases": [],
@@ -16,21 +101,59 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-792a7cf2.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 4,
     "run": "prod",
     "text_disclosed_cases": [
       "Florida v. Royer"
     ],
     "tokens": {
-      "input": 825,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 825
+      "input": 218501,
+      "output": 7702,
+      "source": "codex-events",
+      "total": 226203
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 3.3
+    "verdict_map": {
+      "00b18a7407ea2665": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "78328327098ca42d": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "bbbcb3639ffa7f7a": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "e976908985380747": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-2e58765bc1",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-0a8ff87d4a",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 167.9
   }
 }

@@ -1,13 +1,98 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Florida v. Harris.json",
+    "lens": "A",
+    "notes": "Reviewed all 4 assertion_id rows in group_inventory.jsonl under Lens A only.",
+    "reviewed": [
+      {
+        "assertion_id": "8c14464389d76592",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record is verified for Florida v. Harris and identifies the court as U.S. Supreme Court, date_decided 2013-02-19, and year 2013.",
+          "The official citation in the lake record is 568 U.S. 237, with parallel citations 133 S. Ct. 1050 and 185 L. Ed. 2d 61, matching the content page citation fields."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "05cccd7250c34bf9",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "The\nquestion—similar to every inquiry into probable cause—is\nwhether all the facts surrounding a dog’s alert, viewed\nthrough the lens of common sense, would make a reason-\nably prudent person think that a search would reveal con-\ntraband or evidence of a crime. A sniff is up to snuff when\nit meets that test.",
+          "locator_note": "pin-248; lake pinpoints[0]; content_page.md Rule paragraph",
+          "needs_cl": false,
+          "problem": "The pin-248 payload/lake pinpoint quote is not an opinion quotation at all; it is a harvested block from the content page header/background/rule lead-in, while the actual quoted passage appears later in the opinion text.",
+          "proposed_fix": "Replace the pin-248 lake quote with the actual opinion passage beginning with 'The question' and re-run quote fidelity; keep the page quote tied to that passage, not to the content-page header block.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The lake record itself marks pin-248 quote_fidelity as mismatch.",
+          "The cached opinion text contains the actual 'The question...' passage; the payload quote instead starts with frontmatter/page text: '--- # Florida v. Harris...'."
+        ],
+        "residual_risks": [
+          "The displayed page quotation appears substantively supported, but the stored pinpoint quote under review is unusable for quote-fidelity validation."
+        ],
+        "suggested_tightening": "Separate quote harvesting from prose preceding the quote anchor so pin-248 captures only the quoted Court language.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "944a37cd7966fefa",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "For that reason, evidence of a dog’s satisfactory perfor-\nmance in a certification or training program can itself\nprovide sufficient reason to trust his alert.",
+          "locator_note": "pin-247; text lines around the certification/training-program passage",
+          "needs_cl": false,
+          "problem": "The quoted sentence is the correct opinion sentence and matches the lake pinpoint string, but it is not character-faithful to the cached opinion text because the text uses a curly apostrophe and line-break hyphenation in 'dog’s satisfactory perfor-\\nmance'.",
+          "proposed_fix": "Use source-faithful typography for the quoted sentence, at minimum 'dog’s' rather than 'dog's'; if strict character fidelity is required, preserve or formally normalize the line-break hyphenation policy.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The passage exists in the cached opinion and supports the content-page rule about satisfactory certification or training performance.",
+          "The lake record marks pin-247 quote_fidelity as mismatch, and the cached text differs typographically from the page/lake quote."
+        ],
+        "residual_risks": [
+          "The substantive proposition survives; only strict character-level quote fidelity is defective."
+        ],
+        "suggested_tightening": "Adopt a declared quote-normalization rule for PDF line breaks and apostrophes, or store exact source text plus normalized display text separately.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "2e0e3450e312cd48",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A, so no treatment defect is raised.",
+          "The treatment payload matches the lake treatment fields: field_i_validity good_law, as_of_content 2013-02-19, as_of_treatment 2026-06-30, varies_by_point false."
+        ],
+        "residual_risks": [
+          "Treatment merits are reserved for Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Florida v. Harris.json\",\"reviewed\":[{\"assertion_id\":\"8c14464389d76592\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record is verified for Florida v. Harris and identifies the court as U.S. Supreme Court, date_decided 2013-02-19, and year 2013.\",\"The official citation in the lake record is 568 U.S. 237, with parallel citations 133 S. Ct. 1050 and 185 L. Ed. 2d 61, matching the content page citation fields.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"05cccd7250c34bf9\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The pin-248 payload/lake pinpoint quote is not an opinion quotation at all; it is a harvested block from the content page header/background/rule lead-in, while the actual quoted passage appears later in the opinion text.\",\"severity\":\"high\",\"proposed_fix\":\"Replace the pin-248 lake quote with the actual opinion passage beginning with 'The question' and re-run quote fidelity; keep the page quote tied to that passage, not to the content-page header block.\",\"evidence_quote\":\"The\\nquestion—similar to every inquiry into probable cause—is\\nwhether all the facts surrounding a dog’s alert, viewed\\nthrough the lens of common sense, would make a reason-\\nably prudent person think that a search would reveal con-\\ntraband or evidence of a crime. A sniff is up to snuff when\\nit meets that test.\",\"needs_cl\":false,\"locator_note\":\"pin-248; lake pinpoints[0]; content_page.md Rule paragraph\"},\"reasons\":[\"The lake record itself marks pin-248 quote_fidelity as mismatch.\",\"The cached opinion text contains the actual 'The question...' passage; the payload quote instead starts with frontmatter/page text: '--- # Florida v. Harris...'.\"],\"breaks_true_positives\":true,\"residual_risks\":[\"The displayed page quotation appears substantively supported, but the stored pinpoint quote under review is unusable for quote-fidelity validation.\"],\"suggested_tightening\":\"Separate quote harvesting from prose preceding the quote anchor so pin-248 captures only the quoted Court language.\"},{\"assertion_id\":\"944a37cd7966fefa\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The quoted sentence is the correct opinion sentence and matches the lake pinpoint string, but it is not character-faithful to the cached opinion text because the text uses a curly apostrophe and line-break hyphenation in 'dog’s satisfactory perfor-\\\\nmance'.\",\"severity\":\"low\",\"proposed_fix\":\"Use source-faithful typography for the quoted sentence, at minimum 'dog’s' rather than 'dog's'; if strict character fidelity is required, preserve or formally normalize the line-break hyphenation policy.\",\"evidence_quote\":\"For that reason, evidence of a dog’s satisfactory perfor-\\nmance in a certification or training program can itself\\nprovide sufficient reason to trust his alert.\",\"needs_cl\":false,\"locator_note\":\"pin-247; text lines around the certification/training-program passage\"},\"reasons\":[\"The passage exists in the cached opinion and supports the content-page rule about satisfactory certification or training performance.\",\"The lake record marks pin-247 quote_fidelity as mismatch, and the cached text differs typographically from the page/lake quote.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The substantive proposition survives; only strict character-level quote fidelity is defective.\"],\"suggested_tightening\":\"Adopt a declared quote-normalization rule for PDF line breaks and apostrophes, or store exact source text plus normalized display text separately.\"},{\"assertion_id\":\"2e0e3450e312cd48\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside Lens A, so no treatment defect is raised.\",\"The treatment payload matches the lake treatment fields: field_i_validity good_law, as_of_content 2013-02-19, as_of_treatment 2026-06-30, varies_by_point false.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment merits are reserved for Lens B.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed all 4 assertion_id rows in group_inventory.jsonl under Lens A only.\"}",
   "summary": {
-    "at": "2026-07-10T18:26:07-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T01:40:47-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-674e0854c1",
+      "F-S9-PR-a75ebafd4b"
+    ],
     "group_id": "_overhaul2/lake/cases/Florida v. Harris.json",
     "group_total_assertions": 4,
     "lake_only_cases": [],
@@ -16,21 +101,59 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-0e3de768.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 4,
     "run": "prod",
     "text_disclosed_cases": [
       "Florida v. Harris"
     ],
     "tokens": {
-      "input": 826,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 826
+      "input": 287284,
+      "output": 8383,
+      "source": "codex-events",
+      "total": 295667
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 3.0
+    "verdict_map": {
+      "05cccd7250c34bf9": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "2e0e3450e312cd48": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "8c14464389d76592": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "944a37cd7966fefa": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-674e0854c1",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-a75ebafd4b",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 222.1
   }
 }

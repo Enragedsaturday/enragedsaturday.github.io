@@ -1,22 +1,138 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Frazier v. Cupp.json",
+    "lens": "B",
+    "notes": "Lens B only; support and quote-fidelity merits were not adjudicated.",
+    "reviewed": [
+      {
+        "assertion_id": "ea2b4b530b4168fa",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record identifies Frazier v. Cupp as a U.S. Supreme Court case decided 1969-04-23 with cluster_id 107913 and lead_opinion_id 107913.",
+          "The official citation in the lake record is 394 U.S. 731 with selected_official=true, matching the page display.",
+          "Currency angle survives: treatment.field_i_validity is good_law as of 2026-06-30 with varies_by_point=false and no point_overrides."
+        ],
+        "residual_risks": [
+          "The lake provenance warns that the two-key identity check did not fully satisfy citation plus party text, but the disclosed record still has expected_citation_found=true and canonical_name_match=true."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "ee8dfda25c1f606f",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote fidelity is outside Lens B; no currency or treatment defect is raised for this pinpoint assertion.",
+          "The treatment/currency issue for this case is addressed separately under assertion 6aa66411694a7f94."
+        ],
+        "residual_risks": [
+          "The lake payload itself marks quote_fidelity=mismatch, but that is a Lens A issue and is not adjudicated here."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "6aa66411694a7f94",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "\"proposed_negative_events\": 5,\n        \"audit_marker\": \"R15 treatment audit required\"",
+          "locator_note": "content_page.md Treatment & subsequent history; lake/Frazier v. Cupp__cacd60.json treatment.edges and treatment.derivation",
+          "needs_cl": true,
+          "problem": "The good_law and Binding-SCOTUS labels survive the disclosed lake judgment fields, but the page's categorical 'No negative treatment' statement is too strong. The lake treatment record contains proposed negative-treatment signals and explicit audit-needed markers, so the treatment note should disclose that pending audit rather than saying no negative treatment without qualification.",
+          "proposed_fix": "Keep status as good_law as of 2026-06-30 and Binding-SCOTUS, but replace 'No negative treatment' with a narrower statement such as: 'No confirmed negative treatment in the current lake judgment fields; proposed negative-treatment edges remain audit-pending.'",
+          "severity": "medium"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "Lake treatment.field_i_validity is good_law, as_of_treatment is 2026-06-30, varies_by_point=false, and point_overrides is empty.",
+          "Authority weight is consistent with identity.court_level=scotus and court=U.S. Supreme Court.",
+          "But treatment.derivation has audit_needed=true for lane1_negative and lane2_top_cited, and treatment.edges list proposed entries with field_ii values including overruled, questioned, and criticized."
+        ],
+        "residual_risks": [
+          "All listed negative edges are marked proposed=true and field_iii=mentioned, so the disclosed record does not prove that Frazier itself has been overruled or abrogated.",
+          "Because the derivation records audit_needed and cap_hit for some lanes, a CL audit would be needed to resolve the proposed negative signals conclusively."
+        ],
+        "suggested_tightening": "Avoid 'No negative treatment' unless the proposed negative edges have been audited and cleared.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/Frazier v. Cupp.json\",\"reviewed\":[{\"assertion_id\":\"ea2b4b530b4168fa\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record identifies Frazier v. Cupp as a U.S. Supreme Court case decided 1969-04-23 with cluster_id 107913 and lead_opinion_id 107913.\",\"The official citation in the lake record is 394 U.S. 731 with selected_official=true, matching the page display.\",\"Currency angle survives: treatment.field_i_validity is good_law as of 2026-06-30 with varies_by_point=false and no point_overrides.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The lake provenance warns that the two-key identity check did not fully satisfy citation plus party text, but the disclosed record still has expected_citation_found=true and canonical_name_match=true.\"],\"suggested_tightening\":null},{\"assertion_id\":\"ee8dfda25c1f606f\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Quote fidelity is outside Lens B; no currency or treatment defect is raised for this pinpoint assertion.\",\"The treatment/currency issue for this case is addressed separately under assertion 6aa66411694a7f94.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The lake payload itself marks quote_fidelity=mismatch, but that is a Lens A issue and is not adjudicated here.\"],\"suggested_tightening\":null},{\"assertion_id\":\"6aa66411694a7f94\",\"dimension\":\"treatment\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The good_law and Binding-SCOTUS labels survive the disclosed lake judgment fields, but the page's categorical 'No negative treatment' statement is too strong. The lake treatment record contains proposed negative-treatment signals and explicit audit-needed markers, so the treatment note should disclose that pending audit rather than saying no negative treatment without qualification.\",\"severity\":\"medium\",\"proposed_fix\":\"Keep status as good_law as of 2026-06-30 and Binding-SCOTUS, but replace 'No negative treatment' with a narrower statement such as: 'No confirmed negative treatment in the current lake judgment fields; proposed negative-treatment edges remain audit-pending.'\",\"evidence_quote\":\"\\\"proposed_negative_events\\\": 5,\\n        \\\"audit_marker\\\": \\\"R15 treatment audit required\\\"\",\"needs_cl\":true,\"locator_note\":\"content_page.md Treatment & subsequent history; lake/Frazier v. Cupp__cacd60.json treatment.edges and treatment.derivation\"},\"reasons\":[\"Lake treatment.field_i_validity is good_law, as_of_treatment is 2026-06-30, varies_by_point=false, and point_overrides is empty.\",\"Authority weight is consistent with identity.court_level=scotus and court=U.S. Supreme Court.\",\"But treatment.derivation has audit_needed=true for lane1_negative and lane2_top_cited, and treatment.edges list proposed entries with field_ii values including overruled, questioned, and criticized.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"All listed negative edges are marked proposed=true and field_iii=mentioned, so the disclosed record does not prove that Frazier itself has been overruled or abrogated.\",\"Because the derivation records audit_needed and cap_hit for some lanes, a CL audit would be needed to resolve the proposed negative signals conclusively.\"],\"suggested_tightening\":\"Avoid 'No negative treatment' unless the proposed negative edges have been audited and cleared.\"}],\"notes\":\"Lens B only; support and quote-fidelity merits were not adjudicated.\"}",
   "summary": {
-    "at": "2026-07-10T18:26:36-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T01:44:36-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-ebd70e361f",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-aef463c994"
+    ],
     "group_id": "_overhaul2/lake/cases/Frazier v. Cupp.json",
     "group_total_assertions": 3,
+    "lake_only_cases": [],
     "lane": "codex-B",
     "lane_id": "codex-B-panel-prod-b455e8b2",
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-b455e8b2.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "cket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:26:27.197116Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:26:27.950643Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:26:28.783013Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:26:30.160107Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:26:32.156735Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:26:36.032893Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 3,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Frazier v. Cupp"
+    ],
+    "tokens": {
+      "input": 329385,
+      "output": 8844,
+      "source": "codex-events",
+      "total": 338229
+    },
+    "verdict_map": {
+      "6aa66411694a7f94": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "ea2b4b530b4168fa": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "ee8dfda25c1f606f": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-ebd70e361f",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-aef463c994",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 177.5
   }
 }

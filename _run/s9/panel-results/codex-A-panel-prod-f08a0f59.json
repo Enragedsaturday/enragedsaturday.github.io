@@ -1,13 +1,125 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/James v. Illinois.json",
+    "lens": "A",
+    "notes": "Lens A reviewed existence and quote fidelity against only the disclosed lake record, content page, and cached opinion text; treatment was recorded without raising a treatment finding.",
+    "reviewed": [
+      {
+        "assertion_id": "cf3dc345a59a9fce",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record names James v. Illinois, U.S. Supreme Court, decided 1990-01-10.",
+          "The official citation in the lake record is 493 U.S. 307, matching the content page display citation."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "4724b8f3494e2bf5",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "we adhere to the line drawn in our previous cases.",
+          "locator_note": "pin-320; text opinion page marker *320; content_page.md conclusion at line 61",
+          "needs_cl": false,
+          "problem": "pin-320's stored quote is not a character-faithful opinion quote; it is a generated page-summary fragment ending with the markdown heading '## Conclusion'.",
+          "proposed_fix": "Replace the pin-320 quote with the actual page-320 conclusion language from the opinion, or regenerate the pinpoint from the cached opinion text rather than the rendered page summary.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload quote 'so the exclusionary rule's deterrent purpose required keeping the exception narrow. ## Conclusion' does not appear in the cached opinion text.",
+          "The cached text at page *320 instead contains the Court's conclusion beginning with 'we adhere to the line drawn in our previous cases.'"
+        ],
+        "residual_risks": [
+          "The content-page conclusion quote is substantively supported, but the lake/payload pinpoint quote is corrupted."
+        ],
+        "suggested_tightening": "Use the opinion text beginning 'we adhere...' and avoid storing page headings or surrounding markdown in pinpoints.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "ad1bba4400211a3b",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "Expanding the class of impeachable witnesses from the defendant alone to all defense witnesses",
+          "locator_note": "pin-313; text opinion page markers *313-*314; content_page.md rule at line 53",
+          "needs_cl": false,
+          "problem": "pin-313's stored quote is not an opinion quote; it is a block of rendered content-page front matter/background text ending before the actual rule quotation.",
+          "proposed_fix": "Replace pin-313 with the actual page 313-314 passage from the cached opinion text.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload quote starts with rendered markdown/front matter and background material, not the cached opinion text.",
+          "The actual opinion passage at 313-314 begins with 'Expanding the class of impeachable witnesses...' and supports the rule, but the stored pinpoint quote does not match it."
+        ],
+        "residual_risks": [
+          "The content-page Rule quote is supported by the opinion, but strict character fidelity would also require reviewing the bracketed '[E]' rendering."
+        ],
+        "suggested_tightening": "Regenerate the pinpoint from the raw opinion passage and keep the 313-314 page range.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "c2d916e4b07d5884",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "defendants ought not be able to \"pervert\" the exclusion of illegally obtained evidence into a shield for perjury",
+          "locator_note": "pin-317; text opinion page marker *317; content_page.md rule at line 55",
+          "needs_cl": false,
+          "problem": "The pin-317 quote is substantively on-point and located at page *317, but it is not character-faithful because the opinion uses double quotation marks around 'pervert' while the payload/content use single quotation marks.",
+          "proposed_fix": "Change the internal quotation marks around pervert to double quotation marks, or otherwise quote the passage exactly as it appears in the cached text.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The passage appears in the cached opinion text at page *317 and supports the stated rule.",
+          "The only fidelity defect found is quote-character substitution around the word 'pervert'."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Use exact internal quotation marks from the cached opinion text.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "84690db2c6e10a89",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A's charter.",
+          "The disclosed treatment payload matches the lake treatment fields: field_i_validity good_law, as_of_content 1990-01-10, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note."
+        ],
+        "residual_risks": [
+          "No treatment/currency audit performed under Lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"A\",\n  \"group_id\": \"_overhaul2/lake/cases/James v. Illinois.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"cf3dc345a59a9fce\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake identity record names James v. Illinois, U.S. Supreme Court, decided 1990-01-10.\",\n        \"The official citation in the lake record is 493 U.S. 307, matching the content page display citation.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"4724b8f3494e2bf5\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"pin-320's stored quote is not a character-faithful opinion quote; it is a generated page-summary fragment ending with the markdown heading '## Conclusion'.\",\n        \"severity\": \"high\",\n        \"proposed_fix\": \"Replace the pin-320 quote with the actual page-320 conclusion language from the opinion, or regenerate the pinpoint from the cached opinion text rather than the rendered page summary.\",\n        \"evidence_quote\": \"we adhere to the line drawn in our previous cases.\",\n        \"needs_cl\": false,\n        \"locator_note\": \"pin-320; text opinion page marker *320; content_page.md conclusion at line 61\"\n      },\n      \"reasons\": [\n        \"The payload quote 'so the exclusionary rule's deterrent purpose required keeping the exception narrow. ## Conclusion' does not appear in the cached opinion text.\",\n        \"The cached text at page *320 instead contains the Court's conclusion beginning with 'we adhere to the line drawn in our previous cases.'\"\n      ],\n      \"breaks_true_positives\": true,\n      \"residual_risks\": [\n        \"The content-page conclusion quote is substantively supported, but the lake/payload pinpoint quote is corrupted.\"\n      ],\n      \"suggested_tightening\": \"Use the opinion text beginning 'we adhere...' and avoid storing page headings or surrounding markdown in pinpoints.\"\n    },\n    {\n      \"assertion_id\": \"ad1bba4400211a3b\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"pin-313's stored quote is not an opinion quote; it is a block of rendered content-page front matter/background text ending before the actual rule quotation.\",\n        \"severity\": \"high\",\n        \"proposed_fix\": \"Replace pin-313 with the actual page 313-314 passage from the cached opinion text.\",\n        \"evidence_quote\": \"Expanding the class of impeachable witnesses from the defendant alone to all defense witnesses\",\n        \"needs_cl\": false,\n        \"locator_note\": \"pin-313; text opinion page markers *313-*314; content_page.md rule at line 53\"\n      },\n      \"reasons\": [\n        \"The payload quote starts with rendered markdown/front matter and background material, not the cached opinion text.\",\n        \"The actual opinion passage at 313-314 begins with 'Expanding the class of impeachable witnesses...' and supports the rule, but the stored pinpoint quote does not match it.\"\n      ],\n      \"breaks_true_positives\": true,\n      \"residual_risks\": [\n        \"The content-page Rule quote is supported by the opinion, but strict character fidelity would also require reviewing the bracketed '[E]' rendering.\"\n      ],\n      \"suggested_tightening\": \"Regenerate the pinpoint from the raw opinion passage and keep the 313-314 page range.\"\n    },\n    {\n      \"assertion_id\": \"c2d916e4b07d5884\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands-modified\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The pin-317 quote is substantively on-point and located at page *317, but it is not character-faithful because the opinion uses double quotation marks around 'pervert' while the payload/content use single quotation marks.\",\n        \"severity\": \"low\",\n        \"proposed_fix\": \"Change the internal quotation marks around pervert to double quotation marks, or otherwise quote the passage exactly as it appears in the cached text.\",\n        \"evidence_quote\": \"defendants ought not be able to \\\"pervert\\\" the exclusion of illegally obtained evidence into a shield for perjury\",\n        \"needs_cl\": false,\n        \"locator_note\": \"pin-317; text opinion page marker *317; content_page.md rule at line 55\"\n      },\n      \"reasons\": [\n        \"The passage appears in the cached opinion text at page *317 and supports the stated rule.\",\n        \"The only fidelity defect found is quote-character substitution around the word 'pervert'.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": \"Use exact internal quotation marks from the cached opinion text.\"\n    },\n    {\n      \"assertion_id\": \"84690db2c6e10a89\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Treatment/currency is outside Lens A's charter.\",\n        \"The disclosed treatment payload matches the lake treatment fields: field_i_validity good_law, as_of_content 1990-01-10, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"No treatment/currency audit performed under Lens A.\"\n      ],\n      \"suggested_tightening\": null\n    }\n  ],\n  \"notes\": \"Lens A reviewed existence and quote fidelity against only the disclosed lake record, content page, and cached opinion text; treatment was recorded without raising a treatment finding.\"\n}",
   "summary": {
-    "at": "2026-07-10T18:28:09-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T01:57:15-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "defense_votes": [],
-    "findings_emitted": [],
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-07a8895979",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-4b063af463",
+      "F-S9-PR-a0aeed92b0",
+      "F-S9-PR-1bd6fecc4d"
+    ],
     "group_id": "_overhaul2/lake/cases/James v. Illinois.json",
     "group_total_assertions": 5,
     "lake_only_cases": [],
@@ -16,21 +128,74 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-f08a0f59.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 5,
     "run": "prod",
     "text_disclosed_cases": [
       "James v. Illinois"
     ],
     "tokens": {
-      "input": 826,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 826
+      "input": 230665,
+      "output": 8415,
+      "source": "codex-events",
+      "total": 239080
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 3.0
+    "verdict_map": {
+      "4724b8f3494e2bf5": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "84690db2c6e10a89": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "ad1bba4400211a3b": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "c2d916e4b07d5884": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "cf3dc345a59a9fce": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-4b063af463",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-a0aeed92b0",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-1bd6fecc4d",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-07a8895979",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": 197.2
   }
 }

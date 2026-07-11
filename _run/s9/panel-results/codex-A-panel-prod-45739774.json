@@ -1,22 +1,148 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Hoffa v. United States.json",
+    "lens": "A",
+    "notes": "Reviewed all four inventory rows under Lens A. No support or black-letter rows were present in group_inventory.jsonl.",
+    "reviewed": [
+      {
+        "assertion_id": "d164fbc0dea99e0a",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record identity is Hoffa v. United States, U.S. Supreme Court, decided 1966-12-12.",
+          "The lake citations match the asserted official citation 385 U.S. 293 and parallels 87 S. Ct. 408, 17 L. Ed. 2d 374, and 1966 U.S. LEXIS 2778.",
+          "The content page uses the same case name, court, year, official citation, and parallel citations."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "099b0819c5e54600",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The asserted quote exactly matches the lake pinpoint quote for pin-310a.",
+          "The same sentence appears verbatim in the cached opinion text in the paragraph marked with page *310.",
+          "The star_marker 310 and fragment text align with the passage beginning 'The police are not required...'."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "1354caa3c8a1cad5",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "There is no constitutional right to be arrested.",
+          "locator_note": "lake pinpoints[] id pin-310; content_page Rule paragraph uses this pin for the short quote; cached opinion paragraph b414-6 contains the correct quote at page *310.",
+          "needs_cl": false,
+          "problem": "The pin-310 stored quote is not a character-faithful opinion quote; it is harvested page prose spanning the built page Background, Issue, and Rule lead-in. The lake record itself marks quote_fidelity as mismatch and has no star marker.",
+          "proposed_fix": "Replace pin-310's quote with the actual quoted sentence from the opinion, 'There is no constitutional right to be arrested.', and set the pinpoint to page/star 310 in paragraph b414-6.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload quote includes content-page headings and prose such as '## Issue' and '## Rule', which are not a contiguous passage from the opinion text.",
+          "The cached opinion text at page *310 contains the actual sentence used by the built page: 'There is no constitutional right to be arrested.'",
+          "The lake pinpoint status is only slip-only and quote_fidelity is explicitly 'mismatch'."
+        ],
+        "residual_risks": [
+          "The page's short quotation appears substantively correct, but the lake pinpoint record for pin-310 is corrupted and should not be treated as verified."
+        ],
+        "suggested_tightening": "Reharvest pin-310 from the opinion text only, not from content_page.md, and require a star/page marker for the quote.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "aff37993a7328bad",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A, so no treatment merits finding is raised.",
+          "The asserted treatment fields match the lake treatment fields and the content page frontmatter: field_i_validity good_law, as_of_content 1966-12-12, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note."
+        ],
+        "residual_risks": [
+          "Treatment merits are reserved for Lens B and were not independently audited here."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Hoffa v. United States.json\",\"reviewed\":[{\"assertion_id\":\"d164fbc0dea99e0a\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record identity is Hoffa v. United States, U.S. Supreme Court, decided 1966-12-12.\",\"The lake citations match the asserted official citation 385 U.S. 293 and parallels 87 S. Ct. 408, 17 L. Ed. 2d 374, and 1966 U.S. LEXIS 2778.\",\"The content page uses the same case name, court, year, official citation, and parallel citations.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"099b0819c5e54600\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The asserted quote exactly matches the lake pinpoint quote for pin-310a.\",\"The same sentence appears verbatim in the cached opinion text in the paragraph marked with page *310.\",\"The star_marker 310 and fragment text align with the passage beginning 'The police are not required...'.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"1354caa3c8a1cad5\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The pin-310 stored quote is not a character-faithful opinion quote; it is harvested page prose spanning the built page Background, Issue, and Rule lead-in. The lake record itself marks quote_fidelity as mismatch and has no star marker.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-310's quote with the actual quoted sentence from the opinion, 'There is no constitutional right to be arrested.', and set the pinpoint to page/star 310 in paragraph b414-6.\",\"evidence_quote\":\"There is no constitutional right to be arrested.\",\"needs_cl\":false,\"locator_note\":\"lake pinpoints[] id pin-310; content_page Rule paragraph uses this pin for the short quote; cached opinion paragraph b414-6 contains the correct quote at page *310.\"},\"reasons\":[\"The payload quote includes content-page headings and prose such as '## Issue' and '## Rule', which are not a contiguous passage from the opinion text.\",\"The cached opinion text at page *310 contains the actual sentence used by the built page: 'There is no constitutional right to be arrested.'\",\"The lake pinpoint status is only slip-only and quote_fidelity is explicitly 'mismatch'.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The page's short quotation appears substantively correct, but the lake pinpoint record for pin-310 is corrupted and should not be treated as verified.\"],\"suggested_tightening\":\"Reharvest pin-310 from the opinion text only, not from content_page.md, and require a star/page marker for the quote.\"},{\"assertion_id\":\"aff37993a7328bad\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside Lens A, so no treatment merits finding is raised.\",\"The asserted treatment fields match the lake treatment fields and the content page frontmatter: field_i_validity good_law, as_of_content 1966-12-12, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment merits are reserved for Lens B and were not independently audited here.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed all four inventory rows under Lens A. No support or black-letter rows were present in group_inventory.jsonl.\"}",
   "summary": {
-    "at": "2026-07-10T18:27:37-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T01:49:34-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-54a935b1cd"
+    ],
     "group_id": "_overhaul2/lake/cases/Hoffa v. United States.json",
     "group_total_assertions": 4,
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-45739774",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-45739774.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "cket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:27:28.795253Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:27:29.395824Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:27:30.279124Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:27:31.426677Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:27:33.928863Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:27:37.439073Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Hoffa v. United States"
+    ],
+    "tokens": {
+      "input": 134282,
+      "output": 4885,
+      "source": "codex-events",
+      "total": 139167
+    },
+    "verdict_map": {
+      "099b0819c5e54600": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "1354caa3c8a1cad5": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "aff37993a7328bad": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "d164fbc0dea99e0a": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-54a935b1cd",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 95.7
   }
 }

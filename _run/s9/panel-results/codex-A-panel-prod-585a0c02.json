@@ -1,22 +1,146 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Illinois v. Andreas.json",
+    "lens": "A",
+    "notes": "Reviewed all 4 rows in group_inventory.jsonl under Lens A.",
+    "reviewed": [
+      {
+        "assertion_id": "fd044b050885f6f9",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record identifies the case as Illinois v. Andreas, U.S. Supreme Court, decided 1983-07-05.",
+          "The official citation 463 U.S. 765 and the listed parallel/vendor citations match the disclosed lake citations."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "9137c70583ed1d0a",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "## Rule No, where the contents have not likely changed.",
+          "locator_note": "lake pin-771 has quote_fidelity=mismatch, no star_marker, no page, and no position; the opinion text at page 771 contains the cited privacy-interest language.",
+          "needs_cl": false,
+          "problem": "The pin-771 quote stored in the lake is not a verbatim opinion passage; it captured the page heading/editorial rule answer instead of the cited 771 quotation.",
+          "proposed_fix": "Replace pin-771 with the actual opinion quotation at 463 U.S. 771 and keep the editorial sentence outside the pinpoint quote record.",
+          "severity": "medium"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The disclosed text file does not contain the lake pin-771 string as court language.",
+          "The real 771 passage begins with the Fourth Amendment privacy-expectation discussion and includes the phrase No protected privacy interest remains.",
+          "The content page's displayed 771 quotation appears faithful, so the defect is in the pin record captured for review."
+        ],
+        "residual_risks": [
+          "Do not delete the page's actual 771 quotation; only the malformed pin-771 quote metadata needs correction."
+        ],
+        "suggested_tightening": "Separate editorial rule answers from verbatim pinpoint quotes before generating lake pinpoints.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "dba3d61d895f1d05",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The pin-773 quotation is present verbatim in the disclosed opinion text at the 773 page marker.",
+          "The lake record marks pin-773 as star-verified with quote_fidelity=matched, and the fragment targets the same passage."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "bc6226d15b15ac94",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment merits are outside Lens A, so no treatment/currency finding is raised.",
+          "For record-completeness only, the payload matches the disclosed lake treatment fields and content page metadata."
+        ],
+        "residual_risks": [
+          "Good-law currency remains for Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"A\",\n  \"group_id\": \"_overhaul2/lake/cases/Illinois v. Andreas.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"fd044b050885f6f9\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake record identifies the case as Illinois v. Andreas, U.S. Supreme Court, decided 1983-07-05.\",\n        \"The official citation 463 U.S. 765 and the listed parallel/vendor citations match the disclosed lake citations.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"9137c70583ed1d0a\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The pin-771 quote stored in the lake is not a verbatim opinion passage; it captured the page heading/editorial rule answer instead of the cited 771 quotation.\",\n        \"severity\": \"medium\",\n        \"proposed_fix\": \"Replace pin-771 with the actual opinion quotation at 463 U.S. 771 and keep the editorial sentence outside the pinpoint quote record.\",\n        \"evidence_quote\": \"## Rule No, where the contents have not likely changed.\",\n        \"needs_cl\": false,\n        \"locator_note\": \"lake pin-771 has quote_fidelity=mismatch, no star_marker, no page, and no position; the opinion text at page 771 contains the cited privacy-interest language.\"\n      },\n      \"reasons\": [\n        \"The disclosed text file does not contain the lake pin-771 string as court language.\",\n        \"The real 771 passage begins with the Fourth Amendment privacy-expectation discussion and includes the phrase No protected privacy interest remains.\",\n        \"The content page's displayed 771 quotation appears faithful, so the defect is in the pin record captured for review.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Do not delete the page's actual 771 quotation; only the malformed pin-771 quote metadata needs correction.\"\n      ],\n      \"suggested_tightening\": \"Separate editorial rule answers from verbatim pinpoint quotes before generating lake pinpoints.\"\n    },\n    {\n      \"assertion_id\": \"dba3d61d895f1d05\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The pin-773 quotation is present verbatim in the disclosed opinion text at the 773 page marker.\",\n        \"The lake record marks pin-773 as star-verified with quote_fidelity=matched, and the fragment targets the same passage.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"bc6226d15b15ac94\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Treatment merits are outside Lens A, so no treatment/currency finding is raised.\",\n        \"For record-completeness only, the payload matches the disclosed lake treatment fields and content page metadata.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Good-law currency remains for Lens B.\"\n      ],\n      \"suggested_tightening\": null\n    }\n  ],\n  \"notes\": \"Reviewed all 4 rows in group_inventory.jsonl under Lens A.\"\n}",
   "summary": {
-    "at": "2026-07-10T18:28:03-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T01:52:31-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-0d40a2372f"
+    ],
     "group_id": "_overhaul2/lake/cases/Illinois v. Andreas.json",
     "group_total_assertions": 4,
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-585a0c02",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-585a0c02.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "Reading additional input from stdin...\n2026-07-10T22:27:51.180251Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:27:51.899243Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:27:54.811087Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:27:55.649436Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:27:56.800904Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:27:58.836299Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Illinois v. Andreas"
+    ],
+    "tokens": {
+      "input": 244919,
+      "output": 6771,
+      "source": "codex-events",
+      "total": 251690
+    },
+    "verdict_map": {
+      "9137c70583ed1d0a": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "bc6226d15b15ac94": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "dba3d61d895f1d05": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "fd044b050885f6f9": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-0d40a2372f",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 136.4
   }
 }

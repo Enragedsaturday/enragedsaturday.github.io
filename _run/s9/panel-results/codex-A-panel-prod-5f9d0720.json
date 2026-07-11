@@ -1,22 +1,58 @@
 {
-  "raw_reply": "",
+  "attestation_ref": "_run/s9/panel-attestations.jsonl",
+  "parsed": {
+    "assertion_id": "9324f8ded2d1a751",
+    "breaks_true_positives": false,
+    "defect": {
+      "evidence_quote": "The Randolph holding unequivocally requires the presence of the objecting occupant in every situation other than the one mentioned in the dictum discussed above.",
+      "locator_note": "text/Fernandez v. California__5a3abb.txt line 35; content_page.md line 55; lake pinpoints[1].",
+      "needs_cl": false,
+      "problem": "The quoted fragment is substantively and textually supported, but the pinpoint record still carries quote_fidelity='mismatch' and page=null/slip-only metadata. The mismatch appears to come from storing a fragment across opinion markup/page-label normalization rather than from a false quote.",
+      "proposed_fix": "Keep the fragment or expand it to the full sentence beginning 'The Randolph holding...', then normalize against page-label markup and update the quote_fidelity/page metadata.",
+      "severity": "low"
+    },
+    "dimension": "quote_fidelity",
+    "reasons": [
+      "The content page supplies Randolph immediately before the quoted fragment, and the same words appear in the opinion sentence.",
+      "The lake pinpoint quote itself matches the page fragment, but its mismatch/null-page metadata should not remain unresolved."
+    ],
+    "residual_risks": [
+      "Raw HTML page-label insertion may continue to confuse exact-string validators unless quote normalization strips pagination markup."
+    ],
+    "suggested_tightening": "Store the full normalized sentence or explicitly validate the fragment after removing page-label markup.",
+    "verdict": "stands-modified",
+    "verifiable_from_disclosed": true
+  },
+  "raw_reply": " a lawful detention or arrest stands in the same shoes as an occupant who is absent for any other reason.\",\"needs_cl\":false,\"locator_note\":\"text/Fernandez v. California__5a3abb.txt line 34; content_page.md line 53; lake pinpoints[0].\"},\"reasons\":[\"The disclosed opinion text at the cited passage contains the actual holding sentence quoted on the page.\",\"The pin-303 payload instead begins with '--- # Fernandez v. California' and includes page-generated summary text, not opinion text.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The visible page proposition and visible quoted sentence are supportable; the defect is the lake pinpoint quote metadata.\"],\"suggested_tightening\":\"Use the exact 571 U.S. at 303 holding sentence as the pin quote.\"},{\"assertion_id\":\"9324f8ded2d1a751\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The quoted fragment is substantively and textually supported, but the pinpoint record still carries quote_fidelity='mismatch' and page=null/slip-only metadata. The mismatch appears to come from storing a fragment across opinion markup/page-label normalization rather than from a false quote.\",\"severity\":\"low\",\"proposed_fix\":\"Keep the fragment or expand it to the full sentence beginning 'The Randolph holding...', then normalize against page-label markup and update the quote_fidelity/page metadata.\",\"evidence_quote\":\"The Randolph holding unequivocally requires the presence of the objecting occupant in every situation other than the one mentioned in the dictum discussed above.\",\"needs_cl\":false,\"locator_note\":\"text/Fernandez v. California__5a3abb.txt line 35; content_page.md line 55; lake pinpoints[1].\"},\"reasons\":[\"The content page supplies Randolph immediately before the quoted fragment, and the same words appear in the opinion sentence.\",\"The lake pinpoint quote itself matches the page fragment, but its mismatch/null-page metadata should not remain unresolved.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Raw HTML page-label insertion may continue to confuse exact-string validators unless quote normalization strips pagination markup.\"],\"suggested_tightening\":\"Store the full normalized sentence or explicitly validate the fragment after removing page-label markup.\"},{\"assertion_id\":\"460bdea0f0f1f7aa\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The treatment payload matches the lake treatment fields and the content page frontmatter: field_i_validity good_law, as_of_content 2014-02-25, as_of_treatment 2026-06-30, and varies_by_point false.\",\"Treatment/currency is outside Lens A, so this verdict records only disclosed-field consistency and raises no treatment finding.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment/currency requires Lens B review.\"],\"suggested_tightening\":null}],\"notes\":\"Lens A reviewed only existence and quote-fidelity/support-style issues; no independent treatment/currency finding is made.\"}",
   "summary": {
-    "at": "2026-07-10T18:26:02-04:00",
-    "auth_flagged": true,
-    "clean_attestation": false,
+    "at": "2026-07-11T01:38:43-04:00",
+    "attempts": 1,
+    "clean_attestation": true,
+    "defense_votes": [],
     "findings_emitted": [],
-    "genuine_auth_stop": true,
     "group_id": "_overhaul2/lake/cases/Fernandez v. California.json",
     "group_total_assertions": 4,
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-5f9d0720",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-5f9d0720.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
+    "parse_status": "parsed",
+    "resolution_notes": [],
     "reviewed_count": 0,
-    "stderr_tail": "cket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:25:52.747985Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:25:53.378356Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:25:54.343255Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:25:55.510796Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:25:57.522268Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:26:01.476377Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Fernandez v. California"
+    ],
+    "tokens": {
+      "input": 486761,
+      "output": 4967,
+      "source": "codex-events",
+      "total": 491728
+    },
+    "verdict_map": {},
+    "votes_emitted": [],
+    "wall_clock_s": 235.5
   }
 }

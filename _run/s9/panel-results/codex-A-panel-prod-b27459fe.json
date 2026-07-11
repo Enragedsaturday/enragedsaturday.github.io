@@ -1,22 +1,192 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Gooding v. United States.json",
+    "lens": "A",
+    "notes": "No external sources were used; review was limited to the disclosed working-directory files.",
+    "reviewed": [
+      {
+        "assertion_id": "492fbf2b9211538d",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity confirms record_id and case name as Gooding v. United States, court as U.S. Supreme Court, decision date as 1974-04-29, and docket as 72-6902.",
+          "Lake citations match the asserted official citation 416 U.S. 430, parallel citations 94 S. Ct. 1780 and 40 L. Ed. 2d 250, and vendor citation 1974 U.S. LEXIS 133.",
+          "Cached opinion header independently shows 416 U.S. 430 (1974), Supreme Court of United States, and Decided April 29, 1974."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "ca90f61624b04ef6",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "<span class=\"citation no-link\">21 U. S. C. § 879</span> (a)",
+          "locator_note": "pin-458; cached opinion text at star page *458 contains the sentence, but lake pin-458 has page=null, star_marker=null, pinpoint_status=slip-only.",
+          "needs_cl": false,
+          "problem": "The quoted sentence normalizes the statutory citation inside quotation marks; the cached opinion text does not use that character sequence, and the lake pin itself records quote_fidelity=mismatch with no star/page verification.",
+          "proposed_fix": "Either paraphrase the sentence or revise the quoted sentence to match the cached opinion's citation typography and anchor it to star page 458.",
+          "severity": "medium"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The legal proposition is supported by the opinion, but the verbatim quote as framed is not character-faithful to the cached text.",
+          "The lake record flags this same pin as quote_fidelity=mismatch."
+        ],
+        "residual_risks": [
+          "This finding is limited to quote fidelity, not the substantive rule."
+        ],
+        "suggested_tightening": "Use exact source typography inside quotation marks or remove quotation marks around normalized statutory citations.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "eafd75ab788c9142",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "That section provides that a warrant may be served",
+          "locator_note": "pin-439; cached opinion text places the relevant statutory passage at star page *439, but lake pin-439 has page=null, star_marker=null, pinpoint_status=slip-only.",
+          "needs_cl": false,
+          "problem": "The pin quote is not an opinion quote; it is a concatenation of built-page summary prose and headings, while the actual page-439 opinion passage is statutory discussion. The lake pin also records quote_fidelity=mismatch.",
+          "proposed_fix": "Replace pin-439 with an exact excerpt from the opinion's page-439 statutory passage, or remove quote treatment from the page-summary prose.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload quote includes content-page headings such as Issue and Rule, which are not part of the cached opinion text.",
+          "The actual opinion at star page *439 discusses 21 U.S.C. § 879(a), but the asserted pin quote does not reproduce that text character-for-character."
+        ],
+        "residual_risks": [
+          "The underlying rule paragraph may be supportable, but this pin's quote text is not a faithful source quotation."
+        ],
+        "suggested_tightening": "Separate summary prose from source quotations and pin only exact opinion language.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "f3286635ee48b127",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Lake pin-458b records quote_fidelity=matched, star_marker=458, and a validated text fragment.",
+          "The cached opinion at star page *458 contains the same affidavit-sufficiency phrase described in the payload."
+        ],
+        "residual_risks": [
+          "The content page's separate nearby quote about satisfying § 879(a) is not separately inventoried in this row."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "996884fe7c94f645",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A's charter, so no treatment finding is raised here.",
+          "The payload matches the disclosed lake treatment judgment fields: field_i_validity=good_law, as_of_content=1974-04-29, as_of_treatment=2026-06-30, varies_by_point=false, and the same scope note."
+        ],
+        "residual_risks": [
+          "Treatment and currency remain for Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Gooding v. United States.json\",\"reviewed\":[{\"assertion_id\":\"492fbf2b9211538d\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity confirms record_id and case name as Gooding v. United States, court as U.S. Supreme Court, decision date as 1974-04-29, and docket as 72-6902.\",\"Lake citations match the asserted official citation 416 U.S. 430, parallel citations 94 S. Ct. 1780 and 40 L. Ed. 2d 250, and vendor citation 1974 U.S. LEXIS 133.\",\"Cached opinion header independently shows 416 U.S. 430 (1974), Supreme Court of United States, and Decided April 29, 1974.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"ca90f61624b04ef6\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The quoted sentence normalizes the statutory citation inside quotation marks; the cached opinion text does not use that character sequence, and the lake pin itself records quote_fidelity=mismatch with no star/page verification.\",\"severity\":\"medium\",\"proposed_fix\":\"Either paraphrase the sentence or revise the quoted sentence to match the cached opinion's citation typography and anchor it to star page 458.\",\"evidence_quote\":\"<span class=\\\"citation no-link\\\">21 U. S. C. § 879</span> (a)\",\"needs_cl\":false,\"locator_note\":\"pin-458; cached opinion text at star page *458 contains the sentence, but lake pin-458 has page=null, star_marker=null, pinpoint_status=slip-only.\"},\"reasons\":[\"The legal proposition is supported by the opinion, but the verbatim quote as framed is not character-faithful to the cached text.\",\"The lake record flags this same pin as quote_fidelity=mismatch.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"This finding is limited to quote fidelity, not the substantive rule.\"],\"suggested_tightening\":\"Use exact source typography inside quotation marks or remove quotation marks around normalized statutory citations.\"},{\"assertion_id\":\"eafd75ab788c9142\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The pin quote is not an opinion quote; it is a concatenation of built-page summary prose and headings, while the actual page-439 opinion passage is statutory discussion. The lake pin also records quote_fidelity=mismatch.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-439 with an exact excerpt from the opinion's page-439 statutory passage, or remove quote treatment from the page-summary prose.\",\"evidence_quote\":\"That section provides that a warrant may be served\",\"needs_cl\":false,\"locator_note\":\"pin-439; cached opinion text places the relevant statutory passage at star page *439, but lake pin-439 has page=null, star_marker=null, pinpoint_status=slip-only.\"},\"reasons\":[\"The payload quote includes content-page headings such as Issue and Rule, which are not part of the cached opinion text.\",\"The actual opinion at star page *439 discusses 21 U.S.C. § 879(a), but the asserted pin quote does not reproduce that text character-for-character.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The underlying rule paragraph may be supportable, but this pin's quote text is not a faithful source quotation.\"],\"suggested_tightening\":\"Separate summary prose from source quotations and pin only exact opinion language.\"},{\"assertion_id\":\"f3286635ee48b127\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake pin-458b records quote_fidelity=matched, star_marker=458, and a validated text fragment.\",\"The cached opinion at star page *458 contains the same affidavit-sufficiency phrase described in the payload.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The content page's separate nearby quote about satisfying § 879(a) is not separately inventoried in this row.\"],\"suggested_tightening\":null},{\"assertion_id\":\"996884fe7c94f645\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside Lens A's charter, so no treatment finding is raised here.\",\"The payload matches the disclosed lake treatment judgment fields: field_i_validity=good_law, as_of_content=1974-04-29, as_of_treatment=2026-06-30, varies_by_point=false, and the same scope note.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment and currency remain for Lens B.\"],\"suggested_tightening\":null}],\"notes\":\"No external sources were used; review was limited to the disclosed working-directory files.\"}",
   "summary": {
-    "at": "2026-07-10T18:27:01-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T01:45:50-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-4236c33f70",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-ec072a8972",
+      "F-S9-PR-70755e88da"
+    ],
     "group_id": "_overhaul2/lake/cases/Gooding v. United States.json",
     "group_total_assertions": 5,
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-b27459fe",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-b27459fe.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "cket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:26:51.824828Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:26:52.493676Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:26:53.474097Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:26:54.807674Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:26:57.050803Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:27:00.858457Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 5,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Gooding v. United States"
+    ],
+    "tokens": {
+      "input": 262911,
+      "output": 10552,
+      "source": "codex-events",
+      "total": 273463
+    },
+    "verdict_map": {
+      "492fbf2b9211538d": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "996884fe7c94f645": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "ca90f61624b04ef6": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "eafd75ab788c9142": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "f3286635ee48b127": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-ec072a8972",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-70755e88da",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-4236c33f70",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": 206.0
   }
 }

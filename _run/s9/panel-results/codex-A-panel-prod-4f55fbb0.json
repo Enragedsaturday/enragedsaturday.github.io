@@ -1,22 +1,124 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Illinois v. Lafayette.json",
+    "lens": "A",
+    "notes": "Reviewed every group_inventory.jsonl assertion exactly once.",
+    "reviewed": [
+      {
+        "assertion_id": "3ea31f14306cc039",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record identifies Illinois v. Lafayette as a U.S. Supreme Court case decided 1983-06-20 with official citation 462 U.S. 640.",
+          "The page citation 462 U.S. 640 (1983), parallel citations 103 S. Ct. 2605 and 77 L. Ed. 2d 65, and neutral/vendor citation 1983 U.S. LEXIS 71 match the lake citation fields."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "ec1a8c57846e3c8d",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Applying these principles, we. hold that it is not “unreasonable” for police, as part of the routine procedure incident to incarcerating an arrested person, to search any container or article in his possession, in accordance with established inventory procedures.",
+          "locator_note": "content_page.md:53; text/Illinois v. Lafayette__3ed7a7.txt:26; lake pinpoints[0]",
+          "needs_cl": false,
+          "problem": "The pin-648 quote record is not a faithful opinion excerpt; it contains harvested content-page markdown/background text and is marked mismatch. The page's displayed quotation also is not character-faithful to the cached opinion text because the cached text reads \"we. hold\" and uses curly quotation marks around unreasonable.",
+          "proposed_fix": "Rebuild pin-648 from the cached opinion text and either quote the cached sentence exactly or remove quotation marks and paraphrase the holding.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The lake pinpoint quote begins with page markdown ('--- # Illinois v. Lafayette') rather than the quoted holding from the opinion.",
+          "The cached text contains the relevant passage on page 648, but the content-page quotation is not character-identical to that disclosed text."
+        ],
+        "residual_risks": [
+          "The cached opinion text may contain OCR artifacts, but under the disclosed-evidence rule the quotation must match the cached text or be independently verified before use."
+        ],
+        "suggested_tightening": "Store the actual page-648 holding sentence in pin-648, with a non-null pinpoint/page position if available.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "a9217bdce19066fe",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A; this row is recorded without making a treatment finding.",
+          "No support, quote-fidelity, citation-existence, pincite, or black-letter defect is raised for this treatment row under Lens A."
+        ],
+        "residual_risks": [
+          "Treatment/currency review remains for Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Illinois v. Lafayette.json\",\"reviewed\":[{\"assertion_id\":\"3ea31f14306cc039\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record identifies Illinois v. Lafayette as a U.S. Supreme Court case decided 1983-06-20 with official citation 462 U.S. 640.\",\"The page citation 462 U.S. 640 (1983), parallel citations 103 S. Ct. 2605 and 77 L. Ed. 2d 65, and neutral/vendor citation 1983 U.S. LEXIS 71 match the lake citation fields.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"ec1a8c57846e3c8d\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The pin-648 quote record is not a faithful opinion excerpt; it contains harvested content-page markdown/background text and is marked mismatch. The page's displayed quotation also is not character-faithful to the cached opinion text because the cached text reads \\\"we. hold\\\" and uses curly quotation marks around unreasonable.\",\"severity\":\"high\",\"proposed_fix\":\"Rebuild pin-648 from the cached opinion text and either quote the cached sentence exactly or remove quotation marks and paraphrase the holding.\",\"evidence_quote\":\"Applying these principles, we. hold that it is not “unreasonable” for police, as part of the routine procedure incident to incarcerating an arrested person, to search any container or article in his possession, in accordance with established inventory procedures.\",\"needs_cl\":false,\"locator_note\":\"content_page.md:53; text/Illinois v. Lafayette__3ed7a7.txt:26; lake pinpoints[0]\"},\"reasons\":[\"The lake pinpoint quote begins with page markdown ('--- # Illinois v. Lafayette') rather than the quoted holding from the opinion.\",\"The cached text contains the relevant passage on page 648, but the content-page quotation is not character-identical to that disclosed text.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The cached opinion text may contain OCR artifacts, but under the disclosed-evidence rule the quotation must match the cached text or be independently verified before use.\"],\"suggested_tightening\":\"Store the actual page-648 holding sentence in pin-648, with a non-null pinpoint/page position if available.\"},{\"assertion_id\":\"a9217bdce19066fe\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside Lens A; this row is recorded without making a treatment finding.\",\"No support, quote-fidelity, citation-existence, pincite, or black-letter defect is raised for this treatment row under Lens A.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment/currency review remains for Lens B.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed every group_inventory.jsonl assertion exactly once.\"}",
   "summary": {
-    "at": "2026-07-10T18:28:01-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T01:52:34-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-b710406955"
+    ],
     "group_id": "_overhaul2/lake/cases/Illinois v. Lafayette.json",
     "group_total_assertions": 3,
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-4f55fbb0",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-4f55fbb0.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "cket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:27:52.789434Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:27:53.462237Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:27:54.448174Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:27:55.769511Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:27:57.746001Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:28:01.132469Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 3,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Illinois v. Lafayette"
+    ],
+    "tokens": {
+      "input": 110792,
+      "output": 6085,
+      "source": "codex-events",
+      "total": 116877
+    },
+    "verdict_map": {
+      "3ea31f14306cc039": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "a9217bdce19066fe": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "ec1a8c57846e3c8d": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-b710406955",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 115.2
   }
 }

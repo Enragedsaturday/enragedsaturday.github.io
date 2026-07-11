@@ -1,22 +1,161 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Hoffa v. United States.json",
+    "lens": "B",
+    "notes": "Lens B only; support and quote fidelity findings are reserved for Lens A.",
+    "reviewed": [
+      {
+        "assertion_id": "d164fbc0dea99e0a",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity is verified for Hoffa v. United States, U.S. Supreme Court, decided 1966-12-12, cluster_id 107318.",
+          "Lake citations select 385 U.S. 293 as the official citation and list the same parallel/vendor citations shown in the assertion.",
+          "Lake treatment field remains good_law as of 2026-06-30 with no point_overrides."
+        ],
+        "residual_risks": [
+          "Live-law conclusion is only as strong as the disclosed lake treatment judgment and its 2026-06-30 as-of date."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "099b0819c5e54600",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote fidelity is outside Lens B; no currency or treatment defect specific to pin-310a appears in the disclosed record.",
+          "Lake treatment field is good_law as of 2026-06-30 and no point_overrides target this pinpoint."
+        ],
+        "residual_risks": [
+          "Support and quote-fidelity were not assessed under this lens."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "1354caa3c8a1cad5",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote fidelity is outside Lens B; no currency or treatment defect specific to pin-310 appears in the disclosed record.",
+          "Lake treatment field is good_law as of 2026-06-30 and no point_overrides target this pinpoint."
+        ],
+        "residual_risks": [
+          "Support and quote-fidelity were not assessed under this lens."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "aff37993a7328bad",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "\"audit_needed\": true",
+          "locator_note": "content_page.md Treatment & subsequent history; lake/Hoffa v. United States__7760f9.json treatment.derivation and treatment.edges",
+          "needs_cl": true,
+          "problem": "The good-law label survives under the lake's final treatment field, but the page's absolute 'No negative treatment' wording is too strong because the disclosed treatment derivation flags unaudited proposed negative events.",
+          "proposed_fix": "Keep good_law as of 2026-06-30 if relying on the final lake field, but replace 'No negative treatment' with 'No confirmed negative treatment in the lake record; proposed negative edges remain unaudited.'",
+          "severity": "low"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "Lake treatment.field_i_validity is good_law, varies_by_point is false, and point_overrides is empty.",
+          "Lake treatment provenance says the composite basis is migration-seed and the scope note says S2 derivation may downgrade.",
+          "Disclosed derivation shows audit_needed true for negative/top-cited lanes and treatment.edges contain proposed overruled, abrogated, questioned, and superseded_by_statute entries, all with field_iii mentioned."
+        ],
+        "residual_risks": [
+          "A current citator/CourtListener audit would be needed to convert the unaudited proposed edges into a firm no-negative-treatment statement.",
+          "The treatment statement is only as of 2026-06-30."
+        ],
+        "suggested_tightening": "Tie the visible treatment sentence to the final lake judgment and disclose that proposed negative edges were not audited.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/Hoffa v. United States.json\",\"reviewed\":[{\"assertion_id\":\"d164fbc0dea99e0a\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity is verified for Hoffa v. United States, U.S. Supreme Court, decided 1966-12-12, cluster_id 107318.\",\"Lake citations select 385 U.S. 293 as the official citation and list the same parallel/vendor citations shown in the assertion.\",\"Lake treatment field remains good_law as of 2026-06-30 with no point_overrides.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Live-law conclusion is only as strong as the disclosed lake treatment judgment and its 2026-06-30 as-of date.\"],\"suggested_tightening\":null},{\"assertion_id\":\"099b0819c5e54600\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Quote fidelity is outside Lens B; no currency or treatment defect specific to pin-310a appears in the disclosed record.\",\"Lake treatment field is good_law as of 2026-06-30 and no point_overrides target this pinpoint.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Support and quote-fidelity were not assessed under this lens.\"],\"suggested_tightening\":null},{\"assertion_id\":\"1354caa3c8a1cad5\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Quote fidelity is outside Lens B; no currency or treatment defect specific to pin-310 appears in the disclosed record.\",\"Lake treatment field is good_law as of 2026-06-30 and no point_overrides target this pinpoint.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Support and quote-fidelity were not assessed under this lens.\"],\"suggested_tightening\":null},{\"assertion_id\":\"aff37993a7328bad\",\"dimension\":\"treatment\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The good-law label survives under the lake's final treatment field, but the page's absolute 'No negative treatment' wording is too strong because the disclosed treatment derivation flags unaudited proposed negative events.\",\"severity\":\"low\",\"proposed_fix\":\"Keep good_law as of 2026-06-30 if relying on the final lake field, but replace 'No negative treatment' with 'No confirmed negative treatment in the lake record; proposed negative edges remain unaudited.'\",\"evidence_quote\":\"\\\"audit_needed\\\": true\",\"needs_cl\":true,\"locator_note\":\"content_page.md Treatment & subsequent history; lake/Hoffa v. United States__7760f9.json treatment.derivation and treatment.edges\"},\"reasons\":[\"Lake treatment.field_i_validity is good_law, varies_by_point is false, and point_overrides is empty.\",\"Lake treatment provenance says the composite basis is migration-seed and the scope note says S2 derivation may downgrade.\",\"Disclosed derivation shows audit_needed true for negative/top-cited lanes and treatment.edges contain proposed overruled, abrogated, questioned, and superseded_by_statute entries, all with field_iii mentioned.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"A current citator/CourtListener audit would be needed to convert the unaudited proposed edges into a firm no-negative-treatment statement.\",\"The treatment statement is only as of 2026-06-30.\"],\"suggested_tightening\":\"Tie the visible treatment sentence to the final lake judgment and disclose that proposed negative edges were not audited.\"}],\"notes\":\"Lens B only; support and quote fidelity findings are reserved for Lens A.\"}",
   "summary": {
-    "at": "2026-07-10T18:27:37-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T01:50:43-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-54a935b1cd",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-e219a86f52"
+    ],
     "group_id": "_overhaul2/lake/cases/Hoffa v. United States.json",
     "group_total_assertions": 4,
+    "lake_only_cases": [],
     "lane": "codex-B",
     "lane_id": "codex-B-panel-prod-45739774",
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-45739774.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "cket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:27:28.415891Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:27:29.155805Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:27:29.944227Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:27:31.125467Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:27:33.000279Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:27:36.518007Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Hoffa v. United States"
+    ],
+    "tokens": {
+      "input": 294757,
+      "output": 7993,
+      "source": "codex-events",
+      "total": 302750
+    },
+    "verdict_map": {
+      "099b0819c5e54600": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "1354caa3c8a1cad5": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "aff37993a7328bad": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "d164fbc0dea99e0a": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-54a935b1cd",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-e219a86f52",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 157.4
   }
 }

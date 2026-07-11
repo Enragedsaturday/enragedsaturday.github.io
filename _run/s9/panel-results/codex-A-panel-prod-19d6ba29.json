@@ -1,22 +1,148 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Fare v. Michael C.json",
+    "lens": "A",
+    "notes": "",
+    "reviewed": [
+      {
+        "assertion_id": "5c36788da99c12d9",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record verifies Fare v. Michael C., U.S. Supreme Court, year 1979, docket 78-334.",
+          "The official citation 442 U.S. 707 and parallel/vendor citations in the payload match the lake citations record."
+        ],
+        "residual_risks": [
+          "The opinion text states Decided June 20, 1979 while content_page.md and lake identity list date_decided as 1979-10-01; that date field is not part of this inventory assertion."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "6fdfe829beba8c5c",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "--- # Fare v. Michael C. *442 U.S. 707 (1979)* · U.S. Supreme Court · **Binding — SCOTUS** · Treatment: **good** *(as of 2026-06-30)*",
+          "locator_note": "lake pinpoints[].id=pin-724; content_page.md uses ^pin-724 in the Rule paragraph.",
+          "needs_cl": false,
+          "problem": "pin-724's stored quote is not an opinion passage; it is a scraped excerpt of the built page/header, and the lake marks it as a mismatch with no star marker. It cannot verify the page's quoted Rule text at that pin.",
+          "proposed_fix": "Replace pin-724 with the actual opinion passage(s), or split the pin: the attorney-role quote appears in the opinion before the *723 marker, while the 'Nor do we believe...' passage spans the *723/*724 area with the 'we decline...' clause after *724.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The pin-724 payload says quote_fidelity is mismatch, pinpoint_status is slip-only, and star_marker is null.",
+          "The quote payload begins with the built page title/header rather than the Court opinion text.",
+          "The disclosed opinion text contains relevant source language, but the stored pin-724 quote is not character-faithful to that source passage."
+        ],
+        "residual_risks": [
+          "The visible Rule proposition may be supportable after repinning, but pin-724 as disclosed is invalid."
+        ],
+        "suggested_tightening": "Split pin-724 into separate, source-text pinpoints for the attorney-role quote and the request-to-remain-silent quote.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "9fbd0d3ebb024d2e",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The lake pin-725 quote is marked quote_fidelity matched and pinpoint_status star-verified with star_marker 725.",
+          "The cached opinion text contains the same sentence: \"This totality-of-the-circumstances approach is adequate to determine whether there has been a waiver even where interrogation of juveniles is involved.\""
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "65449f9e0c1dfeca",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A, so no treatment defect is raised.",
+          "The payload matches the lake treatment fields: field_i_validity good_law, as_of_content 1979-06-20, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note."
+        ],
+        "residual_risks": [
+          "No Lens B treatment/currency audit was performed."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Fare v. Michael C.json\",\"reviewed\":[{\"assertion_id\":\"5c36788da99c12d9\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake identity record verifies Fare v. Michael C., U.S. Supreme Court, year 1979, docket 78-334.\",\"The official citation 442 U.S. 707 and parallel/vendor citations in the payload match the lake citations record.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The opinion text states Decided June 20, 1979 while content_page.md and lake identity list date_decided as 1979-10-01; that date field is not part of this inventory assertion.\"],\"suggested_tightening\":null},{\"assertion_id\":\"6fdfe829beba8c5c\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"pin-724's stored quote is not an opinion passage; it is a scraped excerpt of the built page/header, and the lake marks it as a mismatch with no star marker. It cannot verify the page's quoted Rule text at that pin.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-724 with the actual opinion passage(s), or split the pin: the attorney-role quote appears in the opinion before the *723 marker, while the 'Nor do we believe...' passage spans the *723/*724 area with the 'we decline...' clause after *724.\",\"evidence_quote\":\"--- # Fare v. Michael C. *442 U.S. 707 (1979)* · U.S. Supreme Court · **Binding — SCOTUS** · Treatment: **good** *(as of 2026-06-30)*\",\"needs_cl\":false,\"locator_note\":\"lake pinpoints[].id=pin-724; content_page.md uses ^pin-724 in the Rule paragraph.\"},\"reasons\":[\"The pin-724 payload says quote_fidelity is mismatch, pinpoint_status is slip-only, and star_marker is null.\",\"The quote payload begins with the built page title/header rather than the Court opinion text.\",\"The disclosed opinion text contains relevant source language, but the stored pin-724 quote is not character-faithful to that source passage.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The visible Rule proposition may be supportable after repinning, but pin-724 as disclosed is invalid.\"],\"suggested_tightening\":\"Split pin-724 into separate, source-text pinpoints for the attorney-role quote and the request-to-remain-silent quote.\"},{\"assertion_id\":\"9fbd0d3ebb024d2e\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake pin-725 quote is marked quote_fidelity matched and pinpoint_status star-verified with star_marker 725.\",\"The cached opinion text contains the same sentence: \\\"This totality-of-the-circumstances approach is adequate to determine whether there has been a waiver even where interrogation of juveniles is involved.\\\"\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"65449f9e0c1dfeca\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside Lens A, so no treatment defect is raised.\",\"The payload matches the lake treatment fields: field_i_validity good_law, as_of_content 1979-06-20, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"No Lens B treatment/currency audit was performed.\"],\"suggested_tightening\":null}],\"notes\":\"\"}",
   "summary": {
-    "at": "2026-07-10T18:25:36-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T01:37:11-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-395bcb5628"
+    ],
     "group_id": "_overhaul2/lake/cases/Fare v. Michael C.json",
     "group_total_assertions": 4,
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-19d6ba29",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-19d6ba29.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "cket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:25:26.806327Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:25:27.642065Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:25:28.629988Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:25:30.331249Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:25:32.235094Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:25:35.727618Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Fare v. Michael C"
+    ],
+    "tokens": {
+      "input": 388281,
+      "output": 8816,
+      "source": "codex-events",
+      "total": 397097
+    },
+    "verdict_map": {
+      "5c36788da99c12d9": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "65449f9e0c1dfeca": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "6fdfe829beba8c5c": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "9fbd0d3ebb024d2e": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-395bcb5628",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 177.6
   }
 }

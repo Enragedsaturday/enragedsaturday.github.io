@@ -1,22 +1,147 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Hudson v. Michigan.json",
+    "lens": "A",
+    "notes": "Only the four assertion_ids in group_inventory.jsonl were reviewed. Treatment was recorded without a Lens A treatment finding.",
+    "reviewed": [
+      {
+        "assertion_id": "8c2eb1e7a9241197",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity record is verified for Hudson v. Michigan, U.S. Supreme Court, decided 2006-06-15.",
+          "Official citation 547 U.S. 586 and parallel/vendor citations 126 S. Ct. 2159, 165 L. Ed. 2d 56, and 2006 U.S. LEXIS 4677 match the lake citation fields and the content page."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "3b368ebef1a6b3b8",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The quoted sentence appears in the opinion text at the end of Part III.A: \"Since the interests that were violated in this case have nothing to do with the seizure of the evidence, the exclusionary rule is inapplicable.\"",
+          "The same quote appears in lake pinpoints[] for pin-594a."
+        ],
+        "residual_risks": [
+          "The lake payload labels quote_fidelity as mismatch even though the disclosed text supports the quote; the flag appears stale or over-strict."
+        ],
+        "suggested_tightening": "Recompute the quote_fidelity marker for pin-594a from the cached opinion text.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "f45fba80f5288721",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "What the knock-and-announce rule has never protected,\nhowever, is one’s interest in preventing the government\nfrom seeing or taking evidence described in a warrant.",
+          "locator_note": "pin-594; lake pinpoints[0].quote and the Rule paragraph in content_page.md.",
+          "needs_cl": false,
+          "problem": "pin-594's harvested quote is not the opinion passage. It is page/frontmatter/summary text ending before the actual quoted sentence, and the displayed page quote also changes the opinion's curly apostrophe in \"one’s\" to straight \"one's\".",
+          "proposed_fix": "Replace pin-594 with the actual opinion sentence and preserve the opinion's characters: \"What the knock-and-announce rule has never protected, however, is one’s interest in preventing the government from seeing or taking evidence described in a warrant.\"",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The disclosed opinion text contains the quoted proposition at lines 379-381, not the page/frontmatter block stored in the pin payload.",
+          "Character fidelity fails because the content quote uses \"one's\" while the opinion text uses \"one’s\"."
+        ],
+        "residual_risks": [
+          "The disclosed text is slip-only and does not independently prove the official 547 U.S. at 594 pincite."
+        ],
+        "suggested_tightening": "After fixing the quote text, populate page/star metadata only from disclosed official-pagination evidence.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "192383edae71525a",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Recorded only for Lens A: the treatment payload matches the lake treatment fields for field_i_validity, as_of_content, as_of_treatment, scope_note, and varies_by_point.",
+          "Treatment/currency merits are outside Lens A."
+        ],
+        "residual_risks": [
+          "Lens B should assess treatment/currency, including any negative-treatment implications."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Hudson v. Michigan.json\",\"reviewed\":[{\"assertion_id\":\"8c2eb1e7a9241197\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity record is verified for Hudson v. Michigan, U.S. Supreme Court, decided 2006-06-15.\",\"Official citation 547 U.S. 586 and parallel/vendor citations 126 S. Ct. 2159, 165 L. Ed. 2d 56, and 2006 U.S. LEXIS 4677 match the lake citation fields and the content page.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"3b368ebef1a6b3b8\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The quoted sentence appears in the opinion text at the end of Part III.A: \\\"Since the interests that were violated in this case have nothing to do with the seizure of the evidence, the exclusionary rule is inapplicable.\\\"\",\"The same quote appears in lake pinpoints[] for pin-594a.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The lake payload labels quote_fidelity as mismatch even though the disclosed text supports the quote; the flag appears stale or over-strict.\"],\"suggested_tightening\":\"Recompute the quote_fidelity marker for pin-594a from the cached opinion text.\"},{\"assertion_id\":\"f45fba80f5288721\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"pin-594's harvested quote is not the opinion passage. It is page/frontmatter/summary text ending before the actual quoted sentence, and the displayed page quote also changes the opinion's curly apostrophe in \\\"one’s\\\" to straight \\\"one's\\\".\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-594 with the actual opinion sentence and preserve the opinion's characters: \\\"What the knock-and-announce rule has never protected, however, is one’s interest in preventing the government from seeing or taking evidence described in a warrant.\\\"\",\"evidence_quote\":\"What the knock-and-announce rule has never protected,\\nhowever, is one’s interest in preventing the government\\nfrom seeing or taking evidence described in a warrant.\",\"needs_cl\":false,\"locator_note\":\"pin-594; lake pinpoints[0].quote and the Rule paragraph in content_page.md.\"},\"reasons\":[\"The disclosed opinion text contains the quoted proposition at lines 379-381, not the page/frontmatter block stored in the pin payload.\",\"Character fidelity fails because the content quote uses \\\"one's\\\" while the opinion text uses \\\"one’s\\\".\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The disclosed text is slip-only and does not independently prove the official 547 U.S. at 594 pincite.\"],\"suggested_tightening\":\"After fixing the quote text, populate page/star metadata only from disclosed official-pagination evidence.\"},{\"assertion_id\":\"192383edae71525a\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Recorded only for Lens A: the treatment payload matches the lake treatment fields for field_i_validity, as_of_content, as_of_treatment, scope_note, and varies_by_point.\",\"Treatment/currency merits are outside Lens A.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Lens B should assess treatment/currency, including any negative-treatment implications.\"],\"suggested_tightening\":null}],\"notes\":\"Only the four assertion_ids in group_inventory.jsonl were reviewed. Treatment was recorded without a Lens A treatment finding.\"}",
   "summary": {
-    "at": "2026-07-10T18:27:35-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T01:52:08-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-8f1ac131c5"
+    ],
     "group_id": "_overhaul2/lake/cases/Hudson v. Michigan.json",
     "group_total_assertions": 4,
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-488368c3",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-488368c3.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "cket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:27:26.616301Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:27:27.302276Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:27:28.341124Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:27:29.779580Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:27:31.842639Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:27:35.198552Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Hudson v. Michigan"
+    ],
+    "tokens": {
+      "input": 296946,
+      "output": 8587,
+      "source": "codex-events",
+      "total": 305533
+    },
+    "verdict_map": {
+      "192383edae71525a": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "3b368ebef1a6b3b8": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "8c2eb1e7a9241197": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "f45fba80f5288721": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-8f1ac131c5",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 173.8
   }
 }

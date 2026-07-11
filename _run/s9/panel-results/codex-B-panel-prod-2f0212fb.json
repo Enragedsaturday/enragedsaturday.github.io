@@ -1,13 +1,94 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Illinois v. Perkins.json",
+    "lens": "B",
+    "notes": "Lens B review only; no support or quote-fidelity defect is raised.",
+    "reviewed": [
+      {
+        "assertion_id": "ea7efac5c6776799",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record is not a stub and has status verified for Illinois v. Perkins.",
+          "The identity fields match the asserted authority: U.S. Supreme Court, decided 1990-06-04, cluster_id 112452, and official citation 496 U.S. 292.",
+          "The lake treatment judgment marks the authority good_law as of 2026-06-30."
+        ],
+        "residual_risks": [
+          "The disclosed treatment derivation contains proposed negative-event audit markers, handled under the treatment assertion."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "9e3138f8b8da4296",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "This row presents a quote-fidelity/pinpoint issue, which is outside Lens B.",
+          "No currency, treatment, live-law, or authority-weight defect is presented by this row."
+        ],
+        "residual_risks": [
+          "Quote fidelity and support were not reviewed under Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "ebc3c19b250e8763",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "This row presents a quote-fidelity/pinpoint issue, which is outside Lens B.",
+          "No currency, treatment, live-law, or authority-weight defect is presented by this row."
+        ],
+        "residual_risks": [
+          "Quote fidelity and support were not reviewed under Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "8b117b8dc67ac545",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "\"field_i_validity\": \"good_law\"; \"audit_needed\": true; \"proposed_negative_events\": 13; \"audit_marker\": \"R15 treatment audit required\"",
+          "locator_note": "content_page.md Treatment & subsequent history; lake/Illinois v. Perkins__fd0180.json treatment.derivation and treatment.edges",
+          "needs_cl": true,
+          "problem": "The good_law status itself is supported by the lake judgment field, but the content-page treatment narrative is too categorical because it says there is no negative treatment while the lake record contains proposed negative treatment edges and audit-needed markers.",
+          "proposed_fix": "Keep field_i_validity as good_law as of 2026-06-30, but replace any categorical 'No negative treatment' language with an audit caveat noting proposed negative events and R15 treatment audit markers.",
+          "severity": "medium"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "The lake treatment field marks Perkins as good_law as of 2026-06-30, varies_by_point false, with no point_overrides.",
+          "The lake edges include proposed negative labels including overruled, abrogated, superseded_by_statute, questioned, and criticized, though each edge is proposed and has field_iii mentioned.",
+          "The derivation lanes show audit_needed true and cap_hit true for negative/top-cited review, so a no-negative-treatment statement is not fully supported by the disclosed record."
+        ],
+        "residual_risks": [
+          "The disclosed record does not confirm an actual overruling of Perkins; it confirms unresolved proposed negative-event audits."
+        ],
+        "suggested_tightening": "State: 'Lake currently marks Perkins good_law as of 2026-06-30; proposed negative treatment candidates remain audit-pending.'",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"B\",\n  \"group_id\": \"_overhaul2/lake/cases/Illinois v. Perkins.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"ea7efac5c6776799\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake record is not a stub and has status verified for Illinois v. Perkins.\",\n        \"The identity fields match the asserted authority: U.S. Supreme Court, decided 1990-06-04, cluster_id 112452, and official citation 496 U.S. 292.\",\n        \"The lake treatment judgment marks the authority good_law as of 2026-06-30.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The disclosed treatment derivation contains proposed negative-event audit markers, handled under the treatment assertion.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"9e3138f8b8da4296\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"This row presents a quote-fidelity/pinpoint issue, which is outside Lens B.\",\n        \"No currency, treatment, live-law, or authority-weight defect is presented by this row.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Quote fidelity and support were not reviewed under Lens B.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"ebc3c19b250e8763\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"This row presents a quote-fidelity/pinpoint issue, which is outside Lens B.\",\n        \"No currency, treatment, live-law, or authority-weight defect is presented by this row.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Quote fidelity and support were not reviewed under Lens B.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"8b117b8dc67ac545\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands-modified\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The good_law status itself is supported by the lake judgment field, but the content-page treatment narrative is too categorical because it says there is no negative treatment while the lake record contains proposed negative treatment edges and audit-needed markers.\",\n        \"severity\": \"medium\",\n        \"proposed_fix\": \"Keep field_i_validity as good_law as of 2026-06-30, but replace any categorical 'No negative treatment' language with an audit caveat noting proposed negative events and R15 treatment audit markers.\",\n        \"evidence_quote\": \"\\\"field_i_validity\\\": \\\"good_law\\\"; \\\"audit_needed\\\": true; \\\"proposed_negative_events\\\": 13; \\\"audit_marker\\\": \\\"R15 treatment audit required\\\"\",\n        \"needs_cl\": true,\n        \"locator_note\": \"content_page.md Treatment & subsequent history; lake/Illinois v. Perkins__fd0180.json treatment.derivation and treatment.edges\"\n      },\n      \"reasons\": [\n        \"The lake treatment field marks Perkins as good_law as of 2026-06-30, varies_by_point false, with no point_overrides.\",\n        \"The lake edges include proposed negative labels including overruled, abrogated, superseded_by_statute, questioned, and criticized, though each edge is proposed and has field_iii mentioned.\",\n        \"The derivation lanes show audit_needed true and cap_hit true for negative/top-cited review, so a no-negative-treatment statement is not fully supported by the disclosed record.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The disclosed record does not confirm an actual overruling of Perkins; it confirms unresolved proposed negative-event audits.\"\n      ],\n      \"suggested_tightening\": \"State: 'Lake currently marks Perkins good_law as of 2026-06-30; proposed negative treatment candidates remain audit-pending.'\"\n    }\n  ],\n  \"notes\": \"Lens B review only; no support or quote-fidelity defect is raised.\"\n}",
   "summary": {
-    "at": "2026-07-10T18:28:07-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T01:53:58-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-51c870bd38"
+    ],
     "group_id": "_overhaul2/lake/cases/Illinois v. Perkins.json",
     "group_total_assertions": 4,
     "lake_only_cases": [],
@@ -16,21 +97,55 @@
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-2f0212fb.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 4,
     "run": "prod",
     "text_disclosed_cases": [
       "Illinois v. Perkins"
     ],
     "tokens": {
-      "input": 754,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 754
+      "input": 287786,
+      "output": 6008,
+      "source": "codex-events",
+      "total": 293794
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 3.2
+    "verdict_map": {
+      "8b117b8dc67ac545": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "9e3138f8b8da4296": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "ea7efac5c6776799": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "ebc3c19b250e8763": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-51c870bd38",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 119.0
   }
 }

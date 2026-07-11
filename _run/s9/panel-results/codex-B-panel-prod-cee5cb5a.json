@@ -1,13 +1,103 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Florida v. White.json",
+    "lens": "B",
+    "notes": "Lens B only; quote-fidelity/support issues were not assessed.",
+    "reviewed": [
+      {
+        "assertion_id": "908890c91bb990b8",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record is verified, non-stub, and identifies Florida v. White as a U.S. Supreme Court case decided 1999-05-17.",
+          "The disclosed official citation is 526 U.S. 559 and the treatment judgment field marks the case good_law as of 2026-06-30."
+        ],
+        "residual_risks": [
+          "Treatment audit concerns are handled in the treatment assertion."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "84e128d999f91b08",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote fidelity is outside Lens B; no currency or treatment defect turns on this pinpoint row.",
+          "No support or quote-fidelity finding is raised."
+        ],
+        "residual_risks": [
+          "Lens A should evaluate the disclosed quote_fidelity mismatch."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "a5e0745fba7f2e2f",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote fidelity is outside Lens B; no currency or treatment defect turns on this pinpoint row.",
+          "No support or quote-fidelity finding is raised."
+        ],
+        "residual_risks": [
+          "Lens A should evaluate the disclosed quote_fidelity mismatch."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "60ae00bd31f5e9ac",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "\"audit_needed\": true,\n      \"audit_marker\": \"R15 treatment audit required\"",
+          "locator_note": "content_page.md Treatment & subsequent history; lake/Florida v. White__bf2359.json treatment.derivation.lane2_top_cited",
+          "needs_cl": true,
+          "problem": "The good_law and Binding-SCOTUS calls survive, but the content page's categorical 'No negative treatment' is too strong against the disclosed progeny/audit record.",
+          "proposed_fix": "Keep status as good_law as of 2026-06-30, but replace 'No negative treatment' with a narrower statement noting that disclosed negative signals are proposed/mentioned only and that the lane2 treatment audit remains open.",
+          "severity": "medium"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "The lake judgment field says field_i_validity is good_law and point_overrides is empty, so the core good-law status stands.",
+          "The record also discloses many proposed progeny edges labeled overruled, superseded_by_statute, abrogated, questioned, or criticized, all with field_iii mentioned.",
+          "Because lane2_top_cited hit the cap and has audit_needed true, the stronger page statement 'No negative treatment' is not fully verified from the disclosed treatment record."
+        ],
+        "residual_risks": [
+          "The disclosed edges are proposed and marked mentioned, so they do not themselves prove Florida v. White has been overruled or abrogated.",
+          "Resolving whether any proposed edge is real negative treatment requires the underlying citing-case audit."
+        ],
+        "suggested_tightening": "Use: 'Good law as of 2026-06-30. No confirmed point override in the lake record; disclosed proposed negative-treatment signals remain audit-pending.'",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"B\",\n  \"group_id\": \"_overhaul2/lake/cases/Florida v. White.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"908890c91bb990b8\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake record is verified, non-stub, and identifies Florida v. White as a U.S. Supreme Court case decided 1999-05-17.\",\n        \"The disclosed official citation is 526 U.S. 559 and the treatment judgment field marks the case good_law as of 2026-06-30.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Treatment audit concerns are handled in the treatment assertion.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"84e128d999f91b08\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Quote fidelity is outside Lens B; no currency or treatment defect turns on this pinpoint row.\",\n        \"No support or quote-fidelity finding is raised.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Lens A should evaluate the disclosed quote_fidelity mismatch.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"a5e0745fba7f2e2f\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Quote fidelity is outside Lens B; no currency or treatment defect turns on this pinpoint row.\",\n        \"No support or quote-fidelity finding is raised.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Lens A should evaluate the disclosed quote_fidelity mismatch.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"60ae00bd31f5e9ac\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands-modified\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The good_law and Binding-SCOTUS calls survive, but the content page's categorical 'No negative treatment' is too strong against the disclosed progeny/audit record.\",\n        \"severity\": \"medium\",\n        \"proposed_fix\": \"Keep status as good_law as of 2026-06-30, but replace 'No negative treatment' with a narrower statement noting that disclosed negative signals are proposed/mentioned only and that the lane2 treatment audit remains open.\",\n        \"evidence_quote\": \"\\\"audit_needed\\\": true,\\n      \\\"audit_marker\\\": \\\"R15 treatment audit required\\\"\",\n        \"needs_cl\": true,\n        \"locator_note\": \"content_page.md Treatment & subsequent history; lake/Florida v. White__bf2359.json treatment.derivation.lane2_top_cited\"\n      },\n      \"reasons\": [\n        \"The lake judgment field says field_i_validity is good_law and point_overrides is empty, so the core good-law status stands.\",\n        \"The record also discloses many proposed progeny edges labeled overruled, superseded_by_statute, abrogated, questioned, or criticized, all with field_iii mentioned.\",\n        \"Because lane2_top_cited hit the cap and has audit_needed true, the stronger page statement 'No negative treatment' is not fully verified from the disclosed treatment record.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The disclosed edges are proposed and marked mentioned, so they do not themselves prove Florida v. White has been overruled or abrogated.\",\n        \"Resolving whether any proposed edge is real negative treatment requires the underlying citing-case audit.\"\n      ],\n      \"suggested_tightening\": \"Use: 'Good law as of 2026-06-30. No confirmed point override in the lake record; disclosed proposed negative-treatment signals remain audit-pending.'\"\n    }\n  ],\n  \"notes\": \"Lens B only; quote-fidelity/support issues were not assessed.\"\n}",
   "summary": {
-    "at": "2026-07-10T18:26:14-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T01:42:33-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "defense_votes": [],
-    "findings_emitted": [],
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-457d7d1679",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-6597125447",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-c56d5d49e0"
+    ],
     "group_id": "_overhaul2/lake/cases/Florida v. White.json",
     "group_total_assertions": 4,
     "lake_only_cases": [],
@@ -16,21 +106,63 @@
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-cee5cb5a.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 4,
     "run": "prod",
     "text_disclosed_cases": [
       "Florida v. White"
     ],
     "tokens": {
-      "input": 753,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 753
+      "input": 170893,
+      "output": 7114,
+      "source": "codex-events",
+      "total": 178007
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 3.3
+    "verdict_map": {
+      "60ae00bd31f5e9ac": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "84e128d999f91b08": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "908890c91bb990b8": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "a5e0745fba7f2e2f": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-457d7d1679",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-6597125447",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-c56d5d49e0",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 148.0
   }
 }

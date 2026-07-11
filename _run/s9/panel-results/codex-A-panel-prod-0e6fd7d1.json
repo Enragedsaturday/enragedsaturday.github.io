@@ -1,22 +1,161 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Hampton v. United States.json",
+    "lens": "A",
+    "notes": "",
+    "reviewed": [
+      {
+        "assertion_id": "4a02aa420259d056",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity is verified for Hampton v. United States, U.S. Supreme Court, decided 1976-04-27.",
+          "The lake official citation is 425 U.S. 484, and the parallel/vendor citations match the payload and content_page frontmatter."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "3440d13e556535c9",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "The remedy of the criminal defendant with respect to the acts of Government agents, which, far from being resisted, are encouraged by him, lies solely in the defense of entrapment.",
+          "locator_note": "text/Hampton v. United States__265d0f.txt paragraph b559-7, page-number label 490; lake pinpoints[pin-490] currently contains non-opinion page text.",
+          "needs_cl": false,
+          "problem": "The reviewed pin-490 quote is not the opinion passage at 425 U.S. 490; it is a generated page/header and narrative chunk harvested into the lake pinpoint. The actual page-490 quoted passage is the separate remedy sentence in the opinion.",
+          "proposed_fix": "Replace pin-490's quote with the page-490 sentence beginning \"The remedy of the criminal defendant...\" and keep the 425 U.S. at 490 pin only for that sentence.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Lake and inventory mark pin-490 quote_fidelity as mismatch.",
+          "The payload quote begins with content-page markup rather than the opinion's page-490 text.",
+          "The cached opinion text at page 490 contains the remedy sentence that the content page displays."
+        ],
+        "residual_risks": [
+          "The visible content_page quote for ^pin-490 is faithful; the defect is the reviewed lake/inventory pinpoint text."
+        ],
+        "suggested_tightening": "Regenerate pin-490 from the opinion text span, not from the rendered case-page body.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "4ad67e73da0a7df0",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "If the police engage in illegal activity in concert with a defendant beyond the scope of their duties the remedy lies, not in freeing the equally culpable defendant, but in prosecuting the police under' the applicable provisions of state or federal law.",
+          "locator_note": "text/Hampton v. United States__265d0f.txt paragraph b560-6, after page-number label 490 and before label 491; lake pin-490a quote_fidelity is mismatch.",
+          "needs_cl": false,
+          "problem": "The quote is substantively at the right passage, but it is not character-faithful to the cached opinion text because the cached text reads \"under' the\" while the content/lake quote reads \"under the\".",
+          "proposed_fix": "Either quote the cached text exactly with \"under' the\" or add a disclosed clean-source/normalization flag that justifies removing the OCR apostrophe.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The passage appears in the cached opinion at the claimed page, so support and location are not the defect.",
+          "Exact quote fidelity fails against text because the displayed quote omits the apostrophe in \"under' the\".",
+          "Lake and inventory also carry quote_fidelity: mismatch for this pin."
+        ],
+        "residual_risks": [
+          "The apostrophe appears to be an OCR artifact, but no cleaner disclosed source is available in the working directory."
+        ],
+        "suggested_tightening": "Store a normalized_quote separately from an exact source_quote if OCR cleanup is intended.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "9ab1d216f3ee74aa",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The payload treatment fields match the lake treatment fields for field_i_validity, dates, varies_by_point, and scope_note.",
+          "Under lens A, treatment/currency is recorded for consistency only; no treatment finding is raised."
+        ],
+        "residual_risks": [
+          "Treatment and currency require lens B review."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Hampton v. United States.json\",\"reviewed\":[{\"assertion_id\":\"4a02aa420259d056\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity is verified for Hampton v. United States, U.S. Supreme Court, decided 1976-04-27.\",\"The lake official citation is 425 U.S. 484, and the parallel/vendor citations match the payload and content_page frontmatter.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"3440d13e556535c9\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The reviewed pin-490 quote is not the opinion passage at 425 U.S. 490; it is a generated page/header and narrative chunk harvested into the lake pinpoint. The actual page-490 quoted passage is the separate remedy sentence in the opinion.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-490's quote with the page-490 sentence beginning \\\"The remedy of the criminal defendant...\\\" and keep the 425 U.S. at 490 pin only for that sentence.\",\"evidence_quote\":\"The remedy of the criminal defendant with respect to the acts of Government agents, which, far from being resisted, are encouraged by him, lies solely in the defense of entrapment.\",\"needs_cl\":false,\"locator_note\":\"text/Hampton v. United States__265d0f.txt paragraph b559-7, page-number label 490; lake pinpoints[pin-490] currently contains non-opinion page text.\"},\"reasons\":[\"Lake and inventory mark pin-490 quote_fidelity as mismatch.\",\"The payload quote begins with content-page markup rather than the opinion's page-490 text.\",\"The cached opinion text at page 490 contains the remedy sentence that the content page displays.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The visible content_page quote for ^pin-490 is faithful; the defect is the reviewed lake/inventory pinpoint text.\"],\"suggested_tightening\":\"Regenerate pin-490 from the opinion text span, not from the rendered case-page body.\"},{\"assertion_id\":\"4ad67e73da0a7df0\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The quote is substantively at the right passage, but it is not character-faithful to the cached opinion text because the cached text reads \\\"under' the\\\" while the content/lake quote reads \\\"under the\\\".\",\"severity\":\"low\",\"proposed_fix\":\"Either quote the cached text exactly with \\\"under' the\\\" or add a disclosed clean-source/normalization flag that justifies removing the OCR apostrophe.\",\"evidence_quote\":\"If the police engage in illegal activity in concert with a defendant beyond the scope of their duties the remedy lies, not in freeing the equally culpable defendant, but in prosecuting the police under' the applicable provisions of state or federal law.\",\"needs_cl\":false,\"locator_note\":\"text/Hampton v. United States__265d0f.txt paragraph b560-6, after page-number label 490 and before label 491; lake pin-490a quote_fidelity is mismatch.\"},\"reasons\":[\"The passage appears in the cached opinion at the claimed page, so support and location are not the defect.\",\"Exact quote fidelity fails against text because the displayed quote omits the apostrophe in \\\"under' the\\\".\",\"Lake and inventory also carry quote_fidelity: mismatch for this pin.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The apostrophe appears to be an OCR artifact, but no cleaner disclosed source is available in the working directory.\"],\"suggested_tightening\":\"Store a normalized_quote separately from an exact source_quote if OCR cleanup is intended.\"},{\"assertion_id\":\"9ab1d216f3ee74aa\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The payload treatment fields match the lake treatment fields for field_i_validity, dates, varies_by_point, and scope_note.\",\"Under lens A, treatment/currency is recorded for consistency only; no treatment finding is raised.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment and currency require lens B review.\"],\"suggested_tightening\":null}],\"notes\":\"\"}",
   "summary": {
-    "at": "2026-07-10T18:27:02-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T01:46:58-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-270eed35f3",
+      "F-S9-PR-a81a427156"
+    ],
     "group_id": "_overhaul2/lake/cases/Hampton v. United States.json",
     "group_total_assertions": 4,
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-0e6fd7d1",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-0e6fd7d1.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "ast status: 429 Too Many Requests, request id: e50e33f5-b0b2-430b-9125-5f2c741d4940\n2026-07-10T22:26:53.506251Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:26:54.016338Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:26:54.797421Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:26:55.595475Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:26:56.760510Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:26:58.816984Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Hampton v. United States"
+    ],
+    "tokens": {
+      "input": 222877,
+      "output": 9503,
+      "source": "codex-events",
+      "total": 232380
+    },
+    "verdict_map": {
+      "3440d13e556535c9": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "4a02aa420259d056": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "4ad67e73da0a7df0": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "9ab1d216f3ee74aa": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-270eed35f3",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-a81a427156",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 180.2
   }
 }

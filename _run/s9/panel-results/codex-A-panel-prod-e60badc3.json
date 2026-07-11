@@ -1,13 +1,99 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/J.D.B. v. North Carolina.json",
+    "lens": "A",
+    "notes": "Reviewed all 4 group_inventory rows exactly once under Lens A.",
+    "reviewed": [
+      {
+        "assertion_id": "26a674d14ed20c0a",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity verifies the case as J. D. B. v. North Carolina, U.S. Supreme Court, decided 2011-06-16, year 2011.",
+          "Lake citations match the asserted official citation 564 U.S. 261 and the listed parallel/vendor citations 180 L. Ed. 2d 310, 131 S. Ct. 2394, and 2011 U.S. LEXIS 4557."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "86444b8eb6b122f2",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "So long as the child’s age <page-number citation-index=\"1\" label=\"325\">*325</page-number>was known to the officer at the time of the interview",
+          "locator_note": "pin-op11; disclosed text paragraph b366-10 contains the passage.",
+          "needs_cl": false,
+          "problem": "The pin-op11 quotation is substantively the same passage, but it is not character-faithful to the disclosed opinion text: it changes curly apostrophes/quotation marks to ASCII, and uses an ellipsis to omit an intervening citation after 'them,'.",
+          "proposed_fix": "Either convert the sentence to a paraphrase or quote the opinion with exact typography and citation-omission formatting, e.g. use child’s, “unknowable,” and “anticipat[e] ...” with a legally clear ellipsis for omitted citations.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The disclosed text supports the proposition that known or objectively apparent age may be included without making the custody test subjective.",
+          "Lake itself marks this pinpoint quote_fidelity as mismatch, which is consistent with the character-level defects in the cached text."
+        ],
+        "residual_risks": [
+          "Slip-page pagination is not independently verifiable from the page-null lake pinpoint."
+        ],
+        "suggested_tightening": "Store the exact opinion text for the quote and reserve ellipses only for explicitly omitted citations/text.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "a22ce7cb6f053746",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "It is beyond dispute that children will often feel bound to submit to police questioning when an adult in the same circumstances</p>",
+          "locator_note": "pin-op1; disclosed text paragraphs b360-7 and b360-16 contain the actual opening holding passage, while the lake pinpoint begins with page markup.",
+          "needs_cl": false,
+          "problem": "The asserted pin-op1 quote is not an opinion quote at all; it contains generated page/header/background/issue text from the content page and cannot be character-faithful to the opinion.",
+          "proposed_fix": "Replace the lake pin-op1 quote with the actual opening holding sentence from the opinion, or remove the pinpoint until the quote harvester captures only the quoted Rule text.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The lake pin-op1 quote begins with '--- # J.D.B. v. North Carolina' and includes content-page sections, not Supreme Court opinion text.",
+          "Lake marks pin-op1 quote_fidelity as mismatch.",
+          "The cached opinion text contains the real quoted holding, but not the asserted harvested page/header block."
+        ],
+        "residual_risks": [
+          "The visible content-page Rule quote appears supportable in substance, but the inventory/lake quote under this assertion is defective."
+        ],
+        "suggested_tightening": "Fix quote extraction so a footnote/pin marker captures the nearest quoted passage, not all preceding markdown content.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "ceecb06b253cc050",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A; no support or quote-fidelity defect is raised.",
+          "The treatment payload matches the disclosed lake treatment fields: field_i_validity good_law, as_of_content 2011-06-16, as_of_treatment 2026-06-30, and varies_by_point false."
+        ],
+        "residual_risks": [
+          "No Lens A review of currency or subsequent-history correctness was performed."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/J.D.B. v. North Carolina.json\",\"reviewed\":[{\"assertion_id\":\"26a674d14ed20c0a\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity verifies the case as J. D. B. v. North Carolina, U.S. Supreme Court, decided 2011-06-16, year 2011.\",\"Lake citations match the asserted official citation 564 U.S. 261 and the listed parallel/vendor citations 180 L. Ed. 2d 310, 131 S. Ct. 2394, and 2011 U.S. LEXIS 4557.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"86444b8eb6b122f2\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The pin-op11 quotation is substantively the same passage, but it is not character-faithful to the disclosed opinion text: it changes curly apostrophes/quotation marks to ASCII, and uses an ellipsis to omit an intervening citation after 'them,'.\",\"severity\":\"low\",\"proposed_fix\":\"Either convert the sentence to a paraphrase or quote the opinion with exact typography and citation-omission formatting, e.g. use child’s, “unknowable,” and “anticipat[e] ...” with a legally clear ellipsis for omitted citations.\",\"evidence_quote\":\"So long as the child’s age <page-number citation-index=\\\"1\\\" label=\\\"325\\\">*325</page-number>was known to the officer at the time of the interview\",\"needs_cl\":false,\"locator_note\":\"pin-op11; disclosed text paragraph b366-10 contains the passage.\"},\"reasons\":[\"The disclosed text supports the proposition that known or objectively apparent age may be included without making the custody test subjective.\",\"Lake itself marks this pinpoint quote_fidelity as mismatch, which is consistent with the character-level defects in the cached text.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Slip-page pagination is not independently verifiable from the page-null lake pinpoint.\"],\"suggested_tightening\":\"Store the exact opinion text for the quote and reserve ellipses only for explicitly omitted citations/text.\"},{\"assertion_id\":\"a22ce7cb6f053746\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The asserted pin-op1 quote is not an opinion quote at all; it contains generated page/header/background/issue text from the content page and cannot be character-faithful to the opinion.\",\"severity\":\"high\",\"proposed_fix\":\"Replace the lake pin-op1 quote with the actual opening holding sentence from the opinion, or remove the pinpoint until the quote harvester captures only the quoted Rule text.\",\"evidence_quote\":\"It is beyond dispute that children will often feel bound to submit to police questioning when an adult in the same circumstances</p>\",\"needs_cl\":false,\"locator_note\":\"pin-op1; disclosed text paragraphs b360-7 and b360-16 contain the actual opening holding passage, while the lake pinpoint begins with page markup.\"},\"reasons\":[\"The lake pin-op1 quote begins with '--- # J.D.B. v. North Carolina' and includes content-page sections, not Supreme Court opinion text.\",\"Lake marks pin-op1 quote_fidelity as mismatch.\",\"The cached opinion text contains the real quoted holding, but not the asserted harvested page/header block.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The visible content-page Rule quote appears supportable in substance, but the inventory/lake quote under this assertion is defective.\"],\"suggested_tightening\":\"Fix quote extraction so a footnote/pin marker captures the nearest quoted passage, not all preceding markdown content.\"},{\"assertion_id\":\"ceecb06b253cc050\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside Lens A; no support or quote-fidelity defect is raised.\",\"The treatment payload matches the disclosed lake treatment fields: field_i_validity good_law, as_of_content 2011-06-16, as_of_treatment 2026-06-30, and varies_by_point false.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"No Lens A review of currency or subsequent-history correctness was performed.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed all 4 group_inventory rows exactly once under Lens A.\"}",
   "summary": {
-    "at": "2026-07-10T18:28:09-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T01:55:54-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-51ed98a59e",
+      "F-S9-PR-bca147182e"
+    ],
     "group_id": "_overhaul2/lake/cases/J.D.B. v. North Carolina.json",
     "group_total_assertions": 4,
     "lake_only_cases": [],
@@ -16,21 +102,59 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-e60badc3.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 4,
     "run": "prod",
     "text_disclosed_cases": [
       "J.D.B. v. North Carolina"
     ],
     "tokens": {
-      "input": 827,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 827
+      "input": 234428,
+      "output": 8634,
+      "source": "codex-events",
+      "total": 243062
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 3.0
+    "verdict_map": {
+      "26a674d14ed20c0a": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "86444b8eb6b122f2": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "a22ce7cb6f053746": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "ceecb06b253cc050": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-51ed98a59e",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-bca147182e",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 165.9
   }
 }

@@ -1,22 +1,159 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Howes v. Fields.json",
+    "lens": "B",
+    "notes": "Lens B only; quote-fidelity/support assertions were recorded but not substantively reviewed.",
+    "reviewed": [
+      {
+        "assertion_id": "a1f335c89ee7ff37",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record is non-stub and verified for Howes v. Fields, with identity fields listing the U.S. Supreme Court, decision date 2012-02-21, docket 10-680, and cluster_id 623144.",
+          "The lake citations select 565 U.S. 499 as the official citation and list the same parallel and vendor citations.",
+          "For the currency angle, lake treatment.field_i_validity is good_law as of 2026-06-30, and no confirmed edge in the disclosed record has field_iii other than mentioned."
+        ],
+        "residual_risks": [
+          "Treatment derivation has audit_needed/cap_hit flags, so currency confidence is only as strong as the disclosed lake judgment fields."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "4be947150f1df0b6",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Lens B found no independent currency or treatment defect tied to pin-op9; the pin cites the same verified SCOTUS authority with field_i_validity good_law.",
+          "Quote fidelity and support are outside Lens B and are not adjudicated here."
+        ],
+        "residual_risks": [
+          "Quote fidelity/support not reviewed under Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "7651d1a14fe69181",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Lens B found no independent currency or treatment defect tied to pin-op10; the pin cites the same verified SCOTUS authority with field_i_validity good_law.",
+          "Quote fidelity and support are outside Lens B and are not adjudicated here."
+        ],
+        "residual_risks": [
+          "Quote fidelity/support not reviewed under Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "3ac6d5f77d68d136",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "R15 treatment audit required",
+          "locator_note": "content_page.md Treatment & subsequent history; lake.treatment.derivation.lane1_negative and lane2_top_cited",
+          "needs_cl": true,
+          "problem": "The good-law call itself is supported by lake.treatment.field_i_validity, but the page's categorical no-negative-treatment wording is too strong because the disclosed treatment derivation still flags audit-required candidate lanes with caps hit.",
+          "proposed_fix": "Retain good_law as the disclosed lake validity field, but change the subsequent-history wording to 'No confirmed negative treatment in the disclosed lake record; R15 audit candidates remain unresolved' unless the audit is completed.",
+          "severity": "medium"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "Lake treatment.field_i_validity is good_law as of 2026-06-30, point_overrides is empty, and all disclosed treatment edges have field_iii=mentioned rather than a confirmed adverse treatment of Howes.",
+          "But lane1_negative and lane2_top_cited both show audit_needed=true and cap_hit=true, while provenance says treatment.field_i_validity came from migration/page frontmatter; that supports only a qualified no-confirmed-negative-treatment statement."
+        ],
+        "residual_risks": [
+          "After the R15/CL audit, candidate edges could remain harmless mentions or produce a downgrade/point override."
+        ],
+        "suggested_tightening": "Qualify no-negative-treatment language until audit flags are resolved.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/Howes v. Fields.json\",\"reviewed\":[{\"assertion_id\":\"a1f335c89ee7ff37\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record is non-stub and verified for Howes v. Fields, with identity fields listing the U.S. Supreme Court, decision date 2012-02-21, docket 10-680, and cluster_id 623144.\",\"The lake citations select 565 U.S. 499 as the official citation and list the same parallel and vendor citations.\",\"For the currency angle, lake treatment.field_i_validity is good_law as of 2026-06-30, and no confirmed edge in the disclosed record has field_iii other than mentioned.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment derivation has audit_needed/cap_hit flags, so currency confidence is only as strong as the disclosed lake judgment fields.\"],\"suggested_tightening\":null},{\"assertion_id\":\"4be947150f1df0b6\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lens B found no independent currency or treatment defect tied to pin-op9; the pin cites the same verified SCOTUS authority with field_i_validity good_law.\",\"Quote fidelity and support are outside Lens B and are not adjudicated here.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Quote fidelity/support not reviewed under Lens B.\"],\"suggested_tightening\":null},{\"assertion_id\":\"7651d1a14fe69181\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lens B found no independent currency or treatment defect tied to pin-op10; the pin cites the same verified SCOTUS authority with field_i_validity good_law.\",\"Quote fidelity and support are outside Lens B and are not adjudicated here.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Quote fidelity/support not reviewed under Lens B.\"],\"suggested_tightening\":null},{\"assertion_id\":\"3ac6d5f77d68d136\",\"dimension\":\"treatment\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The good-law call itself is supported by lake.treatment.field_i_validity, but the page's categorical no-negative-treatment wording is too strong because the disclosed treatment derivation still flags audit-required candidate lanes with caps hit.\",\"severity\":\"medium\",\"proposed_fix\":\"Retain good_law as the disclosed lake validity field, but change the subsequent-history wording to 'No confirmed negative treatment in the disclosed lake record; R15 audit candidates remain unresolved' unless the audit is completed.\",\"evidence_quote\":\"R15 treatment audit required\",\"needs_cl\":true,\"locator_note\":\"content_page.md Treatment & subsequent history; lake.treatment.derivation.lane1_negative and lane2_top_cited\"},\"reasons\":[\"Lake treatment.field_i_validity is good_law as of 2026-06-30, point_overrides is empty, and all disclosed treatment edges have field_iii=mentioned rather than a confirmed adverse treatment of Howes.\",\"But lane1_negative and lane2_top_cited both show audit_needed=true and cap_hit=true, while provenance says treatment.field_i_validity came from migration/page frontmatter; that supports only a qualified no-confirmed-negative-treatment statement.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"After the R15/CL audit, candidate edges could remain harmless mentions or produce a downgrade/point override.\"],\"suggested_tightening\":\"Qualify no-negative-treatment language until audit flags are resolved.\"}],\"notes\":\"Lens B only; quote-fidelity/support assertions were recorded but not substantively reviewed.\"}",
   "summary": {
-    "at": "2026-07-10T18:27:35-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T01:51:54-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-f88b011fe9",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-6eb105e4d9"
+    ],
     "group_id": "_overhaul2/lake/cases/Howes v. Fields.json",
     "group_total_assertions": 4,
+    "lake_only_cases": [],
     "lane": "codex-B",
     "lane_id": "codex-B-panel-prod-62c3955e",
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-62c3955e.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "cket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:27:26.454732Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:27:27.180902Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:27:28.034200Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:27:29.233640Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:27:31.293532Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:27:34.957659Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Howes v. Fields"
+    ],
+    "tokens": {
+      "input": 275957,
+      "output": 9164,
+      "source": "codex-events",
+      "total": 285121
+    },
+    "verdict_map": {
+      "3ac6d5f77d68d136": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "4be947150f1df0b6": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "7651d1a14fe69181": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "a1f335c89ee7ff37": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-f88b011fe9",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-6eb105e4d9",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 182.2
   }
 }

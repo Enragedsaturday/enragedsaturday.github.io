@@ -1,13 +1,75 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Heck v. Humphrey.json",
+    "lens": "A",
+    "notes": "Reviewed every assertion_id in group_inventory.jsonl exactly once. Lens A refutation is limited to existence/support/quote-fidelity/pincite concerns; treatment was checked only for consistency with disclosed fields.",
+    "reviewed": [
+      {
+        "assertion_id": "0a1ae49783eae7f5",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record identifies the case as Heck v. Humphrey, decided by the U.S. Supreme Court on 1994-06-24.",
+          "The disclosed lake citations include official citation 512 U.S. 477 and parallel citations 114 S. Ct. 2364, 129 L. Ed. 2d 383, and 1994 U.S. LEXIS 4824, matching the content page."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "bbe17a37cb22d29d",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "called into question by a federal court's issuance of a writ of habeas corpus, <span class=\"citation no-link\">28 U. S. C. § 2254</span>.",
+          "locator_note": "pin-486; content_page.md Rule section; text/Heck v. Humphrey__adf265.txt line containing the 512 U.S. 486-487 holding",
+          "needs_cl": false,
+          "problem": "The pin-486 quote record is not character-faithful to the opinion and appears to contain harvested content-page text rather than the cited opinion passage. The content-page quotation also truncates the actual quoted sentence by replacing the statutory citation after 'habeas corpus' with a period.",
+          "proposed_fix": "Replace pin-486 with the actual opinion passage at 512 U.S. 486-487, or revise the page quote to use ellipses/brackets showing omitted material; regenerate the pinpoint quote from text/Heck v. Humphrey__adf265.txt rather than the built page.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Lake pinpoints[].quote for pin-486 begins with the built-page header and background text, not the Supreme Court opinion passage.",
+          "The lake record itself marks pin-486 quote_fidelity as 'mismatch' and pinpoint_status as 'slip-only' with page null.",
+          "The actual opinion text includes a statutory citation after 'habeas corpus'; the content-page quotation closes the quote with a period before that omitted material."
+        ],
+        "residual_risks": [
+          "The pin does land near the right reporter pages, but the stored quote and displayed quotation are not reliable verbatim evidence as framed."
+        ],
+        "suggested_tightening": "Use the exact paragraph beginning 'We hold that...' and include or explicitly omit with ellipsis the embedded footnote marker and 28 U.S.C. § 2254 citation.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "0052c75cc3bccb81",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A, so no treatment attack is raised.",
+          "For disclosed-field consistency only, the content page and lake record both state field_i_validity good_law, as_of_content 1994-06-24, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note."
+        ],
+        "residual_risks": [
+          "No independent treatment audit performed under Lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"A\",\n  \"group_id\": \"_overhaul2/lake/cases/Heck v. Humphrey.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"0a1ae49783eae7f5\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake record identifies the case as Heck v. Humphrey, decided by the U.S. Supreme Court on 1994-06-24.\",\n        \"The disclosed lake citations include official citation 512 U.S. 477 and parallel citations 114 S. Ct. 2364, 129 L. Ed. 2d 383, and 1994 U.S. LEXIS 4824, matching the content page.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"bbe17a37cb22d29d\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The pin-486 quote record is not character-faithful to the opinion and appears to contain harvested content-page text rather than the cited opinion passage. The content-page quotation also truncates the actual quoted sentence by replacing the statutory citation after 'habeas corpus' with a period.\",\n        \"severity\": \"high\",\n        \"proposed_fix\": \"Replace pin-486 with the actual opinion passage at 512 U.S. 486-487, or revise the page quote to use ellipses/brackets showing omitted material; regenerate the pinpoint quote from text/Heck v. Humphrey__adf265.txt rather than the built page.\",\n        \"evidence_quote\": \"called into question by a federal court's issuance of a writ of habeas corpus, <span class=\\\"citation no-link\\\">28 U. S. C. § 2254</span>.\",\n        \"needs_cl\": false,\n        \"locator_note\": \"pin-486; content_page.md Rule section; text/Heck v. Humphrey__adf265.txt line containing the 512 U.S. 486-487 holding\"\n      },\n      \"reasons\": [\n        \"Lake pinpoints[].quote for pin-486 begins with the built-page header and background text, not the Supreme Court opinion passage.\",\n        \"The lake record itself marks pin-486 quote_fidelity as 'mismatch' and pinpoint_status as 'slip-only' with page null.\",\n        \"The actual opinion text includes a statutory citation after 'habeas corpus'; the content-page quotation closes the quote with a period before that omitted material.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The pin does land near the right reporter pages, but the stored quote and displayed quotation are not reliable verbatim evidence as framed.\"\n      ],\n      \"suggested_tightening\": \"Use the exact paragraph beginning 'We hold that...' and include or explicitly omit with ellipsis the embedded footnote marker and 28 U.S.C. § 2254 citation.\"\n    },\n    {\n      \"assertion_id\": \"0052c75cc3bccb81\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Treatment/currency is outside Lens A, so no treatment attack is raised.\",\n        \"For disclosed-field consistency only, the content page and lake record both state field_i_validity good_law, as_of_content 1994-06-24, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"No independent treatment audit performed under Lens A.\"\n      ],\n      \"suggested_tightening\": null\n    }\n  ],\n  \"notes\": \"Reviewed every assertion_id in group_inventory.jsonl exactly once. Lens A refutation is limited to existence/support/quote-fidelity/pincite concerns; treatment was checked only for consistency with disclosed fields.\"\n}",
   "summary": {
-    "at": "2026-07-10T18:27:09-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T01:48:05-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-b19018a3a0"
+    ],
     "group_id": "_overhaul2/lake/cases/Heck v. Humphrey.json",
     "group_total_assertions": 3,
     "lake_only_cases": [],
@@ -16,21 +78,48 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-2465fc9d.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 3,
     "run": "prod",
     "text_disclosed_cases": [
       "Heck v. Humphrey"
     ],
     "tokens": {
-      "input": 825,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 825
+      "input": 167042,
+      "output": 4928,
+      "source": "codex-events",
+      "total": 171970
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 2.7
+    "verdict_map": {
+      "0052c75cc3bccb81": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "0a1ae49783eae7f5": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "bbe17a37cb22d29d": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-b19018a3a0",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 98.4
   }
 }

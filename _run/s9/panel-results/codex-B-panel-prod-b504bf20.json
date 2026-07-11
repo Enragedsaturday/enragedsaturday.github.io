@@ -1,13 +1,94 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Jacobson v. United States.json",
+    "lens": "B",
+    "notes": "Lens B only; no support or quote-fidelity findings were made.",
+    "reviewed": [
+      {
+        "assertion_id": "8cccdaf9b84351ff",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record is not a stub and has status verified for Jacobson v. United States.",
+          "The official citation is disclosed as 503 U.S. 540, with parallel citations matching the inventory.",
+          "The lake treatment field currently marks the authority good_law as of 2026-06-30; no final point override is disclosed."
+        ],
+        "residual_risks": [
+          "Treatment derivation contains proposed negative edges and audit-needed markers; that currency risk is addressed under the treatment assertion."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "00b7c34b3f358b75",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote fidelity is outside Lens B's charter.",
+          "No independent currency or treatment defect is raised for this quote-fidelity row."
+        ],
+        "residual_risks": [
+          "This is not a Lens A quote-fidelity review."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "8aab813053ba6274",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote fidelity is outside Lens B's charter.",
+          "The embedded SCOTUS weight label is consistent with the disclosed court_level scotus record."
+        ],
+        "residual_risks": [
+          "The embedded treatment label has the same audit-pending risk addressed under the treatment assertion."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "451ab310ab8d8656",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade.",
+          "locator_note": "lake/Jacobson v. United States__3dde82.json treatment.derivation lane1_negative and lane2_top_cited; content_page.md Treatment & subsequent history",
+          "needs_cl": true,
+          "problem": "The page's unqualified good/no-negative-treatment presentation is not verifiable from the disclosed treatment record. The lake field says good_law, but its provenance is migration-seeded and the same record contains 37 proposed negative edges plus audit-needed markers, including overruled, questioned, criticized, and superseded_by_statute signals. Under the default-to-refuted rule, this treatment call cannot stand as framed without the R15 audit or the underlying citing-opinion review.",
+          "proposed_fix": "Replace the unqualified treatment statement with a qualified status such as 'good_law in current seed record; negative-treatment audit pending' and remove 'No negative treatment' unless the proposed negative edges are audited and cleared.",
+          "severity": "high"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "The disclosed treatment provenance states treatment.field_i_validity comes from _treatment-migration.json plus page frontmatter, not a completed treatment audit.",
+          "The treatment derivation has audit_needed true for lane1_negative and lane2_top_cited and audit_marker R15 treatment audit required.",
+          "The treatment edges include proposed negative classifications: overruled, questioned, criticized, and superseded_by_statute. Those do not prove Jacobson is bad law, but they defeat the unqualified 'No negative treatment' claim on this record."
+        ],
+        "residual_risks": [
+          "The proposed negative edges may be false positives because each is marked proposed and many are only field_iii mentioned; resolving that requires the missing audit/citing-opinion evidence."
+        ],
+        "suggested_tightening": "State the treatment as migration-seeded good_law with proposed negative-treatment audit pending, or complete and disclose the audit before saying no negative treatment.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": false
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/Jacobson v. United States.json\",\"reviewed\":[{\"assertion_id\":\"8cccdaf9b84351ff\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record is not a stub and has status verified for Jacobson v. United States.\",\"The official citation is disclosed as 503 U.S. 540, with parallel citations matching the inventory.\",\"The lake treatment field currently marks the authority good_law as of 2026-06-30; no final point override is disclosed.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment derivation contains proposed negative edges and audit-needed markers; that currency risk is addressed under the treatment assertion.\"],\"suggested_tightening\":null},{\"assertion_id\":\"00b7c34b3f358b75\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Quote fidelity is outside Lens B's charter.\",\"No independent currency or treatment defect is raised for this quote-fidelity row.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"This is not a Lens A quote-fidelity review.\"],\"suggested_tightening\":null},{\"assertion_id\":\"8aab813053ba6274\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Quote fidelity is outside Lens B's charter.\",\"The embedded SCOTUS weight label is consistent with the disclosed court_level scotus record.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The embedded treatment label has the same audit-pending risk addressed under the treatment assertion.\"],\"suggested_tightening\":null},{\"assertion_id\":\"451ab310ab8d8656\",\"dimension\":\"treatment\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":false,\"defect\":{\"problem\":\"The page's unqualified good/no-negative-treatment presentation is not verifiable from the disclosed treatment record. The lake field says good_law, but its provenance is migration-seeded and the same record contains 37 proposed negative edges plus audit-needed markers, including overruled, questioned, criticized, and superseded_by_statute signals. Under the default-to-refuted rule, this treatment call cannot stand as framed without the R15 audit or the underlying citing-opinion review.\",\"severity\":\"high\",\"proposed_fix\":\"Replace the unqualified treatment statement with a qualified status such as 'good_law in current seed record; negative-treatment audit pending' and remove 'No negative treatment' unless the proposed negative edges are audited and cleared.\",\"evidence_quote\":\"Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade.\",\"needs_cl\":true,\"locator_note\":\"lake/Jacobson v. United States__3dde82.json treatment.derivation lane1_negative and lane2_top_cited; content_page.md Treatment & subsequent history\"},\"reasons\":[\"The disclosed treatment provenance states treatment.field_i_validity comes from _treatment-migration.json plus page frontmatter, not a completed treatment audit.\",\"The treatment derivation has audit_needed true for lane1_negative and lane2_top_cited and audit_marker R15 treatment audit required.\",\"The treatment edges include proposed negative classifications: overruled, questioned, criticized, and superseded_by_statute. Those do not prove Jacobson is bad law, but they defeat the unqualified 'No negative treatment' claim on this record.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The proposed negative edges may be false positives because each is marked proposed and many are only field_iii mentioned; resolving that requires the missing audit/citing-opinion evidence.\"],\"suggested_tightening\":\"State the treatment as migration-seeded good_law with proposed negative-treatment audit pending, or complete and disclose the audit before saying no negative treatment.\"}],\"notes\":\"Lens B only; no support or quote-fidelity findings were made.\"}",
   "summary": {
-    "at": "2026-07-10T18:28:10-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T01:55:44-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-1c2fc2e007"
+    ],
     "group_id": "_overhaul2/lake/cases/Jacobson v. United States.json",
     "group_total_assertions": 4,
     "lake_only_cases": [],
@@ -16,21 +97,55 @@
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-b504bf20.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 4,
     "run": "prod",
     "text_disclosed_cases": [
       "Jacobson v. United States"
     ],
     "tokens": {
-      "input": 756,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 756
+      "input": 251639,
+      "output": 6044,
+      "source": "codex-events",
+      "total": 257683
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 3.2
+    "verdict_map": {
+      "00b7c34b3f358b75": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "451ab310ab8d8656": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": false
+      },
+      "8aab813053ba6274": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "8cccdaf9b84351ff": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-1c2fc2e007",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 122.2
   }
 }

@@ -1,13 +1,94 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Heien v. North Carolina.json",
+    "lens": "B",
+    "notes": "Lens B only; support, quote fidelity, and pincite merits were not reviewed.",
+    "reviewed": [
+      {
+        "assertion_id": "36bd2eb442305f22",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The disclosed lake record identifies Heien v. North Carolina as a U.S. Supreme Court case decided 2014-12-15 with cluster_id 2760668 and lead_opinion_id 9805193.",
+          "The cited parallel and vendor-neutral citations in the payload are present in lake.citations.all.",
+          "The lake treatment field classifies the authority as good_law as of 2026-06-30, so Lens B finds no disclosed currency defect for existence."
+        ],
+        "residual_risks": [
+          "Lake identity is marked pending and warns that the two-key identity check did not fully satisfy citation plus party text, but the disclosed record still supports live-law existence for this case."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "aa39ab580cedbb23",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote fidelity is outside Lens B; no support or quote-fidelity finding is made.",
+          "The quote is attached to the same Heien record whose lake treatment is good_law as of 2026-06-30."
+        ],
+        "residual_risks": [
+          "Payload itself flags quote_fidelity as mismatch, but that is reserved for Lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "e968f5335c48fd6c",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote fidelity is outside Lens B; no support or quote-fidelity finding is made.",
+          "The quote is attached to the same Heien record whose lake treatment is good_law as of 2026-06-30."
+        ],
+        "residual_risks": [
+          "Payload itself flags quote_fidelity as mismatch, but that is reserved for Lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "18f5cffe30b2c86a",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade.",
+          "locator_note": "content_page.md Treatment & subsequent history; lake treatment.scope_note; lake treatment.derivation lane1_negative and lane2_top_cited",
+          "needs_cl": true,
+          "problem": "The good_law status matches the lake treatment field, but the page's categorical 'No negative treatment' is stronger than the disclosed treatment record permits because the treatment is migration-seeded and the derivation flags audit-needed proposed negative-event edges.",
+          "proposed_fix": "Keep the good_law label as of 2026-06-30, but qualify the body text to say there is no audited negative treatment in this record and that proposed progeny edges require treatment audit.",
+          "severity": "medium"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "lake.treatment.field_i_validity is good_law, as_of_treatment is 2026-06-30, varies_by_point is false, and point_overrides is empty.",
+          "The disclosed treatment derivation also marks lane1_negative and lane2_top_cited as audit_needed with proposed_negative_events, so the absolute 'No negative treatment' sentence should be narrowed.",
+          "The treatment edges shown are proposed and marked field_iii mentioned, so they do not themselves prove Heien has been overruled or abrogated."
+        ],
+        "residual_risks": [
+          "A treatment audit outside the disclosed record could confirm the proposed edges as false positives or require downgrading the treatment label."
+        ],
+        "suggested_tightening": "Replace 'No negative treatment' with 'No audited negative treatment in this record; lake treatment remains good_law as of 2026-06-30, with proposed treatment edges flagged for audit.'",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/Heien v. North Carolina.json\",\"reviewed\":[{\"assertion_id\":\"36bd2eb442305f22\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The disclosed lake record identifies Heien v. North Carolina as a U.S. Supreme Court case decided 2014-12-15 with cluster_id 2760668 and lead_opinion_id 9805193.\",\"The cited parallel and vendor-neutral citations in the payload are present in lake.citations.all.\",\"The lake treatment field classifies the authority as good_law as of 2026-06-30, so Lens B finds no disclosed currency defect for existence.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Lake identity is marked pending and warns that the two-key identity check did not fully satisfy citation plus party text, but the disclosed record still supports live-law existence for this case.\"],\"suggested_tightening\":null},{\"assertion_id\":\"aa39ab580cedbb23\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Quote fidelity is outside Lens B; no support or quote-fidelity finding is made.\",\"The quote is attached to the same Heien record whose lake treatment is good_law as of 2026-06-30.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Payload itself flags quote_fidelity as mismatch, but that is reserved for Lens A.\"],\"suggested_tightening\":null},{\"assertion_id\":\"e968f5335c48fd6c\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Quote fidelity is outside Lens B; no support or quote-fidelity finding is made.\",\"The quote is attached to the same Heien record whose lake treatment is good_law as of 2026-06-30.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Payload itself flags quote_fidelity as mismatch, but that is reserved for Lens A.\"],\"suggested_tightening\":null},{\"assertion_id\":\"18f5cffe30b2c86a\",\"dimension\":\"treatment\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The good_law status matches the lake treatment field, but the page's categorical 'No negative treatment' is stronger than the disclosed treatment record permits because the treatment is migration-seeded and the derivation flags audit-needed proposed negative-event edges.\",\"severity\":\"medium\",\"proposed_fix\":\"Keep the good_law label as of 2026-06-30, but qualify the body text to say there is no audited negative treatment in this record and that proposed progeny edges require treatment audit.\",\"evidence_quote\":\"Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade.\",\"needs_cl\":true,\"locator_note\":\"content_page.md Treatment & subsequent history; lake treatment.scope_note; lake treatment.derivation lane1_negative and lane2_top_cited\"},\"reasons\":[\"lake.treatment.field_i_validity is good_law, as_of_treatment is 2026-06-30, varies_by_point is false, and point_overrides is empty.\",\"The disclosed treatment derivation also marks lane1_negative and lane2_top_cited as audit_needed with proposed_negative_events, so the absolute 'No negative treatment' sentence should be narrowed.\",\"The treatment edges shown are proposed and marked field_iii mentioned, so they do not themselves prove Heien has been overruled or abrogated.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"A treatment audit outside the disclosed record could confirm the proposed edges as false positives or require downgrading the treatment label.\"],\"suggested_tightening\":\"Replace 'No negative treatment' with 'No audited negative treatment in this record; lake treatment remains good_law as of 2026-06-30, with proposed treatment edges flagged for audit.'\"}],\"notes\":\"Lens B only; support, quote fidelity, and pincite merits were not reviewed.\"}",
   "summary": {
-    "at": "2026-07-10T18:27:10-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T01:49:14-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-a283cf0489"
+    ],
     "group_id": "_overhaul2/lake/cases/Heien v. North Carolina.json",
     "group_total_assertions": 4,
     "lake_only_cases": [],
@@ -16,21 +97,55 @@
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-cb42c189.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 4,
     "run": "prod",
     "text_disclosed_cases": [
       "Heien v. North Carolina"
     ],
     "tokens": {
-      "input": 755,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 755
+      "input": 167307,
+      "output": 6594,
+      "source": "codex-events",
+      "total": 173901
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 3.3
+    "verdict_map": {
+      "18f5cffe30b2c86a": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "36bd2eb442305f22": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "aa39ab580cedbb23": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "e968f5335c48fd6c": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-a283cf0489",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 130.2
   }
 }

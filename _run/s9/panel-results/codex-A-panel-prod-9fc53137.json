@@ -1,22 +1,158 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Kalkines v. United States.json",
+    "lens": "A",
+    "notes": "Reviewed all four group_inventory.jsonl rows. Lens A refutes the two quote-fidelity rows; existence stands. Treatment is recorded only against disclosed lake judgment fields, without Lens A treatment analysis.",
+    "reviewed": [
+      {
+        "assertion_id": "dd17f13bc906aac4",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record verifies case_name \"Kalkines v. United States,\" court \"U.S. Court of Claims,\" date_decided \"1973-02-16,\" and year 1973.",
+          "The asserted citations exactly match lake.citations.all: 200 Ct. Cl. 570; 473 F.2d 1391; 1973 U.S. Ct. Cl. LEXIS 11."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Consider populating a display citation if the renderer expects one; the disclosed citation set itself is accurate.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "478cd6921306a489",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "But a governmental employer is not wholly barred from insisting that relevant information be given it; the public servant can be removed for not replying if he is adequately informed both that he is subject to discharge for not answering and that his replies (and their fruits) cannot be employed against him in a criminal case.",
+          "locator_note": "text/Kalkines v. United States__cf8ec3.txt at the *574 passage",
+          "needs_cl": false,
+          "problem": "The quoted sentence is substantively the right passage, but it is not character-faithful to the opinion text: the source says \"But a governmental employer...\" while the asserted quote drops \"But \" and changes the initial lower-case \"a\" to \"[A]\". The lake pinpoint also flags quote_fidelity as \"mismatch.\"",
+          "proposed_fix": "Quote the sentence exactly as it appears in text, beginning \"But a governmental employer...\", or recast it as paraphrase rather than a character-faithful quotation.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The asserted quote does not exactly match the disclosed opinion text.",
+          "The lake record's own pinpoint metadata marks this quote_fidelity as \"mismatch.\""
+        ],
+        "residual_risks": [
+          "If the corpus permits bracketed capitalization as quote-faithful legal style, this could be downgraded to a style normalization issue; under the stated character-fidelity rule it fails."
+        ],
+        "suggested_tightening": "Use the exact source sentence or explicitly allow bracketed capitalization in the quote-fidelity rule.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "4fa6f06e50394bd7",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "It is now settled that the individual cannot be discharged simply because he invokes his Fifth Amendment privilege against self-incrimination in refusing to respond.",
+          "locator_note": "text/Kalkines v. United States__cf8ec3.txt at the *574 passage; lake pin-1393a currently contains page/frontmatter text instead",
+          "needs_cl": false,
+          "problem": "The lake pinpoint quote is a corrupted harvest of the content page header/background/rule lead-in, not the quoted authority passage. It does not match the opinion text for the cited rule sentence.",
+          "proposed_fix": "Replace pin-1393a's quote with the actual opinion sentence: \"It is now settled that the individual cannot be discharged simply because he invokes his Fifth Amendment privilege against self-incrimination in refusing to respond.\"",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The disclosed opinion text contains the intended sentence at *574.",
+          "The asserted pinpoint quote begins with content-page front matter and narrative material, so it is not a character-faithful quote from the authority.",
+          "The lake record's own pinpoint metadata marks this quote_fidelity as \"mismatch.\""
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "Re-harvest pin-1393a from the opinion text, not from rendered page prose.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "5326af6f217a7926",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A's charter; no treatment finding is raised.",
+          "The treatment payload matches the disclosed lake.treatment judgment fields: field_i_validity good_law, as_of_content 1973-02-16, as_of_treatment 2026-06-30, and varies_by_point false."
+        ],
+        "residual_risks": [
+          "Substantive treatment and currency review remains for Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Kalkines v. United States.json\",\"reviewed\":[{\"assertion_id\":\"dd17f13bc906aac4\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake identity record verifies case_name \\\"Kalkines v. United States,\\\" court \\\"U.S. Court of Claims,\\\" date_decided \\\"1973-02-16,\\\" and year 1973.\",\"The asserted citations exactly match lake.citations.all: 200 Ct. Cl. 570; 473 F.2d 1391; 1973 U.S. Ct. Cl. LEXIS 11.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":\"Consider populating a display citation if the renderer expects one; the disclosed citation set itself is accurate.\"},{\"assertion_id\":\"478cd6921306a489\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The quoted sentence is substantively the right passage, but it is not character-faithful to the opinion text: the source says \\\"But a governmental employer...\\\" while the asserted quote drops \\\"But \\\" and changes the initial lower-case \\\"a\\\" to \\\"[A]\\\". The lake pinpoint also flags quote_fidelity as \\\"mismatch.\\\"\",\"severity\":\"low\",\"proposed_fix\":\"Quote the sentence exactly as it appears in text, beginning \\\"But a governmental employer...\\\", or recast it as paraphrase rather than a character-faithful quotation.\",\"evidence_quote\":\"But a governmental employer is not wholly barred from insisting that relevant information be given it; the public servant can be removed for not replying if he is adequately informed both that he is subject to discharge for not answering and that his replies (and their fruits) cannot be employed against him in a criminal case.\",\"needs_cl\":false,\"locator_note\":\"text/Kalkines v. United States__cf8ec3.txt at the *574 passage\"},\"reasons\":[\"The asserted quote does not exactly match the disclosed opinion text.\",\"The lake record's own pinpoint metadata marks this quote_fidelity as \\\"mismatch.\\\"\"],\"breaks_true_positives\":false,\"residual_risks\":[\"If the corpus permits bracketed capitalization as quote-faithful legal style, this could be downgraded to a style normalization issue; under the stated character-fidelity rule it fails.\"],\"suggested_tightening\":\"Use the exact source sentence or explicitly allow bracketed capitalization in the quote-fidelity rule.\"},{\"assertion_id\":\"4fa6f06e50394bd7\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The lake pinpoint quote is a corrupted harvest of the content page header/background/rule lead-in, not the quoted authority passage. It does not match the opinion text for the cited rule sentence.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-1393a's quote with the actual opinion sentence: \\\"It is now settled that the individual cannot be discharged simply because he invokes his Fifth Amendment privilege against self-incrimination in refusing to respond.\\\"\",\"evidence_quote\":\"It is now settled that the individual cannot be discharged simply because he invokes his Fifth Amendment privilege against self-incrimination in refusing to respond.\",\"needs_cl\":false,\"locator_note\":\"text/Kalkines v. United States__cf8ec3.txt at the *574 passage; lake pin-1393a currently contains page/frontmatter text instead\"},\"reasons\":[\"The disclosed opinion text contains the intended sentence at *574.\",\"The asserted pinpoint quote begins with content-page front matter and narrative material, so it is not a character-faithful quote from the authority.\",\"The lake record's own pinpoint metadata marks this quote_fidelity as \\\"mismatch.\\\"\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":\"Re-harvest pin-1393a from the opinion text, not from rendered page prose.\"},{\"assertion_id\":\"5326af6f217a7926\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside Lens A's charter; no treatment finding is raised.\",\"The treatment payload matches the disclosed lake.treatment judgment fields: field_i_validity good_law, as_of_content 1973-02-16, as_of_treatment 2026-06-30, and varies_by_point false.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Substantive treatment and currency review remains for Lens B.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed all four group_inventory.jsonl rows. Lens A refutes the two quote-fidelity rows; existence stands. Treatment is recorded only against disclosed lake judgment fields, without Lens A treatment analysis.\"}",
   "summary": {
-    "at": "2026-07-10T18:28:38-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T01:56:56-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-68df245683",
+      "F-S9-PR-eb077bcade"
+    ],
     "group_id": "_overhaul2/lake/cases/Kalkines v. United States.json",
     "group_total_assertions": 4,
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-9fc53137",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-9fc53137.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "cket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:28:28.401395Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:28:29.401451Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:28:30.276851Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:28:31.845615Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:28:33.932844Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:28:37.892603Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Kalkines v. United States"
+    ],
+    "tokens": {
+      "input": 139667,
+      "output": 6014,
+      "source": "codex-events",
+      "total": 145681
+    },
+    "verdict_map": {
+      "478cd6921306a489": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "4fa6f06e50394bd7": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "5326af6f217a7926": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "dd17f13bc906aac4": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-68df245683",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-eb077bcade",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 116.1
   }
 }

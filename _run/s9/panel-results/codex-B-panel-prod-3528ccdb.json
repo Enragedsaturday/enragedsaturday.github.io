@@ -1,13 +1,94 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Illinois v. Rodriguez.json",
+    "lens": "B",
+    "notes": "Lens B only; quote-fidelity rows were recorded without support or quote review.",
+    "reviewed": [
+      {
+        "assertion_id": "240f75f4a62bfe89",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity is verified for Illinois v. Rodriguez and identifies the case as U.S. Supreme Court, decided 1990-06-21.",
+          "Lake citations list 497 U.S. 177 as the official citation and treatment.field_i_validity is good_law as of 2026-06-30.",
+          "The disclosed treatment edges are proposed and marked field_iii=mentioned; no disclosed final edge overrules, abrogates, or supersedes Rodriguez itself."
+        ],
+        "residual_risks": [
+          "Treatment derivation contains audit-needed proposed negative events, so a completed treatment audit could alter the live-law presentation."
+        ],
+        "suggested_tightening": "For live-law display, tie the existence/currency claim expressly to the lake good_law field as of 2026-06-30.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "724cc0119ca8bd1b",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Lens B does not review quote fidelity or support.",
+          "The lake pin record for pin-188a carries quote_fidelity=mismatch, matching the inventory payload; no currency or treatment defect is attached to this pin row."
+        ],
+        "residual_risks": [
+          "Quote/support issues remain for Lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "c10810dcf5e25480",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Lens B does not review quote fidelity or support.",
+          "The lake pin record for pin-188 carries quote_fidelity=mismatch, matching the inventory payload; no currency or treatment defect is attached to this pin row."
+        ],
+        "residual_risks": [
+          "Quote/support issues remain for Lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "5c8ce41b80f59b8a",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade.",
+          "locator_note": "content_page.md Treatment & subsequent history; lake treatment.derivation lane1_negative and lane2_top_cited",
+          "needs_cl": true,
+          "problem": "The good_law treatment call matches the lake judgment field, but the page's unqualified 'No negative treatment' statement overclaims the disclosed record because the lake derivation contains proposed negative-treatment events and audit-needed markers.",
+          "proposed_fix": "Keep the good_law status, but change the prose to 'No confirmed negative treatment in the lake judgment fields; S2 derivation flags proposed negative events requiring audit' or remove the unqualified 'No negative treatment' sentence.",
+          "severity": "medium"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "content_page and lake agree on field_i_validity=good_law, as_of_treatment=2026-06-30, and varies_by_point=false.",
+          "Lake provenance says treatment.field_i_validity came from '_treatment-migration.json + page frontmatter' and includes the warning 'legacy treatment migrated: good -> good_law'.",
+          "Lake derivation records audit_needed=true for lane1_negative and lane2_top_cited, with proposed_negative_events present; that does not defeat good_law, but it defeats an unqualified no-negative-treatment statement."
+        ],
+        "residual_risks": [
+          "A full CourtListener treatment audit would be needed to confirm whether the proposed negative events are false positives or require a downgrade."
+        ],
+        "suggested_tightening": "Qualify the treatment section as no confirmed negative treatment rather than no negative treatment.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/Illinois v. Rodriguez.json\",\"reviewed\":[{\"assertion_id\":\"240f75f4a62bfe89\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity is verified for Illinois v. Rodriguez and identifies the case as U.S. Supreme Court, decided 1990-06-21.\",\"Lake citations list 497 U.S. 177 as the official citation and treatment.field_i_validity is good_law as of 2026-06-30.\",\"The disclosed treatment edges are proposed and marked field_iii=mentioned; no disclosed final edge overrules, abrogates, or supersedes Rodriguez itself.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment derivation contains audit-needed proposed negative events, so a completed treatment audit could alter the live-law presentation.\"],\"suggested_tightening\":\"For live-law display, tie the existence/currency claim expressly to the lake good_law field as of 2026-06-30.\"},{\"assertion_id\":\"724cc0119ca8bd1b\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lens B does not review quote fidelity or support.\",\"The lake pin record for pin-188a carries quote_fidelity=mismatch, matching the inventory payload; no currency or treatment defect is attached to this pin row.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Quote/support issues remain for Lens A.\"],\"suggested_tightening\":null},{\"assertion_id\":\"c10810dcf5e25480\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lens B does not review quote fidelity or support.\",\"The lake pin record for pin-188 carries quote_fidelity=mismatch, matching the inventory payload; no currency or treatment defect is attached to this pin row.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Quote/support issues remain for Lens A.\"],\"suggested_tightening\":null},{\"assertion_id\":\"5c8ce41b80f59b8a\",\"dimension\":\"treatment\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The good_law treatment call matches the lake judgment field, but the page's unqualified 'No negative treatment' statement overclaims the disclosed record because the lake derivation contains proposed negative-treatment events and audit-needed markers.\",\"severity\":\"medium\",\"proposed_fix\":\"Keep the good_law status, but change the prose to 'No confirmed negative treatment in the lake judgment fields; S2 derivation flags proposed negative events requiring audit' or remove the unqualified 'No negative treatment' sentence.\",\"evidence_quote\":\"Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade.\",\"needs_cl\":true,\"locator_note\":\"content_page.md Treatment & subsequent history; lake treatment.derivation lane1_negative and lane2_top_cited\"},\"reasons\":[\"content_page and lake agree on field_i_validity=good_law, as_of_treatment=2026-06-30, and varies_by_point=false.\",\"Lake provenance says treatment.field_i_validity came from '_treatment-migration.json + page frontmatter' and includes the warning 'legacy treatment migrated: good -> good_law'.\",\"Lake derivation records audit_needed=true for lane1_negative and lane2_top_cited, with proposed_negative_events present; that does not defeat good_law, but it defeats an unqualified no-negative-treatment statement.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"A full CourtListener treatment audit would be needed to confirm whether the proposed negative events are false positives or require a downgrade.\"],\"suggested_tightening\":\"Qualify the treatment section as no confirmed negative treatment rather than no negative treatment.\"}],\"notes\":\"Lens B only; quote-fidelity rows were recorded without support or quote review.\"}",
   "summary": {
-    "at": "2026-07-10T18:28:08-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T01:54:25-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-f0146d4816"
+    ],
     "group_id": "_overhaul2/lake/cases/Illinois v. Rodriguez.json",
     "group_total_assertions": 4,
     "lake_only_cases": [],
@@ -16,21 +97,55 @@
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-3528ccdb.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 4,
     "run": "prod",
     "text_disclosed_cases": [
       "Illinois v. Rodriguez"
     ],
     "tokens": {
-      "input": 755,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 755
+      "input": 235332,
+      "output": 6866,
+      "source": "codex-events",
+      "total": 242198
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 4.9
+    "verdict_map": {
+      "240f75f4a62bfe89": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "5c8ce41b80f59b8a": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "724cc0119ca8bd1b": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "c10810dcf5e25480": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-f0146d4816",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 136.6
   }
 }

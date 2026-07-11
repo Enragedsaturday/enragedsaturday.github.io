@@ -1,22 +1,156 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Herring v. United States.json",
+    "lens": "A",
+    "notes": "Reviewed all four assertion_id rows in group_inventory.jsonl under Lens A only.",
+    "reviewed": [
+      {
+        "assertion_id": "4b06bbdc88b4fdf8",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity is verified for Herring v. United States, U.S. Supreme Court, decided 2009-01-14.",
+          "Official citation 555 U.S. 135 and parallel/vendor citations match the lake citations record."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "ad986bbec0334708",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "3. To trigger the exclusionary rule, police conduct must\nbe sufficiently deliberate that exclusion can meaningfully\ndeter it, and sufficiently culpable that such deterrence is\nworth the price paid by the justice system.",
+          "locator_note": "pin-144; lake pinpoints[].quote is also flagged quote_fidelity=mismatch and page=null/slip-only.",
+          "needs_cl": false,
+          "problem": "The harvested pin-144 quote is page Markdown and narrative text, not the verbatim opinion sentence cited by the page.",
+          "proposed_fix": "Replace pin-144 with the actual opinion sentence beginning: \"To trigger the exclusionary rule, police conduct must be sufficiently deliberate...\"",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload quote starts with the built page header and background text, which is not in the opinion passage at the cited rule sentence.",
+          "The cached opinion text contains the actual sentence at the majority opinion section 3, not the harvested Markdown block."
+        ],
+        "residual_risks": [
+          "Official U.S. page 144 is not independently paginated in the disclosed slip-text cache; only the quote text is verifiable here."
+        ],
+        "suggested_tightening": "Re-harvest pin-144 from the quoted sentence only, not from the preceding page body.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "b19f9d16aa103d01",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The quoted sentence appears in the cached opinion text immediately after the pin-144 sentence.",
+          "The payload quote matches the lake pinpoints[].quote for pin-144a; the text-file mismatch appears attributable to PDF line wrapping in words like \"circumstances\"."
+        ],
+        "residual_risks": [
+          "Lake metadata still labels quote_fidelity as mismatch despite sighted verification from the disclosed text."
+        ],
+        "suggested_tightening": "Normalize PDF line breaks before quote-fidelity checks for this pin.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "9be630675e36dabd",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment is outside Lens A's charter; no support or quote-fidelity defect is raised.",
+          "The treatment payload matches the disclosed lake treatment fields: field_i_validity=good_law, as_of_content=2009-01-14, as_of_treatment=2026-06-30, varies_by_point=false."
+        ],
+        "residual_risks": [
+          "Treatment/currency should be reviewed by Lens B, not resolved here."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Herring v. United States.json\",\"reviewed\":[{\"assertion_id\":\"4b06bbdc88b4fdf8\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity is verified for Herring v. United States, U.S. Supreme Court, decided 2009-01-14.\",\"Official citation 555 U.S. 135 and parallel/vendor citations match the lake citations record.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"ad986bbec0334708\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The harvested pin-144 quote is page Markdown and narrative text, not the verbatim opinion sentence cited by the page.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-144 with the actual opinion sentence beginning: \\\"To trigger the exclusionary rule, police conduct must be sufficiently deliberate...\\\"\",\"evidence_quote\":\"3. To trigger the exclusionary rule, police conduct must\\nbe sufficiently deliberate that exclusion can meaningfully\\ndeter it, and sufficiently culpable that such deterrence is\\nworth the price paid by the justice system.\",\"needs_cl\":false,\"locator_note\":\"pin-144; lake pinpoints[].quote is also flagged quote_fidelity=mismatch and page=null/slip-only.\"},\"reasons\":[\"The payload quote starts with the built page header and background text, which is not in the opinion passage at the cited rule sentence.\",\"The cached opinion text contains the actual sentence at the majority opinion section 3, not the harvested Markdown block.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Official U.S. page 144 is not independently paginated in the disclosed slip-text cache; only the quote text is verifiable here.\"],\"suggested_tightening\":\"Re-harvest pin-144 from the quoted sentence only, not from the preceding page body.\"},{\"assertion_id\":\"b19f9d16aa103d01\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The quoted sentence appears in the cached opinion text immediately after the pin-144 sentence.\",\"The payload quote matches the lake pinpoints[].quote for pin-144a; the text-file mismatch appears attributable to PDF line wrapping in words like \\\"circumstances\\\".\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Lake metadata still labels quote_fidelity as mismatch despite sighted verification from the disclosed text.\"],\"suggested_tightening\":\"Normalize PDF line breaks before quote-fidelity checks for this pin.\"},{\"assertion_id\":\"9be630675e36dabd\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment is outside Lens A's charter; no support or quote-fidelity defect is raised.\",\"The treatment payload matches the disclosed lake treatment fields: field_i_validity=good_law, as_of_content=2009-01-14, as_of_treatment=2026-06-30, varies_by_point=false.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment/currency should be reviewed by Lens B, not resolved here.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed all four assertion_id rows in group_inventory.jsonl under Lens A only.\"}",
   "summary": {
-    "at": "2026-07-10T18:27:35-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T01:50:20-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-bd3fcf5341",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-0fe3b74880"
+    ],
     "group_id": "_overhaul2/lake/cases/Herring v. United States.json",
     "group_total_assertions": 4,
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-edc16d0e",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-edc16d0e.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "cket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:27:26.175040Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:27:26.872254Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:27:27.669302Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:27:29.107741Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:27:31.030454Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:27:34.789522Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Herring v. United States"
+    ],
+    "tokens": {
+      "input": 241160,
+      "output": 9702,
+      "source": "codex-events",
+      "total": 250862
+    },
+    "verdict_map": {
+      "4b06bbdc88b4fdf8": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "9be630675e36dabd": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "ad986bbec0334708": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "b19f9d16aa103d01": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-0fe3b74880",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-bd3fcf5341",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": 186.4
   }
 }

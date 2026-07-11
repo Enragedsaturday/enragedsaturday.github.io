@@ -1,13 +1,88 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Harris v. United States (1968).json",
+    "lens": "A",
+    "notes": "Treatment row recorded only to satisfy the inventory; Lens A review focused on existence and quote/pin support.",
+    "reviewed": [
+      {
+        "assertion_id": "ee879ac08fb4b3e3",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record exists for Harris v. United States (1968) and identifies the case as U.S. Supreme Court, decided 1968-03-05.",
+          "The official citation in the lake record is 390 U.S. 234, matching the page citation and the opinion text header."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "25146016438438de",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The quoted plain-view sentence appears verbatim in the cached opinion text.",
+          "The lake pinpoint for pin-236a is marked matched, has star_marker 236, and the quoted sentence falls on the page-236 span before the later page-237 marker."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "f9b9a9360a798112",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "--- # Harris v. United States (1968)",
+          "locator_note": "lake pinpoints[].id=pin-236; content_page.md uses ^pin-236 for the shorter quote at Rule.",
+          "needs_cl": false,
+          "problem": "The disclosed pin-236 quote is not a character-faithful opinion quote; it is a malformed capture of the content page/frontmatter and the lake record itself marks quote_fidelity as mismatch with no star marker.",
+          "proposed_fix": "Replace pin-236's stored quote with the actual page-236 opinion passage used on content_page.md, beginning with the discovery-of-the-card language, and mark it matched only after rechecking against text/Harris v. United States (1968)__39327a.txt.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The lake pinpoint for pin-236 begins with Markdown page content rather than the Supreme Court opinion text.",
+          "The cached opinion text does contain the intended page-236 passage, so the user-facing quote can be repaired from disclosed evidence, but the assertion as serialized is wrong."
+        ],
+        "residual_risks": [
+          "The displayed content_page quote appears verifiable; the defect is in the disclosed pinpoint/quote-fidelity record."
+        ],
+        "suggested_tightening": "After fixing the pin, retain the narrowing phrase that the warrant ruling applies in the Court's narrow circumstances.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "10350838b874f36c",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The treatment payload matches the lake treatment fields for field_i_validity, as_of_content, as_of_treatment, scope_note, and varies_by_point.",
+          "Treatment/currency is outside Lens A, so no independent treatment attack is raised."
+        ],
+        "residual_risks": [
+          "Treatment not substantively reviewed under Lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Harris v. United States (1968).json\",\"reviewed\":[{\"assertion_id\":\"ee879ac08fb4b3e3\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record exists for Harris v. United States (1968) and identifies the case as U.S. Supreme Court, decided 1968-03-05.\",\"The official citation in the lake record is 390 U.S. 234, matching the page citation and the opinion text header.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"25146016438438de\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The quoted plain-view sentence appears verbatim in the cached opinion text.\",\"The lake pinpoint for pin-236a is marked matched, has star_marker 236, and the quoted sentence falls on the page-236 span before the later page-237 marker.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"f9b9a9360a798112\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The disclosed pin-236 quote is not a character-faithful opinion quote; it is a malformed capture of the content page/frontmatter and the lake record itself marks quote_fidelity as mismatch with no star marker.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-236's stored quote with the actual page-236 opinion passage used on content_page.md, beginning with the discovery-of-the-card language, and mark it matched only after rechecking against text/Harris v. United States (1968)__39327a.txt.\",\"evidence_quote\":\"--- # Harris v. United States (1968)\",\"needs_cl\":false,\"locator_note\":\"lake pinpoints[].id=pin-236; content_page.md uses ^pin-236 for the shorter quote at Rule.\"},\"reasons\":[\"The lake pinpoint for pin-236 begins with Markdown page content rather than the Supreme Court opinion text.\",\"The cached opinion text does contain the intended page-236 passage, so the user-facing quote can be repaired from disclosed evidence, but the assertion as serialized is wrong.\"],\"breaks_true_positives\":true,\"residual_risks\":[\"The displayed content_page quote appears verifiable; the defect is in the disclosed pinpoint/quote-fidelity record.\"],\"suggested_tightening\":\"After fixing the pin, retain the narrowing phrase that the warrant ruling applies in the Court's narrow circumstances.\"},{\"assertion_id\":\"10350838b874f36c\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The treatment payload matches the lake treatment fields for field_i_validity, as_of_content, as_of_treatment, scope_note, and varies_by_point.\",\"Treatment/currency is outside Lens A, so no independent treatment attack is raised.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment not substantively reviewed under Lens A.\"],\"suggested_tightening\":null}],\"notes\":\"Treatment row recorded only to satisfy the inventory; Lens A review focused on existence and quote/pin support.\"}",
   "summary": {
-    "at": "2026-07-10T18:27:07-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T01:47:13-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-efd66d3847"
+    ],
     "group_id": "_overhaul2/lake/cases/Harris v. United States (1968).json",
     "group_total_assertions": 4,
     "lake_only_cases": [],
@@ -16,21 +91,55 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-f76095a3.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 4,
     "run": "prod",
     "text_disclosed_cases": [
       "Harris v. United States (1968)"
     ],
     "tokens": {
-      "input": 829,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 829
+      "input": 205012,
+      "output": 6769,
+      "source": "codex-events",
+      "total": 211781
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 3.2
+    "verdict_map": {
+      "10350838b874f36c": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "25146016438438de": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "ee879ac08fb4b3e3": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "f9b9a9360a798112": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-efd66d3847",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 137.4
   }
 }

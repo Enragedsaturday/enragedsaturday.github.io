@@ -1,22 +1,147 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Florida v. Bostick.json",
+    "lens": "A",
+    "notes": "Lens A review only; no treatment/currency finding raised.",
+    "reviewed": [
+      {
+        "assertion_id": "7a42b232f9ffb0ae",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record identifies Florida v. Bostick as a verified U.S. Supreme Court case decided 1991-06-20.",
+          "The official citation in the lake record is 501 U.S. 429, matching the content page citation 501 U.S. 429 (1991).",
+          "The listed parallel and vendor citations in the payload match the lake citation fields."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "0c52df550c80203c",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "In such a situation, the appropriate inquiry is whether a reasonable person would feel free to decline the officers' requests or otherwise terminate the encounter.",
+          "locator_note": "pin-436; lake pinpoints[0]; opinion text places the actual sentence on the 501 U.S. 436 page before the *437 marker.",
+          "needs_cl": false,
+          "problem": "The pin-436 payload quote is not character-faithful to the opinion. It splices page text from the built page, including Markdown heading text, rather than an opinion passage.",
+          "proposed_fix": "Replace the pin-436 quote with the actual opinion sentence: \"the appropriate inquiry is whether a reasonable person would feel free to decline the officers' requests or otherwise terminate the encounter.\"",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The asserted payload quote begins \"test does not fit. ## Rule\", which appears in content_page.md but not as an opinion quotation.",
+          "The opinion text supports the shorter quoted rule sentence at page 436, not the payload's composite quote."
+        ],
+        "residual_risks": [
+          "The displayed content-page quote for ^pin-436 is faithful; the defect is in the lake/inventory pinpoint quote payload."
+        ],
+        "suggested_tightening": "Store pin-436 as the actual page-436 sentence and remove generated page-heading prose from the pinpoint quote.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "d238b2bdd678a577",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The quoted text appears character-faithfully in the cached opinion text: \"in order to determine whether a particular encounter constitutes a seizure...\"",
+          "The passage appears after the *439 marker and before the *440 marker, supporting the asserted star_marker 439.",
+          "The lake record marks this pinpoint as matched and star-verified, consistent with the text file."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "45662aecb27700a6",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Lens A does not assess treatment or currency defects.",
+          "The treatment payload matches the disclosed lake fields: field_i_validity good_law, as_of_content 1991-06-20, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note."
+        ],
+        "residual_risks": [
+          "Treatment and currency are reserved for lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Florida v. Bostick.json\",\"reviewed\":[{\"assertion_id\":\"7a42b232f9ffb0ae\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record identifies Florida v. Bostick as a verified U.S. Supreme Court case decided 1991-06-20.\",\"The official citation in the lake record is 501 U.S. 429, matching the content page citation 501 U.S. 429 (1991).\",\"The listed parallel and vendor citations in the payload match the lake citation fields.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"0c52df550c80203c\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The pin-436 payload quote is not character-faithful to the opinion. It splices page text from the built page, including Markdown heading text, rather than an opinion passage.\",\"severity\":\"high\",\"proposed_fix\":\"Replace the pin-436 quote with the actual opinion sentence: \\\"the appropriate inquiry is whether a reasonable person would feel free to decline the officers' requests or otherwise terminate the encounter.\\\"\",\"evidence_quote\":\"In such a situation, the appropriate inquiry is whether a reasonable person would feel free to decline the officers' requests or otherwise terminate the encounter.\",\"needs_cl\":false,\"locator_note\":\"pin-436; lake pinpoints[0]; opinion text places the actual sentence on the 501 U.S. 436 page before the *437 marker.\"},\"reasons\":[\"The asserted payload quote begins \\\"test does not fit. ## Rule\\\", which appears in content_page.md but not as an opinion quotation.\",\"The opinion text supports the shorter quoted rule sentence at page 436, not the payload's composite quote.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The displayed content-page quote for ^pin-436 is faithful; the defect is in the lake/inventory pinpoint quote payload.\"],\"suggested_tightening\":\"Store pin-436 as the actual page-436 sentence and remove generated page-heading prose from the pinpoint quote.\"},{\"assertion_id\":\"d238b2bdd678a577\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The quoted text appears character-faithfully in the cached opinion text: \\\"in order to determine whether a particular encounter constitutes a seizure...\\\"\",\"The passage appears after the *439 marker and before the *440 marker, supporting the asserted star_marker 439.\",\"The lake record marks this pinpoint as matched and star-verified, consistent with the text file.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"45662aecb27700a6\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lens A does not assess treatment or currency defects.\",\"The treatment payload matches the disclosed lake fields: field_i_validity good_law, as_of_content 1991-06-20, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment and currency are reserved for lens B.\"],\"suggested_tightening\":null}],\"notes\":\"Lens A review only; no treatment/currency finding raised.\"}",
   "summary": {
-    "at": "2026-07-10T18:26:03-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T01:38:31-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-d99c74443d"
+    ],
     "group_id": "_overhaul2/lake/cases/Florida v. Bostick.json",
     "group_total_assertions": 4,
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-62acc117",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-62acc117.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "ast status: 429 Too Many Requests, request id: beb8147b-5b74-4913-9dab-07aa8c8d797d\n2026-07-10T22:25:54.224286Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:25:54.707357Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:25:55.341781Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:25:56.348631Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:25:57.630918Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:25:59.900697Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Florida v. Bostick"
+    ],
+    "tokens": {
+      "input": 358118,
+      "output": 5907,
+      "source": "codex-events",
+      "total": 364025
+    },
+    "verdict_map": {
+      "0c52df550c80203c": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "45662aecb27700a6": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "7a42b232f9ffb0ae": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "d238b2bdd678a577": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-d99c74443d",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 124.6
   }
 }

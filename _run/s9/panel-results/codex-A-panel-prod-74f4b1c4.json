@@ -1,13 +1,100 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Florida v. Powell.json",
+    "lens": "A",
+    "notes": "Reviewed all 4 group_inventory rows. Lens A defects are limited to quote/pinpoint harvest fidelity; no treatment/currency finding is made.",
+    "reviewed": [
+      {
+        "assertion_id": "de7cd493a431f809",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record identity is verified for Florida v. Powell, U.S. Supreme Court, decided 2010-02-23, docket 08-1175.",
+          "The official citation 559 U.S. 50 and parallel/vendor citations in the payload match the lake citations fields and the content page header."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "5fcea5c2e9bccdb9",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "## Rule Yes — warnings need not track any precise script.",
+          "locator_note": "lake pinpoints[].id == pin-60; content_page.md places ^pin-60 after the 559 U.S. at 60 quotation.",
+          "needs_cl": false,
+          "problem": "The pin-60 lake pinpoint quote is not the quoted Powell passage; it harvested content-page issue/rule prose around the marker, including a Markdown heading, rather than opinion text.",
+          "proposed_fix": "Regenerate pin-60 so pinpoints[].quote is the actual opinion sentence beginning with 'The four warnings Miranda requires are invariable' and verify it against text/Florida v. Powell__c3ef95.txt.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The lake record itself marks pin-60 quote_fidelity as mismatch.",
+          "The harvested quote contains page prose and a Markdown heading, not language from the Supreme Court opinion."
+        ],
+        "residual_risks": [
+          "The visible content-page quotation appears supportable from the cached opinion text, so this is primarily a pinpoint-harvest defect.",
+          "The cached opinion is slip-form text, so official U.S. page-number mapping was not independently revalidated here."
+        ],
+        "suggested_tightening": "Do not harvest across section headings; anchor the pin to the immediately preceding quoted authority text only.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "ea1cba51f1c05fd0",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "## Application Reading the two statements together, the warning passed the test.",
+          "locator_note": "lake pinpoints[].id == pin-62; content_page.md places ^pin-62 after the 559 U.S. at 62 application quotation.",
+          "needs_cl": false,
+          "problem": "The pin-62 lake pinpoint quote is not the application quotation attributed to 559 U.S. at 62; it captured the preceding citation sentence and the Application heading/page prose.",
+          "proposed_fix": "Regenerate pin-62 so pinpoints[].quote is the actual opinion passage beginning with 'The first statement communicated that Powell could consult with a lawyer' and verify it against text/Florida v. Powell__c3ef95.txt.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The lake record itself marks pin-62 quote_fidelity as mismatch.",
+          "The harvested quote includes Markdown heading/prose and not the Powell opinion passage about the two warnings reasonably conveying the right to counsel."
+        ],
+        "residual_risks": [
+          "The visible content-page application quotation appears supportable from the cached opinion text, so this is primarily a pinpoint-harvest defect.",
+          "The cached opinion is slip-form text, so official U.S. page-number mapping was not independently revalidated here."
+        ],
+        "suggested_tightening": "Do not let a pin harvest spill backward into prior citations or section headings; bind it to the quoted sentence immediately before the marker.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "baacbabbab05dc8a",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The treatment payload matches the lake treatment fields: field_i_validity is good_law, as_of_content is 2010-02-23, as_of_treatment is 2026-06-30, and varies_by_point is false.",
+          "Treatment/currency is outside Lens A, so no independent treatment defect is raised."
+        ],
+        "residual_risks": [
+          "Treatment and currency should be reviewed by Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Florida v. Powell.json\",\"reviewed\":[{\"assertion_id\":\"de7cd493a431f809\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record identity is verified for Florida v. Powell, U.S. Supreme Court, decided 2010-02-23, docket 08-1175.\",\"The official citation 559 U.S. 50 and parallel/vendor citations in the payload match the lake citations fields and the content page header.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"5fcea5c2e9bccdb9\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The pin-60 lake pinpoint quote is not the quoted Powell passage; it harvested content-page issue/rule prose around the marker, including a Markdown heading, rather than opinion text.\",\"severity\":\"high\",\"proposed_fix\":\"Regenerate pin-60 so pinpoints[].quote is the actual opinion sentence beginning with 'The four warnings Miranda requires are invariable' and verify it against text/Florida v. Powell__c3ef95.txt.\",\"evidence_quote\":\"## Rule Yes — warnings need not track any precise script.\",\"needs_cl\":false,\"locator_note\":\"lake pinpoints[].id == pin-60; content_page.md places ^pin-60 after the 559 U.S. at 60 quotation.\"},\"reasons\":[\"The lake record itself marks pin-60 quote_fidelity as mismatch.\",\"The harvested quote contains page prose and a Markdown heading, not language from the Supreme Court opinion.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The visible content-page quotation appears supportable from the cached opinion text, so this is primarily a pinpoint-harvest defect.\",\"The cached opinion is slip-form text, so official U.S. page-number mapping was not independently revalidated here.\"],\"suggested_tightening\":\"Do not harvest across section headings; anchor the pin to the immediately preceding quoted authority text only.\"},{\"assertion_id\":\"ea1cba51f1c05fd0\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The pin-62 lake pinpoint quote is not the application quotation attributed to 559 U.S. at 62; it captured the preceding citation sentence and the Application heading/page prose.\",\"severity\":\"high\",\"proposed_fix\":\"Regenerate pin-62 so pinpoints[].quote is the actual opinion passage beginning with 'The first statement communicated that Powell could consult with a lawyer' and verify it against text/Florida v. Powell__c3ef95.txt.\",\"evidence_quote\":\"## Application Reading the two statements together, the warning passed the test.\",\"needs_cl\":false,\"locator_note\":\"lake pinpoints[].id == pin-62; content_page.md places ^pin-62 after the 559 U.S. at 62 application quotation.\"},\"reasons\":[\"The lake record itself marks pin-62 quote_fidelity as mismatch.\",\"The harvested quote includes Markdown heading/prose and not the Powell opinion passage about the two warnings reasonably conveying the right to counsel.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The visible content-page application quotation appears supportable from the cached opinion text, so this is primarily a pinpoint-harvest defect.\",\"The cached opinion is slip-form text, so official U.S. page-number mapping was not independently revalidated here.\"],\"suggested_tightening\":\"Do not let a pin harvest spill backward into prior citations or section headings; bind it to the quoted sentence immediately before the marker.\"},{\"assertion_id\":\"baacbabbab05dc8a\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The treatment payload matches the lake treatment fields: field_i_validity is good_law, as_of_content is 2010-02-23, as_of_treatment is 2026-06-30, and varies_by_point is false.\",\"Treatment/currency is outside Lens A, so no independent treatment defect is raised.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment and currency should be reviewed by Lens B.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed all 4 group_inventory rows. Lens A defects are limited to quote/pinpoint harvest fidelity; no treatment/currency finding is made.\"}",
   "summary": {
-    "at": "2026-07-10T18:26:10-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T01:41:41-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-f8f91d8ce0",
+      "F-S9-PR-4cc32b9043"
+    ],
     "group_id": "_overhaul2/lake/cases/Florida v. Powell.json",
     "group_total_assertions": 4,
     "lake_only_cases": [],
@@ -16,21 +103,59 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-74f4b1c4.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 4,
     "run": "prod",
     "text_disclosed_cases": [
       "Florida v. Powell"
     ],
     "tokens": {
-      "input": 826,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 826
+      "input": 169808,
+      "output": 9115,
+      "source": "codex-events",
+      "total": 178923
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 2.9
+    "verdict_map": {
+      "5fcea5c2e9bccdb9": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "baacbabbab05dc8a": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "de7cd493a431f809": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "ea1cba51f1c05fd0": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-f8f91d8ce0",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-4cc32b9043",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 177.5
   }
 }

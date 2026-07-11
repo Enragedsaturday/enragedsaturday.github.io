@@ -1,22 +1,124 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Hudson v. Palmer.json",
+    "lens": "A",
+    "notes": "Treatment row recorded only; Lens A reviewed support and quote fidelity, not treatment currency.",
+    "reviewed": [
+      {
+        "assertion_id": "09b6951890d25156",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record is Hudson v. Palmer, U.S. Supreme Court, decided 1984-07-03, year 1984.",
+          "The content-page display citation 468 U.S. 517 (1984) matches the lake official citation, and the listed parallel/vendor citations match the lake citation fields."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "5d336012368db30e",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "hold that society is not prepared to recognize as legitimate any subjective expectation of privacy that a prisoner might have in his prison cell and that, accordingly, the Fourth Amendment proscription against unreasonable searches does not apply within the confines of the prison cell.",
+          "locator_note": "text/Hudson v. Palmer__4563af.txt line 18, page-number label 526; lake pinpoints[0] for pin-526 has page null and quote_fidelity mismatch.",
+          "needs_cl": false,
+          "problem": "The reviewed pin-526 quote payload is not a verbatim opinion passage for the cited holding; it is harvested content-page prose plus section headers, and the lake itself marks quote_fidelity as mismatch. The visible page quote at 468 U.S. 526 appears faithful, but this reviewed quote_pinpoint payload is wrong as framed.",
+          "proposed_fix": "Replace pin-526's stored quote with the actual 468 U.S. at 526 holding passage, or retarget the inventory row to the visible holding quote on content_page.md line 53.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The lake pinpoint quote contains content headings such as ## Issue and ## Rule No., which are not opinion text.",
+          "The opinion text at page 526 contains the holding quoted on the content page, not the reviewed payload quote."
+        ],
+        "residual_risks": [
+          "Do not remove the visible content-page holding quote solely because the lake pinpoint payload is defective; the displayed quote is supported by the disclosed opinion text."
+        ],
+        "suggested_tightening": "Store the page-526 holding passage as the pin quote and set the pinpoint page to 526.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "04b9b316da378422",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A; no treatment finding is raised.",
+          "The treatment payload matches the lake treatment fields: field_i_validity good_law, as_of_content 1984-07-03, as_of_treatment 2026-06-30, and varies_by_point false."
+        ],
+        "residual_risks": [
+          "Treatment currency and later-history significance were not audited under Lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Hudson v. Palmer.json\",\"reviewed\":[{\"assertion_id\":\"09b6951890d25156\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake identity record is Hudson v. Palmer, U.S. Supreme Court, decided 1984-07-03, year 1984.\",\"The content-page display citation 468 U.S. 517 (1984) matches the lake official citation, and the listed parallel/vendor citations match the lake citation fields.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"5d336012368db30e\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The reviewed pin-526 quote payload is not a verbatim opinion passage for the cited holding; it is harvested content-page prose plus section headers, and the lake itself marks quote_fidelity as mismatch. The visible page quote at 468 U.S. 526 appears faithful, but this reviewed quote_pinpoint payload is wrong as framed.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-526's stored quote with the actual 468 U.S. at 526 holding passage, or retarget the inventory row to the visible holding quote on content_page.md line 53.\",\"evidence_quote\":\"hold that society is not prepared to recognize as legitimate any subjective expectation of privacy that a prisoner might have in his prison cell and that, accordingly, the Fourth Amendment proscription against unreasonable searches does not apply within the confines of the prison cell.\",\"needs_cl\":false,\"locator_note\":\"text/Hudson v. Palmer__4563af.txt line 18, page-number label 526; lake pinpoints[0] for pin-526 has page null and quote_fidelity mismatch.\"},\"reasons\":[\"The lake pinpoint quote contains content headings such as ## Issue and ## Rule No., which are not opinion text.\",\"The opinion text at page 526 contains the holding quoted on the content page, not the reviewed payload quote.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Do not remove the visible content-page holding quote solely because the lake pinpoint payload is defective; the displayed quote is supported by the disclosed opinion text.\"],\"suggested_tightening\":\"Store the page-526 holding passage as the pin quote and set the pinpoint page to 526.\"},{\"assertion_id\":\"04b9b316da378422\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside Lens A; no treatment finding is raised.\",\"The treatment payload matches the lake treatment fields: field_i_validity good_law, as_of_content 1984-07-03, as_of_treatment 2026-06-30, and varies_by_point false.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment currency and later-history significance were not audited under Lens A.\"],\"suggested_tightening\":null}],\"notes\":\"Treatment row recorded only; Lens A reviewed support and quote fidelity, not treatment currency.\"}",
   "summary": {
-    "at": "2026-07-10T18:28:01-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T01:51:59-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-c9f6c99912"
+    ],
     "group_id": "_overhaul2/lake/cases/Hudson v. Palmer.json",
     "group_total_assertions": 3,
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-0176c62b",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-0176c62b.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "cket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:27:51.893165Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:27:52.602518Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:27:53.542920Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:27:54.832140Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:27:56.889050Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:28:00.500789Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 3,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Hudson v. Palmer"
+    ],
+    "tokens": {
+      "input": 283573,
+      "output": 6802,
+      "source": "codex-events",
+      "total": 290375
+    },
+    "verdict_map": {
+      "04b9b316da378422": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "09b6951890d25156": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "5d336012368db30e": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-c9f6c99912",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 144.3
   }
 }

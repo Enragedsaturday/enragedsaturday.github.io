@@ -1,13 +1,100 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Florida v. J.L..json",
+    "lens": "A",
+    "notes": "Reviewed all four group_inventory rows using only the disclosed workspace files.",
+    "reviewed": [
+      {
+        "assertion_id": "62582faec7fe6dc8",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity is verified for record_id Florida v. J.L.; the canonical case-name spacing differs slightly but input_case_name and canonical_name_match support the same case.",
+          "Lake official citation/display is 529 U.S. 266, identity court is U.S. Supreme Court, and year is 2000; content_page uses 529 U.S. 266 (2000) and U.S. Supreme Court."
+        ],
+        "residual_risks": [
+          "Display-name punctuation differs between page (J.L.) and lake canonical name (J. L.), but the lake record marks canonical_name_match true."
+        ],
+        "suggested_tightening": "Optional: normalize visible case-name spacing to the lake canonical form.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "3c1dded75fc42fb6",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "The reasonable suspicion here at issue requires that a tip be reliable in its assertion of illegality, not just in its tendency to identify a determinate person.",
+          "locator_note": "lake pinpoints[id=pin-272]; content_page Rule ^pin-272",
+          "needs_cl": false,
+          "problem": "pin-272's harvested quote is not an opinion quote; it is content-page prose/front matter, and the lake record itself marks quote_fidelity as mismatch with no star marker or position.",
+          "proposed_fix": "Replace pin-272 quote with the actual opinion sentence at page 272, or remove the pinpoint until rebuilt from text/Florida v. J.L.__6fc7d0.txt.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload quote begins with page-rendered material rather than language from the opinion text.",
+          "The exact opinion sentence quoted in content_page appears in text/Florida v. J.L.__6fc7d0.txt at the passage following the page 272 marker; the lake pin for pin-272 does not store that sentence."
+        ],
+        "residual_risks": [
+          "The visible content_page quote itself is supported by the opinion text; the defect is the pin/lake quote record backing it."
+        ],
+        "suggested_tightening": "Use the opinion sentence at page 272 as the pin quote and avoid harvesting rendered page content as authority text.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "62636157dc93a48c",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "We decline to adopt this position.",
+          "locator_note": "content_page Rule ^pin-272a; lake pinpoints[id=pin-272a] star_marker 269",
+          "needs_cl": false,
+          "problem": "The phrase firearm exception is faithful, but the pin metadata/fragment validates that phrase at the earlier page 269 discussion rather than the page's displayed quoted sentence at page 272.",
+          "proposed_fix": "Keep the proposition, but rebuild pin-272a to quote and target the actual support sentence, We decline to adopt this position, at page 272.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The phrase firearm exception appears in the opinion text and the lake record marks it matched, so phrase-level quote fidelity survives.",
+          "The page's displayed quote, We decline to adopt this position, is also exact in the opinion text, but the stored pin quote/fragment does not validate that displayed sentence."
+        ],
+        "residual_risks": [
+          "If only phrase-level fragment fidelity is being tested, this could stand outright; the modification is needed to make the pin support the page's displayed quote."
+        ],
+        "suggested_tightening": "Point the fragment to the paragraph containing Under such an exception and We decline to adopt this position, and set the page/star marker to 272.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "490d782a33acb675",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The treatment fields in group_inventory match lake.treatment for field_i_validity, as_of_content, as_of_treatment, varies_by_point, and scope_note.",
+          "The same treatment fields appear in content_page front matter; Lens A raises no treatment/currency finding."
+        ],
+        "residual_risks": [
+          "Substantive treatment and currency assessment is outside Lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Florida v. J.L..json\",\"reviewed\":[{\"assertion_id\":\"62582faec7fe6dc8\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity is verified for record_id Florida v. J.L.; the canonical case-name spacing differs slightly but input_case_name and canonical_name_match support the same case.\",\"Lake official citation/display is 529 U.S. 266, identity court is U.S. Supreme Court, and year is 2000; content_page uses 529 U.S. 266 (2000) and U.S. Supreme Court.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Display-name punctuation differs between page (J.L.) and lake canonical name (J. L.), but the lake record marks canonical_name_match true.\"],\"suggested_tightening\":\"Optional: normalize visible case-name spacing to the lake canonical form.\"},{\"assertion_id\":\"3c1dded75fc42fb6\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"pin-272's harvested quote is not an opinion quote; it is content-page prose/front matter, and the lake record itself marks quote_fidelity as mismatch with no star marker or position.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-272 quote with the actual opinion sentence at page 272, or remove the pinpoint until rebuilt from text/Florida v. J.L.__6fc7d0.txt.\",\"evidence_quote\":\"The reasonable suspicion here at issue requires that a tip be reliable in its assertion of illegality, not just in its tendency to identify a determinate person.\",\"needs_cl\":false,\"locator_note\":\"lake pinpoints[id=pin-272]; content_page Rule ^pin-272\"},\"reasons\":[\"The payload quote begins with page-rendered material rather than language from the opinion text.\",\"The exact opinion sentence quoted in content_page appears in text/Florida v. J.L.__6fc7d0.txt at the passage following the page 272 marker; the lake pin for pin-272 does not store that sentence.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The visible content_page quote itself is supported by the opinion text; the defect is the pin/lake quote record backing it.\"],\"suggested_tightening\":\"Use the opinion sentence at page 272 as the pin quote and avoid harvesting rendered page content as authority text.\"},{\"assertion_id\":\"62636157dc93a48c\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The phrase firearm exception is faithful, but the pin metadata/fragment validates that phrase at the earlier page 269 discussion rather than the page's displayed quoted sentence at page 272.\",\"severity\":\"low\",\"proposed_fix\":\"Keep the proposition, but rebuild pin-272a to quote and target the actual support sentence, We decline to adopt this position, at page 272.\",\"evidence_quote\":\"We decline to adopt this position.\",\"needs_cl\":false,\"locator_note\":\"content_page Rule ^pin-272a; lake pinpoints[id=pin-272a] star_marker 269\"},\"reasons\":[\"The phrase firearm exception appears in the opinion text and the lake record marks it matched, so phrase-level quote fidelity survives.\",\"The page's displayed quote, We decline to adopt this position, is also exact in the opinion text, but the stored pin quote/fragment does not validate that displayed sentence.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"If only phrase-level fragment fidelity is being tested, this could stand outright; the modification is needed to make the pin support the page's displayed quote.\"],\"suggested_tightening\":\"Point the fragment to the paragraph containing Under such an exception and We decline to adopt this position, and set the page/star marker to 272.\"},{\"assertion_id\":\"490d782a33acb675\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The treatment fields in group_inventory match lake.treatment for field_i_validity, as_of_content, as_of_treatment, varies_by_point, and scope_note.\",\"The same treatment fields appear in content_page front matter; Lens A raises no treatment/currency finding.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Substantive treatment and currency assessment is outside Lens A.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed all four group_inventory rows using only the disclosed workspace files.\"}",
   "summary": {
-    "at": "2026-07-10T18:26:07-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T01:40:05-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-e060bc6db5",
+      "F-S9-PR-41b55d0fe3"
+    ],
     "group_id": "_overhaul2/lake/cases/Florida v. J.L..json",
     "group_total_assertions": 4,
     "lake_only_cases": [],
@@ -16,21 +103,59 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-ff40d504.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 4,
     "run": "prod",
     "text_disclosed_cases": [
       "Florida v. J.L."
     ],
     "tokens": {
-      "input": 825,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 825
+      "input": 224870,
+      "output": 8283,
+      "source": "codex-events",
+      "total": 233153
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 3.6
+    "verdict_map": {
+      "3c1dded75fc42fb6": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "490d782a33acb675": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "62582faec7fe6dc8": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "62636157dc93a48c": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-e060bc6db5",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-41b55d0fe3",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 161.1
   }
 }

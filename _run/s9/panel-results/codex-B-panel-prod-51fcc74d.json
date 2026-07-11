@@ -1,13 +1,94 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Florida v. Jimeno.json",
+    "lens": "B",
+    "notes": "Lens B only; no support or quote-fidelity defect is raised.",
+    "reviewed": [
+      {
+        "assertion_id": "d630f3e97b83df43",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record is non-stub, status verified, and identifies Florida v. Jimeno as a U.S. Supreme Court case decided 1991-05-23.",
+          "The official citation is present as 500 U.S. 248, with parallel citations matching the inventory payload.",
+          "The disclosed treatment field marks the authority good_law as of 2026-06-30."
+        ],
+        "residual_risks": [
+          "The treatment derivation contains audit-needed markers, so current-law certainty beyond the disclosed lake judgment is not independently established."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "29b03309673af1b5",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Lens B does not raise quote-support or quote-fidelity findings.",
+          "No point-specific treatment override in the disclosed lake record changes the currency status of the underlying Jimeno authority for this pinpoint."
+        ],
+        "residual_risks": [
+          "The inventory itself labels this quote_fidelity as mismatch, but that is outside Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "41ecbb48b6b41c5a",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Lens B does not raise quote-support or quote-fidelity findings.",
+          "No point-specific treatment override in the disclosed lake record changes the currency status of the underlying Jimeno authority for this pinpoint."
+        ],
+        "residual_risks": [
+          "The inventory itself labels this quote_fidelity as mismatch, but that is outside Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "1598161dfd7c8cad",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "\"audit_marker\": \"R15 treatment audit required\"",
+          "locator_note": "content_page.md Treatment & subsequent history; lake/Florida v. Jimeno__27fcbc.json treatment.derivation and treatment.edges",
+          "needs_cl": true,
+          "problem": "The good_law field is disclosed in the lake record, but the page's unqualified 'No negative treatment' statement is too strong because the same lake treatment record contains proposed negative-treatment edges and an audit-required marker.",
+          "proposed_fix": "Keep the case-level status as good_law only with a qualifier: no final point override is recorded, but proposed negative-treatment candidates exist and R15 treatment audit is required.",
+          "severity": "medium"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "The treatment payload matches the lake field_i_validity good_law and as_of_treatment 2026-06-30.",
+          "The lake record also states composite_basis migration-seed and scope_note that S2 derivation may downgrade.",
+          "The disclosed treatment derivation lists audit_needed true and proposed_negative_events, so 'No negative treatment' cannot be verified as framed from the disclosed record."
+        ],
+        "residual_risks": [
+          "The proposed edges are not final point overrides; without auditing the underlying citing opinions, their actual treatment effect cannot be confirmed."
+        ],
+        "suggested_tightening": "Replace 'No negative treatment' with a bounded statement distinguishing final lake status from proposed audit candidates.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"B\",\n  \"group_id\": \"_overhaul2/lake/cases/Florida v. Jimeno.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"d630f3e97b83df43\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake record is non-stub, status verified, and identifies Florida v. Jimeno as a U.S. Supreme Court case decided 1991-05-23.\",\n        \"The official citation is present as 500 U.S. 248, with parallel citations matching the inventory payload.\",\n        \"The disclosed treatment field marks the authority good_law as of 2026-06-30.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The treatment derivation contains audit-needed markers, so current-law certainty beyond the disclosed lake judgment is not independently established.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"29b03309673af1b5\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Lens B does not raise quote-support or quote-fidelity findings.\",\n        \"No point-specific treatment override in the disclosed lake record changes the currency status of the underlying Jimeno authority for this pinpoint.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The inventory itself labels this quote_fidelity as mismatch, but that is outside Lens B.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"41ecbb48b6b41c5a\",\n      \"dimension\": \"quote_fidelity\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"Lens B does not raise quote-support or quote-fidelity findings.\",\n        \"No point-specific treatment override in the disclosed lake record changes the currency status of the underlying Jimeno authority for this pinpoint.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The inventory itself labels this quote_fidelity as mismatch, but that is outside Lens B.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"1598161dfd7c8cad\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"stands-modified\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": {\n        \"problem\": \"The good_law field is disclosed in the lake record, but the page's unqualified 'No negative treatment' statement is too strong because the same lake treatment record contains proposed negative-treatment edges and an audit-required marker.\",\n        \"severity\": \"medium\",\n        \"proposed_fix\": \"Keep the case-level status as good_law only with a qualifier: no final point override is recorded, but proposed negative-treatment candidates exist and R15 treatment audit is required.\",\n        \"evidence_quote\": \"\\\"audit_marker\\\": \\\"R15 treatment audit required\\\"\",\n        \"needs_cl\": true,\n        \"locator_note\": \"content_page.md Treatment & subsequent history; lake/Florida v. Jimeno__27fcbc.json treatment.derivation and treatment.edges\"\n      },\n      \"reasons\": [\n        \"The treatment payload matches the lake field_i_validity good_law and as_of_treatment 2026-06-30.\",\n        \"The lake record also states composite_basis migration-seed and scope_note that S2 derivation may downgrade.\",\n        \"The disclosed treatment derivation lists audit_needed true and proposed_negative_events, so 'No negative treatment' cannot be verified as framed from the disclosed record.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"The proposed edges are not final point overrides; without auditing the underlying citing opinions, their actual treatment effect cannot be confirmed.\"\n      ],\n      \"suggested_tightening\": \"Replace 'No negative treatment' with a bounded statement distinguishing final lake status from proposed audit candidates.\"\n    }\n  ],\n  \"notes\": \"Lens B only; no support or quote-fidelity defect is raised.\"\n}",
   "summary": {
-    "at": "2026-07-10T18:26:11-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T01:39:49-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-593f3992a6"
+    ],
     "group_id": "_overhaul2/lake/cases/Florida v. Jimeno.json",
     "group_total_assertions": 4,
     "lake_only_cases": [],
@@ -16,21 +97,55 @@
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-51fcc74d.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 4,
     "run": "prod",
     "text_disclosed_cases": [
       "Florida v. Jimeno"
     ],
     "tokens": {
-      "input": 754,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 754
+      "input": 107173,
+      "output": 4970,
+      "source": "codex-events",
+      "total": 112143
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 4.6
+    "verdict_map": {
+      "1598161dfd7c8cad": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "29b03309673af1b5": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "41ecbb48b6b41c5a": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "d630f3e97b83df43": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-593f3992a6",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 96.6
   }
 }

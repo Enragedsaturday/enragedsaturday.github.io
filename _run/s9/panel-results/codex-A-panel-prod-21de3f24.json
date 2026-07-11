@@ -1,22 +1,168 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Ferguson v. City of Charleston.json",
+    "lens": "A",
+    "notes": "Reviewed all four rows in group_inventory.jsonl. No support or black_letter rows were present for Lens A review.",
+    "reviewed": [
+      {
+        "assertion_id": "9c4371fb95c85c68",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record is verified for Ferguson v. City of Charleston, U.S. Supreme Court, decided 2001-03-21.",
+          "The payload citation list matches the lake citations.all entries, including 532 U.S. 67 and the listed parallel/vendor citations."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": "For display hygiene, the page could use 532 U.S. 67 as the primary citation instead of leaving citation blank; this does not defeat existence.",
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "5728aa7047daadb2",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "More narrowly, the question is whether the interest in using the threat of criminal sanctions to deter pregnant women from using cocaine can justify a departure from the general rule that an official nonconsensual search is unconstitutional if not authorized by a valid warrant.",
+          "locator_note": "text/Ferguson v. City of Charleston__06446d.txt at the *70 paragraph; content_page.md line 53",
+          "needs_cl": false,
+          "problem": "The pin-70 quote payload is not a verbatim opinion passage; it splices page/rule prose and heading text into the quoted field instead of storing the actual quoted source language.",
+          "proposed_fix": "Replace the pin-70 quote payload with the actual source quotation used on the page, or store the surrounding rule prose as non-quote support text.",
+          "severity": "medium"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload contains '## Rule No. Where the immediate objective...', which is content_page Markdown/prose, not opinion text.",
+          "The actual page-70 opinion language supports the narrower quoted phrase beginning 'justify a departure...', not the payload's larger quote string."
+        ],
+        "residual_risks": [
+          "The visible content-page quote at pin-70 appears faithful; this refutes the lake/payload quote field as framed."
+        ],
+        "suggested_tightening": "Keep the pin quote limited to the exact words inside quotation marks on the page.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "d7b81fc821e5019a",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "the immediate objective of the searches was to generate evidence <i>for law enforcement purposes</i><sup>[20]</sup> in order to reach that goal.",
+          "locator_note": "text/Ferguson v. City of Charleston__06446d.txt at the *83 paragraph; content_page.md line 55",
+          "needs_cl": false,
+          "problem": "The quoted sentence is present at the cited passage, but the stored/raw quote is not character-faithful to text/<case>.txt because it converts HTML italics to Markdown asterisks and omits the intervening footnote marker.",
+          "proposed_fix": "Define and apply a normalization rule for source italics and footnote markers, or store the raw-source form of the quote.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The quoted proposition and page location are supported by the opinion text at *83.",
+          "Strict raw-text fidelity fails only because of markup normalization and omitted footnote marker."
+        ],
+        "residual_risks": [
+          "If the corpus treats Markdown italics and omitted footnote markers as accepted normalization, this is only a metadata-fidelity warning."
+        ],
+        "suggested_tightening": "Record the normalization convention, or remove Markdown asterisks from the quote payload and track italics separately.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "ce7c39488fcdf254",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A, so no treatment finding is raised.",
+          "The treatment payload mirrors the disclosed lake treatment fields: field_i_validity good_law, as_of_content 2001-03-21, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note."
+        ],
+        "residual_risks": [
+          "Treatment/currency should be evaluated by Lens B, including the disclosed progeny and proposed treatment edges."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Ferguson v. City of Charleston.json\",\"reviewed\":[{\"assertion_id\":\"9c4371fb95c85c68\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake identity record is verified for Ferguson v. City of Charleston, U.S. Supreme Court, decided 2001-03-21.\",\"The payload citation list matches the lake citations.all entries, including 532 U.S. 67 and the listed parallel/vendor citations.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":\"For display hygiene, the page could use 532 U.S. 67 as the primary citation instead of leaving citation blank; this does not defeat existence.\"},{\"assertion_id\":\"5728aa7047daadb2\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The pin-70 quote payload is not a verbatim opinion passage; it splices page/rule prose and heading text into the quoted field instead of storing the actual quoted source language.\",\"severity\":\"medium\",\"proposed_fix\":\"Replace the pin-70 quote payload with the actual source quotation used on the page, or store the surrounding rule prose as non-quote support text.\",\"evidence_quote\":\"More narrowly, the question is whether the interest in using the threat of criminal sanctions to deter pregnant women from using cocaine can justify a departure from the general rule that an official nonconsensual search is unconstitutional if not authorized by a valid warrant.\",\"needs_cl\":false,\"locator_note\":\"text/Ferguson v. City of Charleston__06446d.txt at the *70 paragraph; content_page.md line 53\"},\"reasons\":[\"The payload contains '## Rule No. Where the immediate objective...', which is content_page Markdown/prose, not opinion text.\",\"The actual page-70 opinion language supports the narrower quoted phrase beginning 'justify a departure...', not the payload's larger quote string.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The visible content-page quote at pin-70 appears faithful; this refutes the lake/payload quote field as framed.\"],\"suggested_tightening\":\"Keep the pin quote limited to the exact words inside quotation marks on the page.\"},{\"assertion_id\":\"d7b81fc821e5019a\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The quoted sentence is present at the cited passage, but the stored/raw quote is not character-faithful to text/<case>.txt because it converts HTML italics to Markdown asterisks and omits the intervening footnote marker.\",\"severity\":\"low\",\"proposed_fix\":\"Define and apply a normalization rule for source italics and footnote markers, or store the raw-source form of the quote.\",\"evidence_quote\":\"the immediate objective of the searches was to generate evidence <i>for law enforcement purposes</i><sup>[20]</sup> in order to reach that goal.\",\"needs_cl\":false,\"locator_note\":\"text/Ferguson v. City of Charleston__06446d.txt at the *83 paragraph; content_page.md line 55\"},\"reasons\":[\"The quoted proposition and page location are supported by the opinion text at *83.\",\"Strict raw-text fidelity fails only because of markup normalization and omitted footnote marker.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"If the corpus treats Markdown italics and omitted footnote markers as accepted normalization, this is only a metadata-fidelity warning.\"],\"suggested_tightening\":\"Record the normalization convention, or remove Markdown asterisks from the quote payload and track italics separately.\"},{\"assertion_id\":\"ce7c39488fcdf254\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside Lens A, so no treatment finding is raised.\",\"The treatment payload mirrors the disclosed lake treatment fields: field_i_validity good_law, as_of_content 2001-03-21, as_of_treatment 2026-06-30, varies_by_point false, and the same scope note.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment/currency should be evaluated by Lens B, including the disclosed progeny and proposed treatment edges.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed all four rows in group_inventory.jsonl. No support or black_letter rows were present for Lens A review.\"}",
   "summary": {
-    "at": "2026-07-10T18:26:01-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T01:38:12-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-4693820b1e",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-393ed11c7a",
+      "F-S9-PR-2680454093"
+    ],
     "group_id": "_overhaul2/lake/cases/Ferguson v. City of Charleston.json",
     "group_total_assertions": 4,
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-21de3f24",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-21de3f24.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "cket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:25:51.298163Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:25:51.996471Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:25:53.084902Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:25:54.397811Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:25:56.613992Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:26:00.510887Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Ferguson v. City of Charleston"
+    ],
+    "tokens": {
+      "input": 522519,
+      "output": 10453,
+      "source": "codex-events",
+      "total": 532972
+    },
+    "verdict_map": {
+      "5728aa7047daadb2": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "9c4371fb95c85c68": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "ce7c39488fcdf254": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "d7b81fc821e5019a": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-393ed11c7a",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-2680454093",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-4693820b1e",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": 208.4
   }
 }

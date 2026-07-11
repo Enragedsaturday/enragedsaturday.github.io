@@ -1,22 +1,145 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Howes v. Fields.json",
+    "lens": "A",
+    "notes": "Reviewed every assertion in group_inventory.jsonl under Lens A only.",
+    "reviewed": [
+      {
+        "assertion_id": "a1f335c89ee7ff37",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record verifies Howes v. Fields as a U.S. Supreme Court case decided on 2012-02-21, docket 10-680.",
+          "The official citation in the lake is 565 U.S. 499, and the parallel/vendor citations listed in the payload match the lake citation fields."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "4be947150f1df0b6",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Not all restraints on freedom of movement amount to custody for purposes of Miranda.",
+          "locator_note": "pin-op9; opinion slip page 9; content_page.md uses the correct visible quote, but the lake/inventory quote is corrupted.",
+          "needs_cl": false,
+          "problem": "The pin-op9 payload quote is not character-faithful to the opinion text; it appears to splice page prose/Markdown from the built page rather than an opinion passage.",
+          "proposed_fix": "Replace the pin-op9 stored quote with the actual slip-opinion passage used on the page: \"Not all restraints on freedom of movement amount to custody for purposes of Miranda.\"",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The lake itself marks pin-op9 quote_fidelity as mismatch.",
+          "The opinion text at slip page 9 contains the quoted sentence used on the content page, not the payload's combined Issue/Rule prose."
+        ],
+        "residual_risks": [
+          "The page-level visible quote is faithful, so the defect is in the stored pinpoint payload rather than the displayed quotation."
+        ],
+        "suggested_tightening": "Store only the actual quoted opinion sentence for pin-op9 and keep the slip-opinion page 9 locator.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "7651d1a14fe69181",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The pin-op10 quote in the payload matches the lake pinpoint quote.",
+          "The same sentence appears in the cached opinion text on slip page 10: \"If a break in custody can occur while a prisoner is serving an uninterrupted term of imprisonment, it must follow that imprisonment alone is not enough to create a custodial situation within the meaning of Miranda.\""
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "3ac6d5f77d68d136",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A's substantive charter.",
+          "As a record-matching matter, the payload fields match the lake treatment fields: field_i_validity good_law, as_of_content 2012-02-21, as_of_treatment 2026-06-30, and varies_by_point false."
+        ],
+        "residual_risks": [
+          "No substantive treatment audit was performed under Lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Howes v. Fields.json\",\"reviewed\":[{\"assertion_id\":\"a1f335c89ee7ff37\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake identity record verifies Howes v. Fields as a U.S. Supreme Court case decided on 2012-02-21, docket 10-680.\",\"The official citation in the lake is 565 U.S. 499, and the parallel/vendor citations listed in the payload match the lake citation fields.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"4be947150f1df0b6\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The pin-op9 payload quote is not character-faithful to the opinion text; it appears to splice page prose/Markdown from the built page rather than an opinion passage.\",\"severity\":\"high\",\"proposed_fix\":\"Replace the pin-op9 stored quote with the actual slip-opinion passage used on the page: \\\"Not all restraints on freedom of movement amount to custody for purposes of Miranda.\\\"\",\"evidence_quote\":\"Not all restraints on freedom of movement amount to custody for purposes of Miranda.\",\"needs_cl\":false,\"locator_note\":\"pin-op9; opinion slip page 9; content_page.md uses the correct visible quote, but the lake/inventory quote is corrupted.\"},\"reasons\":[\"The lake itself marks pin-op9 quote_fidelity as mismatch.\",\"The opinion text at slip page 9 contains the quoted sentence used on the content page, not the payload's combined Issue/Rule prose.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The page-level visible quote is faithful, so the defect is in the stored pinpoint payload rather than the displayed quotation.\"],\"suggested_tightening\":\"Store only the actual quoted opinion sentence for pin-op9 and keep the slip-opinion page 9 locator.\"},{\"assertion_id\":\"7651d1a14fe69181\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The pin-op10 quote in the payload matches the lake pinpoint quote.\",\"The same sentence appears in the cached opinion text on slip page 10: \\\"If a break in custody can occur while a prisoner is serving an uninterrupted term of imprisonment, it must follow that imprisonment alone is not enough to create a custodial situation within the meaning of Miranda.\\\"\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"3ac6d5f77d68d136\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside Lens A's substantive charter.\",\"As a record-matching matter, the payload fields match the lake treatment fields: field_i_validity good_law, as_of_content 2012-02-21, as_of_treatment 2026-06-30, and varies_by_point false.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"No substantive treatment audit was performed under Lens A.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed every assertion in group_inventory.jsonl under Lens A only.\"}",
   "summary": {
-    "at": "2026-07-10T18:27:38-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T01:50:30-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-f88b011fe9"
+    ],
     "group_id": "_overhaul2/lake/cases/Howes v. Fields.json",
     "group_total_assertions": 4,
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-62c3955e",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-62c3955e.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "cket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:27:28.938323Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:27:29.721127Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:27:30.612908Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:27:31.737693Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:27:33.816564Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:27:37.265618Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Howes v. Fields"
+    ],
+    "tokens": {
+      "input": 223095,
+      "output": 6214,
+      "source": "codex-events",
+      "total": 229309
+    },
+    "verdict_map": {
+      "3ac6d5f77d68d136": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "4be947150f1df0b6": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "7651d1a14fe69181": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "a1f335c89ee7ff37": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-f88b011fe9",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 121.1
   }
 }

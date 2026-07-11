@@ -1,13 +1,104 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Florida v. Jimeno.json",
+    "lens": "A",
+    "notes": "Reviewed every assertion_id in group_inventory.jsonl exactly once. No support or black_letter rows were present in the disclosed inventory.",
+    "reviewed": [
+      {
+        "assertion_id": "d630f3e97b83df43",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record names Florida v. Jimeno, court U.S. Supreme Court, date_decided 1991-05-23, and year 1991.",
+          "The lake official citation is 500 U.S. 248 and the page displays 500 U.S. 248 (1991); the listed parallel and vendor-neutral citations also match the lake record."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "29b03309673af1b5",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "The scope of a search is generally defined by its expressed object.",
+          "locator_note": "text paragraph b305-5, after the page 251 marker; lake pinpoints[pin-251a] itself marks quote_fidelity as mismatch.",
+          "needs_cl": false,
+          "problem": "The quote changes the source's opening capital T to bracketed lowercase '[t]'. Under the requested character-faithful standard, that is not exact even though the substantive sentence and pin are otherwise supported.",
+          "proposed_fix": "Use the exact source sentence opening 'The scope...' or remove quotation marks if editorial bracket normalization is intended.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The cached opinion text has 'The scope...' with a capital T, while the asserted quote has '[t]he scope...'.",
+          "The sentence appears on the page-251 span before the page-252 marker, so the citation target is supportable once the quote is corrected."
+        ],
+        "residual_risks": [
+          "Only exact-character quote policy is at issue; the legal proposition is supported by the disclosed text."
+        ],
+        "suggested_tightening": "Preserve source capitalization for standalone quotes; reserve bracketed alterations only if the corpus explicitly allows non-character-exact legal quotation edits.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "41ecbb48b6b41c5a",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "The standard for measuring the scope of a suspect’s consent under the Fourth Amendment is that of “objective” reasonableness—",
+          "locator_note": "lake pinpoints[pin-251]; content_page.md line 53; text paragraph AY7 after the page 251 marker.",
+          "needs_cl": false,
+          "problem": "The asserted pinpoint quote is generated page/front-matter prose beginning with '--- # Florida v. Jimeno', not the Jimeno opinion passage tied to 500 U.S. at 251. It is not character-faithful to the cached opinion text and the lake marks it as mismatch.",
+          "proposed_fix": "Replace pin-251's stored quote with the exact objective-reasonableness sentence from the opinion and remove the generated page prose from pinpoints[].quote.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The lake/payload quote is a content-page excerpt, not a verbatim extract from the cached opinion.",
+          "The actual page-251 opinion passage begins with the objective-reasonableness standard, not the page title/background/rule prose stored in the pinpoint.",
+          "The visible page quote for pin-251 also normalizes punctuation away from the cached text if exact character fidelity is required."
+        ],
+        "residual_risks": [
+          "The underlying rule and 251 pin appear supportable, but this specific stored quote assertion is unusable until corrected."
+        ],
+        "suggested_tightening": "Regenerate quote harvests from text/<case>.txt only, with an assertion that pinpoints[].quote cannot contain page markdown or front matter.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "1598161dfd7c8cad",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside lens A, so no treatment defect is raised.",
+          "The payload fields match the disclosed lake treatment fields: good_law, as_of_content 1991-05-23, as_of_treatment 2026-06-30, varies_by_point false, and the same scope_note."
+        ],
+        "residual_risks": [
+          "No treatment or currency audit was performed under this lens."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Florida v. Jimeno.json\",\"reviewed\":[{\"assertion_id\":\"d630f3e97b83df43\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake identity record names Florida v. Jimeno, court U.S. Supreme Court, date_decided 1991-05-23, and year 1991.\",\"The lake official citation is 500 U.S. 248 and the page displays 500 U.S. 248 (1991); the listed parallel and vendor-neutral citations also match the lake record.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"29b03309673af1b5\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The quote changes the source's opening capital T to bracketed lowercase '[t]'. Under the requested character-faithful standard, that is not exact even though the substantive sentence and pin are otherwise supported.\",\"severity\":\"low\",\"proposed_fix\":\"Use the exact source sentence opening 'The scope...' or remove quotation marks if editorial bracket normalization is intended.\",\"evidence_quote\":\"The scope of a search is generally defined by its expressed object.\",\"needs_cl\":false,\"locator_note\":\"text paragraph b305-5, after the page 251 marker; lake pinpoints[pin-251a] itself marks quote_fidelity as mismatch.\"},\"reasons\":[\"The cached opinion text has 'The scope...' with a capital T, while the asserted quote has '[t]he scope...'.\",\"The sentence appears on the page-251 span before the page-252 marker, so the citation target is supportable once the quote is corrected.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Only exact-character quote policy is at issue; the legal proposition is supported by the disclosed text.\"],\"suggested_tightening\":\"Preserve source capitalization for standalone quotes; reserve bracketed alterations only if the corpus explicitly allows non-character-exact legal quotation edits.\"},{\"assertion_id\":\"41ecbb48b6b41c5a\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The asserted pinpoint quote is generated page/front-matter prose beginning with '--- # Florida v. Jimeno', not the Jimeno opinion passage tied to 500 U.S. at 251. It is not character-faithful to the cached opinion text and the lake marks it as mismatch.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-251's stored quote with the exact objective-reasonableness sentence from the opinion and remove the generated page prose from pinpoints[].quote.\",\"evidence_quote\":\"The standard for measuring the scope of a suspect’s consent under the Fourth Amendment is that of “objective” reasonableness—\",\"needs_cl\":false,\"locator_note\":\"lake pinpoints[pin-251]; content_page.md line 53; text paragraph AY7 after the page 251 marker.\"},\"reasons\":[\"The lake/payload quote is a content-page excerpt, not a verbatim extract from the cached opinion.\",\"The actual page-251 opinion passage begins with the objective-reasonableness standard, not the page title/background/rule prose stored in the pinpoint.\",\"The visible page quote for pin-251 also normalizes punctuation away from the cached text if exact character fidelity is required.\"],\"breaks_true_positives\":true,\"residual_risks\":[\"The underlying rule and 251 pin appear supportable, but this specific stored quote assertion is unusable until corrected.\"],\"suggested_tightening\":\"Regenerate quote harvests from text/<case>.txt only, with an assertion that pinpoints[].quote cannot contain page markdown or front matter.\"},{\"assertion_id\":\"1598161dfd7c8cad\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside lens A, so no treatment defect is raised.\",\"The payload fields match the disclosed lake treatment fields: good_law, as_of_content 1991-05-23, as_of_treatment 2026-06-30, varies_by_point false, and the same scope_note.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"No treatment or currency audit was performed under this lens.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed every assertion_id in group_inventory.jsonl exactly once. No support or black_letter rows were present in the disclosed inventory.\"}",
   "summary": {
-    "at": "2026-07-10T18:26:08-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T01:39:56-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "defense_votes": [],
-    "findings_emitted": [],
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-593f3992a6",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-e469ed5eac",
+      "F-S9-PR-3f19ee3ded"
+    ],
     "group_id": "_overhaul2/lake/cases/Florida v. Jimeno.json",
     "group_total_assertions": 4,
     "lake_only_cases": [],
@@ -16,21 +107,63 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-51fcc74d.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 4,
     "run": "prod",
     "text_disclosed_cases": [
       "Florida v. Jimeno"
     ],
     "tokens": {
-      "input": 826,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 826
+      "input": 164004,
+      "output": 6506,
+      "source": "codex-events",
+      "total": 170510
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 3.0
+    "verdict_map": {
+      "1598161dfd7c8cad": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "29b03309673af1b5": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "41ecbb48b6b41c5a": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "d630f3e97b83df43": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-e469ed5eac",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-3f19ee3ded",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-593f3992a6",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": 126.0
   }
 }

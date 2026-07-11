@@ -1,13 +1,113 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Heien v. North Carolina.json",
+    "lens": "A",
+    "notes": "Reviewed all 4 assertion_id rows in group_inventory.jsonl exactly once.",
+    "reviewed": [
+      {
+        "assertion_id": "36bd2eb442305f22",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "574 U.S. 54 (2014)",
+          "locator_note": "content_page.md header and Sources line vs lake.citations.official/all",
+          "needs_cl": true,
+          "problem": "The built page displays an official U.S. citation, 574 U.S. 54 (2014), but the lake record has official=null/display=null and its disclosed citation list does not include 574 U.S. 54.",
+          "proposed_fix": "Either remove the unsupported 574 U.S. citation and use only lake-supported citations, or add a disclosed authority record that verifies 574 U.S. 54 before displaying it.",
+          "severity": "medium"
+        },
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity supports the case name, court, and year: Heien v. North Carolina, U.S. Supreme Court, decided 2014-12-15.",
+          "The lake-supported citations are 135 S. Ct. 530, 190 L. Ed. 2d 475, 2014 U.S. LEXIS 8306, 83 U.S.L.W. 4021, and 25 Fla. L. Weekly Fed. S 20; 574 U.S. 54 is not disclosed in lake.citations.all."
+        ],
+        "residual_risks": [
+          "The official U.S. citation may be correct in the outside world, but it is not verifiable from the disclosed files."
+        ],
+        "suggested_tightening": "Do not render an official citation when lake.citations.official is null unless the official cite is separately present in disclosed evidence.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": false
+      },
+      {
+        "assertion_id": "aa39ab580cedbb23",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "The question here is whether reasonable suspicion can rest on a mistaken understanding of the scope of a legal prohibition. We hold that it can.",
+          "locator_note": "text p-26; lake pinpoints[] id pin-60",
+          "needs_cl": false,
+          "problem": "pin-60's stored quote is generated page prose spanning Background/Issue/Rule, not a verbatim passage from the opinion text; the lake also marks quote_fidelity as mismatch.",
+          "proposed_fix": "Replace pin-60's quote with the actual opinion passage: \"The question here is whether reasonable suspicion can rest on a mistaken understanding of the scope of a legal prohibition. We hold that it can.\"",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload quote begins with page-summary prose: \"so the stop rested on a mistaken reading of the law\"; that sequence is not the opinion passage cited at the pin.",
+          "The opinion text contains the narrower quoted sentence at p-26, matching the page's displayed quotation but not the lake pin quote payload."
+        ],
+        "residual_risks": [
+          "The 574 U.S. page number itself is not independently verifiable from the disclosed text, which shows S. Ct. page labels."
+        ],
+        "suggested_tightening": "Store only the actual quoted opinion sentence in pinpoints[].quote; keep surrounding page summary outside quote-fidelity records.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "e968f5335c48fd6c",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "To be reasonable is not to be perfect, and so the Fourth Amendment allows for some mistakes on the part of government officials, giving them \"fair leeway for enforcing the law in the community's protection.\"",
+          "locator_note": "text p-27; lake pinpoints[] id pin-60a",
+          "needs_cl": false,
+          "problem": "The quoted sentence is substantively present in the opinion, but the payload changes the internal quotation marks around \"fair leeway for enforcing the law in the community's protection\" from double quotes in the opinion to single quotes.",
+          "proposed_fix": "Change the internal quotation marks to match the opinion text exactly: \"To be reasonable is not to be perfect, and so the Fourth Amendment allows for some mistakes on the part of government officials, giving them \\\"fair leeway for enforcing the law in the community's protection.\\\"\"",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The sentence appears in the disclosed opinion text at p-27.",
+          "Character fidelity fails because the opinion uses double quotation marks around the Brinegar phrase while the payload uses single quotation marks."
+        ],
+        "residual_risks": [
+          "No support defect found for the sentence's substance; this is a character-fidelity correction."
+        ],
+        "suggested_tightening": "Normalize pin quote extraction against text/<case>.txt before rendering curly or nested quote substitutions.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "18f5cffe30b2c86a",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The treatment payload matches lake.treatment for field_i_validity=good_law, as_of_content=2014-12-15, as_of_treatment=2026-06-30, varies_by_point=false, and the stated scope_note.",
+          "Treatment and currency are outside Lens A, so no treatment finding is raised."
+        ],
+        "residual_risks": [
+          "Treatment significance is reserved for Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Heien v. North Carolina.json\",\"reviewed\":[{\"assertion_id\":\"36bd2eb442305f22\",\"dimension\":\"existence\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":false,\"defect\":{\"problem\":\"The built page displays an official U.S. citation, 574 U.S. 54 (2014), but the lake record has official=null/display=null and its disclosed citation list does not include 574 U.S. 54.\",\"severity\":\"medium\",\"proposed_fix\":\"Either remove the unsupported 574 U.S. citation and use only lake-supported citations, or add a disclosed authority record that verifies 574 U.S. 54 before displaying it.\",\"evidence_quote\":\"574 U.S. 54 (2014)\",\"needs_cl\":true,\"locator_note\":\"content_page.md header and Sources line vs lake.citations.official/all\"},\"reasons\":[\"Lake identity supports the case name, court, and year: Heien v. North Carolina, U.S. Supreme Court, decided 2014-12-15.\",\"The lake-supported citations are 135 S. Ct. 530, 190 L. Ed. 2d 475, 2014 U.S. LEXIS 8306, 83 U.S.L.W. 4021, and 25 Fla. L. Weekly Fed. S 20; 574 U.S. 54 is not disclosed in lake.citations.all.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The official U.S. citation may be correct in the outside world, but it is not verifiable from the disclosed files.\"],\"suggested_tightening\":\"Do not render an official citation when lake.citations.official is null unless the official cite is separately present in disclosed evidence.\"},{\"assertion_id\":\"aa39ab580cedbb23\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"pin-60's stored quote is generated page prose spanning Background/Issue/Rule, not a verbatim passage from the opinion text; the lake also marks quote_fidelity as mismatch.\",\"severity\":\"high\",\"proposed_fix\":\"Replace pin-60's quote with the actual opinion passage: \\\"The question here is whether reasonable suspicion can rest on a mistaken understanding of the scope of a legal prohibition. We hold that it can.\\\"\",\"evidence_quote\":\"The question here is whether reasonable suspicion can rest on a mistaken understanding of the scope of a legal prohibition. We hold that it can.\",\"needs_cl\":false,\"locator_note\":\"text p-26; lake pinpoints[] id pin-60\"},\"reasons\":[\"The payload quote begins with page-summary prose: \\\"so the stop rested on a mistaken reading of the law\\\"; that sequence is not the opinion passage cited at the pin.\",\"The opinion text contains the narrower quoted sentence at p-26, matching the page's displayed quotation but not the lake pin quote payload.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The 574 U.S. page number itself is not independently verifiable from the disclosed text, which shows S. Ct. page labels.\"],\"suggested_tightening\":\"Store only the actual quoted opinion sentence in pinpoints[].quote; keep surrounding page summary outside quote-fidelity records.\"},{\"assertion_id\":\"e968f5335c48fd6c\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The quoted sentence is substantively present in the opinion, but the payload changes the internal quotation marks around \\\"fair leeway for enforcing the law in the community's protection\\\" from double quotes in the opinion to single quotes.\",\"severity\":\"low\",\"proposed_fix\":\"Change the internal quotation marks to match the opinion text exactly: \\\"To be reasonable is not to be perfect, and so the Fourth Amendment allows for some mistakes on the part of government officials, giving them \\\\\\\"fair leeway for enforcing the law in the community's protection.\\\\\\\"\\\"\",\"evidence_quote\":\"To be reasonable is not to be perfect, and so the Fourth Amendment allows for some mistakes on the part of government officials, giving them \\\"fair leeway for enforcing the law in the community's protection.\\\"\",\"needs_cl\":false,\"locator_note\":\"text p-27; lake pinpoints[] id pin-60a\"},\"reasons\":[\"The sentence appears in the disclosed opinion text at p-27.\",\"Character fidelity fails because the opinion uses double quotation marks around the Brinegar phrase while the payload uses single quotation marks.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"No support defect found for the sentence's substance; this is a character-fidelity correction.\"],\"suggested_tightening\":\"Normalize pin quote extraction against text/<case>.txt before rendering curly or nested quote substitutions.\"},{\"assertion_id\":\"18f5cffe30b2c86a\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The treatment payload matches lake.treatment for field_i_validity=good_law, as_of_content=2014-12-15, as_of_treatment=2026-06-30, varies_by_point=false, and the stated scope_note.\",\"Treatment and currency are outside Lens A, so no treatment finding is raised.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment significance is reserved for Lens B.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed all 4 assertion_id rows in group_inventory.jsonl exactly once.\"}",
   "summary": {
-    "at": "2026-07-10T18:27:10-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T01:49:19-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "defense_votes": [],
-    "findings_emitted": [],
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-a283cf0489",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-1fe915aa08",
+      "F-S9-PR-4ebed296a3",
+      "F-S9-PR-0310c24b31"
+    ],
     "group_id": "_overhaul2/lake/cases/Heien v. North Carolina.json",
     "group_total_assertions": 4,
     "lake_only_cases": [],
@@ -16,21 +116,67 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-cb42c189.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 4,
     "run": "prod",
     "text_disclosed_cases": [
       "Heien v. North Carolina"
     ],
     "tokens": {
-      "input": 827,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 827
+      "input": 211717,
+      "output": 7127,
+      "source": "codex-events",
+      "total": 218844
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 3.3
+    "verdict_map": {
+      "18f5cffe30b2c86a": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "36bd2eb442305f22": {
+        "dimension": "existence",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": false
+      },
+      "aa39ab580cedbb23": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "e968f5335c48fd6c": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-1fe915aa08",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-4ebed296a3",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-0310c24b31",
+        "verdict": "stands-modified"
+      },
+      {
+        "finding_id": "F-S9-PR-a283cf0489",
+        "verdict": "stands"
+      }
+    ],
+    "wall_clock_s": 140.5
   }
 }

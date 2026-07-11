@@ -1,22 +1,104 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Frank v. Maryland.json",
+    "lens": "B",
+    "notes": "Lens B only; no support or quote-fidelity findings made.",
+    "reviewed": [
+      {
+        "assertion_id": "c0dfb2edec187bf2",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record identifies Frank v. Maryland with record_id 'Frank v. Maryland', court 'U.S.', date_decided '1959-05-04', docket '278', and cluster_id 105880.",
+          "The lake citations include official citation 359 U.S. 360 and the listed parallel/vendor citations."
+        ],
+        "residual_risks": [
+          "Existence/citation is verified, but this row does not certify current good-law status."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "a6f9e91e312152c5",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "Frontier stub: treatment/progeny intentionally not derived until S6 promotion.",
+          "locator_note": "content_page.md treatment header and Treatment & subsequent history; lake/Frank v. Maryland__8a1bd8.json treatment/progeny fields",
+          "needs_cl": true,
+          "problem": "The built page makes a substantive treatment call that Frank was overruled by Camara and is preserved only as history, but the disclosed full authority record has treatment marked unverified, no treatment as-of date, no derivation, no treatment edges, and no progeny rows. Under the default-to-refuted rule, the overruled/live-law treatment cannot be verified from the disclosed evidence.",
+          "proposed_fix": "Do not state certified overruled treatment unless the lake record contains a verified treatment basis, as-of date, and an overruling/negative-treatment edge to Camara. Otherwise render only 'treatment unverified' and keep any Camara statement as non-certified orientation.",
+          "severity": "high"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "The lake treatment field_i_validity is 'unverified' and composite_basis is 'unverified'.",
+          "The lake treatment edges array is empty and progeny rows_cached is 0.",
+          "The content page nevertheless states 'Overruled by [[Camara v. Municipal Court]] (1967)' and 'Preserved as history, never as live law.'"
+        ],
+        "residual_risks": [
+          "The built page may be substantively correct as a matter of external law, but that cannot be confirmed within the disclosed file set."
+        ],
+        "suggested_tightening": "Align the visible treatment banner with the certified lake treatment fields, or promote the record with a verified Camara treatment edge and explicit as_of_treatment date.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": false
+      }
+    ]
+  },
+  "raw_reply": "{\n  \"lens\": \"B\",\n  \"group_id\": \"_overhaul2/lake/cases/Frank v. Maryland.json\",\n  \"reviewed\": [\n    {\n      \"assertion_id\": \"c0dfb2edec187bf2\",\n      \"dimension\": \"existence\",\n      \"verdict\": \"stands\",\n      \"verifiable_from_disclosed\": true,\n      \"defect\": null,\n      \"reasons\": [\n        \"The lake record identifies Frank v. Maryland with record_id 'Frank v. Maryland', court 'U.S.', date_decided '1959-05-04', docket '278', and cluster_id 105880.\",\n        \"The lake citations include official citation 359 U.S. 360 and the listed parallel/vendor citations.\"\n      ],\n      \"breaks_true_positives\": false,\n      \"residual_risks\": [\n        \"Existence/citation is verified, but this row does not certify current good-law status.\"\n      ],\n      \"suggested_tightening\": null\n    },\n    {\n      \"assertion_id\": \"a6f9e91e312152c5\",\n      \"dimension\": \"treatment\",\n      \"verdict\": \"refuted\",\n      \"verifiable_from_disclosed\": false,\n      \"defect\": {\n        \"problem\": \"The built page makes a substantive treatment call that Frank was overruled by Camara and is preserved only as history, but the disclosed full authority record has treatment marked unverified, no treatment as-of date, no derivation, no treatment edges, and no progeny rows. Under the default-to-refuted rule, the overruled/live-law treatment cannot be verified from the disclosed evidence.\",\n        \"severity\": \"high\",\n        \"proposed_fix\": \"Do not state certified overruled treatment unless the lake record contains a verified treatment basis, as-of date, and an overruling/negative-treatment edge to Camara. Otherwise render only 'treatment unverified' and keep any Camara statement as non-certified orientation.\",\n        \"evidence_quote\": \"Frontier stub: treatment/progeny intentionally not derived until S6 promotion.\",\n        \"needs_cl\": true,\n        \"locator_note\": \"content_page.md treatment header and Treatment & subsequent history; lake/Frank v. Maryland__8a1bd8.json treatment/progeny fields\"\n      },\n      \"reasons\": [\n        \"The lake treatment field_i_validity is 'unverified' and composite_basis is 'unverified'.\",\n        \"The lake treatment edges array is empty and progeny rows_cached is 0.\",\n        \"The content page nevertheless states 'Overruled by [[Camara v. Municipal Court]] (1967)' and 'Preserved as history, never as live law.'\"\n      ],\n      \"breaks_true_positives\": true,\n      \"residual_risks\": [\n        \"The built page may be substantively correct as a matter of external law, but that cannot be confirmed within the disclosed file set.\"\n      ],\n      \"suggested_tightening\": \"Align the visible treatment banner with the certified lake treatment fields, or promote the record with a verified Camara treatment edge and explicit as_of_treatment date.\"\n    }\n  ],\n  \"notes\": \"Lens B only; no support or quote-fidelity findings made.\"\n}",
   "summary": {
-    "at": "2026-07-10T18:26:38-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T01:42:26-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-b3e4431da7"
+    ],
     "group_id": "_overhaul2/lake/cases/Frank v. Maryland.json",
     "group_total_assertions": 2,
+    "lake_only_cases": [],
     "lane": "codex-B",
     "lane_id": "codex-B-panel-prod-af79791a",
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-af79791a.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "cket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:26:29.824570Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:26:30.438310Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:26:31.257763Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:26:32.452695Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:26:34.478751Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:26:37.937567Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 2,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Frank v. Maryland"
+    ],
+    "tokens": {
+      "input": 106402,
+      "output": 4392,
+      "source": "codex-events",
+      "total": 110794
+    },
+    "verdict_map": {
+      "a6f9e91e312152c5": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": false
+      },
+      "c0dfb2edec187bf2": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-b3e4431da7",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 88.2
   }
 }

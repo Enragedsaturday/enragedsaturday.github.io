@@ -1,22 +1,139 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Illinois v. Lafayette.json",
+    "lens": "B",
+    "notes": "Lens B only; support and quote-fidelity merits were not assessed.",
+    "reviewed": [
+      {
+        "assertion_id": "3ea31f14306cc039",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake record is verified, non-stubbed, and identifies Illinois v. Lafayette as a U.S. Supreme Court case decided 1983-06-20.",
+          "The lake citation fields select 462 U.S. 640 as the official citation and the treatment field marks the authority good_law as of 2026-06-30.",
+          "No disclosed confirmed target-negative edge says Lafayette itself was overruled, abrogated, superseded, vacated, or otherwise made non-live law."
+        ],
+        "residual_risks": [
+          "Treatment derivation is migration-seeded and some treatment-audit lanes are capped/audit-flagged, so the live-law conclusion relies on the disclosed lake judgment fields."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "ec1a8c57846e3c8d",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "Quote-fidelity/support is outside Lens B; no support or quote-fidelity defect is raised here.",
+          "The embedded treatment/currency text in the harvested material, namely Binding — SCOTUS and good as of 2026-06-30, matches the disclosed court and treatment fields."
+        ],
+        "residual_risks": [
+          "No Lens B residual risk beyond the treatment caveat noted for the treatment assertion."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "a9217bdce19066fe",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade.",
+          "locator_note": "content_page.md Treatment & subsequent history; lake treatment.scope_note and treatment.derivation lane audit flags",
+          "needs_cl": true,
+          "problem": "The good_law and Binding — SCOTUS treatment call survives the disclosed lake fields, but the page's unqualified 'No negative treatment' sentence is too categorical because the disclosed lake treatment derivation is migration-seeded and audit-flagged with proposed negative-signal edges. It should say no confirmed target-negative treatment in the disclosed lake record.",
+          "proposed_fix": "Keep field_i_validity: good_law and Binding — SCOTUS, but replace 'No negative treatment' with 'No confirmed target-negative treatment is reflected in the disclosed lake record; treatment derivation remains audit-flagged.'",
+          "severity": "medium"
+        },
+        "dimension": "treatment",
+        "reasons": [
+          "Lake treatment states field_i_validity is good_law as of 2026-06-30, with varies_by_point false and no point_overrides.",
+          "The weight label is consistent with the lake identity fields showing court_level scotus and court U.S. Supreme Court.",
+          "All disclosed treatment edges are proposed and have field_iii 'mentioned', so the record does not disclose a confirmed target-negative treatment edge against Lafayette.",
+          "However, lane1_negative and lane2_top_cited both flag audit_needed, and the treatment provenance comes from migration/page-frontmatter rather than a completed confirmed citator audit."
+        ],
+        "residual_risks": [
+          "A completed treatment audit could identify a confirmed limiting or negative treatment event not resolved in the disclosed record.",
+          "The page should not convert an audit-flagged good-law judgment into an absolute 'No negative treatment' statement."
+        ],
+        "suggested_tightening": "Use 'good_law as of 2026-06-30; no confirmed target-negative edge in the disclosed lake record; R15 audit flagged'.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"B\",\"group_id\":\"_overhaul2/lake/cases/Illinois v. Lafayette.json\",\"reviewed\":[{\"assertion_id\":\"3ea31f14306cc039\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake record is verified, non-stubbed, and identifies Illinois v. Lafayette as a U.S. Supreme Court case decided 1983-06-20.\",\"The lake citation fields select 462 U.S. 640 as the official citation and the treatment field marks the authority good_law as of 2026-06-30.\",\"No disclosed confirmed target-negative edge says Lafayette itself was overruled, abrogated, superseded, vacated, or otherwise made non-live law.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment derivation is migration-seeded and some treatment-audit lanes are capped/audit-flagged, so the live-law conclusion relies on the disclosed lake judgment fields.\"],\"suggested_tightening\":null},{\"assertion_id\":\"ec1a8c57846e3c8d\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Quote-fidelity/support is outside Lens B; no support or quote-fidelity defect is raised here.\",\"The embedded treatment/currency text in the harvested material, namely Binding — SCOTUS and good as of 2026-06-30, matches the disclosed court and treatment fields.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"No Lens B residual risk beyond the treatment caveat noted for the treatment assertion.\"],\"suggested_tightening\":null},{\"assertion_id\":\"a9217bdce19066fe\",\"dimension\":\"treatment\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The good_law and Binding — SCOTUS treatment call survives the disclosed lake fields, but the page's unqualified 'No negative treatment' sentence is too categorical because the disclosed lake treatment derivation is migration-seeded and audit-flagged with proposed negative-signal edges. It should say no confirmed target-negative treatment in the disclosed lake record.\",\"severity\":\"medium\",\"proposed_fix\":\"Keep field_i_validity: good_law and Binding — SCOTUS, but replace 'No negative treatment' with 'No confirmed target-negative treatment is reflected in the disclosed lake record; treatment derivation remains audit-flagged.'\",\"evidence_quote\":\"Old as_of seeds as_of_treatment; S2 derivation re-derives and may downgrade.\",\"needs_cl\":true,\"locator_note\":\"content_page.md Treatment & subsequent history; lake treatment.scope_note and treatment.derivation lane audit flags\"},\"reasons\":[\"Lake treatment states field_i_validity is good_law as of 2026-06-30, with varies_by_point false and no point_overrides.\",\"The weight label is consistent with the lake identity fields showing court_level scotus and court U.S. Supreme Court.\",\"All disclosed treatment edges are proposed and have field_iii 'mentioned', so the record does not disclose a confirmed target-negative treatment edge against Lafayette.\",\"However, lane1_negative and lane2_top_cited both flag audit_needed, and the treatment provenance comes from migration/page-frontmatter rather than a completed confirmed citator audit.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"A completed treatment audit could identify a confirmed limiting or negative treatment event not resolved in the disclosed record.\",\"The page should not convert an audit-flagged good-law judgment into an absolute 'No negative treatment' statement.\"],\"suggested_tightening\":\"Use 'good_law as of 2026-06-30; no confirmed target-negative edge in the disclosed lake record; R15 audit flagged'.\"}],\"notes\":\"Lens B only; support and quote-fidelity merits were not assessed.\"}",
   "summary": {
-    "at": "2026-07-10T18:28:02-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T01:53:08-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [
+      {
+        "finding_id": "F-S9-PR-b710406955",
+        "verdict": "stands"
+      }
+    ],
+    "findings_emitted": [
+      "F-S9-PR-116cc8acf1"
+    ],
     "group_id": "_overhaul2/lake/cases/Illinois v. Lafayette.json",
     "group_total_assertions": 3,
+    "lake_only_cases": [],
     "lane": "codex-B",
     "lane_id": "codex-B-panel-prod-4f55fbb0",
     "lens": "B",
     "manifest_ref": "_run/s9/manifests/codex-B-panel-prod-4f55fbb0.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "ast status: 429 Too Many Requests, request id: 87df2a8a-4e5a-423b-8a1b-d14da3c86174\n2026-07-10T22:27:53.659347Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:27:54.126162Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:27:54.795153Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:27:55.615992Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:27:56.763113Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:27:58.946726Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 3,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Illinois v. Lafayette"
+    ],
+    "tokens": {
+      "input": 231133,
+      "output": 7345,
+      "source": "codex-events",
+      "total": 238478
+    },
+    "verdict_map": {
+      "3ea31f14306cc039": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "a9217bdce19066fe": {
+        "dimension": "treatment",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "ec1a8c57846e3c8d": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-b710406955",
+        "verdict": "stands"
+      },
+      {
+        "finding_id": "F-S9-PR-116cc8acf1",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 145.1
   }
 }

@@ -1,22 +1,159 @@
 {
-  "raw_reply": "",
+  "attestation_ref": null,
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Griffin v. Wisconsin.json",
+    "lens": "A",
+    "notes": "Lens A review found one high-severity quote-fidelity defect and one low-severity quote-format defect; treatment was not substantively reviewed beyond disclosed-field consistency.",
+    "reviewed": [
+      {
+        "assertion_id": "e4151cb2cea4946b",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "Lake identity verifies Griffin v. Wisconsin, U.S. Supreme Court, decided 1987-06-26.",
+          "Lake citations match the asserted official citation 483 U.S. 868 and listed parallel/vendor citations."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "1f1cbea61a8ffa43",
+        "breaks_true_positives": true,
+        "defect": {
+          "evidence_quote": "A State’s operation of a probation system, like its operation of a school, government office or prison, or its supervision of a regulated industry, likewise presents “special <page-number citation-index=\"1\" label=\"874\">*874</page-number>needs” beyond normal law enforcement that may justify departures from the usual warrant and probable-cause requirements.",
+          "locator_note": "pin-873; text/Griffin v. Wisconsin__d914d7.txt, page labels 873-874",
+          "needs_cl": false,
+          "problem": "pin-873's stored quote is not a character-faithful judicial quote. It splices page-generated Issue/Rule text, including markdown heading text, rather than the opinion passage at 873-874.",
+          "proposed_fix": "Replace the pin-873 quote with the actual opinion passage beginning \"A State’s operation of a probation system...\" and preserve source punctuation; use 483 U.S. 873-874 as the locator.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The payload quote begins \"satisfies the Fourth Amendment. ## Rule Yes...\", which is not opinion text at the cited passage.",
+          "The actual opinion passage at 873-874 supports the rule but is materially different from the stored quote."
+        ],
+        "residual_risks": [
+          "The content page visible quote appears closer to the opinion than the lake pinpoints[].quote, but the reviewed payload itself is defective."
+        ],
+        "suggested_tightening": "Regenerate pin-873 from the opinion text rather than from rendered page prose.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "b5b5b9fcd9e565dd",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "We <page-number citation-index=\"1\" label=\"876\">*876</page-number>think it clear that the special needs of Wisconsin’s probation system make the warrant requirement impracticable and justify replacement of the standard of probable cause by “reasonable grounds,” as defined by the Wisconsin Supreme Court.",
+          "locator_note": "pin-876; text/Griffin v. Wisconsin__d914d7.txt, page label 876",
+          "needs_cl": false,
+          "problem": "The quoted proposition is supported at page 876, but the stored quote is not character-faithful because it normalizes source punctuation: \"Wisconsin's\" and single quotes should match the opinion's \"Wisconsin’s\" and curly quotation marks.",
+          "proposed_fix": "Correct the quote to the source punctuation: \"We think it clear that the special needs of Wisconsin’s probation system make the warrant requirement impracticable and justify replacement of the standard of probable cause by “reasonable grounds,” as defined by the Wisconsin Supreme Court.\"",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The same words appear in the opinion at page 876 after ignoring the inserted page-number tag.",
+          "Exact quote fidelity still requires correcting apostrophe and quotation-mark characters to match the disclosed text."
+        ],
+        "residual_risks": [
+          "Raw cached text contains an HTML page-number tag between \"We\" and \"think\"; quote validation should normalize that tag while preserving source punctuation."
+        ],
+        "suggested_tightening": "Preserve source typography in the lake pinpoint quote and keep the 876 locator.",
+        "verdict": "stands-modified",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "3f380cb734f6ebbf",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "Treatment/currency is outside Lens A; no treatment finding is raised.",
+          "The content page treatment fields match the disclosed lake treatment fields: field_i_validity good_law, as_of_content 1987-06-26, as_of_treatment 2026-06-30, varies_by_point false."
+        ],
+        "residual_risks": [
+          "Lake treatment provenance notes migration-seed and proposed/audit treatment data, but evaluating currency belongs to Lens B."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Griffin v. Wisconsin.json\",\"reviewed\":[{\"assertion_id\":\"e4151cb2cea4946b\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Lake identity verifies Griffin v. Wisconsin, U.S. Supreme Court, decided 1987-06-26.\",\"Lake citations match the asserted official citation 483 U.S. 868 and listed parallel/vendor citations.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"1f1cbea61a8ffa43\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"pin-873's stored quote is not a character-faithful judicial quote. It splices page-generated Issue/Rule text, including markdown heading text, rather than the opinion passage at 873-874.\",\"severity\":\"high\",\"proposed_fix\":\"Replace the pin-873 quote with the actual opinion passage beginning \\\"A State’s operation of a probation system...\\\" and preserve source punctuation; use 483 U.S. 873-874 as the locator.\",\"evidence_quote\":\"A State’s operation of a probation system, like its operation of a school, government office or prison, or its supervision of a regulated industry, likewise presents “special <page-number citation-index=\\\"1\\\" label=\\\"874\\\">*874</page-number>needs” beyond normal law enforcement that may justify departures from the usual warrant and probable-cause requirements.\",\"needs_cl\":false,\"locator_note\":\"pin-873; text/Griffin v. Wisconsin__d914d7.txt, page labels 873-874\"},\"reasons\":[\"The payload quote begins \\\"satisfies the Fourth Amendment. ## Rule Yes...\\\", which is not opinion text at the cited passage.\",\"The actual opinion passage at 873-874 supports the rule but is materially different from the stored quote.\"],\"breaks_true_positives\":true,\"residual_risks\":[\"The content page visible quote appears closer to the opinion than the lake pinpoints[].quote, but the reviewed payload itself is defective.\"],\"suggested_tightening\":\"Regenerate pin-873 from the opinion text rather than from rendered page prose.\"},{\"assertion_id\":\"b5b5b9fcd9e565dd\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands-modified\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The quoted proposition is supported at page 876, but the stored quote is not character-faithful because it normalizes source punctuation: \\\"Wisconsin's\\\" and single quotes should match the opinion's \\\"Wisconsin’s\\\" and curly quotation marks.\",\"severity\":\"low\",\"proposed_fix\":\"Correct the quote to the source punctuation: \\\"We think it clear that the special needs of Wisconsin’s probation system make the warrant requirement impracticable and justify replacement of the standard of probable cause by “reasonable grounds,” as defined by the Wisconsin Supreme Court.\\\"\",\"evidence_quote\":\"We <page-number citation-index=\\\"1\\\" label=\\\"876\\\">*876</page-number>think it clear that the special needs of Wisconsin’s probation system make the warrant requirement impracticable and justify replacement of the standard of probable cause by “reasonable grounds,” as defined by the Wisconsin Supreme Court.\",\"needs_cl\":false,\"locator_note\":\"pin-876; text/Griffin v. Wisconsin__d914d7.txt, page label 876\"},\"reasons\":[\"The same words appear in the opinion at page 876 after ignoring the inserted page-number tag.\",\"Exact quote fidelity still requires correcting apostrophe and quotation-mark characters to match the disclosed text.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Raw cached text contains an HTML page-number tag between \\\"We\\\" and \\\"think\\\"; quote validation should normalize that tag while preserving source punctuation.\"],\"suggested_tightening\":\"Preserve source typography in the lake pinpoint quote and keep the 876 locator.\"},{\"assertion_id\":\"3f380cb734f6ebbf\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"Treatment/currency is outside Lens A; no treatment finding is raised.\",\"The content page treatment fields match the disclosed lake treatment fields: field_i_validity good_law, as_of_content 1987-06-26, as_of_treatment 2026-06-30, varies_by_point false.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Lake treatment provenance notes migration-seed and proposed/audit treatment data, but evaluating currency belongs to Lens B.\"],\"suggested_tightening\":null}],\"notes\":\"Lens A review found one high-severity quote-fidelity defect and one low-severity quote-format defect; treatment was not substantively reviewed beyond disclosed-field consistency.\"}",
   "summary": {
-    "at": "2026-07-10T18:27:01-04:00",
-    "auth_flagged": true,
+    "at": "2026-07-11T01:44:48-04:00",
+    "attempts": 1,
     "clean_attestation": false,
-    "findings_emitted": [],
-    "genuine_auth_stop": true,
+    "defense_votes": [],
+    "findings_emitted": [
+      "F-S9-PR-d426433204",
+      "F-S9-PR-aaa0a1d718"
+    ],
     "group_id": "_overhaul2/lake/cases/Griffin v. Wisconsin.json",
     "group_total_assertions": 4,
+    "lake_only_cases": [],
     "lane": "codex-A",
     "lane_id": "codex-A-panel-prod-ca643245",
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-ca643245.json",
     "model": "gpt-5.5",
-    "note": "auth-flagged codex failure; GENUINE hard-marker stop (pause-#8)",
-    "parse_status": "lane_error",
-    "reviewed_count": 0,
-    "stderr_tail": "cket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:26:52.153713Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:26:52.845732Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:26:53.743157Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:26:54.980769Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:26:56.945004Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n2026-07-10T22:27:00.913198Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 403 Forbidden, url: wss://chatgpt.com/backend-api/codex/responses\n",
-    "votes_emitted": []
+    "parse_status": "parsed",
+    "resolution_notes": [],
+    "reviewed_count": 4,
+    "run": "prod",
+    "text_disclosed_cases": [
+      "Griffin v. Wisconsin"
+    ],
+    "tokens": {
+      "input": 220123,
+      "output": 6578,
+      "source": "codex-events",
+      "total": 226701
+    },
+    "verdict_map": {
+      "1f1cbea61a8ffa43": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "3f380cb734f6ebbf": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "b5b5b9fcd9e565dd": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "stands-modified",
+        "verifiable": true
+      },
+      "e4151cb2cea4946b": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-d426433204",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-aaa0a1d718",
+        "verdict": "stands-modified"
+      }
+    ],
+    "wall_clock_s": 136.8
   }
 }

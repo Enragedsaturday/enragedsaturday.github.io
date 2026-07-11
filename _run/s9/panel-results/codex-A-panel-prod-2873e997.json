@@ -1,13 +1,112 @@
 {
   "attestation_ref": null,
-  "parsed": null,
-  "raw_reply": "",
+  "parsed": {
+    "group_id": "_overhaul2/lake/cases/Haynes v. Washington.json",
+    "lens": "A",
+    "notes": "Reviewed all 5 rows in group_inventory.jsonl exactly once. Treatment row is recorded only; no Lens A treatment/currency finding is made.",
+    "reviewed": [
+      {
+        "assertion_id": "df973a1725f08e59",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "existence",
+        "reasons": [
+          "The lake identity record is verified for Haynes v. Washington, U.S. Supreme Court, decided 1963-05-27.",
+          "The official citation in the lake record is exactly 373 U.S. 503, with parallel citations 83 S. Ct. 1336 and 10 L. Ed. 2d 513, matching the content page."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "269c69ffa982b5b7",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The quoted sentence beginning \"Confronted with the express threat\" appears in the cached opinion text on the page marked *514.",
+          "The lake pinpoint for pin-514 marks quote_fidelity as matched, pinpoint_status as star-verified, and star_marker as 514."
+        ],
+        "residual_risks": [],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "7452cf6aefcb0d72",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "present herethe secret and incommunicado detention and interrogationare devices",
+          "locator_note": "pin-514a in lake pinpoints; content page cites it as Id. at 514-515, but the lake has no star_marker and no validated fragment.",
+          "needs_cl": false,
+          "problem": "The pin-514a quote is not character-faithful to the cached opinion text as disclosed: the asserted quote uses em dashes, while the cached text contains different dash/codepoint characters, and the lake itself marks quote_fidelity as mismatch with only slip-only status.",
+          "proposed_fix": "Regenerate pin-514a from the cached opinion text or a normalized verified source, then mark it matched only after character-level verification and add the correct star marker.",
+          "severity": "low"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The same lake record relied on for the pinpoint labels pin-514a quote_fidelity as mismatch and pinpoint_status as slip-only.",
+          "The cached text contains the target words, but not with the exact dash characters used in the asserted quote."
+        ],
+        "residual_risks": [
+          "The substantive proposition is supported by the opinion text; the defect is exact quote fidelity/pin verification."
+        ],
+        "suggested_tightening": "If exact quotation is not required, paraphrase this sentence; if quoted, verify the exact characters and cite page 514 rather than an unverified 514-515 range.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "b5bf5642c4ffa48a",
+        "breaks_true_positives": false,
+        "defect": {
+          "evidence_quote": "The uncontroverted portions of the record thus disclose",
+          "locator_note": "pin-513 in lake pinpoints; the visible content_page quote tied to ^pin-513 is accurate, but the inventory/lake quote string under review is corrupted.",
+          "needs_cl": false,
+          "problem": "The pin-513 payload is not an opinion quote at all; it is harvested page boilerplate and generated case-summary text, and the lake marks it as quote_fidelity mismatch with slip-only status.",
+          "proposed_fix": "Replace the lake pin-513 quote with the actual opinion sentence at star page 513 that begins \"The uncontroverted portions of the record thus disclose\" and remove the harvested content-page boilerplate from the pinpoint record.",
+          "severity": "high"
+        },
+        "dimension": "quote_fidelity",
+        "reasons": [
+          "The asserted pin-513 quote begins with content-page markup and summary text rather than the Supreme Court opinion text.",
+          "The cached opinion text at star page 513 contains the real quoted sentence about substantial coercion and inducement; it does not contain the asserted boilerplate string."
+        ],
+        "residual_risks": [
+          "The built page's visible quote for ^pin-513 appears correct; the defect is in the lake/inventory pinpoint quote field."
+        ],
+        "suggested_tightening": "Add a guard that rejects harvested pinpoints beginning with page front matter, headings, or generated summary sections.",
+        "verdict": "refuted",
+        "verifiable_from_disclosed": true
+      },
+      {
+        "assertion_id": "25eae1fb25a322c1",
+        "breaks_true_positives": false,
+        "defect": null,
+        "dimension": "treatment",
+        "reasons": [
+          "The treatment payload matches the lake treatment fields: field_i_validity is good_law, as_of_content is 1963-05-27, as_of_treatment is 2026-06-30, varies_by_point is false, and the scope note matches.",
+          "Treatment and currency are outside Lens A, so no treatment defect is raised here."
+        ],
+        "residual_risks": [
+          "Treatment/currency not reviewed under Lens A."
+        ],
+        "suggested_tightening": null,
+        "verdict": "stands",
+        "verifiable_from_disclosed": true
+      }
+    ]
+  },
+  "raw_reply": "{\"lens\":\"A\",\"group_id\":\"_overhaul2/lake/cases/Haynes v. Washington.json\",\"reviewed\":[{\"assertion_id\":\"df973a1725f08e59\",\"dimension\":\"existence\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The lake identity record is verified for Haynes v. Washington, U.S. Supreme Court, decided 1963-05-27.\",\"The official citation in the lake record is exactly 373 U.S. 503, with parallel citations 83 S. Ct. 1336 and 10 L. Ed. 2d 513, matching the content page.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"269c69ffa982b5b7\",\"dimension\":\"quote_fidelity\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The quoted sentence beginning \\\"Confronted with the express threat\\\" appears in the cached opinion text on the page marked *514.\",\"The lake pinpoint for pin-514 marks quote_fidelity as matched, pinpoint_status as star-verified, and star_marker as 514.\"],\"breaks_true_positives\":false,\"residual_risks\":[],\"suggested_tightening\":null},{\"assertion_id\":\"7452cf6aefcb0d72\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The pin-514a quote is not character-faithful to the cached opinion text as disclosed: the asserted quote uses em dashes, while the cached text contains different dash/codepoint characters, and the lake itself marks quote_fidelity as mismatch with only slip-only status.\",\"severity\":\"low\",\"proposed_fix\":\"Regenerate pin-514a from the cached opinion text or a normalized verified source, then mark it matched only after character-level verification and add the correct star marker.\",\"evidence_quote\":\"present here\\u0097the secret and incommunicado detention and interrogation\\u0097are devices\",\"needs_cl\":false,\"locator_note\":\"pin-514a in lake pinpoints; content page cites it as Id. at 514-515, but the lake has no star_marker and no validated fragment.\"},\"reasons\":[\"The same lake record relied on for the pinpoint labels pin-514a quote_fidelity as mismatch and pinpoint_status as slip-only.\",\"The cached text contains the target words, but not with the exact dash characters used in the asserted quote.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The substantive proposition is supported by the opinion text; the defect is exact quote fidelity/pin verification.\"],\"suggested_tightening\":\"If exact quotation is not required, paraphrase this sentence; if quoted, verify the exact characters and cite page 514 rather than an unverified 514-515 range.\"},{\"assertion_id\":\"b5bf5642c4ffa48a\",\"dimension\":\"quote_fidelity\",\"verdict\":\"refuted\",\"verifiable_from_disclosed\":true,\"defect\":{\"problem\":\"The pin-513 payload is not an opinion quote at all; it is harvested page boilerplate and generated case-summary text, and the lake marks it as quote_fidelity mismatch with slip-only status.\",\"severity\":\"high\",\"proposed_fix\":\"Replace the lake pin-513 quote with the actual opinion sentence at star page 513 that begins \\\"The uncontroverted portions of the record thus disclose\\\" and remove the harvested content-page boilerplate from the pinpoint record.\",\"evidence_quote\":\"The uncontroverted portions of the record thus disclose\",\"needs_cl\":false,\"locator_note\":\"pin-513 in lake pinpoints; the visible content_page quote tied to ^pin-513 is accurate, but the inventory/lake quote string under review is corrupted.\"},\"reasons\":[\"The asserted pin-513 quote begins with content-page markup and summary text rather than the Supreme Court opinion text.\",\"The cached opinion text at star page 513 contains the real quoted sentence about substantial coercion and inducement; it does not contain the asserted boilerplate string.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"The built page's visible quote for ^pin-513 appears correct; the defect is in the lake/inventory pinpoint quote field.\"],\"suggested_tightening\":\"Add a guard that rejects harvested pinpoints beginning with page front matter, headings, or generated summary sections.\"},{\"assertion_id\":\"25eae1fb25a322c1\",\"dimension\":\"treatment\",\"verdict\":\"stands\",\"verifiable_from_disclosed\":true,\"defect\":null,\"reasons\":[\"The treatment payload matches the lake treatment fields: field_i_validity is good_law, as_of_content is 1963-05-27, as_of_treatment is 2026-06-30, varies_by_point is false, and the scope note matches.\",\"Treatment and currency are outside Lens A, so no treatment defect is raised here.\"],\"breaks_true_positives\":false,\"residual_risks\":[\"Treatment/currency not reviewed under Lens A.\"],\"suggested_tightening\":null}],\"notes\":\"Reviewed all 5 rows in group_inventory.jsonl exactly once. Treatment row is recorded only; no Lens A treatment/currency finding is made.\"}",
   "summary": {
-    "at": "2026-07-10T18:27:07-04:00",
-    "attempts": 2,
+    "at": "2026-07-11T01:48:26-04:00",
+    "attempts": 1,
     "clean_attestation": false,
     "defense_votes": [],
-    "findings_emitted": [],
+    "findings_emitted": [
+      "F-S9-PR-b7281f0a74",
+      "F-S9-PR-43505ecf71"
+    ],
     "group_id": "_overhaul2/lake/cases/Haynes v. Washington.json",
     "group_total_assertions": 5,
     "lake_only_cases": [],
@@ -16,21 +115,66 @@
     "lens": "A",
     "manifest_ref": "_run/s9/manifests/codex-A-panel-prod-2873e997.json",
     "model": "gpt-5.5",
-    "parse_status": "no_review",
+    "parse_status": "parsed",
     "resolution_notes": [],
-    "reviewed_count": 0,
+    "reviewed_count": 5,
     "run": "prod",
     "text_disclosed_cases": [
       "Haynes v. Washington"
     ],
     "tokens": {
-      "input": 826,
-      "output": 0,
-      "source": "char-estimate",
-      "total": 826
+      "input": 220873,
+      "output": 8128,
+      "source": "codex-events",
+      "total": 229001
     },
-    "verdict_map": {},
-    "votes_emitted": [],
-    "wall_clock_s": 3.2
+    "verdict_map": {
+      "25eae1fb25a322c1": {
+        "dimension": "treatment",
+        "has_defect": false,
+        "in_charter": false,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "269c69ffa982b5b7": {
+        "dimension": "quote_fidelity",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      },
+      "7452cf6aefcb0d72": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "b5bf5642c4ffa48a": {
+        "dimension": "quote_fidelity",
+        "has_defect": true,
+        "in_charter": true,
+        "verdict": "refuted",
+        "verifiable": true
+      },
+      "df973a1725f08e59": {
+        "dimension": "existence",
+        "has_defect": false,
+        "in_charter": true,
+        "verdict": "stands",
+        "verifiable": true
+      }
+    },
+    "votes_emitted": [
+      {
+        "finding_id": "F-S9-PR-b7281f0a74",
+        "verdict": "refuted"
+      },
+      {
+        "finding_id": "F-S9-PR-43505ecf71",
+        "verdict": "refuted"
+      }
+    ],
+    "wall_clock_s": 155.8
   }
 }
